@@ -19,7 +19,7 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
   }
 
   const session = {
-    on: jest.fn((event: string, listener: (payload: unknown) => void) => {
+    on: vi.fn((event: string, listener: (payload: unknown) => void) => {
       const eventListeners = listeners.get(event) ?? new Set()
       listeners.set(event, eventListeners.add(listener))
       return () => {
@@ -33,19 +33,19 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
       }
     },
     getSnapshot: () => current,
-    getBaseState: jest.fn((): BaseState => ({ commitId: 'commit-1', updates: [] })),
-    getHistory: jest.fn((): HistoryEntry[] => []),
-    getNodeMeta: jest.fn(() => ({ volumeId: 'VOLUME', linkId: 'LINK', userOwnAddress: 'member@example.com' })),
+    getBaseState: vi.fn((): BaseState => ({ commitId: 'commit-1', updates: [] })),
+    getHistory: vi.fn((): HistoryEntry[] => []),
+    getNodeMeta: vi.fn(() => ({ volumeId: 'VOLUME', linkId: 'LINK', userOwnAddress: 'member@example.com' })),
     config: { documentType: 'doc', nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' }, clientId: 1 },
     // A pending session and the session it bootstraps into are one object, as in the SDK
-    bootstrap: jest.fn(async (): Promise<Session> => session as unknown as Session),
-    connect: jest.fn(async () => {}),
-    disconnect: jest.fn(async () => {}),
-    pause: jest.fn(async () => {}),
-    resume: jest.fn(async () => {}),
-    retry: jest.fn(async () => {}),
-    sendUpdate: jest.fn(),
-    setPresence: jest.fn(),
+    bootstrap: vi.fn(async (): Promise<Session> => session as unknown as Session),
+    connect: vi.fn(async () => {}),
+    disconnect: vi.fn(async () => {}),
+    pause: vi.fn(async () => {}),
+    resume: vi.fn(async () => {}),
+    retry: vi.fn(async () => {}),
+    sendUpdate: vi.fn(),
+    setPresence: vi.fn(),
   }
 
   return {

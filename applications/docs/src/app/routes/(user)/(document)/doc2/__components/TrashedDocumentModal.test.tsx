@@ -58,8 +58,8 @@ function renderModal(overrides: Partial<TrashedDocumentModalProps> = {}) {
     trashState: 'trashed',
     trashedInSession: false,
     canRestore: true,
-    onRestore: jest.fn(),
-    onGoToDrive: jest.fn(),
+    onRestore: vi.fn(),
+    onGoToDrive: vi.fn(),
     ...overrides,
   } satisfies TrashedDocumentModalProps
   render(<TrashedDocumentModal {...props} />)

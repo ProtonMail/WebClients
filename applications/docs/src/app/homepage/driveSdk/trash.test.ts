@@ -13,7 +13,7 @@ describe.each([
   { name: 'deleteDocument', run: deleteDocument, method: 'deleteNodes' },
 ] as const)('$name', ({ run, method }) => {
   it(`calls ${method} with the node uid`, async () => {
-    const drive = { [method]: jest.fn(() => results([{ uid: 'vol~node', ok: true }])) }
+    const drive = { [method]: vi.fn(() => results([{ uid: 'vol~node', ok: true }])) }
 
     await run(drive as unknown as ProtonDriveClient, 'vol~node')
 
@@ -21,7 +21,7 @@ describe.each([
   })
 
   it('throws with the error name, message and uid when the node fails', async () => {
-    const drive = { [method]: jest.fn(() => results([failure])) }
+    const drive = { [method]: vi.fn(() => results([failure])) }
 
     await expect(run(drive as unknown as ProtonDriveClient, 'vol~node')).rejects.toThrow(
       'PermissionError: Insufficient permissions; UID=vol~node',

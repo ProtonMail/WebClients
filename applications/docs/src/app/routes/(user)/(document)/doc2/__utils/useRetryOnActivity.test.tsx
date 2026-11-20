@@ -6,7 +6,7 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 import { createFakeSession } from './createFakeSession'
 import { useRetryOnActivity } from './useRetryOnActivity'
 
-const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() }
+const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 const wrapper = ({ children }: { children: ReactNode }) => (
   <ApplicationProvider application={application}>{children}</ApplicationProvider>
@@ -30,20 +30,20 @@ function renderRetry() {
 
 describe('useRetryOnActivity', () => {
   beforeEach(() => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     setVisibility('visible')
   })
 
   afterEach(() => {
-    jest.useRealTimers()
-    jest.clearAllMocks()
+    vi.useRealTimers()
+    vi.clearAllMocks()
   })
 
   test('after an idle eviction, waits however long it takes, then retries once on the next key press', () => {
     const { fake } = renderRetry()
 
     act(() => fake.setSnapshot({ status: idleEvicted }))
-    act(() => jest.advanceTimersByTime(3 * HOUR))
+    act(() => vi.advanceTimersByTime(3 * HOUR))
 
     expect(fake.mocks.retry).not.toHaveBeenCalled()
 
@@ -64,7 +64,7 @@ describe('useRetryOnActivity', () => {
     const { fake } = renderRetry()
     act(() => setVisibility('hidden'))
     act(() => fake.setSnapshot({ status: idleEvicted }))
-    act(() => jest.advanceTimersByTime(HOUR))
+    act(() => vi.advanceTimersByTime(HOUR))
 
     act(activity)
 
@@ -155,7 +155,7 @@ describe('useRetryOnActivity', () => {
     act(() => fake.setSnapshot({ status: { name: 'connected' } }))
 
     act(() => fake.setSnapshot({ status: { ...idleEvicted } }))
-    act(() => jest.advanceTimersByTime(HOUR))
+    act(() => vi.advanceTimersByTime(HOUR))
     act(() => {
       window.dispatchEvent(new Event('pointerdown'))
     })

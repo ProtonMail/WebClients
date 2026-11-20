@@ -5,19 +5,19 @@ import { MemberRole, getDrive } from '@proton/drive/sdk'
 
 import { useDriveSharing } from './useDriveSharing'
 
-jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk'), getDrive: jest.fn() }))
-jest.mock('@proton/docs-core/DriveSDK/traceErrorSDK', () => ({ traceErrorSDK: jest.fn() }))
+vi.mock('@proton/drive/sdk', async () => ({ ...(await vi.importActual('@proton/drive/sdk')), getDrive: vi.fn() }))
+vi.mock('@proton/docs-core/DriveSDK/traceErrorSDK', () => ({ traceErrorSDK: vi.fn() }))
 
-const getNode = jest.fn()
+const getNode = vi.fn()
 const NODE_META = { volumeId: 'VOLUME', linkId: 'LINK' }
 
 describe('useDriveSharing', () => {
   beforeEach(() => {
-    jest.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
+    vi.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   test.each([

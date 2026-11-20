@@ -1,3 +1,5 @@
+import type * as ReactModule from 'react'
+import type { MockInstance } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
@@ -16,8 +18,8 @@ import DocumentPageV2 from './page'
 // The viewer has its own tests for downloading, or opening the history, once it shows the document; here, what the page
 // tells it, and across a retry, which remounts it
 const mockViewerMounts: DocumentViewerV2Props[] = []
-jest.mock('./__components/DocumentViewerV2', () => {
-  const { useState } = jest.requireActual('react')
+vi.mock('./__components/DocumentViewerV2', async () => {
+  const { useState } = await vi.importActual<typeof ReactModule>('react')
   return {
     DocumentViewerV2: (props: DocumentViewerV2Props) => {
       const [mountProps] = useState(() => {
@@ -36,18 +38,21 @@ jest.mock('./__components/DocumentViewerV2', () => {
     },
   }
 })
-jest.mock('@proton-docs/realtime-sdk', () => ({ ...jest.requireActual('@proton-docs/realtime-sdk'), version: '0.0.0' }))
+vi.mock('@proton-docs/realtime-sdk', async () => ({
+  ...(await vi.importActual('@proton-docs/realtime-sdk')),
+  version: '0.0.0',
+}))
 
 describe('DocumentPageV2 with Drive’s Download or mode history', () => {
-  let replaceState: jest.SpyInstance
+  let replaceState: MockInstance
 
   beforeEach(() => {
-    replaceState = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {})
+    replaceState = vi.spyOn(window.history, 'replaceState').mockImplementation(() => {})
   })
 
   afterEach(() => {
     mockViewerMounts.length = 0
-    jest.restoreAllMocks()
+    vi.restoreAllMocks()
   })
 
   test('mode download has the viewer download, even once the address bar opens the document', () => {
@@ -116,7 +121,7 @@ describe('DocumentPageV2 with Drive’s Download or mode history', () => {
 
   function renderAt(path: string) {
     const application = {
-      logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+      logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
     } as unknown as ApplicationProviderProps['application']
     render(
       <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>

@@ -23,11 +23,11 @@ function participant(id: number, state: JsonValue, isSelf = false): Participant 
   return { id, isSelf, state, lastSeenAt: 0 }
 }
 
-const logger = { warn: jest.fn() }
+const logger = { warn: vi.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 
 function renderActiveUsers(participants: Participant[]) {
-  const editorInvoker = { syncEvent: jest.fn(async () => {}) }
+  const editorInvoker = { syncEvent: vi.fn(async () => {}) }
   render(
     <ApplicationProvider application={application}>
       <DocumentActiveUsers participants={participants} editorInvoker={editorInvoker} />

@@ -11,8 +11,8 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 import { createFakeSession } from '../__utils/createFakeSession'
 import { DocumentDebugMenu, type DocumentDebugMenuProps } from './DocumentDebugMenu'
 
-const mockDownloadFile = jest.fn()
-jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+const mockDownloadFile = vi.fn()
+vi.mock('@proton/shared/lib/helpers/downloadFile', () => ({
   __esModule: true,
   default: (blob: Blob, filename: string) => mockDownloadFile(blob, filename),
 }))
@@ -44,15 +44,15 @@ function renderMenu({ baseUpdateCount = 3 } = {}) {
   fake.mocks.getHistory.mockReturnValue(HISTORY)
   const session = Object.assign(fake.session, {
     config: { clientId: SESSION_CLIENT_ID },
-    squash: jest.fn(async () => {}),
-    exportDebugArtifacts: jest.fn(() => ({ baseCommit: BASE_COMMIT, sentOrReceived: [], outbox: [] })),
+    squash: vi.fn(async () => {}),
+    exportDebugArtifacts: vi.fn(() => ({ baseCommit: BASE_COMMIT, sentOrReceived: [], outbox: [] })),
   })
   const editorInvoker = {
-    getClientId: jest.fn(async () => EDITOR_CLIENT_ID),
-    getYDocAsJSON: jest.fn(async () => ({ root: ['ydoc'] })),
-    getCurrentEditorState: jest.fn(async () => ({ root: { type: 'root' } }) as never),
-    toggleDebugTreeView: jest.fn(async () => {}),
-    receiveMessage: jest.fn(async () => {}),
+    getClientId: vi.fn(async () => EDITOR_CLIENT_ID),
+    getYDocAsJSON: vi.fn(async () => ({ root: ['ydoc'] })),
+    getCurrentEditorState: vi.fn(async () => ({ root: { type: 'root' } }) as never),
+    toggleDebugTreeView: vi.fn(async () => {}),
+    receiveMessage: vi.fn(async () => {}),
   }
   const props: DocumentDebugMenuProps = {
     session,
@@ -60,7 +60,7 @@ function renderMenu({ baseUpdateCount = 3 } = {}) {
     editorInvoker,
   }
   const application = {
-    logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+    logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
   } as unknown as ApplicationProviderProps['application']
   render(<DocumentDebugMenu {...props} />, {
     wrapper: ({ children }) => <ApplicationProvider application={application}>{children}</ApplicationProvider>,
@@ -87,9 +87,12 @@ afterAll(() => CryptoProxy.releaseEndpoint())
 
 describe('DocumentDebugMenu', () => {
   beforeEach(() => {
-    Object.assign(navigator, { clipboard: { writeText: jest.fn(async () => {}) } })
+    Object.defineProperty(navigator, 'clipboard', {
+      value: { writeText: vi.fn(async () => {}) },
+      configurable: true,
+    })
   })
-  afterEach(() => jest.clearAllMocks())
+  afterEach(() => vi.clearAllMocks())
 
   test('opens from its button onto the diagnostics: both client ids, the base commit, status, delivery and SDK version', async () => {
     const { session } = renderMenu()
@@ -139,7 +142,7 @@ describe('DocumentDebugMenu', () => {
       expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'all-updates-in-base-commit.zip'),
     )
     expect(session.exportDebugArtifacts).toHaveBeenCalledTimes(1)
-    expect(await filesOf(mockDownloadFile.mock.lastCall[0])).toEqual(['100.bin'])
+    expect(await filesOf(mockDownloadFile.mock.lastCall![0])).toEqual(['100.bin'])
   })
 
   test("Download All Updates as ZIP reads the session's History Log only then, one file per entry", async () => {
@@ -152,7 +155,7 @@ describe('DocumentDebugMenu', () => {
     await waitFor(() => expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'all-updates.zip'))
     expect(session.getHistory).toHaveBeenCalledTimes(1)
     // `sha1sum` of the bytes 01, 04 and 05
-    expect(await filesOf(mockDownloadFile.mock.lastCall[0])).toEqual([
+    expect(await filesOf(mockDownloadFile.mock.lastCall![0])).toEqual([
       '100-bf8b4530d8d246dd74ac53a13471bba17941dff7.bin',
       '500-a42c6cf1de3abfdea9b95f34687cbbe92b9a7383.bin',
       '600-8dc00598417d4eb788a77ac6ccef3cb484905d8b.bin',

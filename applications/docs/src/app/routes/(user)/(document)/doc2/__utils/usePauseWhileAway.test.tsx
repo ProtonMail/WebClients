@@ -6,7 +6,7 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 import { createFakeSession } from './createFakeSession'
 import { PAUSE_WHEN_HIDDEN_FOR_MS, usePauseWhileAway } from './usePauseWhileAway'
 
-const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() }
+const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 
 const wrapper = ({ children }: { children: ReactNode }) => (
@@ -39,8 +39,8 @@ function setVisibility(state: DocumentVisibilityState) {
 
 describe('usePauseWhileAway', () => {
   beforeAll(() => {
-    jest.spyOn(navigator, 'onLine', 'get').mockImplementation(() => onLine)
-    jest.spyOn(document, 'visibilityState', 'get').mockImplementation(() => visibilityState)
+    vi.spyOn(navigator, 'onLine', 'get').mockImplementation(() => onLine)
+    vi.spyOn(document, 'visibilityState', 'get').mockImplementation(() => visibilityState)
   })
 
   beforeEach(() => {
@@ -49,12 +49,12 @@ describe('usePauseWhileAway', () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
-    jest.useRealTimers()
+    vi.clearAllMocks()
+    vi.useRealTimers()
   })
 
   afterAll(() => {
-    jest.restoreAllMocks()
+    vi.restoreAllMocks()
   })
 
   test.each(['connected', 'connecting', 'reconnecting', 'opening'] as const)(
@@ -96,15 +96,15 @@ describe('usePauseWhileAway', () => {
   })
 
   test('a tab hidden for an hour pauses the session, and showing it again resumes it', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const fake = createFakeSession({ status: { name: 'connected' } })
     renderHook(() => usePauseWhileAway(fake.session), { wrapper })
 
     setVisibility('hidden')
-    act(() => jest.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS - 1))
+    act(() => vi.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS - 1))
     expect(fake.mocks.pause).not.toHaveBeenCalled()
 
-    act(() => jest.advanceTimersByTime(1))
+    act(() => vi.advanceTimersByTime(1))
     expect(fake.mocks.pause).toHaveBeenCalledTimes(1)
 
     fake.setSnapshot({ status: { name: 'paused' } })
@@ -113,24 +113,24 @@ describe('usePauseWhileAway', () => {
   })
 
   test('a tab shown again within the hour never pauses', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const fake = createFakeSession({ status: { name: 'connected' } })
     renderHook(() => usePauseWhileAway(fake.session), { wrapper })
 
     setVisibility('hidden')
-    act(() => jest.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS / 2))
+    act(() => vi.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS / 2))
     setVisibility('visible')
-    act(() => jest.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS))
+    act(() => vi.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS))
 
     expect(fake.mocks.pause).not.toHaveBeenCalled()
   })
 
   test('showing the tab while offline keeps the session paused', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const fake = createFakeSession({ status: { name: 'connected' } })
     renderHook(() => usePauseWhileAway(fake.session), { wrapper })
     setVisibility('hidden')
-    act(() => jest.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS))
+    act(() => vi.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS))
     fake.setSnapshot({ status: { name: 'paused' } })
 
     onLine = false
@@ -179,12 +179,12 @@ describe('usePauseWhileAway', () => {
   })
 
   test('a tab already hidden when it mounts pauses after an hour', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     visibilityState = 'hidden'
     const fake = createFakeSession({ status: { name: 'connected' } })
     renderHook(() => usePauseWhileAway(fake.session), { wrapper })
 
-    act(() => jest.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS))
+    act(() => vi.advanceTimersByTime(PAUSE_WHEN_HIDDEN_FOR_MS))
 
     expect(fake.mocks.pause).toHaveBeenCalledTimes(1)
   })

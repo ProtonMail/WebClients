@@ -26,11 +26,11 @@ function textOf(state: Uint8Array<ArrayBuffer>) {
 
 describe('NativeVersionHistory', () => {
   beforeAll(() => {
-    jest.useFakeTimers().setSystemTime(new Date('2023-07-08'))
+    vi.useFakeTimers().setSystemTime(new Date('2023-07-08'))
     setDateLocales({ dateLocale: enUSLocale })
   })
   afterAll(() => {
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
 
   // Copied from packages/docs-core/lib/VersionHistory/NativeVersionHistory.spec.ts, over the SDK's History Log entries

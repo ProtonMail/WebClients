@@ -1,3 +1,5 @@
+import type * as ReactModule from 'react'
+import type * as UseDocumentFileActions from '../__utils/useDocumentFileActions'
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
@@ -30,52 +32,54 @@ import type { DocumentDebugMenuProps } from './DocumentDebugMenu'
 import { DocumentViewerV2 } from './DocumentViewerV2'
 
 const mockRealtimeClient = {
-  seedInitialCommit: jest.fn(),
-  createSession: jest.fn(),
+  seedInitialCommit: vi.fn(),
+  createSession: vi.fn(),
   prefetchBootstrap: () => ({ confirm: () => {}, end: () => {} }),
 }
-jest.mock('../__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockRealtimeClient }))
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('../__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockRealtimeClient }))
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
-const mockGetNodeHierarchy = jest.fn()
-const mockGetAvailableName = jest.fn(async (_parentUid: string, name: string) => name)
-jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ UID: 'session-uid', getLocalID: () => 3 }))
-jest.mock('@proton/shared/lib/helpers/window', () => ({ getNewWindow: jest.fn() }))
-jest.mock('@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName', () => ({
+const mockGetNodeHierarchy = vi.fn()
+const mockGetAvailableName = vi.fn(async (_parentUid: string, name: string) => name)
+vi.mock('@proton/components/hooks/useAuthentication', () => ({
+  default: () => ({ UID: 'session-uid', getLocalID: () => 3 }),
+}))
+vi.mock('@proton/shared/lib/helpers/window', () => ({ getNewWindow: vi.fn() }))
+vi.mock('@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName', () => ({
   getPlatformFriendlyDateForFileName: () => '2026-11-10 09.00.00',
 }))
-jest.mock('@proton/drive/public/moveItemsModal', () => ({
-  useMoveItemsModal: () => ({ moveItemsModal: null, showMoveItemsModal: jest.fn() }),
+vi.mock('@proton/drive/public/moveItemsModal', () => ({
+  useMoveItemsModal: () => ({ moveItemsModal: null, showMoveItemsModal: vi.fn() }),
 }))
 const mockIsFlagEnabled = () => false
-jest.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => mockIsFlagEnabled }))
+vi.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => mockIsFlagEnabled }))
 /** The toasts shown, in order: each has its text, which may hold a button */
 type MockNotification = { type?: string; text: ReactNode; expiration?: number }
 const mockNotifications: MockNotification[] = []
-const mockCreateNotification = jest.fn((notification: MockNotification) => mockNotifications.push(notification))
-const mockHideNotification = jest.fn()
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn((notification: MockNotification) => mockNotifications.push(notification))
+const mockHideNotification = vi.fn()
+vi.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: mockCreateNotification, hideNotification: mockHideNotification }),
 }))
 
 let mockIsODTEnabled = false
-jest.mock('~/utils/flags', () => ({
+vi.mock('~/utils/flags', () => ({
   useIsDarkThemeEnabled: () => false,
   useIsODTEnabled: () => mockIsODTEnabled,
   useIsSheetsEnabled: () => false,
 }))
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }))
-jest.mock('~/drive-sdk/event-subscriber', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }))
+vi.mock('~/drive-sdk/event-subscriber', () => ({
   getEventSubscriber: () => ({ initialize: async () => {}, reset: () => {} }),
 }))
-jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({ Locale: 'fr_FR' }) }))
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({ Locale: 'fr_FR' }) }))
+vi.mock('@proton/account/user/hooks', () => ({
   useUser: () => [{ DisplayName: 'Alice', Name: 'alice', Email: 'alice@example.com' }],
 }))
 // The app shell and the header need the whole app around them; the header has its own tests
-jest.mock('./DocumentShell', () => ({
+vi.mock('./DocumentShell', () => ({
   DocumentShell: ({
     header,
     children,
@@ -92,7 +96,7 @@ jest.mock('./DocumentShell', () => ({
     </>
   ),
 }))
-jest.mock('./ErrorHeader', () => ({ ErrorHeader: () => null }))
+vi.mock('./ErrorHeader', () => ({ ErrorHeader: () => null }))
 // The file actions have their own tests; here, that the viewer feeds them and routes the file menu to them. The
 // history's Make a copy runs the real ones, on the fake seeding client and the fake Drive
 let mockRealFileActions = false
@@ -100,34 +104,37 @@ const mockFileActions = {
   trashState: 'not_trashed',
   isCreatingSpreadsheet: false,
   isMakingACopy: false,
-  newDocument: jest.fn(),
-  newSpreadsheet: jest.fn(),
-  makeACopy: jest.fn(),
-  makeACopyOfRevision: jest.fn(async (_state: Uint8Array<ArrayBuffer>) => {}),
-  moveToFolder: jest.fn(),
-  moveToTrash: jest.fn(),
-  openProtonDrive: jest.fn(),
+  newDocument: vi.fn(),
+  newSpreadsheet: vi.fn(),
+  makeACopy: vi.fn(),
+  makeACopyOfRevision: vi.fn(async (_state: Uint8Array<ArrayBuffer>) => {}),
+  moveToFolder: vi.fn(),
+  moveToTrash: vi.fn(),
+  openProtonDrive: vi.fn(),
   modals: <div>File action modals</div>,
 }
-const mockUseDocumentFileActions = jest.fn(
+const mockUseDocumentFileActions = vi.fn(
   (_options: unknown): Omit<typeof mockFileActions, 'trashState'> & { trashState: string } => mockFileActions,
 )
-jest.mock('../__utils/useDocumentFileActions', () => ({
-  useDocumentFileActions: (options: unknown) =>
-    mockRealFileActions
-      ? jest.requireActual('../__utils/useDocumentFileActions').useDocumentFileActions(options)
-      : mockUseDocumentFileActions(options),
-}))
-const mockCreateDocumentNode = jest.fn()
-const mockGetMyFilesNodeMeta = jest.fn()
+vi.mock('../__utils/useDocumentFileActions', async () => {
+  const actual = await vi.importActual<typeof UseDocumentFileActions>('../__utils/useDocumentFileActions')
+  return {
+    useDocumentFileActions: (options: unknown) =>
+      mockRealFileActions
+        ? actual.useDocumentFileActions(options as Parameters<typeof actual.useDocumentFileActions>[0])
+        : mockUseDocumentFileActions(options),
+  }
+})
+const mockCreateDocumentNode = vi.fn()
+const mockGetMyFilesNodeMeta = vi.fn()
 const DRIVE_COMPAT = {
   name: 'driveCompat',
   createDocumentNode: mockCreateDocumentNode,
   getMyFilesNodeMeta: mockGetMyFilesNodeMeta,
 } as unknown as DriveCompat
-const mockApi = jest.fn(async (_request: unknown): Promise<unknown> => ({}))
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }))
-jest.mock('./DocumentHeaderV2', () => ({
+const mockApi = vi.fn(async (_request: unknown): Promise<unknown> => ({}))
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }))
+vi.mock('./DocumentHeaderV2', () => ({
   DocumentHeaderV2: ({
     node,
     role,
@@ -153,34 +160,34 @@ jest.mock('./DocumentHeaderV2', () => ({
   ),
 }))
 // Each has its own tests; here, what the viewer asks of them
-const mockExportAndDownload = jest.fn(async (..._args: unknown[]) => {})
-jest.mock('../__utils/downloadExport', () => ({
+const mockExportAndDownload = vi.fn(async (..._args: unknown[]) => {})
+vi.mock('../__utils/downloadExport', () => ({
   exportAndDownload: (...args: unknown[]) => mockExportAndDownload(...args),
 }))
-const mockDownloadJSONFile = jest.fn()
-jest.mock('~/utils/download-json-file', () => ({
+const mockDownloadJSONFile = vi.fn()
+vi.mock('~/utils/download-json-file', () => ({
   downloadJSONFile: (...args: unknown[]) => mockDownloadJSONFile(...args),
 }))
-const mockDownloadFile = jest.fn()
-jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+const mockDownloadFile = vi.fn()
+vi.mock('@proton/shared/lib/helpers/downloadFile', () => ({
   __esModule: true,
   default: (...args: unknown[]) => mockDownloadFile(...args),
 }))
-const mockFetchExternalImageAsBase64 = jest.fn(async (..._args: unknown[]) => 'data:image/png;base64,iVBORw0K')
-jest.mock('../__utils/fetchExternalImageAsBase64', () => ({
+const mockFetchExternalImageAsBase64 = vi.fn(async (..._args: unknown[]) => 'data:image/png;base64,iVBORw0K')
+vi.mock('../__utils/fetchExternalImageAsBase64', () => ({
   fetchExternalImageAsBase64: (...args: unknown[]) => mockFetchExternalImageAsBase64(...args),
 }))
 
 // It has its own tests; here, that debug mode gates it and what the viewer gives it
 let mockDebugMenuProps: DocumentDebugMenuProps | undefined
-jest.mock('./DocumentDebugMenu', () => ({
+vi.mock('./DocumentDebugMenu', () => ({
   DocumentDebugMenu: (props: DocumentDebugMenuProps) => {
     mockDebugMenuProps = props
     return <div>Debug menu</div>
   },
 }))
 
-jest.mock('./OpenActionError', () => ({
+vi.mock('./OpenActionError', () => ({
   OpenActionError: ({ reason, onRetry }: { reason: string; onRetry?: () => void }) => (
     <div>
       {`Open failed: ${reason}`}
@@ -189,7 +196,7 @@ jest.mock('./OpenActionError', () => ({
   ),
 }))
 // It has its own tests; here, only which failure it gets and that Reload opens the document again
-jest.mock('./BootstrapErrorPage', () => ({
+vi.mock('./BootstrapErrorPage', () => ({
   BootstrapErrorPage: ({ failure, onRetry }: { failure: string; onRetry: () => void }) => (
     <div>
       {`Bootstrap failed: ${failure}`}
@@ -199,16 +206,16 @@ jest.mock('./BootstrapErrorPage', () => ({
 }))
 
 const mockEditorCalls: string[] = []
-const mockChangeLockedState = jest.fn(async (_locked: boolean) => {})
-const mockDestroyBridge = jest.fn()
-const mockLoadUserSettings = jest.fn(async () => {})
-const mockPrintAsPDF = jest.fn(async () => {})
+const mockChangeLockedState = vi.fn(async (_locked: boolean) => {})
+const mockDestroyBridge = vi.fn()
+const mockLoadUserSettings = vi.fn(async () => {})
+const mockPrintAsPDF = vi.fn(async () => {})
 /** The live editor's state, as a restore reads it and Undo gives it back */
 const LIVE_EDITOR_STATE = { root: { children: [{ type: 'paragraph' }], type: 'root' } }
-const mockLiveGetCurrentEditorState = jest.fn(async (): Promise<object | undefined> => LIVE_EDITOR_STATE)
-const mockReplaceEditorState = jest.fn(async (_state: unknown) => {})
+const mockLiveGetCurrentEditorState = vi.fn(async (): Promise<object | undefined> => LIVE_EDITOR_STATE)
+const mockReplaceEditorState = vi.fn(async (_state: unknown) => {})
 const EDITOR_CLIENT_ID = 7
-const mockReceiveMessage = jest.fn(async ({ content }: RtsMessagePayload) => {
+const mockReceiveMessage = vi.fn(async ({ content }: RtsMessagePayload) => {
   mockEditorCalls.push(`receiveMessage:${content[0]}`)
 })
 let mockClientHandler: ClientHandler
@@ -220,46 +227,46 @@ const mockRevisionStates: Uint8Array<ArrayBuffer>[] = []
 const REVISION_EDITOR_STATE = { root: { children: [], type: 'root' } }
 const REVISION_YJS_STATE = new Uint8Array([9, 9])
 const mockRevisionInvoker = {
-  initializeEditor: jest.fn(async (..._args: unknown[]) => {
+  initializeEditor: vi.fn(async (..._args: unknown[]) => {
     mockRevisionCalls.push('initializeEditor')
   }),
-  receiveMessage: jest.fn(async ({ type, content }: RtsMessagePayload) => {
+  receiveMessage: vi.fn(async ({ type, content }: RtsMessagePayload) => {
     mockRevisionCalls.push(`receiveMessage:${type.wrapper}`)
     if (type.wrapper === 'du') {
       mockRevisionStates.push(content)
     }
   }),
-  showEditor: jest.fn(async () => {
+  showEditor: vi.fn(async () => {
     mockRevisionCalls.push('showEditor')
   }),
-  setDarkMode: jest.fn(async () => {}),
-  getCurrentEditorState: jest.fn(async () => REVISION_EDITOR_STATE),
-  getDocumentState: jest.fn(async () => REVISION_YJS_STATE),
+  setDarkMode: vi.fn(async () => {}),
+  getCurrentEditorState: vi.fn(async () => REVISION_EDITOR_STATE),
+  getDocumentState: vi.fn(async () => REVISION_YJS_STATE),
 }
-jest.mock('../__utils/ClientEditorBridge', () => ({
-  ClientEditorBridge: jest.fn().mockImplementation((frame: HTMLIFrameElement, clientHandler: ClientHandler) => {
+vi.mock('../__utils/ClientEditorBridge', () => ({
+  ClientEditorBridge: vi.fn().mockImplementation(function (frame: HTMLIFrameElement, clientHandler: ClientHandler) {
     if (frame.dataset.systemMode === 'revision') {
-      return { editorInvoker: mockRevisionInvoker, destroy: jest.fn() }
+      return { editorInvoker: mockRevisionInvoker, destroy: vi.fn() }
     }
     mockClientHandler = clientHandler
     return {
       editorInvoker: {
-        initializeEditor: jest.fn(async () => {
+        initializeEditor: vi.fn(async () => {
           mockEditorCalls.push('initializeEditor')
         }),
         receiveMessage: mockReceiveMessage,
-        showEditor: jest.fn(async () => {
+        showEditor: vi.fn(async () => {
           mockEditorCalls.push('showEditor')
         }),
         changeLockedState: mockChangeLockedState,
-        setDarkMode: jest.fn(async () => {}),
+        setDarkMode: vi.fn(async () => {}),
         loadUserSettings: mockLoadUserSettings,
-        syncProperty: jest.fn(async (property: string) => {
+        syncProperty: vi.fn(async (property: string) => {
           mockEditorCalls.push(`syncProperty:${property}`)
         }),
-        setTableOfContentsVisible: jest.fn(async () => {}),
-        getClientId: jest.fn(async () => EDITOR_CLIENT_ID),
-        broadcastPresenceState: jest.fn(async () => {
+        setTableOfContentsVisible: vi.fn(async () => {}),
+        getClientId: vi.fn(async () => EDITOR_CLIENT_ID),
+        broadcastPresenceState: vi.fn(async () => {
           mockEditorCalls.push('broadcastPresenceState')
         }),
         printAsPDF: mockPrintAsPDF,
@@ -270,8 +277,8 @@ jest.mock('../__utils/ClientEditorBridge', () => ({
     }
   }),
 }))
-jest.mock('~/components/document/EditorFrame', () => {
-  const { useEffect } = jest.requireActual('react')
+vi.mock('~/components/document/EditorFrame', async () => {
+  const { useEffect } = await vi.importActual<typeof ReactModule>('react')
   return {
     EditorFrame: ({
       onFrameReady,
@@ -343,7 +350,7 @@ function renderViewer(
   fake: ReturnType<typeof createFakeSession>,
   {
     role = 'Viewer',
-    onRetry = jest.fn(),
+    onRetry = vi.fn(),
     readHierarchy = async () => hierarchy(role),
     downloadOnOpen,
     onDownloadedOnOpen,
@@ -362,14 +369,14 @@ function renderViewer(
     strict?: boolean
   } = {},
 ) {
-  jest.mocked(getDrive).mockReturnValue({
+  vi.mocked(getDrive).mockReturnValue({
     getNodeHierarchy: mockGetNodeHierarchy,
     getAvailableName: mockGetAvailableName,
   } as unknown as ReturnType<typeof getDrive>)
   mockGetNodeHierarchy.mockImplementation(readHierarchy)
   mockRealtimeClient.createSession.mockReturnValue(fake.session)
   const application = {
-    logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+    logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
   } as unknown as ApplicationProviderProps['application']
   const viewer = () => {
     const page = (
@@ -425,7 +432,7 @@ async function renderRevealed(
 describe('DocumentViewerV2', () => {
   afterEach(() => {
     mockEditorCalls.length = 0
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   test('connects once the editor holds the base state, and initializes and shows the editor only once the session catches up', async () => {
@@ -521,7 +528,7 @@ describe('DocumentViewerV2', () => {
       let answerShowEditor = () => {}
       renderViewer(fake, { role: 'Editor' })
       await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
-      const { editorInvoker } = jest.mocked(ClientEditorBridge).mock.results.at(-1)!.value
+      const { editorInvoker } = vi.mocked(ClientEditorBridge).mock.results.at(-1)!.value
       editorInvoker.showEditor.mockImplementationOnce(
         () => new Promise<void>((resolve) => (answerShowEditor = resolve)),
       )
@@ -566,11 +573,16 @@ describe('DocumentViewerV2', () => {
 
     test('shows the document in a browser that places no marks', async () => {
       performanceSpy().mockRestore()
-      expect(performance.mark).toBeUndefined()
+      vi.stubGlobal('performance', {})
+      try {
+        expect(performance.mark).toBeUndefined()
 
-      await renderShown(createSession())
+        await renderShown(createSession())
 
-      expect(mockEditorCalls).toContain('showEditor')
+        expect(mockEditorCalls).toContain('showEditor')
+      } finally {
+        vi.unstubAllGlobals()
+      }
     })
   })
 
@@ -1014,7 +1026,7 @@ describe('DocumentViewerV2', () => {
     })
 
     test('opens once out of the trash, restored here or elsewhere', async () => {
-      const onRetry = jest.fn()
+      const onRetry = vi.fn()
       mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, trashState: 'trashed' })
       const { rerender } = renderViewer(createSession(), { onRetry, readHierarchy: trashed })
       await screen.findByText('Header for VOLUME~LINK as Admin, without the editor')
@@ -1078,15 +1090,15 @@ describe('DocumentViewerV2', () => {
   test('new file actions on a rerender reach the editor without rebuilding the bridge', async () => {
     const { rerender } = renderViewer(createSession(), { role: 'Admin' })
     await waitFor(() => expect(mockClientHandler).toBeDefined())
-    const bridges = jest.mocked(ClientEditorBridge).mock.calls.length
-    const moveToTrash = jest.fn()
+    const bridges = vi.mocked(ClientEditorBridge).mock.calls.length
+    const moveToTrash = vi.fn()
     mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, moveToTrash })
 
     rerender()
     await act(() => mockClientHandler.handleFileMenuAction({ type: 'move-to-trash' }))
 
     expect(moveToTrash).toHaveBeenCalledTimes(1)
-    expect(jest.mocked(ClientEditorBridge).mock.calls.length).toBe(bridges)
+    expect(vi.mocked(ClientEditorBridge).mock.calls.length).toBe(bridges)
     mockUseDocumentFileActions.mockReturnValue(mockFileActions)
   })
 
@@ -1148,7 +1160,7 @@ describe('DocumentViewerV2', () => {
       () => ({ readHierarchy: async () => hierarchy('Editor', { mediaType: 'application/pdf' }) }),
     ],
   ])('a load that failed for %s shows "%s", given a retry: %s', async (_, text, canRetry, failure) => {
-    const onRetry = jest.fn()
+    const onRetry = vi.fn()
     const fake = createSession()
     renderViewer(fake, { onRetry, ...failure(fake) })
 
@@ -1181,7 +1193,7 @@ describe('DocumentViewerV2', () => {
   test.each<RecoveryCondition>(['permissionsChanged', 'authExpired', 'clientRejected'])(
     "a session stopped for %s shows /doc's Offline pill, with no action of its own",
     async (condition) => {
-      const onRetry = jest.fn()
+      const onRetry = vi.fn()
       const fake = createSession()
       await renderShown(fake, { onRetry })
 
@@ -1344,7 +1356,7 @@ describe('DocumentViewerV2', () => {
 
     test("Drive's Download saves the document as docx once the editor shows it, says so, and only once", async () => {
       const fake = createSession()
-      const onDownloadedOnOpen = jest.fn()
+      const onDownloadedOnOpen = vi.fn()
       renderViewer(fake, { downloadOnOpen: true, onDownloadedOnOpen })
       await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
       expect(mockExportAndDownload).not.toHaveBeenCalled()
@@ -1473,7 +1485,7 @@ describe('DocumentViewerV2', () => {
       async (role) => {
         const fake = createSession()
         fake.mocks.getHistory.mockReturnValue(historyLog(25))
-        const onHistoryOpenedOnOpen = jest.fn()
+        const onHistoryOpenedOnOpen = vi.fn()
         renderViewer(fake, { role, historyOnOpen: true, onHistoryOpenedOnOpen })
         await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
 
@@ -1510,7 +1522,7 @@ describe('DocumentViewerV2', () => {
     test('mode history opens it once in StrictMode too', async () => {
       const fake = createSession()
       fake.mocks.getHistory.mockReturnValue(historyLog(3))
-      const onHistoryOpenedOnOpen = jest.fn()
+      const onHistoryOpenedOnOpen = vi.fn()
       await renderRevealed(fake, { historyOnOpen: true, onHistoryOpenedOnOpen, strict: true })
 
       await waitFor(() => expect(modal()).toBeInTheDocument())
@@ -1744,11 +1756,11 @@ describe('DocumentViewerV2', () => {
     })
 
     describe('Make a copy', () => {
-      const newWindow = { handle: { location: { assign: jest.fn() } }, close: jest.fn() }
+      const newWindow = { handle: { location: { assign: vi.fn() } }, close: vi.fn() }
 
       beforeEach(() => {
         mockRealFileActions = true
-        jest.mocked(getNewWindow).mockReturnValue(newWindow as unknown as ReturnType<typeof getNewWindow>)
+        vi.mocked(getNewWindow).mockReturnValue(newWindow as unknown as ReturnType<typeof getNewWindow>)
         mockCreateDocumentNode.mockResolvedValue({ volumeId: 'VOLUME', linkId: 'COPY', keys: {} })
         mockGetMyFilesNodeMeta.mockResolvedValue({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
         mockRealtimeClient.seedInitialCommit.mockResolvedValue({ commitId: 'COMMIT' })

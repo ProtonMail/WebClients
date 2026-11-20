@@ -7,8 +7,8 @@ import { HomepageInvitationsLoader, useHomepageInvitations } from './HomepageInv
 type Invitation = ReturnType<DocInvitesHook>['invitations'][number]
 
 const invitation = { invitation: { invitationId: 'invitation1' } } as Invitation
-const acceptInvite = jest.fn()
-const rejectInvite = jest.fn()
+const acceptInvite = vi.fn()
+const rejectInvite = vi.fn()
 // The same array across renders, as both real hooks return until the invitations change
 const invitations = [invitation]
 
@@ -22,14 +22,14 @@ const useFakeDocInvites: DocInvitesHook = () => {
     acceptInvite,
     rejectInvite,
     confirmModal: <dialog open>Decline invitation?</dialog>,
-    inviteForNodeMeta: jest.fn(),
+    inviteForNodeMeta: vi.fn(),
     isLoading: false,
   }
 }
 
 describe('HomepageInvitationsLoader', () => {
   test('passes what the hook returns to onChange and renders its confirmation modal', () => {
-    const onChange = jest.fn()
+    const onChange = vi.fn()
 
     render(<HomepageInvitationsLoader useDocInvites={useFakeDocInvites} onChange={onChange} />)
 
@@ -38,7 +38,7 @@ describe('HomepageInvitationsLoader', () => {
     )
     expect(screen.getByRole('dialog')).toHaveTextContent('Decline invitation?')
 
-    const { acceptInvitation, declineInvitation } = onChange.mock.lastCall[0]
+    const { acceptInvitation, declineInvitation } = onChange.mock.lastCall![0]
     void acceptInvitation(invitation)
     void declineInvitation(invitation)
     expect(acceptInvite).toHaveBeenCalledWith(invitation)
@@ -46,7 +46,7 @@ describe('HomepageInvitationsLoader', () => {
   })
 
   test('passes nothing new when the hook only returns new functions, and calls the latest ones', () => {
-    const latestAcceptInvite = jest.fn()
+    const latestAcceptInvite = vi.fn()
     let rerenderHook = () => {}
     const useHookWithNewFunctions: DocInvitesHook = () => {
       const [renders, setRenders] = useState(0)
@@ -57,18 +57,18 @@ describe('HomepageInvitationsLoader', () => {
         acceptInvite: renders === 0 ? () => acceptInvite() : latestAcceptInvite,
       }
     }
-    const onChange = jest.fn()
+    const onChange = vi.fn()
     render(<HomepageInvitationsLoader useDocInvites={useHookWithNewFunctions} onChange={onChange} />)
 
     act(() => rerenderHook())
 
     expect(onChange).toHaveBeenCalledTimes(1)
-    void onChange.mock.lastCall[0].acceptInvitation(invitation)
+    void onChange.mock.lastCall![0].acceptInvitation(invitation)
     expect(latestAcceptInvite).toHaveBeenCalledWith(invitation)
   })
 
   test('passes the invitations again when the hook updates them', () => {
-    const onChange = jest.fn()
+    const onChange = vi.fn()
     render(<HomepageInvitationsLoader useDocInvites={useFakeDocInvites} onChange={onChange} />)
 
     act(() => acceptInvitationFromHook())

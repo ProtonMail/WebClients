@@ -8,12 +8,12 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 import { createFakeSession } from './createFakeSession'
 import { useSessionNotices } from './useSessionNotices'
 
-const mockCreateNotification = jest.fn()
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn()
+vi.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: mockCreateNotification }),
 }))
 
-const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() }
+const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 
 const wrapper = ({ children }: { children: ReactNode }) => (
@@ -28,7 +28,7 @@ function renderNotices() {
 
 describe('useSessionNotices', () => {
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   test.each<[Refusal, string]>([

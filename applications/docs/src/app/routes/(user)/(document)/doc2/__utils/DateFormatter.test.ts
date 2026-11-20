@@ -7,10 +7,10 @@ import { DateFormatter } from './DateFormatter'
 describe('DateFormatter', () => {
   beforeAll(() => {
     setDateLocales({ dateLocale: enUSLocale })
-    jest.useFakeTimers().setSystemTime(new Date('2023-07-08'))
+    vi.useFakeTimers().setSystemTime(new Date('2023-07-08'))
   })
   afterAll(() => {
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
   describe('formatDate', () => {
     it.each([

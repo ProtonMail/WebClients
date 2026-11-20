@@ -5,18 +5,18 @@ import { handleRestoreError, restoreAndNotify, trashAndNotify, trashManyAndNotif
 import type { ErrorTracking } from '../utils/errorTracking'
 import { defaultHomepageMessages } from '../messages/defaultHomepageMessages'
 
-jest.mock('./trash', () => ({
-  reportTrashError: jest.fn(),
-  trashDocument: jest.fn(),
-  restoreDocument: jest.fn(),
+vi.mock('./trash', () => ({
+  reportTrashError: vi.fn(),
+  trashDocument: vi.fn(),
+  restoreDocument: vi.fn(),
 }))
 
-jest.mock('./trashMany', () => ({ trashDocuments: jest.fn(), restoreDocuments: jest.fn() }))
+vi.mock('./trashMany', () => ({ trashDocuments: vi.fn(), restoreDocuments: vi.fn() }))
 
 const drive = {} as ProtonDriveClient
-const createNotification = jest.fn()
+const createNotification = vi.fn()
 const errorTracking = {} as ErrorTracking
-const onRestored = jest.fn()
+const onRestored = vi.fn()
 const messages = defaultHomepageMessages.trash
 
 async function clickUndo(callIndex = 0) {
@@ -25,13 +25,13 @@ async function clickUndo(callIndex = 0) {
 
 const undoAction = { label: 'Undo', onClick: expect.any(Function) }
 
-const reportedErrors = () => jest.mocked(reportTrashError).mock.calls.map(([, error]) => error)
+const reportedErrors = () => vi.mocked(reportTrashError).mock.calls.map(([, error]) => error)
 
 const permissionError = new Error('Forbidden: Insufficient permissions; UID=a')
 
 describe('handleRestoreError', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('shows the shared folder message and does not report a permission error', () => {
@@ -55,11 +55,11 @@ describe('handleRestoreError', () => {
 })
 
 describe('trashAndNotify', () => {
-  const emitRestored = jest.fn()
+  const emitRestored = vi.fn()
 
   beforeEach(() => {
-    jest.clearAllMocks()
-    jest.mocked(trashDocument).mockResolvedValue(undefined)
+    vi.clearAllMocks()
+    vi.mocked(trashDocument).mockResolvedValue(undefined)
   })
 
   it('trashes the document and shows a success toast with Undo', async () => {
@@ -81,7 +81,7 @@ describe('trashAndNotify', () => {
   })
 
   it('does not notify when trashing fails', async () => {
-    jest.mocked(trashDocument).mockRejectedValue(new Error('e1'))
+    vi.mocked(trashDocument).mockRejectedValue(new Error('e1'))
 
     await expect(
       trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true, messages),
@@ -91,7 +91,7 @@ describe('trashAndNotify', () => {
   })
 
   it('undo restores the document, shows a toast and calls emitRestored', async () => {
-    jest.mocked(restoreDocument).mockResolvedValue(undefined)
+    vi.mocked(restoreDocument).mockResolvedValue(undefined)
     await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true, messages)
 
     await clickUndo()
@@ -102,7 +102,7 @@ describe('trashAndNotify', () => {
   })
 
   it('undo that fails runs handleRestoreError and does not call emitRestored', async () => {
-    jest.mocked(restoreDocument).mockRejectedValue(permissionError)
+    vi.mocked(restoreDocument).mockRejectedValue(permissionError)
     await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true, messages)
 
     await clickUndo()
@@ -117,11 +117,11 @@ describe('trashAndNotify', () => {
 })
 
 describe('restoreAndNotify', () => {
-  const emitTrashed = jest.fn()
+  const emitTrashed = vi.fn()
 
   beforeEach(() => {
-    jest.clearAllMocks()
-    jest.mocked(restoreDocument).mockResolvedValue(undefined)
+    vi.clearAllMocks()
+    vi.mocked(restoreDocument).mockResolvedValue(undefined)
   })
 
   it('restores the document and shows a success toast with Undo', async () => {
@@ -137,7 +137,7 @@ describe('restoreAndNotify', () => {
   })
 
   it('does not notify when restoring fails', async () => {
-    jest.mocked(restoreDocument).mockRejectedValue(new Error('e1'))
+    vi.mocked(restoreDocument).mockRejectedValue(new Error('e1'))
 
     await expect(
       restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed, messages),
@@ -147,7 +147,7 @@ describe('restoreAndNotify', () => {
   })
 
   it('undo trashes the document, shows a toast and calls emitTrashed', async () => {
-    jest.mocked(trashDocument).mockResolvedValue(undefined)
+    vi.mocked(trashDocument).mockResolvedValue(undefined)
     await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed, messages)
 
     await clickUndo()
@@ -159,7 +159,7 @@ describe('restoreAndNotify', () => {
 
   it('undo that fails shows an error toast, reports the error and does not call emitTrashed', async () => {
     const error = new Error('e1')
-    jest.mocked(trashDocument).mockRejectedValue(error)
+    vi.mocked(trashDocument).mockRejectedValue(error)
     await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed, messages)
 
     await clickUndo()
@@ -175,12 +175,12 @@ describe('trashManyAndNotify', () => {
   const e2 = new Error('e2')
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('shows one success toast with Undo when all items are trashed', async () => {
     const batch = { succeeded: ['a', 'b'], failed: [] }
-    jest.mocked(trashDocuments).mockResolvedValue(batch)
+    vi.mocked(trashDocuments).mockResolvedValue(batch)
 
     const result = await trashManyAndNotify(
       drive,
@@ -203,7 +203,7 @@ describe('trashManyAndNotify', () => {
   })
 
   it('offers no Undo when a document is shared with the user', async () => {
-    jest.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [] })
+    vi.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [] })
 
     await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b'], onRestored, false, messages)
 
@@ -211,7 +211,7 @@ describe('trashManyAndNotify', () => {
   })
 
   it('shows success and error toasts on partial failure and reports each distinct error once', async () => {
-    jest.mocked(trashDocuments).mockResolvedValue({
+    vi.mocked(trashDocuments).mockResolvedValue({
       succeeded: ['a'],
       failed: [
         { uid: 'b', error: e1 },
@@ -233,7 +233,7 @@ describe('trashManyAndNotify', () => {
   })
 
   it('shows only an error toast when nothing was trashed', async () => {
-    jest.mocked(trashDocuments).mockResolvedValue({ succeeded: [], failed: [{ uid: 'a', error: e1 }] })
+    vi.mocked(trashDocuments).mockResolvedValue({ succeeded: [], failed: [{ uid: 'a', error: e1 }] })
 
     await trashManyAndNotify(drive, createNotification, errorTracking, ['a'], onRestored, true, messages)
 
@@ -242,8 +242,8 @@ describe('trashManyAndNotify', () => {
   })
 
   it('undo restores only the trashed uids and calls onRestored', async () => {
-    jest.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [{ uid: 'c', error: e1 }] })
-    jest.mocked(restoreDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [] })
+    vi.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [{ uid: 'c', error: e1 }] })
+    vi.mocked(restoreDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [] })
     await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c'], onRestored, true, messages)
 
     await clickUndo()
@@ -254,8 +254,8 @@ describe('trashManyAndNotify', () => {
   })
 
   it('undo with failures shows one restore error and reports the other errors', async () => {
-    jest.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b', 'c'], failed: [] })
-    jest.mocked(restoreDocuments).mockResolvedValue({
+    vi.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b', 'c'], failed: [] })
+    vi.mocked(restoreDocuments).mockResolvedValue({
       succeeded: [],
       failed: [
         { uid: 'a', error: new Error('x Insufficient permissions') },

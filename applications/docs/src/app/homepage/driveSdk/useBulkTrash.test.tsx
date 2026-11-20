@@ -11,13 +11,13 @@ import { useBulkTrash } from './useBulkTrash'
 import { defaultHomepageMessages } from '../messages/defaultHomepageMessages'
 import { TelemetryEvent } from '../utils/telemetry'
 
-jest.mock('./trashRestoreNotify', () => ({ trashManyAndNotify: jest.fn() }))
+vi.mock('./trashRestoreNotify', () => ({ trashManyAndNotify: vi.fn() }))
 
-const mockCreateNotification = jest.fn()
+const mockCreateNotification = vi.fn()
 
-const mockUpdateRecentDocuments = jest.fn()
+const mockUpdateRecentDocuments = vi.fn()
 
-const mockReportTelemetry = jest.fn()
+const mockReportTelemetry = vi.fn()
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
   return RecentDocumentsItem.create({
@@ -61,8 +61,8 @@ const renderBulkTrash = () => renderHook(() => useBulkTrash({ drive }), { wrappe
 
 describe('useBulkTrash', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
-    jest.mocked(trashManyAndNotify).mockResolvedValue({ succeeded: [], failed: [] })
+    vi.clearAllMocks()
+    vi.mocked(trashManyAndNotify).mockResolvedValue({ succeeded: [], failed: [] })
   })
 
   it('trashes node uids built from volumeId and linkId and reloads on undo', async () => {
@@ -79,7 +79,7 @@ describe('useBulkTrash', () => {
       true,
       defaultHomepageMessages.trash,
     )
-    const onRestored = jest.mocked(trashManyAndNotify).mock.calls[0][4]
+    const onRestored = vi.mocked(trashManyAndNotify).mock.calls[0][4]
     onRestored()
     expect(mockUpdateRecentDocuments).toHaveBeenCalled()
   })
@@ -90,11 +90,11 @@ describe('useBulkTrash', () => {
 
     await act(() => result.current.trash([d1, shared]))
 
-    expect(jest.mocked(trashManyAndNotify).mock.calls[0][5]).toBe(false)
+    expect(vi.mocked(trashManyAndNotify).mock.calls[0][5]).toBe(false)
   })
 
   it('reloads once and reports telemetry per trashed item', async () => {
-    jest.mocked(trashManyAndNotify).mockResolvedValue({ succeeded: [uid(d1), uid(d2)], failed: [] })
+    vi.mocked(trashManyAndNotify).mockResolvedValue({ succeeded: [uid(d1), uid(d2)], failed: [] })
     const { result } = renderBulkTrash()
 
     let failed: RecentDocumentsItem[] = []
@@ -109,7 +109,7 @@ describe('useBulkTrash', () => {
   })
 
   it('returns the failed documents and does not reload when nothing succeeded', async () => {
-    jest.mocked(trashManyAndNotify).mockResolvedValue({
+    vi.mocked(trashManyAndNotify).mockResolvedValue({
       succeeded: [],
       failed: [{ uid: uid(d2), error: new Error('nope') }],
     })
@@ -127,7 +127,7 @@ describe('useBulkTrash', () => {
 
   it('isTrashing is true while the batch runs', async () => {
     let resolve!: (value: { succeeded: string[]; failed: never[] }) => void
-    jest.mocked(trashManyAndNotify).mockReturnValue(new Promise((r) => (resolve = r)))
+    vi.mocked(trashManyAndNotify).mockReturnValue(new Promise((r) => (resolve = r)))
     const { result } = renderBulkTrash()
 
     let promise!: Promise<RecentDocumentsItem[]>
@@ -142,7 +142,7 @@ describe('useBulkTrash', () => {
   })
 
   it('isTrashing resets when trashManyAndNotify rejects', async () => {
-    jest.mocked(trashManyAndNotify).mockRejectedValue(new Error('boom'))
+    vi.mocked(trashManyAndNotify).mockRejectedValue(new Error('boom'))
     const { result } = renderBulkTrash()
 
     await act(async () => {

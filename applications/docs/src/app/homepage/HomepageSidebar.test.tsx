@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
@@ -58,22 +58,22 @@ function renderSidebar({
   sidebarListItemLink?: (props: HomepageSidebarListItemLinkComponentProps) => ReactNode
 } = {}) {
   let finishUpdate = () => {}
-  const updateRecentDocuments = jest.fn(
+  const updateRecentDocuments = vi.fn(
     () =>
       new Promise<void>((resolve) => {
         finishUpdate = resolve
       }),
   )
-  const reloadInvitations = jest.fn()
+  const reloadInvitations = vi.fn()
   const value = {
     state: { view: 'recents-empty' },
-    setSearch: jest.fn(),
+    setSearch: vi.fn(),
     updateRecentDocuments,
     reloadInvitations,
     isRecentsUpdating: false,
     type: undefined,
-    reportTelemetry: jest.fn(),
-    createNotification: jest.fn(),
+    reportTelemetry: vi.fn(),
+    createNotification: vi.fn(),
     getAppHref: (path: string) => path,
     dateFormatter: new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' }),
   } as unknown as HomepageViewValue

@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest'
 import { renderHook, waitFor } from '@testing-library/react'
 import type { ContextType, ReactNode } from 'react'
 
@@ -9,20 +10,20 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 import { sendEditorBasics, useEditorBasicsInSync, useIsEditorDarkMode, useUserName } from './useEditorBasics'
 
 let mockIsDarkThemeEnabled = true
-jest.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => mockIsDarkThemeEnabled }))
+vi.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => mockIsDarkThemeEnabled }))
 let mockUser = { DisplayName: 'Alice A.', Name: 'alice', Email: 'alice@example.com' }
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [mockUser] }))
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [mockUser] }))
 
 const USER_SETTINGS = { Locale: 'fr_FR' } as UserSettings
-const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() } as unknown as LoggerInterface & {
-  warn: jest.Mock
+const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn() } as unknown as LoggerInterface & {
+  warn: Mock
 }
 
 function createInvoker() {
   return {
-    setDarkMode: jest.fn(async () => {}),
-    loadUserSettings: jest.fn(async () => {}),
-    syncProperty: jest.fn(async () => {}),
+    setDarkMode: vi.fn(async () => {}),
+    loadUserSettings: vi.fn(async () => {}),
+    syncProperty: vi.fn(async () => {}),
   }
 }
 
@@ -37,7 +38,7 @@ function wrapperFor({ isDarkTheme = true } = {}) {
 }
 
 describe('sendEditorBasics', () => {
-  afterEach(() => jest.clearAllMocks())
+  afterEach(() => vi.clearAllMocks())
 
   test("gives the editor dark mode, the user's settings and name, and hides Suggesting", async () => {
     const invoker = createInvoker()

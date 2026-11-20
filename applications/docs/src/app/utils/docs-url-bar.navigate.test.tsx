@@ -5,19 +5,19 @@ import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
-import { setLocation } from '@proton/jest-env/setLocation'
+import { setLocation } from '@proton/vitest-config/setLocation'
 import { assignUrl } from '@proton/shared/lib/helpers/location'
 
 import { DocsUrlContextProvider, useDocsUrlBar } from './docs-url-bar'
 
-jest.mock('./flags', () => ({ useIsSheetsEnabled: () => true }))
-jest.mock('@proton/shared/lib/helpers/location')
+vi.mock('./flags', () => ({ useIsSheetsEnabled: () => true }))
+vi.mock('@proton/shared/lib/helpers/location')
 
 const ORIGIN = 'https://docs.proton.dev'
 
 describe('navigateToAction', () => {
   beforeEach(() => {
-    jest.mocked(assignUrl).mockClear()
+    vi.mocked(assignUrl).mockClear()
   })
 
   describe('back to the public context', () => {
@@ -70,6 +70,6 @@ describe('navigateToAction', () => {
 
     result.current.navigateToAction(action, context)
 
-    return new URL(jest.mocked(assignUrl).mock.lastCall![0])
+    return new URL(vi.mocked(assignUrl).mock.lastCall![0])
   }
 })

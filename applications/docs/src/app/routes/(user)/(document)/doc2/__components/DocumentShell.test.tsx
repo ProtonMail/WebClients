@@ -5,24 +5,19 @@ import { createPortal } from 'react-dom'
 import { DocumentShell } from './DocumentShell'
 
 // The shell's parts need the whole app around them; this test only checks where the header goes
-jest.mock(
-  '@proton/components/containers/app/PrivateAppContainer',
-  () =>
-    ({ header, children }: { header: ReactNode; children: ReactNode }) => (
-      <>
-        <header data-testid="shell-header">{header}</header>
-        {children}
-      </>
-    ),
-)
-jest.mock(
-  '@proton/components/containers/layout/PrivateMainArea',
-  () =>
-    ({ children }: { children: ReactNode }) =>
-      children,
-)
-jest.mock('@proton/components/containers/topBanners/TopBanners', () => () => null)
-jest.mock('@proton/components/components/drawer/DrawerApp', () => () => null)
+vi.mock('@proton/components/containers/app/PrivateAppContainer', () => ({
+  default: ({ header, children }: { header: ReactNode; children: ReactNode }) => (
+    <>
+      <header data-testid="shell-header">{header}</header>
+      {children}
+    </>
+  ),
+}))
+vi.mock('@proton/components/containers/layout/PrivateMainArea', () => ({
+  default: ({ children }: { children: ReactNode }) => children,
+}))
+vi.mock('@proton/components/containers/topBanners/TopBanners', () => ({ default: () => null }))
+vi.mock('@proton/components/components/drawer/DrawerApp', () => ({ default: () => null }))
 
 describe('DocumentShell', () => {
   afterEach(() => {

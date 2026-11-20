@@ -3,14 +3,14 @@ import { fetchExternalImageAsBase64 } from './fetchExternalImageAsBase64'
 const PROXY = { apiUrl: 'https://docs.proton.dev/api', uid: 'session-uid' }
 
 describe('fetchExternalImageAsBase64', () => {
-  const fetchMock = jest.fn()
+  const fetchMock = vi.fn()
 
   beforeEach(() => {
     global.fetch = fetchMock
   })
 
   afterEach(() => {
-    jest.resetAllMocks()
+    vi.resetAllMocks()
   })
 
   test('fetches the image through the image proxy, for this session, as a data URL', async () => {
@@ -19,7 +19,7 @@ describe('fetchExternalImageAsBase64', () => {
     const image = await fetchExternalImageAsBase64('https://example.com/cat.png', PROXY)
 
     expect(image).toBe('data:image/png;base64,cG5n')
-    const proxied = new URL(fetchMock.mock.lastCall[0])
+    const proxied = new URL(fetchMock.mock.lastCall![0])
     expect(proxied.origin + proxied.pathname).toBe('https://docs.proton.dev/api/core/v4/images')
     expect(proxied.searchParams.get('Url')).toBe('https://example.com/cat.png')
     expect(proxied.searchParams.get('UID')).toBe('session-uid')

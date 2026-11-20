@@ -1,3 +1,4 @@
+import type { MockInstance } from 'vitest'
 import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
 import type { SyncedEditorEvent } from '@proton/docs-shared/State/SyncedEditorState'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
@@ -25,28 +26,28 @@ const EDITOR_STATE = { root: { children: [], type: 'root' } }
 const YDOC_JSON = { root: [] }
 const YJS_STATE = new Uint8Array([1, 2, 3])
 
-const logger = { debug: jest.fn(), warn: jest.fn(), error: jest.fn() } as unknown as ConstructorParameters<
+const logger = { debug: vi.fn(), warn: vi.fn(), error: vi.fn() } as unknown as ConstructorParameters<
   typeof ClientEditorBridge
 >[2]
 
-const sendUpdate = jest.fn()
-const onWordCount = jest.fn()
-const onEditorRendered = jest.fn()
-const showModal = jest.fn()
-const onFileMenuAction = jest.fn()
-const onPresenceUpdate = jest.fn()
-const fetchExternalImageAsBase64 = jest.fn()
+const sendUpdate = vi.fn()
+const onWordCount = vi.fn()
+const onEditorRendered = vi.fn()
+const showModal = vi.fn()
+const onFileMenuAction = vi.fn()
+const onPresenceUpdate = vi.fn()
+const fetchExternalImageAsBase64 = vi.fn()
 const EXPORTED_DOCX = new Uint8Array([80, 75, 3, 4])
 
 describe('ClientEditorBridge', () => {
   let frame: HTMLIFrameElement
-  let postToEditor: jest.SpyInstance
+  let postToEditor: MockInstance
   let bridge: ClientEditorBridge
 
   beforeEach(() => {
     frame = document.createElement('iframe')
     document.body.appendChild(frame)
-    postToEditor = jest.spyOn(frame.contentWindow!, 'postMessage').mockImplementation(() => {})
+    postToEditor = vi.spyOn(frame.contentWindow!, 'postMessage').mockImplementation(() => {})
     const isFlagEnabled = (flag: string) => flag === 'DocsDarkTheme'
     bridge = new ClientEditorBridge(
       frame,
@@ -54,7 +55,7 @@ describe('ClientEditorBridge', () => {
         editorFrame: frame,
         sendUpdate,
         isFlagEnabled,
-        onEditorError: jest.fn(),
+        onEditorError: vi.fn(),
         onWordCount,
         onEditorRendered,
         showModal,
@@ -70,8 +71,8 @@ describe('ClientEditorBridge', () => {
   afterEach(() => {
     bridge.destroy()
     frame.remove()
-    jest.useRealTimers()
-    jest.clearAllMocks()
+    vi.useRealTimers()
+    vi.clearAllMocks()
   })
 
   test("answers the editor's flag check", async () => {
@@ -292,7 +293,7 @@ describe('ClientEditorBridge', () => {
 
   test("resolves an editor call with the editor's reply", async () => {
     const shown = bridge.editorInvoker.showEditor()
-    const [{ messageId }] = postToEditor.mock.lastCall
+    const [{ messageId }] = postToEditor.mock.lastCall!
 
     receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue: undefined })
 
@@ -364,7 +365,7 @@ describe('ClientEditorBridge', () => {
         { type: EditorBridgeMessageType.ClientToEditorInvokation, functionName, args, messageId: expect.any(String) },
         expect.any(String),
       )
-      const [{ messageId }] = postToEditor.mock.lastCall
+      const [{ messageId }] = postToEditor.mock.lastCall!
       receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue })
 
       await expect(called).resolves.toBe(returnValue)
@@ -372,10 +373,10 @@ describe('ClientEditorBridge', () => {
   )
 
   test('rejects an editor call the editor does not answer in time', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const shown = bridge.editorInvoker.showEditor()
 
-    jest.advanceTimersByTime(EDITOR_CALL_TIMEOUT_MS)
+    vi.advanceTimersByTime(EDITOR_CALL_TIMEOUT_MS)
 
     await expect(shown).rejects.toThrow('Editor did not answer showEditor')
   })
@@ -384,28 +385,28 @@ describe('ClientEditorBridge', () => {
     { functionName: 'exportData', call: () => bridge.editorInvoker.exportData('docx') },
     { functionName: 'getCurrentSelection', call: () => bridge.editorInvoker.getCurrentSelection('md') },
   ])('gives the editor longer to answer $functionName, which can fetch images', async ({ functionName, call }) => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const exported = call()
-    const settled = jest.fn()
+    const settled = vi.fn()
     exported.then(settled, settled)
 
-    await jest.advanceTimersByTimeAsync(EDITOR_CALL_TIMEOUT_MS)
+    await vi.advanceTimersByTimeAsync(EDITOR_CALL_TIMEOUT_MS)
     expect(settled).not.toHaveBeenCalled()
 
-    await jest.advanceTimersByTimeAsync(EDITOR_EXPORT_TIMEOUT_MS - EDITOR_CALL_TIMEOUT_MS)
+    await vi.advanceTimersByTimeAsync(EDITOR_EXPORT_TIMEOUT_MS - EDITOR_CALL_TIMEOUT_MS)
     await expect(exported).rejects.toThrow(`Editor did not answer ${functionName}`)
   })
 
   test('never times out printAsPDF, which Firefox and Safari answer only once the print dialog closes', async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const printed = bridge.editorInvoker.printAsPDF()
-    const settled = jest.fn()
+    const settled = vi.fn()
     printed.then(settled, settled)
 
-    await jest.advanceTimersByTimeAsync(EDITOR_EXPORT_TIMEOUT_MS * 2)
+    await vi.advanceTimersByTimeAsync(EDITOR_EXPORT_TIMEOUT_MS * 2)
     expect(settled).not.toHaveBeenCalled()
 
-    const [{ messageId }] = postToEditor.mock.lastCall
+    const [{ messageId }] = postToEditor.mock.lastCall!
     receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue: undefined })
     await expect(printed).resolves.toBeUndefined()
   })

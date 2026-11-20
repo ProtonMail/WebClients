@@ -15,7 +15,7 @@ function createInvitation(mimeType: string) {
 
 function renderOpenInvitedDocument() {
   // As the host's getAppHref: the app's origin, and the signed-in user's local ID.
-  const getAppHref = jest.fn((path: string) => `https://docs.proton.me/u/3${path}`)
+  const getAppHref = vi.fn((path: string) => `https://docs.proton.me/u/3${path}`)
   const { result } = renderHook(() => useOpenInvitedDocument(), {
     wrapper: ({ children }: { children: ReactNode }) => (
       <HomepageViewContext.Provider value={{ getAppHref } as unknown as HomepageViewValue}>
@@ -27,12 +27,12 @@ function renderOpenInvitedDocument() {
 }
 
 function mockNewTab() {
-  const newTab = { location: { assign: jest.fn() } }
-  jest.spyOn(window, 'open').mockReturnValue(newTab as unknown as Window)
+  const newTab = { location: { assign: vi.fn() } }
+  vi.spyOn(window, 'open').mockReturnValue(newTab as unknown as Window)
   return newTab
 }
 
-afterEach(() => jest.restoreAllMocks())
+afterEach(() => vi.restoreAllMocks())
 
 describe('useOpenInvitedDocument', () => {
   test('opens an invited document in a new tab, for the signed-in user', () => {
@@ -57,14 +57,15 @@ describe('useOpenInvitedDocument', () => {
   })
 
   test('opens the document in the current tab when the browser blocks new tabs', () => {
-    jest.spyOn(window, 'open').mockReturnValue(null)
-    jest.spyOn(console, 'warn').mockImplementation(() => {})
-    // jsdom can't navigate, nor can tests replace `location.assign`: it reports the navigation as not implemented.
-    const reportError = jest.spyOn(console, 'error').mockImplementation(() => {})
+    vi.spyOn(window, 'open').mockReturnValue(null)
+    vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const assign = vi.spyOn(window.location, 'assign').mockImplementation(() => {})
     const { openInvitedDocument } = renderOpenInvitedDocument()
 
     openInvitedDocument(createInvitation(PROTON_DOCS_DOCUMENT_MIMETYPE))
 
-    expect(reportError).toHaveBeenCalledWith(expect.objectContaining({ message: expect.stringMatching(/navigation/) }))
+    expect(assign).toHaveBeenCalledWith(
+      new URL('https://docs.proton.me/u/3/doc?mode=open&volumeId=shareVolume&linkId=invitedLink'),
+    )
   })
 })

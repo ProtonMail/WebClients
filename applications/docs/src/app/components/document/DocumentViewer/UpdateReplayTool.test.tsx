@@ -5,8 +5,8 @@ import JSZip from 'jszip'
 import * as Y from 'yjs'
 import UpdateReplayTool from './UpdateReplayTool'
 
-jest.mock('@proton/shared/lib/env', () => ({
-  ...jest.requireActual('@proton/shared/lib/env'),
+vi.mock('@proton/shared/lib/env', async () => ({
+  ...(await vi.importActual('@proton/shared/lib/env')),
   // Keeps the tool off the local multi-tab relay, which only exists in local dev.
   isLocalEnvironment: () => false,
 }))
@@ -30,11 +30,11 @@ async function createUpdatesZip(count: number): Promise<File> {
 function createEditorController() {
   let stateVersion = 0
   return {
-    applyUpdate: jest.fn(async () => {}),
-    getLocalSpreadsheetStateJSON: jest.fn(async () => ({ stateVersion: stateVersion++ })),
-    replaceLocalSpreadsheetState: jest.fn(async () => {}),
-    showSpreadsheetCellChanges: jest.fn(async () => {}),
-    goToSpreadsheetCell: jest.fn(async () => {}),
+    applyUpdate: vi.fn(async () => {}),
+    getLocalSpreadsheetStateJSON: vi.fn(async () => ({ stateVersion: stateVersion++ })),
+    replaceLocalSpreadsheetState: vi.fn(async () => {}),
+    showSpreadsheetCellChanges: vi.fn(async () => {}),
+    goToSpreadsheetCell: vi.fn(async () => {}),
   }
 }
 

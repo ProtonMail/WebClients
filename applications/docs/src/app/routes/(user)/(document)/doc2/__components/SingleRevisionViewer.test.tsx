@@ -10,13 +10,13 @@ import { SingleRevisionViewer } from './SingleRevisionViewer'
 // Copied from applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/SingleRevisionViewer.test.tsx,
 // on doc2's own bridge: the editor's calls arrive as messages from the view's frame, as in the browser
 
-const logger = { error: jest.fn(), warn: jest.fn(), info: jest.fn(), debug: jest.fn() }
+const logger = { error: vi.fn(), warn: vi.fn(), info: vi.fn(), debug: vi.fn() }
 
-jest.mock('~/utils/application-context', () => ({ useApplication: () => ({ logger }) }))
-jest.mock('@proton/app-context/useConfig', () => ({ __esModule: true, useConfig: () => ({ APP_VERSION: '1.0.0' }) }))
-jest.mock('../__utils/useEditorBasics', () => ({ useIsEditorDarkMode: () => false }))
+vi.mock('~/utils/application-context', () => ({ useApplication: () => ({ logger }) }))
+vi.mock('@proton/app-context/useConfig', () => ({ __esModule: true, useConfig: () => ({ APP_VERSION: '1.0.0' }) }))
+vi.mock('../__utils/useEditorBasics', () => ({ useIsEditorDarkMode: () => false }))
 let mockSheetsMountAfterInitialLoadDisabled = false
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => mockSheetsMountAfterInitialLoadDisabled }))
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => mockSheetsMountAfterInitialLoadDisabled }))
 const mockFrames: HTMLIFrameElement[] = []
 /** What the view posted to its editor */
 const mockPostedToEditor: {
@@ -26,7 +26,7 @@ const mockPostedToEditor: {
   messageId?: string
   returnValue?: unknown
 }[] = []
-jest.mock('~/components/document/EditorFrame', () => ({
+vi.mock('~/components/document/EditorFrame', () => ({
   EditorFrame: ({
     onFrameReady,
     systemMode,
@@ -55,11 +55,11 @@ describe('SingleRevisionViewer', () => {
     mockFrames.length = 0
     mockPostedToEditor.length = 0
     mockSheetsMountAfterInitialLoadDisabled = false
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it("opens the editor in revision mode as a viewer, sends it the revision's state as one update, then that it has everything, then shows it", async () => {
-    const onEditorInvokerRef = jest.fn()
+    const onEditorInvokerRef = vi.fn()
     render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={onEditorInvokerRef} />)
     await act(async () => {})
 
@@ -86,7 +86,7 @@ describe('SingleRevisionViewer', () => {
   })
 
   it('replaces the editor with an error when the editor reports an irrecoverable error', async () => {
-    render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={jest.fn()} />)
+    render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={vi.fn()} />)
     expect(screen.getByTestId('editor-frame')).toBeInTheDocument()
 
     await reportFromEditor('Loading chunk failed', { irrecoverable: true })
@@ -101,7 +101,7 @@ describe('SingleRevisionViewer', () => {
   })
 
   it('keeps the editor for a recoverable error', async () => {
-    render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={jest.fn()} />)
+    render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={vi.fn()} />)
 
     await reportFromEditor('Something minor', {})
 
@@ -116,7 +116,7 @@ describe('SingleRevisionViewer', () => {
     "answers the editor's check of the sheets mount flag, which is %s, as %s, and of any other flag as false",
     async (flag, answer) => {
       mockSheetsMountAfterInitialLoadDisabled = flag
-      render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={jest.fn()} />)
+      render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={vi.fn()} />)
 
       await callFromEditor('checkIfFeatureFlagIsEnabled', ['SheetsMountAfterInitialLoadDisabled'], 'flag-1')
       await callFromEditor('checkIfFeatureFlagIsEnabled', ['DocsEmojiPicker'], 'flag-2')
@@ -127,7 +127,7 @@ describe('SingleRevisionViewer', () => {
   )
 
   it('sends nothing the editor asks to propagate, and answers no call it has no use for', async () => {
-    render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={jest.fn()} />)
+    render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={vi.fn()} />)
 
     await callFromEditor('editorRequestsPropagationOfUpdate', [{ type: { wrapper: 'du' }, content: STATE }], 'du-1')
     await callFromEditor('getAllThreads', [], 'threads-1')
@@ -137,7 +137,7 @@ describe('SingleRevisionViewer', () => {
   })
 
   it('stops listening to the editor once it is gone', async () => {
-    const { unmount } = render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={jest.fn()} />)
+    const { unmount } = render(<SingleRevisionViewer state={STATE} onEditorInvokerRef={vi.fn()} />)
     await act(async () => {})
 
     unmount()

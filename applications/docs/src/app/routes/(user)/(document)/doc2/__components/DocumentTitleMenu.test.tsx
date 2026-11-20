@@ -14,35 +14,35 @@ import { useWordCountState } from './WordCount'
 let mockIsSheetsEnabled = true
 let mockIsDownloadLogsAllowed = true
 let mockIsODTEnabled = true
-jest.mock('~/utils/flags', () => ({
+vi.mock('~/utils/flags', () => ({
   useIsSheetsEnabled: () => mockIsSheetsEnabled,
   useIsDownloadLogsAllowed: () => mockIsDownloadLogsAllowed,
   useIsODTEnabled: () => mockIsODTEnabled,
 }))
-const mockTextToClipboard = jest.fn()
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-  ...jest.requireActual('@proton/shared/lib/helpers/browser'),
+const mockTextToClipboard = vi.fn()
+vi.mock('@proton/shared/lib/helpers/browser', async () => ({
+  ...(await vi.importActual('@proton/shared/lib/helpers/browser')),
   textToClipboard: (text: string) => mockTextToClipboard(text),
 }))
 let mockIsWordCountSupported = true
-jest.mock('@proton/docs-shared/WordCount/isWordCountSupported', () => ({
+vi.mock('@proton/docs-shared/WordCount/isWordCountSupported', () => ({
   get isWordCountSupported() {
     return mockIsWordCountSupported
   },
 }))
-const mockCreateNotification = jest.fn()
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn()
+vi.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: mockCreateNotification }),
 }))
-const mockDownloadFile = jest.fn()
-jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+const mockDownloadFile = vi.fn()
+vi.mock('@proton/shared/lib/helpers/downloadFile', () => ({
   __esModule: true,
   default: (blob: Blob, filename: string) => mockDownloadFile(blob, filename),
 }))
-jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk'), getDrive: jest.fn() }))
+vi.mock('@proton/drive/sdk', async () => ({ ...(await vi.importActual('@proton/drive/sdk')), getDrive: vi.fn() }))
 
-const getAvailableName = jest.fn()
-const renameNode = jest.fn()
+const getAvailableName = vi.fn()
+const renameNode = vi.fn()
 // No membership: the user's own document, or one in a folder shared with them, whose role comes from the folder
 const NODE = {
   uid: 'VOLUME~LINK',
@@ -66,14 +66,14 @@ describe('DocumentTitleMenu', () => {
     mockIsDownloadLogsAllowed = true
     mockIsODTEnabled = true
     mockIsWordCountSupported = true
-    jest.mocked(getDrive).mockReturnValue({ getAvailableName, renameNode } as unknown as ReturnType<typeof getDrive>)
+    vi.mocked(getDrive).mockReturnValue({ getAvailableName, renameNode } as unknown as ReturnType<typeof getDrive>)
     getAvailableName.mockImplementation(async (_parentUid: string, name: string) => name)
     renameNode.mockResolvedValue({})
   })
 
   afterEach(() => {
-    jest.useRealTimers()
-    jest.clearAllMocks()
+    vi.useRealTimers()
+    vi.clearAllMocks()
   })
 
   test('shows the document name, also as the tab title', () => {
@@ -150,9 +150,9 @@ describe('DocumentTitleMenu', () => {
 
   test("Download logs downloads the editor's Y.Doc and editor state, once the editor is there", async () => {
     const editorInvoker = {
-      setTableOfContentsVisible: jest.fn(async () => {}),
-      getYDocAsJSON: jest.fn(async () => ({ root: [] })),
-      getCurrentEditorState: jest.fn(async () => undefined),
+      setTableOfContentsVisible: vi.fn(async () => {}),
+      getYDocAsJSON: vi.fn(async () => ({ root: [] })),
+      getCurrentEditorState: vi.fn(async () => undefined),
     }
     const { rerender } = await openMenu('Viewer', { editorInvoker: undefined })
     expect(menuItem('Download logs')).toBeDisabled()
@@ -238,7 +238,7 @@ describe('DocumentTitleMenu', () => {
   })
 
   describe('Make a copy', () => {
-    const exportInvoker = { getCurrentSelection: jest.fn() }
+    const exportInvoker = { getCurrentSelection: vi.fn() }
 
     test('is disabled until the editor shows the document', async () => {
       const { onFileMenuAction } = await openMenu('Admin', { exportInvoker: undefined })
@@ -267,7 +267,7 @@ describe('DocumentTitleMenu', () => {
   })
 
   describe('See version history', () => {
-    const exportInvoker = { getCurrentSelection: jest.fn() }
+    const exportInvoker = { getCurrentSelection: vi.fn() }
 
     test('is disabled until the editor shows the document', async () => {
       const { onFileMenuAction } = await openMenu('Admin', { exportInvoker: undefined })
@@ -291,7 +291,7 @@ describe('DocumentTitleMenu', () => {
   })
 
   describe('print, download and copy as markdown', () => {
-    const exportInvoker = { getCurrentSelection: jest.fn(async (): Promise<string | null> => '# Plans') }
+    const exportInvoker = { getCurrentSelection: vi.fn(async (): Promise<string | null> => '# Plans') }
 
     test('are disabled until the editor shows the document', async () => {
       const { onFileMenuAction } = await openMenu('Viewer', { exportInvoker: undefined })
@@ -404,9 +404,9 @@ describe('DocumentTitleMenu', () => {
 
   test('shows the table of contents once the editor is there, and the menu hides and shows it', async () => {
     const editorInvoker = {
-      setTableOfContentsVisible: jest.fn(async () => {}),
-      getYDocAsJSON: jest.fn(),
-      getCurrentEditorState: jest.fn(),
+      setTableOfContentsVisible: vi.fn(async () => {}),
+      getYDocAsJSON: vi.fn(),
+      getCurrentEditorState: vi.fn(),
     }
     const { rerender } = renderMenu('Viewer', { editorInvoker: undefined })
     rerender(menuElement('Viewer', { editorInvoker }))
@@ -557,7 +557,7 @@ describe('DocumentTitleMenu', () => {
       expect(renameNode).toHaveBeenCalledWith('VOLUME~LINK', 'Roadmap (1)')
       expect(document.title).toBe('Roadmap (1) - Proton Docs')
       expect(mockCreateNotification).toHaveBeenCalledTimes(1)
-      render(<>{mockCreateNotification.mock.lastCall[0].text}</>)
+      render(<>{mockCreateNotification.mock.lastCall![0].text}</>)
       expect(screen.getByText('"Roadmap (1)" renamed successfully')).toBeInTheDocument()
     })
 
@@ -630,7 +630,7 @@ describe('DocumentTitleMenu', () => {
 type MenuOverrides = Partial<Parameters<typeof DocumentTitleMenu>[0]>
 
 const application = {
-  logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+  logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
 } as unknown as ApplicationProviderProps['application']
 
 function menuElement(role: DocumentRole, overrides: MenuOverrides = {}) {
@@ -642,11 +642,11 @@ function menuElement(role: DocumentRole, overrides: MenuOverrides = {}) {
           role={role}
           editorInvoker={undefined}
           exportInvoker={undefined}
-          wordCount={{ isShown: false, setIsShown: jest.fn() }}
+          wordCount={{ isShown: false, setIsShown: vi.fn() }}
           trashState="not_trashed"
           isCreatingSpreadsheet={false}
           isMakingACopy={false}
-          onFileMenuAction={jest.fn()}
+          onFileMenuAction={vi.fn()}
           {...overrides}
         />
       </ApplicationProvider>
@@ -657,7 +657,7 @@ function menuElement(role: DocumentRole, overrides: MenuOverrides = {}) {
 let rerenderLast: (ui: ReturnType<typeof menuElement>) => void = () => {}
 
 function renderMenu(role: DocumentRole, overrides: MenuOverrides = {}) {
-  const onFileMenuAction = jest.fn()
+  const onFileMenuAction = vi.fn()
   const rendered = render(menuElement(role, { onFileMenuAction, ...overrides }))
   rerenderLast = (ui) => rendered.rerender(ui)
   return { ...rendered, onFileMenuAction }

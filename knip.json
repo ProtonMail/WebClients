@@ -70,8 +70,14 @@
             "ignoreDependencies": ["@proton/styles"]
         },
         "applications/docs": {
-            "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/routes/**/*.{ts,tsx}"],
-            "project": ["src/**/*.{ts,tsx,scss,sass,css}"]
+            "entry": [
+                "src/app/index.{ts,tsx}",
+                "webpack.config.{js,ts}",
+                "src/app/routes/**/*.{ts,tsx}",
+                "src/app/homepage/index.ts"
+            ],
+            "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
+            "ignoreDependencies": ["@proton/raw-images"]
         },
         "applications/docs-editor": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],

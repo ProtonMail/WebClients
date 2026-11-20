@@ -1,41 +1,34 @@
-import type * as DriveSdk from '@proton/drive/sdk'
+import type { Mock } from 'vitest'
 import type { DriveEvent } from '@protontech/drive-sdk'
-import type { getEventSubscriber } from './event-subscriber'
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
 
-jest.mock('@proton/docs-core/DriveSDK/traceErrorSDK')
+vi.mock('@proton/docs-core/DriveSDK/traceErrorSDK')
 
 type EventsByScope = Record<string, DriveEvent[] | Error>
 
 /**
  * Loads a fresh module so each test gets its own singleton subscriber
  */
-function setup(eventsByScope: EventsByScope = {}) {
-  let modules!: {
-    getEventSubscriber: typeof getEventSubscriber
-    sdk: typeof DriveSdk
-    traceErrorSDK: jest.Mock
+async function setup(eventsByScope: EventsByScope = {}) {
+  vi.resetModules()
+  const modules = {
+    getEventSubscriber: (await import('./event-subscriber')).getEventSubscriber,
+    sdk: await import('@proton/drive/sdk'),
+    traceErrorSDK: (await import('@proton/docs-core/DriveSDK/traceErrorSDK')).traceErrorSDK as unknown as Mock,
   }
-  jest.isolateModules(() => {
-    modules = {
-      getEventSubscriber: require('./event-subscriber').getEventSubscriber,
-      sdk: require('@proton/drive/sdk'),
-      traceErrorSDK: require('@proton/docs-core/DriveSDK/traceErrorSDK').traceErrorSDK,
-    }
-  })
 
   let handleScope!: (eventScope: string) => Promise<void>
-  const scheduler = { addScope: jest.fn(), removeScope: jest.fn() }
+  const scheduler = { addScope: vi.fn(), removeScope: vi.fn() }
   const drive = {
-    getEventScheduler: jest.fn(async (callback: (eventScope: string) => Promise<void>) => {
+    getEventScheduler: vi.fn(async (callback: (eventScope: string) => Promise<void>) => {
       handleScope = callback
       return scheduler
     }),
-    iterateEvents: jest.fn(async function* (eventScope: string) {
+    iterateEvents: vi.fn(async function* (eventScope: string) {
       const events = eventsByScope[eventScope] ?? []
       if (events instanceof Error) {
         throw events
@@ -43,7 +36,7 @@ function setup(eventsByScope: EventsByScope = {}) {
       yield* events
     }),
   }
-  jest.mocked(modules.sdk.getDrive).mockReturnValue(drive as any)
+  vi.mocked(modules.sdk.getDrive).mockReturnValue(drive as any)
 
   return {
     subscriber: modules.getEventSubscriber(),
@@ -62,7 +55,7 @@ function createEvent(eventId: string, type = 'node_updated') {
 
 describe('EventSubscriber', () => {
   test('initialize subscribes to the root scope', async () => {
-    const { subscriber, scheduler } = setup()
+    const { subscriber, scheduler } = await setup()
 
     await subscriber.initialize('root', [])
 
@@ -70,14 +63,14 @@ describe('EventSubscriber', () => {
   })
 
   test('initialize throws when already initialized', async () => {
-    const { subscriber } = setup()
+    const { subscriber } = await setup()
     await subscriber.initialize('root', [])
 
     await expect(subscriber.initialize('root', [])).rejects.toThrow('Already subscribed')
   })
 
   test('reset removes root and shared document scopes, and initialize after it reuses the scheduler', async () => {
-    const { subscriber, scheduler, drive } = setup()
+    const { subscriber, scheduler, drive } = await setup()
     await subscriber.initialize('root', [])
     subscriber.subscribeToSharedDocument('node1', 'scope1')
 
@@ -92,7 +85,7 @@ describe('EventSubscriber', () => {
   })
 
   test('reset during initialize does not subscribe to the root scope', async () => {
-    const { subscriber, scheduler } = setup()
+    const { subscriber, scheduler } = await setup()
 
     const initialized = subscriber.initialize('root', [])
     subscriber.reset()
@@ -102,7 +95,7 @@ describe('EventSubscriber', () => {
   })
 
   test('reset traces removeScope failure and still allows initializing again', async () => {
-    const { subscriber, scheduler, traceErrorSDK } = setup()
+    const { subscriber, scheduler, traceErrorSDK } = await setup()
     await subscriber.initialize('root', [])
     const error = new Error('removeScope failed')
     scheduler.removeScope.mockImplementationOnce(() => {
@@ -116,8 +109,8 @@ describe('EventSubscriber', () => {
   })
 
   describe('subscribeToSharedDocument', () => {
-    test('does nothing before initialize', () => {
-      const { subscriber, scheduler } = setup()
+    test('does nothing before initialize', async () => {
+      const { subscriber, scheduler } = await setup()
 
       subscriber.subscribeToSharedDocument('node1', 'scope1')
 
@@ -125,7 +118,7 @@ describe('EventSubscriber', () => {
     })
 
     test('adds the document scope once', async () => {
-      const { subscriber, scheduler } = setup()
+      const { subscriber, scheduler } = await setup()
       await subscriber.initialize('root', [])
 
       subscriber.subscribeToSharedDocument('node1', 'scope1')
@@ -135,7 +128,7 @@ describe('EventSubscriber', () => {
     })
 
     test('subscribes again after the subscription was removed', async () => {
-      const { subscriber, scheduler } = setup()
+      const { subscriber, scheduler } = await setup()
       await subscriber.initialize('root', [])
       subscriber.subscribeToSharedDocument('node1', 'scope1')
 
@@ -151,8 +144,8 @@ describe('EventSubscriber', () => {
     test('passes root and shared document events to every listener', async () => {
       const rootEvent = createEvent('e1')
       const sharedEvent = createEvent('e2')
-      const { subscriber, emit } = setup({ root: [rootEvent], scope1: [sharedEvent] })
-      const listeners = [jest.fn(async (_event: DriveEvent) => {}), jest.fn(async (_event: DriveEvent) => {})]
+      const { subscriber, emit } = await setup({ root: [rootEvent], scope1: [sharedEvent] })
+      const listeners = [vi.fn(async (_event: DriveEvent) => {}), vi.fn(async (_event: DriveEvent) => {})]
       await subscriber.initialize('root', listeners)
       subscriber.subscribeToSharedDocument('node1', 'scope1')
 
@@ -165,8 +158,8 @@ describe('EventSubscriber', () => {
     })
 
     test('continues from the last processed event and skips it if the SDK returns it again', async () => {
-      const { subscriber, emit, drive, eventsByScope } = setup({ root: [createEvent('e1')] })
-      const listener = jest.fn(async (_event: DriveEvent) => {})
+      const { subscriber, emit, drive, eventsByScope } = await setup({ root: [createEvent('e1')] })
+      const listener = vi.fn(async (_event: DriveEvent) => {})
       await subscriber.initialize('root', [listener])
       await emit('root')
 
@@ -178,8 +171,8 @@ describe('EventSubscriber', () => {
     })
 
     test('ignores and traces events from a scope it is not subscribed to', async () => {
-      const { subscriber, emit, traceErrorSDK } = setup({ unknown: [createEvent('e1')] })
-      const listener = jest.fn(async (_event: DriveEvent) => {})
+      const { subscriber, emit, traceErrorSDK } = await setup({ unknown: [createEvent('e1')] })
+      const listener = vi.fn(async (_event: DriveEvent) => {})
       await subscriber.initialize('root', [listener])
 
       await emit('unknown')
@@ -192,8 +185,8 @@ describe('EventSubscriber', () => {
     })
 
     test('ignores events after reset', async () => {
-      const { subscriber, emit } = setup({ root: [createEvent('e1')] })
-      const listener = jest.fn(async (_event: DriveEvent) => {})
+      const { subscriber, emit } = await setup({ root: [createEvent('e1')] })
+      const listener = vi.fn(async (_event: DriveEvent) => {})
       await subscriber.initialize('root', [listener])
 
       subscriber.reset()
@@ -203,14 +196,14 @@ describe('EventSubscriber', () => {
     })
 
     test('traces failed listeners except ValidationError, and still calls the other listeners', async () => {
-      const { subscriber, emit, traceErrorSDK, ValidationError } = setup({ root: [createEvent('e1')] })
+      const { subscriber, emit, traceErrorSDK, ValidationError } = await setup({ root: [createEvent('e1')] })
       const error = new Error('Listener failed')
-      const listener = jest.fn(async (_event: DriveEvent) => {})
+      const listener = vi.fn(async (_event: DriveEvent) => {})
       await subscriber.initialize('root', [
-        jest.fn(async () => {
+        vi.fn(async () => {
           throw error
         }),
-        jest.fn(async () => {
+        vi.fn(async () => {
           throw new ValidationError('No access')
         }),
         listener,
@@ -225,8 +218,8 @@ describe('EventSubscriber', () => {
 
     test('unsubscribes from a shared document when it is deleted', async () => {
       const deleted = createEvent('e1', 'node_deleted')
-      const { subscriber, emit, scheduler } = setup({ scope1: [deleted] })
-      const listener = jest.fn(async (_event: DriveEvent) => {})
+      const { subscriber, emit, scheduler } = await setup({ scope1: [deleted] })
+      const listener = vi.fn(async (_event: DriveEvent) => {})
       await subscriber.initialize('root', [listener])
       subscriber.subscribeToSharedDocument('node1', 'scope1')
 
@@ -237,7 +230,7 @@ describe('EventSubscriber', () => {
     })
 
     test('stays subscribed to the root scope when a node in it is deleted', async () => {
-      const { subscriber, emit, scheduler } = setup({ root: [createEvent('e1', 'node_deleted')] })
+      const { subscriber, emit, scheduler } = await setup({ root: [createEvent('e1', 'node_deleted')] })
       await subscriber.initialize('root', [])
 
       await emit('root')
@@ -246,9 +239,9 @@ describe('EventSubscriber', () => {
     })
 
     test('removes a shared document and unsubscribes without tracing when its scope fails with ValidationError', async () => {
-      const { subscriber, emit, scheduler, traceErrorSDK, ValidationError, eventsByScope } = setup()
+      const { subscriber, emit, scheduler, traceErrorSDK, ValidationError, eventsByScope } = await setup()
       eventsByScope.scope1 = new ValidationError('No access')
-      const handleRemoveDocument = jest.fn()
+      const handleRemoveDocument = vi.fn()
       await subscriber.initialize('root', [], handleRemoveDocument)
       subscriber.subscribeToSharedDocument('node1', 'scope1')
 
@@ -263,10 +256,10 @@ describe('EventSubscriber', () => {
       ['an unexpected error from a shared document scope', 'scope1', new Error('Network down')],
       ['a ValidationError from the root scope', 'root', 'ValidationError'],
     ] as const)('traces %s and stays subscribed', async (_, eventScope, failure) => {
-      const { subscriber, emit, scheduler, traceErrorSDK, ValidationError, eventsByScope } = setup()
+      const { subscriber, emit, scheduler, traceErrorSDK, ValidationError, eventsByScope } = await setup()
       const error = failure === 'ValidationError' ? new ValidationError('No access') : failure
       eventsByScope[eventScope] = error
-      const handleRemoveDocument = jest.fn()
+      const handleRemoveDocument = vi.fn()
       await subscriber.initialize('root', [], handleRemoveDocument)
       subscriber.subscribeToSharedDocument('node1', 'scope1')
 

@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import { act, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ExportToPDFModal } from './ExportToPDFModal'
@@ -12,8 +12,8 @@ function addBackdrop() {
 }
 
 function renderModal() {
-  const print = jest.fn()
-  const onExit = jest.fn()
+  const print = vi.fn()
+  const onExit = vi.fn()
   render(<ExportToPDFModal open onClose={print} onExit={onExit} />)
   return { print, onExit }
 }
@@ -32,7 +32,7 @@ function finishModalExitAnimation() {
 describe('ExportToPDFModal', () => {
   afterEach(() => {
     document.querySelectorAll('.modal-two-backdrop').forEach((backdrop) => backdrop.remove())
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
 
   test('does not print while the modal is still closing', async () => {
@@ -78,15 +78,15 @@ describe('ExportToPDFModal', () => {
     const { print } = renderModal()
 
     await clickGotIt()
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     finishModalExitAnimation()
     await act(async () => {
-      jest.advanceTimersByTime(999)
+      vi.advanceTimersByTime(999)
     })
     expect(print).not.toHaveBeenCalled()
 
     await act(async () => {
-      jest.advanceTimersByTime(1)
+      vi.advanceTimersByTime(1)
     })
     expect(print).toHaveBeenCalledTimes(1)
   })

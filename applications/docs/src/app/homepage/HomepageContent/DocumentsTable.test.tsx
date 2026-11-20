@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import type { MemberRole, ProtonDriveClient } from '@protontech/drive-sdk'
 import { act, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -10,7 +10,7 @@ import { DateFormatter } from '../utils/dateFormatter'
 import { ServerTime } from '../utils/serverTime'
 import { HomepageContent } from './HomepageContent'
 
-jest.mock('../utils/useIsNarrow', () => ({ useIsNarrow: () => false }))
+vi.mock('../utils/useIsNarrow', () => ({ useIsNarrow: () => false }))
 
 function createDocument(value: Partial<RecentDocumentsItemValue>) {
   return RecentDocumentsItem.create({
@@ -31,20 +31,20 @@ function createDocument(value: Partial<RecentDocumentsItemValue>) {
 }
 
 function renderTable(documents: RecentDocumentsItem[], { bulkTrash = false } = {}) {
-  const renameNode = jest.fn()
+  const renameNode = vi.fn()
   const drive = { renameNode } as unknown as ProtonDriveClient
   const value = {
     state: { view: 'recents', sort: 'name', itemSections: [{ id: 'name', items: documents }] },
     type: undefined,
-    updateRenamedDocumentInCache: jest.fn(),
+    updateRenamedDocumentInCache: vi.fn(),
     pendingInvitations: [],
     recentlyAcceptedInvitations: [],
-    reportTelemetry: jest.fn(),
-    logger: { debug: jest.fn(), error: jest.fn() },
-    createNotification: jest.fn(),
+    reportTelemetry: vi.fn(),
+    logger: { debug: vi.fn(), error: vi.fn() },
+    createNotification: vi.fn(),
     getAppHref: (path: string) => path,
     dateFormatter: new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' }),
-    errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
+    errorTracking: { traceError: vi.fn(), addBreadcrumb: vi.fn(), isReportable: () => true },
     featureFlags: { bulkTrash, bulkMove: false },
     addresses: [],
     contactEmails: [],
@@ -52,7 +52,7 @@ function renderTable(documents: RecentDocumentsItem[], { bulkTrash = false } = {
 
   render(
     <HomepageViewContext.Provider value={value}>
-      <DocumentActionsProvider drive={drive} openShareModal={jest.fn()} openMoveItemsModal={jest.fn()}>
+      <DocumentActionsProvider drive={drive} openShareModal={vi.fn()} openMoveItemsModal={vi.fn()}>
         <HomepageContent />
       </DocumentActionsProvider>
     </HomepageViewContext.Provider>,
@@ -82,8 +82,8 @@ async function startRenameAndClear(name: string) {
 
 describe('DocumentsTable rename', () => {
   // JSDOM has no layout; Ariakit checks visibility before it moves focus.
-  beforeEach(() => jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1))
-  afterEach(() => jest.restoreAllMocks())
+  beforeEach(() => vi.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1))
+  afterEach(() => vi.restoreAllMocks())
 
   test('renames a document, with the keys that move in the name left to the name box', async () => {
     const { renameNode, updateRenamedDocumentInCache, createNotification } = renderTable(

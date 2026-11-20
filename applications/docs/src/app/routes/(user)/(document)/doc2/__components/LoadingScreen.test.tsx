@@ -32,7 +32,7 @@ describe('LoadingScreen', () => {
   })
 
   test("says it can't connect, with no bar, and offers Try again when given a retry", async () => {
-    const onRetry = jest.fn()
+    const onRetry = vi.fn()
     render(<LoadingScreen status="cantConnect" onRetry={onRetry} />)
 
     expect(screen.getByRole('status')).toHaveTextContent("Can't connect")
@@ -44,7 +44,7 @@ describe('LoadingScreen', () => {
   })
 
   test('takes no focus', () => {
-    render(<LoadingScreen status="cantConnect" onRetry={jest.fn()} />)
+    render(<LoadingScreen status="cantConnect" onRetry={vi.fn()} />)
 
     expect(document.body).toHaveFocus()
   })

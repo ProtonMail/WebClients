@@ -35,15 +35,15 @@ const setCell =
 function createEditor(edits: Edit[]) {
   let state = snapshot(null)
   const editor = {
-    applyUpdate: jest.fn(async (update: Uint8Array<ArrayBuffer>) => {
+    applyUpdate: vi.fn(async (update: Uint8Array<ArrayBuffer>) => {
       edits[update[0]](state)
     }),
-    getLocalSpreadsheetStateJSON: jest.fn(async () => structuredClone(state)),
-    replaceLocalSpreadsheetState: jest.fn(async (next: ReplaySnapshot) => {
+    getLocalSpreadsheetStateJSON: vi.fn(async () => structuredClone(state)),
+    replaceLocalSpreadsheetState: vi.fn(async (next: ReplaySnapshot) => {
       state = structuredClone(next)
     }),
-    showSpreadsheetCellChanges: jest.fn(async () => {}),
-    goToSpreadsheetCell: jest.fn(async () => {}),
+    showSpreadsheetCellChanges: vi.fn(async () => {}),
+    goToSpreadsheetCell: vi.fn(async () => {}),
   }
   return { editor, getState: () => state }
 }

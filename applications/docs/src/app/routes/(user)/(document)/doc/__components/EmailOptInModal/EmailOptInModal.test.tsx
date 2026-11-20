@@ -2,8 +2,8 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { useDocsNotifications } from '../../../../__utils/notifications-context'
 import { EmailOptInModal } from './EmailOptInModal'
 
-jest.mock('../../../../__utils/notifications-context')
-const mockUpdateNotificationSettings = jest.fn()
+vi.mock('../../../../__utils/notifications-context')
+const mockUpdateNotificationSettings = vi.fn()
 
 class MockResizeObserver {
   observe() {}
@@ -16,21 +16,21 @@ global.ResizeObserver = MockResizeObserver
 describe('EmailOptInModal', () => {
   const defaultProps = {
     open: true,
-    onClose: jest.fn(),
-    onExit: jest.fn(),
+    onClose: vi.fn(),
+    onExit: vi.fn(),
   }
 
   beforeEach(() => {
-    jest.clearAllMocks()
-    jest.mocked(useDocsNotifications).mockReturnValue({
+    vi.clearAllMocks()
+    vi.mocked(useDocsNotifications).mockReturnValue({
       updateNotificationSettings: mockUpdateNotificationSettings,
       emailTitleEnabled: false,
       emailNotificationsEnabled: false,
       isLoading: false,
       isSubmitting: false,
       isReady: true,
-      changeEmailNotificationsEnabledValue: jest.fn(),
-      changeDocumentTitleEnabledValue: jest.fn(),
+      changeEmailNotificationsEnabledValue: vi.fn(),
+      changeDocumentTitleEnabledValue: vi.fn(),
     })
   })
 
@@ -43,15 +43,15 @@ describe('EmailOptInModal', () => {
   })
 
   it('initializes with provider values', () => {
-    jest.mocked(useDocsNotifications).mockReturnValue({
+    vi.mocked(useDocsNotifications).mockReturnValue({
       updateNotificationSettings: mockUpdateNotificationSettings,
       emailTitleEnabled: true,
       emailNotificationsEnabled: true,
       isLoading: false,
       isSubmitting: false,
       isReady: true,
-      changeEmailNotificationsEnabledValue: jest.fn(),
-      changeDocumentTitleEnabledValue: jest.fn(),
+      changeEmailNotificationsEnabledValue: vi.fn(),
+      changeDocumentTitleEnabledValue: vi.fn(),
     })
 
     render(<EmailOptInModal {...defaultProps} />)
@@ -113,7 +113,7 @@ describe('EmailOptInModal', () => {
   })
 
   it('handles save failure gracefully', async () => {
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation()
+    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
     mockUpdateNotificationSettings.mockRejectedValueOnce(new Error('Save failed'))
 
     render(<EmailOptInModal {...defaultProps} />)
