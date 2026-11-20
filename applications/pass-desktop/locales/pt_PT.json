@@ -44,7 +44,7 @@
         "Adicionar"
       ],
       "Add account": [
-        "Adicionar uma conta"
+        "Adicionar conta"
       ],
       "Add address": [
         "Adicionar um endereço"
@@ -239,7 +239,7 @@
         "Criar um cartão"
       ],
       "Create contact": [
-        "Criar um contacto"
+        "Criar contacto"
       ],
       "Create folder": [
         "Criar uma pasta"
@@ -593,7 +593,7 @@
         "Verificar de novo"
       ],
       "Reactivate now": [
-        "Reativar"
+        "Reativar agora"
       ],
       "Read More": [
         "Ler mais"
@@ -680,7 +680,7 @@
         "Nome da secção"
       ],
       "Secure links": [
-        "Ligações seguras"
+        "Hiperligações seguras"
       ],
       "See all": [
         "Ver tudo"
@@ -734,7 +734,7 @@
         "Mostrar mais"
       ],
       "Sign in in the app instead": [
-        "Em vez disso inicie sessão na aplicação"
+        "Em vez disso, inicie a sessão na aplicação"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com o ${ BRAND_NAME }"
@@ -851,6 +851,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "O seu gestor de palavras-passe não está aqui? Solicite-o."
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Ocultar"
+      ],
+      "Toggle section": [
+        "Alternar secção"
       ]
     },
     "Activity": {
@@ -1023,6 +1029,10 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "As suas informações pessoais foram divulgadas numa violação de dados de um serviço de terceiros."
+      ],
+      "${ count } more": [
+        "${ count } mais",
+        "${ count } mais"
       ]
     },
     "Email": {
@@ -1560,7 +1570,7 @@
         "O seu DNS não está definido corretamente. O registo TXT que obtemos é:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "O Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }."
+        "O seu CÓDIGO foi removido por outro cliente ${ PASS_APP_NAME }."
       ]
     },
     "Error message": {
@@ -1803,7 +1813,7 @@
         "Após confirmar, terá de aceitar um pedido de permissão para o ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Após importar os seus dados, pode eliminar o ficheiro CSV que contém as suas palavras-passe por segurança."
+        "Depois de importar os seus dados com sucesso, pode eliminar o ficheiro CSV que contém as suas palavras-passe para segurança."
       ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "O alias foi desativado. Deixará de receber e-mails enviados para ${ item.aliasEmail }."
@@ -1908,7 +1918,7 @@
         "Pode conceder ou revogar acesso para este item."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Pode conceder e revogar o acesso a este cofre e eliminá-lo."
+        "Pode conceder e revogar o acesso a este cofre, e eliminá-lo."
       ],
       "Can grant and revoke access to this vault.": [
         "Pode conceder ou revogar acesso para este cofre."
@@ -1920,7 +1930,7 @@
         "Pode ver este item."
       ],
       "Choose how you want to sign in": [
-        "Selecione como prefere iniciar sessão"
+        "Selecione como prefere iniciar a sessão"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme a sua palavra-passe para continuar com a remoção."
@@ -2486,7 +2496,7 @@
         "Confirme a sua segunda palavra-passe para o bloqueio automático com a sua palavra-passe."
       ],
       "Please confirm your second password in order to enable offline mode": [
-        "Confirme a sua segunda palavra-passe para ativar o modo offline."
+        "Confirme a sua segunda palavra-passe para ativar o modo ''off-line''."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme a sua segunda palavra-passe para exportar os seus dados do ${ PASS_APP_NAME }."
@@ -2507,7 +2517,7 @@
         "Não feche esta janela."
       ],
       "Please enter your current PIN code to continue": [
-        "Introduza o seu código Pin actual para continuar."
+        "Por favor, insira o seu CÓDIGO atual para continuar"
       ],
       "Please follow the steps below to set up your domain.": [
         "Siga os passos abaixo para configurar o seu domínio."
@@ -3020,6 +3030,9 @@
       ],
       "Your session could not be authorized.": [
         "A sua sessão não pode ser autorizada."
+      ],
+      "Alert restored": [
+        "Alerta restaurado"
       ]
     },
     "Keyboard key": {
@@ -3247,7 +3260,7 @@
         "Básico"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
-        "Além de armazenar os seus inícios de sessão, o ${ PASS_APP_NAME } protege a sua identidade com uma funcionalidade integrada de alias de e-mail. Sempre que se registar numa nova conta online, o ${ PASS_APP_NAME } pode criar automaticamente um alias para manter o seu endereço de e-mail real protegido. "
+        "Além de armazenar os seus inícios de sessão, o ${ PASS_APP_NAME } protege a sua identidade com uma funcionalidade integrada de alias de ''e-mail''. Sempre que se registar numa nova conta ''on-line'', o ${ PASS_APP_NAME } pode criar automaticamente um alias para manter o seu endereço de correio eletrónico real protegido. "
       ],
       "Biometrics": [
         "Biometria"
@@ -3430,7 +3443,7 @@
         "E-mail (alias)"
       ],
       "Email (new alias)": [
-        "E-mail (novo alias)"
+        "E-mail (novo pseudónimo)"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -4003,7 +4016,7 @@
         "Inicie a sessão em segurança com os códigos de acesso"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
-        "Armazene, partilhe e inicie sessão automaticamente nas suas contas com o ${ PASS_APP_NAME }, utilizando encriptação de ponta a ponta, confiada por milhões de pessoas."
+        "Guarde, partilhe e inicie a sessão automaticamente nas suas contas com o ${ PASS_APP_NAME }, utilizando a encriptação de ponta a ponta, confiada por milhões de pessoas."
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Armazene, partilhe e inicie sessão automaticamente nas suas contas com o ${ PASS_APP_NAME }, utilizando encriptação de ponta a ponta, confiada por milhões de pessoas."
@@ -4162,7 +4175,7 @@
         "Hoje"
       ],
       "Token name": [
-        "Nome do token"
+        "Nome do código"
       ],
       "Total imported items: ": [
         "Total de itens importados: "
@@ -4177,7 +4190,7 @@
         "Lixo"
       ],
       "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
-        "A autenticação de dois fatores (A2F) é uma das melhores maneiras de proteger as suas contas online. O ${ PASS_APP_NAME } facilita a A2F com um autenticador integrado que armazena os seus códigos A2F e os exibe automaticamente, além de os preencher automaticamente."
+        "A autenticação de dois fatores (2FA) é uma das melhores maneiras para proteger as suas contas ''on-line''. O ${ PASS_APP_NAME } facilita a 2FA com um autenticador integrado que guarda os seus códigos 2FA e exibe-o sautomaticamente, além de os preencher automaticamente."
       ],
       "Type": [
         "Tipo"
@@ -4579,7 +4592,7 @@
         "Adicionar uma nota"
       ],
       "Add password": [
-        "Adicionar uma palavra-passe"
+        "Adicionar palavra-passe"
       ],
       "Add private key": [
         "Adicionar uma chave privada"

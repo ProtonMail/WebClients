@@ -2289,7 +2289,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Als u een item naar een andere kluis verplaatst, worden de beveiligde koppelingen ervan gewist."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -4336,6 +4336,9 @@
       ],
       "Windows": [
         "Windows"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
       ]
     },
     "Link": {
