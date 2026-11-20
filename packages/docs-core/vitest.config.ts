@@ -13,13 +13,14 @@ const domFiles = [
 ]
 
 // The projects do not use `extends: true`: it measured 4-6x slower on import (10s vs 1.6s for the node project).
-// So they do not inherit the shared test options and must repeat `globals`, and the dom project its environment.
+// So they do not inherit the shared test options and must repeat `globals` and `maxWorkers`, and the dom project its environment.
 // The react plugin is needed: workspace .tsx sources rely on the automatic JSX runtime.
 const shared = {
   plugins: [react()],
   resolve: sharedVitestConfig.resolve,
   test: {
     globals: true,
+    maxWorkers: sharedVitestConfig.test?.maxWorkers,
     setupFiles: ['./vitest.setup.ts'],
   },
 }

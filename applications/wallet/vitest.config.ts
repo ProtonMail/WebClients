@@ -19,6 +19,10 @@ export default mergeConfig(sharedVitestConfig, {
             },
         },
         setupFiles: './vitest.setup.ts',
+        // Every test file compiles the 29MB andromeda wasm again, outside the JS heap, so each
+        // worker passes 2GB whatever --max-old-space-size says. Measured locally: 4 workers
+        // 8.4GB 13s, 2 workers 4.8GB 19s, 1 worker 2.7GB 35s.
+        maxWorkers: process.env.CI ? 2 : undefined,
     },
     resolve: {
         alias: {

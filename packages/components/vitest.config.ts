@@ -18,6 +18,8 @@ export default mergeConfig(sharedVitestConfig, {
         // vm contexts avoid re-creating the whole module graph and jsdom for every file; Node globals missing from
         // the context are restored in vitest.setup.ts
         pool: 'vmThreads',
+        // Runs in quality:test:heavy, sized for 2 workers per task
+        maxWorkers: process.env.CI ? 2 : undefined,
         // vm contexts can leak memory: recycle a worker once it grows past this limit
         vmMemoryLimit: '400MB',
         clearMocks: true,
