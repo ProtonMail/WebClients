@@ -65,6 +65,15 @@ describe('fetchAvailableApps', () => {
         expect(api).toHaveBeenCalledWith(expect.objectContaining({ url: 'core/v4/users/apps', silence: true }));
     });
 
+    it('keeps the app switcher order when the API lists Spaces first, leaving out unknown products', async () => {
+        const api = vi.fn(async () => toResponse(['Spaces', 'Authenticator', 'Meet', 'Unknown', 'Mail']));
+        const { store } = setup({ api });
+
+        await store.dispatch(fetchAvailableApps());
+
+        expect(selectAvailableApps(store.getState())).toEqual([APPS.PROTONMAIL, APPS.PROTONMEET, APPS.PROTONSPACES]);
+    });
+
     it('stores no apps in an MSP session, without asking the API', async () => {
         const api = vi.fn(async () => toResponse(['Mail']));
         const { store } = setup({ api, user: { Flags: { ...buildUser().Flags, 'org-access': true } } });

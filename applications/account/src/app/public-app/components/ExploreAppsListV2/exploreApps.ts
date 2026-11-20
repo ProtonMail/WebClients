@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { AvailableApp, AvailableAppName, PlanTier } from '@proton/account/availableApps/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getIsBYOEAccount, getIsExternalAccount } from '@proton/shared/lib/keys/accountType';
 
@@ -77,7 +77,6 @@ const getAppConfigs = (): Record<AvailableAppName, Omit<App, 'name' | 'tier' | '
             } as CSSProperties,
         },
         [APPS.PROTONLUMO]: {
-            isNew: true,
             description: () => {
                 // translator: Description for Lumo. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Private AI assistant`;
@@ -129,7 +128,6 @@ const getAppConfigs = (): Record<AvailableAppName, Omit<App, 'name' | 'tier' | '
             } as CSSProperties,
         },
         [APPS.PROTONMEET]: {
-            isNew: true,
             description: () => {
                 // translator: Description for Proton Meet. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Confidential video calls`;
@@ -156,7 +154,6 @@ const getAppConfigs = (): Record<AvailableAppName, Omit<App, 'name' | 'tier' | '
             } as CSSProperties,
         },
         [APPS.PROTONSPACES]: {
-            isNew: true,
             description: () => {
                 // translator: Description for Proton Spaces. As concise as possible, under 20 characters please
                 return c('app-switcher_2025').t`Secure and end-to-end encrypted`;
@@ -184,7 +181,7 @@ export const getExploreApps = (availableApps: AvailableApp[], user: User): App[]
         return isExternal && (name === APPS.PROTONMAIL || name === APPS.PROTONCALENDAR) ? 2 : 1;
     };
     return availableApps
-        .map(({ app, tier }): App => ({ name: app, ...configs[app], tier }))
+        .map(({ app, tier }): App => ({ name: app, ...configs[app], isNew: APPS_CONFIGURATION[app].isNew, tier }))
         .sort((a, b) => getGroup(a) - getGroup(b) || order.indexOf(a.name) - order.indexOf(b.name));
 };
 
@@ -194,6 +191,7 @@ export const getForbiddenAppConfigs = (forbiddenApps: Set<APP_NAMES>): App[] => 
         .map(([name, config]) => ({
             name: name as AvailableAppName,
             ...config,
+            isNew: APPS_CONFIGURATION[name as AvailableAppName].isNew,
             style: { filter: 'grayscale(100%)', opacity: 0.5 },
             isForbidden: true,
         }));
