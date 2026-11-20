@@ -1,5 +1,4 @@
-import { logger } from '@protontech/logger';
-
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { DAY } from '@proton/shared/lib/constants';
 
 import { getRecordingFolder } from './getRecordingFolder';
@@ -30,7 +29,7 @@ const purgeRecordingsInDirectory = async (directory: FileSystemDirectoryHandle, 
             await directory.removeEntry(name);
         } catch (error) {
             // File may be locked by an active recording in another tab — skip.
-            logger.error('Purge old recordings: Failed to remove recording file', error);
+            meetingLogger.error('Purge old recordings: Failed to remove recording file', error);
         }
     }
 };
@@ -40,7 +39,7 @@ export const purgeOldRecordings = async (maxAgeMs: number): Promise<void> => {
     try {
         root = await navigator.storage.getDirectory();
     } catch (error) {
-        logger.error('Purge old recordings: Failed to get storage directory', error);
+        meetingLogger.error('Purge old recordings: Failed to get storage directory', error);
         return;
     }
 
@@ -69,7 +68,7 @@ export const purgeOldRecordings = async (maxAgeMs: number): Promise<void> => {
         }
     } catch (error) {
         // Iteration failed (eviction, quota error). Best-effort: don't block boot.
-        logger.error('Purge old recordings: Failed to purge recordings', error);
+        meetingLogger.error('Purge old recordings: Failed to purge recordings', error);
     }
 };
 

@@ -4,9 +4,9 @@ import {
     type VideoTrackTransformer,
     type VideoTransformerInitOptions,
 } from '@livekit/track-processors';
-import { logger } from '@protontech/logger';
 import { type ProcessorOptions, type Track, TrackEvent, type TrackProcessor } from 'livekit-client';
 
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox, isIos } from '@proton/shared/lib/helpers/browser';
 
@@ -177,7 +177,7 @@ class MainThreadTransformer implements VideoTrackTransformer<BackgroundOptions> 
                 onFirstFrame: () => this.waitForFirstPresentedFrame(),
                 onOutputResize: (width, height) => this.outputSizeListener?.(width, height),
             },
-            logger
+            meetingLogger
         );
 
         try {

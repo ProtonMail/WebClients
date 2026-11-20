@@ -1,6 +1,5 @@
-import { logger } from '@protontech/logger';
-
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { DecryptedMessageInfoData, MeetCoreClient } from '../wasm/MeetCoreClient';
@@ -37,7 +36,7 @@ export const decryptMessageWithRetry = async ({
         } catch (error) {
             hasThrown = true;
             if (attempt < DECRYPT_RETRY_DELAYS_MS.length) {
-                logger.info(`${failureLabel}, retrying`, { attempt, error });
+                meetingLogger.info(`${failureLabel}, retrying`, { attempt, error });
             }
         }
     }
@@ -47,7 +46,7 @@ export const decryptMessageWithRetry = async ({
     }
 
     if (isSuperseded()) {
-        logger.info(`${failureLabel}, superseded by a later message`);
+        meetingLogger.info(`${failureLabel}, superseded by a later message`);
         return undefined;
     }
 

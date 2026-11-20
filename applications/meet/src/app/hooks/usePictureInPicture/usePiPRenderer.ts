@@ -1,7 +1,8 @@
 import { useCallback, useRef } from 'react';
 
-import { logger } from '@protontech/logger';
 import type { Track as LiveKitTrack } from 'livekit-client';
+
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 
 import { PIP_PREVIEW_ITEM_HEIGHT } from '../../constants';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
@@ -45,7 +46,7 @@ export function usePiPRenderer() {
             element.load();
             element.remove();
         } catch (error) {
-            logger.error('Error cleaning up video element:', error);
+            meetingLogger.error('Error cleaning up video element:', error);
         }
     }, []);
 
@@ -99,7 +100,7 @@ export function usePiPRenderer() {
                 try {
                     await videoElement.play();
                 } catch (error) {
-                    logger.error('Failed to play video:', error);
+                    meetingLogger.error('Failed to play video:', error);
                 }
             };
 

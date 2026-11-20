@@ -1,8 +1,8 @@
 import type { TrackReference } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { TimeoutError, withIdleTimeout, withTimeout } from '@proton/meet/utils/withTimeout';
 import { SECOND } from '@proton/shared/lib/constants';
 
@@ -138,7 +138,7 @@ export class RecordingSession {
         initialRecordedTracks,
         encryptionKey,
     }: RecordingSessionStartOptions): Promise<void> {
-        logger.info('[MeetingRecorder] starting recording', {
+        meetingLogger.info('[MeetingRecorder] starting recording', {
             codec: this.codec,
             backend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
         });
@@ -193,7 +193,7 @@ export class RecordingSession {
                 onChunk: (chunk) => {
                     const { isFirst, chunkNumber } = stats.recordChunk(chunk.size);
                     if (isFirst) {
-                        logger.info(
+                        meetingLogger.info(
                             `[MeetingRecorder] first non-empty chunk: ${chunk.size} bytes (empty chunks before this: ${stats.snapshot().emptyChunkCount})`
                         );
                     }
@@ -214,7 +214,7 @@ export class RecordingSession {
                     const recorderState = this.mediaRecorder?.getRecorderState() ?? 'inactive';
 
                     if (emptyCount === 1 || emptyCount % 5 === 0) {
-                        logger.warn(
+                        meetingLogger.warn(
                             `[MeetingRecorder] empty chunk #${emptyCount} (chunks with data so far: ${snapshot.chunkCount}, mimeType: ${this.codec.mimeType}, mediaRecorder.state: ${recorderState})`
                         );
                     }
@@ -273,7 +273,7 @@ export class RecordingSession {
         this.active = true;
         this.startedAt = performance.now();
 
-        logger.info('[MeetingRecorder] recorder started', {
+        meetingLogger.info('[MeetingRecorder] recorder started', {
             state: this.mediaRecorder.getRecorderState(),
             recordingCodec: this.mediaRecorder.getActiveCodec(),
         });
@@ -333,7 +333,7 @@ export class RecordingSession {
         } finally {
             this.stopFinishedAt = performance.now();
             const snapshot = this.stats?.snapshot();
-            logger.info('[MeetingRecorder] recording stopped', {
+            meetingLogger.info('[MeetingRecorder] recording stopped', {
                 chunksWithData: snapshot?.chunkCount,
                 emptyChunks: snapshot?.emptyChunkCount,
                 firstChunkAt: snapshot?.firstChunkAt,

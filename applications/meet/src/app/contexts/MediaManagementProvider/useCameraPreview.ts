@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import { logger } from '@protontech/logger';
 import type { LocalVideoTrack, Room } from 'livekit-client';
 import { createLocalVideoTrack } from 'livekit-client';
 
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isChrome, isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -167,7 +167,7 @@ export const useCameraPreview = ({
                 try {
                     await applyPreviewBackgroundEffect(pending);
                 } catch (error) {
-                    logger.error('Error applying the preview background effect', error);
+                    meetingLogger.error('Error applying the preview background effect', error);
                 }
             });
 
@@ -218,7 +218,9 @@ export const useCameraPreview = ({
                 await wait(100);
                 return await executeToggle(fallbackDeviceId);
             } catch (e) {
-                logger.error('Failed to start the camera preview with the fallback device', e, { fallbackDeviceId });
+                meetingLogger.error('Failed to start the camera preview with the fallback device', e, {
+                    fallbackDeviceId,
+                });
 
                 if (videoElement) {
                     videoElement.srcObject = null;
@@ -241,7 +243,7 @@ export const useCameraPreview = ({
         try {
             await processor?.destroy();
         } catch (error) {
-            logger.error('Failed to destroy the camera preview processor', error);
+            meetingLogger.error('Failed to destroy the camera preview processor', error);
         }
     };
 

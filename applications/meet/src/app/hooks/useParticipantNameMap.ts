@@ -1,7 +1,6 @@
 import { type RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import type { Participant } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -20,6 +19,7 @@ import {
 import { selectMissingNamesFromWaitingRoomHash } from '@proton/meet/store/slices/waitingRoomSlice';
 import type { ParticipantEntity } from '@proton/meet/types/types';
 import { decryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { queryParticipants, queryParticipantsCount } from '@proton/shared/lib/api/meet';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -116,7 +116,7 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
                 countRef.current = participants.length;
                 lastFetchTimestamp.current = Date.now();
             } catch (error) {
-                logger.error('Failed to fetch participants', error);
+                meetingLogger.error('Failed to fetch participants', error);
                 if (isMountedRef.current) {
                     dispatch(setIsFetchingParticipants(false));
                 }
@@ -187,7 +187,7 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
             const response = await api<{ Current: number }>(queryParticipantsCount(meetingLinkName));
             return response.Current;
         } catch (error) {
-            logger.error('Failed to fetch the participants count', error);
+            meetingLogger.error('Failed to fetch the participants count', error);
         }
     };
 

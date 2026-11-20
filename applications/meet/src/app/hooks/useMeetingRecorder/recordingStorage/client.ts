@@ -1,8 +1,8 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import { logger } from '@protontech/logger';
 
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { forwardWorkerLog } from '../../../utils/forwardWorkerLog';
@@ -121,7 +121,7 @@ export class RecordingStorageClient {
         };
 
         this.worker.onerror = (event) => {
-            logger.error('[MeetingRecorder/recordingWorker] uncaught error in worker:', event.error, {
+            meetingLogger.error('[MeetingRecorder/recordingWorker] uncaught error in worker:', event.error, {
                 message: event.message,
                 filename: event.filename,
                 lineno: event.lineno,

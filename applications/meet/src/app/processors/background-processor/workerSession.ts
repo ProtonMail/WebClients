@@ -1,7 +1,7 @@
 import { ProcessorWrapper } from '@livekit/track-processors';
-import { logger } from '@protontech/logger';
 import { type LocalTrack, TrackEvent } from 'livekit-client';
 
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isIos } from '@proton/shared/lib/helpers/browser';
 
@@ -98,7 +98,7 @@ export class WorkerSession {
                 this.abortStartup(error);
                 return;
             }
-            logger.error('[bg-processor] pipeline worker error', error);
+            meetingLogger.error('[bg-processor] pipeline worker error', error);
             options.onInitializationFailed(error);
         };
     }

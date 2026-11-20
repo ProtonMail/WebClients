@@ -1,5 +1,3 @@
-import { logger } from '@protontech/logger';
-
 import { selectSubscription } from '@proton/account/subscription';
 import { selectUser } from '@proton/account/user';
 import {
@@ -17,6 +15,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { selectLocalParticipantIdentity, selectParticipantsMap } from '../store/slices/participants/participantsSlice';
 import { selectIsGuest } from '../store/slices/userSlice';
 import type { MeetState } from '../store/store';
+import { meetingLogger } from '../utils/meetingLogger';
 import {
     type DeviceType,
     MEET_ACTIONS_WITH_ROLE,
@@ -145,7 +144,7 @@ const send = (
     dimensions?: SimpleMap<string | boolean>,
     values?: SimpleMap<number>
 ) => {
-    logger.info(`[telemetry] ${event}`, { dimensions, values });
+    meetingLogger.info(`[telemetry] ${event}`, { dimensions, values });
 
     if (!telemetryContext || !isMeetTelemetryEnabled()) {
         return;

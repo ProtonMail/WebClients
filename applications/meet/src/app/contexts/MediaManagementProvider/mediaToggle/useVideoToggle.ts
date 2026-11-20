@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import { ConnectionState, Track } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
@@ -16,6 +15,7 @@ import {
     selectUserCameraIntent,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isAndroid, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
@@ -98,7 +98,7 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
                         // Ensure processor is fully stopped before proceeding
                         await currentVideoTrack.stopProcessor();
                     } catch (error) {
-                        logger.error('Error stopping processor:', error);
+                        meetingLogger.error('Error stopping processor:', error);
                     }
                 }
 
@@ -156,7 +156,7 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
 
                 // Recovering from potential stale device state
                 if (!recoveringFromError && isPotentialStaleDeviceState && updatedCameras.length > 0 && fallback) {
-                    logger.info('[toggleVideo] recovering with fallback', fallback.deviceId);
+                    meetingLogger.info('[toggleVideo] recovering with fallback', fallback.deviceId);
 
                     toggleInProgress.current = false;
 

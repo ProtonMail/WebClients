@@ -1,5 +1,6 @@
-import { logger } from '@protontech/logger';
 import type { LocalAudioTrack } from 'livekit-client';
+
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 
 const getConstrainedDeviceId = (constraint: ConstrainDOMString | undefined) => {
     const value =
@@ -27,7 +28,7 @@ export const isMicrophoneOnDevice = async (track: LocalAudioTrack, deviceId: str
     try {
         return (await track.getDeviceId()) === deviceId;
     } catch (error) {
-        logger.warn('[isMicrophoneOnDevice] could not resolve the captured device', error, { deviceId });
+        meetingLogger.warn('[isMicrophoneOnDevice] could not resolve the captured device', error, { deviceId });
         return false;
     }
 };

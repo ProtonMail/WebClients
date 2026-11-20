@@ -7,6 +7,16 @@ import { allGlobs } from '@proton/oxlint-config/globs';
 import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
+    restrictedImports: {
+        paths: [
+            {
+                name: '@protontech/logger',
+                importNames: ['logger'],
+                message:
+                    'Use meetingLogger from utils/meetingLogger, which prefixes the lines logged in a meeting with its meetingLinkName.',
+            },
+        ],
+    },
     overrides: [
         refObjectNullOverride,
         {
@@ -23,6 +33,12 @@ export default createOxlintConfig({
                 'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
                     devDependencies: [...extraneousDependenciesDevDependencies, '**/testing/**'],
                 }),
+            },
+        },
+        {
+            files: ['utils/meetingLogger.ts', '**/*.test.ts', '**/*.test.tsx'],
+            rules: {
+                'proton/restricted-imports': 'error',
             },
         },
     ],

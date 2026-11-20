@@ -1,4 +1,3 @@
-import { logger } from '@protontech/logger';
 import {
     DEEPFILTERNET_SAMPLE_RATE,
     type DeepFilterNetAudioWorkletHandle,
@@ -7,6 +6,7 @@ import {
 } from '@workadventure/noise-suppression/deepfilternet';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import type { AudioTrackProcessor, CreateProcessorOptions } from '../../types';
@@ -77,7 +77,7 @@ export const DeepFilterNetFilter = ({
         };
 
         if (slowFrameRatio < SLOW_FRAME_RATIO_TO_REPORT) {
-            logger.info('DeepFilterNet noise suppression performance', context);
+            meetingLogger.info('DeepFilterNet noise suppression performance', context);
             return;
         }
 

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import type { LocalTrack } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -20,6 +19,7 @@ import {
 import { toToggleState } from '@proton/meet/telemetry/dimensions';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isAudioSessionAvailable, setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -46,7 +46,7 @@ const SAFARI_DEVICE_RELEASE_DELAY_MS = 300;
 const DEBUG_PREFIX = '[AudioToggle]';
 
 const debugLog = (message: string, data?: Record<string, unknown>) => {
-    logger.info(`${DEBUG_PREFIX} ${message}`, data ?? {});
+    meetingLogger.info(`${DEBUG_PREFIX} ${message}`, data ?? {});
 };
 
 const getErrorReason = (error: unknown) => {

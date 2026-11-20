@@ -24,6 +24,7 @@ import { userSettingsThunk as meetUserSettingsThunk } from '@proton/meet/store/s
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
 import { initMeetTelemetry } from '@proton/meet/telemetry/meetTelemetry';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -107,7 +108,7 @@ const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<D
     );
     app.setUseCachedServerTime(params.useCachedServerTime);
     app.setUseMessageQueues(params.useMessageQueues);
-    logger.info(`setUseMessageQueues(${params.useMessageQueues}) [direct]`);
+    meetingLogger.info(`setUseMessageQueues(${params.useMessageQueues}) [direct]`);
 
     // The worker client installs them in its own global scope on init, this is the direct equivalent.
     installWaitingRoomCallbackNamespaces();
@@ -233,7 +234,7 @@ const initializeLogger = ({
         if (event.type === 'api-error') {
             const isPing = event.payload.apiInfo.url === 'tests/ping';
             if (!isPing) {
-                logger.error(event.payload.apiInfo.url || 'unknown URL', event.payload);
+                meetingLogger.error(event.payload.apiInfo.url || 'unknown URL', event.payload);
             }
         }
         return false;

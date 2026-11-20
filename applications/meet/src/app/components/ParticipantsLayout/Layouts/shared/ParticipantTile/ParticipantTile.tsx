@@ -1,7 +1,6 @@
 import { memo, useEffect, useRef, useState } from 'react';
 
 import { VideoTrack, useLocalParticipant, useParticipantTracks } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import type { Participant, RemoteTrackPublication } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -20,6 +19,7 @@ import {
     selectParticipantName,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -213,7 +213,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                 }
             }
         } catch (error) {
-            logger.error('Failed to refresh tracks', error);
+            meetingLogger.error('Failed to refresh tracks', error);
         } finally {
             setIsRefreshing(false);
         }

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import type { Participant } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -9,6 +8,7 @@ import { addEvent } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectJoinLeaveSoundsEnabled } from '@proton/meet/store/slices/settings';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { isCaptionAgentIdentity } from '@proton/meet/utils/agents';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { JOIN_SOUND_NOTIFICATION_PARTICIPANT_LIMIT } from '../../constants';
@@ -45,7 +45,7 @@ export const useParticipantEvents = () => {
                 const isAgentInLivekit = remoteParticipants.some((participant) => participant.isAgent);
                 await meetCoreClient.setLivekitActiveUuids(allUuids, isAgentInLivekit);
             } catch (error) {
-                logger.error('Failed to update active uuids:', error);
+                meetingLogger.error('Failed to update active uuids:', error);
             }
         };
 

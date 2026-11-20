@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import type { LocalTrack } from 'livekit-client';
 import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -48,6 +47,7 @@ import type { MediaToggleTrigger } from '@proton/meet/telemetry/events';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -160,7 +160,7 @@ export const MediaManagementProvider = ({
                             SWITCH_DEVICE_TIMEOUT_MS
                         );
 
-                        logger.info(`[switchActiveDevice] switched`, {
+                        meetingLogger.info(`[switchActiveDevice] switched`, {
                             deviceType,
                             requested: deviceId,
                             sent: targetDeviceId,
@@ -169,7 +169,7 @@ export const MediaManagementProvider = ({
                             livekitAudioOutput: room.options.audioOutput?.deviceId,
                         });
                     } else {
-                        logger.info(`[switchActiveDevice] skipped, already active`, {
+                        meetingLogger.info(`[switchActiveDevice] skipped, already active`, {
                             deviceType,
                             requested: deviceId,
                             sent: targetDeviceId,
@@ -192,7 +192,7 @@ export const MediaManagementProvider = ({
 
                     selectedDeviceId = fallback.deviceId;
 
-                    logger.warn(`[switchActiveDevice] videoinput fallback`, error, {
+                    meetingLogger.warn(`[switchActiveDevice] videoinput fallback`, error, {
                         deviceType,
                         deviceId: selectedDeviceId,
                         errorName: (error as Error)?.name,
@@ -703,14 +703,14 @@ export const MediaManagementProvider = ({
                     shouldCleanupPreviews ? cleanupPreviews() : Promise.resolve(),
                 ]);
             } catch (error) {
-                logger.error('Failed to disable local tracks during cleanup', error);
+                meetingLogger.error('Failed to disable local tracks during cleanup', error);
             }
 
             tracks.forEach((track) => {
                 try {
                     track.stop();
                 } catch (error) {
-                    logger.error('Failed to stop local track during cleanup', error);
+                    meetingLogger.error('Failed to stop local track during cleanup', error);
                 }
             });
 

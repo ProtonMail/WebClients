@@ -2,7 +2,6 @@ import { type MutableRefObject, useEffect, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
-import { logger } from '@protontech/logger';
 import { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -22,6 +21,7 @@ import {
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -368,7 +368,7 @@ export const useMeetingConnection = ({
 
         const trackUserRejoin = async (success: boolean, attempts: number) => {
             const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
-            logger.info('[telemetry] logUserRejoin', {
+            meetingLogger.info('[telemetry] logUserRejoin', {
                 rejoinTimeMs: Number(rejoinTimeMs),
                 reason: RejoinReasonInfo[reason],
                 attempts,

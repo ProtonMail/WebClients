@@ -2,7 +2,6 @@ import { type Dispatch, type MutableRefObject, type SetStateAction, useCallback,
 import { useHistory } from 'react-router-dom';
 
 import { useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -23,6 +22,7 @@ import { type JoinError, setJoinError, setMeetingReadyPopupOpen } from '@proton/
 import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { deriveEncryptionKeyFromSessionKey, encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -405,7 +405,7 @@ export const useJoinFlow = ({
             }
 
             const { code } = getApiError(error);
-            logger.info('[telemetry] logJoinedRoomFailed', { code });
+            meetingLogger.info('[telemetry] logJoinedRoomFailed', { code });
 
             if (isMeetClientMetricsLogEnabled) {
                 void logJoinedRoomFailed(code ? String(code) : undefined);

@@ -1,4 +1,3 @@
-import { logger } from '@protontech/logger';
 import {
     type NoiseSuppressionAudioWorkletBenchmarkCompleteMessage,
     type NoiseSuppressionAudioWorkletHandle,
@@ -7,6 +6,7 @@ import {
 } from '@workadventure/noise-suppression/audio-worklet';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import type { AudioTrackProcessor } from '../../types';
@@ -129,7 +129,7 @@ export const DTLNFilter = ({
         const handle = workletHandle;
         perfMonitorActive = true;
         if (isDtlnPerfMonitorEnabled) {
-            logger.info('[DTLN] perf monitor attached — logging per-frame timings');
+            meetingLogger.info('[DTLN] perf monitor attached — logging per-frame timings');
         }
         void (async () => {
             while (perfMonitorActive && workletHandle === handle) {

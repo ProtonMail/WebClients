@@ -1,4 +1,3 @@
-import { logger } from '@protontech/logger';
 import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
@@ -13,6 +12,7 @@ import {
     isDefaultDevice,
     toSerializableDevice,
 } from '../../../utils/deviceUtils';
+import { meetingLogger } from '../../../utils/meetingLogger';
 import type { MeetState } from '../../rootReducer';
 import type { MeetStore } from '../../store';
 import type { SliceDeviceState } from './types';
@@ -54,7 +54,10 @@ export const selectRealtimeDevices = async (store: MeetStore, kind: 'audioinput'
     try {
         return getSelectableDevices(await navigator.mediaDevices.enumerateDevices(), kind).map(toSerializableDevice);
     } catch (error) {
-        logger.error('[selectRealtimeDevices] error getting realtime devices, falling back to redux store', error);
+        meetingLogger.error(
+            '[selectRealtimeDevices] error getting realtime devices, falling back to redux store',
+            error
+        );
 
         switch (kind) {
             case 'audioinput':
