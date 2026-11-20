@@ -7,7 +7,6 @@ import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/p
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 import {
@@ -57,31 +56,40 @@ export const useParticipantCountIndicator = () => {
     };
 
     const capacityStatus = getCapacityStatus();
-    const capacityLabel = getCapacityLabel(capacityStatus);
+    const isHiddenParticipantWarningShown = hiddenParticipantCount > 0;
 
-    if (hiddenParticipantCount > 0) {
-        return {
-            totalParticipantCount,
-            maxParticipants,
-            indicatorContent: (
-                <span className="text-nowrap">
-                    {totalParticipantCount}
-                    <span aria-hidden="true">{' !'}</span>
-                </span>
-            ),
-            indicatorStatus: 'warning' as const,
-            indicatorDescription: [getHiddenParticipantWarningTitle(hiddenParticipantCount), capacityLabel]
-                .filter(isTruthy)
-                .join('. '),
-        };
-    }
+    const getIndicatorDescription = () => {
+        if (!isHiddenParticipantWarningShown) {
+            return getCapacityLabel(capacityStatus);
+        }
+
+        const hiddenParticipantTitle = getHiddenParticipantWarningTitle(hiddenParticipantCount);
+
+        switch (capacityStatus) {
+            case 'warning':
+                // translator: read by screen readers on the participants button, the variable is the hidden participant warning, e.g. "3 people have access but aren't in the call"
+                return c('Info').t`${hiddenParticipantTitle}. Meeting almost full`;
+            case 'danger':
+                // translator: read by screen readers on the participants button, the variable is the hidden participant warning, e.g. "3 people have access but aren't in the call"
+                return c('Info').t`${hiddenParticipantTitle}. Meeting full`;
+            case 'default':
+                return hiddenParticipantTitle;
+        }
+    };
 
     return {
         totalParticipantCount,
         maxParticipants,
-        indicatorContent: totalParticipantCount.toString(),
-        indicatorStatus: capacityStatus,
-        indicatorDescription: capacityLabel,
+        indicatorContent: isHiddenParticipantWarningShown ? (
+            <span className="text-nowrap">
+                {totalParticipantCount}
+                <span aria-hidden="true">{' !'}</span>
+            </span>
+        ) : (
+            totalParticipantCount.toString()
+        ),
+        indicatorStatus: isHiddenParticipantWarningShown ? 'warning' : capacityStatus,
+        indicatorDescription: getIndicatorDescription(),
     };
 };
 
