@@ -1,9 +1,7 @@
-import { jest } from '@jest/globals';
-
 import type { DriveDocument } from '../../types/documents';
 
 // Real encryption, in-memory storage: what lands in the store is exactly what IndexedDB would hold.
-// `jest.doMock` + dynamic import, as in `searchService.keyRecovery.test.ts` (ESM mode).
+// `vi.doMock` + dynamic import, as in `searchService.keyRecovery.test.ts` (fresh module graph per test).
 
 const CANARY = 'canary-salary-figures-7f3a';
 
@@ -24,18 +22,20 @@ let userCount = 0;
 async function setup(options: { store?: Map<string, unknown>; keyAvailable?: boolean } = {}) {
     const store = options.store ?? new Map<string, unknown>();
     const removed: string[] = [];
-    jest.doMock('../../indexedDb/db', () => ({
-        DbApi: jest.fn().mockImplementation(() => ({
-            initialize: async () => undefined,
-            loadSearchBlob: async (name: string) => store.get(name) ?? null,
-            saveSearchBlob: async (name: string, data: unknown) => {
-                store.set(name, data);
-            },
-            removeSearchBlob: async (name: string) => {
-                removed.push(name);
-                store.delete(name);
-            },
-        })),
+    vi.doMock('../../indexedDb/db', () => ({
+        DbApi: vi.fn().mockImplementation(function () {
+            return {
+                initialize: async () => undefined,
+                loadSearchBlob: async (name: string) => store.get(name) ?? null,
+                saveSearchBlob: async (name: string, data: unknown) => {
+                    store.set(name, data);
+                },
+                removeSearchBlob: async (name: string) => {
+                    removed.push(name);
+                    store.delete(name);
+                },
+            };
+        }),
     }));
     const crypto = await import('../../crypto');
     const { SearchService } = await import('./searchService');
@@ -45,7 +45,7 @@ async function setup(options: { store?: Map<string, unknown>; keyAvailable?: boo
 /** A service for one user whose search key is `key`, or unavailable when `key` is null. */
 function serviceWithKey(SearchService: any, userId: string, key: string | null) {
     const service = SearchService.get(userId);
-    jest.spyOn(service, 'getSearchIndexKey').mockImplementation(async () => {
+    vi.spyOn(service, 'getSearchIndexKey').mockImplementation(async () => {
         if (key === null) {
             throw new Error('User ID and master key required to get search index key');
         }
@@ -59,8 +59,8 @@ const storedText = (store: Map<string, unknown>) =>
 
 describe('search index at rest', () => {
     afterEach(() => {
-        jest.resetModules();
-        jest.restoreAllMocks();
+        vi.resetModules();
+        vi.restoreAllMocks();
     });
 
     it('stores project file text, names and paths only encrypted, and reads them back', async () => {
@@ -77,7 +77,7 @@ describe('search index at rest', () => {
         expect(storedText(store)).not.toContain('canary');
         expect(() => JSON.parse(store.get('drive_manifest') as string)).toThrow();
 
-        jest.resetModules();
+        vi.resetModules();
         const reloaded = await setup({ store });
         const documents = await serviceWithKey(reloaded.SearchService, userId, key).getDriveDocuments();
         expect(documents.map((doc: DriveDocument) => doc.id)).toEqual(['doc-1']);
@@ -103,7 +103,7 @@ describe('search index at rest', () => {
         expect(storedText(store)).not.toContain(CANARY);
         expect(() => JSON.parse(store.get('drive_manifest') as string)).toThrow();
 
-        jest.resetModules();
+        vi.resetModules();
         const reloaded = await setup({ store });
         const service = serviceWithKey(reloaded.SearchService, userId, key);
         expect((await service.getDriveDocuments()).map((doc: DriveDocument) => doc.id)).toEqual(['legacy']);
@@ -132,7 +132,7 @@ describe('search index at rest', () => {
         await serviceWithKey(SearchService, userId, key).indexDocuments([document('doc-1')]);
         store.set('drive_manifest', store.get('bm25_index'));
 
-        jest.resetModules();
+        vi.resetModules();
         const reloaded = await setup({ store });
 
         expect(await serviceWithKey(reloaded.SearchService, userId, key).getDriveDocuments()).toEqual([]);
@@ -147,7 +147,7 @@ describe('search index at rest', () => {
         await serviceWithKey(SearchService, userId, key).indexDocuments([document('doc-1')]);
         const before = new Map(store);
 
-        jest.resetModules();
+        vi.resetModules();
         const locked = await setup({ store });
         const service = serviceWithKey(locked.SearchService, userId, null);
         await service.indexDocuments([document('doc-2')]);

@@ -195,12 +195,12 @@ describe('getScheduleNextRunLabel', () => {
 
 describe('getScheduleRunLabel', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date('2026-10-27T10:00:00Z'));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2026-10-27T10:00:00Z'));
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('distinguishes the first queued task from other queued tasks', () => {

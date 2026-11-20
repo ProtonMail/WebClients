@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useLumoAuthAction } from '../../../hooks/useLumoAuthAction';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
@@ -11,27 +12,27 @@ import {
 import { useRemainingLimits } from '../../../services/usageLimitsStore';
 import { useNativeComposerFeatureFlagsApi } from './useNativeComposerFeatureFlagsApi';
 
-jest.mock('../../../hooks/useLumoAuthAction');
-jest.mock('../../../hooks/useLumoFlags');
-jest.mock('../../../hooks/useMaxModelAvailability');
-jest.mock('../../../providers/LumoPlanProvider');
-jest.mock('../../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../../remote/nativeFeatureFlagsBridgeHelpers');
+vi.mock('../../../hooks/useLumoAuthAction');
+vi.mock('../../../hooks/useLumoFlags');
+vi.mock('../../../hooks/useMaxModelAvailability');
+vi.mock('../../../providers/LumoPlanProvider');
+vi.mock('../../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../../remote/nativeFeatureFlagsBridgeHelpers');
 // Keep the real predicate — only the limits source is faked.
-jest.mock('../../../services/usageLimitsStore', () => ({
-    ...jest.requireActual('../../../services/usageLimitsStore'),
-    useRemainingLimits: jest.fn(),
+vi.mock('../../../services/usageLimitsStore', async () => ({
+    ...(await vi.importActual('../../../services/usageLimitsStore')),
+    useRemainingLimits: vi.fn(),
 }));
 
-const mockedUseLumoAuthAction = useLumoAuthAction as jest.Mock;
-const mockedUseLumoFlags = useLumoFlags as jest.Mock;
-const mockedUseMaxModelAvailability = useMaxModelAvailability as jest.Mock;
-const mockedUseLumoPlan = useLumoPlan as jest.Mock;
-const mockedUseRemainingLimits = useRemainingLimits as jest.Mock;
+const mockedUseLumoAuthAction = useLumoAuthAction as Mock;
+const mockedUseLumoFlags = useLumoFlags as Mock;
+const mockedUseMaxModelAvailability = useMaxModelAvailability as Mock;
+const mockedUseLumoPlan = useLumoPlan as Mock;
+const mockedUseRemainingLimits = useRemainingLimits as Mock;
 
 describe('useNativeComposerFeatureFlagsApi', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUseLumoAuthAction.mockReturnValue({ isEnabled: false });
         mockedUseLumoFlags.mockReturnValue({
             nativeComposerImages: false,

@@ -1,15 +1,16 @@
 import type { ReactNode } from 'react';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import { buildArtifactSourceDownloadFile } from '../../Conversation/artifact/artifactSourceDownload';
 import type { ConversationArtifactDrawerEntry } from '../../Conversation/artifact/conversationArtifactDrawerList';
 import { KnowledgeBaseArtifactsSection } from './KnowledgeBaseArtifactsSection';
 
-const mockCreateNotification = jest.fn();
+const mockCreateNotification = vi.fn();
 
-jest.mock('@proton/app-context/useNotifications', () => {
+vi.mock('@proton/app-context/useNotifications', () => {
     return {
         useNotifications: () => {
             return { createNotification: mockCreateNotification };
@@ -17,11 +18,11 @@ jest.mock('@proton/app-context/useNotifications', () => {
     };
 });
 
-jest.mock('../../../util/triggerFileDownload', () => {
-    return { triggerFileDownload: jest.fn() };
+vi.mock('../../../util/triggerFileDownload', () => {
+    return { triggerFileDownload: vi.fn() };
 });
 
-jest.mock('../../Conversation/artifact/ArtifactChipShell', () => {
+vi.mock('../../Conversation/artifact/ArtifactChipShell', () => {
     return {
         ArtifactChipShell: ({
             title,
@@ -44,7 +45,7 @@ jest.mock('../../Conversation/artifact/ArtifactChipShell', () => {
     };
 });
 
-jest.mock('../../Conversation/artifact/artifactDrawerTypeLabel', () => {
+vi.mock('../../Conversation/artifact/artifactDrawerTypeLabel', () => {
     return {
         getArtifactDrawerTypeLabel: () => {
             return 'Code';
@@ -52,12 +53,12 @@ jest.mock('../../Conversation/artifact/artifactDrawerTypeLabel', () => {
     };
 });
 
-jest.mock('../../Conversation/artifact/artifactSourceDownload', () => {
-    return { buildArtifactSourceDownloadFile: jest.fn() };
+vi.mock('../../Conversation/artifact/artifactSourceDownload', () => {
+    return { buildArtifactSourceDownloadFile: vi.fn() };
 });
 
-const buildFileMock = buildArtifactSourceDownloadFile as jest.Mock;
-const triggerFileDownloadMock = triggerFileDownload as jest.Mock;
+const buildFileMock = buildArtifactSourceDownloadFile as Mock;
+const triggerFileDownloadMock = triggerFileDownload as Mock;
 
 const artifact = {
     id: 'artifact-1',
@@ -68,7 +69,7 @@ const artifact = {
 } as ConversationArtifactDrawerEntry;
 
 const renderSection = () => {
-    const onOpenArtifact = jest.fn();
+    const onOpenArtifact = vi.fn();
     render(<KnowledgeBaseArtifactsSection artifacts={[artifact]} onOpenArtifact={onOpenArtifact} />);
     return { onOpenArtifact };
 };

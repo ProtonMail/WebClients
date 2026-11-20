@@ -6,20 +6,20 @@ import { readArtifactChartFence, readArtifactCodeFence } from './artifactCharts'
 
 // react-markdown is ESM-only and not in this package's Jest transform allowlist, so these tests feed
 // the `pre` override the same hast node react-markdown passes it, rather than rendering markdown.
-jest.mock('../../LumoMarkdown/vega/VegaLiteChart', () => ({
+vi.mock('../../LumoMarkdown/vega/VegaLiteChart', () => ({
     VegaLiteChart: ({ code, language }: { code: string; language: string }) => {
         return <div data-testid="vega-chart" data-language={language} data-code={code} />;
     },
 }));
 
-const mockShowCopyNotification = jest.fn();
-jest.mock('../../../hooks/useCopyNotification', () => ({
+const mockShowCopyNotification = vi.fn();
+vi.mock('../../../hooks/useCopyNotification', () => ({
     useCopyNotification: () => {
         return { showCopyNotification: mockShowCopyNotification };
     },
 }));
 
-jest.mock('../../../hooks/useIsLumoSmallScreen', () => ({
+vi.mock('../../../hooks/useIsLumoSmallScreen', () => ({
     useIsLumoSmallScreen: () => {
         return { isSmallScreen: false, isMediumScreen: false };
     },
@@ -89,7 +89,7 @@ describe('ArtifactMarkdownPre', () => {
     });
 
     it("copies only that block's raw source to the clipboard", async () => {
-        const writeText = jest.fn().mockResolvedValue(undefined);
+        const writeText = vi.fn().mockResolvedValue(undefined);
         Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
 
         render(

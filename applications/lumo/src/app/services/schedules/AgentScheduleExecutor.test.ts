@@ -1,3 +1,5 @@
+import type { Mocked } from 'vitest';
+
 import type { ScheduleRun } from '@proton/lumo-api-client/core/desktop-schedules';
 
 import { Role } from '../../types';
@@ -37,34 +39,32 @@ const target: ScheduleExecutionTarget = {
 };
 function setup() {
     const events: string[] = [];
-    const repository: jest.Mocked<ScheduleRunRepository> = {
-        claim: jest.fn<ReturnType<ScheduleRunRepository['claim']>, Parameters<ScheduleRunRepository['claim']>>(
-            async () => true
-        ),
-        startRun: jest.fn<ReturnType<ScheduleRunRepository['startRun']>, Parameters<ScheduleRunRepository['startRun']>>(
-            async () => {
-                events.push('start');
-                return target;
-            }
-        ),
-        finishRun: jest.fn<
-            ReturnType<ScheduleRunRepository['finishRun']>,
-            Parameters<ScheduleRunRepository['finishRun']>
+    const repository: Mocked<ScheduleRunRepository> = {
+        claim: vi.fn<
+            (...args: Parameters<ScheduleRunRepository['claim']>) => ReturnType<ScheduleRunRepository['claim']>
+        >(async () => true),
+        startRun: vi.fn<
+            (...args: Parameters<ScheduleRunRepository['startRun']>) => ReturnType<ScheduleRunRepository['startRun']>
+        >(async () => {
+            events.push('start');
+            return target;
+        }),
+        finishRun: vi.fn<
+            (...args: Parameters<ScheduleRunRepository['finishRun']>) => ReturnType<ScheduleRunRepository['finishRun']>
         >(async (result) => {
             events.push('save');
             return result.outcome;
         }),
-        getStatus: jest.fn<
-            ReturnType<ScheduleRunRepository['getStatus']>,
-            Parameters<ScheduleRunRepository['getStatus']>
+        getStatus: vi.fn<
+            (...args: Parameters<ScheduleRunRepository['getStatus']>) => ReturnType<ScheduleRunRepository['getStatus']>
         >(async () => undefined),
-        interruptRun: jest.fn<
-            ReturnType<ScheduleRunRepository['interruptRun']>,
-            Parameters<ScheduleRunRepository['interruptRun']>
+        interruptRun: vi.fn<
+            (
+                ...args: Parameters<ScheduleRunRepository['interruptRun']>
+            ) => ReturnType<ScheduleRunRepository['interruptRun']>
         >(async () => 'interrupted'),
-        getResult: jest.fn<
-            ReturnType<ScheduleRunRepository['getResult']>,
-            Parameters<ScheduleRunRepository['getResult']>
+        getResult: vi.fn<
+            (...args: Parameters<ScheduleRunRepository['getResult']>) => ReturnType<ScheduleRunRepository['getResult']>
         >(async () => undefined),
     };
     const tasks: ScheduleTaskSource = {
@@ -77,16 +77,17 @@ function setup() {
             notifyOnComplete: true,
         }),
     };
-    const runConversation = jest.fn<
-        ReturnType<ConstructorParameters<typeof AgentScheduleExecutor>[0]['runConversation']>,
-        Parameters<ConstructorParameters<typeof AgentScheduleExecutor>[0]['runConversation']>
+    const runConversation = vi.fn<
+        (
+            ...args: Parameters<ConstructorParameters<typeof AgentScheduleExecutor>[0]['runConversation']>
+        ) => ReturnType<ConstructorParameters<typeof AgentScheduleExecutor>[0]['runConversation']>
     >(async () => {
         events.push('generate');
         return { outcome: 'succeeded', messageIds: ['answer'] };
     });
     let current = true;
     const controller = new AbortController();
-    const onComplete = jest.fn(async () => {
+    const onComplete = vi.fn(async () => {
         events.push('notify');
     });
     const executor = new AgentScheduleExecutor({
@@ -164,7 +165,7 @@ it('marks thrown execution errors interrupted rather than retrying', async () =>
 it('keeps a saved outcome when notifications fail', async () => {
     const h = setup();
     h.onComplete.mockRejectedValue(new Error('notification unavailable'));
-    const log = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const log = vi.spyOn(console, 'error').mockImplementation(() => {});
     try {
         expect(await h.executor.execute(run, h.context)).toBe('succeeded');
     } finally {

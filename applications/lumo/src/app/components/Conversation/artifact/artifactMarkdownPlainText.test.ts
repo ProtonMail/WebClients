@@ -1,6 +1,6 @@
 import { htmlToPlainText, markdownToPlainText } from './artifactMarkdownPlainText';
 
-jest.mock('./artifactMarkdownHtml', () => {
+vi.mock('./artifactMarkdownHtml', () => {
     return {
         markdownToHtmlBody: (markdown: string) => {
             return `<h1>Title</h1><p>First paragraph.</p><ul><li>One</li><li>Two</li></ul><p>${markdown}</p>`;

@@ -1,13 +1,14 @@
+import type { Mock } from 'vitest';
 describe('nativeComposerBridge - sidebar layout', () => {
-    let onStateChange: jest.Mock;
+    let onStateChange: Mock;
     let nativeComposerApiInstance: any;
 
-    beforeEach(() => {
-        jest.resetModules();
-        onStateChange = jest.fn();
+    beforeEach(async () => {
+        vi.resetModules();
+        onStateChange = vi.fn();
         (window as any).Android = { onStateChange };
 
-        require('./nativeComposerBridge');
+        await import('./nativeComposerBridge');
         nativeComposerApiInstance = (window as any).nativeComposerApiInstance;
 
         // The bridge pushes the initial state on import; ignore that for assertions below.

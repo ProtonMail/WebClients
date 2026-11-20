@@ -1,58 +1,60 @@
+import type { Mock } from 'vitest';
+
 import { buildArtifactFileForSave } from './artifactFileBytes';
 import type { ParsedArtifact } from './parseArtifacts';
 
-jest.mock('../../../util/pdf/htmlDocumentToPdfBytes', () => {
+vi.mock('../../../util/pdf/htmlDocumentToPdfBytes', () => {
     return {
-        htmlDocumentToPdfBytes: jest.fn(async () => {
+        htmlDocumentToPdfBytes: vi.fn(async () => {
             return new ArrayBuffer(8);
         }),
-        htmlSlideDocumentsToPdfBytes: jest.fn(async () => {
+        htmlSlideDocumentsToPdfBytes: vi.fn(async () => {
             return new ArrayBuffer(8);
         }),
     };
 });
 
-jest.mock('../../../util/pptx/htmlSlidesToPptxBytes', () => {
+vi.mock('../../../util/pptx/htmlSlidesToPptxBytes', () => {
     return {
-        htmlSlidesToPptxBytes: jest.fn(async () => {
+        htmlSlidesToPptxBytes: vi.fn(async () => {
             return new ArrayBuffer(8);
         }),
     };
 });
 
-jest.mock('../../LumoMarkdown/vega/renderVegaSpecToSvg', () => ({
-    renderVegaSpecToPng: jest.fn(),
-    renderVegaSpecToSvg: jest.fn(),
+vi.mock('../../LumoMarkdown/vega/renderVegaSpecToSvg', () => ({
+    renderVegaSpecToPng: vi.fn(),
+    renderVegaSpecToSvg: vi.fn(),
 }));
-jest.mock('../../../util/docx/markdownToDocx', () => {
+vi.mock('../../../util/docx/markdownToDocx', () => {
     return {
         DOCX_MIME_TYPE: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        markdownToDocxBlob: jest.fn(async () => {
+        markdownToDocxBlob: vi.fn(async () => {
             return new Blob(['docx']);
         }),
     };
 });
 
-jest.mock('./artifactMarkdownPlainText', () => {
+vi.mock('./artifactMarkdownPlainText', () => {
     return {
-        markdownToPlainText: jest.fn((markdown: string) => {
+        markdownToPlainText: vi.fn((markdown: string) => {
             return `Plain: ${markdown.replace(/^#\s+/m, '')}`;
         }),
     };
 });
 
-jest.mock('./artifactHtmlDocument', () => {
+vi.mock('./artifactHtmlDocument', () => {
     return {
-        buildArtifactFileName: jest.fn((artifact: { title: string }, extension: string) => {
+        buildArtifactFileName: vi.fn((artifact: { title: string }, extension: string) => {
             return `${artifact.title.toLowerCase().replace(/\s+/g, '-')}.${extension}`;
         }),
-        buildArtifactHtmlDocument: jest.fn(async () => {
+        buildArtifactHtmlDocument: vi.fn(async () => {
             return '<html><body>doc</body></html>';
         }),
-        buildPresentationSlideExportDocuments: jest.fn(async () => {
+        buildPresentationSlideExportDocuments: vi.fn(async () => {
             return ['<html><body><section>slide</section></body></html>'];
         }),
-        getArtifactPdfExportOptions: jest.fn(() => {
+        getArtifactPdfExportOptions: vi.fn(() => {
             return { viewportWidth: 794, pageMarginPt: 54 };
         }),
         PRESENTATION_PDF_EXPORT_OPTIONS: { viewportWidth: 960, orientation: 'landscape', scale: 1 },
@@ -76,7 +78,7 @@ describe('buildArtifactFileForSave', () => {
     };
 
     it('builds markdown and rendered plain-text files from document content', async () => {
-        const { markdownToPlainText } = jest.requireMock('./artifactMarkdownPlainText');
+        const { markdownToPlainText } = await vi.importMock<Record<string, Mock>>('./artifactMarkdownPlainText');
         const markdown = await buildArtifactFileForSave(documentArtifact, 'md');
         const plainText = await buildArtifactFileForSave(documentArtifact, 'txt');
 
@@ -91,7 +93,7 @@ describe('buildArtifactFileForSave', () => {
     });
 
     it('builds PDF bytes for documents and presentations', async () => {
-        const { htmlDocumentToPdfBytes, htmlSlideDocumentsToPdfBytes } = jest.requireMock(
+        const { htmlDocumentToPdfBytes, htmlSlideDocumentsToPdfBytes } = await vi.importMock<Record<string, Mock>>(
             '../../../util/pdf/htmlDocumentToPdfBytes'
         );
 
@@ -103,7 +105,7 @@ describe('buildArtifactFileForSave', () => {
     });
 
     it('builds a Word document from document markdown', async () => {
-        const { markdownToDocxBlob } = jest.requireMock('../../../util/docx/markdownToDocx');
+        const { markdownToDocxBlob } = await vi.importMock<Record<string, Mock>>('../../../util/docx/markdownToDocx');
 
         const prepared = await buildArtifactFileForSave(documentArtifact, 'docx');
 
@@ -117,8 +119,10 @@ describe('buildArtifactFileForSave', () => {
     });
 
     it('gives Word charts as embedded images and chat cards as a quote, not raw fences (D12)', async () => {
-        const { markdownToDocxBlob } = jest.requireMock('../../../util/docx/markdownToDocx');
-        const { renderVegaSpecToPng } = jest.requireMock('../../LumoMarkdown/vega/renderVegaSpecToSvg');
+        const { markdownToDocxBlob } = await vi.importMock<Record<string, Mock>>('../../../util/docx/markdownToDocx');
+        const { renderVegaSpecToPng } = await vi.importMock<Record<string, Mock>>(
+            '../../LumoMarkdown/vega/renderVegaSpecToSvg'
+        );
         const png = { data: new Uint8Array([1]), width: 640, height: 360 };
         renderVegaSpecToPng.mockResolvedValueOnce(png);
         const content =
@@ -127,14 +131,16 @@ describe('buildArtifactFileForSave', () => {
 
         await buildArtifactFileForSave({ ...documentArtifact, content }, 'docx');
 
-        const [markdown, options] = markdownToDocxBlob.mock.calls.at(-1);
+        const [markdown, options] = markdownToDocxBlob.mock.calls.at(-1)!;
         const [key] = Array.from((options.localImages as Map<string, unknown>).keys());
         expect(markdown).toBe(`# Report\n\n![Sales](${key})\n\n> **Takeaway**: Up.\n`);
-        expect(options.localImages.get(key)).toBe(png);
+        expect(options.localImages!.get(key)).toBe(png);
     });
 
     it('builds PPTX bytes for presentations', async () => {
-        const { htmlSlidesToPptxBytes } = jest.requireMock('../../../util/pptx/htmlSlidesToPptxBytes');
+        const { htmlSlidesToPptxBytes } = await vi.importMock<Record<string, Mock>>(
+            '../../../util/pptx/htmlSlidesToPptxBytes'
+        );
 
         const prepared = await buildArtifactFileForSave(presentationArtifact, 'pptx');
 

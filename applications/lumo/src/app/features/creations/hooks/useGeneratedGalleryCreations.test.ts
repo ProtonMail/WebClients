@@ -4,26 +4,26 @@ import type { GeneratedAssetFromApi } from '../../../remote/api';
 import { CREATIONS_LIST_PAGE_SIZE } from '../creationsPagination';
 import { useGeneratedGalleryCreations } from './useGeneratedGalleryCreations';
 
-const mockListGeneratedAssets = jest.fn();
+const mockListGeneratedAssets = vi.fn();
 
-jest.mock('../../../hooks/useIsChatHistoryHydrating', () => {
+vi.mock('../../../hooks/useIsChatHistoryHydrating', () => {
     return { useIsChatHistoryHydrating: () => false };
 });
-jest.mock('../../../redux/thunk', () => {
+vi.mock('../../../redux/thunk', () => {
     return {
         extraThunkArguments: {
             lumoApi: { listGeneratedAssets: (...args: unknown[]) => mockListGeneratedAssets(...args) },
         },
     };
 });
-jest.mock('../../../redux/hooks', () => {
+vi.mock('../../../redux/hooks', () => {
     const state = {
         idmap: { remote2local: { space: { 'remote-space': 'space' } } },
         spaces: { space: {} },
         attachments: {},
     };
     return {
-        useLumoDispatch: () => jest.fn(),
+        useLumoDispatch: () => vi.fn(),
         useLumoStore: () => ({ getState: () => state }),
     };
 });
@@ -49,11 +49,11 @@ const NOW = 1_800_000_000;
 describe('useGeneratedGalleryCreations', () => {
     beforeEach(() => {
         mockListGeneratedAssets.mockReset();
-        jest.spyOn(Date, 'now').mockReturnValue(NOW * 1000);
+        vi.spyOn(Date, 'now').mockReturnValue(NOW * 1000);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('lists a small library in one request covering all history', async () => {

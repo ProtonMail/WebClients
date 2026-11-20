@@ -1,3 +1,7 @@
+// @vitest-environment jsdom
+// happy-dom never fires `load` on an iframe without a URL, which the export code waits for.
+import type { MockInstance } from 'vitest';
+
 import { printHtmlDocument } from './printHtmlDocument';
 
 const getPrintFrame = (): HTMLIFrameElement | null => {
@@ -5,27 +9,27 @@ const getPrintFrame = (): HTMLIFrameElement | null => {
 };
 
 describe('printHtmlDocument', () => {
-    let printSpy: jest.SpyInstance | undefined;
+    let printSpy: MockInstance | undefined;
     const originalTitle = document.title;
     const originalAppendChild = document.body.appendChild.bind(document.body);
 
     beforeEach(() => {
         // Spy on print() for each frame as it is attached, since every iframe has its own window.
-        jest.spyOn(document.body, 'appendChild').mockImplementation(<T extends Node>(node: T): T => {
+        vi.spyOn(document.body, 'appendChild').mockImplementation(<T extends Node>(node: T): T => {
             const appended = originalAppendChild(node);
             if (node instanceof HTMLIFrameElement && node.contentWindow) {
-                printSpy = jest.spyOn(node.contentWindow, 'print').mockImplementation(() => {});
+                printSpy = vi.spyOn(node.contentWindow, 'print').mockImplementation(() => {});
             }
             return appended;
         });
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         printSpy = undefined;
         document.title = originalTitle;
         // Closing the dialog runs the real cleanup, which also clears its 10 minute fallback timer.
-        // A pending timer keeps a --runInBand jest process alive after the tests finish.
+        // A pending timer keeps a serial test process alive after the tests finish.
         document.querySelectorAll<HTMLIFrameElement>('iframe[data-print-frame]').forEach((node) => {
             node.contentWindow?.dispatchEvent(new Event('afterprint'));
         });
@@ -36,7 +40,7 @@ describe('printHtmlDocument', () => {
         'ProtonLumo/2.1.1 (iPadOS 26.0; Apple iPad14,3)',
         'ProtonLumo/2.1.1 (Android 16; Pixel 9)',
     ])('returns false in native apps so the caller downloads a PDF (%s)', async (userAgent) => {
-        jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
+        vi.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
 
         const result = await printHtmlDocument('<html><body><p>Report</p></body></html>');
 
@@ -65,7 +69,7 @@ describe('printHtmlDocument', () => {
                 },
             ],
         ])('returns false without printing when the bridge is injected (%s)', async (_name, inject) => {
-            jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(
+            vi.spyOn(navigator, 'userAgent', 'get').mockReturnValue(
                 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)'
             );
             inject();
@@ -82,8 +86,8 @@ describe('printHtmlDocument', () => {
         'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 Version/26.0 Mobile Safari/604.1',
         'Mozilla/5.0 (Linux; Android 16; Pixel 9) AppleWebKit/537.36 Chrome/141.0.0.0 Mobile Safari/537.36',
     ])('preserves hidden-frame printing in browsers (%s)', async (userAgent) => {
-        jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
-        const openSpy = jest.spyOn(window, 'open');
+        vi.spyOn(navigator, 'userAgent', 'get').mockReturnValue(userAgent);
+        const openSpy = vi.spyOn(window, 'open');
 
         await expect(printHtmlDocument('<html><body><p>Report</p></body></html>')).resolves.toBe(true);
 
@@ -119,10 +123,10 @@ describe('printHtmlDocument', () => {
     });
 
     it('returns false and cleans up when printing throws', async () => {
-        jest.spyOn(document.body, 'appendChild').mockImplementation(<T extends Node>(node: T): T => {
+        vi.spyOn(document.body, 'appendChild').mockImplementation(<T extends Node>(node: T): T => {
             const appended = originalAppendChild(node);
             if (node instanceof HTMLIFrameElement && node.contentWindow) {
-                jest.spyOn(node.contentWindow, 'print').mockImplementation(() => {
+                vi.spyOn(node.contentWindow, 'print').mockImplementation(() => {
                     throw new Error('print blocked');
                 });
             }

@@ -9,46 +9,48 @@ import { Role } from '../../../../types';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
 import UserMessage from './UserMessage/UserMessage';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
-jest.mock('../../../../hooks/useChatLimitGate', () => ({ useChatLimitGate: () => ({ isBlocked: false }) }));
-jest.mock('../../../../hooks/useCopyNotification', () => ({
-    useCopyNotification: () => ({ showCopyNotification: jest.fn() }),
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
+vi.mock('../../../../hooks/useChatLimitGate', () => ({ useChatLimitGate: () => ({ isBlocked: false }) }));
+vi.mock('../../../../hooks/useCopyNotification', () => ({
+    useCopyNotification: () => ({ showCopyNotification: vi.fn() }),
 }));
-jest.mock('../../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({}) }));
-jest.mock('../../../../providers', () => ({ useLumoTheme: () => ({ isDarkLumoTheme: false }) }));
-jest.mock('../../../../providers/IsGuestProvider', () => ({ useIsGuest: () => true }));
-jest.mock('../../../../providers/WebSearchProvider', () => ({
+vi.mock('../../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({}) }));
+vi.mock('../../../../providers', () => ({ useLumoTheme: () => ({ isDarkLumoTheme: false }) }));
+vi.mock('../../../../providers/IsGuestProvider', () => ({ useIsGuest: () => true }));
+vi.mock('../../../../providers/WebSearchProvider', () => ({
     useWebSearch: () => ({ isWebSearchButtonToggled: false }),
 }));
-jest.mock('../../../../redux/hooks', () => ({ useLumoSelector: () => ({}), useLumoDispatch: () => jest.fn() }));
-jest.mock('../../../../util/telemetry', () => ({ sendMessageEditEvent: jest.fn() }));
-jest.mock('../../../Files', () => ({ ReferenceFilesButton: () => null }));
-jest.mock('../../../Files/Common', () => ({ AttachmentFileCard: () => null }));
-jest.mock('../../../LumoAvatar/LumoAvatar/LumoAvatar', () => () => null);
-jest.mock('../../../LumoIcon/LumoIcon', () => ({
+vi.mock('../../../../redux/hooks', () => ({ useLumoSelector: () => ({}), useLumoDispatch: () => vi.fn() }));
+vi.mock('../../../../util/telemetry', () => ({ sendMessageEditEvent: vi.fn() }));
+vi.mock('../../../Files', () => ({ ReferenceFilesButton: () => null }));
+vi.mock('../../../Files/Common', () => ({ AttachmentFileCard: () => null }));
+vi.mock('../../../LumoAvatar/LumoAvatar/LumoAvatar', () => ({ default: () => null }));
+vi.mock('../../../LumoIcon/LumoIcon', () => ({
     LumoIcon: (props: { 'aria-label'?: string }) => <span>{props['aria-label']}</span>,
 }));
-jest.mock('../../../Modals/AssistantFeedbackModal', () => () => null);
-jest.mock('../../../Modals/LinkWarningModal', () => () => null);
-jest.mock('../../../SiblingSelector', () => () => null);
-jest.mock('../../artifact/ArtifactChip', () => ({ ArtifactChip: () => null }));
-jest.mock('../../artifact/ArtifactChipLoading', () => ({ ArtifactChipLoading: () => null }));
-jest.mock('../../artifact/ArtifactActionUserMessage', () => ({ ArtifactActionUserMessage: () => null }));
-jest.mock('./actionToolbar/LumoCopyButton', () => () => null);
-jest.mock('./askUserQuestions/AskUserQuestionsToolMessage', () => ({ AskUserQuestionsToolMessage: () => null }));
-jest.mock('./createSchedule/CreateScheduleToolMessage', () => ({ CreateScheduleToolMessage: () => null }));
-jest.mock('./toolCall/SourcesBlock', () => ({ SourcesButton: () => null }));
-jest.mock('./AssistantMessage/SuggestedQuestions', () => ({ SuggestedQuestions: () => null }));
-jest.mock('./AssistantMessage/toolCallTimeline/RenderBlocks', () => ({ RenderBlocks: () => null }));
-jest.mock('./UserMessage/useNativeMessageEdit', () => () => ({ startNativeEdit: jest.fn() }));
-jest.mock('./useCollapsibleMessageContent', () => () => ({
-    contentRef: { current: null },
-    isCollapsed: false,
-    showCollapseButton: false,
-    toggleCollapse: jest.fn(),
+vi.mock('../../../Modals/AssistantFeedbackModal', () => ({ default: () => null }));
+vi.mock('../../../Modals/LinkWarningModal', () => ({ default: () => null }));
+vi.mock('../../../SiblingSelector', () => ({ default: () => null }));
+vi.mock('../../artifact/ArtifactChip', () => ({ ArtifactChip: () => null }));
+vi.mock('../../artifact/ArtifactChipLoading', () => ({ ArtifactChipLoading: () => null }));
+vi.mock('../../artifact/ArtifactActionUserMessage', () => ({ ArtifactActionUserMessage: () => null }));
+vi.mock('./actionToolbar/LumoCopyButton', () => ({ default: () => null }));
+vi.mock('./askUserQuestions/AskUserQuestionsToolMessage', () => ({ AskUserQuestionsToolMessage: () => null }));
+vi.mock('./createSchedule/CreateScheduleToolMessage', () => ({ CreateScheduleToolMessage: () => null }));
+vi.mock('./toolCall/SourcesBlock', () => ({ SourcesButton: () => null }));
+vi.mock('./AssistantMessage/SuggestedQuestions', () => ({ SuggestedQuestions: () => null }));
+vi.mock('./AssistantMessage/toolCallTimeline/RenderBlocks', () => ({ RenderBlocks: () => null }));
+vi.mock('./UserMessage/useNativeMessageEdit', () => ({ default: () => ({ startNativeEdit: vi.fn() }) }));
+vi.mock('./useCollapsibleMessageContent', () => ({
+    default: () => ({
+        contentRef: { current: null },
+        isCollapsed: false,
+        showCollapseButton: false,
+        toggleCollapse: vi.fn(),
+    }),
 }));
 
 afterEach(() => {
@@ -64,10 +66,10 @@ it('keeps Edit and Regenerate disabled until Stop cleanup releases the conversat
         content: 'Partial answer',
         status: 'succeeded',
     } as Message;
-    const edit = jest.fn();
-    const retry = jest.fn();
+    const edit = vi.fn();
+    const retry = vi.fn();
     const ref = createRef<HTMLDivElement>();
-    const siblingInfo = { idx: 0, count: 1, onPrev: jest.fn(), onNext: jest.fn() };
+    const siblingInfo = { idx: 0, count: 1, onPrev: vi.fn(), onNext: vi.fn() };
     const Messages = () => {
         const isGenerating = useGenerationInProgress('chat');
         return (
@@ -78,22 +80,22 @@ it('keeps Edit and Regenerate disabled until Stop cleanup releases the conversat
                     siblingInfo={siblingInfo}
                     handleEditMessage={edit}
                     isGenerating={isGenerating}
-                    onOpenFilePreview={jest.fn()}
+                    onOpenFilePreview={vi.fn()}
                 />
                 <AssistantMessage
                     message={assistantMessage}
                     messageChain={[userMessage, assistantMessage]}
-                    handleRegenerateMessage={jest.fn()}
+                    handleRegenerateMessage={vi.fn()}
                     siblingInfo={siblingInfo}
                     isLastMessage
                     isRunning={false}
-                    onToggleMessageSource={jest.fn()}
-                    onToggleFilesManagement={jest.fn()}
+                    onToggleMessageSource={vi.fn()}
+                    onToggleFilesManagement={vi.fn()}
                     isGenerating={isGenerating}
                     messageChainRef={ref}
                     sourcesContainerRef={ref}
-                    handleOpenSources={jest.fn()}
-                    handleOpenFiles={jest.fn()}
+                    handleOpenSources={vi.fn()}
+                    handleOpenFiles={vi.fn()}
                     onRetryPanelToggle={retry}
                 />
             </>

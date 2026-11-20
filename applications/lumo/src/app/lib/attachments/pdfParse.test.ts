@@ -18,9 +18,9 @@ const OPS = {
 };
 
 let pages: FakePage[] = [];
-const render = jest.fn();
+const render = vi.fn();
 
-jest.mock('pdfjs-dist/legacy/build/pdf.mjs', () => ({
+vi.mock('pdfjs-dist/legacy/build/pdf.mjs', () => ({
     GlobalWorkerOptions: { workerPort: {} },
     OPS: {
         save: 1,
@@ -149,7 +149,7 @@ describe('pdfParse page images', () => {
         render.mockImplementationOnce(() => {
             throw new Error('canvas failed');
         });
-        jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+        vi.spyOn(console, 'warn').mockImplementation(() => undefined);
 
         const result = await pdfParse(new Uint8Array(1), { renderPageImages: true });
 

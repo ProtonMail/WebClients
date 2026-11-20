@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest';
 describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
     const originalUA = navigator.userAgent;
     const setUA = (version: string) =>
@@ -7,13 +8,13 @@ describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
         });
     let api: any;
     let instance: any;
-    let post: jest.Mock;
-    let state: jest.Mock;
-    beforeEach(() => {
+    let post: Mock;
+    let state: Mock;
+    beforeEach(async () => {
         setUA('2.2.0');
-        jest.resetModules();
-        post = jest.fn();
-        state = jest.fn();
+        vi.resetModules();
+        post = vi.fn();
+        state = vi.fn();
         if (platform === 'Android') (window as any).Android = { postMessage: post, onStateChange: state };
         else {
             (window as any).webkit = {
@@ -23,7 +24,7 @@ describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
                 },
             };
         }
-        require('./nativeComposerBridge');
+        await import('./nativeComposerBridge');
         api = (window as any).nativeComposerApi;
         instance = (window as any).nativeComposerApiInstance;
         post.mockClear();
@@ -34,7 +35,7 @@ describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
         delete (window as any).Android;
         delete (window as any).webkit;
     });
-    const response = () => (platform === 'Android' ? JSON.parse(post.mock.lastCall[0]) : post.mock.lastCall[0]);
+    const response = () => (platform === 'Android' ? JSON.parse(post.mock.lastCall![0]) : post.mock.lastCall![0]);
     it('advertises unavailable until a composer registers; preserves legacy defaults', () => {
         expect(instance.getState()).toMatchObject({
             skills: { version: 1, status: 'unavailable', commands: [] },
@@ -45,8 +46,8 @@ describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
         expect(response()).toEqual({ callId: 'call', status: 'error', error: 'skills_unavailable' });
     });
     it('returns replacement text in the existing callback envelope without logging it', () => {
-        const log = jest.spyOn(console, 'log').mockImplementation(() => {});
-        const handler = jest.fn(() => ({ text: '/chart private draft' }));
+        const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+        const handler = vi.fn(() => ({ text: '/chart private draft' }));
         instance.registerSkillsHandler(handler);
         const input = { revision: 'r', id: 'x', text: 'private draft' };
         api.invokeSkill('call', input);
@@ -57,7 +58,7 @@ describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
     });
     it('keeps older clients on Custom Lumos and rejects Skills invocation', () => {
         setUA('2.1.99');
-        const handler = jest.fn(() => ({ text: '/chart draft' }));
+        const handler = vi.fn(() => ({ text: '/chart draft' }));
         instance.registerSkillsHandler(handler);
         instance.setSkills({ version: 1, status: 'ready', revision: 'r', commands: [] });
         expect(instance.getState().skills.status).toBe('unavailable');
@@ -71,7 +72,7 @@ describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
         instance.setCustomLumos([{ id: 'legacy', name: 'Legacy', source: 'personal' }]);
         instance.setSelectedCustomLumo({ id: 'legacy', name: 'Legacy', source: 'personal' });
         expect(instance.getState()).toMatchObject({ customLumos: [], selectedCustomLumo: null });
-        const listener = jest.fn();
+        const listener = vi.fn();
         window.addEventListener('lumo:selectCustomLumo', listener);
         await expect(instance.selectCustomLumo('legacy')).rejects.toThrow('custom_lumos_unavailable');
         await expect(instance.clearCustomLumo()).rejects.toThrow('custom_lumos_unavailable');
@@ -87,7 +88,7 @@ describe.each(['Android', 'iOS'])('Skills bridge transport: %s', (platform) => {
         expect(state).toHaveBeenCalledTimes(1);
     });
     it('rejects invocation during message editing and after handler cleanup', () => {
-        const handler = jest.fn(() => ({ text: '/chart draft' }));
+        const handler = vi.fn(() => ({ text: '/chart draft' }));
         const cleanup = instance.registerSkillsHandler(handler);
         instance.setEditMode('edit');
         api.invokeSkill('call', {});

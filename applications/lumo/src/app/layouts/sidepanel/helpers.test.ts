@@ -298,15 +298,15 @@ describe('free user chat retention lifecycle', () => {
     };
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('keeps the chat visible through day 8 and not yet eligible for deletion', () => {
-        jest.setSystemTime(new Date('2026-01-08T12:00:00.000Z'));
+        vi.setSystemTime(new Date('2026-01-08T12:00:00.000Z'));
 
         expect(applyRetentionPolicy([conversation], false)).toHaveLength(1);
         expect(isConversationEligibleForDeletion(conversation)).toBe(false);
@@ -315,7 +315,7 @@ describe('free user chat retention lifecycle', () => {
     });
 
     it('hides the chat from history and makes it eligible for soft deletion on day 9', () => {
-        jest.setSystemTime(new Date('2026-01-09T12:00:00.000Z'));
+        vi.setSystemTime(new Date('2026-01-09T12:00:00.000Z'));
 
         expect(applyRetentionPolicy([conversation], false)).toHaveLength(0);
         expect(isConversationEligibleForDeletion(conversation)).toBe(true);
@@ -323,7 +323,7 @@ describe('free user chat retention lifecycle', () => {
     });
 
     it('does not hide expired chats from Lumo Plus users', () => {
-        jest.setSystemTime(new Date('2026-01-09T12:00:00.000Z'));
+        vi.setSystemTime(new Date('2026-01-09T12:00:00.000Z'));
 
         expect(applyRetentionPolicy([conversation], true)).toHaveLength(1);
     });

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// DOMPurify drops block elements such as <h1> when it runs on happy-dom.
 import { sanitizeArtifactExportBodyHtml } from './sanitizeArtifactExportBodyHtml';
 
 describe('sanitizeArtifactExportBodyHtml', () => {

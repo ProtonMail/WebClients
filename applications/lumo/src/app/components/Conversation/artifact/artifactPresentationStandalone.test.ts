@@ -1,15 +1,13 @@
 import { buildStandalonePresentationHtml } from './artifactPresentationStandalone';
 
-jest.mock('reveal.js/dist/reveal.js', () => ({ __esModule: true, default: 'window.Reveal = {};' }), { virtual: true });
-jest.mock('reveal.js/dist/reveal.css', () => ({ __esModule: true, default: '.reveal {}' }), { virtual: true });
-jest.mock('reveal.js/dist/theme/simple.css', () => ({ __esModule: true, default: '.simple-theme {}' }), {
-    virtual: true,
-});
-jest.mock('./presentationCharts', () => ({
-    renderChartsInSlideContent: jest.fn(async (content: string) => {
+vi.mock('reveal.js/dist/reveal.js', () => ({ __esModule: true, default: 'window.Reveal = {};' }));
+vi.mock('reveal.js/dist/reveal.css', () => ({ __esModule: true, default: '.reveal {}' }));
+vi.mock('reveal.js/dist/theme/simple.css', () => ({ __esModule: true, default: '.simple-theme {}' }));
+vi.mock('./presentationCharts', () => ({
+    renderChartsInSlideContent: vi.fn(async (content: string) => {
         return content.replace('<!--chart-->', '<div class="lumo-chart"><svg></svg></div>');
     }),
-    slideContentNeedsChartPass: jest.fn(() => false),
+    slideContentNeedsChartPass: vi.fn(() => false),
 }));
 
 const deck = {

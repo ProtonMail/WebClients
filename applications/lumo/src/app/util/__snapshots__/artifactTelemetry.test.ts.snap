@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`artifact event payloads matches the agreed payloads 1`] = `
+exports[`artifact event payloads > matches the agreed payloads 1`] = `
 [
   [
     "lumo-composer-event",

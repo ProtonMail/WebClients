@@ -3,10 +3,10 @@ import { renderHook } from '@testing-library/react';
 import type { CreationsListItem } from '../creations/hooks/useGeneratedGalleryCreations';
 import { MAX_CONCURRENT_CREATION_PULLS, useLibraryCreationEntries } from './useLibraryCreationEntries';
 
-const mockDispatch = jest.fn();
+const mockDispatch = vi.fn();
 let mockState: any;
 
-jest.mock('../../redux/hooks', () => {
+vi.mock('../../redux/hooks', () => {
     return {
         useLumoDispatch: () => mockDispatch,
         useLumoSelector: (selector: (state: any) => unknown) => selector(mockState),

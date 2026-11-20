@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import type { MockedFunction } from 'vitest';
 
 import type { Conversation } from '../../../types';
 import type { LumoDispatch, LumoState } from '../../store';
@@ -23,7 +24,7 @@ it.each([false, true])('remembers Answer Now and a subsequent manual choice (gho
             },
         },
     });
-    const dispatch = jest.fn(store.dispatch) as unknown as jest.MockedFunction<LumoDispatch>;
+    const dispatch = vi.fn(store.dispatch) as unknown as MockedFunction<LumoDispatch>;
     const getState = () => store.getState() as LumoState;
 
     saveConversationModelTier({ id: conversation.id, modelTier: 'lumo-lite', answerNowUsed: true })(dispatch, getState);
@@ -50,7 +51,7 @@ it.each([false, true])('remembers Answer Now and a subsequent manual choice (gho
 });
 
 it('does not recreate or push a conversation deleted before the request completes', () => {
-    const dispatch = jest.fn();
+    const dispatch = vi.fn();
     saveConversationModelTier({ id: conversation.id, modelTier: 'lumo-lite', answerNowUsed: true })(
         dispatch,
         () => ({ conversations: {} }) as LumoState

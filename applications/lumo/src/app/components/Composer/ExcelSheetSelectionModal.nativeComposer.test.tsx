@@ -4,14 +4,14 @@ import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHe
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
 import { useNativeComposerHostVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
 
-jest.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../providers/RightPanelProvider', () => ({
+vi.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
+vi.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../providers/RightPanelProvider', () => ({
     useOptionalRightPanel: () => ({ isOpen: true, isOverlay: false }),
 }));
-jest.mock('../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
-jest.mock('../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../util/userAgent', () => ({
+vi.mock('../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
+vi.mock('../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../util/userAgent', () => ({
     canShowWebComposer: () => false,
     canUseNativeSidebarLayout: () => true,
     canUseNativeRightPanelLayout: () => true,

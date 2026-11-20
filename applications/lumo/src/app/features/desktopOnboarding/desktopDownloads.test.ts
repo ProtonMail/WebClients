@@ -1,13 +1,15 @@
+import type { Mock } from 'vitest';
+
 import { isDebianBased, isFedoraOrRedHatBased, isLinux, isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 
 import { getInstallerUrlFromReleases, getLumoDesktopManifestUrl, getLumoDesktopTarget } from './desktopDownloads';
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isMac: jest.fn(),
-    isWindows: jest.fn(),
-    isLinux: jest.fn(),
-    isDebianBased: jest.fn(),
-    isFedoraOrRedHatBased: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isMac: vi.fn(),
+    isWindows: vi.fn(),
+    isLinux: vi.fn(),
+    isDebianBased: vi.fn(),
+    isFedoraOrRedHatBased: vi.fn(),
 }));
 
 const setOs = ({
@@ -23,11 +25,11 @@ const setOs = ({
     debian?: boolean;
     fedora?: boolean;
 }) => {
-    (isMac as jest.Mock).mockReturnValue(mac);
-    (isWindows as jest.Mock).mockReturnValue(windows);
-    (isLinux as jest.Mock).mockReturnValue(linux);
-    (isDebianBased as jest.Mock).mockReturnValue(debian);
-    (isFedoraOrRedHatBased as jest.Mock).mockReturnValue(fedora);
+    (isMac as Mock).mockReturnValue(mac);
+    (isWindows as Mock).mockReturnValue(windows);
+    (isLinux as Mock).mockReturnValue(linux);
+    (isDebianBased as Mock).mockReturnValue(debian);
+    (isFedoraOrRedHatBased as Mock).mockReturnValue(fedora);
 };
 
 // Shapes copied from https://proton.me/download/lumo/desktop/<platform>/v1/version.json (2026-11-16).

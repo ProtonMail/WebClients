@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
@@ -7,7 +6,7 @@ import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/inter
 import { decryptMasterKeyEnvelope } from './lumoBootstrap';
 
 describe('decryptMasterKeyEnvelope', () => {
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => vi.restoreAllMocks());
 
     it('accepts a legacy envelope encrypted and signed with an address key', async () => {
         const userKey = {
@@ -18,7 +17,7 @@ describe('decryptMasterKeyEnvelope', () => {
             privateKey: { id: 'address-private' },
             publicKey: { id: 'address-public' },
         } as unknown as DecryptedAddressKey<PrivateKeyReference>;
-        const decryptSpy = jest
+        const decryptSpy = vi
             .spyOn(CryptoProxy, 'decryptMessage')
             .mockRejectedValueOnce(new Error('Not encrypted to the user key'))
             .mockResolvedValueOnce({

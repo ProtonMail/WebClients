@@ -1,14 +1,15 @@
+import type { Mock } from 'vitest';
 describe('nativeComposerBridge - custom lumos', () => {
-    let onStateChange: jest.Mock;
+    let onStateChange: Mock;
     let nativeComposerApiInstance: any;
     let nativeComposerApi: any;
 
-    beforeEach(() => {
-        jest.resetModules();
-        onStateChange = jest.fn();
+    beforeEach(async () => {
+        vi.resetModules();
+        onStateChange = vi.fn();
         (window as any).Android = { onStateChange };
 
-        require('./nativeComposerBridge');
+        await import('./nativeComposerBridge');
         nativeComposerApiInstance = (window as any).nativeComposerApiInstance;
         nativeComposerApi = (window as any).nativeComposerApi;
 
@@ -31,7 +32,7 @@ describe('nativeComposerBridge - custom lumos', () => {
         nativeComposerApiInstance.toggleApertusModelEnabled(true);
 
         expect(nativeComposerApiInstance.getState().featureFlags.isApertusModelEnabled).toBe(true);
-        expect(JSON.parse(onStateChange.mock.lastCall[0]).featureFlags.isApertusModelEnabled).toBe(true);
+        expect(JSON.parse(onStateChange.mock.lastCall![0]).featureFlags.isApertusModelEnabled).toBe(true);
     });
 
     it('setCustomLumos updates state and pushes it to native', () => {
@@ -69,7 +70,7 @@ describe('nativeComposerBridge - custom lumos', () => {
     });
 
     it('selectCustomLumo dispatches a lumo:selectCustomLumo event with the id', async () => {
-        const handler = jest.fn();
+        const handler = vi.fn();
         window.addEventListener('lumo:selectCustomLumo', handler);
 
         const result = await nativeComposerApiInstance.selectCustomLumo('a1');
@@ -82,7 +83,7 @@ describe('nativeComposerBridge - custom lumos', () => {
     });
 
     it('clearCustomLumo dispatches a lumo:clearCustomLumo event', async () => {
-        const handler = jest.fn();
+        const handler = vi.fn();
         window.addEventListener('lumo:clearCustomLumo', handler);
 
         const result = await nativeComposerApiInstance.clearCustomLumo();

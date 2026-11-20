@@ -9,16 +9,16 @@ import type { ScheduleService } from '../../services/schedules/ScheduleService';
 import type { ScheduleServiceSnapshot } from '../../services/schedules/types';
 import { useRunScheduleNow } from './useRunScheduleNow';
 
-const push = jest.fn();
-const createNotification = jest.fn();
+const push = vi.fn();
+const createNotification = vi.fn();
 let conversations: Record<string, { id: string }> = {};
-jest.mock('react-router-dom', () => ({ useHistory: () => ({ push }) }));
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ ID: 'alice' }] }));
-jest.mock('@proton/app-context/useNotifications', () => ({ useNotifications: () => ({ createNotification }) }));
-jest.mock('../../redux/hooks', () => ({
+vi.mock('react-router-dom', () => ({ useHistory: () => ({ push }) }));
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ ID: 'alice' }] }));
+vi.mock('@proton/app-context/useNotifications', () => ({ useNotifications: () => ({ createNotification }) }));
+vi.mock('../../redux/hooks', () => ({
     useLumoSelector: (select: (state: unknown) => unknown) => select({ conversations }),
 }));
-jest.mock('../../services/schedules/ConversationScheduleRunRepository', () => ({
+vi.mock('../../services/schedules/ConversationScheduleRunRepository', () => ({
     scheduleConversationId: () => 'new-conversation',
 }));
 
@@ -32,7 +32,7 @@ function harness(available = true) {
         updatedAt: '2026-10-28T00:00:00Z',
     };
     let snapshot: ScheduleServiceSnapshot = { status: 'ready', pendingRuns: [], unsettledRuns: [] };
-    const runNow = jest.fn(async () => {
+    const runNow = vi.fn(async () => {
         snapshot = { ...snapshot, pendingRuns: [run] };
         return run;
     });
@@ -44,7 +44,7 @@ function harness(available = true) {
 }
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     conversations = {};
 });
 

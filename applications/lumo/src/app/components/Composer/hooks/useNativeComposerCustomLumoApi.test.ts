@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useConversationAgent } from '../../../hooks/useConversationAgent';
 import { useCustomAgents } from '../../../hooks/useCustomAgents';
@@ -10,26 +11,26 @@ import {
 } from '../../../remote/nativeComposerBridgeHelpers';
 import { useNativeComposerCustomLumoApi } from './useNativeComposerCustomLumoApi';
 
-jest.mock('../../../hooks/useCustomAgents');
-jest.mock('../../../hooks/useConversationAgent');
-jest.mock('../../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../../hooks/useCustomAgents');
+vi.mock('../../../hooks/useConversationAgent');
+vi.mock('../../../remote/nativeComposerBridgeHelpers');
 
-const mockedUseCustomAgents = useCustomAgents as jest.Mock;
-const mockedUseConversationAgent = useConversationAgent as jest.Mock;
-const mockedOnNativeSelectCustomLumo = onNativeSelectCustomLumo as jest.Mock;
-const mockedOnNativeClearCustomLumo = onNativeClearCustomLumo as jest.Mock;
+const mockedUseCustomAgents = useCustomAgents as Mock;
+const mockedUseConversationAgent = useConversationAgent as Mock;
+const mockedOnNativeSelectCustomLumo = onNativeSelectCustomLumo as Mock;
+const mockedOnNativeClearCustomLumo = onNativeClearCustomLumo as Mock;
 
 describe('useNativeComposerCustomLumoApi', () => {
     const originalUA = navigator.userAgent;
     afterEach(() => Object.defineProperty(navigator, 'userAgent', { configurable: true, value: originalUA }));
-    const activateAgent = jest.fn();
-    const clearAgent = jest.fn();
+    const activateAgent = vi.fn();
+    const clearAgent = vi.fn();
     const personalAgent = { id: 'p1', name: 'Mine', source: 'personal' as const, createdAt: 0, updatedAt: 0 };
     const protonAgent = { id: 'b1', name: 'Built-in', source: 'published' as const, createdAt: 0, updatedAt: 0 };
 
     beforeEach(() => {
         Object.defineProperty(navigator, 'userAgent', { configurable: true, value: 'ProtonLumo/2.1.5 (Android 16)' });
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUseCustomAgents.mockReturnValue({ personalAgents: [personalAgent], protonAgents: [protonAgent] });
         mockedUseConversationAgent.mockReturnValue({
             activeAgent: undefined,
@@ -37,8 +38,8 @@ describe('useNativeComposerCustomLumoApi', () => {
             activateAgent,
             clearAgent,
         });
-        mockedOnNativeSelectCustomLumo.mockReturnValue(jest.fn());
-        mockedOnNativeClearCustomLumo.mockReturnValue(jest.fn());
+        mockedOnNativeSelectCustomLumo.mockReturnValue(vi.fn());
+        mockedOnNativeClearCustomLumo.mockReturnValue(vi.fn());
     });
 
     it('pushes the combined built-in + personal list when enabled', () => {

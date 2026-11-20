@@ -6,29 +6,29 @@ import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridg
 import { useNativeComposerHostVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { FilesManagementView } from './FilesManagementView';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('../../../redux/hooks', () => ({
-    useLumoDispatch: () => jest.fn(),
+vi.mock('../../../redux/hooks', () => ({
+    useLumoDispatch: () => vi.fn(),
     useLumoSelector: (select: (state: unknown) => unknown) =>
         select({ spaces: {}, attachments: {}, messages: {}, contextFilters: [] }),
     useLumoMemoSelector: () => ({}),
 }));
-jest.mock('./ContextUsageBreakdown', () => ({ ContextUsageBreakdown: () => null }));
-jest.mock('../../../providers/IsGuestProvider', () => ({ useIsGuest: () => false }));
-jest.mock('../../Composer/hooks/useFileHandling', () => ({ useFileHandling: () => ({}) }));
-jest.mock('../../Composer/ExcelSheetSelectionModal', () => ({
-    useExcelSheetSelection: () => ({ requestSheetSelection: jest.fn(), modal: null }),
+vi.mock('./ContextUsageBreakdown', () => ({ ContextUsageBreakdown: () => null }));
+vi.mock('../../../providers/IsGuestProvider', () => ({ useIsGuest: () => false }));
+vi.mock('../../Composer/hooks/useFileHandling', () => ({ useFileHandling: () => ({}) }));
+vi.mock('../../Composer/ExcelSheetSelectionModal', () => ({
+    useExcelSheetSelection: () => ({ requestSheetSelection: vi.fn(), modal: null }),
 }));
-jest.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../../providers/RightPanelProvider', () => ({
+vi.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
+vi.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../../providers/RightPanelProvider', () => ({
     useOptionalRightPanel: () => ({ isOpen: true, isOverlay: false }),
 }));
-jest.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
-jest.mock('../../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../../util/userAgent', () => ({
+vi.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
+vi.mock('../../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../../util/userAgent', () => ({
     canShowWebComposer: () => false,
     canUseNativeSidebarLayout: () => true,
     canUseNativeRightPanelLayout: () => true,
@@ -39,13 +39,13 @@ const ComposerHost = () => {
     return null;
 };
 
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 it('keeps the composer fitted beside docked chat files', () => {
     render(
         <>
             <ComposerHost />
-            <FilesManagementView messageChain={[]} filesContainerRef={createRef()} onClose={jest.fn()} />
+            <FilesManagementView messageChain={[]} filesContainerRef={createRef()} onClose={vi.fn()} />
         </>
     );
 
@@ -53,14 +53,14 @@ it('keeps the composer fitted beside docked chat files', () => {
 });
 
 it('covers the composer when chat files are presented as a modal and restores fitting on close', () => {
-    const props = { messageChain: [], filesContainerRef: createRef<HTMLDivElement>(), onClose: jest.fn() };
+    const props = { messageChain: [], filesContainerRef: createRef<HTMLDivElement>(), onClose: vi.fn() };
     const { rerender } = render(
         <>
             <ComposerHost />
             <FilesManagementView
                 {...props}
                 forceModal
-                modalProps={{ open: true, onClose: props.onClose, onExit: jest.fn() }}
+                modalProps={{ open: true, onClose: props.onClose, onExit: vi.fn() }}
             />
         </>
     );
@@ -72,7 +72,7 @@ it('covers the composer when chat files are presented as a modal and restores fi
             <FilesManagementView
                 {...props}
                 forceModal
-                modalProps={{ open: false, onClose: props.onClose, onExit: jest.fn() }}
+                modalProps={{ open: false, onClose: props.onClose, onExit: vi.fn() }}
             />
         </>
     );

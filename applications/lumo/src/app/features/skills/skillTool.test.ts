@@ -12,11 +12,11 @@ const call = (name: string, args: unknown) => ({
 });
 
 describe('createSkillToolExecutor', () => {
-    const loadSkill = jest.fn(async (handle: string) => ({
+    const loadSkill = vi.fn(async (handle: string) => ({
         instructions: handle === 'empty' ? '  ' : `Steps for ${handle}`,
         files: handle === 'pdf-tools' ? ['references/api.md', 'scripts/fill.py'] : [],
     }));
-    const readFile = jest.fn(async (_handle: string, path: string): Promise<ReadFileResult> => {
+    const readFile = vi.fn(async (_handle: string, path: string): Promise<ReadFileResult> => {
         if (path === 'scripts/fill.py') {
             return { ok: true, path, content: 'print(1)', truncated: false, isScript: true };
         }
@@ -72,7 +72,7 @@ describe('createSkillToolExecutor', () => {
         });
 
         it('leaves out the file list when the skill has no files', async () => {
-            const loadSkillWithoutFiles = jest.fn(async () => ({ instructions: 'Steps', files: [] }));
+            const loadSkillWithoutFiles = vi.fn(async () => ({ instructions: 'Steps', files: [] }));
             const plain = createSkillToolExecutor({
                 loadableHandles: ['plain'],
                 loadSkill: loadSkillWithoutFiles,

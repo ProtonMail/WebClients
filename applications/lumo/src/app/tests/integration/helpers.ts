@@ -1,5 +1,5 @@
 import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
-import type { AnyAction, Middleware } from '@reduxjs/toolkit';
+import { type AnyAction, type Middleware, configureStore } from '@reduxjs/toolkit';
 import { createMemoryHistory } from 'history';
 import createSagaMiddleware from 'redux-saga';
 import { v4 as uuidv4 } from 'uuid';
@@ -14,7 +14,8 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesKwCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
-import { createLumoListenerMiddleware } from '../../redux/listeners';
+import { createLumoListenerMiddleware, start } from '../../redux/listeners';
+import { rootReducer } from '../../redux/rootReducer';
 import { rootSaga } from '../../redux/sagas';
 import type { LumoSelector } from '../../redux/selectors';
 import { addConversation, newConversationId, pushConversationRequest } from '../../redux/slices/core/conversations';
@@ -141,14 +142,11 @@ function createTestStore({
     actionHistoryMiddleware: any;
     extraThunkArguments: any;
 }) {
-    const { configureStore } = require('@reduxjs/toolkit');
-    const { rootReducer } = require('../../redux/rootReducer');
-    const { start } = require('../../redux/listeners');
-
     const isDevMode = process.env.NODE_ENV !== 'production';
     const isTest = process.env.NODE_ENV === 'test';
 
-    const store = configureStore({
+    // Loosely typed on purpose: the tests dispatch thunks and read state without the app's store types.
+    const store: any = configureStore({
         preloadedState,
         reducer: rootReducer,
         devTools: isDevMode,

@@ -286,15 +286,14 @@ describe('setDebugMaxModelOverride', () => {
         expect(getRemainingLimits()).toEqual({ lite: 10, max: 20 });
     });
 
-    it('reports max as exhausted even before the backend sends any limits', () => {
+    it('reports max as exhausted even before the backend sends any limits', async () => {
         // Fresh module instance so no earlier `setRemainingLimits` call is in scope.
-        jest.isolateModules(() => {
-            const store = require('./usageLimitsStore');
-            store.setDebugMaxModelOverride('unavailable_limit_reached');
+        vi.resetModules();
+        const store = await import('./usageLimitsStore');
+        store.setDebugMaxModelOverride('unavailable_limit_reached');
 
-            expect(store.getRemainingLimits()).toEqual({ max: 0 });
-            store.setDebugMaxModelOverride(null);
-        });
+        expect(store.getRemainingLimits()).toEqual({ max: 0 });
+        store.setDebugMaxModelOverride(null);
     });
 
     it('keeps overriding limits that arrive after it is switched on', () => {
@@ -326,14 +325,13 @@ describe('setDebugModelLimitsExhausted', () => {
         expect(getRemainingLimits()).toEqual({ lite: 0, max: 0, images: 3 });
     });
 
-    it('reports both pools as exhausted even before the backend sends any limits', () => {
-        jest.isolateModules(() => {
-            const store = require('./usageLimitsStore');
-            store.setDebugModelLimitsExhausted(true);
+    it('reports both pools as exhausted even before the backend sends any limits', async () => {
+        vi.resetModules();
+        const store = await import('./usageLimitsStore');
+        store.setDebugModelLimitsExhausted(true);
 
-            expect(store.getRemainingLimits()).toEqual({ lite: 0, max: 0 });
-            store.setDebugModelLimitsExhausted(false);
-        });
+        expect(store.getRemainingLimits()).toEqual({ lite: 0, max: 0 });
+        store.setDebugModelLimitsExhausted(false);
     });
 
     it('restores backend limits when switched off', () => {

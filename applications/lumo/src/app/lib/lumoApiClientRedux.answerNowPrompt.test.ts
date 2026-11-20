@@ -1,5 +1,6 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import type { AnswerNowPrompt } from '@proton/lumo-api-client/types-api';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -20,12 +21,12 @@ it.each([false, true])(
             placeholder: true,
         };
         let messages = { [message.id]: message };
-        const dispatch = jest.fn((action: UnknownAction) => {
+        const dispatch = vi.fn((action: UnknownAction) => {
             messages = messagesReducer(messages, action);
             return action;
         }) as unknown as LumoDispatch;
         let controller!: ReadableStreamDefaultController<Uint8Array<ArrayBuffer>>;
-        const api = jest.fn(
+        const api = vi.fn(
             async () =>
                 new ReadableStream<Uint8Array<ArrayBuffer>>({
                     start(streamController) {
@@ -45,7 +46,7 @@ it.each([false, true])(
             config: { enableU2LEncryption: false, enableSmoothing },
         })(dispatch, () => ({ messages, conversations: {} }) as LumoState);
         await waitFor(() => expect(api).toHaveBeenCalled());
-        const request = (api as jest.Mock).mock.calls[0][0];
+        const request = (api as Mock).mock.calls[0][0];
         expect(request.url).toBe('ai/v1/chat/completions');
         expect(request.data.messages).toContainEqual({ role: 'user', content: 'Hello' });
         expect(request.data.lumo).not.toHaveProperty('request_key');

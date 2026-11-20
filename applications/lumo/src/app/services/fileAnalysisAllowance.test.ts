@@ -1,3 +1,4 @@
+import { canUseNewModel, canUsePreviewModel } from '../util/userAgent';
 import {
     FileAnalysisLimitError,
     clearFileAnalysisLimitNotice,
@@ -9,12 +10,10 @@ import {
 } from './fileAnalysisAllowance';
 import { setRemainingLimits } from './usageLimitsStore';
 
-jest.mock('../util/userAgent', () => ({
-    canUseNewModel: jest.fn(() => true),
-    canUsePreviewModel: jest.fn(() => true),
+vi.mock('../util/userAgent', () => ({
+    canUseNewModel: vi.fn(() => true),
+    canUsePreviewModel: vi.fn(() => true),
 }));
-
-const { canUseNewModel, canUsePreviewModel } = jest.requireMock('../util/userAgent');
 
 const check = (overrides: Partial<Parameters<typeof findFileAnalysisShortfall>[0]> = {}) => {
     return findFileAnalysisShortfall({
@@ -45,11 +44,11 @@ describe('findFileAnalysisShortfall', () => {
         setRemainingLimits({ lite: 12, max: 10 });
 
         // The preview model is picked but cannot be used here, so the reply goes out as lumo-lite.
-        canUsePreviewModel.mockReturnValueOnce(false);
+        vi.mocked(canUsePreviewModel).mockReturnValueOnce(false);
         expect(check({ modelTier: 'lumo-preview' })?.needed).toBe(13);
 
         // An older client only has max and lite.
-        canUseNewModel.mockReturnValueOnce(false);
+        vi.mocked(canUseNewModel).mockReturnValueOnce(false);
         expect(check({ modelTier: 'apertus-15' })?.needed).toBe(13);
 
         // The preview model is usable: it is not in the Lite pool.

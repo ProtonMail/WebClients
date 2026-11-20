@@ -1,10 +1,11 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useApi } from '@proton/app-context/useApi';
 
 import { useMembersLumoApi } from './useMembersLumoApi';
 
-jest.mock('@proton/app-context/useApi');
+vi.mock('@proton/app-context/useApi');
 
 const listUrl = 'core/v4/members/lumo-api';
 const aliceAndBob = {
@@ -15,12 +16,12 @@ const aliceAndBob = {
     ],
 };
 
-const setup = (api: jest.Mock) => {
-    (useApi as jest.Mock).mockReturnValue(api);
+const setup = (api: Mock) => {
+    (useApi as Mock).mockReturnValue(api);
     return renderHook(() => useMembersLumoApi());
 };
 
-const setupLoaded = async (api: jest.Mock) => {
+const setupLoaded = async (api: Mock) => {
     api.mockResolvedValueOnce(aliceAndBob);
     const hook = setup(api);
     await waitFor(() => expect(hook.result.current.enabledByMemberId).toHaveProperty('member-bob'));
@@ -29,7 +30,7 @@ const setupLoaded = async (api: jest.Mock) => {
 
 describe('useMembersLumoApi', () => {
     it('reads the API access of every member, page by page, without notifying on failure', async () => {
-        const api = jest
+        const api = vi
             .fn()
             .mockResolvedValueOnce({ Total: 151, Members: [{ MemberID: 'member-alice', LumoApiEnabled: true }] })
             .mockResolvedValueOnce({ Total: 151, Members: [{ MemberID: 'member-bob', LumoApiEnabled: false }] });
@@ -48,14 +49,14 @@ describe('useMembersLumoApi', () => {
     });
 
     it('reports an error when the API access cannot be read', async () => {
-        const { result } = setup(jest.fn().mockRejectedValue(new Error('503')));
+        const { result } = setup(vi.fn().mockRejectedValue(new Error('503')));
 
         await waitFor(() => expect(result.current.error).toBe(true));
         expect(result.current.enabledByMemberId).toEqual({});
     });
 
     it('saves a member’s API access, then shows it next to the others', async () => {
-        const api = jest.fn();
+        const api = vi.fn();
         const { result } = await setupLoaded(api);
         api.mockResolvedValueOnce({ Code: 1000 });
 
@@ -70,7 +71,7 @@ describe('useMembersLumoApi', () => {
     });
 
     it('keeps a member’s API access when saving it fails', async () => {
-        const api = jest.fn();
+        const api = vi.fn();
         const { result } = await setupLoaded(api);
         api.mockRejectedValueOnce(new Error('422'));
 

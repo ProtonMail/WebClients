@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
@@ -9,15 +8,15 @@ import { addDataLossWarning } from '../redux/slices/meta/errors';
 import { LUMO_ELIGIBILITY } from '../types';
 import type { MasterKeyEnvelope } from './lumoBootstrap';
 
-jest.mock('@proton/account/addressKeys', () => ({
+vi.mock('@proton/account/addressKeys', () => ({
     addressKeysThunk: () => async () => [],
 }));
 
-jest.mock('@proton/account/addresses', () => ({
+vi.mock('@proton/account/addresses', () => ({
     addressesThunk: () => async () => [],
 }));
 
-jest.mock('@proton/account/userKeys', () => ({
+vi.mock('@proton/account/userKeys', () => ({
     userKeysThunk: () => async () => [],
 }));
 
@@ -43,8 +42,8 @@ const userKey = {
 
 describe('loadKeysAndMasterKey — recovery from undecryptable envelopes (LUMO-853)', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
-        jest.resetModules();
+        vi.restoreAllMocks();
+        vi.resetModules();
     });
 
     it('mints a fresh master key instead of permanently failing when no envelope can be decrypted', async () => {
@@ -72,11 +71,11 @@ describe('loadKeysAndMasterKey — recovery from undecryptable envelopes (LUMO-8
 
         type Envelope = MasterKeyEnvelope['keys'][number];
 
-        const getMasterKeys = jest.fn(() => Promise.resolve(getMasterKeysResponses.shift()!));
-        const postMasterKey = jest.fn(() => Promise.resolve(undefined));
+        const getMasterKeys = vi.fn(() => Promise.resolve(getMasterKeysResponses.shift()!));
+        const postMasterKey = vi.fn(() => Promise.resolve(undefined));
 
-        jest.doMock('../remote/api', () => {
-            const actual = jest.requireActual('../remote/api') as object;
+        vi.doMock('../remote/api', async () => {
+            const actual = (await vi.importActual('../remote/api')) as object;
             class FakeLumoApi {
                 getMasterKeys = getMasterKeys;
                 postMasterKey = postMasterKey;
@@ -91,7 +90,7 @@ describe('loadKeysAndMasterKey — recovery from undecryptable envelopes (LUMO-8
 
         // The stale envelope can never be decrypted (its keys are gone); the freshly minted one
         // always succeeds, both when it is signed during minting and when it is verified back.
-        jest.spyOn(CryptoProxy, 'decryptMessage').mockImplementation(async ({ binaryMessage }) => {
+        vi.spyOn(CryptoProxy, 'decryptMessage').mockImplementation(async ({ binaryMessage }) => {
             const asString = Buffer.from(binaryMessage as Uint8Array<ArrayBuffer>).toString();
             if (asString === 'STALE') {
                 throw new Error('Session key decryption failed');
@@ -101,7 +100,7 @@ describe('loadKeysAndMasterKey — recovery from undecryptable envelopes (LUMO-8
                 verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
             } as never;
         });
-        jest.spyOn(CryptoProxy, 'encryptMessage').mockResolvedValue({
+        vi.spyOn(CryptoProxy, 'encryptMessage').mockResolvedValue({
             message: { toBase64: () => 'RlJFU0g=' },
         } as never);
 

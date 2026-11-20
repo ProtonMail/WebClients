@@ -4,21 +4,21 @@ import { useGenerationInProgress } from '../../../../../hooks/useGenerationInPro
 import { generationRegistry } from '../../../../../services/generation/generationRegistry';
 import MessageEditor from './MessageEditor';
 
-jest.mock('../../../../../hooks/useChatLimitGate', () => ({ useChatLimitGate: () => ({ isBlocked: false }) }));
+vi.mock('../../../../../hooks/useChatLimitGate', () => ({ useChatLimitGate: () => ({ isBlocked: false }) }));
 
 afterEach(() => {
     act(() => generationRegistry.abortAll());
 });
 
 it('keeps an edited draft until stopped generation cleanup finishes', () => {
-    const edit = jest.fn();
+    const edit = vi.fn();
     const Editor = () => {
         const isGenerating = useGenerationInProgress('chat');
         return (
             <MessageEditor
                 messageContent="Original"
                 handleEditMessage={edit}
-                handleCancel={jest.fn()}
+                handleCancel={vi.fn()}
                 isGenerating={isGenerating}
             />
         );

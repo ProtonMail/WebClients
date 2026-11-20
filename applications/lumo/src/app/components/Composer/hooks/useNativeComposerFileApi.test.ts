@@ -36,9 +36,9 @@ function mountComposer(initial: AttachmentMap = {}) {
                 ComposerMode.CONVERSATION,
                 selectProvisionalAttachments({ attachments: files } as LumoState),
                 true,
-                jest.fn(),
-                jest.fn(),
-                jest.fn(),
+                vi.fn(),
+                vi.fn(),
+                vi.fn(),
                 (id) => dispatch(deleteAttachment(id))
             ),
         { initialProps: { files: attachments } }
@@ -53,7 +53,7 @@ function mountComposer(initial: AttachmentMap = {}) {
 }
 
 beforeEach(() => {
-    (window as any).Android = { onStateChange: jest.fn() };
+    (window as any).Android = { onStateChange: vi.fn() };
     bridge().clearFiles();
     attachmentDataCache.clear();
 });
@@ -118,7 +118,7 @@ it('does not publish background attachments while no composer is mounted', () =>
 });
 
 it('publishes the same draft-only snapshot to the Apple bridge', () => {
-    const postMessage = jest.fn();
+    const postMessage = vi.fn();
     (window as any).webkit = { messageHandlers: { nativeComposerStateHandler: { postMessage } } };
     try {
         const { dispatch, unmount } = mountComposer({ draft: file('draft') });
@@ -128,7 +128,7 @@ it('publishes the same draft-only snapshot to the Apple bridge', () => {
         ).toBe(true);
         expect(ids()).toEqual(['draft']);
         unmount();
-        expect(postMessage.mock.lastCall[0].attachedFiles).toEqual([]);
+        expect(postMessage.mock.lastCall![0].attachedFiles).toEqual([]);
     } finally {
         delete (window as any).webkit;
     }

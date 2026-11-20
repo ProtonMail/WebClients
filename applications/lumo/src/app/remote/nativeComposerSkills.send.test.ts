@@ -42,7 +42,7 @@ it('resolves native-invoked plugin instructions and files through the existing w
             )
         )
     );
-    const dbApi = { getSkillAssets: jest.fn(async () => assets) };
+    const dbApi = { getSkillAssets: vi.fn(async () => assets) };
     const store = configureStore({
         reducer: { skills },
         middleware: (getDefault) => getDefault({ thunk: { extraArgument: { dbApi } } }),
@@ -55,8 +55,8 @@ it('resolves native-invoked plugin instructions and files through the existing w
             status: store.getState().skills.status,
             skills: Object.values(store.getState().skills.skills),
         }),
-        setDraft: jest.fn(),
-        publish: jest.fn(),
+        setDraft: vi.fn(),
+        publish: vi.fn(),
     });
     const { text } = controller.invoke({
         revision: controller.refresh().revision,

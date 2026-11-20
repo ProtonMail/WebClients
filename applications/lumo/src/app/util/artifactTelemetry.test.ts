@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import {
@@ -27,8 +29,8 @@ import {
     setLumoTelemetryEnabled,
 } from './telemetry';
 
-jest.mock('@proton/shared/lib/telemetry', () => {
-    return { telemetry: { sendCustomEvent: jest.fn() } };
+vi.mock('@proton/shared/lib/telemetry', () => {
+    return { telemetry: { sendCustomEvent: vi.fn() } };
 });
 
 describe('bucketArtifactContentLength', () => {
@@ -83,7 +85,7 @@ describe('bucketArtifactPanelOpenDuration', () => {
  * and told to the data team; an unintended one is a bug in the caller.
  */
 describe('artifact event payloads', () => {
-    const sendCustomEvent = telemetry.sendCustomEvent as jest.Mock;
+    const sendCustomEvent = telemetry.sendCustomEvent as Mock;
 
     beforeEach(() => {
         sendCustomEvent.mockClear();

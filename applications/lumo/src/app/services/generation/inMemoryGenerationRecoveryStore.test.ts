@@ -2,8 +2,8 @@ import { attachmentDataCache } from '../attachmentDataCache';
 import { InMemoryGenerationRecoveryStore } from './inMemoryGenerationRecoveryStore';
 
 it('snapshots request keys and content without persisting or sharing them with a new page store', async () => {
-    const open = jest.spyOn(indexedDB, 'open');
-    const write = jest.spyOn(Storage.prototype, 'setItem');
+    const open = vi.spyOn(indexedDB, 'open');
+    const write = vi.spyOn(Storage.prototype, 'setItem');
     const store = new InMemoryGenerationRecoveryStore();
     const snapshot = { requestKey: 'temporary request key', turns: [{ content: 'private question' }] };
     try {
@@ -20,7 +20,7 @@ it('snapshots request keys and content without persisting or sharing them with a
         expect(open).not.toHaveBeenCalled();
         expect(write).not.toHaveBeenCalled();
     } finally {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     }
 });
 

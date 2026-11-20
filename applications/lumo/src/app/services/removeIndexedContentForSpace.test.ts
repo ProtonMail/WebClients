@@ -1,12 +1,14 @@
+import type { Mock } from 'vitest';
+
 import { updateLumoUserSettingsWithAutoSave, type IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
-import { setStoreRef } from '../redux/storeRef';
 import type { LumoStore } from '../redux/store';
+import { setStoreRef } from '../redux/storeRef';
 import { removeIndexedContentForSpace } from './removeIndexedContentForSpace';
 import { SearchService } from './search/searchService';
 
-jest.mock('./search/searchService', () => ({
+vi.mock('./search/searchService', () => ({
     SearchService: {
-        get: jest.fn(),
+        get: vi.fn(),
     },
 }));
 
@@ -22,12 +24,12 @@ const createIndexedDriveFolder = (nodeUid: string, spaceId: string): IndexedDriv
 });
 
 describe('removeIndexedContentForSpace', () => {
-    const removeDocumentsBySpace = jest.fn();
-    const dispatch = jest.fn();
+    const removeDocumentsBySpace = vi.fn();
+    const dispatch = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (SearchService.get as jest.Mock).mockReturnValue({ removeDocumentsBySpace });
+        vi.clearAllMocks();
+        (SearchService.get as Mock).mockReturnValue({ removeDocumentsBySpace });
         setStoreRef({
             getState: () => ({
                 lumoUserSettings: {
@@ -70,8 +72,8 @@ describe('removeIndexedContentForSpace', () => {
     });
 
     it('removes only drive documents when unlinking a folder', () => {
-        const removeDriveDocumentsBySpace = jest.fn();
-        (SearchService.get as jest.Mock).mockReturnValue({ removeDriveDocumentsBySpace });
+        const removeDriveDocumentsBySpace = vi.fn();
+        (SearchService.get as Mock).mockReturnValue({ removeDriveDocumentsBySpace });
 
         removeIndexedContentForSpace('space-1', 'user-1', { documentScope: 'drive-only' });
 

@@ -1,23 +1,24 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { setNativeComposerVisibility } from '../remote/nativeComposerBridgeHelpers';
 import { useAuthActionProps } from './useAuthActionProps';
 import { useGuestMigration } from './useGuestMigration';
 import { useLumoAuthAction } from './useLumoAuthAction';
 
-jest.mock('../remote/nativeComposerBridgeHelpers');
-jest.mock('./useGuestMigration');
-jest.mock('./useLumoAuthAction');
+vi.mock('../remote/nativeComposerBridgeHelpers');
+vi.mock('./useGuestMigration');
+vi.mock('./useLumoAuthAction');
 
-const mockedUseGuestMigration = useGuestMigration as jest.Mock;
-const mockedUseLumoAuthAction = useLumoAuthAction as jest.Mock;
+const mockedUseGuestMigration = useGuestMigration as Mock;
+const mockedUseLumoAuthAction = useLumoAuthAction as Mock;
 
-const captureGuestState = jest.fn();
-const trigger = jest.fn();
+const captureGuestState = vi.fn();
+const trigger = vi.fn();
 
 const clickEvent = () =>
-    ({ preventDefault: jest.fn() }) as unknown as React.MouseEvent & {
-        preventDefault: jest.Mock;
+    ({ preventDefault: vi.fn() }) as unknown as React.MouseEvent & {
+        preventDefault: Mock;
     };
 
 const setup = ({
@@ -31,7 +32,7 @@ const setup = ({
 
 describe('useAuthActionProps', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         captureGuestState.mockResolvedValue(true);
     });
 
@@ -71,7 +72,7 @@ describe('useAuthActionProps', () => {
         it('still hides the composer when capturing the guest state fails', async () => {
             setup();
             captureGuestState.mockRejectedValue(new Error('nope'));
-            jest.spyOn(console, 'error').mockImplementation(() => {});
+            vi.spyOn(console, 'error').mockImplementation(() => {});
             const { result } = renderHook(() => useAuthActionProps(action));
 
             await act(() => result.current.onClick(clickEvent()));
@@ -81,7 +82,7 @@ describe('useAuthActionProps', () => {
 
         it('runs the caller side effect', async () => {
             setup();
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             const { result } = renderHook(() => useAuthActionProps(action, onClick));
 
             await act(() => result.current.onClick(clickEvent()));

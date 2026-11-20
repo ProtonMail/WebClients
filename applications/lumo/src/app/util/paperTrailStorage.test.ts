@@ -1,4 +1,4 @@
-import { setLocation } from '@proton/jest-env/setLocation';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { LUMO_ROUTES } from '../entrypoint/lumoRoutes';
 import { setPaperTrailLocalSaveEnabled } from './paperTrailLocalSavePreference';

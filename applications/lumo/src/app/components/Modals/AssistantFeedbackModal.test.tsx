@@ -7,28 +7,28 @@ import { hasSeenNegativeFeedbackIntro } from '../../util/feedbackIntroStorage';
 import { canUseNativeRightPanelLayout } from '../../util/userAgent';
 import AssistantFeedbackModal from './AssistantFeedbackModal';
 
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_VERSION: 'test' }) }));
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn() }));
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_VERSION: 'test' }) }));
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('@proton/components/hooks/useErrorHandler', () => ({ __esModule: true, default: () => jest.fn() }));
-jest.mock('../../redux/hooks', () => ({ useLumoSelector: () => false, useLumoStore: () => ({ getState: jest.fn() }) }));
-jest.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../providers/RightPanelProvider', () => ({
+vi.mock('@proton/components/hooks/useErrorHandler', () => ({ __esModule: true, default: () => vi.fn() }));
+vi.mock('../../redux/hooks', () => ({ useLumoSelector: () => false, useLumoStore: () => ({ getState: vi.fn() }) }));
+vi.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
+vi.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../providers/RightPanelProvider', () => ({
     useOptionalRightPanel: () => ({ isOpen: true, isOverlay: false }),
 }));
-jest.mock('../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../util/userAgent', () => ({
+vi.mock('../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../util/userAgent', () => ({
     canShowWebComposer: () => false,
     canUseNativeSidebarLayout: () => true,
-    canUseNativeRightPanelLayout: jest.fn(),
+    canUseNativeRightPanelLayout: vi.fn(),
     getNativeAppInfo: () => ({ platform: 'ios', version: '2.2.0' }),
 }));
-jest.mock('../../util/feedbackIntroStorage', () => ({ hasSeenNegativeFeedbackIntro: jest.fn() }));
+vi.mock('../../util/feedbackIntroStorage', () => ({ hasSeenNegativeFeedbackIntro: vi.fn() }));
 
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 it.each([
     { introSeen: false, canFitRightPanel: false, dismiss: () => screen.findByTestId('modal:close') },
@@ -38,8 +38,8 @@ it.each([
 ])(
     'restores the fitted or covered layout after feedback closes (intro seen: $introSeen, fitting supported: $canFitRightPanel)',
     async ({ introSeen, canFitRightPanel, dismiss }) => {
-        jest.mocked(canUseNativeRightPanelLayout).mockReturnValue(canFitRightPanel);
-        jest.mocked(hasSeenNegativeFeedbackIntro).mockReturnValue(introSeen);
+        vi.mocked(canUseNativeRightPanelLayout).mockReturnValue(canFitRightPanel);
+        vi.mocked(hasSeenNegativeFeedbackIntro).mockReturnValue(introSeen);
         const message: Message = {
             id: 'response',
             conversationId: 'conversation',
@@ -53,7 +53,7 @@ it.each([
                 message={message}
                 disabled={false}
                 feedbackSubmitted={false}
-                setFeedbackSubmitted={jest.fn()}
+                setFeedbackSubmitted={vi.fn()}
             />
         );
         fireEvent.click(screen.getByRole('button', { name: 'Report an issue' }));

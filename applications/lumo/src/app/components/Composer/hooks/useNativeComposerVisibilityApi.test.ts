@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useNativeComposerProjectDetailVisibilityApi } from '../../../features/projects/hooks/useNativeComposerProjectDetailVisibilityApi';
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
@@ -13,18 +14,18 @@ import type * as UserAgent from '../../../util/userAgent';
 import { canShowWebComposer, canUseNativeRightPanelLayout, canUseNativeSidebarLayout } from '../../../util/userAgent';
 import { useNativeComposerHostVisibilityApi, useNativeComposerVisibilityApi } from './useNativeComposerVisibilityApi';
 
-jest.mock('../../../hooks/useLumoFlags');
-jest.mock('../../../hooks/useIsLumoSmallScreen');
-jest.mock('../../../providers/SidebarProvider');
-jest.mock('../../../providers/RightPanelProvider');
-jest.mock('../../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../../util/userAgent');
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: jest.fn() }));
+vi.mock('../../../hooks/useLumoFlags');
+vi.mock('../../../hooks/useIsLumoSmallScreen');
+vi.mock('../../../providers/SidebarProvider');
+vi.mock('../../../providers/RightPanelProvider');
+vi.mock('../../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../../util/userAgent');
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: vi.fn() }));
 
-const mockedUseLumoFlags = useLumoFlags as jest.Mock;
-const mockedUseOptionalSidebar = useOptionalSidebar as jest.Mock;
-const mockedUseOptionalRightPanel = useOptionalRightPanel as jest.Mock;
-const mockedUseIsLumoSmallScreen = useIsLumoSmallScreen as jest.Mock;
+const mockedUseLumoFlags = useLumoFlags as Mock;
+const mockedUseOptionalSidebar = useOptionalSidebar as Mock;
+const mockedUseOptionalRightPanel = useOptionalRightPanel as Mock;
+const mockedUseIsLumoSmallScreen = useIsLumoSmallScreen as Mock;
 
 /** `null` stands for a route rendered outside the sidebar layout, which has no provider. */
 const givenSidebar = (sidebar: { isVisible: boolean; isSmallScreen: boolean } | null) => {
@@ -35,14 +36,14 @@ const givenSidebar = (sidebar: { isVisible: boolean; isSmallScreen: boolean } | 
 const givenRightPanel = (rightPanel: { isOpen: boolean; isOverlay: boolean } | null) => {
     mockedUseOptionalRightPanel.mockReturnValue(rightPanel);
 };
-const mockedCanUseNativeSidebarLayout = canUseNativeSidebarLayout as jest.Mock;
+const mockedCanUseNativeSidebarLayout = canUseNativeSidebarLayout as Mock;
 
 describe('useNativeComposerVisibilityApi', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        (canUseNativeRightPanelLayout as jest.Mock).mockReturnValue(false);
+        vi.clearAllMocks();
+        (canUseNativeRightPanelLayout as Mock).mockReturnValue(false);
         mockedUseLumoFlags.mockReturnValue({ nativeComposer: true });
-        (canShowWebComposer as jest.Mock).mockImplementation((enabled: boolean) => !enabled);
+        (canShowWebComposer as Mock).mockImplementation((enabled: boolean) => !enabled);
         givenRightPanel({ isOpen: false, isOverlay: false });
     });
 
@@ -89,7 +90,7 @@ describe('useNativeComposerVisibilityApi', () => {
             givenSidebar({ isVisible, isSmallScreen: false });
             givenRightPanel({ isOpen: false, isOverlay: false });
             mockedCanUseNativeSidebarLayout.mockReturnValue(true);
-            (canUseNativeRightPanelLayout as jest.Mock).mockReturnValue(true);
+            (canUseNativeRightPanelLayout as Mock).mockReturnValue(true);
             const { result } = renderHook(
                 () => {
                     useNativeComposerHostVisibilityApi();
@@ -107,10 +108,10 @@ describe('useNativeComposerVisibilityApi', () => {
     describe('Android tablets without right-panel fitting', () => {
         const originalUserAgent = Object.getOwnPropertyDescriptor(navigator, 'userAgent');
 
-        beforeEach(() => {
-            const actualUserAgent = jest.requireActual<typeof UserAgent>('../../../util/userAgent');
-            jest.mocked(canUseNativeSidebarLayout).mockImplementation(actualUserAgent.canUseNativeSidebarLayout);
-            jest.mocked(canUseNativeRightPanelLayout).mockImplementation(actualUserAgent.canUseNativeRightPanelLayout);
+        beforeEach(async () => {
+            const actualUserAgent = await vi.importActual<typeof UserAgent>('../../../util/userAgent');
+            vi.mocked(canUseNativeSidebarLayout).mockImplementation(actualUserAgent.canUseNativeSidebarLayout);
+            vi.mocked(canUseNativeRightPanelLayout).mockImplementation(actualUserAgent.canUseNativeRightPanelLayout);
         });
 
         afterEach(() => {
@@ -234,7 +235,7 @@ describe('useNativeComposerVisibilityApi', () => {
                 givenSidebar({ isVisible, isSmallScreen: false });
                 givenRightPanel({ isOpen: true, isOverlay: false });
                 mockedCanUseNativeSidebarLayout.mockReturnValue(true);
-                (canUseNativeRightPanelLayout as jest.Mock).mockReturnValue(true);
+                (canUseNativeRightPanelLayout as Mock).mockReturnValue(true);
 
                 renderHook(() => useNativeComposerHostVisibilityApi());
 

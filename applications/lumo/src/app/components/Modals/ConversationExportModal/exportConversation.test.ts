@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { LumoState } from '../../../redux/store';
 import type { Conversation, Message } from '../../../types';
 import { triggerFileDownload } from '../../../util/triggerFileDownload';
@@ -6,13 +8,13 @@ import { convertConversationToMarkdown } from './convertConversationToMarkdown';
 import { exportConversation } from './exportConversation';
 import { makeMessage, testBaseConversation, toMessageMap } from './exportConversation.fixtures';
 
-jest.mock('../../../util/triggerFileDownload', () => ({ triggerFileDownload: jest.fn() }));
+vi.mock('../../../util/triggerFileDownload', () => ({ triggerFileDownload: vi.fn() }));
 
 const makeState = (messages: Message[]): LumoState => ({ messages: toMessageMap(messages) }) as LumoState;
 
 describe('exportConversation', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('downloads a JSON file with an application/json blob and a sanitized filename', async () => {
@@ -20,7 +22,7 @@ describe('exportConversation', () => {
         exportConversation(makeState(messages), testBaseConversation, 'json');
 
         expect(triggerFileDownload).toHaveBeenCalledTimes(1);
-        const [blob, filename] = (triggerFileDownload as jest.Mock).mock.calls[0];
+        const [blob, filename] = (triggerFileDownload as Mock).mock.calls[0];
 
         expect(filename).toBe('Test Conversation.json');
         expect(blob.type).toBe('application/json');
@@ -32,7 +34,7 @@ describe('exportConversation', () => {
         exportConversation(makeState(messages), testBaseConversation, 'md');
 
         expect(triggerFileDownload).toHaveBeenCalledTimes(1);
-        const [blob, filename] = (triggerFileDownload as jest.Mock).mock.calls[0];
+        const [blob, filename] = (triggerFileDownload as Mock).mock.calls[0];
 
         expect(filename).toBe('Test Conversation.md');
         expect(blob.type).toBe('text/markdown');
@@ -43,7 +45,7 @@ describe('exportConversation', () => {
         const conversation: Conversation = { ...testBaseConversation, title: 'Q&A: "Best" Tips?' };
         exportConversation(makeState([]), conversation, 'json');
 
-        const [, filename] = (triggerFileDownload as jest.Mock).mock.calls[0];
+        const [, filename] = (triggerFileDownload as Mock).mock.calls[0];
         expect(filename).toBe('Q&A Best Tips.json');
     });
 
@@ -51,7 +53,7 @@ describe('exportConversation', () => {
         const conversation: Conversation = { ...testBaseConversation, title: 'Draft Notes...   ' };
         exportConversation(makeState([]), conversation, 'json');
 
-        const [, filename] = (triggerFileDownload as jest.Mock).mock.calls[0];
+        const [, filename] = (triggerFileDownload as Mock).mock.calls[0];
         expect(filename).toBe('Draft Notes.json');
     });
 
@@ -59,7 +61,7 @@ describe('exportConversation', () => {
         const conversation: Conversation = { ...testBaseConversation, title: '/\\:*?"<>|' };
         exportConversation(makeState([]), conversation, 'md');
 
-        const [, filename] = (triggerFileDownload as jest.Mock).mock.calls[0];
+        const [, filename] = (triggerFileDownload as Mock).mock.calls[0];
         expect(filename).toBe('Untitled conversation.md');
     });
 
@@ -80,7 +82,7 @@ describe('exportConversation', () => {
         ];
         exportConversation(makeState(messages), testBaseConversation, 'md');
 
-        const [blob] = (triggerFileDownload as jest.Mock).mock.calls[0];
+        const [blob] = (triggerFileDownload as Mock).mock.calls[0];
         const text = await blob.text();
         expect(text).toContain('mine');
         expect(text).not.toContain('other');

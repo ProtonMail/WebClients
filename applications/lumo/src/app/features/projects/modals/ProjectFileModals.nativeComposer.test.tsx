@@ -4,36 +4,36 @@ import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridg
 import { ConfirmRemoveAllFilesModal } from './ConfirmRemoveAllFilesModal';
 import { LinkDriveFolderModal } from './LinkDriveFolderModal';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('../../../components/Files', () => ({ DriveBrowser: () => null }));
-jest.mock('../../../hooks/useDriveSDK', () => ({ useDriveSDK: () => ({ isInitialized: false }) }));
-jest.mock('../../../hooks/useDriveFolderIndexing', () => ({
+vi.mock('../../../components/Files', () => ({ DriveBrowser: () => null }));
+vi.mock('../../../hooks/useDriveSDK', () => ({ useDriveSDK: () => ({ isInitialized: false }) }));
+vi.mock('../../../hooks/useDriveFolderIndexing', () => ({
     MAX_INDEXABLE_FILES: 300,
-    useDriveFolderIndexing: () => ({ indexFolder: jest.fn(), removeIndexedFoldersBySpace: jest.fn() }),
+    useDriveFolderIndexing: () => ({ indexFolder: vi.fn(), removeIndexedFoldersBySpace: vi.fn() }),
 }));
-jest.mock('../../../redux/hooks', () => ({
-    useLumoDispatch: () => jest.fn(),
+vi.mock('../../../redux/hooks', () => ({
+    useLumoDispatch: () => vi.fn(),
     useLumoSelector: (select: (state: unknown) => unknown) => select({ spaces: {}, attachments: {} }),
 }));
-jest.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../../providers/RightPanelProvider', () => ({
+vi.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
+vi.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../../providers/RightPanelProvider', () => ({
     useOptionalRightPanel: () => ({ isOpen: true, isOverlay: false }),
 }));
-jest.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
-jest.mock('../../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../../util/userAgent', () => ({
+vi.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
+vi.mock('../../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../../util/userAgent', () => ({
     canShowWebComposer: () => false,
     canUseNativeSidebarLayout: () => true,
     canUseNativeRightPanelLayout: () => true,
 }));
 
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 it('covers the fitted composer while the Drive folder dialog is open and restores it on close', () => {
-    const props = { projectId: 'project', onClose: jest.fn(), onExit: jest.fn() };
+    const props = { projectId: 'project', onClose: vi.fn(), onExit: vi.fn() };
     const { rerender } = render(<LinkDriveFolderModal {...props} open />);
     expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
 
@@ -43,7 +43,7 @@ it('covers the fitted composer while the Drive folder dialog is open and restore
 });
 
 it('covers the fitted composer while confirming file removal and restores it on close', () => {
-    const props = { fileCount: 1, onClose: jest.fn(), onConfirm: jest.fn() };
+    const props = { fileCount: 1, onClose: vi.fn(), onConfirm: vi.fn() };
     const { rerender } = render(<ConfirmRemoveAllFilesModal {...props} open />);
     expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
 

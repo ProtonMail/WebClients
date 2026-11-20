@@ -1,6 +1,6 @@
 import { buildArtifactSourceDownloadFile } from './artifactSourceDownload';
 
-jest.mock('./artifactHtmlDocument', () => {
+vi.mock('./artifactHtmlDocument', () => {
     return {
         buildArtifactFileName: (_artifact: { title: string }, extension: string) => {
             return `file.${extension}`;
@@ -8,9 +8,9 @@ jest.mock('./artifactHtmlDocument', () => {
     };
 });
 
-jest.mock('./artifactPresentationStandalone', () => {
+vi.mock('./artifactPresentationStandalone', () => {
     return {
-        buildStandalonePresentationHtml: jest.fn(async () => {
+        buildStandalonePresentationHtml: vi.fn(async () => {
             return '<!DOCTYPE html><html><body>deck</body></html>';
         }),
     };

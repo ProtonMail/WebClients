@@ -8,7 +8,7 @@ import type { Conversation } from '../../../types';
 import { useRunScheduleNow } from '../useRunScheduleNow';
 import { ScheduledTaskRunPanel } from './ScheduledTaskRunPanel';
 
-jest.mock('../../../components/Files/KnowledgeBase/KnowledgeBasePanel', () => ({
+vi.mock('../../../components/Files/KnowledgeBase/KnowledgeBasePanel', () => ({
     KnowledgeBasePanel: ({ children, headerActions }: { children: ReactNode; headerActions: ReactNode }) => (
         <div>
             {headerActions}
@@ -16,15 +16,15 @@ jest.mock('../../../components/Files/KnowledgeBase/KnowledgeBasePanel', () => ({
         </div>
     ),
 }));
-jest.mock('../../../redux/hooks', () => ({ useLumoMemoSelector: jest.fn(), useLumoSelector: jest.fn() }));
-jest.mock('../useRunScheduleNow', () => ({
-    useRunScheduleNow: jest.fn(),
+vi.mock('../../../redux/hooks', () => ({ useLumoMemoSelector: vi.fn(), useLumoSelector: vi.fn() }));
+vi.mock('../useRunScheduleNow', () => ({
+    useRunScheduleNow: vi.fn(),
 }));
 
 describe('ScheduledTaskRunPanel', () => {
     it('shows inline history labels and preserves the current selection', () => {
-        const runNow = jest.fn();
-        jest.mocked(useRunScheduleNow).mockReturnValue({ runNow, loading: false, disabled: false });
+        const runNow = vi.fn();
+        vi.mocked(useRunScheduleNow).mockReturnValue({ runNow, loading: false, disabled: false });
         const at = '2026-10-27T09:00:00Z';
         const run = {
             runId: 'run',
@@ -45,8 +45,8 @@ describe('ScheduledTaskRunPanel', () => {
             id: 'manual',
             scheduleRun: { ...conversation.scheduleRun!, run: { ...run, runId: 'manual', manual: true } },
         };
-        jest.mocked(useLumoMemoSelector).mockReturnValue({ conversation, manual });
-        jest.mocked(useLumoSelector).mockReturnValue({});
+        vi.mocked(useLumoMemoSelector).mockReturnValue({ conversation, manual });
+        vi.mocked(useLumoSelector).mockReturnValue({});
         render(
             <MemoryRouter
                 initialEntries={[{ pathname: '/c/conversation', state: { expandedScheduleRuns: 'schedule' } }]}
@@ -56,13 +56,13 @@ describe('ScheduledTaskRunPanel', () => {
                     scheduleName="Morning brief"
                     messageChain={[]}
                     artifacts={[]}
-                    onOpenArtifact={jest.fn()}
-                    onClose={jest.fn()}
+                    onOpenArtifact={vi.fn()}
+                    onClose={vi.fn()}
                 />
             </MemoryRouter>
         );
         // The count is an inline span right after the label, so nothing separates them in the name.
-        expect(screen.getByRole('button', { name: 'Runs2' })).toHaveAttribute('aria-expanded', 'true');
+        expect(screen.getByRole('button', { name: 'Runs 2' })).toHaveAttribute('aria-expanded', 'true');
         expect(screen.getByRole('link', { name: /On schedule/ })).toHaveAttribute('aria-current', 'page');
         expect(screen.getByRole('link', { name: /Ran manually/ })).not.toHaveAttribute('aria-current');
         fireEvent.click(screen.getByRole('button', { name: 'Run now' }));

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// DOMPurify drops block elements such as <h1> when it runs on happy-dom.
 import {
     DOCUMENT_PDF_EXPORT_OPTIONS,
     PRESENTATION_PDF_EXPORT_OPTIONS,
@@ -12,11 +14,11 @@ import {
 } from './artifactHtmlDocument';
 import type { ParsedArtifact } from './parseArtifacts';
 
-jest.mock('./artifactMarkdownHtml', () => ({
-    markdownToHtmlBody: jest.fn((markdown: string) => `<h1>Summary</h1><ul><li>Item one</li></ul><!-- ${markdown} -->`),
+vi.mock('./artifactMarkdownHtml', () => ({
+    markdownToHtmlBody: vi.fn((markdown: string) => `<h1>Summary</h1><ul><li>Item one</li></ul><!-- ${markdown} -->`),
 }));
 
-jest.mock('./artifactPresentationHtml', () => ({
+vi.mock('./artifactPresentationHtml', () => ({
     buildPresentationSlidesHtml: (slideContent: string) => {
         return slideContent;
     },
@@ -30,8 +32,8 @@ jest.mock('./artifactPresentationHtml', () => ({
     },
 }));
 
-jest.mock('vega-embed', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
+vi.mock('vega-embed', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 describe('artifactSupportsPdfExport', () => {
     it('supports document and presentation artifacts', () => {
@@ -99,16 +101,16 @@ describe('buildArtifactHtmlDocument', () => {
     it('renders chart placeholders in a document export to SVG before sanitizing', async () => {
         const { markdownToHtmlBody } = await import('./artifactMarkdownHtml');
         const { default: embed } = await import('vega-embed');
-        jest.mocked(embed).mockResolvedValueOnce({
+        vi.mocked(embed).mockResolvedValueOnce({
             view: {
-                run: jest.fn(),
-                resize: jest.fn(),
-                toSVG: jest.fn().mockResolvedValue('<svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>'),
-                finalize: jest.fn(),
+                run: vi.fn(),
+                resize: vi.fn(),
+                toSVG: vi.fn().mockResolvedValue('<svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>'),
+                finalize: vi.fn(),
             },
         } as never);
         const spec = '{"mark":"bar","data":{"values":[{"a":1}]},"encoding":{"x":{"field":"a","type":"nominal"}}}';
-        jest.mocked(markdownToHtmlBody).mockReturnValueOnce(
+        vi.mocked(markdownToHtmlBody).mockReturnValueOnce(
             `<h1>Report</h1><div><script type="application/lumo-vega-lite+json">${spec}</script></div>`
         );
 
@@ -119,14 +121,14 @@ describe('buildArtifactHtmlDocument', () => {
             content: 'x',
         });
 
-        expect(jest.mocked(markdownToHtmlBody)).toHaveBeenLastCalledWith('x', { charts: 'placeholder' });
+        expect(vi.mocked(markdownToHtmlBody)).toHaveBeenLastCalledWith('x', { charts: 'placeholder' });
         expect(html).toContain('<div class="lumo-chart"><svg');
         expect(html).not.toContain('application/lumo-vega-lite+json');
     });
 
     it('strips malicious markup from document export bodies', async () => {
         const { markdownToHtmlBody } = await import('./artifactMarkdownHtml');
-        jest.mocked(markdownToHtmlBody).mockReturnValueOnce('<h1>Summary</h1><img src=x onerror="alert(1)">');
+        vi.mocked(markdownToHtmlBody).mockReturnValueOnce('<h1>Summary</h1><img src=x onerror="alert(1)">');
 
         const html = await buildArtifactHtmlDocument({
             id: 'doc-xss',

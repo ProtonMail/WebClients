@@ -4,16 +4,16 @@ import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { ImagePreviewOverlay } from './ImagePreviewOverlay';
 
-jest.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../util/userAgent', () => ({ canShowWebComposer: () => false, canUseNativeSidebarLayout: () => true }));
+vi.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
+vi.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../util/userAgent', () => ({ canShowWebComposer: () => false, canUseNativeSidebarLayout: () => true }));
 
 it('does not uncover the composer when a closed image preview mounts beneath another cover', () => {
     renderHook(() => useNativeComposerVisibilityApi({ hideComposer: true }));
-    jest.mocked(setNativeComposerVisibility).mockClear();
+    vi.mocked(setNativeComposerVisibility).mockClear();
 
-    render(<ImagePreviewOverlay isOpen={false} imageDataUrl="" onClose={jest.fn()} />);
+    render(<ImagePreviewOverlay isOpen={false} imageDataUrl="" onClose={vi.fn()} />);
 
     expect(setNativeComposerVisibility).not.toHaveBeenCalled();
 });

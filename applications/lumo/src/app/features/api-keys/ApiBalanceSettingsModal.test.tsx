@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { type ApiBalanceSettings, ApiBalanceSettingsModal } from './ApiBalanceSettingsModal';
 
@@ -8,20 +9,20 @@ const settings: ApiBalanceSettings = {
 };
 
 const setup = ({
-    onSave = jest.fn().mockResolvedValue(undefined),
+    onSave = vi.fn().mockResolvedValue(undefined),
     canChargeAutoTopUp = true,
     initialSettings = settings,
 }: {
-    onSave?: jest.Mock;
+    onSave?: Mock;
     canChargeAutoTopUp?: boolean;
     initialSettings?: ApiBalanceSettings;
 } = {}) => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     render(
         <ApiBalanceSettingsModal
             open
             onClose={onClose}
-            onExit={jest.fn()}
+            onExit={vi.fn()}
             settings={initialSettings}
             currency="USD"
             spent={12.5}
@@ -152,7 +153,7 @@ describe('ApiBalanceSettingsModal', () => {
 
     it('saves the top-up and its spending limit together, then closes', async () => {
         let resolveSave: () => void = () => {};
-        const onSave = jest.fn(() => new Promise<void>((resolve) => (resolveSave = resolve)));
+        const onSave = vi.fn(() => new Promise<void>((resolve) => (resolveSave = resolve)));
         const { onClose } = setup({ onSave });
 
         fireEvent.change(limitInput(), { target: { value: '300' } });
@@ -185,8 +186,8 @@ describe('ApiBalanceSettingsModal', () => {
     });
 
     it('compares the edits with the settings it was opened with', () => {
-        const onSave = jest.fn().mockResolvedValue(undefined);
-        const props = { open: true, onClose: jest.fn(), onExit: jest.fn(), currency: 'USD' as const, spent: 0 };
+        const onSave = vi.fn().mockResolvedValue(undefined);
+        const props = { open: true, onClose: vi.fn(), onExit: vi.fn(), currency: 'USD' as const, spent: 0 };
         const { rerender } = render(
             <ApiBalanceSettingsModal {...props} settings={settings} canChargeAutoTopUp onSave={onSave} />
         );
@@ -211,7 +212,7 @@ describe('ApiBalanceSettingsModal', () => {
         [403, 9100, "Only the organization's primary admin can change these settings."],
     ])('stays open after the save failed with %p/%p', async (status, Code, message) => {
         const error = { status, data: { Code, Error: 'From the API' } };
-        const { onClose } = setup({ onSave: jest.fn().mockRejectedValue(error) });
+        const { onClose } = setup({ onSave: vi.fn().mockRejectedValue(error) });
 
         fireEvent.change(amountInput(), { target: { value: '75' } });
         fireEvent.click(saveButton());
@@ -224,7 +225,7 @@ describe('ApiBalanceSettingsModal', () => {
 
     it('clears the previous error when the save is retried', async () => {
         const error = { status: 500, data: { Code: 0, Error: 'From the API' } };
-        const onSave = jest
+        const onSave = vi
             .fn()
             .mockRejectedValueOnce(error)
             .mockReturnValueOnce(new Promise(() => {}));

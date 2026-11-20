@@ -35,12 +35,12 @@ describe('nativeImageDownload', () => {
 
     describe('isNativeImageBridgeAvailable', () => {
         it('is true when the Android save method is present', () => {
-            (window as any).Android = { saveBase64Image: jest.fn() };
+            (window as any).Android = { saveBase64Image: vi.fn() };
             expect(isNativeImageBridgeAvailable()).toBe(true);
         });
 
         it('is true when the iOS saveImage handler is present', () => {
-            (window as any).webkit = { messageHandlers: { saveImage: { postMessage: jest.fn() } } };
+            (window as any).webkit = { messageHandlers: { saveImage: { postMessage: vi.fn() } } };
             expect(isNativeImageBridgeAvailable()).toBe(true);
         });
 
@@ -56,7 +56,7 @@ describe('nativeImageDownload', () => {
         it('is false when other handlers are registered but saveImage is not', () => {
             // The shell already registers unrelated handlers (e.g. lumoApp) — saveImage must not
             // be inferred from the mere presence of messageHandlers.
-            (window as any).webkit = { messageHandlers: { lumoApp: { postMessage: jest.fn() } } };
+            (window as any).webkit = { messageHandlers: { lumoApp: { postMessage: vi.fn() } } };
             expect(isNativeImageBridgeAvailable()).toBe(false);
         });
 
@@ -67,7 +67,7 @@ describe('nativeImageDownload', () => {
             const messageHandlers = new Proxy(
                 {},
                 {
-                    get: () => ({ postMessage: jest.fn() }),
+                    get: () => ({ postMessage: vi.fn() }),
                 }
             );
             (window as any).webkit = { messageHandlers };
@@ -83,7 +83,7 @@ describe('nativeImageDownload', () => {
     describe('saveImageViaNativeBridge', () => {
         it('forwards prefix-stripped base64, mime type and name to the Android bridge', async () => {
             stubFileReader('data:image/png;base64,QUJD');
-            const saveBase64Image = jest.fn();
+            const saveBase64Image = vi.fn();
             (window as any).Android = { saveBase64Image };
 
             const blob = new Blob(['ABC'], { type: 'image/png' });
@@ -95,7 +95,7 @@ describe('nativeImageDownload', () => {
 
         it('posts prefix-stripped base64, mime type and name to the iOS handler', async () => {
             stubFileReader('data:image/jpeg;base64,WFla');
-            const postMessage = jest.fn();
+            const postMessage = vi.fn();
             (window as any).webkit = { messageHandlers: { saveImage: { postMessage } } };
 
             const blob = new Blob(['XYZ'], { type: 'image/jpeg' });
@@ -111,8 +111,8 @@ describe('nativeImageDownload', () => {
 
         it('prefers the Android bridge when both are present', async () => {
             stubFileReader('data:image/png;base64,QUJD');
-            const saveBase64Image = jest.fn();
-            const postMessage = jest.fn();
+            const saveBase64Image = vi.fn();
+            const postMessage = vi.fn();
             (window as any).Android = { saveBase64Image };
             (window as any).webkit = { messageHandlers: { saveImage: { postMessage } } };
 
@@ -125,7 +125,7 @@ describe('nativeImageDownload', () => {
 
         it('falls back to image/png when the blob has no type', async () => {
             stubFileReader('data:application/octet-stream;base64,QUJD');
-            const saveBase64Image = jest.fn();
+            const saveBase64Image = vi.fn();
             (window as any).Android = { saveBase64Image };
 
             const blob = new Blob(['ABC']); // no type

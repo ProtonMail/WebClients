@@ -1,17 +1,18 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { getArtifactPromptPlaceholders } from '../../../constants/artifactPromptPlaceholders';
 import { useArtifactModePlaceholder } from './useArtifactModePlaceholder';
 
-jest.mock('../../../constants/artifactPromptPlaceholders', () => ({
-    getArtifactPromptPlaceholders: jest.fn(),
+vi.mock('../../../constants/artifactPromptPlaceholders', () => ({
+    getArtifactPromptPlaceholders: vi.fn(),
 }));
 
-const mockedGetArtifactPromptPlaceholders = getArtifactPromptPlaceholders as jest.Mock;
+const mockedGetArtifactPromptPlaceholders = getArtifactPromptPlaceholders as Mock;
 
 describe('useArtifactModePlaceholder', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         mockedGetArtifactPromptPlaceholders.mockReturnValue([
             'Write a professional email declining a meeting',
             'Write a Python script to dedupe a CSV by email',
@@ -20,7 +21,7 @@ describe('useArtifactModePlaceholder', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('returns undefined when artifact mode is inactive', () => {
@@ -39,13 +40,13 @@ describe('useArtifactModePlaceholder', () => {
         const { result } = renderHook(() => useArtifactModePlaceholder(true));
 
         act(() => {
-            jest.advanceTimersByTime(5000);
+            vi.advanceTimersByTime(5000);
         });
 
         expect(result.current).toBe('Write a Python script to dedupe a CSV by email');
 
         act(() => {
-            jest.advanceTimersByTime(5000);
+            vi.advanceTimersByTime(5000);
         });
 
         expect(result.current).toBe('Create a self-contained HTML pomodoro timer');
@@ -57,7 +58,7 @@ describe('useArtifactModePlaceholder', () => {
         });
 
         act(() => {
-            jest.advanceTimersByTime(5000);
+            vi.advanceTimersByTime(5000);
         });
 
         rerender({ isArtifactMode: false });

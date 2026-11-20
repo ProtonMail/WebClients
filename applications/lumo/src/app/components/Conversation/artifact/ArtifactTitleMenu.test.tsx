@@ -4,10 +4,10 @@ import type { ArtifactMenuFormatOption } from './ArtifactActionsDropdown';
 import { ArtifactTitleMenu } from './ArtifactTitleMenu';
 import type { ArtifactVersion } from './artifactRegistry';
 
-jest.mock('../../../hooks/useIsLumoSmallScreen', () => {
+vi.mock('../../../hooks/useIsLumoSmallScreen', () => {
     return { useIsLumoSmallScreen: () => ({ isSmallScreen: false }) };
 });
-jest.mock('../../../hooks/useIsTouchDevice', () => {
+vi.mock('../../../hooks/useIsTouchDevice', () => {
     return { useIsTouchDevice: () => false };
 });
 
@@ -29,7 +29,7 @@ const versions: ArtifactVersion[] = [
     },
 ];
 
-const formatOption = (key: string, label: string, onSelect = jest.fn()): ArtifactMenuFormatOption => {
+const formatOption = (key: string, label: string, onSelect = vi.fn()): ArtifactMenuFormatOption => {
     return { key, label, extension: `.${key}`, icon: 'FileText', onSelect };
 };
 
@@ -41,9 +41,9 @@ interface RenderOptions {
 
 const renderMenu = ({ downloadOptions = [], saveToDriveOptions = [], onEdit }: RenderOptions = {}) => {
     const props = {
-        onOpen: jest.fn(),
-        onSelectVersion: jest.fn(),
-        onCopy: jest.fn(),
+        onOpen: vi.fn(),
+        onSelectVersion: vi.fn(),
+        onCopy: vi.fn(),
     };
     render(
         <ArtifactTitleMenu
@@ -68,8 +68,8 @@ describe('ArtifactTitleMenu', () => {
         expect(onOpen).toHaveBeenCalledTimes(1);
         const rows = screen.getAllByRole('button', { name: /^v\d\s+·/ });
         expect(rows).toHaveLength(2);
-        expect(rows[0]).toHaveTextContent(/^v2 · Password Manager Memo \(latest\)/);
-        expect(rows[1]).toHaveTextContent(/^v1 · Comparison Report/);
+        expect(rows[0].textContent?.replace(/\s+/g, ' ')).toMatch(/^v2 · Password Manager Memo \(latest\)/);
+        expect(rows[1].textContent?.replace(/\s+/g, ' ')).toMatch(/^v1 · Comparison Report/);
         expect(screen.getByText(/^You · /)).toBeInTheDocument();
         expect(screen.getByText(/^Lumo · /)).toBeInTheDocument();
 
@@ -86,7 +86,7 @@ describe('ArtifactTitleMenu', () => {
     });
 
     it('downloads directly when the type has a single format', () => {
-        const onSelect = jest.fn();
+        const onSelect = vi.fn();
         renderMenu({ downloadOptions: [formatOption('py', 'Source file', onSelect)] });
 
         expect(screen.getByText('.py')).toBeInTheDocument();
@@ -95,7 +95,7 @@ describe('ArtifactTitleMenu', () => {
     });
 
     it('opens a submenu of formats when there are several', () => {
-        const onPdf = jest.fn();
+        const onPdf = vi.fn();
         renderMenu({ downloadOptions: [formatOption('md', 'Markdown'), formatOption('pdf', 'PDF', onPdf)] });
 
         expect(screen.queryByText('Download as')).not.toBeInTheDocument();

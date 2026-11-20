@@ -1,15 +1,17 @@
+import type { Mock } from 'vitest';
+
 import { assignUrl } from '@proton/shared/lib/helpers/location';
 
 import { LUMO_ROUTES } from '../../entrypoint/lumoRoutes';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { openPaperTrail } from './openPaperTrail';
 
-jest.mock('../../remote/nativeComposerBridgeHelpers');
-jest.mock('@proton/shared/lib/helpers/location');
+vi.mock('../../remote/nativeComposerBridgeHelpers');
+vi.mock('@proton/shared/lib/helpers/location');
 
 describe('openPaperTrail', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('navigates to the paper trail', () => {
@@ -22,7 +24,7 @@ describe('openPaperTrail', () => {
         openPaperTrail();
 
         expect(setNativeComposerVisibility).toHaveBeenCalledWith(false);
-        const hideOrder = (setNativeComposerVisibility as jest.Mock).mock.invocationCallOrder[0];
-        expect(hideOrder).toBeLessThan(jest.mocked(assignUrl).mock.invocationCallOrder[0]);
+        const hideOrder = (setNativeComposerVisibility as Mock).mock.invocationCallOrder[0];
+        expect(hideOrder).toBeLessThan(vi.mocked(assignUrl).mock.invocationCallOrder[0]);
     });
 });

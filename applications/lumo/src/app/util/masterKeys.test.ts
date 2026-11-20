@@ -1,12 +1,14 @@
+import type { MockedFunction } from 'vitest';
+
 import { base64ToMasterKey } from '../crypto';
 import type { MasterKeysBundle } from '../types';
 import { buildMasterKeyContext, getLegacyMasterKeyBase64, mergeRefreshedMasterKeysBundle } from './masterKeys';
 
-jest.mock('../crypto', () => ({
-    base64ToMasterKey: jest.fn((keyBase64: string) => Promise.resolve({ type: 'AesKwCryptoKey', id: keyBase64 })),
+vi.mock('../crypto', () => ({
+    base64ToMasterKey: vi.fn((keyBase64: string) => Promise.resolve({ type: 'AesKwCryptoKey', id: keyBase64 })),
 }));
 
-const mockedBase64ToMasterKey = base64ToMasterKey as jest.MockedFunction<typeof base64ToMasterKey>;
+const mockedBase64ToMasterKey = base64ToMasterKey as MockedFunction<typeof base64ToMasterKey>;
 
 const makeBundle = (): MasterKeysBundle => ({
     primaryMasterKeyId: 'primary',

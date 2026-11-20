@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useMember } from '@proton/account/member/hook';
@@ -15,14 +16,14 @@ import { ApiUsageDashboard } from './ApiUsageDashboard';
 import { ApiUsagePanel } from './ApiUsagePanel';
 import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 
-jest.mock('@proton/account/entitlementCatalog/hooks');
-jest.mock('@proton/account/member/hook');
-jest.mock('@proton/account/paymentMethods/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('../../hooks/useLumoPlan');
-jest.mock('@proton/unleash/useFlag');
-jest.mock('./ApiUsageDashboard', () => ({ ApiUsageDashboard: jest.fn(() => null) }));
-jest.mock('./useCanBuyLumoCredits');
+vi.mock('@proton/account/entitlementCatalog/hooks');
+vi.mock('@proton/account/member/hook');
+vi.mock('@proton/account/paymentMethods/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('../../hooks/useLumoPlan');
+vi.mock('@proton/unleash/useFlag');
+vi.mock('./ApiUsageDashboard', () => ({ ApiUsageDashboard: vi.fn(() => null) }));
+vi.mock('./useCanBuyLumoCredits');
 
 const card = { Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, Autopay: Autopay.ENABLE, IsDefault: true };
 
@@ -41,17 +42,15 @@ const renderedProps = ({
     canBuyLumoCredits?: boolean;
     hasLumoCredits?: boolean;
 } = {}) => {
-    (useEntitlementChecksForOrgAndUser as jest.Mock).mockReturnValue([{ hasLumoCredits }, false]);
-    (useCanBuyLumoCredits as jest.Mock).mockReturnValue(canBuyLumoCredits);
-    (useFlag as jest.Mock).mockImplementation(
-        (name: string) => name === 'LumoAllowAutomaticCreditTopUps' && autoTopUpFlag
-    );
-    (useLumoPlan as jest.Mock).mockReturnValue({ isOrgAdmin: false, userIsMember: false });
-    (useUser as jest.Mock).mockReturnValue([formatUser({ Role } as User)]);
-    (useMember as jest.Mock).mockReturnValue([member]);
-    (usePaymentMethods as jest.Mock).mockReturnValue([paymentMethods]);
+    (useEntitlementChecksForOrgAndUser as Mock).mockReturnValue([{ hasLumoCredits }, false]);
+    (useCanBuyLumoCredits as Mock).mockReturnValue(canBuyLumoCredits);
+    (useFlag as Mock).mockImplementation((name: string) => name === 'LumoAllowAutomaticCreditTopUps' && autoTopUpFlag);
+    (useLumoPlan as Mock).mockReturnValue({ isOrgAdmin: false, userIsMember: false });
+    (useUser as Mock).mockReturnValue([formatUser({ Role } as User)]);
+    (useMember as Mock).mockReturnValue([member]);
+    (usePaymentMethods as Mock).mockReturnValue([paymentMethods]);
     render(<ApiUsagePanel />);
-    return (ApiUsageDashboard as unknown as jest.Mock).mock.calls.at(-1)[0];
+    return (ApiUsageDashboard as unknown as Mock).mock.calls.at(-1)![0];
 };
 
 describe('ApiUsagePanel', () => {

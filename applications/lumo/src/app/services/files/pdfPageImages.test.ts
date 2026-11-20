@@ -1,8 +1,8 @@
 import { attachmentDataCache } from '../attachmentDataCache';
 import { ensureRecentPdfPageImages } from './pdfPageImages';
 
-const processFile = jest.fn();
-jest.mock('../fileProcessingService', () => ({
+const processFile = vi.fn();
+vi.mock('../fileProcessingService', () => ({
     FileProcessingService: { getShared: () => ({ processFile }) },
 }));
 
@@ -57,7 +57,7 @@ describe('ensureRecentPdfPageImages', () => {
 
     it('leaves a PDF as text only when rendering fails', async () => {
         processFile.mockRejectedValue(new Error('boom'));
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
 
         await expect(ensureRecentPdfPageImages([pdf('a')])).resolves.toBeUndefined();
         expect(attachmentDataCache.getPageImages('a')).toBeUndefined();
@@ -78,18 +78,18 @@ describe('ensureRecentPdfPageImages on a conversation of text-only PDFs', () => 
     });
 
     it('stops waiting after maxWaitMs and lets rendering finish in the background', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         let finish!: (value: unknown) => void;
         processFile.mockReturnValue(new Promise((resolve) => (finish = resolve)));
 
         const waited = ensureRecentPdfPageImages([pdf('slow')], { maxWaitMs: 3000 });
-        await jest.advanceTimersByTimeAsync(3000);
+        await vi.advanceTimersByTimeAsync(3000);
         await expect(waited).resolves.toBeUndefined();
         expect(attachmentDataCache.getPageImages('slow')).toBeUndefined();
 
         finish({ type: 'text', content: '', pageImages: [page(1)] });
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
         expect(attachmentDataCache.getPageImages('slow')).toEqual([page(1)]);
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 });

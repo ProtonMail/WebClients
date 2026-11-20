@@ -3,7 +3,7 @@ import { SearchService } from './searchService';
 describe('SearchService.rankConversations', () => {
     const setup = (results: [number, string][]) => {
         const service = SearchService.get();
-        const searchWithWorker = jest
+        const searchWithWorker = vi
             .spyOn(
                 service as unknown as { searchWithWorker: (query: string) => Promise<[number, string][]> },
                 'searchWithWorker'
@@ -12,7 +12,7 @@ describe('SearchService.rankConversations', () => {
         return { service, searchWithWorker };
     };
 
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => vi.restoreAllMocks());
 
     it('matches any word, leaving out operators, repeats and single letters', async () => {
         const { service, searchWithWorker } = setup([]);

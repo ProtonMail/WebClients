@@ -22,14 +22,14 @@ import { runGenerationWithCompaction } from './compactionFlow';
  * retry, and empty assistant placeholders left behind when every attempt overflows.
  */
 
-jest.mock('../../lib/lumoApiClientRedux', () => ({ sendMessageWithRedux: jest.fn() }));
-jest.mock('../../util/telemetry', () => ({
-    ...jest.requireActual('../../util/telemetry'),
-    sendRetrievalReplyEvent: jest.fn(),
+vi.mock('../../lib/lumoApiClientRedux', () => ({ sendMessageWithRedux: vi.fn() }));
+vi.mock('../../util/telemetry', async () => ({
+    ...(await vi.importActual('../../util/telemetry')),
+    sendRetrievalReplyEvent: vi.fn(),
 }));
-jest.mock('../../llm/compaction', () => ({
-    ...jest.requireActual('../../llm/compaction'),
-    compactConversation: jest.fn(),
+vi.mock('../../llm/compaction', async () => ({
+    ...(await vi.importActual<Record<string, unknown>>('../../llm/compaction')),
+    compactConversation: vi.fn(),
 }));
 
 beforeAll(() => {
@@ -73,7 +73,7 @@ function run(
     }) as LumoDispatch;
     const result = dispatch(
         runGenerationWithCompaction({
-            api: jest.fn() as Api,
+            api: vi.fn() as Api,
             conversationId: 'conversation',
             spaceId: 'space',
             assistantMessageId: 'assistant',
@@ -107,8 +107,8 @@ function run(
 }
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.mocked(compactConversation).mockResolvedValue({
+    vi.clearAllMocks();
+    vi.mocked(compactConversation).mockResolvedValue({
         summary: 'summary',
         summarizedMessageIds: ['q1', 'a1'],
         keptMessageIds: ['prompt'],
@@ -126,7 +126,7 @@ beforeEach(() => {
 });
 
 it('still retries on overflow after a proactive compaction', async () => {
-    jest.mocked(sendMessageWithRedux)
+    vi.mocked(sendMessageWithRedux)
         .mockImplementationOnce(
             () =>
                 (async () => {
@@ -146,7 +146,7 @@ it('still retries on overflow after a proactive compaction', async () => {
 });
 
 it('does not leave an empty assistant placeholder behind when the retry also overflows', async () => {
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         () =>
             (async () => {
                 throw new ContextLengthExceededError();
@@ -167,7 +167,7 @@ it('does not leave an empty assistant placeholder behind when the retry also ove
 });
 
 const alwaysOverflows = () =>
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         () =>
             (async () => {
                 throw new ContextLengthExceededError();
@@ -185,7 +185,7 @@ const persistedReplies = (actions: { type: string; payload?: any }[]) => {
 
 it('keeps a reply when a retry without compaction also overflows', async () => {
     alwaysOverflows();
-    jest.mocked(compactConversation).mockRejectedValue(new NotEnoughToCompactError());
+    vi.mocked(compactConversation).mockRejectedValue(new NotEnoughToCompactError());
     // Recalibration shrinks the plan once (fewer files), so the flow retries without compacting.
     let builds = 0;
     const shrinkingOnce = (): Turn[] => {
@@ -203,7 +203,7 @@ it('keeps a reply when a retry without compaction also overflows', async () => {
 it('keeps the overflowed reply when the user stops during reactive compaction', async () => {
     alwaysOverflows();
     const controller = new AbortController();
-    jest.mocked(compactConversation).mockImplementation(async () => {
+    vi.mocked(compactConversation).mockImplementation(async () => {
         controller.abort();
         throw new DOMException('The operation was aborted', 'AbortError');
     });
@@ -218,7 +218,7 @@ it('lets the lookup tools find what a compaction in the same send summarized awa
     const question: Message = { ...chain[0]!, blocks: [{ type: 'text', content: 'Our launch codename is Bluebird.' }] };
     const messages = Object.fromEntries([question, chain[1]!, chain[2]!].map((message) => [message.id, message]));
     let found: string[] = [];
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         (_api, _turns, options) =>
             (async () => {
                 const [result] = await options!.clientToolExecutor!.execute([
@@ -252,10 +252,10 @@ it('lets the lookup tools find what a compaction in the same send summarized awa
     });
     await expect(result).resolves.toMatchObject({ status: 'succeeded' });
 
-    expect(jest.mocked(compactConversation)).toHaveBeenCalled();
+    expect(vi.mocked(compactConversation)).toHaveBeenCalled();
     expect(found).toEqual(['q1']);
-    expect(jest.mocked(sendRetrievalReplyEvent)).toHaveBeenCalledTimes(1);
-    expect(jest.mocked(sendRetrievalReplyEvent)).toHaveBeenCalledWith(
+    expect(vi.mocked(sendRetrievalReplyEvent)).toHaveBeenCalledTimes(1);
+    expect(vi.mocked(sendRetrievalReplyEvent)).toHaveBeenCalledWith(
         expect.objectContaining({
             usage: expect.objectContaining({ searches: 1, emptySearches: 0, reads: 0, errors: 0 }),
             chatSearch: 'none',
@@ -289,8 +289,8 @@ it.each([
             ? prepareRequest({ messageChain, budget }).usage.usedTokens
             : preview.usage.usedTokens - SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE;
         expect(withoutOverhead).toBeLessThan(budget.inputBudget);
-        const getClientTools = jest.fn(async () => tools);
-        jest.mocked(sendMessageWithRedux).mockImplementation(
+        const getClientTools = vi.fn(async () => tools);
+        vi.mocked(sendMessageWithRedux).mockImplementation(
             (_api, turns, options) =>
                 (async () => {
                     expect(turns.map((turn) => turn.content)).toEqual([expect.stringContaining('summary'), 'question']);

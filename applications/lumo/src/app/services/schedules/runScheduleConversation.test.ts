@@ -32,9 +32,9 @@ import { type ScheduleAppStore, ScheduleStorage } from './ScheduleStorage';
 import { SpaceScheduleSource } from './SpaceScheduleSource';
 import { type ScheduleGenerationOptions, createScheduleConversationRunner } from './runScheduleConversation';
 
-jest.mock('../../llm/tokenizer', () => ({ countTokens: () => 0 }));
+vi.mock('../../llm/tokenizer', () => ({ countTokens: () => 0 }));
 // Inspect synthetic request bodies at the real transport boundary without changing production encryption defaults.
-jest.mock('../../llm/config', () => ({ ENABLE_U2L_ENCRYPTION: false }));
+vi.mock('../../llm/config', () => ({ ENABLE_U2L_ENCRYPTION: false }));
 
 const options: ScheduleGenerationOptions = {
     skills: true,
@@ -105,7 +105,7 @@ async function setup() {
     const task = (await source.getTask(run, context))!;
     expect(await repository.claim(run)).toBe(true);
     const target = await repository.startRun(run, task);
-    const createTools = jest.fn(() => ({
+    const createTools = vi.fn(() => ({
         getClientTools: async () =>
             ['calendar__read', 'shell__run'].map((name) => ({
                 type: 'function' as const,
@@ -116,7 +116,7 @@ async function setup() {
     }));
     const runner = createScheduleConversationRunner({
         storage,
-        api: jest.fn() as Api,
+        api: vi.fn() as Api,
         getOptions: () => options,
         createTools,
         getConnectors: async () => [
@@ -137,75 +137,73 @@ async function setup() {
     return { store, storage, source, repository, task, target, context, runner, createTools, actions, keys };
 }
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(() => vi.restoreAllMocks());
 
 it('shares chat settings and tool composition, preserves streamed metadata, and durably saves the real messages', async () => {
     const h = await setup();
     expect(h.task.readOnlyConnectorIds).toEqual(['calendar']);
     h.store.dispatch(setPendingAgent('draft-agent'));
     h.store.dispatch(updateLumoUserSettings({ preferredResponseMode: 'thinking', preferredModelTier: 'lumo-lite' }));
-    const model = jest
-        .spyOn(LumoApiClient.prototype, 'callAssistant')
-        .mockImplementation(async (_api, turns, config) => {
-            expect(turns.some((turn) => turn.content?.includes('Write a report'))).toBe(true);
-            expect(turns.some((turn) => turn.content?.includes('create_artifact'))).toBe(true);
-            expect(config).toMatchObject({
-                enableExternalTools: true,
-                enableImageTools: true,
-                enableReasoning: true,
-                modelTier: 'lumo-lite',
-                generateTitle: false,
-            });
-            const advertised = await config!.clientToolExecutor!.getClientTools!();
-            expect(advertised.map((tool) => tool.function.name)).toEqual(['create_artifact', 'calendar__read']);
-            expect(config!.clientToolExecutor!.canExecute('shell__run')).toBe(false);
-            await config!.chunkCallback!({
-                type: 'token_data',
-                target: 'reasoning',
-                count: 0,
-                content: 'Consider the data',
-            });
-            await config!.chunkCallback!({
-                type: 'token_data',
-                target: 'message',
-                count: 1,
-                content: 'Here is your report',
-            });
-            const artifactArgs = {
-                id: 'report',
-                title: 'Scheduled report',
-                type: 'document',
-                content: '# Daily report',
-            };
-            const [artifactResult] = await config!.clientToolExecutor!.execute([
-                { id: 'artifact-call', name: 'create_artifact', arguments: JSON.stringify(artifactArgs) },
-            ]);
-            await config!.chunkCallback!({
-                type: 'token_data',
-                target: 'tool_call',
-                count: 2,
-                content: JSON.stringify({ id: 'artifact-call', name: 'create_artifact', arguments: artifactArgs }),
-            });
-            await config!.chunkCallback!({
-                type: 'token_data',
-                target: 'tool_result',
-                count: 3,
-                content: artifactResult.content,
-            });
-            await config!.chunkCallback!({
-                type: 'image_data',
-                image_id: 'generated-image',
-                data: 'AQIDBA==',
-                is_final: true,
-            });
-            await config!.chunkCallback!({ type: 'done' });
-            await config!.finishCallback!('succeeded');
-            return {
-                status: 'succeeded',
-                turns,
-                producedTurns: [{ role: Role.Assistant, content: 'Here is your report' }],
-            };
+    const model = vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, turns, config) => {
+        expect(turns.some((turn) => turn.content?.includes('Write a report'))).toBe(true);
+        expect(turns.some((turn) => turn.content?.includes('create_artifact'))).toBe(true);
+        expect(config).toMatchObject({
+            enableExternalTools: true,
+            enableImageTools: true,
+            enableReasoning: true,
+            modelTier: 'lumo-lite',
+            generateTitle: false,
         });
+        const advertised = await config!.clientToolExecutor!.getClientTools!();
+        expect(advertised.map((tool) => tool.function.name)).toEqual(['create_artifact', 'calendar__read']);
+        expect(config!.clientToolExecutor!.canExecute('shell__run')).toBe(false);
+        await config!.chunkCallback!({
+            type: 'token_data',
+            target: 'reasoning',
+            count: 0,
+            content: 'Consider the data',
+        });
+        await config!.chunkCallback!({
+            type: 'token_data',
+            target: 'message',
+            count: 1,
+            content: 'Here is your report',
+        });
+        const artifactArgs = {
+            id: 'report',
+            title: 'Scheduled report',
+            type: 'document',
+            content: '# Daily report',
+        };
+        const [artifactResult] = await config!.clientToolExecutor!.execute([
+            { id: 'artifact-call', name: 'create_artifact', arguments: JSON.stringify(artifactArgs) },
+        ]);
+        await config!.chunkCallback!({
+            type: 'token_data',
+            target: 'tool_call',
+            count: 2,
+            content: JSON.stringify({ id: 'artifact-call', name: 'create_artifact', arguments: artifactArgs }),
+        });
+        await config!.chunkCallback!({
+            type: 'token_data',
+            target: 'tool_result',
+            count: 3,
+            content: artifactResult.content,
+        });
+        await config!.chunkCallback!({
+            type: 'image_data',
+            image_id: 'generated-image',
+            data: 'AQIDBA==',
+            is_final: true,
+        });
+        await config!.chunkCallback!({ type: 'done' });
+        await config!.finishCallback!('succeeded');
+        return {
+            status: 'succeeded',
+            turns,
+            producedTurns: [{ role: Role.Assistant, content: 'Here is your report' }],
+        };
+    });
     const result = await h.runner(h.target, h.task, h.context, run);
     expect(result.outcome).toBe('succeeded');
     expect(h.store.getState().composerActions.pendingAgentId).toBe('draft-agent');
@@ -264,7 +262,7 @@ it('applies only the schedule skill selection through the real chat preparation 
     const space = h.store.getState().spaces.task;
     if (space.spaceType !== SpaceType.Schedule) throw new Error('Expected schedule space');
     h.storage.store.dispatch(saveSchedule('task', { ...space.schedule, skillIdsOrSubSkillRefs: ['selected'] }, 'edit'));
-    jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, turns) => {
+    vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, turns) => {
         const content = turns.map((turn) => turn.content).join('\n');
         expect(content).toContain('selected private skill instructions');
         expect(content).not.toContain('other private skill instructions');
@@ -277,14 +275,14 @@ it.each([{ skillRefs: [] }, { skillRefs: ['selected'] }])(
     'continues without skills when loading fails for task refs $skillRefs',
     async ({ skillRefs }) => {
         const h = await setup();
-        jest.spyOn(h.storage.db, 'getAllSkills').mockRejectedValue(new Error('Synthetic skill-store failure'));
+        vi.spyOn(h.storage.db, 'getAllSkills').mockRejectedValue(new Error('Synthetic skill-store failure'));
         const space = h.store.getState().spaces.task;
         if (space.spaceType !== SpaceType.Schedule) throw new Error('Expected schedule space');
         h.storage.store.dispatch(
             saveSchedule('task', { ...space.schedule, skillIdsOrSubSkillRefs: skillRefs }, 'edit')
         );
-        const warning = jest.spyOn(console, 'warn').mockImplementation(() => {});
-        const model = jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, turns) => {
+        const warning = vi.spyOn(console, 'warn').mockImplementation(() => {});
+        const model = vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, turns) => {
             const content = turns.map((turn) => turn.content ?? '').join('\n');
             expect(content).toContain('Write a report');
             expect(content).not.toContain('[Skill /');
@@ -308,11 +306,11 @@ it.each([{ skillRefs: [] }, { skillRefs: ['selected'] }])(
 it('still stops an aborted run when skill loading also fails', async () => {
     const h = await setup();
     const controller = new AbortController();
-    jest.spyOn(h.storage.db, 'getAllSkills').mockImplementation(async () => {
+    vi.spyOn(h.storage.db, 'getAllSkills').mockImplementation(async () => {
         controller.abort();
         throw new Error('Synthetic skill-store failure');
     });
-    const model = jest.spyOn(LumoApiClient.prototype, 'callAssistant');
+    const model = vi.spyOn(LumoApiClient.prototype, 'callAssistant');
     await expect(h.runner(h.target, h.task, { ...h.context, signal: controller.signal }, run)).rejects.toMatchObject({
         name: 'AbortError',
     });
@@ -371,7 +369,7 @@ it('sends selected root and sub-skill instructions through the real request seri
             )
         )
     );
-    jest.spyOn(h.storage.db, 'getSkillAssets').mockImplementation(async (id) => (id === bundle.id ? files : []));
+    vi.spyOn(h.storage.db, 'getSkillAssets').mockImplementation(async (id) => (id === bundle.id ? files : []));
     h.store.dispatch(
         loadSkills.fulfilled({ skills: [selected, bundle, available, disabled], migratedAgentIds: [] }, 'load')
     );
@@ -456,7 +454,7 @@ it('loads the global skill pool on a cold start even when no skills are selected
     const { primary } = await buildMasterKeyContext(h.keys);
     await h.storage.db.putSkill(await serializeSkill(global, primary));
     expect(h.store.getState().skills.status).toBe('idle');
-    jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, turns) => {
+    vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, turns) => {
         expect(turns.map((turn) => turn.content).join('\n')).toContain('cold-start-global: Available after loading');
         return { status: 'succeeded', turns, producedTurns: [{ content: 'done', role: Role.Assistant }] };
     });

@@ -160,7 +160,7 @@ describe('strategies', () => {
 describe('compactConversation', () => {
     it('throws when text-only compaction would reclaim no tokens', async () => {
         const chain = [textMsg(Role.User, 'hello'), textMsg(Role.Assistant, 'hi'), textMsg(Role.User, 'how are you')];
-        const summarize = jest.fn();
+        const summarize = vi.fn();
 
         await expect(compactConversation(chain, undefined, { targetTokens: 1e9, summarize })).rejects.toThrow(
             NotEnoughToCompactError
@@ -177,7 +177,7 @@ describe('compactConversation', () => {
             textMsg(Role.Assistant, big),
             textMsg(Role.User, 'latest question'),
         ];
-        const summarize = jest.fn().mockResolvedValue('CONDENSED SUMMARY');
+        const summarize = vi.fn().mockResolvedValue('CONDENSED SUMMARY');
         const result = await compactConversation(chain, undefined, {
             targetTokens: 10,
             keepRecentTokenBudget: 10,
@@ -203,7 +203,7 @@ describe('compactConversation', () => {
             toolMsg(big),
             textMsg(Role.User, 'latest'),
         ];
-        const summarize = jest.fn().mockResolvedValue('SUMMARY');
+        const summarize = vi.fn().mockResolvedValue('SUMMARY');
         const result = await compactConversation(chain, undefined, {
             targetTokens: 5000,
             keepRecentTokenBudget: 10,
@@ -264,7 +264,7 @@ describe('compactConversation', () => {
         const latestQuestion = textMsg(Role.User, 'latest question');
         const chain = [oldUser, oldAssistant, keptAfterFirst, firstBoundary, latestQuestion];
 
-        const summarize = jest.fn().mockResolvedValue('SECOND SUMMARY');
+        const summarize = vi.fn().mockResolvedValue('SECOND SUMMARY');
         const result = await compactConversation(chain, undefined, {
             targetTokens: 10,
             keepRecentTokenBudget: 10,
@@ -303,7 +303,7 @@ describe('compactConversation', () => {
         });
         const chain = [oldUser, keptAfterFirst, firstBoundary, textMsg(Role.User, 'latest question')];
 
-        const summarize = jest.fn().mockResolvedValue('SECOND SUMMARY');
+        const summarize = vi.fn().mockResolvedValue('SECOND SUMMARY');
         await compactConversation(chain, undefined, {
             targetTokens: 10,
             keepRecentTokenBudget: 10,
@@ -339,7 +339,7 @@ describe('compactConversation', () => {
         });
         const chain = [oldUser, keptAfterFirst, firstBoundary, textMsg(Role.User, 'latest question')];
 
-        const summarize = jest.fn().mockResolvedValue('SECOND SUMMARY');
+        const summarize = vi.fn().mockResolvedValue('SECOND SUMMARY');
         await compactConversation(chain, undefined, {
             targetTokens: 10,
             keepRecentTokenBudget: 10,

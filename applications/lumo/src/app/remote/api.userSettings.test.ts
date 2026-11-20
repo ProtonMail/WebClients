@@ -1,14 +1,14 @@
 import { LumoApi } from './api';
 
 const respond = (body: unknown, status: number) =>
-    jest.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(JSON.stringify(body), { status }));
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(JSON.stringify(body), { status }));
 
 beforeEach(() => {
-    jest.spyOn(console, 'log').mockImplementation(() => {});
+    vi.spyOn(console, 'log').mockImplementation(() => {});
 });
 
 afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
 });
 
 describe('LumoApi.getUserSettings', () => {
@@ -45,7 +45,7 @@ describe('LumoApi.getUserSettings', () => {
     });
 
     it('throws when the request itself fails', async () => {
-        jest.spyOn(globalThis, 'fetch').mockRejectedValue(new TypeError('Failed to fetch'));
+        vi.spyOn(globalThis, 'fetch').mockRejectedValue(new TypeError('Failed to fetch'));
 
         await expect(new LumoApi('session').getUserSettings()).rejects.toThrow('Failed to fetch');
     });

@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { createElement, useRef } from 'react';
 
 import { act, render, renderHook, screen, waitFor } from '@testing-library/react';
 
@@ -15,30 +15,29 @@ import type { LumoDispatch, LumoState } from '../redux/store';
 import { type Attachment, type Message, Role } from '../types';
 import { useEffectiveContextUsage } from './useEffectiveContextUsage';
 
-jest.mock('@proton/app-context/useApi', () => {
-    const api = jest.fn();
+vi.mock('@proton/app-context/useApi', () => {
+    const api = vi.fn();
     return { useApi: () => api };
 });
-jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
-    ...jest.requireActual('@proton/lumo-api-client/core/desktop-tools'),
+vi.mock('@proton/lumo-api-client/core/desktop-tools', async () => ({
+    ...(await vi.importActual('@proton/lumo-api-client/core/desktop-tools')),
     isDesktopEnvironment: () => true,
-    createDesktopClientToolExecutor: jest.fn(),
+    createDesktopClientToolExecutor: vi.fn(),
 }));
-jest.mock('../providers/IsGuestProvider', () => ({ useIsGuest: () => false }));
-jest.mock('./useLumoPlan', () => ({ useLumoPlan: () => ({ hasLumoPlus: true }) }));
-jest.mock('./useLumoFlags', () => ({ useLumoFlags: () => ({}) }));
-jest.mock('./useContextLimits', () => ({
+vi.mock('../providers/IsGuestProvider', () => ({ useIsGuest: () => false }));
+vi.mock('./useLumoPlan', () => ({ useLumoPlan: () => ({ hasLumoPlus: true }) }));
+vi.mock('./useLumoFlags', () => ({ useLumoFlags: () => ({}) }));
+vi.mock('./useContextLimits', () => ({
     useRequestBudget: () => budget,
     useContextLimits: () => deriveContextLimits(100_000),
 }));
-jest.mock('../llm/attachments', () => ({
-    ...jest.requireActual('../llm/attachments'),
-    fillAttachmentData: jest.fn(),
+vi.mock('../llm/attachments', async () => ({
+    ...(await vi.importActual('../llm/attachments')),
+    fillAttachmentData: vi.fn(),
 }));
-jest.mock('../redux/hooks', () => ({
+vi.mock('../redux/hooks', () => ({
     useLumoDispatch: () => dispatch,
     useLumoSelector: (selector: (state: LumoState) => unknown, equals = Object.is) => {
-        const { useRef } = jest.requireActual('react');
         const value = selector(state);
         const previous = useRef(value);
         if (!equals(previous.current, value)) {
@@ -81,10 +80,10 @@ const dispatch = ((action: unknown) =>
     typeof action === 'function' ? action(dispatch, () => state) : action) as LumoDispatch;
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     state = structuredClone(initialState);
-    jest.mocked(fillAttachmentData).mockResolvedValue([file]);
-    jest.mocked(createDesktopClientToolExecutor).mockReturnValue({
+    vi.mocked(fillAttachmentData).mockResolvedValue([file]);
+    vi.mocked(createDesktopClientToolExecutor).mockReturnValue({
         getClientTools: async () => [],
         canExecute: () => true,
         execute: async () => [],
@@ -92,7 +91,7 @@ beforeEach(() => {
 });
 
 it('shows an unavailable notice on initial failure and recovers after a connector refresh', async () => {
-    jest.mocked(fillAttachmentData).mockRejectedValueOnce(new Error('Attachment unavailable'));
+    vi.mocked(fillAttachmentData).mockRejectedValueOnce(new Error('Attachment unavailable'));
     render(createElement(ContextProgressIndicator, { messageChain: [question], attachments: [] }));
     expect(await screen.findByText('Context estimate unavailable.')).toBeVisible();
 
@@ -106,7 +105,7 @@ it('keeps a critical warning visible when a refresh fails', async () => {
     render(createElement(ContextSizeWarning, { messageChain: [largeQuestion], attachments: [] }));
     const warning = await screen.findByText(/This conversation is nearly full/);
 
-    jest.mocked(fillAttachmentData).mockRejectedValueOnce(new Error('Attachment unavailable'));
+    vi.mocked(fillAttachmentData).mockRejectedValueOnce(new Error('Attachment unavailable'));
     await act(async () => {
         window.dispatchEvent(new Event('lumo:tools-changed'));
     });
@@ -118,9 +117,9 @@ it('shows the same request estimate with hydrated files and refreshes desktop sc
     let tools: ChatCompletionsFunctionTool[] = [
         { type: 'function', function: { name: 'lookup', description: 'Search project notes', parameters: {} } },
     ];
-    const execute = jest.fn(async () => []);
-    const getClientTools = jest.fn(async () => tools);
-    jest.mocked(createDesktopClientToolExecutor).mockReturnValue({ getClientTools, canExecute: () => true, execute });
+    const execute = vi.fn(async () => []);
+    const getClientTools = vi.fn(async () => tools);
+    vi.mocked(createDesktopClientToolExecutor).mockReturnValue({ getClientTools, canExecute: () => true, execute });
     const { result } = renderHook(() => useEffectiveContextUsage([question], []));
     await waitFor(() => expect(result.current.isPending).toBe(false));
     const preview = prepareRequest({ messageChain: [question], attachments: [file], clientTools: tools, budget });
@@ -142,7 +141,7 @@ it('shows the same request estimate with hydrated files and refreshes desktop sc
 
 it('shares a pending load and keeps it alive until the last consumer unmounts', async () => {
     let finish: (attachments: Attachment[]) => void = () => {};
-    jest.mocked(fillAttachmentData).mockImplementationOnce(
+    vi.mocked(fillAttachmentData).mockImplementationOnce(
         () =>
             new Promise((resolve) => {
                 finish = resolve;
@@ -206,7 +205,7 @@ it('keeps resolved definitions visible during a relevant refresh', async () => {
     const previousTokens = result.current.usedTokens;
     const updatedFile = { ...file, markdown: 'The project launches in December.'.repeat(100) };
     let finish: (attachments: Attachment[]) => void = () => {};
-    jest.mocked(fillAttachmentData).mockImplementationOnce(
+    vi.mocked(fillAttachmentData).mockImplementationOnce(
         () =>
             new Promise((resolve) => {
                 finish = resolve;
@@ -232,7 +231,7 @@ it('never reuses another conversation’s definitions after navigation', async (
         initialProps: { chain: [question] },
     });
     await waitFor(() => expect(result.current.isPending).toBe(false));
-    jest.mocked(fillAttachmentData).mockRejectedValueOnce(new Error('Attachment unavailable'));
+    vi.mocked(fillAttachmentData).mockRejectedValueOnce(new Error('Attachment unavailable'));
     rerender({ chain: [{ ...question, conversationId: 'other-conversation' }] });
     expect(result.current.isPending).toBe(true);
     await waitFor(() => expect(result.current.isUnavailable).toBe(true));

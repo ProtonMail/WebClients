@@ -25,9 +25,9 @@ import type { RecoveryRecord } from '../services/generation/recovery';
 import { ConversationStatus, Role, SpaceType } from '../types';
 import { sendMessageWithRedux } from './lumoApiClientRedux';
 
-jest.mock('@proton/app-context/useApi');
-jest.mock('../hooks/useLumoFlags');
-jest.mock('../redux/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('../hooks/useLumoFlags');
+vi.mock('../redux/hooks');
 
 Object.assign(globalThis, { TransformStream });
 
@@ -83,7 +83,7 @@ it.each(['headers', 'stream', 'stop'] as const)(
             state.conversations = conversationsReducer(state.conversations, action);
             return action;
         }) as LumoDispatch;
-        const api = jest.fn<Promise<ReadableStream>, [FetchConfig]>(async (request) => {
+        const api = vi.fn<(...args: [FetchConfig]) => Promise<ReadableStream>>(async (request) => {
             if (request.method === 'delete') {
                 return new ReadableStream({ start: (controller) => controller.close() });
             }
@@ -95,12 +95,12 @@ it.each(['headers', 'stream', 'stop'] as const)(
             return encryptedResponse(record!, request.method === 'get');
         });
         extraThunkArguments.api = api as unknown as typeof originalApi;
-        jest.spyOn(RequestEncryptionParams.prototype, 'encryptRequestKey').mockResolvedValue('worker-wrapped-key');
-        jest.spyOn(generationRegistry, 'canRecover').mockReturnValue(false);
-        jest.spyOn(document, 'visibilityState', 'get').mockReturnValue('visible');
-        jest.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
-        const open = jest.spyOn(indexedDB, 'open');
-        const write = jest.spyOn(Storage.prototype, 'setItem');
+        vi.spyOn(RequestEncryptionParams.prototype, 'encryptRequestKey').mockResolvedValue('worker-wrapped-key');
+        vi.spyOn(generationRegistry, 'canRecover').mockReturnValue(false);
+        vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('visible');
+        vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+        const open = vi.spyOn(indexedDB, 'open');
+        const write = vi.spyOn(Storage.prototype, 'setItem');
         let unmount: (() => void) | undefined;
         try {
             const controller = await generationRegistry.startExclusive(id);
@@ -132,12 +132,12 @@ it.each(['headers', 'stream', 'stop'] as const)(
             if (interruption === 'stop') {
                 cancelConversationGeneration(dispatch, () => state, id);
             } else {
-                jest.mocked(useApi).mockReturnValue(api as unknown as Api);
-                jest.mocked(useLumoStore).mockReturnValue({ dispatch, getState: () => state } as ReturnType<
+                vi.mocked(useApi).mockReturnValue(api as unknown as Api);
+                vi.mocked(useLumoStore).mockReturnValue({ dispatch, getState: () => state } as ReturnType<
                     typeof useLumoStore
                 >);
-                jest.mocked(useLumoSelector).mockReturnValue(undefined);
-                jest.mocked(useLumoFlags).mockReturnValue({ resumableGeneration: true } as ReturnType<
+                vi.mocked(useLumoSelector).mockReturnValue(undefined);
+                vi.mocked(useLumoFlags).mockReturnValue({ resumableGeneration: true } as ReturnType<
                     typeof useLumoFlags
                 >);
                 ({ unmount } = renderHook(() => useGenerationRecovery(id, true)));
@@ -177,7 +177,7 @@ it.each(['headers', 'stream', 'stop'] as const)(
             generationRegistry.abortAll();
             generationRegistry.finish(id);
             await generationRecoveryStore().remove(id);
-            jest.restoreAllMocks();
+            vi.restoreAllMocks();
             extraThunkArguments.dbApi = originalDb;
             extraThunkArguments.api = originalApi;
         }

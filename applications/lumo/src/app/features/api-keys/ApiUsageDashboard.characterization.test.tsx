@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { act, fireEvent, render, screen, within } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -16,31 +17,31 @@ import { useApiUsageMembers } from './useApiUsageMembers';
 import { useApiUsageSummary } from './useApiUsageSummary';
 import { useMembersLumoApi } from './useMembersLumoApi';
 
-jest.mock('@proton/account/paymentStatus/hooks');
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
-jest.mock('./ApiTokenUsageChart', () => ({
+vi.mock('@proton/account/paymentStatus/hooks');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
+vi.mock('./ApiTokenUsageChart', () => ({
     ApiTokenUsageChart: ({ days }: { days: { apiInputTokens: number; chatInputTokens?: number }[] }) => (
         <div data-testid="token-usage-chart" data-days={days.length}>
             {days.reduce((sum, day) => sum + day.apiInputTokens + (day.chatInputTokens ?? 0), 0)}
         </div>
     ),
 }));
-jest.mock('@proton/components/components/link/SettingsLink', () => ({
+vi.mock('@proton/components/components/link/SettingsLink', () => ({
     __esModule: true,
     default: ({ children }: { children: ReactNode }) => <a href="/users-addresses">{children}</a>,
 }));
-jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
+vi.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
     LumoCreditsModal: ({ open }: { open: boolean }) => (open ? <div>Credits modal</div> : null),
 }));
 
-jest.mock('./useApiUsageSummary');
-jest.mock('./useApiUsageMembers');
-jest.mock('./useMembersLumoApi');
-jest.mock('@proton/account/members/hooks');
-jest.mock('@proton/account/organization/hooks');
+vi.mock('./useApiUsageSummary');
+vi.mock('./useApiUsageMembers');
+vi.mock('./useMembersLumoApi');
+vi.mock('@proton/account/members/hooks');
+vi.mock('@proton/account/organization/hooks');
 
 const memberTotals = (tokensIn: number, costMicros: number) => ({
     TokensIn: tokensIn,
@@ -71,7 +72,7 @@ const memberUsageRows = [
     { MemberID: null, Totals: memberTotals(100_000, 250_000), Usage: [] },
 ];
 
-const setApiAccess = jest.fn();
+const setApiAccess = vi.fn();
 const usageDates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
 const usageRow = (
     date: string,
@@ -121,34 +122,34 @@ const setup = ({
     members?: typeof organizationMembers;
 } = {}) => {
     setApiAccess.mockReset().mockResolvedValue(undefined);
-    (useMembersLumoApi as jest.Mock).mockReturnValue({
+    (useMembersLumoApi as Mock).mockReturnValue({
         enabledByMemberId: { 'member-alice': true, 'member-bob': false },
         error: false,
         setApiAccess,
         ...apiAccess,
     });
-    (useOrganization as jest.Mock).mockReturnValue([
+    (useOrganization as Mock).mockReturnValue([
         isLoadingOrganization ? undefined : { Settings: { LumoApiEnabled: isOrganizationApiEnabled } },
         isLoadingOrganization,
     ]);
-    (useApi as jest.Mock).mockReturnValue(jest.fn(() => creditResponse));
-    (useApiUsageSummary as jest.Mock).mockReturnValue({
+    (useApi as Mock).mockReturnValue(vi.fn(() => creditResponse));
+    (useApiUsageSummary as Mock).mockReturnValue({
         dates: usageDates,
         rows: usageRows,
         isLoading: false,
         error: false,
         ...usage,
     });
-    (useApiUsageMembers as jest.Mock).mockReturnValue({
+    (useApiUsageMembers as Mock).mockReturnValue({
         rows: memberUsageRows,
         isLoading: false,
         error: false,
         ...memberUsage,
     });
-    (useMembers as jest.Mock).mockReturnValue([members, isLoadingMembers]);
-    (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
-    (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
-    (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
+    (useMembers as Mock).mockReturnValue([members, isLoadingMembers]);
+    (useUser as Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
+    (useSubscription as Mock).mockReturnValue([{ Currency: 'USD' }]);
+    (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
     render(<ApiUsageDashboard isOrgAdmin={isOrgAdmin} isOrgMember={isOrgMember} showAutoTopUp={showAutoTopUp} />);
 };
 
@@ -226,7 +227,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         fireEvent.click(screen.getByRole('button', { name: 'lumo-max' }));
         fireEvent.click(screen.getByRole('button', { name: 'Chat' }));
 
-        expect(screen.getByTestId('token-usage-chart')).toHaveTextContent(/^50000$/);
+        expect(screen.getByTestId('token-usage-chart').textContent?.replace(/\s+/g, ' ')).toMatch(/^50000$/);
     });
 
     it('splits the input and output tokens between API and chat', () => {
@@ -286,10 +287,10 @@ describe('ApiUsageDashboard outside the balance amount', () => {
     });
 
     it('exports the usage as CSV', async () => {
-        const createObjectURL = jest.fn((_: Blob) => 'blob:usage');
+        const createObjectURL = vi.fn((_: Blob) => 'blob:usage');
         URL.createObjectURL = createObjectURL;
-        URL.revokeObjectURL = jest.fn();
-        const click = jest.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+        URL.revokeObjectURL = vi.fn();
+        const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
         setup();
 
         fireEvent.click(screen.getByRole('button', { name: 'Export CSV' }));
@@ -383,7 +384,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
 
         expect(details).toHaveAttribute('aria-expanded', 'true');
         const liteUsage = within(alice).getByRole('group', { name: 'lumo-lite' });
-        expect(liteUsage).toHaveTextContent(/Input600\.0k.*Output25\.0k.*Balance used\$1\.00/);
+        expect(liteUsage.textContent?.replace(/\s+/g, ' ')).toMatch(/Input600\.0k.*Output25\.0k.*Balance used\$1\.00/);
         expect(within(alice).getByRole('group', { name: 'lumo-max' })).toHaveTextContent('Not priced yet');
 
         fireEvent.click(details);
@@ -402,7 +403,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         setup({ isOrgAdmin: true });
         const details = screen.getByRole('button', { name: 'Show usage details for Alice' });
         fireEvent.click(details);
-        (useApiUsageMembers as jest.Mock).mockReturnValue({
+        (useApiUsageMembers as Mock).mockReturnValue({
             rows: memberUsageRows.map((row) => ({ ...row, Usage: [] })),
             isLoading: false,
             error: false,

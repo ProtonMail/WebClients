@@ -1,10 +1,7 @@
-import { jest } from '@jest/globals';
-
 import type { LumoState } from '../store';
 
-// This project runs Jest in ESM mode, where static imports resolve before a hoisted `jest.mock`
-// would take effect. Mocks are therefore registered with `jest.doMock` + a fresh dynamic
-// `import()` inside each test — see `lumoBootstrapRecovery.test.ts` for the same pattern.
+// Mocks are registered with `vi.doMock` + `vi.resetModules()` + a fresh dynamic
+// `import()` inside each test so every test gets its own module graph — see `lumoBootstrapRecovery.test.ts` for the same pattern.
 
 const READY_MASTER_KEY_STATE = {
     status: 'ready' as const,
@@ -27,39 +24,39 @@ function makeState(remoteUserSettingsUndecryptable: boolean): LumoState {
 }
 
 describe('saveLumoUserSettingsToRemote — must not clobber an undecryptable remote blob (LUMO-853)', () => {
-    afterEach(() => jest.resetModules());
+    afterEach(() => vi.resetModules());
 
     it('skips writes while the same undecryptable blob remains protected', async () => {
-        const getUserSettings = jest.fn(() => Promise.resolve({ userSettingsTag: 'x', encrypted: 'y' }));
-        const putUserSettings = jest.fn(() => Promise.resolve(undefined));
-        const postUserSettings = jest.fn(() => Promise.resolve(undefined));
+        const getUserSettings = vi.fn(() => Promise.resolve({ userSettingsTag: 'x', encrypted: 'y' }));
+        const putUserSettings = vi.fn(() => Promise.resolve(undefined));
+        const postUserSettings = vi.fn(() => Promise.resolve(undefined));
 
-        jest.doMock('../../serialization', () => ({
+        vi.doMock('../../serialization', () => ({
             deserializeUserSettingsWithMasterKeys: () =>
                 Promise.resolve({ userSettings: null, needsMasterKeyMigration: false }),
         }));
-        jest.doMock('../../util/masterKeys', () => ({
+        vi.doMock('../../util/masterKeys', () => ({
             buildMasterKeyContext: () => Promise.resolve({ primary: { id: 'primary' }, legacy: [] }),
         }));
 
         const { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote } =
             await import('./lumoUserSettingsThunks');
         const extra = { lumoApi: { getUserSettings, putUserSettings, postUserSettings } } as never;
-        await loadLumoUserSettingsFromRemote()(jest.fn() as never, () => makeState(false), extra);
+        await loadLumoUserSettingsFromRemote()(vi.fn() as never, () => makeState(false), extra);
 
         const thunk = saveLumoUserSettingsToRemote({ theme: 'dark' });
-        await thunk(jest.fn() as never, () => makeState(true), extra);
+        await thunk(vi.fn() as never, () => makeState(true), extra);
 
         expect(putUserSettings).not.toHaveBeenCalled();
         expect(postUserSettings).not.toHaveBeenCalled();
     });
 
     it('saves normally when nothing is flagged as undecryptable', async () => {
-        const getUserSettings = jest.fn(() => Promise.resolve({ UserSettingsTag: 'x', Encrypted: 'y' }));
-        const putUserSettings = jest.fn(() => Promise.resolve(undefined));
-        const postUserSettings = jest.fn(() => Promise.resolve(undefined));
+        const getUserSettings = vi.fn(() => Promise.resolve({ UserSettingsTag: 'x', Encrypted: 'y' }));
+        const putUserSettings = vi.fn(() => Promise.resolve(undefined));
+        const postUserSettings = vi.fn(() => Promise.resolve(undefined));
 
-        jest.doMock('../../serialization', () => ({
+        vi.doMock('../../serialization', () => ({
             serializeUserSettings: () => Promise.resolve({ UserSettingsTag: 'tag', Encrypted: 'enc' }),
             deserializeUserSettingsWithMasterKeys: () =>
                 Promise.resolve({
@@ -67,14 +64,14 @@ describe('saveLumoUserSettingsToRemote — must not clobber an undecryptable rem
                     needsMasterKeyMigration: false,
                 }),
         }));
-        jest.doMock('../../util/masterKeys', () => ({
+        vi.doMock('../../util/masterKeys', () => ({
             buildMasterKeyContext: () => Promise.resolve({ primary: { id: 'primary' }, legacy: [] }),
         }));
 
         const { saveLumoUserSettingsToRemote } = await import('./lumoUserSettingsThunks');
 
         const thunk = saveLumoUserSettingsToRemote({ theme: 'dark' });
-        await thunk(jest.fn() as never, () => makeState(false), {
+        await thunk(vi.fn() as never, () => makeState(false), {
             lumoApi: { getUserSettings, putUserSettings, postUserSettings },
         } as never);
 
@@ -84,23 +81,23 @@ describe('saveLumoUserSettingsToRemote — must not clobber an undecryptable rem
 });
 
 describe('loadLumoUserSettingsFromRemote — flags an existing-but-undecryptable remote blob (LUMO-853)', () => {
-    afterEach(() => jest.resetModules());
+    afterEach(() => vi.resetModules());
 
     it('dispatches setRemoteUserSettingsUndecryptable(true) when a blob exists but decrypts to nothing', async () => {
-        jest.doMock('../../serialization', () => ({
+        vi.doMock('../../serialization', () => ({
             deserializeUserSettingsWithMasterKeys: () =>
                 Promise.resolve({ userSettings: null, needsMasterKeyMigration: false }),
         }));
-        jest.doMock('../../util/masterKeys', () => ({
+        vi.doMock('../../util/masterKeys', () => ({
             buildMasterKeyContext: () => Promise.resolve({ primary: { id: 'primary' }, legacy: [] }),
         }));
 
         const { loadLumoUserSettingsFromRemote } = await import('./lumoUserSettingsThunks');
         const { setRemoteUserSettingsUndecryptable } = await import('./meta/initialization');
 
-        const getUserSettings = jest.fn(() => Promise.resolve({ userSettingsTag: 'x', encrypted: 'stale-blob' }));
+        const getUserSettings = vi.fn(() => Promise.resolve({ userSettingsTag: 'x', encrypted: 'stale-blob' }));
         const dispatched: unknown[] = [];
-        const dispatch = jest.fn((action: unknown) => {
+        const dispatch = vi.fn((action: unknown) => {
             dispatched.push(action);
             return action;
         });
@@ -118,20 +115,20 @@ describe('loadLumoUserSettingsFromRemote — flags an existing-but-undecryptable
 
     it('clears the flag once a load actually decrypts settings', async () => {
         const decryptedSettings = { theme: 'dark', personalization: {} };
-        jest.doMock('../../serialization', () => ({
+        vi.doMock('../../serialization', () => ({
             deserializeUserSettingsWithMasterKeys: () =>
                 Promise.resolve({ userSettings: decryptedSettings, needsMasterKeyMigration: false }),
         }));
-        jest.doMock('../../util/masterKeys', () => ({
+        vi.doMock('../../util/masterKeys', () => ({
             buildMasterKeyContext: () => Promise.resolve({ primary: { id: 'primary' }, legacy: [] }),
         }));
 
         const { loadLumoUserSettingsFromRemote } = await import('./lumoUserSettingsThunks');
         const { setRemoteUserSettingsUndecryptable } = await import('./meta/initialization');
 
-        const getUserSettings = jest.fn(() => Promise.resolve({ UserSettingsTag: 'x', Encrypted: 'good-blob' }));
+        const getUserSettings = vi.fn(() => Promise.resolve({ UserSettingsTag: 'x', Encrypted: 'good-blob' }));
         const dispatched: unknown[] = [];
-        const dispatch = jest.fn((action: unknown) => {
+        const dispatch = vi.fn((action: unknown) => {
             dispatched.push(action);
             return action;
         });

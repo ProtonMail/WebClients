@@ -51,7 +51,7 @@ describe('DeckChart', () => {
     });
 
     it('draws repeated category and series names without React key warnings', () => {
-        const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
         render(
             <DeckChart
                 chart={{

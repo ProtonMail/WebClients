@@ -5,28 +5,28 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import type { Message } from '../../../types';
 import { MessageChainComponent } from './MessageChainComponent';
 
-jest.mock('./message/MessageComponent', () => ({ MessageComponent: () => <div>Answer</div> }));
-jest.mock('./ScrollToBottomButton/ScrollToBottomButton', () => ({
+vi.mock('./message/MessageComponent', () => ({ MessageComponent: () => <div>Answer</div> }));
+vi.mock('./ScrollToBottomButton/ScrollToBottomButton', () => ({
     ScrollToBottomButton: ({ show }: { show: boolean }) => <button aria-label="Scroll indicator" hidden={!show} />,
 }));
-jest.mock('./clipboard', () => ({ prepareSelectedContentForCopy: jest.fn() }));
+vi.mock('./clipboard', () => ({ prepareSelectedContentForCopy: vi.fn() }));
 
 it('coalesces replay mutations and updates the indicator only after layout', () => {
     const observers: MutationCallback[] = [];
     const frames: FrameRequestCallback[] = [];
     const originalObserver = window.MutationObserver;
-    const disconnect = jest.fn();
-    window.MutationObserver = jest.fn().mockImplementation((callback: MutationCallback) => {
+    const disconnect = vi.fn();
+    window.MutationObserver = vi.fn().mockImplementation(function (callback: MutationCallback) {
         observers.push(callback);
-        return { observe: jest.fn(), disconnect };
+        return { observe: vi.fn(), disconnect };
     });
-    const animationFrame = jest.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
+    const animationFrame = vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
         frames.push(callback);
         return frames.length;
     });
-    const cancelAnimationFrame = jest.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => {});
+    const cancelAnimationFrame = vi.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => {});
     const scrollToDescriptor = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollTo');
-    Object.defineProperty(HTMLElement.prototype, 'scrollTo', { configurable: true, value: jest.fn() });
+    Object.defineProperty(HTMLElement.prototype, 'scrollTo', { configurable: true, value: vi.fn() });
     const messageChainRef = createRef<HTMLDivElement>();
     const otherRef = createRef<HTMLDivElement>();
     try {
@@ -38,12 +38,12 @@ it('coalesces replay mutations and updates the indicator only after layout', () 
                 messageChain={[{ id: 'answer', content: 'Answer' } as Message]}
                 isGenerating
                 conversationId="conversation"
-                handleRegenerateMessage={jest.fn()}
-                handleEditMessage={jest.fn()}
-                getSiblingInfo={() => ({ idx: 0, count: 1, onPrev: jest.fn(), onNext: jest.fn() })}
-                handleOpenSources={jest.fn()}
-                handleOpenFiles={jest.fn()}
-                handleOpenFilePreview={jest.fn()}
+                handleRegenerateMessage={vi.fn()}
+                handleEditMessage={vi.fn()}
+                getSiblingInfo={() => ({ idx: 0, count: 1, onPrev: vi.fn(), onNext: vi.fn() })}
+                handleOpenSources={vi.fn()}
+                handleOpenFiles={vi.fn()}
+                handleOpenFilePreview={vi.fn()}
             />
         );
         const container = messageChainRef.current!;

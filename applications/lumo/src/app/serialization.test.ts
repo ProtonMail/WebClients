@@ -58,7 +58,7 @@ describe('serialization', () => {
 
         it('refuses a payload the backend would reject', async () => {
             const spaceDek = await getSpaceDek(mockSpace);
-            const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+            const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
             expect(await serializeAttachment(attachment(MAX_SERIALIZED_ASSET_BYTES + 1), spaceDek)).toBeNull();
             warn.mockRestore();

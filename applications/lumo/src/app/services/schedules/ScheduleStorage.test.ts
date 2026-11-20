@@ -24,7 +24,7 @@ import { SpaceScheduleSource } from './SpaceScheduleSource';
 import { SchedulePersistenceError, type ScheduleRunResult } from './types';
 
 // Tokenization is unrelated to persistence and otherwise loads its WASM worker in Node.
-jest.mock('../../llm/tokenizer', () => ({ countTokens: () => 0 }));
+vi.mock('../../llm/tokenizer', () => ({ countTokens: () => 0 }));
 
 const details: ScheduleDetails & { id: string } = {
     id: '61d35839-b198-42d4-a28b-3b8cd148bf96',
@@ -71,7 +71,7 @@ function setup(options?: {
     const db = new DbApi(options?.dbName ?? accountId);
     let active = true;
     const reservations = new Set<string>();
-    const postConversation = jest.fn(
+    const postConversation = vi.fn(
         options?.postConversation ??
             (async ({ ConversationTag }: { ConversationTag: string }) => {
                 if (reservations.has(ConversationTag)) throw new ConflictClientError('Already exists');
@@ -93,7 +93,7 @@ function setup(options?: {
         storage.guard();
         const zone =
             timezone &&
-            jest.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockReturnValue({
+            vi.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockReturnValue({
                 ...new Intl.DateTimeFormat().resolvedOptions(),
                 timeZone: timezone,
             });
@@ -328,7 +328,7 @@ test('a durable claim survives reload and persistence failures do not look like 
     h.store.dispatch(deleteMessage(partial.id));
     const reopened = new ConversationScheduleRunRepository(h.accountId, h.storage);
     expect(await reopened.claim(run)).toBe(false);
-    const write = jest.spyOn(h.storage, 'writeConversation').mockRejectedValueOnce(new Error('Disk write failed'));
+    const write = vi.spyOn(h.storage, 'writeConversation').mockRejectedValueOnce(new Error('Disk write failed'));
     await expect(reopened.interruptRun(run)).rejects.toBeInstanceOf(SchedulePersistenceError);
     expect(await reopened.getStatus(run.runId)).toBe('running');
     write.mockRestore();
@@ -494,7 +494,7 @@ test('independent desktop profiles race on the same conversation tag before publ
     const first = setup();
     await first.save(details);
     const tags = new Set<string>();
-    const postConversation = jest.fn(async ({ ConversationTag }: { ConversationTag: string }) => {
+    const postConversation = vi.fn(async ({ ConversationTag }: { ConversationTag: string }) => {
         // Neither desktop may expose a dirty local conversation before the server grants it.
         expect(await first.db.getAllConversations()).toHaveLength(0);
         expect(await second.db.getAllConversations()).toHaveLength(0);

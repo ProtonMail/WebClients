@@ -51,12 +51,13 @@ describe('getTerminalTypeForApiError', () => {
     });
 });
 
-jest.mock('../services/generation/recovery', () => ({
-    GenerationCheckpointError: jest.requireActual('../services/generation/recovery').GenerationCheckpointError,
-    persistGenerationCheckpoint: jest.fn(),
-    finalizeGenerationRecovery: jest.fn(),
-    discardGenerationRecovery: jest.fn(),
-    removeGenerationRecovery: jest.fn(),
+vi.mock('../services/generation/recovery', async () => ({
+    GenerationCheckpointError: (await vi.importActual<Record<string, any>>('../services/generation/recovery'))
+        .GenerationCheckpointError,
+    persistGenerationCheckpoint: vi.fn(),
+    finalizeGenerationRecovery: vi.fn(),
+    discardGenerationRecovery: vi.fn(),
+    removeGenerationRecovery: vi.fn(),
 }));
 
 describe('generation recovery flag', () => {
@@ -65,8 +66,8 @@ describe('generation recovery flag', () => {
 
     afterEach(() => {
         extraThunkArguments.unleashClient = originalUnleashClient;
-        jest.restoreAllMocks();
-        jest.clearAllMocks();
+        vi.restoreAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([
@@ -75,19 +76,19 @@ describe('generation recovery flag', () => {
     ])(
         'uses the effective flag $effectiveFlag when the original client reports $originalFlag',
         async ({ effectiveFlag, originalFlag }) => {
-            const originalFlagCheck = jest.fn().mockReturnValue(originalFlag);
+            const originalFlagCheck = vi.fn().mockReturnValue(originalFlag);
             Object.assign(extraThunkArguments, { unleashClient: { isEnabled: originalFlagCheck } });
-            jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, _turns, options) => {
+            vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, _turns, options) => {
                 await options?.recovery?.checkpoint(checkpoint, null);
                 return { status: 'succeeded', turns: [], producedTurns: [] };
             });
-            const getState = jest.fn(() => ({ messages: {}, conversations: {} }) as unknown as LumoState);
-            const result = await sendMessageWithRedux(jest.fn() as Api, [], {
+            const getState = vi.fn(() => ({ messages: {}, conversations: {} }) as unknown as LumoState);
+            const result = await sendMessageWithRedux(vi.fn() as Api, [], {
                 messageId: 'assistant',
                 conversationId: 'conversation',
                 spaceId: 'space',
                 enableGenerationRecovery: effectiveFlag,
-            })(jest.fn(), getState);
+            })(vi.fn(), getState);
 
             expect(result).toEqual({ status: 'succeeded', turns: [], producedTurns: [] });
             expect(originalFlagCheck).not.toHaveBeenCalled();
@@ -110,28 +111,28 @@ describe('generation recovery flag', () => {
 
 describe('recovery checkpoints with batched rendering', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
-        jest.clearAllMocks();
+        vi.restoreAllMocks();
+        vi.clearAllMocks();
     });
 
     it('flushes the last tokens and preserves tool settings before saving a checkpoint', async () => {
         const checkpoint = newRecoveryState([], 'message');
         const state = { conversations: {}, messages: { assistant: { content: '' } } } as unknown as LumoState;
-        const dispatch = jest.fn((action) => {
+        const dispatch = vi.fn((action) => {
             if (appendChunk.match(action)) {
                 state.messages.assistant.content += action.payload.content;
             }
         }) as unknown as LumoDispatch;
-        jest.mocked(persistGenerationCheckpoint).mockImplementationOnce(async (params) => {
+        vi.mocked(persistGenerationCheckpoint).mockImplementationOnce(async (params) => {
             expect(params.getState().messages.assistant.content).toBe('last tokens');
             expect(params.options).toMatchObject({ artifactToolMode: 'create', enableCreateScheduleTool: true });
         });
-        jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, _turns, options) => {
+        vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, _turns, options) => {
             await options?.chunkCallback?.({ type: 'token_data', target: 'message', count: 1, content: 'last tokens' });
             await options?.recovery?.checkpoint(checkpoint, null);
             return { status: 'succeeded', turns: [], producedTurns: [] };
         });
-        await sendMessageWithRedux(jest.fn() as Api, [], {
+        await sendMessageWithRedux(vi.fn() as Api, [], {
             messageId: 'assistant',
             conversationId: 'conversation',
             spaceId: 'space',
@@ -146,14 +147,14 @@ describe('recovery checkpoints with batched rendering', () => {
 
 describe('recovery during context overflow', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
-        jest.clearAllMocks();
+        vi.restoreAllMocks();
+        vi.clearAllMocks();
     });
 
     it('finalizes and discards an overflow checkpoint without persisting the discarded attempt', async () => {
         const error = new ContextLengthExceededError({ conversationId: 'conversation' });
-        const dispatch = jest.fn();
-        jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, _turns, options) => {
+        const dispatch = vi.fn();
+        vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockImplementation(async (_api, _turns, options) => {
             await options?.recovery?.checkpoint(newRecoveryState([], 'message'), null);
             await options?.finishCallback?.('failed');
             expect(finalizeGenerationRecovery).toHaveBeenCalledWith(
@@ -164,7 +165,7 @@ describe('recovery during context overflow', () => {
             expect(dispatch.mock.calls.some(([action]) => pushMessageRequest.match(action))).toBe(false);
             throw error;
         });
-        const api = jest.fn() as Api;
+        const api = vi.fn() as Api;
 
         await expect(
             sendMessageWithRedux(api, [], {
@@ -181,11 +182,11 @@ describe('recovery during context overflow', () => {
 
     it('retains the checkpoint and partial answer when the transport is interrupted', async () => {
         const error = new GenerationInterruptedError();
-        const dispatch = jest.fn();
-        jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockRejectedValue(error);
+        const dispatch = vi.fn();
+        vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockRejectedValue(error);
 
         await expect(
-            sendMessageWithRedux(jest.fn() as Api, [], {
+            sendMessageWithRedux(vi.fn() as Api, [], {
                 messageId: 'assistant',
                 conversationId: 'conversation',
                 spaceId: 'space',
@@ -200,52 +201,52 @@ describe('recovery during context overflow', () => {
 });
 
 it('keeps Ghost generations out of the replay transport even when recovery is enabled', async () => {
-    const call = jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockResolvedValue({
+    const call = vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockResolvedValue({
         status: 'succeeded',
         turns: [],
         producedTurns: [],
     });
     try {
-        await sendMessageWithRedux(jest.fn() as Api, [], {
+        await sendMessageWithRedux(vi.fn() as Api, [], {
             messageId: 'answer',
             conversationId: 'ghost',
             spaceId: 'space',
             enableGenerationRecovery: true,
-        })(jest.fn(), () => ({ messages: {}, conversations: { ghost: { ghost: true } } }) as unknown as LumoState);
+        })(vi.fn(), () => ({ messages: {}, conversations: { ghost: { ghost: true } } }) as unknown as LumoState);
         expect(call).toHaveBeenCalledWith(
             expect.any(Function),
             [],
             expect.not.objectContaining({ recovery: expect.anything() })
         );
     } finally {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     }
 });
 
 const originalDatabase = extraThunkArguments.dbApi;
 beforeEach(() => {
     extraThunkArguments.dbApi = {} as typeof originalDatabase;
-    jest.spyOn(generationRegistry, 'canRecover').mockReturnValue(true);
+    vi.spyOn(generationRegistry, 'canRecover').mockReturnValue(true);
 });
 afterEach(() => {
     extraThunkArguments.dbApi = originalDatabase;
-    jest.restoreAllMocks();
-    jest.clearAllMocks();
+    vi.restoreAllMocks();
+    vi.clearAllMocks();
 });
 
 it('uses ordinary streaming when browser ownership locks are unavailable', async () => {
-    jest.spyOn(generationRegistry, 'canRecover').mockReturnValue(false);
-    const call = jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockResolvedValue({
+    vi.spyOn(generationRegistry, 'canRecover').mockReturnValue(false);
+    const call = vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockResolvedValue({
         status: 'succeeded',
         turns: [],
         producedTurns: [],
     });
-    await sendMessageWithRedux(jest.fn() as Api, [], {
+    await sendMessageWithRedux(vi.fn() as Api, [], {
         messageId: 'answer',
         conversationId: 'chat',
         spaceId: 'space',
         enableGenerationRecovery: true,
-    })(jest.fn(), () => ({ messages: {}, conversations: { chat: { ghost: false } } }) as unknown as LumoState);
+    })(vi.fn(), () => ({ messages: {}, conversations: { chat: { ghost: false } } }) as unknown as LumoState);
     expect(call).toHaveBeenCalledWith(
         expect.any(Function),
         [],
@@ -261,9 +262,9 @@ it.each([
     ['attachment serialization', new Error('Recovery attachment could not be encrypted')],
     ['unexpected checkpoint error', new Error('Unexpected failure')],
 ])('sends once with ordinary streaming if initial recovery fails: %s', async (_reason, cause) => {
-    jest.mocked(persistGenerationCheckpoint).mockRejectedValueOnce(new GenerationCheckpointError(cause));
-    const dispatch = jest.fn();
-    const api = jest.fn().mockResolvedValue(
+    vi.mocked(persistGenerationCheckpoint).mockRejectedValueOnce(new GenerationCheckpointError(cause));
+    const dispatch = vi.fn();
+    const api = vi.fn().mockResolvedValue(
         new ReadableStream({
             start(controller) {
                 controller.enqueue(
@@ -305,9 +306,9 @@ it.each([
 
 it('reports errors outside checkpoint preparation without submitting a generation', async () => {
     const failure = new Error('Unexpected failure');
-    jest.mocked(persistGenerationCheckpoint).mockRejectedValueOnce(failure);
-    const api = jest.fn() as Api;
-    const dispatch = jest.fn();
+    vi.mocked(persistGenerationCheckpoint).mockRejectedValueOnce(failure);
+    const api = vi.fn() as Api;
+    const dispatch = vi.fn();
     await expect(
         sendMessageWithRedux(api, [], {
             config: { enableU2LEncryption: false },
@@ -325,18 +326,18 @@ it('reports errors outside checkpoint preparation without submitting a generatio
 
 it('enables guest recovery without browser ownership locks', async () => {
     Object.assign(extraThunkArguments, { dbApi: undefined });
-    jest.spyOn(generationRegistry, 'canRecover').mockReturnValue(false);
-    const call = jest.spyOn(LumoApiClient.prototype, 'callAssistant').mockResolvedValue({
+    vi.spyOn(generationRegistry, 'canRecover').mockReturnValue(false);
+    const call = vi.spyOn(LumoApiClient.prototype, 'callAssistant').mockResolvedValue({
         status: 'succeeded',
         turns: [],
         producedTurns: [],
     });
-    await sendMessageWithRedux(jest.fn() as Api, [], {
+    await sendMessageWithRedux(vi.fn() as Api, [], {
         messageId: 'answer',
         conversationId: 'guest-chat',
         spaceId: 'space',
         enableGenerationRecovery: true,
-    })(jest.fn(), () => ({ messages: {}, conversations: { 'guest-chat': {} } }) as unknown as LumoState);
+    })(vi.fn(), () => ({ messages: {}, conversations: { 'guest-chat': {} } }) as unknown as LumoState);
     expect(call).toHaveBeenCalledWith(
         expect.any(Function),
         [],
@@ -346,9 +347,9 @@ it('enables guest recovery without browser ownership locks', async () => {
 
 it('preserves the checkpoint and stops tool execution if attachment capture fails after the request', async () => {
     const failure = new GenerationCheckpointError(new Error('Recovery attachment was deleted'));
-    jest.mocked(persistGenerationCheckpoint).mockResolvedValueOnce(undefined).mockRejectedValueOnce(failure);
-    const execute = jest.fn(async () => [{ content: 'Action result' }]);
-    const api = jest.fn().mockResolvedValue(
+    vi.mocked(persistGenerationCheckpoint).mockResolvedValueOnce(undefined).mockRejectedValueOnce(failure);
+    const execute = vi.fn(async () => [{ content: 'Action result' }]);
+    const api = vi.fn().mockResolvedValue(
         new ReadableStream({
             start(controller) {
                 controller.enqueue(
@@ -370,12 +371,12 @@ it('preserves the checkpoint and stops tool execution if attachment capture fail
             enableGenerationRecovery: true,
             clientTools: [{ type: 'function', function: { name: 'action', description: '', parameters: {} } }],
             clientToolExecutor: { canExecute: () => true, execute },
-        })(jest.fn(), () => ({ messages: {}, conversations: { chat: {} } }) as unknown as LumoState)
+        })(vi.fn(), () => ({ messages: {}, conversations: { chat: {} } }) as unknown as LumoState)
     ).rejects.toBe(failure);
     expect(api).toHaveBeenCalledTimes(1);
     expect(execute).not.toHaveBeenCalled();
     expect(persistGenerationCheckpoint).toHaveBeenCalledTimes(2);
-    expect(jest.mocked(persistGenerationCheckpoint).mock.calls[1][0].checkpoint).toMatchObject({
+    expect(vi.mocked(persistGenerationCheckpoint).mock.calls[1][0].checkpoint).toMatchObject({
         phase: 'tool-pending',
         pendingCalls: [{ id: 'call_action', name: 'action', arguments: '{}' }],
     });

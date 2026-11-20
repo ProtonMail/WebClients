@@ -35,9 +35,9 @@ describe('RequestScheduler', () => {
         const d1 = new Deferred<string>();
         const d2 = new Deferred<string>();
         const d3 = new Deferred<string>();
-        const spy1 = jest.fn(() => d1.promise);
-        const spy2 = jest.fn(() => d2.promise);
-        const spy3 = jest.fn(() => d3.promise);
+        const spy1 = vi.fn(() => d1.promise);
+        const spy2 = vi.fn(() => d2.promise);
+        const spy3 = vi.fn(() => d3.promise);
 
         const p1 = scheduler.schedule(spy1, 'background');
         const p2 = scheduler.schedule(spy2, 'background');
@@ -65,8 +65,8 @@ describe('RequestScheduler', () => {
         const scheduler = new RequestScheduler(1);
         const db = new Deferred<string>();
         const du = new Deferred<string>();
-        const spyBg = jest.fn(() => db.promise);
-        const spyUrg = jest.fn(() => du.promise);
+        const spyBg = vi.fn(() => db.promise);
+        const spyUrg = vi.fn(() => du.promise);
 
         const pBg = scheduler.schedule(spyBg, 'background');
         const pUrg = scheduler.schedule(spyUrg, 'urgent');

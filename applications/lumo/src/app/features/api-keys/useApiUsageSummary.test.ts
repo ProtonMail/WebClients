@@ -1,19 +1,20 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useApi } from '@proton/app-context/useApi';
 
 import type { UsageScope } from '../../remote/usage';
 import { useApiUsageSummary } from './useApiUsageSummary';
 
-jest.mock('@proton/app-context/useApi');
+vi.mock('@proton/app-context/useApi');
 
 describe('useApiUsageSummary', () => {
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('reads the usage of every client of the last 90 UTC days in the given scope without notifying on failure', async () => {
-        jest.useFakeTimers({ now: new Date('2026-11-09T23:30:00Z') });
+        vi.useFakeTimers({ now: new Date('2026-11-09T23:30:00Z') });
         const entry = {
             ClientType: 'api',
             Model: 'lumo-lite',
@@ -23,7 +24,7 @@ describe('useApiUsageSummary', () => {
             CostMicros: 10,
         };
         const chatEntry = { ...entry, ClientType: 'frontend' };
-        const api = jest.fn().mockResolvedValue({
+        const api = vi.fn().mockResolvedValue({
             Code: 1000,
             ClientTypes: [
                 { ClientType: 'api', Billed: true },
@@ -31,7 +32,7 @@ describe('useApiUsageSummary', () => {
             ],
             Days: [{ Date: '2026-11-09', Usage: [entry, chatEntry] }],
         });
-        (useApi as jest.Mock).mockReturnValue(api);
+        (useApi as Mock).mockReturnValue(api);
 
         const { result } = renderHook(() => useApiUsageSummary('organization'));
 
@@ -53,7 +54,7 @@ describe('useApiUsageSummary', () => {
     });
 
     it('reports an error when the summary cannot be read', async () => {
-        (useApi as jest.Mock).mockReturnValue(jest.fn().mockRejectedValue(new Error('503')));
+        (useApi as Mock).mockReturnValue(vi.fn().mockRejectedValue(new Error('503')));
 
         const { result } = renderHook(() => useApiUsageSummary('self'));
 
@@ -63,11 +64,11 @@ describe('useApiUsageSummary', () => {
 
     it('drops the previous scope’s usage while the new scope loads', async () => {
         const selfDays = [{ Date: '2026-11-09', Usage: [{ ClientType: 'api', Model: 'lumo-lite' }] }];
-        const api = jest
+        const api = vi
             .fn()
             .mockResolvedValueOnce({ Code: 1000, ClientTypes: [{ ClientType: 'api', Billed: true }], Days: selfDays })
             .mockReturnValueOnce(new Promise(() => {}));
-        (useApi as jest.Mock).mockReturnValue(api);
+        (useApi as Mock).mockReturnValue(api);
         const { result, rerender } = renderHook(({ scope }) => useApiUsageSummary(scope), {
             initialProps: { scope: 'self' as UsageScope },
         });

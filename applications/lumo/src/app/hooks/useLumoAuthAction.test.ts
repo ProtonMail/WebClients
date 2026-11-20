@@ -1,16 +1,17 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { isNativeAuthBridgeAvailable, triggerNativeAccountAction } from '../remote/nativeAuthBridgeHelpers';
 import { clearGenerationRecoveryOnLogout } from '../services/generation/recovery';
 import { useLumoAuthAction } from './useLumoAuthAction';
 import { useLumoFlags } from './useLumoFlags';
 
-jest.mock('../remote/nativeAuthBridgeHelpers');
-jest.mock('./useLumoFlags');
-jest.mock('../services/generation/recovery');
+vi.mock('../remote/nativeAuthBridgeHelpers');
+vi.mock('./useLumoFlags');
+vi.mock('../services/generation/recovery');
 
-const mockedUseLumoFlags = useLumoFlags as jest.Mock;
-const mockedIsBridgeAvailable = isNativeAuthBridgeAvailable as jest.Mock;
+const mockedUseLumoFlags = useLumoFlags as Mock;
+const mockedIsBridgeAvailable = isNativeAuthBridgeAvailable as Mock;
 
 const ANDROID_UA = 'Mozilla/5.0 (Linux; Android 16; Pixel 9) AppleWebKit/537.36 ProtonLumo/2.1.0 (Android 16; Pixel 9)';
 const IOS_UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) ProtonLumo/2.1.1 (iOS/26.0; iPhone 17)';
@@ -35,7 +36,7 @@ const setup = ({
 
 describe('useLumoAuthAction', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('per-platform flag gating', () => {
@@ -112,7 +113,7 @@ describe('useLumoAuthAction', () => {
 
 it('clears recovery before handing native logout to the app', async () => {
     let clear!: () => void;
-    jest.mocked(clearGenerationRecoveryOnLogout).mockReturnValue(
+    vi.mocked(clearGenerationRecoveryOnLogout).mockReturnValue(
         new Promise((resolve) => {
             clear = resolve;
         })

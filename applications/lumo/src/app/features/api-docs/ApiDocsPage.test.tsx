@@ -1,6 +1,7 @@
 import { MemoryRouter } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 
@@ -9,25 +10,25 @@ import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { ApiDocsPage } from './ApiDocsPage';
 
-jest.mock('@proton/account/entitlementCatalog/hooks');
-jest.mock('../../hooks/useLumoFlags');
-jest.mock('../../hooks/useLumoPlan');
-jest.mock('../../providers/IsGuestProvider');
-jest.mock('../../services/apiUsageDebugStore', () => ({
+vi.mock('@proton/account/entitlementCatalog/hooks');
+vi.mock('../../hooks/useLumoFlags');
+vi.mock('../../hooks/useLumoPlan');
+vi.mock('../../providers/IsGuestProvider');
+vi.mock('../../services/apiUsageDebugStore', () => ({
     useDebugApiAccessDenied: () => false,
     useDebugApiOrganizationMemberView: () => false,
     useDebugApiOrganizationView: () => false,
 }));
-jest.mock('../../layouts/LumoLayout', () => ({
+vi.mock('../../layouts/LumoLayout', () => ({
     LumoLayoutWithDrawer: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
-jest.mock('../../components/Composer/hooks/useNativeComposerVisibilityApi', () => ({
+vi.mock('../../components/Composer/hooks/useNativeComposerVisibilityApi', () => ({
     useNativeComposerVisibilityApi: () => undefined,
 }));
-jest.mock('../../components/Guest/SignInLink', () => ({ SignInButton: () => <button>Sign in</button> }));
-jest.mock('./apiModels', () => ({ fetchApiModels: () => new Promise(() => {}) }));
-jest.mock('../api-keys/ApiKeysPanel', () => ({ __esModule: true, default: () => <div>API keys panel</div> }));
-jest.mock('../api-keys/ApiUsagePanel', () => ({ ApiUsagePanel: () => <div>API usage panel</div> }));
+vi.mock('../../components/Guest/SignInLink', () => ({ SignInButton: () => <button>Sign in</button> }));
+vi.mock('./apiModels', () => ({ fetchApiModels: () => new Promise(() => {}) }));
+vi.mock('../api-keys/ApiKeysPanel', () => ({ __esModule: true, default: () => <div>API keys panel</div> }));
+vi.mock('../api-keys/ApiUsagePanel', () => ({ ApiUsagePanel: () => <div>API usage panel</div> }));
 
 const API_NOT_INCLUDED = "Your plan doesn't include API access.";
 const ASK_FOR_SEAT = 'Ask your organization administrator to assign a Lumo seat to your account to use the API.';
@@ -51,16 +52,16 @@ const renderTab = (
         isEntitlementsLoading?: boolean;
     }
 ) => {
-    (useLumoFlags as jest.Mock).mockReturnValue({ apiKeyManagement: true });
-    (useIsGuest as jest.Mock).mockReturnValue(isGuest);
-    (useLumoPlan as jest.Mock).mockReturnValue({
+    (useLumoFlags as Mock).mockReturnValue({ apiKeyManagement: true });
+    (useIsGuest as Mock).mockReturnValue(isGuest);
+    (useLumoPlan as Mock).mockReturnValue({
         hasLumoPlus,
         isLumoPlanLoading: false,
         canShowTalkToAdminLumoUpsell,
         isOrgAdmin,
         userIsMember: canShowTalkToAdminLumoUpsell,
     });
-    (useEntitlementChecksForOrgAndUser as jest.Mock).mockReturnValue([{ hasLumoApi }, isEntitlementsLoading]);
+    (useEntitlementChecksForOrgAndUser as Mock).mockReturnValue([{ hasLumoApi }, isEntitlementsLoading]);
     render(
         <MemoryRouter initialEntries={[`/docs/api${hash}`]}>
             <ApiDocsPage />
@@ -70,11 +71,11 @@ const renderTab = (
 
 describe('ApiDocsPage access', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it.each(BOTH_TABS)('tells a seated user whose plan has no API access on %s', (hash) => {
@@ -125,13 +126,13 @@ describe('ApiDocsPage access', () => {
     });
 
     it('contains a failed entitlements request inside the page', () => {
-        jest.spyOn(console, 'error').mockImplementation(() => {});
-        (useEntitlementChecksForOrgAndUser as jest.Mock).mockImplementation(() => {
+        vi.spyOn(console, 'error').mockImplementation(() => {});
+        (useEntitlementChecksForOrgAndUser as Mock).mockImplementation(() => {
             throw new Error('entitlements request failed');
         });
-        (useLumoFlags as jest.Mock).mockReturnValue({ apiKeyManagement: true });
-        (useIsGuest as jest.Mock).mockReturnValue(false);
-        (useLumoPlan as jest.Mock).mockReturnValue({ isLumoPlanLoading: false });
+        (useLumoFlags as Mock).mockReturnValue({ apiKeyManagement: true });
+        (useIsGuest as Mock).mockReturnValue(false);
+        (useLumoPlan as Mock).mockReturnValue({ isLumoPlanLoading: false });
 
         render(
             <MemoryRouter initialEntries={['/docs/api#api-keys']}>

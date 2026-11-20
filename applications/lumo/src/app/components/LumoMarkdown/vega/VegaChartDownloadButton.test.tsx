@@ -4,21 +4,21 @@ import type { View } from 'vega-typings';
 import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import { VegaChartDownloadButton } from './VegaChartDownloadButton';
 
-const createNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({ useNotifications: () => ({ createNotification }) }));
-jest.mock('../../../util/triggerFileDownload', () => ({ triggerFileDownload: jest.fn() }));
-jest.mock('../../LumoIcon/LumoIcon', () => ({ LumoIcon: () => null }));
+const createNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({ useNotifications: () => ({ createNotification }) }));
+vi.mock('../../../util/triggerFileDownload', () => ({ triggerFileDownload: vi.fn() }));
+vi.mock('../../LumoIcon/LumoIcon', () => ({ LumoIcon: () => null }));
 
-const download = jest.mocked(triggerFileDownload);
+const download = vi.mocked(triggerFileDownload);
 const png = new Blob(['PNG'], { type: 'image/png' });
-const toBlob = jest.fn();
-const toCanvas = jest.fn();
+const toBlob = vi.fn();
+const toCanvas = vi.fn();
 
 const renderButton = () =>
     render(<VegaChartDownloadButton getView={() => ({ toCanvas }) as unknown as View} filename="chart.png" />);
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     download.mockResolvedValue(undefined);
     toCanvas.mockResolvedValue({ toBlob });
     toBlob.mockImplementation((callback: BlobCallback) => callback(png));
@@ -37,7 +37,7 @@ it.each(['render', 'encode', 'handoff'])('shows an error and allows retry after 
     if (stage === 'render') toCanvas.mockRejectedValueOnce(new Error('render failed'));
     if (stage === 'encode') toBlob.mockImplementationOnce((callback: BlobCallback) => callback(null));
     if (stage === 'handoff') download.mockRejectedValueOnce(new Error('bridge failed'));
-    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
     renderButton();
     const button = screen.getByRole('button', { name: 'Download chart' });
     fireEvent.click(button);
@@ -47,5 +47,5 @@ it.each(['render', 'encode', 'handoff'])('shows an error and allows retry after 
     fireEvent.click(button);
     await waitFor(() => expect(download).toHaveBeenCalledWith(png, 'chart.png', 'image'));
     expect(download).toHaveBeenCalledTimes(1);
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
 });

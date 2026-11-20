@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { clearPendingArtifactCreation } from '../../redux/slices/composerActions';
 import { addConversation } from '../../redux/slices/core/conversations';
 import type { LumoState } from '../../redux/store';
@@ -81,7 +83,7 @@ describe('resolveArtifactCreationSetting', () => {
 });
 
 describe('initializeNewSpaceAndConversation', () => {
-    function createdConversation(dispatch: jest.Mock): Conversation | undefined {
+    function createdConversation(dispatch: Mock): Conversation | undefined {
         const call = dispatch.mock.calls.find(([action]) => {
             return action.type === addConversation.type;
         });
@@ -89,7 +91,7 @@ describe('initializeNewSpaceAndConversation', () => {
     }
 
     it('includes the pending composer choice in the first version of the conversation', () => {
-        const dispatch = jest.fn();
+        const dispatch = vi.fn();
         initializeNewSpaceAndConversation('2026-01-01T00:00:00.000Z')(dispatch, () => {
             return makeState({ pending: false });
         });
@@ -99,7 +101,7 @@ describe('initializeNewSpaceAndConversation', () => {
     });
 
     it('leaves the field unset when the user did not touch the toggle', () => {
-        const dispatch = jest.fn();
+        const dispatch = vi.fn();
         initializeNewSpaceAndConversation('2026-01-01T00:00:00.000Z')(dispatch, () => {
             return makeState({});
         });

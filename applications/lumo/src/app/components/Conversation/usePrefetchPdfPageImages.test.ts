@@ -3,8 +3,8 @@ import { renderHook } from '@testing-library/react';
 import { ensureRecentPdfPageImages } from '../../services/files/pdfPageImages';
 import { usePrefetchPdfPageImages } from './usePrefetchPdfPageImages';
 
-jest.mock('../../services/files/pdfPageImages', () => ({
-    ensureRecentPdfPageImages: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../services/files/pdfPageImages', () => ({
+    ensureRecentPdfPageImages: vi.fn().mockResolvedValue(undefined),
 }));
 
 const message = (id: string, attachments: object[]) => ({ id, attachments }) as any;
@@ -12,20 +12,20 @@ const pdf = (id: string) => ({ id, filename: `${id}.pdf`, mimeType: 'application
 const image = (id: string) => ({ id, filename: `${id}.png`, mimeType: 'image/png' });
 
 beforeEach(() => {
-    jest.useFakeTimers();
-    jest.clearAllMocks();
+    vi.useFakeTimers();
+    vi.clearAllMocks();
     // Force the setTimeout fallback so the test does not depend on idle scheduling.
     (globalThis as any).requestIdleCallback = undefined;
 });
 
-afterEach(() => jest.useRealTimers());
+afterEach(() => vi.useRealTimers());
 
 describe('usePrefetchPdfPageImages', () => {
     it('renders the pages of the conversation PDFs once the browser is idle', () => {
         renderHook(() => usePrefetchPdfPageImages([message('m1', [pdf('a'), image('i')])]));
 
         expect(ensureRecentPdfPageImages).not.toHaveBeenCalled();
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         expect(ensureRecentPdfPageImages).toHaveBeenCalledTimes(1);
         expect(ensureRecentPdfPageImages).toHaveBeenCalledWith([expect.objectContaining({ id: 'a' })]);
@@ -33,7 +33,7 @@ describe('usePrefetchPdfPageImages', () => {
 
     it('does nothing without a PDF', () => {
         renderHook(() => usePrefetchPdfPageImages([message('m1', [image('i')])]));
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         expect(ensureRecentPdfPageImages).not.toHaveBeenCalled();
     });
@@ -43,21 +43,21 @@ describe('usePrefetchPdfPageImages', () => {
         const { rerender } = renderHook(({ chain }) => usePrefetchPdfPageImages(chain), {
             initialProps: { chain: first },
         });
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         rerender({ chain: [...first, message('m2', [])] });
-        jest.runAllTimers();
+        vi.runAllTimers();
         expect(ensureRecentPdfPageImages).toHaveBeenCalledTimes(1);
 
         rerender({ chain: [...first, message('m3', [pdf('b')])] });
-        jest.runAllTimers();
+        vi.runAllTimers();
         expect(ensureRecentPdfPageImages).toHaveBeenCalledTimes(2);
     });
 
     it('cancels the pending render when the conversation is left', () => {
         const { unmount } = renderHook(() => usePrefetchPdfPageImages([message('m1', [pdf('a')])]));
         unmount();
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         expect(ensureRecentPdfPageImages).not.toHaveBeenCalled();
     });

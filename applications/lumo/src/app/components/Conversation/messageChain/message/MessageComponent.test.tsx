@@ -6,38 +6,38 @@ import messagesReducer, { setAnswerNowPrompt } from '../../../../redux/slices/co
 import { type ContentBlock, type Message, Role } from '../../../../types';
 import { MessageComponent, type MessageComponentProps } from './MessageComponent';
 
-jest.mock('../../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ artifactsView: false }) }));
-jest.mock('../../../../redux/hooks', () => ({ useLumoDispatch: () => jest.fn() }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('../../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ artifactsView: false }) }));
+vi.mock('../../../../redux/hooks', () => ({ useLumoDispatch: () => vi.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn() }));
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('./ArtifactEditMarker/ArtifactEditMarker', () => ({ ArtifactEditMarker: () => null }));
-jest.mock('./CompactionMarker/CompactionMarker', () => ({ CompactionMarker: () => null }));
-jest.mock('./UserMessage/UserMessage', () => ({ __esModule: true, default: () => null }));
-jest.mock('./askUserQuestions/AskUserQuestionsToolMessage', () => ({ AskUserQuestionsToolMessage: () => null }));
-jest.mock('../../../../providers/WebSearchProvider', () => ({
+vi.mock('./ArtifactEditMarker/ArtifactEditMarker', () => ({ ArtifactEditMarker: () => null }));
+vi.mock('./CompactionMarker/CompactionMarker', () => ({ CompactionMarker: () => null }));
+vi.mock('./UserMessage/UserMessage', () => ({ __esModule: true, default: () => null }));
+vi.mock('./askUserQuestions/AskUserQuestionsToolMessage', () => ({ AskUserQuestionsToolMessage: () => null }));
+vi.mock('../../../../providers/WebSearchProvider', () => ({
     useWebSearch: () => ({ isWebSearchButtonToggled: false }),
 }));
-jest.mock('../../../../providers/IsGuestProvider', () => ({ useIsGuest: () => false }));
-jest.mock('../../../../hooks/useChatLimitGate', () => ({ useChatLimitGate: () => ({ isBlocked: false }) }));
-jest.mock('../../../../hooks/useCopyNotification', () => ({
-    useCopyNotification: () => ({ showCopyNotification: jest.fn() }),
+vi.mock('../../../../providers/IsGuestProvider', () => ({ useIsGuest: () => false }));
+vi.mock('../../../../hooks/useChatLimitGate', () => ({ useChatLimitGate: () => ({ isBlocked: false }) }));
+vi.mock('../../../../hooks/useCopyNotification', () => ({
+    useCopyNotification: () => ({ showCopyNotification: vi.fn() }),
 }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
-jest.mock('@proton/components/components/modalTwo/useModalState', () => ({
-    useModalStateWithData: () => [{ data: undefined }, jest.fn(), false],
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
+vi.mock('@proton/components/components/modalTwo/useModalState', () => ({
+    useModalStateWithData: () => [{ data: undefined }, vi.fn(), false],
 }));
-jest.mock('../../../Files', () => ({ ReferenceFilesButton: () => null }));
-jest.mock('../../../Modals/AssistantFeedbackModal', () => ({ __esModule: true, default: () => null }));
-jest.mock('../../../Modals/LinkWarningModal', () => ({ __esModule: true, default: () => null }));
-jest.mock('../../../LumoAvatar/LumoAvatar/LumoAvatar', () => ({
+vi.mock('../../../Files', () => ({ ReferenceFilesButton: () => null }));
+vi.mock('../../../Modals/AssistantFeedbackModal', () => ({ __esModule: true, default: () => null }));
+vi.mock('../../../Modals/LinkWarningModal', () => ({ __esModule: true, default: () => null }));
+vi.mock('../../../LumoAvatar/LumoAvatar/LumoAvatar', () => ({
     __esModule: true,
     default: ({ isGenerating }: { isGenerating: boolean }) => (
         <img alt={isGenerating ? 'Thinking avatar' : 'Idle avatar'} />
     ),
 }));
-jest.mock('./AssistantMessage/toolCallTimeline/RenderBlocks', () => ({
+vi.mock('./AssistantMessage/toolCallTimeline/RenderBlocks', () => ({
     RenderBlocks: ({ blocks }: { blocks: ContentBlock[] }) => (
         <div>
             Actual model reasoning
@@ -67,14 +67,14 @@ it.each([false, true])(
         };
         const props: MessageComponentProps = {
             message,
-            handleRegenerateMessage: jest.fn(),
-            handleEditMessage: jest.fn(),
-            siblingInfo: { idx: 0, count: 1, onPrev: jest.fn(), onNext: jest.fn() },
+            handleRegenerateMessage: vi.fn(),
+            handleEditMessage: vi.fn(),
+            siblingInfo: { idx: 0, count: 1, onPrev: vi.fn(), onNext: vi.fn() },
             messageChainRef: { current: null },
             sourcesContainerRef: { current: null },
-            handleOpenSources: jest.fn(),
-            handleOpenFiles: jest.fn(),
-            handleOpenFilePreview: jest.fn(),
+            handleOpenSources: vi.fn(),
+            handleOpenFiles: vi.fn(),
+            handleOpenFilePreview: vi.fn(),
             messageChain: [message],
             isLastMessage: true,
             isGenerating: true,
