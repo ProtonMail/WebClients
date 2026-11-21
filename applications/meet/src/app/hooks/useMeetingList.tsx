@@ -150,6 +150,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
             await persistPersonalMeetingIntoStore(meeting);
         } catch (error) {
             notifications.createNotification({
+                key: 'personal-meeting-not-created',
                 type: 'error',
                 expiration: -1,
                 text: (

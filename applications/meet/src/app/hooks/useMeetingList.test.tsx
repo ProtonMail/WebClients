@@ -1,16 +1,18 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useState } from 'react';
 
-import { fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
+import type { CreateNotificationOptions, Notification } from '@proton/app-context/notifications/interfaces';
+import createNotificationManager from '@proton/app-context/notifications/manager';
+import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 import { useMeetingList } from './useMeetingList';
 
 const mocks = vi.hoisted(() => ({
     createNotification: vi.fn((_options: CreateNotificationOptions) => 1),
     createMeeting: vi.fn(),
-    activeMeetings: [],
+    activeMeetings: [] as Meeting[],
 }));
 
 vi.mock('@proton/app-context/useNotifications', () => ({
@@ -54,5 +56,24 @@ describe('useMeetingList', () => {
 
         fireEvent.click(screen.getByRole('button', { name: 'Refresh page' }));
         expect(reload).toHaveBeenCalledTimes(1);
+    });
+
+    it('keeps a single error toast when the personal meeting creation fails again after a meetings refresh', async () => {
+        mocks.createMeeting.mockRejectedValue(new Error('create failed'));
+
+        const { rerender } = renderHook(() => useMeetingList());
+        await waitFor(() => expect(mocks.createNotification).toHaveBeenCalledTimes(1));
+
+        mocks.activeMeetings = [];
+        rerender();
+        await waitFor(() => expect(mocks.createNotification).toHaveBeenCalledTimes(2));
+
+        const { result: notificationsState } = renderHook(() => useState<Notification[]>([]));
+        const manager = createNotificationManager(notificationsState.current[1], vi.fn());
+        act(() => {
+            mocks.createNotification.mock.calls.forEach(([options]) => manager.createNotification(options));
+        });
+
+        expect(notificationsState.current[0]).toHaveLength(1);
     });
 });
