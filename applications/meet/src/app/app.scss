@@ -244,6 +244,7 @@ $profile-colors:
 		}
 
 		&:focus-visible {
+			border-color: var(--focus-outline);
 			background-color: var(--interaction-weak-major-1);
 		}
 	}

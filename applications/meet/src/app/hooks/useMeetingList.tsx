@@ -34,6 +34,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
 
     const [meetings, setMeetings] = useState<Meeting[] | null>(null);
     const [personalMeeting, setPersonalMeeting] = useState<Meeting | null>(null);
+    const [personalMeetingErrorShown, setPersonalMeetingErrorShown] = useState(false);
     const [status, setStatus] = useState<MeetingListStatus>(MeetingListStatus.InitialLoading);
 
     const notifications = useNotifications();
@@ -149,8 +150,11 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
 
             await persistPersonalMeetingIntoStore(meeting);
         } catch (error) {
+            if (personalMeetingErrorShown) {
+                return;
+            }
+            setPersonalMeetingErrorShown(true);
             notifications.createNotification({
-                key: 'personal-meeting-not-created',
                 type: 'error',
                 expiration: -1,
                 text: (

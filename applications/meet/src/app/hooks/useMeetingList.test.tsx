@@ -1,10 +1,9 @@
-import { type ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
 
-import { act, fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, renderHook, screen, waitFor } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import type { CreateNotificationOptions, Notification } from '@proton/app-context/notifications/interfaces';
-import createNotificationManager from '@proton/app-context/notifications/manager';
+import type { CreateNotificationOptions } from '@proton/app-context/notifications/interfaces';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 import { useMeetingList } from './useMeetingList';
@@ -58,7 +57,7 @@ describe('useMeetingList', () => {
         expect(reload).toHaveBeenCalledTimes(1);
     });
 
-    it('keeps a single error toast when the personal meeting creation fails again after a meetings refresh', async () => {
+    it('does not show the error again when the personal meeting creation fails again after a meetings refresh', async () => {
         mocks.createMeeting.mockRejectedValue(new Error('create failed'));
 
         const { rerender } = renderHook(() => useMeetingList());
@@ -66,14 +65,9 @@ describe('useMeetingList', () => {
 
         mocks.activeMeetings = [];
         rerender();
-        await waitFor(() => expect(mocks.createNotification).toHaveBeenCalledTimes(2));
+        await waitFor(() => expect(mocks.createMeeting).toHaveBeenCalledTimes(2));
+        await new Promise((resolve) => setTimeout(resolve, 0));
 
-        const { result: notificationsState } = renderHook(() => useState<Notification[]>([]));
-        const manager = createNotificationManager(notificationsState.current[1], vi.fn());
-        act(() => {
-            mocks.createNotification.mock.calls.forEach(([options]) => manager.createNotification(options));
-        });
-
-        expect(notificationsState.current[0]).toHaveLength(1);
+        expect(mocks.createNotification).toHaveBeenCalledTimes(1);
     });
 });
