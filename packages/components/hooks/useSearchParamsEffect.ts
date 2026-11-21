@@ -5,10 +5,11 @@ const useSearchParamsEffect = (cb: (params: URLSearchParams) => URLSearchParams 
     const history = useHistory();
     const location = useLocation();
     useEffect(() => {
-        const params = new URLSearchParams(location.search);
+        // Read history.location: a render can still carry search params that an earlier run already replaced
+        const params = new URLSearchParams(history.location.search);
         const result = cb(params);
         if (result) {
-            history.replace({ ...location, search: result.toString() });
+            history.replace({ ...history.location, search: result.toString() });
         }
     }, [location.search, ...deps]);
 };
