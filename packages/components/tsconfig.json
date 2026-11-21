@@ -3,16 +3,5 @@
     "compilerOptions": {
         "types": ["@proton/types", "global-types-monorepo", "webpack-env", "@webgpu/types", "vitest/globals"]
     },
-    "exclude": [
-        "node_modules",
-        "testing/mockUseAuthentication.ts",
-        "testing/mockUseHistory.ts",
-        "testing/mockUseSpotlightOnFeature.ts",
-        "testing/mockFlagSvg.ts",
-        "testing/mockMatchMedia.ts",
-        "testing/event-manager.ts",
-        "containers/contacts/tests/render.tsx",
-        "hooks/__mocks__/useModals.ts",
-        "components/toggle/__mocks__/Toggle.tsx"
-    ]
+    "exclude": ["node_modules"]
 }

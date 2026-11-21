@@ -407,8 +407,6 @@
         "./utils/fp/wait-until": "./utils/fp/wait-until.ts",
         "./utils/listener/factory": "./utils/listener/factory.ts",
         "./utils/logger": "./utils/logger/index.ts",
-        "./utils/logger/loglevel.mock": "./utils/logger/loglevel.mock.ts",
-        "./testing/vitest/loglevel.mock": "./testing/vitest/loglevel.mock.ts",
         "./testing/vitest/ui.proxy.mock": "./testing/vitest/ui.proxy.mock.ts",
         "./testing/vitest/item.requests.mock": "./testing/vitest/item.requests.mock.ts",
         "./utils/obfuscate/xor": "./utils/obfuscate/xor.ts",

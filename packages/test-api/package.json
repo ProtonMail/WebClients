@@ -3,10 +3,8 @@
     "description": "Framework-agnostic API mocking primitives for tests",
     "type": "module",
     "exports": {
-        "./api": "./src/api.ts",
         "./vitest/api": "./src/vitest/api.ts",
         "./flush-promises": "./src/flush-promises.ts",
-        "./mockApiWithServer": "./src/mockApiWithServer.ts",
         "./vitest/mockApiWithServer": "./src/vitest/mockApiWithServer.ts",
         "./mockRandomValues": "./src/mockRandomValues.ts"
     },
@@ -19,7 +17,6 @@
         "@proton/utils": "workspace:^"
     },
     "devDependencies": {
-        "@jest/globals": "catalog:",
         "@proton/oxlint-config": "workspace:^",
         "@types/jest": "catalog:",
         "@types/node": "catalog:",
@@ -31,13 +28,9 @@
         "vitest": "catalog:"
     },
     "peerDependencies": {
-        "@jest/globals": "^30.5.2",
         "vitest": "^5.1.1"
     },
     "peerDependenciesMeta": {
-        "@jest/globals": {
-            "optional": true
-        },
         "vitest": {
             "optional": true
         }
