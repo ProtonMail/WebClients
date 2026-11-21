@@ -70,4 +70,21 @@ describe('useMeetingList', () => {
 
         expect(mocks.createNotification).toHaveBeenCalledTimes(1);
     });
+
+    it('shows one error when two personal meeting creations in flight both fail', async () => {
+        const pendingCreations: ((error: Error) => void)[] = [];
+        mocks.createMeeting.mockImplementation(() => new Promise((_resolve, reject) => pendingCreations.push(reject)));
+
+        const { rerender } = renderHook(() => useMeetingList());
+        await waitFor(() => expect(mocks.createMeeting).toHaveBeenCalledTimes(1));
+
+        mocks.activeMeetings = [];
+        rerender();
+        await waitFor(() => expect(mocks.createMeeting).toHaveBeenCalledTimes(2));
+
+        pendingCreations.forEach((reject) => reject(new Error('create failed')));
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        expect(mocks.createNotification).toHaveBeenCalledTimes(1);
+    });
 });

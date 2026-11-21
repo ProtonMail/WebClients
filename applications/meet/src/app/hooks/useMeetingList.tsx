@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -34,7 +34,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
 
     const [meetings, setMeetings] = useState<Meeting[] | null>(null);
     const [personalMeeting, setPersonalMeeting] = useState<Meeting | null>(null);
-    const [personalMeetingErrorShown, setPersonalMeetingErrorShown] = useState(false);
+    const personalMeetingErrorShownRef = useRef(false);
     const [status, setStatus] = useState<MeetingListStatus>(MeetingListStatus.InitialLoading);
 
     const notifications = useNotifications();
@@ -150,10 +150,10 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
 
             await persistPersonalMeetingIntoStore(meeting);
         } catch (error) {
-            if (personalMeetingErrorShown) {
+            if (personalMeetingErrorShownRef.current) {
                 return;
             }
-            setPersonalMeetingErrorShown(true);
+            personalMeetingErrorShownRef.current = true;
             notifications.createNotification({
                 type: 'error',
                 expiration: -1,
