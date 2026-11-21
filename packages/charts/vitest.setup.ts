@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 
 /**
  * The charts read the theme one frame after mounting, since a stylesheet applied in the same commit is not
