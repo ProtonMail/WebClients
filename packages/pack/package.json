@@ -12,13 +12,13 @@
         "pretty": "oxfmt --write cli bin"
     },
     "dependencies": {
-        "@babel/core": "^7.29.7",
+        "@babel/core": "^7.29.13",
         "@babel/plugin-transform-class-properties": "^7.29.7",
         "@babel/plugin-transform-runtime": "^7.29.7",
-        "@babel/preset-env": "^7.29.7",
+        "@babel/preset-env": "^7.29.14",
         "@babel/preset-react": "^7.29.7",
         "@babel/preset-typescript": "^7.29.7",
-        "@babel/runtime": "^7.29.7",
+        "@babel/runtime": "^7.29.14",
         "@pmmmwh/react-refresh-webpack-plugin": "catalog:",
         "@proton/shared": "workspace:^",
         "@sentry/webpack-plugin": "^1.21.0",
