@@ -316,6 +316,15 @@ const slice = createSlice({
                 member.roleState = 'stale';
             }
         },
+        /** Batch form of {@link invalidateMemberRoles}: one commit for the whole list instead of one per member. */
+        invalidateMembersRoles: (state, action: PayloadAction<{ members: Member[] }>) => {
+            const ids = new Set(action.payload.members.map(({ ID }) => ID));
+            state.value?.forEach((member) => {
+                if (ids.has(member.ID) && member.roleState !== 'initial') {
+                    member.roleState = 'stale';
+                }
+            });
+        },
         setUnprivatizationState: (state, action: PayloadAction<UnprivatizationMemberState>) => {
             state.unprivatization = action.payload;
         },
@@ -719,6 +728,7 @@ export const membersThunk = modelThunk;
 export const upsertMember = slice.actions.upsertMember;
 export const upsertMembers = slice.actions.upsertMembers;
 export const invalidateMemberRoles = slice.actions.invalidateMemberRoles;
+export const invalidateMembersRoles = slice.actions.invalidateMembersRoles;
 export const membersActions = slice.actions;
 export const setUnprivatizationState = slice.actions.setUnprivatizationState;
 export { default as UnavailableAddressesError } from './errors/UnavailableAddressesError';

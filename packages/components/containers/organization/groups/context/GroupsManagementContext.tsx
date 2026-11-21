@@ -14,7 +14,7 @@ import { addGroupMembersThunk } from '@proton/account/groups/addGroupMember';
 import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useGroupRoles } from '@proton/account/groups/useGroupRoles';
-import { invalidateMemberRoles } from '@proton/account/members';
+import { invalidateMembersRoles } from '@proton/account/members';
 import { provideOrgKeyAccessToMember } from '@proton/account/members/actions';
 import { useGetMembers, useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -257,11 +257,13 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     };
 
     const invalidateGroupMemberRoles = (groupMembersToInvalidate: GroupMember[]) => {
-        for (const groupMember of groupMembersToInvalidate) {
+        // One commit for the whole group: dispatching per member re-renders the members table each time.
+        const members = groupMembersToInvalidate.flatMap((groupMember) => {
             const member = groupMember.Email ? addressEmailToMemberMap[groupMember.Email] : undefined;
-            if (member) {
-                dispatch(invalidateMemberRoles({ member }));
-            }
+            return member ? [member] : [];
+        });
+        if (members.length) {
+            dispatch(invalidateMembersRoles({ members }));
         }
     };
 
