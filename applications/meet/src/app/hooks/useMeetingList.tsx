@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useLoading from '@proton/hooks/useLoading';
 import { useCreateMeeting } from '@proton/meet/hooks/useCreateMeeting';
 import { useGetMeetingDependencies } from '@proton/meet/hooks/useGetMeetingDependencies';
@@ -150,7 +151,15 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null, () => void,
         } catch (error) {
             notifications.createNotification({
                 type: 'error',
-                text: c('Error').t`Failed to create personal meeting, please refresh the page`,
+                expiration: -1,
+                text: (
+                    <>
+                        <span>{c('Error').t`Personal meeting not created. Refresh the page to try again.`}</span>
+                        <NotificationButton onClick={() => window.location.reload()}>
+                            {c('Action').t`Refresh page`}
+                        </NotificationButton>
+                    </>
+                ),
             });
         }
     });
