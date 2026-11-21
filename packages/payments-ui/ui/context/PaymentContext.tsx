@@ -38,6 +38,7 @@ import { getStaticCouponConfig } from '@proton/payments/core/coupon-config/get-s
 import { getAvailableCurrencies, getPreferredCurrency, mainCurrencies } from '@proton/payments/core/currencies';
 import { emptyEntitlementCatalog } from '@proton/payments/core/entitlements/empty-entitlement-catalog';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
+import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type {
     Currency,
     Cycle,
@@ -354,6 +355,13 @@ export const PaymentsContextProvider = ({
         // Each part of the billing form sends only its own fields, e.g. the country, state and ZIP code
         const newBillingAddress = { ...requested.billingAddress, ...diff.billingAddress };
         const newVatNumber = diff.vatNumber ?? requested.vatNumber;
+        // A selection carries the billing changes still waiting for their check, which it aborts. If the API refuses
+        // the VAT number they carry, they are dropped like their own check would have been, and the selection is
+        // checked again without them instead of failing with them.
+        const carriesBillingChanges =
+            diff.billingAddress === undefined &&
+            diff.vatNumber === undefined &&
+            (requestedRef.current.billingAddress !== undefined || requestedRef.current.vatNumber !== undefined);
         // Only the changes, so what loads meanwhile, e.g. the billing address of the payment status, still applies
         requestedRef.current = {
             planToCheck: diff.planToCheck ?? requestedRef.current.planToCheck,
@@ -396,6 +404,7 @@ export const PaymentsContextProvider = ({
         const abortController = new AbortController();
         abortControllerRef.current = abortController;
 
+        let shouldRetryWithoutBillingChanges = false;
         try {
             const selection = { planIDs: newPlanToCheck.planIDs, cycle: newPlanToCheck.cycle };
             const shouldValidateGuards =
@@ -448,16 +457,29 @@ export const PaymentsContextProvider = ({
             paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
 
             return displayedCheckResult;
+        } catch (error) {
+            // Only a refused VAT number is thrown for billing details, other failures aren't caused by them
+            if (
+                !carriesBillingChanges ||
+                abortController.signal.aborted ||
+                !(error instanceof VatReverseChargeNotSupportedError)
+            ) {
+                throw error;
+            }
+            shouldRetryWithoutBillingChanges = true;
         } finally {
             // Unless a newer change aborted it, this check settled what was asked for: checked now, or failed and dropped
             if (!abortController.signal.aborted) {
                 requestedRef.current = {};
             }
-            // Unless a newer check replaced it, whose price is still loading
-            if (abortControllerRef.current === abortController) {
+            // Unless a newer check replaced it, whose price is still loading, or the retry below still loads it
+            if (abortControllerRef.current === abortController && !shouldRetryWithoutBillingChanges) {
                 setState({ loading: false });
             }
         }
+
+        // The refused billing changes were cleared from the requested ones above, so the confirmed ones are used
+        return calculateSubscriptionEstimation({ planToCheck: newPlanToCheck });
     };
 
     const getCurrentSelectedPlan = () => {

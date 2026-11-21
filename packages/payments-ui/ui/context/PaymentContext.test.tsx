@@ -879,8 +879,12 @@ describe('PaymentsContext billing details', () => {
         // Unchecks "I'm purchasing as a business"
         act(() => vatForm().setUnauthenticatedCollapsed(true));
 
-        await waitFor(() => expect(getContext().vatNumber).toBe(''));
-        expect(getContext().billingAddress.Company).toBeUndefined();
+        // The VAT number and the address are debounced separately, so each can settle in its own check: wait for both
+        await waitFor(() => {
+            expect(getContext().vatNumber).toBe('');
+            expect(getContext().billingAddress.Company).toBeUndefined();
+            expect(getContext().loading).toBe(false);
+        });
         expect(sentData().at(-1)).not.toHaveProperty('VatId');
     });
 
@@ -904,20 +908,57 @@ describe('PaymentsContext billing details', () => {
         });
         const { select, getContext } = renderContext({ paymentStatus });
         await select(vpnYearly);
-        checkSubscription.mockImplementationOnce(() => {
-            throw { data: { Code: PAYMENTS_API_ERROR_CODES.VAT_REVERSE_CHARGE_NOT_SUPPORTED } };
-        });
+        let refuseCheck!: (error: unknown) => void;
+        checkSubscription.mockImplementationOnce(
+            () =>
+                new Promise((_resolve, reject) => {
+                    refuseCheck = reject;
+                })
+        );
 
         act(() => {
             change(getContext());
         });
 
         await waitFor(() => expect(sentData().at(-1)).toHaveProperty('VatId', 'DE123456789'));
+        await waitFor(() => expect(getContext().loading).toBe(true));
+        await act(async () => {
+            refuseCheck({ data: { Code: PAYMENTS_API_ERROR_CODES.VAT_REVERSE_CHARGE_NOT_SUPPORTED } });
+        });
+        // Its failure must have settled before the next change, otherwise that change aborts it and still asks for it
+        await waitFor(() => expect(getContext().loading).toBe(false));
 
         // The refused VAT number isn't sent again with the next change
         await act(() => getContext().selectCycle(CYCLE.TWO_YEARS));
         expect(sentData().at(-1)).toMatchObject({ Cycle: CYCLE.TWO_YEARS });
         expect(sentData().at(-1)).not.toHaveProperty('VatId');
         expect(onUnhandledRejection).not.toHaveBeenCalled();
+    });
+
+    it('keeps a cycle change when the VAT number it carries is refused, and drops that VAT number', async () => {
+        const { select, getContext } = renderContext({ paymentStatus });
+        await select(vpnYearly);
+        // The check of the VAT number is still running when the cycle changes, which aborts it
+        checkSubscription.mockImplementationOnce((_data, { signal } = {}) =>
+            respondWith(signal, createDeferred<SubscriptionEstimation>().promise)
+        );
+        act(() => getContext().setVatNumber('DE123456789'));
+        await waitFor(() => expect(sentData().at(-1)).toHaveProperty('VatId', 'DE123456789'));
+
+        checkSubscription.mockImplementationOnce(() =>
+            Promise.reject({ data: { Code: PAYMENTS_API_ERROR_CODES.VAT_REVERSE_CHARGE_NOT_SUPPORTED } })
+        );
+        await act(() => getContext().selectCycle(CYCLE.TWO_YEARS));
+
+        expect(sentData().at(-2)).toMatchObject({ Cycle: CYCLE.TWO_YEARS, VatId: 'DE123456789' });
+        expect(sentData().at(-1)).toMatchObject({ Cycle: CYCLE.TWO_YEARS });
+        expect(sentData().at(-1)).not.toHaveProperty('VatId');
+        expect(getContext().selectedPlan.cycle).toBe(CYCLE.TWO_YEARS);
+        expect(getContext().vatNumber).not.toBe('DE123456789');
+        expect(getContext().loading).toBe(false);
+
+        // The refused VAT number isn't sent again with the next change either
+        await act(() => getContext().selectCycle(CYCLE.YEARLY));
+        expect(sentData().at(-1)).not.toHaveProperty('VatId');
     });
 });
