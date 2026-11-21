@@ -318,14 +318,6 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
-        "packages/jest-env": {
-            "entry": [],
-            "project": ["**/*.{js,ts,tsx}"]
-        },
-        "packages/jest-swc-preset": {
-            "entry": [],
-            "project": ["**/*.{js,ts,tsx}"]
-        },
         "packages/key-transparency": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
