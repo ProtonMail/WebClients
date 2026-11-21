@@ -1,5 +1,5 @@
 /**
- * Changes the URL of the happy-dom window, cross-origin included (Vitest counterpart of `@proton/jest-env/setLocation`).
+ * Changes the URL of the happy-dom window, cross-origin included.
  * A relative URL resolves against the current one.
  */
 export const setLocation = (url: string): void => {
