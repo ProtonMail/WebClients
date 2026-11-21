@@ -15,7 +15,7 @@ import { type GroupsState, updateGroup } from '../groups';
 import { createKeysForGroup } from '../groups/actions';
 import { addGroupMemberKeysThunk } from '../groups/addGroupMember';
 import type { KtState } from '../kt';
-import { type MembersState, getMemberRolesBatch, invalidateMemberRoles } from '../members';
+import { type MembersState, getMemberRolesBatch, invalidateMembersRoles } from '../members';
 import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import type { OrganizationKeyState } from '../organizationKey';
 import type { OrganizationRolesState } from '../organizationRoles';
@@ -65,7 +65,8 @@ interface ScimApprovalDeps {
 export const refreshOrgKeyDemotionState =
     ({ members }: { members: Member[] }) =>
     async (dispatch: ScimDispatch) => {
-        members.forEach((member) => dispatch(invalidateMemberRoles({ member })));
+        // A single commit: dispatching per member is quadratic in member count (and re-renders the members table each time).
+        dispatch(invalidateMembersRoles({ members }));
         await dispatch(getMemberRolesBatch({ members }));
     };
 

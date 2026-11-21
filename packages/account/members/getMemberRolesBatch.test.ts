@@ -7,7 +7,14 @@ import { getMembersOrganizationRoles } from '@proton/shared/lib/api/organization
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 
-import { type MembersState, getMemberRolesBatch, invalidateMemberRoles, membersReducer, selectMembers } from './index';
+import {
+    type MembersState,
+    getMemberRolesBatch,
+    invalidateMemberRoles,
+    invalidateMembersRoles,
+    membersReducer,
+    selectMembers,
+} from './index';
 
 const CHUNK_SIZE = 250;
 
@@ -225,5 +232,32 @@ describe('getMemberRolesBatch', () => {
 
         expect(api).not.toHaveBeenCalled();
         expect(getCommits()).toBe(0);
+    });
+});
+
+describe('invalidateMembersRoles', () => {
+    it('marks the given resolved members stale in a single commit', async () => {
+        const members = getMembers(3);
+        const api = resolveRoles();
+        const { dispatch, getCommits, getMembersFromStore } = setup({ members, api });
+        await dispatch(getMemberRolesBatch({ members: members.slice(0, 2) }));
+        const commitsBefore = getCommits();
+
+        dispatch(invalidateMembersRoles({ members }));
+
+        expect(getCommits() - commitsBefore).toBe(1);
+        // Members whose roles were never loaded stay 'initial'
+        expect(getMembersFromStore().map((member) => member.roleState)).toEqual(['stale', 'stale', 'initial']);
+    });
+
+    it('leaves members outside the list untouched', async () => {
+        const members = getMembers(2);
+        const api = resolveRoles();
+        const { dispatch, getMembersFromStore } = setup({ members, api });
+        await dispatch(getMemberRolesBatch({ members }));
+
+        dispatch(invalidateMembersRoles({ members: [members[0]] }));
+
+        expect(getMembersFromStore().map((member) => member.roleState)).toEqual(['stale', 'full']);
     });
 });
