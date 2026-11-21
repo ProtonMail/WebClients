@@ -218,7 +218,7 @@ $profile-colors:
 
 %notification-base {
 	color: var(--text-invert);
-	max-inline-size: 30rem;
+	max-inline-size: min(30rem, calc(100vw - 2rem));
 	box-shadow: none;
 	min-block-size: 3.5rem;
 	border-radius: 1rem;
@@ -237,11 +237,14 @@ $profile-colors:
 		color: var(--text-norm);
 
 		&:hover,
-		&:active,
-		&:focus-visible {
+		&:active {
 			border-color: var(--interaction-weak-major-1);
 			background-color: var(--interaction-weak-major-1);
 			color: var(--text-norm);
+		}
+
+		&:focus-visible {
+			background-color: var(--interaction-weak-major-1);
 		}
 	}
 }
