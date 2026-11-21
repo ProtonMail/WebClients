@@ -63,8 +63,8 @@ describe('Backend outage at start', () => {
         backend.on('all', '*', () => respond.error(503));
         await renderApp({ persisted, cache });
 
-        const submit = await findOfflinePasswordPrompt();
-        await unlockWithPassword(TEST_OFFLINE_PASSWORD, submit);
+        await findOfflinePasswordPrompt();
+        await unlockWithPassword(TEST_OFFLINE_PASSWORD);
 
         await expectCachedItems();
         expect(screen.queryByText(UNLOCK_PROMPT)).not.toBeInTheDocument();
@@ -89,7 +89,8 @@ describe('Backend outage at start', () => {
             backend.on('all', '*', () => respond.error(503));
             const { systemWake } = await renderApp({ persisted, cache, desktop: true });
 
-            await unlockWithPassword(TEST_OFFLINE_PASSWORD, await findOfflinePasswordPrompt());
+            await findOfflinePasswordPrompt();
+            await unlockWithPassword(TEST_OFFLINE_PASSWORD);
             await screen.findByText('Offline mode', undefined, { timeout: 30_000 });
             await expectCachedItems();
 

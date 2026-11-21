@@ -121,7 +121,7 @@ describe('Item writes on a booted worker', () => {
 
             const select = selectItemWithOptimistic(cache.vault.shareId, OPTIMISTIC_ID);
             ctx.service.store.dispatch(itemCreate.intent(createIntent()));
-            await settleUntil(() => select(ctx.service.store.getState())?.failed === true);
+            await settleUntil(() => select(ctx.service.store.getState())?.failed === true, 10_000);
 
             expect(select(ctx.service.store.getState())).toMatchObject({ failed: true, optimistic: true });
             expect(backend.countRequests(itemRoute())).toBeGreaterThan(0);
@@ -138,16 +138,24 @@ describe('Item writes on a booted worker', () => {
 
         const select = selectItemWithOptimistic(cache.vault.shareId, OPTIMISTIC_ID);
         store.dispatch(itemCreate.intent(createIntent()));
-        await settleUntil(() => select(store.getState())?.failed === true);
+        await settleUntil(() => select(store.getState())?.failed === true, 10_000);
 
         backend.reset();
         backend.use(...getSessionResumeHandlers(persisted));
         backend.on('post', itemRoute(), acceptItemCreation);
         store.dispatch(itemCreate.intent(createIntent()));
-        await settleUntil(() => select(store.getState()) === undefined);
 
-        const created = selectItemWithOptimistic(cache.vault.shareId, 'server-item-id')(store.getState());
-        expect(created).toMatchObject({ failed: false, optimistic: false, data: { metadata: { name: 'Github' } } });
+        /** Waits on the server item itself: once created, `byOptimisticId` maps the optimistic id
+         * to the server id, so selecting the optimistic id never becomes `undefined`. The real
+         * timeout leaves the item encryption time to finish on a loaded CI pod. */
+        const selectCreated = selectItemWithOptimistic(cache.vault.shareId, 'server-item-id');
+        await settleUntil(() => selectCreated(store.getState())?.optimistic === false, 10_000);
+
+        expect(selectCreated(store.getState())).toMatchObject({
+            failed: false,
+            optimistic: false,
+            data: { metadata: { name: 'Github' } },
+        });
         expect(ctx.status).toBe(AppStatus.READY);
     });
 });
