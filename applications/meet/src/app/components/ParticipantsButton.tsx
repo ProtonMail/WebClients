@@ -9,6 +9,10 @@ import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton
 import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
+import {
+    getHiddenParticipantWarningTitle,
+    useHiddenParticipantWarningCount,
+} from '../hooks/useHiddenParticipantWarning';
 
 type ParticipantCountIndicatorStatus = 'default' | 'warning' | 'danger';
 
@@ -29,8 +33,9 @@ export const useParticipantCountIndicator = () => {
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
+    const hiddenParticipantCount = useHiddenParticipantWarningCount();
 
-    const getParticipantCountIndicatorVariant = (): ParticipantCountIndicatorStatus => {
+    const getCapacityStatus = (): ParticipantCountIndicatorStatus => {
         if (!isLocalParticipantAdminOrHost && !(isGuest && instantMeeting)) {
             return 'default';
         }
@@ -50,19 +55,48 @@ export const useParticipantCountIndicator = () => {
         return 'default';
     };
 
-    const indicatorStatus = getParticipantCountIndicatorVariant();
+    const capacityStatus = getCapacityStatus();
+    const isHiddenParticipantWarningShown = hiddenParticipantCount > 0;
+
+    const getIndicatorDescription = () => {
+        if (!isHiddenParticipantWarningShown) {
+            return getCapacityLabel(capacityStatus);
+        }
+
+        const hiddenParticipantTitle = getHiddenParticipantWarningTitle(hiddenParticipantCount);
+
+        switch (capacityStatus) {
+            case 'warning':
+                // translator: read by screen readers on the participants button, the variable is the hidden participant warning, e.g. "3 people have access but aren't in the call"
+                return c('Info').t`${hiddenParticipantTitle}. Meeting almost full`;
+            case 'danger':
+                // translator: read by screen readers on the participants button, the variable is the hidden participant warning, e.g. "3 people have access but aren't in the call"
+                return c('Info').t`${hiddenParticipantTitle}. Meeting full`;
+            case 'default':
+                return hiddenParticipantTitle;
+        }
+    };
 
     return {
         totalParticipantCount,
         maxParticipants,
-        indicatorStatus,
-        capacityLabel: getCapacityLabel(indicatorStatus),
+        indicatorContent: isHiddenParticipantWarningShown ? (
+            <span className="text-nowrap">
+                {totalParticipantCount}
+                <span aria-hidden="true">{' !'}</span>
+            </span>
+        ) : (
+            totalParticipantCount.toString()
+        ),
+        indicatorStatus: isHiddenParticipantWarningShown ? 'warning' : capacityStatus,
+        indicatorDescription: getIndicatorDescription(),
     };
 };
 
 export const ParticipantsButton = () => {
     const dispatch = useMeetDispatch();
-    const { totalParticipantCount, maxParticipants, indicatorStatus, capacityLabel } = useParticipantCountIndicator();
+    const { totalParticipantCount, maxParticipants, indicatorContent, indicatorStatus, indicatorDescription } =
+        useParticipantCountIndicator();
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
     const sideBarState = useMeetSelector(selectSideBarState);
@@ -94,9 +128,9 @@ export const ParticipantsButton = () => {
             onClick={() => {
                 dispatch(toggleSideBarState(MeetingSideBars.Participants));
             }}
-            indicatorContent={totalParticipantCount.toString()}
+            indicatorContent={indicatorContent}
             indicatorStatus={indicatorStatus}
-            indicatorDescription={capacityLabel}
+            indicatorDescription={indicatorDescription}
             ariaLabel={c('Alt').t`Toggle participants`}
             ariaPressed={sideBarState[MeetingSideBars.Participants]}
             tooltipTitle={getParticipantButtonTooltipTitle()}

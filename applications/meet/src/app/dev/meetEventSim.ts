@@ -14,13 +14,15 @@ import {
     raiseHand,
     setActiveReaction,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { setIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import {
     selectIsReconnecting,
     selectJoinedRoom,
     selectMlsRetrying,
     selectReconnectionFailed,
+    setIsWebsocketReconnecting,
 } from '@proton/meet/store/slices/connectionSlice';
+import { selectMlsGroupState, setMlsGroupState } from '@proton/meet/store/slices/currentMeeting';
+import { selectConnectedMemberCount } from '@proton/meet/store/slices/participantCountMismatchListener';
 import {
     mergeParticipantDecryptedNameMap,
     mergeParticipantsMap,
@@ -28,10 +30,15 @@ import {
     selectParticipantsMap,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
+import {
+    selectParticipantCountMismatchSince,
+    setParticipantCountMismatchSince,
+} from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission, ParticipantEvent } from '@proton/meet/types/types';
 import { SECOND } from '@proton/shared/lib/constants';
 
+import { MISMATCH_WARNING_DELAY } from '../hooks/useMismatchStage';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { CaptionsSim } from './captionsSim';
 import { createCaptionsSim } from './captionsSim';
@@ -66,6 +73,7 @@ interface MeetEventSim {
     sendChatMessage(message?: string): Promise<boolean>;
     setLocalParticipantHost(isHost?: boolean): boolean;
     setWebsocketReconnecting(isReconnecting?: boolean): void;
+    setHiddenParticipants(count: number): boolean;
 }
 
 declare global {
@@ -104,6 +112,7 @@ interface MeetEventSimOptions {
     dispatch: Dispatch<UnknownAction>;
     sendMessage: (content: string) => Promise<boolean>;
     getState: () => MeetState;
+    subscribe: (listener: () => void) => () => void;
     room: Room;
     meetCoreClient: MeetCoreClient;
 }
@@ -112,10 +121,49 @@ export const initMeetEventSim = ({
     dispatch,
     sendMessage,
     getState,
+    subscribe,
     room,
     meetCoreClient,
 }: MeetEventSimOptions): (() => void) => {
     const captions = createCaptionsSim(dispatch);
+
+    const keepHiddenParticipants = (count: number) => {
+        const warningSince = Date.now() - MISMATCH_WARNING_DELAY;
+
+        const getKeptMemberCount = (state: MeetState) => Math.max(selectConnectedMemberCount(state) + count, 1);
+
+        const keepWarningSince = () => {
+            const state = getState();
+            const mismatchSince = selectParticipantCountMismatchSince(state);
+            const isMismatchKept = getKeptMemberCount(state) !== selectConnectedMemberCount(state);
+            if (
+                selectMlsGroupState(state) &&
+                isMismatchKept &&
+                (mismatchSince === null || mismatchSince > warningSince)
+            ) {
+                dispatch(setParticipantCountMismatchSince(warningSince));
+            }
+        };
+
+        const keepMemberCount = () => {
+            const state = getState();
+            const mlsGroupState = selectMlsGroupState(state);
+            const memberCount = getKeptMemberCount(state);
+            if (mlsGroupState && mlsGroupState.memberCount !== memberCount) {
+                dispatch(setMlsGroupState({ ...mlsGroupState, memberCount }));
+            }
+        };
+
+        const reapplyHiddenParticipants = () => {
+            keepWarningSince();
+            keepMemberCount();
+        };
+
+        reapplyHiddenParticipants();
+        return subscribe(reapplyHiddenParticipants);
+    };
+
+    let stopKeepingHiddenParticipants = () => {};
 
     const sim: MeetEventSim = {
         captions,
@@ -221,12 +269,29 @@ export const initMeetEventSim = ({
         setWebsocketReconnecting(isReconnecting = true) {
             dispatch(setIsWebsocketReconnecting(isReconnecting));
         },
+
+        setHiddenParticipants(count) {
+            const state = getState();
+            const mlsGroupState = selectMlsGroupState(state);
+            const connectedMemberCount = selectConnectedMemberCount(state);
+            if (!mlsGroupState || connectedMemberCount + count < 1) {
+                return false;
+            }
+            stopKeepingHiddenParticipants();
+            if (count !== 0) {
+                stopKeepingHiddenParticipants = keepHiddenParticipants(count);
+                return true;
+            }
+            dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: connectedMemberCount }));
+            return true;
+        },
     };
 
     window.meetEventSim = sim;
 
     return () => {
         captions.stop();
+        stopKeepingHiddenParticipants();
         delete window.meetEventSim;
     };
 };

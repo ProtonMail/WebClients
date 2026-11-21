@@ -27,6 +27,13 @@ export const useMeetEventSim = () => {
             return;
         }
 
-        return initMeetEventSim({ dispatch, sendMessage, getState: store.getState, room, meetCoreClient });
+        return initMeetEventSim({
+            dispatch,
+            sendMessage,
+            getState: store.getState,
+            subscribe: store.subscribe,
+            room,
+            meetCoreClient,
+        });
     }, [dispatch, sendMessage, store, room, meetCoreClient]);
 };

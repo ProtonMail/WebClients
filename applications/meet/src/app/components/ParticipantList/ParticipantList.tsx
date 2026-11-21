@@ -14,6 +14,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
 import { AllParticipantsTab } from './AllParticipantsTab/AllParticipantsTab';
+import { HiddenParticipantWarning } from './HiddenParticipantWarning/HiddenParticipantWarning';
 import { ParticipantListHeader } from './ParticipantListHeader';
 import { ParticipantListHost } from './ParticipantListHost';
 
@@ -97,22 +98,25 @@ export const ParticipantList = () => {
                 />
             }
         >
-            <div className="participants-list-container h-full">
-                {isWaitingRoomHost ? (
-                    <ParticipantListHost
-                        participants={filteredParticipants}
-                        isSearchOn={isSearchOn}
-                        searchExpression={searchExpression}
-                        setIsScrolled={setIsScrolled}
-                        participantsCount={participantsCount}
-                    />
-                ) : (
-                    <AllParticipantsTab
-                        participants={filteredParticipants}
-                        setIsScrolled={setIsScrolled}
-                        searchExpression={activeSearchExpression}
-                    />
-                )}
+            <div className="participants-list-container h-full flex flex-column flex-nowrap">
+                <HiddenParticipantWarning />
+                <div className="flex-1 min-h-0">
+                    {isWaitingRoomHost ? (
+                        <ParticipantListHost
+                            participants={filteredParticipants}
+                            isSearchOn={isSearchOn}
+                            searchExpression={searchExpression}
+                            setIsScrolled={setIsScrolled}
+                            participantsCount={participantsCount}
+                        />
+                    ) : (
+                        <AllParticipantsTab
+                            participants={filteredParticipants}
+                            setIsScrolled={setIsScrolled}
+                            searchExpression={activeSearchExpression}
+                        />
+                    )}
+                </div>
             </div>
         </SideBar>
     );

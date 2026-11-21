@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantCountMismatchSince } from '@proton/meet/store/slices/uiStateSlice';
@@ -7,13 +7,25 @@ import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 const MISMATCH_INFO_DELAY = 30 * SECOND;
-const MISMATCH_WARNING_DELAY = MINUTE;
+export const MISMATCH_WARNING_DELAY = MINUTE;
 
 export enum MismatchStage {
     Hidden = 0,
     Info = 1,
     Warning = 2,
 }
+
+const getMismatchStage = (elapsed: number): MismatchStage => {
+    if (elapsed >= MISMATCH_WARNING_DELAY) {
+        return MismatchStage.Warning;
+    }
+
+    if (elapsed >= MISMATCH_INFO_DELAY) {
+        return MismatchStage.Info;
+    }
+
+    return MismatchStage.Hidden;
+};
 
 /**
  * The start of the mismatch lives in the store because the details sidebar unmounts whenever it is
@@ -23,37 +35,22 @@ export const useMismatchStage = (): MismatchStage => {
     const isParticipantCountMismatchEnabled = useFlag('MeetParticipantCountMismatch');
     const isGuest = useMeetSelector(selectIsGuest);
     const mismatchSince = useMeetSelector(selectParticipantCountMismatchSince);
-    const [stage, setStage] = useState<MismatchStage>(MismatchStage.Hidden);
+    const trackedMismatchSince = isParticipantCountMismatchEnabled && !isGuest ? mismatchSince : null;
+    const [tick, rerender] = useReducer((previousTick: number) => previousTick + 1, 0);
+    const stage =
+        trackedMismatchSince === null ? MismatchStage.Hidden : getMismatchStage(Date.now() - trackedMismatchSince);
 
     useEffect(() => {
-        if (!isParticipantCountMismatchEnabled || isGuest || mismatchSince === null) {
-            setStage(MismatchStage.Hidden);
+        if (trackedMismatchSince === null) {
             return;
         }
 
-        const elapsed = Date.now() - mismatchSince;
+        const timeouts = [MISMATCH_INFO_DELAY, MISMATCH_WARNING_DELAY]
+            .filter((delay) => getMismatchStage(delay) > stage)
+            .map((delay) => setTimeout(rerender, Math.max(delay - (Date.now() - trackedMismatchSince), 0)));
 
-        if (elapsed >= MISMATCH_WARNING_DELAY) {
-            setStage(MismatchStage.Warning);
-            return;
-        }
-
-        const warningTimeout = setTimeout(() => setStage(MismatchStage.Warning), MISMATCH_WARNING_DELAY - elapsed);
-
-        if (elapsed >= MISMATCH_INFO_DELAY) {
-            setStage(MismatchStage.Info);
-            return () => clearTimeout(warningTimeout);
-        }
-
-        setStage(MismatchStage.Hidden);
-
-        const infoTimeout = setTimeout(() => setStage(MismatchStage.Info), MISMATCH_INFO_DELAY - elapsed);
-
-        return () => {
-            clearTimeout(infoTimeout);
-            clearTimeout(warningTimeout);
-        };
-    }, [isParticipantCountMismatchEnabled, isGuest, mismatchSince]);
+        return () => timeouts.forEach(clearTimeout);
+    }, [trackedMismatchSince, stage, tick]);
 
     return stage;
 };
