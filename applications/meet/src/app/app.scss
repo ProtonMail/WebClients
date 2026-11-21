@@ -230,8 +230,19 @@ $profile-colors:
 		transition: background-color 0.2s ease;
 	}
 
-	.notification__icon {
-		display: none;
+	.notification__button:not(.notification__close-button) {
+		border: 1px solid var(--interaction-weak);
+		border-radius: 1.5rem;
+		background-color: var(--interaction-weak);
+		color: var(--text-norm);
+
+		&:hover,
+		&:active,
+		&:focus-visible {
+			border-color: var(--interaction-weak-major-1);
+			background-color: var(--interaction-weak-major-1);
+			color: var(--text-norm);
+		}
 	}
 }
 
@@ -263,6 +274,13 @@ $profile-colors:
 
 .notification--error {
 	@include notification-variant(var(--signal-danger), var(--signal-danger-major-2));
+}
+
+.notification--info,
+.notification--success {
+	.notification__icon {
+		display: none;
+	}
 }
 
 .modal-two-dialog {
