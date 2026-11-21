@@ -79,15 +79,34 @@ export const findOfflinePasswordPrompt = async () => {
 /** Provided by the Jest apps and by `vitest.setup.ts` */
 declare const jest: { advanceTimersByTime: (ms: number) => void };
 
-/** The password input has no label: it is the only password field of the lock screen */
-export const unlockWithPassword = async (password: string, submit: HTMLElement) => {
-    const input = document.querySelector<HTMLInputElement>('input[name="password"]');
-    if (!input) throw new Error('No password field rendered');
+const UNLOCK_ATTEMPTS = 3;
+
+/** The password input has no label: it is the only password field of the lock screen.
+ * `PasswordUnlock` remounts its form whenever connectivity changes while not online
+ * (`useUnlockGuard` → `rerender`), which an outage does while the prompt is shown. Nodes
+ * looked up earlier are then detached: typing or clicking on them does nothing. So the
+ * input and the submit button are looked up right before use, and the sequence starts
+ * over if the form was remounted meanwhile. */
+export const unlockWithPassword = async (password: string) => {
     /** `user-event` waits on a timer between keystrokes: with fake timers it must advance them */
     const fakeTimers = 'clock' in setTimeout;
     const user = userEvent.setup(fakeTimers ? { advanceTimers: (ms) => jest.advanceTimersByTime(ms) } : {});
-    await user.type(input, password);
-    await user.click(submit);
+
+    for (let attempt = 0; attempt < UNLOCK_ATTEMPTS; attempt++) {
+        const input = document.querySelector<HTMLInputElement>('input[name="password"]');
+        if (!input) throw new Error('No password field rendered');
+
+        await user.clear(input);
+        await user.type(input, password);
+
+        const submit = screen.getByRole('button', { name: /^Continue/ });
+        if (!input.isConnected || !submit.isConnected) continue;
+
+        await user.click(submit);
+        return;
+    }
+
+    throw new Error(`The lock screen kept remounting: no unlock after ${UNLOCK_ATTEMPTS} attempts`);
 };
 
 export const editLogin = async (values: Partial<LoginFormValues>) => {

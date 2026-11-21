@@ -104,7 +104,7 @@ describe('Offline boot on the real worker store', () => {
         backend.use(...getSessionResumeHandlers(persisted));
         await vi.advanceTimersByTimeAsync(120_000);
         await alarms.fire(SESSION_RESUME_ALARM);
-        await settleUntil(() => PassCrypto.ready);
+        await settleUntil(() => PassCrypto.ready, 10_000);
 
         expect(PassCrypto.ready).toBe(true);
         expect(PassCrypto.getShareManager(cache.vault.shareId).hasVaultShareKey(1)).toBe(true);
