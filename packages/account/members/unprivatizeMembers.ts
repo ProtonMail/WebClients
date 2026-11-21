@@ -29,7 +29,7 @@ import {
     getMemberAddresses,
     selectMembers,
     setUnprivatizationState,
-    upsertMember,
+    upsertMembers,
 } from './index';
 import { getIsMemberInAutomaticApproveState, getIsMemberInManualApproveState } from './memberUnprivatization';
 import {
@@ -236,11 +236,12 @@ export const unprivatizeMembersManual = ({
             }
         }
 
-        membersToUpdate.forEach((member) => {
+        if (membersToUpdate.length) {
             // Unprivatization re-encrypts the member's address-key Token/Signature, so invalidate the
             // cached addresses — otherwise upsertMember preserves the stale 'full' ones.
-            dispatch(upsertMember({ member, invalidateAddresses: true }));
-        });
+            // One commit for all members: dispatching per member re-renders the members table each time.
+            dispatch(upsertMembers(membersToUpdate.map((member) => ({ member, invalidateAddresses: true }))));
+        }
 
         return membersToUpdate;
     };
@@ -408,8 +409,9 @@ export const unprivatizeMembersAutomatic = ({
             }
         }
 
-        membersToUpdate.forEach((member) => {
-            dispatch(upsertMember({ member }));
-        });
+        if (membersToUpdate.length) {
+            // One commit for all members: dispatching per member re-renders the members table each time.
+            dispatch(upsertMembers(membersToUpdate.map((member) => ({ member }))));
+        }
     };
 };

@@ -118,6 +118,66 @@ const getMemberIndexFromState = (members: EnhancedMember[], target: Member) => {
     return members.findIndex((member) => member.ID === target.ID);
 };
 
+export interface UpsertMemberPayload {
+    member: Member;
+    type?: 'delete';
+    invalidateAddresses?: boolean;
+}
+
+const applyMemberUpsert = (state: ModelState<EnhancedMember[]>, payload: UpsertMemberPayload) => {
+    if (!state.value) {
+        return;
+    }
+    const memberIndex = getMemberIndexFromState(state.value, payload.member);
+    if (payload.type === 'delete') {
+        if (memberIndex !== -1) {
+            state.value.splice(memberIndex, 1);
+        }
+        return;
+    }
+    const newMember = {
+        ...payload.member,
+        addressState: 'partial' as const,
+        roleState: 'initial' as const,
+        UserOrganizationRoles: [],
+        requiresOrgKeyPromotion: false,
+        requiresOrgKeyDemotion: false,
+        hasScheduledOrgKeyDemotion: false,
+    };
+    if (memberIndex === -1) {
+        state.value.push(newMember);
+    } else {
+        const previousMember = state.value[memberIndex];
+        const previousAddressState =
+            previousMember.addressState === 'full'
+                ? {
+                      // Keep the cached addresses for display, but when the caller signals the
+                      // member's addresses changed (e.g. unprivatization re-encrypts address
+                      // tokens), mark them 'stale' so the next getMemberAddresses refetches
+                      // instead of serving the cached (now invalid) Token/Signature.
+                      addressState: payload.invalidateAddresses ? ('stale' as const) : ('full' as const),
+                      Addresses: previousMember.Addresses,
+                  }
+                : {};
+        const previousRoleState = {
+            roleState: previousMember.roleState,
+            UserOrganizationRoles: previousMember.UserOrganizationRoles,
+            // Kept rather than reset: a member fetch carries no org key access info, so resetting
+            // here would mask a member whose org key grant is still pending. It's cleared by an
+            // explicit getMemberRoles refetch instead.
+            requiresOrgKeyPromotion: previousMember.requiresOrgKeyPromotion,
+            requiresOrgKeyDemotion: previousMember.requiresOrgKeyDemotion,
+            hasScheduledOrgKeyDemotion: previousMember.hasScheduledOrgKeyDemotion,
+        };
+        const mergedValue: EnhancedMember = {
+            ...newMember,
+            ...previousAddressState,
+            ...previousRoleState,
+        };
+        state.value[memberIndex] = mergedValue;
+    }
+};
+
 const freeMembers: EnhancedMember[] = [];
 
 const initialState: SliceState = {
@@ -172,61 +232,12 @@ const slice = createSlice({
             state.meta.fetchedAt = getFetchedAt();
             state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
-        upsertMember: (
-            state,
-            action: PayloadAction<{ member: Member; type?: 'delete'; invalidateAddresses?: boolean }>
-        ) => {
-            if (!state.value) {
-                return;
-            }
-            const memberIndex = getMemberIndexFromState(state.value, action.payload.member);
-            if (action.payload.type === 'delete') {
-                if (memberIndex !== -1) {
-                    state.value.splice(memberIndex, 1);
-                }
-                return;
-            }
-            const newMember = {
-                ...action.payload.member,
-                addressState: 'partial' as const,
-                roleState: 'initial' as const,
-                UserOrganizationRoles: [],
-                requiresOrgKeyPromotion: false,
-                requiresOrgKeyDemotion: false,
-                hasScheduledOrgKeyDemotion: false,
-            };
-            if (memberIndex === -1) {
-                state.value.push(newMember);
-            } else {
-                const previousMember = state.value[memberIndex];
-                const previousAddressState =
-                    previousMember.addressState === 'full'
-                        ? {
-                              // Keep the cached addresses for display, but when the caller signals the
-                              // member's addresses changed (e.g. unprivatization re-encrypts address
-                              // tokens), mark them 'stale' so the next getMemberAddresses refetches
-                              // instead of serving the cached (now invalid) Token/Signature.
-                              addressState: action.payload.invalidateAddresses ? ('stale' as const) : ('full' as const),
-                              Addresses: previousMember.Addresses,
-                          }
-                        : {};
-                const previousRoleState = {
-                    roleState: previousMember.roleState,
-                    UserOrganizationRoles: previousMember.UserOrganizationRoles,
-                    // Kept rather than reset: a member fetch carries no org key access info, so resetting
-                    // here would mask a member whose org key grant is still pending. It's cleared by an
-                    // explicit getMemberRoles refetch instead.
-                    requiresOrgKeyPromotion: previousMember.requiresOrgKeyPromotion,
-                    requiresOrgKeyDemotion: previousMember.requiresOrgKeyDemotion,
-                    hasScheduledOrgKeyDemotion: previousMember.hasScheduledOrgKeyDemotion,
-                };
-                const mergedValue: EnhancedMember = {
-                    ...newMember,
-                    ...previousAddressState,
-                    ...previousRoleState,
-                };
-                state.value[memberIndex] = mergedValue;
-            }
+        upsertMember: (state, action: PayloadAction<UpsertMemberPayload>) => {
+            applyMemberUpsert(state, action.payload);
+        },
+        /** Batch form of {@link upsertMember}: one commit for the whole list instead of one per member. */
+        upsertMembers: (state, action: PayloadAction<UpsertMemberPayload[]>) => {
+            action.payload.forEach((payload) => applyMemberUpsert(state, payload));
         },
         memberFetchFulfilled: (state, action: PayloadAction<{ member: Member; addresses: Address[] }>) => {
             const member = getMemberFromState(state, action.payload.member);
@@ -706,6 +717,7 @@ export const updateMemberRoles = ({
 export const membersReducer = { [name]: slice.reducer };
 export const membersThunk = modelThunk;
 export const upsertMember = slice.actions.upsertMember;
+export const upsertMembers = slice.actions.upsertMembers;
 export const invalidateMemberRoles = slice.actions.invalidateMemberRoles;
 export const membersActions = slice.actions;
 export const setUnprivatizationState = slice.actions.setUnprivatizationState;
