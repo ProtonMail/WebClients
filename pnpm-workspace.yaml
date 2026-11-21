@@ -41,7 +41,7 @@ catalog:
     '@lexical/react': 0.31.2
     '@lexical/utils': 0.31.2
     # Must stay on the same version as oxlint.
-    '@oxlint/plugins': 1.93.0
+    '@oxlint/plugins': 1.94.0
     '@pmmmwh/react-refresh-webpack-plugin': ^0.6.3
     '@protontech/crypto': ^2.2.0
     # Shared so that every workspace importing the Drive SDK resolves the same version.
@@ -57,7 +57,7 @@ catalog:
     '@testing-library/dom': ^10.4.2
     '@testing-library/jest-dom': ^6.9.1
     '@testing-library/react': ^16.3.3
-    '@testing-library/user-event': ^14.6.9
+    '@testing-library/user-event': ^14.6.12
     '@types/chrome': ^0.3.7
     '@types/history': ^4.7.11
     '@types/jest': ^30.0.0
@@ -75,7 +75,7 @@ catalog:
     '@vitest/browser-playwright': ^5.1.0
     '@vitest/coverage-v8': ^5.1.0
     '@vitest/ui': ^5.1.0
-    browserslist: ^4.29.5
+    browserslist: ^4.29.6
     clsx: ^2.1.1
     commander: ^14.0.3
     copy-webpack-plugin: ^14.0.0
@@ -83,11 +83,11 @@ catalog:
     cross-env: ^10.1.0
     css-loader: ^7.1.5
     date-fns: ^4.4.0
-    dompurify: ^3.4.17
+    dompurify: ^3.4.18
     electron-log: ^5.4.4
     electron-store: ^8.2.0
     fake-indexeddb: ^6.2.8
-    fork-ts-checker-webpack-plugin: ^9.1.0
+    fork-ts-checker-webpack-plugin: ^9.2.0
     formik: ^2.4.9
     happy-dom: ^21.0.4
     history: ^4.10.1
@@ -96,16 +96,16 @@ catalog:
     html2canvas: 1.4.1
     idb: ^8.0.4
     jest-environment-jsdom: ^30.5.2
-    jsdom: ^31.0.0
+    jsdom: ^31.0.1
     jszip: ^3.10.2
     lexical: 0.31.2
     lodash: ^4.18.1
     mini-css-extract-plugin: ^2.10.2
     msw: 2.12.14
-    oxfmt: 0.78.0
-    oxlint: 1.93.0
-    oxlint-tsgolint: 7.0.2006
-    postcss: ^8.5.32
+    oxfmt: 0.79.0
+    oxlint: 1.94.0
+    oxlint-tsgolint: 7.0.2007
+    postcss: ^8.5.33
     react: ^18.3.1
     react-dom: ^18.3.1
     react-redux: ^9.3.1
@@ -263,7 +263,7 @@ overrides:
     'devalue@^5.8.1': '5.9.4'
     electron-windows-msix: 'github:Swiip/electron-windows-msix#f1c1f4f46439c7d94569afdedd9561d09d4a1c54'
     electron-winstaller: '^5.4.4'
-    'dompurify@3.4.16': '3.4.17'
+    'dompurify@3.4.16': '3.4.18'
     'electron>extract-zip': '2.0.1'
     'fast-uri@^2.0.0': '2.4.8'
     'fast-uri@^2.1.0': '2.4.8'
@@ -271,12 +271,12 @@ overrides:
     'fastify@4.28.1': '4.29.1'
     'follow-redirects@1.16.0': '1.16.3'
     'form-data@~2.3.2': '2.5.6'
-    'http-proxy-middleware@2.0.7': '2.0.11'
+    'http-proxy-middleware@2.0.7': '2.0.12'
     'image-size@^0.7.4': 'npm:image-size-next@1.2.2'
     'image-size@^1.2.1': '2.1.0'
     immer: '11.2.10'
     'immutable@^4.3.7': '4.3.9'
-    'immutable@^5.0.2': '5.1.10'
+    'immutable@^5.0.2': '5.2.1'
     'ip-address@^9.0.5': '10.7.6'
     'js-yaml@4.1.0': '4.3.2'
     'js-yaml@4.3.1': '4.3.2'
@@ -290,7 +290,7 @@ overrides:
     'launch-editor@2.14.1': '2.14.2'
     'lodash@4.17.21': '4.18.1'
     'markdown-it@14.3.2': '14.3.3'
-    'mdast-util-to-hast@^13.0.0': '13.2.1'
+    'mdast-util-to-hast@^13.0.0': '13.2.2'
     merge: '^2.1.1'
     'minimatch@^5.0.1': '5.1.9'
     'minimatch@^5.1.0': '5.1.9'
@@ -308,7 +308,7 @@ overrides:
     node-gyp: '^11.5.0'
     # @tpe/quark-client pins 9.0.5 and only imports nodemailer/lib/mail-composer, which 10.x still
     # exports. 10.0.0 only raised the minimum Node.js version to 20.
-    'nodemailer@9.0.5': '10.5.0'
+    'nodemailer@9.0.5': '10.6.0'
     'path-to-regexp@0.1.12': '0.1.13'
     'path-to-regexp@~0.1.12': '0.1.13'
     'picomatch@^2.0.4': '2.3.2'
@@ -335,10 +335,10 @@ overrides:
     'sharp@^0.34.0': '0.35.5'
     'sharp@^0.34.3': '0.35.5'
     # @tpe/minimum-test-set declares simple-git but runs git through child_process instead.
-    'simple-git@^3.33.0': '4.0.2'
+    'simple-git@^3.33.0': '4.1.0'
     'svgo@^3.0.0': '3.3.5'
     'svgo@^3.2.0': '3.3.5'
-    tar: '^7.5.22'
+    tar: '^7.5.23'
     'tar-fs@^2.0.0': '2.1.5'
     'tar-fs@^3.0.4': '3.1.3'
     terser: '^5.51.2'
@@ -348,15 +348,15 @@ overrides:
     'toml@4.3.0': '5.0.1'
     'undici@6.21.1': '6.29.1'
     'undici@^8.0.0': '8.12.4'
-    'webpack-dev-middleware@^6.1.2': '8.6.0'
-    'webpack-dev-middleware@^8.0.3': '8.6.0'
+    'webpack-dev-middleware@^6.1.2': '8.6.1'
+    'webpack-dev-middleware@^8.0.3': '8.6.1'
     'webpack-dev-server@^4.0.0': '6.1.0'
-    'websocket-driver@>=0.5.1': '0.7.5'
-    'websocket-driver@^0.7.4': '0.7.5'
+    'websocket-driver@>=0.5.1': '0.8.0'
+    'websocket-driver@^0.7.4': '0.8.0'
     whatwg-url: '^14.2.0'
-    'ws@8.18.0': '8.22.2'
-    'ws@^5.2.0': '5.2.7'
-    'ws@^7.4.6': '7.5.13'
+    'ws@8.18.0': '8.23.0'
+    'ws@^5.2.0': '5.2.8'
+    'ws@^7.4.6': '7.5.14'
     'xlsx@0.18.5': 'https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz'
     'xlsx@^0.18.5': 'https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz'
     'yaml@^1.7.2': '1.10.3'

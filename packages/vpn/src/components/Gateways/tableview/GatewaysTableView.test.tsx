@@ -64,7 +64,7 @@ describe('GatewaysTableView', () => {
 
             await userEvent.click(screen.getByRole('button', { name: 'Create Gateway' }));
 
-            expect(addGateway).toHaveBeenCalledOnce();
+            expect(addGateway).toHaveBeenCalledTimes(1);
         });
 
         it('disables the create button when canAdd is false', () => {
