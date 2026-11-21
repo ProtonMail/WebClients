@@ -10,16 +10,16 @@
     --background-norm: #16161f;
     --background-strong: #16161f;
     --background-weak: #2e2f42;
-    --background-bg-overlay: black;
+    --background-alpha-weak: rgb(255 255 255 / 0.04);
+    --background-alpha-norm: rgb(255 255 255 / 0.08);
+    --bg-overlay: rgb(0 0 0 / 0.3);
     --background-tab: #393c59;
     --border-norm: #393b51;
     --border-strong: #56566d;
     --border-weak: #2e2f42;
-    --button-darker-active-background-color: #191927;
-    --button-darker-default-background-color: #ddd9fa;
-    --button-darker-hover-background-color: #7169b8;
-    --button-lighter-active-background-color: #4a4478;
-    --button-lighter-default-background-color: #2e2f42;
+    --border-alpha-weak: rgb(255 255 255 / 0.04);
+    --border-alpha-norm: rgb(255 255 255 / 0.08);
+    --border-alpha-strong: rgb(255 255 255 / 0.16);
     --button-lighter-hover-background-color: #393b51;
     --field-background-color: #232331;
     --field-disabled: #393b51;
@@ -55,6 +55,7 @@
     --primary-minor-2: #4a4478;
     --primary-minor-3: #2e2952;
     --scrollbar-thumb-color: rgb(255 255 255 / 0.1);
+    --security-shield: rgb(255 255 255 / 0.8);
     --signal-danger: #fb7878;
     --signal-danger-contrast: #1a1a28;
     --signal-danger-major-1: #ff8a8a;
@@ -88,6 +89,7 @@
     --text-invert: #1a1a28;
     --text-norm: white;
     --text-weak: #bfbfd0;
+    --text-alpha-weak: rgb(255 255 255 / 0.24);
     --ui-blue-interaction-contrast: white;
     --ui-blue-interaction-major-1: #00a9e7;
     --ui-blue-interaction-major-2: #0080a8;
