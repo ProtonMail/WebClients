@@ -35,7 +35,6 @@ catalog:
     '@electron-forge/publisher-github': ^7.11.2
     '@electron-forge/shared-types': ^7.11.2
     '@electron/fuses': ^1.8.0
-    '@jest/globals': ^30.5.2
     # Meet's Lexical. Docs takes its own from the `docs` catalog. `lexical` and every `@lexical/*`
     # package in one catalog must share one exact version.
     '@lexical/react': 0.31.2

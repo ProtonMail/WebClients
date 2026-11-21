@@ -1,8 +1,6 @@
 {
     "extends": "../../tsconfig.base.json",
     "exclude": [
-        "lib/items/__mocks__/item.requests.ts",
-        "utils/logger/loglevel.mock.ts",
         "lib/core/__mocks__/core.proxy.ts",
         "lib/core/__mocks__/ui.proxy.ts",
         "**/node_modules",
