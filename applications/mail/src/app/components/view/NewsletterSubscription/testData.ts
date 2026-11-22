@@ -11,7 +11,7 @@ export const activeSubscription: NewsletterSubscription = {
     UnsubscribedTime: 0,
     FirstReceivedTime: '2021-01-01',
     LastReceivedTime: '2021-01-01',
-    LastReadTime: '2021-01-01',
+    LastReadTime: 1609459200,
     ReceivedMessageCount: 10,
     UnreadMessageCount: 5,
     MarkAsRead: false,

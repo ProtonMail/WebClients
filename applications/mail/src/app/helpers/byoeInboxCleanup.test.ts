@@ -19,6 +19,7 @@ import {
     cleanUpBYOEInboxSenders,
     getBYOEInboxCleanupSenders,
     getFinishedBYOEImportOutcome,
+    groupBYOEInboxCleanupSenders,
     loadSendersWhenFree,
     waitForFreeScreen,
 } from './byoeInboxCleanup';
@@ -139,6 +140,66 @@ describe('getBYOEInboxCleanupSenders', () => {
         mockedApi.mockRejectedValueOnce(new Error('Network error'));
 
         await expect(getBYOEInboxCleanupSenders(mockedApi)).rejects.toThrow('Network error');
+    });
+});
+
+describe('groupBYOEInboxCleanupSenders', () => {
+    const sender = (
+        ID: string,
+        LastReadTime: number | null,
+        ReceivedMessageCount: number,
+        UnreadMessageCount: number
+    ): NewsletterSubscription => ({
+        ...activeSubscription,
+        ID,
+        LastReadTime,
+        ReceivedMessageCount,
+        UnreadMessageCount,
+    });
+
+    const getSectionIDs = (subscriptions: NewsletterSubscription[]) => {
+        return groupBYOEInboxCleanupSenders(subscriptions).map(({ section, subscriptions: sectionSubscriptions }) => ({
+            section,
+            IDs: sectionSubscriptions.map(({ ID }) => ID),
+        }));
+    };
+
+    it('a sender never read is never opened, even when unread is below received', () => {
+        expect(getSectionIDs([sender('never', null, 10, 2)])).toEqual([{ section: 'never', IDs: ['never'] }]);
+    });
+
+    it('4 of 10 opened is sometimes', () => {
+        expect(getSectionIDs([sender('four', 1700000000, 10, 6)])).toEqual([{ section: 'sometimes', IDs: ['four'] }]);
+    });
+
+    it('5 of 10 opened is often', () => {
+        expect(getSectionIDs([sender('five', 1700000000, 10, 5)])).toEqual([{ section: 'often', IDs: ['five'] }]);
+    });
+
+    it('keeps the order senders arrive in within each section', () => {
+        const senders = [sender('b', null, 3, 3), sender('a', null, 5, 5), sender('c', null, 1, 1)];
+
+        expect(getSectionIDs(senders)).toEqual([{ section: 'never', IDs: ['b', 'a', 'c'] }]);
+    });
+
+    it('sections come never, sometimes, often whatever order the senders arrive in', () => {
+        const senders = [
+            sender('often', 1700000000, 10, 0),
+            sender('sometimes', 1700000000, 10, 9),
+            sender('never', null, 10, 10),
+        ];
+
+        expect(getSectionIDs(senders)).toEqual([
+            { section: 'never', IDs: ['never'] },
+            { section: 'sometimes', IDs: ['sometimes'] },
+            { section: 'often', IDs: ['often'] },
+        ]);
+    });
+
+    it('leaves out sections with no senders', () => {
+        const senders = [sender('never', null, 10, 10), sender('often', 1700000000, 10, 1)];
+
+        expect(getSectionIDs(senders).map(({ section }) => section)).toEqual(['never', 'often']);
     });
 });
 

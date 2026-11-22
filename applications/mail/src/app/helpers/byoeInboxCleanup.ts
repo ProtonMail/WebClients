@@ -52,6 +52,52 @@ export const getBYOEInboxCleanupSenders = async (api: Api): Promise<NewsletterSu
     return sendersToDisplay;
 };
 
+export type BYOEInboxCleanupSection = 'never' | 'sometimes' | 'often';
+
+export interface BYOEInboxCleanupSenderGroup {
+    section: BYOEInboxCleanupSection;
+    subscriptions: NewsletterSubscription[];
+}
+
+const BYOE_INBOX_CLEANUP_SECTIONS: BYOEInboxCleanupSection[] = ['never', 'sometimes', 'often'];
+
+/**
+ * Puts a newsletter in a section by how much of its mail the person has opened:
+ * - never: no email from this newsletter has ever been read. Based on `LastReadTime` rather than the counts,
+ *   so deleting unread mail can't move it out of this section.
+ * - often: half or more of the emails received from this newsletter have been opened (received minus unread).
+ * - sometimes: everything else.
+ * The server starts the received count at 1, so the opened share never divides by 0.
+ */
+const getBYOEInboxCleanupSection = ({
+    LastReadTime,
+    ReceivedMessageCount,
+    UnreadMessageCount,
+}: NewsletterSubscription): BYOEInboxCleanupSection => {
+    if (!LastReadTime) {
+        return 'never';
+    }
+
+    const openedShare = (ReceivedMessageCount - UnreadMessageCount) / ReceivedMessageCount;
+    return openedShare >= 0.5 ? 'often' : 'sometimes';
+};
+
+/**
+ * Splits the senders into never, sometimes and often opened, in that order, leaving out empty sections.
+ * Senders keep the order they arrive in within a section.
+ */
+export const groupBYOEInboxCleanupSenders = (
+    subscriptions: NewsletterSubscription[]
+): BYOEInboxCleanupSenderGroup[] => {
+    // e.g. { never: [a, c], often: [b] }: empty sections have no key, and keys are in first-seen order
+    const subscriptionsBySection = Object.groupBy(subscriptions, getBYOEInboxCleanupSection);
+
+    return BYOE_INBOX_CLEANUP_SECTIONS.flatMap((section) => {
+        const sectionSubscriptions = subscriptionsBySection[section];
+        return sectionSubscriptions ? [{ section, subscriptions: sectionSubscriptions }] : [];
+    });
+};
+
 interface BYOEInboxCleanupSenderProgress {
     unsubscribed: boolean;
     archived: boolean;

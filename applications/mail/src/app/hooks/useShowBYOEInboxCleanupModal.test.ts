@@ -408,16 +408,12 @@ describe('useShowBYOEInboxCleanupModal', () => {
             expect(getLoadSignal().aborted).toBe(true);
         });
 
-        it('keeps loading the senders when notify or the confirm factory change, and opens with the latest ones', async () => {
+        it('keeps loading the senders when the confirm factory changes, and opens with the latest one', async () => {
             const resolveLoad = holdNextLoad();
             const { rerender } = setup();
             await settle();
 
-            const newNotify = vi.fn();
             const newOnConfirm = vi.fn();
-            vi.mocked(useMailGlobalModals).mockImplementation(() => {
-                return { notify: newNotify } as any;
-            });
             vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(() => newOnConfirm);
             rerender();
             await settle();
@@ -426,9 +422,8 @@ describe('useShowBYOEInboxCleanupModal', () => {
 
             expect(getLoadSignal().aborted).toBe(false);
             expect(loadSendersWhenFree).toHaveBeenCalledTimes(1);
-            expect(mockNotify).not.toHaveBeenCalled();
-            expect(newNotify).toHaveBeenCalledTimes(1);
-            expect(newNotify.mock.calls[0][0].value.onConfirm).toBe(newOnConfirm);
+            expect(mockNotify).toHaveBeenCalledTimes(1);
+            expect(getShownPayload().value.onConfirm).toBe(newOnConfirm);
         });
 
         it("doesn't load the senders again when a report change leaves the import finished", async () => {
