@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -11,24 +11,46 @@ import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/M
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import ContactImage from '@proton/components/containers/contacts/ContactImage';
 import useLoading from '@proton/hooks/useLoading';
-import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { ModalCheckboxWithLabel } from '../../components/view/NewsletterSubscription/SubscriptionsList/ModalBlockSender/ModalSharedComponents';
+import { getReceivedMessagesCount } from '../../components/view/NewsletterSubscription/helper';
+import type { BYOEInboxCleanupSection } from '../../helpers/byoeInboxCleanup';
+import { groupBYOEInboxCleanupSenders } from '../../helpers/byoeInboxCleanup';
 import type { BYOEInboxCleanupModalPayload } from './inteface';
 
-const InboxCleanupHeader = () => {
+interface InboxCleanupHeaderProps {
+    count: number;
+}
+
+const InboxCleanupHeader = ({ count }: InboxCleanupHeaderProps) => {
     const { id } = useContext(ModalContext);
 
     return (
         <div className="modal-two-header flex flex-nowrap items-start gap-3">
-            <IcArchiveBox size={6} className="shrink-0 mt-1" data-testid="byoe-inbox-cleanup-icon" />
             <div className="flex-1">
-                <h1 id={id} className="text-2xl text-bold mb-2">{c('Title').t`Start with a cleaner Inbox`}</h1>
+                <span
+                    className="flex items-center justify-center rounded-full w-custom h-custom mb-2"
+                    style={{
+                        '--w-custom': '2.5rem',
+                        '--h-custom': '2.5rem',
+                        backgroundColor: 'var(--primary-minor-1)',
+                    }}
+                >
+                    <IcMagicWand size={5} className="color-primary" data-testid="byoe-inbox-cleanup-icon" />
+                </span>
+                <h1 id={id} className="text-2xl text-bold mb-2">
+                    {c('Title').t`Your Gmail newsletters, now easier to manage`}
+                </h1>
                 <p className="m-0 color-weak">
-                    {c('Info')
-                        .t`We found some mailing lists that you don't read. You can unsubscribe from them in one click.`}
+                    {c('Info').ngettext(
+                        msgid`We brought over ${count} newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.`,
+                        `We brought over ${count} newsletters and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.`,
+                        count
+                    )}
                 </p>
             </div>
             <ModalHeaderCloseButton buttonProps={{ className: 'shrink-0 modal-two-header-actions' }} />
@@ -36,18 +58,58 @@ const InboxCleanupHeader = () => {
     );
 };
 
+const getSectionTitle = (section: BYOEInboxCleanupSection) => {
+    switch (section) {
+        case 'never':
+            return c('Title').t`Not opened in a while`;
+        case 'sometimes':
+            return c('Title').t`You open these sometimes`;
+        case 'often':
+            return c('Title').t`You read these often`;
+    }
+};
+
+const getSenderStatsText = (section: BYOEInboxCleanupSection, count: number) => {
+    if (count === 0) {
+        return c('Newsletter sender stats').t`No emails in the last 30 days.`;
+    }
+
+    switch (section) {
+        case 'never':
+            return c('Newsletter sender stats').ngettext(
+                msgid`${count} email in the last 30 days. Not opened.`,
+                `${count} emails in the last 30 days. Not opened.`,
+                count
+            );
+        case 'sometimes':
+            return c('Newsletter sender stats').ngettext(
+                msgid`${count} email in the last 30 days. Opened sometimes.`,
+                `${count} emails in the last 30 days. Opened sometimes.`,
+                count
+            );
+        case 'often':
+            return c('Newsletter sender stats').ngettext(
+                msgid`${count} email in the last 30 days. Opened often.`,
+                `${count} emails in the last 30 days. Opened often.`,
+                count
+            );
+    }
+};
+
 interface SenderRowProps {
     subscription: NewsletterSubscription;
+    section: BYOEInboxCleanupSection;
     checked: boolean;
     disabled: boolean;
     onToggle: (id: string) => void;
 }
 
-const SenderRow = ({ subscription, checked, disabled, onToggle }: SenderRowProps) => {
+const SenderRow = ({ subscription, section, checked, disabled, onToggle }: SenderRowProps) => {
     const checkboxId = `byoe-inbox-cleanup-sender-${subscription.ID}`;
+    const stats = getSenderStatsText(section, getReceivedMessagesCount(subscription));
 
     return (
-        <li className="flex flex-nowrap items-center gap-3 px-4 py-3 border-top border-weak">
+        <li className="flex flex-nowrap items-center gap-3 px-4 py-2 border-top border-weak">
             <Checkbox
                 id={checkboxId}
                 checked={checked}
@@ -74,6 +136,7 @@ const SenderRow = ({ subscription, checked, disabled, onToggle }: SenderRowProps
                     {subscription.SenderAddress}
                 </span>
             </label>
+            <span className="shrink-0 text-sm color-weak text-nowrap">{stats}</span>
         </li>
     );
 };
@@ -85,13 +148,17 @@ interface InboxCleanupModalProps {
 }
 
 const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanupModalProps) => {
-    const [selectedIDs, setSelectedIDs] = useState(() => subscriptions.map(({ ID }) => ID));
+    const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [archive, setArchive] = useState(true);
     const [loading, withLoading] = useLoading();
 
     const count = subscriptions.length;
+    const senderSections = useMemo(() => {
+        return groupBYOEInboxCleanupSenders(subscriptions);
+    }, [subscriptions]);
     const allSelected = count > 0 && selectedIDs.length === count;
     const someSelected = selectedIDs.length > 0 && !allSelected;
+    const selectedCount = selectedIDs.length;
 
     const handleToggleSender = (id: string) => {
         setSelectedIDs((previous) =>
@@ -113,59 +180,75 @@ const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanu
 
     return (
         <ModalTwo {...modalProps} size="large" fullscreenOnMobile>
-            <InboxCleanupHeader />
+            <InboxCleanupHeader count={count} />
             <ModalTwoContent>
-                <div className="border border-weak rounded-lg">
-                    <div className="px-4 py-3">
-                        <Checkbox
-                            id="byoe-inbox-cleanup-select-all"
-                            checked={allSelected}
-                            indeterminate={someSelected}
-                            disabled={loading}
-                            onChange={handleToggleAll}
-                            className="text-bold"
-                            gap="gap-3"
-                        >
-                            {c('Label').ngettext(
-                                msgid`Select all ${count} unused sender`,
-                                `Select all ${count} unused senders`,
-                                count
-                            )}
-                        </Checkbox>
-                    </div>
-                    <ul className="unstyled m-0">
-                        {subscriptions.map((subscription) => (
-                            <SenderRow
-                                key={subscription.ID}
-                                subscription={subscription}
-                                checked={selectedIDs.includes(subscription.ID)}
-                                disabled={loading}
-                                onToggle={handleToggleSender}
-                            />
-                        ))}
-                    </ul>
+                <div className="border border-weak rounded-lg overflow-hidden">
+                    {senderSections.map(({ section, subscriptions: sectionSubscriptions }, index) => {
+                        const headingID = `byoe-inbox-cleanup-section-${section}`;
+                        const isFirst = index === 0;
+
+                        return (
+                            <section key={section} aria-labelledby={headingID}>
+                                <div
+                                    className={clsx(
+                                        'flex flex-nowrap items-center justify-space-between gap-2 px-4 py-2 bg-weak',
+                                        !isFirst && 'border-top border-weak'
+                                    )}
+                                >
+                                    <h2 id={headingID} className="m-0 text-sm text-semibold color-weak">
+                                        {getSectionTitle(section)}
+                                    </h2>
+                                    {isFirst && (
+                                        <Checkbox
+                                            id="byoe-inbox-cleanup-select-all"
+                                            checked={allSelected}
+                                            indeterminate={someSelected}
+                                            disabled={loading}
+                                            onChange={handleToggleAll}
+                                            className="shrink-0 text-sm color-weak"
+                                        >
+                                            {c('Action').t`Select all`}
+                                        </Checkbox>
+                                    )}
+                                </div>
+                                <ul className="unstyled m-0" aria-labelledby={headingID}>
+                                    {sectionSubscriptions.map((subscription) => (
+                                        <SenderRow
+                                            key={subscription.ID}
+                                            subscription={subscription}
+                                            section={section}
+                                            checked={selectedIDs.includes(subscription.ID)}
+                                            disabled={loading}
+                                            onToggle={handleToggleSender}
+                                        />
+                                    ))}
+                                </ul>
+                            </section>
+                        );
+                    })}
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
                 {/* A single child, so the footer's wrap-reverse and phone column-reverse can't put the tick box below the buttons */}
-                <div className="flex flex-column items-end w-full">
+                <div className="flex flex-column w-full">
                     <ModalCheckboxWithLabel
-                        label={c('Info').t`Archive existing messages`}
+                        label={c('Info').t`Move their past emails to Archive. You can still search them.`}
                         id="byoe-inbox-cleanup-archive"
                         checked={archive}
                         onChange={() => setArchive((previous) => !previous)}
                         disabled={loading}
                         dataTestId="byoe-inbox-cleanup-archive"
                     />
-                    <div className="flex gap-2">
+                    <p className="m-0 mb-3 text-sm color-weak">{c('Info')
+                        .t`Based only on which emails you've opened.`}</p>
+                    <div className="flex flex-nowrap items-center justify-end gap-2">
                         <Button onClick={modalProps.onClose}>{c('Action').t`Skip`}</Button>
-                        <Button
-                            color="norm"
-                            loading={loading}
-                            disabled={!selectedIDs.length}
-                            onClick={handleUnsubscribe}
-                        >
-                            {c('Action').t`Unsubscribe`}
+                        <Button color="norm" loading={loading} disabled={!selectedCount} onClick={handleUnsubscribe}>
+                            {c('Action').ngettext(
+                                msgid`Unsubscribe from ${selectedCount}`,
+                                `Unsubscribe from ${selectedCount}`,
+                                selectedCount
+                            )}
                         </Button>
                     </div>
                 </div>

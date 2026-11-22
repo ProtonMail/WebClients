@@ -46,9 +46,9 @@ const useShowBYOEInboxCleanupModal = () => {
     const { notify } = useMailGlobalModals();
     const createBYOEInboxCleanupConfirm = useBYOEInboxCleanupConfirm();
 
-    // A change of these mustn't restart loading the senders
-    const openWindowRef = useRef({ notify, createBYOEInboxCleanupConfirm });
-    openWindowRef.current = { notify, createBYOEInboxCleanupConfirm };
+    // A change of this mustn't restart loading the senders
+    const createConfirmRef = useRef(createBYOEInboxCleanupConfirm);
+    createConfirmRef.current = createBYOEInboxCleanupConfirm;
 
     // Offered or cleared once per load, so a failed clear putting the value back doesn't loop
     const hasHandledCleanupRef = useRef(false);
@@ -96,12 +96,11 @@ const useShowBYOEInboxCleanupModal = () => {
                 return;
             }
 
-            const { notify, createBYOEInboxCleanupConfirm } = openWindowRef.current;
             notify({
                 type: ModalType.BYOEInboxCleanup,
                 value: {
                     subscriptions,
-                    onConfirm: createBYOEInboxCleanupConfirm(),
+                    onConfirm: createConfirmRef.current(),
                     onDisplayed: () => {
                         clearCleanup(dispatch);
                     },
@@ -115,7 +114,7 @@ const useShowBYOEInboxCleanupModal = () => {
         return () => {
             controller.abort();
         };
-    }, [importOutcome, isOnboardingDone, dispatch, api]);
+    }, [importOutcome, isOnboardingDone, dispatch, api, notify]);
 };
 
 export default useShowBYOEInboxCleanupModal;

@@ -12,7 +12,8 @@ export interface NewsletterSubscription {
     UnsubscribedTime: number;
     FirstReceivedTime: string;
     LastReceivedTime: string;
-    LastReadTime: string;
+    /** Unix time in seconds, `null` when no email from the sender has been read */
+    LastReadTime: number | null;
     ReceivedMessageCount: number;
     UnreadMessageCount: number;
     TrackersCount?: number;

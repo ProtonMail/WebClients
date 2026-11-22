@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
@@ -11,14 +11,52 @@ import { useMailGlobalModals } from './globalModalContext';
 import type { BYOEInboxCleanupChoice, ModalPayload } from './inteface';
 import { ModalType } from './inteface';
 
-const TITLE = 'Start with a cleaner Inbox';
-const DESCRIPTION = "We found some mailing lists that you don't read. You can unsubscribe from them in one click.";
+const TITLE = 'Your Gmail newsletters, now easier to manage';
+const getDescription = (newsletters: string) => {
+    return `We brought over ${newsletters} and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.`;
+};
+const DESCRIPTION = getDescription('3 newsletters');
 
+const NEVER_OPENED = 'Not opened in a while';
+const OPENED_SOMETIMES = 'You open these sometimes';
+const READ_OFTEN = 'You read these often';
+
+// The fixture's sender has opened 5 of its 10 emails, so these all read often
 const defaultSubscriptions = generateSubscriptionList(3).map((subscription, index) => ({
     ...subscription,
     Name: `Sender ${index + 1}`,
     SenderAddress: `sender-${index + 1}@example.com`,
 }));
+
+const neverOpened = (subscription: NewsletterSubscription): NewsletterSubscription => ({
+    ...subscription,
+    LastReadTime: null,
+});
+
+const openedSometimes = (subscription: NewsletterSubscription): NewsletterSubscription => ({
+    ...subscription,
+    ReceivedMessageCount: 10,
+    UnreadMessageCount: 9,
+});
+
+const withLast30Days = (subscription: NewsletterSubscription, Last30Days: number): NewsletterSubscription => ({
+    ...subscription,
+    ReceivedMessages: { ...subscription.ReceivedMessages, Last30Days },
+});
+
+const toSection: Record<string, (subscription: NewsletterSubscription) => NewsletterSubscription> = {
+    never: neverOpened,
+    sometimes: openedSometimes,
+    often: (subscription) => {
+        return subscription;
+    },
+};
+
+const groupedSubscriptions = [
+    neverOpened(defaultSubscriptions[0]),
+    defaultSubscriptions[1],
+    neverOpened(defaultSubscriptions[2]),
+];
 
 interface RenderModalOptions {
     subscriptions?: NewsletterSubscription[];
@@ -65,14 +103,12 @@ const getSenderCheckbox = ({ Name, SenderAddress }: Pick<NewsletterSubscription,
     }) as HTMLInputElement;
 };
 
-const getSelectAllCheckbox = (count = defaultSubscriptions.length) => {
-    return screen.getByRole('checkbox', {
-        name: `Select all ${count} unused senders`,
-    }) as HTMLInputElement;
+const getSelectAllCheckbox = () => {
+    return screen.getByRole('checkbox', { name: 'Select all' }) as HTMLInputElement;
 };
 
-const expectEverySenderChecked = (checked: boolean) => {
-    defaultSubscriptions.forEach((subscription) => {
+const expectEverySenderChecked = (checked: boolean, subscriptions = defaultSubscriptions) => {
+    subscriptions.forEach((subscription) => {
         if (checked) {
             expect(getSenderCheckbox(subscription)).toBeChecked();
         } else {
@@ -92,7 +128,7 @@ const finishClosing = () => {
 };
 
 const getArchiveCheckbox = () => {
-    return screen.getByRole('checkbox', { name: 'Archive existing messages' });
+    return screen.getByRole('checkbox', { name: 'Move their past emails to Archive. You can still search them.' });
 };
 
 const getUnsubscribeButton = () => {
@@ -117,21 +153,25 @@ const closeWith: Record<string, () => void> = {
         fireEvent.click(screen.getByTestId('modal:close'));
     },
     Escape: () => {
-        fireEvent.keyDown(screen.getByRole('button', { name: 'Skip' }), {
-            key: 'Escape',
-        });
+        fireEvent.keyDown(getDialog(), { key: 'Escape' });
     },
 };
 
 describe('GlobalBYOEInboxCleanupModal', () => {
     describe('opening and closing', () => {
-        it('opens with the title and description when notified', async () => {
+        it('opens with the new title, the magic wand icon and the number of senders', async () => {
             await renderModal();
 
             const title = screen.getByRole('heading', { name: TITLE });
             expect(getDialog()).toHaveAttribute('aria-labelledby', title.id);
             expect(screen.getByText(DESCRIPTION)).toBeInTheDocument();
             expect(screen.getByTestId('byoe-inbox-cleanup-icon')).toBeInTheDocument();
+        });
+
+        it("reads '1 newsletter' in the text for one sender", async () => {
+            await renderModal({ subscriptions: defaultSubscriptions.slice(0, 1) });
+
+            expect(screen.getByText(getDescription('1 newsletter'))).toBeInTheDocument();
         });
 
         it('reports it was shown once when it opens', async () => {
@@ -141,30 +181,10 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             expect(onDisplayed).toHaveBeenCalledTimes(1);
         });
 
-        it('Skip closes without confirming', async () => {
+        it.each(Object.keys(closeWith))('%s closes the window without confirming', async (closeMethod) => {
             const { onConfirm } = await renderModal();
 
-            fireEvent.click(screen.getByRole('button', { name: 'Skip' }));
-
-            expect(isClosing()).toBe(true);
-            expect(onConfirm).not.toHaveBeenCalled();
-        });
-
-        it('the close button closes without confirming', async () => {
-            const { onConfirm } = await renderModal();
-
-            fireEvent.click(screen.getByTestId('modal:close'));
-
-            expect(isClosing()).toBe(true);
-            expect(onConfirm).not.toHaveBeenCalled();
-        });
-
-        it('Escape closes without confirming', async () => {
-            const { onConfirm } = await renderModal();
-
-            fireEvent.keyDown(screen.getByRole('button', { name: 'Skip' }), {
-                key: 'Escape',
-            });
+            closeWith[closeMethod]();
 
             expect(isClosing()).toBe(true);
             expect(onConfirm).not.toHaveBeenCalled();
@@ -213,79 +233,102 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             expect(getSenderCheckbox(defaultSubscriptions[0])).not.toHaveAccessibleName(/S1/);
         });
 
-        it('shows no message count', async () => {
-            await renderModal();
-
-            expect(getSenderCheckbox(defaultSubscriptions[0])).toBeInTheDocument();
-            expect(screen.queryByTestId('subscription-card-stats')).not.toBeInTheDocument();
-            expect(screen.queryByText(/unread|last month/i)).not.toBeInTheDocument();
-        });
-
-        it("reads 'Select all 3 unused senders'", async () => {
-            await renderModal();
-
-            expect(getSelectAllCheckbox(3)).toBeInTheDocument();
-        });
-
-        it('reads the singular for one sender', async () => {
+        it('shows each sender under its section, titled for that section', async () => {
+            const sometimes = openedSometimes(defaultSubscriptions[2]);
             await renderModal({
-                subscriptions: defaultSubscriptions.slice(0, 1),
+                subscriptions: [defaultSubscriptions[0], neverOpened(defaultSubscriptions[1]), sometimes],
             });
 
+            const headings = screen.getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent);
+            expect(headings).toEqual([NEVER_OPENED, OPENED_SOMETIMES, READ_OFTEN]);
             expect(
-                screen.getByRole('checkbox', {
-                    name: 'Select all 1 unused sender',
-                })
+                within(screen.getByRole('list', { name: NEVER_OPENED })).getByRole('checkbox', { name: /Sender 2/ })
             ).toBeInTheDocument();
+            expect(
+                within(screen.getByRole('list', { name: OPENED_SOMETIMES })).getByRole('checkbox', { name: /Sender 3/ })
+            ).toBeInTheDocument();
+            expect(
+                within(screen.getByRole('list', { name: READ_OFTEN })).getByRole('checkbox', { name: /Sender 1/ })
+            ).toBeInTheDocument();
+            expect(screen.getAllByRole('checkbox', { name: /sender-\d@example\.com/ })).toHaveLength(3);
         });
 
-        it('every sender starts selected', async () => {
+        it('hides a section with no senders', async () => {
+            await renderModal({ subscriptions: groupedSubscriptions });
+
+            expect(screen.getByRole('heading', { name: NEVER_OPENED })).toBeInTheDocument();
+            expect(screen.getByRole('heading', { name: READ_OFTEN })).toBeInTheDocument();
+            expect(screen.queryByRole('heading', { name: OPENED_SOMETIMES })).not.toBeInTheDocument();
+        });
+
+        it('starts with no sender ticked', async () => {
             await renderModal();
 
-            expectEverySenderChecked(true);
-            expect(getSelectAllCheckbox()).toBeChecked();
+            expectEverySenderChecked(false);
+            expect(getSelectAllCheckbox()).not.toBeChecked();
             expect(getSelectAllCheckbox().indeterminate).toBe(false);
         });
 
-        it('unticking a sender deselects only that sender', async () => {
+        it.each([
+            { section: 'never', count: 0, line: 'No emails in the last 30 days.' },
+            { section: 'never', count: 1, line: '1 email in the last 30 days. Not opened.' },
+            { section: 'never', count: 7, line: '7 emails in the last 30 days. Not opened.' },
+            { section: 'sometimes', count: 0, line: 'No emails in the last 30 days.' },
+            { section: 'sometimes', count: 1, line: '1 email in the last 30 days. Opened sometimes.' },
+            { section: 'sometimes', count: 7, line: '7 emails in the last 30 days. Opened sometimes.' },
+            { section: 'often', count: 0, line: 'No emails in the last 30 days.' },
+            { section: 'often', count: 1, line: '1 email in the last 30 days. Opened often.' },
+            { section: 'often', count: 22, line: '22 emails in the last 30 days. Opened often.' },
+        ])(
+            'shows "$line" for a $section sender with $count emails in the last 30 days',
+            async ({ section, count, line }) => {
+                await renderModal({
+                    subscriptions: [withLast30Days(toSection[section](defaultSubscriptions[0]), count)],
+                });
+
+                expect(screen.getByText(line)).toBeInTheDocument();
+            }
+        );
+
+        it('keeps the last-30-days line out of the tick box name', async () => {
+            await renderModal();
+
+            expect(getSenderCheckbox(defaultSubscriptions[0])).not.toHaveAccessibleName(/last 30 days/);
+        });
+
+        it('ticking a sender selects only that sender', async () => {
             await renderModal();
 
             fireEvent.click(getSenderCheckbox(defaultSubscriptions[1]));
 
-            expect(getSenderCheckbox(defaultSubscriptions[0])).toBeChecked();
-            expect(getSenderCheckbox(defaultSubscriptions[1])).not.toBeChecked();
-            expect(getSenderCheckbox(defaultSubscriptions[2])).toBeChecked();
-
-            fireEvent.click(getSenderCheckbox(defaultSubscriptions[1]));
-
+            expect(getSenderCheckbox(defaultSubscriptions[0])).not.toBeChecked();
             expect(getSenderCheckbox(defaultSubscriptions[1])).toBeChecked();
+            expect(getSenderCheckbox(defaultSubscriptions[2])).not.toBeChecked();
+
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[1]));
+
+            expect(getSenderCheckbox(defaultSubscriptions[1])).not.toBeChecked();
         });
 
-        it('select all unticks every sender when all are ticked, and ticks every sender otherwise', async () => {
-            await renderModal();
+        it('select all sits in the first section shown and ticks or unticks every sender, partly ticked when some are', async () => {
+            await renderModal({ subscriptions: groupedSubscriptions });
+
+            expect(screen.getAllByRole('checkbox', { name: 'Select all' })).toHaveLength(1);
+            const firstSection = screen.getByRole('region', { name: NEVER_OPENED });
+            expect(firstSection).toContainElement(getSelectAllCheckbox());
 
             fireEvent.click(getSelectAllCheckbox());
-            expectEverySenderChecked(false);
-            expect(getSelectAllCheckbox()).not.toBeChecked();
+            expectEverySenderChecked(true, groupedSubscriptions);
+            expect(getSelectAllCheckbox()).toBeChecked();
 
             fireEvent.click(getSelectAllCheckbox());
-            expectEverySenderChecked(true);
+            expectEverySenderChecked(false, groupedSubscriptions);
 
-            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
-            fireEvent.click(getSelectAllCheckbox());
-            expectEverySenderChecked(true);
-        });
-
-        it('select all is partly ticked when only some senders are ticked', async () => {
-            await renderModal();
-
-            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
-
-            expect(getSelectAllCheckbox().indeterminate).toBe(true);
+            fireEvent.click(getSenderCheckbox(groupedSubscriptions[1]));
             expect(getSelectAllCheckbox()).toBePartiallyChecked();
 
-            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
-
+            fireEvent.click(getSelectAllCheckbox());
+            expectEverySenderChecked(true, groupedSubscriptions);
             expect(getSelectAllCheckbox().indeterminate).toBe(false);
         });
 
@@ -333,16 +376,16 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             await userEvent.keyboard(' ');
 
             expect(senderCheckbox).toHaveFocus();
-            expect(senderCheckbox).not.toBeChecked();
+            expect(senderCheckbox).toBeChecked();
 
             await userEvent.keyboard(' ');
 
-            expect(senderCheckbox).toBeChecked();
+            expect(senderCheckbox).not.toBeChecked();
         });
     });
 
     describe('archive choice and Unsubscribe', () => {
-        it('Archive existing messages starts ticked and can be unticked and ticked again', async () => {
+        it('the archive tick box starts ticked and can be unticked and ticked again', async () => {
             await renderModal();
 
             expect(getArchiveCheckbox()).toBeChecked();
@@ -367,10 +410,11 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             ).toBeTruthy();
         });
 
-        it('Unsubscribe passes the selected senders and the archive choice', async () => {
+        it('Unsubscribe passes the ticked senders and the archive choice', async () => {
             const { onConfirm } = await renderModal();
 
-            fireEvent.click(getSenderCheckbox(defaultSubscriptions[1]));
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[2]));
             fireEvent.click(getArchiveCheckbox());
             fireEvent.click(getUnsubscribeButton());
 
@@ -381,9 +425,10 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             });
         });
 
-        it('Unsubscribe passes every sender and archiving when nothing was changed', async () => {
+        it('Unsubscribe passes every sender and archiving after select all', async () => {
             const { onConfirm } = await renderModal();
 
+            fireEvent.click(getSelectAllCheckbox());
             fireEvent.click(getUnsubscribeButton());
 
             expect(onConfirm).toHaveBeenCalledWith({
@@ -392,14 +437,15 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             });
         });
 
-        it('Unsubscribe is disabled when no sender is selected', async () => {
+        it('the main button counts the ticked senders and is disabled at 0', async () => {
             await renderModal();
 
-            expect(getUnsubscribeButton()).toBeEnabled();
+            expect(screen.getByRole('button', { name: 'Unsubscribe from 0' })).toBeDisabled();
 
-            fireEvent.click(getSelectAllCheckbox());
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[2]));
 
-            expect(getUnsubscribeButton()).toBeDisabled();
+            expect(screen.getByRole('button', { name: 'Unsubscribe from 2' })).toBeEnabled();
         });
 
         it('Unsubscribe shows a spinner until the answer comes', async () => {
@@ -408,6 +454,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
 
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'false');
 
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
             fireEvent.click(getUnsubscribeButton());
 
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'true');
@@ -422,6 +469,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
 
         it('closes when the answer succeeds', async () => {
             await renderModal();
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
 
             await act(async () => {
                 fireEvent.click(getUnsubscribeButton());
@@ -434,7 +482,8 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             const onConfirm = vi.fn(() => Promise.reject(new Error('Cleanup failed')));
             await renderModal({ onConfirm });
 
-            fireEvent.click(getSenderCheckbox(defaultSubscriptions[1]));
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[2]));
             fireEvent.click(getArchiveCheckbox());
             await act(async () => {
                 fireEvent.click(getUnsubscribeButton());
@@ -464,6 +513,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             const deferred = createDeferred();
             await renderModal({ onConfirm: vi.fn(() => deferred.promise) });
 
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
             fireEvent.click(getUnsubscribeButton());
 
             defaultSubscriptions.forEach((subscription) => {
@@ -505,6 +555,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
                         onConfirm: vi.fn(() => deferred.promise),
                     });
 
+                    fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
                     fireEvent.click(getUnsubscribeButton());
                     closeWith[closeMethod]();
 
