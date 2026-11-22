@@ -3,7 +3,7 @@
 }
 
 .participant-host-controls-dropdown {
-	background-color: var(--background-secondary) !important;
+	background-color: var(--background-weak) !important;
 	box-shadow: none !important;
 	border: 1px solid var(--border-norm) !important;
 
@@ -13,7 +13,7 @@
 	}
 
 	.dropdown-content {
-		background-color: var(--background-secondary);
+		background-color: var(--background-weak);
 
 		--max-width: 25rem;
 		--min-width: 15rem;
