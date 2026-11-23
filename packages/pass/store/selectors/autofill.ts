@@ -2,7 +2,7 @@ import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem } f
 import type { PasskeyQueryPayload, SelectedPasskey } from '../../lib/passkeys/types';
 import { isAutofillableShare } from '../../lib/shares/share.predicates';
 import { searchItemsByDomain } from '../../lib/urls/search/match';
-import { DomainMatch } from '../../lib/urls/search/match-url';
+import { DomainMatch, isItemBlockedForUrl } from '../../lib/urls/search/match-url';
 import type { SearchItemsByDomainOptions } from '../../lib/urls/types';
 import { parseUrl } from '../../lib/urls/utils/parser';
 import { PassFeature } from '../../types/api/features';
@@ -57,14 +57,16 @@ export const selectOTPCandidate = (url: Maybe<string>, submission?: FormSubmissi
         }
     );
 
-export const selectPasskeys = (payload: PasskeyQueryPayload) =>
+export const selectPasskeys = (payload: PasskeyQueryPayload, tabUrl: string) =>
     createUncachedSelector(selectVisibleItems, (items): SelectedPasskey[] => {
         const { domain } = parseUrl(payload.domain);
         const credentialIds = payload.credentialIds.map((id) => new Uint8Array(id).toBase64());
+        const parsedTabUrl = parseUrl(tabUrl);
 
         return domain
             ? items
                   .filter((item): item is ItemRevision<'login'> => isActive(item) && isPasskeyItem(item.data))
+                  .filter((item) => !isItemBlockedForUrl(parsedTabUrl, item))
                   .flatMap((item) =>
                       (item.data.content.passkeys ?? [])
                           .filter((passkey) => {

@@ -1,7 +1,13 @@
+import { itemBuilder } from '../../lib/items/item.builder';
+import type { SanitizedPasskey } from '../../lib/passkeys/types';
 import { DomainMatch } from '../../lib/urls/search/match-url';
+import { ItemState } from '../../types/data/items';
+import { AutofillMode } from '../../types/protobuf';
+import type { AutofillUrl } from '../../types/protobuf/item-v1';
 import type { FormSubmission } from '../../types/worker/form';
 import { getStateMock } from '../../utils/tests/fixtures/url-matching-state';
-import { selectAutofillLoginCandidates, selectOTPCandidate } from './autofill';
+import type { State } from '../types';
+import { selectAutofillLoginCandidates, selectOTPCandidate, selectPasskeys } from './autofill';
 
 const state = getStateMock();
 
@@ -157,6 +163,89 @@ describe('Autofill selectors', () => {
         test('should not match subdomain item for sub-subdomain url', () => {
             const candidate = selectOTPCandidate('https://a.b.domain.com')(state);
             expect(candidate).toEqual(undefined);
+        });
+    });
+
+    describe('selectPasskeys', () => {
+        const PASSKEY_DOMAIN = 'example.com';
+        const LOGIN_URL = 'https://example.com/login';
+
+        const createPasskeyItem = (itemId: string, autofillUrls: AutofillUrl[]) => ({
+            itemId,
+            state: ItemState.Active,
+            shareId: 'share1',
+            data: itemBuilder('login').set('content', (content) =>
+                content.set('autofillUrls', autofillUrls).set('passkeys', [
+                    {
+                        credentialId: `credential-${itemId}`,
+                        domain: PASSKEY_DOMAIN,
+                        userName: `user-${itemId}`,
+                    } as SanitizedPasskey,
+                ])
+            ).data,
+        });
+
+        const createState = (items: ReturnType<typeof createPasskeyItem>[]) =>
+            ({
+                items: {
+                    byShareId: {
+                        share1: Object.fromEntries(items.map((item) => [item.itemId, item])),
+                        optimistic: { history: [], checkpoint: undefined },
+                    },
+                },
+                shares: { share1: { shareId: 'share1', flags: 0 } },
+                sharesDedupe: { dedupe: ['share1'], dedupeAndVisible: ['share1'] },
+                user: {},
+            }) as unknown as State;
+
+        const query = (state: State, tabUrl: string) =>
+            selectPasskeys(
+                { domain: new URL(tabUrl).hostname, credentialIds: [] },
+                tabUrl
+            )(state).map(({ itemId, credentialId, username }) => ({ itemId, credentialId, username }));
+
+        test('should return passkeys of items without a `Never` rule', () => {
+            const state = createState([
+                createPasskeyItem('allowed', [{ url: LOGIN_URL, mode: AutofillMode.Default }]),
+                createPasskeyItem('no-url', []),
+            ]);
+
+            expect(query(state, LOGIN_URL)).toEqual([
+                { itemId: 'allowed', credentialId: 'credential-allowed', username: 'user-allowed' },
+                { itemId: 'no-url', credentialId: 'credential-no-url', username: 'user-no-url' },
+            ]);
+        });
+
+        test('should exclude passkeys of items with a `Never` rule on the exact tab url', () => {
+            const state = createState([
+                createPasskeyItem('allowed', [{ url: LOGIN_URL, mode: AutofillMode.Default }]),
+                createPasskeyItem('blocked', [
+                    { url: PASSKEY_DOMAIN, mode: AutofillMode.Default },
+                    { url: LOGIN_URL, mode: AutofillMode.Never },
+                ]),
+            ]);
+
+            expect(query(state, LOGIN_URL)).toEqual([{ itemId: 'allowed', credentialId: 'credential-allowed', username: 'user-allowed' }]);
+        });
+
+        test('should exclude passkeys of items with a `Never` rule when the tab url has a query string and a hash', () => {
+            const state = createState([createPasskeyItem('blocked', [{ url: LOGIN_URL, mode: AutofillMode.Never }])]);
+
+            expect(query(state, `${LOGIN_URL}?next=/home#section`)).toEqual([]);
+        });
+
+        test('should keep passkeys of items with a `Never` rule on another page', () => {
+            const state = createState([
+                createPasskeyItem('blocked-elsewhere', [{ url: 'https://example.com/signin', mode: AutofillMode.Never }]),
+            ]);
+
+            expect(query(state, LOGIN_URL)).toEqual([
+                {
+                    itemId: 'blocked-elsewhere',
+                    credentialId: 'credential-blocked-elsewhere',
+                    username: 'user-blocked-elsewhere',
+                },
+            ]);
         });
     });
 });

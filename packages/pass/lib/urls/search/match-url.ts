@@ -175,6 +175,10 @@ const isBlocker = (autofillUrl: AutofillUrl, matchUrl: ParsedUrl): boolean => {
     return matchExactPath(item, matchUrl) === ItemUrlMatch.EXACT_MATCH;
 };
 
+/** Returns true if any `Never` rule of the item matches the exact url. */
+export const isItemBlockedForUrl = (matchUrl: ParsedUrl, item: ItemRevision<'login'>): boolean =>
+    item.data.content.autofillUrls.some((u) => isBlocker(u, matchUrl));
+
 /** Return a ItemUrlMatch priority given the match url against the autofill urls inside the given item.
  * If any autofill url has the Never mode and matches, the item is fully blocked. */
 export const getItemPriorityForUrl = (
@@ -186,7 +190,7 @@ export const getItemPriorityForUrl = (
     const urls = item.data.content.autofillUrls;
 
     // Prepass to search for `Never` rules and avoid more computations
-    if (urls.some((u) => isBlocker(u, matchUrl))) return ItemUrlMatch.NO_MATCH;
+    if (isItemBlockedForUrl(matchUrl, item)) return ItemUrlMatch.NO_MATCH;
 
     let bestMatch = ItemUrlMatch.NO_MATCH;
 
