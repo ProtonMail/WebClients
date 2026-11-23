@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { selectIsDelegatedAccessSupported } from '../../delegatedAccess';
+import { selectIsOutgoingDelegatedAccessSupported } from '../../delegatedAccess';
 import { selectEnrichedOutgoingDelegatedAccess } from '../../delegatedAccess/shared/outgoing/selector';
 import { selectPasswordReminder } from '../../passwordReminder';
 import { selectAccountRecovery } from '../../recovery/accountRecovery';
@@ -86,7 +86,7 @@ export const selectRecoveryState = createSelector(
         selectPasswordReminder,
         selectSessionRecoveryData,
         selectEnrichedOutgoingDelegatedAccess,
-        selectIsDelegatedAccessSupported,
+        selectIsOutgoingDelegatedAccessSupported,
     ],
     (
         { value: user },
@@ -97,7 +97,7 @@ export const selectRecoveryState = createSelector(
         passwordReminder,
         sessionRecoveryData,
         outgoingDelegatedAccess,
-        isDelegatedAccessSupported
+        isOutgoingDelegatedAccessSupported
     ): RecoveryStateResult => {
         // `isAvailable` already accounts for app support, see `selectEnrichedOutgoingDelegatedAccess`.
         const isEmergencyAccessAvailable = outgoingDelegatedAccess.isAvailable;
@@ -277,7 +277,7 @@ export const selectRecoveryState = createSelector(
                     };
                 }
                 if (
-                    !isDelegatedAccessSupported &&
+                    !isOutgoingDelegatedAccessSupported &&
                     (item.id === 'recoveryContacts' || item.id === 'emergencyContacts')
                 ) {
                     return {

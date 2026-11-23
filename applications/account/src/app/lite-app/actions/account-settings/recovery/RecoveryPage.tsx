@@ -199,10 +199,12 @@ const RecoveryPage = ({ routeConfig }: Props) => {
                             description={dataRecovery.description}
                             subsections={Object.values(dataRecovery.subroutes)}
                             variant={SettingsLayoutVariant.Mobile}
+                            header={
+                                <PasswordResetOptionRequiredWarningInGroup
+                                    emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
+                                />
+                            }
                         >
-                            <PasswordResetOptionRequiredWarningInGroup
-                                emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
-                            />
                             <RecoveryDevice to={getSubroutePath(recoveryPath, dataRecovery.subroutes.deviceRecovery)} />
                             <RecoveryFile to={getSubroutePath(recoveryPath, dataRecovery.subroutes.backupFile)} />
                             <RecoveryContacts

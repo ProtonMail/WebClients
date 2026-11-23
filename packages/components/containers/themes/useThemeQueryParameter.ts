@@ -1,41 +1,48 @@
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 
 import { useTheme } from './ThemeProvider';
 
+const getThemeFromQueryParameter = (): ThemeTypes | undefined => {
+    const queryParams = new URLSearchParams(location.search);
+    const themeQueryParam = queryParams.get('theme');
+
+    if (!themeQueryParam) {
+        return undefined;
+    }
+
+    const themeAsNumber = Number(themeQueryParam) as ThemeTypes;
+    if (!Object.values(ThemeTypes).includes(themeAsNumber)) {
+        return undefined;
+    }
+
+    return themeAsNumber;
+};
+
 /**
  * Sets the current theme to use based on a `theme`
- * query parameter .
+ * query parameter.
  *
- * If no parameter is provide, or isn't a value in
+ * On first load, if no parameter is provided, or isn't a value in
  * ThemeTypes, then it uses the default theme.
+ *
+ * Afterwards, a URL without a valid `theme` (e.g. after navigating
+ * to a subpage) keeps the last applied theme.
  */
 const useThemeQueryParameter = () => {
     const theme = useTheme();
+    const appliedThemeRef = useRef<ThemeTypes | undefined>(undefined);
 
-    const parsedTheme = (() => {
-        const queryParams = new URLSearchParams(location.search);
-        const themeQueryParam = queryParams.get('theme');
-
-        if (!themeQueryParam) {
-            return PROTON_DEFAULT_THEME;
-        }
-
-        const themeAsNumber = Number(themeQueryParam) as ThemeTypes;
-        if (!Object.values(ThemeTypes).includes(themeAsNumber)) {
-            return PROTON_DEFAULT_THEME;
-        }
-
-        return themeAsNumber;
-    })();
+    const appliedTheme = getThemeFromQueryParameter() ?? appliedThemeRef.current ?? PROTON_DEFAULT_THEME;
 
     useLayoutEffect(() => {
-        theme.setTheme(parsedTheme);
-    }, [parsedTheme]);
+        appliedThemeRef.current = appliedTheme;
+        theme.setTheme(appliedTheme);
+    }, [appliedTheme]);
 
-    return parsedTheme;
+    return appliedTheme;
 };
 
 export default useThemeQueryParameter;

@@ -6,7 +6,10 @@ import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import { delegatedAccessActions } from '@proton/account/delegatedAccess';
-import { getIsDelegatedAccessSupportedInApp } from '@proton/account/delegatedAccess/available';
+import {
+    getIsDelegatedAccessSupportedInApp,
+    getIsOutgoingDelegatedAccessSupportedInApp,
+} from '@proton/account/delegatedAccess/available';
 import { initEvent } from '@proton/account/init';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { startLogoutListener } from '@proton/account/persist/listener';
@@ -97,8 +100,13 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
         const dispatch = store.dispatch;
 
-        // Account is the only app where delegated access is wired up, see `getIsDelegatedAccessSupportedInApp`
+        // Account is the only app where delegated access is fully wired up, see `getIsDelegatedAccessSupportedInApp`
         dispatch(delegatedAccessActions.setSupportedInApp(getIsDelegatedAccessSupportedInApp(config.APP_NAME)));
+        dispatch(
+            delegatedAccessActions.setOutgoingSupportedInApp(
+                getIsOutgoingDelegatedAccessSupportedInApp(config.APP_NAME)
+            )
+        );
 
         if (user) {
             dispatch(initEvent({ User: user }));

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import noop from '@proton/utils/noop';
 
 import { contactEmailsThunk } from '../../contactEmails';
-import { selectIsDelegatedAccessSupported } from '../../delegatedAccess';
+import { selectIsOutgoingDelegatedAccessSupported } from '../../delegatedAccess';
 import { listOutgoingDelegatedAccess } from '../../delegatedAccess/outgoingActions';
 import { useDispatch, useSelector } from '../../store/hooks';
 import { type RecoveryStateResult, selectRecoveryState } from './recoveryState';
@@ -17,12 +17,12 @@ import { type RecoveryStateResult, selectRecoveryState } from './recoveryState';
  */
 export const useLoadRecoveryState = () => {
     const dispatch = useDispatch();
-    const isDelegatedAccessSupported = useSelector(selectIsDelegatedAccessSupported);
+    const isOutgoingDelegatedAccessSupported = useSelector(selectIsOutgoingDelegatedAccessSupported);
 
     useEffect(() => {
         dispatch(listOutgoingDelegatedAccess()).catch(noop);
         // Contact emails back the recovery and emergency contact steps, so they're only needed where those exist.
-        if (isDelegatedAccessSupported) {
+        if (isOutgoingDelegatedAccessSupported) {
             dispatch(contactEmailsThunk()).catch(noop);
         }
     }, []);

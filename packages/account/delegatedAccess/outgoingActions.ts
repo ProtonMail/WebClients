@@ -13,8 +13,10 @@ import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateC
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import type { OutgoingDelegatedAccessOutput } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import type {
+    DelegatedAccessTypeEnum,
+    OutgoingDelegatedAccessOutput,
+} from '@proton/shared/lib/interfaces/DelegatedAccess';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
@@ -40,7 +42,7 @@ import {
 import {
     type DelegatedAccessState,
     delegatedAccessActions,
-    selectIsDelegatedAccessSupported,
+    selectIsOutgoingDelegatedAccessSupported,
     selectOutgoingDelegatedAccess,
 } from './index';
 
@@ -67,7 +69,7 @@ export const listOutgoingDelegatedAccess = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!selectIsDelegatedAccessSupported(getState()) || !getIsOutgoingDelegatedAccessAvailable(user)) {
+            if (!selectIsOutgoingDelegatedAccessSupported(getState()) || !getIsOutgoingDelegatedAccessAvailable(user)) {
                 return [];
             }
             const result = await extraArgument.api<{

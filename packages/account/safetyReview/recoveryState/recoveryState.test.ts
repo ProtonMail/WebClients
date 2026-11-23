@@ -1,4 +1,4 @@
-import { selectIsDelegatedAccessSupported } from '../../delegatedAccess';
+import { selectIsOutgoingDelegatedAccessSupported } from '../../delegatedAccess';
 import { selectEnrichedOutgoingDelegatedAccess } from '../../delegatedAccess/shared/outgoing/selector';
 import { selectPasswordReminder } from '../../passwordReminder';
 import { selectAccountRecovery } from '../../recovery/accountRecovery';
@@ -10,7 +10,7 @@ import { selectUserSettings } from '../../userSettings';
 import { getActionableActionItem } from '../components/getActionableActionItem';
 import { type RecoveryItemIds, selectRecoveryState } from './recoveryState';
 
-vi.mock('../../delegatedAccess', () => ({ selectIsDelegatedAccessSupported: vi.fn() }));
+vi.mock('../../delegatedAccess', () => ({ selectIsOutgoingDelegatedAccessSupported: vi.fn() }));
 vi.mock('../../delegatedAccess/shared/outgoing/selector', () => ({
     selectEnrichedOutgoingDelegatedAccess: vi.fn(),
 }));
@@ -63,7 +63,7 @@ const setup = ({ delegatedAccessLoading = false }: { delegatedAccessLoading?: bo
 };
 
 const getRecoveryState = (isDelegatedAccessSupported: boolean) => {
-    vi.mocked(selectIsDelegatedAccessSupported).mockReturnValue(isDelegatedAccessSupported);
+    vi.mocked(selectIsOutgoingDelegatedAccessSupported).mockReturnValue(isDelegatedAccessSupported);
     // App support is baked into `isAvailable`, see `selectEnrichedOutgoingDelegatedAccess`.
     const outgoingDelegatedAccess = vi.mocked(selectEnrichedOutgoingDelegatedAccess)({} as any);
     vi.mocked(selectEnrichedOutgoingDelegatedAccess).mockReturnValue({
