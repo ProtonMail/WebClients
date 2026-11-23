@@ -29,6 +29,8 @@ export const useRequestFork = () => {
             ...options,
             host: config.SSO_URL,
             app: APPS.PROTONPASSBROWSEREXTENSION,
+            hideRememberMe: true,
+            independent: data?.type !== 'reauth',
             plan: BUILD_TARGET === 'safari' && options.forkType === ForkType.SIGNUP ? 'free' : undefined,
         });
 
