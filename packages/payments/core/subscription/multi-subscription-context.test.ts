@@ -1,7 +1,10 @@
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+
+import { buildLumoSubscription, buildMultiSubscriptionContext } from '../../testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '../../testing/buildSubscription';
 import { FREE_SUBSCRIPTION, PLANS } from '../constants';
 import type { Subscription } from './interface';
-import { toSubscriptionList } from './multi-subscription-context';
+import { getSubscriptionWithPlan, toSubscriptionList } from './multi-subscription-context';
 
 describe('toSubscriptionList', () => {
     it('should return no subscriptions for a free subscription', () => {
@@ -28,5 +31,24 @@ describe('toSubscriptionList', () => {
             { ...lumo, SecondarySubscriptions: undefined },
             { ...vpn, SecondarySubscriptions: undefined },
         ]);
+    });
+});
+
+describe('getSubscriptionWithPlan', () => {
+    const webMailPlus = buildSubscription(PLANS.MAIL);
+    const iosLumoPlus = buildLumoSubscription(PLANS.LUMO, { External: SubscriptionPlatform.iOS });
+    const context = buildMultiSubscriptionContext([webMailPlus, iosLumoPlus]);
+
+    it('should return the subscription whose plan is the given plan', () => {
+        expect(getSubscriptionWithPlan(context, PLANS.MAIL)).toBe(webMailPlus);
+    });
+
+    it('should return a store subscription too, even though a web purchase cannot change it', () => {
+        expect(getSubscriptionWithPlan(context, PLANS.LUMO)).toBe(iosLumoPlus);
+    });
+
+    it('should return nothing for a plan no subscription holds', () => {
+        expect(getSubscriptionWithPlan(context, PLANS.BUNDLE)).toBeUndefined();
+        expect(getSubscriptionWithPlan(buildMultiSubscriptionContext([]), PLANS.MAIL)).toBeUndefined();
     });
 });

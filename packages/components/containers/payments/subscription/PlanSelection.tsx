@@ -26,7 +26,6 @@ import {
     getIsB2BAudienceFromSubscription,
     getMaximumCycleForApp,
     getPlan,
-    getPlanName,
     hasLumoAddon,
     hasMeet,
     hasMeetBusiness,
@@ -41,7 +40,10 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { canSelectB2CLumoPlan, getLumoTierUpgrades } from '@proton/payments/core/subscription/lumo-purchase-rules';
-import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import {
+    type MultiSubscriptionContext,
+    getSubscriptionWithPlan,
+} from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-outcome';
 import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
@@ -631,9 +633,7 @@ const PlanSelection = (props: Props) => {
     };
 
     const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[], plansInAudience: Plan[]) => {
-        const subscriptionWithPlan = multiSubscriptionContext.subscriptions.find(
-            (heldSubscription) => getPlanName(heldSubscription) === plan.Name
-        );
+        const subscriptionWithPlan = getSubscriptionWithPlan(multiSubscriptionContext, plan.Name);
         const isCurrentPlan = subscriptionWithPlan !== undefined;
         const isRecommended = !hasRecommended.has(audience) && recommendedPlans.includes(plan.Name as PLANS);
         // Only find one recommended plan, in order of priority
