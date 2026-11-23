@@ -19,17 +19,17 @@ tauri-build = { version = "2.7.4", features = [] }
 
 [dependencies]
 tauri = { version = "2.12.5", features = [] }
-tauri-plugin-opener = "2.5.4"
+tauri-plugin-opener = "2.7.3"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
-tauri-plugin-dialog = "2.7.1"
-tauri-plugin-fs = "2.5.1"
+tauri-plugin-dialog = "2.8.4"
+tauri-plugin-fs = "2.7.1"
 tauri-plugin-store = "2.4.3"
 keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sync-secret-service"] }
-tauri-plugin-process = "2.3.1"
-tauri-plugin-log = "2.9.0"
+tauri-plugin-process = "2.4.0"
+tauri-plugin-log = "2.10.2"
 log = "0.4.29"
-tauri-plugin-http = { version = "2.6.1", features = ["unsafe-headers", "dangerous-settings"] }
+tauri-plugin-http = { version = "2.9.0", features = ["unsafe-headers", "dangerous-settings"] }
 rand = { version = "0.10.0" }
 base64 = { version = "0.22.1" }
 # Tauri Specta v2 is still in beta, and requires using Tauri v2 and Specta v2

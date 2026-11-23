@@ -23,7 +23,6 @@
     "ignorePaths": [
         "**/node_modules/**",
         "vendor/**",
-        "applications/authenticator/src-tauri/**",
         "applications/pass-extension/safari/**",
         "applications/pass-desktop/native/**",
         "applications/pass-desktop/macOS/**"
@@ -64,6 +63,17 @@
             "groupName": "Playwright",
             "matchPackageNames": ["harbor.protontech.ch/mcr.microsoft.com/playwright"],
             "minimumReleaseAge": null
+        },
+        {
+            "description": "Only the Tauri crates are updated in applications/authenticator/src-tauri, the other crates are bumped by hand.",
+            "matchManagers": ["cargo"],
+            "matchPackageNames": ["!tauri", "!tauri-build", "!tauri-plugin-*"],
+            "enabled": false
+        },
+        {
+            "description": "tauri build refuses an npm @tauri-apps package and its crate on different minors, so both sides are bumped in the same MR. Kept apart so a failing Tauri bump does not hold up the other dependencies.",
+            "groupName": "Tauri",
+            "matchPackageNames": ["@tauri-apps/*", "tauri", "tauri-build", "tauri-plugin-*"]
         },
         {
             "groupName": "msw",
