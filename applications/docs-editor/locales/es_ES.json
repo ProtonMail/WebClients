@@ -710,6 +710,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Ya existe una hoja con este nombre"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "Historia es un nombre reservado y no se puede usar para una hoja"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Los nombres de hoja no pueden tener más de 31 caracteres"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Los nombres de hoja no pueden contener \\ /? * [ ] o :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Los nombres de hoja no pueden empezar con apóstrofe"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
