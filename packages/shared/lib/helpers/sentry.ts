@@ -517,6 +517,7 @@ export enum SentryMailInitiatives {
     MIGRATION_TOOL = 'migration-tool',
     MOVE_ACTIONS = 'move-actions',
     REMOVE_EMAIL_TRACKERS = 'remove-email-trackers',
+    SAVE_TO_DRIVE = 'save-to-drive',
     UPSELL_MODALS = 'upsell-modals',
     CATEGORIES_VIEW = 'categories-view',
     LOGGER = 'mail-logger',

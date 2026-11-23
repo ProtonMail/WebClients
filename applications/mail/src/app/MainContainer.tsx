@@ -29,6 +29,7 @@ import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import { MailComposerHost } from './containers/MailComposerHost';
 import { GlobalModalProvider } from './containers/globalModals/GlobalModalProvider';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
+import { MailDriveProvider } from './drive/MailDriveProvider';
 import { useInboxDesktopHeartbeat } from './hooks/useInboxDesktopHeartbeat';
 import MailAppShell from './router/MailAppShell';
 import { extraThunkArguments } from './store/thunk';
@@ -91,19 +92,21 @@ const MainContainer: FunctionComponent = () => {
                                     <EasySwitchStoreProvider>
                                         <EasySwitchStoreInitializer>
                                             <MailComposerHost>
-                                                <ComposerContainer>
-                                                    <CheckAllRefProvider>
-                                                        <ModalsChildren />
-                                                        <ApiModalsHVUpsell api={extraThunkArguments.api} />
+                                                <MailDriveProvider>
+                                                    <ComposerContainer>
+                                                        <CheckAllRefProvider>
+                                                            <ModalsChildren />
+                                                            <ApiModalsHVUpsell api={extraThunkArguments.api} />
 
-                                                        <Switch>
-                                                            <Route
-                                                                path={ROUTE_MAIN}
-                                                                render={() => <MailAppShell ref={mailContentRef} />}
-                                                            />
-                                                        </Switch>
-                                                    </CheckAllRefProvider>
-                                                </ComposerContainer>
+                                                            <Switch>
+                                                                <Route
+                                                                    path={ROUTE_MAIN}
+                                                                    render={() => <MailAppShell ref={mailContentRef} />}
+                                                                />
+                                                            </Switch>
+                                                        </CheckAllRefProvider>
+                                                    </ComposerContainer>
+                                                </MailDriveProvider>
                                             </MailComposerHost>
                                         </EasySwitchStoreInitializer>
                                     </EasySwitchStoreProvider>
