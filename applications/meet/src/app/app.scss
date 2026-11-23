@@ -159,7 +159,7 @@ $profile-colors:
 
 	&:hover {
 		color: var(--color-norm);
-		background-color: transparent !important;
+		background-color: var(--interaction-default) !important;
 	}
 }
 
@@ -523,7 +523,7 @@ button {
 	}
 
 	&.ghost {
-		background-color: transparent;
+		background-color: var(--interaction-default);
 		color: var(--text-norm);
 		border: 1px solid var(--border-norm);
 
@@ -536,7 +536,7 @@ button {
 		}
 
 		&[aria-busy='true'] {
-			background-color: transparent;
+			background-color: var(--interaction-default);
 		}
 	}
 
@@ -559,7 +559,7 @@ button {
 	}
 
 	&.danger-secondary {
-		background-color: transparent;
+		background-color: var(--interaction-default);
 		color: var(--signal-danger-major-1);
 		border: 1px solid var(--border-norm);
 
@@ -572,7 +572,7 @@ button {
 		}
 
 		&[aria-busy='true'] {
-			background-color: transparent;
+			background-color: var(--interaction-default);
 		}
 	}
 }
