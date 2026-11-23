@@ -33,6 +33,14 @@ export default createOxlintConfig({
             },
         },
         {
+            files: ['**/vite.dev.config.mts'],
+            rules: {
+                'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
+                    devDependencies: [...extraneousDependenciesDevDependencies, '**/vite.dev.config.mts'],
+                }),
+            },
+        },
+        {
             files: ['**/TestUtils/**'],
             rules: {
                 'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
