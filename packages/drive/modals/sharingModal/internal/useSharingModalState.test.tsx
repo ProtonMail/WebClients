@@ -17,6 +17,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
@@ -1051,6 +1052,43 @@ describe('useSharingModalState', () => {
                 },
                 showNotification: true,
             });
+        });
+    });
+
+    describe('isPublicLinkEnabled', () => {
+        // Hierarchy root without membership -> node is in my files -> not resharing
+        const renderWithNode = async (node: Partial<NodeEntity>, hierarchy: Partial<NodeEntity>[] = [{}]) => {
+            when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(node);
+            const drive = { ...mockDrive, getNodeHierarchy: vi.fn().mockResolvedValue(hierarchy) };
+            const { result } = renderHook(() => useSharingModalState({ ...mockProps, drive: drive as any }));
+            await waitFor(() => {
+                expect(result.current.initialized).toBe(true);
+            });
+            return result;
+        };
+
+        it.each([
+            { name: 'file without media type', node: { ...mockNodeInfo, mediaType: undefined }, expected: true },
+            { name: 'file with empty media type', node: { ...mockNodeInfo, mediaType: '' }, expected: true },
+            { name: 'file with media type', node: { ...mockNodeInfo, mediaType: 'image/png' }, expected: true },
+            { name: 'folder', node: { ...mockNodeInfo, type: NodeType.Folder }, expected: true },
+            { name: 'album', node: { ...mockNodeInfo, type: NodeType.Album }, expected: false },
+        ])('should return $expected for $name', async ({ node, expected }) => {
+            const result = await renderWithNode(node);
+            expect(result.current.isPublicLinkEnabled).toBe(expected);
+        });
+
+        it('should follow the Docs public sharing flag for Proton Docs', async () => {
+            mockedUseFlagsDriveDocsPublicSharing.mockReturnValue({ isDocsPublicSharingEnabled: false });
+            const result = await renderWithNode({ ...mockNodeInfo, mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE });
+            expect(result.current.isPublicLinkEnabled).toBe(false);
+        });
+
+        it('should be disabled when resharing', async () => {
+            const result = await renderWithNode(mockNodeInfo, [
+                { membership: { role: MemberRole.Editor } } as Partial<NodeEntity>,
+            ]);
+            expect(result.current.isPublicLinkEnabled).toBe(false);
         });
     });
 });

@@ -75,6 +75,42 @@ describe('SharingModal', () => {
         });
     });
 
+    it('should show public link section for a file without media type', async () => {
+        const parentNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~123',
+            name: { ok: true, value: 'root' },
+            directRole: MemberRole.Admin,
+            isSharedByUrl: false,
+        } as NodeEntity;
+        // Files uploaded by some macOS client versions have an empty media type, which the SDK exposes as undefined
+        const viewedNode = {
+            ...commonNodeProperties,
+            uid: 'qwe~456',
+            parentUid: parentNode.uid,
+            type: NodeType.File,
+            mediaType: undefined,
+            isShared: false,
+            isSharedByUrl: false,
+            name: { ok: true, value: 'file-without-media-type' },
+            directRole: MemberRole.Admin,
+        } as NodeEntity;
+
+        const drive = {
+            ...DRIVE_BASE,
+            getNode: (uid: string): Promise<NodeEntity> =>
+                Promise.resolve(uid === parentNode.uid ? parentNode : viewedNode),
+            getNodeHierarchy: (): Promise<NodeEntity[]> => Promise.resolve([parentNode]),
+        };
+
+        renderWithProviders(<SharingModalTestBed nodeUid={viewedNode.uid} drive={drive} />);
+
+        await waitFor(() => {
+            const publicSharing = screen.getByTestId('share-modal-shareWithAnyoneSection');
+            expect(publicSharing).toBeInTheDocument();
+        });
+    });
+
     it('should show loading placeholder while data is being fetched', async () => {
         let resolveNode!: (value: NodeEntity) => void;
         const nodePromise = new Promise<NodeEntity>((resolve) => {
