@@ -934,6 +934,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "New": [
+        "Neu"
+      ],
+      "Skip to main content": [
+        "Zum Hauptinhalt springen"
       ]
     },
     "Actions message": {
@@ -1042,6 +1048,9 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Plätze für den ${ LUMO_SHORT_APP_NAME }-Schreibassistenten"
       ]
     },
     "Alert": {
@@ -3599,6 +3608,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
+      ],
+      "Failed to get invitee keys": [
+        "Einladeschlüssel konnten nicht abgerufen werden"
+      ],
+      "Failed to load the membership": [
+        "Mitgliedschaft konnte nicht geladen werden"
+      ],
+      "Failed to load the membership data": [
+        "Daten der Mitgliedschaft konnten nicht geladen werden"
+      ],
+      "Failed to verify membership": [
+        "Mitgliedschaft konnte nicht geprüft werden"
+      ],
+      "Some invitations could not be loaded": [
+        "Einige Einladungen konnten nicht geladen werden"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Es konnte nicht geprüft werden, ob es aus dem Papierkorb wiederhergestellt werden kann."
       ]
     },
     "error": {
@@ -3936,6 +3963,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Die Anforderung des Sicherheitsschlüssels wurde abgebrochen oder ist abgelaufen. Bitte versuche es erneut."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Ihr Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder verwende eine andere Anmeldemethode."
       ]
     },
     "fido2: Info": {
@@ -5665,6 +5698,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Your current document will be replaced with this version.": [
+        "Das aktuelle Dokument wird durch diese Version ersetzt."
       ]
     },
     "info": {
@@ -7379,7 +7415,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+        "Du hast nun Zugriff auf den neuen ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {

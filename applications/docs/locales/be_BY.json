@@ -944,6 +944,18 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Go to today": [
+        "Перайсці да сённяшняга дня"
+      ],
+      "New": [
+        "Новая"
+      ],
+      "Previous contact": [
+        "Папярэдні кантакт"
+      ],
+      "Skip to main content": [
+        "Перайсці да асноўнага змесціва"
       ]
     },
     "Actions message": {
@@ -3634,6 +3646,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Failed to get invitee keys": [
+        "Не ўдалося атрымаць ключы запрошаных асоб"
+      ],
+      "Failed to load the membership data": [
+        "Не ўдалося загрузіць даныя ўдзелу"
+      ],
+      "Failed to verify membership": [
+        "Не ўдалося спраўдзіць удзел"
+      ],
+      "Some invitations could not be loaded": [
+        "Некаторыя запрашэнні немагчыма загрузіць"
       ]
     },
     "error": {
@@ -5757,6 +5781,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "Decrypting document…": [
+        "Расшыфроўка дакумента…"
+      ],
+      "Opening document…": [
+        "Адкрыццё дакумента…"
+      ],
+      "Preparing editor…": [
+        "Падрыхтоўка рэдактара..."
+      ],
+      "Redirecting…": [
+        "Перанакіраванне…"
       ]
     },
     "info": {
@@ -6253,6 +6289,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Loading": [
+        "Загрузка"
       ]
     },
     "Label for contact group color": {
@@ -10481,6 +10520,40 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробны перыяд завершыцца ${ textDate }. З вас не будзе спаганяцца плата, калі вы адмовіцеся да ${ textDate }. ${ action }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "Everything in Basic, and:": [
+        "Усе функцыі тарыфнага плана Basic, а таксама:"
+      ],
+      "Everything in Free, and:": [
+        "Усе функцыі бясплатнага тарыфнага плана, а таксама:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе функцыі тарыфнага плана Plus, а таксама:"
+      ],
+      "Extended image generation": [
+        "Пашыраная колькасць генерацый"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "Limited image generation": [
+        "Абмежаваная колькасць генерацый відарысаў"
+      ],
+      "Maximum image generation": [
+        "Максімальная колькасць генерацый відарысаў"
+      ],
+      "Maximum Skills and Projects": [
+        "Максімальная колькасць навыкаў і праектаў"
+      ],
+      "More usage": [
+        "Іншыя варыянты выкарыстання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For everyday chats": [
+        "Для штодзённых чатаў"
       ]
     }
   }

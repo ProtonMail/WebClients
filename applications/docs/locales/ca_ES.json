@@ -424,7 +424,7 @@
         "Ves a l'etiqueta"
       ],
       "Go to today": [
-        "Vés a avui"
+        "Va a avui"
       ],
       "Google Drive": [
         "Google Drive"
@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
+      ],
+      "New": [
+        "Crea"
+      ],
+      "Skip to main content": [
+        "Ves al contingut principal"
       ]
     },
     "Actions message": {
@@ -1057,6 +1063,13 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } llicència d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } llicències d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -3614,6 +3627,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "Failed to get invitee keys": [
+        "No s'han pogut obtenir les claus del convidat"
+      ],
+      "Failed to load the membership": [
+        "No s'ha pogut carregar l'afiliació"
+      ],
+      "Failed to load the membership data": [
+        "No s'han pogut carregar les dades d'afiliació"
+      ],
+      "Failed to verify membership": [
+        "No s'ha pogut verificar l'afiliació"
+      ],
+      "Some invitations could not be loaded": [
+        "No s'han pogut carregar algunes invitacions"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "No hem pogut comprovar si es pot recuperar de la paperera o no."
       ]
     },
     "error": {
@@ -3951,6 +3982,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "S'ha cancel·lat la sol·licitud de clau de seguretat o s'ha esgotat el temps d'espera. Torneu-ho a provar."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "El vostre dispositiu no ha pogut completar la sol·licitud de clau de seguretat. Torneu-ho a provar o feu servir un altre mètode d'inici de sessió."
       ]
     },
     "fido2: Info": {
@@ -5704,6 +5741,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Your current document will be replaced with this version.": [
+        "El vostre document actual se substituirà per aquesta versió."
       ]
     },
     "info": {
@@ -6932,7 +6972,7 @@
         "Múltiples rols d'administració"
       ],
       "No streaming support": [
-        "No hi ha suport per la reproducció en continu"
+        "Sense suport d'estríming"
       ],
       "Online document editor": [
         "Editor de documents en línia"

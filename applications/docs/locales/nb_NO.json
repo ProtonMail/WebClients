@@ -934,6 +934,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "New": [
+        "Ny"
+      ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
       ]
     },
     "Actions message": {
@@ -3594,6 +3600,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Vi kunne ikke sjekke om du kan ta det ut av papirkurven."
       ]
     },
     "error": {
@@ -5660,6 +5669,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Can't connect": [
+        "Kan ikke koble til"
+      ],
+      "Creating new document…": [
+        "Oppretter nytt dokument…"
+      ],
+      "Decrypting document…": [
+        "Dekrypterer dokumentet…"
+      ],
+      "Opening document…": [
+        "Åpner dokument…"
+      ],
+      "Preparing editor…": [
+        "Forbereder redigeringsverktøy…"
+      ],
+      "Redirecting…": [
+        "Omdirigerer…"
+      ],
+      "Syncing latest changes…": [
+        "Synkroniserer siste endringer…"
+      ],
+      "Your current document will be replaced with this version.": [
+        "Ditt nåværende dokument vil bli erstattet med denne versjonen."
       ]
     },
     "info": {
@@ -6152,6 +6185,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "Loading": [
+        "Laster"
       ]
     },
     "Label for contact group color": {

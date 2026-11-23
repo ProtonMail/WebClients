@@ -844,6 +844,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "New": [
+        "Új"
+      ],
+      "Next contact": [
+        "Következő névjegy"
+      ],
+      "Previous contact": [
+        "Előző névjegy"
       ]
     },
     "Actions message": {
@@ -910,6 +919,9 @@
       ],
       "Writing assistant seats": [
         "Írási segéd licencek"
+      ],
+      "Users": [
+        "Felhasználók"
       ]
     },
     "Alert": {
@@ -5428,6 +5440,9 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "Customer Support": [
+        "Ügyfélszolgálat"
       ]
     },
     "List title": {
@@ -5517,12 +5532,18 @@
       ],
       "Add-on with free trial": [
         "Bővítmény ingyenes próbaidőszakkal"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írássegéd"
       ]
     },
     "meet_2025: Addon": {
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
       ]
     },
     "meet_2025: Feature": {
