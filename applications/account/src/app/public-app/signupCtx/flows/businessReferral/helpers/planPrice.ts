@@ -14,10 +14,13 @@ const getWholePlanPrices = (checkoutUi: PaymentsCheckoutUI) => ({
     renewalPricePerMonth: checkoutUi.renewPrice / checkoutUi.renewCycle,
 });
 
+const getDiscountRatio = (checkoutUi: PaymentsCheckoutUI) =>
+    checkoutUi.regularAmountPerCycle > 0 ? checkoutUi.withDiscountPerCycle / checkoutUi.regularAmountPerCycle : 1;
+
 const getOneMemberPrices = (checkoutUi: PaymentsCheckoutUI, plan: Plan) => ({
     currency: checkoutUi.currency,
     regularPricePerMonth: getPricingPerMember(plan)[CYCLE.MONTHLY] ?? checkoutUi.oneMemberPerMonth,
-    pricePerMonth: checkoutUi.withDiscountOneMemberPerMonth,
+    pricePerMonth: checkoutUi.oneMemberPerMonth * getDiscountRatio(checkoutUi),
     renewalPricePerMonth: checkoutUi.oneMemberPerMonth,
 });
 
