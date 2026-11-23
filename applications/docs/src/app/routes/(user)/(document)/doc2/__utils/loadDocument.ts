@@ -9,6 +9,7 @@ import type { BootstrapPrefetch, PrivateNodeMeta, Session } from '@proton-docs/r
 import { ClientEditorBridge } from './ClientEditorBridge'
 import type { EditorInvoker } from './EditorInvoker'
 import { type BootstrapFailure, classifyBootstrapError } from './classifyBootstrapError'
+import { pushCommentsToEditor } from './comments/pushCommentsToEditor'
 import { type ClientHandlerDependencies, createClientHandler } from './createClientHandler'
 import { type DocumentRole, getDocumentRole } from './getDocumentRole'
 import { DocsLoadMark, type DocsLoadMarkName, markDocsLoad } from './loadMarks'
@@ -60,8 +61,13 @@ export type LoaderDeps = {
   appVersion: string
   /** Gives the editor the theme, the user's settings and name, sent before it is initialized; never throws */
   sendEditorBasics: (editorInvoker: EditorInvoker) => void
+  /** The document's name as it is now, for the comment notification emails */
+  getDocumentName: () => string | undefined
   /** Stable, so that the bridge built with them is built once */
-  bridgeHandlers: Omit<ClientHandlerDependencies, 'editorFrame' | 'sendUpdate' | 'onEditorError' | 'onEditorRendered'>
+  bridgeHandlers: Omit<
+    ClientHandlerDependencies,
+    'editorFrame' | 'sendUpdate' | 'onEditorError' | 'onEditorRendered' | 'comments'
+  >
 }
 
 export type LoaderIO = {
@@ -227,14 +233,18 @@ class LoaderRun {
 
   /**
    * A base state with an unreadable update fails, since showing the rest would pass an incomplete document as whole.
-   * The session is disconnected when the run is aborted, once bootstrapped if it was still bootstrapping.
+   * The session is disconnected when the run is aborted, once bootstrapped if it was still bootstrapping. Comments are
+   * on for admins and editors only; /doc also shows a viewer the threads, read-only.
    */
   async bootstrap(prefetch: BootstrapPrefetch): Promise<void> {
-    const { client, nodeMeta, logger } = this.deps
+    const { client, nodeMeta, logger, getDocumentName } = this.deps
     const pending = client.createSession({
       documentType: 'doc',
       nodeMeta,
       prefetch,
+      ...((this.role === 'Admin' || this.role === 'Editor') && {
+        comments: { getDocumentNameForEmails: getDocumentName },
+      }),
       // As /doc squashes on dev and black. Mirrors `packages/docs-core/lib/Types/SquashingConstants.ts`, its
       // `GetCommitDULimit`.
       ...(isDevOrBlack() && { commitDuLimit: 50 }),
@@ -279,6 +289,7 @@ class LoaderRun {
       createClientHandler({
         ...this.deps.bridgeHandlers,
         editorFrame,
+        comments: session.comments,
         sendUpdate: (update) => session.sendUpdate(update),
         onEditorError: (error) => this.failEditor(error),
         onEditorRendered: () => {
@@ -347,6 +358,11 @@ class LoaderRun {
       false,
       this.deps.appVersion,
     )
+    // Not before: the editor throws on a call before it is initialized, and reads the threads itself once it mounts
+    const { comments } = this.requireSession()
+    if (comments) {
+      this.listen(pushCommentsToEditor(comments, editorInvoker, this.deps.logger))
+    }
   }
 
   /** Shows the editor, still locked, and has it broadcast its presence so peers see the user at once */

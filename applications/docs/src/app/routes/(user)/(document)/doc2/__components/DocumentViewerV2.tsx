@@ -106,6 +106,7 @@ export function DocumentViewerV2({
   )
   const fetchImage = useEvent((url: string) => fetchExternalImageAsBase64(url, { apiUrl: API_URL, uid: UID }))
   const onPresenceUpdate = useEvent((update: Uint8Array<ArrayBuffer>) => receivePresenceFromEditor(update))
+  const getDocumentName = useEvent(() => node && getNodeName(node))
   // The viewer is keyed by the document, so these never change for it
   const [loaderDeps] = useState<LoaderDeps>(() => ({
     client,
@@ -115,6 +116,7 @@ export function DocumentViewerV2({
     logger,
     appVersion: APP_VERSION,
     sendEditorBasics: sendBasics,
+    getDocumentName,
     bridgeHandlers: {
       isFlagEnabled: checkFlag,
       onWordCount,
@@ -134,6 +136,10 @@ export function DocumentViewerV2({
   const role = ('role' in status && status.role) || 'Viewer'
   const node = useLiveDocumentNode('node' in status ? status.node : undefined)
   const snapshot = useSyncExternalStore(session?.subscribe ?? subscribeToNothing, session?.getSnapshot ?? getNothing)
+  const comments = useSyncExternalStore(
+    session?.comments?.subscribe ?? subscribeToNothing,
+    session?.comments?.getSnapshot ?? getNothing,
+  )
   // The editor's lock, as the Loader computes it, for what edits the document outside the editor: the history's restore
   const editRefused = status.name === 'revealed' && status.editRefused
   const isEditorLocked = !snapshot || isLocked({ snapshot, role, editRefused })
@@ -170,6 +176,9 @@ export function DocumentViewerV2({
   }, [fileActions.trashState, inTrash, leaveTrash])
   const print = () => {
     exportInvoker?.printAsPDF().catch((error) => logger.warn('Failed to print the document', error))
+  }
+  const showComments = () => {
+    exportInvoker?.showCommentsPanel().catch((error) => logger.warn('Failed to show the comments panel', error))
   }
   const download = (format: DataTypesThatDocumentCanBeExportedAs) => {
     const name = node && getNodeName(node)
@@ -236,6 +245,9 @@ export function DocumentViewerV2({
       isCreatingSpreadsheet={fileActions.isCreatingSpreadsheet}
       isMakingACopy={fileActions.isMakingACopy}
       onFileMenuAction={onFileMenuAction}
+      hasUnreadComments={comments?.hasUnread ?? false}
+      // A viewer made an editor after the session opened has no comments until the document opens again
+      onShowComments={exportInvoker && session?.comments && showComments}
       status={editorInvoker && snapshot && <SessionStatus snapshot={snapshot} onRetry={retryConnection} />}
     />
   )

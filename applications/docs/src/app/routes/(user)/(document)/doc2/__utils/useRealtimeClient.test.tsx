@@ -93,6 +93,19 @@ describe('useRealtimeClient', () => {
     })
   })
 
+  test('verifies comment signatures, so a session can turn comments on', () => {
+    const { result } = renderHook(() => useRealtimeClient(), { wrapper })
+
+    expect(result.current.config.comments?.verifySignature).toEqual(expect.any(Function))
+    expect(() =>
+      result.current.createSession({
+        documentType: 'doc',
+        nodeMeta,
+        comments: { getDocumentNameForEmails: () => 'Plans' },
+      }),
+    ).not.toThrow()
+  })
+
   test('sends Docs API requests through the app API', async () => {
     const response = new Response('{}')
     api.mockResolvedValue(response)

@@ -6,8 +6,10 @@ import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/WordCountTypes'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import type { SessionComments } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
 
+import { toEditorComment, toEditorThread } from './comments/editorComments'
 import { isRunningInNativeMobileWeb } from './isRunningInNativeMobileWeb'
 
 export type ClientHandler = EditorRequiresClientMethods
@@ -26,14 +28,16 @@ export type ClientHandlerDependencies = {
   /** Where the editor's awareness broadcasts go */
   onPresenceUpdate: (update: Uint8Array<ArrayBuffer>) => void
   fetchExternalImageAsBase64: (url: string) => Promise<string | undefined>
+  /** The session's comment threads; undefined for a viewer, who has none */
+  comments: SessionComments | undefined
   logger: LoggerInterface
 }
 
 /**
  * Answers every call from the editor for a text document. Adapted from
  * `packages/docs-core/lib/Bridge/EditorToClientRequestHandler.ts`, which doc2 must not import.
- * The editor never times out a call to the client, so each one gets a reply. With no comments yet, the calls for those
- * change nothing and answer as if there were none.
+ * The editor never times out a call to the client, so each one gets a reply: a comment call that fails, or that comes
+ * with no comments, answers as one that failed. The suggestion calls change nothing and answer as if there were none.
  */
 export function createClientHandler({
   editorFrame,
@@ -46,8 +50,25 @@ export function createClientHandler({
   onFileMenuAction,
   onPresenceUpdate,
   fetchExternalImageAsBase64,
+  comments,
   logger,
 }: ClientHandlerDependencies): ClientHandler {
+  const answerCommentCall = async <T>(
+    call: string,
+    run: (comments: SessionComments) => T | Promise<T>,
+    failed: T,
+  ): Promise<T> => {
+    try {
+      if (!comments) {
+        throw new Error('The session has no comments')
+      }
+      return await run(comments)
+    } catch (error) {
+      logger.error('Comment call failed', { call }, error as Error)
+      return failed
+    }
+  }
+
   return {
     // The editor renders nothing until it knows which editor package to load
     checkIfFeatureFlagIsEnabled: async (flag) => isFlagEnabled(flag),
@@ -80,22 +101,45 @@ export function createClientHandler({
       showModal({ title: c('Title').t`Something went wrong`, translatedMessage: message }),
     showGenericInfoModal: (props) => showModal(props),
 
-    getAllThreads: async () => [],
-    getTypersExcludingSelf: async () => [],
-    createCommentThread: async () => undefined,
+    getAllThreads: async () => comments?.getSnapshot().threads.map(toEditorThread) ?? [],
+    getTypersExcludingSelf: async (threadId) => [...(comments?.getSnapshot().typers[threadId] ?? [])],
+    createCommentThread: (content, markId, createMark) =>
+      answerCommentCall(
+        'createCommentThread',
+        async (comments) => toEditorThread(await comments.createThread({ content, markId, createMark })),
+        undefined,
+      ),
+    createComment: (content, threadId) =>
+      answerCommentCall(
+        'createComment',
+        async (comments) => toEditorComment(await comments.reply(threadId, content)),
+        undefined,
+      ),
+    editComment: (threadId, commentId, content) =>
+      answerCommentCall(
+        'editComment',
+        (comments) => succeeds(comments.editComment(threadId, commentId, content)),
+        false,
+      ),
+    deleteComment: (threadId, commentId) =>
+      answerCommentCall('deleteComment', (comments) => succeeds(comments.deleteComment(threadId, commentId)), false),
+    resolveThread: (threadId) =>
+      answerCommentCall('resolveThread', (comments) => succeeds(comments.resolveThread(threadId)), false),
+    unresolveThread: (threadId) =>
+      answerCommentCall('unresolveThread', (comments) => succeeds(comments.unresolveThread(threadId)), false),
+    deleteThread: (threadId) =>
+      answerCommentCall('deleteThread', (comments) => succeeds(comments.deleteThread(threadId)), false),
+    markThreadAsRead: (threadId) =>
+      answerCommentCall('markThreadAsRead', (comments) => comments.markThreadAsRead(threadId), undefined),
+    beganTypingInThread: (threadId) =>
+      answerCommentCall('beganTypingInThread', (comments) => comments.setTyping(threadId, true), undefined),
+    stoppedTypingInThread: (threadId) =>
+      answerCommentCall('stoppedTypingInThread', (comments) => comments.setTyping(threadId, false), undefined),
+    // Suggesting stays off in doc2's editor
     createSuggestionThread: async () => undefined,
-    createComment: async () => undefined,
-    editComment: async () => false,
-    deleteComment: async () => false,
-    resolveThread: async () => false,
-    unresolveThread: async () => false,
-    deleteThread: async () => false,
     acceptSuggestion: async () => false,
     rejectSuggestion: async () => false,
     reopenSuggestion: async () => false,
-    markThreadAsRead: async () => {},
-    beganTypingInThread: async () => {},
-    stoppedTypingInThread: async () => {},
 
     openLink: async (url) => {
       const link = document.createElement('a')
@@ -119,4 +163,9 @@ export function createClientHandler({
     reportSheetsYjsDriftDetected: () => {},
     showYjsDriftDetectedErrorModal: () => {},
   }
+}
+
+async function succeeds(change: Promise<void>): Promise<true> {
+  await change
+  return true
 }

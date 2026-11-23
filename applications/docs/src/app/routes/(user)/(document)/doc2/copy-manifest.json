@@ -1,5 +1,13 @@
 [
   {
+    "doc2": "__components/CommentsButton.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/CommentsButton.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "The button and its unread dot, the dot from the session's comments and the panel from the page as props instead of docs-core's event bus and editor controller. Disabled until the editor shows the document; the icon is named."
+  },
+  {
     "doc2": "__components/DocumentActiveUsers.tsx",
     "kind": "copy",
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentActiveUsers.tsx",
@@ -272,7 +280,7 @@
     "source": "packages/docs-core/lib/Bridge/EditorInvoker.ts",
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
-    "notes": "Only the methods doc2 calls, added as doc2 needed them through 6802af2d1ce, getDocumentState for the version history, and replaceEditorState for its restore, with the source unchanged. A call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever."
+    "notes": "Only the methods doc2 calls, added as doc2 needed them through 6802af2d1ce, getDocumentState for the version history, replaceEditorState for its restore, and the comment pushes (showCommentsPanel, handleCommentsChange, handleTypingStatusChange and the four comment mark node calls), with the source unchanged. A call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever."
   },
   {
     "doc2": "__utils/NativeVersionHistory.ts",
@@ -302,12 +310,73 @@
     "notes": "The types only, over the SDK's HistoryEntry; no getVersionHistoryUpdatesFromCommit, as the SDK hands decompressed updates."
   },
   {
+    "doc2": "__utils/comments/editorComments.ts",
+    "doc2Symbol": "Comment",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Models/Comments.ts",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "The comment the editor bridge carries, without fromPayload: doc2 builds it from the SDK's comment."
+  },
+  {
+    "doc2": "__utils/comments/editorComments.ts",
+    "doc2Symbol": "CommentThread",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Models/CommentThread.ts",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "The thread the editor bridge carries, without fromPayload: doc2 builds it from the SDK's thread, its mark id as its local id."
+  },
+  {
+    "doc2": "__utils/comments/getPublicKeysForEmail.ts",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Crypto/getPublicKeysForEmail.ts",
+    "sourceCommit": "30768158b00317fa19aba81fd750a1d1ac526816",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "Verbatim: a comment author's armored public keys, for verifySignature."
+  },
+  {
+    "doc2": "__utils/comments/pushCommentsToEditor.ts",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx",
+    "sourceSymbol": "its CommentsChanged, typing status and comment mark node effects",
+    "sourceCommit": "a0b37d9d8132278e1da6061b3f1acc35ea0a599b",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "The same editor calls, fed by session.comments' snapshots and markChange instead of docs-core's event bus. handleCommentsChange only when the threads changed, not for typing alone, and only once the editor is initialized, as it throws on a call before."
+  },
+  {
+    "doc2": "__utils/comments/useGetVerificationKey.ts",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Crypto/useGetVerificationKey.ts",
+    "sourceCommit": "436b75bc9ff5b73519e63f4fca70b3ed319b25a8",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "Verbatim: the author's keys for verifySignature, own addresses' first, then the API's."
+  },
+  {
+    "doc2": "__utils/comments/verifyCommentSignature.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/UseCase/DecryptComment.ts",
+    "sourceSymbol": "verifySignature",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "The SDK's verifySignature: the same outcomes, as verified or invalid, with the same logs. Anonymous comments and public keys never reach it: the SDK reads them unavailable."
+  },
+  {
+    "doc2": "__utils/comments/verifyCommentSignature.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Services/Encryption/EncryptionService.ts",
+    "sourceSymbol": "verifyData",
+    "sourceCommit": "a0b37d9d8132278e1da6061b3f1acc35ea0a599b",
+    "copiedIn": "941f456ea0a8e07d371145f6e49e99ce166d26f9",
+    "notes": "The verifyMessage options, with the SDK's whole signature context, required."
+  },
+  {
     "doc2": "__utils/createClientHandler.ts",
     "kind": "adaptation",
     "source": "packages/docs-core/lib/Bridge/EditorToClientRequestHandler.ts",
     "sourceCommit": "7eaae00c69cae4c831e516739643f42f4ff9ab53",
     "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
-    "notes": "Six method bodies verbatim; the comment and sheets methods stubbed. The source's later 952608e316c only retypes storeSpreadsheetPatches, which doc2 stubs."
+    "notes": "Six method bodies verbatim; the comment methods served from the session's comments, converted to docs-shared's types, each answering a failure as one; the suggestion and sheets methods stubbed. The source's later 952608e316c only retypes storeSpreadsheetPatches, which doc2 stubs."
   },
   {
     "doc2": "__utils/createDocsApiFetch.ts",

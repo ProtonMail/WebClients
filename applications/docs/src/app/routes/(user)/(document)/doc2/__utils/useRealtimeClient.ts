@@ -10,6 +10,8 @@ import { type PrivateNodeMeta, createClient, prefetchBootstrap } from '@proton-d
 
 import { useApplication } from '~/utils/application-context'
 
+import { useGetVerificationKey } from './comments/useGetVerificationKey'
+import { createVerifyCommentSignature } from './comments/verifyCommentSignature'
 import { createDocsApiFetch } from './createDocsApiFetch'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 import { useGetMemberAddressKeys } from './useGetMemberAddressKeys'
@@ -21,6 +23,7 @@ export function useRealtimeClient() {
   const { UID } = useAuthentication()
   const api = useApi()
   const getMemberAddressKeys = useGetMemberAddressKeys(api)
+  const getVerificationKey = useGetVerificationKey(api)
 
   const [client] = useState(() => {
     // The x-pm-appversion value the docs-core api and websocket send, such as `web-docs@0.0.2.89`
@@ -53,6 +56,7 @@ export function useRealtimeClient() {
           return { documentContentKey, ...memberAddressKeys }
         },
       },
+      comments: { verifySignature: createVerifyCommentSignature(getVerificationKey, application.logger) },
       logging: { enabled: true, sink: (line) => application.logger.info(line) },
     })
     return {

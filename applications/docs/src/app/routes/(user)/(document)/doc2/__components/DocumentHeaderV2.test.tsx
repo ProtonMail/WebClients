@@ -1,4 +1,4 @@
-import { act, render, screen, within } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
 
@@ -7,7 +7,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import type { DocumentRole } from '../__utils/getDocumentRole'
-import { DocumentHeaderV2 } from './DocumentHeaderV2'
+import { DocumentHeaderV2, type DocumentHeaderV2Props } from './DocumentHeaderV2'
 
 // The user menu and the promo banner need the account store; the title menu has its own tests
 vi.mock('@proton/components/containers/heading/UserDropdown', () => ({ default: () => <div>User menu</div> }))
@@ -21,12 +21,8 @@ const mockDrive = { name: 'drive' }
 vi.mock('@proton/drive/sdk', () => ({ getDrive: () => mockDrive }))
 vi.mock('~/utils/application-context', () => ({ useApplication: () => ({ logger: { warn: vi.fn() } }) }))
 
-// The atoms Tooltip's default open delay
-const TOOLTIP_OPEN_DELAY_MS = 1000
-
 describe('DocumentHeaderV2', () => {
   afterEach(() => {
-    vi.useRealTimers()
     vi.clearAllMocks()
   })
 
@@ -52,19 +48,29 @@ describe('DocumentHeaderV2', () => {
   })
 
   test.each<DocumentRole>(['Editor', 'Admin'])(
-    'a %s sees no view-only pill, and the comments button as a disabled stub with a tooltip',
+    'a %s sees no view-only pill, and the comments button, disabled until it can open the comments panel',
     async (role) => {
-      renderHeader(role)
+      const { rerender } = renderHeader(role)
 
       expect(screen.getByTestId('status-container')).not.toHaveTextContent('View only')
-      expect(screen.getByTestId('comments-button')).toBeDisabled()
+      expect(screen.getByRole('button', { name: 'Comments' })).toBeDisabled()
 
-      vi.useFakeTimers()
-      await userEvent.setup({ advanceTimers: vi.advanceTimersByTime }).hover(screen.getByTestId('comments-button-stub'))
-      act(() => vi.advanceTimersByTime(TOOLTIP_OPEN_DELAY_MS))
-      expect(screen.getByRole('tooltip')).toHaveTextContent('Comments are not available yet')
+      const onShowComments = vi.fn()
+      rerender(headerElement(role, undefined, { onShowComments }))
+      await userEvent.click(screen.getByRole('button', { name: 'Comments' }))
+
+      expect(onShowComments).toHaveBeenCalledTimes(1)
     },
   )
+
+  test('the comments button shows a dot while a thread is unread', () => {
+    const { rerender } = renderHeader('Editor')
+    expect(screen.queryByTestId('comments-unread-dot')).not.toBeInTheDocument()
+
+    rerender(headerElement('Editor', undefined, { hasUnreadComments: true }))
+
+    expect(screen.getByTestId('comments-unread-dot')).toBeInTheDocument()
+  })
 
   // As /doc's ConnectionStatus: the pill shows for every role, while the Loader locks only non-admins
   test.each<DocumentRole>(['Viewer', 'Editor', 'Admin'])(
@@ -134,7 +140,11 @@ function renderHeader(role: DocumentRole, status?: ReactNode) {
   return render(headerElement(role, status))
 }
 
-function headerElement(role: DocumentRole, status?: ReactNode) {
+function headerElement(
+  role: DocumentRole,
+  status?: ReactNode,
+  comments: Pick<DocumentHeaderV2Props, 'hasUnreadComments' | 'onShowComments'> = {},
+) {
   return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
       <DocumentHeaderV2
@@ -154,6 +164,7 @@ function headerElement(role: DocumentRole, status?: ReactNode) {
         isMakingACopy={false}
         onFileMenuAction={vi.fn()}
         status={status}
+        {...comments}
       />
     </ConfigContext.Provider>
   )

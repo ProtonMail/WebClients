@@ -62,6 +62,8 @@ describe('ClientEditorBridge', () => {
         onFileMenuAction,
         onPresenceUpdate,
         fetchExternalImageAsBase64,
+        // A Viewer's session has no comments
+        comments: undefined,
         logger,
       }),
       logger,
@@ -324,6 +326,33 @@ describe('ClientEditorBridge', () => {
     },
     { functionName: 'getClientId', call: (invoker) => invoker.getClientId(), args: [], returnValue: 42 },
     { functionName: 'broadcastPresenceState', call: (invoker) => invoker.broadcastPresenceState(), args: [] },
+    { functionName: 'showCommentsPanel', call: (invoker) => invoker.showCommentsPanel(), args: [] },
+    { functionName: 'handleCommentsChange', call: (invoker) => invoker.handleCommentsChange(), args: [] },
+    {
+      functionName: 'handleTypingStatusChange',
+      call: (invoker) => invoker.handleTypingStatusChange('thread-1'),
+      args: ['thread-1'],
+    },
+    {
+      functionName: 'handleCreateCommentMarkNode',
+      call: (invoker) => invoker.handleCreateCommentMarkNode('mark-1'),
+      args: ['mark-1'],
+    },
+    {
+      functionName: 'handleRemoveCommentMarkNode',
+      call: (invoker) => invoker.handleRemoveCommentMarkNode('mark-1'),
+      args: ['mark-1'],
+    },
+    {
+      functionName: 'handleResolveCommentMarkNode',
+      call: (invoker) => invoker.handleResolveCommentMarkNode('mark-1'),
+      args: ['mark-1'],
+    },
+    {
+      functionName: 'handleUnresolveCommentMarkNode',
+      call: (invoker) => invoker.handleUnresolveCommentMarkNode('mark-1'),
+      args: ['mark-1'],
+    },
     {
       functionName: 'syncEvent',
       call: (invoker) => invoker.syncEvent(SCROLL_TO_USER_CURSOR),

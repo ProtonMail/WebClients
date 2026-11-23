@@ -1,6 +1,4 @@
 import { useConfig } from '@proton/app-context/useConfig'
-import { Button } from '@proton/atoms/Button/Button'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
 import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
@@ -8,7 +6,6 @@ import { getDrive } from '@proton/drive/sdk'
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle'
 import { IcEye } from '@proton/icons/icons/IcEye'
-import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import type { ReactNode } from 'react'
@@ -21,12 +18,16 @@ import { getDocsReportContextLines } from '~/utils/report-context'
 
 import { getWindowLocationExcludingDomain } from '../__utils/getWindowLocationExcludingDomain'
 import { isParticipantLimitReached } from '../__utils/activeUsers'
+import { CommentsButton } from './CommentsButton'
 import { DocumentActiveUsers, type DocumentActiveUsersProps } from './DocumentActiveUsers'
 import { DocumentTitleMenu, type DocumentTitleMenuProps } from './DocumentTitleMenu'
 
 export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
   /** The session's status pills, next to the title where /doc shows its `ConnectionStatus` */
   status?: ReactNode
+  hasUnreadComments?: boolean
+  /** Opens the editor's comments panel, once the editor shows the document */
+  onShowComments?: () => void
 }
 
 /**
@@ -37,7 +38,7 @@ export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
  */
 export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps) {
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
-  const { role, status, ...titleMenuProps } = props
+  const { role, status, hasUnreadComments = false, onShowComments, ...titleMenuProps } = props
   const { sharingModal, showSharingModal } = useSharingModal()
 
   return (
@@ -68,7 +69,7 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
           {role === 'Admin' && (
             <HeaderShareButton onClick={() => showSharingModal({ drive: getDrive(), nodeUid: props.node.uid })} />
           )}
-          {role !== 'Viewer' && <CommentsButtonStub />}
+          {role !== 'Viewer' && <CommentsButton hasUnread={hasUnreadComments} onShowComments={onShowComments} />}
           <div className="w-2" />
           <UserDropdown
             app={APPS.PROTONDOCS}
@@ -89,25 +90,6 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
 
 /** The session's participants, for the active users and the participant limit */
 type ActiveUsersProps = Pick<DocumentActiveUsersProps, 'participants' | 'editorInvoker'>
-
-/** A stub until comments come to doc2, after the SDK's Phase 2: shown disabled, with a tooltip saying so. */
-function CommentsButtonStub() {
-  return (
-    <Tooltip title={c('Info').t`Comments are not available yet`}>
-      <span className="flex" data-testid="comments-button-stub">
-        <Button
-          icon
-          shape="ghost"
-          disabled
-          data-testid="comments-button"
-          className="flex items-center justify-center gap-2 head-max-849:!border head-max-849:!border-[--border-norm] head-max-849:!p-[0.5em]"
-        >
-          <IcSpeechBubble alt={c('Action').t`Comments`} />
-        </Button>
-      </span>
-    </Tooltip>
-  )
-}
 
 // Copied from `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx`, which
 // imports docs-core.
