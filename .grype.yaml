@@ -155,7 +155,7 @@ ignore:
       type: npm
       version: 6.1.2
 
-  ## uuid@3.4.0 / 8.3.2 / 9.0.1 (via request, sockjs, jest-junit, istanbul-lib-processinfo,
+  ## uuid@3.4.0 / 8.3.2 / 9.0.1 (via request, sockjs, istanbul-lib-processinfo,
   ## socketcluster-client, gaxios and googleapis-common)
   # Accepted risk: patched only in >=11.1.1; parents pin ^3, ^8 and ^9 (sockjs 0.3.24, the latest
   # release, still requires ^8.3.2). The flaw needs a caller-supplied buffer to v3/v5/v6; every
@@ -185,7 +185,7 @@ ignore:
       type: npm
       version: 9.0.1
 
-  ## glob@10.5.0 / 13.0.0 / 13.0.6 (via jest 30, test-exclude, rimraf 5/6, cacache, sucrase,
+  ## glob@10.5.0 / 13.0.0 / 13.0.6 (via test-exclude, rimraf 5/6, cacache, sucrase,
   ## ttag-cli, netlify-cli's @fastify/static and @vercel/nft)
   # Accepted risk: patched only in 14.0.2, a major that also moves matching to minimatch 11.
   # Every parent, at its latest release, still requires ^10 or ^13 (ttag-cli 1.12.0 pins 13.0.0),

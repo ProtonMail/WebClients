@@ -6,12 +6,9 @@ export const extraneousDependenciesDevDependencies = [
     '**/postcss.config.{js,ts}',
     '**/webpack.config.{js,ts}',
     '**/webpack.options.{js,ts}',
-    // Jest
+    // Mocks
     '**/__mocks__/**',
     '**/__tests__/**',
-    '**/jest.config.{js,ts}',
-    '**/jest.setup.{js,ts}',
-    '**/jest.transform.{js,ts}',
     // Vite
     '**/vite.config.{js,ts}',
     '**/vitest*.config.{js,ts}',

@@ -12,7 +12,7 @@ packages:
     - tests/packages/*
     - utilities/*
 
-# Each workspace declares the type packages it uses. Most list node, webpack-env and jest in
+# Each workspace declares the type packages it uses. Most list node and webpack-env in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
 # check:constraints requires every workspace to declare these dependencies as "catalog:"; see
 # utilities/repo-rules/README.md for the exceptions.
@@ -59,7 +59,6 @@ catalog:
     '@testing-library/user-event': ^14.6.12
     '@types/chrome': ^0.3.7
     '@types/history': ^4.7.11
-    '@types/jest': ^30.0.0
     '@types/jsdom': ^21.1.7
     '@types/lodash': ^4.17.27
     '@types/node': ^24.19.2
@@ -228,8 +227,7 @@ patchedDependencies:
 # Missing peer declarations. Without them, these packages resolve the dependency through pnpm's
 # hidden hoisting directory, which may hold a different version than the workspace uses.
 packageExtensions:
-    # Requires `electron`, which the desktop apps pin to different versions. Jest mocks are keyed by
-    # resolved path, so `jest.mock('electron')` only applies if it shares the app's copy.
+    # Requires `electron`, which the desktop apps pin to different versions.
     # electron-log gets no peer. With one, a desktop app on another electron version than
     # @proton/shared bundles two copies of it and crashes on start.
     electron-store@8:
