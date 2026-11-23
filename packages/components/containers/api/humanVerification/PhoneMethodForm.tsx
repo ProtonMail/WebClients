@@ -37,6 +37,7 @@ const PhoneMethodForm = ({ onSubmit, defaultPhone = '', defaultCountry, isEmbedd
             <InputFieldTwo
                 as={PhoneInput}
                 id="phone"
+                autoComplete="tel"
                 embedded={isEmbedded}
                 bigger
                 label={c('Label').t`Phone number`}
