@@ -141,6 +141,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     const { options } = payments;
 
     const hasFullCheckoutDetails = !payments.loadingTotal;
+    const taxAmountLoader = <SkeletonLoader width="5rem" height="1.25rem" />;
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const cycleOptions = [
@@ -193,7 +194,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
             taxExclusive: (item) => (
                 <div className="flex justify-space-between gap-2" data-testid="tax">
                     <span>{item.taxRateElement}</span>
-                    <span>{item.taxAmountElement}</span>
+                    <span>{hasFullCheckoutDetails ? item.taxAmountElement : taxAmountLoader}</span>
                 </div>
             ),
             taxInclusive: (item) => {
@@ -201,7 +202,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
                     return (
                         <div className="flex justify-space-between gap-2" data-testid="tax">
                             <span>{item.taxRateElement}</span>
-                            <span>{item.taxAmountElement}</span>
+                            <span>{hasFullCheckoutDetails ? item.taxAmountElement : taxAmountLoader}</span>
                         </div>
                     );
                 }

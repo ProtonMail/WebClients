@@ -162,7 +162,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
     const willAutoRenew = eligibleTrials.creditCardRequiredPlans.includes(payments.selectedPlan.name);
 
     const showTaxRow = step === 'payment';
-    const taxRow = showTaxRow && <TaxRow checkResult={payments.checkResult} />;
+    const taxRow = showTaxRow && <TaxRow checkResult={payments.checkResult} loading={!hasFullCheckoutDetails} />;
 
     const cycleOptions = [
         { text: c('Signup').t`Monthly`, value: CYCLE.MONTHLY },
@@ -196,11 +196,11 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
     const divider = showDivider && <hr className="my-4 bg-weak" />;
 
     const copyAfterTrial = () => {
-        if (!hasFullCheckoutDetails) {
-            return <SkeletonLoader width="100%" height="1.25rem" />;
-        }
         if (isVPNPlanWithoutTrial) {
             return null;
+        }
+        if (!hasFullCheckoutDetails) {
+            return <SkeletonLoader width="100%" height="1.25rem" />;
         }
         if (willAutoRenew) {
             return <p className="m-0">{c('Signup').t`Then ${priceWithDiscountPerMonth} per month. Cancel anytime.`}</p>;
@@ -209,11 +209,11 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
     };
 
     const copyAfterTrialPayment = () => {
-        if (!hasFullCheckoutDetails) {
-            return <SkeletonLoader width="100%" height="1.25rem" />;
-        }
         if (isVPNPlanWithoutTrial) {
             return null;
+        }
+        if (!hasFullCheckoutDetails) {
+            return <SkeletonLoader width="100%" height="1.25rem" />;
         }
         return (
             <div className="flex justify-space-between gap-2 text-rg">
@@ -228,7 +228,13 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
             return (
                 <>
                     <span className="text-semibold">{c('Signup').t`Total`}</span>
-                    <span className="text-semibold">{priceWithDiscountPerCycle}</span>
+                    {hasFullCheckoutDetails ? (
+                        <span className="text-semibold" data-testid="total">
+                            {priceWithDiscountPerCycle}
+                        </span>
+                    ) : (
+                        <SkeletonLoader width="6.5rem" height="1.4rem" />
+                    )}
                 </>
             );
         }
