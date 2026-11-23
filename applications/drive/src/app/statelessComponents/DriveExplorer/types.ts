@@ -73,8 +73,8 @@ export type CellDefinitionConfig = Omit<CellDefinition, 'render'>;
  * Display configuration options
  */
 export interface DriveExplorerConfig {
-    /** Row height in pixels for list view (default: 44) */
-    itemHeight?: number;
+    /** Minimum row height in rem for list view, so it scales with the font size (default: 2.75) */
+    itemHeightRem?: number;
     /** Number of items to render outside viewport for smoother scrolling (default: 5) */
     overscan?: number;
     /** Gap between items in pixels (default: 0) */

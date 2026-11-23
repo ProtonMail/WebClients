@@ -366,7 +366,7 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                     sort={sort}
                     loading={isLoading}
                     caption={folder?.uid || getNodeName(rootNode)}
-                    config={{ itemHeight: 52 }}
+                    config={{ itemHeightRem: 3.25 }}
                     contextMenuControls={{
                         isOpen: contextMenuControls.isOpen,
                         showContextMenu: contextMenuControls.handleContextMenu,

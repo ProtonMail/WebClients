@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, useCallback } from 'react';
 
 import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import Table from '@proton/components/components/table/Table';
@@ -17,7 +17,7 @@ import type {
     DriveExplorerEvents,
     DriveExplorerSelection,
 } from './types';
-import { useArrowKeyNavigation } from './useArrowKeyNavigation';
+import { type ScrollToRowAlign, useArrowKeyNavigation } from './useArrowKeyNavigation';
 import { useItemVisibility } from './useItemVisibility';
 import { useListVirtualizer } from './useListVirtualizer';
 
@@ -58,9 +58,10 @@ export const DriveExplorerBody = ({
 }: DriveExplorerBodyProps) => {
     const itemCount = loading ? itemIds.length + 1 : itemIds.length;
 
+    const itemHeightRem = config?.itemHeightRem ?? defaultConfig.itemHeightRem;
     const virtualizer = useListVirtualizer(
         {
-            itemHeight: config?.itemHeight,
+            itemHeightRem,
             overscan: config?.overscan,
             gap: config?.gap,
         },
@@ -73,17 +74,15 @@ export const DriveExplorerBody = ({
         rootMargin: '50px',
     });
 
-    // Pixel distance between two consecutive rows' top edges. Used by the arrow-key
-    // hook to compute scrollTop directly when the target row is outside the
-    // virtualizer's window (no DOM node to scrollIntoView - we scroll first, then
-    // refocus on the next frame once the virtualizer renders the row).
-    const itemHeight = config?.itemHeight ?? defaultConfig.itemHeight;
-    const rowHeightWithGap = itemHeight + (config?.gap ?? defaultConfig.gap);
+    const scrollToRow = useCallback(
+        (rowIndex: number, align: ScrollToRowAlign) => virtualizer.scrollToIndex(rowIndex, { align }),
+        [virtualizer]
+    );
     useArrowKeyNavigation({
         containerRef,
         itemIds,
         itemsPerRow: 1,
-        rowHeightWithGap,
+        scrollToRow,
     });
 
     return (
@@ -116,7 +115,7 @@ export const DriveExplorerBody = ({
                                         <VirtualListItem
                                             key={itemId || 'loading'}
                                             virtualItem={virtualItem}
-                                            minItemHeight={itemHeight}
+                                            minItemHeightRem={itemHeightRem}
                                             itemId={itemId}
                                             cells={cells}
                                             loading={loading}

@@ -101,7 +101,7 @@ interface DriveExplorerProps {
      * @example
      * ```tsx
      * {
-     *   itemHeight: 44,
+     *   itemHeightRem: 2.75,
      *   overscan: 5,
      *   className: 'my-custom-class'
      * }
