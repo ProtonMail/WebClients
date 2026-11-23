@@ -22,6 +22,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { usePassBridge } from '../../../lib/bridge/PassBridgeProvider';
@@ -35,6 +36,11 @@ import { PasswordGeneratorPolicyForm } from './PasswordGeneratorPolicyForm';
 import { PauseList } from './PauseList/PauseListPolicy';
 
 import './PassPolicies.scss';
+
+type GetPoliciesProps = {
+    showStoreTotp: boolean;
+    showStorePasskey: boolean;
+};
 
 type PolicyItem = {
     setting: keyof OrganizationSettings;
@@ -56,7 +62,7 @@ const getVaultCreateOptions = () => [
     },
 ];
 
-const getPolicies = (): PolicyItem[] => [
+const getPolicies = ({ showStoreTotp, showStorePasskey }: GetPoliciesProps): PolicyItem[] => [
     {
         setting: 'ShareMode',
         label: c('Label').t`Allow sharing outside the organization`,
@@ -89,20 +95,28 @@ const getPolicies = (): PolicyItem[] => [
             .t`If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.`,
         isBooleanInverted: true,
     } as const,
-    {
-        setting: 'CanStoreTotp',
-        label: c('Label').t`Allow storing 2FA codes`,
-        description: c('Info')
-            .t`If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.`,
-        isBooleanInverted: true,
-    } as const,
-    {
-        setting: 'CanStorePasskey',
-        label: c('Label').t`Allow storing passkeys`,
-        description: c('Info')
-            .t`If disabled, organization members won't be able to save passkeys in ${PASS_APP_NAME} or sign in with them. Nothing is deleted.`,
-        isBooleanInverted: true,
-    } as const,
+    ...(showStoreTotp
+        ? [
+              {
+                  setting: 'CanStoreTotp',
+                  label: c('Label').t`Allow storing 2FA codes`,
+                  description: c('Info')
+                      .t`If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.`,
+                  isBooleanInverted: true,
+              } as const,
+          ]
+        : []),
+    ...(showStorePasskey
+        ? [
+              {
+                  setting: 'CanStorePasskey',
+                  label: c('Label').t`Allow storing passkeys`,
+                  description: c('Info')
+                      .t`If disabled, organization members won't be able to save passkeys in ${PASS_APP_NAME} or sign in with them. Nothing is deleted.`,
+                  isBooleanInverted: true,
+              } as const,
+          ]
+        : []),
 ];
 
 const PassPolicies = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
@@ -112,9 +126,11 @@ const PassPolicies = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
     const handleError = useErrorHandler();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
+    const showStoreTotp = useFlag('PassPolicyStoreTotp');
+    const showStorePasskey = useFlag('PassPolicyStorePasskey');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
-    const policies = getPolicies();
+    const policies = getPolicies({ showStoreTotp, showStorePasskey });
 
     const touched = useRef<keyof OrganizationSettings>(undefined);
     const didLoad = useRef(false);

@@ -30,6 +30,8 @@ enum AccountFeatureFlag {
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     MailTrialOffer = 'MailTrialOffer',
     PassAccountNewOnboarding = 'PassAccountNewOnboarding',
+    PassPolicyStorePasskey = 'PassPolicyStorePasskey',
+    PassPolicyStoreTotp = 'PassPolicyStoreTotp',
     PassTrialOffer = 'PassTrialOffer',
     ServiceAccounts = 'ServiceAccounts',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',

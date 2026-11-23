@@ -9168,6 +9168,9 @@ importers:
       '@proton/types':
         specifier: workspace:^
         version: link:../types
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../unleash
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
