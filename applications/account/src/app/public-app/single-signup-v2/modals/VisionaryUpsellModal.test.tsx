@@ -26,7 +26,7 @@ const visionaryPlan: Plan = {
     PeriodEnd: { '1': 1748170100, '12': 1777114100, '24': 1808650100 },
     Currency: 'CHF',
     Quantity: 1,
-    Offers: [],
+    Offers: {},
     Cycle: 1,
     Amount: 3999,
 };

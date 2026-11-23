@@ -72,7 +72,7 @@ const getDefaultPlansMap = (): PlansMap => {
             },
             Currency: 'CHF',
             Quantity: 1,
-            Offers: [],
+            Offers: {},
             Cycle: 12,
             Amount: 7995,
             Vendors: {
@@ -120,7 +120,7 @@ const getDefaultPlansMap = (): PlansMap => {
             },
             Currency: 'CHF',
             Quantity: 1,
-            Offers: [],
+            Offers: {},
             Cycle: 1,
             Amount: 499,
             Vendors: {
@@ -174,7 +174,7 @@ const getDefaultPlansMap = (): PlansMap => {
             },
             Currency: 'CHF',
             Quantity: 1,
-            Offers: [],
+            Offers: {},
             Cycle: 12,
             Amount: 9588,
             Vendors: {

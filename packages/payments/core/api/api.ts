@@ -152,6 +152,7 @@ export const queryInvoices = (params: QueryInvoicesParams) => ({
 
 export interface QueryPlansParams {
     Currency?: Currency;
+    Offer?: string;
 }
 
 export const queryPlans = (params?: QueryPlansParams) => ({
