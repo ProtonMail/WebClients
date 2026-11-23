@@ -641,10 +641,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
                 }
                 currentDeviceId.current = deviceId;
 
-                const newAudioPublication = [...localParticipant.audioTrackPublications.values()].find(
-                    (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
-                );
-                const newAudioTrack = newAudioPublication?.audioTrack;
+                const newAudioTrack = getCurrentPublication()?.audioTrack;
 
                 if (newAudioTrack) {
                     if (isEnabled) {
@@ -799,11 +796,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
         }
     };
 
-    const audioPublication = [...localParticipant.audioTrackPublications.values()].find(
-        (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
-    );
-
-    const isAudioEnabled = isMicrophoneEnabled && !audioPublication?.isMuted;
+    const isAudioEnabled = isMicrophoneEnabled && !getCurrentPublication()?.isMuted;
 
     return { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled };
 };
