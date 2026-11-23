@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MAX_CHARS_API } from '@proton/account/organization';
-import { getStorageRange } from '@proton/account/organization/storage';
+import { getPassB2BAdminStorage, isAdminStorageReduction } from '@proton/account/organization/storage';
 import {
     type DeferredMnemonicData,
     generateDeferredMnemonicData,
@@ -34,7 +34,6 @@ import { persistSession } from '@proton/shared/lib/authentication/persistedSessi
 import { APPS, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronMail, isElectronMeet } from '@proton/shared/lib/helpers/desktop';
-import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
@@ -47,7 +46,6 @@ import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn, isPaid } from '@proton/shared/lib/user/helpers';
-import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
 import type { AppIntent } from '../../authSession';
@@ -201,16 +199,13 @@ const handleSetupKeysHelper = async ({
     return { keySetupData, user, addresses };
 };
 
-const PASS_B2B_SEAT_STORAGE = 10 * sizeUnits.GB;
-
 const setPassB2BAdminSeatStorage = async (api: Api, selfMember: Member) => {
     const { Organization: organization } = await api<{ Organization: Organization }>(getOrganization());
     if (disableStorageSelection(organization)) {
         return;
     }
-    const storageRange = getStorageRange(selfMember, organization);
-    const storage = clamp(PASS_B2B_SEAT_STORAGE, storageRange.min, storageRange.max);
-    if (storage === selfMember.MaxSpace) {
+    const storage = getPassB2BAdminStorage(selfMember, organization);
+    if (!isAdminStorageReduction(selfMember, storage)) {
         return;
     }
     await api(updateQuota(selfMember.ID, storage));
