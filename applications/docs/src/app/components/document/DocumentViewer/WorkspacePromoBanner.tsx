@@ -10,6 +10,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { hasBit } from '@proton/shared/lib/helpers/bitset'
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter'
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage'
+import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
 
 const MINIMUM_ACCOUNT_AGE_IN_DAYS = 30
@@ -26,7 +27,10 @@ export function WorkspacePromoBanner() {
 
   return (
     <div
-      className="z-10 flex h-[52px] shrink-0 items-center justify-between gap-4 bg-[#c0e3f2] px-6 text-[#14688d] head-max-1199:![display:none]"
+      className={clsx(
+        'z-10 flex h-[52px] shrink-0 items-center justify-between gap-4 bg-[#c0e3f2] px-6 text-[#14688d] head-max-1199:![display:none]',
+        '[[data-theme-mode=dark]_&]:bg-[--signal-info-minor-1] [[data-theme-mode=dark]_&]:text-[--signal-info-major-3]',
+      )}
       data-testid="workspace-promo-banner"
     >
       <div className="flex min-w-0 items-center gap-2">
@@ -39,7 +43,10 @@ export function WorkspacePromoBanner() {
       <div className="flex shrink-0 items-center gap-3">
         <ButtonLike
           as="a"
-          className="!h-7 !border-0 !bg-[#a9d8eb] !px-3 !text-[#14688d] hover:!bg-[#9fd0e4]"
+          className={clsx(
+            '!h-7 !border-0 !bg-[#a9d8eb] !px-3 !text-[#14688d] hover:!bg-[#9fd0e4]',
+            '[[data-theme-mode=dark]_&]:!bg-[color-mix(in_srgb,var(--signal-info)_20%,transparent)] [[data-theme-mode=dark]_&]:hover:!bg-[color-mix(in_srgb,var(--signal-info)_30%,transparent)] [[data-theme-mode=dark]_&]:!text-[--signal-info-major-3]',
+          )}
           shape="solid"
           size="small"
           href={signupUrl}
@@ -49,7 +56,10 @@ export function WorkspacePromoBanner() {
           {c('Action').t`Try Workspace`}
         </ButtonLike>
         <Button
-          className="!bg-transparent !h-7 !border-0 !px-3 !text-[#14688d] hover:!bg-[#a9d8eb]"
+          className={clsx(
+            '!bg-transparent !h-7 !border-0 !px-3 !text-[#14688d] hover:!bg-[#a9d8eb]',
+            '[[data-theme-mode=dark]_&]:hover:!bg-[color-mix(in_srgb,var(--signal-info)_20%,transparent)] [[data-theme-mode=dark]_&]:!text-[--signal-info-major-3]',
+          )}
           shape="ghost"
           size="small"
           onClick={handleDismiss}

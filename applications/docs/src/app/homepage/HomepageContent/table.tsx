@@ -90,7 +90,9 @@ export function Header({ target = 'all', isTitle, ...props }: HeaderProps) {
       role="columnheader"
       {...props}
       className={clsx(
-        'relative flex h-full items-center whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] small:[[data-bg-hack-mobile]_&]:before:bg-[#fff] [[data-bg-hack]_&]:before:bg-[#fff] [[data-secondary-header]_&]:before:rounded-se-xl [[data-secondary-header]_&]:before:rounded-ss-xl [[data-theme-mode=dark]_&]:before:!bg-[--background-norm]',
+        'relative flex h-full items-center whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] small:[[data-bg-hack-mobile]_&]:before:bg-[#fff] [[data-bg-hack]_&]:before:bg-[#fff] [[data-secondary-header]_&]:before:rounded-se-xl [[data-secondary-header]_&]:before:rounded-ss-xl',
+        // As the light background above: only in a head without its own rounded backdrop, which a square fill would cover.
+        'small:[[data-theme-mode=dark]_[data-bg-hack-mobile]_&]:before:!bg-[--background-norm] [[data-theme-mode=dark]_[data-bg-hack]_&]:before:!bg-[--background-norm]',
         isTitle && '[&:nth-child(1)]:text-[1rem]',
         ...POSITIONAL_CELL_CLASSES,
         TARGET_CLASSES[target],

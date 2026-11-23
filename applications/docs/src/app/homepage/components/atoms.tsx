@@ -16,6 +16,8 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip
       {...props}
       className={clsx(
         'pointer-events-none z-50 flex items-center gap-1 rounded-[.5rem] bg-[#0C0C14] px-2 py-[.375rem] text-[.75rem] leading-none text-[#fff] shadow-[0px_-2px_12px_0px_rgba(0,0,0,0.05)]',
+        // The docs editor's tooltip colours in dark mode.
+        '[[data-theme-mode=dark]_&]:bg-[--background-strong]',
         props.className,
       )}
     >

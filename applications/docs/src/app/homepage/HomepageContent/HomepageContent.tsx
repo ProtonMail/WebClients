@@ -7,21 +7,36 @@ import { ContextMenuProvider } from './DocContextMenu/context'
 import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 import { useHomepageView } from '../homepageViewContext'
-import { forwardRef, useEffect } from 'react'
+import { forwardRef, useEffect, useMemo } from 'react'
 import { COLOR_BY_TYPE, ContentSheet, REFRESH_AFTER_NEW_DOCUMENT } from './shared'
 import emptyStateRecentsImage from './empty-state-recents.svg'
+import emptyStateRecentsDarkImage from './emptyStateRecentsDark.svg'
 import emptyStateImage from './empty-state.svg'
+import emptyStateDarkImage from './emptyStateDark.svg'
 import { clsx } from '../utils/clsx'
 import * as Ariakit from '@ariakit/react'
 import { APPS } from '../utils/apps'
 import { TelemetryEvent } from '../utils/telemetry'
 import { Icon } from '../components/Icon'
 import * as Icons from '../components/icons'
+import { useIsDarkThemeMode } from '../utils/useIsDarkThemeMode'
+
+// The dark versions are the same illustrations, recoloured for the dark theme.
+const EMPTY_STATE_IMAGES = {
+  light: { recents: emptyStateRecentsImage, other: emptyStateImage },
+  dark: { recents: emptyStateRecentsDarkImage, other: emptyStateDarkImage },
+}
+
+function useEmptyStateImages() {
+  return EMPTY_STATE_IMAGES[useIsDarkThemeMode() ? 'dark' : 'light']
+}
 
 export function HomepageContent() {
+  const emptyStateImages = useEmptyStateImages()
+  const preloadUrls = useMemo(() => [emptyStateImages.other, emptyStateImages.recents], [emptyStateImages])
   return (
     <ContextMenuProvider>
-      <PreloadImages urls={[emptyStateImage, emptyStateRecentsImage]} />
+      <PreloadImages urls={preloadUrls} />
       <div className="flex h-full w-full flex-col flex-nowrap gap-5 small:pr-2">
         <HomepageView />
       </div>
@@ -115,7 +130,7 @@ const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(functi
       {...props}
       className={clsx(
         'inline-flex h-9 items-center justify-center gap-2 rounded pl-3 pr-4 text-sm no-underline',
-        '!text-[--text-norm] hover:bg-[#C2C1C0]/20 hover:text-[--text-norm]',
+        '!text-[--text-norm] hover:bg-[#C2C1C0]/20 hover:text-[--text-norm] [[data-theme-mode=dark]_&]:hover:bg-[--interaction-default-hover]',
         'border border-[#EAE7E4]',
         '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
@@ -173,13 +188,14 @@ function RecentsEmptyStateButtons() {
 type EmptyStateProps = { variant: EmptyStateVariant }
 function EmptyState({ variant }: EmptyStateProps) {
   const messages = useHomepageMessages().content
+  const images = useEmptyStateImages()
   return (
     <ContentSheet isBottom className="flex shrink-0 grow items-center justify-center">
       <div className="flex flex-col items-center gap-6 p-8">
         <img
           className={clsx(variant === 'recents' ? 'w-[38.3125rem] scale-110 xsmall:scale-100' : 'w-[8.125rem]')}
           aria-hidden="true"
-          src={variant === 'recents' ? emptyStateRecentsImage : emptyStateImage}
+          src={variant === 'recents' ? images.recents : images.other}
           alt=""
         />
         <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant, messages)}</p>
