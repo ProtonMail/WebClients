@@ -2026,8 +2026,8 @@ importers:
         specifier: catalog:docs
         version: 0.32.1(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27)
       '@proton-docs/docs-editor':
-        specifier: 0.6.1
-        version: 0.6.1(@lexical/clipboard@0.32.1)(@lexical/code@0.32.1)(@lexical/hashtag@0.32.1)(@lexical/headless@0.32.1)(@lexical/html@0.32.1)(@lexical/link@0.32.1)(@lexical/list@0.32.1)(@lexical/markdown@0.32.1)(@lexical/overflow@0.32.1)(@lexical/react@0.32.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.1)(@lexical/selection@0.32.1)(@lexical/table@0.32.1(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.1)(@lexical/utils@0.32.1)(@lexical/yjs@0.32.1(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
+        specifier: 0.7.1
+        version: 0.7.1(@lexical/clipboard@0.32.1)(@lexical/code@0.32.1)(@lexical/hashtag@0.32.1)(@lexical/headless@0.32.1)(@lexical/html@0.32.1)(@lexical/link@0.32.1)(@lexical/list@0.32.1)(@lexical/markdown@0.32.1)(@lexical/overflow@0.32.1)(@lexical/react@0.32.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.1)(@lexical/selection@0.32.1)(@lexical/table@0.32.1(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.1)(@lexical/utils@0.32.1)(@lexical/yjs@0.32.1(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
       '@proton-docs/sheets-editor':
         specifier: 0.2.5
         version: 0.2.5(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
@@ -16856,26 +16856,26 @@ packages:
   '@protobufjs/utf8@1.1.1':
     resolution: {integrity: sha512-oOAWABowe8EAbMyWKM0tYDKi8Yaox52D+HWZhAIJqQXbqe0xI/GV7FhLWqlEKreMkfDjshR5FKgi3mnle0h6Eg==}
 
-  '@proton-docs/docs-editor@0.6.1':
-    resolution: {integrity: sha256-sPI2W7iBVuVMskGuG1XWvS1r9p15HmdoCJITZs79aW4=}
+  '@proton-docs/docs-editor@0.7.1':
+    resolution: {integrity: sha256-XFWppfMHX+Ohn0yAnApuBtyJ/N8vNMMtM1BMjaK9cdQ=}
     peerDependencies:
-      '@lexical/clipboard': 0.32.1
-      '@lexical/code': 0.32.1
-      '@lexical/hashtag': 0.32.1
-      '@lexical/headless': 0.32.1
-      '@lexical/html': 0.32.1
-      '@lexical/link': 0.32.1
-      '@lexical/list': 0.32.1
-      '@lexical/markdown': 0.32.1
-      '@lexical/overflow': 0.32.1
-      '@lexical/react': 0.32.1
-      '@lexical/rich-text': 0.32.1
-      '@lexical/selection': 0.32.1
-      '@lexical/table': 0.32.1
-      '@lexical/text': 0.32.1
-      '@lexical/utils': 0.32.1
-      '@lexical/yjs': 0.32.1
-      lexical: 0.32.1
+      '@lexical/clipboard': 0.33.0
+      '@lexical/code': 0.33.0
+      '@lexical/hashtag': 0.33.0
+      '@lexical/headless': 0.33.0
+      '@lexical/html': 0.33.0
+      '@lexical/link': 0.33.0
+      '@lexical/list': 0.33.0
+      '@lexical/markdown': 0.33.0
+      '@lexical/overflow': 0.33.0
+      '@lexical/react': 0.33.0
+      '@lexical/rich-text': 0.33.0
+      '@lexical/selection': 0.33.0
+      '@lexical/table': 0.33.0
+      '@lexical/text': 0.33.0
+      '@lexical/utils': 0.33.0
+      '@lexical/yjs': 0.33.0
+      lexical: 0.33.0
       react: ^18.3.1
       react-dom: ^18.3.1
       y-protocols: ^1.0.6
@@ -33959,7 +33959,7 @@ snapshots:
 
   '@protobufjs/utf8@1.1.1': {}
 
-  '@proton-docs/docs-editor@0.6.1(@lexical/clipboard@0.32.1)(@lexical/code@0.32.1)(@lexical/hashtag@0.32.1)(@lexical/headless@0.32.1)(@lexical/html@0.32.1)(@lexical/link@0.32.1)(@lexical/list@0.32.1)(@lexical/markdown@0.32.1)(@lexical/overflow@0.32.1)(@lexical/react@0.32.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.1)(@lexical/selection@0.32.1)(@lexical/table@0.32.1(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.1)(@lexical/utils@0.32.1)(@lexical/yjs@0.32.1(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)':
+  '@proton-docs/docs-editor@0.7.1(@lexical/clipboard@0.32.1)(@lexical/code@0.32.1)(@lexical/hashtag@0.32.1)(@lexical/headless@0.32.1)(@lexical/html@0.32.1)(@lexical/link@0.32.1)(@lexical/list@0.32.1)(@lexical/markdown@0.32.1)(@lexical/overflow@0.32.1)(@lexical/react@0.32.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.1)(@lexical/selection@0.32.1)(@lexical/table@0.32.1(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.1)(@lexical/utils@0.32.1)(@lexical/yjs@0.32.1(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)':
     dependencies:
       '@ariakit/react': 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@emoji-mart/data': 1.2.1
