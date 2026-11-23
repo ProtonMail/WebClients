@@ -9,6 +9,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import type { GroupWithContacts } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import type { RecipientGroup } from '@proton/mail-message/models/address';
 import type { MapStatusIcons, StatusIcon } from '@proton/mail-message/models/crypto';
@@ -18,12 +19,11 @@ import generateUID from '@proton/utils/generateUID';
 
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 
-interface Props {
+interface Props extends ModalStateProps {
     recipientGroup: RecipientGroup;
     group: GroupWithContacts | undefined;
     globalIcon?: StatusIcon;
     mapStatusIcons?: MapStatusIcons;
-    onClose?: () => void;
 }
 
 const GroupModal = ({ recipientGroup, group, globalIcon, mapStatusIcons, onClose, ...rest }: Props) => {

@@ -9,8 +9,8 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
-import useModals from '@proton/components/hooks/useModals';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
@@ -48,7 +48,7 @@ const RecipientItemGroup = ({
     hasHeading = false,
 }: Props) => {
     const { getGroupLabel, getRecipientLabel } = useRecipientLabel();
-    const { createModal } = useModals();
+    const [groupModalProps, setGroupModalOpen, renderGroupModal] = useModalState();
     const { createNotification } = useNotifications();
     const groupsWithContactsMap = useGroupsWithContactsMap();
     const [uid] = useState(generateUID('dropdown-group'));
@@ -86,81 +86,85 @@ const RecipientItemGroup = ({
 
     const handleRecipients = (event: MouseEvent) => {
         event.stopPropagation();
-        createModal(
-            <GroupModal
-                recipientGroup={group}
-                group={groupsWithContactsMap[group.group?.ID || '']}
-                mapStatusIcons={mapStatusIcons}
-                globalIcon={globalIcon}
-            />
-        );
+        setGroupModalOpen(true);
     };
 
     return (
-        <RecipientItemLayout
-            label={label}
-            title={addresses}
-            ariaLabelTitle={`${labelText} ${addresses}`}
-            showDropdown={showDropdown}
-            dropdrownAnchorRef={anchorRef}
-            dropdownToggle={toggle}
-            isDropdownOpen={isOpen}
-            dropdownContent={
-                <Dropdown
-                    id={uid}
-                    size={{ maxWidth: DropdownSizeUnit.Viewport }}
-                    originalPlacement="bottom"
-                    isOpen={isOpen}
-                    anchorRef={anchorRef}
-                    onClose={close}
-                >
-                    <DropdownMenu>
-                        {group.recipients.map((recipient) => {
-                            return (
-                                <RecipientDropdownItem
-                                    displaySenderImage={!!recipient?.DisplaySenderImage}
-                                    recipient={recipient}
-                                    label={getRecipientLabel(recipient)}
-                                    closeDropdown={close}
-                                    key={recipient.Address}
-                                    bimiSelector={recipient?.BimiSelector || undefined}
-                                    simple={isOutside}
-                                />
-                            );
-                        })}
-                        <hr className="my-2" />
-                        <DropdownMenuButton
-                            className="text-left flex flex-nowrap items-center"
-                            onClick={handleCompose}
-                            data-testid="recipient:new-message-to-group"
-                        >
-                            <IcPenSquare className="mr-2" />
-                            <span className="flex-1 my-auto">{c('Action').t`New message`}</span>
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            className="text-left flex flex-nowrap items-center"
-                            onClick={handleCopy}
-                            data-testid="recipient:copy-group-emails"
-                        >
-                            <IcSquares className="mr-2" />
-                            <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            className="text-left flex flex-nowrap items-center"
-                            onClick={handleRecipients}
-                            data-testid="recipient:view-group-recipients"
-                        >
-                            <IcUser className="mr-2" />
-                            <span className="flex-1 my-auto">{c('Action').t`View recipients`}</span>
-                        </DropdownMenuButton>
-                    </DropdownMenu>
-                </Dropdown>
-            }
-            isOutside={isOutside}
-            hasHeading={hasHeading}
-            recipientOrGroup={{ group }}
-            customDataTestId={customDataTestId}
-        />
+        <>
+            <RecipientItemLayout
+                label={label}
+                title={addresses}
+                ariaLabelTitle={`${labelText} ${addresses}`}
+                showDropdown={showDropdown}
+                dropdrownAnchorRef={anchorRef}
+                dropdownToggle={toggle}
+                isDropdownOpen={isOpen}
+                dropdownContent={
+                    <Dropdown
+                        id={uid}
+                        size={{ maxWidth: DropdownSizeUnit.Viewport }}
+                        originalPlacement="bottom"
+                        isOpen={isOpen}
+                        anchorRef={anchorRef}
+                        onClose={close}
+                    >
+                        <DropdownMenu>
+                            {group.recipients.map((recipient) => {
+                                return (
+                                    <RecipientDropdownItem
+                                        displaySenderImage={!!recipient?.DisplaySenderImage}
+                                        recipient={recipient}
+                                        label={getRecipientLabel(recipient)}
+                                        closeDropdown={close}
+                                        key={recipient.Address}
+                                        bimiSelector={recipient?.BimiSelector || undefined}
+                                        simple={isOutside}
+                                    />
+                                );
+                            })}
+                            <hr className="my-2" />
+                            <DropdownMenuButton
+                                className="text-left flex flex-nowrap items-center"
+                                onClick={handleCompose}
+                                data-testid="recipient:new-message-to-group"
+                            >
+                                <IcPenSquare className="mr-2" />
+                                <span className="flex-1 my-auto">{c('Action').t`New message`}</span>
+                            </DropdownMenuButton>
+                            <DropdownMenuButton
+                                className="text-left flex flex-nowrap items-center"
+                                onClick={handleCopy}
+                                data-testid="recipient:copy-group-emails"
+                            >
+                                <IcSquares className="mr-2" />
+                                <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
+                            </DropdownMenuButton>
+                            <DropdownMenuButton
+                                className="text-left flex flex-nowrap items-center"
+                                onClick={handleRecipients}
+                                data-testid="recipient:view-group-recipients"
+                            >
+                                <IcUser className="mr-2" />
+                                <span className="flex-1 my-auto">{c('Action').t`View recipients`}</span>
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    </Dropdown>
+                }
+                isOutside={isOutside}
+                hasHeading={hasHeading}
+                recipientOrGroup={{ group }}
+                customDataTestId={customDataTestId}
+            />
+            {renderGroupModal && (
+                <GroupModal
+                    {...groupModalProps}
+                    recipientGroup={group}
+                    group={groupsWithContactsMap[group.group?.ID || '']}
+                    mapStatusIcons={mapStatusIcons}
+                    globalIcon={globalIcon}
+                />
+            )}
+        </>
     );
 };
 
