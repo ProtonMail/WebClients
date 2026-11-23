@@ -30,12 +30,13 @@ export type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 type AutosaveCreatePayload = AutosaveCreate<AutosavePayloadData>;
 export type AutosaveUpdatePayload = AutosaveUpdate<AutosaveCandidates>;
 type AutosavePayloadData = FormCredentials & {
+    isCurrentProtonAccount: boolean;
     submittedAt: MaybeNull<number>;
     iframeUrl?: MaybeNull<string>;
     telemetry: AutofillPageTelemetryDimensions;
 };
 export type AutosavePayload = (AutosaveCreatePayload | AutosaveUpdatePayload) & AutosavePayloadData;
 
-type AutosavePromptData = AutosaveCreate | AutosaveUpdate<AutosaveCandidates>;
+type AutosavePromptData = (AutosaveCreate | AutosaveUpdate<AutosaveCandidates>) & { isCurrentProtonAccount: boolean };
 export type AutosavePrompt = { shouldPrompt: false } | { shouldPrompt: true; data: AutosavePromptData };
 export type WithAutosavePrompt<T> = T & { autosave: AutosavePrompt };

@@ -91,7 +91,10 @@ describe('Autosave on the fixture pages', () => {
             type: 'register',
             data: { userIdentifier: NEW_EMAIL, password: NEW_PASSWORD },
         });
-        expect(decision).toEqual({ shouldPrompt: true, data: { type: AutosaveMode.NEW } });
+        expect(decision).toEqual({
+            shouldPrompt: true,
+            data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false },
+        });
     });
 
     test('offers to update the saved login when signing up again with its password', async () => {
@@ -105,6 +108,7 @@ describe('Autosave on the fixture pages', () => {
             data: {
                 type: AutosaveMode.UPDATE,
                 candidates: [expect.objectContaining({ itemId: worker.saved.itemId, userIdentifier: SAVED_EMAIL })],
+                isCurrentProtonAccount: false,
             },
         });
     });
@@ -115,7 +119,10 @@ describe('Autosave on the fixture pages', () => {
 
         const { decision } = await resolveSubmission(worker, 'login-email');
 
-        expect(decision).toEqual({ shouldPrompt: true, data: { type: AutosaveMode.NEW } });
+        expect(decision).toEqual({
+            shouldPrompt: true,
+            data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false },
+        });
     });
 
     test('offers to update the saved login on sign-in with a new password', async () => {
@@ -129,6 +136,7 @@ describe('Autosave on the fixture pages', () => {
             data: {
                 type: AutosaveMode.UPDATE,
                 candidates: [expect.objectContaining({ itemId: worker.saved.itemId, userIdentifier: SAVED_EMAIL })],
+                isCurrentProtonAccount: false,
             },
         });
     });

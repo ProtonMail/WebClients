@@ -71,7 +71,7 @@ describe('Form entry utils', () => {
         test('should return true if form entry status is `COMMITTED` and promptable', () => {
             const submission: AutosaveFormEntry = {
                 ...getMockFormSubmission(FormEntryStatus.COMMITTED, FormType.LOGIN),
-                autosave: { shouldPrompt: true, data: { type: AutosaveMode.NEW } },
+                autosave: { shouldPrompt: true, data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false } },
             };
 
             expect(isFormEntryPromptable(submission)).toBe(true);

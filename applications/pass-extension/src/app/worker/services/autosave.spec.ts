@@ -24,6 +24,7 @@ import { WorkerContext } from '../context/inject';
 import { createAutoSaveService } from './autosave';
 
 vi.mock('../channel');
+vi.mock('../../config', () => ({ default: { SSO_URL: 'https://account.proton.me' } }));
 
 const { default: WorkerMessageBroker } = (await import('../channel')) as typeof ChannelMock;
 
@@ -61,7 +62,56 @@ describe('AutosaveService [worker]', () => {
 
         test('should prompt for new item if no match', () => {
             const result = autosave.resolve(submission);
-            expect(result).toEqual({ shouldPrompt: true, data: { type: AutosaveMode.NEW } });
+            expect(result).toEqual({
+                shouldPrompt: true,
+                data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false },
+            });
+        });
+
+        describe('current Proton account detection', () => {
+            const protonSubmission = { ...submission, domain: 'proton.me', url: 'https://account.proton.me/login' };
+
+            const getStateWithUser = () => {
+                const state = getMockState();
+                state.user.user = { Name: 'john', Email: 'john@proton.me' } as any;
+                state.user.addresses = { addressId: { Email: 'john.doe@pm.me' } } as any;
+                return state;
+            };
+
+            test.each(['john', 'John@proton.me', 'john.doe@pm.me', 'johndoe@pm.me'])(
+                'should flag login for current account `%s` on proton domain',
+                (userIdentifier) => {
+                    store.getState.mockReturnValueOnce(getStateWithUser());
+                    const result = autosave.resolve({
+                        ...protonSubmission,
+                        data: { ...submission.data, userIdentifier },
+                    });
+                    expect(result).toEqual({
+                        shouldPrompt: true,
+                        data: { type: AutosaveMode.NEW, isCurrentProtonAccount: true },
+                    });
+                }
+            );
+
+            test('should not flag login for another proton account', () => {
+                store.getState.mockReturnValueOnce(getStateWithUser());
+                const data = { ...submission.data, userIdentifier: 'jane@proton.me' };
+                const result = autosave.resolve({ ...protonSubmission, data });
+                expect(result).toEqual({
+                    shouldPrompt: true,
+                    data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false },
+                });
+            });
+
+            test('should not flag current account email on non-proton domain', () => {
+                store.getState.mockReturnValueOnce(getStateWithUser());
+                const data = { ...submission.data, userIdentifier: 'john@proton.me' };
+                const result = autosave.resolve({ ...submission, data });
+                expect(result).toEqual({
+                    shouldPrompt: true,
+                    data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false },
+                });
+            });
         });
 
         test('should not prompt if form credentials are invalid', () => {
@@ -96,6 +146,7 @@ describe('AutosaveService [worker]', () => {
                             userIdentifier: 'test@proton.me',
                         },
                     ],
+                    isCurrentProtonAccount: false,
                 },
             });
         });
@@ -127,6 +178,7 @@ describe('AutosaveService [worker]', () => {
                             userIdentifier: 'test@proton.me',
                         },
                     ],
+                    isCurrentProtonAccount: false,
                 },
             });
         });
@@ -274,7 +326,7 @@ describe('AutosaveService [worker]', () => {
 
             expect(autosave.resolve({ ...submission, url: 'https://domain.com/other/login' })).toEqual({
                 shouldPrompt: true,
-                data: { type: AutosaveMode.NEW },
+                data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false },
             });
         });
 
@@ -325,6 +377,7 @@ describe('AutosaveService [worker]', () => {
                             userIdentifier: 'test@proton.me',
                         },
                     ],
+                    isCurrentProtonAccount: false,
                 },
             });
         });
@@ -387,6 +440,7 @@ describe('AutosaveService [worker]', () => {
                     shouldPrompt: true,
                     data: {
                         type: AutosaveMode.UPDATE,
+                        isCurrentProtonAccount: false,
                         candidates: [expect.objectContaining({ itemId: revision.itemId })],
                     },
                 });
@@ -400,7 +454,7 @@ describe('AutosaveService [worker]', () => {
                 withSavedLogin({ itemEmail: 'other@proton.me', password: 'other-password' });
                 expect(autosave.resolve(registration)).toEqual({
                     shouldPrompt: true,
-                    data: { type: AutosaveMode.NEW },
+                    data: { type: AutosaveMode.NEW, isCurrentProtonAccount: false },
                 });
             });
 
@@ -414,6 +468,7 @@ describe('AutosaveService [worker]', () => {
                         candidates: [
                             expect.objectContaining({ itemId: revision.itemId, userIdentifier: 'other@proton.me' }),
                         ],
+                        isCurrentProtonAccount: false,
                     },
                 });
             });
