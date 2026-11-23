@@ -24,6 +24,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
@@ -35,7 +36,6 @@ import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_TYPE } from '@proton/shared/lib/
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import setsContainSameElements from '@proton/utils/setsContainSameElements';
 
-import Loader from '../../../../components/loader/Loader';
 import { useModalStateObject } from '../../../../components/modalTwo/useModalState';
 import useErrorHandler from '../../../../hooks/useErrorHandler';
 import { useResumeRoleAssignment } from '../../../members/rolesAndPermissions/useResumeRoleAssignment';

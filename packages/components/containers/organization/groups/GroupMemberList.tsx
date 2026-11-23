@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Loader } from '@proton/atoms/Loader/Loader';
 import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 
-import Loader from '../../../components/loader/Loader';
 import { GroupMemberItem } from './GroupMemberItem';
 import type { GroupsManagementReturn } from './types';
 

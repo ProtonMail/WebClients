@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import Alert3DS from '@proton/components/containers/payments/Alert3ds';
 import DefaultPaymentMethodMessage from '@proton/components/containers/payments/DefaultPaymentMethodMessage';

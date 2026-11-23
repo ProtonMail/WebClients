@@ -9,13 +9,13 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE, SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
-import Loader from '../../../components/loader/Loader';
 import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
 import withPermissionGuard from '../../../components/orgPermissions/withPermissionGuard';
 import Table from '../../../components/table/Table';

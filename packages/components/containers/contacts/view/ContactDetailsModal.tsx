@@ -7,6 +7,7 @@ import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
 import { IcPen } from '@proton/icons/icons/IcPen';
@@ -22,7 +23,6 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import Loader from '../../../components/loader/Loader';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';

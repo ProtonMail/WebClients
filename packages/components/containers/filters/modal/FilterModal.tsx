@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
@@ -18,7 +19,6 @@ import generateUID from '@proton/utils/generateUID';
 
 import Form from '../../../components/form/Form';
 import Checkbox from '../../../components/input/Checkbox';
-import Loader from '../../../components/loader/Loader';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';

@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
+import { Loader } from '@proton/atoms/Loader/Loader';
 import clsx from '@proton/utils/clsx';
 
-import Loader from '../../loader/Loader';
 import ModalTwo from '../../modalTwo/Modal';
 import ModalTwoContent from '../../modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '../../modalTwo/ModalHeader';

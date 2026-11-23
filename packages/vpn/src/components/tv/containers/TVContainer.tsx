@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useLoading from '@proton/hooks/useLoading';

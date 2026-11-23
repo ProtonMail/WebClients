@@ -10,6 +10,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
@@ -40,7 +41,6 @@ import noop from '@proton/utils/noop';
 
 import AddressesInput, { AddressesInputItem } from '../../../components/addressesInput/AddressesInput';
 import RadioGroup from '../../../components/input/RadioGroup';
-import Loader from '../../../components/loader/Loader';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Modal from '../../../components/modalTwo/Modal';
 import ModalContent from '../../../components/modalTwo/ModalContent';

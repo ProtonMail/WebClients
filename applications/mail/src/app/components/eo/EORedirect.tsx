@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { useApi } from '@proton/app-context/useApi';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { EO_REDIRECT_PATH, LOAD_RETRY_COUNT } from '../../constants';

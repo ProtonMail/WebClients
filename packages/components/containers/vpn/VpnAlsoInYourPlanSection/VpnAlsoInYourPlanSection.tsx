@@ -15,6 +15,7 @@ import {
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
@@ -47,7 +48,6 @@ import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
-import Loader from '../../../components/loader/Loader';
 import DriveLogo from '../../../components/logo/DriveLogo';
 import MailLogo from '../../../components/logo/MailLogo';
 import PassLogo from '../../../components/logo/PassLogo';

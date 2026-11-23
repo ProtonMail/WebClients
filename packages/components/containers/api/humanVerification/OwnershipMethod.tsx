@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -26,7 +27,6 @@ import type {
 import { HumanVerificationSteps } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import SettingsLink from '../../../components/link/SettingsLink';
-import Loader from '../../../components/loader/Loader';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';

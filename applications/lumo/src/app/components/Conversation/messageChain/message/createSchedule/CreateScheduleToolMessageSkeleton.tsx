@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 

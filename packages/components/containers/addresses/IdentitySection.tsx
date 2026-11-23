@@ -3,10 +3,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
-import Loader from '../../components/loader/Loader';
 import Option from '../../components/option/Option';
 import { SettingsCardRows } from '../account/SettingsCardRows';
 import { SettingsCardSection } from '../account/SettingsCardSection';

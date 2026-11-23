@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import UncontainedWrapper from '@proton/components/components/uncontainedwrapper/UncontainedWrapper';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcHeart } from '@proton/icons/icons/IcHeart';

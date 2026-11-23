@@ -20,11 +20,11 @@ vi.mock('@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrum
     };
 });
 
-vi.mock('@proton/components/components/loader/Loader', async () => {
+vi.mock('@proton/atoms/Loader/Loader', async () => {
     const ReactMock = await import('react');
     return {
         __esModule: true,
-        default: () => ReactMock.createElement('div', null, 'Loading'),
+        Loader: () => ReactMock.createElement('div', null, 'Loading'),
     };
 });
 

@@ -13,9 +13,9 @@ import * as navigation from '@proton/vpn/contexts/navigation';
 
 import { VPNSidebar } from './VPNSidebar';
 
-vi.mock('@proton/components/components/loader/Loader', () => ({
+vi.mock('@proton/atoms/Loader/Loader', () => ({
     __esModule: true,
-    default: () => <progress data-testid="loader" aria-label="Loading…" />,
+    Loader: () => <progress data-testid="loader" aria-label="Loading…" />,
 }));
 vi.mock('@proton/components/components/sidebar/Sidebar', () => ({
     __esModule: true,

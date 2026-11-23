@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import {
@@ -14,7 +15,6 @@ import {
 } from '@proton/shared/lib/organization/helper';
 
 import Alert from '../../components/alert/Alert';
-import Loader from '../../components/loader/Loader';
 import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';

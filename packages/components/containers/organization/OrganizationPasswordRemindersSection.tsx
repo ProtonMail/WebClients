@@ -5,6 +5,7 @@ import { usePasswordReminderTelemetry } from '@proton/account/passwordReminder/p
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -13,7 +14,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { OrganizationExtended, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
 import Info from '../../components/link/Info';
-import Loader from '../../components/loader/Loader';
 import PermissionBanner from '../../components/orgPermissions/PermissionBanner';
 import PermissionTooltip from '../../components/orgPermissions/PermissionTooltip';
 import Toggle from '../../components/toggle/Toggle';

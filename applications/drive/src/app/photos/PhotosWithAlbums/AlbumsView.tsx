@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';

@@ -1,7 +1,8 @@
 import type { Ref } from 'react';
 import { Suspense, forwardRef, lazy } from 'react';
 
-import Loader from '../../loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
+
 import type { Props as PhoneInputProps, Props } from './PhoneInput';
 
 const PhoneInput = lazy(() => import(/* webpackChunkName: "PhoneInput" */ './PhoneInput'));

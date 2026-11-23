@@ -4,7 +4,7 @@ import first from 'lodash/first';
 import { c } from 'ttag';
 
 import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
 import { resetQuotesByProvider } from '@proton/wallet/store/slices';

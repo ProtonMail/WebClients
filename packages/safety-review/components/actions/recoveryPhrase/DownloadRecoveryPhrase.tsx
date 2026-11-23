@@ -10,7 +10,7 @@ import type { SafetyReviewAllProps } from '@proton/account/safetyReview/componen
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useDispatch } from '@proton/account/store/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';

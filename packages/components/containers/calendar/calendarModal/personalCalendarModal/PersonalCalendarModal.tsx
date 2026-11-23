@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { getIsCalendarWritable, getIsSubscribedCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
@@ -18,7 +19,6 @@ import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 import Form from '../../../../components/form/Form';
 import ColorPicker from '../../../../components/input/ColorPicker';
 import TextArea from '../../../../components/input/TextArea';
-import Loader from '../../../../components/loader/Loader';
 import ModalTwo from '../../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';

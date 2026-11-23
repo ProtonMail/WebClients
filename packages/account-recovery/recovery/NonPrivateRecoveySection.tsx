@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { RecoveryFieldForm } from '@proton/components/containers/recovery/RecoveryFieldForm';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';

@@ -9,7 +9,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import withPermissionGuard from '@proton/components/components/orgPermissions/withPermissionGuard';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';

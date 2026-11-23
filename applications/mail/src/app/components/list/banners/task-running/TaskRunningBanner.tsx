@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

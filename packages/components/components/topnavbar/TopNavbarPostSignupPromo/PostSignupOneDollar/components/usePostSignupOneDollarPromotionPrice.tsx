@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import { useRegionalPricing } from '@proton/payments-hooks/ui/hooks/useRegionalPricing';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -9,7 +10,6 @@ import clsx from '@proton/utils/clsx';
 
 import { getNormalizedPlanTitleToPlus } from '../../../../../containers/payments/subscription/plusToPlusHelper';
 import Price from '../../../../price/Price';
-import SkeletonLoader from '../../../../skeletonLoader/SkeletonLoader';
 import type { SUPPORTED_PRODUCTS } from '../interface';
 
 interface Props {

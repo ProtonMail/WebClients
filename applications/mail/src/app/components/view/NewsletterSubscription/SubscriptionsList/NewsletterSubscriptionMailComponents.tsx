@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import type { ElementsStructure } from '../../../../hooks/mailbox/useElements';

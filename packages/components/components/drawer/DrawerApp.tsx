@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useGetBreachesCounts } from '@proton/account/breaches/breachNotificationsSlice';
 import { useConfig } from '@proton/app-context/useConfig';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -17,7 +18,6 @@ import StandardErrorPage from '../../containers/app/StandardErrorPage';
 import type { CustomAction } from '../../containers/contacts/widget/types';
 import { useReferralDiscover } from '../../containers/referral/hooks/useReferralDiscover';
 import useDrawer from '../../hooks/drawer/useDrawer';
-import Loader from '../loader/Loader';
 import DrawerBugModal from './DrawerBugModal';
 import DrawerContactModals from './DrawerContactModals';
 import DrawerContactView from './views/DrawerContactView';

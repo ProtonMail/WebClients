@@ -4,13 +4,13 @@ import { useImperativeHandle } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcFileShapes } from '@proton/icons/icons/IcFileShapes';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
-import Loader from '../../../components/loader/Loader';
 import useLoadContactImage from '../../../hooks/useLoadContactImage';
 
 interface Props {

@@ -9,6 +9,7 @@ import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import { Pill } from '@proton/atoms/Pill/Pill';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import type { IconComponent } from '@proton/icons/component';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
@@ -22,7 +23,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
-import SkeletonLoader from '../../components/skeletonLoader/SkeletonLoader';
 import useInboxDesktopVersion from './useInboxDesktopVersion';
 
 interface DownloadSectionProps extends PropsWithChildren {

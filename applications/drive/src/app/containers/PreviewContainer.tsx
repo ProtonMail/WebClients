@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom-v5-compat';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { getDrive, splitNodeUid } from '@proton/drive/sdk';
 
 import useDriveNavigation from '../legacy/hooks/drive/useNavigate';

@@ -12,7 +12,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     index?: number;
 }
 
-const SkeletonLoader = ({ width, height, className, style, index, ...rest }: Props) => {
+export const SkeletonLoader = ({ width, height, className, style, index, ...rest }: Props) => {
     return (
         <div
             aria-hidden="true"
@@ -34,5 +34,3 @@ const SkeletonLoader = ({ width, height, className, style, index, ...rest }: Pro
         />
     );
 };
-
-export default SkeletonLoader;

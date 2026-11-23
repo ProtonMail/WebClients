@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { filtersThunk } from '@proton/mail/store/filters';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -13,7 +14,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Filter } from '@proton/sieve/filterModel';
 import move from '@proton/utils/move';
 
-import Loader from '../../components/loader/Loader';
 import { SettingsCardSection } from '../account/SettingsCardSection';
 import { SettingsLayoutVariant } from '../layout/interface';
 import ActionsFilterToolbar from './ActionsFilterToolbar';

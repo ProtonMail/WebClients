@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import type { IconComponent } from '@proton/icons/component';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';

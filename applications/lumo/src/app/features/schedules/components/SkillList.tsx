@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../../hooks/useLumoFlags';

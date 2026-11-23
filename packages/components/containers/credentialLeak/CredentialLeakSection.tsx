@@ -7,6 +7,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { getBreaches, updateBreachEmailNotificationsState, updateBreachState } from '@proton/shared/lib/api/breaches';
@@ -30,7 +31,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import Loader from '../../components/loader/Loader';
 import { useModalStateObject } from '../../components/modalTwo/useModalState';
 import Toggle from '../../components/toggle/Toggle';
 import DWMUpsellModal from '../../components/upsell/modals/DWMUpsellModal';

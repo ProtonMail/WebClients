@@ -4,7 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { selectOngoingDriveImports } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import { uploadManager } from '@proton/drive/modules/upload';

@@ -1,6 +1,6 @@
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Loader from '@proton/components/components/loader/Loader';
 import type { EncryptionStatusIconProps as Props } from '@proton/mail-composer/host/composerMessageHost';
 import { getSendIconHref, getStatusIconComponent } from '@proton/mail-message/helpers/message/icon';
 import clsx from '@proton/utils/clsx';

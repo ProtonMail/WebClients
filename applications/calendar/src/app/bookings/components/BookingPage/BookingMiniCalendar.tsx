@@ -11,7 +11,7 @@ import {
     startOfWeek,
 } from 'date-fns';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
 import { getFormattedWeekdays, getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';

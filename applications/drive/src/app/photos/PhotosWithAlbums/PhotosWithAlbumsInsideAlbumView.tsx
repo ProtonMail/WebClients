@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { getDriveForPhotos } from '@proton/drive/sdk';

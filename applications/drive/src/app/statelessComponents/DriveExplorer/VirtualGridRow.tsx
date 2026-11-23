@@ -1,6 +1,6 @@
 import type { VirtualItem } from '@tanstack/react-virtual';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 
 import { DriveExplorerGridBox } from './DriveExplorerGridBox';
 import type {

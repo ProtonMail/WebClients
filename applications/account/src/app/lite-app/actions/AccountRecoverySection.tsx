@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useUpdateAccountRecovery } from '@proton/account-recovery/recovery/useUpdateAccountRecovery';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsDivider from '@proton/components/containers/account/SettingsDivider';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';

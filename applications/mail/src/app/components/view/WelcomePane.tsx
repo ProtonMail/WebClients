@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

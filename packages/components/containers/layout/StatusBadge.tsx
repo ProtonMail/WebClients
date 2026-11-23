@@ -1,5 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import type { IconComponent } from '@proton/icons/component';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcCircleRadioEmpty } from '@proton/icons/icons/IcCircleRadioEmpty';
@@ -7,8 +8,6 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { IcMinusCircleFilled } from '@proton/icons/icons/IcMinusCircleFilled';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import clsx from '@proton/utils/clsx';
-
-import SkeletonLoader from '../../components/skeletonLoader/SkeletonLoader';
 
 import './StatusBadge.scss';
 

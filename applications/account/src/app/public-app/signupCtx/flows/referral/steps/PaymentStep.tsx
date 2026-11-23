@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import useLoading from '@proton/hooks/useLoading';

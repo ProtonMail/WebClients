@@ -5,7 +5,7 @@ import { generateSyntheticLogCalls } from '@protontech/logger/fixtures';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Progress from '@proton/components/components/progress/Progress';
+import { Progress } from '@proton/atoms/Progress/Progress';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { PhaseResultRows, ResultRow } from './PhaseResultRows';

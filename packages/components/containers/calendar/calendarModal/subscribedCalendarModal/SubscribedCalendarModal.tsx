@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -17,7 +18,6 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Cale
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
 import Form from '../../../../components/form/Form';
-import Loader from '../../../../components/loader/Loader';
 import BasicModal from '../../../../components/modalTwo/BasicModal';
 import { InputField as InputFieldTwo } from '../../../../components/v2/field/InputField';
 import GenericError from '../../../error/GenericError';

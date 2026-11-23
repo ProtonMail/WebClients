@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 
 const meta: Meta<typeof EllipsisLoader> = {
-    title: 'Components/Ellipsis Loader',
+    title: 'Atoms/Ellipsis Loader',
     component: EllipsisLoader,
     parameters: {
         docs: {

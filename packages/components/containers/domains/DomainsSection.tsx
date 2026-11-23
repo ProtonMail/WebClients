@@ -11,6 +11,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -30,7 +31,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import DropdownActions from '../../components/dropdown/DropdownActions';
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import PermissionTooltip from '../../components/orgPermissions/PermissionTooltip';
 import withPermissionGuard from '../../components/orgPermissions/withPermissionGuard';

@@ -6,6 +6,7 @@ import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/organization';
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
@@ -14,7 +15,6 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import Info from '../../components/link/Info';
-import Loader from '../../components/loader/Loader';
 import PermissionBanner from '../../components/orgPermissions/PermissionBanner';
 import PermissionTooltip from '../../components/orgPermissions/PermissionTooltip';
 import Toggle from '../../components/toggle/Toggle';

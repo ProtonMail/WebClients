@@ -1,7 +1,7 @@
 import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { ADDON_PREFIXES, PLANS, TRIAL_DURATION_DAYS, TRIAL_MAX_USERS } from '@proton/payments/core/constants';

@@ -1,4 +1,4 @@
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useBookingStore } from '../../booking.store';

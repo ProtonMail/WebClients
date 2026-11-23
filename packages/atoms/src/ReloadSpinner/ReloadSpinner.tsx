@@ -10,7 +10,7 @@ interface Props extends ComponentProps<typeof IcArrowRotateRight> {
     onRefresh?: () => void;
 }
 
-const ReloadSpinner = ({ className, refreshing = false, onRefresh, ...rest }: Props) => {
+export const ReloadSpinner = ({ className, refreshing = false, onRefresh, ...rest }: Props) => {
     const handleClick = (event: React.MouseEvent<SVGSVGElement>) => {
         if (refreshing) {
             return;
@@ -27,5 +27,3 @@ const ReloadSpinner = ({ className, refreshing = false, onRefresh, ...rest }: Pr
         />
     );
 };
-
-export default ReloadSpinner;

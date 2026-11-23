@@ -1,4 +1,4 @@
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 
 export const NewsletterSubscriptionCardSkeleton = () => {
     return (

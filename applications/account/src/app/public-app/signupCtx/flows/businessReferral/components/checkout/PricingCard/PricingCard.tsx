@@ -4,8 +4,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Price from '@proton/components/components/price/Price';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';

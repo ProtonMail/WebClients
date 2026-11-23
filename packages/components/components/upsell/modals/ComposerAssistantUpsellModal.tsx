@@ -1,9 +1,9 @@
 import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
-import Loader from '../../loader/Loader';
 import type { ModalStateProps } from '../../modalTwo/useModalState';
 import ComposerAssistantB2BUpsellModal from './ComposerAssistantB2BUpsellModal';
 import ComposerAssistantB2CUpsellModal from './ComposerAssistantB2CUpsellModal';

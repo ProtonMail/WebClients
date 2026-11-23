@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import { Href } from '@proton/atoms/Href/Href';
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import usePrevious from '@proton/hooks/usePrevious';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';

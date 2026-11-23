@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
 import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
 import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import CycleSelector from '@proton/components/containers/payments/CycleSelector';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';

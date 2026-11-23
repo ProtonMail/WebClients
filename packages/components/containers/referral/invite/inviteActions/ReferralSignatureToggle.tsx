@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useAvailableApps } from '@proton/account/availableApps/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import { PM_SIGNATURE_REFERRAL } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 import Info from '../../../../components/link/Info';
-import SkeletonLoader from '../../../../components/skeletonLoader/SkeletonLoader';
 import Toggle from '../../../../components/toggle/Toggle';
 
 const ReferralSignatureToggle = () => {

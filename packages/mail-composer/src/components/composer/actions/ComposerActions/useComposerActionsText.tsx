@@ -1,8 +1,8 @@
 import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { formatSimpleDate } from '@proton/mail-message/helpers/date';
 import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 

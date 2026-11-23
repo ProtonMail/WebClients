@@ -11,7 +11,7 @@ import {
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { getDownloadAppText } from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/helpers';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';

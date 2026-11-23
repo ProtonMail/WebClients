@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
+import { Loader } from '@proton/atoms/Loader/Loader';
 import ContactKeyWarningIcon from '@proton/components/components/icon/ContactKeyWarningIcon';
-import Loader from '@proton/components/components/loader/Loader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';

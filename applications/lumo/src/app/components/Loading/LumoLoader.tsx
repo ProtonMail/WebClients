@@ -3,7 +3,7 @@ import { createContext, useContext, useLayoutEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import TextLoader from '@proton/components/components/loader/TextLoader';
+import { TextLoader } from '@proton/atoms/TextLoader/TextLoader';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

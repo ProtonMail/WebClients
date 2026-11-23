@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 
 interface Props {
     loading: boolean;

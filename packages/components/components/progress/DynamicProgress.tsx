@@ -1,9 +1,8 @@
+import { Loader } from '@proton/atoms/Loader/Loader';
+import { Progress } from '@proton/atoms/Progress/Progress';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
-
-import Loader from '../loader/Loader';
-import Progress from './Progress';
 
 interface Props {
     id: string;

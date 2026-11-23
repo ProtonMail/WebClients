@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import CollapsingBreadcrumbs from '@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrumbs';
 import type { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
-import Loader from '@proton/components/components/loader/Loader';
 import truncate from '@proton/utils/truncate';
 
 import { SignatureIcon } from '../../legacy/components/SignatureIcon';

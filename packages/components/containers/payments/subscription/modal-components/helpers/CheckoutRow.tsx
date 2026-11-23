@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import type { Currency } from '@proton/payments/core/interface';
 import clsx from '@proton/utils/clsx';
 
-import EllipsisLoader from '../../../../../components/loader/EllipsisLoader';
 import Price from '../../../../../components/price/Price';
 
 export interface Props {

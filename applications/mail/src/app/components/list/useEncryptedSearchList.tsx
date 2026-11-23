@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';

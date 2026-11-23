@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
@@ -12,7 +13,6 @@ import { BRAND_NAME, DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constan
 
 import { getNormalizedPlanTitleToPlus } from '../../../../containers/payments/subscription/plusToPlusHelper';
 import Price from '../../../price/Price';
-import SkeletonLoader from '../../../skeletonLoader/SkeletonLoader';
 import { PostSignupOneDollarCheck } from '../PostSignupOneDollar/components/PostSignupOneDollarCheck';
 
 export type SUPPORTED_APPS = 'proton-mail' | 'proton-drive';

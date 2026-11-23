@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 
 import Form from '../../../components/form/Form';
 import QRCode from '../../../components/image/QRCode';
-import Loader from '../../../components/loader/Loader';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';

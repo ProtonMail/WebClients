@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useModals from '@proton/components/hooks/useModals';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
 import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
@@ -21,7 +21,7 @@ vi.mock('@proton/components/hooks/useModals', () => ({
     default: vi.fn().mockReturnValue({ createModal: vi.fn() }),
 }));
 
-vi.mock('@proton/components/components/loader/Loader');
+vi.mock('@proton/atoms/Loader/Loader');
 vi.mock('./PaymentMethodsTable');
 
 const PaymentMethodsSectionContext = applyHOCs(

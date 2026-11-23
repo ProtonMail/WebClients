@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
+import { Loader } from '@proton/atoms/Loader/Loader';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
-import Loader from '@proton/components/components/loader/Loader';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';

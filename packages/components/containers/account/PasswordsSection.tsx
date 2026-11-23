@@ -14,6 +14,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { IcLocks } from '@proton/icons/icons/IcLocks';
 import { IcPassword } from '@proton/icons/icons/IcPassword';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
@@ -23,7 +24,6 @@ import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettin
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys/accountType';
 
 import Info from '../../components/link/Info';
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ChangeBackupPasswordModal from './ChangeBackupPasswordModal';

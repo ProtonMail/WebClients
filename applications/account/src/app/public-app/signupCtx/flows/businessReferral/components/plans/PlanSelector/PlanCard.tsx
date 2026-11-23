@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Price from '@proton/components/components/price/Price';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { IconSize } from '@proton/icons/types';
 import type { PaymentsContextType } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';

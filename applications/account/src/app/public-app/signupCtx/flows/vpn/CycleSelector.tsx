@@ -3,9 +3,9 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Radio from '@proton/components/components/input/Radio';
 import PassLogo from '@proton/components/components/logo/PassLogo';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
