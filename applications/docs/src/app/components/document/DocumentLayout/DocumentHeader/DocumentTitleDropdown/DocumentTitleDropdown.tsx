@@ -61,6 +61,7 @@ import { useWordCount } from '../../../WordCount'
 import { useExportToPDFModal } from './ExportToPDFModal'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
+import { BetaFeatureBadge } from '../BetaFeatureBadge'
 import { useSheetImportModal } from './SheetImportModal'
 import { useDriveSharing } from './useDriveSharing'
 import { useSyncCanOrganizeToEditor } from './useSyncCanOrganizeToEditor'
@@ -894,7 +895,8 @@ export function DocumentTitleDropdown({
                     }}
                     data-testid="download-odt"
                   >
-                    {c('Action').t`OpenDocument Text (.odt) (Beta)`}
+                    {c('Action').t`OpenDocument Text (.odt)`}
+                    <BetaFeatureBadge />
                   </DropdownMenuButton>
                 )}
                 <DropdownMenuButton

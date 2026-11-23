@@ -319,7 +319,7 @@ describe('DocumentTitleMenu', () => {
 
       expect(downloadFormats()).toEqual([
         'Microsoft Word (.docx)',
-        'OpenDocument Text (.odt) (Beta)',
+        'OpenDocument Text (.odt) Beta',
         'Web page (.html)',
         'Plain Text (.txt)',
         'Markdown (.md)',
@@ -340,7 +340,7 @@ describe('DocumentTitleMenu', () => {
 
       await userEvent.click(menuItem('Download'))
 
-      expect(downloadFormats()).not.toContain('OpenDocument Text (.odt) (Beta)')
+      expect(screen.queryByTestId('download-odt')).not.toBeInTheDocument()
     })
 
     test('Download as PDF explains the print dialog, and prints once that is closed', async () => {

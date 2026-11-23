@@ -22,6 +22,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import type { SerializedEditorState } from 'lexical'
 import { c } from 'ttag'
 
+import { BetaFeatureBadge } from '~/components/document/DocumentLayout/DocumentHeader/BetaFeatureBadge'
 import { useApplication } from '~/utils/application-context'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import { downloadJSONFile } from '~/utils/download-json-file'
@@ -340,7 +341,8 @@ function HistoryViewerModalContent({
                   disabled={!editorInvoker}
                   onClick={() => exportAs('odt')}
                 >
-                  {c('Action').t`Export this version (as odt) (Beta)`}
+                  {c('Action').t`Export this version (as odt)`}
+                  <BetaFeatureBadge />
                 </Button>
               )}
               {isDebugMode && (
