@@ -124,6 +124,15 @@ describe('createDocsApiFetch', () => {
     expect(logger.warn).toHaveBeenCalledWith(message)
   })
 
+  test("logs a comment URL outside the API without its thread's and comment's ids", async () => {
+    const outside = 'https://example.com/api/docs/volumes/volume-1/documents/link-1/threads/thread-1/comments/comment-1'
+    const message =
+      'Docs API URL outside the API: https://example.com/api/docs/volumes/…/documents/…/threads/…/comments/…'
+
+    await expect(docsApiFetch(outside, { method: 'PUT' })).rejects.toThrow(message)
+    expect(logger.warn).toHaveBeenCalledWith(message)
+  })
+
   test('logs a URL outside the API without its query or fragment, which can carry ids or tokens', async () => {
     const outside = 'https://example.com/docs/meta?linkId=link-1&token=secret\n#volume-1'
 

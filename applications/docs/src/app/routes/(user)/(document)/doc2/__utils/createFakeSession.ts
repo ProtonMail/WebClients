@@ -1,10 +1,20 @@
-import type { BaseState, HistoryEntry, Session, SessionEvents, SessionSnapshot } from '@proton-docs/realtime-sdk'
+import type {
+  BaseState,
+  CommentThread,
+  CommentsEvents,
+  CommentsSnapshot,
+  HistoryEntry,
+  Session,
+  SessionEvents,
+  SessionSnapshot,
+} from '@proton-docs/realtime-sdk'
 
 /**
  * A session for tests, pending until bootstrapped: its snapshot changes and its events fire by hand, and every method is
- * a jest mock.
+ * a jest mock. Its `comments` are on, with no threads, whatever the config asked.
  */
 export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
+  const comments = createFakeComments()
   const listeners = new Map<string, Set<(payload: unknown) => void>>()
   const snapshotListeners = new Set<(snapshot: SessionSnapshot) => void>()
   let current: SessionSnapshot = {
@@ -46,6 +56,7 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
     retry: vi.fn(async () => {}),
     sendUpdate: vi.fn(),
     setPresence: vi.fn(),
+    comments: comments.comments,
   }
 
   return {
@@ -58,5 +69,75 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
       current = { ...current, ...change }
       snapshotListeners.forEach((listener) => listener(current))
     },
+    setComments: comments.setSnapshot,
+    emitMarkChange: comments.emitMarkChange,
+  }
+}
+
+/** `session.comments` for tests: its snapshot changes and its marks change by hand, and every verb is a mock. */
+function createFakeComments() {
+  const listeners = new Set<(snapshot: CommentsSnapshot) => void>()
+  const markListeners = new Set<(change: CommentsEvents['markChange']) => void>()
+  let current: CommentsSnapshot = { threads: [], hasUnread: false, typers: {} }
+
+  const comments = {
+    getSnapshot: () => current,
+    subscribe: (listener: (snapshot: CommentsSnapshot) => void) => {
+      listeners.add(listener)
+      return () => {
+        listeners.delete(listener)
+      }
+    },
+    on: (_event: 'markChange', listener: (change: CommentsEvents['markChange']) => void) => {
+      markListeners.add(listener)
+      return () => {
+        markListeners.delete(listener)
+      }
+    },
+    createThread: vi.fn(async (_input: { content: string; markId?: string; createMark?: boolean }) => fakeThread()),
+    reply: vi.fn(async (_threadId: string, _content: string) => fakeThread().comments[0]),
+    editComment: vi.fn(async (_threadId: string, _commentId: string, _content: string) => {}),
+    deleteComment: vi.fn(async (_threadId: string, _commentId: string) => {}),
+    deleteThread: vi.fn(async (_threadId: string) => {}),
+    resolveThread: vi.fn(async (_threadId: string) => {}),
+    unresolveThread: vi.fn(async (_threadId: string) => {}),
+    markThreadAsRead: vi.fn((_threadId: string) => {}),
+    setTyping: vi.fn((_threadId: string, _typing: boolean) => {}),
+  }
+
+  return {
+    comments,
+    setSnapshot: (change: Partial<CommentsSnapshot>) => {
+      current = { ...current, ...change }
+      listeners.forEach((listener) => listener(current))
+    },
+    emitMarkChange: (change: CommentsEvents['markChange']) => markListeners.forEach((listener) => listener(change)),
+  }
+}
+
+/** A comment thread as the SDK holds it, one comment by a peer unless `change` says otherwise */
+export function fakeThread(change: Partial<CommentThread> = {}): CommentThread {
+  return {
+    id: 'thread-1',
+    markId: 'mark-1',
+    type: 'comment',
+    state: 'active',
+    createTime: 1_763_900_000_000,
+    modifyTime: 1_763_900_000_000,
+    comments: [
+      {
+        id: 'comment-1',
+        authorAddress: 'peer@example.com',
+        content: 'First',
+        type: 'comment',
+        createTime: 1_763_900_000_000,
+        modifyTime: 1_763_900_000_000,
+        verification: 'verified',
+        isPlaceholder: false,
+      },
+    ],
+    unread: false,
+    isPlaceholder: false,
+    ...change,
   }
 }

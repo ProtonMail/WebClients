@@ -8,7 +8,7 @@ import { DocsApiError, DocsApiErrorCode } from '@proton-docs/realtime-sdk'
 import type { Participant, SessionSnapshot } from '@proton-docs/realtime-sdk'
 
 import type { ClientHandler } from './createClientHandler'
-import { createFakeSession } from './createFakeSession'
+import { createFakeSession, fakeThread } from './createFakeSession'
 import {
   EDITOR_FRAME_READY_TIMEOUT_MS,
   type LoaderDeps,
@@ -43,6 +43,7 @@ const mockEditor = {
     mockEditorCalls.push(locked ? 'lock' : 'unlock')
   }),
   broadcastPresenceState: vi.fn(async () => {}),
+  handleCommentsChange: vi.fn(async () => {}),
 }
 vi.mock('./ClientEditorBridge', () => ({
   ClientEditorBridge: vi.fn().mockImplementation(function (_frame: unknown, clientHandler: ClientHandler) {
@@ -116,6 +117,7 @@ function startLoad({
     logger,
     appVersion: '1.2.3',
     sendEditorBasics,
+    getDocumentName: () => 'Plans',
     bridgeHandlers: {
       isFlagEnabled: () => false,
       onWordCount: vi.fn(),
@@ -228,6 +230,7 @@ describe('loadDocument', () => {
       documentType: 'doc',
       nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' },
       prefetch: load.prefetch,
+      comments: { getDocumentNameForEmails: load.deps.getDocumentName },
     })
     expect(mockBridgeBuilt).toHaveBeenCalledTimes(1)
     expect(mockEditor.broadcastPresenceState).toHaveBeenCalled()
@@ -302,6 +305,38 @@ describe('loadDocument', () => {
 
       expect(load.prefetch.end).toHaveBeenCalledTimes(1)
     })
+  })
+
+  test.each<keyof typeof ROLES>(['Admin', 'Editor'])('turns comments on for a %s', async (role) => {
+    const load = startLoad({ role })
+
+    await waitFor(() =>
+      expect(load.client.createSession).toHaveBeenCalledWith(
+        expect.objectContaining({ comments: { getDocumentNameForEmails: load.deps.getDocumentName } }),
+      ),
+    )
+  })
+
+  test('tells the editor of comment changes only once it is initialized, as it throws on a call before', async () => {
+    const load = startLoad()
+    await waitFor(() => expect(load.fake.mocks.connect).toHaveBeenCalled())
+
+    load.fake.setComments({ threads: [fakeThread()] })
+    expect(mockEditor.handleCommentsChange).not.toHaveBeenCalled()
+
+    load.catchUp()
+    await waitFor(() => expect(mockEditorCalls).toContain('initializeEditor:Editor'))
+    await waitFor(() => expect(mockEditor.showEditor).toHaveBeenCalled())
+    load.fake.setComments({ threads: [fakeThread({ unread: true })] })
+
+    expect(mockEditor.handleCommentsChange).toHaveBeenCalledTimes(1)
+  })
+
+  test('turns comments off for a viewer', async () => {
+    const load = startLoad({ role: 'Viewer' })
+
+    await waitFor(() => expect(load.client.createSession).toHaveBeenCalled())
+    expect(load.client.createSession).toHaveBeenCalledWith(expect.not.objectContaining({ comments: expect.anything() }))
   })
 
   test('squashes at 50 document updates on dev and black, as /doc does', async () => {

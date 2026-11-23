@@ -72,7 +72,7 @@ function rejectOnAbort(signal: AbortSignal) {
  * version adds.
  */
 function withoutIds(url: string) {
-  return url.split(/[?#]/)[0].replace(/\/(volumes|documents|commits)\/[^/]+/g, '/$1/…')
+  return url.split(/[?#]/)[0].replace(/\/(volumes|documents|commits|threads|comments)\/[^/]+/g, '/$1/…')
 }
 
 /** The app's fetch throws a `StatusCodeError` for every non-2xx answer, its JSON body parsed into `data`. */

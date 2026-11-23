@@ -39,6 +39,13 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'getDocumentState'
   | 'replaceEditorState'
   | 'toggleDebugTreeView'
+  | 'showCommentsPanel'
+  | 'handleCommentsChange'
+  | 'handleTypingStatusChange'
+  | 'handleCreateCommentMarkNode'
+  | 'handleRemoveCommentMarkNode'
+  | 'handleResolveCommentMarkNode'
+  | 'handleUnresolveCommentMarkNode'
 >
 
 // Copied from `packages/docs-core/lib/Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2
@@ -123,6 +130,34 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
 
   async toggleDebugTreeView(): Promise<void> {
     return this.invokeEditorMethod('toggleDebugTreeView', [])
+  }
+
+  async showCommentsPanel(): Promise<void> {
+    return this.invokeEditorMethod('showCommentsPanel', [])
+  }
+
+  async handleCommentsChange(): Promise<void> {
+    return this.invokeEditorMethod('handleCommentsChange', [])
+  }
+
+  async handleTypingStatusChange(threadId: string): Promise<void> {
+    return this.invokeEditorMethod('handleTypingStatusChange', [threadId])
+  }
+
+  async handleCreateCommentMarkNode(markID: string): Promise<void> {
+    return this.invokeEditorMethod('handleCreateCommentMarkNode', [markID])
+  }
+
+  async handleRemoveCommentMarkNode(markID: string): Promise<void> {
+    return this.invokeEditorMethod('handleRemoveCommentMarkNode', [markID])
+  }
+
+  async handleResolveCommentMarkNode(markID: string): Promise<void> {
+    return this.invokeEditorMethod('handleResolveCommentMarkNode', [markID])
+  }
+
+  async handleUnresolveCommentMarkNode(markID: string): Promise<void> {
+    return this.invokeEditorMethod('handleUnresolveCommentMarkNode', [markID])
   }
 
   async initializeEditor(
