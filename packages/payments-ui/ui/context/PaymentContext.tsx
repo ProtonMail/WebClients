@@ -16,6 +16,7 @@ import { forceAddonsMinMaxConstraints } from '@proton/components/containers/paym
 import { useHandler } from '@proton/hooks/useHandler';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import {
+    type CheckInputs,
     type InitializeProps,
     type IsTrialResolver,
     PaymentsContext,
@@ -83,8 +84,6 @@ export interface PaymentsContextProviderProps {
      */
     billingDetails?: BillingAddressExtraProperties;
 }
-
-type CheckInputs = Pick<PaymentsContextProviderState, 'planToCheck' | 'billingAddress' | 'vatNumber'>;
 
 const selectInitialPaymentData = createSelector(
     [selectUser, selectSubscription, selectPlans, selectPaymentStatus, selectEntitlementCatalog],
@@ -652,10 +651,6 @@ export const PaymentsContextProvider = ({
     };
 
     const getPrice: PaymentsContextType['getPrice'] = (planToCheck) => {
-        if (!planToCheck.coupon) {
-            return getFallbackPrice(planToCheck);
-        }
-
         const subscriptionData = getSubscriptionDataFromPlanToCheck({
             ...planToCheck,
             BillingAddress: stateRef.current.billingAddress,
@@ -663,9 +658,9 @@ export const PaymentsContextProvider = ({
         });
         const result = paymentsApiRef.current.getCachedCheck(subscriptionData);
 
-        // Cache is missing
+        // Not checked yet: without a coupon, the plan's list price is its price, only its taxes are unknown
         if (!result) {
-            return null;
+            return planToCheck.coupon ? null : getFallbackPrice(planToCheck);
         }
 
         const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
@@ -762,8 +757,7 @@ export const PaymentsContextProvider = ({
         plansMap: getPlansMap(),
         getPrice,
         getPriceOrFallback,
-        hasPendingBillingChange: () =>
-            requestedRef.current.billingAddress !== undefined || requestedRef.current.vatNumber !== undefined,
+        getRequested,
         getOptimisticCheckResult,
         getCoupon,
         checkResult: stateRef.current.checkResult,

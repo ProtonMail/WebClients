@@ -12,8 +12,6 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
     const payments = usePaymentOptimistic();
     const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(plan);
 
-    const pricingInitialized = payments.initializationStatus.pricingInitialized;
-
     const planToCheck = {
         planIDs: { [plan]: 1 },
         cycle: payments.options.cycle,
@@ -30,7 +28,7 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
         </Price>
     );
 
-    return pricingInitialized ? (
+    return !price.loading ? (
         <span className="color-weak text-sm" data-testid="referral:pricing">
             {isVPNPlanWithoutTrial ? c('Signup').jt`From ${priceElement}` : c('Signup').jt`Then ${priceElement}`}
         </span>

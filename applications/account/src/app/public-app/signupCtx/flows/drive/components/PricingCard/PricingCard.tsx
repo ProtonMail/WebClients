@@ -136,7 +136,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
     const { options } = payments;
 
-    const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+    const hasFullCheckoutDetails = !payments.loadingTotal;
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const checkoutView = createCheckoutView(

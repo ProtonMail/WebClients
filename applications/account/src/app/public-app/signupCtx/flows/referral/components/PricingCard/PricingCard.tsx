@@ -138,7 +138,7 @@ const PricingFooter = ({ step }: { step: PricingStep }) => {
     const { selectedPlan } = payments;
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
     const { eligibleTrials } = useEligibleTrials();
-    const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+    const hasFullCheckoutDetails = !payments.loadingTotal;
     const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(selectedPlan.name);
 
     const planToCheck = {

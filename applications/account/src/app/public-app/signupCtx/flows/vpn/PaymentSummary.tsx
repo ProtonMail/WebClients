@@ -49,8 +49,8 @@ const TrialSummary = ({ loading, options }: { loading: boolean; options: Optimis
 };
 interface Props {
     plansMap: PlansMap;
-    /** The prices aren't loaded yet */
-    initialLoading: boolean;
+    /** The prices aren't loaded yet, or are list prices until a currency change is checked */
+    loadingPrices: boolean;
     couponConfig: PaymentsContextOptimisticType['couponConfig'];
     options: OptimisticOptions & { plan: Plan };
     loadingPaymentDetails: boolean;
@@ -61,7 +61,7 @@ interface Props {
 
 const PaymentSummary = ({
     plansMap,
-    initialLoading,
+    loadingPrices,
     couponConfig,
     options,
     loadingPaymentDetails,
@@ -69,7 +69,7 @@ const PaymentSummary = ({
     planInformation,
     upsellToggle,
 }: Props) => {
-    const loading = loadingPaymentDetails || initialLoading;
+    const loading = loadingPaymentDetails;
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
 
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
@@ -93,7 +93,7 @@ const PaymentSummary = ({
                             key={addon.addonName}
                             label={addon.labelWithoutQuantityShort}
                             numberOfItems={addon.quantity}
-                            price={initialLoading ? loaderNode : addon.pricePerOnePerMonthElement}
+                            price={loadingPrices ? loaderNode : addon.pricePerOnePerMonthElement}
                             subline={undefined}
                         />
                     );
@@ -112,7 +112,7 @@ const PaymentSummary = ({
                         key="members"
                         label={item.labelWithoutQuantity}
                         numberOfItems={item.totalUsers}
-                        price={initialLoading ? loaderNode : item.pricePerOnePerMonthElement}
+                        price={loadingPrices ? loaderNode : item.pricePerOnePerMonthElement}
                         subline={<>/ {c('Checkout row').t`month`}</>}
                     />
                 );
@@ -142,18 +142,19 @@ const PaymentSummary = ({
                                 })}
                             </span>
                             <span>
-                                {initialLoading ? loaderNode : <Price currency={options.currency}>{amount}</Price>}
+                                {loadingPrices ? loaderNode : <Price currency={options.currency}>{amount}</Price>}
                             </span>
                         </div>
                     </>
                 );
             },
             discount: () => null,
-            planDiscount: (item) => (
-                <SaveLabel2 className="text-sm inline-block" highlightPrice dir="ltr">
-                    {`− ${item.discountPercent}%`}
-                </SaveLabel2>
-            ),
+            planDiscount: (item) =>
+                !loadingPrices && (
+                    <SaveLabel2 className="text-sm inline-block" highlightPrice dir="ltr">
+                        {`− ${item.discountPercent}%`}
+                    </SaveLabel2>
+                ),
             planAmountWithDiscount: () => null,
             proration: () => null,
             unusedCredit: () => null,
@@ -162,7 +163,7 @@ const PaymentSummary = ({
             taxExclusive: (item) => (
                 <div className="mx-3 flex justify-space-between gap-2">
                     <span>{item.taxRateElement}</span>
-                    <span>{item.taxAmountElement}</span>
+                    <span>{loading ? loaderNode : item.taxAmountElement}</span>
                 </div>
             ),
             nextBilling: () => null,
@@ -197,7 +198,7 @@ const PaymentSummary = ({
             },
             taxInclusive: (item) => (
                 <div className="text-sm color-weak" data-testid="tax">
-                    <span>{item.taxRateAndAmountElement}</span>
+                    <span>{loading ? loaderNode : item.taxRateAndAmountElement}</span>
                 </div>
             ),
             renewalNotice: () => null,
@@ -218,7 +219,7 @@ const PaymentSummary = ({
                     return null;
                 }
 
-                const pricePerMonth = initialLoading
+                const pricePerMonth = loadingPrices
                     ? loaderNode
                     : getSimplePriceString(options.currency, discountItem.withDiscountPerMonth);
 
@@ -246,16 +247,14 @@ const PaymentSummary = ({
                                         {checkoutView.render('planDiscount')}
                                     </div>
 
-                                    {!isB2bPlan && discountItem.discountPercent > 0 && (
+                                    {!isB2bPlan && !loadingPrices && discountItem.discountPercent > 0 && (
                                         <span className="inline-flex">
                                             <span className="text-sm color-weak text-strike text-ellipsis">
                                                 {/* Regular Price */}
-                                                {initialLoading
-                                                    ? loaderNode
-                                                    : getSimplePriceString(
-                                                          options.currency,
-                                                          discountItem.withoutDiscountPerMonth
-                                                      )}
+                                                {getSimplePriceString(
+                                                    options.currency,
+                                                    discountItem.withoutDiscountPerMonth
+                                                )}
                                             </span>
                                             <span className="text-sm color-weak ml-1">{` ${c('Suffix')
                                                 .t`/month`}`}</span>

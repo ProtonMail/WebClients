@@ -30,7 +30,7 @@ export const PricingCard = ({ taxCountryCode }: { taxCountryCode?: string }) => 
         (config) => config.plan === (selectedPlan.name as BusinessReferralPlan)
     );
 
-    const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+    const hasFullCheckoutDetails = !payments.loadingTotal;
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const checkoutView = useMemo(

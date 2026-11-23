@@ -118,7 +118,7 @@ export type FullBillingAddressFlat = BillingAddressExtended & {
     VatId?: string | null;
 };
 
-type PayloadBillingAddress = BillingAddressExtended & {
+export type PayloadBillingAddress = BillingAddressExtended & {
     VatId?: string | null;
 };
 

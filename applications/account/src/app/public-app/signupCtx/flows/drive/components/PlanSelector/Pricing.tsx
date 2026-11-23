@@ -15,8 +15,6 @@ import './PlanCard.scss';
 const Pricing = ({ plan, displayPerUserSpace = false }: { plan: PLANS; displayPerUserSpace?: boolean }) => {
     const payments = usePaymentOptimistic();
 
-    const pricingInitialized = payments.initializationStatus.pricingInitialized;
-
     const maxSpace = getDriveMaxSpaceMap(payments);
 
     if (plan === PLANS.FREE) {
@@ -58,13 +56,13 @@ const Pricing = ({ plan, displayPerUserSpace = false }: { plan: PLANS; displayPe
                     {maxSpace[plan]}{' '}
                     {displayPerUserSpace ? <span className="text-sm">{c('Signup').t`/user`}</span> : null}
                 </span>
-                {pricingInitialized && priceDifferencePercentage > 0 ? (
+                {!price.loading && priceDifferencePercentage > 0 ? (
                     <SaveBadge savePercentage={priceDifferencePercentage} />
                 ) : null}
             </div>
 
             <div className="flex flex-column gap-1">
-                {pricingInitialized ? (
+                {!price.loading ? (
                     <div className="flex gap-2">
                         {hasSavings ? (
                             <Price key={`${plan}-compare`} currency={currency} className="text-strike color-weak">
@@ -86,7 +84,7 @@ const Pricing = ({ plan, displayPerUserSpace = false }: { plan: PLANS; displayPe
                 )}
                 {hasSavings ? (
                     <>
-                        {pricingInitialized ? (
+                        {!price.loading ? (
                             <span className="text-sm color-success">
                                 {c('Signup').t`Save ${priceDifferenceString}`}
                             </span>

@@ -2,6 +2,7 @@ import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-addre
 import { CYCLE, DEFAULT_PAYMENT_VENDOR_STATES, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { emptyEntitlementCatalog } from '@proton/payments/core/entitlements/empty-entitlement-catalog';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import {
@@ -17,6 +18,7 @@ import {
     getAvailablePlansToCheck,
     getEstimationChangeAction,
     getInitialState,
+    isCheckedFor,
     withBillingDetails,
 } from './helpers';
 
@@ -228,5 +230,42 @@ describe('withBillingDetails', () => {
             State: null,
             Company: '',
         });
+    });
+});
+
+describe('isCheckedFor', () => {
+    const checkedFor = (BillingAddress: object, extra: object = {}) =>
+        ({
+            Amount: 4788,
+            requestData: { Plans: { [PLANS.VPN2024]: 1 }, Currency: 'CHF', Cycle: CYCLE.YEARLY, BillingAddress },
+            ...extra,
+        }) as unknown as SubscriptionEstimation;
+    const checked = checkedFor({ CountryCode: 'CH', State: null, ZipCode: null, VatId: undefined, Company: 'Acme' });
+    const requested = { billingAddress: { CountryCode: 'CH', State: null }, vatNumber: undefined };
+
+    it('treats a missing field and null alike', () => {
+        expect(isCheckedFor(checkedFor({ CountryCode: 'CH' }), requested)).toBe(true);
+    });
+
+    it('is true for the billing details the check was made with, whatever the fields a price does not depend on', () => {
+        expect(isCheckedFor(checked, requested)).toBe(true);
+        expect(
+            isCheckedFor(checked, { ...requested, billingAddress: { ...requested.billingAddress, Company: 'Other' } })
+        ).toBe(true);
+    });
+
+    it.each([
+        ['another country', { ...requested, billingAddress: { CountryCode: 'DE', State: null } }],
+        ['another state', { ...requested, billingAddress: { CountryCode: 'US', State: 'CA' } }],
+        ['a VAT number the check was made without', { ...requested, vatNumber: 'CHE123456789' }],
+    ])('is false for %s', (_, details) => {
+        expect(isCheckedFor(checked, details)).toBe(false);
+    });
+
+    it('is false without a check, or for an estimate', () => {
+        expect(isCheckedFor(undefined, requested)).toBe(false);
+        expect(isCheckedFor(checkedFor({ CountryCode: 'CH', State: null }, { optimistic: true }), requested)).toBe(
+            false
+        );
     });
 });

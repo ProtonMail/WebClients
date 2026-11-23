@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ModalsProvider from '@proton/components/containers/modals/Provider';
@@ -15,7 +15,12 @@ import Step1 from './Step1';
 
 vi.mock('./PaymentSummary', () => ({
     __esModule: true,
-    default: ({ giftCode }: any) => <div>{giftCode}</div>,
+    default: ({ giftCode, upsellToggle }: any) => (
+        <div>
+            {giftCode}
+            {upsellToggle}
+        </div>
+    ),
 }));
 
 vi.mock('./GiftCodeSummary', () => ({
@@ -62,6 +67,8 @@ const getPrice = (planToCheck: PlanToCheck) => {
     return { checkResult, checkoutUi: getCheckoutUi({ planIDs: planToCheck.planIDs, plansMap, checkResult }) };
 };
 
+const getPriceOrFallback = (planToCheck: PlanToCheck) => ({ ...getPrice(planToCheck), loading: false });
+
 const payments = {
     initializationStatus: { triggered: true, pricingInitialized: true },
     options,
@@ -74,7 +81,8 @@ const payments = {
     billingAddress: options.billingAddress,
     paymentsApi: {},
     getPrice: () => null,
-    getPriceOrFallback: getPrice,
+    getPriceOrFallback,
+    loadingPrice: false,
     checkMultiplePlans: vi.fn(async () => []),
     getAvailableCurrencies: () => ['CHF'],
     selectPlan: vi.fn(),
@@ -189,6 +197,25 @@ describe('VPN Step1 selection', () => {
     });
 });
 
+describe('VPN Step1 upsell toggle', () => {
+    it('keeps the toggle on while the price of the cycle it switched to loads', async () => {
+        const { rerender } = render();
+        await userEvent.click(screen.getByRole('checkbox'));
+        expect(screen.getByRole('checkbox')).toBeChecked();
+
+        // e.g. after a currency change
+        payments.getPriceOrFallback = (planToCheck: PlanToCheck) => ({ ...getPrice(planToCheck), loading: true });
+        try {
+            rerender(<Harness />);
+
+            expect(screen.getByRole('checkbox')).toBeChecked();
+            expect(screen.getByRole('checkbox')).toBeDisabled();
+        } finally {
+            payments.getPriceOrFallback = getPriceOrFallback;
+        }
+    });
+});
+
 describe('VPN Step1 gift code', () => {
     afterEach(() => {
         payments.checkResult = options.checkResult;
@@ -238,6 +265,24 @@ describe('VPN Step1 three plans', () => {
         expect(payments.selectPlan).toHaveBeenCalledWith(
             expect.objectContaining({ planIDs: { [PLANS.BUNDLE]: 1 }, coupon: undefined })
         );
+    });
+
+    it.each([
+        ['shows placeholders for the paid plans whose prices are loading', true, 2],
+        ['shows the prices once they are loaded', false, 0],
+    ])('%s', async (_, loading, placeholders) => {
+        payments.getPriceOrFallback = (planToCheck: PlanToCheck) => ({ ...getPrice(planToCheck), loading });
+        try {
+            render({ showThreePlans: true });
+
+            const cards = [PLANS.FREE, PLANS.VPN2024, PLANS.BUNDLE].map((plan) =>
+                within(screen.getByTestId(`three-plans-card-${plan}`)).queryAllByTestId('skeleton-loader')
+            );
+            expect(cards[0]).toHaveLength(0);
+            expect(cards.filter((skeletons) => skeletons.length > 0)).toHaveLength(placeholders);
+        } finally {
+            payments.getPriceOrFallback = getPriceOrFallback;
+        }
     });
 
     it('keeps the code entered by the user when changing plan', async () => {

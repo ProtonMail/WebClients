@@ -270,7 +270,7 @@ interface Props {
     footer: ReactNode;
     plansMap: PlansMap;
     /** The checked price of a plan and cycle, or its optimistic price until it's checked */
-    getCheckout: (planIDs: PlanIDs, cycle: Cycle) => PaymentsCheckoutUI;
+    getCheckout: (planIDs: PlanIDs, cycle: Cycle) => { checkoutUi: PaymentsCheckoutUI; loading: boolean };
     selectedPlanName: string;
     cycle: Cycle;
     cycles: Cycle[];
@@ -309,12 +309,13 @@ const ThreePlansSelector = ({
 
     const cycleOptions = cycles.map((value) => {
         const text = getShortBillingText(value, {});
-        const discountPercent = getPlanCheckout(PLANS.VPN2024, value).discountPercent;
+        const { checkoutUi, loading: loadingPrice } = getPlanCheckout(PLANS.VPN2024, value);
+        const discountPercent = checkoutUi.discountPercent;
         return {
             text,
             value,
             element:
-                discountPercent > 0 ? (
+                discountPercent > 0 && !loadingPrice ? (
                     <>
                         {text}{' '}
                         <span className={clsx('text-semibold', value !== cycle && 'color-success')}>
@@ -356,18 +357,19 @@ const ThreePlansSelector = ({
                         return null;
                     }
                     const isFree = planName === PLANS.FREE;
+                    const price = isFree ? undefined : getPlanCheckout(planName, cycle);
                     return (
                         <PlanCard
                             key={planName}
                             planName={planName}
                             title={isFree ? c('Signup').t`Free` : plan.Title}
                             logo={information.logo}
-                            checkout={isFree ? undefined : getPlanCheckout(planName, cycle)}
+                            checkout={price?.checkoutUi}
                             currency={currency}
                             cycle={cycle}
                             recommended={planName === PLANS.VPN2024}
                             selected={selectedPlanName === planName}
-                            loading={loading}
+                            loading={price ? price.loading : loading}
                             disabled={disabled}
                             features={getFeatures(planName, plansMap)}
                             onSelect={isFree ? onSelectFree : () => onSelectPlan(planName)}

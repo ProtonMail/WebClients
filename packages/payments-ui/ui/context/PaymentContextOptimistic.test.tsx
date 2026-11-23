@@ -2,6 +2,7 @@ import { act, render } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import type { InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -74,13 +75,17 @@ const renderProvider = ({
     return () => contextRef.current!;
 };
 
-const initialize = (getContext: () => PaymentsContextOptimisticType) =>
+const initialize = (
+    getContext: () => PaymentsContextOptimisticType,
+    availablePlans?: InitializeProps['availablePlans']
+) =>
     act(() =>
         getContext()
             .initialize({
                 api: apiMock,
                 planToCheck: { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY },
                 paramCurrency: 'CHF',
+                availablePlans,
                 telemetryContext: 'other',
                 product: 'proton-vpn-settings',
             })
@@ -151,7 +156,9 @@ describe('PaymentsContextOptimisticProvider selection', () => {
     });
 
     /** The checks matching the request don't answer. A test's leftover debounced check can still reach the API */
-    const holdChecks = (matches: (data: { Cycle: number; BillingAddress?: { CountryCode?: string } }) => boolean) => {
+    const holdChecks = (
+        matches: (data: { Cycle: number; Currency: string; BillingAddress?: { CountryCode?: string } }) => boolean
+    ) => {
         const answer = checkSubscription.getMockImplementation()!;
         checkSubscription.mockImplementation((data) => (matches(data) ? new Promise(() => {}) : answer(data)));
     };
@@ -161,8 +168,8 @@ describe('PaymentsContextOptimisticProvider selection', () => {
         return act(() => getContext().checkMultiplePlans([{ ...card, coupon: 'CARDS' }]));
     };
 
-    it.each<[string, (getContext: () => PaymentsContextOptimisticType) => Promise<unknown>, boolean]>([
-        ['shows the price the plan cards checked', checkCards, true],
+    it.each<[string, (getContext: () => PaymentsContextOptimisticType) => Promise<unknown>, boolean, boolean]>([
+        ['shows the price the plan cards checked', checkCards, true, false],
         [
             'shows the price the plan cards checked while another cycle is checked',
             async (getContext) => {
@@ -174,8 +181,10 @@ describe('PaymentsContextOptimisticProvider selection', () => {
                 expect(getContext().loading).toBe(true);
             },
             true,
+            false,
         ],
-        ['shows a guess without a price the plan cards checked', async () => {}, false],
+        // Without a coupon, the guess is the list price, which is the price
+        ['shows a guess without a price the plan cards checked', async () => {}, false, false],
         [
             'shows a guess while a billing country is checked, as the cards were checked for the previous one',
             async (getContext) => {
@@ -184,6 +193,7 @@ describe('PaymentsContextOptimisticProvider selection', () => {
                 act(() => getContext().selectFullBillingAddress({ CountryCode: 'DE', State: null }));
             },
             false,
+            true,
         ],
         [
             'shows a guess with a VAT number, as the cards were checked without one',
@@ -193,8 +203,9 @@ describe('PaymentsContextOptimisticProvider selection', () => {
                 await act(() => new Promise((resolve) => setTimeout(resolve, 700)));
             },
             false,
+            true,
         ],
-    ])('%s for a cycle picked before its check returns', async (_, before, cardPrice) => {
+    ])('%s for a cycle picked before its check returns', async (_, before, cardPrice, loadingPrice) => {
         const getContext = renderProvider();
         await initialize(getContext);
         await before(getContext);
@@ -204,10 +215,120 @@ describe('PaymentsContextOptimisticProvider selection', () => {
 
         expect(checkSubscription).toHaveBeenCalledTimes(checks);
         expect(getContext().loadingPaymentDetails).toBe(true);
-        expect(getContext().pricedBeforeCheck).toBe(cardPrice);
+        expect(getContext().loadingPrice).toBe(loadingPrice);
+        expect(getContext().loadingTotal).toBe(!cardPrice);
         if (cardPrice) {
             expect(getContext().options.checkResult.AmountDue).toBe(7176);
         }
+    });
+
+    it("stops loading the selection's price once its check returns", async () => {
+        const getContext = renderProvider();
+        expect(getContext().loadingPrice).toBe(true);
+        await initialize(getContext);
+        expect(getContext().loadingPrice).toBe(false);
+
+        await checkCards(getContext);
+
+        // No price is checked in EUR yet, so the guess misses the coupon the cards were checked with
+        act(() => getContext().selectPlan({ currency: 'EUR' }));
+        expect(getContext().loadingPrice).toBe(true);
+        await act(() => new Promise((resolve) => setTimeout(resolve, 600)));
+
+        expect(getContext().loadingPrice).toBe(false);
+    });
+
+    it('loads the total, but not the price, while a billing country is checked', async () => {
+        const getContext = renderProvider();
+        await initialize(getContext);
+        holdChecks((data) => data.BillingAddress?.CountryCode === 'DE');
+
+        act(() => getContext().selectFullBillingAddress({ CountryCode: 'DE', State: null }));
+        await act(() => new Promise((resolve) => setTimeout(resolve, 700)));
+
+        expect(getContext().loadingTotal).toBe(true);
+        expect(getContext().loadingPrice).toBe(false);
+    });
+
+    it.each([
+        ['while that country is checked', true],
+        ['once it is checked, while the cycle is', false],
+    ])('loads the total for a country picked after a cycle priced by the plan cards, %s', async (_, holdCountry) => {
+        const getContext = renderProvider();
+        await initialize(getContext);
+        await checkCards(getContext);
+        holdChecks(
+            (data) => data.BillingAddress?.CountryCode === 'DE' && (holdCountry || data.Cycle === CYCLE.TWO_YEARS)
+        );
+
+        act(() => getContext().selectPlan({ cycle: CYCLE.TWO_YEARS }));
+        expect(getContext().loadingTotal).toBe(false);
+
+        act(() => getContext().selectFullBillingAddress({ CountryCode: 'DE', State: null }));
+        // Past the selection's debounce, so its check runs
+        await act(() => new Promise((resolve) => setTimeout(resolve, 700)));
+
+        // The cards' taxes are the previous country's
+        expect(getContext().loadingTotal).toBe(true);
+    });
+
+    it('loads a card price only until the prices load and while it is checked', async () => {
+        const card = {
+            planIDs: { [PLANS.VPN2024]: 1 },
+            cycle: CYCLE.TWO_YEARS,
+            currency: 'CHF' as const,
+            coupon: 'CARDS',
+        };
+        const getContext = renderProvider();
+        expect(getContext().getPriceOrFallback(card).loading).toBe(true);
+        await initialize(getContext);
+        // Not checked: the list price, not a placeholder
+        expect(getContext().getPriceOrFallback(card).loading).toBe(false);
+
+        let check: Promise<unknown> = Promise.resolve();
+        act(() => {
+            check = getContext().checkMultiplePlans([card]);
+        });
+        expect(getContext().getPriceOrFallback(card).loading).toBe(true);
+        await act(() => check);
+
+        expect(getContext().getPriceOrFallback(card)).toEqual(
+            expect.objectContaining({ loading: false, checkResult: expect.objectContaining({ AmountDue: 7176 }) })
+        );
+    });
+
+    it('loads the total for a cycle priced by the plan cards while a VAT number typed just before is checked', async () => {
+        const getContext = renderProvider();
+        await initialize(getContext);
+        await checkCards(getContext);
+        holdChecks((data) => data.Cycle === CYCLE.TWO_YEARS);
+
+        // The VAT number's check runs 500 ms after typing, the cycle's 400 ms after picking: the VAT number's returns first
+        act(() => getContext().setVatNumber('DE123456789'));
+        await act(() => new Promise((resolve) => setTimeout(resolve, 200)));
+        act(() => getContext().selectPlan({ cycle: CYCLE.TWO_YEARS }));
+        expect(getContext().loadingTotal).toBe(false);
+        await act(() => new Promise((resolve) => setTimeout(resolve, 700)));
+
+        // The cards were checked without a VAT number
+        expect(getContext().vatNumber).toBe('DE123456789');
+        expect(getContext().loadingTotal).toBe(true);
+    });
+
+    it('loads a card price in a new currency until its coupon is checked there', async () => {
+        const card = { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.TWO_YEARS };
+        const getContext = renderProvider();
+        await initialize(getContext, [{ ...card, coupon: 'CARDS' }]);
+        holdChecks((data) => data.Currency === 'EUR');
+
+        act(() => {
+            void getContext().selectCurrency('EUR');
+        });
+
+        // As the Drive, Referral and Business referral cards ask for it: with the coupon their last check returned
+        const planToCheck = { ...card, currency: 'EUR' as const };
+        const price = getContext().getPriceOrFallback({ ...planToCheck, coupon: getContext().getCoupon(planToCheck) });
+        expect(price.loading).toBe(true);
     });
 });
 

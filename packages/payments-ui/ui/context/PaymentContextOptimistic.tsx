@@ -1,8 +1,10 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
+import isDeepEqual from 'lodash/isEqual';
+
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { useHandler } from '@proton/hooks/useHandler';
-import type { InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
+import type { InitializeProps, PricesResult } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
@@ -18,6 +20,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { PaymentsContextProvider, type PaymentsContextProviderProps } from './PaymentContext';
+import { isCheckedFor } from './helpers';
 
 interface InitializationStatus {
     /**
@@ -41,15 +44,22 @@ type OptimisticOptions = PlanToCheck & {
  * other fields, such as `checkResult`, `coupon` and `billingAddress`, are the last checked values. `selectPlan` and the
  * `select*` functions check 400 ms later and resolve before that; `selectNewPlan` checks now and returns the result.
  */
-export type PaymentsContextOptimisticType = PaymentsContextType & {
+export type PaymentsContextOptimisticType = Omit<PaymentsContextType, 'getPriceOrFallback'> & {
     selectedPlan: SelectedPlan;
     loadingPaymentDetails: boolean;
     initializationStatus: InitializationStatus;
     selectPlan: (checkOptions: Partial<OptimisticOptions>) => void;
     checkoutUi: PaymentsContextType['checkoutUi'];
     options: OptimisticOptions;
-    /** A selection change waits for its check, but `options.checkResult` already holds its price, checked for the plan cards */
-    pricedBeforeCheck: boolean;
+    /** `options.checkResult`'s price is estimated without its coupon's discount until the prices load or the check returns */
+    loadingPrice: boolean;
+    /**
+     * `options.checkResult`'s total and taxes may still change: until the prices load, or while a check runs, unless the
+     * selection already holds its price, checked with the taxes for the plan cards for billing details still in place
+     */
+    loadingTotal: boolean;
+    /** The checked price, or the list price, and whether it's still loading: until the prices load, or while it's checked */
+    getPriceOrFallback: (planToCheck: PlanToCheck) => PricesResult & { loading: boolean };
     /** The payment status, or a guess until it loads, so the payment methods don't pop in */
     optimisticPaymentStatus: PaymentStatus;
 };
@@ -77,6 +87,7 @@ const InnerPaymentsContextOptimisticProvider = ({
     const latestOptimisticRef = useRef<object | undefined>(undefined);
     const [optimistic, setOptimistic] = useState<Partial<OptimisticOptions>>({});
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
+    const [checkingPlans, setCheckingPlans] = useState<PlanToCheck[][]>([]);
     const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({
         triggered: false,
         pricingInitialized: false,
@@ -238,17 +249,15 @@ const InnerPaymentsContextOptimisticProvider = ({
             }
         }
 
-        // The plan cards' prices are checked for the last checked billing address, without a VAT number
-        const cardPrice =
-            !paymentsContext.hasPendingBillingChange() && !paymentsContext.vatNumber
-                ? paymentsContext.getPrice(completeCheckOptions)?.checkResult
-                : undefined;
+        const cachedPrice = paymentsContext.getPrice(completeCheckOptions)?.checkResult;
+        const cardPrice = isCheckedFor(cachedPrice, paymentsContext.getRequested()) ? cachedPrice : undefined;
         const optimisticCheckResult =
             cardPrice ??
             paymentsContext.getOptimisticCheckResult({
                 planIDs: completeCheckOptions.planIDs,
                 cycle: completeCheckOptions.cycle,
                 currency: completeCheckOptions.currency,
+                coupon: completeCheckOptions.coupon,
             });
 
         setOptimistic({
@@ -267,6 +276,31 @@ const InnerPaymentsContextOptimisticProvider = ({
 
     const selectCycle = async (cycle: Cycle) => {
         handleOptimistic({ cycle });
+    };
+
+    const checkMultiplePlans: PaymentsContextType['checkMultiplePlans'] = async (plansToCheck) => {
+        setCheckingPlans((checking) => [...checking, plansToCheck]);
+        try {
+            return await paymentsContext.checkMultiplePlans(plansToCheck);
+        } finally {
+            setCheckingPlans((checking) => checking.filter((plans) => plans !== plansToCheck));
+        }
+    };
+
+    const getPriceOrFallback: PaymentsContextOptimisticType['getPriceOrFallback'] = (planToCheck) => {
+        // Any coupon: a card that takes it from `getCoupon` has none in a new currency until this check returns
+        const isChecked = checkingPlans.some((plans) =>
+            plans.some(
+                (plan) =>
+                    plan.currency === planToCheck.currency &&
+                    plan.cycle === planToCheck.cycle &&
+                    isDeepEqual(plan.planIDs, planToCheck.planIDs)
+            )
+        );
+        return {
+            ...paymentsContext.getPriceOrFallback(planToCheck),
+            loading: !initializationStatus.pricingInitialized || isChecked,
+        };
     };
 
     const updateMultiPlanCheckCacheAfterChangingCurrency = async (newCurrency: Currency, oldCurrency: Currency) => {
@@ -292,7 +326,7 @@ const InnerPaymentsContextOptimisticProvider = ({
         if (!plansWithCouponAndCurrency.length) {
             return;
         }
-        await paymentsContext.checkMultiplePlans(plansWithCouponAndCurrency);
+        await checkMultiplePlans(plansWithCouponAndCurrency);
     };
 
     const selectCurrency: PaymentsContextType['selectCurrency'] = async (currency) => {
@@ -313,11 +347,20 @@ const InnerPaymentsContextOptimisticProvider = ({
                 selectCurrency,
                 selectPlanIDs,
                 selectPlan: handleOptimistic,
+                checkMultiplePlans,
+                getPriceOrFallback,
                 selectedPlan,
                 loadingPaymentDetails: loadingPaymentDetails || paymentsContext.loading,
                 initializationStatus,
                 options,
-                pricedBeforeCheck: !!optimistic.checkResult && !optimistic.checkResult.optimistic,
+                loadingTotal:
+                    !initializationStatus.pricingInitialized ||
+                    ((loadingPaymentDetails || paymentsContext.loading) &&
+                        // Unless the selection already shows its price, the plan cards' for the details asked for
+                        !isCheckedFor(optimistic.checkResult, paymentsContext.getRequested())),
+                loadingPrice:
+                    !initializationStatus.pricingInitialized ||
+                    (!!optimistic.checkResult?.optimistic && !!optimistic.checkResult.requestData.Codes?.length),
                 optimisticPaymentStatus:
                     paymentsContext.paymentStatus ?? getOptimisticPaymentStatus(optimisticVendorStates),
                 checkoutUi: getCheckoutUi({
