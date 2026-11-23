@@ -10,14 +10,10 @@ import {
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useIsB2BAdmin from '@proton/components/hooks/useIsB2BAdmin';
-import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
-import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
-import { CampaignVariant } from '@proton/offers-delivery/interface';
+import { useOfferStartupModal } from '@proton/offers-delivery/components/useOfferStartupModal';
 import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
 import { useTrialEndedModal } from '@proton/payments-ui/containers/subscription/useTrialEndedModal';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-
-import { useOfferUpgrade } from './offers/useOfferUpgrade';
 
 const B2BOnboardingModal = lazy(
     () =>
@@ -49,19 +45,6 @@ const useB2BOnboardingModal: () => StartupModal = () => {
                 </Suspense>
             </ErrorBoundary>
         ) : null,
-    };
-};
-
-const useOfferStartupModal: () => StartupModal = () => {
-    const [modal, setModal, renderModal] = useModalState();
-    const onUpgrade = useOfferUpgrade();
-    const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
-
-    return {
-        showModal: offer !== null,
-        retryUntilIdle: true,
-        activateModal: () => setModal(true),
-        component: renderModal && offer ? <OfferDealModal offer={offer} {...modal} /> : null,
     };
 };
 

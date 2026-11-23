@@ -1,31 +1,24 @@
 import type { ReactNode } from 'react';
 import { memo, useCallback } from 'react';
 
-import { c } from 'ttag';
-
 import FloatingButton from '@proton/components/components/button/FloatingButton';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Hamburger from '@proton/components/components/sidebar/Hamburger';
+import TopNavbarListItem from '@proton/components/components/topnavbar/TopNavbarListItem';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
-import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavbarButton';
-import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
-import { CampaignVariant } from '@proton/offers-delivery/interface';
+import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { getLabelName } from '../../helpers/labels';
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
-import { useOfferUpgrade } from '../../offers/useOfferUpgrade';
 import type { MailboxActions } from '../../router/interface';
 import { selectElementID } from '../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
@@ -66,22 +59,14 @@ const MailHeader = ({ labelID, elementsData, actions, settingsButton }: Props) =
     const labelName = getLabelName(labelID, labels, folders);
 
     // TODO: placeholder until the campaign upsell path is decided. Might be more complicated involving plans etc
-    const onUpgrade = useOfferUpgrade('upsell_mail-button-offers-delivery-placeholder');
-    const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
-    const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
-
-    const offerButton =
-        offer && !hideUpsellButton ? (
-            <OfferNavbarButton
-                offer={offer}
-                onClick={() => setOfferModalOpen(true)}
-                icon={<IcBoltFilled size={5} />}
-                backgroundColor="linear-gradient(to right, #fa5c37 0%, #392289 55.288%, #170a31 100%)"
-                color="white"
-                className="text-uppercase text-bold"
-                label={c('Action').t`Special Offer`}
-            />
-        ) : undefined;
+    const offerEntry = useOfferNavbarEntry();
+    const offerButton = hideUpsellButton
+        ? undefined
+        : offerEntry.button && (
+              <TopNavbarListItem collapsedOnDesktop={false} noShrink>
+                  {offerEntry.button}
+              </TopNavbarListItem>
+          );
 
     const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
     const shouldDragInElectronMailClassName = hasComposerInFocus && isElectronMail ? 'ignore-drag' : '';
@@ -119,7 +104,7 @@ const MailHeader = ({ labelID, elementsData, actions, settingsButton }: Props) =
                     </FloatingButton>
                 }
             />
-            {renderOfferModal && offer && <OfferDealModal offer={offer} {...offerModalProps} />}
+            {offerEntry.modal}
         </>
     );
 };

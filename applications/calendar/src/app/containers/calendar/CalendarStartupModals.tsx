@@ -6,6 +6,7 @@ import {
 } from '@proton/components/components/startupModals/startupModalHooks';
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
+import { useOfferStartupModal } from '@proton/offers-delivery/components/useOfferStartupModal';
 import { useTrialEndedModal } from '@proton/payments-ui/containers/subscription/useTrialEndedModal';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
@@ -17,7 +18,9 @@ const useStartupModals: () => StartupModal[] = () => {
         isElectronMail ? NPSApplication.DesktopCalendar : NPSApplication.WebCalendar
     );
 
-    return [trialEndedModal, reminderModal, lightLabellingFeatureModal, netPromoterScoreModal];
+    const offerModal = useOfferStartupModal();
+
+    return [trialEndedModal, reminderModal, lightLabellingFeatureModal, netPromoterScoreModal, offerModal];
 };
 
 const CalendarStartupModals = ({ setModalOpen }: { setModalOpen: (state: boolean) => void }) => {

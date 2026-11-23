@@ -22,9 +22,9 @@ import QuickSettingsAppButton from '@proton/components/components/drawer/drawerA
 import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
 import AppLink from '@proton/components/components/link/AppLink';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import TopNavbarListItem from '@proton/components/components/topnavbar/TopNavbarListItem';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
@@ -42,15 +42,12 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useToggle from '@proton/hooks/useToggle';
-import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
-import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
-import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavbarButton';
-import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
-import { CampaignVariant } from '@proton/offers-delivery/interface';
+import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
+import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
 import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -75,7 +72,6 @@ import CalendarQuickSettings from '../../components/drawer/CalendarQuickSettings
 import getDateRangeText from '../../components/getDateRangeText';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
-import { useOfferUpgrade } from '../../offers/useOfferUpgrade';
 import { useBookings } from '../bookings/bookingsProvider/BookingsProvider';
 import { BookingSidebar } from '../bookings/form/BookingSidebar';
 import CalendarSidebar from './CalendarSidebar';
@@ -183,21 +179,12 @@ const CalendarContainerView = ({
     const { isBookingActive } = useBookings();
 
     // TODO: placeholder until the campaign upsell path is decided. Might be more complicated involving plans etc
-    const onUpgrade = useOfferUpgrade('upsell_calendar-button-offers-delivery-placeholder');
-    const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
-    const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
-
-    const offerButton = offer ? (
-        <OfferNavbarButton
-            offer={offer}
-            onClick={() => setOfferModalOpen(true)}
-            icon={<IcBoltFilled size={5} />}
-            backgroundColor="linear-gradient(to right, #fa5c37 0%, #392289 55.288%, #170a31 100%)"
-            color="white"
-            className="text-uppercase text-bold"
-            label={c('Action').t`Special Offer`}
-        />
-    ) : undefined;
+    const offerEntry = useOfferNavbarEntry();
+    const offerNavbarItem = offerEntry.button && (
+        <TopNavbarListItem collapsedOnDesktop={false} noShrink>
+            {offerEntry.button}
+        </TopNavbarListItem>
+    );
 
     const handleBackFromSearch = () => {
         setIsSearching(false);
@@ -431,6 +418,7 @@ const CalendarContainerView = ({
                 <PendingInvitationTopBanner />
                 <PasswordReminderTopBanner />
                 <SmartBanner app={APPS.PROTONCALENDAR} />
+                <OfferTopBanner />
             </TopBanners>
         </>
     );
@@ -583,12 +571,12 @@ const CalendarContainerView = ({
                 isSmallViewport={viewportWidth['<=small']}
                 actionArea={isDrawerApp ? null : toolbar}
                 hideUpsellButton={isBookingActive}
-                upsellButton={offerButton}
+                upsellButton={offerNavbarItem}
                 settingsButton={
                     <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />
                 }
             />
-            {renderOfferModal && offer && <OfferDealModal offer={offer} {...offerModalProps} />}
+            {offerEntry.modal}
         </>
     );
 

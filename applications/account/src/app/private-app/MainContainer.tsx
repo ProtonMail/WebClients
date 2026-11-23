@@ -32,7 +32,7 @@ import AppLink from '@proton/components/components/link/AppLink';
 import CustomLogo from '@proton/components/components/logo/CustomLogo';
 import Logo from '@proton/components/components/logo/Logo';
 import PassForBusinessLogo from '@proton/components/components/logo/PassForBusinessLogo';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import TopNavbarListItem from '@proton/components/components/topnavbar/TopNavbarListItem';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
@@ -58,12 +58,9 @@ import { OutgoingEmergencyContactTopBanner } from '@proton/delegated-access/emer
 import { IncomingRecoveryContactTopBanner } from '@proton/delegated-access/recoveryContact/incoming/IncomingRecoveryContactTopBanner';
 import { OutgoingRecoveryContactTopBanner } from '@proton/delegated-access/recoveryContact/outgoing/OutgoingRecoveryContactTopBanner';
 import useToggle from '@proton/hooks/useToggle';
-import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
-import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavbarButton';
-import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
-import { CampaignVariant } from '@proton/offers-delivery/interface';
+import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
+import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
 import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import AccountSidebar from '@proton/settings/AccountSidebar';
 import { SettingsRoutes, SettingsSearchArea } from '@proton/settings/SettingsRoutes';
@@ -76,8 +73,7 @@ import type {
     OrganizationSettingsRouterParams,
 } from '@proton/settings/router-params';
 import { getRoutes } from '@proton/settings/routes';
-import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { getToApp } from '@proton/shared/lib/authentication/apps';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
@@ -95,10 +91,9 @@ import Layout from '../public-app/layout/Layout';
 import Main from '../public-app/layout/Main';
 import AccountStartupModals from './AccountStartupModals';
 import { getAssistantKillSwitch } from './assistantKillSwitch';
-import AccountOfferTopBanner from './offers/AccountOfferTopBanner';
-import { useOfferUpgrade } from './offers/useOfferUpgrade';
+import { useSettingsApp } from './useSettingsApp';
 
-const MainContainer = () => {
+const MainContainerContent = () => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [addresses] = useAddresses();
@@ -140,9 +135,7 @@ const MainContainer = () => {
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
 
-    const appFromPathname = getAppFromPathnameSafe(location.pathname);
-    const isGenericSettings = !appFromPathname;
-    const app = appFromPathname ?? (isGenericSettings ? APPS.PROTONACCOUNT : getToApp(undefined, user));
+    const { app, appFromPathname, isGenericSettings } = useSettingsApp();
     const appSlug = isGenericSettings ? '' : getSlugFromApp(app);
 
     // We hide the assistant upsell for users on Mail and Calendar app without the assistant when the kill switch is enabled
@@ -296,26 +289,15 @@ const MainContainer = () => {
             <SSODomainUnverifiedBanner app={app} />
             <AuthDevicesTopBanner />
             <MembersAuthDevicesTopBanner />
-            <AccountOfferTopBanner />
+            <OfferTopBanner />
         </TopBanners>
     );
 
-    const onUpgrade = useOfferUpgrade();
-    const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
-    const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
-
-    const offerButton = offer ? (
-        <OfferNavbarButton
-            offer={offer}
-            onClick={() => setOfferModalOpen(true)}
-            icon={<IcBoltFilled size={5} />}
-            backgroundColor="linear-gradient(to right, #fa5c37 0%, #392289 55.288%, #170a31 100%)"
-            color="white"
-            className="text-uppercase text-bold"
-            label={c('Action').t`Special Offer`}
-        />
-    ) : (
-        <TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />
+    const offerEntry = useOfferNavbarEntry();
+    const offerNavbarItem = offerEntry.button && (
+        <TopNavbarListItem collapsedOnDesktop={false} noShrink>
+            {offerEntry.button}
+        </TopNavbarListItem>
     );
 
     const header = (
@@ -323,7 +305,7 @@ const MainContainer = () => {
             userDropdown={
                 <UserDropdown app={app} sessionOptions={{ path: pathPrefix }} onOpenChat={handleOpenZendeskChat} />
             }
-            upsellButton={offerButton}
+            upsellButton={offerNavbarItem ?? <TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -385,45 +367,53 @@ const MainContainer = () => {
     }
 
     return (
-        <SubscriptionModalProvider app={app}>
-            <NavigationProvider prefix={pathPrefix}>
-                <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
-                    <AccountStartupModals />
-                    {renderOfferModal && offer && <OfferDealModal offer={offer} {...offerModalProps} />}
-                    <FeatureTour />
-                    <SettingsRoutes
-                        app={app}
-                        appSlug={appSlug}
-                        pathPrefix={pathPrefix}
-                        user={user}
-                        routes={routes}
-                        loading={
-                            loadingOrganization ||
-                            loadingSubscription ||
-                            loadingAllSubscriptions ||
-                            loadingEntitlements ||
-                            permissions === null ||
-                            loadingDataRecovery ||
-                            loadingIsSessionRecoveryAvailable ||
-                            loadingGroupMembership ||
-                            loadingGroups ||
-                            loadingIsGroupOwner
-                        }
-                        organization={organization}
-                        entitlements={entitlements}
-                        onOpenChat={handleOpenZendeskChat}
+        <NavigationProvider prefix={pathPrefix}>
+            <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+                <AccountStartupModals />
+                {offerEntry.modal}
+                <FeatureTour />
+                <SettingsRoutes
+                    app={app}
+                    appSlug={appSlug}
+                    pathPrefix={pathPrefix}
+                    user={user}
+                    routes={routes}
+                    loading={
+                        loadingOrganization ||
+                        loadingSubscription ||
+                        loadingAllSubscriptions ||
+                        loadingEntitlements ||
+                        permissions === null ||
+                        loadingDataRecovery ||
+                        loadingIsSessionRecoveryAvailable ||
+                        loadingGroupMembership ||
+                        loadingGroups ||
+                        loadingIsGroupOwner
+                    }
+                    organization={organization}
+                    entitlements={entitlements}
+                    onOpenChat={handleOpenZendeskChat}
+                />
+                {showZendeskChat.render && (
+                    <LiveChatZendesk
+                        userEmail={user.Email || userSettings?.Email?.Value}
+                        tags={getZendeskTags(user, organization)}
+                        zendeskRef={zendeskRef}
+                        autoLaunch={showZendeskChat.autoLaunch}
+                        locale={localeCode.replace('_', '-')}
                     />
-                    {showZendeskChat.render && (
-                        <LiveChatZendesk
-                            userEmail={user.Email || userSettings?.Email?.Value}
-                            tags={getZendeskTags(user, organization)}
-                            zendeskRef={zendeskRef}
-                            autoLaunch={showZendeskChat.autoLaunch}
-                            locale={localeCode.replace('_', '-')}
-                        />
-                    )}
-                </PrivateAppContainer>
-            </NavigationProvider>
+                )}
+            </PrivateAppContainer>
+        </NavigationProvider>
+    );
+};
+
+const MainContainer = () => {
+    const { app } = useSettingsApp();
+
+    return (
+        <SubscriptionModalProvider app={app}>
+            <MainContainerContent />
         </SubscriptionModalProvider>
     );
 };
