@@ -57,7 +57,7 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
     };
 
     return (
-        <div className="h-full flex flex-column">
+        <div className="h-full flex flex-column flex-nowrap">
             <PublicHeader
                 breadcrumbOrName={
                     <div className="file-preview-filename flex items-center flex-nowrap min-w-full p-1 xl:min-w-0">

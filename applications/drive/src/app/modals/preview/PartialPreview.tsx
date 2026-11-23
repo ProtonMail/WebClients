@@ -48,7 +48,7 @@ export function PartialPreview({
     }, [preview.content.data, onContentLoaded, preview.content.previewMethod]);
 
     return (
-        <div className={clsx('flex flex-column flex-nowrap', className)}>
+        <div className={clsx('flex flex-column flex-nowrap overflow-hidden', className)}>
             <FilePreviewContent
                 isPublic={true}
                 isMetaLoading={preview.isLoading}
