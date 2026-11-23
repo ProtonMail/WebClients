@@ -87,7 +87,28 @@ const createMicrophoneTrack = ({
 
 type MicrophoneTrack = ReturnType<typeof createMicrophoneTrack>;
 
-const setup = ({ track, activeMicrophoneId }: { track: MicrophoneTrack; activeMicrophoneId: string }) => {
+type AudioPublication = {
+    kind: Track.Kind;
+    source: Track.Source;
+    isMuted: boolean;
+    audioTrack: MicrophoneTrack;
+};
+
+const setup = ({
+    track,
+    activeMicrophoneId,
+    isMicrophoneEnabled = false,
+    screenShareAudioTrack,
+    isScreenShareAudioPublishedFirst = false,
+    isScreenShareAudioMuted = false,
+}: {
+    track: MicrophoneTrack;
+    activeMicrophoneId: string;
+    isMicrophoneEnabled?: boolean;
+    screenShareAudioTrack?: MicrophoneTrack;
+    isScreenShareAudioPublishedFirst?: boolean;
+    isScreenShareAudioMuted?: boolean;
+}) => {
     storeMocks.useMeetSelector.mockImplementation((selector: unknown) => {
         switch (selector) {
             case selectActiveMicrophoneId:
@@ -112,9 +133,28 @@ const setup = ({ track, activeMicrophoneId }: { track: MicrophoneTrack; activeMi
         },
     });
 
-    const publications = new Map([
-        ['microphone', { kind: Track.Kind.Audio, source: Track.Source.Microphone, isMuted: true, audioTrack: track }],
-    ]);
+    const microphoneEntry: [string, AudioPublication] = [
+        'microphone',
+        { kind: Track.Kind.Audio, source: Track.Source.Microphone, isMuted: !isMicrophoneEnabled, audioTrack: track },
+    ];
+    const screenShareAudioEntries: [string, AudioPublication][] = screenShareAudioTrack
+        ? [
+              [
+                  'screen_share_audio',
+                  {
+                      kind: Track.Kind.Audio,
+                      source: Track.Source.ScreenShareAudio,
+                      isMuted: isScreenShareAudioMuted,
+                      audioTrack: screenShareAudioTrack,
+                  },
+              ],
+          ]
+        : [];
+    const publications = new Map(
+        isScreenShareAudioPublishedFirst
+            ? [...screenShareAudioEntries, microphoneEntry]
+            : [microphoneEntry, ...screenShareAudioEntries]
+    );
 
     const unmuteExistingOrPublishNew = async (enabled: boolean) => {
         const publication = publications.get('microphone');
@@ -145,7 +185,7 @@ const setup = ({ track, activeMicrophoneId }: { track: MicrophoneTrack; activeMi
     };
 
     livekitReact.useRoomContext.mockReturnValue({ localParticipant });
-    livekitReact.useLocalParticipant.mockReturnValue({ isMicrophoneEnabled: false, localParticipant });
+    livekitReact.useLocalParticipant.mockReturnValue({ isMicrophoneEnabled, localParticipant });
 
     const switchActiveDevice = vi.fn().mockResolvedValue(undefined);
     const meetAudioContext = { audioContext: {} as AudioContext, setSinkId: vi.fn(), cleanup: vi.fn() };
@@ -303,5 +343,44 @@ describe('useAudioToggle — microphone unplugged while muted', () => {
                 hasTrackProcessor: false,
             },
         });
+    });
+});
+
+describe('useAudioToggle — sharing the screen with audio', () => {
+    afterEach(() => {
+        vi.clearAllMocks();
+    });
+
+    it('mutes the recreated microphone and not the screen share audio', async () => {
+        const screenShareAudioTrack = createMicrophoneTrack({ captureTrackState: 'live', sentTrackState: 'live' });
+        const { result, publications } = setup({
+            track: createMicrophoneTrack({ captureTrackState: 'ended', sentTrackState: 'live' }),
+            activeMicrophoneId: HEADSET_MICROPHONE_ID,
+            screenShareAudioTrack,
+        });
+
+        await act(async () => {
+            await result.current.toggleAudio({
+                isEnabled: false,
+                audioDeviceId: BUILT_IN_MICROPHONE.deviceId,
+                preserveCache: true,
+            });
+        });
+
+        expect(publications.get('microphone')?.audioTrack.mute).toHaveBeenCalled();
+        expect(screenShareAudioTrack.mute).not.toHaveBeenCalled();
+    });
+
+    it('reports the audio as enabled when the microphone is unmuted and a muted screen share audio was published first', () => {
+        const { result } = setup({
+            track: createMicrophoneTrack({ captureTrackState: 'live', sentTrackState: 'live' }),
+            activeMicrophoneId: BUILT_IN_MICROPHONE.deviceId,
+            isMicrophoneEnabled: true,
+            screenShareAudioTrack: createMicrophoneTrack({ captureTrackState: 'live', sentTrackState: 'live' }),
+            isScreenShareAudioPublishedFirst: true,
+            isScreenShareAudioMuted: true,
+        });
+
+        expect(result.current.isAudioEnabled).toBe(true);
     });
 });

@@ -526,9 +526,7 @@ export const MediaManagementProvider = ({
 
             // If starting muted, mute the track (keeps it published but silent)
             if (!audioState) {
-                const audioPublication = [...room.localParticipant.audioTrackPublications.values()].find(
-                    (pub) => pub.kind === Track.Kind.Audio && pub.source !== Track.Source.ScreenShare
-                );
+                const audioPublication = room.localParticipant.getTrackPublication(Track.Source.Microphone);
 
                 if (audioPublication?.track) {
                     await audioPublication.track.mute();
