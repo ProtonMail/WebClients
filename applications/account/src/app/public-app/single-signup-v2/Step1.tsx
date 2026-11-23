@@ -27,7 +27,7 @@ import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/che
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import { getAvailableCurrencies, getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
+import { getAvailableCurrencies, isRegionalCurrency } from '@proton/payments/core/currencies';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type { AvailablePaymentMethod, Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { switchPlan } from '@proton/payments/core/planIDs';
@@ -57,7 +57,6 @@ import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
-import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { getLocaleTermsURL } from '../helper';
@@ -87,8 +86,9 @@ import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import { Step1OfferBanner } from './components/Step1OfferBanner';
 import {
     getAccessiblePlans,
-    getFreeSubscriptionData,
     getChangedSubscriptionTerm,
+    getCurrencyForNewAudience,
+    getFreeSubscriptionData,
     getSubscriptionMapping,
     getUpdatedPlanIDs,
 } from './helper';
@@ -763,8 +763,11 @@ const Step1 = ({
      * If there is a regional currency then B2C plans can have plans in this currency while B2B plans do not.
      * In that case, we need to automatically select the fallback currency for B2B plans.
      */
-    const handleCurrencyChangeOnAudienceChange = async (newAudience: Audience): Promise<Currency | undefined> => {
-        if (audience === newAudience) {
+    const handleCurrencyChangeOnAudienceChange = async (newAudience: {
+        value: Audience;
+        defaultPlan: PLANS;
+    }): Promise<Currency | undefined> => {
+        if (audience === newAudience.value) {
             return;
         }
 
@@ -778,7 +781,7 @@ const Step1 = ({
             const oldAudience = audience;
             // if user previously selected regional currency for B2C audience, then use it
             // if the previously selected currency isn't regional then preserve the current currency choice in B2B tab
-            if (selectedB2CCurrency && isRegionalCurrency(selectedB2CCurrency) && newAudience === Audience.B2C) {
+            if (selectedB2CCurrency && isRegionalCurrency(selectedB2CCurrency) && newAudience.value === Audience.B2C) {
                 return handleChangeCurrency(selectedB2CCurrency, noTelemetryOptions);
             }
 
@@ -788,18 +791,15 @@ const Step1 = ({
             }
         }
 
-        const newAudiencePlans = getAccessiblePlans({ planCards, audience: newAudience, plans: model.plans });
-
-        const newAudienceHasPlansWithSelectedCurrency =
-            newAudiencePlans.map((plan) => model.subscriptionDataCycleMapping[plan.Name]).filter(isTruthy).length > 0;
-
-        // If the currently selected currency is available for the new audience, we don't need to artificially
-        // change the currency
-        if (newAudienceHasPlansWithSelectedCurrency) {
+        const newAvailableCurrency = getCurrencyForNewAudience({
+            currency: options.currency,
+            newAudience,
+            planCards,
+            model,
+        });
+        if (!newAvailableCurrency) {
             return;
         }
-
-        const newAvailableCurrency = getFallbackCurrency(options.currency);
 
         return handleChangeCurrency(newAvailableCurrency, noTelemetryOptions);
     };
@@ -831,7 +831,7 @@ const Step1 = ({
                     audience={audience}
                     audiences={audiences}
                     onChangeAudience={async (newAudience) => {
-                        const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience.value);
+                        const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience);
                         handleChangePlan(
                             { [newAudience.defaultPlan]: 1 },
                             newAudience.defaultPlan,

@@ -2,9 +2,11 @@ import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import {
     buildLumoSubscription,
+    buildMultiSubscriptionContext,
     buildMultiSubscriptionContextFromSubscription,
     multiSubscriptionTestCatalog,
 } from '@proton/payments/testing/buildMultiSubscriptionContext';
@@ -17,9 +19,18 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
-import { getAccessiblePlans, getOtherUserSessions, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
-import { type PlanCard, type SignupParameters2, UpsellTypes } from './interface';
+import {
+    getAccessiblePlans,
+    getCurrencyForNewAudience,
+    getOtherUserSessions,
+    getSessionCycle,
+    getSubscriptionData,
+    getUserInfo,
+} from './helper';
+import type { SubscriptionDataCycleMapping } from './helper';
+import { type PlanCard, type SignupConfiguration, type SignupParameters2, UpsellTypes } from './interface';
 
 vi.mock('@proton/payments/core/api/api', async () => ({
     ...(await vi.importActual<any>('@proton/payments/core/api/api')),
@@ -995,5 +1006,83 @@ describe('getUserInfo for a signed-in user with several subscriptions', () => {
             CouponCode: MAIL_PLUS_COUPON,
             ValidateGuards: true,
         });
+    });
+});
+
+describe('getCurrencyForNewAudience', () => {
+    const plans = [
+        ...getTestPlans('EUR'),
+        ...getTestPlans('USD'),
+        ...getTestPlans('CHF'),
+        ...getTestPlans('BRL').filter((plan) => plan.Name === PLANS.MAIL || plan.Name === PLANS.BUNDLE),
+    ];
+    const toPlanCards = (planNames: PLANS[]) =>
+        planNames.map((plan) => ({ plan, subsection: null, type: 'standard', guarantee: true })) as PlanCard[];
+    const planCards: SignupConfiguration['planCards'] = {
+        [Audience.B2C]: toPlanCards([PLANS.MAIL, PLANS.BUNDLE]),
+        [Audience.B2B]: toPlanCards([PLANS.MAIL_PRO, PLANS.BUNDLE_PRO_2024]),
+    };
+    const brlCycleMapping = {
+        [PLANS.MAIL]: {},
+        [PLANS.BUNDLE]: {},
+    } as SubscriptionDataCycleMapping;
+    const business = { value: Audience.B2B, defaultPlan: PLANS.BUNDLE_PRO_2024 };
+    const individuals = { value: Audience.B2C, defaultPlan: PLANS.BUNDLE };
+
+    const getCurrency = (
+        newAudience: typeof business,
+        session?: { resumedSessionResult: { User: User }; multiSubscriptionContext: MultiSubscriptionContext }
+    ) =>
+        getCurrencyForNewAudience({
+            currency: 'BRL',
+            newAudience,
+            planCards,
+            model: {
+                plans,
+                paymentStatus: { CountryCode: 'BR', VendorStates: {} as any },
+                session,
+                subscriptionDataCycleMapping: brlCycleMapping,
+            },
+        });
+
+    it('switches a visitor from Brazil to USD when the business plans have no BRL price', () => {
+        expect(getCurrency(business)).toBe('USD');
+    });
+
+    it('keeps BRL when the individual plans have a BRL price', () => {
+        expect(getCurrency(individuals)).toBeUndefined();
+    });
+
+    it('switches a user with two BRL subscriptions to USD, because the business plan has no BRL price to lock to', () => {
+        const mailPlus = buildSubscription(PLANS.MAIL, { Currency: 'BRL' });
+        const lumoPlus = buildSubscription(PLANS.LUMO, { Currency: 'BRL' });
+        const session = {
+            resumedSessionResult: { User: buildUser({ Currency: 'BRL' }) },
+            multiSubscriptionContext: buildMultiSubscriptionContext([mailPlus, lumoPlus]),
+        };
+
+        expect(getCurrency(business, session)).toBe('USD');
+    });
+
+    it('switches a user with two BRL subscriptions to USD when the business default plan is not one of the cards', () => {
+        const mailPlus = buildSubscription(PLANS.MAIL, { Currency: 'BRL' });
+        const lumoPlus = buildSubscription(PLANS.LUMO, { Currency: 'BRL' });
+
+        expect(
+            getCurrencyForNewAudience({
+                currency: 'BRL',
+                newAudience: business,
+                planCards: { ...planCards, [Audience.B2B]: toPlanCards([PLANS.LUMO_BUSINESS]) },
+                model: {
+                    plans,
+                    paymentStatus: { CountryCode: 'BR', VendorStates: {} as any },
+                    session: {
+                        resumedSessionResult: { User: buildUser({ Currency: 'BRL' }) },
+                        multiSubscriptionContext: buildMultiSubscriptionContext([mailPlus, lumoPlus]),
+                    },
+                    subscriptionDataCycleMapping: brlCycleMapping,
+                },
+            })
+        ).toBe('USD');
     });
 });

@@ -30,7 +30,12 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
-import PlanSelection, { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
+import PlanSelection, {
+    type AccessiblePlansHookProps,
+    getCurrencyForNewTab,
+    getMaximumCycle,
+    useAccessiblePlans,
+} from './PlanSelection';
 
 vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
@@ -1012,6 +1017,40 @@ describe('useAccessiblePlans in the Lumo app', () => {
                 business: [PLANS.LUMO_BUSINESS],
             });
         });
+    });
+});
+
+describe('getCurrencyForNewTab', () => {
+    const plansWithEurFirst = [
+        ...getTestPlans('EUR'),
+        ...getTestPlans('USD'),
+        ...getTestPlans('CHF'),
+        ...getTestPlans('BRL').filter((plan) => plan.Name === PLANS.MAIL || plan.Name === PLANS.BUNDLE),
+    ];
+    const getTabPlans = (currency: Currency, planNames: PLANS[]) =>
+        plansWithEurFirst.filter((plan) => plan.Currency === currency && planNames.includes(plan.Name as PLANS));
+    const businessTabInUsd = getTabPlans('USD', [PLANS.MAIL_PRO, PLANS.BUNDLE_PRO_2024]);
+
+    const getCurrency = (currency: Currency, tabPlans: Plan[]) =>
+        getCurrencyForNewTab({
+            currency,
+            tabPlans,
+            plans: plansWithEurFirst,
+            paymentStatus: { CountryCode: 'BR', VendorStates: {} as any },
+            user: buildUser({ Currency: 'BRL' }),
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
+        });
+
+    it('switches a BRL user to USD when the new tab has no plan in BRL', () => {
+        expect(getCurrency('BRL', businessTabInUsd)).toBe('USD');
+    });
+
+    it('keeps BRL when the new tab has a plan in BRL', () => {
+        expect(getCurrency('BRL', getTabPlans('BRL', [PLANS.MAIL, PLANS.BUNDLE]))).toBeUndefined();
+    });
+
+    it('keeps a main currency even when the new tab shows its plans in another one', () => {
+        expect(getCurrency('EUR', businessTabInUsd)).toBeUndefined();
     });
 });
 
