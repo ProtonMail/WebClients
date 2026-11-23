@@ -114,6 +114,17 @@ describe('getContentPreviewMethod', () => {
         expect(result).toBe(ContentPreviewMethod.Thumbnail);
     });
 
+    it('should return Thumbnail when mediaType is missing', () => {
+        const node: NodeEntity = {
+            ...baseNodeProps,
+            mediaType: undefined,
+        };
+
+        const result = getContentPreviewMethod(node);
+
+        expect(result).toBe(ContentPreviewMethod.Thumbnail);
+    });
+
     it('should return Thumbnail for unsupported mimeType', () => {
         const node: NodeEntity = {
             ...baseNodeProps,

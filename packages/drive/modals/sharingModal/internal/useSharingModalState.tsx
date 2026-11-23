@@ -94,7 +94,12 @@ export const useSharingModalState = ({
     const isPhoto = nodeInfo?.type === NodeType.Photo;
 
     const [isResharing, setIsResharing] = useState(false);
-    const isPublicLinkEnabled = usePublicLinkEnabled({ isResharing, mediaType, isAlbum });
+    const isPublicLinkEnabled = usePublicLinkEnabled({
+        isNodeLoaded: nodeInfo !== undefined,
+        isResharing,
+        mediaType,
+        isAlbum,
+    });
 
     const [roleOnParentNode, setRoleOnParentNode] = useState<MemberRole>();
 
@@ -460,18 +465,21 @@ export const useSharingModalState = ({
 };
 
 function usePublicLinkEnabled({
+    isNodeLoaded,
     isResharing,
     mediaType,
     isAlbum,
 }: {
+    isNodeLoaded: boolean;
     isResharing: boolean;
     mediaType?: string;
     isAlbum: boolean;
 }) {
     const { isDocsPublicSharingEnabled } = useFlagsDriveDocsPublicSharing();
 
-    // We don't know mediaType because it's loading -> hide public link to avoid blinking
-    if (mediaType === undefined || isResharing) {
+    // Node is loading -> hide public link to avoid blinking
+    // Files can lack a media type (e.g. uploaded by older macOS clients), so it must not be used as a loading signal
+    if (!isNodeLoaded || isResharing) {
         return false;
     }
 
