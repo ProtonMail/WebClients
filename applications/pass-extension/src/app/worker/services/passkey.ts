@@ -55,7 +55,7 @@ export const createPasskeyService = () => {
             const state = ctx.service.store.getState();
             if (selectOrgPasskeyDisabled(state)) return { passkeys: [] };
 
-            return { passkeys: selectPasskeys(payload)(state) };
+            return { passkeys: selectPasskeys(payload, tabUrl.href)(state) };
         })
     );
 
