@@ -62,7 +62,7 @@ const getPrice = (planToCheck: PlanToCheck) => {
 };
 
 const payments = {
-    initializationStatus: { triggered: true, cacheInitialized: true, pricingInitialized: true },
+    initializationStatus: { triggered: true, pricingInitialized: true },
     options,
     plansMap,
     paymentStatus: undefined,

@@ -50,11 +50,11 @@ export const OfferPrice = ({
                 }
             }
 
-            if (payments.initialized) {
+            if (payments.preloaded) {
                 run().catch(noop);
             }
         },
-        [price, planName, planToCheck.currency, planToCheck.cycle, planToCheck.coupon, payments.initialized]
+        [price, planName, planToCheck.currency, planToCheck.cycle, planToCheck.coupon, payments.preloaded]
     );
 
     const value: number = (() => {
@@ -75,7 +75,7 @@ export const OfferPrice = ({
             return price.checkoutUi[priceProp];
         }
 
-        return payments.getFallbackPrice(planToCheck).checkoutUi[priceProp];
+        return payments.getPriceOrFallback(planToCheck).checkoutUi[priceProp];
     })();
 
     const groupLoading = planToCheck.groupId ? payments.isGroupLoading(planToCheck.groupId) : false;

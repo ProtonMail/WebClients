@@ -491,8 +491,6 @@ describe('PaymentsContext VAT number', () => {
                 planToCheck: { planIDs: vpnYearly.planIDs, cycle: vpnYearly.cycle },
                 paramCurrency: 'CHF',
                 vatNumber,
-                paymentFlow: 'signup',
-                onChargeable: async () => {},
                 telemetryContext: 'other',
                 product: 'proton-vpn-settings',
             })
@@ -553,8 +551,6 @@ describe('PaymentsContext VAT number', () => {
                     { planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 }, cycle: CYCLE.TWO_YEARS, coupon: undefined },
                 ],
                 paramCurrency: 'CHF',
-                paymentFlow: 'signup',
-                onChargeable: async () => {},
                 telemetryContext: 'other',
                 product: 'proton-vpn-settings',
             })
@@ -587,8 +583,6 @@ describe('PaymentsContext VAT number', () => {
                     { planIDs: vpnTwoYears.planIDs, cycle: vpnTwoYears.cycle },
                 ],
                 paramCurrency: 'CHF',
-                paymentFlow: 'signup',
-                onChargeable: async () => {},
                 telemetryContext: 'other',
                 product: 'proton-vpn-settings',
             })
@@ -747,8 +741,6 @@ describe('PaymentsContext changes made while a check runs', () => {
                 api: apiMock,
                 planToCheck: { planIDs: vpnYearly.planIDs, cycle: vpnYearly.cycle },
                 paramCurrency: 'CHF',
-                paymentFlow: 'signup',
-                onChargeable: async () => {},
                 telemetryContext: 'other',
                 product: 'proton-vpn-settings',
             });

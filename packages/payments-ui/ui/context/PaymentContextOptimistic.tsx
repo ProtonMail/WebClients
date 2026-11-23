@@ -24,7 +24,6 @@ interface InitializationStatus {
      * ie has the correct default plan been set, and can we start rendering with a preselected plan
      */
     triggered: boolean;
-    cacheInitialized: boolean;
     pricingInitialized: boolean;
     /** Why the initialization failed, when the plans or the prices couldn't be loaded */
     error?: unknown;
@@ -36,6 +35,11 @@ type OptimisticOptions = PlanToCheck & {
     vatNumber: string | undefined;
 };
 
+/**
+ * `options`, `selectedPlan` and `checkoutUi` show the latest choice at once, estimated until its check returns. The
+ * other fields, such as `checkResult`, `coupon` and `billingAddress`, are the last checked values. `selectPlan` and the
+ * `select*` functions check 400 ms later and resolve before that; `selectNewPlan` checks now and returns the result.
+ */
 export type PaymentsContextOptimisticType = PaymentsContextType & {
     selectedPlan: SelectedPlan;
     loadingPaymentDetails: boolean;
@@ -69,12 +73,11 @@ const InnerPaymentsContextOptimisticProvider = ({
 
     const cacheRef = useRef<{ availablePlans?: InitializeProps['availablePlans'] }>(undefined);
 
-    const latestOptimisticRef = useRef<any>(undefined);
+    const latestOptimisticRef = useRef<object | undefined>(undefined);
     const [optimistic, setOptimistic] = useState<Partial<OptimisticOptions>>({});
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
     const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({
         triggered: false,
-        cacheInitialized: false,
         pricingInitialized: false,
     });
 
@@ -83,7 +86,6 @@ const InnerPaymentsContextOptimisticProvider = ({
         paramCurrency,
         planToCheck: planToCheckParam,
         availablePlans,
-        paymentFlow,
         vatNumber,
         telemetryContext,
         product,
@@ -118,8 +120,6 @@ const InnerPaymentsContextOptimisticProvider = ({
         try {
             await paymentsContext.initialize({
                 api,
-                paymentFlow,
-                onChargeable: async () => {},
                 planToCheck: planToCheckParam,
                 availablePlans,
                 paramCurrency,
@@ -143,14 +143,13 @@ const InnerPaymentsContextOptimisticProvider = ({
 
         setInitializationStatus((prev) => ({
             ...prev,
-            cacheInitialized: true,
             pricingInitialized: true,
         }));
     };
 
     const handleOptimisticCheck = async (
         optimistic: Parameters<typeof paymentsContext.selectNewPlan>[0],
-        latest: any
+        latest: object
     ) => {
         try {
             await paymentsContext.selectNewPlan(optimistic);
@@ -159,7 +158,6 @@ const InnerPaymentsContextOptimisticProvider = ({
             }
         } catch (e) {
             if (latestOptimisticRef.current === latest) {
-                //handleError(e);
                 // Reset any optimistic state on failures
                 setOptimistic({});
                 return;
@@ -172,7 +170,7 @@ const InnerPaymentsContextOptimisticProvider = ({
     };
 
     const debouncedCheck = useHandler(
-        (optimistic: Parameters<typeof paymentsContext.selectNewPlan>[0], latest: any) => {
+        (optimistic: Parameters<typeof paymentsContext.selectNewPlan>[0], latest: object) => {
             handleOptimisticCheck(optimistic, latest).catch(noop);
         },
         { debounce: 400 }
@@ -224,8 +222,13 @@ const InnerPaymentsContextOptimisticProvider = ({
             }
         }
 
+        // The plan cards' prices are checked for the last checked billing address, without a VAT number
+        const cardPrice =
+            !paymentsContext.hasPendingBillingChange() && !paymentsContext.vatNumber
+                ? paymentsContext.getPrice(completeCheckOptions)?.checkResult
+                : undefined;
         const optimisticCheckResult =
-            paymentsContext.getPrice(completeCheckOptions)?.checkResult ??
+            cardPrice ??
             paymentsContext.getOptimisticCheckResult({
                 planIDs: completeCheckOptions.planIDs,
                 cycle: completeCheckOptions.cycle,

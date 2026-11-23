@@ -55,7 +55,7 @@ const buildCheckResult = (overrides: Partial<SubscriptionEstimation> = {}): Subs
  * intermediate states during `initialize()` can be asserted on.
  */
 const renderPaymentsContext = () => {
-    const snapshots: { initialized: boolean; telemetryContext: string }[] = [];
+    const snapshots: { preloaded: boolean; telemetryContext: string }[] = [];
     const contextRef: { current: PaymentsContextType | undefined } = { current: undefined };
     let initializeResolved = false;
 
@@ -64,7 +64,7 @@ const renderPaymentsContext = () => {
         const initializeRef = useRef(false);
 
         contextRef.current = payments;
-        snapshots.push({ initialized: payments.initialized, telemetryContext: payments.telemetryContext });
+        snapshots.push({ preloaded: payments.preloaded, telemetryContext: payments.telemetryContext });
 
         useEffect(() => {
             if (initializeRef.current) {
@@ -75,8 +75,6 @@ const renderPaymentsContext = () => {
             void payments
                 .initialize({
                     api: apiMock,
-                    paymentFlow: 'signup',
-                    onChargeable: async () => {},
                     paramCurrency: 'CHF',
                     planToCheck: { planIDs: { [PLANS.BUNDLE]: 1 }, cycle: 12 },
                     telemetryContext: 'ctx-signup-referral',
@@ -124,20 +122,20 @@ describe('payments context telemetry', () => {
     const getEvent = (name: string) => sendCustomEvent.mock.calls.find(([eventName]) => eventName === name);
 
     describe('telemetryContext', () => {
-        it('reports initialized before initialize() resolves, so consumers must not use it to gate telemetry', async () => {
+        it('reports preloaded before initialize() resolves, so consumers must not use it to gate telemetry', async () => {
             const check = createDeferred<SubscriptionEstimation>();
             checkSubscription.mockReturnValue(check.promise);
 
             const { snapshots, hasInitializeResolved } = renderPaymentsContext();
 
             // The essential payments data resolves from the preloaded store at the start of initialize(), which is
-            // what `initialized` reflects. The check call is still pending, so initialize() has not resolved and the
+            // what `preloaded` reflects. The check call is still pending, so initialize() has not resolved and the
             // telemetry context has not been applied yet.
-            await waitFor(() => expect(snapshots.some((snapshot) => snapshot.initialized)).toBe(true));
+            await waitFor(() => expect(snapshots.some((snapshot) => snapshot.preloaded)).toBe(true));
             expect(hasInitializeResolved()).toBe(false);
 
-            const firstInitialized = snapshots.find((snapshot) => snapshot.initialized)!;
-            expect(firstInitialized.telemetryContext).toBe('other');
+            const firstPreloaded = snapshots.find((snapshot) => snapshot.preloaded)!;
+            expect(firstPreloaded.telemetryContext).toBe('other');
         });
 
         it('applies the flow telemetry context once initialize() resolves', async () => {

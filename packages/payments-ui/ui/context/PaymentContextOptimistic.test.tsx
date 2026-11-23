@@ -81,8 +81,6 @@ const initialize = (getContext: () => PaymentsContextOptimisticType) =>
                 api: apiMock,
                 planToCheck: { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY },
                 paramCurrency: 'CHF',
-                paymentFlow: 'signup',
-                onChargeable: async () => {},
                 telemetryContext: 'other',
                 product: 'proton-vpn-settings',
             })
@@ -128,25 +126,63 @@ describe('PaymentsContextOptimisticProvider selection', () => {
         }));
     });
 
-    it.each([
-        ['shows the price the plan cards checked', true, 7176],
-        ['shows a guess', false, undefined],
-    ])('%s for a cycle picked before its check returns', async (_, cardsChecked, amountDue) => {
+    /** The checks matching the request don't answer. A test's leftover debounced check can still reach the API */
+    const holdChecks = (matches: (data: { Cycle: number; BillingAddress?: { CountryCode?: string } }) => boolean) => {
+        const answer = checkSubscription.getMockImplementation()!;
+        checkSubscription.mockImplementation((data) => (matches(data) ? new Promise(() => {}) : answer(data)));
+    };
+
+    const checkCards = (getContext: () => PaymentsContextOptimisticType) => {
+        const card = { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.TWO_YEARS, currency: 'CHF' as const };
+        return act(() => getContext().checkMultiplePlans([{ ...card, coupon: 'CARDS' }]));
+    };
+
+    it.each<[string, (getContext: () => PaymentsContextOptimisticType) => Promise<unknown>, boolean]>([
+        ['shows the price the plan cards checked', checkCards, true],
+        [
+            'shows the price the plan cards checked while another cycle is checked',
+            async (getContext) => {
+                await checkCards(getContext);
+                holdChecks((data) => data.Cycle === CYCLE.MONTHLY);
+                act(() => getContext().selectPlan({ cycle: CYCLE.MONTHLY }));
+                // Past the selection's debounce, so its check runs
+                await act(() => new Promise((resolve) => setTimeout(resolve, 600)));
+                expect(getContext().loading).toBe(true);
+            },
+            true,
+        ],
+        ['shows a guess without a price the plan cards checked', async () => {}, false],
+        [
+            'shows a guess while a billing country is checked, as the cards were checked for the previous one',
+            async (getContext) => {
+                await checkCards(getContext);
+                holdChecks((data) => data.BillingAddress?.CountryCode === 'DE');
+                act(() => getContext().selectFullBillingAddress({ CountryCode: 'DE', State: null }));
+            },
+            false,
+        ],
+        [
+            'shows a guess with a VAT number, as the cards were checked without one',
+            async (getContext) => {
+                await checkCards(getContext);
+                act(() => getContext().setVatNumber('DE123456789'));
+                await act(() => new Promise((resolve) => setTimeout(resolve, 700)));
+            },
+            false,
+        ],
+    ])('%s for a cycle picked before its check returns', async (_, before, cardPrice) => {
         const getContext = renderProvider();
         await initialize(getContext);
-        if (cardsChecked) {
-            const card = { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.TWO_YEARS, currency: 'CHF' as const };
-            await act(() => getContext().checkMultiplePlans([{ ...card, coupon: 'CARDS' }]));
-        }
+        await before(getContext);
         const checks = checkSubscription.mock.calls.length;
 
         act(() => getContext().selectPlan({ cycle: CYCLE.TWO_YEARS }));
 
         expect(checkSubscription).toHaveBeenCalledTimes(checks);
         expect(getContext().loadingPaymentDetails).toBe(true);
-        expect(getContext().pricedBeforeCheck).toBe(cardsChecked);
-        if (amountDue) {
-            expect(getContext().options.checkResult.AmountDue).toBe(amountDue);
+        expect(getContext().pricedBeforeCheck).toBe(cardPrice);
+        if (cardPrice) {
+            expect(getContext().options.checkResult.AmountDue).toBe(7176);
         }
     });
 });

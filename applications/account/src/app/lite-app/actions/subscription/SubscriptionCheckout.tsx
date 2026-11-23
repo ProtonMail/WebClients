@@ -98,11 +98,9 @@ const SubscriptionCheckoutWithPayments = ({
                 setPaymentInitialized(false);
                 await initialize({
                     api,
-                    paymentFlow: 'subscription',
                     telemetryContext: 'subscription-modification',
                     product: app,
                     paramCurrency: checkoutModel.currency,
-                    onChargeable: async () => undefined,
                     planToCheck: {
                         coupon: checkoutModel.coupon,
                         cycle: transition.cycle,

@@ -867,7 +867,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
             upsellSection?.upsells?.map((upsell) => upsell.initializeOfferPrice?.(payments)).filter(isTruthy) ?? [];
 
         withLoading(Promise.all(promises)).catch(noop);
-    }, [key, payments.initialized]);
+    }, [key, payments.preloaded]);
 
     if (!subscription) {
         return {
@@ -916,7 +916,7 @@ export const YourPlanUpsellsSectionV2 = ({ app }: YourPlanSectionV2Props) => {
     const hasTrackedPageView = useRef(false);
 
     useEffect(() => {
-        if (loading || !subscription || !payments.initialized || hasTrackedPageView.current) {
+        if (loading || !subscription || !payments.preloaded || hasTrackedPageView.current) {
             return;
         }
         hasTrackedPageView.current = true;
@@ -934,7 +934,7 @@ export const YourPlanUpsellsSectionV2 = ({ app }: YourPlanSectionV2Props) => {
             isTrial: false, // user's intention is not creation of trial
             initialBillingAddress: payments.billingAddress,
         });
-    }, [loading, subscription, payments.initialized]);
+    }, [loading, subscription, payments.preloaded]);
 
     if (!subscription || !plans || loading) {
         return <Loader />;
