@@ -1693,6 +1693,9 @@ importers:
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
+      '@proton/vpn':
+        specifier: workspace:^
+        version: link:../../packages/vpn
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.15.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -10950,6 +10953,9 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../components
+      '@proton/console':
+        specifier: workspace:^
+        version: link:../console
       '@proton/hooks':
         specifier: workspace:^
         version: link:../hooks
@@ -13383,10 +13389,6 @@ packages:
   '@electron/get@3.1.0':
     resolution: {integrity: sha512-F+nKc0xW+kVbBRhFzaMgPy3KwmuNTYX1fx6+FxxoSnNgwYX6LD7AKBTWkU0MQ6IBoe7dz069CNkR673sPAgkCQ==}
     engines: {node: '>=14'}
-
-  '@electron/get@5.0.0':
-    resolution: {integrity: sha512-pjoBpru1KdEtcExBnuHAP1cAc/5faoedw0hzJkL3o4/IJp7HNF1+fbrdxT3gMYRX2oJfvnA/WXeCTVQpYYxyJA==}
-    engines: {node: '>=22.12.0'}
 
   '@electron/get@5.1.0':
     resolution: {integrity: sha512-3kSBtG8ObcTVfXanm5vVJ6UnBLEVmVsRk1M+vGqCuMBV+XLCbJYuWQful+yIy0GQDsSlK0kHEriEHn7SPk4EnA==}
@@ -27040,10 +27042,6 @@ packages:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
-  string-width@8.2.2:
-    resolution: {integrity: sha512-GaPUh5gfdrYzqeVNZvUfT23vYYxXzKYidUcnMtJg/3rxRV63EFZy3k6xfKlmfeJD0176lnUV/Usr3XcwSvFzpg==}
-    engines: {node: '>=20'}
-
   string-width@8.3.0:
     resolution: {integrity: sha512-ZbmZM0JCihQN91dWnxoipT2KOEyHqEyfRXUyjuRhW8b/xnqPDoq4gWEVApTVa9db2wN8mmoikgFBbjh71+cGeQ==}
     engines: {node: '>=20'}
@@ -30588,7 +30586,7 @@ snapshots:
       debug: 4.4.3(supports-color@11.0.0)
       ink: 7.1.1(@types/react@18.3.31)(react@19.3.0)
       react: 19.3.0
-      string-width: 8.2.2
+      string-width: 8.3.0
       wrap-ansi: 10.0.2
     transitivePeerDependencies:
       - '@types/react'
@@ -30892,19 +30890,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/get@5.0.0(supports-color@11.0.0)':
-    dependencies:
-      debug: 4.4.3(supports-color@11.0.0)
-      env-paths: 3.0.0
-      graceful-fs: 4.2.11
-      progress: 2.0.3
-      semver: 7.8.6
-      sumchecker: 3.0.1(supports-color@11.0.0)
-    optionalDependencies:
-      undici: 7.30.2
-    transitivePeerDependencies:
-      - supports-color
-
   '@electron/get@5.1.0(supports-color@11.0.0)':
     dependencies:
       debug: 4.4.3(supports-color@11.0.0)
@@ -30997,7 +30982,7 @@ snapshots:
     dependencies:
       '@electron-internal/extract-zip': 1.0.8
       '@electron/asar': 4.3.2
-      '@electron/get': 5.0.0(supports-color@11.0.0)
+      '@electron/get': 5.1.0(supports-color@11.0.0)
       '@electron/notarize': 3.1.2(supports-color@11.0.0)
       '@electron/osx-sign': 2.7.2(supports-color@11.0.0)
       '@electron/universal': 3.0.6(supports-color@11.0.0)
@@ -38198,7 +38183,7 @@ snapshots:
       chalk: 6.0.0
       cli-boxes: 4.0.1
       slice-ansi: 9.0.1
-      string-width: 8.2.2
+      string-width: 8.3.0
       type-fest: 5.10.0
       widest-line: 6.0.0
       wrap-ansi: 10.0.2
@@ -39857,7 +39842,7 @@ snapshots:
   electron@43.8.10(supports-color@11.0.0):
     dependencies:
       '@electron-internal/extract-zip': 1.0.8
-      '@electron/get': 5.0.0(supports-color@11.0.0)
+      '@electron/get': 5.1.0(supports-color@11.0.0)
       '@types/node': 24.19.2
     transitivePeerDependencies:
       - supports-color
@@ -39865,7 +39850,7 @@ snapshots:
   electron@44.11.4(supports-color@11.0.0):
     dependencies:
       '@electron-internal/extract-zip': 1.0.8
-      '@electron/get': 5.0.0(supports-color@11.0.0)
+      '@electron/get': 5.1.0(supports-color@11.0.0)
       '@types/node': 24.19.2
     transitivePeerDependencies:
       - supports-color
@@ -41869,7 +41854,7 @@ snapshots:
       signal-exit: 3.0.7
       slice-ansi: 9.0.1
       stack-utils: 2.0.6
-      string-width: 8.2.2
+      string-width: 8.3.0
       terminal-size: 4.0.1
       type-fest: 5.10.0
       widest-line: 6.0.0
@@ -42810,7 +42795,7 @@ snapshots:
       ansi-escapes: 7.3.0
       cli-cursor: 5.0.0
       slice-ansi: 9.0.1
-      string-width: 8.2.2
+      string-width: 8.3.0
       strip-ansi: 7.2.0
       wrap-ansi: 10.0.2
 
@@ -46831,11 +46816,6 @@ snapshots:
       get-east-asian-width: 1.6.0
       strip-ansi: 7.2.0
 
-  string-width@8.2.2:
-    dependencies:
-      get-east-asian-width: 1.6.0
-      strip-ansi: 7.2.0
-
   string-width@8.3.0:
     dependencies:
       get-east-asian-width: 1.6.0
@@ -48700,7 +48680,7 @@ snapshots:
 
   widest-line@6.0.0:
     dependencies:
-      string-width: 8.2.2
+      string-width: 8.3.0
 
   wildcard@2.0.1: {}
 
@@ -48733,7 +48713,7 @@ snapshots:
   wrap-ansi@10.0.2:
     dependencies:
       ansi-styles: 6.2.3
-      string-width: 8.2.2
+      string-width: 8.3.0
 
   wrap-ansi@6.2.0:
     dependencies:
@@ -48921,7 +48901,7 @@ snapshots:
       cliui: 9.0.1
       escalade: 3.2.0
       get-caller-file: 2.0.5
-      string-width: 8.2.2
+      string-width: 8.3.0
       y18n: 5.0.8
       yargs-parser: 22.0.0
 
