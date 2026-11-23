@@ -1,3 +1,5 @@
+import type { ComponentProps } from 'react';
+
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
@@ -12,6 +14,8 @@ import { withNotifications } from '@proton/components/testing/with-notifications
 import { buyCredit } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import {
     LUMO_CREDIT_CHECK_TAX_EXCLUSIVE,
     MOCK_PAYMENT_STATUS,
@@ -100,8 +104,30 @@ const withContext = applyHOCs(
     withDeprecatedModals(),
     withAuthentication()
 );
-const ContextLumoCreditsModal = withContext(LumoCreditsModal);
+const LumoCreditsModalWithFormatter = ({
+    formatCredits = (credits) => `${credits} credits`,
+    ...props
+}: Omit<ComponentProps<typeof LumoCreditsModal>, 'formatCredits'> & {
+    formatCredits?: (credits: number) => string;
+}) => <LumoCreditsModal formatCredits={formatCredits} {...props} />;
+const ContextLumoCreditsModal = withContext(LumoCreditsModalWithFormatter);
 const ContextCreditsModal = withContext(CreditsModal);
+const renderLumoCreditsModalIn = (currency: Subscription['Currency']) => {
+    const ContextLumoCreditsModalIn = applyHOCs(
+        withConfig(),
+        withReduxStore({
+            preloadedState: { subscription: getSubscriptionState({ Currency: currency } as Subscription) },
+        }),
+        withNotifications(),
+        withEventManager(),
+        withApi(),
+        withCache(),
+        withDeprecatedModals(),
+        withAuthentication()
+    )(LumoCreditsModalWithFormatter);
+
+    render(<ContextLumoCreditsModalIn paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
+};
 
 const getOfferedNewMethodTypes = async () => {
     await waitFor(() => expect(mockFacadeResults.at(-1)?.methods.loading).toBe(false));
@@ -356,7 +382,9 @@ describe('amount rules', () => {
         render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
         await typeCredits('19');
 
-        expect(await screen.findByText(minimumBannerText)).toHaveTextContent('20');
+        expect(await screen.findByText(minimumBannerText)).toHaveTextContent(
+            'The minimum amount of credit that can be added is 20 credits'
+        );
         expect(screen.getByTestId('top-up-button')).toBeDisabled();
 
         await typeCredits('20');
@@ -384,12 +412,34 @@ describe('amount rules', () => {
             .getAllByRole('button', { hidden: true, description: /^Amount/ })
             .map((button) => Number(button.textContent?.replace(/\D/g, '')));
 
-    it('should offer the US$50 and US$100 presets', async () => {
+    it('should offer the 50 and 100 credit presets', async () => {
         mockPaymentMethods().noSaved();
 
         render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
 
         await waitFor(() => expect(presetLabels()).toEqual([50, 100]));
+    });
+
+    it('should show the presets and the checked amount as credits when given a credits formatter', async () => {
+        mockPaymentMethods().noSaved();
+
+        render(
+            <ContextLumoCreditsModal
+                paymentStatus={MOCK_PAYMENT_STATUS}
+                open={true}
+                app={APPS.PROTONLUMO}
+                formatCredits={(credits) => `${credits} credits`}
+            />
+        );
+
+        await waitFor(() =>
+            expect(
+                screen
+                    .getAllByRole('button', { hidden: true, description: /^Amount/ })
+                    .map((button) => button.textContent)
+            ).toEqual(['50 credits', '100 credits'])
+        );
+        await waitFor(() => expect(screen.getByTestId('top-up-summary')).toHaveTextContent(/^50 credits/));
     });
 
     it('should keep the regular preset amounts in the regular credits modal', async () => {
@@ -398,7 +448,32 @@ describe('amount rules', () => {
         render(<ContextCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONMAIL} />);
 
         await waitFor(() => expect(presetLabels()).toEqual([5, 10, 50, 100]));
+        for (const button of screen.getAllByRole('button', { hidden: true, description: /^Amount/ })) {
+            expect(button).toHaveTextContent('€');
+            expect(button).not.toHaveTextContent('credit');
+        }
     });
+
+    it.each(['JPY', 'KRW'] as const)(
+        'should count the presets, the prefill and the minimum in credits in %s',
+        async (currency) => {
+            mockPaymentMethods().noSaved();
+
+            renderLumoCreditsModalIn(currency);
+
+            await waitFor(() => expect(presetLabels()).toEqual([50, 100]));
+            await waitFor(() =>
+                expect(checkProductMock).toHaveBeenNthCalledWith(
+                    1,
+                    expect.objectContaining({ data: expect.objectContaining({ Quantity: 50, Currency: currency }) })
+                )
+            );
+            await typeCredits('19');
+            expect(await screen.findByText(minimumBannerText)).toBeInTheDocument();
+            await typeCredits('20');
+            await waitFor(() => expect(screen.queryByText(minimumBannerText)).not.toBeInTheDocument());
+        }
+    );
 });
 
 describe('tax', () => {
@@ -434,7 +509,7 @@ describe('tax', () => {
         render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
         await typeCredits('20');
 
-        await waitFor(() => expect(screen.getByTestId('top-up-summary')).toHaveTextContent(/Credits\s*20\b/));
+        await waitFor(() => expect(screen.getByTestId('top-up-summary')).toHaveTextContent(/^20 credits\s*20\b/));
         const summary = screen.getByTestId('top-up-summary');
         expect(summary).toHaveTextContent(/Tax 8\.1%\s*1\.62/);
         expect(summary).toHaveTextContent(/Total\s*21\.62/);
@@ -461,7 +536,7 @@ describe('tax', () => {
 
         await waitFor(() => expect(screen.getByTestId('top-up-summary')).toHaveTextContent(credit));
         const summary = screen.getByTestId('top-up-summary');
-        expect(summary).toHaveTextContent(/Credits\s*20\b/);
+        expect(summary).toHaveTextContent(/^20 credits\s*20\b/);
         expect(summary).toHaveTextContent(total);
     });
 
@@ -742,6 +817,15 @@ describe('tax', () => {
         expect(mockFacadeResults.at(-1).selectedMethodValue).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
         expect(screen.getByTestId('top-up-button')).toBeDisabled();
         expect(queryFooterPaypalButton()).not.toBeInTheDocument();
+    });
+
+    it('should offer PayPal in JPY while the price check is pending', async () => {
+        checkProductMock.mockImplementation(() => createDeferred().promise);
+        mockPaymentMethods().noSaved();
+
+        renderLumoCreditsModalIn('JPY');
+
+        expect(await getOfferedNewMethodTypes()).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
     });
 
     it('should keep offering PayPal below the minimum in the regular credits modal', async () => {

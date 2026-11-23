@@ -26,6 +26,7 @@ import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePa
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import type { ProductCheckResponse } from '@proton/payments/core/api/createPaymentSubscription';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import type {
     Currency,
     PaymentMethodFlow,
@@ -61,8 +62,10 @@ type Props = {
     onTopUp: (...args: [...Parameters<OnChargeable>, credits: number]) => ReturnType<OnChargeable>;
     initialCurrency?: Currency;
     flow?: Extract<PaymentMethodFlow, 'credit' | 'lumo-credit'>;
-    minAmount?: number;
-    presetUsdAmounts?: number[];
+    minWholeAmount?: number;
+    presetWholeAmounts?: number[];
+    getAmountLabel?: (amount: number, currency: Currency) => string;
+    getEstimatedAmountDue?: (amount: number, currency: Currency) => number;
     checkTopUp?: (amount: number, currency: Currency) => Promise<ProductCheckResponse>;
     onTopUpFromAccountCredit?: (credits: number, currency: Currency) => Promise<void>;
 } & TopUpModalProps;
@@ -80,7 +83,7 @@ const getAuthorizedCredits = (
 
 const isPaidByAccountCredit = (check: ProductCheckResponse | undefined) => check?.AmountDue === 0;
 
-const TopUpSummary = ({ check }: { check: ProductCheckResponse }) => {
+const TopUpSummary = ({ check, amountTitle }: { check: ProductCheckResponse; amountTitle: string | undefined }) => {
     const tax = formatTax({
         Taxes: check.Taxes,
         TaxMode: check.TaxInclusive ? TaxMode.INCLUSIVE : TaxMode.EXCLUSIVE,
@@ -89,7 +92,7 @@ const TopUpSummary = ({ check }: { check: ProductCheckResponse }) => {
 
     return (
         <div className="mb-4" data-testid="top-up-summary">
-            <CheckoutRow title={c('Label').t`Credits`} amount={check.Amount} currency={check.Currency} />
+            <CheckoutRow title={amountTitle ?? c('Label').t`Credits`} amount={check.Amount} currency={check.Currency} />
             {tax && <CheckoutRow title={tax.taxRateElement} amount={tax.amount} currency={check.Currency} />}
             {check.Credit > 0 && (
                 <CheckoutRow title={c('Label').t`Account credit`} amount={-check.Credit} currency={check.Currency} />
@@ -121,8 +124,10 @@ export const TopUpModal = ({
     onTopUp,
     initialCurrency,
     flow = 'credit',
-    minAmount: minAmountProp,
-    presetUsdAmounts,
+    minWholeAmount,
+    presetWholeAmounts,
+    getAmountLabel,
+    getEstimatedAmountDue,
     checkTopUp,
     onTopUpFromAccountCredit,
     ...props
@@ -132,7 +137,11 @@ export const TopUpModal = ({
 
     const [preferredCurrency] = useAutomaticCurrency();
     const [currency, setCurrency] = useState<Currency>(initialCurrency ?? preferredCurrency);
-    const [amount, setAmount] = useState(DEFAULT_TOP_UP_AMOUNT);
+    const [amount, setAmount] = useState(() =>
+        presetWholeAmounts
+            ? presetWholeAmounts[0] * getCurrencyFormattingConfig(currency).divisor
+            : DEFAULT_TOP_UP_AMOUNT
+    );
     const debouncedAmount = useDebounceInput(amount);
     const [latestCheck, setLatestCheck] = useState<CheckedTopUp>();
     const [subscription, loadingSubscription] = useSubscription();
@@ -141,7 +150,10 @@ export const TopUpModal = ({
     const { CountryCode, State } = paymentStatus;
     const billingAddress = useMemo(() => ({ CountryCode, State }), [CountryCode, State]);
 
-    const minAmount = minAmountProp ?? getMinCreditAmount(currency);
+    const minAmount =
+        minWholeAmount === undefined
+            ? getMinCreditAmount(currency)
+            : minWholeAmount * getCurrencyFormattingConfig(currency).divisor;
     const lowAmount = debouncedAmount < minAmount;
 
     useEffect(() => {
@@ -169,7 +181,8 @@ export const TopUpModal = ({
     const checkLoading = !!checkTopUp && !lowAmount && !checkOfCurrentAmount;
     const amountDueUnknown = checkLoading || checkFailed;
     const amountToChargeUnknown = debouncedAmount !== amount || amountDueUnknown;
-    const amountDue = currentCheck?.AmountDue ?? debouncedAmount;
+    const toAmountDue = (topUpAmount: number) => getEstimatedAmountDue?.(topUpAmount, currency) ?? topUpAmount;
+    const amountDue = currentCheck?.AmountDue ?? toAmountDue(debouncedAmount);
     const paidByAccountCredit = !!onTopUpFromAccountCredit && isPaidByAccountCredit(currentCheck);
 
     const paymentFacade = usePaymentFacade({
@@ -375,9 +388,12 @@ export const TopUpModal = ({
                     currency={currency}
                     onChangeCurrency={setCurrency}
                     disableCurrencySelector={disableCurrencySelector}
-                    presetUsdAmounts={presetUsdAmounts}
+                    presetWholeAmounts={presetWholeAmounts}
+                    getAmountLabel={getAmountLabel}
                 />
-                {currentCheck && <TopUpSummary check={currentCheck} />}
+                {currentCheck && (
+                    <TopUpSummary check={currentCheck} amountTitle={getAmountLabel?.(debouncedAmount, currency)} />
+                )}
                 {checkFailed && (
                     <p className="color-danger mt-0 mb-4" data-testid="top-up-check-error">
                         {c('Error').t`The total could not be calculated. Change the amount to try again.`}
@@ -388,7 +404,12 @@ export const TopUpModal = ({
                         {c('Payments').t`Paid from your account credit.`}
                     </p>
                 ) : (
-                    <PaymentWrapper {...paymentFacade} noMaxWidth minCreditAmount={lowAmount ? minAmount : 0} />
+                    <PaymentWrapper
+                        {...paymentFacade}
+                        noMaxWidth
+                        minCreditAmount={lowAmount ? toAmountDue(minAmount) : 0}
+                        minCreditLabel={getAmountLabel?.(minAmount, currency)}
+                    />
                 )}
                 {!paidByAccountCredit && amountToCharge && (
                     <p

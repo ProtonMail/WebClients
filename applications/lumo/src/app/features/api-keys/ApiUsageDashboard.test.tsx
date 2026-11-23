@@ -2,8 +2,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
 
@@ -11,8 +9,6 @@ import { setDebugApiCreditBalance } from '../../services/apiUsageDebugStore';
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 
 vi.mock('@proton/account/paymentStatus/hooks');
-vi.mock('@proton/account/subscription/hooks');
-vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/app-context/useApi');
 vi.mock('./useApiUsageSummary', () => {
     const dates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
@@ -39,14 +35,9 @@ vi.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
 
 const withBalance = (Balance: string) => () => Promise.resolve({ ...MOCK_LUMO_CREDIT_RESPONSE, Balance });
 
-const setup = (
-    response: () => Promise<unknown>,
-    { hasSubscription = true, isOrgMember = false }: { hasSubscription?: boolean; isOrgMember?: boolean } = {}
-) => {
+const setup = (response: () => Promise<unknown>, { isOrgMember = false }: { isOrgMember?: boolean } = {}) => {
     const api = vi.fn().mockImplementation(response);
     (useApi as Mock).mockReturnValue(api);
-    (useUser as Mock).mockReturnValue([{ Credit: 987_654, Currency: 'EUR' }]);
-    (useSubscription as Mock).mockReturnValue([hasSubscription ? { Currency: 'USD' } : undefined]);
     (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
     render(<ApiUsageDashboard isOrgAdmin={false} isOrgMember={isOrgMember} />);
     return api;
@@ -62,10 +53,10 @@ describe('ApiUsageDashboard balance card', () => {
         setDebugApiCreditBalance(null);
     });
 
-    it('shows the Lumo credit balance in the subscription currency', async () => {
+    it('shows the Lumo credit balance in credits', async () => {
         setup(withBalance('15.0000000000'));
 
-        await waitFor(() => expect(getBalanceAmount()).toBe('US$15'));
+        await waitFor(() => expect(getBalanceAmount()).toBe('15 credits'));
         expect(screen.queryByText(lowBalanceMessage)).not.toBeInTheDocument();
         expect(screen.queryByText(emptyBalanceMessage)).not.toBeInTheDocument();
     });
@@ -76,24 +67,24 @@ describe('ApiUsageDashboard balance card', () => {
         expect(await screen.findByText('About 3 days left at current usage')).toBeInTheDocument();
     });
 
-    it('rounds a fractional balance to cents', async () => {
+    it('shows a fractional balance with at most two decimals', async () => {
         setup(withBalance('5.5580000000'));
 
-        await waitFor(() => expect(getBalanceAmount()).toBe('US$5.56'));
+        await waitFor(() => expect(getBalanceAmount()).toBe('5.56 credits'));
     });
 
     it('warns when the balance is running low', async () => {
         setup(withBalance('5.0000000000'));
 
         expect(await screen.findByText(lowBalanceMessage)).toBeInTheDocument();
-        expect(getBalanceAmount()).toBe('US$5');
+        expect(getBalanceAmount()).toBe('5 credits');
     });
 
     it('pauses requests when the balance is empty', async () => {
         setup(withBalance('0.0000000000'));
 
         expect(await screen.findByText(emptyBalanceMessage)).toBeInTheDocument();
-        expect(getBalanceAmount()).toBe('US$0');
+        expect(getBalanceAmount()).toBe('0 credits');
     });
 
     it('shows the balance as unavailable when the request fails', async () => {
@@ -113,13 +104,13 @@ describe('ApiUsageDashboard balance card', () => {
 
     it('keeps the Lumo balance when the account credits modal closes', async () => {
         const api = setup(withBalance('15.0000000000'));
-        await waitFor(() => expect(getBalanceAmount()).toBe('US$15'));
+        await waitFor(() => expect(getBalanceAmount()).toBe('15 credits'));
 
         fireEvent.click(screen.getByRole('button', { name: 'Top up balance' }));
         fireEvent.click(screen.getByRole('button', { name: 'Close top-up' }));
 
         expect(screen.queryByRole('button', { name: 'Close top-up' })).not.toBeInTheDocument();
-        expect(getBalanceAmount()).toBe('US$15');
+        expect(getBalanceAmount()).toBe('15 credits');
         expect(api).toHaveBeenCalledTimes(1);
     });
 
@@ -128,20 +119,14 @@ describe('ApiUsageDashboard balance card', () => {
         const api = setup(withBalance('15.0000000000'));
 
         await waitFor(() => expect(api).toHaveBeenCalled());
-        expect(getBalanceAmount()).toBe('US$5');
+        expect(getBalanceAmount()).toBe('5 credits');
         expect(screen.getByText(lowBalanceMessage)).toBeInTheDocument();
-    });
-
-    it('falls back to the user currency without a subscription', async () => {
-        setup(withBalance('15.0000000000'), { hasSubscription: false });
-
-        await waitFor(() => expect(getBalanceAmount()).toBe('15\u00a0€'));
     });
 
     it('shows the organization balance to a member without a top-up button', async () => {
         setup(withBalance('15.0000000000'), { isOrgMember: true });
 
-        await waitFor(() => expect(getBalanceAmount()).toBe('US$15'));
+        await waitFor(() => expect(getBalanceAmount()).toBe('15 credits'));
         expect(screen.getByText('Organization API balance')).toBeInTheDocument();
         expect(screen.queryByRole('button', { name: 'Top up balance' })).not.toBeInTheDocument();
     });

@@ -127,7 +127,7 @@ function getBuyProductConfig(product: ProductParam, params: BuyProductConfigPara
     };
 }
 
-const getLumoCreditQuantity = (creditAmount: number, currency: Currency) =>
+export const getLumoCreditQuantity = (creditAmount: number, currency: Currency) =>
     Math.floor(creditAmount / getCurrencyFormattingConfig(currency).divisor);
 
 export function getBuyLumoCreditConfig(

@@ -97,6 +97,7 @@ export interface Props {
     processingPayment: boolean;
     checkResult?: SubscriptionEstimation;
     minCreditAmount?: number;
+    minCreditLabel?: string;
 }
 
 export const PaymentsNoApi = ({
@@ -137,6 +138,7 @@ export const PaymentsNoApi = ({
     processingPayment,
     checkResult,
     minCreditAmount = getMinCreditAmount(currency),
+    minCreditLabel,
 }: Props) => {
     useEffect(() => {
         paymentComponentLoaded();
@@ -163,7 +165,7 @@ export const PaymentsNoApi = ({
     const loadingBitcoin = useStableLoading([loadingHookProps, !!loadingBitcoinProp]);
 
     if ((flow === 'credit' || flow === 'lumo-credit') && amount < minCreditAmount) {
-        const price = (
+        const price = minCreditLabel ?? (
             <Price key="price" currency={currency}>
                 {minCreditAmount}
             </Price>

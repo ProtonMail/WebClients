@@ -2,8 +2,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import type { LumoCreditResponse } from '@proton/payments/core/api/lumoCredit';
 import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
@@ -11,8 +9,6 @@ import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit'
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 
 vi.mock('@proton/account/paymentStatus/hooks');
-vi.mock('@proton/account/subscription/hooks');
-vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/app-context/useApi');
 vi.mock('./useApiUsageSummary', () => ({
     useApiUsageSummary: () => ({ dates: [], rows: [], isLoading: false, error: false }),
@@ -78,8 +74,6 @@ const setup = ({
         }
     );
     (useApi as Mock).mockReturnValue(api);
-    (useUser as Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
-    (useSubscription as Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
     render(
         <ApiUsageDashboard
@@ -100,7 +94,7 @@ const openManage = () =>
     fireEvent.click(screen.getByRole('button', { name: 'Manage automatic top-up and spending limit' }));
 const queryManage = () => screen.queryByRole('button', { name: 'Manage automatic top-up and spending limit' });
 const saveSettings = () => fireEvent.click(screen.getByText('Save settings').closest('button')!);
-const waitForBalance = () => waitFor(() => expect(balanceCard()).toHaveTextContent('US$15'));
+const waitForBalance = () => waitFor(() => expect(balanceCard()).toHaveTextContent('15 credits'));
 
 describe('ApiUsageDashboard balance settings', () => {
     const autoTopUpOn = { Enabled: true, Threshold: 20, Quantity: 50 };
@@ -115,17 +109,17 @@ describe('ApiUsageDashboard balance settings', () => {
 
         expect(screen.getByLabelText(/^Automatic top-up/)).toBeChecked();
         expect(screen.getByLabelText('Top up by')).toHaveValue(75);
-        expect(screen.getByLabelText('When balance falls below')).toHaveValue(20);
+        expect(screen.getByLabelText('When balance reaches')).toHaveValue(20);
         expect(screen.getByLabelText(/^Monthly spending limit/)).toBeChecked();
         expect(screen.getByLabelText('Limit')).toHaveValue(300);
-        expect(screen.getByText('$40.00 of $300.00 bought automatically this month')).toBeInTheDocument();
+        expect(screen.getByText('40 credits of 300 credits bought automatically this month')).toBeInTheDocument();
     });
 
     it('summarises the automatic top-up from the balance', async () => {
         setup({ credits: { ...autoTopUpOn, Quantity: 75 } });
 
         await waitFor(() => expect(settingsRow()).toHaveTextContent('Automatic top-up enabled'));
-        expect(settingsRow()).toHaveTextContent('Adding $75.00 when your balance falls below $20.00');
+        expect(settingsRow()).toHaveTextContent('Adding 75 credits when your balance reaches 20 credits');
     });
 
     it('shows the credits bought automatically against the limit', async () => {
@@ -133,7 +127,7 @@ describe('ApiUsageDashboard balance settings', () => {
 
         await waitFor(() =>
             expect(settingsRow()).toHaveTextContent(
-                'Monthly spending limit: $150.00 of $250.00 bought automatically (60%)'
+                'Monthly spending limit: 150 credits of 250 credits bought automatically (60%)'
             )
         );
     });
@@ -173,7 +167,7 @@ describe('ApiUsageDashboard balance settings', () => {
         enableAutoTopUp();
 
         expect(queryImmediateTopUpWarning()).toHaveTextContent(
-            'Your balance of $15.00 has reached the threshold, so saving will top up $50.00 right away.'
+            'Your balance of 15 credits has reached the threshold, so saving will top up 50 credits right away.'
         );
     });
 
@@ -185,7 +179,7 @@ describe('ApiUsageDashboard balance settings', () => {
         enableAutoTopUp();
         fireEvent.change(screen.getByLabelText('Top up by'), { target: { value: '75' } });
 
-        expect(queryImmediateTopUpWarning()).toHaveTextContent('so saving will top up $75.00 right away.');
+        expect(queryImmediateTopUpWarning()).toHaveTextContent('so saving will top up 75 credits right away.');
     });
 
     it('warns when an enabled automatic top-up gets a threshold the balance has reached', async () => {
@@ -194,7 +188,7 @@ describe('ApiUsageDashboard balance settings', () => {
         openManage();
         expect(queryImmediateTopUpWarning()).not.toBeInTheDocument();
 
-        fireEvent.change(screen.getByLabelText('When balance falls below'), { target: { value: '15' } });
+        fireEvent.change(screen.getByLabelText('When balance reaches'), { target: { value: '15' } });
 
         expect(queryImmediateTopUpWarning()).toBeInTheDocument();
     });
@@ -265,8 +259,10 @@ describe('ApiUsageDashboard balance settings', () => {
             ],
         ]);
         expect(callsTo(api, getUrl)).toHaveLength(2);
-        expect(settingsRow()).toHaveTextContent('Adding $30.00 when your balance falls below $20.00');
-        expect(settingsRow()).toHaveTextContent('Monthly spending limit: $0.00 of $120.00 bought automatically (0%)');
+        expect(settingsRow()).toHaveTextContent('Adding 30 credits when your balance reaches 20 credits');
+        expect(settingsRow()).toHaveTextContent(
+            'Monthly spending limit: 0 credits of 120 credits bought automatically (0%)'
+        );
     });
 
     it.each([
@@ -402,7 +398,7 @@ describe('ApiUsageDashboard balance settings', () => {
     it('does not show the automatic top-up status to an organization member', async () => {
         setup({ credits: failedAutoTopUp('PaymentFailed'), isOrgMember: true });
 
-        await waitFor(() => expect(balanceCard()).toHaveTextContent('US$15'));
+        await waitFor(() => expect(balanceCard()).toHaveTextContent('15 credits'));
         expect(balanceCard()).not.toHaveTextContent('Automatic top-up');
     });
 

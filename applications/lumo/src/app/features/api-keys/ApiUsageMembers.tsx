@@ -10,7 +10,6 @@ import { Input } from '@proton/atoms/Input/Input';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useLoading from '@proton/hooks/useLoading';
-import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { ApiUsageModelStats } from './ApiUsageModelStats';
@@ -51,15 +50,7 @@ const MemberApiAccessToggle = ({ member, apiAccess }: { member: ApiMemberUsage; 
     );
 };
 
-const MemberUsageCard = ({
-    member,
-    currency,
-    apiAccess,
-}: {
-    member: ApiMemberUsage;
-    currency: Currency;
-    apiAccess: MemberApiAccess;
-}) => {
+const MemberUsageCard = ({ member, apiAccess }: { member: ApiMemberUsage; apiAccess: MemberApiAccess }) => {
     const [expanded, setExpanded] = useState(false);
     const isExpanded = expanded && member.models.length > 0;
     return (
@@ -81,7 +72,7 @@ const MemberUsageCard = ({
                     </div>
                     <div className="api-usage-member-card__total flex flex-column items-start gap-0.5 md:items-end">
                         <small>{c('collider_2025: Label').t`Balance used`}</small>
-                        <strong>{getCostLabel(member.cost, currency)}</strong>
+                        <strong>{getCostLabel(member.cost)}</strong>
                     </div>
                     {member.isCurrentMember && <MemberApiAccessToggle member={member} apiAccess={apiAccess} />}
                     <Button
@@ -106,7 +97,7 @@ const MemberUsageCard = ({
                             model={usage.model}
                             inputTokens={usage.inputTokens}
                             outputTokens={usage.outputTokens}
-                            formattedCost={getCostLabel(usage.cost, currency)}
+                            formattedCost={getCostLabel(usage.cost)}
                         />
                     ))}
                 </div>
@@ -120,14 +111,12 @@ const MemberUsageList = ({
     search,
     isLoading,
     error,
-    currency,
     apiAccess,
 }: {
     members: ApiMemberUsage[];
     search: string;
     isLoading: boolean;
     error: boolean;
-    currency: Currency;
     apiAccess: MemberApiAccess;
 }) => {
     if (isLoading) {
@@ -162,7 +151,7 @@ const MemberUsageList = ({
     return (
         <div className="api-usage-member-list gap-2.5">
             {matchingMembers.map((member) => (
-                <MemberUsageCard key={member.id} member={member} currency={currency} apiAccess={apiAccess} />
+                <MemberUsageCard key={member.id} member={member} apiAccess={apiAccess} />
             ))}
             {matchingMembers.length === 0 && (
                 <div className="api-usage-member-list__empty p-7 border radius-16 text-center lumo-color-glyph-mid">
@@ -177,12 +166,10 @@ export const ApiUsageMembers = ({
     from,
     to,
     periodLabel,
-    currency,
 }: {
     from: string | undefined;
     to: string | undefined;
     periodLabel: string;
-    currency: Currency;
 }) => {
     const [organizationMembers = [], isLoadingMembers] = useMembers();
     const [organization, isLoadingOrganization] = useOrganization();
@@ -229,7 +216,6 @@ export const ApiUsageMembers = ({
                 search={search}
                 isLoading={usage.isLoading || isLoadingMembers || isLoadingOrganization}
                 error={usage.error}
-                currency={currency}
                 apiAccess={apiAccess}
             />
         </div>

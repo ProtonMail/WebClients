@@ -17,6 +17,8 @@ import Label from '../../components/label/Label';
 import AmountButton from './AmountButton';
 import CurrencySelector from './CurrencySelector';
 
+const DEFAULT_PRESET_USD_CENTS = [500, 1000, 5000, 10000];
+
 interface Props {
     currency: Currency;
     amount: number;
@@ -24,7 +26,8 @@ interface Props {
     onChangeAmount: (amount: number) => void;
     disableCurrencySelector: boolean;
     paymentStatus: PaymentStatus;
-    presetUsdAmounts?: number[];
+    presetWholeAmounts?: number[];
+    getAmountLabel?: (amount: number, currency: Currency) => string;
 }
 
 const PaymentSelector = ({
@@ -34,7 +37,8 @@ const PaymentSelector = ({
     onChangeAmount,
     disableCurrencySelector,
     paymentStatus,
-    presetUsdAmounts = [500, 1000, 5000, 10000],
+    presetWholeAmounts,
+    getAmountLabel,
 }: Props) => {
     const multiSubscriptionContext = useMultiSubscriptionContext();
     const [user] = useUser();
@@ -43,10 +47,10 @@ const PaymentSelector = ({
 
     const { divisor } = getCurrencyFormattingConfig(currency);
 
-    const getAmounts = (currency: Currency) => {
-        const rate = getNaiveCurrencyRate(currency);
-        return presetUsdAmounts.map((value) => Math.floor(value * rate));
-    };
+    const getAmounts = (currency: Currency) =>
+        presetWholeAmounts
+            ? presetWholeAmounts.map((value) => value * getCurrencyFormattingConfig(currency).divisor)
+            : DEFAULT_PRESET_USD_CENTS.map((value) => Math.floor(value * getNaiveCurrencyRate(currency)));
 
     const handleChangeAmount = (value: number) => {
         setInputValue('');
@@ -76,6 +80,7 @@ const PaymentSelector = ({
                             onSelect={handleChangeAmount}
                             value={value}
                             amount={amount}
+                            label={getAmountLabel?.(value, currency)}
                         />
                     </div>
                 ))}

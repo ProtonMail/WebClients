@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import {
     API_TOKEN_PRICING_MODEL_IDS,
-    API_TOKEN_PRICING_USD_PER_MILLION,
-    type ApiTokenPricingUsdPerMillion,
-    formatUsdAmount,
-} from '../api-docs/apiTokenPricingUsd';
+    API_TOKEN_CREDITS_PER_MILLION,
+    type ApiTokenCreditsPerMillion,
+    formatCredits,
+} from '../api-docs/apiTokenPricing';
 
 export const ApiPayAsYouGoCard = () => {
-    const rows: { id: keyof ApiTokenPricingUsdPerMillion; label: string }[] = [
+    const rows: { id: keyof ApiTokenCreditsPerMillion; label: string }[] = [
         { id: 'input', label: c('collider_2025: Label').t`Input` },
         { id: 'output', label: c('collider_2025: Label').t`Output` },
         { id: 'cacheInput', label: c('collider_2025: Label').t`Cached input` },
@@ -24,7 +24,7 @@ export const ApiPayAsYouGoCard = () => {
                     {c('collider_2025: Title').t`Pay as you go`}
                 </h3>
                 <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
-                    {c('collider_2025: Info').t`Pay only for the tokens you use. Prices in USD per 1M tokens.`}
+                    {c('collider_2025: Info').t`Pay only for the tokens you use. Prices in credits per 1M tokens.`}
                 </p>
             </div>
 
@@ -46,14 +46,14 @@ export const ApiPayAsYouGoCard = () => {
                         <tr key={row.id}>
                             <th scope="row">{row.label}</th>
                             {API_TOKEN_PRICING_MODEL_IDS.map((modelId) => {
-                                const amount = API_TOKEN_PRICING_USD_PER_MILLION[modelId][row.id];
+                                const amount = API_TOKEN_CREDITS_PER_MILLION[modelId][row.id];
                                 return (
                                     <td key={modelId}>
                                         {amount === null ? (
                                             <span className="lumo-color-glyph-mid">{c('collider_2025: Label')
                                                 .t`Not billed`}</span>
                                         ) : (
-                                            formatUsdAmount(amount)
+                                            formatCredits(amount)
                                         )}
                                     </td>
                                 );

@@ -1,12 +1,10 @@
 import { c } from 'ttag';
 
-import type { Currency } from '@proton/payments/core/interface';
 import { LUMO_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 import type { BilledClientType, UsageDay, UsageEntry, UsageMemberRow } from '../../remote/usage';
-import { API_TOKEN_PRICING_USD_PER_MILLION, type ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
-import { formatApiCurrency } from './apiKeysHelpers';
+import { API_TOKEN_CREDITS_PER_MILLION, type ApiTokenPricingModelId, formatCredits } from '../api-docs/apiTokenPricing';
 
 export type UsageRow = UsageEntry & { Date: string };
 
@@ -27,7 +25,7 @@ export const filterRowsBySource = (rows: UsageRow[], source: 'all' | UsageSource
 export const isChatHiddenByModelFilter = (rows: UsageRow[], model: string, source: 'all' | UsageSource) =>
     model !== 'all' &&
     source !== 'api' &&
-    filterRowsBySource(rows, 'chat').some((row) => !(row.Model in API_TOKEN_PRICING_USD_PER_MILLION));
+    filterRowsBySource(rows, 'chat').some((row) => !(row.Model in API_TOKEN_CREDITS_PER_MILLION));
 
 export type ApiUsageDay = ApiUsageTotals & { date: string };
 
@@ -162,8 +160,8 @@ export const getApiMemberUsage = (rows: UsageMemberRow[], members: Member[]): Ap
 export const filterMembersByName = (members: ApiMemberUsage[], search: string) =>
     members.filter((member) => member.name.toLowerCase().includes(search.toLowerCase()));
 
-export const getCostLabel = (cost: number | null, currency: Currency) =>
-    cost === null ? c('collider_2025: Info').t`Not priced yet` : formatApiCurrency(cost, currency);
+export const getCostLabel = (cost: number | null) =>
+    cost === null ? c('collider_2025: Info').t`Not priced yet` : formatCredits(cost);
 
 export const getApiAccessHint = ({
     isOrganizationApiEnabled,

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 
 import type { ApiModel } from './apiModels';
-import { formatUsdAmount, getApiModelPricingUsd } from './apiTokenPricingUsd';
+import { getApiModelPricing, formatCredits } from './apiTokenPricing';
 
 import './ApiModelsCatalogSection.scss';
 
@@ -30,7 +30,7 @@ const HeadlinePrice = ({ label, amount }: { label: string; amount: number }) => 
     <div className="api-docs-model-catalog-headline">
         <div className="api-docs-model-catalog-headline-label lumo-label-small lumo-color-glyph-mid">{label}</div>
         <div className="api-docs-model-catalog-headline-amount lumo-headline-small lumo-color-glyph">
-            {formatUsdAmount(amount)}
+            {formatCredits(amount)}
         </div>
         <div className="api-docs-model-catalog-headline-unit lumo-label-small lumo-color-glyph-mid">{c(
             'collider_2025: Label'
@@ -39,7 +39,7 @@ const HeadlinePrice = ({ label, amount }: { label: string; amount: number }) => 
 );
 
 const ModelCatalogCard = ({ model }: { model: ApiModel }) => {
-    const pricing = getApiModelPricingUsd(model.id);
+    const pricing = getApiModelPricing(model.id);
     const capabilities = modelCapabilities(model);
 
     return (
@@ -67,7 +67,7 @@ const ModelCatalogCard = ({ model }: { model: ApiModel }) => {
                             <div className="api-docs-model-catalog-cached lumo-body-small gap-2 pt-3 lumo-color-glyph-mid">
                                 <span>{c('collider_2025: Label').t`Cached input`}</span>
                                 <span className="api-docs-model-catalog-cached-amount lumo-color-glyph">
-                                    {formatUsdAmount(pricing.cacheInput)}
+                                    {formatCredits(pricing.cacheInput)}
                                     <span className="api-docs-model-catalog-cached-unit lumo-label-medium lumo-color-glyph-mid">
                                         {' / MTok'}
                                     </span>
@@ -121,7 +121,7 @@ export const ApiModelsCatalogSection = ({
         <h2 className="mt-0 mb-2 lumo-title-large">{c('collider_2025: Title').t`Models & pricing`}</h2>
         <p className="mt-0 mb-6 lumo-color-glyph-mid" style={{ lineHeight: 1.7, maxWidth: '44rem' }}>
             {c('collider_2025: Info')
-                .t`Pass a model ID in your request. Prices are list prices in USD per million tokens (MTok).`}
+                .t`Pass a model ID in your request. Prices are in credits per million tokens (MTok).`}
         </p>
 
         {status === 'loading' && models.length === 0 ? (

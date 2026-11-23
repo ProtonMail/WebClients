@@ -30,6 +30,7 @@ type Props = ReturnType<typeof usePaymentFacade> & {
     subscription?: Subscription | FreeSubscription;
     creditCardDetailsRef?: Ref<HTMLDivElement>;
     minCreditAmount?: number;
+    minCreditLabel?: string;
 };
 
 const PaymentWrapper = ({ methods, isAuthenticated: isAuthenticatedProp, onMethod, ...rest }: Props) => {

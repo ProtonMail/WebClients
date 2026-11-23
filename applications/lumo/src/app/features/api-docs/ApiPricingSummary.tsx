@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 
 import type { ApiModel } from './apiModels';
-import { API_TOKEN_PRICING_MODEL_IDS, API_TOKEN_PRICING_USD_PER_MILLION, formatUsdAmount } from './apiTokenPricingUsd';
+import { API_TOKEN_PRICING_MODEL_IDS, API_TOKEN_CREDITS_PER_MILLION, formatCredits } from './apiTokenPricing';
 
 import './ApiPricingSummary.scss';
 
@@ -13,7 +13,7 @@ const Price = ({ amount }: { amount: number | null }) =>
             .t`Not billed`}</span>
     ) : (
         <span className="api-docs-pricing-summary-price lumo-title-medium lumo-color-glyph">
-            {formatUsdAmount(amount)}
+            {formatCredits(amount)}
         </span>
     );
 
@@ -25,7 +25,7 @@ export const ApiPricingSummary = ({ onViewModels, models = [] }: { onViewModels:
                     {c('collider_2025: Title').t`Pricing`}
                 </h2>
                 <p className="m-0 lumo-color-glyph-mid">
-                    {c('collider_2025: Info').t`Pay per token. Prices in USD per 1 million tokens (MTok).`}
+                    {c('collider_2025: Info').t`Pay per token. Prices in credits per 1 million tokens (MTok).`}
                 </p>
             </div>
             <Button size="small" color="weak" shape="ghost" onClick={onViewModels}>
@@ -45,7 +45,7 @@ export const ApiPricingSummary = ({ onViewModels, models = [] }: { onViewModels:
                 </thead>
                 <tbody>
                     {API_TOKEN_PRICING_MODEL_IDS.map((modelId) => {
-                        const rates = API_TOKEN_PRICING_USD_PER_MILLION[modelId];
+                        const rates = API_TOKEN_CREDITS_PER_MILLION[modelId];
                         const label = models.find((m) => m.id === modelId)?.name ?? modelId;
                         return (
                             <tr key={modelId}>
