@@ -18,7 +18,7 @@
         "target": "esnext",
         "useDefineForClassFields": false,
         "skipLibCheck": true,
-        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "jest", "node"]
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "node"]
     },
     "include": ["${configDir}"],
     "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/"]

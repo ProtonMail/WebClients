@@ -112,7 +112,7 @@ export default {
                 }
             },
             // Only bare `require(...)` is treated as an import. `require.resolve(...)` and
-            // `jest.mock(...)` are deliberately excluded: they resolve or stub a path without
+            // `vi.mock(...)` are deliberately excluded: they resolve or stub a path without
             // creating a module-graph edge, so they cannot introduce a dependency cycle.
             CallExpression: (node) => {
                 if (node.callee.type !== 'Identifier' || node.callee.name !== 'require') {

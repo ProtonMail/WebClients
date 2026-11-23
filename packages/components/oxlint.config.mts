@@ -36,7 +36,7 @@ export default createOxlintConfig({
         refObjectNullOverride,
         {
             // Tests and `testing/**` only get the base restrictions, without the `./index` ban.
-            files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx', 'jest.setup.js', 'testing/**'],
+            files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx', 'testing/**'],
             rules: { 'proton/restricted-imports': 'error' },
         },
         {

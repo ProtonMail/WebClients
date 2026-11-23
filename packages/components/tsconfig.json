@@ -3,5 +3,6 @@
     "compilerOptions": {
         "types": ["@proton/types", "global-types-monorepo", "webpack-env", "@webgpu/types", "vitest/globals"]
     },
-    "exclude": ["node_modules"]
+    // vitest.config.ts is left out: it pulls in vitest's browser-mode matcher types, which clash with jest-dom's (toHaveTextContent(RegExp))
+    "exclude": ["node_modules", "vitest.config.ts"]
 }
