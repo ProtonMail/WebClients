@@ -336,7 +336,7 @@
     "sourceSymbol": "getAllUpdatesAsZip",
     "sourceCommit": "2022294005602363e784246bae18c436aaf14a6e",
     "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
-    "notes": "The zip of every update and its file names, from the session's History Log, one file per document update; no download of its own."
+    "notes": "The zip of every update and its file names, from the session's History Log, one file per document update, then the buffer's edits; names mark an edit the server hasn't acknowledged; no download of its own."
   },
   {
     "doc2": "__utils/debugDownloads.ts",

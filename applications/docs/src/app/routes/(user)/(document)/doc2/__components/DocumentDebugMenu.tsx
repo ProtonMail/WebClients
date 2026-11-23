@@ -155,7 +155,10 @@ export function DocumentDebugMenu({ session, snapshot, editorInvoker }: Document
           <Button
             size="small"
             onClick={logFailure(async () =>
-              downloadFile(await getAllUpdatesZip(session.getHistory()), 'all-updates.zip'),
+              downloadFile(
+                await getAllUpdatesZip(session.getHistory(), session.exportDebugArtifacts().buffer),
+                'all-updates.zip',
+              ),
             )}
           >
             Download All Updates as ZIP

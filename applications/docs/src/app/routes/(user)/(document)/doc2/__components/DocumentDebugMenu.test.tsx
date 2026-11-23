@@ -30,10 +30,32 @@ const BASE_COMMIT: DebugArtifacts['baseCommit'] = {
   ],
 }
 const HISTORY: HistoryEntry[] = [
-  { uuid: 'u-1', origin: 'baseState', timestamp: 100, authorAddress: 'a@example.com', content: new Uint8Array([1]) },
-  { uuid: 'u-2', origin: 'sent', timestamp: 500, authorAddress: 'a@example.com', content: new Uint8Array([4]) },
-  { uuid: 'u-3', origin: 'sent', timestamp: 600, authorAddress: 'a@example.com', content: new Uint8Array([5]) },
+  {
+    uuid: 'u-1',
+    origin: 'baseState',
+    timestamp: 100,
+    authorAddress: 'a@example.com',
+    content: new Uint8Array([1]),
+    acknowledged: true,
+  },
+  {
+    uuid: 'u-2',
+    origin: 'sent',
+    timestamp: 500,
+    authorAddress: 'a@example.com',
+    content: new Uint8Array([4]),
+    acknowledged: true,
+  },
+  {
+    uuid: 'u-3',
+    origin: 'sent',
+    timestamp: 600,
+    authorAddress: 'a@example.com',
+    content: new Uint8Array([5]),
+    acknowledged: false,
+  },
 ]
+const BUFFER: DebugArtifacts['buffer'] = [{ since: 700, content: new Uint8Array([6]) }]
 
 function renderMenu({ baseUpdateCount = 3 } = {}) {
   const fake = createFakeSession({ status: { name: 'connected' }, delivery: 'pending', baseCommitId: 'commit-1' })
@@ -45,7 +67,7 @@ function renderMenu({ baseUpdateCount = 3 } = {}) {
   const session = Object.assign(fake.session, {
     config: { clientId: SESSION_CLIENT_ID },
     squash: vi.fn(async () => {}),
-    exportDebugArtifacts: vi.fn(() => ({ baseCommit: BASE_COMMIT, sentOrReceived: [], outbox: [] })),
+    exportDebugArtifacts: vi.fn(() => ({ baseCommit: BASE_COMMIT, sentOrReceived: [], outbox: [], buffer: BUFFER })),
   })
   const editorInvoker = {
     getClientId: vi.fn(async () => EDITOR_CLIENT_ID),
@@ -145,20 +167,23 @@ describe('DocumentDebugMenu', () => {
     expect(await filesOf(mockDownloadFile.mock.lastCall![0])).toEqual(['100.bin'])
   })
 
-  test("Download All Updates as ZIP reads the session's History Log only then, one file per entry", async () => {
+  test("Download All Updates as ZIP reads the session's History Log and buffer only then, marking the edits the server hasn't acknowledged", async () => {
     const { session } = renderMenu()
     await open()
     expect(session.getHistory).not.toHaveBeenCalled()
+    expect(session.exportDebugArtifacts).not.toHaveBeenCalled()
 
     await userEvent.click(screen.getByRole('button', { name: /Download All Updates as ZIP/ }))
 
     await waitFor(() => expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'all-updates.zip'))
     expect(session.getHistory).toHaveBeenCalledTimes(1)
-    // `sha1sum` of the bytes 01, 04 and 05
+    expect(session.exportDebugArtifacts).toHaveBeenCalledTimes(1)
+    // `sha1sum` of the bytes 01, 04, 05 and 06
     expect(await filesOf(mockDownloadFile.mock.lastCall![0])).toEqual([
       '100-bf8b4530d8d246dd74ac53a13471bba17941dff7.bin',
       '500-a42c6cf1de3abfdea9b95f34687cbbe92b9a7383.bin',
-      '600-8dc00598417d4eb788a77ac6ccef3cb484905d8b.bin',
+      '600-8dc00598417d4eb788a77ac6ccef3cb484905d8b-unacknowledged.bin',
+      '700-2d0134ed3b9de132c720fe697b532b4c232ff9fe-buffered.bin',
     ])
   })
 
