@@ -20,6 +20,26 @@ describe('createCustomFetch', () => {
         vi.clearAllMocks();
     });
 
+    describe('url', () => {
+        it.each([
+            [
+                'the metrics URL of unleash-proxy-client 3.8.2',
+                'https://proton.me/client/metrics',
+                'feature/v2/frontend/client/metrics',
+            ],
+            [
+                'the metrics URL of earlier versions',
+                'https://proton.me//client/metrics',
+                'feature/v2/frontend/client/metrics',
+            ],
+            ['the flags URL', 'https://proton.me/?appName=web', 'feature/v2/frontend?appName=web'],
+        ])('maps %s', async (_, libraryUrl, apiUrl) => {
+            await createCustomFetch(mockApi)(libraryUrl, { method: 'GET' });
+
+            expect(mockApi).toHaveBeenCalledWith(expect.objectContaining({ url: apiUrl }));
+        });
+    });
+
     describe('config.body parsing', () => {
         it('should parse valid JSON body correctly', async () => {
             const customFetch = createCustomFetch(mockApi);
