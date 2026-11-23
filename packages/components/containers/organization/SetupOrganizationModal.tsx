@@ -6,7 +6,13 @@ import { useMembers } from '@proton/account/members/hooks';
 import { MAX_CHARS_API } from '@proton/account/organization';
 import { resetSelfVpnConnections, setSelfQuota, updateOrganizationName } from '@proton/account/organization/actions';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
+import {
+    getInitialStorage,
+    getPassB2BAdminStorage,
+    getStorageRange,
+    getTotalStorage,
+    isAdminStorageReduction,
+} from '@proton/account/organization/storage';
 import {
     type OrganizationKeyRotationPayload,
     createPasswordlessOrganizationKeys,
@@ -22,6 +28,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+import { getIsPassB2BPlan } from '@proton/shared/lib/payments/plan/helpers';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
@@ -58,6 +65,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [subscription] = useSubscription();
     const [orgKeyCreated, setOrgKeyCreated] = useState(false);
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
+    const hasPassB2BPlan = !!subscription?.Plans?.some(({ Name }) => getIsPassB2BPlan(Name));
     const selfMember = members.find(({ Self }) => !!Self);
     const storageRange = getStorageRange(selfMember, organization);
     const [model, setModel] = useState({
@@ -87,7 +95,19 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [keyRotationPayload, setKeyRotationPayload] = useState<null | OrganizationKeyRotationPayload>(null);
     const errorHandler = useErrorHandler();
 
+    const setPassB2BAdminStorage = async () => {
+        const storage = getPassB2BAdminStorage(selfMember, organization);
+        if (disableStorageSelection(organization) || !isAdminStorageReduction(selfMember, storage)) {
+            return;
+        }
+        await dispatch(setSelfQuota(storage)).catch(noop);
+    };
+
     const handlePreStorageStep = async () => {
+        if (hasPassB2BPlan) {
+            await setPassB2BAdminStorage();
+        }
+
         // If user setting up organization for VPN B2B or Pass Family plan then the storage step must be skipped.
         // Additionally, if it is a single user org with max 1 member and all the storage assigned to the user we can skip storage
         if (hasExternalMemberCapableB2BPlan || hasPassFamily(subscription) || disableStorageSelection(organization)) {
