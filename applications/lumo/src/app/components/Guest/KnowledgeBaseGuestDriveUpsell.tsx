@@ -31,12 +31,12 @@ export const KnowledgeBaseGuestDriveUpsell = ({
 
     const innerClass = isModal
         ? 'w-full h-full rounded-none shadow-none overflow-hidden'
-        : 'w-full h-full p-4 rounded-xl bg-norm shadow-lifted overflow-hidden';
+        : 'w-full h-full p-4 radius-16 lumo-bg-panel lumo-elevation-4 overflow-hidden';
 
     return (
         <div className={outerClass} ref={filesContainerRef}>
             <div className={innerClass}>
-                <div className="h-full bg-norm flex flex-column flex-nowrap">
+                <div className="flex flex-column flex-nowrap h-full lumo-bg-panel">
                     <div className="flex flex-row flex-nowrap items-center justify-space-between mb-2">
                         <div className="flex flex-row items-center gap-1">
                             {onBack && (
@@ -44,7 +44,7 @@ export const KnowledgeBaseGuestDriveUpsell = ({
                                     <LumoIcon name="ArrowLeft" size={16} />
                                 </Button>
                             )}
-                            <p className="m-0 text-lg text-bold">{DRIVE_APP_NAME}</p>
+                            <p className="m-0 lumo-title-medium">{DRIVE_APP_NAME}</p>
                         </div>
                         <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
                             <LumoIcon name="X" />

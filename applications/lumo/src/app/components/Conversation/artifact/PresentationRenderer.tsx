@@ -116,7 +116,10 @@ const LazyPresentationIframe = lazy(() =>
 
 export const PresentationRenderer = memo(function PresentationRenderer({ artifact }: ArtifactRendererProps) {
     if (!artifact.content) {
-        return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
+        return (
+            <p className="p-4 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
+                .t`No content generated`}</p>
+        );
     }
 
     // JSON decks (D18) are drawn by the app itself; reveal.js and the sandboxed shell are only for

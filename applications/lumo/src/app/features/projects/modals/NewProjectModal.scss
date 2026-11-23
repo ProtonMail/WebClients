@@ -1,14 +1,14 @@
 // Remove default input styling when using unstyled prop
 .unstyled-field {
-    input {
-        border: none;
-        background: transparent;
-        padding: 0.5rem;
-        outline: none;
+	input {
+		border: none;
+		background: transparent;
+		padding: var(--lumo-space-8);
+		outline: none;
 
-        &:focus {
-            outline: none;
-            box-shadow: none;
-        }
-    }
+		&:focus {
+			outline: none;
+			box-shadow: none;
+		}
+	}
 }

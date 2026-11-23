@@ -89,8 +89,8 @@ export const ModelSwitchNotificationCard = ({
     return (
         <ComposerNotificationCard
             icon={
-                <div className="model-switch-notification-icon inline-flex items-center justify-center shrink-0 rounded-full">
-                    <LumoIcon name="Gem" size={16} className="color-primary" />
+                <div className="model-switch-notification-icon inline-flex shrink-0 items-center justify-center radius-full lumo-bg-control-fill-mid">
+                    <LumoIcon name="Gem" size={16} className="lumo-color-glyph-brand-text" />
                 </div>
             }
             title={c('collider_2025: Notification')

@@ -42,7 +42,7 @@ export const AllChatsFilterChips = ({ filter, onFilterChange, excludedFilters = 
                         size="small"
                         pill
                         className={clsx(
-                            'all-chats-filter-chip shrink-0 flex flex-nowrap items-center gap-1 font-medium',
+                            'all-chats-filter-chip shrink-0 flex flex-nowrap items-center gap-1',
                             isActive && 'is-active'
                         )}
                         aria-pressed={isActive}

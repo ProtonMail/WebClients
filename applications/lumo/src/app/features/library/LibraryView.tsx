@@ -42,13 +42,13 @@ const LibraryTabButton = ({ label, count, isActive, onClick }: LibraryTabButtonP
             role="tab"
             aria-selected={isActive}
             className={clsx(
-                'library-tab flex flex-row flex-nowrap items-center gap-2 px-1 pb-3 border-none bg-transparent',
-                isActive ? 'library-tab--active color-norm text-semibold' : 'color-weak'
+                'library-tab flex flex-row flex-nowrap items-center gap-1.5 px-0.5 pt-2.5 pb-3 lumo-label-large bg-transparent',
+                isActive ? 'library-tab--active lumo-color-glyph' : 'lumo-color-glyph-mid'
             )}
             onClick={onClick}
         >
             {label}
-            {count && <span className="color-hint font-normal">{count}</span>}
+            {count && <span className="lumo-body-small lumo-color-glyph-mid">{count}</span>}
         </button>
     );
 };
@@ -90,7 +90,7 @@ const CreationsContent = ({ searchQuery, creations }: CreationsContentProps) => 
 
     return (
         <div className="flex-1 min-h-0 overflow-auto">
-            <div className="library-inner px-6 pb-8">
+            <div className="library-inner mx-auto px-6 pb-8">
                 <LibraryCreationsTab
                     entries={entries}
                     visibleEntries={matches.slice(0, shownCount)}
@@ -167,11 +167,11 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
             <div className="flex flex-column flex-1 min-h-0">
-                <div className="library-inner shrink-0 px-6 pt-8">
+                <div className="library-inner mx-auto shrink-0 px-6 pt-8">
                     <div className="flex flex-row flex-wrap items-start justify-space-between gap-4 mb-6">
                         <div className="flex flex-column gap-1">
-                            <h1 className="text-3xl text-bold m-0">{c('collider_2025:Title').t`Library`}</h1>
-                            <p className="m-0 color-weak">
+                            <h1 className="m-0 lumo-headline-small">{c('collider_2025:Title').t`Library`}</h1>
+                            <p className="m-0 lumo-color-glyph-mid">
                                 {c('collider_2025:Info')
                                     .t`Creations and images ${LUMO_SHORT_APP_NAME} made in your chats.`}
                             </p>
@@ -181,17 +181,18 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                             // own row on small screens, a fixed width beside the title above that.
                             <div className="w-full md:w-custom" style={{ '--md-w-custom': '12rem' }}>
                                 <Input
+                                    className="lumo-search-field"
                                     dir="auto"
                                     value={searchQuery}
                                     onValue={setSearchQuery}
                                     placeholder={c('collider_2025:Placeholder').t`Search library`}
                                     aria-label={c('collider_2025:Label').t`Search library`}
-                                    prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
+                                    prefix={<LumoIcon name="Search" size={16} className="lumo-color-glyph-mid" />}
                                 />
                             </div>
                         )}
                     </div>
-                    <div className="flex flex-row gap-6 border-bottom border-weak mb-6" role="tablist">
+                    <div className="flex flex-row gap-6 mb-6 border-bottom lumo-border" role="tablist">
                         {artifactsView && (
                             <LibraryTabButton
                                 label={c('collider_2025:Tab').t`Creations`}

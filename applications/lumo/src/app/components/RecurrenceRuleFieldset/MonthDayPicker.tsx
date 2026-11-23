@@ -65,6 +65,7 @@ export const MonthDayPicker = ({ days, error, onChange }: MonthDayPickerProps) =
                         aria-rowindex={rowIndex + 1}
                         className="flex flex-nowrap gap-1.5 w-full"
                         key={rowIndex}
+                        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                         role="row"
                     >
                         {Array.from({ length: DAYS_PER_ROW }, (_, columnIndex) => {
@@ -83,14 +84,14 @@ export const MonthDayPicker = ({ days, error, onChange }: MonthDayPickerProps) =
                                             aria-label={option.ariaLabel}
                                             aria-pressed={selectedDays.has(option.day)}
                                             className={clsx([
-                                                'month-day-picker__day items-center justify-center mx-auto p-0 rounded-full',
+                                                'month-day-picker__day items-center justify-center mx-auto p-0 radius-full',
                                                 error && 'border-danger',
                                             ])}
                                             color={selectedDays.has(option.day) ? 'norm' : 'weak'}
                                             onClick={() => onDayClick(option.day)}
                                             type="button"
                                         >
-                                            {option.displayLabel}
+                                            <span className="lumo-label-medium">{option.displayLabel}</span>
                                         </Button>
                                     )}
                                 </div>

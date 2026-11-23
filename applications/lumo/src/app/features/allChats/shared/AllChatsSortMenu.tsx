@@ -33,7 +33,7 @@ export const AllChatsSortMenu = ({ sort, onSortChange, iconOnly = false }: Props
                 shape="ghost"
                 size="small"
                 icon={iconOnly}
-                className="shrink-0 flex flex-nowrap items-center gap-2 font-medium"
+                className="shrink-0 flex flex-nowrap items-center gap-2"
                 aria-label={iconOnly ? c('collider_2025:Action').t`Sort chats: ${currentLabel}` : undefined}
                 aria-expanded={isOpen}
                 onClick={() => {
@@ -54,7 +54,8 @@ export const AllChatsSortMenu = ({ sort, onSortChange, iconOnly = false }: Props
                 }}
                 placement="bottom-end"
             >
-                <div className="px-3 py-1 text-sm color-weak">{c('collider_2025:Title').t`Sort by`}</div>
+                <div className="px-3 py-1 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Title')
+                    .t`Sort by`}</div>
                 {options.map((option) => {
                     const isSelected = option.value === sort;
 
@@ -71,7 +72,9 @@ export const AllChatsSortMenu = ({ sort, onSortChange, iconOnly = false }: Props
                             <LumoIcon name="ArrowUpDown" size={16} className="shrink-0" />
                             <span className="flex-1 text-left">{option.label}</span>
                             <span className="shrink-0 flex w-custom" style={{ '--w-custom': '1rem' }}>
-                                {isSelected ? <LumoIcon name="Check" size={16} className="color-primary" /> : null}
+                                {isSelected ? (
+                                    <LumoIcon name="Check" size={16} className="lumo-color-glyph-brand-text" />
+                                ) : null}
                             </span>
                         </DropdownMenuButton>
                     );

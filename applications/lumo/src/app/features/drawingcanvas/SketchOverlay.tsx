@@ -64,6 +64,7 @@ export const SketchOverlay = ({
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
             className="image-lightbox fixed inset-0 flex flex-column"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="dialog"
             aria-modal="true"
             aria-label={c('collider_2025:Label').t`Draw a sketch`}
@@ -75,7 +76,7 @@ export const SketchOverlay = ({
                     <Tooltip title={c('collider_2025:Action').t`Close`}>
                         <button
                             type="button"
-                            className="image-preview-close inline-flex items-center justify-center border rounded-full bg-norm color-norm"
+                            className="image-preview-close p-0 inline-flex items-center justify-center border radius-full lumo-color-glyph lumo-bg-panel"
                             onClick={onClose}
                             aria-label={c('collider_2025:Action').t`Close`}
                         >
@@ -83,7 +84,7 @@ export const SketchOverlay = ({
                         </button>
                     </Tooltip>
 
-                    <div className="image-preview-container image-preview-container--edit bg-norm flex flex-column flex-nowrap items-center rounded-xxl max-h-full overflow-hidden">
+                    <div className="image-preview-container image-preview-container--edit flex flex-column flex-nowrap items-center max-h-full overflow-hidden radius-28 lumo-bg-panel-elevated">
                         <SketchCanvas
                             mode={mode}
                             baseImage={baseImage}

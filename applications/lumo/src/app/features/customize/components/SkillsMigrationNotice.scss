@@ -1,18 +1,12 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .skills-migration-notice {
-	background-color: color-mix(in srgb, var(--primary) 12%, var(--background-norm));
-	border-radius: rem(12);
+	background-color: var(--lumo-notice);
 	padding-block: rem(14);
-	padding-inline: rem(16) rem(12);
 
 	// The icon and the dismiss button sit in a box one text line tall, so they centre on the first line.
-	&__text,
-	&__line {
-		line-height: rem(20);
-	}
-
 	&__line {
 		block-size: rem(20);
+		line-height: rem(20);
 	}
 }

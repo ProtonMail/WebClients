@@ -19,7 +19,9 @@ const StatusBadge = ({ status }: { status: TokenStatus }) => {
         expired: c('collider_2025: Status').t`Expired`,
     };
     return (
-        <span className={`api-keys-status api-keys-status--${status} inline-flex items-center gap-1 shrink-0`}>
+        <span
+            className={`api-keys-status py-0.5 px-2 api-keys-status--${status} inline-flex items-center gap-1 shrink-0 lumo-label-small`}
+        >
             {labels[status]}
         </span>
     );
@@ -50,14 +52,20 @@ export const ApiKeyCard = ({
     const toggleExpanded = () => setExpanded((v) => !v);
 
     return (
-        <div className={clsx('api-keys-card-wrap flex flex-column', expanded && 'api-keys-card-wrap--expanded')}>
+        <div
+            className={clsx(
+                'api-keys-card-wrap flex flex-column border lumo-border lumo-bg-panel',
+                expanded && 'api-keys-card-wrap--expanded'
+            )}
+        >
             {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role*/}
             <div
                 className={clsx(
-                    'api-keys-card flex flex-nowrap items-center w-full text-left',
+                    'api-keys-card px-4 flex flex-nowrap items-center w-full text-left',
                     status === 'expired' && 'api-keys-card--expired',
                     expanded && 'api-keys-card--open'
                 )}
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 role="button"
                 tabIndex={0}
                 aria-expanded={expanded}
@@ -69,16 +77,18 @@ export const ApiKeyCard = ({
                     }
                 }}
             >
-                <div className="api-keys-card-icon flex items-center justify-center shrink-0 rounded-lg">
+                <div className="api-keys-card-icon flex shrink-0 items-center justify-center radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill">
                     <LumoIcon name="Key" size={16} />
                 </div>
 
                 <div className="flex-1 min-w-0 flex flex-column gap-1">
-                    <div className="api-keys-card-name flex items-center gap-2 min-w-0 text-semibold">
+                    <div className="api-keys-card-name flex items-center gap-2 min-w-0 lumo-title-small lumo-color-glyph">
                         <span>{token.Name}</span>
                         <StatusBadge status={status} />
                     </div>
-                    <div className="api-keys-card-meta flex items-center gap-2">{expiryLabel}</div>
+                    <div className="api-keys-card-meta flex items-center gap-2 lumo-label-small lumo-color-glyph-mid">
+                        {expiryLabel}
+                    </div>
                 </div>
 
                 <UsageSparklineCompact usage={usage} />
@@ -105,7 +115,7 @@ export const ApiKeyCard = ({
 
                 <span
                     className={clsx(
-                        'api-keys-card-chevron flex items-center justify-center shrink-0',
+                        'api-keys-card-chevron flex items-center justify-center shrink-0 lumo-color-glyph-mid',
                         expanded && 'is-open'
                     )}
                     aria-hidden
@@ -114,7 +124,7 @@ export const ApiKeyCard = ({
                 </span>
             </div>
             {expanded && (
-                <div className="api-keys-card-expanded-shell">
+                <div className="api-keys-card-expanded-shell border-top lumo-border pt-0 pb-4 px-4 lumo-bg-control-fill">
                     <ApiKeyUsageExpanded usage={usage} />
                 </div>
             )}

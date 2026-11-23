@@ -37,8 +37,8 @@ im.$media-expressions: $media-expressions;
 			max-inline-size: 100%;
 			border-end-start-radius: 0;
 			border-end-end-radius: 0;
-			border-start-start-radius: var(--border-radius-lg);
-			border-start-end-radius: var(--border-radius-lg);
+			border-start-start-radius: var(--lumo-radius-12);
+			border-start-end-radius: var(--lumo-radius-12);
 
 			// iOS WebView fix: Ensure content is visible
 			position: relative;

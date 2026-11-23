@@ -33,7 +33,7 @@ const DesktopSettingsPanel = ({ onClose }: DesktopSettingsPanelProps) => {
                 text={c('collider_2025: Title').t`${LUMO_SHORT_APP_NAME} Desktop settings`}
                 subtext={c('collider_2025: Description')
                     .t`Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.`}
-                button={<IcArrowWithinSquare className="shrink-0 color-hint mr-2" />}
+                button={<IcArrowWithinSquare className="shrink-0 mr-2 lumo-color-glyph-mid" />}
                 onClick={() => openDesktopSettingsTab('general')}
                 data-testid="desktop-settings-panel:open-general"
             />
@@ -42,7 +42,7 @@ const DesktopSettingsPanel = ({ onClose }: DesktopSettingsPanelProps) => {
                 text={c('collider_2025: Title').t`Connectors`}
                 subtext={c('collider_2025: Description')
                     .t`Add connectors, manage credentials, and set tool approval policies.`}
-                button={<IcArrowWithinSquare className="shrink-0 color-hint mr-2" />}
+                button={<IcArrowWithinSquare className="shrink-0 mr-2 lumo-color-glyph-mid" />}
                 onClick={() => openDesktopSettingsTab('connectors')}
                 data-testid="desktop-settings-panel:open-connectors"
             />

@@ -356,12 +356,12 @@ const ThinkingPathTrace = ({ lines }: { lines: string[] }) => {
     }
 
     return (
-        <div className="thinking-path-trace" aria-hidden="true">
+        <div className="thinking-path-trace gap-0.5 pt-0.5 pb-1 px-0" aria-hidden="true">
             {visibleLines.map((line, index) => (
                 <p
                     key={`${index}-${line.slice(-24)}`}
                     dir="auto"
-                    className="thinking-path-trace-line m-0 color-weak text-rg lh130"
+                    className="thinking-path-trace-line m-0 lumo-body-medium lh130 lumo-color-glyph-mid"
                     style={{
                         opacity: getTraceLineOpacity(index, visibleLines.length),
                         display: '-webkit-box',
@@ -563,7 +563,14 @@ const ThinkingStepTrack = ({ children }: { children: ReactNode }) => (
 );
 
 const ThinkingStepLabel = ({ children, isActive }: { children: ReactNode; isActive?: boolean }) => (
-    <p className={clsx('thinking-step-label m-0 text-rg lh130', isActive ? 'color-norm' : 'color-weak')}>{children}</p>
+    <p
+        className={clsx(
+            'thinking-step-label m-0 lumo-body-medium lh130',
+            isActive ? 'lumo-color-glyph' : 'lumo-color-glyph-mid'
+        )}
+    >
+        {children}
+    </p>
 );
 
 const ThinkingStepBodyLines = ({ lines }: { lines: string[] }) => {
@@ -577,7 +584,7 @@ const ThinkingStepBodyLines = ({ lines }: { lines: string[] }) => {
                 <p
                     key={`${index}-${line.slice(-24)}`}
                     dir="auto"
-                    className="thinking-step-body-line m-0 color-weak text-rg lh130"
+                    className="thinking-step-body-line m-0 lumo-body-medium lh130 lumo-color-glyph-mid"
                     style={{
                         textAlign: document.dir === 'rtl' ? 'right' : 'left',
                     }}
@@ -618,7 +625,7 @@ const ReasoningContent = ({
                 />
             </ThinkingStepTrack>
 
-            <div className="thinking-step-content thinking-step-content--reasoning min-w-0 text-rg lh130">
+            <div className="thinking-step-content thinking-step-content--reasoning min-w-0 lumo-body-medium lh130">
                 <ThinkingStepLabel isActive={isActive}>{getReasoningStepLabel()}</ThinkingStepLabel>
                 <div className="thinking-step-body min-w-0">
                     <LazyProgressiveMarkdownRenderer
@@ -652,7 +659,7 @@ const PreambleContent = ({
                 <LumoIcon name="MessageSquare" width={16} height={16} className="thinking-step-icon-badge shrink-0" />
             </ThinkingStepTrack>
 
-            <div className="thinking-step-content thinking-step-content--reasoning min-w-0 text-rg lh130">
+            <div className="thinking-step-content thinking-step-content--reasoning min-w-0 lumo-body-medium lh130">
                 <div className="thinking-step-body min-w-0">
                     <LazyProgressiveMarkdownRenderer
                         content={content}
@@ -677,8 +684,8 @@ const DoneStep = () => (
             />
         </ThinkingStepTrack>
 
-        <div className="thinking-step-content min-w-0 text-rg lh130">
-            <span className="color-hint">
+        <div className="thinking-step-content min-w-0 lumo-body-medium lh130">
+            <span className="lumo-color-glyph-mid">
                 {
                     // translator: Completion status for the assistant's work.
 
@@ -850,7 +857,7 @@ function getToolCallContentLines(toolCall: ToolCallData | ToolCallAnnouncement, 
 }
 
 const toolStepToggleClassName =
-    'thinking-step-toggle flex flex-nowrap items-center justify-space-between gap-2 w-full p-0 m-0 rounded border-none text-left bg-transparent hover:bg-weak color-weak text-rg lh130';
+    'thinking-step-toggle flex flex-nowrap items-center justify-space-between gap-2 w-full p-0 m-0 radius-8 border-none text-left bg-transparent hover:bg-weak lumo-color-glyph-mid lumo-label-medium lh130';
 
 const ToolCallStep = ({
     toolCall,
@@ -910,18 +917,19 @@ const ToolCallStep = ({
                 />
             </ThinkingStepTrack>
 
-            <div className="thinking-step-content min-w-0 text-rg lh130">
+            <div className="thinking-step-content min-w-0 lumo-body-medium lh130">
                 {hasInlineCard && !isActive ? (
                     <>
                         <ThinkingStepLabel isActive={isActive}>{stateLabel}</ThinkingStepLabel>
                         <ThinkingStepBodyLines lines={contentLines} />
                         <div className={clsx(toolStepToggleClassName, 'cursor-default mt-1')}>
-                            <span className="text-sm color-weak">{c('collider_2025:Reasoning').t`Complete`}</span>
+                            <span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Reasoning')
+                                .t`Complete`}</span>
                             <LumoIcon
                                 name="Check"
                                 width={12}
                                 height={12}
-                                className="thinking-step-complete-check shrink-0"
+                                className="thinking-step-complete-check shrink-0 lumo-color-glyph-low"
                             />
                         </div>
                     </>
@@ -930,14 +938,20 @@ const ToolCallStep = ({
                         <ThinkingStepLabel isActive={isActive}>{stateLabel}</ThinkingStepLabel>
                         <ThinkingStepBodyLines lines={contentLines} />
                         <div className={clsx(toolStepToggleClassName, 'cursor-default mt-1')}>
-                            <span className={hasError ? 'color-danger text-sm' : 'text-sm color-weak'}>
+                            <span
+                                className={
+                                    hasError
+                                        ? 'lumo-body-small lumo-color-signal-danger'
+                                        : 'lumo-body-small lumo-color-glyph-mid'
+                                }
+                            >
                                 {hasError
                                     ? c('collider_2025:Reasoning').t`Failed`
                                     : c('collider_2025:Reasoning').t`Complete`}
                             </span>
                             <div className="flex items-center gap-2 shrink-0">
                                 {imageToolResult!.elapsed_ms !== undefined && (
-                                    <span className="text-sm color-weak">
+                                    <span className="lumo-body-small lumo-color-glyph-mid">
                                         ({(imageToolResult!.elapsed_ms / 1000).toFixed(1)}s)
                                     </span>
                                 )}
@@ -946,14 +960,14 @@ const ToolCallStep = ({
                                         name="CircleExclamationPoint"
                                         width={12}
                                         height={12}
-                                        className="color-danger"
+                                        className="lumo-color-signal-danger"
                                     />
                                 ) : (
                                     <LumoIcon
                                         name="Check"
                                         width={12}
                                         height={12}
-                                        className="thinking-step-complete-check"
+                                        className="thinking-step-complete-check lumo-color-glyph-low"
                                     />
                                 )}
                             </div>
@@ -964,8 +978,8 @@ const ToolCallStep = ({
                         <ThinkingStepLabel isActive={isActive}>{stateLabel}</ThinkingStepLabel>
                         <ThinkingStepBodyLines lines={contentLines} />
                         {isExpanded && (
-                            <div className="thinking-step-details mt-2 text-rg lh130">
-                                <pre className="text-sm m-0 whitespace-pre-wrap">{result ?? ''}</pre>
+                            <div className="thinking-step-details p-0 mt-2 lumo-body-medium lh130 lumo-color-glyph-mid">
+                                <pre className="whitespace-pre-wrap m-0 lumo-body-small">{result ?? ''}</pre>
                             </div>
                         )}
                         <button
@@ -974,7 +988,7 @@ const ToolCallStep = ({
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            <span className="text-sm color-weak">
+                            <span className="lumo-body-small lumo-color-glyph-mid">
                                 {isExpanded
                                     ? c('collider_2025:Reasoning').t`Hide tool result`
                                     : c('collider_2025:Reasoning').t`View tool result`}
@@ -1000,14 +1014,14 @@ const ToolCallStep = ({
                             type="button"
                             aria-expanded={isExpanded}
                         >
-                            <span className="text-sm color-weak">
+                            <span className="lumo-body-small lumo-color-glyph-mid">
                                 {isExpanded
                                     ? c('collider_2025:Reasoning').t`Hide details`
                                     : c('collider_2025:Reasoning').t`View details`}
                             </span>
                             <div className="flex items-center gap-2 shrink-0">
                                 {hasError && (
-                                    <span className="flex items-center gap-1 text-sm color-danger">
+                                    <span className="flex items-center gap-1 lumo-body-small lumo-color-signal-danger">
                                         <LumoIcon name="CircleExclamationPoint" width={12} height={12} />
                                         {
                                             // translator: Failure status for an assistant action.
@@ -1017,7 +1031,7 @@ const ToolCallStep = ({
                                     </span>
                                 )}
                                 {webSearchResults && webSearchResults.results.length > 0 && (
-                                    <span className="text-sm color-weak">
+                                    <span className="lumo-body-small lumo-color-glyph-mid">
                                         {
                                             // translator: Search-result count. ${resultCount} is the number of matching links.
                                             c('collider_2025:Reasoning').ngettext(
@@ -1029,7 +1043,7 @@ const ToolCallStep = ({
                                     </span>
                                 )}
                                 {webExtractResult && (
-                                    <span className="text-sm color-weak">
+                                    <span className="lumo-body-small lumo-color-glyph-mid">
                                         {
                                             // translator: Count of web pages processed. ${urlCount} includes successful and failed attempts.
                                             c('collider_2025:Reasoning').ngettext(
@@ -1039,7 +1053,7 @@ const ToolCallStep = ({
                                             )
                                         }
                                         {webExtractResult.failedUrls.length > 0 && (
-                                            <span className="color-danger ml-1">
+                                            <span className="ml-1 lumo-color-signal-danger">
                                                 ·{' '}
                                                 {
                                                     // translator: Failure count. ${failedCount} is the number of web pages that could not be read.
@@ -1066,7 +1080,7 @@ const ToolCallStep = ({
                         </button>
 
                         {isExpanded && (
-                            <div className="thinking-step-details mt-2 text-rg lh130">
+                            <div className="thinking-step-details p-0 mt-2 lumo-body-medium lh130 lumo-color-glyph-mid">
                                 {}
                                 {webExtractResult ? (
                                     <div className="flex flex-column gap-2">
@@ -1076,7 +1090,7 @@ const ToolCallStep = ({
                                                     name="CircleCheck"
                                                     width={12}
                                                     height={12}
-                                                    className="color-success shrink-0 mt-0.5"
+                                                    className="shrink-0 mt-0.5 lumo-color-signal-success"
                                                 />
                                                 <div className="min-w-0">
                                                     <a
@@ -1084,12 +1098,12 @@ const ToolCallStep = ({
                                                         href={item.url}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="text-semibold color-primary text-no-decoration hover:underline block mb-0.5"
+                                                        className="hover:underline block mb-0.5 lumo-title-small text-no-decoration lumo-color-glyph-brand-text"
                                                         onClick={(e) => handleLinkClick?.(e, item.url)}
                                                     >
                                                         {item.title || new URL(item.url).hostname}
                                                     </a>
-                                                    <p className="text-xs color-weak m-0">
+                                                    <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                                                         {new URL(item.url).hostname}
                                                     </p>
                                                 </div>
@@ -1098,19 +1112,19 @@ const ToolCallStep = ({
                                         {webExtractResult.failedUrls.map((failedUrl, idx) => (
                                             <div
                                                 key={`failed-${idx}`}
-                                                className="pb-2 border-bottom border-weak last:border-0 last:pb-0 flex items-start gap-2"
+                                                className="last:border-0 last:pb-0 flex items-start gap-2 pb-2 border-bottom lumo-border"
                                             >
                                                 <LumoIcon
                                                     name="CircleExclamationPoint"
                                                     width={12}
                                                     height={12}
-                                                    className="color-danger shrink-0 mt-0.5"
+                                                    className="shrink-0 mt-0.5 lumo-color-signal-danger"
                                                 />
                                                 <div className="min-w-0">
-                                                    <p className="text-semibold color-danger m-0 mb-0.5 text-ellipsis overflow-hidden">
+                                                    <p className="m-0 mb-0.5 overflow-hidden lumo-title-small text-ellipsis lumo-color-signal-danger">
                                                         {failedUrl.url}
                                                     </p>
-                                                    <p className="text-xs color-weak m-0">
+                                                    <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                                                         {failedUrl.error ??
                                                             c('collider_2025: Web Extract').t`Failed to extract`}
                                                     </p>
@@ -1123,25 +1137,25 @@ const ToolCallStep = ({
                                         {webSearchResults.results.map((searchResult, idx) => (
                                             <div
                                                 key={idx}
-                                                className="pb-2 border-bottom border-weak last:border-0 last:pb-0"
+                                                className="last:border-0 last:pb-0 pb-2 border-bottom lumo-border"
                                             >
                                                 <a
                                                     dir="auto"
                                                     href={searchResult.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="text-semibold color-primary text-no-decoration hover:underline block mb-1"
+                                                    className="hover:underline block mb-1 lumo-title-small text-no-decoration lumo-color-glyph-brand-text"
                                                     onClick={(e) => handleLinkClick?.(e, searchResult.url)}
                                                 >
                                                     {searchResult.title}
                                                 </a>
                                                 <p
                                                     dir="auto"
-                                                    className="text-sm color-weak m-0 text-ellipsis-two-lines"
+                                                    className="m-0 lumo-body-small text-ellipsis-two-lines lumo-color-glyph-mid"
                                                 >
                                                     {searchResult.description}
                                                 </p>
-                                                <p className="text-xs color-weak m-0 mt-1">
+                                                <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                                                     {new URL(searchResult.url).hostname}
                                                 </p>
                                             </div>
@@ -1149,19 +1163,19 @@ const ToolCallStep = ({
                                     </div>
                                 ) : imageToolResult?.info ? (
                                     <div>
-                                        <div className="mb-2 text-sm">
+                                        <div className="mb-2 lumo-body-small">
                                             <span
                                                 className={clsx(
-                                                    'text-semibold',
+                                                    'lumo-label-large',
                                                     imageToolResult.status === 'success'
-                                                        ? 'color-success'
-                                                        : 'color-danger'
+                                                        ? 'lumo-color-signal-success'
+                                                        : 'lumo-color-signal-danger'
                                                 )}
                                             >
                                                 {imageToolResult.status === 'success' ? 'Success' : 'Failed'}
                                             </span>
                                             {imageToolResult.elapsed_ms && (
-                                                <span className="color-weak ml-2">
+                                                <span className="ml-2 lumo-color-glyph-mid">
                                                     ({(imageToolResult.elapsed_ms / 1000).toFixed(1)}s)
                                                 </span>
                                             )}
@@ -1174,7 +1188,7 @@ const ToolCallStep = ({
                                         />
                                     </div>
                                 ) : (
-                                    <pre className="text-sm m-0 whitespace-pre-wrap">{result ?? ''}</pre>
+                                    <pre className="whitespace-pre-wrap m-0 lumo-body-small">{result ?? ''}</pre>
                                 )}
                             </div>
                         )}
@@ -1218,11 +1232,11 @@ export const ThinkingPath = ({ steps, message, isThinking, showThinkingTrace, ha
     const showTrace = !isExpanded && showThinkingTrace && traceLines.length > 0;
 
     return (
-        <div className="thinking-path">
+        <div className="thinking-path mb-2">
             <button
                 className={clsx(
-                    'thinking-path-header w-full rounded border-none cursor-pointer text-left bg-transparent hover:bg-weak color-weak text-rg lh130',
-                    isThinking && 'color-norm'
+                    'thinking-path-header pt-1 pb-1.5 px-0 hover:bg-weak w-full border-none radius-8 lumo-body-medium text-left lh130 lumo-color-glyph-mid bg-transparent cursor-pointer',
+                    isThinking && 'lumo-color-glyph'
                 )}
                 onClick={() => setIsExpanded(!isExpanded)}
                 type="button"
@@ -1238,7 +1252,7 @@ export const ThinkingPath = ({ steps, message, isThinking, showThinkingTrace, ha
                     width={12}
                     height={12}
                     className={clsx(
-                        'thinking-path-header-chevron shrink-0 color-weak',
+                        'thinking-path-header-chevron shrink-0 lumo-color-glyph-mid',
                         isExpanded && 'thinking-path-header-chevron--expanded',
                         isWaitingForSteps && 'visibility-hidden'
                     )}
@@ -1248,7 +1262,7 @@ export const ThinkingPath = ({ steps, message, isThinking, showThinkingTrace, ha
             {showTrace && <ThinkingPathTrace lines={traceLines} />}
 
             {isExpanded && !isWaitingForSteps && (
-                <div className="thinking-path-steps flex flex-nowrap flex-column gap-4 mt-2">
+                <div className="thinking-path-steps pb-2 flex flex-nowrap flex-column gap-4 mt-2">
                     {displaySteps.map((step, idx) => {
                         if (step.type === 'reasoning') {
                             if (!step.content.trim()) {

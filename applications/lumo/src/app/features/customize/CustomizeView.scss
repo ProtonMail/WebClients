@@ -24,68 +24,61 @@
 
 @media (prefers-reduced-motion: no-preference) {
 	.customize-tab-panel {
-		animation: customize-fade-in 0.2s easing(ease-out-quad);
+		animation: customize-fade-in var(--lumo-duration-200) var(--lumo-easing-enter);
 	}
 }
 
 .customize-discover-hero {
-	border: 1px solid var(--border-weak);
 	background:
-		radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--primary) 12%, transparent) 0%, transparent 55%),
-		radial-gradient(90% 120% at 100% 100%, color-mix(in srgb, var(--signal-info) 10%, transparent) 0%, transparent 60%),
-		var(--background-norm);
+		radial-gradient(
+			120% 140% at 0% 0%,
+			color-mix(in srgb, var(--lumo-control-brand-fill) 12%, transparent) 0%,
+			transparent 55%
+		),
+		radial-gradient(
+			90% 120% at 100% 100%,
+			color-mix(in srgb, var(--lumo-signal-info) 10%, transparent) 0%,
+			transparent 60%
+		),
+		var(--lumo-panel);
 }
 
 .customize-discover-grid {
 	display: grid;
-	gap: rem(16);
 }
 
 .customize-plugin-icon {
-	--plugin-accent: var(--primary);
+	--plugin-accent: var(--lumo-control-brand-fill);
 
 	color: var(--plugin-accent);
 	background-color: color-mix(in srgb, var(--plugin-accent) 14%, transparent);
 
 	&--info {
-		--plugin-accent: var(--signal-info);
+		--plugin-accent: var(--lumo-signal-info);
 	}
 
 	&--success {
-		--plugin-accent: var(--signal-success);
+		--plugin-accent: var(--lumo-signal-success);
 	}
 
 	&--warning {
-		--plugin-accent: var(--signal-warning);
+		--plugin-accent: var(--lumo-signal-warning);
 	}
 }
 
 .customize-plugin-card {
-	transition:
-		border-color 0.15s easing(ease-out-quad),
-		box-shadow 0.15s easing(ease-out-quad),
-		transform 0.15s easing(ease-out-quad);
+	transition: border-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	.expand-click-area:focus-visible {
 		outline: none;
 	}
 
-	&:hover {
-		border-color: var(--border-norm);
-		box-shadow: var(--shadow-raised);
-		transform: translateY(-1px);
-	}
-
 	&:has(.expand-click-area:focus-visible) {
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		border-color: var(--lumo-control-border-focus);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--lumo-control-border-focus);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		transition: none;
-
-		&:hover {
-			transform: none;
-		}
 	}
 }

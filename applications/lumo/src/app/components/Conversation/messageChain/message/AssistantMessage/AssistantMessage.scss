@@ -38,13 +38,13 @@ im.$media-expressions: $media-expressions;
 	inset: -0.12rem;
 	border-radius: inherit;
 	background-image: conic-gradient(from var(--angle), #6d4aff 0deg, rgb(109 74 255 / 1) 0deg, transparent 80deg);
-	animation: spin 3s linear infinite;
+	animation: spin 3s var(--lumo-easing-linear) infinite;
 	z-index: -1;
 }
 
 .highlight-source {
-	background-color: var(--interaction-norm-minor-2);
-	transition: background-color 0.2s ease;
+	background-color: var(--lumo-control-fill);
+	transition: background-color var(--lumo-duration-200) var(--lumo-easing-standard);
 }
 
 @media screen and (max-width: #{$mobile-breakpoint-width}) {
@@ -59,14 +59,18 @@ im.$media-expressions: $media-expressions;
 	block-size: 16px;
 	background: linear-gradient(
 		90deg,
-		rgb(167 146 255 / 0.3) 0%,
-		rgb(167 146 255 / 0.3) 35%,
-		#fff 50%,
-		rgb(167 146 255 / 0.3) 65%,
-		rgb(167 146 255 / 0.3) 100%
+		var(--lumo-artifact-skeleton) 0%,
+		var(--lumo-artifact-skeleton) 35%,
+		var(--lumo-panel-elevated) 50%,
+		var(--lumo-artifact-skeleton) 65%,
+		var(--lumo-artifact-skeleton) 100%
 	);
 	background-size: 200% 100%;
-	animation: shine 2s ease-in-out infinite;
+	animation: shine 2s var(--lumo-easing-standard) infinite;
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
 }
 
 @keyframes shine {

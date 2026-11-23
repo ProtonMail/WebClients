@@ -6,8 +6,8 @@ interface FieldErrorProps {
 }
 
 export const FieldError = ({ id, message }: FieldErrorProps) => (
-    <p className="flex flex-nowrap items-center m-0 mt-2 color-danger" id={id}>
+    <p className="flex flex-nowrap items-center m-0 mt-2 lumo-color-signal-danger" id={id}>
         <IcExclamationCircleFilled className="shrink-0 mr-1" />
-        <span className="text-sm text-semibold">{message}</span>
+        <span className="lumo-label-small">{message}</span>
     </p>
 );

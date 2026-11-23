@@ -9,25 +9,22 @@ import './ApiPricingSummary.scss';
 
 const Price = ({ amount }: { amount: number | null }) =>
     amount === null ? (
-        <span className="api-docs-pricing-summary-na">{c('collider_2025: Label').t`Not billed`}</span>
+        <span className="api-docs-pricing-summary-na lumo-body-medium lumo-color-glyph-mid">{c('collider_2025: Label')
+            .t`Not billed`}</span>
     ) : (
-        <span className="api-docs-pricing-summary-price">{formatUsdAmount(amount)}</span>
+        <span className="api-docs-pricing-summary-price lumo-title-medium lumo-color-glyph">
+            {formatUsdAmount(amount)}
+        </span>
     );
 
-export const ApiPricingSummary = ({
-    onViewModels,
-    models = [],
-}: {
-    onViewModels: () => void;
-    models?: ApiModel[];
-}) => (
+export const ApiPricingSummary = ({ onViewModels, models = [] }: { onViewModels: () => void; models?: ApiModel[] }) => (
     <section aria-labelledby="api-pricing-summary-title" className="mb-8">
         <div className="flex flex-row flex-wrap items-end justify-space-between gap-2 mb-3">
             <div>
-                <h2 id="api-pricing-summary-title" className="text-bold text-2xl mt-0 mb-1">
+                <h2 id="api-pricing-summary-title" className="mt-0 mb-1 lumo-title-large">
                     {c('collider_2025: Title').t`Pricing`}
                 </h2>
-                <p className="color-weak m-0">
+                <p className="m-0 lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`Pay per token. Prices in USD per 1 million tokens (MTok).`}
                 </p>
             </div>
@@ -36,7 +33,7 @@ export const ApiPricingSummary = ({
             </Button>
         </div>
 
-        <div className="api-docs-pricing-summary">
+        <div className="api-docs-pricing-summary border lumo-border radius-12 lumo-bg-panel">
             <table className="api-docs-pricing-summary-table">
                 <thead>
                     <tr>
@@ -54,7 +51,7 @@ export const ApiPricingSummary = ({
                             <tr key={modelId}>
                                 <th scope="row" className="api-docs-pricing-summary-model">
                                     <strong>{label}</strong>
-                                    <code className="text-monospace">{modelId}</code>
+                                    <code className="lumo-font-mono">{modelId}</code>
                                 </th>
                                 <td data-label={c('collider_2025: Label').t`Input`}>
                                     <Price amount={rates.input} />

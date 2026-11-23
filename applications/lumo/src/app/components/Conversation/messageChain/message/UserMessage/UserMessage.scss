@@ -12,28 +12,15 @@
 	page-break-inside: auto;
 
 	&.markdown-rendering {
-		background-color: #e2e4fb;
+		background-color: var(--lumo-control-fill-mid);
 
 		.lumo-markdown,
 		.lumo-markdown * {
-			color: #1c1b4b !important;
+			color: var(--lumo-glyph) !important;
 		}
 
 		.lumo-markdown a {
-			color: #4740d4 !important;
-		}
-
-		&.user-msg-container--dark {
-			background-color: var(--background-weak);
-
-			.lumo-markdown,
-			.lumo-markdown * {
-				color: var(--text-norm) !important;
-			}
-
-			.lumo-markdown a {
-				color: var(--link-norm) !important;
-			}
+			color: var(--lumo-glyph-brand-text) !important;
 		}
 	}
 

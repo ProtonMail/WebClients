@@ -66,7 +66,7 @@ const ToolbarButton = ({ icon, label, isActive = false, disabled = false, onClic
 const ToolbarSeparator = () => {
     return (
         <span
-            className="shrink-0 border-left border-weak h-custom mx-1"
+            className="shrink-0 h-custom mx-1 border-left lumo-border"
             style={{ '--h-custom': '1rem' }}
             aria-hidden="true"
         />
@@ -106,7 +106,7 @@ const LinkForm = ({ editor, onClose }: LinkFormProps) => {
 
     return (
         <form
-            className="flex flex-row flex-nowrap items-center gap-2 px-3 py-2 border-bottom border-weak"
+            className="flex flex-row flex-nowrap items-center gap-2 px-3 py-2 border-bottom lumo-border"
             onSubmit={(event) => {
                 event.preventDefault();
                 applyLink();
@@ -179,7 +179,7 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
     return (
         <div className="shrink-0 w-full min-w-0">
             <div
-                className="flex flex-row flex-nowrap items-center gap-0.5 px-3 py-1 border-bottom border-weak overflow-x-auto"
+                className="flex flex-row flex-nowrap items-center gap-0.5 px-3 py-1 overflow-x-auto border-bottom lumo-border"
                 role="toolbar"
                 aria-label={c('collider_2025:Label').t`Formatting`}
             >
@@ -441,7 +441,7 @@ const EditorBody = forwardRef<ArtifactRichTextEditorHandle, EditorBodyProps>(fun
     return (
         <div className="flex flex-column flex-1 min-h-0 min-w-0 w-full">
             <EditorToolbar editor={editor} />
-            <div className="artifact-document-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full p-4">
+            <div className="artifact-document-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full p-4 lumo-color-glyph">
                 <EditorContent editor={editor} className="h-full" />
             </div>
         </div>
@@ -488,9 +488,9 @@ const ArtifactRichTextEditor = forwardRef<ArtifactRichTextEditorHandle, Artifact
 
         if (!initialDoc) {
             return (
-                <div className="artifact-document-content flex-1 min-h-0 p-4" aria-busy="true">
+                <div className="artifact-document-content flex-1 min-h-0 p-4 lumo-color-glyph" aria-busy="true">
                     <span
-                        className="rectangle-skeleton keep-motion rounded inline-block"
+                        className="rectangle-skeleton keep-motion inline-block radius-8"
                         style={{ width: '12rem', height: '1rem' }}
                     />
                 </div>

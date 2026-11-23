@@ -208,13 +208,12 @@ export const ProjectFilesPanel = ({
                 'has-drive-browser': linkedDriveFolder,
                 // 'modal p-0 sm:p-1': modal,
             })}
-            style={{ outline: '1px solid green' }}
         >
-            <div className="project-files-panel-content h-full min-h-full">
+            <div className="project-files-panel-content bg-transparent p-4 mr-0 h-full min-h-full">
                 {/* Instructions Section */}
-                <div className="project-files-section flex-none md:flex-1 flex flex-column flex-nowrap">
-                    <div className="project-files-section-header">
-                        <h3 className="project-files-section-title flex flex-nowrap items-center gap-1">
+                <div className="project-files-section flex flex-column flex-nowrap flex-none mb-5 pb-5 md:flex-1">
+                    <div className="project-files-section-header mb-3">
+                        <h3 className="project-files-section-title m-0 flex flex-nowrap items-center gap-1 lumo-title-small lumo-color-glyph">
                             {c('collider_2025:Title').t`Instructions`}{' '}
                             <Tooltip title={c('collider_2025:Info').t`Tips on how to write useful instructions`}>
                                 <ButtonLike
@@ -240,9 +239,14 @@ export const ProjectFilesPanel = ({
                     </div>
                     <div className="project-files-section-content flex-auto">
                         {instructions ? (
-                            <p className="project-instructions-text h-full">{instructions}</p>
+                            <p className="project-instructions-text m-0 h-full border lumo-border radius-16 lumo-body-medium lumo-color-glyph-mid">
+                                {instructions}
+                            </p>
                         ) : (
-                            <button className="project-instructions-add" onClick={onEditInstructions}>
+                            <button
+                                className="project-instructions-add gap-2 p-3 border lumo-border radius-8 lumo-label-medium lumo-color-glyph-mid lumo-bg-control-fill"
+                                onClick={onEditInstructions}
+                            >
                                 <LumoIcon name="Plus" size={16} />
                                 <span>{c('collider_2025:Button')
                                     .t`Add instructions to tailor ${LUMO_SHORT_APP_NAME}'s responses`}</span>
@@ -288,7 +292,7 @@ export const ProjectFilesPanel = ({
                 />
 
                 {fileToView && (
-                    <div className="project-files-preview-panel">
+                    <div className="project-files-preview-panel lumo-bg-panel">
                         <FilePreviewPanel
                             attachment={fileToView}
                             spaceId={projectId}

@@ -13,8 +13,6 @@ import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { SearchModal } from '../../../components/Modals/SearchModal/SearchModal';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 
-import './SchedulesPageHeader.scss';
-
 interface SchedulesPageHeaderProps {
     onNewTaskClick?: () => void;
 }
@@ -43,8 +41,8 @@ export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps
     return (
         <div className="schedules-page-header flex flex-nowrap items-start gap-3 w-full">
             <div className="flex flex-column flex-1 gap-1 min-w-0">
-                <h2 className="text-semibold">{c('collider_2025:Title').t`Scheduled tasks`}</h2>
-                <p className="schedules-page-header__subtitle m-0 text-md">
+                <h2 className="lumo-headline-small">{c('collider_2025:Title').t`Scheduled tasks`}</h2>
+                <p className="schedules-page-header__subtitle m-0 lumo-body-medium lumo-color-glyph-mid">
                     {
                         // translator: Introduction to scheduled tasks. ${LUMO_SHORT_APP_NAME} is the product name.
                         c('collider_2025:Info').t`Set up regular tasks, then leave the rest to ${LUMO_SHORT_APP_NAME}.`

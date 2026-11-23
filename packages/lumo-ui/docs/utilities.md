@@ -2,7 +2,7 @@
 
 [Design system](design-system.md) · [Writing component styles](styling.md)
 
-Prefer Lumo or Proton utility classes over equivalent token declarations in custom SCSS. Lumo visual utility classes use the `lumo-` prefix to avoid collisions with existing utility classes. Check the [implementation](../styles/_lumo-utilities.scss) for supported roles and values; do not assume Tailwind names or variants exist.
+Prefer Lumo or Proton utility classes over equivalent token declarations in custom SCSS. Radius, opacity, and duration use the short `radius-*`, `opacity-*`, and `duration-*` names. Other Lumo visual utilities use the `lumo-` prefix. Check the [implementation](../styles/_lumo-utilities.scss) for supported roles and values; do not assume Tailwind names or variants exist.
 
 ## Choosing classes
 
@@ -13,13 +13,42 @@ Prefer Lumo or Proton utility classes over equivalent token declarations in cust
 | `lumo-border`, `lumo-border-mid`, `lumo-border-control[-<variant>]`, `lumo-border-artifact-{doc,code,web}` | Border color only; supply width/style separately |
 | `lumo-{headline,title,body,label}-<size>` | Complete typography role |
 | `lumo-font-mono` | Code font family; combine with a typography role |
-| `lumo-radius-<size>` | Corner radius; does not clip children |
+| `radius-{4,8,12,16,28,full}` | Corner radius; does not clip children |
 | `lumo-elevation-<level>` | Shadow; does not set background or stacking order |
-| `lumo-opacity-<step>` | Whole-element opacity, including children |
+| `opacity-{4,5,8,10,16,20,30,48}` | Whole-element opacity as a percentage, including children |
 | `lumo-icon-size-<size>` | Logical width and height; does not set SVG stroke or fill |
-| `lumo-duration-<duration>`, `lumo-easing-<name>` | Motion timing; does not start an animation or select animated properties |
+| `duration-{100,150,200,300}`, `lumo-easing-<name>` | Motion timing; does not start an animation or select animated properties |
+
+Choose a complete type role from the Figma Web scale. Use the closest role by purpose when a screen has no typography specification. In CSS, for example in a component selector, a pseudo-element or a responsive override, set the whole role with `font: var(--lumo-type-<role>)`. There are no separate size or weight tokens; each `--lumo-type-*` role holds its own values. For inline emphasis, use the role with the surrounding size and the heavier weight, such as `lumo-title-small` inside `lumo-body-medium` text. `font` resets the family, style and numeric variants, so declare `font-family: var(--lumo-font-mono)`, `font-variant-numeric` or `font-style` after it when needed. A component that sets its own typography needs no override in the caller.
 
 Use a translucent background role when only the background should fade. Duration classes respect reduced-motion preferences.
+
+Use `duration-*` for an element's timing and `var(--lumo-duration-*)` in component CSS. The transition scale is 100 ms for small state changes, 150 ms for hover and fades, 200 ms for menus and small moves, and 300 ms for panels and sheets. Spinners, loops, and feature animations can use their own timing.
+
+Use a `lumo-easing-*` utility when an element shares one curve. Use `var(--lumo-easing-*)` in CSS for pseudo-elements, keyframes, or different curves by property or state. Use `standard` for changes and exits, `enter` for appearances, and `linear` for steady progress or spinners. Use `lottie` for feature-animation keyframes.
+
+`opacity-30` uses the existing Proton utility and matches the Lumo 30% opacity token.
+
+## Proton visual utilities to avoid
+
+Use Proton for layout. For new or refreshed Lumo visuals, replace compatibility aliases and one-off visual overrides with the role that describes the element's purpose.
+
+| Avoid in Lumo-owned visuals | Use instead |
+| --- | --- |
+| Foreground color aliases such as `text-grey`, `text-white`, `color-norm`, and `color-weak` | Use a semantic `lumo-color-*` role for text and icons. Use `lumo-color-glyph-mid` for readable secondary text, `lumo-color-control-brand-text` on brand-filled buttons, and `lumo-color-glyph-disabled` for disabled controls. Reserve `glyph-low` for approved uses such as placeholders. |
+| `bg-norm`, `bg-weak`, `bg-strong`, `bg-primary`, `bg-white`, `bg-black` | Choose `lumo-bg-page`, `lumo-bg-panel[-elevated]`, a control fill or the inverse surface according to the design. Pair the background with its intended foreground role. |
+| `border-weak`, `border-norm`, `border-strong` | Pair structural `border` or `border-bottom` with a Lumo border color. Use a control border for a control and a surface border for a container. |
+| `rounded-*`, `shadow-*`, generic opacity and transition timing utilities | Use the corresponding Lumo radius, elevation, opacity, duration or easing role when implementing a specified design value. |
+| Proton font size, font weight, and font family utilities, such as `text-xs`, `text-bold`, and `text-monospace` | Use a complete Lumo typography role. Add `lumo-font-mono` for code when needed. |
+| `hover:bg-weak`, `hover:color-norm`, `interactive` stacked on an already styled Proton control | Let the adapter handle the shared control's states. For a custom control, set its hover, pressed and keyboard focus styles in component SCSS using Lumo roles. |
+
+`font-medium`, `font-semibold`, `font-bold`, and `font-normal` have no CSS rules in Lumo. Use the weight built into the Lumo typography role, such as `lumo-label-medium` for a medium-weight control label or `lumo-body-small` for a short description.
+
+Proton text behavior utilities remain appropriate. Use `text-ellipsis` for single-line truncation, `text-ellipsis-two-lines` for two-line truncation, and helpers such as `text-nowrap` and `text-left` for wrapping and alignment. Combine them with the appropriate Lumo typography role.
+
+`flex`, `w-full`, `min-w-0`, spacing, overflow and accessibility helpers such as `sr-only` remain appropriate. In compact layouts, choose one owner for the gutters. For example, use a full-width composer inside a padded wrapper and check both inline edges at the actual CSS viewport width.
+
+The sizing and spacing scales are independent. Proton has `p-10` and `gap-10`, but it does not emit `w-10` or `h-10`. Use `w-custom` and `h-custom` with their custom properties, or a component's sizing hook when the same geometry is reused.
 
 Reuse Proton spacing classes. The added `2.5` step extends `p-*`, `m-*` and `gap-*`, including directional forms such as `px-2.5` and `gap-x-2.5`. Existing suffixes retain their meanings.
 
@@ -61,5 +90,5 @@ Classify by behavior: `hidden` is display, `text-ellipsis` is typography, and `s
 Sort each string independently without changing `clsx` argument order, conditions or the caller's `className` position. Keep classes sharing a condition together. Do not add, remove or deduplicate classes as part of sorting; resolve conflicting styles separately. Preserve an unknown class's relative position until its definition is understood.
 
 ```tsx
-<div className="lumo-card flex flex-column gap-2 w-full min-w-0 mb-4 p-2.5 border lumo-border-control lumo-radius-12 lumo-body-medium lumo-color-glyph lumo-bg-panel lumo-elevation-1" />
+<div className="lumo-card flex flex-column gap-2 w-full min-w-0 mb-4 p-2.5 border lumo-border-control radius-12 lumo-body-medium lumo-color-glyph lumo-bg-panel lumo-elevation-1" />
 ```

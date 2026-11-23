@@ -82,10 +82,11 @@ export const CreateKeyForm = ({
     };
 
     return (
-        <div className="api-keys-form-card rounded-lg">
-            <h4 className="api-keys-form-title m-0 mb-4">{c('collider_2025: Title').t`Create new API key`}</h4>
+        <div className="p-5 border lumo-border radius-12 lumo-bg-control-fill">
+            <h4 className="api-keys-form-title m-0 mb-4 lumo-title-medium lumo-color-glyph">{c('collider_2025: Title')
+                .t`Create new API key`}</h4>
 
-            <div className="api-keys-form-fields items-start">
+            <div className="api-keys-form-fields gap-3 items-start">
                 <InputFieldTwo
                     id="api-key-name"
                     label={c('Label').t`Key name`}
@@ -101,7 +102,10 @@ export const CreateKeyForm = ({
                     autoFocus
                 />
                 <div className="api-keys-form-expiry">
-                    <label className="api-keys-form-expiry-label block m-0 mb-1.5" htmlFor="api-key-expiry">
+                    <label
+                        className="api-keys-form-expiry-label block m-0 mb-1.5 lumo-label-medium lumo-color-glyph"
+                        htmlFor="api-key-expiry"
+                    >
                         {c('Label').t`Expires in`}
                     </label>
                     <Select
@@ -113,7 +117,7 @@ export const CreateKeyForm = ({
                 </div>
             </div>
 
-            <div className="flex items-center justify-end gap-2 mt-4 pt-4 api-keys-form-footer">
+            <div className="flex border-top lumo-border items-center justify-end gap-2 mt-4 pt-4 api-keys-form-footer">
                 <Button shape="outline" color="weak" onClick={onCancel} disabled={isSubmitting}>
                     {c('Action').t`Cancel`}
                 </Button>

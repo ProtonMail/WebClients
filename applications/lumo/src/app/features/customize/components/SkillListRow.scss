@@ -11,30 +11,17 @@ $nested-padding: rem(6);
 $name-line-center: $nested-padding + rem(10);
 
 .skill-list-row {
-	border-block-end: 1px solid var(--border-weak);
+	border-block-end: 1px solid var(--lumo-border);
 	list-style: none;
-
-	&__row {
-		padding-block: rem(8);
-	}
 
 	&__icon {
 		block-size: $icon-size;
 		inline-size: $icon-size;
-		border: 1px solid var(--border-weak);
-		border-radius: rem(8);
-		background-color: var(--background-norm);
-		color: var(--text-weak);
 	}
 
 	&__name {
-		padding: 0;
 		border: none;
-		background: transparent;
 		color: inherit;
-		font-size: rem(14);
-		font-weight: 500;
-		line-height: rem(20);
 		cursor: pointer;
 
 		&:hover,
@@ -44,23 +31,11 @@ $name-line-center: $nested-padding + rem(10);
 	}
 
 	&__badge {
-		padding-block: rem(1);
-		padding-inline: rem(6);
 		border-radius: rem(6);
-		background-color: color-mix(in srgb, var(--primary) 12%, transparent);
-		color: var(--primary);
-		font-size: rem(11);
-		font-weight: 500;
-	}
-
-	&__description {
-		color: var(--text-weak);
-		font-size: rem(12);
+		background-color: color-mix(in srgb, var(--lumo-control-brand-fill) 12%, transparent);
 	}
 
 	&__children {
-		margin: 0;
-		padding-block: 0 rem(4);
 		padding-inline: $children-indent 0;
 		list-style: none;
 
@@ -78,11 +53,11 @@ $name-line-center: $nested-padding + rem(10);
 			// Vertical line, stopping at the last child's branch.
 			&::before {
 				inset-block: 0;
-				border-inline-start: 1px solid var(--border-norm);
+				border-inline-start: 1px solid var(--lumo-border-mid);
 			}
 
 			&:first-child::before {
-				inset-block-start: rem(-4);
+				inset-block-start: calc(-1 * var(--lumo-space-4));
 			}
 
 			&:last-child::before {
@@ -98,7 +73,7 @@ $name-line-center: $nested-padding + rem(10);
 			&::after {
 				inset-block-start: $name-line-center;
 				inline-size: $branch-offset - $branch-gap;
-				border-block-start: 1px solid var(--border-norm);
+				border-block-start: 1px solid var(--lumo-border-mid);
 			}
 		}
 
@@ -112,8 +87,6 @@ $name-line-center: $nested-padding + rem(10);
 	&__button {
 		block-size: rem(32);
 		inline-size: rem(32);
-		padding: 0;
 		border: none;
-		background: transparent;
 	}
 }

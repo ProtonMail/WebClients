@@ -34,10 +34,7 @@ export const AllChatsBulkActionButtons = ({
     const [isMoveMenuOpen, setIsMoveMenuOpen] = useState(false);
     const moveButtonRef = useRef<HTMLButtonElement>(null);
     const isBar = variant === 'bar';
-    const buttonClassName = clsx(
-        'flex flex-nowrap items-center justify-center gap-2 font-medium',
-        isBar ? 'flex-1' : 'shrink-0'
-    );
+    const buttonClassName = clsx('flex flex-nowrap items-center justify-center gap-2', isBar ? 'flex-1' : 'shrink-0');
     const size = isBar ? 'medium' : 'small';
 
     return (

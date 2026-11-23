@@ -49,7 +49,7 @@ export const ShareCardCanvasPreview = forwardRef<HTMLCanvasElement, Props>(funct
             ref={canvasRef}
             width={CARD_WIDTH}
             height={height}
-            className={clsx('share-card-canvas-preview', className)}
+            className={clsx('share-card-canvas-preview radius-16 lumo-elevation-4', className)}
         />
     );
 });

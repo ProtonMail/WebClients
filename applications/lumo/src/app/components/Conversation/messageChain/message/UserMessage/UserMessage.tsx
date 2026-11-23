@@ -9,7 +9,6 @@ import { getFileIcon } from '@proton/file-icons/getFileIcon';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useLumoFlags } from '../../../../../hooks/useLumoFlags';
-import { useLumoTheme } from '../../../../../providers';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
@@ -46,7 +45,7 @@ const FileMentionChip = ({ filename, attachment, onView }: FileMentionChipProps)
     };
 
     const className =
-        'inline-flex items-center gap-1 align-middle rounded border border-weak bg-weak px-2 py-0.5 text-sm transition-colors ' +
+        'inline-flex items-center gap-1 align-middle radius-8 border lumo-border lumo-bg-control-fill px-2 py-0.5 lumo-label-medium transition-colors ' +
         (canPreview ? 'cursor-pointer hover:border-norm hover:bg-norm' : '');
     const FileTypeIcon = getFileIcon(mimeType);
 
@@ -196,7 +195,6 @@ const UserMessage = ({
     const [isEditing, setIsEditing] = useState(false);
     const { startNativeEdit } = useNativeMessageEdit({ message, messageContent, handleEditMessage });
     const { nativeComposer: lumoNativeComposerEnabled } = useLumoFlags();
-    const { isDarkLumoTheme } = useLumoTheme();
     const { isWebSearchButtonToggled } = useWebSearch();
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
@@ -259,7 +257,7 @@ const UserMessage = ({
             )}
             style={{ '--bottom-custom': '-1.5rem' }}
         >
-            <div className=" bg-norm border border-weak rounded-lg">
+            <div className=" border lumo-border radius-12 lumo-bg-panel">
                 <UserActionToolbar
                     onEdit={handleEdit}
                     onToggleCollapse={toggleCollapse}
@@ -270,7 +268,7 @@ const UserMessage = ({
                 />
             </div>
             {hasSiblingInfo && (
-                <div className="bg-norm rounded-lg border border-weak">
+                <div className="border lumo-border radius-12 lumo-bg-panel">
                     <SiblingSelector siblingInfo={siblingInfo} />
                 </div>
             )}
@@ -304,9 +302,8 @@ const UserMessage = ({
             {showMessageBubble && (
                 <div
                     className={clsx(
-                        'user-msg-container group-hover-opacity-container *:min-size-auto gap-2 rounded-xl p-4 min-h-custom relative',
-                        !isEditing && 'markdown-rendering',
-                        !isEditing && isDarkLumoTheme && 'user-msg-container--dark',
+                        'user-msg-container group-hover-opacity-container *:min-size-auto gap-2 radius-16 p-4 min-h-custom relative',
+                        !isEditing && 'markdown-rendering lumo-color-glyph',
                         isEditing && 'w-full'
                     )}
                     style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover
@@ -332,7 +329,7 @@ const UserMessage = ({
                         <div className="test-container flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
                             <div
                                 className={clsx(
-                                    'lumo-markdown w-full max-w-full flex-1 text-pre-line',
+                                    'lumo-markdown flex-1 w-full max-w-full text-pre-line',
                                     isCollapsed && 'line-clamp-1'
                                 )}
                                 ref={contentRef}

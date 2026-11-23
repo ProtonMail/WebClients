@@ -28,13 +28,13 @@ export const ComposerAgentBar = ({ conversationId }: ComposerAgentBarProps) => {
     return (
         <div className="flex items-center gap-2 px-1 pb-1">
             <span
-                className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-weak color-primary text-sm"
+                className="flex items-center gap-1 px-2 py-0.5 radius-full lumo-body-small lumo-color-glyph-brand-text lumo-bg-control-fill"
                 data-testid="composer-agent-badge"
             >
                 <ProjectIcon iconId={activeAgent.icon || DEFAULT_AGENT_ICON} size={14} />
                 <button
                     type="button"
-                    className="text-semibold text-ellipsis max-w-custom interactive-pseudo-inset rounded"
+                    className="max-w-custom radius-8 lumo-label-medium text-ellipsis interactive-pseudo-inset"
                     style={{ '--max-w-custom': '12rem' }}
                     onClick={() => dispatch(openAgentPicker())}
                     title={c('collider_2025:Action').t`Change agent`}
@@ -43,7 +43,7 @@ export const ComposerAgentBar = ({ conversationId }: ComposerAgentBarProps) => {
                 </button>
                 <button
                     type="button"
-                    className="flex shrink-0 interactive-pseudo-inset rounded-full"
+                    className="flex shrink-0 radius-full interactive-pseudo-inset"
                     onClick={clearAgent}
                     aria-label={c('collider_2025:Action').t`Remove agent`}
                     title={c('collider_2025:Action').t`Remove agent`}
@@ -53,7 +53,7 @@ export const ComposerAgentBar = ({ conversationId }: ComposerAgentBarProps) => {
             </span>
             <button
                 type="button"
-                className="color-weak text-sm interactive-pseudo-inset rounded px-1"
+                className="px-1 radius-8 lumo-body-small lumo-color-glyph-mid interactive-pseudo-inset"
                 onClick={() => dispatch(openAgentPicker())}
             >
                 {c('collider_2025:Action').t`Change`}

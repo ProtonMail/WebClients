@@ -163,7 +163,7 @@ export const ImagePreviewOverlay = ({
                     <Tooltip title={c('collider_2025:Action').t`Close`}>
                         <button
                             type="button"
-                            className="image-preview-close inline-flex items-center justify-center border rounded-lg bg-norm color-norm"
+                            className="image-preview-close p-0 inline-flex items-center justify-center border radius-12 lumo-color-glyph lumo-bg-panel"
                             onClick={onClose}
                             aria-label={c('collider_2025:Action').t`Close`}
                         >
@@ -173,7 +173,7 @@ export const ImagePreviewOverlay = ({
 
                     <div
                         className={[
-                            'image-preview-container bg-norm flex flex-column flex-nowrap items-center rounded-xxl max-h-full border border-weak',
+                            'image-preview-container flex flex-column flex-nowrap items-center max-h-full border lumo-border radius-28 lumo-bg-panel-elevated',
                             mode === 'preview'
                                 ? 'image-preview-container--preview'
                                 : 'image-preview-container--edit overflow-hidden',
@@ -187,7 +187,10 @@ export const ImagePreviewOverlay = ({
                             <>
                                 <div className="image-preview-media flex justify-center items-center w-full min-h-0">
                                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                                    <div className="image-preview-image-frame" onClick={(e) => e.stopPropagation()}>
+                                    <div
+                                        className="image-preview-image-frame radius-28"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
                                         <img
                                             src={imageDataUrl}
                                             alt={
@@ -203,10 +206,12 @@ export const ImagePreviewOverlay = ({
                                     <div className="px-2 pt-2">
                                         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                         <div
-                                            className="image-preview-prompt w-full"
+                                            className="image-preview-prompt py-3 w-full lumo-bg-control-fill"
                                             onClick={(e) => e.stopPropagation()}
                                         >
-                                            <p className="image-preview-prompt__text">{prompt}</p>
+                                            <p className="image-preview-prompt__text m-0 lumo-body-small lumo-color-glyph">
+                                                {prompt}
+                                            </p>
                                             <Button
                                                 icon
                                                 size="small"
@@ -244,7 +249,7 @@ export const ImagePreviewOverlay = ({
                             </>
                         ) : !canvasDims ? (
                             <div className="image-preview-loading flex items-center justify-center p-12 w-full">
-                                <div className="canvas__loading-spinner inline-block rounded-full" />
+                                <div className="canvas__loading-spinner inline-block radius-full" />
                             </div>
                         ) : (
                             <SketchCanvas
@@ -262,7 +267,7 @@ export const ImagePreviewOverlay = ({
             </div>
 
             {formattedDate && mode === 'preview' && (
-                <div className="image-lightbox__date">
+                <div className="image-lightbox__date pb-6 lumo-label-small">
                     {c('collider_2025:Label').t`Created on`} {formattedDate}
                 </div>
             )}

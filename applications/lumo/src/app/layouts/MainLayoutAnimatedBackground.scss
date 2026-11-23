@@ -4,8 +4,8 @@
 	pointer-events: none;
 	border-radius: inherit;
 	transition:
-		opacity 0.3s ease-in-out,
-		visibility 0.3s ease-in-out;
+		opacity var(--lumo-duration-300) var(--lumo-easing-standard),
+		visibility var(--lumo-duration-300) var(--lumo-easing-standard);
 }
 
 .animated-bg-shader {

@@ -82,12 +82,12 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
         <section
             aria-describedby={`${id}-description`}
             aria-labelledby={`${id}-title`}
-            className="access-request-card flex flex-column flex-nowrap gap-4 w-full min-w-0 p-5 rounded-xl bg-norm"
+            className="access-request-card flex flex-column flex-nowrap gap-4 w-full min-w-0 p-5 border lumo-border-mid radius-16 lumo-bg-panel"
         >
             {/* Heading */}
             <div className="flex flex-nowrap shrink-0 items-center gap-2 min-w-0">
-                <LumoIcon aria-hidden className="shrink-0 color-primary" name="ShieldCheck" size={18} />
-                <h3 className="m-0 text-rg text-semibold text-break" id={`${id}-title`}>
+                <LumoIcon aria-hidden className="shrink-0 lumo-color-glyph-brand-text" name="ShieldCheck" size={18} />
+                <h3 className="m-0 lumo-title-medium text-break" id={`${id}-title`}>
                     {
                         // translator: Heading requesting tool access for a scheduled task. ${LUMO_SHORT_APP_NAME} is the product name; ${taskName} is the user-entered task name.
                         c('collider_2025:Title').t`${LUMO_SHORT_APP_NAME} needs these tools to run "${taskName}"`
@@ -98,31 +98,34 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
             {/* Connector list */}
             <Scroll className="access-request-card__body flex flex-column flex-nowrap overflow-hidden" scrollContained>
                 <div className="flex flex-column flex-nowrap gap-4">
-                    <p className="m-0 text-sm color-weak" id={`${id}-description`}>
+                    <p className="m-0 lumo-body-small lumo-color-glyph-mid" id={`${id}-description`}>
                         {
                             // translator: Explains that connector checkboxes include or exclude external services from a scheduled task.
                             c('collider_2025:Info')
                                 .t`Choose the connectors this task can use. Uncheck a connector to remove it from the schedule. You can change this anytime in the task's settings.`
                         }
                     </p>
-                    <ul className="m-0 p-0 overflow-hidden border border-weak rounded-xl unstyled">
+                    <ul className="m-0 p-0 overflow-hidden border lumo-border radius-16 unstyled">
                         {tools.map((tool) => (
                             <li
                                 className="access-request-card__tool flex flex-nowrap items-center gap-3 px-4 py-3"
                                 key={tool.id}
                             >
-                                <div className="access-request-card__icon flex shrink-0 items-center justify-center border border-weak rounded">
+                                <div className="access-request-card__icon flex shrink-0 items-center justify-center border lumo-border radius-8 lumo-bg-control-fill-mid">
                                     <ConnectorIcon icon={tool.icon} />
                                 </div>
                                 <div className="flex flex-column flex-1 gap-0.5 min-w-0">
                                     <span
-                                        className="access-request-card__tool-name text-rg text-break"
+                                        className="access-request-card__tool-name lumo-label-large text-break"
                                         id={`${id}-${tool.id}-name`}
                                     >
                                         {tool.name}
                                     </span>
                                     {tool.tools.length > 0 && (
-                                        <span className="text-sm text-break color-weak" id={`${id}-${tool.id}-tools`}>
+                                        <span
+                                            className="lumo-body-small text-break lumo-color-glyph-mid"
+                                            id={`${id}-${tool.id}-tools`}
+                                        >
                                             {tool.tools.join(' · ')}
                                         </span>
                                     )}
@@ -159,12 +162,12 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
                         ))}
                     </ul>
                     {!canAllow && (
-                        <p className="m-0 text-sm text-break color-hint">
+                        <p className="m-0 lumo-body-small text-break lumo-color-glyph-mid">
                             {c('collider_2025:Info')
                                 .t`Connect and enable the selected connectors before allowing access, or uncheck them.`}
                         </p>
                     )}
-                    {note && <p className="m-0 text-sm text-break color-hint">{note}</p>}
+                    {note && <p className="m-0 lumo-body-small text-break lumo-color-glyph-mid">{note}</p>}
                 </div>
             </Scroll>
 

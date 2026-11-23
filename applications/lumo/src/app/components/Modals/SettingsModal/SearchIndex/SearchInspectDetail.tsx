@@ -30,28 +30,28 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                     <LumoIcon name="ArrowLeft" size={16} className="mr-1" />
                     {c('Action').t`Back`}
                 </Button>
-                <span className="text-semibold truncate">{doc.name}</span>
+                <span className="lumo-title-small truncate">{doc.name}</span>
             </div>
 
             {/* Document metadata */}
-            <div className="p-3 border rounded bg-weak" style={{ borderColor: 'var(--border-weak)' }}>
+            <div className="p-3 border radius-8 lumo-bg-control-fill" style={{ borderColor: 'var(--border-weak)' }}>
                 <div className="flex items-start gap-3">
                     <DocumentIcon size={5} className="shrink-0" />
                     <div className="flex flex-column gap-1 flex-1 min-w-0">
-                        <div className="text-semibold text-lg truncate">{doc.name}</div>
+                        <div className="truncate lumo-title-medium">{doc.name}</div>
                         {doc.folderPath && (
-                            <div className="text-sm color-weak">
+                            <div className="lumo-body-small lumo-color-glyph-mid">
                                 <strong>{c('Info').t`Folder:`}</strong> {doc.folderPath}
                             </div>
                         )}
-                        <div className="text-sm color-weak">
+                        <div className="lumo-body-small lumo-color-glyph-mid">
                             <strong>{c('Info').t`Size:`}</strong> {sizeText}
                         </div>
-                        <div className="text-sm color-weak">
+                        <div className="lumo-body-small lumo-color-glyph-mid">
                             <strong>{c('Info').t`MIME:`}</strong> {doc.mimeType || c('Info').t`Unknown`}
                         </div>
                         {hasChunks && (
-                            <div className="text-sm color-info">
+                            <div className="lumo-body-small lumo-color-signal-info">
                                 <strong>{c('Info').t`Chunks:`}</strong> {chunks.length}{' '}
                                 {c('Info').t`searchable sections`}
                             </div>
@@ -63,7 +63,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
             {/* Chunks list (if chunked) */}
             {hasChunks ? (
                 <div className="flex flex-column gap-2">
-                    <div className="text-sm text-semibold color-weak">{c('Info').t`Searchable chunks`}</div>
+                    <div className="lumo-label-small lumo-color-glyph-mid">{c('Info').t`Searchable chunks`}</div>
                     {chunks.map((chunk, index) => {
                         const isExpanded = expandedChunk === index;
                         const chunkSize = chunk.content ? new TextEncoder().encode(chunk.content).byteLength : 0;
@@ -71,7 +71,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                         return (
                             <div
                                 key={chunk.id}
-                                className="border rounded bg-weak"
+                                className="border radius-8 lumo-bg-control-fill"
                                 style={{ borderColor: 'var(--border-weak)' }}
                             >
                                 <button
@@ -80,19 +80,31 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                                     onClick={() => setExpandedChunk(isExpanded ? null : index)}
                                 >
                                     {isExpanded ? (
-                                        <LumoIcon name="ChevronDown" size={16} className="color-weak shrink-0" />
+                                        <LumoIcon
+                                            name="ChevronDown"
+                                            size={16}
+                                            className="shrink-0 lumo-color-glyph-mid"
+                                        />
                                     ) : (
-                                        <LumoIcon name="ChevronRight" size={16} className="color-weak shrink-0" />
+                                        <LumoIcon
+                                            name="ChevronRight"
+                                            size={16}
+                                            className="shrink-0 lumo-color-glyph-mid"
+                                        />
                                     )}
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                            <span className="text-sm text-semibold">
+                                            <span className="lumo-label-small">
                                                 {c('Info').t`Chunk`} {index + 1}/{chunks.length}
                                             </span>
-                                            <span className="text-xs color-weak">{formatBytes(chunkSize)}</span>
+                                            <span className="lumo-body-small lumo-color-glyph-mid">
+                                                {formatBytes(chunkSize)}
+                                            </span>
                                         </div>
                                         {chunk.chunkTitle && (
-                                            <div className="text-sm color-weak truncate">{chunk.chunkTitle}</div>
+                                            <div className="truncate lumo-body-small lumo-color-glyph-mid">
+                                                {chunk.chunkTitle}
+                                            </div>
                                         )}
                                     </div>
                                 </button>
@@ -107,7 +119,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                                         }}
                                     >
                                         <pre
-                                            className="text-sm whitespace-pre-wrap break-words m-0"
+                                            className="whitespace-pre-wrap break-words m-0 lumo-body-small"
                                             style={{ lineHeight: 1.4 }}
                                         >
                                             {chunk.content.slice(0, 1500)}
@@ -123,12 +135,15 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
                 /* Non-chunked document content */
                 doc.content && (
                     <div
-                        className="p-3 border rounded bg-weak"
+                        className="p-3 border radius-8 lumo-bg-control-fill"
                         style={{ borderColor: 'var(--border-weak)', maxHeight: 400, overflowY: 'auto' }}
                     >
-                        <div className="text-xs color-weak mb-2">{c('Info')
+                        <div className="mb-2 lumo-body-small lumo-color-glyph-mid">{c('Info')
                             .t`Indexed content (first 2000 chars):`}</div>
-                        <pre className="text-sm whitespace-pre-wrap break-words m-0" style={{ lineHeight: 1.4 }}>
+                        <pre
+                            className="whitespace-pre-wrap break-words m-0 lumo-body-small"
+                            style={{ lineHeight: 1.4 }}
+                        >
                             {doc.content.slice(0, 2000)}
                             {doc.content.length > 2000 ? '…' : ''}
                         </pre>

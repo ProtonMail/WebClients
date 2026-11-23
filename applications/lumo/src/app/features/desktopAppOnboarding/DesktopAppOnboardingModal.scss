@@ -75,11 +75,12 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 }
 
 .dao-medium {
-	font-weight: var(--font-weight-medium, 500);
+	font-weight: 500;
 }
 
-// Figma's 28px title uses "normal" line height; no utility matches.
-.dao-title {
+// The desktop onboarding Figma frame specifies a 28px title with normal line height.
+.dao-title.lumo-headline-small {
+	font-size: rem(28);
 	line-height: normal;
 }
 
@@ -103,7 +104,7 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 	inline-size: rem(6);
 	block-size: rem(6);
 	background-color: var(--dao-dot);
-	transition: inline-size 0.2s ease;
+	transition: inline-size var(--lumo-duration-200) var(--lumo-easing-standard);
 
 	&--active {
 		inline-size: rem(20);
@@ -139,13 +140,6 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 		inline-size: 70%;
 		block-size: 70%;
 	}
-}
-
-.dao-promise {
-	padding-block: rem(6);
-	padding-inline: rem(10) rem(12);
-	font-size: rem(13);
-	line-height: rem(18);
 }
 
 // The 400×400 stage shared by steps 2–4: a blurred brand glow under a fading dot grid.
@@ -258,6 +252,7 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 	}
 
 	&-city {
+		font-weight: 600;
 		font-size: rem(21.06);
 		line-height: normal;
 	}
@@ -308,7 +303,6 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 		inset-block-start: rem(56);
 		inset-inline-start: rem(240.4);
 		gap: rem(7);
-		padding-block: rem(6);
 		padding-inline: rem(7) rem(10);
 		border: rem(0.8) solid var(--dao-bar);
 		border-radius: rem(9);
@@ -338,7 +332,6 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 	&-message {
 		inset-block-start: rem(95.6);
 		inset-inline-end: rem(58);
-		padding-block: rem(12);
 		padding-inline: rem(17.23);
 		border-radius: rem(15.66);
 		background-color: var(--dao-bubble);
@@ -442,7 +435,6 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 		inset-block-start: rem(287.4);
 		inset-inline-start: rem(27.4);
 		inline-size: rem(315);
-		gap: rem(2);
 		padding-block: rem(6.9) rem(5.9);
 		padding-inline: rem(11.8) rem(7.9);
 		border-radius: rem(13.78);
@@ -477,10 +469,6 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 		background-color: var(--dao-divider);
 	}
 
-	&-task {
-		gap: rem(8);
-	}
-
 	&-icon {
 		inline-size: rem(22);
 		block-size: rem(22);
@@ -503,6 +491,7 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 	}
 
 	&-name {
+		font-weight: 600;
 		font-size: rem(8.7);
 		line-height: normal;
 	}
@@ -536,12 +525,12 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 	}
 
 	&-badge {
-		padding-block: rem(2);
 		padding-inline: rem(5);
 		border-radius: rem(8);
 		background-color: var(--dao-brand);
 		color: white;
 		font-size: rem(7.5);
+		font-weight: 600;
 		line-height: normal;
 	}
 }
@@ -551,7 +540,6 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 .dao-notification {
 	inline-size: rem(360);
 	max-inline-size: 100%;
-	gap: rem(12);
 	padding-block: rem(14);
 	padding-inline: rem(14) rem(16);
 	border: 1px solid var(--dao-notification-border);
@@ -559,8 +547,6 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 	background-color: var(--dao-notification);
 	backdrop-filter: blur(rem(15));
 	box-shadow: 0 rem(8) rem(24) rgb(0 0 0 / 0.1);
-	font-size: rem(13);
-	line-height: normal;
 
 	&--older {
 		opacity: 0.7;
@@ -581,25 +567,8 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 .dao-plan {
 	inline-size: rem(320);
 	max-inline-size: 100%;
-	gap: rem(12);
-	padding: rem(20);
 	border: 1px solid var(--dao-dot);
 	border-radius: rem(16);
-
-	&-name {
-		font-size: rem(20);
-		line-height: rem(28);
-	}
-
-	&-features {
-		gap: rem(10);
-	}
-
-	&-feature {
-		gap: rem(10);
-		font-size: rem(15);
-		line-height: rem(20);
-	}
 }
 
 // --- Step 6 · Everyone else: "all set" celebration ---------------------------------------------
@@ -636,13 +605,8 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 			inset-inline-start: auto;
 		}
 
-		gap: rem(6);
-		padding-block: rem(6);
-		padding-inline: rem(10) rem(8);
 		border: 1px solid var(--dao-dot);
 		box-shadow: 0 rem(6) rem(16) rgb(26 26 64 / 0.1);
-		font-size: rem(12);
-		line-height: normal;
 	}
 
 	&-check {
@@ -656,7 +620,7 @@ body:has(#lumo-dark-theme) .desktop-app-onboarding {
 	@media (prefers-reduced-motion: no-preference) {
 		&-confetti,
 		&-sparkle {
-			animation: dao-confetti-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+			animation: dao-confetti-in 0.6s var(--lumo-easing-enter) both;
 			animation-delay: var(--delay, 0s);
 		}
 	}

@@ -23,11 +23,11 @@ export const SourceFavIcon = ({ domain }: { domain: string }) => {
         if (domain) {
             return <ColoredDisk domain={domain} />;
         } else {
-            return <LumoIcon name="Globe" size={16} className="color-norm" />;
+            return <LumoIcon name="Globe" size={16} className="lumo-color-glyph" />;
         }
     }
 
-    return <img src={src} alt="" className="rounded-full shrink-0 w-6" />;
+    return <img src={src} alt="" className="shrink-0 w-6 radius-full" />;
 };
 
 export const SourcesButton = ({ results, onClick }: SourcesBlockProps) => {
@@ -41,14 +41,14 @@ export const SourcesButton = ({ results, onClick }: SourcesBlockProps) => {
 
     return (
         <Button
-            className="lumo-no-copy flex flex-row flex-nowrap gap-2 items-center shrink-0 rounded"
+            className="lumo-no-copy flex flex-row flex-nowrap shrink-0 items-center gap-2 radius-8"
             shape="ghost"
             onClick={onClick}
             size="small"
         >
             <div className="flex flex-row flex-nowrap">
                 {firstThreeDomains.map((domain) => (
-                    <div key={domain} className="source-favicon rounded-full bg-norm border border-weak flex">
+                    <div key={domain} className="source-favicon flex border lumo-border radius-full lumo-bg-panel">
                         <SourceFavIcon domain={domain} />
                     </div>
                 ))}

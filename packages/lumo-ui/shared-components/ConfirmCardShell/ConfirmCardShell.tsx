@@ -49,7 +49,7 @@ const ConfirmCardShell = ({
     className,
 }: Props) => (
     <div className={clsx('lumo-confirm-card flex flex-column flex-nowrap', className)}>
-        <div className="lumo-confirm-card__band flex flex-row flex-nowrap items-start gap-2 text-rg">
+        <div className="lumo-confirm-card__band flex flex-row flex-nowrap items-start gap-2 lumo-body-medium">
             <span className="lumo-confirm-card__glyph shrink-0">
                 <Icon />
             </span>

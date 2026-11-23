@@ -73,7 +73,7 @@ export const AnswerNowNotice = ({ prompt, conversationId }: Props) => {
                 onClick={answerNow}
             >
                 <LumoIcon name="Zap" size={16} strokeWidth={1.4} aria-hidden="true" />
-                <span>{c('Action').t`Answer now`}</span>
+                <span className="lumo-label-medium">{c('Action').t`Answer now`}</span>
             </Button>
         </span>
     );
@@ -81,7 +81,7 @@ export const AnswerNowNotice = ({ prompt, conversationId }: Props) => {
     return (
         <>
             {prompt !== undefined && (
-                <output className="answer-now-notice flex items-center color-weak" aria-live="polite">
+                <output className="answer-now-notice flex items-center lumo-color-glyph-mid" aria-live="polite">
                     <span>{sent ? c('Info').t`Requesting an answer…` : c('Info').t`Working on it...`}</span>
                     {showButton && <ThinkingProgressDots />}
                 </output>

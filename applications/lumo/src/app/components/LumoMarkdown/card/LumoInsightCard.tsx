@@ -37,19 +37,19 @@ export const LumoInsightCard = ({ spec }: { spec: LumoCardSpec }) => {
             <div
                 className={clsx(
                     LUMO_MARKDOWN_CARD_SHELL_CLASS,
-                    'lumo-insight-card lumo-insight-card--metric flex flex-1 flex-column min-h-full w-full p-4'
+                    'lumo-insight-card lumo-insight-card--metric flex flex-column flex-1 w-full min-h-full p-4'
                 )}
             >
-                <div className="lumo-insight-card__label flex justify-space-between">
+                <div className="lumo-insight-card__label mb-1 flex justify-space-between lumo-label-small lumo-color-glyph-mid">
                     <span dir="auto">{spec.title}</span>
                 </div>
-                <div dir="auto" className="lumo-insight-card__value">
+                <div dir="auto" className="lumo-insight-card__value mt-1 lumo-color-glyph">
                     {spec.value}
                 </div>
                 {spec.delta ? (
                     <div
                         className={clsx(
-                            'lumo-insight-card__delta flex items-center gap-1',
+                            'lumo-insight-card__delta flex items-center gap-1 mt-2 lumo-label-small',
                             `lumo-insight-card__delta--${direction}`
                         )}
                     >
@@ -74,23 +74,23 @@ export const LumoInsightCard = ({ spec }: { spec: LumoCardSpec }) => {
             )}
         >
             {showTitle ? (
-                <div className="lumo-insight-card__label flex justify-space-between">
+                <div className="lumo-insight-card__label mb-1 flex justify-space-between lumo-label-small lumo-color-glyph-mid">
                     <span dir="auto">{spec.title}</span>
                     {isFinding ? <span>{spec.severity ?? 'info'}</span> : null}
                 </div>
             ) : null}
-            <div dir="auto" className="lumo-insight-card__body">
+            <div dir="auto" className="lumo-insight-card__body mt-2 lumo-body-small lumo-color-glyph-mid">
                 {spec.body}
             </div>
             {spec.tags && spec.tags.length > 0 ? (
                 <>
-                    <hr className="lumo-insight-card__divider" />
+                    <hr className="lumo-insight-card__divider my-3 mx-0" />
                     <div className="lumo-insight-card__tags flex flex-wrap gap-1.5">
                         {spec.tags.map((tag) => (
                             <span
                                 key={tag}
                                 dir="auto"
-                                className="lumo-insight-card__tag border border-weak rounded-full"
+                                className="lumo-insight-card__tag lumo-bg-control-fill border lumo-border radius-full lumo-label-small lumo-color-glyph"
                             >
                                 {tag}
                             </span>

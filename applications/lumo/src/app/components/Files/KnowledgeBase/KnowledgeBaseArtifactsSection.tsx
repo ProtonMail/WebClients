@@ -26,11 +26,11 @@ export const KnowledgeBaseArtifactsSection = ({ artifacts, onOpenArtifact }: Kno
 
     return (
         <div className="w-full min-w-0 max-w-full mb-6">
-            <h3 className="text-rg text-semibold">
+            <h3 className="lumo-title-small">
                 {c('collider_2025: Info').t`creations`}
-                <span className="ml-1.5 text-normal color-hint">{artifacts.length}</span>
+                <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{artifacts.length}</span>
             </h3>
-            <p className="my-1.5 text-sm color-hint">
+            <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`Created by ${LUMO_SHORT_APP_NAME} in this conversation.`}
             </p>
 
@@ -65,7 +65,7 @@ export const KnowledgeBaseArtifactsSection = ({ artifacts, onOpenArtifact }: Kno
                         className="mt-2 mb-4"
                         title={artifact.title}
                         subtitle={
-                            <span className="text-xs color-weak block w-full min-w-0 text-ellipsis overflow-hidden whitespace-nowrap">
+                            <span className="whitespace-nowrap block w-full min-w-0 overflow-hidden lumo-body-small text-ellipsis lumo-color-glyph-mid">
                                 {typeLabel}
                             </span>
                         }

@@ -23,6 +23,7 @@
 import { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -685,8 +686,8 @@ export const TestRendererModal = ({ open, onClose }: TestRendererModalProps) => 
         <ModalTwo open={open} onClose={onClose} size="large">
             <ModalTwoHeader title={c('lumo: Test Renderer').t`Test Renderer`} />
             <ModalTwoContent>
-                <div style={{ padding: '1rem' }}>
-                    <p style={{ marginBottom: '1rem' }}>
+                <div className="p-4">
+                    <p className="mb-4">
                         {currentConversationId
                             ? c('lumo: Test Renderer')
                                   .t`Select test cases to inject into the current conversation. This will help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.`
@@ -694,7 +695,7 @@ export const TestRendererModal = ({ open, onClose }: TestRendererModalProps) => 
                                   .t`Select test cases to inject. A new test conversation will be created with the selected test cases to help test various rendering scenarios including HTML conversion, LaTeX, code blocks, and edge cases.`}
                     </p>
 
-                    <div style={{ marginBottom: '1rem', display: 'flex', gap: '0.5rem' }}>
+                    <div className="flex gap-2 mb-4">
                         <Button size="small" onClick={handleSelectAll}>
                             {c('lumo: Test Renderer').t`Select All`}
                         </Button>
@@ -703,43 +704,30 @@ export const TestRendererModal = ({ open, onClose }: TestRendererModalProps) => 
                         </Button>
                     </div>
 
-                    <div style={{ display: 'grid', gap: '0.5rem', maxHeight: '400px', overflowY: 'auto' }}>
+                    <div className="grid gap-2 overflow-y-auto" style={{ maxHeight: '400px' }}>
                         {Object.entries(TEST_CONTENT_SAMPLES).map(([key, sample]) => (
                             <label
                                 key={key}
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.5rem',
-                                    padding: '0.5rem',
-                                    border: '1px solid var(--border-norm)',
-                                    borderRadius: '4px',
-                                    cursor: 'pointer',
-                                    background: selectedTests.has(key) ? 'var(--background-weak)' : 'transparent',
-                                }}
+                                className={clsx(
+                                    'flex items-center gap-2 p-2 border lumo-border-mid radius-4 cursor-pointer',
+                                    selectedTests.has(key) && 'lumo-bg-control-fill'
+                                )}
                             >
                                 <input
                                     type="checkbox"
+                                    className="cursor-pointer"
                                     checked={selectedTests.has(key)}
                                     onChange={() => handleToggleTest(key)}
-                                    style={{ cursor: 'pointer' }}
                                 />
-                                <span style={{ fontWeight: 500 }}>{sample.name}</span>
-                                <span style={{ marginLeft: 'auto', fontSize: '0.875rem', color: 'var(--text-weak)' }}>
+                                <span className="lumo-label-large">{sample.name}</span>
+                                <span className="ml-auto lumo-body-medium lumo-color-glyph-mid">
                                     {sample.content.length} chars
                                 </span>
                             </label>
                         ))}
                     </div>
 
-                    <div
-                        style={{
-                            marginTop: '1rem',
-                            padding: '0.75rem',
-                            background: 'var(--background-weak)',
-                            borderRadius: '4px',
-                        }}
-                    >
+                    <div className="mt-4 p-3 radius-4 lumo-bg-control-fill">
                         <strong>{c('lumo: Test Renderer').t`Selected:`}</strong> {selectedTests.size} /{' '}
                         {Object.keys(TEST_CONTENT_SAMPLES).length}
                     </div>

@@ -10,20 +10,10 @@ im.$media-expressions: $media-expressions;
 .api-keys-empty-icon {
 	inline-size: rem(56);
 	block-size: rem(56);
-	background: linear-gradient(135deg, var(--interaction-norm-minor-2) 0%, var(--interaction-norm-minor-1) 100%);
-	color: var(--interaction-norm);
-	margin-block-end: rem(4);
-}
-
-.api-keys-empty-title {
-	font-size: rem(15);
-	font-weight: 600;
-	color: var(--text-norm);
+	background: linear-gradient(135deg, var(--lumo-control-fill) 0%, var(--lumo-control-fill-mid) 100%);
 }
 
 .api-keys-empty-subtitle {
-	font-size: rem(13);
-	color: var(--text-weak);
 	max-inline-size: rem(352);
 }
 
@@ -31,14 +21,12 @@ im.$media-expressions: $media-expressions;
 
 .api-keys-card-wrap {
 	border-radius: rem(10);
-	border: 1px solid var(--border-weak);
-	background-color: var(--background-norm);
 	transition:
-		border-color 0.15s ease,
-		box-shadow 0.15s ease;
+		border-color var(--lumo-duration-150) var(--lumo-easing-standard),
+		box-shadow var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&--expanded {
-		border-color: var(--border-norm);
+		border-color: var(--lumo-border);
 		box-shadow: 0 rem(2) rem(12) rgb(0 0 0 / 0.06);
 	}
 }
@@ -46,15 +34,14 @@ im.$media-expressions: $media-expressions;
 .api-keys-card {
 	gap: rem(14);
 	padding-block: rem(14);
-	padding-inline: rem(16);
 	border: none;
 	border-radius: rem(10);
 	background-color: transparent;
 	cursor: pointer;
-	transition: background-color 0.15s ease;
+	transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:hover {
-		background-color: var(--background-weak);
+		background-color: var(--lumo-control-fill);
 
 		.api-keys-card-actions {
 			opacity: 1;
@@ -62,7 +49,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:focus-visible {
-		box-shadow: 0 0 0 2px var(--focus-ring, var(--interaction-norm));
+		box-shadow: 0 0 0 2px var(--lumo-control-border-focus, var(--lumo-control-brand-fill));
 	}
 
 	&--expired {
@@ -75,8 +62,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-keys-card-chevron {
-	color: var(--text-weak);
-	transition: transform 0.2s ease;
+	transition: transform var(--lumo-duration-200) var(--lumo-easing-standard);
 
 	&.is-open {
 		transform: rotate(180deg);
@@ -84,29 +70,20 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-keys-card-expanded-shell {
-	padding-block: 0 rem(16);
-	padding-inline: rem(16);
-	border-block-start: 1px solid var(--border-weak);
-	background-color: var(--background-weak);
-	border-radius: 0 0 rem(8) rem(8);
+	border-radius: 0 0 var(--lumo-radius-8) var(--lumo-radius-8);
 }
 
 .api-keys-card-icon {
 	inline-size: rem(36);
 	block-size: rem(36);
-	background-color: var(--interaction-norm-minor-2);
-	color: var(--interaction-norm);
 
 	.api-keys-card--expired & {
-		background-color: var(--background-strong);
-		color: var(--text-weak);
+		background-color: var(--lumo-control-fill-mid);
+		color: var(--lumo-glyph-mid);
 	}
 }
 
 .api-keys-card-name {
-	font-size: rem(14);
-	color: var(--text-norm);
-
 	span {
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -114,24 +91,15 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.api-keys-card-meta {
-	font-size: rem(12);
-	color: var(--text-weak);
-}
-
 .api-keys-card-actions {
 	opacity: 0.5;
-	transition: opacity 0.15s ease;
+	transition: opacity var(--lumo-duration-150) var(--lumo-easing-standard);
 }
 
 // ── Status badges ─────────────────────────────────────────────────────────────
 
 .api-keys-status {
-	padding-block: rem(2);
-	padding-inline: rem(8);
 	border-radius: 99px;
-	font-size: rem(11);
-	font-weight: 600;
 
 	&::before {
 		content: '';
@@ -143,51 +111,38 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&--active {
-		background-color: var(--signal-success-minor-2, rgb(16 185 129 / 0.12));
-		color: var(--signal-success, #10b981);
+		background-color: var(--lumo-control-fill, rgb(16 185 129 / 0.12));
+		color: var(--lumo-signal-success, #10b981);
 
 		&::before {
-			background-color: var(--signal-success, #10b981);
+			background-color: var(--lumo-signal-success, #10b981);
 		}
 	}
 
 	&--expiring {
-		background-color: var(--signal-warning-minor-2, rgb(245 158 11 / 0.12));
-		color: var(--signal-warning, #f59e0b);
+		background-color: var(--lumo-control-fill, rgb(245 158 11 / 0.12));
+		color: var(--lumo-signal-warning, #f59e0b);
 
 		&::before {
-			background-color: var(--signal-warning, #f59e0b);
+			background-color: var(--lumo-signal-warning, #f59e0b);
 		}
 	}
 
 	&--expired {
-		background-color: var(--signal-danger-minor-2);
-		color: var(--signal-danger);
+		background-color: var(--lumo-control-fill);
+		color: var(--lumo-signal-danger);
 
 		&::before {
-			background-color: var(--signal-danger);
+			background-color: var(--lumo-signal-danger);
 		}
 	}
 }
 
 // ── Inline forms ──────────────────────────────────────────────────────────────
 
-.api-keys-form-card {
-	padding: rem(20);
-	background-color: var(--background-weak);
-	border: 1px solid var(--border-norm);
-}
-
-.api-keys-form-title {
-	font-size: rem(15);
-	font-weight: 600;
-	color: var(--text-norm);
-}
-
 .api-keys-form-fields {
 	display: grid;
 	grid-template-columns: 1fr auto;
-	gap: rem(12);
 
 	@include im.media('<=small') {
 		grid-template-columns: 1fr;
@@ -196,16 +151,6 @@ im.$media-expressions: $media-expressions;
 
 .api-keys-form-expiry {
 	min-inline-size: rem(128);
-}
-
-.api-keys-form-expiry-label {
-	font-size: rem(13);
-	font-weight: 600;
-	color: var(--text-norm);
-}
-
-.api-keys-form-footer {
-	border-block-start: 1px solid var(--border-weak);
 }
 
 // ── Token reveal dialog ───────────────────────────────────────────────────────
@@ -221,9 +166,6 @@ im.$media-expressions: $media-expressions;
 
 .api-keys-token-reveal-dialog {
 	z-index: 1;
-	background-color: var(--background-norm);
-	border: 1px solid var(--border-norm);
-	border-radius: rem(16);
 	inline-size: min(#{rem(480)}, 92vw);
 	box-shadow:
 		0 rem(20) rem(60) rgb(0 0 0 / 0.2),
@@ -231,70 +173,39 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-keys-token-reveal-header {
-	padding-block: rem(24) rem(20);
-	padding-inline: rem(24);
-	background: linear-gradient(90deg, var(--interaction-norm-minor-2) 0%, transparent 60%);
+	background: linear-gradient(90deg, var(--lumo-control-fill) 0%, transparent 60%);
 }
 
 .api-keys-token-reveal-icon {
 	inline-size: rem(40);
 	block-size: rem(40);
-	background-color: var(--interaction-norm);
-	color: var(--primary-contrast);
-}
-
-.api-keys-token-reveal-title {
-	font-size: rem(16);
-	font-weight: bold;
-	color: var(--text-norm);
-	line-height: 1.25;
-}
-
-.api-keys-token-reveal-subtitle {
-	font-size: rem(13);
-	color: var(--text-weak);
-}
-
-.api-keys-token-reveal-body {
-	padding-block: rem(20) rem(24);
-	padding-inline: rem(24);
 }
 
 .api-keys-token-warning {
-	padding-block: rem(10);
 	padding-inline: rem(14);
-	background-color: var(--signal-warning-minor-2, rgb(245 158 11 / 0.1));
-	border: 1px solid var(--signal-warning-minor-1, rgb(245 158 11 / 0.25));
-	font-size: rem(12);
-	font-weight: 500;
-	color: var(--signal-warning, #f59e0b);
+	background-color: var(--lumo-control-fill, rgb(245 158 11 / 0.1));
+	border: 1px solid var(--lumo-control-fill-mid, rgb(245 158 11 / 0.25));
+	color: var(--lumo-signal-warning, #f59e0b);
 }
 
 .api-keys-token-box {
 	padding: rem(14);
-	background-color: var(--background-strong);
-	border: 1px solid var(--border-norm);
 	cursor: text;
 	user-select: all;
 }
 
 .api-keys-token-text {
-	font-family: SFMono-Regular, Consolas, 'Liberation Mono', monospace;
-	font-size: rem(12);
-	line-height: 1.6;
-	color: var(--text-norm);
+	font: var(--lumo-type-body-small);
+	font-family: var(--lumo-font-mono);
 	word-break: break-all;
-	padding-inline-end: rem(32);
 }
 
 .api-keys-token-copied {
 	inset-block-start: rem(10);
 	inset-inline-end: rem(10);
-	font-size: rem(11);
-	font-weight: 600;
-	color: var(--signal-success, #10b981);
+	color: var(--lumo-signal-success, #10b981);
 	opacity: 0;
-	transition: opacity 0.2s ease;
+	transition: opacity var(--lumo-duration-200) var(--lumo-easing-standard);
 	pointer-events: none;
 
 	&--visible {
@@ -314,77 +225,37 @@ im.$media-expressions: $media-expressions;
 	z-index: 1;
 	overflow: visible;
 
-	/* Room above the chart so the Recharts tooltip (positioned upward) is not clipped */
-	padding-block-start: rem(4);
-
 	&--ghost {
 		opacity: 0.35;
 	}
 
 	&--spark {
-		padding-block: rem(4);
-		padding-inline: rem(6);
-		border-radius: rem(8);
 		background: linear-gradient(
 			180deg,
-			color-mix(in srgb, var(--interaction-norm) 8%, transparent) 0%,
+			color-mix(in srgb, var(--lumo-control-brand-fill) 8%, transparent) 0%,
 			transparent 100%
 		);
-		border: 1px solid var(--border-weak);
 	}
 }
 
 // ── Chart tooltip (Recharts; keep above bar so it does not overlap stats below) ─
 
 .api-keys-chart-tooltip {
-	padding-block: rem(6);
-	padding-inline: rem(10);
-	background: var(--background-norm);
-	border: 1px solid var(--border-norm);
 	border-radius: rem(6);
 	box-shadow: 0 rem(4) rem(12) rgb(0 0 0 / 0.12);
 	pointer-events: none;
 
 	&--spark {
-		border-radius: rem(8);
-		padding-block: rem(8);
-		padding-inline: rem(12);
+		border-radius: var(--lumo-radius-8);
 		box-shadow: 0 rem(6) rem(20) rgb(0 0 0 / 0.1);
-		border-inline-start: 3px solid var(--interaction-norm);
+		border-inline-start: 3px solid var(--lumo-control-brand-fill);
 	}
-}
-
-.api-keys-chart-tooltip-date {
-	font-size: rem(10);
-	color: var(--text-weak);
-	line-height: 1.2;
-}
-
-.api-keys-chart-tooltip-value {
-	font-size: rem(12);
-	font-weight: 600;
-	color: var(--text-norm);
-	line-height: 1.2;
-}
-
-.api-keys-usage-total {
-	font-size: rem(12);
-	font-weight: 600;
-	color: var(--text-norm);
-	line-height: 1;
-}
-
-.api-keys-usage-label {
-	font-size: rem(11);
-	color: var(--text-weak);
-	line-height: 1;
 }
 
 .api-keys-usage-skeleton {
 	inline-size: rem(104);
 	block-size: rem(36);
 	border-radius: rem(6);
-	background: var(--background-strong);
 }
 
 // ── Loading skeleton ──────────────────────────────────────────────────────────
@@ -394,12 +265,12 @@ im.$media-expressions: $media-expressions;
 	border-radius: rem(10);
 	background: linear-gradient(
 		90deg,
-		var(--background-strong) 25%,
-		var(--background-weak) 50%,
-		var(--background-strong) 75%
+		var(--lumo-control-fill-mid) 25%,
+		var(--lumo-control-fill) 50%,
+		var(--lumo-control-fill-mid) 75%
 	);
 	background-size: 200% 100%;
-	animation: api-keys-shimmer 1.4s ease infinite;
+	animation: api-keys-shimmer 1.4s var(--lumo-easing-standard) infinite;
 }
 
 @keyframes api-keys-shimmer {
@@ -415,32 +286,10 @@ im.$media-expressions: $media-expressions;
 // ── Expanded per-key usage ───────────────────────────────────────────────────
 
 .api-keys-expanded-empty {
-	margin-block-start: rem(16);
-	padding: rem(16);
-	border: 1px dashed var(--border-norm);
-	background: var(--background-norm);
-
 	&__icon {
 		inline-size: rem(38);
 		block-size: rem(38);
-		color: var(--interaction-norm);
-		background: var(--interaction-norm-minor-2);
 	}
-
-	strong {
-		color: var(--text-norm);
-		font-size: rem(13);
-	}
-
-	&__description {
-		color: var(--text-weak);
-		font-size: rem(12);
-		line-height: 1.4;
-	}
-}
-
-.api-keys-expanded-loading {
-	padding-block: rem(8);
 }
 
 // ── API usage dashboard ───────────────────────────────────────────────────────
@@ -452,29 +301,12 @@ im.$media-expressions: $media-expressions;
 	> * {
 		flex-shrink: 0;
 	}
-
-	&__title {
-		font-size: rem(30);
-		line-height: 1.15;
-		color: var(--text-norm);
-	}
-
-	&__subtitle {
-		font-size: rem(16);
-		line-height: 1.45;
-		color: var(--text-weak);
-	}
-}
-
-.api-usage-dashboard-header {
-	padding-block: rem(8) rem(12);
 }
 
 .api-usage-account-grid {
 	display: grid;
 	grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
 	flex-shrink: 0;
-	gap: rem(16);
 	align-items: stretch;
 
 	@include im.media('<=medium') {
@@ -490,53 +322,39 @@ im.$media-expressions: $media-expressions;
 		flex: 1 0 auto;
 		padding: rem(22);
 	}
-
-	&__settings {
-		border-block-start: 1px solid var(--border-weak);
-		background: var(--background-weak);
-	}
 }
 
 .api-usage-balance-row {
-	padding-block: rem(20);
 	padding-inline: rem(22);
 
 	&__icon {
 		inline-size: rem(52);
 		block-size: rem(52);
-		border: 1px solid var(--border-weak);
-		color: var(--text-norm);
-		background: var(--background-norm);
 	}
 
 	&__badge {
-		inset-block-start: rem(-6);
-		inset-inline-end: rem(-6);
+		inset-block-start: calc(-1 * var(--lumo-space-6));
+		inset-inline-end: calc(-1 * var(--lumo-space-6));
 		inline-size: rem(18);
 		block-size: rem(18);
-		border: 2px solid var(--background-weak);
+		border: 2px solid var(--lumo-control-fill);
 		color: white;
-		background: var(--signal-success);
 	}
 
 	@include im.media('<=small') {
-		padding-inline: rem(16);
+		padding-inline: var(--lumo-space-16);
 	}
 }
 
 .api-usage-balance-status {
-	padding-block: rem(8);
-	padding-inline: rem(12);
-	color: var(--text-norm);
-
 	&--empty {
-		border: 1px solid var(--signal-danger-minor-1);
-		background: var(--signal-danger-minor-2);
+		border: 1px solid var(--lumo-control-fill-mid);
+		background: var(--lumo-control-fill);
 	}
 
 	&--low {
-		border: 1px solid var(--signal-warning-minor-1, rgb(245 158 11 / 0.25));
-		background: var(--signal-warning-minor-2, rgb(245 158 11 / 0.1));
+		border: 1px solid var(--lumo-control-fill-mid, rgb(245 158 11 / 0.25));
+		background: var(--lumo-control-fill, rgb(245 158 11 / 0.1));
 	}
 }
 
@@ -552,12 +370,11 @@ im.$media-expressions: $media-expressions;
 	&__table {
 		inline-size: 100%;
 		border-collapse: collapse;
-		font-size: rem(14);
 
 		th,
 		td {
-			padding-block: rem(12);
-			border-block-end: 1px solid var(--border-weak);
+			padding-block: var(--lumo-space-12);
+			border-block-end: 1px solid var(--lumo-border);
 		}
 
 		tbody tr:last-child {
@@ -569,9 +386,8 @@ im.$media-expressions: $media-expressions;
 
 		thead th {
 			padding-block-start: 0;
-			color: var(--text-weak);
-			font-size: rem(12);
-			font-weight: normal;
+			color: var(--lumo-glyph-mid);
+			font: var(--lumo-type-label-small);
 			text-align: end;
 
 			code {
@@ -580,15 +396,15 @@ im.$media-expressions: $media-expressions;
 		}
 
 		tbody th {
-			color: var(--text-weak);
-			font-weight: normal;
+			color: var(--lumo-glyph-mid);
+			font: var(--lumo-type-body-medium);
 			text-align: start;
 		}
 
 		td {
-			padding-inline-start: rem(16);
-			color: var(--text-norm);
-			font-weight: 600;
+			padding-inline-start: var(--lumo-space-16);
+			color: var(--lumo-glyph);
+			font: var(--lumo-type-title-small);
 			font-variant-numeric: tabular-nums;
 			text-align: end;
 			white-space: nowrap;
@@ -598,30 +414,23 @@ im.$media-expressions: $media-expressions;
 
 .api-usage-settings-fields {
 	display: grid;
-	gap: rem(12);
 }
 
 .api-usage-settings-field {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) rem(160);
-	gap: rem(16);
+	gap: var(--lumo-space-16);
 	align-items: center;
-	color: var(--text-norm);
-	font-size: rem(14);
 
 	@include im.media('<=small') {
 		grid-template-columns: minmax(0, 1fr);
-		gap: rem(6);
+		gap: var(--lumo-space-6);
 	}
 }
 
 .api-usage-settings-summary {
-	padding-block: rem(10);
 	padding-inline: rem(14);
-	border: 1px solid var(--interaction-norm-minor-1);
-	border-radius: rem(8);
-	color: var(--interaction-norm);
-	background: var(--interaction-norm-minor-2);
+	border: 1px solid var(--lumo-control-fill-mid);
 }
 
 .api-usage-overview-section,
@@ -630,7 +439,7 @@ im.$media-expressions: $media-expressions;
 	box-shadow: 0 rem(1) rem(3) rgb(0 0 0 / 0.04);
 
 	@include im.media('<=small') {
-		padding: rem(16);
+		padding: var(--lumo-space-16);
 	}
 }
 
@@ -655,13 +464,10 @@ im.$media-expressions: $media-expressions;
 
 .api-usage-empty {
 	min-block-size: rem(180);
-	padding: rem(24);
 
 	&__icon {
 		inline-size: rem(42);
 		block-size: rem(42);
-		color: var(--interaction-norm);
-		background: var(--interaction-norm-minor-2);
 	}
 }
 
@@ -674,7 +480,6 @@ im.$media-expressions: $media-expressions;
 .api-usage-metrics {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: rem(10);
 
 	@include im.media('<=medium') {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -686,18 +491,14 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-usage-metric {
-	background: linear-gradient(145deg, var(--background-norm), var(--background-weak));
+	background: linear-gradient(145deg, var(--lumo-panel), var(--lumo-control-fill));
 
 	&__icon {
 		inline-size: rem(34);
 		block-size: rem(34);
-		color: var(--interaction-norm);
-		background: var(--interaction-norm-minor-2);
 	}
 
 	&__value {
-		font-size: rem(19);
-		line-height: 1.15;
 		font-variant-numeric: tabular-nums;
 	}
 }
@@ -705,7 +506,6 @@ im.$media-expressions: $media-expressions;
 .api-usage-models-grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: rem(10);
 
 	@include im.media('<=small') {
 		grid-template-columns: 1fr;
@@ -714,63 +514,42 @@ im.$media-expressions: $media-expressions;
 
 .api-usage-model {
 	padding: rem(13);
-	background: var(--background-weak);
 
 	&__name {
 		padding-block: rem(3);
-		padding-inline: rem(8);
 		border-radius: 99px;
 		font-family: monospace;
-		font-size: rem(11);
-		font-weight: bold;
 
 		&--lumo-lite {
-			color: var(--signal-success);
-			background: var(--signal-success-minor-2, rgb(16 185 129 / 0.1));
+			color: var(--lumo-signal-success);
+			background: var(--lumo-control-fill, rgb(16 185 129 / 0.1));
 		}
 
 		&--lumo-max {
-			color: var(--interaction-norm);
-			background: var(--interaction-norm-minor-2);
+			color: var(--lumo-glyph-brand-text);
+			background: var(--lumo-control-fill);
 		}
 	}
 
 	&__stats {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: rem(8);
 
 		span {
-			color: var(--text-weak);
-			font-size: rem(10);
+			color: var(--lumo-glyph-mid);
+			font: var(--lumo-type-label-small);
 		}
 
 		strong {
-			color: var(--text-norm);
-			font-size: rem(12);
+			color: var(--lumo-glyph);
+			font: var(--lumo-type-label-small);
 			font-variant-numeric: tabular-nums;
 		}
 	}
 
-	&__rate {
-		color: var(--text-hint);
-		font-size: rem(10);
-		line-height: 1.3;
-	}
-
 	&__rates-note {
-		margin-block: rem(12) 0;
-		margin-inline: 0;
-		padding-block-start: rem(10);
-		border-block-start: 1px dashed var(--border-norm);
-		color: var(--text-hint);
-		font-size: rem(10);
+		border-block-start: 1px dashed var(--lumo-border);
 	}
-}
-
-.api-usage-chart-card {
-	padding: 0;
-	background: transparent;
 }
 
 .api-usage-main-chart {
@@ -778,8 +557,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .api-usage-chart-legend {
-	color: var(--text-weak);
-	font-size: rem(11);
+	font: var(--lumo-type-label-small);
 
 	span {
 		&::before {
@@ -794,55 +572,43 @@ im.$media-expressions: $media-expressions;
 
 .api-usage-model-filter {
 	min-inline-size: 0;
-	margin: 0;
 	border: 0;
 	padding: rem(3);
-	border-radius: rem(8);
-	background: var(--background-weak);
 
 	button {
 		padding-block: rem(5);
-		padding-inline: rem(8);
+		padding-inline: var(--lumo-space-8);
 		border: 0;
 		border-radius: rem(6);
-		color: var(--text-weak);
+		color: var(--lumo-glyph-mid);
 		background: transparent;
 		cursor: pointer;
-		font-family: monospace;
-		font-size: rem(10);
+		font: var(--lumo-type-label-small);
+		font-family: var(--lumo-font-mono);
 		white-space: nowrap;
 
 		&[aria-pressed='true'] {
-			color: var(--text-norm);
-			background: var(--background-norm);
+			color: var(--lumo-glyph);
+			background: var(--lumo-panel);
 			box-shadow: 0 rem(1) rem(3) rgb(0 0 0 / 0.08);
 			font-weight: bold;
 		}
 
 		&:focus-visible {
-			outline: 2px solid var(--focus-ring, var(--interaction-norm));
+			outline: 2px solid var(--lumo-control-border-focus, var(--lumo-control-brand-fill));
 			outline-offset: 1px;
 		}
 	}
 
 	&--sources button {
+		font: var(--lumo-type-label-small);
 		font-family: inherit;
-		font-size: rem(11);
 	}
 }
 
 .api-usage-chart-tooltip {
-	padding-block: rem(10);
-	padding-inline: rem(12);
-	border: 1px solid var(--border-norm);
-	border-radius: rem(8);
-	background: var(--background-norm);
-	box-shadow: 0 rem(8) rem(24) rgb(0 0 0 / 0.12);
-	color: var(--text-weak);
-	font-size: rem(11);
-
 	strong {
-		color: var(--text-norm);
+		color: var(--lumo-glyph);
 	}
 }
 
@@ -853,40 +619,32 @@ im.$media-expressions: $media-expressions;
 
 .api-usage-member-list {
 	display: grid;
-	gap: rem(10);
-
-	&__empty {
-		padding: rem(28);
-		color: var(--text-weak);
-	}
 }
 
 .api-usage-member-card {
 	min-inline-size: 0;
 	overflow: hidden;
-	background: var(--background-norm);
 
 	&__header {
 		padding-block: rem(13);
 		padding-inline: rem(14);
-		background: var(--background-weak);
 
 		strong {
-			color: var(--text-norm);
+			color: var(--lumo-glyph);
 		}
 
 		small {
-			color: var(--text-weak);
+			color: var(--lumo-glyph-mid);
 		}
 	}
 
 	&__total {
 		small {
-			font-size: rem(10);
+			font: var(--lumo-type-label-small);
 		}
 
 		strong {
-			font-size: rem(14);
+			font: var(--lumo-type-title-small);
 			font-variant-numeric: tabular-nums;
 		}
 	}
@@ -899,35 +657,27 @@ im.$media-expressions: $media-expressions;
 .api-usage-member-avatar {
 	inline-size: rem(32);
 	block-size: rem(32);
-	color: var(--interaction-norm);
-	background: var(--interaction-norm-minor-2);
 	font-weight: bold;
-}
-
-.api-usage-access-label {
-	color: var(--text-weak);
-	font-size: rem(11);
 }
 
 .api-usage-credit-balance {
 	min-inline-size: rem(110);
 
 	> span {
-		color: var(--text-weak);
-		font-size: rem(12);
-		font-weight: 600;
+		color: var(--lumo-glyph-mid);
+		font: var(--lumo-type-label-small);
 	}
 
 	.api-usage-balance-amount {
 		margin-block: rem(3);
-		color: var(--text-norm);
+		color: var(--lumo-glyph);
 		font-size: rem(40);
 		font-weight: bold;
 		line-height: 1.1;
 	}
 
 	small {
-		font-size: rem(12);
+		font: var(--lumo-type-label-small);
 	}
 }
 
@@ -945,4 +695,3 @@ im.$media-expressions: $media-expressions;
 		min-inline-size: 0;
 	}
 }
-

@@ -97,7 +97,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     return (
         <>
             <LumoLayoutWithDrawer header={{ component: isGuest ? <PublicHeader /> : null }} drawer={{ disabled: true }}>
-                <div className="main-container-component rounded-xl flex flex-column flex-nowrap flex-1">
+                <div className="main-container-component flex flex-column flex-nowrap flex-1 radius-16">
                     <div
                         className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0 main-container-content"
                         style={{
@@ -105,7 +105,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             '--lg-max-w-custom': '43rem',
                         }}
                     >
-                        <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
+                        <div className="lumo-welcome-section flex flex-column items-center w-full text-center">
                             <LumoCatAnimation isGhostMode={isGhostChatMode} />
                             <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
                         </div>

@@ -31,7 +31,8 @@ export const MoveToProjectModal = ({ conversation, ...modalProps }: MoveToProjec
             <ModalTwoHeader title={c('collider_2025:Title').t`Move to project`} />
             <ModalTwoContent>
                 {availableProjects.length === 0 ? (
-                    <p className="m-0 color-weak">{c('collider_2025:Info').t`You don't have any other projects yet.`}</p>
+                    <p className="m-0 lumo-body-medium lumo-color-glyph-mid">{c('collider_2025:Info')
+                        .t`You don't have any other projects yet.`}</p>
                 ) : (
                     <ul className="unstyled m-0 flex flex-column gap-1">
                         {availableProjects.map((project) => (

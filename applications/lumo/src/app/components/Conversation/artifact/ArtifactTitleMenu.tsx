@@ -97,7 +97,7 @@ export const ArtifactTitleMenu = ({
                                 key={version.messageId}
                                 className={clsx(
                                     'text-left flex flex-nowrap items-center gap-3',
-                                    isSelected && 'bg-weak'
+                                    isSelected && 'lumo-bg-control-fill'
                                 )}
                                 aria-current={isSelected ? 'true' : undefined}
                                 title={`${description} · ${time}`}
@@ -108,9 +108,9 @@ export const ArtifactTitleMenu = ({
                                 }}
                             >
                                 <span className="shrink-0 w-custom flex" style={{ '--w-custom': '1rem' }}>
-                                    {isSelected && <IcCheckmark size={4} className="color-primary" />}
+                                    {isSelected && <IcCheckmark size={4} className="lumo-color-glyph-brand-text" />}
                                 </span>
-                                <span className="flex flex-nowrap items-center min-w-0 color-norm">
+                                <span className="flex flex-nowrap items-center min-w-0 lumo-color-glyph">
                                     <span className="shrink-0">{`v${index + 1}`}&nbsp;·&nbsp;</span>
                                     <span className="flex-1 text-ellipsis" dir="auto">
                                         {versionTitle}
@@ -119,7 +119,7 @@ export const ArtifactTitleMenu = ({
                                         <span className="sr-only">{` ${c('collider_2025:Info').t`(latest)`}`}</span>
                                     )}
                                 </span>
-                                <span className="shrink-0 text-sm color-hint">
+                                <span className="shrink-0 lumo-body-small lumo-color-glyph-mid">
                                     {getArtifactVersionMeta(version, now)}
                                 </span>
                             </DropdownMenuButton>
@@ -137,7 +137,7 @@ export const ArtifactTitleMenu = ({
                 shape="ghost"
                 color="weak"
                 size="small"
-                className="artifact-btn flex flex-row flex-nowrap items-center gap-1 min-w-0 text-left color-norm"
+                className="artifact-btn flex flex-row flex-nowrap items-center gap-1 min-w-0 text-left lumo-color-glyph"
                 aria-haspopup="menu"
                 aria-expanded={isOpen}
                 title={c('collider_2025:Action').t`Versions and actions`}
@@ -148,11 +148,11 @@ export const ArtifactTitleMenu = ({
                     toggle();
                 }}
             >
-                <span className="text-semibold text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
+                <span className="lumo-label-large text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
                     <span dir="auto">{title}</span>
-                    {typeLabel && <span className="color-hint font-normal">{` · ${typeLabel}`}</span>}
+                    {typeLabel && <span className="lumo-color-glyph-mid">{` · ${typeLabel}`}</span>}
                 </span>
-                <LumoIcon name="ChevronDown" size={16} className="shrink-0 color-weak" />
+                <LumoIcon name="ChevronDown" size={16} className="shrink-0 lumo-color-glyph-mid" />
             </Button>
             <ArtifactActionsDropdown
                 anchorRef={anchorRef}

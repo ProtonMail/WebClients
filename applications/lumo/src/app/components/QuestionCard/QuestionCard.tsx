@@ -37,17 +37,17 @@ export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
         return (
             <section
                 aria-labelledby={`${id}-title`}
-                className="question-card question-card--minimized flex flex-nowrap items-center w-full p-2 pl-4 rounded-xl bg-norm"
+                className="question-card border lumo-border-control question-card--minimized flex flex-nowrap items-center w-full p-2 pl-4 rounded-xl bg-norm"
             >
                 <LumoIcon
                     aria-hidden="true"
-                    className="shrink-0 mr-2 color-primary"
+                    className="shrink-0 mr-2 lumo-color-glyph-brand-text"
                     name="ClipboardPen"
                     size={14}
                     strokeWidth={1.4}
                 />
                 <span className="text-ellipsis">
-                    <span className="mr-2 text-sm">
+                    <span className="mr-2 lumo-body-small">
                         {
                             // translator: Status on a minimized card. The wording depends on how many questions the card contains.
                             c('collider_2025:Status').ngettext(
@@ -59,7 +59,7 @@ export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
                     </span>
                     <span
                         id={`${id}-title`}
-                        className="flex-1 min-w-0 mr-3 text-sm color-weak"
+                        className="flex-1 min-w-0 mr-3 lumo-body-medium lumo-color-glyph-mid"
                         dir="auto"
                         title={question.title}
                     >
@@ -119,14 +119,14 @@ export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
     return (
         <section
             aria-labelledby={`${id}-title`}
-            className="question-card flex flex-column flex-nowrap w-full rounded-xl bg-norm"
+            className="question-card border lumo-border-control flex flex-column flex-nowrap w-full radius-16 lumo-bg-panel"
         >
             {/* Header */}
             <div className="flex flex-nowrap items-start gap-3 p-4 pb-2 pl-5">
                 <h3
                     ref={titleRef}
                     dir="auto"
-                    className="question-card__title flex-1 min-w-0 m-0 text-rg text-semibold"
+                    className="question-card__title flex-1 min-w-0 m-0 lumo-title-small"
                     id={`${id}-title`}
                     tabIndex={-1}
                     style={{
@@ -145,7 +145,7 @@ export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
                     <Button
                         // translator: Button to minimize the question card while keeping draft answers.
                         aria-label={c('collider_2025:Action').t`Minimize questions`}
-                        className="p-0 color-weak"
+                        className="p-0 lumo-color-glyph-mid"
                         icon
                         shape="ghost"
                         size="small"
@@ -170,8 +170,8 @@ export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
             </Scroll>
 
             {/* Footer */}
-            <div className="flex flex-nowrap items-center gap-2 p-3 pl-5 border-top border-weak">
-                <span aria-atomic="true" aria-live="polite" className="flex-1 text-xs color-hint">
+            <div className="flex flex-nowrap items-center gap-2 p-3 pl-5 border-top lumo-border">
+                <span aria-atomic="true" aria-live="polite" className="flex-1 lumo-body-small lumo-color-glyph-mid">
                     {adapter.renderStatus(draft)}
                 </span>
                 <Button size="small" type="button" onClick={() => advance(true)}>

@@ -37,7 +37,7 @@ export const QuestionCardStepper = ({ currentIndex, onNext, onPrevious, total }:
             >
                 <LumoIcon aria-hidden="true" name="ChevronLeft" size={14} strokeWidth={1.4} />
             </Button>
-            <span className="text-sm color-weak">
+            <span className="lumo-body-small lumo-color-glyph-mid">
                 {
                     // translator: Progress through a set of questions. ${current} is the current question number; ${total} is the total number of questions.
                     c('collider_2025:Label').t`${current} of ${total}`

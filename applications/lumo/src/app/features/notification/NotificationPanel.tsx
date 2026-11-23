@@ -69,13 +69,13 @@ export default function NotificationPanel({
         <>
             <div
                 className={clsx(
-                    'notification-panel border border-weak',
+                    'notification-panel border lumo-border radius-12 lumo-bg-panel',
                     exiting ? 'notif-exit' : 'notif-enter',
                     isCoveredByNativeComposer && 'notification-panel--native-composer'
                 )}
             >
                 <button
-                    className="notif-close"
+                    className="notif-close py-0.5 px-1 radius-4 lumo-color-glyph-mid"
                     onClick={finishDismiss}
                     aria-label={
                         // translator: Accessible button label for closing a notification.
@@ -88,19 +88,23 @@ export default function NotificationPanel({
                 <div className="flex flex-row flex-nowrap gap-3 items-start">
                     <div style={{ flex: 1, minWidth: 0 }}>
                         <div className="flex flex-row flex-nowrap gap-2 items-center mb-1">
-                            <span className="notification-panel-title">{title}</span>
+                            <span className="notification-panel-title lumo-label-medium lumo-color-glyph">{title}</span>
                             {showNewBadge && (
-                                <span className="notification-panel-title-new">{c('collider_2025: Badge').t`New`}</span>
+                                <span className="notification-panel-title-new radius-4 lumo-label-small lumo-color-glyph-brand-text">{c(
+                                    'collider_2025: Badge'
+                                ).t`New`}</span>
                             )}
                         </div>
 
-                        <p className="notification-panel-text">{text}</p>
+                        <p className="notification-panel-text mt-0 mb-3 mx-0 lumo-body-small lumo-color-glyph-mid">
+                            {text}
+                        </p>
 
                         <div className="flex flex-row flex-nowrap gap-2">
                             {onAction ? (
                                 <button
                                     type="button"
-                                    className="notif-action"
+                                    className="notif-action radius-8 lumo-label-medium lumo-color-control-brand-text lumo-bg-control-brand-fill"
                                     id="notification-panel-action"
                                     onClick={handleAction}
                                 >
@@ -108,7 +112,7 @@ export default function NotificationPanel({
                                 </button>
                             ) : (
                                 <a
-                                    className="notif-action"
+                                    className="notif-action radius-8 lumo-label-medium lumo-color-control-brand-text lumo-bg-control-brand-fill"
                                     id="notification-panel-action"
                                     href={actionUrl}
                                     target="_blank"

@@ -1,5 +1,3 @@
-@use '~@proton/styles/scss/lib/rem' as *;
-
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 
@@ -26,41 +24,31 @@ im.$media-expressions: $media-expressions;
 .gallery-tab-toggle {
 	display: inline-flex;
 	align-items: center;
-	gap: 4px;
-	background: var(--background-strong);
-	border-radius: 9999px;
 	padding-block: 3px;
 	padding-inline: 3px;
 }
 
 .gallery-tab-toggle__btn {
-	padding-block: 6px;
-	padding-inline: 20px;
-	border-radius: 9999px;
 	border: none;
 	background: transparent;
-	font-size: rem(14);
-	font-weight: 500;
-	color: var(--text-weak);
 	cursor: pointer;
 	transition:
-		background 0.15s,
-		color 0.15s,
-		font-weight 0.1s;
+		background var(--lumo-duration-150) var(--lumo-easing-standard),
+		color var(--lumo-duration-150) var(--lumo-easing-standard),
+		font-weight var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&--active {
-		background: var(--background-norm);
-		color: var(--text-norm);
-		font-weight: 600;
+		background: var(--lumo-panel);
+		color: var(--lumo-glyph);
 		box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
 	}
 
 	&:hover:not(&--active) {
-		color: var(--text-norm);
+		color: var(--lumo-glyph);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -81,7 +69,7 @@ im.$media-expressions: $media-expressions;
 	min-block-size: 0;
 
 	.gallery-inner {
-		padding-block-end: 16px;
+		padding-block-end: var(--lumo-space-16);
 	}
 }
 
@@ -92,9 +80,6 @@ im.$media-expressions: $media-expressions;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 4px;
-	padding-block: 32px;
-	padding-inline: 24px;
 	block-size: 50%;
 }
 
@@ -117,7 +102,7 @@ im.$media-expressions: $media-expressions;
 // 	text-align: center;
 
 // 	// Gradient text using brand colours
-// 	background: linear-gradient(125deg, var(--primary) 10%, #9b72f7 90%);
+// 	background: linear-gradient(125deg, var(--lumo-control-brand-fill) 10%, #9b72f7 90%);
 
 // 	// stylelint-disable-next-line
 // 	-webkit-background-clip: text;
@@ -129,16 +114,8 @@ im.$media-expressions: $media-expressions;
 
 // ── Explore grid (appended inside the main scroll container) ──────────────────
 
-.gallery-explore {
-	padding-block: 4px 32px;
-}
-
 .gallery-explore__title {
 	text-align: center;
-	font-size: 1rem;
-	font-weight: 600;
-	color: var(--text-norm);
-	margin-block: 0 16px;
 }
 
 // ── Bottom panel (suggestions + composer, always visible) ─────────────────────
@@ -147,28 +124,22 @@ im.$media-expressions: $media-expressions;
 	flex-shrink: 0;
 	inset-block-end: 0;
 
-	// ensure background color is norm
-	.lumo-input-container {
-		background-color: var(--background-norm);
-	}
-
 	.gallery-inner {
-		padding-block: 14px 16px;
-		gap: 12px;
+		padding-block: 14px var(--lumo-space-16);
+		gap: var(--lumo-space-12);
 	}
 }
 
 .gallery-inner {
 	max-inline-size: 680px;
-	margin-inline: auto;
-	padding-inline: 24px;
+	padding-inline: var(--lumo-space-24);
 	display: flex;
 	flex-direction: column;
 	gap: 28px;
 
 	@include im.media('<=small') {
-		padding-inline: 16px;
-		gap: 20px;
+		padding-inline: var(--lumo-space-16);
+		gap: var(--lumo-space-20);
 	}
 
 	&--wide {
@@ -177,7 +148,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .gallery-created-scroll .gallery-inner {
-	padding-block: 16px var(--gallery-scroll-pb, 32px);
+	padding-block: var(--lumo-space-16) var(--gallery-scroll-pb, var(--lumo-space-32));
 	position: relative;
 
 	@include im.media('<=small') {
@@ -204,7 +175,6 @@ im.$media-expressions: $media-expressions;
 .gallery-created {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
 }
 
 .gallery-loading,
@@ -213,13 +183,7 @@ im.$media-expressions: $media-expressions;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding-block: 32px;
-	gap: 12px;
-	color: var(--text-weak);
-}
-
-.gallery-error__icon {
-	color: var(--signal-warning);
+	color: var(--lumo-glyph-mid);
 }
 
 // Masonry: GalleryMasonryGrid positions the items and sets the height from these two properties
@@ -260,20 +224,18 @@ im.$media-expressions: $media-expressions;
 	border-radius: 10px;
 	overflow: hidden;
 	cursor: pointer;
-	background-color: var(--background-strong);
-	border: 1px solid var(--border-weak);
 	transition:
-		transform 0.15s ease,
-		box-shadow 0.15s ease;
+		transform var(--lumo-duration-150) var(--lumo-easing-standard),
+		box-shadow var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:hover {
 		transform: scale(1.02);
 		box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
-		border-color: var(--border-norm);
+		border-color: var(--lumo-border);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 
@@ -309,10 +271,8 @@ im.$media-expressions: $media-expressions;
 	display: flex;
 	align-items: flex-end;
 	justify-content: space-between;
-	padding-block: 10px;
-	padding-inline: 10px;
 	opacity: 0;
-	animation: gallery-fade-in 0.15s ease forwards;
+	animation: gallery-fade-in var(--lumo-duration-150) var(--lumo-easing-enter) forwards;
 }
 
 @keyframes gallery-fade-in {
@@ -322,14 +282,11 @@ im.$media-expressions: $media-expressions;
 }
 
 .gallery-card__date {
-	font-size: rem(11);
 	color: rgb(255 255 255 / 0.9);
-	font-weight: 500;
 }
 
 .gallery-card__actions {
 	display: flex;
-	gap: 6px;
 }
 
 .gallery-card__action-btn {
@@ -344,7 +301,7 @@ im.$media-expressions: $media-expressions;
 	color: white;
 	cursor: pointer;
 	backdrop-filter: blur(4px);
-	transition: background 0.12s;
+	transition: background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
 		background: rgb(255 255 255 / 0.35);
@@ -356,7 +313,6 @@ im.$media-expressions: $media-expressions;
 .gallery-load-more {
 	display: flex;
 	justify-content: center;
-	padding-block: 4px 8px;
 }
 
 // ── Discover list ─────────────────────────────────────────────────────────────
@@ -385,21 +341,21 @@ im.$media-expressions: $media-expressions;
 	inline-size: 30px;
 	block-size: 30px;
 	border-radius: 50%;
-	border: 1px solid var(--border-weak);
-	background: var(--background-norm);
-	color: var(--text-hint);
+	border: 1px solid var(--lumo-border);
+	background: var(--lumo-panel);
+	color: var(--lumo-glyph-low);
 	cursor: pointer;
 	transition:
-		color 0.12s,
-		background 0.12s;
+		color var(--lumo-duration-100) var(--lumo-easing-standard),
+		background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
-		color: var(--text-norm);
-		background: var(--background-strong);
+		color: var(--lumo-glyph);
+		background: var(--lumo-control-fill-mid);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -407,11 +363,11 @@ im.$media-expressions: $media-expressions;
 .inspiration-discover__grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 12px 16px;
+	gap: var(--lumo-space-12) var(--lumo-space-16);
 
 	@include im.media('<=xsmall') {
 		grid-template-columns: 1fr;
-		gap: 4px 16px;
+		gap: var(--lumo-space-4) var(--lumo-space-16);
 	}
 }
 
@@ -427,14 +383,14 @@ im.$media-expressions: $media-expressions;
 
 	// cursor: pointer;
 	// text-align: start;
-	transition: background 0.12s;
+	transition: background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
-		background: var(--interaction-default-hover);
+		background: var(--lumo-control-fill);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -443,9 +399,9 @@ im.$media-expressions: $media-expressions;
 	flex-shrink: 0;
 	inline-size: 70px;
 	block-size: 70px;
-	border-radius: 8px;
+	border-radius: var(--lumo-radius-8);
 	overflow: hidden;
-	background: var(--background-strong);
+	background: var(--lumo-control-fill-mid);
 }
 
 .inspiration-discover__thumb {
@@ -453,13 +409,6 @@ im.$media-expressions: $media-expressions;
 	block-size: 100%;
 	object-fit: cover;
 	display: block;
-}
-
-.inspiration-discover__text {
-	font-size: rem(13);
-	font-weight: 500;
-	color: var(--text-norm);
-	line-height: 1.4;
 }
 
 // ── Lightbox ──────────────────────────────────────────────────────────────────
@@ -472,7 +421,7 @@ im.$media-expressions: $media-expressions;
 	align-items: center;
 	justify-content: center;
 	z-index: 9999;
-	animation: gallery-fade-in 0.15s ease;
+	animation: gallery-fade-in var(--lumo-duration-150) var(--lumo-easing-enter);
 }
 
 .gallery-lightbox__content {
@@ -486,7 +435,7 @@ im.$media-expressions: $media-expressions;
 	max-inline-size: 90vw;
 	max-block-size: 85vh;
 	object-fit: contain;
-	border-radius: 8px;
+	border-radius: var(--lumo-radius-8);
 	box-shadow: 0 24px 80px rgb(0 0 0 / 0.5);
 }
 
@@ -495,7 +444,7 @@ im.$media-expressions: $media-expressions;
 	inset-block-start: 12px;
 	inset-inline-end: 12px;
 	display: flex;
-	gap: 8px;
+	gap: var(--lumo-space-8);
 }
 
 .gallery-lightbox__btn {
@@ -504,13 +453,13 @@ im.$media-expressions: $media-expressions;
 	justify-content: center;
 	inline-size: 36px;
 	block-size: 36px;
-	border-radius: 8px;
+	border-radius: var(--lumo-radius-8);
 	border: none;
 	background: rgb(0 0 0 / 0.5);
 	color: white;
 	cursor: pointer;
 	backdrop-filter: blur(8px);
-	transition: background 0.12s;
+	transition: background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
 		background: rgb(0 0 0 / 0.75);

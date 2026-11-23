@@ -38,15 +38,15 @@ export const ScheduleTemplateGrid = ({ onSelect }: ScheduleTemplateGridProps) =>
 
     return (
         <div className="schedule-template-grid flex flex-column flex-nowrap gap-4 w-full" ref={containerRef}>
-            <hr className="m-0 mb-4 border-top border-weak" />
+            <hr className="m-0 mb-4 border-top lumo-border" />
             <div className="flex items-center justify-space-between gap-2">
-                <h3 className={clsx('text-sm text-semibold color-hint')} id={headerId}>
+                <h3 className={clsx('lumo-label-small lumo-color-glyph-mid')} id={headerId}>
                     {templatesVisible
                         ? c('collider_2025:Title').t`Start from a template`
                         : c('collider_2025:Title').t`Templates hidden`}
                 </h3>
                 <button
-                    className="schedule-template-grid__toggle p-0 border border-transparent rounded-sm text-sm color-weak bg-transparent cursor-pointer interactive"
+                    className="schedule-template-grid__toggle p-0 border border-transparent radius-4 lumo-body-small lumo-color-glyph-mid bg-transparent cursor-pointer interactive"
                     onClick={() => setTemplatesVisible((visible) => !visible)}
                     type="button"
                 >

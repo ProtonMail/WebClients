@@ -29,7 +29,7 @@ interface SkillListProps {
 }
 
 const SkillListLoadingView = () => (
-    <div className="text-sm color-weak">
+    <div className="lumo-body-small lumo-color-glyph-mid">
         {
             // translator: Loading status while retrieving skills for a scheduled task.
             c('collider_2025:Info').t`Loading skills`
@@ -41,7 +41,7 @@ const SkillListLoadingView = () => (
 const SkillListErrorView = () => {
     const dispatch = useLumoDispatch();
     return (
-        <div role="alert" className="text-sm color-danger">
+        <div role="alert" className="lumo-body-small lumo-color-signal-danger">
             {
                 // translator: Error shown when the scheduled task's skills could not be retrieved.
                 c('collider_2025:Error').t`Could not load skills`
@@ -97,7 +97,7 @@ export const SkillList = ({ value, onChange, headerClassName, rows }: SkillListP
 
     return (
         <section className="flex flex-column flex-nowrap gap-3" aria-labelledby={labelId}>
-            <span hidden={rows} id={labelId} className={clsx('text-semibold', headerClassName)}>
+            <span hidden={rows} id={labelId} className={clsx('lumo-title-small', headerClassName)}>
                 {
                     // translator: Heading or accessible list name for skills and sub-skills in the scheduled task editor or side panel.
                     c('collider_2025:Label').t`Skills`
@@ -134,7 +134,7 @@ export const SkillList = ({ value, onChange, headerClassName, rows }: SkillListP
             {loading && <SkillListLoadingView />}
             {error && <SkillListErrorView />}
             {hasUnavailable && !rows && (
-                <Banner variant="warning" className="text-sm">
+                <Banner variant="warning" className="lumo-body-small">
                     {
                         // translator: Warning that selected skills cannot be used by the scheduled task; removing one from the task does not delete the skill.
                         c('collider_2025:Info')
@@ -143,7 +143,7 @@ export const SkillList = ({ value, onChange, headerClassName, rows }: SkillListP
                 </Banner>
             )}
             {onChange && !rows && (
-                <p className="m-0 text-sm color-hint">
+                <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                     {
                         // translator: Helper text below the task's skill picker. ${LUMO_SHORT_APP_NAME} is the product name; selected skills apply automatically, while other enabled skills remain available on demand.
                         c('collider_2025:Info').t`${LUMO_SHORT_APP_NAME} uses the skills you add here automatically.`

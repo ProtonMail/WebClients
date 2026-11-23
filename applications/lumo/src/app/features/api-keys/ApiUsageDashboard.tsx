@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
@@ -106,7 +105,7 @@ const ApiUsageOverviewContent = ({
     const chartDays = getSourceUsageDays(filterRowsBySource(modelRows, selectedSource), dates);
     return (
         <div className="api-usage-overview-content flex flex-column gap-7">
-            <div className="api-usage-metrics">
+            <div className="api-usage-metrics gap-2.5">
                 <ApiUsageMetricCard
                     icon="DollarSign"
                     label={c('collider_2025: Label').t`Balance used`}
@@ -141,17 +140,18 @@ const ApiUsageOverviewContent = ({
                 />
             </div>
 
-            <section className="api-usage-chart-card">
+            <section className="api-usage-chart-card bg-transparent p-0">
                 <div className="api-usage-chart-header flex flex-column items-stretch justify-space-between gap-4 mb-4 md:flex-row md:items-start">
                     <div>
-                        <h4 className="text-sm text-bold color-norm m-0">{c('collider_2025: Title').t`Token usage`}</h4>
-                        <p className="text-xs color-weak m-0 mt-1">
+                        <h4 className="m-0 lumo-label-small lumo-color-glyph">{c('collider_2025: Title')
+                            .t`Token usage`}</h4>
+                        <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                             {c('collider_2025: Info').t`Daily usage by token type`}
                         </p>
                     </div>
                     <div className="flex flex-column items-start gap-3 md:items-end">
                         <div className="flex flex-wrap gap-2">
-                            <fieldset className="api-usage-model-filter api-usage-model-filter--sources flex items-center gap-0.5">
+                            <fieldset className="api-usage-model-filter m-0 api-usage-model-filter--sources flex items-center gap-0.5 radius-8 lumo-bg-control-fill">
                                 <legend className="sr-only">{c('collider_2025: Label')
                                     .t`Filter token usage by source`}</legend>
                                 {(['all', 'api', 'chat'] as const).map((source) => (
@@ -165,7 +165,7 @@ const ApiUsageOverviewContent = ({
                                     </button>
                                 ))}
                             </fieldset>
-                            <fieldset className="api-usage-model-filter flex items-center gap-0.5">
+                            <fieldset className="api-usage-model-filter m-0 flex items-center gap-0.5 radius-8 lumo-bg-control-fill">
                                 <legend className="sr-only">{c('collider_2025: Label')
                                     .t`Filter token usage by model`}</legend>
                                 {(['all', 'lumo-lite', 'lumo-max'] as const).map((model) => (
@@ -194,7 +194,7 @@ const ApiUsageOverviewContent = ({
                 </div>
             </section>
 
-            <div className="api-usage-models-grid">
+            <div className="api-usage-models-grid gap-2.5">
                 {modelUsage.map((usage) => (
                     <ApiUsageModelStats
                         key={usage.model}
@@ -225,21 +225,25 @@ const ApiUsageOverview = ({
     currency: Currency;
 }) => {
     if (isLoading) {
-        return <p className="m-0 text-sm color-weak">{c('collider_2025: Info').t`Loading usage…`}</p>;
+        return <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info').t`Loading usage…`}</p>;
     }
 
     if (error) {
-        return <p className="m-0 text-sm color-weak">{c('collider_2025: Error').t`Could not load usage.`}</p>;
+        return (
+            <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Error')
+                .t`Could not load usage.`}</p>
+        );
     }
 
     if (!hasAnyUsage) {
         return (
-            <div className="api-usage-empty flex flex-column items-center justify-center text-center rounded-lg border border-weak bg-weak">
-                <span className="api-usage-empty__icon flex items-center justify-center rounded-full mb-3">
+            <div className="api-usage-empty p-6 flex flex-column items-center justify-center border lumo-border radius-12 text-center lumo-bg-control-fill">
+                <span className="api-usage-empty__icon flex items-center justify-center mb-3 radius-full lumo-color-glyph-brand-text lumo-bg-control-fill">
                     <LumoIcon name="Activity" size={20} />
                 </span>
-                <h4 className="text-sm text-bold color-norm m-0">{c('collider_2025: Title').t`No API usage yet`}</h4>
-                <p className="text-xs color-weak m-0 mt-1">
+                <h4 className="m-0 lumo-label-small lumo-color-glyph">{c('collider_2025: Title')
+                    .t`No API usage yet`}</h4>
+                <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`Usage data will appear here after the first API request.`}
                 </p>
             </div>
@@ -250,9 +254,10 @@ const ApiUsageOverview = ({
 };
 
 const ApiUsageHeader = ({ isOrgMember }: { isOrgMember: boolean }) => (
-    <header className="api-usage-dashboard-header min-w-0">
-        <h2 className="api-usage-dashboard__title text-bold m-0">{c('collider_2025: Title').t`API usage & balance`}</h2>
-        <p className="api-usage-dashboard__subtitle m-0 mt-1">
+    <header className="pt-2 pb-3 min-w-0">
+        <h2 className="api-usage-dashboard__title m-0 lumo-title-large lumo-color-glyph">{c('collider_2025: Title')
+            .t`API usage & balance`}</h2>
+        <p className="api-usage-dashboard__subtitle m-0 mt-1 lumo-body-large lumo-color-glyph-mid">
             {isOrgMember
                 ? c('collider_2025: Info').t`Monitor your organization's API balance and token usage.`
                 : c('collider_2025: Info').t`Monitor your API balance, tokens, and spending controls.`}
@@ -289,7 +294,7 @@ const ApiBalanceStatusMessage = ({ balance, isOrgMember }: { balance: number; is
 
     return (
         <output
-            className={`api-usage-balance-status api-usage-balance-status--${status} flex flex-nowrap items-center gap-2 rounded-lg text-sm`}
+            className={`api-usage-balance-status py-2 px-3 lumo-color-glyph api-usage-balance-status--${status} flex flex-nowrap items-center gap-2 radius-12 lumo-body-small`}
         >
             <LumoIcon name={status === 'empty' ? 'Pause' : 'TriangleExclamationPoint'} size={14} className="shrink-0" />
             {message}
@@ -328,7 +333,7 @@ const ApiAutoTopUpStatusMessage = ({
 }) => {
     const reasonMessage = getAutoTopUpReasonMessage(reason);
     return (
-        <output className="api-usage-balance-status api-usage-balance-status--low flex flex-nowrap items-center gap-2 rounded-lg text-sm">
+        <output className="api-usage-balance-status py-2 px-3 lumo-color-glyph api-usage-balance-status--low flex flex-nowrap items-center gap-2 radius-12 lumo-body-small">
             <LumoIcon name="TriangleExclamationPoint" size={14} className="shrink-0" />
             <span>
                 {status === 'Failed'
@@ -377,7 +382,7 @@ const ApiBalanceCard = ({
 
     return (
         <section
-            className="api-usage-balance-card flex flex-column rounded-xl border border-weak bg-norm overflow-hidden"
+            className="api-usage-balance-card flex flex-column overflow-hidden border lumo-border radius-16 lumo-bg-panel"
             aria-labelledby="api-usage-balance-label"
         >
             <div className="api-usage-balance-card__main flex flex-column gap-4">
@@ -389,7 +394,7 @@ const ApiBalanceCard = ({
                                 : c('collider_2025: Label').t`Remaining balance`}
                         </span>
                         {balance === undefined ? (
-                            <small className="color-weak">
+                            <small className="lumo-color-glyph-mid">
                                 {isBalanceLoading
                                     ? c('collider_2025: Info').t`Loading balance…`
                                     : c('collider_2025: Info').t`Balance unavailable`}
@@ -399,7 +404,9 @@ const ApiBalanceCard = ({
                                 <Price currency={currency} className="api-usage-balance-amount">
                                     {toCurrencyBaseUnits(balance, currency)}
                                 </Price>
-                                <small className="color-weak">{getBalanceEstimate(balance, averageDailySpend)}</small>
+                                <small className="lumo-color-glyph-mid">
+                                    {getBalanceEstimate(balance, averageDailySpend)}
+                                </small>
                             </>
                         )}
                     </div>
@@ -416,28 +423,31 @@ const ApiBalanceCard = ({
             </div>
 
             {showAutoTopUp && !isOrgMember && (
-                <div className="api-usage-balance-card__settings api-usage-balance-row flex flex-nowrap items-center gap-4">
-                    <span className="api-usage-balance-row__icon relative flex flex-none items-center justify-center rounded-lg">
+                <div className="api-usage-balance-card__settings border-top lumo-border lumo-bg-control-fill py-5 api-usage-balance-row flex flex-nowrap items-center gap-4">
+                    <span className="api-usage-balance-row__icon relative flex flex-none items-center justify-center border lumo-border radius-12 lumo-color-glyph lumo-bg-panel">
                         <LumoIcon name="RefreshCw" size={18} />
                         {autoTopUp.enabled && !autoTopUpStatus && (
-                            <span className="api-usage-balance-row__badge absolute flex items-center justify-center rounded-full">
+                            <span className="api-usage-balance-row__badge lumo-bg-signal-success absolute flex items-center justify-center radius-full">
                                 <LumoIcon name="Check" size={10} strokeWidth={3} />
                             </span>
                         )}
                     </span>
                     <div className="flex flex-column gap-1 flex-1 min-w-0">
-                        <strong className="color-norm">{getAutoTopUpTitle(autoTopUp.enabled, autoTopUpStatus)}</strong>
-                        <span className="text-sm color-weak">
+                        <strong className="lumo-color-glyph">
+                            {getAutoTopUpTitle(autoTopUp.enabled, autoTopUpStatus)}
+                        </strong>
+                        <span className="lumo-body-small lumo-color-glyph-mid">
                             {autoTopUp.enabled
                                 ? getAutoTopUpSummary(autoTopUp, currency)
                                 : c('collider_2025: Info').t`Keep API requests running when your balance gets low.`}
                         </span>
                         {spendingLimitSummary && (
                             <span
-                                className={clsx(
-                                    'text-sm',
-                                    spendingLimitSummary.isLimitReached ? 'color-danger text-semibold' : 'color-weak'
-                                )}
+                                className={
+                                    spendingLimitSummary.isLimitReached
+                                        ? 'lumo-label-medium lumo-color-signal-danger'
+                                        : 'lumo-body-small lumo-color-glyph-mid'
+                                }
                             >
                                 {spendingLimitSummary.text}
                             </span>
@@ -521,7 +531,7 @@ export const ApiUsageDashboard = ({
             aria-label={c('collider_2025: Title').t`API usage dashboard`}
         >
             <ApiUsageHeader isOrgMember={isOrgMember} />
-            <div className="api-usage-account-grid">
+            <div className="api-usage-account-grid gap-4">
                 <ApiBalanceCard
                     balance={displayedCreditBalance}
                     isBalanceLoading={lumoCredits.loading}
@@ -539,11 +549,11 @@ export const ApiUsageDashboard = ({
                 <ApiPayAsYouGoCard />
             </div>
 
-            <section className="api-usage-overview-section w-full min-w-0 bg-norm rounded-xl border border-weak">
+            <section className="api-usage-overview-section w-full min-w-0 border lumo-border radius-16 lumo-bg-panel">
                 <div className="api-usage-period-row flex flex-column items-stretch justify-space-between gap-4 md:flex-row md:items-center">
                     <div>
-                        <h3 className="text-lg text-semibold color-norm m-0">{c('collider_2025: Title').t`Usage`}</h3>
-                        <p className="text-sm color-weak m-0 mt-1">
+                        <h3 className="m-0 lumo-title-medium lumo-color-glyph">{c('collider_2025: Title').t`Usage`}</h3>
+                        <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                             {c('collider_2025: Info').t`Review token usage and balance deductions over time.`}
                         </p>
                     </div>
@@ -585,7 +595,7 @@ export const ApiUsageDashboard = ({
             </section>
 
             {isOrgAdmin && (
-                <section className="api-usage-members-section w-full min-w-0 bg-norm rounded-xl border border-weak">
+                <section className="api-usage-members-section w-full min-w-0 border lumo-border radius-16 lumo-bg-panel">
                     <ApiUsageMembers
                         from={periodDates[0]}
                         to={periodDates.at(-1)}

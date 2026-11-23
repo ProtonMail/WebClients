@@ -1,5 +1,6 @@
 @use './assets/fonts/fonts.css' as *;
 @use '~@proton/styles/scss/proton-lumo' as *;
+@use '~@proton/lumo-ui/styles/lumo-design-system.scss';
 @use './styles/lumo-modal-backdrop' as *;
 
 @use '~@proton/styles/scss/lib/config' as *;
@@ -22,10 +23,11 @@ textarea[dir='auto'] {
 	--optional-font-family: 'Inter', system-ui, sans-serif;
 
 	// Sidebar layout tokens, consumed by LumoSidebar.scss and read back by readSidebarMetrics()
-	// to tell native how wide the sidebar is and how long it animates. Keep the width in px
-	// (not rem()) and the duration in ms.
-	--lumo-sidebar-expanded-width: 300px;
-	--lumo-sidebar-transition-duration: 200ms;
+	// to tell native how wide the sidebar is and how long it animates. Keep the width in px.
+	--lumo-sidebar-expanded-width: 320px;
+	--lumo-sidebar-transition-duration: var(--lumo-duration-200);
+	--lumo-header-icon-button-size: #{rem(38)};
+	--lumo-header-row-size: calc(var(--lumo-header-icon-button-size) + var(--lumo-space-8));
 
 	// Page background before the Lumo theme <style> is injected (index.tsx), which then overrides it.
 	// Values are --background-norm of lumo-light and lumo-dark.
@@ -77,19 +79,24 @@ textarea[dir='auto'] {
 	}
 
 	&.small {
-		font-size: rem(20);
-		line-height: rem(24);
+		font: var(--lumo-type-title-large);
+		font-family: Syne, Inter, system-ui, sans-serif;
+		font-weight: normal;
 		letter-spacing: -0.8px;
+		font-feature-settings: 'ss04';
 	}
 
 	&.medium {
-		font-size: rem(24);
+		font: var(--lumo-type-headline-small);
+		font-family: Syne, Inter, system-ui, sans-serif;
+		font-weight: normal;
 		letter-spacing: -0.96px;
+		font-feature-settings: 'ss04';
 	}
 }
 
 .lumo-welcome-section {
-	transition: opacity 0.3s ease-out;
+	transition: opacity var(--lumo-duration-300) var(--lumo-easing-enter);
 
 	&.is-hidden {
 		opacity: 0;
@@ -103,11 +110,11 @@ textarea[dir='auto'] {
 }
 
 .navigation-link.is-active {
-	color: var(--text-norm) !important;
+	color: var(--lumo-glyph) !important;
 
 	&.navigation-link {
 		// font-weight: 600 !important;
-		border-radius: 8px;
+		border-radius: var(--lumo-radius-12);
 	}
 }
 
@@ -133,7 +140,7 @@ textarea[dir='auto'] {
 
 .chat-container {
 	border-image-slice: 1;
-	border-radius: 1rem;
+	border-radius: var(--lumo-radius-16);
 	background-color: #ffffff0d;
 }
 
@@ -210,11 +217,6 @@ textarea[dir='auto'] {
 	}
 }
 
-.new-label {
-	background-color: #8080ff;
-	color: white;
-}
-
 // Do not delete - used for development layout debugging
 // body::before {
 // 	position: fixed;
@@ -226,90 +228,12 @@ textarea[dir='auto'] {
 // 	z-index: 12000;
 // }
 
-// overrides
-// TOGGLE COMPONENT
-.toggle-container {
-	background-color: var(--background-upsell-toggle) !important;
-
-	&::after {
-		border: none;
-	}
-
-	&::before {
-		background-color: var(--background-upsell-toggle-button);
-		margin-inline-start: 5px;
-		margin-block: auto;
-		inline-size: calc(#{em(24)} - 6px);
-		block-size: calc(#{em(24)} - 6px);
-	}
-
-	.toggle-container-text .toggle-container-img {
-		display: none !important;
-	}
-
-	&--checked {
-		background-color: var(--interaction-norm) !important;
-
-		&::before {
-			background-color: var(--background-upsell-toggle-button);
-
-			// track(em(40)) - base-thumb(em(24)) - em(4) to preserve 5px margin on each side
-			transform: translateX(#{em(40) - em(24) - em(4)});
-
-			@at-root {
-				[dir='rtl'] & {
-					transform: translateX(-#{em(40) - em(24) - em(4)});
-				}
-			}
-		}
-	}
-
-	// Keep Lumo colors for disabled states; base opacity: 0.5 handles the visual fade
-	&--disabled:not(.toggle-container--loading) {
-		background-color: var(--background-upsell-toggle) !important;
-
-		&::before {
-			background-color: var(--background-upsell-toggle-button) !important;
-		}
-
-		&.toggle-container--checked {
-			background-color: var(--interaction-norm) !important;
-		}
-	}
-
-	// No hover state changes
-	&:not(.toggle-container--disabled):hover::before,
-	&:not(.toggle-container--disabled).toggle-container--checked:hover::before {
-		background-color: var(--background-upsell-toggle-button);
-	}
-}
-
-// Dropdown
-
-.dropdown {
-	--selection-background-color: var(--interaction-default-hover);
-	--selection-text-color: var(--interaction-weak-contrast);
-	--border-norm: var(--border-weak);
-
-	box-shadow: 0 4px 28px 0 rgb(0 0 0 / 0.1);
-	padding: 0.25rem;
-	border-radius: var(--border-radius-xl);
-
-	.dropdown-item-button {
-		border-radius: var(--border-radius-md);
-	}
-}
-
 // Button
 
 button {
 	&.--lumo-background {
-		--button-default-background-color: #f5f6fe;
+		--button-default-background-color: var(--lumo-page);
 
 		background-color: var(--button-default-background-color);
 	}
-}
-
-.button-solid-weak {
-	--interaction-weak: var(--interaction-solid-weak-custom);
 }

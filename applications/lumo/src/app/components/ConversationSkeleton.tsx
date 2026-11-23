@@ -32,9 +32,12 @@ const ConversationSkeleton = () => {
                 </div>
             </div>
 
-            {/* Composer skeleton */}
+            {/* Composer placeholder */}
             <div className="mt-4 w-full md:w-2/3 mx-auto max-w-custom" style={{ '--max-w-custom': '46.5rem' }}>
-                <div className="skeleton lumo-input-container w-full h-custom" style={{ '--h-custom': '105px' }}></div>
+                <div
+                    className="lumo-input-container relative w-full h-custom p-1.5 border lumo-border-mid radius-28 lumo-bg-panel-elevated lumo-elevation-1 duration-150 lumo-easing-standard"
+                    style={{ '--h-custom': '105px' }}
+                ></div>
             </div>
         </div>
     );

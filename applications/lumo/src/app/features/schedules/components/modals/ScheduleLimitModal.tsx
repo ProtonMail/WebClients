@@ -38,8 +38,8 @@ export const ScheduleLimitModal = ({
             <ModalTwo {...modalProps} size="small">
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    <p className="mt-0 color-weak">{limitText}</p>
-                    <p className="m-0 color-weak">{upgradePath === 'admin' ? adminText : manageText}</p>
+                    <p className="mt-0 lumo-color-glyph-mid">{limitText}</p>
+                    <p className="m-0 lumo-color-glyph-mid">{upgradePath === 'admin' ? adminText : manageText}</p>
                 </ModalTwoContent>
                 <ModalTwoFooter className="justify-end">
                     <Button color="norm" onClick={modalProps.onClose}>{c('collider_2025:Action').t`Got it`}</Button>

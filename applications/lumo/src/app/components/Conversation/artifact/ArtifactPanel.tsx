@@ -179,7 +179,7 @@ export const PanelHeader = ({
             return (
                 <span className="flex-1 min-w-0 ml-1">
                     <span
-                        className="artifact-panel-title-skeleton rectangle-skeleton rounded inline-block"
+                        className="artifact-panel-title-skeleton rectangle-skeleton inline-block radius-8"
                         style={{ width: '8rem', height: '0.875rem' }}
                     />
                 </span>
@@ -206,15 +206,15 @@ export const PanelHeader = ({
             );
         }
         return (
-            <span className="text-semibold text-ellipsis overflow-hidden whitespace-nowrap min-w-0 flex-1 color-norm ml-1">
+            <span className="flex-1 min-w-0 ml-1 overflow-hidden lumo-title-small text-ellipsis whitespace-nowrap lumo-color-glyph">
                 <span dir="auto">{title}</span>
-                {typeLabel && <span className="color-hint font-normal">{` · ${typeLabel}`}</span>}
+                {typeLabel && <span className="lumo-color-glyph-mid">{` · ${typeLabel}`}</span>}
             </span>
         );
     };
 
     return (
-        <div className="shrink-0 flex flex-row flex-nowrap items-center gap-3 py-2 px-3 border-bottom border-weak bg-norm w-full min-w-0 overflow-hidden">
+        <div className="flex flex-row flex-nowrap shrink-0 items-center gap-3 w-full min-w-0 px-3 py-2 overflow-hidden border-bottom lumo-border lumo-bg-panel">
             <div className="flex flex-row flex-nowrap items-center gap-2 min-w-0 flex-1 overflow-hidden">
                 {isFullscreen && (
                     <div className="artifact-fullscreen-brand shrink-0">
@@ -493,7 +493,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
 
     if (!selectedArtifact && isLoadingPanelOpen) {
         return (
-            <div className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm">
+            <div className="flex flex-column w-full min-w-0 h-full min-h-0 overflow-hidden lumo-bg-panel">
                 <PanelHeader isStreaming onClose={closePanel} layout={layout} onBack={panelBackAction} />
                 <ArtifactPanelLoading />
             </div>
@@ -626,7 +626,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     return (
         // Focusable so ⌘C/Ctrl+C reaches the panel after clicking its content.
         <div
-            className="flex flex-column h-full min-h-0 min-w-0 overflow-hidden w-full bg-norm outline-none"
+            className="outline-none flex flex-column w-full min-w-0 h-full min-h-0 overflow-hidden lumo-bg-panel"
             ref={panelRootRef}
             tabIndex={-1}
         >
@@ -718,7 +718,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         onChange={(e) => {
                             setDraftContent(e.target.value);
                         }}
-                        className="artifact-manual-edit-textarea flex-1 min-h-0 text-sm color-norm bg-norm border-none outline-none--at-all resize-none p-4 overflow-auto"
+                        className="artifact-manual-edit-textarea outline-none--at-all flex-1 min-h-0 p-4 resize-none overflow-auto border-none lumo-body-small lumo-color-glyph lumo-bg-panel"
                         autoFocus
                     />
                 ) : exportingDownload ? (

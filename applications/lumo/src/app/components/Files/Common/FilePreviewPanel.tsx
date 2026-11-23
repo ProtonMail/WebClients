@@ -159,7 +159,8 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
             if (sections.length === 0) {
                 return (
                     <div className="flex flex-column items-center justify-center p-6 text-center">
-                        <p className="text-sm color-weak">{c('collider_2025: Info').t`No data rows found.`}</p>
+                        <p className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
+                            .t`No data rows found.`}</p>
                     </div>
                 );
             }
@@ -177,15 +178,15 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
 
                         return (
                             <div key={`${section.title ?? 'sheet'}-${index}`} className="w-full overflow-auto">
-                                {section.title ? <p className="text-xs font-semibold mb-2">{section.title}</p> : null}
+                                {section.title ? <p className="lumo-label-small mb-2">{section.title}</p> : null}
                                 <table className="border-collapse w-full">
-                                    <thead className="sticky top-0 bg-norm">
+                                    <thead className="sticky top-0 lumo-bg-panel">
                                         <tr>
                                             {headers.map((header, i) => (
                                                 <th
                                                     key={i}
                                                     scope="col"
-                                                    className="border-r border-b border-weak bg-weak p-2 text-left text-xs font-semibold"
+                                                    className="p-2 border-r border-b lumo-border lumo-label-small text-left lumo-bg-control-fill"
                                                     style={{ minInlineSize: '7.5rem' }}
                                                 >
                                                     {header}
@@ -199,7 +200,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
                                                 {headers.map((_, ci) => (
                                                     <td
                                                         key={ci}
-                                                        className="border-r border-b border-weak p-2 text-xs"
+                                                        className="p-2 border-r border-b lumo-border lumo-body-small"
                                                         style={{ minInlineSize: '7.5rem' }}
                                                     >
                                                         {row[ci] || ''}
@@ -217,7 +218,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
         } catch {
             return (
                 <div className="flex flex-column items-center justify-center p-6 text-center">
-                    <p className="text-sm color-weak">
+                    <p className="lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025: Info').t`Unable to parse this file as a table.`}
                     </p>
                 </div>
@@ -230,7 +231,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
             return (
                 <div className="flex flex-column h-full p-3 gap-2">
                     <textarea
-                        className="flex-1 min-h-0 w-full p-3 border border-weak rounded bg-norm color-norm text-sm font-mono"
+                        className="flex-1 w-full min-h-0 p-3 border lumo-border radius-8 lumo-body-small lumo-font-mono lumo-color-glyph lumo-bg-panel"
                         value={draft}
                         onChange={(e) => setDraft(e.target.value)}
                         spellCheck={false}
@@ -250,16 +251,17 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
         if (isProcessing) {
             return (
                 <div className="flex flex-column items-center justify-center h-full p-6 text-center">
-                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary mb-4" />
-                    <p className="text-sm color-weak">{c('collider_2025: Info').t`Processing file contents...`}</p>
+                    <div className="inline-block w-8 h-8 mb-4 border-b-2 border-primary radius-full animate-spin" />
+                    <p className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
+                        .t`Processing file contents...`}</p>
                 </div>
             );
         }
         if (hasError) {
             return (
                 <div className="flex flex-column items-center justify-center h-full p-6 text-center">
-                    <p className="text-lg mb-2">⚠️</p>
-                    <p className="text-sm color-weak">
+                    <p className="lumo-title-medium mb-2">⚠️</p>
+                    <p className="lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025: Info').t`There was an error processing this file.`}
                     </p>
                 </div>
@@ -268,7 +270,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
         if (isUnsupported) {
             return (
                 <div className="flex flex-column items-center justify-center h-full p-6 text-center">
-                    <p className="text-sm color-weak">
+                    <p className="lumo-body-small lumo-color-glyph-mid">
                         {mimeToHuman(attachment)}{' '}
                         {c('collider_2025: Info').t`files are not supported for content extraction.`}
                     </p>
@@ -281,7 +283,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
                     <img
                         src={imageUrl}
                         alt={attachment.filename}
-                        className="max-w-full max-h-full rounded"
+                        className="max-w-full max-h-full radius-8"
                         style={{ objectFit: 'contain' }}
                     />
                 </div>
@@ -291,8 +293,8 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
             if (wasRemovedFromProjectKnowledge) {
                 return (
                     <div className="flex flex-column items-center justify-center h-full p-6 text-center">
-                        <LumoIcon name="FileX" size={32} className="color-weak mb-3" />
-                        <p className="text-sm color-weak m-0">
+                        <LumoIcon name="FileX" size={32} className="mb-3 lumo-color-glyph-mid" />
+                        <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                             {c('collider_2025: Info').t`This file was removed from project knowledge.`}
                         </p>
                     </div>
@@ -300,8 +302,9 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
             }
             return (
                 <div className="flex flex-column items-center justify-center h-full p-6 text-center">
-                    <LumoIcon name="FileX" size={32} className="color-weak mb-3" />
-                    <p className="text-sm color-weak">{c('collider_2025: Info').t`No content available.`}</p>
+                    <LumoIcon name="FileX" size={32} className="mb-3 lumo-color-glyph-mid" />
+                    <p className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
+                        .t`No content available.`}</p>
                 </div>
             );
         }
@@ -324,7 +327,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
                     }}
                 />
                 {truncatedContent.truncated && (
-                    <p className="text-xs color-weak mt-2">
+                    <p className="mt-2 lumo-body-small lumo-color-glyph-mid">
                         [+{truncatedContent.remaining.toLocaleString()}{' '}
                         {c('collider_2025: Info').t`characters not shown`}]
                     </p>
@@ -349,10 +352,10 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
                     <LumoIcon name="ArrowLeft" size={16} />
                 </Button>
                 <div className="flex-1 min-w-0">
-                    <p className="m-0 text-sm text-bold truncate" title={attachment.filename}>
+                    <p className="truncate m-0 lumo-label-small" title={attachment.filename}>
                         {attachment.filename}
                     </p>
-                    <p className="m-0 text-xs color-weak">
+                    <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                         {mimeToHuman(attachment)}
                         {attachment.rawBytes ? ` • ${getFileSize(attachment.rawBytes)}` : ''}
                     </p>
@@ -380,14 +383,14 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
             </div>
 
             {/* Scrollable content */}
-            <div className="flex-1 min-h-0 overflow-y-auto mx-3 my-2 border border-weak bg-weak rounded-lg">
+            <div className="flex-1 min-h-0 mx-3 my-2 overflow-y-auto border lumo-border radius-12 lumo-bg-control-fill">
                 {renderContent()}
             </div>
 
             {/* Footer */}
             {hasContent && !imageUrl && (
                 <div className="shrink-0 flex flex-row items-center justify-space-between px-3 py-2">
-                    <span className="text-xs color-weak">
+                    <span className="lumo-body-small lumo-color-glyph-mid">
                         {isCSVOrExcel ? c('collider_2025: Info').t`Table view` : processedCharactersLabel}
                     </span>
                 </div>

@@ -52,7 +52,9 @@ const ArtifactMarkdownBody = memo(function ArtifactMarkdownBody({ content }: { c
     return (
         <Suspense
             fallback={
-                <pre className="text-monospace text-sm m-0 overflow-auto color-norm whitespace-pre-wrap">{content}</pre>
+                <pre className="whitespace-pre-wrap m-0 overflow-auto lumo-body-small lumo-font-mono lumo-color-glyph">
+                    {content}
+                </pre>
             }
         >
             <div className="artifact-markdown prose">
@@ -66,16 +68,19 @@ export const CodeRenderer = memo(function CodeRenderer({ artifact, showLineNumbe
     const { theme } = useLumoTheme();
 
     if (!artifact.content) {
-        return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
+        return (
+            <p className="p-4 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
+                .t`No content generated`}</p>
+        );
     }
 
     // Copy sits outside the scroller so it stays pinned to the corner while the code scrolls.
     return (
         <div className="relative group-hover-opacity-container flex flex-column flex-1 min-h-0 min-w-0 w-full h-full">
-            <div className="artifact-code-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full">
+            <div className="artifact-code-content p-0 overflow-auto flex-1 min-h-0 min-w-0 w-full h-full">
                 <Suspense
                     fallback={
-                        <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm">
+                        <pre className="m-0 p-4 overflow-auto lumo-body-small lumo-font-mono lumo-color-glyph lumo-bg-artifact-code-bg">
                             {artifact.content}
                         </pre>
                     }
@@ -96,11 +101,14 @@ export const CodeRenderer = memo(function CodeRenderer({ artifact, showLineNumbe
 
 export const DocumentRenderer = memo(function DocumentRenderer({ artifact }: ArtifactRendererProps) {
     if (!artifact.content) {
-        return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
+        return (
+            <p className="p-4 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
+                .t`No content generated`}</p>
+        );
     }
 
     return (
-        <div className="artifact-document-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full p-4">
+        <div className="artifact-document-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full p-4 lumo-color-glyph">
             <ArtifactMarkdownBody content={artifact.content} />
         </div>
     );

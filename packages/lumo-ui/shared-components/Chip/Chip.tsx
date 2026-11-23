@@ -14,7 +14,7 @@ interface Props {
  */
 const Chip = ({ label, payload, className }: Props) => (
     <Disclosure label={label} className={className}>
-        <pre className="lumo-chip__payload text-sm">{payload}</pre>
+        <pre className="lumo-chip__payload lumo-body-small lumo-font-mono">{payload}</pre>
     </Disclosure>
 );
 

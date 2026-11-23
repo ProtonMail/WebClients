@@ -7,17 +7,12 @@
 	opacity: 1;
 	transform: translateY(0);
 	transition:
-		opacity 0.2s ease,
-		transform 0.2s ease,
-		box-shadow 0.3s ease;
-
-	&:hover {
-		box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
-	}
+		opacity var(--lumo-duration-200) var(--lumo-easing-standard),
+		transform var(--lumo-duration-200) var(--lumo-easing-standard);
 
 	&#{&}--hidden {
 		opacity: 0;
-		transform: translateY(-8px);
+		transform: translateY(calc(-1 * var(--lumo-space-8)));
 		pointer-events: none;
 		block-size: 0;
 		padding-block: 0;
@@ -26,17 +21,21 @@
 		overflow: hidden;
 	}
 
+	&--info {
+		background-color: var(--lumo-notice);
+	}
+
 	&--warning {
-		border-color: var(--signal-warning);
+		border-color: var(--lumo-signal-warning);
 	}
 
 	&--error {
-		border-color: var(--signal-danger);
+		border-color: var(--lumo-signal-danger);
 	}
 
 	&-dismiss-button {
 		transform: translate(35%, -35%);
-		transition: transform 0.2s ease;
+		transition: transform var(--lumo-duration-200) var(--lumo-easing-standard);
 
 		&:hover {
 			transform: translate(35%, -35%) scale(1.1);

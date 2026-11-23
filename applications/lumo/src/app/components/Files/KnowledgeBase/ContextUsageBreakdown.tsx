@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -99,7 +98,9 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
     );
 
     if (isUnavailable) {
-        return <p className="text-xs color-weak">{c('collider_2025: Info').t`Context estimate unavailable.`}</p>;
+        return (
+            <p className="lumo-body-small color-weak">{c('collider_2025: Info').t`Context estimate unavailable.`}</p>
+        );
     }
     if (isPending) {
         return null;
@@ -116,19 +117,26 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
     return (
         <div className="context-usage w-full">
             {isStale && (
-                <p className="text-xs color-weak m-0 mb-1">{c('collider_2025: Info')
+                <p className="m-0 mb-1 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
                     .t`Showing the last context estimate.`}</p>
             )}
             <div className="context-usage-summary flex items-center justify-space-between gap-2 mb-1">
-                <span className={clsx('text-xs', overCapacity ? 'color-danger text-bold' : 'color-weak')}>
+                <span
+                    className={
+                        overCapacity
+                            ? 'lumo-label-medium lumo-color-signal-danger'
+                            : 'lumo-body-small lumo-color-glyph-mid'
+                    }
+                >
                     {usageLabel}
                 </span>
                 {overCapacity && (
-                    <span className="text-xs color-danger">{c('collider_2025: Info').t`Over capacity`}</span>
+                    <span className="lumo-label-small lumo-color-signal-danger">{c('collider_2025: Info')
+                        .t`Over capacity`}</span>
                 )}
             </div>
 
-            <div className="context-usage-bar w-full rounded-full">
+            <div className="context-usage-bar w-full radius-full lumo-bg-control-fill-mid">
                 {segments
                     .filter((segment) => segment.percentage > 0)
                     .map((segment) => (
@@ -145,24 +153,27 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
                     {segments
                         .filter((segment) => segment.id === 'buffer' || segment.id === 'free' || segment.tokens > 0)
                         .map((segment) => (
-                            <li key={segment.id} className="context-usage-legend-row flex items-center gap-2 text-xs">
+                            <li
+                                key={segment.id}
+                                className="context-usage-legend-row flex items-center gap-2 lumo-label-medium"
+                            >
                                 <span className={`context-usage-dot context-usage-seg--${segment.id} shrink-0`} />
-                                <span className="flex-1 color-weak">{segmentLabel(segment.id)}</span>
-                                <span className="color-weak">{shortTokens(segment.tokens)}</span>
+                                <span className="flex-1 lumo-color-glyph-mid">{segmentLabel(segment.id)}</span>
+                                <span className="lumo-color-glyph-mid">{shortTokens(segment.tokens)}</span>
                             </li>
                         ))}
                 </ul>
             )}
 
             {showDetails && hasCompaction && (
-                <p className="context-usage-note m-0 mt-2 text-xs color-weak">
+                <p className="context-usage-note m-0 mt-2 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Info')
                         .t`Earlier messages were summarized to free space. They are still in your chat above — only the summary counts toward usage here.`}
                 </p>
             )}
 
             {droppedForBudget.length > 0 && (
-                <p className="context-usage-note m-0 mt-2 text-xs color-weak">
+                <p className="context-usage-note m-0 mt-2 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Info').ngettext(
                         msgid`${droppedForBudget.length} least relevant file was left out of this reply so the rest fits.`,
                         `${droppedForBudget.length} least relevant files were left out of this reply so the rest fits.`,
@@ -172,7 +183,7 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
             )}
 
             {onDemandCount > 0 && (
-                <p className="context-usage-note m-0 mt-2 text-xs color-weak">
+                <p className="context-usage-note m-0 mt-2 lumo-body-small lumo-color-glyph-mid">
                     {/* translator: ${onDemandCount} is a number of files; ${LUMO_SHORT_APP_NAME} is the app name, "Lumo". */}
                     {c('collider_2025: Info').ngettext(
                         msgid`${onDemandCount} large file is read on demand: ${LUMO_SHORT_APP_NAME} looks up the parts it needs instead of loading it all.`,

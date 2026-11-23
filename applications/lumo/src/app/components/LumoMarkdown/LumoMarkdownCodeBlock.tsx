@@ -29,7 +29,7 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
     const { showCopyNotification } = useCopyNotification();
 
     const copyButtonClassName = clsx(
-        'lumo-code-block-copy lumo-no-copy bg-norm rounded shadow-lifted',
+        'lumo-code-block-copy lumo-no-copy radius-8 lumo-bg-panel lumo-elevation-4',
         !isSmallScreen && 'group-hover:opacity-100'
     );
 
@@ -39,7 +39,7 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
                 <Suspense
                     fallback={
                         <>
-                            <pre className="lumo-code-block-fallback text-monospace text-sm m-0 p-4 rounded-lg">
+                            <pre className="lumo-code-block-fallback m-0 p-4 border lumo-border radius-8 lumo-body-small lumo-font-mono lumo-color-glyph lumo-bg-panel">
                                 {code}
                             </pre>
                             <div className={copyButtonClassName}>
@@ -53,7 +53,12 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
                     }
                 >
                     <div ref={codeBlockCopyRef} className="lumo-code-block-copy-source min-w-0">
-                        <LumoMarkdownCodeBlockHighlighter code={code} language={language} theme={theme} />
+                        <LumoMarkdownCodeBlockHighlighter
+                            code={code}
+                            language={language}
+                            theme={theme}
+                            className="border lumo-border radius-8 lumo-body-small lumo-bg-panel"
+                        />
                     </div>
                     <div className={copyButtonClassName}>
                         <LumoCopyButton

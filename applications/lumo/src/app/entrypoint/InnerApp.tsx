@@ -1,6 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { Redirect, Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
 
+import { c } from 'ttag';
+
+import Loader from '@proton/components/components/loader/Loader';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 
 import ConversationSkeleton from '../components/ConversationSkeleton';
@@ -43,6 +46,14 @@ const SkillDetailView = lazy(() =>
     import('../features/customize/SkillDetailView').then((m) => ({ default: m.SkillDetailView }))
 );
 
+const PageLoading = () => (
+    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+    <div className="flex flex-column flex-1 items-center justify-center gap-4" role="status">
+        <Loader size="medium" />
+        <p className="m-0 lumo-color-glyph-mid">{c('collider_2025:Info').t`Loading…`}</p>
+    </div>
+);
+
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
     const {
@@ -66,7 +77,7 @@ export function InnerApp() {
                             {aiPaperTrailRoute && (
                                 <Route exact path={LUMO_ROUTES.AI_PAPER_TRAIL}>
                                     <GhostChatProvider>
-                                        <Suspense fallback={<ConversationSkeleton />}>
+                                        <Suspense fallback={<PageLoading />}>
                                             <AiPaperTrailView />
                                         </Suspense>
                                     </GhostChatProvider>
@@ -74,7 +85,15 @@ export function InnerApp() {
                             )}
                             <Route>
                                 <MainLayout>
-                                    <Suspense fallback={<ConversationSkeleton />}>
+                                    <Suspense
+                                        fallback={
+                                            <Switch>
+                                                <Route exact path="/" render={() => null} />
+                                                <Route path="/c/:conversationId" component={ConversationSkeleton} />
+                                                <Route component={PageLoading} />
+                                            </Switch>
+                                        }
+                                    >
                                         <Switch>
                                             <Route exact path="/projects" component={ProjectsView} />
                                             <Route path="/projects/:projectId" component={ProjectDetailView} />

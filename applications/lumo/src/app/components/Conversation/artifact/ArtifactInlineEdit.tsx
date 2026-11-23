@@ -189,7 +189,11 @@ export const ArtifactInlineEdit = ({
     };
 
     return (
-        <div ref={wrapperRef} className="artifact-inline-edit shadow-lifted rounded-lg p-2 bg-norm" style={style}>
+        <div
+            ref={wrapperRef}
+            className="artifact-inline-edit p-2 border lumo-border radius-12 lumo-bg-panel-elevated lumo-elevation-4"
+            style={style}
+        >
             {inlineEditMode === 'selection' ? (
                 <div className="flex flex-row items-center gap-2 p-1">
                     <Button size="small" shape="outline" color="weak" onClick={handleExplain}>
@@ -212,7 +216,7 @@ export const ArtifactInlineEdit = ({
                         minRows={1}
                         maxRows={4}
                         placeholder={c('collider_2025:Placeholder').t`Describe what you would like to update...`}
-                        className="artifact-inline-edit-input flex-1 text-sm color-norm bg-transparent border-none outline-none--at-all resize-none p-2"
+                        className="artifact-inline-edit-input outline-none--at-all flex-1 p-2 resize-none border-none lumo-body-small lumo-color-glyph bg-transparent"
                     />
                     <Button
                         icon

@@ -49,13 +49,16 @@ const AgentWelcome = ({ agent }: { agent?: CustomAgent }) => {
     return (
         <div className="flex flex-column items-center text-center gap-3 mb-6 px-4">
             <span
-                className="flex items-center justify-center rounded-full bg-weak ratio-square w-custom"
+                className="ratio-square flex items-center justify-center w-custom radius-full lumo-bg-control-fill"
                 style={{ '--w-custom': '4rem' } as React.CSSProperties}
             >
-                <ProjectIcon iconId={agent?.icon || DEFAULT_AGENT_ICON} size={28} className="color-norm" />
+                <ProjectIcon iconId={agent?.icon || DEFAULT_AGENT_ICON} size={28} className="lumo-color-glyph" />
             </span>
-            <h1 className="text-bold text-2xl m-0">{title}</h1>
-            <p className="color-weak m-0 max-w-custom" style={{ '--max-w-custom': '32rem' } as React.CSSProperties}>
+            <h1 className="m-0 lumo-title-large">{title}</h1>
+            <p
+                className="max-w-custom m-0 lumo-color-glyph-mid"
+                style={{ '--max-w-custom': '32rem' } as React.CSSProperties}
+            >
                 {description}
             </p>
         </div>

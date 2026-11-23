@@ -36,13 +36,13 @@ export const SkillMenuList = ({ onBack, onClose, onCreateSkill }: SkillMenuListP
             <DropdownMenuButton className="justify-start" onClick={onBack}>
                 <div className="flex items-center gap-2 w-full">
                     <LumoIcon name="ChevronLeft" size={16} />
-                    <span className="text-sm font-medium">{c('collider_2025: Action').t`Skills`}</span>
+                    <span className="lumo-body-small">{c('collider_2025: Action').t`Skills`}</span>
                 </div>
             </DropdownMenuButton>
 
             <div className="overflow-auto max-h-custom" style={{ '--max-h-custom': '16rem' }}>
                 {status === 'ready' && commands.length === 0 && (
-                    <div className="px-4 py-2 text-xs color-hint">{c('collider_2025: Info')
+                    <div className="px-3 py-2 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
                         .t`No skills turned on`}</div>
                 )}
                 {commands.map((command, index) => {
@@ -50,7 +50,9 @@ export const SkillMenuList = ({ onBack, onClose, onCreateSkill }: SkillMenuListP
                     return (
                         <div key={command.handle}>
                             {startsGroup && (
-                                <div className="px-4 pt-2 pb-1 text-xs color-hint text-ellipsis">{command.group}</div>
+                                <div className="px-3 pt-2 pb-1 lumo-label-small text-ellipsis lumo-color-glyph-mid">
+                                    {command.group}
+                                </div>
                             )}
                             <DropdownMenuButton
                                 className="justify-start"
@@ -60,7 +62,7 @@ export const SkillMenuList = ({ onBack, onClose, onCreateSkill }: SkillMenuListP
                                     onClose();
                                 }}
                             >
-                                <span className="text-sm text-ellipsis block text-left">/{command.handle}</span>
+                                <span className="block lumo-body-small text-ellipsis text-left">/{command.handle}</span>
                             </DropdownMenuButton>
                         </div>
                     );
@@ -79,19 +81,19 @@ export const SkillMenuList = ({ onBack, onClose, onCreateSkill }: SkillMenuListP
                     >
                         <div className="flex items-center gap-3 w-full">
                             <LumoIcon name="Plus" size={16} />
-                            <span className="text-sm">{c('collider_2025: Action').t`Create a skill`}</span>
+                            <span className="lumo-body-small">{c('collider_2025: Action').t`Create a skill`}</span>
                         </div>
                     </DropdownMenuButton>
                     <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize/upload')}>
                         <div className="flex items-center gap-3 w-full">
                             <LumoIcon name="Upload" size={16} />
-                            <span className="text-sm">{c('collider_2025: Action').t`Upload a skill`}</span>
+                            <span className="lumo-body-small">{c('collider_2025: Action').t`Upload a skill`}</span>
                         </div>
                     </DropdownMenuButton>
                     <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize')}>
                         <div className="flex items-center gap-3 w-full">
                             <LumoIcon name="Settings" size={16} />
-                            <span className="text-sm">{c('collider_2025: Action').t`Manage skills`}</span>
+                            <span className="lumo-body-small">{c('collider_2025: Action').t`Manage skills`}</span>
                         </div>
                     </DropdownMenuButton>
                 </>

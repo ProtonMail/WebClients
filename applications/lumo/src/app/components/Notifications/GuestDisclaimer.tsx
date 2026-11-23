@@ -14,13 +14,19 @@ const GuestDisclaimer = () => {
         : 'https://lumo.proton.me/legal/privacy';
 
     return (
-        <p className="lumo-guest-disclaimer text-sm color-weak m-0 text-center px-3 py-2">
+        <p className="lumo-guest-disclaimer m-0 px-3 py-2 lumo-body-small text-center lumo-color-glyph-mid">
             {c('collider_2025: Legal disclaimer').t`By using ${LUMO_SHORT_APP_NAME}, you agree to our`}{' '}
-            <InlineLinkButton className="color-weak text-underline" onClick={() => window.open(termsUrl, '_blank')}>
+            <InlineLinkButton
+                className="text-underline lumo-color-glyph-mid"
+                onClick={() => window.open(termsUrl, '_blank')}
+            >
                 {c('collider_2025: Legal link').t`Terms`}
             </InlineLinkButton>{' '}
             {c('collider_2025: Legal disclaimer').t`and`}{' '}
-            <InlineLinkButton className="color-weak text-underline" onClick={() => window.open(privacyUrl, '_blank')}>
+            <InlineLinkButton
+                className="text-underline lumo-color-glyph-mid"
+                onClick={() => window.open(privacyUrl, '_blank')}
+            >
                 {c('collider_2025: Legal link').t`Privacy Policy`}
             </InlineLinkButton>
             .

@@ -40,19 +40,12 @@ export const RightDrawer = ({ className, isFullscreen, onClose }: RightDrawerPro
             )}
             <aside
                 className={clsx(
-                    'right-drawer rounded-xl flex flex-column h-full overflow-hidden',
+                    'right-drawer flex flex-column h-full overflow-hidden radius-16 lumo-bg-panel',
                     isFullscreen && 'right-drawer--fullscreen',
                     isOverlay && 'right-drawer--overlay',
                     className
                 )}
             >
-                {/* <div className="right-drawer-header w-full flex flex-row items-center justify-between px-3 py-2 shrink-0">
-                    {title && <h3 className="text-bold text-rg flex-1 mx-2">{title}</h3>}
-                    <div className="flex flex-row items-center gap-2">
-                        {actionButton}
-                        <DrawerToggleButton />
-                    </div>
-                </div> */}
                 <div
                     ref={contentRef}
                     className="right-drawer-content flex flex-column flex-1 overflow-auto w-full min-w-0 max-w-full"

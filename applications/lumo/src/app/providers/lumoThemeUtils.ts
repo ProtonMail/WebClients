@@ -8,6 +8,10 @@ import { getDefaultSettings } from './lumoThemeStorage';
 import lumoDarkTheme from '@proton/colors/themes/dist/lumo-dark.theme.css';
 // @ts-ignore
 import lumoLightTheme from '@proton/colors/themes/dist/lumo-light.theme.css';
+// @ts-ignore
+import lumoDarkTokens from '@proton/lumo-ui/styles/themes/lumo-dark.raw.scss';
+// @ts-ignore
+import lumoLightTokens from '@proton/lumo-ui/styles/themes/lumo-light.raw.scss';
 
 export { matchDarkTheme } from './lumoThemeMedia';
 
@@ -16,10 +20,10 @@ export type ThemeConfig = { styles: string };
 export const getThemeConfig = (theme: ThemeTypes): ThemeConfig => {
     switch (theme) {
         case ThemeTypes.LumoDark:
-            return { styles: lumoDarkTheme.toString() };
+            return { styles: `${lumoDarkTheme.toString()}\n${lumoDarkTokens.toString()}` };
         case ThemeTypes.LumoLight:
         default:
-            return { styles: lumoLightTheme.toString() };
+            return { styles: `${lumoLightTheme.toString()}\n${lumoLightTokens.toString()}` };
     }
 };
 

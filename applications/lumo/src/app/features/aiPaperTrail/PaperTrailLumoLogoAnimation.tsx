@@ -9,7 +9,7 @@ const getLumoHomeStage1Animation = () =>
     );
 
 export const PaperTrailLumoLogoAnimation = () => (
-    <div className="lumo-cat-animation ai-paper-trail__hero-animation">
+    <div className="ai-paper-trail__hero-animation lumo-cat-animation mx-auto mb-2">
         <LazyLottie
             getAnimationData={getLumoHomeStage1Animation}
             loop

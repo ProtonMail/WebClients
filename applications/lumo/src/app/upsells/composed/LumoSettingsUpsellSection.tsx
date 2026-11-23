@@ -72,9 +72,9 @@ const PlusCard = ({ isGuest }: { isGuest: boolean }) => {
 
 // View for guests and authenticated free users: Plus + Business (short)
 const FreeTierUpsell = ({ isGuest }: { isGuest: boolean }) => (
-    <div className={`lumo-settings-upsell-section ${LUMO_UPGRADE_TRIGGER_CLASS}`}>
-        <h2 className="text-lg text-bold mb-4">{c('collider_2025: Upsell Title').t`Elevate your AI experience`}</h2>
-        <div className="flex flex-row flex-nowrap gap-3">
+    <div className={`lumo-settings-upsell-section ${LUMO_UPGRADE_TRIGGER_CLASS} mt-1`}>
+        <h2 className="m-0 mb-3 lumo-title-small">{c('collider_2025: Upsell Title').t`Elevate your AI experience`}</h2>
+        <div className="flex flex-row flex-nowrap items-start gap-4">
             <PlusCard isGuest={isGuest} />
             {!isNativeMobileApp() && (
                 <PlanCard planName={c('collider_2025: Plan Name').t`Business`} features={businessFeaturesFull}>
@@ -87,11 +87,11 @@ const FreeTierUpsell = ({ isGuest }: { isGuest: boolean }) => (
 
 // View for Plus / Visionary users: Business (full) + Workspace
 const PlusTierUpsell = () => (
-    <div className={`lumo-settings-upsell-section ${LUMO_UPGRADE_TRIGGER_CLASS}`}>
-        <h2 className="text-lg text-bold mb-4">
+    <div className={`lumo-settings-upsell-section ${LUMO_UPGRADE_TRIGGER_CLASS} mt-1`}>
+        <h2 className="m-0 mb-3 lumo-title-small">
             {c('collider_2025: Upsell Title').t`Elevate your business AI experience`}
         </h2>
-        <div className="flex flex-row flex-nowrap gap-3">
+        <div className="flex flex-row flex-nowrap items-start gap-4">
             <PlanCard planName={c('collider_2025: Plan Name').t`Business`} features={businessFeaturesFull}>
                 <GetLumoBusinessButton />
             </PlanCard>

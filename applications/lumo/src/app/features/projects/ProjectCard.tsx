@@ -63,20 +63,20 @@ export const ProjectCard = ({
             <ButtonLike
                 shape="ghost"
                 fullWidth
-                className="flex flex-row flex-nowrap group-hover-opacity-container"
+                className="flex flex-row flex-nowrap p-3 border-none group-hover-opacity-container"
                 onClick={handleClick}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <div className="project-card-main min-h-custom" style={{ '--min-h-custom': '28px' }}>
+                <div className="project-card-main gap-2">
                     <ProjectIcon
                         iconId={project.icon}
-                        size={16}
-                        className="project-card-icon color-weak flex-shrink-0"
+                        size={18}
+                        className="project-card-icon flex-shrink-0 lumo-color-glyph-mid"
                     />
-                    <span className="project-card-title">{project.name}</span>
+                    <span className="m-0 lumo-title-medium text-ellipsis lumo-color-glyph">{project.name}</span>
                     {project.conversationCount !== undefined && (
-                        <span className="project-card-stat text-sm ml-1">
+                        <span className="project-card-stat ml-1 lumo-body-medium lumo-color-glyph-mid">
                             <LumoIcon name="MessageSquare" width={14} height={14} className="mr-1" />
                             {project.conversationCount}{' '}
                             {project.conversationCount === 1
@@ -88,7 +88,9 @@ export const ProjectCard = ({
 
                 <div className="project-card-end">
                     {!isHovered && project.createdAt && (
-                        <span className="project-card-date">{formatShortDate(project.createdAt)}</span>
+                        <span className="lumo-body-large lumo-color-glyph-mid">
+                            {formatShortDate(project.createdAt)}
+                        </span>
                     )}
                     {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
                     <div onClick={(e) => e.stopPropagation()}>
@@ -104,13 +106,13 @@ export const ProjectCard = ({
     return (
         <ButtonLike
             shape="ghost"
-            className="group-hover-opacity-container p-4 border border-weak rounded-lg"
+            className="group-hover-opacity-container p-4 border lumo-border radius-12"
             onClick={handleClick}
         >
-            <div className="project-card-header">
-                <div className="project-card-title-row">
+            <div className="project-card-header gap-2">
+                <div className="project-card-title-row gap-2">
                     <ProjectIcon iconId={project.icon} size={18} className="project-card-icon" />
-                    <h3 className="project-card-title">{project.name}</h3>
+                    <h3 className="m-0 lumo-title-small text-ellipsis lumo-color-glyph">{project.name}</h3>
                 </div>
                 {!project.isExample && (
                     // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
@@ -120,17 +122,20 @@ export const ProjectCard = ({
                 )}
             </div>
 
-            <div className="project-card-body">
+            <div className="project-card-body gap-1">
                 {project.description && (
-                    <p className="project-card-description text-left color-weak" style={{ display: '-webkit-box' }}>
+                    <p
+                        className="project-card-description m-0 lumo-body-small text-left lumo-color-glyph-mid"
+                        style={{ display: '-webkit-box' }}
+                    >
                         {project.description}
                     </p>
                 )}
 
                 {!project.isExample && (
-                    <div className="project-card-stats">
+                    <div className="project-card-stats gap-3 mt-0.5">
                         {project.conversationCount !== undefined && (
-                            <span className="project-card-stat">
+                            <span className="project-card-stat lumo-body-small lumo-color-glyph-mid">
                                 <LumoIcon name="MessageSquare" width={14} height={14} className="mr-1" />
                                 {project.conversationCount}{' '}
                                 {project.conversationCount === 1

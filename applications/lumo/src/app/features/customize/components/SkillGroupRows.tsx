@@ -79,7 +79,7 @@ const SkillSetRow = ({
             }
         >
             {expandable && expanded && (
-                <ul id={childrenId} className="skill-list-row__children">
+                <ul id={childrenId} className="skill-list-row__children m-0 pb-1">
                     {subSkills.map((subSkill) => (
                         <SkillListRow
                             key={subSkill.path}

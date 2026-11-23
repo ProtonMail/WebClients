@@ -60,13 +60,13 @@ const ItemCheckList = ({ items, selectedIds, onToggle, disabled, className }: Pr
                     </span>
                     <span className="flex flex-column flex-nowrap flex-1 min-w-0">
                         <span className="flex flex-row flex-nowrap gap-2">
-                            <span className="flex-1 text-sm text-semibold text-ellipsis" title={label}>
+                            <span className="flex-1 lumo-title-small text-ellipsis" title={label}>
                                 {label}
                             </span>
-                            {meta && <span className="shrink-0 text-xs color-weak">{meta}</span>}
+                            {meta && <span className="shrink-0 lumo-label-small color-weak">{meta}</span>}
                         </span>
                         {subtitle && (
-                            <span className="text-sm color-weak text-ellipsis" title={subtitle}>
+                            <span className="lumo-body-small color-weak text-ellipsis" title={subtitle}>
                                 {subtitle}
                             </span>
                         )}

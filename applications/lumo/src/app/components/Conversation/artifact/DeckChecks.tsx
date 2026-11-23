@@ -21,9 +21,11 @@ const FindingList = ({ findings, slideNumberFor }: FindingListProps) => {
                 const slideNumber = slideNumberFor(finding.sourceSlide);
                 return (
                     <li key={index}>
-                        <span className="text-semibold">{finding.value}</span>
+                        <span className="lumo-title-small">{finding.value}</span>
                         {` · ${c('collider_2025: Info').t`slide ${slideNumber}`}, ${finding.where}`}
-                        {finding.calculatedAs && <span className="color-weak">{` · ${finding.calculatedAs}`}</span>}
+                        {finding.calculatedAs && (
+                            <span className="lumo-color-glyph-mid">{` · ${finding.calculatedAs}`}</span>
+                        )}
                     </li>
                 );
             })}
@@ -52,10 +54,14 @@ export const DeckChecks = ({ findings, gaps, slideNumberFor }: Props) => {
     const calculatedCount = calculated.length;
 
     return (
-        <div className="flex flex-column gap-2 text-sm">
+        <div className="flex flex-column gap-2 lumo-body-medium">
             {unsourcedCount > 0 && (
-                <div className="flex flex-row flex-nowrap gap-2 p-3 rounded border border-weak bg-weak">
-                    <LumoIcon name="TriangleExclamationPoint" size={16} className="shrink-0 mt-0.5 color-warning" />
+                <div className="flex flex-row flex-nowrap gap-2 p-3 border lumo-border radius-8 lumo-bg-control-fill">
+                    <LumoIcon
+                        name="TriangleExclamationPoint"
+                        size={16}
+                        className="shrink-0 mt-0.5 lumo-color-signal-warning"
+                    />
                     <details className="min-w-0">
                         <summary className="cursor-pointer">
                             {c('collider_2025: Info').ngettext(
@@ -69,8 +75,8 @@ export const DeckChecks = ({ findings, gaps, slideNumberFor }: Props) => {
                 </div>
             )}
             {calculatedCount > 0 && (
-                <div className="flex flex-row flex-nowrap gap-2 p-3 rounded border border-weak">
-                    <LumoIcon name="Calculator" size={16} className="shrink-0 mt-0.5 color-weak" />
+                <div className="flex flex-row flex-nowrap gap-2 p-3 border lumo-border radius-8">
+                    <LumoIcon name="Calculator" size={16} className="shrink-0 mt-0.5 lumo-color-glyph-mid" />
                     <details className="min-w-0">
                         <summary className="cursor-pointer">
                             {c('collider_2025: Info').ngettext(
@@ -84,8 +90,8 @@ export const DeckChecks = ({ findings, gaps, slideNumberFor }: Props) => {
                 </div>
             )}
             {gaps.length > 0 && (
-                <div className="flex flex-row flex-nowrap gap-2 p-3 rounded border border-weak">
-                    <LumoIcon name="Info" size={16} className="shrink-0 mt-0.5 color-weak" />
+                <div className="flex flex-row flex-nowrap gap-2 p-3 border lumo-border radius-8">
+                    <LumoIcon name="Info" size={16} className="shrink-0 mt-0.5 lumo-color-glyph-mid" />
                     <div className="min-w-0">
                         {c('collider_2025: Info').t`Missing information:`}
                         <ul className="m-0 mt-1 pl-4">

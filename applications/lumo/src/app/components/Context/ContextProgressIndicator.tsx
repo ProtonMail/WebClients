@@ -30,7 +30,10 @@ export const ContextProgressIndicator = ({ attachments, messageChain, spaceId }:
     }, [usedTokens, contextLimits]);
 
     if (isUnavailable) {
-        return <p className="text-xs color-weak mx-2">{c('collider_2025: Info').t`Context estimate unavailable.`}</p>;
+        return (
+            <p className="lumo-body-small lumo-color-glyph-mid mx-2">{c('collider_2025: Info')
+                .t`Context estimate unavailable.`}</p>
+        );
     }
     if (isPending || warningLevel === 'none') {
         return null;
@@ -42,24 +45,24 @@ export const ContextProgressIndicator = ({ attachments, messageChain, spaceId }:
     return (
         <div className="flex flex-column flex-nowrap gap-1 mx-2 mt-2">
             <div className="flex flex-row flex-nowrap justify-space-between items-center">
-                <span className={clsx('text-sm')}>{baseLabel}</span>
+                <span className={clsx('lumo-body-small')}>{baseLabel}</span>
             </div>
             {isStale && (
-                <span className="text-xs color-weak">{c('collider_2025: Info')
+                <span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
                     .t`Showing the last context estimate.`}</span>
             )}
-            <div className="w-full bg-weak rounded-full border border-weak" style={{ height: '6px' }}>
+            <div className="w-full border lumo-border radius-full lumo-bg-control-fill" style={{ height: '6px' }}>
                 <div
-                    className="h-full rounded-full transition-all duration-300 ease-in-out"
+                    className="h-full radius-full duration-300 lumo-easing-standard"
                     style={{
                         width: `${Math.max(Math.min(totalPercentage, 100), 2)}%`,
                         backgroundColor: '#000000',
-                        transition: 'width 0.3s ease-in-out, background-color 0.3s ease-in-out',
+                        transitionProperty: 'width, background-color',
                     }}
                 />
             </div>
             {fileTokens > usedTokens / 2 && (
-                <span className="text-xs color-weak">
+                <span className="lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`Files account for most of this usage.`}
                 </span>
             )}

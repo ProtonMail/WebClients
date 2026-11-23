@@ -16,19 +16,19 @@ export const ApiPayAsYouGoCard = () => {
 
     return (
         <section
-            className="api-usage-plan-card flex flex-column rounded-xl border border-weak bg-norm"
+            className="api-usage-plan-card flex flex-column border lumo-border radius-16 lumo-bg-panel"
             aria-labelledby="api-usage-plan-title"
         >
             <div className="api-usage-plan-card__header">
-                <h3 id="api-usage-plan-title" className="text-lg text-semibold color-norm m-0">
+                <h3 id="api-usage-plan-title" className="m-0 lumo-title-medium lumo-color-glyph">
                     {c('collider_2025: Title').t`Pay as you go`}
                 </h3>
-                <p className="text-sm color-weak m-0 mt-1">
+                <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`Pay only for the tokens you use. Prices in USD per 1M tokens.`}
                 </p>
             </div>
 
-            <table className="api-usage-plan-card__table">
+            <table className="api-usage-plan-card__table lumo-body-medium">
                 <thead>
                     <tr>
                         <th scope="col">
@@ -50,7 +50,7 @@ export const ApiPayAsYouGoCard = () => {
                                 return (
                                     <td key={modelId}>
                                         {amount === null ? (
-                                            <span className="color-weak">{c('collider_2025: Label')
+                                            <span className="lumo-color-glyph-mid">{c('collider_2025: Label')
                                                 .t`Not billed`}</span>
                                         ) : (
                                             formatUsdAmount(amount)

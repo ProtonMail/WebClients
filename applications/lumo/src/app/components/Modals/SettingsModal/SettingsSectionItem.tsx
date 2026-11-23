@@ -23,10 +23,10 @@ export const SettingsSectionItem = ({
     useEllipsisOnContent,
 }: SettingsSectionItemProps) => {
     const subTextContent =
-        typeof subtext === 'string' ? (
+        typeof subtext === 'string' || Array.isArray(subtext) ? (
             <span
-                className={clsx('color-weak', useEllipsisOnContent && 'text-ellipsis')}
-                title={useEllipsisOnContent ? subtext : undefined}
+                className={clsx('lumo-body-small lumo-color-glyph-mid', useEllipsisOnContent && 'text-ellipsis')}
+                title={useEllipsisOnContent && typeof subtext === 'string' ? subtext : undefined}
             >
                 {subtext}
             </span>
@@ -35,15 +35,21 @@ export const SettingsSectionItem = ({
         );
 
     return (
-        <div className="flex flex-row flex-nowrap gap-2 md:gap-4 items-start p-2">
-            <Avatar color="weak" className="settings-section-icon">
-                <LumoIcon className="shrink-0 color-weak" name={icon} size={20} />
+        <div className="flex flex-row flex-nowrap gap-2 md:gap-4 items-center px-0 py-3">
+            <Avatar
+                color="weak"
+                className="settings-section-icon shrink-0 border lumo-border radius-8 lumo-bg-control-fill-empty"
+            >
+                <LumoIcon className="shrink-0 lumo-color-glyph" name={icon} size={20} />
             </Avatar>
             <div className="flex-1 flex flex-column *:min-size-auto sm:flex-row flex-nowrap gap-2">
-                <div className="flex flex-column flex-nowrap flex-1 min-w-0">
+                <div className="flex flex-column flex-nowrap flex-1 gap-0.5 min-w-0">
                     {typeof text === 'string' ? (
                         <span
-                            className={clsx('text-semibold', useEllipsisOnContent && 'text-ellipsis')}
+                            className={clsx(
+                                'lumo-title-small lumo-color-glyph',
+                                useEllipsisOnContent && 'text-ellipsis'
+                            )}
                             title={useEllipsisOnContent ? text : undefined}
                         >
                             {text}
@@ -67,9 +73,9 @@ interface SettingsGroupProps {
 
 export const SettingsGroup = ({ title, description, children }: SettingsGroupProps) => (
     <section className="flex flex-column flex-nowrap *:min-size-auto gap-2">
-        <div className="flex flex-column px-2">
-            <h3 className="m-0 text-sm text-semibold color-weak">{title}</h3>
-            {description && <p className="m-0 text-sm color-weak">{description}</p>}
+        <div className="flex flex-column">
+            <h3 className="m-0 lumo-label-small lumo-color-glyph-mid">{title}</h3>
+            {description && <p className="m-0 lumo-body-small lumo-color-glyph-mid">{description}</p>}
         </div>
         {children}
     </section>
@@ -88,10 +94,10 @@ export const SettingsSectionItemButton = ({
     useEllipsisOnContent,
 }: SettingsSectionItemButtonProps & { useEllipsisOnContent?: boolean }) => {
     const subTextContent =
-        typeof subtext === 'string' ? (
+        typeof subtext === 'string' || Array.isArray(subtext) ? (
             <span
-                className={clsx('color-weak', useEllipsisOnContent && 'text-ellipsis')}
-                title={useEllipsisOnContent ? subtext : undefined}
+                className={clsx('lumo-body-small lumo-color-glyph-mid', useEllipsisOnContent && 'text-ellipsis')}
+                title={useEllipsisOnContent && typeof subtext === 'string' ? subtext : undefined}
             >
                 {subtext}
             </span>
@@ -101,19 +107,25 @@ export const SettingsSectionItemButton = ({
 
     return (
         <Button
-            className="flex flex-row flex-nowrap gap-2 md:gap-4 items-start p-2"
+            className="settings-section-item-button flex flex-row flex-nowrap items-center gap-2 px-0 py-3 md:gap-4"
             onClick={onClick}
             shape="ghost"
             fullWidth
         >
-            <Avatar color="weak" className="settings-section-icon">
-                <LumoIcon className="shrink-0 color-weak" name={icon} size={20} />
+            <Avatar
+                color="weak"
+                className="settings-section-icon shrink-0 border lumo-border radius-8 lumo-bg-control-fill-empty"
+            >
+                <LumoIcon className="shrink-0 lumo-color-glyph" name={icon} size={20} />
             </Avatar>
             <div className="flex-1 flex flex-row *:min-size-auto flex-nowrap gap-2">
-                <div className="flex flex-column flex-nowrap flex-1 min-w-0 items-baseline">
+                <div className="flex flex-column flex-nowrap flex-1 gap-0.5 min-w-0 items-baseline">
                     {typeof text === 'string' ? (
                         <span
-                            className={clsx('text-semibold', useEllipsisOnContent && 'text-ellipsis')}
+                            className={clsx(
+                                'lumo-title-small lumo-color-glyph',
+                                useEllipsisOnContent && 'text-ellipsis'
+                            )}
                             title={useEllipsisOnContent ? text : undefined}
                         >
                             {text}

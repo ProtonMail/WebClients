@@ -35,7 +35,7 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
     <div className="flex flex-column gap-1 mt-2">
         <div className="flex justify-space-between">
             <span>{c('Info').t`Advanced search:`}</span>
-            <span className="text-semibold">
+            <span className="lumo-title-small">
                 {}
                 {enableFoundationSearch
                     ? foundationStatus?.isEnabled
@@ -47,15 +47,15 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
 
         <div className="flex justify-space-between">
             <span>{c('Info').t`Total conversations:`}</span>
-            <span className="text-semibold">{conversationCount}</span>
+            <span className="lumo-label-large">{conversationCount}</span>
         </div>
         <div className="flex justify-space-between">
             <span>{c('Info').t`Total messages:`}</span>
-            <span className="text-semibold">{messageCount}</span>
+            <span className="lumo-label-large">{messageCount}</span>
         </div>
         <div className="flex justify-space-between">
             <span>{c('Info').t`Indexed chats:`}</span>
-            <span className="text-semibold" style={{ color: progressColor(indexedConversationCount ?? 0) }}>
+            <span className="lumo-label-large" style={{ color: progressColor(indexedConversationCount ?? 0) }}>
                 {indexedConversationCount === undefined ? '–' : `${indexedConversationCount}/${conversationCount}`}
             </span>
         </div>
@@ -66,7 +66,7 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
                 <IcBrandProtonDrive size={4} />
                 {c('Info').t`Indexed folders:`}
             </span>
-            <span className="text-semibold" style={{ color: progressColor(displayFolders) }}>
+            <span className="lumo-label-large" style={{ color: progressColor(displayFolders) }}>
                 {displayFolders}/{displayFolders} ({displayFolders > 0 ? '100%' : '0%'})
             </span>
         </div>
@@ -75,23 +75,23 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
                 <IcBrandProtonDocs size={4} />
                 {c('Info').t`Indexed files:`}
             </span>
-            <span className="text-semibold" style={{ color: progressColor(displayDriveDocs) }}>
+            <span className="lumo-label-large" style={{ color: progressColor(displayDriveDocs) }}>
                 {foundationStatus?.driveDocumentsUnique ?? displayDriveDocs}
             </span>
         </div>
         {!!foundationStatus?.driveChunks && (
             <div className="flex justify-space-between">
                 <span className="flex items-center gap-2 pl-6">
-                    <LumoIcon name="Copy" size={16} className="color-weak" />
-                    <span className="color-weak">{c('Info').t`Searchable chunks:`}</span>
+                    <LumoIcon name="Copy" size={16} className="lumo-color-glyph-mid" />
+                    <span className="lumo-color-glyph-mid">{c('Info').t`Searchable chunks:`}</span>
                 </span>
-                <span className="text-semibold color-weak">{foundationStatus.driveChunks}</span>
+                <span className="lumo-label-large lumo-color-glyph-mid">{foundationStatus.driveChunks}</span>
             </div>
         )}
         <hr className={'mt-3'} />
         <div className="flex justify-space-between">
             <span>{c('Info').t`Index size:`}</span>
-            <span className="text-semibold">{formatBytes(foundationStatus?.totalBytes)}</span>
+            <span className="lumo-label-large">{formatBytes(foundationStatus?.totalBytes)}</span>
         </div>
     </div>
 );

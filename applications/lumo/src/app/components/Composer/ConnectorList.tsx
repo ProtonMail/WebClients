@@ -58,11 +58,11 @@ export const ConnectorList = ({ onBack }: { onBack: () => void }) => {
             <DropdownMenuButton className="justify-start" onClick={onBack}>
                 <div className="flex items-center gap-2 w-full">
                     <LumoIcon name="ChevronLeft" size={16} />
-                    <span className="text-sm font-medium">{c('collider_2025: Action').t`Connectors`}</span>
+                    <span className="lumo-body-small">{c('collider_2025: Action').t`Connectors`}</span>
                 </div>
             </DropdownMenuButton>
             {connectors.length === 0 && (
-                <div className="px-4 py-2 text-xs color-hint">{c('collider_2025: Info')
+                <div className="px-4 py-2 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
                     .t`No connected connectors`}</div>
             )}
             {connectors.map((connector) => {
@@ -80,10 +80,10 @@ export const ConnectorList = ({ onBack }: { onBack: () => void }) => {
                                     <LumoIcon name="Blocks" size={20} />
                                 )}
                             </span>
-                            <span className="text-sm font-medium flex-1 min-w-0 text-ellipsis text-left">
+                            <span className="flex-1 min-w-0 lumo-body-small text-ellipsis text-left">
                                 {connector.display_name}
                             </span>
-                            <span className="text-xs color-hint shrink-0">
+                            <span className="shrink-0 lumo-body-small lumo-color-glyph-mid">
                                 {enabled ? c('collider_2025: Info').t`Enabled` : c('collider_2025: Info').t`Disabled`}
                             </span>
                         </div>
@@ -96,7 +96,7 @@ export const ConnectorList = ({ onBack }: { onBack: () => void }) => {
                     <span className="shrink-0 flex">
                         <LumoIcon name="Settings" size={16} />
                     </span>
-                    <span className="text-sm font-medium flex-1 text-left">{c('collider_2025: Action')
+                    <span className="flex-1 lumo-body-small text-left">{c('collider_2025: Action')
                         .t`Manage connectors`}</span>
                 </div>
             </DropdownMenuButton>

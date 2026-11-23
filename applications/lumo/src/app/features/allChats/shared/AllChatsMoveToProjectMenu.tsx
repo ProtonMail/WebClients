@@ -40,7 +40,8 @@ export const AllChatsMoveToProjectMenu = ({
     return (
         <>
             <MenuDropdown isOpen={isOpen} anchorRef={anchorRef} onClose={onClose} placement={placement}>
-                <div className="px-4 py-1 text-sm color-weak">{c('collider_2025:Title').t`Move to project`}</div>
+                <div className="px-3 py-1 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Title')
+                    .t`Move to project`}</div>
                 {projects.map((project) => {
                     return (
                         <DropdownMenuButton

@@ -1,9 +1,28 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
 @use '~@proton/styles/scss/lib/rem' as *;
 
+im.$breakpoints: $breakpoints-product;
+
+@include im.media('>=medium') {
+	.lumo-layout-header .lumo-layout-header-left {
+		align-self: start;
+		min-block-size: var(--lumo-header-row-size);
+	}
+
+	.lumo-layout-header .sidebar-toggle-button {
+		display: inline-grid;
+		place-items: center;
+		inline-size: var(--lumo-header-icon-button-size);
+		block-size: var(--lumo-header-icon-button-size);
+		padding: 0;
+	}
+}
+
 .lumo-layout-header .button.button-ghost-weak {
-	--interaction-weak: var(--interaction-solid-weak-custom-contrast);
-	--button-active-background-color: var(--interaction-solid-weak-custom-active);
-	--button-hover-background-color: var(--interaction-solid-weak-custom-hover);
+	--interaction-weak: var(--lumo-panel);
+	--button-active-background-color: var(--lumo-control-fill-strongest);
+	--button-hover-background-color: var(--lumo-control-fill-mid);
 }
 
 .sidebar-toggle-icon {

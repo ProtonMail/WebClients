@@ -9,12 +9,8 @@
 }
 
 .sketch-canvas__description-input {
-	font-family: inherit;
-	line-height: 1.5;
 	resize: none;
-	padding: 0;
 	border: none;
-	background: transparent;
 	min-block-size: rem(40);
 	overflow: hidden;
 
@@ -24,7 +20,7 @@
 	}
 
 	&::placeholder {
-		color: var(--text-weak);
+		color: var(--lumo-glyph-mid);
 	}
 }
 
@@ -35,14 +31,14 @@
 .sketch-toolbar__tool {
 	inline-size: rem(36);
 	block-size: rem(36);
-	transition: background 0.12s;
+	transition: background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover:not(:disabled) {
-		background: var(--background-weak);
+		background: var(--lumo-control-fill);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-outline);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 1px;
 	}
 }
@@ -62,19 +58,20 @@
 	block-size: rem(24);
 	border-radius: 50%;
 	cursor: pointer;
-	padding: 0;
-	transition: transform 0.12s;
+	transition: transform var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
 		transform: scale(1.08);
 	}
 
 	&--selected {
-		box-shadow: 0 0 0 2px var(--background-norm), 0 0 0 3px var(--primary);
+		box-shadow:
+			0 0 0 2px var(--lumo-panel),
+			0 0 0 3px var(--lumo-control-brand-fill);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-outline);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -88,10 +85,10 @@
 
 .sketch-toolbar__stroke-item {
 	cursor: pointer;
-	transition: background 0.1s;
+	transition: background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
-		background: var(--background-strong);
+		background: var(--lumo-control-fill-mid);
 	}
 }
 
@@ -100,7 +97,7 @@
 	min-block-size: rem(4);
 }
 
-@media (max-width: rem(768)) {
+@media (width <= rem(768)) {
 	.sketch-canvas--modal {
 		.sketch-canvas__canvas-area {
 			max-block-size: calc(100dvh - #{rem(320)});
@@ -108,7 +105,6 @@
 	}
 
 	.sketch-toolbar__stroke-popup {
-		inset-block-end: auto;
-		inset-block-start: calc(100% + #{rem(6)});
+		inset-block: calc(100% + #{rem(6)}) auto;
 	}
 }

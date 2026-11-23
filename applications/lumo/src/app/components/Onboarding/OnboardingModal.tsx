@@ -159,26 +159,26 @@ const OnboardingModal = ({ onClick, ...modalProps }: Props & ModalProps) => {
             <ModalTwoContent>
                 <div className="onboarding-modal flex flex-column flex-nowrap gap-2 px-4">
                     <div>
-                        <h1 className="h3 text-bold mb-4 main-text">{c('collider_2025:Title')
+                        <h1 className="lumo-title-large mb-4 main-text">{c('collider_2025:Title')
                             .t`The AI that respects your privacy`}</h1>
-                        <p className="color-weak mb-2">{c('collider_2025:Title')
+                        <p className="mb-2 lumo-color-glyph-mid">{c('collider_2025:Title')
                             .t`An AI assistant should empower you, not exploit you for your data.`}</p>
-                        <p className="color-weak">{c('collider_2025:Title')
+                        <p className="lumo-color-glyph-mid">{c('collider_2025:Title')
                             .t`That's why we built ${LUMO_SHORT_APP_NAME}: To bring you all the benefits of AI, without compromising your privacy and data security.`}</p>
                     </div>
                     <div>
                         <div className="flex flex-row items-center gap-2 mb-4">
-                            <h2 className="text-lg text-bold">{c('collider_2025:Title')
+                            <h2 className="lumo-title-medium">{c('collider_2025:Title')
                                 .t`Built by the team that knows privacy`}</h2>
                             <MailLogo variant="glyph-only" hasTitle={false} />
                             <DriveLogo variant="glyph-only" hasTitle={false} />
                             <VpnLogo variant="glyph-only" hasTitle={false} />
                         </div>
-                        <p className="color-weak">{c('collider_2025:Info')
+                        <p className="lumo-color-glyph-mid">{c('collider_2025:Info')
                             .t`AIs from Big Tech are built on harvesting your data. But ${LUMO_SHORT_APP_NAME} is different. It was created by the scientists behind innovative, privacy-first services like ${MAIL_APP_NAME} and ${VPN_APP_NAME}. And it's owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.`}</p>
                     </div>
                     <div>
-                        <h2 className="text-lg text-bold my-4">{c('collider_2025:Title')
+                        <h2 className="my-4 lumo-title-medium">{c('collider_2025:Title')
                             .t`How does ${LUMO_SHORT_APP_NAME} keep our conversations confidential?`}</h2>
                         <div className="grid-auto-fill grid-cols-1 sm:grid-cols-2 gap-5">
                             {lumoCharacteristics.map((characteristic) => {
@@ -186,13 +186,13 @@ const OnboardingModal = ({ onClick, ...modalProps }: Props & ModalProps) => {
                                 return (
                                     <div
                                         key={characteristic.key}
-                                        className="character-card flex flex-column gap-2 flex-nowrap p-4 rounded-lg"
+                                        className="character-card flex flex-column flex-nowrap gap-2 p-4 radius-12 lumo-bg-control-fill-low"
                                     >
                                         <div className="flex flex-row items-center gap-2">
                                             <Icon />
-                                            <h3 className="text-lg text-semibold">{characteristic.title}</h3>
+                                            <h3 className="lumo-title-medium">{characteristic.title}</h3>
                                         </div>
-                                        <p className="color-weak">{characteristic.characteristic}</p>
+                                        <p className="lumo-color-glyph-mid">{characteristic.characteristic}</p>
                                     </div>
                                 );
                             })}

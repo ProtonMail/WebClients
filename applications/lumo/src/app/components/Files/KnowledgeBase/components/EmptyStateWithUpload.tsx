@@ -91,7 +91,7 @@ export const EmptyStateWithUpload = ({
                     return (
                         <span
                             key={tile.icon}
-                            className="flex items-center justify-center bg-norm border border-weak rounded-lg shadow-raised w-custom h-custom"
+                            className="flex items-center justify-center w-custom h-custom border lumo-border radius-12 lumo-bg-panel lumo-elevation-3"
                             style={{
                                 '--w-custom': '3rem',
                                 '--h-custom': '3rem',
@@ -101,15 +101,15 @@ export const EmptyStateWithUpload = ({
                             <LumoIcon
                                 name={tile.icon}
                                 size={20}
-                                className={tile.highlighted ? 'color-primary' : 'color-weak'}
+                                className={tile.highlighted ? 'lumo-color-glyph-brand-text' : 'lumo-color-glyph-mid'}
                             />
                         </span>
                     );
                 })}
             </div>
             <div className="flex flex-column gap-2">
-                <h3 className="m-0 text-lg text-bold">{c('collider_2025: Info').t`No files or creations yet`}</h3>
-                <p className="m-0 color-weak">
+                <h3 className="m-0 lumo-title-medium">{c('collider_2025: Info').t`No files or creations yet`}</h3>
+                <p className="m-0 lumo-color-glyph-mid">
                     {c('collider_2025: Info')
                         .t`Upload files or add them from ${DRIVE_APP_NAME} to give ${LUMO_SHORT_APP_NAME} context. ${LUMO_SHORT_APP_NAME} creations from this chat will appear here.`}
                 </p>
@@ -130,7 +130,7 @@ export const EmptyStateWithUpload = ({
                     className="shrink-0 flex flex-row flex-nowrap items-center gap-2"
                     title={c('collider_2025: Info').t`Add from ${DRIVE_SHORT_APP_NAME}`}
                 >
-                    <IcBrandProtonDrive size={4} />
+                    <IcBrandProtonDrive size={4} stroke="currentColor" strokeWidth={0.4} strokeLinejoin="round" />
                     <span>{c('collider_2025: Action').t`Add from ${DRIVE_SHORT_APP_NAME}`}</span>
                 </Button>
             </div>

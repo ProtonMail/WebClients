@@ -56,7 +56,7 @@ const VegaChartLoadingContent = () => {
                 className="vega-lite-chart__loading-icon"
                 aria-hidden="true"
             />
-            <span className="vega-lite-chart__loading-text text-monospace" aria-label={message}>
+            <span className="vega-lite-chart__loading-text lumo-body-small lumo-font-mono" aria-label={message}>
                 {displayText}
             </span>
         </div>

@@ -8,7 +8,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .source-favicon {
-	margin-inline-end: -4px;
+	margin-inline-end: calc(-1 * var(--lumo-space-4));
 
 	// inline-size: 20px;
 	// block-size: 20px;
@@ -17,7 +17,7 @@ im.$media-expressions: $media-expressions;
 
 .sources-panel {
 	@include im.media('>small') {
-		animation: slideInFromRight 0.3s ease-out;
+		animation: slideInFromRight var(--lumo-duration-300) var(--lumo-easing-enter);
 	}
 }
 

@@ -159,13 +159,13 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
     if (isGuest) {
         return (
             <div className="workflow-codegen-panel w-full min-w-0">
-                <h1 className="text-bold text-2xl mt-0 mb-2">{c('collider_2025: Title').t`Workflow Builder`}</h1>
-                <p className="color-weak mt-0 mb-4" style={{ lineHeight: 1.6 }}>
+                <h1 className="mt-0 mb-2 lumo-title-large">{c('collider_2025: Title').t`Workflow Builder`}</h1>
+                <p className="mt-0 mb-4 lumo-color-glyph-mid" style={{ lineHeight: 1.6 }}>
                     {c('collider_2025: Info')
                         .t`Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.`}
                 </p>
-                <div className="rounded-lg border border-weak p-6 bg-weak">
-                    <p className="m-0 color-weak mb-4">
+                <div className="p-6 border lumo-border radius-12 lumo-bg-control-fill">
+                    <p className="m-0 mb-4 lumo-color-glyph-mid">
                         {c('collider_2025: Info').t`Sign in to generate workflows with ${LUMO_SHORT_APP_NAME}.`}
                     </p>
                     <SignInButton color="norm" shape="solid" />
@@ -176,17 +176,18 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
 
     return (
         <div className="workflow-codegen-panel w-full min-w-0">
-            <h1 className="text-bold text-2xl mt-0 mb-2">{c('collider_2025: Title').t`Workflow Builder`}</h1>
-            <p className="color-weak mt-0 mb-4" style={{ lineHeight: 1.6 }}>
+            <h1 className="mt-0 mb-2 lumo-title-large">{c('collider_2025: Title').t`Workflow Builder`}</h1>
+            <p className="mt-0 mb-4 lumo-color-glyph-mid" style={{ lineHeight: 1.6 }}>
                 {c('collider_2025: Info')
                     .t`We can help you get started with using the ${LUMO_SHORT_APP_NAME} API. Describe what you want to automate. ${LUMO_SHORT_APP_NAME} returns a workflow graph and sample code that calls the ${LUMO_SHORT_APP_NAME} API.`}
             </p>
 
-            <div className="rounded-lg border border-weak bg-norm p-4 mb-6">
-                <label htmlFor="workflow-codegen-prompt" className="text-semibold mb-2 block">
+            <div className="mb-6 p-4 border lumo-border radius-12 lumo-bg-panel">
+                <label htmlFor="workflow-codegen-prompt" className="lumo-label-medium mb-2 block">
                     {c('collider_2025: Label').t`Your workflow`}
                 </label>
-                <p className="text-rg color-weak mt-0 mb-2">{c('collider_2025: Label').t`Example ideas`}</p>
+                <p className="mt-0 mb-2 lumo-body-medium lumo-color-glyph-mid">{c('collider_2025: Label')
+                    .t`Example ideas`}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                     {WORKFLOW_EXAMPLE_PROMPTS.map((ex) => (
                         <Button
@@ -203,7 +204,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                 </div>
                 <TextAreaTwo
                     id="workflow-codegen-prompt"
-                    className="border border-weak rounded-lg mb-4"
+                    className="mb-4 border lumo-border radius-12"
                     placeholder={c('collider_2025:Placeholder')
                         .t`e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.`}
                     value={prompt}
@@ -213,7 +214,10 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                 />
                 <div className="flex flex-row flex-wrap items-center justify-between gap-x-4 gap-y-3">
                     <div className="flex flex-row flex-wrap items-center gap-x-3 gap-y-2 min-w-0">
-                        <label htmlFor="workflow-codegen-lang" className="m-0 shrink-0 text-rg color-weak">
+                        <label
+                            htmlFor="workflow-codegen-lang"
+                            className="shrink-0 m-0 lumo-body-medium lumo-color-glyph-mid"
+                        >
                             {c('collider_2025: Label').t`Code language`}
                         </label>
                         <SelectTwo
@@ -243,7 +247,9 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                 </div>
             </div>
 
-            {loading ? <p className="color-weak mt-0 mb-6">{c('collider_2025: Info').t`Generating…`}</p> : undefined}
+            {loading ? (
+                <p className="mt-0 mb-6 lumo-color-glyph-mid">{c('collider_2025: Info').t`Generating…`}</p>
+            ) : undefined}
 
             {result ? (
                 <section className="mb-8" aria-label={c('collider_2025: Title').t`Workflow output`}>
@@ -284,7 +290,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
 
             {rawUnparsed ? (
                 <div className="mt-4">
-                    <h2 className="text-bold text-lg mt-0 mb-2">{c('collider_2025: Title').t`Raw response`}</h2>
+                    <h2 className="mt-0 mb-2 lumo-title-medium">{c('collider_2025: Title').t`Raw response`}</h2>
                     <div className="overflow-auto" style={{ maxHeight: 'min(480px, 70vh)' }}>
                         <div className="w-full min-w-0">
                             <LumoMarkdownCodeBlock code={rawUnparsed} language="plaintext" />

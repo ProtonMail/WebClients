@@ -1,11 +1,14 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import generateUID from '@proton/utils/generateUID';
 
 import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 import { useIsTouchDevice } from '../hooks/useIsTouchDevice';
@@ -31,24 +34,36 @@ interface Props {
 
 const DropdownMenu = ({ className, buttonContent, options, onToggle, visibleOnHover = false }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
+    const [uid] = useState(() => generateUID('dropdown'));
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>(onToggle);
     const { isSmallScreen } = useIsLumoSmallScreen();
     const isTouchDevice = useIsTouchDevice();
     const alwaysVisible = isSmallScreen || isTouchDevice || visibleOnHover;
 
     return (
         <div className={clsx('relative shrink-0 flex', !alwaysVisible && 'group-hover:opacity-100')}>
-            <SimpleDropdown
+            <DropdownButton
                 as={Button}
-                className={clsx('rounded-sm', className)}
+                ref={anchorRef}
+                className={clsx('radius-4', className)}
                 icon
                 hasCaret={false}
                 shape="ghost"
                 size="small"
-                content={
-                    buttonContent ?? <LumoIcon name="Ellipsis" aria-label={c('collider_2025:Title').t`More options`} />
-                }
-                onToggle={onToggle}
-                dropdownClassName="chat-dropdown-menu"
+                isOpen={isOpen}
+                onClick={toggle}
+            >
+                {buttonContent ?? <LumoIcon name="Ellipsis" aria-label={c('collider_2025:Title').t`More options`} />}
+            </DropdownButton>
+            {/* Centred on the button: below it, or above when there is no room below. */}
+            <Dropdown
+                id={uid}
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                originalPlacement="bottom"
+                availablePlacements={['bottom', 'top']}
+                className="chat-dropdown-menu"
             >
                 {options.map((option, index) => {
                     return (
@@ -64,7 +79,7 @@ const DropdownMenu = ({ className, buttonContent, options, onToggle, visibleOnHo
                         </DropdownMenuButton>
                     );
                 })}
-            </SimpleDropdown>
+            </Dropdown>
         </div>
     );
 };

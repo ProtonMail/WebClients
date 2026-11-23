@@ -8,7 +8,7 @@
 	// edge accent rather than the neutral grey used for hover. Hover is suppressed while
 	// selected, otherwise the two states look identical and the caret appears to vanish.
 	&.is-selected {
-		background-color: var(--interaction-norm-minor-2);
+		background-color: var(--lumo-control-fill);
 
 		&::before {
 			position: absolute;
@@ -16,11 +16,11 @@
 			inset-block: 0;
 			inset-inline-start: 0;
 			inline-size: rem(3);
-			background-color: var(--interaction-norm);
+			background-color: var(--lumo-control-brand-fill);
 		}
 	}
 
 	&:hover:not(.is-selected) {
-		background-color: var(--background-weak);
+		background-color: var(--lumo-control-fill);
 	}
 }

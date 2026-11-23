@@ -86,7 +86,7 @@ export const ChoiceQuestionBody = ({ idPrefix, question, titleId, value, onChang
                     >
                         <span
                             dir="auto"
-                            className="choice-question-body__option-title"
+                            className="choice-question-body__option-title lumo-label-medium"
                             id={`${idPrefix}-option-${optionIndex}-label`}
                         >
                             {option.label}
@@ -94,7 +94,7 @@ export const ChoiceQuestionBody = ({ idPrefix, question, titleId, value, onChang
                         {option.description && (
                             <span
                                 dir="auto"
-                                className="text-sm color-weak"
+                                className="lumo-body-small lumo-color-glyph-mid"
                                 id={`${idPrefix}-option-${optionIndex}-description`}
                             >
                                 {option.description}

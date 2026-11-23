@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 
 import { clsx } from 'clsx';
 
+import { Card } from '@proton/atoms/Card/Card';
+
 import type { ArtifactChipVisualState } from './artifactChipHelpers';
 import { getArtifactChipIconPaneClass } from './artifactChipIconPane';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
@@ -66,7 +68,7 @@ export const ArtifactChipShell = ({
     const isMainInteractive = Boolean(onMainClick && !mainDisabled);
 
     const chipClassName = clsx(
-        'artifact-chip flex flex-row flex-nowrap items-stretch gap-0 overflow-hidden rounded-xl border border-weak bg-norm w-full max-w-full min-w-0 text-left',
+        'artifact-chip flex flex-row flex-nowrap items-stretch gap-0 w-full min-w-0 max-w-full overflow-hidden text-left lumo-bg-panel',
         visualState === 'superseded' && 'artifact-chip--superseded',
         visualState === 'active' && 'artifact-chip--active',
         (isWholeChipInteractive || isMainInteractive) && 'cursor-pointer',
@@ -77,8 +79,8 @@ export const ArtifactChipShell = ({
         <>
             <span
                 className={clsx(
-                    'text-sm text-ellipsis overflow-hidden whitespace-nowrap w-full',
-                    visualState === 'superseded' ? 'color-hint' : 'color-norm text-semibold'
+                    'whitespace-nowrap w-full overflow-hidden lumo-label-medium text-ellipsis',
+                    visualState === 'superseded' ? 'lumo-color-glyph-mid' : 'lumo-color-glyph'
                 )}
             >
                 <span dir="auto">{title}</span>
@@ -93,28 +95,28 @@ export const ArtifactChipShell = ({
     if (onClick) {
         // Icon + label share one button; actions stay siblings (nested buttons break layout).
         return (
-            <div className={chipClassName}>
+            <Card padded={false} background={false} rounded="lg" className={chipClassName}>
                 <button
                     type="button"
-                    className="artifact-chip-primary flex flex-row items-stretch gap-0"
+                    className="artifact-chip-primary bg-transparent p-0 flex flex-row items-stretch gap-0"
                     onClick={onClick}
                     disabled={disabled}
                 >
                     <ArtifactChipIconPane type={type} visualState={visualState} />
                     <div className={bodyLayoutClassName}>{bodyContent}</div>
                 </button>
-                {trailing ? <div className="artifact-chip-trailing pr-2">{trailing}</div> : null}
+                {trailing ? <div className="artifact-chip-trailing py-3 pr-2">{trailing}</div> : null}
                 {actions ? (
-                    <div className="artifact-chip-actions pr-3 pl-1 flex flex-row items-center gap-1 shrink-0">
+                    <div className="artifact-chip-actions py-3 pr-3 pl-1 flex flex-row items-center gap-1 shrink-0">
                         {actions}
                     </div>
                 ) : null}
-            </div>
+            </Card>
         );
     }
 
     return (
-        <div className={chipClassName}>
+        <Card padded={false} background={false} rounded="lg" className={chipClassName}>
             <ArtifactChipIconPane type={type} visualState={visualState} />
             {onMainClick ? (
                 <button
@@ -132,12 +134,12 @@ export const ArtifactChipShell = ({
             ) : (
                 <div className={bodyLayoutClassName}>{bodyContent}</div>
             )}
-            {trailing ? <div className="artifact-chip-trailing pr-2">{trailing}</div> : null}
+            {trailing ? <div className="artifact-chip-trailing py-3 pr-2">{trailing}</div> : null}
             {actions ? (
-                <div className="artifact-chip-actions pr-3 pl-1 flex flex-row items-center gap-1 shrink-0">
+                <div className="artifact-chip-actions py-3 pr-3 pl-1 flex flex-row items-center gap-1 shrink-0">
                     {actions}
                 </div>
             ) : null}
-        </div>
+        </Card>
     );
 };

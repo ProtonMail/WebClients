@@ -43,7 +43,7 @@ export const IconPicker = ({
             <button
                 ref={anchorRef}
                 type="button"
-                className="icon-picker-trigger flex items-center justify-center shrink-0 w-custom h-custom border-none rounded bg-transparent cursor-pointer color-norm"
+                className="icon-picker-trigger flex shrink-0 items-center justify-center w-custom h-custom border-none radius-8 lumo-color-glyph bg-transparent cursor-pointer"
                 style={{ '--w-custom': triggerSize, '--h-custom': triggerSize } as React.CSSProperties}
                 onClick={handleToggle}
                 disabled={disabled}
@@ -54,12 +54,12 @@ export const IconPicker = ({
             </button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <div className="p-3">
-                    <div className="icon-picker-grid">
+                    <div className="icon-picker-grid gap-1">
                         {PROJECT_ICONS.map((icon) => (
                             <button
                                 key={icon}
                                 type="button"
-                                className={`icon-picker-option flex items-center justify-center w-custom h-custom border-none rounded-lg cursor-pointer ${selectedIcon === icon ? 'is-selected' : ''}`}
+                                className={`icon-picker-option flex items-center justify-center w-custom h-custom border-none radius-12 cursor-pointer ${selectedIcon === icon ? 'is-selected' : ''}`}
                                 style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' } as React.CSSProperties}
                                 onClick={() => handleIconSelect(icon)}
                                 aria-label={icon}

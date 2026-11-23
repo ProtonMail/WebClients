@@ -38,7 +38,7 @@ export const SkillPickerOptions = ({ commands, onSelect, id }: SkillPickerOption
         <>
             {/* Listbox view for the skill picker options */}
             <Scroll
-                className="flex-auto min-h-0 max-h-custom mx-3 overflow-hidden"
+                className="flex-auto min-h-0 max-h-custom overflow-hidden"
                 style={{ '--max-h-custom': '20rem' }}
                 customContainerRef={scrollRef}
                 scrollContained
@@ -58,8 +58,8 @@ export const SkillPickerOptions = ({ commands, onSelect, id }: SkillPickerOption
                             {command.group && command.group !== commands[index - 1]?.group && (
                                 <div
                                     className={clsx(
-                                        'px-2 pt-2 pb-1 text-sm color-weak',
-                                        index > 0 && 'mt-1 border-top border-weak'
+                                        'px-3 pt-2 pb-1 lumo-body-small lumo-color-glyph-mid',
+                                        index > 0 && 'mt-1 border-top lumo-border'
                                     )}
                                 >
                                     {command.group}
@@ -71,7 +71,7 @@ export const SkillPickerOptions = ({ commands, onSelect, id }: SkillPickerOption
                                 aria-selected={false}
                                 aria-label={command.name}
                                 aria-describedby={command.description ? `${descriptionId}-${index}` : undefined}
-                                className="flex flex-nowrap items-center gap-2 pl-2 pr-2 rounded text-left"
+                                className="flex flex-nowrap items-center gap-2 radius-8 text-left"
                                 onClick={() => {
                                     setHoveredId(undefined);
                                     onSelect(command);
@@ -99,11 +99,11 @@ export const SkillPickerOptions = ({ commands, onSelect, id }: SkillPickerOption
                 id={`${id}-preview`}
                 divRef={floating}
                 isOpen={!!hovered?.description}
-                className="schedule-skill-picker__description px-3 rounded color-invert pointer-events-none"
+                className="schedule-skill-picker__description lumo-bg-panel-inverse py-2.5 px-3 radius-8 lumo-body-small lumo-color-glyph-inverse pointer-events-none"
                 style={{ position: 'fixed', top: position.top, left: position.left }}
             >
                 <p className="m-0">{hovered?.description}</p>
-                {hovered?.group && <p className="m-0 mt-1 text-xs opacity-70">{hovered.group}</p>}
+                {hovered?.group && <p className="m-0 mt-1 lumo-body-small opacity-70">{hovered.group}</p>}
             </Popper>
         </>
     );

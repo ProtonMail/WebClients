@@ -142,8 +142,10 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                 disabled={tab.disabled}
                                 onClick={() => setFilter(tab.id)}
                                 className={clsx(
-                                    'px-3 py-1 rounded-full text-sm',
-                                    filter === tab.id ? 'bg-weak color-norm text-semibold' : 'color-weak',
+                                    'px-3 py-1 radius-full lumo-label-medium',
+                                    filter === tab.id
+                                        ? 'lumo-color-glyph lumo-bg-control-fill'
+                                        : 'lumo-color-glyph-mid',
                                     tab.disabled && 'opacity-40'
                                 )}
                             >
@@ -158,7 +160,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                     >
                         {filteredAgents.length === 0 ? (
                             <div className="flex items-center justify-center h-full text-center px-4">
-                                <p className="color-weak text-sm m-0">
+                                <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                                     {c('collider_2025:Info')
                                         .t`Agents turn a chat into a focused assistant with its own instructions.`}
                                 </p>
@@ -173,7 +175,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                     return (
                                         <div
                                             key={agent.id}
-                                            className="grid items-center gap-1 rounded-lg pr-2 min-h-custom w-full max-w-full"
+                                            className="grid items-center gap-1 w-full max-w-full min-h-custom pr-2 radius-12"
                                             style={
                                                 {
                                                     '--min-h-custom': '3.5rem',
@@ -183,7 +185,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                         >
                                             <button
                                                 type="button"
-                                                className="flex flex-nowrap items-center gap-2 min-w-0 overflow-hidden text-left h-full w-full interactive-pseudo-inset rounded-lg pl-2 pr-2"
+                                                className="flex flex-nowrap items-center gap-2 w-full min-w-0 h-full pr-2 pl-2 overflow-hidden radius-12 text-left interactive-pseudo-inset"
                                                 onClick={() => handlePick(agent.id)}
                                             >
                                                 <ProjectIcon
@@ -193,18 +195,18 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                 />
                                                 <span className="flex flex-column flex-1 min-w-0 overflow-hidden">
                                                     <span className="flex items-center gap-1 min-w-0 overflow-hidden">
-                                                        <span className="text-semibold text-ellipsis min-w-0 shrink block">
+                                                        <span className="lumo-title-small text-ellipsis min-w-0 shrink block">
                                                             {agent.name}
                                                         </span>
                                                         {isActive && (
-                                                            <span className="inline-flex items-center gap-0.5 text-xs text-semibold color-primary bg-weak rounded-full px-1.5 py-0.5 shrink-0">
+                                                            <span className="inline-flex shrink-0 items-center gap-0.5 px-1.5 py-0.5 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                                                                 <LumoIcon name="Check" width={14} height={14} />
                                                                 {c('collider_2025:Badge').t`Selected`}
                                                             </span>
                                                         )}
                                                         {agent.source === 'published' && (
                                                             <span
-                                                                className="text-xs text-semibold color-weak bg-weak rounded-full px-1 shrink-0"
+                                                                className="shrink-0 px-1 radius-full lumo-label-small lumo-color-glyph-mid lumo-bg-control-fill"
                                                                 title={c('collider_2025:Info')
                                                                     .t`Built-in ${BRAND_NAME} agent`}
                                                             >
@@ -213,7 +215,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                                                         )}
                                                     </span>
                                                     <span
-                                                        className="text-sm color-weak text-ellipsis min-w-0 block w-full"
+                                                        className="block w-full min-w-0 lumo-body-small text-ellipsis lumo-color-glyph-mid"
                                                         title={
                                                             bylineFull.length > byline.length ? bylineFull : undefined
                                                         }

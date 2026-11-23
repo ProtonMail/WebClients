@@ -104,7 +104,7 @@ export const ComposerNotificationCard = ({
             className={clsx(
                 'composer-notification-card',
                 `composer-notification-card--${severity}`,
-                'flex flex-nowrap gap-2 w-full border border-weak rounded-xl p-4 justify-space-between mb-4 relative group-hover-opacity-container',
+                'group-hover-opacity-container relative flex flex-nowrap justify-space-between gap-2 w-full mb-4 p-4 border lumo-border radius-16',
                 usesNativeComposer ? 'flex-column items-stretch' : 'flex-row items-center',
                 hidden && 'composer-notification-card--hidden',
                 className
@@ -119,8 +119,8 @@ export const ComposerNotificationCard = ({
             >
                 {icon ? <div className="shrink-0 flex items-center">{icon}</div> : null}
                 <div className="flex flex-column gap-1 min-w-0">
-                    <span className="text-semibold">{title}</span>
-                    {description ? <span className="text-sm color-weak">{description}</span> : null}
+                    <span className="lumo-title-small">{title}</span>
+                    {description ? <span className="lumo-body-small lumo-color-glyph-mid">{description}</span> : null}
                 </div>
             </div>
 
@@ -131,7 +131,7 @@ export const ComposerNotificationCard = ({
                     icon
                     shape="ghost"
                     size="small"
-                    className="composer-notification-card-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm z-up"
+                    className="composer-notification-card-dismiss-button absolute top-0 right-0 z-up shrink-0 self-start lumo-border radius-full lumo-bg-panel"
                     onClick={onDismiss}
                     title={c('Action').t`Dismiss`}
                 >
@@ -139,7 +139,7 @@ export const ComposerNotificationCard = ({
                         name="X"
                         width={12}
                         height={12}
-                        className="color-weak"
+                        className="lumo-color-glyph-mid"
                         aria-label={c('Action').t`Dismiss`}
                     />
                 </Button>

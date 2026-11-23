@@ -27,7 +27,7 @@ export const ToolCallInfo = ({ results, handleLinkClick }: ToolCallInfoProps) =>
         <ul className="unstyled w-full flex flex-column flex-nowrap gap-2 group">
             {cleanedResults.map((result, index) => {
                 return (
-                    <li className="w-full rounded shrink-0" data-source-index={index} key={result.url}>
+                    <li className="shrink-0 w-full radius-8" data-source-index={index} key={result.url}>
                         <SourceLink key={`${result.url}-${index}`} result={result} handleLinkClick={handleLinkClick} />
                     </li>
                 );

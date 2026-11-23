@@ -30,11 +30,11 @@ im.$media-expressions: $media-expressions;
 }
 
 .notif-enter {
-	animation: notif-slide-up 2.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+	animation: notif-slide-up 2.3s var(--lumo-easing-enter) both;
 }
 
 .notif-exit {
-	animation: notif-slide-down 0.28s cubic-bezier(0.4, 0, 1, 1) both;
+	animation: notif-slide-down 0.28s var(--lumo-easing-standard) both;
 }
 
 // Placement used whenever the bottom-end corner is unavailable: a full-width
@@ -47,9 +47,7 @@ im.$media-expressions: $media-expressions;
 
 .notification-panel {
 	inline-size: 320px;
-	background: var(--background-norm);
-	border-radius: 12px;
-	padding-block: 16px 14px;
+	padding-block: var(--lumo-space-16) 14px;
 	padding-inline: 18px;
 	box-sizing: border-box;
 	position: fixed;
@@ -60,6 +58,10 @@ im.$media-expressions: $media-expressions;
 	// On small screens, stretch into a full-width top banner with a small gap all around.
 	@include im.media('<=small') {
 		@include top-banner;
+
+		// Leave the compact app bar reachable and keep the drawer above the announcement.
+		inset-block-start: rem(64);
+		z-index: 80;
 	}
 
 	// The native composer is drawn over the bottom of the WebView, so the bottom-end
@@ -76,92 +78,64 @@ im.$media-expressions: $media-expressions;
 }
 
 .notification-panel-icon {
-	inline-size: 36;
-	block-size: 36;
+	inline-size: rem(36);
+	block-size: rem(36);
 	flex-shrink: 0;
-	background: var(--background-weak);
-	border: 1px solid var(--border-weak);
-	border-radius: 8px;
+	background: var(--lumo-control-fill);
+	border: 1px solid var(--lumo-border);
+	border-radius: var(--lumo-radius-8);
 	display: flex;
 }
 
-.notification-panel-title {
-	font-size: rem(13);
-	font-weight: 500;
-	color: var(--text-norm);
-}
-
 .notification-panel-title-new {
-	font-size: rem(11);
-	font-weight: 500;
 	background: var(--optional-promotion-background-start);
-	color: var(--primary);
-	border-radius: 4px;
 	padding-block: 3px;
 	padding-inline: 7px;
 }
 
 .notif-action {
-	font-size: rem(13);
 	padding-block: 5px;
 	padding-inline: 14px;
-	background: var(--primary);
-	color: white;
 	border: none;
-	border-radius: 8px;
 	cursor: pointer;
-	font-weight: 500;
 	text-decoration: none;
 	display: inline-block;
-	transition: background 0.3s;
+	transition: background var(--lumo-duration-300) var(--lumo-easing-standard);
 }
 
 .notif-action:hover {
-	background: var(--interaction-norm-hover);
-	color: white;
-}
-
-.notif-dismiss {
-	font-size: rem(13);
-	padding-block: 5px;
-	padding-inline: 14px;
-	background: transparent;
-	color: var(--text-weak);
-	border: 1px solid var(--border-weak);
-	border-radius: 8px;
-	cursor: pointer;
-	transition: background 0.15s;
-}
-
-.notif-dismiss:hover {
-	background: rgb(0 0 0 / 0.05);
-	color: var(--text-norm);
-}
-
-.notification-panel-text {
-	font-size: rem(13);
-	color: var(--text-weak);
-	margin-block: 0 12px;
-	margin-inline: 0;
-	line-height: 1.5;
+	background: var(--lumo-control-brand-fill-mid);
+	color: var(--lumo-control-brand-text);
 }
 
 .notif-close {
+	display: grid;
+	place-items: center;
+	min-inline-size: rem(24);
+	min-block-size: rem(24);
 	position: absolute;
 	inset-block-start: 10px;
 	inset-inline-end: 12px;
 	background: none;
 	border: none;
 	cursor: pointer;
-	color: var(--text-weak);
-	font-size: rem(16);
-	line-height: 1;
-	padding-block: 2px;
-	padding-inline: 4px;
-	border-radius: 4px;
-	transition: color 0.15s;
+	font: var(--lumo-type-body-large);
+	transition: color var(--lumo-duration-150) var(--lumo-easing-standard);
 }
 
 .notif-close:hover {
-	color: var(--text-norm);
+	color: var(--lumo-glyph);
+}
+
+.notif-action:focus-visible,
+.notif-close:focus-visible {
+	outline: 2px solid var(--lumo-control-border-focus);
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.notif-enter,
+	.notif-exit {
+		animation: none;
+	}
 }

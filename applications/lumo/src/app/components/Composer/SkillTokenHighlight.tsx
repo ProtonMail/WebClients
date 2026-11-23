@@ -77,10 +77,10 @@ export const SkillTokenHighlight = ({ textareaRef, parts }: SkillTokenHighlightP
     });
 
     return (
-        <div ref={backdropRef} className="skill-token-highlight" aria-hidden>
+        <div ref={backdropRef} className="skill-token-highlight m-0" aria-hidden>
             {parts.map((part, index) =>
                 part.isSkill ? (
-                    <span key={index} className="skill-token-highlight__token">
+                    <span key={index} className="skill-token-highlight__token radius-4 lumo-color-glyph-brand-text">
                         {part.text}
                     </span>
                 ) : (

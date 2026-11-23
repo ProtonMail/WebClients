@@ -59,7 +59,7 @@ export const SkillLimitModal = ({
             <ModalTwo {...modalProps} size="small">
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    <p className="m-0 color-weak">{description}</p>
+                    <p className="m-0 lumo-color-glyph-mid">{description}</p>
                 </ModalTwoContent>
                 <ModalTwoFooter className="justify-end">
                     <Button color="norm" onClick={modalProps.onClose}>{c('collider_2025:Action').t`Got it`}</Button>

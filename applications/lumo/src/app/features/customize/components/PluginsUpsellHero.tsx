@@ -37,13 +37,13 @@ export const PluginsUpsellHero = ({ headingId, maxActiveSkills, upgradePath }: P
     return (
         <header className="customize-discover-upsell flex flex-nowrap items-center gap-6 border rounded-xl p-8">
             <div className="flex flex-column flex-nowrap items-start gap-3 flex-1 min-w-0">
-                <h2 className="m-0 text-3xl text-bold" id={headingId}>
+                <h2 className="m-0 lumo-headline-small" id={headingId}>
                     {c('collider_2025:Title').t`More possibilities with skill sets`}
                 </h2>
-                <p className="m-0 text-lg text-semibold color-weak">
+                <p className="m-0 lumo-title-medium lumo-color-glyph-mid">
                     {c('collider_2025:Info').t`Write, plan, and learn with ready-made sets of skills.`}
                 </p>
-                <p className="m-0 color-weak">
+                <p className="m-0 lumo-color-glyph-mid">
                     {upgradePath === 'admin'
                         ? // translator: ${maxActiveSkills} is how many skills the user's plan allows turned on at once.
                           c('collider_2025:Info').ngettext(
@@ -81,7 +81,7 @@ export const PluginsUpsellHero = ({ headingId, maxActiveSkills, upgradePath }: P
                 aria-hidden="true"
             >
                 <span
-                    className="customize-discover-upsell__tile absolute top-custom start-0 z-custom flex flex-nowrap items-center justify-center w-custom h-custom border"
+                    className="customize-discover-upsell__tile radius-28 absolute top-custom start-0 z-custom flex flex-nowrap items-center justify-center w-custom h-custom border"
                     style={{
                         '--top-custom': '3.75rem',
                         '--z-custom': 2,
@@ -92,7 +92,7 @@ export const PluginsUpsellHero = ({ headingId, maxActiveSkills, upgradePath }: P
                     <LumoIcon name="WandSparkles" size={40} />
                 </span>
                 <span
-                    className="customize-discover-upsell__tile customize-discover-upsell__tile--calendar absolute top-custom start-custom flex flex-nowrap items-center justify-center w-custom h-custom border"
+                    className="customize-discover-upsell__tile radius-28 customize-discover-upsell__tile--calendar absolute top-custom start-custom flex flex-nowrap items-center justify-center w-custom h-custom border"
                     style={{
                         '--top-custom': '1.125rem',
                         '--start-custom': '4.375rem',
@@ -103,7 +103,7 @@ export const PluginsUpsellHero = ({ headingId, maxActiveSkills, upgradePath }: P
                     <LumoIcon name="Calendar" size={40} />
                 </span>
                 <span
-                    className="customize-discover-upsell__tile customize-discover-upsell__tile--learning absolute top-custom end-0 flex flex-nowrap items-center justify-center w-custom h-custom border"
+                    className="customize-discover-upsell__tile radius-28 customize-discover-upsell__tile--learning absolute top-custom end-0 flex flex-nowrap items-center justify-center w-custom h-custom border"
                     style={{ '--top-custom': '4.6875rem', '--w-custom': '6.25rem', '--h-custom': '6.25rem' }}
                 >
                     <LumoIcon name="BookOpen" size={40} />

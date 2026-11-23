@@ -63,17 +63,18 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
     const isProcessing = file.processing;
 
     const getBaseClasses = () => {
-        const base = 'flex flex-row flex-nowrap items-center transition-all cursor-pointer file-item-card';
+        const base =
+            'flex flex-row flex-nowrap items-center transition-all lumo-easing-standard cursor-pointer file-item-card';
 
         switch (variant) {
             case 'simple':
                 return `${base} px-2 py-1.5 mb-0.5 rounded-lg`;
             case 'compact':
-                return `${base} p-2 mb-1 rounded border border-weak`;
+                return `${base} p-2 mb-1 radius-8 border lumo-border`;
             case 'detailed':
-                return `${base} p-3 mb-2 rounded-lg border border-weak`;
+                return `${base} p-3 mb-2 radius-12 border lumo-border`;
             default:
-                return `${base} p-3 mb-1 rounded border border-weak`;
+                return `${base} p-3 mb-1 radius-8 border lumo-border`;
         }
     };
 
@@ -116,7 +117,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                         }
                     >
                         <span
-                            className="absolute flex items-center justify-center rounded-full bg-norm"
+                            className="absolute flex items-center justify-center radius-full lumo-bg-panel"
                             style={{
                                 bottom: -2,
                                 right: -2,
@@ -125,7 +126,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                                 boxShadow: '0 0 0 1px var(--background-norm)',
                             }}
                         >
-                            <LumoIcon name="Users" width={12} height={12} className="color-primary" />
+                            <LumoIcon name="Users" width={12} height={12} className="lumo-color-glyph-brand-text" />
                         </span>
                     </Tooltip>
                 )}
@@ -134,7 +135,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             {/* File info */}
             <div className={`flex flex-column flex-1 min-w-0 ${variant === 'simple' ? 'gap-0' : 'gap-1'}`}>
                 <span
-                    className={`${variant === 'simple' ? 'text-sm text-bold' : `font-semibold ${variant === 'compact' ? 'text-xs' : 'text-sm'}`}`}
+                    className={variant === 'simple' || variant === 'compact' ? 'lumo-label-small' : 'lumo-body-small'}
                     style={{
                         display: 'block',
                         overflow: 'hidden',
@@ -149,23 +150,27 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
 
                 <div className="flex flex-row items-center gap-2 flex-nowrap">
                     {file.isSharedWithMe ? (
-                        <span className="color-primary shrink-0 text-xs">
+                        <span className="shrink-0 lumo-body-small lumo-color-glyph-brand-text">
                             {file.sharedBy
                                 ? c('collider_2025: Info').t`Shared by ${file.sharedBy}`
                                 : c('collider_2025: Info').t`Shared with you`}
                         </span>
                     ) : (
                         (file.subtitle || file.type === NodeType.File) && (
-                            <span className={`color-weak shrink-0 text-xs`}>
+                            <span className={`lumo-color-glyph-mid shrink-0 lumo-body-small`}>
                                 {file.subtitle || (file.type === NodeType.File ? fileTypeDescription : '')}
                             </span>
                         )
                     )}
 
-                    {file.size && <span className={`color-weak shrink-0 text-xs`}>{formatFileSize(file.size)}</span>}
+                    {file.size && (
+                        <span className={`lumo-color-glyph-mid shrink-0 lumo-body-small`}>
+                            {formatFileSize(file.size)}
+                        </span>
+                    )}
 
                     {file.tokenCount && (
-                        <span className="text-xs font-semibold color-info shrink-0">
+                        <span className="shrink-0 lumo-body-small lumo-color-signal-info">
                             {
                                 // translator: Technical token-count label. ${file.tokenCount} is the number of AI text-processing tokens in the file.
                                 c('collider_2025:Label').ngettext(
@@ -181,9 +186,13 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
 
             {/* Actions on the right */}
             <div className={`flex flex-row items-center gap-2 shrink-0 ${file.type === NodeType.Folder ? 'mr-1' : ''}`}>
-                {isProcessing && <LumoIcon name="RefreshCw" className="color-primary animate-spin" size={16} />}
+                {isProcessing && (
+                    <LumoIcon name="RefreshCw" className="lumo-color-glyph-brand-text animate-spin" size={16} />
+                )}
 
-                {hasError && <LumoIcon name="TriangleExclamationPoint" className="color-danger" size={16} />}
+                {hasError && (
+                    <LumoIcon name="TriangleExclamationPoint" className="lumo-color-signal-danger" size={16} />
+                )}
 
                 {actions.map((action, index) => {
                     const isDisabled = action.disabled || action.loading;
@@ -218,7 +227,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
 
                 {/* Chevron for folders */}
                 {file.type === NodeType.Folder && isClickable && (
-                    <LumoIcon name="ChevronRight" className="color-weak" size={16} />
+                    <LumoIcon name="ChevronRight" className="lumo-color-glyph-mid" size={16} />
                 )}
             </div>
         </div>

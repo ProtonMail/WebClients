@@ -109,7 +109,7 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
 
     return (
         <Button
-            className="lumo-no-copy flex flex-row flex-nowrap gap-2 items-center shrink-0 p-2 rounded"
+            className="lumo-no-copy flex flex-row flex-nowrap shrink-0 items-center gap-2 p-2 radius-8"
             shape="ghost"
             onClick={handleClick}
         >
@@ -120,10 +120,10 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
                     return (
                         <div
                             key={`${mimeType}-${index}`}
-                            className="source-favicon rounded-full bg-norm border border-weak flex"
+                            className="source-favicon flex border lumo-border radius-full lumo-bg-panel"
                             style={{ marginLeft: index > 0 ? '-4px' : '0' }}
                         >
-                            <FileTypeIcon size={4} className="shrink-0 rounded-full" />
+                            <FileTypeIcon size={4} className="shrink-0 radius-full" />
                         </div>
                     );
                 })}

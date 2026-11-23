@@ -31,7 +31,7 @@ export const DictationLanguageModal = ({ initialLanguage, onConfirm, ...modalPro
                         .t`Telling us which language you speak helps dictation transcribe your voice accurately.`}
                 </p>
                 <DictationLanguageSelect id="dictation-language-modal-select" value={language} onChange={setLanguage} />
-                <p className="mb-0 mt-4 text-sm color-weak">
+                <p className="mt-4 mb-0 lumo-body-small lumo-color-glyph-mid">
                     {isGuest
                         ? c('collider_2025: Info')
                               .t`Sign in to change this later in Settings → General → Dictation language.`

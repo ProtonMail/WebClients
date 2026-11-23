@@ -82,7 +82,7 @@ export const LibraryCreationCard = memo(function LibraryCreationCard({ entry }: 
         <div className="library-creation-card flex flex-column gap-3 min-w-0">
             <div className="relative w-full">
                 <div
-                    className="library-creation-thumbnail w-full rounded-xl border border-weak overflow-hidden h-custom"
+                    className="library-creation-thumbnail w-full h-custom overflow-hidden border lumo-border radius-16"
                     style={{ '--h-custom': '14rem' }}
                 >
                     <LibraryCreationThumbnail
@@ -99,12 +99,12 @@ export const LibraryCreationCard = memo(function LibraryCreationCard({ entry }: 
                     type="button"
                     tabIndex={-1}
                     aria-hidden="true"
-                    className="library-creation-card-action absolute inset-0 w-full h-full rounded-xl"
+                    className="library-creation-card-action bg-transparent absolute inset-0 w-full h-full radius-16"
                     disabled={!canOpen}
                     onClick={openInChat}
                 />
                 {isExporting && (
-                    <div className="absolute inset-0 flex flex-column bg-norm rounded-xl overflow-hidden">
+                    <div className="absolute inset-0 flex flex-column overflow-hidden radius-16 lumo-bg-panel">
                         <ArtifactExportOverlay
                             ref={fileActions.exportOverlayRef}
                             formatLabel={fileActions.exportFormatLabel}
@@ -118,14 +118,14 @@ export const LibraryCreationCard = memo(function LibraryCreationCard({ entry }: 
                 <div className="flex-1 min-w-0">
                     <button
                         type="button"
-                        className="library-creation-card-action block w-full p-0 text-left text-semibold color-norm text-ellipsis"
+                        className="library-creation-card-action bg-transparent block w-full p-0 lumo-title-small text-left text-ellipsis lumo-color-glyph"
                         disabled={!canOpen}
                         aria-label={c('collider_2025:Action').t`Open ${entry.title} in its chat`}
                         onClick={openInChat}
                     >
                         {entry.title || (
                             <span
-                                className="rectangle-skeleton keep-motion rounded inline-block"
+                                className="rectangle-skeleton keep-motion inline-block radius-8"
                                 style={{ width: '8rem', height: '0.875rem' }}
                             />
                         )}

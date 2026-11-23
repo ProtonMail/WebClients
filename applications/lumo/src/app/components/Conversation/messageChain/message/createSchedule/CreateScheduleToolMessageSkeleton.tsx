@@ -5,13 +5,11 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 
-import './CreateScheduleToolMessageSkeleton.scss';
-
 export const CreateScheduleToolMessageSkeleton = () => {
     return (
         <div
             aria-busy="true"
-            className="create-schedule-tool-message-skeleton flex flex-column flex-nowrap items-start gap-4 p-5 text-rg rounded-xl bg-norm"
+            className="create-schedule-tool-message-skeleton flex flex-column flex-nowrap items-start gap-4 p-5 border lumo-border-control radius-16 lumo-body-medium lumo-bg-panel"
         >
             <div className="flex flex-nowrap shrink-0 items-center gap-2 min-w-0 w-full">
                 <LumoIcon aria-hidden className="shrink-0" name="Clock" size={14} />
@@ -20,12 +18,12 @@ export const CreateScheduleToolMessageSkeleton = () => {
                         // translator: Accessible label for the heading inviting the user to schedule a recurring or one-time task (imperative), currently loading...
                         c('collider_2025:Title').t`Schedule task, currently loading…`
                     }
-                    className="shrink-0 m-0 text-rg text-semibold"
+                    className="shrink-0 m-0 lumo-title-small"
                 >{
                     // translator: Heading inviting the user to schedule a recurring or one-time task (imperative).
                     c('collider_2025:Title').t`Schedule task`
                 }</h3>
-                <span aria-hidden className="color-weak">
+                <span aria-hidden className="lumo-color-glyph-mid">
                     ·
                 </span>
                 <SkeletonLoader width="7rem" />
@@ -35,8 +33,8 @@ export const CreateScheduleToolMessageSkeleton = () => {
                     <SkeletonLoader index={index + 1} width="10rem" />
                     <div
                         className={clsx(
-                            'flex flex-column flex-nowrap items-start gap-2 text-xs w-full px-4 py-3 border border-weak rounded-xl',
-                            index === 1 && 'create-schedule-tool-message-skeleton__card'
+                            'flex flex-column flex-nowrap items-start gap-2 w-full px-4 py-3 border lumo-border radius-16 lumo-label-small',
+                            index === 1 && 'create-schedule-tool-message-skeleton__card lumo-bg-control-fill-low'
                         )}
                     >
                         <SkeletonLoader index={index + 1} width="100%" />

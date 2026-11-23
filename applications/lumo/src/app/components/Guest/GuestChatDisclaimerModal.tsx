@@ -43,12 +43,12 @@ export const GuestChatDisclaimerModal = ({ onClick, ...modalProps }: Props & Mod
                         style={{ '--w-custom': '5.25rem', '--h-custom': '5.625rem' }}
                     />
                     {/* translator: Don't lose the thread */}
-                    <h1 className="block h3 mt-2 text-semibold text-center text-break">{c('collider_2025: Title')
+                    <h1 className="block lumo-title-large mt-2 text-center text-break">{c('collider_2025: Title')
                         .t`Don't lose the thread`}</h1>
                 </div>
 
                 {/* translator: Save all your conversations in a chat history only you can see. Sign in or create an account.   */}
-                <p className="color-weak text-center m-0">{c('collider_2025: Info')
+                <p className="m-0 text-center lumo-color-glyph-mid">{c('collider_2025: Info')
                     .t`Save all your conversations in a chat history only you can see. Sign in or create an account.`}</p>
             </div>
         </Prompt>

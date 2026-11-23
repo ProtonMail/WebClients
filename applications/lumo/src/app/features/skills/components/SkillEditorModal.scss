@@ -3,23 +3,15 @@
 .skill-editor {
 	&__workspace {
 		block-size: min(#{rem(460)}, 55vh);
-		border: 1px solid var(--border-norm);
-		border-radius: rem(12);
-		background-color: var(--background-weak);
 		overflow: hidden;
 
 		&:focus-within:not(&--split) {
-			border-color: var(--focus-outline);
+			border-color: var(--lumo-control-border-focus);
 		}
 	}
 
-	&__panel-header {
-		padding-block: rem(8);
-		padding-inline: rem(12);
-	}
-
 	&__body--split {
-		border-block-start: 1px solid var(--border-weak);
+		border-block-start: 1px solid var(--lumo-border);
 
 		> :first-child {
 			inline-size: rem(240);
@@ -27,18 +19,9 @@
 		}
 	}
 
-	&__file-header {
-		padding-block: rem(8);
-		padding-inline: rem(12);
-	}
-
 	&__mode-toggle {
-		padding: rem(2);
-		border-radius: rem(8);
-		background-color: var(--background-norm);
-
 		.is-active {
-			background-color: var(--interaction-default-active);
+			background-color: var(--lumo-control-fill-mid);
 		}
 	}
 }

@@ -3,14 +3,14 @@
 .lumo-dictation-control {
 	inline-size: rem(28);
 	block-size: rem(40);
-	transition: inline-size 0.2s ease-out;
+	transition: inline-size var(--lumo-duration-200) var(--lumo-easing-enter);
 
 	&--active {
 		inline-size: rem(196);
 	}
 
 	&__trigger {
-		transition: opacity 0.15s ease-out;
+		transition: opacity var(--lumo-duration-150) var(--lumo-easing-enter);
 
 		&--hidden {
 			opacity: 0;
@@ -23,8 +23,8 @@
 		transform: translateX(rem(6));
 		pointer-events: none;
 		transition:
-			opacity 0.2s ease-out,
-			transform 0.2s ease-out;
+			opacity var(--lumo-duration-200) var(--lumo-easing-enter),
+			transform var(--lumo-duration-200) var(--lumo-easing-enter);
 
 		&--visible {
 			opacity: 1;
@@ -47,7 +47,7 @@
 			block-size: rem(10);
 			background-color: currentcolor;
 			transform: scaleY(0.25);
-			transition: transform 80ms linear;
+			transition: transform var(--lumo-duration-100) var(--lumo-easing-linear);
 		}
 
 		i:nth-child(2),

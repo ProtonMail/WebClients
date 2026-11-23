@@ -1,29 +1,17 @@
 .compaction-marker-card {
 	&[data-expanded='true'] .compaction-marker-bar {
-		border-block-end: 1px solid var(--border-weak);
+		border-block-end: 1px solid var(--lumo-border);
 	}
 }
 
 .compaction-marker-bar:is(button) {
 	border: none;
 	cursor: pointer;
-	transition: background-color 0.15s ease;
+	transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:hover {
-		background: var(--interaction-default-hover);
+		background: var(--lumo-control-fill);
 	}
-}
-
-.compaction-marker-meta {
-	line-height: 1.4;
-}
-
-.compaction-marker-reassurance {
-	line-height: 1.4;
-}
-
-.compaction-marker-summary-label {
-	letter-spacing: 0.01em;
 }
 
 .compaction-marker-scroll {
@@ -31,20 +19,17 @@
 }
 
 .compaction-marker-markdown {
-	color: var(--text-weak);
-
 	.markdown-rendering {
 		font-size: inherit;
 		color: inherit;
-		gap: 0.5rem;
+		gap: var(--lumo-space-8);
 
 		h1,
 		h2,
 		h3,
 		h4 {
-			font-size: 1em;
-			font-weight: var(--font-weight-semibold, 600);
-			margin-block: 0.75rem 0.25rem;
+			font: var(--lumo-type-title-small);
+			margin-block: var(--lumo-space-12) var(--lumo-space-4);
 
 			&:first-child {
 				margin-block-start: 0;
@@ -64,17 +49,17 @@
 		}
 
 		hr {
-			margin-block: 0.75rem;
+			margin-block: var(--lumo-space-12);
 		}
 
 		strong {
-			color: var(--text-norm);
+			color: var(--lumo-glyph);
 		}
 
 		ul,
 		ol {
 			margin-block: 0.35rem;
-			padding-inline-start: 1.25rem;
+			padding-inline-start: var(--lumo-space-20);
 		}
 
 		li {

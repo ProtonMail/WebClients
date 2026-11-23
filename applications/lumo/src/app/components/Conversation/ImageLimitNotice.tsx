@@ -31,8 +31,8 @@ export const ImageLimitNotice = ({ exceedsLimit, exceedsPageLimit = false }: Ima
     const message = [exceedsLimit && imagesMessage, exceedsPageLimit && pagesMessage].filter(Boolean).join(' ');
 
     return (
-        <div className="flex flex-row flex-nowrap items-center gap-2 rounded-lg bg-weak px-3 py-2 mt-2 mb-2 text-sm color-weak">
-            <LumoIcon name="Info" size={16} className="shrink-0 color-primary" />
+        <div className="flex flex-row flex-nowrap items-center gap-2 mt-2 mb-2 px-3 py-2 radius-12 lumo-body-small lumo-color-glyph-mid lumo-bg-notice">
+            <LumoIcon name="Info" size={16} className="shrink-0 lumo-color-glyph-brand-text" />
             <span>{message}</span>
         </div>
     );

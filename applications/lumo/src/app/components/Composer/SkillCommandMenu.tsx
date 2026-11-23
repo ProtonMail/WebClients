@@ -21,7 +21,13 @@ interface SkillCommandMenuProps {
     onSelect: (command: SkillCommand) => void;
 }
 
-export const SkillCommandMenu = ({ state, commands, selectedIndex, setSelectedIndex, onSelect }: SkillCommandMenuProps) => {
+export const SkillCommandMenu = ({
+    state,
+    commands,
+    selectedIndex,
+    setSelectedIndex,
+    onSelect,
+}: SkillCommandMenuProps) => {
     const listRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -35,18 +41,25 @@ export const SkillCommandMenu = ({ state, commands, selectedIndex, setSelectedIn
     }
 
     const groupCount = new Set(commands.map((command) => command.group ?? '')).size;
-    const estimatedHeight = Math.min(commands.length * ROW_HEIGHT + groupCount * GROUP_HEADER_HEIGHT + 8, MAX_MENU_HEIGHT);
+    const estimatedHeight = Math.min(
+        commands.length * ROW_HEIGHT + groupCount * GROUP_HEADER_HEIGHT + 8,
+        MAX_MENU_HEIGHT
+    );
     const top = Math.max(8, state.position.top - estimatedHeight - 8);
     const selected = commands[selectedIndex];
 
     return (
-        <div className="skill-command-menu fixed z-[60] flex flex-nowrap items-start gap-2" style={{ top, left: state.position.left }}>
+        <div
+            className="skill-command-menu fixed z-[60] flex flex-nowrap items-start gap-2"
+            style={{ top, left: state.position.left }}
+        >
             <div
                 ref={listRef}
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 role="listbox"
                 id="skill-command-menu"
                 aria-label={c('collider_2025:Label').t`Skills`}
-                className="skill-command-menu__list bg-norm border border-weak rounded-xl shadow-lifted"
+                className="skill-command-menu__list py-1 border lumo-border radius-12 lumo-bg-panel-elevated lumo-elevation-3"
                 style={{ maxHeight: MAX_MENU_HEIGHT }}
             >
                 {commands.map((command, index) => {
@@ -54,17 +67,23 @@ export const SkillCommandMenu = ({ state, commands, selectedIndex, setSelectedIn
                     return (
                         <Fragment key={`${command.skillId}-${command.handle}`}>
                             {startsGroup && command.group && (
-                                <div className={clsx('skill-command-menu__group color-weak text-ellipsis', index > 0 && 'has-separator')}>
+                                <div
+                                    className={clsx(
+                                        'skill-command-menu__group pt-1.5 pb-0.5 px-3 text-ellipsis lumo-label-small lumo-color-glyph-mid',
+                                        index > 0 && 'has-separator'
+                                    )}
+                                >
                                     {command.group}
                                 </div>
                             )}
                             <button
                                 type="button"
+                                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                 role="option"
                                 data-index={index}
                                 aria-selected={index === selectedIndex}
                                 className={clsx(
-                                    'skill-command-menu__option flex-nowrap items-center gap-2 text-left',
+                                    'skill-command-menu__option px-2 mx-1 flex-nowrap items-center gap-2 text-left lumo-label-medium lumo-color-glyph',
                                     index === selectedIndex && 'is-selected'
                                 )}
                                 // Keep focus in the textarea so the cursor position survives the click.
@@ -72,7 +91,7 @@ export const SkillCommandMenu = ({ state, commands, selectedIndex, setSelectedIn
                                 onClick={() => onSelect(command)}
                                 onMouseEnter={() => setSelectedIndex(index)}
                             >
-                                <LumoIcon name="ScrollText" size={14} className="shrink-0 color-weak" />
+                                <LumoIcon name="ScrollText" size={14} className="shrink-0 lumo-color-glyph-mid" />
                                 <span className="text-ellipsis">{command.handle}</span>
                             </button>
                         </Fragment>
@@ -80,9 +99,12 @@ export const SkillCommandMenu = ({ state, commands, selectedIndex, setSelectedIn
                 })}
             </div>
             {selected?.description && (
-                <div className="skill-command-menu__detail" aria-hidden>
+                <div
+                    className="skill-command-menu__detail py-2.5 px-3 radius-8 lumo-body-small lumo-color-glyph-inverse lumo-bg-panel-inverse"
+                    aria-hidden
+                >
                     <p className="m-0">{selected.description}</p>
-                    {selected.group && <p className="m-0 mt-1 text-xs opacity-70">{selected.group}</p>}
+                    {selected.group && <p className="m-0 mt-1 lumo-body-small opacity-70">{selected.group}</p>}
                 </div>
             )}
         </div>

@@ -53,7 +53,7 @@ export function ComponentName({ design, code }: { design: string; code: string }
                 {code.split(' · ').map((name) => (
                     <code
                         key={name}
-                        className="lumo-catalog__code border lumo-border-mid lumo-radius-4 lumo-color-glyph-brand-text lumo-bg-control-fill-mid"
+                        className="lumo-catalog__code border lumo-border-mid radius-4 lumo-color-glyph-brand-text lumo-bg-control-fill-mid"
                     >
                         {name}
                     </code>
@@ -75,7 +75,7 @@ export function Catalog({
             {(['light', 'dark'] as const).map((appearance) => (
                 <div
                     key={appearance}
-                    className={`lumo-catalog__panel min-w-0 p-6 border lumo-border lumo-radius-16 lumo-color-glyph lumo-bg-panel ${scopeClass(appearance)}`}
+                    className={`lumo-catalog__panel min-w-0 p-6 border lumo-border radius-16 lumo-color-glyph lumo-bg-panel ${scopeClass(appearance)}`}
                 >
                     {typeof children === 'function' ? children(appearance) : children}
                 </div>
@@ -542,23 +542,15 @@ function Surfaces() {
     return (
         <>
             <Sample title="Card">
-                <Card
-                    padded={false}
-                    background={false}
-                    className="p-3 lumo-border lumo-radius-12 lumo-bg-panel-elevated"
-                >
+                <Card padded={false} background={false} className="p-3 lumo-border radius-12 lumo-bg-panel">
                     Small card
                 </Card>
-                <Card
-                    padded={false}
-                    background={false}
-                    className="p-5 lumo-border lumo-radius-16 lumo-bg-panel-elevated"
-                >
+                <Card padded={false} background={false} className="p-5 lumo-border radius-16 lumo-bg-panel">
                     Large card
                 </Card>
             </Sample>
             <Sample title="Notice">
-                <Banner>Notifications are off. Enable them to receive task updates.</Banner>
+                <Banner variant="info">Notifications are off. Enable them to receive task updates.</Banner>
             </Sample>
         </>
     );

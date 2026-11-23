@@ -10,11 +10,15 @@ im.$media-expressions: $media-expressions;
 
 .file-count {
 	inset-inline-end: 0;
-	top: -4px;
+	inset-block-start: calc(-1 * var(--lumo-space-4));
 }
 
 .conversation-header {
 	.button-for-icon {
+		&[aria-expanded] {
+			border-radius: var(--lumo-radius-8);
+		}
+
 		&.button-medium {
 			--padding-block: #{em(7)};
 			--padding-inline: #{em(7)};
@@ -23,7 +27,7 @@ im.$media-expressions: $media-expressions;
 
 	.project-breadcrumb {
 		&:hover {
-			background-color: var(--background-weak);
+			background-color: var(--lumo-control-fill);
 		}
 	}
 
@@ -33,25 +37,24 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 
-	@media (max-width: 1024px) {
-        .hide-on-small-screens {
-            display: none;
-        }
-    }
+	@media (width <= 1024px) {
+		.hide-on-small-screens {
+			display: none;
+		}
+	}
 }
 
 .conversation-breadcrumb-mobile {
 	flex-shrink: 0;
-	background-color: var(--background-norm);
-	min-height: 44px;
+	min-block-size: 44px;
 	z-index: 10;
 
 	.conversation-breadcrumb-back {
 		padding: 0;
-		color: var(--text-weak);
+		color: var(--lumo-glyph-mid);
 
 		&:hover {
-			color: var(--text-norm);
+			color: var(--lumo-glyph);
 			background-color: transparent !important;
 		}
 	}

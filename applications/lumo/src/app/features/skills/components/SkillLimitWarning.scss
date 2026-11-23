@@ -1,12 +1,10 @@
-@use '~@proton/styles/scss/lib/rem' as *;
-
 .skill-limit-warning {
 	.banner-inner {
-		padding: rem(8);
+		padding: var(--lumo-space-8);
 	}
 
 	.banner-action {
 		margin-block: auto;
-		margin-inline-end: rem(8);
+		margin-inline-end: var(--lumo-space-8);
 	}
 }

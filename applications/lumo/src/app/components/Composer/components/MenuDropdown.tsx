@@ -26,10 +26,12 @@ export const MenuItem = ({ icon, getLabel, getDescription, badge, onClick, onClo
             {icon && <span className="shrink-0 flex">{icon}</span>}
             <div className="flex flex-column flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium">{getLabel()}</span>
+                    <span className="lumo-label-medium">{getLabel()}</span>
                     {badge}
                 </div>
-                {getDescription && <span className="text-xs color-hint text-left">{getDescription()}</span>}
+                {getDescription && (
+                    <span className="lumo-body-small text-left lumo-color-glyph-mid">{getDescription()}</span>
+                )}
             </div>
             {rightElement}
         </div>

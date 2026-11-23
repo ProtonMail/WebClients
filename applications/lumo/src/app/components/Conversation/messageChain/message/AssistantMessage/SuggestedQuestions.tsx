@@ -32,7 +32,7 @@ export const SuggestedQuestions = ({ questions }: SuggestedQuestionsProps) => {
                     dir="auto"
                     shape="outline"
                     size="small"
-                    className="text-left text-sm w-full justify-start p-3 bg-weak"
+                    className="justify-start w-full p-3 lumo-body-small text-left lumo-bg-control-fill"
                     onClick={() => handleClick(question)}
                 >
                     {question}

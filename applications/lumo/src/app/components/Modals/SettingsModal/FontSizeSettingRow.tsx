@@ -53,7 +53,7 @@ export const FontSizeSettingRow = () => {
                                 value={id}
                             >
                                 <span
-                                    className="shrink-0 w-custom text-center text-nowrap text-bold"
+                                    className="shrink-0 w-custom text-center text-nowrap lumo-label-small"
                                     style={{
                                         fontSize: `${value / 14}em`,
                                         '--w-custom': '1.5rem',

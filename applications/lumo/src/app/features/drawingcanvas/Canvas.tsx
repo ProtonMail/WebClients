@@ -137,14 +137,14 @@ export const Canvas = ({
             ref={containerRef}
             className={[
                 'canvas flex items-center justify-center',
-                embedded ? 'canvas--embedded w-full' : 'w-full h-full p-12',
+                embedded ? 'canvas--embedded w-full p-0' : 'w-full h-full p-12',
             ].join(' ')}
         >
             {isLoading && (
                 <div className="canvas__loading-overlay absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
-                        <div className="canvas__loading-spinner inline-block rounded-full" />
-                        <p className="mt-2 color-norm">{
+                        <div className="canvas__loading-spinner inline-block radius-full" />
+                        <p className="mt-2 lumo-color-glyph">{
                             // translator: Status while an image opens in the drawing editor.
                             c('collider_2025:Label').t`Loading image...`
                         }</p>
@@ -152,7 +152,7 @@ export const Canvas = ({
                 </div>
             )}
             {embedded ? (
-                <div className="image-preview-image-frame">
+                <div className="image-preview-image-frame radius-28">
                     <canvas
                         ref={canvasRef}
                         width={width}

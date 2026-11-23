@@ -90,7 +90,7 @@ const SelectionOptionRow = ({
         <button
             type="button"
             className={clsx(
-                'model-mode-option flex flex-row flex-nowrap items-center gap-3 w-full border-none text-left cursor-pointer py-2 px-2 rounded-lg',
+                'model-mode-option flex flex-row flex-nowrap items-center gap-3 w-full px-2 py-2 border-none radius-12 text-left lumo-color-glyph cursor-pointer',
                 isSelected && 'is-selected',
                 isDisabled && 'is-disabled cursor-not-allowed'
             )}
@@ -99,18 +99,22 @@ const SelectionOptionRow = ({
         >
             <div className="model-mode-option-radio shrink-0">
                 {isSelected ? (
-                    <LumoIcon name="CircleCheck" size={20} className="color-norm" />
+                    <LumoIcon name="CircleCheck" size={20} className="lumo-color-glyph" />
                 ) : (
-                    <LumoIcon name="Circle" size={20} className={clsx(isDisabled ? 'color-hint' : 'color-weak')} />
+                    <LumoIcon
+                        name="Circle"
+                        size={20}
+                        className={isDisabled ? 'lumo-color-glyph-disabled' : 'lumo-color-glyph-mid'}
+                    />
                 )}
             </div>
             <div className="flex flex-column flex-nowrap flex-1 gap-0.5 min-w-0">
                 <div className="flex flex-row flex-nowrap items-center gap-2 min-w-0">
-                    <span className={clsx('text-sm text-semibold', isDisabled && 'color-hint')}>{label}</span>
+                    <span className={clsx('lumo-label-small', isDisabled && 'lumo-color-glyph-mid')}>{label}</span>
                     {statusBadge && (
                         <span
                             className={clsx(
-                                'model-mode-status-pill shrink-0',
+                                'model-mode-status-pill py-0.5 px-2 shrink-0 lumo-label-small',
                                 `model-mode-status-pill--${statusBadge.variant}`
                             )}
                         >
@@ -118,7 +122,7 @@ const SelectionOptionRow = ({
                         </span>
                     )}
                 </div>
-                <span className="text-xs color-weak">{description}</span>
+                <span className="lumo-body-small lumo-color-glyph-mid">{description}</span>
             </div>
         </button>
     );
@@ -184,13 +188,13 @@ const ResponseModeRow = ({
         role="tab"
         aria-selected={isActive}
         className={clsx(
-            'model-mode-tab flex flex-column flex-nowrap gap-0.5 p-3 border-none rounded-lg text-left cursor-pointer w-full',
+            'model-mode-tab flex flex-column flex-nowrap gap-0.5 w-full p-3 border-none radius-12 text-left lumo-color-glyph cursor-pointer',
             isActive && 'is-active'
         )}
         onClick={onSelect}
     >
-        <span className="text-sm text-semibold">{option.getLabel()}</span>
-        <span className="text-xs color-weak">{option.getDescription()}</span>
+        <span className="lumo-label-small">{option.getLabel()}</span>
+        <span className="lumo-body-small lumo-color-glyph-mid">{option.getDescription()}</span>
     </button>
 );
 
@@ -247,19 +251,22 @@ export const ModelModePanel = ({
         <div
             className={clsx(
                 'model-mode-picker flex flex-column flex-nowrap w-full',
-                isSheet ? 'model-mode-picker--sheet' : 'model-mode-picker--dropdown'
+                !isSheet &&
+                    'model-mode-picker--dropdown border lumo-border radius-12 lumo-bg-panel-elevated lumo-elevation-3'
             )}
         >
             <div
                 className={clsx(
                     'model-mode-panel flex flex-column flex-nowrap w-full overflow-hidden',
-                    isSheet ? 'model-mode-panel--sheet' : 'model-mode-panel--dropdown',
+                    !isSheet && 'model-mode-panel--dropdown radius-12 lumo-bg-panel-elevated',
                     !isSheet && showUpgradeFooter && 'model-mode-panel--with-upgrade-footer'
                 )}
             >
-                <div className="model-mode-panel-body flex flex-column flex-nowrap w-full">
+                <div className={clsx('flex flex-column flex-nowrap w-full', isSheet ? 'px-4 pb-4' : 'p-3')}>
                     <div className="model-mode-section flex flex-column flex-nowrap gap-1 pb-3">
-                        <span className="model-mode-section-title p-2">{c('collider_2025: Label').t`AI model`}</span>
+                        <span className="model-mode-section-title p-2 lumo-title-small lumo-color-glyph">{c(
+                            'collider_2025: Label'
+                        ).t`AI model`}</span>
                         {modelOptions.map((option) => {
                             const isDisabled = option.isDisabled?.() ?? false;
 
@@ -277,7 +284,9 @@ export const ModelModePanel = ({
                     <hr />
 
                     <div className={clsx('model-mode-section flex flex-column flex-nowrap', isSheet && 'gap-1')}>
-                        <span className="model-mode-section-title p-2">{c('collider_2025: Label').t`Answer mode`}</span>
+                        <span className="model-mode-section-title p-2 lumo-title-small lumo-color-glyph">{c(
+                            'collider_2025: Label'
+                        ).t`Answer mode`}</span>
                         {isSheet ? (
                             responseModeOptions.map((option) => {
                                 return (
@@ -312,13 +321,18 @@ export const ModelModePanel = ({
             </div>
 
             {showUpgradeFooter && (
-                <div className="model-mode-upgrade flex items-center gap-2 min-w-0 flex-nowrap">
-                    <p className="model-mode-upgrade-text min-w-0 m-0 color-norm">
+                <div
+                    className={clsx(
+                        'model-mode-upgrade flex flex-nowrap items-center gap-2 min-w-0 px-4 pb-3',
+                        isSheet ? 'mx-4 mb-4 pt-3 radius-12' : 'pt-6'
+                    )}
+                >
+                    <p className="model-mode-upgrade-text min-w-0 m-0 lumo-label-small lumo-color-glyph">
                         {c('collider_2025: Info')
                             .t`Upgrade for unlimited chats, projects, larger file uploads, and more.`}
                     </p>
                     <BasicUpgradeButton
-                        className="model-mode-upgrade-button text-sm"
+                        className="model-mode-upgrade-button lumo-body-small"
                         size="small"
                         path={upsellPath}
                         onClick={handleUpgradeClick}

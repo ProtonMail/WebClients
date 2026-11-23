@@ -70,7 +70,7 @@ const FilePreview = ({ processing, previewUrl, previewText, filename, mimeTypeIc
 
     if (previewText) {
         return (
-            <div className="file-card-preview file-card-preview--text flex-1 min-h-0 overflow-hidden p-3 text-xs color-weak">
+            <div className="file-card-preview file-card-preview--text flex-1 min-h-0 p-3 overflow-hidden lumo-body-small lumo-color-glyph-mid">
                 {previewText}
             </div>
         );
@@ -99,7 +99,7 @@ const RemoveButton = ({ processing, onRemove }: RemoveButtonProps) => {
     if (processing) {
         return (
             <Tooltip title={c('collider_2025:Info').t`Processing file...`}>
-                <span className="file-card-dismiss-button file-card-progress bg-white rounded-full border">
+                <span className="file-card-dismiss-button p-0.5 file-card-progress border lumo-border radius-full lumo-bg-panel-elevated">
                     <CircularProgress progress={75} size={15} />
                 </span>
             </Tooltip>
@@ -135,15 +135,15 @@ const FileInfo = ({ filename, prettyType, processing, autoRetrieved, mimeTypeIco
     return (
         <div className="file-card-info">
             <FileTypeIcon size={6} className="shrink-0 file-card-info-icon" />
-            <div className="file-card-info-text">
-                <p className="m-0 text-ellipsis font-medium file-title text-xs" title={filename}>
+            <div className="file-card-info-text gap-0">
+                <p className="m-0 text-ellipsis file-title lumo-label-small" title={filename}>
                     {filename}
                 </p>
-                <p className="m-0 text-xs color-weak text-ellipsis file-subtitle" title={prettyType}>
+                <p className="file-subtitle m-0 lumo-body-small text-ellipsis lumo-color-glyph-mid" title={prettyType}>
                     {processing ? c('collider_2025:Info').t`Processing...` : prettyType}
                 </p>
                 {autoRetrieved && (
-                    <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
+                    <span className="flex items-center gap-1 mt-0.5 lumo-label-medium lumo-color-glyph-brand-text">
                         <LumoIcon name="WandSparkles" width={12} height={12} />
                         {c('collider_2025:Info').t`Auto-retrieved`}
                     </span>
@@ -159,8 +159,8 @@ interface ErrorDisplayProps {
 
 const ErrorDisplay = ({ errorMessage }: ErrorDisplayProps) => (
     <span className="flex flex-row flex-nowrap gap-2 mt-1 items-start">
-        <LumoIcon name="TriangleExclamationPoint" size={16} className="mt-0.5 shrink-0 color-danger" />
-        <p className="text-sm m-0 color-danger">
+        <LumoIcon name="TriangleExclamationPoint" size={16} className="shrink-0 mt-0.5 lumo-color-signal-danger" />
+        <p className="m-0 lumo-body-small lumo-color-signal-danger">
             {errorMessage || c('collider_2025: Info').t`Error processing attachment`}
         </p>
     </span>
@@ -214,7 +214,7 @@ export const AttachmentFileCard = ({
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
             className={clsx(
-                'file-card group relative border border-weak bg-norm text-hint w-custom h-custom transition-all flex flex-column',
+                'file-card group relative flex flex-column w-custom h-custom border lumo-border radius-12 lumo-color-glyph-mid lumo-bg-panel transition-all lumo-easing-standard',
                 canClick && 'cursor-pointer hover:border-norm hover:bg-weak',
                 className
             )}
@@ -232,11 +232,11 @@ export const AttachmentFileCard = ({
             />
 
             {isPasted ? (
-                <span className="file-card-pasted-badge absolute inline-block border border-weak rounded-sm px-2 py-1 text-xs font-semibold color-norm bg-norm">
+                <span className="file-card-pasted-badge absolute inline-block px-2 py-1 border lumo-border radius-4 lumo-label-small lumo-color-glyph lumo-bg-panel">
                     {c('collider_2025:Info').t`PASTED`}
                 </span>
             ) : (
-                <div className="file-card-footer shrink-0 px-3 py-2 bg-norm overflow-hidden">
+                <div className="file-card-footer gap-2 shrink-0 px-3 py-2 overflow-hidden border-top lumo-border lumo-bg-panel">
                     <FileInfo
                         filename={filename}
                         prettyType={prettyType}

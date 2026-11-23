@@ -40,7 +40,7 @@ export const AllChatsHeaderSearch = ({ searchQuery, onSearchQueryChange }: Props
                 onValue={onSearchQueryChange}
                 placeholder={c('collider_2025:Placeholder').t`Search chats`}
                 aria-label={c('collider_2025:Button').t`Search chats`}
-                prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
+                prefix={<LumoIcon name="Search" size={16} className="lumo-color-glyph-mid" />}
                 suffix={
                     searchQuery ? (
                         <Button

@@ -24,8 +24,8 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
 
     if (status === 'loading' && allItems.length === 0) {
         return (
-            <div className="gallery-created">
-                <div className="gallery-loading">
+            <div className="gallery-created gap-4">
+                <div className="gallery-loading gap-3 py-8">
                     <CircleLoader size="medium" />
                 </div>
             </div>
@@ -34,9 +34,13 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
 
     if (status === 'error') {
         return (
-            <div className="gallery-created">
-                <div className="gallery-error">
-                    <LumoIcon name="CircleExclamationPoint" size={24} className="gallery-error__icon" />
+            <div className="gallery-created gap-4">
+                <div className="gallery-error gap-3 py-8">
+                    <LumoIcon
+                        name="CircleExclamationPoint"
+                        size={24}
+                        className="gallery-error__icon lumo-color-signal-warning"
+                    />
                     <p>{c('collider_2025:Error').t`Failed to load images. Please try again.`}</p>
                 </div>
             </div>
@@ -48,7 +52,7 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
     }
 
     return (
-        <div className="gallery-created">
+        <div className="gallery-created gap-4">
             <GalleryMasonryGrid>
                 {allItems.map((item) => (
                     <GalleryImageCard
@@ -62,7 +66,7 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
             </GalleryMasonryGrid>
 
             {hasMore && (
-                <div className="gallery-load-more">
+                <div className="gallery-load-more pt-1 pb-2">
                     <Button shape="outline" color="weak" onClick={loadMore} loading={status === 'loading'}>
                         {c('collider_2025:Button').t`Load more`}
                     </Button>

@@ -15,17 +15,17 @@ interface Props {
 
 export const LandingStage = ({ onGenerate, recentFilesRefreshKey, onOpenReport, onDeleteReport }: Props) => {
     return (
-        <div className="ai-paper-trail__inner ai-paper-trail__landing-split">
-            <div className="ai-paper-trail__landing-copy">
-                <h1 className="ai-paper-trail__title ai-paper-trail__landing-title">
+        <div className="ai-paper-trail__inner ai-paper-trail__landing-split mx-auto px-6 pb-20">
+            <div className="ai-paper-trail__landing-copy gap-1">
+                <h1 className="ai-paper-trail__landing-title ai-paper-trail__title mt-2 mb-4">
                     {c('collider_2025:Title').t`See what Big Tech AI already knows about you`}
                 </h1>
                 <div className="flex flex-column gap-5 mb-5">
-                    <p className="color-hint m-0">
+                    <p className="m-0 lumo-color-glyph-mid">
                         {c('collider_2025:Info')
                             .t`Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live.`}
                     </p>
-                    <p className="color-hint m-0">
+                    <p className="m-0 lumo-color-glyph-mid">
                         {c('collider_2025:Info')
                             .t`Export your data from ChatGPT or Claude, upload it privately, and we’ll show you what big tech AI has learned about you.`}
                     </p>

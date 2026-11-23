@@ -5,22 +5,16 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 .collapsible-section-header {
-	transition: background-color 0.15s ease;
+	transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 	min-block-size: rem(40);
 	block-size: rem(40);
-	color: var(--glyph-glyph-hint);
-	font-size: rem(12);
-
-	// &:hover {
-	// 	background-color: var(--background-weak);
-	// }
 
 	@include im.media('<=small') {
 		position: relative;
 
 		&:hover {
-			background-color: var(--background-weak);
-			transition: 0.3s all;
+			background-color: var(--lumo-control-fill);
+			transition: var(--lumo-duration-300) all var(--lumo-easing-standard);
 		}
 	}
 }

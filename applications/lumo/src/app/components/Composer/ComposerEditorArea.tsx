@@ -207,7 +207,7 @@ export const ComposerEditorArea = ({
     useMobilePromptHandler(setValue, textareaRef);
 
     return (
-        <div className="lumo-input border-none flex-grow w-full z-30 flex flex-row flex-nowrap items-end gap-3 p-2 pl-3 my-auto bg-norm relative">
+        <div className="lumo-input relative z-30 flex flex-row flex-nowrap flex-grow items-end gap-3 w-full my-auto p-2 pl-3 border-none lumo-bg-panel-elevated">
             <div className={clsx('composer-text-wrapper', skillTokens.isActive && 'has-skill-tokens')}>
                 {skillTokens.isActive && <SkillTokenHighlight textareaRef={textareaRef} parts={skillTokens.parts} />}
                 <TextareaAutosize
@@ -222,7 +222,7 @@ export const ComposerEditorArea = ({
                     onSelect={updateCursorPosition}
                     onMouseUp={updateCursorPosition}
                     placeholder={placeholder ?? c('collider_2025:Placeholder').t`Ask anything…`}
-                    className="tiptap ProseMirror composer flex-grow w-full resize-none p-1 bg-transparent border-0 outline-none shadow-none"
+                    className="tiptap ProseMirror composer flex-grow w-full resize-none p-1 border-0 lumo-body-large bg-transparent outline-none shadow-none"
                     maxRows={8}
                     minRows={1}
                     autoFocus={!isMobile()}
@@ -250,7 +250,7 @@ export const ComposerEditorArea = ({
             />
 
             {canShowSendButton && (
-                <div className="flex flex-row self-end items-end gap-1 h-full shrink-0 composer-submit-button">
+                <div className="composer-submit-button flex flex-row shrink-0 items-end self-end gap-1 h-full">
                     <Tooltip
                         title={
                             isProcessingAttachment
@@ -262,15 +262,15 @@ export const ComposerEditorArea = ({
                     >
                         <Button
                             icon
-                            className="rounded-full p-0 ratio-square border-0 w-custom"
-                            size="small"
-                            style={{ inlineSize: '2rem', transform: 'scale(1.125)', transformOrigin: 'center' }}
+                            pill
+                            className="composer-submit-button__action p-0 border-0"
                             disabled={sendIsDisabled}
                             onClick={isGenerating ? onAbort : onSubmit}
                             color="norm"
                         >
                             <img
                                 src={isGenerating ? lumoStop : lumoStart}
+                                className="w-full h-full"
                                 draggable={false}
                                 alt={
                                     isGenerating

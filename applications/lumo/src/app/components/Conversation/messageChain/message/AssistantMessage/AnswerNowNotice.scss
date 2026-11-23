@@ -10,11 +10,9 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 8px;
-	padding-block: 6px;
-	padding-inline: 12px 14px;
-	font-size: 13px;
-	font-weight: 500;
+	gap: var(--lumo-space-8);
+	padding-block: var(--lumo-space-6);
+	padding-inline: var(--lumo-space-12) 14px;
 	line-height: 20px;
 	white-space: nowrap;
 	box-shadow: 0 2px 4px rgb(0 0 0 / 0.08);
@@ -31,14 +29,14 @@
 	visibility: hidden;
 	pointer-events: none;
 	transition:
-		opacity 100ms ease-out,
-		visibility 0s linear 100ms;
+		opacity var(--lumo-duration-100) var(--lumo-easing-enter),
+		visibility 0s var(--lumo-easing-linear) var(--lumo-duration-100);
 
 	&--visible {
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
-		animation: answer-now-pill-enter 150ms ease-out;
+		animation: answer-now-pill-enter var(--lumo-duration-150) var(--lumo-easing-enter);
 		transition-delay: 0s;
 	}
 }

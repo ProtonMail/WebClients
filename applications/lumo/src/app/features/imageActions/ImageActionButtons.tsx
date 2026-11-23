@@ -99,8 +99,9 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
                 {c('collider_2025:Action').t`Change style`}
                 <IcChevronDownFilled
                     size={3}
+                    className="duration-150 lumo-easing-standard"
                     style={{
-                        transition: 'transform 0.15s',
+                        transitionProperty: 'transform',
                         transform: showMenu ? 'rotate(180deg)' : 'rotate(0deg)',
                     }}
                 />
@@ -108,14 +109,14 @@ export const ImageStyleDropdown = ({ onSelect, side = false, stopPropagation = f
             {showMenu && (
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 <span
-                    className="image-style-menu__popup absolute inline-flex flex-column gap-0.5 p-1 rounded-xl border bg-norm shadow-lifted overflow-y-auto"
+                    className="image-style-menu__popup absolute inline-flex flex-column gap-0.5 p-1 overflow-y-auto border radius-16 lumo-bg-panel-elevated lumo-elevation-4"
                     style={maxMenuHeight ? { maxBlockSize: maxMenuHeight } : undefined}
                     onClick={stopPropagation ? (e) => e.stopPropagation() : undefined}
                 >
                     {getImageStyleOptions().map((style) => (
                         <button
                             key={style.id}
-                            className="image-style-menu__item flex items-center w-full py-2 px-3 rounded-lg text-sm text-semibold text-left border-none bg-transparent color-norm"
+                            className="image-style-menu__item flex items-center w-full px-3 py-2 border-none radius-12 lumo-label-small text-left lumo-color-glyph bg-transparent"
                             onClick={() => {
                                 onSelect(style.prompt);
                                 setShowMenu(false);

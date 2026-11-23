@@ -122,7 +122,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                 />
                 <ModalTwoContent>
                     <div className="flex flex-column gap-4">
-                        <div className="flex flex-nowrap items-center border border-weak rounded-lg p-1">
+                        <div className="flex flex-nowrap items-center p-1 border lumo-border radius-12">
                             <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
                             <InputFieldTwo
                                 dir="auto"
@@ -138,7 +138,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                         </div>
 
                         <div>
-                            <label htmlFor="agent-description" className="block text-semibold text-sm color-norm mb-2">
+                            <label htmlFor="agent-description" className="block mb-2 lumo-label-small lumo-color-glyph">
                                 {c('collider_2025:Label').t`Description (optional)`}
                             </label>
                             <InputFieldTwo
@@ -149,13 +149,16 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                                 value={description}
                                 onValue={setDescription}
                                 maxLength={120}
-                                className="border border-weak rounded-lg"
+                                className="border lumo-border radius-12"
                                 dense
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="agent-instructions" className="block text-semibold text-sm color-norm mb-2">
+                            <label
+                                htmlFor="agent-instructions"
+                                className="block mb-2 lumo-label-small lumo-color-glyph"
+                            >
                                 {c('collider_2025:Label').t`Instructions`}
                             </label>
                             <TextAreaTwo
@@ -164,7 +167,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                                 placeholder={c('collider_2025:Placeholder')
                                     .t`Describe the role, scope, and behavior you want ${LUMO_SHORT_APP_NAME} to adopt.`}
                                 value={instructions}
-                                className="border border-weak rounded-lg"
+                                className="border lumo-border radius-12"
                                 onValue={setInstructions}
                                 maxLength={AGENT_INSTRUCTIONS_MAX_LENGTH}
                                 rows={10}
@@ -172,10 +175,10 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                         </div>
 
                         <div>
-                            <label className="block text-semibold text-sm color-norm mb-1">
+                            <label className="block mb-1 lumo-label-small lumo-color-glyph">
                                 {c('collider_2025:Label').t`Conversation starters (optional)`}
                             </label>
-                            <p className="text-sm color-weak mt-0 mb-2">
+                            <p className="mt-0 mb-2 lumo-body-small lumo-color-glyph-mid">
                                 {c('collider_2025:Info').t`Example prompts shown when a conversation begins.`}
                             </p>
                             <div className="flex flex-column gap-2">
@@ -190,7 +193,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                                                 value={starter}
                                                 onValue={(value: string) => handleStarterChange(index, value)}
                                                 maxLength={CONVERSATION_STARTER_MAX_LENGTH}
-                                                className="border border-weak rounded-lg"
+                                                className="border lumo-border radius-12"
                                                 dense
                                                 assistContainerClassName="hidden"
                                             />

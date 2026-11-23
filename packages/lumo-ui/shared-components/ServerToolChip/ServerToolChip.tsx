@@ -35,7 +35,7 @@ const sourceDomain = (url: string): string => {
 const ServerToolChip = ({ label, icon: Icon, sources = [], className }: Props) => {
     if (!sources.length) {
         return (
-            <div className={`lumo-server-tool text-sm color-weak ${className ?? ''}`.trim()}>
+            <div className={`lumo-server-tool lumo-body-small color-weak ${className ?? ''}`.trim()}>
                 <Icon className="shrink-0" size={3} />
                 <span className="text-ellipsis" title={label}>
                     {label}
@@ -51,7 +51,7 @@ const ServerToolChip = ({ label, icon: Icon, sources = [], className }: Props) =
                     <li key={source.url}>
                         <Href href={source.url} className="lumo-server-tool__source color-norm">
                             <span
-                                className="lumo-server-tool__source-domain block text-sm color-weak text-ellipsis"
+                                className="lumo-server-tool__source-domain block lumo-body-small color-weak text-ellipsis"
                                 title={sourceDomain(source.url)}
                             >
                                 {sourceDomain(source.url)}

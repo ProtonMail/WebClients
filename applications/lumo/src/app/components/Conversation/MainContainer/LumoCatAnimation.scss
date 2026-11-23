@@ -10,7 +10,7 @@ im.$media-expressions: $media-expressions;
 	overflow: visible;
 	inline-size: rem(200);
 	block-size: rem(159);
-	margin-block: rem(-59) rem(24);
+	margin-block: rem(-59) var(--lumo-space-24);
 	flex-shrink: 0;
 
 	--lumo-cat-hint-arrow-color: #6d4aff;
@@ -40,19 +40,19 @@ im.$media-expressions: $media-expressions;
 		opacity: 0;
 		visibility: hidden;
 		transition:
-			opacity 0.15s ease,
-			visibility 0.15s ease;
+			opacity var(--lumo-duration-150) var(--lumo-easing-standard),
+			visibility var(--lumo-duration-150) var(--lumo-easing-standard);
 		pointer-events: none;
 		z-index: 1;
 	}
 
 	&__hint-text {
-		margin-block: rem(-10) rem(6);
-		margin-inline: rem(-10) rem(-20);
+		margin-block: calc(-1 * var(--lumo-space-10)) var(--lumo-space-6);
+		margin-inline: calc(-1 * var(--lumo-space-10)) calc(-1 * var(--lumo-space-20));
 		font-family: 'Segoe Script', 'Bradley Hand', 'Apple Chancery', cursive;
 		font-size: rem(18);
 		line-height: 1.15;
-		color: var(--lumo-welcome-text, var(--text-norm));
+		color: var(--lumo-welcome-text, var(--lumo-glyph));
 		text-align: start;
 		white-space: nowrap;
 		transform: rotate(333deg);

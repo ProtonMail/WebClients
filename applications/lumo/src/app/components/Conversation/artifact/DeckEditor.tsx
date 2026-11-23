@@ -97,8 +97,8 @@ const EditableNotes = ({ notes, onBlur }: EditableNotesProps) => {
     }, []);
 
     return (
-        <div className="flex gap-2 text-sm color-weak" style={{ width: EDITOR_SLIDE_WIDTH_PX }}>
-            <span className="text-semibold shrink-0 user-select-none">{c('collider_2025: Info').t`Notes:`}</span>
+        <div className="flex gap-2 lumo-body-medium lumo-color-glyph-mid" style={{ inlineSize: EDITOR_SLIDE_WIDTH_PX }}>
+            <span className="shrink-0 lumo-title-small user-select-none">{c('collider_2025: Info').t`Notes:`}</span>
             <div
                 ref={ref}
                 dir="auto"
@@ -108,7 +108,7 @@ const EditableNotes = ({ notes, onBlur }: EditableNotesProps) => {
                     onBlur(e.currentTarget.textContent ?? '');
                 }}
                 className="flex-1 outline-none cursor-text"
-                style={{ whiteSpace: 'pre-wrap', minHeight: '1.5em', wordBreak: 'break-word' }}
+                style={{ whiteSpace: 'pre-wrap', minBlockSize: '1.5em', wordBreak: 'break-word' }}
             />
         </div>
     );
@@ -167,8 +167,8 @@ export const DeckEditor = ({ artifact, onChange }: Props) => {
 
     if (!laidOut) {
         return (
-            <div className="flex items-center justify-center flex-1 min-h-0 p-8">
-                <p className="m-0 color-weak text-sm">
+            <div className="flex flex-1 items-center justify-center min-h-0 p-8">
+                <p className="m-0 lumo-body-medium lumo-color-glyph-mid">
                     {c('collider_2025: Error').t`This slide deck couldn't be read.`}
                 </p>
             </div>
@@ -176,14 +176,17 @@ export const DeckEditor = ({ artifact, onChange }: Props) => {
     }
 
     return (
-        <div className="flex-1 min-h-0 overflow-auto bg-weak">
+        <div className="flex-1 min-h-0 overflow-auto lumo-bg-control-fill">
             {/* min-width keeps the slides from squishing on narrow panels; the outer div scrolls. */}
-            <div className="flex flex-column items-center gap-4 p-4" style={{ minWidth: EDITOR_SLIDE_WIDTH_PX + 32 }}>
+            <div
+                className="flex flex-column items-center gap-4 p-4"
+                style={{ minInlineSize: EDITOR_SLIDE_WIDTH_PX + 32 }}
+            >
                 {laidOut.slides.map((slide, index) => {
                     const slideNumber = index + 1;
                     return (
                         <section key={`${slide.sourceSlide}-${slide.part}`} className="flex flex-column gap-1">
-                            <span className="text-xs color-weak user-select-none">
+                            <span className="lumo-body-small lumo-color-glyph-mid user-select-none">
                                 {c('collider_2025: Info').t`Slide ${slideNumber}`}
                             </span>
                             <DeckSlideEditor slide={slide} onEdit={handleEdit} />

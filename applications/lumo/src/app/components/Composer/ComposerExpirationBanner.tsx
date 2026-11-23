@@ -159,9 +159,9 @@ export const ComposerExpirationBanner = ({ conversationId }: Props) => {
         <ComposerNotificationCard
             icon={
                 banner.urgency === 'urgent' ? (
-                    <LumoIcon name="Hourglass" size={16} className="color-weak" />
+                    <LumoIcon name="Hourglass" size={16} className="lumo-color-glyph-mid" />
                 ) : (
-                    <LumoIcon name="Clock" size={16} className="color-weak" />
+                    <LumoIcon name="Clock" size={16} className="lumo-color-glyph-mid" />
                 )
             }
             title={banner.title}

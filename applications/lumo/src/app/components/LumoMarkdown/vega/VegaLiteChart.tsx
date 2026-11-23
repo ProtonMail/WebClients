@@ -318,7 +318,9 @@ export const VegaLiteChart = ({ code, deferRender = false }: VegaLiteChartProps)
             ) : null}
             {!showFailedState ? <div ref={containerRef} className="vega-lite-chart__viewport w-full" /> : null}
             {showFailedState && failureMessage ? (
-                <p className="vega-lite-chart__failure-summary m-0 pe-10 text-sm color-danger">{failureMessage}</p>
+                <p className="vega-lite-chart__failure-summary pe-10 m-0 lumo-body-small lumo-color-signal-danger">
+                    {failureMessage}
+                </p>
             ) : null}
             {showLoading ? <VegaChartLoadingOverlay /> : null}
             {showActions && specSourceExpanded ? (

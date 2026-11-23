@@ -8,15 +8,15 @@
 	inset-block-end: 8px;
 
 	.upsell-card-title {
-		color: var(--text-error-banner-title);
+		color: var(--lumo-glyph);
 	}
 
 	.upsell-card-message {
-		color: var(--text-error-banner-message);
+		color: var(--lumo-glyph-mid);
 	}
 
 	.upsell-card-button {
-		color: var(--text-error-banner-button);
+		color: var(--lumo-glyph-brand-text);
 	}
 
 	&.upsell-card--in-chat {

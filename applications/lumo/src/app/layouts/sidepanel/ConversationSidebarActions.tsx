@@ -146,7 +146,12 @@ export const ConversationSidebarActions = ({
                     event.stopPropagation();
                 }}
             >
-                <DropdownMenu options={options} onToggle={onOpenChange} visibleOnHover={visibleOnHover} />
+                <DropdownMenu
+                    className="radius-8"
+                    options={options}
+                    onToggle={onOpenChange}
+                    visibleOnHover={visibleOnHover}
+                />
             </div>
             {showDeleteFlow && (
                 <ConversationDeleteFlow

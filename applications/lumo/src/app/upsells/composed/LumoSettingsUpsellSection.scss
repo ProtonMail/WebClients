@@ -8,6 +8,12 @@ im.$media-expressions: $media-expressions;
 	@include im.media('<=small') {
 		.flex-row {
 			flex-direction: column;
+			align-items: stretch;
+
+			// The cards share a row with flex: 1 0 0; stacked, that basis collapses their height.
+			> * {
+				flex: none;
+			}
 		}
 	}
 }

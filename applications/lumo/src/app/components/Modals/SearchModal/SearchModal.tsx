@@ -96,7 +96,7 @@ const SearchResultItem = ({ result, query, scope, onSelect }: SearchResultItemPr
     const projectIconId = result.type === 'conversation' || result.type === 'message' ? result.projectIcon : undefined;
     const projectCategory = projectIconId ? getProjectCategoryInfo(projectIconId) : null;
     const projectIconElement = projectCategory ? (
-        <ProjectIconComponent iconId={projectIconId} size={12} className="mr-1" />
+        <ProjectIconComponent iconId={projectIconId} size={12} className="shrink-0" />
     ) : null;
 
     // Highlight search terms in text (case-insensitive, avoids global-regex lastIndex bugs)
@@ -123,7 +123,7 @@ const SearchResultItem = ({ result, query, scope, onSelect }: SearchResultItemPr
 
             const matchEnd = matchIndex + searchQuery.length;
             parts.push(
-                <mark key={matchIndex} className="search-highlight">
+                <mark key={matchIndex} className="search-highlight p-0">
                     {text.slice(matchIndex, matchEnd)}
                 </mark>
             );
@@ -139,27 +139,31 @@ const SearchResultItem = ({ result, query, scope, onSelect }: SearchResultItemPr
     if (result.type === 'document') {
         return (
             <button
-                className="search-result-item search-result-item-document"
+                className="search-result-item gap-3 py-2.5 px-5 search-result-item-document"
                 onClick={handleClick}
                 title={c('Action').t`Open file preview`}
             >
-                <div className="search-result-content">
-                    <div className="search-result-title">{highlightText(result.documentName || '', query)}</div>
+                <div className="search-result-content gap-0.5">
+                    <div className="search-result-title lumo-label-large lumo-color-glyph">
+                        {highlightText(result.documentName || '', query)}
+                    </div>
                     {result.matchContext && (
-                        <div className="search-result-preview search-result-context">
+                        <div className="search-result-preview search-result-context lumo-label-small lumo-color-glyph-mid">
                             {highlightText(result.matchContext, query)}
                         </div>
                     )}
                     {result.documentPreview && (
-                        <div className="search-result-preview search-result-folder-path">
+                        <div className="search-result-preview search-result-folder-path lumo-label-small lumo-color-glyph-mid">
                             <LumoIcon name="Folder" width={12} height={12} className="mr-1" color="var(--text-norm)" />
                             {result.documentPreview}
                         </div>
                     )}
                 </div>
-                <div className="search-result-meta">
-                    <IcBrandProtonDriveFilled size={3} className="color-weak mr-1" />
-                    <span className="search-result-date">{formatDate(result.timestamp, query)}</span>
+                <div className="search-result-meta gap-1">
+                    <IcBrandProtonDriveFilled size={3} className="mr-1 lumo-color-glyph-mid" />
+                    <span className="search-result-date lumo-body-small lumo-color-glyph-mid">
+                        {formatDate(result.timestamp, query)}
+                    </span>
                 </div>
             </button>
         );
@@ -168,39 +172,55 @@ const SearchResultItem = ({ result, query, scope, onSelect }: SearchResultItemPr
     if (result.type === 'project') {
         return (
             <button
-                className="search-result-item search-result-item-project"
+                className="search-result-item gap-3 py-2.5 px-5 search-result-item-project"
                 onClick={handleClick}
                 title={c('Action').t`Open project`}
             >
-                <div className="search-result-icon">
-                    <ProjectIconComponent iconId={result.projectIcon} size={16} className="color-norm" />
+                <div className="search-result-icon lumo-color-glyph-mid">
+                    <ProjectIconComponent iconId={result.projectIcon} size={16} className="lumo-color-glyph" />
                 </div>
-                <div className="search-result-content">
-                    <div className="search-result-title">{highlightText(result.projectName || '', query)}</div>
+                <div className="search-result-content gap-0.5">
+                    <div className="search-result-title lumo-label-large lumo-color-glyph">
+                        {highlightText(result.projectName || '', query)}
+                    </div>
                     {result.projectDescription && (
-                        <div className="search-result-preview">{highlightText(result.projectDescription, query)}</div>
+                        <div className="search-result-preview lumo-label-small lumo-color-glyph-mid">
+                            {highlightText(result.projectDescription, query)}
+                        </div>
                     )}
                 </div>
-                <div className="search-result-date">{formatDate(result.timestamp, query)}</div>
+                <div className="search-result-date lumo-body-small lumo-color-glyph-mid">
+                    {formatDate(result.timestamp, query)}
+                </div>
             </button>
         );
     }
 
     return (
-        <button className="search-result-item" onClick={handleClick} title={c('Action').t`Open conversation`}>
-            <div className="search-result-content">
+        <button
+            className="search-result-item gap-3 py-2.5 px-5"
+            onClick={handleClick}
+            title={c('Action').t`Open conversation`}
+        >
+            <div className="search-result-content gap-0.5">
                 {result.projectName && (
-                    <div className="search-result-preview search-result-folder-path">
+                    <div className="search-result-preview search-result-folder-path flex items-center gap-1 lumo-label-small lumo-color-glyph-mid">
                         {projectIconElement}
-                        {result.projectName}
+                        <span className="text-ellipsis">{result.projectName}</span>
                     </div>
                 )}
-                <div className="search-result-title">{highlightText(result.conversationTitle || '', query)}</div>
+                <div className="search-result-title lumo-label-large lumo-color-glyph">
+                    {highlightText(result.conversationTitle || '', query)}
+                </div>
                 {result.type === 'message' && result.messagePreview && (
-                    <div className="search-result-preview">{highlightText(result.messagePreview, query)}</div>
+                    <div className="search-result-preview lumo-label-small lumo-color-glyph-mid">
+                        {highlightText(result.messagePreview, query)}
+                    </div>
                 )}
             </div>
-            <div className="search-result-date">{formatDate(result.timestamp, query)}</div>
+            <div className="search-result-date lumo-body-small lumo-color-glyph-mid">
+                {formatDate(result.timestamp, query)}
+            </div>
         </button>
     );
 };
@@ -435,8 +455,8 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div className="search-modal-container" onKeyDown={handleKeyDown}>
             {/* Search Input */}
-            <div className="search-modal-input-wrapper">
-                <IcMagnifier size={4.5} className="search-modal-input-icon" />
+            <div className="search-modal-input-wrapper border-bottom lumo-border gap-3 p-5">
+                <IcMagnifier size={4.5} className="search-modal-input-icon lumo-color-glyph-mid" />
                 <input
                     dir="auto"
                     ref={searchInputRef}
@@ -444,7 +464,7 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
                     value={query}
                     onChange={(e) => handleSearchChange(e.target.value)}
                     placeholder={searchPlaceholder}
-                    className="search-modal-input"
+                    className="search-modal-input bg-transparent p-0 lumo-color-glyph"
                     autoFocus
                 />
                 {isSearching && (
@@ -458,19 +478,22 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
             <div className="search-modal-results">
                 {/* Empty state hint - only show when no results and no query */}
                 {!query.trim() && results.length === 0 && !isSearching && (
-                    <div className="search-modal-empty-hint">{emptyStateHint}</div>
+                    <div className="search-modal-empty-hint px-5 py-10 lumo-body-medium lumo-color-glyph-mid">
+                        {emptyStateHint}
+                    </div>
                 )}
 
                 {error && (
-                    <div className="search-modal-error">
-                        <LumoIcon name="Info" className="search-modal-error-icon" />
-                        <p className="search-modal-error-text">{error}</p>
+                    <div className="search-modal-error gap-3 mx-5 my-3 p-5 radius-8 lumo-bg-control-fill-mid">
+                        <LumoIcon name="Info" className="search-modal-error-icon lumo-color-signal-danger" />
+                        <p className="search-modal-error-text m-0 lumo-body-medium lumo-color-signal-danger">{error}</p>
                     </div>
                 )}
 
                 {!error && query.trim() && !isSearching && results.length === 0 && (
-                    <div className="search-modal-empty">
-                        <p className="search-modal-empty-text">{c('Info').t`No results found for "${query}"`}</p>
+                    <div className="search-modal-empty px-5 py-10">
+                        <p className="search-modal-empty-text m-0 lumo-body-medium lumo-color-glyph-mid">{c('Info')
+                            .t`No results found for "${query}"`}</p>
                     </div>
                 )}
 
@@ -480,9 +503,11 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
                         if (!groupResults || groupResults.length === 0) return null;
 
                         return (
-                            <div key={groupName} className="search-modal-section">
-                                <div className="search-modal-section-header">
-                                    <span className="search-modal-section-title">{groupLabels[groupName]}</span>
+                            <div key={groupName} className="p-0">
+                                <div className="search-modal-section-header px-5 pt-3 pb-2 lumo-bg-panel-elevated">
+                                    <span className="search-modal-section-title lumo-label-small lumo-color-glyph-mid">
+                                        {groupLabels[groupName]}
+                                    </span>
                                 </div>
                                 {groupResults.map((result, index) => {
                                     const key =
@@ -510,7 +535,7 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
 
             {/* Document Preview Panel */}
             {documentPreview && (
-                <div className="search-modal-preview-panel">
+                <div className="search-modal-preview-panel lumo-bg-overlay">
                     <FilePreviewPanel
                         attachment={documentPreview}
                         onBack={() => setDocumentPreview(null)}
@@ -524,7 +549,7 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
                 <div className="search-modal-overlay" style={{ zIndex: 10001 }}>
                     <div className="flex flex-column items-center justify-center gap-4">
                         <CircleLoader size="medium" />
-                        <p className="color-norm">{c('Info').t`Loading file preview...`}</p>
+                        <p className="lumo-color-glyph">{c('Info').t`Loading file preview...`}</p>
                     </div>
                 </div>
             )}
@@ -563,7 +588,10 @@ export const SearchModal = ({ open, onClose, scope = 'chats' }: SearchModalProps
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
         <div className="search-modal-overlay" onClick={onClose}>
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
-            <div className="search-modal-spotlight" onClick={(e) => e.stopPropagation()}>
+            <div
+                className="search-modal-spotlight radius-12 lumo-bg-panel-elevated lumo-elevation-4"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <SearchModalInner key={scope} onClose={onClose} scope={scope} />
             </div>
         </div>,

@@ -50,9 +50,9 @@ export const ProjectSearchSection = ({ space }: ProjectSearchSectionProps) => {
         .join(' · ');
 
     return (
-        <div className="project-files-section flex-none">
-            <div className="project-files-section-header">
-                <h3 className="project-files-section-title flex flex-nowrap items-center gap-1">
+        <div className="project-files-section flex-none mb-5 pb-5">
+            <div className="project-files-section-header mb-3">
+                <h3 className="project-files-section-title flex flex-nowrap items-center gap-1 lumo-title-small lumo-color-glyph">
                     {c('collider_2025:Title').t`What can ${LUMO_SHORT_APP_NAME} see?`}
                     <Tooltip
                         title={c('collider_2025:Info')
@@ -73,7 +73,7 @@ export const ProjectSearchSection = ({ space }: ProjectSearchSectionProps) => {
                     <LumoIcon name="Pen" size={16} />
                 </Button>
             </div>
-            <p className="m-0 text-sm color-weak">{summary}</p>
+            <p className="m-0 lumo-body-small lumo-color-glyph-mid">{summary}</p>
             {searchModal.render && <ProjectSearchModal space={space} {...searchModal.modalProps} />}
         </div>
     );

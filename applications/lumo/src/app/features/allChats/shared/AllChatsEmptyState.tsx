@@ -53,13 +53,13 @@ export const AllChatsEmptyState = ({ variant }: AllChatsEmptyStateProps) => {
     return (
         <div className="flex flex-column items-center gap-3 px-6 pt-12 md:pt-20 text-center">
             <div
-                className="all-chats-empty-icon flex items-center justify-center shrink-0 rounded-xl w-custom h-custom"
+                className="all-chats-empty-icon lumo-bg-control-fill-mid lumo-color-glyph flex shrink-0 items-center justify-center w-custom h-custom radius-16"
                 style={{ '--w-custom': '3.5rem', '--h-custom': '3.5rem' }}
             >
                 <LumoIcon name={content.icon} size={24} />
             </div>
-            <h2 className="text-lg text-semibold m-0">{content.heading}</h2>
-            <p className="color-weak m-0">{content.subline}</p>
+            <h2 className="m-0 lumo-title-medium">{content.heading}</h2>
+            <p className="m-0 lumo-color-glyph-mid">{content.subline}</p>
         </div>
     );
 };

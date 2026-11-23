@@ -69,7 +69,7 @@ export const ConversationExportModal = ({ conversation, onClose, ...rest }: Prop
                                 label: (
                                     <div className="flex-1">
                                         <div>{jsonLabel}</div>
-                                        <div className="color-weak text-sm">{jsonDescription}</div>
+                                        <div className="lumo-body-small lumo-color-glyph-mid">{jsonDescription}</div>
                                     </div>
                                 ),
                                 value: 'json',
@@ -78,7 +78,9 @@ export const ConversationExportModal = ({ conversation, onClose, ...rest }: Prop
                                 label: (
                                     <div className="flex-1">
                                         <div>{markdownLabel}</div>
-                                        <div className="color-weak text-sm">{markdownDescription}</div>
+                                        <div className="lumo-body-small lumo-color-glyph-mid">
+                                            {markdownDescription}
+                                        </div>
                                     </div>
                                 ),
                                 value: 'md',
@@ -87,7 +89,7 @@ export const ConversationExportModal = ({ conversation, onClose, ...rest }: Prop
                         value={selectedFormat}
                     />
                 </div>
-                <div className="color-weak text-sm">
+                <div className="lumo-body-small lumo-color-glyph-mid">
                     {
                         // translator: Disclaimer noting that some message content may be missing from the exported file.
                         c('collider_2025:Info')

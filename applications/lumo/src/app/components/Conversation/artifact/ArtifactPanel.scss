@@ -14,31 +14,23 @@
 .artifact-view-toggle-option {
 	inline-size: 1.75rem;
 	block-size: 1.75rem;
-	padding: 0;
 	transition:
-		background 150ms ease,
-		box-shadow 150ms ease,
-		color 150ms ease;
+		background var(--lumo-duration-150) var(--lumo-easing-standard),
+		box-shadow var(--lumo-duration-150) var(--lumo-easing-standard),
+		color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:hover:not(.artifact-view-toggle-option--active) {
-		color: var(--text-norm);
-	}
-
-	&--active {
-		box-shadow:
-			0 1px 2px color-mix(in srgb, var(--shadow-norm, #000) 8%, transparent),
-			0 0 0 1px color-mix(in srgb, var(--border-weak) 80%, transparent);
+		color: var(--lumo-glyph);
 	}
 }
 
 .artifact-inline-edit {
-	border: 1px solid var(--border-norm);
 	z-index: var(--z-up, 10);
 
 	// The inner textarea owns focus; suppress the default Proton/field focus ring on the popup shell.
 	&:focus-within {
-		border-color: var(--border-norm);
-		box-shadow: var(--shadow-lifted);
+		border-color: var(--lumo-border);
+		box-shadow: var(--lumo-elevation-4);
 		outline: none;
 	}
 }
@@ -52,11 +44,11 @@
 }
 
 .artifact-inline-edit-input::placeholder {
-	color: var(--text-hint);
+	color: var(--lumo-glyph-low);
 }
 
 .artifact-panel-loading-icon {
-	animation: artifact-loading-icon-pulse 1.6s ease-in-out infinite;
+	animation: artifact-loading-icon-pulse 1.6s var(--lumo-easing-standard) infinite;
 }
 
 // The global reset stops the shimmer but leaves the white stop of the gradient
@@ -82,7 +74,6 @@
 }
 
 .artifact-code-content {
-	padding: 0;
 	min-block-size: 0;
 	min-inline-size: 0;
 
@@ -120,7 +111,6 @@
 
 .artifact-document-content {
 	line-height: 1.6;
-	color: var(--text-norm);
 
 	.artifact-markdown {
 		h1,
@@ -129,18 +119,17 @@
 		h4,
 		h5,
 		h6 {
-			color: var(--text-norm);
-			font-weight: 600;
+			color: var(--lumo-glyph);
+			font: var(--lumo-type-title-medium);
 			margin-block: 1.25em 0.5em;
-			line-height: 1.3;
 		}
 
 		h1 {
-			font-size: 1.5rem;
+			font: var(--lumo-type-headline-small);
 		}
 
 		h2 {
-			font-size: 1.25rem;
+			font: var(--lumo-type-title-large);
 		}
 
 		h3 {
@@ -153,7 +142,7 @@
 
 		ul,
 		ol {
-			padding-inline-start: 1.5rem;
+			padding-inline-start: var(--lumo-space-24);
 			margin-block-end: 0.75em;
 		}
 
@@ -162,8 +151,8 @@
 		}
 
 		code {
-			background: var(--background-strong);
-			border-radius: 0.25rem;
+			background: var(--lumo-control-fill-mid);
+			border-radius: var(--lumo-radius-4);
 			padding-block: 0.125em;
 			padding-inline: 0.375em;
 			font-size: 0.875em;
@@ -171,9 +160,9 @@
 		}
 
 		pre {
-			background: var(--background-strong);
-			border-radius: 0.5rem;
-			padding: 1rem;
+			background: var(--lumo-control-fill-mid);
+			border-radius: var(--lumo-radius-8);
+			padding: var(--lumo-space-16);
 			overflow: auto;
 			margin-block-end: 0.75em;
 
@@ -210,15 +199,15 @@
 		}
 
 		blockquote {
-			border-inline-start: 3px solid var(--border-weak);
-			padding-inline-start: 1rem;
-			color: var(--text-hint);
+			border-inline-start: 3px solid var(--lumo-border);
+			padding-inline-start: var(--lumo-space-16);
+			color: var(--lumo-glyph-mid);
 			margin-block: 0.75em;
 			margin-inline: 0;
 		}
 
 		a {
-			color: var(--primary);
+			color: var(--lumo-glyph-brand-text);
 			text-decoration: underline;
 		}
 
@@ -229,21 +218,21 @@
 
 			th,
 			td {
-				border: 1px solid var(--border-weak);
-				padding-block: 0.375rem;
-				padding-inline: 0.625rem;
+				border: 1px solid var(--lumo-border);
+				padding-block: var(--lumo-space-6);
+				padding-inline: var(--lumo-space-10);
 				text-align: start;
 			}
 
 			th {
-				background: var(--background-weak);
-				font-weight: 600;
+				background: var(--lumo-control-fill);
+				font: var(--lumo-type-title-small);
 			}
 		}
 
 		hr {
 			border: none;
-			border-block-start: 1px solid var(--border-weak);
+			border-block-start: 1px solid var(--lumo-border);
 			margin-block: 1em;
 			margin-inline: 0;
 		}
@@ -261,18 +250,14 @@
 	}
 }
 
-.artifact-export-status {
-	background: var(--background-norm);
-}
-
 // Transform-based spinner — keeps animating while html2canvas blocks the main thread (unlike SVG stroke loaders).
 .artifact-export-spinner {
-	border: 2px solid var(--border-weak);
+	border: 2px solid var(--lumo-border);
 	border-radius: 50%;
-	border-block-start-color: var(--interaction-norm);
+	border-block-start-color: var(--lumo-control-brand-fill);
 	block-size: 2rem;
 	inline-size: 2rem;
-	animation: artifact-export-spinner-rotate 0.75s linear infinite;
+	animation: artifact-export-spinner-rotate 0.75s var(--lumo-easing-linear) infinite;
 	will-change: transform;
 
 	&.is-small {
@@ -295,8 +280,8 @@
 // ---------------------------------------------------------------------------
 
 .artifact-editor-toolbar-btn.is-active {
-	background: var(--interaction-default-active);
-	color: var(--text-norm);
+	background: var(--lumo-control-fill-mid);
+	color: var(--lumo-glyph);
 }
 
 .artifact-rich-editor {
@@ -309,12 +294,12 @@
 
 	ul[data-type='taskList'] {
 		list-style: none;
-		padding-inline-start: 0.25rem;
+		padding-inline-start: var(--lumo-space-4);
 
 		li {
 			display: flex;
 			align-items: flex-start;
-			gap: 0.5rem;
+			gap: var(--lumo-space-8);
 
 			> label {
 				flex-shrink: 0;
@@ -354,29 +339,29 @@
 			content: '';
 			position: absolute;
 			inset: 0;
-			background: var(--interaction-default-hover);
+			background: var(--lumo-control-fill);
 			pointer-events: none;
 		}
 	}
 
 	.artifact-editor-raw {
-		color: var(--text-weak);
+		color: var(--lumo-glyph-mid);
 		white-space: pre-wrap;
 		word-break: break-word;
 		cursor: default;
 	}
 
 	.artifact-editor-raw-inline {
-		background: var(--background-strong);
-		border-radius: 0.25rem;
+		background: var(--lumo-control-fill-mid);
+		border-radius: var(--lumo-radius-4);
 		padding-inline: 0.25em;
-		color: var(--text-weak);
+		color: var(--lumo-glyph-mid);
 		font-family: monospace;
 		font-size: 0.875em;
 	}
 
 	.ProseMirror-selectednode {
-		outline: 2px solid var(--focus-outline);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }

@@ -87,10 +87,10 @@ const formatRiskSeverity = (severity: PaperTrailReport['complianceRisks'][number
 
 const ShareRail = ({ cardData, onShare }: { cardData: PaperTrailCardData; onShare: () => void }) => (
     <aside className="pt-share-rail" aria-label={c('collider_2025:Title').t`Share your score`}>
-        <div className="pt-share-rail__float">
-            <h2 className="pt-share-rail__title">{c('collider_2025:Title').t`Share your score`}</h2>
+        <div className="pt-share-rail__float gap-4 px-4 py-5 radius-16">
+            <h2 className="pt-share-rail__title m-0">{c('collider_2025:Title').t`Share your score`}</h2>
             <ShareCardCanvasPreview data={cardData} theme="light" className="pt-share-rail__canvas" />
-            <p className="pt-share-rail__hint">
+            <p className="pt-share-rail__hint m-0 lumo-body-small">
                 {c('collider_2025:Info').t`Exposure by life area only, no personal details.`}
             </p>
             <Button color="norm" size="medium" pill fullWidth onClick={onShare}>
@@ -141,10 +141,10 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
     ];
 
     return (
-        <div className="pt-report">
-            <header className="pt-report__hero">
-                <h1 className="pt-report__title">{c('collider_2025:Title').t`Meet your AI Paper Trail`}</h1>
-                <p className="pt-report__subtitle">
+        <div className="pt-report gap-5 mx-auto px-6 pt-4">
+            <header className="pt-report__hero pt-2 pb-1">
+                <h1 className="pt-report__title m-0">{c('collider_2025:Title').t`Meet your AI Paper Trail`}</h1>
+                <p className="pt-report__subtitle mx-auto mb-0 lumo-body-large">
                     {c('collider_2025:Info')
                         .t`Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${LUMO_SHORT_APP_NAME} doesn't see your data.`}
                 </p>
@@ -152,35 +152,42 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
 
             <div className="pt-report__layout">
                 <div className="pt-report__main">
-                    <section className="pt-card pt-card--profile">
-                        <div className="pt-profile__head">
+                    <section className="pt-card pt-card--profile gap-5 radius-16">
+                        <div className="pt-profile__head gap-4">
                             <div>
-                                <h2 className="pt-profile__name">{displayName}</h2>
-                                {report.name && <p className="pt-profile__label">{report.label}</p>}
-                                <p className="pt-profile__handle">@{handle}</p>
+                                <h2 className="pt-profile__name m-0">{displayName}</h2>
+                                {report.name && (
+                                    <p className="pt-profile__label mb-0 lumo-title-medium">{report.label}</p>
+                                )}
+                                <p className="pt-profile__handle mt-1 mb-0 lumo-body-large">@{handle}</p>
                             </div>
-                            {report.summary && <p className="pt-profile__summary">{report.summary}</p>}
+                            {report.summary && (
+                                <p className="pt-profile__summary m-0 py-4 radius-12 lumo-body-large">
+                                    {report.summary}
+                                </p>
+                            )}
                         </div>
 
                         {report.quickFacts.length > 0 && (
-                            <dl className="pt-facts">
+                            <dl className="pt-facts gap-x-5 m-0 radius-12">
                                 {report.quickFacts.map((fact, i) => (
                                     <div key={i} className="pt-facts__item">
-                                        <dt className="pt-facts__label">{fact.label}</dt>
-                                        <dd className="pt-facts__value">{fact.value}</dd>
+                                        <dt className="pt-facts__label m-0">{fact.label}</dt>
+                                        <dd className="pt-facts__value m-0 lumo-title-medium">{fact.value}</dd>
                                     </div>
                                 ))}
                             </dl>
                         )}
 
-                        <div className="pt-profile__stats">
+                        <div className="pt-profile__stats gap-3">
                             <div className="pt-stat">
                                 <span className="pt-stat__value">{report.dataPointCount || 0}</span>
-                                <span className="pt-stat__label">{c('collider_2025:Info').t`data points`}</span>
+                                <span className="pt-stat__label lumo-body-small">{c('collider_2025:Info')
+                                    .t`data points`}</span>
                             </div>
                             <div className="pt-stat pt-stat--ad-value">
                                 <span className="pt-stat__value">{formatUsd(report.estimatedValueUsd)}</span>
-                                <span className="pt-stat__label">
+                                <span className="pt-stat__label lumo-body-small">
                                     {c('collider_2025:Info').t`ad value`}
                                     {report.valueRationale && (
                                         <Info
@@ -196,37 +203,39 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                             {hasRedFlags ? (
                                 <button
                                     type="button"
-                                    className="pt-stat pt-stat--action pt-stat--alert"
+                                    className="pt-stat pt-stat--action pt-stat--alert px-2"
                                     onClick={() => redFlagsModal.openModal(true)}
                                 >
                                     <span className="pt-stat__value">{report.sensitiveCategories.length}</span>
-                                    <span className="pt-stat__label">{c('collider_2025:Info').t`red flags`}</span>
+                                    <span className="pt-stat__label lumo-body-small">{c('collider_2025:Info')
+                                        .t`red flags`}</span>
                                 </button>
                             ) : (
                                 <div className="pt-stat">
                                     <span className="pt-stat__value">{report.sensitiveCategories.length}</span>
-                                    <span className="pt-stat__label">{c('collider_2025:Info').t`red flags`}</span>
+                                    <span className="pt-stat__label lumo-body-small">{c('collider_2025:Info')
+                                        .t`red flags`}</span>
                                 </div>
                             )}
                         </div>
                     </section>
 
                     {report.dataExposure.length > 0 && (
-                        <section className="pt-card pt-card--glance">
-                            <h2 className="pt-section-title">{c('collider_2025:Title').t`Report at a glance`}</h2>
-                            <p className="pt-section-sub">
+                        <section className="pt-card pt-card--glance pb-7 radius-16">
+                            <h2 className="pt-section-title m-0">{c('collider_2025:Title').t`Report at a glance`}</h2>
+                            <p className="pt-section-sub mb-0 lumo-body-large">
                                 {c('collider_2025:Info')
                                     .t`The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.`}
                             </p>
-                            <div className="pt-glance">
+                            <div className="pt-glance mt-4">
                                 <div className="pt-glance__scorecard">
-                                    <div className="pt-glance__overall">
+                                    <div className="pt-glance__overall gap-x-2 mb-3">
                                         <span className={`pt-glance__score ${exposureTone(cardData.exposureScore)}`}>
                                             {cardData.exposureScore}
                                         </span>
                                         <span className="pt-glance__score-max">/100</span>
                                     </div>
-                                    <div className="pt-glance__privacy-type">
+                                    <div className="pt-glance__privacy-type mb-4 px-4 radius-12">
                                         <span className="pt-glance__privacy-type-label">
                                             {c('collider_2025:Label').t`My privacy type`}
                                         </span>
@@ -236,12 +245,12 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                                             {cardData.grade}
                                         </span>
                                     </div>
-                                    <ul className="pt-score__list">
+                                    <ul className="pt-score__list m-0 p-0">
                                         {report.dataExposure.map((exposure, i) => {
                                             const exposureScore = Math.max(0, Math.min(100, exposure.score));
                                             const row = (
                                                 <span className="pt-score__row-inner">
-                                                    <span className="pt-score__area">
+                                                    <span className="pt-score__area gap-1 lumo-title-small">
                                                         {exposure.area}
                                                         {exposure.detail && (
                                                             <LumoIcon
@@ -252,7 +261,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                                                             />
                                                         )}
                                                     </span>
-                                                    <span className="pt-score__bar">
+                                                    <span className="pt-score__bar radius-full">
                                                         <span
                                                             className={`pt-score__bar-fill ${exposureModifier(exposureScore)}`}
                                                             style={{ inlineSize: `${exposureScore}%` }}
@@ -264,7 +273,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                                                 </span>
                                             );
                                             return (
-                                                <li key={i} className="pt-score__row">
+                                                <li key={i} className="pt-score__row radius-8">
                                                     {exposure.detail ? (
                                                         <Tooltip title={exposure.detail} openDelay={80}>
                                                             {row}
@@ -280,10 +289,10 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                                 <div className="pt-glance__narrative">
                                     {report.revealingDataPoints.length > 0 && (
                                         <>
-                                            <h3 className="pt-glance__list-title">
+                                            <h3 className="pt-glance__list-title mt-4">
                                                 {c('collider_2025:Title').t`Most revealing`}
                                             </h3>
-                                            <ul className="pt-glance__highlights">
+                                            <ul className="pt-glance__highlights m-0">
                                                 {report.revealingDataPoints.map((point, i) => (
                                                     <li key={i}>{point}</li>
                                                 ))}
@@ -296,13 +305,13 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                     )}
 
                     {report.sections.length > 0 && (
-                        <section className="pt-card">
-                            <h2 className="pt-section-title">{c('collider_2025:Title').t`What we identified`}</h2>
-                            <p className="pt-section-sub">
+                        <section className="pt-card radius-16">
+                            <h2 className="pt-section-title m-0">{c('collider_2025:Title').t`What we identified`}</h2>
+                            <p className="pt-section-sub mb-0 lumo-body-large">
                                 {c('collider_2025:Info')
                                     .t`Inferences drawn only from your prompts — grouped by life area.`}
                             </p>
-                            <div className="pt-identified-groups">
+                            <div className="pt-identified-groups mt-5">
                                 {report.sections.map((section, sectionIndex) => (
                                     <section
                                         key={`${section.title}-${sectionIndex}`}
@@ -315,21 +324,23 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                                             </span>
                                             <h3
                                                 id={`pt-identified-${sectionIndex}`}
-                                                className="pt-identified-group__title"
+                                                className="pt-identified-group__title m-0"
                                             >
                                                 {section.title}
                                             </h3>
                                         </div>
-                                        <ul className="pt-identified">
+                                        <ul className="pt-identified gap-3 m-0 p-0">
                                             {section.findings.map((finding, findingIndex) => (
-                                                <li key={findingIndex} className="pt-identified__item">
+                                                <li key={findingIndex} className="pt-identified__item p-4">
                                                     <div className="pt-identified__body">
                                                         {finding.label && (
-                                                            <span className="pt-identified__category">
+                                                            <span className="pt-identified__category mb-1">
                                                                 {finding.label}
                                                             </span>
                                                         )}
-                                                        <p className="pt-identified__detail">{finding.detail}</p>
+                                                        <p className="pt-identified__detail m-0 lumo-body-medium">
+                                                            {finding.detail}
+                                                        </p>
                                                     </div>
                                                 </li>
                                             ))}
@@ -341,28 +352,33 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                     )}
 
                     {report.complianceRisks.length > 0 && (
-                        <section className="pt-panel pt-panel--compliance">
-                            <h2 className="pt-section-title">{c('collider_2025:Title').t`Oversharing blind spots`}</h2>
-                            <p className="pt-section-sub">
+                        <section className="pt-panel pt-panel--compliance p-6 radius-16">
+                            <h2 className="pt-section-title m-0">{c('collider_2025:Title')
+                                .t`Oversharing blind spots`}</h2>
+                            <p className="pt-section-sub mb-0 lumo-body-large">
                                 {c('collider_2025:Info')
                                     .t`Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.`}
                             </p>
-                            <ul className="pt-risks">
+                            <ul className="pt-risks gap-4 mx-0 mt-5 mb-0 p-0">
                                 {report.complianceRisks.map((risk, i) => (
-                                    <li key={i} className="pt-risk">
-                                        <span className={`pt-risk__severity pt-risk__severity--${risk.severity}`}>
+                                    <li key={i} className="pt-risk gap-3 p-5 radius-16">
+                                        <span
+                                            className={`pt-risk__severity pt-risk__severity--${risk.severity} lumo-label-small`}
+                                        >
                                             {formatRiskSeverity(risk.severity)}
                                         </span>
-                                        <h3 className="pt-risk__title">{risk.category}</h3>
-                                        <p className="pt-risk__detail">{risk.detail}</p>
+                                        <h3 className="pt-risk__title m-0">{risk.category}</h3>
+                                        <p className="pt-risk__detail m-0 lumo-body-large">{risk.detail}</p>
                                         {risk.guidance && (
-                                            <div className="pt-risk__tip">
+                                            <div className="pt-risk__tip px-4 radius-12">
                                                 <div className="pt-risk__tip-head">
                                                     <LumoIcon name="Sparkles" size={14} className="pt-risk__tip-icon" />
                                                     <span className="pt-risk__tip-label">{c('collider_2025:Label')
                                                         .t`Tips`}</span>
                                                 </div>
-                                                <p className="pt-risk__tip-text">{risk.guidance}</p>
+                                                <p className="pt-risk__tip-text m-0 lumo-body-medium">
+                                                    {risk.guidance}
+                                                </p>
                                             </div>
                                         )}
                                     </li>
@@ -371,13 +387,13 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                         </section>
                     )}
 
-                    <section className="pt-panel pt-panel--terms">
-                        <h2 className="pt-section-title">{c('collider_2025:Title').t`Use AI on your terms`}</h2>
-                        <ul className="pt-terms">
+                    <section className="pt-panel pt-panel--terms p-6 radius-16">
+                        <h2 className="pt-section-title m-0">{c('collider_2025:Title').t`Use AI on your terms`}</h2>
+                        <ul className="pt-terms mx-0 mt-5 mb-0 p-0">
                             {aiTerms.map((item, i) => (
                                 <li key={i} className="pt-terms__item">
-                                    <h3 className="pt-terms__title">{item.title}</h3>
-                                    <p className="pt-terms__detail">{item.detail}</p>
+                                    <h3 className="pt-terms__title m-0">{item.title}</h3>
+                                    <p className="pt-terms__detail m-0 lumo-body-large">{item.detail}</p>
                                 </li>
                             ))}
                         </ul>
@@ -389,9 +405,12 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                         </Button>
                     </div>
 
-                    <div className="pt-report__cta-banner" style={{ backgroundImage: `url(${ctaContainerBg})` }}>
+                    <div
+                        className="pt-report__cta-banner gap-4 px-8 py-10"
+                        style={{ backgroundImage: `url(${ctaContainerBg})` }}
+                    >
                         <PaperTrailLogo className="pt-report__cta-wordmark" />
-                        <p className="pt-report__cta-title">
+                        <p className="pt-report__cta-title m-0">
                             {c('collider_2025:Title').t`You saw the profile? Now protect the person behind it.`}
                         </p>
                         <Button color="norm" size="large" pill onClick={onTryLumo}>
@@ -399,7 +418,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                         </Button>
                     </div>
 
-                    <p className="pt-report__footer">
+                    <p className="pt-report__footer m-0 lumo-body-small">
                         {c('collider_2025:Info')
                             .t`Built by ${BRAND_NAME}, the privacy brand trusted by over 100 million people and the team behind ${MAIL_APP_NAME}, ${VPN_APP_NAME}, ${DRIVE_APP_NAME}, and ${PASS_APP_NAME}.`}
                     </p>
@@ -416,27 +435,31 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                 <ModalTwo {...redFlagsModal.modalProps} size="medium">
                     <ModalTwoHeader title={c('collider_2025:Title').t`What this profile exposes`} />
                     <ModalTwoContent className="pt-flag-modal">
-                        <div className="pt-flag-modal__hero">
-                            <div className="pt-flag-modal__badge" aria-hidden="true">
+                        <div className="pt-flag-modal__hero mb-6">
+                            <div className="pt-flag-modal__badge mx-auto" aria-hidden="true">
                                 <LumoIcon name="ShieldExclamationPoint" size={28} />
                             </div>
-                            <p className="pt-flag-modal__count">
+                            <p className="pt-flag-modal__count mx-0 mt-0 mb-2">
                                 {c('collider_2025:Info').t`${report.sensitiveCategories.length} sensitive categories`}
                             </p>
-                            <p className="pt-flag-modal__intro">
+                            <p className="pt-flag-modal__intro mx-auto my-0 lumo-body-large">
                                 {c('collider_2025:Info')
                                     .t`These are the most sensitive categories Big Tech AI could infer about you from your chats — even when you never typed them out explicitly.`}
                             </p>
                         </div>
-                        <ul className="pt-flag-modal__list">
+                        <ul className="pt-flag-modal__list m-0 p-0">
                             {report.sensitiveCategories.map((category, i) => (
-                                <li key={i} className="pt-flag-modal__item">
-                                    <LumoIcon name="CircleExclamationPoint" size={18} className="pt-flag-modal__item-icon" />
-                                    <span className="pt-flag-modal__item-text">{category}</span>
+                                <li key={i} className="pt-flag-modal__item gap-3 px-4">
+                                    <LumoIcon
+                                        name="CircleExclamationPoint"
+                                        size={18}
+                                        className="pt-flag-modal__item-icon"
+                                    />
+                                    <span className="pt-flag-modal__item-text lumo-label-large">{category}</span>
                                 </li>
                             ))}
                         </ul>
-                        <p className="pt-flag-modal__footnote">
+                        <p className="pt-flag-modal__footnote mx-0 mt-5 mb-0 px-4 radius-12 lumo-body-medium">
                             {c('collider_2025:Info')
                                 .t`This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.`}
                         </p>

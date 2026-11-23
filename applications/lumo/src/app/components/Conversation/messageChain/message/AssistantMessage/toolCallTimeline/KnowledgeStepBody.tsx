@@ -65,16 +65,16 @@ function itemDetail(item: KnowledgeItem): string | undefined {
 const KnowledgeItemRow = ({ item }: { item: KnowledgeItem }) => {
     const detail = itemDetail(item);
     return (
-        <li className="flex flex-nowrap items-center gap-1.5 min-w-0 text-sm lh130">
+        <li className="flex flex-nowrap items-center gap-1.5 min-w-0 lumo-body-small lh130">
             <LumoIcon
                 name={item.kind === 'chat' ? 'MessageSquare' : 'FileText'}
                 size={12}
-                className="color-weak shrink-0"
+                className="shrink-0 lumo-color-glyph-mid"
             />
-            <span className="flex flex-nowrap min-w-0 color-norm">
+            <span className="flex flex-nowrap min-w-0 lumo-color-glyph">
                 {item.kind === 'chat' ? <ChatTitle item={item} /> : <span className="text-ellipsis">{item.name}</span>}
             </span>
-            {detail && <span className="color-weak shrink-0">{detail}</span>}
+            {detail && <span className="shrink-0 lumo-color-glyph-mid">{detail}</span>}
         </li>
     );
 };
@@ -91,7 +91,7 @@ export const KnowledgeStepBody = ({ details, isActive }: { details: KnowledgeSte
     return (
         <div className="thinking-step-body flex flex-column gap-1 min-w-0 mt-0.5">
             {query && (
-                <p className="m-0 flex flex-nowrap items-center gap-1.5 min-w-0 text-sm lh130 color-weak">
+                <p className="flex flex-nowrap items-center gap-1.5 min-w-0 m-0 lumo-body-small lh130 lumo-color-glyph-mid">
                     <LumoIcon name="Search" size={12} className="shrink-0" />
                     <span className="text-ellipsis">{query}</span>
                 </p>
@@ -104,7 +104,7 @@ export const KnowledgeStepBody = ({ details, isActive }: { details: KnowledgeSte
                 </ul>
             )}
             {noMatches && (
-                <p className="m-0 text-sm lh130 color-weak">
+                <p className="m-0 lumo-body-small lh130 lumo-color-glyph-mid">
                     {
                         // translator: Assistant activity detail: a search of the user's files and chats found nothing.
                         c('collider_2025:Reasoning').t`No matches`
@@ -112,7 +112,7 @@ export const KnowledgeStepBody = ({ details, isActive }: { details: KnowledgeSte
                 </p>
             )}
             {more > 0 && (
-                <p className="m-0 text-sm lh130 color-weak">
+                <p className="m-0 lumo-body-small lh130 lumo-color-glyph-mid">
                     {
                         // translator: After a list of files and chats the assistant found, e.g. "and 3 more".
                         c('collider_2025:Reasoning').ngettext(msgid`and ${more} more`, `and ${more} more`, more)

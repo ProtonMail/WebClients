@@ -215,7 +215,7 @@ const SwitchAccountButton = () => {
     );
 };
 
-const UserDropdownContent = () => {
+const UserDropdownContent = ({ matchAnchorWidth = false }: { matchAnchorWidth?: boolean }) => {
     const { APP_NAME } = useConfig();
     const [uid] = useState(generateUID('dropdown'));
     const { viewportWidth } = useActiveBreakpoint();
@@ -242,7 +242,10 @@ const UserDropdownContent = () => {
     return (
         <Dropdown
             id={uid}
-            className="userDropdown rounded-lg overflow-hidden"
+            className={clsx(
+                'userDropdown rounded-lg overflow-hidden',
+                matchAnchorWidth && 'userDropdown--match-anchor'
+            )}
             isOpen={isOpen}
             anchorRef={anchorRef}
             autoClose={false}
@@ -252,8 +255,8 @@ const UserDropdownContent = () => {
             size={{
                 height: DropdownSizeUnit.Dynamic,
                 maxHeight: DropdownSizeUnit.Viewport,
-                width: '17.25rem',
-                maxWidth: '20rem',
+                width: matchAnchorWidth ? DropdownSizeUnit.Anchor : '17.25rem',
+                maxWidth: matchAnchorWidth ? DropdownSizeUnit.Viewport : '20rem',
             }}
         >
             <SecurityCheckup>

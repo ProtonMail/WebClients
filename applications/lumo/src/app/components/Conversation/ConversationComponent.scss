@@ -7,14 +7,12 @@ im.$media-expressions: $media-expressions;
 	flex-wrap: nowrap;
 	min-block-size: 0;
 	overflow: hidden;
-	padding-block: 0.75rem;
-	padding-inline: 0.75rem;
 }
 
 .lumo-chat-container {
 	.lumo-chat-item {
 		@include im.media('>small') {
-			transition: inline-size 0.3s ease-in-out;
+			transition: inline-size var(--lumo-duration-300) var(--lumo-easing-standard);
 		}
 	}
 }
@@ -25,9 +23,6 @@ im.$media-expressions: $media-expressions;
 	min-block-size: 0;
 	min-inline-size: 0;
 	overflow: hidden;
-	background: var(--background-norm);
-	border: 1px solid var(--border-weak);
-	border-radius: var(--border-radius-xl, 1rem);
 }
 
 .artifact-panel-content {
@@ -53,11 +48,11 @@ im.$media-expressions: $media-expressions;
 		inline-size: 1px;
 		transform: translateX(-50%);
 		background: transparent;
-		transition: background 150ms ease;
+		transition: background var(--lumo-duration-150) var(--lumo-easing-standard);
 	}
 
 	&:hover::after,
 	&:active::after {
-		background: var(--border-norm);
+		background: var(--lumo-border);
 	}
 }

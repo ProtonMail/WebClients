@@ -18,16 +18,18 @@ import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 
 import './MoveSkillsModal.scss';
 
-const Strong = ({ children }: { children: ReactNode }) => <strong className="text-semibold">{children}</strong>;
-const Path = ({ children }: { children: string }) => <code className="move-skills__path">{children}</code>;
+const Strong = ({ children }: { children: ReactNode }) => <strong className="lumo-title-small">{children}</strong>;
+const Path = ({ children }: { children: string }) => (
+    <code className="move-skills__path radius-4 px-1">{children}</code>
+);
 
 const Steps = ({ steps }: { steps: ReactNode[] }) => (
     <ol className="unstyled m-0 flex flex-column flex-nowrap gap-2">
         {steps.map((step, index) => (
             // Steps are a fixed list, so the index is a stable key.
             // eslint-disable-next-line react/no-array-index-key
-            <li key={index} className="flex flex-nowrap items-start gap-2 text-sm">
-                <span className="move-skills__step-index flex shrink-0 items-center justify-center text-xs text-semibold">
+            <li key={index} className="flex flex-nowrap items-start gap-2 lumo-body-medium">
+                <span className="move-skills__step-index flex shrink-0 items-center justify-center lumo-label-small">
                     {index + 1}
                 </span>
                 <span className="flex-1 min-w-0">{step}</span>
@@ -38,7 +40,7 @@ const Steps = ({ steps }: { steps: ReactNode[] }) => (
 
 const Section = ({ title, children }: { title: string; children: ReactNode }) => (
     <section className="flex flex-column flex-nowrap gap-2">
-        <h3 className="m-0 text-sm text-semibold">{title}</h3>
+        <h3 className="m-0 lumo-title-small">{title}</h3>
         {children}
     </section>
 );
@@ -71,8 +73,8 @@ const SkillsFolderSection = ({
     const hiddenFoldersHint = getHiddenFoldersHint();
     return (
         <Section title={title}>
-            <p className="m-0 text-sm">{description}</p>
-            <p className="m-0 text-sm">
+            <p className="m-0 lumo-body-medium">{description}</p>
+            <p className="m-0 lumo-body-medium">
                 {c('collider_2025:Info')
                     .t`Choose that folder to add every skill in it, or one skill's folder to add just that one.`}
             </p>
@@ -82,7 +84,7 @@ const SkillsFolderSection = ({
                 </Button>
             </div>
             {hiddenFoldersHint && (
-                <p className="move-skills__hint m-0 flex flex-nowrap items-start gap-2 text-xs color-weak">
+                <p className="move-skills__hint flex flex-nowrap items-start gap-2 m-0 px-3 py-2.5 lumo-body-small lumo-color-glyph-mid">
                     <LumoIcon aria-hidden name="Lightbulb" size={14} className="shrink-0 mt-0.5" />
                     <span>{hiddenFoldersHint}</span>
                 </p>
@@ -173,7 +175,7 @@ export const MoveSkillsModal = ({ onChooseFiles, onChooseFolder, ...modalProps }
         <ModalTwo {...modalProps} size="medium">
             <ModalTwoHeader title={c('collider_2025:Title').t`Move your skills to ${LUMO_SHORT_APP_NAME}`} />
             <ModalTwoContent className="flex flex-column flex-nowrap gap-4">
-                <p className="m-0 text-sm color-weak">
+                <p className="m-0 lumo-body-medium lumo-color-glyph-mid">
                     {c('collider_2025:Info')
                         .t`Claude and ChatGPT use the same skill format as ${LUMO_SHORT_APP_NAME}: a folder with a SKILL.md file. Download your skills there, then add them here.`}
                 </p>

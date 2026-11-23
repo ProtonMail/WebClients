@@ -4,7 +4,9 @@
 	--color-black: black;
 	--iris-25: #fafbff;
 	--iris-50: #f5f6fe;
+	--iris-75: #efeffd;
 	--iris-100: #e9eafc;
+	--iris-125: #e5e6ff;
 	--iris-150: #dddefb;
 	--iris-200: #c5c9f8;
 	--iris-300: #9a97f7;
@@ -24,6 +26,7 @@
 	--neutral-850: #191919;
 	--neutral-900: #141414;
 	--neutral-950: #0b0b0b;
+	--neutral-975: #060606;
 	--red-300: #e77085;
 	--red-350: #e35b74;
 	--red-400: #f5385a;
@@ -72,11 +75,6 @@
 	--lumo-font-sans: 'Inter', sans-serif;
 	--lumo-font-mono: 'JetBrains Mono', monospace;
 	--lumo-font-letter-spacing: 0px;
-
-	/* Font weights: regular, medium, and semibold. */
-	--lumo-font-weight-regular: 400;
-	--lumo-font-weight-medium: 500;
-	--lumo-font-weight-semibold: 600;
 
 	/* Icons: supported sizes and stroke width. */
 	--lumo-icon-size-12: 12px;
@@ -170,6 +168,8 @@
 	--lumo-control-fill: var(--iris-50);
 	--lumo-control-fill-mid: var(--iris-100);
 	--lumo-control-fill-strongest: var(--iris-150);
+	--lumo-control-tab-track: var(--iris-75);
+	--lumo-control-tab-hover: var(--lumo-control-fill-strongest);
 
 	/* Control borders: input boundaries and keyboard focus. */
 	--lumo-control-border: var(--iris-100);
@@ -184,10 +184,11 @@
 	--lumo-control-brand-fill-strong: var(--iris-800);
 
 	/* Panels: main, elevated, inverse, layer, and overlay surfaces. */
-	--lumo-canvas: var(--iris-50);
+	--lumo-page: var(--iris-25);
 	--lumo-panel: var(--color-white);
 	--lumo-panel-elevated: var(--color-white);
 	--lumo-panel-inverse: var(--neutral-950);
+	--lumo-notice: var(--iris-125);
 	--lumo-overlay: var(--color-white);
 
 	/* Signals: danger, warning, success, information, and destructive-action states. */
@@ -249,6 +250,8 @@
 	--lumo-control-fill: var(--neutral-800);
 	--lumo-control-fill-mid: var(--neutral-700);
 	--lumo-control-fill-strongest: var(--neutral-600);
+	--lumo-control-tab-track: var(--neutral-600);
+	--lumo-control-tab-hover: var(--lumo-control-fill-mid);
 
 	/* Control borders: input boundaries and keyboard focus. */
 	--lumo-control-border: var(--neutral-800);
@@ -263,10 +266,11 @@
 	--lumo-control-brand-fill-strong: var(--iris-700);
 
 	/* Panels: main, elevated, inverse, layer, and overlay surfaces. */
-	--lumo-canvas: var(--neutral-950);
+	--lumo-page: var(--neutral-975);
 	--lumo-panel: var(--neutral-900);
 	--lumo-panel-elevated: var(--neutral-850);
 	--lumo-panel-inverse: var(--neutral-50);
+	--lumo-notice: var(--neutral-700);
 	--lumo-overlay: var(--neutral-900);
 
 	/* Signals: danger, warning, success, information, and destructive-action states. */

@@ -580,10 +580,10 @@ const ComposerComponentInner = ({
 
                             {showLegalDisclaimer && <GuestDisclaimer />}
 
-                            <div className="composer-input-glow-wrapper w-full">
+                            <div className="composer-input-glow-wrapper p-1.5 w-full">
                                 <div
                                     className={clsx(
-                                        'lumo-input-container bg-norm w-full',
+                                        'lumo-input-container relative w-full p-2 border lumo-border-mid radius-28 lumo-bg-panel-elevated lumo-elevation-1 duration-150 lumo-easing-standard',
                                         isGhostChatMode && 'ghost-mode'
                                     )}
                                 >

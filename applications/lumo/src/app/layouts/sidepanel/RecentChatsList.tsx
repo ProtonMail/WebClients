@@ -60,7 +60,7 @@ export const ConversationListItem = memo(
                 className={clsx(
                     'relative group-hover-hide-container group-hover-opacity-container',
                     'flex items-center min-w-0 overflow-hidden navigation-link w-full',
-                    'hover:bg-weak rounded-md transition-colors text-sm',
+                    'radius-12 lumo-body-medium transition-colors',
                     isSelected && 'is-active',
                     isRenaming && 'is-renaming'
                 )}
@@ -82,8 +82,8 @@ export const ConversationListItem = memo(
                     <LumoLink
                         to={`/c/${conversation.id}`}
                         className={clsx(
-                            'absolute inset-0 flex flex-nowrap items-center gap-1.5 min-w-0 overflow-hidden pl-1.5 hover:text-primary',
-                            showDropdown || attentionKey ? 'sidebar-chat-link--with-actions' : 'pr-2'
+                            'absolute inset-0 flex flex-nowrap items-center gap-1.5 min-w-0 overflow-hidden pl-3',
+                            showDropdown || attentionKey ? 'sidebar-chat-link--with-actions' : 'pr-3'
                         )}
                         onClick={onItemClick}
                     >
@@ -141,7 +141,7 @@ interface ChatsListProps {
 
 const RecentChatsList = memo(({ conversations, selectedConversationId, disabled, onItemClick }: ChatsListProps) => {
     return (
-        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
+        <ul className="unstyled flex flex-column flex-nowrap min-w-0 w-full my-0">
             {conversations.map((conversation) => (
                 <ConversationListItem
                     key={conversation.id}

@@ -78,12 +78,12 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
         return (
             <div className="projects-sidebar-section">
                 <button
-                    className="sidebar-item flex items-center w-full cursor-pointer py-2 px-1.5"
+                    className="sidebar-item flex items-center gap-3 w-full px-3 radius-12 cursor-pointer"
                     onClick={handleProjectsHeaderClick}
                     aria-label={c('collider_2025:Button').t`Projects`}
                 >
                     <div className="sidebar-item-icon flex items-center justify-start shrink-0">
-                        <LumoIcon name="FolderOpen" size={16} className="rtl:mirror" />
+                        <LumoIcon name="FolderOpen" size={18} className="rtl:mirror" />
                     </div>
                     <span className="sidebar-item-text flex-1 flex items-center text-nowrap overflow-hidden gap-2">
                         {c('collider_2025:Button').t`Projects`}
@@ -117,7 +117,7 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                         size="small"
                         shape="ghost"
                     >
-                        <LumoIcon name="Plus" width={14} height={14} />
+                        <LumoIcon name="Plus" width={16} height={16} />
                     </Button>
                 }
                 className="projects-sidebar-section"
@@ -141,14 +141,15 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                     )}
                     {projects.length > DEFAULT_PROJECT_LIMIT && (
                         <button
-                            className="project-sidebar-item-see-all flex items-center justify-center px-3 py-2 text-sm color-weak hover:color-norm transition-colors"
+                            className="lumo-sidebar-section-more project-sidebar-item-see-all flex items-center justify-center px-3 py-2 lumo-body-medium lumo-color-glyph-mid transition-colors"
                             onClick={handleProjectsClick}
                         >
                             {c('collider_2025:Button').t`See all`}
                         </button>
                     )}
                     {projects.length === 0 && (
-                        <div className="px-2 py-2 text-sm color-weak">{c('collider_2025:Info').t`No projects yet`}</div>
+                        <div className="px-3 py-2 lumo-body-medium lumo-color-glyph-mid">{c('collider_2025:Info')
+                            .t`No projects yet`}</div>
                     )}
                 </div>
             </CollapsibleSidebarSection>

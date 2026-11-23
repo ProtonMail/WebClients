@@ -35,7 +35,7 @@
 
 		// The block's spacing sits here, outside the grid cell, so the cell's edges are the block's border
 		// and the copy button's margin is measured from the border, not from empty space above it.
-		margin-block: 0.75rem;
+		margin-block: var(--lumo-space-12);
 	}
 
 	.lumo-code-block-copy {
@@ -45,7 +45,7 @@
 		position: sticky;
 		inset-block-start: 0.5rem;
 		z-index: 10;
-		margin: 0.75rem;
+		margin: var(--lumo-space-12);
 		inline-size: max-content;
 		block-size: max-content;
 
@@ -63,9 +63,6 @@
 		grid-row: 1;
 		min-inline-size: 0;
 		overflow-x: auto;
-		background: var(--background-norm);
-		border: 1px solid var(--border);
-		color: var(--glyph);
 	}
 
 	.lumo-code-block-copy-source {
@@ -81,18 +78,8 @@
 		position: relative;
 		z-index: 0;
 		min-inline-size: 0;
-
-		// Fill, stroke and base text colour from the code block design (Panel/panel, Border/border, glyph).
-		// !important beats the Prism theme's inline styles; token colours (keywords, strings…) are unchanged.
-		background: var(--background-norm) !important;
-		border: 1px solid var(--border);
-		color: var(--glyph) !important;
-		border-radius: 0.5rem;
 		overflow-x: auto;
 		margin-block: 0;
-		padding: 1rem !important;
-		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
-		font-size: 0.8125rem;
 		line-height: 1.6;
 	}
 
@@ -123,10 +110,7 @@
 }
 
 .markdown-rendering {
-	font-size: 0.875rem;
-	line-height: 1.5;
-	gap: 0.75rem;
-	color: var(--text-markdown);
+	font: var(--lumo-type-body-medium);
 	contain: layout style;
 	word-break: break-word;
 
@@ -136,10 +120,8 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	h1 {
-		font-size: 1.5rem;
-		font-weight: bold;
-		line-height: 1.3;
-		margin-block: 1.5rem 0.75rem;
+		font: var(--lumo-type-headline-small);
+		margin-block: var(--lumo-space-24) var(--lumo-space-12);
 		margin-inline: 0;
 
 		&:first-child {
@@ -148,10 +130,8 @@
 	}
 
 	h2 {
-		font-size: 1.25rem;
-		font-weight: 600;
-		line-height: 1.3;
-		margin-block: 1.25rem 0.625rem;
+		font: var(--lumo-type-title-large);
+		margin-block: var(--lumo-space-20) var(--lumo-space-10);
 		margin-inline: 0;
 
 		&:first-child {
@@ -160,23 +140,19 @@
 	}
 
 	h3 {
-		font-size: 1.125rem;
-		font-weight: 600;
-		line-height: 1.4;
-		margin-block: 1rem 0.5rem;
+		font: var(--lumo-type-title-medium);
+		margin-block: var(--lumo-space-16) var(--lumo-space-8);
 		margin-inline: 0;
 	}
 
 	h4 {
-		font-size: 1rem;
-		font-weight: 500;
-		line-height: 1.4;
-		margin-block: 0.875rem 0.375rem;
+		font: var(--lumo-type-title-small);
+		margin-block: 0.875rem var(--lumo-space-6);
 		margin-inline: 0;
 	}
 
 	p {
-		margin-block: 0.625rem;
+		margin-block: var(--lumo-space-10);
 		margin-inline: 0;
 		line-height: 1.5;
 
@@ -184,15 +160,15 @@
 		h2 + &,
 		h3 + &,
 		h4 + & {
-			margin-block-start: 0.5rem;
+			margin-block-start: var(--lumo-space-8);
 		}
 	}
 
 	hr {
 		border: none;
 		block-size: 1px;
-		background-color: var(--border-weak);
-		margin-block: 1rem;
+		background-color: var(--lumo-border);
+		margin-block: var(--lumo-space-16);
 		margin-inline: auto;
 		inline-size: 60%;
 		max-inline-size: 200px;
@@ -201,12 +177,12 @@
 
 	ul,
 	ol {
-		margin-block: 0.75rem;
+		margin-block: var(--lumo-space-12);
 		margin-inline: 0;
-		padding-inline-start: 1.5rem;
+		padding-inline-start: var(--lumo-space-24);
 
 		li {
-			margin-block: 0.125rem;
+			margin-block: var(--lumo-space-2);
 			margin-inline: 0;
 			line-height: 1.5;
 
@@ -220,19 +196,19 @@
 
 			ul,
 			ol {
-				margin-block: 0.25rem;
+				margin-block: var(--lumo-space-4);
 				margin-inline: 0;
 			}
 		}
 	}
 
 	blockquote {
-		margin-block: 1.5rem;
+		margin-block: var(--lumo-space-24);
 		margin-inline: 0;
-		padding-block: 1rem;
-		padding-inline: 1.5rem;
-		border-inline-start: 4px solid var(--primary);
-		background-color: var(--background-weak);
+		padding-block: var(--lumo-space-16);
+		padding-inline: var(--lumo-space-24);
+		border-inline-start: 4px solid var(--lumo-control-brand-fill);
+		background-color: var(--lumo-control-fill);
 		font-style: italic;
 
 		// Override the global Proton reset which adds open-quote/close-quote
@@ -253,11 +229,10 @@
 		border-collapse: separate;
 		border-spacing: 0;
 		margin: 0;
-		background-color: var(--background-norm);
-		font-size: 0.875rem;
-		line-height: 1.5;
+		background-color: var(--lumo-panel);
+		font: var(--lumo-type-body-medium);
 		table-layout: auto;
-		border-radius: 0.5rem;
+		border-radius: var(--lumo-radius-8);
 
 		// overflow: hidden;
 		box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
@@ -268,34 +243,33 @@
 	}
 
 	thead {
-		background-color: var(--background-weak);
+		background-color: var(--lumo-control-fill);
 	}
 
 	th {
-		padding-block: 1rem;
-		padding-inline: 1.25rem;
+		padding-block: var(--lumo-space-16);
+		padding-inline: var(--lumo-space-20);
 		text-align: start;
-		font-weight: 600;
-		color: var(--text-norm);
-		border-block-end: 1px solid var(--border-weak);
+		color: var(--lumo-glyph);
+		border-block-end: 1px solid var(--markdown-table-border);
 		white-space: nowrap;
 		min-inline-size: 120px;
 		max-inline-size: none;
 		position: relative;
-		font-size: 0.813rem;
+		font: var(--lumo-type-label-medium);
 		letter-spacing: 0.025em;
 		overflow: hidden;
 		text-overflow: ellipsis;
 
 		&:not(:last-child) {
-			border-inline-end: 1px solid var(--border-weak);
+			border-inline-end: 1px solid var(--markdown-table-border);
 		}
 	}
 
 	td {
-		padding-block: 1rem;
-		padding-inline: 1.25rem;
-		color: var(--text-norm);
+		padding-block: var(--lumo-space-16);
+		padding-inline: var(--lumo-space-20);
+		color: var(--lumo-glyph);
 		vertical-align: top;
 		min-inline-size: 120px;
 		max-inline-size: none;
@@ -304,19 +278,19 @@
 		position: relative;
 
 		&:not(:last-child) {
-			border-inline-end: 1px solid var(--border-weak);
+			border-inline-end: 1px solid var(--markdown-table-border);
 		}
 	}
 
 	tbody tr {
-		transition: background-color 0.15s ease;
+		transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 		&:hover {
-			background-color: var(--background-weak);
+			background-color: var(--lumo-control-fill);
 		}
 
 		&:not(:last-child) td {
-			border-block-end: 1px solid var(--border-weak);
+			border-block-end: 1px solid var(--markdown-table-border);
 		}
 	}
 
@@ -324,21 +298,21 @@
 		background-color: rgb(0 0 0 / 0.01);
 
 		&:hover {
-			background-color: var(--background-weak);
+			background-color: var(--lumo-control-fill);
 		}
 	}
 
 	math {
-		margin-block: 0.5rem;
+		margin-block: var(--lumo-space-8);
 	}
 
 	@media (prefers-color-scheme: dark) {
 		table {
-			background-color: var(--background-norm);
+			background-color: var(--lumo-panel);
 		}
 
 		thead {
-			background-color: var(--background-strong);
+			background-color: var(--lumo-control-fill-mid);
 		}
 
 		tbody tr:nth-child(even) {
@@ -347,12 +321,12 @@
 	}
 
 	pre {
-		margin-block: 0.75rem;
-		border-radius: 0.5rem;
-		padding-block: 1.25rem;
-		padding-inline: 1.25rem;
+		margin-block: var(--lumo-space-12);
+		border-radius: var(--lumo-radius-8);
+		padding-block: var(--lumo-space-20);
+		padding-inline: var(--lumo-space-20);
 		inline-size: 100%;
-		background-color: var(--markdown-pre-background);
+		background-color: var(--lumo-artifact-code-bg);
 		position: relative;
 	}
 
@@ -362,7 +336,6 @@
 		margin: 0 !important;
 		box-sizing: border-box;
 		border-radius: 0.5em !important;
-		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 		font-size: 0.98em;
 		line-height: 1.6;
 	}
@@ -370,26 +343,30 @@
 	pre code {
 		white-space: pre-wrap;
 		word-break: break-word;
-		color: var(--text-markdown);
+		color: var(--lumo-glyph);
 	}
 }
 
 .markdown-table-wrapper {
+	--markdown-table-border: color-mix(
+		in srgb,
+		var(--lumo-control-fill-strongest) 80%,
+		var(--lumo-control-border-strong)
+	);
+
 	inline-size: 100%;
 	overflow-x: auto;
-	margin-block: 1.5rem;
+	margin-block: var(--lumo-space-24);
 	margin-inline: 0;
-	border-radius: 0.5rem;
-	border: 1px solid var(--border-weak);
+	border: 1px solid var(--markdown-table-border);
 	scroll-behavior: smooth;
 	box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
 	background:
-		linear-gradient(90deg, var(--background-norm) 30%, rgb(255 255 255 / 0)),
-		linear-gradient(90deg, rgb(255 255 255 / 0), var(--background-norm) 70%) 0 100%,
+		linear-gradient(90deg, var(--lumo-panel) 30%, rgb(255 255 255 / 0)),
+		linear-gradient(90deg, rgb(255 255 255 / 0), var(--lumo-panel) 70%) 0 100%,
 		radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0)),
 		radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / 0.1), rgb(0 0 0 / 0)) 0 100%;
 	background-repeat: no-repeat;
-	background-color: var(--background-norm);
 	background-size:
 		40px 100%,
 		40px 100%,
@@ -400,7 +377,7 @@
 
 @media (width <= 768px) {
 	.markdown-table-wrapper {
-		margin-block: 0.75rem;
+		margin-block: var(--lumo-space-12);
 		margin-inline: 0;
 		border-radius: 0;
 		border-inline-start: none;
@@ -409,14 +386,14 @@
 
 	.markdown-rendering {
 		table {
-			font-size: 0.813rem;
+			font: var(--lumo-type-body-small);
 			min-inline-size: 600px;
 		}
 
 		th,
 		td {
 			padding-block: 0.875rem;
-			padding-inline: 1rem;
+			padding-inline: var(--lumo-space-16);
 			min-inline-size: 130px;
 		}
 	}
@@ -426,12 +403,12 @@
 	.markdown-rendering {
 		table {
 			min-inline-size: 500px;
-			font-size: 0.813rem;
+			font: var(--lumo-type-body-small);
 		}
 
 		th,
 		td {
-			padding-block: 0.75rem;
+			padding-block: var(--lumo-space-12);
 			padding-inline: 0.875rem;
 			min-inline-size: 120px;
 		}

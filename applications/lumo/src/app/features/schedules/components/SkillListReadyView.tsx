@@ -52,7 +52,7 @@ export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: Ski
             type="button"
             ref={buttonRef}
             hasCaret={false}
-            className="schedule-chip-list__add-chip schedule-chip-list__add-chip--regular button-ghost-norm inline-flex flex-nowrap shrink-0 items-center border border-dashed rounded cursor-pointer interactive interactive--no-background gap-1.5"
+            className="schedule-chip-list__add-chip schedule-chip-list__add-chip--regular button-ghost-norm inline-flex flex-nowrap shrink-0 items-center gap-1.5 pl-2 pr-2.5 border border-dashed radius-8 cursor-pointer interactive interactive--no-background"
             dropdownSize={{ width: '20em', maxWidth: '20em' }}
             dropdownClassName="schedule-skill-picker"
             onToggle={(open: boolean) => {
@@ -63,7 +63,7 @@ export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: Ski
             content={
                 <>
                     <LumoIcon aria-hidden name="Plus" size={14} />
-                    <span>{
+                    <span className="lumo-label-medium">{
                         // translator: Button opening the scheduled task skill picker; choices can be skills or individual sub-skills.
                         c('collider_2025:Action').t`Add skill`
                     }</span>
@@ -72,10 +72,10 @@ export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: Ski
         >
             <div className="flex flex-column flex-nowrap flex-auto w-full min-h-0">
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                <div className="shrink-0 w-full px-4 py-2" onClick={(event) => event.stopPropagation()}>
+                <div className="shrink-0 w-full py-2" onClick={(event) => event.stopPropagation()}>
                     <Input
                         dir="auto"
-                        className="w-full"
+                        className="lumo-search-field w-full"
                         value={query}
                         onValue={setQuery}
                         placeholder={
@@ -86,7 +86,7 @@ export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: Ski
                             // translator: Search field in the scheduled task skill picker; matches skill names, descriptions and bundle names.
                             c('collider_2025:Label').t`Search skills`
                         }
-                        prefix={<LumoIcon aria-hidden name="Search" size={16} className="color-hint" />}
+                        prefix={<LumoIcon aria-hidden name="Search" size={16} className="lumo-color-glyph-mid" />}
                     />
                 </div>
                 {matchingCommands.length > 0 && (
@@ -97,19 +97,19 @@ export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: Ski
                     />
                 )}
                 {!matchingCommands.length && normalizedQuery && (
-                    <p className="px-4 py-2 m-0 text-sm color-weak">{
+                    <p className="m-0 px-3 py-2 lumo-body-small lumo-color-glyph-mid">{
                         // translator: Empty search result in the scheduled task skill picker.
                         c('collider_2025:Info').t`No matching skills`
                     }</p>
                 )}
                 {!unselectedCommands.length && !normalizedQuery && (
-                    <div className="px-4 py-2 text-sm color-weak">
+                    <div className="px-3 py-2 lumo-body-small lumo-color-glyph-mid">
                         {commands.length ? allAddedLabel : noSkillsLabel}
                     </div>
                 )}
                 {customize && (
                     <DropdownMenu className="shrink-0">
-                        <hr className="mx-3 mb-1" />
+                        <hr className="mb-1" />
                         <DropdownMenuButton
                             className="flex flex-nowrap items-center gap-2 text-left"
                             onClick={() => history.push('/customize')}

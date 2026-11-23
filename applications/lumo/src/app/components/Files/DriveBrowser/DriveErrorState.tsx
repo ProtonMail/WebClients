@@ -23,10 +23,10 @@ export const DriveErrorState: ({ onRetry, loading }: { onRetry: any; loading: an
                 alt="Lumo + Proton Drive"
                 style={{ '--w-custom': '11.5rem' }}
             />
-            <h3 className="color-primary mb-2 text-bold">
+            <h3 className="mb-2 lumo-title-medium lumo-color-glyph-brand-text">
                 {c('collider_2025: Info').t`${DRIVE_SHORT_APP_NAME} storage not set up yet`}
             </h3>
-            <p className="text-md color-weak">
+            <p className="lumo-body-medium lumo-color-glyph-mid">
                 <span>{c('collider_2025: Info').t`Looks like your ${DRIVE_APP_NAME} hasn't been set up yet.`}</span>
                 <br />
                 <span>{c('collider_2025: Info')

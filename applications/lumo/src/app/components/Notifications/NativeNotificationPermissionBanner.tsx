@@ -10,8 +10,6 @@ import { isTauriOnMac } from '@proton/shared/lib/helpers/desktop';
 import { useDeviceSettings } from '../../providers/DeviceSettingsProvider';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
-import './NativeNotificationPermissionBanner.scss';
-
 interface NativeNotificationPermissionBannerProps {
     className?: string;
     /** Whether users can dismiss this instance of the warning. */
@@ -41,13 +39,13 @@ export const NativeNotificationPermissionBanner = ({
     return (
         <div
             className={clsx(
-                'native-notification-permission-banner flex flex-nowrap items-center gap-3 p-3 pl-4 border border-weak rounded-lg text-sm',
+                'native-notification-permission-banner flex flex-nowrap items-center gap-3 p-3 pl-4 border lumo-border radius-12 lumo-body-small',
                 className
             )}
         >
             <LumoIcon aria-hidden name="BellOff" size={18} className="shrink-0" />
             <span className="flex-1 min-w-0 text-ellipsis-four-lines">
-                <span className="text-semibold">
+                <span className="lumo-title-small">
                     {
                         // translator: Warning that operating system notifications are disabled. ${LUMO_SHORT_APP_NAME} is the app name.
                         c('collider_2025:Info').t`Notifications are off for ${LUMO_SHORT_APP_NAME}. `
@@ -61,7 +59,7 @@ export const NativeNotificationPermissionBanner = ({
             </span>
 
             <Button
-                className="shrink-0 border border-weak"
+                className="shrink-0 border lumo-border"
                 onClick={needsPermissionRequest ? requestPermission : openNotificationSettings}
                 shape="ghost"
             >
@@ -73,7 +71,7 @@ export const NativeNotificationPermissionBanner = ({
                     icon
                     shape="ghost"
                     size="small"
-                    className="shrink-0 color-weak"
+                    className="shrink-0 lumo-color-glyph-mid"
                     onClick={() => setDismissed(true)}
                     title={
                         // translator: Dismiss button for the desktop notifications banner (imperative).

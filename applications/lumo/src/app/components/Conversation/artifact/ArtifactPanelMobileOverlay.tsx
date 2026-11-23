@@ -31,7 +31,8 @@ export const ArtifactPanelMobileOverlay = ({ isOpen, isGenerating = false }: Art
     return createPortal(
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
-            className="fixed inset-0 z-floating-action-buttons flex flex-column bg-norm"
+            className="fixed inset-0 z-floating-action-buttons flex flex-column lumo-bg-overlay"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="dialog"
             aria-modal="true"
             aria-label={c('collider_2025:Label').t`Canvas`}

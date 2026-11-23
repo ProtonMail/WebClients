@@ -41,13 +41,13 @@ interface SettingProps {
 const Setting = ({ id, label, description, hint, followsGeneral, onUseGeneral, control }: SettingProps) => (
     <div className="flex flex-nowrap items-start justify-space-between gap-6">
         <div className="flex flex-column flex-nowrap gap-1 min-w-0">
-            <label htmlFor={id} className="text-semibold">
+            <label htmlFor={id} className="lumo-label-large">
                 {label}
             </label>
-            <p className="m-0 text-sm color-weak">{description}</p>
-            <p className="m-0 text-sm">{hint}</p>
+            <p className="m-0 lumo-body-small lumo-color-glyph-mid">{description}</p>
+            <p className="m-0 lumo-body-small">{hint}</p>
             {followsGeneral !== undefined && (
-                <p className="m-0 text-sm color-weak flex flex-wrap items-baseline gap-x-2">
+                <p className="flex flex-wrap items-baseline gap-x-2 m-0 lumo-body-small lumo-color-glyph-mid">
                     {followsGeneral ? (
                         c('collider_2025:Info').t`Follows your general setting.`
                     ) : (
@@ -105,7 +105,7 @@ export const ProjectSearchModal = ({ space, ...modalProps }: ProjectSearchModalP
         <ModalTwo {...modalProps}>
             <ModalTwoHeader title={c('collider_2025:Title').t`What can ${LUMO_SHORT_APP_NAME} see?`} />
             <ModalTwoContent>
-                <p className="mt-0 mb-6 color-weak">
+                <p className="mt-0 mb-6 lumo-color-glyph-mid">
                     {c('collider_2025:Info')
                         .t`When answering in this project, ${LUMO_SHORT_APP_NAME} can look things up in your past chats and files. These settings decide how far it looks. What you don't change here follows your general settings.`}
                 </p>

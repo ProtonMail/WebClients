@@ -69,10 +69,10 @@ const GuestSkills = () => {
 
             <section className="flex flex-column flex-nowrap gap-4" aria-labelledby="customize-guest-skills">
                 <div className="flex flex-column flex-nowrap gap-1">
-                    <h2 id="customize-guest-skills" className="m-0 text-rg text-semibold">
+                    <h2 id="customize-guest-skills" className="m-0 lumo-title-medium">
                         {c('collider_2025:Title').t`Skills from ${BRAND_NAME}`}
                     </h2>
-                    <p className="m-0 text-xs color-weak">
+                    <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                         {moreCount > 0
                             ? c('collider_2025:Info').ngettext(
                                   msgid`Ready-made skills for common tasks. ${moreCount} more once you sign in.`,
@@ -82,7 +82,7 @@ const GuestSkills = () => {
                             : c('collider_2025:Info').t`Ready-made skills for common tasks.`}
                     </p>
                 </div>
-                <ul className="customize-guest__sets unstyled m-0">
+                <ul className="customize-guest__sets gap-3 unstyled m-0">
                     {previewed.map((plugin, index) => {
                         const getSummary = previews[plugin.id];
                         return (
@@ -91,11 +91,11 @@ const GuestSkills = () => {
                                     as="article"
                                     background={false}
                                     padded={false}
-                                    className="customize-guest__set relative flex flex-nowrap items-start gap-3 h-full rounded-lg bg-norm"
+                                    className="customize-guest__set py-3 relative flex flex-nowrap items-start gap-3 h-full radius-12 lumo-bg-panel"
                                 >
                                     <PluginIcon plugin={plugin} size="small" />
                                     <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                                        <h3 className="m-0 text-sm text-semibold text-ellipsis">
+                                        <h3 className="m-0 lumo-title-small text-ellipsis">
                                             <button
                                                 type="button"
                                                 className="expand-click-area text-left"
@@ -107,8 +107,12 @@ const GuestSkills = () => {
                                                 {plugin.getTitle()}
                                             </button>
                                         </h3>
-                                        <p className="m-0 text-xs color-weak text-ellipsis">{getSummary()}</p>
-                                        <span className="mt-0.5 text-xs color-hint">{getPluginMeta(plugin)}</span>
+                                        <p className="m-0 lumo-body-small text-ellipsis lumo-color-glyph-mid">
+                                            {getSummary()}
+                                        </p>
+                                        <span className="mt-0.5 lumo-body-small lumo-color-glyph-mid">
+                                            {getPluginMeta(plugin)}
+                                        </span>
                                     </div>
                                 </Card>
                             </li>
@@ -151,11 +155,11 @@ interface CustomizeGuestViewProps {
 export const CustomizeGuestView = ({ activeTab, onTabChange }: CustomizeGuestViewProps) => (
     <>
         <header className="flex flex-column flex-nowrap gap-5 mb-6">
-            <h1 className="text-3xl text-bold m-0">{c('collider_2025:Title').t`Customize`}</h1>
+            <h1 className="m-0 lumo-headline-small">{c('collider_2025:Title').t`Customize`}</h1>
             <div className="flex">
                 <CustomizeTabs value={activeTab} onChange={onTabChange} />
             </div>
-            <hr className="m-0 border-top border-weak" />
+            <hr className="m-0 border-top lumo-border" />
         </header>
         {activeTab === 'skills' ? <GuestSkills /> : <GuestConnectors />}
     </>

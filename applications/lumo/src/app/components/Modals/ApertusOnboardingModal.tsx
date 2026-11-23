@@ -50,7 +50,7 @@ export default function ApertusOnboardingModal({ onConfirm, open, ...modalProps 
             <ModalTwoHeader hasClose title={c('collider_2025: Title').t`Meet Apertus 1.5`} />
             <ModalTwoContent>
                 <div
-                    className="flex items-center justify-center rounded-lg px-8 py-10 mb-6"
+                    className="flex items-center justify-center mb-6 px-8 py-10 radius-12"
                     style={{ backgroundColor: '#f5f7fa' }}
                 >
                     <img
@@ -61,24 +61,24 @@ export default function ApertusOnboardingModal({ onConfirm, open, ...modalProps 
                     />
                 </div>
 
-                <p className="mt-0 color-weak">{c('collider_2025: Description')
+                <p className="mt-0 lumo-color-glyph-mid">{c('collider_2025: Description')
                     .jt`${apertusArticleLink} is a fully open, Swiss-made AI model developed with leading Swiss universities. It is best suited to lighter everyday tasks.`}</p>
-                <p className="color-weak">{c('collider_2025: Description')
+                <p className="lumo-color-glyph-mid">{c('collider_2025: Description')
                     .jt`Its model weights, training data, values, and development details are open for inspection. The ${apertusCharterLink} provides strong ethical guardrails for privacy, responsible data use, transparency, and human agency.`}</p>
 
                 <div className="flex flex-column gap-4 mt-6">
                     <div>
-                        <h3 className="text-semibold mb-1">{c('collider_2025: Title').t`You stay in control`}</h3>
-                        <p className="m-0 color-weak">{c('collider_2025: Description')
+                        <h3 className="mb-1 lumo-title-medium">{c('collider_2025: Title').t`You stay in control`}</h3>
+                        <p className="m-0 lumo-color-glyph-mid">{c('collider_2025: Description')
                             .t`After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.`}</p>
                     </div>
 
                     <div>
-                        <h3 className="text-semibold mb-1">{c('collider_2025: Title')
+                        <h3 className="mb-1 lumo-title-medium">{c('collider_2025: Title')
                             .t`Help improve open-source AI`}</h3>
-                        <p className="m-0 color-weak">{c('collider_2025: Description')
+                        <p className="m-0 lumo-color-glyph-mid">{c('collider_2025: Description')
                             .t`If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.`}</p>
-                        <p className="mb-0 mt-2 color-weak">{c('collider_2025: Description')
+                        <p className="mt-2 mb-0 lumo-color-glyph-mid">{c('collider_2025: Description')
                             .jt`You can learn more on the ${protonBlogLink}.`}</p>
                     </div>
                 </div>

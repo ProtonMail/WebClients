@@ -1,14 +1,15 @@
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-
 // Sync Prism build: stable default export (PrismAsync default was undefined under some split-chunk + interop cases).
 import PrismHighlighter from 'react-syntax-highlighter/dist/esm/prism';
+
+import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+
+import './LumoMarkdownCodeBlockHighlighter.scss';
 
 export interface LumoMarkdownCodeBlockHighlighterProps {
     code: string;
     language: string;
     theme: ThemeTypes;
+    className?: string;
 }
 
 /**
@@ -17,14 +18,15 @@ export interface LumoMarkdownCodeBlockHighlighterProps {
 export default function LumoMarkdownCodeBlockHighlighter({
     code,
     language,
-    theme,
+    className = 'lumo-bg-artifact-code-bg',
 }: LumoMarkdownCodeBlockHighlighterProps) {
     return (
         <PrismHighlighter
             language={language}
-            style={theme === ThemeTypes.LumoDark ? oneDark : oneLight}
+            useInlineStyles={false}
+            style={{}}
             PreTag="div"
-            className="lumo-syntax-highlighter"
+            className={`lumo-syntax-highlighter p-4 lumo-font-mono lumo-color-glyph ${className}`}
         >
             {code}
         </PrismHighlighter>

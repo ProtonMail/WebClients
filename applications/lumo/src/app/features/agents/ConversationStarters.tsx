@@ -24,7 +24,7 @@ export const ConversationStarters = ({ starters, onSelect, className }: Conversa
                     key={index}
                     type="button"
                     onClick={() => onSelect(starter)}
-                    className="text-left text-sm color-norm bg-norm border border-weak rounded-full px-3 py-1 interactive-pseudo-inset"
+                    className="px-3 py-1 border lumo-border radius-full lumo-body-small text-left lumo-color-glyph lumo-bg-panel interactive-pseudo-inset"
                 >
                     {starter}
                 </button>

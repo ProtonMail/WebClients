@@ -37,25 +37,25 @@ export const ApiTokenUsageChart = ({
 }) => (
     <ResponsiveContainer width="100%" height={height}>
         <BarChart data={days} margin={{ top: 8, right: 8, left: 0, bottom: 0 }} barCategoryGap="22%">
-            <CartesianGrid strokeDasharray="4 8" stroke="var(--border-weak)" vertical={false} />
+            <CartesianGrid strokeDasharray="4 8" stroke="var(--lumo-border)" vertical={false} />
             <XAxis
                 dataKey="date"
                 tickFormatter={shortDayLabel}
-                tick={{ fontSize: 11, fill: 'var(--text-weak)' }}
-                axisLine={{ stroke: 'var(--border-weak)' }}
+                tick={{ fontSize: 11, fill: 'var(--lumo-glyph-mid)' }}
+                axisLine={{ stroke: 'var(--lumo-border)' }}
                 tickLine={false}
                 minTickGap={24}
             />
             <YAxis
                 domain={[0, getYAxisMaximum(days)]}
                 tickFormatter={formatTokenCount}
-                tick={{ fontSize: 11, fill: 'var(--text-weak)' }}
+                tick={{ fontSize: 11, fill: 'var(--lumo-glyph-mid)' }}
                 axisLine={false}
                 tickLine={false}
                 width={44}
             />
             <RechartsTooltip
-                cursor={{ fill: 'var(--background-weak)' }}
+                cursor={{ fill: 'var(--lumo-control-fill)' }}
                 content={({ active, payload }) => {
                     if (!active || !payload?.length) {
                         return null;
@@ -63,7 +63,7 @@ export const ApiTokenUsageChart = ({
 
                     const day = payload[0].payload as ApiTokenUsageChartDay;
                     return (
-                        <div className="api-usage-chart-tooltip flex flex-column gap-1">
+                        <div className="api-usage-chart-tooltip flex flex-column gap-1 px-3 py-2.5 border lumo-border radius-8 lumo-body-small lumo-color-glyph-mid lumo-bg-panel-elevated lumo-elevation-3">
                             <strong>{shortDayLabel(day.date)}</strong>
                             {TOKEN_SERIES.filter(({ key }) => day[key]).map(({ key, getLabel }) => (
                                 <span key={key}>

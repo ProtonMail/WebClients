@@ -182,7 +182,7 @@ export const StorageTab = ({ currentConversationId, showInternalTools }: Storage
                 >
                     <IndexedDBUnavailablePage />
                     <button
-                        className="debug-view-btn debug-view-btn--secondary"
+                        className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                         onClick={() => setPreviewUnavailable(false)}
                         style={{ position: 'fixed', top: '12px', right: '12px', zIndex: 10000 }}
                     >
@@ -191,71 +191,83 @@ export const StorageTab = ({ currentConversationId, showInternalTools }: Storage
                 </div>
             )}
 
-            <div className="debug-view-header">
+            <div className="debug-view-header gap-1.5 mb-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">💾</span>
                 {c('lumo: Debug View').t`Local storage (IndexedDB)`}
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`IndexedDB available`}</span>
-                <span className={`debug-view-value ${isIndexedDBAvailable() ? '' : 'debug-view-value--danger'}`}>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                    .t`IndexedDB available`}</span>
+                <span
+                    className={`debug-view-value lumo-label-small ${isIndexedDBAvailable() ? '' : 'debug-view-value--danger'}`}
+                >
                     {isIndexedDBAvailable() ? c('lumo: Debug View').t`Yes` : c('lumo: Debug View').t`No`}
                 </span>
             </div>
 
             {error && (
-                <div className="debug-view-row">
-                    <span className="debug-view-value debug-view-value--danger">{error}</span>
+                <div className="debug-view-row mb-1.5">
+                    <span className="debug-view-value debug-view-value--danger lumo-label-small">{error}</span>
                 </div>
             )}
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Spaces`}</span>
-                <span className="debug-view-value">{stats?.spaces ?? '—'}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Spaces`}</span>
+                <span className="debug-view-value lumo-label-small">{stats?.spaces ?? '—'}</span>
             </div>
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Conversations`}</span>
-                <span className="debug-view-value">{stats?.conversations ?? '—'}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Conversations`}</span>
+                <span className="debug-view-value lumo-label-small">{stats?.conversations ?? '—'}</span>
             </div>
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Messages`}</span>
-                <span className="debug-view-value">{stats?.messages ?? '—'}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Messages`}</span>
+                <span className="debug-view-value lumo-label-small">{stats?.messages ?? '—'}</span>
             </div>
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Unsynced messages`}</span>
-                <span className={`debug-view-value ${(stats?.dirtyMessages ?? 0) > 0 ? 'debug-view-value--warn' : ''}`}>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                    .t`Unsynced messages`}</span>
+                <span
+                    className={`debug-view-value lumo-label-small ${(stats?.dirtyMessages ?? 0) > 0 ? 'debug-view-value--warn' : ''}`}
+                >
                     {stats?.dirtyMessages ?? '—'}
                 </span>
             </div>
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Unsynced conversations`}</span>
-                <span className="debug-view-value">{stats?.dirtyConversations ?? '—'}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                    .t`Unsynced conversations`}</span>
+                <span className="debug-view-value lumo-label-small">{stats?.dirtyConversations ?? '—'}</span>
             </div>
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Unsynced spaces`}</span>
-                <span className="debug-view-value">{stats?.dirtySpaces ?? '—'}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                    .t`Unsynced spaces`}</span>
+                <span className="debug-view-value lumo-label-small">{stats?.dirtySpaces ?? '—'}</span>
             </div>
 
-            <div className="debug-view-section debug-view-actions">
-                <button className="debug-view-btn debug-view-btn--secondary" onClick={refresh} disabled={loading}>
+            <div className="debug-view-section border-top lumo-border pt-3 gap-2 debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
+                    onClick={refresh}
+                    disabled={loading}
+                >
                     🔄 {c('lumo: Debug View').t`Refresh`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--primary"
+                    className="debug-view-btn debug-view-btn--primary px-3 py-2 lumo-label-small"
                     onClick={handleExportAll}
                     style={{ background: 'var(--interaction-norm)' }}
                 >
                     ⬇️ {c('lumo: Debug View').t`Export all chats (JSON)`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--primary"
+                    className="debug-view-btn debug-view-btn--primary px-3 py-2 lumo-label-small"
                     onClick={handleExportDirty}
                     style={{ background: 'var(--signal-warning)' }}
                 >
                     ⚠️ {c('lumo: Debug View').t`Export unsynced only (JSON)`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={handleExportCurrent}
                     disabled={!currentConversationId}
                 >
@@ -263,7 +275,7 @@ export const StorageTab = ({ currentConversationId, showInternalTools }: Storage
                 </button>
                 {showInternalTools && (
                     <button
-                        className="debug-view-btn debug-view-btn--secondary"
+                        className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                         onClick={() => setPreviewUnavailable(true)}
                     >
                         🚫 {c('lumo: Debug View').t`Preview "IndexedDB unavailable" screen`}
@@ -277,34 +289,39 @@ export const StorageTab = ({ currentConversationId, showInternalTools }: Storage
 
             {showInternalTools && (
                 <>
-                    <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                    <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                         <span className="debug-view-header-icon">🗜️</span>
                         {c('lumo: Debug View').t`Compaction`}
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Current conversation`}</span>
-                        <span className={`debug-view-value ${currentConversationId ? '' : 'debug-view-value--warn'}`}>
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                            .t`Current conversation`}</span>
+                        <span
+                            className={`debug-view-value lumo-label-small ${currentConversationId ? '' : 'debug-view-value--warn'}`}
+                        >
                             {currentConversationId ?? c('lumo: Debug View').t`None open`}
                         </span>
                     </div>
 
                     {compactionError && (
-                        <div className="debug-view-row">
-                            <span className="debug-view-value debug-view-value--danger">{compactionError}</span>
+                        <div className="debug-view-row mb-1.5">
+                            <span className="debug-view-value debug-view-value--danger lumo-label-small">
+                                {compactionError}
+                            </span>
                         </div>
                     )}
 
-                    <div className="debug-view-section debug-view-actions">
+                    <div className="debug-view-section border-top lumo-border pt-3 gap-2 debug-view-actions">
                         <button
-                            className="debug-view-btn debug-view-btn--primary"
+                            className="debug-view-btn debug-view-btn--primary px-3 py-2 lumo-label-small"
                             onClick={() => runCompaction(false)}
                             disabled={!currentConversationId || compactionRunning}
                         >
                             🗜️ {c('lumo: Debug View').t`Trigger compaction`}
                         </button>
                         <button
-                            className="debug-view-btn debug-view-btn--secondary"
+                            className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                             onClick={() => runCompaction(true)}
                             disabled={!currentConversationId || compactionRunning}
                         >

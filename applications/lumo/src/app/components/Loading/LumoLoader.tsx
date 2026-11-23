@@ -35,7 +35,7 @@ export const LumoBootLoader = ({ children }: PropsWithChildren) => {
         <LumoBootLoaderContext.Provider value={setHoldCount}>
             {holdCount > 0 && (
                 <div
-                    className="loader-page h-full lumo-boot-loader lumo-color-primary"
+                    className="loader-page lumo-boot-loader h-full lumo-color-glyph"
                     // Ignore drag & drop during loading to avoid issue when user drops
                     // file too soon before the app is ready causing stop of the app
                     // load and showing the file instead.
@@ -45,10 +45,10 @@ export const LumoBootLoader = ({ children }: PropsWithChildren) => {
                     onDrop={preventDefaultEvent}
                 >
                     <div className="absolute inset-center text-center">
-                        <div className="lumo-loader">
+                        <div className="lumo-loader mx-auto">
                             <LazyLottie getAnimationData={getLoaderAnimationData} loop={true} />
                         </div>
-                        <TextLoader className="color-weak ml-3">{c('Info').t`Loading ${appName}`}</TextLoader>
+                        <TextLoader className="ml-3 lumo-color-glyph-mid">{c('Info').t`Loading ${appName}`}</TextLoader>
                     </div>
                 </div>
             )}

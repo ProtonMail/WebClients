@@ -42,13 +42,14 @@ export const ArtifactExportOverlay = forwardRef<ArtifactExportOverlayHandle, Pro
     return (
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
-            className="artifact-export-status flex flex-column items-center justify-center gap-3 flex-1 min-h-0"
+            className="artifact-export-status flex flex-column items-center justify-center gap-3 flex-1 min-h-0 lumo-bg-panel"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="status"
             aria-live="polite"
             aria-busy="true"
         >
             <div className="artifact-export-spinner" aria-hidden="true" />
-            <p ref={labelRef} className="text-sm color-norm m-0 text-center">
+            <p ref={labelRef} className="m-0 lumo-body-small text-center lumo-color-glyph">
                 {defaultLabel}
             </p>
         </div>

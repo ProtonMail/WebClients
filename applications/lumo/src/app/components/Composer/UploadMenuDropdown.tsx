@@ -75,7 +75,7 @@ export const UploadMenuDropdown = ({
             anchorRef={anchorRef}
             onClose={onClose}
             autoClose={false}
-            className="upload-menu-dropdown rounded-xl"
+            className="upload-menu-dropdown radius-16"
         >
             {uploadMenuItems.map((item, index) => (
                 <MenuItem key={index} {...item} />

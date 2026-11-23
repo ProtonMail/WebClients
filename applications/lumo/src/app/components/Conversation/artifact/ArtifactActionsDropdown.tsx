@@ -16,6 +16,8 @@ import { useIsTouchDevice } from '../../../hooks/useIsTouchDevice';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import type { IconName } from '../../LumoIcon/LumoIcon';
 
+import './ArtifactActionsDropdown.scss';
+
 const SUBMENU_SIZE: DropdownSize = { width: '16rem', maxHeight: '24rem' };
 
 export interface ArtifactMenuFormatOption {
@@ -45,7 +47,7 @@ export interface ArtifactMenuControls {
 type Submenu = 'download' | 'drive';
 
 const ArtifactMenuDivider = () => {
-    return <hr className="border-weak mx-2 my-1" />;
+    return <hr className="mx-0 my-0.5 lumo-border" />;
 };
 
 interface SectionLabelProps {
@@ -53,7 +55,7 @@ interface SectionLabelProps {
 }
 
 export const ArtifactMenuSectionLabel = ({ children }: SectionLabelProps) => {
-    return <div className="px-4 pt-2 pb-1 text-sm color-hint">{children}</div>;
+    return <div className="px-2.5 pt-1.5 pb-1 lumo-body-small lumo-color-glyph-mid">{children}</div>;
 };
 
 interface FormatOptionsProps {
@@ -68,15 +70,15 @@ const FormatOptions = ({ options, onSelected }: FormatOptionsProps) => {
                 return (
                     <DropdownMenuButton
                         key={option.key}
-                        className="text-left flex flex-nowrap items-center gap-3"
+                        className="artifact-actions-menu__item text-left flex flex-nowrap items-center gap-2.5"
                         onClick={() => {
                             option.onSelect();
                             onSelected();
                         }}
                     >
-                        <LumoIcon name={option.icon} size={16} className="shrink-0 color-weak" />
+                        <LumoIcon name={option.icon} size={16} className="shrink-0 lumo-color-glyph-mid" />
                         <span className="flex-1 min-w-0 text-ellipsis">{option.label}</span>
-                        <span className="shrink-0 color-hint">{option.extension}</span>
+                        <span className="shrink-0 lumo-color-glyph-mid">{option.extension}</span>
                     </DropdownMenuButton>
                 );
             })}
@@ -219,7 +221,7 @@ export const ArtifactActionsDropdown = ({
         return (
             <DropdownMenuButton
                 key={action.key}
-                className="text-left flex flex-nowrap items-center gap-3"
+                className="artifact-actions-menu__item text-left flex flex-nowrap items-center gap-2.5"
                 disabled={actionsDisabled}
                 onMouseEnter={closeSubmenuOnHover}
                 onClick={() => {
@@ -227,9 +229,9 @@ export const ArtifactActionsDropdown = ({
                     closeAll();
                 }}
             >
-                <LumoIcon name={action.icon} size={16} className="shrink-0 color-weak" />
+                <LumoIcon name={action.icon} size={16} className="shrink-0 lumo-color-glyph-mid" />
                 <span className="flex-1">{action.label}</span>
-                {action.hint && <span className="shrink-0 color-hint">{action.hint}</span>}
+                {action.hint && <span className="shrink-0 lumo-color-glyph-mid">{action.hint}</span>}
             </DropdownMenuButton>
         );
     };
@@ -249,20 +251,20 @@ export const ArtifactActionsDropdown = ({
                         <DropdownMenuButton
                             ref={downloadRowRef}
                             className={clsx(
-                                'text-left flex flex-nowrap items-center gap-3',
-                                openSubmenu === 'download' && 'bg-weak'
+                                'artifact-actions-menu__item text-left flex flex-nowrap items-center gap-2.5',
+                                openSubmenu === 'download' && 'lumo-bg-control-fill'
                             )}
                             disabled={actionsDisabled}
                             {...getSubmenuRowProps('download')}
                         >
-                            <LumoIcon name="Download" size={16} className="shrink-0 color-weak" />
+                            <LumoIcon name="Download" size={16} className="shrink-0 lumo-color-glyph-mid" />
                             <span className="flex-1">{c('collider_2025:Action').t`Download`}</span>
-                            <LumoIcon name="ChevronRight" size={16} className="shrink-0 color-weak" />
+                            <LumoIcon name="ChevronRight" size={16} className="shrink-0 lumo-color-glyph-mid" />
                         </DropdownMenuButton>
                     )}
                     {singleDownload && (
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap items-center gap-3"
+                            className="artifact-actions-menu__item text-left flex flex-nowrap items-center gap-2.5"
                             disabled={actionsDisabled}
                             onMouseEnter={closeSubmenuOnHover}
                             onClick={() => {
@@ -270,24 +272,24 @@ export const ArtifactActionsDropdown = ({
                                 closeAll();
                             }}
                         >
-                            <LumoIcon name="Download" size={16} className="shrink-0 color-weak" />
+                            <LumoIcon name="Download" size={16} className="shrink-0 lumo-color-glyph-mid" />
                             <span className="flex-1">{c('collider_2025:Action').t`Download`}</span>
-                            <span className="shrink-0 color-hint">{singleDownload.extension}</span>
+                            <span className="shrink-0 lumo-color-glyph-mid">{singleDownload.extension}</span>
                         </DropdownMenuButton>
                     )}
                     {saveToDriveOptions.length > 0 && (
                         <DropdownMenuButton
                             ref={driveRowRef}
                             className={clsx(
-                                'text-left flex flex-nowrap items-center gap-3',
-                                openSubmenu === 'drive' && 'bg-weak'
+                                'artifact-actions-menu__item text-left flex flex-nowrap items-center gap-2.5',
+                                openSubmenu === 'drive' && 'lumo-bg-control-fill'
                             )}
                             disabled={actionsDisabled}
                             {...getSubmenuRowProps('drive')}
                         >
-                            <LumoIcon name="Folder" size={16} className="shrink-0 color-weak" />
+                            <LumoIcon name="Folder" size={16} className="shrink-0 lumo-color-glyph-mid" />
                             <span className="flex-1">{c('collider_2025:Action').t`Save to ${DRIVE_APP_NAME}`}</span>
-                            <LumoIcon name="ChevronRight" size={16} className="shrink-0 color-weak" />
+                            <LumoIcon name="ChevronRight" size={16} className="shrink-0 lumo-color-glyph-mid" />
                         </DropdownMenuButton>
                     )}
                     {trailingActions.map(renderActionRow)}
@@ -302,13 +304,13 @@ export const ArtifactActionsDropdown = ({
             <>
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap items-center gap-3"
+                        className="artifact-actions-menu__item text-left flex flex-nowrap items-center gap-2.5"
                         onClick={() => {
                             openSubmenuWith(null);
                         }}
                     >
-                        <LumoIcon name="ChevronLeft" size={16} className="shrink-0 color-weak" />
-                        <span className="flex-1 text-semibold">{submenuLabel}</span>
+                        <LumoIcon name="ChevronLeft" size={16} className="shrink-0 lumo-color-glyph-mid" />
+                        <span className="flex-1 lumo-label-medium">{submenuLabel}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
                 <ArtifactMenuDivider />
@@ -324,7 +326,7 @@ export const ArtifactActionsDropdown = ({
                 anchorRef={anchorRef}
                 onClose={closeAll}
                 size={size}
-                className="chat-dropdown-menu"
+                className="chat-dropdown-menu artifact-actions-menu"
                 originalPlacement={originalPlacement}
                 autoClose={false}
                 autoCloseOutside={false}
@@ -340,7 +342,7 @@ export const ArtifactActionsDropdown = ({
                         openSubmenuWith(null);
                     }}
                     size={SUBMENU_SIZE}
-                    className="chat-dropdown-menu"
+                    className="chat-dropdown-menu artifact-actions-menu"
                     originalPlacement="right-start"
                     availablePlacements={['right-start', 'left-start']}
                     noCaret

@@ -44,7 +44,7 @@ export const DriveBrowserHeader: React.FC<DriveBrowserHeaderProps> = ({
                             <LumoIcon name="ArrowLeft" size={16} aria-label={c('collider_2025: Action').t`Back`} />
                         </Button>
                     )}
-                    <p className="m-0 text-lg text-bold">{DRIVE_APP_NAME}</p>
+                    <p className="m-0 lumo-title-medium">{DRIVE_APP_NAME}</p>
                 </div>
 
                 {/* Right side: action buttons + close */}

@@ -61,7 +61,7 @@ export const ProjectTitleSection = ({
     };
 
     return (
-        <div className="project-detail-title-section flex items-center flex-nowrap w-full px-2 py-0">
+        <div className="gap-3 flex items-center flex-nowrap w-full px-2 py-0">
             <ProjectIcon iconId={categoryIcon} size={24} className="project-detail-title-icon shrink-0" />
             {isEditingTitle ? (
                 <input
@@ -70,7 +70,7 @@ export const ProjectTitleSection = ({
                     // Remount per edit (conditional render) keeps defaultValue in sync with the latest name
                     defaultValue={projectName}
                     type="text"
-                    className="project-detail-title-input text-2xl"
+                    className="project-detail-title-input m-0 py-0.5 px-1 radius-4 lumo-title-large lumo-color-glyph lumo-bg-control-fill"
                     onBlur={handleSave}
                     onKeyDown={handleKeyDown}
                     maxLength={100}
@@ -80,7 +80,7 @@ export const ProjectTitleSection = ({
                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                     <h1
                         dir="auto"
-                        className="project-detail-title text-2xl text-ellipsis"
+                        className="project-detail-title m-0 py-0.5 px-1 radius-4 lumo-title-large text-ellipsis lumo-color-glyph"
                         onClick={handleStartEditing}
                         title={c('collider_2025:Action').t`Click to edit title`}
                     >
@@ -107,7 +107,7 @@ export const ProjectTitleSection = ({
                         {c('collider_2025:Action').t`Go to all projects`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left color-danger flex flex-nowrap items-center"
+                        className="flex flex-nowrap items-center text-left lumo-color-signal-danger"
                         onClick={() => {
                             close();
                             onDeleteProject();

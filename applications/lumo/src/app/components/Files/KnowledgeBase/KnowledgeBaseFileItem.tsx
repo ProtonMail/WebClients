@@ -75,7 +75,7 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
-            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-2 mb-2 rounded-lg transition-all ${readonly ? 'opacity-75' : ''} ${
+            className={`knowledge-file-item flex flex-row flex-nowrap items-center p-2 mb-2 radius-12 transition-all lumo-easing-standard ${readonly ? 'opacity-75' : ''} ${
                 canView ? 'hover:bg-weak cursor-pointer' : 'hover:bg-weak'
             }`}
             onClick={handleFileClick}
@@ -84,23 +84,25 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
 
             <div className="flex-1 min-w-0">
                 <div className="flex flex-row flex-nowrap items-center gap-2 mb-0.5">
-                    <p className="m-0 text-sm text-bold truncate" title={file.filename}>
+                    <p className="truncate m-0 lumo-label-small" title={file.filename}>
                         {file.filename}
                     </p>
                 </div>
 
                 <div className="flex flex-row flex-nowrap items-center">
-                    <span className="text-xs color-weak">{prettyType}</span>
+                    <span className="lumo-body-small lumo-color-glyph-mid">{prettyType}</span>
                     {file.isChunk && (
                         <>
-                            <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
-                            <span className="text-xs color-weak">{c('collider_2025: Info').t`Partial content`}</span>
+                            <span className="gap-1 mr-1 ml-1 lumo-body-small lumo-color-glyph-mid">•</span>
+                            <span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
+                                .t`Partial content`}</span>
                         </>
                     )}
                     {file.autoRetrieved && (
                         <>
-                            <span className="text-xs color-weak gap-1 mr-1 ml-1">•</span>
-                            <span className="text-xs color-primary">{c('collider_2025: Info').t`Auto-matched`}</span>
+                            <span className="gap-1 mr-1 ml-1 lumo-body-small lumo-color-glyph-mid">•</span>
+                            <span className="lumo-body-small lumo-color-glyph-brand-text">{c('collider_2025: Info')
+                                .t`Auto-matched`}</span>
                         </>
                     )}
                 </div>
@@ -110,11 +112,15 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
             {!readonly && (
                 <div className="flex flex-row flex-nowrap items-center gap-2 ml-2">
                     {/* Status indicators - always visible */}
-                    {file.processing && <LumoIcon name="RefreshCw" className="color-primary animate-spin" size={16} />}
-                    {file.error && <LumoIcon name="TriangleExclamationPoint" className="color-danger" size={16} />}
+                    {file.processing && (
+                        <LumoIcon name="RefreshCw" className="lumo-color-glyph-brand-text animate-spin" size={16} />
+                    )}
+                    {file.error && (
+                        <LumoIcon name="TriangleExclamationPoint" className="lumo-color-signal-danger" size={16} />
+                    )}
                     {isTooLargeForPreview && (
                         <Tooltip title={c('collider_2025: Info').t`File too large for preview (>150k tokens)`}>
-                            <LumoIcon name="TriangleExclamationPoint" className="color-warning" size={16} />
+                            <LumoIcon name="TriangleExclamationPoint" className="lumo-color-signal-warning" size={16} />
                         </Tooltip>
                     )}
 
@@ -150,9 +156,9 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
                                 data-testid="toggle-button"
                             >
                                 {isActive ? (
-                                    <LumoIcon name="CircleMinus" size={16} className={'color-weak'} />
+                                    <LumoIcon name="CircleMinus" size={16} className={'lumo-color-glyph-mid'} />
                                 ) : (
-                                    <LumoIcon name="CirclePlus" size={16} className={'color-weak'} />
+                                    <LumoIcon name="CirclePlus" size={16} className={'lumo-color-glyph-mid'} />
                                 )}
                             </Button>
                         </Tooltip>

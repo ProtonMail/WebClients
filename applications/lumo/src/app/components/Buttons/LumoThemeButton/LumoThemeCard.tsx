@@ -23,16 +23,22 @@ const LumoThemeCard = ({ src, label, selected, onChange, value }: Props) => {
         <div className="flex flex-nowrap flex-column gap-1 items-center">
             <ButtonLike
                 shape="outline"
-                color={selected ? 'norm' : 'weak'}
+                color="weak"
                 className={clsx(
-                    'p-0 rounded overflow-hidden border-2',
+                    'p-0 overflow-hidden border-2',
                     MobileSelectors.themeButton,
                     selected && 'pointer-events-none'
                 )}
+                style={{
+                    // Proton's .button radius outranks the radius utilities. 12 outer − 2 border
+                    // leaves a 10 clip, which hides the image's own 8 corners so all four match the ring.
+                    borderRadius: 'var(--lumo-radius-12)',
+                    ...(selected && { borderColor: 'var(--lumo-control-border-focus)' }),
+                }}
                 onClick={() => onChange(value)}
                 aria-label={c('Action').t`Use ${label} theme`}
             >
-                <img src={src} alt="" className="rtl:mirror" />
+                <img src={src} alt="" className="block w-full rtl:mirror" />
             </ButtonLike>
             <span>{label}</span>
         </div>

@@ -10,22 +10,18 @@
 	}
 
 	&__path {
-		padding-inline: rem(4);
-		border-radius: rem(4);
 		background-color: var(--background-weak);
 		font-size: 0.95em;
 	}
 
 	&__hint {
-		padding-block: rem(10);
-		padding-inline: rem(12);
-		border-radius: rem(8);
+		border-radius: var(--lumo-radius-8);
 		background-color: var(--background-weak);
 
 		kbd {
-			padding-inline: rem(4);
+			padding-inline: var(--lumo-space-4);
 			border: 1px solid var(--border-weak);
-			border-radius: rem(4);
+			border-radius: var(--lumo-radius-4);
 			background-color: var(--background-norm);
 			font-family: inherit;
 		}

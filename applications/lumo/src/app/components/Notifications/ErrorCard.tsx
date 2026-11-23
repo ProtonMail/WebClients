@@ -49,7 +49,7 @@ const ErrorCard = ({
 
     return (
         <ChatContainerItem className="px-2">
-            <div className="error-card group-hover-opacity-container relative p-3 rounded-xl flex flex-column lg:flex-row flex-nowrap gap-2 mb-4">
+            <div className="error-card group-hover-opacity-container relative flex flex-column flex-nowrap gap-2 mb-4 p-3 radius-16 lg:flex-row">
                 <div className="flex flex-row items-center mr-1 shrink-0">
                     <img
                         className="w-custom h-custom mx-auto"
@@ -59,7 +59,7 @@ const ErrorCard = ({
                     />
                 </div>
                 <div className="flex flex-column flex-nowrap gap-2 lg:flex-1">
-                    <p className="error-card-title text-bold m-0">{error.errorTitle}</p>
+                    <p className="error-card-title lumo-title-small m-0">{error.errorTitle}</p>
                     <p className="error-card-message m-0">{error.errorMessage}</p>
                 </div>
                 <div className="flex flex-row items-center mr-2">
@@ -72,7 +72,7 @@ const ErrorCard = ({
                         icon
                         shape="ghost"
                         className={clsx(
-                            'error-card-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm',
+                            'error-card-dismiss-button absolute top-0 right-0 shrink-0 self-start lumo-border radius-full lumo-bg-panel',
                             !isTouchDevice && 'group-hover:opacity-100'
                         )}
                         onClick={handleDismiss}

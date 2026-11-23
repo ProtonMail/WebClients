@@ -9,8 +9,11 @@ interface ArtifactPreviewFallbackProps {
 const ArtifactPreviewFallback = ({ content }: ArtifactPreviewFallbackProps) => {
     return (
         <div className="artifact-fallback p-4 flex-1 min-h-0 min-w-0 overflow-auto">
-            <p className="text-xs color-warning mb-2">{c('collider_2025:Warning').t`Preview unavailable`}</p>
-            <pre className="text-monospace text-sm m-0 overflow-auto color-norm whitespace-pre-wrap">{content}</pre>
+            <p className="mb-2 lumo-body-small lumo-color-signal-warning">{c('collider_2025:Warning')
+                .t`Preview unavailable`}</p>
+            <pre className="whitespace-pre-wrap m-0 overflow-auto lumo-body-small lumo-font-mono lumo-color-glyph">
+                {content}
+            </pre>
         </div>
     );
 };

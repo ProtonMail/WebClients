@@ -42,8 +42,8 @@ export const ChatHistoryGroupByMenu = ({ showSortedByLabel = false }: ChatHistor
             buttonLabel={getSortedByLabel(dateField)}
             buttonVariant={showSortedByLabel ? 'labeled' : 'icon'}
             buttonClassName={clsx(
-                'chat-history-group-by-menu-button shrink-0',
-                showSortedByLabel && 'chat-history-group-by-menu-button--labeled'
+                'chat-history-group-by-menu-button shrink-0 lumo-color-glyph',
+                showSortedByLabel && 'chat-history-group-by-menu-button--labeled px-1'
             )}
             dropdownClassName="chat-history-group-by-menu"
             stopPropagation

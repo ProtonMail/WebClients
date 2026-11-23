@@ -29,11 +29,15 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
     const volumeEntry = payload.find((p) => p.dataKey === 'volume');
 
     return (
-        <div className="finance-chart-tooltip">
-            <p className="finance-chart-tooltip__date">{label}</p>
-            {priceEntry && <p className="finance-chart-tooltip__price">{formatPrice(priceEntry.value)}</p>}
+        <div className="finance-chart-tooltip lumo-label-small py-2 px-3 border lumo-border radius-8 lumo-bg-panel-elevated lumo-elevation-1">
+            <p className="finance-chart-tooltip__date mx-0 lumo-label-small lumo-color-glyph-mid">{label}</p>
+            {priceEntry && (
+                <p className="finance-chart-tooltip__price mt-0 mb-0.5 mx-0 lumo-title-small lumo-color-glyph">
+                    {formatPrice(priceEntry.value)}
+                </p>
+            )}
             {volumeEntry && (
-                <p className="finance-chart-tooltip__volume">
+                <p className="finance-chart-tooltip__volume m-0 lumo-label-small lumo-color-glyph-mid">
                     {
                         // translator: Chart-tooltip label. Vol means trading volume: the number of shares traded.
                         c('collider_2025:Label').t`Vol: `
@@ -52,8 +56,8 @@ interface StatCardProps {
 
 const StatCard = ({ label, value }: StatCardProps) => (
     <div className="finance-card__stat py-2 px-4">
-        <p className="finance-card__stat-label m-0">{label}</p>
-        <p className="finance-card__stat-value m-0">{value}</p>
+        <p className="finance-card__stat-label m-0 lumo-color-glyph-mid">{label}</p>
+        <p className="finance-card__stat-value m-0 lumo-title-small lumo-color-glyph">{value}</p>
     </div>
 );
 
@@ -132,7 +136,7 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
     const volumeYDomain: [number, number] = [0, maxVolume * 5];
 
     return (
-        <div className="finance-card mb-2">
+        <div className="finance-card mb-2 border lumo-border radius-12 lumo-bg-panel">
             <div className="flex items-center justify-space-between gap-2 py-3 px-4">
                 <div className="flex items-center gap-1.5 flex-wrap">
                     <span
@@ -141,28 +145,34 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
                     >
                         {isUp ? '↗' : '↘'}
                     </span>
-                    <span className="finance-card__company-name">{info?.name ?? data.type}</span>
+                    <span className="finance-card__company-name lumo-title-small lumo-color-glyph">
+                        {info?.name ?? data.type}
+                    </span>
                     {info?.exchange && (
-                        <span className="finance-card__type-badge py-0.5 px-1.5 rounded-sm">{info.exchange}</span>
+                        <span className="finance-card__type-badge px-1.5 py-0.5 radius-4 lumo-label-small lumo-color-glyph-mid lumo-bg-control-fill">
+                            {info.exchange}
+                        </span>
                     )}
                 </div>
                 {lastDate && (
-                    <span className="finance-card__last-updated shrink-0">
+                    <span className="finance-card__last-updated shrink-0 lumo-label-small lumo-color-glyph-mid">
                         {c('collider_2025:Reasoning').t`Last updated: ` + formatLastUpdated(lastDate)}
                     </span>
                 )}
             </div>
 
             <div className="flex items-baseline gap-2 flex-wrap pt-1 pb-3 px-4">
-                <span className="finance-card__price">{formatPrice(data.current_price)}</span>
-                <span className={`finance-card__change finance-card__change--${isUp ? 'up' : 'down'}`}>
+                <span className="finance-card__price lumo-headline-small lumo-color-glyph">
+                    {formatPrice(data.current_price)}
+                </span>
+                <span className={`finance-card__change finance-card__change--${isUp ? 'up' : 'down'} lumo-title-small`}>
                     {isUp ? '+' : ''}
                     {priceChange.toFixed(2)} ({isUp ? '+' : ''}
                     {priceChangePct.toFixed(2)}%)
                 </span>
             </div>
 
-            <div className="finance-card__chart">
+            <div className="finance-card__chart px-1 pb-2">
                 <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart data={chartData} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
                         <defs>

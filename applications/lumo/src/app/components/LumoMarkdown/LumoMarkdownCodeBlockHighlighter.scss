@@ -1,0 +1,52 @@
+.lumo-syntax-highlighter {
+	code {
+		font-family: inherit;
+		color: inherit;
+	}
+
+	// Prism supplies semantic token classes; the surrounding Lumo theme owns their colors.
+	.token {
+		&.comment,
+		&.prolog,
+		&.cdata,
+		&.doctype {
+			color: var(--lumo-artifact-syntax-comment);
+		}
+
+		&.keyword,
+		&.atrule,
+		&.important {
+			color: var(--lumo-artifact-syntax-keyword);
+		}
+
+		&.string,
+		&.char,
+		&.attr-value,
+		&.regex,
+		&.inserted {
+			color: var(--lumo-artifact-syntax-string);
+		}
+
+		&.number,
+		&.boolean,
+		&.constant {
+			color: var(--lumo-artifact-syntax-number);
+		}
+
+		&.function,
+		&.function-variable {
+			color: var(--lumo-artifact-syntax-function);
+		}
+
+		&.class-name,
+		&.builtin,
+		&.tag {
+			color: var(--lumo-artifact-syntax-type);
+		}
+	}
+
+	&::selection,
+	::selection {
+		background-color: var(--lumo-artifact-syntax-selection);
+	}
+}

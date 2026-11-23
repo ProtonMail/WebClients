@@ -139,7 +139,7 @@ export const SkillDetailView = () => {
     if (status !== 'ready') {
         return (
             <LumoLayoutWithDrawer drawer={{ disabled: true }}>
-                <div className="p-8 color-weak">
+                <div className="p-8 lumo-color-glyph-mid">
                     {status === 'error'
                         ? c('collider_2025:Error').t`Could not load your skills.`
                         : c('collider_2025:Info').t`Loading…`}
@@ -206,10 +206,10 @@ export const SkillDetailView = () => {
     };
 
     const renderOverview = () => (
-        <div className="skill-detail__overview">
+        <div className="skill-detail__overview gap-8">
             <div className="flex flex-column flex-nowrap gap-6 min-w-0">
                 {sharedHandles.length > 0 && (
-                    <p className="m-0 text-sm color-warning flex flex-nowrap items-start gap-2">
+                    <p className="flex flex-nowrap items-start gap-2 m-0 lumo-body-small lumo-color-signal-warning">
                         <LumoIcon aria-hidden name="TriangleExclamationPoint" size={16} className="shrink-0 mt-0.5" />
                         <span>
                             {c('collider_2025:Info')
@@ -218,23 +218,27 @@ export const SkillDetailView = () => {
                     </p>
                 )}
                 <section className="flex flex-column flex-nowrap gap-2">
-                    <h2 className="text-sm color-weak text-normal m-0">{c('collider_2025:Title').t`Description`}</h2>
+                    <h2 className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Title')
+                        .t`Description`}</h2>
                     <p className="m-0">{skill.description || '—'}</p>
                 </section>
                 {!isPlugin && (
                     <section className="flex flex-column flex-nowrap gap-2">
-                        <h2 className="text-sm color-weak text-normal m-0">{c('collider_2025:Title')
+                        <h2 className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Title')
                             .t`Invoke with`}</h2>
-                        <code className="skill-detail__handle w-fit-content">/{getSkillHandle(skill.name)}</code>
+                        <code className="skill-detail__handle py-0.5 px-1.5 w-fit-content lumo-bg-control-fill">
+                            /{getSkillHandle(skill.name)}
+                        </code>
                     </section>
                 )}
                 {skill.metadata && Object.keys(skill.metadata).length > 0 && (
                     <section className="flex flex-column flex-nowrap gap-2">
-                        <h2 className="text-sm color-weak text-normal m-0">{c('collider_2025:Title').t`Details`}</h2>
+                        <h2 className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Title')
+                            .t`Details`}</h2>
                         <dl className="skill-detail__metadata m-0">
                             {Object.entries(skill.metadata).map(([key, value]) => (
                                 <div key={key} className="flex flex-nowrap gap-4">
-                                    <dt className="color-weak">{key}</dt>
+                                    <dt className="lumo-color-glyph-mid">{key}</dt>
                                     <dd className="m-0 text-break">{value}</dd>
                                 </div>
                             ))}
@@ -242,12 +246,12 @@ export const SkillDetailView = () => {
                     </section>
                 )}
                 {readme && (
-                    <section className="skill-detail__readme">
+                    <section className="skill-detail__readme border lumo-border radius-12">
                         <SkillCodeView file={readme} mode="preview" filePaths={filePaths} onOpenFile={openFile} />
                     </section>
                 )}
             </div>
-            <aside className="skill-detail__aside flex flex-column gap-3">
+            <aside className="skill-detail__aside p-4 flex flex-column gap-3 radius-12 lumo-bg-control-fill">
                 <label
                     className="flex flex-nowrap items-center justify-space-between gap-3"
                     htmlFor="skill-detail-enabled"
@@ -262,7 +266,7 @@ export const SkillDetailView = () => {
                         }}
                     />
                 </label>
-                <p className="m-0 text-sm color-weak">
+                <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                     {isPlugin
                         ? c('collider_2025:Info')
                               .t`Turning off the skill set turns off all of its skills. ${LUMO_SHORT_APP_NAME} won't use them, but they stay saved.`
@@ -280,12 +284,12 @@ export const SkillDetailView = () => {
 
     const renderContents = () =>
         activeFile ? (
-            <div className="skill-detail__contents flex flex-nowrap">
+            <div className="skill-detail__contents flex flex-nowrap border lumo-border radius-12 lumo-bg-panel">
                 <SkillFileTree files={workspaceFiles} activePath={activeFile.path} onSelectFile={setActivePath} />
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                    <div className="skill-detail__file-header flex flex-nowrap items-center gap-3">
+                    <div className="skill-detail__file-header border-bottom lumo-border py-1.5 pl-4 pr-2 flex flex-nowrap items-center gap-3">
                         <nav
-                            className="skill-detail__breadcrumb flex flex-nowrap items-center gap-1 flex-1 min-w-0"
+                            className="skill-detail__breadcrumb lumo-body-small flex flex-nowrap items-center gap-1 flex-1 min-w-0"
                             aria-label={c('collider_2025:Label').t`File path`}
                         >
                             {activeFile.path.split('/').map((segment, index, segments) => (
@@ -295,13 +299,15 @@ export const SkillDetailView = () => {
                                             aria-hidden
                                             name="ChevronRight"
                                             size={12}
-                                            className="shrink-0 color-hint"
+                                            className="shrink-0 lumo-color-glyph-mid"
                                         />
                                     )}
                                     <span
                                         className={clsx(
                                             'text-ellipsis',
-                                            index === segments.length - 1 ? 'is-current shrink-0' : 'color-weak'
+                                            index === segments.length - 1
+                                                ? 'is-current shrink-0'
+                                                : 'lumo-color-glyph-mid'
                                         )}
                                         aria-current={index === segments.length - 1 ? 'page' : undefined}
                                     >
@@ -311,7 +317,7 @@ export const SkillDetailView = () => {
                             ))}
                         </nav>
                         {/\.(md|markdown)$/i.test(activeFile.path) && (
-                            <fieldset className="skill-detail__mode-toggle flex flex-nowrap shrink-0 m-0 border-none min-w-0">
+                            <fieldset className="skill-detail__mode-toggle p-0.5 flex flex-nowrap shrink-0 min-w-0 m-0 border-none radius-8 lumo-bg-control-fill">
                                 {(
                                     [
                                         ['preview', 'Eye', c('collider_2025:Action').t`Preview`],
@@ -322,7 +328,7 @@ export const SkillDetailView = () => {
                                         key={value}
                                         type="button"
                                         className={clsx(
-                                            'skill-detail__mode-button flex flex-nowrap items-center gap-1.5',
+                                            'skill-detail__mode-button py-1 px-2.5 flex flex-nowrap items-center gap-1.5 radius-8 lumo-label-small lumo-color-glyph-mid',
                                             mode === value && 'is-active'
                                         )}
                                         aria-pressed={mode === value}
@@ -347,7 +353,7 @@ export const SkillDetailView = () => {
                 </div>
             </div>
         ) : (
-            <p className="m-0 color-weak">{c('collider_2025:Info').t`Loading…`}</p>
+            <p className="m-0 lumo-color-glyph-mid">{c('collider_2025:Info').t`Loading…`}</p>
         );
 
     const renderSkills = () => (
@@ -372,22 +378,25 @@ export const SkillDetailView = () => {
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
             <CustomizePage className="gap-5" fill={tab === 'contents'}>
-                <Link to="/customize" className="flex items-center gap-2 color-norm text-no-decoration w-fit-content">
-                    <LumoIcon name="ArrowLeft" size={16} className="rtl:mirror" />
+                <Link
+                    to="/customize"
+                    className="flex items-center gap-1.5 w-fit-content lumo-label-medium text-no-decoration lumo-color-glyph-mid"
+                >
+                    <LumoIcon name="ArrowLeft" size={14} className="rtl:mirror" />
                     {c('collider_2025:Link').t`Skills`}
                 </Link>
 
-                <header className="flex flex-nowrap items-center gap-4">
-                    <div className="skill-detail__icon flex shrink-0 items-center justify-center">
+                <header className="flex flex-nowrap items-center gap-3">
+                    <div className="skill-detail__icon flex shrink-0 items-center justify-center border lumo-border radius-12 lumo-bg-control-fill">
                         {isPlugin && !skill.icon ? (
                             <LumoIcon name="Package" size={20} />
                         ) : (
                             <ProjectIcon iconId={skill.icon ?? DEFAULT_AGENT_ICON} size={20} />
                         )}
                     </div>
-                    <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                        <h1 className="text-lg text-semibold m-0 text-ellipsis">{skill.name}</h1>
-                        <span className="text-sm color-weak text-ellipsis">
+                    <div className="flex flex-column flex-nowrap flex-1 gap-1.5 min-w-0">
+                        <h1 className="m-0 lumo-title-large text-ellipsis">{skill.name}</h1>
+                        <span className="lumo-body-small text-ellipsis lumo-color-glyph-mid">
                             {getMetaLine(skill, workspaceFiles.length)}
                         </span>
                     </div>
@@ -444,14 +453,19 @@ export const SkillDetailView = () => {
                     onUpgrade={() => skillLimit.openUpgradeModal('limit')}
                 />
 
-                <div className="skill-detail__tabs flex flex-nowrap gap-6" role="tablist">
+                <div className="skill-detail__tabs flex flex-nowrap gap-1" role="tablist">
                     {tabs.map(([id, label]) => (
                         <button
                             key={id}
                             type="button"
                             role="tab"
                             aria-selected={tab === id}
-                            className={clsx('skill-detail__tab border-none bg-transparent', tab === id && 'is-active')}
+                            className={clsx(
+                                'skill-detail__tab px-3 py-2 border-none radius-8 lumo-title-small',
+                                tab === id
+                                    ? 'is-active lumo-color-glyph lumo-bg-control-fill-mid'
+                                    : 'lumo-color-glyph-mid lumo-bg-control-fill-empty'
+                            )}
                             onClick={() => setTab(id)}
                         >
                             {label}

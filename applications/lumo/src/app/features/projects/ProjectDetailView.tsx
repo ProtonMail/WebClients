@@ -251,15 +251,15 @@ const ProjectDetailViewInner = () => {
     if (!space || space.spaceType !== SpaceType.Project) {
         if (isDataHydrating) {
             return (
-                <div className="project-detail-not-found flex flex-column items-center justify-center">
+                <div className="project-detail-not-found gap-4 p-10 flex flex-column items-center justify-center">
                     <Loader size="medium" />
-                    <p className="color-weak m-0">{c('collider_2025:Info').t`Loading…`}</p>
+                    <p className="m-0 lumo-color-glyph-mid">{c('collider_2025:Info').t`Loading…`}</p>
                 </div>
             );
         }
 
         return (
-            <div className="project-detail-not-found flex flex-column items-center justify-center">
+            <div className="project-detail-not-found gap-4 p-10 flex flex-column items-center justify-center">
                 <img
                     src={lumoProjects}
                     alt={
@@ -268,7 +268,7 @@ const ProjectDetailViewInner = () => {
                     }
                     width={200}
                 />
-                <h2 className="text-lg">{c('collider_2025:Error').t`Project not found`}</h2>
+                <h2 className="lumo-title-large">{c('collider_2025:Error').t`Project not found`}</h2>
                 <Button onClick={() => history.push('/projects')}>
                     {c('collider_2025:Button').t`Back to projects`}
                 </Button>
@@ -324,7 +324,7 @@ const ProjectDetailViewInner = () => {
                 defaultOpened: true,
             }}
         >
-            <div className="project-detail-view flex flex-column">
+            <div className="project-detail-view p-0 m-0 flex flex-column">
                 <div
                     className={`project-detail-content flex-1 relative overflow-hidden ${showSidebar ? 'with-sidebar' : 'without-sidebar'}`}
                 >
@@ -361,7 +361,7 @@ const ProjectDetailViewInner = () => {
                                 </div>
                             )}
 
-                            <div className="project-detail-composer">
+                            <div className="project-detail-composer mt-auto mx-auto pt-6 pb-0 px-0">
                                 <ComposerComponent
                                     handleSendMessage={handleSendInProject}
                                     isProcessingAttachment={false}
@@ -374,7 +374,7 @@ const ProjectDetailViewInner = () => {
                                     spaceId={projectId}
                                     onShowDriveBrowser={handleShowDriveBrowser}
                                 />
-                                <p className="text-center color-weak text-xs mt-2">
+                                <p className="mt-2 lumo-body-small text-center lumo-color-glyph-mid">
                                     {c('collider_2025: Disclosure')
                                         .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
                                 </p>

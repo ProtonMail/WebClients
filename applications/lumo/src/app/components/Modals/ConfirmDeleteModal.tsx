@@ -63,9 +63,13 @@ const ConfirmDeleteModal = ({ handleDelete, deleteAll = false, count = 1, loadin
             ]}
         >
             <p className="m-0">{message}</p>
-            <div className="flex flex-row flex-nowrap items-start gap-2 mt-4 p-3 rounded bg-weak">
-                <LumoIcon name="TriangleExclamationPoint" className="color-warning shrink-0 mt-0.5" size={16} />
-                <span className="text-bold">{contentWarning}</span>
+            <div className="flex flex-row flex-nowrap items-start gap-2 mt-4 p-3 radius-8 lumo-bg-control-fill">
+                <LumoIcon
+                    name="TriangleExclamationPoint"
+                    className="shrink-0 mt-0.5 lumo-color-signal-warning"
+                    size={16}
+                />
+                <span className="lumo-title-small">{contentWarning}</span>
             </div>
         </Prompt>
     );

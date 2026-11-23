@@ -3,15 +3,15 @@
 .thinking-path-progress-dot {
 	inline-size: rem(4);
 	block-size: rem(4);
-	background-color: var(--text-hint);
-	animation: thinking-dot-pulse 1.2s ease-in-out infinite;
+	background-color: var(--lumo-glyph-low);
+	animation: thinking-dot-pulse 1.2s var(--lumo-easing-standard) infinite;
 
 	&:nth-child(2) {
-		animation-delay: 0.15s;
+		animation-delay: var(--lumo-duration-150);
 	}
 
 	&:nth-child(3) {
-		animation-delay: 0.3s;
+		animation-delay: var(--lumo-duration-300);
 	}
 }
 

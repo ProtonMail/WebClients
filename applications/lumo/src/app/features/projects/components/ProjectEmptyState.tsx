@@ -8,7 +8,7 @@ interface ProjectEmptyStateProps {
 }
 
 export const ProjectEmptyState = ({ promptSuggestions, onSelectSuggestion }: ProjectEmptyStateProps) => (
-    <div className="project-detail-empty">
+    <div className="project-detail-empty px-5">
         <img
             src={lumoProjects}
             alt={
@@ -17,15 +17,15 @@ export const ProjectEmptyState = ({ promptSuggestions, onSelectSuggestion }: Pro
             }
             width={200}
         />
-        <h2 className="project-detail-empty-title text-lg pt-3">
+        <h2 className="project-detail-empty-title mt-0 mb-6 mx-0 pt-3 lumo-title-large lumo-color-glyph">
             {c('collider_2025:Title').t`Start a new conversation`}
         </h2>
         {promptSuggestions.length > 0 && (
-            <div className="project-detail-prompt-suggestions">
+            <div className="project-detail-prompt-suggestions gap-3">
                 {promptSuggestions.map((suggestion, index) => (
                     <button
                         key={index}
-                        className="project-detail-prompt-suggestion text-sm"
+                        className="project-detail-prompt-suggestion px-5 border lumo-border radius-8 lumo-body-small lumo-color-glyph lumo-bg-control-fill"
                         onClick={() => onSelectSuggestion(suggestion)}
                     >
                         {suggestion}

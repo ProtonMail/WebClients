@@ -1,5 +1,3 @@
-@use '~@proton/styles/scss/lib/rem' as *;
-
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 
@@ -9,25 +7,23 @@ im.$media-expressions: $media-expressions;
 .project-detail-view {
 	block-size: 100%;
 	overflow: hidden;
-	padding: 0;
-	margin: 0;
 	min-block-size: 0; // Allow shrinking
 	display: flex;
 	flex-direction: column;
 }
 
 .project-detail-header {
-	gap: 16px;
+	gap: var(--lumo-space-16);
 	inline-size: 100%;
 	flex-wrap: nowrap;
 
 	&.without-sidebar {
-		padding-block: 12px 0;
+		padding-block: var(--lumo-space-12) 0;
 		padding-inline: 14px;
 	}
 
 	&.with-sidebar {
-		padding-block: 12px;
+		padding-block: var(--lumo-space-12);
 		padding-inline: 14px;
 	}
 
@@ -38,18 +34,18 @@ im.$media-expressions: $media-expressions;
 	// }
 
 	@media (width <= 768px) {
-		padding-block: 16px 12px;
-		padding-inline: 20px;
-		gap: 12px;
+		padding-block: var(--lumo-space-16) var(--lumo-space-12);
+		padding-inline: var(--lumo-space-20);
+		gap: var(--lumo-space-12);
 		flex-wrap: wrap;
 	}
 }
 
 .project-detail-header-content {
-	gap: 12px;
+	gap: var(--lumo-space-12);
 	flex: 1;
 	min-inline-size: 0;
-	padding-inline-start: 24px;
+	padding-inline-start: var(--lumo-space-24);
 
 	&.project-detail-header.without-sidebar {
 		max-inline-size: 51.25rem;
@@ -60,15 +56,15 @@ im.$media-expressions: $media-expressions;
 
 	@include im.media('<=small') {
 		flex: 1 1 auto;
-		padding-inline-start: 8px;
+		padding-inline-start: var(--lumo-space-8);
 	}
 }
 
 .project-detail-actions {
-	gap: 8px;
+	gap: var(--lumo-space-8);
 
 	.project-detail-header.with-sidebar & {
-		padding-inline-end: 16px;
+		padding-inline-end: var(--lumo-space-16);
 	}
 
 	@media (width <= 768px) {
@@ -77,27 +73,23 @@ im.$media-expressions: $media-expressions;
 }
 
 .project-detail-actions-mobile {
-	gap: 8px;
+	gap: var(--lumo-space-8);
 	inline-size: 100%;
 	padding-inline: 0;
-	margin-block-start: 8px;
+	margin-block-start: var(--lumo-space-8);
 }
 
 .project-detail-back-button {
-	color: var(--text-weak);
+	color: var(--lumo-glyph-mid);
 
 	&:hover {
-		color: var(--text-norm);
+		color: var(--lumo-glyph);
 		background-color: transparent !important;
 	}
 }
 
 .project-detail-back-text {
-	margin-inline-start: 4px;
-}
-
-.project-detail-title-section {
-	gap: 12px;
+	margin-inline-start: var(--lumo-space-4);
 }
 
 .project-detail-title-icon {
@@ -105,45 +97,30 @@ im.$media-expressions: $media-expressions;
 }
 
 .project-detail-title {
-	font-weight: 600;
-	margin: 0;
-	color: var(--text-norm);
-	line-height: 1.2;
 	cursor: text;
-	border-radius: var(--border-radius-sm);
-	padding-block: 2px;
-	padding-inline: 4px;
-	margin-inline: -4px;
-	transition: background-color 0.15s ease;
+	margin-inline: calc(-1 * var(--lumo-space-4));
+	transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:hover {
-		background-color: var(--background-weak);
+		background-color: var(--lumo-control-fill);
 	}
 }
 
 .project-detail-title-input {
-	font-weight: 600;
-	margin: 0;
-	color: var(--text-norm);
-	line-height: 1.2;
-	background: var(--background-weak);
-	border: 1px solid var(--primary);
-	border-radius: var(--border-radius-sm);
-	padding-block: 2px;
-	padding-inline: 4px;
-	margin-inline: -4px;
+	border: 1px solid var(--lumo-control-brand-fill);
+	margin-inline: calc(-1 * var(--lumo-space-4));
 	flex: 1;
 	min-inline-size: 0;
 	outline: none;
 
 	&:focus {
-		border-color: var(--primary);
+		border-color: var(--lumo-control-brand-fill);
 		box-shadow: 0 0 0 2px rgb(var(--primary-rgb) / 0.2);
 	}
 }
 
 .project-detail-settings-button {
-	gap: 4px;
+	gap: var(--lumo-space-4);
 }
 
 .project-detail-content {
@@ -169,8 +146,8 @@ im.$media-expressions: $media-expressions;
 
 .project-detail-main {
 	overflow: hidden auto; // Prevent horizontal scrolling // Allow vertical scrolling
-	padding-block: 8px 0;
-	padding-inline: 6px 8px;
+	padding-block: var(--lumo-space-8) 0;
+	padding-inline: var(--lumo-space-24);
 	position: relative;
 	min-inline-size: 0;
 	min-block-size: 0;
@@ -182,15 +159,14 @@ im.$media-expressions: $media-expressions;
 	align-items: center; // Center children horizontally
 
 	@include im.media('<=small') {
-		padding-block: 8px 0;
-		padding-inline: 6px 8px;
+		padding-block: var(--lumo-space-8) 0;
+		padding-inline: var(--lumo-space-6) var(--lumo-space-8);
 	}
 }
 
 .project-detail-empty {
 	text-align: center;
-	padding-block: 40px;
-	padding-inline: 20px;
+	padding-block: var(--lumo-space-40);
 	inline-size: 100%;
 	max-inline-size: 51.25rem;
 	margin-block: auto; // Center vertically in available space
@@ -207,12 +183,12 @@ im.$media-expressions: $media-expressions;
 		max-inline-size: 100%;
 		inline-size: 100%;
 		margin-inline: 0;
-		padding-block: 20px;
+		padding-block: var(--lumo-space-20);
 	}
 
 	// At small heights, don't try to center - just stack
 	@media (height <= 500px) {
-		padding-block: 10px;
+		padding-block: var(--lumo-space-10);
 		margin-block: 0;
 		justify-content: flex-start;
 	}
@@ -222,21 +198,17 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100px;
 	block-size: 100px;
 	border-radius: 50%;
-	background-color: var(--background-weak);
-	margin-block-end: 24px;
-	color: var(--text-weak);
+	background-color: var(--lumo-control-fill);
+	margin-block-end: var(--lumo-space-24);
+	color: var(--lumo-glyph-mid);
 }
 
 .project-detail-empty-title {
-	font-weight: 600;
-	margin-block: 0 24px;
-	margin-inline: 0;
-	color: var(--text-norm);
 	max-inline-size: 500px;
 }
 
 .project-detail-empty-description {
-	color: var(--text-weak);
+	color: var(--lumo-glyph-mid);
 	margin: 0;
 	max-inline-size: 450px;
 	line-height: 1.5;
@@ -245,7 +217,6 @@ im.$media-expressions: $media-expressions;
 .project-detail-prompt-suggestions {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
 	max-inline-size: 600px;
 	inline-size: 100%;
 
@@ -257,18 +228,13 @@ im.$media-expressions: $media-expressions;
 
 .project-detail-prompt-suggestion {
 	padding-block: 14px;
-	padding-inline: 20px;
-	background: var(--background-weak);
-	border: 1px solid var(--border-weak);
-	border-radius: var(--border-radius-md);
 	cursor: pointer;
-	transition: all 0.2s ease;
-	color: var(--text-norm);
+	transition: all var(--lumo-duration-200) var(--lumo-easing-standard);
 	text-align: start;
 
 	&:hover {
-		background: var(--background-strong);
-		border-color: var(--border-norm);
+		background: var(--lumo-control-fill-mid);
+		border-color: var(--lumo-border);
 		transform: translateY(-1px);
 		box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
 	}
@@ -284,7 +250,6 @@ im.$media-expressions: $media-expressions;
 	flex: 1;
 	overflow: hidden;
 	min-block-size: 0;
-	margin-block-end: 24px;
 	inline-size: 100%;
 	max-inline-size: 51.25rem;
 	margin-inline: auto;
@@ -302,26 +267,22 @@ im.$media-expressions: $media-expressions;
 		inline-size: 100%;
 		margin-inline: 0;
 		padding-block: 0;
-		padding-inline: 20px;
+		padding-inline: var(--lumo-space-20);
 	}
 }
 
 .project-detail-section-title {
-	font-weight: 600;
-	color: var(--text-weak);
+	font: var(--lumo-type-title-small);
+	color: var(--lumo-glyph-mid);
 	letter-spacing: 0.5px;
-	margin-block: 10px;
+	margin-block: var(--lumo-space-10);
 	margin-inline: 0;
 }
 
 .project-detail-composer {
-	z-index: 10;
-	padding-block: 24px 0;
-	padding-inline: 0;
-	margin-block-start: auto; // Push to bottom
+	z-index: 10; // Push to bottom
 	inline-size: 100%;
 	max-inline-size: 51.25rem;
-	margin-inline: auto;
 	flex-shrink: 0;
 	display: flex !important;
 	flex-direction: column !important; // Ensure column layout
@@ -329,40 +290,38 @@ im.$media-expressions: $media-expressions;
 
 	@media (width <= 768px) {
 		max-inline-size: 100%;
-		padding-block: 24px 0;
-		padding-inline: 20px;
+		padding-block: var(--lumo-space-24) 0;
+		padding-inline: var(--lumo-space-20);
 	}
 
 	@media (height <= 500px) {
-		padding-block: 8px 0;
+		padding-block: var(--lumo-space-8) 0;
 	}
 }
 
 .project-detail-not-found {
 	block-size: 100%;
-	gap: 16px;
 	text-align: center;
-	padding: 40px;
 
 	h2 {
 		margin: 0;
-		color: var(--text-norm);
+		color: var(--lumo-glyph);
 	}
 }
 
 @media (width <= 768px) {
 	.project-detail-header {
-		padding-block: 12px;
-		padding-inline: 16px;
+		padding-block: var(--lumo-space-12);
+		padding-inline: var(--lumo-space-16);
 	}
 
 	.project-detail-title {
-		font-size: rem(18);
+		font: var(--lumo-type-title-medium);
 	}
 
 	.project-detail-main {
-		padding-block: 8px 0;
-		padding-inline: 16px 8px;
+		padding-block: var(--lumo-space-8) 0;
+		padding-inline: var(--lumo-space-16) var(--lumo-space-8);
 	}
 }
 

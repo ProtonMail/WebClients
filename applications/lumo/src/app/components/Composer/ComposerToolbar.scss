@@ -5,6 +5,10 @@
 	container-type: inline-size;
 	container-name: $container-name-composer-toolbar;
 
+	&__image-mode.button:is(:hover, :focus-visible) {
+		color: var(--lumo-glyph-brand-strong);
+	}
+
 	&__action-label {
 		@container #{$container-name-composer-toolbar} (max-width: 300px) {
 			display: none;

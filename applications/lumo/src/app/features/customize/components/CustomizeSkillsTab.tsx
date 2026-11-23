@@ -92,22 +92,24 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
     const renderStatus = () => {
         if (status === 'error') {
             return (
-                <p className="m-0 text-sm color-danger">{c('collider_2025:Error').t`Could not load your skills.`}</p>
+                <p className="m-0 lumo-body-small lumo-color-signal-danger">{c('collider_2025:Error')
+                    .t`Could not load your skills.`}</p>
             );
         }
-        return <p className="m-0 text-sm color-weak">{c('collider_2025:Info').t`Loading…`}</p>;
+        return <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info').t`Loading…`}</p>;
     };
 
     const renderYourSkills = () => {
         if (groups.length === 0) {
             if (searchQuery.trim()) {
                 return (
-                    <p className="m-0 text-sm color-weak">{c('collider_2025:Info').t`No skills match your search.`}</p>
+                    <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
+                        .t`No skills match your search.`}</p>
                 );
             }
             return (
                 <div className="flex flex-column flex-nowrap items-center gap-3 py-8 text-center">
-                    <p className="m-0 color-weak">
+                    <p className="m-0 lumo-color-glyph-mid">
                         {c('collider_2025:Info')
                             .t`Add a skill to tailor how ${LUMO_SHORT_APP_NAME} helps you. Type / in any chat to use it.`}
                     </p>

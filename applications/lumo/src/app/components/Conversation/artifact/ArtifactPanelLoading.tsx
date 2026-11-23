@@ -60,18 +60,23 @@ export const ArtifactPanelLoading = () => {
             aria-busy="true"
             aria-live="polite"
         >
-            <Icon key={iconType} size={8} className="artifact-panel-loading-icon color-primary" aria-hidden="true" />
-            <span className="artifact-panel-loading-text text-sm color-weak text-monospace text-center">
+            <Icon
+                key={iconType}
+                size={8}
+                className="artifact-panel-loading-icon lumo-color-glyph-brand-text"
+                aria-hidden="true"
+            />
+            <span className="artifact-panel-loading-text lumo-body-small lumo-font-mono text-center lumo-color-glyph-mid">
                 {displayText}
             </span>
             <div
                 className="artifact-panel-loading-skeleton flex flex-column gap-3 w-full max-w-custom"
                 style={{ '--max-w-custom': '28rem' } as React.CSSProperties}
             >
-                <div className="rectangle-skeleton rounded w-full" style={{ height: '0.875rem' }} />
-                <div className="rectangle-skeleton rounded w-full" style={{ height: '0.875rem' }} />
-                <div className="rectangle-skeleton rounded w-3/4" style={{ height: '0.875rem' }} />
-                <div className="rectangle-skeleton rounded w-full mt-2" style={{ height: '6rem' }} />
+                <div className="rectangle-skeleton w-full radius-8" style={{ height: '0.875rem' }} />
+                <div className="rectangle-skeleton w-full radius-8" style={{ height: '0.875rem' }} />
+                <div className="rectangle-skeleton w-3/4 radius-8" style={{ height: '0.875rem' }} />
+                <div className="rectangle-skeleton w-full mt-2 radius-8" style={{ height: '6rem' }} />
             </div>
         </div>
     );

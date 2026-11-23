@@ -35,7 +35,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
     if (children.length === 0) {
         return (
             <div className="flex items-center justify-center text-center py-8">
-                <p className="color-weak text-sm m-0">{c('collider_2025: Info')
+                <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
                     .t`No supported files in this folder`}</p>
             </div>
         );
@@ -76,9 +76,15 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                 const exceedsFileSizeLimit = child.size && child.size > MAX_ASSET_SIZE;
 
                 const CheckmarkIcon = () => <LumoIcon name="CircleCheck" />;
-                const ErrorIcon = () => <LumoIcon name="TriangleExclamationPoint" className="color-danger" size={16} />;
+                const ErrorIcon = () => (
+                    <LumoIcon name="TriangleExclamationPoint" className="lumo-color-signal-danger" size={16} />
+                );
                 const ProgressIcon = () => (
-                    <CircularProgress progress={fileData.downloadProgress || 0} size={16} className="text-primary" />
+                    <CircularProgress
+                        progress={fileData.downloadProgress || 0}
+                        size={16}
+                        className="lumo-color-glyph-brand-text"
+                    />
                 );
                 const AddIcon = () => <LumoIcon name="CirclePlus" />;
 

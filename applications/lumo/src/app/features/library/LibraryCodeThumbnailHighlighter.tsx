@@ -1,8 +1,9 @@
 // Same sync Prism build as LumoMarkdownCodeBlockHighlighter, so both share one lazy chunk.
 import PrismHighlighter from 'react-syntax-highlighter/dist/esm/prism';
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+
+import '../../components/LumoMarkdown/LumoMarkdownCodeBlockHighlighter.scss';
 
 export interface LibraryCodeThumbnailHighlighterProps {
     code: string;
@@ -14,18 +15,20 @@ export interface LibraryCodeThumbnailHighlighterProps {
  * Loaded via React.lazy() from LibraryCreationThumbnail. Renders React elements (no innerHTML), so
  * the code is escaped like any other text. Sizing and font come from the card, not the Prism theme.
  */
-export default function LibraryCodeThumbnailHighlighter({
-    code,
-    language,
-    theme,
-}: LibraryCodeThumbnailHighlighterProps) {
+export default function LibraryCodeThumbnailHighlighter({ code, language }: LibraryCodeThumbnailHighlighterProps) {
     return (
         <PrismHighlighter
             language={language}
-            style={theme === ThemeTypes.LumoDark ? oneDark : oneLight}
+            style={{}}
+            useInlineStyles={false}
+            className="lumo-syntax-highlighter lumo-color-glyph"
             PreTag="div"
             showLineNumbers
-            lineNumberStyle={{ minWidth: '1.25rem', paddingRight: '1rem', color: 'var(--text-hint)' }}
+            lineNumberStyle={{
+                minInlineSize: '1.25rem',
+                paddingInlineEnd: '1rem',
+                color: 'var(--lumo-artifact-syntax-line-number)',
+            }}
             customStyle={{
                 margin: 0,
                 padding: 0,

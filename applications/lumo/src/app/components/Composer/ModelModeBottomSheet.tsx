@@ -42,7 +42,7 @@ export const ModelModeBottomSheet = ({ open, onClose, children }: ModelModeBotto
         <Portal>
             <dialog
                 ref={dialogRef}
-                className="model-mode-sheet"
+                className="model-mode-sheet m-0 p-0"
                 aria-label={c('collider_2025: Label').t`Model and response mode`}
                 onCancel={(event) => {
                     event.preventDefault();
@@ -51,12 +51,12 @@ export const ModelModeBottomSheet = ({ open, onClose, children }: ModelModeBotto
             >
                 <button
                     type="button"
-                    className="model-mode-sheet-backdrop"
+                    className="model-mode-sheet-backdrop bg-transparent m-0 p-0"
                     aria-label={c('Action').t`Close`}
                     onClick={onClose}
                 />
-                <div className="model-mode-sheet-panel">
-                    <div className="model-mode-sheet-header">
+                <div className="model-mode-sheet-panel lumo-bg-panel-elevated">
+                    <div className="model-mode-sheet-header pt-2.5 pb-1.5 px-4">
                         <div className="model-mode-sheet-handle" />
                         <Tooltip title={c('Action').t`Close`}>
                             <Button

@@ -294,10 +294,10 @@ export const LumoEyesSVG = () => {
                 <path
                     d="M 64.064 26.842 C 65.458 26.842 66.588 25 66.588 22.728 C 66.588 20.456 65.458 18.614 64.064 18.614 C 62.67 18.614 61.539 20.456 61.539 22.728 C 61.539 25 62.67 26.842 64.064 26.842 Z"
                     fill="#4129A3"
-                    className="right-eye relative"
+                    className="right-eye relative duration-300 lumo-easing-standard"
                     ref={rightEye}
                     style={{
-                        transition: 'transform .5s ease',
+                        transitionProperty: 'transform',
                         transform: `translateX(${transRight.x}%) translateY(${transRight.y}%)`,
                     }}
                 />
@@ -331,10 +331,10 @@ export const LumoEyesSVG = () => {
                 <path
                     d="M 42.146 26.842 C 43.541 26.842 44.671 25 44.671 22.728 C 44.671 20.456 43.541 18.614 42.146 18.614 C 40.752 18.614 39.622 20.456 39.622 22.728 C 39.622 25 40.752 26.842 42.146 26.842 Z"
                     fill="#4129A3"
-                    className="left-eye relative"
+                    className="left-eye relative duration-300 lumo-easing-standard"
                     ref={leftEye}
                     style={{
-                        transition: 'transform .5s ease',
+                        transitionProperty: 'transform',
                         transform: `translateX(${transLeft.x}%) translateY(${transLeft.y}%)`,
                     }}
                 />

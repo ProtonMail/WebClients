@@ -42,14 +42,14 @@ export const ContextSizeWarning = ({ attachments, messageChain, spaceId, onOpenF
     return (
         <div className="flex flex-row flex-nowrap gap-2 mx-2 mb-2 p-2">
             <div className="flex-1">
-                <p className={clsx('text-sm m-0')}>{message}</p>
+                <p className={clsx('m-0 lumo-body-small')}>{message}</p>
             </div>
             {onOpenFiles && fileTokens > 0 && (
                 <Button
                     size="small"
                     shape="underline"
                     color="weak"
-                    className="text-sm px-2 py-1"
+                    className="px-2 py-1 lumo-body-small"
                     onClick={() => onOpenFiles()}
                 >
                     {c('collider_2025: Info').t`Manage files`}
