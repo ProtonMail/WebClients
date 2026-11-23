@@ -271,6 +271,9 @@ overrides:
     electron-winstaller: '^5.4.4'
     'dompurify@3.4.16': '3.4.18'
     'electron>extract-zip': '2.0.1'
+    # yauzl@2 stalls on Node 26, so @electron/packager@18 (Forge 7) exits 0 without a packaged app,
+    # see electron/forge#4277. Drop with Forge 8, whose packager no longer uses extract-zip.
+    'extract-zip>yauzl': '^3.4.0'
     'fast-uri@^2.0.0': '2.4.8'
     'fast-uri@^2.1.0': '2.4.8'
     'fast-uri@^3.0.1': '3.1.9'
