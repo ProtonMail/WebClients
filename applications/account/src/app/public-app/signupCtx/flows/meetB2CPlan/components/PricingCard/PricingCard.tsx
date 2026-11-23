@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Price from '@proton/components/components/price/Price';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import CycleSelector from '@proton/components/containers/payments/CycleSelector';
 import {
     FREE_MAX_ACTIVE_MEETINGS,

@@ -7,7 +7,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import Price from '@proton/components/components/price/Price';

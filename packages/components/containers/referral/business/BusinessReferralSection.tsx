@@ -5,12 +5,12 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useReferrals } from '@proton/account/referrals/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import type { Currency } from '@proton/payments/core/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { type BusinessReferral, ReferralState } from '@proton/shared/lib/interfaces/Referrals';
 
-import Loader from '../../../components/loader/Loader';
 import Price from '../../../components/price/Price';
 import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';

@@ -10,6 +10,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLink } from '@proton/icons/icons/IcLink';
@@ -18,7 +19,6 @@ import { querySessions } from '@proton/shared/lib/api/auth';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
-import Loader from '../../../components/loader/Loader';
 import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
 import { SettingsCardSection } from '../../account/SettingsCardSection';
 import type { Session } from '../../sessions/interface';

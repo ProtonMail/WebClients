@@ -3,13 +3,13 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';

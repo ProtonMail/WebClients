@@ -1,5 +1,6 @@
 import { type ReactElement, useEffect, useState } from 'react';
 
+import { SkeletonLoader, type Props as SkeletonLoaderProps } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { usePaymentsPreloaded } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { type PlanToCheck, getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
@@ -7,7 +8,6 @@ import { getIsVpnB2BPlan, getPlanNameFromIDs, isLifetimePlanSelected } from '@pr
 import noop from '@proton/utils/noop';
 
 import Price, { type Props as PriceProps } from '../../components/price/Price';
-import SkeletonLoader, { type Props as SkeletonLoaderProps } from '../../components/skeletonLoader/SkeletonLoader';
 
 export type Props = {
     planToCheck: PlanToCheck;

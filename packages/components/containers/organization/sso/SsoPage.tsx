@@ -10,6 +10,7 @@ import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useCanUpdateBilling, useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
@@ -25,7 +26,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Info from '../../../components/link/Info';
-import Loader from '../../../components/loader/Loader';
 import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Option from '../../../components/option/Option';

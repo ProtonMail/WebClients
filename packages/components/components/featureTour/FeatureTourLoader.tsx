@@ -1,4 +1,5 @@
-import Loader from '../loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
+
 import ModalContent from '../modalTwo/ModalContent';
 
 const FeatureTourLoader = () => (

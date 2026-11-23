@@ -7,6 +7,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import useLoading from '@proton/hooks/useLoading';
 import { categoriesThunk } from '@proton/mail/store/labels';
@@ -19,7 +20,6 @@ import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
 import Info from '../../components/link/Info';
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';

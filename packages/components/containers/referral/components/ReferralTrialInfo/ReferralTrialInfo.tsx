@@ -6,6 +6,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { useReferralTrialSubscription } from '@proton/payments-hooks/ui/hooks/useReferralTrialSubscription';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
@@ -18,7 +19,6 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 
 import SettingsLink from '../../../../components/link/SettingsLink';
 import useSettingsLink from '../../../../components/link/useSettingsLink';
-import Loader from '../../../../components/loader/Loader';
 import ModalTwo from '../../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';

@@ -9,6 +9,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
@@ -24,7 +25,6 @@ import AddressesInput, { AddressesInputItem } from '../../components/addressesIn
 import DateInput from '../../components/input/DateInput';
 import Label from '../../components/label/Label';
 import Info from '../../components/link/Info';
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import withPermissionGuard from '../../components/orgPermissions/withPermissionGuard';
 import Pagination from '../../components/pagination/Pagination';

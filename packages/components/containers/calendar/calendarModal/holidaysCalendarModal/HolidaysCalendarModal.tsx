@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import type {
@@ -12,7 +13,6 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import Form from '../../../../components/form/Form';
-import Loader from '../../../../components/loader/Loader';
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import ModalTwo from '../../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../../components/modalTwo/ModalContent';

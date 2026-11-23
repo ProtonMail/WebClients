@@ -9,6 +9,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { deleteToken, getTokens } from '@proton/shared/lib/api/smtptokens';
@@ -28,7 +29,6 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import Prompt from '../../components/prompt/Prompt';
 import Table from '../../components/table/Table';

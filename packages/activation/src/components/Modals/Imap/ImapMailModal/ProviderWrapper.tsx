@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import TextLoader from '@proton/components/components/loader/TextLoader';
+import { TextLoader } from '@proton/atoms/TextLoader/TextLoader';
 
 interface Props {
     isConnectingToProvider: boolean;

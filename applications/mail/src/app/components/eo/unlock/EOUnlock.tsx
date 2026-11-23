@@ -4,7 +4,7 @@ import { useRouteMatch } from 'react-router';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import type { EOUrlParams } from '../../../helpers/eo/eoUrl';

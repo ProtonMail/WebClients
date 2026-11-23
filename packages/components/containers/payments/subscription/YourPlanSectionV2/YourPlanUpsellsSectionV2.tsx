@@ -7,6 +7,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
@@ -47,7 +48,6 @@ import { useVariant } from '@proton/unleash/useVariant';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import Loader from '../../../../components/loader/Loader';
 import useLoad from '../../../../hooks/useLoad';
 import type { Upsell } from '../helpers/dashboard-upsells';
 import CurrentPlanInfoWithUpsellSection from './Upsells/CurrentPlanInfoSection';

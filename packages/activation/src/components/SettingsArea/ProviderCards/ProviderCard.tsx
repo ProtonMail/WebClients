@@ -6,11 +6,11 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import B2BOnboardingFeatureItem from '@proton/components/components/onboarding/b2b/B2BOnboardingFeatureItem';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/shared/lib/activation/constants';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

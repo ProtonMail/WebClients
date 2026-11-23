@@ -1,7 +1,7 @@
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { useUpsellsToDisplay } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import UpsellPanels from '@proton/components/containers/payments/subscription/panels/UpsellPanels';

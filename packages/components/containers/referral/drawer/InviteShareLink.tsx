@@ -9,13 +9,13 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import DrawerAppHeadline from '../../../components/drawer/views/shared/DrawerAppHeadline';
 import DrawerAppSection from '../../../components/drawer/views/shared/DrawerAppSection';
 import SettingsLink from '../../../components/link/SettingsLink';
-import Loader from '../../../components/loader/Loader';
 import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 
 const InviteShareLink = () => {

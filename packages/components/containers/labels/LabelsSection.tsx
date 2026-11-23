@@ -7,6 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useDebounceInput from '@proton/hooks/useDebounceInput';
 import useLoading from '@proton/hooks/useLoading';
 import { categoriesThunk } from '@proton/mail/store/labels';
@@ -19,7 +20,6 @@ import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import move from '@proton/utils/move';
 
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';

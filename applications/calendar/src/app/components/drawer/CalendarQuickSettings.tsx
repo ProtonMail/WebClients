@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import DefaultQuickSettings from '@proton/components/components/drawer/views/quickSettings/DefaultQuickSettings';
@@ -14,7 +15,6 @@ import DrawerAppHeadline from '@proton/components/components/drawer/views/shared
 import DrawerAppScrollContainer from '@proton/components/components/drawer/views/shared/DrawerAppScrollContainer';
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
 import Info from '@proton/components/components/link/Info';
-import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';

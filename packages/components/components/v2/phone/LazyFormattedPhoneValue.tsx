@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 
-import Loader from '../../loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
+
 import type { Props } from './FormattedPhoneValue';
 
 const FormattedPhoneValue = lazy(() => import(/* webpackChunkName: "FormattedPhoneValue" */ './FormattedPhoneValue'));

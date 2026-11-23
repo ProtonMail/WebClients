@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import MainLogo from '@proton/components/components/logo/MainLogo';
 import SettingsListItem from '@proton/components/components/sidebar/SettingsListItem';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';

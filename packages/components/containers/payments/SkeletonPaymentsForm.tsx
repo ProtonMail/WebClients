@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import SkeletonLoader from '../../components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 
 const SkeletonPaymentsForm = () => {
     return (

@@ -5,12 +5,12 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import clsx from '@proton/utils/clsx';
 
 import SearchInput from '../../../components/input/SearchInput';
 import LabelStack from '../../../components/labelStack/LabelStack';
-import Loader from '../../../components/loader/Loader';
 import useModalState from '../../../components/modalTwo/useModalState';
 import Pagination from '../../../components/pagination/Pagination';
 import Table from '../../../components/table/Table';

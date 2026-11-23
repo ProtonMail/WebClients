@@ -1,4 +1,4 @@
-import ReloadSpinner from '@proton/components/components/spinner/ReloadSpinner';
+import { ReloadSpinner } from '@proton/atoms/ReloadSpinner/ReloadSpinner';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';
 

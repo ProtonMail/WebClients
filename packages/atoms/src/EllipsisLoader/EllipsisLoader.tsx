@@ -8,12 +8,10 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
     className?: string;
 }
 
-const EllipsisLoader = ({ className, ...rest }: Props) => {
+export const EllipsisLoader = ({ className, ...rest }: Props) => {
     return (
         <span className={clsx(['ellipsis-loader', className])} {...rest}>
             <span className="sr-only">{c('Info').t`Loading`}</span>
         </span>
     );
 };
-
-export default EllipsisLoader;

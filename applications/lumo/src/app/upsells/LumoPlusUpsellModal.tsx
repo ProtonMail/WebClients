@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';

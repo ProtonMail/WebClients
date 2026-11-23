@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';

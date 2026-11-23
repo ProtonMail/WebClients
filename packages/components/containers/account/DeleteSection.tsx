@@ -8,11 +8,11 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 import { hasMigrationDiscount, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';

@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 
 import type { SignInScreen, SignInScreenProps } from '../../../../../../routes/signInRoute';
 import { useSignInProps } from '../../../../../../wizard/SignInProvider';

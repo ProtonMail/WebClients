@@ -4,12 +4,12 @@ import { c, msgid } from 'ttag';
 
 import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 
 import type {
     ApiImporterOrganizationProductReport,

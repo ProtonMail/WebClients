@@ -1,4 +1,4 @@
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { getPlanTitleWithAddons } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';

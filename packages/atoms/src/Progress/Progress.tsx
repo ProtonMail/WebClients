@@ -7,7 +7,7 @@ interface Props {
     className?: string;
 }
 
-const Progress = ({ value = 50, max = 100, id, className, ...rest }: Props) => {
+export const Progress = ({ value = 50, max = 100, id, className, ...rest }: Props) => {
     return (
         <progress
             aria-describedby={id}
@@ -18,5 +18,3 @@ const Progress = ({ value = 50, max = 100, id, className, ...rest }: Props) => {
         />
     );
 };
-
-export default Progress;

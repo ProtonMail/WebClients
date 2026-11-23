@@ -3,10 +3,10 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Progress } from '@proton/atoms/Progress/Progress';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import Progress from '@proton/components/components/progress/Progress';
 
 import { PassModal } from '../Layout/Modal/PassModal';
 

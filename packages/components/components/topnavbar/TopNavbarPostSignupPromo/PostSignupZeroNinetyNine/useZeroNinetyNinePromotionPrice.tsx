@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
@@ -11,7 +12,6 @@ import clsx from '@proton/utils/clsx';
 
 import { getNormalizedPlanTitleToPlus } from '../../../../containers/payments/subscription/plusToPlusHelper';
 import Price from '../../../price/Price';
-import SkeletonLoader from '../../../skeletonLoader/SkeletonLoader';
 
 import './components/ZeroNinetyNineOffer.scss';
 

@@ -10,8 +10,8 @@ import { GatewayMonitorRoute } from './GatewayMonitorRoute';
 import { GatewaysRoute } from './GatewaysRoute';
 import { SharedServersRoute } from './SharedServersRoute';
 
-vi.mock('@proton/components/components/loader/Loader', () => ({
-    default: () => <div data-testid="loader" />,
+vi.mock('@proton/atoms/Loader/Loader', () => ({
+    Loader: () => <div data-testid="loader" />,
 }));
 
 vi.mock('@proton/components/containers/layout/PrivateMainSettingsArea', () => ({

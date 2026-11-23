@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
@@ -22,7 +23,6 @@ import type { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import Alert from '../../../components/alert/Alert';
-import Loader from '../../../components/loader/Loader';
 import { useGetCalendarInfo } from '../../../hooks/useGetCalendarInfo';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import SettingsParagraph from '../../account/SettingsParagraph';

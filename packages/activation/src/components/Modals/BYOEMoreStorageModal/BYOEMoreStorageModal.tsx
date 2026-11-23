@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';

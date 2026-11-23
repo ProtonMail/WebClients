@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';

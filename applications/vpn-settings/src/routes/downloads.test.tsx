@@ -7,9 +7,9 @@ import * as routes from '@proton/vpn/definitions/routes';
 
 import { DownloadsRoute } from './downloads';
 
-vi.mock('@proton/components/components/loader/Loader', () => ({
+vi.mock('@proton/atoms/Loader/Loader', () => ({
     __esModule: true,
-    default: () => <div data-testid="loader" />,
+    Loader: () => <div data-testid="loader" />,
 }));
 
 vi.mock('@proton/components/containers/layout/PrivateMainSettingsArea', () => ({

@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import Progress from '@proton/components/components/progress/Progress';
+import { Progress } from '@proton/atoms/Progress/Progress';
 import type { ESIndexingState } from '@proton/encrypted-search/models/interfaces';
 import clsx from '@proton/utils/clsx';
 

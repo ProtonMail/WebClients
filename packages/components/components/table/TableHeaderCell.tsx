@@ -1,9 +1,8 @@
 import type { ReactNode, ThHTMLAttributes } from 'react';
 
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-
-import Loader from '../loader/Loader';
 
 import './TableHeaderCell.scss';
 

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-import Loader from '@proton/components/components/loader/Loader';
-import TextLoader from '@proton/components/components/loader/TextLoader';
+import { Loader } from '@proton/atoms/Loader/Loader';
+import { TextLoader } from '@proton/atoms/TextLoader/TextLoader';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 
 const ModalContentLoader = ({ children }: { children: ReactNode }) => {

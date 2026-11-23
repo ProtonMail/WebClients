@@ -11,7 +11,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import ChangePasswordModal, { MODES } from '@proton/components/containers/account/ChangePasswordModal';
 import ReauthUsingRecoveryModal from '@proton/components/containers/account/ReauthUsingRecoveryModal';

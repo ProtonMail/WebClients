@@ -3,8 +3,8 @@ import type { HTMLAttributes } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Copy from '@proton/components/components/button/Copy';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

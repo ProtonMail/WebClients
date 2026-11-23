@@ -4,11 +4,11 @@ import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Progress } from '@proton/atoms/Progress/Progress';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import Progress from '@proton/components/components/progress/Progress';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import type { ESIndexingState } from '@proton/encrypted-search/models/interfaces';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';

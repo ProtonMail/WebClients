@@ -1,4 +1,4 @@
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 

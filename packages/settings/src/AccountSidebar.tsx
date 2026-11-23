@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
 import SidebarBackButton from '@proton/components/components/sidebar/SidebarBackButton';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';

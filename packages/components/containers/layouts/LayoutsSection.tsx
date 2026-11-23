@@ -7,6 +7,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -17,7 +18,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 
-import Loader from '../../components/loader/Loader';
 import { SettingsCardRows } from '../account/SettingsCardRows';
 import ComposerModeCards from './ComposerModeCards';
 import DensityRadiosCards from './DensityRadiosCards';

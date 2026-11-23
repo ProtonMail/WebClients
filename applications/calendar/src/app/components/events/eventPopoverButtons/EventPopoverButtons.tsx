@@ -2,9 +2,9 @@ import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { ReloadSpinner } from '@proton/atoms/ReloadSpinner/ReloadSpinner';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AppLink from '@proton/components/components/link/AppLink';
-import ReloadSpinner from '@proton/components/components/spinner/ReloadSpinner';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcSquares } from '@proton/icons/icons/IcSquares';

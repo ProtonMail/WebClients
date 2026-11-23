@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import Progress from '@proton/components/components/progress/Progress';
+import { Progress } from '@proton/atoms/Progress/Progress';
 
 const meta: Meta<typeof Progress> = {
-    title: 'Components/Progress',
+    title: 'Atoms/Progress',
     args: {
         value: 50,
         max: 100,

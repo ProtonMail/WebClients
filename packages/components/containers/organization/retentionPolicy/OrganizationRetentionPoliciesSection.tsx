@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';
 
-import Loader from '../../../components/loader/Loader';
 import { useModalStateObject } from '../../../components/modalTwo/useModalState';
 import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';

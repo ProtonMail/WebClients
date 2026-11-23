@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Progress from '@proton/components/components/progress/Progress';
+import { Progress } from '@proton/atoms/Progress/Progress';
 
 import { useRequest } from '../../../hooks/useRequest';
 import {

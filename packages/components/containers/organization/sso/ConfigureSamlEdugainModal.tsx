@@ -7,6 +7,7 @@ import { useGetSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSAMLEdugainInfo, setupEdugainSAML } from '@proton/shared/lib/api/samlSSO';
@@ -18,7 +19,6 @@ import { EdugainAffiliations } from '@proton/shared/lib/interfaces/SSO';
 import clsx from '@proton/utils/clsx';
 
 import Form from '../../../components/form/Form';
-import Loader from '../../../components/loader/Loader';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Modal from '../../../components/modalTwo/Modal';
 import ModalContent from '../../../components/modalTwo/ModalContent';

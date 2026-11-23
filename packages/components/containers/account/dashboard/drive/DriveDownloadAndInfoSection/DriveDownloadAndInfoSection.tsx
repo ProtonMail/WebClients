@@ -7,13 +7,13 @@ import {
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import Loader from '../../../../../components/loader/Loader';
 import DashboardUpgradePlanButton from '../../shared/DashboardDownloadSection/DashboardUpgradePlanButton';
 import { getDownloadAppText } from '../../shared/DashboardMoreInfoSection/helpers';
 import DriveDownloadSection from './DriveDownloadSection/DriveDownloadSection';

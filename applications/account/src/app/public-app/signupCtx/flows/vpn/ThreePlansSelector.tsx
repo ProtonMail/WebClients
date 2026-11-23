@@ -3,12 +3,12 @@ import type { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import CycleSelector from '@proton/components/containers/payments/CycleSelector';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';

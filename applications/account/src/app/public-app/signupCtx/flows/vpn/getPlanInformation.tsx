@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import VpnPassLogo from '@proton/components/components/logo/VpnPassLogo';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';

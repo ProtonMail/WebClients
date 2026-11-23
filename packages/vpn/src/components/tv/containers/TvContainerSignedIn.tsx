@@ -4,7 +4,7 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import type { TelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useEffectOnce from '@proton/hooks/useEffectOnce';

@@ -4,6 +4,7 @@ import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { PLAN_TYPES } from '@proton/payments/core/constants';
@@ -11,7 +12,6 @@ import { getSimplePriceString } from '@proton/payments/core/price-format';
 
 import { Badge } from '../../components/badge/Badge';
 import DropdownActions from '../../components/dropdown/DropdownActions';
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';

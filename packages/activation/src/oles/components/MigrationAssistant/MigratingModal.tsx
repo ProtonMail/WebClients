@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';

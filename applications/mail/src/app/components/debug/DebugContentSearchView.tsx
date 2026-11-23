@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Progress from '@proton/components/components/progress/Progress';
+import { Progress } from '@proton/atoms/Progress/Progress';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
 import type { DocLookupResult } from '../../contentSearch/devTools.ts';

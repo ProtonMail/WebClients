@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import {

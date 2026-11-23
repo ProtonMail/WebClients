@@ -9,10 +9,10 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import Loader from '../../../../components/loader/Loader';
 import useLoad from '../../../../hooks/useLoad';
 import ReferralTrialInfoDashboardV2 from '../../../referral/components/ReferralTrialInfo/ReferralTrialInfoDashboardV2';
 import SubscriptionEndsBannerV2 from '../../../topBanners/SubscriptionEndsBannerV2';

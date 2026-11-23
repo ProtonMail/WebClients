@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import { SettingsCardSection } from '../account/SettingsCardSection';
 import { SettingsLayoutVariant } from '../layout/interface';

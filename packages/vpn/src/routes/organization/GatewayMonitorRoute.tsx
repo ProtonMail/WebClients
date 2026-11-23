@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Loader from '@proton/components/components/loader/Loader';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { VPNEvents } from '@proton/components/containers/b2bDashboard/VPN/VPNEvents';
 import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,

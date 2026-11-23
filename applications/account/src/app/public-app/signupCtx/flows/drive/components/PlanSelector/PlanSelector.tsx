@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import useLoading from '@proton/hooks/useLoading';
 import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';

@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Price from '@proton/components/components/price/Price';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
 import type { PaymentsContextOptimisticType } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';

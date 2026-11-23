@@ -3,8 +3,8 @@ import type { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import PassLogo from '@proton/components/components/logo/PassLogo';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { BRAND_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

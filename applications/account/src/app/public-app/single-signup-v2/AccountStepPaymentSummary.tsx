@@ -3,9 +3,9 @@ import type { HTMLProps, ReactNode } from 'react';
 import { addDays, getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { getDealDurationText } from '@proton/components/containers/offers/helpers/offerCopies';
 import {

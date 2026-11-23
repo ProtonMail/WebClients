@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import Loader from '@proton/components/components/loader/Loader';
-import TextLoader from '@proton/components/components/loader/TextLoader';
+import { Loader } from '@proton/atoms/Loader/Loader';
+import { TextLoader } from '@proton/atoms/TextLoader/TextLoader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 

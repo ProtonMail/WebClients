@@ -5,7 +5,7 @@ import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import IllustrationPlaceholder from '@proton/components/containers/illustration/IllustrationPlaceholder';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';

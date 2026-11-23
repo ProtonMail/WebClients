@@ -11,13 +11,13 @@ import { useInactiveKeys } from '@proton/account/inactiveKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
 import { FlagAction } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { SettingsCardSection } from '../account/SettingsCardSection';

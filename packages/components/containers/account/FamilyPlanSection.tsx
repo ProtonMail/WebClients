@@ -5,6 +5,7 @@ import { useMember } from '@proton/account/member/hook';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import {
@@ -13,7 +14,6 @@ import {
     isOrganizationPassFamily,
 } from '@proton/shared/lib/organization/helper';
 
-import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import UsagePanel from '../payments/subscription/panels/UsagePanel';
 import LeaveFamilyModal from './LeaveFamilyModal';
