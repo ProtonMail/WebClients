@@ -2,7 +2,7 @@ import type { Draft, EditDraft, NewDraft } from '../../store/reducers/drafts';
 import type { Item, ItemExtraField, ItemRevision, LoginItem, UniqueItem } from '../../types/data/items';
 import { ItemFlag, ItemState } from '../../types/data/items';
 import type { ItemType } from '../../types/protobuf';
-import { and, not, oneOf, or } from '../../utils/fp/predicates';
+import { and, not, oneOf } from '../../utils/fp/predicates';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 import { MONITOR_CHECK_CONFIG, MonitorCheckType } from '../monitor/types';
 import { isAutofillTargetMode } from '../urls/utils/autofill';
@@ -101,11 +101,16 @@ export const isExcluded = and(isActive, not(isMonitored));
 export const hasEmail = (email: string) => (item: LoginItem) =>
     Boolean(item.data.content.itemEmail.v.length && deobfuscate(item.data.content.itemEmail) === email);
 
-const hasUsername = (username: string) => (item: LoginItem) =>
-    Boolean(item.data.content.itemUsername.v.length && deobfuscate(item.data.content.itemUsername) === username);
+const getSavedUserIdentifiers = (item: LoginItem) => {
+    const { itemEmail, itemUsername } = item.data.content;
+    return [itemEmail, itemUsername].filter((field) => field.v.length > 0).map((field) => deobfuscate(field));
+};
 
 export const hasUserIdentifier = (userIdentifier: string) => (item: LoginItem) =>
-    or(hasEmail(userIdentifier), hasUsername(userIdentifier))(item);
+    getSavedUserIdentifiers(item).some((saved) => saved.toLowerCase() === userIdentifier.toLowerCase());
+
+export const hasExactUserIdentifier = (userIdentifier: string) => (item: LoginItem) =>
+    getSavedUserIdentifiers(item).includes(userIdentifier);
 
 export const hasDomain = (item: LoginItem) =>
     item.data.content.autofillUrls.some(({ mode }) => isAutofillTargetMode(mode));

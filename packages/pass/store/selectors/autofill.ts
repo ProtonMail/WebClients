@@ -1,4 +1,11 @@
-import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem } from '../../lib/items/item.predicates';
+import {
+    belongsToShares,
+    hasExactUserIdentifier,
+    hasOTP,
+    hasUserIdentifier,
+    isActive,
+    isPasskeyItem,
+} from '../../lib/items/item.predicates';
 import type { PasskeyQueryPayload, SelectedPasskey } from '../../lib/passkeys/types';
 import { isAutofillableShare } from '../../lib/shares/share.predicates';
 import { searchItemsByDomain } from '../../lib/urls/search/match';
@@ -52,8 +59,9 @@ export const selectOTPCandidate = (url: Maybe<string>, submission?: FormSubmissi
             const otpItems = candidates.filter(hasOTP);
             const userIdentifier = submission?.data.userIdentifier;
 
-            if (userIdentifier) return otpItems.find(hasUserIdentifier(userIdentifier));
-            else return otpItems.sort(sortOn('lastUseTime'))[0];
+            if (userIdentifier) {
+                return otpItems.find(hasExactUserIdentifier(userIdentifier)) ?? otpItems.find(hasUserIdentifier(userIdentifier));
+            } else return otpItems.sort(sortOn('lastUseTime'))[0];
         }
     );
 
