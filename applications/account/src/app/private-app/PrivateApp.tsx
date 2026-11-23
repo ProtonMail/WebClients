@@ -73,7 +73,10 @@ const PrivateApp = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
+                            <UnleashFlagProviderWithToolbar
+                                unleashClient={extraThunkArguments.unleashClient}
+                                fallback={loader}
+                            >
                                 <Router history={extraThunkArguments.history}>
                                     <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                         <EventManagerV6Provider
