@@ -8,7 +8,7 @@ import {
 } from '@proton/meet/store/slices/recordingStatusSlice';
 import {
     selectParticipantCountMismatchBannerDismissed,
-    selectParticipantCountMismatchSince,
+    selectParticipantCountMismatch,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { selectWaitingParticipantsCount } from '@proton/meet/store/slices/waitingRoomSlice';
@@ -50,7 +50,7 @@ const renderDuringMismatchWarning = ({
         [selectRecordingParticipantNames, ['Alice']],
         [selectWaitingParticipantsCount, 0],
         [selectParticipantCountMismatchBannerDismissed, false],
-        [selectParticipantCountMismatchSince, mismatchSince],
+        [selectParticipantCountMismatch, { since: mismatchSince, isHostInCall: true }],
         [selectHiddenParticipantCount, hiddenParticipantCount],
     ]);
     vi.mocked(useMeetSelector).mockImplementation((selector) => selectedValues.get(selector));
@@ -63,7 +63,7 @@ const renderDuringMismatchWarning = ({
     const { rerender } = render(<MeetingTopBanner />);
 
     const clearMismatch = () => {
-        selectedValues.set(selectParticipantCountMismatchSince, null);
+        selectedValues.set(selectParticipantCountMismatch, null);
         selectedValues.set(selectHiddenParticipantCount, 0);
         rerender(<MeetingTopBanner />);
     };

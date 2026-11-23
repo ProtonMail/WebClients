@@ -18,12 +18,14 @@ import {
     initialState as initialSortedParticipantsState,
     sortedParticipantsReducer,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
+import type { ParticipantCountMismatch } from '@proton/meet/store/slices/uiStateSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { initialState as initialMeetUserState, meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import type { KeyRotationLog } from '@proton/meet/types/types';
 import { ParticipantEvent } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
+import { MINUTE } from '@proton/shared/lib/constants';
 
 import { MeetContext } from '../../contexts/MeetContext';
 import { WrappedMeetingDetails } from './MeetingDetails';
@@ -53,7 +55,12 @@ vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     ],
 }));
 
-const createMockStore = ({ sideBarOpen = false, keyRotationLogs = initialCurrentMeetingState.keyRotationLogs }) => {
+const createMockStore = ({
+    sideBarOpen = false,
+    keyRotationLogs = initialCurrentMeetingState.keyRotationLogs,
+    participantCountMismatch = null as ParticipantCountMismatch | null,
+    isGuest = initialMeetUserState.isGuest,
+}) => {
     return configureStore({
         // @ts-expect-error - mock data
         reducer: {
@@ -86,6 +93,7 @@ const createMockStore = ({ sideBarOpen = false, keyRotationLogs = initialCurrent
                 },
                 permissionPromptStatus: 'CLOSED',
                 noDeviceDetected: 'CLOSED',
+                participantCountMismatch,
             },
             currentMeeting: {
                 ...initialCurrentMeetingState,
@@ -107,6 +115,7 @@ const createMockStore = ({ sideBarOpen = false, keyRotationLogs = initialCurrent
             },
             meetUser: {
                 ...initialMeetUserState,
+                isGuest,
             },
         },
     });
@@ -427,6 +436,46 @@ describe('MeetingDetails', () => {
             expect(writeText).toHaveBeenCalledWith(
                 JSON.stringify({ keyRotationLogs, keychainIndexInformation: [] }, null, 2)
             );
+        });
+    });
+
+    describe('participant count mismatch card', () => {
+        const renderMismatchCard = (participantCountMismatch: ParticipantCountMismatch) => {
+            flagMocks.enabledFlags.add('MeetParticipantCountMismatch');
+            const store = createMockStore({ sideBarOpen: true, participantCountMismatch, isGuest: false });
+
+            render(<WrappedMeetingDetails />, {
+                wrapper: ({ children }) => (
+                    <Provider context={ProtonStoreContext} store={store}>
+                        <NotificationsProvider>
+                            <MeetContext.Provider
+                                // @ts-expect-error - mock data
+                                value={{}}
+                            >
+                                {children}
+                            </MeetContext.Provider>
+                        </NotificationsProvider>
+                    </Provider>
+                ),
+            });
+
+            return screen.getByText('Participant counts don’t match').closest('.meeting-count-mismatch-card');
+        };
+
+        it('should show the host-away text in the normal style once the counts differ without the host', () => {
+            const card = renderMismatchCard({ since: Date.now() - MINUTE, isHostInCall: false });
+
+            expect(card).toHaveTextContent(
+                'The host isn’t in the meeting right now. The participant counts will match again when the host joins.'
+            );
+            expect(card).not.toHaveClass('meeting-count-mismatch-card--warning');
+        });
+
+        it('should show the warning style once the counts differ for a minute with the host', () => {
+            const card = renderMismatchCard({ since: Date.now() - MINUTE, isHostInCall: true });
+
+            expect(card).toHaveClass('meeting-count-mismatch-card--warning');
+            expect(card).not.toHaveTextContent('The host isn’t in the meeting right now.');
         });
     });
 });
