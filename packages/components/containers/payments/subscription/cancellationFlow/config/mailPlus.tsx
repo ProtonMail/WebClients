@@ -9,7 +9,6 @@ import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTv } from '@proton/icons/icons/IcTv';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import { DARK_WEB_MONITORING_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -88,9 +87,8 @@ export const getMailPlusConfig = ({ plan, subscription }: ConfigProps): PlanConf
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription);
-    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
+    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
         confirmationModal,

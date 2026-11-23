@@ -82,13 +82,3 @@ export function isCancellableOnlyViaSupport(subscription: MaybeFreeSubscription)
 
     return false;
 }
-
-/**
- * Checks if subscription can be cancelled by a user. Cancellation means that the user will be downgraded at the end
- * of the current billing cycle. In contrast, "Downgrade subscription" button means that the user will be downgraded
- * immediately. Note that B2B subscriptions also have "Cancel subscription" button, but it behaves differently, so
- * we don't consider B2B subscriptions cancellable for the purpose of this function.
- */
-export const hasCancellablePlan = (subscription: MaybeFreeSubscription): boolean => {
-    return !isCancellableOnlyViaSupport(subscription);
-};

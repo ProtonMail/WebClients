@@ -4,7 +4,6 @@ import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { getPrioritySupport } from '../../../features/shared';
@@ -20,10 +19,8 @@ export const getDrivePlusConfig = ({ plan, subscription }: ConfigProps): PlanCon
     const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
-    const cancellablePlan = hasCancellablePlan(subscription);
-
     const confirmationModal: ConfirmationModal = {
-        ...getDefaultConfirmationModal(subscription, planName, cancellablePlan),
+        ...getDefaultConfirmationModal(subscription, planName),
         warningPoints: [
             c('Subscription reminder').t`Sync files on devices`,
             c('Subscription reminder').t`Add any new files`,

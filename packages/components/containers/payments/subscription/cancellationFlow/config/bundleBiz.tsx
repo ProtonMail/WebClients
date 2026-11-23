@@ -13,7 +13,6 @@ import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTv } from '@proton/icons/icons/IcTv';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     BRAND_NAME,
@@ -139,15 +138,14 @@ export const getBundleBizConfig = ({
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription);
-    const tempStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
+    const tempStorage = getDefaultGBStorageWarning(planName, planMaxSpace);
     const storage: PlanConfigStorage = {
         ...tempStorage,
         description: c('Subscription reminder')
             .t`${planName} offers ${planMaxSpace} storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.`,
     };
 
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
         planName,

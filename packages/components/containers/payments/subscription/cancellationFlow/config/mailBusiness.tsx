@@ -11,7 +11,6 @@ import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTv } from '@proton/icons/icons/IcTv';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import { APPS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -106,9 +105,8 @@ export const getMailBusinessConfig = ({ app, plan, subscription }: ConfigProps):
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription);
-    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
+    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
         confirmationModal,

@@ -10,9 +10,9 @@ import {
     customCycles,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
-    hasCancellablePlan,
     hasSomeAddonOrPlan,
     hasTrialExpiredLessThan4Weeks,
+    isCancellableOnlyViaSupport,
     isManagedExternally,
     isTrial,
     isTrialExpired,
@@ -262,13 +262,12 @@ describe('cycles', () => {
     });
 });
 
-describe('hasCancellablePlan', () => {
-    it('should have all plans cancellable', () => {
+describe('isCancellableOnlyViaSupport', () => {
+    it('lets the user cancel every other plan', () => {
         const testCases = [
             PLANS.PASS,
             PLANS.VPN2024,
             PLANS.VPN_PASS_BUNDLE,
-            // ---
             PLANS.BUNDLE,
             PLANS.BUNDLE_PRO,
             PLANS.BUNDLE_PRO_2024,
@@ -291,24 +290,28 @@ describe('hasCancellablePlan', () => {
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect({ plan, cancellable: hasCancellablePlan(subscription) }).toEqual({ plan, cancellable: true });
+            expect({ plan, viaSupport: isCancellableOnlyViaSupport(subscription) }).toEqual({
+                plan,
+                viaSupport: false,
+            });
         });
     });
 
-    it('should not be cancellable if plan is non-cancellable', () => {
+    it('sends VPN business plans to support', () => {
         const testCases = [PLANS.VPN_BUSINESS, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE_BUSINESS];
 
         const subscription = buildSubscription();
 
         testCases.forEach((plan) => {
             subscription.Plans[0].Name = plan;
-            expect({ plan, cancellable: hasCancellablePlan(subscription) }).toEqual({ plan, cancellable: false });
+            expect({ plan, viaSupport: isCancellableOnlyViaSupport(subscription) }).toEqual({
+                plan,
+                viaSupport: true,
+            });
         });
     });
 
-    it('should not be cancellable if plan is bundle pro with IP addon', () => {
-        const subscription = buildSubscription();
-
+    it('sends Business plans with a dedicated IP to support', () => {
         const testCases = [
             {
                 plan: PLANS.BUNDLE_PRO,
@@ -321,12 +324,20 @@ describe('hasCancellablePlan', () => {
         ];
 
         testCases.forEach((testCase) => {
+            const subscription = buildSubscription();
             subscription.Plans[0].Name = testCase.plan;
             subscription.Plans.push({ Name: testCase.addon, Quantity: 1 } as Plan);
-            expect({ ...testCase, cancellable: hasCancellablePlan(subscription) }).toEqual({
+            expect({ ...testCase, viaSupport: isCancellableOnlyViaSupport(subscription) }).toEqual({
                 ...testCase,
-                cancellable: false,
+                viaSupport: true,
             });
         });
+    });
+
+    it('lets the user cancel a VPN business trial', () => {
+        const subscription = buildSubscription();
+        subscription.Plans[0].Name = PLANS.VPN_BUSINESS;
+
+        expect(isCancellableOnlyViaSupport({ ...subscription, IsTrial: true })).toBe(false);
     });
 });

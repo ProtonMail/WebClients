@@ -27,7 +27,6 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    hasCancellablePlan,
     isCancellableOnlyViaSupport,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -132,7 +131,6 @@ const routesDefinition = {
                             to: 'cancel-subscription',
                             isVisible: ({ context }) =>
                                 context.user.isPaid &&
-                                hasCancellablePlan(context.subscription) &&
                                 isSubscriptionRenewEnabled(context.subscription) &&
                                 !isCancellableOnlyViaSupport(context.subscription),
                         },

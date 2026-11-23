@@ -1,5 +1,5 @@
-import { differenceInDays, format, fromUnixTime } from 'date-fns';
-import { c, msgid } from 'ttag';
+import { format, fromUnixTime } from 'date-fns';
+import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { getRenewalTime } from '@proton/payments/core/subscription/helpers';
@@ -47,48 +47,17 @@ export const getDefaultTestimonial = (planName: string): PlanConfigTestimonial =
     };
 };
 
-const ExpirationTime = ({
-    subscription,
-    isChargeBeeUser,
-}: {
-    subscription: Subscription;
-    isChargeBeeUser?: boolean;
-}) => {
-    const nextBillingDate = getRenewalTime(subscription);
-
-    if (isChargeBeeUser) {
-        const endDate = fromUnixTime(nextBillingDate);
-        const formattedEndDate = format(fromUnixTime(nextBillingDate), 'PPP', { locale: dateLocale });
-        return (
-            <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd', { locale: dateLocale })}>
-                {formattedEndDate}
-            </time>
-        );
-    } else {
-        const endSubDate = fromUnixTime(nextBillingDate);
-        const dayDiff = differenceInDays(endSubDate, new Date());
-        return (
-            <strong>
-                <time dateTime={format(endSubDate, 'yyyy-MM-dd', { locale: dateLocale })}>
-                    {c('Subscription reminder').ngettext(msgid`${dayDiff} day left`, `${dayDiff} days left`, dayDiff)}
-                </time>
-            </strong>
-        );
-    }
+const ExpirationTime = ({ subscription }: { subscription: Subscription }) => {
+    const endDate = fromUnixTime(getRenewalTime(subscription));
+    return (
+        <time className="text-bold" dateTime={format(endDate, 'yyyy-MM-dd', { locale: dateLocale })}>
+            {format(endDate, 'PPP', { locale: dateLocale })}
+        </time>
+    );
 };
 
-export const getDefaultConfirmationModal = (
-    subscription: Subscription,
-    planName: string,
-    isChargeBeeUser?: boolean
-): ConfirmationModal => {
-    const expiryDate = (
-        <ExpirationTime
-            subscription={subscription}
-            isChargeBeeUser={isChargeBeeUser}
-            key="confirmationModalExpiryDate"
-        />
-    );
+export const getDefaultConfirmationModal = (subscription: Subscription, planName: string): ConfirmationModal => {
+    const expiryDate = <ExpirationTime subscription={subscription} key="confirmationModalExpiryDate" />;
 
     const learnMoreLink = (
         <Href className="mb-8" href={getKnowledgeBaseUrl('/free-plan-limits')} key="confirmationModalLearnMoreLink">
@@ -101,15 +70,12 @@ export const getDefaultConfirmationModal = (
     const descriptionP2 = c('Subscription reminder')
         .t`If your usage exceeds free plan limits, you may experience restricted access to product features and your data.`;
 
-    const description = isChargeBeeUser ? (
+    const description = (
         <>
             <p className="m-0 mb-1">{descriptionP1}</p>
             <p className="m-0 mb-1">{descriptionP2}</p>
             <p className="m-0 mb-1">{learnMoreLink}</p>
         </>
-    ) : (
-        c('Subscription reminder')
-            .jt`You still have ${expiryDate} on your ${planName} subscription. We'll add the credits for the remaining time to your ${BRAND_NAME} Account. Make sure you do not exceed the free plan limits before canceling. ${learnMoreLink}`
     );
 
     return {
@@ -125,12 +91,9 @@ export const getDefaultConfirmationModal = (
     };
 };
 
-export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string, isChargeBeeUser?: boolean) => {
-    const warning = isChargeBeeUser
-        ? c('Subscription reminder')
-              .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.`
-        : c('Subscription reminder')
-              .t`When you cancel ${planName}, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.`;
+export const getDefaultGBStorageWarning = (planName: string, planMaxSpace: string) => {
+    const warning = c('Subscription reminder')
+        .t`After your ${planName} subscription expires, you will be downgraded to ${BRAND_NAME} Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.`;
 
     return {
         warning,

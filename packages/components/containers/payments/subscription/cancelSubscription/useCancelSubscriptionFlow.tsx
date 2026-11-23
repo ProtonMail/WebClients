@@ -9,8 +9,8 @@ import type { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     type MaybeFreeSubscription,
-    hasCancellablePlan,
     hasPassLaunchOffer,
+    isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -220,7 +220,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         }
 
         const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
-        if (!isB2BTrial && !hasCancellablePlan(subscription)) {
+        if (isCancellableOnlyViaSupport(subscription)) {
             await cancelViaSupport.show();
             return SUBSCRIPTION_KEPT;
         }
