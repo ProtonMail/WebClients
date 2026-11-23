@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
+import { isAccessTokenError } from '../../utils/accessTokenError';
 import { useMeetingAuthentication } from './useMeetingAuthentication';
 
 const mocks = vi.hoisted(() => ({ api: vi.fn() }));
@@ -25,5 +26,17 @@ describe('useMeetingAuthentication getAccessDetails', () => {
         });
 
         expect(mocks.api).toHaveBeenCalledWith(expect.objectContaining({ silence: [2502] }));
+    });
+
+    it('marks its failures as coming from the access token', async () => {
+        const error = Object.assign(new Error('api error'), { status: 422, data: { Code: 2011, Error: 'error' } });
+        mocks.api.mockRejectedValue(error);
+        const { result } = renderHook(() => useMeetingAuthentication());
+
+        await expect(
+            result.current.getAccessDetails({ meetingLinkName: 'meeting-abc', encryptedDisplayName: 'encrypted-name' })
+        ).rejects.toBe(error);
+
+        expect(isAccessTokenError(error)).toBe(true);
     });
 });

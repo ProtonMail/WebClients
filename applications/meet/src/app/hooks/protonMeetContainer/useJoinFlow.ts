@@ -92,6 +92,7 @@ const joinErrorByMeetingErrorKind: Partial<Record<MeetingErrorKind, JoinError>> 
     [MeetingErrorKind.MeetingOutdated]: 'meetingOutdated',
     [MeetingErrorKind.DeviceClock]: 'deviceClock',
     [MeetingErrorKind.WrongPassword]: 'wrongPassword',
+    [MeetingErrorKind.MeetingNotAllowed]: 'meetingNotAllowed',
 };
 
 const getNetworkHints = () => {
@@ -245,6 +246,9 @@ export const useJoinFlow = ({
             case MeetingErrorKind.ConnectionFailed:
                 dispatch(setJoinError('connectionFailed'));
                 return;
+            case MeetingErrorKind.MeetingNotAllowed:
+                dispatch(setJoinError('meetingNotAllowed'));
+                return;
             default:
                 notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
         }
@@ -304,7 +308,7 @@ export const useJoinFlow = ({
                 isWaitingRoom,
                 accessDetails,
                 notifyMlsErrors: failureFeedback === 'notification' ? 'all' : 'none',
-                silencedAccessTokenErrors: [MEETING_LOCKED_ERROR_CODE],
+                silencedAccessTokenErrors: [MEETING_LOCKED_ERROR_CODE, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
             });
 
             meetingLinkRef.current = getMeetingLink(meetingLinkName, meetingPassword);
@@ -562,7 +566,7 @@ export const useJoinFlow = ({
 
     const joinAfterAdmission = useStableCallback(async (meetingLinkName: string) => {
         dispatch(setJoiningInProgress(true));
-        await handleJoin({
+        const joined = await handleJoin({
             displayName,
             meetingLinkName,
             meetingPassword: urlMeetingPassword,
@@ -570,6 +574,10 @@ export const useJoinFlow = ({
             accessDetails: waitingRoomAccessDetailsRef.current ?? undefined,
             failureFeedback: 'notification',
         });
+
+        if (joined) {
+            await refreshMeetingInfoAfterJoin(meetingLinkName, urlMeetingPassword);
+        }
     });
 
     const { beginJoin: beginWaitingRoomJoin, providerProps: waitingRoomProviderProps } = useWaitingRoom({

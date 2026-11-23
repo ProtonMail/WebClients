@@ -33,7 +33,8 @@ export type JoinError =
     | 'meetingOutdated'
     | 'deviceClock'
     | 'wrongPassword'
-    | 'connectionFailed';
+    | 'connectionFailed'
+    | 'meetingNotAllowed';
 
 enum ParticipantListTabs {
     WaitingRoom = 0,

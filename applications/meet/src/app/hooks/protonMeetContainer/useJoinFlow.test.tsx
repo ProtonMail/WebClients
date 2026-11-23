@@ -13,6 +13,7 @@ import { setJoinError } from '@proton/meet/store/slices/uiStateSlice';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { markAccessTokenError } from '../../utils/accessTokenError';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { useJoinFlow } from './useJoinFlow';
 
@@ -33,7 +34,7 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock('react-router-dom', () => ({ useHistory: () => ({ push: mocks.historyPush }) }));
-vi.mock('@livekit/components-react', () => ({ useRoomContext: () => ({}) }));
+vi.mock('@livekit/components-react', () => ({ useRoomContext: () => ({ engine: { client: {} } }) }));
 vi.mock('@proton/components/hooks/useAuthentication', () => ({
     default: () => ({ hasSession: () => false, getUID: () => undefined }),
 }));
@@ -60,6 +61,10 @@ vi.mock('./useSessionKey', () => ({
     useSessionKey: () => ({ getSessionKey: mocks.getSessionKey, getSessionKeyBase64: vi.fn() }),
 }));
 vi.mock('./waitingRoom/useWaitingRoom', () => ({ useWaitingRoom: mocks.useWaitingRoom }));
+vi.mock('../../telemetry/joinPerformance', async (importOriginal) => ({
+    ...(await importOriginal<object>()),
+    trackJoinSucceeded: vi.fn(),
+}));
 
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
 const useMeetSelectorMock = useMeetSelector as unknown as Mock;
@@ -214,9 +219,55 @@ describe('useJoinFlow joining a locked meeting', () => {
         });
 
         expect(params.connectWithMls).toHaveBeenCalledWith(
-            expect.objectContaining({ meetingLinkName: 'meeting-abc', silencedAccessTokenErrors: [2502] })
+            expect.objectContaining({ meetingLinkName: 'meeting-abc', silencedAccessTokenErrors: [2502, 2011] })
         );
         expect(params.setIsMeetingLockedModalOpen).toHaveBeenCalledWith(true);
+    });
+});
+
+describe('useJoinFlow joining a not allowed meeting', () => {
+    it('shows that the meeting is not allowed and asks the token request not to notify it as well', async () => {
+        mocks.beginWaitingRoomJoin.mockResolvedValue({ handled: false, isWaitingRoomHostJoin: false });
+        const { result, params } = renderJoinFlow('meeting-abc');
+        const error = apiError(422, 2011);
+        markAccessTokenError(error);
+        params.connectWithMls.mockRejectedValue(error);
+
+        await act(async () => {
+            await result.current.joinMeeting('Alice');
+        });
+
+        expect(params.connectWithMls).toHaveBeenCalledWith(
+            expect.objectContaining({ meetingLinkName: 'meeting-abc', silencedAccessTokenErrors: [2502, 2011] })
+        );
+        expect(dispatch).toHaveBeenCalledWith(setJoinError('meetingNotAllowed'));
+    });
+
+    it('shows that the meeting is not allowed when the token refuses the join after admission', async () => {
+        const error = apiError(422, 2011);
+        markAccessTokenError(error);
+        mockConnectWithMls.mockRejectedValue(error);
+        renderJoinFlow();
+
+        await act(async () => {
+            await mocks.useWaitingRoom.mock.lastCall![0].joinAfterAdmission('meeting-abc');
+        });
+
+        expect(dispatch).toHaveBeenCalledWith(setJoinError('meetingNotAllowed'));
+        expect(mocks.notifyError).not.toHaveBeenCalled();
+    });
+
+    it('shows that joining failed when another request of the join is not allowed', async () => {
+        mocks.beginWaitingRoomJoin.mockResolvedValue({ handled: false, isWaitingRoomHostJoin: false });
+        const { result, params } = renderJoinFlow('meeting-abc');
+        params.connectWithMls.mockRejectedValue(apiError(422, 2011));
+
+        await act(async () => {
+            await result.current.joinMeeting('Alice');
+        });
+
+        expect(dispatch).toHaveBeenCalledWith(setJoinError('joinFailed'));
+        expect(dispatch).not.toHaveBeenCalledWith(setJoinError('meetingNotAllowed'));
     });
 });
 
@@ -351,6 +402,28 @@ describe('useJoinFlow waiting room', () => {
 
     beforeEach(() => {
         mocks.getSessionKey.mockResolvedValue('session-key');
+    });
+
+    it('reads the meeting again once admitted, since its expiration time only exists once it started', async () => {
+        mockConnectWithMls.mockResolvedValue({});
+        renderJoinFlow();
+
+        await act(async () => {
+            await getWaitingRoomParams().joinAfterAdmission('meeting-abc');
+        });
+
+        expect(refreshMeetingInfoThunk).toHaveBeenCalledWith({ meetingLinkName: 'meeting-abc', meetingPassword: 'pw' });
+    });
+
+    it('does not read the meeting again when the join after admission fails', async () => {
+        mockConnectWithMls.mockRejectedValue(new Error('Group key or epoch is missing'));
+        renderJoinFlow();
+
+        await act(async () => {
+            await getWaitingRoomParams().joinAfterAdmission('meeting-abc');
+        });
+
+        expect(refreshMeetingInfoThunk).not.toHaveBeenCalled();
     });
 
     it('notifies a generic failure of the join after admission instead of offering a new join', async () => {

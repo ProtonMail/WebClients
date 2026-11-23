@@ -54,6 +54,12 @@ const joinErrorContents: Record<JoinError, JoinErrorContent> = {
             c('Info').t`Check your internet connection and try again. If that doesn’t work, try another browser.`,
         actions: 'retryOrLeave',
     },
+    meetingNotAllowed: {
+        image: blockedImg,
+        getTitle: () => c('Title').t`Couldn’t start the meeting`,
+        getMessage: () => c('Info').t`The host has another meeting in progress.`,
+        actions: 'close',
+    },
 };
 
 interface JoinErrorModalProps {

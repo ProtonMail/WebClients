@@ -91,6 +91,11 @@ describe('JoinErrorModal', () => {
             title: 'Incorrect meeting password',
             message: 'Check that you copied the full meeting link and try again.',
         },
+        {
+            joinError: 'meetingNotAllowed' as const,
+            title: 'Couldn’t start the meeting',
+            message: 'The host has another meeting in progress.',
+        },
     ])('when the error is $joinError', ({ joinError, title, message }) => {
         it('shows its title and next step', () => {
             const { dialog } = renderModal(joinError);
@@ -163,6 +168,7 @@ describe('JoinErrorModal', () => {
         'deviceClock',
         'wrongPassword',
         'connectionFailed',
+        'meetingNotAllowed',
     ] as const)('keeps the %s illustration out of the accessibility tree', (joinError) => {
         const { dialog } = renderModal(joinError);
 
