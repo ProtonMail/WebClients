@@ -78,6 +78,7 @@ export interface SubscriptionData {
     billingAddress: BillingAddress;
     vatNumber?: string;
     vatReverseChargeNotSupported?: boolean;
+    checkRefused?: boolean;
 }
 
 export interface ReferralData {

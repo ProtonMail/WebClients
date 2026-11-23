@@ -31,6 +31,7 @@ import {
     isSubscriptionCheckForbiddenWithReason,
     isSubscriptionSelectionEqual,
 } from '@proton/payments/core/subscription/helpers';
+import type { SubscriptionSelection } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-eligibility';
@@ -45,6 +46,7 @@ import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade';
 import type { Model } from './SubscriptionContainer';
 import { reportPlanIDsIfChangedTelemetry } from './helpers/subscriptionTelemetry';
+import { getInitialCheckRefusal } from './initialCheckRefusal';
 
 interface PlanTransitionCallbacks {
     onPlusToPlusTransition: (unlockPlan: Plan | undefined) => void;
@@ -92,6 +94,7 @@ export interface UseSubscriptionContainerInnerCheckProps {
                 | { model: Model; newModel: Model; type: 'error'; error: any }
                 | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
         ) => void;
+        onInitialCheckRefused?: (message: string) => void;
     } & PlanTransitionCallbacks;
     telemetry: {
         user: UserModel;
@@ -193,9 +196,27 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
 } {
     const abortControllerRef = useRef<AbortController | undefined>(undefined);
     const latestValidCouponCodeRef = useRef('');
+    const openingSelectionRef = useRef<SubscriptionSelection | undefined>(undefined);
     const [loadingCheck, withLoadingCheck] = useLoading();
     const [lastCheckFailed, setLastCheckFailed] = useState(false);
     const { createNotification } = useNotifications();
+
+    const notifyCheckFailure = (error: any) => {
+        // The check is sent with `silence: true` so that the generic API handler doesn't
+        // toast billing-address errors (800_001/800_002) while the user edits the form -
+        // those have dedicated in-modal UI. Everything else would then fail silently and
+        // leave the modal on the same step, e.g. the 403 a secondary admin gets when
+        // clicking a plan card. Connection issues are excluded: they are covered by the
+        // NETWORK_ERROR step and by the API status banner.
+        // This lives here rather than in checkSubscription() because the other silenced
+        // callers (multiCheck price grids, promo banner prices) must stay quiet. If a
+        // second caller ever needs the same feedback, move it into checkSubscription()
+        // behind an explicit opt-in option instead of duplicating it.
+        const errorMessage = getApiErrorMessage(error);
+        if (errorMessage && !error?.cancel && !getIsConnectionIssue(error)) {
+            createNotification({ text: errorMessage, type: 'error' });
+        }
+    };
 
     const check = async (
         newModel: Model = props.model,
@@ -210,7 +231,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             paymentFacadeSelectedMethodType,
             refs: { plansMapRef, giftCodeRef },
             setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
-            callbacks: { runAdditionalEstimations, shouldPassIsTrial, onCheck },
+            callbacks: { runAdditionalEstimations, shouldPassIsTrial, onCheck, onInitialCheckRefused },
             telemetry,
         } = props;
 
@@ -309,6 +330,12 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         if (validateGuards && checkResult.GuardResult?.length) {
             setCheckResult({ ...checkResult, GuardResult: [] });
         }
+
+        const checkedSelection: SubscriptionSelection = { planIDs: copyNewModel.planIDs, cycle: copyNewModel.cycle };
+        if (openingSelectionRef.current === undefined) {
+            openingSelectionRef.current = checkedSelection;
+        }
+        const openingSelection = openingSelectionRef.current;
 
         const checkPromise = (async () => {
             try {
@@ -439,19 +466,16 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                     return;
                 }
 
-                // The check is sent with `silence: true` so that the generic API handler doesn't
-                // toast billing-address errors (800_001/800_002) while the user edits the form -
-                // those have dedicated in-modal UI. Everything else would then fail silently and
-                // leave the modal on the same step, e.g. the 403 a secondary admin gets when
-                // clicking a plan card. Connection issues are excluded: they are covered by the
-                // NETWORK_ERROR step above and by the API status banner.
-                // This lives here rather than in checkSubscription() because the other silenced
-                // callers (multiCheck price grids, promo banner prices) must stay quiet. If a
-                // second caller ever needs the same feedback, move it into checkSubscription()
-                // behind an explicit opt-in option instead of duplicating it.
-                const errorMessage = getApiErrorMessage(error);
-                if (errorMessage && !error?.cancel && !getIsConnectionIssue(error)) {
-                    createNotification({ text: errorMessage, type: 'error' });
+                const initialCheckRefusal = getInitialCheckRefusal({
+                    model,
+                    checkedSelection,
+                    openingSelection,
+                    error,
+                });
+                if (initialCheckRefusal !== undefined && onInitialCheckRefused) {
+                    onInitialCheckRefused(initialCheckRefusal);
+                } else {
+                    notifyCheckFailure(error);
                 }
 
                 onCheck?.({ model, newModel: copyNewModel, type: 'error', error });

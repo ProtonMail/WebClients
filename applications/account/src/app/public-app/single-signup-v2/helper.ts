@@ -14,7 +14,7 @@ import {
 } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency, getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
-import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
+import { VatReverseChargeNotSupportedError, getIsPurchaseRefused } from '@proton/payments/core/errors';
 import type {
     Currency,
     CycleMapping,
@@ -157,12 +157,13 @@ export const getSubscriptionData = async (
         });
     })();
 
-    const { checkResult, planIDs, vatReverseChargeNotSupported } = await checkResultPromise
+    const { checkResult, planIDs, vatReverseChargeNotSupported, checkRefused } = await checkResultPromise
         .then((checkResult) => {
             return {
                 checkResult,
                 planIDs: options.planIDs,
                 vatReverseChargeNotSupported: false,
+                checkRefused: false,
             };
         })
         .catch((error) => {
@@ -177,6 +178,7 @@ export const getSubscriptionData = async (
                     checkResult,
                     planIDs: undefined,
                     vatReverseChargeNotSupported: error instanceof VatReverseChargeNotSupportedError,
+                    checkRefused: getIsPurchaseRefused(error),
                 };
             }
 
@@ -191,6 +193,7 @@ export const getSubscriptionData = async (
                 // for informational calls, we don't want to trigger VAT reverse charge modal. Let the info calls have
                 // the optimistic fallback in case of error.
                 vatReverseChargeNotSupported: false,
+                checkRefused: false,
             };
         });
 
@@ -202,6 +205,7 @@ export const getSubscriptionData = async (
         skipUpsell: options.skipUpsell ?? false,
         billingAddress: options.billingAddress,
         vatReverseChargeNotSupported,
+        checkRefused,
     };
 };
 
@@ -313,6 +317,13 @@ const isRefusedNextToSeveralWebSubscriptions = (
         getPurchaseOutcome(multiSubscriptionContext, planIDs).type === 'refused'
     );
 };
+
+export const isUnavailableNextToSubscriptions = (
+    multiSubscriptionContext: MultiSubscriptionContext,
+    planIDs: PlanIDs
+): boolean =>
+    isForbiddenModification(multiSubscriptionContext, planIDs) ||
+    isRefusedNextToSeveralWebSubscriptions(multiSubscriptionContext, planIDs);
 
 const getUpsell = ({
     audience,
@@ -919,11 +930,7 @@ export const getUserInfo = async ({
     }
 
     const finalPlanIDs = optionsWithSubscriptionDefaults.planIDs ?? {};
-    if (
-        state.payable &&
-        (isForbiddenModification(multiSubscriptionContext, finalPlanIDs) ||
-            isRefusedNextToSeveralWebSubscriptions(multiSubscriptionContext, finalPlanIDs))
-    ) {
+    if (state.payable && isUnavailableNextToSubscriptions(multiSubscriptionContext, finalPlanIDs)) {
         state.access = false;
         state.unavailable = true;
     }
@@ -938,6 +945,10 @@ export const getUserInfo = async ({
 
     if (subscriptionData.vatReverseChargeNotSupported) {
         state.vatReverseChargeNotSupported = true;
+    }
+
+    if (subscriptionData.checkRefused) {
+        state.unavailable = true;
     }
 
     return {

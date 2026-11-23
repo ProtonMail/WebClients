@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+
 import type { SubscriptionEstimation } from './subscription/interface';
 
 /**
@@ -87,3 +90,8 @@ export class InvalidCouponError extends PaymentsApiError {
         this.name = 'InvalidCouponError';
     }
 }
+
+export const getIsPurchaseRefused = (error: unknown): boolean => {
+    const { status, code } = getApiError(error);
+    return status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY && code === API_CUSTOM_ERROR_CODES.INVALID_REQUIREMENT;
+};

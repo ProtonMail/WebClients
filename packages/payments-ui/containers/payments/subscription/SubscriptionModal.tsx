@@ -1,10 +1,16 @@
+import { useState } from 'react';
+
+import { c } from 'ttag';
+
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { usePaidUsersNudgeTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PaidUsersNudge/hooks/usePaidUsersNudgeTelemetry';
 import { useDrivePostSignupOneDollarTelemetry } from '@proton/components/components/topnavbar/TopNavbarPostSignupPromo/PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollarTelemetry';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
@@ -77,6 +83,7 @@ const SubscriptionModal = ({
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
     const { APP_NAME } = useConfig();
     const multiSubscriptionContext = useMultiSubscriptionContext(subscription, entitlementCatalog);
+    const [initialCheckRefusal, setInitialCheckRefusal] = useState<string>();
 
     const { sendReportDrivePostSignup } = useDrivePostSignupOneDollarTelemetry();
     const { sendDrivePurchaseReport } = usePaidUsersNudgeTelemetry({ plan: PLANS.DRIVE });
@@ -160,6 +167,19 @@ const SubscriptionModal = ({
         }
     }
 
+    if (initialCheckRefusal !== undefined) {
+        return (
+            <Prompt
+                title={c('bf2023: Title').t`Offer unavailable`}
+                buttons={[<Button key="close" onClick={handleClose}>{c('bf2023: Action').t`Close`}</Button>]}
+                {...modalState}
+                onClose={handleClose}
+            >
+                {initialCheckRefusal}
+            </Prompt>
+        );
+    }
+
     return (
         <SubscriptionContainer
             parent="subscription-modal"
@@ -180,6 +200,7 @@ const SubscriptionModal = ({
             disableThanksStep={postSubscriptionProps.disableThanksStep ?? rest.disableThanksStep}
             initialBillingAddress={initialBillingAddress}
             {...rest}
+            onInitialCheckRefused={setInitialCheckRefusal}
             render={({ onSubmit, title, content, footer, step, planIDs }) => {
                 const isUpgradeOrThanks = [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
                 const isCheckout = step === SUBSCRIPTION_STEPS.CHECKOUT;

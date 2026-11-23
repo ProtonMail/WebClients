@@ -1196,6 +1196,161 @@ describe('useSubscriptionCheck', () => {
             });
         });
 
+        describe('refused first check', () => {
+            const refusal = {
+                status: 422,
+                data: { Code: 2000, Error: 'Unable to combine the new plan with the existing subscriptions.' },
+            };
+            const buildRefusedDeps = (model: Model, onInitialCheckRefused?: (message: string) => void) => {
+                const deps = buildDeps({
+                    model,
+                    paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(refusal) } as any,
+                });
+                deps.callbacks.onInitialCheckRefused = onInitialCheckRefused;
+                return deps;
+            };
+
+            it('hands the backend message to onInitialCheckRefused instead of notifying', async () => {
+                const onInitialCheckRefused = vi.fn();
+                const deps = buildRefusedDeps(buildModel(), onInitialCheckRefused);
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                await result.current.check(buildModel());
+
+                expect(onInitialCheckRefused).toHaveBeenCalledWith(
+                    'Unable to combine the new plan with the existing subscriptions.'
+                );
+                expect(mockCreateNotification).not.toHaveBeenCalled();
+            });
+
+            it('notifies when no parent handles the refusal', async () => {
+                const deps = buildRefusedDeps(buildModel());
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                await result.current.check(buildModel());
+
+                expect(mockCreateNotification).toHaveBeenCalledWith({
+                    text: 'Unable to combine the new plan with the existing subscriptions.',
+                    type: 'error',
+                });
+            });
+
+            it('notifies about a refusal after the first check', async () => {
+                const onInitialCheckRefused = vi.fn();
+                const deps = buildRefusedDeps(buildModel({ initialCheckComplete: true }), onInitialCheckRefused);
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                await result.current.check(buildModel({ initialCheckComplete: true }));
+
+                expect(onInitialCheckRefused).not.toHaveBeenCalled();
+                expect(mockCreateNotification).toHaveBeenCalledWith({
+                    text: 'Unable to combine the new plan with the existing subscriptions.',
+                    type: 'error',
+                });
+            });
+
+            it('notifies about a first check that failed for another reason', async () => {
+                const onInitialCheckRefused = vi.fn();
+                const deps = buildDeps({
+                    paymentsApi: {
+                        checkSubscription: vi
+                            .fn()
+                            .mockRejectedValue({ status: 403, data: { Code: 2011, Error: 'Not allowed' } }),
+                    } as any,
+                });
+                deps.callbacks.onInitialCheckRefused = onInitialCheckRefused;
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                await result.current.check(buildModel());
+
+                expect(onInitialCheckRefused).not.toHaveBeenCalled();
+                expect(mockCreateNotification).toHaveBeenCalledWith({ text: 'Not allowed', type: 'error' });
+            });
+
+            const rejectWhenAborted = (_data: unknown, { signal }: { signal: AbortSignal }) =>
+                new Promise((_, reject) => {
+                    signal.addEventListener('abort', () =>
+                        reject(Object.assign(new Error('aborted'), { name: 'AbortError' }))
+                    );
+                });
+
+            const buildDepsWithChecks = (checkSubscription: Mock) => {
+                const onInitialCheckRefused = vi.fn();
+                const deps = buildDeps({ paymentsApi: { checkSubscription } as any });
+                deps.callbacks.onInitialCheckRefused = onInitialCheckRefused;
+                return { deps, onInitialCheckRefused };
+            };
+
+            it('notifies about a refused cycle change made after the first check failed', async () => {
+                const { deps, onInitialCheckRefused } = buildDepsWithChecks(
+                    vi
+                        .fn()
+                        .mockRejectedValueOnce({ status: 500, data: { Code: 2000, Error: 'Internal error' } })
+                        .mockRejectedValueOnce(refusal)
+                );
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                await result.current.check(buildModel());
+                await result.current.check(buildModel({ cycle: CYCLE.YEARLY }));
+
+                expect(onInitialCheckRefused).not.toHaveBeenCalled();
+                expect(mockCreateNotification).toHaveBeenLastCalledWith({
+                    text: 'Unable to combine the new plan with the existing subscriptions.',
+                    type: 'error',
+                });
+            });
+
+            it('notifies about a refused cycle change that aborted the first check', async () => {
+                const { deps, onInitialCheckRefused } = buildDepsWithChecks(
+                    vi.fn().mockImplementationOnce(rejectWhenAborted).mockRejectedValueOnce(refusal)
+                );
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                const firstCheck = result.current.check(buildModel());
+                await result.current.check(buildModel({ cycle: CYCLE.YEARLY }));
+                await firstCheck;
+
+                expect(onInitialCheckRefused).not.toHaveBeenCalled();
+                expect(mockCreateNotification).toHaveBeenCalledWith({
+                    text: 'Unable to combine the new plan with the existing subscriptions.',
+                    type: 'error',
+                });
+            });
+
+            it('hands over a refusal of the opening selection when its first check was aborted by a repeat', async () => {
+                const { deps, onInitialCheckRefused } = buildDepsWithChecks(
+                    vi.fn().mockImplementationOnce(rejectWhenAborted).mockRejectedValueOnce(refusal)
+                );
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                const firstCheck = result.current.check(buildModel());
+                await result.current.check(buildModel());
+                await firstCheck;
+
+                expect(onInitialCheckRefused).toHaveBeenCalledWith(
+                    'Unable to combine the new plan with the existing subscriptions.'
+                );
+                expect(mockCreateNotification).not.toHaveBeenCalled();
+            });
+
+            it('hands over a refusal of the opening selection retried after a failed check', async () => {
+                const { deps, onInitialCheckRefused } = buildDepsWithChecks(
+                    vi
+                        .fn()
+                        .mockRejectedValueOnce({ status: 500, data: { Code: 2000, Error: 'Internal error' } })
+                        .mockRejectedValueOnce(refusal)
+                );
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+                await result.current.check(buildModel());
+                await result.current.check(buildModel());
+
+                expect(onInitialCheckRefused).toHaveBeenCalledWith(
+                    'Unable to combine the new plan with the existing subscriptions.'
+                );
+            });
+        });
+
         it('does not notify about connection issues, which the NETWORK_ERROR step covers', async () => {
             const offlineError = new Error('offline');
             offlineError.name = 'OfflineError';
