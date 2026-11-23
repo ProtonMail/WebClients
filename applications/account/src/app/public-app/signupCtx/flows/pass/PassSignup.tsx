@@ -15,7 +15,7 @@ import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';
 import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';
 import { AccessModal } from './components/AccessModal/AccessModal';
-import { family, getPassPlusOfferPlan, passLifetime, passPlus, unlimited } from './plans';
+import { family, passLifetime, passPlus, passPlusOffer, unlimited } from './plans';
 import { AccountDetailsStep } from './steps/AccountDetailsStep';
 import { CycleSelectorStep } from './steps/CycleSelectorStep';
 import { InstallExtensionStep } from './steps/InstallExtensionStep';
@@ -44,14 +44,6 @@ const PassSignup = () => {
     /** Address the account was created with: re-validating the form
      * later in the flow can return a stale value of the email field */
     const signupAddress = useRef('');
-
-    useEffect(() => {
-        /**
-         * A limitation of the payments context initialisation means we need to
-         * check the pricing with the coupon to ensure the UI data is available
-         */
-        void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
-    }, [payments.selectedPlan.currency]);
 
     const goToOnboarding = () => {
         if (newOnboardingFlag) {
@@ -129,7 +121,11 @@ const PassSignup = () => {
     );
 };
 
-const availablePlans = getAvailablePlansWithCycles([passPlus, unlimited, family, passLifetime], [CYCLE.YEARLY]);
+// The upgrade step's Pass Plus offer is checked with its coupon too
+const availablePlans = [
+    ...getAvailablePlansWithCycles([passPlus, unlimited, family, passLifetime], [CYCLE.YEARLY]),
+    passPlusOffer,
+];
 
 const PassSignupPage = (props: BaseSignupContextProps) => {
     const location = useLocation();

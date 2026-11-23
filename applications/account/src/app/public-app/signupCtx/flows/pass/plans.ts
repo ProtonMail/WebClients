@@ -17,9 +17,10 @@ export const passLifetime: { planIDs: PlanIDs } = {
     planIDs: { [PLANS.PASS_LIFETIME]: 1 },
 };
 
-export const getPassPlusOfferPlan = (currency: Currency) => ({
+export const passPlusOffer = {
     planIDs: passPlus.planIDs,
     cycle: CYCLE.MONTHLY,
-    currency,
     coupon: COUPON_CODES.PASSPLUSINTRO2024,
-});
+};
+
+export const getPassPlusOfferPlan = (currency: Currency) => ({ ...passPlusOffer, currency });

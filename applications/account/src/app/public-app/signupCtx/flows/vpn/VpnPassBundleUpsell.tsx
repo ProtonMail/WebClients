@@ -14,7 +14,7 @@ import Box from './Box';
 interface VpnPassBundleUpsellProps {
     padding: string;
     isVpnPassBundle: boolean;
-    isLoadingModelDeps: boolean;
+    loading: boolean;
     bundlePlanPriceInline: ReactElement;
     onToggle: (isVpnPassBundle: boolean) => void;
 }
@@ -24,12 +24,12 @@ export const VpnPassBundleUpsell = ({
     isVpnPassBundle,
     bundlePlanPriceInline,
     onToggle,
-    isLoadingModelDeps,
+    loading,
 }: VpnPassBundleUpsellProps) => {
     return (
         <Box className={clsx('mt-8 p-4 w-full border border-primary border-2', padding)}>
             <div className={clsx('pricing-box-content', 'mt-0')}>
-                {isLoadingModelDeps ? (
+                {loading ? (
                     <SkeletonLoader height="2.5rem" width="30rem" />
                 ) : (
                     <div className="flex sm:flex-row flex-column gap-4 w-full justify-space-between items-center">

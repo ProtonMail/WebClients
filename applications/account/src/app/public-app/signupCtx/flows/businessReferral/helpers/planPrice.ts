@@ -31,12 +31,10 @@ export const getPlanCardPrices = (payments: PaymentsContextOptimisticType, planN
         currency: payments.options.currency,
     };
     const coupon = payments.getCoupon(planToCheck);
-    const { checkoutUi } = payments.getPriceOrFallback({ ...planToCheck, coupon, trial: false });
+    const { checkoutUi, loading } = payments.getPriceOrFallback({ ...planToCheck, coupon, trial: false });
 
     const plan = payments.plansMap[planName];
-    if (plan && getIsVpnB2BPlan(planName)) {
-        return getOneMemberPrices(checkoutUi, plan);
-    }
-
-    return getWholePlanPrices(checkoutUi);
+    const prices =
+        plan && getIsVpnB2BPlan(planName) ? getOneMemberPrices(checkoutUi, plan) : getWholePlanPrices(checkoutUi);
+    return { ...prices, loading };
 };

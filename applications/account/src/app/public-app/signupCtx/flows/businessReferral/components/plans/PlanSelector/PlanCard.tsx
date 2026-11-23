@@ -114,7 +114,7 @@ const PlanCard = ({ config }: { config: BusinessPlanConfig }) => {
             </ul>
 
             <div className="mb-2">
-                {pricingInitialized ? priceElement : <SkeletonLoader width="7rem" height="1.5rem" />}
+                {!prices.loading ? priceElement : <SkeletonLoader width="7rem" height="1.5rem" />}
             </div>
 
             <Button

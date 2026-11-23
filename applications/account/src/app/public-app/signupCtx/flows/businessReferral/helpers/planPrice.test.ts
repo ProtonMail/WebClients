@@ -36,6 +36,7 @@ const buildPayments = (checkResult: SubscriptionEstimation) => {
     const getPriceOrFallback = vi.fn((planToCheck: PlanToCheck) => ({
         checkResult,
         checkoutUi: getCheckoutUi({ planIDs: planToCheck.planIDs, plansMap, checkResult }),
+        loading: false,
     }));
     const payments = {
         options: { cycle: CYCLE.YEARLY, currency: 'EUR' },
@@ -55,6 +56,7 @@ describe('getPlanCardPrices', () => {
             regularPricePerMonth: 2499,
             pricePerMonth: (23988 - 2399) / 12,
             renewalPricePerMonth: 1999,
+            loading: false,
         });
     });
 
@@ -72,6 +74,7 @@ describe('getPlanCardPrices', () => {
             regularPricePerMonth: 1199,
             pricePerMonth: 999,
             renewalPricePerMonth: 999,
+            loading: false,
         });
         expect(getPriceOrFallback).toHaveBeenCalledWith({
             planIDs: { [PLANS.VPN_BUSINESS]: 1 },

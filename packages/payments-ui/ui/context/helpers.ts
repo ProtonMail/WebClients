@@ -1,6 +1,6 @@
 import isEqual from 'lodash/isEqual';
 
-import type { InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
+import type { CheckInputs, InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { useMultiCheckGroups } from '@proton/payments-hooks/ui/context/useMultiCheckGroups';
 import { getPreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import {
@@ -8,6 +8,8 @@ import {
     type BillingAddressExtended,
     type BillingAddressExtraProperties,
     DEFAULT_TAX_BILLING_ADDRESS,
+    type PayloadBillingAddress,
+    getBillingAddressPayload,
 } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
@@ -297,3 +299,20 @@ export const withBillingDetails = (
     ...Object.fromEntries(Object.entries(billingDetails ?? {}).filter(([, value]) => value)),
     ...billingAddress,
 });
+
+// The billing details a price depends on: the price cache's, and the VAT number
+const priceBillingAddressKeys = ['CountryCode', 'State', 'ZipCode', 'VatId'] as const;
+
+/** Whether a check was made for these billing details, e.g. a plan card's, checked without a VAT number */
+export const isCheckedFor = (
+    checkResult: SubscriptionEstimation | undefined,
+    { billingAddress, vatNumber }: Pick<CheckInputs, 'billingAddress' | 'vatNumber'>
+) => {
+    if (!checkResult || checkResult.optimistic) {
+        return false;
+    }
+    const checked: Partial<PayloadBillingAddress> | undefined = checkResult.requestData.BillingAddress;
+    const requested = getBillingAddressPayload({ billingAddress, vatId: vatNumber });
+    // A missing field and null both mean none
+    return priceBillingAddressKeys.every((key) => (checked?.[key] ?? null) === (requested[key] ?? null));
+};

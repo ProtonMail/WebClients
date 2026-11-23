@@ -625,6 +625,22 @@ describe('PaymentsContext VAT number', () => {
 
         expect(renderedAmounts.at(-1)).toBe(4242);
     });
+
+    it('prices a plan without a coupon from its last check, and from its list price before', async () => {
+        const { getContext } = renderContext({ paymentStatus });
+        await initialize(getContext);
+        expect(getContext().getPrice(vpnTwoYears)?.checkResult.optimistic).toBe(true);
+
+        const Taxes = [{ Name: 'VAT', Rate: 8.1, Amount: 54 }];
+        checkSubscription.mockImplementation((data, { signal } = {}) =>
+            respondWith(signal, Promise.resolve(buildCheckResult({ Cycle: data.Cycle, AmountDue: 4242, Taxes })))
+        );
+        await act(() => getContext().selectNewPlan(vpnTwoYears));
+
+        expect(getContext().getPrice(vpnTwoYears)?.checkResult).toEqual(
+            expect.objectContaining({ AmountDue: 4242, Taxes })
+        );
+    });
 });
 
 describe('PaymentsContext changes made while a check runs', () => {

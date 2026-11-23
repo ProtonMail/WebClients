@@ -362,11 +362,14 @@ export const getOptimisticCheckResult = ({
     plansMap,
     cycle,
     currency,
+    coupon,
 }: {
     cycle: CYCLE;
     planIDs: PlanIDs | undefined;
     plansMap: PlansMap;
     currency: Currency;
+    /** Only echoed in `requestData`: the estimate doesn't know its discount */
+    coupon?: string;
 }): SubscriptionEstimation => {
     const amount = getPrice(planIDs || {}, cycle, plansMap);
 
@@ -389,6 +392,7 @@ export const getOptimisticCheckResult = ({
             Cycle: cycle,
             Currency: currency,
             Plans: planIDs || {},
+            ...(coupon && { Codes: [coupon] }),
         },
     };
 };

@@ -542,14 +542,14 @@ const Step1 = ({
         },
     });
 
-    const checkoutMappingPlanIDs = ((): CycleMapping<PaymentsCheckoutUI> => {
+    const cyclePrices = ((): CycleMapping<ReturnType<typeof getCheckout>> => {
         if (mode === 'vpn-pass-promotion') {
             const vpnPassBundlePlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
             const vpnPlanIDs = { [PLANS.VPN2024]: 1 };
             return {
-                [CYCLE.MONTHLY]: getCheckout(vpnPlanIDs, CYCLE.MONTHLY).checkoutUi,
-                [CYCLE.YEARLY]: getCheckout(vpnPassBundlePlanIDs, CYCLE.YEARLY).checkoutUi,
-                [CYCLE.TWO_YEARS]: getCheckout(vpnPlanIDs, CYCLE.TWO_YEARS).checkoutUi,
+                [CYCLE.MONTHLY]: getCheckout(vpnPlanIDs, CYCLE.MONTHLY),
+                [CYCLE.YEARLY]: getCheckout(vpnPassBundlePlanIDs, CYCLE.YEARLY),
+                [CYCLE.TWO_YEARS]: getCheckout(vpnPlanIDs, CYCLE.TWO_YEARS),
             };
         }
         // Want to show prices for VPN and VPNBIZ
@@ -562,9 +562,12 @@ const Step1 = ({
                 CYCLE.TWO_YEARS,
                 CYCLE.FIFTEEN,
                 CYCLE.THIRTY,
-            ].map((cycle) => [cycle, getCheckout(options.planIDs, cycle).checkoutUi])
+            ].map((cycle) => [cycle, getCheckout(options.planIDs, cycle)])
         );
     })();
+    const checkoutMappingPlanIDs: CycleMapping<PaymentsCheckoutUI> = Object.fromEntries(
+        Object.entries(cyclePrices).map(([cycle, price]) => [cycle, price.checkoutUi])
+    );
 
     const actualCheckout = payments.checkoutUi;
 
@@ -763,17 +766,18 @@ const Step1 = ({
         if (!toCycle || !cycleData.cycles.includes(toCycle)) {
             return null;
         }
-        if (isLoadingModelDeps) {
+        const toCyclePrice = getCheckout(options.planIDs, toCycle);
+        if (toCyclePrice.loading) {
             return (
                 <div className="p-2 flex gap-1 items-center">
-                    <Toggle checked={false} id="toggle-upsell-plan" className="mx-1" />
+                    <Toggle checked={!!toggleUpsell} disabled id="toggle-upsell-plan" className="mx-1" />
                     <label htmlFor="toggle-upsell-plan" className="flex-1 text-sm">
                         <SkeletonLoader width="100%" height="2em" index={0} />
                     </label>
                 </div>
             );
         }
-        const toCycleCheckout = getCheckout(options.planIDs, toCycle).checkoutUi;
+        const toCycleCheckout = toCyclePrice.checkoutUi;
         const billingCycle = getBillingCycleText(toCycle);
         if (!billingCycle) {
             return null;
@@ -915,10 +919,10 @@ const Step1 = ({
     const paymentSummary = (
         <PaymentSummary
             plansMap={plansMap}
-            initialLoading={isLoadingModelDeps}
+            loadingPrices={payments.loadingPrice}
             couponConfig={payments.couponConfig}
             options={options}
-            loadingPaymentDetails={disablePayButton && !payments.pricedBeforeCheck}
+            loadingPaymentDetails={payments.loadingTotal}
             upsellToggle={getUpsellToggle()}
             planInformation={summaryPlanInformation}
             giftCode={
@@ -957,9 +961,9 @@ const Step1 = ({
         : c('Header').t`Select your payment method:`;
 
     // Adding Proton Pass on top of VPN Plus: the VPN+Pass bundle's price per month minus VPN Plus's
-    const bundlePlanPrice =
-        getCheckout({ [PLANS.VPN_PASS_BUNDLE]: 1 }, options.cycle).checkoutUi.withDiscountPerMonth -
-        getCheckout({ [PLANS.VPN2024]: 1 }, options.cycle).checkoutUi.withDiscountPerMonth;
+    const bundlePrice = getCheckout({ [PLANS.VPN_PASS_BUNDLE]: 1 }, options.cycle);
+    const vpnPlusPrice = getCheckout({ [PLANS.VPN2024]: 1 }, options.cycle);
+    const bundlePlanPrice = bundlePrice.checkoutUi.withDiscountPerMonth - vpnPlusPrice.checkoutUi.withDiscountPerMonth;
 
     const bundlePlanPriceInline: ReactElement = (
         <Price
@@ -1021,7 +1025,7 @@ const Step1 = ({
                                 </div>
                             }
                             plansMap={plansMap}
-                            getCheckout={(planIDs, cycle) => getCheckout(planIDs, cycle).checkoutUi}
+                            getCheckout={getCheckout}
                             selectedPlanName={options.plan.Name}
                             cycle={options.cycle}
                             cycles={cycleData.cycles}
@@ -1052,7 +1056,7 @@ const Step1 = ({
                             <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                 <CycleSelector
                                     mode={mode}
-                                    loading={isLoadingModelDeps}
+                                    loading={Object.values(cyclePrices).some((price) => price?.loading)}
                                     onGetTheDeal={({ cycle, planIDs }) => {
                                         handleUpdate('plan');
                                         setToggleUpsell(undefined);
@@ -1228,7 +1232,7 @@ const Step1 = ({
                         padding={padding}
                         isVpnPassBundle={isVpnPassBundle}
                         bundlePlanPriceInline={bundlePlanPriceInline}
-                        isLoadingModelDeps={isLoadingModelDeps}
+                        loading={bundlePrice.loading || vpnPlusPrice.loading}
                         onToggle={(isVpnPassBundle) => {
                             if (!isVpnPassBundle) {
                                 reportVpn2024SignupAddPass();

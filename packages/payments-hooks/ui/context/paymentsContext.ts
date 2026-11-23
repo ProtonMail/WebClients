@@ -42,6 +42,13 @@ export interface InitializeProps {
     product: ProductParam;
 }
 
+/** What a check is made for */
+export interface CheckInputs {
+    planToCheck: PlanToCheck;
+    billingAddress: BillingAddressExtended;
+    vatNumber: string | undefined;
+}
+
 export interface PricesResult {
     checkResult: SubscriptionEstimation;
     checkoutUi: PaymentsCheckoutUI;
@@ -61,7 +68,7 @@ export interface PaymentsContextType {
     /**
      * Returns the cached version of the subscription response. Returns null if the cache is missing.
      * Make sure to call `checkMultiplePlans` first.
-     * Without a coupon: the plan's own price, never null.
+     * Without a coupon: its last check if there is one, otherwise the plan's own price, never null.
      */
     getPrice: (planToCheck: PlanToCheck) => PricesResult | null;
     /**
@@ -69,10 +76,10 @@ export interface PaymentsContextType {
      */
     getPriceOrFallback: (planToCheck: PlanToCheck) => PricesResult;
     /**
-     * A billing address or VAT number change waits for its check, so the cached prices, checked for the previous
-     * billing details, don't apply to it yet
+     * The selection and billing details asked for: changes still waiting for their check, otherwise the checked ones.
+     * A cached price applies only to the billing details it was checked for.
      */
-    hasPendingBillingChange: () => boolean;
+    getRequested: () => CheckInputs;
     /**
      * Get a valid coupon by checking it against the cached multi check results
      */
