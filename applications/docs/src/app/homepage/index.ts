@@ -22,5 +22,5 @@ export {
   type HomepageDependencies,
   type HomepageDependenciesProviderProps,
 } from './HomepageDependenciesProvider'
-export type { HomepageMessages } from './messages/defaultHomepageMessages'
+export { defaultHomepageMessages, type HomepageMessages } from './messages/defaultHomepageMessages'
 export type { HomepageDateFormat } from './utils/dateFormatter'

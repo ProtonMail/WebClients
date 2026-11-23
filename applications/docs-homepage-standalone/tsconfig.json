@@ -1,0 +1,7 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "types": ["@proton/types", "global-types-monorepo", "node"]
+    },
+    "include": ["src", "vite.config.ts"]
+}

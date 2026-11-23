@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stand-in for @proton/styles' icon sizes: size N is N/4 rem. */
+[class*='icon-size-'] {
+    inline-size: 1rem;
+    block-size: 1rem;
+    fill: currentColor;
+}
+.icon-size-3 {
+    inline-size: 0.75rem;
+    block-size: 0.75rem;
+}
+.icon-size-5 {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+}
+.icon-size-6 {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+}
+.icon-size-8 {
+    inline-size: 2rem;
+    block-size: 2rem;
+}
