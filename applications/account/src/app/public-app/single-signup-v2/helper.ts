@@ -86,7 +86,15 @@ import {
 
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import type { Options, PlanCard, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
+import type {
+    Options,
+    PlanCard,
+    PlanParameters,
+    SignupConfiguration,
+    SignupModelV2,
+    SignupParameters2,
+    Upsell,
+} from './interface';
 import { UpsellTypes, isRegularPlanCard } from './interface';
 
 const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
@@ -1135,6 +1143,46 @@ export const getAccessiblePlans = ({
     }
 
     return plans.filter(({ Name }) => accessiblePlanNames.includes(Name as PLANS)) as StrictPlan[];
+};
+
+export const getCurrencyForNewAudience = ({
+    currency,
+    newAudience,
+    planCards,
+    model,
+}: {
+    currency: Currency;
+    newAudience: { value: Audience; defaultPlan: PLANS };
+    planCards: SignupConfiguration['planCards'];
+    model: Pick<SignupModelV2, 'plans' | 'paymentStatus' | 'subscriptionDataCycleMapping'> & {
+        session:
+            | (Pick<SessionData, 'multiSubscriptionContext'> & {
+                  resumedSessionResult: Pick<ResumedSessionResult, 'User'>;
+              })
+            | undefined;
+    };
+}): Currency | undefined => {
+    const newAudiencePlans = getAccessiblePlans({
+        planCards,
+        audience: newAudience.value,
+        plans: model.plans,
+        paramPlanName: newAudience.defaultPlan,
+    });
+    const newAudienceHasPlansInCurrency = newAudiencePlans.some(
+        (plan) => !!model.subscriptionDataCycleMapping[plan.Name]
+    );
+    if (newAudienceHasPlansInCurrency) {
+        return undefined;
+    }
+
+    return getPreferredCurrency({
+        paramCurrency: currency,
+        paramPlanName: newAudience.defaultPlan,
+        plans: newAudiencePlans,
+        paymentStatus: model.paymentStatus,
+        user: model.session ? formatUser(model.session.resumedSessionResult.User) : undefined,
+        multiSubscriptionContext: model.session?.multiSubscriptionContext ?? noSubscriptionContext,
+    });
 };
 
 export const getSubscriptionDataCycleMapping = async ({

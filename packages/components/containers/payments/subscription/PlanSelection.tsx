@@ -6,7 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { getAvailableCurrencies, getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
+import { getAvailableCurrencies, getPreferredCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import type {
     Currency,
     Cycle,
@@ -227,6 +227,11 @@ function getCanChangeToLumoPlus(
     return !hasLumoAddon(subscription) && !hasVisionary(subscription);
 }
 
+function getTabPlansInEveryCurrency(plans: Plan[], tabPlans: (Plan | null | undefined)[]): Plan[] {
+    const tabPlanNames = tabPlans.filter(isTruthy).map((plan) => plan.Name);
+    return plans.filter((plan) => tabPlanNames.includes(plan.Name));
+}
+
 export function useAccessiblePlans({
     selectedProductPlans,
     subscription,
@@ -433,8 +438,7 @@ export function useAccessiblePlans({
         !getIsB2BAudienceFromPlan(currentPlan?.Name);
 
     const getTabCurrencies = (tabPlans: (Plan | null | undefined)[]) => {
-        const tabPlanNames = tabPlans.filter(isTruthy).map((plan) => plan.Name);
-        const tabPlansInEveryCurrency = plans.filter((plan) => tabPlanNames.includes(plan.Name));
+        const tabPlansInEveryCurrency = getTabPlansInEveryCurrency(plans, tabPlans);
 
         return getAvailableCurrencies({
             paymentStatus,
@@ -465,6 +469,37 @@ export function useAccessiblePlans({
     };
 
     return result;
+}
+
+export function getCurrencyForNewTab({
+    currency,
+    tabPlans,
+    plans,
+    paymentStatus,
+    user,
+    multiSubscriptionContext,
+}: {
+    currency: Currency;
+    tabPlans: Plan[];
+    plans: Plan[];
+    paymentStatus: PaymentStatus;
+    user: UserModel;
+    multiSubscriptionContext: MultiSubscriptionContext;
+}): Currency | undefined {
+    const tabHasPlansInCurrency = tabPlans.some((plan) => isPlan(plan) && plan.Currency === currency);
+    if (tabHasPlansInCurrency || !isRegionalCurrency(currency)) {
+        return undefined;
+    }
+
+    const [firstTabPlan] = tabPlans;
+    return getPreferredCurrency({
+        paramCurrency: currency,
+        paramPlanName: firstTabPlan?.Name,
+        plans: getTabPlansInEveryCurrency(plans, tabPlans),
+        paymentStatus,
+        user,
+        multiSubscriptionContext,
+    });
 }
 
 export function getMaximumCycle(
@@ -506,6 +541,7 @@ const PlanSelection = (props: Props) => {
         coupon,
         multiSubscriptionContext,
         showShortPlan,
+        paymentStatus,
     } = props;
 
     // strict plans map doens't have plan fallback if currency is missing. If there is no plan for specified currency,
@@ -976,14 +1012,16 @@ const PlanSelection = (props: Props) => {
                         const newAudience = tabNumberToAudience(tabNumber);
                         onChangeAudience(newAudience);
 
-                        const audienceTab = tabs[tabNumber];
-
-                        const hasPlansWithSelectedCurrency = audienceTab.plans.some(
-                            (it) => isPlan(it) && it.Currency === currency
-                        );
-
-                        if (!hasPlansWithSelectedCurrency && isRegionalCurrency(currency)) {
-                            onChangeCurrency(getFallbackCurrency(currency));
+                        const newCurrency = getCurrencyForNewTab({
+                            currency,
+                            tabPlans: tabs[tabNumber].plans,
+                            plans,
+                            paymentStatus,
+                            user,
+                            multiSubscriptionContext,
+                        });
+                        if (newCurrency) {
+                            onChangeCurrency(newCurrency);
                         }
                     }}
                     tabs={tabs}
