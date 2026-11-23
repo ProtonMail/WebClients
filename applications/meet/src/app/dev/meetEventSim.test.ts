@@ -10,15 +10,19 @@ import {
     agentParticipantsReducer,
     setAgentIdentities,
 } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
-import { mergeParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
+import {
+    mergeParticipantsMap,
+    participantsReducer,
+    setLocalParticipantIdentity,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     setSortedParticipantIdentities,
     sortedParticipantsReducer,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
-import { selectParticipantCountMismatchSince, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
+import { selectParticipantCountMismatch, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetAppStartListening, MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
-import { MINUTE } from '@proton/shared/lib/constants';
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import { initMeetEventSim } from './meetEventSim';
@@ -174,13 +178,13 @@ describe('meetEventSim.connection', () => {
     });
 });
 
-describe('meetEventSim.setHiddenParticipants', () => {
+describe('meetEventSim participant count mismatch', () => {
     let cleanup: () => void;
 
     const NOW = new Date('2026-11-20T12:00:00Z').getTime();
     const mlsGroupState = { displayCode: '1234', epoch: 3, memberCount: 2 };
 
-    const createMeetingStore = ({ withMlsGroupState = true } = {}) => {
+    const createMeetingStore = ({ withMlsGroupState = true, isLocalParticipantHost = false } = {}) => {
         const listenerMiddleware = createListenerMiddleware();
         participantCountMismatchListener(listenerMiddleware.startListening as unknown as MeetAppStartListening);
         const store = configureStore({
@@ -188,10 +192,23 @@ describe('meetEventSim.setHiddenParticipants', () => {
                 ...currentMeetingReducer,
                 ...sortedParticipantsReducer,
                 ...agentParticipantsReducer,
+                ...participantsReducer,
                 ...uiStateReducer,
             },
             middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(listenerMiddleware.middleware),
         });
+        store.dispatch(setLocalParticipantIdentity('alice'));
+        store.dispatch(
+            mergeParticipantsMap({
+                alice: {
+                    ...localParticipant,
+                    ParticipantUUID: 'alice',
+                    IsHost: isLocalParticipantHost
+                        ? ParticipantCapabilityPermission.Allowed
+                        : ParticipantCapabilityPermission.NotAllowed,
+                },
+            })
+        );
         store.dispatch(setSortedParticipantIdentities(['alice', 'bob']));
         if (withMlsGroupState) {
             store.dispatch(setMlsGroupState(mlsGroupState));
@@ -203,7 +220,7 @@ describe('meetEventSim.setHiddenParticipants', () => {
         return {
             dispatch: store.dispatch,
             memberCount: () => selectMlsGroupState(getState())?.memberCount,
-            mismatchSince: () => selectParticipantCountMismatchSince(getState()),
+            mismatch: () => selectParticipantCountMismatch(getState()),
         };
     };
 
@@ -216,28 +233,28 @@ describe('meetEventSim.setHiddenParticipants', () => {
         vi.useRealTimers();
     });
 
-    it('starts a mismatch old enough for the warning and adds the hidden people to the connected participants', () => {
-        const { memberCount, mismatchSince } = createMeetingStore();
+    it('adds the hidden people to the connected participants and starts timing the mismatch now', () => {
+        const { memberCount, mismatch } = createMeetingStore();
 
         expect(window.meetEventSim?.setHiddenParticipants(3)).toBe(true);
 
         expect(memberCount()).toBe(5);
-        expect(mismatchSince()).toBe(NOW - MINUTE);
+        expect(mismatch()).toEqual({ since: NOW, isHostInCall: false });
     });
 
     it('keeps the hidden people after an MLS refresh with the real member count', () => {
-        const { dispatch, memberCount, mismatchSince } = createMeetingStore();
+        const { dispatch, memberCount, mismatch } = createMeetingStore();
         window.meetEventSim?.setHiddenParticipants(2);
 
         vi.advanceTimersByTime(MINUTE);
         dispatch(setMlsGroupState({ ...mlsGroupState, epoch: 4 }));
 
         expect(memberCount()).toBe(4);
-        expect(mismatchSince()).toBe(NOW - MINUTE);
+        expect(mismatch()).toEqual({ since: NOW, isHostInCall: false });
     });
 
     it('keeps fewer members than connected participants through an MLS refresh when called with a negative count', () => {
-        const { dispatch, memberCount, mismatchSince } = createMeetingStore();
+        const { dispatch, memberCount, mismatch } = createMeetingStore();
 
         expect(window.meetEventSim?.setHiddenParticipants(-1)).toBe(true);
 
@@ -245,25 +262,25 @@ describe('meetEventSim.setHiddenParticipants', () => {
         dispatch(setMlsGroupState({ ...mlsGroupState, epoch: 4 }));
 
         expect(memberCount()).toBe(1);
-        expect(mismatchSince()).toBe(NOW - MINUTE);
+        expect(mismatch()).toEqual({ since: NOW, isHostInCall: false });
     });
 
     it('keeps at least one member and no mismatch when a participant leaves after a negative count', () => {
-        const { dispatch, memberCount, mismatchSince } = createMeetingStore();
+        const { dispatch, memberCount, mismatch } = createMeetingStore();
         window.meetEventSim?.setHiddenParticipants(-1);
 
         dispatch(setSortedParticipantIdentities(['alice']));
 
         expect(memberCount()).toBe(1);
-        expect(mismatchSince()).toBeNull();
+        expect(mismatch()).toBeNull();
     });
 
     it('refuses a negative count that would leave no member', () => {
-        const { memberCount, mismatchSince } = createMeetingStore();
+        const { memberCount, mismatch } = createMeetingStore();
 
         expect(window.meetEventSim?.setHiddenParticipants(-2)).toBe(false);
         expect(memberCount()).toBe(2);
-        expect(mismatchSince()).toBeNull();
+        expect(mismatch()).toBeNull();
     });
 
     it('counts a connected agent among the members', () => {
@@ -285,37 +302,83 @@ describe('meetEventSim.setHiddenParticipants', () => {
     });
 
     it('matches the member count to the connected participants and stops keeping the hidden people when called with 0', () => {
-        const { dispatch, memberCount, mismatchSince } = createMeetingStore();
+        const { dispatch, memberCount, mismatch } = createMeetingStore();
         window.meetEventSim?.setHiddenParticipants(2);
 
         expect(window.meetEventSim?.setHiddenParticipants(0)).toBe(true);
         expect(memberCount()).toBe(2);
-        expect(mismatchSince()).toBeNull();
+        expect(mismatch()).toBeNull();
 
         dispatch(setSortedParticipantIdentities(['alice', 'bob', 'carol']));
         dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: 3 }));
 
         expect(memberCount()).toBe(3);
-        expect(mismatchSince()).toBeNull();
+        expect(mismatch()).toBeNull();
     });
 
     it('stops keeping the hidden people once torn down', () => {
-        const { dispatch, memberCount, mismatchSince } = createMeetingStore();
+        const { dispatch, memberCount, mismatch } = createMeetingStore();
         window.meetEventSim?.setHiddenParticipants(2);
 
         cleanup();
         dispatch(setMlsGroupState(mlsGroupState));
 
         expect(memberCount()).toBe(2);
-        expect(mismatchSince()).toBeNull();
+        expect(mismatch()).toBeNull();
+    });
+
+    it('moves the clock of the current mismatch and reports it', () => {
+        createMeetingStore({ isLocalParticipantHost: true });
+        window.meetEventSim?.setHiddenParticipants(2);
+
+        expect(window.meetEventSim?.setParticipantCountMismatchElapsed(45 * SECOND)).toBe(true);
+
+        expect(window.meetEventSim?.participantCountMismatch()).toEqual({ elapsedMs: 45 * SECOND, isHostInCall: true });
+    });
+
+    it('restarts the clock without the host when the local host leaves the host role', () => {
+        createMeetingStore({ isLocalParticipantHost: true });
+        window.meetEventSim?.setHiddenParticipants(2);
+        window.meetEventSim?.setParticipantCountMismatchElapsed(MINUTE);
+
+        window.meetEventSim?.setLocalParticipantHost(false);
+
+        expect(window.meetEventSim?.participantCountMismatch()).toEqual({ elapsedMs: 0, isHostInCall: false });
+    });
+
+    it('restarts the clock when someone joins with the host in the call', () => {
+        const { dispatch } = createMeetingStore({ isLocalParticipantHost: true });
+        window.meetEventSim?.setHiddenParticipants(1);
+        window.meetEventSim?.setParticipantCountMismatchElapsed(MINUTE);
+
+        dispatch(setSortedParticipantIdentities(['alice', 'bob', 'carol']));
+
+        expect(window.meetEventSim?.participantCountMismatch()).toEqual({ elapsedMs: 0, isHostInCall: true });
+    });
+
+    it('keeps the clock when someone joins without the host in the call', () => {
+        const { dispatch } = createMeetingStore();
+        window.meetEventSim?.setHiddenParticipants(1);
+        window.meetEventSim?.setParticipantCountMismatchElapsed(MINUTE);
+
+        dispatch(setSortedParticipantIdentities(['alice', 'bob', 'carol']));
+
+        expect(window.meetEventSim?.participantCountMismatch()).toEqual({ elapsedMs: MINUTE, isHostInCall: false });
+    });
+
+    it('has no mismatch clock to move or report while the counts match', () => {
+        createMeetingStore();
+
+        expect(window.meetEventSim?.setParticipantCountMismatchElapsed(MINUTE)).toBe(false);
+        expect(window.meetEventSim?.participantCountMismatch()).toBeNull();
     });
 
     it('does nothing before the MLS group state is known', () => {
-        const { memberCount, mismatchSince } = createMeetingStore({ withMlsGroupState: false });
+        const { memberCount, mismatch } = createMeetingStore({ withMlsGroupState: false });
 
         expect(window.meetEventSim?.setHiddenParticipants(1)).toBe(false);
         expect(memberCount()).toBeUndefined();
-        expect(mismatchSince()).toBeNull();
+        expect(mismatch()).toBeNull();
     });
 });
 

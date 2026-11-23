@@ -7,7 +7,7 @@ import { selectInstantMeeting, selectMaxParticipants } from '@proton/meet/store/
 import { selectHiddenParticipantCount } from '@proton/meet/store/slices/participantCountMismatchListener';
 import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
-import { selectParticipantCountMismatchSince } from '@proton/meet/store/slices/uiStateSlice';
+import { selectParticipantCountMismatch } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -43,7 +43,10 @@ const renderPopup = ({ hiddenParticipantCount }: { hiddenParticipantCount: numbe
         [selectTotalParticipantCount, 2],
         [selectIsLocalParticipantAdminOrHost, false],
         [selectHiddenParticipantCount, hiddenParticipantCount],
-        [selectParticipantCountMismatchSince, hiddenParticipantCount ? Date.now() - MINUTE : null],
+        [
+            selectParticipantCountMismatch,
+            hiddenParticipantCount ? { since: Date.now() - MINUTE, isHostInCall: true } : null,
+        ],
     ]);
     vi.mocked(useMeetSelector).mockImplementation((selector) => selectedValues.get(selector));
     vi.mocked(useFlag).mockImplementation(

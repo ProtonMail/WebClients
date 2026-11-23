@@ -2,11 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectHiddenParticipantCount } from '@proton/meet/store/slices/participantCountMismatchListener';
-import {
-    MeetingSideBars,
-    openSideBar,
-    selectParticipantCountMismatchSince,
-} from '@proton/meet/store/slices/uiStateSlice';
+import { MeetingSideBars, openSideBar, selectParticipantCountMismatch } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -34,7 +30,10 @@ const renderWarning = ({
     const selectedValues = new Map<unknown, unknown>([
         [selectIsGuest, false],
         [selectHiddenParticipantCount, hiddenParticipantCount],
-        [selectParticipantCountMismatchSince, hiddenParticipantCount ? Date.now() - MINUTE : null],
+        [
+            selectParticipantCountMismatch,
+            hiddenParticipantCount ? { since: Date.now() - MINUTE, isHostInCall: true } : null,
+        ],
     ]);
     vi.mocked(useMeetSelector).mockImplementation((selector) => selectedValues.get(selector));
     vi.mocked(useFlag).mockImplementation(

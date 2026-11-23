@@ -30,15 +30,11 @@ import {
     selectParticipantsMap,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
-import {
-    selectParticipantCountMismatchSince,
-    setParticipantCountMismatchSince,
-} from '@proton/meet/store/slices/uiStateSlice';
+import { selectParticipantCountMismatch, setParticipantCountMismatch } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission, ParticipantEvent } from '@proton/meet/types/types';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { MISMATCH_WARNING_DELAY } from '../hooks/useMismatchStage';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { CaptionsSim } from './captionsSim';
 import { createCaptionsSim } from './captionsSim';
@@ -74,6 +70,8 @@ interface MeetEventSim {
     setLocalParticipantHost(isHost?: boolean): boolean;
     setWebsocketReconnecting(isReconnecting?: boolean): void;
     setHiddenParticipants(count: number): boolean;
+    setParticipantCountMismatchElapsed(milliseconds: number): boolean;
+    participantCountMismatch(): { elapsedMs: number; isHostInCall: boolean } | null;
 }
 
 declare global {
@@ -128,39 +126,25 @@ export const initMeetEventSim = ({
     const captions = createCaptionsSim(dispatch);
 
     const keepHiddenParticipants = (count: number) => {
-        const warningSince = Date.now() - MISMATCH_WARNING_DELAY;
-
         const getKeptMemberCount = (state: MeetState) => Math.max(selectConnectedMemberCount(state) + count, 1);
-
-        const keepWarningSince = () => {
-            const state = getState();
-            const mismatchSince = selectParticipantCountMismatchSince(state);
-            const isMismatchKept = getKeptMemberCount(state) !== selectConnectedMemberCount(state);
-            if (
-                selectMlsGroupState(state) &&
-                isMismatchKept &&
-                (mismatchSince === null || mismatchSince > warningSince)
-            ) {
-                dispatch(setParticipantCountMismatchSince(warningSince));
-            }
-        };
 
         const keepMemberCount = () => {
             const state = getState();
             const mlsGroupState = selectMlsGroupState(state);
             const memberCount = getKeptMemberCount(state);
-            if (mlsGroupState && mlsGroupState.memberCount !== memberCount) {
-                dispatch(setMlsGroupState({ ...mlsGroupState, memberCount }));
+            if (!mlsGroupState || mlsGroupState.memberCount === memberCount) {
+                return;
+            }
+            const mismatch = selectParticipantCountMismatch(state);
+            dispatch(setMlsGroupState({ ...mlsGroupState, memberCount }));
+            // A refresh with the real member count briefly matches the counts, which restarts the clock of the kept mismatch.
+            if (mismatch && selectParticipantCountMismatch(getState()) !== mismatch) {
+                dispatch(setParticipantCountMismatch(mismatch));
             }
         };
 
-        const reapplyHiddenParticipants = () => {
-            keepWarningSince();
-            keepMemberCount();
-        };
-
-        reapplyHiddenParticipants();
-        return subscribe(reapplyHiddenParticipants);
+        keepMemberCount();
+        return subscribe(keepMemberCount);
     };
 
     let stopKeepingHiddenParticipants = () => {};
@@ -284,6 +268,24 @@ export const initMeetEventSim = ({
             }
             dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: connectedMemberCount }));
             return true;
+        },
+
+        // The next timing restart (a join, a leave, the host leaving or rejoining) overrides it.
+        setParticipantCountMismatchElapsed(milliseconds) {
+            const mismatch = selectParticipantCountMismatch(getState());
+            if (!mismatch) {
+                return false;
+            }
+            dispatch(setParticipantCountMismatch({ ...mismatch, since: Date.now() - milliseconds }));
+            return true;
+        },
+
+        participantCountMismatch() {
+            const mismatch = selectParticipantCountMismatch(getState());
+            if (!mismatch) {
+                return null;
+            }
+            return { elapsedMs: Date.now() - mismatch.since, isHostInCall: mismatch.isHostInCall };
         },
     };
 

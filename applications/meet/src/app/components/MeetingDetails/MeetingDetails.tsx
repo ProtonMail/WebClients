@@ -150,6 +150,12 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
     );
     const participantsCountMismatchWarning = c('Info')
         .t`Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.`;
+    const mismatchTextByStage: Record<Exclude<MismatchStage, MismatchStage.Hidden>, string> = {
+        [MismatchStage.Info]: mlsMismatchText,
+        [MismatchStage.Warning]: participantsCountMismatchWarning,
+        [MismatchStage.HostAway]: c('Info')
+            .t`The host isn’t in the meeting right now. The participant counts will match again when the host joins.`,
+    };
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
@@ -334,11 +340,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                             )}
                         >
                             <span className="color-norm">{c('Title').t`Participant counts don’t match`}</span>
-                            <p className="color-weak mb-0">
-                                {mismatchStage === MismatchStage.Warning
-                                    ? participantsCountMismatchWarning
-                                    : mlsMismatchText}
-                            </p>
+                            <p className="color-weak mb-0">{mismatchTextByStage[mismatchStage]}</p>
                         </Card>
                     )}
                 </div>

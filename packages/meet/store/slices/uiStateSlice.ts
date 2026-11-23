@@ -41,6 +41,11 @@ enum ParticipantListTabs {
     AllParticipants = 1,
 }
 
+export interface ParticipantCountMismatch {
+    since: number;
+    isHostInCall: boolean;
+}
+
 interface UIState {
     meetingReadyPopupOpen: boolean;
     showDuration: boolean;
@@ -57,7 +62,7 @@ interface UIState {
     noDeviceDetected: PermissionPromptStatus;
     participantListTab: ParticipantListTabs;
     chatFocusedMessageId: string | null;
-    participantCountMismatchSince: number | null;
+    participantCountMismatch: ParticipantCountMismatch | null;
     participantCountMismatchBannerDismissed: boolean;
     transcriptionEnabled: boolean;
     joinError: JoinError | null;
@@ -86,7 +91,7 @@ const initialState: UIState = {
     noDeviceDetected: PermissionPromptStatus.CLOSED,
     participantListTab: ParticipantListTabs.AllParticipants,
     chatFocusedMessageId: null,
-    participantCountMismatchSince: null,
+    participantCountMismatch: null,
     participantCountMismatchBannerDismissed: false,
     transcriptionEnabled: false,
     joinError: null,
@@ -167,8 +172,8 @@ const slice = createSlice({
         setParticipantListTab: (state, action: PayloadAction<ParticipantListTabs>) => {
             state.participantListTab = action.payload;
         },
-        setParticipantCountMismatchSince: (state, action: PayloadAction<number | null>) => {
-            state.participantCountMismatchSince = action.payload;
+        setParticipantCountMismatch: (state, action: PayloadAction<ParticipantCountMismatch | null>) => {
+            state.participantCountMismatch = action.payload;
             // A dismissal only covers the mismatch it was made for, so a later one is surfaced again.
             state.participantCountMismatchBannerDismissed = false;
         },
@@ -197,7 +202,7 @@ const slice = createSlice({
             state.noDeviceDetected = initialState.noDeviceDetected;
             state.participantListTab = initialState.participantListTab;
             state.chatFocusedMessageId = initialState.chatFocusedMessageId;
-            state.participantCountMismatchSince = initialState.participantCountMismatchSince;
+            state.participantCountMismatch = initialState.participantCountMismatch;
             state.participantCountMismatchBannerDismissed = initialState.participantCountMismatchBannerDismissed;
             state.transcriptionEnabled = initialState.transcriptionEnabled;
             // Not joinError: a failed join's room disconnect also resets the ui, and its modal must stay up
@@ -219,7 +224,7 @@ export const {
     setPopupStateValue,
     setPermissionPromptStatus,
     setNoDeviceDetected,
-    setParticipantCountMismatchSince,
+    setParticipantCountMismatch,
     dismissParticipantCountMismatchBanner,
     toggleTranscription,
     setJoinError,
@@ -235,7 +240,7 @@ export const selectNoDeviceDetected = (state: MeetState) => state.uiState.noDevi
 export const selectShowDuration = (state: MeetState) => state.uiState.showDuration;
 export const selectParticipantListTab = (state: MeetState) => state.uiState.participantListTab;
 export const selectChatFocusedMessageId = (state: MeetState) => state.uiState.chatFocusedMessageId;
-export const selectParticipantCountMismatchSince = (state: MeetState) => state.uiState.participantCountMismatchSince;
+export const selectParticipantCountMismatch = (state: MeetState) => state.uiState.participantCountMismatch;
 export const selectParticipantCountMismatchBannerDismissed = (state: MeetState) =>
     state.uiState.participantCountMismatchBannerDismissed;
 export const selectTranscriptionEnabled = (state: MeetState) => state.uiState.transcriptionEnabled;
