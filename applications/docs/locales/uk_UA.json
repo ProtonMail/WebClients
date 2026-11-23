@@ -923,6 +923,12 @@
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
         "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
+      ],
+      "New": [
+        "Створити"
+      ],
+      "Skip to main content": [
+        "Перейти до основного вмісту"
       ]
     },
     "Actions message": {
@@ -2711,7 +2717,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Proton Mail захищає ваші листи за допомогою наскрізного шифрування з нульовим доступом, щоб ніхто сторонній (навіть Proton) не зміг прочитати ваші листи."
+        "Допоможіть нам покращитися"
       ]
     },
     "Downgrade warning": {
@@ -3565,6 +3571,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Нерозшифровна назва"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Нам не вдалося перевірити, чи можна витягнути це з кошика."
       ]
     },
     "error": {
@@ -3903,6 +3912,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Запит на отримання ключа безпеки було скасовано або закінчився час очікування. Спробуйте ще раз."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Ваш пристрій не зміг виконати запит на використання ключа безпеки. Спробуйте ще раз або скористайтеся іншим способом входу."
       ]
     },
     "fido2: Info": {
@@ -5604,6 +5619,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Ви все одно зможете переглядати дані власного облікового запису, але всі облікові записи користувачів будуть вилучені з вашої організації."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Ліцензії для помічників із написання більше не продаються."
       ]
     },
     "info": {
@@ -10180,6 +10198,73 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваш пробний період закінчиться ${ textDate }. З вас не буде стягнено плату, якщо ви скасуєте передплату до ${ textDate }. ${ action }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Код"
+      ],
+      "2x Basic usage": [
+        "2x Базове використання"
+      ],
+      "5x Plus usage": [
+        "Використання 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Доступ до API з щомісячним лімітом у розмірі ${ credit }"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Доступ до API з ${ credit } кредиту на місяць на кожного користувача"
+      ],
+      "Everything in Basic, and:": [
+        "Усе, що в Basic, а також:"
+      ],
+      "Everything in Free, and:": [
+        "Усе безкоштовно, а також:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе, що є у Plus, а також:"
+      ],
+      "Extended image generation": [
+        "Розширене створення зображень"
+      ],
+      "Includes:": [
+        "Включає:"
+      ],
+      "Limited image generation": [
+        "Обмежене створення зображень"
+      ],
+      "Limited messages and chat history": [
+        "Обмежена кількість повідомлень та історія чату"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Обмежені навички, проекти та заплановані завдання"
+      ],
+      "Maximum image generation": [
+        "Максимальна кількість згенерованих зображень"
+      ],
+      "Maximum Skills and Projects": [
+        "Найкращі навички та проекти"
+      ],
+      "More image generation": [
+        "Більше генерації зображень"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Більше навичок, проєктів та запланованих завдань"
+      ],
+      "More usage": [
+        "Інші варіанти використання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Для програмування та розробки"
+      ],
+      "For everyday chats": [
+        "Для щоденних розмов"
+      ],
+      "For getting more done": [
+        "Щоб встигнути зробити більше"
       ]
     }
   }

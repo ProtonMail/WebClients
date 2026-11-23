@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "New": [
+        "Nuevo"
+      ],
+      "Skip to main content": [
+        "Omitir al contenido principal"
       ]
     },
     "Actions message": {
@@ -1057,6 +1063,9 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencias del asistente de escritura"
       ]
     },
     "Alert": {
@@ -3614,6 +3623,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Failed to get invitee keys": [
+        "No se han podido obtener las claves de los invitados"
+      ],
+      "Failed to load the membership": [
+        "No se ha podido cargar la pertenencia"
+      ],
+      "Failed to load the membership data": [
+        "No se han podido cargar los datos de pertenencia"
+      ],
+      "Failed to verify membership": [
+        "No se ha podido verificar la pertenencia"
+      ],
+      "Some invitations could not be loaded": [
+        "No se han podido cargar algunas invitaciones"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "No pudimos verificar si puede usted sacarlo de la papelera o no."
       ]
     },
     "error": {
@@ -3951,6 +3978,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de la clave de seguridad se ha cancelado o ha superado el tiempo de espera. Inténtalo de nuevo."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Tu dispositivo no ha podido completar la solicitud de la clave de seguridad. Inténtalo de nuevo o usa otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -4657,7 +4690,7 @@
         "Cierra esta pantalla para salir."
       ],
       "Comments are not available yet": [
-        "/fe-docs/source-file-full.xliff\n4c44c717ae4338647f573cedb6161b082fac2d81\ncontexto. info\nSociedad:\n-drive\nArchivos:\n- /src/app/routes/(user)/(document)/doc2/__components/DocumentHeaderV2.tsx:68\nArchivo: docs-webapp.xliff"
+        "Los comentarios aún no están disponibles"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conéctate a ${ VPN_APP_NAME } para navegar de forma privada."
@@ -5704,6 +5737,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrás seguir viendo los datos de tu propia cuenta, pero todas las cuentas de usuario serán eliminadas de tu organización."
+      ],
+      "Your current document will be replaced with this version.": [
+        "Esta versión sustituirá a tu documento actual."
       ]
     },
     "info": {

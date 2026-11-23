@@ -946,6 +946,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "New": [
+        "Νέο"
+      ],
+      "Skip to main content": [
+        "Μετάβαση στο κύριο περιεχόμενο"
       ]
     },
     "Actions message": {
@@ -1054,6 +1060,13 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέση βοηθού γραφής",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
       ]
     },
     "Alert": {
@@ -3611,6 +3624,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "Failed to get invitee keys": [
+        "Αποτυχία λήψης των κλειδιών του προσκεκλημένου"
+      ],
+      "Failed to load the membership": [
+        "Αποτυχία φόρτωσης της συνδρομής"
+      ],
+      "Failed to load the membership data": [
+        "Αποτυχία φόρτωσης των δεδομένων συνδρομών"
+      ],
+      "Failed to verify membership": [
+        "Αποτυχία επαλήθευσης της συνδρομής"
+      ],
+      "Some invitations could not be loaded": [
+        "Ορισμένες προσκλήσεις δεν ήταν δυνατό να φορτωθούν"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Δεν μπορέσαμε να ελέγξουμε αν μπορείτε να το βγάλετε έξω από τον κάδο απορριμμάτων."
       ]
     },
     "error": {
@@ -3948,6 +3979,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Το αίτημα κλειδιού ασφαλείας ακυρώθηκε ή έληξε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Η συσκευή σας δεν μπόρεσε να ολοκληρώσει το αίτημα κλειδιού ασφαλείας. Προσπαθήστε ξανά, ή επιλέξτε κάποια άλλη μέθοδο σύνδεσης."
       ]
     },
     "fido2: Info": {
@@ -5701,6 +5738,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Your current document will be replaced with this version.": [
+        "Το τρέχον έγγραφό σας θα αντικατασταθεί από αυτή την έκδοση."
       ]
     },
     "info": {
