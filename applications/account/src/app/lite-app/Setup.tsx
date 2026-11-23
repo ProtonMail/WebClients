@@ -5,6 +5,7 @@ import { flushSync } from 'react-dom';
 import { createUnleash, unleashReady } from '@proton/account/bootstrap';
 import { serverEvent } from '@proton/account/eventLoop';
 import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import type { OAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { readOAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -52,6 +53,13 @@ import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
 import { SupportedActions } from './helper';
 
+/**
+ * Actions that load the locale of the account when the client sends no `language`. They are opened with a forked
+ * session that can read the user settings. Other actions, such as those opened with a JWT, cannot, and would only
+ * fill the logs with failed requests, so they keep using the browser locale.
+ */
+const ACTIONS_WITH_ACCOUNT_LOCALE: SupportedActions[] = [SupportedActions.BYOEMobile];
+
 const initializeTelemetry = (config: ProtonConfig, UID: string) => {
     // Deliberately ignoring user settings as lite app uses JWT token for auth and the token does not have permissions to fetch user settings
     // There are very few users for lite app, so the impact is very low
@@ -81,9 +89,11 @@ interface Props {
     api: ApiWithListener;
     loader: ReactNode;
     action: SupportedActions | null;
+    /** Language requested by the client when opening the page. The URL hash is cleared and the component remounts after login, so it must come from the parent. */
+    language: string | null;
 }
 
-const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
+const Setup = ({ api, onLogin, UID, children, loader, action, language }: Props) => {
     const config = useConfig();
     const errorHandler = useErrorHandler();
     const dispatch = useAccountDispatch();
@@ -166,11 +176,34 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
                 return { user };
             };
 
-            const loadLocales = () => {
-                const languageParams = searchParams.get('language');
+            /**
+             * The language asked for by the client wins, then the locale of the account (for the supported actions), then the browser's.
+             * The account locale is best effort: a failure to read it must not break the page.
+             */
+            const getLocale = async (browserLocaleCode: string) => {
+                if (language) {
+                    return language;
+                }
+                if (!action || !ACTIONS_WITH_ACCOUNT_LOCALE.includes(action)) {
+                    return browserLocaleCode;
+                }
+                try {
+                    const userSettings = await dispatch(userSettingsThunk());
+                    return userSettings.Locale || browserLocaleCode;
+                } catch {
+                    return browserLocaleCode;
+                }
+            };
+
+            const loadLocales = async () => {
                 const browserLocaleCode = getBrowserLocale();
-                const locale = languageParams || browserLocaleCode;
-                return loadLocalesI18n({ locales, locale, browserLocaleCode, userSettings: undefined });
+                const locale = await getLocale(browserLocaleCode);
+                return loadLocalesI18n({
+                    locales,
+                    locale,
+                    browserLocaleCode,
+                    userSettings: undefined,
+                });
             };
 
             await Promise.all([
@@ -203,7 +236,11 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
                 return UID;
             }
 
-            const session = await resumeSession({ api, localID, options: { user: false } });
+            const session = await resumeSession({
+                api,
+                localID,
+                options: { user: false },
+            });
             if (session.UID !== UID) {
                 throw new Error('Session mismatch after the OAuth redirect');
             }
@@ -213,7 +250,10 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
         };
 
         const handleSetupError = (error: any) => {
-            broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
+            broadcast({
+                type: MessageType.ERROR,
+                payload: getGenericErrorPayload(error),
+            });
 
             const { code } = getApiError(error);
             if (code === API_CUSTOM_ERROR_CODES.JWT_EXPIRED) {
@@ -293,7 +333,10 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
         setError({
             message: 'No selector or JWT token found',
         });
-        broadcast({ type: MessageType.ERROR, payload: { message: 'No selector or JWT token found' } });
+        broadcast({
+            type: MessageType.ERROR,
+            payload: { message: 'No selector or JWT token found' },
+        });
     }, []);
 
     if (expiredLinkError) {
