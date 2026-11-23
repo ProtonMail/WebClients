@@ -39,6 +39,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { c } from 'ttag'
 
 import { AutoGrowingInput } from '~/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/AutoGrowingInput'
+import { BetaFeatureBadge } from '~/components/document/DocumentLayout/DocumentHeader/BetaFeatureBadge'
 import { WordCountIcon } from '~/components/document/DocumentLayout/DocumentHeader/icons'
 import { useApplication } from '~/utils/application-context'
 import { useIsDownloadLogsAllowed, useIsODTEnabled, useIsSheetsEnabled } from '~/utils/flags'
@@ -376,7 +377,7 @@ export function DocumentTitleMenu({
             contentProps={{ offset: 0 }}
           >
             <DropdownMenu>
-              {downloadFormats(isODTEnabled).map(({ format, label }) => (
+              {downloadFormats(isODTEnabled).map(({ format, label, isBeta }) => (
                 <DropdownMenuButton
                   key={format}
                   className="flex items-center text-left"
@@ -384,6 +385,7 @@ export function DocumentTitleMenu({
                   data-testid={`download-${format}`}
                 >
                   {label}
+                  {isBeta && <BetaFeatureBadge />}
                 </DropdownMenuButton>
               ))}
               <DropdownMenuButton
@@ -485,10 +487,12 @@ export function DocumentTitleMenu({
 }
 
 /** /doc's docs download formats, but PDF, which the editor doesn't export: it prints */
-function downloadFormats(isODTEnabled: boolean): { format: DataTypesThatDocumentCanBeExportedAs; label: string }[] {
+function downloadFormats(
+  isODTEnabled: boolean,
+): { format: DataTypesThatDocumentCanBeExportedAs; label: string; isBeta?: boolean }[] {
   return [
     { format: 'docx', label: c('Action').t`Microsoft Word (.docx)` },
-    ...(isODTEnabled ? [{ format: 'odt' as const, label: c('Action').t`OpenDocument Text (.odt) (Beta)` }] : []),
+    ...(isODTEnabled ? [{ format: 'odt' as const, label: c('Action').t`OpenDocument Text (.odt)`, isBeta: true }] : []),
     { format: 'html', label: c('Action').t`Web page (.html)` },
     { format: 'txt', label: c('Action').t`Plain Text (.txt)` },
     { format: 'md', label: c('Action').t`Markdown (.md)` },

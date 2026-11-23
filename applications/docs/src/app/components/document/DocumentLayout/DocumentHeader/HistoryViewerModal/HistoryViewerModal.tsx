@@ -24,6 +24,7 @@ import type { NativeVersionHistory } from '@proton/docs-core/VersionHistory/Nati
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { HistoryTimeline } from './HistoryTimeline'
+import { BetaFeatureBadge } from '../BetaFeatureBadge'
 import { SingleRevisionViewer } from './SingleRevisionViewer'
 import useLoading from '@proton/hooks/useLoading'
 import type { SerializedEditorState } from 'lexical'
@@ -378,7 +379,8 @@ function HistoryViewerModalContent({
                         })
                       }}
                     >
-                      {c('Action').t`Export this version (as odt) (Beta)`}
+                      {c('Action').t`Export this version (as odt)`}
+                      <BetaFeatureBadge />
                     </Button>
                   )}
                   {isDebugMode && (
