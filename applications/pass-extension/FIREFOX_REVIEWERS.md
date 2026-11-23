@@ -8,7 +8,7 @@ Below are the requirements and build steps for our ProtonPass extension release.
 
 Before building the extension, please ensure that you have the following versions installed:
 
-- node v24.22.1
+- node v26.13.1
 
 ### File info
 
