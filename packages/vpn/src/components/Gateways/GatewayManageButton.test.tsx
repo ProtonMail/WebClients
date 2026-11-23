@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import type { Gateway, GatewayLogical } from '../../../types/Gateway';
+import type { Gateway, GatewayLogical } from '../../types/Gateway';
 import { GatewayManageButton } from './GatewayManageButton';
 
 const permissions = new Set<string>();
