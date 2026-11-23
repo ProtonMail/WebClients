@@ -67,6 +67,7 @@ import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
+import { useMoveEngine } from '../../../helpers/location/MoveEngine/useMoveEngine';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../../hooks/actions/applyLocation/useApplyLocation';
@@ -131,6 +132,7 @@ const HeaderMoreDropdown = ({
     const dispatch = useMailDispatch();
     const [loading, withLoading] = useLoading();
     const { applyLocation } = useApplyLocation();
+    const { messageMoveEngine } = useMoveEngine();
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>(undefined);
@@ -267,6 +269,10 @@ const HeaderMoreDropdown = ({
     const selectedIDs = [messageID];
     const isSpam = messageLabelIDs.includes(MAILBOX_LABEL_IDS.SPAM);
     const isInTrash = messageLabelIDs.includes(MAILBOX_LABEL_IDS.TRASH);
+    const canMoveTrashedToInbox =
+        isInTrash &&
+        messageMoveEngine.validateMove(MAILBOX_LABEL_IDS.INBOX, [message.data as Message], false).allowedElements
+            .length > 0;
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
     const { viewportWidth } = useActiveBreakpoint();
     const additionalDropdowns: DropdownRender[] | undefined = viewportWidth['<=small']
@@ -387,7 +393,7 @@ const HeaderMoreDropdown = ({
                         </Button>
                     </Tooltip>
                 )}
-                {isInTrash ? (
+                {canMoveTrashedToInbox && (
                     <Tooltip title={titleMoveInbox}>
                         <Button
                             icon
@@ -398,7 +404,8 @@ const HeaderMoreDropdown = ({
                             <IcInbox alt={c('Title').t`Move to inbox`} />
                         </Button>
                     </Tooltip>
-                ) : (
+                )}
+                {!isInTrash && (
                     <Tooltip title={titleMoveTrash}>
                         <Button
                             icon
