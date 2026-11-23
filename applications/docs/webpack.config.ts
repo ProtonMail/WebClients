@@ -11,6 +11,12 @@ import appConfig from './appConfig'
 
 const result = (opts: WebpackEnvArguments): Configuration => {
   const webpackOptions = getWebpackOptions(opts, { appConfig })
+  // The dev server's type checker takes about 1-2 GB per app. Environments that type check on their own, like
+  // agent sandboxes running several dev servers, turn it off with DOCS_DEV_SKIP_TYPECHECK=true.
+  if (process.env.DOCS_DEV_SKIP_TYPECHECK === 'true') {
+    webpackOptions.errorLogs = false
+    webpackOptions.warningLogs = false
+  }
   const config = getConfig(webpackOptions)
 
   if (webpackOptions.appMode === 'standalone') {
