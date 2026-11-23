@@ -136,23 +136,23 @@ catalogs:
     # Docs' Lexical, at the version @proton-docs/docs-editor needs. A Docs manifest declaring a name
     # that is also in the default catalog needs an exception (see utilities/repo-rules/README.md).
     docs:
-        '@lexical/clipboard': 0.32.1
-        '@lexical/code': 0.32.1
-        '@lexical/hashtag': 0.32.1
-        '@lexical/headless': 0.32.1
-        '@lexical/html': 0.32.1
-        '@lexical/link': 0.32.1
-        '@lexical/list': 0.32.1
-        '@lexical/markdown': 0.32.1
-        '@lexical/overflow': 0.32.1
-        '@lexical/react': 0.32.1
-        '@lexical/rich-text': 0.32.1
-        '@lexical/selection': 0.32.1
-        '@lexical/table': 0.32.1
-        '@lexical/text': 0.32.1
-        '@lexical/utils': 0.32.1
-        '@lexical/yjs': 0.32.1
-        lexical: 0.32.1
+        '@lexical/clipboard': 0.33.0
+        '@lexical/code': 0.33.0
+        '@lexical/hashtag': 0.33.0
+        '@lexical/headless': 0.33.0
+        '@lexical/html': 0.33.0
+        '@lexical/link': 0.33.0
+        '@lexical/list': 0.33.0
+        '@lexical/markdown': 0.33.0
+        '@lexical/overflow': 0.33.0
+        '@lexical/react': 0.33.0
+        '@lexical/rich-text': 0.33.0
+        '@lexical/selection': 0.33.0
+        '@lexical/table': 0.33.0
+        '@lexical/text': 0.33.0
+        '@lexical/utils': 0.33.0
+        '@lexical/yjs': 0.33.0
+        lexical: 0.33.0
 
 # Yarn resolved any range that a workspace satisfies to that workspace, including the `*` peer
 # dependencies between @proton packages.
@@ -205,13 +205,14 @@ allowBuilds:
 
 patchedDependencies:
     '@electron-forge/core@7.11.2': patches/@electron-forge__core@7.11.2.patch
-    # Touch-only fix: tapping from a cell in one table into another threw "Cell not found in table." and
-    # locked the Docs editor. Upstream has the same check from 0.52.0; drop this when upgrading Docs' Lexical to 0.52.0 or later.
-    '@lexical/table@0.32.1': patches/@lexical__table@0.32.1.patch
-    # TabNodes written by Lexical before 0.32.1 can hold more than a tab character, and 0.32.1's
+    # Touch-only fixes, the same patch as @proton-docs/docs-editor's: tapping from a cell in one table
+    # into another threw "Cell not found in table." and locked the Docs editor (upstream has the same
+    # check from 0.52.0), and a touch drag across cells selected nothing, which 0.33.0 alone breaks.
+    '@lexical/table@0.33.0': patches/@lexical__table@0.33.0.patch
+    # TabNodes written by Lexical before 0.32.1 can hold more than a tab character, and from 0.32.1
     # TabNode.setTextContent throws on them, so the paragraph loaded empty. This restores 0.32.0's
     # direct write; @proton-docs/docs-editor's FixBrokenTabNode then repairs the tab.
-    '@lexical/yjs@0.32.1': patches/@lexical__yjs@0.32.1.patch
+    '@lexical/yjs@0.33.0': patches/@lexical__yjs@0.33.0.patch
     '@mlc-ai/web-llm@0.2.32': patches/@mlc-ai__web-llm@0.2.32.patch
     '@pdf-lib/standard-fonts@1.0.0': patches/@pdf-lib__standard-fonts@1.0.0.patch
     # LUMO-988: copy the full scaled iframe bitmap instead of its top-left quarter.
