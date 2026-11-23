@@ -435,6 +435,7 @@ enum PaymentsFeatureFlag {
     LumoPlans2026 = 'LumoPlans2026',
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     PaymentProcessorsRefactor = 'PaymentProcessorsRefactor',
+    PaymentsOffers = 'PaymentsOffers',
     PaypalKrw = 'PaypalKrw',
     SepaPayments = 'SepaPayments',
     SepaPaymentsB2C = 'SepaPaymentsB2C',

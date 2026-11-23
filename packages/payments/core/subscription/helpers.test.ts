@@ -16,6 +16,7 @@ import {
     getAutoCoupon,
     getAvailableSubscriptionActions,
     getCodes,
+    getOfferOrCodes,
     getSoonestEndingSubscription,
     getSubscriptionPlanTitle,
     hasBlackFriday2026Coupon,
@@ -1908,5 +1909,25 @@ describe('getCodes', () => {
         expect(getCodes({ gift: '', coupon: 'COUPON' })).toEqual(['COUPON']);
         expect(getCodes({ gift: 'GIFT' })).toEqual(['GIFT']);
         expect(getCodes({})).toEqual([]);
+    });
+});
+
+describe('getOfferOrCodes', () => {
+    it('returns only the offer and drops every code', () => {
+        expect(getOfferOrCodes({ offer: 'SPRING', codes: ['GIFT', 'COUPON'] })).toEqual({
+            Offer: 'SPRING',
+            Codes: [],
+        });
+    });
+
+    it('trims the offer name', () => {
+        expect(getOfferOrCodes({ offer: '  SPRING ', codes: [] })).toEqual({ Offer: 'SPRING', Codes: [] });
+    });
+
+    it.each([undefined, null, '', '   '])('keeps the codes and sends no Offer key for %p', (offer) => {
+        const result = getOfferOrCodes({ offer, codes: ['COUPON'] });
+
+        expect(result).toEqual({ Codes: ['COUPON'] });
+        expect(result).not.toHaveProperty('Offer');
     });
 });

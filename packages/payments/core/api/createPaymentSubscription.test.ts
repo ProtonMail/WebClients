@@ -123,6 +123,53 @@ describe('createPaymentSubscription', () => {
         );
     });
 
+    describe('offer', () => {
+        const subscribeAndGetPayload = async (data: SubscribeData) => {
+            const api = vi.fn().mockResolvedValue({ Subscription: {} });
+
+            await createPaymentSubscription(api as unknown as Api, data, {
+                build: 'proton-account' as APP_NAMES,
+                telemetryContext: undefined,
+                userCurrency: 'USD',
+                subscription: undefined,
+                product: 'generic',
+                paymentMethodType: undefined,
+                paymentMethodValue: undefined,
+            } as any);
+
+            return api.mock.calls[0][0].data;
+        };
+
+        it('should send the offer to the backend', async () => {
+            const payload = await subscribeAndGetPayload({
+                ...buildData({ [PLANS.BUNDLE]: 1 }),
+                Offer: 'SPRING',
+                Codes: [],
+            });
+
+            expect(payload.Offer).toBe('SPRING');
+            expect(payload.Codes).toEqual([]);
+        });
+
+        it('should keep the coupon-only payload unchanged', async () => {
+            const payload = await subscribeAndGetPayload({
+                ...buildData({ [PLANS.BUNDLE]: 1 }),
+                Codes: ['COUPON'],
+            });
+
+            expect(Object.keys(payload)).toEqual([
+                'Plans',
+                'Amount',
+                'Currency',
+                'Cycle',
+                'PaymentToken',
+                'BillingAddress',
+                'Codes',
+            ]);
+            expect(payload.Codes).toEqual(['COUPON']);
+        });
+    });
+
     it('should keep the postal code of a provisioned address', async () => {
         const api = vi.fn().mockResolvedValue({ Subscription: {} });
 

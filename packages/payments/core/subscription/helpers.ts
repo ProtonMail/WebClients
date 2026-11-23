@@ -991,3 +991,16 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
 
 export const getCodes = ({ gift, coupon }: { gift?: string; coupon?: string }): string[] =>
     [gift, coupon].filter(isTruthy);
+
+/** The backend rejects an empty `Offer` (422) and ignores coupons when an offer is set. */
+export const getOfferOrCodes = ({
+    offer,
+    codes,
+}: {
+    offer?: string | null;
+    codes: string[];
+}): { Offer?: string; Codes: string[] } => {
+    const trimmedOffer = offer?.trim();
+
+    return trimmedOffer ? { Offer: trimmedOffer, Codes: [] } : { Codes: codes };
+};

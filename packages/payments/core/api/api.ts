@@ -87,6 +87,7 @@ export type CheckSubscriptionData = {
     Cycle: Cycle;
     CouponCode?: string;
     Codes?: string[];
+    Offer?: string;
     IsTrial?: boolean;
     /**
      * For taxes

@@ -105,6 +105,65 @@ describe('usePaymentsApi', () => {
         expect(checkResult).not.toHaveProperty('GuardResultCode');
     });
 
+    describe('offer', () => {
+        const checkAndGetSentData = async (data: Partial<CheckSubscriptionData>) => {
+            const { result } = renderHook(() => usePaymentsApi(), { wrapper: getWrapper() });
+
+            await result.current.paymentsApi.checkSubscription({ ...getCheckSubscriptionData(), ...data });
+
+            return apiMock.mock.calls.find(([call]) => call.url === 'payments/v5/subscription/check')?.[0].data;
+        };
+
+        it('strips coupon codes from an offer check, including the legacy CouponCode', async () => {
+            const sent = await checkAndGetSentData({ Offer: 'SUMMITDEAL', Codes: ['GIFT'], CouponCode: 'LEGACY' });
+
+            expect(sent.Offer).toBe('SUMMITDEAL');
+            expect(sent.Codes).toEqual([]);
+            expect(sent.CouponCode).toBeUndefined();
+        });
+
+        it('keeps filling Codes from the legacy CouponCode without an offer', async () => {
+            const sent = await checkAndGetSentData({ CouponCode: 'LEGACY' });
+
+            expect(sent).not.toHaveProperty('Offer');
+            expect(sent.Codes).toEqual(['LEGACY']);
+        });
+    });
+
+    describe('multiCheck cache', () => {
+        const getRegularCheckData = (Offer?: string): CheckSubscriptionData => ({
+            Plans: { [PLANS.MAIL]: 1 },
+            Currency: 'EUR',
+            Cycle: 1,
+            Codes: [],
+            ...(Offer && { Offer }),
+        });
+
+        const getCheckCalls = () =>
+            apiMock.mock.calls.filter(([call]) => call.url === 'payments/v5/subscription/check');
+
+        it('checks again when only the offer differs', async () => {
+            const { result } = renderHook(() => usePaymentsApi(), { wrapper: getWrapper() });
+            const options = { signal: new AbortController().signal, silence: true, plansMap: {} };
+
+            await result.current.paymentsApi.multiCheck([getRegularCheckData()], options);
+            await result.current.paymentsApi.multiCheck([getRegularCheckData('SPRING')], options);
+
+            const sentOffers = getCheckCalls().map(([call]) => call.data.Offer);
+            expect(sentOffers).toEqual([undefined, 'SPRING']);
+        });
+
+        it('reuses the cached estimation for the same offer', async () => {
+            const { result } = renderHook(() => usePaymentsApi(), { wrapper: getWrapper() });
+            const options = { signal: new AbortController().signal, silence: true, plansMap: {} };
+
+            await result.current.paymentsApi.multiCheck([getRegularCheckData('SPRING')], options);
+            await result.current.paymentsApi.multiCheck([getRegularCheckData('SPRING')], options);
+
+            expect(getCheckCalls()).toHaveLength(1);
+        });
+    });
+
     describe('lifetime plan check (products/check)', () => {
         const getLifetimeCheckData = (ValidateGuards?: boolean): CheckSubscriptionData => ({
             Plans: { [PLANS.PASS_LIFETIME]: 1 },
@@ -138,6 +197,20 @@ describe('usePaymentsApi', () => {
 
             const request = apiMock.mock.calls.find(([call]) => call.url === 'payments/v5/products/check')?.[0];
             expect(JSON.parse(JSON.stringify(request?.data))).not.toHaveProperty('ValidateGuards');
+        });
+
+        it('checks the product without the offer and returns no offer discount', async () => {
+            mockProductsCheck();
+            const { result } = renderHook(() => usePaymentsApi(), { wrapper: getWrapper() });
+
+            const checkResult = await result.current.paymentsApi.checkSubscription({
+                ...getLifetimeCheckData(),
+                Offer: 'SPRING',
+            });
+
+            const request = apiMock.mock.calls.find(([call]) => call.url === 'payments/v5/products/check')?.[0];
+            expect(JSON.parse(JSON.stringify(request?.data))).not.toHaveProperty('Offer');
+            expect(checkResult.Amount).toBe(19900);
         });
 
         it('returns the guard refusals from the response', async () => {
