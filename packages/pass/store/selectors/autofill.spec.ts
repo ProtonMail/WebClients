@@ -108,6 +108,31 @@ describe('Autofill selectors', () => {
             expect(candidate).toEqual(state.items.byShareId.share1.item1);
         });
 
+        test('should match item when the username was typed with another case', () => {
+            const submission = { data: { userIdentifier: 'Test@Proton.me' } } as FormSubmission;
+            const candidate = selectOTPCandidate('https://proton.me', submission)(state);
+            expect(candidate).toEqual(state.items.byShareId.share1.item1);
+        });
+
+        test('should prefer the item with the exact username when two only differ by case', () => {
+            const twinState = getStateMock();
+            const twin = {
+                ...twinState.items.byShareId.share1.item1,
+                itemId: 'share1-twin',
+                data: itemBuilder('login').set('content', (content) =>
+                    content
+                        .set('autofillUrls', [{ url: 'https://proton.me', mode: AutofillMode.Default }])
+                        .set('itemEmail', 'Test@proton.me')
+                        .set('totpUri', '424242424242424242424242')
+                ).data,
+            };
+            twinState.items.byShareId.share1 = { twin, ...twinState.items.byShareId.share1 };
+
+            const typed = (userIdentifier: string) => ({ data: { userIdentifier } }) as FormSubmission;
+            expect(selectOTPCandidate('https://proton.me', typed('test@proton.me'))(twinState)?.itemId).toEqual('share1-item1');
+            expect(selectOTPCandidate('https://proton.me', typed('Test@proton.me'))(twinState)?.itemId).toEqual('share1-twin');
+        });
+
         test('should match item for subdomain and username', () => {
             const submission = { data: { userIdentifier: 'test@proton.me' } } as FormSubmission;
             const candidate = selectOTPCandidate('https://subdomain.proton.me', submission)(state);

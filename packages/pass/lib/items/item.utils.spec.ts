@@ -291,6 +291,17 @@ describe('Item utils', () => {
             expect(filterItemsByUserIdentifier('user@example.com')(items)).toEqual([items[0]]);
         });
 
+        test('should count a login saved with another case of the address', () => {
+            const login = itemBuilder('login');
+            login.get('content').set('itemEmail', 'User@Example.com');
+
+            const items = [
+                createTestItem('login', { shareId: 'share1', itemId: 'item1', revision: 1, data: login.data }),
+            ] as LoginItem[];
+
+            expect(filterItemsByUserIdentifier('user@example.com')(items)).toEqual([items[0]]);
+        });
+
         test('should return an empty array if no items match the user identifier', () => {
             const login1 = itemBuilder('login');
             login1.get('content').set('itemEmail', 'other@example.com');
