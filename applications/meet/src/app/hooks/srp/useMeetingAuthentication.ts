@@ -4,6 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { requestAccessToken, requestHandshakeInfo } from '@proton/meet/api/meetSrpRequests';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 
+import { markAccessTokenError } from '../../utils/accessTokenError';
 import { isExpectedApiFailure } from '../../utils/isExpectedApiFailure';
 
 export const useMeetingAuthentication = () => {
@@ -49,6 +50,7 @@ export const useMeetingAuthentication = () => {
                     websocketUrl: WebsocketUrl.replace('/rtc', ''),
                 };
             } catch (error) {
+                markAccessTokenError(error);
                 if (!isExpectedApiFailure(error)) {
                     reportMeetError('Failed to get access details', {
                         context: { error },

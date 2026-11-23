@@ -7,9 +7,11 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { MEETING_LOCKED_ERROR_CODE } from '../constants';
 import { toMeetCoreErrorEnum } from '../wasm/meetCoreError';
+import { isAccessTokenError } from './accessTokenError';
 import { isConnectionTimeoutError } from './connectionErrors';
 
 export enum MeetingErrorKind {
+    MeetingNotAllowed = 'meetingNotAllowed',
     MeetingGone = 'meetingGone',
     MeetingLocked = 'meetingLocked',
     AlreadyNotified = 'alreadyNotified',
@@ -47,6 +49,10 @@ export const classifyMeetingError = (error: any): MeetingErrorKind => {
 
     if (code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
         return MeetingErrorKind.MeetingGone;
+    }
+
+    if (code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED && isAccessTokenError(error)) {
+        return MeetingErrorKind.MeetingNotAllowed;
     }
 
     if (code === MEETING_LOCKED_ERROR_CODE) {

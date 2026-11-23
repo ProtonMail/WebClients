@@ -2,6 +2,7 @@ import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { ConnectionError } from 'livekit-client';
 import { describe, expect, it } from 'vitest';
 
+import { markAccessTokenError } from './accessTokenError';
 import { MeetingErrorKind, classifyMeetingError } from './classifyMeetingError';
 
 const apiError = (Code: number, Error: string, status = 400) => ({
@@ -13,6 +14,17 @@ const apiError = (Code: number, Error: string, status = 400) => ({
 describe('classifyMeetingError', () => {
     it('recognises a meeting that no longer exists', () => {
         expect(classifyMeetingError(apiError(2501, 'Meeting does not exist'))).toBe(MeetingErrorKind.MeetingGone);
+    });
+
+    it('recognises a meeting not allowed when the access token refuses it', () => {
+        const error = apiError(2011, 'The host has another meeting in progress', 422);
+        markAccessTokenError(error);
+
+        expect(classifyMeetingError(error)).toBe(MeetingErrorKind.MeetingNotAllowed);
+    });
+
+    it('does not read a not allowed error from another request as a meeting not allowed', () => {
+        expect(classifyMeetingError(apiError(2011, 'Not allowed', 422))).toBe(MeetingErrorKind.Unknown);
     });
 
     it('recognises a locked meeting', () => {
