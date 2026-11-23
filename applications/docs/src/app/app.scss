@@ -14,6 +14,11 @@
 	--logo-text-product-color: #1b1340;
 }
 
+// The background of the error page and its header ("You don't have access"...), as on the homepage in dark mode
+:root[data-theme-mode='dark'] {
+	--signal-info-minor-custom: var(--background-norm);
+}
+
 :root[data-theme-mode='dark'] .ui-standard {
 	--logo-text-proton-color: var(--text-norm);
 	--logo-text-product-color: var(--text-norm);
