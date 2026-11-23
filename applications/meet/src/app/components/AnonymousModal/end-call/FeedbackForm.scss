@@ -29,6 +29,6 @@ im.$media-expressions: $media-expressions;
 }
 
 .feedback-form-card {
-	background-color: rgb(255 255 255 / 0.08);
+	background-color: var(--background-alpha-norm);
 	border: 1px solid rgb(255 255 255 / 0.16);
 }
