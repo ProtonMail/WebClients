@@ -1665,6 +1665,9 @@ importers:
       '@proton/icons':
         specifier: workspace:^
         version: link:../../packages/icons
+      '@proton/offers-delivery':
+        specifier: workspace:^
+        version: link:../../packages/offers-delivery
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack
