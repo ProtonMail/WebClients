@@ -14,19 +14,19 @@ struct Response {
     secret: String,
 }
 
-pub enum Interception {
-    Intercepted(String),
-    Continue,
-}
+// Fallback for extensions older than the localized `reason` field
+const DEFAULT_REASON: &str = "Authenticate to continue";
 
-pub async fn intercept_unlock(msg: &NativeMessage) -> Result<Interception, NativeMessageError> {
-    if msg.message_type != "unlock" {
-        return Ok(Interception::Continue);
-    }
+pub async fn unlock(msg: &NativeMessage) -> Result<String, NativeMessageError> {
+    info!("Handle unlock");
 
-    info!("Intercept unlock match");
+    let reason = if msg.reason.is_empty() {
+        DEFAULT_REASON.to_string()
+    } else {
+        msg.reason.clone()
+    };
 
-    Biometrics::new_check_presence("Authenticate to continue".to_string()).map_err(presence_check_error)?;
+    Biometrics::new_check_presence(reason).map_err(presence_check_error)?;
 
     let secret_vec = Biometrics::get_secret(msg.user_identifier.clone())
         .map_err(|_| NativeMessageError::new(NativeErrorCode::SecretNotFound))?;
@@ -40,9 +40,9 @@ pub async fn intercept_unlock(msg: &NativeMessage) -> Result<Interception, Nativ
     })
     .map_err(|_| NativeMessageError::new(NativeErrorCode::Unknown))?;
 
-    info!("Intercept success");
+    info!("Unlock success");
 
-    Ok(Interception::Intercepted(response))
+    Ok(response)
 }
 
 fn presence_check_error(error: anyhow::Error) -> NativeMessageError {

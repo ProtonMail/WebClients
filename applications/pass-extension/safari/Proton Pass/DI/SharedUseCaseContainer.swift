@@ -68,6 +68,10 @@ extension SharedUseCaseContainer {
         self { FetchRelatedOrigins() }
     }
 
+    var unlockWithBiometrics: Factory<any UnlockWithBiometricsUseCase> {
+        self { UnlockWithBiometrics(authenticator: SharedToolingContainer.shared.biometricAuthenticator()) }
+    }
+
     var resetDataIfFirstRun: Factory<any ResetDataIfFirstRunUseCase> {
         self { ResetDataIfFirstRun(setEnvironment: self.setEnvironment(),
                                    credentialProvider: self.credentialProvider()) }

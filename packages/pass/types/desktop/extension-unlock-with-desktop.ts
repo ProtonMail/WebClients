@@ -1,6 +1,7 @@
 export enum NativeMessageType {
     SETUP_LOCK_SECRET = 'setup-lock-secret',
     UNLOCK = 'unlock',
+    DELETE_LOCK_SECRET = 'delete-lock-secret',
 }
 
 export enum NativeMessageErrorType {
@@ -23,9 +24,11 @@ export enum NativeMessageErrorType {
     TOO_MANY_ATTEMPTS = 'TOO_MANY_ATTEMPTS',
 }
 
-export type NativeMessageRequest = NativeMessageSetupLockSecretRequest | NativeMessageUnlockRequest;
+export type NativeMessageRequest =
+    NativeMessageSetupLockSecretRequest | NativeMessageUnlockRequest | NativeMessageDeleteLockSecretRequest;
 
-export type NativeMessageResponse = NativeMessageSetupLockSecretResponse | NativeMessageUnlockResponse;
+export type NativeMessageResponse =
+    NativeMessageSetupLockSecretResponse | NativeMessageUnlockResponse | NativeMessageDeleteLockSecretResponse;
 
 export type NativeMessage = NativeMessageRequest | NativeMessageResponse;
 
@@ -49,12 +52,24 @@ type NativeMessageUnlockRequest = {
     type: NativeMessageType.UNLOCK;
     encrypt: false;
     userIdentifier: string;
+    reason: string;
 };
 
 type NativeMessageUnlockResponse = {
     type: NativeMessageType.UNLOCK;
     encrypt: false;
     secret: string;
+};
+
+export type NativeMessageDeleteLockSecretRequest = {
+    type: NativeMessageType.DELETE_LOCK_SECRET;
+    encrypt: false;
+    userIdentifier: string;
+};
+
+export type NativeMessageDeleteLockSecretResponse = {
+    type: NativeMessageType.DELETE_LOCK_SECRET;
+    encrypt: false;
 };
 
 export type NativeMessageRequestForType<Type extends NativeMessageType> = Extract<NativeMessageRequest, { type: Type }>;

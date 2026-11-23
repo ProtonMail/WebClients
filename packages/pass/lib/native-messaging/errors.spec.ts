@@ -2,6 +2,7 @@ import { NativeMessageErrorType } from '../../types/desktop/extension-unlock-wit
 import {
     NativeMessageError,
     getForNativeMessageErrorFromConnectionError,
+    getMessageForNativeMessageError,
     getNativeMessageErrorKind,
     getNativeMessageErrorType,
 } from './errors';
@@ -90,6 +91,31 @@ describe('native-messaging errors', () => {
 
         test('returns null for a non-NativeMessageError', () => {
             expect(getNativeMessageErrorKind(new Error('boom'))).toBeNull();
+        });
+    });
+
+    describe('getMessageForNativeMessageError', () => {
+        const self = global as any;
+        afterEach(() => (self.BUILD_TARGET = 'test'));
+
+        test('blames the desktop app outside Safari', () => {
+            self.BUILD_TARGET = 'chrome';
+            expect(getMessageForNativeMessageError(NativeMessageErrorType.TIMEOUT)).toBe(
+                'The Proton Pass desktop app did not respond in time.'
+            );
+        });
+
+        test('never mentions the desktop app on Safari', () => {
+            self.BUILD_TARGET = 'safari';
+            expect(getMessageForNativeMessageError(NativeMessageErrorType.TIMEOUT)).toBe(
+                'Proton Pass did not respond in time.'
+            );
+            expect(getMessageForNativeMessageError(NativeMessageErrorType.HOST_NOT_FOUND)).toBe(
+                'Proton Pass is not responding.'
+            );
+            expect(getMessageForNativeMessageError(NativeMessageErrorType.BIOMETRICS_FAILED)).toBe(
+                'Biometric authentication failed.'
+            );
         });
     });
 });

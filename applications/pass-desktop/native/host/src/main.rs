@@ -1,8 +1,10 @@
+mod delete;
 mod ipc;
 mod native_message;
 mod unlock;
 
 use anyhow::{anyhow, Context, Result};
+use delete::delete_lock_secret;
 use dirs::data_local_dir;
 use ftail::Ftail;
 use ipc::{forward_to_ipc, Ipc};
@@ -14,7 +16,7 @@ use std::fs::{create_dir_all, remove_file};
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use tokio::sync::Mutex;
-use unlock::{intercept_unlock, Interception};
+use unlock::unlock;
 
 fn ensure_local_dir() -> Result<()> {
     let path = get_local_dir()?;
@@ -47,10 +49,11 @@ async fn handle_message(request: String, send: Sender, ipc: Arc<Mutex<Option<Ipc
 
     info!("Request received {:?}", msg);
 
-    let response = match intercept_unlock(&msg).await {
-        Ok(Interception::Intercepted(message)) => message,
-        Ok(Interception::Continue) => forward_to_ipc(request, ipc, &msg).await?,
-        Err(e) => e.to_response(&msg)?,
+    // Keychain reads and deletions are answered here, without the desktop app running
+    let response = match msg.message_type.as_str() {
+        "unlock" => unlock(&msg).await.or_else(|e| e.to_response(&msg))?,
+        "delete-lock-secret" => delete_lock_secret(&msg).or_else(|e| e.to_response(&msg))?,
+        _ => forward_to_ipc(request, ipc, &msg).await?,
     };
 
     send.send(&response).await?;

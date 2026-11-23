@@ -85,6 +85,10 @@ public final class ProcessSafariExtensionEvent: ProcessSafariExtensionEventUseCa
             if let url = fetchRelatedOrigins["url"] {
                 return .fetchRelatedOrigins(url: url)
             }
+        } else if let biometricLock = dict["biometricLock"] as? [String: String] {
+            if biometricLock["type"] == "unlock" {
+                return .biometricUnlock(reason: biometricLock["reason"] ?? "")
+            }
         }
 
         return .unknown

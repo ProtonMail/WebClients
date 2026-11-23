@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { PermissionsContextValue } from '../../../../components/Core/PermissionsProvider';
 import {
@@ -10,11 +11,15 @@ import {
 } from '../../../../types/desktop/extension-unlock-with-desktop';
 import type { MaybeNull } from '../../../../types/utils';
 import { logger } from '../../../../utils/logger';
-import { NativeMessageError } from '../../../native-messaging/errors';
+import { NativeMessageError, getNativeMessageErrorType } from '../../../native-messaging/errors';
 import type { NativeMessagingService } from '../../../native-messaging/native-messaging.extension';
 import type { AuthStore } from '../../store';
 
 const info = (...content: any[]) => logger.info('[DesktopLock]', ...content);
+
+/** Bounds how long a lock removal or a logout waits on a native side that does not know
+ * the message: an older host forwards it to a desktop app that never answers. */
+const DELETE_LOCK_SECRET_TIMEOUT = 2_000;
 
 /** Identifier for a lock created from this point on. The session `UID` is unique per
  * login fork, so two extensions running the same account in isolated browser contexts
@@ -76,6 +81,18 @@ export const sendSetupLockSecretMessage = async (
     }
 };
 
+/** `isMac()` and `isSafari()` do not work in the service worker (no `window` for the
+ * user agent parser), so we rely on `BUILD_TARGET` and the raw user agent */
+const isMacOS = () => BUILD_TARGET === 'safari' || navigator.userAgent.includes('Macintosh');
+
+/** macOS embeds the reason in its own sentence ("<App> is trying to …"),
+ * Windows Hello displays it verbatim. */
+const getBiometricPromptReason = () =>
+    isMacOS()
+        ? // translator: completes the macOS Touch ID prompt "Proton Pass is trying to …"
+          c('Info').t`unlock the browser extension`
+        : c('Info').t`${PASS_APP_NAME} wants to unlock the browser extension`;
+
 export const sendUnlockMessage = async (nativeMessaging: NativeMessagingService, authStore: AuthStore) => {
     /** Create a request message containing the user identifier */
     const userIdentifier = resolveUnlockUserIdentifier(authStore);
@@ -83,14 +100,37 @@ export const sendUnlockMessage = async (nativeMessaging: NativeMessagingService,
         type: NativeMessageType.UNLOCK,
         encrypt: false,
         userIdentifier,
+        reason: getBiometricPromptReason(),
     });
 
     return response.secret;
 };
 
+/** Best-effort: the verifier is cleared locally regardless, which makes an
+ * orphaned keychain entry useless. Legacy identifiers can collide across browser
+ * contexts, so only the persisted identifier is ever deleted: a legacy lock leaves
+ * its entry behind rather than risk wiping another context's secret. */
+export const sendDeleteLockSecretMessage = async (nativeMessaging: NativeMessagingService, authStore: AuthStore) => {
+    const userIdentifier = authStore.getDesktopLockUserIdentifier();
+    if (!userIdentifier) return;
+
+    const request = nativeMessaging.sendNativeMessageRequest({
+        type: NativeMessageType.DELETE_LOCK_SECRET,
+        encrypt: false,
+        userIdentifier,
+    });
+
+    await Promise.race([request, wait(DELETE_LOCK_SECRET_TIMEOUT)]).catch((err) =>
+        info('Delete lock secret failed', getNativeMessageErrorType(err))
+    );
+};
+
 export const ensureDesktopLockPermissions = async (permissions: MaybeNull<PermissionsContextValue>) => {
     try {
         if (!EXTENSION_BUILD || !permissions) throw new Error('Unsupported lock mode');
+        /** Required in the Safari manifest, never requested at runtime */
+        if (BUILD_TARGET === 'safari') return true;
+
         const needsPermission = !(await permissions.hasPermission(['nativeMessaging']));
 
         if (needsPermission) {

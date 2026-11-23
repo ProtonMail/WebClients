@@ -4,13 +4,14 @@ use anyhow::Result;
 use serde::Serialize;
 use serde_json::Value;
 
-// The host deals with two kind of messages but both of them
-// have at least those 3 fields
+// Every message the host deals with has at least the first 3 fields,
+// `reason` is only sent with `unlock`
 #[derive(Debug)]
 pub struct NativeMessage {
     pub message_id: String,
     pub message_type: String,
     pub user_identifier: String,
+    pub reason: String,
 }
 
 impl TryFrom<&str> for NativeMessage {
@@ -23,6 +24,7 @@ impl TryFrom<&str> for NativeMessage {
             message_id: field("messageId"),
             message_type: field("type"),
             user_identifier: field("userIdentifier"),
+            reason: field("reason"),
         })
     }
 }

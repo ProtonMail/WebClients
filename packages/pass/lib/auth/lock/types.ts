@@ -50,6 +50,8 @@ export interface LockAdapter<TCreate = string, TUnlock = TCreate> {
     delete: (secret: TUnlock) => Promise<Lock>;
     lock: (options: LockOptions) => Promise<Lock>;
     unlock: (secret: TUnlock) => Promise<Maybe<string>>;
+    /** Releases resources held outside the session, before the auth store is cleared. Must not throw. */
+    onLogout?: () => Promise<void>;
 }
 
 export type LockAdapterBiometrics = LockAdapter<XorObfuscation, string>;
