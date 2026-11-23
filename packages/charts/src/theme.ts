@@ -2,11 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 
 import { THEME_ID, ThemeContext } from '@proton/components/containers/themes/ThemeProvider';
 
-/**
- * Why this module exists: a canvas cannot consume `var(--x)`. chart.js paints with concrete colour strings,
- * so the active theme's CSS custom properties have to be read off the document and handed over resolved.
- */
-
 export interface ChartColors {
     text: string;
     textWeak: string;
@@ -18,7 +13,10 @@ export interface ChartColors {
     warning: string;
     success: string;
     info: string;
+    interactionHover: string;
 }
+
+export type FillColor = Extract<keyof ChartColors, 'primary' | 'danger' | 'warning' | 'success' | 'info'>;
 
 const CSS_VARIABLES = {
     text: '--text-norm',
@@ -31,6 +29,7 @@ const CSS_VARIABLES = {
     warning: '--signal-warning',
     success: '--signal-success',
     info: '--signal-info',
+    interactionHover: '--interaction-default-hover',
 } as const satisfies Record<keyof ChartColors, string>;
 
 const FALLBACK_COLORS: ChartColors = {
@@ -44,6 +43,7 @@ const FALLBACK_COLORS: ChartColors = {
     warning: '#ff9900',
     success: '#1ea885',
     info: '#239ece',
+    interactionHover: 'rgb(194 193 192 / 0.2)',
 };
 
 export const getChartColors = (): ChartColors => {
@@ -66,6 +66,7 @@ export const getChartColors = (): ChartColors => {
         warning: read('warning'),
         success: read('success'),
         info: read('info'),
+        interactionHover: read('interactionHover'),
     };
 };
 

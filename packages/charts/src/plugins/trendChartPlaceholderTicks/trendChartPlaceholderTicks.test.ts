@@ -1,6 +1,10 @@
 import type { Chart, Scale } from 'chart.js';
 
-import { type TrendChartPlaceholderTicksOptions, trendChartPlaceholderTicksPlugin } from './trendChartPlaceholderTicks';
+import {
+    PLACEHOLDER_TICKS_ROOM,
+    type TrendChartPlaceholderTicksOptions,
+    trendChartPlaceholderTicksPlugin,
+} from './trendChartPlaceholderTicks';
 
 const ctxSpy = ({ roundRect = true } = {}) => {
     const blocks: { x: number; y: number; width: number; height: number }[] = [];
@@ -54,6 +58,13 @@ describe('trendChartPlaceholderTicksPlugin', () => {
 
     it('draws one block per tick the scales built, so the count is the axis’s and not its own', () => {
         expect(draw({ enabled: true, color: '#6d4aff' }, { y: [40, 80, 120], x: [100, 200] })).toHaveLength(5);
+    });
+
+    it('fits the blocks beside the plot in the room it says they need, so a chart can keep exactly that much', () => {
+        const [block] = draw({ enabled: true, color: '#6d4aff' }, { y: [50], x: [] });
+
+        expect(block.x).toBeGreaterThanOrEqual(46 - PLACEHOLDER_TICKS_ROOM);
+        expect(block.x + block.width).toBeLessThanOrEqual(46);
     });
 
     it('sits the value blocks off the plot, clear of the line they label', () => {

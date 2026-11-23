@@ -11,9 +11,9 @@ import { TREND_CHART_THRESHOLD_PLUGIN_ID } from '../../plugins/trendChartThresho
 import type { LineChartOptions } from '../../primitives/LineChart';
 import { LineChart } from '../../primitives/LineChart';
 import { useChartColors } from '../../theme';
+import { FILL_OR_FALL_BACK } from '../fillOrFallBack';
 import type { FillColor, TrendChartProps } from './TrendChart.types';
 import { ARRIVAL, AXIS, BORDER_WIDTH, FILL_ALPHA, NO_LABEL, SKELETON_SERIES, TENSION } from './constants';
-import { FILL_OR_FALL_BACK } from './fillOrFallBack';
 import { splitAtThreshold } from './splitAtThreshold';
 
 import './TrendChart.scss';
