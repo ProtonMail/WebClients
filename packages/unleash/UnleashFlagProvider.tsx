@@ -12,6 +12,16 @@ import ProtonUnleashStorageProvider, { featureFlagStorageKey } from './storage/U
 const prefix = 'https://proton.me/';
 const url = new URL(prefix);
 
+/**
+ * The part of the library's URL after the dummy domain, as a path under `feature/v2/frontend`. unleash-proxy-client
+ * 3.8.2 builds the metrics URL as `https://proton.me/client/metrics`, earlier versions with a double slash; the
+ * flags URL is `https://proton.me/?…` in both.
+ */
+const getApiPath = (url: string) => {
+    const path = url.replace(prefix, '');
+    return path === '' || path.startsWith('/') || path.startsWith('?') ? path : `/${path}`;
+};
+
 export const createCustomFetch =
     (api: Api): typeof window.fetch =>
     (url, config) => {
@@ -33,7 +43,7 @@ export const createCustomFetch =
             }
 
             return api({
-                url: `feature/v2/frontend${url.replace(prefix, '')}`,
+                url: `feature/v2/frontend${getApiPath(url)}`,
                 silence: true,
                 output: 'raw',
                 data: body,
