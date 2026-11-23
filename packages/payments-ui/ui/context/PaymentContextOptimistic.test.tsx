@@ -2,7 +2,7 @@ import { act, render } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -111,6 +111,30 @@ describe('PaymentsContextOptimisticProvider initialization status', () => {
         expect(getContext().initializationStatus).toEqual(
             expect.objectContaining({ pricingInitialized: false, error })
         );
+    });
+});
+
+describe('PaymentsContextOptimisticProvider initial selection', () => {
+    beforeEach(() => vi.clearAllMocks());
+
+    it('starts a plan with a minimum seat count at that minimum before its check returns', async () => {
+        checkSubscription.mockResolvedValue(checkResult);
+        const getContext = renderProvider();
+        let initialization: Promise<void> = Promise.resolve();
+
+        act(() => {
+            initialization = getContext().initialize({
+                api: apiMock,
+                planToCheck: { planIDs: { [PLANS.PASS_PRO]: 1 }, cycle: CYCLE.YEARLY },
+                paramCurrency: 'CHF',
+                telemetryContext: 'other',
+                product: 'proton-pass',
+            });
+        });
+
+        expect(getContext().initializationStatus.pricingInitialized).toBe(false);
+        expect(getContext().options.planIDs).toEqual({ [PLANS.PASS_PRO]: 1, [ADDON_NAMES.MEMBER_PASS_PRO]: 2 });
+        await act(() => initialization);
     });
 });
 
