@@ -12,6 +12,7 @@ import type { CreateNotificationOptions } from '@proton/app-context/notification
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { useHandler } from '@proton/hooks/useHandler';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import {
@@ -454,16 +455,16 @@ export const PaymentsContextProvider = ({
     const initialize = async ({
         api,
         paramCurrency,
-        planToCheck: planToCheckParam,
+        planToCheck: requestedPlanToCheck,
         availablePlans,
         vatNumber,
         telemetryContext,
         product,
     }: InitializeProps) => {
-        const { plansData, paymentStatus: status } = await preloadPaymentsData({ api });
+        const { plansData, paymentStatus: status, subscription } = await preloadPaymentsData({ api });
         const plans = plansData.plans;
 
-        const selectedPlanName = planToCheckParam ? getPlanNameFromIDs(planToCheckParam.planIDs) : undefined;
+        const selectedPlanName = requestedPlanToCheck ? getPlanNameFromIDs(requestedPlanToCheck.planIDs) : undefined;
         const preferredCurrency = getPreferredCurrency({
             paramCurrency,
             paramPlanName: selectedPlanName,
@@ -488,6 +489,19 @@ export const PaymentsContextProvider = ({
         paymentsApiRef.current = getPaymentsApi(api);
 
         const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: preferredCurrency });
+
+        // Plans like Pass Professional can't be bought below a minimum seat count, so start there instead of at 1
+        const planToCheckParam = requestedPlanToCheck && {
+            ...requestedPlanToCheck,
+            planIDs:
+                forceAddonsMinMaxConstraints({
+                    selectedPlanIDs: requestedPlanToCheck.planIDs,
+                    plansMap: localizedPlansMap,
+                    currency: preferredCurrency,
+                    subscription,
+                }) ?? requestedPlanToCheck.planIDs,
+        };
+
         const selection = planToCheckParam && getPlanToCheck({ ...planToCheckParam, currency: preferredCurrency });
         const plansToCheck = getAvailablePlansToCheck({
             availablePlans,

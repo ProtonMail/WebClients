@@ -1,5 +1,6 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { useHandler } from '@proton/hooks/useHandler';
 import type { InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
@@ -81,6 +82,20 @@ const InnerPaymentsContextOptimisticProvider = ({
         pricingInitialized: false,
     });
 
+    const getPlanIDsWithinSeatLimits = (planIDs: PlanIDs | undefined, currency: Currency): PlanIDs => {
+        if (!planIDs) {
+            return {};
+        }
+        return (
+            forceAddonsMinMaxConstraints({
+                selectedPlanIDs: planIDs,
+                plansMap: paymentsContext.plansMap,
+                currency,
+                subscription: undefined,
+            }) ?? planIDs
+        );
+    };
+
     const initialize: PaymentsContextOptimisticType['initialize'] = async ({
         api,
         paramCurrency,
@@ -99,9 +114,10 @@ const InnerPaymentsContextOptimisticProvider = ({
         /**
          * Optimistic check result initialization
          */
+        const currency = paramCurrency || 'CHF';
         const optimistic: Omit<OptimisticOptions, 'checkResult'> = {
-            currency: paramCurrency || 'CHF',
-            planIDs: planToCheckParam?.planIDs || {},
+            currency,
+            planIDs: getPlanIDsWithinSeatLimits(planToCheckParam?.planIDs, currency),
             cycle: planToCheckParam?.cycle || CYCLE.MONTHLY,
             billingAddress: {
                 CountryCode: '',

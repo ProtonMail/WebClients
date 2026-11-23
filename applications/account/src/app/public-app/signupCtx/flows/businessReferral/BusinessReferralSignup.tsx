@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
-import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
@@ -25,21 +23,6 @@ const BUSINESS_SIGNUP_CYCLE = CYCLE.YEARLY;
  */
 const BusinessReferralRouter = () => {
     const payments = usePaymentOptimistic();
-    const { plansMap, selectPlanIDs } = payments;
-    const { planIDs, currency } = payments.options;
-
-    // Plans like Pass Professional can't be bought below a minimum seat count, so start there instead of at 1.
-    useEffect(() => {
-        const forcedPlanIDs = forceAddonsMinMaxConstraints({
-            selectedPlanIDs: planIDs,
-            plansMap,
-            currency,
-            subscription: undefined,
-        });
-        if (forcedPlanIDs) {
-            void selectPlanIDs(forcedPlanIDs);
-        }
-    }, [planIDs, plansMap, currency]);
 
     if (!payments.initializationStatus.triggered) {
         return null;

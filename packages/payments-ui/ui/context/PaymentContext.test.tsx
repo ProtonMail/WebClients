@@ -7,7 +7,7 @@ import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWit
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
 import type { BillingAddressExtraProperties } from '@proton/payments/core/billing-address/billing-address';
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -589,6 +589,23 @@ describe('PaymentsContext VAT number', () => {
         );
 
         expect(multiCheckedData().map((data) => data.Cycle)).toEqual([CYCLE.TWO_YEARS]);
+    });
+
+    it('starts a plan with a minimum seat count at that minimum', async () => {
+        const { getContext } = renderContext({ paymentStatus });
+
+        await act(() =>
+            getContext().initialize({
+                api: apiMock,
+                planToCheck: { planIDs: { [PLANS.PASS_PRO]: 1 }, cycle: CYCLE.YEARLY },
+                paramCurrency: 'CHF',
+                telemetryContext: 'other',
+                product: 'proton-pass',
+            })
+        );
+
+        expect(sentData()[0].Plans).toEqual({ [PLANS.PASS_PRO]: 1, [ADDON_NAMES.MEMBER_PASS_PRO]: 2 });
+        expect(getContext().selectedPlan.planIDs).toEqual({ [PLANS.PASS_PRO]: 1, [ADDON_NAMES.MEMBER_PASS_PRO]: 2 });
     });
 
     it('renders again once multiple plans are checked, so the prices found in the cache show', async () => {

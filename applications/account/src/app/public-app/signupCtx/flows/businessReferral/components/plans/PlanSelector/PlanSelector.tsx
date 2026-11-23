@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
@@ -68,7 +69,15 @@ const PlanSelector = ({ plans }: Props) => {
     const handlePlanClick = (plan: Plan, direction: CarouselDirection = CarouselDirection.Fade) => {
         setCardAnimation(direction);
         const planIDs: PlanIDs = { [plan]: 1 };
-        void payments.selectPlan({ planIDs });
+        void payments.selectPlan({
+            planIDs:
+                forceAddonsMinMaxConstraints({
+                    selectedPlanIDs: planIDs,
+                    plansMap: payments.plansMap,
+                    currency: payments.options.currency,
+                    subscription: undefined,
+                }) ?? planIDs,
+        });
     };
 
     const handlePrev = () => {
