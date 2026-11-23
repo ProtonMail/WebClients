@@ -1,7 +1,7 @@
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import { PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
-import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
+import { isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
@@ -17,13 +17,11 @@ import { getAccountAppRoutes } from './routes';
 
 vi.mock('@proton/payments/core/subscription/helpers', async () => ({
     ...(await vi.importActual('@proton/payments/core/subscription/helpers')),
-    hasCancellablePlan: vi.fn(),
     isCancellableOnlyViaSupport: vi.fn(),
     getHasVpnB2BPlan: vi.fn().mockReturnValue(false),
     isManagedExternally: vi.fn().mockReturnValue(false),
 }));
 
-const mockedHasCancellablePlan = vi.mocked(hasCancellablePlan);
 const mockedIsCancellableOnlyViaSupport = vi.mocked(isCancellableOnlyViaSupport);
 
 const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
@@ -94,7 +92,6 @@ describe('getAccountAppRoutes', () => {
             buildDefaultParams({ allSubscriptions: [renewing], ...overrides });
 
         beforeEach(() => {
-            mockedHasCancellablePlan.mockReturnValue(true);
             mockedIsCancellableOnlyViaSupport.mockReturnValue(false);
         });
 
@@ -128,11 +125,6 @@ describe('getAccountAppRoutes', () => {
                 mockSetup: {},
             },
             {
-                description: 'plan is not cancellable',
-                overrides: {},
-                mockSetup: { hasCancellablePlan: false },
-            },
-            {
                 description: 'subscription renewal is disabled',
                 overrides: { allSubscriptions: [{ ...renewing, Renew: Renew.Disabled }] },
                 mockSetup: {},
@@ -157,9 +149,6 @@ describe('getAccountAppRoutes', () => {
                 mockSetup: {},
             },
         ])('should not be available when $description', ({ overrides, mockSetup }) => {
-            if ('hasCancellablePlan' in mockSetup) {
-                mockedHasCancellablePlan.mockReturnValue(mockSetup.hasCancellablePlan as boolean);
-            }
             if ('isCancellableOnlyViaSupport' in mockSetup) {
                 mockedIsCancellableOnlyViaSupport.mockReturnValue(mockSetup.isCancellableOnlyViaSupport as boolean);
             }

@@ -10,7 +10,6 @@ import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     BRAND_NAME,
@@ -103,10 +102,9 @@ export const getVisionaryConfig = ({ app, plan, subscription }: ConfigProps): Pl
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription);
-    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, cancellablePlan);
+    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace);
 
-    const confirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
+    const confirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
         confirmationModal,

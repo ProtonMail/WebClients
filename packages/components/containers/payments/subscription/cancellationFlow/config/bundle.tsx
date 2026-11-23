@@ -9,7 +9,6 @@ import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     BRAND_NAME,
@@ -103,9 +102,8 @@ export const getBundleConfig = ({ app, plan, subscription }: ConfigProps): PlanC
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription);
-    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace, cancellablePlan);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
+    const storage: PlanConfigStorage = getDefaultGBStorageWarning(planName, planMaxSpace);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
         confirmationModal,

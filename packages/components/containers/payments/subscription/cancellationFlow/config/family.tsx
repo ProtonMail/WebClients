@@ -9,7 +9,6 @@ import { IcShieldHalfFilled } from '@proton/icons/icons/IcShieldHalfFilled';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { hasCancellablePlan } from '@proton/payments/core/subscription/helpers';
 import {
     CALENDAR_APP_NAME,
     DRIVE_SHORT_APP_NAME,
@@ -100,9 +99,8 @@ export const getFamilyConfig = ({ plan, subscription }: ConfigProps): PlanConfig
         ],
     };
 
-    const cancellablePlan = hasCancellablePlan(subscription);
-    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace, cancellablePlan);
-    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName, cancellablePlan);
+    const storage: PlanConfigStorage = getDefaultTBStorageWarning(planName, planMaxSpace);
+    const confirmationModal: ConfirmationModal = getDefaultConfirmationModal(subscription, planName);
 
     return {
         confirmationModal,

@@ -101,7 +101,6 @@ export {
 } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
 export * from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
 export {
-    hasCancellablePlan,
     hasTrialExpiredLessThan4Weeks,
     isAutoRenewTrial,
     isCancellableOnlyViaSupport,
