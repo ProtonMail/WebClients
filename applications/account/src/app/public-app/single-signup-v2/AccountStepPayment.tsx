@@ -30,7 +30,6 @@ import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -46,9 +45,7 @@ import { usePaypalFirstSort } from '../signup/usePaypalFirstSort';
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';
 import Guarantee from './Guarantee';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
-import type { Measure, OptimisticOptions, SignupModelV2, SignupParameters2 } from './interface';
-import type { TelemetryPayType } from './measure';
-import { getPaymentMethod } from './measure';
+import type { OptimisticOptions, SignupModelV2, SignupParameters2 } from './interface';
 
 export interface AccountStepPaymentRef {
     process: () => void;
@@ -70,7 +67,6 @@ interface Props {
     isFormValid: boolean;
     isDarkBg?: boolean;
     withLoadingSignup: WithLoading;
-    measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
     handleOptimistic: (optimistic: Partial<OptimisticOptions>) => void;
     onBillingAddressChange: (billingAddress: FullBillingAddressFlat, vatNumber: string | undefined) => void;
@@ -89,7 +85,6 @@ interface Props {
 }
 
 const AccountStepPayment = ({
-    measure,
     cta,
     accountStepPaymentRef,
     api: normalApi,
@@ -119,32 +114,6 @@ const AccountStepPayment = ({
 }: Props) => {
     const signupV2Theme = useSignupV2Theme();
     const formRef = useRef<HTMLFormElement>(null);
-
-    const measurePay = (
-        type: TelemetryPayType,
-        event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError
-    ) => {
-        if (!selectedPlan) {
-            return;
-        }
-
-        void measure({
-            event,
-            dimensions: {
-                type: type,
-                plan: selectedPlan.Name as any,
-                cycle: `${options.cycle}`,
-                currency: options.currency,
-            },
-        });
-    };
-
-    const measurePaySubmit = (type: TelemetryPayType) => {
-        return measurePay(type, TelemetryAccountSignupEvents.userCheckout);
-    };
-    const measurePayError = (type: TelemetryPayType) => {
-        return measurePay(type, TelemetryAccountSignupEvents.checkoutError);
-    };
 
     const { subscriptionData } = model;
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
@@ -237,17 +206,7 @@ const AccountStepPayment = ({
                 await onPay(extendedTokenPayment, paymentType);
             });
         },
-        onMethodChanged: (newMethod) => {
-            const value = getPaymentMethod(newMethod.type);
-            if (value) {
-                void measure({
-                    event: TelemetryAccountSignupEvents.paymentSelect,
-                    dimensions: { type: value },
-                });
-            }
-
-            onMethodChanged(newMethod);
-        },
+        onMethodChanged,
         isTrial: signupParameters.trial,
         product: app,
         telemetryContext,
@@ -297,30 +256,9 @@ const AccountStepPayment = ({
                 return;
             }
 
-            const telemetryType = (() => {
-                const isFreeSignup = paymentFacade.amount <= 0;
-
-                if (isFreeSignup) {
-                    return 'free';
-                }
-
-                if (processor?.meta.type === 'paypal') {
-                    return 'pay_pp';
-                }
-
-                if (processor?.meta.type === 'bitcoin') {
-                    return 'pay_btc';
-                }
-
-                return 'pay_cc';
-            })();
-            measurePaySubmit(telemetryType);
-
             try {
                 await processor.processPaymentToken();
             } catch (error) {
-                measurePayError(telemetryType);
-
                 tracePaymentError(error, {
                     component: 'single-signup-v2-account-step-payment',
                     subscription: model.session?.subscription,
@@ -378,15 +316,6 @@ const AccountStepPayment = ({
         <>
             <form
                 ref={formRef}
-                onFocus={(e) => {
-                    const autocomplete = e.target.getAttribute('autocomplete');
-                    if (autocomplete) {
-                        void measure({
-                            event: TelemetryAccountSignupEvents.interactCreditCard,
-                            dimensions: { field: autocomplete as any },
-                        });
-                    }
-                }}
                 name="payment-form"
                 onSubmit={(event) => {
                     event.preventDefault();
@@ -452,12 +381,9 @@ const AccountStepPayment = ({
                         ? {
                               type: 'button' as const,
                               onClick: async () => {
-                                  measurePaySubmit('pay_btc');
                                   const run = async () => {
                                       if ((await onValidate()) && validatePayment()) {
-                                          return onPay('signup-token', undefined).catch(() => {
-                                              measurePayError('pay_btc');
-                                          });
+                                          return onPay('signup-token', undefined).catch(noop);
                                       }
                                   };
                                   withLoadingSignup(run()).catch(noop);

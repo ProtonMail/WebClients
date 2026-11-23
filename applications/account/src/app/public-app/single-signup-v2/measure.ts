@@ -1,5 +1,5 @@
 import { Clients } from '@proton/pass/constants';
-import { type CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import { type CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
@@ -18,8 +18,6 @@ type TelemetryPaymentMethods = {
     cc: TelemetryBoolean;
 };
 
-export type TelemetryPayType = 'free' | 'pay_cc' | 'pay_pp' | 'pay_pp_no_cc' | 'pay_btc';
-
 export type TelemetryExtensionPlatform = 'ios' | 'ff' | 'android' | 'chrome' | 'safari' | 'edge' | 'brave' | 'unknown';
 
 type TelemetryGetExtension = `get_${TelemetryExtensionPlatform}`;
@@ -28,7 +26,6 @@ export type TelemetryDownloadExtension = `download_${TelemetryExtensionPlatform}
 type SignupFinishEvents = {
     event: TelemetryAccountSignupEvents.signupFinish;
     dimensions: {
-        type: TelemetryPayType;
         plan: PLANS;
         cycle: `${CYCLE}`;
         currency: Currency;
@@ -38,27 +35,17 @@ type SignupFinishEvents = {
     };
 };
 
-export type AvailableExternalEvents = {
+type AvailableExternalEvents = {
     event: TelemetryAccountSignupEvents.beAvailableExternal;
     dimensions: {
         available: TelemetryBoolean;
     };
 };
 
-export type InteractCreateEvents = {
+type InteractCreateEvents = {
     event: TelemetryAccountSignupEvents.interactAccountCreate;
     dimensions: {
         field: InteractFields;
-    };
-};
-
-export type UserCheckoutEvents = {
-    event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError;
-    dimensions: {
-        type: TelemetryPayType;
-        plan: PLANS;
-        cycle: `${CYCLE}`;
-        currency: Currency;
     };
 };
 
@@ -111,19 +98,6 @@ export type TelemetryMeasurementData =
           event: TelemetryAccountSignupEvents.bePaymentMethods;
           dimensions: TelemetryPaymentMethods;
       }
-    | {
-          event: TelemetryAccountSignupEvents.paymentSelect;
-          dimensions: {
-              type: 'open' | 'select_cc' | 'select_pp' | 'select_btc';
-          };
-      }
-    | {
-          event: TelemetryAccountSignupEvents.interactCreditCard;
-          dimensions: {
-              field: 'cc-number' | 'cc-exp' | 'cc-csc' | 'country' | 'postal-code';
-          };
-      }
-    | UserCheckoutEvents
     | SignupFinishEvents
     | {
           event: TelemetryAccountSignupEvents.onboardingStart;
@@ -152,30 +126,6 @@ export type TelemetryMeasurementData =
           dimensions: {};
       };
 
-export const getPaymentMethod = (method: string) => {
-    if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-        return 'select_cc';
-    }
-    if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-        return 'select_pp';
-    }
-    if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-        return 'select_btc';
-    }
-};
-
-const getPaymentMethodType = (method: PAYMENT_METHOD_TYPES | undefined): TelemetryPayType | undefined => {
-    if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-        return 'pay_cc';
-    }
-    if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-        return 'pay_pp';
-    }
-    if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-        return 'pay_btc';
-    }
-};
-
 export const getPlanNameFromSession = (session: SessionData): PLANS => {
     return getPlan(session.subscription)?.Name || session.organization?.PlanName || PLANS.FREE;
 };
@@ -197,7 +147,6 @@ export const getSignupTelemetryData = (plansMap: PlansMap, subscriptionData: Sub
         return {
             event: TelemetryAccountSignupEvents.signupFinish,
             dimensions: {
-                type: 'free',
                 plan: PLANS.FREE,
                 cycle: `${subscriptionData.cycle}`,
                 currency: subscriptionData.currency,
@@ -208,11 +157,9 @@ export const getSignupTelemetryData = (plansMap: PlansMap, subscriptionData: Sub
         };
     }
 
-    const type = getPaymentMethodType(subscriptionData.payment?.Type);
     return {
         event: TelemetryAccountSignupEvents.signupFinish,
         dimensions: {
-            type: type || 'pay_cc',
             plan,
             cycle: `${subscriptionData.cycle}`,
             currency: subscriptionData.currency,

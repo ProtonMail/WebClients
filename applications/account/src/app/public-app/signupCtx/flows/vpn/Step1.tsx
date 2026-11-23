@@ -73,7 +73,6 @@ import type { AccountStepDetailsRef } from '../../../single-signup-v2/AccountSte
 import AccountStepDetails from '../../../single-signup-v2/AccountStepDetails';
 import DiscountBanner from '../../../single-signup-v2/DiscountBanner';
 import { getFreeSubscriptionData } from '../../../single-signup-v2/helper';
-import { getPaymentMethod } from '../../../single-signup-v2/measure';
 import {
     type CheckTrialPriceResult,
     checkTrialPriceCommon,
@@ -99,7 +98,6 @@ import { getPlanInformation } from './getPlanInformation';
 import type { getUpsellShortPlan } from './helper';
 import { getBillingCycleText, getOffText } from './helper';
 import type { Measure, VPNSignupModel } from './interface';
-import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
 import { getVpnPlanToCheck, getVpnPlansToCheck } from './pricing';
 import RatingsSection from './ratings/RatingsSection';
@@ -370,31 +368,6 @@ const Step1 = ({
         planName: selectedPlan.Name,
     });
 
-    const measurePay = (
-        type: TelemetryPayType,
-        event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError
-    ) => {
-        if (!options.plan) {
-            return;
-        }
-        void measure({
-            event,
-            dimensions: {
-                type: type,
-                plan: options.plan.Name as any,
-                cycle: `${options.cycle}`,
-                currency: options.currency,
-            },
-        });
-    };
-
-    const measurePaySubmit = (type: TelemetryPayType) => {
-        return measurePay(type, TelemetryAccountSignupEvents.userCheckout);
-    };
-    const measurePayError = (type: TelemetryPayType) => {
-        return measurePay(type, TelemetryAccountSignupEvents.checkoutError);
-    };
-
     const disablePayButton = loadingPaymentDetails;
 
     const validatePayment = () => {
@@ -465,15 +438,6 @@ const Step1 = ({
             });
         },
         flow: 'signup-vpn',
-        onMethodChanged: (newMethod) => {
-            const value = getPaymentMethod(newMethod.type);
-            if (value) {
-                void measure({
-                    event: TelemetryAccountSignupEvents.paymentSelect,
-                    dimensions: { type: value },
-                });
-            }
-        },
         isTrial: signupTrial,
         product: APPS.PROTONVPN_SETTINGS,
         telemetryContext,
@@ -737,30 +701,10 @@ const Step1 = ({
                 return;
             }
 
-            const telemetryType = (() => {
-                const isFreeSignup = paymentFacade.amount <= 0;
-
-                if (isFreeSignup) {
-                    return 'free';
-                }
-
-                if (processor?.meta.type === 'paypal') {
-                    return 'pay_pp';
-                }
-
-                if (processor?.meta.type === 'bitcoin') {
-                    return 'pay_btc';
-                }
-
-                return 'pay_cc';
-            })();
-            measurePaySubmit(telemetryType);
-
             try {
                 await processor.processPaymentToken();
             } catch (e) {
                 observeApiError(e, (status) => {
-                    measurePayError(telemetryType);
                     metrics.core_vpn_single_signup_step1_payment_2_total.increment({
                         status,
                         flow: isB2bPlan ? 'b2b' : 'b2c',
@@ -1187,8 +1131,6 @@ const Step1 = ({
                                 <div className="relative">
                                     <AccountStepDetails
                                         passwordFields={false}
-                                        model={{ subscriptionData: options }}
-                                        measure={measure}
                                         accountStepDetailsRef={accountDetailsRef}
                                         disableChange={loadingSignup || hasReservedUser}
                                         hideEmailLabel={!isVpnPassBundleBusinessPlan}
@@ -1329,15 +1271,6 @@ const Step1 = ({
                             <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
                                     <form
-                                        onFocus={(e) => {
-                                            const autocomplete = e.target.getAttribute('autocomplete');
-                                            if (autocomplete) {
-                                                void measure({
-                                                    event: TelemetryAccountSignupEvents.interactCreditCard,
-                                                    dimensions: { field: autocomplete as any },
-                                                });
-                                            }
-                                        }}
                                         name="payment-form"
                                         onSubmit={(event) => {
                                             event.preventDefault();
@@ -1447,13 +1380,10 @@ const Step1 = ({
                                                             if (!isFormValid) {
                                                                 return;
                                                             }
-                                                            measurePaySubmit('pay_btc');
                                                             await handleCompletion(
                                                                 getSubscriptionData(),
                                                                 'signup-token'
-                                                            ).catch(() => {
-                                                                measurePayError('pay_btc');
-                                                            });
+                                                            ).catch(noop);
                                                         };
                                                         withLoadingSignup(run()).catch(noop);
                                                     }}
