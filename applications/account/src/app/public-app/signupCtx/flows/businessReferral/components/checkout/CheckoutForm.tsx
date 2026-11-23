@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
@@ -91,6 +92,11 @@ const CheckoutForm = ({ onPaymentTokenProcessed }: Props) => {
         hasExpandedVatFormRef.current = true;
         billingAddressHook.vatNumber.setUnauthenticatedCollapsed(false);
     }, [billingAddressHook.vatNumber?.unauthenticatedCollapsed]);
+
+    const { error: loadError } = payments.initializationStatus;
+    if (loadError) {
+        return <StandardLoadErrorPage errorMessage={loadError instanceof Error ? loadError.message : undefined} />;
+    }
 
     const process = (processor: PaymentProcessorHook | undefined) => {
         if (submitting || !payments.initializationStatus.pricingInitialized || payments.loadingPaymentDetails) {

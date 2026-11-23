@@ -22,7 +22,6 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getHas2025OfferCoupon, getIsVPNPassPromotion } from '@proton/payments/core/subscription/helpers';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { type APP_NAMES, SSO_PATHS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -70,7 +69,6 @@ import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 
 interface Props {
     onLogin: OnLoginCallback;
-    productParam: ProductParam;
     toApp: APP_NAMES;
     toAppName: string;
     metaTags: MetaTags;
@@ -547,16 +545,7 @@ const VpnSignupInner = ({
 
 const availableSignupTypes = new Set([SignupType.External]);
 
-const VpnSignup = ({
-    onLogin,
-    onPreSubmit,
-    onStartAuth,
-    onSessionExpired,
-    productParam,
-    toApp,
-    toAppName,
-    metaTags,
-}: Props) => {
+const VpnSignup = ({ onLogin, onPreSubmit, onStartAuth, onSessionExpired, toApp, toAppName, metaTags }: Props) => {
     const location = useLocationWithoutLocale();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-vpn',
@@ -625,9 +614,7 @@ const VpnSignup = ({
                 onPreSubmit={onPreSubmit}
                 onStartAuth={onStartAuth}
                 onSessionExpired={onSessionExpired}
-                handleLogin={onLogin}
                 loginUrl={SSO_PATHS.LOGIN}
-                productParam={productParam}
                 onLogin={(session, loginPassword) =>
                     onLogin({ data: session, loginPassword, flow: 'signup', appIntent: undefined })
                 }

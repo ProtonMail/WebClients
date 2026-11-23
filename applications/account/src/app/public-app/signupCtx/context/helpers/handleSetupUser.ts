@@ -2,7 +2,7 @@ import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryK
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
-import type { Currency, Cycle, ExtendedTokenPayment, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import type { Currency, Cycle, ExtendedTokenPayment, PlanIDs } from '@proton/payments/core/interface';
 import { hasFreePlanIDs } from '@proton/payments/core/planIDs';
 import { getCodes } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -12,9 +12,10 @@ import { auth } from '@proton/shared/lib/api/auth';
 import type { ReferralRegistrationPlan } from '@proton/shared/lib/api/core/referrals';
 import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { updateLocale } from '@proton/shared/lib/api/settings';
-import { getUser, queryUnlock } from '@proton/shared/lib/api/user';
+import { queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -22,7 +23,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
-import type { User } from '@proton/shared/lib/interfaces/User';
 import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
@@ -43,6 +43,11 @@ export interface SignupContextSubscriptionData {
     trial?: boolean;
 }
 
+export type OnSubscriptionPayment = (
+    status: 'success' | 'failure',
+    subscriptionData: SignupContextSubscriptionData
+) => void;
+
 export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SignupContextSubscriptionData,
@@ -50,18 +55,12 @@ export const handleSubscribeUser = async (
         productParam,
         build,
         telemetryContext,
-        userCurrency,
-        subscription,
-        onPaymentSuccess,
-        onPaymentFailure,
+        onPayment,
     }: {
         productParam: ProductParam;
         build: APP_NAMES;
         telemetryContext: PaymentTelemetryContext;
-        userCurrency: Currency | undefined;
-        subscription: Subscription | FreeSubscription | undefined;
-        onPaymentSuccess?: () => void;
-        onPaymentFailure?: () => void;
+        onPayment?: OnSubscriptionPayment;
     }
 ) => {
     if (hasFreePlanIDs(subscriptionData.planIDs)) {
@@ -90,18 +89,19 @@ export const handleSubscribeUser = async (
                 product: productParam,
                 build,
                 telemetryContext,
-                userCurrency,
-                subscription,
+                // A new user has neither
+                userCurrency: undefined,
+                subscription: undefined,
                 paymentMethodType: subscriptionData.paymentToken?.paymentMethodType,
                 paymentMethodValue: subscriptionData.paymentToken?.paymentMethodValue,
             }
         );
 
-        onPaymentSuccess?.();
+        onPayment?.('success', subscriptionData);
 
         return Subscription;
     } catch (error) {
-        onPaymentFailure?.();
+        onPayment?.('failure', subscriptionData);
         throw error;
     }
 };
@@ -125,7 +125,7 @@ const setupKeys = async ({
     const addresses = await getAllAddresses(api);
 
     if (deferred) {
-        const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
+        const user = await getUser(api);
         return { keySetupData: { keyPassword: '', clearKeyPassword: '' }, user, addresses };
     }
 
@@ -149,7 +149,7 @@ const setupKeys = async ({
         };
     }
 
-    const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
+    const user = await getUser(api);
     await preAuthKTCommit(user.ID, api);
     return { keySetupData, user, addresses };
 };
@@ -158,7 +158,6 @@ export const handleSetupUser = async ({
     accountData,
     api,
     persistent,
-    trusted,
     subscriptionData,
     productParam,
     keyTransparencyActivation,
@@ -168,19 +167,16 @@ export const handleSetupUser = async ({
     build,
     telemetryContext,
     deferKeySetup,
-    onPaymentSuccess,
-    onPaymentFailure,
+    onPayment,
     isRetry = false,
 }: {
     deferKeySetup?: boolean;
-    onPaymentSuccess?: () => void;
-    onPaymentFailure?: () => void;
+    onPayment?: OnSubscriptionPayment;
     /** A previous attempt may have subscribed before failing, so the subscription is skipped if the user is paid. */
     isRetry?: boolean;
     accountData: AccountData;
     api: Api;
     persistent: boolean;
-    trusted: boolean;
     subscriptionData: SignupContextSubscriptionData | undefined;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
@@ -211,7 +207,7 @@ export const handleSetupUser = async ({
         config: auth({ Username: userEmail }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
 
-    const alreadySubscribed = isRetry && isPaid(await api<{ User: User }>(getUser()).then(({ User }) => User));
+    const alreadySubscribed = isRetry && isPaid(await getUser(api));
     let subscription: Subscription | undefined;
     if (
         subscriptionData &&
@@ -227,10 +223,7 @@ export const handleSetupUser = async ({
             productParam,
             build,
             telemetryContext,
-            userCurrency: undefined,
-            subscription: undefined,
-            onPaymentSuccess,
-            onPaymentFailure,
+            onPayment,
         });
     }
 
@@ -251,7 +244,8 @@ export const handleSetupUser = async ({
         User: user,
         api,
         persistent,
-        trusted,
+        // Never trust new signups: no trusted device data is stored on the device
+        trusted: false,
         source: SessionSource.Proton,
     });
 
@@ -319,7 +313,6 @@ export const handleSetPassword = async ({
     setupResult,
     newPassword,
     persistent,
-    trusted,
     productParam,
     keyTransparencyActivation,
 }: {
@@ -328,7 +321,6 @@ export const handleSetPassword = async ({
     setupResult: Awaited<ReturnType<typeof handleSetupUser>>;
     newPassword: string;
     persistent: boolean;
-    trusted: boolean;
     productParam: ProductParam;
     keyTransparencyActivation: KeyTransparencyActivation;
 }) => {
@@ -348,7 +340,8 @@ export const handleSetPassword = async ({
         User: user,
         api,
         persistent,
-        trusted,
+        // Never trust new signups: no trusted device data is stored on the device
+        trusted: false,
         source: SessionSource.Proton,
     });
 

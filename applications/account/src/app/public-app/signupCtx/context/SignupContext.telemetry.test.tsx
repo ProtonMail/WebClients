@@ -83,10 +83,8 @@ const renderReferralSignupContext = ({ isTrial }: { isTrial?: boolean } = {}) =>
             app="generic"
             flowId="referral-generic"
             loginUrl="/login"
-            productParam="generic"
             onStartAuth={async () => {}}
             onLogin={async () => {}}
-            handleLogin={async () => ({ state: 'complete' }) as const}
             paymentsDataConfig={{
                 plan: { planIDs: { [PLANS.BUNDLE]: 1 }, cycle: 12, currency: 'CHF' },
                 telemetryContext: 'ctx-signup-referral',

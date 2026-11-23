@@ -211,7 +211,6 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                         metaTags={signupPage()}
                                         toApp={APPS.PROTONVPN_SETTINGS}
                                         toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
-                                        productParam={APPS.PROTONVPN_SETTINGS}
                                         onPreSubmit={handlePreSubmit}
                                         onLogin={async (args) => {
                                             if (

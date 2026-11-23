@@ -17,7 +17,6 @@ import type { ExtendedTokenPayment, TokenPayment } from '@proton/payments/core/i
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type {
     GetActiveSessionsResult,
     ResumedSessionResult,
@@ -81,7 +80,8 @@ interface SignupContextType {
     createUser: () => Promise<void>;
     /**
      * Sets up the newly created user account and creates the subscription.
-     * A `reservation` is set up on the free plan to pay once signed in: `setupSubscription` reports its account creation
+     * With `{ reservation: true }` the user is set up on the free plan and pays later. `setupSubscription` then reports
+     * the account creation.
      */
     setupUser: (options?: { reservation?: boolean }) => Promise<void>;
     /**
@@ -128,10 +128,12 @@ export interface BaseSignupContextProps {
     onGetActiveSessions?: () => Promise<GetActiveSessionsResult>;
     handleLogin: OnLoginCallback;
     loginUrl: string;
-    productParam: ProductParam;
 }
 
-interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLogin'> {
+interface SignupContextProviderProps extends Pick<
+    BaseSignupContextProps,
+    'onPreSubmit' | 'onStartAuth' | 'onSessionExpired' | 'loginUrl'
+> {
     children: ReactNode;
 
     app: APP_NAMES | 'generic';
@@ -143,7 +145,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
      */
     flowId: string;
 
-    paymentsDataConfig?: SignupPaymentsDataConfig;
+    paymentsDataConfig: SignupPaymentsDataConfig;
 
     onLogin: (session: ResumedSessionResult, loginPassword: string) => Promise<OnLoginCallbackResult | void>;
 
@@ -159,6 +161,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
 
     invite?: SignupInviteParameters;
 
+    /** Sent as `VisitorId` with the user creation, from the signup link */
     visitorId?: string;
 
     /**
@@ -171,6 +174,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
      */
     deferKeySetup?: boolean;
 
+    /** Called when a subscription payment succeeds or fails */
     onSubscriptionPayment?: SignupServices['onSubscriptionPayment'];
 }
 
@@ -200,7 +204,7 @@ const getSubscriptionDataFromChargeableCallback = (
     };
 };
 
-const InnerSignupContextProvider = (props: SignupContextProviderProps) => {
+export const SignupContextProvider = (props: SignupContextProviderProps) => {
     const { app, children, flowId, accountFormDataConfig, loginUrl } = props;
     const { APP_NAME } = useConfig();
     const api = useApi();
@@ -247,7 +251,7 @@ const InnerSignupContextProvider = (props: SignupContextProviderProps) => {
     const initializing = useSelector(actorRef, (snapshot) => snapshot.matches('initializing'));
     const failed = useSelector(actorRef, (snapshot) => snapshot.matches('failed'));
     const domains = useSelector(actorRef, (snapshot) => snapshot.context.domains);
-    const domainsLoaded = useSelector(actorRef, (snapshot) => snapshot.context.domainsLoaded);
+    const domainsLoaded = useSelector(actorRef, (snapshot) => !snapshot.hasTag('loadingDomains'));
     const recoveryPhraseData = useSelector(actorRef, (snapshot) => snapshot.context.setupResult?.recoveryPhraseData);
     const session = useSelector(actorRef, (snapshot) => snapshot.context.setupResult?.session);
 
@@ -349,8 +353,4 @@ export const useSignup = () => {
             focusEmail: accountFormDataContext.focusEmail,
         },
     };
-};
-
-export const SignupContextProvider = ({ children, ...props }: SignupContextProviderProps) => {
-    return <InnerSignupContextProvider {...props}>{children}</InnerSignupContextProvider>;
 };

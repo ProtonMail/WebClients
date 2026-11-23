@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
@@ -85,6 +86,11 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         onVatChange: payments.setVatNumber,
         disableVat: true,
     });
+
+    const { error: loadError } = payments.initializationStatus;
+    if (loadError) {
+        return <StandardLoadErrorPage errorMessage={loadError instanceof Error ? loadError.message : undefined} />;
+    }
 
     const process = (processor: PaymentProcessorHook | undefined) => {
         if (!validatePayment()) {
