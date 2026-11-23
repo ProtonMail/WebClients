@@ -18,6 +18,9 @@
 	margin: 0 !important;
 	display: block !important;
 
+	/* Must match the iframe documents' color-scheme, or Firefox paints a white background behind them */
+	color-scheme: normal !important;
+
 	--frame-background-color: var(--frame-background-color-dark);
 }
 
