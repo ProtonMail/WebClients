@@ -70,6 +70,7 @@ describe('resolveCta', () => {
                 cycle: CYCLE.YEARLY,
                 disableCycleSelector: true,
                 disablePlanSelector: true,
+                trackingReference: undefined,
             },
         });
     });
@@ -83,6 +84,7 @@ describe('resolveCta', () => {
                 cycle: undefined,
                 disableCycleSelector: false,
                 disablePlanSelector: false,
+                trackingReference: undefined,
             },
         });
     });
@@ -104,8 +106,18 @@ describe('resolveCta', () => {
                 cycle: undefined,
                 disableCycleSelector: false,
                 disablePlanSelector: false,
+                trackingReference: undefined,
             },
         });
+    });
+
+    it('carries a TrackingReference through and drops a blank or non-string one', () => {
+        const withRef = (TrackingReference: unknown) =>
+            resolveCta(internalCta('GoToUpsell', goToUpsell({ TrackingReference } as Partial<RawGoToUpsell>)));
+
+        expect(withRef('bf2026-mail-modal')).toMatchObject({ params: { trackingReference: 'bf2026-mail-modal' } });
+        expect(withRef('  ')).toMatchObject({ params: { trackingReference: undefined } });
+        expect(withRef(42)).toMatchObject({ params: { trackingReference: undefined } });
     });
 
     it('rejects an internal cta whose InternalGoTo branch is missing', () => {

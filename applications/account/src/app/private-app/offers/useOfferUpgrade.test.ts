@@ -17,6 +17,7 @@ const upgradeParams = (overrides: Partial<CtaUpgradeParams> = {}): CtaUpgradePar
     coupon: 'SUMMER',
     disableCycleSelector: true,
     disablePlanSelector: true,
+    trackingReference: undefined,
     ...overrides,
 });
 
@@ -44,6 +45,14 @@ describe('useOfferUpgrade', () => {
             disableCycleSelector: true,
             disablePlanSelection: true,
         });
+    });
+
+    it("tags the subscription modal with the campaign's TrackingReference", () => {
+        upgrade(upgradeParams({ trackingReference: 'bf2026-account-modal' }));
+
+        expect(openSubscriptionModal).toHaveBeenCalledWith(
+            expect.objectContaining({ upsellRef: 'bf2026-account-modal' })
+        );
     });
 
     it('opens plan selection when the cta carries no plan', () => {

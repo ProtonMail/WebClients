@@ -23,6 +23,10 @@ const intoCtaParams = (goToUpsell: MaybeNull<RawGoToUpsell> | undefined): MaybeN
         plan: goToUpsell.Plan !== null && isValidPlanName(goToUpsell.Plan) ? goToUpsell.Plan : undefined,
         disableCycleSelector: goToUpsell.DisableCycleSelector === true,
         disablePlanSelector: goToUpsell.DisablePlanSelector === true,
+        trackingReference:
+            typeof goToUpsell.TrackingReference === 'string' && goToUpsell.TrackingReference.trim() !== ''
+                ? goToUpsell.TrackingReference
+                : undefined,
     };
 };
 

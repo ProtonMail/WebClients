@@ -11,7 +11,7 @@ Design rationale lives in [`docs/adr/`](docs/adr): [0001](docs/adr/0001-server-d
 
 ## Requirements
 
-A redux store whose thunk `extraArgument` satisfies `ProtonThunkArguments` — the slice reads `extraArgument.api` and `extraArgument.unleashClient`. Account, Mail, Calendar, Drive, Docs, Lumo and vpn-settings all already qualify.
+A redux store whose thunk `extraArgument` satisfies `ProtonThunkArguments` — the slice reads `extraArgument.api` and `extraArgument.unleashClient`. Wired today, all with banner, startup modal and navbar entry: Account, Mail, Calendar, Drive, VPN settings, Console, Lumo, Wallet and Meet (dashboard only, signed-in only).
 
 The store must hold this package's reducer under the `offersDelivery` key (`OffersDeliveryState`). The key is fixed, not configurable: the backend resolves at most one campaign per user from one endpoint, so a second slice in the same app could only fetch the same thing twice, and a fixed key is what lets the selectors be plain functions instead of something each call site has to be handed.
 
@@ -64,6 +64,20 @@ Each app supplies three things and nothing else — no app provider, no app-side
 - **An upgrade handler** — `onUpgrade` is invoked for the `GoToUpsell` token, the only internal ref the gateway emits. It's required, since a call site that omitted it would render a CTA that reports `CtaClicked` and then does nothing. `onExternalLink` defaults to `window.open(url, '_blank', 'noopener,noreferrer')`; override it for hosts where that is unavailable. An app with more than one surface should wrap it in its own hook so the surfaces can't drift apart.
 - **Placement** — a call site calls `useActiveOffer(variant, { onUpgrade })` and renders the result wherever its layout requires. There is no bound "do everything" component dictating a mount point.
 
+Meet's store lives in `@proton/meet`, which `@proton/components` depends on, so `@proton/meet` cannot depend on this package. `applications/meet` hands the reducer and listener to `setupStore({ extensions })` instead.
+
+### Shared surfaces
+
+Every surface below uses `useOfferUpgrade(component)` with its own `UPSELL_COMPONENT` (banner, modal, button) unless given `onUpgrade` (Account passes its own). Render them inside `SubscriptionModalProvider`: above it the opener is a no-op.
+
+- **Banner** — `<OfferTopBanner />` inside the host's `<TopBanners>` (Lumo: above the chat; Wallet: `PrivateAppContainer`'s `top`, since `TopBanners` would bring in its system banners). A host whose own upsell banner the offer replaces asks `useActiveOffer(CampaignVariant.BANNER, { onUpgrade })` and picks one at the call site (Meet: `bannerOffer ? <OfferTopBanner /> : <UpsellBanner />`). `OfferBanner` is a solid `bg-primary` row: the title and/or body, an outline pill CTA when there is one, and no image.
+- **Startup modal** — `useOfferStartupModal()` appended last to an existing `StartupModals` list (Account, Mail, Calendar, Drive), or `<OfferStartupModal />` for hosts without one.
+- **Navbar entry** — `useOfferNavbarEntry()` → `{ button, modal }`, with `button ?? <the host's default upsell />`: `PrivateHeader`'s `upsellButton`, Lumo's sidebar upsell, Wallet's `UpgradeButton`, a new slot in Meet's dashboard header.
+
+Hosts that mounted `SubscriptionModalProvider` inside the component that builds the header (Account, VPN settings, Console) now wrap that component in it instead, so these hooks run inside the provider and the composition stays inline.
+
+For the top navbar specifically: `useOfferNavbarEntry()` returns `{ button, modal }` (`button` is `undefined` with no offer, so `PrivateHeader`'s `upsellButton` falls back to its default chain). `button` is the bare button: hosts that place it in `PrivateHeader`'s list wrap it in `TopNavbarListItem` themselves, and hosts with their own layout (Lumo, Meet, Wallet) place it as is. It uses the package's `useOfferUpgrade(UPSELL_COMPONENT.BUTTON)`: the in-app subscription modal where the host supports it (checkout with the campaign's plan, cycle and coupon when the CTA carries a plan, plan selection otherwise; tagged with the CTA's `TrackingReference` when the campaign sets one, `upsell_<app>-<component>-offers-delivery` via `getUpsellRefFromApp` otherwise, e.g. `upsell_mail-button-offers-delivery`), the account dashboard otherwise. A host that already routes `GoToUpsell` its own way passes `useOfferNavbarEntry({ onUpgrade })`, as Account does. Call it from inside `SubscriptionModalProvider`: above it the opener is a no-op.
+
 Endpoints are **not** app-supplied: both live on the shared API monolith (`bundles/InAppBundle/`), not on a product's own API, so `lib/api.ts` owns them — including `silence: true` on both, without which any API error carrying a message becomes a user-facing error toast and `inapp/evaluate` 404s wherever the endpoint is not deployed yet.
 
 ```ts
@@ -105,7 +119,7 @@ The variant argument is required: it is what tells the package which caller inte
 Read `offer.campaign`, `offer.onAction`, `offer.onDismiss`, and attach `offer.seenRef` to whatever you render. Two things to know:
 
 - **Rendering a real `<a href={campaign.cta.href}>`? Forward the click event to `onAction`.** It skips its own navigation when `currentTarget` is an anchor carrying an href, so cmd/middle-click and copy-link keep working. Omit the event and the link opens twice. Neither shipped surface renders an anchor, so this path has no test coverage.
-- Bespoke UI opts out of the e2e coverage on the shipped `data-testid`s (`offer-banner`, `offer-banner:body`, `offer-banner:cta`, `offer-modal:cta`, `offer-navbar-button`, `offer-deal-modal:cta`, `offer-deal-modal:dismiss`) and needs its own CTA/dismiss/seen tests.
+- Bespoke UI opts out of the e2e coverage on the shipped `data-testid`s (`offer-banner`, `offer-banner:title`, `offer-banner:body`, `offer-banner:cta`, `offer-modal:cta`, `offer-navbar-button`, `offer-deal-modal:cta`, `offer-deal-modal:dismiss`) and needs its own CTA/dismiss/seen tests.
 
 ### SEEN reporting
 
@@ -121,20 +135,20 @@ Dedupe by `campaignKey` lives in the slice (`seenCampaignKeys`), not in a compon
 
 ### The navbar surface
 
-`OfferNavbarButton` is a persistent top-navbar entry point for a `Modal` campaign. It is a separate path from `OfferModal`, not a replacement: `OfferModal` is the one-shot `StartupModals` surface, this one is click-to-open and never queued.
+`OfferNavbarButton` is a persistent top-navbar entry point for a `Modal` campaign. It is a separate path from the startup modal, not a replacement: `useOfferStartupModal` is the one-shot `StartupModals` surface, this one is click-to-open and never queued. Both render `OfferDealModal`.
 
 - **SEEN is reported by the button**, via `seenRef`, when it mounts.
 - **A click is not a CTA.** The host's `onClick` decides what opens; the button calls neither `onAction` nor `onDismiss`, so it stays until the campaign ends.
 - **Appearance is entirely the host's**: `icon` (any node, left of the label; `null` for none), `backgroundColor` (any CSS `background`, colour or gradient), `color` and `label` are required, plus an optional `className`. `backgroundColor`/`color` are passed as the custom properties `--offer-navbar-button-background` / `--offer-navbar-button-color`, which the stylesheet uses with no fallbacks, so the package ships no look of its own.
-- **Placement is the host's**: Mail passes it through `PrivateHeader`'s `upsellButton` only while `useActiveOffer(CampaignVariant.MODAL, …)` is non-null, so it replaces the whole `TopNavbarUpsell` chain (seasonal offers, post-signup promos, the upgrade button) and `undefined` falls back to it. In Mail, a click opens `OfferDealModal`.
+- **Placement is the host's**: Mail, Calendar and Drive pass `useOfferNavbarEntry`'s button through `PrivateHeader`'s `upsellButton` (as do Account, VPN settings and Console; Lumo, Wallet and Meet see [Shared surfaces](#shared-surfaces)), only while `useActiveOffer(CampaignVariant.MODAL, …)` is non-null, so it replaces the whole `TopNavbarUpsell` chain (seasonal offers, post-signup promos, the upgrade button) and `undefined` falls back to it. In Mail, a click opens `OfferDealModal`.
 
 ### The deal modal
 
-`OfferDealModal` is the Q3 2026 sale layout driven by a `Modal` campaign: the image with the title over it, then the CTA, the body as a ticked feature list (one item per non-blank line), the renewal notice and "Don't show this offer again". It accepts `OfferSurfaceProps & Partial<ModalStateProps>`, like `OfferModal`, and is opened by the host from a persistent entry point such as `OfferNavbarButton`.
+`OfferDealModal` is the Q3 2026 sale layout driven by a `Modal` campaign, rendering only what the message carries: with a title, the image with the title over it (or, with no image, the title on a `--primary` header); with no title, the whole image uncropped, as image-only campaigns carry their own copy. Then the CTA, and — only when there is body text — the body as a ticked feature list (one item per non-blank line) and the renewal notice; then "Don't show this again". It accepts `OfferSurfaceProps & Partial<ModalStateProps>`, like `OfferModal`, and is rendered both by `useOfferStartupModal` and from a persistent entry point such as `OfferNavbarButton`. Its close button only closes; "Don't show this again" reports the dismissal. The title names the dialog for screen readers; with no title, an `sr-only` "Special offer" heading does. The `Modal` content has no alt text yet, so the copy inside an image-only campaign is not read out.
 
-- **Every field is required.** Image, title, body and CTA text are required when configuring a campaign. Ingest drops any campaign with a blank title or body, and a `Modal` campaign whose CTA ref this client can't resolve. The image and CTA text are trusted to be present; if sanitising still nulls the image (e.g. a host missing from `PROTON_CDN_HOSTS`) or the text is blank, the modal's `!cta || !message.imageUrl` check renders nothing, so the entry point would open nothing.
+- **Follows the in-app service contract: only the CTA text is required.** Title and description are optional server-side (`inapp-service` `BannerContent`/`ModalContent`), so ingest degrades a blank one to `''` and drops a campaign only when nothing renderable is left — a `Banner` with neither title nor body (the banner shows no image), or a `Modal` with no title, no body and no usable image. With no image — none configured, the in-app service shipping no web image spec for the product (Lumo, Wallet, Meet and VPN today), or sanitising nulling it (e.g. a host missing from `PROTON_CDN_HOSTS`) — the modal still renders, with a `--primary` header. A blank CTA text still makes the modal's `!cta` check render nothing, so the entry point would open nothing.
 - **Closing is not a dismissal.** The close button, Escape and the backdrop only call `onClose`, so the entry point stays and the modal can be reopened.
-- **Only "Don't show this offer again" dismisses.** It calls `onDismiss` (`DISMISSED`, terminal) then `onClose`, which ends the campaign and removes the entry point. The CTA calls `onAction` (`CTA_CLICKED`, also terminal) then `onClose`.
+- **Only "Don't show this again" dismisses.** It calls `onDismiss` (`DISMISSED`, terminal) then `onClose`, which ends the campaign and removes the entry point. The CTA calls `onAction` (`CTA_CLICKED`, also terminal) then `onClose`.
 - **SEEN is left to the entry point**; the modal doesn't attach `seenRef`.
 - **Pricing is to come.** Plan name, cycle, coupon and the derived prices will come from the campaign evaluate response; the modal shows none of them yet.
 
@@ -144,17 +158,17 @@ All server-controlled content is validated once, at ingest, before a consumer se
 
 - **CTAs are resolved at the trust boundary, not at render time.** `lib/cta.ts` is the only code that reads a raw `cta.ref`. `PublicCta` carries no raw `ref` at all — only a `sanitizeHttpsUrl`-validated `href`, or an opaque `kind` routed through `onAction`. Bespoke UI structurally cannot bypass the choke point; there is nothing to bypass with.
 - External URLs are **https-only**, with embedded credentials rejected (`data:`, `javascript:`, `http:`, protocol-relative, `user:pass@host`).
-- Image URLs additionally need a host in `PROTON_CDN_HOSTS` — today `proton.me`, `proton.black`, `proton.pink` and `inapps-static.protonweb.com`, each including their subdomains, so the same asset works on production and on the Proton-owned test environments — so a compromised backend cannot beacon the user's IP/`Referer` to a third party via `<img src>`. An image on any other host is dropped **silently**. Both `<img>` tags also set `referrerPolicy="no-referrer"`.
-- **Ingest never trusts a field's presence.** A blank or non-string `Title` or `Body` drops the campaign. A blank `CtaText` does not: it degrades to a CTA-less promo (`toPublicCta` returns `null`), which is why both shipped surfaces render the button conditionally. The server-controlled `MessageBody.Variant` is matched against known variants rather than used as a property key.
+- Image URLs additionally need a host in `PROTON_CDN_HOSTS` — today `proton.me`, `proton.black`, `proton.pink` and `inapps-static.protonweb.com`, each including their subdomains, so the same asset works on production and on the Proton-owned test environments — so a compromised backend cannot beacon the user's IP/`Referer` to a third party via `<img src>`. An image on any other host is dropped **silently**. Every `<img>` tag (`OfferModal`, `OfferDealModal`) also sets `referrerPolicy="no-referrer"`. The banner renders no image.
+- **Ingest never trusts a field's presence.** A blank or non-string `Title` or `Body` degrades to `''`; the campaign is dropped only when nothing renderable is left (see [The deal modal](#the-deal-modal)). A blank `CtaText` does not: it degrades to a CTA-less promo (`toPublicCta` returns `null`), which is why both shipped surfaces render the button conditionally. The server-controlled `MessageBody.Variant` is matched against known variants rather than used as a property key.
 - CTA `ref`s are symbolic tokens, never paths. The gateway maps exactly one internal destination (`go_to_upsell` → `GoToUpsell` → `onUpgrade`) and returns no CTA otherwise, so `resolveCta` resolves everything else to `null`. There is deliberately **no** app-path branch — an earlier one handed any `/`-prefixed server string to `history.push`, letting the backend choose a same-origin deep link. No `dangerouslySetInnerHTML`.
-- **`campaignKey` and `messageKey` are shape-checked at ingest.** Both are echoed back to `inapp/campaign/event`, so a blank, non-string or over-long (>128 character) key drops the campaign rather than being carried. There is deliberately **no** charset restriction: these values are compared and echoed, never rendered and never used as a property key, so a charset rule would buy nothing and would risk dropping keys the gateway legitimately issues. Trimming is for measuring only — the stored value is verbatim, or the echoed event would carry a key the backend never issued and silently no-op.
+- **`campaignKey` and `messageKey` are shape-checked at ingest.** Both are echoed back to `inapp/campaign/event`, so a blank, non-string or over-long (>191 character, the in-app service's own `message_key` cap) key drops the campaign rather than being carried. There is deliberately **no** charset restriction: these values are compared and echoed, never rendered and never used as a property key, so a charset rule would buy nothing and would risk dropping keys the gateway legitimately issues. Trimming is for measuring only — the stored value is verbatim, or the echoed event would carry a key the backend never issued and silently no-op.
 - **Coupon sanitization was removed as unreachable** — the gateway resolves a coupon into a signed checkout link before the service boundary, so `onUpgrade` receives `null` by contract, not by omission.
 
 There is **no client-side pacing.** `endedCampaignKey` is not an exception to this: it is a per-key render-correctness check over one terminated campaign, not a frequency cap. Pacing, A/B selection and frequency-capping are backend-owned — though today the backend implements terminal-state suppression and deterministic priority ordering, but **not** A/B assignment or impression capping.
 
 ## Localization
 
-Campaign `title`, `body` and CTA text arrive already localized and are deliberately **not** wrapped in `c()` — the backend, not ttag, owns this copy, and wrapping it would submit backend-owned strings to the client's translation pipeline for no benefit. Client-owned translated strings are limited to surface chrome: `OfferModal`'s "Not now", and `OfferDealModal`'s "Close", renewal notice and "Don't show this offer again". `OfferNavbarButton`'s `label` is a prop, so the host translates it at its call site.
+Campaign `title`, `body` and CTA text arrive already localized and are deliberately **not** wrapped in `c()` — the backend, not ttag, owns this copy, and wrapping it would submit backend-owned strings to the client's translation pipeline for no benefit. Client-owned translated strings are limited to surface chrome: `OfferModal`'s "Not now", and `OfferDealModal`'s "Close", renewal notice and "Don't show this again". `OfferNavbarButton`'s `label` is a prop, so the host translates it at its call site.
 
 ## Scope notes
 
@@ -166,11 +180,12 @@ The `Raw*` types were reconciled against the gateway (`bundles/InAppBundle/`), w
 
 ## Reference integration
 
-`applications/account/src/app/private-app/offers/` wires this into the account app:
+`applications/account/src/app/private-app/` wires all three surfaces with its own upgrade handler:
 
 - `store/rootReducer.ts` registers `offersDeliveryReducer`, and `store/listener.ts` registers `startOffersDeliveryListener(startListening, { appReady: bootstrapEvent })`.
-- `offers/useOfferUpgrade.ts` — the app's `GoToUpsell` destination, shared by both surfaces.
-- `AccountOfferTopBanner.tsx` — `useActiveOffer(CampaignVariant.BANNER)` + `OfferBanner`, placed inside the app's `<TopBanners>` stack so it honours the `TopBanner` flex-child layout contract.
-- The modal has no standalone component. `private-app/AccountStartupModals.tsx` slots it into the app's own queue via a `useOfferStartupModal` hook shaped like its peers, appended **last** so every other startup modal outranks it. Its `showModal` is `offer !== null`, and it sets `retryUntilIdle: true` so `StartupModals` retries the `domIsBusy()` check itself, every second, until idle or the 20s startup window closes.
+- `offers/useOfferUpgrade.ts` — the app's `GoToUpsell` destination, shared by all three surfaces.
+- `offers/AccountOfferTopBanner.tsx` — `<OfferTopBanner onUpgrade />` inside the app's `<TopBanners>` stack, so it honours the `TopBanner` flex-child layout contract.
+- `AccountStartupModals.tsx` — `useOfferStartupModal({ onUpgrade })`, appended **last** so every other startup modal outranks it. Its `showModal` is `offer !== null`, and it sets `retryUntilIdle: true` so `StartupModals` retries the `domIsBusy()` check itself, every second, until idle or the 20s startup window closes.
+- `MainContainer.tsx` — `useOfferNavbarEntry({ onUpgrade })` with `button ?? <TopNavbarUpsell />` as `PrivateHeader`'s `upsellButton`. The default export wraps the component in `SubscriptionModalProvider` so the hook runs inside it; `useSettingsApp` derives the `app` both need.
 
 The whole thing is inert until `CentralisedOffersDelivery` is on.

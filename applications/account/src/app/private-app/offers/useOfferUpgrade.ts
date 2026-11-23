@@ -15,6 +15,7 @@ export const useOfferUpgrade = () => {
                 plan: cta?.plan,
                 disableCycleSelector: cta?.disableCycleSelector,
                 disablePlanSelection: cta?.disablePlanSelector,
+                upsellRef: cta?.trackingReference,
             }),
         [openSubscriptionModal]
     );
