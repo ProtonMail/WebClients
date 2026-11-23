@@ -101,10 +101,14 @@ describe('renderEmailSelectionBody', () => {
             </>
         );
 
-        // Which line each lands on is the whole point, so the sender is pinned to the leading one.
-        expect(screen.getByText('Acme Travel')).toHaveClass('text-semibold');
-        expect(screen.getByText('Booking confirmation')).not.toHaveClass('text-semibold');
-        expect(screen.getByText(formatSimpleDate(new Date('2026-08-11T09:30:00Z')))).toBeInTheDocument();
+        const sender = screen.getByText('Acme Travel');
+        const senderLine = sender.parentElement;
+        const subject = screen.getByText('Booking confirmation');
+        const date = screen.getByText(formatSimpleDate(new Date('2026-08-11T09:30:00Z')));
+
+        expect(senderLine?.firstElementChild).toBe(sender);
+        expect(senderLine).toContainElement(date);
+        expect(senderLine?.nextElementSibling).toBe(subject);
     });
 
     it('narrows the selection without touching the proposed set', () => {

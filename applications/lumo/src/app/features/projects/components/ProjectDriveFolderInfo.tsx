@@ -34,10 +34,10 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
         <div className="flex items-start justify-between gap-3 items-center">
             <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2  mb-1 flex-nowrap">
-                    <IcBrandProtonDrive size={5} className="color-norm flex-shrink-0" />
+                    <IcBrandProtonDrive size={5} className="flex-shrink-0 lumo-color-glyph" />
                     {breadcrumbs.length > 0 && (
                         <div className="flex flex-column flex-nowrap flex-1">
-                            <div className="flex items-center gap-1 color-weak flex-nowrap">
+                            <div className="flex flex-nowrap items-center gap-1 lumo-color-glyph-mid">
                                 {breadcrumbs.length <= 2 ? (
                                     // Show all breadcrumbs if 3 or fewer
                                     breadcrumbs.map((breadcrumb, index) => (
@@ -47,8 +47,10 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                         >
                                             <button
                                                 onClick={() => onBreadcrumbClick(breadcrumb)}
-                                                className={`py-1 rounded hover:bg-gray-100 ${
-                                                    index === breadcrumbs.length - 1 ? 'text-bold' : ''
+                                                className={`py-1 radius-8 hover:bg-gray-100 ${
+                                                    index === breadcrumbs.length - 1
+                                                        ? 'lumo-title-small'
+                                                        : 'lumo-body-medium'
                                                 }`}
                                                 disabled={index === breadcrumbs.length - 1}
                                             >
@@ -59,7 +61,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                                     name="ChevronRight"
                                                     width={12}
                                                     height={12}
-                                                    className="color-weak"
+                                                    className="lumo-color-glyph-mid"
                                                 />
                                             )}
                                         </div>
@@ -71,7 +73,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                         <div className="flex items-center flex-nowrap shrink-0">
                                             <button
                                                 onClick={() => onBreadcrumbClick(breadcrumbs[0])}
-                                                className="py-1 rounded hover:bg-gray-100"
+                                                className="hover:bg-gray-100 py-1 radius-8"
                                                 title={breadcrumbs[0].node.name}
                                             >
                                                 {breadcrumbs[0].node.name}
@@ -80,7 +82,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                                 name="ChevronRight"
                                                 width={12}
                                                 height={12}
-                                                className="color-weak"
+                                                className="lumo-color-glyph-mid"
                                             />
                                         </div>
 
@@ -89,7 +91,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                             <button
                                                 ref={breadcrumbDropdownAnchorRef}
                                                 onClick={() => setBreadcrumbDropdownOpen(true)}
-                                                className="py-1 px-2 rounded hover:bg-gray-100 color-weak"
+                                                className="hover:bg-gray-100 px-2 py-1 radius-8 lumo-color-glyph-mid"
                                                 aria-label={c('collider_2025:Action').t`More breadcrumbs`}
                                                 title={c('collider_2025:Action').t`More breadcrumbs`}
                                             >
@@ -99,7 +101,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                                 name="ChevronRight"
                                                 width={12}
                                                 height={12}
-                                                className="color-weak"
+                                                className="lumo-color-glyph-mid"
                                             />
                                         </div>
 
@@ -107,7 +109,7 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                         <div className="flex items-center flex-nowrap ">
                                             <button
                                                 onClick={() => onBreadcrumbClick(breadcrumbs[breadcrumbs.length - 1])}
-                                                className="py-1 rounded hover:bg-gray-100 text-bold text-ellipsis"
+                                                className="hover:bg-gray-100 py-1 radius-8 lumo-title-small text-ellipsis"
                                                 disabled={true}
                                                 title={breadcrumbs[breadcrumbs.length - 1].node.name}
                                             >
@@ -141,11 +143,11 @@ export const ProjectDriveFolderInfo: React.FC<ProjectDriveFolderInfoProps> = ({
                                     </>
                                 )}
                             </div>
-                            <span className="text-xs color-hint">{c('collider_2025:Info')
+                            <span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
                                 .t`From ${DRIVE_APP_NAME}`}</span>
                         </div>
                     )}
-                    <div className="drive-connection-indicator"></div>
+                    <div className="drive-connection-indicator lumo-bg-signal-success"></div>
                 </div>
             </div>
             {isRootFolder && (

@@ -248,55 +248,59 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
 
     return (
         <div className="debug-view-tab-panel">
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Status`}</span>
-                <span className="debug-view-value">
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Status`}</span>
+                <span className="debug-view-value lumo-label-small">
                     {isStreaming ? `🔴 ${c('lumo: Debug View').t`Streaming`}` : `⚪ ${c('lumo: Debug View').t`Idle`}`}
                 </span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Tokens/sec`}</span>
-                <span className={`debug-view-value ${getTokensValueClass()}`}>{metrics.tokensPerSecond}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Tokens/sec`}</span>
+                <span className={`debug-view-value lumo-label-small ${getTokensValueClass()}`}>
+                    {metrics.tokensPerSecond}
+                </span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Redux/sec`}</span>
-                <span className={`debug-view-value ${getReduxValueClass()}`}>{metrics.reduxUpdatesPerSecond}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Redux/sec`}</span>
+                <span className={`debug-view-value lumo-label-small ${getReduxValueClass()}`}>
+                    {metrics.reduxUpdatesPerSecond}
+                </span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Redux updates`}</span>
-                <span className="debug-view-value">{metrics.renderCount}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Redux updates`}</span>
+                <span className="debug-view-value lumo-label-small">{metrics.renderCount}</span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`FPS`}</span>
-                <span className={`debug-view-value ${getFpsValueClass()}`}>{metrics.fps || 0}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`FPS`}</span>
+                <span className={`debug-view-value lumo-label-small ${getFpsValueClass()}`}>{metrics.fps || 0}</span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Memory`}</span>
-                <span className="debug-view-value">{metrics.memoryUsage}MB</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Memory`}</span>
+                <span className="debug-view-value lumo-label-small">{metrics.memoryUsage}MB</span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Messages`}</span>
-                <span className="debug-view-value">{metrics.messageCount}</span>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Messages`}</span>
+                <span className="debug-view-value lumo-label-small">{metrics.messageCount}</span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Last token`}</span>
-                <span className={`debug-view-value ${getLastTokenValueClass()}`}>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Last token`}</span>
+                <span className={`debug-view-value lumo-label-small ${getLastTokenValueClass()}`}>
                     {metrics.timeSinceLastToken || 0}ms
                 </span>
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Render time`}</span>
-                <span className={`debug-view-value ${getRenderTimeValueClass()}`}>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Render time`}</span>
+                <span className={`debug-view-value lumo-label-small ${getRenderTimeValueClass()}`}>
                     {metrics.renderTime || 0}ms
-                    <span className="debug-view-max">
+                    <span className="debug-view-max lumo-color-glyph-mid ml-1 lumo-label-small">
                         ({c('lumo: Debug View').t`max`}: {metrics.longestRenderTime}ms)
                     </span>
                 </span>
@@ -304,50 +308,63 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
 
             {metrics.smoothing && (
                 <>
-                    <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                    <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                         <span className="debug-view-header-icon">🧮</span>
                         {c('lumo: Debug View').t`Smoothing (Spring-Mass)`}
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Lag`}</span>
-                        <span className="debug-view-value">{metrics.smoothing.lag.toFixed(1)} chars</span>
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Lag`}</span>
+                        <span className="debug-view-value lumo-label-small">
+                            {metrics.smoothing.lag.toFixed(1)} chars
+                        </span>
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Buffer size`}</span>
-                        <span className="debug-view-value">{metrics.smoothing.bufferSize} chars</span>
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                            .t`Buffer size`}</span>
+                        <span className="debug-view-value lumo-label-small">{metrics.smoothing.bufferSize} chars</span>
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Differential`}</span>
-                        <span className="debug-view-value">{metrics.smoothing.differential.toFixed(1)} chars</span>
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                            .t`Differential`}</span>
+                        <span className="debug-view-value lumo-label-small">
+                            {metrics.smoothing.differential.toFixed(1)} chars
+                        </span>
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Rate`}</span>
-                        <span className="debug-view-value">{metrics.smoothing.rate.toFixed(1)} c/s</span>
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Rate`}</span>
+                        <span className="debug-view-value lumo-label-small">
+                            {metrics.smoothing.rate.toFixed(1)} c/s
+                        </span>
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Acceleration`}</span>
-                        <span className="debug-view-value">{metrics.smoothing.drate.toFixed(2)} c/s²</span>
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                            .t`Acceleration`}</span>
+                        <span className="debug-view-value lumo-label-small">
+                            {metrics.smoothing.drate.toFixed(2)} c/s²
+                        </span>
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Stiffness`}</span>
-                        <span className="debug-view-value">{metrics.smoothing.stiffness}</span>
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                            .t`Stiffness`}</span>
+                        <span className="debug-view-value lumo-label-small">{metrics.smoothing.stiffness}</span>
                     </div>
 
-                    <div className="debug-view-row">
-                        <span className="debug-view-label">{c('lumo: Debug View').t`Spring state`}</span>
-                        <span className="debug-view-value">
+                    <div className="debug-view-row mb-1.5">
+                        <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                            .t`Spring state`}</span>
+                        <span className="debug-view-value lumo-label-small">
                             {metrics.smoothing.isPulling ? '➡️ Pulling' : '⬅️ Pushing'}
                         </span>
                     </div>
 
-                    <div style={{ marginTop: '12px', marginBottom: '8px' }}>
-                        <div className="debug-view-chart-label" style={{ marginBottom: '4px' }}>
+                    <div className="mt-3 mb-2">
+                        <div className="debug-view-chart-label lumo-color-glyph-mid mb-1 lumo-label-small">
                             {c('lumo: Debug View').t`Spring-Mass Visualization`}
                         </div>
                         <SpringMassVisualization
@@ -358,9 +375,11 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
                         />
                     </div>
 
-                    <div className="debug-view-section" style={{ marginTop: '8px' }}>
-                        <div className="debug-view-chart">
-                            <div className="debug-view-chart-label">{c('lumo: Debug View').t`Lag`} (0-400 chars)</div>
+                    <div className="debug-view-section mt-2 pt-3 border-top lumo-border">
+                        <div className="debug-view-chart mb-2.5">
+                            <div className="debug-view-chart-label lumo-color-glyph-mid mb-1 lumo-label-small">
+                                {c('lumo: Debug View').t`Lag`} (0-400 chars)
+                            </div>
                             <Sparkline
                                 data={metrics.history?.smoothingLag || []}
                                 width={220}
@@ -373,8 +392,10 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
                             />
                         </div>
 
-                        <div className="debug-view-chart">
-                            <div className="debug-view-chart-label">{c('lumo: Debug View').t`Rate`} (0-400 c/s)</div>
+                        <div className="debug-view-chart mb-2.5">
+                            <div className="debug-view-chart-label lumo-color-glyph-mid mb-1 lumo-label-small">
+                                {c('lumo: Debug View').t`Rate`} (0-400 c/s)
+                            </div>
                             <Sparkline
                                 data={metrics.history?.smoothingRate || []}
                                 width={220}
@@ -385,8 +406,8 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
                             />
                         </div>
 
-                        <div className="debug-view-chart">
-                            <div className="debug-view-chart-label">
+                        <div className="debug-view-chart mb-2.5">
+                            <div className="debug-view-chart-label lumo-color-glyph-mid mb-1 lumo-label-small">
                                 {c('lumo: Debug View').t`Differential`} (-10-40 chars)
                             </div>
                             <Sparkline
@@ -402,9 +423,11 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
                 </>
             )}
 
-            <div className="debug-view-section">
-                <div className="debug-view-chart">
-                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Token delays`} (0-500ms)</div>
+            <div className="debug-view-section border-top lumo-border pt-3">
+                <div className="debug-view-chart mb-2.5">
+                    <div className="debug-view-chart-label lumo-color-glyph-mid mb-1 lumo-label-small">
+                        {c('lumo: Debug View').t`Token delays`} (0-500ms)
+                    </div>
                     <Sparkline
                         data={metrics.history?.tokenDelays || []}
                         width={220}
@@ -417,8 +440,10 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
                     />
                 </div>
 
-                <div className="debug-view-chart">
-                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Render time`} (0-50ms)</div>
+                <div className="debug-view-chart mb-2.5">
+                    <div className="debug-view-chart-label lumo-color-glyph-mid mb-1 lumo-label-small">
+                        {c('lumo: Debug View').t`Render time`} (0-50ms)
+                    </div>
                     <Sparkline
                         data={metrics.history?.renderTimes || []}
                         width={220}
@@ -431,8 +456,10 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
                     />
                 </div>
 
-                <div className="debug-view-chart">
-                    <div className="debug-view-chart-label">{c('lumo: Debug View').t`Tokens/sec`} (0-200)</div>
+                <div className="debug-view-chart mb-2.5">
+                    <div className="debug-view-chart-label lumo-color-glyph-mid mb-1 lumo-label-small">
+                        {c('lumo: Debug View').t`Tokens/sec`} (0-200)
+                    </div>
                     <Sparkline
                         data={metrics.history?.tokensPerSecHistory || []}
                         width={220}
@@ -444,8 +471,11 @@ export const PerformanceTab = ({ isVisible }: PerformanceTabProps) => {
                 </div>
             </div>
 
-            <div className="debug-view-section debug-view-actions">
-                <button className="debug-view-btn debug-view-btn--secondary" onClick={handleClearHistory}>
+            <div className="debug-view-section border-top lumo-border pt-3 gap-2 debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
+                    onClick={handleClearHistory}
+                >
                     {c('lumo: Debug View').t`Clear History`}
                 </button>
             </div>

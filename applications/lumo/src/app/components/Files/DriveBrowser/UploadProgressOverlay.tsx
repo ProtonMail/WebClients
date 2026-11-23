@@ -18,31 +18,31 @@ export const UploadProgressOverlay: React.FC<UploadProgressOverlayProps> = ({ up
     const progressPercent = Math.round(uploadProgress.progress);
 
     return (
-        <div className="px-3 py-2 bg-weak rounded mb-2">
+        <div className="mb-2 px-3 py-2 radius-8 lumo-bg-notice">
             <div className="flex items-center gap-2">
                 {uploadProgress.isProcessing ? (
-                    <LumoIcon name="Check" className="color-success flex-shrink-0" />
+                    <LumoIcon name="Check" className="flex-shrink-0 lumo-color-signal-success" />
                 ) : (
-                    <div className="animate-spin rounded-full w-4 h-4 border-2 border-primary border-t-transparent flex-shrink-0"></div>
+                    <div className="flex-shrink-0 w-4 h-4 border-2 border-primary border-t-transparent radius-full animate-spin"></div>
                 )}
                 <div className="flex-1 min-w-0">
-                    <p className="text-sm m-0 text-ellipsis overflow-hidden whitespace-nowrap">
+                    <p className="whitespace-nowrap m-0 overflow-hidden lumo-body-small text-ellipsis">
                         {uploadProgress.isProcessing
                             ? c('collider_2025: Info').t`Processing ${uploadProgress.fileName}`
                             : c('collider_2025: Info').t`Uploading ${uploadProgress.fileName}`}
                     </p>
                 </div>
                 {!uploadProgress.isProcessing && (
-                    <span className="text-xs color-weak flex-shrink-0">{progressPercent}%</span>
+                    <span className="flex-shrink-0 lumo-label-medium lumo-color-glyph-mid">{progressPercent}%</span>
                 )}
             </div>
             {!uploadProgress.isProcessing && (
                 <div
-                    className="mt-2 rounded-full overflow-hidden"
+                    className="mt-2 overflow-hidden radius-full"
                     style={{ height: '4px', backgroundColor: 'var(--border-norm)' }}
                 >
                     <div
-                        className="bg-primary rounded-full transition-all duration-300"
+                        className="duration-300 radius-full bg-primary transition-all lumo-easing-standard"
                         style={{ width: `${uploadProgress.progress}%`, height: '4px' }}
                     />
                 </div>

@@ -22,14 +22,14 @@ export const ApiUsageTab = () => {
 
     return (
         <div className="debug-view-tab-panel">
-            <div className="debug-view-header">
+            <div className="debug-view-header gap-1.5 mb-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">🧾</span>
                 {c('lumo: Debug View').t`API usage and balance`}
             </div>
 
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Dashboard view`}</span>
-                <span className="debug-view-value">
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Dashboard view`}</span>
+                <span className="debug-view-value lumo-label-small">
                     {organizationViewEnabled
                         ? c('lumo: Debug View').t`Organization admin`
                         : organizationMemberViewEnabled
@@ -37,10 +37,10 @@ export const ApiUsageTab = () => {
                           : c('lumo: Debug View').t`Personal`}
                 </span>
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
                     type="button"
-                    className={`debug-view-btn ${
+                    className={`debug-view-btn px-3 py-2 lumo-label-small ${
                         !organizationViewEnabled && !organizationMemberViewEnabled
                             ? 'debug-view-btn--primary'
                             : 'debug-view-btn--secondary'
@@ -54,7 +54,7 @@ export const ApiUsageTab = () => {
                 </button>
                 <button
                     type="button"
-                    className={`debug-view-btn ${
+                    className={`debug-view-btn px-3 py-2 lumo-label-small ${
                         organizationViewEnabled ? 'debug-view-btn--primary' : 'debug-view-btn--secondary'
                     }`}
                     aria-pressed={organizationViewEnabled}
@@ -64,7 +64,7 @@ export const ApiUsageTab = () => {
                 </button>
                 <button
                     type="button"
-                    className={`debug-view-btn ${
+                    className={`debug-view-btn px-3 py-2 lumo-label-small ${
                         organizationMemberViewEnabled ? 'debug-view-btn--primary' : 'debug-view-btn--secondary'
                     }`}
                     aria-pressed={organizationMemberViewEnabled}
@@ -74,10 +74,10 @@ export const ApiUsageTab = () => {
                 </button>
             </div>
 
-            <div className="debug-view-section">
-                <div className="debug-view-row">
-                    <span className="debug-view-label">{c('lumo: Debug View').t`API access`}</span>
-                    <span className="debug-view-value">
+            <div className="debug-view-section border-top lumo-border pt-3">
+                <div className="debug-view-row mb-1.5">
+                    <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`API access`}</span>
+                    <span className="debug-view-value lumo-label-small">
                         {apiAccessDeniedEnabled
                             ? c('lumo: Debug View').t`Not allowed`
                             : c('lumo: Debug View').t`Allowed`}
@@ -85,7 +85,7 @@ export const ApiUsageTab = () => {
                 </div>
                 <button
                     type="button"
-                    className={`debug-view-btn ${
+                    className={`debug-view-btn px-3 py-2 lumo-label-small ${
                         apiAccessDeniedEnabled ? 'debug-view-btn--primary' : 'debug-view-btn--secondary'
                     }`}
                     aria-pressed={apiAccessDeniedEnabled}
@@ -97,16 +97,16 @@ export const ApiUsageTab = () => {
                 </button>
             </div>
 
-            <div className="debug-view-section">
-                <div className="debug-view-row">
-                    <span className="debug-view-label">{c('lumo: Debug View').t`Usage data`}</span>
-                    <span className="debug-view-value">
+            <div className="debug-view-section border-top lumo-border pt-3">
+                <div className="debug-view-row mb-1.5">
+                    <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Usage data`}</span>
+                    <span className="debug-view-value lumo-label-small">
                         {emptyUsageEnabled ? c('lumo: Debug View').t`Empty` : c('lumo: Debug View').t`Sample data`}
                     </span>
                 </div>
                 <button
                     type="button"
-                    className={`debug-view-btn ${
+                    className={`debug-view-btn px-3 py-2 lumo-label-small ${
                         emptyUsageEnabled ? 'debug-view-btn--primary' : 'debug-view-btn--secondary'
                     }`}
                     aria-pressed={emptyUsageEnabled}
@@ -118,10 +118,11 @@ export const ApiUsageTab = () => {
                 </button>
             </div>
 
-            <div className="debug-view-section">
-                <div className="debug-view-row">
-                    <span className="debug-view-label">{c('lumo: Debug View').t`API balance`}</span>
-                    <span className="debug-view-value">
+            <div className="debug-view-section border-top lumo-border pt-3">
+                <div className="debug-view-row mb-1.5">
+                    <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View')
+                        .t`API balance`}</span>
+                    <span className="debug-view-value lumo-label-small">
                         {creditBalanceOverride === null
                             ? c('lumo: Debug View').t`Real balance`
                             : new Intl.NumberFormat(undefined, { style: 'currency', currency: 'USD' }).format(
@@ -129,31 +130,31 @@ export const ApiUsageTab = () => {
                               )}
                     </span>
                 </div>
-                <div className="debug-view-actions">
+                <div className="debug-view-actions gap-2">
                     <button
                         type="button"
-                        className="debug-view-btn debug-view-btn--secondary"
+                        className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                         onClick={() => setDebugApiCreditBalance(0)}
                     >
                         ⏸ {c('lumo: Debug View').t`Empty balance`}
                     </button>
                     <button
                         type="button"
-                        className="debug-view-btn debug-view-btn--secondary"
+                        className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                         onClick={() => setDebugApiCreditBalance(5)}
                     >
                         ⚠️ {c('lumo: Debug View').t`Low balance ($5)`}
                     </button>
                     <button
                         type="button"
-                        className="debug-view-btn debug-view-btn--primary"
+                        className="debug-view-btn debug-view-btn--primary px-3 py-2 lumo-label-small"
                         onClick={() => setDebugApiCreditBalance((creditBalanceOverride ?? 0) + 50)}
                     >
                         💳 {c('lumo: Debug View').t`Simulate $50 purchase`}
                     </button>
                     <button
                         type="button"
-                        className="debug-view-btn debug-view-btn--secondary"
+                        className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                         onClick={() => setDebugApiCreditBalance(null)}
                     >
                         ↺ {c('lumo: Debug View').t`Use real balance`}
@@ -161,7 +162,7 @@ export const ApiUsageTab = () => {
                 </div>
             </div>
 
-            <div className="debug-view-hint" style={{ marginTop: '10px' }}>
+            <div className="debug-view-hint mt-2.5">
                 {c('lumo: Debug View')
                     .t`Open API usage to preview empty, low, and funded balance states. Overrides only affect the PoC UI.`}
             </div>

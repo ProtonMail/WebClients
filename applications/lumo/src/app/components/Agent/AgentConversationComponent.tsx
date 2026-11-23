@@ -60,7 +60,7 @@ const AgentConversationLayout = ({
     );
 
     return (
-        <div className="flex flex-column flex-nowrap flex-1 overflow-hidden bg-norm">
+        <div className="flex flex-column flex-nowrap flex-1 overflow-hidden lumo-bg-panel">
             <MessageChainComponent
                 messageChainRef={messageChainRef}
                 messageChain={messageChain}
@@ -80,7 +80,7 @@ const AgentConversationLayout = ({
             {conversationErrors.length > 0 && (
                 <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
             )}
-            <div ref={composerContainerRef} className="lumo-chat-item flex flex-column no-print w-full px-4 md:px-6">
+            <div ref={composerContainerRef} className="lumo-chat-item no-print flex flex-column w-full px-4 md:px-6">
                 <ComposerComponent
                     composerMode={ComposerMode.CONVERSATION}
                     handleSendMessage={handleSendMessage}
@@ -96,7 +96,7 @@ const AgentConversationLayout = ({
                     isAgent
                 />
             </div>
-            <p className="text-center relative color-weak text-xs my-2 hidden md:block">
+            <p className="relative hidden my-2 lumo-body-small text-center lumo-color-glyph-mid md:block">
                 {c('collider_2025: Disclosure')
                     .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
             </p>

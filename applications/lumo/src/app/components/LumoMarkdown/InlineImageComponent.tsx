@@ -119,14 +119,14 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     if (error) {
         return (
             <span
-                className="inline-block p-4 rounded-lg border"
+                className="inline-block p-4 border radius-12"
                 style={{ background: '#f8d7da', borderColor: '#f5c6cb', color: '#721c24', maxWidth: '300px' }}
             >
                 <span className="flex items-center gap-2 mb-2">
                     <LumoIcon name="Info" size={16} />
-                    <span className="text-sm font-bold">{c('collider_2025:Error').t`Failed to load image`}</span>
+                    <span className="lumo-body-small">{c('collider_2025:Error').t`Failed to load image`}</span>
                 </span>
-                {error && <span className="block mb-2 text-xs">{error}</span>}
+                {error && <span className="block mb-2 lumo-body-small">{error}</span>}
                 <Button size="small" shape="solid" onClick={handleRetry}>
                     {c('collider_2025:Action').t`Retry`}
                 </Button>
@@ -137,7 +137,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
     if (isLoading || !imageDataUrl) {
         return (
             <span
-                className="inline-flex items-center justify-center p-8 bg-strong rounded-xl"
+                className="inline-flex items-center justify-center p-8 radius-16 lumo-bg-control-fill-mid"
                 style={{ minWidth: '200px', minHeight: '150px' }}
             >
                 <CircleLoader size="medium" />
@@ -155,9 +155,9 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     <img src={imageDataUrl} alt={alt || attachment.filename} />
                 </span>
 
-                <span className="inline-image-card__overlay">
+                <span className="inline-image-card__overlay radius-12">
                     <Button
-                        className="inline-image-card__btn inline-image-card__btn--expand"
+                        className="inline-image-card__btn m-2 inline-image-card__btn--expand"
                         shape="solid"
                         color="weak"
                         icon
@@ -169,12 +169,12 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
                     </Button>
 
                     <ImageModifyButton
-                        className="inline-image-card__btn inline-image-card__btn--modify"
+                        className="inline-image-card__btn m-2 inline-image-card__btn--modify"
                         onClick={() => handleOpenOverlay('edit')}
                     />
 
                     <Button
-                        className="inline-image-card__btn inline-image-card__btn--download"
+                        className="inline-image-card__btn m-2 inline-image-card__btn--download"
                         shape="solid"
                         color="weak"
                         icon

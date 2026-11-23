@@ -9,7 +9,7 @@ interface Props {
 
 export const PaperTrailLowProfileView = ({ onStartOver }: Props) => {
     return (
-        <div className="ai-paper-trail__inner ai-paper-trail__low-profile flex flex-column items-center gap-4 text-center">
+        <div className="ai-paper-trail__inner ai-paper-trail__low-profile flex flex-column items-center gap-4 mx-auto px-6 text-center">
             <img src={lumoGhostAvatar} alt="" className="ai-paper-trail__low-profile-icon shrink-0" />
             <h2 className="ai-paper-trail__title m-0">
                 {c('collider_2025:Title').t`Looks like you've kept a low profile`}

@@ -1,45 +1,39 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .schedule-chip {
-	line-height: rem(16);
-
 	&--regular {
-		font-size: rem(13);
-		background-color: var(--control-fill-mid);
+		background-color: var(--lumo-control-fill);
 		padding-block: rem(5);
-		padding-inline: rem(8) rem(10);
 	}
 
 	&--compact {
-		font-size: rem(12);
 		padding-block: rem(3);
-		padding-inline: rem(6) rem(8);
 	}
 
 	&--unavailable {
-		--border-norm: color-mix(in srgb, var(--signal-danger) 15%, var(--background-norm));
+		--border-norm: color-mix(in srgb, var(--lumo-signal-danger) 15%, var(--lumo-panel));
 
-		background-color: color-mix(in srgb, var(--signal-danger) 5%, var(--background-norm));
+		background-color: color-mix(in srgb, var(--lumo-signal-danger) 5%, var(--lumo-panel));
 
 		.schedule-chip__label {
-			color: var(--signal-danger-major-2);
+			color: var(--lumo-signal-danger-pressed);
 		}
 	}
 
 	&--warning {
-		--border-norm: color-mix(in srgb, var(--signal-warning) 20%, var(--background-norm));
+		--border-norm: color-mix(in srgb, var(--lumo-signal-warning) 20%, var(--lumo-panel));
 
-		background-color: color-mix(in srgb, var(--signal-warning) 10%, var(--background-norm));
+		background-color: color-mix(in srgb, var(--lumo-signal-warning) 10%, var(--lumo-panel));
 
 		.schedule-chip__label {
-			color: var(--signal-warning-major-2);
+			color: var(--lumo-signal-warning);
 		}
 	}
 
 	&__remove.button {
-		--button-default-text-color: var(--glyph-low);
-		--button-hover-text-color: var(--glyph);
-		--button-active-text-color: var(--glyph);
+		--button-default-text-color: var(--lumo-glyph-low);
+		--button-hover-text-color: var(--lumo-glyph);
+		--button-active-text-color: var(--lumo-glyph);
 
 		inline-size: rem(14);
 		block-size: rem(14);

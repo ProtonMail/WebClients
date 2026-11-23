@@ -112,7 +112,7 @@ const getUploadKinds = (): { icon: IconName; title: string; detail: string }[] =
 ];
 
 const ResultNote = ({ icon, children }: { icon: IconName; children: ReactNode }) => (
-    <div className="flex flex-nowrap items-start gap-2 text-sm color-weak">
+    <div className="flex flex-nowrap items-start gap-2 lumo-body-small lumo-color-glyph-mid">
         <LumoIcon aria-hidden name={icon} size={14} className="shrink-0 mt-0.5" />
         <span className="min-w-0 text-break">{children}</span>
     </div>
@@ -126,8 +126,13 @@ const ResultDetails = ({ report }: { report: SkillCheckReport }) => {
     return (
         <div className="upload-skill-result-details flex flex-column gap-2 mt-3">
             {!findings.length && (
-                <div className="flex flex-nowrap items-start gap-2 text-sm">
-                    <LumoIcon aria-hidden name="CircleCheck" size={14} className="shrink-0 mt-0.5 color-success" />
+                <div className="flex flex-nowrap items-start gap-2 lumo-body-small">
+                    <LumoIcon
+                        aria-hidden
+                        name="CircleCheck"
+                        size={14}
+                        className="shrink-0 mt-0.5 lumo-color-signal-success"
+                    />
                     <span>
                         {c('collider_2025:Info').ngettext(
                             msgid`No problems found in ${checkedFileCount} file.`,
@@ -148,12 +153,12 @@ const ResultDetails = ({ report }: { report: SkillCheckReport }) => {
                             aria-hidden
                             name="TriangleExclamationPoint"
                             size={14}
-                            className="shrink-0 mt-0.5 color-warning"
+                            className="shrink-0 mt-0.5 lumo-color-signal-warning"
                         />
-                        <div className="flex flex-column min-w-0 text-sm">
-                            <span className="text-semibold">{title}</span>
-                            <span className="color-weak">{detail}</span>
-                            <span className="color-hint text-ellipsis" title={location}>
+                        <div className="flex flex-column min-w-0 lumo-body-small">
+                            <span className="lumo-label-large">{title}</span>
+                            <span className="lumo-color-glyph-mid">{detail}</span>
+                            <span className="text-ellipsis lumo-color-glyph-mid" title={location}>
                                 {location}
                             </span>
                         </div>
@@ -293,13 +298,16 @@ export const UploadSkillView = () => {
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
             <CustomizePage className="gap-6">
-                <Link to="/customize" className="flex items-center gap-2 color-norm text-no-decoration w-fit-content">
+                <Link
+                    to="/customize"
+                    className="flex items-center gap-2 w-fit-content text-no-decoration lumo-color-glyph"
+                >
                     <LumoIcon name="ArrowLeft" size={16} className="rtl:mirror" />
                     {c('collider_2025:Link').t`Skills`}
                 </Link>
                 <div className="flex flex-column gap-1">
-                    <h1 className="text-2xl text-semibold m-0">{c('collider_2025:Title').t`Upload a skill`}</h1>
-                    <p className="m-0 color-weak">
+                    <h1 className="m-0 lumo-title-large">{c('collider_2025:Title').t`Upload a skill`}</h1>
+                    <p className="m-0 lumo-color-glyph-mid">
                         {c('collider_2025:Info')
                             .t`Bring skills you've written or downloaded. ${LUMO_SHORT_APP_NAME} checks each one before you add it.`}
                     </p>
@@ -309,7 +317,7 @@ export const UploadSkillView = () => {
                     {/* Drop target for mouse users; the buttons inside are the keyboard path. */}
                     <div
                         className={clsx(
-                            'upload-skill-dropzone flex flex-column items-center justify-center gap-3',
+                            'upload-skill-dropzone py-10 px-6 flex flex-column items-center justify-center gap-3 border border-dashed lumo-border radius-12 lumo-color-glyph-mid lumo-bg-panel',
                             isDragging && 'is-dragging'
                         )}
                         onDragOver={(event) => {
@@ -319,14 +327,14 @@ export const UploadSkillView = () => {
                         onDragLeave={() => setIsDragging(false)}
                         onDrop={handleDrop}
                     >
-                        <span className="upload-skill-dropzone-icon flex items-center justify-center">
+                        <span className="upload-skill-dropzone-icon radius-16 lumo-color-glyph-brand-text flex items-center justify-center">
                             <LumoIcon aria-hidden name="FileUp" size={24} />
                         </span>
                         <div className="flex flex-column items-center gap-1">
-                            <span className="text-lg text-semibold color-norm">
+                            <span className="lumo-title-medium lumo-color-glyph">
                                 {c('collider_2025:Info').t`Drop skills, skill sets or plugins here`}
                             </span>
-                            <span className="text-sm color-weak">
+                            <span className="lumo-body-small lumo-color-glyph-mid">
                                 {c('collider_2025:Info').t`You can add several at once.`}
                             </span>
                         </div>
@@ -335,11 +343,16 @@ export const UploadSkillView = () => {
                             aria-label={c('collider_2025:Label').t`Supported formats`}
                         >
                             {['.md', '.zip', '.skill', '.plugin'].map((extension) => (
-                                <li key={extension} className="upload-skill-format text-xs text-monospace">
+                                <li
+                                    key={extension}
+                                    className="upload-skill-format lumo-bg-control-fill lumo-color-glyph-mid px-2 py-0.5 lumo-label-small lumo-font-mono"
+                                >
                                     {extension}
                                 </li>
                             ))}
-                            <li className="upload-skill-format text-xs">{c('collider_2025:Info').t`folders`}</li>
+                            <li className="upload-skill-format lumo-bg-control-fill lumo-color-glyph-mid px-2 py-0.5 lumo-label-small">{c(
+                                'collider_2025:Info'
+                            ).t`folders`}</li>
                         </ul>
                         <div className="flex flex-wrap justify-center gap-2">
                             <Button color="norm" onClick={() => inputRef.current?.click()}>
@@ -377,21 +390,21 @@ export const UploadSkillView = () => {
                 </div>
 
                 {results.length === 0 && (
-                    <Card rounded background={false} className="bg-norm">
+                    <Card rounded background={false} className="lumo-bg-panel">
                         <div className="flex flex-nowrap items-center gap-3">
                             <span className="flex flex-nowrap gap-1 shrink-0" aria-hidden>
-                                <span className="upload-skill-source-logo flex items-center justify-center">
+                                <span className="upload-skill-source-logo border lumo-border radius-8 lumo-bg-panel flex items-center justify-center">
                                     <img src={claudeLogo} alt="" width={16} height={16} />
                                 </span>
-                                <span className="upload-skill-source-logo flex items-center justify-center">
+                                <span className="upload-skill-source-logo border lumo-border radius-8 lumo-bg-panel flex items-center justify-center">
                                     <img src={chatgptLogo} alt="" width={16} height={16} />
                                 </span>
                             </span>
                             <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                                <span className="text-semibold">
+                                <span className="lumo-label-large">
                                     {c('collider_2025:Title').t`Moving from Claude or ChatGPT?`}
                                 </span>
-                                <span className="text-sm color-weak">
+                                <span className="lumo-body-small lumo-color-glyph-mid">
                                     {c('collider_2025:Info')
                                         .t`Bring the skills you made there to ${LUMO_SHORT_APP_NAME} in a few steps.`}
                                 </span>
@@ -410,18 +423,18 @@ export const UploadSkillView = () => {
 
                 {results.length === 0 && (
                     <section className="flex flex-column gap-3">
-                        <h2 className="m-0 text-rg text-semibold">{c('collider_2025:Title').t`What you can upload`}</h2>
-                        <ul className="upload-skill-kinds unstyled m-0">
+                        <h2 className="m-0 lumo-title-small">{c('collider_2025:Title').t`What you can upload`}</h2>
+                        <ul className="upload-skill-kinds gap-3 unstyled m-0">
                             {getUploadKinds().map((kind) => (
-                                <Card as="li" key={kind.title} rounded background={false} className="bg-norm">
+                                <Card as="li" key={kind.title} rounded background={false} className="lumo-bg-panel">
                                     <div className="flex flex-column gap-2">
                                         <div className="flex flex-nowrap items-center gap-2">
-                                            <span className="upload-skill-kind-icon flex items-center justify-center shrink-0">
+                                            <span className="upload-skill-kind-icon radius-8 lumo-bg-control-fill lumo-color-glyph flex items-center justify-center shrink-0">
                                                 <LumoIcon aria-hidden name={kind.icon} size={16} />
                                             </span>
-                                            <span className="flex-1 text-semibold">{kind.title}</span>
+                                            <span className="flex-1 lumo-label-large">{kind.title}</span>
                                         </div>
-                                        <p className="m-0 text-sm color-weak">{kind.detail}</p>
+                                        <p className="m-0 lumo-body-small lumo-color-glyph-mid">{kind.detail}</p>
                                     </div>
                                 </Card>
                             ))}
@@ -429,8 +442,8 @@ export const UploadSkillView = () => {
                     </section>
                 )}
 
-                <div className="flex flex-nowrap items-start gap-2 text-sm color-weak">
-                    <LumoIcon aria-hidden name="ShieldCheck" size={16} className="shrink-0 color-success" />
+                <div className="flex flex-nowrap items-start gap-2 lumo-body-small lumo-color-glyph-mid">
+                    <LumoIcon aria-hidden name="ShieldCheck" size={16} className="shrink-0 lumo-color-signal-success" />
                     <span>
                         {c('collider_2025:Info')
                             .t`Every file is checked for hidden text, attempts to override instructions, keys and risky commands. ${LUMO_SHORT_APP_NAME} can read the scripts in a skill but never runs them.`}
@@ -440,7 +453,7 @@ export const UploadSkillView = () => {
                 {results.length > 0 && (
                     <ul className="unstyled m-0 flex flex-column gap-2">
                         {results.map((result) => (
-                            <Card as="li" key={result.fileName} rounded background={false} className="bg-norm">
+                            <Card as="li" key={result.fileName} rounded background={false} className="lumo-bg-panel">
                                 <div className="flex flex-nowrap items-start gap-3">
                                     <LumoIcon
                                         aria-hidden
@@ -448,14 +461,19 @@ export const UploadSkillView = () => {
                                         size={18}
                                         className={clsx(
                                             'shrink-0 mt-0.5',
-                                            result.error ? 'color-danger' : 'color-weak'
+                                            result.error ? 'lumo-color-signal-danger' : 'lumo-color-glyph-mid'
                                         )}
                                     />
                                     <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                                        <span className="text-semibold text-ellipsis">
+                                        <span className="lumo-label-large text-ellipsis">
                                             {result.draft?.name ?? result.fileName}
                                         </span>
-                                        <span className={clsx('text-sm', result.error ? 'color-danger' : 'color-weak')}>
+                                        <span
+                                            className={clsx(
+                                                'lumo-body-small',
+                                                result.error ? 'lumo-color-signal-danger' : 'lumo-color-glyph-mid'
+                                            )}
+                                        >
                                             {result.error ?? getResultSummary(result)}
                                         </span>
                                     </div>
@@ -478,7 +496,7 @@ export const UploadSkillView = () => {
                 )}
 
                 <div className="flex flex-wrap items-center justify-space-between gap-3">
-                    <span className="text-sm color-weak">{footerHint}</span>
+                    <span className="lumo-body-small lumo-color-glyph-mid">{footerHint}</span>
                     <div className="flex flex-nowrap gap-2 ml-auto">
                         <Button onClick={() => history.push('/customize')}>
                             {c('collider_2025:Action').t`Cancel`}

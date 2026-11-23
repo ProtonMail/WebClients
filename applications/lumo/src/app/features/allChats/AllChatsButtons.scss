@@ -1,15 +1,15 @@
 // Filter chips: a bordered pill at rest, a soft fill without border when selected (Web/Filter chip).
 .all-chats-filter-chip {
-	--button-default-background-color: var(--control-fill-contrast);
-	--button-default-border-color: var(--border-mid);
-	--button-hover-border-color: var(--control-border-mid);
+	--button-default-background-color: var(--lumo-control-fill-contrast);
+	--button-default-border-color: var(--lumo-border-mid);
+	--button-hover-border-color: var(--lumo-control-border-mid);
 
 	&.is-active {
-		--button-default-background-color: var(--control-fill-strong);
-		--button-hover-background-color: var(--control-fill-strong);
+		--button-default-background-color: var(--lumo-control-fill-mid);
+		--button-hover-background-color: var(--lumo-control-fill-mid);
 
 		// Buttons draw aria-pressed="true" with the active colour, so it carries the selected fill.
-		--button-active-background-color: var(--control-fill-strong);
+		--button-active-background-color: var(--lumo-control-fill-mid);
 		--button-default-border-color: transparent;
 		--button-hover-border-color: transparent;
 		--button-active-border-color: transparent;

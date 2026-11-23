@@ -92,7 +92,7 @@ const WhatsNewModal = ({ feature, onCallToAction, onCancel, open, ...modalProps 
             <Tooltip title={c('collider_2025:Action').t`Close`}>
                 <button
                     type="button"
-                    className="whats-new-modal-close absolute inline-flex items-center justify-center border bg-norm color-norm p-0 rounded w-custom h-custom"
+                    className="whats-new-modal-close absolute inline-flex items-center justify-center w-custom h-custom p-0 border radius-8 lumo-color-glyph lumo-bg-panel"
                     style={{ '--w-custom': '2.25rem', '--h-custom': '2.25rem' }}
                     onClick={onCancel}
                     aria-label={c('collider_2025:Action').t`Close`}
@@ -109,18 +109,18 @@ const WhatsNewModal = ({ feature, onCallToAction, onCancel, open, ...modalProps 
                         <img
                             src={currentStage.image}
                             alt={currentStage.imageAlt ?? ''}
-                            className="relative z-1 w-full object-contain rounded-lg"
+                            className="object-contain relative z-1 w-full radius-12"
                         />
                     )}
                 </div>
                 <ModalContent className="mt-6">
                     <div className="flex flex-column flex-nowrap gap-2">
-                        <span className="self-start py-0.5 px-3 rounded-sm bg-weak color-weak text-sm text-normal">
+                        <span className="self-start px-3 py-0.5 radius-4 lumo-body-small lumo-color-glyph-mid lumo-bg-control-fill">
                             {c('collider_2025: Feature').t`What's new`}
                         </span>
-                        <h2 className="whats-new-title text-2xl text-semibold m-0">{currentStage.getTitle()}</h2>
+                        <h2 className="whats-new-title m-0 lumo-title-large">{currentStage.getTitle()}</h2>
                         {currentStage.getDescription && (
-                            <p className="m-0 color-weak lh-rg">{currentStage.getDescription()}</p>
+                            <p className="m-0 lh-rg lumo-color-glyph-mid">{currentStage.getDescription()}</p>
                         )}
                         {renderFeaturePoints()}
                     </div>

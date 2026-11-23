@@ -67,7 +67,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
         <div className={clsx('flex flex-col gap-3 p-4', className)}>
             {/* Header */}
             <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-grey">
+                <span className="lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025:Action').t`Describe desired changes...`}
                 </span>
             </div>
@@ -89,7 +89,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         }
                     }}
                     placeholder={c('collider_2025:Action').t`What needs changed?`}
-                    className="text-sm border border-weak rounded-full focus:border-primary focus:outline-none bg-norm transition-colors"
+                    className="focus:border-primary focus:outline-none border lumo-border radius-full lumo-body-small lumo-bg-panel transition-colors"
                     disabled={disabled}
                     style={{
                         display: 'block',
@@ -105,10 +105,10 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                 <button
                     onClick={handleCustomRetry}
                     disabled={disabled || !customInstructions.trim()}
-                    className={`rounded-full flex items-center justify-center transition-all duration-200 ${
+                    className={`radius-full flex items-center justify-center transition-all lumo-easing-standard duration-200 ${
                         customInstructions.trim()
-                            ? 'bg-primary hover:bg-primary-dark shadow-sm'
-                            : 'bg-weak cursor-not-allowed'
+                            ? 'lumo-bg-control-brand-fill lumo-elevation-1'
+                            : 'lumo-bg-control-fill cursor-not-allowed'
                     }`}
                     style={{
                         position: 'absolute',
@@ -124,7 +124,9 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         name="ArrowRight"
                         width={12}
                         height={12}
-                        className={customInstructions.trim() ? 'text-white' : 'text-hint'}
+                        className={
+                            customInstructions.trim() ? 'lumo-color-control-brand-text' : 'lumo-color-glyph-disabled'
+                        }
                     />
                 </button>
             </div>
@@ -134,13 +136,13 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                 {getRetryOptions().map((option) => (
                     <button
                         key={option.strategy}
-                        className="flex items-center gap-2 px-3 py-2 text-left hover:bg-weak rounded-md transition-colors"
+                        className="hover:bg-weak flex items-center gap-2 px-3 py-2 radius-8 text-left transition-colors"
                         onClick={() => handleOptionClick(option.strategy)}
                         disabled={disabled}
                         title={option.description}
                     >
                         <LumoIcon name={option.icon} className="shrink-0" />
-                        <span className="text-sm">{option.label}</span>
+                        <span className="lumo-body-small">{option.label}</span>
                     </button>
                 ))}
             </div>

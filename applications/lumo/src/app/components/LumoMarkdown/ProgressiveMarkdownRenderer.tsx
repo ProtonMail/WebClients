@@ -280,7 +280,7 @@ const RefLink = React.memo(function RefLink({
             color="weak"
             shape="solid"
             as="a"
-            className="ref-link text-sm mx-1 py-0.5 px-1 lh100"
+            className="ref-link mx-1 px-1 py-0.5 lumo-body-small lh100"
             href={url}
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
@@ -413,7 +413,7 @@ const MarkdownBlock: React.FC<{
                 },
                 table(props: any) {
                     return (
-                        <div className="markdown-table-wrapper">
+                        <div className="markdown-table-wrapper radius-8 lumo-bg-panel">
                             <table {...props} />
                         </div>
                     );
@@ -504,7 +504,10 @@ const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.me
             return isIos() || isIpad() || isSafari() ? '' : 'content-visibility-auto';
         }, [isIos(), isIpad(), isSafari()]);
         return (
-            <div className="progressive-markdown-content markdown-rendering" ref={messageContentContainerRef}>
+            <div
+                className="progressive-markdown-content markdown-rendering gap-3 lumo-color-glyph"
+                ref={messageContentContainerRef}
+            >
                 {renderUnits.map((unit, unitIndex) => {
                     const isTrailingUnit = unitIndex === renderUnits.length - 1;
                     if (unit.kind === 'metric-row') {
@@ -559,7 +562,7 @@ const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.me
                                 ) : null}
                                 <div className="lumo-insight-card-block w-full my-2 mb-3">
                                     <div className={`${LUMO_MARKDOWN_CARD_SHELL_CLASS} lumo-insight-card p-4`}>
-                                        <div className="lumo-insight-card__label">
+                                        <div className="lumo-insight-card__label mb-1 lumo-label-small lumo-color-glyph-mid">
                                             <span>{
                                                 // translator: Status while an information card is loading.
                                                 c('collider_2025:Label').t`Loading card...`

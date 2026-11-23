@@ -37,7 +37,7 @@ const getStrokeWidths = () => [
 ];
 
 const TOOL_BUTTON_CLASS =
-    'sketch-toolbar__tool inline-flex items-center justify-center rounded-lg bg-transparent color-norm border-none';
+    'sketch-toolbar__tool inline-flex items-center justify-center radius-12 bg-transparent lumo-color-glyph border-none';
 
 export const Toolbar = ({
     config,
@@ -71,7 +71,10 @@ export const Toolbar = ({
                 <span ref={strokeMenuRef} className="sketch-toolbar__pen-menu relative shrink-0 inline-block">
                     <button
                         type="button"
-                        className={clsx(TOOL_BUTTON_CLASS, (showStrokeMenu || config.tool === 'pen') && 'bg-weak')}
+                        className={clsx(
+                            TOOL_BUTTON_CLASS,
+                            (showStrokeMenu || config.tool === 'pen') && 'lumo-bg-control-fill'
+                        )}
                         title={c('Action').t`Pen thickness`}
                         aria-label={c('Action').t`Pen thickness`}
                         aria-expanded={showStrokeMenu}
@@ -80,14 +83,14 @@ export const Toolbar = ({
                         <LumoIcon name="Pen" size={16} />
                     </button>
                     {showStrokeMenu && (
-                        <span className="sketch-toolbar__stroke-popup absolute inline-flex flex-column gap-0.5 p-1 rounded-xl border bg-norm shadow-lifted">
+                        <span className="sketch-toolbar__stroke-popup absolute inline-flex flex-column gap-0.5 p-1 border radius-16 lumo-bg-panel-elevated lumo-elevation-4">
                             {getStrokeWidths().map((stroke) => (
                                 <button
                                     key={stroke.value}
                                     type="button"
                                     className={clsx(
-                                        'sketch-toolbar__stroke-item flex items-center gap-2 py-2 px-3 rounded-lg text-sm text-semibold text-left border-none bg-transparent color-norm',
-                                        config.strokeWidth === stroke.value && 'bg-weak'
+                                        'sketch-toolbar__stroke-item flex items-center gap-2 px-3 py-2 border-none radius-12 lumo-label-small text-left lumo-color-glyph bg-transparent',
+                                        config.strokeWidth === stroke.value && 'lumo-bg-control-fill'
                                     )}
                                     onClick={() => {
                                         onStrokeWidthChange(stroke.value);
@@ -95,7 +98,7 @@ export const Toolbar = ({
                                     }}
                                 >
                                     <span
-                                        className="sketch-toolbar__stroke-preview shrink-0 rounded-full"
+                                        className="sketch-toolbar__stroke-preview shrink-0 radius-full"
                                         style={{
                                             inlineSize: stroke.value * 2,
                                             blockSize: stroke.value * 2,
@@ -115,7 +118,7 @@ export const Toolbar = ({
                             key={color.value}
                             type="button"
                             className={clsx(
-                                'sketch-toolbar__color shrink-0',
+                                'sketch-toolbar__color p-0 shrink-0',
                                 color.bordered && 'border',
                                 config.color === color.value && 'sketch-toolbar__color--selected'
                             )}

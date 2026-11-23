@@ -174,31 +174,31 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
 
     return (
         <div className="debug-view-tab-panel">
-            <div className="debug-view-header">
+            <div className="debug-view-header gap-1.5 mb-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">🚧</span>
                 {c('lumo: Debug View').t`Resource limit notifications`}
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerLimitError('messages', MAX_MESSAGES_PER_CONVERSATION)}
                 >
                     💬 {c('lumo: Debug View').t`Trigger messages limit`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerLimitError('assets', MAX_ASSETS_PER_SPACE)}
                 >
                     📎 {c('lumo: Debug View').t`Trigger assets limit`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerLimitError('conversations', MAX_CONVERSATIONS_PER_SPACE)}
                 >
                     🗂️ {c('lumo: Debug View').t`Trigger conversations limit`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerLimitError('spaces', MAX_SPACES_PER_USER)}
                 >
                     🌌 {c('lumo: Debug View').t`Trigger spaces limit`}
@@ -209,26 +209,28 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+            <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">🔒</span>
                 {c('lumo: Debug View').t`Server message limit (current chat)`}
             </div>
-            <div className="debug-view-row">
-                <span className="debug-view-label">{c('lumo: Debug View').t`Locked`}</span>
-                <span className={`debug-view-value ${isCurrentConversationLocked ? 'debug-view-value--danger' : ''}`}>
+            <div className="debug-view-row mb-1.5">
+                <span className="debug-view-label lumo-color-glyph-mid">{c('lumo: Debug View').t`Locked`}</span>
+                <span
+                    className={`debug-view-value lumo-label-small ${isCurrentConversationLocked ? 'debug-view-value--danger' : ''}`}
+                >
                     {isCurrentConversationLocked ? c('lumo: Debug View').t`Yes` : c('lumo: Debug View').t`No`}
                 </span>
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={simulateServerMessageLimit}
                     disabled={!currentConversationId || isCurrentConversationLocked}
                 >
                     💬 {c('lumo: Debug View').t`Simulate server rejection`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={unlockCurrentConversation}
                     disabled={!isCurrentConversationLocked}
                 >
@@ -242,31 +244,31 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+            <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">📱</span>
                 {c('lumo: Debug View').t`Native bridge: onLimitReachedError`}
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerNativeBridgeLimit('messages', MAX_MESSAGES_PER_CONVERSATION)}
                 >
                     💬 {c('lumo: Debug View').t`Send messages limit to native`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerNativeBridgeLimit('assets', MAX_ASSETS_PER_SPACE)}
                 >
                     📎 {c('lumo: Debug View').t`Send assets limit to native`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerNativeBridgeLimit('conversations', MAX_CONVERSATIONS_PER_SPACE)}
                 >
                     🗂️ {c('lumo: Debug View').t`Send conversations limit to native`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerNativeBridgeLimit('spaces', MAX_SPACES_PER_USER)}
                 >
                     🌌 {c('lumo: Debug View').t`Send spaces limit to native`}
@@ -280,25 +282,25 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+            <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">📏</span>
                 {c('lumo: Debug View').t`Composer limit banner preview`}
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => cycleOverride('messages', debugOverrides.messages.override)}
                 >
                     💬 {c('lumo: Debug View').t`Messages`}: {overrideLabel(debugOverrides.messages.override)}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => cycleOverride('assets', debugOverrides.assets.override)}
                 >
                     📎 {c('lumo: Debug View').t`Assets`}: {overrideLabel(debugOverrides.assets.override)}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => dispatch(clearAllDebugLimitOverrides())}
                 >
                     🧹 {c('lumo: Debug View').t`Clear overrides`}
@@ -309,13 +311,13 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+            <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">📅</span>
                 {c('lumo: Debug View').t`Weekly chat limit upsell`}
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => setDebugModelLimitsExhausted(!debugModelLimitsExhausted)}
                 >
                     🪫 {c('lumo: Debug View').t`Weekly limit upsell`}:{' '}
@@ -327,13 +329,13 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+            <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">📄</span>
                 {c('lumo: Debug View').t`Large file upsell`}
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() =>
                         setDebugStagedFileAnalysisShortfall(debugStagedShortfall ? undefined : SAMPLE_FILE_SHORTFALL)
                     }
@@ -342,21 +344,21 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                     {debugStagedShortfall ? c('lumo: Debug View').t`on` : c('lumo: Debug View').t`off`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => showFileAnalysisNotice('stopped')}
                     disabled={!currentConversationId}
                 >
                     ✋ {c('lumo: Debug View').t`Show in chat: send stopped`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => showFileAnalysisNotice('skipped')}
                     disabled={!currentConversationId}
                 >
                     💬 {c('lumo: Debug View').t`Show in chat: answered without reading`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={clearFileAnalysisPreviews}
                     disabled={!debugStagedShortfall && !fileAnalysisNotice}
                 >
@@ -368,13 +370,13 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+            <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">🧠</span>
                 {c('lumo: Debug View').t`Model usage limits`}
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => setDebugMaxModelOverride(nextMaxModelOverride(debugMaxOverride))}
                 >
                     🚫 {c('lumo: Debug View').t`Max model availability`}: {debugMaxOverride ?? 'available'}
@@ -388,34 +390,34 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 </div>
             </div>
 
-            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+            <div className="debug-view-header gap-1.5 my-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">⚠️</span>
                 {c('lumo: Debug View').t`Generation errors`}
             </div>
-            <div className="debug-view-actions">
+            <div className="debug-view-actions gap-2">
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerGenerationError(LUMO_API_ERRORS.GENERATION_REJECTED)}
                     disabled={!currentConversationId}
                 >
                     🚦 {c('lumo: Debug View').t`Trigger generation rejected`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerGenerationError(LUMO_API_ERRORS.HIGH_DEMAND)}
                     disabled={!currentConversationId}
                 >
                     🚌 {c('lumo: Debug View').t`Trigger high demand`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerGenerationError(LUMO_API_ERRORS.HARMFUL_CONTENT)}
                     disabled={!currentConversationId}
                 >
                     🛡️ {c('lumo: Debug View').t`Trigger harmful content`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--secondary"
+                    className="debug-view-btn debug-view-btn--secondary px-3 py-2 lumo-label-small"
                     onClick={() => triggerGenerationError(LUMO_API_ERRORS.STREAM_DISCONNECTED)}
                     disabled={!currentConversationId}
                 >

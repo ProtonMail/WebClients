@@ -130,15 +130,15 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
     return (
         <section
             aria-labelledby={`${id}-title`}
-            className="create-schedule-card flex flex-column flex-nowrap gap-4 w-full p-5 rounded-xl bg-norm"
+            className="create-schedule-card flex flex-column flex-nowrap gap-4 w-full p-5 border lumo-border-control radius-16 lumo-bg-panel"
         >
             <div className="flex flex-nowrap shrink-0 items-center gap-2 min-w-0">
                 <LumoIcon aria-hidden className="shrink-0" name="Clock" size={14} />
-                <h3 className="shrink-0 m-0 text-rg text-semibold" id={`${id}-title`}>{
+                <h3 className="shrink-0 m-0 lumo-title-small" id={`${id}-title`}>{
                     // translator: Heading inviting the user to schedule a recurring or one-time task (imperative).
                     c('collider_2025:Title').t`Schedule task`
                 }</h3>
-                <span aria-hidden className="color-weak">
+                <span aria-hidden className="lumo-color-glyph-mid">
                     ·
                 </span>
                 <span dir="auto" className="min-w-0 text-break">
@@ -148,19 +148,25 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
 
             <Scroll className="create-schedule-card__body flex flex-column flex-nowrap overflow-hidden" scrollContained>
                 <div className="flex flex-column flex-nowrap gap-4">
-                    <div className="text-rg">
+                    <div className="lumo-body-medium">
                         {cadenceLabel}
                         {schedule.recurrenceRule.timezone !== ALWAYS_LOCAL_TIMEZONE_ID &&
                             ` (${schedule.recurrenceRule.timezone})`}
                     </div>
 
-                    <div className="flex flex-nowrap items-center gap-4 px-4 py-3 border border-weak rounded-xl">
+                    <div className="flex flex-nowrap items-center gap-4 px-4 py-3 border lumo-border radius-16">
                         <div className="flex flex-column flex-1 gap-0.5 min-w-0">
-                            <span className="create-schedule-card__auto-approve-label" id={`${id}-auto-approve-label`}>{
+                            <span
+                                className="create-schedule-card__auto-approve-label lumo-label-large"
+                                id={`${id}-auto-approve-label`}
+                            >{
                                 // translator: Toggle label. When on, the scheduled task can use allowed external tools without asking the user to approve each action.
                                 c('collider_2025:Title').t`Auto-approve`
                             }</span>
-                            <span className="text-sm color-weak" id={`${id}-auto-approve-description`}>{
+                            <span
+                                className="lumo-body-small lumo-color-glyph-mid"
+                                id={`${id}-auto-approve-description`}
+                            >{
                                 // translator: Explains the Auto-approve toggle. ${LUMO_SHORT_APP_NAME} is the product name; selected tools provide access to external services.
                                 c('collider_2025:Description')
                                     .t`Let ${LUMO_SHORT_APP_NAME} use selected tools automatically. When off, the task pauses for your approval before using a tool that requires confirmation.`
@@ -183,7 +189,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                                 // translator: Introduces the external tools and services the task uses. "Uses" is a present-tense verb with the task as its subject, not a plural noun or a command.
                                 c('collider_2025:Label').t`Uses`
                             }
-                            headerClassName="color-hint"
+                            headerClassName="lumo-color-glyph-mid"
                             value={schedule.connectors}
                         />
                     )}
@@ -191,7 +197,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                     <Button
                         aria-controls={`${id}-details`}
                         aria-expanded={showDetails}
-                        className="create-schedule-card__details-button flex flex-nowrap shrink-0 items-center justify-start gap-1.5 p-0 rounded-lg text-sm text-nowrap color-hint bg-transparent hover:color-weak"
+                        className="create-schedule-card__details-button flex flex-nowrap shrink-0 items-center justify-start gap-1.5 p-0 radius-12 lumo-body-small text-nowrap lumo-color-glyph-mid bg-transparent"
                         onClick={() => setShowDetails((value) => !value)}
                         shape="ghost"
                         size="small"
@@ -209,7 +215,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                     </Button>
                     <div
                         dir="auto"
-                        className="create-schedule-card__instructions mb-1 p-4 border border-weak rounded-xl text-sm text-break text-pre-wrap color-weak"
+                        className="create-schedule-card__instructions mb-1 p-4 border lumo-border radius-16 lumo-body-small text-break text-pre-wrap lumo-color-glyph-mid lumo-bg-control-fill-low"
                         hidden={!showDetails}
                         id={`${id}-details`}
                     >

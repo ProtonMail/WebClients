@@ -42,8 +42,8 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                 rows
                     ? 'flex flex-nowrap items-center gap-3 py-2'
                     : clsx(
-                          'schedule-chip schedule-chip--regular inline-flex flex-nowrap shrink-0 items-center gap-1.5 max-w-full border rounded',
-                          onRemove && 'pr-1.5'
+                          'schedule-chip schedule-chip--regular inline-flex flex-nowrap shrink-0 items-center gap-1.5 max-w-full pl-2 border radius-8 lumo-label-medium',
+                          onRemove ? 'pr-1.5' : 'pr-2.5'
                       ),
                 unavailable && !rows && 'schedule-chip--unavailable'
             )}
@@ -59,7 +59,7 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                     )}
                     aria-label={statusLabel ? `${label}: ${statusLabel}` : label}
                 >
-                    <span className={clsx('inline-flex shrink-0', rows && 'p-2 rounded bg-weak')}>
+                    <span className={clsx('inline-flex shrink-0', rows && 'p-2 radius-8 lumo-bg-control-fill')}>
                         {unavailable ? (
                             <LumoIcon
                                 aria-hidden
@@ -75,12 +75,18 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                     <span className="min-w-0">
                         <span
                             className={
-                                rows ? 'block text-semibold text-ellipsis' : 'schedule-chip__label block text-ellipsis'
+                                rows
+                                    ? 'block lumo-label-large text-ellipsis'
+                                    : 'schedule-chip__label block text-ellipsis'
                             }
                         >
                             {label}
                         </span>
-                        {rows && <span className="block text-sm color-weak">{statusLabel ?? typeLabel}</span>}
+                        {rows && (
+                            <span className="block lumo-body-small lumo-color-glyph-mid">
+                                {statusLabel ?? typeLabel}
+                            </span>
+                        )}
                     </span>
                 </span>
             </Tooltip>
@@ -113,7 +119,7 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                             </>
                         )}
                         <DropdownMenuButton
-                            className="flex flex-nowrap items-center gap-2 text-left color-danger"
+                            className="flex flex-nowrap items-center gap-2 text-left lumo-color-signal-danger"
                             onClick={onRemove}
                         >
                             <LumoIcon aria-hidden className="shrink-0" name="Trash" size={16} />
@@ -129,7 +135,7 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                     <Button
                         icon
                         increasedClickArea
-                        className="schedule-chip__remove inline-flex shrink-0 items-center justify-center p-0 border border-transparent rounded-sm"
+                        className="schedule-chip__remove inline-flex shrink-0 items-center justify-center p-0 border border-transparent radius-4"
                         size="small"
                         shape="ghost"
                         type="button"

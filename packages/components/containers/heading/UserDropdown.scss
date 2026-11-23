@@ -14,7 +14,9 @@ im.$media-expressions: $media-expressions;
 	}
 
 	@include im.media('<small') {
-		--width: calc(100vw - 30px) !important;
+		&:not(.userDropdown--match-anchor) {
+			--width: calc(100vw - 30px) !important;
+		}
 	}
 
 	.dropdown-content {

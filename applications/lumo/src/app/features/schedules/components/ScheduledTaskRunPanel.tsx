@@ -87,23 +87,23 @@ export const ScheduledTaskRunPanel = ({
                     onClick={() => setShowRuns((previous) => !previous)}
                     type="button"
                 >
-                    <h3 className="text-rg text-semibold">
+                    <h3 className="lumo-title-small">
                         {
                             // translator: Expands the list of past runs of this scheduled task.
                             c('collider_2025:Title').t`Runs`
                         }
-                        <span className="ml-1.5 text-normal color-hint">{runs.length}</span>
+                        <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{runs.length}</span>
                     </h3>
                     <LumoIcon
                         aria-hidden
-                        className="color-weak"
+                        className="lumo-color-glyph-mid"
                         name={showRuns ? 'ChevronDown' : 'ChevronRight'}
                         size={16}
                     />
                 </button>
 
                 <div hidden={!showRuns} id={runsId}>
-                    <p className="my-1.5 text-sm color-hint">{
+                    <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">{
                         // translator: Description of the scheduled task's run history.
                         c('collider_2025:Info').t`When this task ran.`
                     }</p>
@@ -116,7 +116,7 @@ export const ScheduledTaskRunPanel = ({
                                     aria-current={run.id === conversation.id ? 'page' : undefined}
                                     as={Link}
                                     className={clsx(
-                                        'scheduled-task-run-panel__run py-2 text-rg',
+                                        'scheduled-task-run-panel__run py-2 lumo-body-medium',
                                         run.id === conversation.id && 'scheduled-task-run-panel__run--current'
                                     )}
                                     color="weak"
@@ -129,14 +129,14 @@ export const ScheduledTaskRunPanel = ({
                                         state: { ...location.state, expandedScheduleRuns: conversation.spaceId },
                                     }}
                                 >
-                                    <span className="flex flex-nowrap items-center gap-2 w-full text-normal">
+                                    <span className="flex flex-nowrap items-center gap-2 w-full lumo-body-medium">
                                         <span className="shrink-0">{getScheduleRunTimestampLabel(run.createdAt)}</span>
                                         {statusLabel && (
                                             <>
-                                                <span aria-hidden className="color-hint">
+                                                <span aria-hidden className="lumo-color-glyph-mid">
                                                     ·
                                                 </span>
-                                                <span className="color-hint text-wrap">{statusLabel}</span>
+                                                <span className="text-wrap lumo-color-glyph-mid">{statusLabel}</span>
                                             </>
                                         )}
                                     </span>

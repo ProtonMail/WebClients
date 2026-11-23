@@ -6,11 +6,11 @@ im.$media-expressions: $media-expressions;
 .projects-text-div {
 	flex: 1;
 	text-align: start;
-	transition: background-color 0.15s ease;
+	transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:focus {
-		outline: 2px solid var(--focus-outline);
-		outline-offset: -2px;
+		outline: 2px solid var(--lumo-control-border-focus);
+		outline-offset: calc(-1 * var(--lumo-space-2));
 	}
 
 	&:hover {
@@ -19,14 +19,14 @@ im.$media-expressions: $media-expressions;
 }
 
 .projects-create-button {
-	border-radius: 4px;
+	border-radius: var(--lumo-radius-4);
 	opacity: 0.6;
 	transition:
-		opacity 0.15s ease,
-		background-color 0.15s ease;
+		opacity var(--lumo-duration-150) var(--lumo-easing-standard),
+		background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 	block-size: 22px;
 	inline-size: 21px;
-	padding-block-end: 2px;
+	padding-block-end: var(--lumo-space-2);
 
 	&:hover {
 		opacity: 0.6;
@@ -36,8 +36,8 @@ im.$media-expressions: $media-expressions;
 
 @include im.media('<=small') {
 	.project-sidebar-item-see-all {
-		padding-block: 4px;
-		padding-inline: 12px;
-		border-radius: 4px;
+		padding-block: var(--lumo-space-4);
+		padding-inline: var(--lumo-space-12);
+		border-radius: var(--lumo-radius-4);
 	}
 }

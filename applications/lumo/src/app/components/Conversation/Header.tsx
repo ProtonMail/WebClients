@@ -85,7 +85,7 @@ const SidebarToggleButton = ({ className }: { className?: string }) => {
             shape="ghost"
             color="weak"
             size="medium"
-            className={clsx('shrink-0', className)}
+            className={clsx('sidebar-toggle-button shrink-0', className)}
         >
             <span className="sr-only">
                 {isVisible ? c('collider_2025:Button').t`Close sidebar` : c('collider_2025:Action').t`Show sidebar`}

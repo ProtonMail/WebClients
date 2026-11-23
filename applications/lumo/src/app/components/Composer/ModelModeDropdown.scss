@@ -3,6 +3,11 @@
 @use '../../styles/lumo-container-names' as *;
 
 .model-mode-trigger {
+	// Keep the label and caret together when the later button rule overrides the flex utility.
+	&.button {
+		display: inline-flex;
+	}
+
 	&__label {
 		@container #{$container-name-composer-toolbar} (max-width: 300px) {
 			display: none;
@@ -19,7 +24,6 @@
 }
 
 .model-mode-dropdown {
-	--border-norm: var(--border-weak);
 	--width: #{rem(416)};
 	--min-width: #{rem(416)};
 
@@ -45,72 +49,30 @@
 }
 
 .model-mode-picker {
-	--model-mode-selected-bg: var(--interaction-solid-weak-custom);
+	--model-mode-selected-background: var(--lumo-control-fill-mid);
 }
 
 .model-mode-picker--dropdown {
 	overflow: hidden;
-	border: 1px solid var(--border-weak);
-	border-radius: rem(24);
-	background-color: var(--background-norm);
-	box-shadow: var(--shadow-lifted);
-
-	.model-mode-upgrade {
-		padding-block-start: rem(24);
-	}
 }
 
 .model-mode-panel--dropdown {
 	position: relative;
 	z-index: 2;
-	background-color: var(--background-norm);
 
 	&.model-mode-panel--with-upgrade-footer {
 		margin-block-end: rem(-18);
 	}
-
-	border-radius: rem(24);
-	border: 1px solid var(--border-norm);
-
-	.model-mode-panel-body {
-		padding: rem(12);
-	}
-}
-
-.model-mode-panel--sheet .model-mode-panel-body {
-	padding-block: 0;
-	padding-inline: rem(16);
 }
 
 .model-mode-section-title {
 	display: block;
-	font-size: rem(14);
-	font-weight: 600;
-	line-height: 1.3;
-	color: var(--text-norm);
 }
 
 .model-mode-upgrade {
-	padding-block: rem(12);
-	padding-inline: rem(16);
 	background: var(--lumo-secondary-upsell-background);
 	max-inline-size: 100%;
 	box-sizing: border-box;
-}
-
-.model-mode-picker--sheet .model-mode-panel-body {
-	padding-block-end: rem(16);
-}
-
-.model-mode-picker--sheet .model-mode-upgrade {
-	margin-block: 0 rem(16);
-	margin-inline: rem(16);
-	border-radius: rem(12);
-}
-
-.model-mode-upgrade-text {
-	font-size: rem(12);
-	line-height: 1.35;
 }
 
 .model-mode-upgrade-button {
@@ -122,14 +84,13 @@
 
 .model-mode-option {
 	background: transparent;
-	color: var(--text-norm);
 
 	&.is-selected {
 		background-color: var(--model-mode-selected-background);
 	}
 
 	&:hover:not(.is-selected, .is-disabled) {
-		background-color: var(--background-weak);
+		background-color: var(--lumo-control-fill);
 	}
 }
 
@@ -139,36 +100,34 @@
 
 .model-mode-tab {
 	background-color: transparent;
-	color: var(--text-norm);
 
 	&.is-active {
 		background-color: var(--model-mode-selected-background);
 	}
 
 	&:hover:not(.is-active) {
-		background-color: var(--background-weak);
+		background-color: var(--lumo-control-fill);
 	}
 }
 
+:is(.model-mode-option, .model-mode-tab):focus-visible {
+	outline: 2px solid var(--lumo-control-border-focus);
+	outline-offset: 2px;
+}
+
 .model-mode-status-pill {
-	font-size: rem(11);
-	font-weight: 600;
-	line-height: 1.2;
-	padding-block: rem(2);
-	padding-inline: rem(8);
 	border-radius: rem(10);
 	white-space: nowrap;
 }
 
 .model-mode-status-pill--exhausted {
-	color: var(--text-weak);
-	background-color: var(--background-weak);
-	font-weight: normal;
+	color: var(--lumo-glyph-mid);
+	background-color: var(--lumo-control-fill);
 }
 
 .model-mode-status-pill--high-load {
-	color: var(--signal-warning);
-	background-color: var(--signal-warning-minor-2, rgb(245 158 11 / 0.12));
+	color: var(--lumo-signal-warning);
+	background-color: color-mix(in srgb, var(--lumo-signal-warning) 12%, transparent);
 }
 
 .model-mode-sheet {
@@ -181,25 +140,20 @@
 	max-inline-size: none;
 	block-size: 100%;
 	max-block-size: none;
-	margin: 0;
-	padding: 0;
 	border: none;
 	background: transparent;
 	overflow: hidden;
 
 	&::backdrop {
-		background-color: rgb(0 0 0 / 0.4);
-		animation: model-mode-sheet-overlay-in 0.2s ease-out;
+		background-color: var(--lumo-scrim);
+		animation: model-mode-sheet-overlay-in var(--lumo-duration-200) var(--lumo-easing-enter);
 	}
 }
 
 .model-mode-sheet-backdrop {
 	flex: 1 1 auto;
 	inline-size: 100%;
-	margin: 0;
-	padding: 0;
 	border: none;
-	background: transparent;
 	cursor: default;
 }
 
@@ -208,11 +162,10 @@
 	flex-direction: column;
 	inline-size: 100%;
 	max-block-size: 85vh;
-	border-start-start-radius: rem(16);
-	border-start-end-radius: rem(16);
-	background-color: var(--background-norm);
+	border-start-start-radius: var(--lumo-radius-16);
+	border-start-end-radius: var(--lumo-radius-16);
 	box-shadow: 0 rem(-4) rem(24) rgb(0 0 0 / 0.12);
-	animation: model-mode-sheet-in 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+	animation: model-mode-sheet-in var(--lumo-duration-300) var(--lumo-easing-enter);
 	padding-block-end: env(safe-area-inset-bottom, 0);
 	overflow: hidden;
 }
@@ -223,15 +176,13 @@
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
-	padding-block: rem(10) rem(6);
-	padding-inline: rem(16);
 }
 
 .model-mode-sheet-handle {
 	inline-size: rem(36);
 	block-size: rem(4);
 	border-radius: rem(2);
-	background-color: var(--border-weak);
+	background-color: var(--lumo-border);
 }
 
 .model-mode-sheet-close {

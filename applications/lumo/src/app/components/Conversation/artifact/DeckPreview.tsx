@@ -103,7 +103,7 @@ export const DeckPreview = memo(function DeckPreview({ artifact }: Props) {
 
         return (
             <div className="flex flex-column items-center justify-center gap-3 p-8 flex-1 min-h-0">
-                <p className="m-0 color-weak text-sm text-center">
+                <p className="m-0 lumo-color-glyph-mid lumo-body-small text-center">
                     {c('collider_2025: Error').t`This slide deck couldn't be read.`}
                 </p>
                 <Button size="small" shape="outline" onClick={handleFix}>
@@ -131,12 +131,13 @@ export const DeckPreview = memo(function DeckPreview({ artifact }: Props) {
                         const slideNumber = index + 1;
                         return (
                             <section key={index} className="flex flex-column gap-1" style={{ width }}>
-                                <span className="text-xs color-weak user-select-none">{c('collider_2025: Info')
-                                    .t`Slide ${slideNumber}`}</span>
+                                <span className="lumo-body-small lumo-color-glyph-mid user-select-none">{c(
+                                    'collider_2025: Info'
+                                ).t`Slide ${slideNumber}`}</span>
                                 <DeckSlide slide={slide} width={width} selectable />
                                 {slide.notes && (
-                                    <p className="m-0 text-sm color-weak text-pre-wrap">
-                                        <span className="text-semibold user-select-none">{c('collider_2025: Info')
+                                    <p className="m-0 lumo-body-medium lumo-color-glyph-mid text-pre-wrap">
+                                        <span className="lumo-title-small user-select-none">{c('collider_2025: Info')
                                             .t`Notes:`}</span>{' '}
                                         {/* A click selects all the notes; dragging still selects part of them. A mouse
                                             shortcut for a text selection, not a control. */}

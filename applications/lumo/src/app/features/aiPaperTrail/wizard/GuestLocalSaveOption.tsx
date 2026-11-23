@@ -12,20 +12,20 @@ export const GuestLocalSaveOption = ({ enabled, onChange }: Props) => {
     const toggleId = 'paper-trail-save-locally';
 
     return (
-        <div className="ai-paper-trail__save-option">
+        <div className="ai-paper-trail__save-option gap-3 py-4 radius-12">
             <Toggle
                 id={toggleId}
                 checked={enabled}
                 onChange={(event) => {
                     onChange(event.target.checked);
                 }}
-                className="ai-paper-trail__save-toggle shrink-0"
+                className="ai-paper-trail__save-toggle shrink-0 mt-0.5"
             />
             <label htmlFor={toggleId} className="ai-paper-trail__save-copy text-start">
-                <span className="text-sm text-semibold">
+                <span className="lumo-label-small">
                     {c('collider_2025:Label').t`Save report on this device to view it later`}
                 </span>
-                <span className="ai-paper-trail__muted text-sm">
+                <span className="ai-paper-trail__muted lumo-body-small">
                     {c('collider_2025:Info')
                         .t`Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${LUMO_SHORT_APP_NAME}'s servers.`}
                 </span>

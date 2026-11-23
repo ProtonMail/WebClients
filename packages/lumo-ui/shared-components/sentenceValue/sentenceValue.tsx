@@ -9,7 +9,7 @@ import type { ReactNode } from 'react';
  * every child of one keyed.
  */
 const sentenceValue = (text: string): ReactNode => (
-    <span key={text} className="text-semibold">
+    <span key={text} className="lumo-title-small">
         {text}
     </span>
 );

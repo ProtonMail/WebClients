@@ -45,19 +45,23 @@ export const SkillsMigrationNotice = ({ customLumoCount }: SkillsMigrationNotice
     );
 
     return (
-        <div className="skills-migration-notice flex flex-nowrap items-start gap-3" role="status">
-            <span className="skills-migration-notice__line flex shrink-0 items-center color-primary" aria-hidden>
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+        <div className="skills-migration-notice pl-4 pr-3 flex flex-nowrap items-start gap-3 radius-12" role="status">
+            <span
+                className="skills-migration-notice__line flex shrink-0 items-center lumo-color-glyph-brand-text"
+                aria-hidden
+            >
                 <LumoIcon name="Sparkles" size={18} />
             </span>
-            <p className="skills-migration-notice__text m-0 text-sm flex-1 min-w-0">
-                <span className="text-semibold">{c('collider_2025:Info')
+            <output className="skills-migration-notice__text flex-1 min-w-0 m-0 lumo-body-small">
+                <span className="lumo-title-small">{c('collider_2025:Info')
                     .t`Custom ${LUMO_SHORT_APP_NAME}s are now Skills`}</span>
                 {'. '}
                 {movedCountLabel}
-            </p>
+            </output>
             <button
                 type="button"
-                className="skills-migration-notice__line flex shrink-0 items-center border-none bg-transparent p-0 cursor-pointer color-weak interactive"
+                className="skills-migration-notice__line flex shrink-0 items-center p-0 border-none lumo-color-glyph-mid bg-transparent cursor-pointer interactive"
                 aria-label={c('collider_2025:Action').t`Dismiss`}
                 onClick={handleDismiss}
             >

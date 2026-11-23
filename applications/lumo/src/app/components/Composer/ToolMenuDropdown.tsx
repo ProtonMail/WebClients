@@ -197,11 +197,12 @@ export const ToolMenuDropdown = ({
                                             <LumoIcon name="Sparkles" size={16} />
                                         </span>
                                         <div className="flex flex-column flex-1 min-w-0 text-left">
-                                            <span className="text-sm font-medium">{c('collider_2025: Action')
+                                            <span className="lumo-body-small">{c('collider_2025: Action')
                                                 .t`Skills`}</span>
                                             {isGuest && (
-                                                <span className="text-xs color-hint">{c('collider_2025:Placeholder')
-                                                    .t`Sign in required`}</span>
+                                                <span className="lumo-body-small lumo-color-glyph-mid">{c(
+                                                    'collider_2025:Placeholder'
+                                                ).t`Sign in required`}</span>
                                             )}
                                         </div>
                                         {!isGuest && <LumoIcon name="ChevronRight" size={16} />}
@@ -215,8 +216,8 @@ export const ToolMenuDropdown = ({
                         )}
 
                         {showImageUpsellFooter && (
-                            <div className="tool-menu-upsell flex flex-column gap-3 p-3 border-top border-weak">
-                                <p className="m-0 text-sm color-norm">
+                            <div className="tool-menu-upsell flex flex-column gap-3 p-3 border-top lumo-border">
+                                <p className="m-0 lumo-body-small lumo-color-glyph">
                                     {c('collider_2025: Info')
                                         .t`Upgrade for more image generations and access to advanced models.`}
                                 </p>
@@ -232,7 +233,7 @@ export const ToolMenuDropdown = ({
                             /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
                             <div
                                 className={clsx(
-                                    'flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4',
+                                    'flex flex-row flex-nowrap items-center justify-space-between gap-4 w-full px-3 py-2.5',
                                     isGuest && 'tool-menu-item--sign-in-required'
                                 )}
                                 onClick={(e) => e.stopPropagation()}
@@ -240,11 +241,11 @@ export const ToolMenuDropdown = ({
                                 <div className="flex items-center gap-3">
                                     <LumoIcon name="FileText" size={16} />
                                     <div className="flex flex-column">
-                                        <span className="text-sm font-medium flex items-center gap-2">
+                                        <span className="flex items-center gap-2 lumo-body-small">
                                             {c('collider_2025: Action').t`Creations`}
                                             {showArtifactNewLabel ? <NewLabel /> : null}
                                         </span>
-                                        <span className="text-xs color-weak">
+                                        <span className="lumo-body-small lumo-color-glyph-mid">
                                             {isGuest
                                                 ? c('collider_2025:Placeholder').t`Sign in required`
                                                 : c('collider_2025: Info').t`For this chat`}
@@ -263,13 +264,13 @@ export const ToolMenuDropdown = ({
                         {isToolsFlagEnabled && (
                             /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
                             <div
-                                className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
+                                className="flex flex-row flex-nowrap items-center justify-space-between gap-4 w-full px-3 py-2.5"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <div className="flex items-center gap-3">
                                     <LumoIcon name="Globe" size={16} />
                                     <div className="flex flex-column">
-                                        <span className="text-sm font-medium">{c('collider_2025: Action')
+                                        <span className="lumo-body-small">{c('collider_2025: Action')
                                             .t`Web search`}</span>
                                     </div>
                                 </div>
@@ -287,7 +288,7 @@ export const ToolMenuDropdown = ({
                                     <span className="shrink-0 flex">
                                         <LumoIcon name="Blocks" size={16} />
                                     </span>
-                                    <span className="text-sm font-medium flex-1 text-left">{c('collider_2025: Action')
+                                    <span className="flex-1 lumo-body-small text-left">{c('collider_2025: Action')
                                         .t`Connectors`}</span>
                                     <LumoIcon name="ChevronRight" size={16} />
                                 </div>

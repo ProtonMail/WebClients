@@ -256,10 +256,10 @@ export const DesktopAppOnboardingModal = ({
                     <div className="flex flex-column flex-nowrap gap-6">
                         <StepDots count={steps.length} current={stepIndex} />
                         <div className="flex flex-column flex-nowrap gap-3">
-                            <h2 id={titleId} className="dao-title text-5xl text-semibold color-norm m-0">
+                            <h2 id={titleId} className="dao-title lumo-headline-small lumo-color-glyph m-0">
                                 {title}
                             </h2>
-                            <p className="m-0 text-lg lh-rg color-weak">{description}</p>
+                            <p className="m-0 lumo-body-large lumo-color-glyph-mid">{description}</p>
                         </div>
                     </div>
                     <div className="dao-footer flex flex-wrap items-center justify-end gap-2">{renderButtons()}</div>

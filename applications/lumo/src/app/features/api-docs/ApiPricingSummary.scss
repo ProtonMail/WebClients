@@ -1,8 +1,5 @@
 .api-docs-pricing-summary {
-	border: 1px solid var(--border-norm);
-	border-radius: 0.75rem;
 	overflow: hidden;
-	background: var(--background-norm);
 }
 
 .api-docs-pricing-summary-table {
@@ -13,7 +10,7 @@
 	th,
 	td {
 		padding-block: 0.9rem;
-		padding-inline: 1.25rem;
+		padding-inline: var(--lumo-space-20);
 		text-align: start;
 		vertical-align: middle;
 		font-weight: inherit;
@@ -21,16 +18,15 @@
 
 	thead th {
 		padding-block: 0.55rem;
-		background: var(--background-weak);
-		font-size: 0.6875rem;
-		font-weight: bold;
+		background: var(--lumo-control-fill);
+		font: var(--lumo-type-label-small);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
-		color: var(--text-hint);
+		color: var(--lumo-glyph-mid);
 	}
 
 	tbody tr + tr {
-		border-block-start: 1px solid var(--border-weak);
+		border-block-start: 1px solid var(--lumo-border);
 	}
 
 	th:first-child {
@@ -41,28 +37,20 @@
 .api-docs-pricing-summary-model {
 	strong {
 		display: block;
-		font-size: 0.9375rem;
+		font: var(--lumo-type-body-large);
 		font-weight: bold;
 		margin-block-end: 0.15rem;
 	}
 
 	code {
-		font-size: 0.75rem;
-		font-weight: normal;
-		color: var(--text-weak);
+		font: var(--lumo-type-label-small);
+		font-family: var(--lumo-font-mono);
+		color: var(--lumo-glyph-mid);
 	}
 }
 
 .api-docs-pricing-summary-price {
-	font-size: 1.125rem;
-	font-weight: bold;
 	font-variant-numeric: tabular-nums;
-	color: var(--text-norm);
-}
-
-.api-docs-pricing-summary-na {
-	font-size: 0.875rem;
-	color: var(--text-hint);
 }
 
 @media (width <= 640px) {
@@ -74,9 +62,9 @@
 		tbody tr {
 			display: grid;
 			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: 0.5rem;
+			gap: var(--lumo-space-8);
 			padding-block: 0.9rem;
-			padding-inline: 1.25rem;
+			padding-inline: var(--lumo-space-20);
 		}
 
 		th,
@@ -92,9 +80,8 @@
 		td[data-label]::before {
 			content: attr(data-label);
 			display: block;
-			font-size: 0.6875rem;
-			font-weight: 600;
-			color: var(--text-hint);
+			font: var(--lumo-type-label-small);
+			color: var(--lumo-glyph-mid);
 			margin-block-end: 0.15rem;
 		}
 	}

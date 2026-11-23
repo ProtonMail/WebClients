@@ -32,6 +32,7 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
                 />
                 {/* Progress circle */}
                 <circle
+                    className="duration-300 lumo-easing-standard"
                     cx={size / 2}
                     cy={size / 2}
                     r={radius}
@@ -41,7 +42,7 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
                     strokeDasharray={circumference}
                     strokeDashoffset={offset}
                     style={{
-                        transition: 'stroke-dashoffset 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                        transitionProperty: 'stroke-dashoffset',
                         strokeLinecap: 'round',
                     }}
                 />

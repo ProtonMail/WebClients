@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
@@ -46,11 +47,16 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
 
     return (
         <>
-            <div className="scheduled-task-card flex flex-column h-full px-5 py-4 border rounded-xl bg-norm">
+            <Card
+                padded={false}
+                background={false}
+                rounded="xl"
+                className="scheduled-task-card gap-2.5 flex flex-column h-full px-5 py-4 lumo-bg-panel-elevated"
+            >
                 <div className="flex flex-nowrap items-center gap-2 w-full">
                     <h4
                         dir="auto"
-                        className="scheduled-task-card__title flex-1 m-0 text-semibold"
+                        className="scheduled-task-card__title flex-1 m-0 lumo-title-small"
                         style={{
                             textAlign: document.dir === 'rtl' ? 'right' : 'left',
                         }}
@@ -60,14 +66,14 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
                     {isRunning ? (
                         <LumoIcon
                             aria-hidden
-                            className="scheduled-task-card__running-icon shrink-0"
+                            className="scheduled-task-card__running-icon lumo-color-glyph-brand-text shrink-0"
                             name="LoaderCircle"
                             size={16}
                         />
                     ) : (
                         <span
                             aria-hidden
-                            className={clsx('scheduled-task-card__status-dot shrink-0 rounded-full', {
+                            className={clsx('scheduled-task-card__status-dot shrink-0 radius-full', {
                                 'scheduled-task-card__status-dot--enabled': !isPaused,
                             })}
                         />
@@ -75,7 +81,7 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
                     <div className="relative shrink-0 flex">
                         <SimpleDropdown
                             as={Button}
-                            className={clsx('rounded-sm scheduled-task-card__menu-button')}
+                            className={clsx('scheduled-task-card__menu-button radius-4')}
                             content={
                                 <LumoIcon
                                     aria-label={
@@ -97,7 +103,7 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
                                     aria-busy={runLoading}
                                     className={clsx(
                                         'flex flex-row flex-nowrap items-center gap-2 w-full',
-                                        runLoading && 'color-hint'
+                                        runLoading && 'lumo-color-glyph-mid'
                                     )}
                                     disabled={isRunning || runControls.disabled}
                                     onClick={runControls.runNow}
@@ -152,7 +158,7 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
                                 </DropdownMenuButton>
                                 <hr className="mx-3 my-1" />
                                 <DropdownMenuButton
-                                    className="flex flex-row flex-nowrap items-center gap-2 w-full color-danger hover:color-danger"
+                                    className="flex flex-row flex-nowrap items-center gap-2 w-full lumo-color-signal-danger"
                                     onClick={() => deleteTaskPrompt.openModal(true)}
                                 >
                                     <LumoIcon aria-hidden name="Trash" size={16} />
@@ -163,20 +169,20 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
                     </div>
                 </div>
 
-                <p dir="auto" className="m-0 text-rg text-ellipsis-two-lines color-weak">
+                <p dir="auto" className="m-0 lumo-body-medium text-ellipsis-two-lines lumo-color-glyph-mid">
                     {schedule.instructions}
                 </p>
 
                 <div className="flex flex-nowrap items-center justify-space-between gap-2 w-full mt-auto">
                     <ScheduleRunPrimaryLabel chip rule={recurrenceRule} scheduleId={scheduleId} />
                     <ScheduleRunSecondaryLabel
-                        className="text-sm color-hint"
+                        className="lumo-body-small lumo-color-glyph-mid"
                         rule={recurrenceRule}
                         scheduleId={scheduleId}
                     />
-                    <LumoIcon aria-hidden className="shrink-0 color-hint" name="LaptopMinimal" size={14} />
+                    <LumoIcon aria-hidden className="shrink-0 lumo-color-glyph-mid" name="LaptopMinimal" size={14} />
                 </div>
-            </div>
+            </Card>
 
             {deleteTaskPrompt.render && (
                 <DeleteScheduledTaskPrompt

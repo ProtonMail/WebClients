@@ -15,13 +15,13 @@ const TermsAndConditions = ({ className }: { className?: string }) => {
         : 'https://lumo.proton.me/legal/privacy';
 
     return (
-        <p className={clsx('text-sm color-weak', className)}>
+        <p className={clsx('lumo-body-small lumo-color-glyph-mid', className)}>
             {c('collider_2025: Legal disclaimer').t`By using ${LUMO_SHORT_APP_NAME}, you agree to our`}{' '}
-            <Href href={termsUrl} className="color-weak text-underline">
+            <Href href={termsUrl} className="text-underline lumo-color-glyph-mid">
                 {c('collider_2025: Legal link').t`Terms`}
             </Href>{' '}
             {c('collider_2025: Legal disclaimer').t`and`}{' '}
-            <Href href={privacyUrl} className="color-weak text-underline">
+            <Href href={privacyUrl} className="text-underline lumo-color-glyph-mid">
                 {c('collider_2025: Legal link').t`Privacy Policy`}
             </Href>
             .

@@ -53,7 +53,8 @@ export const ArtifactPanelFullscreenOverlay = ({
     return createPortal(
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
-            className="artifact-fullscreen-overlay fixed inset-0 z-previewer flex flex-column bg-norm"
+            className="artifact-fullscreen-overlay fixed inset-0 z-previewer flex flex-column lumo-bg-overlay"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="dialog"
             aria-modal="true"
             aria-label={c('collider_2025:Label').t`Canvas full screen view`}

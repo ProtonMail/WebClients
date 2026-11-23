@@ -1,18 +1,15 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .scheduled-task-editor-modal {
-	--border-norm: var(--border);
-	--border-weak: var(--border);
-
 	.modal-two-dialog {
 		max-inline-size: #{rem(640)};
 	}
 
 	.modal-two-header {
 		margin: 0;
-		padding-block: #{rem(20)} #{rem(16)};
-		padding-inline: #{rem(24)} #{rem(16)};
-		border-block-end: 1px solid var(--border);
+		padding-block: var(--lumo-space-20) var(--lumo-space-16);
+		padding-inline: var(--lumo-space-24) var(--lumo-space-16);
+		border-block-end: 1px solid var(--lumo-border);
 	}
 
 	.modal-two-header-actions {
@@ -20,11 +17,11 @@
 	}
 
 	.button-outline-weak {
-		--button-default-border-color: var(--border);
+		--button-default-border-color: var(--lumo-border);
 	}
 
 	&__title {
-		font-size: #{rem(20)} !important;
+		font: var(--lumo-type-title-large) !important;
 	}
 
 	&__auto-approve-icon {

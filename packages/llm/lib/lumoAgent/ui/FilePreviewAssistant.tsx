@@ -52,7 +52,7 @@ export const FilePreviewAssistant = ({ config, onClose }: Props) => {
                     </Tooltip>
                 </div>
             </div>
-            <div className="flex-1 overflow-hidden">
+            <div className="lumo-ui flex-1 overflow-hidden">
                 <LumoAgentPanel
                     items={items}
                     isBusy={isBusy}

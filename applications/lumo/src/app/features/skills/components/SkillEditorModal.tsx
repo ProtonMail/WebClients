@@ -511,7 +511,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
         <div className="flex flex-nowrap items-center gap-1 shrink-0">
             {/\.(md|markdown)$/i.test(activeFile.path) && (
                 // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-                <div className="skill-editor__mode-toggle flex flex-nowrap" role="group">
+                <div className="skill-editor__mode-toggle p-0.5 flex flex-nowrap radius-8 lumo-bg-panel" role="group">
                     <Button
                         icon
                         size="small"
@@ -660,12 +660,12 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                 />
                 <div
                     className={clsx(
-                        'skill-editor__workspace flex flex-column flex-nowrap',
+                        'skill-editor__workspace flex flex-column flex-nowrap border lumo-border radius-12 lumo-bg-control-fill',
                         showTree && 'skill-editor__workspace--split'
                     )}
                 >
-                    <div className="skill-editor__panel-header flex flex-nowrap items-center gap-2">
-                        <span className="flex-1 text-sm color-weak text-ellipsis">
+                    <div className="skill-editor__panel-header py-2 px-3 flex flex-nowrap items-center gap-2">
+                        <span className="flex-1 lumo-body-small text-ellipsis lumo-color-glyph-mid">
                             {showTree
                                 ? c('collider_2025:Label').t`Files`
                                 : c('collider_2025:Label').t`Instructions · ${SKILL_MARKDOWN_PATH}`}
@@ -719,8 +719,8 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                                     canRemove={canRemoveEntry}
                                 />
                                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                                    <div className="skill-editor__file-header flex flex-nowrap items-center gap-2">
-                                        <span className="flex-1 text-ellipsis text-monospace text-sm">
+                                    <div className="skill-editor__file-header py-2 px-3 flex flex-nowrap items-center gap-2">
+                                        <span className="flex-1 lumo-body-small lumo-font-mono text-ellipsis">
                                             {activeFile ? `/${activeFile.path}` : ''}
                                         </span>
                                         {fileActions}
@@ -737,12 +737,15 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
             <ModalTwoFooter className="items-center">
                 <div className="flex flex-nowrap items-center gap-2 min-w-0">
                     {!existing && (
-                        <span className="shrink-0 border rounded px-2 py-0.5 text-xs color-weak">
+                        <span className="shrink-0 px-2 py-0.5 border lumo-border radius-8 lumo-label-small lumo-color-glyph-mid">
                             {c('collider_2025:Info').t`Draft`}
                         </span>
                     )}
                     <span
-                        className={clsx('text-xs text-ellipsis', usage.overLimit ? 'color-danger' : 'color-weak')}
+                        className={clsx(
+                            'lumo-label-small text-ellipsis',
+                            usage.overLimit ? 'lumo-color-signal-danger' : 'lumo-color-glyph-mid'
+                        )}
                         title={getLimitsSummary()}
                     >
                         {usage.text}

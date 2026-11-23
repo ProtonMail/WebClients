@@ -60,14 +60,6 @@ body:has(#lumo-dark-theme) .desktop-onboarding-modal {
 	}
 
 	// 10px steps: the spacing utilities jump from 8px (2) to 12px (3).
-	&-titlebar {
-		padding-block: rem(10);
-		padding-inline-start: rem(12);
-	}
-
-	&-body {
-		gap: rem(10);
-	}
 
 	&-dot {
 		inline-size: rem(9);
@@ -98,10 +90,7 @@ body:has(#lumo-dark-theme) .desktop-onboarding-modal {
 
 	&-chip {
 		border: 1px solid var(--desktop-onboarding-border);
-		font-weight: var(--font-weight-medium, 500);
-		line-height: normal;
 		padding-block: rem(7);
-		padding-inline: rem(10) rem(12);
 		box-shadow: 0 rem(6) rem(16) rgb(26 26 51 / 0.08);
 
 		&--connectors {

@@ -19,7 +19,10 @@ export const ScheduleSidebarLabel = ({ rule, scheduleId }: { rule: RecurrenceRul
     const { isRunning, isPaused } = useScheduleRunState(scheduleId);
 
     return (
-        <span className="shrink-0 text-sm color-hint text-nowrap" data-schedule-running={isRunning || undefined}>
+        <span
+            className="shrink-0 lumo-body-small text-nowrap lumo-color-glyph-mid"
+            data-schedule-running={isRunning || undefined}
+        >
             {getStatusLabel(isRunning, isPaused) ?? getScheduleShortCadenceLabel(rule)}
         </span>
     );

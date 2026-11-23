@@ -15,8 +15,6 @@ import { useLumoDispatch } from '../../../redux/hooks';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
 import type { Space } from '../../../types';
 
-import './ProjectInstructionsModal.scss';
-
 interface ProjectInstructionsModalProps extends ModalStateProps {
     projectId: string;
     currentInstructions?: string;
@@ -57,7 +55,6 @@ export const ProjectInstructionsModal = ({
                     dir="auto"
                     {...instructions.bind}
                     id="project-instructions"
-                    className={'project-instruction-edit-area'}
                     placeholder={c('collider_2025:Placeholder')
                         .t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt. These instructions will apply to all chats in this project.`}
                     rows={10}

@@ -110,8 +110,8 @@ const SettingSection = ({
     <section className="api-usage-settings-section">
         <div className="flex flex-nowrap items-start justify-space-between gap-4">
             <label htmlFor={id} className="flex flex-column gap-1">
-                <strong className="color-norm">{title}</strong>
-                <span className="text-sm color-weak">{description}</span>
+                <strong className="lumo-color-glyph">{title}</strong>
+                <span className="lumo-body-small lumo-color-glyph-mid">{description}</span>
             </label>
             <Toggle
                 id={id}
@@ -120,7 +120,7 @@ const SettingSection = ({
                 className="shrink-0 mt-0.5"
             />
         </div>
-        {checked && <div className="api-usage-settings-fields mt-4">{children}</div>}
+        {checked && <div className="api-usage-settings-fields gap-3 mt-4">{children}</div>}
     </section>
 );
 
@@ -139,7 +139,7 @@ const AmountField = ({
     currency: Currency;
     invalid?: boolean;
 }) => (
-    <div className="api-usage-settings-field">
+    <div className="api-usage-settings-field lumo-body-medium lumo-color-glyph">
         <label htmlFor={id}>{label}</label>
         <Input
             id={id}
@@ -148,7 +148,7 @@ const AmountField = ({
             step="1"
             value={value}
             onValue={onValue}
-            prefix={<span className="color-weak text-sm">{currency}</span>}
+            prefix={<span className="lumo-body-small lumo-color-glyph-mid">{currency}</span>}
             error={invalid}
         />
     </div>
@@ -283,7 +283,9 @@ export const ApiBalanceSettingsModal = ({
                         invalid={!isThresholdValid}
                     />
                     {!isThresholdValid && (
-                        <p className="m-0 text-sm color-danger">{getThresholdRangeMessage(savedAmount, currency)}</p>
+                        <p className="m-0 lumo-body-small lumo-color-signal-danger">
+                            {getThresholdRangeMessage(savedAmount, currency)}
+                        </p>
                     )}
                     <AmountField
                         id="api-auto-top-up-amount"
@@ -294,13 +296,17 @@ export const ApiBalanceSettingsModal = ({
                         invalid={!isAmountValid}
                     />
                     {isAmountValid && isThresholdValid && (
-                        <p className="api-usage-settings-summary m-0 text-sm">
+                        <p className="api-usage-settings-summary py-2.5 m-0 radius-8 lumo-body-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                             {getAutoTopUpSummary({ amount: parsedAmount, threshold: parsedThreshold }, currency)}
                         </p>
                     )}
-                    {!isAmountValid && <p className="m-0 text-sm color-danger">{getAmountRangeMessage(currency)}</p>}
+                    {!isAmountValid && (
+                        <p className="m-0 lumo-body-small lumo-color-signal-danger">
+                            {getAmountRangeMessage(currency)}
+                        </p>
+                    )}
                     {!canChargeAutoTopUp && (
-                        <p className="m-0 text-sm color-warning">
+                        <p className="m-0 lumo-body-small lumo-color-signal-warning">
                             {c('collider_2025: Warning')
                                 .t`Automatic top-up needs a card or PayPal set as default payment method with automatic payments on.`}
                         </p>
@@ -323,12 +329,12 @@ export const ApiBalanceSettingsModal = ({
                             invalid={!isLimitValid}
                         />
                         {isLimitValid ? (
-                            <p className="api-usage-settings-summary m-0 text-sm">
+                            <p className="api-usage-settings-summary py-2.5 m-0 radius-8 lumo-body-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                                 {c('collider_2025: Info')
                                     .t`${formattedSpent} of ${formattedLimit} bought automatically this month`}
                             </p>
                         ) : (
-                            <p className="m-0 text-sm color-danger">
+                            <p className="m-0 lumo-body-small lumo-color-signal-danger">
                                 {c('collider_2025: Error')
                                     .t`Limit must be a whole amount of at least ${formattedSavedAmount}`}
                             </p>
@@ -337,7 +343,9 @@ export const ApiBalanceSettingsModal = ({
                 </SettingSection>
                 {immediateTopUpWarning && <p className="m-0 mt-4 text-sm color-warning">{immediateTopUpWarning}</p>}
                 {saveError !== undefined && (
-                    <p className="m-0 mt-4 text-sm color-danger">{getSaveErrorMessage(saveError)}</p>
+                    <p className="m-0 mt-4 lumo-body-small lumo-color-signal-danger">
+                        {getSaveErrorMessage(saveError)}
+                    </p>
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>

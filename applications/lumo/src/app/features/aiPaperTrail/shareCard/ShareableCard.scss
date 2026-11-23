@@ -1,84 +1,74 @@
 .paper-trail-card-themes {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-block: 0.75rem 0.25rem;
+	display: flex;
+	justify-content: center;
 }
 
 .paper-trail-card-preview {
-    display: flex;
-    justify-content: center;
-    margin-block: 1rem 0.5rem;
+	display: flex;
+	justify-content: center;
 }
 
 .paper-trail-social {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-block-start: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-    &__label {
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--text-weak);
-    }
+	&__label {
+		font: var(--lumo-type-label-medium);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
 
-    &__row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.6rem;
-    }
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.6rem;
+	}
 
-    &__btn {
-        inline-size: 2.75rem;
-        block-size: 2.75rem;
-        border-radius: 999px;
-        border: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        cursor: pointer;
-        transition:
-            transform 0.12s ease,
-            filter 0.12s ease;
+	&__btn {
+		inline-size: 2.75rem;
+		block-size: 2.75rem;
+		border-radius: var(--lumo-radius-full);
+		border: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		cursor: pointer;
+		transition:
+			transform var(--lumo-duration-100) var(--lumo-easing-standard),
+			filter var(--lumo-duration-100) var(--lumo-easing-standard);
 
-        &:hover,
-        &:focus-visible {
-            transform: translateY(-2px);
-            filter: brightness(1.05);
-        }
+		&:hover,
+		&:focus-visible {
+			transform: translateY(-2px);
+			filter: brightness(1.05);
+		}
 
-        &--x {
-            background: #000;
-        }
+		&--x {
+			background: black;
+		}
 
-        &--fb {
-            background: #1877f2;
-        }
+		&--fb {
+			background: #1877f2;
+		}
 
-        &--reddit {
-            background: #ff4500;
-        }
+		&--reddit {
+			background: orangered;
+		}
 
-        &--linkedin {
-            background: #0a66c2;
-        }
+		&--linkedin {
+			background: #0a66c2;
+		}
 
-        &--link {
-            background: var(--interaction-norm);
-        }
-    }
+		&--link {
+			background: var(--lumo-control-brand-fill);
+		}
+	}
 
-    &__hint {
-        margin: 0.25rem 0 0;
-        font-size: 0.8rem;
-        color: var(--text-weak);
-        text-align: center;
-        max-inline-size: 22rem;
-    }
+	&__hint {
+		text-align: center;
+		max-inline-size: 22rem;
+	}
 }

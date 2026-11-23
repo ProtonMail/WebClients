@@ -57,17 +57,18 @@ export const RecentFilesSection = ({ refreshKey, onOpenReport, onDeleteReport }:
     }
 
     return (
-        <section className="ai-paper-trail__recent ai-paper-trail__landing-recent">
-            <div className="ai-paper-trail__recent-head">
-                <h2 className="ai-paper-trail__recent-title">{c('collider_2025:Title').t`Your recent reports`}</h2>
+        <section className="ai-paper-trail__landing-recent ai-paper-trail__recent mt-2">
+            <div className="ai-paper-trail__recent-head mb-3 px-1">
+                <h2 className="ai-paper-trail__recent-title m-0 lumo-title-medium">{c('collider_2025:Title')
+                    .t`Your recent reports`}</h2>
             </div>
-            <ul className="ai-paper-trail__recent-list">
+            <ul className="ai-paper-trail__recent-list m-0 p-0 radius-12">
                 {openableFiles.map((file) => {
                     return (
                         <li key={file.id} className="ai-paper-trail__recent-item">
                             <button
                                 type="button"
-                                className="ai-paper-trail__recent-button"
+                                className="ai-paper-trail__recent-button gap-3 pl-4 pr-3"
                                 onClick={() => {
                                     onOpenReport(file.id);
                                 }}
@@ -77,12 +78,16 @@ export const RecentFilesSection = ({ refreshKey, onOpenReport, onDeleteReport }:
                                     alt=""
                                     className="ai-paper-trail__recent-logo shrink-0"
                                 />
-                                <span className="ai-paper-trail__recent-name">{getRecentImportLabel(file.source)}</span>
-                                <span className="ai-paper-trail__recent-date">{formatRecentDate(file.uploadedAt)}</span>
+                                <span className="ai-paper-trail__recent-name lumo-body-medium">
+                                    {getRecentImportLabel(file.source)}
+                                </span>
+                                <span className="ai-paper-trail__recent-date lumo-body-small">
+                                    {formatRecentDate(file.uploadedAt)}
+                                </span>
                             </button>
                             <button
                                 type="button"
-                                className="ai-paper-trail__recent-delete"
+                                className="ai-paper-trail__recent-delete p-0"
                                 aria-label={c('collider_2025:Action').t`Delete analysis`}
                                 onClick={() => {
                                     onDeleteReport(file.id);

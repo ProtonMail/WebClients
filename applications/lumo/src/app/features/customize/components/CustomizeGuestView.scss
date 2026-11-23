@@ -3,7 +3,6 @@
 .customize-guest {
 	&__sets {
 		display: grid;
-		gap: rem(12);
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 
 		@media (width <= 960px) {
@@ -16,18 +15,17 @@
 	}
 
 	&__set {
-		padding-block: rem(12);
 		padding-inline: rem(14);
-		border-color: var(--border-weak);
+		border-color: var(--lumo-border);
 		transition:
-			border-color 0.15s easing(ease-out-quad),
-			box-shadow 0.15s easing(ease-out-quad),
-			transform 0.15s easing(ease-out-quad);
+			border-color var(--lumo-duration-150) var(--lumo-easing-enter),
+			box-shadow var(--lumo-duration-150) var(--lumo-easing-enter),
+			transform var(--lumo-duration-150) var(--lumo-easing-enter);
 
 		&:hover,
 		&:focus-within {
-			border-color: var(--border-norm);
-			box-shadow: var(--shadow-raised);
+			border-color: var(--lumo-border-mid);
+			box-shadow: var(--lumo-elevation-2);
 		}
 
 		@media (prefers-reduced-motion: no-preference) {
@@ -39,8 +37,8 @@
 
 	@media (prefers-reduced-motion: no-preference) {
 		&__sets > li {
-			animation: customize-fade-in 0.3s easing(ease-out-quad) backwards;
-			animation-delay: calc(0.1s + var(--index, 0) * 0.04s);
+			animation: customize-fade-in var(--lumo-duration-300) var(--lumo-easing-enter) backwards;
+			animation-delay: calc(var(--lumo-duration-100) + var(--index, 0) * 0.04s);
 		}
 	}
 }

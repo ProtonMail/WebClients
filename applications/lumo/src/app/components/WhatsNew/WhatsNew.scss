@@ -25,7 +25,7 @@
 	}
 
 	svg {
-		border-radius: var(--border-radius-lg);
+		border-radius: var(--lumo-radius-12);
 	}
 
 	.feature-point svg {
@@ -38,7 +38,7 @@
 	}
 
 	.step-dots-dot {
-		background-color: var(--interaction-weak);
+		background-color: var(--lumo-control-fill-mid);
 
 		&[aria-selected='true'] {
 			background-color: var(--reinforce-norm);
@@ -59,26 +59,26 @@
 			0 rem(1) rem(3) rgb(0 0 0 / 0.06),
 			0 rem(4) rem(12) rgb(64 41 163 / 0.08);
 		transition:
-			background-color 0.15s ease,
-			border-color 0.15s ease,
-			box-shadow 0.15s ease,
-			color 0.15s ease;
+			background-color var(--lumo-duration-150) var(--lumo-easing-standard),
+			border-color var(--lumo-duration-150) var(--lumo-easing-standard),
+			box-shadow var(--lumo-duration-150) var(--lumo-easing-standard),
+			color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 		&:hover {
-			background: var(--background-strong);
-			border-color: var(--border-norm);
+			background: var(--lumo-control-fill-mid);
+			border-color: var(--lumo-border);
 			box-shadow:
 				0 rem(2) rem(6) rgb(0 0 0 / 0.1),
 				0 rem(8) rem(20) rgb(64 41 163 / 0.14);
 		}
 
 		&:active {
-			background: var(--background-weak);
+			background: var(--lumo-control-fill);
 			box-shadow: 0 rem(1) rem(2) rgb(0 0 0 / 0.08);
 		}
 
 		&:focus-visible {
-			outline: 2px solid var(--focus-outline);
+			outline: 2px solid var(--lumo-control-border-focus);
 			outline-offset: 2px;
 		}
 
@@ -90,7 +90,7 @@
 
 	.whats-new-modal-illustration {
 		background: #f7f5ff;
-		border-start-start-radius: var(--border-radius-lg);
-		border-start-end-radius: var(--border-radius-lg);
+		border-start-start-radius: var(--lumo-radius-12);
+		border-start-end-radius: var(--lumo-radius-12);
 	}
 }

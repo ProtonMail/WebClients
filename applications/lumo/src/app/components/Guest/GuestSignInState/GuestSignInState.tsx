@@ -26,16 +26,16 @@ export const GuestSignInState = ({ image, imageAlt = '', title, description, ico
                 {image && <img src={image} alt={imageAlt} height={180} />}
                 {icon && icon}
             </div>
-            <h2 className="guest-signin-state__title text-semibold color-norm mt-0 mb-2 mx-0">{title}</h2>
+            <h2 className="mx-0 mt-0 mb-2 lumo-title-large lumo-color-glyph">{title}</h2>
 
-            <p className="guest-signin-state__description color-weak m-0">{description}</p>
+            <p className="guest-signin-state__description m-0 lumo-body-medium lumo-color-glyph-mid">{description}</p>
 
             <div className="guest-signin-state__actions flex flex-column items-center gap-2 mt-5 w-full">
                 <CreateFreeAccountButton color="norm" shape="solid" className="w-full" />
                 <SignInButton color="weak" shape="outline" className="w-full" />
             </div>
 
-            <p className="guest-signin-state__footer flex items-center gap-1 mt-4 color-weak">
+            <p className="guest-signin-state__footer flex items-center gap-1 mt-4 lumo-body-small lumo-color-glyph-mid">
                 <LumoIcon name="Lock" width={12} height={12} className="mr-1" />
                 {c('collider_2025:Info').t`Your information is zero-access encrypted`}
             </p>

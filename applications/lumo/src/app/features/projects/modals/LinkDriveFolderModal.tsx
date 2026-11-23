@@ -183,14 +183,14 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                     </div>
                 ) : isLinkedToDrive ? (
                     <div className="p-4">
-                        <div className="mb-4 p-4 bg-weak rounded border border-weak">
+                        <div className="mb-4 p-4 border lumo-border radius-8 lumo-bg-control-fill">
                             <div className="flex items-center gap-2 mb-2">
-                                <LumoIcon name="Folder" size={20} className="color-primary" />
-                                <span className="text-bold">{linkedDriveFolder.folderName}</span>
+                                <LumoIcon name="Folder" size={20} className="lumo-color-glyph-brand-text" />
+                                <span className="lumo-title-small">{linkedDriveFolder.folderName}</span>
                             </div>
-                            <div className="text-sm color-weak">{linkedDriveFolder.folderPath}</div>
+                            <div className="lumo-body-small lumo-color-glyph-mid">{linkedDriveFolder.folderPath}</div>
                         </div>
-                        <p className="text-sm color-weak mb-4">
+                        <p className="mb-4 lumo-body-small lumo-color-glyph-mid">
                             {c('collider_2025:Info')
                                 .t`Files uploaded to this project will be saved to the linked Drive folder.`}
                         </p>
@@ -201,24 +201,31 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                 ) : (
                     <div className="link-drive-folder-content">
                         {hasExistingFiles ? (
-                            <div className="p-4 bg-warning-weak rounded border border-warning">
+                            <div className="p-4 border border-warning radius-8 bg-warning-weak">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <LumoIcon name="TriangleExclamationPoint" size={16} className="color-warning" />
-                                    <span className="text-bold">{c('collider_2025:Warning')
+                                    <LumoIcon
+                                        name="TriangleExclamationPoint"
+                                        size={16}
+                                        className="lumo-color-signal-warning"
+                                    />
+                                    <span className="lumo-title-small">{c('collider_2025:Warning')
                                         .t`Cannot Link Drive Folder`}</span>
                                 </div>
-                                <p className="text-sm mb-0">
+                                <p className="mb-0 lumo-body-small">
                                     {c('collider_2025:Info')
                                         .t`This project already has files. Please remove all files before linking a Drive folder.`}
                                 </p>
                             </div>
                         ) : (
                             <>
-                                <p className="text-sm color-weak mb-3">
+                                <p className="mb-3 lumo-body-small lumo-color-glyph-mid">
                                     {c('collider_2025:Info')
                                         .jt`Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to link to this project, then click "Link this folder".`}
                                 </p>
-                                <div className="border border-weak rounded overflow-hidden" style={{ height: '22rem' }}>
+                                <div
+                                    className="overflow-hidden border lumo-border radius-8"
+                                    style={{ height: '22rem' }}
+                                >
                                     <DriveBrowser
                                         onFileSelect={() => {}}
                                         folderSelectionMode={true}
@@ -228,10 +235,11 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                                     />
                                 </div>
                                 {!isAtRoot && currentFolder && (
-                                    <div className="mt-3 flex items-center gap-2 text-sm">
-                                        <LumoIcon name="Folder" size={16} className="color-norm shrink-0" />
-                                        <span className="color-weak">{c('collider_2025:Label').t`Selected:`}</span>
-                                        <span className="text-bold">{currentFolder.name}</span>
+                                    <div className="flex items-center gap-2 mt-3 lumo-body-small">
+                                        <LumoIcon name="Folder" size={16} className="shrink-0 lumo-color-glyph" />
+                                        <span className="lumo-color-glyph-mid">{c('collider_2025:Label')
+                                            .t`Selected:`}</span>
+                                        <span className="lumo-title-small">{currentFolder.name}</span>
                                     </div>
                                 )}
                             </>

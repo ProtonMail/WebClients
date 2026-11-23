@@ -71,14 +71,14 @@ export const SearchInspectList: FunctionComponent<Props> = ({
                     <LumoIcon name="ArrowLeft" size={16} className="mr-1" />
                     {c('Action').t`Back to search settings`}
                 </Button>
-                <span className="text-semibold">{c('Title').t`Indexed Drive documents`}</span>
+                <span className="lumo-title-small">{c('Title').t`Indexed Drive documents`}</span>
             </div>
             {groupedDocs.length === 0 ? (
-                <div className="p-4 color-weak bg-weak rounded">
+                <div className="p-4 radius-8 lumo-color-glyph-mid lumo-bg-control-fill">
                     <div className="mb-2">{c('Info')
                         .t`No Drive documents are loaded for inspection in this session.`}</div>
                     {displayDriveDocs > 0 ? (
-                        <div className="text-sm">
+                        <div className="lumo-body-small">
                             {c('Info')
                                 .t`The index reports ${displayDriveDocs} Drive documents. Re-index or keep the session open after indexing to view details here.`}
                         </div>
@@ -96,7 +96,7 @@ export const SearchInspectList: FunctionComponent<Props> = ({
                             <button
                                 key={doc.parentDocumentId || doc.id}
                                 type="button"
-                                className="w-full p-3 border rounded bg-weak text-left hover:border-primary transition-colors"
+                                className="hover:border-primary w-full p-3 border radius-8 text-left lumo-bg-control-fill transition-colors"
                                 style={{ borderColor: 'var(--border-weak)' }}
                                 onClick={() => onSelect(grouped)}
                             >
@@ -104,19 +104,25 @@ export const SearchInspectList: FunctionComponent<Props> = ({
                                     <DocumentIcon size={4} className="shrink-0" />
                                     <div className="flex flex-column gap-1 flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                            <span className="text-semibold truncate">{doc.name}</span>
+                                            <span className="lumo-title-small truncate">{doc.name}</span>
                                             {hasChunks && (
-                                                <span className="text-xs px-2 py-0.5 rounded bg-info color-invert shrink-0">
+                                                <span className="shrink-0 px-2 py-0.5 radius-8 lumo-label-small lumo-color-glyph-inverse bg-info">
                                                     {chunks.length} {c('Info').t`chunks`}
                                                 </span>
                                             )}
                                         </div>
                                         {doc.folderPath && (
-                                            <div className="text-sm color-weak truncate">{doc.folderPath}</div>
+                                            <div className="truncate lumo-body-small lumo-color-glyph-mid">
+                                                {doc.folderPath}
+                                            </div>
                                         )}
-                                        <div className="text-sm color-weak">{sizeText}</div>
+                                        <div className="lumo-body-small lumo-color-glyph-mid">{sizeText}</div>
                                     </div>
-                                    <LumoIcon name="ChevronRight" size={16} className="color-weak shrink-0 my-auto" />
+                                    <LumoIcon
+                                        name="ChevronRight"
+                                        size={16}
+                                        className="shrink-0 my-auto lumo-color-glyph-mid"
+                                    />
                                 </div>
                             </button>
                         );

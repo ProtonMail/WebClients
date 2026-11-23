@@ -106,7 +106,7 @@ const DictationControl = ({
                     hasError && 'lumo-dictation-control__listening--error'
                 )}
             >
-                <span className="lumo-dictation-control__status text-sm color-hint text-nowrap">
+                <span className="lumo-dictation-control__status lumo-body-small color-hint text-nowrap">
                     {/* eslint-disable-next-line no-nested-ternary */}
                     {hasError
                         ? resolvedLabels.connectionError

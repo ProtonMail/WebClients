@@ -5,8 +5,8 @@
 	}
 
 	&__run--current.button {
-		--button-default-background-color: var(--control-fill-mid);
-		--button-hover-background-color: var(--control-fill-mid);
-		--button-active-background-color: var(--control-fill-strong);
+		--button-default-background-color: var(--lumo-control-fill);
+		--button-hover-background-color: var(--lumo-control-fill);
+		--button-active-background-color: var(--lumo-control-fill-mid);
 	}
 }

@@ -58,7 +58,7 @@ export const ScheduledSidebarSection = ({ onItemClick }: { onItemClick?: () => v
                 )}
                 {scheduleEntries.length > DEFAULT_SCHEDULE_LIMIT && (
                     <button
-                        className="flex items-center justify-center px-3 py-2 text-sm color-weak transition-colors hover:color-norm"
+                        className="lumo-sidebar-section-more flex items-center justify-center px-3 py-2 lumo-body-small lumo-color-glyph-mid transition-colors"
                         onClick={handleSchedulesClick}
                         type="button"
                     >
@@ -70,7 +70,7 @@ export const ScheduledSidebarSection = ({ onItemClick }: { onItemClick?: () => v
                 )}
                 {scheduleEntries.length === 0 && (
                     // translator: Empty state beneath the Scheduled sidebar heading.
-                    <div className="px-1.5 py-1 text-sm color-weak">
+                    <div className="px-1.5 py-1 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025:Info').t`No scheduled tasks yet.`}
                     </div>
                 )}

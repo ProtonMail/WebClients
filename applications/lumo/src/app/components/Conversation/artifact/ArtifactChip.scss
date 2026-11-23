@@ -4,18 +4,18 @@
 	max-inline-size: 100%;
 	min-inline-size: 0;
 	transition:
-		opacity 150ms ease,
-		border-color 150ms ease;
+		opacity var(--lumo-duration-150) var(--lumo-easing-standard),
+		border-color var(--lumo-duration-150) var(--lumo-easing-standard);
 	user-select: none;
-	min-block-size: 4.25rem;
+	min-block-size: 4rem;
 	box-shadow: none;
 
 	&--superseded {
 		opacity: 0.75;
 	}
 
-	&--active {
-		border-color: var(--border-norm);
+	&.artifact-chip--active {
+		border-color: var(--lumo-border-mid);
 	}
 
 	&--loading {
@@ -33,28 +33,28 @@
 	min-block-size: 100%;
 
 	&--document {
-		background-color: #e8f0fe;
-		color: #1a73e8;
+		background-color: var(--lumo-artifact-doc-tile);
+		color: var(--lumo-artifact-doc-icon);
 	}
 
 	&--code {
-		background-color: #f0e8ff;
-		color: #7c3aed;
+		background-color: var(--lumo-artifact-code-tile);
+		color: var(--lumo-artifact-code-icon);
 	}
 
 	&--webpage {
-		background-color: #fff0e5;
-		color: #e8710a;
+		background-color: var(--lumo-artifact-web-tile);
+		color: var(--lumo-artifact-web-icon);
 	}
 
 	&--presentation {
-		background-color: #e3f5ec;
-		color: #1e8e4c;
+		background-color: var(--lumo-artifact-doc-tile);
+		color: var(--lumo-artifact-doc-icon);
 	}
 
 	&--superseded {
-		background-color: var(--background-weak);
-		color: var(--text-hint);
+		background-color: var(--lumo-control-fill);
+		color: var(--lumo-glyph-low);
 	}
 }
 
@@ -68,8 +68,6 @@
 	flex: 1 1 auto;
 	min-inline-size: 0;
 	border: none;
-	background: transparent;
-	padding: 0;
 	font: inherit;
 	color: inherit;
 	text-align: start;
@@ -93,7 +91,6 @@
 	text-align: start;
 	border: none;
 	background: transparent;
-	padding: 0;
 	font: inherit;
 	color: inherit;
 
@@ -111,7 +108,6 @@
 	align-self: stretch;
 	display: flex;
 	align-items: center;
-	padding-block: 0.75rem;
 }
 
 .artifact-chip-trailing {
@@ -119,7 +115,6 @@
 	align-self: stretch;
 	display: flex;
 	align-items: center;
-	padding-block: 0.75rem;
 }
 
 .creations-artifact-chip .artifact-chip-main {
@@ -133,7 +128,7 @@
 
 .creations-artifact-chip:hover:not(:has(.artifact-chip-main:disabled)),
 .creations-artifact-chip:focus-within {
-	border-color: var(--border-norm);
+	border-color: var(--lumo-border-mid);
 }
 
 .creations-row-title-placeholder {

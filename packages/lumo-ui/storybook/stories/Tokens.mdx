@@ -10,5 +10,10 @@ import { TokenReference } from './TokenReference';
     title="Tokens"
     description="The CSS variables behind Lumo's colors, typography, spacing, and visual effects. Browse their current values and compare how theme-dependent tokens resolve in light and dark mode."
 >
+    <p className="mt-4">
+        In light mode, <code>--lumo-control-tab-track</code> uses <code>--iris-75</code> and <code>--lumo-notice</code>{' '}
+        uses <code>--iris-125</code>. In dark mode, <code>--lumo-page</code> uses <code>--neutral-975</code>. Use the
+        semantic roles in components so each theme can choose its own palette values.
+    </p>
     <TokenReference />
 </Page>

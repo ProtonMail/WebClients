@@ -82,7 +82,7 @@ export const SchedulesView = () => {
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
-            <div className="schedules-view w-full px-6 overflow-auto">
+            <div className="schedules-view pt-1.5 w-full px-6 overflow-auto lumo-color-glyph">
                 <SchedulesPageHeader onNewTaskClick={handleNewTaskClick} />
                 {Object.keys(schedules).length === 0 && <SchedulesEmptyState />}
                 <ScheduledTaskGrid

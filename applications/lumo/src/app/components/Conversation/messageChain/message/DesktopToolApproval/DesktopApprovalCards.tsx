@@ -114,7 +114,7 @@ const DesktopApprovalCards = ({ conversationId }: { conversationId: string | und
                 <ToolCallCard args={approval.input} />
                 {!approval.reason && (
                     <Checkbox
-                        className="mt-2 text-sm"
+                        className="mt-2 lumo-body-medium"
                         checked={always.has(approval.requestId)}
                         onChange={(event) => toggleAlways(approval.requestId, event.target.checked)}
                     >
@@ -126,7 +126,7 @@ const DesktopApprovalCards = ({ conversationId }: { conversationId: string | und
                 )}
                 {(approval.reason?.kind === 'untrusted_content' || approval.reason?.kind === 'untrusted_write') && (
                     <InlineLinkButton
-                        className="mt-2 text-sm"
+                        className="mt-2 lumo-body-medium"
                         onClick={() => openDesktopSettings('connectors', approval.connectorId)}
                     >
                         {
@@ -145,7 +145,8 @@ const DesktopApprovalCards = ({ conversationId }: { conversationId: string | und
                 className={clsx(
                     'desktop-approval-cards__stack',
                     waiting > 0 && 'desktop-approval-cards__stack--depth-2',
-                    waiting > 1 && 'desktop-approval-cards__stack--depth-3'
+                    waiting > 1 && 'desktop-approval-cards__stack--depth-3',
+                    waiting > 1 ? 'mb-3' : waiting > 0 && 'mb-1.5'
                 )}
             >
                 <ConfirmCard

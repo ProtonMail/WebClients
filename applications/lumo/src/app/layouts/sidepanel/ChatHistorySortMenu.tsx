@@ -7,20 +7,20 @@ import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 
 import { MenuDropdown } from '../../components/Composer/components/MenuDropdown';
-import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { IconName } from '../../components/LumoIcon/LumoIcon';
+import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 
 const SortMenuCheckmark = ({ visible }: { visible: boolean }) => {
     return (
         <span className={clsx('flex items-center shrink-0', !visible && 'visibility-hidden')}>
-            <LumoIcon name="Check" size={16} className="color-primary" />
+            <LumoIcon name="Check" size={16} className="lumo-color-glyph-brand-text" />
         </span>
     );
 };
 
 const SortMenuSectionLabel = ({ children }: { children: React.ReactNode }) => {
-    return <div className="px-4 py-2 text-sm color-weak text-semibold">{children}</div>;
+    return <div className="px-3 py-2 lumo-label-small lumo-color-glyph-mid">{children}</div>;
 };
 
 interface SortMenuItemProps {
@@ -42,7 +42,7 @@ const SortMenuItem = ({ label, selected, onSelect }: SortMenuItemProps) => {
             }}
         >
             <div className="flex items-center gap-3 w-full">
-                <span className="text-sm font-medium flex-1 text-left">{label}</span>
+                <span className="flex-1 lumo-body-small text-left">{label}</span>
                 <SortMenuCheckmark visible={selected} />
             </div>
         </DropdownMenuButton>
@@ -113,13 +113,21 @@ export const ChatHistorySortMenu = ({
                 onClick={handleButtonClick}
             >
                 {buttonVariant === 'labeled' ? (
-                    <span className="flex items-center gap-1 text-semibold">
-                        {leadingIcon ? <LumoIcon name={leadingIcon} size={14} className="shrink-0" /> : null}
+                    <span className="flex items-center gap-1 lumo-label-large">
+                        {leadingIcon ? (
+                            <LumoIcon name={leadingIcon} size={14} strokeWidth={1.4} className="shrink-0" />
+                        ) : null}
                         <span>{buttonLabel}</span>
-                        <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak shrink-0" />
+                        <LumoIcon
+                            name="ChevronDown"
+                            width={12}
+                            height={12}
+                            strokeWidth={1.4}
+                            className="shrink-0 lumo-color-glyph-mid"
+                        />
                     </span>
                 ) : (
-                    <LumoIcon name="List" width={14} height={14} />
+                    <LumoIcon name="List" width={16} height={16} />
                 )}
             </Button>
 

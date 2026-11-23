@@ -81,7 +81,7 @@ const HighLoadWarning = () => {
         >
             <div className="error-card high-load-warning flex flex-row items-center gap-2 p-3 relative group-hover-opacity-container md:mt-16 md:mr-3">
                 <div className="flex flex-column flex-nowrap gap-2">
-                    <span className="error-card-title text-bold">{c('collider_2025: Warning')
+                    <span className="error-card-title lumo-title-small">{c('collider_2025: Warning')
                         .jt`${LUMO_SHORT_APP_NAME}'s a busy cat`}</span>
                     <span className="error-card-message">
                         {isGuest ? (
@@ -95,7 +95,7 @@ const HighLoadWarning = () => {
                 <Button
                     icon
                     onClick={dismissBanner}
-                    className="error-card-dismiss-button rounded-full border-weak shrink-0 absolute top-0 right-0 bg-hint group-hover:opacity-100"
+                    className="error-card-dismiss-button group-hover:opacity-100 absolute top-0 right-0 shrink-0 lumo-border radius-full bg-hint"
                     size="small"
                     color="weak"
                     shape="ghost"

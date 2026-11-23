@@ -21,7 +21,7 @@ interface Props {
  */
 const Disclosure = ({ label, leading, children, className }: Props) => (
     <details className={clsx('lumo-disclosure', className)}>
-        <summary className="lumo-disclosure__summary text-sm">
+        <summary className="lumo-disclosure__summary lumo-label-medium">
             {leading}
             <span className="lumo-disclosure__label text-ellipsis flex-1" title={label}>
                 {label}

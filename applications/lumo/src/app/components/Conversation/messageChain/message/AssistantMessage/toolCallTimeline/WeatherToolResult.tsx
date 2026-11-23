@@ -94,8 +94,8 @@ interface WeatherStatProps {
 
 const WeatherStat = ({ label, value }: WeatherStatProps) => (
     <div className="weather-card__stat py-2 px-4">
-        <p className="weather-card__stat-label m-0">{label}</p>
-        <p className="weather-card__stat-value m-0">{value}</p>
+        <p className="weather-card__stat-label m-0 lumo-color-glyph-mid">{label}</p>
+        <p className="weather-card__stat-value m-0 lumo-title-small lumo-color-glyph">{value}</p>
     </div>
 );
 
@@ -153,16 +153,18 @@ export const WeatherToolResult = ({ data }: { data: WeatherData }) => {
     }
 
     return (
-        <div className="weather-card mb-2">
+        <div className="weather-card mb-2 border lumo-border radius-12 lumo-bg-panel">
             <div className="flex items-center justify-space-between gap-2 py-3 px-4">
                 <div className="flex items-center gap-1.5">
-                    <span className="weather-card__location-icon" aria-hidden="true">
+                    <span className="weather-card__location-icon lumo-color-glyph-brand-text" aria-hidden="true">
                         ☁
                     </span>
-                    <span className="weather-card__location-name">{locationLabel}</span>
+                    <span className="weather-card__location-name lumo-title-medium lumo-color-glyph">
+                        {locationLabel}
+                    </span>
                 </div>
                 {data.timestamp && (
-                    <span className="weather-card__last-updated shrink-0">
+                    <span className="weather-card__last-updated shrink-0 lumo-label-small lumo-color-glyph-mid">
                         {
                             // translator: Weather-update label. ${updatedTime} is the formatted time of the latest weather data.
                             c('collider_2025:Reasoning').t`Last updated: ${updatedTime}`
@@ -176,9 +178,9 @@ export const WeatherToolResult = ({ data }: { data: WeatherData }) => {
                     {emoji}
                 </div>
                 <div className="flex flex-column gap-0.5">
-                    <span className="weather-card__temperature">{formatTemp(data.temperature)}</span>
+                    <span className="weather-card__temperature lumo-color-glyph">{formatTemp(data.temperature)}</span>
                     {data.weather_description && (
-                        <span className="weather-card__description">
+                        <span className="weather-card__description lumo-body-large lumo-color-glyph-mid">
                             {data.weather_description.charAt(0).toUpperCase() + data.weather_description.slice(1)}
                         </span>
                     )}

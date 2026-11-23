@@ -146,11 +146,11 @@ const SaveArtifactToDriveModal = ({ artifact, format, ...modalProps }: SaveArtif
                     </div>
                 ) : (
                     <div className="save-artifact-to-drive-content relative">
-                        <p className="text-sm color-weak mb-3">
+                        <p className="mb-3 lumo-body-small lumo-color-glyph-mid">
                             {c('collider_2025:Info')
                                 .jt`Saving as ${formatLabel}. Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to use, then click "Save here".`}
                         </p>
-                        <div className="border border-weak rounded overflow-hidden" style={{ height: '22rem' }}>
+                        <div className="overflow-hidden border lumo-border radius-8" style={{ height: '22rem' }}>
                             <DriveBrowser
                                 onFileSelect={() => {}}
                                 folderSelectionMode={true}
@@ -160,22 +160,23 @@ const SaveArtifactToDriveModal = ({ artifact, format, ...modalProps }: SaveArtif
                             />
                         </div>
                         {!isAtRoot && currentFolder && (
-                            <div className="mt-3 flex items-center gap-2 text-sm">
-                                <LumoIcon name="Folder" size={16} className="color-norm shrink-0" />
-                                <span className="color-weak">{c('collider_2025:Label').t`Selected:`}</span>
-                                <span className="text-bold">{currentFolder.name}</span>
+                            <div className="flex items-center gap-2 mt-3 lumo-body-small">
+                                <LumoIcon name="Folder" size={16} className="shrink-0 lumo-color-glyph" />
+                                <span className="lumo-color-glyph-mid">{c('collider_2025:Label').t`Selected:`}</span>
+                                <span className="lumo-title-small">{currentFolder.name}</span>
                             </div>
                         )}
                         {isSaving && (
                             // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                             <div
-                                className="artifact-export-status absolute inset-0 flex flex-column items-center justify-center gap-3"
+                                className="artifact-export-status absolute inset-0 flex flex-column items-center justify-center gap-3 lumo-bg-panel"
+                                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                 role="status"
                                 aria-live="polite"
                                 aria-busy="true"
                             >
                                 <div className="artifact-export-spinner" aria-hidden="true" />
-                                <p ref={labelRef} className="text-sm color-norm m-0 text-center">
+                                <p ref={labelRef} className="m-0 lumo-body-small text-center lumo-color-glyph">
                                     {saveStatusLabel}
                                 </p>
                             </div>

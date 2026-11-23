@@ -13,9 +13,5 @@
 		z-index: map.get($z-indexes, 'tooltips');
 		inline-size: rem(288);
 		max-inline-size: calc(100vw - #{rem(32)});
-		padding-block: rem(10);
-		background-color: var(--background-invert);
-		font-size: rem(13);
-		line-height: 1.45;
 	}
 }

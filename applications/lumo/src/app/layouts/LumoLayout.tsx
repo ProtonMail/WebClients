@@ -1,7 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react';
 
-import { clsx } from 'clsx';
-
 import { Header } from '../components/Conversation/Header';
 import { RightPanelSlot, RightPanelSlotWithHeader } from '../components/RightPanelSlot';
 import { useRightPanel } from '../providers/RightPanelProvider';
@@ -87,12 +85,7 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWit
     }, [defaultOpened, open, close, withoutDrawerToggle, hasDrawerContent, isSmallScreen]);
 
     return (
-        <div
-            className={clsx(
-                'lumo-layout-container relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl'
-                // solidBackground && 'bg-norm'
-            )}
-        >
+        <div className="lumo-layout-container relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto radius-16">
             <Header
                 withoutDrawerToggle={withoutDrawerToggle}
                 leftHeaderButton={leftHeaderButton}

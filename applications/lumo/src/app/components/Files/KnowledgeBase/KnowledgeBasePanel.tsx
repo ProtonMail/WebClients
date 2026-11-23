@@ -96,11 +96,11 @@ const FilteredFilesContent = ({
         <>
             {autoRetrievedFiles.length > 0 && (
                 <div className="w-full mb-4">
-                    <h3 className="text-rg text-semibold">
+                    <h3 className="lumo-title-small">
                         {c('collider_2025: Info').t`Project knowledge`}
-                        <span className="ml-1.5 text-normal color-hint">{activeAutoFiles.length}</span>
+                        <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{activeAutoFiles.length}</span>
                     </h3>
-                    <p className="my-1.5 text-sm color-hint">
+                    <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025: Info').t`Files automatically retrieved based on your question.`}
                     </p>
 
@@ -116,7 +116,7 @@ const FilteredFilesContent = ({
 
                     {excludedAutoFiles.length > 0 && (
                         <div className="mt-3">
-                            <h4 className="text-xs text-bold color-weak mb-2">
+                            <h4 className="mb-2 lumo-label-small lumo-color-glyph-mid">
                                 {c('collider_2025: Info').t`Removed from future questions`}
                             </h4>
                             {excludedAutoFiles.map((file) => (
@@ -135,10 +135,10 @@ const FilteredFilesContent = ({
 
             {manualFiles.length > 0 && (
                 <div className="w-full mb-6">
-                    <h3 className="flex flex-nowrap items-center gap-2 text-rg text-semibold">
+                    <h3 className="flex flex-nowrap items-center gap-2 lumo-title-small">
                         <LumoIcon aria-hidden name="File" size={16} />
                         {c('collider_2025: Info').t`Attached Files`}
-                        <span className="ml-1.5 text-normal color-hint">{manualFiles.length}</span>
+                        <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{manualFiles.length}</span>
                     </h3>
                     {manualFiles.map((file) => (
                         <KnowledgeBaseFileItem
@@ -163,18 +163,18 @@ interface RetrievedKnowledgeSectionProps {
 
 const RetrievedKnowledgeSection = ({ activeAutoRetrieved, onView, onExclude }: RetrievedKnowledgeSectionProps) => (
     <div className="w-full mb-4">
-        <h3 className="text-rg text-semibold">
+        <h3 className="lumo-title-small">
             {c('collider_2025: Info').t`Project knowledge`}
-            <span className="ml-1.5 text-normal color-hint">{activeAutoRetrieved.length}</span>
+            <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{activeAutoRetrieved.length}</span>
         </h3>
 
         {activeAutoRetrieved.length === 0 ? (
-            <p className="my-1.5 text-sm color-hint">
+            <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`Relevant files will be automatically retrieved based on your questions.`}
             </p>
         ) : (
             <>
-                <p className="my-1.5 text-sm color-hint">
+                <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`Files automatically retrieved based on your questions.`}
                 </p>
                 {activeAutoRetrieved.map((attachment) => (
@@ -215,11 +215,11 @@ const ManualAttachmentsSection = ({
 
     return (
         <div className="w-full mb-4">
-            <h3 className="text-rg text-semibold">
+            <h3 className="lumo-title-small">
                 {c('collider_2025: Info').t`Attached files`}
-                <span className="ml-1.5 text-normal color-hint">{totalManual}</span>
+                <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{totalManual}</span>
             </h3>
-            <p className="my-1.5 text-sm color-hint">
+            <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`These files are referred to in the conversation.`}
             </p>
 
@@ -267,11 +267,11 @@ const CompactedFilesSection = ({
 
     return (
         <div className="w-full mb-4">
-            <h3 className="text-rg text-semibold">
+            <h3 className="lumo-title-small">
                 {c('collider_2025: Info').t`Removed when chat was shortened`}
-                <span className="ml-1.5 text-normal color-hint">{compactedFiles.length}</span>
+                <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{compactedFiles.length}</span>
             </h3>
-            <p className="my-1.5 text-sm color-hint">
+            <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025: Info')
                     .t`These files belonged to summarized messages and are no longer sent to the model.`}
             </p>
@@ -308,11 +308,11 @@ const ExcludedFilesSection = ({
 
     return (
         <div className="w-full mb-4">
-            <h3 className="text-rg text-semibold">
+            <h3 className="lumo-title-small">
                 {c('collider_2025: Info').t`Excluded`}
-                <span className="ml-1.5 text-normal color-hint">{totalExcluded}</span>
+                <span className="ml-1.5 lumo-body-medium lumo-color-glyph-mid">{totalExcluded}</span>
             </h3>
-            <p className="my-1.5 text-sm color-hint">
+            <p className="my-1.5 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`These files are no longer referred to in this conversation.`}
             </p>
             {excludedAutoRetrieved.map((attachment) => (
@@ -465,7 +465,7 @@ export const KnowledgeBasePanel = ({
                 <div className={panelClassName} ref={filesContainerRef}>
                     <div
                         className={clsx('files-panel-content w-full h-full', {
-                            'rounded-xl bg-weak shadow-lifted': !isModal,
+                            'radius-16 lumo-bg-panel-elevated lumo-elevation-4': !isModal,
                         })}
                     >
                         <FilePreviewPanel
@@ -500,7 +500,7 @@ export const KnowledgeBasePanel = ({
                     <div
                         className={clsx('w-full h-full relative', {
                             'rounded-none shadow-none': isModal,
-                            'files-panel-content flex flex-column flex-nowrap bg-norm rounded-xl shadow-lifted':
+                            'files-panel-content flex flex-column flex-nowrap radius-16 lumo-bg-panel-elevated lumo-elevation-4':
                                 !isModal,
                         })}
                     >
@@ -538,36 +538,41 @@ export const KnowledgeBasePanel = ({
             <div className={panelClassName} ref={filesContainerRef}>
                 <div
                     className={clsx('files-panel-content flex flex-column flex-nowrap w-full h-full p-5', {
-                        'rounded-xl bg-weak shadow-lifted': !isModal,
+                        'radius-16 lumo-bg-panel-elevated lumo-elevation-4': !isModal,
                     })}
                 >
                     {/* Header */}
                     <div className="shrink-0 mb-4">
-                        <div className="flex flex-row items-center justify-space-between gap-2 min-w-0">
-                            <div className="flex flex-row flex-nowrap flex-1 items-center gap-1 min-w-0">
+                        <div className="flex flex-nowrap items-start gap-2 min-w-0">
+                            <div className="flex flex-wrap flex-1 items-center gap-2 min-w-0">
                                 <h2
                                     dir={title ? 'auto' : undefined}
-                                    className="min-w-0 m-0 overflow-hidden text-xl text-bold text-ellipsis whitespace-nowrap"
+                                    className={
+                                        title
+                                            ? 'flex-1 min-w-0 m-0 overflow-hidden lumo-title-medium text-ellipsis whitespace-nowrap'
+                                            : 'files-panel-header-text flex-auto min-w-0 m-0 lumo-title-medium'
+                                    }
                                 >
                                     {title ?? c('collider_2025: Info').t`All files in this chat`}
                                 </h2>
-                            </div>
 
-                            {headerActions ??
-                                (!linkedDriveFolder && (
-                                    <Button
-                                        size="small"
-                                        shape="outline"
-                                        onClick={() => setShowDriveBrowser(true)}
-                                        className="flex flex-row flex-nowrap shrink-0 items-center gap-2 max-w-full"
-                                        title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
-                                    >
-                                        <IcBrandProtonDrive size={4} />
-                                        <span className="text-sm">
-                                            {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
-                                        </span>
-                                    </Button>
-                                ))}
+                                {headerActions ??
+                                    (!linkedDriveFolder && !isEmpty && (
+                                        <Button
+                                            size="tiny"
+                                            shape="outline"
+                                            onClick={() => setShowDriveBrowser(true)}
+                                            className="flex flex-nowrap shrink-0 items-center gap-2 max-w-full"
+                                            title={c('collider_2025: KBActionTitle')
+                                                .t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                        >
+                                            <IcBrandProtonDrive className="shrink-0" size={4} />
+                                            <span className="files-panel-header-text min-w-0 lumo-body-small">
+                                                {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                            </span>
+                                        </Button>
+                                    ))}
+                            </div>
 
                             <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
                                 <LumoIcon name="X" size={16} />
@@ -583,11 +588,12 @@ export const KnowledgeBasePanel = ({
                                 shape="solid"
                                 icon={true}
                                 onClick={onClearFilter}
-                                className="text-info hover:text-info-dark p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
+                                className="p-2 -mr-1 shrink-0 inline-flex items-center gap-2"
                                 title={c('collider_2025: Info').t`Show all files`}
                             >
                                 <LumoIcon name="X" width={12} height={12} />
-                                <span className="text-sm">{c('collider_2025: Info').t`Remove message filter`}</span>
+                                <span className="lumo-body-small">{c('collider_2025: Info')
+                                    .t`Remove message filter`}</span>
                             </Button>
                         </div>
                     )}
@@ -657,22 +663,22 @@ export const KnowledgeBasePanel = ({
 
                     {/* Context usage breakdown — pinned to bottom, hidden in filter mode */}
                     {!filterMessage && (
-                        <div className="shrink-0 mt-2 border border-weak rounded-lg overflow-hidden">
+                        <div className="shrink-0 mt-2 overflow-hidden border lumo-border radius-12">
                             <button
                                 type="button"
                                 className="flex flex-row items-center gap-2 cursor-pointer p-3 w-full"
                                 onClick={() => setShowKnowledgeExplanation(!showKnowledgeExplanation)}
                                 aria-expanded={showKnowledgeExplanation}
                             >
-                                <LumoIcon name="Info" className="shrink-0 color-weak" />
-                                <h4 className="m-0 text-sm text-bold flex-1 text-left">
+                                <LumoIcon name="Info" className="shrink-0 lumo-color-glyph-mid" />
+                                <h4 className="flex-1 m-0 lumo-label-small text-left">
                                     {c('collider_2025: Info').t`Context usage for this conversation`}
                                 </h4>
-                                <LumoIcon name={indicatorIconName} size={4} className="color-weak shrink-0" />
+                                <LumoIcon name={indicatorIconName} size={4} className="shrink-0 lumo-color-glyph-mid" />
                             </button>
 
                             {showKnowledgeExplanation && (
-                                <p className="m-0 text-xs color-weak px-3 pb-2">
+                                <p className="m-0 px-3 pb-2 lumo-body-small lumo-color-glyph-mid">
                                     {c('collider_2025: Info')
                                         .t`${LUMO_SHORT_APP_NAME} can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.`}
                                 </p>

@@ -2,18 +2,16 @@
 
 .schedule-run-primary-label--chip {
 	max-inline-size: min(rem(200), 50%);
-	background-color: var(--signal-success-minor-1);
-	padding-block: rem(2);
-	padding-inline: rem(6);
+	background-color: var(--lumo-control-fill-mid);
 	border-radius: rem(6);
 
 	&.schedule-run-primary-label--active {
-		color: var(--interaction-norm);
-		background-color: color-mix(in srgb, var(--interaction-norm) 10%, var(--background-norm));
+		color: var(--lumo-glyph-brand-text);
+		background-color: color-mix(in srgb, var(--lumo-control-brand-fill) 10%, var(--lumo-panel));
 	}
 
 	&.schedule-run-primary-label--paused {
-		color: var(--text-weak);
-		background-color: var(--control-fill-mid);
+		color: var(--lumo-glyph-mid);
+		background-color: var(--lumo-control-fill);
 	}
 }

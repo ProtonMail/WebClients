@@ -114,7 +114,7 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                 <Tooltip title={c('collider_2025:Action').t`Close`}>
                     <button
                         type="button"
-                        className="lumo-upsell-modal-close inline-flex items-center justify-center"
+                        className="lumo-upsell-modal-close p-0 inline-flex items-center justify-center lumo-color-glyph"
                         onClick={modalProps.onClose}
                         aria-label={c('collider_2025:Action').t`Close`}
                     >
@@ -130,7 +130,12 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                 {...modalProps}
             >
                 <ModalTwoContent unstyled>
-                    <div className={clsx('lumo-upsell-modal', isSmallScreen && 'lumo-upsell-modal--small')}>
+                    <div
+                        className={clsx(
+                            'lumo-upsell-modal gap-6 p-6 pb-8',
+                            isSmallScreen && 'lumo-upsell-modal--small'
+                        )}
+                    >
                         <div className="lumo-upsell-modal-header">
                             <h1 className={clsx('lumo-upsell-modal-title m-0 main-text', isSmallScreen && 'small')}>
                                 {modalTitle}
@@ -139,7 +144,7 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
 
                         <div className="lumo-upsell-audience-toggle-wrapper">
                             <div
-                                className="lumo-upsell-audience-toggle"
+                                className="lumo-upsell-audience-toggle gap-1 p-1"
                                 role="tablist"
                                 aria-label={c('Title').t`Plan type`}
                             >
@@ -148,7 +153,7 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                                     role="tab"
                                     aria-selected={audience === 'personal'}
                                     className={clsx(
-                                        'lumo-upsell-audience-toggle-item',
+                                        'lumo-upsell-audience-toggle-item py-2 px-6 lumo-label-large lumo-color-glyph',
                                         audience === 'personal' && 'is-selected'
                                     )}
                                     onClick={() => setAudience('personal')}
@@ -160,7 +165,7 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                                     role="tab"
                                     aria-selected={audience === 'business'}
                                     className={clsx(
-                                        'lumo-upsell-audience-toggle-item',
+                                        'lumo-upsell-audience-toggle-item py-2 px-6 lumo-label-large lumo-color-glyph',
                                         audience === 'business' && 'is-selected'
                                     )}
                                     onClick={() => setAudience('business')}
@@ -170,8 +175,8 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                             </div>
                         </div>
 
-                        <div className="lumo-upsell-plan-card-shell">
-                            <div className="lumo-upsell-plan-card">
+                        <div className="lumo-upsell-plan-card-shell p-2.5">
+                            <div className="lumo-upsell-plan-card p-7 lumo-bg-panel lumo-elevation-4">
                                 {isSmallScreen ? (
                                     <>
                                         <img
@@ -179,13 +184,16 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                                             alt=""
                                             className="lumo-upsell-plan-image p-4 pb-0"
                                         />
-                                        <ul className="lumo-upsell-features unstyled m-0">
+                                        <ul className="lumo-upsell-features gap-4 pt-3 unstyled m-0">
                                             {activeFeatures.map((feature) => (
-                                                <li key={feature.icon} className="lumo-upsell-feature">
+                                                <li
+                                                    key={feature.icon}
+                                                    className="lumo-upsell-feature gap-3 lumo-body-medium lumo-color-glyph"
+                                                >
                                                     <LumoIcon
                                                         name={feature.icon}
                                                         size={16}
-                                                        className="color-norm-major shrink-0"
+                                                        className="lumo-color-glyph-brand-text shrink-0"
                                                     />
                                                     <span>{feature.getText()}</span>
                                                 </li>
@@ -200,13 +208,16 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
 
                                         {activePlan.monthlyAmount !== undefined && (
                                             <div className="lumo-upsell-pricing">
-                                                <span className="lumo-upsell-pricing-label">
+                                                <span className="lumo-upsell-pricing-label lumo-color-glyph-mid">
                                                     {c('collider_2025: Upsell Title').t`From only`}
                                                 </span>
-                                                <Price className="lumo-upsell-price" currency={activePlan.currency}>
+                                                <Price
+                                                    className="lumo-upsell-price my-1"
+                                                    currency={activePlan.currency}
+                                                >
                                                     {activePlan.monthlyAmount}
                                                 </Price>
-                                                <span className="lumo-upsell-pricing-sublabel">
+                                                <span className="lumo-upsell-pricing-sublabel lumo-body-large lumo-color-glyph-mid">
                                                     {isBusinessAudience
                                                         ? c('Subtitle').t`per user/month, billed annually`
                                                         : c('Subtitle').t`per month, billed annually`}
@@ -214,15 +225,18 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                                             </div>
                                         )}
 
-                                        <div className="lumo-upsell-cta">{ctaContent}</div>
+                                        <div className="lumo-upsell-cta pt-1">{ctaContent}</div>
 
-                                        <ul className="lumo-upsell-features unstyled m-0">
+                                        <ul className="lumo-upsell-features gap-4 pt-3 unstyled m-0">
                                             {activeFeatures.map((feature) => (
-                                                <li key={feature.icon} className="lumo-upsell-feature">
+                                                <li
+                                                    key={feature.icon}
+                                                    className="lumo-upsell-feature gap-3 lumo-body-medium lumo-color-glyph"
+                                                >
                                                     <LumoIcon
                                                         name={feature.icon}
                                                         size={16}
-                                                        className="color-norm-major shrink-0"
+                                                        className="lumo-color-glyph-brand-text shrink-0"
                                                     />
                                                     <span>{feature.getText()}</span>
                                                 </li>
@@ -233,7 +247,7 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                             </div>
                         </div>
 
-                        {isSmallScreen && <div className="lumo-upsell-cta">{ctaContent}</div>}
+                        {isSmallScreen && <div className="lumo-upsell-cta pt-1">{ctaContent}</div>}
                     </div>
                 </ModalTwoContent>
             </ModalTwo>

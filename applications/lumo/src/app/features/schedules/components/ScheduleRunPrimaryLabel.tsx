@@ -59,7 +59,7 @@ export const ScheduleRunPrimaryLabel = ({ rule, scheduleId, chip = false }: Sche
         >
             <span
                 className={clsx('schedule-run-primary-label inline-flex flex-nowrap items-center gap-1 min-w-0', {
-                    'schedule-run-primary-label--chip text-sm': chip,
+                    'schedule-run-primary-label--chip px-1.5 py-0.5 lumo-body-small': chip,
                     'schedule-run-primary-label--active': isActive,
                     'schedule-run-primary-label--paused': isPaused && !isActive,
                 })}

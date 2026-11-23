@@ -1,9 +1,18 @@
+.all-chats-panel {
+	// Leave space for raised row shadows without shifting the rows relative to the header.
+	margin-inline: calc(-1 * var(--lumo-space-6));
+}
+
+.all-chats-panel-scroll {
+	padding-inline: var(--lumo-space-6);
+}
+
 // Web/Chat list row: flat on the page with a divider; on hover (or while its menu is open) it lifts
 // onto a white panel, the divider goes and ⋯ takes the time's place.
 .all-chats-row {
 	transition:
-		background-color 0.15s ease,
-		box-shadow 0.15s ease;
+		background-color var(--lumo-duration-150) var(--lumo-easing-standard),
+		box-shadow var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	// 1px divider inset 12px, as in the design; not on the last row.
 	&::after {
@@ -12,7 +21,7 @@
 		inset-inline: 0.75rem;
 		inset-block-end: 0;
 		block-size: 1px;
-		background-color: var(--border-mid);
+		background-color: var(--lumo-border-mid);
 		pointer-events: none;
 	}
 
@@ -21,16 +30,24 @@
 	}
 }
 
-.all-chats-row:hover,
-.all-chats-row:focus-within,
-.all-chats-row.is-lifted,
-.all-chats-row--compact:active {
-	background-color: var(--background-norm);
-	box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
+.all-chats-row:is(:hover, :focus-within, .is-lifted, .all-chats-row--compact:active) {
+	background-color: var(--lumo-panel-elevated);
+	box-shadow: var(--lumo-elevation-1);
 
 	&::after {
 		opacity: 0;
 	}
+}
+
+.all-chats-list-item:has(> .all-chats-row:is(:hover, :focus-within, .is-lifted, .all-chats-row--compact:active)) {
+	z-index: 1;
+}
+
+.all-chats-list-item:has(
+		+ .all-chats-list-item > .all-chats-row:is(:hover, :focus-within, .is-lifted, .all-chats-row--compact:active)
+	)
+	> .all-chats-row::after {
+	opacity: 0;
 }
 
 .all-chats-row-link {
@@ -44,9 +61,7 @@
 }
 
 .all-chats-row-tag {
-	border: 1px solid var(--border);
 	line-height: 1rem;
-	padding-block: 1px;
 }
 
 // Wide rows: ⋯ appears on hover over the time, which keeps its space. Rows in Select mode have no
@@ -69,16 +84,11 @@
 	}
 }
 
-// Web/Empty state icon tile; Figma's control-fill-mid is --control-fill-strong in the Lumo theme.
-.all-chats-empty-icon {
-	background-color: var(--control-fill-strong);
-	color: var(--text-norm);
-}
+// Web/Empty state icon tile.
 
 // Web/All chats/Bulk bar: bottom padding leaves room for the browser toolbar and home indicator.
 .all-chats-bulk-bar {
-	border-block-start: 1px solid var(--border-mid);
-	padding-block-end: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+	padding-block-end: calc(var(--lumo-space-24) + env(safe-area-inset-bottom, 0px));
 
 	// Its buttons are 40px; Proton's medium button is 36px and large is taller than the design.
 	.button {

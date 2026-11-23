@@ -23,7 +23,7 @@ const UpsellCardWrapper = ({ children, error, showSadCat = true, inChat = false,
     return (
         <div
             className={clsx(
-                'upsell-card flex flex-nowrap flex-column lg:flex-row rounded-xl mb-4 w-full relative',
+                'upsell-card relative flex flex-column flex-nowrap w-full mb-4 radius-16 lg:flex-row',
                 // Without the image, more room around the text and between text and actions, centred on one line.
                 showSadCat ? 'gap-4 lg:gap-2 p-3' : 'gap-3 lg:gap-6 p-4 lg:items-center',
                 onDismiss && 'upsell-card--dismissible',
@@ -41,7 +41,7 @@ const UpsellCardWrapper = ({ children, error, showSadCat = true, inChat = false,
                 </div>
             )}
             <div className="flex flex-column flex-nowrap gap-2 lg:flex-1">
-                <p className="error-card-title text-bold m-0">{error.errorTitle}</p>
+                <p className="error-card-title lumo-title-small m-0">{error.errorTitle}</p>
                 <p className="error-card-message m-0">{error.errorMessage}</p>
             </div>
             <div className={clsx('flex flex-column flex-nowrap gap-2', showSadCat && 'my-auto')}>{children}</div>
@@ -50,7 +50,7 @@ const UpsellCardWrapper = ({ children, error, showSadCat = true, inChat = false,
                     icon
                     shape="ghost"
                     size="small"
-                    className="upsell-card-dismiss-button rounded-full border-weak shrink-0 absolute bg-norm z-up"
+                    className="upsell-card-dismiss-button absolute z-up shrink-0 lumo-border radius-full lumo-bg-panel"
                     onClick={onDismiss}
                     title={c('Action').t`Dismiss`}
                 >
@@ -58,7 +58,7 @@ const UpsellCardWrapper = ({ children, error, showSadCat = true, inChat = false,
                         name="X"
                         width={12}
                         height={12}
-                        className="color-weak"
+                        className="lumo-color-glyph-mid"
                         aria-label={c('Action').t`Dismiss`}
                     />
                 </Button>

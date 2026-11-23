@@ -10,8 +10,6 @@ import type { ScheduleDetails } from '../types';
 import { ScheduledTaskCard } from './ScheduledTaskCard';
 import { shouldShowColumnLayout } from './utils/layout';
 
-import './ScheduledTaskGrid.scss';
-
 interface ScheduledTaskGridProps {
     onDeleteSchedule?: (id: SpaceId) => void;
     onEditSchedule?: (id: SpaceId, schedule: ScheduleDetails) => void;
@@ -27,7 +25,7 @@ const ScheduledTaskGridContent = ({ onDeleteSchedule, onEditSchedule, schedules 
 
     return (
         <div className="scheduled-task-grid flex flex-column gap-4 w-full" ref={containerRef}>
-            <h3 className="scheduled-task-grid__heading m-0 text-sm text-semibold color-hint" id={headerId}>
+            <h3 className="scheduled-task-grid__heading m-0 lumo-label-small lumo-color-glyph-mid" id={headerId}>
                 {
                     // translator: Section heading for saved scheduled tasks.
                     c('collider_2025:Title').t`Your tasks`

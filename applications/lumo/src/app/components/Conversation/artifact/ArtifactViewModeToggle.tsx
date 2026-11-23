@@ -14,14 +14,17 @@ const codeLabel = () => c('collider_2025:Action').t`Code`;
 
 const getOptionClassName = (active: boolean) =>
     clsx(
-        'artifact-view-toggle-option inline-flex items-center justify-center rounded-full border-none cursor-pointer',
-        active ? 'artifact-view-toggle-option--active bg-norm color-norm' : 'bg-transparent color-hint'
+        'artifact-view-toggle-option inline-flex items-center justify-center p-0 border-none radius-8 cursor-pointer',
+        active
+            ? 'artifact-view-toggle-option--active lumo-color-glyph lumo-bg-panel-elevated lumo-elevation-1'
+            : 'lumo-color-glyph-mid bg-transparent'
     );
 
 export const ArtifactViewModeToggle = ({ mode, onChange }: ArtifactViewModeToggleProps) => {
     return (
         <div
-            className="artifact-view-toggle inline-flex items-center gap-0.5 p-0.5 rounded-full bg-weak border border-weak shrink-0"
+            className="artifact-view-toggle inline-flex shrink-0 items-center gap-0.5 p-0.5 radius-8 lumo-bg-control-fill"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="group"
             aria-label={c('collider_2025:Action').t`View mode`}
         >

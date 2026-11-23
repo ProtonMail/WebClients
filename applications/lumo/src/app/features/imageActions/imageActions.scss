@@ -7,10 +7,10 @@
 
 .image-icon-btn {
 	border: none;
-	background: var(--background-weak);
-	color: var(--text-norm);
+	background: var(--lumo-control-fill);
+	color: var(--lumo-glyph);
 	cursor: pointer;
-	transition: background 0.12s;
+	transition: background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
 		background: rgb(255 255 255 / 0.22);
@@ -33,10 +33,10 @@
 
 .image-style-menu__item {
 	cursor: pointer;
-	transition: background 0.1s;
+	transition: background var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
-		background: var(--background-strong);
+		background: var(--lumo-control-fill-mid);
 	}
 }
 
@@ -52,7 +52,7 @@
 		display: block;
 		max-inline-size: rem(280);
 		inline-size: 100%;
-		border-radius: rem(12);
+		border-radius: var(--lumo-radius-12);
 	}
 }
 
@@ -61,8 +61,7 @@
 	inset: 0;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.15s;
-	border-radius: rem(12);
+	transition: opacity var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	button {
 		opacity: 0.8;
@@ -76,7 +75,6 @@
 
 .inline-image-card__btn {
 	position: absolute;
-	margin: rem(8);
 }
 
 .inline-image-card__btn--expand {
@@ -105,7 +103,7 @@
 
 .image-lightbox {
 	z-index: 9999;
-	animation: image-lightbox-fade-in 0.22s ease;
+	animation: image-lightbox-fade-in var(--lumo-duration-200) var(--lumo-easing-enter);
 }
 
 @keyframes image-lightbox-fade-in {
@@ -119,23 +117,21 @@
 }
 
 .image-lightbox__content {
-	padding-block: rem(28) rem(16);
-	padding-inline: rem(32);
+	padding-block: rem(28) var(--lumo-space-16);
+	padding-inline: var(--lumo-space-32);
 	overflow-y: auto;
 }
 
 .image-lightbox__date {
 	text-align: center;
-	padding-block-end: rem(24);
 	color: rgb(255 255 255 / 0.5);
-	font-size: rem(12);
 }
 
 .image-preview-shell {
 	position: relative;
 	inline-size: min(60vw, #{rem(960)});
 	max-inline-size: min(60vw, #{rem(960)});
-	animation: image-lightbox-enter 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+	animation: image-lightbox-enter var(--lumo-duration-300) var(--lumo-easing-enter);
 }
 
 @keyframes image-lightbox-enter {
@@ -152,15 +148,15 @@
 
 @media (width <= rem(768)) {
 	.image-lightbox__content {
-		padding-block: rem(24) rem(12);
-		padding-inline: rem(12);
+		padding-block: var(--lumo-space-24) var(--lumo-space-12);
+		padding-inline: var(--lumo-space-12);
 		align-items: flex-end;
 	}
 
 	.image-preview-shell {
 		inline-size: 100%;
 		max-inline-size: 100%;
-		animation: image-lightbox-enter-mobile 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+		animation: image-lightbox-enter-mobile var(--lumo-duration-300) var(--lumo-easing-enter);
 	}
 }
 
@@ -192,32 +188,31 @@
 	transform: translate(50%, calc(-100% - #{rem(8)}));
 	inline-size: rem(36);
 	block-size: rem(36);
-	padding: 0;
 	cursor: pointer;
 	box-shadow:
 		0 rem(1) rem(3) rgb(0 0 0 / 0.06),
 		0 rem(4) rem(12) rgb(64 41 163 / 0.08);
 	transition:
-		background-color 0.15s ease,
-		border-color 0.15s ease,
-		box-shadow 0.15s ease,
-		color 0.15s ease;
+		background-color var(--lumo-duration-150) var(--lumo-easing-standard),
+		border-color var(--lumo-duration-150) var(--lumo-easing-standard),
+		box-shadow var(--lumo-duration-150) var(--lumo-easing-standard),
+		color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:hover {
-		background: var(--background-strong);
-		border-color: var(--border-norm);
+		background: var(--lumo-control-fill-mid);
+		border-color: var(--lumo-border);
 		box-shadow:
 			0 rem(2) rem(6) rgb(0 0 0 / 0.1),
 			0 rem(8) rem(20) rgb(64 41 163 / 0.14);
 	}
 
 	&:active {
-		background: var(--background-weak);
+		background: var(--lumo-control-fill);
 		box-shadow: 0 rem(1) rem(2) rgb(0 0 0 / 0.08);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-outline);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -235,17 +230,8 @@
 .image-preview-prompt {
 	position: relative;
 	inline-size: 100%;
-	background: var(--background-weak);
 	border-radius: 10px;
-	padding-block: 12px;
 	padding-inline: 14px 44px;
-}
-
-.image-preview-prompt__text {
-	font-size: rem(13);
-	line-height: 1.5;
-	color: var(--text-norm);
-	margin: 0;
 }
 
 .image-preview-prompt__copy {
@@ -266,14 +252,13 @@
 	overflow: visible;
 
 	.button {
-		border-radius: var(--border-radius-lg);
+		border-radius: var(--lumo-radius-12);
 	}
 }
 
 .image-preview-image-frame {
 	display: inline-block;
 	max-inline-size: 100%;
-	border-radius: var(--border-radius-xxl);
 	overflow: hidden;
 	line-height: 0;
 }
@@ -282,8 +267,8 @@
 	overflow: hidden;
 
 	.image-preview-media {
-		padding-block: rem(40) rem(16);
-		padding-inline: rem(8);
+		padding-block: var(--lumo-space-40) var(--lumo-space-16);
+		padding-inline: var(--lumo-space-8);
 	}
 
 	.image-preview-image {
@@ -297,8 +282,8 @@
 	overflow: hidden;
 
 	.sketch-canvas__canvas-area {
-		padding-block: rem(40) rem(16);
-		padding-inline: rem(8);
+		padding-block: var(--lumo-space-40) var(--lumo-space-16);
+		padding-inline: var(--lumo-space-8);
 	}
 
 	.canvas__element--embedded {
@@ -314,7 +299,7 @@
 .image-preview-container--extreme-aspect {
 	.image-preview-media,
 	.sketch-canvas__canvas-area {
-		padding: rem(24);
+		padding: var(--lumo-space-24);
 	}
 }
 
@@ -325,20 +310,20 @@
 @media (width <= rem(768)) {
 	.image-preview-container {
 		max-block-size: calc(100dvh - #{rem(24)});
-		border-radius: var(--border-radius-xxl) var(--border-radius-xxl) 0 0;
+		border-radius: var(--lumo-radius-28) var(--lumo-radius-28) 0 0;
 	}
 
 	.image-preview-container--extreme-aspect {
 		.image-preview-media,
 		.sketch-canvas__canvas-area {
-			padding: rem(16);
+			padding: var(--lumo-space-16);
 		}
 	}
 
 	.image-preview-container--preview {
 		.image-preview-media {
-			padding-block: rem(32) rem(16);
-			padding-inline: rem(6);
+			padding-block: var(--lumo-space-32) var(--lumo-space-16);
+			padding-inline: var(--lumo-space-6);
 		}
 
 		.image-preview-image {
@@ -348,8 +333,8 @@
 
 	.image-preview-container--edit {
 		.sketch-canvas__canvas-area {
-			padding-block: rem(32) rem(16);
-			padding-inline: rem(6);
+			padding-block: var(--lumo-space-32) var(--lumo-space-16);
+			padding-inline: var(--lumo-space-6);
 		}
 
 		.canvas__element--embedded {
@@ -359,7 +344,7 @@
 
 	.image-preview-actions {
 		flex-wrap: wrap;
-		padding: rem(16);
-		gap: rem(6);
+		padding: var(--lumo-space-16);
+		gap: var(--lumo-space-6);
 	}
 }

@@ -160,13 +160,13 @@ export const SkillAddMenu = ({
                 size={MENU_SIZE}
                 originalPlacement={isHeader ? 'bottom-end' : 'top-start'}
             >
-                <DropdownMenu className="px-0.5">
+                <DropdownMenu>
                     {actions.map((action) => (
                         <Fragment key={action.key}>
                             {action.titleBefore && (
                                 <>
-                                    <hr className="color-weak mx-4 my-1" />
-                                    <span className="block px-4 pt-2 pb-1 text-sm color-hint">
+                                    <hr className="lumo-color-glyph-mid mx-3 my-1" />
+                                    <span className="block px-3 pt-2 pb-1 lumo-label-medium lumo-color-glyph-mid">
                                         {action.titleBefore}
                                     </span>
                                 </>
@@ -181,7 +181,9 @@ export const SkillAddMenu = ({
                                 <LumoIcon aria-hidden name={action.icon} size={16} className="shrink-0 mt-0.5" />
                                 <span className="flex flex-column flex-nowrap min-w-0">
                                     <span>{action.label}</span>
-                                    {action.hint && <span className="text-sm color-weak">{action.hint}</span>}
+                                    {action.hint && (
+                                        <span className="lumo-body-small lumo-color-glyph-mid">{action.hint}</span>
+                                    )}
                                 </span>
                             </DropdownMenuButton>
                         </Fragment>

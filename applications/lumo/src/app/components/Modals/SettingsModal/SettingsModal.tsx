@@ -121,22 +121,19 @@ const LumoSettingsSidebar = ({
     items: SettingsItem[];
 }) => {
     return (
-        <div
-            className="flex flex-column gap-6 md:max-w-custom md:w-custom"
-            style={{ '--md-max-w-custom': '14rem', '--md-w-custom': '10rem' }}
-        >
-            <div className="hidden md:flex gap-2">
+        <div className="flex flex-column flex-nowrap gap-1 w-full">
+            <div className="hidden md:flex gap-2 pb-5 pl-1">
                 <LumoLogoHeader />
             </div>
 
             {/* Navigation Items */}
-            <ul className="unstyled m-0 flex flex-row md:flex-column flex-nowrap gap-2 md:gap-4 mb-4">
+            <ul className="unstyled m-0 flex flex-row md:flex-column flex-nowrap gap-1">
                 {items.map((item) => (
                     <li key={item.id}>
                         <Button
                             shape="ghost"
                             className={clsx(
-                                'flex flex-row gap-2 items-center flex-nowrap',
+                                'lumo-settings-nav-item flex flex-row flex-nowrap items-center justify-start gap-3',
                                 activePanel === item.id && 'is-active'
                             )}
                             onClick={() => onPanelChange(item.id)}
@@ -144,7 +141,7 @@ const LumoSettingsSidebar = ({
                             disabled={isGuest && !item.guest}
                             aria-pressed={activePanel === item.id}
                         >
-                            <LumoIcon className="shrink-0" name={item.icon} />
+                            <LumoIcon className="shrink-0" name={item.icon} size={16} />
                             <span className="text-ellipsis">{item.getText()}</span>
                         </Button>
                     </li>
@@ -288,7 +285,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const hasToolSettings = isLumoToolingEnabled || isArtifactsViewEnabled || isVisualizationInstructionsEnabled;
 
     return (
-        <div className="flex flex-column flex-nowrap *:min-size-auto gap-6">
+        <div className="flex flex-column flex-nowrap shrink-0 *:min-size-auto gap-6 pb-6">
             <SettingsGroup title={c('collider_2025: Title').t`Chats`}>
                 <SettingsSectionItem
                     icon="Folder"
@@ -444,7 +441,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     text={c('collider_2025: Title').t`Search index`}
                     subtext={
                         <div className="flex flex-column gap-1">
-                            <span className="color-weak">{c('collider_2025: Description')
+                            <span className="lumo-color-glyph-mid">{c('collider_2025: Description')
                                 .t`Reset the encrypted search index for your chats and Drive files.`}</span>
 
                             {showIndexingProgress && (
@@ -455,7 +452,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                                 />
                             )}
                             {hasError && (
-                                <span className="color-danger text-sm">
+                                <span className="lumo-body-small lumo-color-signal-danger">
                                     {indexError || messageIndexingStatus.error}
                                 </span>
                             )}
@@ -510,27 +507,27 @@ const AccountSettingsPanel = () => {
                 as={SettingsLink}
                 path={''}
                 onClick={handleClick}
-                className="user-settings-card flex flex-row flex-nowrap gap-4 items-start p-4 rounded-lg bg-norm cursor-pointer text-left w-full"
+                className="user-settings-card flex flex-row flex-nowrap items-center gap-3 w-full text-left cursor-pointer"
             >
-                <Avatar className="shrink-0">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
-                <div className="flex-1 flex flex-column gap-0 items-start">
-                    <div className="flex flex-row items-center gap-3 mb-1">
-                        <span className="text-bold text-lg color-norm">{user.DisplayName ?? user.Name}</span>
+                <Avatar className="shrink-0 lumo-title-small">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
+                <div className="flex flex-column flex-nowrap flex-1 items-start gap-0.5 min-w-0">
+                    <div className="flex flex-row flex-nowrap items-center gap-2 min-w-0">
+                        <span className="lumo-title-small lumo-color-glyph">{user.DisplayName ?? user.Name}</span>
                         {planName && (
-                            <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
+                            <span className="plan-name inline-flex items-center px-2 py-0.5 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill-mid">
                                 {planName}
                             </span>
                         )}
 
                         {isVisionary && (
-                            <span className="inline-flex items-center py-1 px-2 text-xs rounded-full plan-name">
+                            <span className="plan-name inline-flex items-center px-2 py-0.5 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill-mid">
                                 {c('collider_2025: Title').t`Visionary`}
                             </span>
                         )}
                     </div>
-                    <span className="color-weak text-sm text-left">{user.Email}</span>
+                    <span className="lumo-body-medium text-left lumo-color-glyph-mid">{user.Email}</span>
                 </div>
-                <LumoIcon name="ChevronRight" className="color-weak shrink-0 mt-2" size={16} />
+                <LumoIcon name="ChevronRight" className="shrink-0 lumo-color-glyph-mid" size={16} />
             </ButtonLike>
 
             <MobileManageSubscriptionButton />
@@ -600,7 +597,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                     title={c('Action').t`Close`}
                     className="modal-close-button"
                 >
-                    <LumoIcon name="X" size={24} />
+                    <LumoIcon name="X" size={20} />
                 </Button>
 
                 <div className="modal-main-container">
@@ -611,7 +608,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                      */}
                     <div className="flex md:flex-row flex-column flex-nowrap flex-1">
                         {/* Sidebar — desktop only */}
-                        <div className="hidden md:flex sidebar-container">
+                        <div className="sidebar-container hidden md:flex shrink-0 px-4 py-6">
                             <LumoSettingsSidebar
                                 activePanel={activePanel}
                                 onPanelChange={setActivePanel}
@@ -620,12 +617,12 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             />
                         </div>
 
-                        <div className="flex flex-column flex-nowrap flex-1 content-container">
+                        <div className="content-container flex flex-column flex-nowrap flex-1 min-w-0">
                             {/* Mobile: settings title */}
                             <div className="mobile-section-header md:hidden">
                                 <ModalContext.Consumer>
                                     {({ id }) => (
-                                        <h1 id={id} className="text-2xl text-bold m-0">
+                                        <h1 id={id} className="m-0 lumo-title-large">
                                             {
                                                 // translator: Heading of the app settings panel.
                                                 c('collider_2025:Label').t`Settings`
@@ -636,8 +633,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             </div>
 
                             {/* Desktop: top bar with active panel name */}
-                            <div className="hidden md:flex items-center top-bar">
-                                <h2 className="text-xl text-semibold m-0">
+                            <div className="top-bar hidden md:flex items-center pt-5 pr-4 pb-4 pl-6">
+                                <h2 className="m-0 lumo-title-medium">
                                     {SettingsItems.find((item) => item.id === activePanel)?.getText() || 'Settings'}
                                 </h2>
                             </div>
@@ -658,7 +655,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                             aria-pressed={activePanel === item.id}
                                         >
                                             <LumoIcon className="shrink-0" name={item.icon} size={16} />
-                                            <span className="text-sm">{item.getText()}</span>
+                                            <span className="lumo-body-small">{item.getText()}</span>
                                         </Button>
                                     ))}
                                 </div>
@@ -667,8 +664,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             {/* Panel content — rendered exactly once */}
                             <div
                                 className={clsx(
-                                    'flex flex-column gap-4 flex-1 w-full min-w-0',
-                                    activePanel === 'memory' ? 'overflow-hidden min-h-0 mb-0' : 'overflow-y-auto mb-10'
+                                    'flex flex-column flex-1 gap-4 w-full min-w-0 md:px-7 md:py-4',
+                                    activePanel === 'memory' ? 'overflow-hidden min-h-0' : 'overflow-y-auto'
                                 )}
                                 style={{ minHeight: 0 }}
                             >

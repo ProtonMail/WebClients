@@ -2,9 +2,7 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .file-card {
-	$radius: rem(12);
-
-	border-radius: $radius;
+	$radius: var(--lumo-radius-12);
 
 	&-preview {
 		overflow: hidden;
@@ -18,17 +16,13 @@
 
 	&-dismiss-button {
 		position: absolute;
-		inset-block-start: #{rem(-8)};
-		inset-inline-end: #{rem(-8)};
+		inset-block-start: calc(-1 * var(--lumo-space-8));
+		inset-inline-end: calc(-1 * var(--lumo-space-8));
 		z-index: 10;
 		opacity: 0;
 		visibility: hidden;
 		inline-size: #{rem(22)};
 		block-size: #{rem(22)};
-	}
-
-	&-progress {
-		padding: #{rem(2)};
 	}
 
 	&:hover {
@@ -45,14 +39,11 @@
 	}
 
 	&-footer {
-		border-block-start: 1px solid var(--border-weak);
 		border-end-start-radius: $radius;
 		border-end-end-radius: $radius;
-
 		display: grid;
 		grid-template-columns: auto minmax(0, 1fr);
 		align-items: center;
-		gap: rem(8);
 	}
 
 	&-info {
@@ -64,7 +55,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 0;
 	}
 
 	&-preview--text {
@@ -72,15 +62,12 @@
 		white-space: pre-wrap;
 		word-break: break-word;
 		overflow-wrap: anywhere;
-		line-height: 1.25;
-		mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 		mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 	}
 
 	&-pasted-badge {
 		inset-block-end: #{rem(10)};
 		inset-inline-start: #{rem(10)};
-		letter-spacing: 0.05em;
 		z-index: 1;
 	}
 }

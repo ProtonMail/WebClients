@@ -18,8 +18,6 @@ import { sendSubscriptionModalSubscribedEvent } from '../../util/telemetry';
 import { useNativeComposerVisibilityApi } from '../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
-import './LumoPlusLimitModal.scss';
-
 interface LumoPlusLimitModalProps extends ModalProps {
     /** Translated heading describing the feature unlocked by upgrading to Lumo Plus. */
     title: string;
@@ -65,7 +63,7 @@ export const LumoPlusLimitModal = ({ title, description, limitFeature, ...modalP
         <ModalTwo {...modalProps}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <div className="lumo-plus-limit-modal__content">
+                <div className="lumo-plus-limit-modal__content text-center">
                     <div className="modal-two-illustration-container mb-2 relative text-center">
                         <img
                             src={lumoCatLoaf}
@@ -76,13 +74,18 @@ export const LumoPlusLimitModal = ({ title, description, limitFeature, ...modalP
                             width={160}
                         />
                     </div>
-                    <p className="color-weak mb-4">{description}</p>
+                    <p className="mb-4 lumo-color-glyph-mid">{description}</p>
 
-                    <div className="lumo-plus-limit-modal__features">
+                    <div className="lumo-plus-limit-modal__features flex flex-column gap-3 p-4 radius-8 text-left lumo-bg-control-fill">
                         {features.map((feature) => (
-                            <div className="lumo-plus-limit-modal__feature" key={feature}>
-                                <LumoIcon aria-hidden name="CircleCheck" size={20} color="#6D4AFF" />
-                                <span>{feature}</span>
+                            <div className="lumo-plus-limit-modal__feature flex items-center gap-3" key={feature}>
+                                <LumoIcon
+                                    aria-hidden
+                                    className="shrink-0 lumo-color-glyph-brand-text"
+                                    name="CircleCheck"
+                                    size={20}
+                                />
+                                <span className="lumo-body-medium lumo-color-glyph">{feature}</span>
                             </div>
                         ))}
                     </div>

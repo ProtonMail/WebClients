@@ -51,25 +51,25 @@ interface SkillLumoBriefProps {
 export const SkillLumoBrief = ({ value, onValue, onSubmit }: SkillLumoBriefProps) => (
     <div className="flex flex-column flex-nowrap gap-4">
         <div className="flex flex-nowrap items-start gap-3">
-            <span className="skill-lumo-brief__badge flex items-center justify-center shrink-0 color-primary">
+            <span className="skill-lumo-brief__badge radius-12 flex items-center justify-center shrink-0 lumo-color-glyph-brand-text">
                 <LumoIcon name="Sparkles" size={20} />
             </span>
             <div className="flex flex-column gap-1">
-                <h2 className="m-0 text-lg text-semibold">{c('collider_2025:Title').t`What should this skill do?`}</h2>
-                <p className="m-0 color-weak">
+                <h2 className="m-0 lumo-title-medium">{c('collider_2025:Title').t`What should this skill do?`}</h2>
+                <p className="m-0 lumo-color-glyph-mid">
                     {c('collider_2025:Info')
                         .t`Describe the task and when ${LUMO_SHORT_APP_NAME} should use it. ${LUMO_SHORT_APP_NAME} drafts the name, description and instructions, and you can review everything before saving.`}
                 </p>
             </div>
         </div>
-        <div className="skill-lumo-prompt p-3">
+        <div className="skill-lumo-prompt radius-12 p-3">
             <TextAreaTwo
                 dir="auto"
                 unstyled
                 autoGrow
                 minRows={5}
                 rows={10}
-                className="skill-lumo-prompt__input p-0"
+                className="skill-lumo-prompt__input bg-transparent p-0"
                 value={value}
                 onValue={onValue}
                 placeholder={c('collider_2025:Placeholder')
@@ -81,7 +81,8 @@ export const SkillLumoBrief = ({ value, onValue, onSubmit }: SkillLumoBriefProps
             />
         </div>
         <div className="flex flex-column gap-2">
-            <span className="text-sm color-weak">{c('collider_2025:Label').t`Or start from an example`}</span>
+            <span className="lumo-label-medium lumo-color-glyph-mid">{c('collider_2025:Label')
+                .t`Or start from an example`}</span>
             <div className="flex flex-wrap gap-2">
                 {getExamples().map((example) => (
                     <Button
@@ -132,7 +133,7 @@ export const SkillLumoPrompt = ({
     return (
         <section
             className={clsx(
-                'skill-lumo-prompt skill-lumo-prompt--refine flex flex-column flex-nowrap gap-1 px-3 py-2 mb-2',
+                'skill-lumo-prompt radius-12 skill-lumo-prompt--refine flex flex-column flex-nowrap gap-1 px-3 py-2 mb-2',
                 generating && 'is-generating'
             )}
             aria-label={title}
@@ -141,9 +142,13 @@ export const SkillLumoPrompt = ({
                 <LumoIcon
                     name="Sparkles"
                     size={16}
-                    className={generating ? 'skill-lumo-prompt__icon--busy color-primary' : 'color-primary'}
+                    className={
+                        generating
+                            ? 'skill-lumo-prompt__icon--busy lumo-color-glyph-brand-text'
+                            : 'lumo-color-glyph-brand-text'
+                    }
                 />
-                <span className="flex-1 text-sm text-semibold color-primary" aria-live="polite">
+                <span className="flex-1 lumo-label-medium lumo-color-glyph-brand-text" aria-live="polite">
                     {generating ? c('collider_2025:Info').t`${LUMO_SHORT_APP_NAME} is writing your skill…` : title}
                 </span>
                 {onUndo && !generating && (
@@ -162,7 +167,7 @@ export const SkillLumoPrompt = ({
                     autoGrow
                     minRows={1}
                     rows={4}
-                    className="skill-lumo-prompt__input flex-1"
+                    className="skill-lumo-prompt__input bg-transparent p-0 flex-1"
                     value={value}
                     onValue={onValue}
                     disabled={generating}

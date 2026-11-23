@@ -53,7 +53,7 @@ const DrawerLumoViewContent = () => {
                     />
                 </>
             }
-            contentClassName="drawer-lumo flex flex-column flex-nowrap"
+            contentClassName="drawer-lumo lumo-ui flex flex-column flex-nowrap"
         >
             <ConnectedLumoAgentPanel onClose={closeDrawer} />
         </DrawerView>

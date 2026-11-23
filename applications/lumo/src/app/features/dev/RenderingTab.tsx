@@ -114,16 +114,16 @@ export const RenderingTab = () => {
 
     return (
         <>
-            <div className="debug-view-tab-panel debug-view-actions">
+            <div className="debug-view-tab-panel gap-2 debug-view-actions">
                 <button
-                    className="debug-view-btn debug-view-btn--primary"
+                    className="debug-view-btn debug-view-btn--primary px-3 py-2 lumo-label-small"
                     onClick={() => setShowTestRenderer(true)}
                     style={{ background: 'var(--interaction-norm)' }}
                 >
                     🧪 {c('lumo: Debug View').t`Test Renderer`}
                 </button>
                 <button
-                    className="debug-view-btn debug-view-btn--primary"
+                    className="debug-view-btn debug-view-btn--primary px-3 py-2 lumo-label-small"
                     onClick={handleCreateTestChats}
                     style={{ background: 'var(--signal-warning)' }}
                 >

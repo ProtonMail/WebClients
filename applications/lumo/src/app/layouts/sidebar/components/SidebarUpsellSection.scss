@@ -15,30 +15,49 @@ im.$media-expressions: $media-expressions;
 }
 
 .sidebar-upsell-section {
-	background: var(--lumo-secondary-upsell-background);
-	border: 1px solid var(--border-weak);
+	background: var(--lumo-panel);
 	transition:
-		background 0.2s ease-in-out,
-		border-color 0.2s ease-in-out;
+		background var(--lumo-duration-200) var(--lumo-easing-standard),
+		border-color var(--lumo-duration-200) var(--lumo-easing-standard);
 
 	// Wait for the sidebar width transition to finish before appearing
-	animation: sidebar-upsell-fadein 0.15s ease-in 0.3s both;
+	animation: sidebar-upsell-fadein var(--lumo-duration-150) var(--lumo-easing-enter) var(--lumo-duration-300) both;
 
 	a {
 		text-decoration-line: none;
 	}
 
 	&:hover {
-		border-color: var(--border-norm);
+		border-color: var(--lumo-border);
 	}
 
 	.lumo-plus-upgrade-button {
 		inline-size: 100%;
 	}
 
+	// Same 10px rhythm as the Figma card; utilities have no 10px gap.
+	&-body {
+		gap: var(--lumo-space-10);
+	}
+
+	// 600, as the Lumo title roles; scoped under the card to win over the type utility's shorthand.
+	& &-title {
+		font-weight: var(--font-weight-bold);
+	}
+
+	// Card actions are 40px, as the sidebar rows.
+	&-body .button {
+		min-block-size: #{rem(40)};
+	}
+
+	// 24px dismiss inside the card padding, centred on the title's first line.
 	&-dismiss-button {
 		&#{&} {
-			transform: translate(35%, -35%);
+			inset-block-start: #{rem(14)};
+			inset-inline-end: var(--lumo-space-16);
+			inline-size: #{rem(24)};
+			block-size: #{rem(24)};
+			padding: 0;
 		}
 	}
 }

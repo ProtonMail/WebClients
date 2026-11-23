@@ -75,9 +75,10 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
 
     return (
         <div
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="listbox"
             aria-label={c('collider_2025: Info').t`Matching files`}
-            className="file-mention-autocomplete fixed bg-norm border border-weak rounded-lg shadow-lifted z-[60] overflow-y-auto min-w-72 py-1"
+            className="file-mention-autocomplete fixed lumo-bg-panel-elevated border lumo-border radius-12 lumo-elevation-4 z-[60] overflow-y-auto min-w-72 py-1"
             style={{
                 top: `${topPosition}px`,
                 left: `${mentionState.position.left}px`,
@@ -103,6 +104,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                     <button
                         key={`${file.source}-${file.id}`}
                         type="button"
+                        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                         role="option"
                         aria-selected={index === selectedIndex}
                         className={clsx(
@@ -115,31 +117,39 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                         {mimeType ? (
                             <FileTypeIcon className="shrink-0" size={3.5} />
                         ) : (
-                            <LumoIcon name="FileText" width={14} height={14} className="color-weak shrink-0" />
+                            <LumoIcon
+                                name="FileText"
+                                width={14}
+                                height={14}
+                                className="shrink-0 lumo-color-glyph-mid"
+                            />
                         )}
                         <div className="flex-1 min-w-0 overflow-hidden">
                             {folderPath && (
-                                <div className="text-xs color-weak whitespace-nowrap overflow-hidden text-ellipsis mb-0.5">
+                                <div className="whitespace-nowrap mb-0.5 overflow-hidden lumo-body-small text-ellipsis lumo-color-glyph-mid">
                                     {highlightedFolderParts.map((part, partIndex) => (
                                         <span
                                             key={partIndex}
-                                            className={part.isMatch ? 'font-medium color-primary' : ''}
+                                            className={part.isMatch ? 'lumo-color-glyph-brand-text' : ''}
                                         >
                                             {part.text}
                                         </span>
                                     ))}
                                 </div>
                             )}
-                            <div className="text-sm whitespace-nowrap overflow-hidden text-ellipsis">
+                            <div className="whitespace-nowrap overflow-hidden lumo-body-small text-ellipsis">
                                 {highlightedFileNameParts.map((part, partIndex) => (
-                                    <span key={partIndex} className={part.isMatch ? 'font-semibold color-primary' : ''}>
+                                    <span key={partIndex} className={part.isMatch ? 'lumo-color-glyph-brand-text' : ''}>
                                         {part.text}
                                     </span>
                                 ))}
                             </div>
                         </div>
                         {file.source === 'drive' && (
-                            <IcBrandProtonDrive size={3} className="color-primary shrink-0 opacity-70 ml-1" />
+                            <IcBrandProtonDrive
+                                size={3}
+                                className="shrink-0 ml-1 lumo-color-glyph-brand-text opacity-70"
+                            />
                         )}
                     </button>
                 );

@@ -70,7 +70,7 @@ export const LumoLogoWithTierTag = ({ tierTag, height = LOGO_HEIGHT, className, 
             {resolvedTierTag && (
                 <span
                     className={clsx(
-                        'tier-tag text-xs text-norm color-invert rounded-sm px-1 py-0.5 block',
+                        'tier-tag block px-1 py-0.5 radius-4 lumo-label-small',
                         resolvedTierTag === 'pro' ? 'pro' : 'plus'
                     )}
                 >

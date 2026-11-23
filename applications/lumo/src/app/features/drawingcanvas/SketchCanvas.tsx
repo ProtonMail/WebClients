@@ -100,10 +100,10 @@ export const SketchCanvas = ({
             </div>
 
             <div className="sketch-canvas__controls shrink-0 w-full px-4 pb-4 pt-3 md:px-6 md:pb-6 md:pt-4">
-                <div className="sketch-canvas__edit-panel w-full bg-norm">
+                <div className="sketch-canvas__edit-panel w-full lumo-bg-panel">
                     {shouldShowDescription && (
                         <>
-                            <label className="sketch-canvas__edit-panel-text flex items-start gap-2 px-4 py-3 m-0 mb-3 border border-weak rounded-lg bg-weak">
+                            <label className="sketch-canvas__edit-panel-text flex items-start gap-2 m-0 mb-3 px-4 py-3 border lumo-border radius-12 lumo-bg-control-fill">
                                 <textarea
                                     dir="auto"
                                     value={description}
@@ -119,7 +119,7 @@ export const SketchCanvas = ({
                                             handleExport();
                                         }
                                     }}
-                                    className="sketch-canvas__description-input w-full text-sm color-norm"
+                                    className="sketch-canvas__description-input bg-transparent p-0 w-full lumo-body-small lumo-color-glyph"
                                     aria-label={c('collider_2025:Label').t`Describe what to change`}
                                 />
                             </label>

@@ -47,14 +47,14 @@ export const NewChatSidebarButton = () => {
 
     return (
         <>
-            <div className="sidebar-item flex items-center w-full cursor-pointer py-2 px-1.5 show-shortcut-on-hover gap-2">
+            <div className="sidebar-item show-shortcut-on-hover flex items-center gap-3 w-full px-3 radius-12 cursor-pointer">
                 <button
-                    className="sidebar-item-main-action flex-1 flex items-center h-full p-0 cursor-pointer"
+                    className="sidebar-item-main-action flex flex-1 items-center gap-3 h-full p-0 cursor-pointer"
                     onClick={isGuest ? handleGuestClick : handleNewChat}
                     aria-label={c('collider_2025:Button').t`New chat`}
                 >
                     <div className="sidebar-item-icon flex items-center justify-start shrink-0">
-                        <LumoIcon name="SquarePen" className="rtl:mirror" />
+                        <LumoIcon name="SquarePen" size={18} className="rtl:mirror" />
                     </div>
                     <span className="sidebar-item-text flex-1 flex items-center justify-space-between text-nowrap overflow-hidden gap-2 flex-nowrap">
                         <span className="sidebar-item-label w-full text-ellipsis">{c('collider_2025:Button')
@@ -66,15 +66,8 @@ export const NewChatSidebarButton = () => {
                         )}
                     </span>
                 </button>
-                <div className="inline-block flex flex-nowrap items-center gap-2">
-                    <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        // className={isGhostChatMode ? 'color-primary' : 'color-weak'}
-                    >
+                <div className="inline-block flex flex-nowrap items-center gap-3">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M14.7497 9.25362L15.4433 9.50118L18.0931 7.79902L18.313 9.96065H19.8204L19.5492 7.29146C19.4272 6.34374 18.3599 5.84537 17.5555 6.36201L15.2528 7.84077L15.2206 7.82979C14.3388 7.51745 13.3988 7.32506 12.4213 7.28193L12.0002 7.27314C10.9317 7.27314 9.90317 7.4516 8.9416 7.77339L8.85957 7.80122L6.61764 6.36201C5.81327 5.84537 4.74594 6.34374 4.624 7.29146L4.28125 9.96065H5.79302L5.81454 9.79305L6.07126 7.7939L8.66035 9.4565L9.34809 9.21993C9.37116 9.21198 9.39451 9.20351 9.41767 9.19576C10.2322 8.92318 11.1002 8.77315 12.0002 8.77315C12.9508 8.77318 13.8655 8.94087 14.7196 9.24336L14.7497 9.25362Z"
                             fill="currentColor"

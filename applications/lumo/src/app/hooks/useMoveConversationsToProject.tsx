@@ -140,7 +140,7 @@ export const useMoveConversationsToProject = () => {
                     shape="underline"
                     color="norm"
                     size="small"
-                    className="ml-2 p-0 text-semibold"
+                    className="ml-2 p-0"
                     onClick={() => {
                         navigate(`/projects/${targetSpaceId}`);
                     }}

@@ -31,7 +31,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => {
     const alwaysShowsTrailingContent = isSmallScreen || isTouchDevice;
 
     return (
-        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
+        <ul className="unstyled flex flex-column flex-nowrap min-w-0 w-full my-0">
             {items.map(
                 ({ id, to, label, isSelected, leadingContent, trailingContent, trailingLabel, attentionKey }) => (
                     <li
@@ -39,15 +39,15 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => {
                         className={clsx(
                             'relative group-hover-hide-container group-hover-opacity-container',
                             'flex items-center min-w-0 overflow-hidden navigation-link w-full',
-                            'hover:bg-weak rounded-md transition-colors text-sm',
+                            'radius-12 lumo-body-medium transition-colors',
                             isSelected && 'is-active'
                         )}
                     >
                         <LumoLink
                             to={to}
                             className={clsx(
-                                'absolute inset-0 flex flex-nowrap items-center gap-2 pl-1.5 hover:text-primary',
-                                trailingContent ? 'pr-8' : 'pr-2'
+                                'absolute inset-0 flex flex-nowrap items-center gap-2 pl-3',
+                                trailingContent ? 'pr-8' : 'pr-3'
                             )}
                             onClick={onItemClick}
                         >

@@ -226,11 +226,11 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
             />
 
             {orphanedDocCount > 0 && (
-                <div className="p-3 bg-danger rounded">
-                    <h4 className="text-sm text-semibold mb-2" style={{ color: 'var(--text-invert)' }}>
+                <div className="p-3 radius-8 bg-danger">
+                    <h4 className="mb-2 lumo-label-small" style={{ color: 'var(--text-invert)' }}>
                         ⚠️ {c('Title').t`Orphaned Documents Detected`}
                     </h4>
-                    <div className="text-sm" style={{ color: 'var(--text-invert)' }}>
+                    <div className="lumo-body-small" style={{ color: 'var(--text-invert)' }}>
                         <p className="mb-2">
                             {
                                 // translator: full sentence is e.g. "Found 3 documents (12 chunks) referencing 2 missing spaces."
@@ -263,7 +263,7 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
                         </p>
                         <details className="mb-3">
                             <summary className="cursor-pointer">{c('Action').t`Show orphaned space IDs`}</summary>
-                            <ul className="mt-2 ml-4 text-xs" style={{ wordBreak: 'break-all' }}>
+                            <ul className="mt-2 ml-4 lumo-body-small" style={{ wordBreak: 'break-all' }}>
                                 {orphanedSpaceIds.map((id) => (
                                     <li key={id}>{id}</li>
                                 ))}

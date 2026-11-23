@@ -72,18 +72,18 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                     <p className="m-0">{c('collider_2025: Info').t`You are about to visit an external website:`}</p>
 
                     {/* URL Display with Security Emphasis */}
-                    <div className="border rounded p-3 bg-weak">
+                    <div className="p-3 border radius-8 lumo-bg-control-fill">
                         {/* Protocol Display */}
                         <div className="flex flex-row items-center gap-1 mb-1">
                             {urlParts.isSecure ? (
                                 <>
-                                    <IcShield className="color-success" size={4} />
-                                    <span className="text-sm color-success text-bold">https://</span>
+                                    <IcShield className="lumo-color-signal-success" size={4} />
+                                    <span className="lumo-label-small lumo-color-signal-success">https://</span>
                                 </>
                             ) : (
                                 <>
                                     <IcShield className="warning" size={4} />
-                                    <span className="text-sm color-danger text-bold">http://</span>
+                                    <span className="lumo-label-small lumo-color-signal-danger">http://</span>
                                 </>
                             )}
                         </div>
@@ -91,12 +91,14 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                         {/* Domain - Emphasized */}
                         <div>
                             <div
-                                className={`text-lg text-bold text-break ${urlParts.hasExcessiveSubdomains ? 'color-warning' : ''}`}
+                                className={`lumo-title-medium text-break ${urlParts.hasExcessiveSubdomains ? 'lumo-color-signal-warning' : ''}`}
                             >
                                 {urlParts.hasExcessiveSubdomains ? (
                                     <>
-                                        <span className="color-warning">{urlParts.subdomains.join('.')}</span>
-                                        <span className="color-weak">.</span>
+                                        <span className="lumo-color-signal-warning">
+                                            {urlParts.subdomains.join('.')}
+                                        </span>
+                                        <span className="lumo-color-glyph-mid">.</span>
                                         <span>{urlParts.rootDomain}</span>
                                     </>
                                 ) : (
@@ -104,7 +106,7 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                                 )}
                             </div>
                             {urlParts.hasExcessiveSubdomains && (
-                                <div className="flex flex-row items-center gap-1 color-warning text-sm mt-1">
+                                <div className="flex flex-row items-center gap-1 mt-1 lumo-body-small lumo-color-signal-warning">
                                     <IcExclamationFilled size={3} />
                                     <span>
                                         {c('collider_2025: Warning').ngettext(
@@ -119,47 +121,57 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
 
                         {/* Path - De-emphasized */}
                         {urlParts.path !== '/' && (
-                            <div className="mt-1 text-sm text-break color-weak">{urlParts.path}</div>
+                            <div className="mt-1 lumo-body-small text-break lumo-color-glyph-mid">{urlParts.path}</div>
                         )}
                     </div>
 
                     {/* Safety information */}
                     <Collapsible>
                         <CollapsibleHeader
-                            className="color-primary"
+                            className="lumo-color-glyph-brand-text"
                             suffix={
                                 <CollapsibleHeaderIconButton className="p-1" size="small">
-                                    <LumoIcon name="ChevronDown" className="color-primary" size={14} />
+                                    <LumoIcon name="ChevronDown" className="lumo-color-glyph-brand-text" size={14} />
                                 </CollapsibleHeaderIconButton>
                             }
                         >
                             {c('collider_2025: Info').t`Safety information`}
                         </CollapsibleHeader>
                         <CollapsibleContent className="mt-2">
-                            <div className="border rounded p-3">
-                                <h4 className="text-lg text-bold mb-2">{c('collider_2025: Info')
+                            <div className="p-3 border radius-8">
+                                <h4 className="lumo-title-medium mb-2">{c('collider_2025: Info')
                                     .t`How to identify safe links:`}</h4>
-                                <div className="flex flex-column gap-2 text-sm">
+                                <div className="flex flex-column gap-2 lumo-body-small">
                                     <div className="flex flex-row flex-nowrap gap-2">
-                                        <IcShield className="color-success mt-0.5 shrink-0" size={4} />
+                                        <IcShield className="shrink-0 mt-0.5 lumo-color-signal-success" size={4} />
                                         <span>
-                                            <span className="text-bold">https://</span> -{' '}
+                                            <span className="lumo-title-small">https://</span> -{' '}
                                             {c('collider_2025: Info').t`Secure connection (encrypted)`}
                                         </span>
                                     </div>
                                     <div className="flex flex-row flex-nowrap gap-2">
-                                        <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
+                                        <LumoIcon
+                                            name="TriangleExclamationPoint"
+                                            className={'lumo-color-signal-warning'}
+                                        />
                                         <span>
-                                            <span className="text-bold">{c('collider_2025: Info').t`Domain name`}</span>{' '}
+                                            <span className="lumo-title-small">{c('collider_2025: Info')
+                                                .t`Domain name`}</span>{' '}
                                             - {c('collider_2025: Info').t`Check this is the site you expect to visit`}
                                         </span>
                                     </div>
                                     <div className="flex flex-row flex-nowrap gap-2">
-                                        <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
+                                        <LumoIcon
+                                            name="TriangleExclamationPoint"
+                                            className={'lumo-color-signal-warning'}
+                                        />
                                         <span>{misspellingWarning}</span>
                                     </div>
                                     <div className="flex flex-row flex-nowrap gap-2">
-                                        <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
+                                        <LumoIcon
+                                            name="TriangleExclamationPoint"
+                                            className={'lumo-color-signal-warning'}
+                                        />
                                         <span>
                                             {c('collider_2025: Info')
                                                 .t`Be cautious of unfamiliar domains or excessive subdomains`}
@@ -171,7 +183,7 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                     </Collapsible>
 
                     {/* Disclaimer */}
-                    <p className="text-sm color-weak m-0">
+                    <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025: Disclaimer')
                             .t`External links may pose security risks. We are not responsible for the content of external sites. Please proceed at your own risk.`}
                     </p>

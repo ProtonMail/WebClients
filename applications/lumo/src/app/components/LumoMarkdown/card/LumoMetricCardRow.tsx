@@ -19,11 +19,11 @@ function MetricCardSkeleton() {
                     'lumo-insight-card lumo-insight-card--metric lumo-insight-card--skeleton flex flex-1 flex-column min-h-full w-full p-4'
                 )}
             >
-                <div className="lumo-insight-card__label">
+                <div className="lumo-insight-card__label mb-1 lumo-label-small lumo-color-glyph-mid">
                     <span className="lumo-insight-card__shimmer">&nbsp;</span>
                 </div>
-                <div className="lumo-insight-card__value lumo-insight-card__shimmer">&nbsp;</div>
-                <div className="lumo-insight-card__delta lumo-insight-card__shimmer">&nbsp;</div>
+                <div className="lumo-insight-card__value mt-1 lumo-insight-card__shimmer lumo-color-glyph">&nbsp;</div>
+                <div className="lumo-insight-card__delta lumo-insight-card__shimmer mt-2 lumo-label-small">&nbsp;</div>
             </div>
         </div>
     );

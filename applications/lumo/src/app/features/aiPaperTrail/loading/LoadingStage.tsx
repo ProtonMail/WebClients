@@ -94,39 +94,45 @@ export const LoadingStage = () => {
     const current = lessons[lesson];
 
     return (
-        <div className="ai-paper-trail__inner ai-paper-trail__loading">
-            <div className="ai-paper-trail__loading-hero">
+        <div className="ai-paper-trail__inner ai-paper-trail__loading mx-auto px-6 pt-4">
+            <div className="ai-paper-trail__loading-hero mb-10">
                 <PaperTrailLumoLogoAnimation />
-                <div className="ai-paper-trail__status">
+                <div className="ai-paper-trail__status gap-3 mt-2 mb-3">
                     <span className="ai-paper-trail__loader">
                         <CircleLoader size="medium" />
                     </span>
-                    <h1 className="ai-paper-trail__status-title">
+                    <h1 className="ai-paper-trail__status-title m-0">
                         {c('collider_2025:Title').t`Building your AI Paper Trail`}
                     </h1>
                 </div>
-                <p className="ai-paper-trail__status-subtitle">
+                <p className="ai-paper-trail__status-subtitle m-0 lumo-body-large">
                     {c('collider_2025:Info').t`Your report is being generated privately.`}
                 </p>
             </div>
 
             <div className="ai-paper-trail__lesson">
-                <div className={clsx('ai-paper-trail__lesson-card', lessonVisible && 'is-visible')} aria-live="polite">
-                    <span className="ai-paper-trail__lesson-emoji" aria-hidden="true">
+                <div
+                    className={clsx('ai-paper-trail__lesson-card py-8', lessonVisible && 'is-visible')}
+                    aria-live="polite"
+                >
+                    <span className="ai-paper-trail__lesson-emoji radius-16" aria-hidden="true">
                         {current.emoji}
                     </span>
-                    <div className="ai-paper-trail__lesson-body">
+                    <div className="ai-paper-trail__lesson-body gap-2">
                         <span className="ai-paper-trail__lesson-tag">{current.tag}</span>
-                        <h3 className="ai-paper-trail__lesson-title">{current.title}</h3>
-                        <p className="ai-paper-trail__lesson-text">{current.body}</p>
+                        <h3 className="ai-paper-trail__lesson-title m-0">{current.title}</h3>
+                        <p className="ai-paper-trail__lesson-text m-0">{current.body}</p>
                     </div>
                 </div>
-                <div className="ai-paper-trail__lesson-dots" aria-hidden="true">
+                <div className="ai-paper-trail__lesson-dots mt-6" aria-hidden="true">
                     {lessons.map((_, index) => {
                         return (
                             <span
                                 key={index}
-                                className={clsx('ai-paper-trail__lesson-dot', index === lesson && 'is-active')}
+                                className={clsx(
+                                    'ai-paper-trail__lesson-dot radius-full',
+                                    index === lesson && 'is-active'
+                                )}
                             />
                         );
                     })}
@@ -135,7 +141,7 @@ export const LoadingStage = () => {
 
             <PaperTrailFakeProgress />
 
-            <p className="ai-paper-trail__loading-footer">
+            <p className="ai-paper-trail__loading-footer mt-6 lumo-body-small">
                 {c('collider_2025:Info')
                     .t`${LUMO_SHORT_APP_NAME} is a private AI. Your conversations are encrypted and never used to train AI models.`}
             </p>

@@ -72,7 +72,7 @@ type CompactionSummaryMarkdownProps = {
 };
 
 const CompactionSummaryMarkdown = memo(({ content, message }: CompactionSummaryMarkdownProps) => (
-    <div className="compaction-marker-markdown">
+    <div className="compaction-marker-markdown lumo-color-glyph-mid">
         <LazyProgressiveMarkdownRenderer content={content} isStreaming={false} message={message} />
     </div>
 ));
@@ -97,24 +97,24 @@ const CompactionAuditDetails = memo(({ audit }: CompactionAuditDetailsProps) => 
     const auditHeading = c('collider_2025: Compaction').t`Excluded from new replies only`;
 
     return (
-        <div className="compaction-marker-audit px-3 py-2 border-bottom border-weak bg-norm">
-            <p className="compaction-marker-audit-heading m-0 text-xs text-semibold color-norm">{auditHeading}</p>
-            <ul className="compaction-marker-audit-list unstyled m-0 mt-2 flex flex-column gap-1 text-xs color-weak">
+        <div className="compaction-marker-audit px-3 py-2 border-bottom lumo-border lumo-bg-panel">
+            <p className="compaction-marker-audit-heading m-0 lumo-label-small lumo-color-glyph">{auditHeading}</p>
+            <ul className="compaction-marker-audit-list unstyled flex flex-column gap-1 m-0 mt-2 lumo-body-small lumo-color-glyph-mid">
                 {hasFiles && (
                     <li>
-                        <span className="text-semibold color-norm">{filesLabel}: </span>
+                        <span className="lumo-label-large lumo-color-glyph">{filesLabel}: </span>
                         {audit.removedFiles.join(', ')}
                     </li>
                 )}
                 {hasClearedTools && (
                     <li>
-                        <span className="text-semibold color-norm">{clearedToolsLabel}: </span>
+                        <span className="lumo-label-large lumo-color-glyph">{clearedToolsLabel}: </span>
                         {audit.clearedTools.join(', ')}
                     </li>
                 )}
                 {hasDroppedTools && (
                     <li>
-                        <span className="text-semibold color-norm">{droppedToolsLabel}: </span>
+                        <span className="lumo-label-large lumo-color-glyph">{droppedToolsLabel}: </span>
                         {audit.droppedTools.join(', ')}
                     </li>
                 )}
@@ -157,14 +157,14 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
                 data-testid="compaction-marker"
                 data-compaction-status="compacting"
             >
-                <div className="compaction-marker-card border border-weak rounded overflow-hidden bg-norm">
-                    <div className="compaction-marker-bar w-full flex flex-column gap-1 bg-weak color-norm py-2 px-3 text-sm">
-                        <span className="flex flex-nowrap items-center gap-2 text-semibold">
+                <div className="compaction-marker-card overflow-hidden border lumo-border radius-8 lumo-bg-panel">
+                    <div className="compaction-marker-bar flex flex-column gap-1 w-full px-3 py-2 lumo-body-small lumo-color-glyph lumo-bg-control-fill">
+                        <span className="flex flex-nowrap items-center gap-2 lumo-label-large">
                             <CircleLoader size="small" className="shrink-0" />
                             {c('collider_2025: Compaction')
                                 .t`Making room to keep going — summarizing earlier messages for the next reply…`}
                         </span>
-                        <span className="text-xs color-weak">
+                        <span className="lumo-body-small lumo-color-glyph-mid">
                             {c('collider_2025: Compaction')
                                 .t`Nothing is removed from your chat. Scroll up anytime to read the full history.`}
                         </span>
@@ -193,34 +193,34 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
     return (
         <div className="compaction-marker flex-1 w-full min-w-0 my-4" data-testid="compaction-marker">
             <div
-                className="compaction-marker-card border border-weak rounded overflow-hidden bg-norm text-sm"
+                className="compaction-marker-card overflow-hidden border lumo-border radius-8 lumo-body-small lumo-bg-panel"
                 data-expanded={expanded ? 'true' : 'false'}
             >
                 <button
                     type="button"
-                    className="compaction-marker-bar w-full flex flex-nowrap items-center gap-2 bg-weak color-norm text-left py-2 px-3"
+                    className="compaction-marker-bar flex flex-nowrap items-center gap-2 w-full px-3 py-2 text-left lumo-color-glyph lumo-bg-control-fill"
                     onClick={() => setExpanded((v) => !v)}
                     aria-expanded={expanded}
                 >
-                    <LumoIcon name="Shrink" className="shrink-0 color-weak" />
-                    <span className="flex-1 text-semibold">{headline}</span>
-                    <span className="compaction-marker-badge bg-strong color-weak text-sm py-0.5 px-1 rounded-sm text-nowrap">
+                    <LumoIcon name="Shrink" className="shrink-0 lumo-color-glyph-mid" />
+                    <span className="flex-1 lumo-label-large">{headline}</span>
+                    <span className="compaction-marker-badge px-1 py-0.5 radius-4 lumo-body-small text-nowrap lumo-color-glyph-mid lumo-bg-control-fill-mid">
                         {reclaimed}
                     </span>
                     {expanded ? (
-                        <LumoIcon name="ChevronUp" className="shrink-0 color-weak" />
+                        <LumoIcon name="ChevronUp" className="shrink-0 lumo-color-glyph-mid" />
                     ) : (
-                        <LumoIcon name="ChevronDown" className="shrink-0 color-weak" />
+                        <LumoIcon name="ChevronDown" className="shrink-0 lumo-color-glyph-mid" />
                     )}
                 </button>
 
-                <p className="compaction-marker-reassurance m-0 px-3 py-2 text-xs color-weak border-top border-weak">
+                <p className="compaction-marker-reassurance m-0 px-3 py-2 border-top lumo-border lumo-body-small lumo-color-glyph-mid">
                     {reassurance}
                 </p>
 
                 {expanded && (
-                    <div className="compaction-marker-details border-top border-weak">
-                        <p className="compaction-marker-meta m-0 px-3 py-2 text-xs color-weak border-bottom border-weak">
+                    <div className="compaction-marker-details border-top lumo-border">
+                        <p className="compaction-marker-meta m-0 px-3 py-2 border-bottom lumo-border lumo-body-small lumo-color-glyph-mid">
                             {condensed}
                             {strategySummary && (
                                 <>
@@ -236,14 +236,17 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
                             className="compaction-marker-scroll overflow-y-auto max-h-custom px-3 py-3"
                             style={scrollStyle}
                         >
-                            <p className="compaction-marker-summary-label m-0 pb-2 text-xs text-semibold color-norm">
+                            <p className="compaction-marker-summary-label m-0 pb-2 lumo-label-small lumo-color-glyph">
                                 {summaryHeading}
                             </p>
 
                             {sections.length > 0 ? (
                                 <ol className="compaction-marker-sections unstyled m-0 flex flex-column gap-2">
                                     {sections.map((section, index) => (
-                                        <li key={index} className="compaction-marker-section bg-weak rounded p-3">
+                                        <li
+                                            key={index}
+                                            className="compaction-marker-section p-3 radius-8 lumo-bg-control-fill"
+                                        >
                                             <CompactionSummaryMarkdown
                                                 content={sectionToMarkdown(section)}
                                                 message={message}
@@ -252,7 +255,7 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
                                     ))}
                                 </ol>
                             ) : (
-                                <div className="compaction-marker-fallback bg-weak rounded p-3">
+                                <div className="compaction-marker-fallback p-3 radius-8 lumo-bg-control-fill">
                                     <CompactionSummaryMarkdown content={summary} message={message} />
                                 </div>
                             )}

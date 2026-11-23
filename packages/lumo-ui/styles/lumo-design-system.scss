@@ -1,6 +1,5 @@
+@use 'sass:meta';
 @use './lumo-tokens';
-@use './lumo-utilities';
-@use './lumo-spacing';
 @use './lumo-proton-overrides';
 
 // Document-wide scope covers portals and outranks dynamic Proton :root themes.
@@ -12,3 +11,8 @@ $scope: 'html:root' !default;
 :root {
 	@include lumo-tokens.stable;
 }
+
+// Utilities load after the adapter so a class on an element overrides it at equal specificity.
+// Spacing keeps its place after Proton's copy and after the Lumo utilities, as before.
+@include meta.load-css('lumo-utilities');
+@include meta.load-css('lumo-spacing');

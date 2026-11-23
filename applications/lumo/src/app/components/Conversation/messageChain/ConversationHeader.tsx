@@ -241,16 +241,16 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
                     </div>
                 </HeaderWrapper> */}
                 {/* {isProjectConversation && projectName && (
-                    <div className="conversation-breadcrumb-mobile flex items-center gap-2 px-4 py-2 border-b">
+                    <div className="conversation-breadcrumb-mobile flex items-center gap-2 px-4 py-2 border-b lumo-bg-panel">
                         <Button
                             icon
                             shape="ghost"
                             onClick={handleNavigateToProject}
-                            className="flex text-md color-weak"
+                            className="flex lumo-color-glyph-mid"
                             title={c('collider_2025:Action').t`Back to project`}
                         >
                             <IcFolder className="mr-1" />
-                            <span className="text-md color-weak">{projectName}</span>
+                            <span className="lumo-body-medium lumo-color-glyph-mid">{projectName}</span>
                         </Button>
                     </div>
                 )} */}
@@ -271,7 +271,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
                     onChange={handleTitleChange}
                     onBlur={handleFocusEvent} // Save on blur
                     onKeyDown={handleKeyEvent} // Save on Enter key, discard on Escape
-                    inputClassName="py-1 border-none"
+                    inputClassName="px-1.5 p-1 border-none"
                     aria-label={c('collider_2025:Label').t`Edit conversation title`}
                     inputContainerClassName="conversation-title"
                     autoFocus
@@ -290,13 +290,13 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
                             title={c('collider_2025:Action').t`Go to project`}
                         >
                             <LumoIcon name="Folder" size={16} />
-                            <span className="color-weak">{projectName}</span>
+                            <span className="lumo-color-glyph-mid">{projectName}</span>
                         </Button>
                         <LumoIcon
                             name="ChevronRight"
                             width={12}
                             height={12}
-                            className="color-weak shrink-0 hide-on-small-screens"
+                            className="hide-on-small-screens shrink-0 lumo-color-glyph-mid"
                         />
                     </>
                 )}
@@ -319,7 +319,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
     return (
         <div className="conversation-header flex flex-column flex-nowrap w-full">
             <div className="flex flex-row justify-space-between items-center pt-2 pb-2 px-3 group-hover-opacity-container">
-                <div className="inline-flex flex-row flex-nowrap items-center justify-start">
+                <div className="inline-flex flex-row flex-nowrap items-center justify-start gap-1 min-w-0">
                     <RenderTitle isEditing={isEditing} />
                     {!isGuest && <ChatDropdownMenu conversation={conversation} />}
                 </div>

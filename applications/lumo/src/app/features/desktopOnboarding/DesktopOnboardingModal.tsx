@@ -62,8 +62,8 @@ export const DesktopOnboardingModal = ({
 
     const heading = (
         <div className={clsx('flex flex-column flex-nowrap gap-2', isSheet && 'items-center text-center')}>
-            <span className="text-sm text-semibold color-primary">{c('collider_2025: Label').t`New`}</span>
-            <h2 id={titleId} className="text-5xl text-semibold color-norm m-0 lh-rg">
+            <span className="lumo-label-medium lumo-color-glyph-brand-text">{c('collider_2025: Label').t`New`}</span>
+            <h2 id={titleId} className="lumo-headline-small lumo-color-glyph m-0">
                 {c('collider_2025: Title').t`Meet ${LUMO_SHORT_APP_NAME} for desktop`}
             </h2>
         </div>
@@ -75,14 +75,14 @@ export const DesktopOnboardingModal = ({
                 return (
                     <li key={feature.icon} className="flex flex-nowrap items-start gap-3">
                         <span
-                            className="desktop-onboarding-fill flex shrink-0 items-center justify-center rounded-lg color-norm w-custom h-custom"
+                            className="desktop-onboarding-fill flex shrink-0 items-center justify-center rounded-lg lumo-color-glyph w-custom h-custom"
                             style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                         >
                             <LumoIcon name={feature.icon} size={16} strokeWidth={1.4} />
                         </span>
                         <span className="flex flex-column flex-nowrap flex-1 gap-0.5">
-                            <span className="text-semibold color-norm">{feature.title}</span>
-                            <span className="color-weak">{feature.description}</span>
+                            <span className="lumo-title-small lumo-color-glyph">{feature.title}</span>
+                            <span className="lumo-color-glyph-mid">{feature.description}</span>
                         </span>
                     </li>
                 );
@@ -105,7 +105,7 @@ export const DesktopOnboardingModal = ({
                     </div>
                     {heading}
                     {features}
-                    <p className="m-0 color-weak text-center">{c('collider_2025: Description')
+                    <p className="m-0 lumo-color-glyph-mid text-center">{c('collider_2025: Description')
                         .t`You can download it on your computer later.`}</p>
                     <Button color="norm" size="large" fullWidth onClick={onGotIt}>
                         {c('collider_2025: Action').t`Got it`}

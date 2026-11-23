@@ -26,15 +26,18 @@ export const CustomizeNotice = ({
     actions,
     footnote,
 }: CustomizeNoticeProps) => (
-    <div className="customize-notice flex flex-column flex-nowrap items-center gap-4 text-center" role="note">
+    <div
+        className="customize-notice flex flex-column flex-nowrap items-center gap-4 p-10 border lumo-border radius-16 text-center lumo-bg-panel-elevated"
+        role="note"
+    >
         {icon === 'desktop' ? (
             <img className="customize-notice__app-icon" src={lumoAppIcon} alt="" width={88} height={88} />
         ) : (
-            <img className="customize-notice__icon" src={lumoCustomizeIcon} alt="" width={72} height={72} />
+            <img className="customize-notice__icon radius-16" src={lumoCustomizeIcon} alt="" width={72} height={72} />
         )}
-        <h2 className="mt-4 text-semibold customize-notice__title">{title}</h2>
-        <p className="m-0 color-weak customize-notice__description">{description}</p>
-        <ul className="customize-notice__points m-0 py-2 px-0 list-none flex flex-column flex-nowrap gap-2 text-left">
+        <h2 className="customize-notice__title mt-4 lumo-headline-small">{title}</h2>
+        <p className="customize-notice__description m-0 lumo-body-large lumo-color-glyph-mid">{description}</p>
+        <ul className="customize-notice__points flex flex-column flex-nowrap gap-2 m-0 px-0 py-2 lumo-body-medium text-left list-none">
             {points.map((point) => (
                 <li key={point.text} className="flex flex-nowrap items-center gap-2">
                     <LumoIcon
@@ -42,13 +45,13 @@ export const CustomizeNotice = ({
                         name={point.icon}
                         size={16}
                         strokeWidth={1.4}
-                        className="shrink-0 color-primary"
+                        className="shrink-0 lumo-color-glyph-brand-text"
                     />
                     <span>{point.text}</span>
                 </li>
             ))}
         </ul>
         <div className="flex flex-wrap justify-center gap-2 pt-2">{actions}</div>
-        {footnote && <p className="m-0 text-sm color-weak">{footnote}</p>}
+        {footnote && <p className="m-0 lumo-body-small lumo-color-glyph-mid">{footnote}</p>}
     </div>
 );

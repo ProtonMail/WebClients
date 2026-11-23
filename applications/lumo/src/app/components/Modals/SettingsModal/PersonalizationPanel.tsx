@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
@@ -257,7 +258,7 @@ const PersonalizationPanel = () => {
 
     return (
         <div className="personalization-panel">
-            <div className="personalization-content">
+            <Scroll className="personalization-content">
                 {isGuest ? (
                     // Guest user: Show sign-in prompt
                     <GuestSignInState
@@ -274,7 +275,7 @@ const PersonalizationPanel = () => {
                             {c('Info').t`This information is zero-access encrypted.`}
                         </Banner>
 
-                        <div className="flex flex-column gap-3">
+                        <div className="flex flex-column gap-4">
                             {/* Nickname */}
                             <div className="personalization-field">
                                 <InputFieldTwo
@@ -288,7 +289,7 @@ const PersonalizationPanel = () => {
                             </div>
 
                             {/* Job/Role */}
-                            <div className="personalization-field mt-2">
+                            <div className="personalization-field">
                                 <InputFieldTwo
                                     dir="auto"
                                     label={c('Label').t`What do you do?`}
@@ -300,7 +301,7 @@ const PersonalizationPanel = () => {
                             </div>
 
                             {/* Additional Context */}
-                            <div className="personalization-field mt-2">
+                            <div className="personalization-field">
                                 <div className="flex flex-column gap-2">
                                     <InputFieldTwo
                                         dir="auto"
@@ -317,7 +318,7 @@ const PersonalizationPanel = () => {
                             </div>
 
                             {/* Traits */}
-                            <div className="personalization-field mt-2">
+                            <div className="personalization-field">
                                 {/* Lumo Traits Text Area - shows selected traits */}
                                 <InputFieldTwo
                                     dir="auto"
@@ -331,7 +332,7 @@ const PersonalizationPanel = () => {
                                 />
 
                                 {/* Trait Pills - only show unselected traits */}
-                                <div className="trait-pills flex flex-wrap gap-1 mb-2">
+                                <div className="trait-pills flex flex-wrap gap-2 mt-3 mb-2">
                                     {getAvailableTraits()
                                         .filter((trait) => !personalization.traits.includes(trait.id))
                                         .map((trait) => (
@@ -343,15 +344,15 @@ const PersonalizationPanel = () => {
                                                     className="trait-pill"
                                                     onClick={() => handleTraitToggle(trait.id)}
                                                 >
-                                                    <LumoIcon name="Plus" width={12} height={12} className="mr-1" />
-                                                    {trait.label}
+                                                    <LumoIcon name="Plus" width={12} height={12} className="shrink-0" />
+                                                    <span className="lumo-label-medium">{trait.label}</span>
                                                 </Button>
                                             </Tooltip>
                                         ))}
 
                                     {/* Show message when all traits are selected */}
                                     {getAvailableTraits().length === personalization.traits.length && (
-                                        <div className="text-sm color-weak italic">{
+                                        <div className="italic lumo-body-small lumo-color-glyph-mid">{
                                             // translator: Status in personalization settings. Traits are qualities of the assistant, such as chatty or witty.
                                             c('collider_2025:Label').t`All traits have been selected`
                                         }</div>
@@ -386,11 +387,11 @@ const PersonalizationPanel = () => {
                         </div>
                     </>
                 )}
-            </div>
+            </Scroll>
 
             {/* Fixed Footer - only show for authenticated users */}
             {!isGuest && (
-                <div className="personalization-footer flex items-center">
+                <div className="personalization-footer flex items-center gap-3">
                     <Button
                         color="danger"
                         shape="outline"

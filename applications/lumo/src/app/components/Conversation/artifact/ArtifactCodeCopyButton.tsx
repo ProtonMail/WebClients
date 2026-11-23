@@ -21,7 +21,7 @@ export const ArtifactCodeCopyButton = ({ code, className }: Props) => {
     return (
         <div
             className={clsx(
-                'z-1 bg-norm rounded shadow-lifted',
+                'z-1 radius-8 lumo-bg-panel lumo-elevation-4',
                 !isSmallScreen && 'group-hover:opacity-100',
                 className
             )}

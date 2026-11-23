@@ -2,7 +2,7 @@
 	inline-size: 3rem;
 	block-size: 3rem;
 	transform: scale(1);
-	transition: all 200ms ease-in-out;
+	transition: all var(--lumo-duration-200) var(--lumo-easing-standard);
 
 	&:hover,
 	&:focus {

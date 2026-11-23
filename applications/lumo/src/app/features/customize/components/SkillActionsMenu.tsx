@@ -22,7 +22,7 @@ export const SkillActionsMenu = ({ onOpen, onEdit, onDelete }: SkillActionsMenuP
             <button
                 ref={anchorRef}
                 type="button"
-                className="skill-actions-menu__button flex shrink-0 items-center justify-center rounded interactive"
+                className="skill-actions-menu__button bg-transparent p-0 flex shrink-0 items-center justify-center radius-8 interactive"
                 aria-label={c('collider_2025:Action').t`More options`}
                 aria-haspopup="menu"
                 aria-expanded={isOpen}

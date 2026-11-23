@@ -21,8 +21,8 @@ interface TitleProps {
 export const AllChatsTitle = ({ title, count, as: Heading = 'h1' }: TitleProps) => {
     return (
         <div className="flex flex-nowrap items-baseline gap-2 min-w-0">
-            <Heading className="text-4xl text-semibold m-0 text-ellipsis">{title}</Heading>
-            <span className="text-lg text-semibold color-weak shrink-0">{count}</span>
+            <Heading className="lumo-headline-small m-0 text-ellipsis">{title}</Heading>
+            <span className="lumo-title-medium lumo-color-glyph-mid shrink-0">{count}</span>
         </div>
     );
 };
@@ -120,7 +120,7 @@ export const AllChatsHeader = ({
                                     }
                                 />
                             ) : null}
-                            <span className="font-medium text-ellipsis">
+                            <span className="text-ellipsis">
                                 {c('collider_2025:Label').t`${selectedCount} selected`}
                             </span>
                         </div>
@@ -161,7 +161,7 @@ export const AllChatsHeader = ({
                                 shape="ghost"
                                 size="small"
                                 icon={isMobileLayout}
-                                className="shrink-0 flex flex-nowrap items-center gap-2 font-medium"
+                                className="shrink-0 flex flex-nowrap items-center gap-2"
                                 aria-label={isMobileLayout ? c('collider_2025:Action').t`Select` : undefined}
                                 title={isMobileLayout ? c('collider_2025:Action').t`Select` : undefined}
                                 onClick={onToggleSelectionMode}

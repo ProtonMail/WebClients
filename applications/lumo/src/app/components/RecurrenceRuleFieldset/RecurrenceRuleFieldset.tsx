@@ -68,13 +68,13 @@ export const RecurrenceRuleFieldset = ({
             className="recurrence-rule-fieldset flex flex-column items-start m-0 p-0 border-none"
         >
             {/** Header */}
-            <div className="flex flex-nowrap items-center justify-space-between w-full m-0 mb-2 text-rg">
-                <span className="text-semibold" id={`${id}-recurrence-rule`}>
+            <div className="flex flex-nowrap items-center justify-space-between w-full m-0 mb-2 lumo-body-medium">
+                <span className="lumo-label-large" id={`${id}-recurrence-rule`}>
                     {title}
                 </span>
 
                 {/** Timezone field */}
-                <div className="flex flex-nowrap items-center gap-1 color-weak">
+                <div className="flex flex-nowrap items-center gap-1 lumo-color-glyph-mid">
                     <span className="shrink-0">
                         {recurrenceRule.timezone === ALWAYS_LOCAL_TIMEZONE_ID
                             ? // translator: Label for the option to run at the user's local time zone on each device.
@@ -82,7 +82,7 @@ export const RecurrenceRuleFieldset = ({
                             : recurrenceRule.timezone}
                     </span>
                     <SearchableSelect
-                        className="recurrence-rule-fieldset__timezone-button min-w-0 p-0 border border-transparent rounded shrink-0 interactive interactive--no-background"
+                        className="recurrence-rule-fieldset__timezone-button shrink-0 min-w-0 p-0 border border-transparent radius-8 interactive interactive--no-background"
                         fullWidth={false}
                         noCaret
                         onChange={({ value }) => {
@@ -119,7 +119,7 @@ export const RecurrenceRuleFieldset = ({
                 }</span>
                 <SelectTwo<RecurrenceRuleFrequency>
                     aria-labelledby={`${id}-frequency`}
-                    className="pl-3 border border-weak rounded"
+                    className="pl-3 border lumo-border radius-8"
                     onChange={({ value }) => {
                         onClearValidationField?.(['time', 'dateTime', 'weekDayPicker', 'monthDayPicker']);
                         onChange(switchFrequencyType(recurrenceRule, value));
@@ -143,7 +143,7 @@ export const RecurrenceRuleFieldset = ({
                             aria-invalid={!!fieldErrors?.dateTime}
                             aria-labelledby={`${id}-date`}
                             className={clsx([
-                                'border border-weak rounded flex-1',
+                                'flex-1 border lumo-border radius-8',
                                 fieldErrors?.dateTime && 'border-danger',
                             ])}
                             min={startOfDay(Date.now())}
@@ -175,7 +175,7 @@ export const RecurrenceRuleFieldset = ({
                     aria-invalid={!!fieldErrors?.time || !!fieldErrors?.dateTime}
                     aria-labelledby={`${id}-time`}
                     className={clsx([
-                        'border-weak rounded flex-1',
+                        'flex-1 lumo-border radius-8',
                         (fieldErrors?.time || fieldErrors?.dateTime) && 'border-danger',
                     ])}
                     interval={15}

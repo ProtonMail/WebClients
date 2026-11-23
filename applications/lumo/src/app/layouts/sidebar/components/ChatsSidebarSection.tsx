@@ -95,14 +95,14 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
     );
 
     return (
-        <div className="chats-sidebar-section flex flex-column min-w-0 gap-2">
+        <div className="chats-sidebar-section flex flex-column min-w-0">
             <CollapsibleSidebarSection
                 label={c('collider_2025:Title').t`Favorites`}
                 className="favorites-sidebar-section"
                 attentionKey={favoritesAttentionKey}
             >
                 {retainedFavorites.length === 0 ? (
-                    <div className="color-weak text-sm px-1.5 py-1">
+                    <div className="px-3 py-2 lumo-body-medium lumo-color-glyph-mid">
                         {c('collider_2025:Info').t`No favorites yet. Star a chat to find it here quickly.`}
                     </div>
                 ) : (
@@ -123,12 +123,12 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
                 attentionKey={historyAttentionKey}
             >
                 {filteredHistoryRows.length === 0 ? (
-                    <div className="color-weak text-sm px-1.5 py-1">
+                    <div className="px-3 py-2 lumo-body-medium lumo-color-glyph-mid">
                         {c('collider_2025:Title').t`No chat history yet. Let's start chatting!`}
                     </div>
                 ) : (
                     <div className="chat-history-list">
-                        <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
+                        <ul className="unstyled flex flex-column flex-nowrap min-w-0 w-full my-0">
                             {visibleHistoryRows.map((row) => (
                                 <ConnectedConversationListItem
                                     key={row.id}
@@ -141,7 +141,7 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
                         {showSeeMore && (
                             <Link
                                 to="/chats"
-                                className="block text-sm color-weak px-1.5 py-2 text-center text-no-decoration hover:color-norm"
+                                className="lumo-sidebar-section-more block px-3 py-2 lumo-body-medium text-center text-no-decoration lumo-color-glyph-mid"
                                 onClick={onItemClick}
                             >
                                 {c('collider_2025:Button').t`All chats`}

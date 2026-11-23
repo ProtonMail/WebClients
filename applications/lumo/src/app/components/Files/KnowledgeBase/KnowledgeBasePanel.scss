@@ -33,10 +33,15 @@ im.$media-expressions: $media-expressions;
 }
 
 .bg-progress-dark {
-	background-color: var(--text-norm);
+	background-color: var(--lumo-glyph);
 }
 
 .files-panel {
+	.files-panel-header-text {
+		white-space: normal;
+		overflow-wrap: anywhere;
+	}
+
 	&.modal-files-panel {
 		block-size: 100%;
 		overflow: hidden;
@@ -56,15 +61,15 @@ im.$media-expressions: $media-expressions;
 }
 
 .active-files-area {
-	background-color: var(--background-weak);
-	border: 1px solid var(--border-weak);
-	border-radius: 16px;
+	background-color: var(--lumo-control-fill);
+	border: 1px solid var(--lumo-border);
+	border-radius: var(--lumo-radius-16);
 }
 
 .project-files-area {
 	background-color: rgb(var(--primary-rgb) / 0.05);
 	border: 1px solid rgb(var(--primary-rgb) / 0.2);
-	border-radius: 16px;
+	border-radius: var(--lumo-radius-16);
 }
 
 .knowledge-info-area {
@@ -74,5 +79,5 @@ im.$media-expressions: $media-expressions;
 .file-item-card:hover,
 .knowledge-file-item:hover {
 	background-color: rgb(194 193 192 / 0.2);
-	transition: all 0.2s;
+	transition: all var(--lumo-duration-200) var(--lumo-easing-standard);
 }

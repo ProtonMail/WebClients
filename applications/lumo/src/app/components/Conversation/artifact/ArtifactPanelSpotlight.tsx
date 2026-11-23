@@ -15,11 +15,11 @@ const ArtifactPanelSpotlightContent = ({ isGuest }: ArtifactPanelSpotlightConten
 
     return (
         <div className="flex flex-column flex-nowrap items-start">
-            <p className="text-lg text-bold m-0 mb-1">{c('collider_2025: Spotlight')
+            <p className="m-0 mb-1 lumo-title-medium">{c('collider_2025: Spotlight')
                 .t`A new space for your creations`}</p>
-            <p className="m-0 text-sm color-weak">{c('collider_2025: Spotlight')
+            <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Spotlight')
                 .t`Documents, code, and web pages now open in a canvas beside your chat. Ask ${LUMO_SHORT_APP_NAME} for changes, compare versions, and download your work.`}</p>
-            <p className="m-0 mt-2 text-sm color-weak">
+            <p className="m-0 mt-2 lumo-body-small lumo-color-glyph-mid">
                 {isGuest
                     ? // translator: The "creations" toggle can be enabled/disabled per conversation in the Tools dropdown menu in the composer input element. Guest users do not have access to the toggle in the settings modal.
                       c('collider_2025: Spotlight').jt`You can turn off creations in ${tools}.`

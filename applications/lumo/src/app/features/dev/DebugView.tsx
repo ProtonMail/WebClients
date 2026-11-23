@@ -70,9 +70,7 @@ const DebugView = () => {
     // Derive the active tab so a hidden tab can't be shown even briefly.
     const isTabHidden =
         (!isLoggedIn &&
-            (activeTabState === 'search' ||
-                activeTabState === 'storage' ||
-                activeTabState === 'api-usage')) ||
+            (activeTabState === 'search' || activeTabState === 'storage' || activeTabState === 'api-usage')) ||
         (!isInternalHost && (activeTabState === 'rendering' || activeTabState === 'notifications'));
     const activeTab: ActiveTab = isTabHidden ? 'performance' : activeTabState;
 
@@ -108,19 +106,19 @@ const DebugView = () => {
     };
 
     return (
-        <div className="debug-view">
-            <div className="debug-view-header">
+        <div className="debug-view py-4 px-5 radius-12 lumo-color-glyph lumo-bg-panel lumo-elevation-4">
+            <div className="debug-view-header gap-1.5 mb-3 lumo-title-small lumo-color-glyph-brand-text">
                 <span className="debug-view-header-icon">⚡</span>
                 {c('lumo: Debug View').t`Debug View`}
             </div>
 
-            <div className="debug-view-tabs" role="tablist">
+            <div className="debug-view-tabs border-bottom lumo-border gap-1 mb-3 pb-2" role="tablist">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
                         role="tab"
                         aria-selected={activeTab === tab.id}
-                        className={`debug-view-tab ${activeTab === tab.id ? 'debug-view-tab--active' : ''}`}
+                        className={`debug-view-tab py-1.5 px-1 ${activeTab === tab.id ? 'debug-view-tab--active' : ''} lumo-label-small`}
                         onClick={() => setActiveTab(tab.id)}
                     >
                         {tab.label}
@@ -130,7 +128,7 @@ const DebugView = () => {
 
             {renderActiveTab()}
 
-            <div className="debug-view-hint" style={{ marginTop: '12px' }}>
+            <div className="debug-view-hint mt-3">
                 <strong>Cmd/Ctrl + Shift + P</strong> {c('lumo: Debug View').t`to toggle`}
             </div>
         </div>

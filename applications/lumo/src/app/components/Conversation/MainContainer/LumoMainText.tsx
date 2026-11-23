@@ -35,7 +35,7 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
     const { displayText } = useEncryptedTextAnimation(targetText, { trigger: shouldAnimate, duration: 600 });
 
     const textClassName = clsx(
-        'main-text lh100 transition-all duration-50 ease-out',
+        'main-text lh100 transition-all lumo-easing-enter',
         // !isGhostMode && 'mb-8',
         isSmallScreen && 'text-wrap-balance text-center mx-auto',
         !isSmallScreen && !isOnboardingCompleted && 'text-wrap-balance'
@@ -45,7 +45,7 @@ const LumoMainText = ({ isOnboardingCompleted, isSmallScreen, isGhostMode }: Lum
         return (
             <div className="mx-auto md:mx-0 mb-8 text-center">
                 <h1 className={textClassName}>{displayText}</h1>
-                <p className={clsx('color-weak text-lg mt-2 mb-0', isSmallScreen && 'text-center')}>
+                <p className={clsx('mt-2 mb-0 lumo-body-large lumo-color-glyph-mid', isSmallScreen && 'text-center')}>
                     {c('collider_2025:Title').t`This chat disappears when you close it and is never saved.`}
                 </p>
             </div>

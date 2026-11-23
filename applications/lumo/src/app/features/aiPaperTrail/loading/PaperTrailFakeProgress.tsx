@@ -35,7 +35,8 @@ export const PaperTrailFakeProgress = () => {
     return (
         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
-            className="ai-paper-trail__progress"
+            className="ai-paper-trail__progress mt-8"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="progressbar"
             aria-valuemin={0}
             aria-valuemax={100}
@@ -46,8 +47,8 @@ export const PaperTrailFakeProgress = () => {
                 <span className="ai-paper-trail__progress-label">{c('collider_2025:Label').t`Generating`}</span>
                 <span className="ai-paper-trail__progress-value">{progress}%</span>
             </div>
-            <div className="ai-paper-trail__progress-track">
-                <div className="ai-paper-trail__progress-fill" style={{ width: `${progress}%` }} />
+            <div className="ai-paper-trail__progress-track radius-full">
+                <div className="ai-paper-trail__progress-fill radius-full" style={{ width: `${progress}%` }} />
             </div>
         </div>
     );

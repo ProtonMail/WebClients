@@ -1,5 +1,3 @@
-@use '~@proton/styles/scss/lib/rem' as *;
-
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 
@@ -11,38 +9,31 @@ im.$media-expressions: $media-expressions;
 	flex-direction: column;
 	block-size: 100%;
 	overflow: hidden;
-	background-color: var(--background-norm);
+	background-color: var(--lumo-panel);
 }
 
 .projects-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-block-start: 32px;
-	gap: 12px;
+	padding-block-start: var(--lumo-space-32);
+	gap: var(--lumo-space-12);
 	max-inline-size: 900px;
 	margin-block: 0;
 	margin-inline: auto;
 	inline-size: 100%;
 
 	@include im.media('<=medium') {
-		padding: 32px;
+		padding: var(--lumo-space-32);
 		max-inline-size: none;
 	}
 
 	@include im.media('<=small') {
-		padding-block: 16px 0;
-		padding-inline: 32px;
+		padding-block: var(--lumo-space-16) 0;
+		padding-inline: var(--lumo-space-32);
 		max-inline-size: none;
 	}
 }
-
-// .projects-title {
-// 	font-size: 28px;
-// 	font-weight: 600;
-// 	margin: 0;
-// 	color: var(--text-norm);
-// }
 
 .projects-content {
 	flex: 1;
@@ -51,11 +42,10 @@ im.$media-expressions: $media-expressions;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	gap: 32px;
 	min-block-size: 0;
 
 	@include im.media('<=small') {
-		gap: 24px;
+		gap: var(--lumo-space-24);
 	}
 }
 
@@ -78,12 +68,6 @@ im.$media-expressions: $media-expressions;
 .projects-list-header {
 	display: flex;
 	justify-content: space-between;
-	padding-block: 8px;
-	padding-inline: 8px;
-	font-size: rem(12);
-	color: var(--text-weak);
-	font-weight: 500;
-	letter-spacing: 0.05em;
 }
 
 .projects-list {
@@ -94,22 +78,21 @@ im.$media-expressions: $media-expressions;
 
 .projects-grid {
 	display: grid;
-	margin-block-start: 2px;
 	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-	gap: 16px;
+	gap: var(--lumo-space-16);
 	max-inline-size: 900px;
 	inline-size: 100%;
 
 	@include im.media('<=small') {
 		grid-template-columns: 1fr;
-		gap: 12px;
+		gap: var(--lumo-space-12);
 	}
 }
 
 .projects-grid--inspiration {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 12px;
+	gap: var(--lumo-space-12);
 	max-inline-size: 900px;
 
 	@include im.media('<=small') {
@@ -117,7 +100,7 @@ im.$media-expressions: $media-expressions;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
 		-webkit-overflow-scrolling: touch;
-		padding-block-end: 8px; // Space for scrollbar
+		padding-block-end: var(--lumo-space-8); // Space for scrollbar
 
 		> * {
 			flex: 0 0 auto;
@@ -147,8 +130,6 @@ im.$media-expressions: $media-expressions;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	padding-block: 40px;
-	padding-inline: 20px;
 	inline-size: 100%;
 }
 
@@ -158,40 +139,19 @@ im.$media-expressions: $media-expressions;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-block-end: 24px;
-}
-
-.projects-empty-title {
-	font-size: rem(20);
-	font-weight: 600;
-	color: var(--text-norm);
-	margin-block: 0 12px;
-	margin-inline: 0;
 }
 
 .projects-empty-description {
-	font-size: rem(14);
-	color: var(--text-weak);
-	margin: 0;
 	max-inline-size: 400px;
 }
 
 .projects-inspiration-section {
 	inline-size: 100%;
 	max-inline-size: 900px;
-	padding-block-start: 32px;
 	flex-shrink: 0;
 	overflow-x: visible;
 
 	@include im.media('<=small') {
 		display: none;
 	}
-}
-
-.projects-inspiration-title {
-	font-size: rem(16);
-	font-weight: 600;
-	color: var(--text-norm);
-	margin-block: 0 12px;
-	margin-inline: 0;
 }

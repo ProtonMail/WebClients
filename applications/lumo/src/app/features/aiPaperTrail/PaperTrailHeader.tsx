@@ -32,7 +32,7 @@ export const PaperTrailHeader = ({ onStartChat }: Props) => {
 
     return (
         <>
-            <header className="ai-paper-trail__header">
+            <header className="ai-paper-trail__header py-5">
                 {isStandalone ? (
                     <a href={exitPath} aria-label={logoLinkLabel} className="ai-paper-trail__header-logo">
                         {logo}

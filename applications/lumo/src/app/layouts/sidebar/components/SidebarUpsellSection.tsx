@@ -43,7 +43,7 @@ export const SidebarUpsellSection = ({
     return (
         <div
             className={clsx(
-                'sidebar-upsell-section rounded-xl ml-0 mb-0 mx-auto group-hover-opacity-container relative',
+                'sidebar-upsell-section group-hover-opacity-container relative mx-auto mb-0 ml-0 border lumo-border radius-12',
                 className
             )}
         >
@@ -51,17 +51,23 @@ export const SidebarUpsellSection = ({
                 icon
                 shape="ghost"
                 className={clsx(
-                    'sidebar-upsell-section-dismiss-button rounded-full border-weak shrink-0 self-start absolute top-0 right-0 bg-norm',
+                    'sidebar-upsell-section-dismiss-button absolute top-0 right-0 shrink-0 self-start radius-8',
                     !isTouchDevice && 'group-hover:opacity-100'
                 )}
                 onClick={handleDismiss}
                 title={c('Action').t`Dismiss`}
             >
-                <LumoIcon name="X" width={12} height={12} className="color-weak" aria-label={c('Action').t`Dismiss`} />
+                <LumoIcon
+                    name="X"
+                    width={16}
+                    height={16}
+                    className="lumo-color-glyph"
+                    aria-label={c('Action').t`Dismiss`}
+                />
             </Button>
-            <div className="rounded-sm flex flex-column flex-nowrap gap-3 p-4">
-                <h4 className="text-rg text-semibold m-0">{title}</h4>
-                <p className="m-0 color-weak shrink-0 text-sm">{description}</p>
+            <div className="sidebar-upsell-section-body flex flex-column flex-nowrap p-4">
+                <h4 className="sidebar-upsell-section-title m-0 pr-8 lumo-body-large">{title}</h4>
+                <p className="shrink-0 m-0 lumo-body-small lumo-color-glyph-mid">{description}</p>
                 {children}
             </div>
         </div>

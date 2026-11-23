@@ -84,13 +84,13 @@ export const ModelModeDropdown = () => {
                 shape="ghost"
                 size="small"
                 className={clsx(
-                    'model-mode-trigger border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-norm py-1 px-2 rounded-full text-sm',
-                    isOpen && 'bg-weak'
+                    'model-mode-trigger flex flex-row flex-nowrap shrink-0 items-center gap-1 px-2 py-1 border-0 radius-full lumo-body-small lumo-color-glyph',
+                    isOpen && 'lumo-bg-control-fill'
                 )}
                 aria-expanded={isOpen}
                 onClick={() => setIsOpen((prev) => !prev)}
             >
-                <span className={clsx('font-medium', !isSmallScreen && 'hidden sm:block')}>
+                <span className={!isSmallScreen ? 'hidden sm:block' : undefined}>
                     <span className="model-mode-trigger__label">{currentModelOption.getLabel()}</span>
                     <span className="model-mode-trigger__short-label">{currentModelOption.getShortLabel()}</span>
                 </span>

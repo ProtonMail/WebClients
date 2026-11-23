@@ -28,8 +28,8 @@ im.$media-expressions: $media-expressions;
 	&.high-load-warning {
 		inset-block-end: 0;
 		background: linear-gradient(85.16deg, rgb(255 172 47 / 0.15) 0%, rgb(255 172 47 / 0.05) 100%), white;
-		animation: slideAcross 0.3s ease-out;
-		border-radius: var(--border-radius-xl);
+		animation: slideAcross var(--lumo-duration-300) var(--lumo-easing-enter);
+		border-radius: var(--lumo-radius-16);
 
 		@include im.media('<=small') {
 			border-radius: 0;
@@ -37,15 +37,15 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.error-card-title {
-		color: var(--text-error-banner-title);
+		color: var(--lumo-glyph);
 	}
 
 	.error-card-message {
-		color: var(--text-error-banner-message);
+		color: var(--lumo-glyph-mid);
 	}
 
 	.error-card-button {
-		color: var(--text-error-banner-button);
+		color: var(--lumo-glyph-brand-text);
 	}
 
 	&-dismiss-button {

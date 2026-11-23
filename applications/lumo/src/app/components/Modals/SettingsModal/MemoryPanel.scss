@@ -10,45 +10,33 @@
 .memory-panel-toolbar-divider {
 	inline-size: 1px;
 	block-size: 1.25rem;
-	margin-inline: 0.125rem;
-	background-color: var(--border-weak);
+	background-color: var(--lumo-border);
 }
 
 .memory-panel-info {
 	cursor: help;
-	border-radius: 999px;
 
 	&:hover,
 	&:focus-visible {
-		color: var(--text-norm);
+		color: var(--lumo-glyph);
 	}
 }
 
 .memory-panel-list-item {
-	border-block-end: 1px solid var(--border-weak);
+	border-block-end: 1px solid var(--lumo-border);
 
 	&:last-child {
 		border-block-end: none;
 	}
 }
 
-.memory-panel-compose-row {
-	background-color: var(--background-norm);
-}
-
 .memory-panel-source-pill {
 	display: inline-flex;
 	align-items: center;
-	padding-inline: 0.375rem;
-	padding-block: 0.0625rem;
-	border-radius: 999px;
-	font-size: 0.6875rem;
-	background-color: var(--interaction-weak);
-	color: var(--text-norm);
 
 	&.is-generated {
-		background-color: var(--interaction-norm-minor-2);
-		color: var(--interaction-norm);
+		background-color: var(--lumo-control-fill);
+		color: var(--lumo-glyph-brand-text);
 	}
 }
 
@@ -58,37 +46,12 @@
 	justify-content: center;
 	inline-size: 2.5rem;
 	block-size: 2.5rem;
-	border-radius: 999px;
-	background-color: var(--background-norm);
-	color: var(--text-weak);
 }
 
 .memory-panel-empty-hint {
 	max-inline-size: 22rem;
 }
 
-// Compose (add memory): standard bordered field — border must stay visible on hover/focus.
-// `className` lands on the textarea itself (TextAreaWithCounter renders it unwrapped).
 .memory-panel-compose-field {
-	inline-size: 100%;
-	border: 1px solid var(--border-weak);
-	font-size: 0.875rem;
-	line-height: 1.4;
-	padding-block: 0.375rem;
-	padding-inline: 0.5rem;
 	resize: vertical;
-	min-block-size: 2.5rem;
-	box-shadow: none;
-
-	&:hover {
-		border-color: var(--border-norm);
-	}
-
-	&:focus,
-	&:focus-visible {
-		border-color: var(--interaction-norm);
-		box-shadow: none;
-		outline: none;
-	}
 }
-

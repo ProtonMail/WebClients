@@ -53,7 +53,7 @@ const AddAccountButton = ({
             className={clsx(
                 'text-no-decoration w-full relative',
                 'interactive-pseudo-inset py-2',
-                'hover:color-norm inline-flex items-center',
+                'lumo-user-dropdown-add-account inline-flex items-center',
                 className
             )}
             {...commonProps}
@@ -96,16 +96,18 @@ const LumoUserDropdownContent = () => {
         <>
             <Dropdown
                 id={uid}
+                className="lumo-user-dropdown"
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={closeUserDropdown}
                 autoClose={false}
                 originalPlacement="bottom-end"
+                adaptiveForTouchScreens={false}
                 size={{
                     height: DropdownSizeUnit.Dynamic,
                     maxHeight: DropdownSizeUnit.Viewport,
-                    width: '17.25rem',
-                    maxWidth: '20rem',
+                    width: DropdownSizeUnit.Anchor,
+                    maxWidth: DropdownSizeUnit.Viewport,
                 }}
                 noCaret={false}
             >

@@ -85,18 +85,18 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                 aria-controls={panelId}
                 onClick={() => setExpanded(!expanded)}
             >
-                <h3 className="m-0 text-rg text-semibold">
+                <h3 className="m-0 lumo-title-small">
                     {
                         // translator: Collapsible heading in the scheduled task run side panel, followed by a count of selected skills and connectors.
                         c('collider_2025:Title').t`Skills & tools`
                     }{' '}
-                    <span className="text-normal color-hint">{resourceCount}</span>
+                    <span className="lumo-label-medium lumo-color-glyph-mid">{resourceCount}</span>
                 </h3>
                 <LumoIcon aria-hidden name={expanded ? 'ChevronDown' : 'ChevronRight'} size={16} />
             </button>
             <div id={panelId} hidden={!expanded}>
                 {/* Explain how these resources apply to task runs. */}
-                <p className="text-sm color-hint my-2">{
+                <p className="my-2 lumo-body-small lumo-color-glyph-mid">{
                     // translator: Description of the skills and connectors used for every scheduled task run. ${LUMO_SHORT_APP_NAME} is the product name.
                     c('collider_2025:Info').t`${LUMO_SHORT_APP_NAME} uses these every time it runs your task.`
                 }</p>
@@ -121,7 +121,7 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                     const label = manifest?.display_name ?? connector.label;
                     return (
                         <div key={connector.id} className="flex items-center gap-3 py-2">
-                            <span className="inline-flex shrink-0 p-2 rounded bg-weak">
+                            <span className="inline-flex shrink-0 p-2 radius-8 lumo-bg-control-fill">
                                 <ConnectorIcon
                                     icon={manifest?.icon ?? connector.icon}
                                     unavailable={unavailable}
@@ -129,8 +129,8 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                                 />
                             </span>
                             <div className="flex-1 min-w-0">
-                                <div className="text-semibold text-ellipsis">{label}</div>
-                                <div className="text-sm color-weak">
+                                <div className="lumo-label-large text-ellipsis">{label}</div>
+                                <div className="lumo-body-small lumo-color-glyph-mid">
                                     {unavailable
                                         ? unavailableLabel
                                         : manifest
@@ -151,7 +151,7 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                                 }
                             >
                                 <DropdownMenu>
-                                    <div className="px-4 pt-2 pb-1 text-sm color-weak">{
+                                    <div className="px-4 pt-2 pb-1 lumo-body-small lumo-color-glyph-mid">{
                                         // translator: Heading for a connector's task-specific access settings in its actions menu.
                                         c('collider_2025:Label').t`Permission`
                                     }</div>
@@ -180,7 +180,7 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                                             {(connector.readOnly === true) === readOnly && (
                                                 <LumoIcon
                                                     aria-hidden
-                                                    className="shrink-0 color-primary"
+                                                    className="shrink-0 lumo-color-glyph-brand-text"
                                                     name="Check"
                                                     size={16}
                                                 />
@@ -202,7 +202,7 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                                     </DropdownMenuButton>
                                     <hr className="mx-3 my-1" />
                                     <DropdownMenuButton
-                                        className="flex flex-nowrap items-center gap-2 text-left color-danger"
+                                        className="flex flex-nowrap items-center gap-2 text-left lumo-color-signal-danger"
                                         onClick={() =>
                                             updateSchedule({
                                                 connectors: schedule.connectors.filter(({ id }) => id !== connector.id),
@@ -223,7 +223,7 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
 
                 {/* Empty state when the task has no selected skills or connectors. */}
                 {!resourceCount && (
-                    <p className="text-sm color-weak">{
+                    <p className="lumo-body-small lumo-color-glyph-mid">{
                         // translator: Empty state in the scheduled task side panel when no skills or connectors are selected.
                         c('collider_2025:Info').t`No skills or tools added.`
                     }</p>

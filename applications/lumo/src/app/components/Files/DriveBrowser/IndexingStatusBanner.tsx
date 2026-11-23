@@ -45,14 +45,14 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
                 <CircleLoader size="small" className="shrink-0" />
                 <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                        <span className="text-sm color-weak">
+                        <span className="lumo-body-small lumo-color-glyph-mid">
                             {status === 'indexing'
                                 ? c('collider_2025:Status').t`Indexing`
                                 : status === 'complete'
                                   ? c('collider_2025:Status').t`Complete`
                                   : c('collider_2025:Status').t`Error`}
                         </span>
-                        <span className="text-sm color-hint">{progressText}</span>
+                        <span className="lumo-body-small lumo-color-glyph-mid">{progressText}</span>
                     </div>
                 </div>
             </div>
@@ -65,18 +65,21 @@ export const IndexingStatusBanner: React.FC<IndexingStatusBannerProps> = ({
             <CircleLoader size="small" className="shrink-0" />
             <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-sm color-weak">
+                    <span className="lumo-body-small lumo-color-glyph-mid">
                         {status === 'indexing'
                             ? c('collider_2025:Status').t`Indexing for search`
                             : status === 'complete'
                               ? c('collider_2025:Status').t`Indexing complete`
                               : c('collider_2025:Status').t`Indexing error`}
                     </span>
-                    <span className="text-sm color-hint">{progressText}</span>
+                    <span className="lumo-body-small lumo-color-glyph-mid">{progressText}</span>
                 </div>
-                <div className="h-0.5 bg-weak rounded-full overflow-hidden mt-1" style={{ maxWidth: '300px' }}>
+                <div
+                    className="h-0.5 mt-1 overflow-hidden radius-full lumo-bg-control-fill"
+                    style={{ maxWidth: '300px' }}
+                >
                     <div
-                        className="h-full bg-primary rounded-full transition-all duration-300"
+                        className="duration-300 h-full radius-full bg-primary transition-all lumo-easing-standard"
                         style={{ width: `${percentage}%` }}
                     />
                 </div>

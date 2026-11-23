@@ -1,5 +1,3 @@
-@use '~@proton/styles/scss/lib/rem' as *;
-
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 
@@ -15,7 +13,7 @@ im.$media-expressions: $media-expressions;
 	align-items: flex-start;
 	justify-content: center;
 	padding-block-start: 15vh;
-	animation: fadeIn 0.15s ease-out;
+	animation: fadeIn var(--lumo-duration-150) var(--lumo-easing-enter);
 }
 
 @keyframes fadeIn {
@@ -33,18 +31,15 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 	max-inline-size: 640px;
 	max-block-size: 70vh;
-	background: var(--background-norm);
-	border-radius: 12px;
-	box-shadow: 0 16px 48px rgb(0 0 0 / 0.3);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	animation: slideDown 0.2s ease-out;
+	animation: slideDown var(--lumo-duration-200) var(--lumo-easing-enter);
 }
 
 @keyframes slideDown {
 	from {
-		transform: translateY(-20px);
+		transform: translateY(calc(-1 * var(--lumo-space-20)));
 		opacity: 0;
 	}
 
@@ -66,7 +61,6 @@ im.$media-expressions: $media-expressions;
 	position: absolute;
 	inset: 0;
 	z-index: 10;
-	background-color: var(--background-norm);
 	border-radius: inherit;
 	display: flex;
 	flex-direction: column;
@@ -76,15 +70,11 @@ im.$media-expressions: $media-expressions;
 // Search input
 .search-modal-input-wrapper {
 	position: relative;
-	padding: 20px;
-	border-block-end: 1px solid var(--border-norm);
 	display: flex;
 	align-items: center;
-	gap: 12px;
 }
 
 .search-modal-input-icon {
-	color: var(--text-weak);
 	flex-shrink: 0;
 }
 
@@ -92,13 +82,10 @@ im.$media-expressions: $media-expressions;
 	flex: 1;
 	border: none;
 	outline: none;
-	background: transparent;
-	font-size: rem(18);
-	color: var(--text-norm);
-	padding: 0;
+	font: var(--lumo-type-body-large);
 
 	&::placeholder {
-		color: var(--text-hint);
+		color: var(--lumo-glyph-low);
 	}
 }
 
@@ -111,6 +98,10 @@ im.$media-expressions: $media-expressions;
 	flex: 1;
 	overflow: hidden auto;
 
+	&:has(.search-result-item) {
+		padding-block-end: var(--lumo-space-12);
+	}
+
 	// Custom scrollbar
 	&::-webkit-scrollbar {
 		inline-size: 8px;
@@ -122,7 +113,7 @@ im.$media-expressions: $media-expressions;
 
 	&::-webkit-scrollbar-thumb {
 		background: var(--scrollbar-thumb-color);
-		border-radius: 4px;
+		border-radius: var(--lumo-radius-4);
 
 		&:hover {
 			background: var(--scrollbar-thumb-hover-color);
@@ -131,28 +122,17 @@ im.$media-expressions: $media-expressions;
 }
 
 // Section (e.g., "This Year", "Actions")
-.search-modal-section {
-	padding: 0;
-}
-
 .search-modal-section-header {
-	padding-block: 12px 8px;
-	padding-inline: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	position: sticky;
 	inset-block-start: 0;
-	background: var(--background-norm);
 	z-index: 1;
 }
 
 .search-modal-section-title {
-	font-size: rem(11);
-	font-weight: 600;
 	text-transform: uppercase;
-	letter-spacing: 0.5px;
-	color: var(--text-weak);
 }
 
 // Result item
@@ -160,40 +140,37 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 	display: flex;
 	align-items: center;
-	gap: 12px;
-	padding-block: 10px;
-	padding-inline: 20px;
 	border: none;
 	background: transparent;
 	cursor: pointer;
 	text-align: start;
-	transition: background-color 0.1s ease;
+	transition: background-color var(--lumo-duration-100) var(--lumo-easing-standard);
 
 	&:hover {
-		background: var(--interaction-default-hover);
+		background: var(--lumo-control-fill);
 	}
 
 	&:active {
-		background: var(--interaction-default-active);
+		background: var(--lumo-control-fill-mid);
 	}
 
 	&:focus-visible {
 		outline: none;
-		background: var(--interaction-default-hover);
+		background: var(--lumo-control-fill);
 	}
 }
 
 .search-result-item-document {
 	// Different styling for document results
 	.search-result-icon {
-		color: var(--primary);
+		color: var(--lumo-glyph-brand-text);
 	}
 
 	.search-result-folder-path {
 		display: flex;
 		align-items: center;
-		color: var(--text-hint);
-		font-size: rem(12);
+		color: var(--lumo-glyph-mid);
+		font: var(--lumo-type-label-small);
 	}
 }
 
@@ -204,27 +181,25 @@ im.$media-expressions: $media-expressions;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--interaction-default);
+	background: var(--lumo-control-fill-empty);
 	border-radius: 6px;
 }
 
 .search-result-icon {
 	flex-shrink: 0;
-	color: var(--text-weak);
 	inline-size: 32px;
 	block-size: 32px;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: transform 0.2s ease;
+	transition: transform var(--lumo-duration-200) var(--lumo-easing-standard);
 }
 
 .search-result-meta {
 	display: flex;
 	align-items: center;
 	flex-shrink: 0;
-	gap: 4px;
 }
 
 .search-result-content {
@@ -232,25 +207,18 @@ im.$media-expressions: $media-expressions;
 	min-inline-size: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 2px;
 }
 
 .search-result-title {
-	font-size: rem(14);
-	font-weight: 500;
-	color: var(--text-norm);
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
 .search-result-preview {
-	font-size: rem(12);
-	color: var(--text-weak);
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	line-height: 1.4;
 }
 
 .search-result-context {
@@ -261,66 +229,46 @@ im.$media-expressions: $media-expressions;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	font-style: italic;
-	color: var(--text-weak);
 }
 
 .search-highlight {
 	background-color: rgb(255 221 0 / 0.35);
 	color: inherit;
-	font-weight: 600;
-	padding: 0;
+	font: var(--lumo-type-title-small);
+	font-style: inherit;
 	border-radius: 2px;
+
+	.search-result-preview & {
+		font: var(--lumo-type-label-small);
+		font-style: inherit;
+	}
 }
 
 .search-result-date {
 	flex-shrink: 0;
-	font-size: rem(13);
-	color: var(--text-hint);
 	font-variant-numeric: tabular-nums;
 }
 
 // Empty states
 .search-modal-empty-hint {
-	padding-block: 40px;
-	padding-inline: 20px;
 	text-align: center;
-	color: var(--text-hint);
-	font-size: rem(14);
 }
 
 .search-modal-empty {
-	padding-block: 40px;
-	padding-inline: 20px;
 	text-align: center;
-}
-
-.search-modal-empty-text {
-	color: var(--text-weak);
-	font-size: rem(14);
-	margin: 0;
 }
 
 // Error state
 .search-modal-error {
-	padding: 20px;
-	margin-block: 12px;
-	margin-inline: 20px;
-	background: var(--signal-danger-minor-1);
-	border-radius: 8px;
 	display: flex;
 	align-items: flex-start;
-	gap: 12px;
 }
 
 .search-modal-error-icon {
-	color: var(--signal-danger);
 	flex-shrink: 0;
 }
 
 .search-modal-error-text {
-	color: var(--signal-danger);
-	font-size: rem(14);
-	margin: 0;
 	flex: 1;
 }
 

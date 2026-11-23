@@ -8,8 +8,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
-import { getLoadingUsageState, useAllPersonalAccessTokensUsage } from '../../hooks/usePersonalAccessTokenUsage';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
+import { getLoadingUsageState, useAllPersonalAccessTokensUsage } from '../../hooks/usePersonalAccessTokenUsage';
 import {
     type ListPersonalAccessTokensResponse,
     type PersonalAccessToken,
@@ -130,8 +130,8 @@ const ApiKeysPanel = () => {
 
             <div className="flex items-center justify-space-between gap-4">
                 <div>
-                    <h1 className="text-bold text-2xl m-0">{c('collider_2025: Title').t`Your API keys`}</h1>
-                    <p className="text-sm color-weak m-0 mt-1">
+                    <h1 className="m-0 lumo-title-large">{c('collider_2025: Title').t`Your API keys`}</h1>
+                    <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025: Description')
                             .t`Create and revoke keys for your own programmatic access. Each key is shown only once.`}
                     </p>
@@ -151,9 +151,8 @@ const ApiKeysPanel = () => {
             </div>
 
             {!hasLumoPlus ? (
-                <div className="p-4 text-sm color-weak bg-weak rounded-lg border border-weak">
-                    {c('collider_2025: Info')
-                        .t`Assign a ${LUMO_SHORT_APP_NAME} seat to create a personal API key.`}
+                <div className="p-4 border lumo-border radius-12 lumo-body-small lumo-color-glyph-mid lumo-bg-control-fill">
+                    {c('collider_2025: Info').t`Assign a ${LUMO_SHORT_APP_NAME} seat to create a personal API key.`}
                 </div>
             ) : (
                 <>
@@ -168,11 +167,13 @@ const ApiKeysPanel = () => {
                         </div>
                     ) : tokens.length === 0 ? (
                         <div className="flex flex-column items-center justify-center text-center gap-3 pt-12 pb-8">
-                            <div className="api-keys-empty-icon flex items-center justify-center rounded-xl">
+                            <div className="api-keys-empty-icon mb-1 flex items-center justify-center radius-16 lumo-color-glyph-brand-text">
                                 <LumoIcon name="KeyRound" size={24} />
                             </div>
-                            <p className="api-keys-empty-title m-0">{c('collider_2025: Title').t`No API keys yet`}</p>
-                            <p className="api-keys-empty-subtitle m-0">
+                            <p className="api-keys-empty-title m-0 lumo-title-medium lumo-color-glyph">{c(
+                                'collider_2025: Title'
+                            ).t`No API keys yet`}</p>
+                            <p className="api-keys-empty-subtitle m-0 lumo-body-small lumo-color-glyph-mid">
                                 {c('collider_2025: Description')
                                     .t`Create a key to integrate ${LUMO_SHORT_APP_NAME} with your scripts and tools.`}
                             </p>

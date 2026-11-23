@@ -32,13 +32,13 @@ export const AnalysisProgressBody = ({ callId }: { callId?: string }) => {
 
     return (
         <div className="thinking-step-body flex flex-column gap-1 min-w-0 mt-0.5" aria-live="off">
-            <p className="m-0 flex flex-nowrap items-center justify-space-between gap-2 min-w-0 text-sm lh130">
+            <p className="m-0 flex flex-nowrap items-center justify-space-between gap-2 min-w-0 lumo-body-small">
                 {/* Decorative: the step's label already says what is happening, and a line that
                     changes every few seconds would be announced again each time. */}
-                <span className="text-ellipsis color-norm" aria-hidden="true">
+                <span className="text-ellipsis lumo-color-glyph" aria-hidden="true">
                     {`🐾 ${getAnalysisLine(progress, tick, seedFromId(callId))}…`}
                 </span>
-                {count && <span className="color-weak shrink-0">{count}</span>}
+                {count && <span className="lumo-color-glyph-mid shrink-0">{count}</span>}
             </p>
             <progress
                 className="progress-bar progress-bar--norm is-thin w-full"
@@ -47,7 +47,7 @@ export const AnalysisProgressBody = ({ callId }: { callId?: string }) => {
                 max={Math.max(total, 1)}
                 aria-hidden="true"
             />
-            {effort && <p className="m-0 text-sm lh130 color-weak">{effort}</p>}
+            {effort && <p className="m-0 lumo-body-small lumo-color-glyph-mid">{effort}</p>}
         </div>
     );
 };

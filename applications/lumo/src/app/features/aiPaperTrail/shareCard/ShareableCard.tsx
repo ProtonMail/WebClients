@@ -125,13 +125,14 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
         <ModalTwo {...modalProps} size="large">
             <ModalTwoHeader title={c('collider_2025:Title').t`Your shareable card`} />
             <ModalTwoContent>
-                <p className="color-weak mt-0">
+                <p className="mt-0 lumo-color-glyph-mid">
                     {c('collider_2025:Info')
                         .t`No personal details are on this card — just your exposure score by area. Lower means you gave away less.`}
                 </p>
                 {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
                 <div
-                    className="paper-trail-card-themes"
+                    className="paper-trail-card-themes gap-2 mt-3 mb-1"
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     role="group"
                     aria-label={c('collider_2025:Label').t`Card theme`}
                 >
@@ -156,7 +157,7 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
                         {c('collider_2025:Action').t`Light`}
                     </Button>
                 </div>
-                <div className="paper-trail-card-preview">
+                <div className="paper-trail-card-preview mt-4 mb-2">
                     <ShareCardCanvasPreview
                         ref={canvasRef}
                         data={data}
@@ -164,8 +165,9 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
                         className="share-card-canvas-preview--modal"
                     />
                 </div>
-                <div className="paper-trail-social">
-                    <span className="paper-trail-social__label">{c('collider_2025:Label').t`Share to`}</span>
+                <div className="paper-trail-social gap-2 mt-4">
+                    <span className="paper-trail-social__label lumo-color-glyph-mid">{c('collider_2025:Label')
+                        .t`Share to`}</span>
                     <div className="paper-trail-social__row">
                         {socials.map(({ platform, label, icon: Icon, className }) => (
                             <Tooltip key={platform} title={label}>
@@ -190,7 +192,7 @@ export const ShareableCard = ({ data, ...modalProps }: Props) => {
                             </button>
                         </Tooltip>
                     </div>
-                    <p className="paper-trail-social__hint">
+                    <p className="paper-trail-social__hint mx-0 mt-1 mb-0 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025:Info')
                             .t`We'll save your card so you can attach it to the post — social sites can't add the image for you.`}
                     </p>

@@ -36,7 +36,7 @@ export const PaperTrailStepper = ({ activeStep }: Props) => {
                             )}
                         >
                             <span className="ai-paper-trail__stepper-num">{step.num}</span>
-                            <span className="ai-paper-trail__stepper-label">{step.label}</span>
+                            <span className="ai-paper-trail__stepper-label lumo-label-small">{step.label}</span>
                         </div>
                     </div>
                 );

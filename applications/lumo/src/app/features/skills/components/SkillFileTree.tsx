@@ -139,7 +139,7 @@ const NameInput = ({ initialName, entry, depth, onCommit, onCancel }: NameInputP
     };
 
     return (
-        <div className="skill-file-tree__name-input" style={{ '--skill-file-depth': depth }}>
+        <div className="skill-file-tree__name-input py-0.5" style={{ '--skill-file-depth': depth }}>
             <div className="flex flex-nowrap items-center gap-1.5">
                 <LumoIcon
                     aria-hidden
@@ -186,7 +186,13 @@ const NameInput = ({ initialName, entry, depth, onCommit, onCancel }: NameInputP
                 />
             </div>
             {description && (
-                <p id={descriptionId} className={clsx('m-0 mt-1 text-xs', error ? 'color-danger' : 'color-hint')}>
+                <p
+                    id={descriptionId}
+                    className={clsx(
+                        'm-0 mt-1 lumo-body-small',
+                        error ? 'lumo-color-signal-danger' : 'lumo-color-glyph-mid'
+                    )}
+                >
                     {description}
                 </p>
             )}
@@ -299,7 +305,7 @@ export const SkillFileTree = ({
                     <button
                         type="button"
                         className={clsx(
-                            'skill-file-tree__label flex flex-nowrap flex-1 items-center gap-1.5 min-w-0 text-left',
+                            'skill-file-tree__label lumo-label-medium bg-transparent py-1 pr-1.5 flex flex-nowrap flex-1 items-center gap-1.5 min-w-0 text-left',
                             isFolder ? 'skill-file-tree__folder' : 'skill-file-tree__file'
                         )}
                         aria-current={isActive ? 'true' : undefined}
@@ -325,7 +331,7 @@ export const SkillFileTree = ({
                                 name="ChevronRight"
                                 size={14}
                                 className={clsx(
-                                    'skill-file-tree__chevron shrink-0',
+                                    'skill-file-tree__chevron lumo-color-glyph-low shrink-0',
                                     openFolders.has(row.path) && 'is-open'
                                 )}
                             />
@@ -338,7 +344,9 @@ export const SkillFileTree = ({
                             />
                         )}
                         <span className="flex-1 text-ellipsis">{row.name}</span>
-                        {modifiedPaths?.has(row.path) && <span aria-hidden className="skill-file-tree__dot shrink-0" />}
+                        {modifiedPaths?.has(row.path) && (
+                            <span aria-hidden className="skill-file-tree__dot lumo-bg-control-brand-fill shrink-0" />
+                        )}
                     </button>
                     {(rename || remove) && (
                         <span className="skill-file-tree__actions flex-nowrap shrink-0">
@@ -351,7 +359,7 @@ export const SkillFileTree = ({
                                     aria-label={renameLabel}
                                     onClick={rename}
                                 >
-                                    <LumoIcon aria-hidden name="Pencil" size={13} className="color-hint" />
+                                    <LumoIcon aria-hidden name="Pencil" size={13} className="lumo-color-glyph-mid" />
                                 </Button>
                             )}
                             {remove && (
@@ -363,7 +371,7 @@ export const SkillFileTree = ({
                                     aria-label={deleteLabel}
                                     onClick={remove}
                                 >
-                                    <LumoIcon aria-hidden name="Trash" size={13} className="color-hint" />
+                                    <LumoIcon aria-hidden name="Trash" size={13} className="lumo-color-glyph-mid" />
                                 </Button>
                             )}
                         </span>
@@ -374,11 +382,11 @@ export const SkillFileTree = ({
     };
 
     return (
-        <div className="skill-file-tree flex flex-column flex-nowrap">
+        <div className="skill-file-tree flex flex-column flex-nowrap lumo-bg-control-fill">
             {/* Clicking the empty space below the rows selects the top level, as in a file explorer. */}
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
             <ul
-                className="skill-file-tree__list flex-1 overflow-auto m-0 list-none"
+                className="skill-file-tree__list py-2 px-1.5 flex-1 overflow-auto m-0 list-none"
                 role="tree"
                 onClick={(event) => {
                     if (event.target === event.currentTarget) onSelectFolder?.('');

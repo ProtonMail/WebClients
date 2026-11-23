@@ -22,17 +22,17 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
         <div className="api-keys-token-reveal fixed inset-0 flex items-center justify-center p-4">
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div className="api-keys-token-reveal-overlay absolute inset-0" onClick={onClose} />
-            <div className="api-keys-token-reveal-dialog relative overflow-hidden">
-                <div className="api-keys-token-reveal-header flex items-start justify-space-between gap-2">
+            <div className="api-keys-token-reveal-dialog relative overflow-hidden border lumo-border radius-16 lumo-bg-panel-elevated">
+                <div className="api-keys-token-reveal-header pt-6 pb-5 px-6 flex items-start justify-space-between gap-2">
                     <div className="flex items-center gap-3">
-                        <div className="api-keys-token-reveal-icon flex items-center justify-center shrink-0 rounded-lg">
+                        <div className="api-keys-token-reveal-icon flex shrink-0 items-center justify-center radius-12 lumo-color-control-brand-text lumo-bg-control-brand-fill">
                             <LumoIcon name="KeyRound" size={20} />
                         </div>
                         <div>
-                            <h3 className="api-keys-token-reveal-title m-0 mb-1">
+                            <h3 className="api-keys-token-reveal-title m-0 mb-1 lumo-title-medium lumo-color-glyph">
                                 {c('collider_2025: Title').t`Your new API key`}
                             </h3>
-                            <p className="api-keys-token-reveal-subtitle m-0">
+                            <p className="api-keys-token-reveal-subtitle m-0 lumo-body-small lumo-color-glyph-mid">
                                 {c('collider_2025: Description').t`Keep it safe — it won't be shown again`}
                             </p>
                         </div>
@@ -42,17 +42,20 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
                     </Button>
                 </div>
 
-                <div className="api-keys-token-reveal-body">
-                    <div className="api-keys-token-warning flex items-center gap-2 rounded-lg mb-4">
+                <div className="pt-5 pb-6 px-6">
+                    <div className="api-keys-token-warning py-2.5 flex items-center gap-2 mb-4 radius-12 lumo-label-small">
                         <LumoIcon name="CircleExclamationPoint" size={16} className="shrink-0" />
                         {c('collider_2025: Warning').t`This is the only time you'll see this key. Copy it now.`}
                     </div>
 
                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                    <div className="api-keys-token-box relative rounded-lg mb-4" onClick={handleCopy}>
-                        <span className="api-keys-token-text block">{token}</span>
+                    <div
+                        className="api-keys-token-box relative mb-4 border lumo-border radius-12 lumo-bg-control-fill-mid"
+                        onClick={handleCopy}
+                    >
+                        <span className="api-keys-token-text pr-8 block lumo-color-glyph">{token}</span>
                         <span
-                            className={`api-keys-token-copied absolute ${copied ? 'api-keys-token-copied--visible' : ''}`}
+                            className={`api-keys-token-copied absolute ${copied ? 'api-keys-token-copied--visible' : ''} lumo-label-small`}
                         >
                             {c('collider_2025: Status').t`Copied!`}
                         </span>

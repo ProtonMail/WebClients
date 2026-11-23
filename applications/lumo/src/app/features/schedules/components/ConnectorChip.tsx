@@ -65,13 +65,16 @@ export const ConnectorChip = ({ compact, connector, onRemove, unavailable, warni
         <span
             className={clsx(
                 'schedule-chip',
-                compact ? 'schedule-chip--compact' : 'schedule-chip--regular',
+                compact
+                    ? 'schedule-chip--compact pl-1.5 lumo-label-small'
+                    : 'schedule-chip--regular pl-2 lumo-label-medium',
                 unavailable && 'schedule-chip--unavailable',
                 warning && 'schedule-chip--warning',
                 'inline-flex flex-nowrap shrink-0 items-center max-w-full',
                 compact ? 'gap-1' : 'gap-1.5',
                 onRemove && 'pr-1.5',
-                'border rounded'
+                !onRemove && (compact ? 'pr-2' : 'pr-2.5'),
+                'border radius-8'
             )}
         >
             <Tooltip openDelay={300} title={unavailable || warning ? statusLabel : undefined}>
@@ -98,7 +101,7 @@ export const ConnectorChip = ({ compact, connector, onRemove, unavailable, warni
                         // translator: Accessible label for removing an external tool or service from this task, not uninstalling it. ${label} is its display name.
                         c('collider_2025:Action').t`Remove ${label}`
                     }
-                    className="schedule-chip__remove inline-flex shrink-0 items-center justify-center p-0 border border-transparent rounded-sm"
+                    className="schedule-chip__remove inline-flex shrink-0 items-center justify-center p-0 border border-transparent radius-4"
                     icon
                     increasedClickArea
                     onClick={onRemove}

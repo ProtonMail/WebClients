@@ -90,25 +90,21 @@ export const NewProjectModal = ({
                 <ModalTwoContent>
                     <div className="flex flex-column gap-4">
                         {/* Project name with icon picker */}
-                        <div className="flex flex-nowrap items-center border border-weak rounded-lg p-1">
-                            <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
-                            <InputFieldTwo
-                                dir="auto"
-                                {...projectName.bind}
-                                id="project-name"
-                                placeholder={c('collider_2025:Placeholder').t`Holiday planner`}
-                                autoFocus={false}
-                                maxLength={100}
-                                unstyled
-                                className="flex-1 unstyled-field"
-                                dense
-                            />
-                        </div>
+                        <InputFieldTwo
+                            dir="auto"
+                            {...projectName.bind}
+                            id="project-name"
+                            placeholder={c('collider_2025:Placeholder').t`Holiday planner`}
+                            autoFocus={false}
+                            maxLength={100}
+                            prefix={<IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />}
+                            dense
+                        />
 
                         <div>
                             <label
                                 htmlFor="project-instructions"
-                                className="block text-semibold text-sm color-norm mb-2"
+                                className="block mb-2 lumo-title-small lumo-color-glyph"
                             >
                                 {c('collider_2025:Label').t`Project Instructions (optional)`}
                             </label>
@@ -118,7 +114,6 @@ export const NewProjectModal = ({
                                 id="project-instructions"
                                 placeholder={c('collider_2025:Placeholder')
                                     .t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt.`}
-                                className="border border-weak rounded-lg"
                                 rows={5}
                             />
                         </div>

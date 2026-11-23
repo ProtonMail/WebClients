@@ -69,10 +69,10 @@ const LumoSidebarContent = () => {
                 )}
             >
                 {showMobileHeader && (
-                    <div className="lumo-sidebar-mobile-header flex flex-row flex-nowrap items-center py-3 px-4 border-bottom border-weak shrink-0">
+                    <div className="lumo-sidebar-mobile-header flex flex-row flex-nowrap shrink-0 items-center px-4 py-3 border-bottom lumo-border">
                         <img src={lumoCatIcon} alt="Lumo" className="lumo-sidebar-mobile-header-logo shrink-0" />
                         <button
-                            className="shrink-0 flex items-center justify-center color-weak interactive-pseudo-inset rounded-sm ml-auto"
+                            className="flex shrink-0 items-center justify-center ml-auto radius-8 lumo-color-glyph-mid interactive-pseudo-inset"
                             onClick={toggle}
                             aria-label={c('collider_2025:Button').t`Close sidebar`}
                             style={{ width: '32px', height: '32px' }}
@@ -133,7 +133,7 @@ const LumoSidebarContent = () => {
                     <ChatsSidebarSection onItemClick={closeOnItemClick} />
                 </Scroll>
 
-                <div className="sidebar-section sidebar-bottom flex flex-column gap-1 shrink-0">
+                <div className="sidebar-section sidebar-bottom flex flex-column shrink-0 gap-2 pt-2">
                     <SidebarItem
                         icon="Settings"
                         label={c('collider_2025:Button').t`Settings`}
@@ -152,7 +152,7 @@ const LumoSidebarContent = () => {
 const LumoSidebarHeader = () => {
     const isGuest = useIsGuest();
     return (
-        <div className="flex flex-row flex-nowrap items-center justify-space-between hidden md:flex px-5 py-3">
+        <div className="lumo-sidebar-header hidden flex-row flex-nowrap items-center justify-space-between pl-5 pr-4 pt-2 md:flex">
             <LumoLogoHeader />
             {!isGuest && <AppsDropdown />}
         </div>
@@ -176,7 +176,7 @@ const LumoSidebar = () => {
             />
             <div
                 className={clsx(
-                    'lumo-sidebar-container sidebar rounded-xl bg-norm no-print',
+                    'lumo-sidebar-container sidebar no-print radius-16 lumo-bg-panel',
                     largeScreenMode === 'expanded'
                         ? 'sidebar--large-screen-expanded'
                         : 'sidebar--large-screen-collapsed',

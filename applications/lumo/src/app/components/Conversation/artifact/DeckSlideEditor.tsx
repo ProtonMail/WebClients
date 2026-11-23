@@ -176,7 +176,7 @@ export const DeckSlideEditor = ({ slide, onEdit }: Props) => {
 
     return (
         <div
-            className="rounded shadow-norm"
+            className="radius-8 lumo-elevation-1"
             style={{
                 position: 'relative',
                 overflow: 'hidden',

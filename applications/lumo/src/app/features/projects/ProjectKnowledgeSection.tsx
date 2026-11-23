@@ -94,19 +94,20 @@ interface EmptyKnowledgeStateProps {
 }
 
 const EmptyKnowledgeState = ({ onAddFiles, onLinkDriveFolder }: EmptyKnowledgeStateProps) => (
-    <div className="project-files-empty-zone">
-        <h4 className="project-files-empty-title text-xl">{c('collider_2025:Title').t`Nothing here yet`}</h4>
-        <p className="project-files-empty-subtitle color-weak">
+    <div className="project-files-empty-zone p-2.5 radius-12 lumo-bg-control-fill">
+        <h4 className="project-files-empty-title lumo-title-medium lumo-color-glyph-mid">{c('collider_2025:Title')
+            .t`Nothing here yet`}</h4>
+        <p className="project-files-empty-subtitle mt-0 mb-1 mx-0 lumo-body-medium lumo-color-glyph-mid">
             {c('collider_2025:Info').t`Link files from ${DRIVE_APP_NAME} or upload from your computer.`}
         </p>
-        <p className="project-files-empty-hint color-weak text-sm">
+        <p className="project-files-empty-hint mt-0 mb-5 mx-0 lumo-body-small lumo-color-glyph-mid">
             {c('collider_2025:Info').t`Using ${DRIVE_APP_NAME} lets ${LUMO_SHORT_APP_NAME} work with larger files.`}
         </p>
-        <div className="project-files-empty-actions">
-            <Button shape="outline" onClick={onLinkDriveFolder} className="project-files-action-button">
+        <div className="project-files-empty-actions gap-3">
+            <Button color="weak" shape="solid" onClick={onLinkDriveFolder}>
                 {c('collider_2025:Button').t`Link with ${DRIVE_APP_NAME} folder`}
             </Button>
-            <Button shape="outline" onClick={onAddFiles} className="project-files-action-button">
+            <Button color="weak" shape="solid" onClick={onAddFiles}>
                 {c('collider_2025:Button').t`Upload from computer`}
             </Button>
         </div>
@@ -120,7 +121,7 @@ interface LocalFileListProps {
 }
 
 const LocalFileList = ({ files, onViewFile, onRemoveFile }: LocalFileListProps) => (
-    <div className="project-files-list">
+    <div className="project-files-list gap-2">
         {files.map((file) => (
             <KnowledgeBaseFileItem
                 key={file.id}
@@ -149,12 +150,15 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
     driveProps,
 }) => {
     const isDriveMode = driveProps !== undefined;
+    const isEmpty = !isDriveMode && files.length === 0;
 
     return (
-        <div className="project-files-section flex flex-column flex-nowrap flex-1">
+        <div
+            className={`project-files-section flex flex-column flex-nowrap flex-1 mb-5 pb-5${isEmpty ? ' project-files-section--empty' : ''}`}
+        >
             {/* Header */}
-            <div className="project-files-section-header">
-                <h3 className="project-files-section-title flex flex-nowrap items-center gap-1">
+            <div className="project-files-section-header mb-3">
+                <h3 className="project-files-section-title flex flex-nowrap items-center gap-1 lumo-title-small lumo-color-glyph">
                     {c('collider_2025:Title').t`Project knowledge`}
                     <Tooltip title={c('collider_2025:Info').t`Learn more about how project knowledge works`}>
                         <ButtonLike
@@ -210,9 +214,9 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
 
             {/* @filename tip — shown whenever there are files to reference */}
             {(isDriveMode || files.length > 0) && (
-                <div className="flex items-center gap-1 text-sm hidden md:flex">
+                <div className="flex hidden items-center gap-1 lumo-body-small md:flex">
                     <Banner
-                        className="mb-1 color-weak border-none"
+                        className="mb-1 border-none lumo-color-glyph-mid"
                         variant="norm-outline"
                         icon={<LumoIcon name="Lightbulb" width={14} height={14} />}
                     >
@@ -223,7 +227,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
 
             {/* Content area */}
             <div
-                className={`project-files-section-content bg-weak files-section flex-1 ${isDriveMode || files.length > 0 ? 'has-files' : ''}`}
+                className={`project-files-section-content lumo-bg-control-fill files-section flex-1 border lumo-border radius-16 ${isEmpty ? '' : 'has-files'}`}
             >
                 {uploadProgress && (
                     <div className="project-files-progress-overlay">
@@ -233,7 +237,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
                 {}
                 {isDriveMode ? (
                     <DriveFolderContent driveProps={driveProps} onUpload={onAddFiles} />
-                ) : files.length === 0 ? (
+                ) : isEmpty ? (
                     <EmptyKnowledgeState onAddFiles={onAddFiles} onLinkDriveFolder={onLinkDriveFolder} />
                 ) : (
                     <LocalFileList files={files} onViewFile={onViewFile} onRemoveFile={onRemoveFile} />

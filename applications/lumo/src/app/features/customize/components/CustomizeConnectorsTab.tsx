@@ -76,7 +76,10 @@ export const CustomizeConnectorsTab = ({ searchQuery }: CustomizeConnectorsTabPr
     return (
         <div className="customize-tab-panel flex flex-column flex-nowrap gap-6">
             <div className="flex flex-nowrap items-start justify-space-between gap-4">
-                <p className="m-0 text-sm color-weak max-w-custom" style={{ '--max-w-custom': '40rem' }}>
+                <p
+                    className="max-w-custom m-0 lumo-body-small lumo-color-glyph-mid"
+                    style={{ '--max-w-custom': '40rem' }}
+                >
                     {c('collider_2025:Info')
                         .t`Connectors let ${LUMO_SHORT_APP_NAME} use tools on this computer. Manage credentials and approval policies in desktop settings.`}
                 </p>
@@ -86,7 +89,7 @@ export const CustomizeConnectorsTab = ({ searchQuery }: CustomizeConnectorsTabPr
             </div>
 
             {filteredConnectors.length === 0 ? (
-                <p className="m-0 text-sm color-weak">
+                <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                     {searchQuery.trim()
                         ? c('collider_2025:Info').t`No connectors match your search.`
                         : c('collider_2025:Info').t`No connected connectors`}
@@ -98,7 +101,7 @@ export const CustomizeConnectorsTab = ({ searchQuery }: CustomizeConnectorsTabPr
                         return (
                             <li
                                 key={connector.id}
-                                className="customize-connectors-list__row flex flex-nowrap items-center gap-4 border-bottom border-weak"
+                                className="customize-connectors-list__row flex flex-nowrap items-center gap-4 border-bottom lumo-border"
                             >
                                 <span className="customize-connectors-list__icon shrink-0 flex items-center justify-center">
                                     {connector.icon ? (
@@ -108,8 +111,8 @@ export const CustomizeConnectorsTab = ({ searchQuery }: CustomizeConnectorsTabPr
                                     )}
                                 </span>
                                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                                    <span className="text-semibold text-ellipsis">{connector.display_name}</span>
-                                    <span className="text-sm color-weak text-ellipsis">
+                                    <span className="lumo-title-small text-ellipsis">{connector.display_name}</span>
+                                    <span className="lumo-body-small text-ellipsis lumo-color-glyph-mid">
                                         {getConnectorStatusLabel(connector)}
                                     </span>
                                 </div>

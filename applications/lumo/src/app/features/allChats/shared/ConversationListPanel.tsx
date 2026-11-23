@@ -330,7 +330,7 @@ export const ConversationListPanel = ({
                 <div
                     ref={parentRef}
                     className={clsx(
-                        'flex-1 overflow-auto min-h-0',
+                        'all-chats-panel-scroll flex-1 overflow-auto min-h-0',
                         isMobileLayout && isSelectionMode ? 'pb-20' : 'pb-2'
                     )}
                 >
@@ -346,6 +346,7 @@ export const ConversationListPanel = ({
                                 return (
                                     <div
                                         key={conversation.id}
+                                        className="all-chats-list-item"
                                         style={{
                                             position: 'absolute',
                                             top: 0,
@@ -376,7 +377,7 @@ export const ConversationListPanel = ({
             </div>
 
             {isMobileLayout && isSelectionMode ? (
-                <div className="all-chats-bulk-bar fixed bottom-0 left-0 right-0 z-50 flex flex-nowrap gap-2 px-4 pt-2 bg-norm">
+                <div className="all-chats-bulk-bar border-top lumo-border-mid fixed bottom-0 left-0 right-0 z-50 flex flex-nowrap gap-2 px-4 pt-2 bg-norm">
                     <AllChatsBulkActionButtons
                         variant="bar"
                         disabled={selectedCount === 0}

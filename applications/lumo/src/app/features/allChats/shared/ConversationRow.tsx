@@ -46,7 +46,7 @@ const ProjectTag = ({ spaceId, projectName, projectIcon }: ProjectTagProps) => {
     return (
         <LumoLink
             to={`/projects/${spaceId}`}
-            className="all-chats-row-tag all-chats-row-interactive inline-flex flex-nowrap items-center gap-1 px-2 rounded-full bg-norm text-sm font-medium min-w-0"
+            className="all-chats-row-tag border lumo-border py-px all-chats-row-interactive inline-flex flex-nowrap items-center gap-1 min-w-0 px-2 radius-full lumo-label-medium lumo-bg-panel"
             aria-label={c('collider_2025:Action').t`Go to project ${label}`}
             title={label}
             onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -54,8 +54,8 @@ const ProjectTag = ({ spaceId, projectName, projectIcon }: ProjectTagProps) => {
             }}
         >
             {/* LumoLink sets an inline `color: inherit`, so the colour goes on the contents. */}
-            <ProjectIcon iconId={projectIcon} size={12} className="shrink-0 color-weak" />
-            <span className="text-ellipsis color-weak">{label}</span>
+            <ProjectIcon iconId={projectIcon} size={12} className="shrink-0 lumo-color-glyph-mid" />
+            <span className="text-ellipsis lumo-color-glyph-mid">{label}</span>
         </LumoLink>
     );
 };
@@ -98,7 +98,7 @@ export const ConversationRow = memo(
         return (
             <div
                 className={clsx(
-                    'all-chats-row group relative flex flex-nowrap items-center gap-2 px-3 rounded-lg min-w-0',
+                    'all-chats-row group relative flex flex-nowrap items-center gap-2 min-w-0 px-3 radius-12',
                     isCompact && 'all-chats-row--compact pr-1',
                     (isMenuOpen || isOverlayActive) && 'is-lifted',
                     isLast && 'is-last',
@@ -109,7 +109,7 @@ export const ConversationRow = memo(
                 {!isRenaming && isSelectionMode ? (
                     <button
                         type="button"
-                        className="all-chats-row-link absolute inset-0 rounded-lg"
+                        className="all-chats-row-link absolute inset-0 radius-12"
                         aria-label={c('collider_2025:Action').t`Toggle selection`}
                         onClick={() => {
                             onToggleBulkSelect(conversation.id);
@@ -119,7 +119,7 @@ export const ConversationRow = memo(
                 {!isRenaming && !isSelectionMode ? (
                     <LumoLink
                         to={`/c/${conversation.id}`}
-                        className="all-chats-row-link absolute inset-0 rounded-lg"
+                        className="all-chats-row-link absolute inset-0 radius-12"
                         aria-current={isActive ? 'page' : undefined}
                         aria-label={label}
                     />
@@ -146,7 +146,7 @@ export const ConversationRow = memo(
                             <Input
                                 dir="auto"
                                 ref={renameInputRef}
-                                inputClassName="text-sm py-0.5 px-2"
+                                inputClassName="lumo-body-medium py-0.5 px-2"
                                 value={draftTitle}
                                 onValue={setDraftTitle}
                                 onKeyDown={handleRenameKeyDown}
@@ -156,12 +156,19 @@ export const ConversationRow = memo(
                         </div>
                     ) : (
                         <div className="flex flex-nowrap items-center gap-2 min-w-0">
-                            <span dir="auto" className="text-ellipsis color-norm" data-testid="all-chats-row-title">
+                            <span
+                                dir="auto"
+                                className="text-ellipsis lumo-color-glyph"
+                                data-testid="all-chats-row-title"
+                            >
                                 {label}
                             </span>
                             {conversation.starred ? (
                                 // Shows the chat is a favorite; favoriting is in the ⋯ menu.
-                                <span className="shrink-0 flex color-weak" data-testid="all-chats-row-favorite">
+                                <span
+                                    className="flex shrink-0 lumo-color-glyph-mid"
+                                    data-testid="all-chats-row-favorite"
+                                >
                                     <LumoIcon
                                         name="Star"
                                         size={14}
@@ -179,7 +186,7 @@ export const ConversationRow = memo(
                         </div>
                     )}
                     {isCompact && !isRenaming ? (
-                        <div className="flex flex-nowrap items-center gap-2 min-w-0 text-sm color-weak">
+                        <div className="flex flex-nowrap items-center gap-2 min-w-0 lumo-body-small lumo-color-glyph-mid">
                             <span className="shrink-0">{timestamp}</span>
                             {projectTag}
                         </div>
@@ -190,7 +197,9 @@ export const ConversationRow = memo(
                     <div className="relative z-1 shrink-0 flex flex-nowrap items-center gap-2 min-w-0 pointer-events-none">
                         {projectTag}
                         {/* Hidden, not removed, on hover so the ⋯ that takes its place doesn't move anything. */}
-                        <span className="all-chats-row-time text-sm color-weak whitespace-nowrap">{timestamp}</span>
+                        <span className="all-chats-row-time lumo-body-small whitespace-nowrap lumo-color-glyph-mid">
+                            {timestamp}
+                        </span>
                     </div>
                 ) : null}
 

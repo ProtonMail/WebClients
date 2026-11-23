@@ -46,7 +46,7 @@ const MainLayoutContent = ({ children }: Props) => {
 
     return (
         <DragAreaProvider>
-            <div className="outer-layout-background relative reset4print flex flex-row h-full w-full overflow-hidden">
+            <div className="outer-layout-background relative flex flex-row w-full h-full overflow-hidden lumo-bg-page reset4print">
                 <div className="inner-layout-background absolute top-0 left-0 w-full h-full no-print">
                     <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
                         <div className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2">

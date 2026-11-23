@@ -60,7 +60,7 @@ export const LibraryCreationsTab = ({
 
     if (status === 'error' && entries.length === 0) {
         return (
-            <p className="color-danger text-sm flex flex-row items-center gap-2">
+            <p className="flex flex-row items-center gap-2 lumo-body-small lumo-color-signal-danger">
                 {c('collider_2025:Error').t`Could not load creations.`}
                 {retryButton}
             </p>
@@ -69,7 +69,7 @@ export const LibraryCreationsTab = ({
 
     if (status === 'loaded' && entries.length === 0) {
         return (
-            <p className="color-weak text-sm">
+            <p className="lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025:Info').t`Documents, code and webpages created in your chats will appear here.`}
             </p>
         );
@@ -88,7 +88,10 @@ export const LibraryCreationsTab = ({
                             color="weak"
                             size="small"
                             pill
-                            className={clsx('flex flex-row flex-nowrap items-center gap-1', isActive && 'bg-weak')}
+                            className={clsx(
+                                'flex flex-row flex-nowrap items-center gap-1',
+                                isActive && 'lumo-bg-control-fill'
+                            )}
                             aria-pressed={isActive}
                             onClick={() => {
                                 onFilterChange(option);
@@ -102,7 +105,7 @@ export const LibraryCreationsTab = ({
             </fieldset>
 
             {status === 'error' && (
-                <p className="color-weak text-sm m-0 flex flex-row items-center gap-2">
+                <p className="flex flex-row items-center gap-2 m-0 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025:Error').t`Could not load all creations.`}
                     {retryButton}
                 </p>
@@ -110,7 +113,7 @@ export const LibraryCreationsTab = ({
 
             {pendingSearchCount > 0 && (
                 // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
-                <p className="color-weak text-sm m-0 flex flex-row items-center gap-2" role="status">
+                <p className="flex flex-row items-center gap-2 m-0 lumo-body-small lumo-color-glyph-mid" role="status">
                     <CircleLoader size="small" />
                     {c('collider_2025:Info').ngettext(
                         msgid`Searching ${pendingSearchCount} more creation…`,
@@ -121,7 +124,7 @@ export const LibraryCreationsTab = ({
             )}
 
             {visibleEntries.length === 0 && pendingSearchCount === 0 && (
-                <p className="color-weak text-sm">
+                <p className="lumo-body-small lumo-color-glyph-mid">
                     {isSearching
                         ? c('collider_2025:Info').t`No creations match your search.`
                         : c('collider_2025:Info').t`No creations of this type yet.`}

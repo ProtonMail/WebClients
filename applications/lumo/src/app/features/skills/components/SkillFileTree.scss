@@ -2,64 +2,53 @@
 
 .skill-file-tree {
 	block-size: 100%;
-	border-inline-end: 1px solid var(--border-weak);
-	background-color: var(--background-weak);
-
-	&__list {
-		padding-block: rem(8);
-		padding-inline: rem(6);
-	}
+	border-inline-end: 1px solid var(--lumo-border);
 
 	&__row {
 		min-block-size: rem(28);
-		padding-inline: calc(#{rem(8)} + var(--skill-file-depth, 0) * #{rem(14)}) rem(2);
+		padding-inline: calc(var(--lumo-space-8) + var(--skill-file-depth, 0) * #{rem(14)}) var(--lumo-space-2);
 		border-radius: rem(6);
 
 		&:hover {
-			background-color: var(--interaction-default-hover);
+			background-color: var(--lumo-control-fill);
 		}
 
 		&.is-selected {
-			background-color: var(--interaction-default-active);
+			background-color: var(--lumo-control-fill-mid);
 		}
 
 		&.is-active {
-			background-color: var(--background-norm);
-			box-shadow: 0 0 0 1px var(--border-weak);
+			background-color: var(--lumo-panel);
+			box-shadow: 0 0 0 1px var(--lumo-border);
 
 			.skill-file-tree__file {
-				font-weight: 600;
+				font: var(--lumo-type-label-medium);
 			}
 
 			.skill-file-tree__icon {
-				color: var(--primary);
+				color: var(--lumo-glyph-brand-text);
 			}
 		}
 	}
 
 	&__label {
 		min-block-size: rem(28);
-		padding-block: rem(4);
-		padding-inline-end: rem(6);
 		border: none;
-		background: transparent;
-		font-size: rem(13);
 		cursor: pointer;
 
 		&:focus-visible {
-			border-radius: rem(4);
-			outline: 2px solid var(--focus-outline);
-			outline-offset: -2px;
+			border-radius: var(--lumo-radius-4);
+			outline: 2px solid var(--lumo-control-border-focus);
+			outline-offset: calc(-1 * var(--lumo-space-2));
 		}
 	}
 
 	&__folder {
-		color: var(--text-weak);
+		color: var(--lumo-glyph-mid);
 	}
 
 	&__chevron {
-		color: var(--text-hint);
-		transition: transform 0.15s ease;
+		transition: transform var(--lumo-duration-150) var(--lumo-easing-standard);
 
 		&.is-open {
 			transform: rotate(90deg);
@@ -67,18 +56,17 @@
 	}
 
 	&__file {
-		color: var(--text-norm);
+		color: var(--lumo-glyph);
 	}
 
 	&__icon {
-		color: var(--text-hint);
+		color: var(--lumo-glyph-low);
 	}
 
 	&__dot {
 		inline-size: rem(6);
 		block-size: rem(6);
 		border-radius: 50%;
-		background-color: var(--interaction-norm);
 	}
 
 	// On hover or keyboard focus, the row actions take the place of the unsaved-changes dot. A row keeps
@@ -98,7 +86,6 @@
 	}
 
 	&__name-input {
-		padding-block: rem(2);
-		padding-inline: calc(#{rem(8)} + var(--skill-file-depth, 0) * #{rem(14)}) rem(2);
+		padding-inline: calc(var(--lumo-space-8) + var(--skill-file-depth, 0) * #{rem(14)}) var(--lumo-space-2);
 	}
 }

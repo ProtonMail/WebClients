@@ -27,7 +27,7 @@ import './GuestNotificationCard.scss';
 
 const HeartIcon = () => {
     return (
-        <div className="guest-notification-heart-icon inline-flex items-center justify-center shrink-0 rounded-full">
+        <div className="guest-notification-heart-icon inline-flex shrink-0 items-center justify-center radius-full">
             <LumoIcon name="Heart" size={20} color="#7F77DD" />
         </div>
     );

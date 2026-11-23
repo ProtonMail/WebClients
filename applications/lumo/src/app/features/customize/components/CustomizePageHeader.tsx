@@ -9,8 +9,10 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 
-import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { type IconName, LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import type { CustomizeTab, SkillsView } from '../customizeTabs';
+
+import './CustomizePageHeader.scss';
 
 interface CustomizePageHeaderProps {
     activeTab: CustomizeTab;
@@ -30,7 +32,7 @@ const AddSkillMenu = ({ onCreate, onUpload }: { onCreate: () => void; onUpload: 
         <>
             <Button
                 ref={anchorRef}
-                className="shrink-0"
+                className="customize-page-header__add shrink-0"
                 color="norm"
                 aria-haspopup="menu"
                 aria-expanded={isOpen}
@@ -60,7 +62,7 @@ const AddSkillMenu = ({ onCreate, onUpload }: { onCreate: () => void; onUpload: 
 interface SegmentedProps<T extends string> {
     value: T;
     onChange: (value: T) => void;
-    options: { value: T; label: string }[];
+    options: { value: T; label: string; icon?: IconName }[];
 }
 
 /** Design-system modern tabs used as a segmented control; the page content below is rendered by the caller. */
@@ -68,13 +70,17 @@ const Segmented = <T extends string>({ value, onChange, options }: SegmentedProp
     <Tabs
         variant="modern"
         contained
-        className="shrink-0"
+        className="customize-page-header__tabs shrink-0"
         value={Math.max(
             0,
             options.findIndex((option) => option.value === value)
         )}
         onChange={(index) => onChange(options[index].value)}
-        tabs={options.map((option) => ({ title: option.label }))}
+        tabs={options.map((option) => ({
+            title: option.label,
+            iconPosition: 'leading',
+            icon: option.icon ? <LumoIcon name={option.icon} size={18} aria-hidden="true" /> : undefined,
+        }))}
     />
 );
 
@@ -83,8 +89,8 @@ export const CustomizeTabs = ({ value, onChange }: { value: CustomizeTab; onChan
         value={value}
         onChange={onChange}
         options={[
-            { value: 'skills', label: c('collider_2025:Tab').t`Skills` },
-            { value: 'connectors', label: c('collider_2025:Tab').t`Connectors` },
+            { value: 'skills', label: c('collider_2025:Tab').t`Skills`, icon: 'ScrollText' },
+            { value: 'connectors', label: c('collider_2025:Tab').t`Connectors`, icon: 'Blocks' },
         ]}
     />
 );
@@ -110,7 +116,7 @@ export const CustomizePageHeader = ({
 
     return (
         <header className="flex flex-column flex-nowrap gap-5 mb-6">
-            <h1 className="text-3xl text-bold m-0">{c('collider_2025:Title').t`Customize`}</h1>
+            <h1 className="m-0 lumo-headline-small">{c('collider_2025:Title').t`Customize`}</h1>
             <div className="flex flex-wrap items-center gap-3 w-full">
                 <CustomizeTabs value={activeTab} onChange={onTabChange} />
                 {activeTab === 'skills' && (
@@ -129,17 +135,18 @@ export const CustomizePageHeader = ({
                 <div className="flex-1 min-w-4" />
                 <div className="w-custom max-w-full shrink-0" style={{ '--w-custom': '16.25rem' }}>
                     <Input
+                        className="lumo-search-field"
                         dir="auto"
                         value={searchQuery}
                         onValue={onSearchQueryChange}
                         placeholder={searchPlaceholder}
                         aria-label={searchPlaceholder}
-                        prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
+                        prefix={<LumoIcon name="Search" size={16} className="lumo-color-glyph-mid" />}
                     />
                 </div>
                 {activeTab === 'skills' && <AddSkillMenu onCreate={onCreateSkill} onUpload={onUploadSkill} />}
             </div>
-            <hr className="m-0 border-top border-weak" />
+            <hr className="m-0 border-top lumo-border" />
         </header>
     );
 };

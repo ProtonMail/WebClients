@@ -1,0 +1,7 @@
+.artifact-actions-menu {
+	// Artifact menus retain 36px rows; the shared Web/Menu adapter uses 40px rows.
+	.dropdown-item-button.artifact-actions-menu__item {
+		padding-block: var(--lumo-space-8);
+		padding-inline: var(--lumo-space-10);
+	}
+}

@@ -47,7 +47,7 @@ const ConnectorStatus = ({
     switch (match.status) {
         case 'connected':
             return (
-                <span className="skill-connector__status is-connected flex flex-nowrap items-center gap-1 text-sm">
+                <span className="skill-connector__status is-connected flex flex-nowrap items-center gap-1 lumo-body-small">
                     <LumoIcon aria-hidden name="CircleCheck" size={14} />
                     {c('collider_2025:Label').t`Connected`}
                 </span>
@@ -66,7 +66,7 @@ const ConnectorStatus = ({
             );
         case 'unavailable':
             return (
-                <span className="text-sm color-weak">{c('collider_2025:Label')
+                <span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Label')
                     .t`Not available in ${LUMO_SHORT_APP_NAME}`}</span>
             );
     }
@@ -89,18 +89,24 @@ const ConnectorRow = ({
     return (
         <li
             className={clsx(
-                'skill-detail__row flex flex-nowrap items-center gap-4',
+                'skill-detail__row border-bottom lumo-border py-3 flex flex-nowrap items-center gap-4',
                 status && match.status === 'unavailable' && 'skill-connector__row--unavailable'
             )}
         >
-            <div className="skill-detail__connector-icon flex shrink-0 items-center justify-center">
+            <div className="skill-detail__connector-icon flex shrink-0 items-center justify-center radius-8 lumo-bg-control-fill">
                 <LumoIcon aria-hidden name="Blocks" size={16} />
             </div>
             <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                <span className={clsx('text-semibold text-ellipsis', capitalize && 'text-capitalize')}>
+                <span
+                    className={clsx(
+                        'text-ellipsis',
+                        status && match.status === 'unavailable' ? 'lumo-body-medium' : 'lumo-title-small',
+                        capitalize && 'text-capitalize'
+                    )}
+                >
                     {match.name}
                 </span>
-                {detail && <span className="text-sm color-weak text-ellipsis">{detail}</span>}
+                {detail && <span className="lumo-body-small text-ellipsis lumo-color-glyph-mid">{detail}</span>}
             </div>
             {status && <div className="shrink-0">{status}</div>}
         </li>
@@ -124,10 +130,12 @@ const CategorySection = ({
 
     return (
         <section className="flex flex-column flex-nowrap gap-1">
-            <h3 className="text-rg text-semibold m-0 flex flex-nowrap items-center gap-2">
+            <h3 className="flex flex-nowrap items-center gap-2 m-0 lumo-title-small">
                 {category.name}
                 {category.placeholder && (
-                    <code className="skill-detail__handle text-sm text-normal">{category.placeholder}</code>
+                    <code className="skill-detail__handle py-0.5 px-1.5 lumo-body-small lumo-bg-control-fill">
+                        {category.placeholder}
+                    </code>
                 )}
             </h3>
             <ul className="m-0 p-0 list-none">
@@ -175,7 +183,7 @@ export const SkillConnectorsTab = ({ matches, isDesktop }: { matches: SkillConne
     return (
         <div className="flex flex-column flex-nowrap gap-6">
             {!isDesktop && <DesktopConnectorsNotice />}
-            <p className="m-0 text-sm color-weak">
+            <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025:Info')
                     .t`This skill set works best with these kinds of tools. ${LUMO_SHORT_APP_NAME} only uses the connectors you add yourself.`}
                 {isDesktop && (
@@ -196,7 +204,7 @@ export const SkillConnectorsTab = ({ matches, isDesktop }: { matches: SkillConne
             {matches.servers.length > 0 && (
                 <section className="flex flex-column flex-nowrap gap-1">
                     {matches.categories.length > 0 && (
-                        <h3 className="text-rg text-semibold m-0">{c('collider_2025:Title').t`Other connectors`}</h3>
+                        <h3 className="m-0 lumo-title-small">{c('collider_2025:Title').t`Other connectors`}</h3>
                     )}
                     <ul className="m-0 p-0 list-none">
                         {matches.servers.map((server) => (
@@ -251,7 +259,7 @@ export const SkillConnectorsAside = ({
 
     return (
         <section className="flex flex-column flex-nowrap gap-2">
-            <h2 className="text-sm color-weak text-normal m-0 flex flex-nowrap items-center gap-1">
+            <h2 className="flex flex-nowrap items-center gap-1 m-0 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025:Title').t`Connectors & tools`}
                 <Tooltip title={dataNote}>
                     <button type="button" className="flex p-0" aria-label={dataNote}>
@@ -260,7 +268,7 @@ export const SkillConnectorsAside = ({
                 </Tooltip>
             </h2>
             {isDesktop && (
-                <p className="m-0 text-sm color-weak">
+                <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025:Info').t`${connectedCount} of ${total} connected`}
                 </p>
             )}
@@ -268,9 +276,9 @@ export const SkillConnectorsAside = ({
                 {connectors.slice(0, MAX_ASIDE_CONNECTORS).map((connector) => (
                     <li
                         key={connector.connectorId ?? connector.name}
-                        className="flex flex-nowrap items-center gap-2 text-sm"
+                        className="flex flex-nowrap items-center gap-2 lumo-body-small"
                     >
-                        <LumoIcon aria-hidden name="Blocks" size={14} className="shrink-0 color-weak" />
+                        <LumoIcon aria-hidden name="Blocks" size={14} className="shrink-0 lumo-color-glyph-mid" />
                         <span className="flex-1 text-ellipsis">{connector.desktopName ?? connector.name}</span>
                         {isDesktop && (
                             <span

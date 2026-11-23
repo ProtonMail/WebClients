@@ -169,7 +169,7 @@ export const ScheduledTaskEditorModal = ({
                         <InputFieldTwo
                             dir="auto"
                             assistContainerClassName={fieldErrors.name ? undefined : 'hidden'}
-                            className="border-weak rounded"
+                            className="lumo-border radius-8"
                             error={fieldErrors.name}
                             id={`${formId}-name`}
                             label={
@@ -190,7 +190,7 @@ export const ScheduledTaskEditorModal = ({
                             dir="auto"
                             as={TextAreaTwo}
                             assistContainerClassName={fieldErrors.instructions ? undefined : 'hidden'}
-                            className="block px-3 border-weak rounded"
+                            className="block px-3 lumo-border radius-8"
                             error={fieldErrors.instructions}
                             id={`${formId}-instructions`}
                             label={
@@ -226,9 +226,9 @@ export const ScheduledTaskEditorModal = ({
                                     c('collider_2025:Label').t`Schedule`
                                 }
                             />
-                            <p className="flex flex-nowrap items-center gap-2 m-0 mt-3 color-hint">
+                            <p className="flex flex-nowrap items-center gap-2 m-0 mt-3 lumo-color-glyph-mid">
                                 <LumoIcon aria-hidden className="shrink-0" name="LaptopMinimal" size={14} />
-                                <span className="text-sm">
+                                <span className="lumo-body-small">
                                     {
                                         // translator: Help text explaining the timing of the scheduled task.
                                         c('collider_2025:Info')
@@ -247,7 +247,7 @@ export const ScheduledTaskEditorModal = ({
 
                         <ConnectorList
                             editMode
-                            headerClassName="text-rg"
+                            headerClassName="lumo-body-medium"
                             value={values.connectors}
                             onChange={(connectors) => updateValues((prev) => ({ ...prev, connectors }))}
                         />
@@ -255,15 +255,18 @@ export const ScheduledTaskEditorModal = ({
                         {/* Auto-approve toggle */}
                         {values.connectors.length > 0 && (
                             <div className="flex flex-nowrap items-center gap-4 py-3">
-                                <div className="scheduled-task-editor-modal__auto-approve-icon flex shrink-0 items-center justify-center border border-weak rounded">
-                                    <LumoIcon aria-hidden className="color-weak" name="Clock" size={20} />
+                                <div className="scheduled-task-editor-modal__auto-approve-icon flex shrink-0 items-center justify-center border lumo-border radius-8">
+                                    <LumoIcon aria-hidden className="lumo-color-glyph-mid" name="Clock" size={20} />
                                 </div>
                                 <div className="flex flex-column flex-1 gap-0.5 min-w-0">
-                                    <span className="text-rg text-semibold" id={`${formId}-auto-approve-label`}>{
+                                    <span className="lumo-title-small" id={`${formId}-auto-approve-label`}>{
                                         // translator: Label for the auto-approve toggle to automatically approve the use of connectors (bridges to external systems/tools).
                                         c('collider_2025:Title').t`Auto-approve`
                                     }</span>
-                                    <span className="text-sm color-hint" id={`${formId}-auto-approve-description`}>
+                                    <span
+                                        className="lumo-body-small lumo-color-glyph-mid"
+                                        id={`${formId}-auto-approve-description`}
+                                    >
                                         {
                                             // translator: Description for the auto-approve toggle to automatically approve the use of connectors (bridges to external systems/tools).
                                             c('collider_2025:Description')

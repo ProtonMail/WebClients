@@ -52,10 +52,10 @@ export const ConversationExpirationLegend = ({ conversations }: ConversationExpi
     }
 
     return (
-        <div className="conversation-expiration-legend flex flex-column gap-1 mb-3 text-sm color-weak">
+        <div className="conversation-expiration-legend flex flex-column gap-1 mb-3 lumo-body-small lumo-color-glyph-mid">
             {expiringInTwoDays > 0 && (
                 <div className="flex items-center gap-1.5">
-                    <LumoIcon name="Clock" size={16} className="color-weak shrink-0" aria-label="" />
+                    <LumoIcon name="Clock" size={16} className="shrink-0 lumo-color-glyph-mid" aria-label="" />
                     <span>
                         {c('collider_2025: Info').ngettext(
                             msgid`${expiringInTwoDays} chat will expire in 2 days`,
@@ -67,7 +67,7 @@ export const ConversationExpirationLegend = ({ conversations }: ConversationExpi
             )}
             {urgentTotal > 0 && (
                 <div className="flex items-center gap-1.5">
-                    <LumoIcon name="Hourglass" size={16} className="color-weak shrink-0" aria-label="" />
+                    <LumoIcon name="Hourglass" size={16} className="shrink-0 lumo-color-glyph-mid" aria-label="" />
                     <span>{getUrgentLegendLabel(expiringInOneDay, expiringToday)}</span>
                 </div>
             )}

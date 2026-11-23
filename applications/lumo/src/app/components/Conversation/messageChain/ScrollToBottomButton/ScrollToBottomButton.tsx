@@ -64,12 +64,11 @@ export const ScrollToBottomButton = ({
                 {floatingContent}
             </div>
             <div
-                className="absolute w-full z-50 flex justify-center"
+                className="absolute z-50 flex justify-center w-full transition-all duration-200 lumo-easing-standard"
                 style={{
                     bottom: `${composerPosition.height + 32}px`,
                     insetInlineStart: 0,
                     transform: show ? 'translateY(0)' : 'translateY(8px)',
-                    transition: 'all 200ms ease-in-out',
                     opacity: show ? 1 : 0,
                     pointerEvents: 'none',
                 }}
@@ -77,7 +76,7 @@ export const ScrollToBottomButton = ({
                 <Tooltip title={c('Action').t`Scroll to bottom`}>
                     <button
                         onClick={onClick}
-                        className="scroll-to-bottom-button shadow-lifted hover:shadow-norm flex items-center justify-center cursor-pointer rounded-50 border border-weak bg-norm color-norm"
+                        className="scroll-to-bottom-button flex items-center justify-center border lumo-border rounded-50 lumo-color-glyph lumo-bg-panel lumo-elevation-4 hover:shadow-norm cursor-pointer"
                         aria-label={c('Action').t`Scroll to bottom`}
                         style={{ pointerEvents: show ? 'auto' : 'none' }}
                     >

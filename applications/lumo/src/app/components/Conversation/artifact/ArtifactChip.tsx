@@ -1,4 +1,3 @@
-import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -30,7 +29,8 @@ interface ArtifactChipSubtitleProps {
 const ArtifactChipSubtitle = ({ artifact, visualState, versionNumber }: ArtifactChipSubtitleProps) => {
     if (visualState === 'active') {
         return (
-            <span className="text-xs color-weak">{c('collider_2025:Info').t`Open in panel • v${versionNumber}`}</span>
+            <span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
+                .t`Open in panel • v${versionNumber}`}</span>
         );
     }
 
@@ -42,7 +42,7 @@ const ArtifactChipSubtitle = ({ artifact, visualState, versionNumber }: Artifact
             : c('collider_2025:Info').ngettext(msgid`${wordCount} word`, `${wordCount} words`, wordCount);
 
     return (
-        <span className={clsx('text-xs', visualState === 'superseded' ? 'color-hint' : 'color-weak')}>
+        <span className="lumo-body-small lumo-color-glyph-mid">
             {countLabel} • {c('collider_2025:Info').t`v${versionNumber}`}
         </span>
     );

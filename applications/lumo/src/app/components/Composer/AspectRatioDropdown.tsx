@@ -64,7 +64,7 @@ const AspectRatioDropdown = ({ selectedRatio, onSelect }: AspectRatioDropdownPro
                 shape="ghost"
                 size="small"
                 className={clsx(
-                    'border-0 shrink-0 flex flex-row flex-nowrap gap-1.5 items-center color-norm py-1 px-2 rounded-full text-sm',
+                    'flex flex-row flex-nowrap shrink-0 items-center gap-1.5 px-2 py-1 border-0 radius-full lumo-body-small lumo-color-glyph',
                     isOpen && 'is-active'
                 )}
                 onClick={() => {
@@ -72,8 +72,8 @@ const AspectRatioDropdown = ({ selectedRatio, onSelect }: AspectRatioDropdownPro
                 }}
             >
                 <CurrentIcon />
-                <span className="font-medium">{currentOption.getLabel()}</span>
-                <LumoIcon name="ChevronDown" width={12} height={12} className="color-weak" />
+                <span>{currentOption.getLabel()}</span>
+                <LumoIcon name="ChevronDown" width={12} height={12} className="lumo-color-glyph-mid" />
             </Button>
 
             <MenuDropdown
@@ -103,7 +103,7 @@ const AspectRatioDropdown = ({ selectedRatio, onSelect }: AspectRatioDropdownPro
                                     selectedRatio !== option.ratio && 'visibility-hidden'
                                 )}
                             >
-                                <LumoIcon name="Check" size={16} className="color-primary" />
+                                <LumoIcon name="Check" size={16} className="lumo-color-glyph-brand-text" />
                             </span>
                         }
                     />

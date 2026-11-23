@@ -22,7 +22,7 @@ const AboutPanel = () => {
                 icon="CircleQuestionMark"
                 text={c('collider_2025: Title').t`Help and support`}
                 subtext={c('collider_2025: Description').jt`Learn more about how to use ${LUMO_SHORT_APP_NAME}`}
-                button={<IcArrowWithinSquare className="shrink-0 color-hint mr-2" />}
+                button={<IcArrowWithinSquare className="shrink-0 mr-2 lumo-color-glyph-mid" />}
                 onClick={() => window.open(getKnowledgeBaseUrl('/lumo'), '_blank')}
                 data-testid="about-panel:help-support"
             />

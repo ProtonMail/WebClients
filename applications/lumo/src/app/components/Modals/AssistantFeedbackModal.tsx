@@ -371,11 +371,11 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                 <ModalTwoHeader title={c('collider_2025: Header').t`Help us improve`} />
                 <ModalTwoContent>
                     {introType === 'positive' && (
-                        <p className="m-0 color-weak">{c('collider_2025: Info')
+                        <p className="m-0 lumo-color-glyph-mid">{c('collider_2025: Info')
                             .t`This shares your general sentiment and response metadata with ${BRAND_NAME}. Your prompt and the response are not included.`}</p>
                     )}
                     {introType === 'negative' && (
-                        <div className="color-weak">
+                        <div className="lumo-color-glyph-mid">
                             <p className="m-0">
                                 {c('collider_2025: Info')
                                     .t`When you submit feedback, your prompt and this response are sent to ${BRAND_NAME} for analysis and improvement.`}
@@ -443,7 +443,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                             c('collider_2025:Label').t`Include full conversation`
                         }
                     </Checkbox>
-                    <p className="m-0 text-sm color-weak">
+                    <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                         {includeHistory
                             ? // translator: Disclaimer shown at the bottom of the feedback form when user opts in to send feedback with the full conversation history.
                               c('collider_2025:Info')

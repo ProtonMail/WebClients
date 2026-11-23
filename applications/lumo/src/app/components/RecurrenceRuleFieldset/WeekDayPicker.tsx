@@ -72,7 +72,7 @@ export const WeekDayPicker = ({ days, error, onChange }: WeekDayPickerProps) => 
                             aria-label={ariaLabel}
                             aria-pressed={isSelected}
                             className={clsx([
-                                'week-day-picker__day items-center justify-center p-0 rounded-full',
+                                'week-day-picker__day items-center justify-center p-0 radius-full',
                                 error && 'border-danger',
                             ])}
                             color={isSelected ? 'norm' : 'weak'}
@@ -80,7 +80,7 @@ export const WeekDayPicker = ({ days, error, onChange }: WeekDayPickerProps) => 
                             onClick={() => onDayClick(day)}
                             type="button"
                         >
-                            {displayLabel}
+                            <span className="lumo-label-medium">{displayLabel}</span>
                         </Button>
                     );
                 })}

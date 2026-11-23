@@ -1,33 +1,32 @@
 @use '~@proton/styles/scss/lib' as *;
 
 @keyframes customize-notice-icon-pop {
-	from {
+	0% {
 		opacity: 0;
 		transform: scale(0.7) rotate(-8deg);
 	}
 
-	to {
+	60% {
+		opacity: 1;
+		transform: scale(1.025) rotate(0.7deg);
+	}
+
+	100% {
 		opacity: 1;
 		transform: none;
 	}
 }
 
 .customize-notice {
-	padding: rem(40);
-	border: 1px solid var(--border-weak);
-	border-radius: rem(16);
-	background-color: var(--background-norm);
-
 	// The icon artwork has transparent padding around the squircle (~72px of 88px is visible).
 	&__app-icon {
-		margin-block: rem(-8);
+		margin-block: calc(-1 * var(--lumo-space-8));
 
 		// drop-shadow follows the squircle's alpha, so the shadow hugs the icon rather than its square box.
 		filter: drop-shadow(0 rem(2) rem(4) rgb(0 0 0 / 0.18)) drop-shadow(0 rem(8) rem(16) rgb(83 52 200 / 0.48));
 	}
 
 	&__icon {
-		border-radius: rem(16);
 		box-shadow: 0 rem(6) rem(16) rgb(83 52 200 / 0.16);
 	}
 
@@ -35,26 +34,15 @@
 	@media (prefers-reduced-motion: no-preference) {
 		&__app-icon,
 		&__icon {
-			animation: customize-notice-icon-pop 0.5s easing(ease-out-back) 0.05s backwards;
+			animation: customize-notice-icon-pop 0.5s var(--lumo-easing-enter) 0.05s backwards;
 		}
 
 		> :not(img) {
-			animation: customize-rise-in 0.3s easing(ease-out-cubic) 0.08s backwards;
+			animation: customize-rise-in var(--lumo-duration-300) var(--lumo-easing-enter) 0.08s backwards;
 		}
-	}
-
-	&__title {
-		font-size: rem(22);
 	}
 
 	&__description {
 		max-inline-size: rem(560);
-		font-size: rem(15);
-		line-height: rem(20);
-	}
-
-	&__points {
-		font-size: rem(14);
-		line-height: rem(20);
 	}
 }

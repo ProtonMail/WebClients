@@ -149,7 +149,7 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
             style={overlayStyle}
         >
             {isPanelOpen && (
-                <div id="drawer-app-lumo" className="lumo-floating-panel-chat">
+                <div id="drawer-app-lumo" className="lumo-floating-panel-chat lumo-ui">
                     {targetSide && (
                         <div
                             className={clsx(

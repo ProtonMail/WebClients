@@ -12,14 +12,15 @@ import {
     useEdgesState,
     useNodesState,
 } from '@xyflow/react';
+
+import '@xyflow/react/dist/style.css';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useLumoTheme } from '../../../providers';
-import type { LumoWorkflowGraph, WorkflowEdge, WorkflowNodeType } from './workflowCodegen.types';
 import { layoutWorkflowGraph } from './layoutWorkflowGraph';
+import type { LumoWorkflowGraph, WorkflowEdge, WorkflowNodeType } from './workflowCodegen.types';
 
-import '@xyflow/react/dist/style.css';
 import './WorkflowGraphView.scss';
 
 interface WorkflowGraphViewProps {
@@ -53,16 +54,18 @@ function WorkflowFlowNode({ data }: NodeProps<Node<WorkflowNodeData>>) {
     return (
         <div
             className={clsx(
-                'workflow-graph-view-node rounded-xl border bg-norm shadow-sm',
+                'workflow-graph-view-node py-3 border border-3 lumo-border radius-16 lumo-bg-panel shadow-sm',
                 data.isConditional && 'workflow-graph-view-node-conditional'
             )}
             data-node-type={data.typeKey}
         >
             <Handle className="workflow-graph-view-handle" type="target" position={Position.Top} />
-            <div className="workflow-graph-view-node-kind text-2xs uppercase mb-1">{typeLabel(data.typeKey)}</div>
-            <div className="text-rg text-bold">{data.title}</div>
+            <div className="workflow-graph-view-node-kind lumo-label-small uppercase mb-1 lumo-color-glyph-mid">
+                {typeLabel(data.typeKey)}
+            </div>
+            <div className="lumo-title-small">{data.title}</div>
             {data.output ? (
-                <div className="text-2xs color-weak mt-1 text-monospace">
+                <div className="mt-1 lumo-font-mono lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Label').t`Output`}: {data.output}
                 </div>
             ) : null}
@@ -163,14 +166,14 @@ export const WorkflowGraphView = ({ graph, minCanvasHeightPx = 280 }: WorkflowGr
 
     if (graph.nodes.length === 0) {
         return (
-            <div className="workflow-graph-view workflow-graph-view-empty color-weak">
+            <div className="workflow-graph-view px-5 py-4 lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`No nodes in this workflow.`}
             </div>
         );
     }
 
     return (
-        <div className="workflow-graph-view rounded-lg bg-norm overflow-hidden">
+        <div className="workflow-graph-view overflow-hidden radius-12 lumo-bg-panel">
             <div
                 className="workflow-graph-view-flow"
                 style={{
@@ -180,7 +183,7 @@ export const WorkflowGraphView = ({ graph, minCanvasHeightPx = 280 }: WorkflowGr
                 }}
             >
                 <ReactFlow
-                    className={clsx(isDarkLumoTheme && 'dark')}
+                    className={clsx('lumo-bg-panel', isDarkLumoTheme && 'dark')}
                     nodes={nodes}
                     edges={edges}
                     onNodesChange={onNodesChange}
@@ -196,7 +199,7 @@ export const WorkflowGraphView = ({ graph, minCanvasHeightPx = 280 }: WorkflowGr
                     maxZoom={1.5}
                     defaultEdgeOptions={{
                         type: 'smoothstep',
-                        style: { stroke: 'var(--border-norm)', strokeWidth: 1.5 },
+                        style: { stroke: 'var(--lumo-border-mid)', strokeWidth: 1.5 },
                     }}
                     proOptions={{ hideAttribution: true }}
                     onInit={(instance) => {
@@ -204,7 +207,13 @@ export const WorkflowGraphView = ({ graph, minCanvasHeightPx = 280 }: WorkflowGr
                     }}
                 >
                     <Controls showInteractive={false} />
-                    <MiniMap className="workflow-graph-view-minimap" maskColor="var(--background-norm)" pannable zoomable />
+                    <MiniMap
+                        className="border lumo-border radius-8"
+                        bgColor="var(--lumo-panel)"
+                        maskColor="var(--lumo-panel)"
+                        pannable
+                        zoomable
+                    />
                 </ReactFlow>
             </div>
         </div>

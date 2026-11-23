@@ -24,7 +24,7 @@ const AuthenticatedReportBugSection = () => {
                 text={c('collider_2025: Title').t`Report a bug`}
                 subtext={c('collider_2025: Description').jt`Report a bug or feature request`}
                 onClick={() => setBugReportModal(true)}
-                button={<LumoIcon name="ChevronRight" className="ml-auto shrink-0 color-hint" size={20} />}
+                button={<LumoIcon name="ChevronRight" className="shrink-0 ml-auto lumo-color-glyph-mid" size={20} />}
             />
 
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} app={APPS.PROTONLUMO} />}

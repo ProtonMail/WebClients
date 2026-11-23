@@ -52,10 +52,11 @@ $colors: (
 		control-brand-fill,
 		control-brand-fill-mid,
 		control-brand-fill-strong,
-		canvas,
+		page,
 		panel,
 		panel-elevated,
 		panel-inverse,
+		notice,
 		overlay,
 		layer,
 		scrim,
@@ -142,7 +143,7 @@ $color-properties: (
 // Radius suffixes match pixel-based token names; full makes pill-shaped corners.
 // This rounds the border box but does not clip overflowing children.
 @each $size in (4, 8, 12, 16, 28, full) {
-	.lumo-radius-#{$size} {
+	.radius-#{$size} {
 		border-radius: var(--lumo-radius-#{$size});
 	}
 }
@@ -154,10 +155,11 @@ $color-properties: (
 	}
 }
 
-// Suffixes are percentages: lumo-opacity-20 uses 0.2, affecting children as well.
+// Suffixes are percentages: opacity-20 uses 0.2, affecting children as well.
 // Use a translucent fill role when only the background should fade.
-@each $opacity in (4, 5, 8, 10, 16, 20, 30, 48) {
-	.lumo-opacity-#{$opacity} {
+// Proton's opacity-30 already provides the same value in both full and embedded apps.
+@each $opacity in (4, 5, 8, 10, 16, 20, 48) {
+	.opacity-#{$opacity} {
 		opacity: var(--lumo-opacity-#{$opacity});
 	}
 }
@@ -175,7 +177,7 @@ $color-properties: (
 // Components choose properties/keyframes; no transition: all is introduced.
 // Reduced-motion preferences override the duration without changing the end state.
 @each $duration in (100, 150, 200, 300) {
-	.lumo-duration-#{$duration} {
+	.duration-#{$duration} {
 		transition-duration: var(--lumo-duration-#{$duration});
 		animation-duration: var(--lumo-duration-#{$duration});
 

@@ -26,15 +26,15 @@ interface DocumentThumbnailProps {
 
 const DocumentThumbnail = ({ title, subtitle }: DocumentThumbnailProps) => {
     return (
-        <div className="flex flex-column flex-nowrap gap-1 h-full p-6 bg-norm overflow-hidden">
-            <span className="text-lg text-bold color-norm text-ellipsis">{title}</span>
-            {subtitle && <span className="text-xs color-hint text-ellipsis">{subtitle}</span>}
+        <div className="flex flex-column flex-nowrap gap-1 h-full p-6 overflow-hidden lumo-bg-panel">
+            <span className="lumo-title-medium text-ellipsis lumo-color-glyph">{title}</span>
+            {subtitle && <span className="lumo-body-small text-ellipsis lumo-color-glyph-mid">{subtitle}</span>}
             <div className="flex flex-column gap-2 mt-4" aria-hidden="true">
                 {DOCUMENT_LINE_WIDTHS.map((width, index) => {
                     return (
                         <span
                             key={index}
-                            className="library-thumbnail-line block rounded-full h-custom w-custom"
+                            className="library-thumbnail-line block w-custom h-custom radius-full"
                             style={{ '--w-custom': width, '--h-custom': '0.375rem' }}
                         />
                     );
@@ -56,12 +56,12 @@ const PlainCodeLines = ({ lines }: PlainCodeLinesProps) => {
                 return (
                     <div key={index} className="flex flex-row flex-nowrap text-pre">
                         <span
-                            className="shrink-0 color-hint text-right w-custom pr-4"
+                            className="shrink-0 w-custom pr-4 text-right lumo-color-artifact-syntax-line-number"
                             style={{ '--w-custom': '2.25rem' }}
                         >
                             {index + 1}
                         </span>
-                        <span className="color-norm">{line}</span>
+                        <span className="lumo-color-glyph">{line}</span>
                     </div>
                 );
             })}
@@ -81,7 +81,10 @@ const CodeThumbnail = ({ content, language }: CodeThumbnailProps) => {
         return content.split('\n', CODE_PREVIEW_LINES);
     }, [content]);
     return (
-        <div className="h-full p-4 bg-weak overflow-hidden text-xs text-monospace" aria-hidden="true">
+        <div
+            className="h-full p-4 overflow-hidden lumo-font-mono lumo-body-small lumo-bg-artifact-code-bg"
+            aria-hidden="true"
+        >
             <Suspense fallback={<PlainCodeLines lines={lines} />}>
                 <LibraryCodeThumbnailHighlighter code={lines.join('\n')} language={language ?? 'text'} theme={theme} />
             </Suspense>
@@ -96,7 +99,10 @@ interface TypeIconThumbnailProps {
 const TypeIconThumbnail = ({ type }: TypeIconThumbnailProps) => {
     const Icon = ARTIFACT_TYPE_CONFIG[type].icon;
     return (
-        <div className="flex items-center justify-center h-full bg-weak color-weak" aria-hidden="true">
+        <div
+            className="flex items-center justify-center h-full lumo-color-glyph-mid lumo-bg-control-fill"
+            aria-hidden="true"
+        >
             <Icon size={8} />
         </div>
     );
@@ -204,7 +210,7 @@ const HtmlThumbnail = ({ type, html, title }: HtmlThumbnailProps) => {
     }, []);
 
     return (
-        <div ref={frameRef} className="relative h-full w-full overflow-hidden bg-norm" aria-hidden="true">
+        <div ref={frameRef} className="relative w-full h-full overflow-hidden lumo-bg-panel" aria-hidden="true">
             {isNearViewport && frame.scale > 0 && (
                 <HtmlThumbnailFrame
                     type={type}
@@ -267,7 +273,7 @@ interface Props {
 
 export const LibraryCreationThumbnail = ({ type, title, subtitle, content, language }: Props) => {
     if (!type || content === undefined) {
-        return <div className="h-full bg-weak rectangle-skeleton keep-motion" aria-hidden="true" />;
+        return <div className="rectangle-skeleton keep-motion h-full lumo-bg-control-fill" aria-hidden="true" />;
     }
     if (type === 'document') {
         return <DocumentThumbnail title={title} subtitle={subtitle} />;

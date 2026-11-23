@@ -45,7 +45,8 @@ const MemberApiAccessToggle = ({ member, apiAccess }: { member: ApiMemberUsage; 
                 aria-label={c('collider_2025: Action').t`Toggle API access for ${member.name}`}
                 className="shrink-0"
             />
-            <span className="api-usage-access-label">{c('collider_2025: Label').t`API access`}</span>
+            <span className="api-usage-access-label lumo-label-small lumo-color-glyph-mid">{c('collider_2025: Label')
+                .t`API access`}</span>
         </div>
     );
 };
@@ -62,10 +63,10 @@ const MemberUsageCard = ({
     const [expanded, setExpanded] = useState(false);
     const isExpanded = expanded && member.models.length > 0;
     return (
-        <article className="api-usage-member-card rounded-xl border border-weak">
-            <header className="api-usage-member-card__header flex flex-wrap items-start justify-space-between gap-4 md:flex-nowrap md:items-center">
+        <article className="api-usage-member-card border lumo-border radius-16 lumo-bg-panel">
+            <header className="api-usage-member-card__header flex flex-wrap items-start justify-space-between gap-4 lumo-bg-control-fill md:flex-nowrap md:items-center">
                 <div className="flex items-center gap-3">
-                    <span className="api-usage-member-avatar flex items-center justify-center rounded-lg">
+                    <span className="api-usage-member-avatar flex items-center justify-center radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill">
                         {member.name.slice(0, 1)}
                     </span>
                     <span className="flex flex-column">
@@ -98,7 +99,7 @@ const MemberUsageCard = ({
                 </div>
             </header>
             {isExpanded && (
-                <div className="api-usage-models-grid mt-4">
+                <div className="api-usage-models-grid gap-2.5 mt-4">
                     {member.models.map((usage) => (
                         <ApiUsageModelStats
                             key={usage.model}
@@ -130,23 +131,26 @@ const MemberUsageList = ({
     apiAccess: MemberApiAccess;
 }) => {
     if (isLoading) {
-        return <p className="m-0 text-sm color-weak">{c('collider_2025: Info').t`Loading usage…`}</p>;
+        return <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info').t`Loading usage…`}</p>;
     }
 
     if (error) {
-        return <p className="m-0 text-sm color-weak">{c('collider_2025: Error').t`Could not load usage.`}</p>;
+        return (
+            <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Error')
+                .t`Could not load usage.`}</p>
+        );
     }
 
     if (members.length === 0) {
         return (
-            <div className="api-usage-empty flex flex-column items-center justify-center text-center rounded-lg border border-weak bg-weak">
-                <span className="api-usage-empty__icon flex items-center justify-center rounded-full mb-3">
+            <div className="api-usage-empty p-6 flex flex-column items-center justify-center border lumo-border radius-12 text-center lumo-bg-control-fill">
+                <span className="api-usage-empty__icon flex items-center justify-center mb-3 radius-full lumo-color-glyph-brand-text lumo-bg-control-fill">
                     <LumoIcon name="Users" size={20} />
                 </span>
-                <h4 className="text-sm text-bold color-norm m-0">
+                <h4 className="m-0 lumo-label-small lumo-color-glyph">
                     {c('collider_2025: Title').t`No member API usage yet`}
                 </h4>
-                <p className="text-xs color-weak m-0 mt-1">
+                <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`Usage will appear here after organization members make API requests.`}
                 </p>
             </div>
@@ -156,12 +160,12 @@ const MemberUsageList = ({
     const matchingMembers = filterMembersByName(members, search);
 
     return (
-        <div className="api-usage-member-list">
+        <div className="api-usage-member-list gap-2.5">
             {matchingMembers.map((member) => (
                 <MemberUsageCard key={member.id} member={member} currency={currency} apiAccess={apiAccess} />
             ))}
             {matchingMembers.length === 0 && (
-                <div className="api-usage-member-list__empty rounded-xl border border-weak text-center">
+                <div className="api-usage-member-list__empty p-7 border lumo-border radius-16 text-center lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`No members match your search.`}
                 </div>
             )}
@@ -199,9 +203,9 @@ export const ApiUsageMembers = ({
         <div className="api-usage-members flex flex-column gap-4 w-full max-w-full min-w-0">
             <div className="api-usage-members-toolbar flex flex-column items-stretch justify-space-between gap-3 md:flex-row md:items-center">
                 <div>
-                    <h3 className="text-lg text-semibold color-norm m-0">{c('collider_2025: Title')
+                    <h3 className="m-0 lumo-title-medium lumo-color-glyph">{c('collider_2025: Title')
                         .t`Member usage`}</h3>
-                    <p className="text-sm color-weak m-0 mt-1">
+                    <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025: Info').t`Review API spending by member for ${periodLabel}.`}
                     </p>
                 </div>
@@ -215,7 +219,7 @@ export const ApiUsageMembers = ({
                         onValue={setSearch}
                         placeholder={c('collider_2025: Placeholder').t`Search members`}
                         aria-label={c('collider_2025: Label').t`Search members`}
-                        prefix={<LumoIcon name="Search" size={15} className="color-weak" />}
+                        prefix={<LumoIcon name="Search" size={15} className="lumo-color-glyph-mid" />}
                         className="api-usage-search flex-1 shrink-0 md:flex-none"
                     />
                 </div>

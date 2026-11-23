@@ -8,7 +8,10 @@ const PAPER_TRAIL_LIGHT_THEME_ID = 'lumo-paper-trail-light-theme';
 
 const getScopedLightThemeStyles = (): string => {
     const lightThemeStyles = getThemeConfig(ThemeTypes.LumoLight).styles;
-    return lightThemeStyles.replace(/:root,\s*\n\.ui-standard/g, '.ai-paper-trail');
+    return lightThemeStyles.replace(
+        /:root,\s*\.ui-standard(?:,\s*\.lumo-ui)?/g,
+        '.ai-paper-trail, .ai-paper-trail .lumo-ui'
+    );
 };
 
 /**

@@ -26,10 +26,10 @@ export const PaperTrailWizardShell = ({
     primaryDisabled = false,
 }: Props) => {
     return (
-        <div className="ai-paper-trail__inner ai-paper-trail__wizard-page">
-            <div className="ai-paper-trail__wizard">
+        <div className="ai-paper-trail__inner ai-paper-trail__wizard-page mx-auto px-6 pt-8 pb-20">
+            <div className="ai-paper-trail__wizard gap-6">
                 <PaperTrailStepper activeStep={step} />
-                <h1 className="ai-paper-trail__wizard-title">{title}</h1>
+                <h1 className="ai-paper-trail__wizard-title m-0">{title}</h1>
                 {children}
                 <div className="flex flex-nowrap justify-space-between">
                     <Button color="weak" pill onClick={onBack}>

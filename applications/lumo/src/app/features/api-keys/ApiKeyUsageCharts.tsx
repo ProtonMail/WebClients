@@ -15,30 +15,31 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
     const { days, totalTokenCount, totalApiCalls, isLoading, error } = usage;
 
     if (isLoading) {
-        return <div className="api-keys-usage-skeleton shrink-0" />;
+        return <div className="api-keys-usage-skeleton shrink-0 lumo-bg-control-fill-mid" />;
     }
 
     const hasUsage = !error && totalTokenCount > 0;
 
     if (!hasUsage) {
         return (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div
                 className="api-keys-usage flex flex-column items-end gap-1 shrink-0"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="api-keys-usage-chart api-keys-usage-chart--ghost" aria-hidden="true">
+                <div className="api-keys-usage-chart api-keys-usage-chart--ghost pt-1" aria-hidden="true">
                     <ResponsiveContainer width="100%" height={34}>
                         <AreaChart data={GHOST_DATA} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
                             <defs>
                                 <linearGradient id={`${sparkId}-ghost`} x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="var(--border-norm)" stopOpacity={0.35} />
-                                    <stop offset="100%" stopColor="var(--border-norm)" stopOpacity={0} />
+                                    <stop offset="0%" stopColor="var(--lumo-border-mid)" stopOpacity={0.35} />
+                                    <stop offset="100%" stopColor="var(--lumo-border-mid)" stopOpacity={0} />
                                 </linearGradient>
                             </defs>
                             <Area
                                 type="monotone"
                                 dataKey="TokenCount"
-                                stroke="var(--border-norm)"
+                                stroke="var(--lumo-border-mid)"
                                 strokeWidth={1}
                                 fill={`url(#${sparkId}-ghost)`}
                                 dot={false}
@@ -47,14 +48,19 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
                         </AreaChart>
                     </ResponsiveContainer>
                 </div>
-                <span className="api-keys-usage-label">{c('collider_2025: Info').t`No usage yet`}</span>
+                <span className="api-keys-usage-label lumo-label-small lumo-color-glyph-mid">{c('collider_2025: Info')
+                    .t`No usage yet`}</span>
             </div>
         );
     }
 
     return (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div className="api-keys-usage flex flex-column items-end gap-1 shrink-0" onClick={(e) => e.stopPropagation()}>
-            <div className="api-keys-usage-chart api-keys-usage-chart--spark" aria-hidden="true">
+            <div
+                className="api-keys-usage-chart api-keys-usage-chart--spark px-1.5 py-1 border lumo-border radius-8"
+                aria-hidden="true"
+            >
                 <ResponsiveContainer width="100%" height={34}>
                     <AreaChart data={days} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
                         <defs>
@@ -89,9 +95,11 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
                                     day: 'numeric',
                                 });
                                 return (
-                                    <div className="api-keys-chart-tooltip api-keys-chart-tooltip--spark flex flex-column gap-0.5">
-                                        <span className="api-keys-chart-tooltip-date">{label}</span>
-                                        <span className="api-keys-chart-tooltip-value">
+                                    <div className="api-keys-chart-tooltip api-keys-chart-tooltip--spark flex flex-column gap-0.5 px-3 py-2 border lumo-border lumo-bg-panel-elevated">
+                                        <span className="api-keys-chart-tooltip-date lumo-label-small lumo-color-glyph-mid">
+                                            {label}
+                                        </span>
+                                        <span className="api-keys-chart-tooltip-value lumo-label-small lumo-color-glyph">
                                             {formatTokenCount(d.TokenCount)} {c('collider_2025: Unit').t`tokens`}
                                             {d.ApiCalls > 0 ? (
                                                 <>
@@ -109,12 +117,20 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
             </div>
             <div className="flex flex-column items-end gap-0.5">
                 <div className="flex items-baseline flex-wrap gap-1 justify-end">
-                    <span className="api-keys-usage-total">{formatTokenCount(totalTokenCount)}</span>
-                    <span className="api-keys-usage-label">{c('collider_2025: Info').t`tokens / 30d`}</span>
+                    <span className="api-keys-usage-total lumo-label-small lumo-color-glyph">
+                        {formatTokenCount(totalTokenCount)}
+                    </span>
+                    <span className="api-keys-usage-label lumo-label-small lumo-color-glyph-mid">{c(
+                        'collider_2025: Info'
+                    ).t`tokens / 30d`}</span>
                 </div>
                 <div className="flex items-baseline flex-wrap gap-1 justify-end">
-                    <span className="api-keys-usage-total">{formatTokenCount(totalApiCalls)}</span>
-                    <span className="api-keys-usage-label">{c('collider_2025: Info').t`API calls`}</span>
+                    <span className="api-keys-usage-total lumo-label-small lumo-color-glyph">
+                        {formatTokenCount(totalApiCalls)}
+                    </span>
+                    <span className="api-keys-usage-label lumo-label-small lumo-color-glyph-mid">{c(
+                        'collider_2025: Info'
+                    ).t`API calls`}</span>
                 </div>
             </div>
         </div>
@@ -127,7 +143,7 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
 
     if (isLoading) {
         return (
-            <div className="api-keys-expanded-loading color-weak text-sm">
+            <div className="py-2 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`Loading usage…`}
             </div>
         );
@@ -135,19 +151,21 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
 
     if (error) {
         return (
-            <p className="m-0 text-sm color-weak">{c('collider_2025: Error').t`Could not load usage for this key.`}</p>
+            <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Error')
+                .t`Could not load usage for this key.`}</p>
         );
     }
 
     if (totalTokenCount === 0 && totalApiCalls === 0) {
         return (
-            <div className="api-keys-expanded-empty flex items-center gap-3 rounded-lg">
-                <span className="api-keys-expanded-empty__icon flex items-center justify-center rounded-lg shrink-0">
+            <div className="api-keys-expanded-empty mt-4 p-4 flex items-center gap-3 border border-dashed lumo-border radius-12 lumo-bg-panel">
+                <span className="api-keys-expanded-empty__icon flex shrink-0 items-center justify-center radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill">
                     <LumoIcon name="Activity" size={18} />
                 </span>
                 <div className="flex flex-column gap-1">
-                    <strong>{c('collider_2025: Title').t`No usage in the last 30 days`}</strong>
-                    <span className="api-keys-expanded-empty__description">
+                    <strong className="lumo-title-small lumo-color-glyph">{c('collider_2025: Title')
+                        .t`No usage in the last 30 days`}</strong>
+                    <span className="api-keys-expanded-empty__description lumo-label-small lumo-color-glyph-mid">
                         {c('collider_2025: Info')
                             .t`Usage charts and request totals will appear here after this key makes its first API request.`}
                     </span>
@@ -158,7 +176,7 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
 
     return (
         <div className="flex flex-column gap-5 pt-2">
-            <div className="api-usage-metrics">
+            <div className="api-usage-metrics gap-2.5">
                 <ApiUsageMetricCard
                     icon="ArrowDownToLine"
                     label={c('collider_2025: Label').t`Input tokens`}
@@ -181,7 +199,8 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
 
             <div className="flex flex-column gap-2">
                 <div className="flex items-center justify-space-between gap-3">
-                    <h4 className="text-sm text-bold color-norm m-0">{c('collider_2025: Title').t`Tokens per day`}</h4>
+                    <h4 className="m-0 lumo-label-small lumo-color-glyph">{c('collider_2025: Title')
+                        .t`Tokens per day`}</h4>
                     <ApiTokenUsageLegend source="api" />
                 </div>
                 <div className="api-usage-main-chart">

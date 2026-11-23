@@ -72,7 +72,10 @@ const formatMemoryDate = (timestamp: number) => {
 
 const InfoTooltip = ({ title }: { title: string }) => (
     <Tooltip title={title}>
-        <span className="memory-panel-info inline-flex items-center color-weak" aria-label={title}>
+        <span
+            className="memory-panel-info inline-flex items-center radius-full lumo-color-glyph-mid"
+            aria-label={title}
+        >
             <LumoIcon name="Info" size={16} />
         </span>
     </Tooltip>
@@ -105,7 +108,7 @@ const MemoryEducation = ({ onEnable }: { onEnable?: () => void }) => {
         <section className="flex flex-column flex-nowrap flex-1 min-h-0 overflow-auto">
             <div className="flex flex-row flex-nowrap items-start gap-3 mb-5 pt-5">
                 <div className="flex flex-column flex-nowrap gap-1 flex-1 min-w-0">
-                    <p className="m-0 text-sm color-weak lh130">
+                    <p className="m-0 lumo-body-small lh130 lumo-color-glyph-mid">
                         {c('collider_2025: Description')
                             .t`Memory lets ${LUMO_SHORT_APP_NAME} remember stable preferences and context across general chats so you don't have to repeat yourself.`}
                     </p>
@@ -115,12 +118,12 @@ const MemoryEducation = ({ onEnable }: { onEnable?: () => void }) => {
             <ul className="unstyled m-0 p-0 flex flex-column flex-nowrap gap-5 mb-5">
                 {facts.map((fact) => (
                     <li key={fact.title} className="flex flex-row flex-nowrap items-start gap-3">
-                        <span className="shrink-0 inline-flex color-success mt-0.5" aria-hidden="true">
+                        <span className="inline-flex shrink-0 mt-0.5 lumo-color-signal-success" aria-hidden="true">
                             <LumoIcon name="Check" size={16} />
                         </span>
                         <div className="flex flex-column flex-nowrap gap-1 flex-1 min-w-0">
-                            <p className="m-0 text-sm text-semibold lh130">{fact.title}</p>
-                            <p className="m-0 text-sm color-weak lh130">{fact.body}</p>
+                            <p className="m-0 lumo-label-small lh130">{fact.title}</p>
+                            <p className="m-0 lumo-body-small lh130 lumo-color-glyph-mid">{fact.body}</p>
                         </div>
                     </li>
                 ))}
@@ -131,7 +134,7 @@ const MemoryEducation = ({ onEnable }: { onEnable?: () => void }) => {
                     <Button shape="solid" color="norm" onClick={onEnable}>
                         {c('collider_2025: Action').t`Turn on memory`}
                     </Button>
-                    <span className="text-sm color-weak text-center">
+                    <span className="lumo-body-small text-center lumo-color-glyph-mid">
                         {c('collider_2025: Hint').t`You can turn it off again at any time.`}
                     </span>
                 </div>
@@ -151,7 +154,7 @@ interface ToggleRowProps {
 const ToggleRow = ({ id, label, tooltip, checked, onChange }: ToggleRowProps) => (
     <div className="flex flex-row flex-nowrap items-center gap-3 py-1">
         <div className="flex flex-row flex-nowrap items-center gap-2 flex-1 min-w-0">
-            <span className="text-sm text-semibold">{label}</span>
+            <span className="lumo-label-large">{label}</span>
             <InfoTooltip title={tooltip} />
         </div>
         <Toggle id={id} checked={checked} onChange={onChange} className="shrink-0" />
@@ -189,7 +192,7 @@ const MemoryComposeForm = ({
             maxCharacterCount={MEMORY_MAX_CONTENT_LENGTH}
             showCharacterCount
             counterPosition="bottom-right"
-            characterCountClassName="text-xs text-right"
+            characterCountClassName="lumo-label-small text-right"
             className="memory-panel-compose-field w-full"
             placeholder={placeholder}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => onChange(e.target.value)}
@@ -234,9 +237,9 @@ const MemoryAddRow = ({ tipsTitle, onAdd, onCancel }: MemoryAddRowProps) => {
     };
 
     return (
-        <li className="memory-panel-list-item memory-panel-compose-row flex flex-column flex-nowrap gap-3 p-3">
-            <div className="flex flex-row flex-nowrap items-center gap-2 text-xs color-weak">
-                <span className="text-sm text-semibold color-norm">
+        <li className="memory-panel-list-item memory-panel-compose-row flex flex-column flex-nowrap gap-3 p-3 lumo-bg-panel">
+            <div className="flex flex-row flex-nowrap items-center gap-2 lumo-body-small lumo-color-glyph-mid">
+                <span className="lumo-label-small lumo-color-glyph">
                     {c('collider_2025: Title').t`Add your own memory`}
                 </span>
                 <InfoTooltip title={tipsTitle} />
@@ -287,10 +290,12 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
     const canSave = Boolean(trimmedDraft) && trimmedDraft !== memory.content;
 
     const metaRow = (
-        <div className="flex flex-row flex-nowrap items-center gap-2 text-xs color-weak">
+        <div className="flex flex-row flex-nowrap items-center gap-2 lumo-body-small lumo-color-glyph-mid">
             <time dateTime={new Date(memory.createdAt).toISOString()}>{formatMemoryDate(memory.createdAt)}</time>
             <span aria-hidden="true">·</span>
-            <span className={`memory-panel-source-pill${isUserMemory(memory) ? '' : ' is-generated'}`}>
+            <span
+                className={`memory-panel-source-pill${isUserMemory(memory) ? '' : ' is-generated'} px-1.5 py-px radius-full lumo-label-small lumo-color-glyph lumo-bg-control-fill-mid`}
+            >
                 {isUserMemory(memory) ? c('collider_2025: Label').t`You` : c('collider_2025: Label').t`From chats`}
             </span>
         </div>
@@ -298,7 +303,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
 
     if (isEditing) {
         return (
-            <li className="memory-panel-list-item memory-panel-compose-row flex flex-column flex-nowrap gap-3 p-3">
+            <li className="memory-panel-list-item memory-panel-compose-row flex flex-column flex-nowrap gap-3 p-3 lumo-bg-panel">
                 {metaRow}
                 <MemoryComposeForm
                     value={draft}
@@ -322,7 +327,7 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
         >
             <div className="flex flex-column flex-nowrap flex-1 min-w-0 gap-1">
                 {metaRow}
-                <p dir="auto" className="m-0 text-sm lh130 text-break w-full">
+                <p dir="auto" className="w-full m-0 lumo-body-small lh130 text-break">
                     {memory.content}
                 </p>
             </div>
@@ -669,7 +674,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
         <div className="memory-panel flex flex-column flex-nowrap h-full min-h-0 min-w-0 overflow-hidden">
             <div className="flex flex-column flex-nowrap flex-1 gap-2 min-h-0 overflow-hidden pb-1">
                 {isMemoryEnabled && (
-                    <div className="flex flex-column flex-nowrap gap-2 shrink-0">
+                    <div className="flex flex-column flex-nowrap shrink-0 gap-2 mb-2">
                         <ToggleRow
                             id="memory-autosave-toggle"
                             label={c('collider_2025: Title').t`Auto update memory`}
@@ -687,20 +692,20 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
 
                 {isMemoryEnabled && (
                     <div className="flex flex-column flex-nowrap flex-1 min-h-0 gap-2">
-                        <h3 className="memory-panel-section-title m-0 text-sm text-semibold shrink-0">
+                        <h3 className="memory-panel-section-title shrink-0 m-0 lumo-label-large">
                             {c('collider_2025: Title').t`Saved memories`}
-                            {hasMemories && <span className="color-weak text-normal"> ({memories.length})</span>}
+                            {hasMemories && <span className="lumo-color-glyph-mid"> ({memories.length})</span>}
                         </h3>
 
                         {suggestOptimize && (
-                            <p className="memory-panel-optimize-hint m-0 text-sm color-weak shrink-0">
+                            <p className="memory-panel-optimize-hint shrink-0 m-0 lumo-body-small lumo-color-glyph-mid">
                                 {c('collider_2025: Info')
                                     .t`You have many saved memories. Optimize merges duplicate chat-based entries and keeps the list focused.`}
                             </p>
                         )}
 
-                        <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 rounded-lg border border-weak bg-weak overflow-hidden">
-                            <header className="memory-panel-toolbar shrink-0 flex flex-row flex-nowrap items-center justify-space-between gap-x-2 gap-y-1 py-2 px-3 border-bottom border-weak bg-norm overflow-auto">
+                        <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 overflow-hidden border lumo-border radius-12 lumo-bg-control-fill">
+                            <header className="memory-panel-toolbar flex flex-row flex-nowrap shrink-0 items-center justify-space-between gap-x-2 gap-y-1 px-3 py-2 overflow-auto border-bottom lumo-border lumo-bg-panel">
                                 <div className="flex flex-row flex-nowrap items-center gap-1 shrink-0">
                                     {showUpdateFromChatsButton && (
                                         <Button
@@ -710,7 +715,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                             onClick={handleUpdateFromChats}
                                             disabled={!canGenerateFromChats || isGenerating}
                                             loading={isBootstrapping}
-                                            className="flex flex-row flex-nowrap items-center text-sm shrink-0"
+                                            className="flex flex-row flex-nowrap shrink-0 items-center lumo-body-small"
                                         >
                                             <LumoIcon name="WandSparkles" size={14} className="mr-2" />
                                             {updateButtonLabel}
@@ -723,7 +728,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                             shape="ghost"
                                             size="small"
                                             color="norm"
-                                            className="text-sm shrink-0"
+                                            className="shrink-0 lumo-body-small"
                                             onClick={() => optimizeModal.openModal(true)}
                                         >
                                             {c('collider_2025: Action').t`Optimize memories`}
@@ -734,7 +739,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                             shape="ghost"
                                             size="small"
                                             color="danger"
-                                            className="text-sm shrink-0"
+                                            className="shrink-0 lumo-body-small"
                                             onClick={() => clearGeneratedModal.openModal(true)}
                                         >
                                             {c('collider_2025: Action').t`Clear auto-generated`}
@@ -745,14 +750,17 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                             shape="ghost"
                                             size="small"
                                             color="danger"
-                                            className="text-sm shrink-0"
+                                            className="shrink-0 lumo-body-small"
                                             onClick={() => clearAllModal.openModal(true)}
                                         >
                                             {c('collider_2025: Action').t`Clear all`}
                                         </Button>
                                     )}
                                     {(canOptimize || generatedMemories.length > 0 || hasMemories) && (
-                                        <span className="memory-panel-toolbar-divider shrink-0" aria-hidden="true" />
+                                        <span
+                                            className="memory-panel-toolbar-divider mx-0.5 shrink-0"
+                                            aria-hidden="true"
+                                        />
                                     )}
                                     <Tooltip title={c('collider_2025: Action').t`Add memory`}>
                                         <Button
@@ -797,13 +805,16 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                 </ul>
                             ) : (
                                 <div className="flex flex-column flex-nowrap items-center justify-center gap-2 py-6 px-4 text-center flex-1 min-h-0 overflow-y-auto">
-                                    <span className="memory-panel-empty-icon mb-1" aria-hidden="true">
+                                    <span
+                                        className="memory-panel-empty-icon mb-1 radius-full lumo-color-glyph-mid lumo-bg-panel"
+                                        aria-hidden="true"
+                                    >
                                         <LumoIcon name="Archive" size={20} />
                                     </span>
-                                    <p className="m-0 text-sm text-semibold">
+                                    <p className="m-0 lumo-label-small">
                                         {c('collider_2025: Title').t`No memories yet`}
                                     </p>
-                                    <p className="memory-panel-empty-hint m-0 text-sm color-weak lh130">
+                                    <p className="memory-panel-empty-hint m-0 lumo-body-small lh130 lumo-color-glyph-mid">
                                         {c('collider_2025: Info')
                                             .t`Generate them from your recent chats, or add one with + above.`}
                                     </p>
@@ -823,8 +834,8 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                             )}
 
                             {!hasMemories && isAddingMemory && (
-                                <div className="memory-panel-compose-footer shrink-0 flex flex-column flex-nowrap items-center gap-2 py-4 px-4 text-center border-top border-weak">
-                                    <p className="m-0 text-sm color-weak lh130">
+                                <div className="memory-panel-compose-footer flex flex-column flex-nowrap shrink-0 items-center gap-2 px-4 py-4 border-top lumo-border text-center">
+                                    <p className="m-0 lumo-body-small lh130 lumo-color-glyph-mid">
                                         {c('collider_2025: Info').t`Or pull suggestions from your recent chats.`}
                                     </p>
                                     <Button
@@ -846,15 +857,9 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             </div>
 
             {isMemoryEnabled && (
-                <div className="shrink-0 flex flex-row flex-nowrap items-center gap-2 justify-space-between pt-3">
-                    <span className="text-sm color-hint">{disableMemoryText}</span>
-                    <Button
-                        onClick={handleToggleEnableMemory}
-                        color="danger"
-                        shape="outline"
-                        size="small"
-                        className="text-sm md:text-rg"
-                    >
+                <div className="flex flex-row flex-nowrap shrink-0 items-center justify-space-between gap-2 py-3">
+                    <span className="lumo-body-small lumo-color-glyph-mid">{disableMemoryText}</span>
+                    <Button onClick={handleToggleEnableMemory} color="danger" shape="outline" size="small">
                         {c('collider_2025: Action').t`Turn off memory`}
                     </Button>
                 </div>

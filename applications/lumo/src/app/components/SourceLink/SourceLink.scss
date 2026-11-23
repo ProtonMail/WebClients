@@ -1,7 +1,7 @@
 .source-link {
 	&:hover,
 	&:focus-within {
-		background-color: var(--background-strong);
+		background-color: var(--lumo-control-fill-mid);
 	}
 
 	.source-link-target {
@@ -12,7 +12,7 @@
 }
 
 .source-clamp {
-	display: -webkit-box;
+	display: box;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
@@ -25,7 +25,6 @@
 .source-link-toggle {
 	align-self: flex-start;
 	cursor: pointer;
-	padding: 0;
 	background: none;
 	border: none;
 

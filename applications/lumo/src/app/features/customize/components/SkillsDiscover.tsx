@@ -105,15 +105,15 @@ export const SkillsDiscover = ({
             {showUpsell ? (
                 <PluginsUpsellHero headingId={headingId} maxActiveSkills={maxActiveSkills} upgradePath={upgradePath} />
             ) : (
-                <header className="customize-discover-hero flex flex-column flex-nowrap gap-4 rounded-xl p-6">
+                <header className="customize-discover-hero flex flex-column flex-nowrap gap-4 p-6 border lumo-border radius-16">
                     <div className="flex flex-column flex-nowrap gap-2">
-                        <span className="text-xs text-semibold text-uppercase color-weak">
+                        <span className="lumo-label-small text-uppercase lumo-color-glyph-mid">
                             {getCatalogueSummary(plugins)}
                         </span>
-                        <h2 className="m-0 text-3xl text-bold" id={headingId}>
+                        <h2 className="m-0 lumo-title-large" id={headingId}>
                             {c('collider_2025:Title').t`Skill sets from ${BRAND_NAME}`}
                         </h2>
-                        <p className="m-0 color-weak max-w-custom" style={{ '--max-w-custom': '36rem' }}>
+                        <p className="max-w-custom m-0 lumo-color-glyph-mid" style={{ '--max-w-custom': '36rem' }}>
                             {c('collider_2025:Info')
                                 .t`Each skill set brings together related skills. Use them with / in any chat, or let ${LUMO_SHORT_APP_NAME} pick the right one for you.`}
                         </p>
@@ -140,7 +140,8 @@ export const SkillsDiscover = ({
             </div>
 
             {sections.length === 0 ? (
-                <p className="m-0 text-sm color-weak">{c('collider_2025:Info').t`No skills match your search.`}</p>
+                <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
+                    .t`No skills match your search.`}</p>
             ) : (
                 sections.map((section) => (
                     <section
@@ -149,13 +150,13 @@ export const SkillsDiscover = ({
                         aria-labelledby={`${headingId}-${section.id}`}
                     >
                         <div className="flex flex-column flex-nowrap gap-0.5">
-                            <h3 className="m-0 text-lg text-semibold" id={`${headingId}-${section.id}`}>
+                            <h3 className="m-0 lumo-title-medium" id={`${headingId}-${section.id}`}>
                                 {section.title}
                             </h3>
-                            <span className="text-sm color-weak">{section.description}</span>
+                            <span className="lumo-body-small lumo-color-glyph-mid">{section.description}</span>
                         </div>
                         <div
-                            className="customize-discover-grid"
+                            className="customize-discover-grid gap-4"
                             style={{ gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))` }}
                         >
                             {section.plugins.map((plugin) => (

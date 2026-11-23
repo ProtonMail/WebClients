@@ -75,7 +75,7 @@ const UploadMenuSection = ({
                 ref={uploadButtonRef}
                 icon
                 className={clsx(
-                    'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center rounded-full',
+                    'flex flex-row flex-nowrap shrink-0 items-center gap-1 border-0 radius-full',
                     showUploadMenu && 'is-active'
                 )}
                 onClick={handleUploadButtonClick}
@@ -184,14 +184,14 @@ export const ComposerToolbar = ({
     }
 
     return (
-        <div className="composer-toolbar flex flex-row items-center justify-space-between column-gap-1.5 w-full px-2 py-1">
+        <div className="composer-toolbar flex flex-row items-center justify-space-between gap-x-1.5 w-full px-2 py-1">
             <UploadMenuSection {...uploadSectionProps} />
             {(isToolsFlagEnabled || isArtifactsViewFlagEnabled) && !isCreateImageMode && !isAgent && (
                 <>
                     <Button
                         ref={anchorRef}
                         className={clsx(
-                            'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center px-2 py-1.5 rounded-full',
+                            'flex flex-row flex-nowrap shrink-0 items-center gap-2 px-2 py-1.5 border-0 radius-full',
                             showToolsMenu && 'is-active'
                         )}
                         onClick={handleToolsButtonClick}
@@ -201,7 +201,7 @@ export const ComposerToolbar = ({
                         aria-label={c('collider_2025: Button').t`Tools`}
                     >
                         <LumoIcon name="SlidersHorizontal" />
-                        <span className="composer-toolbar__action-label text-sm">{c('collider_2025: Button')
+                        <span className="composer-toolbar__action-label lumo-body-small">{c('collider_2025: Button')
                             .t`Tools`}</span>
                     </Button>
                     <ToolMenuDropdown
@@ -217,14 +217,14 @@ export const ComposerToolbar = ({
             {isCreateImageMode && (
                 <Button
                     onClick={() => onCreateImageModeChange(false)}
-                    className="border-none shrink-0 flex flex-row flex-nowrap gap-2 items-center color-primary py-1.5 rounded-full group-hover-opacity-container hover:color-primary"
+                    className="composer-toolbar__image-mode group-hover-opacity-container flex flex-row flex-nowrap shrink-0 items-center gap-2 py-1.5 border-none radius-full lumo-color-glyph-brand-text"
                     shape="ghost"
                     size="small"
                     title={c('collider_2025: Button').t`Create image`}
                     aria-label={c('collider_2025: Button').t`Create image`}
                 >
                     <LumoIcon name="Palette" size={16} />
-                    <span className="composer-toolbar__action-label text-sm">{c('collider_2025: Button')
+                    <span className="composer-toolbar__action-label lumo-body-small">{c('collider_2025: Button')
                         .t`Create image`}</span>
                     <LumoIcon name="X" width={12} height={12} className="group-hover:opacity-100" />
                 </Button>
@@ -233,7 +233,10 @@ export const ComposerToolbar = ({
             <div className="ml-auto" />
 
             <div
-                className={clsx('flex flex-row flex-nowrap gap-2 color-hint', !isDictationV2Enabled && 'hidden')}
+                className={clsx(
+                    'flex flex-row flex-nowrap gap-2 lumo-color-glyph-mid',
+                    !isDictationV2Enabled && 'hidden'
+                )}
                 id="voice-entry-mobile"
             >
                 <DictationControl
@@ -247,7 +250,7 @@ export const ComposerToolbar = ({
                     <Button
                         icon
                         id="voice-entry-mobile-button"
-                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center rounded-full"
+                        className="inline-flex flex-row flex-nowrap shrink-0 items-center gap-1 border-0 radius-full"
                         shape="ghost"
                         size="small"
                         onClick={handleVoiceEntryClick}

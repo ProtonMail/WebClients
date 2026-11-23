@@ -1,21 +1,34 @@
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
+@use 'sass:meta';
+@use './lumo-tokens';
+@use './lumo-proton-overrides';
 
-// Scoped token layer for the Lumo design language. A consumer wraps its subtree in `.lumo-ui` to opt
-// into the tuned palette; every component below also names a raw theme-token fallback, so each element
-// still renders correctly on its own. Every value maps to a real Proton theme token — no hard-coded
-// hex — so light/dark/contrast themes keep working automatically.
+@include lumo-proton-overrides.overrides('.lumo-ui');
+
+// Utilities load after the adapter so a class on an element overrides it at equal specificity,
+// and before this file's component styles, as before.
+@include meta.load-css('lumo-utilities');
+
+// The opt-in scope provides Lumo tokens and compatibility aliases for existing UI.
+// Individual shared components keep their fallbacks when used outside this scope.
 .lumo-ui {
+	@include lumo-tokens.stable;
+	@include lumo-tokens.light;
+
 	--lumo-surface: var(--background-norm);
 	--lumo-surface-soft: var(--background-weak);
 	--lumo-accent: var(--interaction-norm);
 	--lumo-accent-tint: var(--interaction-norm-minor-2);
 	--lumo-text: var(--text-norm);
 	--lumo-text-weak: var(--text-weak);
-	--lumo-border: var(--border-weak);
 	--lumo-radius-card: var(--border-radius-lg);
 	--lumo-radius-pill: var(--border-radius-full);
-	--lumo-ease: 0.2s ease-in-out;
+}
+
+// Embedded consumers follow the host's resolved preference, including automatic mode.
+:where([data-theme-mode='dark']) .lumo-ui {
+	@include lumo-tokens.dark;
 }
 
 // The generating cat + a pulsing status label, shown while the assistant works. The artwork under-fills
@@ -24,7 +37,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 0.5rem;
+	gap: var(--lumo-space-8);
 
 	&__cat {
 		display: flex;
@@ -42,7 +55,7 @@
 
 	// Gentle pulse on the label, echoing lumo.proton.me's shimmering status text.
 	&__text {
-		animation: lumo-busy-pulse 1.6s ease-in-out infinite;
+		animation: lumo-busy-pulse 1.6s var(--lumo-easing-standard) infinite;
 	}
 }
 
@@ -72,7 +85,7 @@
 		inline-size: 40%;
 		border-radius: inherit;
 		background-color: var(--lumo-accent, var(--interaction-norm));
-		animation: lumo-loading-slide 1.2s ease-in-out infinite;
+		animation: lumo-loading-slide 1.2s var(--lumo-easing-standard) infinite;
 	}
 }
 
@@ -100,7 +113,7 @@
 	&__summary {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: var(--lumo-space-8);
 		cursor: pointer;
 		color: var(--lumo-text-weak, var(--text-weak));
 		list-style: none;
@@ -111,7 +124,7 @@
 	}
 
 	&__chevron {
-		transition: transform var(--lumo-ease, 0.2s ease-in-out);
+		transition: transform var(--lumo-duration-200) var(--lumo-easing-standard);
 	}
 
 	&[open] &__chevron {
@@ -123,8 +136,8 @@
 // long line can never widen or overlay the host.
 .lumo-chip__payload {
 	max-inline-size: 100%;
-	margin-block: 0.5rem 0;
-	padding: 0.5rem;
+	margin-block: var(--lumo-space-8) 0;
+	padding: var(--lumo-space-8);
 	border-radius: var(--border-radius-md);
 	background-color: var(--lumo-surface-soft, var(--background-weak));
 	font-family: monospace;
@@ -136,11 +149,11 @@
 .lumo-server-tool {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: var(--lumo-space-8);
 	min-inline-size: 0;
 
 	&__sources {
-		padding-inline-start: 1.25rem;
+		padding-inline-start: var(--lumo-space-20);
 	}
 
 	&__source {
@@ -170,17 +183,26 @@
 	// The field's own line-height + padding fill exactly this on one line, so the text is centred by its
 	// padding and the bottom-pinned button lands on the same centre; extra lines just grow the box.
 	min-block-size: rem(40);
-	padding-inline: rem(12);
+	padding-inline: var(--lumo-space-12);
 	border-radius: var(--border-radius-xl);
 	border: 1px solid var(--lumo-border, var(--border-weak));
 	background-color: var(--lumo-surface, var(--background-norm));
-	transition:
-		border-color var(--lumo-ease, 0.2s ease-in-out),
-		box-shadow var(--lumo-ease, 0.2s ease-in-out);
+	box-shadow: inset 0 0 0 1px transparent;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition:
+			border-color var(--lumo-duration-200) var(--lumo-easing-standard),
+			box-shadow var(--lumo-duration-200) var(--lumo-easing-standard);
+	}
 
 	&:focus-within {
-		border-color: var(--lumo-accent, var(--interaction-norm));
-		box-shadow: 0 0 0 3px var(--focus-ring);
+		border-color: var(--lumo-control-border-focus, var(--focus-outline));
+		box-shadow: inset 0 0 0 1px var(--lumo-control-border-focus, var(--focus-outline));
+
+		@media (forced-colors: active) {
+			outline: 2px solid Highlight;
+			outline-offset: -2px;
+		}
 	}
 
 	// The textarea owns no chrome — the wrapper is the affordance. It spans the full width and reserves
@@ -192,7 +214,7 @@
 		inline-size: 100%;
 		min-inline-size: 0;
 		max-block-size: 12rem;
-		padding-block: rem(10);
+		padding-block: var(--lumo-space-10);
 		padding-inline-end: rem(28);
 		overflow-y: auto;
 		border: 0;
@@ -363,7 +385,7 @@ $lumo-row-height: $lumo-row-line * 2 + $lumo-row-padding * 2;
 	// The glyph tile centres on the card rather than topping out with the title: the cards are two and
 	// three lines tall, so a top-aligned tile reads as hanging off the corner of the taller ones.
 	align-items: center;
-	gap: rem(10);
+	gap: var(--lumo-space-10);
 	padding: var(--space-3);
 	border-radius: var(--lumo-radius-card, var(--border-radius-lg));
 	text-align: start;
@@ -388,7 +410,7 @@ $lumo-row-height: $lumo-row-line * 2 + $lumo-row-padding * 2;
 	// Tighter than body text: the description is three lines on the longest card and reads as a block,
 	// set off the title by a hair so the two do not run together.
 	&__description {
-		margin-block-start: rem(2);
+		margin-block-start: var(--lumo-space-2);
 		line-height: 1.35;
 	}
 }

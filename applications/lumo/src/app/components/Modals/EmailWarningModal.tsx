@@ -44,17 +44,17 @@ const EmailWarningModal = ({ url, onClose, ...modalProps }: Props) => {
 
                         {/* Email details */}
                         <dl className="m-0 p-3 border rounded bg-weak">
-                            <dt className="mb-1 text-sm text-bold color-primary">{
+                            <dt className="mb-1 lumo-label-medium lumo-color-glyph-brand-text">{
                                 // translator: Email field label for the primary recipients.
                                 c('collider_2025:Email recipient label').t`To`
                             }</dt>
-                            <dd className="m-0 text-lg text-bold text-break" dir="auto">
+                            <dd className="m-0 lumo-title-medium text-break" dir="auto">
                                 {email.to.join(', ') || labels.noRecipient}
                             </dd>
                             {/* CC recipients */}
                             {email.cc.length > 0 && (
                                 <>
-                                    <dt className="mt-3 mb-1 text-sm text-bold color-primary">{
+                                    <dt className="mt-3 mb-1 lumo-label-medium lumo-color-glyph-brand-text">{
                                         // translator: Email field label for carbon-copy recipients, whose addresses are visible to other recipients.
                                         c('collider_2025:Email recipient label').t`CC`
                                     }</dt>
@@ -66,7 +66,7 @@ const EmailWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                             {/* BCC recipients */}
                             {email.bcc.length > 0 && (
                                 <>
-                                    <dt className="mt-3 mb-1 text-sm text-bold color-primary">{
+                                    <dt className="mt-3 mb-1 lumo-label-medium lumo-color-glyph-brand-text">{
                                         // translator: Email field label for blind-carbon-copy recipients, whose addresses are hidden from other recipients.
                                         c('collider_2025:Email recipient label').t`BCC (hidden recipients)`
                                     }</dt>
@@ -78,7 +78,7 @@ const EmailWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                             {/* Subject */}
                             {email.subject && (
                                 <>
-                                    <dt className="mt-3 mb-1 text-sm text-bold color-primary">{
+                                    <dt className="mt-3 mb-1 lumo-label-medium lumo-color-glyph-brand-text">{
                                         // translator: Email field label for the title of the draft message.
                                         c('collider_2025:Email field label').t`Subject`
                                     }</dt>
@@ -92,7 +92,7 @@ const EmailWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                         {/* Prefilled message */}
                         {email.body && (
                             <div className="p-3 border rounded bg-weak">
-                                <h3 className="m-0 mb-2 text-sm text-bold color-primary">
+                                <h3 className="m-0 mb-2 lumo-title-small lumo-color-glyph-brand-text">
                                     {
                                         // translator: Heading above the email body supplied by the link, asking the user to review it before opening their email app.
                                         c('collider_2025:Action').t`Review prefilled message`
@@ -105,7 +105,7 @@ const EmailWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                         )}
 
                         {/* Safety information */}
-                        <p className="m-0 mt-2 text-sm color-weak">
+                        <p className="m-0 mt-2 lumo-body-medium lumo-color-glyph-mid">
                             {
                                 // translator: Safety warning to review all recipients and the supplied email body before handing the draft to an email app.
                                 c('collider_2025:Disclaimer')
@@ -114,7 +114,7 @@ const EmailWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                         </p>
 
                         {/* Privacy disclaimer */}
-                        <p className="m-0 text-sm color-weak">
+                        <p className="m-0 lumo-body-medium lumo-color-glyph-mid">
                             {
                                 // translator: LUMO_SHORT_APP_NAME is the product name. Opening the link creates a draft in another app; it does not send email.
                                 c('collider_2025:Disclaimer')

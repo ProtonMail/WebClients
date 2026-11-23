@@ -31,9 +31,9 @@ export const getPluginMeta = (plugin: ProtonPlugin) => {
 };
 
 const PLUGIN_ICON_SIZES = {
-    small: { box: '1.75rem', icon: 16, radius: 'rounded-lg' },
-    medium: { box: '2.75rem', icon: 22, radius: 'rounded-xl' },
-    large: { box: '3rem', icon: 24, radius: 'rounded-xl' },
+    small: { box: '1.75rem', icon: 16, radius: 'radius-12' },
+    medium: { box: '2.75rem', icon: 22, radius: 'radius-16' },
+    large: { box: '3rem', icon: 24, radius: 'radius-16' },
 };
 
 export const PluginIcon = ({
@@ -62,7 +62,7 @@ export const PluginIcon = ({
 export const PluginExample = ({ plugin }: { plugin: ProtonPlugin }) => {
     const example = plugin.getExample();
     return (
-        <p className="m-0 flex flex-nowrap items-start gap-2 rounded-lg bg-weak px-3 py-2 text-sm color-weak">
+        <p className="flex flex-nowrap items-start gap-2 m-0 px-3 py-2 radius-12 lumo-body-small lumo-color-glyph-mid lumo-bg-control-fill">
             <LumoIcon name="MessageSquare" size={14} className="shrink-0 mt-0.5" />
             <span className="text-ellipsis-two-lines">{c('collider_2025:Info').t`Try “${example}”`}</span>
         </p>
@@ -84,19 +84,19 @@ export const ProtonPluginCard = ({
         <Card
             as="article"
             background={false}
-            className="customize-plugin-card relative flex flex-column flex-nowrap gap-4 min-w-0 rounded-xl p-5"
+            className="customize-plugin-card relative flex flex-column flex-nowrap gap-4 min-w-0 p-5 lumo-border radius-16 lumo-bg-panel-elevated"
         >
             <div className="flex flex-nowrap items-start gap-3 min-w-0">
                 <PluginIcon plugin={plugin} />
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0 gap-0.5">
-                    <h4 className="m-0 text-rg text-semibold text-ellipsis">
+                    <h4 className="m-0 lumo-title-small text-ellipsis">
                         <button type="button" className="expand-click-area text-left" onClick={onPreview}>
                             {title}
                         </button>
                     </h4>
-                    <span className="text-xs color-weak">
+                    <span className="lumo-label-small lumo-color-glyph-mid">
                         {added ? (
-                            <span className="inline-flex flex-nowrap items-center gap-1 color-success">
+                            <span className="inline-flex flex-nowrap items-center gap-1 lumo-color-signal-success">
                                 <LumoIcon name="Check" size={12} />
                                 {c('collider_2025:Info').t`Added`}
                             </span>
@@ -147,7 +147,7 @@ export const ProtonPluginCard = ({
                 )}
             </div>
 
-            <p className="m-0 text-sm text-ellipsis-two-lines">{plugin.getDescription()}</p>
+            <p className="m-0 lumo-body-small text-ellipsis-two-lines">{plugin.getDescription()}</p>
 
             <div className="mt-auto">
                 <PluginExample plugin={plugin} />

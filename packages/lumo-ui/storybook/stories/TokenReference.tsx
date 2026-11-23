@@ -3,15 +3,20 @@ import { useEffect, useRef, useState } from 'react';
 import type { Appearance } from './ThemeScope';
 import { ThemeStyles, scopeClass } from './ThemeScope';
 
-type Token = {
-    name: string;
-    light: string;
-    dark: string;
-    color: boolean;
-    primitiveLabels?: Record<Appearance, string>;
+type TokenValue = {
+    value: string;
+    label: string;
 };
 
-const semanticColors = /^--lumo-(glyph|border|control|canvas|panel|overlay|layer|scrim|signal|artifact|white|black)/;
+type Token = {
+    name: string;
+    light: TokenValue;
+    dark: TokenValue;
+    color: boolean;
+};
+
+const semanticColors =
+    /^--lumo-(glyph|border|control|page|panel|notice|overlay|layer|scrim|signal|artifact|white|black)/;
 const colorPrimitives = /^--(color-|iris-|neutral-|red-|amber-|teal-|sky-)/;
 
 const groups = [
@@ -19,7 +24,7 @@ const groups = [
         title: 'Semantic colors',
         themed: true,
         description:
-            'Use roles that describe intent. Each swatch shows its primitive name or identifies a custom color.',
+            'Use roles that describe intent. Each swatch shows the referenced token name or the hex value of a custom color.',
         match: semanticColors,
     },
     {
@@ -45,7 +50,7 @@ const groups = [
     },
     {
         title: 'Typography',
-        description: 'Complete type roles, font families, tracking, and weights.',
+        description: 'Complete type roles, font families, sizes, tracking, and weights.',
         match: /^--lumo-(type|font)-/,
     },
     {
@@ -121,9 +126,25 @@ function getDeclaredCustomProperties() {
     return names;
 }
 
-function getPrimitiveLabel(declaration: string | undefined) {
-    const reference = declaration?.match(/^var\(\s*(--[\w-]+)\s*\)$/)?.[1];
-    return reference && colorPrimitives.test(reference) ? reference.slice(2) : 'Custom color';
+function getHexColor(value: string, context: CanvasRenderingContext2D | null) {
+    if (!context) {
+        return value;
+    }
+
+    // The browser normalizes opaque sRGB colors to hex and translucent colors to rgba().
+    context.fillStyle = value;
+    const color = String(context.fillStyle);
+    const channels = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/);
+    if (!channels) {
+        return color;
+    }
+
+    const [, red, green, blue, alpha] = channels;
+    const bytes = [Number(red), Number(green), Number(blue)];
+    if (alpha !== undefined && Number(alpha) < 1) {
+        bytes.push(Math.round(Number(alpha) * 255));
+    }
+    return `#${bytes.map((byte) => byte.toString(16).padStart(2, '0')).join('')}`;
 }
 
 export function TokenReference() {
@@ -137,23 +158,31 @@ export function TokenReference() {
         const light = getComputedStyle(lightRef.current);
         const dark = getComputedStyle(darkRef.current);
         const declarations = getColorDeclarations();
+        const context = document.createElement('canvas').getContext('2d');
         // Read the loaded CSS rather than keeping a second copy of token values in documentation.
         setTokens(
             Array.from(new Set([...Array.from(light), ...getDeclaredCustomProperties()]))
                 .filter((name) => groups.some(({ match }) => match.test(name)) && light.getPropertyValue(name).trim())
                 .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-                .map((name) => ({
-                    name,
-                    light: light.getPropertyValue(name).trim(),
-                    dark: dark.getPropertyValue(name).trim(),
-                    color: CSS.supports('color', light.getPropertyValue(name).trim()),
-                    primitiveLabels: semanticColors.test(name)
-                        ? {
-                              light: getPrimitiveLabel(declarations.light.get(name) ?? declarations.base.get(name)),
-                              dark: getPrimitiveLabel(declarations.dark.get(name) ?? declarations.base.get(name)),
-                          }
-                        : undefined,
-                }))
+                .map((name) => {
+                    const lightValue = light.getPropertyValue(name).trim();
+                    const color = CSS.supports('color', lightValue);
+                    const getValue = (appearance: Appearance, value: string): TokenValue => {
+                        if (!color) {
+                            return { value, label: value };
+                        }
+                        const declaration = declarations[appearance].get(name) ?? declarations.base.get(name);
+                        const alias = declaration?.match(/^var\(\s*(--[\w-]+)\s*\)$/)?.[1];
+                        return { value, label: alias ?? getHexColor(value, context) };
+                    };
+
+                    return {
+                        name,
+                        light: getValue('light', lightValue),
+                        dark: getValue('dark', dark.getPropertyValue(name).trim()),
+                        color,
+                    };
+                })
         );
     }, []);
     return (
@@ -189,22 +218,23 @@ export function TokenReference() {
                                                 <code>{token.name}</code>
                                             </th>
                                             {(themed ? (['light', 'dark'] as const) : (['light'] as const)).map(
-                                                (theme) => (
-                                                    <td key={theme}>
-                                                        <div className="ds-token-table__value">
-                                                            {token.color && (
-                                                                <span
-                                                                    className="ds-token-table__swatch"
-                                                                    style={{ backgroundColor: token[theme] }}
-                                                                    aria-hidden="true"
-                                                                />
-                                                            )}
-                                                            <code>
-                                                                {token.primitiveLabels?.[theme] ?? token[theme]}
-                                                            </code>
-                                                        </div>
-                                                    </td>
-                                                )
+                                                (theme) => {
+                                                    const { value, label } = token[theme];
+                                                    return (
+                                                        <td key={theme}>
+                                                            <div className="ds-token-table__value">
+                                                                {token.color && (
+                                                                    <span
+                                                                        className="ds-token-table__swatch"
+                                                                        style={{ backgroundColor: value }}
+                                                                        aria-hidden="true"
+                                                                    />
+                                                                )}
+                                                                <code>{label}</code>
+                                                            </div>
+                                                        </td>
+                                                    );
+                                                }
                                             )}
                                         </tr>
                                     ))}

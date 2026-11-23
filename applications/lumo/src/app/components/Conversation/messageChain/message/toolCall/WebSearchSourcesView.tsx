@@ -53,7 +53,7 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
         <>
             <div className="flex flex-column flex-nowrap h-full p-4" ref={sourcesContainerRef}>
                 <div className="flex flex-row flex-nowrap items-center justify-space-between mb-4 shrink-0">
-                    <p className="m-0 text-lg text-bold">{c('collider_2025: Web Search').t`Sources`}</p>
+                    <p className="m-0 lumo-title-medium">{c('collider_2025: Web Search').t`Sources`}</p>
                     <Button
                         icon
                         className="shrink-0"

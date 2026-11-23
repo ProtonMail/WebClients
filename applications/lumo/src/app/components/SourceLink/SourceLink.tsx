@@ -7,10 +7,10 @@ import { Href } from '@proton/atoms/Href/Href';
 import clsx from '@proton/utils/clsx';
 
 import type { SearchItem } from '../../lib/toolCall/types';
+import { SourceFavIcon } from '../Conversation/messageChain/message/toolCall/SourcesBlock';
+import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 
 import './SourceLink.scss';
-import {getDomain} from "../Conversation/messageChain/message/toolCall/helpers";
-import {SourceFavIcon} from "../Conversation/messageChain/message/toolCall/SourcesBlock";
 
 interface SourceLinkProps {
     result: SearchItem;
@@ -65,29 +65,32 @@ const SourceLink = ({ result, handleLinkClick }: SourceLinkProps) => {
     }
 
     return (
-        <div className="source-link color-norm rounded p-2 w-full flex flex-column flex-nowrap gap-2">
+        <div className="source-link flex flex-column flex-nowrap gap-2 w-full p-2 radius-8 lumo-color-glyph">
             <Href
                 onClick={(e) => handleLinkClick(e, result.url)}
-                className="source-link-target color-norm flex flex-column flex-nowrap gap-2"
+                className="source-link-target flex flex-column flex-nowrap gap-2 lumo-color-glyph"
             >
                 <div className="flex flex-row flex-nowrap gap-2 items-center shrink-0">
                     <SourceFavIcon domain={domain} />
-                    <span className="text-sm color-weak text-bold w-full text-ellipsis">{domain}</span>
+                    <span className="w-full lumo-label-small text-ellipsis lumo-color-glyph-mid">{domain}</span>
                 </div>
-                <p className="m-0 text-bold source-clamp source-clamp-2 hover:text-underline">{result.title}</p>
+                <p className="m-0 lumo-label-large source-clamp source-clamp-2 hover:text-underline">{result.title}</p>
             </Href>
             {description && (
                 <>
                     <p
                         ref={descriptionRef}
-                        className={clsx('m-0 color-weak w-full text-sm', !expanded && 'source-clamp source-clamp-2')}
+                        className={clsx(
+                            'w-full m-0 lumo-body-small lumo-color-glyph-mid',
+                            !expanded && 'source-clamp source-clamp-2'
+                        )}
                     >
                         {description}
                     </p>
                     {(canExpand || expanded) && (
                         <button
                             type="button"
-                            className="source-link-toggle text-sm text-bold color-weak unstyled"
+                            className="source-link-toggle p-0 unstyled lumo-label-small lumo-color-glyph-mid"
                             onClick={() => setExpanded((prev) => !prev)}
                         >
                             {expanded

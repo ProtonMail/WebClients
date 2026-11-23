@@ -36,7 +36,13 @@ const Segments = ({ segments }: { segments: DiffSegment[] }) => (
                 {segment.type === 'same' ? (
                     segment.text
                 ) : (
-                    <span className={segment.type === 'removed' ? 'memory-diff-removed' : 'memory-diff-added'}>
+                    <span
+                        className={
+                            segment.type === 'removed'
+                                ? 'memory-diff-removed px-0.5 radius-4'
+                                : 'memory-diff-added px-0.5 radius-4'
+                        }
+                    >
                         {segment.text}
                     </span>
                 )}
@@ -46,7 +52,7 @@ const Segments = ({ segments }: { segments: DiffSegment[] }) => (
 );
 
 const Card = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-    <div className={`rounded border border-weak p-3 text-sm lh130 text-break ${className}`}>{children}</div>
+    <div className={`p-3 border lumo-border radius-12 lumo-body-small text-break ${className}`}>{children}</div>
 );
 
 const getChangeLabel = (change: MemoryChange) => {
@@ -71,25 +77,25 @@ const ChangeItem = ({ change }: { change: MemoryChange }) => {
 
     return (
         <li className="flex flex-column flex-nowrap gap-2">
-            <span className="text-xs text-semibold color-weak text-uppercase">{getChangeLabel(change)}</span>
+            <span className="lumo-label-small text-uppercase lumo-color-glyph-mid">{getChangeLabel(change)}</span>
             {change.before.map((memory) => (
-                <Card key={memory.id} className="bg-weak">
+                <Card key={memory.id} className="lumo-bg-panel-elevated">
                     {change.after ? (
                         <Segments segments={diffWords(memory.content, afterText).before} />
                     ) : (
-                        <span className="memory-diff-removed">{memory.content}</span>
+                        <span className="memory-diff-removed px-0.5 radius-4">{memory.content}</span>
                     )}
                 </Card>
             ))}
             {change.before.length > 0 && change.after && (
-                <span className="flex justify-center color-weak" aria-hidden="true">
+                <span className="flex justify-center lumo-color-glyph-mid" aria-hidden="true">
                     <LumoIcon name="ChevronDown" size={16} />
                 </span>
             )}
             {change.after && (
                 <Card>
                     {change.before.length === 0 ? (
-                        <span className="memory-diff-added">{afterText}</span>
+                        <span className="memory-diff-added px-0.5 radius-4">{afterText}</span>
                     ) : (
                         <Segments segments={afterSegments} />
                     )}
@@ -125,13 +131,13 @@ export const MemoryOptimizePreviewModal = ({
         <ModalTwo {...modalProps} onClose={onDiscard} size="large">
             <ModalTwoHeader title={c('collider_2025: Title').t`Review optimized memories`} />
             <ModalTwoContent>
-                <p className="mt-0 mb-2 color-weak text-sm">
+                <p className="mt-0 mb-2 lumo-body-small lumo-color-glyph-mid">
                     {c('collider_2025: Description')
                         .t`Nothing has changed yet. Review the proposed changes below, then apply them or keep your current memories. Memories you wrote yourself are never changed.`}
                 </p>
-                <p className="mt-0 mb-4 text-sm color-weak">
-                    <span className="memory-diff-removed">{c('collider_2025: Label').t`Removed`}</span>{' '}
-                    <span className="memory-diff-added">{c('collider_2025: Label').t`Added`}</span>
+                <p className="mt-0 mb-4 lumo-body-small lumo-color-glyph-mid">
+                    <span className="memory-diff-removed px-0.5 radius-4">{c('collider_2025: Label').t`Removed`}</span>{' '}
+                    <span className="memory-diff-added px-0.5 radius-4">{c('collider_2025: Label').t`Added`}</span>
                 </p>
 
                 <ul className="unstyled m-0 p-0 flex flex-column flex-nowrap gap-5">
@@ -144,7 +150,7 @@ export const MemoryOptimizePreviewModal = ({
                 </ul>
 
                 {unchangedCount > 0 && (
-                    <p className="mt-4 mb-0 text-sm color-weak">
+                    <p className="mt-4 mb-0 lumo-body-small lumo-color-glyph-mid">
                         {c('collider_2025: Info').ngettext(
                             msgid`${unchangedCount} chat-based memory stays the same.`,
                             `${unchangedCount} chat-based memories stay the same.`,

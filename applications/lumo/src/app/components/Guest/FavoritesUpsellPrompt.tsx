@@ -27,12 +27,12 @@ const FavoritesUpsellPrompt = ({ ...modalProps }: ModalProps) => {
                         style={{ '--w-custom': '5.25rem', '--h-custom': '5.625rem' }}
                     />
                     {/* translator: Save your favorites */}
-                    <h1 className="block h3 mt-2 text-semibold text-center text-break">{c('collider_2025: Title')
+                    <h1 className="block lumo-title-large mt-2 text-center text-break">{c('collider_2025: Title')
                         .t`Save your favorites`}</h1>
                 </div>
 
                 {/* translator: To refer back to this conversation later, sign in or create an account. */}
-                <p className="color-weak text-center m-0">{c('collider_2025: Info')
+                <p className="m-0 text-center lumo-color-glyph-mid">{c('collider_2025: Info')
                     .t`To refer back to this conversation later, sign in or create an account.`}</p>
             </div>
         </Prompt>

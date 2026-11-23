@@ -4,7 +4,7 @@ interface ArtifactShellSourceFallbackProps {
 
 export const ArtifactShellSourceFallback = ({ content }: ArtifactShellSourceFallbackProps) => {
     return (
-        <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm whitespace-pre-wrap flex-1 w-full h-full">
+        <pre className="whitespace-pre-wrap flex-1 w-full h-full m-0 p-4 overflow-auto lumo-body-small lumo-font-mono lumo-color-glyph">
             {content}
         </pre>
     );

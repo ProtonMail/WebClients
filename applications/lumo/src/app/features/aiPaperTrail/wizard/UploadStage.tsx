@@ -50,14 +50,19 @@ export const UploadStage = ({ error, saveLocallyEnabled, onSaveLocallyChange, on
             primaryLabel={c('collider_2025:Action').t`Generate my report`}
             onPrimary={handleGenerate}
         >
-            <p className="ai-paper-trail__wizard-lead">
+            <p className="ai-paper-trail__wizard-lead m-0 lumo-body-large">
                 {c('collider_2025:Info')
                     .t`Choose or drop your .zip or conversations.json file. We analyze your ${PAPER_TRAIL_LIMITS.maxPrompts} most recent prompts.`}
             </p>
 
             {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <div
-                className={clsx('ai-paper-trail__dropzone', isDragging && 'is-dragging', selectedFile && 'has-file')}
+                className={clsx(
+                    'ai-paper-trail__dropzone p-8',
+                    isDragging && 'is-dragging',
+                    selectedFile && 'has-file'
+                )}
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 role="button"
                 tabIndex={0}
                 onClick={() => {
@@ -93,11 +98,11 @@ export const UploadStage = ({ error, saveLocallyEnabled, onSaveLocallyChange, on
                 />
                 <div className="flex flex-column items-center gap-3 text-center">
                     <LumoIcon name="Upload" size={32} className="ai-paper-trail__upload-icon" />
-                    <span className="text-lg text-semibold">{c('collider_2025:Action').t`Upload your AI export`}</span>
+                    <span className="lumo-title-medium">{c('collider_2025:Action').t`Upload your AI export`}</span>
                     {selectedFile ? (
-                        <span className="ai-paper-trail__selected-file text-sm">{selectedFile.name}</span>
+                        <span className="ai-paper-trail__selected-file lumo-body-small">{selectedFile.name}</span>
                     ) : (
-                        <span className="ai-paper-trail__muted text-sm">
+                        <span className="ai-paper-trail__muted lumo-body-small">
                             {c('collider_2025:Info').t`Drag and drop or click to browse`}
                         </span>
                     )}
@@ -105,15 +110,19 @@ export const UploadStage = ({ error, saveLocallyEnabled, onSaveLocallyChange, on
             </div>
 
             {displayError && (
-                <div className="ai-paper-trail__error flex flex-row flex-nowrap items-start gap-2 mt-0 p-3 rounded">
-                    <LumoIcon name="CircleExclamationPoint" size={16} className="color-danger shrink-0 mt-0.5" />
+                <div className="ai-paper-trail__error flex flex-row flex-nowrap items-start gap-2 mt-0 p-3 radius-8">
+                    <LumoIcon
+                        name="CircleExclamationPoint"
+                        size={16}
+                        className="shrink-0 mt-0.5 lumo-color-signal-danger"
+                    />
                     <span>{displayError}</span>
                 </div>
             )}
 
             <div className="ai-paper-trail__privacy flex flex-row flex-nowrap items-center gap-2">
                 <LumoIcon name="Lock" size={16} className="shrink-0" />
-                <span className="text-sm color-weak text-semibold">
+                <span className="lumo-label-small lumo-color-glyph-mid">
                     {c('collider_2025:Info')
                         .t`Your export is encrypted in transit and processed without being stored on ${LUMO_SHORT_APP_NAME}'s servers.`}
                 </span>

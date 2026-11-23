@@ -39,7 +39,7 @@ export const DeleteProjectModal = ({ project, onConfirmDelete, ...modalProps }: 
                     </p>
                     {project.conversationCount !== undefined && project.conversationCount > 0 && (
                         <div className="delete-project-modal-warning">
-                            <p className="text-bold mb-2">
+                            <p className="lumo-title-small mb-2">
                                 {c('collider_2025:Warning').t`This will also permanently delete:`}
                             </p>
                             <ul className="ml-4">

@@ -44,7 +44,7 @@ export const SkillCodeView = ({
     if (file.text === undefined) {
         const size = humanSize({ bytes: getWorkspaceFileSize(file) });
         return (
-            <div className="skill-code-view skill-code-view--binary flex items-center justify-center p-6 color-weak text-sm">
+            <div className="skill-code-view skill-code-view--binary flex items-center justify-center p-6 lumo-body-small lumo-color-glyph-mid">
                 {c('collider_2025:Info').t`Binary file, ${size}. It cannot be shown here.`}
             </div>
         );
@@ -71,12 +71,14 @@ export const SkillCodeView = ({
 
         return (
             <div className="skill-code-view skill-code-view--preview overflow-auto">
-                <div className="skill-code-view__document">
+                <div className="skill-code-view__document pt-6 pb-10 px-8 mx-auto">
                     {properties.length > 0 && (
-                        <dl className="skill-code-view__properties">
+                        <dl className="skill-code-view__properties mx-0 mt-0 mb-7 py-2.5 border lumo-border lumo-body-small lumo-bg-control-fill">
                             {properties.map(([key, value]) => (
                                 <div key={key} className="flex flex-nowrap gap-4">
-                                    <dt className="skill-code-view__property-key shrink-0">{key}</dt>
+                                    <dt className="skill-code-view__property-key shrink-0 lumo-color-glyph-mid">
+                                        {key}
+                                    </dt>
                                     <dd className="m-0 min-w-0 text-break">{value}</dd>
                                 </div>
                             ))}
@@ -103,14 +105,18 @@ export const SkillCodeView = ({
     const lineCount = Math.max(1, file.text.split('\n').length);
 
     return (
-        <div className="skill-code-view flex flex-nowrap overflow-hidden">
-            <div ref={gutterRef} aria-hidden className="skill-code-view__gutter shrink-0 text-right color-hint">
+        <div className="skill-code-view flex flex-nowrap overflow-hidden lumo-body-small lumo-font-mono">
+            <div
+                ref={gutterRef}
+                aria-hidden
+                className="skill-code-view__gutter py-3 pl-4 pr-3 shrink-0 text-right lumo-color-glyph-mid"
+            >
                 {Array.from({ length: lineCount }, (_, i) => (
                     <div key={i}>{i + 1}</div>
                 ))}
             </div>
             <textarea
-                className="skill-code-view__textarea flex-1 border-none bg-transparent"
+                className="skill-code-view__textarea py-3 pl-0 pr-4 flex-1 border-none bg-transparent lumo-color-glyph"
                 value={file.text}
                 readOnly={!onChange}
                 onChange={(event) => onChange?.(event.target.value)}

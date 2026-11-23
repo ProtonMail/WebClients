@@ -36,6 +36,7 @@ interface UserDropdownProps extends Omit<UserDropdownButtonProps, 'user' | 'isOp
     onOpenChat?: () => void;
     app: APP_NAMES;
     hasAppLinks?: boolean;
+    matchAnchorWidth?: boolean;
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
     logoutRedirectUrl?: string;
     extraSessionForkData?: ExtraSessionForkData;
@@ -54,6 +55,7 @@ const UserDropdown = ({
     onOpenChat,
     sessionOptions,
     hasAppLinks,
+    matchAnchorWidth,
     logoutRedirectUrl,
     extraSessionForkData,
     reportDescriptionContext,
@@ -218,7 +220,7 @@ const UserDropdown = ({
                     toggle();
                 }}
             />
-            <UserDropdownContent />
+            <UserDropdownContent matchAnchorWidth={matchAnchorWidth} />
         </UserDropdownContext.Provider>
     );
 };

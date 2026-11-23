@@ -1,12 +1,23 @@
 // Compatibility for existing Proton controls only. New Lumo styles use --lumo-* directly.
 // The app uses html:root; embedded consumers keep the adapter inside .lumo-ui.
 @mixin overrides($scope) {
-	$component-scope: $scope;
 	$focus-fade: var(--lumo-duration-100);
 
-	// html:root is needed for theme variables, but controls need only one scope class.
+	// Specificity contract (see docs/styling.md#specificity): each control rule matches the Proton selector it
+	// replaces and wins by source order, so a utility class on the same element can still override it.
+	// The document-wide scope matches every element and adds nothing; :where() keeps it at zero.
+	// An embedded scope can load before Proton, so it keeps its own class weight.
+	$controls: ':is(#{$scope}, #{$scope} *)';
+
 	@if $scope == 'html:root' {
-		$component-scope: ':root';
+		$controls: ':where(:root, :root *)';
+	}
+
+	// The few rules that must outrank a heavier Proton selector by exactly one class keep this wrapper.
+	$controls-raised: ':is(#{$scope}, #{$scope} *)';
+
+	@if $scope == 'html:root' {
+		$controls-raised: ':is(:root, :root *)';
 	}
 
 	#{$scope},
@@ -86,6 +97,8 @@
 		--field-disabled-text-color: var(--lumo-glyph-disabled);
 		--toggle-container-unchecked-loader-color: var(--lumo-glyph);
 		--transition-slot-duration: var(--lumo-duration-200);
+		--transition-duration: var(--lumo-duration-150);
+		--transition-easing: var(--lumo-easing-standard);
 		--select-background-color: var(--lumo-panel-elevated);
 		--link-norm: var(--lumo-glyph-brand-text);
 		--link-hover: var(--lumo-glyph-brand-mid);
@@ -100,9 +113,9 @@
 		--shadow-norm-opacity: var(--lumo-opacity-5);
 		--shadow-raised-opacity: var(--lumo-opacity-10);
 		--shadow-lifted-opacity: var(--lumo-opacity-16);
-		--font-weight-normal: var(--lumo-font-weight-regular);
-		--font-weight-semibold: var(--lumo-font-weight-semibold);
-		--font-weight-bold: var(--lumo-font-weight-semibold);
+		--font-weight-normal: 400;
+		--font-weight-semibold: 500;
+		--font-weight-bold: 600;
 
 		@each $name, $size in (sm: 4, md: 8, lg: 12, xl: 16, xxl: 28, full: full) {
 			--border-radius-#{$name}: var(--lumo-radius-#{$size});
@@ -118,8 +131,15 @@
 
 	// Match both scoped descendants and a component carrying the scope itself.
 	// Keep component behavior and portal destinations; adapt documented control geometry.
-	:is(#{$component-scope}, #{$component-scope} *) {
-		&:is(.interactive-pseudo, .interactive-pseudo-inset, .interactive-pseudo-protrude)[class*='lumo-radius-']::after {
+	#{$controls} {
+		&:is(.interactive-pseudo, .interactive-pseudo-inset, .interactive-pseudo-protrude):where(
+				.radius-4,
+				.radius-8,
+				.radius-12,
+				.radius-16,
+				.radius-28,
+				.radius-full
+			)::after {
 			border-radius: inherit;
 		}
 
@@ -138,11 +158,12 @@
 
 		&.button {
 			border-radius: var(--lumo-radius-8);
+		}
 
-			&.button-pill {
-				border-radius: var(--lumo-radius-full);
-			}
-
+		// Size variables only feed Proton's padding declaration, so their weight never blocks a p-* utility.
+		// They keep the scope class so app rules such as `.conversation-header .button-for-icon.button-medium`
+		// (which sets an uncompiled `em(7)`) and `.file-card .button-for-icon.button-small` stay overridden.
+		@at-root #{$controls-raised}.button {
 			&.button-medium {
 				--padding-block: var(--lumo-space-8);
 				--padding-inline: var(--lumo-space-16);
@@ -151,16 +172,24 @@
 			&.button-small {
 				--padding-block: var(--lumo-space-6);
 				--padding-inline: var(--lumo-space-12);
+			}
 
+			&.button-for-icon {
+				--padding-inline: var(--padding-block);
+			}
+		}
+
+		&:where(.button) {
+			&.button-pill {
+				border-radius: var(--lumo-radius-full);
+			}
+
+			&.button-small {
 				font: var(--lumo-type-label-medium);
 			}
 
 			&.button-tiny {
 				font: var(--lumo-type-label-small);
-			}
-
-			&.button-for-icon {
-				--padding-inline: var(--padding-block);
 			}
 		}
 
@@ -252,6 +281,20 @@
 			transition-timing-function: var(--lumo-easing-standard);
 		}
 
+		// Proton's `button:focus:not(:focus-visible)` reset sets the outline color to currentColor, which the
+		// color fade above then shows as a dark ring on pointer focus and blur. Keep the resting ring instead.
+		&:is(.button, .button-underline, .link, .tabs-list-link):focus:not(
+				:focus-visible,
+				:has(:focus-visible),
+				.display-focus-visible
+			) {
+			outline: 2px solid transparent;
+
+			@media (forced-colors: active) {
+				outline: none;
+			}
+		}
+
 		&:is(.button, .button-underline, .link, .tabs-list-link):is(
 				:focus-visible,
 				:has(:focus-visible),
@@ -272,44 +315,59 @@
 		}
 
 		// Field roles use Lumo typography and padding; multiline fields retain caller-selected rows.
-		&.input:not(.unstyled),
-		&.textarea:not(.unstyled),
+		&.input:where(:not(.unstyled)),
+		&.textarea:where(:not(.unstyled)),
 		&.field,
 		&.select {
 			font: var(--lumo-type-body-large);
 			letter-spacing: var(--lumo-font-letter-spacing);
 		}
 
-		&.input:not(.unstyled) .input-element {
+		&:where(.input:not(.unstyled)) .input-element {
 			padding-block: var(--lumo-space-12);
 			padding-inline: var(--lumo-space-12);
 		}
 
-		// Search is the compact field role; the wrapper contributes its two border pixels.
-		&.input:not(.unstyled) .input-element[type='search'] {
-			font: var(--lumo-type-body-medium);
-			min-block-size: calc(var(--lumo-space-32) + var(--lumo-space-2));
-			padding-block: var(--lumo-space-6);
+		// Proton trims the side next to a prefix or suffix with `.input > .input-adornment + * > .input-element`.
+		&.input:where(:not(.unstyled)) > .input-adornment + * > .input-element {
+			padding-inline-start: var(--lumo-space-12);
 		}
 
-		&.field:is(input):not([type='date'], [type='time'], [type='search'], .field--tiny, .field--small, .field--large) {
+		&.input:where(:not(.unstyled)) > :has(+ .input-adornment) > .input-element {
+			padding-inline-end: var(--lumo-space-12);
+		}
+
+		// Proton's `.field-two--bigger .input-element` sets 11px; search keeps its compact padding below.
+		&.field-two--bigger :where(.input:not(.unstyled, .lumo-search-field)) .input-element:where(:not([type='search'])) {
+			padding-block: var(--lumo-space-12);
+		}
+
+		&.field:where(
+				input:not([type='date'], [type='time'], [type='search'], .field--tiny, .field--small, .field--large)
+			) {
 			block-size: auto;
 			padding-block: var(--lumo-space-12);
 			padding-inline: var(--lumo-space-12);
 		}
 
+		// Proton's `select.field` carries an element selector, so the native select keeps one too.
 		&.field:is(select),
 		&.select,
-		&.field[type='date'],
-		&.field[type='time'] {
+		&.field:where([type='date'], [type='time']) {
 			min-block-size: var(--lumo-space-40);
 			padding-block: var(--lumo-space-8);
 			padding-inline: var(--lumo-space-12);
 		}
 
-		&.textarea:not(.unstyled),
-		&.field:is(textarea),
-		&.input:not(.unstyled) textarea.input-element {
+		// Proton trims the end side with `.field[type='number']` and `.field.select`.
+		&.field[type='number']:where(:not(.field--tiny, .field--small, .field--large)),
+		&.field.select {
+			padding-inline-end: var(--lumo-space-12);
+		}
+
+		&.textarea:where(:not(.unstyled)),
+		&.field:where(textarea),
+		&:where(.input:not(.unstyled)) .input-element:where(textarea) {
 			padding: var(--lumo-space-12);
 		}
 
@@ -320,17 +378,26 @@
 
 		// Keep iOS from zooming the page when a field receives focus.
 		@media (width <= 680px) {
-			&.input:not(.unstyled) .input-element,
-			&.textarea:not(.unstyled),
+			&:where(.input:not(.unstyled)) .input-element,
+			&.textarea:where(:not(.unstyled)),
 			&.field,
 			&.select {
 				font-size: max(16px, 1rem);
 			}
 		}
 
+		// Search is the compact field role; the wrapper contributes its two border pixels.
+		// It follows the zoom guard above so its compact type still wins at equal weight.
+		&:where(.input:not(.unstyled)) .input-element:where([type='search']),
+		&:where(.input.lumo-search-field:not(.unstyled)) .input-element {
+			font: var(--lumo-type-body-medium);
+			min-block-size: calc(var(--lumo-space-32) + var(--lumo-space-2));
+			padding-block: var(--lumo-space-6);
+		}
+
 		// Fade the field's inset focus stroke without changing its width.
-		&.input:not(.unstyled),
-		&.textarea:not(.unstyled),
+		&.input:where(:not(.unstyled)),
+		&.textarea:where(:not(.unstyled)),
 		&.field,
 		&.field-icon-container,
 		&.select {
@@ -341,8 +408,8 @@
 			transition-timing-function: var(--lumo-easing-standard);
 		}
 
-		&.input:not(.unstyled):is(.focus, :focus-within):not(.disabled),
-		&.textarea:not(.unstyled):is(:focus, .focus):not(:disabled, .disabled),
+		&.input:where(:not(.unstyled)):is(.focus, :focus-within):not(.disabled),
+		&.textarea:where(:not(.unstyled)):is(:focus, .focus):not(:disabled, .disabled),
 		&.field:is(:focus, :focus-within, .focus),
 		&.field[aria-expanded='true']:not([aria-controls]),
 		&.field-icon-container:focus-within,
@@ -365,7 +432,7 @@
 		}
 
 		// TextAreaTwo passes the native attribute without Proton's .disabled class.
-		&.textarea:not(.unstyled):disabled {
+		&.textarea:where(:not(.unstyled)):disabled {
 			border-color: var(--lumo-border-mid);
 			background-color: var(--lumo-control-fill);
 			color: var(--lumo-glyph-disabled);
@@ -377,7 +444,7 @@
 		}
 
 		// Radio shares Proton's checkbox surface class; keep its circular shape separate.
-		&.checkbox-fakecheck:not(.radio-fakeradio) {
+		&.checkbox-fakecheck:where(:not(.radio-fakeradio)) {
 			min-inline-size: var(--lumo-icon-size-16);
 			inline-size: var(--lumo-icon-size-16);
 			block-size: var(--lumo-icon-size-16);
@@ -452,7 +519,15 @@
 			background-color: var(--lumo-panel-elevated);
 		}
 
-		&.toggle-container {
+		// A toggle without a text label is a block label holding an inline-flex track, so the track sits on
+		// the text baseline and the label grows by the descender. Lay it out as flex to keep it centred.
+		&.toggle-label:where(:not(.flex)) {
+			display: flex;
+		}
+
+		// Proton styles the switch with `.toggle-container.toggle-container` and state selectors up to four
+		// classes deep, so the switch keeps the scope class it had.
+		@at-root #{$controls-raised}.toggle-container {
 			// Proton's hover/loading selectors also use these variables for the thumb.
 			--field-hover: var(--lumo-control-fill-contrast);
 			--interaction-norm-hover: var(--lumo-control-fill-contrast);
@@ -554,26 +629,33 @@
 			--background-norm: var(--lumo-panel-elevated);
 		}
 
-		// Keep padding inside the scroll frame used by Floating UI to constrain its size.
+		// Keep padding inside the scroll frame used by Floating UI to constrain its size. Menu spec: items sit
+		// 6px from every edge. Proton's scroll-hint masks (::before, ::after) already add rem(3) top and bottom.
 		&.dropdown-content {
-			padding: var(--lumo-space-6);
+			padding-block: calc(var(--lumo-space-6) - 0.1875rem);
+			padding-inline: var(--lumo-space-6);
 
 			// Keep scroll hints aligned with their masking pseudo-elements inside the padding.
 			background-origin: content-box;
 		}
 
-		&.dropdown-item + .dropdown-item {
+		&.dropdown-item:where(.dropdown-item + *) {
 			margin-block-start: var(--lumo-space-2);
 		}
 
 		&.dropdown-item-button,
 		&.dropdown-item-link {
 			font: var(--lumo-type-body-medium);
-			padding-block: var(--lumo-space-10);
-			padding-inline: var(--lumo-space-12);
 			gap: var(--lumo-space-10);
 			text-align: start;
 			border-radius: var(--lumo-radius-8);
+		}
+
+		// DropdownMenuButton and DropdownMenuLink always add `px-4 py-2`, so item padding stays one class
+		// above those utilities; a caller changes it with a two-class rule of its own.
+		@at-root #{$controls-raised}:is(.dropdown-item-button, .dropdown-item-link) {
+			padding-block: var(--lumo-space-10);
+			padding-inline: var(--lumo-space-12);
 		}
 
 		&:is(.dropdown-item-button, .dropdown-item-link) {
@@ -624,7 +706,7 @@
 		}
 
 		// No inverse-control fill role exists yet; translucent inverse glyph keeps toast actions legible.
-		&.notification .button:is([class*='button-ghost-'], [class*='button-underline-']) {
+		&:where(.notification) .button:where([class*='button-ghost-'], [class*='button-underline-']) {
 			--button-hover-background-color: color-mix(
 				in srgb,
 				var(--lumo-glyph-inverse) calc(var(--lumo-opacity-8) * 100%),
@@ -646,8 +728,12 @@
 			--banner-text-color-fallback: var(--lumo-glyph);
 		}
 
-		&.banner.banner--no-border {
+		&.banner--no-border:where(.banner) {
 			border: none;
+		}
+
+		&.banner:is(.banner--norm, .banner--info) {
+			--banner-background-color: var(--lumo-notice);
 		}
 
 		&.kbd {
@@ -668,7 +754,8 @@
 			}
 		}
 
-		&.slider-rail {
+		// Proton resizes the rail with `.slider-small .slider-rail` and `.slider-marks .slider-rail`.
+		&.slider .slider-rail {
 			inset-block-start: 50%;
 			block-size: var(--lumo-space-4);
 			transform: translateY(-50%);
@@ -700,18 +787,21 @@
 			}
 		}
 
-		&.tabs > .tabs-nav .tabs-link,
+		&:where(.tabs > .tabs-nav) .tabs-link,
 		&.tabs-list-link {
 			font: var(--lumo-type-label-large);
+		}
 
-			&[disabled] {
-				color: var(--lumo-glyph-disabled);
-				opacity: 1;
-			}
+		// Proton dims disabled tabs with `.tabs > .tabs-nav .tabs-link[disabled]`. Tab padding, gaps and colors
+		// below match Proton's three-class `.tabs--underline > .tabs-nav .tabs-list-link` family.
+		&.tabs > .tabs-nav .tabs-link[disabled],
+		&.tabs-list-link[disabled] {
+			color: var(--lumo-glyph-disabled);
+			opacity: 1;
 		}
 
 		// Underline tabs keep equal label weights and height across selected states.
-		&.tabs--underline > .tabs-nav .tabs-list {
+		&:where(.tabs--underline > .tabs-nav) .tabs-list {
 			gap: var(--lumo-space-24);
 		}
 
@@ -750,16 +840,20 @@
 			padding: var(--lumo-space-2);
 			gap: var(--lumo-space-2);
 			border-radius: var(--lumo-radius-8);
-			background-color: var(--lumo-control-fill);
+			background-color: var(--lumo-control-tab-track);
+		}
+
+		&:where(.tabs--modern > .tabs-nav) .tabs-list-link {
+			font: var(--lumo-type-label-small);
 		}
 
 		&.tabs--modern > .tabs-nav .tabs-list-link {
-			font: var(--lumo-type-label-small);
 			padding-block: var(--lumo-space-4);
 			padding-inline: var(--lumo-space-10);
 			color: var(--lumo-glyph-mid);
 
-			&[aria-selected='true'] {
+			&[aria-selected='true'],
+			&:hover:where(:not([disabled])) {
 				color: var(--lumo-glyph);
 			}
 
@@ -770,12 +864,36 @@
 		}
 
 		&.tabs--modern > .tabs-nav .tabs-list-item:not(.tabs-list-item--selected):hover::after {
-			background-color: var(--lumo-control-fill-mid);
+			background-color: var(--lumo-control-tab-hover);
+		}
+
+		&.tabs--modern > .tabs-nav .tabs-list-item.tabs-list-item--selected:hover::after {
+			content: none;
 		}
 
 		&.tabs--modern > .tabs-nav .tabs-indicator {
+			--lumo-tab-start: var(--tabs_translate, 0px);
+
 			inset-block: var(--lumo-space-2);
+			inset-inline: var(--lumo-tab-start) calc(100% - var(--lumo-tab-start) - var(--tabs_width, 0px));
+			inline-size: auto;
+			transform: none;
 			box-shadow: var(--lumo-elevation-1);
+
+			&:dir(rtl) {
+				--lumo-tab-start: calc(-1 * var(--tabs_translate, 0px));
+			}
+		}
+
+		&.tabs--modern.with-transition > .tabs-nav .tabs-indicator {
+			transition: none;
+
+			@media (prefers-reduced-motion: no-preference) {
+				// Animate both edges on the same layout timeline, including when the pill shrinks.
+				transition-property: inset-inline-start, inset-inline-end;
+				transition-duration: var(--lumo-duration-150);
+				transition-timing-function: var(--lumo-easing-enter);
+			}
 		}
 
 		&.skeleton-loader {

@@ -1,10 +1,6 @@
 @use '~@proton/styles/scss/lib' as *;
 
 .create-schedule-response-message {
-	--border-weak: var(--border);
-
-	font-size: rem(13);
-
 	&__header {
 		flex-shrink: 1;
 	}

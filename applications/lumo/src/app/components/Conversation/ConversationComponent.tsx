@@ -319,9 +319,9 @@ const ConversationLayout = ({
             >
                 <div
                     ref={chatContainerRef}
-                    className="conversation-split-row lumo-chat-container flex flex-column flex-1 min-h-0 w-full relative reset4print overflow-hidden min-w-0"
+                    className="conversation-split-row lumo-chat-container reset4print relative flex flex-column flex-1 w-full min-w-0 min-h-0 p-3 overflow-hidden"
                 >
-                    <div className="outer conversation-page-component flex flex-column flex-nowrap reset4print overflow-hidden rounded-xl w-full flex-1 min-h-0">
+                    <div className="outer conversation-page-component reset4print flex flex-column flex-nowrap flex-1 w-full min-h-0 overflow-hidden radius-16">
                         <MessageChainComponent
                             messageChainRef={messageChainRef}
                             messageChain={messageChain}
@@ -344,7 +344,7 @@ const ConversationLayout = ({
                         <ConversationSurvey isGenerating={isGenerating} />
                         <div
                             ref={composerContainerRef}
-                            className="lumo-chat-item flex flex-column flex-nowrap shrink-0 w-full max-w-custom mx-auto no-print md:w-2/3"
+                            className="lumo-chat-item no-print flex flex-column flex-nowrap shrink-0 w-full max-w-custom mx-auto md:w-2/3"
                             style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
                         >
                             <ImageLimitNotice exceedsLimit={imageLimitExceeded} exceedsPageLimit={pageLimitExceeded} />
@@ -365,7 +365,7 @@ const ConversationLayout = ({
                                 canShowGuestNotificationCard
                             />
                         </div>
-                        <p className="text-center relative color-weak text-xs my-2 hidden md:block">
+                        <p className="relative hidden my-2 lumo-body-small text-center lumo-color-glyph-mid md:block">
                             {c('collider_2025: Disclosure')
                                 .t`${LUMO_SHORT_APP_NAME} can make mistakes. Please double-check responses.`}
                         </p>
@@ -375,7 +375,7 @@ const ConversationLayout = ({
                     {isPanelOpen && !isArtifactMobileLayout && !isFullscreen ? (
                         <div
                             ref={artifactPanelContainerRef}
-                            className="artifact-panel-container flex flex-column min-w-0 h-full w-full relative"
+                            className="artifact-panel-container relative flex flex-column min-w-0 h-full w-full border lumo-border radius-16 lumo-bg-panel"
                         >
                             <div
                                 className="artifact-panel-resize-handle"

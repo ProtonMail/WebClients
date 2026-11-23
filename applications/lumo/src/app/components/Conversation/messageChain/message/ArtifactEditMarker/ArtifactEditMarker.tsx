@@ -32,10 +32,10 @@ const ArtifactEditMarkerComponent = ({ message }: ArtifactEditMarkerProps) => {
         <div className="artifact-edit-marker flex-1 w-full min-w-0 my-2">
             <button
                 type="button"
-                className="w-full flex flex-nowrap items-center gap-2 color-weak text-left py-1 px-2 rounded text-sm border-none bg-transparent justify-end"
+                className="flex flex-nowrap items-center justify-end gap-2 w-full px-2 py-1 border-none radius-8 lumo-body-small text-left lumo-color-glyph-mid bg-transparent"
                 onClick={handleClick}
             >
-                <IcPencil size={4} className="shrink-0 color-hint" />
+                <IcPencil size={4} className="shrink-0 lumo-color-glyph-mid" />
                 <span className="text-ellipsis overflow-hidden whitespace-nowrap">
                     {c('collider_2025:Info').t`You edited ${meta.artifactTitle}`}
                 </span>

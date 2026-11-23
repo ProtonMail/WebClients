@@ -10,7 +10,8 @@ const RateHint = ({ amount }: { amount: number | undefined }) => {
 
     const formattedAmount = formatUsdAmount(amount);
     return (
-        <small className="api-usage-model__rate">{c('collider_2025: Label').t`${formattedAmount} per 1M tokens`}</small>
+        <small className="api-usage-model__rate lumo-label-small lumo-color-glyph-mid">{c('collider_2025: Label')
+            .t`${formattedAmount} per 1M tokens`}</small>
     );
 };
 
@@ -38,9 +39,16 @@ export const ApiUsageModelStats = ({
     const rates = getApiModelPricingUsd(model);
 
     return (
-        <div role="group" aria-label={model} className="api-usage-model rounded-lg border border-weak">
-            <span className={`api-usage-model__name api-usage-model__name--${model} inline-flex`}>{model}</span>
-            <div className="api-usage-model__stats mt-3">
+        <div
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+            role="group"
+            aria-label={model}
+            className="api-usage-model min-w-0 m-0 border lumo-border radius-12 lumo-bg-control-fill"
+        >
+            <span className={`api-usage-model__name px-2 api-usage-model__name--${model} inline-flex lumo-label-small`}>
+                {model}
+            </span>
+            <div className="api-usage-model__stats gap-2 mt-3">
                 <div className="flex flex-column gap-0.5">
                     <span>{c('collider_2025: Label').t`Input`}</span>
                     <strong>{formatTokenCount(inputTokens)}</strong>
@@ -56,7 +64,11 @@ export const ApiUsageModelStats = ({
                     <strong>{formattedCost}</strong>
                 </div>
             </div>
-            {rates ? <p className="api-usage-model__rates-note">{getRatesNote(rates.cacheInput)}</p> : null}
+            {rates ? (
+                <p className="api-usage-model__rates-note mt-3 mb-0 mx-0 pt-2.5 lumo-label-small lumo-color-glyph-mid">
+                    {getRatesNote(rates.cacheInput)}
+                </p>
+            ) : null}
         </div>
     );
 };

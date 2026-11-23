@@ -60,8 +60,8 @@ interface TooltipProps {
 const ComparisonTooltip = ({ active, payload, label, items }: TooltipProps) => {
     if (!active || !payload || payload.length === 0) return null;
     return (
-        <div className="finance-comparison__tooltip py-2 px-3 rounded">
-            <p className="finance-comparison__tooltip-date m-0 mb-1">{label}</p>
+        <div className="finance-comparison__tooltip px-3 py-2 border lumo-border radius-8 lumo-bg-panel-elevated lumo-elevation-1">
+            <p className="finance-comparison__tooltip-date m-0 mb-1 lumo-label-small lumo-color-glyph-mid">{label}</p>
             {payload.map((entry, i) => {
                 const idx = Number(entry.dataKey.replace('pct_', ''));
                 const symbol = items[idx]?.symbol ?? `#${idx + 1}`;
@@ -69,7 +69,7 @@ const ComparisonTooltip = ({ active, payload, label, items }: TooltipProps) => {
                 return (
                     <p
                         key={i}
-                        className="finance-comparison__tooltip-row m-0 text-semibold"
+                        className="finance-comparison__tooltip-row m-0 lumo-title-small"
                         style={{ color: entry.color }}
                     >
                         {symbol}: {sign}
@@ -124,13 +124,17 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
     }, [items]);
 
     return (
-        <div className="finance-comparison mb-2">
+        <div className="finance-comparison mb-2 border lumo-border radius-12 lumo-bg-panel">
             <div className="flex items-center justify-space-between flex-wrap gap-3 py-3 px-4">
-                <span className="finance-comparison__title">{c('collider_2025:Reasoning')
-                    .t`Performance comparison`}</span>
+                <span className="finance-comparison__title lumo-label-small lumo-color-glyph-mid">{c(
+                    'collider_2025:Reasoning'
+                ).t`Performance comparison`}</span>
                 <div className="flex items-center gap-4">
                     {items.map((item, i) => (
-                        <span key={i} className="finance-comparison__legend-item flex items-center gap-1.5">
+                        <span
+                            key={i}
+                            className="finance-comparison__legend-item flex items-center gap-1.5 lumo-label-medium lumo-color-glyph"
+                        >
                             <span
                                 className="finance-comparison__legend-dot shrink-0"
                                 style={{ background: LINE_COLORS[i % LINE_COLORS.length] }}
@@ -141,7 +145,7 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                 </div>
             </div>
 
-            <div className="finance-comparison__chart">
+            <div className="finance-comparison__chart border-bottom lumo-border px-1 pb-2">
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={chartData} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="var(--border-weak)" vertical={false} />
@@ -182,7 +186,7 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                 </ResponsiveContainer>
             </div>
 
-            <div className="finance-comparison__prices">
+            <div className="finance-comparison__prices border-bottom lumo-border">
                 {items.map((item, i) => {
                     const prev = item.data.monthly_trend[1]?.price ?? item.data.monthly_trend[0]?.price;
                     const change = item.data.current_price - prev;
@@ -194,15 +198,17 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                             className="finance-comparison__price-card py-3 px-4"
                             style={{ borderTopColor: LINE_COLORS[i % LINE_COLORS.length] }}
                         >
-                            <p className="finance-comparison__price-symbol m-0">{item.symbol}</p>
-                            <p className="finance-comparison__price-name m-0 mb-1.5">
+                            <p className="finance-comparison__price-symbol m-0 lumo-label-medium lumo-color-glyph">
+                                {item.symbol}
+                            </p>
+                            <p className="finance-comparison__price-name m-0 mb-1.5 lumo-label-small lumo-color-glyph-mid">
                                 {item.data.company_info?.name ?? item.data.type}
                             </p>
-                            <p className="finance-comparison__price-value m-0">
+                            <p className="finance-comparison__price-value m-0 lumo-title-large lumo-color-glyph">
                                 {formatPrice(item.data.current_price)}
                             </p>
                             <p
-                                className={`finance-comparison__price-change finance-comparison__price-change--${isUp ? 'up' : 'down'} m-0`}
+                                className={`finance-comparison__price-change finance-comparison__price-change--${isUp ? 'up' : 'down'} m-0 lumo-label-small`}
                             >
                                 {isUp ? '+' : ''}
                                 {change.toFixed(2)} ({isUp ? '+' : ''}
@@ -213,7 +219,7 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                 })}
             </div>
 
-            <table className="finance-comparison__table w-full">
+            <table className="finance-comparison__table lumo-body-small w-full">
                 <thead>
                     <tr>
                         <th scope="col" className="py-2 px-4 text-left">
@@ -223,7 +229,7 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                             <th
                                 scope="col"
                                 key={i}
-                                className="finance-comparison__table-header-symbol py-2 px-4 text-right"
+                                className="finance-comparison__table-header-symbol border-bottom lumo-border py-2 px-4 text-right lumo-label-small"
                                 style={{ color: LINE_COLORS[i % LINE_COLORS.length] }}
                             >
                                 {item.symbol}
@@ -236,9 +242,14 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
                         .filter((row) => items.some((item) => row.getValue(item.data) !== '—'))
                         .map((row) => (
                             <tr key={row.label} className="finance-comparison__table-row">
-                                <td className="finance-comparison__table-label py-2 px-4">{row.label}</td>
+                                <td className="finance-comparison__table-label py-2 px-4 lumo-label-small lumo-color-glyph-mid">
+                                    {row.label}
+                                </td>
                                 {items.map((item, i) => (
-                                    <td key={i} className="finance-comparison__table-value py-2 px-4 text-right">
+                                    <td
+                                        key={i}
+                                        className="finance-comparison__table-value py-2 px-4 text-right lumo-color-glyph"
+                                    >
                                         {row.getValue(item.data)}
                                     </td>
                                 ))}

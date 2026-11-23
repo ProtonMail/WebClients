@@ -44,40 +44,42 @@ export const ProtonPluginPreviewModal = ({
                     <PluginExample plugin={plugin} />
                 </div>
             </div>
-            <h3 className="m-0 mb-1 text-sm text-semibold color-weak">{c('collider_2025:Title').t`Included skills`}</h3>
+            <h3 className="m-0 mb-1 lumo-label-small lumo-color-glyph-mid">{c('collider_2025:Title')
+                .t`Included skills`}</h3>
             <ul className="unstyled m-0 flex flex-column flex-nowrap">
                 {plugin.skills.map((skill) => (
-                    <li key={skill.name} className="py-3 border-top border-weak">
-                        <span className="block text-semibold">/{skill.name}</span>
-                        <span className="block text-sm color-weak">{skill.description}</span>
+                    <li key={skill.name} className="py-3 border-top lumo-border">
+                        <span className="block lumo-label-large">/{skill.name}</span>
+                        <span className="block lumo-body-small lumo-color-glyph-mid">{skill.description}</span>
                     </li>
                 ))}
             </ul>
         </ModalTwoContent>
         <ModalTwoFooter>
             <Button onClick={modalProps.onClose}>{c('collider_2025:Action').t`Close`}</Button>
-            {primaryAction ?? (added ? (
-                <Button color="norm" onClick={onOpen}>
-                    {c('collider_2025:Action').t`Open`}
-                </Button>
-            ) : onAdd ? (
-                <Button color="norm" loading={adding} onClick={onAdd}>
-                    {c('collider_2025:Action').t`Add`}
-                </Button>
-            ) : onUpgrade ? (
-                <Button
-                    color="norm"
-                    onClick={() => {
-                        modalProps.onClose?.();
-                        onUpgrade();
-                    }}
-                >
-                    <span className="flex flex-nowrap items-center gap-2">
-                        <LumoIcon name="Lock" size={16} />
-                        {c('collider_2025:Action').t`Upgrade to add`}
-                    </span>
-                </Button>
-            ) : null)}
+            {primaryAction ??
+                (added ? (
+                    <Button color="norm" onClick={onOpen}>
+                        {c('collider_2025:Action').t`Open`}
+                    </Button>
+                ) : onAdd ? (
+                    <Button color="norm" loading={adding} onClick={onAdd}>
+                        {c('collider_2025:Action').t`Add`}
+                    </Button>
+                ) : onUpgrade ? (
+                    <Button
+                        color="norm"
+                        onClick={() => {
+                            modalProps.onClose?.();
+                            onUpgrade();
+                        }}
+                    >
+                        <span className="flex flex-nowrap items-center gap-2">
+                            <LumoIcon name="Lock" size={16} />
+                            {c('collider_2025:Action').t`Upgrade to add`}
+                        </span>
+                    </Button>
+                ) : null)}
         </ModalTwoFooter>
     </ModalTwo>
 );

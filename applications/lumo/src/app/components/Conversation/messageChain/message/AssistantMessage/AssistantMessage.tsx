@@ -117,7 +117,7 @@ const AssistantActionToolbar = ({
             )}
             <div
                 className={clsx([
-                    'action-toolbar no-print text-sm w-full',
+                    'action-toolbar no-print w-full lumo-body-small',
                     'flex flex-row items-center flex-1 gap-3',
                     'justify-end items-center',
                 ])}
@@ -213,20 +213,20 @@ function DebugInfo(props: {
     }
     const { usage } = props;
     return (
-        <div className="border border-weak rounded p-2" style={{ fontFamily: 'monospace' }}>
-            <p className="color-weak font-bold mb-1">DEBUG INFO</p>
-            <p className="color-weak m-0">isLoading: {JSON.stringify(props.isLoading)}</p>
-            <p className="color-weak m-0">hasToolCall: {JSON.stringify(props.hasToolCall)}</p>
-            <p className="color-weak m-0 break-all">blocks: {JSON.stringify(props.blocks.length)}</p>
-            <p className="color-weak m-0">searchResults: {JSON.stringify(props.searchResults !== null)}</p>
+        <div className="p-2 border lumo-border radius-8" style={{ fontFamily: 'monospace' }}>
+            <p className="mb-1 lumo-color-glyph-mid">DEBUG INFO</p>
+            <p className="m-0 lumo-color-glyph-mid">isLoading: {JSON.stringify(props.isLoading)}</p>
+            <p className="m-0 lumo-color-glyph-mid">hasToolCall: {JSON.stringify(props.hasToolCall)}</p>
+            <p className="break-all m-0 lumo-color-glyph-mid">blocks: {JSON.stringify(props.blocks.length)}</p>
+            <p className="m-0 lumo-color-glyph-mid">searchResults: {JSON.stringify(props.searchResults !== null)}</p>
             {usage ? (
-                <p className="color-weak m-0 break-all">
+                <p className="break-all m-0 lumo-color-glyph-mid">
                     usage: prompt={usage.promptTokens ?? '—'} completion={usage.completionTokens ?? '—'} total=
                     {usage.totalTokens ?? '—'} files={usage.ctxFilesTokenEstimate ?? '—'} baseline=
                     {usage.promptTokens !== undefined ? usage.promptTokens - (usage.ctxFilesTokenEstimate ?? 0) : '—'}
                 </p>
             ) : (
-                <p className="color-weak m-0">usage: none</p>
+                <p className="m-0 lumo-color-glyph-mid">usage: none</p>
             )}
         </div>
     );
@@ -462,7 +462,7 @@ const AssistantMessage = ({
             <div className="gap-2 relative w-full">
                 {shouldShow && (
                     <div
-                        className="assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-bg-norm"
+                        className="assistant-msg-container flex flex-row flex-nowrap w-full p-bg-norm radius-16"
                         style={{
                             '--min-h-custom': '62px',
                         }}
@@ -539,7 +539,7 @@ const AssistantMessage = ({
                     </div>
                 )}
                 {isLastMessage && isFinishedGenerating && (
-                    <div className="w-full text-right text-sm color-hint">
+                    <div className="w-full lumo-body-small text-right lumo-color-glyph-mid">
                         {c('collider_2025:Info').t`Conversation encrypted`}
                     </div>
                 )}
@@ -560,9 +560,9 @@ const AssistantMessage = ({
 
 const EmptyMessage = () => (
     <>
-        <div className="flex flex-row items-center gap-2 color-hint px-1 py-2">
+        <div className="flex flex-row items-center gap-2 px-1 py-2 lumo-color-glyph-mid">
             <LumoIcon name="Info" size={16} />
-            <p className="text-sm">{c('collider_2025:Info').t`This message is empty. Sorry about that.`}</p>
+            <p className="lumo-body-small">{c('collider_2025:Info').t`This message is empty. Sorry about that.`}</p>
         </div>
     </>
 );

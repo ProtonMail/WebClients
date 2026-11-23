@@ -1,26 +1,27 @@
-// Standard Lumo modal overlay colors.
-// Light: #E9EAFC at 80%. Dark: keyed off injected #lumo-dark-theme (not prefers-color-scheme).
-
-$lumo-backdrop-light: rgb(233 234 252 / 0.8);
-$lumo-backdrop-dark: rgb(16 18 23 / 0.7);
 $lumo-backdrop-blur: 4.5px;
 
-body .modal-two-backdrop {
-	background: $lumo-backdrop-light;
-	backdrop-filter: blur($lumo-backdrop-blur);
-}
-
-body:has(#lumo-dark-theme) .modal-two-backdrop {
-	background: $lumo-backdrop-dark;
-}
-
+body .modal-two-backdrop,
 .image-lightbox,
 .search-modal-overlay {
-	background: $lumo-backdrop-light;
+	background: var(--lumo-scrim);
 	backdrop-filter: blur($lumo-backdrop-blur);
 }
 
-body:has(#lumo-dark-theme) .image-lightbox,
-body:has(#lumo-dark-theme) .search-modal-overlay {
-	background: $lumo-backdrop-dark;
+// Proton only fades the backdrop out after the last dialog has finished its own exit and
+// unmounted, so the scrim lingers dark for a beat after the dialog is gone. While every open
+// modal is exiting, fade the scrim colour and blur along with the dialog (Proton's 0.1s ease-out).
+// The backdrop's opacity animation is left alone: Proton hides the backdrop when it ends.
+// Stacked modals keep the scrim until the last one leaves.
+body:has(.modal-two--out):not(:has(.modal-two:not(.modal-two--out))) .modal-two-backdrop {
+	background-color: transparent;
+	backdrop-filter: blur(0);
+	transition:
+		background-color var(--lumo-duration-100) ease-out,
+		backdrop-filter var(--lumo-duration-100) ease-out;
+}
+
+// Keep the scrim clear through Proton's own fade-out that follows, instead of flashing back.
+body .modal-two-backdrop--out {
+	background-color: transparent;
+	backdrop-filter: none;
 }

@@ -43,13 +43,13 @@ const getGalleryEmptyAnimation = () =>
 
 const GalleryEmpty = () => {
     return (
-        <div className="gallery-empty">
+        <div className="gallery-empty gap-1 px-6 py-8">
             <LazyLottie getAnimationData={getGalleryEmptyAnimation} loop autoplay className="gallery-empty__lottie" />
             <div className="gallery-empty-container flex flex-column items-center justify-center gap-2 mt-4 text-center">
-                <p className="text-lg color-norm text-semibold m-0">
+                <p className="m-0 lumo-title-medium lumo-color-glyph">
                     {c('collider_2025:Title').t`Your image gallery is empty`}
                 </p>
-                {/* <p className="color-weak text-sm m-0">
+                {/* <p className="lumo-color-glyph-mid lumo-body-medium m-0">
                     {c('collider_2025:Info').t`Generate images, apply styles, and sketch ideas.`}
                 </p> */}
             </div>
@@ -76,7 +76,7 @@ const GalleryComposerPanel = ({
 }: GalleryComposerPanelProps) => {
     return (
         <div className={clsx('gallery-bottom w-full', !isSmallScreen && 'absolute')}>
-            <div className="gallery-inner">
+            <div className="gallery-inner mx-auto">
                 <GalleryImageLimitUpsell />
                 <div className="gallery-composer-wrapper">
                     <ComposerComponent
@@ -141,7 +141,7 @@ const GalleryTabContent = ({
             <>
                 <div ref={createdScrollRef} className="gallery-created-scroll" style={scrollPbStyle}>
                     <GalleryEmpty />
-                    <div className="gallery-inner max-w-full">
+                    <div className="gallery-inner mx-auto max-w-full">
                         <ExploreGalleryGrid onTryPrompt={onTryPrompt} />
                     </div>
                 </div>
@@ -157,7 +157,7 @@ const GalleryTabContent = ({
                 className="gallery-created-scroll"
                 style={showExplore ? scrollPbStyle : undefined}
             >
-                <div className="gallery-inner max-w-full">
+                <div className="gallery-inner mx-auto max-w-full">
                     <CreatedGrid
                         sections={galleryImages.sections}
                         status={galleryImages.status}
@@ -192,7 +192,7 @@ const CreateTabContent = ({
 }: CreateTabContentProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
     return (
-        <div className="main-container-component rounded-xl flex flex-column flex-nowrap flex-1">
+        <div className="main-container-component flex flex-column flex-nowrap flex-1 radius-16">
             <div
                 className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pt-0 main-container-content"
                 style={{
@@ -200,9 +200,9 @@ const CreateTabContent = ({
                     '--lg-max-w-custom': '43rem',
                 }}
             >
-                <div className="lumo-welcome-section flex flex-column items-center text-center w-full">
+                <div className="lumo-welcome-section flex flex-column items-center w-full text-center">
                     <img src={isDarkLumoTheme ? lumojiCreateDark : lumojiCreateLight} alt="" className={'pb-4'} />
-                    <h1 className="main-text lh100 text-wrap-balance text-center mb-8 relative z-10">
+                    <h1 className="relative z-10 mb-8 lumo-headline-small text-wrap-balance text-center">
                         {c('collider_2025:Title').t`What do you want to create today?`}
                     </h1>
                 </div>
@@ -440,16 +440,16 @@ export const GalleryView = ({
             header={{
                 component: (
                     <div className="gallery-tab-bar w-full">
-                        <div className="gallery-tab-toggle">
+                        <div className="gallery-tab-toggle gap-1 radius-full lumo-bg-control-fill-mid">
                             <button
-                                className={`gallery-tab-toggle__btn${activeTab === 'create' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                                className={`gallery-tab-toggle__btn py-1.5 px-5 radius-full lumo-label-large lumo-color-glyph-mid${activeTab === 'create' ? ' gallery-tab-toggle__btn--active' : ''}`}
                                 onClick={() => setActiveTab('create')}
                                 type="button"
                             >
                                 {c('collider_2025:Tab').t`Create`}
                             </button>
                             <button
-                                className={`gallery-tab-toggle__btn${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
+                                className={`gallery-tab-toggle__btn py-1.5 px-5 radius-full lumo-label-large lumo-color-glyph-mid${activeTab === 'gallery' ? ' gallery-tab-toggle__btn--active' : ''}`}
                                 onClick={() => setActiveTab('gallery')}
                                 type="button"
                             >

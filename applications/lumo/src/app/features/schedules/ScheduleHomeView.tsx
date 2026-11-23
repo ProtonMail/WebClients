@@ -70,12 +70,12 @@ export const ScheduleHomeView = () => {
                     {/* Schedule name and cadence */}
                     <div>
                         <div dir="auto">
-                            <div className="inline-flex items-center justify-center mb-3 p-3 border border-weak rounded-lg">
+                            <div className="inline-flex items-center justify-center mb-3 p-3 border lumo-border radius-12">
                                 <LumoIcon aria-hidden name="Clock" size={24} />
                             </div>
-                            <h1 className="m-0 mb-2 text-bold">{schedule.name}</h1>
+                            <h1 className="m-0 mb-2 lumo-headline-small">{schedule.name}</h1>
                         </div>
-                        <div className="flex flex-wrap items-center gap-1.5 text-rg color-weak">
+                        <div className="flex flex-wrap items-center gap-1.5 lumo-body-medium lumo-color-glyph-mid">
                             <ScheduleRunPrimaryLabel rule={schedule.recurrenceRule} scheduleId={scheduleId} />
                             <span aria-hidden>·</span>
                             <ScheduleRunSecondaryLabel rule={schedule.recurrenceRule} scheduleId={scheduleId} />
@@ -83,8 +83,8 @@ export const ScheduleHomeView = () => {
                     </div>
 
                     {/* Schedule instructions */}
-                    <section className="p-4 border border-weak rounded-xl bg-norm">
-                        <h2 className="m-0 mb-2 text-sm text-semibold color-weak">{
+                    <section className="p-4 border lumo-border radius-16 lumo-bg-panel">
+                        <h2 className="m-0 mb-2 lumo-label-small lumo-color-glyph-mid">{
                             // translator: Heading above the instructions executed by a scheduled task.
                             c('collider_2025:Title').t`What it does`
                         }</h2>
@@ -95,12 +95,18 @@ export const ScheduleHomeView = () => {
 
                     {/* Schedule skills */}
                     {!!schedule.skillIdsOrSubSkillRefs?.length && (
-                        <SkillList value={schedule.skillIdsOrSubSkillRefs} headerClassName="text-sm color-weak" />
+                        <SkillList
+                            value={schedule.skillIdsOrSubSkillRefs}
+                            headerClassName="lumo-body-small lumo-color-glyph-mid"
+                        />
                     )}
 
                     {/* Schedule connectors */}
                     {schedule.connectors.length > 0 && (
-                        <ConnectorList headerClassName="text-sm color-weak" value={schedule.connectors} />
+                        <ConnectorList
+                            headerClassName="lumo-body-small lumo-color-glyph-mid"
+                            value={schedule.connectors}
+                        />
                     )}
 
                     {/* Schedule actions */}
@@ -126,7 +132,7 @@ export const ScheduleHomeView = () => {
 
                     {/* Empty state */}
                     {!latestRun && (
-                        <p className="m-0 text-sm color-weak">{
+                        <p className="m-0 lumo-body-small lumo-color-glyph-mid">{
                             // translator: Empty state on a scheduled task's home page before its first run.
                             c('collider_2025:Info').t`No runs yet. Results from each run will open here.`
                         }</p>

@@ -12,8 +12,9 @@ import { UtilityExamples } from './UtilityExamples';
     description={
         <>
             Use Proton utility classes for layout and spacing, and Lumo utility classes for token-based colors,
-            typography, and visual effects. Lumo utility classes are prefixed with <code>lumo-</code> to avoid
-            collisions with existing utility classes. Explore examples and supported class names below.
+            typography, and visual effects. Radius, opacity, and duration use short names such as <code>radius-12</code>
+            , <code>opacity-20</code>, and <code>duration-150</code>. Other Lumo visual utilities use the{' '}
+            <code>lumo-</code> prefix.
         </>
     }
 >
@@ -55,13 +56,32 @@ import { UtilityExamples } from './UtilityExamples';
                     <tr>
                         <td>Background</td>
                         <td>
-                            <code>lumo-bg-panel</code>, <code>lumo-bg-control-fill</code>,{' '}
-                            <code>lumo-bg-control-brand-fill</code>
+                            <code>lumo-bg-page</code>, <code>lumo-bg-panel</code>, <code>lumo-bg-panel-elevated</code>,{' '}
+                            <code>lumo-bg-panel-inverse</code>, <code>lumo-bg-notice</code>,{' '}
+                            <code>lumo-bg-control-fill</code>, <code>lumo-bg-control-brand-fill</code>
                         </td>
                         <td>
                             <code>bg-norm</code>, <code>bg-weak</code>, <code>bg-elevated</code>, etc.
                         </td>
-                        <td>Background only; choose a compatible foreground.</td>
+                        <td>
+                            Use page for the app canvas, panel for content, elevated for raised surfaces, inverse for
+                            toasts, and notice for informational messages. Pair inverse with{' '}
+                            <code>lumo-color-glyph-inverse</code>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Covering surfaces</td>
+                        <td>
+                            <code>lumo-bg-overlay</code>, <code>lumo-bg-layer</code>, <code>lumo-bg-scrim</code>,{' '}
+                            <code>lumo-bg-scrim-light</code>
+                        </td>
+                        <td>
+                            <code>bg-white</code>, <code>bg-black</code>
+                        </td>
+                        <td>
+                            Overlay covers the page, such as in a full-screen preview. Layer stays white in both themes.
+                            Use scrim behind dialogs and sheets, and scrim light behind drawers.
+                        </td>
                     </tr>
                     <tr>
                         <td>Border</td>
@@ -82,14 +102,41 @@ import { UtilityExamples } from './UtilityExamples';
                             <code>lumo-font-mono</code>
                         </td>
                         <td>
-                            <code>text-sm</code>, <code>text-lg</code>, <code>text-monospace</code>, etc.
+                            <code>text-xs</code>, <code>text-sm</code>, <code>text-bold</code>,{' '}
+                            <code>text-monospace</code>
                         </td>
                         <td>Use the typography roles in Tokens; not every size exists for every family.</td>
                     </tr>
                     <tr>
+                        <td>Icon size</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-icon-size-{12,14,16,18,20,24}" />
+                        </td>
+                        <td>
+                            <code>icon-size-3</code>, <code>icon-size-4</code>, etc.
+                        </td>
+                        <td>Logical width and height; does not change stroke.</td>
+                    </tr>
+                    <tr>
+                        <td>Spacing</td>
+                        <td>
+                            <UtilityClassPattern value="p-{0,0.5,1,1.5,2,2.5,3,4,5,6,7,8,10,11,12,14,16,20}" />
+                            <br />
+                            Also <code>{'m-*'}</code>, <code>{'gap-*'}</code>, and directional forms{' '}
+                            <UtilityClassPattern value="p{x,y,t,r,b,l}-*" />,{' '}
+                            <UtilityClassPattern value="m{x,y,t,r,b,l}-*" />, and{' '}
+                            <UtilityClassPattern value="gap-{x,y}-*" />.
+                        </td>
+                        <td>—</td>
+                        <td>
+                            Lumo's document-wide stylesheet adds a <code>2.5</code> step (10 px) to Proton's padding,
+                            margin, and gap utilities, including responsive variants.
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Radius</td>
                         <td>
-                            <UtilityClassPattern value="lumo-radius-{4,8,12,16,28,full}" />
+                            <UtilityClassPattern value="radius-{4,8,12,16,28,full}" />
                         </td>
                         <td>
                             <code>rounded</code>, <code>rounded-lg</code>, <code>rounded-xl</code>, etc.
@@ -109,27 +156,17 @@ import { UtilityExamples } from './UtilityExamples';
                     <tr>
                         <td>Opacity</td>
                         <td>
-                            <UtilityClassPattern value="lumo-opacity-{4,5,8,10,16,20,30,48}" />
+                            <UtilityClassPattern value="opacity-{4,5,8,10,16,20,30,48}" />
                         </td>
                         <td>
-                            <code>opacity-30</code>, <code>opacity-50</code>, <code>opacity-70</code>, etc.
+                            Unsupported steps such as <code>opacity-50</code> and <code>opacity-70</code>.
                         </td>
                         <td>Percentages; affects the entire element and its children.</td>
                     </tr>
                     <tr>
-                        <td>Icon size</td>
-                        <td>
-                            <UtilityClassPattern value="lumo-icon-size-{12,14,16,18,20,24}" />
-                        </td>
-                        <td>
-                            <code>icon-size-3</code>, <code>icon-size-4</code>, etc.
-                        </td>
-                        <td>Logical width and height; does not change stroke.</td>
-                    </tr>
-                    <tr>
                         <td>Duration</td>
                         <td>
-                            <UtilityClassPattern value="lumo-duration-{100,150,200,300}" />
+                            <UtilityClassPattern value="duration-{100,150,200,300}" />
                         </td>
                         <td>
                             <code>--transition-duration</code>
@@ -145,22 +182,6 @@ import { UtilityExamples } from './UtilityExamples';
                             <code>--transition-easing</code>
                         </td>
                         <td>Timing only. Does not start an animation.</td>
-                    </tr>
-                    <tr>
-                        <td>Spacing</td>
-                        <td>
-                            <UtilityClassPattern value="p-{0,0.5,1,1.5,2,2.5,3,4,5,6,7,8,10,11,12,14,16,20}" />
-                            <br />
-                            Also <code>{'m-*'}</code>, <code>{'gap-*'}</code>, and directional forms{' '}
-                            <UtilityClassPattern value="p{x,y,t,r,b,l}-*" />,{' '}
-                            <UtilityClassPattern value="m{x,y,t,r,b,l}-*" />, and{' '}
-                            <UtilityClassPattern value="gap-{x,y}-*" />.
-                        </td>
-                        <td>—</td>
-                        <td>
-                            Lumo adds a <code>2.5</code> step (10 px) to Proton’s padding, margin, and gap utilities,
-                            including responsive variants.
-                        </td>
                     </tr>
                 </tbody>
             </table>

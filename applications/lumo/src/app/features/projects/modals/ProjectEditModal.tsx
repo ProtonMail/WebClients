@@ -67,34 +67,29 @@ export const ProjectEditModal = ({
         <ModalTwo {...modalProps} onClose={handleCancel} size="large">
             <ModalTwoHeader title={c('collider_2025:Title').t`Edit Project`} />
             <ModalTwoContent>
-                <div className="flex flex-nowrap items-center border border-weak rounded-lg p-1 mb-4">
-                    <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
-
-                    <InputFieldTwo
-                        dir="auto"
-                        {...name.bind}
-                        id="project-name"
-                        className="unstyled-field"
-                        placeholder={c('collider_2025:Placeholder').t`Enter project name`}
-                        unstyled
-                        dense
-                        onKeyDown={(e) => {
-                            // Prevent space key from bubbling up to avoid closing modal
-                            if (e.key === ' ') {
-                                e.stopPropagation();
-                            }
-                        }}
-                        autoFocus
-                    />
-                </div>
-                <label htmlFor="project-instructions" className="text-semibold mb-1">
+                <InputFieldTwo
+                    dir="auto"
+                    {...name.bind}
+                    id="project-name"
+                    rootClassName="mb-4"
+                    prefix={<IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />}
+                    placeholder={c('collider_2025:Placeholder').t`Enter project name`}
+                    dense
+                    onKeyDown={(e) => {
+                        // Prevent space key from bubbling up to avoid closing modal
+                        if (e.key === ' ') {
+                            e.stopPropagation();
+                        }
+                    }}
+                    autoFocus
+                />
+                <label htmlFor="project-instructions" className="block mb-2 lumo-title-small lumo-color-glyph">
                     {c('collider_2025:Label').t`Instructions`}
                 </label>
                 <TextAreaTwo
                     dir="auto"
                     {...instructions.bind}
                     id="project-instructions"
-                    className="border border-weak rounded-lg"
                     placeholder={c('collider_2025:Placeholder')
                         .t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt. These instructions will apply to all chats in this project.`}
                     onKeyDown={(e) => {

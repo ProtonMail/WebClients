@@ -3,24 +3,20 @@
 .skill-connector {
 	&__row--unavailable {
 		opacity: 0.5;
-
-		.text-semibold {
-			font-weight: var(--font-weight-normal);
-		}
 	}
 
 	&__status.is-connected {
-		color: var(--signal-success);
+		color: var(--lumo-signal-success);
 	}
 
 	&__dot {
 		block-size: rem(8);
 		inline-size: rem(8);
 		border-radius: 50%;
-		background-color: var(--border-norm);
+		background-color: var(--lumo-border);
 
 		&.is-connected {
-			background-color: var(--signal-success);
+			background-color: var(--lumo-signal-success);
 		}
 	}
 }

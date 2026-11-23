@@ -61,7 +61,7 @@ const ExcelSheetSelectionModal = ({
         <ModalTwo size="medium" {...modalProps} onClose={onCancel}>
             <ModalTwoHeader title={c('collider_2025: Header').t`Choose sheets to add`} />
             <ModalTwoContent>
-                <p className="m-0 mb-3 color-weak">
+                <p className="m-0 mb-3 lumo-color-glyph-mid">
                     {c('collider_2025: Info')
                         .t`"${fileName}" has multiple sheets. Select the sheets to include in the conversation context.`}
                 </p>

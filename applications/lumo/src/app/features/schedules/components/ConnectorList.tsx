@@ -110,7 +110,10 @@ const ConnectorListReadyView = ({
                 {/* Compact header */}
                 {compact && (
                     <span
-                        className={clsx('schedule-chip-list__header--compact self-center text-sm', headerClassName)}
+                        className={clsx(
+                            'schedule-chip-list__header--compact self-center lumo-body-small',
+                            headerClassName
+                        )}
                         id={labelId}
                     >
                         {header}
@@ -180,15 +183,15 @@ const ConnectorListReadyView = ({
                     <SimpleDropdown
                         as="button"
                         className={clsx(
-                            'schedule-chip-list__add-chip button-ghost-norm inline-flex flex-nowrap shrink-0 items-center border border-dashed rounded cursor-pointer interactive interactive--no-background',
+                            'schedule-chip-list__add-chip button-ghost-norm inline-flex flex-nowrap shrink-0 items-center border border-dashed radius-8 cursor-pointer interactive interactive--no-background',
                             compact
-                                ? 'schedule-chip-list__add-chip--compact gap-1'
-                                : 'schedule-chip-list__add-chip--regular gap-1.5'
+                                ? 'schedule-chip-list__add-chip--compact gap-1 pl-1.5 pr-2'
+                                : 'schedule-chip-list__add-chip--regular gap-1.5 pl-2 pr-2.5'
                         )}
                         content={
                             <>
                                 <LumoIcon aria-hidden className="shrink-0" name="Plus" size={compact ? 12 : 14} />
-                                <span>{
+                                <span className={compact ? 'lumo-label-small' : 'lumo-label-medium'}>{
                                     // translator: Button opening the scheduled task's connector picker.
                                     c('collider_2025:Action').t`Add connector`
                                 }</span>
@@ -225,7 +228,7 @@ const ConnectorListReadyView = ({
                                         />
                                         <span className="flex-1">{connector.display_name}</span>
                                         {(unavailable || warning) && (
-                                            <span className="ml-2 text-sm color-weak">
+                                            <span className="ml-2 lumo-body-small lumo-color-glyph-mid">
                                                 {getConnectorStatusLabel(connector)}
                                             </span>
                                         )}
@@ -234,7 +237,7 @@ const ConnectorListReadyView = ({
                             })}
 
                             {connectors.length === 0 && (
-                                <div className="px-4 py-2 text-sm color-weak">
+                                <div className="px-4 py-2 lumo-body-small lumo-color-glyph-mid">
                                     {
                                         // translator: Empty state in the scheduled task's connector picker, directing users to the Manage connectors action below.
                                         c('collider_2025:Info')
@@ -268,7 +271,7 @@ const ConnectorListReadyView = ({
                     <Button
                         aria-controls={`${labelId}-permissions`}
                         aria-expanded={permissionsExpanded}
-                        className="inline-flex self-start items-center gap-1.5 p-0 bg-transparent text-sm color-hint hover:color-weak"
+                        className="schedule-chip-list__permissions-trigger inline-flex items-center self-start gap-1.5 p-0 lumo-body-small lumo-color-glyph-mid bg-transparent"
                         onClick={() => setPermissionsExpanded((expanded) => !expanded)}
                         shape="ghost"
                         size="small"
@@ -290,12 +293,12 @@ const ConnectorListReadyView = ({
                                     className="flex flex-wrap items-center justify-space-between gap-2 py-1"
                                     key={connector.id}
                                 >
-                                    <span className="min-w-0 text-sm text-break" id={nameId}>
+                                    <span className="min-w-0 lumo-body-small text-break" id={nameId}>
                                         {label}
                                     </span>
                                     <div
                                         aria-labelledby={nameId}
-                                        className="inline-flex flex-nowrap gap-0.5 p-0.5 border rounded-lg bg-weak"
+                                        className="inline-flex flex-nowrap gap-0.5 p-0.5 border lumo-border radius-8 lumo-bg-control-fill"
                                         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                         role="group"
                                     >
@@ -338,7 +341,7 @@ const ConnectorListReadyView = ({
             )}
 
             {editMode && showWarning && (
-                <Banner className="text-sm" variant="warning">
+                <Banner className="lumo-body-small" variant="warning">
                     {
                         // translator: Warning in the scheduled task editor when a selected connector is disabled, blocked, or in a warning state.
                         c('collider_2025:Info')
@@ -351,7 +354,7 @@ const ConnectorListReadyView = ({
 };
 
 const ConnectorListLoadingView = () => (
-    <div className="block m-0 text-sm color-weak">
+    <div className="block m-0 lumo-body-small lumo-color-glyph-mid">
         {
             // translator: Loading state while retrieving the scheduled task's connectors from Desktop.
             c('collider_2025:Info').t`Loading connectors`
@@ -361,7 +364,7 @@ const ConnectorListLoadingView = () => (
 );
 
 const ConnectorListErrorView = () => (
-    <div className="block m-0 text-sm color-danger">{
+    <div className="block m-0 lumo-body-small lumo-color-signal-danger">{
         // translator: Error when retrieving the scheduled task's connectors from Desktop fails.
         c('collider_2025:Error').t`Could not load connectors`
     }</div>
@@ -389,7 +392,7 @@ export const ConnectorList = (props: ConnectorListProps) => {
     return (
         <section className="flex flex-column flex-nowrap gap-3">
             {!props.compact && (
-                <span className={clsx('text-semibold', props.headerClassName)} id={labelId}>
+                <span className={clsx('lumo-body-medium', props.headerClassName)} id={labelId}>
                     {header}
                 </span>
             )}

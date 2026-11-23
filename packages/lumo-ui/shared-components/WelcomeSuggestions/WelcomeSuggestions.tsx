@@ -37,8 +37,10 @@ const WelcomeSuggestions = ({ cards, onPick }: Props) => (
                     <Icon />
                 </span>
                 <span className="lumo-welcome-card__text flex flex-column flex-nowrap">
-                    <span className="text-semibold">{getTitle()}</span>
-                    <span className="lumo-welcome-card__description color-weak text-sm">{getDescription()}</span>
+                    <span className="lumo-title-small">{getTitle()}</span>
+                    <span className="lumo-welcome-card__description color-weak lumo-body-small">
+                        {getDescription()}
+                    </span>
                 </span>
             </Button>
         ))}

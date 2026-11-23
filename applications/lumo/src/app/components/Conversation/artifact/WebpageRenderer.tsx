@@ -55,7 +55,10 @@ export const WebpageRenderer = memo(function WebpageRenderer({ artifact }: Artif
         useArtifactShellIframe(document);
 
     if (!artifact.content) {
-        return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
+        return (
+            <p className="p-4 lumo-body-small lumo-color-glyph-mid">{c('collider_2025:Info')
+                .t`No content generated`}</p>
+        );
     }
 
     if (!isCrossOrigin) {

@@ -92,7 +92,7 @@ export const ProjectsView = () => {
             return (
                 <>
                     <div className="projects-list-wrapper">
-                        <div className="projects-list-header color-hint hidden md:flex">
+                        <div className="projects-list-header p-2 hidden lumo-label-small lumo-color-glyph-mid md:flex">
                             <span>{c('collider_2025:Label').t`Name`}</span>
                             <span>{c('collider_2025:Label').t`Created`}</span>
                         </div>
@@ -103,8 +103,9 @@ export const ProjectsView = () => {
                         </div>
                     </div>
                     <div className="projects-inspiration-section projects-inspiration-section--with-projects overflow-x-auto py-2">
-                        <h2 className="projects-inspiration-title">{c('collider_2025:Title').t`Inspiration`}</h2>
-                        <div className="projects-grid projects-grid--inspiration">
+                        <h2 className="m-0 mb-3 lumo-title-medium lumo-color-glyph">{c('collider_2025:Title')
+                            .t`Inspiration`}</h2>
+                        <div className="projects-grid mt-0.5 projects-grid--inspiration">
                             {randomProjects.map((project) => (
                                 <ProjectCard
                                     key={project.id}
@@ -121,8 +122,8 @@ export const ProjectsView = () => {
         return (
             <>
                 <div className="projects-empty-state-wrapper">
-                    <div className="projects-empty-state">
-                        <div className="projects-empty-icon">
+                    <div className="projects-empty-state px-5 py-10">
+                        <div className="projects-empty-icon mb-6">
                             <img
                                 src={lumoEmptyProjects}
                                 alt={
@@ -132,18 +133,19 @@ export const ProjectsView = () => {
                                 width={300}
                             />
                         </div>
-                        <h2 className="projects-empty-title">
+                        <h2 className="m-0 mb-3 lumo-title-large lumo-color-glyph">
                             {c('collider_2025:Title').t`Get started by creating a new project`}
                         </h2>
-                        <p className="projects-empty-description">
+                        <p className="projects-empty-description m-0 lumo-body-medium lumo-color-glyph-mid">
                             {c('collider_2025:Info')
                                 .t`Projects help you organize conversations with custom instructions and files.`}
                         </p>
                     </div>
                 </div>
-                <div className="projects-inspiration-section">
-                    <h2 className="projects-inspiration-title">{c('collider_2025:Title').t`Inspiration`}</h2>
-                    <div className="projects-grid projects-grid--inspiration overflow-x-auto py-2">
+                <div className="projects-inspiration-section pt-8">
+                    <h2 className="m-0 mb-3 lumo-title-medium lumo-color-glyph">{c('collider_2025:Title')
+                        .t`Inspiration`}</h2>
+                    <div className="projects-grid mt-0.5 projects-grid--inspiration overflow-x-auto py-2">
                         {randomProjects.map((project) => (
                             <ProjectCard
                                 key={project.id}
@@ -165,7 +167,7 @@ export const ProjectsView = () => {
                         className="flex flex-row flex-nowrap justify-space-between w-full my-4 mx-auto max-w-custom"
                         style={{ '--max-w-custom': '900px' }}
                     >
-                        <h1 className="main-text">{c('collider_2025:Title').t`My Projects`}</h1>
+                        <h1 className="lumo-headline-small">{c('collider_2025:Title').t`My Projects`}</h1>
                         <Button color="norm" onClick={handleCreateProject} disabled={isGuest}>
                             <span className="flex items-center flex-nowrap">
                                 <LumoIcon name="Plus" className="mr-2" />
@@ -174,7 +176,7 @@ export const ProjectsView = () => {
                         </Button>
                     </div>
 
-                    <div className="projects-content h-full">{renderContent()}</div>
+                    <div className="projects-content gap-8 h-full">{renderContent()}</div>
                 </div>
             </LumoLayoutWithDrawer>
 

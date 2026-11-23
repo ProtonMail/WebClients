@@ -21,8 +21,8 @@ export const ExploreGalleryGrid = ({ onTryPrompt }: ExploreGalleryGridProps) => 
 
     return (
         <>
-            <div className="gallery-explore">
-                <h2 className="gallery-explore__title main-text medium">
+            <div className="gallery-explore pt-1 pb-8">
+                <h2 className="gallery-explore__title mt-0 mb-4 medium lumo-title-large lumo-color-glyph">
                     {c('collider_2025:Title').t`Explore images created with ${LUMO_SHORT_APP_NAME}`}
                 </h2>
                 <GalleryMasonryGrid>
@@ -30,7 +30,7 @@ export const ExploreGalleryGrid = ({ onTryPrompt }: ExploreGalleryGridProps) => 
                         <button
                             key={s.id}
                             type="button"
-                            className="gallery-card"
+                            className="gallery-card border lumo-border lumo-bg-control-fill-mid"
                             onClick={() => setOpenId(s.id)}
                             aria-label={`${c('collider_2025:Label').t`Inspiration image`} ${index + 1}`}
                         >

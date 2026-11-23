@@ -81,9 +81,14 @@ export const WelcomeIllustration = () => {
                     return (
                         <li
                             key={promise.icon}
-                            className="dao-promise dao-medium flex flex-nowrap items-center gap-1.5 bg-norm rounded-full color-norm text-nowrap"
+                            className="dao-promise flex flex-nowrap items-center gap-1.5 pl-2.5 pr-3 py-1.5 radius-full lumo-label-medium lumo-bg-panel lumo-color-glyph text-nowrap"
                         >
-                            <LumoIcon name={promise.icon} size={14} strokeWidth={1.4} className="color-primary" />
+                            <LumoIcon
+                                name={promise.icon}
+                                size={14}
+                                strokeWidth={1.4}
+                                className="lumo-color-glyph-brand-text"
+                            />
                             {promise.label}
                         </li>
                     );
@@ -131,14 +136,19 @@ export const ConnectorsIllustration = () => {
                 <div className="flex flex-nowrap items-center justify-space-between w-full">
                     <span className="dao-bar" style={{ inlineSize: '3.625rem' }} />
                     <span className="dao-itinerary-sources dao-medium flex flex-nowrap items-center text-nowrap">
-                        <LumoIcon name="File" size={9} strokeWidth={HERO_STROKE} className="color-primary" />
+                        <LumoIcon
+                            name="File"
+                            size={9}
+                            strokeWidth={HERO_STROKE}
+                            className="lumo-color-glyph-brand-text"
+                        />
                         {
                             // translator: Example chip in an illustration: the trip plan was built from 3 connected sources (an email, a booking, a file).
                             c('collider_2025: Illustration').t`3 sources`
                         }
                     </span>
                 </div>
-                <span className="dao-itinerary-city text-semibold text-nowrap">
+                <span className="dao-itinerary-city text-nowrap">
                     {
                         // translator: Example trip destination shown in an illustration of a plan Lumo built from the user's emails.
                         c('collider_2025: Illustration').t`Mexico City`
@@ -209,7 +219,7 @@ export const SkillsIllustration = () => {
     return (
         <Hero glow="skills">
             <div className="dao-chat-panel absolute" />
-            <div className="dao-chat-attachment absolute flex flex-nowrap items-center">
+            <div className="dao-chat-attachment absolute flex flex-nowrap items-center py-1.5">
                 <span className="dao-chat-sheet flex items-center justify-center shrink-0">
                     <span className="dao-chat-sheet-cells">
                         {[0, 1, 2, 3, 4, 5].map((cell) => {
@@ -222,7 +232,7 @@ export const SkillsIllustration = () => {
                     <span className="dao-bar dao-bar--weak" style={{ inlineSize: '1.875rem' }} />
                 </span>
             </div>
-            <div className="dao-chat-message absolute text-nowrap">
+            <div className="dao-chat-message absolute py-3 text-nowrap">
                 {
                     // translator: Example request in an illustration of a chat where Lumo used a "Budget" skill on an attached spreadsheet.
                     c('collider_2025: Illustration').t`Make a budget from this file.`
@@ -273,7 +283,7 @@ export const SkillsIllustration = () => {
                 <span />
                 <span />
             </div>
-            <div className="dao-chat-composer absolute flex flex-nowrap items-center">
+            <div className="dao-chat-composer absolute flex flex-nowrap items-center gap-0.5">
                 <LumoIcon name="Plus" size={9} strokeWidth={HERO_STROKE} className="m-0.5" />
                 <LumoIcon name="SlidersHorizontal" size={8} strokeWidth={HERO_STROKE} className="mx-1" />
                 <span className="flex-1" />
@@ -312,7 +322,7 @@ interface ScheduledTaskProps {
 
 const ScheduledTask = ({ icon, tone, name, detailWidth, trailing, time }: ScheduledTaskProps) => {
     return (
-        <div className="dao-schedules-task flex flex-nowrap items-center w-full">
+        <div className="dao-schedules-task flex flex-nowrap items-center gap-2 w-full">
             <span
                 className={clsx(
                     'dao-schedules-icon flex items-center justify-center shrink-0',
@@ -322,7 +332,7 @@ const ScheduledTask = ({ icon, tone, name, detailWidth, trailing, time }: Schedu
                 <LumoIcon name={icon} size={11} strokeWidth={HERO_STROKE} />
             </span>
             <span className="flex flex-column flex-nowrap flex-1 gap-1 min-w-0">
-                <span className="dao-schedules-name text-semibold text-nowrap">{name}</span>
+                <span className="dao-schedules-name text-nowrap">{name}</span>
                 <span className="dao-bar dao-bar--weak" style={{ inlineSize: `${detailWidth / 16}rem` }} />
             </span>
             {trailing}
@@ -371,7 +381,7 @@ export const SchedulesIllustration = () => {
                     // translator: Example name of a scheduled task in an illustration (a daily summary of new emails).
                     name={c('collider_2025: Illustration').t`Email check`}
                     detailWidth={64}
-                    trailing={<span className="dao-schedules-badge text-semibold shrink-0">3</span>}
+                    trailing={<span className="dao-schedules-badge shrink-0 py-0.5">3</span>}
                     time="18:00"
                 />
             </div>
@@ -392,15 +402,15 @@ const NotificationBanner = ({ title, time, body, older = false }: NotificationBa
     return (
         <div
             className={clsx(
-                'dao-notification flex flex-nowrap items-center shrink-0',
+                'dao-notification flex flex-nowrap items-center shrink-0 gap-3 lumo-body-small',
                 older && 'dao-notification--older'
             )}
         >
             <LumoCat />
-            <div className="flex flex-column flex-nowrap flex-1 min-w-0 color-norm">
+            <div className="flex flex-column flex-nowrap flex-1 min-w-0 lumo-color-glyph">
                 <div className="flex flex-nowrap items-start gap-2">
-                    <span className="flex-1 text-semibold">{title}</span>
-                    <span className="dao-notification-time color-weak text-nowrap">{time}</span>
+                    <span className="flex-1 lumo-title-small">{title}</span>
+                    <span className="dao-notification-time lumo-color-glyph-mid text-nowrap">{time}</span>
                 </div>
                 <span>{body}</span>
             </div>
@@ -445,12 +455,15 @@ export const PlusPlanIllustration = () => {
     ];
     return (
         <FillPanel>
-            <div className="dao-plan flex flex-column flex-nowrap bg-norm color-norm">
-                <span className="dao-plan-name text-semibold">{c('collider_2025: Plan Name').t`Plus`}</span>
-                <ul className="dao-plan-features unstyled m-0 flex flex-column flex-nowrap">
+            <div className="dao-plan flex flex-column flex-nowrap gap-3 p-5 bg-norm lumo-color-glyph">
+                <span className="dao-plan-name lumo-title-large">{c('collider_2025: Plan Name').t`Plus`}</span>
+                <ul className="dao-plan-features unstyled flex flex-column flex-nowrap gap-2.5 m-0">
                     {features.map((feature) => {
                         return (
-                            <li key={feature.icon} className="dao-plan-feature flex flex-nowrap items-center">
+                            <li
+                                key={feature.icon}
+                                className="dao-plan-feature flex flex-nowrap items-center gap-2.5 lumo-body-large"
+                            >
                                 <LumoIcon name={feature.icon} size={18} strokeWidth={1.4} className="shrink-0" />
                                 {feature.label}
                             </li>
@@ -531,7 +544,7 @@ const ReadyChip = ({ icon, label, y, left, right }: ReadyChipProps) => {
     return (
         <span
             className={clsx(
-                'dao-all-set-chip dao-medium absolute flex flex-nowrap items-center bg-norm rounded-full color-norm text-nowrap',
+                'dao-all-set-chip absolute flex flex-nowrap items-center gap-1.5 py-1.5 pr-2 pl-2.5 rounded-full lumo-label-small text-nowrap bg-norm lumo-color-glyph',
                 right !== undefined && 'dao-all-set-chip--end'
             )}
             style={style}
@@ -588,13 +601,13 @@ export const AllSetIllustration = () => {
                     <LumoCat />
                 </span>
                 <span
-                    className="dao-all-set-piece dao-all-set-sparkle absolute flex color-primary"
+                    className="dao-all-set-piece dao-all-set-sparkle absolute flex lumo-color-glyph-brand-text"
                     style={position(262, 140)}
                 >
                     <LumoIcon name="Sparkles" size={24} strokeWidth={1.4} />
                 </span>
                 <span
-                    className="dao-all-set-piece dao-all-set-sparkle absolute flex color-primary"
+                    className="dao-all-set-piece dao-all-set-sparkle absolute flex lumo-color-glyph-brand-text"
                     style={position(120, 270, { '--delay': '0.1s' } as CSSProperties)}
                 >
                     <LumoIcon name="Sparkles" size={16} strokeWidth={1.4} />

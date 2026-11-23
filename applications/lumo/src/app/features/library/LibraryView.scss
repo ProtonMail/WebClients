@@ -4,33 +4,35 @@
 .library-inner {
 	inline-size: 100%;
 	max-inline-size: rem(1200);
-	margin-inline: auto;
 }
 
-// Underline on the active tab, sitting on the tab bar's bottom border.
+// Reserve the same 2px indicator in every state so selecting a tab does not shift its content.
 .library-tab {
-	position: relative;
+	border-block-end: 2px solid var(--lumo-control-fill-empty);
 	cursor: pointer;
 
-	&--active::after {
-		content: '';
-		position: absolute;
-		inset-inline: 0;
-		inset-block-end: -1px;
-		block-size: 2px;
-		background-color: var(--primary);
+	&--active {
+		border-block-end-color: var(--lumo-glyph-brand-text);
+	}
+
+	&:hover {
+		color: var(--lumo-glyph);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--lumo-control-border-focus);
+		outline-offset: 4px;
 	}
 }
 
 // Abstract text lines on a document thumbnail: the brand colour, faded.
 .library-thumbnail-line {
-	background-color: color-mix(in srgb, var(--primary) 25%, transparent);
+	background-color: color-mix(in srgb, var(--lumo-control-brand-fill) 25%, transparent);
 }
 
 // The thumbnail and title buttons that open the chat look like plain content; hovering either
 // darkens the thumbnail border.
 .library-creation-card-action {
-	background: transparent;
 	border: none;
 	cursor: pointer;
 
@@ -39,11 +41,12 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--focus-ring);
+		outline: 2px solid var(--lumo-control-border-focus);
 		outline-offset: 4px;
 	}
 }
 
-.library-creation-card:has(.library-creation-card-action:not(:disabled):hover) .library-creation-thumbnail {
-	border-color: var(--border-norm);
+.library-creation-card:has(.library-creation-card-action:not(:disabled):is(:hover, :focus-visible))
+	.library-creation-thumbnail {
+	border-color: var(--lumo-border-mid);
 }
