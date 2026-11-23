@@ -958,7 +958,7 @@ export const useUpsellsToDisplay = (
         const promises = upsells.map((upsell) => upsell.initializeOfferPrice?.(payments)).filter(isTruthy);
 
         withLoading(Promise.all(promises)).catch(noop);
-    }, [key, payments.initialized]);
+    }, [key, payments.preloaded]);
 
     return {
         upsells,

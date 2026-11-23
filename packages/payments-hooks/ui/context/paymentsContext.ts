@@ -11,7 +11,6 @@ import type {
     Currency,
     Cycle,
     FreeSubscription,
-    PaymentMethodFlow,
     PaymentStatus,
     PaymentsApi,
     PlanIDs,
@@ -25,16 +24,13 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
-import type { OnChargeable } from '../../react-extensions/usePaymentFacade';
 import type { CouponConfigRendered } from '../coupon-config/interface';
 import type { MultiCheckGroupsResult } from './useMultiCheckGroups';
 
 export interface InitializeProps {
     api: Api;
     paramCurrency?: Currency;
-    paymentFlow: PaymentMethodFlow;
     planToCheck?: Omit<PlanToCheck, 'currency'>;
-    onChargeable: OnChargeable;
     /**
      * Plans whose prices the page shows next to the selection, checked while it initializes. A plan with its own
      * `coupon` key is checked with that coupon (its automatic one when undefined), the others with the selection's.
@@ -54,9 +50,9 @@ export interface PricesResult {
 export type IsTrialResolver = (planIDs: PlanIDs) => boolean;
 
 export interface PaymentsContextType {
-    createSubscription: () => Promise<void>;
     initialize: (props: InitializeProps) => Promise<void>;
-    initialized: boolean;
+    /** The plans and the payment status are loaded. `initialize()` may still be running */
+    preloaded: boolean;
     selectPlanIDs: (planIDs: PlanIDs) => Promise<void>;
     selectCycle: (cycle: Cycle) => Promise<void>;
     selectCurrency: (currency: Currency) => Promise<void>;
@@ -65,13 +61,18 @@ export interface PaymentsContextType {
     /**
      * Returns the cached version of the subscription response. Returns null if the cache is missing.
      * Make sure to call `checkMultiplePlans` first.
+     * Without a coupon: the plan's own price, never null.
      */
     getPrice: (planToCheck: PlanToCheck) => PricesResult | null;
-    getFallbackPrice: (planToCheck: PlanToCheck) => PricesResult;
     /**
      * Same as `getPrice`, but returns the fallback version of the price if cache is missing.
      */
     getPriceOrFallback: (planToCheck: PlanToCheck) => PricesResult;
+    /**
+     * A billing address or VAT number change waits for its check, so the cached prices, checked for the previous
+     * billing details, don't apply to it yet
+     */
+    hasPendingBillingChange: () => boolean;
     /**
      * Get a valid coupon by checking it against the cached multi check results
      */
@@ -88,8 +89,6 @@ export interface PaymentsContextType {
      * Registers the flow's own trial resolver, overriding the `planToCheck.trial` based default.
      */
     setIsTrialResolver: (resolver: IsTrialResolver | undefined) => void;
-
-    // paymentFacade: ReturnType<typeof usePaymentFacade>;
 
     billingAddress: BillingAddressExtended;
     checkoutUi: PaymentsCheckoutUI;
@@ -144,12 +143,12 @@ export type PreloadedPaymentsContextType = Omit<PaymentsContextType, 'paymentSta
 };
 
 export function isPaymentsPreloaded(payments: PaymentsContextType): payments is PreloadedPaymentsContextType {
-    return payments.initialized;
+    return payments.preloaded;
 }
 
 export const usePaymentsPreloaded = (): PreloadedPaymentsContextType => {
     const payments = usePayments();
-    if (!payments.initialized) {
+    if (!payments.preloaded) {
         // eslint-disable-next-line no-console
         console.warn(
             'Payments context did not preload the essential data. Either call payments.initialize() first or use usePayments() instead of usePaymentsPreloaded().'

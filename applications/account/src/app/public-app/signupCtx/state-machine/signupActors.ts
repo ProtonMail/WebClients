@@ -231,14 +231,12 @@ export const createSignupActors = (services: SignupServices) => {
             const { paymentsDataConfig } = services;
             await services.payments.initialize({
                 api: silentApi,
-                paymentFlow: 'signup',
                 planToCheck: paymentsDataConfig?.plan,
                 paramCurrency: paymentsDataConfig?.plan?.currency,
                 availablePlans: paymentsDataConfig?.availablePlans,
                 vatNumber: paymentsDataConfig?.vatNumber,
                 telemetryContext: paymentsDataConfig?.telemetryContext ?? 'other',
                 product: app,
-                onChargeable: async () => {},
             });
             services.onPaymentsInitialized();
         }),

@@ -31,8 +31,6 @@ const DrivePricing = () => {
         const run = async () => {
             await payments.initialize({
                 api: silentApi,
-                paymentFlow: 'signup',
-                onChargeable: async () => {},
                 planToCheck: {
                     planIDs: {},
                     cycle: signupSearchParams.getCycle(searchParams) || CYCLE.YEARLY,
