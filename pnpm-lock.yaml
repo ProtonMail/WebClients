@@ -3082,6 +3082,9 @@ importers:
       '@proton/cross-storage':
         specifier: workspace:^
         version: link:../../packages/cross-storage
+      '@proton/drive':
+        specifier: workspace:^
+        version: link:../../packages/drive
       '@proton/encrypted-search':
         specifier: workspace:^
         version: link:../../packages/encrypted-search
