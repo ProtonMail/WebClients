@@ -1,4 +1,6 @@
 import {
+    BarController,
+    BarElement,
     CategoryScale,
     Chart,
     Filler,
@@ -9,11 +11,16 @@ import {
     Tooltip,
 } from 'chart.js';
 
+import { barChartActiveRowPlugin } from './plugins/barChartActiveRow/barChartActiveRow';
+import { barChartValueLabelsPlugin } from './plugins/barChartValueLabels/barChartValueLabels';
 import { chartRenderStatePlugin } from './plugins/chartRenderState';
 import { trendChartPlaceholderTicksPlugin } from './plugins/trendChartPlaceholderTicks/trendChartPlaceholderTicks';
 import { trendChartThresholdPlugin } from './plugins/trendChartThreshold/trendChartThreshold';
+import { registerRowCursorPosition } from './tooltip/rowCursorPosition';
 
 export const registerCharts = () => {
+    registerRowCursorPosition();
+
     Chart.register(
         CategoryScale,
         LinearScale,
@@ -22,11 +29,16 @@ export const registerCharts = () => {
         LineElement,
         PointElement,
 
+        BarController,
+        BarElement,
+
         Filler,
         Tooltip,
 
         chartRenderStatePlugin,
         trendChartPlaceholderTicksPlugin,
-        trendChartThresholdPlugin
+        trendChartThresholdPlugin,
+        barChartValueLabelsPlugin,
+        barChartActiveRowPlugin
     );
 };

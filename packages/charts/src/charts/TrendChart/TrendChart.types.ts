@@ -1,4 +1,6 @@
-import type { ChartColors } from '../../theme';
+import type { FillColor } from '../../theme';
+
+export type { FillColor };
 
 export interface DataPoint {
     label: string;
@@ -10,8 +12,6 @@ export interface AxisTick {
     label?: string | string[];
     major?: boolean;
 }
-
-export type FillColor = Extract<keyof ChartColors, 'primary' | 'danger' | 'warning' | 'success' | 'info'>;
 
 interface TrendChartBaseProps {
     /** What the chart is doing. Defaults to view. */

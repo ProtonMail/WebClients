@@ -1,0 +1,17 @@
+@use '../../styles/shimmer' as *;
+
+.horizontal-bar-chart {
+	position: relative;
+
+	&--loading {
+		pointer-events: none;
+
+		canvas {
+			opacity: 0.35;
+		}
+	}
+
+	&-shimmer {
+		@include chart-shimmer;
+	}
+}

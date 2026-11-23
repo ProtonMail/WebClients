@@ -10,6 +10,8 @@
     "type": "module",
     "exports": {
         "./ChartCard": "./src/presentation/ChartCard.tsx",
+        "./HorizontalBarChart": "./src/charts/HorizontalBarChart/HorizontalBarChart.tsx",
+        "./HorizontalBarChart.types": "./src/charts/HorizontalBarChart/HorizontalBarChart.types.ts",
         "./TrendChart": "./src/charts/TrendChart/TrendChart.tsx",
         "./TrendChart.types": "./src/charts/TrendChart/TrendChart.types.ts"
     },
