@@ -149,32 +149,23 @@ const result = (opts: WebpackEnvArguments): webpack.Configuration => {
                         to: 'assets/static/cr3.js',
                     },
                     {
-                        from: path.resolve(__dirname, '../../packages/components/containers/filePreview/iwad/index.js'),
+                        from: path.resolve(__dirname, '../../packages/file-preview/iwad/index.js'),
                         to: 'assets/static/iwad/index.js',
                     },
                     {
-                        from: path.resolve(__dirname, '../../packages/components/containers/filePreview/iwad/game.js'),
+                        from: path.resolve(__dirname, '../../packages/file-preview/iwad/game.js'),
                         to: 'assets/static/iwad/game.js',
                     },
                     {
-                        from: path.resolve(
-                            __dirname,
-                            '../../packages/components/containers/filePreview/iwad/index.data'
-                        ),
+                        from: path.resolve(__dirname, '../../packages/file-preview/iwad/index.data'),
                         to: 'assets/static/iwad/index.data',
                     },
                     {
-                        from: path.resolve(
-                            __dirname,
-                            '../../packages/components/containers/filePreview/iwad/index.wasm'
-                        ),
+                        from: path.resolve(__dirname, '../../packages/file-preview/iwad/index.wasm'),
                         to: 'assets/static/iwad/index.wasm',
                     },
                     {
-                        from: path.resolve(
-                            __dirname,
-                            '../../packages/components/containers/filePreview/iwad/game.html'
-                        ),
+                        from: path.resolve(__dirname, '../../packages/file-preview/iwad/game.html'),
                         to: 'assets/static/iwad/game.html',
                     },
                 ],

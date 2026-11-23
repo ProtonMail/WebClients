@@ -11,9 +11,9 @@ import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mime
 import clsx from '@proton/utils/clsx';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { useDragToScroll } from '../../hooks/useDragToScroll';
 import UnsupportedPreview from './UnsupportedPreview';
 import ZoomControl from './ZoomControl';
+import { useDragToScroll } from './hooks/useDragToScroll';
 
 interface Props {
     mimeType: string;

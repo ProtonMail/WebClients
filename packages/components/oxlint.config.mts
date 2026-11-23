@@ -6,7 +6,6 @@ import {
 import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
-    ignorePatterns: ['**/iwad/**'],
     restrictedImports: {
         // Replaces `import/no-internal-modules` (forbid `./index`), which oxlint's import plugin does not have.
         patterns: [
@@ -29,6 +28,11 @@ export default createOxlintConfig({
                 // Both depend on this package; apps pass their pieces in as children or props.
                 group: ['@proton/activation', '@proton/activation/*', '@proton/byoe', '@proton/byoe/*'],
                 message: '@proton/components must not import @proton/activation or @proton/byoe.',
+            },
+            {
+                // Depends on this package.
+                group: ['@proton/file-preview', '@proton/file-preview/*'],
+                message: '@proton/components must not import @proton/file-preview.',
             },
         ],
     },

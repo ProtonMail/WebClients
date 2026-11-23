@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
+import { ButtonWithTextAndIcon } from '@proton/components/components/button/ButtonWithTextAndIcon';
 import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
 import { MimeXls } from '@proton/file-icons/icons/MimeXls';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-
-import { ButtonWithTextAndIcon } from '../../components/button/ButtonWithTextAndIcon';
 
 export function ExcelPreview({ onOpenInDocs, onDownload }: { onOpenInDocs?: () => void; onDownload?: () => void }) {
     const hasActions = onOpenInDocs || onDownload;

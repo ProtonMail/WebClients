@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
+import TimeIntl from '@proton/components/components/time/TimeIntl';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc';
 import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
@@ -26,9 +29,6 @@ import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import FileNameDisplay from '../../components/fileNameDisplay/FileNameDisplay';
-import TimeIntl from '../../components/time/TimeIntl';
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import type { DownloadHandler } from './useDownloading';
 import useDownloading from './useDownloading';
 

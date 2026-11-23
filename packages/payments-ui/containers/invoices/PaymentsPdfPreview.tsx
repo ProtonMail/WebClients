@@ -2,9 +2,9 @@ import type { Ref } from 'react';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import FilePreview from '@proton/components/containers/filePreview/FilePreview';
-import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import { getInvoicePaymentsVersion } from '@proton/components/containers/invoices/helpers';
+import FilePreview from '@proton/file-preview/FilePreview';
+import NavigationControl from '@proton/file-preview/NavigationControl';
 import { getInvoicePDF, getTransactionPDF } from '@proton/payments/core/api/api';
 import type { Invoice, Transaction } from '@proton/payments/core/interface';
 import { isTransaction } from '@proton/payments/core/type-guards';

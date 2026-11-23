@@ -2,7 +2,7 @@ import { type MutableRefObject, type SyntheticEvent, useCallback, useRef } from 
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
-import { useVideoAutoPlay } from '../../hooks/useVideoAutoPlay';
+import { useVideoAutoPlay } from './hooks/useVideoAutoPlay';
 
 import './VideoStreamingPreview.scss';
 

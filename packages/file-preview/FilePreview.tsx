@@ -5,6 +5,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import LumoDrawerLogo from '@proton/components/components/drawer/drawerIcons/LumoDrawerLogo';
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
 import useLoading from '@proton/hooks/useLoading';
@@ -27,11 +32,6 @@ import {
 import { isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 import clsx from '@proton/utils/clsx';
 
-import LumoDrawerLogo from '../../components/drawer/drawerIcons/LumoDrawerLogo';
-import useFocusTrap from '../../components/focus/useFocusTrap';
-import useModalState from '../../components/modalTwo/useModalState';
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import useBeforeUnload from '../../hooks/useBeforeUnload';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';
 import { ExcelPreview } from './ExcelPreview';

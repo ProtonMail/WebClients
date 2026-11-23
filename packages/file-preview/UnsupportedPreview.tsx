@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
 import clsx from '@proton/utils/clsx';
 
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import type { DownloadHandler } from './useDownloading';
 import useDownloading from './useDownloading';
 

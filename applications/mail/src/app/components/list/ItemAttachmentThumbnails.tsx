@@ -2,8 +2,8 @@ import { useRef, useState } from 'react';
 
 import { Portal } from '@proton/atoms/Portal/Portal';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FilePreview from '@proton/components/containers/filePreview/FilePreview';
-import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
+import FilePreview from '@proton/file-preview/FilePreview';
+import NavigationControl from '@proton/file-preview/NavigationControl';
 import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';

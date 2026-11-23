@@ -254,7 +254,6 @@
         "packages/components": {
             "entry": [],
             "project": ["**/*.{js,jsx,ts,tsx}"],
-            "ignore": ["containers/filePreview/iwad/**"],
             "ignoreDependencies": ["core-js"]
         },
         "packages/console": {
@@ -313,6 +312,11 @@
         "packages/file-icons": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/file-preview": {
+            "entry": [],
+            "project": ["**/*.{js,jsx,ts,tsx}"],
+            "ignore": ["iwad/**"]
         },
         "packages/icons": {
             "entry": [],

@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { act, renderHook } from '@testing-library/react';
 import type { MockInstance } from 'vitest';
 
