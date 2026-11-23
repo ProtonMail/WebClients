@@ -1,4 +1,4 @@
-import { createActor, fromCallback, fromPromise, waitFor } from 'xstate';
+import { type CallbackLogicFunction, createActor, fromCallback, fromPromise, waitFor } from 'xstate';
 
 import { createPromise } from '@proton/shared/lib/helpers/promise';
 import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
@@ -15,21 +15,34 @@ const accountData = { password: 'password' } as AccountData;
 const setupResult = { session: { localID: 1 }, recoveryPhraseData: { payload: {} } } as unknown as SetupUserResult;
 
 const start = ({
+    watchSession = () => {},
+    startAuth = async () => {},
     loadDomains = async () => ['proton.me'],
     checkReferral = async () => undefined,
     initializePayments = async () => {},
     createUser = async () => {},
     setupUser = async () => setupResult,
     setupSubscription = async () => undefined,
+    setOrgName = async () => {},
+    setDisplayName = async () => {},
+    setPassword = async ({ password }) => ({
+        accountData: { ...accountData, password },
+        setupResult: { ...setupResult, keyPassword: 'key-password' },
+    }),
     sendRecoveryPhrase = async () => {},
     login = async () => {},
 }: {
+    watchSession?: CallbackLogicFunction;
+    startAuth?: () => Promise<void>;
     loadDomains?: () => Promise<string[]>;
     checkReferral?: () => Promise<ReferralData | undefined>;
     initializePayments?: () => Promise<void>;
     createUser?: () => Promise<void>;
     setupUser?: (input: { isRetry: boolean }) => Promise<SetupUserResult>;
     setupSubscription?: (input: { subscriptionData: unknown }) => Promise<SetupUserResult['subscription']>;
+    setOrgName?: () => Promise<void>;
+    setDisplayName?: () => Promise<void>;
+    setPassword?: (input: { password: string }) => Promise<{ accountData: AccountData; setupResult: SetupUserResult }>;
     sendRecoveryPhrase?: () => Promise<void>;
     login?: () => Promise<OnLoginCallbackResult | void>;
 } = {}) => {
@@ -47,20 +60,17 @@ const start = ({
     const actor = createActor(
         signupStateMachine.provide({
             actors: {
-                watchSession: fromCallback(() => {}),
-                startAuth: fromPromise(async () => {}),
+                watchSession: fromCallback(watchSession),
+                startAuth: fromPromise(startAuth),
                 loadDomains: fromPromise(loadDomains),
                 checkReferral: fromPromise(checkReferral),
                 initializePayments: fromPromise(initializePayments),
                 createUser: fromPromise(createUser),
                 setupUser: fromPromise(({ input }) => setupUser(input)),
                 setupSubscription: fromPromise(({ input }) => setupSubscription(input)),
-                setOrgName: fromPromise(async () => {}),
-                setDisplayName: fromPromise(async () => {}),
-                setPassword: fromPromise(async ({ input }) => ({
-                    accountData: { ...accountData, password: input.password },
-                    setupResult: { ...setupResult, keyPassword: 'key-password' },
-                })),
+                setOrgName: fromPromise(setOrgName),
+                setDisplayName: fromPromise(setDisplayName),
+                setPassword: fromPromise(({ input }) => setPassword(input)),
                 sendRecoveryPhrase: fromPromise(sendRecoveryPhrase),
                 login: fromPromise(login),
             },
@@ -77,7 +87,7 @@ describe('signupStateMachine', () => {
     it('loads what the signup needs before it is ready', async () => {
         const { actions, ready } = start();
         const { context } = await ready();
-        expect(context).toMatchObject({ domains: ['proton.me'], domainsLoaded: true });
+        expect(context).toMatchObject({ domains: ['proton.me'] });
         expect(actions.reportInitialized).toHaveBeenCalledTimes(1);
     });
 
@@ -87,11 +97,32 @@ describe('signupStateMachine', () => {
             loadDomains: () => Promise.reject(error),
             initializePayments: () => Promise.reject(error),
         });
-        const { context } = await ready();
+        await ready();
         expect(emitted).toEqual([{ type: 'error', error }]);
         expect(actions.reportInitializationError).toHaveBeenCalledTimes(1);
         expect(actions.reportInitialized).not.toHaveBeenCalled();
-        expect(context.domainsLoaded).toBe(true);
+    });
+
+    it('reports a failed payments load without showing it, as the steps that take a payment show it', async () => {
+        const error = new Error('offline');
+        const { actions, emitted, ready } = start({ initializePayments: () => Promise.reject(error) });
+        await ready();
+        expect(emitted).toEqual([]);
+        expect(actions.reportInitializationError).toHaveBeenCalledWith(expect.anything(), { error });
+        expect(actions.reportInitialized).not.toHaveBeenCalled();
+    });
+
+    it('stops loading the domains once their request fails, while the rest still loads', async () => {
+        const domains = createPromise<string[]>();
+        const { actor } = start({
+            loadDomains: () => domains.promise,
+            initializePayments: () => new Promise(() => {}),
+        });
+        await waitFor(actor, (state) => state.matches({ initializing: 'loading' }));
+        expect(actor.getSnapshot().hasTag('loadingDomains')).toBe(true);
+        domains.reject(new Error('offline'));
+        await waitFor(actor, (state) => !state.hasTag('loadingDomains'));
+        expect(actor.getSnapshot().matches('initializing')).toBe(true);
     });
 
     it('leaves an unknown referrer to the flow', async () => {
@@ -179,9 +210,12 @@ describe('signupStateMachine', () => {
         expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
     });
 
-    it('creates another account when a different one is submitted after a failed setup', async () => {
+    it('creates and sets up another account when a different one is submitted after a failed setup', async () => {
         const createUser = vi.fn(async () => {});
-        const setupUser = vi.fn<() => Promise<SetupUserResult>>().mockRejectedValueOnce(new Error('declined'));
+        const setupUser = vi
+            .fn<(options: { isRetry: boolean }) => Promise<SetupUserResult>>()
+            .mockRejectedValueOnce(new Error('declined'))
+            .mockResolvedValueOnce(setupResult);
         const { actor, ready, signup } = start({ createUser, setupUser });
         await ready();
         actor.send({ type: 'account.submitted', accountData });
@@ -193,6 +227,36 @@ describe('signupStateMachine', () => {
 
         expect(createUser).toHaveBeenCalledTimes(2);
         expect(actor.getSnapshot().matches('userCreated')).toBe(true);
+        await signup.setupUser();
+        expect(setupUser.mock.calls.map(([input]) => input.isRetry)).toEqual([false, false]);
+    });
+
+    it('only retries the setup of the created account when it is submitted again after another failed', async () => {
+        const createUser = vi
+            .fn<() => Promise<void>>()
+            .mockResolvedValueOnce()
+            .mockRejectedValueOnce(new Error('taken'));
+        const setupUser = vi
+            .fn<(options: { isRetry: boolean }) => Promise<SetupUserResult>>()
+            .mockRejectedValueOnce(new Error('declined'))
+            .mockResolvedValueOnce(setupResult);
+        const { actor, ready, signup } = start({ createUser, setupUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await expect(signup.setupUser()).rejects.toThrow('declined');
+
+        actor.send({ type: 'account.submitted', accountData: { ...accountData, email: 'other@example.com' } });
+        await expect(signup.createUser()).rejects.toThrow('taken');
+        expect(actor.getSnapshot().matches('ready')).toBe(true);
+
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await signup.setupUser();
+
+        expect(createUser).toHaveBeenCalledTimes(2);
+        expect(setupUser.mock.calls.map(([input]) => input.isRetry)).toEqual([false, true]);
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
     });
 
     it('signs in with the password the user chose after the setup', async () => {
@@ -233,6 +297,72 @@ describe('signupStateMachine', () => {
             expect.objectContaining({ subscriptionData, subscription })
         );
         expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it.each<[string, (signup: ReturnType<typeof createSignupOperations>) => Promise<void>]>([
+        ['setOrgName', (signup) => signup.setOrgName('Org')],
+        ['setDisplayName', (signup) => signup.setDisplayName('Name')],
+        ['setPassword', (signup) => signup.setPassword('chosen')],
+        ['sendRecoveryPhrase', (signup) => signup.sendRecoveryPhrasePayload()],
+        ['login', (signup) => signup.login()],
+    ])('rejects with the error of a failed %s, and the steps after the setup go on', async (name, run) => {
+        const error = new Error(`${name} failed`);
+        const request = createPromise<never>();
+        const { actor, ready, signup } = start({ [name]: () => request.promise });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await signup.setupUser();
+        const running = run(signup);
+        await waitFor(actor, (state) => !state.matches({ userSetup: 'idle' }));
+        request.reject(error);
+        await expect(running).rejects.toBe(error);
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it.each<[string, (signup: ReturnType<typeof createSignupOperations>) => Promise<void>]>([
+        ['setupSubscription', (signup) => signup.setupSubscription()],
+        ['setOrgName', (signup) => signup.setOrgName('Org')],
+        ['setDisplayName', (signup) => signup.setDisplayName('Name')],
+        ['setPassword', (signup) => signup.setPassword('chosen')],
+        ['sendRecoveryPhrase', (signup) => signup.sendRecoveryPhrasePayload()],
+        ['login', (signup) => signup.login()],
+    ])('resolves once a successful %s is over', async (name, run) => {
+        // setPassword's actor answers with the account and setup result, the others with nothing
+        const request = createPromise<{ accountData: AccountData; setupResult: SetupUserResult } | undefined>();
+        const { actor, ready, signup } = start({ [name]: () => request.promise });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await signup.setupUser();
+        let resolved = false;
+        const running = run(signup).then(() => {
+            resolved = true;
+        });
+        await waitFor(actor, (state) => !state.matches({ userSetup: 'idle' }));
+        expect(resolved).toBe(false);
+        request.resolve(name === 'setPassword' ? { accountData, setupResult } : undefined);
+        await running;
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it('reports the subscription a paid setup made', async () => {
+        const subscriptionData = { planIDs: { vpn2024: 1 } } as unknown as SignupContextSubscriptionData;
+        const subscription = { ID: 'subscription' } as SetupUserResult['subscription'];
+        const user = { ID: 'user' } as SetupUserResult['user'];
+        const { actor, actions, ready, signup } = start({
+            setupUser: async () => ({ ...setupResult, subscription, user }),
+        });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        actor.send({ type: 'payment.submitted', subscriptionData });
+        await signup.createUser();
+        await signup.setupUser();
+        expect(actions.reportSubscription).toHaveBeenCalledWith(expect.anything(), {
+            subscriptionData,
+            subscription,
+            user,
+        });
     });
 
     it('reports the account creation once the user is set up, or once a reservation pays', async () => {

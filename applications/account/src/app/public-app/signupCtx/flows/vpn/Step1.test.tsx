@@ -20,8 +20,9 @@ vi.mock('./PaymentSummary', () => ({
 
 vi.mock('./GiftCodeSummary', () => ({
     __esModule: true,
-    default: ({ onApplyCode, onRemoveCode }: any) => (
+    default: ({ coupon, onApplyCode, onRemoveCode }: any) => (
         <>
+            {coupon && <span>{`${coupon.code}: ${coupon.discount} ${coupon.currency}`}</span>}
             <button onClick={() => onApplyCode('GIFT10')}>apply code</button>
             <button onClick={() => onRemoveCode()}>remove code</button>
         </>
@@ -185,6 +186,25 @@ describe('VPN Step1 selection', () => {
         await waitFor(() =>
             expect(payments.selectNewPlan).toHaveBeenCalledWith(expect.objectContaining({ coupon: undefined }))
         );
+    });
+});
+
+describe('VPN Step1 gift code', () => {
+    afterEach(() => {
+        payments.checkResult = options.checkResult;
+    });
+
+    it('shows the discount of the last check in the currency of that check, while the new currency is checked', async () => {
+        // The user switched from EUR to CHF, and the check in CHF hasn't returned yet
+        payments.checkResult = {
+            ...options.checkResult,
+            Currency: 'EUR',
+            Coupon: { Code: 'GIFT10', Description: 'Gift' },
+            CouponDiscount: -500,
+        };
+        render();
+
+        expect(await screen.findByText('GIFT10: -500 EUR')).toBeInTheDocument();
     });
 });
 

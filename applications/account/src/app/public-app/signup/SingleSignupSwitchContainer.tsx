@@ -71,7 +71,6 @@ const SingleSignupSwitchContainer = () => {
                 onGetActiveSessions={onGetActiveSessions}
                 handleLogin={handleLogin}
                 loginUrl={paths.login}
-                productParam={productParam}
             />
         );
     }

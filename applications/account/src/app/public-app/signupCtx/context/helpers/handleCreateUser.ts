@@ -1,10 +1,8 @@
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { HumanVerificationResult } from '@proton/shared/lib/interfaces/HumanVerification';
-import type { User } from '@proton/shared/lib/interfaces/User';
 import { srpVerify } from '@proton/shared/lib/srp';
 
 import {
@@ -12,12 +10,7 @@ import {
     getPaymentTokenForExternalUsers,
     getTokenPayment,
 } from '../../../signup/helper';
-import type {
-    AccountData,
-    InviteData,
-    SignupHumanVerification,
-    SignupInviteParameters,
-} from '../../../signup/interfaces';
+import type { AccountData, SignupHumanVerification, SignupInviteParameters } from '../../../signup/interfaces';
 import { SignupType } from '../../../signup/interfaces';
 
 const getSignupTypeQuery = (accountData: AccountData) => {
@@ -42,8 +35,6 @@ const getBrowserHeaders = (): Record<string, string> => {
 export const handleCreateUser = async ({
     accountData,
     paymentToken,
-    humanVerificationResult,
-    inviteData,
     productParam,
     clientType,
     api,
@@ -54,108 +45,57 @@ export const handleCreateUser = async ({
     accountData: AccountData;
     clientType: CLIENT_TYPES;
     paymentToken: string | undefined;
-    humanVerificationResult: HumanVerificationResult | undefined;
-    inviteData: InviteData | undefined;
     productParam: ProductParam | undefined;
     api: Api;
     invite: SignupInviteParameters | undefined;
     visitorId: string | undefined;
     hvMode: SignupHumanVerification | undefined;
-}): Promise<{ user: User; humanVerificationResult: HumanVerificationResult | undefined }> => {
+}) => {
     const { username, email, password, signupType, payload } = accountData;
     if (signupType === SignupType.Proton) {
-        const humanVerificationParameters = (() => {
-            if (humanVerificationResult) {
-                return {
-                    token: humanVerificationResult.token,
-                    tokenType: humanVerificationResult.tokenType,
-                };
-            }
-            if (inviteData) {
-                return {
-                    token: `${inviteData.selector}:${inviteData.token}`,
-                    tokenType: 'invite' as const,
-                };
-            }
-        })();
-
-        const response = await srpVerify<
-            Response & {
-                humanVerificationResult?: HumanVerificationResult;
-            }
-        >({
+        await srpVerify({
             api,
             credentials: { password },
             config: mergeHeaders(
-                {
-                    output: 'raw',
-                    ...withVerificationHeaders(
-                        humanVerificationParameters?.token,
-                        humanVerificationParameters?.tokenType,
-                        queryCreateUser(
-                            {
-                                Type: clientType,
-                                Username: username,
-                                Payload: payload,
-                                VisitorId: visitorId,
-                                ...getTokenPayment(paymentToken),
-                                ...getSignupTypeQuery(accountData),
-                            },
-                            productParam
-                        )
-                    ),
-                },
+                queryCreateUser(
+                    {
+                        Type: clientType,
+                        Username: username,
+                        Payload: payload,
+                        VisitorId: visitorId,
+                        ...getTokenPayment(paymentToken),
+                        ...getSignupTypeQuery(accountData),
+                    },
+                    productParam
+                ),
                 getBrowserHeaders()
             ),
         });
-
-        const { User } = await response.json();
-        return {
-            user: User,
-            humanVerificationResult: response.humanVerificationResult,
-        };
+        return;
     }
 
     if (signupType === SignupType.External) {
-        const { User } = await srpVerify<{ User: User }>({
+        await srpVerify({
             api,
             credentials: { password },
             config: mergeHeaders(
-                withVerificationHeaders(
-                    humanVerificationResult?.token,
-                    humanVerificationResult?.tokenType,
-                    queryCreateUserExternal(
-                        {
-                            Type: clientType,
-                            Email: email,
-                            Payload: payload,
-                            ...(() => {
-                                if (
-                                    invite &&
-                                    ((invite.type === 'wallet' && invite.data.preVerifiedAddressToken) ||
-                                        (invite.type === 'drive' && invite.data.preVerifiedAddressToken) ||
-                                        (invite.type === 'pass' && invite.data.preVerifiedAddressToken) ||
-                                        (invite.type === 'spaces' && invite.data.preVerifiedAddressToken) ||
-                                        (invite.type === 'porkbun' && invite.data.preVerifiedAddressToken))
-                                ) {
-                                    return {
-                                        TokenPreVerifiedAddress: invite.data.preVerifiedAddressToken,
-                                    };
-                                }
-                            })(),
-                            VisitorId: visitorId,
-                            ...getPaymentTokenForExternalUsers(hvMode, paymentToken),
-                        },
-                        productParam
-                    )
+                queryCreateUserExternal(
+                    {
+                        Type: clientType,
+                        Email: email,
+                        Payload: payload,
+                        ...(invite && 'preVerifiedAddressToken' in invite.data && invite.data.preVerifiedAddressToken
+                            ? { TokenPreVerifiedAddress: invite.data.preVerifiedAddressToken }
+                            : undefined),
+                        VisitorId: visitorId,
+                        ...getPaymentTokenForExternalUsers(hvMode, paymentToken),
+                    },
+                    productParam
                 ),
                 { ...getBrowserHeaders(), ...getHVHeadersBasedOnSignupMode(hvMode, paymentToken) }
             ),
         });
-        return {
-            user: User,
-            humanVerificationResult: undefined,
-        };
+        return;
     }
 
     throw new Error('Unknown signup type');

@@ -1,4 +1,4 @@
-import { type ActorRefFrom, waitFor } from 'xstate';
+import { type ActorRefFrom, type Subscription, waitFor } from 'xstate';
 
 import noop from '@proton/utils/noop';
 
@@ -10,8 +10,6 @@ import type { SignupEvent, signupStateMachine } from './signupStateMachine';
  * point resolves without having run.
  */
 export const createSignupOperations = (actor: ActorRefFrom<typeof signupStateMachine>) => {
-    // Never settles once the page closes the signup: useActorRef mutes the observers before stopping the actor
-    const settled = () => waitFor(actor, (snapshot) => !snapshot.hasTag('busy'));
     // A form submitted while the signup loads waits for it
     const initialized = () => waitFor(actor, (snapshot) => !snapshot.matches('initializing'));
 
@@ -21,12 +19,23 @@ export const createSignupOperations = (actor: ActorRefFrom<typeof signupStateMac
     const run = (event: SignupEvent) => {
         const operation = previous.then(async () => {
             await initialized();
-            const previousFailure = actor.getSnapshot().context.failure;
-            actor.send(event);
-            const { failure } = (await settled()).context;
-            if (failure && failure !== previousFailure) {
-                throw failure.error;
-            }
+            // Never settles once the page closes the signup, or once it leaves for the app
+            await new Promise<void>((resolve, reject) => {
+                let subscriptions: Subscription[] = [];
+                const settle = (callback: () => void) => {
+                    subscriptions.forEach((subscription) => subscription.unsubscribe());
+                    callback();
+                };
+                subscriptions = [
+                    actor.on('operation.done', () => settle(resolve)),
+                    actor.on('operation.failed', ({ error }) => settle(() => reject(error))),
+                ];
+                actor.send(event);
+                // The signup took the event without starting an operation, e.g. one it can't take at this point
+                if (!actor.getSnapshot().hasTag('busy')) {
+                    settle(resolve);
+                }
+            });
         });
         previous = operation.catch(noop);
         return operation;

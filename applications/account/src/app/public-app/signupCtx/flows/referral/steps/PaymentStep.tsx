@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
@@ -96,6 +97,11 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         onVatChange: payments.setVatNumber,
         disableVat: true,
     });
+
+    const { error: loadError } = payments.initializationStatus;
+    if (loadError) {
+        return <StandardLoadErrorPage errorMessage={loadError instanceof Error ? loadError.message : undefined} />;
+    }
 
     const process = (processor: PaymentProcessorHook | undefined) => {
         if (!validatePayment()) {

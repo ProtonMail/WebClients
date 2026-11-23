@@ -3,12 +3,11 @@ import { fromCallback, fromPromise } from 'xstate';
 import { shouldTraceError } from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
 import { observeError } from '@proton/metrics/observeApiError';
+import type { InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { PaymentsContextOptimisticType } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
-import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { isTokenPayment } from '@proton/payments/core/type-guards';
-import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import {
@@ -21,6 +20,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
 import type { Optional } from '@proton/shared/lib/interfaces/utils';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import sendRecoveryPhrasePayloadHelper from '../../../private-app/containers/recoveryPhrase/sendRecoveryPhrasePayload';
@@ -35,6 +35,7 @@ import {
 import { getClientType } from '../context/helpers/getClientType';
 import { handleCreateUser } from '../context/helpers/handleCreateUser';
 import {
+    type OnSubscriptionPayment,
     type SignupContextSubscriptionData,
     handleSetPassword,
     handleSetupUser,
@@ -43,27 +44,12 @@ import {
 import { validateReferrer } from '../helpers/validateReferrer';
 import type { SignupEvent } from './signupStateMachine';
 
-export interface AvailablePlan {
-    planIDs: PlanIDs;
-    cycle: Cycle;
-    /** Checked with this coupon (its automatic one when undefined) instead of the selected plan's */
-    coupon?: string;
-}
+export type AvailablePlan = NonNullable<InitializeProps['availablePlans']>[number];
 
-export interface SignupPaymentsDataConfig {
-    /**
-     * Defines the plans that are available in this signup context.
-     * This is needed to be able to pre fetch the plan information as early as possible.
-     */
-    availablePlans?: AvailablePlan[];
-    /**
-     * Initially selected plan
-     */
+export type SignupPaymentsDataConfig = Pick<InitializeProps, 'availablePlans' | 'vatNumber' | 'telemetryContext'> & {
+    /** Initially selected plan */
     plan: Optional<PlanToCheck, 'currency'>;
-    /** A VAT number from the signup link, which the first price check includes */
-    vatNumber?: string;
-    telemetryContext: PaymentTelemetryContext;
-}
+};
 
 export type SetupUserResult = Awaited<ReturnType<typeof handleSetupUser>>;
 
@@ -74,7 +60,7 @@ export interface SignupServices {
     build: APP_NAMES;
     api: Api;
     silentApi: Api;
-    paymentsDataConfig: SignupPaymentsDataConfig | undefined;
+    paymentsDataConfig: SignupPaymentsDataConfig;
     unverifiedReferralData: ReferralData | undefined;
     hvMode: SignupHumanVerification | undefined;
     invite: SignupInviteParameters | undefined;
@@ -82,10 +68,8 @@ export interface SignupServices {
     persistent: boolean;
     /** The user is set up without keys: the flow sets them up with the password the user then chooses. */
     deferKeySetup: boolean;
-    onSubscriptionPayment:
-        | ((status: 'success' | 'failure', subscriptionData: SignupContextSubscriptionData) => void)
-        | undefined;
-    payments: PaymentsContextOptimisticType;
+    onSubscriptionPayment: OnSubscriptionPayment | undefined;
+    payments: Pick<PaymentsContextOptimisticType, 'initialize' | 'selectedPlan'>;
     onPaymentsInitialized: () => void;
     getKtActivation: () => Promise<KeyTransparencyActivation>;
     onPreSubmit: (() => Promise<void>) | undefined;
@@ -95,11 +79,6 @@ export interface SignupServices {
     onLogin: (session: ResumedSessionResult, loginPassword: string) => Promise<OnLoginCallbackResult | void>;
     onReferralCheckError: (() => void) | undefined;
 }
-
-/**
- * Never trust new signups. This will prevent any trusted device data being stored on the device
- */
-const trusted = false;
 
 export const createSignupReporting = ({ flowId }: Pick<SignupServices, 'flowId'>) => {
     const tags = { signupFlowId: flowId };
@@ -207,7 +186,6 @@ const getPaymentToken = (subscriptionData: SignupContextSubscriptionData | undef
 export const createSignupActors = (services: SignupServices) => {
     const reporting = createSignupReporting(services);
     const { app, flowId, api, silentApi } = services;
-    const getTelemetryContext = () => services.paymentsDataConfig?.telemetryContext ?? 'other';
 
     return {
         watchSession: fromCallback(({ sendBack }) =>
@@ -231,11 +209,11 @@ export const createSignupActors = (services: SignupServices) => {
             const { paymentsDataConfig } = services;
             await services.payments.initialize({
                 api: silentApi,
-                planToCheck: paymentsDataConfig?.plan,
-                paramCurrency: paymentsDataConfig?.plan?.currency,
-                availablePlans: paymentsDataConfig?.availablePlans,
-                vatNumber: paymentsDataConfig?.vatNumber,
-                telemetryContext: paymentsDataConfig?.telemetryContext ?? 'other',
+                planToCheck: paymentsDataConfig.plan,
+                paramCurrency: paymentsDataConfig.plan.currency,
+                availablePlans: paymentsDataConfig.availablePlans,
+                vatNumber: paymentsDataConfig.vatNumber,
+                telemetryContext: paymentsDataConfig.telemetryContext,
                 product: app,
             });
             services.onPaymentsInitialized();
@@ -255,7 +233,6 @@ export const createSignupActors = (services: SignupServices) => {
                     setupResult,
                     newPassword: password,
                     persistent: services.persistent,
-                    trusted,
                     productParam: app,
                     keyTransparencyActivation: await services.getKtActivation(),
                 });
@@ -283,8 +260,6 @@ export const createSignupActors = (services: SignupServices) => {
                     api,
                     clientType: getClientType(app),
                     productParam: app,
-                    humanVerificationResult: undefined,
-                    inviteData: undefined,
                     invite: services.invite,
                     visitorId: services.visitorId,
                     hvMode: services.hvMode,
@@ -317,26 +292,23 @@ export const createSignupActors = (services: SignupServices) => {
                  */
                 metrics.stopBatchingProcess();
 
-                const planName = payments.selectedPlan.getPlanName();
+                // The referral trial without a card submits no payment: it registers with the selection
+                const { planIDs, cycle } = subscriptionData ?? payments.selectedPlan;
+                const planName = getPlanNameFromIDs(planIDs) ?? PLANS.FREE;
                 const setupResult = await handleSetupUser({
                     accountData,
                     persistent: services.persistent,
-                    trusted,
                     deferKeySetup: services.deferKeySetup,
-                    onPaymentSuccess: () =>
-                        subscriptionData && services.onSubscriptionPayment?.('success', subscriptionData),
-                    onPaymentFailure: () =>
-                        subscriptionData && services.onSubscriptionPayment?.('failure', subscriptionData),
+                    onPayment: services.onSubscriptionPayment,
                     api: silentApi,
                     keyTransparencyActivation: await services.getKtActivation(),
                     subscriptionData,
                     productParam: app,
                     traceSignupSentryError: reporting.traceError,
                     referralData,
-                    referralRegistrationPlan:
-                        planName === PLANS.FREE ? undefined : { name: planName, cycle: payments.selectedPlan.cycle },
+                    referralRegistrationPlan: planName === PLANS.FREE ? undefined : { name: planName, cycle },
                     build: services.build,
-                    telemetryContext: getTelemetryContext(),
+                    telemetryContext: services.paymentsDataConfig.telemetryContext,
                     isRetry,
                 });
 
@@ -371,11 +343,8 @@ export const createSignupActors = (services: SignupServices) => {
                 ? await handleSubscribeUser(silentApi, subscriptionData, {
                       productParam: app,
                       build: services.build,
-                      telemetryContext: getTelemetryContext(),
-                      userCurrency: undefined,
-                      subscription: undefined,
-                      onPaymentSuccess: () => services.onSubscriptionPayment?.('success', subscriptionData),
-                      onPaymentFailure: () => services.onSubscriptionPayment?.('failure', subscriptionData),
+                      telemetryContext: services.paymentsDataConfig.telemetryContext,
+                      onPayment: services.onSubscriptionPayment,
                   })
                 : undefined;
 

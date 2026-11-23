@@ -639,8 +639,7 @@ const Step1 = ({
     const upsellToVPNPassBundle = mode === 'vpn-pass-promotion';
 
     const coupon = (() => {
-        const { Coupon, CouponDiscount } = payments.checkResult;
-        const { currency } = options;
+        const { Coupon, CouponDiscount, Currency: currency } = payments.checkResult;
 
         if (!Coupon || !CouponDiscount) {
             return;

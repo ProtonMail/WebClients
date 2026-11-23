@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE } from '@proton/payments/core/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -34,6 +35,7 @@ enum Step {
 const PassSignup = () => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
+    const notifyError = useNotifyErrorHandler();
     const history = useHistory();
     const newOnboardingFlag = useFlag('PassAccountNewOnboarding');
 
@@ -67,13 +69,24 @@ const PassSignup = () => {
                 <AccountDetailsStep
                     onContinue={async ({ email, username, domain }) => {
                         signupAddress.current = email || `${username}@${domain}`;
-                        await signup.createUser();
-                        await signup.setupUser();
-                        setStep(Step.RecoveryKit);
+                        try {
+                            await signup.createUser();
+                            await signup.setupUser();
+                            setStep(Step.RecoveryKit);
+                        } catch (error) {
+                            notifyError(error);
+                        }
                     }}
                 />
             )}
-            {step === Step.RecoveryKit && <RecoveryKitStep onContinue={async () => setStep(Step.UpgradePlan)} />}
+            {step === Step.RecoveryKit && (
+                <RecoveryKitStep
+                    // The payments didn't load, so the upsell couldn't be paid: the user goes on with the free plan
+                    onContinue={async () =>
+                        payments.initializationStatus.error ? goToOnboarding() : setStep(Step.UpgradePlan)
+                    }
+                />
+            )}
             {step === Step.UpgradePlan && (
                 <UpgradePlanStep
                     onContinue={async (payment: boolean, skipCycle = false) => {

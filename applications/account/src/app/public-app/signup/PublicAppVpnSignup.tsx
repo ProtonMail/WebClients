@@ -16,7 +16,6 @@ const PublicAppVpnSignup = () => {
     return (
         <VpnSignup
             metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
-            productParam={APPS.PROTONVPN_SETTINGS}
             toApp={APPS.PROTONVPN_SETTINGS}
             toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
             onLogin={onLogin}
