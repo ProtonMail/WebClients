@@ -66,13 +66,24 @@ export function createWorkbookMessages(): Pick<
       'No title': c('Info').t`No title`,
     },
     sheetStatus: {
-      'Customize Status Bar': c('sheets_2025:Spreadsheet sheet status bar').t`Customize Status Bar`,
+      Summary: c('sheets_2025:Spreadsheet sheet status bar').t`Summary`,
+      'Selection summary': c('sheets_2025:Spreadsheet sheet status bar').t`Selection summary`,
       Average: c('sheets_2025:Spreadsheet sheet status bar').t`Average`,
       Count: c('sheets_2025:Spreadsheet sheet status bar').t`Count`,
-      'Numerical count': c('sheets_2025:Spreadsheet sheet status bar').t`Numerical count`,
+      'Count numbers': c('sheets_2025:Spreadsheet sheet status bar').t`Count numbers`,
       Min: c('sheets_2025:Spreadsheet sheet status bar').t`Min`,
       Max: c('sheets_2025:Spreadsheet sheet status bar').t`Max`,
       Sum: c('sheets_2025:Spreadsheet sheet status bar').t`Sum`,
+      Copy: c('sheets_2025:Spreadsheet sheet status bar').t`Copy`,
+      'Copy value': c('sheets_2025:Spreadsheet sheet status bar').t`Copy value`,
+      'Copy formula': c('sheets_2025:Spreadsheet sheet status bar').t`Copy formula`,
+      'Detach from selection': c('sheets_2025:Spreadsheet sheet status bar').t`Detach from selection`,
+      'Pin by the selection': c('sheets_2025:Spreadsheet sheet status bar').t`Pin by the selection`,
+      'Unpin from selection': c('sheets_2025:Spreadsheet sheet status bar').t`Unpin from selection`,
+      '${label}, not applicable': (label: string) =>
+        c('sheets_2025:Spreadsheet sheet status bar').t`${label}, not applicable`,
+      '${label}, ${value}. Show in the status bar': (label: string, value: string) =>
+        c('sheets_2025:Spreadsheet sheet status bar').t`${label}, ${value}. Show in the status bar`,
     },
     circleLoader: {
       Loading: c('Info').t`Loading`,
