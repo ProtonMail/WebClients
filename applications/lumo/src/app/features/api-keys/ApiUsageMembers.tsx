@@ -63,7 +63,7 @@ const MemberUsageCard = ({
     const [expanded, setExpanded] = useState(false);
     const isExpanded = expanded && member.models.length > 0;
     return (
-        <article className="api-usage-member-card border lumo-border radius-16 lumo-bg-panel">
+        <article className="api-usage-member-card border radius-16 lumo-bg-panel">
             <header className="api-usage-member-card__header flex flex-wrap items-start justify-space-between gap-4 lumo-bg-control-fill md:flex-nowrap md:items-center">
                 <div className="flex items-center gap-3">
                     <span className="api-usage-member-avatar flex items-center justify-center radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill">
@@ -143,7 +143,7 @@ const MemberUsageList = ({
 
     if (members.length === 0) {
         return (
-            <div className="api-usage-empty p-6 flex flex-column items-center justify-center border lumo-border radius-12 text-center lumo-bg-control-fill">
+            <div className="api-usage-empty p-6 flex flex-column items-center justify-center border radius-12 text-center lumo-bg-control-fill">
                 <span className="api-usage-empty__icon flex items-center justify-center mb-3 radius-full lumo-color-glyph-brand-text lumo-bg-control-fill">
                     <LumoIcon name="Users" size={20} />
                 </span>
@@ -165,7 +165,7 @@ const MemberUsageList = ({
                 <MemberUsageCard key={member.id} member={member} currency={currency} apiAccess={apiAccess} />
             ))}
             {matchingMembers.length === 0 && (
-                <div className="api-usage-member-list__empty p-7 border lumo-border radius-16 text-center lumo-color-glyph-mid">
+                <div className="api-usage-member-list__empty p-7 border radius-16 text-center lumo-color-glyph-mid">
                     {c('collider_2025: Info').t`No members match your search.`}
                 </div>
             )}

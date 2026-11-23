@@ -29,7 +29,7 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
     const volumeEntry = payload.find((p) => p.dataKey === 'volume');
 
     return (
-        <div className="finance-chart-tooltip lumo-label-small py-2 px-3 border lumo-border radius-8 lumo-bg-panel-elevated lumo-elevation-1">
+        <div className="finance-chart-tooltip lumo-label-small py-2 px-3 border radius-8 lumo-bg-panel-elevated lumo-elevation-1">
             <p className="finance-chart-tooltip__date mx-0 lumo-label-small lumo-color-glyph-mid">{label}</p>
             {priceEntry && (
                 <p className="finance-chart-tooltip__price mt-0 mb-0.5 mx-0 lumo-title-small lumo-color-glyph">
@@ -136,7 +136,7 @@ export const FinanceToolResult = ({ data, onReady }: FinanceToolResultProps) => 
     const volumeYDomain: [number, number] = [0, maxVolume * 5];
 
     return (
-        <div className="finance-card mb-2 border lumo-border radius-12 lumo-bg-panel">
+        <div className="finance-card mb-2 border radius-12 lumo-bg-panel">
             <div className="flex items-center justify-space-between gap-2 py-3 px-4">
                 <div className="flex items-center gap-1.5 flex-wrap">
                     <span

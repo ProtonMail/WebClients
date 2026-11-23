@@ -157,7 +157,7 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
                 data-testid="compaction-marker"
                 data-compaction-status="compacting"
             >
-                <div className="compaction-marker-card overflow-hidden border lumo-border radius-8 lumo-bg-panel">
+                <div className="compaction-marker-card overflow-hidden border radius-8 lumo-bg-panel">
                     <div className="compaction-marker-bar flex flex-column gap-1 w-full px-3 py-2 lumo-body-small lumo-color-glyph lumo-bg-control-fill">
                         <span className="flex flex-nowrap items-center gap-2 lumo-label-large">
                             <CircleLoader size="small" className="shrink-0" />
@@ -193,7 +193,7 @@ const CompactionMarkerComponent = ({ message }: CompactionMarkerProps) => {
     return (
         <div className="compaction-marker flex-1 w-full min-w-0 my-4" data-testid="compaction-marker">
             <div
-                className="compaction-marker-card overflow-hidden border lumo-border radius-8 lumo-body-small lumo-bg-panel"
+                className="compaction-marker-card overflow-hidden border radius-8 lumo-body-small lumo-bg-panel"
                 data-expanded={expanded ? 'true' : 'false'}
             >
                 <button

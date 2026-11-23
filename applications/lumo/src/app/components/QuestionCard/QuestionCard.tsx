@@ -37,7 +37,7 @@ export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
         return (
             <section
                 aria-labelledby={`${id}-title`}
-                className="question-card border lumo-border-control question-card--minimized flex flex-nowrap items-center w-full p-2 pl-4 rounded-xl bg-norm"
+                className="question-card border question-card--minimized flex flex-nowrap items-center w-full p-2 pl-4 rounded-xl bg-norm"
             >
                 <LumoIcon
                     aria-hidden="true"
@@ -119,7 +119,7 @@ export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
     return (
         <section
             aria-labelledby={`${id}-title`}
-            className="question-card border lumo-border-control flex flex-column flex-nowrap w-full radius-16 lumo-bg-panel"
+            className="question-card border flex flex-column flex-nowrap w-full radius-16 lumo-bg-panel"
         >
             {/* Header */}
             <div className="flex flex-nowrap items-start gap-3 p-4 pb-2 pl-5">

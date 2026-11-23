@@ -11,7 +11,7 @@
 	}
 
 	&__body--split {
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 
 		> :first-child {
 			inline-size: rem(240);

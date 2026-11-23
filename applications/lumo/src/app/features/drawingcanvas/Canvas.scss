@@ -14,7 +14,7 @@
 .canvas__loading-spinner {
 	inline-size: rem(32);
 	block-size: rem(32);
-	border-block-end: 2px solid var(--lumo-control-brand-fill);
+	border-block-end: var(--border-width-2) solid var(--lumo-control-brand-fill);
 	animation: canvas-spin 1s var(--lumo-easing-linear) infinite;
 }
 

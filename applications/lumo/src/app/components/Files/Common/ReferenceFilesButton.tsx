@@ -120,7 +120,7 @@ export const ReferenceFilesButton = ({ messageChain, onClick, message }: FilesBu
                     return (
                         <div
                             key={`${mimeType}-${index}`}
-                            className="source-favicon flex border lumo-border radius-full lumo-bg-panel"
+                            className="source-favicon flex border radius-full lumo-bg-panel"
                             style={{ marginLeft: index > 0 ? '-4px' : '0' }}
                         >
                             <FileTypeIcon size={4} className="shrink-0 radius-full" />

@@ -2,6 +2,8 @@
 
 These documents define implementation rules for Lumo UI in the clients repository. Visual specifications belong in `lumo-design/foundations/`, `lumo-design/components/`, and `lumo-design/tokens/`; do not duplicate their value tables here.
 
+Implemented design-token baseline: [`lumo-design@6d6b64b`](https://gitlab.protontech.ch/avijay/lumo-design/-/commit/6d6b64b0b506885512354b9f514375fdea751f04) (2026-11-20). This tracks token alignment, not full implementation of every component or UX specification. Update this reference when adopting a newer design revision.
+
 Follow [Writing component styles](styling.md) when implementing UI and [Utility classes](utilities.md) when choosing and ordering classes.
 
 ## Choose the correct styling source
@@ -15,7 +17,17 @@ Follow [Writing component styles](styling.md) when implementing UI and [Utility 
 | Colors, typography, border colors, radius, elevation, opacity, icon sizing and motion | Lumo utility classes and tokens |
 | Shared control behavior | Existing Proton components and supported props |
 
-Prefer utility classes over equivalent CSS-variable declarations in component SCSS. Use semantic Lumo roles rather than raw colors or new consumers of Proton visual aliases such as `color-norm` and `--background-norm`.
+Prefer utility classes over equivalent CSS-variable declarations in component SCSS. Use semantic or component Lumo tokens rather than raw colors or new consumers of Proton visual aliases such as `color-norm` and `--background-norm`.
+
+## Token tiers
+
+Follow the three tiers in `lumo-design/foundations/tokens.md`:
+
+- **Primitives:** raw palettes and shared scales. UI colors do not consume palette primitives directly.
+- **Semantic:** shared roles such as `--lumo-glyph` and `--lumo-panel`, used across components.
+- **Component:** tokens for a component family's needs when no semantic role fits. The current tier contains 19 `--lumo-artifact-*` tokens for syntax, code surfaces, skeletons and creation tints. Their agreed colors are defined directly, rather than aliased to the primitive palette.
+
+Both color tiers switch together in the light and dark theme stylesheets. Use artifact tokens only for their documented creation/code purpose; do not repurpose them as general UI colors. Storybook's Tokens page separates the tiers.
 
 ## Integration
 
@@ -30,7 +42,7 @@ The foundation is opt-in. Adding package exports does not activate it in an appl
 
 Keep declarations in [`_lumo-tokens.scss`](../styles/_lumo-tokens.scss), aligned with the design specifications.
 
-- Prefix variables with `--lumo-`, except color primitives.
+- Prefix variables with `--lumo-`, except color primitives and `--border-width-{1,1-5,2}`.
 - Put theme-independent values in `stable` and theme-dependent values in both `light` and `dark`. Use rem for web typography.
 - Edit the declarations directly; do not add a token generator or build-time dependency on the design repository.
 - Keep Proton compatibility mappings inside the adapter. New Lumo-owned styles use Lumo roles; map by semantic purpose, not similar names.

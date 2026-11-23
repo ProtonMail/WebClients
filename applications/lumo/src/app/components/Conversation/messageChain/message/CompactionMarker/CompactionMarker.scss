@@ -1,6 +1,6 @@
 .compaction-marker-card {
 	&[data-expanded='true'] .compaction-marker-bar {
-		border-block-end: 1px solid var(--lumo-border);
+		border-block-end: var(--border-width-1) solid var(--lumo-border);
 	}
 }
 

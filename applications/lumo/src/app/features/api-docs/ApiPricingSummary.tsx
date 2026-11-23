@@ -33,7 +33,7 @@ export const ApiPricingSummary = ({ onViewModels, models = [] }: { onViewModels:
             </Button>
         </div>
 
-        <div className="api-docs-pricing-summary border lumo-border radius-12 lumo-bg-panel">
+        <div className="api-docs-pricing-summary border radius-12 lumo-bg-panel">
             <table className="api-docs-pricing-summary-table">
                 <thead>
                     <tr>

@@ -107,7 +107,7 @@ im.$media-expressions: $media-expressions;
 }
 
 .project-detail-title-input {
-	border: 1px solid var(--lumo-control-brand-fill);
+	border: var(--border-width-1) solid var(--lumo-control-brand-fill);
 	margin-inline: calc(-1 * var(--lumo-space-4));
 	flex: 1;
 	min-inline-size: 0;
@@ -115,7 +115,7 @@ im.$media-expressions: $media-expressions;
 
 	&:focus {
 		border-color: var(--lumo-control-brand-fill);
-		box-shadow: 0 0 0 2px rgb(var(--primary-rgb) / 0.2);
+		box-shadow: 0 0 0 var(--border-width-2) rgb(var(--primary-rgb) / 0.2);
 	}
 }
 

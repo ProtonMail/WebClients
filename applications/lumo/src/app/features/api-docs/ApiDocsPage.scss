@@ -182,7 +182,7 @@
 	min-inline-size: 0;
 
 	& + & {
-		border-inline-start: 1px solid var(--lumo-border);
+		border-inline-start: var(--border-width-1) solid var(--lumo-border);
 	}
 }
 
@@ -213,7 +213,7 @@
 
 	.api-docs-page-getting-started-step + .api-docs-page-getting-started-step {
 		border-inline-start: 0;
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 	}
 }
 
@@ -252,7 +252,7 @@
 	}
 
 	&:not(:first-of-type) {
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 	}
 
 	&:hover {
@@ -260,7 +260,7 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: -2px;
 	}
 }
@@ -291,7 +291,7 @@
 	align-items: start;
 
 	&:not(:first-of-type) {
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 	}
 }
 

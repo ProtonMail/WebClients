@@ -227,7 +227,7 @@ export const ProjectKnowledgeSection: React.FC<ProjectKnowledgeSectionProps> = (
 
             {/* Content area */}
             <div
-                className={`project-files-section-content lumo-bg-control-fill files-section flex-1 border lumo-border radius-16 ${isEmpty ? '' : 'has-files'}`}
+                className={`project-files-section-content lumo-bg-control-fill files-section flex-1 border radius-16 ${isEmpty ? '' : 'has-files'}`}
             >
                 {uploadProgress && (
                     <div className="project-files-progress-overlay">

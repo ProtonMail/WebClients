@@ -114,7 +114,7 @@ const LumoUpsellModal = ({ modalProps, plusPlan, businessPlan, onUpgrade, loadin
                 <Tooltip title={c('collider_2025:Action').t`Close`}>
                     <button
                         type="button"
-                        className="lumo-upsell-modal-close p-0 inline-flex items-center justify-center lumo-color-glyph"
+                        className="lumo-upsell-modal-close p-0 inline-flex items-center justify-center border lumo-color-glyph"
                         onClick={modalProps.onClose}
                         aria-label={c('collider_2025:Action').t`Close`}
                     >

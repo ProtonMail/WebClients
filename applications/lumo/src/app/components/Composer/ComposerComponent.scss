@@ -11,7 +11,7 @@ im.$media-expressions: $media-expressions;
 .lumo-input-container {
 	--composer-focus-accent: transparent;
 
-	outline: 1px solid color-mix(in srgb, var(--composer-focus-accent) 55%, transparent);
+	outline: var(--border-width-1) solid color-mix(in srgb, var(--composer-focus-accent) 55%, transparent);
 	outline-offset: -1px;
 	transition-property: outline-color, box-shadow;
 

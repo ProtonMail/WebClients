@@ -183,7 +183,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                     </div>
                 ) : isLinkedToDrive ? (
                     <div className="p-4">
-                        <div className="mb-4 p-4 border lumo-border radius-8 lumo-bg-control-fill">
+                        <div className="mb-4 p-4 border radius-8 lumo-bg-control-fill">
                             <div className="flex items-center gap-2 mb-2">
                                 <LumoIcon name="Folder" size={20} className="lumo-color-glyph-brand-text" />
                                 <span className="lumo-title-small">{linkedDriveFolder.folderName}</span>
@@ -222,10 +222,7 @@ export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFold
                                     {c('collider_2025:Info')
                                         .jt`Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to link to this project, then click "Link this folder".`}
                                 </p>
-                                <div
-                                    className="overflow-hidden border lumo-border radius-8"
-                                    style={{ height: '22rem' }}
-                                >
+                                <div className="overflow-hidden border radius-8" style={{ height: '22rem' }}>
                                     <DriveBrowser
                                         onFileSelect={() => {}}
                                         folderSelectionMode={true}

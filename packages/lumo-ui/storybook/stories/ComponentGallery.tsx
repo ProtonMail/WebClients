@@ -75,7 +75,7 @@ export function Catalog({
             {(['light', 'dark'] as const).map((appearance) => (
                 <div
                     key={appearance}
-                    className={`lumo-catalog__panel min-w-0 p-6 border lumo-border radius-16 lumo-color-glyph lumo-bg-panel ${scopeClass(appearance)}`}
+                    className={`lumo-catalog__panel min-w-0 p-6 border radius-16 lumo-color-glyph lumo-bg-panel ${scopeClass(appearance)}`}
                 >
                     {typeof children === 'function' ? children(appearance) : children}
                 </div>

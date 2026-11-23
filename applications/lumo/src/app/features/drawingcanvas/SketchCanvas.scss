@@ -38,7 +38,7 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 1px;
 	}
 }
@@ -66,12 +66,12 @@
 
 	&--selected {
 		box-shadow:
-			0 0 0 2px var(--lumo-panel),
-			0 0 0 3px var(--lumo-control-brand-fill);
+			0 0 0 var(--border-width-2) var(--lumo-panel),
+			0 0 0 calc(var(--border-width-2) + var(--border-width-1)) var(--lumo-control-brand-fill);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }

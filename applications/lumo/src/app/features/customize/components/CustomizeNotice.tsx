@@ -27,7 +27,7 @@ export const CustomizeNotice = ({
     footnote,
 }: CustomizeNoticeProps) => (
     <div
-        className="customize-notice flex flex-column flex-nowrap items-center gap-4 p-10 border lumo-border radius-16 text-center lumo-bg-panel-elevated"
+        className="customize-notice flex flex-column flex-nowrap items-center gap-4 p-10 border radius-16 text-center lumo-bg-panel-elevated"
         role="note"
     >
         {icon === 'desktop' ? (

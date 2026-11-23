@@ -157,7 +157,9 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
                                 key={segment.id}
                                 className="context-usage-legend-row flex items-center gap-2 lumo-label-medium"
                             >
-                                <span className={`context-usage-dot context-usage-seg--${segment.id} shrink-0`} />
+                                <span
+                                    className={`context-usage-dot context-usage-seg--${segment.id} shrink-0${segment.id === 'free' ? ' border' : ''}`}
+                                />
                                 <span className="flex-1 lumo-color-glyph-mid">{segmentLabel(segment.id)}</span>
                                 <span className="lumo-color-glyph-mid">{shortTokens(segment.tokens)}</span>
                             </li>

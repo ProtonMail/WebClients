@@ -63,7 +63,7 @@ export const ApiTokenUsageChart = ({
 
                     const day = payload[0].payload as ApiTokenUsageChartDay;
                     return (
-                        <div className="api-usage-chart-tooltip flex flex-column gap-1 px-3 py-2.5 border lumo-border radius-8 lumo-body-small lumo-color-glyph-mid lumo-bg-panel-elevated lumo-elevation-3">
+                        <div className="api-usage-chart-tooltip flex flex-column gap-1 px-3 py-2.5 border radius-8 lumo-body-small lumo-color-glyph-mid lumo-bg-panel-elevated lumo-elevation-3">
                             <strong>{shortDayLabel(day.date)}</strong>
                             {TOKEN_SERIES.filter(({ key }) => day[key]).map(({ key, getLabel }) => (
                                 <span key={key}>

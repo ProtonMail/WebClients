@@ -59,7 +59,7 @@ export const SkillCommandMenu = ({
                 role="listbox"
                 id="skill-command-menu"
                 aria-label={c('collider_2025:Label').t`Skills`}
-                className="skill-command-menu__list py-1 border lumo-border radius-12 lumo-bg-panel-elevated lumo-elevation-3"
+                className="skill-command-menu__list py-1 border radius-12 lumo-bg-panel-elevated lumo-elevation-3"
                 style={{ maxHeight: MAX_MENU_HEIGHT }}
             >
                 {commands.map((command, index) => {

@@ -113,7 +113,7 @@
 // Vega tooltip is appended to document.body — compact rows, Lumo chrome.
 #vg-tooltip-element {
 	background-color: var(--lumo-panel);
-	border: 1px solid var(--lumo-border);
+	border: var(--border-width-1) solid var(--lumo-border);
 	border-radius: var(--lumo-radius-8);
 	box-shadow: var(--lumo-elevation-1);
 	color: var(--lumo-glyph);

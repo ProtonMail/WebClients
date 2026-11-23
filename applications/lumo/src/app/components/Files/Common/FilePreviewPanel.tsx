@@ -231,7 +231,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
             return (
                 <div className="flex flex-column h-full p-3 gap-2">
                     <textarea
-                        className="flex-1 w-full min-h-0 p-3 border lumo-border radius-8 lumo-body-small lumo-font-mono lumo-color-glyph lumo-bg-panel"
+                        className="flex-1 w-full min-h-0 p-3 border radius-8 lumo-body-small lumo-font-mono lumo-color-glyph lumo-bg-panel"
                         value={draft}
                         onChange={(e) => setDraft(e.target.value)}
                         spellCheck={false}
@@ -383,7 +383,7 @@ export const FilePreviewPanel = ({ attachment: attachmentProp, onBack, onClose, 
             </div>
 
             {/* Scrollable content */}
-            <div className="flex-1 min-h-0 mx-3 my-2 overflow-y-auto border lumo-border radius-12 lumo-bg-control-fill">
+            <div className="flex-1 min-h-0 mx-3 my-2 overflow-y-auto border radius-12 lumo-bg-control-fill">
                 {renderContent()}
             </div>
 

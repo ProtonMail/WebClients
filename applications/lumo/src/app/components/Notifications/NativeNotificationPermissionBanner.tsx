@@ -39,7 +39,7 @@ export const NativeNotificationPermissionBanner = ({
     return (
         <div
             className={clsx(
-                'native-notification-permission-banner flex flex-nowrap items-center gap-3 p-3 pl-4 border lumo-border radius-12 lumo-body-small',
+                'native-notification-permission-banner flex flex-nowrap items-center gap-3 p-3 pl-4 border radius-12 lumo-body-small',
                 className
             )}
         >
@@ -59,7 +59,7 @@ export const NativeNotificationPermissionBanner = ({
             </span>
 
             <Button
-                className="shrink-0 border lumo-border"
+                className="shrink-0 border"
                 onClick={needsPermissionRequest ? requestPermission : openNotificationSettings}
                 shape="ghost"
             >

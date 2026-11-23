@@ -5,7 +5,7 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 export const AskUserQuestionsToolMessageSkeleton = () => (
     <div
         aria-busy="true"
-        className="ask-user-questions-tool-message-skeleton flex flex-column flex-nowrap w-full border lumo-border-control radius-16 lumo-bg-panel"
+        className="ask-user-questions-tool-message-skeleton flex flex-column flex-nowrap w-full border radius-16 lumo-bg-panel"
     >
         <span className="sr-only">
             {
@@ -19,7 +19,7 @@ export const AskUserQuestionsToolMessageSkeleton = () => (
         </div>
         <div className="flex flex-column flex-nowrap gap-2 p-5 pt-3">
             {Array.from({ length: 4 }).map((_, index) => (
-                <div key={index} className="flex flex-nowrap items-center gap-3 p-3 border lumo-border radius-12">
+                <div key={index} className="flex flex-nowrap items-center gap-3 p-3 border radius-12">
                     <SkeletonLoader className="mb-0" height="1rem" index={index + 1} width="1rem" />
                     <SkeletonLoader className="mb-0" index={index + 1} width="70%" />
                 </div>

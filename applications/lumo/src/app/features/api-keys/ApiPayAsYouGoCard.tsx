@@ -16,7 +16,7 @@ export const ApiPayAsYouGoCard = () => {
 
     return (
         <section
-            className="api-usage-plan-card flex flex-column border lumo-border radius-16 lumo-bg-panel"
+            className="api-usage-plan-card flex flex-column border radius-16 lumo-bg-panel"
             aria-labelledby="api-usage-plan-title"
         >
             <div className="api-usage-plan-card__header">

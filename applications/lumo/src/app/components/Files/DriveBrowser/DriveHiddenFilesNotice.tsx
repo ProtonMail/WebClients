@@ -20,7 +20,7 @@ export const DriveHiddenFilesNotice: React.FC<DriveHiddenFilesNoticeProps> = ({
     }
 
     return (
-        <div className="mb-2 px-3 py-2 border lumo-border radius-8 lumo-bg-notice">
+        <div className="mb-2 px-3 py-2 border radius-8 lumo-bg-notice">
             <div className="flex items-center gap-2 lumo-body-small lumo-color-glyph-mid">
                 <LumoIcon name="Info" size={16} />
                 <div className="flex flex-col">

@@ -87,7 +87,7 @@ const StatusBadge = ({ status }: { status: 'ga' | 'beta' }) =>
     );
 
 const ApiAccessDeniedNotice = () => (
-    <div className="flex flex-column items-start gap-2 p-6 border lumo-border radius-12 lumo-bg-control-fill">
+    <div className="flex flex-column items-start gap-2 p-6 border radius-12 lumo-bg-control-fill">
         <strong>{c('collider_2025: Title').t`API access is not enabled`}</strong>
         <p className="m-0 lumo-color-glyph-mid">
             {c('collider_2025: Info')
@@ -97,13 +97,13 @@ const ApiAccessDeniedNotice = () => (
 );
 
 const ApiNotIncludedNotice = () => (
-    <div className="p-6 border lumo-border radius-12 lumo-bg-control-fill">
+    <div className="p-6 border radius-12 lumo-bg-control-fill">
         <p className="m-0 lumo-color-glyph-mid">{c('collider_2025: Info').t`Your plan doesn't include API access.`}</p>
     </div>
 );
 
 const AskForSeatNotice = () => (
-    <div className="p-6 border lumo-border radius-12 lumo-bg-control-fill">
+    <div className="p-6 border radius-12 lumo-bg-control-fill">
         <p className="m-0 lumo-color-glyph-mid">
             {c('collider_2025: Info')
                 .t`Ask your organization administrator to assign a ${LUMO_SHORT_APP_NAME} seat to your account to use the API.`}
@@ -224,7 +224,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
     const docsTabsHeader = (
         <div className="api-docs-page-tabs-row flex flex-row justify-center w-full">
             <div
-                className="api-docs-page-tabs gap-1 p-1 flex flex-wrap border lumo-border radius-12 lumo-bg-control-fill"
+                className="api-docs-page-tabs gap-1 p-1 flex flex-wrap border radius-12 lumo-bg-control-fill"
                 role="tablist"
                 aria-label={c('collider_2025: Title').t`API docs sections`}
             >
@@ -350,7 +350,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                 <div className="api-docs-page-main-wrap flex justify-center">
                                     <main className="api-docs-page-main pt-0 pb-8 w-full min-w-0">
                                         <section id="overview" className="api-docs-page-section-anchor mb-14">
-                                            <div className="api-docs-page-hero mb-10 border lumo-border radius-16">
+                                            <div className="api-docs-page-hero mb-10 border radius-16">
                                                 <div className="api-docs-page-hero-eyebrow py-1 mb-4 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                                                     {c('collider_2025: Title')
                                                         .t`${LUMO_SHORT_APP_NAME} API · ${spec.versionLabel}`}
@@ -386,7 +386,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                         : c('collider_2025: Info')
                                                               .t`Set up billing and authentication before making your first API request.`}
                                                 </p>
-                                                <div className="api-docs-page-getting-started-grid border lumo-border radius-12 lumo-bg-panel">
+                                                <div className="api-docs-page-getting-started-grid border radius-12 lumo-bg-panel">
                                                     <article className="api-docs-page-getting-started-step p-5 flex flex-column">
                                                         <span className="api-docs-page-step-number flex items-center justify-center mb-3 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                                                             1
@@ -478,7 +478,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                             </p>
 
                                             <div className="api-docs-page-feature-grid gap-3 mb-8">
-                                                <div className="api-docs-page-feature-card border lumo-border lumo-bg-panel">
+                                                <div className="api-docs-page-feature-card border lumo-bg-panel">
                                                     <div
                                                         className="api-docs-page-feature-icon flex items-center justify-center mb-3 radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill"
                                                         aria-hidden
@@ -492,7 +492,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                             .t`Chain tool calls to orchestrate multi-step pipelines end-to-end.`}
                                                     </p>
                                                 </div>
-                                                <div className="api-docs-page-feature-card border lumo-border lumo-bg-panel">
+                                                <div className="api-docs-page-feature-card border lumo-bg-panel">
                                                     <div
                                                         className="api-docs-page-feature-icon flex items-center justify-center mb-3 radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill"
                                                         aria-hidden
@@ -506,7 +506,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                             .t`Extract, analyze, and summarise documents, PDFs, and images.`}
                                                     </p>
                                                 </div>
-                                                <div className="api-docs-page-feature-card border lumo-border lumo-bg-panel">
+                                                <div className="api-docs-page-feature-card border lumo-bg-panel">
                                                     <div
                                                         className="api-docs-page-feature-icon flex items-center justify-center mb-3 radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill"
                                                         aria-hidden
@@ -524,7 +524,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
 
                                             <h3 className="mb-3 lumo-title-medium">{c('collider_2025: Title')
                                                 .t`API endpoints overview`}</h3>
-                                            <div className="api-docs-page-endpoint-table border lumo-border">
+                                            <div className="api-docs-page-endpoint-table border">
                                                 <div className="api-docs-page-endpoint-head border-bottom lumo-border lumo-label-small lumo-color-glyph-mid lumo-bg-control-fill">
                                                     <span>{c('collider_2025: Label').t`Method`}</span>
                                                     <span>{c('collider_2025: Label').t`Path`}</span>
@@ -582,7 +582,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
 
                                             <h3 className="mb-2 lumo-title-medium">{c('collider_2025: Title')
                                                 .t`Required headers`}</h3>
-                                            <div className="api-docs-page-param-table mt-4 mb-4 border lumo-border radius-8">
+                                            <div className="api-docs-page-param-table mt-4 mb-4 border radius-8">
                                                 <div className="api-docs-page-param-row gap-3 py-3 px-4">
                                                     <div>
                                                         <code className="lumo-font-mono lumo-body-medium">
@@ -621,7 +621,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
 
                                             <ApiDocsCodeBlock codeByLang={spec.authExamples} />
 
-                                            <div className="mt-4 p-4 border lumo-border radius-12 lumo-bg-panel-elevated">
+                                            <div className="mt-4 p-4 border radius-12 lumo-bg-panel-elevated">
                                                 <strong>{c('collider_2025: Title').t`Security note:`}</strong>{' '}
                                                 {c('collider_2025: Info')
                                                     .t`Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.`}
@@ -669,7 +669,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                             {ep.description}
                                                         </p>
                                                         {ep.parameters && ep.parameters.length > 0 && (
-                                                            <div className="api-docs-page-param-table mt-4 border lumo-border radius-8">
+                                                            <div className="api-docs-page-param-table mt-4 border radius-8">
                                                                 <div className="api-docs-page-param-head border-bottom lumo-border py-2 px-4 lumo-label-small lumo-color-glyph-mid lumo-bg-control-fill">{c(
                                                                     'collider_2025: Title'
                                                                 ).t`Parameters`}</div>
@@ -772,7 +772,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                 </>
                             )}
                             {isGuest ? (
-                                <div className="flex flex-column items-start gap-4 p-6 border lumo-border radius-12 lumo-bg-control-fill">
+                                <div className="flex flex-column items-start gap-4 p-6 border radius-12 lumo-bg-control-fill">
                                     <p className="m-0 lumo-color-glyph-mid">
                                         {c('collider_2025: Info')
                                             .t`Sign in to view API usage and balance for ${LUMO_SHORT_APP_NAME}.`}
@@ -790,7 +790,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                             ) : canShowTalkToAdminLumoUpsell && !hasLumoPlus ? (
                                 <AskForSeatNotice />
                             ) : (
-                                <div className="p-6 border lumo-border radius-12 lumo-bg-control-fill">
+                                <div className="p-6 border radius-12 lumo-bg-control-fill">
                                     <p className="m-0 lumo-color-glyph-mid">
                                         {c('collider_2025: Info')
                                             .t`API usage is not available for your account at the moment.`}
@@ -803,7 +803,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                     {docsTab === 'keys' && (
                         <div className="api-docs-page-body-panel py-6 px-5 w-full min-w-0">
                             {isGuest ? (
-                                <div className="flex flex-column items-start gap-4 p-6 border lumo-border radius-12 lumo-bg-control-fill">
+                                <div className="flex flex-column items-start gap-4 p-6 border radius-12 lumo-bg-control-fill">
                                     <p className="m-0 lumo-color-glyph-mid">
                                         {c('collider_2025: Info')
                                             .t`Sign in to create and manage API keys for ${LUMO_SHORT_APP_NAME}.`}
@@ -821,7 +821,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                             ) : canShowTalkToAdminLumoUpsell && !hasLumoPlus ? (
                                 <AskForSeatNotice />
                             ) : (
-                                <div className="p-6 border lumo-border radius-12 lumo-bg-control-fill">
+                                <div className="p-6 border radius-12 lumo-bg-control-fill">
                                     <p className="m-0 lumo-color-glyph-mid">
                                         {c('collider_2025: Info')
                                             .t`API key management is not available for your account at the moment.`}

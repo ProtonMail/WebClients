@@ -704,7 +704,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                             </p>
                         )}
 
-                        <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 overflow-hidden border lumo-border radius-12 lumo-bg-control-fill">
+                        <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 overflow-hidden border radius-12 lumo-bg-control-fill">
                             <header className="memory-panel-toolbar flex flex-row flex-nowrap shrink-0 items-center justify-space-between gap-x-2 gap-y-1 px-3 py-2 overflow-auto border-bottom lumo-border lumo-bg-panel">
                                 <div className="flex flex-row flex-nowrap items-center gap-1 shrink-0">
                                     {showUpdateFromChatsButton && (

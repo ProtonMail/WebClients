@@ -8,7 +8,7 @@
 
 // Reserve the same 2px indicator in every state so selecting a tab does not shift its content.
 .library-tab {
-	border-block-end: 2px solid var(--lumo-control-fill-empty);
+	border-block-end: var(--border-width-2) solid var(--lumo-control-fill-empty);
 	cursor: pointer;
 
 	&--active {
@@ -20,7 +20,7 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 4px;
 	}
 }
@@ -41,7 +41,7 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 4px;
 	}
 }

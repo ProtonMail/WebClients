@@ -82,7 +82,7 @@ export const CreateKeyForm = ({
     };
 
     return (
-        <div className="p-5 border lumo-border radius-12 lumo-bg-control-fill">
+        <div className="p-5 border radius-12 lumo-bg-control-fill">
             <h4 className="api-keys-form-title m-0 mb-4 lumo-title-medium lumo-color-glyph">{c('collider_2025: Title')
                 .t`Create new API key`}</h4>
 

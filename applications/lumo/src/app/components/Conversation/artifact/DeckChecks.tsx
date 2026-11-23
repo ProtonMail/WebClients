@@ -56,7 +56,7 @@ export const DeckChecks = ({ findings, gaps, slideNumberFor }: Props) => {
     return (
         <div className="flex flex-column gap-2 lumo-body-medium">
             {unsourcedCount > 0 && (
-                <div className="flex flex-row flex-nowrap gap-2 p-3 border lumo-border radius-8 lumo-bg-control-fill">
+                <div className="flex flex-row flex-nowrap gap-2 p-3 border radius-8 lumo-bg-control-fill">
                     <LumoIcon
                         name="TriangleExclamationPoint"
                         size={16}
@@ -75,7 +75,7 @@ export const DeckChecks = ({ findings, gaps, slideNumberFor }: Props) => {
                 </div>
             )}
             {calculatedCount > 0 && (
-                <div className="flex flex-row flex-nowrap gap-2 p-3 border lumo-border radius-8">
+                <div className="flex flex-row flex-nowrap gap-2 p-3 border radius-8">
                     <LumoIcon name="Calculator" size={16} className="shrink-0 mt-0.5 lumo-color-glyph-mid" />
                     <details className="min-w-0">
                         <summary className="cursor-pointer">
@@ -90,7 +90,7 @@ export const DeckChecks = ({ findings, gaps, slideNumberFor }: Props) => {
                 </div>
             )}
             {gaps.length > 0 && (
-                <div className="flex flex-row flex-nowrap gap-2 p-3 border lumo-border radius-8">
+                <div className="flex flex-row flex-nowrap gap-2 p-3 border radius-8">
                     <LumoIcon name="Info" size={16} className="shrink-0 mt-0.5 lumo-color-glyph-mid" />
                     <div className="min-w-0">
                         {c('collider_2025: Info').t`Missing information:`}

@@ -4,7 +4,7 @@
 	--upgrade-background-color: #ffffff0d;
 
 	background: linear-gradient(85.16deg, rgb(197 183 255 / 0.15) 0%, rgb(197 183 255 / 0.05) 100%);
-	border: 1px solid #c5b7ff26;
+	border: var(--border-width-1) solid #c5b7ff26;
 	inset-block-end: 8px;
 
 	.upsell-card-title {

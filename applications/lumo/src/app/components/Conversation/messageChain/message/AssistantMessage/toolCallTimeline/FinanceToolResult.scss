@@ -41,12 +41,12 @@
 	&__stats {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 
 		// dividers between cells
 		> * {
-			border-inline-end: 1px solid var(--lumo-border);
-			border-block-end: 1px solid var(--lumo-border);
+			border-inline-end: var(--border-width-1) solid var(--lumo-border);
+			border-block-end: var(--border-width-1) solid var(--lumo-border);
 
 			&:nth-child(2n) {
 				border-inline-end: none;

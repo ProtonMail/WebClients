@@ -663,7 +663,7 @@ export const KnowledgeBasePanel = ({
 
                     {/* Context usage breakdown — pinned to bottom, hidden in filter mode */}
                     {!filterMessage && (
-                        <div className="shrink-0 mt-2 overflow-hidden border lumo-border radius-12">
+                        <div className="shrink-0 mt-2 overflow-hidden border radius-12">
                             <button
                                 type="button"
                                 className="flex flex-row items-center gap-2 cursor-pointer p-3 w-full"

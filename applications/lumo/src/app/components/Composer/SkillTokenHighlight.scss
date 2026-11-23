@@ -14,7 +14,7 @@
 	// Only colour and box-shadow here: anything that changes glyph widths would misalign the caret.
 	&__token {
 		background-color: color-mix(in srgb, var(--lumo-control-brand-fill) 12%, transparent);
-		box-shadow: 0 0 0 rem(2) color-mix(in srgb, var(--lumo-control-brand-fill) 12%, transparent);
+		box-shadow: 0 0 0 var(--border-width-2) color-mix(in srgb, var(--lumo-control-brand-fill) 12%, transparent);
 	}
 }
 

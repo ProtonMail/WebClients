@@ -9,7 +9,7 @@
 		margin: 0;
 		padding-block: var(--lumo-space-20) var(--lumo-space-16);
 		padding-inline: var(--lumo-space-24) var(--lumo-space-16);
-		border-block-end: 1px solid var(--lumo-border);
+		border-block-end: var(--border-width-1) solid var(--lumo-border);
 	}
 
 	.modal-two-header-actions {

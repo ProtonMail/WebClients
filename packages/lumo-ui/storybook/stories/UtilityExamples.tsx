@@ -9,14 +9,24 @@ export function UtilityExamples() {
                 {(appearance) => (
                     <div className="flex flex-column gap-2">
                         <span className="lumo-label-medium">{appearance === 'light' ? 'Light' : 'Dark'}</span>
-                        <div className="flex flex-column gap-2 p-3 border lumo-border radius-12 lumo-bg-page">
+                        <div className="flex flex-column gap-2 p-3 border radius-12 lumo-bg-page">
                             <code>lumo-bg-page</code>
-                            <div className="p-3 border lumo-border radius-8 lumo-bg-panel">
+                            <div className="p-3 border radius-8 lumo-bg-panel">
                                 <code>lumo-bg-panel</code>
                             </div>
                             <div className="p-3 radius-8 lumo-bg-notice">
                                 <code>lumo-bg-notice</code>
                             </div>
+                        </div>
+                        <div className="flex flex-wrap gap-3 mt-3">
+                            {[1, 1.5, 2].map((width) => (
+                                <div
+                                    key={width}
+                                    className={`p-3 border border-${width} lumo-border-control-strong radius-8 lumo-bg-panel`}
+                                >
+                                    <code>border-{width}</code>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 )}

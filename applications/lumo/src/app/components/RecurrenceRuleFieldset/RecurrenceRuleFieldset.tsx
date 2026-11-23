@@ -119,7 +119,7 @@ export const RecurrenceRuleFieldset = ({
                 }</span>
                 <SelectTwo<RecurrenceRuleFrequency>
                     aria-labelledby={`${id}-frequency`}
-                    className="pl-3 border lumo-border radius-8"
+                    className="pl-3 border radius-8"
                     onChange={({ value }) => {
                         onClearValidationField?.(['time', 'dateTime', 'weekDayPicker', 'monthDayPicker']);
                         onChange(switchFrequencyType(recurrenceRule, value));
@@ -142,10 +142,7 @@ export const RecurrenceRuleFieldset = ({
                             aria-describedby={fieldErrors?.dateTime ? `${id}-date-time-error` : undefined}
                             aria-invalid={!!fieldErrors?.dateTime}
                             aria-labelledby={`${id}-date`}
-                            className={clsx([
-                                'flex-1 border lumo-border radius-8',
-                                fieldErrors?.dateTime && 'border-danger',
-                            ])}
+                            className={clsx(['flex-1 border radius-8', fieldErrors?.dateTime && 'border-danger'])}
                             min={startOfDay(Date.now())}
                             onChange={(date) => {
                                 if (date) {

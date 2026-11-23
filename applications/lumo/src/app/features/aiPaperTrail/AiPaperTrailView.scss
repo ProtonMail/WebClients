@@ -120,7 +120,7 @@
 
 	&__recent-list {
 		list-style: none;
-		border: 1px solid var(--apt-border);
+		border: var(--border-width-1) solid var(--apt-border);
 		background: var(--apt-card);
 		overflow: hidden;
 	}
@@ -128,7 +128,7 @@
 	&__recent-item {
 		display: flex;
 		align-items: stretch;
-		border-block-end: 1px solid var(--apt-border);
+		border-block-end: var(--border-width-1) solid var(--apt-border);
 
 		&:last-child {
 			border-block-end: none;
@@ -161,7 +161,7 @@
 		flex-shrink: 0;
 		inline-size: 2.75rem;
 		border: 0;
-		border-inline-start: 1px solid var(--apt-border);
+		border-inline-start: var(--border-width-1) solid var(--apt-border);
 		background: transparent;
 		color: var(--apt-muted);
 		cursor: pointer;
@@ -204,7 +204,7 @@
 		padding: 2rem;
 		border-radius: 1.25rem;
 		background: var(--apt-card);
-		border: 1px solid var(--apt-border);
+		border: var(--border-width-1) solid var(--apt-border);
 		box-shadow: 0 12px 40px rgb(28 19 64 / 0.08);
 		text-align: center;
 	}
@@ -295,7 +295,7 @@
 		justify-content: flex-start;
 		padding-block: 1rem;
 		padding-inline: 1.125rem;
-		border: 1px solid transparent;
+		border: var(--border-width-1) solid transparent;
 		background: transparent;
 		color: var(--apt-text);
 		text-align: start;
@@ -456,7 +456,7 @@
 		background: rgb(255 255 255 / 0.85);
 		backdrop-filter: blur(10px);
 		box-shadow: 0 24px 60px rgb(28 19 64 / 0.12);
-		border: 1px solid rgb(109 74 255 / 0.14);
+		border: var(--border-width-1) solid rgb(109 74 255 / 0.14);
 		min-block-size: 11.5rem;
 		inline-size: 100%;
 		opacity: 0;
@@ -566,7 +566,7 @@
 		align-items: center;
 		justify-content: center;
 		min-block-size: 14rem;
-		border: 2px dashed rgb(109 74 255 / 0.3);
+		border: var(--border-width-2) dashed rgb(109 74 255 / 0.3);
 		border-radius: 1.25rem;
 		background: rgb(109 74 255 / 0.04);
 		cursor: pointer;
@@ -604,7 +604,7 @@
 		flex-direction: row;
 		align-items: flex-start;
 		padding-inline: 1.125rem;
-		border: 1px solid var(--apt-border);
+		border: var(--border-width-1) solid var(--apt-border);
 		background: var(--apt-card);
 		text-align: start;
 	}
@@ -627,7 +627,7 @@
 		display: flex;
 		align-items: flex-start;
 		padding-block: 0.85rem;
-		border-block-end: 1px solid var(--apt-border);
+		border-block-end: var(--border-width-1) solid var(--apt-border);
 		color: var(--apt-text);
 
 		&:last-child {

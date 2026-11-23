@@ -150,7 +150,7 @@ const SaveArtifactToDriveModal = ({ artifact, format, ...modalProps }: SaveArtif
                             {c('collider_2025:Info')
                                 .jt`Saving as ${formatLabel}. Browse to the ${DRIVE_SHORT_APP_NAME} folder you want to use, then click "Save here".`}
                         </p>
-                        <div className="overflow-hidden border lumo-border radius-8" style={{ height: '22rem' }}>
+                        <div className="overflow-hidden border radius-8" style={{ height: '22rem' }}>
                             <DriveBrowser
                                 onFileSelect={() => {}}
                                 folderSelectionMode={true}

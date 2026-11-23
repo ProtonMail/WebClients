@@ -105,7 +105,7 @@ export const SkillsDiscover = ({
             {showUpsell ? (
                 <PluginsUpsellHero headingId={headingId} maxActiveSkills={maxActiveSkills} upgradePath={upgradePath} />
             ) : (
-                <header className="customize-discover-hero flex flex-column flex-nowrap gap-4 p-6 border lumo-border radius-16">
+                <header className="customize-discover-hero flex flex-column flex-nowrap gap-4 p-6 border radius-16">
                     <div className="flex flex-column flex-nowrap gap-2">
                         <span className="lumo-label-small text-uppercase lumo-color-glyph-mid">
                             {getCatalogueSummary(plugins)}

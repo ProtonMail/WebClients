@@ -23,7 +23,7 @@
 
 	inline-size: 8px;
 	block-size: 8px;
-	border: 2px solid var(--lumo-panel);
+	border: var(--border-width-2) solid var(--lumo-panel);
 }
 
 .workflow-graph-view-node {

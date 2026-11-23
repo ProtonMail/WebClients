@@ -21,7 +21,7 @@ im.$media-expressions: $media-expressions;
 		rgb(255 172 47 / var(--error-banner-high-opacity)) 0%,
 		rgb(255 172 47 / var(--error-banner-low-opacity)) 100%
 	);
-	border: 1px solid #c5b7ff26;
+	border: var(--border-width-1) solid #c5b7ff26;
 
 	// inset-block-end: 8px;
 

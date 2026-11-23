@@ -250,7 +250,7 @@ export const SkillDetailView = () => {
                     </section>
                 )}
                 {readme && (
-                    <section className="skill-detail__readme border lumo-border radius-12">
+                    <section className="skill-detail__readme border radius-12">
                         <SkillCodeView file={readme} mode="preview" filePaths={filePaths} onOpenFile={openFile} />
                     </section>
                 )}
@@ -288,7 +288,7 @@ export const SkillDetailView = () => {
 
     const renderContents = () =>
         activeFile ? (
-            <div className="skill-detail__contents flex flex-nowrap border lumo-border radius-12 lumo-bg-panel">
+            <div className="skill-detail__contents flex flex-nowrap border radius-12 lumo-bg-panel">
                 <SkillFileTree files={workspaceFiles} activePath={activeFile.path} onSelectFile={setActivePath} />
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
                     <div className="skill-detail__file-header border-bottom lumo-border py-1.5 pl-4 pr-2 flex flex-nowrap items-center gap-3">
@@ -391,7 +391,7 @@ export const SkillDetailView = () => {
                 </Link>
 
                 <header className="flex flex-nowrap items-center gap-3">
-                    <div className="skill-detail__icon flex shrink-0 items-center justify-center border lumo-border radius-12 lumo-bg-control-fill">
+                    <div className="skill-detail__icon flex shrink-0 items-center justify-center border radius-12 lumo-bg-control-fill">
                         {isPlugin && !skill.icon ? (
                             <LumoIcon name="Package" size={20} />
                         ) : (

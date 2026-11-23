@@ -66,7 +66,7 @@ export const FloatingRetryPanel = ({ buttonRef, onRetry, onClose }: FloatingRetr
 
     return (
         <div
-            className="floating-retry-panel fixed z-50 border lumo-border radius-16 lumo-bg-panel-elevated lumo-elevation-4 duration-150 lumo-easing-standard"
+            className="floating-retry-panel fixed z-50 border radius-16 lumo-bg-panel-elevated lumo-elevation-4 duration-150 lumo-easing-standard"
             style={{
                 top: `${position.top}px`,
                 left: `${position.left}px`,

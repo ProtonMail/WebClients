@@ -185,9 +185,9 @@
 	min-block-size: rem(40);
 	padding-inline: var(--lumo-space-12);
 	border-radius: var(--border-radius-xl);
-	border: 1px solid var(--lumo-border, var(--border-weak));
+	border: var(--border-width-1, 1px) solid var(--lumo-border, var(--border-weak));
 	background-color: var(--lumo-surface, var(--background-norm));
-	box-shadow: inset 0 0 0 1px transparent;
+	box-shadow: inset 0 0 0 var(--border-width-1, 1px) transparent;
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition:
@@ -197,10 +197,10 @@
 
 	&:focus-within {
 		border-color: var(--lumo-control-border-focus, var(--focus-outline));
-		box-shadow: inset 0 0 0 1px var(--lumo-control-border-focus, var(--focus-outline));
+		box-shadow: inset 0 0 0 var(--border-width-1, 1px) var(--lumo-control-border-focus, var(--focus-outline));
 
 		@media (forced-colors: active) {
-			outline: 2px solid Highlight;
+			outline: var(--border-width-2, 2px) solid Highlight;
 			outline-offset: -2px;
 		}
 	}
@@ -262,7 +262,7 @@ $lumo-row-height: $lumo-row-line * 2 + $lumo-row-padding * 2;
 	inline-size: 100%;
 	min-inline-size: 0;
 	background-color: var(--lumo-surface, var(--background-norm));
-	border: 1px solid var(--lumo-border, var(--border-weak));
+	border: var(--border-width-1, 1px) solid var(--lumo-border, var(--border-weak));
 	border-radius: var(--lumo-radius-card, var(--border-radius-lg));
 
 	// The band is filled, so the corners have to clip it rather than let it square them off.
@@ -280,12 +280,12 @@ $lumo-row-height: $lumo-row-line * 2 + $lumo-row-padding * 2;
 	// Filled as well as ruled: the sentence is the card's subject, and the fill is what separates it from
 	// the body without a second rule.
 	&__band {
-		border-block-end: 1px solid var(--lumo-border, var(--border-weak));
+		border-block-end: var(--border-width-1, 1px) solid var(--lumo-border, var(--border-weak));
 		background-color: var(--lumo-surface-soft, var(--background-weak));
 	}
 
 	&__footer {
-		border-block-start: 1px solid var(--lumo-border, var(--border-weak));
+		border-block-start: var(--border-width-1, 1px) solid var(--lumo-border, var(--border-weak));
 	}
 
 	// One line tall, so the glyph centres on the sentence's first line rather than on a box of its own.

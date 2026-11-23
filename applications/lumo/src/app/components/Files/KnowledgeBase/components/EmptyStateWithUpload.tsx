@@ -91,7 +91,7 @@ export const EmptyStateWithUpload = ({
                     return (
                         <span
                             key={tile.icon}
-                            className="flex items-center justify-center w-custom h-custom border lumo-border radius-12 lumo-bg-panel lumo-elevation-3"
+                            className="flex items-center justify-center w-custom h-custom border radius-12 lumo-bg-panel lumo-elevation-3"
                             style={{
                                 '--w-custom': '3rem',
                                 '--h-custom': '3rem',

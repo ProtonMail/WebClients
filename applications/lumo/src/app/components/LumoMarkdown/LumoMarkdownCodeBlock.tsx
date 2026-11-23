@@ -39,7 +39,7 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
                 <Suspense
                     fallback={
                         <>
-                            <pre className="lumo-code-block-fallback m-0 p-4 border lumo-border radius-8 lumo-body-small lumo-font-mono lumo-color-glyph lumo-bg-panel">
+                            <pre className="lumo-code-block-fallback m-0 p-4 border radius-8 lumo-body-small lumo-font-mono lumo-color-glyph lumo-bg-panel">
                                 {code}
                             </pre>
                             <div className={copyButtonClassName}>
@@ -57,7 +57,7 @@ export const LumoMarkdownCodeBlock = ({ code, language }: LumoMarkdownCodeBlockP
                             code={code}
                             language={language}
                             theme={theme}
-                            className="border lumo-border radius-8 lumo-body-small lumo-bg-panel"
+                            className="border radius-8 lumo-body-small lumo-bg-panel"
                         />
                     </div>
                     <div className={copyButtonClassName}>

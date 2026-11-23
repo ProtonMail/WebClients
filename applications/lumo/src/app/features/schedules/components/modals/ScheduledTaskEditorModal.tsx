@@ -255,7 +255,7 @@ export const ScheduledTaskEditorModal = ({
                         {/* Auto-approve toggle */}
                         {values.connectors.length > 0 && (
                             <div className="flex flex-nowrap items-center gap-4 py-3">
-                                <div className="scheduled-task-editor-modal__auto-approve-icon flex shrink-0 items-center justify-center border lumo-border radius-8">
+                                <div className="scheduled-task-editor-modal__auto-approve-icon flex shrink-0 items-center justify-center border radius-8">
                                     <LumoIcon aria-hidden className="lumo-color-glyph-mid" name="Clock" size={20} />
                                 </div>
                                 <div className="flex flex-column flex-1 gap-0.5 min-w-0">

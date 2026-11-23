@@ -15,56 +15,81 @@ type Token = {
     color: boolean;
 };
 
-const semanticColors =
-    /^--lumo-(glyph|border|control|page|panel|notice|overlay|layer|scrim|signal|artifact|white|black)/;
+const semanticColors = /^--lumo-(glyph|border|control|page|panel|notice|overlay|layer|scrim|signal|white|black)/;
+const componentColors = /^--lumo-artifact-/;
 const colorPrimitives = /^--(color-|iris-|neutral-|red-|amber-|teal-|sky-)/;
 
 const groups = [
     {
-        title: 'Semantic colors',
-        themed: true,
-        description:
-            'Use roles that describe intent. Each swatch shows the referenced token name or the hex value of a custom color.',
-        match: semanticColors,
-    },
-    {
-        title: 'Color primitives',
-        themed: true,
-        description: 'The raw palette. Prefer semantic roles in component styles.',
+        title: 'Primitive',
+        id: 'colors-primitive',
+        colorGroup: true,
+        themed: false,
+        description: 'Raw palette values. Use semantic or component colors in UI styles.',
         match: colorPrimitives,
     },
     {
+        title: 'Semantic',
+        id: 'colors-semantic',
+        colorGroup: true,
+        themed: true,
+        description: 'Shared color roles that adapt to each theme.',
+        match: semanticColors,
+    },
+    {
+        title: 'Component',
+        id: 'colors-component',
+        colorGroup: true,
+        themed: true,
+        description: 'Colors reserved for a specific component family.',
+        match: componentColors,
+    },
+    {
         title: 'Spacing',
+        id: 'spacing',
         description: 'Token suffixes are pixels; Proton utility suffixes use a different scale.',
         match: /^--lumo-space-/,
     },
     {
+        title: 'Border width',
+        id: 'border-width',
+        description:
+            '1px for edges and dividers, 1.5px for checkbox and radio outlines, and 2px for focus and error outlines. Icon strokes use their own token.',
+        match: /^--border-width-(1|1-5|2)$/,
+    },
+    {
         title: 'Radius',
+        id: 'radius',
         description: 'Corner radii for controls and surfaces.',
         match: /^--lumo-radius-/,
     },
     {
         title: 'Elevation',
+        id: 'elevation',
         description: 'Shadows for raised surfaces, independent of background color and stacking order.',
         match: /^--lumo-elevation-/,
     },
     {
         title: 'Typography',
+        id: 'typography',
         description: 'Complete type roles, font families, sizes, tracking, and weights.',
         match: /^--lumo-(type|font)-/,
     },
     {
         title: 'Icons',
+        id: 'icons',
         description: 'Icon dimensions and stroke width.',
         match: /^--lumo-icon-/,
     },
     {
         title: 'Opacity',
+        id: 'opacity',
         description: 'Whole-element opacity steps, from most transparent to most opaque.',
         match: /^--lumo-opacity-/,
     },
     {
         title: 'Motion',
+        id: 'motion',
         description: 'Pair a duration with an easing curve. Components choose the animated properties.',
         match: /^--lumo-(duration|easing)-/,
     },
@@ -90,7 +115,7 @@ function getColorDeclarations() {
                 const declarations = selectors.get(rule.selectorText);
                 if (declarations) {
                     for (const name of rule.style) {
-                        if (semanticColors.test(name)) {
+                        if (semanticColors.test(name) || componentColors.test(name)) {
                             declarations.set(name, rule.style.getPropertyValue(name).trim());
                         }
                     }
@@ -147,6 +172,68 @@ function getHexColor(value: string, context: CanvasRenderingContext2D | null) {
     return `#${bytes.map((byte) => byte.toString(16).padStart(2, '0')).join('')}`;
 }
 
+function ComponentTokenExamples() {
+    return (
+        <div className="lumo-catalog sb-unstyled mb-4">
+            {(['light', 'dark'] as const).map((appearance) => (
+                <div
+                    key={appearance}
+                    className={`lumo-catalog__panel min-w-0 p-4 border radius-12 lumo-color-glyph lumo-bg-panel ${scopeClass(appearance)}`}
+                >
+                    <p className="mb-3 lumo-label-medium">{appearance === 'light' ? 'Light' : 'Dark'}</p>
+                    <pre className="m-0 p-3 overflow-auto radius-8 lumo-body-small lumo-font-mono lumo-bg-artifact-code-bg">
+                        <code>
+                            <span className="lumo-color-artifact-syntax-line-number" aria-hidden="true">
+                                1{' '}
+                            </span>
+                            <span className="lumo-color-artifact-syntax-comment">{'// Code creation'}</span>
+                            {'\n'}
+                            <span className="lumo-color-artifact-syntax-line-number" aria-hidden="true">
+                                2{' '}
+                            </span>
+                            <span className="lumo-color-artifact-syntax-keyword">const</span>
+                            {' title: '}
+                            <span className="lumo-color-artifact-syntax-type">string</span>
+                            {' = '}
+                            <span className="lumo-color-artifact-syntax-string">{'"Hello"'}</span>
+                            {';\n'}
+                            <span className="lumo-color-artifact-syntax-line-number" aria-hidden="true">
+                                3{' '}
+                            </span>
+                            <span className="lumo-bg-artifact-syntax-selection">
+                                <span className="lumo-color-artifact-syntax-function">repeat</span>
+                                {'(title, '}
+                                <span className="lumo-color-artifact-syntax-number">3</span>
+                                {');'}
+                            </span>
+                        </code>
+                    </pre>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                        {(
+                            [
+                                ['doc', 'Document'],
+                                ['code', 'Code'],
+                                ['web', 'Web page'],
+                            ] as const
+                        ).map(([kind, label]) => (
+                            <span
+                                key={kind}
+                                className={`inline-flex items-center gap-2 p-2 border lumo-border-artifact-${kind} radius-8 lumo-body-small lumo-bg-artifact-${kind}-tile`}
+                            >
+                                <span className={`lumo-color-artifact-${kind}-icon`} aria-hidden="true">
+                                    ▧
+                                </span>
+                                {label}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="mt-3 p-2 radius-4 lumo-bg-artifact-skeleton" aria-label="Creation skeleton color" />
+                </div>
+            ))}
+        </div>
+    );
+}
+
 export function TokenReference() {
     const lightRef = useRef<HTMLDivElement>(null);
     const darkRef = useRef<HTMLDivElement>(null);
@@ -185,64 +272,131 @@ export function TokenReference() {
                 })
         );
     }, []);
+    const renderGroup = ({ title, id, description, match, themed, colorGroup }: (typeof groups)[number]) => (
+        <section className="ds-section" id={id} key={id}>
+            <div className="ds-section__heading">
+                {colorGroup ? <h3>{title}</h3> : <h2>{title}</h2>}
+                <span className="ds-section__count">{tokens.filter(({ name }) => match.test(name)).length} tokens</span>
+            </div>
+            <p className="ds-section__description">{description}</p>
+            {match === componentColors && <ComponentTokenExamples />}
+            <div className="ds-table">
+                <table className="ds-token-table">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>{themed ? 'Light' : 'Value'}</th>
+                            {themed && <th>Dark</th>}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tokens
+                            .filter(({ name }) => match.test(name))
+                            .map((token) => (
+                                <tr key={token.name}>
+                                    <th scope="row">
+                                        <code>{token.name}</code>
+                                    </th>
+                                    {(themed ? (['light', 'dark'] as const) : (['light'] as const)).map((theme) => {
+                                        const { value, label } = token[theme];
+                                        return (
+                                            <td key={theme}>
+                                                <div className="ds-token-table__value">
+                                                    {token.color && (
+                                                        <span
+                                                            className="ds-token-table__swatch"
+                                                            style={{ backgroundColor: value }}
+                                                            aria-hidden="true"
+                                                        />
+                                                    )}
+                                                    <code>{label}</code>
+                                                </div>
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            ))}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    );
     return (
         <>
+            <nav aria-label="Token sections" className="mt-4">
+                <ul>
+                    <li>
+                        <a href="#colors">Colors</a>
+                        <ul>
+                            {groups
+                                .filter(({ colorGroup }) => colorGroup)
+                                .map(({ title, id }) => (
+                                    <li key={id}>
+                                        <a href={`#${id}`}>{title}</a>
+                                    </li>
+                                ))}
+                        </ul>
+                    </li>
+                    {groups
+                        .filter(({ colorGroup }) => !colorGroup)
+                        .map(({ title, id }) => (
+                            <li key={id}>
+                                <a href={`#${id}`}>{title}</a>
+                            </li>
+                        ))}
+                </ul>
+            </nav>
             <ThemeStyles />
             <div ref={lightRef} className={scopeClass('light')} hidden />
             <div ref={darkRef} className={scopeClass('dark')} hidden />
             {tokens.length === 0 && <output>Loading token values…</output>}
-            {groups.map(({ title, description, match, themed }) => (
-                <section className="ds-section" key={title}>
-                    <div className="ds-section__heading">
-                        <h2>{title}</h2>
-                        <span className="ds-section__count">
-                            {tokens.filter(({ name }) => match.test(name)).length} tokens
-                        </span>
-                    </div>
-                    <p className="ds-section__description">{description}</p>
-                    <div className="ds-table">
-                        <table className="ds-token-table">
-                            <thead>
-                                <tr>
-                                    <th>Token</th>
-                                    <th>{themed ? 'Light' : 'Value'}</th>
-                                    {themed && <th>Dark</th>}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {tokens
-                                    .filter(({ name }) => match.test(name))
-                                    .map((token) => (
-                                        <tr key={token.name}>
-                                            <th scope="row">
-                                                <code>{token.name}</code>
-                                            </th>
-                                            {(themed ? (['light', 'dark'] as const) : (['light'] as const)).map(
-                                                (theme) => {
-                                                    const { value, label } = token[theme];
-                                                    return (
-                                                        <td key={theme}>
-                                                            <div className="ds-token-table__value">
-                                                                {token.color && (
-                                                                    <span
-                                                                        className="ds-token-table__swatch"
-                                                                        style={{ backgroundColor: value }}
-                                                                        aria-hidden="true"
-                                                                    />
-                                                                )}
-                                                                <code>{label}</code>
-                                                            </div>
-                                                        </td>
-                                                    );
-                                                }
-                                            )}
-                                        </tr>
-                                    ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            ))}
+            <section className="ds-section" id="colors">
+                <h2>Colors</h2>
+                <p className="ds-section__description">
+                    A token gives a design decision a reusable name. An alias references another token instead of
+                    repeating its value. Lumo organizes colors into three layers:
+                </p>
+                <div className="ds-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Layer</th>
+                                <th scope="col">Purpose</th>
+                                <th scope="col">Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Primitive</th>
+                                <td>Raw, reusable palette values.</td>
+                                <td>
+                                    <code>--iris-100</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Semantic</th>
+                                <td>Shared UI meaning, such as control borders or secondary text.</td>
+                                <td>
+                                    <code>--lumo-control-border</code>, <code>--lumo-glyph-mid</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Component</th>
+                                <td>Colors specific to a component family, such as code syntax.</td>
+                                <td>
+                                    <code>--lumo-artifact-syntax-keyword</code>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p className="ds-section__description">
+                    Use semantic roles for shared UI and component tokens for their designated family. Both adapt to
+                    light and dark themes; component colors do not always alias the primitive palette.
+                </p>
+                {groups.filter(({ colorGroup }) => colorGroup).map(renderGroup)}
+            </section>
+            {groups.filter(({ colorGroup }) => !colorGroup).map(renderGroup)}
         </>
     );
 }

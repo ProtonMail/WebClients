@@ -7,7 +7,7 @@
 	inline-size: 360px;
 	max-block-size: calc(100vh - 3rem);
 	overflow: hidden auto;
-	border: 2px solid var(--lumo-control-brand-fill);
+	border: var(--border-width-2) solid var(--lumo-control-brand-fill);
 
 	&-tabs {
 		display: flex;
@@ -16,7 +16,7 @@
 
 	&-tab {
 		flex: 0 0 auto;
-		border: 1px solid transparent;
+		border: var(--border-width-1) solid transparent;
 		border-radius: 0.375rem;
 		background-color: transparent;
 		color: var(--lumo-glyph-mid);

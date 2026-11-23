@@ -78,7 +78,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
             // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="listbox"
             aria-label={c('collider_2025: Info').t`Matching files`}
-            className="file-mention-autocomplete fixed lumo-bg-panel-elevated border lumo-border radius-12 lumo-elevation-4 z-[60] overflow-y-auto min-w-72 py-1"
+            className="file-mention-autocomplete fixed lumo-bg-panel-elevated border radius-12 lumo-elevation-4 z-[60] overflow-y-auto min-w-72 py-1"
             style={{
                 top: `${topPosition}px`,
                 left: `${mentionState.position.left}px`,

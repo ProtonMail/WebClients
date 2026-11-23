@@ -9,7 +9,7 @@ export const CreateScheduleToolMessageSkeleton = () => {
     return (
         <div
             aria-busy="true"
-            className="create-schedule-tool-message-skeleton flex flex-column flex-nowrap items-start gap-4 p-5 border lumo-border-control radius-16 lumo-body-medium lumo-bg-panel"
+            className="create-schedule-tool-message-skeleton flex flex-column flex-nowrap items-start gap-4 p-5 border radius-16 lumo-body-medium lumo-bg-panel"
         >
             <div className="flex flex-nowrap shrink-0 items-center gap-2 min-w-0 w-full">
                 <LumoIcon aria-hidden className="shrink-0" name="Clock" size={14} />
@@ -33,7 +33,7 @@ export const CreateScheduleToolMessageSkeleton = () => {
                     <SkeletonLoader index={index + 1} width="10rem" />
                     <div
                         className={clsx(
-                            'flex flex-column flex-nowrap items-start gap-2 w-full px-4 py-3 border lumo-border radius-16 lumo-label-small',
+                            'flex flex-column flex-nowrap items-start gap-2 w-full px-4 py-3 border radius-16 lumo-label-small',
                             index === 1 && 'create-schedule-tool-message-skeleton__card lumo-bg-control-fill-low'
                         )}
                     >

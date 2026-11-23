@@ -43,7 +43,7 @@ const ModelCatalogCard = ({ model }: { model: ApiModel }) => {
     const capabilities = modelCapabilities(model);
 
     return (
-        <article className="api-docs-model-catalog-card gap-y-0 mb-4 border lumo-border radius-12 lumo-bg-panel">
+        <article className="api-docs-model-catalog-card gap-y-0 mb-4 border radius-12 lumo-bg-panel">
             <header className="api-docs-model-catalog-header">
                 <div className="flex flex-row flex-wrap items-baseline justify-space-between gap-2">
                     <h3 className="api-docs-model-catalog-name m-0 lumo-title-medium lumo-color-glyph">{model.name}</h3>
@@ -125,13 +125,13 @@ export const ApiModelsCatalogSection = ({
         </p>
 
         {status === 'loading' && models.length === 0 ? (
-            <div className="p-4 border lumo-border radius-12 lumo-color-glyph-mid">
+            <div className="p-4 border radius-12 lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`Loading available models…`}
             </div>
         ) : null}
 
         {status === 'error' ? (
-            <div className="flex items-center justify-space-between gap-3 p-4 border lumo-border radius-12">
+            <div className="flex items-center justify-space-between gap-3 p-4 border radius-12">
                 <span className="lumo-color-glyph-mid">{c('collider_2025: Error')
                     .t`Available models could not be loaded.`}</span>
                 <Button size="small" color="weak" onClick={onRetry}>
@@ -141,7 +141,7 @@ export const ApiModelsCatalogSection = ({
         ) : null}
 
         {status === 'success' && models.length === 0 ? (
-            <div className="p-4 border lumo-border radius-12 lumo-color-glyph-mid">
+            <div className="p-4 border radius-12 lumo-color-glyph-mid">
                 {c('collider_2025: Info').t`No API models are currently available.`}
             </div>
         ) : null}

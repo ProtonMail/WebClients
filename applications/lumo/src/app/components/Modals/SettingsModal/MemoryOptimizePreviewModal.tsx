@@ -52,7 +52,7 @@ const Segments = ({ segments }: { segments: DiffSegment[] }) => (
 );
 
 const Card = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-    <div className={`p-3 border lumo-border radius-12 lumo-body-small text-break ${className}`}>{children}</div>
+    <div className={`p-3 border radius-12 lumo-body-small text-break ${className}`}>{children}</div>
 );
 
 const getChangeLabel = (change: MemoryChange) => {

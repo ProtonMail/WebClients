@@ -182,7 +182,7 @@ const ApiUsageOverviewContent = ({
                         </div>
                         <ApiTokenUsageLegend source={selectedSource} />
                         {isChatHiddenByModelFilter(rows, selectedModel, selectedSource) && (
-                            <p className="text-xs color-weak m-0">
+                            <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                                 {c('collider_2025: Info')
                                     .t`Chat usage isn't broken down by model. Select All models to include it.`}
                             </p>
@@ -237,7 +237,7 @@ const ApiUsageOverview = ({
 
     if (!hasAnyUsage) {
         return (
-            <div className="api-usage-empty p-6 flex flex-column items-center justify-center border lumo-border radius-12 text-center lumo-bg-control-fill">
+            <div className="api-usage-empty p-6 flex flex-column items-center justify-center border radius-12 text-center lumo-bg-control-fill">
                 <span className="api-usage-empty__icon flex items-center justify-center mb-3 radius-full lumo-color-glyph-brand-text lumo-bg-control-fill">
                     <LumoIcon name="Activity" size={20} />
                 </span>
@@ -382,7 +382,7 @@ const ApiBalanceCard = ({
 
     return (
         <section
-            className="api-usage-balance-card flex flex-column overflow-hidden border lumo-border radius-16 lumo-bg-panel"
+            className="api-usage-balance-card flex flex-column overflow-hidden border radius-16 lumo-bg-panel"
             aria-labelledby="api-usage-balance-label"
         >
             <div className="api-usage-balance-card__main flex flex-column gap-4">
@@ -424,7 +424,7 @@ const ApiBalanceCard = ({
 
             {showAutoTopUp && !isOrgMember && (
                 <div className="api-usage-balance-card__settings border-top lumo-border lumo-bg-control-fill py-5 api-usage-balance-row flex flex-nowrap items-center gap-4">
-                    <span className="api-usage-balance-row__icon relative flex flex-none items-center justify-center border lumo-border radius-12 lumo-color-glyph lumo-bg-panel">
+                    <span className="api-usage-balance-row__icon relative flex flex-none items-center justify-center border radius-12 lumo-color-glyph lumo-bg-panel">
                         <LumoIcon name="RefreshCw" size={18} />
                         {autoTopUp.enabled && !autoTopUpStatus && (
                             <span className="api-usage-balance-row__badge lumo-bg-signal-success absolute flex items-center justify-center radius-full">
@@ -549,7 +549,7 @@ export const ApiUsageDashboard = ({
                 <ApiPayAsYouGoCard />
             </div>
 
-            <section className="api-usage-overview-section w-full min-w-0 border lumo-border radius-16 lumo-bg-panel">
+            <section className="api-usage-overview-section w-full min-w-0 border radius-16 lumo-bg-panel">
                 <div className="api-usage-period-row flex flex-column items-stretch justify-space-between gap-4 md:flex-row md:items-center">
                     <div>
                         <h3 className="m-0 lumo-title-medium lumo-color-glyph">{c('collider_2025: Title').t`Usage`}</h3>
@@ -595,7 +595,7 @@ export const ApiUsageDashboard = ({
             </section>
 
             {isOrgAdmin && (
-                <section className="api-usage-members-section w-full min-w-0 border lumo-border radius-16 lumo-bg-panel">
+                <section className="api-usage-members-section w-full min-w-0 border radius-16 lumo-bg-panel">
                     <ApiUsageMembers
                         from={periodDates[0]}
                         to={periodDates.at(-1)}

@@ -2,15 +2,19 @@
 
 [Design system](design-system.md) · [Writing component styles](styling.md)
 
-Prefer Lumo or Proton utility classes over equivalent token declarations in custom SCSS. Radius, opacity, and duration use the short `radius-*`, `opacity-*`, and `duration-*` names. Other Lumo visual utilities use the `lumo-` prefix. Check the [implementation](../styles/_lumo-utilities.scss) for supported roles and values; do not assume Tailwind names or variants exist.
+Prefer Lumo or Proton utility classes over equivalent token declarations in custom SCSS. Border width, radius, opacity, and duration use the short `border-*`, `radius-*`, `opacity-*`, and `duration-*` names. Other Lumo visual utilities use the `lumo-` prefix. Check the [implementation](../styles/_lumo-utilities.scss) for supported roles and values; do not assume Tailwind names or variants exist.
+
+Color utilities cover both [semantic and component tokens](design-system.md#token-tiers). The `lumo-color-artifact-*`, `lumo-bg-artifact-*` and `lumo-border-artifact-*` classes belong to the component tier and are reserved for their artifact/code uses.
 
 ## Choosing classes
 
 | Family | Purpose |
 | --- | --- |
+| `border` | Proton's 1px border, themed through `--border-norm: var(--lumo-border)`. Keep the utility unchanged so color and style modifiers continue to work. |
 | `lumo-color-<role>` | Text and icons inheriting `currentColor` |
 | `lumo-bg-<role>` | Background color |
 | `lumo-border`, `lumo-border-mid`, `lumo-border-control[-<variant>]`, `lumo-border-artifact-{doc,code,web}` | Border color only; supply width/style separately |
+| `border-{1,1.5,2}` | Width only, from `--border-width-{1,1-5,2}`; pair with `border` or a side-specific structural border and a Lumo color. Loaded after Proton, including its `border-2`. |
 | `lumo-{headline,title,body,label}-<size>` | Complete typography role |
 | `lumo-font-mono` | Code font family; combine with a typography role |
 | `radius-{4,8,12,16,28,full}` | Corner radius; does not clip children |

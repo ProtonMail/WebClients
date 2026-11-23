@@ -82,7 +82,7 @@ export const LibraryCreationCard = memo(function LibraryCreationCard({ entry }: 
         <div className="library-creation-card flex flex-column gap-3 min-w-0">
             <div className="relative w-full">
                 <div
-                    className="library-creation-thumbnail w-full h-custom overflow-hidden border lumo-border radius-16"
+                    className="library-creation-thumbnail w-full h-custom overflow-hidden border radius-16"
                     style={{ '--h-custom': '14rem' }}
                 >
                     <LibraryCreationThumbnail

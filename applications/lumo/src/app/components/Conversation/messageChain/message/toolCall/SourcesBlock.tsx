@@ -48,7 +48,7 @@ export const SourcesButton = ({ results, onClick }: SourcesBlockProps) => {
         >
             <div className="flex flex-row flex-nowrap">
                 {firstThreeDomains.map((domain) => (
-                    <div key={domain} className="source-favicon flex border lumo-border radius-full lumo-bg-panel">
+                    <div key={domain} className="source-favicon flex border radius-full lumo-bg-panel">
                         <SourceFavIcon domain={domain} />
                     </div>
                 ))}
