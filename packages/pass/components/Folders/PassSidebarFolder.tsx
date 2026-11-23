@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
@@ -152,7 +151,9 @@ export const PassSidebarFolder: FC<Props> = ({ folderId, shareId, name, level = 
                                 hidden={!hasChildren}
                             />
                             <PassFolderIcon hasChildren={hasChildren} />
-                            <FileNameDisplay text={name} className="min-w-0" />
+                            <span className="text-ellipsis" dir="auto" title={name}>
+                                {name}
+                            </span>
                         </div>
                     </SidebarListItemContent>
                 </a>
