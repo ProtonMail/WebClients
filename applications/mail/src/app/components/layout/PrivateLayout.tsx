@@ -14,6 +14,7 @@ import { useOnCompose, useOnMailTo } from '@proton/mail-composer/containers/Comp
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
 import PassAliasesContainer from '@proton/pass/components/Drawer/PassAliases/PassAliasesContainer';
 import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
 import { APPS } from '@proton/shared/lib/constants';
@@ -69,6 +70,7 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
                 <PendingInvitationTopBanner />
                 <PasswordReminderTopBanner />
                 <SmartBanner app={APPS.PROTONMAIL} />
+                <OfferTopBanner />
             </TopBanners>
         </>
     );

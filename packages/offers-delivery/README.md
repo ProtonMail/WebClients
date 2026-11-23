@@ -68,7 +68,7 @@ Meet's store lives in `@proton/meet`, which `@proton/components` depends on, so 
 
 ### Shared surfaces
 
-Every surface below uses `useOfferUpgrade(component)` with its own `UPSELL_COMPONENT` (banner, modal, button) unless given `onUpgrade` (Account passes its own). Render them inside `SubscriptionModalProvider`: above it the opener is a no-op.
+Every surface below uses `useOfferUpgrade(component)` with its own `UPSELL_COMPONENT` (banner, modal, button) unless given `onUpgrade`. Render them inside `SubscriptionModalProvider`: above it the opener is a no-op.
 
 - **Banner** — `<OfferTopBanner />` inside the host's `<TopBanners>` (Lumo: above the chat; Wallet: `PrivateAppContainer`'s `top`, since `TopBanners` would bring in its system banners). A host whose own upsell banner the offer replaces asks `useActiveOffer(CampaignVariant.BANNER, { onUpgrade })` and picks one at the call site (Meet: `bannerOffer ? <OfferTopBanner /> : <UpsellBanner />`). `OfferBanner` is a solid `bg-primary` row: the title and/or body, an outline pill CTA when there is one, and no image.
 - **Startup modal** — `useOfferStartupModal()` appended last to an existing `StartupModals` list (Account, Mail, Calendar, Drive), or `<OfferStartupModal />` for hosts without one.
@@ -76,7 +76,7 @@ Every surface below uses `useOfferUpgrade(component)` with its own `UPSELL_COMPO
 
 Hosts that mounted `SubscriptionModalProvider` inside the component that builds the header (Account, VPN settings, Console) now wrap that component in it instead, so these hooks run inside the provider and the composition stays inline.
 
-For the top navbar specifically: `useOfferNavbarEntry()` returns `{ button, modal }` (`button` is `undefined` with no offer, so `PrivateHeader`'s `upsellButton` falls back to its default chain). `button` is the bare button: hosts that place it in `PrivateHeader`'s list wrap it in `TopNavbarListItem` themselves, and hosts with their own layout (Lumo, Meet, Wallet) place it as is. It uses the package's `useOfferUpgrade(UPSELL_COMPONENT.BUTTON)`: the in-app subscription modal where the host supports it (checkout with the campaign's plan, cycle and coupon when the CTA carries a plan, plan selection otherwise; tagged with the CTA's `TrackingReference` when the campaign sets one, `upsell_<app>-<component>-offers-delivery` via `getUpsellRefFromApp` otherwise, e.g. `upsell_mail-button-offers-delivery`), the account dashboard otherwise. A host that already routes `GoToUpsell` its own way passes `useOfferNavbarEntry({ onUpgrade })`, as Account does. Call it from inside `SubscriptionModalProvider`: above it the opener is a no-op.
+For the top navbar specifically: `useOfferNavbarEntry()` returns `{ button, modal }` (`button` is `undefined` with no offer, so `PrivateHeader`'s `upsellButton` falls back to its default chain). `button` is the bare button: hosts that place it in `PrivateHeader`'s list wrap it in `TopNavbarListItem` themselves, and hosts with their own layout (Lumo, Meet, Wallet) place it as is. It uses the package's `useOfferUpgrade(UPSELL_COMPONENT.BUTTON)`: the in-app subscription modal where the host supports it (checkout with the campaign's plan, cycle and coupon when the CTA carries a plan, plan selection otherwise; tagged with the CTA's `TrackingReference` when the campaign sets one, `upsell_<app>-<component>-offers-delivery` via `getUpsellRefFromApp` otherwise, e.g. `upsell_mail-button-offers-delivery`), the account dashboard otherwise. A host that routes `GoToUpsell` its own way can pass `useOfferNavbarEntry({ onUpgrade })`. Call it from inside `SubscriptionModalProvider`: above it the opener is a no-op.
 
 Endpoints are **not** app-supplied: both live on the shared API monolith (`bundles/InAppBundle/`), not on a product's own API, so `lib/api.ts` owns them — including `silence: true` on both, without which any API error carrying a message becomes a user-facing error toast and `inapp/evaluate` 404s wherever the endpoint is not deployed yet.
 
@@ -180,12 +180,11 @@ The `Raw*` types were reconciled against the gateway (`bundles/InAppBundle/`), w
 
 ## Reference integration
 
-`applications/account/src/app/private-app/` wires all three surfaces with its own upgrade handler:
+`applications/account/src/app/private-app/` wires all three surfaces with the package's upgrade handler:
 
 - `store/rootReducer.ts` registers `offersDeliveryReducer`, and `store/listener.ts` registers `startOffersDeliveryListener(startListening, { appReady: bootstrapEvent })`.
-- `offers/useOfferUpgrade.ts` — the app's `GoToUpsell` destination, shared by all three surfaces.
-- `offers/AccountOfferTopBanner.tsx` — `<OfferTopBanner onUpgrade />` inside the app's `<TopBanners>` stack, so it honours the `TopBanner` flex-child layout contract.
-- `AccountStartupModals.tsx` — `useOfferStartupModal({ onUpgrade })`, appended **last** so every other startup modal outranks it. Its `showModal` is `offer !== null`, and it sets `retryUntilIdle: true` so `StartupModals` retries the `domIsBusy()` check itself, every second, until idle or the 20s startup window closes.
-- `MainContainer.tsx` — `useOfferNavbarEntry({ onUpgrade })` with `button ?? <TopNavbarUpsell />` as `PrivateHeader`'s `upsellButton`. The default export wraps the component in `SubscriptionModalProvider` so the hook runs inside it; `useSettingsApp` derives the `app` both need.
+- `MainContainer.tsx` renders `<OfferTopBanner />` inside the app's `<TopBanners>` stack, so it honours the `TopBanner` flex-child layout contract.
+- `AccountStartupModals.tsx` — `useOfferStartupModal()`, appended **last** so every other startup modal outranks it. Its `showModal` is `offer !== null`, and it sets `retryUntilIdle: true` so `StartupModals` retries the `domIsBusy()` check itself, every second, until idle or the 20s startup window closes.
+- `MainContainer.tsx` — `useOfferNavbarEntry()` with `button ?? <TopNavbarUpsell />` as `PrivateHeader`'s `upsellButton`. The default export wraps the component in `SubscriptionModalProvider` so the hook runs inside it; `useSettingsApp` derives the `app` both need.
 
 The whole thing is inert until `CentralisedOffersDelivery` is on.
