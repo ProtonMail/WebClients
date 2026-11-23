@@ -1,4 +1,5 @@
 import { authDevicesLoop } from '@proton/account-security/sso/eventLoopV6';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { groupKeysListener } from '@proton/account/groups/groupKeysListener';
 import { membersListener } from '@proton/account/members/membersListener';
 import { unprivatizeMembersListener } from '@proton/account/members/unprivatizeMembersListener';
@@ -6,6 +7,7 @@ import { convertAddressesListener } from '@proton/account/organizationKey/conver
 import { organizationKeysManagementListener } from '@proton/account/organizationKey/listener';
 import { resetOrganizationKeyListener } from '@proton/account/organizationKey/resetOrganizationKeyListener';
 import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { startCoreEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/coreEventLoopV6';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
@@ -22,5 +24,6 @@ export const start = ({ startListening, mode }: { startListening: AppStartListen
         unprivatizeMembersListener(startListening);
         membersListener(startListening);
         groupKeysListener(startListening);
+        startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
     }
 };
