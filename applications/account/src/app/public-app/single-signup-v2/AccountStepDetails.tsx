@@ -15,7 +15,6 @@ import ChallengeV4 from '@proton/components/containers/challenge/ChallengeV4';
 import useRightToLeft from '@proton/hooks/useRightToLeft';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { PLANS } from '@proton/payments/core/constants';
-import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getMinPasswordLengthMessage } from '@proton/shared/lib/helpers/formValidators';
 import type { StrictPlan } from '@proton/shared/lib/payments/plan/interface';
@@ -28,8 +27,6 @@ import { type AccountData, SignupType } from '../signup/interfaces';
 import { useAccountFormDataContext } from '../signupCtx/context/accountData/AccountFormDataContext';
 import { AsyncValidationStateValue } from '../signupCtx/context/accountData/asyncValidator/createAsyncValidator';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
-import type { BaseMeasure, SignupModelV2 } from './interface';
-import type { AvailableExternalEvents, InteractCreateEvents, UserCheckoutEvents } from './measure';
 
 import './AccountStepDetails.scss';
 
@@ -49,8 +46,6 @@ interface Props {
     emailDisabled?: boolean;
     emailReadOnly?: boolean;
     onSubmit?: () => void;
-    model: { subscriptionData: Pick<SignupModelV2['subscriptionData'], 'cycle' | 'currency'> };
-    measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
     footer: (data: { emailAlreadyUsed: boolean; email: string }) => ReactNode;
     emailDescription?: ReactNode;
@@ -66,9 +61,7 @@ const AccountStepDetails = ({
     emailDisabled,
     emailReadOnly,
     footer,
-    model,
     onSubmit,
-    measure,
     passwordFields,
     emailDescription,
     hideEmailLabel = false,
@@ -145,15 +138,6 @@ const AccountStepDetails = ({
             return;
         }
         try {
-            void measure({
-                event: TelemetryAccountSignupEvents.userCheckout,
-                dimensions: {
-                    type: 'free',
-                    plan: PLANS.FREE,
-                    cycle: `${model.subscriptionData.cycle}`,
-                    currency: model.subscriptionData.currency,
-                },
-            });
             if (await getIsValid({ passwords: passwordFields })) {
                 onSubmit();
             }

@@ -38,7 +38,6 @@ const renderAccountStepPayment = (variant: 'with' | 'without' | 'disabled') => {
                 onValidate={vi.fn()}
                 isFormValid
                 withLoadingSignup={vi.fn()}
-                measure={vi.fn()}
                 defaultMethod={undefined}
                 handleOptimistic={vi.fn()}
                 onBillingAddressChange={vi.fn()}

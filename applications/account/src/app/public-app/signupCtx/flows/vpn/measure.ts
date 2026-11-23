@@ -11,12 +11,9 @@ type TelemetryPaymentMethods = {
     cc: TelemetryBoolean;
 };
 
-export type TelemetryPayType = 'free' | 'pay_cc' | 'pay_pp' | 'pay_pp_no_cc' | 'pay_btc';
-
 type SignupFinishEvents = {
     event: TelemetryAccountSignupEvents.signupFinish;
     dimensions: {
-        type: TelemetryPayType;
         plan: PLANS;
         cycle: `${CYCLE}`;
         currency: Currency;
@@ -72,27 +69,6 @@ export type TelemetryMeasurementData =
     | {
           event: TelemetryAccountSignupEvents.bePaymentMethods;
           dimensions: TelemetryPaymentMethods;
-      }
-    | {
-          event: TelemetryAccountSignupEvents.paymentSelect;
-          dimensions: {
-              type: 'open' | 'select_cc' | 'select_pp' | 'select_btc';
-          };
-      }
-    | {
-          event: TelemetryAccountSignupEvents.interactCreditCard;
-          dimensions: {
-              field: 'cc-number' | 'cc-exp' | 'cc-csc' | 'country' | 'postal-code';
-          };
-      }
-    | {
-          event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError;
-          dimensions: {
-              type: TelemetryPayType;
-              plan: PLANS;
-              cycle: `${CYCLE}`;
-              currency: Currency;
-          };
       }
     | SignupFinishEvents
     | {

@@ -1302,8 +1302,6 @@ const Step1 = ({
                                                               }
                                                             : {})}
                                                         passwordFields={true}
-                                                        model={model}
-                                                        measure={measure}
                                                         accountStepDetailsRef={accountDetailsRef}
                                                         disableChange={loadingSignup || hasReservedUser}
                                                         onSubmit={
@@ -1550,7 +1548,6 @@ const Step1 = ({
                             ) : (
                                 <AccountStepPayment
                                     selectedPlan={selectedPlan}
-                                    measure={measure}
                                     cta={cta}
                                     terms={terms}
                                     key={model.session?.resumedSessionResult.UID || 'free'}
