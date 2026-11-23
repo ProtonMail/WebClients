@@ -1,5 +1,5 @@
 import type { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, Ref } from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, useId } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { IconComponent } from '@proton/icons/component';
@@ -12,19 +12,11 @@ export interface ToggleProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLI
 }
 
 const Toggle = (
-    {
-        id = 'toggle',
-        className = '',
-        checked = false,
-        loading = false,
-        onChange,
-        disabled,
-        title,
-        children,
-        ...rest
-    }: ToggleProps,
+    { id, className = '', checked = false, loading = false, onChange, disabled, title, children, ...rest }: ToggleProps,
     ref: Ref<HTMLInputElement>
 ) => {
+    const generatedId = useId();
+    const toggleId = id ?? generatedId;
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (!disabled && onChange) {
             onChange(event);
@@ -45,7 +37,7 @@ const Toggle = (
     return (
         <label
             className={clsx([children ? 'flex items-center flex-nowrap gap-2' : '', 'toggle-label', className])}
-            htmlFor={id}
+            htmlFor={toggleId}
             data-testid="toggle-switch"
             title={title}
         >
@@ -59,7 +51,7 @@ const Toggle = (
             >
                 <input
                     disabled={loading || disabled}
-                    id={id}
+                    id={toggleId}
                     onChange={handleChange}
                     type="checkbox"
                     className={clsx(['toggle-checkbox sr-only', className])}
