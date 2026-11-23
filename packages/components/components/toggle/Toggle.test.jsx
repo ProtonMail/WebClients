@@ -38,4 +38,38 @@ describe('Toggle component', () => {
         fireEvent.click(container.firstChild);
         expect(mockOnChange).toHaveBeenCalledTimes(0);
     });
+
+    it('should use the id passed by the caller', () => {
+        const { container } = render(<Toggle id={id} />);
+        const inputNode = getInput(container);
+
+        expect(inputNode.id).toBe(id);
+        expect(container.querySelector('label').htmlFor).toBe(id);
+    });
+
+    it('should link the label to the input when no id is passed', () => {
+        const { container } = render(<Toggle />);
+        const inputNode = getInput(container);
+
+        expect(inputNode.id).not.toBe('');
+        expect(container.querySelector('label').htmlFor).toBe(inputNode.id);
+    });
+
+    it('should give each toggle a unique id when no id is passed', () => {
+        const { container } = render(
+            <>
+                <Toggle />
+                <Toggle />
+            </>
+        );
+        const [first, second] = container.querySelectorAll('.toggle-checkbox');
+
+        expect(first.id).not.toBe(second.id);
+    });
+
+    it('should not use the former shared default id', () => {
+        const { container } = render(<Toggle />);
+
+        expect(container.querySelector('#toggle')).toBeNull();
+    });
 });
