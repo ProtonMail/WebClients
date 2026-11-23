@@ -37,11 +37,18 @@ export interface DelegatedAccessState
         KtState {
     [name]: {
         /**
-         * Whether the app currently running supports delegated access at all, see
-         * `getIsDelegatedAccessSupportedInApp`. Seeded once at bootstrap, defaults to unsupported so that an app
-         * which never seeds it doesn't offer recovery contacts or emergency access it can't deliver.
+         * Whether the app currently running fully supports delegated access, including accessing someone's account as
+         * their emergency contact, see `getIsDelegatedAccessSupportedInApp`. Seeded once at bootstrap, defaults to
+         * unsupported so that an app which never seeds it doesn't offer anything it can't deliver.
          */
         supportedInApp: boolean;
+        /**
+         * Whether the app currently running supports delegated access apart from accessing someone's account: your own
+         * contacts, data recovery and being someone's contact, see `getIsOutgoingDelegatedAccessSupportedInApp`.
+         * Implied by `supportedInApp` in practice, but seeded separately since some apps (e.g. the lite app) can't
+         * switch account. Defaults to unsupported.
+         */
+        outgoingSupportedInApp: boolean;
         incomingDelegatedAccess: ModelState<IncomingDelegatedAccessOutput[]> & {
             ephemeral?: IncomingEphemeral;
         };
@@ -54,11 +61,15 @@ export interface DelegatedAccessState
 type SliceState = DelegatedAccessState[typeof name];
 
 export const selectIsDelegatedAccessSupported = (state: DelegatedAccessState) => state[name].supportedInApp;
+export const selectIsOutgoingDelegatedAccessSupported = (state: DelegatedAccessState) => {
+    return state[name].outgoingSupportedInApp;
+};
 export const selectIncomingDelegatedAccess = (state: DelegatedAccessState) => state[name].incomingDelegatedAccess;
 export const selectOutgoingDelegatedAccess = (state: DelegatedAccessState) => state[name].outgoingDelegatedAccess;
 
 const initialState: SliceState = {
     supportedInApp: false,
+    outgoingSupportedInApp: false,
     incomingDelegatedAccess: getInitialModelState<IncomingDelegatedAccessOutput[]>(),
     outgoingDelegatedAccess: getInitialModelState<OutgoingDelegatedAccessOutput[]>(),
 };
@@ -73,6 +84,9 @@ const slice = createSlice({
     reducers: {
         setSupportedInApp: (state, action: PayloadAction<boolean>) => {
             state.supportedInApp = action.payload;
+        },
+        setOutgoingSupportedInApp: (state, action: PayloadAction<boolean>) => {
+            state.outgoingSupportedInApp = action.payload;
         },
         loadIncomingItem: (state, action: PayloadAction<{ id: string; value: boolean; type: 'access' }>) => {
             if (!state.incomingDelegatedAccess.ephemeral) {

@@ -15,7 +15,7 @@ import { selectUser } from '../../../user';
 import { selectUserSettings } from '../../../userSettings';
 import { getIsOutgoingDelegatedAccessAvailable } from '../../available';
 import { maxOutgoingEmergencyContacts, maxOutgoingRecoveryContacts } from '../../constants';
-import { selectIsDelegatedAccessSupported, selectOutgoingDelegatedAccess } from '../../index';
+import { selectIsOutgoingDelegatedAccessSupported, selectOutgoingDelegatedAccess } from '../../index';
 import { getEnrichedOutgoingDelegatedAccess } from './helper';
 import type { EnrichedOutgoingDelegatedAccess } from './interface';
 
@@ -47,14 +47,14 @@ export const selectEnrichedOutgoingDelegatedAccess = createSelector(
         selectOutgoingDelegatedAccess,
         selectContactEmailsMap,
         selectUserSettings,
-        selectIsDelegatedAccessSupported,
+        selectIsOutgoingDelegatedAccessSupported,
     ],
     (
         { value: user },
         delegatedAccess,
         contactEmailsMap,
         { value: userSettings },
-        isDelegatedAccessSupported
+        isOutgoingDelegatedAccessSupported
     ): EnrichedOutgoingDelegatedAccessReturnValue => {
         const items = delegatedAccess.value ?? [];
         const ephemeral = delegatedAccess.ephemeral ?? {};
@@ -62,9 +62,9 @@ export const selectEnrichedOutgoingDelegatedAccess = createSelector(
         const hasEmergencyContactsAccess = !!user && (user.isPaid || hasPaidPass(user));
         const hasEmergencyContactsUpsell = !!user && user.canPay && !hasEmergencyContactsAccess;
 
-        // Apps that don't wire up delegated access at all can't offer it to anyone, see
-        // `getIsDelegatedAccessSupportedInApp`.
-        const isAvailable = isDelegatedAccessSupported && getIsOutgoingDelegatedAccessAvailable(user);
+        // Apps that don't wire up outgoing delegated access can't offer it to anyone, see
+        // `getIsOutgoingDelegatedAccessSupportedInApp`.
+        const isAvailable = isOutgoingDelegatedAccessSupported && getIsOutgoingDelegatedAccessAvailable(user);
 
         const hasKeysToReactivate = Boolean(getLikelyHasKeysToReactivate(user));
 

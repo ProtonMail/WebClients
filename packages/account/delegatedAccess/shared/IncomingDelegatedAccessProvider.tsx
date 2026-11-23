@@ -2,8 +2,10 @@ import { type ReactNode, createContext, useCallback, useContext, useRef } from '
 
 import createListeners, { type Listeners } from '@proton/shared/lib/helpers/listeners';
 
+import { useSelector } from '../../store/hooks';
 import { useUser } from '../../user/hooks';
 import { getIsOutgoingDelegatedAccessAvailable } from '../available';
+import { selectIsDelegatedAccessSupported } from '../index';
 import type { ActionListener, ActionPayload } from './incoming/interface';
 import { useIncomingItems } from './incoming/useIncomingItems';
 
@@ -14,6 +16,8 @@ export interface IncomingDelegatedAccessProviderValue {
     loading: boolean;
     meta: {
         available: boolean;
+        /** Whether this app can switch into the account of someone who gave you emergency access. */
+        canAccessAccount: boolean;
     };
 }
 
@@ -23,6 +27,7 @@ export const IncomingDelegatedAccessProvider = ({ children }: { children: ReactN
     const listenersRef = useRef<Listeners<[ActionPayload], undefined> | null>(null);
     const { items, loading } = useIncomingItems();
     const [user] = useUser();
+    const canAccessAccount = useSelector(selectIsDelegatedAccessSupported);
 
     const incomingController: IncomingDelegatedAccessProviderValue = {
         notify: useCallback((payload) => {
@@ -38,6 +43,7 @@ export const IncomingDelegatedAccessProvider = ({ children }: { children: ReactN
         loading,
         meta: {
             available: getIsOutgoingDelegatedAccessAvailable(user),
+            canAccessAccount,
         },
     };
 

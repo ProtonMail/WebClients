@@ -3,6 +3,8 @@ import { Fragment, Suspense, lazy, useMemo, useState } from 'react';
 import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
+import { delegatedAccessActions } from '@proton/account/delegatedAccess';
+import { getIsOutgoingDelegatedAccessSupportedInApp } from '@proton/account/delegatedAccess/available';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
@@ -82,6 +84,12 @@ const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: Pro
             appName: app,
         },
     });
+
+    // The lite app supports delegated access apart from accessing someone's account as their emergency contact, which
+    // needs switch account, see `getIsOutgoingDelegatedAccessSupportedInApp`.
+    store.dispatch(
+        delegatedAccessActions.setOutgoingSupportedInApp(getIsOutgoingDelegatedAccessSupportedInApp(config.APP_NAME))
+    );
 
     extendStore({ api, config, authentication });
 

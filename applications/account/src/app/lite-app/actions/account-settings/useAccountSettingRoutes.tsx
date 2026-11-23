@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { selectIsOutgoingDelegatedAccessSupported } from '@proton/account/delegatedAccess';
 import { getIsOutgoingDelegatedAccessAvailable } from '@proton/account/delegatedAccess/available';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
+import { useSelector } from '@proton/account/store/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -38,7 +40,9 @@ export const useAccountSettingRoutes = () => {
 
     const [{ isMnemonicAvailable, isRecoveryFileAvailable }, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
-    const isDelegatedAccessAvailable = user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
+    const isOutgoingDelegatedAccessSupported = useSelector(selectIsOutgoingDelegatedAccessSupported);
+    const isDelegatedAccessAvailable =
+        isOutgoingDelegatedAccessSupported && user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false, false);
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();

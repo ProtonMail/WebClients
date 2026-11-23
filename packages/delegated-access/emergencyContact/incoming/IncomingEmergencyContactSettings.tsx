@@ -26,7 +26,7 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
-import { SECOND } from '@proton/shared/lib/constants';
+import { ACCOUNT_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -37,6 +37,7 @@ interface IncomingItemProps {
     notify: IncomingDelegatedAccessProviderValue['notify'];
     labels: string[];
     meta: MetaIncomingDelegatedAccess;
+    canAccessAccount: boolean;
 }
 
 const IncomingDelegatedAccessCell = ({
@@ -44,7 +45,8 @@ const IncomingDelegatedAccessCell = ({
         parsedIncomingDelegatedAccess: { accessibleAtDate, isDisabled },
     },
     meta: { canLogin, hasRequestedAccess },
-}: Pick<IncomingItemProps, 'value' | 'meta'>) => {
+    canAccessAccount,
+}: Pick<IncomingItemProps, 'value' | 'meta' | 'canAccessAccount'>) => {
     if (isDisabled) {
         return (
             <Pill color="#5C5958" backgroundColor="#E5E4E1" rounded="rounded-sm" className="text-semibold">{c(
@@ -59,14 +61,21 @@ const IncomingDelegatedAccessCell = ({
             ? c('emergency_access').t`Access granted on ${formattedAccessibleAt}`
             : undefined;
         return (
-            <Tooltip title={tooltip}>
-                <Pill
-                    color="#164616"
-                    backgroundColor="#C9E9C9"
-                    rounded="rounded-sm"
-                    className="text-semibold text-center"
-                >{c('emergency_access').t`Access granted`}</Pill>
-            </Tooltip>
+            <>
+                <Tooltip title={tooltip}>
+                    <Pill
+                        color="#164616"
+                        backgroundColor="#C9E9C9"
+                        rounded="rounded-sm"
+                        className="text-semibold text-center"
+                    >{c('emergency_access').t`Access granted`}</Pill>
+                </Tooltip>
+                {!canAccessAccount && (
+                    <p className="m-0 mt-1 text-sm color-weak">
+                        {c('emergency_access').t`To access their account, sign in to ${ACCOUNT_APP_NAME} in a browser.`}
+                    </p>
+                )}
+            </>
         );
     }
 
@@ -98,7 +107,8 @@ const IncomingDelegatedAccessActions = ({
     value,
     meta: { canRequestAccess, canCancelRequestAccess, canLogin, canDelete },
     notify,
-}: Pick<IncomingItemProps, 'value' | 'meta' | 'notify'>) => {
+    canAccessAccount,
+}: Pick<IncomingItemProps, 'value' | 'meta' | 'notify' | 'canAccessAccount'>) => {
     return (
         <div className="inline-flex">
             <DropdownActions
@@ -111,11 +121,12 @@ const IncomingDelegatedAccessActions = ({
                         text: c('emergency_access').t`Cancel request`,
                         onClick: () => notify({ type: 'cancel-request-access', value }),
                     },
-                    canLogin && {
-                        loading: value.loading.access,
-                        text: c('emergency_access').t`Access account`,
-                        onClick: () => notify({ type: 'access', value }),
-                    },
+                    canLogin &&
+                        canAccessAccount && {
+                            loading: value.loading.access,
+                            text: c('emergency_access').t`Access account`,
+                            onClick: () => notify({ type: 'access', value }),
+                        },
                     canDelete && {
                         actionType: 'delete' as const,
                         text: c('emergency_access').t`Stop being trusted contact`,
@@ -136,6 +147,7 @@ const IncomingItem = ({
     meta,
     labels,
     notify,
+    canAccessAccount,
 }: IncomingItemProps) => {
     return (
         <TableRow labels={labels}>
@@ -146,10 +158,15 @@ const IncomingItem = ({
                 <div>{getFormattedTriggerDelay(accessibleTriggerDelayMs)}</div>
             </TableCell>
             <TableCell>
-                <IncomingDelegatedAccessCell value={value} meta={meta} />
+                <IncomingDelegatedAccessCell value={value} meta={meta} canAccessAccount={canAccessAccount} />
             </TableCell>
             <TableCell>
-                <IncomingDelegatedAccessActions value={value} meta={meta} notify={notify} />
+                <IncomingDelegatedAccessActions
+                    value={value}
+                    meta={meta}
+                    notify={notify}
+                    canAccessAccount={canAccessAccount}
+                />
             </TableCell>
         </TableRow>
     );
@@ -215,6 +232,7 @@ const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProv
                             value={value}
                             meta={meta}
                             notify={controller.notify}
+                            canAccessAccount={controller.meta.canAccessAccount}
                         />
                     );
                 })}

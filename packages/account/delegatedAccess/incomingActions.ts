@@ -14,8 +14,10 @@ import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/aut
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
-import type { IncomingDelegatedAccessOutput } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import type {
+    DelegatedAccessTypeEnum,
+    IncomingDelegatedAccessOutput,
+} from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import noop from '@proton/utils/noop';
 
@@ -30,7 +32,7 @@ import {
     type DelegatedAccessState,
     delegatedAccessActions,
     selectIncomingDelegatedAccess,
-    selectIsDelegatedAccessSupported,
+    selectIsOutgoingDelegatedAccessSupported,
 } from './index';
 
 const queryListIncomingDelegatedAccess = () => ({
@@ -56,7 +58,7 @@ export const listIncomingDelegatedAccess = (options?: {
         };
         const getPayload = async () => {
             const user = await dispatch(userThunk());
-            if (!selectIsDelegatedAccessSupported(getState()) || !getIsIncomingDelegatedAccessAvailable(user)) {
+            if (!selectIsOutgoingDelegatedAccessSupported(getState()) || !getIsIncomingDelegatedAccessAvailable(user)) {
                 return [];
             }
             const result = await extraArgument.api<{
