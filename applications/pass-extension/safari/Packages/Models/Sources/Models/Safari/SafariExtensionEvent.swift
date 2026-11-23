@@ -28,5 +28,6 @@ public enum SafariExtensionEvent: Sendable, Equatable {
     case readFromClipboard
     case writeToClipboard(content: String)
     case fetchRelatedOrigins(url: String)
+    case biometricUnlock(reason: String)
     case unknown
 }

@@ -19,7 +19,8 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-@testable import Shared
+import Models
+@testable import UseCases
 import XCTest
 
 final class ProcessSafariExtensionEventTests: XCTestCase {
@@ -126,6 +127,22 @@ extension ProcessSafariExtensionEventTests {
         }
 
         wait(for: [expectation1, expectation2])
+    }
+
+    func testParseBiometricUnlockEvent() throws {
+        let unlock = try sut.execute(#"{"biometricLock":{"type":"unlock","userIdentifier":"uid-user","reason":"unlock the browser extension"}}"#)
+        XCTAssertEqual(unlock, .biometricUnlock(reason: "unlock the browser extension"))
+
+        let withoutReason = try sut.execute(#"{"biometricLock":{"type":"unlock"}}"#)
+        XCTAssertEqual(withoutReason, .biometricUnlock(reason: ""))
+    }
+
+    func testParseUnsupportedBiometricLockEvents() throws {
+        let setup = try sut.execute(#"{"biometricLock":{"type":"setup-lock-secret","userIdentifier":"uid-user","lockSecret":"c2VjcmV0"}}"#)
+        XCTAssertEqual(setup, .unknown)
+
+        let delete = try sut.execute(#"{"biometricLock":{"type":"delete-lock-secret","userIdentifier":"uid-user"}}"#)
+        XCTAssertEqual(delete, .unknown)
     }
 
     func testParseUnknownEvent() throws {

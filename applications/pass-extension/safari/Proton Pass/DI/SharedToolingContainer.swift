@@ -38,6 +38,10 @@ extension SharedToolingContainer {
         self { SimpleKeychain(service: Constants.appGroup, accessGroup: Constants.keychainAccessGroup) }
     }
 
+    var biometricAuthenticator: Factory<any BiometricAuthenticator> {
+        self { BiometricAuthenticatorImpl() }
+    }
+
     var appVersion: Factory<String> {
         self { "macos-pass-safari@\(Bundle.main.versionNumber)" }
     }

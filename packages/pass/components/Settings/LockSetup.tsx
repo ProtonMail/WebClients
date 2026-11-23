@@ -144,8 +144,10 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                           <span className="block">
                                               {c('Label').t`Biometrics`}
                                               <span className="block color-weak text-sm">{biometricsText}</span>
-                                              <span className="block color-weak text-sm">{c('Info')
-                                                  .t`This feature requires the ${PASS_APP_NAME} desktop app to be installed and running during setup.`}</span>
+                                              {BUILD_TARGET !== 'safari' && (
+                                                  <span className="block color-weak text-sm">{c('Info')
+                                                      .t`This feature requires the ${PASS_APP_NAME} desktop app to be installed and running during setup.`}</span>
+                                              )}
                                           </span>
                                       </span>
                                   ),

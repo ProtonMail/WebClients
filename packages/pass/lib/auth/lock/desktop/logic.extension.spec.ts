@@ -1,6 +1,24 @@
 import { NativeMessageErrorType, NativeMessageType } from '../../../../types/desktop/extension-unlock-with-desktop';
 import { NativeMessageError } from '../../../native-messaging/errors';
-import { sendSetupLockSecretMessage, sendUnlockMessage } from './logic.extension';
+import { sendDeleteLockSecretMessage, sendSetupLockSecretMessage, sendUnlockMessage } from './logic.extension';
+
+const MAC_USER_AGENT =
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
+const WINDOWS_USER_AGENT =
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
+
+const self = global as any;
+const originalBuildTarget = self.BUILD_TARGET;
+
+const setEnvironment = (buildTarget: string, userAgent: string) => {
+    self.BUILD_TARGET = buildTarget;
+    vi.stubGlobal('navigator', { userAgent });
+};
+
+afterEach(() => {
+    vi.unstubAllGlobals();
+    self.BUILD_TARGET = originalBuildTarget;
+});
 
 const makeNativeMessaging = (response: any) => ({
     sendNativeMessageRequest: vi.fn().mockResolvedValue(response),
@@ -94,5 +112,84 @@ describe('sendUnlockMessage', () => {
         expect(nativeMessaging.sendNativeMessageRequest).toHaveBeenCalledWith(
             expect.objectContaining({ type: NativeMessageType.UNLOCK, userIdentifier: '7-user-1' })
         );
+    });
+
+    test('should send a reason completing the macOS prompt sentence', async () => {
+        setEnvironment('chrome', MAC_USER_AGENT);
+        const nativeMessaging = makeNativeMessaging(unlockResponse);
+
+        await sendUnlockMessage(nativeMessaging as any, makeAuthStore() as any);
+        expect(nativeMessaging.sendNativeMessageRequest).toHaveBeenCalledWith(
+            expect.objectContaining({ reason: 'unlock the browser extension' })
+        );
+    });
+
+    test('should send a reason completing the macOS prompt sentence on Safari', async () => {
+        setEnvironment('safari', '');
+        const nativeMessaging = makeNativeMessaging(unlockResponse);
+
+        await sendUnlockMessage(nativeMessaging as any, makeAuthStore() as any);
+        expect(nativeMessaging.sendNativeMessageRequest).toHaveBeenCalledWith(
+            expect.objectContaining({ reason: 'unlock the browser extension' })
+        );
+    });
+
+    test('should send a standalone reason outside macOS and Safari', async () => {
+        setEnvironment('chrome', WINDOWS_USER_AGENT);
+        const nativeMessaging = makeNativeMessaging(unlockResponse);
+
+        await sendUnlockMessage(nativeMessaging as any, makeAuthStore() as any);
+        expect(nativeMessaging.sendNativeMessageRequest).toHaveBeenCalledWith(
+            expect.objectContaining({ reason: 'Proton Pass wants to unlock the browser extension' })
+        );
+    });
+});
+
+describe('sendDeleteLockSecretMessage', () => {
+    const persistedAuthStore = makeAuthStore('uid-1', 'user-1', 1, 'uid-1-user-1');
+
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
+
+    test('should delete the secret keyed under the persisted identifier', async () => {
+        const nativeMessaging = makeNativeMessaging({ type: NativeMessageType.DELETE_LOCK_SECRET });
+
+        await sendDeleteLockSecretMessage(nativeMessaging as any, persistedAuthStore as any);
+        expect(nativeMessaging.sendNativeMessageRequest).toHaveBeenCalledWith({
+            type: NativeMessageType.DELETE_LOCK_SECRET,
+            encrypt: false,
+            userIdentifier: 'uid-1-user-1',
+        });
+    });
+
+    test('should never delete by the legacy identifier, which can collide across browser contexts', async () => {
+        const nativeMessaging = makeNativeMessaging({ type: NativeMessageType.DELETE_LOCK_SECRET });
+
+        await sendDeleteLockSecretMessage(
+            nativeMessaging as any,
+            makeAuthStore('uid-1', 'user-1', 7, undefined) as any
+        );
+        expect(nativeMessaging.sendNativeMessageRequest).not.toHaveBeenCalled();
+    });
+
+    test('should resolve when the native side fails', async () => {
+        const nativeMessaging = {
+            sendNativeMessageRequest: vi
+                .fn()
+                .mockRejectedValue(new NativeMessageError(NativeMessageErrorType.HOST_NOT_FOUND)),
+        };
+
+        await expect(
+            sendDeleteLockSecretMessage(nativeMessaging as any, persistedAuthStore as any)
+        ).resolves.toBeUndefined();
+    });
+
+    test('should stop waiting on a native side that never answers', async () => {
+        const nativeMessaging = { sendNativeMessageRequest: vi.fn().mockReturnValue(new Promise(() => {})) };
+
+        const result = sendDeleteLockSecretMessage(nativeMessaging as any, persistedAuthStore as any);
+        vi.advanceTimersByTime(2_000);
+
+        await expect(result).resolves.toBeUndefined();
     });
 });

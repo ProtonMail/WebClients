@@ -20,6 +20,7 @@
 
 import Client
 import Factory
+import Models
 import os.log
 import SafariServices
 
@@ -31,6 +32,7 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     private let readFromClipboard = resolve(\SharedUseCaseContainer.readFromClipboard)
     private let writeToClipboard = resolve(\SharedUseCaseContainer.writeToClipboard)
     private let fetchRelatedOrigins = resolve(\SharedUseCaseContainer.fetchRelatedOrigins)
+    private let unlockWithBiometrics = resolve(\SharedUseCaseContainer.unlockWithBiometrics)
     private let createLogger = resolve(\SharedUseCaseContainer.createLogger)
 
     /// Entry point for every `browser.runtime.sendNativeMessage` from the safari extension.
@@ -45,16 +47,19 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             request?.userInfo?["message"]
         }
 
-        if let message {
-            Task { [weak self] in
-                let result = await self?.handle(message: String(describing: message))
-                let response = NSExtensionItem()
-                if let result {
-                    response.userInfo = [SFExtensionMessageKey: result]
-                }
-
-                context.completeRequest(returningItems: [response], completionHandler: nil)
+        Task { [weak self] in
+            let result: String? = if let message {
+                await self?.handle(message: String(describing: message))
+            } else {
+                nil
             }
+
+            let response = NSExtensionItem()
+            if let result {
+                response.userInfo = [SFExtensionMessageKey: result]
+            }
+
+            context.completeRequest(returningItems: [response], completionHandler: nil)
         }
     }
 }
@@ -76,12 +81,22 @@ private extension SafariWebExtensionHandler {
                 try await writeToClipboard(content)
             case let .fetchRelatedOrigins(url):
                 return try await fetchRelatedOrigins(url)
+            case let .biometricUnlock(reason):
+                return try await unlockWithBiometrics(reason: reason)
             case .unknown:
                 logger.error("Unknown message")
             }
+        } catch let error as NativeMessageErrorType {
+            logger.error("Native message error \(error.rawValue, privacy: .public)")
+            return encodeError(error)
         } catch {
             logger.error("Error handling message \(error.localizedDescription, privacy: .public)")
         }
         return nil
+    }
+
+    func encodeError(_ error: NativeMessageErrorType) -> String? {
+        guard let data = try? JSONEncoder().encode(["error": error.rawValue]) else { return nil }
+        return String(data: data, encoding: .utf8)
     }
 }

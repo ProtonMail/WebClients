@@ -9,7 +9,24 @@ import { logger } from '../../utils/logger';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
 
+/** On Safari the native side is the app extension shipped with the browser extension,
+ * never the desktop app */
+const getSafariMessageForNativeMessageError = (error: NativeMessageErrorType): Maybe<string> => {
+    switch (error) {
+        case NativeMessageErrorType.HOST_NOT_FOUND:
+        case NativeMessageErrorType.HOST_NOT_RESPONDING:
+            return c('Error').t`${PASS_APP_NAME} is not responding.`;
+        case NativeMessageErrorType.TIMEOUT:
+            return c('Error').t`${PASS_APP_NAME} did not respond in time.`;
+        case NativeMessageErrorType.UNLOCK_IN_PROGRESS:
+            return c('Error').t`A biometric unlock check is already in progress.`;
+    }
+};
+
 export const getMessageForNativeMessageError = (error: NativeMessageErrorType) => {
+    const safariMessage = BUILD_TARGET === 'safari' ? getSafariMessageForNativeMessageError(error) : undefined;
+    if (safariMessage) return safariMessage;
+
     switch (error) {
         case NativeMessageErrorType.HOST_NOT_FOUND:
             return c('Error').t`The ${PASS_APP_NAME} desktop app is not installed.`;

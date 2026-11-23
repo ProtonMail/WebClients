@@ -15,16 +15,17 @@ vi.mock('../../../../utils/time/epoch');
 
 const setupLockSecretMessage = logicExtension.sendSetupLockSecretMessage as Mock;
 const unlockMessage = logicExtension.sendUnlockMessage as Mock;
+const deleteLockSecretMessage = logicExtension.sendDeleteLockSecretMessage as Mock;
 const getEpoch = epoch.getEpoch as Mock;
 
-const setupAdapter = () => {
+const setupAdapter = ({ trusted = false } = {}) => {
     const authStore = createAuthStore(createStore());
     const persistSession = vi.fn().mockResolvedValue(undefined);
     const syncLock = vi.fn().mockResolvedValue(undefined);
     const lock = vi.fn().mockResolvedValue(undefined);
     const logout = vi.fn().mockResolvedValue(undefined);
     const auth = { persistSession, syncLock, lock, logout, config: { authStore } };
-    const nativeMessaging = {} as any;
+    const nativeMessaging = { trusted } as any;
     const onDeclined = vi.fn();
 
     return {
@@ -96,6 +97,28 @@ describe('DesktopLock adapter', () => {
             expect(authStore.getDesktopLockUserIdentifier()).toBeUndefined();
             expect(authStore.getLockMode()).toBe(LockMode.NONE);
             expect(authStore.getLocked()).toBe(false);
+        });
+
+        test('should delete the keychain secret while its identifier is still in the session', async () => {
+            const { adapter, authStore } = setupAdapter();
+            await adapter.create('', 600);
+
+            let identifierAtDeletion: unknown;
+            deleteLockSecretMessage.mockImplementation(async () => {
+                identifierAtDeletion = authStore.getDesktopLockUserIdentifier();
+            });
+
+            await adapter.delete('');
+            expect(deleteLockSecretMessage).toHaveBeenCalledTimes(1);
+            expect(identifierAtDeletion).toBe('uid-1-user-1');
+        });
+    });
+
+    describe('onLogout', () => {
+        test('should delete the keychain secret', async () => {
+            const { adapter } = setupAdapter();
+            await adapter.onLogout?.();
+            expect(deleteLockSecretMessage).toHaveBeenCalledTimes(1);
         });
     });
 
@@ -212,6 +235,42 @@ describe('DesktopLock adapter', () => {
             unlockMessage.mockResolvedValue('wrong');
             await expect(adapter.unlock('')).rejects.toThrow('Too many attempts');
             expect(auth.logout).toHaveBeenCalledWith({ soft: false, broadcast: true });
+        });
+    });
+
+    describe('trusted transport', () => {
+        test('create: should store neither a verifier nor an identifier, without a setup message', async () => {
+            const { adapter, authStore } = setupAdapter({ trusted: true });
+            await adapter.create('', 600);
+
+            expect(setupLockSecretMessage).not.toHaveBeenCalled();
+            expect(authStore.getDesktopLockVerifier()).toBeUndefined();
+            expect(authStore.getDesktopLockUserIdentifier()).toBeUndefined();
+            expect(authStore.getLockMode()).toBe(LockMode.DESKTOP);
+            expect(authStore.getLockTTL()).toBe(600);
+        });
+
+        test('unlock: should unlock on a successful answer without any secret', async () => {
+            const { adapter, auth, authStore } = setupAdapter({ trusted: true });
+            await adapter.create('', 600);
+            authStore.setLocked(true);
+            unlockMessage.mockResolvedValue(undefined);
+            getEpoch.mockReturnValue(1700001234);
+
+            await adapter.unlock('');
+            expect(authStore.getLocked()).toBe(false);
+            expect(auth.syncLock).toHaveBeenCalledWith({ unlockRetryCount: 0, lockLastExtendTime: 1700001234 });
+        });
+
+        test('unlock: should count a failed biometric check as a failed attempt', async () => {
+            const { adapter, auth } = setupAdapter({ trusted: true });
+            await adapter.create('', 600);
+            unlockMessage.mockRejectedValue(new NativeMessageError(NativeMessageErrorType.BIOMETRICS_FAILED));
+
+            const error = await adapter.unlock('').catch((err) => err);
+            expect(error.type).toBe(NativeMessageErrorType.BIOMETRICS_FAILED);
+            expect(auth.syncLock).toHaveBeenCalledWith({ unlockRetryCount: 1 });
+            expect(auth.lock).toHaveBeenCalledWith(LockMode.DESKTOP, { broadcast: true, soft: true });
         });
     });
 });

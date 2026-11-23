@@ -11,6 +11,7 @@ import { clientBooted, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { createNativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
+import { createSafariNativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.safari';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { resolveModelArtifact } from '@proton/pass/store/actions/creators/model-artifact';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
@@ -73,7 +74,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const core = createPassCoreProxyService();
     const auth = createAuthService(api, authStore);
     const store = createStoreService();
-    const nativeMessaging = createNativeMessagingService();
+    const nativeMessaging =
+        BUILD_TARGET === 'safari' ? createSafariNativeMessagingService() : createNativeMessagingService();
 
     if (ENV === 'development') QA_SERVICE?.init(storage.local);
     auth.registerLockAdapter(sessionLockAdapterFactory(auth));

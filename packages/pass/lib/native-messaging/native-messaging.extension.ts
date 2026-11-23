@@ -22,6 +22,9 @@ const info = (...content: any[]) => logger.info('[NativeMessaging]', ...content)
 export type NativeMessagingService = {
     sendNativeMessageRequest: SendNativeMessageRequest;
     disconnect: () => void;
+    /** The native side cannot be replaced, so its unlock answer is enough on its own:
+     * no lock secret to hand over and verify */
+    trusted: boolean;
 };
 
 type PendingRequests = Map<
@@ -156,5 +159,5 @@ export const createNativeMessagingService = (): NativeMessagingService => {
             }
         });
 
-    return { sendNativeMessageRequest, disconnect };
+    return { sendNativeMessageRequest, disconnect, trusted: false };
 };
