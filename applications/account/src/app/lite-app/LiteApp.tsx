@@ -72,7 +72,9 @@ const bootstrapApp = ({ appVersion, app }: { appVersion: string | null; app: Pro
         config,
         defaultHeaders,
     });
-    const authentication = bootstrap.createAuthentication({ mode: 'standalone' });
+    const authentication = bootstrap.createAuthentication({
+        mode: 'standalone',
+    });
     bootstrap.init({ config, authentication, locales });
     initTracker({ api: getSilentApi(api) });
     initSafariFontFixClassnames();
@@ -112,6 +114,8 @@ const App = () => {
         return new URLSearchParams(window.location.hash.slice(1));
     });
     const appVersion = searchParams.get('app-version');
+    // Native clients put `language` in the hash or in the query. Read it from the initial values: the hash is cleared by Setup.
+    const language = initialHashParams.get('language') || initialSearchParams.get('language');
 
     const [isLogout, setLogout] = useState(false);
 
@@ -128,7 +132,11 @@ const App = () => {
     const redirect = getValidatedProtonProtocolRedirect(
         initialSearchParams.get('redirect') || defaultValues.redirect || undefined
     );
-    const app = getApp({ app: initialSearchParams.get('app'), plan: initialSearchParams.get('plan'), redirect });
+    const app = getApp({
+        app: initialSearchParams.get('app'),
+        plan: initialSearchParams.get('plan'),
+        redirect,
+    });
 
     const { api, config, store, authentication, cache } = useInstance(() => bootstrapApp({ appVersion, app }));
 
@@ -196,6 +204,7 @@ const App = () => {
                                                             onLogin={handleLogin}
                                                             loader={loader}
                                                             action={action}
+                                                            language={language}
                                                         >
                                                             <Suspense fallback={loader}>
                                                                 <Switch>
