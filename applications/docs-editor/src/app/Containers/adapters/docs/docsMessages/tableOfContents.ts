@@ -7,7 +7,6 @@ export function createTableOfContentsMessages(): Pick<DocsMessages, 'tableOfCont
       outline: c('Title').t`Outline`,
       openOutline: c('Action').t`Open outline`,
       closeOutline: c('Action').t`Close outline`,
-      newBadge: c('Info').t`NEW`,
       moreOptions: c('Action').t`More options`,
       copyLink: c('Action').t`Copy link`,
     },
