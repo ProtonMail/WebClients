@@ -1665,6 +1665,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dagars pengarna tillbaka-garanti"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink } för att få en återbetalning."
       ]
     },
     "bf2023: Tooltip": {
@@ -4612,6 +4615,9 @@
       ],
       "Some invitations could not be loaded": [
         "Några inbjudningar kunde inte laddas"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Du nådde maxantalet av anslutna adresser"
       ]
     },
     "error": {
@@ -5034,6 +5040,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Begäran om säkerhetsnyckel avbröts eller löpte ut. Försök igen."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Din enhet kunde inte slutföra begäran om säkerhetsnyckel. Försök igen, eller använd en annan inloggningsmetod."
       ]
     },
     "fido2: Info": {
@@ -7881,7 +7893,7 @@
         "Du kommer inte att kunna dela \"${ fileName }\" efter att du har ändrat behörighet till visare. Endast ägaren kan ändra din behörighet igen."
       ],
       "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
-        "Din webbläsare fick slut på utrymme vid indexering av filer för sökning. Frigör lagringsutrymme och bygg sedan om indexet."
+        "Din webbläsare fick slut på utrymme när den indexerade filer för sökning. Gör utrymme ledigt, återuppbygg sedan indexet."
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Dina filer håller på att omindexeras. Du kan fortsätta söka - resultaten kan dock vara ofullständiga tills det är klart. Vi meddelar dig när det är färdigt."
@@ -8038,7 +8050,7 @@
         "Dra och släpp dina filer och mappar här eller klicka på den \"Nya\" knappen för att ladda upp"
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+        "Om du har förlorat tillgången till din autentiseringsapp, kan du använda 1 av de 16 återställningskoder som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "Import interrupted": [
         "Import avbröts"
@@ -8065,7 +8077,7 @@
         "Vi skickar e-post till dig när importen är klar."
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
-        "Du kan öppna den här mappen är importen är klar. Hittills har vi importerat ${ importedSize }.  Vi skickar e-post till dig när det är klart."
+        "Du kan öppna den här mappen är importen är klar. Hittills har vi importerat ${ importedSize }. Vi skickar e-post till dig när det är klart."
       ],
       "You have an open invoice ${ payInvoiceLink }": [
         "Du har en öppen faktura ${ payInvoiceLink }"
@@ -8089,13 +8101,46 @@
         "${ IDEAL_WERO_BRAND_NAME } märke"
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
-        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra.\n"
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra."
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Din import är blockerad. Uppgradera nu för att föra över resten av dina filer."
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Du kan öppna den här mappen är importen är klar. Vi skickar e-post till dig när det är klart."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink }för att få en återbetalning."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Om du redan har uppgraderat, kan fortsätta din import i ${ easySwitchSettingsLink }. Du kan också avbryta den där."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importera dina filer och mappar från Google Drive och håll dem privata i ${ DRIVE_APP_NAME }."
+      ],
+      "Search covers your recent items": [
+        "Sökningen omfattar dina senaste objekt"
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "För att aktivera sökning behöver vi indexera dina filer lokalt. Du kan fortfarande använda ${ DRIVE_APP_NAME } normalt, och vi talar om för dig när indexering är gjord. Om du lämnar den här sidan kommer indexering att pausas och återupptas när du kommer tillbaka."
+      ],
+      "UnionPay logo": [
+        "UnionPay-logga"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi kommer att omdirigera dig till ${ IDEAL_WERO_BRAND_NAME } i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi kopierar dem från Google Drive till ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi mejlar dig när importen är färdig. Dina filer kommer att finnas i en mapp i ${ DRIVE_APP_NAME }."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Din Drive är för stor för att indexera helt i den här webbläsaren, så sökning tittar på dina senast använda saker. Andra filer kanske inte syns i resultaten."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Dina filer är krypterade och säkert förvarade i ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -8981,7 +9026,7 @@
         "Överordnad domän och underdomäner (standard)"
       ],
       "Applications in a business setting": [
-        "Applikationer i en affärsmiljö"
+        "Applikationer i företagsmiljö"
       ],
       "Exact host matching": [
         "Exakt värdmatchning"
@@ -11348,7 +11393,7 @@
         "Filer som laddas upp under denna tid kommer inte att räknas av mot din gräns för lagringsutrymme."
       ],
       "Files uploaded now will not count towards your storage limit": [
-        "Filer som laddas upp nu räknas inte av mot din gräns för lagringsutrymme"
+        "Filer som laddas upp nu räknas inte in i din lagringsgräns"
       ]
     },
     "Onboarding Trial": {
@@ -11411,6 +11456,15 @@
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Avbryt när som helst innan dess.** Du kommer att kunna använda ${ planTitle } tills provperioden är slut, gratis."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "för att kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan avbryta inom 30 dagar och få en proportionell återbetalning."
       ]
     },
     "Option": {
@@ -11773,6 +11827,9 @@
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Genom att byta godkänner du våra ${ termsLink }."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Prenumerationsbyte är inkompatibelt av följande skäl:"
       ]
     },
     "Payments.Error": {
@@ -15993,6 +16050,67 @@
       ],
       "For getting more done": [
         "För att få mer gjort"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Att ändra din fakturaadress kan påverka skatter på kommande fakturor."
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per användare"
+      ],
+      "${ storage } shared": [
+        "${ storage } delat"
+      ],
+      "10 years": [
+        "10 år"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Custom email domains": [
+        "Anpassade e-postdomäner"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "Password vaults": [
+        "Lösenords-valv"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive och Pass"
+      ],
+      "Previous versions": [
+        "Tidigare versioner"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
+      ],
+      "Subscribers only": [
+        "Endast prenumeranter"
+      ],
+      "Ultra servers": [
+        "Ultraservrar"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-servrar, reserverade för dig"
+      ],
+      "Unlimited": [
+        "Obegränsad"
+      ],
+      "Up to ${ limit }": [
+        "Upp till ${ limit }"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "VPN devices at once": [
+        "VPN-enheter samtidigt"
       ]
     }
   }

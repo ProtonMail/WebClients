@@ -4606,6 +4606,21 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
+      ],
+      "Failed to get invitee keys": [
+        "Einladeschlüssel konnten nicht abgerufen werden"
+      ],
+      "Failed to load the membership": [
+        "Mitgliedschaft konnte nicht geladen werden"
+      ],
+      "Failed to load the membership data": [
+        "Daten der Mitgliedschaft konnten nicht geladen werden"
+      ],
+      "Failed to verify membership": [
+        "Mitgliedschaft konnte nicht geprüft werden"
+      ],
+      "Some invitations could not be loaded": [
+        "Einige Einladungen konnten nicht geladen werden"
       ]
     },
     "error": {
@@ -5028,6 +5043,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Die Anforderung des Sicherheitsschlüssels wurde abgebrochen oder ist abgelaufen. Bitte versuche es erneut."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Ihr Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder verwende eine andere Anmeldemethode."
       ]
     },
     "fido2: Info": {

@@ -453,7 +453,7 @@
         "activer les notifications de bureau"
       ],
       "Enable drive search": [
-        "Activer la recherche dans Drive"
+        "Activer la recherche dans le drive"
       ],
       "Encrypted": [
         "Chiffré"
@@ -660,7 +660,7 @@
         "Gérer le lien"
       ],
       "Manage share": [
-        "Gérer le partage"
+        "Gérer les partages"
       ],
       "Manage users/addresses": [
         "Gérer les utilisateurs/adresses"
@@ -951,7 +951,7 @@
         "Rechercher dans les pays"
       ],
       "Search drive": [
-        "Rechercher dans Drive"
+        "Rechercher le drive"
       ],
       "See how": [
         "Voir comment faire"
@@ -1176,7 +1176,7 @@
         "Importer depuis l'ordinateur"
       ],
       "Upload photos": [
-        "Charger des photos"
+        "Ajouter des photos"
       ],
       "Upload picture": [
         "Importer une image"
@@ -3353,7 +3353,7 @@
     },
     "Docs Info": {
       "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
-        "La collaboration est désormais plus simple. Désormais, tout le monde peut suggérer des modifications sans modifier le document."
+        "La collaboration est désormais plus simple. Dès maintenant, tout le monde peut suggérer des modifications sans modifier le document."
       ],
       "Suggestion mode is here": [
         "Le mode de suggestion est disponible."
@@ -3684,7 +3684,7 @@
         "Le coffre-fort mis à jour n'a pas pu être ouvert."
       ],
       "Could not remove from favorites": [
-        "Le retrait des favoris n'a pas abouti."
+        "L'élément n'a pas pu être retiré des favoris."
       ],
       "Data integrity check failed": [
         "La vérification de l'intégrité des données n'a pas abouti."
@@ -3701,13 +3701,13 @@
         "Le nom de l'appareil ne correspond pas."
       ],
       "Diagnostics failed": [
-        "Les Diagnostics n'ont pas abouti"
+        "Le diagnostic n'a pas abouti."
       ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
       "Downloads of desktop apps are currently unavailable": [
-        "Le téléchargement des applications de bureau sont actuellement indisponibles"
+        "Le téléchargement des applications de bureau est actuellement indisponible."
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "La modification de l'adresse de facturation n'est pas disponible pour le moment. Veuillez réessayer ultérieurement."
@@ -3734,7 +3734,7 @@
         "Erreur lors de la lecture du fichier"
       ],
       "Expected structure attached": [
-        "La structure attendue a été jointe"
+        "La structure attendue est jointe."
       ],
       "External accounts are not supported yet": [
         "Les comptes externes ne sont pas encore pris en charge."
@@ -4216,7 +4216,7 @@
         "Nous n'avons pas pu charger le contenu du dossier."
       ],
       "We're sorry, but free upload is not available right now.": [
-        "Nous sommes désolés, mais l'importation gratuite n'est pas disponible pour le moment."
+        "Nous sommes désolés, l'importation gratuite n'est pas disponible pour le moment."
       ],
       "Wrong billing address": [
         "L'adresse de facturation n'est pas correct."
@@ -4514,6 +4514,51 @@
       ],
       "File download failed due to empty response": [
         "Impossible de télécharger le fichier : la réponse est vide"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Il n'est pas possible d'ajouter une photo à un album sans un nom valide."
+      ],
+      "Cannot verify who uploaded this file": [
+        "L'auteur de cet import n'a pas pu être vérifié."
+      ],
+      "Could not find an available name": [
+        "Aucun nom disponible n'a pu être trouvé."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Une partie de ce fichier n'a pas pu être lue : ${ message }"
+      ],
+      "Expiration date cannot be in the past": [
+        "La date d'expiration ne peut pas se situer dans le passé."
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "La clé de contenu n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nous n'avons pas pu déchiffrer les métadonnées de révision."
+      ],
+      "Failed to get inviter keys": [
+        "Les clés de l'inviteur n'ont pas pu être récupérées."
+      ],
+      "Failed to verify invitation": [
+        "L'invitation n'a pas pu être vérifiée."
+      ],
+      "Name must not be empty": [
+        "Le nom ne doit pas être vide."
+      ],
+      "Only admins can convert external invitations": [
+        "Seuls les administrateurs peuvent convertir des invitations externes."
+      ],
+      "Renaming root item is not allowed": [
+        "Renommer l'élément racine n'est pas autorisé."
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "La vérification de signature n'a pas abouti : ${ errorMessage }"
+      ],
+      "You can create public links for your own files only": [
+        "Vous pouvez uniquement créer des liens publics pour vos propres fichiers."
+      ],
+      "You can only leave items that are shared with you": [
+        "Vous pouvez quitter des éléments uniquement s'ils sont partagés avec vous."
       ]
     },
     "error": {
@@ -4652,7 +4697,7 @@
     },
     "Error message": {
       "Access denied": [
-        "L'accès est refusé."
+        "L'accès a été refusé."
       ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
@@ -5038,7 +5083,7 @@
         "Contacts"
       ],
       "Create new album": [
-        "Créer un album"
+        "Créer un nouvel album"
       ],
       "Create new shared album": [
         "Créer un nouvel album partagé"
@@ -5053,7 +5098,7 @@
         "Le mot de passe se termine par"
       ],
       "Rename album": [
-        "Modifier le nom de l'album"
+        "Renommer l'album"
       ],
       "Security Center": [
         "Centre de sécurité"
@@ -5074,7 +5119,7 @@
         "Tous les albums"
       ],
       "Recent": [
-        "Récents"
+        "Récent"
       ],
       "Share ${ photoCount } photo via": [
         "Partager ${ photoCount } photo par",
@@ -5771,7 +5816,7 @@
         "Voulez-vous vraiment définitivement supprimer les éléments sélectionnés du dossier Corbeille ?"
       ],
       "Are you sure you want to proceed?": [
-        "Êtes-vous sûr de vouloir continuer ?"
+        "Voulez-vous vraiment continuer ?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Au moins ${ BETTER_PASSWORD_LENGTH } caractères"
@@ -6041,7 +6086,7 @@
         "Déposez les fichiers ici pour les importer."
       ],
       "Drop files here": [
-        "Déposez des fichiers ici."
+        "Déposez des fichiers ici"
       ],
       "Drop files here to upload or click on the upload button": [
         "Déposez des fichiers pour les importer ou cliquez sur le bouton d'importation."
@@ -6068,7 +6113,7 @@
         "Les e-mails déplacés vers le dossier Corbeille ou Indésirables/spam de plus de 30 jours seront supprimés automatiquement."
       ],
       "Empty folder": [
-        "Le dossier est vide."
+        "Dossier vide"
       ],
       "Enabling auto-deletion…": [
         "Activation de la suppression automatique…"
@@ -6129,7 +6174,7 @@
         "Échec"
       ],
       "Feb": [
-        "Fév."
+        "Fév"
       ],
       "File \"${ name }\" was deleted during download": [
         "Le fichier « ${ name } » a été supprimé pendant le téléchargement."
@@ -6222,7 +6267,7 @@
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Si vous avez un de ces éléments, passez à la configuration du compte ${ BRAND_NAME } pour commencer le déverrouillage."
+        "Si vous avez un de ces éléments, poursuivez vers les paramètres du compte ${ BRAND_NAME } pour initier le processus de déblocage."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
@@ -6277,7 +6322,7 @@
         "Initialisation en cours"
       ],
       "Integrity issues found": [
-        "Problèmes d'intégrité détectés"
+        "Des problèmes d'intégrité ont été détectés."
       ],
       "Internet connection lost": [
         "La connexion internet est perdue."
@@ -6681,7 +6726,7 @@
         "En file d'attente"
       ],
       "Ready to add some photos?": [
-        "Prêt à ajouter des photos ?"
+        "Commencer à ajouter des photos ?"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
@@ -6717,7 +6762,7 @@
         "Fichiers restaurés ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Restauration des photos en cours. Gardez l'onglet ouvert."
+        "Restauration des photos en cours. Veuillez garder l'onglet ouvert."
       ],
       "Running diagnostics...": [
         "Exécution des diagnostics..."
@@ -6846,7 +6891,7 @@
         "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
-        "Certaines photos de cet album ne sont pas enregistrées dans votre fil d’actualité. La suppression de cet album supprimera définitivement ces photos."
+        "Certaines photos de cet album ne sont pas enregistrées dans votre fil chronologique. La suppression de cet album supprimera définitivement ces photos."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Des sites internet et services de streaming bloquent certains contenus par région. Un VPN vous permet de contourner ces restrictions et d'accéder librement à internet."
@@ -7106,7 +7151,7 @@
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
       "Try searching by file name, date, or type.": [
-        "Essayez une recherche par nom, date ou type de fichier."
+        "Essayez la recherche par nom de fichier, date ou type."
       ],
       "Unexpected download error": [
         "Erreur de téléchargement inattendue"
@@ -7352,7 +7397,7 @@
         "Vous ne pouvez pas annuler cette action."
       ],
       "You don't have permission to copy files to this folder.": [
-        "Vous n’avez pas l’autorisation de copier des fichiers dans ce dossier."
+        "Vous n'avez pas l'autorisation de copier des fichiers dans ce dossier."
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
@@ -7490,7 +7535,7 @@
         "Votre abonnement est limité à 10 versions pour une durée maximum de 7 jours."
       ],
       "Your previous password": [
-        "Votre précédent mot de passe"
+        "Votre mot de passe précédent"
       ],
       "Your previous recovery phrase": [
         "Votre phrase de récupération précédente"
@@ -7581,7 +7626,7 @@
         "Invitation confirmée"
       ],
       "No populator states found.": [
-        "Aucun processus d'indexation trouvé"
+        "Aucun générateur d'indexation n'a été trouvé."
       ],
       "${ albums } album": [
         "${ albums } album",
@@ -7716,7 +7761,7 @@
         "**Vous obtenez ${ referrerRewardAmount }** en crédits pour chaque ami abonné."
       ],
       "One encrypted suite. Full business protection.": [
-        "Une unique suite chiffrée. Une protection complète de votre business."
+        "Une unique suite chiffrée. Une protection complète pour votre business."
       ],
       "Do you remember your password? ${ verifyButton }": [
         "Vous souvenez-vous de votre mot de passe ? ${ verifyButton }"
@@ -8086,6 +8131,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Vous pourrez ouvrir ce dossier une fois l'import terminé. Vous recevrez un e-mail une fois l'opération finalisée."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Vous ne pourrez pas partager ${ fileName } une fois votre accès passé en lecture. Le propriétaire ou un éditeur avec le droit de partager pourra restaurer votre accès. Vous ne pouvez pas annuler ce changement par vous-même."
       ]
     },
     "info": {
@@ -8863,7 +8911,7 @@
         "Ignorer les commentaires"
       ],
       "Environment compatible": [
-        "Environnement compatible"
+        "Compatible avec l'environnement"
       ],
       "Index kinds": [
         "Types d'index"
@@ -8929,7 +8977,7 @@
         "Partagé par ${ sharedBy }"
       ],
       "Shared by Public link": [
-        "Partagé par un lien public"
+        "Partagé via un lien public"
       ],
       "Shared on ${ sharedOn }": [
         "Partagé sur ${ sharedOn }"
@@ -10777,7 +10825,7 @@
         "Le nom de l'album a été modifié."
       ],
       "All items deleted permanently from trash": [
-        "Tous les éléments ont été définitivement supprimés du dossier Corbeille."
+        "Tous les éléments ont été définitivement supprimés de la corbeille."
       ],
       "An invitation has been sent": [
         "Une invitation a été envoyée."
@@ -10813,7 +10861,7 @@
         "La recherche chiffrée a été activée."
       ],
       "Error while listing devices": [
-        "Une erreur se produit pendant le listage des appareils."
+        "La liste des appareils n'a pas pu être obtenue."
       ],
       "External invitation removed from the share": [
         "L'invitation externe a été retirée du partage."
@@ -10846,7 +10894,7 @@
         "Échec de la suppression de l'appareil"
       ],
       "Failed to remove the file": [
-        "Le fichier n'a pu être retiré."
+        "Le fichier n'a pas pu être retiré."
       ],
       "Failed to rename device": [
         "Échec du renommage de l'appareil"
@@ -10978,7 +11026,7 @@
         "« ${ ellipsedName } » a été supprimé"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
-        "« ${ ellipsedName } » a été définitivement supprimé de la Corbeille"
+        "« ${ ellipsedName } » a été définitivement supprimé de la corbeille."
       ],
       "\"${ ellipsedName }\" failed to be created": [
         "« ${ ellipsedName } » n'a pas pu être créé."
@@ -10999,7 +11047,7 @@
         "« ${ ellipsedName } » a été déplacé"
       ],
       "\"${ ellipsedName }\" restored from trash": [
-        "« ${ ellipsedName } » a été restauré depuis la Corbeille."
+        "« ${ ellipsedName } » a été restauré depuis la corbeille."
       ],
       "\"${ ellipsedName }\" successfully moved": [
         "« ${ ellipsedName } » a été déplacé"
@@ -11189,7 +11237,7 @@
         "Créer un document"
       ],
       "Get started": [
-        "Lancez-vous !"
+        "Commencez"
       ],
       "Install and continue": [
         "Installer et continuer"
@@ -11198,7 +11246,7 @@
         "Installer plus tard"
       ],
       "Invite members": [
-        "Invitez des membres"
+        "Inviter des membres"
       ],
       "Maybe Later": [
         "Peut-être plus tard"
@@ -11216,16 +11264,16 @@
         "Passer pour le moment"
       ],
       "Try the app": [
-        "Essayez l'application"
+        "Essayer l'application"
       ],
       "Upload file": [
         "Téléverser un fichier"
       ],
       "Upload folder": [
-        "Importez un dossier"
+        "Importer un dossier"
       ],
       "Upload more files": [
-        "Importer plus de fichiers"
+        "Importer d'autres fichiers"
       ]
     },
     "Onboarding Info": {
@@ -11248,7 +11296,7 @@
         "Collaborer sur des documents"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "Préférez-vous ${ DRIVE_APP_NAME } en mode claire ou sombre ? Choisissez la couleur qui vous inspire le plus."
+        "Préférez-vous ${ DRIVE_APP_NAME } avec un thème clair ou sombre ? Choisissez la couleur qui vous inspire le plus."
       ],
       "Drag and drop your files here": [
         "Glisser et déposez vos fichiers ici"
@@ -11278,7 +11326,7 @@
         "Libérez de l'espace sur le disque dur de votre ordinateur"
       ],
       "Get the desktop app": [
-        "Téléchargez l'application de bureau"
+        "Obtenir l'application de bureau"
       ],
       "Get the mobile app": [
         "Télécharger l'application mobile"
@@ -11296,7 +11344,7 @@
         "Invitation acceptée"
       ],
       "Invitation received": [
-        "L'invitation a été reçue."
+        "Invitation reçue"
       ],
       "Invite team members": [
         "Inviter des membres de l'équipe"
@@ -11338,7 +11386,7 @@
         "Travaillez plus rapidement et plus efficacement"
       ],
       "Work together": [
-        "Travaillez en équipe"
+        "Travaillez ensemble"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
         "Vous avez récupéré de données gratuites et sécurisé vos fichiers avec le chiffrement de bout en bout — en un temps record !"
@@ -14243,7 +14291,7 @@
         "Obtenir un accès complet à ${ CALENDAR_APP_NAME }"
       ],
       "Get mobile and desktop apps": [
-        "Obtenir l'application mobile et l'application de bureau"
+        "Obtenir les applications mobile et de bureau"
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
@@ -14331,7 +14379,7 @@
         "Emplacement"
       ],
       "Logger": [
-        "Registre"
+        "Journaliseur"
       ],
       "Logs": [
         "Journaux"
@@ -14857,7 +14905,7 @@
         "Votre adresse au format plus court est maintenant prête."
       ],
       "Your welcome actions": [
-        "Vos actions de bienvenue"
+        "Vos tâches de bienvenue"
       ],
       "You’re off to a great start!": [
         "Vous avez pris un excellent départ !"
@@ -14881,7 +14929,7 @@
         "Global"
       ],
       "Search": [
-        "Rechercher"
+        "Recherche"
       ],
       "Disconnected from Gmail": [
         "Déconnecté de Gmail"
@@ -15433,7 +15481,7 @@
     },
     "Notitication": {
       "Album renamed successfully": [
-        "Le nom de l'album a été modifié."
+        "L'album a bien été renommé."
       ]
     },
     "fido2: Error": {
@@ -15442,6 +15490,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La demande de clé de sécurité a été annulée ou a expiré. Veuillez réessayer."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Votre appareil n'a pas pu traiter la demande de clé de sécurité. Veuillez réessayer ou utiliser un autre moyen de connexion."
       ]
     },
     "BOSS": {

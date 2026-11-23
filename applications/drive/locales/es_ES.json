@@ -1539,6 +1539,9 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Las organizaciones con el complemento Managed Service Provider pueden crear y gestionar organizaciones subsidiarias."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencias del asistente de escritura"
       ]
     },
     "Alert": {
@@ -4566,6 +4569,21 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Has alcanzado el número máximo de direcciones conectadas"
+      ],
+      "Failed to get invitee keys": [
+        "No se han podido obtener las claves de los invitados"
+      ],
+      "Failed to load the membership": [
+        "No se ha podido cargar la pertenencia"
+      ],
+      "Failed to load the membership data": [
+        "No se han podido cargar los datos de pertenencia"
+      ],
+      "Failed to verify membership": [
+        "No se ha podido verificar la pertenencia"
+      ],
+      "Some invitations could not be loaded": [
+        "No se han podido cargar algunas invitaciones"
       ]
     },
     "error": {
@@ -8056,6 +8074,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Ya no se ofrecen lugares como asistentes de redacción"
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Podrás abrir esta carpeta cuando finalice la importación. Te enviaremos un correo electrónico cuando termine."
       ]
     },
     "info": {
@@ -15551,6 +15572,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de la clave de seguridad se ha cancelado o ha superado el tiempo de espera. Inténtalo de nuevo."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Tu dispositivo no ha podido completar la solicitud de la clave de seguridad. Inténtalo de nuevo o usa otro método de inicio de sesión."
       ]
     },
     "Title header for keys table": {

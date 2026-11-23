@@ -1433,6 +1433,12 @@
       ],
       "Skip to main content": [
         "Перайсці да асноўнага змесціва"
+      ],
+      "Go to today": [
+        "Перайсці да сённяшняга дня"
+      ],
+      "Previous contact": [
+        "Папярэдні кантакт"
       ]
     },
     "Action: Docs": {
@@ -4675,6 +4681,18 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
+      ],
+      "Failed to get invitee keys": [
+        "Не ўдалося атрымаць ключы запрошаных асоб"
+      ],
+      "Failed to load the membership data": [
+        "Не ўдалося загрузіць даныя ўдзелу"
+      ],
+      "Failed to verify membership": [
+        "Не ўдалося спраўдзіць удзел"
+      ],
+      "Some invitations could not be loaded": [
+        "Некаторыя запрашэнні немагчыма загрузіць"
       ]
     },
     "error": {
@@ -16502,6 +16520,78 @@
     "Payment Method": {
       "Bank Account": [
         "Банкаўскі рахунак"
+      ]
+    },
+    "lumo_2026: feature": {
+      "Everything in Basic, and:": [
+        "Усе функцыі тарыфнага плана Basic, а таксама:"
+      ],
+      "Everything in Free, and:": [
+        "Усе функцыі бясплатнага тарыфнага плана, а таксама:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе функцыі тарыфнага плана Plus, а таксама:"
+      ],
+      "Extended image generation": [
+        "Пашыраная колькасць генерацый"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "Limited image generation": [
+        "Абмежаваная колькасць генерацый відарысаў"
+      ],
+      "Maximum image generation": [
+        "Максімальная колькасць генерацый відарысаў"
+      ],
+      "Maximum Skills and Projects": [
+        "Максімальная колькасць навыкаў і праектаў"
+      ],
+      "More usage": [
+        "Іншыя варыянты выкарыстання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For everyday chats": [
+        "Для штодзённых чатаў"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } за карыстальніка"
+      ],
+      "${ storage } shared": [
+        "${ storage } абагулена"
+      ],
+      "10 years": [
+        "10 гадоў"
+      ],
+      "Calendars": [
+        "Календары"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Прэміяльныя Mail, Calendar, Drive і Pass"
+      ],
+      "Previous versions": [
+        "Папярэднія версіі"
+      ],
+      "Storage": [
+        "Сховішча"
+      ],
+      "Subscribers only": [
+        "Толькі падпісчыкі"
+      ],
+      "Unlimited": [
+        "Неабмежавана"
+      ],
+      "Up to ${ limit }": [
+        "Да ${ limit }"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "VPN devices at once": [
+        "Прылады VPN адначасова"
       ]
     }
   }

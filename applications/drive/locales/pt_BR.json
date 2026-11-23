@@ -1557,6 +1557,10 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
         "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licença de assistente de escrita do ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenças de assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -8153,6 +8157,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Você pode abrir esta pasta quando a importação for concluída. Enviaremos um e-mail para você quando estiver pronto."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "As licenças do assistente de escrita não são mais vendidas."
       ]
     },
     "info": {
@@ -16133,6 +16140,9 @@
       ],
       "For everyday chats": [
         "Para todos os bate-papos"
+      ],
+      "For getting more done": [
+        "Para ter mais produtividade"
       ]
     },
     "Visionary upsell": {
@@ -16192,6 +16202,9 @@
       ],
       "VPN devices at once": [
         "Dispositivos VPN ao mesmo tempo"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Nome em homenagem aos apoiadores do financiamento coletivo que tornaram o ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possível em 2014. Todos os serviços premium da ${ BRAND_NAME }, em um único plano."
       ]
     }
   }
