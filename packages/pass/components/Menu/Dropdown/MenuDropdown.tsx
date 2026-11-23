@@ -23,6 +23,9 @@ import { AccountPath } from '../../../constants';
 import { useUserInitiatedLock } from '../../../hooks/auth/useUserInitiatedLock';
 import { type MenuItem, useMenuItems } from '../../../hooks/useMenuItems';
 import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { offlineResume } from '../../../store/actions/creators/client';
+import { lockCreateRequest } from '../../../store/actions/requests';
+import { selectRequestInFlight } from '../../../store/request/selectors';
 import { selectLockEnabled } from '../../../store/selectors/settings';
 import { withTap } from '../../../utils/fp/pipe';
 import { usePassCore } from '../../Core/PassCoreProvider';
@@ -58,6 +61,11 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
     const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
     const navigateToAdminPanel = useNavigateToAccount(AccountPath.USERS);
     const canLock = useSelector(selectLockEnabled);
+    const lockCreateInFlight = useSelector(selectRequestInFlight(lockCreateRequest()));
+    const offlineResumeInFlight = useSelector(selectRequestInFlight(offlineResume.requestID()));
+
+    /** `interactive` is route-based on web (false on settings/onboarding) - only gate lock on it in the extension */
+    const lockDisabled = (EXTENSION_BUILD && !interactive) || lockCreateInFlight || offlineResumeInFlight;
     const org = useOrganization();
 
     const appMenu = usePopperAnchor<HTMLButtonElement>();
@@ -144,7 +152,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                     {canLock && (
                         <DropdownMenuButton
                             onClick={withAppMenuClose(handleLock)}
-                            disabled={!interactive}
+                            disabled={lockDisabled}
                             label={
                                 EXTENSION_BUILD ? c('Action').t`Lock extension` : c('Action').t`Lock ${PASS_APP_NAME}`
                             }
