@@ -39,6 +39,7 @@ const EmailMethodForm = ({ onSubmit, defaultEmail = '' }: Props) => {
                 disableChange={loading}
                 autoFocus
                 type="email"
+                autoComplete="email"
                 value={email}
                 onValue={(value: string) => {
                     setEmail(value);

@@ -106,7 +106,7 @@ const ForgotUsernameForm = ({
                                     autoFocus
                                     defaultCountry={defaultCountry}
                                     disableChange={loading}
-                                    autoComplete="phone"
+                                    autoComplete="tel"
                                     value={phone}
                                     onChange={setPhone}
                                 />
