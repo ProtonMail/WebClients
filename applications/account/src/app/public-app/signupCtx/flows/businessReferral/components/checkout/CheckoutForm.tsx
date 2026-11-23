@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -27,6 +28,7 @@ import noop from '@proton/utils/noop';
 import { usePaypalFirstSort } from '../../../../../signup/usePaypalFirstSort';
 import Terms from '../../../../components/Terms';
 import { useSignup } from '../../../../context/SignupContext';
+import { getBusinessReferralCoupon } from '../../helpers/coupon';
 import AccountDetailsForm from './AccountDetailsForm';
 import { BusinessBenefits } from './BusinessBenefits';
 import { PricingCard } from './PricingCard/PricingCard';
@@ -40,6 +42,7 @@ interface Props {
 const CheckoutForm = ({ onPaymentTokenProcessed }: Props) => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
+    const location = useLocation();
     const { viewportWidth } = useActiveBreakpoint();
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -211,7 +214,13 @@ const CheckoutForm = ({ onPaymentTokenProcessed }: Props) => {
                                 cycle={payments.options.cycle}
                                 plansMap={payments.plansMap}
                                 selectedPlanIDs={planIDs}
-                                onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
+                                // The coupon is only remembered for plan IDs that were already checked, so a new seat count would lose it.
+                                onChangePlanIDs={(planIDs) =>
+                                    payments.selectPlan({
+                                        planIDs,
+                                        coupon: getBusinessReferralCoupon(new URLSearchParams(location.search)),
+                                    })
+                                }
                                 audience={Audience.B2B}
                                 addonFlags={{
                                     [ADDON_PREFIXES.SCRIBE]: false,
