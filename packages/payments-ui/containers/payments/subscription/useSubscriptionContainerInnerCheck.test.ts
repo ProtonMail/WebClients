@@ -689,6 +689,35 @@ describe('useSubscriptionCheck', () => {
         });
     });
 
+    describe('offer', () => {
+        const checkAndGetPayload = async (model: Partial<Model>) => {
+            const deps = buildDeps({
+                paymentsApi: {
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
+                } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildModel(model));
+
+            return (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
+        };
+
+        it('sends the offer and no codes, because offers and codes do not stack', async () => {
+            const payload = await checkAndGetPayload({ offer: 'SPRING', coupon: 'COUPON', gift: 'GIFT' });
+
+            expect(payload.Offer).toBe('SPRING');
+            expect(payload.Codes).toEqual([]);
+        });
+
+        it('keeps the coupon-only payload without an offer', async () => {
+            const payload = await checkAndGetPayload({ coupon: 'COUPON' });
+
+            expect(payload).not.toHaveProperty('Offer');
+            expect(payload.Codes).toEqual(['COUPON']);
+        });
+    });
+
     describe('ProrationMode', () => {
         it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])(
             'sets ProrationMode.Exact when selectedMethod is %s',

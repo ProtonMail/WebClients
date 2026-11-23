@@ -47,6 +47,7 @@ type CommonSubscribeData = {
     Currency: Currency;
     Cycle: Cycle;
     Codes?: string[];
+    Offer?: string;
     StartTrial?: boolean;
     VatId?: string;
     /**
@@ -67,6 +68,7 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
         'Currency',
         'Cycle',
         'Codes',
+        'Offer',
         'PaymentToken',
         'Payment',
         'Amount',

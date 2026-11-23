@@ -87,6 +87,7 @@ const useMultiCheckCache = () => {
             `.cur-${data.Currency}` +
             `.cyc-${data.Cycle}` +
             `.codes-${data.Codes?.join(',') ?? ''}` +
+            `.offer-${data.Offer ?? ''}` +
             `.cc-${data.BillingAddress?.CountryCode}` +
             `.s-${data.BillingAddress?.State}` +
             `.z-${data.BillingAddress?.ZipCode}` +
@@ -254,9 +255,13 @@ export const usePaymentsApi = (
         };
 
         const checkSubscription = async (
-            data: CheckSubscriptionData,
+            requestData: CheckSubscriptionData,
             requestOptions: CheckSubscriptionRequestOptions = {}
         ): Promise<SubscriptionEstimation> => {
+            // An offer is never sent with coupons. CouponCode is cleared too, otherwise the v4/v5
+            // patch below would copy it back into Codes.
+            const data = requestData.Offer ? { ...requestData, Codes: [], CouponCode: undefined } : requestData;
+
             captureWrongPlanIDs(data.Plans, { source: 'check' });
 
             if (isLifetimePlanSelected(data.Plans)) {

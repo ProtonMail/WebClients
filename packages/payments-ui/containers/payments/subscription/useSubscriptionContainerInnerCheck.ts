@@ -25,6 +25,7 @@ import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans
 import {
     getAutoCoupon,
     getCodes,
+    getOfferOrCodes,
     getPlanIDs,
     isModifyingPaidSubscriptionSelection,
     isSubscriptionCheckForbiddenWithReason,
@@ -330,7 +331,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                         ? { coupon: subscriptionCouponCode }
                         : { gift: copyNewModel.gift, coupon };
 
-                const Codes = getCodes(codesArgument);
+                const offerOrCodes = getOfferOrCodes({ offer: copyNewModel.offer, codes: getCodes(codesArgument) });
 
                 // selectedMethod variable prevails over paymentFacadeSelectedMethodType because it's passed in the
                 // onMethod change handler. So this variable changes before paymentFacadeSelectedMethodType is
@@ -340,7 +341,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                 const currentlySelectedMethod = selectedMethod ?? paymentFacadeSelectedMethodType;
 
                 const checkPayload: CheckSubscriptionData = {
-                    Codes,
+                    ...offerOrCodes,
                     Plans: copyNewModel.planIDs,
                     Currency: copyNewModel.currency,
                     Cycle: copyNewModel.cycle,

@@ -51,6 +51,7 @@ export interface OperationsSubscriptionData {
     Plans: PlanIDs;
     Cycle: Cycle;
     Codes?: string[];
+    Offer?: string;
     product: ProductParam;
     taxBillingAddress: BillingAddress;
     StartTrial?: boolean;

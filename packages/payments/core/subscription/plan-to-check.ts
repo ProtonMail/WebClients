@@ -1,13 +1,14 @@
 import type { CheckSubscriptionData } from '../api/api';
 import { type BillingAddress, getBillingAddressPayload } from '../billing-address/billing-address';
 import type { Currency, Cycle, PlanIDs } from '../interface';
-import { getAutoCoupon } from './helpers';
+import { getAutoCoupon, getOfferOrCodes } from './helpers';
 
 export interface PlanToCheck {
     planIDs: PlanIDs;
     currency: Currency;
     cycle: Cycle;
     coupon?: string;
+    offer?: string;
     groupId?: string;
     trial?: boolean;
 }
@@ -17,6 +18,7 @@ export const getSubscriptionDataFromPlanToCheck = ({
     cycle,
     currency,
     coupon,
+    offer,
     trial = false,
     ValidateBillingAddress,
     VatId,
@@ -29,7 +31,7 @@ export const getSubscriptionDataFromPlanToCheck = ({
     Plans: planIDs,
     Currency: currency,
     Cycle: cycle,
-    Codes: coupon ? [coupon] : [],
+    ...getOfferOrCodes({ offer, codes: coupon ? [coupon] : [] }),
     BillingAddress: getBillingAddressPayload({
         billingAddress: BillingAddress,
         vatId: VatId,
@@ -40,6 +42,10 @@ export const getSubscriptionDataFromPlanToCheck = ({
 });
 
 export function getPlanToCheck(params: PlanToCheck): PlanToCheck {
+    if (params.offer?.trim()) {
+        return params;
+    }
+
     const coupon = getAutoCoupon({
         coupon: params.coupon,
         planIDs: params.planIDs,

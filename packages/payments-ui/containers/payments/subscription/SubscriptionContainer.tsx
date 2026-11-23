@@ -81,6 +81,7 @@ import {
     getCodes,
     getIsB2BAudienceFromSubscription,
     getMaximumCycleForApp,
+    getOfferOrCodes,
     getPlanIDs,
     hasDeprecatedVPN,
     isSubscriptionCheckForbidden,
@@ -116,6 +117,7 @@ import {
 } from '@proton/shared/lib/payments/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import { Audience, SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -145,6 +147,7 @@ export interface Model {
     cycle: Cycle;
     coupon?: string;
     couponCarriedFromSubscriptionID?: string;
+    offer?: string;
     gift?: string;
     initialCheckComplete: boolean;
     taxBillingAddress: BillingAddress;
@@ -247,6 +250,7 @@ export interface SubscriptionContainerProps {
     plan?: PLANS;
     planIDs?: PlanIDs;
     coupon?: string | null;
+    offer?: string;
     disablePlanSelection?: boolean;
     disableThanksStep?: boolean;
     defaultAudience?: Audience;
@@ -332,6 +336,7 @@ const SubscriptionContainerInner = ({
     maximumCycle: maybeMaximumCycle,
     currency: maybeCurrency,
     coupon: maybeCoupon,
+    offer: maybeOffer,
     plan,
     planIDs: maybePlanIDs,
     onSubscribed,
@@ -454,6 +459,9 @@ const SubscriptionContainerInner = ({
         );
     }, [subscriptionToEdit, organization, plans, maybePlanIDs, multiSubscriptionContext]);
 
+    const isOffersEnabled = useFlag('PaymentsOffers');
+    const offer = (isOffersEnabled && maybeOffer?.trim()) || undefined;
+
     const [model, setModel] = useState<Model>(() => {
         const step = getInitialCheckoutStep(planIDs, maybeStep);
 
@@ -476,6 +484,7 @@ const SubscriptionContainerInner = ({
             cycle,
             currency,
             ...(maybeCoupon ? { coupon: maybeCoupon } : getCouponCarriedFrom(subscriptionToEdit)),
+            offer,
             planIDs,
             initialCheckComplete: false,
             taxBillingAddress: initialBillingAddress,
@@ -569,6 +578,7 @@ const SubscriptionContainerInner = ({
     };
 
     const isTrial = checkResult?.SubscriptionMode === SubscriptionMode.Trial;
+    const { Codes, Offer } = getOfferOrCodes({ offer: model.offer, codes: getCodesForSubscription() });
 
     const handleSubscribe = async (
         operations: Operations,
@@ -608,10 +618,9 @@ const SubscriptionContainerInner = ({
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
                     paymentFacade.methods.savedMethods ?? []
                 );
-
-                const codes = getCodesForSubscription();
                 await operations.subscribe({
-                    Codes: codes,
+                    Codes,
+                    Offer,
                     Plans: model.planIDs,
                     Cycle: model.cycle,
                     product: app,
@@ -698,7 +707,8 @@ const SubscriptionContainerInner = ({
                     Plans: model.planIDs,
                     Cycle: model.cycle,
                     product: app,
-                    Codes: getCodesForSubscription(),
+                    Codes,
+                    Offer,
                     taxBillingAddress: model.taxBillingAddress,
                     StartTrial: isTrial,
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
@@ -819,6 +829,8 @@ const SubscriptionContainerInner = ({
             })
         );
 
+        const hasOffer = !!checkPayload.Offer;
+
         const additionalPayloads = additionalCycles.map((Cycle) => {
             const autoCoupon = getAutoCoupon({
                 planIDs: newModel.planIDs,
@@ -849,7 +861,13 @@ const SubscriptionContainerInner = ({
         // full pricing.
         //
         // And of course if don't have any coupon codes, we don't need to run additional checks.
-        if (currentCycleHasCustomBilling || additionalCyclesHaveCustomBilling || hasForbiddenCheck || noCoupons) {
+        if (
+            currentCycleHasCustomBilling ||
+            additionalCyclesHaveCustomBilling ||
+            hasForbiddenCheck ||
+            hasOffer ||
+            noCoupons
+        ) {
             return;
         }
 
@@ -1002,7 +1020,8 @@ const SubscriptionContainerInner = ({
             try {
                 paymentFacade.paymentContext.setSubscriptionData({
                     Plans: model.planIDs,
-                    Codes: getCodesForSubscription(),
+                    Codes,
+                    Offer,
                     Cycle: model.cycle,
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,

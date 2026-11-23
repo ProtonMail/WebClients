@@ -823,4 +823,93 @@ describe('SubscriptionContainer subscription guards', () => {
             expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
         });
     });
+
+    describe('offer', () => {
+        const getCheckPayloads = (): CheckSubscriptionData[] =>
+            apiMock.mock.calls
+                .map(([request]) => request)
+                .filter((request) => request.url === 'payments/v5/subscription/check')
+                .map((request) => request.data);
+
+        const enableOffersFlag = () => {
+            vi.spyOn(useFlagModule, 'useFlag').mockImplementation((flag) => flag === 'PaymentsOffers');
+        };
+
+        beforeEach(() => {
+            props.step = SUBSCRIPTION_STEPS.CHECKOUT;
+            props.planIDs = { [PLANS.MAIL]: 1 };
+            props.coupon = 'COUPON';
+            props.offer = 'SPRING';
+        });
+
+        it('checks the offer without any code when PaymentsOffers is on', async () => {
+            mockCheckResult();
+            enableOffersFlag();
+            renderWithProviders(<ContextSubscriptionContainer {...props} />);
+            await waitUntilChecked();
+            await waitFor(() => expect(getCheckPayloads().length).toBeGreaterThan(0));
+
+            const payloads = getCheckPayloads();
+            payloads.forEach((payload) => {
+                expect(payload.Offer).toBe('SPRING');
+                expect(payload.Codes).toEqual([]);
+            });
+        });
+
+        it('subscribes with the offer and without any code', async () => {
+            mockCheckResult({ AmountDue: 0 });
+            enableOffersFlag();
+            const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
+            await waitUntilChecked();
+
+            fireEvent.submit(container.querySelector('form')!);
+
+            await waitFor(() => {
+                expect(apiMock).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        url: 'payments/v5/subscription',
+                        data: expect.objectContaining({ Offer: 'SPRING', Codes: [] }),
+                    })
+                );
+            });
+        });
+
+        it('never checks the other cycles with an offer', async () => {
+            mockCheckResult();
+            enableOffersFlag();
+            renderWithProviders(<ContextSubscriptionContainer {...props} />);
+            await waitUntilChecked();
+
+            const cycles = new Set(getCheckPayloads().map((payload) => payload.Cycle));
+            expect(cycles.size).toBe(1);
+        });
+
+        it('ignores the offer and keeps the coupon when PaymentsOffers is off', async () => {
+            mockCheckResult();
+            vi.spyOn(useFlagModule, 'useFlag').mockReturnValue(false);
+            renderWithProviders(<ContextSubscriptionContainer {...props} />);
+            await waitUntilChecked();
+            await waitFor(() => expect(getCheckPayloads().length).toBeGreaterThan(0));
+
+            const payloads = getCheckPayloads();
+            payloads.forEach((payload) => {
+                expect(payload).not.toHaveProperty('Offer');
+                expect(payload.Codes).toEqual(['COUPON']);
+            });
+        });
+
+        it('treats a blank offer as no offer when PaymentsOffers is on', async () => {
+            props.offer = '   ';
+            mockCheckResult();
+            enableOffersFlag();
+            renderWithProviders(<ContextSubscriptionContainer {...props} />);
+            await waitUntilChecked();
+            await waitFor(() => expect(getCheckPayloads().length).toBeGreaterThan(0));
+
+            getCheckPayloads().forEach((payload) => {
+                expect(payload).not.toHaveProperty('Offer');
+                expect(payload.Codes).toEqual(['COUPON']);
+            });
+        });
+    });
 });
