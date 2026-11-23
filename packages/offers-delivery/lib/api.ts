@@ -38,11 +38,12 @@ export const offersRoutes: OffersRoutes = {
     }),
 };
 
-/** `Product`, `TrackingReference` and `FallbackUrl` are sent but not consumed yet. */
+/** `Product` and `FallbackUrl` are sent but deliberately unused: the fallback is the lite-app checkout, which web doesn't support. */
 export type RawGoToUpsell = {
     Plan: MaybeNull<PLANS>;
     Coupon: MaybeNull<string>;
     Cycle: MaybeNull<CYCLE>;
+    TrackingReference?: MaybeNull<string>;
     DisableCycleSelector: boolean;
     DisablePlanSelector: boolean;
 };
@@ -101,8 +102,8 @@ type RawEvaluateResponse = {
 
 const isBlank = (value: unknown): boolean => typeof value !== 'string' || value.trim() === '';
 
-/** Far above any key the gateway issues. */
-const MAX_KEY_LENGTH = 128;
+/** The in-app service's own cap on `message_key` (`CreateMessageBody`), so a key it accepts is never dropped here. */
+const MAX_KEY_LENGTH = 191;
 
 /** `campaignKey`/`messageKey` are echoed back to `inapp/campaign/event`, so
  * shape is checked here. No charset restriction, since they're never rendered
@@ -111,19 +112,27 @@ const MAX_KEY_LENGTH = 128;
 const isValidKey = (value: unknown): value is string =>
     typeof value === 'string' && !isBlank(value) && value.trim().length <= MAX_KEY_LENGTH;
 
-/** Only the first image is used, restricted to the CDN allowlist. `CtaText` is
- * checked too since a missing one would otherwise crash a consumer's render
- * instead of dropping the campaign. */
-const intoMessage = (body: RawVariantBody): MaybeNull<CampaignMessage> => {
-    if (isBlank(body.Title) || isBlank(body.Body)) {
+/** Only the first image is used, restricted to the CDN allowlist. Title and body
+ * are optional server-side (only `CtaText` is required), so a blank one degrades
+ * to `''`; the campaign is dropped only when nothing renderable is left: a
+ * banner needs text, since it shows no image, and a modal may be the image
+ * alone. `CtaText` is normalised too, since a missing one would otherwise crash
+ * a consumer's render. */
+const intoMessage = (body: RawVariantBody, variant: CampaignVariant): MaybeNull<CampaignMessage> => {
+    const title = isBlank(body.Title) ? '' : body.Title;
+    const text = isBlank(body.Body) ? '' : body.Body;
+    const imageUrl = sanitizeImageUrl(body.Images?.[0]?.Url);
+    const hasText = title !== '' || text !== '';
+
+    if (!hasText && (variant === CampaignVariant.BANNER || imageUrl === null)) {
         return null;
     }
 
     return {
-        title: body.Title,
-        body: body.Body,
+        title,
+        body: text,
         ctaText: isBlank(body.CtaText) ? '' : body.CtaText,
-        imageUrl: sanitizeImageUrl(body.Images?.[0]?.Url),
+        imageUrl,
     };
 };
 
@@ -155,7 +164,7 @@ const intoCampaign = (raw: RawCampaign): MaybeNull<Campaign> => {
         return null;
     }
 
-    const message = intoMessage(body);
+    const message = intoMessage(body, raw.MessageBody.Variant);
     if (!message) {
         return null;
     }

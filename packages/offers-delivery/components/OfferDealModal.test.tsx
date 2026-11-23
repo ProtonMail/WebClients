@@ -28,6 +28,11 @@ const makeOffer = (overrides: Partial<ActiveOffer> = {}): ActiveOffer => {
     };
 };
 
+const getDialogLabel = () => {
+    const labelId = document.querySelector('dialog')?.getAttribute('aria-labelledby');
+    return labelId ? document.getElementById(labelId)?.textContent : undefined;
+};
+
 describe('OfferDealModal', () => {
     it('renders the campaign image, title, body and CTA text', () => {
         render(<OfferDealModal offer={makeOffer()} />);
@@ -36,6 +41,35 @@ describe('OfferDealModal', () => {
         expect(screen.queryByText('Please buy this offer')).not.toBeNull();
         expect(screen.getByTestId('offer-deal-modal:cta').textContent).toBe('Upgrade now');
         expect(document.querySelector('img')?.getAttribute('src')).toBe('https://cdn.proton.me/offer.png');
+        expect(getDialogLabel()).toBe('Testing offer');
+    });
+
+    it('renders the title, body and CTA without an image when the campaign has none', () => {
+        const offer = makeOffer();
+        offer.campaign.message.imageUrl = null;
+        render(<OfferDealModal offer={offer} />);
+
+        expect(screen.queryByRole('heading', { name: 'Testing offer', hidden: true })).not.toBeNull();
+        expect(screen.queryByText('Please buy this offer')).not.toBeNull();
+        expect(screen.getByTestId('offer-deal-modal:cta').textContent).toBe('Upgrade now');
+        expect(document.querySelector('img')).toBeNull();
+    });
+
+    it('renders an image-only campaign as the whole image, the CTA and dismiss, named for screen readers, with no list or notice', () => {
+        const offer = makeOffer();
+        offer.campaign.message.title = '';
+        offer.campaign.message.body = '';
+        render(<OfferDealModal offer={offer} />);
+
+        expect(screen.getByTestId('offer-deal-modal:image').getAttribute('src')).toBe(
+            'https://cdn.proton.me/offer.png'
+        );
+        expect(screen.queryByRole('heading', { name: 'Special offer', hidden: true })?.className).toBe('sr-only');
+        expect(getDialogLabel()).toBe('Special offer');
+        expect(screen.queryAllByRole('listitem', { hidden: true })).toHaveLength(0);
+        expect(screen.queryByText(/Your subscription will renew/)).toBeNull();
+        expect(screen.getByTestId('offer-deal-modal:cta').textContent).toBe('Upgrade now');
+        expect(screen.getByTestId('offer-deal-modal:dismiss').textContent).toBe("Don't show this again");
     });
 
     it('renders each line of the body as a ticked feature, skipping blank lines', () => {
@@ -83,7 +117,7 @@ describe('OfferDealModal', () => {
         expect(offer.onDismiss).not.toHaveBeenCalled();
     });
 
-    it('dismisses the campaign and closes on "Don\'t show this offer again"', () => {
+    it('dismisses the campaign and closes on "Don\'t show this again"', () => {
         const offer = makeOffer();
         const onClose = vi.fn();
         render(<OfferDealModal offer={offer} onClose={onClose} />);

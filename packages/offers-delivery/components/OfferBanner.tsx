@@ -11,31 +11,27 @@ export const OfferBanner = ({ offer }: OfferSurfaceProps) => {
      * reader output. Session recovery and unpaid invoices earn that; a promotion
      * does not. */
     return (
-        <TopBanner onClose={onDismiss} announce={false} data-testid="offer-banner">
-            <div ref={seenRef}>
-                {message.imageUrl && (
-                    <img
-                        className="max-w-full max-h-custom pointer-events-none user-select-none object-contain"
-                        style={{ '--max-h-custom': '4rem' }}
-                        src={message.imageUrl}
-                        referrerPolicy="no-referrer"
-                        alt=""
-                    />
-                )}
-
-                <h2 className="text-lg text-bold m-0">{message.title}</h2>
-                <div className="lh120 color-weak" data-testid="offer-banner:body">
-                    {message.body}
-                </div>
+        <TopBanner className="bg-primary" onClose={onDismiss} announce={false} data-testid="offer-banner">
+            <div ref={seenRef} className="flex flex-wrap items-center justify-center gap-3">
+                <p className="m-0">
+                    {message.title && (
+                        <span className="text-bold" data-testid="offer-banner:title">
+                            {message.title}
+                        </span>
+                    )}{' '}
+                    {message.body && (
+                        <span className="text-normal" data-testid="offer-banner:body">
+                            {message.body}
+                        </span>
+                    )}
+                </p>
 
                 {cta && (
                     <Button
-                        className="text-ellipsis mt-1"
-                        color="norm"
-                        shape="solid"
+                        className="shrink-0"
+                        shape="outline"
                         size="small"
                         pill
-                        fullWidth
                         onClick={onAction}
                         data-testid="offer-banner:cta"
                     >

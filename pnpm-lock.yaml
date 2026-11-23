@@ -8714,6 +8714,9 @@ importers:
 
   packages/offers-delivery:
     dependencies:
+      '@proton/app-context':
+        specifier: workspace:^
+        version: link:../app-context
       '@proton/atoms':
         specifier: workspace:^
         version: link:../atoms

@@ -8,7 +8,12 @@
         "./components/OfferDealModal": "./components/OfferDealModal.tsx",
         "./components/OfferModal": "./components/OfferModal.tsx",
         "./components/OfferNavbarButton": "./components/OfferNavbarButton.tsx",
+        "./components/OfferStartupModal": "./components/OfferStartupModal.tsx",
+        "./components/OfferTopBanner": "./components/OfferTopBanner.tsx",
         "./components/useActiveOffer": "./components/useActiveOffer.ts",
+        "./components/useOfferNavbarEntry": "./components/useOfferNavbarEntry.tsx",
+        "./components/useOfferStartupModal": "./components/useOfferStartupModal.tsx",
+        "./components/useOfferUpgrade": "./components/useOfferUpgrade.ts",
         "./interface": "./interface.ts",
         "./store/listener": "./store/listener.ts",
         "./store/slice": "./store/slice.ts"
@@ -22,6 +27,7 @@
         "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
+        "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/icons": "workspace:^",

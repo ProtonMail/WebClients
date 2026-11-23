@@ -51,6 +51,7 @@ export type CtaUpgradeParams = {
     coupon: string | null;
     disableCycleSelector: boolean;
     disablePlanSelector: boolean;
+    trackingReference: string | undefined;
 };
 
 export type Campaign = {

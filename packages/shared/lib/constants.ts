@@ -881,6 +881,7 @@ export enum SHARED_UPSELL_PATHS {
     PUBLIC_SHARING_PERMISSIONS_MENU = 'public-sharing-permissions-menu',
     EASY_SWITCH_BYOE = 'easy-switch-byoe',
     EASY_SWITCH_BYOE_MORE_STORAGE = 'easy-switch-byoe-more-storage',
+    OFFERS_DELIVERY = 'offers-delivery',
 }
 
 export enum DASHBOARD_UPSELL_PATHS {

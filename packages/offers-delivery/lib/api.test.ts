@@ -125,6 +125,62 @@ describe('getCampaign', () => {
         expect((await getCampaign(api, routes))?.message.ctaText).toBe('');
     });
 
+    const modalCampaign = (content: { Title: string; Body: string; Images: { Name: string; Url: string }[] }) => {
+        const raw = bannerCampaign();
+        return {
+            ...raw,
+            MessageBody: {
+                Banner: null,
+                Modal: { ...content, CtaText: 'Get the deal' },
+                Minimizable: null,
+                Variant: CampaignVariant.MODAL,
+            },
+        };
+    };
+
+    it('keeps an image-only modal, degrading the blank title and body to empty', async () => {
+        const raw = modalCampaign({
+            Title: '',
+            Body: '',
+            Images: [{ Name: 'main', Url: 'https://cdn.proton.me/a.png' }],
+        });
+
+        expect((await getCampaign(apiReturning({ Campaign: raw, Code: 1000 }), routes))?.message).toEqual({
+            title: '',
+            body: '',
+            ctaText: 'Get the deal',
+            imageUrl: 'https://cdn.proton.me/a.png',
+        });
+    });
+
+    it('drops a modal with no title, no body and no usable image', async () => {
+        const raw = modalCampaign({
+            Title: ' ',
+            Body: '',
+            Images: [{ Name: 'main', Url: 'http://cdn.proton.me/a.png' }],
+        });
+
+        expect(await getCampaign(apiReturning({ Campaign: raw, Code: 1000 }), routes)).toBeNull();
+    });
+
+    it('keeps a banner with a title but no body', async () => {
+        const raw = bannerCampaign();
+        raw.MessageBody.Banner.Body = '';
+
+        expect((await getCampaign(apiReturning({ Campaign: raw, Code: 1000 }), routes))?.message).toMatchObject({
+            title: 'Title',
+            body: '',
+        });
+    });
+
+    it('drops a banner with neither title nor body, even with an image', async () => {
+        const raw = bannerCampaign();
+        raw.MessageBody.Banner.Title = '';
+        raw.MessageBody.Banner.Body = '';
+
+        expect(await getCampaign(apiReturning({ Campaign: raw, Code: 1000 }), routes)).toBeNull();
+    });
+
     describe('campaign key validation', () => {
         const withKeys = (campaignKey: unknown, messageKey = 'pass_upsell') => {
             const raw = bannerCampaign();
@@ -146,11 +202,11 @@ describe('getCampaign', () => {
         });
 
         it('drops a campaign whose CampaignKey exceeds the length cap', async () => {
-            expect(await getCampaign(withKeys('k'.repeat(129)), routes)).toBeNull();
+            expect(await getCampaign(withKeys('k'.repeat(192)), routes)).toBeNull();
         });
 
-        it('keeps a CampaignKey exactly at the length cap', async () => {
-            const key = 'k'.repeat(128);
+        it('keeps a CampaignKey exactly at the in-app service cap', async () => {
+            const key = 'k'.repeat(191);
 
             expect((await getCampaign(withKeys(key), routes))?.campaignKey).toBe(key);
         });

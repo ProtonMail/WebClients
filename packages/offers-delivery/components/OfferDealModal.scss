@@ -20,8 +20,8 @@ im.$media-expressions: $media-expressions;
 		border-radius: 50%;
 		inline-size: 2rem;
 		block-size: 2rem;
-		margin-block-start: 0.75rem;
-		margin-inline-end: 0.75rem;
+		inset-block-start: 1rem;
+		inset-inline-end: 1rem;
 		z-index: 1;
 	}
 
@@ -38,6 +38,74 @@ im.$media-expressions: $media-expressions;
 	@include im.media('<=small') {
 		min-block-size: 15rem;
 	}
+}
+
+.offer-deal-header--no-image {
+	min-block-size: 12rem;
+	background: var(--primary);
+
+	@include im.media('<=small') {
+		min-block-size: 10rem;
+	}
+}
+
+// An image-only campaign fills the whole dialog: the artwork carries its own copy,
+// so the CTA and dismiss sit over its foot on a scrim. The portrait ratio matches
+// the web modal image specs; the width shrinks with the viewport so the dialog
+// never needs to scroll.
+.offer-deal-modal--image-only.offer-deal-modal {
+	max-inline-size: min(31rem, calc(85vh * 960 / 1544));
+	background: black;
+}
+
+.offer-deal-poster {
+	position: relative;
+	aspect-ratio: 960 / 1544;
+	max-block-size: 85vh;
+}
+
+.offer-deal-poster-image {
+	position: absolute;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+}
+
+.offer-deal-poster-actions {
+	position: absolute;
+	inset-inline: 0;
+	inset-block-end: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	padding-block: 4rem 1.25rem;
+	padding-inline: 1.5rem;
+	background: linear-gradient(to bottom, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0.6) 100%);
+}
+
+.offer-deal-poster-dismiss.offer-deal-poster-dismiss {
+	&,
+	&:hover,
+	&:focus {
+		color: white;
+	}
+}
+
+// An image-only campaign: the artwork carries its own copy, so show all of it rather
+// than cropping it behind a title overlay, capped so the CTA stays in view.
+.offer-deal-full-image {
+	display: block;
+	inline-size: 100%;
+	block-size: auto;
+	max-block-size: 65vh;
+	object-fit: contain;
+}
+
+// Nothing above the CTA, so leave room for the absolutely positioned close button.
+.offer-deal-content--no-header {
+	padding-block-start: 3.5rem;
 }
 
 .offer-deal-image {
