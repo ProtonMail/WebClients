@@ -1,0 +1,33 @@
+{
+    "name": "docs-homepage-standalone",
+    "version": "0.0.0",
+    "private": true,
+    "description": "Local-only standalone host that opens the Docs homepage module (applications/docs/src/app/homepage) with empty mocks. Developers only: never built, deployed or shipped.",
+    "type": "module",
+    "scripts": {
+        "check:types": "tsc --checkers 1",
+        "lint": "oxlint --quiet",
+        "start": "vite"
+    },
+    "dependencies": {
+        "proton-docs": "workspace:^",
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "react-router-dom": "catalog:",
+        "react-router-dom-v5-compat": "^6.30.6"
+    },
+    "devDependencies": {
+        "@proton/oxlint-config": "workspace:^",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
+        "@types/react-router-dom": "catalog:",
+        "@typescript/native": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "tailwindcss": "^3.4.19",
+        "typescript": "catalog:",
+        "vite": "catalog:"
+    }
+}
