@@ -10,6 +10,7 @@ function entries(length: number): HistoryEntry[] {
     timestamp: 0,
     authorAddress: 'author@example.com',
     content: new Uint8Array(),
+    acknowledged: true,
   }))
 }
 

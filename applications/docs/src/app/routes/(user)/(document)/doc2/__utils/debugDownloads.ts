@@ -1,6 +1,6 @@
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { CryptoProxy } from '@protontech/crypto'
-import type { DebugArtifacts, HistoryEntry } from '@proton-docs/realtime-sdk'
+import type { BufferEntry, DebugArtifacts, HistoryEntry } from '@proton-docs/realtime-sdk'
 
 import type { EditorInvoker } from './EditorInvoker'
 
@@ -8,13 +8,21 @@ import type { EditorInvoker } from './EditorInvoker'
 // never log them.
 
 /**
- * One file per History Log entry, oldest first, named as /doc names them. Adapted from
+ * One file per History Log entry, oldest first, named as /doc names them, then one per buffer entry. A name marks an
+ * edit the server hasn't acknowledged: `-unacknowledged` for one sent, `-buffered` for one not sent yet. The marks come
+ * after the timestamp the Update Replay Tool orders by. Adapted from
  * `packages/docs-core/lib/AuthenticatedDocController/AuthenticatedDocController.ts`, its `getAllUpdatesAsZip`.
  */
-export async function getAllUpdatesZip(updates: Pick<HistoryEntry, 'timestamp' | 'content'>[]): Promise<Blob> {
+export async function getAllUpdatesZip(
+  history: Pick<HistoryEntry, 'timestamp' | 'content' | 'acknowledged'>[],
+  buffer: Pick<BufferEntry, 'since' | 'content'>[],
+): Promise<Blob> {
   const zip = await createZip()
-  for (const { timestamp, content } of updates) {
-    zip.file(`${timestamp}-${await getSha1Hex(content)}.bin`, content)
+  for (const { timestamp, content, acknowledged } of history) {
+    zip.file(`${timestamp}-${await getSha1Hex(content)}${acknowledged ? '' : '-unacknowledged'}.bin`, content)
+  }
+  for (const { since, content } of buffer) {
+    zip.file(`${since}-${await getSha1Hex(content)}-buffered.bin`, content)
   }
   return zip.generateAsync({ type: 'blob' })
 }

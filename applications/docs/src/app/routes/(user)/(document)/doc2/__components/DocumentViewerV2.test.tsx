@@ -1428,6 +1428,7 @@ describe('DocumentViewerV2', () => {
           timestamp,
           authorAddress: 'author@example.com',
           content: new Uint8Array(update),
+          acknowledged: true,
         })
       })
       for (let index = 0; index < count; index++) {

@@ -6,7 +6,14 @@ import * as Y from 'yjs'
 import { NativeVersionHistory, createVersionHistory } from './NativeVersionHistory'
 
 function entry(timestamp: number, content: Uint8Array<ArrayBuffer> = new Uint8Array()): HistoryEntry {
-  return { uuid: `update-${timestamp}`, origin: 'baseState', timestamp, authorAddress: 'test@example.com', content }
+  return {
+    uuid: `update-${timestamp}`,
+    origin: 'baseState',
+    timestamp,
+    authorAddress: 'test@example.com',
+    content,
+    acknowledged: true,
+  }
 }
 
 /** The History Log of a document typed one character at a time, `text` in all, each update a minute apart */
