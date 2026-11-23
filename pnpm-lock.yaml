@@ -4578,6 +4578,9 @@ importers:
       '@proton/nav':
         specifier: workspace:^
         version: link:../../packages/nav
+      '@proton/offers-delivery':
+        specifier: workspace:^
+        version: link:../../packages/offers-delivery
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack

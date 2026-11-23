@@ -10,6 +10,7 @@ import { samlReducer } from '@proton/account/samlSSO';
 import { staticExperimentsReducer } from '@proton/account/staticExperiments/slice';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { calendarsReducer } from '@proton/calendar/calendars';
+import { offersDeliveryReducer } from '@proton/offers-delivery/store/slice';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 export const rootReducer = combineReducers({
@@ -19,6 +20,7 @@ export const rootReducer = combineReducers({
     ...calendarsReducer,
     ...samlReducer,
     ...allowAddressDeletionReducer,
+    ...offersDeliveryReducer,
     ...authDevicesReducer,
     ...memberAuthDevicesReducer,
     ...oauthTokenReducer,
