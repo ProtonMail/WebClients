@@ -2,6 +2,9 @@ import { ipcMain } from 'electron';
 
 import type { MaybePromise, Result } from '@proton/pass/types/utils';
 
+import logger from '../utils/logger';
+import { isMainWindowEntry } from '../utils/navigation';
+
 export type IPCChannel<P extends any[], R extends any> = { args: P; result: R };
 export type IPCChannelResult<T> = Result<{ result: T }>;
 
@@ -18,7 +21,12 @@ export const setupIpcHandler = <
     channel: T,
     handler: (...args: P) => MaybePromise<R>
 ) =>
-    ipcMain.handle(channel, async (_event, ...args: P): Promise<IPCChannelResult<R>> => {
+    ipcMain.handle(channel, async (event, ...args: P): Promise<IPCChannelResult<R>> => {
+        if (!isMainWindowEntry(event.senderFrame?.url ?? '')) {
+            logger.warn(`[ipc] blocked ${channel} from a page outside the app`);
+            return { ok: false, error: 'Unauthorized sender' };
+        }
+
         try {
             const result = await handler(...args);
             return { ok: true, result };

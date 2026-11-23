@@ -1,25 +1,29 @@
-/**
- * MAIN_WINDOW_WEBPACK_ENTRY is `file://` + a runtime `path.resolve(...)`, so on Windows it
- * carries backslashes and only two slashes after the scheme (`file://C:\...`), while
- * webContents.getURL() returns a normalized, percent-encoded URL (`file:///C:/...%20...`).
- * Canonicalize both sides — decode, unify slashes, drop the scheme + leading slashes, and
- * lowercase (Windows paths are case-insensitive) — before comparing.
- */
-const canonical = (url: string) => {
+/** A malformed URL (e.g. a lone `%`) can't be decoded: compare it as written. */
+const decode = (url: string) => {
     try {
-        return decodeURIComponent(url)
-            .replace(/\\/g, '/')
-            .replace(/^file:\/+/, '')
-            .toLowerCase();
+        return decodeURIComponent(url);
     } catch {
-        /** A malformed URL (e.g. a lone `%`) can't be the main-window entry — a non-match
-         * makes `isMainWindowEntry` return false (the safe "not logged in" default). */
-        return '';
+        return url;
     }
 };
 
+/**
+ * MAIN_WINDOW_WEBPACK_ENTRY is `file://` + a raw runtime `path.resolve(...)`, so on Windows it
+ * carries backslashes and only two slashes after the scheme (`file://C:\...`), while
+ * webContents.getURL() returns a normalized, percent-encoded URL (`file:///C:/...%20...`).
+ * Only the latter is decoded: decoding the raw path would turn a folder like `a%41b` into `aAb`.
+ * Then unify slashes, drop the scheme + leading slashes, and lowercase (Windows paths are
+ * case-insensitive) before comparing.
+ */
+const normalize = (path: string) =>
+    path
+        .replace(/\\/g, '/')
+        .replace(/^file:\/+/, '')
+        .toLowerCase();
+
 /** Return true for internal url and false for any navigation outside the app. */
-export const isMainWindowEntry = (url: string) => canonical(url).startsWith(canonical(MAIN_WINDOW_WEBPACK_ENTRY));
+export const isMainWindowEntry = (url: string) =>
+    normalize(decode(url)).startsWith(normalize(MAIN_WINDOW_WEBPACK_ENTRY));
 
 /** App route to come back to after leaving the app for Account: the account of
  * the `/u/<localID>` route, or of the `localID` param of the add account routes. */
