@@ -47,7 +47,7 @@ import {
     SignupType,
     type SubscriptionData,
 } from '../../../signup/interfaces';
-import { getPlanIDsFromParams, getSignupSearchParams } from '../../../signup/searchParams';
+import { getPlanIDsFromParams } from '../../../signup/searchParams';
 import { getSubscriptionMetricsData } from '../../../signup/signupActions';
 import { getFreeSubscriptionData } from '../../../single-signup-v2/helper';
 import { Steps } from '../../../single-signup-v2/interface';
@@ -63,6 +63,7 @@ import onboardingVPNWelcome2 from './illustration.svg';
 import type { Measure, VPNSignupMode, VPNSignupModel } from './interface';
 import type { TelemetryMeasurementData } from './measure';
 import { getVpnAvailablePlans, getVpnCoupon, getVpnPlanToCheck } from './pricing';
+import { getVpnSignupParameters } from './signupParameters';
 import { filterCycleDataByPlan, getCycleData } from './state';
 import { useVpnSignupThreePlans } from './useVpnSignupThreePlans';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
@@ -77,7 +78,7 @@ interface Props {
     onSessionExpired?: (listener: () => void) => () => void;
 }
 
-type SignupParameters = ReturnType<typeof getSignupSearchParams>;
+type SignupParameters = ReturnType<typeof getVpnSignupParameters>;
 
 const flowId = 'single-page-signup-vpn';
 const telemetryContext = 'v1-signup';
@@ -551,25 +552,7 @@ const VpnSignup = ({ onLogin, onPreSubmit, onStartAuth, onSessionExpired, toApp,
         flow: 'signup-vpn',
     });
 
-    const [signupParameters] = useState(() => {
-        const result = getSignupSearchParams(location.pathname, getSearchParams());
-
-        const validValues = [
-            'free',
-            PLANS.BUNDLE,
-            PLANS.VPN2024,
-            PLANS.VPN_PRO,
-            PLANS.VPN_PASS_BUNDLE,
-            PLANS.VPN_BUSINESS,
-            PLANS.VPN_PASS_BUNDLE_BUSINESS,
-            PLANS.BUNDLE_PRO_2024,
-        ];
-        if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
-            delete result.preSelectedPlan;
-        }
-
-        return result;
-    });
+    const [signupParameters] = useState(() => getVpnSignupParameters(location.pathname, getSearchParams()));
     const [initialSelection] = useState(() => getInitialSelection(signupParameters));
     // Decided once from the link, so the cards and the telemetry tag don't change during the signup
     const threePlans = useVpnSignupThreePlans({

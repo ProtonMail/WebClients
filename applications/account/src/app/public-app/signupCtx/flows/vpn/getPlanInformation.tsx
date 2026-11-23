@@ -7,6 +7,7 @@ import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import VpnPassLogo from '@proton/components/components/logo/VpnPassLogo';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
+import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import {
@@ -40,7 +41,7 @@ import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getFreeTitle } from '@proton/payments/core/subscription/freePlans';
-import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
@@ -87,9 +88,9 @@ export const getPlanInformation = ({
         };
     }
 
-    if (selectedPlan.Name === PLANS.VPN2024) {
-        const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
+    const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
 
+    if (selectedPlan.Name === PLANS.VPN2024) {
         return {
             logo: <VpnLogo variant="glyph-only" size={iconSize} />,
             title: selectedPlan.Title,
@@ -134,6 +135,46 @@ export const getPlanInformation = ({
                 getVPNAppFeature(),
                 getPassAppFeature(),
                 getWalletAppFeature(),
+            ],
+        };
+    }
+
+    if (selectedPlan.Name === PLANS.DUO) {
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={selectedPlan.Title} />
+                </div>
+            ),
+            title: selectedPlan.Title,
+            features: [
+                getUsersFeature(DUO_MAX_USERS),
+                countryPlaceholder || getCountries(plusServers),
+                getMailAppFeature(),
+                getCalendarAppFeature({ duo: true }),
+                getDriveAppFeature({ duo: true }),
+                getVPNAppFeature({ duo: true }),
+                getPassAppFeature(),
+            ],
+        };
+    }
+
+    if (selectedPlan.Name === PLANS.FAMILY) {
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={selectedPlan.Title} />
+                </div>
+            ),
+            title: selectedPlan.Title,
+            features: [
+                getUsersFeature(FAMILY_MAX_USERS),
+                countryPlaceholder || getCountries(plusServers),
+                getMailAppFeature(),
+                getCalendarAppFeature({ family: true }),
+                getDriveAppFeature({ family: true }),
+                getVPNAppFeature({ family: true }),
+                getPassAppFeature(),
             ],
         };
     }
