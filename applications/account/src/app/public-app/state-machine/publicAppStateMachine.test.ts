@@ -163,8 +163,8 @@ describe('publicAppStateMachine', () => {
 
         actor.send({ type: 'switch.opened' });
         expect(selectSessionsFailed(actor.getSnapshot())).toBe(false);
-        expect(actor.getSnapshot().matches({ page: { ready: 'loadingSessions' } })).toBe(true);
-        await waitFor(actor, (state) => state.matches({ page: { ready: 'idle' } }));
+        expect(actor.getSnapshot().matches({ page: { ready: { sessions: 'loadingSessions' } } })).toBe(true);
+        await waitFor(actor, (state) => state.matches({ page: { ready: { sessions: 'idle' } } }));
         expect(actor.getSnapshot().context.activeSessions).toEqual(sessions);
     });
 
@@ -190,7 +190,7 @@ describe('publicAppStateMachine', () => {
                 fetchSessions: async () => ({ sessions: [] }) as unknown as GetActiveSessionsResult,
             });
             actor.send({ type: 'switch.opened' });
-            await waitFor(actor, (state) => state.matches({ page: { ready: 'idle' } }));
+            await waitFor(actor, (state) => state.matches({ page: { ready: { sessions: 'idle' } } }));
             expect(replaceLocation).toHaveBeenCalledWith(expect.stringContaining(SSO_PATHS.LOGIN));
         });
 
@@ -385,7 +385,7 @@ describe('publicAppStateMachine', () => {
             actor.send({ type: 'login.resulted', result: consent });
             actor.send({ type: 'consent.confirmed', consent });
             expect(actor.getSnapshot().matches({ page: 'loggingIn' })).toBe(true);
-            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
             expect(login).toHaveBeenCalledWith(
                 expect.objectContaining({ session: { ...session, interruptions: ['fork-redirect-consent'] } })
             );
@@ -498,45 +498,62 @@ describe('publicAppStateMachine', () => {
             const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, forkState, login });
             actor.send({ type: 'login.requested', session });
-            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
             expect(login).toHaveBeenCalledWith(
                 expect.objectContaining({ context: expect.objectContaining({ forkState }) })
             );
         });
 
-        it('keeps the screen loading while a finished login leaves the page, and takes no other login', async () => {
-            const login = vi.fn(async () => doneResult);
-            const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
+        it('keeps the screen loading while a finished login leaves the page', async () => {
+            const { actor } = start({
+                pathname: SSO_PATHS.SWITCH,
+                initialSessionsLength: 0,
+                login: async () => doneResult,
+            });
             actor.send({ type: 'login.requested', session });
-            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
-            actor.send({ type: 'login.requested', session });
-            expect(login).toHaveBeenCalledTimes(1);
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
+            expect(selectLoggingIn(actor.getSnapshot())).toBe(true);
         });
 
-        it('takes a login again once the browser restores the page it left from the back/forward cache', async () => {
+        it('takes another login while the page still waits to leave, and follows that one instead', async () => {
+            // An app picked on the app switcher, then an account added before the app loads
+            const otherDoneResult = { ...doneResult, payload: { url: new URL('https://drive.proton.me/u/1') } };
+            const login = vi.fn().mockResolvedValueOnce(doneResult).mockResolvedValueOnce(otherDoneResult);
+            const { actor, followLoginResult } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
+            actor.send({ type: 'login.requested', session });
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
+
+            actor.send({ type: 'login.requested', session, requestId: 'b' });
+            await waitFor(actor, () => followLoginResult.mock.calls.length === 2);
+            expect(login).toHaveBeenCalledTimes(2);
+            expect(followLoginResult).toHaveBeenLastCalledWith(otherDoneResult);
+            expect(actor.getSnapshot().matches({ page: { ready: { redirect: 'pending' } } })).toBe(true);
+            expect(actor.getSnapshot().context.loginRequestId).toBe('b');
+        });
+
+        it('stops loading once the browser restores the page it left from the back/forward cache', async () => {
             const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
             actor.send({ type: 'login.requested', session });
-            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
 
             window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: false }));
-            expect(actor.getSnapshot().matches({ page: { loggingIn: 'leaving' } })).toBe(true);
+            expect(actor.getSnapshot().matches({ page: { ready: { redirect: 'pending' } } })).toBe(true);
 
             window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
-            expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
+            expect(actor.getSnapshot().matches({ page: { ready: { redirect: 'none' } } })).toBe(true);
             expect(selectLoggingIn(actor.getSnapshot())).toBe(false);
-            expect(actor.getSnapshot().can({ type: 'login.requested', session })).toBe(true);
         });
 
-        it('takes a login again when a history move cancels the redirect of a finished login', async () => {
+        it('stops loading when a history move cancels the redirect of a finished login', async () => {
             const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
             actor.send({ type: 'login.requested', session });
-            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
 
             window.dispatchEvent(new PopStateEvent('popstate'));
-            expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
-            expect(actor.getSnapshot().can({ type: 'login.requested', session })).toBe(true);
+            expect(actor.getSnapshot().matches({ page: { ready: { redirect: 'none' } } })).toBe(true);
+            expect(selectLoggingIn(actor.getSnapshot())).toBe(false);
         });
 
         it('applies the result and hands it to whoever asked', async () => {
@@ -593,10 +610,64 @@ describe('publicAppStateMachine', () => {
             expect(actor.getSnapshot().matches({ page: 'resumingSession' })).toBe(true);
             expect(selectSigningInLocalID(actor.getSnapshot())).toBe(2);
             expect(selectLoggingIn(actor.getSnapshot())).toBe(false);
-            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
             expect(selectSigningInLocalID(actor.getSnapshot())).toBe(2);
             expect(selectLoggingIn(actor.getSnapshot())).toBe(true);
             expect(login).toHaveBeenCalledWith(expect.objectContaining({ session: { data: resumed, flow: 'switch' } }));
+        });
+
+        it('shows no picked session loading while the redirect of another login is pending', async () => {
+            // An account picked in the switcher, then another one added, which leaves for an app
+            const login = vi.fn().mockResolvedValueOnce(inputResult).mockResolvedValueOnce(doneResult);
+            const { actor } = start({
+                pathname: SSO_PATHS.SWITCH,
+                initialSessionsLength: 0,
+                resumeSession: async () => resumed,
+                login,
+            });
+            actor.send({ type: 'session.picked', localID: 2 });
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'none' } } }));
+
+            actor.send({ type: 'login.requested', session });
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
+            expect(selectSigningInLocalID(actor.getSnapshot())).toBeUndefined();
+        });
+
+        it('signs in with a session picked while the page still waits to leave after another login', async () => {
+            // An app picked on the app switcher, then another account picked before the app loads
+            const login = vi.fn(async () => doneResult);
+            const { actor, followLoginResult } = start({
+                pathname: SSO_PATHS.SWITCH,
+                initialSessionsLength: 0,
+                resumeSession: async () => resumed,
+                login,
+            });
+            actor.send({ type: 'login.requested', session });
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
+
+            actor.send({ type: 'session.picked', localID: 2 });
+            expect(actor.getSnapshot().matches({ page: 'resumingSession' })).toBe(true);
+            await waitFor(actor, () => followLoginResult.mock.calls.length === 2);
+            expect(login).toHaveBeenLastCalledWith(
+                expect.objectContaining({ session: { data: resumed, flow: 'switch' } })
+            );
+        });
+
+        it('reads its sessions while the page still waits to leave after another login', async () => {
+            const sessions = [{ remote: { LocalID: 1 } }] as unknown as ActiveSession[];
+            const { actor } = start({
+                pathname: SSO_PATHS.SWITCH,
+                initialSessionsLength: 0,
+                login: async () => doneResult,
+                fetchSessions: async () => ({ sessions }) as GetActiveSessionsResult,
+            });
+            actor.send({ type: 'login.requested', session });
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
+
+            actor.send({ type: 'switch.opened' });
+            await waitFor(actor, (state) => state.context.activeSessions !== undefined);
+            expect(actor.getSnapshot().context.activeSessions).toEqual(sessions);
+            expect(actor.getSnapshot().matches({ page: { ready: { redirect: 'pending' } } })).toBe(true);
         });
 
         it('removes an expired session and tells the user', async () => {
@@ -655,6 +726,17 @@ describe('publicAppStateMachine', () => {
                 login: () => Promise.reject(error),
             });
             await expect(runLogin(actor, session)).rejects.toBe(error);
+        });
+
+        it('signs in while the page still waits to leave after another login', async () => {
+            const { actor } = start({
+                pathname: SSO_PATHS.LOGIN,
+                initialSessionsLength: 0,
+                login: async () => doneResult,
+            });
+            await runLogin(actor, session);
+            expect(actor.getSnapshot().matches({ page: { ready: { redirect: 'pending' } } })).toBe(true);
+            await expect(runLogin(actor, session)).resolves.toEqual({ state: 'complete' });
         });
 
         it('rejects while another login runs', async () => {

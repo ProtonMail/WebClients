@@ -272,10 +272,13 @@ const loginDoneActions = [
 
 const requestLogin = {
     target: '#publicApp.page.loggingIn',
-    actions: {
-        type: 'assignLoginRequest' as const,
-        params: ({ event }: { event: { requestId?: string } }) => ({ requestId: event.requestId }),
-    },
+    actions: [
+        {
+            type: 'assignLoginRequest' as const,
+            params: ({ event }: { event: { requestId?: string } }) => ({ requestId: event.requestId }),
+        },
+        'clearPickedSession' as const,
+    ],
 };
 
 /** Finishes a partner's OAuth sign-in on its page. */
@@ -401,6 +404,8 @@ export const publicAppStateMachine = setup({
             activeSessions: getRemainingSessions(context.activeSessions, localIDs),
         })),
         assignPickedSession: assign((_, { localID }: { localID: number }) => ({ pickedLocalID: localID })),
+        /** A login that wasn't picked in the account switcher: the switcher shows no account loading for it. */
+        clearPickedSession: assign({ pickedLocalID: undefined }),
         dropConsent: assign({ locationState: null }),
         /** Stops the fork, as a reload of the page would. */
         dropFork: assign({ forkState: null }),
@@ -590,16 +595,6 @@ export const publicAppStateMachine = setup({
                             },
                             { guard: 'isShownConsent', actions: ['dropFork', 'dropConsent', goToSwitcher] },
                         ],
-                        'switch.opened': [
-                            { guard: 'hasNoSessionList', target: '.loadingSessions' },
-                            {
-                                guard: {
-                                    type: 'hasNoSessions',
-                                    params: ({ context }) => ({ sessions: context.activeSessions }),
-                                },
-                                actions: leaveSwitcher,
-                            },
-                        ],
                         'session.picked': {
                             target: 'resumingSession',
                             actions: [
@@ -608,30 +603,65 @@ export const publicAppStateMachine = setup({
                             ],
                         },
                     },
-                    initial: 'idle',
+                    type: 'parallel',
                     states: {
-                        idle: {},
-                        /** The account switcher reads the sessions it shows. */
-                        loadingSessions: {
-                            invoke: {
-                                src: 'fetchSessions',
-                                input: ({ context }) => context.initialSearchParams,
-                                onDone: [
+                        sessions: {
+                            // Here rather than on `ready`, so the pending redirect stays
+                            on: {
+                                'switch.opened': [
+                                    { guard: 'hasNoSessionList', target: '.loadingSessions' },
                                     {
                                         guard: {
                                             type: 'hasNoSessions',
-                                            params: ({ event }) => ({ sessions: event.output.sessions }),
+                                            params: ({ context }) => ({ sessions: context.activeSessions }),
                                         },
-                                        target: 'idle',
-                                        actions: [updateFetchedSessions, leaveSwitcher],
+                                        actions: leaveSwitcher,
                                     },
-                                    { target: 'idle', actions: updateFetchedSessions },
                                 ],
-                                onError: 'sessionsFailed',
+                            },
+                            initial: 'idle',
+                            states: {
+                                idle: {},
+                                /** The account switcher reads the sessions it shows. */
+                                loadingSessions: {
+                                    invoke: {
+                                        src: 'fetchSessions',
+                                        input: ({ context }) => context.initialSearchParams,
+                                        onDone: [
+                                            {
+                                                guard: {
+                                                    type: 'hasNoSessions',
+                                                    params: ({ event }) => ({ sessions: event.output.sessions }),
+                                                },
+                                                target: 'idle',
+                                                actions: [updateFetchedSessions, leaveSwitcher],
+                                            },
+                                            { target: 'idle', actions: updateFetchedSessions },
+                                        ],
+                                        onError: 'sessionsFailed',
+                                    },
+                                },
+                                /** The account switcher couldn't read the sessions. */
+                                sessionsFailed: { tags: [PublicAppStateMachineTags.sessionsFailed] },
                             },
                         },
-                        /** The account switcher couldn't read the sessions. */
-                        sessionsFailed: { tags: [PublicAppStateMachineTags.sessionsFailed] },
+                        redirect: {
+                            initial: 'none',
+                            states: {
+                                none: {},
+                                /**
+                                 * A login finished: the page is leaving for the app, and the screen that asked for it
+                                 * shows its loading state. Until the next page loads, this one still works: whatever the
+                                 * user does next (adding or picking an account) runs, and a new login's redirect replaces
+                                 * this one. Coming back to the page, from the back/forward cache or a cancelled redirect,
+                                 * ends the loading state.
+                                 */
+                                pending: {
+                                    tags: [PublicAppStateMachineTags.loggingIn, PublicAppStateMachineTags.signingIn],
+                                    on: { 'page.restored': 'none' },
+                                },
+                            },
+                        },
                     },
                 },
                 /** The account switcher's picked session resumes, to sign in with it. */
@@ -662,56 +692,37 @@ export const publicAppStateMachine = setup({
                 /** A session signed in, the user picked one or confirmed a consent screen: where it goes next. */
                 loggingIn: {
                     tags: [PublicAppStateMachineTags.loggingIn, PublicAppStateMachineTags.signingIn],
-                    initial: 'resolving',
-                    states: {
-                        resolving: {
-                            invoke: {
-                                src: 'login',
-                                input: ({ context, event }) => {
-                                    assertEvent(event, [
-                                        'login.requested',
-                                        'consent.confirmed',
-                                        `xstate.done.actor.${RESUME_SESSION}`,
-                                    ]);
-                                    if (event.type === 'login.requested') {
-                                        return { context, session: event.session };
-                                    }
-                                    if (event.type === 'consent.confirmed') {
-                                        return {
-                                            context,
-                                            session: withInterruption(
-                                                event.consent.payload.session,
-                                                event.consent.type
-                                            ),
-                                        };
-                                    }
-                                    return { context, session: { data: event.output, flow: 'switch' as const } };
-                                },
-                                onDone: [
-                                    {
-                                        guard: {
-                                            type: 'isLoginDone',
-                                            params: ({ event }) => ({ result: event.output }),
-                                        },
-                                        target: 'leaving',
-                                        actions: loginDoneActions,
-                                    },
-                                    { target: '#publicApp.page.ready', actions: loginDoneActions },
-                                ],
-                                onError: {
-                                    target: '#publicApp.page.ready',
-                                    actions: {
-                                        type: 'emitLoginFailed',
-                                        params: ({ event }) => ({ error: event.error }),
-                                    },
-                                },
-                            },
+                    invoke: {
+                        src: 'login',
+                        input: ({ context, event }) => {
+                            assertEvent(event, [
+                                'login.requested',
+                                'consent.confirmed',
+                                `xstate.done.actor.${RESUME_SESSION}`,
+                            ]);
+                            if (event.type === 'login.requested') {
+                                return { context, session: event.session };
+                            }
+                            if (event.type === 'consent.confirmed') {
+                                return {
+                                    context,
+                                    session: withInterruption(event.consent.payload.session, event.consent.type),
+                                };
+                            }
+                            return { context, session: { data: event.output, flow: 'switch' as const } };
                         },
-                        /**
-                         * The login finished: the page is leaving for the app, and the screen that asked for it keeps
-                         * loading. Coming back to it, from the back/forward cache or a cancelled redirect, makes it usable again.
-                         */
-                        leaving: { on: { 'page.restored': '#publicApp.page.ready' } },
+                        onDone: [
+                            {
+                                guard: { type: 'isLoginDone', params: ({ event }) => ({ result: event.output }) },
+                                target: '#publicApp.page.ready.redirect.pending',
+                                actions: loginDoneActions,
+                            },
+                            { target: 'ready', actions: loginDoneActions },
+                        ],
+                        onError: {
+                            target: 'ready',
+                            actions: { type: 'emitLoginFailed', params: ({ event }) => ({ error: event.error }) },
+                        },
                     },
                 },
             },
