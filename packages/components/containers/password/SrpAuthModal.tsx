@@ -15,6 +15,7 @@ import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { getAccessTypeFromMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { type Credentials, srpAuth } from '@proton/shared/lib/srp';
@@ -63,8 +64,8 @@ const PasswordForm = ({
             };
         }
         return {
-            info: null,
-            label: c('Label').t`Password`,
+            info: c('Info').t`To help keep your account safe, confirm it’s really you before continuing.`,
+            label: c('Label').t`${BRAND_NAME} Account password`,
         };
     })();
     return (
@@ -270,9 +271,8 @@ const SrpAuthModal = ({
     return (
         <Modal {...rest} size="small" onClose={handleClose}>
             <ModalHeader
-                title={
-                    step === Step.TWO_FA ? c('Title').t`Two-factor authentication` : c('Title').t`Enter your password`
-                }
+                title={step === Step.TWO_FA ? c('Title').t`Two-factor authentication` : c('Title').t`Verify it’s you`}
+                subline={step === Step.Password ? user?.Email || user?.Name : undefined}
             />
             <ModalContent>
                 {step === Step.Password && (
