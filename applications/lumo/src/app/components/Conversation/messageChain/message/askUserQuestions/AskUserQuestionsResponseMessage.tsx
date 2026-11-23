@@ -14,7 +14,7 @@ export const AskUserQuestionsResponseMessage = ({
 }: {
     askUserQuestionsToolResponse: QuestionAnswer[];
 }) => (
-    <div className="ask-user-questions-response-message flex flex-column gap-3 w-full p-4 border lumo-border radius-16 lumo-bg-panel">
+    <div className="ask-user-questions-response-message flex flex-column gap-3 w-full p-4 border radius-16 lumo-bg-panel">
         {askUserQuestionsToolResponse.map(({ questionId, title, answers, skipped }) => (
             <div key={questionId} dir="auto">
                 <p className="m-0 mb-1 lumo-body-small lumo-color-glyph-mid">{title}</p>

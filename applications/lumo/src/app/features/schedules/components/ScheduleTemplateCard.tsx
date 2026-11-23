@@ -30,7 +30,7 @@ export const ScheduleTemplateCard = ({
             onClick={onClick}
             type="button"
         >
-            <div className="schedule-template-card__icon-container flex shrink-0 items-center justify-center border lumo-border radius-8 lumo-bg-control-fill">
+            <div className="schedule-template-card__icon-container flex shrink-0 items-center justify-center border radius-8 lumo-bg-control-fill">
                 <LumoIcon aria-hidden name={icon} size={16} />
             </div>
             <div className="flex flex-column flex-1 gap-1 min-w-0 text-left">

@@ -239,12 +239,12 @@ export const ProjectFilesPanel = ({
                     </div>
                     <div className="project-files-section-content flex-auto">
                         {instructions ? (
-                            <p className="project-instructions-text m-0 h-full border lumo-border radius-16 lumo-body-medium lumo-color-glyph-mid">
+                            <p className="project-instructions-text m-0 h-full border radius-16 lumo-body-medium lumo-color-glyph-mid">
                                 {instructions}
                             </p>
                         ) : (
                             <button
-                                className="project-instructions-add gap-2 p-3 border lumo-border radius-8 lumo-label-medium lumo-color-glyph-mid lumo-bg-control-fill"
+                                className="project-instructions-add gap-2 p-3 border radius-8 lumo-label-medium lumo-color-glyph-mid lumo-bg-control-fill"
                                 onClick={onEditInstructions}
                             >
                                 <LumoIcon name="Plus" size={16} />

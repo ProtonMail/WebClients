@@ -89,7 +89,7 @@ export const RetryPanel: React.FC<RetryPanelProps> = ({ onRetry, disabled = fals
                         }
                     }}
                     placeholder={c('collider_2025:Action').t`What needs changed?`}
-                    className="focus:border-primary focus:outline-none border lumo-border radius-full lumo-body-small lumo-bg-panel transition-colors"
+                    className="focus:border-primary focus:outline-none border radius-full lumo-body-small lumo-bg-panel transition-colors"
                     disabled={disabled}
                     style={{
                         display: 'block',

@@ -45,7 +45,7 @@ const FileMentionChip = ({ filename, attachment, onView }: FileMentionChipProps)
     };
 
     const className =
-        'inline-flex items-center gap-1 align-middle radius-8 border lumo-border lumo-bg-control-fill px-2 py-0.5 lumo-label-medium transition-colors ' +
+        'inline-flex items-center gap-1 align-middle radius-8 border lumo-bg-control-fill px-2 py-0.5 lumo-label-medium transition-colors ' +
         (canPreview ? 'cursor-pointer hover:border-norm hover:bg-norm' : '');
     const FileTypeIcon = getFileIcon(mimeType);
 
@@ -257,7 +257,7 @@ const UserMessage = ({
             )}
             style={{ '--bottom-custom': '-1.5rem' }}
         >
-            <div className=" border lumo-border radius-12 lumo-bg-panel">
+            <div className=" border radius-12 lumo-bg-panel">
                 <UserActionToolbar
                     onEdit={handleEdit}
                     onToggleCollapse={toggleCollapse}
@@ -268,7 +268,7 @@ const UserMessage = ({
                 />
             </div>
             {hasSiblingInfo && (
-                <div className="border lumo-border radius-12 lumo-bg-panel">
+                <div className="border radius-12 lumo-bg-panel">
                     <SiblingSelector siblingInfo={siblingInfo} />
                 </div>
             )}

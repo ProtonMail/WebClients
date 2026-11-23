@@ -164,7 +164,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                     {c('collider_2025: Info')
                         .t`Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.`}
                 </p>
-                <div className="p-6 border lumo-border radius-12 lumo-bg-control-fill">
+                <div className="p-6 border radius-12 lumo-bg-control-fill">
                     <p className="m-0 mb-4 lumo-color-glyph-mid">
                         {c('collider_2025: Info').t`Sign in to generate workflows with ${LUMO_SHORT_APP_NAME}.`}
                     </p>
@@ -182,7 +182,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                     .t`We can help you get started with using the ${LUMO_SHORT_APP_NAME} API. Describe what you want to automate. ${LUMO_SHORT_APP_NAME} returns a workflow graph and sample code that calls the ${LUMO_SHORT_APP_NAME} API.`}
             </p>
 
-            <div className="mb-6 p-4 border lumo-border radius-12 lumo-bg-panel">
+            <div className="mb-6 p-4 border radius-12 lumo-bg-panel">
                 <label htmlFor="workflow-codegen-prompt" className="lumo-label-medium mb-2 block">
                     {c('collider_2025: Label').t`Your workflow`}
                 </label>
@@ -204,7 +204,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                 </div>
                 <TextAreaTwo
                     id="workflow-codegen-prompt"
-                    className="mb-4 border lumo-border radius-12"
+                    className="mb-4 border radius-12"
                     placeholder={c('collider_2025:Placeholder')
                         .t`e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.`}
                     value={prompt}

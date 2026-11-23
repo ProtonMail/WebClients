@@ -151,7 +151,7 @@ const ApiKeysPanel = () => {
             </div>
 
             {!hasLumoPlus ? (
-                <div className="p-4 border lumo-border radius-12 lumo-body-small lumo-color-glyph-mid lumo-bg-control-fill">
+                <div className="p-4 border radius-12 lumo-body-small lumo-color-glyph-mid lumo-bg-control-fill">
                     {c('collider_2025: Info').t`Assign a ${LUMO_SHORT_APP_NAME} seat to create a personal API key.`}
                 </div>
             ) : (

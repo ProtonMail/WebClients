@@ -90,7 +90,7 @@ export const LumoInsightCard = ({ spec }: { spec: LumoCardSpec }) => {
                             <span
                                 key={tag}
                                 dir="auto"
-                                className="lumo-insight-card__tag lumo-bg-control-fill border lumo-border radius-full lumo-label-small lumo-color-glyph"
+                                className="lumo-insight-card__tag lumo-bg-control-fill border radius-full lumo-label-small lumo-color-glyph"
                             >
                                 {tag}
                             </span>

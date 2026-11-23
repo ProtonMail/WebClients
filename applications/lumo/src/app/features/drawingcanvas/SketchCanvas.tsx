@@ -103,7 +103,7 @@ export const SketchCanvas = ({
                 <div className="sketch-canvas__edit-panel w-full lumo-bg-panel">
                     {shouldShowDescription && (
                         <>
-                            <label className="sketch-canvas__edit-panel-text flex items-start gap-2 m-0 mb-3 px-4 py-3 border lumo-border radius-12 lumo-bg-control-fill">
+                            <label className="sketch-canvas__edit-panel-text flex items-start gap-2 m-0 mb-3 px-4 py-3 border radius-12 lumo-bg-control-fill">
                                 <textarea
                                     dir="auto"
                                     value={description}

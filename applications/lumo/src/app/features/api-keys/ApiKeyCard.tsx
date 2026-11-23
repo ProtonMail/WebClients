@@ -54,7 +54,7 @@ export const ApiKeyCard = ({
     return (
         <div
             className={clsx(
-                'api-keys-card-wrap flex flex-column border lumo-border lumo-bg-panel',
+                'api-keys-card-wrap flex flex-column border lumo-bg-panel',
                 expanded && 'api-keys-card-wrap--expanded'
             )}
         >

@@ -94,7 +94,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
 
     if (isLoading || !imageDataUrl) {
         return (
-            <div className="gallery-card gallery-card--loading border lumo-border lumo-bg-control-fill-mid">
+            <div className="gallery-card gallery-card--loading border lumo-bg-control-fill-mid">
                 <CircleLoader size="medium" />
             </div>
         );
@@ -105,7 +105,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
             {/* Thumbnail */}
             <button
                 type="button"
-                className="gallery-card border lumo-border lumo-bg-control-fill-mid"
+                className="gallery-card border lumo-bg-control-fill-mid"
                 onClick={() => openOverlay('preview')}
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}

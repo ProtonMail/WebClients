@@ -60,7 +60,7 @@ interface TooltipProps {
 const ComparisonTooltip = ({ active, payload, label, items }: TooltipProps) => {
     if (!active || !payload || payload.length === 0) return null;
     return (
-        <div className="finance-comparison__tooltip px-3 py-2 border lumo-border radius-8 lumo-bg-panel-elevated lumo-elevation-1">
+        <div className="finance-comparison__tooltip px-3 py-2 border radius-8 lumo-bg-panel-elevated lumo-elevation-1">
             <p className="finance-comparison__tooltip-date m-0 mb-1 lumo-label-small lumo-color-glyph-mid">{label}</p>
             {payload.map((entry, i) => {
                 const idx = Number(entry.dataKey.replace('pct_', ''));
@@ -124,7 +124,7 @@ export const FinanceComparisonResult = ({ items, onReady }: FinanceComparisonRes
     }, [items]);
 
     return (
-        <div className="finance-comparison mb-2 border lumo-border radius-12 lumo-bg-panel">
+        <div className="finance-comparison mb-2 border radius-12 lumo-bg-panel">
             <div className="flex items-center justify-space-between flex-wrap gap-3 py-3 px-4">
                 <span className="finance-comparison__title lumo-label-small lumo-color-glyph-mid">{c(
                     'collider_2025:Reasoning'

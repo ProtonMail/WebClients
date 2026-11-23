@@ -46,7 +46,7 @@ const ProjectTag = ({ spaceId, projectName, projectIcon }: ProjectTagProps) => {
     return (
         <LumoLink
             to={`/projects/${spaceId}`}
-            className="all-chats-row-tag border lumo-border py-px all-chats-row-interactive inline-flex flex-nowrap items-center gap-1 min-w-0 px-2 radius-full lumo-label-medium lumo-bg-panel"
+            className="all-chats-row-tag border py-px all-chats-row-interactive inline-flex flex-nowrap items-center gap-1 min-w-0 px-2 radius-full lumo-label-medium lumo-bg-panel"
             aria-label={c('collider_2025:Action').t`Go to project ${label}`}
             title={label}
             onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {

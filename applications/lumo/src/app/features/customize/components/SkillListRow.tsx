@@ -52,7 +52,7 @@ export const SkillListRow = ({
             <div className="skill-list-row__row flex flex-nowrap items-center gap-3 py-2">
                 <div className="flex flex-nowrap items-center gap-3 flex-1 min-w-0">
                     {icon && (
-                        <span className="skill-list-row__icon flex shrink-0 items-center justify-center border lumo-border radius-8 lumo-color-glyph lumo-bg-control-fill">
+                        <span className="skill-list-row__icon flex shrink-0 items-center justify-center border radius-8 lumo-color-glyph lumo-bg-control-fill">
                             {icon}
                         </span>
                     )}

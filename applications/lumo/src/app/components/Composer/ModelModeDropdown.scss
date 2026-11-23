@@ -111,7 +111,7 @@
 }
 
 :is(.model-mode-option, .model-mode-tab):focus-visible {
-	outline: 2px solid var(--lumo-control-border-focus);
+	outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 	outline-offset: 2px;
 }
 

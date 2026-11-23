@@ -1,7 +1,7 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .skill-lumo-prompt {
-	border: 1px solid var(--border-norm);
+	border: var(--border-width-1) solid var(--border-norm);
 	background-color: var(--background-norm);
 
 	&--refine {

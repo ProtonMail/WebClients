@@ -70,11 +70,11 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             case 'simple':
                 return `${base} px-2 py-1.5 mb-0.5 rounded-lg`;
             case 'compact':
-                return `${base} p-2 mb-1 radius-8 border lumo-border`;
+                return `${base} p-2 mb-1 radius-8 border`;
             case 'detailed':
-                return `${base} p-3 mb-2 radius-12 border lumo-border`;
+                return `${base} p-3 mb-2 radius-12 border`;
             default:
-                return `${base} p-3 mb-1 radius-8 border lumo-border`;
+                return `${base} p-3 mb-1 radius-8 border`;
         }
     };
 

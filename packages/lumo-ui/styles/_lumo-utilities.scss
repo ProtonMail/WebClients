@@ -112,6 +112,14 @@ $color-properties: (
 	}
 }
 
+// Width only: pair with a structural border and a Lumo border color.
+// Loaded after Proton's border utilities. Fallbacks preserve host behavior outside .lumo-ui.
+@each $class, $token, $width in ('1', '1', 1px), ('1\\.5', '1-5', 1.5px), ('2', '2', 2px) {
+	.border-#{$class} {
+		border-width: var(--border-width-#{$token}, #{$width});
+	}
+}
+
 // Each role sets family, weight, size, and line height together through the font shorthand.
 // Reset letter spacing as well, so tracking inherited from a heading or button cannot leak in.
 // Sizes use rem for text scaling; consumers must load the font files separately.

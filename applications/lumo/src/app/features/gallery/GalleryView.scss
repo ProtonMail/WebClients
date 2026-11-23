@@ -48,7 +48,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -235,7 +235,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 
@@ -341,7 +341,7 @@ im.$media-expressions: $media-expressions;
 	inline-size: 30px;
 	block-size: 30px;
 	border-radius: 50%;
-	border: 1px solid var(--lumo-border);
+	border: var(--border-width-1) solid var(--lumo-border);
 	background: var(--lumo-panel);
 	color: var(--lumo-glyph-low);
 	cursor: pointer;
@@ -355,7 +355,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -390,7 +390,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }

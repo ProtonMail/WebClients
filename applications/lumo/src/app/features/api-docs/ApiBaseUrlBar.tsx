@@ -21,7 +21,7 @@ export const ApiBaseUrlBar = ({ url }: { url: string }) => {
     }, [url]);
 
     return (
-        <div className="api-docs-base-url-bar gap-y-2 gap-x-3 border lumo-border radius-full lumo-bg-panel">
+        <div className="api-docs-base-url-bar gap-y-2 gap-x-3 border radius-full lumo-bg-panel">
             <span className="api-docs-base-url-label lumo-label-small lumo-color-glyph-mid">{c('collider_2025: Label')
                 .t`Base URL`}</span>
             <code className="api-docs-base-url-value lumo-font-mono lumo-title-small lumo-color-glyph">{url}</code>

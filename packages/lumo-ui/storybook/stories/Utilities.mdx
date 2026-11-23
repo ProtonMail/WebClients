@@ -12,9 +12,9 @@ import { UtilityExamples } from './UtilityExamples';
     description={
         <>
             Use Proton utility classes for layout and spacing, and Lumo utility classes for token-based colors,
-            typography, and visual effects. Radius, opacity, and duration use short names such as <code>radius-12</code>
-            , <code>opacity-20</code>, and <code>duration-150</code>. Other Lumo visual utilities use the{' '}
-            <code>lumo-</code> prefix.
+            typography, and visual effects. Border width, radius, opacity, and duration use short names such as{' '}
+            <code>border-1.5</code>, <code>radius-12</code>, <code>opacity-20</code>, and <code>duration-150</code>.
+            Other Lumo visual utilities use the <code>lumo-</code> prefix.
         </>
     }
 >
@@ -84,7 +84,7 @@ import { UtilityExamples } from './UtilityExamples';
                         </td>
                     </tr>
                     <tr>
-                        <td>Border</td>
+                        <td>Border color</td>
                         <td>
                             <code>lumo-border</code>, <code>lumo-border-mid</code>, <code>lumo-border-control</code>{' '}
                             with translucent, mid, strong, focus variants;{' '}
@@ -94,6 +94,19 @@ import { UtilityExamples } from './UtilityExamples';
                             <code>border-norm</code>, <code>border-weak</code>, etc.
                         </td>
                         <td>Color only. Supply border width and style separately.</td>
+                    </tr>
+                    <tr>
+                        <td>Border width</td>
+                        <td>
+                            <UtilityClassPattern value="border-{1,1.5,2}" />
+                        </td>
+                        <td>Widths outside the 1px, 1.5px, and 2px scale.</td>
+                        <td>
+                            Width only. The <code>border</code> class already supplies the default Lumo color. For
+                            directional borders, add a Lumo border color. Use 1px for ordinary edges, 1.5px for
+                            selection controls, and 2px for focus or error outlines. These classes do not create focus
+                            or error behavior.
+                        </td>
                     </tr>
                     <tr>
                         <td>Typography</td>
@@ -188,7 +201,8 @@ import { UtilityExamples } from './UtilityExamples';
         </div>
     </section>
     <p className="ds-page__note">
-        Border utility classes set color only. State-named utility classes do not create interactions. Responsive
-        prefixes work across the spacing scale, for example <code>md:p-2</code> and <code>md:p-2.5</code>.
+        Lumo border color classes set color only; border width classes set width only. State-named utility classes do
+        not create interactions. Responsive prefixes work across the spacing scale, for example <code>md:p-2</code> and{' '}
+        <code>md:p-2.5</code>.
     </p>
 </Page>

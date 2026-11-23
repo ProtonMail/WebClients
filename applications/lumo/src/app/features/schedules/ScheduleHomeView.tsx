@@ -71,7 +71,7 @@ export const ScheduleHomeView = () => {
                     {/* Schedule name and cadence */}
                     <div>
                         <div dir="auto">
-                            <div className="inline-flex items-center justify-center mb-3 p-3 border lumo-border radius-12">
+                            <div className="inline-flex items-center justify-center mb-3 p-3 border radius-12">
                                 <LumoIcon aria-hidden name="Clock" size={24} />
                             </div>
                             <h1 className="m-0 mb-2 lumo-headline-small">{schedule.name}</h1>
@@ -84,7 +84,7 @@ export const ScheduleHomeView = () => {
                     </div>
 
                     {/* Schedule instructions */}
-                    <section className="p-4 border lumo-border radius-16 lumo-bg-panel">
+                    <section className="p-4 border radius-16 lumo-bg-panel">
                         <h2 className="m-0 mb-2 lumo-label-small lumo-color-glyph-mid">{
                             // translator: Heading above the instructions executed by a scheduled task.
                             c('collider_2025:Title').t`What it does`

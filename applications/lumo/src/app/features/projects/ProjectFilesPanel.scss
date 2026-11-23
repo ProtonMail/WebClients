@@ -212,7 +212,7 @@
 	}
 
 	&:focus {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -307,7 +307,7 @@
 	padding-block: var(--lumo-space-20);
 	padding-inline: var(--lumo-space-16);
 	background-color: var(--lumo-control-fill);
-	border: 1px dashed var(--lumo-border);
+	border: var(--border-width-1) dashed var(--lumo-border);
 	border-radius: var(--lumo-radius-8);
 	cursor: pointer;
 	transition: all var(--lumo-duration-150) var(--lumo-easing-standard);
@@ -320,7 +320,7 @@
 	}
 
 	&:focus {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -354,7 +354,7 @@
 	padding-block: var(--lumo-space-24);
 	padding-inline: var(--lumo-space-16);
 	background-color: var(--lumo-control-fill);
-	border: 1px dashed var(--lumo-border);
+	border: var(--border-width-1) dashed var(--lumo-border);
 	border-radius: var(--lumo-radius-8);
 	cursor: pointer;
 	transition: all var(--lumo-duration-150) var(--lumo-easing-standard);
@@ -365,7 +365,7 @@
 	}
 
 	&:focus {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -396,7 +396,7 @@
 	gap: var(--lumo-space-12);
 	padding: var(--lumo-space-12);
 	background-color: var(--lumo-control-fill);
-	border: 1px solid var(--lumo-border);
+	border: var(--border-width-1) solid var(--lumo-border);
 	border-radius: var(--lumo-radius-8);
 	transition: all var(--lumo-duration-150) var(--lumo-easing-standard);
 
@@ -465,7 +465,7 @@
 	}
 
 	&:focus {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 1px;
 		opacity: 1 !important;
 	}

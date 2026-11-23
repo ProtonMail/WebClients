@@ -22,7 +22,7 @@ im.$media-expressions: $media-expressions;
 	&__group {
 		&.has-separator {
 			margin-block-start: var(--lumo-space-4);
-			border-block-start: 1px solid var(--lumo-border);
+			border-block-start: var(--border-width-1) solid var(--lumo-border);
 		}
 	}
 

@@ -73,7 +73,7 @@ export const SkillCodeView = ({
             <div className="skill-code-view skill-code-view--preview overflow-auto">
                 <div className="skill-code-view__document pt-6 pb-10 px-8 mx-auto">
                     {properties.length > 0 && (
-                        <dl className="skill-code-view__properties mx-0 mt-0 mb-7 py-2.5 border lumo-border lumo-body-small lumo-bg-control-fill">
+                        <dl className="skill-code-view__properties mx-0 mt-0 mb-7 py-2.5 border lumo-body-small lumo-bg-control-fill">
                             {properties.map(([key, value]) => (
                                 <div key={key} className="flex flex-nowrap gap-4">
                                     <dt className="skill-code-view__property-key shrink-0 lumo-color-glyph-mid">

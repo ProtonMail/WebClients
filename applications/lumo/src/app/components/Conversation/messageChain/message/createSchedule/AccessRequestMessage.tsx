@@ -105,13 +105,13 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
                                 .t`Choose the connectors this task can use. Uncheck a connector to remove it from the schedule. You can change this anytime in the task's settings.`
                         }
                     </p>
-                    <ul className="m-0 p-0 overflow-hidden border lumo-border radius-16 unstyled">
+                    <ul className="m-0 p-0 overflow-hidden border radius-16 unstyled">
                         {tools.map((tool) => (
                             <li
                                 className="access-request-card__tool flex flex-nowrap items-center gap-3 px-4 py-3"
                                 key={tool.id}
                             >
-                                <div className="access-request-card__icon flex shrink-0 items-center justify-center border lumo-border radius-8 lumo-bg-control-fill-mid">
+                                <div className="access-request-card__icon flex shrink-0 items-center justify-center border radius-8 lumo-bg-control-fill-mid">
                                     <ConnectorIcon icon={tool.icon} />
                                 </div>
                                 <div className="flex flex-column flex-1 gap-0.5 min-w-0">

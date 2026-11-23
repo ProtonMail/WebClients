@@ -77,7 +77,7 @@ im.$media-expressions: $media-expressions;
 			align-items: center;
 			gap: var(--lumo-space-4);
 			transition: all var(--lumo-duration-200) var(--lumo-easing-standard);
-			border: 1px solid var(--lumo-border);
+			border: var(--border-width-1) solid var(--lumo-border);
 			padding-block: var(--lumo-space-6);
 			padding-inline: var(--lumo-space-12);
 

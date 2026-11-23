@@ -26,7 +26,7 @@
 	}
 
 	tbody tr + tr {
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 	}
 
 	th:first-child {

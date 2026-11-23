@@ -27,10 +27,10 @@
 	&__stats {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(rem(96), 1fr));
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 
 		> * {
-			border-inline-end: 1px solid var(--lumo-border);
+			border-inline-end: var(--border-width-1) solid var(--lumo-border);
 
 			&:last-child {
 				border-inline-end: none;

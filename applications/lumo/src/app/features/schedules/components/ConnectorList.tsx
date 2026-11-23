@@ -298,7 +298,7 @@ const ConnectorListReadyView = ({
                                     </span>
                                     <div
                                         aria-labelledby={nameId}
-                                        className="inline-flex flex-nowrap gap-0.5 p-0.5 border lumo-border radius-8 lumo-bg-control-fill"
+                                        className="inline-flex flex-nowrap gap-0.5 p-0.5 border radius-8 lumo-bg-control-fill"
                                         // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                         role="group"
                                     >

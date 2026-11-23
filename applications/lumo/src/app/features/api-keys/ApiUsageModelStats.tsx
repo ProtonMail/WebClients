@@ -43,7 +43,7 @@ export const ApiUsageModelStats = ({
             // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="group"
             aria-label={model}
-            className="api-usage-model min-w-0 m-0 border lumo-border radius-12 lumo-bg-control-fill"
+            className="api-usage-model min-w-0 m-0 border radius-12 lumo-bg-control-fill"
         >
             <span className={`api-usage-model__name px-2 api-usage-model__name--${model} inline-flex lumo-label-small`}>
                 {model}

@@ -18,7 +18,7 @@
 	transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }
@@ -194,7 +194,7 @@
 	animation: fadeIn var(--lumo-duration-200) var(--lumo-easing-enter);
 
 	&:focus-visible {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }

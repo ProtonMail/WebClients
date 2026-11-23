@@ -49,7 +49,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&:focus-visible {
-		box-shadow: 0 0 0 2px var(--lumo-control-border-focus, var(--lumo-control-brand-fill));
+		box-shadow: 0 0 0 var(--border-width-2) var(--lumo-control-border-focus, var(--lumo-control-brand-fill));
 	}
 
 	&--expired {
@@ -184,7 +184,7 @@ im.$media-expressions: $media-expressions;
 .api-keys-token-warning {
 	padding-inline: rem(14);
 	background-color: var(--lumo-control-fill, rgb(245 158 11 / 0.1));
-	border: 1px solid var(--lumo-control-fill-mid, rgb(245 158 11 / 0.25));
+	border: var(--border-width-1) solid var(--lumo-control-fill-mid, rgb(245 158 11 / 0.25));
 	color: var(--lumo-signal-warning, #f59e0b);
 }
 
@@ -337,7 +337,7 @@ im.$media-expressions: $media-expressions;
 		inset-inline-end: calc(-1 * var(--lumo-space-6));
 		inline-size: rem(18);
 		block-size: rem(18);
-		border: 2px solid var(--lumo-control-fill);
+		border: var(--border-width-2) solid var(--lumo-control-fill);
 		color: white;
 	}
 
@@ -348,12 +348,12 @@ im.$media-expressions: $media-expressions;
 
 .api-usage-balance-status {
 	&--empty {
-		border: 1px solid var(--lumo-control-fill-mid);
+		border: var(--border-width-1) solid var(--lumo-control-fill-mid);
 		background: var(--lumo-control-fill);
 	}
 
 	&--low {
-		border: 1px solid var(--lumo-control-fill-mid, rgb(245 158 11 / 0.25));
+		border: var(--border-width-1) solid var(--lumo-control-fill-mid, rgb(245 158 11 / 0.25));
 		background: var(--lumo-control-fill, rgb(245 158 11 / 0.1));
 	}
 }
@@ -374,7 +374,7 @@ im.$media-expressions: $media-expressions;
 		th,
 		td {
 			padding-block: var(--lumo-space-12);
-			border-block-end: 1px solid var(--lumo-border);
+			border-block-end: var(--border-width-1) solid var(--lumo-border);
 		}
 
 		tbody tr:last-child {
@@ -430,7 +430,7 @@ im.$media-expressions: $media-expressions;
 
 .api-usage-settings-summary {
 	padding-inline: rem(14);
-	border: 1px solid var(--lumo-control-fill-mid);
+	border: var(--border-width-1) solid var(--lumo-control-fill-mid);
 }
 
 .api-usage-overview-section,
@@ -548,7 +548,7 @@ im.$media-expressions: $media-expressions;
 	}
 
 	&__rates-note {
-		border-block-start: 1px dashed var(--lumo-border);
+		border-block-start: var(--border-width-1) dashed var(--lumo-border);
 	}
 }
 
@@ -595,7 +595,7 @@ im.$media-expressions: $media-expressions;
 		}
 
 		&:focus-visible {
-			outline: 2px solid var(--lumo-control-border-focus, var(--lumo-control-brand-fill));
+			outline: var(--border-width-2) solid var(--lumo-control-border-focus, var(--lumo-control-brand-fill));
 			outline-offset: 1px;
 		}
 	}

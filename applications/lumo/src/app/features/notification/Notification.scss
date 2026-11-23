@@ -82,7 +82,7 @@ im.$media-expressions: $media-expressions;
 	block-size: rem(36);
 	flex-shrink: 0;
 	background: var(--lumo-control-fill);
-	border: 1px solid var(--lumo-border);
+	border: var(--border-width-1) solid var(--lumo-border);
 	border-radius: var(--lumo-radius-8);
 	display: flex;
 }
@@ -129,7 +129,7 @@ im.$media-expressions: $media-expressions;
 
 .notif-action:focus-visible,
 .notif-close:focus-visible {
-	outline: 2px solid var(--lumo-control-border-focus);
+	outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 	outline-offset: 2px;
 }
 

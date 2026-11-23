@@ -208,7 +208,7 @@ export const WorkflowGraphView = ({ graph, minCanvasHeightPx = 280 }: WorkflowGr
                 >
                     <Controls showInteractive={false} />
                     <MiniMap
-                        className="border lumo-border radius-8"
+                        className="border radius-8"
                         bgColor="var(--lumo-panel)"
                         maskColor="var(--lumo-panel)"
                         pannable

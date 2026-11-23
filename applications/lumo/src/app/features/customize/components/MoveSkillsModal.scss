@@ -20,7 +20,7 @@
 
 		kbd {
 			padding-inline: var(--lumo-space-4);
-			border: 1px solid var(--border-weak);
+			border: var(--border-width-1) solid var(--border-weak);
 			border-radius: var(--lumo-radius-4);
 			background-color: var(--background-norm);
 			font-family: inherit;

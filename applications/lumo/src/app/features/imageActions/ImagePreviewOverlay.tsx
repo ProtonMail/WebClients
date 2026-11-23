@@ -173,7 +173,7 @@ export const ImagePreviewOverlay = ({
 
                     <div
                         className={[
-                            'image-preview-container flex flex-column flex-nowrap items-center max-h-full border lumo-border radius-28 lumo-bg-panel-elevated',
+                            'image-preview-container flex flex-column flex-nowrap items-center max-h-full border radius-28 lumo-bg-panel-elevated',
                             mode === 'preview'
                                 ? 'image-preview-container--preview'
                                 : 'image-preview-container--edit overflow-hidden',

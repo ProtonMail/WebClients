@@ -48,7 +48,7 @@
 	gap: 0.85rem;
 	padding-block: 1.1rem;
 	padding-inline: 1.35rem;
-	border-block: 1px solid var(--lumo-border);
+	border-block: var(--border-width-1) solid var(--lumo-border);
 	background: color-mix(in srgb, var(--lumo-panel) 60%, var(--lumo-control-fill));
 }
 
@@ -74,7 +74,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-	border-block-start: 1px dashed var(--lumo-border);
+	border-block-start: var(--border-width-1) dashed var(--lumo-border);
 }
 
 .api-docs-model-catalog-cached-amount {

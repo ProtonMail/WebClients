@@ -104,11 +104,7 @@ export const ProjectCard = ({
     }
 
     return (
-        <ButtonLike
-            shape="ghost"
-            className="group-hover-opacity-container p-4 border lumo-border radius-12"
-            onClick={handleClick}
-        >
+        <ButtonLike shape="ghost" className="group-hover-opacity-container p-4 border radius-12" onClick={handleClick}>
             <div className="project-card-header gap-2">
                 <div className="project-card-title-row gap-2">
                     <ProjectIcon iconId={project.icon} size={18} className="project-card-icon" />

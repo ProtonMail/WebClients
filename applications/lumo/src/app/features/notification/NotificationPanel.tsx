@@ -69,7 +69,7 @@ export default function NotificationPanel({
         <>
             <div
                 className={clsx(
-                    'notification-panel border lumo-border radius-12 lumo-bg-panel',
+                    'notification-panel border radius-12 lumo-bg-panel',
                     exiting ? 'notif-exit' : 'notif-enter',
                     isCoveredByNativeComposer && 'notification-panel--native-composer'
                 )}

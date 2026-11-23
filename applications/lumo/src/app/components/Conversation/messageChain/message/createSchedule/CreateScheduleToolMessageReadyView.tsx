@@ -132,7 +132,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
     return (
         <section
             aria-labelledby={`${id}-title`}
-            className="create-schedule-card flex flex-column flex-nowrap gap-4 w-full p-5 border lumo-border-control radius-16 lumo-bg-panel"
+            className="create-schedule-card flex flex-column flex-nowrap gap-4 w-full p-5 border radius-16 lumo-bg-panel"
         >
             <div className="flex flex-nowrap shrink-0 items-center gap-2 min-w-0">
                 <LumoIcon aria-hidden className="shrink-0" name="Clock" size={14} />
@@ -156,7 +156,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                             ` (${schedule.recurrenceRule.timezone})`}
                     </div>
 
-                    <div className="flex flex-nowrap items-center gap-4 px-4 py-3 border lumo-border radius-16">
+                    <div className="flex flex-nowrap items-center gap-4 px-4 py-3 border radius-16">
                         <div className="flex flex-column flex-1 gap-0.5 min-w-0">
                             <span
                                 className="create-schedule-card__auto-approve-label lumo-label-large"
@@ -217,7 +217,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                     </Button>
                     <div
                         dir="auto"
-                        className="create-schedule-card__instructions mb-1 p-4 border lumo-border radius-16 lumo-body-small text-break text-pre-wrap lumo-color-glyph-mid lumo-bg-control-fill-low"
+                        className="create-schedule-card__instructions mb-1 p-4 border radius-16 lumo-body-small text-break text-pre-wrap lumo-color-glyph-mid lumo-bg-control-fill-low"
                         hidden={!showDetails}
                         id={`${id}-details`}
                     >

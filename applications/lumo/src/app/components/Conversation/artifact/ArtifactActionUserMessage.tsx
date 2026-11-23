@@ -35,7 +35,7 @@ export const ArtifactActionUserMessage = ({
             <div
                 ref={contentRef}
                 className={clsx(
-                    'p-3 overflow-hidden border lumo-border radius-12 lumo-bg-control-fill',
+                    'p-3 overflow-hidden border radius-12 lumo-bg-control-fill',
                     isCollapsed && 'line-clamp-3'
                 )}
             >

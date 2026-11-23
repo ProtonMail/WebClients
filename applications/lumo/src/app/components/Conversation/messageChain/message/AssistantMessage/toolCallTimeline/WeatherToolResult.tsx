@@ -153,7 +153,7 @@ export const WeatherToolResult = ({ data }: { data: WeatherData }) => {
     }
 
     return (
-        <div className="weather-card mb-2 border lumo-border radius-12 lumo-bg-panel">
+        <div className="weather-card mb-2 border radius-12 lumo-bg-panel">
             <div className="flex items-center justify-space-between gap-2 py-3 px-4">
                 <div className="flex items-center gap-1.5">
                     <span className="weather-card__location-icon lumo-color-glyph-brand-text" aria-hidden="true">

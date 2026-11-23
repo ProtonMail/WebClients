@@ -9,7 +9,7 @@ im.$media-expressions: $media-expressions;
 	transition: background-color var(--lumo-duration-150) var(--lumo-easing-standard);
 
 	&:focus {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: calc(-1 * var(--lumo-space-2));
 	}
 

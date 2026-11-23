@@ -99,7 +99,7 @@ const RemoveButton = ({ processing, onRemove }: RemoveButtonProps) => {
     if (processing) {
         return (
             <Tooltip title={c('collider_2025:Info').t`Processing file...`}>
-                <span className="file-card-dismiss-button p-0.5 file-card-progress border lumo-border radius-full lumo-bg-panel-elevated">
+                <span className="file-card-dismiss-button p-0.5 file-card-progress border radius-full lumo-bg-panel-elevated">
                     <CircularProgress progress={75} size={15} />
                 </span>
             </Tooltip>
@@ -214,7 +214,7 @@ export const AttachmentFileCard = ({
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
             className={clsx(
-                'file-card group relative flex flex-column w-custom h-custom border lumo-border radius-12 lumo-color-glyph-mid lumo-bg-panel transition-all lumo-easing-standard',
+                'file-card group relative flex flex-column w-custom h-custom border radius-12 lumo-color-glyph-mid lumo-bg-panel transition-all lumo-easing-standard',
                 canClick && 'cursor-pointer hover:border-norm hover:bg-weak',
                 className
             )}
@@ -232,7 +232,7 @@ export const AttachmentFileCard = ({
             />
 
             {isPasted ? (
-                <span className="file-card-pasted-badge absolute inline-block px-2 py-1 border lumo-border radius-4 lumo-label-small lumo-color-glyph lumo-bg-panel">
+                <span className="file-card-pasted-badge absolute inline-block px-2 py-1 border radius-4 lumo-label-small lumo-color-glyph lumo-bg-panel">
                     {c('collider_2025:Info').t`PASTED`}
                 </span>
             ) : (

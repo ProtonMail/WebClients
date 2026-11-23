@@ -23,7 +23,7 @@
 }
 
 .memory-panel-list-item {
-	border-block-end: 1px solid var(--lumo-border);
+	border-block-end: var(--border-width-1) solid var(--lumo-border);
 
 	&:last-child {
 		border-block-end: none;

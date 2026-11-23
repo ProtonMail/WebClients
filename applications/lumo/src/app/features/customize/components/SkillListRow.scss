@@ -11,7 +11,7 @@ $nested-padding: rem(6);
 $name-line-center: $nested-padding + rem(10);
 
 .skill-list-row {
-	border-block-end: 1px solid var(--lumo-border);
+	border-block-end: var(--border-width-1) solid var(--lumo-border);
 	list-style: none;
 
 	&__icon {
@@ -53,7 +53,7 @@ $name-line-center: $nested-padding + rem(10);
 			// Vertical line, stopping at the last child's branch.
 			&::before {
 				inset-block: 0;
-				border-inline-start: 1px solid var(--lumo-border-mid);
+				border-inline-start: var(--border-width-1) solid var(--lumo-border-mid);
 			}
 
 			&:first-child::before {
@@ -73,7 +73,7 @@ $name-line-center: $nested-padding + rem(10);
 			&::after {
 				inset-block-start: $name-line-center;
 				inline-size: $branch-offset - $branch-gap;
-				border-block-start: 1px solid var(--lumo-border-mid);
+				border-block-start: var(--border-width-1) solid var(--lumo-border-mid);
 			}
 		}
 

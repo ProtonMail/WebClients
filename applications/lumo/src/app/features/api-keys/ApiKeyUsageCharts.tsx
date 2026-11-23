@@ -58,7 +58,7 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div className="api-keys-usage flex flex-column items-end gap-1 shrink-0" onClick={(e) => e.stopPropagation()}>
             <div
-                className="api-keys-usage-chart api-keys-usage-chart--spark px-1.5 py-1 border lumo-border radius-8"
+                className="api-keys-usage-chart api-keys-usage-chart--spark px-1.5 py-1 border radius-8"
                 aria-hidden="true"
             >
                 <ResponsiveContainer width="100%" height={34}>
@@ -95,7 +95,7 @@ export const UsageSparklineCompact = ({ usage }: { usage: TokenUsageState }) => 
                                     day: 'numeric',
                                 });
                                 return (
-                                    <div className="api-keys-chart-tooltip api-keys-chart-tooltip--spark flex flex-column gap-0.5 px-3 py-2 border lumo-border lumo-bg-panel-elevated">
+                                    <div className="api-keys-chart-tooltip api-keys-chart-tooltip--spark flex flex-column gap-0.5 px-3 py-2 border lumo-bg-panel-elevated">
                                         <span className="api-keys-chart-tooltip-date lumo-label-small lumo-color-glyph-mid">
                                             {label}
                                         </span>
@@ -158,7 +158,7 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
 
     if (totalTokenCount === 0 && totalApiCalls === 0) {
         return (
-            <div className="api-keys-expanded-empty mt-4 p-4 flex items-center gap-3 border border-dashed lumo-border radius-12 lumo-bg-panel">
+            <div className="api-keys-expanded-empty mt-4 p-4 flex items-center gap-3 border border-dashed radius-12 lumo-bg-panel">
                 <span className="api-keys-expanded-empty__icon flex shrink-0 items-center justify-center radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill">
                     <LumoIcon name="Activity" size={18} />
                 </span>

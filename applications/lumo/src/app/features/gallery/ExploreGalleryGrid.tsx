@@ -30,7 +30,7 @@ export const ExploreGalleryGrid = ({ onTryPrompt }: ExploreGalleryGridProps) => 
                         <button
                             key={s.id}
                             type="button"
-                            className="gallery-card border lumo-border lumo-bg-control-fill-mid"
+                            className="gallery-card border lumo-bg-control-fill-mid"
                             onClick={() => setOpenId(s.id)}
                             aria-label={`${c('collider_2025:Label').t`Inspiration image`} ${index + 1}`}
                         >

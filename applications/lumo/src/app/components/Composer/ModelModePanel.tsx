@@ -122,7 +122,9 @@ const SelectionOptionRow = ({
                         </span>
                     )}
                 </div>
-                <span className="lumo-body-small lumo-color-glyph-mid">{description}</span>
+                <span className={clsx('lumo-body-small', isSelected ? 'lumo-color-glyph' : 'lumo-color-glyph-mid')}>
+                    {description}
+                </span>
             </div>
         </button>
     );
@@ -194,7 +196,9 @@ const ResponseModeRow = ({
         onClick={onSelect}
     >
         <span className="lumo-label-small">{option.getLabel()}</span>
-        <span className="lumo-body-small lumo-color-glyph-mid">{option.getDescription()}</span>
+        <span className={clsx('lumo-body-small', isActive ? 'lumo-color-glyph' : 'lumo-color-glyph-mid')}>
+            {option.getDescription()}
+        </span>
     </button>
 );
 
@@ -251,8 +255,7 @@ export const ModelModePanel = ({
         <div
             className={clsx(
                 'model-mode-picker flex flex-column flex-nowrap w-full',
-                !isSheet &&
-                    'model-mode-picker--dropdown border lumo-border radius-12 lumo-bg-panel-elevated lumo-elevation-3'
+                !isSheet && 'model-mode-picker--dropdown border radius-12 lumo-bg-panel-elevated lumo-elevation-3'
             )}
         >
             <div

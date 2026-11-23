@@ -26,7 +26,7 @@ export const CreateScheduleResponseMessage = ({
     };
 
     return (
-        <div className="create-schedule-response-message flex flex-column flex-nowrap items-start gap-2 w-full min-h-custom p-4 border lumo-border radius-16 lumo-bg-panel sm:flex-row sm:items-center sm:gap-3">
+        <div className="create-schedule-response-message flex flex-column flex-nowrap items-start gap-2 w-full min-h-custom p-4 border radius-16 lumo-bg-panel sm:flex-row sm:items-center sm:gap-3">
             <div className="create-schedule-response-message__header flex flex-nowrap items-center gap-3">
                 <LumoIcon
                     aria-hidden

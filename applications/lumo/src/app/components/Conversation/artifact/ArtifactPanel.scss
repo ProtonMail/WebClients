@@ -218,7 +218,7 @@
 
 			th,
 			td {
-				border: 1px solid var(--lumo-border);
+				border: var(--border-width-1) solid var(--lumo-border);
 				padding-block: var(--lumo-space-6);
 				padding-inline: var(--lumo-space-10);
 				text-align: start;
@@ -232,7 +232,7 @@
 
 		hr {
 			border: none;
-			border-block-start: 1px solid var(--lumo-border);
+			border-block-start: var(--border-width-1) solid var(--lumo-border);
 			margin-block: 1em;
 			margin-inline: 0;
 		}
@@ -361,7 +361,7 @@
 	}
 
 	.ProseMirror-selectednode {
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 	}
 }

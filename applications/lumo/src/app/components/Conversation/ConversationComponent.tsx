@@ -375,7 +375,7 @@ const ConversationLayout = ({
                     {isPanelOpen && !isArtifactMobileLayout && !isFullscreen ? (
                         <div
                             ref={artifactPanelContainerRef}
-                            className="artifact-panel-container relative flex flex-column min-w-0 h-full w-full border lumo-border radius-16 lumo-bg-panel"
+                            className="artifact-panel-container relative flex flex-column min-w-0 h-full w-full border radius-16 lumo-bg-panel"
                         >
                             <div
                                 className="artifact-panel-resize-handle"

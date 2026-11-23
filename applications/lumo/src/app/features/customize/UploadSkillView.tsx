@@ -319,7 +319,7 @@ export const UploadSkillView = () => {
                     {/* Drop target for mouse users; the buttons inside are the keyboard path. */}
                     <div
                         className={clsx(
-                            'upload-skill-dropzone py-10 px-6 flex flex-column items-center justify-center gap-3 border border-dashed lumo-border radius-12 lumo-color-glyph-mid lumo-bg-panel',
+                            'upload-skill-dropzone py-10 px-6 flex flex-column items-center justify-center gap-3 border border-dashed radius-12 lumo-color-glyph-mid lumo-bg-panel',
                             isDragging && 'is-dragging'
                         )}
                         onDragOver={(event) => {
@@ -395,10 +395,10 @@ export const UploadSkillView = () => {
                     <Card rounded background={false} className="lumo-bg-panel">
                         <div className="flex flex-nowrap items-center gap-3">
                             <span className="flex flex-nowrap gap-1 shrink-0" aria-hidden>
-                                <span className="upload-skill-source-logo border lumo-border radius-8 lumo-bg-panel flex items-center justify-center">
+                                <span className="upload-skill-source-logo border radius-8 lumo-bg-panel flex items-center justify-center">
                                     <img src={claudeLogo} alt="" width={16} height={16} />
                                 </span>
-                                <span className="upload-skill-source-logo border lumo-border radius-8 lumo-bg-panel flex items-center justify-center">
+                                <span className="upload-skill-source-logo border radius-8 lumo-bg-panel flex items-center justify-center">
                                     <img src={chatgptLogo} alt="" width={16} height={16} />
                                 </span>
                             </span>

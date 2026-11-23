@@ -104,7 +104,7 @@ export const ComposerNotificationCard = ({
             className={clsx(
                 'composer-notification-card',
                 `composer-notification-card--${severity}`,
-                'group-hover-opacity-container relative flex flex-nowrap justify-space-between gap-2 w-full mb-4 p-4 border lumo-border radius-16',
+                'group-hover-opacity-container relative flex flex-nowrap justify-space-between gap-2 w-full mb-4 p-4 border radius-16',
                 usesNativeComposer ? 'flex-column items-stretch' : 'flex-row items-center',
                 hidden && 'composer-notification-card--hidden',
                 className

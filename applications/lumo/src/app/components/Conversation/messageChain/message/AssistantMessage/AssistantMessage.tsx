@@ -213,7 +213,7 @@ function DebugInfo(props: {
     }
     const { usage } = props;
     return (
-        <div className="p-2 border lumo-border radius-8" style={{ fontFamily: 'monospace' }}>
+        <div className="p-2 border radius-8" style={{ fontFamily: 'monospace' }}>
             <p className="mb-1 lumo-color-glyph-mid">DEBUG INFO</p>
             <p className="m-0 lumo-color-glyph-mid">isLoading: {JSON.stringify(props.isLoading)}</p>
             <p className="m-0 lumo-color-glyph-mid">hasToolCall: {JSON.stringify(props.hasToolCall)}</p>

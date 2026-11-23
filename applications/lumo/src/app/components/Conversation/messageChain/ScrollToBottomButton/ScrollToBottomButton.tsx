@@ -76,7 +76,7 @@ export const ScrollToBottomButton = ({
                 <Tooltip title={c('Action').t`Scroll to bottom`}>
                     <button
                         onClick={onClick}
-                        className="scroll-to-bottom-button flex items-center justify-center border lumo-border rounded-50 lumo-color-glyph lumo-bg-panel lumo-elevation-4 hover:shadow-norm cursor-pointer"
+                        className="scroll-to-bottom-button flex items-center justify-center border rounded-50 lumo-color-glyph lumo-bg-panel lumo-elevation-4 hover:shadow-norm cursor-pointer"
                         aria-label={c('Action').t`Scroll to bottom`}
                         style={{ pointerEvents: show ? 'auto' : 'none' }}
                     >

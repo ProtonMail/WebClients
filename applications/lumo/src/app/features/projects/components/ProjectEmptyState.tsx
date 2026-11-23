@@ -25,7 +25,7 @@ export const ProjectEmptyState = ({ promptSuggestions, onSelectSuggestion }: Pro
                 {promptSuggestions.map((suggestion, index) => (
                     <button
                         key={index}
-                        className="project-detail-prompt-suggestion px-5 border lumo-border radius-8 lumo-body-small lumo-color-glyph lumo-bg-control-fill"
+                        className="project-detail-prompt-suggestion px-5 border radius-8 lumo-body-small lumo-color-glyph lumo-bg-control-fill"
                         onClick={() => onSelectSuggestion(suggestion)}
                     >
                         {suggestion}

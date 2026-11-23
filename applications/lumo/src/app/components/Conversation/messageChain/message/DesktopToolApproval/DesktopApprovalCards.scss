@@ -18,7 +18,7 @@
 			position: absolute;
 			display: none;
 			block-size: 1rem;
-			border: 1px solid var(--composer-glow-border);
+			border: var(--border-width-1) solid var(--composer-glow-border);
 			border-radius: var(--lumo-radius-card, var(--border-radius-lg));
 		}
 

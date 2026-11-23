@@ -72,7 +72,7 @@ body {
 		white-space: normal;
 		padding-block: 2px;
 		padding-inline: 4px;
-		border: 1px solid #e1d8ee;
+		border: var(--border-width-1, 1px) solid #e1d8ee;
 		border-radius: 4px;
 		background: #f1eef8;
 		color: #55446e;
@@ -89,7 +89,7 @@ body {
 		}
 
 		&:focus-visible {
-			outline: 2px solid #6439ed;
+			outline: var(--border-width-2, 2px) solid #6439ed;
 			outline-offset: 4px;
 		}
 	}
@@ -105,7 +105,7 @@ body {
 	td {
 		text-align: start;
 		padding: 16px;
-		border-block-end: 1px solid #e9e5f0;
+		border-block-end: var(--border-width-1, 1px) solid #e9e5f0;
 		vertical-align: top;
 	}
 
@@ -174,7 +174,7 @@ body {
 		gap: 12px;
 		padding-block-start: 32px;
 		margin-block-start: 64px;
-		border-block-start: 1px solid #e9e5f0;
+		border-block-start: var(--border-width-1, 1px) solid #e9e5f0;
 		color: #8a8096;
 		font-size: 12px;
 	}
@@ -214,7 +214,7 @@ body {
 
 .ds-table {
 	overflow: auto;
-	border: 1px solid #e9e5f0;
+	border: var(--border-width-1, 1px) solid #e9e5f0;
 	border-radius: 12px;
 
 	// One rounded outer border; cells draw only the internal grid.
@@ -228,8 +228,8 @@ body {
 		th,
 		td {
 			border: 0;
-			border-inline-end: 1px solid #e9e5f0;
-			border-block-end: 1px solid #e9e5f0;
+			border-inline-end: var(--border-width-1, 1px) solid #e9e5f0;
+			border-block-end: var(--border-width-1, 1px) solid #e9e5f0;
 
 			&:last-child {
 				border-inline-end: 0;
@@ -285,7 +285,7 @@ body {
 		flex-shrink: 0;
 		inline-size: 32px;
 		block-size: 32px;
-		border: 1px solid #00000014;
+		border: var(--border-width-1, 1px) solid #00000014;
 		border-radius: 8px;
 	}
 }

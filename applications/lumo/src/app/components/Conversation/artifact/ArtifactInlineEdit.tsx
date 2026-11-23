@@ -191,7 +191,7 @@ export const ArtifactInlineEdit = ({
     return (
         <div
             ref={wrapperRef}
-            className="artifact-inline-edit p-2 border lumo-border radius-12 lumo-bg-panel-elevated lumo-elevation-4"
+            className="artifact-inline-edit p-2 border radius-12 lumo-bg-panel-elevated lumo-elevation-4"
             style={style}
         >
             {inlineEditMode === 'selection' ? (

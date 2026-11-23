@@ -109,7 +109,7 @@ im.$media-expressions: $media-expressions;
 	// Web/Settings nav column: 260 wide, full height, divider on the inline end.
 	.sidebar-container {
 		inline-size: #{rem(220)};
-		border-inline-end: 1px solid var(--lumo-border);
+		border-inline-end: var(--border-width-1) solid var(--lumo-border);
 	}
 
 	// Sits in the Web/Modal header row: 40 × 40, 20 from the top, 16 from the end.
@@ -136,7 +136,7 @@ im.$media-expressions: $media-expressions;
 	// Web/Modal header: 20 / 16 padding around a 40 tall row, divider below.
 	.top-bar {
 		min-block-size: #{rem(77)};
-		border-block-end: 1px solid var(--lumo-border);
+		border-block-end: var(--border-width-1) solid var(--lumo-border);
 	}
 
 	// Mobile tab content should be constrained and scrollable
@@ -155,7 +155,7 @@ im.$media-expressions: $media-expressions;
 	// Mobile section styling
 	@include im.media('<=small') {
 		.mobile-section-header {
-			border-block-end: 1px solid var(--lumo-border);
+			border-block-end: var(--border-width-1) solid var(--lumo-border);
 			padding-block-end: var(--lumo-space-12);
 			margin-block-end: var(--lumo-space-16);
 		}
@@ -358,7 +358,7 @@ im.$media-expressions: $media-expressions;
 	.lumo-bg-control-fill {
 		background-color: rgb(255 255 255 / 0.15) !important;
 		backdrop-filter: blur(10px);
-		border: 1px solid rgb(255 255 255 / 0.2);
+		border: var(--border-width-1) solid rgb(255 255 255 / 0.2);
 
 		.lumo-color-glyph-mid {
 			color: rgb(255 255 255 / 0.9) !important;
@@ -367,7 +367,7 @@ im.$media-expressions: $media-expressions;
 
 	.bg-success-minor {
 		background-color: rgb(46 125 50 / 0.2) !important;
-		border: 1px solid rgb(46 125 50 / 0.3);
+		border: var(--border-width-1) solid rgb(46 125 50 / 0.3);
 
 		.lumo-color-signal-success {
 			color: #4caf50 !important;

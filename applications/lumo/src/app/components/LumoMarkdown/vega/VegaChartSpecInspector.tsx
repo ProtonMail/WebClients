@@ -84,7 +84,7 @@ export const VegaChartSpecPanel = ({
                         role="tab"
                         aria-selected={activeView === 'rendered'}
                         className={clsx(
-                            'vega-lite-chart__source-switch-button py-1 px-2.5 border lumo-border radius-full lumo-label-small',
+                            'vega-lite-chart__source-switch-button py-1 px-2.5 border radius-full lumo-label-small',
                             {
                                 'vega-lite-chart__source-switch-button--active': activeView === 'rendered',
                             }
@@ -98,7 +98,7 @@ export const VegaChartSpecPanel = ({
                         role="tab"
                         aria-selected={activeView === 'raw'}
                         className={clsx(
-                            'vega-lite-chart__source-switch-button py-1 px-2.5 border lumo-border radius-full lumo-label-small',
+                            'vega-lite-chart__source-switch-button py-1 px-2.5 border radius-full lumo-label-small',
                             {
                                 'vega-lite-chart__source-switch-button--active': activeView === 'raw',
                             }

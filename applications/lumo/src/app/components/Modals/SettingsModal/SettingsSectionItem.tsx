@@ -36,10 +36,7 @@ export const SettingsSectionItem = ({
 
     return (
         <div className="flex flex-row flex-nowrap gap-2 md:gap-4 items-center px-0 py-3">
-            <Avatar
-                color="weak"
-                className="settings-section-icon shrink-0 border lumo-border radius-8 lumo-bg-control-fill-empty"
-            >
+            <Avatar color="weak" className="settings-section-icon shrink-0 border radius-8 lumo-bg-control-fill-empty">
                 <LumoIcon className="shrink-0 lumo-color-glyph" name={icon} size={20} />
             </Avatar>
             <div className="flex-1 flex flex-column *:min-size-auto sm:flex-row flex-nowrap gap-2">
@@ -112,10 +109,7 @@ export const SettingsSectionItemButton = ({
             shape="ghost"
             fullWidth
         >
-            <Avatar
-                color="weak"
-                className="settings-section-icon shrink-0 border lumo-border radius-8 lumo-bg-control-fill-empty"
-            >
+            <Avatar color="weak" className="settings-section-icon shrink-0 border radius-8 lumo-bg-control-fill-empty">
                 <LumoIcon className="shrink-0 lumo-color-glyph" name={icon} size={20} />
             </Avatar>
             <div className="flex-1 flex flex-row *:min-size-auto flex-nowrap gap-2">

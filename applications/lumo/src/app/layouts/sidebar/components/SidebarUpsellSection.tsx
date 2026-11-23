@@ -43,7 +43,7 @@ export const SidebarUpsellSection = ({
     return (
         <div
             className={clsx(
-                'sidebar-upsell-section group-hover-opacity-container relative mx-auto mb-0 ml-0 border lumo-border radius-12',
+                'sidebar-upsell-section group-hover-opacity-container relative mx-auto mb-0 ml-0 border radius-12',
                 className
             )}
         >

@@ -2,7 +2,7 @@
 
 .skill-file-tree {
 	block-size: 100%;
-	border-inline-end: 1px solid var(--lumo-border);
+	border-inline-end: var(--border-width-1) solid var(--lumo-border);
 
 	&__row {
 		min-block-size: rem(28);
@@ -19,7 +19,7 @@
 
 		&.is-active {
 			background-color: var(--lumo-panel);
-			box-shadow: 0 0 0 1px var(--lumo-border);
+			box-shadow: 0 0 0 var(--border-width-1) var(--lumo-border);
 
 			.skill-file-tree__file {
 				font: var(--lumo-type-label-medium);
@@ -38,7 +38,7 @@
 
 		&:focus-visible {
 			border-radius: var(--lumo-radius-4);
-			outline: 2px solid var(--lumo-control-border-focus);
+			outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 			outline-offset: calc(-1 * var(--lumo-space-2));
 		}
 	}

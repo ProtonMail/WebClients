@@ -15,7 +15,7 @@ export const ApiUsageMetricCard = ({
     hint: string;
     breakdown?: ReactNode;
 }) => (
-    <div className="api-usage-metric flex flex-nowrap items-start gap-3 p-4 border lumo-border radius-16">
+    <div className="api-usage-metric flex flex-nowrap items-start gap-3 p-4 border radius-16">
         <div className="api-usage-metric__icon flex flex-none items-center justify-center radius-12 lumo-color-glyph-brand-text lumo-bg-control-fill">
             <LumoIcon name={icon} size={17} />
         </div>

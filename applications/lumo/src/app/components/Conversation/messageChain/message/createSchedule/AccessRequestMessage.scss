@@ -10,7 +10,7 @@
 	}
 
 	&__tool + &__tool {
-		border-block-start: 1px solid var(--lumo-border);
+		border-block-start: var(--border-width-1) solid var(--lumo-border);
 	}
 
 	&__icon {

@@ -43,7 +43,7 @@ im.$media-expressions: $media-expressions;
 
 	.lumo-logo-link:focus-visible {
 		border-radius: var(--lumo-radius-4);
-		outline: 2px solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: 2px;
 
 		@media (forced-colors: active) {
@@ -133,7 +133,7 @@ im.$media-expressions: $media-expressions;
 		}
 
 		&:has(> a:focus-visible) {
-			outline: #{rem(2)} solid var(--lumo-control-border-focus);
+			outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 			outline-offset: calc(-1 * var(--lumo-space-2));
 		}
 
@@ -431,7 +431,7 @@ im.$media-expressions: $media-expressions;
 	// Inset ring: the sidebar scroll area clips anything drawn outside the row.
 	&:focus-visible,
 	&:has(> .sidebar-item-main-action:focus-visible) {
-		outline: #{rem(2)} solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: calc(-1 * var(--lumo-space-2));
 	}
 
@@ -821,7 +821,7 @@ im.$media-expressions: $media-expressions;
 	.lumo-sidebar .navigation-link:has(> a:focus-visible),
 	.lumo-sidebar .user-dropdown-button:focus-visible,
 	.apps-dropdown-button:focus-visible {
-		outline: #{rem(2)} solid var(--lumo-control-border-focus);
+		outline: var(--border-width-2) solid var(--lumo-control-border-focus);
 		outline-offset: calc(-1 * var(--lumo-space-2));
 	}
 

@@ -62,13 +62,13 @@ im.$media-expressions: $media-expressions;
 
 .active-files-area {
 	background-color: var(--lumo-control-fill);
-	border: 1px solid var(--lumo-border);
+	border: var(--border-width-1) solid var(--lumo-border);
 	border-radius: var(--lumo-radius-16);
 }
 
 .project-files-area {
 	background-color: rgb(var(--primary-rgb) / 0.05);
-	border: 1px solid rgb(var(--primary-rgb) / 0.2);
+	border: var(--border-width-1) solid rgb(var(--primary-rgb) / 0.2);
 	border-radius: var(--lumo-radius-16);
 }
 

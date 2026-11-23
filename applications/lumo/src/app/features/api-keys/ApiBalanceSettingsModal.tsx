@@ -341,7 +341,9 @@ export const ApiBalanceSettingsModal = ({
                         )}
                     </SettingSection>
                 </SettingSection>
-                {immediateTopUpWarning && <p className="m-0 mt-4 text-sm color-warning">{immediateTopUpWarning}</p>}
+                {immediateTopUpWarning && (
+                    <p className="m-0 mt-4 lumo-body-small lumo-color-signal-warning">{immediateTopUpWarning}</p>
+                )}
                 {saveError !== undefined && (
                     <p className="m-0 mt-4 lumo-body-small lumo-color-signal-danger">
                         {getSaveErrorMessage(saveError)}

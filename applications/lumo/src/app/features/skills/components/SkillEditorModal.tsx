@@ -664,7 +664,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                 />
                 <div
                     className={clsx(
-                        'skill-editor__workspace flex flex-column flex-nowrap border lumo-border radius-12 lumo-bg-control-fill',
+                        'skill-editor__workspace flex flex-column flex-nowrap border radius-12 lumo-bg-control-fill',
                         showTree && 'skill-editor__workspace--split'
                     )}
                 >
@@ -741,7 +741,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
             <ModalTwoFooter className="items-center">
                 <div className="flex flex-nowrap items-center gap-2 min-w-0">
                     {!existing && (
-                        <span className="shrink-0 px-2 py-0.5 border lumo-border radius-8 lumo-label-small lumo-color-glyph-mid">
+                        <span className="shrink-0 px-2 py-0.5 border radius-8 lumo-label-small lumo-color-glyph-mid">
                             {c('collider_2025:Info').t`Draft`}
                         </span>
                     )}

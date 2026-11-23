@@ -51,7 +51,7 @@ export const ContextProgressIndicator = ({ attachments, messageChain, spaceId }:
                 <span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info')
                     .t`Showing the last context estimate.`}</span>
             )}
-            <div className="w-full border lumo-border radius-full lumo-bg-control-fill" style={{ height: '6px' }}>
+            <div className="w-full border radius-full lumo-bg-control-fill" style={{ height: '6px' }}>
                 <div
                     className="h-full radius-full duration-300 lumo-easing-standard"
                     style={{

@@ -22,7 +22,7 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
         <div className="api-keys-token-reveal fixed inset-0 flex items-center justify-center p-4">
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div className="api-keys-token-reveal-overlay absolute inset-0" onClick={onClose} />
-            <div className="api-keys-token-reveal-dialog relative overflow-hidden border lumo-border radius-16 lumo-bg-panel-elevated">
+            <div className="api-keys-token-reveal-dialog relative overflow-hidden border radius-16 lumo-bg-panel-elevated">
                 <div className="api-keys-token-reveal-header pt-6 pb-5 px-6 flex items-start justify-space-between gap-2">
                     <div className="flex items-center gap-3">
                         <div className="api-keys-token-reveal-icon flex shrink-0 items-center justify-center radius-12 lumo-color-control-brand-text lumo-bg-control-brand-fill">
@@ -50,7 +50,7 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
 
                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                     <div
-                        className="api-keys-token-box relative mb-4 border lumo-border radius-12 lumo-bg-control-fill-mid"
+                        className="api-keys-token-box relative mb-4 border radius-12 lumo-bg-control-fill-mid"
                         onClick={handleCopy}
                     >
                         <span className="api-keys-token-text pr-8 block lumo-color-glyph">{token}</span>
