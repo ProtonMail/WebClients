@@ -19,7 +19,7 @@ import {
     selectToAppName,
 } from '../state-machine/publicAppStateMachine';
 import { runLogin } from '../state-machine/runLogin';
-import { isBusinessReferralSignup, isReferralSignup } from './helper';
+import { getBusinessReferralRedirect, isBusinessReferralSignup, isReferralSignup } from './helper';
 import { getSignupMeta } from './signupPagesJson';
 
 const SingleSignupSwitchContainer = () => {
@@ -46,20 +46,9 @@ const SingleSignupSwitchContainer = () => {
         return result;
     };
 
-    // The business-referral marketing page (proton.me/business/try) redirects back to this
-    // legacy generic business signup path with a `referrer` param once it's added — that's the
-    // signal distinguishing it from any other, unrelated link to this same legacy entry point
-    // (which must keep rendering the legacy flow, e.g. BusinessReferralPlans.tsx's own
-    // invalid-referral fallback redirects here on purpose).
-    if (location.pathname === SSO_PATHS.BUSINESS_SIGNUP_GENERIC && searchParams.has('referrer')) {
-        const nextParams = new URLSearchParams();
-        ['plan', 'currency', 'coupon', 'referrer', 'invite', 'email'].forEach((key) => {
-            const value = searchParams.get(key);
-            if (value) {
-                nextParams.set(key, value);
-            }
-        });
-        return <Redirect to={{ pathname: SSO_PATHS.BUSINESS_REFERRAL_SIGNUP, search: nextParams.toString() }} />;
+    const businessReferralRedirect = getBusinessReferralRedirect(location);
+    if (businessReferralRedirect) {
+        return <Redirect to={businessReferralRedirect} />;
     }
 
     const isReferral = isReferralSignup(location);

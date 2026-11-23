@@ -33,6 +33,7 @@ import SignInWithAnotherDeviceContainer from './signInWithAnotherDevice/SignInWi
 import PublicAppSignupInvite from './signup/PublicAppSignupInvite';
 import PublicAppVpnSignup from './signup/PublicAppVpnSignup';
 import SingleSignupSwitchContainer from './signup/SingleSignupSwitchContainer';
+import { getBusinessReferralRedirect } from './signup/helper';
 import { getProvisioningToken } from './signup/orgProvisioning';
 import Activation from './signupCtx/flows/bornPrivate/activation/Activation';
 import Recovery from './signupCtx/flows/bornPrivate/recovery/Recovery';
@@ -129,6 +130,7 @@ const PublicAppMainRoutes = () => {
                                         ...(getProvisioningToken(location.hash)
                                             ? [SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]
                                             : []),
+                                        ...(getBusinessReferralRedirect(location) ? [SSO_PATHS.VPN_BUSINESS] : []),
                                     ]}
                                 >
                                     <SingleSignupSwitchContainer />
