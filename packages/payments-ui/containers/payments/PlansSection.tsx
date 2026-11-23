@@ -31,7 +31,7 @@ import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanIDs, getValidAudience, getValidCycle } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-outcome';
+import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-eligibility';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';

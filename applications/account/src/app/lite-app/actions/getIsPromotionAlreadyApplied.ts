@@ -4,7 +4,7 @@ import type { MultiSubscriptionContext } from '@proton/payments/core/subscriptio
 import {
     getChangedSubscription,
     getSubscriptionChangedByPlan,
-} from '@proton/payments/core/subscription/purchase-outcome';
+} from '@proton/payments/core/subscription/purchase-eligibility';
 
 const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.LUMO];
 

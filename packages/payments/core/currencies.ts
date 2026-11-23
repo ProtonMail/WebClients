@@ -10,7 +10,7 @@ import type { Currency, PaymentStatus } from './interface';
 import { getWebSubscriptions } from './subscription/helpers/external-management';
 import type { Subscription } from './subscription/interface';
 import type { MultiSubscriptionContext } from './subscription/multi-subscription-context';
-import { getPurchaseOutcome } from './subscription/purchase-outcome';
+import { getPurchaseOutcome } from './subscription/purchase-eligibility';
 import { isValidPlanName } from './type-guards';
 
 interface CurrencyFormattingConfig {

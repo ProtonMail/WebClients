@@ -1,8 +1,9 @@
 import { fromUnixTime, isBefore, subDays } from 'date-fns';
 
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { type MaybeFreeSubscription, canModify, getPlan, isTrial } from '@proton/payments/core/subscription/helpers';
+import { type MaybeFreeSubscription, getPlan, isTrial } from '@proton/payments/core/subscription/helpers';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { canModify } from '@proton/payments/core/subscription/purchase-eligibility';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';

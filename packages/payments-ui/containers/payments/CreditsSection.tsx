@@ -16,7 +16,7 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import InAppPurchaseModal from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
-import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
+import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/purchase-eligibility';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

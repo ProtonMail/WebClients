@@ -46,7 +46,7 @@ import {
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
-import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-eligibility';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';

@@ -60,14 +60,9 @@ import type {
     SubscriptionCheckForbiddenReason,
     SubscriptionEstimation,
 } from './interface';
-import {
-    canModifySubscriptions,
-    canSelectB2CLumoPlan,
-    isB2CLumoPlan,
-    isForbiddenForStoreLumoSubscriber,
-} from './lumo-purchase-rules';
+import { isForbiddenForStoreLumoSubscriber } from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
-import { getPurchaseOutcome } from './purchase-outcome';
+import { getPurchaseOutcome } from './purchase-eligibility';
 
 // TODO: Remove these compatibility re-exports after migrating consumers to the focused helper modules.
 export type { MaybeFreeSubscription } from '../subscription/interface';
@@ -756,49 +751,6 @@ export function isSubscriptionCheckForbidden(
     estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): boolean {
     return isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, estimationParameters).forbidden;
-}
-
-export function canModify(multiSubscriptionContext: MultiSubscriptionContext) {
-    if (multiSubscriptionContext.lumoMultiSubscriptions) {
-        return canModifySubscriptions(multiSubscriptionContext);
-    }
-
-    const { subscriptions } = multiSubscriptionContext;
-    return (
-        subscriptions.length === 0 ||
-        subscriptions.some((subscription) => !isManagedExternally(subscription)) ||
-        (subscriptions.length === 1 && hasLumo(subscriptions[0]))
-    );
-}
-
-export function canStartPurchase(
-    multiSubscriptionContext: MultiSubscriptionContext,
-    requestedPlanName: PLANS | ADDON_NAMES | undefined
-): boolean {
-    return (
-        canModify(multiSubscriptionContext) ||
-        (canSelectB2CLumoPlan(multiSubscriptionContext) && isB2CLumoPlan(multiSubscriptionContext, requestedPlanName))
-    );
-}
-
-type SubscriptionActions =
-    | {
-          canModify: true;
-          cantModifyReason: undefined;
-      }
-    | {
-          canModify: false;
-          cantModifyReason: 'subscription_managed_externally';
-      };
-
-export function getAvailableSubscriptionActions(
-    multiSubscriptionContext: MultiSubscriptionContext
-): SubscriptionActions {
-    if (canModify(multiSubscriptionContext)) {
-        return { canModify: true, cantModifyReason: undefined };
-    }
-
-    return { canModify: false, cantModifyReason: 'subscription_managed_externally' };
 }
 
 /**

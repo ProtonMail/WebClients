@@ -30,7 +30,7 @@ import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { getPurchaseOutcome } from '@proton/payments/core/subscription/purchase-outcome';
+import { getPurchaseOutcome } from '@proton/payments/core/subscription/purchase-eligibility';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import {
     buildLumoSubscription,
