@@ -1,7 +1,7 @@
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { SignupType } from '../../../signup/interfaces';
@@ -9,6 +9,7 @@ import { type BaseSignupContextProps, SignupContextProvider } from '../../contex
 import getAvailablePlansWithCycles from '../../helpers/getAvailablePlansWithCycles';
 import * as signupSearchParams from '../../helpers/signupSearchParams';
 import { getBusinessReferralPlanConfigs } from './config/planConfigs';
+import { getBusinessReferralCoupon } from './helpers/coupon';
 import CheckoutStep from './steps/CheckoutStep';
 import PlansStep from './steps/PlansStep';
 
@@ -54,6 +55,8 @@ const BusinessReferralSignup = (props: BaseSignupContextProps) => {
     const plan =
         planParam && planConfigs.some((config) => config.plan === planParam) ? planParam : DEFAULT_BUSINESS_SIGNUP_PLAN;
 
+    const coupon = getBusinessReferralCoupon(searchParams);
+
     return (
         <SignupContextProvider
             {...props}
@@ -68,12 +71,7 @@ const BusinessReferralSignup = (props: BaseSignupContextProps) => {
                     planIDs: { [plan]: 1 },
                     currency: signupSearchParams.getCurrency(searchParams),
                     cycle: BUSINESS_SIGNUP_CYCLE,
-                    // Referral coupons are whitelist-only and the whitelist entry needs a referrer: `/check` doesn't
-                    // enforce it but subscribing does, so without one no coupon is sent rather than showing a
-                    // discount that fails at payment.
-                    coupon: referralIdentifier
-                        ? (signupSearchParams.getCoupon(searchParams) ?? COUPON_CODES.BUSINESS_REFERRAL_2026)
-                        : undefined,
+                    coupon,
                 },
                 telemetryContext: 'ctx-signup-business-referral',
             }}
