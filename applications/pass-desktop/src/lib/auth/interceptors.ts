@@ -11,6 +11,8 @@ import logger from '../../utils/logger';
 import { getLoggableUrl, getOriginHref, isMainWindowEntry } from '../../utils/navigation';
 import { getLoginUrl, handleDeepLink } from './deep-link';
 
+const EXTERNAL_PROTOCOLS = ['http:', 'https:', 'mailto:'];
+
 export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) => {
     app.addListener('web-contents-created', (_, contents) => {
         contents.addListener('will-attach-webview', (evt) => evt.preventDefault());
@@ -56,6 +58,11 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
 
             // Let OS handle anything else
             evt.preventDefault();
+            if (!EXTERNAL_PROTOCOLS.includes(url.protocol)) {
+                logger.info(`[will-navigate] deny (external): ${url.protocol}`);
+                return;
+            }
+
             logger.info(`[will-navigate] allow (external): ${getLoggableUrl(url.href)}`);
             return shell.openExternal(evt.url).catch(noop);
         });
@@ -70,7 +77,7 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
             }
 
             // Shell out to the OS handler for http(s) and mailto
-            if (['http:', 'https:', 'mailto:'].includes(url.protocol)) {
+            if (EXTERNAL_PROTOCOLS.includes(url.protocol)) {
                 logger.info(`[setWindowOpenHandler] opening url externally: ${getLoggableUrl(href)}`);
                 shell.openExternal(href).catch(noop);
             }
