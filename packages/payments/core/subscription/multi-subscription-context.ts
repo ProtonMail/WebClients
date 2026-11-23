@@ -1,4 +1,7 @@
+import { getPlanName } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
+
 import type { EntitlementCatalog } from '../entitlements/interface';
+import type { PlanIDs } from '../interface';
 import { isPaidSubscription } from '../type-guards';
 import { getSubscriptionsArray } from './helpers/external-management';
 import type { MaybeFreeSubscription, Subscription } from './interface';
@@ -36,3 +39,8 @@ export const noSubscriptionContext = createMultiSubscriptionContext({
     subscription: undefined,
     entitlementCatalog: undefined,
 });
+
+export const getSubscriptionWithPlan = (
+    { subscriptions }: Pick<MultiSubscriptionContext, 'subscriptions'>,
+    planName: keyof PlanIDs
+): Subscription | undefined => subscriptions.find((subscription) => getPlanName(subscription) === planName);
