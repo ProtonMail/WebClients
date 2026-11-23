@@ -14,6 +14,7 @@ import { renderWithProviders } from '@proton/components/testing/vitest/renderWit
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {
+    ADDON_NAMES,
     ADDON_PREFIXES,
     ADDON_TOTAL_PARAM_NAMES,
     COUPON_CODES,
@@ -29,14 +30,20 @@ import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getPurchaseOutcome } from '@proton/payments/core/subscription/purchase-outcome';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { getUserMock } from '@proton/payments/testing/data-user';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 import { type FeatureFlag, MailFeatureFlag } from '@proton/unleash/Flags';
 import * as useFlagModule from '@proton/unleash/useFlag';
@@ -62,7 +69,6 @@ const callGetParameters = (search: string, overrides: { subscription?: any } = {
     return getParameters({
         search,
         plans,
-        subscription,
         user: userDefault,
         paymentStatus,
         multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
@@ -338,6 +344,76 @@ describe('getParameters', () => {
             });
         });
     });
+
+    describe('next to several subscriptions', () => {
+        const webMailPlus = buildSubscription({ planName: PLANS.MAIL, currency: 'CHF', cycle: CYCLE.YEARLY });
+        const webLumoPlus = buildLumoSubscription(PLANS.LUMO, { Cycle: CYCLE.MONTHLY, Currency: 'CHF' });
+
+        const callWithSubscriptions = (
+            search: string,
+            loadedSubscription: Subscription,
+            otherSubscription: Subscription
+        ) =>
+            getParameters({
+                search,
+                plans,
+                user: userDefault,
+                paymentStatus,
+                multiSubscriptionContext: buildMultiSubscriptionContext([loadedSubscription, otherSubscription]),
+            });
+
+        it('defaults the Lumo Plus checkout to the monthly cycle of Lumo Plus, not the yearly cycle of Mail Plus', () => {
+            const { plan, cycle } = callWithSubscriptions('?plan=lumo2024', webMailPlus, webLumoPlus);
+
+            expect(plan?.Name).toBe(PLANS.LUMO);
+            expect(cycle).toBe(CYCLE.MONTHLY);
+        });
+
+        it('defaults the Mail Plus checkout to the yearly cycle of Mail Plus when Lumo Plus is loaded', () => {
+            const { plan, cycle } = callWithSubscriptions('?plan=mail2022', webLumoPlus, webMailPlus);
+
+            expect(plan?.Name).toBe(PLANS.MAIL);
+            expect(cycle).toBe(CYCLE.YEARLY);
+        });
+
+        it('uses the default cycle when the requested plan would change an App Store subscription', () => {
+            const webMailPlusMonthly = buildSubscription({
+                planName: PLANS.MAIL,
+                currency: 'CHF',
+                cycle: CYCLE.MONTHLY,
+            });
+            const iosLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+                Cycle: CYCLE.MONTHLY,
+                Currency: 'CHF',
+                External: SubscriptionPlatform.iOS,
+            });
+            const multiSubscriptionContext = buildMultiSubscriptionContext([webMailPlusMonthly, iosLumoPlus]);
+
+            const { plan, cycle } = getParameters({
+                search: '?plan=lumo2024',
+                plans,
+                user: userDefault,
+                paymentStatus,
+                multiSubscriptionContext,
+            });
+
+            expect(getPurchaseOutcome(multiSubscriptionContext, { [PLANS.LUMO]: 1 })).toEqual({ type: 'refused' });
+            expect(plan?.Name).toBe(PLANS.LUMO);
+            expect(cycle).toBe(DEFAULT_CYCLE);
+        });
+
+        it('expands Mail Plus with Lumo seats, not the loaded Lumo Plus', () => {
+            const { plan, cycle, subscriptionToExpand } = callWithSubscriptions(
+                '?totalLumo=1',
+                webLumoPlus,
+                webMailPlus
+            );
+
+            expect(subscriptionToExpand).toBe(webMailPlus);
+            expect(plan?.Name).toBe(PLANS.MAIL);
+            expect(cycle).toBe(CYCLE.YEARLY);
+        });
+    });
 });
 
 vi.mock('@proton/components/hooks/useModals', () => ({
@@ -477,6 +553,17 @@ describe('<AutomaticSubscriptionModal />', () => {
         expect(props.plan).toBeUndefined();
         expect(props.planIDs).toBeDefined();
         expect(typeof props.onSubscribed).toBe('function');
+    });
+
+    it('adds the Lumo seats to Mail Plus when Lumo Plus is the loaded subscription', async () => {
+        const webMailPlus = buildSubscription({ planName: PLANS.MAIL, currency: 'CHF', cycle: CYCLE.YEARLY });
+        const webLumoPlus = buildLumoSubscription(PLANS.LUMO, { Cycle: CYCLE.MONTHLY, Currency: 'CHF' });
+        renderModal('?totalLumo=1', { ...webLumoPlus, SecondarySubscriptions: [webMailPlus] });
+
+        await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
+        const props = mockOpenSubscriptionModal.mock.calls[0][0];
+        expect(props.planIDs).toEqual({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
+        expect(props.cycle).toBe(CYCLE.YEARLY);
     });
 
     it('still supports deprecated addon=lumo for backward compatibility', async () => {

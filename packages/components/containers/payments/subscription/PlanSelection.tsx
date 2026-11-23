@@ -26,6 +26,7 @@ import {
     getIsB2BAudienceFromSubscription,
     getMaximumCycleForApp,
     getPlan,
+    getPlanName,
     hasLumoAddon,
     hasMeet,
     hasMeetBusiness,
@@ -42,6 +43,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { canSelectB2CLumoPlan, getLumoTierUpgrades } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-outcome';
 import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
@@ -445,7 +447,6 @@ export function useAccessiblePlans({
         IndividualPlans,
         FamilyPlans,
         B2BPlans,
-        currentPlan,
         isVpnSettingsApp,
         isPassSettingsApp,
         availableCurrenciesByAudience: {
@@ -516,7 +517,6 @@ const PlanSelection = (props: Props) => {
         FamilyPlans,
         B2BPlans,
         enabledProductB2CPlans,
-        currentPlan,
         isVpnSettingsApp,
         isPassSettingsApp,
         availableCurrenciesByAudience,
@@ -631,7 +631,10 @@ const PlanSelection = (props: Props) => {
     };
 
     const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[], plansInAudience: Plan[]) => {
-        const isCurrentPlan = currentPlan?.ID === plan.ID;
+        const subscriptionWithPlan = multiSubscriptionContext.subscriptions.find(
+            (heldSubscription) => getPlanName(heldSubscription) === plan.Name
+        );
+        const isCurrentPlan = subscriptionWithPlan !== undefined;
         const isRecommended = !hasRecommended.has(audience) && recommendedPlans.includes(plan.Name as PLANS);
         // Only find one recommended plan, in order of priority
         if (isRecommended) {
@@ -675,7 +678,7 @@ const PlanSelection = (props: Props) => {
         const planTitle = shortPlan.title;
 
         const action = (() => {
-            if (isCurrentPlan && !trial) {
+            if (isCurrentPlan && !isTrial(subscriptionWithPlan)) {
                 return c('Action').t`Edit subscription`;
             }
 
@@ -785,7 +788,7 @@ const PlanSelection = (props: Props) => {
                 onSelect={(planName) => {
                     onChangePlanIDs(
                         switchPlan({
-                            subscription,
+                            subscription: getSubscriptionChangedByPlan(multiSubscriptionContext, planName),
                             newPlan: planName,
                             organization,
                             plans,

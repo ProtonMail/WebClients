@@ -25,11 +25,13 @@ import {
     URL_CONFIGURABLE_ADDON_PREFIXES,
 } from '@proton/payments/core/constants';
 import { getPreferredCurrency } from '@proton/payments/core/currencies';
-import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
+import type { PaymentStatus } from '@proton/payments/core/interface';
+import { getSubscriptionSupportingAddon } from '@proton/payments/core/plan/addons';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-outcome';
 import { extractSubscriptionSearchParams } from '@proton/payments/core/subscription/search-params';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -108,14 +110,12 @@ const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, .
 export const getParameters = ({
     search,
     plans,
-    subscription,
     user,
     paymentStatus,
     multiSubscriptionContext,
 }: {
     search: string;
     plans: Plan[];
-    subscription: Subscription | FreeSubscription;
     user: UserModel;
     paymentStatus: PaymentStatus;
     multiSubscriptionContext: MultiSubscriptionContext;
@@ -154,24 +154,28 @@ export const getParameters = ({
 
     const plansMap = getPlansMap(plans, preferredCurrency, true);
 
-    let plan = plansMap?.[planParam as PLANS];
-    const expandsSubscription = !plan && (!!totals.totalLumo || !!totals.totalMeet);
+    const requestedPlan = plansMap?.[planParam as PLANS];
+    const expandsSubscription = !requestedPlan && (!!totals.totalLumo || !!totals.totalMeet);
+    const subscriptionToExpand: Subscription | undefined =
+        getSubscriptionSupportingAddon(
+            multiSubscriptionContext.subscriptions,
+            totals.totalLumo ? ADDON_PREFIXES.LUMO : ADDON_PREFIXES.MEET
+        ) ?? multiSubscriptionContext.subscriptions[0];
 
-    if (!plan && expandsSubscription) {
-        plan = plansMap?.[getPlanName(subscription) as PLANS];
-    }
+    const plan = expandsSubscription ? plansMap?.[getPlanName(subscriptionToExpand) as PLANS] : requestedPlan;
 
     const cycle = (() => {
         if (parsedCycle) {
             return parsedCycle;
         }
 
-        if (expandsSubscription && subscription?.Cycle) {
-            return subscription.Cycle;
+        if (expandsSubscription) {
+            return subscriptionToExpand?.Cycle ?? DEFAULT_CYCLE;
         }
 
-        if (subscription?.Cycle) {
-            return Math.min(subscription.Cycle, DEFAULT_CYCLE);
+        const changedSubscription = plan && getSubscriptionChangedByPlan(multiSubscriptionContext, plan.Name);
+        if (changedSubscription) {
+            return Math.min(changedSubscription.Cycle, DEFAULT_CYCLE);
         }
 
         return DEFAULT_CYCLE;
@@ -191,6 +195,7 @@ export const getParameters = ({
         preferredCurrency,
         totals,
         upsellRef,
+        subscriptionToExpand,
     };
 };
 
@@ -243,10 +248,10 @@ export const AutomaticSubscriptionModal = () => {
             totals,
             preferredCurrency,
             upsellRef,
+            subscriptionToExpand,
         } = getParameters({
             search: search ?? '',
             plans,
-            subscription,
             user,
             paymentStatus,
             multiSubscriptionContext,
@@ -337,7 +342,7 @@ export const AutomaticSubscriptionModal = () => {
 
         if (eligibility.type === 'pass-through') {
             if (!planParam && totals.totalLumo) {
-                const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+                const selectedPlan = SelectedPlan.createFromSubscription(subscriptionToExpand, plansMap);
 
                 openProps.planIDs = selectedPlan.setLumoCount(selectedPlan.getTotalUsers()).planIDs;
                 openProps.plan = undefined;
@@ -347,7 +352,7 @@ export const AutomaticSubscriptionModal = () => {
 
                 void openSubscriptionModal(openProps);
             } else if (!planParam && totals.totalMeet) {
-                const selectedPlan = SelectedPlan.createFromSubscription(subscription, plansMap);
+                const selectedPlan = SelectedPlan.createFromSubscription(subscriptionToExpand, plansMap);
 
                 openProps.planIDs = selectedPlan.setMeetCount(selectedPlan.getTotalUsers()).planIDs;
                 openProps.plan = undefined;
