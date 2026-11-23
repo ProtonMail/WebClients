@@ -710,6 +710,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Ja hi ha un full de càlcul amb aquest nom."
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "\"History\" és un nom reservat i no es pot utilitzar per a cap full"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Els noms dels fulls no poden tenir més de 31 caràcters"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Els noms dels fulls no poden contenir \\ / ? * [ ] ni :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Els noms dels fulls no poden començar ni acabar amb un apòstrof"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
