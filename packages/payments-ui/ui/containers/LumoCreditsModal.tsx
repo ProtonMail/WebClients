@@ -5,18 +5,30 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Loader } from '@proton/atoms/Loader/Loader';
-import { LUMO_CREDIT_PRESET_USD_AMOUNTS, MIN_LUMO_CREDIT_AMOUNT } from '@proton/payments/core/amount-limits';
+import { LUMO_CREDIT_TOP_UP } from '@proton/payments/core/amount-limits';
 import {
     type ProductCheckResponse,
     getBuyLumoCreditConfig,
     getCheckLumoCreditConfig,
+    getLumoCreditQuantity,
 } from '@proton/payments/core/api/createPaymentSubscription';
+import { getNaiveCurrencyRate } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { TopUpModal, type TopUpModalProps } from './TopUpModal';
 
-export const LumoCreditsModal = ({ onSuccess, ...props }: TopUpModalProps & { onSuccess?: () => void }) => {
+const CREDIT_PRICE_USD_CENTS = 100;
+
+const getEstimatedAmountDue = (amount: number, currency: Currency) =>
+    getLumoCreditQuantity(amount, currency) * CREDIT_PRICE_USD_CENTS * getNaiveCurrencyRate(currency);
+
+export const LumoCreditsModal = ({
+    onSuccess,
+    formatCredits,
+    ...props
+}: TopUpModalProps & { onSuccess?: () => void; formatCredits: (credits: number) => string }) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const getPaymentMethods = useGetPaymentMethods();
@@ -39,8 +51,10 @@ export const LumoCreditsModal = ({ onSuccess, ...props }: TopUpModalProps & { on
             sentryComponent="lumo-credits-modal"
             flow="lumo-credit"
             initialCurrency={subscription?.Currency}
-            minAmount={MIN_LUMO_CREDIT_AMOUNT}
-            presetUsdAmounts={LUMO_CREDIT_PRESET_USD_AMOUNTS}
+            minWholeAmount={LUMO_CREDIT_TOP_UP.minimum}
+            presetWholeAmounts={LUMO_CREDIT_TOP_UP.presets}
+            getAmountLabel={(amount, currency) => formatCredits(getLumoCreditQuantity(amount, currency))}
+            getEstimatedAmountDue={getEstimatedAmountDue}
             checkTopUp={(amount, currency) =>
                 api<ProductCheckResponse>(
                     getCheckLumoCreditConfig({

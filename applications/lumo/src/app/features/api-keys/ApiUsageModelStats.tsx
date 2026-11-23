@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { formatUsdAmount, getApiModelPricingUsd } from '../api-docs/apiTokenPricingUsd';
+import { formatCredits, getApiModelPricing } from '../api-docs/apiTokenPricing';
 import { formatTokenCount } from './apiKeysHelpers';
 
 const RateHint = ({ amount }: { amount: number | undefined }) => {
@@ -8,23 +8,19 @@ const RateHint = ({ amount }: { amount: number | undefined }) => {
         return null;
     }
 
-    const formattedAmount = formatUsdAmount(amount);
+    const formattedAmount = formatCredits(amount);
     return (
         <small className="api-usage-model__rate lumo-label-small lumo-color-glyph-mid">{c('collider_2025: Label')
             .t`${formattedAmount} per 1M tokens`}</small>
     );
 };
 
-const getRatesNote = (cacheInput: number | null) => {
-    if (cacheInput === null) {
-        return c('collider_2025: Info').t`Prices shown in USD.`;
-    }
-
-    const formattedCacheInput = formatUsdAmount(cacheInput);
-    return c('collider_2025: Info').t`Cached input ${formattedCacheInput} per 1M tokens. Prices shown in USD.`;
+const getRatesNote = (cacheInput: number) => {
+    const formattedCacheInput = formatCredits(cacheInput);
+    return c('collider_2025: Info').t`Cached input ${formattedCacheInput} per 1M tokens.`;
 };
 
-/** Per-model usage stats with the matching USD list price shown under each figure. */
+/** Per-model usage stats with the matching price in credits shown under each figure. */
 export const ApiUsageModelStats = ({
     model,
     inputTokens,
@@ -36,7 +32,7 @@ export const ApiUsageModelStats = ({
     outputTokens: number;
     formattedCost: string;
 }) => {
-    const rates = getApiModelPricingUsd(model);
+    const rates = getApiModelPricing(model);
 
     return (
         <div
@@ -64,7 +60,7 @@ export const ApiUsageModelStats = ({
                     <strong>{formattedCost}</strong>
                 </div>
             </div>
-            {rates ? (
+            {rates?.cacheInput != null ? (
                 <p className="api-usage-model__rates-note mt-3 mb-0 mx-0 pt-2.5 lumo-label-small lumo-color-glyph-mid">
                     {getRatesNote(rates.cacheInput)}
                 </p>

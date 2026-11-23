@@ -2,16 +2,12 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
 
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 
 vi.mock('@proton/account/paymentStatus/hooks');
-vi.mock('@proton/account/subscription/hooks');
-vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/app-context/useApi');
 vi.mock('./useApiUsageSummary', () => ({
     useApiUsageSummary: () => ({ dates: [], rows: [], isLoading: false, error: false }),
@@ -48,8 +44,6 @@ const setup = (balances: string[], { canTopUp }: { canTopUp?: boolean } = {}) =>
         })
     );
     (useApi as Mock).mockReturnValue(api);
-    (useUser as Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
-    (useSubscription as Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'CH', VendorStates: {} }, false]);
     render(<ApiUsageDashboard isOrgAdmin={false} isOrgMember={false} canTopUp={canTopUp} />);
     return api;
@@ -81,22 +75,22 @@ describe('ApiUsageDashboard top-up', () => {
         setup(['25'], { canTopUp: false });
         await advance(0);
 
-        expect(getBalanceAmount()).toBe('US$25');
+        expect(getBalanceAmount()).toBe('25 credits');
         expect(screen.queryByRole('button', { name: 'Top up balance' })).not.toBeInTheDocument();
     });
 
     it('polls the balance after a purchase until it increases', async () => {
         const api = setup(['25', '25', '45']);
         await advance(0);
-        expect(getBalanceAmount()).toBe('US$25');
+        expect(getBalanceAmount()).toBe('25 credits');
 
         openTopUp();
         fireEvent.click(screen.getByRole('button', { name: 'Buy funds' }));
         await advance(3000);
-        expect(getBalanceAmount()).toBe('US$25');
+        expect(getBalanceAmount()).toBe('25 credits');
         await advance(3000);
 
-        expect(getBalanceAmount()).toBe('US$45');
+        expect(getBalanceAmount()).toBe('45 credits');
         await advance(30_000);
         expect(api).toHaveBeenCalledTimes(3);
     });
@@ -110,7 +104,7 @@ describe('ApiUsageDashboard top-up', () => {
         await advance(30_000);
 
         expect(api).toHaveBeenCalledTimes(1);
-        expect(getBalanceAmount()).toBe('US$25');
+        expect(getBalanceAmount()).toBe('25 credits');
     });
 
     it('stops polling after 15 seconds without a balance increase', async () => {

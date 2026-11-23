@@ -10,10 +10,10 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import type { Currency } from '@proton/payments/core/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import { formatApiCurrency, parseApiAmount } from './apiKeysHelpers';
+import { formatCredits } from '../api-docs/apiTokenPricing';
+import { parseApiAmount } from './apiKeysHelpers';
 
 const MIN_AUTO_TOP_UP_AMOUNT = 25;
 const MAX_AUTO_TOP_UP_AMOUNT = 100;
@@ -22,16 +22,16 @@ const NOT_PRIMARY_ADMIN_CODE = 2011;
 const MISSING_SCOPE_CODE = 9100;
 const ACTIVE_OPERATION_CODE = 2502;
 
-const getAmountRangeMessage = (currency: Currency) => {
-    const formattedMinAmount = formatApiCurrency(MIN_AUTO_TOP_UP_AMOUNT, currency);
-    const formattedMaxAmount = formatApiCurrency(MAX_AUTO_TOP_UP_AMOUNT, currency);
+const getAmountRangeMessage = () => {
+    const formattedMinAmount = formatCredits(MIN_AUTO_TOP_UP_AMOUNT);
+    const formattedMaxAmount = formatCredits(MAX_AUTO_TOP_UP_AMOUNT);
     return c('collider_2025: Error')
         .t`Top-up amount must be a whole amount between ${formattedMinAmount} and ${formattedMaxAmount}`;
 };
 
-const getThresholdRangeMessage = (amount: number, currency: Currency) => {
-    const formattedMinThreshold = formatApiCurrency(MIN_AUTO_TOP_UP_THRESHOLD, currency);
-    const formattedMaxThreshold = formatApiCurrency(amount - 1, currency);
+const getThresholdRangeMessage = (amount: number) => {
+    const formattedMinThreshold = formatCredits(MIN_AUTO_TOP_UP_THRESHOLD);
+    const formattedMaxThreshold = formatCredits(amount - 1);
     return c('collider_2025: Error')
         .t`Threshold must be a whole amount between ${formattedMinThreshold} and ${formattedMaxThreshold}`;
 };
@@ -58,13 +58,10 @@ export interface ApiBalanceSettings {
     spendingLimit: ApiSpendingLimitSettings;
 }
 
-export const getAutoTopUpSummary = (
-    { amount, threshold }: Pick<ApiAutoTopUpSettings, 'amount' | 'threshold'>,
-    currency: Currency
-) => {
-    const formattedAmount = formatApiCurrency(amount, currency);
-    const formattedThreshold = formatApiCurrency(threshold, currency);
-    return c('collider_2025: Info').t`Adding ${formattedAmount} when your balance falls below ${formattedThreshold}`;
+export const getAutoTopUpSummary = ({ amount, threshold }: Pick<ApiAutoTopUpSettings, 'amount' | 'threshold'>) => {
+    const formattedAmount = formatCredits(amount);
+    const formattedThreshold = formatCredits(threshold);
+    return c('collider_2025: Info').t`Adding ${formattedAmount} when your balance reaches ${formattedThreshold}`;
 };
 
 /** Mirrors the backend: it tops up at or below the threshold unless the monthly spending limit would be exceeded. */
@@ -74,20 +71,18 @@ export const getImmediateTopUpWarning = ({
     threshold,
     spent,
     spendingLimit,
-    currency,
 }: {
     balance: number;
     amount: number;
     threshold: number;
     spent: number;
     spendingLimit: number | undefined;
-    currency: Currency;
 }) => {
     if (balance > threshold || (spendingLimit !== undefined && spent + amount > spendingLimit)) {
         return;
     }
-    const formattedBalance = formatApiCurrency(balance, currency);
-    const formattedAmount = formatApiCurrency(amount, currency);
+    const formattedBalance = formatCredits(balance);
+    const formattedAmount = formatCredits(amount);
     return c('collider_2025: Warning')
         .t`Your balance of ${formattedBalance} has reached the threshold, so saving will top up ${formattedAmount} right away.`;
 };
@@ -129,14 +124,12 @@ const AmountField = ({
     label,
     value,
     onValue,
-    currency,
     invalid = false,
 }: {
     id: string;
     label: string;
     value: string;
     onValue?: (value: string) => void;
-    currency: Currency;
     invalid?: boolean;
 }) => (
     <div className="api-usage-settings-field lumo-body-medium lumo-color-glyph">
@@ -148,7 +141,7 @@ const AmountField = ({
             step="1"
             value={value}
             onValue={onValue}
-            prefix={<span className="lumo-body-small lumo-color-glyph-mid">{currency}</span>}
+            suffix={<span className="lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Unit').t`credits`}</span>}
             error={invalid}
         />
     </div>
@@ -167,7 +160,6 @@ const getSaveErrorMessage = (error: unknown) => {
 
 interface Props extends ModalStateProps {
     settings: ApiBalanceSettings;
-    currency: Currency;
     balance?: number;
     spent: number;
     canChargeAutoTopUp: boolean;
@@ -176,7 +168,6 @@ interface Props extends ModalStateProps {
 
 export const ApiBalanceSettingsModal = ({
     settings,
-    currency,
     balance,
     spent,
     canChargeAutoTopUp,
@@ -211,9 +202,9 @@ export const ApiBalanceSettingsModal = ({
     const isAutoTopUpValid =
         !autoTopUpEnabled || (isAmountValid && isThresholdValid && (!limitEnabled || isLimitValid));
 
-    const formattedSpent = formatApiCurrency(spent, currency);
-    const formattedLimit = isLimitValid ? formatApiCurrency(parsedLimit, currency) : '';
-    const formattedSavedAmount = formatApiCurrency(savedAmount, currency);
+    const formattedSpent = formatCredits(spent);
+    const formattedLimit = isLimitValid ? formatCredits(parsedLimit) : '';
+    const formattedSavedAmount = formatCredits(savedAmount);
     const savesAutoTopUpChange =
         !openedSettings.autoTopUp.enabled ||
         savedAmount !== openedSettings.autoTopUp.amount ||
@@ -226,7 +217,6 @@ export const ApiBalanceSettingsModal = ({
                   threshold: savedThreshold,
                   spent,
                   spendingLimit: limitEnabled && parsedLimit !== null ? parsedLimit : undefined,
-                  currency,
               })
             : undefined;
 
@@ -276,15 +266,14 @@ export const ApiBalanceSettingsModal = ({
                 >
                     <AmountField
                         id="api-auto-top-up-threshold"
-                        label={c('collider_2025: Label').t`When balance falls below`}
+                        label={c('collider_2025: Label').t`When balance reaches`}
                         value={threshold}
                         onValue={setThreshold}
-                        currency={currency}
                         invalid={!isThresholdValid}
                     />
                     {!isThresholdValid && (
                         <p className="m-0 lumo-body-small lumo-color-signal-danger">
-                            {getThresholdRangeMessage(savedAmount, currency)}
+                            {getThresholdRangeMessage(savedAmount)}
                         </p>
                     )}
                     <AmountField
@@ -292,18 +281,15 @@ export const ApiBalanceSettingsModal = ({
                         label={c('collider_2025: Label').t`Top up by`}
                         value={amount}
                         onValue={setAmount}
-                        currency={currency}
                         invalid={!isAmountValid}
                     />
                     {isAmountValid && isThresholdValid && (
                         <p className="api-usage-settings-summary py-2.5 m-0 radius-8 lumo-body-small lumo-color-glyph-brand-text lumo-bg-control-fill">
-                            {getAutoTopUpSummary({ amount: parsedAmount, threshold: parsedThreshold }, currency)}
+                            {getAutoTopUpSummary({ amount: parsedAmount, threshold: parsedThreshold })}
                         </p>
                     )}
                     {!isAmountValid && (
-                        <p className="m-0 lumo-body-small lumo-color-signal-danger">
-                            {getAmountRangeMessage(currency)}
-                        </p>
+                        <p className="m-0 lumo-body-small lumo-color-signal-danger">{getAmountRangeMessage()}</p>
                     )}
                     {!canChargeAutoTopUp && (
                         <p className="m-0 lumo-body-small lumo-color-signal-warning">
@@ -325,7 +311,6 @@ export const ApiBalanceSettingsModal = ({
                             label={c('collider_2025: Label').t`Limit`}
                             value={limit}
                             onValue={setLimit}
-                            currency={currency}
                             invalid={!isLimitValid}
                         />
                         {isLimitValid ? (

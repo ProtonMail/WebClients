@@ -24,7 +24,6 @@ const setup = ({
             onClose={onClose}
             onExit={vi.fn()}
             settings={initialSettings}
-            currency="USD"
             spent={12.5}
             canChargeAutoTopUp={canChargeAutoTopUp}
             onSave={onSave}
@@ -34,23 +33,32 @@ const setup = ({
 };
 
 const amountInput = () => screen.getByLabelText('Top up by');
-const thresholdInput = () => screen.getByLabelText('When balance falls below');
+const thresholdInput = () => screen.getByLabelText('When balance reaches');
 const limitInput = () => screen.getByLabelText('Limit', { exact: true });
 const autoTopUpToggle = () => screen.getByLabelText(/^Automatic top-up/);
 const saveButton = () => screen.getByText('Save settings').closest('button')!;
-const rangeError = 'Top-up amount must be a whole amount between $25.00 and $100.00';
-const thresholdError = 'Threshold must be a whole amount between $1.00 and $49.00';
+const rangeError = 'Top-up amount must be a whole amount between 25 credits and 100 credits';
+const thresholdError = 'Threshold must be a whole amount between 1 credit and 49 credits';
 
 describe('ApiBalanceSettingsModal', () => {
+    it('labels every amount as credits, not a currency', () => {
+        setup();
+
+        for (const input of [thresholdInput(), amountInput(), limitInput()]) {
+            expect(input.closest('.api-usage-settings-field')?.textContent).toMatch(/credits$/);
+        }
+        expect(screen.queryByText('USD')).not.toBeInTheDocument();
+    });
+
     it('shows the threshold from the balance, editable', () => {
         setup();
 
         expect(thresholdInput()).toHaveValue(20);
         expect(thresholdInput()).toBeEnabled();
-        expect(screen.getByText('Adding $50.00 when your balance falls below $20.00')).toBeInTheDocument();
+        expect(screen.getByText('Adding 50 credits when your balance reaches 20 credits')).toBeInTheDocument();
     });
 
-    it.each(['0', '50', '10.5', ''])('rejects a threshold of %p for a $50 top-up', (threshold) => {
+    it.each(['0', '50', '10.5', ''])('rejects a threshold of %p for a 50-credit top-up', (threshold) => {
         setup();
 
         fireEvent.change(thresholdInput(), { target: { value: threshold } });
@@ -60,7 +68,7 @@ describe('ApiBalanceSettingsModal', () => {
         expect(saveButton()).toBeDisabled();
     });
 
-    it.each(['1', '49'])('accepts a threshold of %p for a $50 top-up', (threshold) => {
+    it.each(['1', '49'])('accepts a threshold of %p for a 50-credit top-up', (threshold) => {
         setup();
 
         fireEvent.change(thresholdInput(), { target: { value: threshold } });
@@ -75,7 +83,9 @@ describe('ApiBalanceSettingsModal', () => {
         fireEvent.change(amountInput(), { target: { value: '25' } });
         fireEvent.change(thresholdInput(), { target: { value: '30' } });
 
-        expect(screen.getByText('Threshold must be a whole amount between $1.00 and $24.00')).toBeInTheDocument();
+        expect(
+            screen.getByText('Threshold must be a whole amount between 1 credit and 24 credits')
+        ).toBeInTheDocument();
         expect(saveButton()).toBeDisabled();
     });
 
@@ -97,7 +107,7 @@ describe('ApiBalanceSettingsModal', () => {
         fireEvent.change(thresholdInput(), { target: { value: '35' } });
         fireEvent.click(saveButton());
 
-        expect(screen.getByText('Adding $50.00 when your balance falls below $35.00')).toBeInTheDocument();
+        expect(screen.getByText('Adding 50 credits when your balance reaches 35 credits')).toBeInTheDocument();
         expect(onSave).toHaveBeenCalledWith({
             autoTopUp: { enabled: true, amount: 50, threshold: 35 },
             spendingLimit: { enabled: true, limit: 250 },
@@ -130,15 +140,15 @@ describe('ApiBalanceSettingsModal', () => {
         fireEvent.click(autoTopUpToggle());
 
         expect(screen.getByText('Monthly spending limit')).toBeInTheDocument();
-        expect(screen.getByText('$12.50 of $250.00 bought automatically this month')).toBeInTheDocument();
+        expect(screen.getByText('12.5 credits of 250 credits bought automatically this month')).toBeInTheDocument();
     });
 
-    it.each(['49', '50.5', ''])('rejects a spending limit of %p for a $50 top-up', (limit) => {
+    it.each(['49', '50.5', ''])('rejects a spending limit of %p for a 50-credit top-up', (limit) => {
         setup();
 
         fireEvent.change(limitInput(), { target: { value: limit } });
 
-        expect(screen.getByText('Limit must be a whole amount of at least $50.00')).toBeInTheDocument();
+        expect(screen.getByText('Limit must be a whole amount of at least 50 credits')).toBeInTheDocument();
         expect(saveButton()).toBeDisabled();
     });
 
@@ -187,7 +197,7 @@ describe('ApiBalanceSettingsModal', () => {
 
     it('compares the edits with the settings it was opened with', () => {
         const onSave = vi.fn().mockResolvedValue(undefined);
-        const props = { open: true, onClose: vi.fn(), onExit: vi.fn(), currency: 'USD' as const, spent: 0 };
+        const props = { open: true, onClose: vi.fn(), onExit: vi.fn(), spent: 0 };
         const { rerender } = render(
             <ApiBalanceSettingsModal {...props} settings={settings} canChargeAutoTopUp onSave={onSave} />
         );
@@ -271,13 +281,12 @@ describe('getImmediateTopUpWarning', () => {
             threshold: 20,
             spent: 0,
             spendingLimit: undefined,
-            currency: 'USD',
             ...overrides,
         });
 
     it('warns when the balance is at or below the threshold', () => {
         expect(warning()).toBe(
-            'Your balance of $20.00 has reached the threshold, so saving will top up $50.00 right away.'
+            'Your balance of 20 credits has reached the threshold, so saving will top up 50 credits right away.'
         );
         expect(warning({ balance: 19.99 })).toBeDefined();
     });

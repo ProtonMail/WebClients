@@ -3,21 +3,17 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
-import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { LumoCreditsModal } from '@proton/payments-ui/ui/containers/LumoCreditsModal';
 import type { LumoCreditAutoTopUpStatus } from '@proton/payments/core/api/lumoCredit';
-import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useDebugApiCreditBalance, useDebugApiEmptyUsage } from '../../services/apiUsageDebugStore';
-import { API_TOKEN_PRICING_MODEL_IDS, type ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
+import { API_TOKEN_PRICING_MODEL_IDS, type ApiTokenPricingModelId, formatCredits } from '../api-docs/apiTokenPricing';
 import { ApiBalanceSettingsModal, getAutoTopUpSummary } from './ApiBalanceSettingsModal';
 import { ApiPayAsYouGoCard } from './ApiPayAsYouGoCard';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
@@ -25,7 +21,7 @@ import { ApiTokenUsageLegend, getSwatchStyle } from './ApiTokenUsageLegend';
 import { ApiUsageMembers } from './ApiUsageMembers';
 import { ApiUsageMetricCard } from './ApiUsageMetricCard';
 import { ApiUsageModelStats } from './ApiUsageModelStats';
-import { formatTokenCount, getBalanceEstimate, getSpendingLimitSummary, toCurrencyBaseUnits } from './apiKeysHelpers';
+import { formatTokenCount, getBalanceEstimate, getSpendingLimitSummary } from './apiKeysHelpers';
 import {
     type ApiUsageDay,
     type UsagePeriod,
@@ -46,9 +42,9 @@ import { useLumoCredits } from './useLumoCredits';
 
 const escapeCsvValue = (value: string | number) => `"${String(value).replaceAll('"', '""')}"`;
 
-const exportUsageCsv = (days: ApiUsageDay[], currency: Currency) => {
+const exportUsageCsv = (days: ApiUsageDay[]) => {
     const rows = [
-        ['date', 'input_tokens', 'output_tokens', `balance_used_${currency.toLowerCase()}`],
+        ['date', 'input_tokens', 'output_tokens', 'credits_used'],
         ...days.map((day) => [day.date, day.inputTokens, day.outputTokens, day.cost?.toFixed(6) ?? '']),
     ];
     const csv = rows.map((row) => row.map(escapeCsvValue).join(',')).join('\n');
@@ -86,15 +82,7 @@ const SourceTokenSplit = ({
     </span>
 );
 
-const ApiUsageOverviewContent = ({
-    rows,
-    dates,
-    currency,
-}: {
-    rows: UsageRow[];
-    dates: string[];
-    currency: Currency;
-}) => {
+const ApiUsageOverviewContent = ({ rows, dates }: { rows: UsageRow[]; dates: string[] }) => {
     const [selectedModel, setSelectedModel] = useState<'all' | ApiTokenPricingModelId>('all');
     const [selectedSource, setSelectedSource] = useState<'all' | UsageSource>('all');
     const totals = sumUsage(rows);
@@ -107,9 +95,9 @@ const ApiUsageOverviewContent = ({
         <div className="api-usage-overview-content flex flex-column gap-7">
             <div className="api-usage-metrics gap-2.5">
                 <ApiUsageMetricCard
-                    icon="DollarSign"
+                    icon="Coins"
                     label={c('collider_2025: Label').t`Balance used`}
-                    value={getCostLabel(totals.cost, currency)}
+                    value={getCostLabel(totals.cost)}
                     hint={c('collider_2025: Info').t`Estimated spend`}
                 />
                 <ApiUsageMetricCard
@@ -190,7 +178,7 @@ const ApiUsageOverviewContent = ({
                     </div>
                 </div>
                 <div className="api-usage-main-chart">
-                    <ApiTokenUsageChart days={chartDays} formatBalance={(value) => getCostLabel(value, currency)} />
+                    <ApiTokenUsageChart days={chartDays} formatBalance={getCostLabel} />
                 </div>
             </section>
 
@@ -201,7 +189,7 @@ const ApiUsageOverviewContent = ({
                         model={usage.model}
                         inputTokens={usage.inputTokens}
                         outputTokens={usage.outputTokens}
-                        formattedCost={getCostLabel(usage.cost, currency)}
+                        formattedCost={getCostLabel(usage.cost)}
                     />
                 ))}
             </div>
@@ -215,14 +203,12 @@ const ApiUsageOverview = ({
     hasAnyUsage,
     isLoading,
     error,
-    currency,
 }: {
     rows: UsageRow[];
     dates: string[];
     hasAnyUsage: boolean;
     isLoading: boolean;
     error: boolean;
-    currency: Currency;
 }) => {
     if (isLoading) {
         return <p className="m-0 lumo-body-small lumo-color-glyph-mid">{c('collider_2025: Info').t`Loading usage…`}</p>;
@@ -250,7 +236,7 @@ const ApiUsageOverview = ({
         );
     }
 
-    return <ApiUsageOverviewContent rows={rows} dates={dates} currency={currency} />;
+    return <ApiUsageOverviewContent rows={rows} dates={dates} />;
 };
 
 const ApiUsageHeader = ({ isOrgMember }: { isOrgMember: boolean }) => (
@@ -351,7 +337,6 @@ const ApiBalanceCard = ({
     balance,
     isBalanceLoading,
     credits,
-    currency,
     averageDailySpend,
     isOrgMember,
     canManageBalance,
@@ -364,7 +349,6 @@ const ApiBalanceCard = ({
     balance: number | undefined;
     isBalanceLoading: boolean;
     credits: ReturnType<typeof useLumoCredits>;
-    currency: Currency;
     averageDailySpend: number;
     isOrgMember: boolean;
     canManageBalance: boolean;
@@ -378,7 +362,7 @@ const ApiBalanceCard = ({
     const { autoTopUp, spendingLimit } = settings;
     const [settingsModalProps, setSettingsModalOpen, renderSettingsModal] = useModalState();
 
-    const spendingLimitSummary = getSpendingLimitSummary(spent, autoTopUp, spendingLimit, currency);
+    const spendingLimitSummary = getSpendingLimitSummary(spent, autoTopUp, spendingLimit);
 
     return (
         <section
@@ -401,9 +385,7 @@ const ApiBalanceCard = ({
                             </small>
                         ) : (
                             <>
-                                <Price currency={currency} className="api-usage-balance-amount">
-                                    {toCurrencyBaseUnits(balance, currency)}
-                                </Price>
+                                <span className="api-usage-balance-amount">{formatCredits(balance)}</span>
                                 <small className="lumo-color-glyph-mid">
                                     {getBalanceEstimate(balance, averageDailySpend)}
                                 </small>
@@ -438,7 +420,7 @@ const ApiBalanceCard = ({
                         </strong>
                         <span className="lumo-body-small lumo-color-glyph-mid">
                             {autoTopUp.enabled
-                                ? getAutoTopUpSummary(autoTopUp, currency)
+                                ? getAutoTopUpSummary(autoTopUp)
                                 : c('collider_2025: Info').t`Keep API requests running when your balance gets low.`}
                         </span>
                         {spendingLimitSummary && (
@@ -470,7 +452,6 @@ const ApiBalanceCard = ({
                 <ApiBalanceSettingsModal
                     {...settingsModalProps}
                     settings={settings}
-                    currency={currency}
                     balance={balance}
                     spent={spent}
                     canChargeAutoTopUp={canChargeAutoTopUp}
@@ -497,8 +478,6 @@ export const ApiUsageDashboard = ({
     canTopUp?: boolean;
 }) => {
     const { APP_NAME } = useConfig();
-    const [{ Currency }] = useUser();
-    const [subscription] = useSubscription();
     const [paymentStatus, paymentStatusLoading] = usePaymentStatus();
     const lumoCredits = useLumoCredits();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
@@ -536,7 +515,6 @@ export const ApiUsageDashboard = ({
                     balance={displayedCreditBalance}
                     isBalanceLoading={lumoCredits.loading}
                     credits={lumoCredits}
-                    currency={subscription?.Currency ?? Currency}
                     averageDailySpend={averageDailySpend}
                     isOrgMember={isOrgMember}
                     canManageBalance={canManageBalance}
@@ -562,7 +540,7 @@ export const ApiUsageDashboard = ({
                             color="weak"
                             className="flex flex-nowrap items-center gap-2 shrink-0"
                             disabled={periodRows.length === 0}
-                            onClick={() => exportUsageCsv(usageDays, Currency)}
+                            onClick={() => exportUsageCsv(usageDays)}
                         >
                             <LumoIcon name="ArrowDownToLine" size={16} />
                             {c('collider_2025: Action').t`Export CSV`}
@@ -590,18 +568,12 @@ export const ApiUsageDashboard = ({
                     dates={periodDates}
                     isLoading={usageSummary.isLoading}
                     error={usageSummary.error}
-                    currency={Currency}
                 />
             </section>
 
             {isOrgAdmin && (
                 <section className="api-usage-members-section w-full min-w-0 border radius-16 lumo-bg-panel">
-                    <ApiUsageMembers
-                        from={periodDates[0]}
-                        to={periodDates.at(-1)}
-                        periodLabel={periodLabel}
-                        currency={Currency}
-                    />
+                    <ApiUsageMembers from={periodDates[0]} to={periodDates.at(-1)} periodLabel={periodLabel} />
                 </section>
             )}
 
@@ -610,6 +582,7 @@ export const ApiUsageDashboard = ({
                     app={APP_NAME}
                     paymentStatus={paymentStatus}
                     onSuccess={lumoCredits.waitForBalanceIncrease}
+                    formatCredits={formatCredits}
                     {...creditModalProps}
                 />
             )}

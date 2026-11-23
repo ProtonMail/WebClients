@@ -2,8 +2,7 @@ import { CryptoProxy } from '@protontech/crypto';
 import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
-import type { Currency } from '@proton/payments/core/interface';
+import { formatCredits } from '../api-docs/apiTokenPricing';
 
 export const EXPIRATION_OPTIONS = [
     { value: '30', text: c('collider_2025: Option').t`30 days` },
@@ -49,13 +48,6 @@ export const formatTokenCount = (n: number): string => {
     return String(n);
 };
 
-/** Formats an amount in major currency units (e.g. 12.5 → "CHF 12.50"). */
-export const formatApiCurrency = (value: number, currency: Currency) =>
-    new Intl.NumberFormat(undefined, { style: 'currency', currency }).format(value);
-
-export const toCurrencyBaseUnits = (amount: number, currency: Currency) =>
-    amount * getCurrencyFormattingConfig(currency).divisor;
-
 const DAYS_IN_A_YEAR = 365;
 
 export const getBalanceEstimate = (balance: number, averageDailySpend: number) => {
@@ -75,8 +67,7 @@ export const getBalanceEstimate = (balance: number, averageDailySpend: number) =
 export const getSpendingLimitSummary = (
     spent: number,
     autoTopUp: { enabled: boolean; amount: number },
-    spendingLimit: { enabled: boolean; limit: number },
-    currency: Currency
+    spendingLimit: { enabled: boolean; limit: number }
 ) => {
     if (!autoTopUp.enabled) {
         return undefined;
@@ -91,8 +82,8 @@ export const getSpendingLimitSummary = (
                 .t`Monthly spending limit reached. Automatic top-ups are paused until next month.`,
         };
     }
-    const formattedSpent = formatApiCurrency(spent, currency);
-    const formattedLimit = formatApiCurrency(spendingLimit.limit, currency);
+    const formattedSpent = formatCredits(spent);
+    const formattedLimit = formatCredits(spendingLimit.limit);
     const limitSpentPercent = Math.round((spent / spendingLimit.limit) * 100);
     return {
         isLimitReached: false,

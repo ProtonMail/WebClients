@@ -297,8 +297,8 @@ describe('getApiMemberUsage', () => {
         );
 
         expect(member.cost).toBeNull();
-        expect(getCostLabel(member.cost, 'USD')).toBe('Not priced yet');
-        expect(getCostLabel(2.5, 'USD')).toContain('2.50');
+        expect(getCostLabel(member.cost)).toBe('Not priced yet');
+        expect(getCostLabel(2.5)).toBe('2.5 credits');
     });
 
     it('filters members by name, ignoring case', () => {

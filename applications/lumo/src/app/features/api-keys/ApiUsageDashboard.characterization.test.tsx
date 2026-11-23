@@ -6,8 +6,6 @@ import type { Mock } from 'vitest';
 import { useMembers } from '@proton/account/members/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -18,8 +16,6 @@ import { useApiUsageSummary } from './useApiUsageSummary';
 import { useMembersLumoApi } from './useMembersLumoApi';
 
 vi.mock('@proton/account/paymentStatus/hooks');
-vi.mock('@proton/account/subscription/hooks');
-vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/app-context/useApi');
 vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
 vi.mock('./ApiTokenUsageChart', () => ({
@@ -147,8 +143,6 @@ const setup = ({
         ...memberUsage,
     });
     (useMembers as Mock).mockReturnValue([members, isLoadingMembers]);
-    (useUser as Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
-    (useSubscription as Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
     render(<ApiUsageDashboard isOrgAdmin={isOrgAdmin} isOrgMember={isOrgMember} showAutoTopUp={showAutoTopUp} />);
 };
@@ -165,11 +159,11 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         setup();
 
         expect(useApiUsageSummary).toHaveBeenCalledWith('self');
-        expect(getMetric('Balance used')).toContain('$7.50');
+        expect(getMetric('Balance used')).toBe('Balance used7.5 creditsEstimated spend');
         expect(getMetric('Input tokens')).toContain('3.5M');
         expect(getMetric('Output tokens')).toContain('3.0M');
         expect(screen.getByTestId('token-usage-chart')).toHaveAttribute('data-days', '30');
-        expect(screen.getByRole('group', { name: 'lumo-max' })).toHaveTextContent('$4.50');
+        expect(screen.getByRole('group', { name: 'lumo-max' })).toHaveTextContent('4.5 credits');
     });
 
     it('updates the usage for the selected period', () => {
@@ -178,11 +172,11 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         selectPeriod('Last 7 days');
 
         expect(screen.getByTestId('token-usage-chart')).toHaveAttribute('data-days', '7');
-        expect(getMetric('Balance used')).toContain('$3.00');
+        expect(getMetric('Balance used')).toBe('Balance used3 creditsEstimated spend');
 
         selectPeriod('Previous 30 days');
 
-        expect(getMetric('Balance used')).toContain('$10.00');
+        expect(getMetric('Balance used')).toBe('Balance used10 creditsEstimated spend');
     });
 
     it('charts only the selected model', () => {
@@ -250,7 +244,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         setup({ usage: { rows: [usageRow('day-40', 'lumo-lite', 9_000_000, 0, 10_000_000)] } });
 
         expect(screen.queryByText('No API usage yet')).not.toBeInTheDocument();
-        expect(getMetric('Balance used')).toContain('$0.00');
+        expect(getMetric('Balance used')).toBe('Balance used0 creditsEstimated spend');
     });
 
     it('shows the first-request hint when there is no usage at all', () => {
@@ -297,7 +291,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
 
         expect(click).toHaveBeenCalledTimes(1);
         const csv = await createObjectURL.mock.calls[0][0].text();
-        expect(csv.split('\n')[0]).toBe('"date","input_tokens","output_tokens","balance_used_usd"');
+        expect(csv.split('\n')[0]).toBe('"date","input_tokens","output_tokens","credits_used"');
         expect(csv.split('\n')).toHaveLength(31);
         expect(csv.split('\n').at(-1)).toBe('"day-89","1500000","2000000","3.000000"');
         click.mockRestore();
@@ -327,7 +321,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(useApiUsageMembers).toHaveBeenLastCalledWith('day-60', 'day-89');
         expect(screen.getByText('Alice').closest('article')).toHaveTextContent('Admin');
         expect(screen.getByText('Alice').closest('article')).toHaveTextContent('1.0M');
-        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('$2.50');
+        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('2.5 credits');
         expect(screen.getByText('Bob').closest('article')).toHaveTextContent('Member');
         expect(screen.getByText('Former members')).toBeInTheDocument();
 
@@ -384,7 +378,9 @@ describe('ApiUsageDashboard outside the balance amount', () => {
 
         expect(details).toHaveAttribute('aria-expanded', 'true');
         const liteUsage = within(alice).getByRole('group', { name: 'lumo-lite' });
-        expect(liteUsage.textContent?.replace(/\s+/g, ' ')).toMatch(/Input600\.0k.*Output25\.0k.*Balance used\$1\.00/);
+        expect(liteUsage.textContent?.replace(/\s+/g, ' ')).toMatch(
+            /Input600\.0k.*Output25\.0k.*Balance used1 credit(?!s)/
+        );
         expect(within(alice).getByRole('group', { name: 'lumo-max' })).toHaveTextContent('Not priced yet');
 
         fireEvent.click(details);
@@ -474,7 +470,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
     it('lists every member, at zero, so their API access can be changed before they use the API', () => {
         setup({ isOrgAdmin: true, memberUsage: { rows: [] } });
 
-        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('$0.00');
+        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('0 credits');
         expect(screen.getByLabelText('Toggle API access for Bob')).toBeEnabled();
         expect(screen.queryByText('No member API usage yet')).not.toBeInTheDocument();
     });
