@@ -1,8 +1,8 @@
 import { createHooks } from '@proton/redux-utilities/hooks';
 
-import { plansThunk, selectPlans } from './index';
+import { getPlansThunk, selectPlans } from './index';
 
-const hooks = createHooks(plansThunk, selectPlans);
+const hooks = createHooks(getPlansThunk, selectPlans);
 
 export const usePlans = hooks.useValue;
 export const useGetPlans = hooks.useGet;

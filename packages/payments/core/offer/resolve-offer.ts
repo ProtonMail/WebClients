@@ -8,11 +8,12 @@ export interface ResolvedOffer {
     discountedAmount: number;
     defaultAmount: number;
     discountPercent: number;
-    expired: boolean;
 }
 
 export type ResolvedPromotion =
-    { kind: 'offer'; offer: ResolvedOffer } | { kind: 'coupon'; coupon: string } | { kind: 'none' };
+    | { kind: 'offer'; offer: ResolvedOffer }
+    | { kind: 'coupon'; coupon: string }
+    | { kind: 'none' };
 
 interface ResolveOfferParams {
     plans: Plan[];
@@ -20,7 +21,6 @@ interface ResolveOfferParams {
     cycle: Cycle;
     currency: Currency;
     offerName: string;
-    whenEvaluate?: Date;
 }
 
 export const resolveOffer = ({
@@ -29,29 +29,25 @@ export const resolveOffer = ({
     cycle,
     currency,
     offerName,
-    whenEvaluate = new Date(),
 }: ResolveOfferParams): ResolvedOffer | undefined => {
     const plan = plans.find((candidate) => candidate.Name === planName && candidate.Currency === currency);
-    const offer = plan?.Offers?.find((candidate) => candidate.Name.toLowerCase() === offerName.toLowerCase());
-    const discountedAmount = offer?.Pricing[cycle];
-    const defaultAmount = plan?.DefaultPricing?.[cycle] ?? plan?.Pricing[cycle];
+    const offer = plan?.Offers?.[cycle];
+    const discountedAmount = plan?.Pricing[cycle];
+    const defaultAmount = plan?.DefaultPricing?.[cycle];
 
-    if (!offer || discountedAmount === undefined || !defaultAmount) {
+    if (offer?.Name.toLowerCase() !== offerName.toLowerCase() || discountedAmount === undefined || !defaultAmount) {
         return undefined;
     }
-
-    const nowInSeconds = whenEvaluate.getTime() / 1000;
 
     return {
         name: offer.Name,
         discountedAmount,
         defaultAmount,
         discountPercent: Math.round((1 - discountedAmount / defaultAmount) * 100),
-        expired: offer.EndTime <= nowInSeconds || offer.StartTime > nowInSeconds,
     };
 };
 
-/** An offer that resolves wins over a coupon, expired or not. */
+/** An offer that resolves wins over a coupon. */
 export const resolvePromotion = ({ offer, coupon }: { offer?: ResolvedOffer; coupon?: string }): ResolvedPromotion => {
     if (offer) {
         return { kind: 'offer', offer };

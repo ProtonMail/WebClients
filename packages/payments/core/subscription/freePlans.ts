@@ -30,7 +30,7 @@ export const FREE_PLAN: FreePlanDefault = {
     MaxBaseRewardSpace: 1073741824,
     MaxDriveRewardSpace: 5368709120,
     MaxMembers: 0,
-    Offers: [],
+    Offers: {},
     MaxVPN: 1,
     MaxTier: 0,
     Services: PLAN_SERVICES.MAIL + PLAN_SERVICES.VPN,

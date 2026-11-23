@@ -118,7 +118,7 @@ describe('getPlanFeatureLimit', () => {
                 Pricing: {} as any,
                 PeriodEnd: {} as any,
                 State: 1,
-                Offers: [],
+                Offers: {},
             };
 
             expect(getPlanFeatureLimit(meetAddon, 'MaxMeet')).toBe(1);
@@ -157,7 +157,7 @@ describe('getPlanFeatureLimit', () => {
                 Pricing: {} as any,
                 PeriodEnd: {} as any,
                 State: 1,
-                Offers: [],
+                Offers: {},
             };
 
             const result = getPlanFeatureLimit(freePlan, 'MaxMembers');
@@ -255,7 +255,7 @@ describe('getPlanFeatureLimit', () => {
                 Pricing: {} as any,
                 PeriodEnd: {} as any,
                 State: 1,
-                Offers: [],
+                Offers: {},
             };
 
             // Test undefined property by accessing a property that doesn't exist on our mock

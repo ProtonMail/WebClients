@@ -2,12 +2,12 @@ import type { ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
 import type { Currency, Cycle, CycleMapping, Pricing } from '../interface';
 import type { PlanState } from './constants';
 
-export interface Offer {
+export interface PlanOffer {
     Name: string;
-    StartTime: number;
-    EndTime: number;
-    Pricing: Partial<Pricing>;
+    Description: string;
 }
+
+export type PlanOffers = Partial<Record<Cycle, PlanOffer>>;
 
 export interface Plan {
     ID: string;
@@ -32,7 +32,7 @@ export interface Plan {
     DefaultPricing?: Pricing;
     PeriodEnd: CycleMapping<number>;
     State: PlanState;
-    Offers: Offer[];
+    Offers: PlanOffers;
     Vendors?: any;
 }
 

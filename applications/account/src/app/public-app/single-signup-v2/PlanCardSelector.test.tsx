@@ -40,7 +40,7 @@ const passPlan: Plan = {
     },
     Currency: 'CHF',
     Quantity: 1,
-    Offers: [],
+    Offers: {},
     Cycle: 1,
     Amount: 499,
 };

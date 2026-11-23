@@ -1,12 +1,13 @@
 import {
     type PayloadAction,
     type ThunkAction,
+    type ThunkDispatch,
     type UnknownAction,
     createSlice,
     miniSerializeError,
 } from '@reduxjs/toolkit';
 
-import { getFreePlan, queryPlans } from '@proton/payments/core/api/api';
+import { type QueryPlansParams, getFreePlan, queryPlans } from '@proton/payments/core/api/api';
 import { CURRENCIES } from '@proton/payments/core/constants';
 import {
     getDefaultMainCurrency,
@@ -21,7 +22,12 @@ import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetch
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { cacheHelper, createPromiseStore, getIsStaleRefetch } from '@proton/redux-utilities/promiseStore';
+import {
+    cacheHelper,
+    createPromiseMapStore,
+    createPromiseStore,
+    getIsStaleRefetch,
+} from '@proton/redux-utilities/promiseStore';
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
@@ -31,9 +37,11 @@ import { type SubscriptionState, subscriptionThunk } from '../subscription';
 import { type UserState, selectUser } from '../user';
 
 const name = 'plans' as const;
+const plansWithOfferName = 'plansWithOffer' as const;
 
 export interface PlansState extends PaymentStatusState, UserState, SubscriptionState {
     [name]: ModelState<{ plans: Plan[]; freePlan: FreePlanDefault }>;
+    [plansWithOfferName]: { [key: string]: ModelState<{ plans: Plan[]; freePlan: FreePlanDefault }> | undefined };
 }
 
 type SliceState = PlansState[typeof name];
@@ -64,8 +72,75 @@ const slice = createSlice({
     },
 });
 
+const plansWithOfferInitialState: PlansState[typeof plansWithOfferName] = {};
+
+const plansWithOfferSlice = createSlice({
+    name: plansWithOfferName,
+    initialState: plansWithOfferInitialState,
+    reducers: {
+        pending: (state, action: PayloadAction<{ key: string }>) => {
+            const entry = state[action.payload.key];
+            if (entry) {
+                entry.error = undefined;
+            }
+        },
+        fulfilled: (state, action: PayloadAction<{ key: string; value: Model }>) => {
+            state[action.payload.key] = {
+                value: action.payload.value,
+                error: undefined,
+                meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
+            };
+        },
+        rejected: (state, action: PayloadAction<{ key: string; error: any }>) => {
+            const entry = state[action.payload.key];
+            state[action.payload.key] = {
+                value: entry?.value,
+                error: action.payload.error,
+                meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: entry?.meta.fetchedEphemeral },
+            };
+        },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(slice.actions.fulfilled, () => plansWithOfferInitialState);
+    },
+});
+
 const promiseStore = createPromiseStore<Model>();
+const plansWithOfferPromiseStore = createPromiseMapStore<Model>();
 const previous = previousSelector(selectPlans);
+
+type PlansDispatch = ThunkDispatch<PlansState, ProtonThunkArguments, UnknownAction>;
+
+const getRegionalCurrencies = async ({
+    dispatch,
+    getState,
+    api,
+}: {
+    dispatch: PlansDispatch;
+    getState: () => PlansState;
+    api?: Api;
+}): Promise<{
+    regionalCurrencies: Currency[];
+    defaultMainCurrency: Currency;
+}> => {
+    const user = selectUser(getState())?.value;
+
+    const [status, subscription] = await Promise.all([
+        dispatch(paymentStatusThunk({ api: api ? api : undefined })),
+        user ? dispatch(subscriptionThunk()) : undefined,
+    ]);
+
+    const regionalCurrencies = getSupportedRegionalCurrencies({
+        paymentStatus: status,
+        user,
+        subscriptions: toSubscriptionList(subscription),
+    });
+
+    return {
+        regionalCurrencies,
+        defaultMainCurrency: getDefaultMainCurrency(status),
+    };
+};
 
 const thunk = ({
     api: apiOverride,
@@ -73,29 +148,6 @@ const thunk = ({
     api?: Api;
 } = {}): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
-        const getRegionalCurrencies: () => Promise<{
-            regionalCurrencies: Currency[];
-            defaultMainCurrency: Currency;
-        }> = async () => {
-            const user = selectUser(getState())?.value;
-
-            const [status, subscription] = await Promise.all([
-                dispatch(paymentStatusThunk({ api: apiOverride ? apiOverride : undefined })),
-                user ? dispatch(subscriptionThunk()) : undefined,
-            ]);
-
-            const regionalCurrencies = getSupportedRegionalCurrencies({
-                paymentStatus: status,
-                user,
-                subscriptions: toSubscriptionList(subscription),
-            });
-
-            return {
-                regionalCurrencies,
-                defaultMainCurrency: getDefaultMainCurrency(status),
-            };
-        };
-
         const select = () => {
             return previous({ dispatch, getState, extraArgument });
         };
@@ -112,7 +164,7 @@ const thunk = ({
                 const [plansResult, freePlan, { regionalCurrencies, defaultMainCurrency }] = await Promise.all([
                     plansPromise,
                     getFreePlan({ api }),
-                    getRegionalCurrencies(),
+                    getRegionalCurrencies({ dispatch, getState, api: apiOverride }),
                 ]);
 
                 // Step 2: if some required currencies are missing, then we fetch them separately
@@ -151,11 +203,9 @@ const thunk = ({
                     (currency) => !isRegionalCurrency(currency) && !existingMainCurrencies.includes(currency)
                 );
 
-                const syntheticPlans: Plan[] = plansResult;
-
                 if (existingMainCurrencies.length > 0 && missingMainCurrencies.length > 0) {
                     const mainCurrency = existingMainCurrencies[0];
-                    const existingMainPlans = syntheticPlans.filter((plan) => plan.Currency === mainCurrency);
+                    const existingMainPlans = plansResult.filter((plan) => plan.Currency === mainCurrency);
 
                     for (const missingCurrency of missingMainCurrencies) {
                         const missingPlans = existingMainPlans.map((plan) => {
@@ -164,7 +214,7 @@ const thunk = ({
                                 Currency: missingCurrency,
                             };
                         });
-                        syntheticPlans.push(...missingPlans);
+                        plansResult.push(...missingPlans);
                     }
                 }
 
@@ -183,12 +233,12 @@ const thunk = ({
 
                 // if the plan already exists then we replace it with the new one if it's available
                 const updatedPlans = currentPlans.map((existingPlan) => {
-                    const updatedPlan = syntheticPlans.find((newPlan) => isSamePlan(newPlan, existingPlan));
+                    const updatedPlan = plansResult.find((newPlan) => isSamePlan(newPlan, existingPlan));
                     return updatedPlan ?? existingPlan;
                 });
 
                 // if plan doesn't exist yet, then we add it to the array
-                const newPlans = syntheticPlans.filter(
+                const newPlans = plansResult.filter(
                     (newPlan) => !currentPlans.some((existingPlan) => isSamePlan(existingPlan, newPlan))
                 );
 
@@ -211,5 +261,77 @@ const thunk = ({
     };
 };
 
-export const plansReducer = { [name]: slice.reducer };
+/**
+ * Loads the plans priced with a private offer and keeps them apart from the regular plans, one entry per offer and
+ * set of subscriptions. An offer has its own price for each currency, so each main currency is requested.
+ */
+const plansWithOfferThunk = ({
+    offer,
+    api: apiOverride,
+    cache,
+}: {
+    offer: string;
+    api?: Api;
+    cache?: CacheType;
+}): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState, extraArgument) => {
+        const subscription = selectUser(getState())?.value ? await dispatch(subscriptionThunk()) : undefined;
+        const key = [
+            offer.toLowerCase(),
+            ...toSubscriptionList(subscription).flatMap(({ Plans, Cycle, Currency, PeriodEnd }) => [
+                Plans?.map((plan) => plan.Name).join(','),
+                Cycle,
+                Currency,
+                PeriodEnd,
+            ]),
+        ].join(':');
+
+        const select = () => getState()[plansWithOfferName][key];
+
+        const cb = async () => {
+            try {
+                dispatch(plansWithOfferSlice.actions.pending({ key }));
+
+                const api = apiOverride ?? extraArgument.api;
+                const getPlans = (params?: QueryPlansParams) =>
+                    api<{ Plans: Plan[] }>(queryPlans({ ...params, Offer: offer })).then(({ Plans }) => Plans);
+
+                const [plans, freePlan, { regionalCurrencies }] = await Promise.all([
+                    getPlans(),
+                    getFreePlan({ api }),
+                    getRegionalCurrencies({ dispatch, getState, api: apiOverride }),
+                ]);
+
+                const mainCurrencies = CURRENCIES.filter((currency) => !isRegionalCurrency(currency));
+                const missingCurrencies = [...new Set([...regionalCurrencies, ...mainCurrencies])].filter(
+                    (currency) => !plans.some((plan) => plan.Currency === currency)
+                );
+                const missingPlans = await Promise.all(
+                    missingCurrencies.map((currency) => getPlans({ Currency: currency }))
+                );
+
+                const value = { plans: [...plans, ...missingPlans.flat()], freePlan };
+
+                dispatch(plansWithOfferSlice.actions.fulfilled({ key, value }));
+                return value;
+            } catch (error) {
+                dispatch(plansWithOfferSlice.actions.rejected({ key, error: miniSerializeError(error) }));
+                throw error;
+            }
+        };
+
+        return cacheHelper({ store: plansWithOfferPromiseStore, key, select, cb, cache, expiry: DAY });
+    };
+};
+
+/**
+ * Picks the thunk that loads the plans: the ones priced with the private `offer` when there is one. `cache` only
+ * applies to those, for example `CacheType.None` to load them again.
+ */
+export const getPlansThunk = ({ offer, api, cache }: { offer?: string; api?: Api; cache?: CacheType } = {}) => {
+    const offerName = offer?.trim();
+    return offerName ? plansWithOfferThunk({ offer: offerName, api, cache }) : thunk({ api });
+};
+
+export const plansReducer = { [name]: slice.reducer, [plansWithOfferName]: plansWithOfferSlice.reducer };
 export const plansThunk = thunk;
