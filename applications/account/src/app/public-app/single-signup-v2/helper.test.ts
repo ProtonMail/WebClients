@@ -533,6 +533,54 @@ describe('getSubscriptionData guards', () => {
     });
 });
 
+describe('getSubscriptionData after a failed check', () => {
+    const options = {
+        plansMap: getTestPlansMap('USD'),
+        planIDs: { [PLANS.BUNDLE]: 1 },
+        cycle: CYCLE.YEARLY,
+        currency: 'USD' as const,
+        billingAddress: { CountryCode: 'CH', State: null },
+        VatId: undefined,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
+    };
+    const getDataAfterCheckError = (error: unknown) => {
+        const checkSubscription = vi.fn().mockRejectedValue(error);
+        return getSubscriptionData({ checkSubscription } as unknown as PaymentsApi, options);
+    };
+
+    it('reports a check the backend refused and drops the plan', async () => {
+        const subscriptionData = await getDataAfterCheckError({
+            status: 422,
+            data: { Code: 2000, Error: 'Unable to combine the new plan with the existing subscriptions.' },
+        });
+
+        expect(subscriptionData.checkRefused).toBe(true);
+        expect(subscriptionData.planIDs).toEqual({});
+    });
+
+    it.each([
+        ['a server error', { status: 500, data: { Code: 2000, Error: 'Internal error' } }],
+        ['a rate limit', { status: 429, data: { Code: 2028, Error: 'Too many requests' } }],
+        ['a missing permission', { status: 403, data: { Code: 2011, Error: 'Not allowed' } }],
+        ['an invalid request', { status: 400, data: { Code: 2000, Error: 'Invalid input' } }],
+        ['a client error', new TypeError('Cannot read properties of undefined')],
+        ['an offline user', Object.assign(new Error('Offline'), { name: 'OfflineError' })],
+    ])('does not report a check that failed because of %s', async (_, error) => {
+        const subscriptionData = await getDataAfterCheckError(error);
+
+        expect(subscriptionData.checkRefused).toBe(false);
+    });
+
+    it('does not report a successful check', async () => {
+        const checkSubscription = vi.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
+
+        const subscriptionData = await getSubscriptionData({ checkSubscription } as unknown as PaymentsApi, options);
+
+        expect(subscriptionData.checkRefused).toBe(false);
+        expect(subscriptionData.planIDs).toEqual({ [PLANS.BUNDLE]: 1 });
+    });
+});
+
 describe('getSubscriptionData for a subscriber with a prepaid upcoming term', () => {
     const plansMap = getTestPlansMap('EUR');
     const monthlyMailPlus = buildSubscription(

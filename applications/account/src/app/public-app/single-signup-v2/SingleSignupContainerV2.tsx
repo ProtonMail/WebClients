@@ -123,6 +123,7 @@ import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';
 import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
+import { getOfferedSignupConfiguration } from './offeredSignupConfiguration';
 import { getSignupConfiguration } from './signupConfiguration';
 import { getSignupParameters } from './signupParameters';
 import { trackSignupAccountCreated, trackSignupPlanSelectionLoaded } from './telemetry/signupFunnelEvents';
@@ -338,16 +339,19 @@ const SingleSignupContainerV2 = ({
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
     const silentApi = getSilentApi(normalApi);
 
-    const signupConfiguration = getSignupConfiguration({
-        toApp,
-        audience,
-        signupParameters,
-        viewportWidth,
-        theme,
-        model,
-        isNewB2BPlanEnabled,
-        isLumoPlans2026Enabled,
-    });
+    const signupConfiguration = getOfferedSignupConfiguration(
+        getSignupConfiguration({
+            toApp,
+            audience,
+            signupParameters,
+            viewportWidth,
+            theme,
+            model,
+            isNewB2BPlanEnabled,
+            isLumoPlans2026Enabled,
+        }),
+        model.session?.multiSubscriptionContext
+    );
     const {
         planCards,
         product,

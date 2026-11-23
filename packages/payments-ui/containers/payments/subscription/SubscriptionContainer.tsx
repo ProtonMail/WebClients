@@ -264,6 +264,7 @@ export interface SubscriptionContainerProps {
             | { model: Model; newModel: Model; type: 'error'; error: any }
             | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
     ) => void;
+    onInitialCheckRefused?: (message: string) => void;
     telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription | FreeSubscription;
@@ -343,6 +344,7 @@ const SubscriptionContainerInner = ({
     onUnsubscribed,
     onCancel,
     onCheck,
+    onInitialCheckRefused,
     disablePlanSelection,
     disableCycleSelector: maybeDisableCycleSelector,
     disableThanksStep,
@@ -941,6 +943,7 @@ const SubscriptionContainerInner = ({
             },
             onVisionaryDowngradeHide: hideVisionaryDowngradeWarning,
             onCheck,
+            onInitialCheckRefused,
         },
         telemetry: { APP_NAME, app, paymentFacade, user, context: telemetryContext },
     });
