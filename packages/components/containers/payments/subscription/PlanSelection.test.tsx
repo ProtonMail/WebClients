@@ -1,11 +1,18 @@
-import { renderHook } from '@testing-library/react';
+import { fireEvent, renderHook, screen, within } from '@testing-library/react';
 import type { MockedFunction } from 'vitest';
 
+import { getModelState } from '@proton/account/testing/getModelState';
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
+import type * as PlanIDsModule from '@proton/payments/core/planIDs';
+import { switchPlan } from '@proton/payments/core/planIDs';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { createMultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import {
+    type MultiSubscriptionContext,
+    createMultiSubscriptionContext,
+} from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import {
     buildLumoSubscription,
@@ -15,13 +22,15 @@ import {
 } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlans } from '@proton/payments/testing/data-plans';
-import { APPS } from '@proton/shared/lib/constants';
+import { type APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
+import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
+import PlanSelection, { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
 
 vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
@@ -30,7 +39,24 @@ vi.mock('@proton/app-context/useConfig', () => ({
     }),
 }));
 
+vi.mock('@proton/payments/core/planIDs', async () => {
+    const actual = await vi.importActual<typeof PlanIDsModule>('@proton/payments/core/planIDs');
+    return { ...actual, switchPlan: vi.fn(actual.switchPlan) };
+});
+
+vi.mock('./PlanSelectionPlanCard', () => ({
+    __esModule: true,
+    default: ({ planName, action, isCurrentPlan, onSelect }: any) => (
+        <div data-testid={`card-${planName}`} data-current={String(isCurrentPlan)}>
+            <button type="button" onClick={() => onSelect(planName)}>
+                {action}
+            </button>
+        </div>
+    ),
+}));
+
 const mockUseFlag = useFlag as unknown as MockedFunction<any>;
+const mockSwitchPlan = vi.mocked(switchPlan);
 
 describe('useAccessiblePlans', () => {
     beforeEach(() => {
@@ -1125,5 +1151,165 @@ describe('useAccessiblePlans next to several subscriptions', () => {
 
         expect(individual).toEqual([PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO]);
         expect(family).toEqual([PLANS.DUO, PLANS.FAMILY]);
+    });
+});
+
+describe('PlanSelection next to several subscriptions', () => {
+    const plans = getLongTestPlans();
+    const webMailPlus = buildSubscription({ planName: PLANS.MAIL, currency: 'USD', cycle: CYCLE.YEARLY });
+    const webLumoPlus = buildLumoSubscription(PLANS.LUMO, { Cycle: CYCLE.MONTHLY, Currency: 'USD' });
+    const iosLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+        Cycle: CYCLE.MONTHLY,
+        Currency: 'USD',
+        External: SubscriptionPlatform.iOS,
+    });
+
+    const renderPlanSelection = ({
+        app = APPS.PROTONMAIL,
+        loadedSubscription,
+        otherSubscription,
+        lumoMultiSubscriptions,
+        b2cPlan,
+        multiSubscriptionContext = otherSubscription
+            ? buildMultiSubscriptionContext([loadedSubscription, otherSubscription], lumoMultiSubscriptions)
+            : buildMultiSubscriptionContextFromSubscription(loadedSubscription),
+    }: {
+        app?: APP_NAMES;
+        loadedSubscription: Subscription;
+        otherSubscription?: Subscription;
+        lumoMultiSubscriptions: boolean;
+        b2cPlan: PLANS;
+        multiSubscriptionContext?: MultiSubscriptionContext;
+    }) => {
+        const onChangePlanIDs = vi.fn();
+
+        renderWithProviders(
+            <PlanSelection
+                app={app}
+                mode="modal"
+                plans={plans}
+                freePlan={FREE_PLAN}
+                currency="USD"
+                cycle={CYCLE.YEARLY}
+                onChangePlanIDs={onChangePlanIDs}
+                onChangeCurrency={vi.fn()}
+                onChangeCycle={vi.fn()}
+                audience={Audience.B2C}
+                onChangeAudience={vi.fn()}
+                selectedProductPlans={{ b2c: b2cPlan, b2b: PLANS.MAIL_PRO, family: PLANS.FAMILY }}
+                onChangeSelectedProductPlans={vi.fn()}
+                subscription={{
+                    ...loadedSubscription,
+                    SecondarySubscriptions: otherSubscription && [otherSubscription],
+                }}
+                paymentStatus={{ CountryCode: 'CH', VendorStates: {} as any }}
+                paymentsApi={{} as any}
+                multiSubscriptionContext={multiSubscriptionContext}
+            />,
+            { preloadedState: { user: getModelState(buildUser({ Currency: 'USD', Subscribed: 1 })) } }
+        );
+
+        return { onChangePlanIDs };
+    };
+
+    const getCard = (planName: PLANS) => screen.getByTestId(`card-${planName}`);
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        mockUseFlag.mockImplementation((flag: string) => flag === 'DuoPlan');
+    });
+
+    it('marks the Mail Plus card as the current plan when the loaded subscription is Lumo Plus', () => {
+        renderPlanSelection({
+            loadedSubscription: webLumoPlus,
+            otherSubscription: webMailPlus,
+            lumoMultiSubscriptions: true,
+            b2cPlan: PLANS.MAIL,
+        });
+
+        expect(getCard(PLANS.MAIL)).toHaveAttribute('data-current', 'true');
+        expect(getCard(PLANS.MAIL)).toHaveTextContent('Edit subscription');
+        expect(getCard(PLANS.BUNDLE)).toHaveAttribute('data-current', 'false');
+    });
+
+    it('marks the Lumo Plus card as the current plan when the loaded subscription is Mail Plus', () => {
+        renderPlanSelection({
+            loadedSubscription: webMailPlus,
+            otherSubscription: webLumoPlus,
+            lumoMultiSubscriptions: false,
+            b2cPlan: PLANS.LUMO,
+        });
+
+        expect(getCard(PLANS.LUMO)).toHaveAttribute('data-current', 'true');
+        expect(getCard(PLANS.LUMO)).toHaveTextContent('Edit subscription');
+        expect(getCard(PLANS.BUNDLE)).toHaveAttribute('data-current', 'false');
+    });
+
+    it.each([
+        { app: APPS.PROTONMAIL, lumoMultiSubscriptions: false },
+        { app: APPS.PROTONMAIL, lumoMultiSubscriptions: true },
+        { app: APPS.PROTONLUMO, lumoMultiSubscriptions: false },
+        { app: APPS.PROTONLUMO, lumoMultiSubscriptions: true },
+    ])(
+        'does not offer the Lumo Plus plan held on the App Store and keeps web Mail Plus current in $app with lumoMultiSubscriptions $lumoMultiSubscriptions',
+        ({ app, lumoMultiSubscriptions }) => {
+            renderPlanSelection({
+                app,
+                loadedSubscription: webMailPlus,
+                otherSubscription: iosLumoPlus,
+                lumoMultiSubscriptions,
+                b2cPlan: PLANS.LUMO,
+            });
+
+            expect(screen.queryByTestId(`card-${PLANS.LUMO}`)).not.toBeInTheDocument();
+            expect(getCard(PLANS.MAIL)).toHaveAttribute('data-current', 'true');
+            expect(getCard(PLANS.MAIL)).toHaveTextContent('Edit subscription');
+        }
+    );
+
+    it('switches the Mail Plus card from Mail Plus, not from the loaded Lumo Plus', () => {
+        const { onChangePlanIDs } = renderPlanSelection({
+            loadedSubscription: webLumoPlus,
+            otherSubscription: webMailPlus,
+            lumoMultiSubscriptions: true,
+            b2cPlan: PLANS.MAIL,
+        });
+
+        fireEvent.click(within(getCard(PLANS.MAIL)).getByRole('button'));
+
+        expect(mockSwitchPlan).toHaveBeenCalledWith(expect.objectContaining({ subscription: webMailPlus }));
+        expect(onChangePlanIDs).toHaveBeenCalledWith({ [PLANS.MAIL]: 1 }, CYCLE.YEARLY, 'USD');
+    });
+
+    it('switches the Lumo Plus card from no subscription when Lumo Plus runs next to Mail Plus', () => {
+        const { onChangePlanIDs } = renderPlanSelection({
+            loadedSubscription: webMailPlus,
+            lumoMultiSubscriptions: true,
+            b2cPlan: PLANS.LUMO,
+            multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus]),
+        });
+
+        expect(getCard(PLANS.LUMO)).toHaveAttribute('data-current', 'false');
+
+        fireEvent.click(within(getCard(PLANS.LUMO)).getByRole('button'));
+
+        expect(mockSwitchPlan).toHaveBeenCalledWith(expect.objectContaining({ subscription: undefined }));
+        expect(onChangePlanIDs).toHaveBeenCalledWith({ [PLANS.LUMO]: 1 }, CYCLE.YEARLY, 'USD');
+    });
+
+    it('keeps marking and switching from the only subscription', () => {
+        const { onChangePlanIDs } = renderPlanSelection({
+            loadedSubscription: webMailPlus,
+            lumoMultiSubscriptions: false,
+            b2cPlan: PLANS.MAIL,
+        });
+
+        expect(getCard(PLANS.MAIL)).toHaveAttribute('data-current', 'true');
+        expect(getCard(PLANS.BUNDLE)).toHaveAttribute('data-current', 'false');
+
+        fireEvent.click(within(getCard(PLANS.BUNDLE)).getByRole('button'));
+
+        expect(mockSwitchPlan).toHaveBeenCalledWith(expect.objectContaining({ subscription: webMailPlus }));
+        expect(onChangePlanIDs).toHaveBeenCalledWith({ [PLANS.BUNDLE]: 1 }, CYCLE.YEARLY, 'USD');
     });
 });

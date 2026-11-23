@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
@@ -30,6 +31,7 @@ import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanIDs, getValidAudience, getValidCycle } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-outcome';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
@@ -80,12 +82,15 @@ const PlansSectionInner = ({ app }: Props) => {
     const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
-    const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
+    const initialAudience = searchParams.audience || Audience.B2C;
+    const [audience, setAudience] = useState(initialAudience);
 
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const { sendPageLoad, sendCtaClick, sendSubscriptionSuccess } = usePlansSectionTelemetry({ app });
+    const [, loadingEntitlementCatalog] = useEntitlementCatalog();
     const isLoading =
         loadingPlans ||
+        loadingEntitlementCatalog ||
         loadingSubscription ||
         loadingOrganization ||
         statusLoading ||
@@ -172,15 +177,14 @@ const PlansSectionInner = ({ app }: Props) => {
         if (isLoading) {
             return;
         }
-        const cycle = subscription.Cycle || DEFAULT_CYCLE;
-        setCycle(cycle);
-        setSelectedProductPlans(
-            getDefaultSelectedProductPlans({
-                appName: app,
-                plan: searchParams.plan,
-            })
-        );
-    }, [isLoading, subscription, app]);
+        const defaultSelectedProductPlans = getDefaultSelectedProductPlans({
+            appName: app,
+            plan: searchParams.plan,
+        });
+        const defaultPlanName = defaultSelectedProductPlans[initialAudience];
+        setCycle(getSubscriptionChangedByPlan(multiSubscriptionContext, defaultPlanName)?.Cycle ?? DEFAULT_CYCLE);
+        setSelectedProductPlans(defaultSelectedProductPlans);
+    }, [isLoading, multiSubscriptionContext, app]);
 
     if (isLoading) {
         return <Loader />;
