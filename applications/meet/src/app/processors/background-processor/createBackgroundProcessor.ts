@@ -59,6 +59,7 @@ export const createBackgroundProcessor = async (
         const options: BackgroundProcessorOptions = {
             mode,
             assetPaths: getAssetPaths(needsSimpleSegmentation(mobileDevice, lowEndDevice) || forceSimpleSegmentation),
+            simpleSegmentationAssetPaths: getAssetPaths(true),
             maxFps: getMaxFps(mobileDevice),
             ...getConfidenceBoostConfig(),
             isLowEndDevice: lowEndDevice,

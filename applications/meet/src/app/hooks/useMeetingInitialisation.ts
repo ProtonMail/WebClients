@@ -2,6 +2,7 @@ import { useMeetEventSim } from '../dev/useMeetEventSim';
 import { useBridges } from './bridges/useBridges';
 import { useScreenShareUpdates } from './screenShare/useScreenShareUpdates';
 import { useActiveSpeakerUpdates } from './useActiveSpeakerUpdates';
+import { useCpuLoadShedding } from './useCpuLoadShedding';
 import { useMeetingTimeout } from './useMeetingTimeout';
 import { usePaginationSizeUpdates } from './usePaginationSizeUpdates';
 
@@ -11,5 +12,6 @@ export const useMeetingInitialisation = () => {
     useScreenShareUpdates();
     useActiveSpeakerUpdates();
     useMeetingTimeout();
+    useCpuLoadShedding();
     useMeetEventSim();
 };

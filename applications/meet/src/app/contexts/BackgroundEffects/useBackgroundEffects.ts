@@ -15,6 +15,7 @@ import {
     selectPendingBackgroundEffect,
     setPendingBackgroundEffect,
 } from '@proton/meet/store/slices/backgroundSlice';
+import { selectIsCpuLoadDropActive } from '@proton/meet/store/slices/cpuLoadSlice';
 import { selectInitialCameraState } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { resolveBackgroundSource } from '@proton/meet/utils/customBackgrounds';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -298,6 +299,10 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [localParticipant, backgroundBlur, hasImageBackground]);
 
+    const reportSegmentationModelError = useStableCallback((error: unknown) => {
+        reportError('Failed to switch the background segmentation model', error);
+    });
+
     useEffect(() => {
         if (!isBackgroundEffectsSupported) {
             return;
@@ -305,6 +310,7 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
 
         let cancelled = false;
         let stopWatchingWarmups: (() => void) | undefined;
+        let stopWatchingCpuLoad: (() => void) | undefined;
 
         const creation = createBackgroundProcessor();
         processorCreationRef.current = creation;
@@ -331,16 +337,32 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
                     processor.waitUntilApplied()
                 );
             });
+
+            if (!processor) {
+                return;
+            }
+            let isSimpleSegmentation = false;
+            const followCpuLoad = () => {
+                const shouldUseSimpleSegmentation = selectIsCpuLoadDropActive(store.getState(), 'backgroundModel');
+                if (shouldUseSimpleSegmentation === isSimpleSegmentation) {
+                    return;
+                }
+                isSimpleSegmentation = shouldUseSimpleSegmentation;
+                processor.setSimpleSegmentation(shouldUseSimpleSegmentation).catch(reportSegmentationModelError);
+            };
+            followCpuLoad();
+            stopWatchingCpuLoad = store.subscribe(followCpuLoad);
         })();
 
         return () => {
             cancelled = true;
             stopWatchingWarmups?.();
+            stopWatchingCpuLoad?.();
             processorCreationRef.current = null;
             processorInstanceRef.current?.disable?.();
             void processorInstanceRef.current?.destroy?.();
         };
-    }, [isBackgroundEffectsSupported, store, trackBackgroundEffectInitialization]);
+    }, [isBackgroundEffectsSupported, store, trackBackgroundEffectInitialization, reportSegmentationModelError]);
 
     // Warms the processor for the restored background, so the first camera frame already has it.
     useEffect(() => {

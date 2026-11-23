@@ -6,6 +6,7 @@ export interface MediaManagementContextType {
     isVideoEnabled: boolean;
     isAudioEnabled: boolean;
     toggleVideo: ToggleVideoType;
+    republishCamera: () => Promise<boolean>;
     toggleAudio: ToggleAudioType;
     handleMicrophoneToggle: () => void | Promise<unknown>;
     handleCameraToggle: () => void | Promise<unknown>;
@@ -30,6 +31,7 @@ const defaultValues: MediaManagementContextType = {
     isVideoEnabled: false,
     isAudioEnabled: false,
     toggleVideo: () => Promise.resolve(undefined),
+    republishCamera: () => Promise.resolve(false),
     toggleAudio: () => Promise.resolve(undefined),
     handleMicrophoneToggle: () => {},
     handleCameraToggle: () => {},

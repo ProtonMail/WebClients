@@ -1,7 +1,12 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { selectSelectedCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { setDevicesInitializing } from '@proton/meet/store/slices/deviceManagementSlice';
+import {
+    selectActiveCameraId,
+    selectSelectedCameraId,
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 
 import { useVideoToggle } from './useVideoToggle';
 
@@ -24,10 +29,12 @@ vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
     useMeetErrorReporting: () => ({ reportMeetError: vi.fn() }),
 }));
 
+const dispatchMock = vi.hoisted(() => vi.fn());
+const storeState = vi.hoisted(() => ({ connection: { joinedRoom: true } }));
 const storeMocks = vi.hoisted(() => ({
-    useMeetDispatch: () => vi.fn(),
+    useMeetDispatch: () => dispatchMock,
     useMeetSelector: vi.fn((_selector: unknown): unknown => undefined),
-    useMeetStore: () => ({ getState: () => ({}) }),
+    useMeetStore: () => ({ getState: () => storeState }),
 }));
 vi.mock('@proton/meet/store/hooks', () => storeMocks);
 
@@ -62,10 +69,13 @@ vi.mock('../../../utils/dummyVideoTrack', () => dummyMocks);
 const enableDeviceTrackMock = vi.hoisted(() => ({ enableDeviceTrack: vi.fn() }));
 vi.mock('../../../utils/enableDeviceTrack', () => enableDeviceTrackMock);
 
-const setup = (isDummy: boolean, selectedCameraId?: string) => {
-    storeMocks.useMeetSelector.mockImplementation((selector: unknown) =>
-        selector === selectSelectedCameraId ? selectedCameraId : undefined
-    );
+const setup = (isDummy: boolean, selectedCameraId?: string, activeCameraId?: string) => {
+    storeMocks.useMeetSelector.mockImplementation((selector: unknown) => {
+        if (selector === selectSelectedCameraId) {
+            return selectedCameraId;
+        }
+        return selector === selectActiveCameraId ? activeCameraId : undefined;
+    });
 
     const track = {
         stopProcessor: vi.fn().mockResolvedValue(undefined),
@@ -77,9 +87,13 @@ const setup = (isDummy: boolean, selectedCameraId?: string) => {
         mediaStreamTrack: { readyState: 'live', enabled: true },
     };
 
+    const trackPublications = new Map([['cam', { kind: 'video', source: 'camera', track }]]);
     const localParticipant = {
-        trackPublications: new Map([['cam', { kind: 'video', source: 'camera', track }]]),
+        trackPublications,
         setCameraEnabled: vi.fn().mockResolvedValue(undefined),
+        unpublishTrack: vi.fn(async () => {
+            trackPublications.clear();
+        }),
         on: vi.fn(),
         off: vi.fn(),
     };
@@ -93,7 +107,7 @@ const setup = (isDummy: boolean, selectedCameraId?: string) => {
     const reapplyBackgroundEffect = vi.fn().mockResolvedValue(undefined);
     const { result } = renderHook(() => useVideoToggle({ switchActiveDevice, reapplyBackgroundEffect }));
 
-    return { result, track, localParticipant, reapplyBackgroundEffect };
+    return { result, track, localParticipant, room, reapplyBackgroundEffect };
 };
 
 describe('useVideoToggle — placeholder track swap', () => {
@@ -134,6 +148,167 @@ describe('useVideoToggle — placeholder track swap', () => {
         expect(localParticipant.setCameraEnabled).toHaveBeenCalledWith(true, { deviceId: { exact: 'device-1' } });
         expect(track.restartTrack).not.toHaveBeenCalled();
         expect(dummyMocks.markVideoTrackDeviceBacked).not.toHaveBeenCalled();
+    });
+});
+
+describe('useVideoToggle — republishing the camera', () => {
+    afterEach(() => {
+        vi.clearAllMocks();
+    });
+
+    it('unpublishes the camera, then publishes a new one and puts the background effect back', async () => {
+        const { result, track, localParticipant, reapplyBackgroundEffect } = setup(false, undefined, 'device-1');
+        enableDeviceTrackMock.enableDeviceTrack.mockResolvedValue(true);
+
+        let republished: boolean | undefined;
+        await act(async () => {
+            republished = await result.current.republishCamera();
+        });
+
+        expect(republished).toBe(true);
+        expect(localParticipant.unpublishTrack).toHaveBeenCalledWith(track);
+        expect(enableDeviceTrackMock.enableDeviceTrack).toHaveBeenCalledWith(
+            localParticipant,
+            { source: 'camera', options: { deviceId: { exact: 'device-1' } } },
+            expect.any(Function)
+        );
+        expect(reapplyBackgroundEffect).toHaveBeenCalledWith(true);
+    });
+
+    it('shows the camera as starting until the new camera is published', async () => {
+        const { result } = setup(false, undefined, 'device-1');
+        let publish: (published: boolean) => void = () => {};
+        enableDeviceTrackMock.enableDeviceTrack.mockReturnValueOnce(
+            new Promise<boolean>((resolve) => {
+                publish = resolve;
+            })
+        );
+
+        let republishing: Promise<boolean> | undefined;
+        await act(async () => {
+            republishing = result.current.republishCamera();
+        });
+
+        expect(dispatchMock).toHaveBeenCalledWith(setDevicesInitializing({ camera: true }));
+        expect(dispatchMock).not.toHaveBeenCalledWith(setDevicesInitializing({ camera: false }));
+
+        await act(async () => {
+            publish(true);
+            await republishing;
+        });
+
+        expect(dispatchMock).toHaveBeenLastCalledWith(setDevicesInitializing({ camera: false }));
+    });
+
+    it.each([
+        {
+            name: 'the user left during the unpublish',
+            prepare: (localParticipant: { unpublishTrack: Mock }, room: { state: string }) =>
+                localParticipant.unpublishTrack.mockImplementationOnce(async () => {
+                    room.state = 'disconnected';
+                }),
+        },
+        {
+            name: 'the unpublish failed',
+            prepare: (localParticipant: { unpublishTrack: Mock }) =>
+                localParticipant.unpublishTrack.mockRejectedValueOnce(new Error('unpublish failed')),
+        },
+    ])('stops showing the camera as starting when $name', async ({ prepare }) => {
+        const { result, localParticipant, room } = setup(false, undefined, 'device-1');
+        prepare(localParticipant, room);
+
+        await act(async () => {
+            await result.current.republishCamera();
+        });
+
+        expect(dispatchMock).toHaveBeenCalledWith(setDevicesInitializing({ camera: true }));
+        expect(dispatchMock).toHaveBeenLastCalledWith(setDevicesInitializing({ camera: false }));
+    });
+
+    it('does not open the camera again when the user left during the unpublish', async () => {
+        const { result, localParticipant, room } = setup(false, undefined, 'device-1');
+        localParticipant.unpublishTrack.mockImplementationOnce(async () => {
+            room.state = 'disconnected';
+        });
+
+        let republished: boolean | undefined;
+        await act(async () => {
+            republished = await result.current.republishCamera();
+        });
+
+        expect(republished).toBe(false);
+        expect(enableDeviceTrackMock.enableDeviceTrack).not.toHaveBeenCalled();
+        expect(localParticipant.setCameraEnabled).not.toHaveBeenCalled();
+    });
+
+    it('does not open the camera again when the user left while the room still reads connected', async () => {
+        const { result, localParticipant } = setup(false, undefined, 'device-1');
+        localParticipant.unpublishTrack.mockImplementationOnce(async () => {
+            storeState.connection.joinedRoom = false;
+        });
+
+        let republished: boolean | undefined;
+        await act(async () => {
+            republished = await result.current.republishCamera();
+        });
+        storeState.connection.joinedRoom = true;
+
+        expect(republished).toBe(false);
+        expect(enableDeviceTrackMock.enableDeviceTrack).not.toHaveBeenCalled();
+    });
+
+    it('stops at a camera that answered after the user left the joined room', async () => {
+        const { result } = setup(false, undefined, 'device-1');
+        enableDeviceTrackMock.enableDeviceTrack.mockResolvedValue(true);
+
+        await act(async () => {
+            await result.current.republishCamera();
+        });
+        const hasLeftMeeting = enableDeviceTrackMock.enableDeviceTrack.mock.calls[0][2] as () => boolean;
+        expect(hasLeftMeeting()).toBe(false);
+        storeState.connection.joinedRoom = false;
+        expect(hasLeftMeeting()).toBe(true);
+        storeState.connection.joinedRoom = true;
+    });
+
+    it.each`
+        case                            | isDummy  | isMuted  | activeCameraId
+        ${'the camera is a dummy'}      | ${true}  | ${false} | ${'device-1'}
+        ${'the camera is muted'}        | ${false} | ${true}  | ${'device-1'}
+        ${'no camera device is active'} | ${false} | ${false} | ${undefined}
+    `('leaves the camera published when $case', async ({ isDummy, isMuted, activeCameraId }) => {
+        const { result, track, localParticipant } = setup(isDummy, undefined, activeCameraId);
+        track.isMuted = isMuted;
+
+        let republished: boolean | undefined;
+        await act(async () => {
+            republished = await result.current.republishCamera();
+        });
+
+        expect(republished).toBe(false);
+        expect(localParticipant.unpublishTrack).not.toHaveBeenCalled();
+        expect(dispatchMock).not.toHaveBeenCalledWith(setDevicesInitializing({ camera: true }));
+    });
+
+    it('leaves the camera published while a camera toggle is in progress', async () => {
+        const { result, localParticipant } = setup(false, undefined, 'device-1');
+        let finishSwitch: () => void = () => {};
+        localParticipant.setCameraEnabled.mockReturnValueOnce(
+            new Promise<void>((resolve) => {
+                finishSwitch = resolve;
+            })
+        );
+
+        let republished: boolean | undefined;
+        await act(async () => {
+            const toggle = result.current.toggleVideo({ isEnabled: true, updateUserIntent: false });
+            republished = await result.current.republishCamera();
+            finishSwitch();
+            await toggle;
+        });
+
+        expect(republished).toBe(false);
+        expect(localParticipant.unpublishTrack).not.toHaveBeenCalled();
     });
 });
 

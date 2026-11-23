@@ -6,6 +6,8 @@ import {
     type Room,
     RoomEvent,
     type SimulationScenario,
+    Track,
+    type VideoQuality,
 } from 'livekit-client';
 
 import {
@@ -21,6 +23,7 @@ import {
     selectReconnectionFailed,
     setIsWebsocketReconnecting,
 } from '@proton/meet/store/slices/connectionSlice';
+import { selectCpuLoadDropCount } from '@proton/meet/store/slices/cpuLoadSlice';
 import { selectMlsGroupState, setMlsGroupState } from '@proton/meet/store/slices/currentMeeting';
 import { selectConnectedMemberCount } from '@proton/meet/store/slices/participantCountMismatchListener';
 import {
@@ -35,6 +38,7 @@ import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission, ParticipantEvent } from '@proton/meet/types/types';
 import { SECOND } from '@proton/shared/lib/constants';
 
+import type { BackgroundProcessor } from '../processors/background-processor/types';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { CaptionsSim } from './captionsSim';
 import { createCaptionsSim } from './captionsSim';
@@ -56,9 +60,17 @@ interface MeetEventSimConnection {
     quality(quality: ConnectionQuality): void;
 }
 
+interface CpuLoadSnapshot {
+    drops: number;
+    incomingVideoQualities: VideoQuality[];
+    publishedLayers: { rid: string; active: boolean }[];
+    backgroundModel: string | null;
+}
+
 interface MeetEventSim {
     captions: CaptionsSim;
     connection: MeetEventSimConnection;
+    cpuLoad(): Promise<CpuLoadSnapshot>;
     participantJoined(name?: string): void;
     participantLeft(name?: string): void;
     raiseHand(name?: string): void;
@@ -173,6 +185,29 @@ export const initMeetEventSim = ({
             quality(quality) {
                 room.emit(RoomEvent.ConnectionQualityChanged, quality, room.localParticipant);
             },
+        },
+
+        async cpuLoad() {
+            const camera = room.localParticipant.getTrackPublication(Track.Source.Camera)?.videoTrack;
+            const processor = camera?.getProcessor();
+            const incomingVideoQualities = [...room.remoteParticipants.values()]
+                .map((participant) => participant.getTrackPublication(Track.Source.Camera))
+                .filter((publication) => publication?.isSubscribed)
+                .map((publication) => publication?.videoQuality)
+                .filter((quality) => quality !== undefined);
+
+            return {
+                drops: selectCpuLoadDropCount(getState()),
+                incomingVideoQualities,
+                publishedLayers: (camera?.sender?.getParameters().encodings ?? []).map((encoding) => ({
+                    rid: encoding.rid || 'q',
+                    active: encoding.active ?? true,
+                })),
+                backgroundModel:
+                    processor && 'getSegmentationModel' in processor
+                        ? (processor as BackgroundProcessor).getSegmentationModel()
+                        : null,
+            };
         },
 
         participantJoined(name = 'Simulated User') {

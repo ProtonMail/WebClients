@@ -1,6 +1,6 @@
 import { ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
-import { ConnectionQuality, ConnectionState, type Room } from 'livekit-client';
+import { ConnectionQuality, ConnectionState, type Room, Track, VideoQuality } from 'livekit-client';
 import { EventEmitter } from 'node:events';
 
 import { setIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
@@ -379,6 +379,76 @@ describe('meetEventSim participant count mismatch', () => {
         expect(window.meetEventSim?.setHiddenParticipants(1)).toBe(false);
         expect(memberCount()).toBeUndefined();
         expect(mismatch()).toBeNull();
+    });
+});
+
+describe('meetEventSim.cpuLoad', () => {
+    let cleanup: () => void;
+
+    afterEach(() => {
+        cleanup?.();
+    });
+
+    const cameraOf = (publication: object | undefined) => ({
+        getTrackPublication: (source: string) => (source === Track.Source.Camera ? publication : undefined),
+    });
+
+    it('reports the drops in effect and what each one acts on', async () => {
+        const camera = {
+            sender: {
+                getParameters: () => ({
+                    encodings: [
+                        { rid: '', active: true },
+                        { rid: 'h', active: true },
+                        { rid: 'f', active: false },
+                    ],
+                }),
+            },
+            getProcessor: () => ({ getSegmentationModel: () => 'selfie_segmenter.tflite' }),
+        };
+        const room = {
+            state: ConnectionState.Connected,
+            localParticipant: cameraOf({ videoTrack: camera }),
+            remoteParticipants: new Map([
+                ['a', cameraOf({ isSubscribed: true, videoQuality: VideoQuality.MEDIUM })],
+                ['b', cameraOf({ isSubscribed: false, videoQuality: VideoQuality.HIGH })],
+                ['c', cameraOf(undefined)],
+            ]),
+        };
+        cleanup = init({
+            room: room as unknown as Room,
+            getState: () => ({ cpuLoad: { dropCount: 3 } }) as unknown as MeetState,
+        });
+
+        await expect(window.meetEventSim?.cpuLoad()).resolves.toEqual({
+            drops: 3,
+            incomingVideoQualities: [VideoQuality.MEDIUM],
+            publishedLayers: [
+                { rid: 'q', active: true },
+                { rid: 'h', active: true },
+                { rid: 'f', active: false },
+            ],
+            backgroundModel: 'selfie_segmenter.tflite',
+        });
+    });
+
+    it('reports no layers and no model without a camera', async () => {
+        const room = {
+            state: ConnectionState.Connected,
+            localParticipant: cameraOf(undefined),
+            remoteParticipants: new Map(),
+        };
+        cleanup = init({
+            room: room as unknown as Room,
+            getState: () => ({ cpuLoad: { dropCount: 0 } }) as unknown as MeetState,
+        });
+
+        await expect(window.meetEventSim?.cpuLoad()).resolves.toEqual({
+            drops: 0,
+            incomingVideoQualities: [],
+            publishedLayers: [],
+            backgroundModel: null,
+        });
     });
 });
 

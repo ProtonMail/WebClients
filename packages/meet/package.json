@@ -27,6 +27,7 @@
         "./store/slices/backgroundSlice": "./store/slices/backgroundSlice.ts",
         "./store/slices/chatAndReactionsSlice": "./store/slices/chatAndReactionsSlice.ts",
         "./store/slices/connectionSlice": "./store/slices/connectionSlice.ts",
+        "./store/slices/cpuLoadSlice": "./store/slices/cpuLoadSlice.ts",
         "./store/slices/currentMeeting": "./store/slices/currentMeeting.ts",
         "./store/slices/customBackgroundsSlice": "./store/slices/customBackgroundsSlice.ts",
         "./store/slices/deviceManagementSlice": "./store/slices/deviceManagementSlice/index.ts",

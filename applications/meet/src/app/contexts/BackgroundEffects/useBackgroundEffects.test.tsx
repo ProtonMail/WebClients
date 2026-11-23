@@ -6,6 +6,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { BackgroundEffect, BackgroundState } from '@proton/meet/store/slices/backgroundSlice';
 import { backgroundReducer, initialState } from '@proton/meet/store/slices/backgroundSlice';
+import { cpuLoadReducer, setCpuLoadDropCount } from '@proton/meet/store/slices/cpuLoadSlice';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
 import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { getVirtualBackgroundSource } from '@proton/meet/utils/virtualBackgrounds';
@@ -111,7 +112,7 @@ const setup = ({ cameraState = 'live', appliedBackgroundEffect = 'none' }: Setup
 
     const store = configureStore({
         // The persist thunk reads the background namespace out of the user slice.
-        reducer: { ...backgroundReducer, ...deviceManagementReducer, ...meetUserReducer },
+        reducer: { ...backgroundReducer, ...cpuLoadReducer, ...deviceManagementReducer, ...meetUserReducer },
         preloadedState: { background: { ...initialState, appliedBackgroundEffect } },
     });
 
@@ -126,7 +127,15 @@ const setup = ({ cameraState = 'live', appliedBackgroundEffect = 'none' }: Setup
         ),
     });
 
-    return { result, track, rawFrameToggles, setCameraOff, getBackgroundState, getAppliedBackgroundEffect };
+    return {
+        result,
+        track,
+        rawFrameToggles,
+        setCameraOff,
+        getBackgroundState,
+        getAppliedBackgroundEffect,
+        dispatch: store.dispatch,
+    };
 };
 
 describe('useBackgroundEffects', () => {
@@ -145,6 +154,7 @@ describe('useBackgroundEffects', () => {
             // Whether a mask is already on screen.
             hasAppliedMask: vi.fn(() => false),
             waitUntilApplied: vi.fn().mockResolvedValue(undefined),
+            setSimpleSegmentation: vi.fn().mockResolvedValue(undefined),
             onWarmup: vi.fn((listener: (mode: unknown) => void) => {
                 warmupListeners.add(listener);
                 return () => warmupListeners.delete(listener);
@@ -165,6 +175,31 @@ describe('useBackgroundEffects', () => {
         processorMocks.createBackgroundProcessor.mockReturnValue(null);
         unleashMocks.useFlag.mockReturnValue(true);
         localStorage.clear();
+    });
+
+    it('switches the processor to the simple segmentation model while the CPU load drop is active', async () => {
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+
+        const { dispatch } = setup();
+        await act(async () => {});
+        expect(processor.setSimpleSegmentation).not.toHaveBeenCalled();
+
+        act(() => {
+            dispatch(setCpuLoadDropCount(1));
+        });
+        expect(processor.setSimpleSegmentation).not.toHaveBeenCalled();
+
+        act(() => {
+            dispatch(setCpuLoadDropCount(2));
+        });
+        expect(processor.setSimpleSegmentation).toHaveBeenLastCalledWith(true);
+
+        act(() => {
+            dispatch(setCpuLoadDropCount(1));
+        });
+        expect(processor.setSimpleSegmentation).toHaveBeenLastCalledWith(false);
+        expect(processor.setSimpleSegmentation).toHaveBeenCalledTimes(2);
     });
 
     it('applies blur picked before the processor finished loading', async () => {

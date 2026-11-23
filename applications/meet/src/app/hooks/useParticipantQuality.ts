@@ -2,6 +2,7 @@ import { useParticipants } from '@livekit/components-react';
 import { RoomEvent, VideoQuality } from 'livekit-client';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsCpuLoadDropActive } from '@proton/meet/store/slices/cpuLoadSlice';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 const updateOnlyOn = [
@@ -19,14 +20,15 @@ export const useParticipantQuality = () => {
     });
 
     const isScreenShare = useMeetSelector(selectIsScreenShare);
+    const isReducedForCpuLoad = useMeetSelector((state) => selectIsCpuLoadDropActive(state, 'incomingVideoQuality'));
 
     if (isScreenShare || participants.length > 8) {
         return VideoQuality.LOW;
     }
 
     if (participants.length <= 3) {
-        return VideoQuality.HIGH;
+        return isReducedForCpuLoad ? VideoQuality.MEDIUM : VideoQuality.HIGH;
     }
 
-    return VideoQuality.MEDIUM;
+    return isReducedForCpuLoad ? VideoQuality.LOW : VideoQuality.MEDIUM;
 };

@@ -1,6 +1,7 @@
 import { backgroundReducer } from './backgroundSlice';
 import { chatAndReactionsReducer } from './chatAndReactionsSlice';
 import { connectionReducer } from './connectionSlice';
+import { cpuLoadReducer } from './cpuLoadSlice';
 import { currentMeetingReducer } from './currentMeeting';
 import { customBackgroundsReducer } from './customBackgroundsSlice';
 import { devToolsReducer } from './devToolsSlice';
@@ -26,6 +27,7 @@ export const meetReducers = {
     ...backgroundReducer,
     ...chatAndReactionsReducer,
     ...connectionReducer,
+    ...cpuLoadReducer,
     ...devToolsReducer,
     ...deviceManagementReducer,
     ...layoutReducer,
