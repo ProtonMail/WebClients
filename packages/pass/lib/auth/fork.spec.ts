@@ -37,6 +37,16 @@ describe('fork', () => {
             expect(new URL(url).searchParams.get('independent')).toEqual('0');
         });
 
+        test('should show the remember me checkbox by default', () => {
+            const { url } = requestFork({ app: APPS.PROTONPASS });
+            expect(new URL(url).searchParams.has('remember')).toBe(false);
+        });
+
+        test('should hide the remember me checkbox when asked', () => {
+            const { url } = requestFork({ app: APPS.PROTONPASS, hideRememberMe: true });
+            expect(new URL(url).searchParams.get('remember')).toEqual('2');
+        });
+
         test('should request an independent fork when asked', () => {
             const { url } = requestFork({ app: APPS.PROTONPASS, independent: true });
             expect(new URL(url).searchParams.get('independent')).toEqual('1');

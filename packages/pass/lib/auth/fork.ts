@@ -44,6 +44,7 @@ export type RequestForkOptions = {
     email?: string;
     forkChallenge?: string;
     forkType?: ForkType;
+    hideRememberMe?: boolean;
     host?: string;
     independent?: boolean;
     localID?: number;
@@ -85,6 +86,9 @@ export const generateForkSecret = () => crypto.getRandomValues(new Uint8Array(32
 export const getForkChallenge = async (forkSecret: string) =>
     (await computeSHA256(binaryStringToUint8Array(forkSecret))).toHex();
 
+/** Account `RememberMode.Hidden`: the sign-in page hides "Keep me signed in" */
+const REMEMBER_MODE_HIDDEN = '2';
+
 /** Will compute offline params by default. Only allows by-pass for web.
  * Extension does not support password locking yet, as such force re-auth. */
 export const requestFork = ({
@@ -93,6 +97,7 @@ export const requestFork = ({
     forkChallenge,
     host = getAppHref('/', APPS.PROTONACCOUNT),
     forkType,
+    hideRememberMe = false,
     independent = false,
     localID,
     payloadType = 'offline',
@@ -126,6 +131,7 @@ export const requestFork = ({
     if (forkType) searchParams.append(ForkSearchParameters.ForkType, forkType);
     if (plan !== undefined) searchParams.append(ForkSearchParameters.Plan, plan);
     if (forkChallenge) searchParams.append(ForkSearchParameters.ForkChallenge, forkChallenge);
+    if (hideRememberMe) searchParams.append('remember', REMEMBER_MODE_HIDDEN);
 
     return { state, url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}` };
 };
