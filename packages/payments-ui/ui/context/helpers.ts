@@ -33,7 +33,7 @@ import {
     getPlanToCheck,
     getSubscriptionDataFromPlanToCheck,
 } from '@proton/payments/core/subscription/plan-to-check';
-import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-eligibility';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { EstimationChangeAction } from '@proton/payments/telemetry/shared-checkout-telemetry';

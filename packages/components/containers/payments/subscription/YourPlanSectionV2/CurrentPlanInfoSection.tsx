@@ -10,7 +10,6 @@ import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extens
 import type { ADDON_NAMES } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import {
-    canModify,
     getAddons,
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
@@ -26,6 +25,7 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { canModify } from '@proton/payments/core/subscription/purchase-eligibility';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';

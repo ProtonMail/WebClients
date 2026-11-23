@@ -95,7 +95,7 @@ import type {
 } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-eligibility';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';

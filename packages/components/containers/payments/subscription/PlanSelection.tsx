@@ -45,7 +45,7 @@ import {
     getSubscriptionWithPlan,
 } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-outcome';
+import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-eligibility';
 import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';

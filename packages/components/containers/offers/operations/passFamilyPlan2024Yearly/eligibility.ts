@@ -1,6 +1,7 @@
 import { PLANS } from '@proton/payments/core/constants';
-import { type MaybeFreeSubscription, canModify } from '@proton/payments/core/subscription/helpers';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { canModify } from '@proton/payments/core/subscription/purchase-eligibility';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';

@@ -33,7 +33,7 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
-import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-eligibility';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getApiErrorMessage, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';

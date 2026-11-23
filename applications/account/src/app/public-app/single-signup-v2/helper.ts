@@ -51,7 +51,7 @@ import {
     getChangedSubscription,
     getGrantedProductFlags,
     getPurchaseOutcome,
-} from '@proton/payments/core/subscription/purchase-outcome';
+} from '@proton/payments/core/subscription/purchase-eligibility';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';

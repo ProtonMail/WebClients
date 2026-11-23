@@ -31,7 +31,7 @@ import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-outcome';
+import { getSubscriptionChangedByPlan } from '@proton/payments/core/subscription/purchase-eligibility';
 import { extractSubscriptionSearchParams } from '@proton/payments/core/subscription/search-params';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';

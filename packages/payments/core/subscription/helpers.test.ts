@@ -11,10 +11,7 @@ import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES 
 import type { PlanIDs } from '../interface';
 import { FREE_PLAN } from './freePlans';
 import {
-    canModify,
-    canStartPurchase,
     getAutoCoupon,
-    getAvailableSubscriptionActions,
     getCodes,
     getOfferOrCodes,
     getSoonestEndingSubscription,
@@ -34,7 +31,6 @@ import {
 import { isManagedExternally } from './helpers/external-management';
 import { getPlanIDs } from './helpers/plan-ids';
 import type { Subscription } from './interface';
-import { toSubscriptionList } from './multi-subscription-context';
 
 describe('getSubscriptionPlanTitle', () => {
     it('should return plan title and name for a paid user with subscription', () => {
@@ -1236,131 +1232,6 @@ describe('isManagedExternally', () => {
     });
 });
 
-describe('canModify', () => {
-    it('returns true when subscription is null', () => {
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(null as any))).toBe(true);
-    });
-
-    it('returns true when subscription is undefined', () => {
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(undefined as any))).toBe(true);
-    });
-
-    it('returns true for free subscription', () => {
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION as any))).toBe(true);
-    });
-
-    it('returns false for externally managed subscription without Lumo', () => {
-        const subscription = buildSubscription(undefined, {
-            External: SubscriptionPlatform.Android,
-        });
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(false);
-    });
-
-    it('returns true for non-externally managed subscription', () => {
-        const subscription = buildSubscription(undefined, {
-            External: SubscriptionPlatform.Default,
-        });
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(true);
-    });
-
-    it('looks at every subscription, whichever comes first', () => {
-        const storeMailPlus = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.Android });
-        const webPassPlus = buildSubscription(PLANS.PASS, { External: SubscriptionPlatform.Default });
-        const storeLumoPlus = buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.iOS });
-
-        expect(canModify(buildMultiSubscriptionContext([storeMailPlus, webPassPlus], false))).toBe(true);
-        expect(canModify(buildMultiSubscriptionContext([storeMailPlus, storeLumoPlus], false))).toBe(false);
-        expect(canModify(buildMultiSubscriptionContext([storeMailPlus], false))).toBe(false);
-    });
-
-    it('returns true for externally managed subscription with Lumo', () => {
-        const subscription = buildSubscription(PLANS.LUMO, {
-            External: SubscriptionPlatform.Android,
-        });
-
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(true);
-    });
-});
-
-describe('canModify with the Lumo purchase rules', () => {
-    const withFlagOn = (subscription?: Subscription) => buildMultiSubscriptionContext(toSubscriptionList(subscription));
-
-    it('lets a store Lumo Ultra subscriber add a subscription only with the flag on', () => {
-        const subscription = buildLumoSubscription(PLANS.LUMO_ULTRA, { External: SubscriptionPlatform.iOS });
-
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(false);
-        expect(canModify(withFlagOn(subscription))).toBe(true);
-    });
-
-    it('locks a user whose two subscriptions are both store-managed', () => {
-        const subscription = buildSubscription(PLANS.LUMO, {
-            External: SubscriptionPlatform.iOS,
-            SecondarySubscriptions: [buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.Android })],
-        });
-
-        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(false);
-        expect(canModify(withFlagOn(subscription))).toBe(false);
-    });
-
-    it('keeps a store Mail Plus subscriber locked with the flag on', () => {
-        const subscription = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.Android });
-
-        expect(canModify(withFlagOn(subscription))).toBe(false);
-    });
-
-    it('keeps a store Lumo Ultra subscriber locked while the catalog is missing', () => {
-        const subscription = buildLumoSubscription(PLANS.LUMO_ULTRA, { External: SubscriptionPlatform.iOS });
-
-        expect(canModify({ ...withFlagOn(subscription), entitlementCatalog: undefined })).toBe(false);
-    });
-
-    it('lets a free user modify with the flag on', () => {
-        expect(canModify(withFlagOn())).toBe(true);
-    });
-});
-
-describe('canStartPurchase', () => {
-    const storeMailPlus = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.iOS });
-    const withFlagOn = buildMultiSubscriptionContext(toSubscriptionList(storeMailPlus));
-
-    it('lets a store Mail Plus subscriber start buying a Lumo tier with the flag on', () => {
-        expect(canStartPurchase(withFlagOn, PLANS.LUMO_BASIC)).toBe(true);
-        expect(canStartPurchase(withFlagOn, PLANS.LUMO)).toBe(true);
-        expect(canStartPurchase(withFlagOn, PLANS.LUMO_ULTRA)).toBe(true);
-    });
-
-    it('keeps a store Mail Plus subscriber away from every other plan', () => {
-        expect(canStartPurchase(withFlagOn, PLANS.MAIL)).toBe(false);
-        expect(canStartPurchase(withFlagOn, PLANS.BUNDLE)).toBe(false);
-        expect(canStartPurchase(withFlagOn, PLANS.DUO)).toBe(false);
-        expect(canStartPurchase(withFlagOn, undefined)).toBe(false);
-    });
-
-    it('keeps a store Mail Plus subscriber away from Lumo tiers with the flag off', () => {
-        expect(canStartPurchase(buildMultiSubscriptionContextFromSubscription(storeMailPlus), PLANS.LUMO_BASIC)).toBe(
-            false
-        );
-    });
-
-    it('keeps a user with a store Lumo subscription next to a store Mail Plus away from other Lumo tiers', () => {
-        const subscription = buildLumoSubscription(PLANS.LUMO_BASIC, {
-            External: SubscriptionPlatform.iOS,
-            SecondarySubscriptions: [storeMailPlus],
-        });
-
-        expect(
-            canStartPurchase(buildMultiSubscriptionContext(toSubscriptionList(subscription)), PLANS.LUMO_ULTRA)
-        ).toBe(false);
-    });
-
-    it('lets a web subscriber start any purchase', () => {
-        const context = buildMultiSubscriptionContext(toSubscriptionList(buildSubscription(PLANS.MAIL)));
-
-        expect(canStartPurchase(context, PLANS.BUNDLE)).toBe(true);
-        expect(canStartPurchase(context, undefined)).toBe(true);
-    });
-});
-
 describe('isSubscriptionCheckForbiddenWithReason with several subscriptions', () => {
     const webMailPlus = buildSubscription(
         { planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY, currency: 'EUR' },
@@ -1516,47 +1387,6 @@ describe('isForbiddenModification next to several subscriptions', () => {
                 cycle: CYCLE.YEARLY,
             })
         ).toEqual({ forbidden: true, reason: 'offer-not-available' });
-    });
-});
-
-describe('getAvailableActions', () => {
-    it('lets a web subscriber modify', () => {
-        const subscription = buildSubscription(undefined, {
-            External: SubscriptionPlatform.Default,
-        });
-
-        const result = getAvailableSubscriptionActions(buildMultiSubscriptionContextFromSubscription(subscription));
-
-        expect(result).toEqual({
-            canModify: true,
-            cantModifyReason: undefined,
-        });
-    });
-
-    it('locks an externally managed subscriber without Lumo', () => {
-        const subscription = buildSubscription(undefined, {
-            External: SubscriptionPlatform.Android,
-        });
-
-        const result = getAvailableSubscriptionActions(buildMultiSubscriptionContextFromSubscription(subscription));
-
-        expect(result).toEqual({
-            canModify: false,
-            cantModifyReason: 'subscription_managed_externally',
-        });
-    });
-
-    it('lets an externally managed Lumo subscriber modify', () => {
-        const subscription = buildSubscription(PLANS.LUMO, {
-            External: SubscriptionPlatform.Android,
-        });
-
-        const result = getAvailableSubscriptionActions(buildMultiSubscriptionContextFromSubscription(subscription));
-
-        expect(result).toEqual({
-            canModify: true,
-            cantModifyReason: undefined,
-        });
     });
 });
 

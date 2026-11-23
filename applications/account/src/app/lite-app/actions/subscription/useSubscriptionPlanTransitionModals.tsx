@@ -8,7 +8,7 @@ import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payment
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
-import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-eligibility';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import noop from '@proton/utils/noop';
 

@@ -28,12 +28,8 @@ import { loadInitialBillingAddress } from '@proton/payments/core/billing-address
 import { CURRENCIES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import {
-    canStartPurchase,
-    getHas2025OfferCoupon,
-    getUpgradedPlan,
-    getValidCycle,
-} from '@proton/payments/core/subscription/helpers';
+import { getHas2025OfferCoupon, getUpgradedPlan, getValidCycle } from '@proton/payments/core/subscription/helpers';
+import { canStartPurchase } from '@proton/payments/core/subscription/purchase-eligibility';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';

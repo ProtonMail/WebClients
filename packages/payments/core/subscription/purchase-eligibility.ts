@@ -1,11 +1,57 @@
+import { hasLumo } from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
+
+import type { ADDON_NAMES, PLANS } from '../constants';
 import type { EntitlementCatalog } from '../entitlements/interface';
 import { type ProductFlag, productFlags } from '../entitlements/product-flags';
 import { createEntitlementResolverForSelection } from '../entitlements/resolver';
 import type { PlanIDs } from '../interface';
 import { getWebSubscriptions, isManagedExternally } from './helpers/external-management';
 import type { Subscription } from './interface';
-import { canRunAlongside } from './lumo-purchase-rules';
+import { canModifySubscriptions, canRunAlongside, canSelectB2CLumoPlan, isB2CLumoPlan } from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
+
+export function canModify(multiSubscriptionContext: MultiSubscriptionContext) {
+    if (multiSubscriptionContext.lumoMultiSubscriptions) {
+        return canModifySubscriptions(multiSubscriptionContext);
+    }
+
+    const { subscriptions } = multiSubscriptionContext;
+    return (
+        subscriptions.length === 0 ||
+        subscriptions.some((subscription) => !isManagedExternally(subscription)) ||
+        (subscriptions.length === 1 && hasLumo(subscriptions[0]))
+    );
+}
+
+export function canStartPurchase(
+    multiSubscriptionContext: MultiSubscriptionContext,
+    requestedPlanName: PLANS | ADDON_NAMES | undefined
+): boolean {
+    return (
+        canModify(multiSubscriptionContext) ||
+        (canSelectB2CLumoPlan(multiSubscriptionContext) && isB2CLumoPlan(multiSubscriptionContext, requestedPlanName))
+    );
+}
+
+type SubscriptionActions =
+    | {
+          canModify: true;
+          cantModifyReason: undefined;
+      }
+    | {
+          canModify: false;
+          cantModifyReason: 'subscription_managed_externally';
+      };
+
+export function getAvailableSubscriptionActions(
+    multiSubscriptionContext: MultiSubscriptionContext
+): SubscriptionActions {
+    if (canModify(multiSubscriptionContext)) {
+        return { canModify: true, cantModifyReason: undefined };
+    }
+
+    return { canModify: false, cantModifyReason: 'subscription_managed_externally' };
+}
 
 export type PurchaseOutcome =
     | { type: 'new-subscription' }

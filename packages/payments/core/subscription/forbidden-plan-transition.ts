@@ -14,7 +14,7 @@ import { getPlanIDs } from './helpers/plan-ids';
 import type { Subscription } from './interface';
 import { shouldReplaceB2CLumoPlanWithAddon } from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
-import { getPurchaseOutcome } from './purchase-outcome';
+import { getPurchaseOutcome } from './purchase-eligibility';
 import { SelectedPlan } from './selected-plan';
 
 const isLumoPlanReplacedByAddon = (

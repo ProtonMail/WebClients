@@ -15,7 +15,7 @@ import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
+import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/purchase-eligibility';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

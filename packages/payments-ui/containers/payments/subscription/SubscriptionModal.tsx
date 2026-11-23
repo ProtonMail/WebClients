@@ -18,8 +18,9 @@ import type { BillingAddressExtended } from '@proton/payments/core/billing-addre
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
-import { canStartPurchase, getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
+import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { canStartPurchase } from '@proton/payments/core/subscription/purchase-eligibility';
 import {
     SUBSCRIPTION_STEPS,
     subscriptionModalClassName,
