@@ -6,11 +6,13 @@ import useAppTitle from '../../hooks/useAppTitle';
 import SettingsPageTitle from '../account/SettingsPageTitle';
 import SettingsParagraph from '../account/SettingsParagraph';
 import ErrorBoundary from '../app/ErrorBoundary';
+import BackToMenuButton from './BackToMenuButton';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from './interface';
 import type { SettingsAreaConfig } from './interface';
+import { useFocusMainOnNavigation } from './useFocusMainOnNavigation';
 import { useScrollRestoration } from './useScrollRestoration';
 
 interface PrivateMainSettingsAreaBaseProps {
@@ -44,10 +46,12 @@ export const PrivateMainSettingsAreaBase = ({
     maxWidth,
 }: PrivateMainSettingsAreaBaseProps) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
 
     useAppTitle(title);
 
     useScrollRestoration(mainAreaRef);
+    useFocusMainOnNavigation(mainAreaRef, titleRef);
 
     const wrappedSections = Children.toArray(children).map((child) => {
         if (!isValidElement(child)) {
@@ -70,13 +74,16 @@ export const PrivateMainSettingsAreaBase = ({
                 )}
                 style={{ '--max-w-custom': maxWidth, ...style }}
             >
+                <BackToMenuButton />
                 {breadcrumbs && <div className="mt-6 md:mt-0">{breadcrumbs}</div>}
                 {noTitle ? (
                     backButton && <div className="mt-6 md:mt-0">{backButton}</div>
                 ) : (
                     <SettingsPageTitle
+                        ref={titleRef}
+                        tabIndex={-1}
                         className={clsx(
-                            'flex items-center gap-2',
+                            'flex items-center gap-2 outline-none--at-all',
                             variant === SettingsLayoutVariant.Mobile && 'text-xl',
                             variant === SettingsLayoutVariant.Default && 'mt-14',
                             variant === SettingsLayoutVariant.Card && 'text-5xl',

@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import VerifyPasswordButton from '@proton/account-recovery/passwordReminder/VerifyPasswordButton';
 import NonPrivateRecoverySection from '@proton/account-recovery/recovery/NonPrivateRecoveySection';
 import SignInRestrictionSection from '@proton/account-security/signInRestriction/SignInRestrictionSection';
@@ -14,14 +12,11 @@ import AccessibilitySection from '@proton/components/containers/account/Accessib
 import DeleteSection from '@proton/components/containers/account/DeleteSection';
 import FamilyPlanSection from '@proton/components/containers/account/FamilyPlanSection';
 import PasswordsSection from '@proton/components/containers/account/PasswordsSection';
-import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
-import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import UsernameSection from '@proton/components/containers/account/UsernameSection';
 import GroupMembershipSection from '@proton/components/containers/account/groups/GroupMembershipSection';
 import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
 import LanguageAndTimeSection from '@proton/components/containers/general/LanguageAndTimeSection';
-import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
@@ -53,7 +48,6 @@ import { EmergencyContactSection } from '@proton/delegated-access/emergencyConta
 import { RecoveryContactSection } from '@proton/delegated-access/recoveryContact/RecoveryContactSection';
 import InvoicesSection from '@proton/payments-ui/containers/invoices/InvoicesSection';
 import CreditsSection from '@proton/payments-ui/containers/payments/CreditsSection';
-import PlansSection from '@proton/payments-ui/containers/payments/PlansSection';
 import PaymentMethodsSection from '@proton/payments-ui/containers/payments/methods/PaymentMethodsSection';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
@@ -61,6 +55,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
 import { SettingsLinkRedirect, type SettingsLinkRedirectRule } from './SettingsLinkRedirect';
+import UpgradePage from './UpgradePage';
 import AccountDashboard from './dashboard/dashboard';
 import EmailSubscriptionSettings from './notifications/EmailSubscriptionSettings';
 import RecoverySettingsRouter from './recovery/RecoverySettingsRouter';
@@ -212,17 +207,7 @@ const AccountSettingsRouter = ({
             {getIsSectionAvailable(upgrade) && (
                 <Route path={getSectionPath(path, upgrade)}>
                     <AutomaticSubscriptionModal />
-                    <PrivateMainArea>
-                        <div className="container-section-sticky">
-                            <div className="text-center flex">
-                                <SettingsSectionWide className="mx-auto">
-                                    <SettingsPageTitle className="my-14">{c('new_plans: title')
-                                        .t`Unlock premium features by upgrading`}</SettingsPageTitle>
-                                    <PlansSection app={app} />
-                                </SettingsSectionWide>
-                            </div>
-                        </div>
-                    </PrivateMainArea>
+                    <UpgradePage app={app} />
                 </Route>
             )}
             {getIsSectionAvailable(recovery) && (
