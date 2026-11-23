@@ -365,6 +365,7 @@ enum MeetFeatureFlag {
     MeetCollectLogsKillSwitch = 'MeetCollectLogsKillSwitch',
     MeetCoreWorker = 'MeetCoreWorker',
     MeetCountdownUpsell = 'MeetCountdownUpsell',
+    MeetCpuLoadShedding = 'MeetCpuLoadShedding',
     MeetCpuOptimizations = 'MeetCpuOptimizations',
     MeetCustomReactions = 'MeetCustomReactions',
     MeetCustomVirtualBackground = 'MeetCustomVirtualBackground',

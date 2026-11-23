@@ -6,6 +6,7 @@ import type { MeetState } from './rootReducer';
 import { resetBackgroundEffectStatus } from './slices/backgroundSlice';
 import { resetChatAndReactions } from './slices/chatAndReactionsSlice';
 import { resetConnection } from './slices/connectionSlice';
+import { resetCpuLoad } from './slices/cpuLoadSlice';
 import { resetCurrentMeeting, stopMeetingDurationTimer } from './slices/currentMeeting';
 import { resetLayout } from './slices/layoutSlice';
 import { resetMeetingInfoModel } from './slices/meetingInfoModel';
@@ -39,4 +40,5 @@ export const resetMeetingState =
         dispatch(resetWaitingRoom());
         dispatch(resetWaitingRoomSetting());
         dispatch(resetBackgroundEffectStatus());
+        dispatch(resetCpuLoad());
     };

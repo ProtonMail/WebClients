@@ -6,7 +6,8 @@ import debounce from 'lodash/debounce';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
-import { setUserCameraIntent } from '@proton/meet/store/slices/deviceManagementSlice';
+import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
+import { setDevicesInitializing, setUserCameraIntent } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     selectActiveCameraId,
     selectInitialCameraState,
@@ -202,10 +203,59 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [facingMode, toggleVideo]);
 
+    // Publishes a new camera track in place of the current one, so it starts again from LiveKit's default
+    // encodings. Remote participants see the camera disappear until the new track arrives.
+    const republishCamera = useStableCallback(async () => {
+        const track = getCurrentCameraTrack(room);
+        // The checks toggleVideo would stop at, done before unpublishing so the camera is never left off
+        if (
+            toggleInProgress.current ||
+            !track ||
+            track.isMuted ||
+            isDummyVideoTrack(track) ||
+            (!activeCameraDeviceId && !isMobile())
+        ) {
+            return false;
+        }
+
+        // Leaving clears joinedRoom at once, while the room only reports Disconnected once LiveKit has closed
+        const hasLeftMeeting = () => room.state === ConnectionState.Disconnected || !selectJoinedRoom(store.getState());
+
+        // The button would read "Turn on camera" while the publication is gone, so it shows the camera as starting
+        dispatch(setDevicesInitializing({ camera: true }));
+        try {
+            toggleInProgress.current = true;
+            try {
+                await localParticipant.unpublishTrack(track);
+            } catch (error) {
+                reportError('Failed to unpublish the camera to republish it', { context: { error } });
+                return false;
+            } finally {
+                toggleInProgress.current = false;
+            }
+
+            if (room.state !== ConnectionState.Connected || hasLeftMeeting()) {
+                return false;
+            }
+
+            return (
+                (await toggleVideo({
+                    isEnabled: true,
+                    preserveCache: true,
+                    updateUserIntent: false,
+                    hasLeftMeeting,
+                })) ?? false
+            );
+        } finally {
+            dispatch(setDevicesInitializing({ camera: false }));
+        }
+    });
+
     const debouncedToggleVideo = useMemo(() => debounce(toggleVideo, 500, { leading: true }), [toggleVideo]);
 
     return {
         toggleVideo: debouncedToggleVideo,
+        republishCamera,
         handleRotateCamera,
         isVideoEnabled: isCameraEnabled,
         facingMode,

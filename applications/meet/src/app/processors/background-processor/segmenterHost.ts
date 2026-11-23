@@ -15,6 +15,7 @@ export interface SegmenterAssetPaths {
 
 export interface SegmenterHandle {
     delegate: 'GPU' | 'CPU';
+    modelPath: string;
     connect: () => MessagePort;
     terminate: () => void;
 }
@@ -160,6 +161,7 @@ export const startSegmenter = async ({
 
         return {
             delegate: activeDelegate,
+            modelPath,
             connect: () => {
                 const channel = new MessageChannel();
                 worker.postMessage({ type: 'connect', port: channel.port1 }, [channel.port1]);

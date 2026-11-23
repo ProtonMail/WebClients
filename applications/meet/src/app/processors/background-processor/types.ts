@@ -1,6 +1,7 @@
 import type { ProcessorWrapperOptions, SegmenterOptions } from '@livekit/track-processors';
 import type { Track, TrackProcessor } from 'livekit-client';
 
+import type { SegmenterAssetPaths } from './segmenterHost';
 import type { TunableConstantsOverrides } from './tunableConstants';
 
 export interface PipelineLogger {
@@ -19,10 +20,8 @@ export type BackgroundMode =
 export interface BackgroundProcessorOptions extends ProcessorWrapperOptions {
     mode?: BackgroundMode;
     segmenterOptions?: SegmenterOptions;
-    assetPaths?: {
-        tasksVisionFileSet?: string;
-        modelAssetPath?: string;
-    };
+    assetPaths?: SegmenterAssetPaths;
+    simpleSegmentationAssetPaths?: SegmenterAssetPaths;
     isLowEndDevice?: boolean;
     isMobile?: boolean;
     personConfidenceBoost?: number;
@@ -42,4 +41,8 @@ export type BackgroundProcessor = TrackProcessor<Track.Kind.Video> & {
     setMode: (mode: BackgroundMode) => Promise<void>;
     // Called each time the processor starts warming up, including when LiveKit restarts it on a new camera track.
     onWarmup: (listener: (mode: BackgroundMode) => void) => () => void;
+    // Switches between the device's model and the simple one, keeping the running pipeline.
+    setSimpleSegmentation: (enabled: boolean) => Promise<void>;
+    // The model file the running segmenter loaded, null without one.
+    getSegmentationModel: () => string | null;
 };

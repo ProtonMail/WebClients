@@ -6,6 +6,7 @@ import { renderHook } from '@testing-library/react';
 import { VideoQuality } from 'livekit-client';
 import type { Mock } from 'vitest';
 
+import { cpuLoadReducer } from '@proton/meet/store/slices/cpuLoadSlice';
 import {
     currentMeetingReducer,
     initialState as initialCurrentMeetingState,
@@ -22,13 +23,20 @@ vi.mock('@livekit/components-react', () => ({
     useParticipants: vi.fn(),
 }));
 
-const createMockStore = ({ isScreenShare = false }: { isScreenShare?: boolean }) => {
+interface MockStoreOptions {
+    isScreenShare?: boolean;
+    cpuLoadDropCount?: number;
+}
+
+const createMockStore = ({ isScreenShare = false, cpuLoadDropCount = 0 }: MockStoreOptions) => {
     return configureStore({
         reducer: {
+            ...cpuLoadReducer,
             ...currentMeetingReducer,
             ...screenShareStatusReducer,
         },
         preloadedState: {
+            cpuLoad: { dropCount: cpuLoadDropCount },
             currentMeeting: { ...initialCurrentMeetingState },
             screenShareStatus: {
                 ...initialScreenShareStatusState,
@@ -38,8 +46,8 @@ const createMockStore = ({ isScreenShare = false }: { isScreenShare?: boolean })
     });
 };
 
-const createWrapper = ({ isScreenShare = false }: { isScreenShare?: boolean } = {}) => {
-    const store = createMockStore({ isScreenShare });
+const createWrapper = (options: MockStoreOptions = {}) => {
+    const store = createMockStore(options);
 
     return function Wrapper({ children }: { children: React.ReactNode }) {
         return (
@@ -94,4 +102,30 @@ describe('useParticipantQuality', () => {
 
         expect(result.current).toBe(VideoQuality.LOW);
     });
+
+    it.each`
+        participants | isScreenShare | expected
+        ${3}         | ${false}      | ${'MEDIUM'}
+        ${4}         | ${false}      | ${'LOW'}
+        ${9}         | ${false}      | ${'LOW'}
+        ${3}         | ${true}       | ${'LOW'}
+    `(
+        'should return $expected quality for $participants participants, screen share $isScreenShare, while the incoming quality is reduced for CPU load',
+        ({
+            participants,
+            isScreenShare,
+            expected,
+        }: {
+            participants: number;
+            isScreenShare: boolean;
+            expected: 'MEDIUM' | 'LOW';
+        }) => {
+            (useParticipants as Mock).mockReturnValue(Array(participants).fill({}));
+            const { result } = renderHook(() => useParticipantQuality(), {
+                wrapper: createWrapper({ isScreenShare, cpuLoadDropCount: 1 }),
+            });
+
+            expect(result.current).toBe(VideoQuality[expected]);
+        }
+    );
 });

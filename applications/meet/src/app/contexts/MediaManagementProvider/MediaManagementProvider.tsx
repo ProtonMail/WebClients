@@ -247,7 +247,7 @@ export const MediaManagementProvider = ({
         cancelBackgroundEffectInitialization,
     } = useBackgroundEffects({ isBackgroundEffectsSupported: isBackgroundBlurSupported });
 
-    const { toggleVideo, handleRotateCamera, isVideoEnabled, facingMode } = useVideoToggle({
+    const { toggleVideo, republishCamera, handleRotateCamera, isVideoEnabled, facingMode } = useVideoToggle({
         switchActiveDevice,
         reapplyBackgroundEffect,
     });
@@ -749,6 +749,7 @@ export const MediaManagementProvider = ({
                 isAudioEnabled,
                 facingMode,
                 toggleVideo,
+                republishCamera,
                 toggleAudio,
                 handleMicrophoneToggle,
                 handleCameraToggle,

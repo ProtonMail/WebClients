@@ -18,6 +18,7 @@ import {
 } from '../../utils/customBackgrounds/constants';
 import { BackgroundPipeline, type PipelineBackground, type PipelineConfig } from './BackgroundPipeline';
 import {
+    DEFAULT_MODEL_PATH,
     MASK_CLOSING_MAX_RADIUS,
     MASK_TEMPORAL_APPEAR_RATE,
     MASK_TEMPORAL_APPEAR_RATE_FAST,
@@ -73,6 +74,9 @@ const resampleTemporalRate = (rate: number, periods: number): number => {
 
 const resolveInt = (override: number | undefined, fallback: number, min: number): number =>
     typeof override === 'number' && Number.isFinite(override) ? Math.max(min, Math.round(override)) : fallback;
+
+const getModelPath = (assetPaths: BackgroundProcessorOptions['assetPaths']) =>
+    assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH;
 
 const backgroundKey = (mode: BackgroundMode): string | null =>
     mode.type === 'image' ? `image:${mode.imageUrl}` : null;
@@ -363,6 +367,10 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
 
     private segmenterRestartsLeft = SEGMENTER_RESTART_LIMIT;
 
+    private readonly deviceAssetPaths: BackgroundProcessorOptions['assetPaths'];
+
+    private segmentationModelGeneration = 0;
+
     // Most recently used last.
     private backgroundBitmaps = new Map<string, ImageBitmap>();
 
@@ -392,6 +400,7 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
     constructor(options: BackgroundProcessorOptions) {
         this.options = options;
         this.mode = options.mode ?? { type: 'blur' };
+        this.deviceAssetPaths = options.assetPaths;
 
         const overrides = options.constantOverrides;
         this.maskClosingRadius = resolveInt(overrides?.maskClosingRadius, getDefaultMaskClosingRadius(options), 0);
@@ -509,6 +518,9 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
         this.appliedBackgroundKey = background.type === 'image' ? background.key : null;
         this.sessionModeId = this.getModeId(mode);
         this.unregisterDebug ??= registerBackgroundEffectDebug(this);
+        void this.syncSegmentationModel().catch((error) => {
+            meetingLogger.error('[bg-processor] segmentation model swap failed', error);
+        });
 
         // setMode() resolved for this mode while no session existed, so a failure here is the
         // attach's to report; LiveKit doesn't destroy a processor whose init() rejects.
@@ -589,6 +601,34 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
     setDebugView(view: BackgroundDebugView) {
         this.debugView = view;
         this.session?.setDebugView(view);
+    }
+
+    async setSimpleSegmentation(enabled: boolean) {
+        const assetPaths = enabled ? this.options.simpleSegmentationAssetPaths : this.deviceAssetPaths;
+        if (getModelPath(assetPaths) === getModelPath(this.options.assetPaths)) {
+            return;
+        }
+        this.options = { ...this.options, assetPaths };
+        await this.syncSegmentationModel();
+    }
+
+    getSegmentationModel() {
+        return this.session?.segmenter?.modelPath.split('/').pop() ?? null;
+    }
+
+    private async syncSegmentationModel() {
+        const generation = ++this.segmentationModelGeneration;
+        const session = this.session;
+        if (!session?.segmenter || session.segmenter.modelPath === getModelPath(this.options.assetPaths)) {
+            return;
+        }
+
+        const segmenter = await this.launchSegmenter();
+        if (generation !== this.segmentationModelGeneration || session !== this.session) {
+            segmenter.terminate();
+            return;
+        }
+        session.replaceSegmenter(segmenter);
     }
 
     async setMode(mode: BackgroundMode) {
@@ -710,23 +750,27 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
             return reusable;
         }
 
-        const configuredDelegate = this.options.segmenterOptions?.delegate;
-        const delegate: 'GPU' | 'CPU' =
-            configuredDelegate === 'GPU' || configuredDelegate === 'CPU' ? configuredDelegate : 'GPU';
-        let started: SegmenterHandle | null = null;
         try {
-            started = await startSegmenter({
-                assetPaths: this.options.assetPaths,
-                delegate,
-                constantOverrides: this.getWorkerConstantOverrides(),
-                onCrash: (error) => this.handleSegmenterCrash(started, error),
-            });
-            this.activeDelegate = started.delegate;
-            return started;
+            return await this.launchSegmenter();
         } catch (error) {
             this.rejectApplied(error instanceof Error ? error : new Error('Background processor worker init failed'));
             throw error;
         }
+    }
+
+    private async launchSegmenter(): Promise<SegmenterHandle> {
+        const configuredDelegate = this.options.segmenterOptions?.delegate;
+        const delegate: 'GPU' | 'CPU' =
+            configuredDelegate === 'GPU' || configuredDelegate === 'CPU' ? configuredDelegate : 'GPU';
+        let started: SegmenterHandle | null = null;
+        started = await startSegmenter({
+            assetPaths: this.options.assetPaths,
+            delegate,
+            constantOverrides: this.getWorkerConstantOverrides(),
+            onCrash: (error) => this.handleSegmenterCrash(started, error),
+        });
+        this.activeDelegate = started.delegate;
+        return started;
     }
 
     private handleSegmenterCrash(crashed: SegmenterHandle | null, error: Error) {
