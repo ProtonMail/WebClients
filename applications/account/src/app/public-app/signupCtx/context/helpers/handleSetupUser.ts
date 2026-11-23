@@ -23,9 +23,11 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { User } from '@proton/shared/lib/interfaces/User';
 import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
+import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
@@ -154,6 +156,47 @@ const setupKeys = async ({
     return { keySetupData, user, addresses };
 };
 
+/** Trusts the device as sign-in does: a persistent session of an account with device recovery stores it */
+const persistSignupSession = async ({
+    authResponse,
+    keySetupData,
+    user,
+    api,
+    persistent,
+    keyTransparencyActivation,
+}: {
+    authResponse: AuthResponse;
+    keySetupData: { keyPassword: string; clearKeyPassword: string };
+    user: User;
+    api: Api;
+    persistent: boolean;
+    keyTransparencyActivation: KeyTransparencyActivation;
+}) => {
+    const preAuthKTVerifier = createPreAuthKTVerifier(keyTransparencyActivation);
+    // Trust is best-effort: the keys are already set up, so a failure here must not fail the signup
+    const deviceRecoveryResult = await deviceRecovery({
+        keyPassword: keySetupData.keyPassword,
+        persistent,
+        user,
+        // Loaded again: the addresses of the key setup are from before it created their keys
+        addresses: undefined,
+        api,
+        preAuthKTVerifier,
+    }).catch(() => ({ user, trusted: false }));
+    const session = await persistSession({
+        ...authResponse,
+        keyPassword: keySetupData.keyPassword,
+        clearKeyPassword: keySetupData.clearKeyPassword,
+        User: deviceRecoveryResult.user,
+        api,
+        persistent,
+        trusted: deviceRecoveryResult.trusted,
+        source: SessionSource.Proton,
+    });
+    await preAuthKTVerifier.preAuthKTCommit(deviceRecoveryResult.user.ID, api);
+    return { session, user: deviceRecoveryResult.user };
+};
+
 export const handleSetupUser = async ({
     accountData,
     api,
@@ -229,24 +272,22 @@ export const handleSetupUser = async ({
 
     void api(updateLocale(localeCode)).catch(noop);
 
-    const { keySetupData, user, addresses } = await setupKeys({
+    const keysResult = await setupKeys({
         api,
         keyTransparencyActivation,
         password,
         productParam,
         deferred: deferKeySetup,
     });
+    const { keySetupData, addresses } = keysResult;
 
-    const session = await persistSession({
-        ...authResponse,
-        keyPassword: keySetupData.keyPassword,
-        clearKeyPassword: keySetupData.clearKeyPassword,
-        User: user,
+    const { session, user } = await persistSignupSession({
+        authResponse,
+        keySetupData,
+        user: keysResult.user,
         api,
         persistent,
-        // Never trust new signups: no trusted device data is stored on the device
-        trusted: false,
-        source: SessionSource.Proton,
+        keyTransparencyActivation,
     });
 
     let recoveryPhraseData;
@@ -326,23 +367,21 @@ export const handleSetPassword = async ({
 }) => {
     // The user can take more than 10 minutes to choose a password, which loses the locked scope: this adds it back
     await srpAuth({ api, credentials: { password: accountData.password }, config: queryUnlock() });
-    const { keySetupData, user, addresses } = await setupKeys({
+    const keysResult = await setupKeys({
         api,
         keyTransparencyActivation,
         password: newPassword,
         productParam,
     });
+    const { keySetupData, addresses } = keysResult;
 
-    const session = await persistSession({
-        ...setupResult.authResponse,
-        keyPassword: keySetupData.keyPassword,
-        clearKeyPassword: keySetupData.clearKeyPassword,
-        User: user,
+    const { session, user } = await persistSignupSession({
+        authResponse: setupResult.authResponse,
+        keySetupData,
+        user: keysResult.user,
         api,
         persistent,
-        // Never trust new signups: no trusted device data is stored on the device
-        trusted: false,
-        source: SessionSource.Proton,
+        keyTransparencyActivation,
     });
 
     sendPasswordChangeMessageToTabs({ localID: setupResult.authResponse.LocalID, status: true });
