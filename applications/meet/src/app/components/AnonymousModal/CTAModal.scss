@@ -5,13 +5,13 @@ im.$breakpoints: $breakpoints;
 im.$media-expressions: $media-expressions;
 
 .create-account-low-pressure-button {
-	background: #ffffff0a;
-	border: 1px solid #ffffff0a;
+	background: var(--background-alpha-weak);
+	border: 1px solid var(--border-alpha-weak);
 
 	&:hover,
 	&:focus {
-		background: #ffffff14;
-		border: 1px solid #ffffff14;
+		background: var(--background-alpha-norm);
+		border: 1px solid var(--border-alpha-norm);
 	}
 }
 
