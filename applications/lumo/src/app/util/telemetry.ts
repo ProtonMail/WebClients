@@ -906,3 +906,54 @@ export const sendDesktopAppOnboardingEndedEvent = ({
 }) => {
     sendLumoDesktopAppOnboardingEvent('ended', { step, method, finalStep });
 };
+
+/*
+ * Skills, scheduled tasks and Lumo Desktop connectors: how often each is added and deleted.
+ * One event name per action, so each can be counted on its own; the properties only describe the
+ * action and never carry a name, an id or any content. Edits and on/off toggles are not tracked.
+ */
+
+/** 'editor': written in the skill editor; 'upload': imported from a file; 'catalog': a Proton plugin. */
+export type SkillAddedSource = 'editor' | 'upload' | 'catalog';
+
+/** One per skill added by the user. Custom agents converted to skills automatically are not counted. */
+export const sendSkillAddedEvent = ({ source }: { source: SkillAddedSource }) => {
+    sendLumoCustomEvent('lumo-skill-added', { source });
+};
+
+export const sendSkillDeletedEvent = () => {
+    sendLumoCustomEvent('lumo-skill-deleted', {});
+};
+
+/** 'blank' or 'template': from the Scheduled tasks page; 'chat': Lumo drafted it in a chat and the user confirmed. */
+export type ScheduleCreatedSource = 'blank' | 'template' | 'chat';
+
+export const sendScheduleCreatedEvent = ({ source }: { source: ScheduleCreatedSource }) => {
+    sendLumoCustomEvent('lumo-schedule-created', { source });
+};
+
+/**
+ * Lumo drafted a scheduled task in a chat and it passed validation, so the user sees it. Compare with
+ * `lumo-schedule-created` where `source` is 'chat' for how many drafts are accepted. A follow-up or
+ * regenerated reply that redrafts the task counts again.
+ */
+export const sendScheduleDraftedInChatEvent = () => {
+    sendLumoCustomEvent('lumo-schedule-drafted-in-chat', {});
+};
+
+export const sendScheduleDeletedEvent = () => {
+    sendLumoCustomEvent('lumo-schedule-deleted', {});
+};
+
+/** 'catalog': a connector from Lumo Desktop's catalog; 'mcp': a custom MCP server. */
+export type ConnectorKind = 'catalog' | 'mcp';
+
+/** Sent when Lumo Desktop reports a connector was added; desktop builds without that signal send nothing. */
+export const sendConnectorAddedEvent = ({ kind }: { kind: ConnectorKind }) => {
+    sendLumoCustomEvent('lumo-connector-added', { kind });
+};
+
+/** Sent when Lumo Desktop reports a connector was removed; desktop builds without that signal send nothing. */
+export const sendConnectorRemovedEvent = ({ kind }: { kind: ConnectorKind }) => {
+    sendLumoCustomEvent('lumo-connector-removed', { kind });
+};

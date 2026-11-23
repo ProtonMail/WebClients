@@ -25,13 +25,15 @@ export const saveSchedule =
         return id;
     };
 
-/** Redux thunk to delete a schedule through the existing space persistence pipeline. */
+/** Redux thunk to delete a schedule through the existing space persistence pipeline. Returns false when there was no such schedule. */
 export const deleteSchedule =
     (id: SpaceId) =>
-    (dispatch: Dispatch, getState: () => LumoState): void => {
-        if (getState().spaces[id]?.spaceType === SpaceType.Schedule) {
-            dispatch(locallyDeleteSpaceFromLocalRequest(id));
+    (dispatch: Dispatch, getState: () => LumoState): boolean => {
+        if (getState().spaces[id]?.spaceType !== SpaceType.Schedule) {
+            return false;
         }
+        dispatch(locallyDeleteSpaceFromLocalRequest(id));
+        return true;
     };
 
 /** Updates future executions through the existing encrypted space persistence pipeline. */

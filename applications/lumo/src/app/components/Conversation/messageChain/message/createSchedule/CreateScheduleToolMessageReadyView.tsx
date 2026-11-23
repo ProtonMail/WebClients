@@ -24,6 +24,7 @@ import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoDispatch } from '../../../../../redux/hooks';
 import { newSpaceId } from '../../../../../redux/slices/core/spaces';
 import { saveSchedule } from '../../../../../redux/slices/schedules';
+import { sendScheduleCreatedEvent } from '../../../../../util/telemetry';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../../RecurrenceRuleFieldset/types';
 
@@ -105,6 +106,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
         try {
             // Generate the schedule id locally when the user confirms the draft.
             dispatch(saveSchedule(scheduleId, savedSchedule));
+            sendScheduleCreatedEvent({ source: 'chat' });
         } catch (error) {
             // translator: Error notification when a scheduled task cannot be saved.
             const fallbackMessage = c('collider_2025:Error')

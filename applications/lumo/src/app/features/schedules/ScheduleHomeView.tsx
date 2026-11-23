@@ -15,6 +15,7 @@ import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectLatestRunsByScheduleId, selectSchedules } from '../../redux/selectors';
 import { deleteSchedule, saveSchedule } from '../../redux/slices/schedules';
 import type { SpaceId } from '../../types';
+import { sendScheduleDeletedEvent } from '../../util/telemetry';
 import { ConnectorList } from './components/ConnectorList';
 import { ScheduleBreadcrumbs } from './components/ScheduleBreadcrumbs';
 import { ScheduleRunPrimaryLabel } from './components/ScheduleRunPrimaryLabel';
@@ -146,7 +147,9 @@ export const ScheduleHomeView = () => {
                     initialValues={schedule}
                     mode="edit"
                     onDelete={(id) => {
-                        dispatch(deleteSchedule(id));
+                        if (dispatch(deleteSchedule(id))) {
+                            sendScheduleDeletedEvent();
+                        }
                         history.replace('/schedules');
                     }}
                     onSave={handleSave}

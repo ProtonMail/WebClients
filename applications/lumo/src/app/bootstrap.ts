@@ -44,6 +44,7 @@ import { extraThunkArguments } from './redux/thunk';
 import { LumoApi } from './remote/api';
 import { getSkillRuntime } from './remote/skillRuntime';
 import { LUMO_ELIGIBILITY } from './types';
+import { initDesktopConnectorTelemetry } from './util/connectorTelemetry';
 import {
     consumeNativeSwitchLocalID,
     maybeMigrateLegacySessionToNative,
@@ -261,6 +262,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
                     ...lumoTelemetryConfig,
                 });
                 setLumoTelemetryEnabled(true);
+                initDesktopConnectorTelemetry();
             }
 
             dispatch(welcomeFlagsActions.initial(userSettings));
