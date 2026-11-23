@@ -13,6 +13,7 @@ import type {
     SubscriptionCheckForbiddenReason,
     SubscriptionEstimation,
 } from '@proton/payments/core/subscription/interface';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan, isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
@@ -141,7 +142,7 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
 
     const optimisticCheckResult = computeOptimisticCheckResult(
         { planIDs, plansMap, cycle: checkoutUi.cycle, currency: checkoutUi.currency },
-        subscription,
+        isPaidSubscription(subscription) ? subscription : undefined,
         { isTrial: params.isTrial }
     );
     const optimisticCheckoutUi = getCheckoutUi({ planIDs, plansMap, checkResult: optimisticCheckResult });

@@ -1,12 +1,11 @@
 import { getOptimisticCheckResult } from './checkout';
 import { computeOptimisticRenewProperties } from './computeOptimisticRenewProperties';
-import type { FreeSubscription } from './interface';
 import { computeOptimisticSubscriptionMode } from './optimisticSubscriptionMode';
 import type { Subscription, SubscriptionEstimation } from './subscription/interface';
 
 export function computeOptimisticCheckResult(
     params: Parameters<typeof getOptimisticCheckResult>[0],
-    subscription: Subscription | FreeSubscription | undefined,
+    subscription: Subscription | undefined,
     options: {
         isTrial?: boolean;
     }

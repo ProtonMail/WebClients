@@ -7,7 +7,13 @@ import { renderWithProviders } from '@proton/components/testing/vitest/renderWit
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { CYCLE, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import {
+    ADDON_NAMES,
+    CYCLE,
+    DEFAULT_PAYMENT_VENDOR_STATES,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+} from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
@@ -25,6 +31,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { Renew, SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 import * as useFlagModule from '@proton/unleash/useFlag';
 
@@ -291,6 +298,145 @@ describe('SubscriptionContainer', () => {
         for (const currencySelector of screen.getAllByTestId('currency-selector')) {
             expect(currencySelector).toHaveTextContent('USD');
         }
+    });
+});
+
+describe('SubscriptionContainer with web Mail Plus yearly and web Lumo Plus monthly', () => {
+    const webMailPlus = buildSubscription(
+        { planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'CHF' },
+        { CouponCode: 'MAILPLUS' }
+    );
+    const webLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+        ID: 'lumo-plus',
+        Cycle: CYCLE.MONTHLY,
+        Currency: 'CHF',
+        CouponCode: 'LUMOPLUS',
+    });
+
+    const renderCheckout = (
+        subscription: SubscriptionContainerProps['subscription'],
+        plan?: PLANS,
+        checkData: Record<string, unknown> = {},
+        app: SubscriptionContainerProps['app'] = 'proton-mail'
+    ) => {
+        vi.spyOn(useFlagModule, 'useFlag').mockImplementation((flag) => flag === 'LumoMultiSubscriptions');
+        mockCheckResult(checkData);
+        renderWithProviders(
+            <ContextSubscriptionContainer
+                app={app}
+                render={({ onSubmit, content, footer }) => (
+                    <form onSubmit={onSubmit}>
+                        {content}
+                        {footer}
+                    </form>
+                )}
+                subscription={subscription}
+                organization={organizationDefaultResponse.Organization as any as Organization}
+                plans={plansDefaultResponse.Plans as any as Plan[]}
+                freePlan={FREE_PLAN}
+                paymentStatus={{ CountryCode: 'CH', VendorStates: DEFAULT_PAYMENT_VENDOR_STATES }}
+                initialBillingAddress={DEFAULT_TAX_BILLING_ADDRESS}
+                entitlementCatalog={multiSubscriptionTestCatalog}
+                step={SUBSCRIPTION_STEPS.CHECKOUT}
+                plan={plan}
+                currency="CHF"
+            />
+        );
+    };
+
+    const expectCheck = async (data: Partial<CheckSubscriptionData>) => {
+        await waitFor(() => {
+            expect(apiMock).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    url: 'payments/v5/subscription/check',
+                    data: expect.objectContaining(data),
+                })
+            );
+        });
+    };
+
+    const pickPlanAfterOpeningWithoutOne = async (
+        subscription: SubscriptionContainerProps['subscription'],
+        plan: PLANS,
+        app?: SubscriptionContainerProps['app']
+    ) => {
+        renderCheckout(subscription, undefined, {}, app);
+        await waitUntilChecked();
+
+        fireEvent.click(await screen.findByRole('button', { name: 'Back' }));
+        fireEvent.click(await screen.findByTestId(`select-${plan}`));
+    };
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+    });
+
+    it('takes the cycle and coupon of Mail Plus when the loaded subscription is Lumo Plus', async () => {
+        renderCheckout({ ...webLumoPlus, SecondarySubscriptions: [webMailPlus] }, PLANS.BUNDLE);
+
+        await expectCheck({ Plans: { [PLANS.BUNDLE]: 1 }, Cycle: CYCLE.YEARLY, Codes: ['MAILPLUS'] });
+    });
+
+    it('keeps the two-year cycle of a Drive Plus subscription next to the loaded Lumo Plus', async () => {
+        const webDrivePlus = buildSubscription({ planName: PLANS.DRIVE, cycle: CYCLE.TWO_YEARS, currency: 'CHF' });
+        renderCheckout({ ...webLumoPlus, SecondarySubscriptions: [webDrivePlus] }, PLANS.DRIVE);
+
+        expect(await screen.findByTestId(`cycle-${CYCLE.TWO_YEARS}`)).toBeInTheDocument();
+    });
+
+    it('shows the renewal note of Mail Plus when the loaded Lumo Plus renews', async () => {
+        renderCheckout(
+            { ...webLumoPlus, SecondarySubscriptions: [{ ...webMailPlus, Renew: Renew.Disabled }] },
+            PLANS.BUNDLE,
+            { SubscriptionMode: SubscriptionMode.ScheduledChargedImmediately, optimistic: false }
+        );
+
+        expect(
+            await screen.findByText(
+                'Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.'
+            )
+        ).toBeInTheDocument();
+    });
+
+    it('refuses VPN Plus next to Mail Plus and Lumo Plus without a check', async () => {
+        renderCheckout({ ...webMailPlus, SecondarySubscriptions: [webLumoPlus] }, PLANS.VPN2024);
+
+        expect(await screen.findByText('This offer is not available with your current plan.')).toBeInTheDocument();
+        expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: 'payments/v5/subscription/check' }));
+    });
+
+    it('starts a new Lumo Plus subscription next to Mail Plus without its add-ons, coupon or guards', async () => {
+        const webMailPlusWithMeet = buildSubscription(
+            { planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 }, cycle: CYCLE.YEARLY, currency: 'CHF' },
+            { CouponCode: 'MAILPLUS' }
+        );
+        renderCheckout(webMailPlusWithMeet, PLANS.LUMO);
+
+        await expectCheck({ Plans: { [PLANS.LUMO]: 1 }, Cycle: CYCLE.YEARLY, Codes: [], ValidateGuards: false });
+    });
+
+    it('drops the coupon of Mail Plus when Lumo Plus, picked after opening without a plan, starts a new subscription', async () => {
+        await pickPlanAfterOpeningWithoutOne(webMailPlus, PLANS.LUMO, 'proton-lumo');
+
+        await expectCheck({ Plans: { [PLANS.LUMO]: 1 }, Codes: [], ValidateGuards: false });
+    });
+
+    it('sends the coupon of Mail Plus when Unlimited is picked after opening on Lumo Plus', async () => {
+        await pickPlanAfterOpeningWithoutOne({ ...webLumoPlus, SecondarySubscriptions: [webMailPlus] }, PLANS.BUNDLE);
+
+        await expectCheck({ Plans: { [PLANS.BUNDLE]: 1 }, Codes: ['MAILPLUS'] });
+    });
+
+    it('keeps sending the coupon of a single Mail Plus subscription when Unlimited is picked after opening without a plan', async () => {
+        await pickPlanAfterOpeningWithoutOne(webMailPlus, PLANS.BUNDLE);
+
+        await expectCheck({ Plans: { [PLANS.BUNDLE]: 1 }, Codes: ['MAILPLUS'] });
+    });
+
+    it('keeps the cycle and coupon of a single Mail Plus subscription', async () => {
+        renderCheckout({ ...webMailPlus, Cycle: CYCLE.MONTHLY }, PLANS.BUNDLE);
+
+        await expectCheck({ Plans: { [PLANS.BUNDLE]: 1 }, Cycle: CYCLE.MONTHLY, Codes: ['MAILPLUS'] });
     });
 });
 

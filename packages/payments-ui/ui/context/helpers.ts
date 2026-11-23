@@ -1,11 +1,12 @@
 import type { useMultiCheckGroups } from '@proton/payments-hooks/ui/context/useMultiCheckGroups';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
-import type { Currency, FreeSubscription, PaymentsApi } from '@proton/payments/core/interface';
+import type { Currency, PaymentsApi } from '@proton/payments/core/interface';
 import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
-import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { FullPlansMap, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { type PlanToCheck, getSubscriptionDataFromPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
 import isTruthy from '@proton/utils/isTruthy';
 
 export type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
@@ -17,7 +18,6 @@ export { getPlanToCheck, getSubscriptionDataFromPlanToCheck } from '@proton/paym
  */
 export const checkMultiplePlans = async ({
     plansToCheck,
-    subscription,
     paymentsApi,
     multiCheckGroups,
     getLocalizedPlansMap,
@@ -25,7 +25,6 @@ export const checkMultiplePlans = async ({
     multiSubscriptionContext,
 }: {
     plansToCheck: PlanToCheck[];
-    subscription: Subscription | FreeSubscription;
     paymentsApi: PaymentsApi;
     multiCheckGroups: ReturnType<typeof useMultiCheckGroups>;
     getLocalizedPlansMap: (params: { paramCurrency?: Currency }) => FullPlansMap;
@@ -75,7 +74,11 @@ export const checkMultiplePlans = async ({
         if (indexesToExcludeFromCheck.includes(index)) {
             const planToCheck = plansToCheck[index];
             normalizedResults.push(
-                computeOptimisticCheckResult({ plansMap, ...planToCheck }, subscription, { isTrial: planToCheck.trial })
+                computeOptimisticCheckResult(
+                    { plansMap, ...planToCheck },
+                    getChangedSubscription(multiSubscriptionContext, planToCheck.planIDs),
+                    { isTrial: planToCheck.trial }
+                )
             );
         } else {
             normalizedResults.push(results[checkedIndex]);

@@ -1,11 +1,10 @@
 import { CYCLE, DEFAULT_CYCLE } from '@proton/payments/core/constants';
-import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import {
     getNormalCycleFromCustomCycle,
     notHigherThanAvailableOnBackend,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -14,7 +13,7 @@ import { isSamePlanCheckout } from './isSamePlanCheckout';
 
 interface GetInitialCycleParams {
     cycleParam: Cycle | undefined;
-    subscription: Subscription | FreeSubscription;
+    subscription: Subscription | undefined;
     planIDs: PlanIDs;
     plansMap: FullPlansMap;
     isPlanSelection: boolean;
@@ -54,7 +53,7 @@ export function getInitialCycle({
             return DEFAULT_CYCLE;
         }
 
-        if (isFreeSubscription(subscription)) {
+        if (!subscription) {
             return DEFAULT_CYCLE;
         }
 

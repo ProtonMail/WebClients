@@ -94,8 +94,10 @@ import type {
 } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
@@ -132,7 +134,7 @@ import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import { getCommonTelemetryPayload, reportChangeTelemetry, telemetryContext } from './helpers/subscriptionTelemetry';
 import { useVpn2024AddonsExperiment } from './helpers/useVpn2024AddonsExperiment';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
-import { useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
+import { getCouponCarriedFrom, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 
 import './SubscriptionContainer.scss';
 
@@ -142,6 +144,7 @@ export interface Model {
     currency: Currency;
     cycle: Cycle;
     coupon?: string;
+    couponCarriedFromSubscriptionID?: string;
     gift?: string;
     initialCheckComplete: boolean;
     taxBillingAddress: BillingAddress;
@@ -394,8 +397,9 @@ const SubscriptionContainerInner = ({
 
     const { reportSubscriptionModalInitialization, reportSubscriptionModalPayment } = useSubscriptionModalTelemetry();
 
-    const latestSubscription = subscription.UpcomingSubscription ?? subscription;
     const multiSubscriptionContext = useMultiSubscriptionContext(subscription, entitlementCatalog);
+    const getSubscriptionChangedBy = (selectedPlanIDs: PlanIDs) =>
+        getChangedSubscription(multiSubscriptionContext, selectedPlanIDs);
 
     const { plansMapRef, setPreferredCurrency, fitCurrencyToSelection, preferredCurrencyRef } = usePlansMapRef({
         user,
@@ -408,19 +412,29 @@ const SubscriptionContainerInner = ({
 
     const creditCardDetailsRef = useRef<HTMLDivElement>(null);
 
+    const subscriptionToEdit = useMemo((): Subscription | undefined => {
+        const requestedPlanIDs: PlanIDs | undefined = plan ? { [plan]: 1 } : maybePlanIDs;
+        if (requestedPlanIDs) {
+            return getSubscriptionChangedBy(requestedPlanIDs);
+        }
+
+        return isPaidSubscription(subscription) ? subscription : undefined;
+    }, [subscription, plan, maybePlanIDs, multiSubscriptionContext]);
+
     const planIDs = useMemo(() => {
-        const subscriptionPlanIDs = getPlanIDs(latestSubscription);
+        const subscriptionToEditTerm = subscriptionToEdit?.UpcomingSubscription ?? subscriptionToEdit;
+        const subscriptionPlanIDs = getPlanIDs(subscriptionToEditTerm);
 
         // we don't let existing users of the deprecated VPN plan to modify their subscription
         // and stay on the same plan. If they want to do manual action then we change them to the new VPN plan.
         let newPlan = plan;
-        if (hasDeprecatedVPN(latestSubscription) && !plan) {
+        if (hasDeprecatedVPN(subscriptionToEditTerm) && !plan) {
             newPlan = PLANS.VPN2024;
         }
 
         if (newPlan) {
             return switchPlan({
-                subscription: latestSubscription,
+                subscription: subscriptionToEditTerm,
                 newPlan,
                 organization,
                 plans,
@@ -435,10 +449,10 @@ const SubscriptionContainerInner = ({
                 selectedPlanIDs: planIDs,
                 plansMap: plansMapRef.current,
                 currency: preferredCurrencyRef.current,
-                subscription,
+                subscription: subscriptionToEdit,
             }) ?? planIDs
         );
-    }, [subscription, organization, plans, maybePlanIDs, multiSubscriptionContext]);
+    }, [subscriptionToEdit, organization, plans, maybePlanIDs, multiSubscriptionContext]);
 
     const [model, setModel] = useState<Model>(() => {
         const step = getInitialCheckoutStep(planIDs, maybeStep);
@@ -447,7 +461,7 @@ const SubscriptionContainerInner = ({
 
         const cycle = getInitialCycle({
             cycleParam: maybeCycle,
-            subscription,
+            subscription: subscriptionToEdit,
             planIDs,
             plansMap: plansMapRef.current,
             isPlanSelection: step === SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -461,7 +475,7 @@ const SubscriptionContainerInner = ({
             step,
             cycle,
             currency,
-            coupon: maybeCoupon || subscription.CouponCode || undefined,
+            ...(maybeCoupon ? { coupon: maybeCoupon } : getCouponCarriedFrom(subscriptionToEdit)),
             planIDs,
             initialCheckComplete: false,
             taxBillingAddress: initialBillingAddress,
@@ -470,6 +484,12 @@ const SubscriptionContainerInner = ({
 
         return model;
     });
+
+    const changedSubscription = useMemo(
+        () => getSubscriptionChangedBy(model.planIDs),
+        [model.planIDs, multiSubscriptionContext]
+    );
+    const changedSubscriptionTerm = changedSubscription?.UpcomingSubscription ?? changedSubscription;
 
     const [audience, setAudienceInner] = useState(() => {
         if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
@@ -532,7 +552,6 @@ const SubscriptionContainerInner = ({
     const couponCode = checkResult?.Coupon?.Code;
     const couponDescription = checkResult?.Coupon?.Description;
 
-    const subscriptionCouponCode = subscription?.CouponCode;
     const giftCodeRef = useRef<HTMLInputElement>(null);
 
     const amount = model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0;
@@ -734,7 +753,7 @@ const SubscriptionContainerInner = ({
 
     const computeAllowedCycles = (planIDs: PlanIDs) =>
         getAllowedCycles({
-            subscription,
+            subscription: getSubscriptionChangedBy(planIDs),
             minimumCycle,
             maximumCycle,
             currency: selectedPlanCurrency,
@@ -785,7 +804,7 @@ const SubscriptionContainerInner = ({
                     currency: checkPayload.Currency,
                     plansMap: plansMapRef.current,
                 },
-                subscription
+                getSubscriptionChangedBy(checkPayload.Plans)
             );
 
             return optimisticSubscriptionMode === SubscriptionMode.CustomBillings;
@@ -880,7 +899,6 @@ const SubscriptionContainerInner = ({
     const { check, loadingCheck, lastCheckFailed } = useSubscriptionContainerInnerCheck({
         model,
         checkResult,
-        subscriptionCouponCode: subscriptionCouponCode ?? undefined,
         subscription,
         paymentsApi,
         paymentFacadeSelectedMethodType: paymentFacade.selectedMethodType,
@@ -1195,7 +1213,7 @@ const SubscriptionContainerInner = ({
     const vpn2024AddonsExperiment = useVpn2024AddonsExperiment(optimisticPlanIDs ?? model.planIDs);
     const condensedAddons = useCheckoutCondensedAddons({
         selectedPlanIDs: optimisticPlanIDs ?? model.planIDs,
-        latestSubscription,
+        latestSubscription: changedSubscriptionTerm,
         user,
         isLiteApp: isAccountLiteApp,
     });
@@ -1312,7 +1330,7 @@ const SubscriptionContainerInner = ({
                                                 plansMap={plansMapRef.current}
                                                 selectedPlanIDs={selectedPlanIDs}
                                                 onChangePlanIDs={handleOptimisticPlanIDs}
-                                                latestSubscription={latestSubscription}
+                                                latestSubscription={changedSubscriptionTerm}
                                                 allowedAddonTypes={allowedAddonTypes}
                                                 className="subscription-container-plan-customizer"
                                                 telemetryContext={telemetryContext}
@@ -1389,7 +1407,7 @@ const SubscriptionContainerInner = ({
                                 showTaxCountry={paymentFacade.showTaxCountry && !model.paymentForbiddenReason.forbidden}
                                 creditCardDetailsRef={creditCardDetailsRef}
                             />
-                            <RenewalEnableNote subscription={subscription} {...checkoutModifiers} />
+                            <RenewalEnableNote subscription={changedSubscription} {...checkoutModifiers} />
                         </div>
                     </div>
                     <div className="subscriptionCheckout-column bg-weak rounded">
@@ -1467,7 +1485,7 @@ const SubscriptionContainerInner = ({
                         check({
                             ...model,
                             planIDs: switchPlan({
-                                subscription: latestSubscription,
+                                subscription: changedSubscriptionTerm,
                                 newPlan: PLANS.BUNDLE,
                                 organization,
                                 plans,

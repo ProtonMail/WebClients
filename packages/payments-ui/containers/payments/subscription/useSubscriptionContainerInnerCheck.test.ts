@@ -12,9 +12,13 @@ import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { Model } from './SubscriptionContainer';
 import {
@@ -81,17 +85,17 @@ function buildCheckResult(overrides: Partial<SubscriptionEstimation> = {}): Subs
 function buildDeps(
     overrides: Partial<UseSubscriptionContainerInnerCheckProps> = {}
 ): UseSubscriptionContainerInnerCheckProps {
+    const subscription = overrides.subscription ?? buildSubscription();
     return {
         model: buildModel(),
         checkResult: buildCheckResult(),
-        subscriptionCouponCode: undefined,
-        subscription: buildSubscription(),
+        subscription,
         paymentsApi: {
             checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
         } as any,
         paymentFacadeSelectedMethodType: undefined,
         skipPlanTransitionChecks: true,
-        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(buildSubscription()),
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
         refs: {
             plansMapRef: { current: {} as any },
             giftCodeRef: { current: null },
@@ -476,7 +480,6 @@ describe('useSubscriptionCheck', () => {
         const buildRenewalDeps = (checkSubscription = vi.fn()) =>
             buildDeps({
                 subscription,
-                subscriptionCouponCode: currentCoupon,
                 multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                 paymentsApi: { checkSubscription } as any,
             });
@@ -564,7 +567,6 @@ describe('useSubscriptionCheck', () => {
             const checkSubscription = vi.fn().mockResolvedValueOnce(firstResult).mockResolvedValueOnce(secondResult);
             const deps = buildDeps({
                 paymentsApi: { checkSubscription } as any,
-                subscriptionCouponCode: undefined,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -617,11 +619,11 @@ describe('useSubscriptionCheck', () => {
                 expect(calledModel.coupon).toBe('FROMAPI');
             });
 
-            it('falls back to subscriptionCouponCode when Code is empty', async () => {
+            it('falls back to the subscription coupon when Code is empty', async () => {
                 const apiResult = buildCheckResult({ Coupon: null });
                 const deps = buildDeps({
                     paymentsApi: { checkSubscription: vi.fn().mockResolvedValue(apiResult) } as any,
-                    subscriptionCouponCode: 'SUB_COUPON',
+                    subscription: buildSubscription(undefined, { CouponCode: 'SUB_COUPON' }),
                 });
                 const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -631,7 +633,7 @@ describe('useSubscriptionCheck', () => {
                 expect(calledModel.coupon).toBe('SUB_COUPON');
             });
 
-            it('falls back to latestValidCouponCode when Code and subscriptionCouponCode are both empty', async () => {
+            it('falls back to latestValidCouponCode when Code and the subscription coupon are both empty', async () => {
                 const firstResult = buildCheckResult({
                     Coupon: { Code: 'PREV_VALID', Description: '', MaximumRedemptionsPerUser: null },
                 });
@@ -642,7 +644,6 @@ describe('useSubscriptionCheck', () => {
                     .mockResolvedValueOnce(secondResult);
                 const deps = buildDeps({
                     paymentsApi: { checkSubscription } as any,
-                    subscriptionCouponCode: undefined,
                 });
                 const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -656,9 +657,9 @@ describe('useSubscriptionCheck', () => {
     });
 
     describe('PAY-1822 coupon deduplication', () => {
-        it('sends only subscriptionCouponCode in Codes when gift matches subscriptionCouponCode', async () => {
+        it('sends only the subscription coupon in Codes when gift matches it', async () => {
             const deps = buildDeps({
-                subscriptionCouponCode: 'ACTIVE_COUPON',
+                subscription: buildSubscription(undefined, { CouponCode: 'ACTIVE_COUPON' }),
                 paymentsApi: {
                     checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
@@ -672,9 +673,9 @@ describe('useSubscriptionCheck', () => {
             expect(payload.Codes).toEqual(['ACTIVE_COUPON']);
         });
 
-        it('sends both gift and auto-coupon when gift differs from subscriptionCouponCode', async () => {
+        it('sends both gift and auto-coupon when gift differs from the subscription coupon', async () => {
             const deps = buildDeps({
-                subscriptionCouponCode: 'SUB_COUPON',
+                subscription: buildSubscription(undefined, { CouponCode: 'SUB_COUPON' }),
                 paymentsApi: {
                     checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
@@ -1209,6 +1210,134 @@ describe('useSubscriptionCheck', () => {
 
             expect(deps.setters.setCheckResult).toHaveBeenCalled();
             expect(deps.setters.setModel).toHaveBeenCalled();
+        });
+    });
+
+    describe('with web Mail Plus yearly and web Lumo Plus monthly', () => {
+        const webMailPlus = buildSubscription(
+            { planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' },
+            { CouponCode: 'MAILPLUS' }
+        );
+        const webLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+            ID: 'lumo-plus',
+            Cycle: CYCLE.MONTHLY,
+            CouponCode: 'LUMOPLUS',
+        });
+        const buildTwoSubscriptionDeps = (overrides: Partial<UseSubscriptionContainerInnerCheckProps> = {}) =>
+            buildDeps({
+                subscription: { ...webMailPlus, SecondarySubscriptions: [webLumoPlus] },
+                multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus, webLumoPlus]),
+                ...overrides,
+            });
+        const lumoUltraYearly = buildModel({ planIDs: { [PLANS.LUMO_ULTRA]: 1 }, cycle: CYCLE.YEARLY });
+
+        it('falls back to the coupon of the subscription the selection changes', async () => {
+            const deps = buildTwoSubscriptionDeps();
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(lumoUltraYearly);
+
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
+            expect(calledModel.coupon).toBe('LUMOPLUS');
+        });
+
+        it('checks the transition against the changed subscription and resets plus-to-plus to its plan', async () => {
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
+                type: 'plus-to-plus',
+                newPlanName: PLANS.LUMO_ULTRA,
+            } as any);
+            const deps = buildTwoSubscriptionDeps({ skipPlanTransitionChecks: false });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(lumoUltraYearly);
+
+            expect(getIsPlanTransitionForbidden).toHaveBeenCalledWith(
+                expect.objectContaining({ subscription: webLumoPlus })
+            );
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
+            expect(calledModel.planIDs).toEqual({ [PLANS.LUMO]: 1 });
+        });
+
+        it('prefers the cycle of the changed subscription after a forced plan replacement', async () => {
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
+                type: 'lumo-plus',
+                newPlanIDs: { [PLANS.LUMO_ULTRA]: 1 },
+            } as any);
+            const deps = buildTwoSubscriptionDeps({ skipPlanTransitionChecks: false });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(lumoUltraYearly);
+
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
+            expect(calledModel.cycle).toBe(CYCLE.MONTHLY);
+        });
+
+        it('treats a new subscription next to Mail Plus like a purchase without a subscription', async () => {
+            const deps = buildDeps({
+                subscription: webMailPlus,
+                multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus]),
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildModel({ planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY }));
+
+            expect(deps.paymentsApi.checkSubscription).toHaveBeenCalledWith(
+                expect.objectContaining({ Codes: [], ValidateGuards: false }),
+                expect.any(Object)
+            );
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
+            expect(calledModel.coupon).toBe('');
+        });
+
+        it('starts a web purchase next to a lone App Store Lumo Plus subscription without its coupon or guards, with the flag off', async () => {
+            const appStoreLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+                External: SubscriptionPlatform.iOS,
+                CouponCode: 'APPSTORELUMO',
+            });
+            const deps = buildDeps({
+                subscription: appStoreLumoPlus,
+                multiSubscriptionContext: buildMultiSubscriptionContext([appStoreLumoPlus], false),
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildModel({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY }));
+
+            expect(deps.paymentsApi.checkSubscription).toHaveBeenCalledWith(
+                expect.objectContaining({ Plans: { [PLANS.MAIL]: 1 }, Codes: [], ValidateGuards: false }),
+                expect.any(Object)
+            );
+        });
+
+        it('does not carry the applied coupon of Mail Plus over to a new Lumo Plus subscription', async () => {
+            const checkSubscription = vi
+                .fn()
+                .mockResolvedValueOnce(
+                    buildCheckResult({
+                        Coupon: { Code: 'MAILPLUS', Description: '', MaximumRedemptionsPerUser: null },
+                    })
+                )
+                .mockResolvedValueOnce(buildCheckResult({ Coupon: null }));
+            const deps = buildDeps({
+                subscription: webMailPlus,
+                multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus]),
+                paymentsApi: { checkSubscription } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(
+                buildModel({
+                    planIDs: { [PLANS.MAIL]: 1 },
+                    cycle: CYCLE.YEARLY,
+                    coupon: 'MAILPLUS',
+                    couponCarriedFromSubscriptionID: webMailPlus.ID,
+                })
+            );
+            const mailPlusModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
+            await result.current.check({ ...mailPlusModel, planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY });
+
+            expect(checkSubscription.mock.calls.map(([payload]) => payload.Codes)).toEqual([['MAILPLUS'], []]);
+            const lumoPlusModel = (deps.setters.setModel as Mock).mock.calls[1][0] as Model;
+            expect(lumoPlusModel.coupon).toBe('');
         });
     });
 });

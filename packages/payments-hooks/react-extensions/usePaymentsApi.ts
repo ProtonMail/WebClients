@@ -4,7 +4,6 @@ import { createSelector } from '@reduxjs/toolkit';
 import { addMonths } from 'date-fns';
 
 import { selectPlans } from '@proton/account/plans';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
@@ -40,13 +39,14 @@ import type {
     PaymentsApi,
 } from '@proton/payments/core/interface';
 import { normalizeGuardResult } from '@proton/payments/core/subscription/guard';
-import { getPlanName, isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import { isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
+import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -427,6 +427,45 @@ export const usePaymentsApi = (
     };
 };
 
+export const getForbiddenCheckFallback = (
+    data: CheckSubscriptionData,
+    multiSubscriptionContext: MultiSubscriptionContext,
+    plansMap: FullPlansMap
+): SubscriptionEstimation | null => {
+    const { Cycle, Currency, Plans } = data;
+
+    const checkForbidden = isSubscriptionCheckForbidden(multiSubscriptionContext, {
+        planIDs: Plans,
+        cycle: Cycle,
+    });
+    if (!checkForbidden) {
+        return null;
+    }
+
+    const planName = getPlanNameFromIDs(Plans);
+    if (!planName) {
+        return null;
+    }
+
+    const amount = plansMap[planName]?.Pricing?.[Cycle] ?? 0;
+
+    const result: SubscriptionEstimation & { __fallback: true } = {
+        Cycle,
+        Currency,
+        Amount: amount,
+        AmountDue: amount,
+        Coupon: null,
+        PeriodEnd: Math.floor(+addMonths(new Date(), Cycle) / 1000),
+        SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
+        __fallback: true,
+        requestData: data,
+    };
+
+    return result;
+};
+
 /**
  * Do not use this hook in unauth context.
  * This hook can be useful for getting multiple subscription/check calls at once.
@@ -437,44 +476,11 @@ export const usePaymentsApi = (
  * an optimistic result.
  */
 export const usePaymentsApiWithCheckFallback = () => {
-    const [subscription] = useSubscription();
     const multiSubscriptionContext = useMultiSubscriptionContext();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
-    const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionEstimation | null => {
-        const { Cycle, Currency, Plans } = data;
-
-        const checkForbidden = isSubscriptionCheckForbidden(multiSubscriptionContext, {
-            planIDs: Plans,
-            cycle: Cycle,
-        });
-        if (!checkForbidden) {
-            return null;
-        }
-
-        const planName = getPlanName(subscription);
-        if (!planName || plansMapLoading) {
-            return null;
-        }
-
-        const amount = plansMap[planName]?.Pricing?.[Cycle] ?? 0;
-
-        const result: SubscriptionEstimation & { __fallback: true } = {
-            Cycle,
-            Currency,
-            Amount: amount,
-            AmountDue: amount,
-            Coupon: null,
-            PeriodEnd: Math.floor(+addMonths(new Date(), Cycle) / 1000),
-            SubscriptionMode: SubscriptionMode.Regular,
-            BaseRenewAmount: null,
-            RenewCycle: null,
-            __fallback: true,
-            requestData: data,
-        };
-
-        return result;
-    };
+    const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionEstimation | null =>
+        plansMapLoading ? null : getForbiddenCheckFallback(data, multiSubscriptionContext, plansMap);
 
     return usePaymentsApi(undefined, checkV5Fallback);
 };

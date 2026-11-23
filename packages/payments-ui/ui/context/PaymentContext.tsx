@@ -62,6 +62,7 @@ import {
     createMultiSubscriptionContext,
 } from '@proton/payments/core/subscription/multi-subscription-context';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -246,7 +247,7 @@ export const PaymentsContextProvider = ({
                 plansMap: plansMap,
                 currency: planToCheck.currency,
             },
-            subscription,
+            getChangedSubscription(initialMultiSubscriptionContext, initialPlanIDs),
             { isTrial: trial }
         );
 
@@ -270,6 +271,9 @@ export const PaymentsContextProvider = ({
 
     const getMultiSubscriptionContext = (): MultiSubscriptionContext =>
         toMultiSubscriptionContext(lumoMultiSubscriptions, stateRef.current);
+
+    const getSubscriptionChangedBy = (planIDs: PlanIDs) =>
+        getChangedSubscription(getMultiSubscriptionContext(), planIDs);
 
     const setState = (newState: Partial<PaymentsContextProviderState>) => {
         stateRef.current = { ...stateRef.current, ...newState };
@@ -339,9 +343,13 @@ export const PaymentsContextProvider = ({
 
     const getOptimisticCheckResult: PaymentsContextType['getOptimisticCheckResult'] = (planToCheck) => {
         const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
-        return computeOptimisticCheckResult({ plansMap, ...planToCheck }, stateRef.current.subscription, {
-            isTrial: planToCheck.trial || getShouldPassTrial(planToCheck.planIDs, planToCheck.cycle, true),
-        });
+        return computeOptimisticCheckResult(
+            { plansMap, ...planToCheck },
+            getSubscriptionChangedBy(planToCheck.planIDs),
+            {
+                isTrial: planToCheck.trial || getShouldPassTrial(planToCheck.planIDs, planToCheck.cycle, true),
+            }
+        );
     };
 
     /**
@@ -410,7 +418,7 @@ export const PaymentsContextProvider = ({
             const shouldValidateGuards =
                 withGuards &&
                 isModifyingPaidSubscriptionSelection(
-                    stateRef.current.subscription,
+                    getSubscriptionChangedBy(selection.planIDs),
                     selection.planIDs,
                     selection.cycle
                 ) &&
@@ -605,7 +613,7 @@ export const PaymentsContextProvider = ({
         // paymentFlow,
         // onChargeable,
     }: InitializeProps) => {
-        const { plansData, paymentStatus: status, subscription } = await preloadPaymentsData({ api });
+        const { plansData, paymentStatus: status } = await preloadPaymentsData({ api });
         const plans = plansData.plans;
 
         const selectedPlanName = planToCheckParam ? getPlanNameFromIDs(planToCheckParam.planIDs) : undefined;
@@ -676,7 +684,6 @@ export const PaymentsContextProvider = ({
                   getLocalizedPlansMap,
                   multiCheckGroups,
                   paymentsApi,
-                  subscription,
                   plansToCheck: availablePlansWithCurrencyAndAutomaticCoupon,
                   billingAddress: stateRef.current.billingAddress,
                   multiSubscriptionContext: getMultiSubscriptionContext(),
@@ -941,7 +948,6 @@ export const PaymentsContextProvider = ({
                 getLocalizedPlansMap,
                 multiCheckGroups,
                 paymentsApi: paymentsApiRef.current,
-                subscription: stateRef.current.subscription,
                 plansToCheck,
                 billingAddress: stateRef.current.billingAddress,
                 multiSubscriptionContext: getMultiSubscriptionContext(),

@@ -1,4 +1,4 @@
-import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
@@ -29,7 +29,7 @@ describe('getInitialCycle', () => {
     it('should return YEARLY for Proton Pass', () => {
         const result = getInitialCycle({
             cycleParam: undefined,
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             planIDs: defaultPlanIDs,
             plansMap: mockPlansMap,
             isPlanSelection: true,
@@ -47,7 +47,7 @@ describe('getInitialCycle', () => {
     ])('selects $expected months for Drive Plus when the cycle param is $cycleParam', ({ cycleParam, expected }) => {
         const result = getInitialCycle({
             cycleParam,
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             planIDs: { [PLANS.DRIVE]: 1 },
             plansMap: mockPlansMap,
             isPlanSelection: false,
@@ -97,7 +97,7 @@ describe('getInitialCycle', () => {
     it('should return DEFAULT_CYCLE for free subscriptions', () => {
         const result = getInitialCycle({
             cycleParam: undefined,
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             planIDs: defaultPlanIDs,
             plansMap: mockPlansMap,
             isPlanSelection: false,

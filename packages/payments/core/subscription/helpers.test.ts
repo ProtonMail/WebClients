@@ -242,8 +242,8 @@ describe('isSubscriptionSelectionEqual', () => {
 });
 
 describe('isModifyingPaidSubscriptionSelection', () => {
-    it('returns false for free subscribers', () => {
-        expect(isModifyingPaidSubscriptionSelection(FREE_SUBSCRIPTION, { [PLANS.MAIL]: 1 }, CYCLE.YEARLY)).toBe(false);
+    it('returns false without a subscription', () => {
+        expect(isModifyingPaidSubscriptionSelection(undefined, { [PLANS.MAIL]: 1 }, CYCLE.YEARLY)).toBe(false);
     });
 
     it('returns false when the paid selection matches the current subscription', () => {

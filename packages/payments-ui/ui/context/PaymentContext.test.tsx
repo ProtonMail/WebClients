@@ -13,10 +13,14 @@ import type { PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { GUARD_ERROR_CODES, type GuardError } from '@proton/payments/core/subscription/guard';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { multiSubscriptionTestCatalog } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import {
+    buildLumoSubscription,
+    multiSubscriptionTestCatalog,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -960,5 +964,50 @@ describe('PaymentsContext billing details', () => {
         // The refused VAT number isn't sent again with the next change either
         await act(() => getContext().selectCycle(CYCLE.YEARLY));
         expect(sentData().at(-1)).not.toHaveProperty('VatId');
+    });
+});
+
+describe('PaymentsContext with web Mail Plus yearly and web Lumo Plus monthly', () => {
+    const webMailPlus = buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'CHF' });
+    const webLumoPlus = buildLumoSubscription(PLANS.LUMO, { ID: 'lumo-plus', Cycle: CYCLE.MONTHLY, Currency: 'CHF' });
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        vi.mocked(useFlag).mockImplementation((flag) => flag === 'LumoMultiSubscriptions');
+        checkSubscription.mockImplementation((_data, { signal } = {}) =>
+            respondWith(signal, Promise.resolve(buildCheckResult()))
+        );
+    });
+
+    afterEach(() => {
+        vi.mocked(useFlag).mockReturnValue(false);
+    });
+
+    it('computes the optimistic mode of a Lumo Plus cycle change against Lumo Plus', () => {
+        const { getContext } = renderContext({
+            subscriptionState: getSubscriptionState({ ...webMailPlus, SecondarySubscriptions: [webLumoPlus] }),
+            entitlementCatalog: multiSubscriptionTestCatalog,
+        });
+
+        const optimisticCheckResult = getContext().getOptimisticCheckResult({
+            planIDs: { [PLANS.LUMO]: 1 },
+            cycle: CYCLE.YEARLY,
+            currency: 'CHF',
+        });
+
+        expect(optimisticCheckResult.SubscriptionMode).toBe(SubscriptionMode.ScheduledChargedImmediately);
+    });
+
+    it('does not validate guards for a new Lumo Plus subscription next to Mail Plus', async () => {
+        const { select } = renderContext({
+            withGuards: true,
+            subscriptionState: getSubscriptionState(webMailPlus),
+            entitlementCatalog: multiSubscriptionTestCatalog,
+        });
+
+        await select({ planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY, currency: 'CHF' });
+
+        expect(sentData()).toHaveLength(1);
+        expect(sentData()[0]).not.toHaveProperty('ValidateGuards', true);
     });
 });
