@@ -1,4 +1,4 @@
-import { type ReactNode, useRef } from 'react';
+import { type ReactNode, useCallback, useRef } from 'react';
 
 import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import useElementRect from '@proton/hooks/useElementRect';
@@ -15,7 +15,7 @@ import type {
     DriveExplorerSelection,
     GridDefinition,
 } from './types';
-import { useArrowKeyNavigation } from './useArrowKeyNavigation';
+import { type ScrollToRowAlign, useArrowKeyNavigation } from './useArrowKeyNavigation';
 import { useGridVirtualizer } from './useGridVirtualizer';
 import { useItemVisibility } from './useItemVisibility';
 
@@ -94,7 +94,7 @@ export const DriveExplorerGridBody = ({
     const totalItems = itemIds.length + (loading ? 1 : 0);
     const rowCount = Math.ceil(totalItems / itemsPerRow);
 
-    const gap = 16; // 1rem = 16px
+    const gap = rootFontSize(); // 1rem
     const rowHeightWithGap = cellHeight + gap;
 
     const virtualizer = useGridVirtualizer(
@@ -108,11 +108,15 @@ export const DriveExplorerGridBody = ({
         totalItems
     );
 
+    const scrollToRow = useCallback(
+        (rowIndex: number, align: ScrollToRowAlign) => virtualizer.scrollToIndex(rowIndex, { align }),
+        [virtualizer]
+    );
     useArrowKeyNavigation({
         containerRef,
         itemIds,
         itemsPerRow,
-        rowHeightWithGap,
+        scrollToRow,
     });
 
     return (

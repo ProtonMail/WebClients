@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import type { Mock } from 'vitest';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -71,15 +70,10 @@ function getActivator(uid: string): HTMLElement {
 
 describe('DriveExplorer keyboard navigation', () => {
     beforeAll(() => {
-        Element.prototype.scrollIntoView = vi.fn();
         // @tanstack/virtual-core reads offsetWidth/offsetHeight to size the viewport;
         // jsdom returns 0 for both so without this the virtualizer renders no rows.
         Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 800 });
         Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 1024 });
-    });
-
-    beforeEach(() => {
-        (Element.prototype.scrollIntoView as Mock).mockClear();
     });
 
     it('ArrowDown moves focus to the next row activator', async () => {
@@ -129,30 +123,26 @@ describe('DriveExplorer keyboard navigation', () => {
         expect(document.activeElement).toBe(getActivator('c'));
     });
 
-    it('Home jumps focus to the first row and scrolls it to center', async () => {
+    it('Home jumps focus to the first row', async () => {
         const ids = ['a', 'b', 'c', 'd', 'e'];
         renderExplorer({ itemIds: ids });
         const user = userEvent.setup();
 
         getActivator('d').focus();
-        (Element.prototype.scrollIntoView as Mock).mockClear();
         await user.keyboard('{Home}');
 
         expect(document.activeElement).toBe(getActivator('a'));
-        expect(Element.prototype.scrollIntoView).toHaveBeenCalledWith({ block: 'center' });
     });
 
-    it('End jumps focus to the last row and scrolls it to center', async () => {
+    it('End jumps focus to the last row', async () => {
         const ids = ['a', 'b', 'c', 'd', 'e'];
         renderExplorer({ itemIds: ids });
         const user = userEvent.setup();
 
         getActivator('a').focus();
-        (Element.prototype.scrollIntoView as Mock).mockClear();
         await user.keyboard('{End}');
 
         expect(document.activeElement).toBe(getActivator('e'));
-        expect(Element.prototype.scrollIntoView).toHaveBeenCalledWith({ block: 'center' });
     });
 
     it('Space on a focused row toggles selection without losing focus', async () => {

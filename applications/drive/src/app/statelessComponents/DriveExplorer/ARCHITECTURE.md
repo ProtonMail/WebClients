@@ -134,7 +134,7 @@ Cell definitions follow a pattern where configuration is separated from render f
 
 - **useListVirtualizer** (`useListVirtualizer.ts`)
     - Wraps `@tanstack/react-virtual` for list mode
-    - Configuration: itemHeight, overscan, gap
+    - Configuration: itemHeightRem, overscan, gap
     - Returns virtualizer with `getTotalSize()` and `getVirtualItems()`
 
 - **useGridVirtualizer** (`useGridVirtualizer.ts`)

@@ -1,33 +1,58 @@
-import { type RefObject, useEffect } from 'react';
+import { type RefObject, useEffect, useRef } from 'react';
+
+export type ScrollToRowAlign = 'auto' | 'center';
 
 interface UseArrowKeyNavigationParams {
     containerRef: RefObject<HTMLElement | null>;
     itemIds: string[];
     itemsPerRow: number;
-    rowHeightWithGap: number;
+    /** Scrolls the virtualized list to a row, using the virtualizer's measured row sizes */
+    scrollToRow: (rowIndex: number, align: ScrollToRowAlign) => void;
 }
 
 const ACTIVATOR_SELECTOR = '[data-item-activator]';
 const ITEM_UID_ATTR = 'data-drive-explorer-item-uid';
 const ITEM_UID_SELECTOR = `[${ITEM_UID_ATTR}]`;
+// After a long jump the virtualizer can take a few frames to render the target row
+const MAX_FOCUS_FRAMES = 10;
 
 // Focus-first keyboard navigation. Arrow keys move DOM focus between item
 // activators; selection is only changed by Space (handled in useItemInteraction).
-// Virtualizer-aware: when the target row is outside the rendered window, we
-// scroll the container first and refocus on the next frame.
+// Virtualizer-aware: the virtualizer scrolls to the target row, as only it knows
+// the measured row sizes, and we focus it as soon as it is rendered.
 export const useArrowKeyNavigation = ({
     containerRef,
     itemIds,
     itemsPerRow,
-    rowHeightWithGap,
+    scrollToRow,
 }: UseArrowKeyNavigationParams) => {
+    // Kept across effect re-runs: callers often pass a new itemIds array on each render,
+    // which must not cancel a focus still waiting for its row
+    const frameIdRef = useRef<number>(undefined);
+
+    useEffect(
+        () => () => {
+            if (frameIdRef.current !== undefined) {
+                cancelAnimationFrame(frameIdRef.current);
+            }
+        },
+        []
+    );
+
     useEffect(() => {
         const container = containerRef.current;
         if (!container) {
             return;
         }
 
-        const focusItemAtIndex = (index: number, scroll: 'nearest' | 'center') => {
+        const cancelPendingFocus = () => {
+            if (frameIdRef.current !== undefined) {
+                cancelAnimationFrame(frameIdRef.current);
+                frameIdRef.current = undefined;
+            }
+        };
+
+        const focusItemAtIndex = (index: number, align: ScrollToRowAlign) => {
             const uid = itemIds[index];
             if (!uid) {
                 return;
@@ -39,25 +64,23 @@ export const useArrowKeyNavigation = ({
                 if (!activator) {
                     return false;
                 }
-                const row = activator.closest<HTMLElement>(ITEM_UID_SELECTOR) ?? activator;
-                row.scrollIntoView({ block: scroll });
-                activator.focus();
+                // The virtualizer owns the scroll position, focusing must not scroll on its own
+                activator.focus({ preventScroll: true });
                 return true;
             };
 
-            if (tryFocus()) {
-                return;
-            }
+            const focusWhenRendered = (framesLeft: number) => {
+                frameIdRef.current = undefined;
+                if (tryFocus() || framesLeft === 0) {
+                    return;
+                }
+                frameIdRef.current = requestAnimationFrame(() => focusWhenRendered(framesLeft - 1));
+            };
 
-            const rowIndex = Math.floor(index / itemsPerRow);
-            const target =
-                scroll === 'center'
-                    ? Math.max(0, rowIndex * rowHeightWithGap - container.clientHeight / 2)
-                    : rowIndex * rowHeightWithGap;
-            container.scrollTop = target;
-            requestAnimationFrame(() => {
-                tryFocus();
-            });
+            // A newer key press replaces the pending focus
+            cancelPendingFocus();
+            scrollToRow(Math.floor(index / itemsPerRow), align);
+            focusWhenRendered(MAX_FOCUS_FRAMES);
         };
 
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -75,13 +98,13 @@ export const useArrowKeyNavigation = ({
                 case 'ArrowDown': {
                     event.preventDefault();
                     const next = currentIndex < 0 ? 0 : Math.min(currentIndex + itemsPerRow, last);
-                    focusItemAtIndex(next, 'nearest');
+                    focusItemAtIndex(next, 'auto');
                     return;
                 }
                 case 'ArrowUp': {
                     event.preventDefault();
                     const prev = currentIndex < 0 ? last : Math.max(currentIndex - itemsPerRow, 0);
-                    focusItemAtIndex(prev, 'nearest');
+                    focusItemAtIndex(prev, 'auto');
                     return;
                 }
                 case 'ArrowRight': {
@@ -90,7 +113,7 @@ export const useArrowKeyNavigation = ({
                     }
                     event.preventDefault();
                     const next = currentIndex < 0 ? 0 : Math.min(currentIndex + 1, last);
-                    focusItemAtIndex(next, 'nearest');
+                    focusItemAtIndex(next, 'auto');
                     return;
                 }
                 case 'ArrowLeft': {
@@ -99,7 +122,7 @@ export const useArrowKeyNavigation = ({
                     }
                     event.preventDefault();
                     const prev = currentIndex < 0 ? last : Math.max(currentIndex - 1, 0);
-                    focusItemAtIndex(prev, 'nearest');
+                    focusItemAtIndex(prev, 'auto');
                     return;
                 }
                 case 'Home': {
@@ -121,5 +144,5 @@ export const useArrowKeyNavigation = ({
         return () => {
             container.removeEventListener('keydown', handleKeyDown);
         };
-    }, [containerRef, itemIds, itemsPerRow, rowHeightWithGap]);
+    }, [containerRef, itemIds, itemsPerRow, scrollToRow]);
 };
