@@ -1,5 +1,6 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
+import { contactEmailsActions } from '@proton/account/contactEmails';
 import { serverEvent } from '@proton/account/eventLoop';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
@@ -116,7 +117,12 @@ export const categoriesEventLoopV6Thunk = ({
             events: event.Labels,
             get: (ID) => getCategory(api, ID),
             refetch: () => dispatch(categoriesThunk({ cache: CacheType.None })),
-            update: (result) => dispatch(categoriesActions.eventLoopV6(result)),
+            update: (result) => {
+                dispatch(categoriesActions.eventLoopV6(result));
+                if (result.delete.length) {
+                    dispatch(contactEmailsActions.removeLabelIDs(result.delete));
+                }
+            },
         });
     };
 };

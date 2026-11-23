@@ -146,7 +146,11 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
         const tokenizedQuery = normalize(searchValue, true).split(' ');
 
         const groupNameTokens = c.LabelIDs.reduce((acc: string[], labelId) => {
-            const tokenized = normalize(contactGroupsMap[labelId].Name, true).split(' ');
+            const group = contactGroupsMap[labelId];
+            if (!group) {
+                return acc;
+            }
+            const tokenized = normalize(group.Name, true).split(' ');
             return [...acc, ...tokenized];
         }, []);
 

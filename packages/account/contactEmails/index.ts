@@ -1,5 +1,6 @@
 import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice } from '@reduxjs/toolkit';
 
+import type { EventLoop } from '@proton/redux-shared-store-types/eventLoop';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
@@ -8,7 +9,7 @@ import { CacheType } from '@proton/redux-utilities/interface';
 import { queryContactEmails } from '@proton/shared/lib/api/contacts';
 import type { ContactEventV6Response } from '@proton/shared/lib/api/events';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
-import { CONTACTS_REQUESTS_PER_SECOND, CONTACT_EMAILS_LIMIT } from '@proton/shared/lib/constants';
+import { CONTACTS_REQUESTS_PER_SECOND, CONTACT_EMAILS_LIMIT, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
@@ -54,6 +55,17 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectContactEmails = (state: ContactEmailsState) => state[name];
 
+const getDeletedLabelIDs = ({ Labels = [] }: EventLoop) =>
+    new Set(Labels.filter(({ Action }) => Action === EVENT_ACTIONS.DELETE).map(({ ID }) => ID));
+
+const withoutLabelIDs = (contactEmails: ContactEmail[], labelIDs: Set<string>) =>
+    contactEmails.map((contactEmail) => {
+        if (!contactEmail.LabelIDs.some((labelID) => labelIDs.has(labelID))) {
+            return contactEmail;
+        }
+        return { ...contactEmail, LabelIDs: contactEmail.LabelIDs.filter((labelID) => !labelIDs.has(labelID)) };
+    });
+
 const modelThunk = createAsyncModelThunk<Model, ContactEmailsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
         return getContactEmailsModel(extraArgument.api);
@@ -71,6 +83,11 @@ const slice = createSlice({
                 state.value = updateCollectionV6(state.value, action.payload);
             }
         },
+        removeLabelIDs: (state, action: PayloadAction<string[]>) => {
+            if (state.value) {
+                state.value = withoutLabelIDs(state.value, new Set(action.payload));
+            }
+        },
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
@@ -85,6 +102,10 @@ const slice = createSlice({
                     })
                 );
             }
+            const deletedLabelIDs = getDeletedLabelIDs(action.payload);
+            if (state.value && deletedLabelIDs.size) {
+                state.value = withoutLabelIDs(state.value, deletedLabelIDs);
+            }
             if (state.value && hasBit(action.payload.Refresh, EVENT_ERRORS.CONTACTS)) {
                 delete state.value;
                 delete state.error;
@@ -94,7 +115,7 @@ const slice = createSlice({
 });
 
 export const contactEmailsReducer = { [name]: slice.reducer };
-const contactEmailsActions = slice.actions;
+export const contactEmailsActions = slice.actions;
 export const contactEmailsThunk = modelThunk.thunk;
 
 export const contactEmailsEventLoopV6Thunk = ({
