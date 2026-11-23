@@ -670,26 +670,39 @@ export const GatewaysSection = ({ organization, showCancelButton = true }: Props
             )}
 
             {sortedList.length ? (
-                <GatewaysTableView
-                    gateways={sortedList}
-                    countryOptions={countryOptions}
-                    users={users ?? []}
-                    groups={groups ?? []}
-                    canViewGateways={canViewGateways}
-                    canAdd={canAdd}
-                    showDeleted={Deleted}
-                    showIPv4={IPv4}
-                    showIPv6={IPv6}
-                    showLoad={Load}
-                    provisioningDuration={provisioningDuration}
-                    deletingLogicals={deletingLogicals}
-                    deletedLogicals={deletedLogicals}
-                    renameGateway={renameGateway}
-                    editGatewayServers={editGatewayServers}
-                    editGatewayUsers={editGatewayUsers}
-                    deleteGateway={(gateway) => () => showRemoveGatewayConfirmationModal(gateway)}
-                    addGateway={addGateway}
-                />
+                <>
+                    {canViewGateways && (
+                        <div className="mb-4">
+                            <GuardedCreateGatewayButton
+                                color="norm"
+                                disabled={!canAdd}
+                                onClick={addGateway}
+                                title={c('Title').t`Create a new Gateway`}
+                            >
+                                {c('Action').t`Create Gateway`}
+                            </GuardedCreateGatewayButton>
+                        </div>
+                    )}
+
+                    <GatewaysTableView
+                        gateways={sortedList}
+                        countryOptions={countryOptions}
+                        users={users ?? []}
+                        groups={groups ?? []}
+                        canViewGateways={canViewGateways}
+                        showDeleted={Deleted}
+                        showIPv4={IPv4}
+                        showIPv6={IPv6}
+                        showLoad={Load}
+                        provisioningDuration={provisioningDuration}
+                        deletingLogicals={deletingLogicals}
+                        deletedLogicals={deletedLogicals}
+                        renameGateway={renameGateway}
+                        editGatewayServers={editGatewayServers}
+                        editGatewayUsers={editGatewayUsers}
+                        deleteGateway={(gateway) => () => showRemoveGatewayConfirmationModal(gateway)}
+                    />
+                </>
             ) : (
                 <EmptyViewContainer
                     key="no-gateways-container"
