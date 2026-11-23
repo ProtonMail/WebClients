@@ -534,11 +534,11 @@ export function isSubscriptionSelectionEqual(a: SubscriptionSelection, b: Subscr
  * @returns `true` when the subscriber is paid and the selection does not match their current planIDs and cycle; otherwise `false` (including for free subscribers).
  */
 export function isModifyingPaidSubscriptionSelection(
-    subscription: Subscription | FreeSubscription,
+    subscription: Subscription | undefined,
     planIDs: PlanIDs,
     cycle: CYCLE
 ): boolean {
-    if (isFreeSubscription(subscription)) {
+    if (!subscription) {
         return false;
     }
 

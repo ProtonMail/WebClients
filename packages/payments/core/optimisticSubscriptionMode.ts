@@ -1,22 +1,20 @@
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { getOptimisticCheckResult } from './checkout';
-import type { FreeSubscription } from './interface';
 import { planIDsPositiveDifference } from './planIDs';
 import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
-import { isFreeSubscription } from './type-guards';
 
 export function computeOptimisticSubscriptionMode(
     { planIDs, cycle, currency, plansMap }: Parameters<typeof getOptimisticCheckResult>[0],
-    subscription: Subscription | FreeSubscription | undefined,
+    subscription: Subscription | undefined,
     {
         isTrial,
     }: {
         isTrial?: boolean;
     } = {}
 ): SubscriptionMode {
-    if (isFreeSubscription(subscription)) {
+    if (!subscription) {
         return isTrial ? SubscriptionMode.Trial : SubscriptionMode.Regular;
     }
 

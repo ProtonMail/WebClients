@@ -1,4 +1,4 @@
-import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
@@ -23,7 +23,7 @@ describe('switchCycle', () => {
             preferredCycle: CYCLE.YEARLY,
             selectedPlanIDs: planIDs,
             currency,
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             plansMap,
         });
 
@@ -38,7 +38,7 @@ describe('switchCycle', () => {
             preferredCycle: CYCLE.TWO_YEARS,
             selectedPlanIDs: planIDs,
             currency,
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             plansMap,
         });
 
@@ -84,7 +84,7 @@ describe('switchCycle', () => {
             preferredCycle: CYCLE.YEARLY,
             selectedPlanIDs: planIDs,
             currency,
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             plansMap: {} as FullPlansMap,
         });
 

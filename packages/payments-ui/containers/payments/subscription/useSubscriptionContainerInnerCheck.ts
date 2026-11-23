@@ -32,6 +32,7 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getApiErrorMessage, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -53,7 +54,6 @@ interface PlanTransitionCallbacks {
 interface NormalizeModelProps {
     skipPlanTransitionChecks: boolean;
     multiSubscriptionContext: MultiSubscriptionContext;
-    subscription: Subscription | FreeSubscription;
     plansMapRef: { current: FullPlansMap };
     fitCurrencyToSelection: (planIDs: PlanIDs, currency: Currency) => Currency;
     currentStep: SUBSCRIPTION_STEPS;
@@ -63,7 +63,6 @@ interface NormalizeModelProps {
 export interface UseSubscriptionContainerInnerCheckProps {
     model: Model;
     checkResult: SubscriptionEstimation;
-    subscriptionCouponCode: string | undefined;
     subscription: Subscription | FreeSubscription;
     paymentsApi: PaymentsApi;
     paymentFacadeSelectedMethodType: PlainPaymentMethodType | undefined;
@@ -102,11 +101,26 @@ export interface UseSubscriptionContainerInnerCheckProps {
     };
 }
 
+type ModelCoupon = Pick<Model, 'coupon' | 'couponCarriedFromSubscriptionID'>;
+
+export const getCouponCarriedFrom = (subscription: Subscription | undefined): ModelCoupon =>
+    subscription?.CouponCode
+        ? { coupon: subscription.CouponCode, couponCarriedFromSubscriptionID: subscription.ID }
+        : { coupon: undefined, couponCarriedFromSubscriptionID: undefined };
+
+const getOwnCoupon = (coupon: string): ModelCoupon => ({ coupon, couponCarriedFromSubscriptionID: undefined });
+
+const hasOwnCoupon = (model: Model) => !!model.coupon && model.couponCarriedFromSubscriptionID === undefined;
+
 async function normalizeModel(newModel: Model, props: NormalizeModelProps): Promise<boolean> {
+    const getSubscriptionChangedBy = (planIDs: PlanIDs) =>
+        getChangedSubscription(props.multiSubscriptionContext, planIDs);
+
     if (!props.skipPlanTransitionChecks) {
-        const latestSubscription = props.subscription.UpcomingSubscription ?? props.subscription;
+        const changedSubscription = getSubscriptionChangedBy(newModel.planIDs);
+        const changedSubscriptionTerm = changedSubscription?.UpcomingSubscription ?? changedSubscription;
         const planTransitionForbidden = getIsPlanTransitionForbidden({
-            subscription: props.subscription,
+            subscription: changedSubscription,
             plansMap: props.plansMapRef.current,
             planIDs: newModel.planIDs,
             multiSubscriptionContext: props.multiSubscriptionContext,
@@ -118,10 +132,10 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
             // that the cycle is allowed
 
             newModel.cycle = switchCycle({
-                preferredCycle: props.subscription?.Cycle ?? newModel.cycle,
+                preferredCycle: changedSubscription?.Cycle ?? newModel.cycle,
                 selectedPlanIDs: newModel.planIDs,
                 currency: newModel.currency,
-                subscription: props.subscription,
+                subscription: changedSubscription,
                 plansMap: props.plansMapRef.current,
             });
         }
@@ -132,12 +146,12 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
                     ? props.plansMapRef.current[planTransitionForbidden.newPlanName]
                     : undefined
             );
-            newModel.planIDs = getPlanIDs(latestSubscription);
+            newModel.planIDs = getPlanIDs(changedSubscriptionTerm);
             newModel.cycle = switchCycle({
                 preferredCycle: newModel.cycle,
                 selectedPlanIDs: newModel.planIDs,
                 currency: newModel.currency,
-                subscription: props.subscription,
+                subscription: changedSubscription,
                 plansMap: props.plansMapRef.current,
             });
             newModel.step = props.currentStep;
@@ -161,7 +175,7 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
             selectedPlanIDs: newModel.planIDs,
             plansMap: props.plansMapRef.current,
             currency: newModel.currency,
-            subscription: props.subscription,
+            subscription: getSubscriptionChangedBy(newModel.planIDs),
         }) ?? newModel.planIDs;
 
     return true;
@@ -190,7 +204,6 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         const {
             model,
             checkResult,
-            subscriptionCouponCode,
             subscription,
             paymentsApi,
             paymentFacadeSelectedMethodType,
@@ -216,7 +229,6 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         const shouldContinue = await normalizeModel(copyNewModel, {
             skipPlanTransitionChecks: props.skipPlanTransitionChecks,
             multiSubscriptionContext: props.multiSubscriptionContext,
-            subscription: props.subscription,
             plansMapRef: props.refs.plansMapRef,
             fitCurrencyToSelection: props.setters.fitCurrencyToSelection,
             currentStep: props.model.step,
@@ -224,6 +236,11 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         });
         if (!shouldContinue) {
             return;
+        }
+
+        const changedSubscription = getChangedSubscription(props.multiSubscriptionContext, copyNewModel.planIDs);
+        if (!hasOwnCoupon(copyNewModel)) {
+            Object.assign(copyNewModel, getCouponCarriedFrom(changedSubscription));
         }
 
         reportPlanIDsIfChangedTelemetry(copyNewModel.planIDs, telemetry.paymentFacade, {
@@ -278,12 +295,14 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             return;
         }
 
+        const subscriptionCouponCode = changedSubscription?.CouponCode || undefined;
+
         // Guards are re-evaluated only on checkout, when modifying a paid subscription, and when
         // the plan/cycle selection changed (or on the first check). Computed after normalizeModel
         // so planIDs/cycle reflect what is actually sent to subscriptions/check.
         const validateGuards =
             copyNewModel.step === SUBSCRIPTION_STEPS.CHECKOUT &&
-            isModifyingPaidSubscriptionSelection(subscription, copyNewModel.planIDs, copyNewModel.cycle) &&
+            isModifyingPaidSubscriptionSelection(changedSubscription, copyNewModel.planIDs, copyNewModel.cycle) &&
             (!model.initialCheckComplete || !isSubscriptionSelectionEqual(model, copyNewModel));
 
         if (validateGuards && checkResult.GuardResult?.length) {
@@ -366,10 +385,22 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                     return checkResult;
                 }
 
-                if (Code) {
+                const isCarriedCouponApplied =
+                    Code === copyNewModel.coupon &&
+                    Code !== copyNewModel.gift &&
+                    copyNewModel.couponCarriedFromSubscriptionID !== undefined;
+                if (Code && !isCarriedCouponApplied) {
                     latestValidCouponCodeRef.current = Code;
+                    Object.assign(copyNewModel, getOwnCoupon(Code));
                 }
-                copyNewModel.coupon = Code || subscriptionCouponCode || latestValidCouponCodeRef.current;
+                if (!Code) {
+                    Object.assign(
+                        copyNewModel,
+                        subscriptionCouponCode
+                            ? getCouponCarriedFrom(changedSubscription)
+                            : getOwnCoupon(latestValidCouponCodeRef.current)
+                    );
+                }
 
                 if (!Gift) {
                     delete copyNewModel.gift;

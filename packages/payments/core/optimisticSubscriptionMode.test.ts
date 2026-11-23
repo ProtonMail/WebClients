@@ -2,11 +2,11 @@ import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/const
 
 import { buildSubscription } from '../testing/buildSubscription';
 import { getTestPlansMap } from '../testing/data-plans';
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from './constants';
+import { ADDON_NAMES, CYCLE, PLANS } from './constants';
 import { computeOptimisticSubscriptionMode } from './optimisticSubscriptionMode';
 
 describe('computeOptimisticSubscriptionMode', () => {
-    it('should return regular subscription mode if user has a free subscription', () => {
+    it('should return regular subscription mode without a subscription', () => {
         expect(
             computeOptimisticSubscriptionMode(
                 {
@@ -17,13 +17,13 @@ describe('computeOptimisticSubscriptionMode', () => {
                     currency: 'EUR',
                     plansMap: getTestPlansMap('EUR'),
                 },
-                FREE_SUBSCRIPTION,
+                undefined,
                 { isTrial: false }
             )
         ).toEqual(SubscriptionMode.Regular);
     });
 
-    it('should return trial subscription mode if user has a free subscription and requests a trial', () => {
+    it('should return trial subscription mode without a subscription when a trial is requested', () => {
         expect(
             computeOptimisticSubscriptionMode(
                 {
@@ -34,7 +34,7 @@ describe('computeOptimisticSubscriptionMode', () => {
                     currency: 'EUR',
                     plansMap: getTestPlansMap('EUR'),
                 },
-                FREE_SUBSCRIPTION,
+                undefined,
                 { isTrial: true }
             )
         ).toEqual(SubscriptionMode.Trial);

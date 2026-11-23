@@ -9,6 +9,7 @@ import type { Subscription, SubscriptionEstimation } from '@proton/payments/core
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
@@ -55,7 +56,7 @@ export async function runAdditionalCycleChecks(
         );
 
     const additionalCyclesHaveCustomBilling =
-        subscription &&
+        isPaidSubscription(subscription) &&
         additionalCycles.some((cycle) => {
             const optimisticSubscriptionMode = computeOptimisticSubscriptionMode(
                 {

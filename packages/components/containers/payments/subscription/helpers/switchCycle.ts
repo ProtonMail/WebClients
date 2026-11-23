@@ -1,4 +1,4 @@
-import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 
 import { getAllowedCycles } from './getAllowedCycles';
@@ -13,7 +13,7 @@ export const switchCycle = ({
     preferredCycle: Cycle;
     selectedPlanIDs: PlanIDs;
     currency: Currency;
-    subscription: Subscription | FreeSubscription;
+    subscription: Subscription | undefined;
     plansMap: FullPlansMap;
 }) => {
     const allowedCycles = getAllowedCycles({
