@@ -10,6 +10,7 @@ import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useLumoDispatch } from '../../../redux/hooks';
+import { sendSkillAddedEvent, sendSkillDeletedEvent } from '../../../util/telemetry';
 import { DeleteSkillPrompt } from '../../skills/components/DeleteSkillPrompt';
 import { SkillEditorModal } from '../../skills/components/SkillEditorModal';
 import { SkillLimitModal } from '../../skills/components/SkillLimitModal';
@@ -74,6 +75,7 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
         setAddingId(plugin.id);
         try {
             await dispatch(saveSkill({ draft: protonPluginToDraft(plugin) })).unwrap();
+            sendSkillAddedEvent({ source: 'catalog' });
             const title = plugin.getTitle();
             createNotification({ text: c('collider_2025:Info').t`Added ${title} to your skills` });
         } catch {
@@ -85,7 +87,10 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
 
     const handleDelete = async () => {
         if (selectedSkill) {
-            await dispatch(deleteSkill(selectedSkill.id));
+            const result = await dispatch(deleteSkill(selectedSkill.id));
+            if (deleteSkill.fulfilled.match(result)) {
+                sendSkillDeletedEvent();
+            }
         }
     };
 

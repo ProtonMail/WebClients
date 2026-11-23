@@ -16,6 +16,7 @@ import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/
 import { type IconName, LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useLumoDispatch } from '../../redux/hooks';
+import { sendSkillAddedEvent } from '../../util/telemetry';
 import { SkillLimitModal } from '../skills/components/SkillLimitModal';
 import { deriveBundleInfo, findSubSkills, isSkillPlugin, resolvePluginInfo } from '../skills/skillBundle';
 import { type SkillCheckReport, checkSkill, getSkillCheckFindingText } from '../skills/skillCheck';
@@ -268,6 +269,7 @@ export const UploadSkillView = () => {
             for (const { draft } of valid) {
                 if (draft) {
                     saved.push(await dispatch(saveSkill({ draft })).unwrap());
+                    sendSkillAddedEvent({ source: 'upload' });
                 }
             }
             const [first] = saved;

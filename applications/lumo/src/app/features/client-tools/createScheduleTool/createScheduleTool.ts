@@ -3,6 +3,7 @@ import { getDesktopScheduleConnectors } from '@proton/lumo-api-client/core/deskt
 import type { ChatCompletionsFunctionTool } from '@proton/lumo-api-client/types-api';
 
 import type { CreateScheduleToolResponse } from '../../../types';
+import { sendScheduleDraftedInChatEvent } from '../../../util/telemetry';
 import type { ScheduleDetails } from '../../schedules/types';
 import type { ClientToolSuccessResult } from '../validationUtils';
 import { createScheduleSchema } from './schema';
@@ -118,6 +119,7 @@ export const createScheduleToolExecutor: ClientToolExecutor = {
 
             const validation = validateCreateScheduleToolArguments(args, connectorIds);
             if (!validation.ok) return invalidCall(validation.error);
+            sendScheduleDraftedInChatEvent();
 
             return {
                 endTurn: true,

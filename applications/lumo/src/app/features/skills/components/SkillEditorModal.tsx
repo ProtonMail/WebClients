@@ -19,6 +19,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { sendSkillAddedEvent } from '../../../util/telemetry';
 import { DEFAULT_AGENT_ICON } from '../../agents/constants';
 import { IconPicker } from '../../projects/components/IconPicker';
 import {
@@ -487,6 +488,9 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     },
                 })
             ).unwrap();
+            if (!skillId) {
+                sendSkillAddedEvent({ source: 'editor' });
+            }
             onSaved?.(skill);
             modalProps.onClose?.();
         } catch {

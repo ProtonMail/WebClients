@@ -5,12 +5,20 @@ import { SpaceType } from '../../types';
 import { rootReducer } from '../rootReducer';
 import { selectSchedules } from '../selectors';
 import { addSpace } from './core/spaces';
-import { saveSchedule } from './schedules';
+import { deleteSchedule, saveSchedule } from './schedules';
 
 const makeStore = () =>
     configureStore({ reducer: rootReducer, middleware: (getDefault) => getDefault({ serializableCheck: false }) });
 
 describe('schedule spaces', () => {
+    it('reports whether a delete removed a schedule', () => {
+        const store = makeStore();
+        const id = 'schedule-1';
+        store.dispatch(saveSchedule(id, createTestSchedule()));
+        expect(store.dispatch(deleteSchedule(id))).toBe(true);
+        expect(store.dispatch(deleteSchedule('missing-schedule'))).toBe(false);
+    });
+
     it('preserves identity and encryption key when editing schedule settings', () => {
         const store = makeStore();
         const id = 'schedule-1';

@@ -10,6 +10,8 @@ import { selectSchedules } from '../../redux/selectors';
 import { newSpaceId } from '../../redux/slices/core/spaces';
 import { deleteSchedule, saveSchedule } from '../../redux/slices/schedules';
 import type { SpaceId } from '../../types';
+import type { ScheduleCreatedSource } from '../../util/telemetry';
+import { sendScheduleCreatedEvent, sendScheduleDeletedEvent } from '../../util/telemetry';
 import { ScheduleTemplateGrid } from './components/ScheduleTemplateGrid';
 import { ScheduledTaskGrid } from './components/ScheduledTaskGrid';
 import { SchedulesEmptyState } from './components/SchedulesEmptyState';
@@ -30,11 +32,12 @@ export const SchedulesView = () => {
     const { createNotification } = useNotifications();
     const { checkCanCreateSchedule, scheduleLimitModal, scheduleLimitModalState } = useScheduleLimit();
     const [{ data, ...scheduledTaskEditorModalProps }, openScheduledTaskEditorModal, renderScheduledTaskEditorModal] =
-        useModalStateWithData<{
-            initialValues: ScheduleDetails;
-            spaceId: SpaceId;
-            mode: 'create' | 'edit';
-        }>();
+        useModalStateWithData<
+            { initialValues: ScheduleDetails; spaceId: SpaceId } & (
+                | { mode: 'create'; source: ScheduleCreatedSource }
+                | { mode: 'edit' }
+            )
+        >();
 
     const handleNewTaskClick = () => {
         if (!checkCanCreateSchedule()) return;
@@ -42,6 +45,7 @@ export const SchedulesView = () => {
             initialValues: getEmptyScheduleDetails(),
             spaceId: newSpaceId(),
             mode: 'create',
+            source: 'blank',
         });
     };
 
@@ -51,6 +55,7 @@ export const SchedulesView = () => {
             initialValues: createScheduleDetailsFrom(template),
             spaceId: newSpaceId(),
             mode: 'create',
+            source: 'template',
         });
     };
 
@@ -59,6 +64,9 @@ export const SchedulesView = () => {
 
         try {
             dispatch(saveSchedule(id, schedule, data?.mode ?? 'create'));
+            if (data?.mode === 'create') {
+                sendScheduleCreatedEvent({ source: data.source });
+            }
         } catch (error) {
             // translator: Error notification when a scheduled task cannot be saved.
             const fallbackMessage = c('collider_2025:Error')
@@ -77,7 +85,9 @@ export const SchedulesView = () => {
     };
 
     const handleDeleteSchedule = (scheduleId: SpaceId) => {
-        dispatch(deleteSchedule(scheduleId));
+        if (dispatch(deleteSchedule(scheduleId))) {
+            sendScheduleDeletedEvent();
+        }
     };
 
     return (

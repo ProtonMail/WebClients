@@ -24,6 +24,7 @@ import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { insertSkillCommand } from '../../redux/slices/composerActions';
+import { sendSkillDeletedEvent } from '../../util/telemetry';
 import { triggerFileDownload } from '../../util/triggerFileDownload';
 import { DEFAULT_AGENT_ICON } from '../agents/constants';
 import { DeleteSkillPrompt } from '../skills/components/DeleteSkillPrompt';
@@ -201,7 +202,10 @@ export const SkillDetailView = () => {
     };
 
     const handleDelete = async () => {
-        await dispatch(deleteSkill(skill.id));
+        const result = await dispatch(deleteSkill(skill.id));
+        if (deleteSkill.fulfilled.match(result)) {
+            sendSkillDeletedEvent();
+        }
         history.push('/customize');
     };
 

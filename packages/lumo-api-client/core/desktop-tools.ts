@@ -437,6 +437,32 @@ export function subscribeDesktopConnectors(callback: () => void): () => void {
     return () => window.removeEventListener('lumo:tools-changed', callback);
 }
 
+export type DesktopConnectorLifecycleChange = { action: 'added' | 'removed'; kind: 'catalog' | 'mcp' };
+
+const CONNECTOR_LIFECYCLE_EVENTS = { 'lumo:connector-added': 'added', 'lumo:connector-removed': 'removed' } as const;
+
+/**
+ * Lumo Desktop reports when the user adds or removes a connector in its settings; older builds never
+ * do. Only the kind is passed on, and anything other than 'catalog' or 'mcp' is ignored.
+ */
+export function subscribeDesktopConnectorLifecycle(
+    callback: (change: DesktopConnectorLifecycleChange) => void
+): () => void {
+    const listeners = Object.entries(CONNECTOR_LIFECYCLE_EVENTS).map(([eventName, action]) => {
+        const listener = (event: Event) => {
+            const detail: unknown = (event as CustomEvent<unknown>).detail;
+            const kind =
+                typeof detail === 'object' && detail !== null ? (detail as { kind?: unknown }).kind : undefined;
+            if (kind === 'catalog' || kind === 'mcp') {
+                callback({ action, kind });
+            }
+        };
+        window.addEventListener(eventName, listener);
+        return () => window.removeEventListener(eventName, listener);
+    });
+    return () => listeners.forEach((remove) => remove());
+}
+
 /** Loads connector manifests from the desktop bridge and refreshes when connectors change. */
 export function useDesktopManifests(): {
     manifests: DesktopConnector[];
