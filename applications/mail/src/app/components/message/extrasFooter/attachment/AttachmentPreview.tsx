@@ -2,8 +2,8 @@ import type { MutableRefObject, Ref } from 'react';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { Portal } from '@proton/atoms/Portal/Portal';
-import FilePreview from '@proton/components/containers/filePreview/FilePreview';
-import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
+import FilePreview from '@proton/file-preview/FilePreview';
+import NavigationControl from '@proton/file-preview/NavigationControl';
 import type { MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

@@ -39,7 +39,7 @@ export class CbzHandler extends BaseHandler {
 
         try {
             perf.start('cbzCoverExtraction');
-            const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
+            const { getCBZCover } = await import('@proton/file-preview/ComicBookPreview');
             // getCBZCover expects a File, so create a File from the Blob
             const file = new File([content], fileName, { type: content.type });
             const { cover, file: coverFile } = await getCBZCover(file);

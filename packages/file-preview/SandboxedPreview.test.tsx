@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// happy-dom does not populate the sandboxed iframe's contentWindow, nor the global `origin` the CSP is built from.
 import { fireEvent, render, screen } from '@testing-library/react';
 import type { Mock } from 'vitest';
 

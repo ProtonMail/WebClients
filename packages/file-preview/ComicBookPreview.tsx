@@ -4,9 +4,8 @@ import JSZip from 'jszip';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import clsx from '@proton/utils/clsx';
-
-import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
 const IMAGE_SIGNATURES = [
     { mimeType: 'image/png', signature: [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a] },

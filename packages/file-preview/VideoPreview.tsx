@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 
-import { useVideoAutoPlay } from '../../hooks/useVideoAutoPlay';
 import UnsupportedPreview from './UnsupportedPreview';
+import { useVideoAutoPlay } from './hooks/useVideoAutoPlay';
 
 interface Props {
     mimeType: string;

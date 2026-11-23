@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
 import { useFlagsDriveSheet } from '@proton/drive/modules/flags';
+import { FilePreviewContent } from '@proton/file-preview/FilePreview';
 import clsx from '@proton/utils/clsx';
 
 import type { ContentPreviewMethod } from './content';

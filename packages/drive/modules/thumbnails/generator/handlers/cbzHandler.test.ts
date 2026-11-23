@@ -6,7 +6,7 @@ import * as constants from '../constants';
 import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { CbzHandler } from './cbzHandler';
 
-vi.mock('@proton/components/containers/filePreview/ComicBookPreview', () => ({
+vi.mock('@proton/file-preview/ComicBookPreview', () => ({
     getCBZCover: vi.fn(),
 }));
 
@@ -62,7 +62,7 @@ describe('CbzHandler', () => {
         });
 
         test('Throws MissingDataError when CBZ has no cover', async () => {
-            const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
+            const { getCBZCover } = await import('@proton/file-preview/ComicBookPreview');
             vi.mocked(getCBZCover).mockResolvedValue({ cover: undefined, file: undefined });
 
             const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
@@ -80,7 +80,7 @@ describe('CbzHandler', () => {
         });
 
         test('MissingDataError includes proper context', async () => {
-            const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
+            const { getCBZCover } = await import('@proton/file-preview/ComicBookPreview');
             vi.mocked(getCBZCover).mockResolvedValue({ cover: undefined, file: undefined });
 
             const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
@@ -105,7 +105,7 @@ describe('CbzHandler', () => {
         });
 
         test('Throws UnsupportedFormatError when archive extraction fails', async () => {
-            const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
+            const { getCBZCover } = await import('@proton/file-preview/ComicBookPreview');
             vi.mocked(getCBZCover).mockRejectedValue(new Error('Corrupted archive'));
 
             const blob = new Blob(['corrupted cbz'], { type: 'application/x-cbz' });
@@ -123,7 +123,7 @@ describe('CbzHandler', () => {
         });
 
         test('UnsupportedFormatError includes proper context', async () => {
-            const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
+            const { getCBZCover } = await import('@proton/file-preview/ComicBookPreview');
             vi.mocked(getCBZCover).mockRejectedValue(new Error('Corrupted archive'));
 
             const blob = new Blob(['corrupted cbz'], { type: 'application/x-cbz' });

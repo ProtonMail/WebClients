@@ -1,9 +1,9 @@
 import { lazy, useRef } from 'react';
 
-import FilePreview from '@proton/components/containers/filePreview/FilePreview';
-import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { useFlagsDriveLumo, useFlagsDriveSheet } from '@proton/drive/modules/flags';
+import FilePreview from '@proton/file-preview/FilePreview';
+import NavigationControl from '@proton/file-preview/NavigationControl';
 
 import { loadPreviewThumbnail } from '../../lumo/loadPreviewThumbnail';
 import type { OpenFile } from '../../lumo/toolModule';
