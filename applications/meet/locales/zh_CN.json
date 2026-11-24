@@ -103,9 +103,6 @@
       "Now starting recording": [
         "正在开始录制"
       ],
-      "Reconnected to the meeting": [
-        "已重新连接会议"
-      ],
       "Recording saved": [
         "录制已保存"
       ],
@@ -153,9 +150,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "您是唯一的参与者。会议将在 2 分钟后关闭，除非有其他人加入。"
-      ],
-      "You have been disconnected from the meeting": [
-        "您已与会议断开连接"
       ],
       "You have been muted by the host": [
         "您已被主持人静音"
@@ -257,9 +251,6 @@
       ],
       "Continue without camera": [
         "不使用摄像头，继续参会"
-      ],
-      "Continue without mic and camera": [
-        "无麦克风和相机继续"
       ],
       "Continue without microphone": [
         "不使用麦克风，继续参会"
@@ -429,6 +420,9 @@
       "Kick out ${ participantName }": [
         "移出 ${ participantName }"
       ],
+      "Learn more": [
+        "了解详情"
+      ],
       "Leave": [
         "离开"
       ],
@@ -455,6 +449,9 @@
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
+      ],
+      "More options": [
+        "更多选项"
       ],
       "More options for accounts": [
         "更多账户选项"
@@ -534,6 +531,9 @@
       "Refresh audio and video tracks": [
         "刷新音视频轨道"
       ],
+      "Refresh page": [
+        "刷新页面"
+      ],
       "Refresh screen share track": [
         "刷新屏幕共享画面"
       ],
@@ -575,9 +575,6 @@
       ],
       "Resume": [
         "继续"
-      ],
-      "Retry": [
-        "重试"
       ],
       "Return to dashboard": [
         "返回仪表盘"
@@ -1888,9 +1885,6 @@
       "An error occurred": [
         "发生错误"
       ],
-      "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "背景模糊初始化失败，请重新切换摄像头或背景模糊！"
-      ],
       "Bookmark password is not available": [
         "书签密码不可用"
       ],
@@ -1918,12 +1912,6 @@
       "Copying item to a non-folder is not allowed": [
         "不允许将项目复制到非文件夹中"
       ],
-      "Could not add this background. Check your connection and try again.": [
-        "无法添加此背景，请检查网络连接后重试。"
-      ],
-      "Could not add this background. Please try again.": [
-        "无法添加背景，请重试。"
-      ],
       "Could not find an available name": [
         "找不到可用的名称"
       ],
@@ -1935,12 +1923,6 @@
       ],
       "Could not read part of this file: ${ message }": [
         "无法读取此文件的部分内容：${ message }"
-      ],
-      "Could not remove this background. Check your connection and try again.": [
-        "无法移除该背景，请检查网络连接后重试。"
-      ],
-      "Could not remove this background. Please try again.": [
-        "无法移除该背景，请重试。"
       ],
       "Could not unlock the parent folder": [
         "无法解锁父文件夹"
@@ -1981,26 +1963,8 @@
       "Enter your username without the domain (@example.com)": [
         "请输入您的用户名（不含 @example.com 域名）"
       ],
-      "Event deleted": [
-        "日程已删除"
-      ],
       "Expiration date cannot be in the past": [
         "过期日期不能是过去的时间"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "批准参与者失败，请重试。"
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "批准参与者失败，请重试。"
-      ],
-      "Failed to assign host": [
-        "指定主持人失败"
-      ],
-      "Failed to create meeting": [
-        "无法创建会议"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "创建个人会议失败，请刷新页面"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "解密书签密钥失败：${ message }"
@@ -2026,27 +1990,6 @@
       "Failed to decrypt session key": [
         "解密会话密钥失败"
       ],
-      "Failed to delete event": [
-        "删除日程失败"
-      ],
-      "Failed to delete recording": [
-        "删除录制失败"
-      ],
-      "Failed to delete room": [
-        "删除会议室失败"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "拒绝参与者失败，请重试。"
-      ],
-      "Failed to download recording": [
-        "下载录制失败"
-      ],
-      "Failed to edit meeting": [
-        "编辑会议失败"
-      ],
-      "Failed to edit room name": [
-        "编辑会议室名称失败"
-      ],
       "Failed to get inviter keys": [
         "获取邀请人密钥失败"
       ],
@@ -2056,44 +1999,8 @@
       "Failed to join meeting. Please try again.": [
         "加入会议失败，请重试。"
       ],
-      "Failed to lock meeting": [
-        "锁定会议失败"
-      ],
-      "Failed to request live captions": [
-        "请求实时字幕失败"
-      ],
       "Failed to rotate personal meeting link": [
         "轮换个人会议链接失败"
-      ],
-      "Failed to send chat message. Please try again.": [
-        "发送聊天消息失败，请重试。"
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "发送表情回复失败，请重试。"
-      ],
-      "Failed to send reaction. Please try again.": [
-        "发送回复失败，请重试。"
-      ],
-      "Failed to start meeting. Please try again.": [
-        "开始会议失败，请重试。"
-      ],
-      "Failed to start recording": [
-        "开始录制失败"
-      ],
-      "Failed to unlock meeting": [
-        "解锁会议失败"
-      ],
-      "Failed to update caption language. Please try again.": [
-        "更新字幕语言失败，请重试。"
-      ],
-      "Failed to update live captions availability": [
-        "更新实时字幕可用性失败"
-      ],
-      "Failed to update live captions. Please try again.": [
-        "更新实时字幕失败，请重试。"
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "更新等候室设置失败，请重试。"
       ],
       "Failed to verify invitation": [
         "验证邀请失败"
@@ -2116,9 +2023,6 @@
       "Incorrect second password. Please try again.": [
         "二级密码错误，请重试。"
       ],
-      "Invalid meeting link": [
-        "无效的会议链接"
-      ],
       "Invalid URL": [
         "链接无效"
       ],
@@ -2133,18 +2037,6 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "旧版公开链接无法更新，请重新创建新的公开链接！"
-      ],
-      "Live captions couldn't be started.": [
-        "无法开启实时字幕。"
-      ],
-      "Live captions have stopped.": [
-        "已停用实时字幕。"
-      ],
-      "Message is too long to send": [
-        "消息过长，无法发送"
-      ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "麦克风访问被阻止，请在浏览器设置中允许访问。"
       ],
       "Missing inviter email": [
         "缺少邀请人邮箱"
@@ -2212,9 +2104,6 @@
       "Request timed out": [
         "请求超时"
       ],
-      "Room deleted": [
-        "会议室已删除"
-      ],
       "Screen share is not supported on mobile browsers": [
         "移动浏览器不支持屏幕共享"
       ],
@@ -2257,26 +2146,11 @@
       "The email addresses do not match": [
         "邮箱地址不一致"
       ],
-      "The meeting password is incorrect": [
-        "会议密码错误"
-      ],
-      "The meeting password is invalid": [
-        "会议密码无效"
-      ],
-      "The mention could not be added because the message is at its character limit": [
-        "无法添加提及，因为消息已达到字符数上限"
-      ],
-      "The message field is unavailable. Please reload the page.": [
-        "消息输入框不可用，请重新加载页面。"
-      ],
       "The selected microphone is no longer available.": [
         "所选麦克风已不再可用。"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "上传的文件与原始文件不匹配，请重试。"
-      ],
-      "This background could not be saved in this browser.": [
-        "浏览器无法保存背景！"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此项超过了 ${ maximumLength } 个字符的长度限制。"
@@ -2299,14 +2173,8 @@
       "This file version could not be uploaded": [
         "此文件版本无法上传"
       ],
-      "This image could not be read. Pick another one.": [
-        "无法读取图片，请选择其他图片。"
-      ],
       "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
         "图片太大，请选择宽高不超过 ${ maxEdge } 像素的图片。"
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "图片太大，请选择小于 ${ maxMegabytes } MB 的图片。"
       ],
       "This item has no image preview": [
         "此项目没有图片预览"
@@ -2344,9 +2212,6 @@
       "Verification keys for ${ signatureType } are not available": [
         "${ signatureType } 的验证密钥不可用"
       ],
-      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
-        "虚拟背景初始化失败，请切换摄像头或重新选择背景"
-      ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
       ],
@@ -2370,9 +2235,6 @@
       ],
       "You do not have access to this shared item": [
         "您无权访问此共享项目"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "您已达到自定义背景数量上限。"
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "您的浏览器存储空间已满，我们已保存截至目前的录制。"
@@ -2572,9 +2434,6 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } 需要获取麦克风权限，以便通话时其他人可以听到您的声音。您可以随时将其关闭。"
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } 需要 WebRTC 才能运行。请将您的浏览器或设备更新到支持 WebRTC 的版本，或尝试其他浏览器，或禁用可能阻止它的任何扩展程序。"
-      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } 和其他 ${ otherParticipantsCount } 人正在录制"
       ],
@@ -2613,9 +2472,6 @@
       ],
       "(You)": [
         "(您)"
-      ],
-      "-Removed dangerous URL-": [
-        "-已移除危险网址-"
       ],
       "1 reply draft": [
         "1 条回复草稿"
@@ -2668,9 +2524,6 @@
       "Background blur initializing": [
         "背景模糊正在初始化"
       ],
-      "Background effects are not supported on your browser": [
-        "您的浏览器不支持背景效果"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
@@ -2686,9 +2539,6 @@
       "Camera effects": [
         "摄像头效果"
       ],
-      "Camera permission denied": [
-        "摄像头权限被拒绝"
-      ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "更改已暂存，应用以使用新常量重建预览。"
       ],
@@ -2703,15 +2553,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
-      ],
-      "Connection failed": [
-        "连接失败"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "连接中断，正在重新连接..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "检测到连接问题，正在尝试恢复…"
       ],
       "Connection lost. Reconnecting…": [
         "连接断开，正在重连…"
@@ -2833,9 +2674,6 @@
       "Get a secure meeting link then add it to your calendar": [
         "获取安全的会议链接，然后将其添加到您的日历"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "请前往 about:config，搜索 media.peerconnection.enabled，并将其设置为 true"
-      ],
       "Host": [
         "主持人"
       ],
@@ -2854,17 +2692,11 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "如果您正在使用 Firefox，请确保已启用 PeerConnection。"
-      ],
       "Incoming video off": [
         "关闭传入视频"
       ],
       "Internet connection lost": [
         "网络连接已断开"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "加入请求已过期，主持人未能及时批准您。发送新的加入请求。"
       ],
       "Joined ${ roomNameLabel }": [
         "已加入 ${ roomNameLabel }"
@@ -2935,9 +2767,6 @@
       "Meeting is decrypting...": [
         "会议正在解密..."
       ],
-      "Meeting is full": [
-        "会议已满"
-      ],
       "Meeting link": [
         "会议链接"
       ],
@@ -2974,9 +2803,6 @@
       "Microphone effects": [
         "麦克风效果"
       ],
-      "Microphone permission denied": [
-        "麦克风权限被拒绝"
-      ],
       "Mute microphone": [
         "麦克风静音"
       ],
@@ -3001,13 +2827,7 @@
       "No camera detected": [
         "未检测到摄像头"
       ],
-      "No camera detected.": [
-        "未检测到摄像头"
-      ],
       "No microphone detected": [
-        "未检测到麦克风"
-      ],
-      "No microphone detected.": [
         "未检测到麦克风"
       ],
       "No publications": [
@@ -3027,9 +2847,6 @@
       ],
       "No speaker detected": [
         "未检测到扬声器"
-      ],
-      "Not sent, check your connection.": [
-        "未发送，请检查您的网络连接。"
       ],
       "notify everyone here": [
         "通知此处所有人"
@@ -3061,14 +2878,8 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "粘贴您的 ${ MEET_APP_NAME } 链接以加入安全会议"
       ],
-      "Permissions not given.": [
-        "未授予权限"
-      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "请启用对 ${ microphoneLinkButton }${ andString }${ cameraLinkButton } 的访问权限，以获得最佳体验。"
-      ],
-      "Please try again or try another browser": [
-        "请重试或尝试其他浏览器"
       ],
       "Poor connection": [
         "连接质量差"
@@ -3090,12 +2901,6 @@
       ],
       "Reactions": [
         "回应"
-      ],
-      "Reconnected successfully": [
-        "已成功重新连接"
-      ],
-      "Reconnecting to meeting...": [
-        "正在重新连接会议..."
       ],
       "Record your meetings": [
         "录制您的会议"
@@ -3193,9 +2998,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "会议主持已将您移出本次会议。若该操作有误，请联系会议主持以再次邀请您。"
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "您尝试打开的会议链接不存在或已过期。请确认链接正确，或开始新的安全会议。"
-      ],
       "This conversation started before you joined.": [
         "会话在您加入之前就已开始！"
       ],
@@ -3207,9 +3009,6 @@
       ],
       "This meeting is being recorded": [
         "此会议正在被录制"
-      ],
-      "This meeting is locked. Please contact the host to join.": [
-        "此会议已锁定，请联系主持人以加入。"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "此会议已达到免费套餐的时长限制，请升级以在未来的通话中延长会议时长。"
@@ -3249,9 +3048,6 @@
       ],
       "Turn on camera": [
         "开启摄像头"
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "无法重新连接到会议，请重新加入或离开。"
       ],
       "unlimited meeting": [
         "无限制会议"
@@ -3334,9 +3130,6 @@
       "You were removed from the meeting": [
         "您已被移出会议"
       ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "您未被允许加入此会议。如果您认为操作有误，可以尝试重新加入。"
-      ],
       "You will leave the meeting. Others will continue.": [
         "您将离开会议，其他参与者将继续。"
       ],
@@ -3348,24 +3141,6 @@
       ],
       "Your always available meeting room": [
         "您的永久可用会议室"
-      ],
-      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
-        "您的背景无法加载，因此暂时无法添加新背景。"
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "您的浏览器已阻止访问相机和麦克风。若要启用它们，请更新浏览器设置并重新加入通话。"
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "您的浏览器已阻止访问相机。若要启用它，请更新浏览器设置并重新加入通话。"
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "您的浏览器已阻止访问麦克风。若要启用它，请更新浏览器设置并重新加入通话。"
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "您的浏览器已阻止访问屏幕共享。若要启用它，请更新浏览器设置并重新加入通话。"
-      ],
-      "Your browser or device isn’t supported": [
-        "您的浏览器或设备不受支持"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
@@ -3492,6 +3267,12 @@
       "Enabled": [
         "已启用"
       ],
+      "End date": [
+        "结束日期"
+      ],
+      "End time": [
+        "结束时间"
+      ],
       "Ended": [
         "已结束"
       ],
@@ -3594,9 +3375,6 @@
       "Participants join after you approve them": [
         "参与者需经您批准后方可加入"
       ],
-      "Password": [
-        "密码"
-      ],
       "Phone number": [
         "电话号码"
       ],
@@ -3638,6 +3416,12 @@
       ],
       "Spoken language": [
         "使用的语言"
+      ],
+      "Start date": [
+        "起始日期"
+      ],
+      "Start time": [
+        "开始时间"
       ],
       "Subscribed": [
         "已订阅"
@@ -3716,11 +3500,6 @@
         "保存并复制链接"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "您的浏览器或设备软件不支持 ${ MEET_APP_NAME }。${ MEET_APP_NAME } 需要 WebAssembly (Wasm) 才能运行。请将您的浏览器或设备更新到支持 Wasm 的版本，或尝试使用其他浏览器。"
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "由于您是此会议的唯一参与者，会议将自动关闭。您希望留在此会议中吗？"
@@ -3734,20 +3513,12 @@
         "留在会议中"
       ]
     },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "启动画中画失败"
-      ]
-    },
     "Notification": {
       "Coming soon": [
         "即将推出"
       ],
       "Copied to clipboard": [
         "已复制到剪贴板"
-      ],
-      "Could not send feedback": [
-        "无法发送反馈"
       ],
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
@@ -3760,9 +3531,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "感谢！您的反馈已提交。"
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "您无法为未参加的会议发送反馈"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4082,9 +3850,6 @@
       "Constants": [
         "常量"
       ],
-      "Couldn't prepare the recording": [
-        "无法准备录制"
-      ],
       "Create new room": [
         "创建新会议室"
       ],
@@ -4102,9 +3867,6 @@
       ],
       "Display": [
         "显示"
-      ],
-      "Enter your password": [
-        "请输入您的密码"
       ],
       "Epoch": [
         "时间点"
@@ -4129,9 +3891,6 @@
       ],
       "Info": [
         "信息"
-      ],
-      "Invalid meeting link": [
-        "无效的会议链接"
       ],
       "Invalid verification code": [
         "验证码无效"
@@ -4256,9 +4015,6 @@
       "Talk confidentially": [
         "进行私密交谈"
       ],
-      "The host didn't admit you": [
-        "主持人未批准您加入"
-      ],
       "Time": [
         "时间"
       ],
@@ -4267,6 +4023,9 @@
       ],
       "Two-factor authentication": [
         "双因素身份验证"
+      ],
+      "Verify it’s you": [
+        "验证您的身份"
       ],
       "Video and audio": [
         "视频和音频"
@@ -4293,12 +4052,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "您的浏览器不支持背景虚化"
-      ],
-      "Background effects are not supported on your browser": [
-        "您的浏览器不支持背景效果"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "生成新的会议链接，当前链接即将失效。"
       ],
@@ -4332,23 +4085,8 @@
       "Connection is taking longer than expected": [
         "连接时间超出预期"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "无法访问摄像头或麦克风，您可以尝试从会议控制栏中重新启用它们。"
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "无法访问摄像头，您可以尝试从会议控制栏中重新启用它。"
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "无法访问麦克风，您可以尝试从会议控制栏中重新启用它。"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "STUN UDP 连接失败，正在尝试通过 TURN 中继连接..."
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "STUN UDP 连接超时，正在尝试通过 TURN 中继连接"
       ],
       "Trying another route…": [
         "正在尝试其他路由…"

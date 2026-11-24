@@ -21,7 +21,7 @@
         "fotocamera attiva"
       ],
       "host": [
-        "host"
+        "ospite"
       ],
       "Meeting controls": [
         "Controlli della riunione"
@@ -107,6 +107,9 @@
       "Dark ${ BRAND_NAME } background applied": [
         "Applicato sfondo scuro ${ BRAND_NAME }"
       ],
+      "Disconnected from the meeting": [
+        "Disconnesso dlla riunione"
+      ],
       "Library background applied": [
         "Applicato lo sfondo della libreria"
       ],
@@ -134,8 +137,8 @@
       "Now starting recording": [
         "Avvio della registrazione in corso"
       ],
-      "Reconnected to the meeting": [
-        "Ti sei riconnesso alla riunione"
+      "Reconnected": [
+        "Riconnesso"
       ],
       "Recording saved": [
         "Registrazione salvata"
@@ -184,9 +187,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Sei l'unico partecipante. La riunione si chiuderà tra 2 minuti a meno che non si unisca qualcun altro."
-      ],
-      "You have been disconnected from the meeting": [
-        "Sei stato disconnesso dalla riunione"
       ],
       "You have been muted by the host": [
         "Sei stato silenziato dall'organizzatore"
@@ -294,8 +294,8 @@
       "Continue without camera": [
         "Continua senza la webcam"
       ],
-      "Continue without mic and camera": [
-        "Continua senza microfono e webcam"
+      "Continue without camera and microphone": [
+        "Procedi senza fotocamera e microfono"
       ],
       "Continue without microphone": [
         "Continua senza microfono"
@@ -495,6 +495,9 @@
       "Layout": [
         "Layout"
       ],
+      "Learn more": [
+        "Scopri di più"
+      ],
       "Leave": [
         "Abbandona"
       ],
@@ -530,6 +533,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
+      ],
+      "More options": [
+        "Più opzioni"
       ],
       "More options for accounts": [
         "Altre opzioni per gli account"
@@ -622,6 +628,9 @@
       "Refresh audio and video tracks": [
         "Aggiorna tracce audio e video"
       ],
+      "Refresh page": [
+        "Ricarica pagina"
+      ],
       "Refresh screen share track": [
         "Aggiorna traccia di condivisione dello schermo"
       ],
@@ -664,9 +673,6 @@
       ],
       "Resume": [
         "Riprendi"
-      ],
-      "Retry": [
-        "Riprova"
       ],
       "Return to dashboard": [
         "Torna al pannello di controllo"
@@ -897,6 +903,9 @@
       ],
       "Copy meeting link": [
         "Copia il link della riunione"
+      ],
+      "Debug": [
+        "Debug"
       ],
       "Go to dashboard": [
         "Vai alla dashboard"
@@ -1998,11 +2007,50 @@
       "An error occurred": [
         "Si è verificato un errore"
       ],
-      "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "Inizializzazione della sfocatura dello sfondo non riuscita. Attiva e disattiva nuovamente la fotocamera o la sfocatura dello sfondo"
+      "Background blur failed. Turn it off and on again.": [
+        "Effetto sfocatura dello sfondo non riuscito. Disattivalo e riattivalo."
+      ],
+      "Background blur isn’t supported in this browser": [
+        "L'effetto sfocatura non è supportato in questo browser"
+      ],
+      "Background effects aren’t supported in this browser": [
+        "Gli effetti di sfondo non sono supportati in questo browser"
+      ],
+      "Background failed. Pick it again.": [
+        "Impostazione dello sfondo non riuscita. Scegline un altro."
+      ],
+      "Background limit reached. Remove one to add another.": [
+        "È stato raggiunto il limite di background. Rimuovine uno per aggiungerne un altro."
+      ],
+      "Background not added. Check your connection and try again.": [
+        "Sfondo non impostato. Verifica la connessione e riprova."
+      ],
+      "Background not added. Try again.": [
+        "Sfondo non impostato. Riprova."
+      ],
+      "Background not removed. Check your connection and try again.": [
+        "Sfondo non rimosso. Verifica la connessione e riprova."
+      ],
+      "Background not removed. Try again.": [
+        "Sfondo non rimosso. Riprova."
+      ],
+      "Background not saved in this browser.": [
+        "Sfondo non salvato in questo browser."
+      ],
+      "Backgrounds didn’t load. You can’t add new ones right now.": [
+        "Gli sfondi non si sono caricati. Al momento non è possibile aggiungerne di nuovi."
       ],
       "Bookmark password is not available": [
         "La password dell'elemento preferito non è disponibile"
+      ],
+      "Camera and microphone didn’t start. Try turning them on again.": [
+        "La fotocamera e il microfono non si sono avviati. Prova a riattivarli."
+      ],
+      "Camera blocked": [
+        "Videocamera bloccata"
+      ],
+      "Camera didn’t start. Try turning it on again.": [
+        "La fotocamera non si è avviata. Prova a riattivarla."
       ],
       "Cannot add photo to album without a valid name": [
         "Impossibile aggiungere una foto all'album senza un nome valido"
@@ -2022,23 +2070,29 @@
       "Cannot verify who uploaded this file": [
         "Impossibile verificare chi ha caricato questo file."
       ],
-      "Check your audio settings and try again": [
-        "Controlla le impostazioni audio e riprova"
+      "Caption language not changed. Try again.": [
+        "Lingua dei sottotitoli non modificata. Riprova."
       ],
-      "Connection lost — captions will resume when reconnected": [
-        "Connessione interrotta — i sottotitoli riprenderanno una volta ristabilita la connessione"
+      "Character limit reached. Remove some text to add a mention.": [
+        "È stato raggiunto il limite dei caratteri. Rimuovi parte del testo per aggiungere una menzione."
+      ],
+      "Character limit reached. Remove some text to add an emoji.": [
+        "È stato raggiunto il limite dei caratteri. Rimuovi parte del testo per aggiungere un'emoji."
+      ],
+      "Chat unavailable. Refresh the page to use it again.": [
+        "Chat non disponibile. Ricarica la pagina per poterla utilizzare di nuovo."
+      ],
+      "Check your audio settings and try again.": [
+        "Verifica le impostazioni audio e riprova."
+      ],
+      "Connection lost. Captions will start again when you’re reconnected.": [
+        "Connessione persa. I sottotitoli riprenderanno al ripristino della connessione."
       ],
       "Copy operation aborted": [
         "Copia interrotta"
       ],
       "Copying item to a non-folder is not allowed": [
         "Non è possibile copiare l'elemento in un elemento che non è una cartella"
-      ],
-      "Could not add this background. Check your connection and try again.": [
-        "Impossibile aggiungere questo sfondo. Verifica la connessione e riprova."
-      ],
-      "Could not add this background. Please try again.": [
-        "Impossibile aggiungere questo sfondo. Riprova."
       ],
       "Could not find an available name": [
         "Impossibile trovare un nome disponibile"
@@ -2052,23 +2106,29 @@
       "Could not read part of this file: ${ message }": [
         "Impossibile leggere parte di questo file: ${ message }"
       ],
-      "Could not remove this background. Check your connection and try again.": [
-        "Impossibile rimuovere questo sfondo. Verifica la connessione e riprova."
-      ],
-      "Could not remove this background. Please try again.": [
-        "Impossibile rimuovere questo sfondo. Riprova."
-      ],
       "Could not unlock the parent folder": [
         "Impossibile sbloccare la cartella principale."
       ],
       "Could not unlock this item": [
         "Impossibile sbloccare questo elemento."
       ],
+      "Couldn’t admit participant. Try again.": [
+        "Impossibile ammettere partecipante. Riprova."
+      ],
+      "Couldn’t admit participants. Try again.": [
+        "Impossibile ammettere partecipanti. Riprova."
+      ],
+      "Couldn’t deny participant. Try again.": [
+        "Impossibile ammettere partecipante. Riprova."
+      ],
       "Couldn’t play the recording on this speaker.": [
         "Impossibile riprodurre la registrazione su questi altoparlanti."
       ],
       "Couldn’t play the test sound on this speaker.": [
         "Impossibile riprodurre suono di test su questi altoparlanti."
+      ],
+      "Couldn’t prepare the recording": [
+        "Impossibile preparare la registrazione"
       ],
       "Couldn’t start the microphone test.": [
         "Impossibile avviare il test del microfono."
@@ -2088,35 +2148,35 @@
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
       ],
+      "Download failed. Try again.": [
+        "Download non riuscito. Riprova."
+      ],
       "Email is not valid": [
         "Indirizzo email non valido"
+      ],
+      "End time must be after start time": [
+        "L'orario di fine deve essere successivo a quello d'inizio"
       ],
       "Enter 6 digits": [
         "Inserisci il codice a 6 cifre"
       ],
+      "Enter a date": [
+        "Inserisci una data"
+      ],
+      "Enter a meeting name": [
+        "Inserisci il nome della riunione"
+      ],
+      "Enter a time": [
+        "Inserisci un orario"
+      ],
       "Enter your username without the domain (@example.com)": [
         "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
       ],
-      "Event deleted": [
-        "Evento eliminato"
+      "Event not deleted. Try again.": [
+        "Evento non eliminato. Riprova."
       ],
       "Expiration date cannot be in the past": [
         "La data di scadenza non può essere nel passato"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "Impossibile ammettere il partecipante. Riprova."
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "Impossibile ammettere i partecipanti. Riprova."
-      ],
-      "Failed to assign host": [
-        "Non è stato possibile assegnare l'organizzatore."
-      ],
-      "Failed to create meeting": [
-        "Impossibile creare la riunione"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Impossibile creare la riunione personale, per favore aggiorna la pagina."
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Impossibile decifrare chiave preferita: ${ message }"
@@ -2142,26 +2202,8 @@
       "Failed to decrypt session key": [
         "Decriptazione della chiave di sessione non riuscita"
       ],
-      "Failed to delete event": [
-        "Impossibile eliminare evento"
-      ],
-      "Failed to delete recording": [
-        "Impossibile eliminare la registrazione"
-      ],
-      "Failed to delete room": [
-        "Impossibile eliminare la stanza"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "Impossibile rifiutare il partecipante. Riprova."
-      ],
-      "Failed to download recording": [
-        "Impossibile scaricare la registrazione"
-      ],
-      "Failed to edit meeting": [
-        "Impossibile modificare la riunione"
-      ],
-      "Failed to edit room name": [
-        "Impossibile modificare il nome della stanza"
+      "Failed to get invitee keys": [
+        "Impossibile ottenere le chiavi dell'invitato"
       ],
       "Failed to get inviter keys": [
         "Impossibile ottenere le chiavi dell'invitante"
@@ -2172,53 +2214,35 @@
       "Failed to join meeting. Please try again.": [
         "Impossibile partecipare alla riunione. Riprova."
       ],
-      "Failed to lock meeting": [
-        "Impossibile bloccare la riunione"
+      "Failed to load the membership": [
+        "Impossibile caricare l'iscrizione"
       ],
-      "Failed to request live captions": [
-        "Impossibile richiedere i sottotitoli in tempo reale."
+      "Failed to load the membership data": [
+        "Impossibile caricare i dati dell'iscrizione"
       ],
       "Failed to rotate personal meeting link": [
         "Impossibile reimpostare il link della riunione personale"
       ],
-      "Failed to send chat message. Please try again.": [
-        "Impossibile inviare il messaggio della chat. Riprova."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Impossibile inviare la reazione con emoji. Riprova."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Impossibile inviare la reazione. Riprova."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Impossibile avviare la riunione. Riprova."
-      ],
-      "Failed to start recording": [
-        "Impossibile avviare la registrazione"
-      ],
-      "Failed to unlock meeting": [
-        "Impossibile sbloccare la riunione"
-      ],
-      "Failed to update caption language. Please try again.": [
-        "Impossibile aggiornare la lingua dei sottotitoli. Riprova."
-      ],
-      "Failed to update live captions availability": [
-        "Impossibile aggiornare la disponibilità dei sottotitoli in tempo reale."
-      ],
-      "Failed to update live captions. Please try again.": [
-        "Impossibile aggiornare i sottotitoli in tempo reale. Riprova."
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "Impossibile aggiornare le impostazioni della sala d'attesa. Riprova."
-      ],
       "Failed to verify invitation": [
         "Impossibile verificare l'invito"
+      ],
+      "Failed to verify membership": [
+        "Impossibile verificare l'iscrizione"
+      ],
+      "Feedback not sent. Try again.": [
+        "Feedback non inviato. Riprova."
       ],
       "File download failed due to empty response": [
         "Download del file non riuscito a causa di una risposta vuota."
       ],
       "File has no revision": [
         "Il file non ha revisioni"
+      ],
+      "Host not changed. Try again.": [
+        "Host non cambiato. Riprova."
+      ],
+      "If you think this was a mistake, try joining again.": [
+        "Se ritieni si sia trattato di un errore, prova a entrare di nuovo."
       ],
       "Image preview not found": [
         "Anteprima dell'immagine non trovata"
@@ -2231,9 +2255,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Password secondaria errata. Riprova."
-      ],
-      "Invalid meeting link": [
-        "Link riunione non valido"
       ],
       "Invalid URL": [
         "URL non valido"
@@ -2250,17 +2271,59 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
       ],
-      "Live captions couldn't be started.": [
-        "Impossibile avviare i sottotitoli in tempo reale."
+      "Link removed": [
+        "Link rimosso"
       ],
-      "Live captions have stopped.": [
-        "I sottotitoli in tempo reale si sono interrotti."
+      "Live captions didn’t start. Turn them on to try again.": [
+        "I sottotitoli in tempo reale non si sono avviati. Attivali per riprovare."
       ],
-      "Message is too long to send": [
-        "Il messaggio è troppo lungo per essere inviato"
+      "Live captions failed": [
+        "Impostazione dei sottotitoli in tempo reale non riuscita"
       ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "L'accesso al microfono è bloccato. Consentilo nelle impostazioni del browser."
+      "Live captions failed. Turn them on to try again.": [
+        "Impostazione dei sottotitoli in tempo reale non riuscita. Attivali per riprovare."
+      ],
+      "Live captions not updated. Try again.": [
+        "Sottotitoli in tempo reale non aggiornati. Riprova."
+      ],
+      "Live captions paused": [
+        "Sottotitoli in tempo reale in pausa"
+      ],
+      "Live captions stopped. Turn them on to try again.": [
+        "Sottotitoli in tempo reale interrotti. Attivali per riprovare."
+      ],
+      "Meeting full": [
+        "Riunione al completo"
+      ],
+      "Meeting link not found": [
+        "Link della riunione non trovato"
+      ],
+      "Meeting not created. Try again.": [
+        "Riunione non creata. Riprova."
+      ],
+      "Meeting not locked. Try again.": [
+        "Riunione non bloccata. Riprova."
+      ],
+      "Meeting not unlocked. Try again.": [
+        "Incontro non sbloccato. Riprova."
+      ],
+      "Meeting not updated. Try again.": [
+        "Riunione non aggiornata. Riprova."
+      ],
+      "Message not sent. Check your connection and try again.": [
+        "Messaggio non inviato. Verifica la tua connessione e riprova."
+      ],
+      "Message too long. Remove some text and try again.": [
+        "Messaggio troppo lungo. Elimina parte del testo e riprova."
+      ],
+      "Microphone blocked": [
+        "Microfono bloccato"
+      ],
+      "Microphone blocked. Allow it in your browser settings.": [
+        "Microfono bloccato. Concedine l'autorizzazione nelle impostazioni del browser."
+      ],
+      "Microphone didn’t start. Try turning it on again.": [
+        "Il microfono non si è avviato. Prova a riaccenderlo."
       ],
       "Microphone not detected": [
         "Microfono non rilevato"
@@ -2290,8 +2353,17 @@
       "Name must not be empty": [
         "Il campo \"nome\" non può essere vuoto"
       ],
+      "No camera detected": [
+        "Nessuna fotocamera rilevata"
+      ],
       "No file data was received. Please try again.": [
         "Non sono stati ricevuti dati del file. Riprova."
+      ],
+      "No microphone detected": [
+        "Nessun microfono rilevato"
+      ],
+      "Noise cancellation turned off because your device is running slowly. Turn it back on in audio settings.": [
+        "La cancellazione del rumore è stata disattivata perché il dispositivo è lento. Riattivala nelle impostazioni audio."
       ],
       "Not a valid number": [
         "Numero non valido"
@@ -2299,8 +2371,14 @@
       "Not enough storage space to record. Free up space and try again.": [
         "Spazio di archiviazione insufficiente per la registrazione. Liberare spazio e riprovare."
       ],
+      "Not sent. Check your connection.": [
+        "Non inviato. Verifica la connessione."
+      ],
       "Only admins can convert external invitations": [
         "Solo gli admin possono convertire inviti esterni"
+      ],
+      "Only part of the meeting was recorded.": [
+        "È stata registrata solo una parte della riunione."
       ],
       "Operation aborted": [
         "Operazione interrotta"
@@ -2317,6 +2395,12 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
+      "Paste the full meeting link": [
+        "Incolla il link completo della riunione"
+      ],
+      "Personal meeting not created. Refresh the page to try again.": [
+        "Riunione personale non creata. Ricarica la pagina e riprova."
+      ],
       "Photo is already in the target album": [
         "La foto è già presente nell'album di destinazione."
       ],
@@ -2326,11 +2410,23 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Scegli un'immagine in formato JPEG, PNG o WebP."
       ],
+      "Picture-in-picture failed. Try again.": [
+        "Avvio della modalità picture-in-picture non riuscito. Riprova."
+      ],
+      "Reaction not sent. Try again.": [
+        "Reazione non inviata. Riprova."
+      ],
+      "Recording didn’t start. Try again.": [
+        "La registrazione non si è avviata. Riprova."
+      ],
+      "Recording not deleted. Try again.": [
+        "Registrazione non eliminata. Riprova."
+      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "La registrazione si è interrotta perché non è stato possibile salvarla. Abbiamo continuato fino a questo punto."
       ],
-      "Recording stopped because of an error.": [
-        "La registrazione si è interrotta a causa di un errore."
+      "Recording stopped unexpectedly. Start a new recording to continue.": [
+        "La registrazione si è interrotta inaspettatamente. Avvia una nuova registrazione per continuare."
       ],
       "Renaming root item is not allowed": [
         "Non è consentito rinominare un elemento chiave"
@@ -2341,14 +2437,20 @@
       "Request timed out": [
         "Timeout della richiesta"
       ],
-      "Room deleted": [
-        "Canale eliminato"
+      "Room name not updated. Try again.": [
+        "Nome della stanza non aggiornato. Riprova."
+      ],
+      "Room not deleted. Try again.": [
+        "Stanza non eliminata. Riprova."
       ],
       "Screen share is not supported on mobile browsers": [
         "La condivisione dello schermo non è supportata sui browser mobili"
       ],
       "Screen share is not supported on your device": [
         "La condivisione dello schermo non è supportata sul tuo dispositivo"
+      ],
+      "Setting not saved. Try again.": [
+        "Impostazione non salvata. Riprova."
       ],
       "Signature is missing": [
         "Manca la firma"
@@ -2371,11 +2473,17 @@
       "Some file parts failed to upload. Please try again.": [
         "L'upload di alcune parti del file non è stato completato. Riprova."
       ],
+      "Some invitations could not be loaded": [
+        "Impossibile caricare alcuni inviti"
+      ],
       "Some items could not be loaded": [
         "Alcuni elementi non sono stati caricati"
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
+      ],
+      "Something went wrong while saving it.": [
+        "Si è verificato un errore durante il salvataggio."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
@@ -2386,20 +2494,14 @@
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
       ],
-      "The emoji could not be added because the message is at its character limit": [
-        "Non è stato possibile aggiungere l'emoji perché il messaggio ha raggiunto il limite di caratteri"
+      "The host didn’t admit you": [
+        "L'organizzatore non ti ha ammesso"
       ],
-      "The meeting password is incorrect": [
-        "La password della riunione non è corretta"
+      "The host didn’t admit you in time. Send a new request to join.": [
+        "L'organizzatore non ti ha ammesso in tempo. Invia una nuova richiesta per partecipare."
       ],
-      "The meeting password is invalid": [
-        "La password della riunione non è valida"
-      ],
-      "The mention could not be added because the message is at its character limit": [
-        "Non è stato possibile aggiungere la menzione perché il messaggio ha raggiunto il limite di caratteri"
-      ],
-      "The message field is unavailable. Please reload the page.": [
-        "Il campo del messaggio non è disponibile. Si prega di ricaricare la pagina."
+      "The link may be incomplete or expired. Check it, or start a new meeting.": [
+        "Il link potrebbe essere incompleto o scaduto. Verificalo o avvia una nuova riunione."
       ],
       "The selected microphone is no longer available.": [
         "Il microfono selezionato non è più disponibile."
@@ -2407,11 +2509,8 @@
       "The uploaded file does not match the original. Please try again.": [
         "Il file caricato non corrisponde all'originale. Riprova."
       ],
-      "This background could not be saved in this browser.": [
-        "Non è stato possibile salvare questo sfondo in questo browser."
-      ],
-      "This emoji can’t be used as a reaction": [
-        "Impossibile usare quest'emoji come reazione"
+      "This emoji can’t be used as a reaction. Pick another one.": [
+        "Impossibile utilizzare quest'emoji come reazione. Scegline un'altra."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
@@ -2428,20 +2527,20 @@
       "This file has no version available to download": [
         "Non è disponibile alcuna versione di questo file da scaricare"
       ],
+      "This file is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Questo file è troppo grande. Scegline uno di dimensioni inferiori ai ${ maxMegabytes } MB."
+      ],
       "This file name is too long. Rename the image and try again.": [
         "Il nome di questo file è troppo lungo. Rinomina l'immagine e riprova."
       ],
       "This file version could not be uploaded": [
         "Questa versione del file non può essere caricata."
       ],
-      "This image could not be read. Pick another one.": [
-        "Non è stato possibile leggere questa immagine. Scegline un'altra."
+      "This image can’t be opened. Pick another one.": [
+        "Impossibile aprire quest'immagine. Scegline un'altra."
       ],
       "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
         "Questa immagine è troppo grande. Scegline una con larghezza e altezza non superiori a ${ maxEdge } pixel."
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "Questa immagine è troppo grande. Scegline una di dimensioni inferiori a ${ maxMegabytes } MB."
       ],
       "This item has no image preview": [
         "Questo elemento non ha un'immagine di anteprima"
@@ -2455,20 +2554,29 @@
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Questo incontro è su una versione obsoleta, l'organizzatore deve terminarlo e aggiornare Meet per riavviare con l'ultima versione."
       ],
+      "To share your screen, allow it in your browser settings, then rejoin the call.": [
+        "Per condividere lo schermo, concedi l'autorizzazione dalle impostazioni del tuo browser, quindi ricollegati alla chiamata."
+      ],
+      "To use them, allow them in your browser settings, then rejoin the call.": [
+        "Per utilizzarli, abilitali nelle impostazioni del tuo browser, quindi ricollegati alla chiamata."
+      ],
+      "To use your camera, allow it in your browser settings, then rejoin the call.": [
+        "Per utilizzare la fotocamera, concedi l'autorizzazione nelle impostazioni del tuo browser, quindi riprendi la chiamata."
+      ],
+      "To use your microphone, allow it in your browser settings, then rejoin the call.": [
+        "Per utilizzare il microfono, concedine l'autorizzazione nelle impostazioni del browser, quindi ricollegati alla chiamata."
+      ],
       "Too many server errors, please try again later": [
         "Troppi errori del server, riprova più tardi"
       ],
       "Too many server requests, please try again later": [
         "Troppe richieste. Riprova più tardi"
       ],
-      "Try turning live captions off and on again.": [
-        "Prova a disattivare e riattivare i sottotitoli in tempo reale."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
       ],
-      "Unable to generate captions": [
-        "Impossibile generare le didascalie"
+      "Turn live captions off and on again.": [
+        "Disattiva e riattiva i sottotitoli in tempo reale."
       ],
       "Unknown error": [
         "Errore sconosciuto"
@@ -2485,8 +2593,8 @@
       "Verification keys for ${ signatureType } are not available": [
         "Le chiavi di verifica per ${ signatureType } non sono disponibili"
       ],
-      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
-        "Inizializzazione dello sfondo virtuale non riuscita. Prova a riattivare la fotocamera o a selezionare di nuovo uno sfondo."
+      "Waiting room setting not saved. Try again.": [
+        "Impostazioni della sala d'attesa non salvate. Riprova."
       ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
@@ -2503,6 +2611,9 @@
       "You can only upload a new version to a file": [
         "È possibile caricare solo nuove versioni ad un file"
       ],
+      "You can send feedback only for meetings you joined.": [
+        "È possibile inviare un feedback solo per le riunioni a cui hai partecipato."
+      ],
       "You can update a public link for your own files only": [
         "Puoi aggiornare un link pubblico solo per i tuoi file."
       ],
@@ -2511,9 +2622,6 @@
       ],
       "You do not have access to this shared item": [
         "Accesso non consentito a questo elemento condiviso"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "Hai raggiunto il numero massimo di sfondi personalizzati."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Lo spazio di archiviazione del tuo browser è esaurito. Abbiamo salvato la registrazione fino a questo momento."
@@ -2560,8 +2668,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La richiesta della chiave di sicurezza è stata annullata o è scaduta. Riprova."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Il tuo dispositivo non è riuscito a completare la richiesta della chiave di sicurezza. Riprova oppure utilizza un altro metodo di accesso."
       ]
     },
     "fido2: Info": {
@@ -2707,6 +2821,16 @@
       " and ": [
         " e "
       ],
+      "${ count } person has access but isn't in the call": [
+        "${ count } persona ha accesso, ma non è nella chiamata.",
+        "${ count } persone hanno accesso, ma non sono nella chiamata."
+      ],
+      "${ hiddenParticipantTitle }. Meeting almost full": [
+        "${ hiddenParticipantTitle }. Riunione quasi al completo."
+      ],
+      "${ hiddenParticipantTitle }. Meeting full": [
+        "${ hiddenParticipantTitle }. Riunione al completo."
+      ],
       "${ maxParticipants } participant limit reached": [
         "Raggiunto il limite di ${ maxParticipants } partecipanti"
       ],
@@ -2722,8 +2846,11 @@
       "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
         "${ MEET_APP_NAME } richiede l'autorizzazione alla registrazione dello schermo per consentirti di condividere lo schermo durante la chiamata. Dopo aver concesso l'autorizzazione, macOS ti chiederà di riaprire l'app."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } necessita di WebRTC per funzionare. Per favore, aggiorna il tuo browser o dispositivo a una versione che supporti WebRTC, prova un altro browser, o disattiva qualsiasi estensione che potrebbe bloccarlo."
+      "${ MEET_APP_NAME } needs WebAssembly, which is off or not available in this browser. Turn it on, or use another browser.": [
+        "${ MEET_APP_NAME } richiede WebAssembly, che è disattivato o non disponibile in questo browser. Attivalo oppure utilizza un altro browser."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.": [
+        "${ MEET_APP_NAME } richiede WebRTC, che è disattivato o bloccato in questo browser. Attivalo, disattiva le estensioni che lo bloccano oppure utilizza un altro browser."
       ],
       "${ meetingName } has ended": [
         "La riunione ${ meetingName } è terminata"
@@ -2741,6 +2868,12 @@
       ],
       "${ participantName } is recording": [
         "${ participantName } sta registrando"
+      ],
+      "${ participantName } joined": [
+        "${ participantName } si è unito"
+      ],
+      "${ participantName } left": [
+        "${ participantName } è uscito"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (tu) sta presentando"
@@ -2778,11 +2911,14 @@
       "(You)": [
         "(Voi)"
       ],
-      "-Removed dangerous URL-": [
-        "-URL pericoloso rimosso-"
-      ],
       "1 reply draft": [
         "1 bozza di risposta"
+      ],
+      "A participant joined": [
+        "Un partecipante si è unito"
+      ],
+      "A participant left": [
+        "Un partecipante è uscito"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
@@ -2823,6 +2959,12 @@
       "Are you sure you want to stop recording?": [
         "Sei sicuro di voler interrompere la registrazione?"
       ],
+      "Ask the host to end the meeting, refresh ${ MEET_APP_NAME } and start it again.": [
+        "Chiedi all'organizzatore di terminare la riunione, ricarica ${ MEET_APP_NAME } e riavviala."
+      ],
+      "Ask the host to unlock it so you can join.": [
+        "Chiedi all'organizzatore di sbloccarlo in modo che tu possa unirti."
+      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -2834,9 +2976,6 @@
       ],
       "Background blur initializing": [
         "Inizializzazione della sfocatura dello sfondo"
-      ],
-      "Background effects are not supported on your browser": [
-        "Gli effetti per lo sfondo non sono supportati dal tuo browser"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -2856,9 +2995,6 @@
       "Camera is starting": [
         "La webcam si sta avviando"
       ],
-      "Camera permission denied": [
-        "Autorizzazione alla fotocamera negata"
-      ],
       "Captions on": [
         "Didascalie attive"
       ],
@@ -2867,6 +3003,12 @@
       ],
       "Chat with everyone": [
         "Chatta con tutti"
+      ],
+      "Check that you copied the full meeting link and try again.": [
+        "Verifica di aver copiato il link completo della riunione e riprova."
+      ],
+      "Check your internet connection and try again. If that doesn’t work, try another browser.": [
+        "Verifica la tua connessione internet e riprova. Se non funziona, prova con un altro browser."
       ],
       "Check your system settings to make sure that a camera is available.": [
         "Controlla le tue impostazioni di sistema per assicurarti che una fotocamera sia disponibile."
@@ -2877,14 +3019,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
       ],
-      "Connection failed": [
-        "Errore durante la connessione"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Connessione interrotta. Riconnessione in corso..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Rilevato un problema di connessione. Tentativo di ripristino in corso…"
+      "Connection lost": [
+        "Connessione persa"
       ],
       "Connection lost. Reconnecting…": [
         "Connessione persa. Riconnessione in corso…"
@@ -2912,6 +3048,9 @@
       ],
       "Custom combination": [
         "Combinazione personalizzata"
+      ],
+      "Debug": [
+        "Debug"
       ],
       "Decrypting meetings...": [
         "Decrittazione delle riunioni..."
@@ -2985,6 +3124,18 @@
       "Enter your own password (as trusted contact).": [
         "Inserisci la tua password (come contatto attendibile)."
       ],
+      "Epoch ${ epoch }": [
+        "Epoch ${ epoch }"
+      ],
+      "Epoch ${ previousEpoch } → ${ epoch }": [
+        "Epoch ${ previousEpoch } → ${ epoch }"
+      ],
+      "Error at epoch ${ epoch }": [
+        "Errore nell'epoch ${ epoch }"
+      ],
+      "Event deleted": [
+        "Evento eliminato"
+      ],
       "Everyone has been disconnected from the call.": [
         "Tutti sono stati disconnessi dalla chiamata."
       ],
@@ -3018,9 +3169,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Scopri la migliore esperienza d'uso con l'app desktop ${ protonMeet }"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Vai su about:config, cerca media.peerconnection.enabled e impostalo su true."
-      ],
       "Host": [
         "Host"
       ],
@@ -3042,17 +3190,14 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero forniti durante la configurazione dell'autenticazione a due fattori. ${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Se stai usando Firefox, assicurati che PeerConnection sia attivato."
+      "In Firefox, open ${ configPage } and set ${ preference } to ${ value }.": [
+        "Su Firefox, apri ${ configPage } e imposta ${ preference } su ${ value }."
       ],
       "Incoming video off": [
         "Video in entrata disattivato"
       ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "Richiesta di partecipazione scaduta. L'organizzatore non ti ha ammesso in tempo. Invia una nuova richiesta per accedere."
       ],
       "Joined ${ roomNameLabel }": [
         "Entrato/a in ${ roomNameLabel }"
@@ -3108,9 +3253,6 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Riproduci in loop un video caricato o le immagini della tua videocamera in diretta con lo sfondo sfocato."
       ],
-      "Lost connection to the meeting server. Reconnecting…": [
-        "Connessione persa. Riconnessione in corso..."
-      ],
       "Lower participant's hand": [
         "Abbassare la mano del partecipante"
       ],
@@ -3134,9 +3276,6 @@
       ],
       "Meeting is decrypting...": [
         "La riunione sta venendo decriptata..."
-      ],
-      "Meeting is full": [
-        "La riunione è al completo"
       ],
       "Meeting link": [
         "Collegamento alla riunione"
@@ -3180,9 +3319,6 @@
       "Microphone is starting": [
         "Il microfono si sta ancora avviando"
       ],
-      "Microphone permission denied": [
-        "Autorizzazione al microfono negata"
-      ],
       "More options": [
         "Altre opzioni"
       ],
@@ -3210,14 +3346,8 @@
       "No camera detected": [
         "Nessuna webcam rilevata"
       ],
-      "No camera detected.": [
-        "Nessuna webcam rilevata."
-      ],
       "No microphone detected": [
         "Nessun microfono rilevato"
-      ],
-      "No microphone detected.": [
-        "Nessun microfono rilevato."
       ],
       "No publications": [
         "Nessuna pubblicazione"
@@ -3237,12 +3367,6 @@
       "No speaker detected": [
         "Nessun altoparlante rilevato"
       ],
-      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
-        "La funzione di cancellazione del rumore è stata disattivata perché il dispositivo presenta problemi di prestazioni. È possibile riattivarla nelle impostazioni audio."
-      ],
-      "Not sent, check your connection.": [
-        "Messaggio non inviato. Controlla la connessione."
-      ],
       "notify everyone here": [
         "avvisare tutti i presenti"
       ],
@@ -3254,9 +3378,6 @@
       ],
       "Now using ${ first }.": [
         "${ first } in uso."
-      ],
-      "Only a partial meeting recording was available.": [
-        "Era disponibile solo una registrazione parziale della riunione."
       ],
       "Only meetings you created appear here": [
         "Solo le riunioni che hai creato compaiono qui"
@@ -3294,17 +3415,11 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Incolla il tuo link di ${ MEET_APP_NAME } per unirti a una riunione sicura"
       ],
-      "Permissions not given.": [
-        "Autorizzazioni non concesse."
-      ],
       "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
         "Clicca su ${ downloadLink } e installa l'app, quindi clicca nuovamente su “Partecipa” nell'app ${ MEET_APP_NAME }."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Abilita l’accesso al tuo ${ microphoneLinkButton }${ andString }${ cameraLinkButton } per un’esperienza ottimale."
-      ],
-      "Please try again or try another browser": [
-        "Riprova o prova un altro browser"
       ],
       "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
         "Aggiorna ${ MEET_APP_NAME } per continuare a utilizzare l'app. ${ downloadUpdate }"
@@ -3330,11 +3445,11 @@
       "Reactions": [
         "Reazioni"
       ],
-      "Reconnected successfully": [
-        "Riconnessione eseguita correttamente"
+      "Reconnected": [
+        "Riconnesso"
       ],
-      "Reconnecting to meeting...": [
-        "Riconnessione alla riunione in corso…"
+      "Reconnecting didn’t work. Check your internet connection, then rejoin.": [
+        "Il tentativo di riconnessione non ha funzionato. Verifica la tua connessione internet, quindi ricollegati"
       ],
       "Reconnecting…": [
         "Riconessione in corso..."
@@ -3374,6 +3489,9 @@
       ],
       "Rejecting": [
         "Rifiutato"
+      ],
+      "Room deleted": [
+        "Stanza eliminata"
       ],
       "Run your live camera through the custom background processor. Upload an image to use as the background.": [
         "Elabora il video in diretta della tua videocamera tramite il processore per sfondi personalizzati. Carica un'immagine da utilizzare come sfondo."
@@ -3423,6 +3541,9 @@
       "Set up a permanent meeting room for your team or clients": [
         "Imposta una sala riunioni permanente per il tuo team o per i clienti"
       ],
+      "Set your device’s date and time to update automatically, then try again.": [
+        "Imposta la data e l'ora del tuo dispositivo per l'aggiornamento automatico, quindi riprova."
+      ],
       "Share screen": [
         "Condividi schermo"
       ],
@@ -3468,11 +3589,17 @@
       "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
         "Il servizio di sottotitolazione utilizza l'audio della riunione. I sottotitoli sono visibili solo a te e non vengono salvati."
       ],
+      "The host has another meeting in progress.": [
+        "L'organizzatore ha un'altra riunione in corso."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'organizzatore ti ha rimosso da questa riunione. Se si è trattato di un errore, chiedi all'organizzatore di invitarti di nuovo."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Il link della riunione che hai cercato di aprire non esiste o potrebbe essere scaduto. Assicurati che sia corretto, oppure inizia una nuova riunione sicura."
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "L'organizzatore non è presente alla riunione in questo momento. Il conteggio dei partecipanti verrà aggiornato non appena l'organizzatore si unirà."
+      ],
+      "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
+        "Questo browser non supporta la crittografia end-to-end che ${ MEET_APP_NAME } utilizza per proteggere ogni riunione."
       ],
       "This conversation started before you joined.": [
         "This conversation started before you joined."
@@ -3489,9 +3616,6 @@
       "This meeting is being recorded": [
         "Questa sessione è in fase di registrazione"
       ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Questa riunione è bloccata. Contatta l'organizzatore per partecipare."
-      ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Questa riunione ha raggiunto il limite di tempo previsto da un piano gratuito. Effettua l'upgrade per estendere la durata delle riunioni nelle chiamate future."
       ],
@@ -3500,6 +3624,9 @@
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Questa registrazione verrà eliminata in modo permanente da questo dispositivo. Questa azione non può essere annullata."
+      ],
+      "This usually means a lost connection. It should clear on its own.": [
+        "Di solito significa che la connessione è stata persa. Il problema dovrebbe risolversi da solo."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Questo terminerà la riunione per tutti i partecipanti e interromperà la condivisione dello schermo."
@@ -3518,6 +3645,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per contribuire a mantenere il tuo account al sicuro, conferma di essere davvero tu prima di continuare."
+      ],
+      "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
+        "Per partecipare, utilizza un browser o dispositivo diverso o installa l'app ${ MEET_APP_NAME } sul tuo telefono."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Per programmare un evento, ti serve **un account ${ BRAND_NAME } gratuito** in modo da poterlo salvare. Richiede solo pochi secondi."
@@ -3539,9 +3672,6 @@
       ],
       "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
         "Apri Firefox in ${ settingsPath }, quindi riavvialo e ricollegati alla chiamata."
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Impossibile riconnettersi alla riunione. Unisciti di nuovo o esci."
       ],
       "unlimited meeting": [
         "riunione illimitata"
@@ -3621,6 +3751,9 @@
       "You have too many meetings in progress": [
         "Hai troppe riunioni in corso"
       ],
+      "You joined": [
+        "Ti sei unito"
+      ],
       "You left ${ meetingName }": [
         "Hai lasciato ${ meetingName }"
       ],
@@ -3636,9 +3769,6 @@
       "You were removed from the meeting": [
         "Ti hanno rimosso dalla riunione"
       ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "Non sei stato ammesso a questa riunione. Puoi riprovare a collegarti se ritieni che si sia trattato di un errore."
-      ],
       "You will leave the meeting. Others will continue.": [
         "Lascerai la riunione. Gli altri continueranno."
       ],
@@ -3650,24 +3780,6 @@
       ],
       "Your always available meeting room": [
         "La tua sala riunioni sempre disponibile"
-      ],
-      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
-        "Non è stato possibile caricare i tuoi sfondi, quindi al momento non è possibile aggiungerne uno nuovo."
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Il tuo browser ha bloccato l'accesso alla fotocamera e al microfono. Per attivarli, aggiorna le impostazioni del browser e unisciti nuovamente alla chiamata."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Il tuo browser ha bloccato l'accesso alla fotocamera. Per attivarla, aggiorna le impostazioni del browser e unisciti nuovamente alla chiamata."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Il tuo browser ha bloccato l'accesso al microfono. Per attivarlo, aggiorna le impostazioni del browser e unisciti nuovamente alla chiamata."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Il tuo browser ha bloccato l'accesso alla condivisione dello schermo. Per attivarla, aggiorna le impostazioni del browser e unisciti nuovamente alla chiamata."
-      ],
-      "Your browser or device isn’t supported": [
-        "Il tuo browser o dispositivo non è supportato"
       ],
       "Your camera is still starting": [
         "La webcam si sta ancora avviando"
@@ -3689,6 +3801,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Password dell'account ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
       ],
@@ -3719,6 +3834,9 @@
       ],
       "Audio": [
         "Audio"
+      ],
+      "Audio: ${ microphoneLabel }": [
+        "Audio: ${ microphoneLabel }"
       ],
       "Authenticator app": [
         "App di autenticazione"
@@ -3774,6 +3892,9 @@
       "Dark ${ BRAND_NAME } background": [
         "Sfondo scuro ${ BRAND_NAME }"
       ],
+      "Debug": [
+        "Debug"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -3803,6 +3924,12 @@
       ],
       "Enabled": [
         "Abilitato"
+      ],
+      "End date": [
+        "Data di fine"
+      ],
+      "End time": [
+        "Ora di fine"
       ],
       "Ended": [
         "Concluso"
@@ -3909,9 +4036,6 @@
       "Participants join after you approve them": [
         "I partecipanti si uniscono dopo che li hai approvati"
       ],
-      "Password": [
-        "Password"
-      ],
       "Phone number": [
         "Numero di telefono"
       ],
@@ -3960,6 +4084,12 @@
       "Spoken language": [
         "Lingua parlata"
       ],
+      "Start date": [
+        "Data di inizio"
+      ],
+      "Start time": [
+        "Ora di inizio"
+      ],
       "Subscribed": [
         "Iscritto"
       ],
@@ -3989,6 +4119,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Video: ${ cameraLabel }": [
+        "Video: ${ cameraLabel }"
       ],
       "What happened?": [
         "Cos'è successo?"
@@ -4144,11 +4277,6 @@
         "Salva e copia link"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Il tuo browser o il software del tuo dispositivo non supporta ${ MEET_APP_NAME }. ${ MEET_APP_NAME } richiede WebAssembly (Wasm) per funzionare. Aggiorna il tuo browser o dispositivo a una versione che supporti Wasm, oppure prova a usare un browser diverso."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Dato che sei l'unico partecipante a questa riunione, la riunione si chiuderà automaticamente. Vuoi rimanere in questa riunione?"
@@ -4160,11 +4288,6 @@
       ],
       "Stay in the meeting": [
         "Resta nella riunione"
-      ]
-    },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Impossibile avviare la modalità Picture-in-Picture"
       ]
     },
     "Meeting schedule": {
@@ -4240,9 +4363,6 @@
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
-      "Could not send feedback": [
-        "Impossibile inviare il feedback"
-      ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
@@ -4254,9 +4374,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "Grazie! Il tuo feedback è stato inviato."
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "Non puoi inviare un feedback per una riunione a cui non hai partecipato"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4574,20 +4691,32 @@
       "Blur and personal": [
         "Sfocatura e personali"
       ],
+      "Browser not supported": [
+        "Browser non supportato"
+      ],
       "Camera and microphone are blocked": [
         "Fotocamera e microfono sono bloccati"
       ],
       "Camera is blocked": [
         "La fotocamera è bloccata"
       ],
+      "Can’t join from this browser": [
+        "Impossibile partecipare da questo browser"
+      ],
       "Chat": [
         "Chat"
+      ],
+      "Connection failed": [
+        "Connessione non riuscita"
       ],
       "Constants": [
         "Costanti"
       ],
-      "Couldn't prepare the recording": [
-        "Impossibile preparare la registrazione"
+      "Couldn’t join the meeting": [
+        "Impossibile partecipare alla riunione"
+      ],
+      "Couldn’t start the meeting": [
+        "Impossibile avviare la riunione"
       ],
       "Create new room": [
         "Crea una nuova stanza"
@@ -4606,9 +4735,6 @@
       ],
       "Display": [
         "Schermo"
-      ],
-      "Enter your password": [
-        "Inserisci la tua password"
       ],
       "Epoch": [
         "Epoca"
@@ -4634,11 +4760,14 @@
       "Human verification": [
         "Verifica umana"
       ],
+      "Incorrect date and time": [
+        "Data e ora errate"
+      ],
+      "Incorrect meeting password": [
+        "Password della riunione errata"
+      ],
       "Info": [
         "Info"
-      ],
-      "Invalid meeting link": [
-        "Link riunione non valido"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -4682,6 +4811,12 @@
       ],
       "Meeting edited": [
         "Riunione modificata"
+      ],
+      "Meeting locked": [
+        "Riunione bloccata"
+      ],
+      "Meeting out of date": [
+        "Riunione non aggiornata"
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
@@ -4782,9 +4917,6 @@
       "Talk confidentially": [
         "Parla in confidenza"
       ],
-      "The host didn't admit you": [
-        "L'organizzatore non ti ha ammesso"
-      ],
       "Time": [
         "Ora"
       ],
@@ -4793,6 +4925,9 @@
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
+      ],
+      "Verify it’s you": [
+        "Verifica che sia tu"
       ],
       "Video and audio": [
         "Video e Audio"
@@ -4819,12 +4954,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "La sfocatura dello sfondo non è supportata dal tuo browser"
-      ],
-      "Background effects are not supported on your browser": [
-        "Gli effetti sullo sfondo non sono supportati dal tuo browser"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Genera un nuovo link per la riunione. Il link attuale smetterà di funzionare."
       ],
@@ -4866,23 +4995,8 @@
       "Connection is taking longer than expected": [
         "La connessione sta richiedendo più tempo del previsto"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Non è stato possibile accedere alla fotocamera o al microfono. Puoi provare ad attivarli di nuovo dai controlli della riunione."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Non è stato possibile accedere alla fotocamera. Puoi provare ad attivarla di nuovo dai controlli della riunione."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Non è stato possibile accedere al microfono. Puoi provare ad attivarlo di nuovo dai controlli della riunione."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "Errore durante la connessione UDP STUN, tentativo tramite relè TURN in corso…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "Timeout connessione UDP STUN, tentativo tramite relè TURN in corso"
       ],
       "Trying another route…": [
         "Tentativo con un altro percorso in corso…"

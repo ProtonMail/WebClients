@@ -107,6 +107,9 @@
       "Dark ${ BRAND_NAME } background applied": [
         "Εφαρμόστηκε σκοτεινό φόντο ${ BRAND_NAME }"
       ],
+      "Disconnected from the meeting": [
+        "Αποσυνδέθηκε από τη σύσκεψη"
+      ],
       "Library background applied": [
         "Εφαρμόστηκε φόντο βιβλιοθήκης"
       ],
@@ -134,8 +137,8 @@
       "Now starting recording": [
         "Ξεκινά η ηχογράφηση τώρα"
       ],
-      "Reconnected to the meeting": [
-        "Επανασυνδέθηκε στη σύσκεψη"
+      "Reconnected": [
+        "Επανασυνδέθηκε"
       ],
       "Recording saved": [
         "Η ηχογράφηση αποθηκεύτηκε"
@@ -184,9 +187,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Είστε ο μόνος συμμετέχων. Η σύσκεψη θα κλείσει σε 2 λεπτά, εκτός εάν κάποιος συμμετάσχει."
-      ],
-      "You have been disconnected from the meeting": [
-        "Έχετε αποσυνδεθεί από τη σύσκεψη"
       ],
       "You have been muted by the host": [
         "Έχετε τεθεί σε σίγαση από τον οικοδεσπότη"
@@ -294,8 +294,8 @@
       "Continue without camera": [
         "Συνέχεια χωρίς κάμερα"
       ],
-      "Continue without mic and camera": [
-        "Συνέχεια χωρίς μικρόφωνο και κάμερα"
+      "Continue without camera and microphone": [
+        "Συνέχεια χωρίς κάμερα και μικρόφωνο"
       ],
       "Continue without microphone": [
         "Συνέχεια χωρίς μικρόφωνο"
@@ -495,6 +495,9 @@
       "Layout": [
         "Διάταξη"
       ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
       "Leave": [
         "Αποχώρηση"
       ],
@@ -530,6 +533,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
+      ],
+      "More options": [
+        "Περισσότερες επιλογές"
       ],
       "More options for accounts": [
         "Περισσότερες επιλογές για λογαριασμούς"
@@ -622,6 +628,9 @@
       "Refresh audio and video tracks": [
         "Ανανέωση ροών ήχου και βίντεο"
       ],
+      "Refresh page": [
+        "Ανανέωση σελίδας"
+      ],
       "Refresh screen share track": [
         "Ανανέωση κοινής χρήσης οθόνης"
       ],
@@ -664,9 +673,6 @@
       ],
       "Resume": [
         "Συνέχεια"
-      ],
-      "Retry": [
-        "Δοκιμάστε ξανά"
       ],
       "Return to dashboard": [
         "Επιστροφή στον πίνακα εργαλείων"
@@ -897,6 +903,9 @@
       ],
       "Copy meeting link": [
         "Αντιγραφή συνδέσμου σύσκεψης"
+      ],
+      "Debug": [
+        "Εντοπισμός σφαλμάτων"
       ],
       "Go to dashboard": [
         "Μετάβαση στον αρχικό πίνακα"
@@ -1998,11 +2007,50 @@
       "An error occurred": [
         "Παρουσιάστηκε σφάλμα"
       ],
-      "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "Η αρχικοποίηση του θολώματος φόντου απέτυχε. Παρακαλούμε ενεργοποιήστε ξανά την κάμερα ή το θάμπωμα φόντου."
+      "Background blur failed. Turn it off and on again.": [
+        "Η θόλωση φόντου απέτυχε. Απενεργοποιήστε την και ενεργοποιήστε την ξανά."
+      ],
+      "Background blur isn’t supported in this browser": [
+        "Η θόλωση φόντου δεν υποστηρίζεται σε αυτό το πρόγραμμα περιήγησης"
+      ],
+      "Background effects aren’t supported in this browser": [
+        "Τα εφέ φόντου δεν υποστηρίζονται σε αυτό το πρόγραμμα περιήγησης"
+      ],
+      "Background failed. Pick it again.": [
+        "Το φόντο απέτυχε. Επιλέξτε το ξανά."
+      ],
+      "Background limit reached. Remove one to add another.": [
+        "Επιτεύχθηκε το όριο για τα φόντα. Αφαιρέστε ένα για να προσθέσετε άλλο."
+      ],
+      "Background not added. Check your connection and try again.": [
+        "Το φόντο δεν προστέθηκε. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+      ],
+      "Background not added. Try again.": [
+        "Το φόντο δεν προστέθηκε. Δοκιμάστε ξανά."
+      ],
+      "Background not removed. Check your connection and try again.": [
+        "Το φόντο δεν αφαιρέθηκε. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+      ],
+      "Background not removed. Try again.": [
+        "Το φόντο δεν αφαιρέθηκε. Δοκιμάστε ξανά."
+      ],
+      "Background not saved in this browser.": [
+        "Το φόντο δεν αποθηκεύτηκε σε αυτό το πρόγραμμα περιήγησης."
+      ],
+      "Backgrounds didn’t load. You can’t add new ones right now.": [
+        "Τα φόντα δεν φορτώθηκαν. Δεν μπορείτε να προσθέσετε νέα αυτήν τη στιγμή."
       ],
       "Bookmark password is not available": [
         "Ο κωδικός πρόσβασης σελιδοδείκτη δεν είναι διαθέσιμος"
+      ],
+      "Camera and microphone didn’t start. Try turning them on again.": [
+        "Η κάμερα και το μικρόφωνο δεν ενεργοποιήθηκαν. Δοκιμάστε να τα ενεργοποιήσετε ξανά."
+      ],
+      "Camera blocked": [
+        "Η κάμερα είναι αποκλεισμένη"
+      ],
+      "Camera didn’t start. Try turning it on again.": [
+        "Η κάμερα δεν ξεκίνησε. Δοκιμάστε να την ενεργοποιήσετε ξανά."
       ],
       "Cannot add photo to album without a valid name": [
         "Δεν είναι δυνατή η προσθήκη φωτογραφίας στο άλμπουμ χωρίς έγκυρο όνομα"
@@ -2022,23 +2070,29 @@
       "Cannot verify who uploaded this file": [
         "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
       ],
-      "Check your audio settings and try again": [
-        "Ελέγξτε τις ρυθμίσεις ήχου και δοκιμάστε ξανά"
+      "Caption language not changed. Try again.": [
+        "Η γλώσσα της λεζάντας δεν άλλαξε. Δοκιμάστε ξανά."
       ],
-      "Connection lost — captions will resume when reconnected": [
-        "Η σύνδεση χάθηκε — οι υπότιτλοι θα συνεχιστούν μόλις αποκατασταθεί η σύνδεση"
+      "Character limit reached. Remove some text to add a mention.": [
+        "Επιτεύχθηκε το όριο χαρακτήρων. Αφαιρέστε μέρος του κειμένου για να προσθέσετε μια αναφορά."
+      ],
+      "Character limit reached. Remove some text to add an emoji.": [
+        "Επιτεύχθηκε το όριο χαρακτήρων. Αφαιρέστε λίγο κείμενο για να προσθέσετε ένα emoji."
+      ],
+      "Chat unavailable. Refresh the page to use it again.": [
+        "Η συνομιλία δεν είναι διαθέσιμη. Ανανεώστε τη σελίδα για να τη χρησιμοποιήσετε ξανά."
+      ],
+      "Check your audio settings and try again.": [
+        "Ελέγξτε τις ρυθμίσεις ήχου και δοκιμάστε ξανά."
+      ],
+      "Connection lost. Captions will start again when you’re reconnected.": [
+        "Η σύνδεση χάθηκε. Οι υπότιτλοι θα ξεκινήσουν ξανά μόλις αποκατασταθεί η σύνδεση."
       ],
       "Copy operation aborted": [
         "Η λειτουργία αντιγραφής διακόπηκε"
       ],
       "Copying item to a non-folder is not allowed": [
         "Η αντιγραφή στοιχείου σε μη φάκελο δεν επιτρέπεται"
-      ],
-      "Could not add this background. Check your connection and try again.": [
-        "Δεν ήταν δυνατή η προσθήκη αυτού του φόντου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
-      ],
-      "Could not add this background. Please try again.": [
-        "Δεν ήταν δυνατή η προσθήκη αυτού του φόντου. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Could not find an available name": [
         "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
@@ -2052,23 +2106,29 @@
       "Could not read part of this file: ${ message }": [
         "Δεν ήταν δυνατή η ανάγνωση μέρους αυτού του αρχείου: ${ message }"
       ],
-      "Could not remove this background. Check your connection and try again.": [
-        "Δεν ήταν δυνατή η αγαίρεση αυτού του φόντου. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
-      ],
-      "Could not remove this background. Please try again.": [
-        "Δεν ήταν δυνατή η αφαίρεση αυτού του φόντου. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Could not unlock the parent folder": [
         "Δεν ήταν δυνατό το ξεκλείδωμα του γονικού φακέλου"
       ],
       "Could not unlock this item": [
         "Αδυναμία ξεκλείδωσης αυτού του στοιχείου"
       ],
+      "Couldn’t admit participant. Try again.": [
+        "Δεν ήταν δυνατή η προσθήκη συμμετέχοντος. Δοκιμάστε ξανά."
+      ],
+      "Couldn’t admit participants. Try again.": [
+        "Δεν ήταν δυνατή η προσθήκη συμμετεχόντων. Δοκιμάστε ξανά."
+      ],
+      "Couldn’t deny participant. Try again.": [
+        "Δεν ήταν δυνατή η απόρριψη του συμμετέχοντα. Δοκιμάστε ξανά."
+      ],
       "Couldn’t play the recording on this speaker.": [
         "Δεν ήταν δυνατή η αναπαραγωγή της ηχογράφησης σε αυτό το ηχείο."
       ],
       "Couldn’t play the test sound on this speaker.": [
         "Δεν ήταν δυνατή η αναπαραγωγή του δοκιμαστικού ήχου σε αυτό το ηχείο."
+      ],
+      "Couldn’t prepare the recording": [
+        "Δεν ήταν δυνατή η προετοιμασία της ηχογράφησης"
       ],
       "Couldn’t start the microphone test.": [
         "Δεν ήταν δυνατή η έναρξη της δοκιμής μικροφώνου."
@@ -2088,35 +2148,35 @@
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
+      "Download failed. Try again.": [
+        "Η λήψη απέτυχε. Δοκιμάστε ξανά."
+      ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
+      "End time must be after start time": [
+        "Η ώρα λήξης πρέπει να είναι μετά την ώρα έναρξης"
       ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
       ],
+      "Enter a date": [
+        "Εισάγετε ημερομηνία"
+      ],
+      "Enter a meeting name": [
+        "Εισαγάγετε ένα όνομα σύσκεψης"
+      ],
+      "Enter a time": [
+        "Εισαγάγετε μια ώρα"
+      ],
       "Enter your username without the domain (@example.com)": [
         "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
       ],
-      "Event deleted": [
-        "Η εκδήλωση διαγράφηκε"
+      "Event not deleted. Try again.": [
+        "Η εκδήλωση δεν διαγράφηκε. Προσπαθήστε ξανά."
       ],
       "Expiration date cannot be in the past": [
         "Η ημερομηνία λήξης δεν μπορεί να είναι στο παρελθόν"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "Αποτυχία αποδοχής του συμμετέχοντα. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "Αποτυχία αποδοχής των συμμετεχόντων. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Failed to assign host": [
-        "Αποτυχία ανάθεσης νέου οικοδεσπότη"
-      ],
-      "Failed to create meeting": [
-        "Αποτυχία δημιουργίας σύσκεψης"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Αποτυχία δημιουργίας προσωπικής σύσκεψης, παρακαλούμε ανανεώστε τη σελίδα"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Αποτυχία αποκρυπτογράφησης κλειδιού σελιδοδείκτη: ${ message }"
@@ -2142,26 +2202,8 @@
       "Failed to decrypt session key": [
         "Αποτυχία αποκρυπτογράφησης του κλειδιού συνεδρίας"
       ],
-      "Failed to delete event": [
-        "Αποτυχία διαγραφής εκδήλωσης"
-      ],
-      "Failed to delete recording": [
-        "Η διαγραφή της ηχογράφησης απέτυχε"
-      ],
-      "Failed to delete room": [
-        "Αποτυχία διαγραφής αίθουσας"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "Αποτυχία απόρριψης των συμμετεχόντων. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Failed to download recording": [
-        "Αποτυχία λήψης ηχογράφησης"
-      ],
-      "Failed to edit meeting": [
-        "Αποτυχία επεξεργασίας σύσκεψης"
-      ],
-      "Failed to edit room name": [
-        "Αποτυχία επεξεργασίας ονόματος αίθουσας"
+      "Failed to get invitee keys": [
+        "Αποτυχία λήψης των κλειδιών του προσκεκλημένου"
       ],
       "Failed to get inviter keys": [
         "Αποτυχία λήψης κλειδιών προσκλητού"
@@ -2172,53 +2214,35 @@
       "Failed to join meeting. Please try again.": [
         "Αποτυχία σύνδεσης στη σύσκεψη. Παρακαλούμε δοκιμάστε ξανά."
       ],
-      "Failed to lock meeting": [
-        "Αποτυχία κλειδώματος σύσκεψης"
+      "Failed to load the membership": [
+        "Αποτυχία φόρτωσης της συνδρομής"
       ],
-      "Failed to request live captions": [
-        "Αποτυχία αιτήματος για ζωντανούς υπότιτλους"
+      "Failed to load the membership data": [
+        "Αποτυχία φόρτωσης των δεδομένων συνδρομών"
       ],
       "Failed to rotate personal meeting link": [
         "Αποτυχία περιστροφής προσωπικού συνδέσμου σύσκεψης"
       ],
-      "Failed to send chat message. Please try again.": [
-        "Απέτυχε η αποστολή μηνύματος συνομιλίας. Παρακαλούμε προσπαθήστε ξανά."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Απέτυχε η αποστολή αντίδρασης emoji. Παρακαλούμε προσπαθήστε ξανά."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Απέτυχε η αποστολή αντίδρασης. Παρακαλούμε προσπαθήστε ξανά."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Αποτυχία έναρξης σύσκεψης. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Failed to start recording": [
-        "Αποτυχία έναρξης της καταγραφής"
-      ],
-      "Failed to unlock meeting": [
-        "Αποτυχία ξεκλειδώματος σύσκεψης"
-      ],
-      "Failed to update caption language. Please try again.": [
-        "Η ενημέρωση της γλώσσας των υπότιτλων απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Failed to update live captions availability": [
-        "Αποτυχία ενημέρωσης διαθεσιμότητας ζωντανών υπότιτλων"
-      ],
-      "Failed to update live captions. Please try again.": [
-        "Η ενημέρωση των ζωντανών υπότιτλων απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "Η ενημέρωση της ρύθμισης της αίθουσας αναμονής απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Failed to verify invitation": [
         "Αποτυχία επαλήθευσης πρόσκλησης"
+      ],
+      "Failed to verify membership": [
+        "Αποτυχία επαλήθευσης της συνδρομής"
+      ],
+      "Feedback not sent. Try again.": [
+        "Τα σχόλια δεν στάλθηκαν. Δοκιμάστε ξανά."
       ],
       "File download failed due to empty response": [
         "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
       ],
       "File has no revision": [
         "Το αρχείο δεν έχει αναθεώρηση"
+      ],
+      "Host not changed. Try again.": [
+        "Ο οικοδεσπότης δεν άλλαξε. Προσπαθήστε ξανά."
+      ],
+      "If you think this was a mistake, try joining again.": [
+        "Αν πιστεύετε ότι αυτό ήταν λάθος, δοκιμάστε να συμμετάσχετε ξανά."
       ],
       "Image preview not found": [
         "Δεν βρέθηκε προεπισκόπηση εικόνας"
@@ -2231,9 +2255,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
-      ],
-      "Invalid meeting link": [
-        "Μη έγκυρος σύνδεσμος σύσκεψης"
       ],
       "Invalid URL": [
         "Μη έγκυρη διεύθυνση URL"
@@ -2250,17 +2271,59 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Δεν είναι δυνατή η ενημέρωση του παλαιού δημόσιου συνδέσμου. Δημιουργήστε ξανά έναν νέο δημόσιο σύνδεσμο."
       ],
-      "Live captions couldn't be started.": [
-        "Δεν ήταν δυνατή η εκκίνηση των ζωντανών υπότιτλων."
+      "Link removed": [
+        "Ο σύνδεσμος αφαιρέθηκε"
       ],
-      "Live captions have stopped.": [
-        "Οι ζωντανοί υπότιτλοι έχουν σταματήσει."
+      "Live captions didn’t start. Turn them on to try again.": [
+        "Οι ζωντανοί υπότιτλοι δεν ξεκίνησαν. Ενεργοποιήστε τους για να δοκιμάσετε ξανά."
       ],
-      "Message is too long to send": [
-        "Το μήνυμα είναι υπερβολικά μεγάλο για αποστολή"
+      "Live captions failed": [
+        "Οι ζωντανοί υπότιτλοι απέτυχαν"
       ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "Η πρόσβαση στο μικρόφωνο είναι αποκλεισμένη. Επιτρέψτε την στις ρυθμίσεις του προγράμματος περιήγησής σας."
+      "Live captions failed. Turn them on to try again.": [
+        "Οι ζωντανοί υπότιτλοι απέτυχαν. Ενεργοποιήστε τους για να προσπαθήσετε ξανά."
+      ],
+      "Live captions not updated. Try again.": [
+        "Οι ζωντανοί υπότιτλοι δεν ενημερώθηκαν. Δοκιμάστε ξανά."
+      ],
+      "Live captions paused": [
+        "Οι ζωντανοί υπότιτλοι τέθηκαν σε παύση"
+      ],
+      "Live captions stopped. Turn them on to try again.": [
+        "Οι ζωντανοί υπότιτλοι σταμάτησαν. Ενεργοποιήστε τους για να δοκιμάσετε ξανά."
+      ],
+      "Meeting full": [
+        "Η σύσκεψη είναι πλήρης"
+      ],
+      "Meeting link not found": [
+        "Δε βρέθηκε ο σύνδεσμος της συσκεψης"
+      ],
+      "Meeting not created. Try again.": [
+        "Η σύσκεψη δεν δημιουργήθηκε. Δοκιμάστε ξανά."
+      ],
+      "Meeting not locked. Try again.": [
+        "Η σύσκεψη δεν είναι κλειδωμένη. Δοκιμάστε ξανά."
+      ],
+      "Meeting not unlocked. Try again.": [
+        "Η σύσκεψη δεν ξεκλείδωσε. Δοκιμάστε ξανά."
+      ],
+      "Meeting not updated. Try again.": [
+        "Η σύσκεψη δεν ενημερώθηκε. Δοκιμάστε ξανά."
+      ],
+      "Message not sent. Check your connection and try again.": [
+        "Το μήνυμα δεν στάλθηκε. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+      ],
+      "Message too long. Remove some text and try again.": [
+        "Το μήνυμα είναι πολύ μεγάλο. Αφαιρέστε μέρος του κειμένου και δοκιμάστε ξανά."
+      ],
+      "Microphone blocked": [
+        "Το μικρόφωνο είναι μπλοκαρισμένο"
+      ],
+      "Microphone blocked. Allow it in your browser settings.": [
+        "Το μικρόφωνο είναι αποκλεισμένο. Επιτρέψτε το στις ρυθμίσεις του προγράμματος περιήγησής σας."
+      ],
+      "Microphone didn’t start. Try turning it on again.": [
+        "Το μικρόφωνο δεν ξεκίνησε. Δοκιμάστε να το ενεργοποιήσετε ξανά."
       ],
       "Microphone not detected": [
         "Το μικρόφωνο δεν εντοπίστηκε"
@@ -2290,8 +2353,17 @@
       "Name must not be empty": [
         "Το όνομα δεν πρέπει να είναι κενό"
       ],
+      "No camera detected": [
+        "Δεν εντοπίστηκε κάμερα."
+      ],
       "No file data was received. Please try again.": [
         "Δεν ελήφθησαν δεδομένα αρχείου. Δοκιμάστε ξανά."
+      ],
+      "No microphone detected": [
+        "Δεν εντοπίστηκε μικρόφωνο"
+      ],
+      "Noise cancellation turned off because your device is running slowly. Turn it back on in audio settings.": [
+        "Η ακύρωση θορύβου απενεργοποιήθηκε επειδή η συσκευή σας λειτουργεί αργά. Ενεργοποιήστε την ξανά στις ρυθμίσεις ήχου."
       ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
@@ -2299,8 +2371,14 @@
       "Not enough storage space to record. Free up space and try again.": [
         "Δεν υπάρχει αρκετός αποθηκευτικός χώρος για την ηχογράφηση. Ελευθερώστε χώρο και δοκιμάστε ξανά."
       ],
+      "Not sent. Check your connection.": [
+        "Δεν στάλθηκε. Ελέγξτε τη σύνδεσή σας."
+      ],
       "Only admins can convert external invitations": [
         "Μόνο οι διαχειριστές μπορούν να μετατρέψουν εξωτερικές προσκλήσεις"
+      ],
+      "Only part of the meeting was recorded.": [
+        "Μόνο ένα μέρος της συνάντησης καταγράφηκε."
       ],
       "Operation aborted": [
         "Η λειτουργία ακυρώθηκε"
@@ -2317,6 +2395,12 @@
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
+      "Paste the full meeting link": [
+        "Επικολλήστε τον πλήρη σύνδεσμο της σύσκεψης"
+      ],
+      "Personal meeting not created. Refresh the page to try again.": [
+        "Η προσωπική σύσκεψη δε δημιουργήθηκε. Ανανεώστε τη σελίδα για να προσπαθήσετε ξανά."
+      ],
       "Photo is already in the target album": [
         "Η φωτογραφία είναι ήδη στο άλμπουμ προορισμού"
       ],
@@ -2326,11 +2410,23 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Επιλέξτε μια εικόνα JPEG, PNG ή WebP."
       ],
+      "Picture-in-picture failed. Try again.": [
+        "Η λειτουργία Εικόνα μέσα σε εικόνα απέτυχε. Δοκιμάστε ξανά."
+      ],
+      "Reaction not sent. Try again.": [
+        "Η αντίδραση δεν στάλθηκε. Δοκιμάστε ξανά."
+      ],
+      "Recording didn’t start. Try again.": [
+        "Η ηχογράφηση δεν ξεκίνησε. Δοκιμάστε ξανά."
+      ],
+      "Recording not deleted. Try again.": [
+        "Η ηχογράφηση δε διαγράφηκε. Δοκιμάστε ξανά."
+      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Η ηχογράφηση σταμάτησε επειδή δεν ήταν δυνατή η αποθήκευσή της. Τη διατηρήσαμε μέχρι αυτό το σημείο."
       ],
-      "Recording stopped because of an error.": [
-        "Η εγγραφή σταμάτησε λόγω σφάλματος."
+      "Recording stopped unexpectedly. Start a new recording to continue.": [
+        "Η ηχογράφηση σταμάτησε απροσδόκητα. Ξεκινήστε μια νέα ηχογράφηση για να συνεχίσετε."
       ],
       "Renaming root item is not allowed": [
         "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
@@ -2341,14 +2437,20 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
-      "Room deleted": [
-        "Η Αίθουσα διαγράφηκε"
+      "Room name not updated. Try again.": [
+        "Το όνομα της αίθουσας δεν ενημερώθηκε. Δοκιμάστε ξανά."
+      ],
+      "Room not deleted. Try again.": [
+        "Το δωμάτιο δεν διαγράφηκε. Δοκιμάστε ξανά."
       ],
       "Screen share is not supported on mobile browsers": [
         "Η κοινή χρήση οθόνης δεν υποστηρίζεται σε προγράμματα περιήγησης για κινητά"
       ],
       "Screen share is not supported on your device": [
         "Η κοινή χρήση οθόνης δεν υποστηρίζεται στη συσκευή σας"
+      ],
+      "Setting not saved. Try again.": [
+        "Η ρύθμιση δεν αποθηκεύτηκε. Δοκιμάστε ξανά."
       ],
       "Signature is missing": [
         "Λείπει η υπογραφή"
@@ -2371,11 +2473,17 @@
       "Some file parts failed to upload. Please try again.": [
         "Η μεταφόρτωση ορισμένων τμημάτων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Some invitations could not be loaded": [
+        "Ορισμένες προσκλήσεις δεν ήταν δυνατό να φορτωθούν"
+      ],
       "Some items could not be loaded": [
         "Δεν ήταν δυνατή η φόρτωση ορισμένων στοιχείων"
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "Something went wrong while saving it.": [
+        "Κάτι πήγε στραβά κατά την αποθήκευση του."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
@@ -2386,20 +2494,14 @@
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
       ],
-      "The emoji could not be added because the message is at its character limit": [
-        "Το emoji δεν μπόρεσε να προστεθεί επειδή το μήνυμα έχει φτάσει στο όριο χαρακτήρων του."
+      "The host didn’t admit you": [
+        "Ο οικοδεσπότης δε σας αποδέχτηκε"
       ],
-      "The meeting password is incorrect": [
-        "Ο κωδικός πρόσβασης της σύσκεψης είναι λανθασμένος"
+      "The host didn’t admit you in time. Send a new request to join.": [
+        "Ο οικοδεσπότης δε σας αποδέχτηκε εγκαίρως. Στείλε νέο αίτημα συμμετοχής."
       ],
-      "The meeting password is invalid": [
-        "Ο κωδικός πρόσβασης της σύσκεψης δεν είναι έγκυρος"
-      ],
-      "The mention could not be added because the message is at its character limit": [
-        "Η αναφορά δεν μπόρεσε να προστεθεί επειδή το μήνυμα έχει φτάσει στο όριο χαρακτήρων του."
-      ],
-      "The message field is unavailable. Please reload the page.": [
-        "Το πεδίο μηνύματος δεν είναι διαθέσιμο. Παρακαλούμε ανανεώστε τη σελίδα."
+      "The link may be incomplete or expired. Check it, or start a new meeting.": [
+        "Ο σύνδεσμος ενδέχεται να είναι ελλιπής ή να έχει λήξει. Ελέγξτε τον ή ξεκινήστε νέα σύσκεψη."
       ],
       "The selected microphone is no longer available.": [
         "Το επιλεγμένο μικρόφωνο δεν είναι πλέον διαθέσιμο."
@@ -2407,11 +2509,8 @@
       "The uploaded file does not match the original. Please try again.": [
         "Το μεταφορτωμένο αρχείο δεν ταιριάζει με το πρωτότυπο. Παρακαλούμε δοκιμάστε ξανά."
       ],
-      "This background could not be saved in this browser.": [
-        "Αυτό το φόντο δεν ήταν δυνατό να αποθηκευτεί σε αυτό το πρόγραμμα περιήγησης."
-      ],
-      "This emoji can’t be used as a reaction": [
-        "Αυτό το emoji δεν μπορεί να χρησιμοποιηθεί ως αντίδραση"
+      "This emoji can’t be used as a reaction. Pick another one.": [
+        "Αυτό το emoji δεν μπορεί να χρησιμοποιηθεί ως αντίδραση. Επίλεξε κάποιο άλλο."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
@@ -2428,20 +2527,20 @@
       "This file has no version available to download": [
         "Αυτό το αρχείο δεν έχει διαθέσιμη έκδοση για λήψη"
       ],
+      "This file is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Αυτό το αρχείο είναι πολύ μεγάλο. Επιλέξτε ένα μικρότερο από ${ maxMegabytes } MB."
+      ],
       "This file name is too long. Rename the image and try again.": [
         "Αυτό το όνομα αρχείου είναι πολύ μεγάλο. Μετονομάστε την εικόνα και δοκιμάστε ξανά."
       ],
       "This file version could not be uploaded": [
         "Δεν ήταν δυνατή η μεταφόρτωση αυτής της έκδοσης αρχείου"
       ],
-      "This image could not be read. Pick another one.": [
-        "Δεν ήταν δυνατή η ανάγνωση αυτής της εικόνας. Επιλέξτε μια άλλη."
+      "This image can’t be opened. Pick another one.": [
+        "Αυτή η εικόνα δεν μπορεί να ανοίξει. Επιλέξτε μια άλλη."
       ],
       "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
         "Αυτή η εικόνα είναι πολύ μεγάλη. Επιλέξτε μία εικόνα με πλάτος και ύψος έως ${ maxEdge } pixel."
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "Αυτή η εικόνα είναι πολύ μεγάλη. Επιλέξτε μία κάτω από ${ maxMegabytes } MB."
       ],
       "This item has no image preview": [
         "Αυτό το στοιχείο δεν έχει προεπισκόπηση εικόνας"
@@ -2455,20 +2554,29 @@
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Αυτή η συνάντηση είναι σε παλαιότερη έκδοση, ο διοργανωτής πρέπει να την τερματίσει και να ανανεώσει το Meet για να την επανεκκινήσει με την πιο πρόσφατη έκδοση."
       ],
+      "To share your screen, allow it in your browser settings, then rejoin the call.": [
+        "Για να κοινοποιήσετε την οθόνη σας, επιτρέψτε το στις ρυθμίσεις του προγράμματος περιήγησής σας και, στη συνέχεια, συμμετάσχετε ξανά στην κλήση."
+      ],
+      "To use them, allow them in your browser settings, then rejoin the call.": [
+        "Για να τα χρησιμοποιήσετε, επιτρέψτε τα στις ρυθμίσεις του προγράμματος περιήγησής σας και, στη συνέχεια, συμμετάσχετε ξανά στην κλήση."
+      ],
+      "To use your camera, allow it in your browser settings, then rejoin the call.": [
+        "Για να χρησιμοποιήσετε την κάμερά σας, επιτρέψτε τη στις ρυθμίσεις του προγράμματος περιήγησής σας και, στη συνέχεια, εισέλθετε ξανά στην κλήση."
+      ],
+      "To use your microphone, allow it in your browser settings, then rejoin the call.": [
+        "Για να χρησιμοποιήσετε το μικρόφωνό σας, επιτρέψτε τη χρήση του στις ρυθμίσεις του προγράμματος περιήγησής σας και, στη συνέχεια, εισέλθετε ξανά στην κλήση."
+      ],
       "Too many server errors, please try again later": [
         "Πάρα πολλά σφάλματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Too many server requests, please try again later": [
         "Πάρα πολλά αιτήματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
-      "Try turning live captions off and on again.": [
-        "Δοκιμάστε να απενεργοποιήσετε και να ενεργοποιήσετε ξανά τους ζωντανούς υπότιτλους."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
       ],
-      "Unable to generate captions": [
-        "Δεν ήταν δυνατή η δημιουργία λεζαντών"
+      "Turn live captions off and on again.": [
+        "Απενεργοποιήσετε και ενεργοποιήσετε ξανά τους ζωντανούς υπότιτλους."
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -2485,8 +2593,8 @@
       "Verification keys for ${ signatureType } are not available": [
         "Τα κλειδιά επαλήθευσης για ${ signatureType } δεν είναι διαθέσιμα"
       ],
-      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
-        "Η αρχικοποίηση εικονικού φόντου απέτυχε. Παρακαλούμε ενεργοποιήστε την κάμερά σας ή επιλέξτε ξανά ένα φόντο."
+      "Waiting room setting not saved. Try again.": [
+        "Η ρύθμιση για την αίθουσα αναμονής δεν αποθηκεύτηκε. Δοκιμάστε ξανά."
       ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
@@ -2503,6 +2611,9 @@
       "You can only upload a new version to a file": [
         "Μπορείτε να ανεβάσετε μόνο μια νέα έκδοση σε ένα αρχείο"
       ],
+      "You can send feedback only for meetings you joined.": [
+        "Μπορείτε να στείλετε σχόλια μόνο για συσκέψεις στις οποίες συμμετείχατε."
+      ],
       "You can update a public link for your own files only": [
         "Μπορείτε να ενημερώσετε έναν δημόσιο σύνδεσμο μόνο για τα δικά σας αρχεία"
       ],
@@ -2511,9 +2622,6 @@
       ],
       "You do not have access to this shared item": [
         "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "Έχετε φτάσει τον μέγιστο αριθμό προσαρμοσμένων φόντων."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Ο χώρος αποθήκευσης του προγράμματος περιήγησής σας εξαντλήθηκε. Αποθηκεύσαμε την ηχογράφηση μέχρι αυτό το σημείο."
@@ -2560,8 +2668,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Το αίτημα κλειδιού ασφαλείας ακυρώθηκε ή έληξε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Η συσκευή σας δεν μπόρεσε να ολοκληρώσει το αίτημα κλειδιού ασφαλείας. Προσπαθήστε ξανά, ή επιλέξτε κάποια άλλη μέθοδο σύνδεσης."
       ]
     },
     "fido2: Info": {
@@ -2707,6 +2821,16 @@
       " and ": [
         " και "
       ],
+      "${ count } person has access but isn't in the call": [
+        "${ count } άτομο έχει πρόσβαση αλλά δε βρίσκεται στην κλήση",
+        "${ count } άτομα έχουν πρόσβαση αλλά δε βρίσκονται στην κλήση"
+      ],
+      "${ hiddenParticipantTitle }. Meeting almost full": [
+        "${ hiddenParticipantTitle }. Σχεδον πλήρης σύσκεψη"
+      ],
+      "${ hiddenParticipantTitle }. Meeting full": [
+        "${ hiddenParticipantTitle }. Πλήρης σύσκεψη"
+      ],
       "${ maxParticipants } participant limit reached": [
         "Έχει συμπληρωθεί το όριο των ${ maxParticipants } συμμετεχόντων."
       ],
@@ -2722,8 +2846,11 @@
       "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
         "Η εφαρμογή ${ MEET_APP_NAME } χρειάζεται πρόσβαση στην ηχογράφηση οθόνης, ώστε να μπορείτε να κοινοποιείτε την οθόνη σας κατά τη διάρκεια της κλήσης. Αφού δώσετε την άδεια, το macOS θα σας ζητήσει να ανοίξετε ξανά την εφαρμογή."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "Το ${ MEET_APP_NAME } χρειάζεται το WebRTC για να λειτουργήσει. Παρακαλούμε ενημερώστε το πρόγραμμα περιήγησης ή τη συσκευή σας σε μια έκδοση που υποστηρίζει το WebRTC, δοκιμάστε ένα διαφορετικό πρόγραμμα περιήγησης ή απενεργοποιήστε τυχόν προεκτάσεις που ενδέχεται να το εμποδίζουν."
+      "${ MEET_APP_NAME } needs WebAssembly, which is off or not available in this browser. Turn it on, or use another browser.": [
+        "Το ${ MEET_APP_NAME } απαιτεί το WebAssembly, το οποίο είναι απενεργοποιημένο ή μη διαθέσιμο σε αυτό το πρόγραμμα περιήγησης. Ενεργοποιήστε το ή χρησιμοποιήστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.": [
+        "Το ${ MEET_APP_NAME } απαιτεί το WebRTC, το οποίο είναι απενεργοποιημένο ή αποκλεισμένο σε αυτό το πρόγραμμα περιήγησης. Ενεργοποιήστε το, απενεργοποιήστε τυχόν προεκτάσεις που το εμποδίζουν ή χρησιμοποιήστε ένα άλλο πρόγραμμα περιήγησης."
       ],
       "${ meetingName } has ended": [
         "Η ${ meetingName } έληξε"
@@ -2741,6 +2868,12 @@
       ],
       "${ participantName } is recording": [
         "${ participantName } βιντεογραφεί"
+      ],
+      "${ participantName } joined": [
+        "Ο/Η ${ participantName } συνδέθηκε"
+      ],
+      "${ participantName } left": [
+        "Ο/Η ${ participantName } αποχώρησε"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (εσείς) παρουσιάζει"
@@ -2778,11 +2911,14 @@
       "(You)": [
         "(Εσείς)"
       ],
-      "-Removed dangerous URL-": [
-        "--Αφαιρέθηκε επικίνδυνη διεύθυνση URL--"
-      ],
       "1 reply draft": [
         "1 πρόχειρη απάντηση"
+      ],
+      "A participant joined": [
+        "Ένας συμμετέχων συνδέθηκε"
+      ],
+      "A participant left": [
+        "Ένας συμμετέχων αποχώρησε"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
@@ -2823,6 +2959,12 @@
       "Are you sure you want to stop recording?": [
         "Είστε σίγουροι ότι θέλετε να διακόψετε την εγγραφή;"
       ],
+      "Ask the host to end the meeting, refresh ${ MEET_APP_NAME } and start it again.": [
+        "Ζητήστε από τον διοργανωτή να τερματίσει τη σύσκεψη, κάντε ανανέωση στο ${ MEET_APP_NAME } και ξεκινήστε την ξανά."
+      ],
+      "Ask the host to unlock it so you can join.": [
+        "Ζητήστε από τον οικοδεσπότη να το ξεκλειδώσει, ώστε να μπορέσετε να συμμετάσχετε."
+      ],
       "Attention required": [
         "Απαιτείται προσοχή"
       ],
@@ -2834,9 +2976,6 @@
       ],
       "Background blur initializing": [
         "Αρχικοποίηση θολώματος φόντου"
-      ],
-      "Background effects are not supported on your browser": [
-        "Τα εφέ φόντου δεν υποστηρίζονται στο πρόγραμμα περιήγησής σας"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -2856,9 +2995,6 @@
       "Camera is starting": [
         "Η κάμερα ξεκινά"
       ],
-      "Camera permission denied": [
-        "Η άδεια χρήσης κάμερας απορρίφθηκε"
-      ],
       "Captions on": [
         "Υπότιτλοι ενεργοποιημένοι"
       ],
@@ -2867,6 +3003,12 @@
       ],
       "Chat with everyone": [
         "Συνομιλήστε με όλους"
+      ],
+      "Check that you copied the full meeting link and try again.": [
+        "Βεβαιωθείτε ότι έχετε αντιγράψει ολόκληρο τον σύνδεσμο της σύσκεψης και δοκιμάστε ξανά."
+      ],
+      "Check your internet connection and try again. If that doesn’t work, try another browser.": [
+        "Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και δοκιμάστε ξανά. Αν αυτό δε λειτουργήσει, δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ],
       "Check your system settings to make sure that a camera is available.": [
         "Ελέγξτε τις ρυθμίσεις του συστήματός σας για να βεβαιωθείτε ότι υπάρχει διαθέσιμη κάμερα."
@@ -2877,14 +3019,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
-      "Connection failed": [
-        "Αποτυχία σύνδεσης"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Η σύνδεση διακόπηκε. Επανασύνδεση..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Εντοπίστηκε πρόβλημα σύνδεσης. Γίνεται προσπάθεια ανάκτησης…"
+      "Connection lost": [
+        "Η σύνδεση διακόπηκε"
       ],
       "Connection lost. Reconnecting…": [
         "Χάθηκε η σύνδεση. Επανασύνδεση…"
@@ -2912,6 +3048,9 @@
       ],
       "Custom combination": [
         "Προσαρμοσμένος συνδυασμός"
+      ],
+      "Debug": [
+        "Εντοπισμός σφαλμάτων"
       ],
       "Decrypting meetings...": [
         "Αποκρυπτογράφηση συσκέψεων..."
@@ -2985,6 +3124,18 @@
       "Enter your own password (as trusted contact).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
+      "Epoch ${ epoch }": [
+        "Epoch ${ epoch }"
+      ],
+      "Epoch ${ previousEpoch } → ${ epoch }": [
+        "Epoch ${ previousEpoch } → ${ epoch }"
+      ],
+      "Error at epoch ${ epoch }": [
+        "Σφάλμα στην epoch ${ epoch }"
+      ],
+      "Event deleted": [
+        "Η εκδήλωση διαγράφηκε"
+      ],
       "Everyone has been disconnected from the call.": [
         "Όλοι έχουν αποσυνδεθεί από την κλήση."
       ],
@@ -3018,9 +3169,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Απολαύστε την καλύτερη εμπειρία με την εφαρμογή για υπολογιστές ${ protonMeet }"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Μεταβείτε στο about:config, αναζητήστε το media.peerconnection.enabled και ορίστε το σε true."
-      ],
       "Host": [
         "Διακομιστής"
       ],
@@ -3042,17 +3190,14 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Εάν χρησιμοποιείτε τον Firefox, βεβαιωθείτε ότι η λειτουργία PeerConnection είναι ενεργοποιημένη."
+      "In Firefox, open ${ configPage } and set ${ preference } to ${ value }.": [
+        "Στον Firefox, ανοίξτε τη σελίδα ${ configPage } και ορίστε την προτίμηση ${ preference } στην τιμή ${ value }."
       ],
       "Incoming video off": [
         "Απενεργοποίηση εισερχόμενου βίντεο"
       ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "Το αίτημα συμμετοχής έληξε. Ο οικοδεσπότης δε σας αποδέχτηκε εγκαίρως. Στείλτε ένα νέο αίτημα συμμετοχής."
       ],
       "Joined ${ roomNameLabel }": [
         "Μπήκε στο ${ roomNameLabel }"
@@ -3108,9 +3253,6 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Επαναλάβετε ένα μεταφορτωμένο βίντεο ή την ζωντανή κάμερά σας μέσω θολώματος φόντου."
       ],
-      "Lost connection to the meeting server. Reconnecting…": [
-        "Χάθηκε η σύνδεση με τον διακομιστή της σύσκεψης. Επανασύνδεση…"
-      ],
       "Lower participant's hand": [
         "Κατέβασε το χέρι του συμμετέχοντα"
       ],
@@ -3134,9 +3276,6 @@
       ],
       "Meeting is decrypting...": [
         "Η σύσκεψη αποκρυπτογραφείται..."
-      ],
-      "Meeting is full": [
-        "Η σύσκεψη είναι πλήρης"
       ],
       "Meeting link": [
         "Σύνδεσμος σύσκεψης"
@@ -3180,9 +3319,6 @@
       "Microphone is starting": [
         "Το μικρόφωνο ξεκινά"
       ],
-      "Microphone permission denied": [
-        "Η άδεια μικροφώνου απορρίφθηκε"
-      ],
       "More options": [
         "Περισσότερες επιλογές"
       ],
@@ -3210,14 +3346,8 @@
       "No camera detected": [
         "Δεν εντοπίστηκε κάμερα"
       ],
-      "No camera detected.": [
-        "Δεν εντοπίστηκε κάμερα."
-      ],
       "No microphone detected": [
         "Δεν εντοπίστηκε μικρόφωνο"
-      ],
-      "No microphone detected.": [
-        "Δεν εντοπίστηκε μικρόφωνο."
       ],
       "No publications": [
         "Δεν υπάρχουν δημοσιεύσεις"
@@ -3237,12 +3367,6 @@
       "No speaker detected": [
         "Δεν εντοπίστηκε ηχείο"
       ],
-      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
-        "Η ακύρωση θορύβου απενεργοποιήθηκε επειδή η συσκευή σας αντιμετωπίζει προβλήματα απόδοσης. Μπορείτε να την ενεργοποιήσετε ξανά στις ρυθμίσεις ήχου."
-      ],
-      "Not sent, check your connection.": [
-        "Δεν στάλθηκε, ελέγξτε τη σύνδεσή σας."
-      ],
       "notify everyone here": [
         "ενημέρωσε όλους εδώ."
       ],
@@ -3254,9 +3378,6 @@
       ],
       "Now using ${ first }.": [
         "Τώρα χρησιμοποιείται το ${ first }."
-      ],
-      "Only a partial meeting recording was available.": [
-        "Ήταν διαθέσιμη μόνο μια μερική ηχογράφηση της συνάντησης."
       ],
       "Only meetings you created appear here": [
         "Εδώ εμφανίζονται μόνο οι συσκέψεις που έχετε δημιουργήσει εσείς"
@@ -3294,17 +3415,11 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Επικολλήστε τον σύνδεσμο ${ MEET_APP_NAME } για να συμμετάσχετε σε μια ασφαλή σύσκεψη"
       ],
-      "Permissions not given.": [
-        "Δεν δόθηκαν δικαιώματα."
-      ],
       "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
         "Παρακαλούμε ${ downloadLink } και εγκαταστήστε την εφαρμογή, στη συνέχεια κάντε ξανά κλικ στο Συμμετοχή μέσα στην εφαρμογή ${ MEET_APP_NAME }."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Παρακαλούμε ενεργοποιήστε την πρόσβαση στο ${ microphoneLinkButton }${ andString }${ cameraLinkButton } για βέλτιστη εμπειρία."
-      ],
-      "Please try again or try another browser": [
-        "Παρακαλούμε προσπαθήστε ξανά ή δοκιμάστε έναν άλλο περιηγητή"
       ],
       "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
         "Παρακαλούμε ενημερώστε το ${ MEET_APP_NAME } για να συνεχίσετε να χρησιμοποιείτε την εφαρμογή. ${ downloadUpdate }"
@@ -3330,11 +3445,11 @@
       "Reactions": [
         "Αντιδράσεις"
       ],
-      "Reconnected successfully": [
-        "Επανασύνδεση με επιτυχία"
+      "Reconnected": [
+        "Επανασυνδέθηκε"
       ],
-      "Reconnecting to meeting...": [
-        "Επανασύνδεση με τη συνάντηση..."
+      "Reconnecting didn’t work. Check your internet connection, then rejoin.": [
+        "Η επανασύνδεση απέτυχε. Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και, στη συνέχεια, συνδεθείτε ξανά."
       ],
       "Reconnecting…": [
         "Επανασύνδεση…"
@@ -3374,6 +3489,9 @@
       ],
       "Rejecting": [
         "Απόρριψη"
+      ],
+      "Room deleted": [
+        "Η αίθουσα διαγράφηκε"
       ],
       "Run your live camera through the custom background processor. Upload an image to use as the background.": [
         "Εκτελέστε τη ζωντανή κάμερά σας μέσω του προσαρμοσμένου επεξεργαστή φόντου. Ανεβάστε μια εικόνα για να τη χρησιμοποιήσετε ως φόντο."
@@ -3423,6 +3541,9 @@
       "Set up a permanent meeting room for your team or clients": [
         "Δημιουργήστε μια μόνιμη αίθουσα συσκέψεων για την ομάδα ή τους πελάτες σας"
       ],
+      "Set your device’s date and time to update automatically, then try again.": [
+        "Ρυθμίστε την ημερομηνία και την ώρα της συσκευής σας ώστε να ενημερώνονται αυτόματα και, στη συνέχεια, δοκιμάστε ξανά."
+      ],
       "Share screen": [
         "Κοινοποίηση οθόνης"
       ],
@@ -3468,11 +3589,17 @@
       "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
         "Η υπηρεσία υποτιτλισμού χρησιμοποιεί τον ήχο της σύσκεψης. Οι υπότιτλοι είναι ορατοί μόνο σε εσάς και δεν αποθηκεύονται."
       ],
+      "The host has another meeting in progress.": [
+        "Ο διοργανωτής έχει άλλη σύσκεψη σε εξέλιξη."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Ο οικοδεσπότης σας έχει αφαιρέσει από αυτήν τη σύσκεψη. Εάν αυτό ήταν λάθος, ζητήστε από τον οικοδεσπότη να σας προσκαλέσει ξανά."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Ο σύνδεσμος σύσκεψης που προσπαθήσατε να ανοίξετε δεν υπάρχει ή ενδέχεται να έχει λήξει. Βεβαιωθείτε ότι ο σύνδεσμος είναι σωστός ή ξεκινήστε μια νέα ασφαλή σύσκεψη."
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "Ο διοργανωτής δε βρίσκεται στη σύσκεψη αυτή τη στιγμή. Ο αριθμός των συμμετεχόντων θα συμφωνεί και πάλι μόλις εισέλθει ο διοργανωτής."
+      ],
+      "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει τη διατερματική κρυπτογράφηση που χρησιμοποιεί το ${ MEET_APP_NAME } για την προστασία κάθε σύσκεψης."
       ],
       "This conversation started before you joined.": [
         "Αυτή η συζήτηση ξεκίνησε πριν από τη συμμετοχή σας."
@@ -3489,9 +3616,6 @@
       "This meeting is being recorded": [
         "Αυτή η συνεδρία καταγράφεται"
       ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Αυτή η σύσκεψη είναι κλειδωμένη. Παρακαλούμε επικοινωνήστε με τον διοργανωτή για να συμμετάσχετε."
-      ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Αυτή η σύσκεψη έφτασε στο χρονικό όριο ενός δωρεάν προγράμματος. Αναβαθμίστε για να επεκτείνετε τη διάρκεια της σύσκεψής σας σε μελλοντικές κλήσεις."
       ],
@@ -3500,6 +3624,9 @@
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Αυτή η ηχογράφηση θα διαγραφεί οριστικά από αυτήν τη συσκευή. Δεν είναι δυνατή η αναίρεση αυτής της ενέργειας."
+      ],
+      "This usually means a lost connection. It should clear on its own.": [
+        "Αυτό συνήθως σημαίνει απώλεια σύνδεσης. Θα πρέπει να αποκατασταθεί από μόνο του."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Αυτό θα τερματίσει τη σύσκεψη για όλους τους συμμετέχοντες και θα σταματήσει την κοινοποίηση οθόνης."
@@ -3518,6 +3645,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
+      ],
+      "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
+        "Για να συμμετάσχετε, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συσκευή, ή την εφαρμογή ${ MEET_APP_NAME } στο τηλέφωνό σας."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Για να προγραμματίσετε μια εκδήλωση, θα χρειαστείτε **έναν δωρεάν λογαριασμό ${ BRAND_NAME }** ώστε να μπορέσουμε να αποθηκεύσουμε την εκδήλωση. Αυτό παίρνει μόνο λίγα δευτερόλεπτα."
@@ -3539,9 +3672,6 @@
       ],
       "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
         "Ενεργοποιήστε το Firefox στο ${ settingsPath }. Στη συνέχεια, επανεκκινήστε το Firefox και συνδεθείτε ξανά στην κλήση."
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Δεν είναι δυνατή η επανασύνδεση στη σύσκεψη. Παρακαλούμε συμμετάσχετε ξανά ή αποχωρήστε."
       ],
       "unlimited meeting": [
         "απεριόριστη σύσκεψη"
@@ -3621,6 +3751,9 @@
       "You have too many meetings in progress": [
         "Έχετε πάρα πολλές συσκέψεις σε εξέλιξη."
       ],
+      "You joined": [
+        "Συμμετείχατε"
+      ],
       "You left ${ meetingName }": [
         "Αποχωρήσατε από τη ${ meetingName }"
       ],
@@ -3636,9 +3769,6 @@
       "You were removed from the meeting": [
         "Αφαιρεθήκατε από τη σύσκεψη"
       ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "Δε γίνατε δεκτοί σε αυτήν τη σύσκεψη. Μπορείτε να δοκιμάσετε να συμμετάσχετε ξανά εάν πιστεύετε ότι πρόκειται για λάθος."
-      ],
       "You will leave the meeting. Others will continue.": [
         "Θα φύγετε από τη συνάντηση. Οι άλλοι θα συνεχίσουν."
       ],
@@ -3650,24 +3780,6 @@
       ],
       "Your always available meeting room": [
         "Η πάντα διαθέσιμη αίθουσα συσκέψεών σας"
-      ],
-      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
-        "Δεν ήταν δυνατή η φόρτωση των φόντων σας, επομένως δεν είναι δυνατή η προσθήκη νέου αυτήν τη στιγμή."
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στην κάμερα και στο μικρόφωνό σας. Για να τα ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στην κάμερά σας. Για να την ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στο μικρόφωνό σας. Για να την ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Ο περιηγητής σας έχει αποκλείσει την πρόσβαση στην κοινή χρήση οθόνης σας. Για να την ενεργοποιήσετε, ενημερώστε τις ρυθμίσεις του περιηγητή σας και επανασυνδεθείτε στην κλήση."
-      ],
-      "Your browser or device isn’t supported": [
-        "Το πρόγραμμα περιήγησης ή η συσκευή σας δεν υποστηρίζεται"
       ],
       "Your camera is still starting": [
         "Η κάμερά σας εξακολουθεί να εκκινεί"
@@ -3689,6 +3801,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Κωδικός πρόσβασης Λογαριασμού ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
@@ -3719,6 +3834,9 @@
       ],
       "Audio": [
         "Ήχος"
+      ],
+      "Audio: ${ microphoneLabel }": [
+        "Ήχος: ${ microphoneLabel }"
       ],
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
@@ -3774,6 +3892,9 @@
       "Dark ${ BRAND_NAME } background": [
         "Σκοτεινό φόντο ${ BRAND_NAME }"
       ],
+      "Debug": [
+        "Εντοπισμός σφαλμάτων"
+      ],
       "Delete": [
         "Διαγραφή"
       ],
@@ -3803,6 +3924,12 @@
       ],
       "Enabled": [
         "Ενεργοποιημένο"
+      ],
+      "End date": [
+        "Ημερομηνία λήξης"
+      ],
+      "End time": [
+        "Ώρα λήξης"
       ],
       "Ended": [
         "Έληξε"
@@ -3909,9 +4036,6 @@
       "Participants join after you approve them": [
         "Οι συμμετέχοντες συμμετέχουν αφού τους εγκρίνετε"
       ],
-      "Password": [
-        "Κωδικός πρόσβασης"
-      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -3960,6 +4084,12 @@
       "Spoken language": [
         "Γλώσσα ομιλίας"
       ],
+      "Start date": [
+        "Ημερομηνία Έναρξης"
+      ],
+      "Start time": [
+        "Ώρα έναρξης"
+      ],
       "Subscribed": [
         "Εγγραφήκατε"
       ],
@@ -3989,6 +4119,9 @@
       ],
       "Video": [
         "Βίντεο"
+      ],
+      "Video: ${ cameraLabel }": [
+        "Βίντεο: ${ cameraLabel }"
       ],
       "What happened?": [
         "Τι συνέβη;"
@@ -4144,11 +4277,6 @@
         "Αποθήκευση και αντιγραφή συνδέσμου"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Το πρόγραμμα περιήγησης ή το λογισμικό της συσκευής σας δεν υποστηρίζει το ${ MEET_APP_NAME }. Το ${ MEET_APP_NAME } απαιτεί WebAssembly (Wasm) για να λειτουργήσει. Παρακαλούμε ενημερώστε το πρόγραμμα περιήγησης ή τη συσκευή σας σε μια έκδοση που υποστηρίζει Wasm ή δοκιμάστε να χρησιμοποιήσετε ένα διαφορετικό πρόγραμμα περιήγησης."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Επειδή είστε ο μόνος συμμετέχων σε αυτή τη σύσκεψη, η σύσκεψη θα κλείσει αυτόματα. Θέλετε να παραμείνετε σε αυτή τη σύσκεψη;"
@@ -4160,11 +4288,6 @@
       ],
       "Stay in the meeting": [
         "Παραμείνετε στη σύσκεψη"
-      ]
-    },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Αποτυχία εκκίνησης της λειτουργίας Picture-in-Picture"
       ]
     },
     "Meeting schedule": {
@@ -4240,9 +4363,6 @@
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
-      "Could not send feedback": [
-        "Δεν ήταν δυνατή η αποστολή σχολίων"
-      ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
@@ -4254,9 +4374,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "Σας ευχαριστούμε! Τα σχόλιά σας έχουν υποβληθεί."
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "Δεν μπορείτε να στείλετε σχόλια για μια σύσκεψη στην οποία δεν έχετε συμμετάσχει"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4574,20 +4691,32 @@
       "Blur and personal": [
         "Θάμπωμα και προσωπικό"
       ],
+      "Browser not supported": [
+        "Το πρόγραμμα περιήγησης δεν υποστηρίζεται"
+      ],
       "Camera and microphone are blocked": [
         "Η κάμερα και το μικρόφωνο είναι αποκλεισμένα"
       ],
       "Camera is blocked": [
         "Η κάμερα είναι αποκλεισμένη"
       ],
+      "Can’t join from this browser": [
+        "Δεν είναι δυνατή η συμμετοχή από αυτό το πρόγραμμα περιήγησης"
+      ],
       "Chat": [
         "Συνομιλία"
+      ],
+      "Connection failed": [
+        "Αποτυχία σύνδεσης"
       ],
       "Constants": [
         "Σταθερές"
       ],
-      "Couldn't prepare the recording": [
-        "Δεν ήταν δυνατή η προετοιμασία της ηχογράφησης"
+      "Couldn’t join the meeting": [
+        "Δεν ήταν δυνατή η συμμετοχή στη σύσκεψη"
+      ],
+      "Couldn’t start the meeting": [
+        "Δεν ήταν δυνατή η έναρξη της σύσκεψης"
       ],
       "Create new room": [
         "Δημιουργία νέας αίθουσας"
@@ -4606,9 +4735,6 @@
       ],
       "Display": [
         "Προβολή"
-      ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό πρόσβασης σας"
       ],
       "Epoch": [
         "Εποχή"
@@ -4634,11 +4760,14 @@
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
+      "Incorrect date and time": [
+        "Εσφαλμένη ημερομηνία και ώρα"
+      ],
+      "Incorrect meeting password": [
+        "Εσφαλμένος κωδικός πρόσβασης σύσκεψης"
+      ],
       "Info": [
         "Πληροφορίες"
-      ],
-      "Invalid meeting link": [
-        "Μη έγκυρος σύνδεσμος σύσκεψης"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
@@ -4682,6 +4811,12 @@
       ],
       "Meeting edited": [
         "Η σύσκεψη επεξεργάστηκε"
+      ],
+      "Meeting locked": [
+        "Η σύσκεψη είναι κλειδωμένη"
+      ],
+      "Meeting out of date": [
+        "Εκπρόθεσμη σύσκεψη"
       ],
       "Messaging Layer Security": [
         "Ασφάλεια Επιπέδου Μηνυμάτων"
@@ -4782,9 +4917,6 @@
       "Talk confidentially": [
         "Μιλήστε εμπιστευτικά"
       ],
-      "The host didn't admit you": [
-        "Ο οικοδεσπότης δε σας αποδέχτηκε"
-      ],
       "Time": [
         "Ώρα"
       ],
@@ -4793,6 +4925,9 @@
       ],
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ],
       "Video and audio": [
         "Βίντεο και ήχος"
@@ -4819,12 +4954,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Το θάμπωμα παρασκηνίου δεν υποστηρίζεται στο πρόγραμμα περιήγησής σας."
-      ],
-      "Background effects are not supported on your browser": [
-        "Τα εφέ φόντου δεν υποστηρίζονται στο πρόγραμμα περιήγησής σας"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Δημιουργήστε έναν νέο σύνδεσμο για τη συνάντηση. Ο τρέχων σύνδεσμος θα σταματήσει να λειτουργεί."
       ],
@@ -4866,23 +4995,8 @@
       "Connection is taking longer than expected": [
         "Η σύνδεση διαρκεί περισσότερο από το αναμενόμενο"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Δεν ήταν δυνατή η πρόσβαση στην κάμερα ή στο μικρόφωνο. Μπορείτε να δοκιμάσετε να τα ενεργοποιήσετε ξανά από τα στοιχεία ελέγχου της σύσκεψης."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Δεν ήταν δυνατή η πρόσβαση στην κάμερα. Μπορείτε να δοκιμάσετε να την ενεργοποιήσετε ξανά από τα στοιχεία ελέγχου της σύσκεψης."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Δεν ήταν δυνατή η πρόσβαση στο μικρόφωνο. Μπορείτε να δοκιμάσετε να το ενεργοποιήσετε ξανά από τα στοιχεία ελέγχου της σύσκεψης."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "Η σύνδεση STUN UDP απέτυχε, δοκιμάζουμε με αναμετάδοση TURN…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "Η σύνδεση STUN UDP ξεπέρασε το όριο χρόνου, δοκιμάζουμε με αναμετάδοση TURN"
       ],
       "Trying another route…": [
         "Δοκιμάζοντας άλλη διαδρομή…"

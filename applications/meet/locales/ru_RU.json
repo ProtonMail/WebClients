@@ -70,9 +70,6 @@
       "Now starting recording": [
         "Запуск записи"
       ],
-      "Reconnected to the meeting": [
-        "Подключение к встрече восстановлено"
-      ],
       "Recording saved": [
         "Запись сохранена"
       ],
@@ -120,9 +117,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Вы единственный участник. Встреча завершится через 2 минуты, если никто не присоединится."
-      ],
-      "You have been disconnected from the meeting": [
-        "Вы были отключены от встречи"
       ],
       "You have been muted by the host": [
         "Ваш микрофон был выключен организатором"
@@ -206,9 +200,6 @@
       ],
       "Continue without camera": [
         "Продолжить без камеры"
-      ],
-      "Continue without mic and camera": [
-        "Продолжить без микрофона и камеры"
       ],
       "Continue without microphone": [
         "Продолжить без микрофона"
@@ -366,6 +357,9 @@
       "Kick out ${ participantName }": [
         "Удалить ${ participantName }"
       ],
+      "Learn more": [
+        "Подробнее"
+      ],
       "Leave": [
         "Оставить"
       ],
@@ -386,6 +380,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
+      ],
+      "More options": [
+        "Дополнительные параметры"
       ],
       "More options for accounts": [
         "Больше настроек для аккаунтов"
@@ -488,9 +485,6 @@
       ],
       "Resume": [
         "Возобновить"
-      ],
-      "Retry": [
-        "Повторить"
       ],
       "Return to dashboard": [
         "Вернуться на панель управления"
@@ -772,6 +766,11 @@
     "Badge": {
       "Active": [
         "Активно"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     },
     "Bug category": {
@@ -1745,35 +1744,8 @@
       "Enter your username without the domain (@example.com)": [
         "Введите ваше имя пользователя без домена (@example.com)"
       ],
-      "Event deleted": [
-        "Событие удалено"
-      ],
-      "Failed to assign host": [
-        "Не удалось назначить организатора"
-      ],
-      "Failed to create meeting": [
-        "Не удалось создать встречу"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Не удалось создать личную встречу, обновите страницу"
-      ],
       "Failed to decrypt session key": [
         "Не удалось расшифровать ключ сеанса"
-      ],
-      "Failed to delete event": [
-        "Не удалось удалить событие"
-      ],
-      "Failed to delete recording": [
-        "Не удалось удалить запись"
-      ],
-      "Failed to delete room": [
-        "Не удалось удалить комнату"
-      ],
-      "Failed to download recording": [
-        "Не удалось скачать запись"
-      ],
-      "Failed to edit room name": [
-        "Не удалось изменить название комнаты"
       ],
       "Failed to join meeting. Please try again later.": [
         "Не удалось присоединиться к встрече. Повторите попытку позже."
@@ -1781,29 +1753,8 @@
       "Failed to join meeting. Please try again.": [
         "Не удалось присоединиться к встрече. Пожалуйста, попробуйте еще раз."
       ],
-      "Failed to lock meeting": [
-        "Не удалось заблокировать встречу"
-      ],
       "Failed to rotate personal meeting link": [
         "Не удалось обновить ссылку на личную встречу"
-      ],
-      "Failed to send chat message. Please try again.": [
-        "Не удалось отправить сообщение в чате. Попробуйте еще раз."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Не удалось отправить реакцию эмодзи. Попробуйте еще раз."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Не удалось отправить реакцию. Попробуйте еще раз."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Не удалось начать встречу. Пожалуйста, попробуйте еще раз."
-      ],
-      "Failed to start recording": [
-        "Не удалось начать запись"
-      ],
-      "Failed to unlock meeting": [
-        "Не удалось разблокировать встречу"
       ],
       "Incorrect backup password. Please try again.": [
         "Неверный пароль резервной копии. Попробуйте еще раз."
@@ -1813,9 +1764,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Неверный второй пароль. Попробуйте еще раз."
-      ],
-      "Invalid meeting link": [
-        "Недействительная ссылка на встречу"
       ],
       "Invalid URL": [
         "Недействительный URL"
@@ -1838,9 +1786,6 @@
       "Request timed out": [
         "Время запроса истекло"
       ],
-      "Room deleted": [
-        "Комната удалена"
-      ],
       "Screen share is not supported on mobile browsers": [
         "Демонстрация экрана не поддерживается в мобильных браузерах"
       ],
@@ -1858,12 +1803,6 @@
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
-      ],
-      "The meeting password is incorrect": [
-        "Неверный пароль встречи"
-      ],
-      "The meeting password is invalid": [
-        "Пароль встречи недействителен"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Длина этого поля превысила максимальные ${ maximumLength } символов."
@@ -2099,9 +2038,6 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "Приложению ${ MEET_APP_NAME } нужен доступ к микрофону, чтобы другие могли слышать вас во время звонка. Вы можете выключить его в любое время."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "Для работы ${ MEET_APP_NAME } требуется WebRTC. Обновите браузер или устройство до версии с поддержкой WebRTC, попробуйте другой браузер или отключите любые расширения, которые могут блокировать его работу."
-      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } и еще ${ otherParticipantsCount } записывают встречу"
       ],
@@ -2138,9 +2074,6 @@
       "(You)": [
         "(Вы)"
       ],
-      "-Removed dangerous URL-": [
-        "-Удален опасный URL-"
-      ],
       "1 reply draft": [
         "1 черновик ответа"
       ],
@@ -2171,9 +2104,6 @@
       "camera": [
         "камера"
       ],
-      "Camera permission denied": [
-        "В разрешении на использование камеры отказано"
-      ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Изменения подготовлены. Примените их, чтобы перестроить предпросмотр с новыми константами."
       ],
@@ -2188,15 +2118,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
-      ],
-      "Connection failed": [
-        "Сбой подключения"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Подключение прервано. Переподключение..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Обнаружена проблема с подключением. Попытка восстановления…"
       ],
       "Connection lost. Reconnecting…": [
         "Подключение прервано. Переподключение…"
@@ -2306,9 +2227,6 @@
       "Get a secure meeting link then add it to your calendar": [
         "Получите защищённую ссылку на встречу и добавьте ее в свой календарь"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Перейдите на страницу about:config, найдите media.peerconnection.enabled и установите для него значение true."
-      ],
       "Host": [
         "Организатор"
       ],
@@ -2320,9 +2238,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
-      ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Если вы используете Firefox, убедитесь, что PeerConnection включено."
       ],
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
@@ -2420,9 +2335,6 @@
       "Microphone effects": [
         "Эффекты микрофона"
       ],
-      "Microphone permission denied": [
-        "В разрешении на использование микрофона отказано"
-      ],
       "Mute microphone": [
         "Выключить микрофон"
       ],
@@ -2447,14 +2359,8 @@
       "No camera detected": [
         "Камера не обнаружена"
       ],
-      "No camera detected.": [
-        "Камера не обнаружена."
-      ],
       "No microphone detected": [
         "Микрофон не обнаружен"
-      ],
-      "No microphone detected.": [
-        "Микрофон не обнаружен."
       ],
       "No publications": [
         "Нет публикаций"
@@ -2473,9 +2379,6 @@
       ],
       "No speaker detected": [
         "Динамик не обнаружен"
-      ],
-      "Not sent, check your connection.": [
-        "Не отправлено, проверьте подключение."
       ],
       "Only meetings you created appear here": [
         "Здесь отображаются только созданные вами встречи"
@@ -2498,14 +2401,8 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Вставьте ссылку ${ MEET_APP_NAME }, чтобы присоединиться к безопасной встрече"
       ],
-      "Permissions not given.": [
-        "Разрешения не предоставлены."
-      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Включите доступ к ${ microphoneLinkButton }${ andString }${ cameraLinkButton } для оптимальной работы."
-      ],
-      "Please try again or try another browser": [
-        "Попробуйте ещё раз или используйте другой браузер"
       ],
       "Poor connection": [
         "Плохое подключение"
@@ -2524,12 +2421,6 @@
       ],
       "Reactions": [
         "Реакции"
-      ],
-      "Reconnected successfully": [
-        "Успешно переподключено"
-      ],
-      "Reconnecting to meeting...": [
-        "Переподключение к встрече..."
       ],
       "Record your meetings": [
         "Записывайте ваши встречи"
@@ -2621,9 +2512,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Организатор удалил вас из этой встречи. Если это произошло по ошибке, попросите организатора пригласить вас снова."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Ссылка на встречу, которую вы пытались открыть, не существует или устарела. Убедитесь, что ссылка верна, или начните новую безопасную встречу."
-      ],
       "This conversation started before you joined.": [
         "Эта цепочка писем началась до того, как вы присоединились."
       ],
@@ -2632,9 +2520,6 @@
       ],
       "This meeting is being recorded": [
         "Эта встреча записывается"
-      ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Эта встреча заблокирована. Свяжитесь с организатором, чтобы присоединиться."
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Эта встреча достигла лимита времени бесплатного тарифа. Улучшите тариф, чтобы увеличить длительность встреч в будущих звонках."
@@ -2674,9 +2559,6 @@
       ],
       "Turn on camera": [
         "Включить камеру"
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Не удалось восстановить подключение к встрече. Пожалуйста, переподключитесь или покиньте ее."
       ],
       "unlimited meeting": [
         "неограниченные встречи"
@@ -2749,21 +2631,6 @@
       ],
       "Your always available meeting room": [
         "Ваша всегда доступная комната для встреч"
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Ваш браузер заблокировал доступ к камере и микрофону. Чтобы включить их, обновите настройки браузера и переподключитесь к звонку."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Ваш браузер заблокировал доступ к камере. Чтобы включить ее, обновите настройки браузера и переподключитесь к звонку."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Ваш браузер заблокировал доступ к микрофону. Чтобы включить его, обновите настройки браузера и переподключитесь к звонку."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Ваш браузер заблокировал доступ к демонстрации экрана. Чтобы включить ее, обновите настройки браузера и переподключитесь к звонку."
-      ],
-      "Your browser or device isn’t supported": [
-        "Ваш браузер или устройство не поддерживается"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
@@ -2869,6 +2736,12 @@
       "Enabled": [
         "Включены"
       ],
+      "End date": [
+        "Дата окончания"
+      ],
+      "End time": [
+        "Время окончания"
+      ],
       "Ended": [
         "Завершено"
       ],
@@ -2950,9 +2823,6 @@
       "Participants join after you approve them": [
         "Участники присоединяются после того, как вы их одобрите"
       ],
-      "Password": [
-        "Пароль"
-      ],
       "Phone number": [
         "Номер телефона"
       ],
@@ -2988,6 +2858,12 @@
       ],
       "Selected Speaker": [
         "Выбранный динамик"
+      ],
+      "Start date": [
+        "Дата начала"
+      ],
+      "Start time": [
+        "Время начала"
       ],
       "Subscribed": [
         "Подписаны"
@@ -3057,11 +2933,6 @@
         "Сохранить и скопировать ссылку"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Программное обеспечение вашего браузера или устройства не поддерживает ${ MEET_APP_NAME }. Для работы ${ MEET_APP_NAME } требуется WebAssembly (Wasm). Обновите браузер или устройство до версии с поддержкой Wasm или попробуйте другой браузер."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Поскольку вы единственный участник этой встречи, она будет автоматически закрыта. Хотите остаться на этой встрече?"
@@ -3075,20 +2946,12 @@
         "Остаться на встрече"
       ]
     },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Не удалось запустить режим «Картинка в картинке»"
-      ]
-    },
     "Notification": {
       "Coming soon": [
         "Скоро"
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
-      ],
-      "Could not send feedback": [
-        "Не удалось отправить обратную связь"
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
@@ -3098,9 +2961,6 @@
       ],
       "Successfully rotated your personal meeting": [
         "Ваша личная встреча обновлена"
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "Вы не можете отправить обратную связь для встречи, на которой вы не были"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -3380,9 +3240,6 @@
       "Constants": [
         "Константы"
       ],
-      "Couldn't prepare the recording": [
-        "Не удалось подготовить запись"
-      ],
       "Create new room": [
         "Создать новую комнату"
       ],
@@ -3394,9 +3251,6 @@
       ],
       "Delete recording?": [
         "Удалить запись?"
-      ],
-      "Enter your password": [
-        "Введите пароль"
       ],
       "Epoch": [
         "Epoch"
@@ -3418,9 +3272,6 @@
       ],
       "Info": [
         "Информация"
-      ],
-      "Invalid meeting link": [
-        "Недействительная ссылка на встречу"
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
@@ -3548,6 +3399,9 @@
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
       ],
+      "Verify it’s you": [
+        "Подтвердите, что это вы"
+      ],
       "Waiting room": [
         "Зал ожидания"
       ],
@@ -3564,9 +3418,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Размытие фона не поддерживается в вашем браузере"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Создать новую ссылку на встречу. Текущая ссылка перестанет работать."
       ],
@@ -3603,23 +3454,8 @@
       "Connection is taking longer than expected": [
         "Подключение занимает больше времени, чем ожидалось"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Не удалось получить доступ к камере или микрофону. Вы можете попробовать включить их снова с помощью элементов управления встречей."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Не удалось получить доступ к камере. Вы можете попробовать включить её снова с помощью элементов управления встречей."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Не удалось получить доступ к микрофону. Вы можете попробовать включить его снова с помощью элементов управления встречей."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "Сбой подключения STUN UDP, попытка использовать TURN-ретранслятор…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "Истекло время ожидания подключения STUN UDP, попытка использовать TURN-ретранслятор"
       ],
       "Trying another route…": [
         "Попытка использовать другой маршрут…"

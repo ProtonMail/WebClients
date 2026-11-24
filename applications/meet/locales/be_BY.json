@@ -136,8 +136,8 @@
       "Now starting recording": [
         "Пачынаецца запіс"
       ],
-      "Reconnected to the meeting": [
-        "Перападключана да сустрэчы"
+      "Reconnected": [
+        "Перападключана"
       ],
       "Recording saved": [
         "Запіс захаваны"
@@ -186,9 +186,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Вы адзіны ўдзельнік. Сустрэча завершыцца праз 2 хвіліны, калі ніхто не далучыцца."
-      ],
-      "You have been disconnected from the meeting": [
-        "Вас адключылі ад сустрэчы"
       ],
       "You have been muted by the host": [
         "Арганізатар сустрэчы адключыў вам гук"
@@ -300,8 +297,8 @@
       "Continue without camera": [
         "Працягнуць без камеры"
       ],
-      "Continue without mic and camera": [
-        "Працягнуць без мікрафона і камеры"
+      "Continue without camera and microphone": [
+        "Працягнуць без камеры і мікрафона"
       ],
       "Continue without microphone": [
         "Працягнуць без мікрафона"
@@ -447,6 +444,9 @@
       "Getting ready...": [
         "Падрыхтоўка..."
       ],
+      "Go to today": [
+        "Перайсці да сённяшняга дня"
+      ],
       "Help and feedback": [
         "Даведка і зваротная сувязь"
       ],
@@ -495,6 +495,9 @@
       "Layout": [
         "Макет"
       ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
       "Leave": [
         "Выйсці"
       ],
@@ -530,6 +533,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "More options": [
+        "Дадатковыя параметры"
       ],
       "More options for accounts": [
         "Больш параметраў для ўліковых запісаў"
@@ -624,6 +630,9 @@
       "Refresh audio and video tracks": [
         "Абнавіць аўдыя і відэа трэкі"
       ],
+      "Refresh page": [
+        "Абнавіць старонку"
+      ],
       "Refresh screen share track": [
         "Абнавіць прагляд абагуленага экрана"
       ],
@@ -668,9 +677,6 @@
       ],
       "Resume": [
         "Узнавіць"
-      ],
-      "Retry": [
-        "Паўтарыць"
       ],
       "Return to dashboard": [
         "Вярнуцца ў панэль кіравання"
@@ -901,6 +907,9 @@
       ],
       "Copy meeting link": [
         "Скапіяваць спасылку на сустрэчу"
+      ],
+      "Debug": [
+        "Адладка"
       ],
       "Go to dashboard": [
         "Перайсці ў панэль кіравання"
@@ -2002,6 +2011,12 @@
       "An error occurred": [
         "Адбылася памылка"
       ],
+      "Background not removed. Try again.": [
+        "Фон не выдалены. Паўтарыце спробу."
+      ],
+      "Background not saved in this browser.": [
+        "Фон не захаваны ў гэтым браўзеры."
+      ],
       "Bookmark password is not available": [
         "Пароль закладкі недаступны"
       ],
@@ -2023,20 +2038,14 @@
       "Cannot verify who uploaded this file": [
         "Немагчыма спраўдзіць хто запампаваў гэты файл"
       ],
-      "Check your audio settings and try again": [
-        "Праверце свае налады аўдыя і паўтарыце спробу"
-      ],
-      "Connection lost — captions will resume when reconnected": [
-        "Падключэнне страчана: цітры будуць узноўлены пасля перападключэння"
+      "Connection lost. Captions will start again when you’re reconnected.": [
+        "Падключэнне страчана. Цітры пачнуцца зноў, калі вы перападключыцеся."
       ],
       "Copy operation aborted": [
         "Аперацыя капіявання перарвана"
       ],
       "Copying item to a non-folder is not allowed": [
         "Капіяванне элементаў па-за межы папкі забаронена"
-      ],
-      "Could not add this background. Please try again.": [
-        "Немагчыма дадаць гэты фон. Паўтарыце спробу."
       ],
       "Could not find an available name": [
         "Немагчыма знайсці даступную назву"
@@ -2050,14 +2059,20 @@
       "Could not read part of this file: ${ message }": [
         "Немагчыма прачытаць частку гэтага файла: ${ message }"
       ],
-      "Could not remove this background. Please try again.": [
-        "Немагчыма выдаліць гэты фон. Паўтарыце спробу."
-      ],
       "Could not unlock the parent folder": [
         "Немагчыма разблакіраваць бацькоўскую папку"
       ],
       "Could not unlock this item": [
         "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Couldn’t admit participant. Try again.": [
+        "Немагчыма прыняць удзельніка. Паўтарыце спробу."
+      ],
+      "Couldn’t admit participants. Try again.": [
+        "Немагчыма прыняць удзельнікаў. Паўтарыце спробу."
+      ],
+      "Couldn’t deny participant. Try again.": [
+        "Немагчыма адхіліць удзельніка. Паўтарыце спробу."
       ],
       "Couldn’t play the recording on this speaker.": [
         "Немагчыма прайграць запіс на гэтым дынаміку."
@@ -2083,6 +2098,9 @@
       "Domain not available, try again later": [
         "Дамен недаступны. Паўтарыце спробу пазней"
       ],
+      "Download failed. Try again.": [
+        "Збой спампоўвання. Паўтарыце спробу."
+      ],
       "Email is not valid": [
         "Несапраўдная электронная пошта"
       ],
@@ -2092,26 +2110,8 @@
       "Enter your username without the domain (@example.com)": [
         "Увядзіце сваё імя карыстальніка без дамена (@example.com)"
       ],
-      "Event deleted": [
-        "Падзея выдалена"
-      ],
       "Expiration date cannot be in the past": [
         "Дата завяршэння не можа быць у мінулым"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "Не ўдалося прыняць удзельніка. Паўтарыце спробу."
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "Не ўдалося прыняць удзельнікаў. Паўтарыце спробу."
-      ],
-      "Failed to assign host": [
-        "Не ўдалося прызначыць арганізатара"
-      ],
-      "Failed to create meeting": [
-        "Не ўдалося стварыць сустрэчу"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Не ўдалося стварыць асабістую сустрэчу. Абнавіце старонку"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Не ўдалося расшыфраваць ключ закладкі: ${ message }"
@@ -2137,26 +2137,8 @@
       "Failed to decrypt session key": [
         "Не ўдалося расшыфраваць ключ сеанса"
       ],
-      "Failed to delete event": [
-        "Не ўдалося выдаліць падзею"
-      ],
-      "Failed to delete recording": [
-        "Не ўдалося выдаліць запіс."
-      ],
-      "Failed to delete room": [
-        "Не ўдалося выдаліць пакой"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "Не ўдалося забараніць удзельніка. Паўтарыце спробу."
-      ],
-      "Failed to download recording": [
-        "Не ўдалося спампаваць запіс."
-      ],
-      "Failed to edit meeting": [
-        "Не ўдалося рэдагаваць сустрэчу"
-      ],
-      "Failed to edit room name": [
-        "Не ўдалося адрэдагаваць назву пакоя"
+      "Failed to get invitee keys": [
+        "Не ўдалося атрымаць ключы запрошаных асоб"
       ],
       "Failed to get inviter keys": [
         "Не ўдалося атрымаць ключы запрашэння"
@@ -2167,53 +2149,26 @@
       "Failed to join meeting. Please try again.": [
         "Не ўдалося далучыцца да сустрэчы. Паўтарыце спробу."
       ],
-      "Failed to lock meeting": [
-        "Не ўдалося заблакіраваць сустрэчу"
-      ],
-      "Failed to request live captions": [
-        "Не ўдалося запытаць дынамічныя цітры"
+      "Failed to load the membership data": [
+        "Не ўдалося загрузіць даныя ўдзелу"
       ],
       "Failed to rotate personal meeting link": [
         "Не ўдалося зрабіць ратацыю асабістай спасылкі на сустрэчу"
       ],
-      "Failed to send chat message. Please try again.": [
-        "Не ўдалося адправіць паведамленне ў чаце. Паўтарыце спробу."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Не ўдалося адправіць рэакцыю эмодзі. Паўтарыце спробу."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Не ўдалося адправіць рэакцыю. Паўтарыце спробу."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Не ўдалося пачаць сустрэчу. Паўтарыце спробу."
-      ],
-      "Failed to start recording": [
-        "Не ўдалося пачаць запіс."
-      ],
-      "Failed to unlock meeting": [
-        "Не ўдалося разблакіраваць сустрэчу"
-      ],
-      "Failed to update caption language. Please try again.": [
-        "Не ўдалося абнавіць моўныя цітры. Паўтарыце спробу."
-      ],
-      "Failed to update live captions availability": [
-        "Не ўдалося абнавіць даступнасць дынамічных цітраў"
-      ],
-      "Failed to update live captions. Please try again.": [
-        "Не ўдалося абнавіць дынамічныя цітры. Паўтарыце спробу."
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "Не ўдалося абнавіць налады пакою чакання. Паўтарыце спробу."
-      ],
       "Failed to verify invitation": [
         "Не ўдалося спраўдзіць запрашэнне"
+      ],
+      "Failed to verify membership": [
+        "Не ўдалося спраўдзіць удзел"
       ],
       "File download failed due to empty response": [
         "Збой спампоўвання файла. Прычына: пусты адказ"
       ],
       "File has no revision": [
         "У файла адсутнічае рэдакцыя"
+      ],
+      "Host not changed. Try again.": [
+        "Арганізатар не зменены. Паўтарыце спробу."
       ],
       "Image preview not found": [
         "Папярэдні прагляд відарыса не знойдзены"
@@ -2226,9 +2181,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Няправільны другі пароль. Паўтарыце спробу."
-      ],
-      "Invalid meeting link": [
-        "Памылковая спасылка на сустрэчу"
       ],
       "Invalid URL": [
         "Памылковы URL-адрас"
@@ -2245,17 +2197,11 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
       ],
-      "Live captions couldn't be started.": [
-        "Немагчыма запусціць дынамічныя цітры."
+      "Live captions not updated. Try again.": [
+        "Інтэрактыўныя цітры не абноўлены. Паўтарыце спробу."
       ],
-      "Live captions have stopped.": [
-        "Дынамічныя цітры спынены."
-      ],
-      "Message is too long to send": [
-        "Занадта доўгае паведамленне для адпраўкі"
-      ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "Доступ да мікрафона заблакіраваны. Дазвольце яго выкарыстанне ў наладах браўзера."
+      "Microphone blocked": [
+        "Мікрафон заблакіраваны"
       ],
       "Microphone not detected": [
         "Мікрафон не выяўлены"
@@ -2287,6 +2233,9 @@
       "Name must not be empty": [
         "Назва не можа быць пустой"
       ],
+      "No camera detected": [
+        "Камера не выяўлена"
+      ],
       "No file data was received. Please try again.": [
         "Ніякія даныя файла не былі атрыманы. Паўтарыце спробу."
       ],
@@ -2298,6 +2247,9 @@
       ],
       "Only admins can convert external invitations": [
         "Толькі ў адміністратараў ёсць правы для пераўтварэння знешніх запрашэнняў"
+      ],
+      "Only part of the meeting was recorded.": [
+        "Была запісана толькі частка сустрэчы."
       ],
       "Operation aborted": [
         "Аперацыя перарвана"
@@ -2314,6 +2266,9 @@
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
+      "Paste the full meeting link": [
+        "Устаўце поўную спасылку на сустрэчу"
+      ],
       "Photo is already in the target album": [
         "Фатаграфія ўжо знаходзіцца ў мэтавым альбоме"
       ],
@@ -2323,8 +2278,11 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Выберыце відарыс JPEG, PNG або WebP"
       ],
-      "Recording stopped because of an error.": [
-        "Запіс спынены, бо адбылася памылка."
+      "Picture-in-picture failed. Try again.": [
+        "Збой функцыі «Малюнак у малюнку». Паўтарыце спробу."
+      ],
+      "Recording didn’t start. Try again.": [
+        "Запіс не пачаты. Паўтарыце спробу."
       ],
       "Renaming root item is not allowed": [
         "Перайменаванне элемента суперкарыстальніка забаронена"
@@ -2335,8 +2293,8 @@
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
       ],
-      "Room deleted": [
-        "Пакой выдалены"
+      "Room not deleted. Try again.": [
+        "Пакой не выдалены. Паўтарыце спробу."
       ],
       "Screen share is not supported on mobile browsers": [
         "Абагульванне экрана не падтрымліваецца ў мабільных браўзерах"
@@ -2365,11 +2323,17 @@
       "Some file parts failed to upload. Please try again.": [
         "Некаторыя часткі файла не ўдалося запампаваць. Паўтарыце спробу."
       ],
+      "Some invitations could not be loaded": [
+        "Некаторыя запрашэнні немагчыма загрузіць"
+      ],
       "Some items could not be loaded": [
         "Некаторыя элементы немагчыма загрузіць"
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "Something went wrong while saving it.": [
+        "Нешта пайшло не так пры яго захаванні."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
@@ -2380,26 +2344,14 @@
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
       ],
-      "The meeting password is incorrect": [
-        "Няправільны пароль сустрэчы"
-      ],
-      "The meeting password is invalid": [
-        "Памылковы пароль сустрэчы"
-      ],
-      "The message field is unavailable. Please reload the page.": [
-        "Поле паведамлення недаступна. Перазагрузіце старонку."
+      "The host didn’t admit you": [
+        "Арганізатар не прыняў вас"
       ],
       "The selected microphone is no longer available.": [
         "Выбраны мікрафон больш недаступны."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
-      ],
-      "This background could not be saved in this browser.": [
-        "Гэты фон немагчыма захаваць у гэтым браўзеры."
-      ],
-      "This emoji can’t be used as a reaction": [
-        "Гэты эмодзі нельга выкарыстоўваць як рэакцыю"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
@@ -2422,12 +2374,6 @@
       "This file version could not be uploaded": [
         "Не ўдалося запампаваць гэтую версію файла"
       ],
-      "This image could not be read. Pick another one.": [
-        "Немагчыма прачытаць гэты відарыс. Выберыце іншы."
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "Гэты відарыс занадта вялікі. Выберыце іншы відарыс памерам не больш за ${ maxMegabytes } МБ."
-      ],
       "This item has no image preview": [
         "У гэтага элемента адсутнічае папярэдні прагляд відарыса"
       ],
@@ -2446,14 +2392,11 @@
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
       ],
-      "Try turning live captions off and on again.": [
-        "Паспрабуйце выключыць і зноў уключыць інтэрактыўныя цітры."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
-      "Unable to generate captions": [
-        "Немагчыма згенерыраваць цітры"
+      "Turn live captions off and on again.": [
+        "Выключыце і зноў уключыце інтэрактыўныя цітры."
       ],
       "Unknown error": [
         "Невядомая памылка"
@@ -2493,9 +2436,6 @@
       ],
       "You do not have access to this shared item": [
         "У вас няма доступу да гэтага абагуленага элемента"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "Вы дасягнулі максімальнай колькасці карыстальніцкіх фонаў."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "У вашым браўзеры скончылася месца для захоўвання. Запіс захаваны да гэтага моманту."
@@ -2707,9 +2647,6 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } неабходны дазвол на выкарыстанне мікрафона, каб іншыя маглі пачуць вас падчас званка. Выключыць яго можна ў любы час."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "Для працы ${ MEET_APP_NAME } патрэбны WebRTC. Абнавіце свой браўзер або прыладу да версіі, якую падтрымлівае WebRTC, паспрабуйце іншы браўзер, або адключыце любыя пашырэнні, якія могуць блакіраваць яго."
-      ],
       "${ meetingName } has ended": [
         "${ meetingName } завяршылася"
       ],
@@ -2724,6 +2661,12 @@
       ],
       "${ participantName } is recording": [
         "${ participantName } запісвае"
+      ],
+      "${ participantName } joined": [
+        "${ participantName } далучыўся"
+      ],
+      "${ participantName } left": [
+        "${ participantName } выйшаў"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (вы) прадстаўляеце"
@@ -2767,11 +2710,11 @@
       "(You)": [
         "(Вы)"
       ],
-      "-Removed dangerous URL-": [
-        "- Выдалена небяспечная URL-спасылка-"
-      ],
       "1 reply draft": [
         "1 чарнавы адказ"
+      ],
+      "A participant left": [
+        "Удзельнік выйшаў"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
@@ -2839,9 +2782,6 @@
       "Camera is starting": [
         "Запуск камеры"
       ],
-      "Camera permission denied": [
-        "Доступ да камеры забаронены"
-      ],
       "Captions on": [
         "Цітры ўключаны"
       ],
@@ -2859,15 +2799,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
-      ],
-      "Connection failed": [
-        "Збой падключэння"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Падключэнне перарвана. Перападключэнне..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Выяўлены праблемы з падключэннем. Адбываецца спроба аднавіць падключэнне..."
       ],
       "Connection lost. Reconnecting…": [
         "Падключэнне страчана. Адбываецца перападключэнне..."
@@ -2895,6 +2826,9 @@
       ],
       "Custom combination": [
         "Карыстальніцкая камбінацыя"
+      ],
+      "Debug": [
+        "Адладка"
       ],
       "Decrypting meetings...": [
         "Расшыфроўка сустрэчы..."
@@ -2968,6 +2902,15 @@
       "Enter your own password (as trusted contact).": [
         "Увядзіце свой пароль (як давераны кантакт)."
       ],
+      "Epoch ${ epoch }": [
+        "Эпоха ${ epoch }"
+      ],
+      "Epoch ${ previousEpoch } → ${ epoch }": [
+        "Эпоха ${ previousEpoch } → ${ epoch }"
+      ],
+      "Error at epoch ${ epoch }": [
+        "Памылка ў эпосе ${ epoch }"
+      ],
       "Everyone has been disconnected from the call.": [
         "Усе ўдзельнікі былі адключаны ад званка."
       ],
@@ -2998,9 +2941,6 @@
       "Get a secure meeting link then add it to your calendar": [
         "Атрымайце бяспечную спасылку на сустрэчу, а потым дадайце яе ў свой каляндар"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Перайдзіце ў about:config, знайдзіце media.peerconnection.enabled і задайце яго значэнне true."
-      ],
       "Host": [
         "Арганізатар"
       ],
@@ -3021,9 +2961,6 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
-      ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Пераканайцеся, што PeerConnection уключаны пры выкарыстанні браўзера Firefox."
       ],
       "Incoming video off": [
         "Уваходнае відэа выключана"
@@ -3103,9 +3040,6 @@
       "Meeting is decrypting...": [
         "Сустрэча расшыфроўваецца..."
       ],
-      "Meeting is full": [
-        "Сустрэча запоўнена"
-      ],
       "Meeting link": [
         "Спасылка на сустрэчу"
       ],
@@ -3148,9 +3082,6 @@
       "Microphone is starting": [
         "Запуск мікрафона"
       ],
-      "Microphone permission denied": [
-        "Доступ да мікрафона забаронены"
-      ],
       "More options": [
         "Дадатковыя параметры"
       ],
@@ -3178,14 +3109,8 @@
       "No camera detected": [
         "Камера не выяўлена"
       ],
-      "No camera detected.": [
-        "Камера не выяўлена."
-      ],
       "No microphone detected": [
         "Мікрафон не выяўлены"
-      ],
-      "No microphone detected.": [
-        "Мікрафон не выяўлены."
       ],
       "No publications": [
         "Няма публікацый"
@@ -3205,9 +3130,6 @@
       "No speaker detected": [
         "Дынамік не выяўлены"
       ],
-      "Not sent, check your connection.": [
-        "Не адпраўлена. Праверце сваё падключэнне."
-      ],
       "notify everyone here": [
         "апавясціць усіх тут"
       ],
@@ -3219,9 +3141,6 @@
       ],
       "Now using ${ first }.": [
         "Цяпер выкарыстоўваецца ${ first }."
-      ],
-      "Only a partial meeting recording was available.": [
-        "Быў даступны частковы запіс сустрэчы."
       ],
       "Only meetings you created appear here": [
         "У гэтым месцы будуць толькі сустрэчы, створаныя вамі"
@@ -3253,14 +3172,8 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Устаўце сваю спасылку ${ MEET_APP_NAME }, каб далучыцца да бяспечнай сустрэчы"
       ],
-      "Permissions not given.": [
-        "Дазволы не дадзены."
-      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Уключыце доступ да вашага ${ microphoneLinkButton }${ andString }${ cameraLinkButton } для паляпшэння працы."
-      ],
-      "Please try again or try another browser": [
-        "Паўтарыце спробу або скарыстайцеся іншым браўзерам"
       ],
       "Poor connection": [
         "Нестабільнае падключэнне"
@@ -3283,11 +3196,8 @@
       "Reactions": [
         "Рэакцыі"
       ],
-      "Reconnected successfully": [
-        "Паспяхова перападключана"
-      ],
-      "Reconnecting to meeting...": [
-        "Перападключэнне да сустрэчы..."
+      "Reconnected": [
+        "Перападключана"
       ],
       "Reconnecting…": [
         "Перападключэнне…"
@@ -3382,6 +3292,9 @@
       "Sign in": [
         "ўвайдзіце"
       ],
+      "Something went wrong. Please try again.": [
+        "Нешта пайшло не так. Паўтарыце спробу."
+      ],
       "Sort by": [
         "Сартаваць па"
       ],
@@ -3409,9 +3322,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Арганізатар выдаліў вас з гэтай сустрэчы. Папрасіце арганізатара запрасіць вас паўторна, калі лічыце гэта памылкай."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Спасылка на сустрэчу, якую вы спрабуеце адкрыць не існуе або тэрмін яе дзеяння скончыўся. Пераканайцеся, што спасылка з'яўляецца правільнай або пачніце новую бяспечную сустрэчу."
-      ],
       "This conversation started before you joined.": [
         "Гэтая размова пачалася да таго, як вы далучыліся."
       ],
@@ -3426,9 +3336,6 @@
       ],
       "This meeting is being recorded": [
         "Гэта сустрэча запісваецца"
-      ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Гэта сустрэча заблакіравана. Звяжыцеся з арганізатарам, каб далучыцца."
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "У гэтай сустрэчы скончыўся бясплатны час, які прадугледжаны бясплатным тарыфным планам. Абнавіце свой тарыфны план, каб пашырыць працягласць сустрэчы ў будучых званках."
@@ -3474,9 +3381,6 @@
       ],
       "Turn on camera": [
         "Уключыць камеру"
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Немагчыма перападключыцца да сустрэчы. Далучыцеся да сустрэчы паўторна або выйдзіце з яе."
       ],
       "unlimited meeting": [
         "неабмежаваную колькасць сустрэч"
@@ -3547,6 +3451,9 @@
       "You have too many meetings in progress": [
         "У вас выконваецца занадта шмат сустрэч"
       ],
+      "You joined": [
+        "Вы далучыліся"
+      ],
       "You left ${ meetingName }": [
         "Вы выйшлі з ${ meetingName }"
       ],
@@ -3573,21 +3480,6 @@
       ],
       "Your always available meeting room": [
         "Ваша пакой для сустрэч, даступны заўсёды"
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Ваш браўзер блакіруе доступ да камеры і мікрафона. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць іх."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Ваш браўзер блакіруе доступ да камеры. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць яе."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Ваш браўзер блакіруе доступ да мікрафона. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць яго."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Ваш браўзер блакіруе доступ да абагуленага экрана. Абнавіце налады браўзера і паўторна далучыцеся да званка, каб уключыць яго."
-      ],
-      "Your browser or device isn’t supported": [
-        "Ваш браўзер або прылада не падтрымліваецца"
       ],
       "Your camera is still starting": [
         "Ваша камера ўсё яшчэ запускаецца"
@@ -3641,6 +3533,9 @@
       ],
       "Audio": [
         "Аўдыя"
+      ],
+      "Audio: ${ microphoneLabel }": [
+        "Аўдыя: ${ microphoneLabel }"
       ],
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
@@ -3696,6 +3591,9 @@
       "Dark ${ BRAND_NAME } background": [
         "Цёмны фон ${ BRAND_NAME }"
       ],
+      "Debug": [
+        "Адладка"
+      ],
       "Delete": [
         "Выдаліць"
       ],
@@ -3725,6 +3623,12 @@
       ],
       "Enabled": [
         "Уключана"
+      ],
+      "End date": [
+        "Дата завяршэння"
+      ],
+      "End time": [
+        "Час завяршэння"
       ],
       "Ended": [
         "Завершана"
@@ -3831,9 +3735,6 @@
       "Participants join after you approve them": [
         "Удзельнікі далучаюцца пасля таго, як вы іх ухваліце"
       ],
-      "Password": [
-        "Пароль"
-      ],
       "Phone number": [
         "Нумар тэлефона"
       ],
@@ -3881,6 +3782,12 @@
       ],
       "Spoken language": [
         "Мова маўлення"
+      ],
+      "Start date": [
+        "Дата пачатку"
+      ],
+      "Start time": [
+        "Час пачатку"
       ],
       "Subscribed": [
         "Ёсць падпіска"
@@ -4066,11 +3973,6 @@
         "Захаваць і скапіяваць спасылку"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Ваш браўзер або праграмная прылада не падтрымлівае ${ MEET_APP_NAME }. ${ MEET_APP_NAME } патрабуе WebAssembly (Wasm) для сваёй працы. Абнавіце свой браўзер або прыладу да версіі, якую падтрымлівае Wasm або паспрабуйце іншы браўзер."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Паколькі вы адзіны ўдзельнік гэтай сустрэчы, сустрэча аўтаматычна закрыецца. Вы сапраўды хочаце застацца ў гэтай сустрэчы?"
@@ -4082,11 +3984,6 @@
       ],
       "Stay in the meeting": [
         "Застацца ў сустрэчы"
-      ]
-    },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Не ўдалося запусціць \"Малюнак у малюнку\""
       ]
     },
     "Meeting schedule": {
@@ -4154,9 +4051,6 @@
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
-      "Could not send feedback": [
-        "Немагчыма адправіць водгук"
-      ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
@@ -4168,9 +4062,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "Дзякуй! Ваш водгук быў адпраўлены."
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "У вас няма магчымасці пакінуць водгук аб сустрэчы, на якой вы не былі"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4496,14 +4387,23 @@
       "Camera is blocked": [
         "Камера заблакіравана"
       ],
+      "Can’t join from this browser": [
+        "Немагчыма далучыцца з гэтага браўзера"
+      ],
       "Chat": [
         "Чат"
+      ],
+      "Connection failed": [
+        "Збой падключэння"
       ],
       "Constants": [
         "Канстанты"
       ],
-      "Couldn't prepare the recording": [
-        "Не ўдалося падрыхтаваць запіс"
+      "Couldn’t join the meeting": [
+        "Не ўдалося далучыцца да сустрэчы"
+      ],
+      "Couldn’t start the meeting": [
+        "Не ўдалося пачаць сустрэчу"
       ],
       "Create new room": [
         "Стварыць новы пакой"
@@ -4522,9 +4422,6 @@
       ],
       "Display": [
         "Адлюстраванне"
-      ],
-      "Enter your password": [
-        "Увядзіце свой пароль"
       ],
       "Epoch": [
         "Epoch"
@@ -4547,11 +4444,11 @@
       "Human verification": [
         "Антыспамавая праверка"
       ],
+      "Incorrect meeting password": [
+        "Няправільны пароль сустрэчы"
+      ],
       "Info": [
         "Звесткі"
-      ],
-      "Invalid meeting link": [
-        "Памылковая спасылка на сустрэчу"
       ],
       "Invalid verification code": [
         "Памылковы код спраўджання"
@@ -4598,6 +4495,9 @@
       "Meeting edited": [
         "Сустрэча адрэдагавана"
       ],
+      "Meeting out of date": [
+        "Сустрэча састарэла"
+      ],
       "Messaging Layer Security": [
         "Messaging Layer Security (MLS)"
       ],
@@ -4615,6 +4515,9 @@
       ],
       "No results found": [
         "Нічога не знойдзена"
+      ],
+      "No screen or window found": [
+        "Экран або акно не знойдзены"
       ],
       "Participant counts don’t match": [
         "Колькасць удзельнікаў не супадае"
@@ -4664,6 +4567,9 @@
       "Schedule a meeting": [
         "Запланаваць сустрэчу"
       ],
+      "Screen share failed": [
+        "Збой абагульвання экрана"
+      ],
       "Screen share is blocked": [
         "Абагульванне экрана заблакіравана"
       ],
@@ -4691,9 +4597,6 @@
       "Talk confidentially": [
         "Размаўляйце канфідэнцыяльна"
       ],
-      "The host didn't admit you": [
-        "Арганізатар не прыняў вас"
-      ],
       "Time": [
         "Час"
       ],
@@ -4702,6 +4605,9 @@
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
+      ],
+      "Verify it’s you": [
+        "Спраўдзіце, што гэта вы"
       ],
       "Video and audio": [
         "Відэа і аўдыя"
@@ -4728,9 +4634,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Размыццё фону не падтрымліваецца вашым браўзерам"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Стварыце новую спасылку для сустрэчы. Існуючая спасылка перастане дзейнічаць."
       ],
@@ -4776,23 +4679,8 @@
       "Connection is taking longer than expected": [
         "Падключэнне займае больш часу, чым чакалася"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Немагчыма атрымаць доступ да камеры або мікрафона. Вы можаце паспрабаваць уключыць іх зноў у элементах кіравання сустрэчай."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Немагчыма атрымаць доступ да камеры. Вы можаце паспрабаваць уключыць яе зноў у элементах кіравання сустрэчай."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Немагчыма атрымаць доступ да мікрафона. Вы можаце паспрабаваць уключыць яе зноў у элементах кіравання сустрэчай."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "Збой падключэння UDP STUN. Адбываецца спроба зрабіць гэта праз прамежкавы TURN…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "Выйшаў час чакання для падключэння STUN UDP. Адбываецца спроба зрабіць гэта праз прамежкавы TURN"
       ],
       "Trying another route…": [
         "Адбываецца спроба скарыстацца іншым маршрутам…"

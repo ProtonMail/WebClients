@@ -134,9 +134,6 @@
       "Now starting recording": [
         "Begynder optagelse nu"
       ],
-      "Reconnected to the meeting": [
-        "Genoprettede forbindelsen til mødet"
-      ],
       "Recording saved": [
         "Optagelse gemt"
       ],
@@ -184,9 +181,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Du er den eneste deltager. Mødet afsluttes om 2 minutter, medmindre nogen træder ind."
-      ],
-      "You have been disconnected from the meeting": [
-        "Du er blevet koblet ud af mødet"
       ],
       "You have been muted by the host": [
         "Værten har slået din lyd fra"
@@ -294,9 +288,6 @@
       "Continue without camera": [
         "Fortsæt uden kamera"
       ],
-      "Continue without mic and camera": [
-        "Fortsæt uden mikrofon og kamera."
-      ],
       "Continue without microphone": [
         "Fortsæt uden mikrofon"
       ],
@@ -365,6 +356,9 @@
       ],
       "Dismiss new messages": [
         "Skjul nye beskeder"
+      ],
+      "Dismiss notification": [
+        "Luk notifikation"
       ],
       "Done": [
         "Udført"
@@ -441,6 +435,9 @@
       "Getting ready...": [
         "Forbereder..."
       ],
+      "Go to today": [
+        "Gå til i dag"
+      ],
       "Help and feedback": [
         "Hjælp og feedback"
       ],
@@ -489,6 +486,9 @@
       "Layout": [
         "Layout"
       ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
       "Leave": [
         "Forlad"
       ],
@@ -524,6 +524,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
+      ],
+      "More options": [
+        "Flere muligheder"
       ],
       "More options for accounts": [
         "Flere muligheder for konti"
@@ -616,6 +619,9 @@
       "Refresh audio and video tracks": [
         "Opdatér lyd- og videostreams"
       ],
+      "Refresh page": [
+        "Opdater side"
+      ],
       "Refresh screen share track": [
         "Opdater skærmdelingsspor"
       ],
@@ -658,9 +664,6 @@
       ],
       "Resume": [
         "Genoptag"
-      ],
-      "Retry": [
-        "Prøv igen"
       ],
       "Return to dashboard": [
         "Tilbage til kontrolpanel"
@@ -1992,9 +1995,6 @@
       "An error occurred": [
         "Der opstod en fejl"
       ],
-      "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "Kunne ikke aktivere baggrundssløring. Aktivér dit kamera eller din baggrundssløring igen"
-      ],
       "Bookmark password is not available": [
         "Adgangskoden for bogmærket er ikke tilgængeligt"
       ],
@@ -2016,23 +2016,11 @@
       "Cannot verify who uploaded this file": [
         "Kan ikke bekræfte hvem, der uploadede filen"
       ],
-      "Check your audio settings and try again": [
-        "Tjek din lydindstillinger og prøv igen"
-      ],
-      "Connection lost — captions will resume when reconnected": [
-        "Forbindelse tabt – undertekster genoptages så snart forbindelsen genoprettes"
-      ],
       "Copy operation aborted": [
         "Kopiering afbrudt"
       ],
       "Copying item to a non-folder is not allowed": [
         "Kopiering af et element til udenfor en mappe er ikke tilladt"
-      ],
-      "Could not add this background. Check your connection and try again.": [
-        "Kunne ikke tilføje denne baggrund. Tjek din forbindelse og prøv igen."
-      ],
-      "Could not add this background. Please try again.": [
-        "Kunne ikke tilføje denne baggrund. Prøv igen."
       ],
       "Could not find an available name": [
         "Kunne ikke finde et tilgængeligt navn"
@@ -2045,12 +2033,6 @@
       ],
       "Could not read part of this file: ${ message }": [
         "Kunne ikke læse en del af denne fil: ${ message }"
-      ],
-      "Could not remove this background. Check your connection and try again.": [
-        "Kunne ikke fjerne denne baggrund. Tjek din forbindelse og prøv igen."
-      ],
-      "Could not remove this background. Please try again.": [
-        "Kunne ikke fjerne denne baggrund. Prøv igen."
       ],
       "Could not unlock the parent folder": [
         "Kunne ikke låse op for den overordnede mappe"
@@ -2091,26 +2073,8 @@
       "Enter your username without the domain (@example.com)": [
         "Indtast dit brugernavn uden domænet (@example.com)"
       ],
-      "Event deleted": [
-        "Begivenhed slettet"
-      ],
       "Expiration date cannot be in the past": [
         "Udløbsdatoen kan ikke være i fortiden"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "Kunne ikke give deltageren adgang. Prøv igen."
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "Kunne ikke give deltagerne adgang. Prøv igen."
-      ],
-      "Failed to assign host": [
-        "Kunne ikke angive vært"
-      ],
-      "Failed to create meeting": [
-        "Kunne ikke oprette møde"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Kunne ikke oprette personligt møde, opdatér siden."
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Kunne ikke dekryptere bogmærkets nøgle: ${ message }"
@@ -2136,27 +2100,6 @@
       "Failed to decrypt session key": [
         "Kunne ikke dekryptere sessionsnøgle"
       ],
-      "Failed to delete event": [
-        "Kunne ikke slette begivenhed"
-      ],
-      "Failed to delete recording": [
-        "Kunne ikke slette optagelse"
-      ],
-      "Failed to delete room": [
-        "Kunne ikke slette rummet"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "Kunne ikke afvise deltageren. Prøv igen."
-      ],
-      "Failed to download recording": [
-        "Kunne ikke downloade optagelse"
-      ],
-      "Failed to edit meeting": [
-        "Kunne ikke redigere mødet"
-      ],
-      "Failed to edit room name": [
-        "Kunne ikke redigere rumnavn"
-      ],
       "Failed to get inviter keys": [
         "Kunne ikke hente invitationsnøgler"
       ],
@@ -2166,44 +2109,8 @@
       "Failed to join meeting. Please try again.": [
         "Kunne ikke tilslutte mødet. Prøv igen."
       ],
-      "Failed to lock meeting": [
-        "Kunne ikke låse mødet"
-      ],
-      "Failed to request live captions": [
-        "Kunne ikke anmode om live undertekster"
-      ],
       "Failed to rotate personal meeting link": [
         "Kunne ikke forny personligt mødelink"
-      ],
-      "Failed to send chat message. Please try again.": [
-        "Kunne ikke sende chatbesked. Prøv igen."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Kunne ikke sende emoji-reaktion. Prøv igen."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Kunne ikke sende reaktion. Prøv igen."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Kunne ikke starte mødet. Prøv igen."
-      ],
-      "Failed to start recording": [
-        "Kunne ikke begynde optagelsen"
-      ],
-      "Failed to unlock meeting": [
-        "Kunne ikke låse møde op"
-      ],
-      "Failed to update caption language. Please try again.": [
-        "Kunne ikke opdatere sproget for underteksterne. Prøv igen."
-      ],
-      "Failed to update live captions availability": [
-        "Kunne ikke opdatere adgangen til live undertekster"
-      ],
-      "Failed to update live captions. Please try again.": [
-        "Kunne ikke opdatere live undertekster. Prøv igen."
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "Kunne ikke opdatere indstillingerne for venteværelset. Prøv igen."
       ],
       "Failed to verify invitation": [
         "Kunne ikke bekræfte invitationen"
@@ -2226,9 +2133,6 @@
       "Incorrect second password. Please try again.": [
         "Forkert anden adgangskode. Prøv igen."
       ],
-      "Invalid meeting link": [
-        "Ugyldigt mødelink"
-      ],
       "Invalid URL": [
         "Ugyldig URL"
       ],
@@ -2243,18 +2147,6 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Legacy offentlige links kan ikke opdateres. Opret et nyt offentligt link."
-      ],
-      "Live captions couldn't be started.": [
-        "Live undertekster kunne ikke startes."
-      ],
-      "Live captions have stopped.": [
-        "Live undertekster stoppede."
-      ],
-      "Message is too long to send": [
-        "Beskeden er for stor til at sende"
-      ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "Adgang til mikrofonen er blokeret. Tillad den i dine browserindstillinger."
       ],
       "Microphone not detected": [
         "Ingen mikrofon fundet"
@@ -2323,9 +2215,6 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Optagelsen blev stoppet, fordi den ikke kunne gemmes. Vi har gemt den hidtidige optagelse."
       ],
-      "Recording stopped because of an error.": [
-        "Mødet stoppede på grund af en fejl."
-      ],
       "Renaming root item is not allowed": [
         "Omdøbning af rodelementet er ikke tilladt"
       ],
@@ -2334,9 +2223,6 @@
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
-      ],
-      "Room deleted": [
-        "Rum slettet"
       ],
       "Screen share is not supported on mobile browsers": [
         "Skærmdeling understøttes ikke på mobile browsere"
@@ -2380,32 +2266,11 @@
       "The email addresses do not match": [
         "E-mailadresserne stemmer ikke overens"
       ],
-      "The emoji could not be added because the message is at its character limit": [
-        "Emojien kunne ikke tilføjes fordi beskeden har nået dens maksimale antal tegn"
-      ],
-      "The meeting password is incorrect": [
-        "Mødeadgangskoden er forkert"
-      ],
-      "The meeting password is invalid": [
-        "Mødeadgangskoden er ugyldig"
-      ],
-      "The mention could not be added because the message is at its character limit": [
-        "Denne omtale kunne ikke tilføjes fordi beskeden har nået dens maksimale antal tegn"
-      ],
-      "The message field is unavailable. Please reload the page.": [
-        "Beskedfeltet er ikke tilgængeligt. Opdater siden."
-      ],
       "The selected microphone is no longer available.": [
         "Det valgte mikrofon er ikke længere tilgængeligt."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den uploadede fil matcher ikke den originale. Prøv igen."
-      ],
-      "This background could not be saved in this browser.": [
-        "Denne baggrund kunne ikke gemmes i denne browser."
-      ],
-      "This emoji can’t be used as a reaction": [
-        "Denne emoji kan ikke bruges som reaktion."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
@@ -2428,14 +2293,8 @@
       "This file version could not be uploaded": [
         "Denne filversion kunne ikke uploades"
       ],
-      "This image could not be read. Pick another one.": [
-        "Dette billede kunne ikke læses. Vælg et andet."
-      ],
       "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
         "Dette billede er for stort. Vælg et op til ${ maxEdge } pixels bredt og højt."
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "Billedet er for stort. Vælg et under ${ maxMegabytes } MB."
       ],
       "This item has no image preview": [
         "Dette element har ingen forhåndsvisning"
@@ -2455,14 +2314,8 @@
       "Too many server requests, please try again later": [
         "For mange serverforespørgsler, prøv igen senere"
       ],
-      "Try turning live captions off and on again.": [
-        "Prøv at slå live undertekster fra og til igen."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
-      ],
-      "Unable to generate captions": [
-        "Kunne ikke generere undertekster"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -2478,9 +2331,6 @@
       ],
       "Verification keys for ${ signatureType } are not available": [
         "Bekræftelsesnøgler til ${ signatureType } er ikke tilgængelige"
-      ],
-      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
-        "Kunne ikke aktivere virtuel baggrund. Aktivér dit kamera eller vælg en baggrund igen"
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
@@ -2505,9 +2355,6 @@
       ],
       "You do not have access to this shared item": [
         "Du har ikke adgang til dette delte element"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "Du har nået det maksimale antal tilpassede baggrunde."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Din browser løb tør for lagerplads. Vi gemte optagelsen indtil dette tidspunkt."
@@ -2716,9 +2563,6 @@
       "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
         "${ MEET_APP_NAME } skal have tilladelse til at optage skærmen, så du kan dele din skærm under opkaldet. Efter du har givet tilladelse vil macOS bede dig om at åbne appen igen."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } kræver WebRTC for at køre. Opdatér din browser eller enhed til en version, der understøtter WebRTC, prøv en anden browser, eller deaktivér eventuelle udvidelser, der måtte blokere det."
-      ],
       "${ meetingName } has ended": [
         "${ meetingName } er slut"
       ],
@@ -2771,9 +2615,6 @@
       ],
       "(You)": [
         "(Dig)"
-      ],
-      "-Removed dangerous URL-": [
-        "-Fjernede farlig URL-"
       ],
       "1 reply draft": [
         "1 kladde til svar"
@@ -2829,9 +2670,6 @@
       "Background blur initializing": [
         "Aktiverer baggrundssløring"
       ],
-      "Background effects are not supported on your browser": [
-        "Baggrundseffekter understøttes ikke i din browser"
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
@@ -2850,9 +2688,6 @@
       "Camera is starting": [
         "Kameraet bliver slået til"
       ],
-      "Camera permission denied": [
-        "Kameratilladelse nægtet"
-      ],
       "Captions on": [
         "Undertekster slået til"
       ],
@@ -2870,15 +2705,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
-      ],
-      "Connection failed": [
-        "Forbindelse mislykkedes"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Forbindelse afbrudt. Genopretter forbindelse..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Der er et problem med forbindelsen. Forsøger at fikse det..."
       ],
       "Connection lost. Reconnecting…": [
         "Forbindelsen blev afbrudt. Genopretter forbindelse..."
@@ -3012,9 +2838,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Få den bedste oplevelse med ${ protonMeet } skrivebordsappen"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Gå til about:config, søg efter media.peerconnection.enabled, og sæt den til true."
-      ],
       "Host": [
         "Vært"
       ],
@@ -3036,17 +2859,11 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder, som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Hvis du bruger Firefox, sørg da for, at PeerConnection er aktiv."
-      ],
       "Incoming video off": [
         "Indgående video slået fra"
       ],
       "Internet connection lost": [
         "Internetforbindelse mistet"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "Anmodning om tilslutning udløb. Værten gav dig ikke adgang i tide. Send en ny anmodning om at tilslutte."
       ],
       "Joined ${ roomNameLabel }": [
         "Tilmeldte sig ${ roomNameLabel }"
@@ -3102,9 +2919,6 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Loop en uploadet video eller dit live kamera gennem baggrundssløring."
       ],
-      "Lost connection to the meeting server. Reconnecting…": [
-        "Forbindelsen til mødeserveren blev afbrudt. Genopretter forbindelse..."
-      ],
       "Lower participant's hand": [
         "Tag deltagerens hånd ned"
       ],
@@ -3128,9 +2942,6 @@
       ],
       "Meeting is decrypting...": [
         "Mødet dekrypteres..."
-      ],
-      "Meeting is full": [
-        "Mødet er fuldt"
       ],
       "Meeting link": [
         "Mødelink"
@@ -3174,9 +2985,6 @@
       "Microphone is starting": [
         "Mikrofonen bliver slået til"
       ],
-      "Microphone permission denied": [
-        "Mikrofontilladelse nægtet"
-      ],
       "More options": [
         "Flere muligheder"
       ],
@@ -3204,13 +3012,7 @@
       "No camera detected": [
         "Intet kamera registreret"
       ],
-      "No camera detected.": [
-        "Intet kamera registreret."
-      ],
       "No microphone detected": [
-        "Ingen mikrofon registreret"
-      ],
-      "No microphone detected.": [
         "Ingen mikrofon registreret"
       ],
       "No publications": [
@@ -3231,12 +3033,6 @@
       "No speaker detected": [
         "Ingen højttaler registreret"
       ],
-      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
-        "Støjreduktion blev slået fra, da din enhed oplever problemer med ydeevnen. Du kan slå den til igen i lydindstillinger."
-      ],
-      "Not sent, check your connection.": [
-        "Ikke sendt, tjek din forbindelse."
-      ],
       "notify everyone here": [
         "giv besked til alle"
       ],
@@ -3249,14 +3045,14 @@
       "Now using ${ first }.": [
         "Bruger nu ${ first }."
       ],
-      "Only a partial meeting recording was available.": [
-        "Kun en del af mødeoptagelsen var tilgængelig."
-      ],
       "Only meetings you created appear here": [
         "Kun møder oprettet af dig vises her"
       ],
       "Open external link": [
         "Åbn eksternt link"
+      ],
+      "Open the window you want to share, then try again.": [
+        "Åbn det vindue du vil dele, og prøv derefter igen."
       ],
       "Other accounts": [
         "Andre konti"
@@ -3285,17 +3081,11 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Indsæt dit ${ MEET_APP_NAME }-link for at deltage i et sikkert møde"
       ],
-      "Permissions not given.": [
-        "Tilladelser ikke givet."
-      ],
       "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
         "${ downloadLink } og installer appen, og klik derefter på Deltag i ${ MEET_APP_NAME }-appen igen."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Aktivér adgang til din ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for den bedste oplevelse."
-      ],
-      "Please try again or try another browser": [
-        "Prøv igen, eller brug en anden browser"
       ],
       "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
         "Opdater ${ MEET_APP_NAME } for at fortsætte med at bruge appen. ${ downloadUpdate }"
@@ -3320,12 +3110,6 @@
       ],
       "Reactions": [
         "Reaktioner"
-      ],
-      "Reconnected successfully": [
-        "Forbindelse genoprettet"
-      ],
-      "Reconnecting to meeting...": [
-        "Genskaber forbindelse til mødet..."
       ],
       "Reconnecting…": [
         "Genopretter forbindelsen…"
@@ -3426,6 +3210,9 @@
       "Sign in": [
         "Log ind"
       ],
+      "Something went wrong. Please try again.": [
+        "Noget gik galt. Prøv igen."
+      ],
       "Sort by": [
         "Sorter efter"
       ],
@@ -3444,6 +3231,9 @@
       "support team": [
         "supportteam"
       ],
+      "System Settings → Privacy & Security → Screen Recording": [
+        "Systemindstillinger → Anonymitet og sikkerhed → Optagelse af skærm"
+      ],
       "Thank you for hosting a premium meeting.": [
         "Tak for at afholde et premium-møde."
       ],
@@ -3455,9 +3245,6 @@
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Værten har fjernet dig fra dette møde. Hvis det var en fejl, kan du bede værten om at invitere dig igen."
-      ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Mødelinket, som du prøvede at åbne, eksisterer ikke eller er udløbet. Bekræft at linket er korrekt, eller start et nyt sikkert møde i stedet."
       ],
       "This conversation started before you joined.": [
         "Denne samtale startede, før du tilsluttede dig."
@@ -3473,9 +3260,6 @@
       ],
       "This meeting is being recorded": [
         "Dette møde optages"
-      ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Dette møde er låst. Kontakt værten for at deltage."
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Dette møde har nået tidsgrænsen for det gratis abonnement. Opgrader for at forlænge mødetiden i fremtidige møder."
@@ -3522,8 +3306,8 @@
       "Turn on camera": [
         "Slå kamera til"
       ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Kunne ikke genoprette forbindelsen til mødet. Tilslut dig igen eller forlad mødet."
+      "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
+        "Slå Firefox til i ${ settingsPath }. Genstart derefter Firefox og tilslut dig mødet igen."
       ],
       "unlimited meeting": [
         "ubegrænset møde"
@@ -3618,9 +3402,6 @@
       "You were removed from the meeting": [
         "Du blev fjernet fra mødet"
       ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "Du fik ikke adgang til dette møde. Du kan prøve at tilslutte igen, hvis du tror det var en fejl."
-      ],
       "You will leave the meeting. Others will continue.": [
         "Du forlader mødet. Andre fortsætter."
       ],
@@ -3632,24 +3413,6 @@
       ],
       "Your always available meeting room": [
         "Dit altid tilgængelige mødelokale"
-      ],
-      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
-        "Dine baggrunde kunne ikke indlæses, så en ny kan ikke tilføjes lige nu."
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Din browser har blokeret adgangen til dit kamera og din mikrofon. For at slå dem til skal du opdatere dine browserindstillinger og deltage i mødet igen."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Din browser har blokeret adgangen til dit kamera. For at slå det til skal du opdatere dine browserindstillinger og deltage i mødet igen."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Din browser har blokeret adgangen til din mikrofon. For at slå den til skal du opdatere dine browserindstillinger og deltage i mødet igen."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Din browser har blokeret for adgangen til skærmdeling. For at slå det til skal du opdatere dine browserindstillinger og deltage i mødet igen."
-      ],
-      "Your browser or device isn’t supported": [
-        "Din browser eller enhed understøttes ikke"
       ],
       "Your camera is still starting": [
         "Dit kamera bliver stadig slået til"
@@ -3786,6 +3549,12 @@
       "Enabled": [
         "Aktiveret"
       ],
+      "End date": [
+        "Slutdato"
+      ],
+      "End time": [
+        "Sluttidspunkt"
+      ],
       "Ended": [
         "Afsluttet"
       ],
@@ -3891,9 +3660,6 @@
       "Participants join after you approve them": [
         "Deltagere tilslutter sig efter du har godkendt dem"
       ],
-      "Password": [
-        "Adgangskode"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -3941,6 +3707,12 @@
       ],
       "Spoken language": [
         "Talt sprog"
+      ],
+      "Start date": [
+        "Startdato"
+      ],
+      "Start time": [
+        "Starttidspunkt"
       ],
       "Subscribed": [
         "Abonneret"
@@ -4126,11 +3898,6 @@
         "Gem og kopier link"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Din browser eller enhedssoftware understøtter ikke ${ MEET_APP_NAME }. ${ MEET_APP_NAME } kræver WebAssembly (Wasm) for at køre. Opdatér din browser eller enhed til en version, der understøtter Wasm, eller prøv at bruge en anden browser."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Da du er den eneste deltager i dette møde, vil mødet automatisk lukke. Ønsker du at blive i dette møde?"
@@ -4142,11 +3909,6 @@
       ],
       "Stay in the meeting": [
         "Bliv i mødet"
-      ]
-    },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Kunne ikke starte billede-i-billede"
       ]
     },
     "Meeting schedule": {
@@ -4222,9 +3984,6 @@
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
-      "Could not send feedback": [
-        "Kunne ikke sende feedback"
-      ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
@@ -4236,9 +3995,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "Tak. Din feedback er nu indsendt."
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "Du kan ikke give feedback for et møde, du ikke har deltaget i"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4568,9 +4324,6 @@
       "Constants": [
         "Konstanter"
       ],
-      "Couldn't prepare the recording": [
-        "Optagelsen kunne ikke forberedes"
-      ],
       "Create new room": [
         "Opret nyt rum"
       ],
@@ -4589,9 +4342,6 @@
       "Display": [
         "Visning"
       ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
       "Epoch": [
         "Epoch"
       ],
@@ -4600,6 +4350,9 @@
       ],
       "Error at epoch ${ log.epoch }": [
         "Fejl ved epoch ${ log.epoch }"
+      ],
+      "Firefox can’t record your screen": [
+        "Firefox kan ikke optage din skærm"
       ],
       "Help and feedback": [
         "Hjælp og feedback"
@@ -4615,9 +4368,6 @@
       ],
       "Info": [
         "Info"
-      ],
-      "Invalid meeting link": [
-        "Ugyldigt mødelink"
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
@@ -4680,6 +4430,9 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
+      "No screen or window found": [
+        "Der blev ikke fundet nogle skærme eller vinduer"
+      ],
       "Participant counts don’t match": [
         "Antallet af deltagere matcher ikke"
       ],
@@ -4728,6 +4481,9 @@
       "Schedule a meeting": [
         "Planlæg et møde"
       ],
+      "Screen share failed": [
+        "Skærmdeling fejlede"
+      ],
       "Screen share is blocked": [
         "Skærmdeling er blokeret"
       ],
@@ -4755,9 +4511,6 @@
       "Talk confidentially": [
         "Tal fortroligt"
       ],
-      "The host didn't admit you": [
-        "Værten gav dig ikke adgang"
-      ],
       "Time": [
         "Tid"
       ],
@@ -4766,6 +4519,9 @@
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
+      ],
+      "Verify it’s you": [
+        "Bekræft at det er dig"
       ],
       "Video and audio": [
         "Video og lyd"
@@ -4792,12 +4548,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Baggrundssløring understøttes ikke i din browser"
-      ],
-      "Background effects are not supported on your browser": [
-        "Baggrundseffekter understøttes ikke i din browser"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generér et nyt mødelink. Det nuværende link vil ophøre med at fungere."
       ],
@@ -4839,23 +4589,8 @@
       "Connection is taking longer than expected": [
         "Opretning af forbindelsen tager længere tid end forventet"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Ingen adgang til kamera eller mikrofon. Du kan prøve at aktivere dem igen fra mødekontrolelementerne."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Ingen adgang til kameraet. Du kan prøve at aktivere det igen fra mødekontrolelementerne."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Ingen adgang til mikrofonen. Du kan prøve at aktivere den igen fra mødekontrolelementerne."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "STUN UDP-forbindelse mislykkedes, prøver igen med TURN relay…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "STUN UDP-forbindelse fik timeout, forsøger med TURN-relay"
       ],
       "Trying another route…": [
         "Prøver en anden rute..."
