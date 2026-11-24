@@ -42,6 +42,11 @@ const deviceTrack = vi.hoisted(() => ({
 }));
 vi.mock('../../../utils/enableDeviceTrack', () => deviceTrack);
 
+const flags = vi.hoisted(() => ({ MeetDisableBuiltInBrowserNoiseCancellation: true }));
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: (name: keyof typeof flags) => flags[name],
+}));
+
 vi.mock('../../../processors/noise-cancellation/useIsNoiseCancellationDisabledByDefault', () => ({
     useIsNoiseCancellationDisabledByDefault: () => false,
 }));
@@ -383,4 +388,40 @@ describe('useAudioToggle — sharing the screen with audio', () => {
 
         expect(result.current.isAudioEnabled).toBe(true);
     });
+});
+
+describe('useAudioToggle — the browser noise suppression on the microphone', () => {
+    afterEach(() => {
+        vi.clearAllMocks();
+        noiseCancellationModel.isNative = false;
+        flags.MeetDisableBuiltInBrowserNoiseCancellation = true;
+        localStorage.clear();
+    });
+
+    it.each([
+        { flag: true, isNative: false, noiseCancellation: 'on', expected: false },
+        { flag: true, isNative: false, noiseCancellation: 'off', expected: false },
+        { flag: true, isNative: true, noiseCancellation: 'on', expected: true },
+        { flag: true, isNative: true, noiseCancellation: 'off', expected: true },
+        { flag: false, isNative: false, noiseCancellation: 'on', expected: true },
+        { flag: false, isNative: true, noiseCancellation: 'off', expected: true },
+    ])(
+        'is $expected on the first open with the flag $flag for a model with isNative $isNative and noise cancellation $noiseCancellation',
+        async ({ flag, isNative, noiseCancellation, expected }) => {
+            flags.MeetDisableBuiltInBrowserNoiseCancellation = flag;
+            noiseCancellationModel.isNative = isNative;
+            const { result } = setup({
+                track: createMicrophoneTrack({ captureTrackState: 'live', sentTrackState: 'live' }),
+                activeMicrophoneId: BUILT_IN_MICROPHONE.deviceId,
+            });
+
+            if (noiseCancellation === 'off') {
+                await act(async () => {
+                    await result.current.toggleNoiseFilter();
+                });
+            }
+
+            expect(result.current.initialMicrophoneNoiseSuppression).toBe(expected);
+        }
+    );
 });

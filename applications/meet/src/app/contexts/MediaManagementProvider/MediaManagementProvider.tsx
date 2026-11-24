@@ -252,10 +252,8 @@ export const MediaManagementProvider = ({
         reapplyBackgroundEffect,
     });
 
-    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
-        switchActiveDevice,
-        meetAudioContext
-    );
+    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled, initialMicrophoneNoiseSuppression } =
+        useAudioToggle(switchActiveDevice, meetAudioContext);
 
     const { permissionsLoading } = useDeviceManagement({ toggleAudio, toggleVideo, switchActiveDevice });
 
@@ -510,7 +508,7 @@ export const MediaManagementProvider = ({
             const audioConstraints = {
                 autoGainControl: true,
                 echoCancellation: true,
-                noiseSuppression: true,
+                noiseSuppression: initialMicrophoneNoiseSuppression,
             };
 
             const isPublished = await enableDeviceTrack(

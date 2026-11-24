@@ -23,6 +23,7 @@ import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import type { AudioTrackProcessor } from '../../../processors/noise-cancellation/types';
@@ -90,6 +91,12 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
         return isNoiseCancellationDisabledByDefault ? false : (persisted ?? true);
     });
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
+    const canDisableBuiltInNoiseSuppression = useFlag('MeetDisableBuiltInBrowserNoiseCancellation');
+    /**
+     * With the flag on, a non-native model opens the microphone without the browser's own noise suppression, also with
+     * noise cancellation off: off then means no noise suppression at all.
+     */
+    const initialMicrophoneNoiseSuppression = noiseCancellationModel.isNative || !canDisableBuiltInNoiseSuppression;
 
     const noiseFilterProcessor = useRef<AudioTrackProcessor | null>(null);
     /** Dedicated AudioContext for sample rate pinned models — only closed on unmount */
@@ -798,5 +805,5 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
 
     const isAudioEnabled = isMicrophoneEnabled && !getCurrentPublication()?.isMuted;
 
-    return { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled };
+    return { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled, initialMicrophoneNoiseSuppression };
 };

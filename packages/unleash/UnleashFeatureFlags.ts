@@ -380,6 +380,7 @@ enum MeetFeatureFlag {
     MeetDeepFilterNetMobile = 'MeetDeepFilterNetMobile',
     MeetDesktopMacSigningMigrationBanner = 'MeetDesktopMacSigningMigrationBanner',
     MeetDesktopScreenPickerEnabled = 'MeetDesktopScreenPickerEnabled',
+    MeetDisableBuiltInBrowserNoiseCancellation = 'MeetDisableBuiltInBrowserNoiseCancellation',
     MeetDtlnPerfMonitor = 'MeetDtlnPerfMonitor',
     MeetDynacast = 'MeetDynacast',
     MeetE2eeDebugStats = 'MeetE2eeDebugStats',
