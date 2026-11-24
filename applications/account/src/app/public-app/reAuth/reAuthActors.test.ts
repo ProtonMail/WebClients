@@ -1,6 +1,7 @@
 import { createActor, toPromise } from 'xstate';
 
 import { getSettings } from '@proton/shared/lib/api/settings';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettings';
@@ -21,27 +22,24 @@ vi.mock('./reAuthKeyPassword', () => ({
 
 const salts: KeySalt[] = [{ ID: 'key', KeySalt: 'salt' }];
 
-const getState = ({
-    reAuthType = 'offline',
-    offlineKey,
-    keys = [{ ID: 'key' }],
-}: {
-    reAuthType?: ReAuthState['reAuthType'];
-    offlineKey?: string;
-    keys?: { ID: string }[];
-}): ReAuthState => ({
-    session: { data: { offlineKey, User: { Keys: keys } } } as unknown as AuthSession,
-    reAuthType,
-});
+const state: ReAuthState = {
+    session: { data: { User: { Keys: [{ ID: 'key' }] } } } as unknown as AuthSession,
+    reAuthType: 'offline',
+};
 
 /** Runs the password step against an API whose settings say whether the keys share the password. */
-const submitPassword = (state: ReAuthState, passwordMode = SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE) => {
+const submitPassword = ({
+    needsKeys = true,
+    passwordMode = SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE,
+}: { needsKeys?: boolean; passwordMode?: SETTINGS_PASSWORD_MODE } = {}) => {
     const login = vi.fn(async () => {});
     const api = vi.fn(async ({ url }: { url: string }) =>
         url === getSettings().url ? { UserSettings: { Password: { Mode: passwordMode } } } : { KeySalts: salts }
     );
     const actors = createReAuthActors({ api: api as unknown as Api, preSubmit: async () => {}, login });
-    const output = toPromise(createActor(actors.submitPassword, { input: { state, password: 'password' } }).start());
+    const output = toPromise(
+        createActor(actors.submitPassword, { input: { state, password: 'password', needsKeys } }).start()
+    );
     return { output, login, api };
 };
 
@@ -51,12 +49,8 @@ describe('submitPassword', () => {
         mockHandleReAuthKeyPassword.mockReset();
     });
 
-    it.each([
-        ['a default re-authentication', getState({ reAuthType: 'default' })],
-        ['a session with an offline key', getState({ offlineKey: 'offline key' })],
-        ['an account without keys', getState({ keys: [] })],
-    ])('skips the key unlock for %s', async (_, state) => {
-        const { output, login, api } = submitPassword(state);
+    it('signs in without unlocking the keys when it does not need them', async () => {
+        const { output, login, api } = submitPassword({ needsKeys: false });
         await expect(output).resolves.toEqual({ unlockWithSalts: undefined });
         expect(mockSrpAuth).toHaveBeenCalledWith(expect.objectContaining({ credentials: { password: 'password' } }));
         expect(login).toHaveBeenCalledWith({ ...state.session, interruptions: ['reauth'] });
@@ -67,7 +61,7 @@ describe('submitPassword', () => {
     it('unlocks the keys with the password in one-password mode, then signs in', async () => {
         const unlocked = { data: { keyPassword: 'key password' } } as unknown as AuthSession;
         mockHandleReAuthKeyPassword.mockResolvedValue(unlocked);
-        const { output, login } = submitPassword(getState({}));
+        const { output, login } = submitPassword();
         await expect(output).resolves.toEqual({ unlockWithSalts: undefined });
         expect(mockHandleReAuthKeyPassword).toHaveBeenCalledWith(
             expect.objectContaining({ clearKeyPassword: 'password', salts })
@@ -76,7 +70,7 @@ describe('submitPassword', () => {
     });
 
     it('asks for the key password in two-password mode', async () => {
-        const { output, login } = submitPassword(getState({}), SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE);
+        const { output, login } = submitPassword({ passwordMode: SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE });
         await expect(output).resolves.toEqual({ unlockWithSalts: salts });
         expect(login).not.toHaveBeenCalled();
     });
@@ -84,8 +78,34 @@ describe('submitPassword', () => {
     it('signs nothing in with a wrong password', async () => {
         const error = new Error('Incorrect login credentials');
         mockSrpAuth.mockRejectedValue(error);
-        const { output, login } = submitPassword(getState({ reAuthType: 'default' }));
+        const { output, login } = submitPassword({ needsKeys: false });
         await expect(output).rejects.toBe(error);
         expect(login).not.toHaveBeenCalled();
+    });
+});
+
+describe('fetchMethod', () => {
+    const fetchMethod = (api: ReturnType<typeof vi.fn>) => {
+        const actors = createReAuthActors({ api: api as unknown as Api, preSubmit: async () => {}, login: vi.fn() });
+        return toPromise(createActor(actors.fetchMethod).start());
+    };
+
+    it('asks the API how the signed-in account authenticates', async () => {
+        const api = vi.fn(async () => ({ SSOChallengeToken: 'token' }));
+        await expect(fetchMethod(api)).resolves.toBe('idp');
+        expect(api).toHaveBeenCalledWith(
+            expect.objectContaining({ data: expect.objectContaining({ Intent: 'Auto', ReauthScope: 'locked' }) })
+        );
+        await expect(fetchMethod(vi.fn(async () => ({ Modulus: 'modulus' })))).resolves.toBe('password');
+    });
+
+    it('treats a switch to SSO as an SSO account', async () => {
+        const api = vi.fn(() =>
+            Promise.reject({
+                status: 422,
+                data: { Code: API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO, Error: 'Switch to SSO' },
+            })
+        );
+        await expect(fetchMethod(api)).resolves.toBe('idp');
     });
 });

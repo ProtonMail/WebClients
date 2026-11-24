@@ -5,7 +5,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { UserType } from '@proton/shared/lib/interfaces/User';
 
 import type { AuthSession } from '../authSession';
-import { reAuthStateMachine, selectAwaitingProvider, selectSubmitting } from './reAuthStateMachine';
+import { reAuthStateMachine, selectAwaitingProvider, selectMethod, selectSubmitting } from './reAuthStateMachine';
 import type { ReAuthState } from './reauthContainerState';
 
 const salts: KeySalt[] = [{ ID: 'key', KeySalt: 'salt' }];
@@ -29,6 +29,7 @@ const start = (
         unlockKeys: (input: { keyPassword: string; salts: KeySalt[] }) => Promise<void>;
         fetchSSOSalts: (cachedSalts: KeySalt[] | undefined) => Promise<KeySalt[] | undefined>;
         loginWithIdP: () => Promise<void>;
+        fetchMethod: () => Promise<'idp' | 'password'>;
     }> = {}
 ) => {
     const onError = vi.fn();
@@ -37,6 +38,7 @@ const start = (
         reAuthStateMachine.provide({
             actors: {
                 preSubmit: fromPromise(async () => {}),
+                fetchMethod: fromPromise(actors.fetchMethod ?? never),
                 submitPassword: fromPromise(actors.submitPassword ?? never),
                 unlockKeys: fromPromise(({ input }) => (actors.unlockKeys ?? never)(input)),
                 fetchSSOSalts: fromPromise(({ input }) => (actors.fetchSSOSalts ?? never)(input)),
@@ -118,5 +120,59 @@ describe('reAuthStateMachine', () => {
         await waitFor(actor, (state) => state.matches('awaitingPassword'));
         expect(actor.getSnapshot().context.backupPassword).toBe('');
         expect(onError).toHaveBeenCalled();
+    });
+
+    it('starts with the identity provider for a VPN-only SSO account, which has no keys', async () => {
+        const { actor } = start(getState({ ...ssoUser, Keys: [] }));
+        await waitFor(actor, selectAwaitingProvider);
+        actor.send({ type: 'idp.cancelled' });
+        expect(actor.getSnapshot().value).toBe('awaitingPassword');
+        expect(selectMethod(actor.getSnapshot())).toBe('idp');
+    });
+
+    // An admin signed in as a member: the admin authenticates with their own account
+    const adminSession: Partial<User> = {
+        OrganizationPrivateKey: 'organization key',
+        Keys: [{ ID: 'key' }] as User['Keys'],
+    };
+
+    it('starts with the identity provider when the admin uses SSO', async () => {
+        const { actor } = start(getState(adminSession), { fetchMethod: async () => 'idp' });
+        expect(selectMethod(actor.getSnapshot())).toBeUndefined();
+        await waitFor(actor, selectAwaitingProvider);
+    });
+
+    it('asks for the password when the admin does not use SSO, even on an SSO member', async () => {
+        const { actor } = start(getState({ ...adminSession, ...ssoUser }), { fetchMethod: async () => 'password' });
+        await waitFor(actor, (state) => state.matches('awaitingPassword'));
+        expect(selectMethod(actor.getSnapshot())).toBe('password');
+    });
+
+    it('falls back to the password, even on an SSO member, when the method fails to load', async () => {
+        const error = new Error('Network error');
+        const { actor, onError } = start(getState({ ...adminSession, ...ssoUser }), {
+            fetchMethod: () => Promise.reject(error),
+        });
+        await waitFor(actor, (state) => state.matches('awaitingPassword'));
+        expect(selectMethod(actor.getSnapshot())).toBe('password');
+        expect(onError).toHaveBeenCalledWith(error);
+    });
+
+    it.each([
+        ['an account with keys', getState({ Keys: [{ ID: 'key' }] as User['Keys'] }), true],
+        ['a default re-authentication', getState({ Keys: [{ ID: 'key' }] as User['Keys'] }, 'default'), false],
+        [
+            'a session with an offline key',
+            {
+                ...getState({ Keys: [{ ID: 'key' }] as User['Keys'] }),
+                session: { data: { offlineKey: {}, User: { Keys: [{ ID: 'key' }], Flags: {} } } } as AuthSession,
+            },
+            false,
+        ],
+        ['an account without keys', getState({}), false],
+        ['an admin signed in as a member', getState(adminSession), false],
+    ])('decides whether the password unlocks the keys for %s', (_, state, needsKeys) => {
+        const { actor } = start(state);
+        expect(actor.getSnapshot().context.needsKeys).toBe(needsKeys);
     });
 });

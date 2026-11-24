@@ -6,8 +6,6 @@ import { getAppHref, getClientID } from '../../apps/helper';
 import type { APP_CLIENT_IDS, APP_NAMES } from '../../constants';
 import { SSO_PATHS } from '../../constants';
 import type { Api } from '../../interfaces/Api';
-import type { User } from '../../interfaces/User';
-import { isSelf } from '../../user/helpers';
 import { SessionSource } from '../SessionInterface';
 import type { PushForkResponse } from '../interface';
 import type { ResumedSessionResult } from '../persistedSessionHelper';
@@ -287,11 +285,6 @@ export const getRequiredForkParameters = (
     return Boolean(forkParameters.app);
 };
 
-const getCanUserReAuth = (user: User) => {
-    // The reauth container doesn't support non-self
-    return isSelf(user);
-};
-
 const BYPASS_SESSION_MIN_AGE = 30_000; // 30 seconds
 export const getShouldReAuth = (
     forkParameters: Pick<ProduceForkParameters, 'prompt' | 'promptType' | 'promptBypass'>,
@@ -302,9 +295,6 @@ export const getShouldReAuth = (
     }
     // OAuth sessions are only allowed for the VPN browser extension at the moment. They cannot reauth.
     if (authSession.data.persistedSession.source === SessionSource.Oauth) {
-        return false;
-    }
-    if (!getCanUserReAuth(authSession.data.User)) {
         return false;
     }
     if (forkParameters.promptType === 'offline-bypass' && authSession.data.offlineKey) {

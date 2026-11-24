@@ -15,7 +15,6 @@ import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
 import { getAccessTypeFromMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { type Credentials, srpAuth } from '@proton/shared/lib/srp';
@@ -32,6 +31,7 @@ import PasswordInputTwo from '../../components/v2/input/PasswordInput';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { TwoFactorAuth, type TwoFactorAuthRef } from './TwoFactorAuth';
+import { getAuthPasswordCopy } from './getAuthPasswordCopy';
 import { getReAuthTwoFactorTypes } from './getReAuthTwoFactorTypes';
 import type { OwnAuthModalProps, SrpAuthModalResult } from './interface';
 
@@ -50,24 +50,7 @@ const PasswordForm = ({
 }) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [password, setPassword] = useState(defaultPassword);
-    const { label, info } = (() => {
-        if (accessType === AccessType.EmergencyAccess) {
-            return {
-                info: c('Info').t`Enter your own password (as trusted contact).`,
-                label: c('Label').t`Your password (trusted contact)`,
-            };
-        }
-        if (accessType === AccessType.AdminAccess) {
-            return {
-                info: c('Info').t`Enter your own password (as organization admin).`,
-                label: c('Label').t`Your password (admin)`,
-            };
-        }
-        return {
-            info: c('Info').t`To help keep your account safe, confirm it’s really you before continuing.`,
-            label: c('Label').t`${BRAND_NAME} Account password`,
-        };
-    })();
+    const { label, info } = getAuthPasswordCopy(accessType);
     return (
         <Form
             id={FORM_ID}

@@ -1,12 +1,15 @@
 /**
  * Re-authentication of a signed-in session before a fork: with the password (SRP), then the key password in
  * two-password mode, or for SSO accounts with the identity provider or the backup password. Each step ends with the
- * login, so a failure keeps the user on the step. `createReAuthActors` provides the actors.
+ * login, so a failure keeps the user on the step. An admin or delegated session signs in with the admin's or trusted
+ * contact's own account, so the machine first asks the API how that account signs in, and never unlocks keys.
+ * `createReAuthActors` provides the actors.
  */
 import { type SnapshotFrom, assertEvent, assign, emit, setup } from 'xstate';
 
 import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
-import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
+import { getIsSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
+import { isSelf } from '@proton/shared/lib/user/helpers';
 
 import { reportActorError, unprovidedActors } from '../sign-in/state-machine/machineHelpers';
 import type { ReAuthActors } from './reAuthActors';
@@ -22,13 +25,41 @@ export type ReAuthEvent =
 
 export type ReAuthEmitted = { type: 'error'; error: unknown };
 
+export type ReAuthMethod = 'password' | 'idp' | 'backupPassword';
+
 interface ReAuthContext {
     state: ReAuthState;
     /** The key salts, once fetched. */
     salts: KeySalt[] | undefined;
     /** The backup password: unlike the sign-in's, it's kept in context to outlive the identity provider's step. */
     backupPassword: string;
+    /** How the user re-authenticates; undefined while an admin or delegated session asks the API. */
+    method: ReAuthMethod | undefined;
+    /** Whether the password re-authentication unlocks the keys, see `getNeedsKeys`. */
+    needsKeys: boolean;
 }
+
+/**
+ * How the account's own user re-authenticates. An SSO account uses its backup password when the fork needs its keys,
+ * and the identity provider otherwise or when it has no keys (VPN only).
+ */
+const getOwnMethod = ({ session, reAuthType }: ReAuthState): ReAuthMethod => {
+    const { User } = session.data;
+    if (!getIsSSOAccount(User)) {
+        return 'password';
+    }
+    return reAuthType === 'default' || getIsSSOVPNOnlyAccount(User) ? 'idp' : 'backupPassword';
+};
+
+/**
+ * Whether a password re-authentication has to unlock the keys: the fork needs them, the session doesn't keep them in an
+ * offline key, and the password is this account's own (an admin's or trusted contact's doesn't unlock its keys).
+ */
+const getNeedsKeys = ({ session, reAuthType }: ReAuthState) =>
+    reAuthType !== 'default' &&
+    isSelf(session.data.User) &&
+    !session.data.offlineKey &&
+    session.data.User.Keys.length > 0;
 
 enum ReAuthStateMachineTags {
     /** A request runs; the form shows its loading state. */
@@ -47,6 +78,7 @@ export const reAuthStateMachine = setup({
     },
     actors: unprovidedActors<ReAuthActors>({
         preSubmit: true,
+        fetchMethod: true,
         submitPassword: true,
         unlockKeys: true,
         fetchSSOSalts: true,
@@ -58,21 +90,43 @@ export const reAuthStateMachine = setup({
         assignSalts: assign((_, { salts }: { salts: KeySalt[] | undefined }) => ({ salts })),
         assignBackupPassword: assign((_, { backupPassword }: { backupPassword: string }) => ({ backupPassword })),
         forgetBackupPassword: assign({ backupPassword: '' }),
+        assignMethod: assign((_, { method }: { method: ReAuthMethod }) => ({ method })),
     },
     guards: {
-        /** SSO accounts that re-authenticate with the identity provider start with it. */
-        startsWithIdP: ({ context: { state } }) =>
-            getIsGlobalSSOAccount(state.session.data.User) &&
-            (state.reAuthType === 'default' || getIsSSOVPNOnlyAccount(state.session.data.User)),
+        hasNoMethod: ({ context }) => context.method === undefined,
+        usesIdP: ({ context }) => context.method === 'idp',
         hasSalts: (_, { salts }: { salts: KeySalt[] | undefined }) => salts !== undefined,
     },
 }).createMachine({
     id: 'reAuth',
     initial: 'starting',
-    context: ({ input }) => ({ state: input, salts: undefined, backupPassword: '' }),
+    context: ({ input }) => ({
+        state: input,
+        salts: undefined,
+        backupPassword: '',
+        method: isSelf(input.session.data.User) ? getOwnMethod(input) : undefined,
+        needsKeys: getNeedsKeys(input),
+    }),
     states: {
         starting: {
-            always: [{ guard: 'startsWithIdP', target: 'withIdP' }, { target: 'awaitingPassword' }],
+            always: [
+                { guard: 'hasNoMethod', target: 'fetchingMethod' },
+                { guard: 'usesIdP', target: 'withIdP' },
+                { target: 'awaitingPassword' },
+            ],
+        },
+        fetchingMethod: {
+            invoke: {
+                src: 'fetchMethod',
+                onDone: {
+                    target: 'starting',
+                    actions: { type: 'assignMethod', params: ({ event }) => ({ method: event.output }) },
+                },
+                onError: {
+                    target: 'starting',
+                    actions: [{ type: 'assignMethod', params: { method: 'password' } }, reportActorError],
+                },
+            },
         },
         awaitingPassword: {
             on: {
@@ -93,7 +147,7 @@ export const reAuthStateMachine = setup({
                 src: 'submitPassword',
                 input: ({ context, event }) => {
                     assertEvent(event, 'password.submitted');
-                    return { state: context.state, password: event.password };
+                    return { state: context.state, password: event.password, needsKeys: context.needsKeys };
                 },
                 // Signed in, or the keys have their own password
                 onDone: {
@@ -204,3 +258,6 @@ export const selectSubmitting = (snapshot: ReAuthSnapshot) => snapshot.hasTag(Re
 /** The SSO modal shows: the identity provider authenticates the session. */
 export const selectAwaitingProvider = (snapshot: ReAuthSnapshot) =>
     snapshot.hasTag(ReAuthStateMachineTags.awaitingProvider);
+
+/** How the user re-authenticates; undefined while it loads. */
+export const selectMethod = (snapshot: ReAuthSnapshot) => snapshot.context.method;

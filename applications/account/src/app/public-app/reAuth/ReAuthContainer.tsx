@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
+import { Loader } from '@proton/atoms/Loader/Loader';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
@@ -15,15 +16,16 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import SSOAuthModal from '@proton/components/containers/password/SSOAuthModal';
+import { getAuthPasswordCopy } from '@proton/components/containers/password/getAuthPasswordCopy';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryUnlock } from '@proton/shared/lib/api/user';
+import { getAccessTypeFromMask, getSessionAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
 
 import type { OnLoginCallback } from '../authSession';
 import PublicUserItem from '../components/PublicUserItem';
@@ -39,16 +41,18 @@ import { PublicAppContext } from '../state-machine/PublicAppContext';
 import { selectPaths, selectPreAppIntent } from '../state-machine/publicAppStateMachine';
 import { runLogin } from '../state-machine/runLogin';
 import { createReAuthActors } from './reAuthActors';
-import { reAuthStateMachine, selectAwaitingProvider, selectSubmitting } from './reAuthStateMachine';
+import { reAuthStateMachine, selectAwaitingProvider, selectMethod, selectSubmitting } from './reAuthStateMachine';
 import type { ReAuthState } from './reauthContainerState';
 
 interface SrpFormProps {
+    label: string;
+    info: string | null;
     onSubmit: (password: string) => void;
     submitting: boolean;
     below: ReactNode;
 }
 
-const SrpForm = ({ onSubmit, submitting, below }: SrpFormProps) => {
+const SrpForm = ({ label, info, onSubmit, submitting, below }: SrpFormProps) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
     const [password, setPassword] = useState('');
@@ -66,10 +70,11 @@ const SrpForm = ({ onSubmit, submitting, below }: SrpFormProps) => {
             }}
             method="post"
         >
+            {info && <div className="mt-2 mb-4 text-left">{info}</div>}
             <InputFieldTwo
                 id="password"
                 bigger
-                label={c('Label').t`Password`}
+                label={label}
                 error={validator([requiredValidator(password)]) || !!errorMsg}
                 as={PasswordInputTwo}
                 disableChange={submitting}
@@ -81,10 +86,7 @@ const SrpForm = ({ onSubmit, submitting, below }: SrpFormProps) => {
                 onChange={() => setErrorMsg(null)}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-4">
-                {
-                    // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
-                    submitting ? c('Action').t`Signing in` : c('Action').t`Sign in`
-                }
+                {c('Action').t`Continue`}
             </Button>
             {below}
         </form>
@@ -128,6 +130,7 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
 
     const srpLoginForm = (
         <SrpForm
+            {...getAuthPasswordCopy(getAccessTypeFromMask(getSessionAccessTypeMask(User)))}
             onSubmit={(password) => send({ type: 'password.submitted', password })}
             submitting={submitting}
             below={
@@ -167,29 +170,30 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
         />
     );
 
-    const ssoLoginForm =
-        state.reAuthType === 'default' || getIsSSOVPNOnlyAccount(state.session.data.User) ? (
-            <div className="mt-4">
-                <Button
-                    size="large"
-                    color="norm"
-                    type="submit"
-                    fullWidth
-                    loading={submitting}
-                    onClick={() => send({ type: 'idp.started' })}
-                >
-                    {c('Action').t`Continue`}
-                </Button>
-            </div>
-        ) : (
-            <SSOBackupPasswordForm
-                submitting={submitting}
-                onSubmit={(keyPassword) => send({ type: 'backupPassword.submitted', keyPassword })}
-            />
-        );
+    const idpForm = (
+        <div className="mt-4">
+            <Button
+                size="large"
+                color="norm"
+                type="submit"
+                fullWidth
+                loading={submitting}
+                onClick={() => send({ type: 'idp.started' })}
+            >
+                {c('Action').t`Continue`}
+            </Button>
+        </div>
+    );
+
+    const backupPasswordForm = (
+        <SSOBackupPasswordForm
+            submitting={submitting}
+            onSubmit={(keyPassword) => send({ type: 'backupPassword.submitted', keyPassword })}
+        />
+    );
 
     const user = (
-        <div className="p-3 flex items-start w-full text-left rounded relative">
+        <div className="py-3 flex items-start w-full text-left rounded relative">
             <span className="flex user-initials rounded bg-primary">
                 <span className="m-auto text-semibold" aria-hidden="true">
                     {initials}
@@ -206,7 +210,16 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
         </div>
     );
 
-    const initialForm = getIsGlobalSSOAccount(User) ? ssoLoginForm : srpLoginForm;
+    const method = selectMethod(snapshot);
+    const form = (() => {
+        if (!method) {
+            return <Loader />;
+        }
+        if (snapshot.matches('awaitingUnlockPassword') || snapshot.matches('unlocking')) {
+            return unlockForm;
+        }
+        return { password: srpLoginForm, idp: idpForm, backupPassword: backupPasswordForm }[method];
+    })();
 
     return (
         <>
@@ -245,12 +258,10 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
                 hasDecoration={false}
             >
                 <Main>
-                    <Header title={c('Action').t`Sign in`} />
+                    <Header title={c('Title').t`Verify it’s you`} />
                     <Content className="text-center">
                         {user}
-                        {snapshot.matches('awaitingUnlockPassword') || snapshot.matches('unlocking')
-                            ? unlockForm
-                            : initialForm}
+                        {form}
                     </Content>
                 </Main>
             </Layout>
