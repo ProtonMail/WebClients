@@ -12,6 +12,8 @@ export type OpenResolution =
    * `downloadOnOpen`: Drive's Download of a public link, as for a member's document.
    */
   | { kind: 'openPublicLink'; token: string; downloadOnOpen?: true }
+  /** The window a public page opens for Create a copy, which gets the document from its opener */
+  | { kind: 'copyPublic' }
   | { kind: 'redirect'; to: 'public' }
   | { kind: 'error'; reason: 'invalidUrl' | 'slackTruncated' | 'unsupported' }
 
@@ -53,9 +55,10 @@ export function resolveOpenAction(openAction: DocumentAction | null, search: str
       return { kind: 'openPublicLink', token: openAction.token }
     case 'open-url-download':
       return { kind: 'openPublicLink', token: openAction.token, downloadOnOpen: true }
-    // Not in doc2 yet: conversion and a public document's copy
-    case 'convert':
     case 'copy-public':
+      return { kind: 'copyPublic' }
+    // Not in doc2 yet: conversion
+    case 'convert':
       return { kind: 'error', reason: 'unsupported' }
   }
 }

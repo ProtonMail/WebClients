@@ -18,6 +18,7 @@ import { DocumentViewerV2 } from './__components/DocumentViewerV2'
 import { useEmailOptInModal } from '../doc/__components/EmailOptInModal/EmailOptInModal'
 import { LoadingScreen } from './__components/LoadingScreen'
 import { OpenActionError } from './__components/OpenActionError'
+import { PublicDocumentCopier } from './__components/PublicDocumentCopier'
 import { DocsLoadMark, markDocsLoad } from './__utils/loadMarks'
 import { getPublicLinkUrl } from './__utils/publicLink'
 import { loggableResolution, resolveOpenAction } from './__utils/resolveOpenAction'
@@ -121,6 +122,8 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
           />
         )
       }
+      case 'copyPublic':
+        return <PublicDocumentCopier driveCompat={driveCompat} />
       case 'redirect':
         return <DocumentShell header={null} loadingScreen={<LoadingScreen status="redirecting" />} />
     }
