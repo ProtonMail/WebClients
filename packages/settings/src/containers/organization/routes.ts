@@ -72,6 +72,7 @@ export const getOrganizationAppRoutes = ({
         isRetentionPoliciesEnabled = false,
         isLumoApiEnabled = false,
         isServiceAccountsEnabled = false,
+        isMemberResetEnabled = false,
     } = flags;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
@@ -467,6 +468,15 @@ export const getOrganizationAppRoutes = ({
                         c('Label').t`Minimum number of characters`,
                         c('Label').t`Special characters`,
                         c('Label').t`Common passwords`,
+                    ],
+                },
+                {
+                    text: c('Title').t`Account recovery`,
+                    id: 'account-recovery',
+                    available: isMemberResetEnabled,
+                    keywords: [
+                        c('Label').t`Require admin approval`,
+                        c('account_search_index').t`Reset member password`,
                     ],
                 },
                 {

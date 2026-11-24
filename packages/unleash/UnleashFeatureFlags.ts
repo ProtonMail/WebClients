@@ -29,6 +29,8 @@ enum AccountFeatureFlag {
     EduGainSSO = 'EduGainSSO',
     EnableZenDeskAIAgent = 'EnableZenDeskAIAgent',
     MailTrialOffer = 'MailTrialOffer',
+    MemberResetLink = 'MemberResetLink',
+    MemberResetSendReminder = 'MemberResetSendReminder',
     PassAccountNewOnboarding = 'PassAccountNewOnboarding',
     PassPolicyStorePasskey = 'PassPolicyStorePasskey',
     PassPolicyStoreTotp = 'PassPolicyStoreTotp',

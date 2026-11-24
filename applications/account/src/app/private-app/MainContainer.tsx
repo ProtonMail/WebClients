@@ -119,6 +119,7 @@ const MainContainerContent = () => {
         (useFlag('CryptoPostQuantumOptIn') && user.isPrivate) || !!userSettings.Flags.SupportPgpV6Keys;
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
+    const isMemberResetEnabled = useFlag('MemberResetLink');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isReferralB2C2BEnabled = useFlag('ReferralProgramB2C2B');
     const isLumoApiEnabled = useFlag('LumoAPIKeyManagement');
@@ -217,6 +218,7 @@ const MainContainerContent = () => {
         isReferralBusinessEnabled: isReferralProgramEnabled && isReferralB2C2BEnabled,
         isDriveEasySwitchNewUIEnabled,
         showSignInRestrictionToggle,
+        isMemberResetEnabled,
     };
 
     const routes = getRoutes({
