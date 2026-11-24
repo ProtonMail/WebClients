@@ -150,6 +150,55 @@ describe('DocumentTitleMenu', () => {
     },
   )
 
+  describe("a public visitor's Rename", () => {
+    test('shows while the share link allows it, asked each time the menu opens, and renames through it', async () => {
+      let allowed = true
+      const rename = vi.fn(async (name: string) => name)
+      await openMenu('Editor', { isPublic: true, publicRename: { isAllowed: () => allowed, rename } })
+
+      expect(menuItemNames()).toEqual([
+        'Rename document',
+        'Word count',
+        'Hide table of contents',
+        'Print',
+        'Download',
+        'Copy as markdown',
+        'Help',
+        'Open Proton Drive',
+        'Download logs',
+      ])
+
+      await userEvent.click(menuItem('Rename document'))
+      await userEvent.clear(screen.getByTestId('rename-input'))
+      await userEvent.type(screen.getByTestId('rename-input'), 'Roadmap{Enter}')
+
+      await waitFor(() => expect(rename).toHaveBeenCalledWith('Roadmap'))
+      expect(renameNode).not.toHaveBeenCalled()
+      expect(getAvailableName).not.toHaveBeenCalled()
+      await waitFor(() => expect(screen.getByTestId('document-name-dropdown')).toHaveTextContent(/^Roadmap$/))
+
+      allowed = false
+      await userEvent.click(screen.getByTestId('document-name-dropdown'))
+      expect(menuItemNames()).not.toContain('Rename document')
+    })
+
+    test('a failed rename through the share link rolls back the name', async () => {
+      const rename = vi.fn(async () => {
+        throw new Error('Edit window is over')
+      })
+      await openMenu('Editor', { isPublic: true, publicRename: { isAllowed: () => true, rename } })
+
+      await userEvent.click(menuItem('Rename document'))
+      await userEvent.clear(screen.getByTestId('rename-input'))
+      await userEvent.type(screen.getByTestId('rename-input'), 'Roadmap{Enter}')
+
+      await waitFor(() =>
+        expect(mockCreateNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' })),
+      )
+      expect(screen.getByTestId('document-name-dropdown')).toHaveTextContent(/^Plans$/)
+    })
+  })
+
   test('New spreadsheet needs sheets enabled', async () => {
     mockIsSheetsEnabled = false
 

@@ -52,6 +52,9 @@ vi.mock('./__components/BootstrapErrorPage', () => ({
     </div>
   ),
 }))
+// The visitor's addresses, for the title menu's Rename, come from the account store
+const mockGetAddresses = vi.fn(async (): Promise<{ Email: string }[]> => [])
+vi.mock('@proton/account/addresses/hooks', () => ({ useGetAddresses: () => mockGetAddresses }))
 const mockCreateSession = vi.fn()
 vi.mock('./__utils/usePublicRealtimeClient', () => ({
   usePublicRealtimeClient: () => ({ createSession: mockCreateSession }),

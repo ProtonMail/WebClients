@@ -164,7 +164,10 @@ async function openPublicLink(
   // This enables metrics to work for both auth and un-auth customers
   metrics.setAuthHeaders(uid, accessToken)
   const rootNode = await publicDrive.getRootNode()
-  return { publicDrive, linkInfo: toLinkInfo(rootNode, linkIdParam, isAnonymousContext, hasRootDirectAccess) }
+  return {
+    publicDrive,
+    linkInfo: { ...toLinkInfo(rootNode, linkIdParam, isAnonymousContext, hasRootDirectAccess), customPassword },
+  }
 }
 
 function toLinkInfo(

@@ -1,0 +1,143 @@
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import DriveLogo from '@proton/components/components/logo/DriveLogo'
+import Form from '@proton/components/components/form/Form'
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField'
+import ModalTwo from '@proton/components/components/modalTwo/Modal'
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader'
+import { useApi } from '@proton/app-context/useApi'
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
+import { useEffect, useState } from 'react'
+
+import { c } from 'ttag'
+
+import { Button } from '@proton/atoms/Button/Button'
+import { IcGift } from '@proton/icons/icons/IcGift'
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
+import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user'
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
+import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
+
+import { RedirectAction } from '@proton/docs-shared/DocumentAction'
+import { useDocsUrlPublicToken } from '@proton/docs-shared/Hooks/useDocsUrlPublicToken'
+import { Actions, countActionWithTelemetry } from '~/components/document/public/telemetry'
+import { redirectToSignIn, redirectToSignUp } from '../__utils/publicRedirects'
+
+/**
+ * Copied from `applications/docs/src/app/components/document/public/SignupFlowModal.tsx`, whose redirects' file imports
+ * docs-core's types: it redirects through doc2's copies, back to the public page's own path.
+ */
+export type SignupFlowModalProps = ModalStateProps & {
+  urlPassword: string
+  redirectAction: RedirectAction
+  openInNewTab?: boolean
+}
+
+export function SignupFlowModal({
+  urlPassword,
+  onClose,
+  redirectAction,
+  openInNewTab = true,
+  ...modalProps
+}: SignupFlowModalProps) {
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState('')
+  const api = useApi()
+  const { token, linkId } = useDocsUrlPublicToken()
+
+  useEffect(() => {
+    void countActionWithTelemetry(Actions.ViewSignUpFlowModal)
+  }, [])
+
+  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value)
+    setError(emailValidator(e.target.value))
+  }
+
+  /*
+   * Sign-up flow: Redirect to /shared-with-me, then auto-add bookmarks in MainContainer.tsx
+   * Sign-in flow: Auto-add bookmarks in MainContainer.tsx and redirect back to public page
+   */
+  const handleSubmit = async () => {
+    try {
+      void countActionWithTelemetry(Actions.SubmitSignUpFlowModal)
+      const { Code } = await api({
+        ...queryCheckEmailAvailability(email),
+        silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
+      })
+      // Email is verified and available to use
+      // We redirect to Docs signup
+      if (Code === 1000) {
+        await redirectToSignUp({ action: redirectAction, token, email, linkId, urlPassword, openInNewTab })
+      }
+    } catch (err) {
+      const { code, message } = getApiError(err)
+      // Email is already in use or if user pass proton domain we redirect to SIGN_IN
+      if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code || API_CUSTOM_ERROR_CODES.NOT_ALLOWED === code) {
+        await redirectToSignIn({
+          action: redirectAction,
+          token,
+          email,
+          linkId,
+          urlPassword,
+          openInNewTab,
+        })
+        return
+      }
+      // Other errors we show the error message
+      setError(message || c('Error').t`Email is not valid`)
+    }
+  }
+
+  return (
+    <ModalTwo
+      as={Form}
+      onSubmit={handleSubmit}
+      enableCloseWhenClickOutside
+      onClose={() => {
+        void countActionWithTelemetry(Actions.DismissSignUpFlowModal)
+        onClose()
+      }}
+      size="small"
+      {...modalProps}
+      data-testid="public-doc-sign-in"
+    >
+      <ModalTwoHeader
+        title={
+          <div className="flex-column mb-1 flex">
+            <DriveLogo variant="glyph-only" size={12} />
+            {redirectAction === RedirectAction.MakeCopy
+              ? c('Title').t`Make a copy to your ${DRIVE_APP_NAME}`
+              : c('Title').t`Save it for later in ${DRIVE_APP_NAME}`}
+          </div>
+        }
+        subline={c('Info').t`Keep your files secure with end-to-end encryption.`}
+      />
+      <ModalTwoContent className="mt-4">
+        <InputFieldTwo
+          data-testid="public-share-signup-modal-email"
+          id="public-share-signup-modal-email"
+          label={c('Label').t`Log in or sign up `}
+          onChange={handleChangeEmail}
+          placeholder={c('Placeholder').t`Email`}
+          type="email"
+          error={error}
+          value={email}
+        />
+        <span className="flex items-center gap-1">
+          <IcGift className="color-primary" />
+          {c('Info').t`Free 5GB encrypted storage to get started`}
+        </span>
+      </ModalTwoContent>
+      <ModalTwoFooter className="flex-column flex items-center">
+        <Button color="norm" size="large" type="submit" fullWidth={true}>{c('Action').t`Continue`}</Button>
+      </ModalTwoFooter>
+    </ModalTwo>
+  )
+}
+
+export function useSignupFlowModal() {
+  return useModalTwoStatic(SignupFlowModal)
+}

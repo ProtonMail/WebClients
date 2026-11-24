@@ -1,5 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
 
+import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useConfig } from '@proton/app-context/useConfig'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { AnonymousUserDisplayName } from '@proton/docs-shared/AnonymousUser'
@@ -32,6 +33,7 @@ import {
   getPublicDocumentRole,
   hasAccessOfOwn,
 } from '../__utils/publicLink'
+import { canRenamePublicDocument, renamePublicDocument } from '../__utils/publicRename'
 import { sendEditorBasics, getUserName, useEditorBasicsInSync, useIsEditorDarkMode } from '../__utils/useEditorBasics'
 import { useDocumentLoader } from '../__utils/useDocumentLoader'
 import { useLeaveWarning } from '../__utils/useLeaveWarning'
@@ -48,7 +50,9 @@ import { DocumentSizeLimitModal } from './DocumentSizeLimitModal'
 import { IdleActivityCatcher } from './IdleActivityCatcher'
 import { LoadingScreen } from './LoadingScreen'
 import { OpenActionError } from './OpenActionError'
+import { PublicHeaderOptions } from './PublicHeaderOptions'
 import { SessionStatus } from './SessionStatus'
+import { useWelcomeSplashModal } from './WelcomeSplashModal'
 import { WordCountOverlay, useWordCountState } from './WordCount'
 
 export type PublicDocumentViewerProps = {
@@ -70,7 +74,8 @@ export type PublicDocumentViewerProps = {
  * Opens a document through a share link, as `DocumentViewerV2` opens a member's, through the Loader with public
  * dependencies (`documentation/specs/doc2-public-links.md` in the realtime repo). An editor link edits live while
  * public editing is on; otherwise the visitor views the latest commit read-only and nothing connects. A viewer's editor
- * is in public view, as on /doc. The header is doc2's, without the member-only items, the user menu and the banner.
+ * is in public view, as on /doc, and a click on its toolbar opens the welcome splash. The header is doc2's, with /doc's
+ * public options in place of the member's, and the title menu without the member-only items.
  */
 export function PublicDocumentViewer({
   token,
@@ -87,6 +92,8 @@ export function PublicDocumentViewer({
   const client = usePublicRealtimeClient(handoff)
   const [wordCount, setWordCountInfo] = useWordCountState()
   const [modal, showModal] = useGenericAlertModal()
+  const [splashModal, openSplashModal] = useWelcomeSplashModal()
+  const addresses = useVisitorAddresses(handoff.user)
   const { toggleDebugMode } = useDebugMode()
   const isDarkMode = useIsEditorDarkMode()
   const userName = handoff.user ? getUserName(handoff.user) : AnonymousUserDisplayName
@@ -122,6 +129,13 @@ export function PublicDocumentViewer({
   const isEditorLink = getCanWrite(handoff.linkInfo.permissions)
   // Known before the Loader reads the node, so the editor frame boots in the right mode
   const linkRole = getPublicDocumentRole({ isEditorLink, publicEditing })
+  // Adapted from `applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx`, its splash for a
+  // public viewer's toolbar click
+  const onToolbarClicked = useEvent(() => {
+    if (linkRole === 'Viewer') {
+      openSplashModal({})
+    }
+  })
   // The viewer is keyed by the document, so these never change for it
   const [loaderDeps] = useState<LoaderDeps>(() => ({
     publicLink: {
@@ -142,6 +156,7 @@ export function PublicDocumentViewer({
       showModal: onShowModal,
       onFileMenuAction,
       onPresenceUpdate,
+      onToolbarClicked,
       // As /doc's public view, which has no image proxy: an export leaves external images out
       fetchExternalImageAsBase64: async () => undefined,
       logger,
@@ -215,6 +230,25 @@ export function PublicDocumentViewer({
       isMakingACopy={false}
       onFileMenuAction={onFileMenuAction}
       isPublic
+      publicRename={{
+        isAllowed: () =>
+          canRenamePublicDocument({
+            node,
+            isSharedUrlAFolder: handoff.linkInfo.isSharedUrlAFolder,
+            isEditor: linkRole === 'Editor',
+            addresses,
+          }),
+        rename: (name) => renamePublicDocument(handoff.publicDrive, node, name),
+      }}
+      publicOptions={
+        <PublicHeaderOptions
+          participants={snapshot?.participants ?? []}
+          editorInvoker={editorInvoker}
+          role={role}
+          user={handoff.user}
+          linkInfo={handoff.linkInfo}
+        />
+      }
       status={
         editorInvoker && liveSession && snapshot && <SessionStatus snapshot={snapshot} onRetry={retryConnection} />
       }
@@ -246,6 +280,7 @@ export function PublicDocumentViewer({
         </div>
         {revealed && <WordCountOverlay wordCount={wordCount} />}
         {modal}
+        {splashModal}
         <DocumentSizeLimitModal
           session={liveSession}
           onDownloadCopy={exportInvoker && (() => onFileMenuAction({ type: 'download', format: 'docx' }))}
@@ -253,6 +288,27 @@ export function PublicDocumentViewer({
       </div>
     </DocumentShell>
   )
+}
+
+/** The signed-in visitor's addresses, which tell the documents they created; undefined for an anonymous visitor */
+function useVisitorAddresses(user: PublicDocumentViewerProps['handoff']['user']): string[] | undefined {
+  const getAddresses = useGetAddresses()
+  const { logger } = useApplication()
+  const [addresses, setAddresses] = useState<string[]>()
+  useEffect(() => {
+    if (!user) {
+      return
+    }
+    let current = true
+    getAddresses().then(
+      (loaded) => current && setAddresses(loaded.map(({ Email }) => Email)),
+      (error) => logger.warn("Failed to load the visitor's addresses", error),
+    )
+    return () => {
+      current = false
+    }
+  }, [getAddresses, logger, user])
+  return addresses
 }
 
 function saveExport(

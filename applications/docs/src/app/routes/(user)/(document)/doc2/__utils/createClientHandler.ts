@@ -3,6 +3,7 @@ import type {
   FileMenuAction,
 } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
+import { EditorEvent } from '@proton/docs-shared/Bridge/EditorEvent'
 import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/WordCountTypes'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { FeatureFlag } from '@proton/unleash/Flags'
@@ -28,6 +29,8 @@ export type ClientHandlerDependencies = {
   /** Where the editor's awareness broadcasts go */
   onPresenceUpdate: (update: Uint8Array<ArrayBuffer>) => void
   fetchExternalImageAsBase64: (url: string) => Promise<string | undefined>
+  /** The user clicked the editor's toolbar, which a public viewer's editor reports */
+  onToolbarClicked?: () => void
   /** The session's comment threads; undefined for a viewer, who has none */
   comments: SessionComments | undefined
   logger: LoggerInterface
@@ -50,6 +53,7 @@ export function createClientHandler({
   onFileMenuAction,
   onPresenceUpdate,
   fetchExternalImageAsBase64,
+  onToolbarClicked,
   comments,
   logger,
 }: ClientHandlerDependencies): ClientHandler {
@@ -90,7 +94,11 @@ export function createClientHandler({
     },
     handleAwarenessStateUpdate: async () => {},
 
-    editorReportingEvent: async () => {},
+    editorReportingEvent: async (event) => {
+      if (event === EditorEvent.ToolbarClicked) {
+        onToolbarClicked?.()
+      }
+    },
     editorReportingTelemetry: async () => {},
     reportWordCount: async (wordCount) => onWordCount(wordCount),
     updateFrameSize: (size) => {

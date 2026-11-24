@@ -23,6 +23,8 @@ export type PublicLinkHandoff = {
     volumeId: string
     permissions: SHARE_URL_PERMISSIONS
     isSharedUrlAFolder: boolean
+    /** The link's custom password, which the visitor typed on the password page; undefined for a link without one */
+    customPassword?: string
     /** Whether a signed-in visitor can reach the document as a member; undefined when only Drive can tell */
     hasDirectAccess: boolean | undefined
   }
@@ -79,14 +81,17 @@ export function getPrivateDocumentUrl({ volumeId, linkId }: PrivateNodeMeta, loc
 }
 
 /**
- * The public link's URL in doc2, `/doc2?mode=open-url`, for a return from sign-in. Adapted from
- * `applications/docs/src/app/utils/docs-url-bar.tsx`, its `navigateToAction` for a public action, which names `/doc`.
+ * The public link's URL in doc2, `/u/<n>/doc2?mode=open-url`, for a return from sign-in, sign-up or the account
+ * switcher. Adapted from `applications/docs/src/app/utils/docs-url-bar.tsx`, its `navigateToAction` for a public action,
+ * which names `/doc`. Unlike it, the user app's local id stays, so the public app opens the link under the account the
+ * visitor just chose, not the one it last opened the link under.
  */
 export function getPublicLinkUrl(
   action: Extract<DocumentAction, { mode: 'open-url-reauth' }>,
   urlPassword: string,
 ): string {
-  const url = new URL(DOCUMENT_V2_PATH, window.location.origin)
+  const localPrefix = window.location.pathname.match(/^\/u\/\d+/)?.[0] ?? ''
+  const url = new URL(`${localPrefix}${DOCUMENT_V2_PATH}`, window.location.origin)
   url.searchParams.set('mode', 'open-url')
   url.searchParams.set('type', action.type)
   if (action.linkId) {
