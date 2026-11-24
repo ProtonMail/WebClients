@@ -402,8 +402,8 @@
       "Display previous": [
         "Паказваць папярэдні"
       ],
-      "Don't show this offer again": [
-        "Больш не паказваць гэту прапанову"
+      "Don't show this again": [
+        "Больш не паказваць"
       ],
       "Done": [
         "Гатова"
@@ -560,6 +560,9 @@
       ],
       "Go to settings": [
         "Перайсці ў налады"
+      ],
+      "Go to today": [
+        "Перайсці да сённяшняга дня"
       ],
       "Google Drive": [
         "Google Drive"
@@ -806,6 +809,9 @@
       ],
       "Previous": [
         "Папярэдні"
+      ],
+      "Previous contact": [
+        "Папярэдні кантакт"
       ],
       "Previous month": [
         "Папярэдні месяц"
@@ -1097,6 +1103,9 @@
       ],
       "Skip": [
         "Прапусціць"
+      ],
+      "Skip to main content": [
+        "Перайсці да асноўнага змесціва"
       ],
       "Skip verification": [
         "Прапусціць спраўджанне"
@@ -1541,9 +1550,19 @@
         "Запрошаны"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыць"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Прапанова недаступна"
       ]
     },
     "BF2024: Deal details": {
@@ -3670,6 +3689,9 @@
       "Failed to get details, please try again later": [
         "Не ўдалося атрымаць падрабязнасці. Паўтарыце спробу пазней"
       ],
+      "Failed to get invitee keys": [
+        "Не ўдалося атрымаць ключы запрошаных асоб"
+      ],
       "Failed to get inviter keys": [
         "Не ўдалося атрымаць ключы запрашэння"
       ],
@@ -3678,6 +3700,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Не ўдалося загрузіць даныя падпіскі. Паўтарыце спробу пазней."
+      ],
+      "Failed to load the membership data": [
+        "Не ўдалося загрузіць даныя ўдзелу"
       ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
@@ -3699,6 +3724,9 @@
       ],
       "Failed to verify invitation": [
         "Не ўдалося спраўдзіць запрашэнне"
+      ],
+      "Failed to verify membership": [
+        "Не ўдалося спраўдзіць удзел"
       ],
       "File download failed due to empty response": [
         "Збой спампоўвання файла. Прычына: пусты адказ"
@@ -3868,12 +3896,6 @@
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
-      "Organization key must be activated to create invited users": [
-        "Ключ арганізацыі павінен быць актываваны, каб ствараць запрошаных карыстальнікаў"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
-      ],
       "Part of the file appears to be corrupted": [
         "Здаецца, што частка файла пашкоджана"
       ],
@@ -4006,6 +4028,9 @@
       "Some groups could not be deleted": [
         "Не ўдалося выдаліць некаторыя групы"
       ],
+      "Some invitations could not be loaded": [
+        "Некаторыя запрашэнні немагчыма загрузіць"
+      ],
       "Some items could not be loaded": [
         "Некаторыя элементы немагчыма загрузіць"
       ],
@@ -4080,9 +4105,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Мінімальная сума ахвяравання складае ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
@@ -8451,6 +8473,40 @@
         "Уключыць ${ reason }"
       ]
     },
+    "lumo_2026: feature": {
+      "Everything in Basic, and:": [
+        "Усе функцыі тарыфнага плана Basic, а таксама:"
+      ],
+      "Everything in Free, and:": [
+        "Усе функцыі бясплатнага тарыфнага плана, а таксама:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе функцыі тарыфнага плана Plus, а таксама:"
+      ],
+      "Extended image generation": [
+        "Пашыраная колькасць генерацый"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "Limited image generation": [
+        "Абмежаваная колькасць генерацый відарысаў"
+      ],
+      "Maximum image generation": [
+        "Максімальная колькасць генерацый відарысаў"
+      ],
+      "Maximum Skills and Projects": [
+        "Максімальная колькасць навыкаў і праектаў"
+      ],
+      "More usage": [
+        "Іншыя варыянты выкарыстання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For everyday chats": [
+        "Для штодзённых чатаў"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
@@ -12008,12 +12064,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
       ],
-      "${ dayDiff } day left": [
-        "Застаўся ${ dayDiff } дзень",
-        "Засталося ${ dayDiff } дні",
-        "Засталося ${ dayDiff } дзён",
-        "Засталося ${ dayDiff } дзён"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
@@ -12260,20 +12310,11 @@
       "What you give up when you cancel ${ planName }": [
         "Што вы страціце, калі скасуеце ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Калі вы скасуеце падпіску ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } Free, калі ваша падпіска ${ planName } завершыцца ${ expiryDate }"
       ],
       "Yearly free storage bonuses": [
         "Штогадовы бонус бясплатнага сховішча"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых мэт, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
@@ -13026,9 +13067,6 @@
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
-      "Enter your password": [
-        "Увядзіце свой пароль"
-      ],
       "Error": [
         "Памылка"
       ],
@@ -13590,6 +13628,9 @@
       "Verification failed": [
         "Збой праверкі"
       ],
+      "Verify it’s you": [
+        "Спраўдзіце, што гэта вы"
+      ],
       "Verify your password": [
         "Спраўджанне вашага пароля"
       ],
@@ -13961,6 +14002,44 @@
       ],
       "Replay video": [
         "Прайграць відэа"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } за карыстальніка"
+      ],
+      "${ storage } shared": [
+        "${ storage } абагулена"
+      ],
+      "10 years": [
+        "10 гадоў"
+      ],
+      "Calendars": [
+        "Календары"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Прэміяльныя Mail, Calendar, Drive і Pass"
+      ],
+      "Previous versions": [
+        "Папярэднія версіі"
+      ],
+      "Storage": [
+        "Сховішча"
+      ],
+      "Subscribers only": [
+        "Толькі падпісчыкі"
+      ],
+      "Unlimited": [
+        "Неабмежавана"
+      ],
+      "Up to ${ limit }": [
+        "Да ${ limit }"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "VPN devices at once": [
+        "Прылады VPN адначасова"
       ]
     },
     "VPN B2B cancellation reason": {

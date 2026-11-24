@@ -395,8 +395,8 @@
       "Display previous": [
         "Display precedenti"
       ],
-      "Don't show this offer again": [
-        "Non mostrare più quest'offerta"
+      "Don't show this again": [
+        "Non mostrare più"
       ],
       "Done": [
         "Fatto"
@@ -1100,6 +1100,9 @@
       "Skip": [
         "Salta"
       ],
+      "Skip to main content": [
+        "Passa direttamente al contenuto principale"
+      ],
       "Skip verification": [
         "Salta la verifica"
       ],
@@ -1365,6 +1368,9 @@
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utente)",
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } (per ${ quantity } utenti)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licenze per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ price } per dedicated server": [
         "${ price } per server dedicato"
       ],
@@ -1388,6 +1394,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licenza ${ LUMO_APP_NAME }",
         "${ seats } licenze ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licenza per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenze per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } licenza ${ MEET_APP_NAME }",
@@ -1520,6 +1530,11 @@
         "Invitato"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Chiudi"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestore di password premium"
@@ -1528,6 +1543,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offerta non disponibile"
       ]
     },
     "BF2024: Deal details": {
@@ -3636,6 +3656,9 @@
       "Failed to get details, please try again later": [
         "Impossibile ottenere i dettagli, per favore riprova più tardi"
       ],
+      "Failed to get invitee keys": [
+        "Impossibile ottenere le chiavi dell'invitato"
+      ],
       "Failed to get inviter keys": [
         "Impossibile ottenere le chiavi dell'invitante"
       ],
@@ -3644,6 +3667,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Impossibile caricare i dati dell'abbonamento. Riprova più tardi."
+      ],
+      "Failed to load the membership": [
+        "Impossibile caricare l'iscrizione"
+      ],
+      "Failed to load the membership data": [
+        "Impossibile caricare i dati dell'iscrizione"
       ],
       "Failed to load the STL preview": [
         "Impossibile caricare l'anteprima STL"
@@ -3665,6 +3694,9 @@
       ],
       "Failed to verify invitation": [
         "Impossibile verificare l'invito"
+      ],
+      "Failed to verify membership": [
+        "Impossibile verificare l'iscrizione"
       ],
       "File download failed due to empty response": [
         "Download del file non riuscito a causa di una risposta vuota."
@@ -3826,12 +3858,6 @@
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
-      "Organization key must be activated to create invited users": [
-        "Devi attivare la chiave dell'organizzazione per poter invitare gli utenti"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
-      ],
       "Part of the file appears to be corrupted": [
         "Parte del file sembra essere danneggiata"
       ],
@@ -3960,6 +3986,9 @@
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
       ],
+      "Some invitations could not be loaded": [
+        "Impossibile caricare alcuni inviti"
+      ],
       "Some items could not be loaded": [
         "Alcuni elementi non sono stati caricati"
       ],
@@ -4034,9 +4063,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "L'importo minimo della donazione è ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Il file caricato non corrisponde all'originale. Riprova."
@@ -4580,8 +4606,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La richiesta della chiave di sicurezza è stata annullata o è scaduta. Riprova."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Il tuo dispositivo non è riuscito a completare la richiesta della chiave di sicurezza. Riprova oppure utilizza un altro metodo di accesso."
       ]
     },
     "fido2: Info": {
@@ -6718,6 +6750,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per contribuire a mantenere il tuo account al sicuro, conferma di essere davvero tu prima di continuare."
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Per aiutarti a proteggerti, ${ DRIVE_APP_NAME } può analizzare i tuoi file in modo da preservare la privacy e bloccare quelli dannosi. Tuttavia, è sempre meglio scaricare file solo da fonti affidabili. "
       ],
@@ -7029,6 +7064,9 @@
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "È possibile aprire questa cartella al termine dell'importazione. Finora sono stati importati ${ importedSize }. Verrà inviata un'email al termine dell'operazione."
       ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "È possibile aprire questa cartella al termine dell'importazione. Verrà inviata un'email al termine dell'operazione."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
@@ -7306,6 +7344,9 @@
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } di ${ albumProgress.total }"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Password dell'account ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
@@ -11722,10 +11763,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, e ${ VPN_SHORT_APP_NAME } con funzionalità premium"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } giorno rimasto",
-        "${ dayDiff } giorni rimasti"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Applicazione desktop di ${ MAIL_APP_NAME }"
       ],
@@ -11960,20 +11997,11 @@
       "What you give up when you cancel ${ planName }": [
         "A cosa rinunci quando annulli ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Quando annulli ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 1 GB di spazio di archiviazione per Mail e fino a 5 GB di spazio di archiviazione su Drive. Perderai anche gli eventuali bonus di archiviazione precedentemente assegnati."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Quando annulli ${ planName }, verrà effettuato il downgrade a ${ BRAND_NAME } Free, che offre solo fino a 1 GB di spazio di archiviazione per Mail e fino a 5 GB di spazio di archiviazione per Drive. Poiché gli utenti aggiuntivi non sono supportati nel piano gratuito, il tuo team subirà delle interruzioni nel proprio lavoro."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando l'abbonamento ${ planName } scadrà il ${ expiryDate }, verrai declassato al piano ${ BRAND_NAME } gratuito."
       ],
       "Yearly free storage bonuses": [
         "Bonus annuali gratuiti per lo spazio di archiviazione"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Hai ancora ${ expiryDate } sul tuo abbonamento ${ planName }. Aggiungeremo i crediti per il tempo rimanente al tuo account ${ BRAND_NAME }. Assicurati di non superare i limiti del piano gratuito prima di annullare. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Il tuo piano ${ planName } non si limita a proteggere i tuoi dati e le tue comunicazioni aziendali. Supporta i tuoi obiettivi di conformità, fa risaltare la tua attività e mantiene il tuo team connesso."
@@ -12698,9 +12726,6 @@
       "Enhance security with 2FA": [
         "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
       ],
-      "Enter your password": [
-        "Inserisci la tua password"
-      ],
       "Error": [
         "Errore"
       ],
@@ -13154,6 +13179,9 @@
       "Sort files/folders": [
         "Ordina file/cartelle"
       ],
+      "Special offer": [
+        "Offerta speciale"
+      ],
       "Start a new import": [
         "Avvia una nuova importazione"
       ],
@@ -13255,6 +13283,9 @@
       ],
       "Verification failed": [
         "Verifica non riuscita"
+      ],
+      "Verify it’s you": [
+        "Verifica che sia tu"
       ],
       "Verify your password": [
         "Verifica la tua password"
@@ -13624,6 +13655,71 @@
       ],
       "Replay video": [
         "Riproduci video"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per utente"
+      ],
+      "${ storage } shared": [
+        "${ storage } condivisi"
+      ],
+      "10 years": [
+        "10 anni"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Un livello di capacità superiore di server ${ VPN_APP_NAME }: un numero di utenti molto inferiore condivide ciascun server e utilizza indirizzi IP di proprietà di ${ BRAND_NAME }. Quick Connect li seleziona automaticamente quando disponibili."
+      ],
+      "Calendars": [
+        "Calendari"
+      ],
+      "Custom email domains": [
+        "Domini email personalizzati"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Prende il nome dai sostenitori del crowdfunding che hanno reso possibile ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } nel 2014. Tutti i servizi premium di ${ BRAND_NAME }, in un unico piano."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuovi servizi ${ BRAND_NAME } senza costi aggiuntivi"
+      ],
+      "Password vaults": [
+        "Casseforti digitali"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass Premium"
+      ],
+      "Previous versions": [
+        "Versioni precedenti"
+      ],
+      "Storage": [
+        "Spazio di archiviazione"
+      ],
+      "Subscribers only": [
+        "Solo per abbonati"
+      ],
+      "Ultra servers": [
+        "Server Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Server Ultra riservati a te"
+      ],
+      "Unlimited": [
+        "Illimitati"
+      ],
+      "Up to ${ limit }": [
+        "Fino a ${ limit }"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "VPN devices at once": [
+        "Dispositivi VPN contemporaneamente"
       ]
     },
     "VPN B2B cancellation reason": {

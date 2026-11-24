@@ -351,6 +351,9 @@
       "Display navigation bar": [
         "Показувати панель навігації"
       ],
+      "Don't show this again": [
+        "Більше не показувати"
+      ],
       "Done": [
         "Готово"
       ],
@@ -942,6 +945,9 @@
       "Skip": [
         "Пропустити"
       ],
+      "Skip to main content": [
+        "Перейти до основного вмісту"
+      ],
       "Skip verification": [
         "Пропустити перевірку"
       ],
@@ -1330,6 +1336,11 @@
         "Ваш безплатний пробний період закінчується через ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Закрити"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium Менеджер паролів"
@@ -1338,6 +1349,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Пропозиція недоступна"
       ]
     },
     "BF2024: Deal details": {
@@ -3017,7 +3033,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Proton Mail захищає ваші листи за допомогою наскрізного шифрування з нульовим доступом, щоб ніхто сторонній (навіть Proton) не зміг прочитати ваші листи."
+        "Допоможіть нам покращитися"
       ]
     },
     "Downgrade warning": {
@@ -3580,12 +3596,6 @@
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
       ],
-      "Organization key must be activated to create invited users": [
-        "Необхідно активувати ключ організації, щоб створити запрошених користувачів"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Щоб створити неприватних користувачів, необхідно активувати ключ організації"
-      ],
       "Password is required": [
         "Пароль обов'язковий"
       ],
@@ -3777,9 +3787,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Найменша сума, яку можна додати — ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Мінімальна сума пожертви становить ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Вивантажений файл не відповідає оригіналу. Будь ласка, спробуйте ще раз."
@@ -4293,8 +4300,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Запит на отримання ключа безпеки було скасовано або закінчився час очікування. Спробуйте ще раз."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Ваш пристрій не зміг виконати запит на використання ключа безпеки. Спробуйте ще раз або скористайтеся іншим способом входу."
       ]
     },
     "fido2: Info": {
@@ -6237,6 +6250,9 @@
       "Writing assistant": [
         "Помічник з написання"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Ліцензії для помічників із написання більше не продаються."
+      ],
       "Yes": [
         "Так"
       ],
@@ -7407,6 +7423,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Увімкнути ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Код"
+      ],
+      "2x Basic usage": [
+        "2x Базове використання"
+      ],
+      "5x Plus usage": [
+        "Використання 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Доступ до API з щомісячним лімітом у розмірі ${ credit }"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Доступ до API з ${ credit } кредиту на місяць на кожного користувача"
+      ],
+      "Everything in Basic, and:": [
+        "Усе, що в Basic, а також:"
+      ],
+      "Everything in Free, and:": [
+        "Усе безкоштовно, а також:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе, що є у Plus, а також:"
+      ],
+      "Extended image generation": [
+        "Розширене створення зображень"
+      ],
+      "Includes:": [
+        "Включає:"
+      ],
+      "Limited image generation": [
+        "Обмежене створення зображень"
+      ],
+      "Limited messages and chat history": [
+        "Обмежена кількість повідомлень та історія чату"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Обмежені навички, проекти та заплановані завдання"
+      ],
+      "Maximum image generation": [
+        "Максимальна кількість згенерованих зображень"
+      ],
+      "Maximum Skills and Projects": [
+        "Найкращі навички та проекти"
+      ],
+      "More image generation": [
+        "Більше генерації зображень"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Більше навичок, проєктів та запланованих завдань"
+      ],
+      "More usage": [
+        "Інші варіанти використання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Для програмування та розробки"
+      ],
+      "For everyday chats": [
+        "Для щоденних розмов"
+      ],
+      "For getting more done": [
+        "Щоб встигнути зробити більше"
       ]
     },
     "Mail import summary": {
@@ -10591,12 +10674,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, та ${ VPN_SHORT_APP_NAME } з преміумфункіями"
       ],
-      "${ dayDiff } day left": [
-        "Залишився ${ dayDiff } день",
-        "Залишилось ${ dayDiff } дні",
-        "Залишилось ${ dayDiff } днів",
-        "Залишилось ${ dayDiff } днів"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
@@ -10843,20 +10920,11 @@
       "What you give up when you cancel ${ planName }": [
         "Від чого ви відмовляєтеся, коли скасовуєте ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Коли ви скасуєте ${ planName }, ваш тарифний план буде змінено на ${ BRAND_NAME } Безплатний, який пропонує лише до 1 ГБ у Пошті та до 5 ГБ у Диску. Ви також втратите всі раніше отримані бонуси за користування сховищем."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Коли ви скасуєте ${ planName }, вас буде понижено до ${ BRAND_NAME } Free, який пропонує лише до 1 ГБ у поштовому сховищі та до 5 ГБ у Диску. Ваша команда відчуватиме перебої в роботі, оскільки додаткові користувачі не підтримуються в безплатному плані."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Коли ваша підписка ${ planName } закінчиться на ${ expiryDate }, ви будете переведені на ${ BRAND_NAME } Безплатний план."
       ],
       "Yearly free storage bonuses": [
         "Щорічні бонуси на безплатне сховище"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вашій передплаті ${ planName } ще залишилося ${ expiryDate }. Ми додамо кредити за невикористаний залишок часу до вашого облікового запису ${ BRAND_NAME }. Перш ніж скасовувати передплату перевірте обмеження безплатного тарифного плану. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш план ${ planName } не просто захищає ваші бізнес-дані та комунікації. Він підтримує ваші цілі відповідності, виділяє ваш бізнес на тлі інших і тримає вашу команду на зв'язку."
@@ -11519,9 +11587,6 @@
       "Enhance security with 2FA": [
         "Посильте безпеку за допомогою 2FA"
       ],
-      "Enter your password": [
-        "Введіть ваш пароль"
-      ],
       "Error": [
         "Помилка"
       ],
@@ -11986,6 +12051,9 @@
       ],
       "Verification failed": [
         "Не вдалося виконати перевірку"
+      ],
+      "Verify it’s you": [
+        "Підтвердьте, що це ви"
       ],
       "Verify your password": [
         "Підтвердьте свій пароль"

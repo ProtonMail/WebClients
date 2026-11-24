@@ -579,6 +579,9 @@
       "Next": [
         "Következő"
       ],
+      "Next contact": [
+        "Következő névjegy"
+      ],
       "Next month": [
         "Következő hónap"
       ],
@@ -617,6 +620,9 @@
       ],
       "Previous": [
         "Előző"
+      ],
+      "Previous contact": [
+        "Előző névjegy"
       ],
       "Previous month": [
         "Előző hónap"
@@ -1039,6 +1045,9 @@
       "Domains": [
         "Domain nevek"
       ],
+      "Users": [
+        "Felhasználók"
+      ],
       "Writing assistant": [
         "Írási segéd"
       ],
@@ -1124,9 +1133,19 @@
         "Előfizetés megtartása"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Bezárás"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Prémium jelszókezelő"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Az ajánlat nem elérhető"
       ]
     },
     "BF2024: Deal details": {
@@ -3135,12 +3154,6 @@
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
       ],
-      "Organization key must be activated to create invited users": [
-        "A szervezeti kulcsot aktiválni kell, meghívott felhasználók létrehozásához"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "A szervezeti kulcsot aktiválni kell, nem-privát felhasználók létrehozásához"
-      ],
       "Part of the file appears to be corrupted": [
         "A fájl egy része sérült"
       ],
@@ -3277,9 +3290,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "A legkisebb lehetséges adomány ${ price }"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
@@ -4269,6 +4279,9 @@
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "**${ refereeRewardAmount }-t kapnak** kreditként, ha előfizetnek."
+      ],
+      "1 vault per user": [
+        "Felhasználónként 1 széf"
       ],
       "A number will be added to the filename": [
         "Egy számot ad a fájl nevéhez"
@@ -6033,6 +6046,9 @@
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
       ],
+      "Customer Support": [
+        "Ügyfélszolgálat"
+      ],
       "Enforcing 2FA for organizations": [
         "Kétlépcsős hitelesítés megkövetelése a szervezetek számára"
       ],
@@ -6212,6 +6228,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írási segéd"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írássegéd"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írósegéd hozzáadása"
       ],
@@ -6223,6 +6242,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ price } per seat": [
+        "${ price } felhasználónként"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
@@ -7768,6 +7790,9 @@
       "Got it": [
         "Értem."
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% adót tartalmaz: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "HH/ÉÉ"
       ],
@@ -7887,6 +7912,11 @@
         "Hiba történt. A Google Pay ellenőrzése sikertelen."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "A megerősítéssel felhatalmazza a ${ BRAND_NAME } és a Stripe-ot - a fizetési szolgáltatónkat -, hogy az előfizetéshez kapcsolódó jövőbeli fizetéseket csoportos beszedési megbízás (SEPA) útján levonják erről a bankszámláról, és a bankját hogy ezeket az összegeket levonja a számlájáról. Az első fizetést most a(z) ${ IDEAL_WERO_BRAND_NAME } szolgáltatáson keresztül történik. Előfizetése automatikusan megújul, amíg le nem mondja; minden terhelés előtt értesítést küldünk. A csoportos beszedési megbízással teljesített fizetések esetén – a bankjával kötött megállapodás feltételei szerint – a terhelés napjától számított 8 héten belül kérheti a levont összeg visszatérítését. Ez nem vonatkozik a mostani ${ IDEAL_WERO_BRAND_NAME } befizetésre."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-előfizetés fel nem használt részéért"
@@ -7915,6 +7945,11 @@
     "Payments.plan_name": {
       "Free": [
         "Ingyenes"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kártya, a következő végződéssel: ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -8823,10 +8858,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } nap van hátra",
-        "${ dayDiff } nap van hátra"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
@@ -9058,20 +9089,11 @@
       "What you give up when you cancel ${ planName }": [
         "Mit veszít, ha nem kéri a(z) ${ planName } csomagot?"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ha lemondja ${ planName }-t, Önt visszaminősítjük ${ BRAND_NAME } Free csomagra, amely legfeljebb 1 GB Mail tárhelyet és 5 GB Drive tárhelyet kínál. A korábban odaítélt tárhelybónuszokat is elveszíti."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "A ${ planName } előfizetés lejárta után visszaminősítjük a ${ BRAND_NAME } ingyenesre, amely legfeljebb 1 GB Mail-tárhelyet és legfeljebb 5 GB Drive-tárhelyet kínál. Csapata munkája megszakításokat fog tapasztalni, mivel az ingyenes csomag nem támogatja a további felhasználókat."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Amikor a ${ planName } előfizetése ${ expiryDate } napján véget ér, a ${ BRAND_NAME } Free csomagra vált."
       ],
       "Yearly free storage bonuses": [
         "Éves ingyenes tárhely bónuszok"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Még mindig ${ expiryDate } van a ${ planName } előfizetésében. A hátralévő időre vonatkozó krediteket hozzáadjuk a ${ BRAND_NAME } számlájához. A lemondás előtt győződjön meg róla, hogy nem lépte túl az ingyenes terv korlátját. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
@@ -9654,9 +9676,6 @@
       ],
       "Enhance security with 2FA": [
         "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"

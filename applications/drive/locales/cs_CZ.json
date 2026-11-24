@@ -330,6 +330,9 @@
       "Display navigation bar": [
         "Zobrazit navigační panel"
       ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -885,6 +888,9 @@
       "Skip": [
         "Přeskočit"
       ],
+      "Skip to main content": [
+        "Přeskočit na hlavní obsah"
+      ],
       "Skip verification": [
         "Přeskočit ověření"
       ],
@@ -1264,9 +1270,19 @@
         "Bezplatná zkušební verze končí za ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Zavřít"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Prémiový správce hesel"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Nabídka je nedostupná"
       ]
     },
     "BF2024: Deal details": {
@@ -3388,12 +3404,6 @@
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
-      "Organization key must be activated to create invited users": [
-        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
-      ],
       "Password is required": [
         "Heslo je povinná položka"
       ],
@@ -3549,9 +3559,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimální výše daru je ${ price }"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašem externím účtu je příliš mnoho složek. Upravte prosím import pro odstranění některých složek."
@@ -10019,12 +10026,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
       ],
-      "${ dayDiff } day left": [
-        "Zbývá ${ dayDiff } den",
-        "Zbývají ${ dayDiff } dny",
-        "Zbývá ${ dayDiff } dnů",
-        "Zbývá ${ dayDiff } dnů"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
@@ -10271,20 +10272,11 @@
       "What you give up when you cancel ${ planName }": [
         "Čeho se vzdáváte zrušením ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Když zrušíte ${ planName }, bude vám snížen účet na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Jakmile vaše předplatné ${ planName } skončí ${ expiryDate }, bude sníženo na tarif ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Roční bonusy bezplatného úložiště"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Vaše předplatné ${ planName } trvá do ${ expiryDate }. Kredity za zbývající čas přičteme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že nepřekračujete limity bezplatného tarifu. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Váš tarif ${ planName } nechrání pouze vaše firemní data a komunikaci. Podporuje vaše cíle v oblasti dodržování předpisů, dává vaší firmě vyniknout a udržuje váš tým ve spojení."
@@ -10924,9 +10916,6 @@
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
       ],
-      "Enter your password": [
-        "Zadejte své heslo"
-      ],
       "Error": [
         "Chyba"
       ],
@@ -11355,6 +11344,9 @@
       ],
       "Verification failed": [
         "Ověření selhalo"
+      ],
+      "Verify it’s you": [
+        "Potvrďte, že jste to vy"
       ],
       "Verify your password": [
         "Ověřte své heslo"
