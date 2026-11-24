@@ -1,7 +1,5 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
-import isDeepEqual from 'lodash/isEqual';
-
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { useHandler } from '@proton/hooks/useHandler';
 import type { InitializeProps, PricesResult } from '@proton/payments-hooks/ui/context/paymentsContext';
@@ -22,17 +20,6 @@ import noop from '@proton/utils/noop';
 import { PaymentsContextProvider, type PaymentsContextProviderProps } from './PaymentContext';
 import { isCheckedFor } from './helpers';
 
-interface InitializationStatus {
-    /**
-     * Has initialization been triggered?
-     * ie has the correct default plan been set, and can we start rendering with a preselected plan
-     */
-    triggered: boolean;
-    pricingInitialized: boolean;
-    /** Why the initialization failed, when the plans or the prices couldn't be loaded */
-    error?: unknown;
-}
-
 type OptimisticOptions = PlanToCheck & {
     billingAddress: BillingAddress;
     checkResult: SubscriptionEstimation;
@@ -45,11 +32,8 @@ type OptimisticOptions = PlanToCheck & {
  * `select*` functions check 400 ms later and resolve before that; `selectNewPlan` checks now and returns the result.
  */
 export type PaymentsContextOptimisticType = Omit<PaymentsContextType, 'getPriceOrFallback'> & {
-    selectedPlan: SelectedPlan;
     loadingPaymentDetails: boolean;
-    initializationStatus: InitializationStatus;
     selectPlan: (checkOptions: Partial<OptimisticOptions>) => void;
-    checkoutUi: PaymentsContextType['checkoutUi'];
     options: OptimisticOptions;
     /** `options.checkResult`'s price is estimated without its coupon's discount until the prices load or the check returns */
     loadingPrice: boolean;
@@ -79,19 +63,14 @@ interface PaymentsContextOptimisticProviderProps {
 const InnerPaymentsContextOptimisticProvider = ({
     children,
     optimisticVendorStates,
-}: PaymentsContextOptimisticProviderProps) => {
+}: Pick<PaymentsContextOptimisticProviderProps, 'children' | 'optimisticVendorStates'>) => {
     const paymentsContext = usePayments();
 
-    const cacheRef = useRef<{ availablePlans?: InitializeProps['availablePlans'] }>(undefined);
+    const availablePlansRef = useRef<InitializeProps['availablePlans']>(undefined);
 
-    const latestOptimisticRef = useRef<object | undefined>(undefined);
-    const [optimistic, setOptimistic] = useState<Partial<OptimisticOptions>>({});
-    const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
-    const [checkingPlans, setCheckingPlans] = useState<PlanToCheck[][]>([]);
-    const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({
-        triggered: false,
-        pricingInitialized: false,
-    });
+    // The choice that isn't checked yet, there while its check is waited for
+    const [pending, setPending] = useState<Partial<OptimisticOptions>>();
+    const pricesLoaded = paymentsContext.initializationStatus.pricingInitialized;
 
     const getPlanIDsWithinSeatLimits = (planIDs: PlanIDs | undefined, currency: Currency): PlanIDs => {
         if (!planIDs) {
@@ -107,103 +86,47 @@ const InnerPaymentsContextOptimisticProvider = ({
         );
     };
 
-    const initialize: PaymentsContextOptimisticType['initialize'] = async ({
-        api,
-        paramCurrency,
-        planToCheck: planToCheckParam,
-        availablePlans,
-        vatNumber,
-        telemetryContext,
-        product,
-    }) => {
-        /**
-         * Track this initialization to prevent race conditions with user actions
-         */
-        const latest = {};
-        latestOptimisticRef.current = latest;
+    // Only the latest choice is cleared, so an older check that returns doesn't override a newer choice
+    const settle = (choice: Partial<OptimisticOptions>) =>
+        setPending((current) => (current === choice ? undefined : current));
 
-        /**
-         * Optimistic check result initialization
-         */
+    const initialize: PaymentsContextOptimisticType['initialize'] = async (props) => {
+        const { paramCurrency, planToCheck, vatNumber } = props;
         const currency = paramCurrency || 'CHF';
-        const optimistic: Omit<OptimisticOptions, 'checkResult'> = {
+        const initial: Omit<OptimisticOptions, 'checkResult'> = {
             currency,
-            planIDs: getPlanIDsWithinSeatLimits(planToCheckParam?.planIDs, currency),
-            cycle: planToCheckParam?.cycle || CYCLE.MONTHLY,
+            planIDs: getPlanIDsWithinSeatLimits(planToCheck?.planIDs, currency),
+            cycle: planToCheck?.cycle || CYCLE.MONTHLY,
             billingAddress: {
                 CountryCode: '',
                 State: '',
             },
             vatNumber,
-            trial: planToCheckParam?.trial,
-            coupon: planToCheckParam?.coupon,
+            trial: planToCheck?.trial,
+            coupon: planToCheck?.coupon,
         };
-        const checkResult = paymentsContext.getOptimisticCheckResult(optimistic);
-        setOptimistic({ ...optimistic, checkResult });
+        const choice = { ...initial, checkResult: paymentsContext.getOptimisticCheckResult(initial) };
+        setPending(choice);
 
-        setInitializationStatus((prev) => ({ ...prev, triggered: true, error: undefined }));
-        setLoadingPaymentDetails(true);
+        await paymentsContext.initialize(props);
 
-        try {
-            await paymentsContext.initialize({
-                api,
-                planToCheck: planToCheckParam,
-                availablePlans,
-                paramCurrency,
-                vatNumber,
-                telemetryContext,
-                product,
-            });
-        } catch (error) {
-            setInitializationStatus((prev) => ({ ...prev, error }));
-            throw error;
-        }
+        settle(choice);
 
-        // Only clear optimistic state if this initialization is still the latest operation
-        // This prevents race conditions where user actions during initialization would be overridden
-        if (latestOptimisticRef.current === latest) {
-            setOptimistic({});
-            setLoadingPaymentDetails(false);
-        }
-
-        cacheRef.current = { availablePlans };
-
-        setInitializationStatus((prev) => ({
-            ...prev,
-            pricingInitialized: true,
-        }));
-    };
-
-    const handleOptimisticCheck = async (
-        optimistic: Parameters<typeof paymentsContext.selectNewPlan>[0],
-        latest: object
-    ) => {
-        try {
-            await paymentsContext.selectNewPlan(optimistic);
-            if (latestOptimisticRef.current === latest) {
-                setOptimistic({});
-            }
-        } catch (e) {
-            if (latestOptimisticRef.current === latest) {
-                // Reset any optimistic state on failures
-                setOptimistic({});
-                return;
-            }
-        } finally {
-            if (latestOptimisticRef.current === latest) {
-                setLoadingPaymentDetails(false);
-            }
-        }
+        availablePlansRef.current = props.availablePlans;
     };
 
     const debouncedCheck = useHandler(
-        (optimistic: Parameters<typeof paymentsContext.selectNewPlan>[0], latest: object) => {
-            handleOptimisticCheck(optimistic, latest).catch(noop);
+        (planToCheck: PlanToCheck, choice: Partial<OptimisticOptions>) => {
+            // A failed check clears the estimate like a successful one
+            void paymentsContext
+                .selectNewPlan(planToCheck)
+                .catch(noop)
+                .then(() => settle(choice));
         },
         { debounce: 400 }
     );
 
-    const subscriptionCheckOptions = {
+    const checked = {
         planIDs: paymentsContext.selectedPlan.planIDs,
         cycle: paymentsContext.selectedPlan.cycle,
         currency: paymentsContext.selectedPlan.currency,
@@ -213,40 +136,37 @@ const InnerPaymentsContextOptimisticProvider = ({
         trial: paymentsContext.checkResult.SubscriptionMode === SubscriptionMode.Trial,
     };
     const options: OptimisticOptions = {
-        ...subscriptionCheckOptions,
-        ...optimistic,
+        ...checked,
+        ...pending,
         checkResult: {
-            ...subscriptionCheckOptions.checkResult,
-            ...optimistic.checkResult,
+            ...checked.checkResult,
+            ...pending?.checkResult,
         },
     };
 
-    const handleOptimistic = (checkOptions: Partial<OptimisticOptions>) => {
+    // The coupon of the plan's last check. A change of currency checks the plans again in the background, so until
+    // those results are in, the coupon of the old currency is used
+    const getRememberedCoupon = (planToCheck: PlanToCheck) =>
+        paymentsContext.getCoupon(planToCheck) ||
+        (options.currency !== planToCheck.currency
+            ? paymentsContext.getCoupon({ ...planToCheck, currency: options.currency })
+            : undefined);
+
+    const selectPlan = (checkOptions: Partial<OptimisticOptions>) => {
         const mergedCheckOptions = {
-            ...optimistic,
+            ...pending,
             ...checkOptions,
             trial: checkOptions.trial || false, // Necessary to override trial to false if the option is not provided
         };
 
         const completeCheckOptions = {
-            ...subscriptionCheckOptions,
+            ...checked,
             ...mergedCheckOptions,
         };
 
-        if (!completeCheckOptions.coupon) {
-            // First, it attempts to get a coupon with the current parameters.
-            let lastRememberedCouponForPlan = paymentsContext.getCoupon(completeCheckOptions);
-            // If there's none, and if the currency is being changed, it attempts to get a coupon with the old currency.
-            // This needs to happen because changing currency is updating the multi plan check in the background and the results may not be ready.
-            if (!lastRememberedCouponForPlan && options.currency !== completeCheckOptions.currency) {
-                lastRememberedCouponForPlan = paymentsContext.getCoupon({
-                    ...completeCheckOptions,
-                    currency: options.currency,
-                });
-            }
-            if (lastRememberedCouponForPlan) {
-                completeCheckOptions.coupon = lastRememberedCouponForPlan;
-            }
+        const coupon = completeCheckOptions.coupon || getRememberedCoupon(completeCheckOptions);
+        if (coupon) {
+            completeCheckOptions.coupon = coupon;
         }
 
         const cachedPrice = paymentsContext.getPrice(completeCheckOptions)?.checkResult;
@@ -260,51 +180,26 @@ const InnerPaymentsContextOptimisticProvider = ({
                 coupon: completeCheckOptions.coupon,
             });
 
-        setOptimistic({
-            ...mergedCheckOptions,
-            checkResult: optimisticCheckResult,
-        });
-        const latest = {};
-        latestOptimisticRef.current = latest;
-        setLoadingPaymentDetails(true);
-        debouncedCheck(completeCheckOptions, latest);
+        const choice = { ...mergedCheckOptions, checkResult: optimisticCheckResult };
+        setPending(choice);
+        debouncedCheck(completeCheckOptions, choice);
     };
 
     const selectPlanIDs = async (planIDs: PlanIDs) => {
-        handleOptimistic({ planIDs });
+        selectPlan({ planIDs });
     };
 
     const selectCycle = async (cycle: Cycle) => {
-        handleOptimistic({ cycle });
+        selectPlan({ cycle });
     };
 
-    const checkMultiplePlans: PaymentsContextType['checkMultiplePlans'] = async (plansToCheck) => {
-        setCheckingPlans((checking) => [...checking, plansToCheck]);
-        try {
-            return await paymentsContext.checkMultiplePlans(plansToCheck);
-        } finally {
-            setCheckingPlans((checking) => checking.filter((plans) => plans !== plansToCheck));
-        }
-    };
-
-    const getPriceOrFallback: PaymentsContextOptimisticType['getPriceOrFallback'] = (planToCheck) => {
-        // Any coupon: a card that takes it from `getCoupon` has none in a new currency until this check returns
-        const isChecked = checkingPlans.some((plans) =>
-            plans.some(
-                (plan) =>
-                    plan.currency === planToCheck.currency &&
-                    plan.cycle === planToCheck.cycle &&
-                    isDeepEqual(plan.planIDs, planToCheck.planIDs)
-            )
-        );
-        return {
-            ...paymentsContext.getPriceOrFallback(planToCheck),
-            loading: !initializationStatus.pricingInitialized || isChecked,
-        };
-    };
+    const getPriceOrFallback: PaymentsContextOptimisticType['getPriceOrFallback'] = (planToCheck) => ({
+        ...paymentsContext.getPriceOrFallback(planToCheck),
+        loading: !pricesLoaded || paymentsContext.isCheckingPrice(planToCheck),
+    });
 
     const updateMultiPlanCheckCacheAfterChangingCurrency = async (newCurrency: Currency, oldCurrency: Currency) => {
-        const availablePlans = cacheRef.current?.availablePlans;
+        const availablePlans = availablePlansRef.current;
         if (!availablePlans?.length) {
             return;
         }
@@ -326,11 +221,11 @@ const InnerPaymentsContextOptimisticProvider = ({
         if (!plansWithCouponAndCurrency.length) {
             return;
         }
-        await checkMultiplePlans(plansWithCouponAndCurrency);
+        await paymentsContext.checkMultiplePlans(plansWithCouponAndCurrency);
     };
 
     const selectCurrency: PaymentsContextType['selectCurrency'] = async (currency) => {
-        handleOptimistic({ currency });
+        selectPlan({ currency });
 
         // This is run in the background since we render the plan cards optimistically
         updateMultiPlanCheckCacheAfterChangingCurrency(currency, options.currency).catch(noop);
@@ -338,58 +233,43 @@ const InnerPaymentsContextOptimisticProvider = ({
 
     const selectedPlan = new SelectedPlan(options.planIDs, paymentsContext.plansMap, options.cycle, options.currency);
 
-    return (
-        <PaymentsContextOptimistic.Provider
-            value={{
-                ...paymentsContext,
-                initialize,
-                selectCycle,
-                selectCurrency,
-                selectPlanIDs,
-                selectPlan: handleOptimistic,
-                checkMultiplePlans,
-                getPriceOrFallback,
-                selectedPlan,
-                loadingPaymentDetails: loadingPaymentDetails || paymentsContext.loading,
-                initializationStatus,
-                options,
-                loadingTotal:
-                    !initializationStatus.pricingInitialized ||
-                    ((loadingPaymentDetails || paymentsContext.loading) &&
-                        // Unless the selection already shows its price, the plan cards' for the details asked for
-                        !isCheckedFor(optimistic.checkResult, paymentsContext.getRequested())),
-                loadingPrice:
-                    !initializationStatus.pricingInitialized ||
-                    (!!optimistic.checkResult?.optimistic && !!optimistic.checkResult.requestData.Codes?.length),
-                optimisticPaymentStatus:
-                    paymentsContext.paymentStatus ?? getOptimisticPaymentStatus(optimisticVendorStates),
-                checkoutUi: getCheckoutUi({
-                    planIDs: options.planIDs,
-                    plansMap: paymentsContext.plansMap,
-                    checkResult: options.checkResult,
-                }),
-            }}
-        >
-            {children}
-        </PaymentsContextOptimistic.Provider>
-    );
+    const checking = !!pending || paymentsContext.loading;
+
+    const value: PaymentsContextOptimisticType = {
+        ...paymentsContext,
+        initialize,
+        selectCycle,
+        selectCurrency,
+        selectPlanIDs,
+        selectPlan,
+        getPriceOrFallback,
+        selectedPlan,
+        loadingPaymentDetails: checking,
+        options,
+        loadingTotal:
+            !pricesLoaded ||
+            // Unless the selection already shows its price, the plan cards' for the details asked for
+            (checking && !isCheckedFor(pending?.checkResult, paymentsContext.getRequested())),
+        loadingPrice:
+            !pricesLoaded || (!!pending?.checkResult?.optimistic && !!pending.checkResult.requestData.Codes?.length),
+        optimisticPaymentStatus: paymentsContext.paymentStatus ?? getOptimisticPaymentStatus(optimisticVendorStates),
+        checkoutUi: getCheckoutUi({
+            planIDs: options.planIDs,
+            plansMap: paymentsContext.plansMap,
+            checkResult: options.checkResult,
+        }),
+    };
+
+    return <PaymentsContextOptimistic.Provider value={value}>{children}</PaymentsContextOptimistic.Provider>;
 };
 
 export const PaymentsContextOptimisticProvider = ({
     children,
-    preload,
-    authenticated,
-    cachedPlans,
     optimisticVendorStates,
-    billingDetails,
+    ...providerProps
 }: PaymentsContextOptimisticProviderProps) => {
     return (
-        <PaymentsContextProvider
-            preload={preload}
-            authenticated={authenticated}
-            cachedPlans={cachedPlans}
-            billingDetails={billingDetails}
-        >
+        <PaymentsContextProvider {...providerProps}>
             <InnerPaymentsContextOptimisticProvider optimisticVendorStates={optimisticVendorStates}>
                 {children}
             </InnerPaymentsContextOptimisticProvider>

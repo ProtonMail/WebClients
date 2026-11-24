@@ -74,7 +74,7 @@ describe('getInitialState', () => {
             expect.objectContaining({
                 telemetryContext: 'other',
                 product: 'generic',
-                initialized: false,
+                initializationStatus: { triggered: false, pricingInitialized: false },
                 loading: false,
                 vatNumber: undefined,
             })

@@ -1,6 +1,10 @@
 import isEqual from 'lodash/isEqual';
 
-import type { CheckInputs, InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
+import type {
+    CheckInputs,
+    InitializationStatus,
+    InitializeProps,
+} from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { useMultiCheckGroups } from '@proton/payments-hooks/ui/context/useMultiCheckGroups';
 import { getPreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import {
@@ -136,7 +140,7 @@ export interface PaymentsContextProviderState {
         freePlan: FreePlanDefault;
     };
     paymentStatus: PaymentStatus | undefined;
-    initialized: boolean;
+    initializationStatus: InitializationStatus;
     availableCurrencies: readonly Currency[];
     planToCheck: PlanToCheck;
     checkResult: SubscriptionEstimation;
@@ -231,7 +235,7 @@ export const getInitialState = ({
         subscription,
         plansData: plans,
         paymentStatus,
-        initialized: false,
+        initializationStatus: { triggered: false, pricingInitialized: false },
         availableCurrencies: mainCurrencies,
         planToCheck,
         checkResult,
