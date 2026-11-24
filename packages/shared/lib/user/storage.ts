@@ -123,6 +123,17 @@ export const getAppSpace = (options: ReturnType<typeof getSpace>, app: APP_NAMES
     return { usedSpace: options.usedBaseSpace, maxSpace: options.maxBaseSpace };
 };
 
+/**
+ * Whether a file of `size` bytes fits in the user's free Drive storage: Drive's own pool when storage is split,
+ * the shared total when it isn't. A file exactly the size of the free space fits, as Drive's server accepts it.
+ * Nothing fits once Drive is full, not even an empty file.
+ */
+export const getFitsInDriveSpace = (user: User, size: number) => {
+    const { usedSpace, maxSpace } = getAppSpace(getSpace(user), APPS.PROTONDRIVE);
+    const freeSpace = maxSpace - usedSpace;
+    return freeSpace > 0 && size <= freeSpace;
+};
+
 export const getCanAddStorage = ({ user, subscription }: { user: UserModel; subscription: MaybeFreeSubscription }) => {
     if (user.isMember) {
         return false;
