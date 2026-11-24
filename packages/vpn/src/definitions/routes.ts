@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
 import { getGatewaysPageAvailability } from '@proton/console/organization/getGatewaysPageAvailability';
+import { getSharedServersPageAvailability } from '@proton/console/organization/getSharedServersPageAvailability';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
@@ -258,9 +259,7 @@ const routesDefinition = {
                             id: 'organization.vpn.shared-servers',
                             label: () => c('Title').t`Shared servers`,
                             to: '/shared-servers',
-                            isVisible: ({ context }) =>
-                                context.permissions['account.shared_server.read'] &&
-                                context.entitlements.hasVpnLocationFilter,
+                            isVisible: ({ context }) => getSharedServersPageAvailability(context).sharedServers,
                             sections: [{ id: 'organization.vpn.shared-servers.servers', to: 'servers' }],
                         },
                         {

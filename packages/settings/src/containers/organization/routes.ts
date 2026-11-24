@@ -8,6 +8,7 @@ import { getGatewaysPageAvailability } from '@proton/console/organization/getGat
 import { getGroupsPageAvailability } from '@proton/console/organization/getGroupsPageAvailability';
 import { getOrganizationKeysPageAvailability } from '@proton/console/organization/getOrganizationKeysPageAvailability';
 import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
+import { getSharedServersPageAvailability } from '@proton/console/organization/getSharedServersPageAvailability';
 import { getSingleSignOnPageAvailability } from '@proton/console/organization/getSingleSignOnPageAvailability';
 import { getUsersPageAvailability } from '@proton/console/organization/getUsersPageAvailability';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
@@ -318,7 +319,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Shared servers`,
             to: '/shared-servers',
             icon: IcEarth,
-            available: permissions['account.shared_server.read'] && entitlements.hasVpnLocationFilter,
+            available: getSharedServersPageAvailability({ entitlements, permissions }).sharedServers,
             subsections: [
                 {
                     id: 'servers',

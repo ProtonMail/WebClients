@@ -15,6 +15,7 @@
         "./organization/getGatewaysPageAvailability": "./src/organization/getGatewaysPageAvailability.ts",
         "./organization/getGroupsPageAvailability": "./src/organization/getGroupsPageAvailability.ts",
         "./organization/getSecurityPageAvailability": "./src/organization/getSecurityPageAvailability.ts",
+        "./organization/getSharedServersPageAvailability": "./src/organization/getSharedServersPageAvailability.ts",
         "./organization/getSingleSignOnPageAvailability": "./src/organization/getSingleSignOnPageAvailability.ts",
         "./organization/getUsersPageAvailability": "./src/organization/getUsersPageAvailability.ts",
         "./pass/getPassOrganizationAccess": "./src/pass/getPassOrganizationAccess.ts"
