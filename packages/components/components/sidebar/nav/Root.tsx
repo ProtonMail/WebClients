@@ -11,11 +11,7 @@ interface SidebarRootProps {
 
 function Root({ children, className }: SidebarRootProps) {
     return (
-        <nav
-            aria-label="navigation"
-            data-sidebar-root=""
-            className={clsx('rounded px-3 flex flex-column gap-3', className)}
-        >
+        <nav data-sidebar-root="" className={clsx('rounded px-3 flex flex-column gap-3', className)}>
             {children}
         </nav>
     );

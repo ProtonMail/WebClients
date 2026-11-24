@@ -109,7 +109,7 @@ const Storage = ({
     );
 };
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
+interface Props extends ComponentPropsWithoutRef<'aside'> {
     app: APP_NAMES;
     logo?: ReactNode;
     /**
@@ -171,7 +171,7 @@ const Sidebar = ({
     hasComposerInFocus = false,
     ...rest
 }: Props) => {
-    const rootRef = useRef<HTMLDivElement>(null);
+    const rootRef = useRef<HTMLElement>(null);
     const focusTrapProps = useFocusTrap({
         active: expanded,
         rootRef,
@@ -184,7 +184,7 @@ const Sidebar = ({
 
     return (
         <>
-            <div
+            <aside
                 className={clsx(
                     'sidebar flex flex-nowrap flex-column no-print outline-none',
                     collapsed && 'sidebar--collapsed',
@@ -289,7 +289,7 @@ const Sidebar = ({
                         <div className="text-center py-2 px-3">{version}</div>
                     </div>
                 )}
-            </div>
+            </aside>
             {
                 // mobile backdrop
                 // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
