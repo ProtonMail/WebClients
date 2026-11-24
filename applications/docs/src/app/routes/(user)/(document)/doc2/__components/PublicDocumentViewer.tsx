@@ -1,4 +1,4 @@
-import { useState, useSyncExternalStore } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 
 import { useConfig } from '@proton/app-context/useConfig'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
@@ -12,6 +12,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { getCanWrite } from '@proton/shared/lib/drive/permissions'
 import { assignUrl } from '@proton/shared/lib/helpers/location'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { useGetFlag } from '@proton/unleash/useGetFlag'
 
 import { EditorFrame } from '~/components/document/EditorFrame'
@@ -19,6 +20,7 @@ import { useApplication } from '~/utils/application-context'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import { useEvent } from '~/utils/misc'
 
+import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { exportAndDownload } from '../__utils/downloadExport'
 import { getNodeName } from '../__utils/getNodeName'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
@@ -58,6 +60,10 @@ export type PublicDocumentViewerProps = {
   publicEditing: boolean
   /** Opens the document again from the start */
   onRetry: () => void
+  /** Drive's Download of a public link: saves the document as docx once the editor shows it */
+  downloadOnOpen?: boolean
+  /** Called as that download starts, with its save: true once the docx is saved, false if it failed */
+  onDownloadOnOpen?: (saved: Promise<boolean>) => void
 }
 
 /**
@@ -66,7 +72,14 @@ export type PublicDocumentViewerProps = {
  * public editing is on; otherwise the visitor views the latest commit read-only and nothing connects. A viewer's editor
  * is in public view, as on /doc. The header is doc2's, without the member-only items, the user menu and the banner.
  */
-export function PublicDocumentViewer({ token, handoff, publicEditing, onRetry }: PublicDocumentViewerProps) {
+export function PublicDocumentViewer({
+  token,
+  handoff,
+  publicEditing,
+  onRetry,
+  downloadOnOpen,
+  onDownloadOnOpen,
+}: PublicDocumentViewerProps) {
   const { logger } = useApplication()
   const { APP_VERSION } = useConfig()
   const { getLocalID } = useAuthentication()
@@ -159,12 +172,9 @@ export function PublicDocumentViewer({ token, handoff, publicEditing, onRetry }:
   }
   const download = (format: DataTypesThatDocumentCanBeExportedAs) => {
     const name = node && getNodeName(node)
-    if (!exportInvoker || !name) {
-      return
+    if (exportInvoker && name) {
+      void saveExport(exportInvoker, name, format, logger)
     }
-    exportAndDownload(exportInvoker, name, format).catch((error) =>
-      logger.error('Failed to download the document', error),
-    )
   }
 
   useSessionNotices(liveSession)
@@ -174,6 +184,14 @@ export function PublicDocumentViewer({ token, handoff, publicEditing, onRetry }:
   useLeaveWarning(liveSession)
   useEditorBasicsInSync(exportInvoker, { isDarkMode, userName })
   const receivePresenceFromEditor = usePresenceBridge(liveSession, editorInvoker)
+
+  // Mirrors `applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx`, its `isDownloadAction`
+  useEffect(() => {
+    const name = node && getNodeName(node)
+    if (downloadOnOpen && exportInvoker && name) {
+      onDownloadOnOpen?.(saveExport(exportInvoker, name, 'docx', logger))
+    }
+  }, [downloadOnOpen, exportInvoker, node, logger, onDownloadOnOpen])
 
   if (status.name === 'failed') {
     const { reason } = status
@@ -234,6 +252,21 @@ export function PublicDocumentViewer({ token, handoff, publicEditing, onRetry }:
         />
       </div>
     </DocumentShell>
+  )
+}
+
+function saveExport(
+  exportInvoker: EditorInvoker,
+  name: string,
+  format: DataTypesThatDocumentCanBeExportedAs,
+  logger: LoggerInterface,
+): Promise<boolean> {
+  return exportAndDownload(exportInvoker, name, format).then(
+    () => true,
+    (error) => {
+      logger.error('Failed to download the document', error)
+      return false
+    },
   )
 }
 

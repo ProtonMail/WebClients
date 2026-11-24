@@ -7,8 +7,11 @@ export type OpenResolution =
    */
   | { kind: 'open'; nodeMeta: { volumeId: string; linkId: string }; downloadOnOpen?: true; historyOnOpen?: true }
   | { kind: 'create'; parent?: { volumeId: string; linkId: string } }
-  /** A public link, which the public app opens: the link's own id comes from its sign-in, a folder's from the URL */
-  | { kind: 'openPublicLink'; token: string }
+  /**
+   * A public link, which the public app opens: the link's own id comes from its sign-in, a folder's from the URL.
+   * `downloadOnOpen`: Drive's Download of a public link, as for a member's document.
+   */
+  | { kind: 'openPublicLink'; token: string; downloadOnOpen?: true }
   | { kind: 'redirect'; to: 'public' }
   | { kind: 'error'; reason: 'invalidUrl' | 'slackTruncated' | 'unsupported' }
 
@@ -48,10 +51,11 @@ export function resolveOpenAction(openAction: DocumentAction | null, search: str
       return { kind: 'redirect', to: 'public' }
     case 'open-url':
       return { kind: 'openPublicLink', token: openAction.token }
-    // Not in doc2 yet: conversion, a public document's copy, and Drive's Download of a public link
+    case 'open-url-download':
+      return { kind: 'openPublicLink', token: openAction.token, downloadOnOpen: true }
+    // Not in doc2 yet: conversion and a public document's copy
     case 'convert':
     case 'copy-public':
-    case 'open-url-download':
       return { kind: 'error', reason: 'unsupported' }
   }
 }

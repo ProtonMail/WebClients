@@ -13,8 +13,8 @@ import './app.scss'
 const { searchParams, pathname } = new URL(window.location.href)
 const mode = searchParams.get('mode') || ''
 const isPublicApp = ['open-url', 'open-url-download'].includes(mode)
-// doc2 takes a public link on its own path, and hands over to the public app while it is off
-const isDoc2PublicApp = mode === 'open-url' && isDoc2Path(pathname)
+// doc2 takes a public link, and Drive's Download of one, on its own path, and hands over to the public app while it is off
+const isDoc2PublicApp = isPublicApp && isDoc2Path(pathname)
 
 const container = document.querySelector('.app-root')!
 const root = createRoot(container)

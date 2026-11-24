@@ -210,6 +210,15 @@
     "notes": "The token case only, with the same localStorage key, so the user app finds the local id where /doc leaves it."
   },
   {
+    "doc2": "__components/PublicDocumentViewer.tsx",
+    "kind": "mirror",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx",
+    "sourceSymbol": "isDownloadAction",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "062f2c22fe7a064b27b6da6e1ecded1865798245",
+    "notes": "Drive's Download of a public link saves the docx once the editor shows the document. The page then makes the address the public link's, which /doc doesn't, so a reload opens the document without downloading."
+  },
+  {
     "doc2": "__components/SessionStatus.tsx",
     "kind": "adaptation",
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx",

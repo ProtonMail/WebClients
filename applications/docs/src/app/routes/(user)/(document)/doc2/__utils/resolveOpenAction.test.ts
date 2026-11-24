@@ -73,13 +73,20 @@ describe('resolveOpenAction', () => {
     },
   )
 
-  test.each([
-    '/doc2?mode=convert&volumeId=VOLUME&linkId=LINK',
-    '/doc2?mode=copy-public',
-    '/doc2?mode=open-url-download&token=TOKEN&linkId=LINK',
-  ])('%s is unsupported on this page', (url) => {
-    expect(resolveUrl(url)).toEqual({ kind: 'error', reason: 'unsupported' })
+  test("mode open-url-download opens the public link, to download it: Drive's Download of a public link", () => {
+    expect(resolveUrl('/doc2?mode=open-url-download&token=TOKEN&linkId=LINK')).toEqual({
+      kind: 'openPublicLink',
+      token: 'TOKEN',
+      downloadOnOpen: true,
+    })
   })
+
+  test.each(['/doc2?mode=convert&volumeId=VOLUME&linkId=LINK', '/doc2?mode=copy-public'])(
+    '%s is unsupported on this page',
+    (url) => {
+      expect(resolveUrl(url)).toEqual({ kind: 'error', reason: 'unsupported' })
+    },
+  )
 
   test.each([
     ['open without a linkId', '/doc2?mode=open&volumeId=VOLUME'],
