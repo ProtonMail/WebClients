@@ -44,7 +44,7 @@
         "Adicionar"
       ],
       "Add account": [
-        "Adicionar uma conta"
+        "Adicionar conta"
       ],
       "Add address": [
         "Adicionar um endereço"
@@ -121,8 +121,14 @@
       "Bulk restore items from trash": [
         "Restaurar um grupo de itens do lixo"
       ],
+      "Bulk select items": [
+        "Selecionar itens em massa"
+      ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Cancel bulk selection": [
+        "Cancelar seleção em massa"
       ],
       "Cancel email change": [
         "Cancelar a alteração do e-mail"
@@ -162,6 +168,9 @@
       ],
       "Collapse": [
         "Fechar"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Ocultar"
       ],
       "Confirm": [
         "Confirmar"
@@ -239,7 +248,7 @@
         "Criar um cartão"
       ],
       "Create contact": [
-        "Criar um contacto"
+        "Criar contacto"
       ],
       "Create folder": [
         "Criar uma pasta"
@@ -369,6 +378,9 @@
       ],
       "Expand": [
         "Expandir"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Expandir alertas de Pass Monitor"
       ],
       "Export": [
         "Exportar"
@@ -535,6 +547,9 @@
       "Move to Trash": [
         "Mover para o Lixo"
       ],
+      "Multiple select": [
+        "Múltipla seleção"
+      ],
       "New token": [
         "Novo token"
       ],
@@ -556,8 +571,14 @@
       "OK": [
         "Aceitar"
       ],
+      "Open item": [
+        "Abrir item"
+      ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Open platform selection dropdown": [
+        "Abrir o menu suspenso de seleção de plataforma"
       ],
       "Open the browser again": [
         "Abrir o navegador de novo"
@@ -593,7 +614,7 @@
         "Verificar de novo"
       ],
       "Reactivate now": [
-        "Reativar"
+        "Reativar agora"
       ],
       "Read More": [
         "Ler mais"
@@ -627,6 +648,9 @@
       ],
       "Remove member": [
         "Remover o membro"
+      ],
+      "Remove passkey": [
+        "Remover chave de acesso"
       ],
       "Rename": [
         "Renomear"
@@ -680,7 +704,7 @@
         "Nome da secção"
       ],
       "Secure links": [
-        "Ligações seguras"
+        "Hiperligações seguras"
       ],
       "See all": [
         "Ver tudo"
@@ -734,7 +758,7 @@
         "Mostrar mais"
       ],
       "Sign in in the app instead": [
-        "Em vez disso inicie sessão na aplicação"
+        "Em vez disso, inicie a sessão na aplicação"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com o ${ BRAND_NAME }"
@@ -757,6 +781,9 @@
       "Submitting report...": [
         "A enviar o relatório..."
       ],
+      "Switch vault": [
+        "Mudar cofre"
+      ],
       "Sync alias": [
         "Sincronizar o alias",
         "Sincronizar os aliases"
@@ -766,6 +793,9 @@
       ],
       "To mailbox": [
         "Para a caixa de correio"
+      ],
+      "Toggle section": [
+        "Alternar secção"
       ],
       "Transfer aliases": [
         "Transferir os aliases"
@@ -899,6 +929,11 @@
         "Desinstalar o ${ PASS_APP_NAME }"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Aplicação de PC"
+      ]
+    },
     "Button": {
       "More info": [
         "Mais informação"
@@ -918,6 +953,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } mais",
+        "${ count } mais"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "A funcionalidade ${ DARK_WEB_MONITORING_NAME } está disponível com um plano pago. Melhore o seu plano para acessar imediatamente."
       ],
@@ -945,6 +984,9 @@
       ],
       "Change your passwords": [
         "Alterar as suas palavras-passe"
+      ],
+      "Check if you're reusing passwords": [
+        "Verificar se está a utilizar palavras-passe reutilizadas"
       ],
       "Check if your passwords have been exposed": [
         "Verifique se as suas palavras-passe foram comprometidas"
@@ -1005,6 +1047,12 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta conta está vulnerável. Consulte o serviço e altere a sua palavra-passe."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Esta palavra-passe de autenticação aparece numa violação de dados. Por favor, visite o serviço e altere a palavra-passe."
+      ],
+      "This login uses the same password as another item.": [
+        "Este início de sessão utiliza a mesma palavra-passe que outro item."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este serviço oferece autenticação de dois fatores (A2F). Ative-a para aumentar a segurança da sua conta."
@@ -1067,8 +1115,17 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Falha na autenticação. Confirme a sua segunda palavra-passe para prosseguir com a exportação"
       ],
+      "Biometric authentication cancelled.": [
+        "Autenticação biométrica cancelada."
+      ],
+      "Biometric authentication failed": [
+        "Autenticação biométrica falhou"
+      ],
       "Biometric authentication failed.": [
         "A autenticação biométrica falhou."
+      ],
+      "Biometric authentication is not available": [
+        "Autenticação biométrica não está disponível"
       ],
       "Biometric lock credentials do not match.": [
         "As credenciais do bloqueio biométrico não coincidem."
@@ -1253,6 +1310,9 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Erro ao mover todos os itens de «${ payload.content.name }»"
       ],
+      "Failed to move folder": [
+        "Não foi possível mover a pasta"
+      ],
       "Failed to move items": [
         "Erro ao mover os itens"
       ],
@@ -1331,11 +1391,17 @@
       "Failed updating monitoring status for this email address": [
         "Erro ao atualizar o estado da monitorização para este endereço de e-mail"
       ],
+      "Failed updating monitoring status for this item": [
+        "Não foi possível atualizar o estado de monitorização para este item"
+      ],
       "File could not be parsed": [
         "O ficheiro não pôde ser analisado"
       ],
       "File does not match expected format": [
         "O ficheiro não corresponde ao formato esperado."
+      ],
+      "Folder name does not match": [
+        "O nome da pasta não corresponde"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "A importação não foi possível para o cofre «${ vaultData.name }»: ${ errorMessage }"
@@ -1472,6 +1538,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
+      "This invite is no longer available": [
+        "Este convite já não está disponível"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiadas tentativas erradas. Inicie sessão novamente."
       ],
@@ -1510,6 +1579,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Formato de ficheiro Bitwarden não suportado"
+      ],
+      "Unsupported file type": [
+        "Tipo de ficheiro não suportado"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "A actualização do cofre \"${ payload.content.name }\" falhou"
@@ -1560,7 +1632,7 @@
         "O seu DNS não está definido corretamente. O registo TXT que obtemos é:"
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
-        "O Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }."
+        "O seu CÓDIGO foi removido por outro cliente ${ PASS_APP_NAME }."
       ]
     },
     "Error message": {
@@ -1803,7 +1875,10 @@
         "Após confirmar, terá de aceitar um pedido de permissão para o ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Após importar os seus dados, pode eliminar o ficheiro CSV que contém as suas palavras-passe por segurança."
+        "Depois de importar os seus dados com sucesso, pode eliminar o ficheiro CSV que contém as suas palavras-passe para segurança."
+      ],
+      "Alert restored": [
+        "Alerta restaurado"
       ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "O alias foi desativado. Deixará de receber e-mails enviados para ${ item.aliasEmail }."
@@ -1908,7 +1983,7 @@
         "Pode conceder ou revogar acesso para este item."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Pode conceder e revogar o acesso a este cofre e eliminá-lo."
+        "Pode conceder e revogar o acesso a este cofre, e eliminá-lo."
       ],
       "Can grant and revoke access to this vault.": [
         "Pode conceder ou revogar acesso para este cofre."
@@ -1919,8 +1994,14 @@
       "Can view this item.": [
         "Pode ver este item."
       ],
+      "Canceled by user": [
+        "Cancelado pelo utilizador"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "A verificar ${ compromised.progress.completed } de ${ compromised.progress.total } palavrass-passe"
+      ],
       "Choose how you want to sign in": [
-        "Selecione como prefere iniciar sessão"
+        "Selecione como prefere iniciar a sessão"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme a sua palavra-passe para continuar com a remoção."
@@ -2049,7 +2130,7 @@
         "Ativando o bloqueio automático de senha"
       ],
       "Enabling password lock failed": [
-        "A ativar o bloqueio por palavra-passe"
+        "Ativar o bloqueio por palavra-passe falhou"
       ],
       "Enabling PIN auto-lock": [
         "Ativando o bloqueio automático"
@@ -2096,14 +2177,26 @@
       "Failed updating your vault organization": [
         "Falha ao atualizar a sua organização de cofres"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Campo ocultado. Ainda o pode autopreencher."
+      ],
       "Fill in the CSV with your data": [
         "Preencha o ficheiro CSV com os seus dados"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Procure \"Agente de Autenticação OpenSSH\", clique com o botão direito do rato em Propriedades."
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Pasta \"${ payload.folder.name }\" criada"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Pasta \"${ payload.folder.name }\" movida"
+      ],
       "Folder deleted": [
         "Pasta eliminada"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Pasta renomeada para \"${ payload.folder.name }\""
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Siga estes passos para importar os seus dados com um ficheiro CSV genérico:"
@@ -2290,11 +2383,7 @@
         "Item movido para o lixo"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
+        "A mover todos os itens de \"${ payload.content.name }\""
       ],
       "Moving items": [
         "A mover itens"
@@ -2356,8 +2445,14 @@
       "Only cards are shown": [
         "Só são mostrados os cartões"
       ],
+      "Only custom items are shown": [
+        "Só são mostrados os itens personalizados"
+      ],
       "Only identities are shown": [
         "Só são mostradas as identidades"
+      ],
+      "Only logins are shown": [
+        "Só são mostradas as sessões"
       ],
       "Only notes are shown": [
         "Só são mostradas as notas"
@@ -2382,6 +2477,9 @@
       ],
       "Pass Plus trial": [
         "Avaliação do Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Palavra-passe ocultada. Ainda a pode autopreencher."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "O bloqueio por palavra-passe foi registado. Utilize-o para desbloquear o ${ PASS_APP_NAME }"
@@ -2487,7 +2585,7 @@
         "Confirme a sua segunda palavra-passe para o bloqueio automático com a sua palavra-passe."
       ],
       "Please confirm your second password in order to enable offline mode": [
-        "Confirme a sua segunda palavra-passe para ativar o modo offline."
+        "Confirme a sua segunda palavra-passe para ativar o modo ''off-line''."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme a sua segunda palavra-passe para exportar os seus dados do ${ PASS_APP_NAME }."
@@ -2508,7 +2606,7 @@
         "Não feche esta janela."
       ],
       "Please enter your current PIN code to continue": [
-        "Introduza o seu código Pin actual para continuar."
+        "Por favor, insira o seu CÓDIGO atual para continuar"
       ],
       "Please follow the steps below to set up your domain.": [
         "Siga os passos abaixo para configurar o seu domínio."
@@ -2663,6 +2761,15 @@
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Basta utilizar ${ emailBold } da próxima vez que precisar de um alias: ele será ${ automaticallyBold } criado na primeira vez que receber um e-mail. Para ter mais controlo, também pode definir ${ rulesHyperLink }."
       ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Iniciar o ${ PASS_APP_NAME } ''off-line'' irá requerer a sua palavra-passe ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Iniciar o ${ PASS_APP_NAME } offline exigirá a sua palavra-passe de cópia de segurança."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Iniciar o ${ PASS_APP_NAME } ''off-line'' irá requerer a sua palavra-passe extra."
+      ],
       "Successfully exported all your items": [
         "Todos os seus itens foram exportados"
       ],
@@ -2677,6 +2784,9 @@
       ],
       "Suggested": [
         "Sugestões"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Mude para outra pasta ou crie um item nesta pasta."
       ],
       "Switch to another vault or create an item in this vault": [
         "Troque para outro cofre ou crie um item neste cofre."
@@ -2706,7 +2816,7 @@
         "A exportação conterá apenas cofres que possui."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "O ficheiro exportado será encriptado com PGP e requer uma frase-chave forte."
+        "O ficheiro exportado será encriptado com PGP e requer uma frase-passe forte."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas foram divulgadas por um serviço de terceiros. As suas informações da conta ${ BRAND_NAME } permanecem seguras e encriptadas. ${ learnMoreLink }"
@@ -2887,6 +2997,12 @@
       "Viewer": [
         "Visualizador"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Os visualizadores ainda podem autopreencher as palavras-passe, mas não as irá ver no ${ PASS_APP_NAME }. Isto desencoraja a visualização casual e reduz o risco de divulgação acidental."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Os visualizadores ainda podem autopreencher. Os editores e os administradores veem sempre as palavras-passe."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos a ter problemas em sincronizar os dados para o seu armazenamento local. Assegure-se que tem espaço suficiente no disco para o ${ PASS_SHORT_APP_NAME } funcionar corretamente."
       ],
@@ -2905,6 +3021,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Quando ativado, ainda poderá aceder aos seus dados do ${ PASS_SHORT_APP_NAME } se perder a ligação à Internet ou se os servidores da ${ BRAND_NAME } estiverem inacessíveis."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Quando mover itens entre cofres nós iremos preservar até 50 modificações realizadas para cada item."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Ao enviar um e-mail a partir deste alias, o e-mail exibirá ${ emailSender } como remetente."
@@ -2932,7 +3051,7 @@
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
         "Tem o ${ aliasCount } alias que está presente no SimpleLogin, mas não está no ${ PASS_APP_NAME }. Gostaria de sincronizá-lo?",
-        "Tem ${ aliasCount } aliases que estão presentes no SimpleLogin, mas não estão no ${ PASS_APP_NAME }. Gostaria de sincronizá-los?"
+        "Tem ${ aliasCount } pseudónimos que estão presentes no SimpleLogin, mas não estão no ${ PASS_APP_NAME }. Gostaria de sincronizá-los?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Tem ${ daysRemaining } dia restante para experimentar estas funcionalidades e outras da versão premium.",
@@ -3015,6 +3134,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "As suas informações foram encontradas em ${ displayedDate }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "A sua organização não permite a utilização de chaves de acesso guardadas em ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "A sua organização exige que proteja o seu acesso ao ${ PASS_APP_NAME }."
@@ -3178,6 +3300,9 @@
       "Account Type": [
         "Tipo de conta"
       ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Adicione um prefixo aleatório para este domínio ao criar um alias."
       ],
@@ -3248,7 +3373,7 @@
         "Básico"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
-        "Além de armazenar os seus inícios de sessão, o ${ PASS_APP_NAME } protege a sua identidade com uma funcionalidade integrada de alias de e-mail. Sempre que se registar numa nova conta online, o ${ PASS_APP_NAME } pode criar automaticamente um alias para manter o seu endereço de e-mail real protegido. "
+        "Além de armazenar os seus inícios de sessão, o ${ PASS_APP_NAME } protege a sua identidade com uma funcionalidade integrada de alias de ''e-mail''. Sempre que se registar numa nova conta ''on-line'', o ${ PASS_APP_NAME } pode criar automaticamente um alias para manter o seu endereço de correio eletrónico real protegido. "
       ],
       "Biometrics": [
         "Biometria"
@@ -3306,6 +3431,9 @@
       ],
       "Company": [
         "Empresa"
+      ],
+      "Confirm folder name": [
+        "Confirmar nome da pasta"
       ],
       "Confirm vault name": [
         "Confirmar o nome do cofre"
@@ -3386,7 +3514,7 @@
         "Data"
       ],
       "Date of Birth": [
-        "Data de nascimento"
+        "Data de Nascimento"
       ],
       "Device": [
         "Dispositivo"
@@ -3431,7 +3559,7 @@
         "E-mail (alias)"
       ],
       "Email (new alias)": [
-        "E-mail (novo alias)"
+        "E-mail (novo pseudónimo)"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -3510,6 +3638,9 @@
       ],
       "Folder": [
         "Pasta"
+      ],
+      "Folders": [
+        "Pastas"
       ],
       "For a one-off sharing": [
         "Para partilha única"
@@ -3703,11 +3834,17 @@
       "LinkedIn account": [
         "Conta LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Iniciar sessão"
       ],
       "Logins": [
         "Inícios de sessão"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Caixas de correio"
@@ -3866,7 +4003,7 @@
         "Passaporte"
       ],
       "Passport Number": [
-        "Número de passaporte"
+        "Número do Passaporte"
       ],
       "Passport number": [
         "Número do passaporte"
@@ -3938,7 +4075,7 @@
         "Produto"
       ],
       "Program Name": [
-        "Nome do programa"
+        "Nome do Programa"
       ],
       "Protect ${ PASS_APP_NAME } with an extra password": [
         "Proteja o ${ PASS_APP_NAME } com uma palavra-passe adicional"
@@ -4004,7 +4141,7 @@
         "Inicie a sessão em segurança com os códigos de acesso"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
-        "Armazene, partilhe e inicie sessão automaticamente nas suas contas com o ${ PASS_APP_NAME }, utilizando encriptação de ponta a ponta, confiada por milhões de pessoas."
+        "Guarde, partilhe e inicie a sessão automaticamente nas suas contas com o ${ PASS_APP_NAME }, utilizando a encriptação de ponta a ponta, confiada por milhões de pessoas."
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Armazene, partilhe e inicie sessão automaticamente nas suas contas com o ${ PASS_APP_NAME }, utilizando encriptação de ponta a ponta, confiada por milhões de pessoas."
@@ -4163,7 +4300,7 @@
         "Hoje"
       ],
       "Token name": [
-        "Nome do token"
+        "Nome do código"
       ],
       "Total imported items: ": [
         "Total de itens importados: "
@@ -4178,7 +4315,7 @@
         "Lixo"
       ],
       "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
-        "A autenticação de dois fatores (A2F) é uma das melhores maneiras de proteger as suas contas online. O ${ PASS_APP_NAME } facilita a A2F com um autenticador integrado que armazena os seus códigos A2F e os exibe automaticamente, além de os preencher automaticamente."
+        "A autenticação de dois fatores (2FA) é uma das melhores maneiras para proteger as suas contas ''on-line''. O ${ PASS_APP_NAME } facilita a 2FA com um autenticador integrado que guarda os seus códigos 2FA e exibe-o sautomaticamente, além de os preencher automaticamente."
       ],
       "Type": [
         "Tipo"
@@ -4280,7 +4417,7 @@
         "Vulnerável"
       ],
       "Wallet Name": [
-        "Nome da carteira"
+        "Nome da Carteira"
       ],
       "Weak": [
         "Fraco"
@@ -4296,6 +4433,9 @@
       ],
       "WiFi network": [
         "Rede wifi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Detalhes do trabalho"
@@ -4580,7 +4720,7 @@
         "Adicionar uma nota"
       ],
       "Add password": [
-        "Adicionar uma palavra-passe"
+        "Adicionar palavra-passe"
       ],
       "Add private key": [
         "Adicionar uma chave privada"
@@ -4697,6 +4837,9 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Este URL NÃO será bloqueado do preenchimento automático"
+      ],
+      "URL doesn't match the rule": [
+        "O URL não corresponde à regra"
       ],
       "URL matches the rule": [
         "O URL corresponde à regra"
@@ -4954,6 +5097,12 @@
       "Clear clipboard": [
         "Limpar a área de transferência"
       ],
+      "Compromised password": [
+        "Palavra-passe comprometida"
+      ],
+      "Compromised passwords": [
+        "Palavras-passe comprometidas"
+      ],
       "Confirm extra password": [
         "Confirmar a palavra-passe adicional"
       ],
@@ -4978,11 +5127,17 @@
       "Create contact": [
         "Criar contacto"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Criar pasta em \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Criar novo token de acesso"
       ],
       "Create PIN code": [
         "Criar o PIN"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Criar subpasta em \"${ folderName }\""
       ],
       "Created": [
         "Criação"
@@ -5048,6 +5203,9 @@
       "Domain ownership verification": [
         "Verificação da propriedade do domínio"
       ],
+      "Enable offline mode": [
+        "Ativar modo de ''off-line''"
+      ],
       "Encrypted import": [
         "Importação encriptada"
       ],
@@ -5081,11 +5239,17 @@
       "Get mobile and desktop apps": [
         "Obtenha as aplicações para PC e dispositivo móvel"
       ],
+      "Get mobile apps": [
+        "Obter aplicações móveis"
+      ],
       "Get Started": [
         "Começar"
       ],
       "Hidden vaults": [
         "Cofres ocultos"
+      ],
+      "Hide passwords from viewers?": [
+        "Ocultar palavras-passe dos visualizadores?"
       ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
@@ -5116,6 +5280,9 @@
       ],
       "Item": [
         "Item"
+      ],
+      "Keep your subscription active": [
+        "Manter a sua subscrição ativa"
       ],
       "Last autofill": [
         "Último preenchimento automático"
@@ -5156,8 +5323,14 @@
       "Minicalendar": [
         "Minicalendário"
       ],
+      "Missing 2FA": [
+        "2FA em falta"
+      ],
       "Modified": [
         "Modificado"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Mover \"${ folderName }\" para"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Mover ${ trashedItemsCount } item para o lixo?",
@@ -5165,6 +5338,12 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Mover todos os itens para \"${ target }\"?"
+      ],
+      "Move all items?": [
+        "Mover todos os itens?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Mover item para \"${ target }\""
       ],
       "MX record": [
         "Registo MX"
@@ -5174,6 +5353,9 @@
       ],
       "No access tokens yet": [
         "Ainda sem tokens de acesso"
+      ],
+      "No compromised passwords": [
+        "Sem palavras-passe comprometidas"
       ],
       "No excluded items": [
         "Sem itens excluídos"
@@ -5204,6 +5386,9 @@
       ],
       "Our welcome gift to you": [
         "Aproveite o seu período de teste gratuito"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Código de acesso"
@@ -5275,6 +5460,9 @@
       "Reused ${ count } time": [
         "Reutilizada ${ count } vez",
         "Reutilizada ${ count } vezes"
+      ],
+      "Reused password": [
+        "Palavra-passe reutilizada"
       ],
       "Reused passwords": [
         "Palavras-passe reutilizadas"
@@ -5373,7 +5561,10 @@
         "Actualização disponível"
       ],
       "Upgrade to check for compromised passwords": [
-        "Atualize para procurar por palavras-passe comprometidas "
+        "Atualize para pesquisar por palavras-passe comprometidas "
+      ],
+      "Upgrade to check for reused passwords": [
+        "Atualize para procurar por palavras-passe reutilizadas"
       ],
       "URL matching": [
         "Correspondência de URL"
@@ -5419,6 +5610,9 @@
       ],
       "Your exposed information": [
         "As suas informações expostas"
+      ],
+      "Your folder is empty": [
+        "A sua pasta está vazia"
       ],
       "Your new access token": [
         "O seu novo token de acesso"
@@ -5602,6 +5796,9 @@
       "Failed to load breaches.": [
         "Erro ao carregar os incidentes"
       ],
+      "Folder name is required": [
+        "Nome de pasta obrigatório"
+      ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Conceda acesso à área de transferência para ativar a limpeza automática de dados e palavras-passe copiadas."
       ],
@@ -5636,6 +5833,9 @@
       "Move to trash": [
         "Mover para o lixo"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Mover a pasta para aqui excederia o nível máximo de integração de pastas"
+      ],
       "No items": [
         "Nenhum item"
       ],
@@ -5667,7 +5867,7 @@
         "Só são permitidos caracteres alfanuméricos em minúsculas, pontos, hífenes e sublinhados"
       ],
       "Passphrase is required": [
-        "A frase-passe é obrigatória."
+        "A frase-passe é obrigatória"
       ],
       "Passwords do not match": [
         "As palavras-passe não correspondem."
@@ -5770,6 +5970,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Não terá mais acesso a este cofre. Para juntar-se novamente precisará de um novo convite."
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Atingiu o número máximo de pastas neste nível"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Atingiu o número máximo de pastas para este cofre"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "O seu administrador precisa criar um cofre para si antes que possa criar itens."
