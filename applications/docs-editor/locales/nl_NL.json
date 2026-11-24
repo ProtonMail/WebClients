@@ -107,6 +107,9 @@
       "Delete thread": [
         "Gesprek verwijderen"
       ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
       "Divider": [
         "Scheidingslijn"
       ],
@@ -121,6 +124,12 @@
       ],
       "Fit table to page width": [
         "Pas tabel in breedte van de pagina"
+      ],
+      "Header column": [
+        "Kopkolom"
+      ],
+      "Header row": [
+        "Koptekstrij"
       ],
       "Indent": [
         "Inspringen"
@@ -333,6 +342,9 @@
       "Failed to import Markdown due to unknown error.": [
         "Importeren van Markdown mislukt door een onbekende fout."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Het importeren van het OpenDocument-bestand is mislukt vanwege een onbekende fout."
+      ],
       "Failed to import Word document due to unknown error.": [
         "Importeren van het Word-document is mislukt vanwege een onbekende fout."
       ],
@@ -429,8 +441,8 @@
       "Loading emoji…": [
         "Emoji laden…"
       ],
-      "NEW": [
-        "NIEUW"
+      "Loading spreadsheet content...": [
+        "Spreadsheetinhoud laden..."
       ],
       "New": [
         "Nieuw"
@@ -443,6 +455,9 @@
       ],
       "No title": [
         "Geen titel"
+      ],
+      "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
+        "Open de link om de afbeelding te downloaden, gebruik dan \"afbeelding invoegen\" om het aan dit document toe te voegen."
       ],
       "Remote image blocked": [
         "Afbeelding op afstand geblokkeerd"
@@ -461,6 +476,9 @@
       ],
       "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
         "De taal die u gebruikt wordt momenteel niet ondersteund in suggestiemodus. Schakel over naar de bewerkingsmodus of verander de taal."
+      ],
+      "This paste was blocked because the text contains invalid characters.": [
+        "Het plakken is geblokkeerd omdat de tekst ongeldige tekens bevat."
       ],
       "Viewing": [
         "Bekijken"
@@ -581,11 +599,17 @@
       "Replace link": [
         "Link vervangen"
       ],
+      "Resize outline": [
+        "Lijndikte aanpassen"
+      ],
       "Search emoji": [
         "Zoek emoji"
       ],
       "Search results": [
         "Zoekresultaten"
+      ],
+      "Table": [
+        "Tabel"
       ],
       "Text and highlight color": [
         "Tekst en markeer kleur"
@@ -683,6 +707,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Er bestaat al een werkblad met deze naam"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "History is een gereserveerde naam en kan niet gebruikt worden voor een werkblad"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Werkbladnamen kunnen niet langer zijn dan 31 tekens"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Werkbladnamen mogen de volgende tekens niet bevatten: \\ / ? * [ ] of :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Werkbladnamen kunnen niet beginnen of eindigen met een apostrof."
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -1637,6 +1673,9 @@
       "New spreadsheet": [
         "Nieuw spreadsheet"
       ],
+      "Open Proton Drive": [
+        "Open Proton Drive"
+      ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
         "OpenDocument Spreadsheet (.ods) (Bèta)"
       ],
@@ -2223,14 +2262,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Weergeven in de statusbalk"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, niet van toepassing"
+      ],
       "Average": [
         "Gemiddelde"
+      ],
+      "Copy": [
+        "Kopiëren"
+      ],
+      "Copy formula": [
+        "Kopieer formule"
+      ],
+      "Copy value": [
+        "Waarde kopiëren"
       ],
       "Count": [
         "Aantal"
       ],
-      "Customize Status Bar": [
-        "Statusbalk aanpassen"
+      "Count numbers": [
+        "Tel getallen"
+      ],
+      "Detach from selection": [
+        "Losmaken van selectie"
       ],
       "Max": [
         "Max"
@@ -2238,11 +2295,20 @@
       "Min": [
         "Min"
       ],
-      "Numerical count": [
-        "Numeriek aantal"
+      "Pin by the selection": [
+        "Vastzetten bij de selectie"
+      ],
+      "Selection summary": [
+        "Samenvatting selectie"
       ],
       "Sum": [
         "Som"
+      ],
+      "Summary": [
+        "Samenvatting"
+      ],
+      "Unpin from selection": [
+        "Losmaken van selectie"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
@@ -2708,6 +2774,9 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Suggesties maken binnen codeblokken wordt niet ondersteund"
+      ],
+      "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
+        "Externe afbeeldingen plakken wordt niet ondersteund. Download de afbeelding en gebruik \"afbeelding invoegen\"."
       ]
     }
   }

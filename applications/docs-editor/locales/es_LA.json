@@ -24,10 +24,10 @@
         "Agregar un comentario"
       ],
       "Add new table column": [
-        "Agregar columna a la tabla"
+        "Añadir columna a la tabla"
       ],
       "Add new table row": [
-        "Agregar fila a la tabla"
+        "Añadir fila a la tabla"
       ],
       "Add suggestion": [
         "Agregar sugerencia"
@@ -444,9 +444,6 @@
       "Loading spreadsheet content...": [
         "Cargando el contenido de la hoja de cálculo..."
       ],
-      "NEW": [
-        "NUEVO"
-      ],
       "New": [
         "Nuevo"
       ],
@@ -710,6 +707,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Ya existe una hoja con este nombre"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "Historia es un nombre reservado y no se puede usar para una hoja"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Los nombres de las hojas no pueden tener más de 31 caracteres"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Los nombres de las hojas no pueden contener \\ /? * [ ] o :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Los nombres de las hojas no pueden comenzar ni terminar con un apóstrofo"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -2259,17 +2268,11 @@
       "Count": [
         "Recuento"
       ],
-      "Customize Status Bar": [
-        "Personalizar la barra de estado"
-      ],
       "Max": [
         "Max"
       ],
       "Min": [
         "Min"
-      ],
-      "Numerical count": [
-        "Recuento numérico"
       ],
       "Sum": [
         "Suma"

@@ -444,9 +444,6 @@
       "Loading spreadsheet content...": [
         "S'està carregant el contingut del full de càlcul"
       ],
-      "NEW": [
-        "NOU"
-      ],
       "New": [
         "Nova"
       ],
@@ -710,6 +707,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Ja hi ha un full de càlcul amb aquest nom."
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "History és un nom reservat i no es pot utilitzar per a cap full"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Els noms dels fulls no poden tenir més de 31 caràcters"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Els noms dels fulls no poden contenir \\ / ? * [ ] ni :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Els noms dels fulls no poden començar ni acabar amb un apòstrof"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -2253,14 +2262,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Ho mostra a la barra d'estat"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, no és aplicable"
+      ],
       "Average": [
         "Mitjana"
+      ],
+      "Copy": [
+        "Copia"
+      ],
+      "Copy formula": [
+        "Copia la fórmula"
+      ],
+      "Copy value": [
+        "Copia el valor"
       ],
       "Count": [
         "Quantitat"
       ],
-      "Customize Status Bar": [
-        "Personalitza la barra d'estat"
+      "Count numbers": [
+        "Compteu els números"
+      ],
+      "Detach from selection": [
+        "Separar-ho de la selecció"
       ],
       "Max": [
         "Màx."
@@ -2268,11 +2295,20 @@
       "Min": [
         "Mín."
       ],
-      "Numerical count": [
-        "Recompte numèric"
+      "Pin by the selection": [
+        "Fixeu-ho per la selecció"
+      ],
+      "Selection summary": [
+        "Resum de la selecció"
       ],
       "Sum": [
         "Suma"
+      ],
+      "Summary": [
+        "Resum"
+      ],
+      "Unpin from selection": [
+        "Ho treu de la selecció"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

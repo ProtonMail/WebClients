@@ -444,9 +444,6 @@
       "Loading spreadsheet content...": [
         "Φόρτωση περιεχομένου υπολογιστικού φύλλου..."
       ],
-      "NEW": [
-        "ΝΕΟ"
-      ],
       "New": [
         "Νέο"
       ],
@@ -710,6 +707,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Υπάρχει ήδη ένα φύλλο με αυτό το όνομα"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "Το History είναι δεσμευμένο όνομα και δεν μπορεί να χρησιμοποιηθεί για φύλλο."
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Τα ονόματα των φύλλων δεν μπορούν να υπερβαίνουν τους 31 χαρακτήρες"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Τα ονόματα των φύλλων δεν μπορούν να περιέχουν τους χαρακτήρες \\ / ? * [ ] ή :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Τα ονόματα των φύλλων δεν μπορούν να ξεκινούν ή να τελειώνουν με απόστροφο"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -2253,14 +2262,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Εμφάνιση στη γραμμή κατάστασης"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, δεν εφαρμόζεται"
+      ],
       "Average": [
         "Μέσος όρος"
+      ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
+      "Copy formula": [
+        "Αντιγραφή φόρμουλας"
+      ],
+      "Copy value": [
+        "Αντιγραφή τιμής"
       ],
       "Count": [
         "Πλήθος"
       ],
-      "Customize Status Bar": [
-        "Προσαρμογή Γραμμής Κατάστασης"
+      "Count numbers": [
+        "Μέτρηση αριθμών"
+      ],
+      "Detach from selection": [
+        "Αποσύνδεση από την επιλογή"
       ],
       "Max": [
         "Μέγιστο"
@@ -2268,11 +2295,20 @@
       "Min": [
         "Ελάχιστο"
       ],
-      "Numerical count": [
-        "Αριθμητική καταμέτρηση"
+      "Pin by the selection": [
+        "Καρφίτσωμα βάσει της επιλογής"
+      ],
+      "Selection summary": [
+        "Σύνοψη επιλογής"
       ],
       "Sum": [
         "Άθροισμα"
+      ],
+      "Summary": [
+        "Περίληψη"
+      ],
+      "Unpin from selection": [
+        "Κατάργηση καρφιτσώματος από την επιλογή"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

@@ -441,9 +441,6 @@
       "Loading spreadsheet content...": [
         "Laster inn innholdet i regnearket..."
       ],
-      "NEW": [
-        "NY"
-      ],
       "New": [
         "Ny"
       ],
@@ -707,6 +704,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Et ark med dette navnet finnes allerede"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "\"History\" er et reservert navn og kan ikke brukes for et ark"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Arknavn kan ikke være lenger enn 31 tegn"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Arknavn kan ikke inneholde \\ / ? * [ ] eller :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Arknavn kan ikke begynne eller slutte med en apostrof"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -2256,17 +2265,11 @@
       "Count": [
         "Antall"
       ],
-      "Customize Status Bar": [
-        "Tilpass statuslinjen"
-      ],
       "Max": [
         "Maks"
       ],
       "Min": [
         "Min"
-      ],
-      "Numerical count": [
-        "Numerisk antall"
       ],
       "Sum": [
         "Sum"
