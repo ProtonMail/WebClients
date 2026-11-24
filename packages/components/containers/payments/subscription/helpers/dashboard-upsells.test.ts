@@ -57,7 +57,6 @@ describe('resolveUpsellsToDisplay', () => {
             openSubscriptionModal: mockedOpenSubscriptionModal,
             plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
             user: buildUser(),
-            telemetryFlow: 'subscription',
         };
     });
 
@@ -131,7 +130,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -141,7 +139,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -177,7 +174,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -187,7 +183,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -232,7 +227,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -242,7 +236,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -273,7 +266,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -302,7 +294,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -312,7 +303,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -364,7 +354,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -393,7 +382,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
 
             upsells[1].onUpgrade();
@@ -403,7 +391,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
 
@@ -477,7 +464,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -500,7 +486,6 @@ describe('resolveUpsellsToDisplay', () => {
                 disablePlanSelection: true,
                 plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -543,7 +528,6 @@ describe('resolveUpsellsToDisplay', () => {
                 plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: 'subscription',
             });
         });
     });
@@ -574,7 +558,6 @@ describe('resolveUpsellsToDisplay', () => {
                 plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: 'subscription',
             });
 
             const upsell2 = upsells[1];

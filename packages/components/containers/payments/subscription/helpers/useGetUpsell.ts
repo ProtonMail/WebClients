@@ -43,7 +43,6 @@ export const useGetUpsell = () => {
                 openSubscriptionModal,
                 canAccessDuoPlan,
                 user,
-                telemetryFlow: 'subscription',
                 multiSubscriptionContext: createMultiSubscriptionContext({
                     lumoMultiSubscriptions,
                     subscription: subscription,

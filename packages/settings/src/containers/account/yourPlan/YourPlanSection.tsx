@@ -14,7 +14,6 @@ import UpsellPanels from '@proton/components/containers/payments/subscription/pa
 import UsagePanel from '@proton/components/containers/payments/subscription/panels/UsagePanel';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import ReferralTrialInfo from '@proton/components/containers/referral/components/ReferralTrialInfo/ReferralTrialInfo';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
@@ -61,7 +60,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const isReferralExpansionEnabled = useFlag('ReferralExpansionDiscover');
-    const telemetryFlow = useDashboardPaymentFlow(app);
     useLoad();
 
     const { upsells, loading: upsellsLoading } = useUpsellsToDisplay({
@@ -73,7 +71,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
         canAccessDuoPlan,
         user,
         isReferralExpansionEnabled,
-        telemetryFlow,
         multiSubscriptionContext,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });

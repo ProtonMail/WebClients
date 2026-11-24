@@ -14,7 +14,6 @@ import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import getBoldFormattedText from '../../../../../../helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
 import UpsellPanelV2 from '../../../panels/UpsellPanelV2';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
@@ -39,12 +38,10 @@ export const useDrivePlusExtendSubscription = ({
     planToUpsell,
 }: UpsellSectionPropsWithPlan): UpsellsHook => {
     const openSubscriptionModal = useSubscriptionModalRaw();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
 
@@ -53,7 +50,6 @@ export const useDrivePlusExtendSubscription = ({
         plansMap,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const upsells = [
@@ -70,7 +66,7 @@ export const useDrivePlusExtendSubscription = ({
         }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

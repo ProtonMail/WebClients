@@ -9,8 +9,7 @@ import { FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../subscriptionModalContext';
+import { useSubscriptionModalRaw } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';
@@ -23,8 +22,7 @@ interface Props extends UpsellSectionBaseProps {
 
 const FamilyBanner = ({ app, subscription }: Props) => {
     const plan = PLANS.FAMILY;
-    const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, plan);
 
     const pricePerMonthPerUser = cheapestMonthlyPrice ? cheapestMonthlyPrice / FAMILY_MAX_USERS : undefined;
@@ -33,7 +31,6 @@ const FamilyBanner = ({ app, subscription }: Props) => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.FAMILY,
-            telemetryFlow,
         });
     };
 
@@ -41,7 +38,6 @@ const FamilyBanner = ({ app, subscription }: Props) => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            telemetryFlow,
         });
     };
 

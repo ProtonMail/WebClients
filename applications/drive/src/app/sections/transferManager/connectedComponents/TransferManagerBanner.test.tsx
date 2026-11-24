@@ -13,7 +13,6 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { TransferManagerBannerType } from '../transferManager.store';
 import { TransferManagerBanner } from './TransferManagerBanner';
 
-vi.mock('@proton/components/hooks/useDashboardPaymentFlow', () => ({ default: () => 'upsell' }));
 vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModalRaw: () => vi.fn(),
 }));

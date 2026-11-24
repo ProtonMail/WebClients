@@ -292,16 +292,12 @@ export const handleSubscribeUser = async ({
     api,
     subscriptionData,
     productParam,
-    reportPaymentSuccess,
-    reportPaymentFailure,
     telemetryContext,
     provisioningToken,
 }: {
     api: Api;
     subscriptionData: SubscriptionData;
     productParam: ProductParam;
-    reportPaymentSuccess: () => void;
-    reportPaymentFailure: () => void;
     telemetryContext?: PaymentTelemetryContext;
     provisioningToken?: string;
 }) => {
@@ -309,45 +305,38 @@ export const handleSubscribeUser = async ({
         return;
     }
 
-    try {
-        const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
-        const Codes = getCodes({ coupon: subscriptionData.checkResult.Coupon?.Code });
+    const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    const Codes = getCodes({ coupon: subscriptionData.checkResult.Coupon?.Code });
 
-        const { Subscription } = await createPaymentSubscription(
-            api,
-            {
-                Plans: subscriptionData.planIDs,
-                Currency: subscriptionData.currency,
-                Cycle: subscriptionData.cycle,
-                BillingAddress: subscriptionData.billingAddress,
-                VatId: subscriptionData.vatNumber,
-                ...{
-                    Payment: subscriptionData.payment,
-                    Amount: subscriptionData.checkResult.AmountDue,
-                    ...(Codes.length ? { Codes } : undefined),
-                    ...(isTrial ? { StartTrial: true } : {}),
-                    // Redeems a sales-provisioned link in the same request.
-                    ...(provisioningToken ? { ProvisioningToken: provisioningToken } : {}),
-                },
+    const { Subscription } = await createPaymentSubscription(
+        api,
+        {
+            Plans: subscriptionData.planIDs,
+            Currency: subscriptionData.currency,
+            Cycle: subscriptionData.cycle,
+            BillingAddress: subscriptionData.billingAddress,
+            VatId: subscriptionData.vatNumber,
+            ...{
+                Payment: subscriptionData.payment,
+                Amount: subscriptionData.checkResult.AmountDue,
+                ...(Codes.length ? { Codes } : undefined),
+                ...(isTrial ? { StartTrial: true } : {}),
+                // Redeems a sales-provisioned link in the same request.
+                ...(provisioningToken ? { ProvisioningToken: provisioningToken } : {}),
             },
-            {
-                build: APPS.PROTONACCOUNT,
-                userCurrency: undefined,
-                subscription: undefined,
-                product: productParam,
-                telemetryContext: telemetryContext ?? 'other',
-                paymentMethodType: subscriptionData.payment?.paymentMethodType,
-                paymentMethodValue: subscriptionData.payment?.paymentMethodValue,
-            }
-        );
+        },
+        {
+            build: APPS.PROTONACCOUNT,
+            userCurrency: undefined,
+            subscription: undefined,
+            product: productParam,
+            telemetryContext: telemetryContext ?? 'other',
+            paymentMethodType: subscriptionData.payment?.paymentMethodType,
+            paymentMethodValue: subscriptionData.payment?.paymentMethodValue,
+        }
+    );
 
-        reportPaymentSuccess();
-
-        return Subscription;
-    } catch (error: any) {
-        reportPaymentFailure();
-        throw error;
-    }
+    return Subscription;
 };
 
 /**
@@ -366,16 +355,12 @@ export const handleSetupUser = async ({
     cache,
     api,
     canGenerateMnemonic,
-    reportPaymentSuccess,
-    reportPaymentFailure,
     telemetryContext,
     isRetry,
 }: {
     cache: SignupCacheResult;
     api: Api;
     canGenerateMnemonic: boolean;
-    reportPaymentSuccess: () => void;
-    reportPaymentFailure: () => void;
     telemetryContext?: PaymentTelemetryContext;
     /** A previous attempt may have subscribed before failing, so the subscription is skipped if the user is paid. */
     isRetry?: boolean;
@@ -420,8 +405,6 @@ export const handleSetupUser = async ({
             api,
             subscriptionData,
             productParam,
-            reportPaymentSuccess,
-            reportPaymentFailure,
             telemetryContext,
             provisioningToken,
         }).catch((error) => {

@@ -64,8 +64,6 @@ const runLegacy = (
         } as any,
         api: apiMock,
         canGenerateMnemonic: false,
-        reportPaymentSuccess: vi.fn(),
-        reportPaymentFailure: vi.fn(),
         isRetry,
     });
 

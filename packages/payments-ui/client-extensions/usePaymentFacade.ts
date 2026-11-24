@@ -6,10 +6,6 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useLoading from '@proton/hooks/useLoading';
 import type { ThemeCode, ThemeLike } from '@proton/payments-hooks/client-extensions/helpers';
 import { getThemeCode } from '@proton/payments-hooks/client-extensions/helpers';
-import {
-    type TelemetryPaymentFlow,
-    usePaymentsTelemetry,
-} from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import type { OnMethodChangedHandler } from '@proton/payments-hooks/react-extensions/useMethods';
 import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import { usePaymentFacade as useInnerPaymentFacade } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
@@ -56,7 +52,6 @@ type PaymentFacadeProps = {
      * The flow parameter can modify the list of available payment methods and modify their behavior in certain cases.
      */
     flow: PaymentMethodFlow;
-    telemetryFlow?: TelemetryPaymentFlow;
     /**
      * The main callback that will be called when the payment is ready to be charged
      * after the payment token is fetched and verified with 3DS or other confirmation from the user.
@@ -106,7 +101,6 @@ export const usePaymentFacade = ({
     onChargeable,
     coupon,
     flow,
-    telemetryFlow,
     onMethodChanged,
     paymentMethods,
     paymentStatus,
@@ -140,16 +134,6 @@ export const usePaymentFacade = ({
     const iframeHandles = useCbIframe();
     const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
-
-    const telemetry = usePaymentsTelemetry({
-        apiOverride: api,
-        plan: selectedPlanName,
-        flow: telemetryFlow ?? flow,
-        amount,
-        cycle: checkResult?.Cycle,
-    });
-
-    const { reportPaymentLoad } = telemetry;
 
     // Drives payment behavior: whether the actual transaction is a trial, per the estimation.
     const isTrial = isTrialOverride ?? checkResult?.SubscriptionMode === SubscriptionMode.Trial;
@@ -415,8 +399,6 @@ export const usePaymentFacade = ({
         api,
         iframeHandles,
         selectedPlanName,
-        paymentComponentLoaded: reportPaymentLoad,
-        telemetry,
         themeCode,
         user,
         checkResult,

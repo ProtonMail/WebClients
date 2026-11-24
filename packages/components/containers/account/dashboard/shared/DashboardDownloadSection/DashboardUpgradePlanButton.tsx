@@ -3,23 +3,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { PLANS } from '@proton/payments/core/constants';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../../payments/subscription/subscriptionModalContext';
 
 interface Props {
-    app: APP_NAMES;
     plan: PLANS;
 }
-const DashboardUpgradePlanButton = ({ app, plan }: Props) => {
+const DashboardUpgradePlanButton = ({ plan }: Props) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            telemetryFlow,
         });
     };
     return (

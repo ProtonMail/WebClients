@@ -40,7 +40,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import SettingsLink from '../../../../components/link/SettingsLink';
 import useSettingsLink from '../../../../components/link/useSettingsLink';
-import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
 import { useTrialOnlyPaymentMethods } from '../../../../hooks/useTrialOnlyPaymentMethods';
 import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires';
@@ -175,7 +174,6 @@ export const CurrentPlanInfoSection = ({
     const openSubscriptionModal = useSubscriptionModalRaw();
     const [entitlementCatalog] = useEntitlementCatalog();
     const { isFree, canPay, isMember } = user;
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const goToSettings = useSettingsLink();
 
     const { MaxMembers = 1 } = organization || {};
@@ -203,7 +201,6 @@ export const CurrentPlanInfoSection = ({
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
 
@@ -211,7 +208,6 @@ export const CurrentPlanInfoSection = ({
         openSubscriptionModal({
             step,
             disablePlanSelection: true,
-            telemetryFlow,
         });
 
     const handleCancelSubscription = () => {

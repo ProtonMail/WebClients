@@ -25,7 +25,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { FreePlanDefault } from '@proton/shared/lib/payments/plan/interface';
 
 import { useModalStateObject } from '../../../../../../components/modalTwo/useModalState';
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { useSubscriptionPriceComparison } from '../helper';
 import type { PlanOfferFeature } from './PlanOfferCard';
@@ -80,7 +79,6 @@ const VisionaryUpsellCards = ({
 }: Props) => {
     const api = useApi();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const visionaryModal = useModalStateObject();
     const unlimitedModal = useModalStateObject();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, PLANS.FAMILY);
@@ -105,7 +103,6 @@ const VisionaryUpsellCards = ({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan,
             cycle: CYCLE.YEARLY,
-            telemetryFlow,
         });
     };
 
@@ -116,14 +113,12 @@ const VisionaryUpsellCards = ({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             // Visionary is listed with the family plans
             defaultAudience: isVisionary(plan) ? Audience.FAMILY : undefined,
-            telemetryFlow,
         });
     };
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
 
@@ -131,7 +126,6 @@ const VisionaryUpsellCards = ({
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.FAMILY,
-            telemetryFlow,
         });
     };
 

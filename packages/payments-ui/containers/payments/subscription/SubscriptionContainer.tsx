@@ -45,7 +45,6 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcGift } from '@proton/icons/icons/IcGift';
-import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import type { Operations, OperationsSubscriptionData } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
@@ -73,7 +72,7 @@ import type {
 } from '@proton/payments/core/interface';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
-import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import {
@@ -265,7 +264,6 @@ export interface SubscriptionContainerProps {
             | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
     ) => void;
     onInitialCheckRefused?: (message: string) => void;
-    telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription | FreeSubscription;
     organization: Organization | undefined;
@@ -299,7 +297,6 @@ type SubscriptionContainerOpenCallbackPropKeys =
     | 'defaultAudience'
     | 'disableCycleSelector'
     | 'defaultSelectedProductPlans'
-    | 'telemetryFlow'
     | 'upsellRef'
     | 'maximumCycle'
     | 'minimumCycle'
@@ -350,7 +347,6 @@ const SubscriptionContainerInner = ({
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
-    telemetryFlow,
     render,
     subscription,
     organization,
@@ -584,7 +580,7 @@ const SubscriptionContainerInner = ({
 
     const handleSubscribe = async (
         operations: Operations,
-        { operationsSubscriptionData, paymentMethodValue, paymentProcessorType }: SubscriptionContext
+        { operationsSubscriptionData, paymentMethodValue }: SubscriptionContext
     ) => {
         if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
             const result = await cancelSubscription({ subscription });
@@ -632,8 +628,6 @@ const SubscriptionContainerInner = ({
                     vatNumber: billingAddressHook.vatNumber?.vatNumberToSubmit,
                 });
 
-                // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
                 if (parent === 'subscription-modal') {
                     void reportSubscriptionModalPayment({
                         cycle: model.cycle,
@@ -643,9 +637,6 @@ const SubscriptionContainerInner = ({
                     });
                 }
             } catch (error) {
-                // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                paymentFacade.telemetry.reportPaymentFailure(paymentProcessorType);
-
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.reset();
 
@@ -683,7 +674,6 @@ const SubscriptionContainerInner = ({
 
     type SubscriptionContext = {
         operationsSubscriptionData: OperationsSubscriptionData;
-        paymentProcessorType: PaymentProcessorType;
         paymentMethodValue: PaymentMethodType;
         paymentMethodType: PlainPaymentMethodType;
     };
@@ -698,7 +688,7 @@ const SubscriptionContainerInner = ({
         selectedPlanName,
         billingAddress: model.taxBillingAddress,
         paymentStatus,
-        onChargeable: async (operations, { paymentProcessorType, source, sourceType }) => {
+        onChargeable: async (operations, { source, sourceType }) => {
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             if (lastCheckFailed) {
                 return;
@@ -716,7 +706,6 @@ const SubscriptionContainerInner = ({
                     // eslint-disable-next-line @typescript-eslint/no-use-before-define
                     vatNumber: billingAddressHook.vatNumber?.vatNumberToSubmit,
                 },
-                paymentProcessorType,
                 paymentMethodValue: source,
                 paymentMethodType: sourceType,
             };
@@ -724,7 +713,6 @@ const SubscriptionContainerInner = ({
             return withSubscribing(handleSubscribe(operations, context)).catch(noop);
         },
         flow: 'subscription',
-        telemetryFlow,
         user,
         subscription,
         planIDs: model.planIDs,

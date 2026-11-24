@@ -53,7 +53,6 @@ import MailLogo from '../../../components/logo/MailLogo';
 import PassLogo from '../../../components/logo/PassLogo';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '../../../helpers/getTelemetryUserTier';
-import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';
 import useLoad from '../../../hooks/useLoad';
 import ProductLink from '../../app/ProductLink';
 import { PromotionBanner } from '../../banner/PromotionBanner';
@@ -184,7 +183,6 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription, loadingSubscription] = useSubscriptionForApp(app);
     const [allSubscriptions = []] = useAllSubscriptions();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.BUNDLE;
 
     useLoad();
@@ -254,7 +252,6 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
-            telemetryFlow,
             onMount: () => {
                 void sendTelemetryReport({
                     api,

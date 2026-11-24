@@ -37,7 +37,6 @@ import PassLogo from '../../../../../components/logo/PassLogo';
 import VpnLogo from '../../../../../components/logo/VpnLogo';
 import Price from '../../../../../components/price/Price';
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { getFoldersAndLabelsFeature, getNAddressesFeature, getNDomainsFeature } from '../../../features/mail';
@@ -46,7 +45,7 @@ import { PlanCardFeatureList } from '../../PlanCardFeatures';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
-import { useSubscriptionModal } from '../../subscriptionModalContext';
+import { useSubscriptionModalRaw } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
@@ -76,7 +75,6 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -219,13 +217,11 @@ export const useUnlimitedBannerGradientUpsells = ({
     show24MonthPlan,
     user,
 }: UpsellSectionProps): UpsellsHook => {
-    const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
+    const openSubscriptionModal = useSubscriptionModalRaw();
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
 
@@ -234,7 +230,6 @@ export const useUnlimitedBannerGradientUpsells = ({
         plansMap,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const upsells = [
@@ -261,7 +256,7 @@ export const useUnlimitedBannerGradientUpsells = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {
@@ -283,7 +278,6 @@ const UnlimitedBannerGradient = ({
     gridSectionHeaderCopy,
     gridSectionSubTitleCopy,
     subscription,
-    telemetryFlow,
     upsells,
     handleExplorePlans,
     plansMap,
@@ -291,7 +285,7 @@ const UnlimitedBannerGradient = ({
     user,
     app,
 }: Props) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const [plansResult] = usePlans();
 
     const plan = PLANS.BUNDLE;
@@ -303,7 +297,6 @@ const UnlimitedBannerGradient = ({
             plan,
             step: step,
             disablePlanSelection: true,
-            telemetryFlow,
         });
     };
 

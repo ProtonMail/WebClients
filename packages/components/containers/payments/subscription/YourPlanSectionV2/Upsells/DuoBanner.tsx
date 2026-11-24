@@ -6,7 +6,6 @@ import { getSimplePriceString } from '@proton/payments/core/price-format';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
@@ -22,13 +21,11 @@ const DuoBanner = ({ app, subscription }: Props) => {
     const plan = PLANS.DUO;
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const { cheapestMonthlyPrice } = useSubscriptionPriceComparison(app, subscription, plan);
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleGetPlan = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            telemetryFlow,
         });
     };
 

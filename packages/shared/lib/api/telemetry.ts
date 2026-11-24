@@ -67,7 +67,6 @@ export enum TelemetryMeasurementGroups {
     /** Setting it to any even if mail only ATM. We will expand it to other apps soon */
     securityCenter = 'any.web.security_center',
     vpnDrawer = 'any.web.vpn_drawer',
-    paymentsFlow = 'payments.flow',
     /** Drive Web */
     driveWebFeaturePerformance = 'drive.web.feature_performance_unauth',
     driveWebActions = 'drive.web.actions_unauth',
@@ -482,13 +481,6 @@ export enum TelemetryVPNDrawerEvents {
     status_changed = 'status_changed',
 }
 
-export enum TelemetryPaymentsEvents {
-    load_payment = 'load_payment',
-    payment_attempt = 'payment_attempt',
-    payment_success = 'payment_success',
-    payment_failure = 'payment_failure',
-}
-
 export enum TelemetryDriveWebFeature {
     performance = 'drive_web_feature_performance_unauth',
     actions = 'drive_web_actions_unauth',
@@ -752,7 +744,6 @@ export type TelemetryEvents =
     | TelemetryChangelog
     | TelemetrySecurityCenterEvents
     | TelemetryVPNDrawerEvents
-    | TelemetryPaymentsEvents
     | TelemetryAccountOrganizationLogoUploadEvents
     | TelemetryDriveWebFeature
     | TelemetryAccountSecurityCheckupEvents

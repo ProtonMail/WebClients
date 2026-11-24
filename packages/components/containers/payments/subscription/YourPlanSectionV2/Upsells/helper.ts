@@ -127,7 +127,6 @@ export const getDashboardUpsellV2 = ({ plan, openSubscriptionModal, ...rest }: G
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });

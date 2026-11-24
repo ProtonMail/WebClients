@@ -637,7 +637,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
                     return getDefault();
                 })()}
                 <SubscriptionPanelManageUserButton />
-                <ActionButtons app={app} user={user} subscription={subscription} />
+                <ActionButtons user={user} subscription={subscription} />
             </Panel>
         </>
     );

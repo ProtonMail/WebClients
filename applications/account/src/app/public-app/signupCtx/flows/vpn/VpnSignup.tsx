@@ -9,7 +9,6 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
-import { usePaymentsTelemetry } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import {
     PaymentsContextOptimisticProvider,
     type PaymentsContextOptimisticType,
@@ -30,7 +29,6 @@ import {
     getIsB2BAudienceFromPlan,
     getIsVpnB2BPlan,
     getPlanFromPlanIDs,
-    getPlanNameFromIDs,
 } from '@proton/shared/lib/payments/plan/helpers';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
@@ -548,9 +546,6 @@ const availableSignupTypes = new Set([SignupType.External]);
 
 const VpnSignup = ({ onLogin, onPreSubmit, onStartAuth, onSessionExpired, toApp, toAppName, metaTags }: Props) => {
     const location = useLocationWithoutLocale();
-    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
-        flow: 'signup-vpn',
-    });
 
     const [signupParameters] = useState(() => getVpnSignupParameters(location.pathname, getSearchParams()));
     const [initialSelection] = useState(() => getInitialSelection(signupParameters));
@@ -619,14 +614,6 @@ const VpnSignup = ({ onLogin, onPreSubmit, onStartAuth, onSessionExpired, toApp,
                 // The user gets a generated password and chooses their own, which sets up the keys, in the password step
                 deferKeySetup
                 persistent={false}
-                onSubscriptionPayment={(status, subscriptionData) => {
-                    const report = status === 'success' ? reportPaymentSuccess : reportPaymentFailure;
-                    report(subscriptionData.paymentToken?.paymentProcessorType ?? 'n/a', {
-                        plan: getPlanNameFromIDs(subscriptionData.planIDs),
-                        cycle: subscriptionData.cycle,
-                        amount: subscriptionData.checkResult.AmountDue,
-                    });
-                }}
             >
                 <VpnSignupInner
                     metaTags={metaTags}

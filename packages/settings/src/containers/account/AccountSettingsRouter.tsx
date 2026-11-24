@@ -169,7 +169,7 @@ const AccountSettingsRouter = ({
                                 <YourPlanSectionV2
                                     app={app}
                                     editBillingCycle={true}
-                                    cta={<DashboardComparePlansCTA app={app} />}
+                                    cta={<DashboardComparePlansCTA />}
                                 />
                                 <AssistantToggle />
                                 <SubscriptionsSection />

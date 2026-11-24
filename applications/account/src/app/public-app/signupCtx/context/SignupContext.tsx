@@ -173,9 +173,6 @@ interface SignupContextProviderProps extends Pick<
      * Sets the user up without keys. The flow then asks for a password and calls `setPassword`, which sets them up.
      */
     deferKeySetup?: boolean;
-
-    /** Called when a subscription payment succeeds or fails */
-    onSubscriptionPayment?: SignupServices['onSubscriptionPayment'];
 }
 
 const getSubscriptionDataFromChargeableCallback = (
@@ -228,7 +225,6 @@ export const SignupContextProvider = (props: SignupContextProviderProps) => {
         visitorId: props.visitorId,
         persistent: props.persistent ?? true,
         deferKeySetup: props.deferKeySetup ?? false,
-        onSubscriptionPayment: props.onSubscriptionPayment,
         payments: paymentsContext,
         // Set with the payments context's own state, so the page renders both together
         onPaymentsInitialized: () => setPaymentsInitialized(true),

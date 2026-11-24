@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import {
     type MaybeFreeSubscription,
     getHasPassB2BPlan,
@@ -14,40 +13,27 @@ import {
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-export const ActionButtons = ({
-    user,
-    subscription,
-    app,
-}: {
-    user: UserModel;
-    subscription: MaybeFreeSubscription;
-    app: APP_NAMES;
-}) => {
+export const ActionButtons = ({ user, subscription }: { user: UserModel; subscription: MaybeFreeSubscription }) => {
     const openSubscriptionModal = useSubscriptionModalRaw();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleCustomizeSubscription = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
-            telemetryFlow,
         });
     };
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
     const handleEditPayment = () =>
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
-            telemetryFlow,
         });
 
     const hasPassB2B = getHasPassB2BPlan(subscription);

@@ -16,16 +16,13 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import NewBadge from '../../../../../../components/newBadge/NewBadge';
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';
-import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from '../UpsellMultiBox';
 
-const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
+const MeetAddonBanner = () => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const [subscription] = useSubscription();
     const multiSubscriptionContext = useMultiSubscriptionContext();
     const [plansResult] = usePlans();
@@ -55,7 +52,6 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
             disablePlanSelection: true,
             disableCycleSelector: true,
             planIDs: selectedPlan.setMeetCount(selectedPlan.getTotalUsers()).planIDs,
-            telemetryFlow,
         });
     };
 

@@ -16,16 +16,13 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';
-import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from '../UpsellMultiBox';
 
-const WorkspaceBanner = ({ app }: UpsellSectionBaseProps) => {
+const WorkspaceBanner = () => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.BUNDLE_PRO_2024;
 
@@ -33,7 +30,6 @@ const WorkspaceBanner = ({ app }: UpsellSectionBaseProps) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
-            telemetryFlow,
         });
     };
 

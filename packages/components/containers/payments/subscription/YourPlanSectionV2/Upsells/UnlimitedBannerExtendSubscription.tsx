@@ -15,7 +15,6 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import isTruthy from '@proton/utils/isTruthy';
 
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelV2 from '../../panels/UpsellPanelV2';
@@ -47,7 +46,6 @@ const getBundleUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetP
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -62,13 +60,11 @@ export const useUnlimitedBannerExtendSubscription = ({
     show24MonthPlan,
 }: UpsellSectionProps): UpsellsHook => {
     const openSubscriptionModal = useSubscriptionModalRaw();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.B2C,
-            telemetryFlow,
         });
     };
 
@@ -77,7 +73,6 @@ export const useUnlimitedBannerExtendSubscription = ({
         plansMap,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const upsells = [
@@ -102,7 +97,7 @@ export const useUnlimitedBannerExtendSubscription = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

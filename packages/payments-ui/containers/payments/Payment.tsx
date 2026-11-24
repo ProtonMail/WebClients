@@ -79,7 +79,6 @@ export interface Props {
     savedMethod?: SavedPaymentMethod;
     currency: Currency;
     amount: number;
-    paymentComponentLoaded: () => void;
     themeCode?: ThemeCode;
     bitcoinChargebee: BitcoinHook;
     directDebit: ChargebeeDirectDebitProcessorHook;
@@ -119,7 +118,6 @@ export const PaymentsNoApi = ({
     chargebeeCard,
     chargebeePaypal,
     chargebeeIdeal,
-    paymentComponentLoaded,
     themeCode,
     bitcoinChargebee,
     user,
@@ -140,10 +138,6 @@ export const PaymentsNoApi = ({
     minCreditAmount = getMinCreditAmount(currency),
     minCreditLabel,
 }: Props) => {
-    useEffect(() => {
-        paymentComponentLoaded();
-    }, []);
-
     useEffect(() => {
         if (loading) {
             return onMethod(undefined);

@@ -20,7 +20,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelV2 from '../../panels/UpsellPanelV2';
@@ -60,7 +59,6 @@ const getVPNUpsell = ({
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
                 onMount: () => {
                     void sendTelemetryReport({
                         api,
@@ -88,13 +86,11 @@ export const useVpnPlusExtendSubscription = ({
     show24MonthPlan,
 }: UpsellSectionProps): UpsellsHook => {
     const openSubscriptionModal = useSubscriptionModalRaw();
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const api = useApi();
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
             onMount: () => {
                 void sendTelemetryReport({
                     api,
@@ -116,7 +112,6 @@ export const useVpnPlusExtendSubscription = ({
         plansMap,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
         api,
         user,
     };
@@ -143,7 +138,7 @@ export const useVpnPlusExtendSubscription = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {
