@@ -1317,21 +1317,12 @@ const Step1 = ({
                                                 return;
                                             }
 
-                                            const sharedClasses = 'mb-2';
-                                            if (isLoadingModelDeps) {
-                                                return (
-                                                    <SkeletonLoader
-                                                        height="2.5rem"
-                                                        width="30rem"
-                                                        className={sharedClasses}
-                                                    />
-                                                );
-                                            }
                                             return (
                                                 <DiscountBanner
                                                     discountPercent={actualCheckout.discountPercent}
                                                     selectedPlanTitle={selectedPlan.Title}
-                                                    className={sharedClasses}
+                                                    className="mb-2"
+                                                    loading={isLoadingModelDeps || payments.loadingTotal}
                                                 />
                                             );
                                         })()}
