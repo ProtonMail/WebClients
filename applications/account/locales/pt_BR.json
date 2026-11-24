@@ -1830,7 +1830,7 @@
         "Restaurar"
       ],
       "Restrict sign-in": [
-        "Restringir o login"
+        "Restringir o início de sessão"
       ],
       "Resume": [
         "Retomar"
@@ -8398,6 +8398,9 @@
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
+      ],
+      "Add and verify a custom domain to create service accounts.": [
+        "Adicione e verifique um domínio personalizado para criar contas de serviço."
       ]
     },
     "error": {
@@ -11222,19 +11225,19 @@
         "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder a ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
       ],
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com **${ primaryEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com **${ primaryEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário **${ username }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário **${ username }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Você pode acessar sua sessão ativa?"
@@ -14065,19 +14068,19 @@
         "Quando as notificações estão ativas, enviaremos um alerta para seu endereço de recuperação se você tiver novas mensagens na sua conta ${ MAIL_APP_NAME }."
       ],
       "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Com o login restrito, você só pode entrar com o e-mail **${ primaryEmail }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+        "Com início de sessão restrito, você só pode entrar com o e-mail **${ primaryEmail }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
       ],
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Com o login restrito, você só pode entrar com o nome de usuário **${ username }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+        "Com início de sessão restrito, você só pode entrar com o nome de usuário **${ username }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
+        "Com início de sessão restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quando o acesso estiver restrito, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**. Seus outros endereços de e-mail não poderão ser usados para entrar."
+        "Quando o acesso estiver restrito, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**. Seus outros endereços de e-mail não poderão ser usados para iniciar sessão."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
+        "Com início de sessão restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
@@ -14636,6 +14639,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "The service account was created. Retry saving to finish setting up its keys and managers.": [
+        "A conta de serviço foi criada. Tente novamente finalizar a configuração de suas chaves e gestores."
       ]
     },
     "info": {
@@ -16609,13 +16615,13 @@
         "Endereço de e-mail reservado"
       ],
       "Restrict sign-in to email address": [
-        "Restringir o login ao endereço de e-mail"
+        "Restringir o início de sessão ao endereço de e-mail"
       ],
       "Restrict sign-in to username": [
-        "Restringir o login ao nome de usuário"
+        "Restringir o início de sessão ao nome de usuário"
       ],
       "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
-        "Restringir o login ao nome de usuário e aos endereços ${ BRAND_NAME } correspondentes"
+        "Restringir o início de sessão ao nome de usuário e aos endereços ${ BRAND_NAME } correspondentes"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -27844,7 +27850,7 @@
         "Restaurar os privilégios de administrador"
       ],
       "Restrict sign-in?": [
-        "Restringir o login?"
+        "Restringir o início de sessão?"
       ],
       "Reused passwords": [
         "Senhas reutilizadas"
@@ -29610,6 +29616,9 @@
       ],
       "Your plan": [
         "Seu plano"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
       ]
     },
     "VPN B2B cancellation reason": {

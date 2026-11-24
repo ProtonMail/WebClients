@@ -3684,7 +3684,7 @@
         "S'aplica a totes les vostres adreces de Gmail connectades."
       ],
       "Don’t miss private emails while you still check Gmail. Emails from other ${ MAIL_APP_NAME } users stay in ${ MAIL_APP_NAME }, so we’ll remind you in Gmail with the subject and a link.": [
-        "No us perdeu cap correu electrònic privat mentre continueu consultant el Gmail. Els correus electrònics d'altres usuaris de ${ MAIL_APP_NAME } es queden a ${ MAIL_APP_NAME }, així és que us ho recordarem al Gmail amb l'assumpte i un enllaç."
+        "No us perdeu cap correu electrònic privat mentre continueu consultant el Gmail. Els correus electrònics d'altres usuaris de ${ MAIL_APP_NAME } es queden a ${ MAIL_APP_NAME }, així que us ho recordarem al Gmail amb l'assumpte i un enllaç."
       ],
       "Get a reminder in Gmail when another ${ MAIL_APP_NAME } user emails you. Applies to all connected addresses.": [
         "Rebeu un recordatori al Gmail quan un altre usuari de ${ MAIL_APP_NAME } us enviï un correu electrònic. S'aplica a totes les adreces connectades."
@@ -7259,7 +7259,7 @@
         "Temps necessari abans de concedir-li accés automàticament"
       ],
       "To access their account, sign in to ${ ACCOUNT_APP_NAME } in a browser.": [
-        "Per accedir al seu compte, inicieu sessió a ${ ACCOUNT_APP_NAME } en un navegador."
+        "Per a accedir al seu compte, inicieu sessió a ${ ACCOUNT_APP_NAME } en un navegador."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Per a desactivar aquest mètode de recuperació, esborreu tots els contactes de recuperació."
@@ -7394,7 +7394,7 @@
         "L'activació ha fallat. Pot ser que les dades siguin incorrectes o que el correu electrònic ja estigui actiu. Comproveu les dades introduïdes o inicieu la sessió."
       ],
       "Add and verify a custom domain to create service accounts.": [
-        "Afegiu i verifiqueu un domini personalitzat per crear comptes de servei."
+        "Afegiu i verifiqueu un domini personalitzat per a crear comptes de servei."
       ],
       "Add at least one action": [
         "Afegiu almenys una acció"
@@ -8300,7 +8300,7 @@
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
       ],
       "This manager has no encryption keys. Ask them to finish setting up their account.": [
-        "Aquest gestor no té cap clau d'encriptació. Demaneu-li que acabi de configurar el seu compte."
+        "Aquest gestor no té cap clau de xifratge. Demaneu-li que acabi de configurar el seu compte."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
@@ -10871,7 +10871,7 @@
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
       "A service account is a machine identity that belongs to your organization rather than to a single user. Use it to automate ${ BRAND_NAME } services through the CLI or API. No one can sign in to a service account—it acts only through access tokens.": [
-        "Un compte de servei és una identitat de màquina que pertany a la vostra organització en lloc d'un sol usuari. Feu-lo servir per automatitzar els serveis de ${ BRAND_NAME } mitjançant la CLI o l'API. Ningú no pot iniciar sessió en un compte de servei; només actua mitjançant testimonis d'accés."
+        "Un compte de servei és una identitat de màquina que pertany a la vostra organització i no a un únic usuari. Utilitzeu-lo per a automatitzar els serveis de ${ BRAND_NAME } mitjançant la CLI o l'API. Ningú no pot iniciar la sessió en un compte de servei; actua només mitjançant testimonis d'accés."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
@@ -11815,7 +11815,7 @@
         "Els empleats no poden connectar-se a internet sense una connexió VPN"
       ],
       "Enable ${ name } to allow it to access ${ BRAND_NAME } services again.": [
-        "Habiliteu ${ name } per permetre que torni a accedir als serveis de ${ BRAND_NAME }."
+        "Habiliteu ${ name } per a permetre que torni a accedir als serveis de ${ BRAND_NAME }."
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Activeu la renovació automàtica per a mantenir l'accés als servidors i característiques Plus."
@@ -12712,7 +12712,7 @@
         "Cap compte de servei coincideix amb la vostra cerca."
       ],
       "No service accounts yet. Add one to automate ${ BRAND_NAME } services.": [
-        "Encara no hi ha cap compte de servei. Afegiu-ne un per automatitzar els serveis de ${ BRAND_NAME }."
+        "Encara no hi ha cap compte de servei. Afegiu-ne un per a automatitzar els serveis de ${ BRAND_NAME }."
       ],
       "No single sign-on": [
         "Sense inici de sessió únic"
@@ -13515,7 +13515,7 @@
         "La manera més segura de navegar, reproduir i estar en línia."
       ],
       "The service account was created. Retry saving to finish setting up its keys and managers.": [
-        "S'ha creat el compte de servei. Torneu-ho a desar per acabar de configurar-ne les claus i els gestors."
+        "S'ha creat el compte de servei. Torneu a intentar desar-ho per a acabar de configurar-ne les claus i els gestors."
       ],
       "The unpublished changes you made will be lost.": [
         "Els canvis no publicats que heu fet es perdran."
@@ -21623,7 +21623,7 @@
         "domini.com"
       ],
       "e.g. ci-bot": [
-        "per exemple, ci-bot"
+        "p. ex., ci-bot"
       ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "p. ex. https://example.com/app/protonvpn/XXXXX/sso/metadata"
@@ -27235,7 +27235,7 @@
         "Edita els servidors"
       ],
       "Edit service account": [
-        "Editeu el compte de servei"
+        "Edita el compte de servei"
       ],
       "Edit Sieve filter": [
         "Edita el filtre Sieve"
