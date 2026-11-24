@@ -4,7 +4,7 @@ import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 
 import { SettingsIconRow } from '../account/SettingsIconRow';
 import { SettingsSelectRow, getSettingsSelectRowLabelId } from '../account/SettingsSelectRow';
-import WeekStartSelector from '../calendar/settings/WeekStartSelector';
+import WeekStartSelector from './WeekStartSelector';
 
 const WeekStartSection = () => {
     return (

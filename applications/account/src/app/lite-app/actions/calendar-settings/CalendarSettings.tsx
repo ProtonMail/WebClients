@@ -5,19 +5,19 @@ import { c } from 'ttag';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
-import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import Toggle from '@proton/components/components/toggle/Toggle';
-import InviteLocaleSelector from '@proton/components/containers/calendar/settings/InviteLocaleSelector';
-import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';
-import WeekStartSelector from '@proton/components/containers/calendar/settings/WeekStartSelector';
+import InviteLocaleSelector from '@proton/calendar-settings/settings/InviteLocaleSelector';
+import PrimaryTimezoneSelector from '@proton/calendar-settings/settings/PrimaryTimezoneSelector';
 import {
     getIsAutoAddMeetLinkEnabled,
     getToggledAutoAddMeetLink,
-} from '@proton/components/containers/calendar/settings/autoAddMeetLink';
-import { useIsMeetVideoConferenceEnabled } from '@proton/components/containers/calendar/settings/useIsMeetVideoConferenceEnabled';
+} from '@proton/calendar-settings/settings/autoAddMeetLink';
+import { useIsMeetVideoConferenceEnabled } from '@proton/calendar-settings/settings/useIsMeetVideoConferenceEnabled';
+import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
+import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import LanguageSelector from '@proton/components/containers/general/LanguageSelector';
 import TimeFormatSelector from '@proton/components/containers/general/TimeFormatSelector';
+import WeekStartSelector from '@proton/components/containers/general/WeekStartSelector';
 import useLoading from '@proton/hooks/useLoading';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';

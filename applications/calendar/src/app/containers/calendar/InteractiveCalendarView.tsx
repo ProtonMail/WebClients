@@ -15,6 +15,10 @@ import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { useCalendarModelEventManager } from '@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider';
+import { useGetVtimezonesMap } from '@proton/calendar-settings/hooks/useGetVtimezonesMap';
+import useSendIcs from '@proton/calendar-settings/hooks/useSendIcs';
+import ImportModal from '@proton/calendar-settings/importModal/ImportModal';
 import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar-video-conferencing/videoConferencing/constants';
 import {
     VideoConferenceZoomIntegration,
@@ -26,19 +30,15 @@ import { useGetCalendarEventRaw } from '@proton/calendar/calendarEvent/useGetCal
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import { validateDeepLinkParams } from '@proton/calendar/utils';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
-import ImportModal from '@proton/components/containers/calendar/importModal/ImportModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
-import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import usePreventCloseTab from '@proton/components/hooks/usePreventCloseTab';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
-import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,

@@ -99,7 +99,7 @@ vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: () => [],
     useGetCalendarUserSettings: () => () => [],
 }));
-vi.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+vi.mock('@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: vi.fn(() => ({
         subscribe: vi.fn(),
     })),

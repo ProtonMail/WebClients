@@ -10,7 +10,6 @@ import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdPart
 import SettingsMaintenanceLayoutWrapper from '@proton/components/components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';
 import AccessibilitySection from '@proton/components/containers/account/AccessibilitySection';
 import DeleteSection from '@proton/components/containers/account/DeleteSection';
-import FamilyPlanSection from '@proton/components/containers/account/FamilyPlanSection';
 import PasswordsSection from '@proton/components/containers/account/PasswordsSection';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import UsernameSection from '@proton/components/containers/account/UsernameSection';
@@ -54,6 +53,7 @@ import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSec
 import { VpnAlsoInYourPlanSection } from '@proton/vpn/components/VpnAlsoInYourPlanSection';
 import { VpnBlogSection } from '@proton/vpn/components/VpnBlogSection';
 
+import FamilyPlanSection from './FamilyPlanSection';
 import { SettingsLinkRedirect, type SettingsLinkRedirectRule } from './SettingsLinkRedirect';
 import UpgradePage from './UpgradePage';
 import AccountDashboard from './dashboard/dashboard';

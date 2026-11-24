@@ -31,6 +31,11 @@ export default createOxlintConfig({
             },
             {
                 // Depends on this package.
+                group: ['@proton/calendar-settings', '@proton/calendar-settings/*'],
+                message: '@proton/components must not import @proton/calendar-settings.',
+            },
+            {
+                // Depends on this package.
                 group: ['@proton/file-preview', '@proton/file-preview/*'],
                 message: '@proton/components must not import @proton/file-preview.',
             },

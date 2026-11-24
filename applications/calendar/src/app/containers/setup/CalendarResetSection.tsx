@@ -7,7 +7,7 @@ import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent
 import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
 import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { Href } from '@proton/atoms/Href/Href';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import CalendarSelectIcon from '@proton/calendar-settings/calendarSelect/CalendarSelectIcon';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';

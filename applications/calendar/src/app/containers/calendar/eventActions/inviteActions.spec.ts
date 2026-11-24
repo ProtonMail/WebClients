@@ -1,7 +1,7 @@
 import { vi } from 'vitest';
 import type { MockInstance } from 'vitest';
 
-import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
+import type { SendIcsParams } from '@proton/calendar-settings/hooks/useSendIcs';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';

@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { BookingsLimitReached } from '@proton/components/containers/calendar/BookingsLimitReached';
+import { BookingsLimitReached } from '@proton/calendar-settings/BookingsLimitReached';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { APPS } from '@proton/shared/lib/constants';
@@ -53,7 +53,7 @@ vi.mock('./ComposerBookingDropdownContent', () => ({
         )
     ),
 }));
-vi.mock('@proton/components/containers/calendar/BookingsLimitReached', () => ({
+vi.mock('@proton/calendar-settings/BookingsLimitReached', () => ({
     BookingsLimitReached: vi.fn(() => <div data-testid="composer:booking-limit-modal" />),
 }));
 vi.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => ({

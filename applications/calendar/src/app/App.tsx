@@ -2,6 +2,7 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import CalendarModelEventManagerProvider from '@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
@@ -11,7 +12,6 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
-import CalendarModelEventManagerProvider from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';

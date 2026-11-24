@@ -4,14 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import CalendarInviteButtons from '@proton/calendar-settings/CalendarInviteButtons';
+import { DeleteNoteButton, EditNoteButton } from '@proton/calendar-settings/RsvpSection/RsvpSectionButtons';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
-import CalendarInviteButtons from '@proton/components/containers/calendar/CalendarInviteButtons';
-import {
-    DeleteNoteButton,
-    EditNoteButton,
-} from '@proton/components/containers/calendar/RsvpSection/RsvpSectionButtons';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';

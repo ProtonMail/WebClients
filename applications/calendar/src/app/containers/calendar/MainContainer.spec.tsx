@@ -182,7 +182,7 @@ vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
         },
     ]),
 }));
-vi.mock('@proton/components/containers/calendar/hooks/useGetCalendarActions', () => ({ default: () => ({}) }));
+vi.mock('@proton/calendar-settings/hooks/useGetCalendarActions', () => ({ default: () => ({}) }));
 vi.mock('@proton/components/hooks/useAuthentication', () => ({ default: () => ({}) }));
 vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }),
@@ -203,10 +203,10 @@ vi.mock('@proton/account/welcomeFlags', async () => ({
     useWelcomeFlags: vi.fn(() => [{ isWelcomeFlow: false }]),
 }));
 vi.mock('@proton/components/hooks/useEventManager', () => ({ default: () => ({}) }));
-vi.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => ({
+vi.mock('@proton/calendar-settings/eventManager/useCalendarsInfoListener', () => ({
     useCalendarsInfoListener: () => ({}),
 }));
-vi.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+vi.mock('@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: () => () => {
         call: vi.fn();
     },

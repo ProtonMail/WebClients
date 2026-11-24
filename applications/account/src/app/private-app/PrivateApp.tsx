@@ -4,6 +4,7 @@ import { Router } from 'react-router-dom';
 import { logger } from '@protontech/logger';
 
 import { PassScopeApiModal } from '@proton/account-security/pass/PassScopeApiModal';
+import CalendarModelEventManagerProvider from '@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
@@ -12,7 +13,6 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import { EventManagerV6Provider } from '@proton/components/containers/eventManager/EventManagerV6Provider';
-import CalendarModelEventManagerProvider from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';

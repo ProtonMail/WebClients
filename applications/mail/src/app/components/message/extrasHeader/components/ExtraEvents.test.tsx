@@ -2,7 +2,7 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import { useGetVtimezonesMap } from '@proton/calendar-settings/hooks/useGetVtimezonesMap';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
@@ -43,13 +43,13 @@ import ExtraEvents from './ExtraEvents';
 
 vi.setConfig({ testTimeout: 20000 });
 
-vi.mock('@proton/components/hooks/useSendIcs', () => {
+vi.mock('@proton/calendar-settings/hooks/useSendIcs', () => {
     return {
         __esModule: true,
         default: vi.fn(() => () => Promise.resolve(undefined)),
     };
 });
-vi.mock('@proton/components/hooks/useGetVtimezonesMap');
+vi.mock('@proton/calendar-settings/hooks/useGetVtimezonesMap');
 
 vi.mock('../../../../helpers/calendar/inviteApi', async () => ({
     ...(await vi.importActual('../../../../helpers/calendar/inviteApi')),

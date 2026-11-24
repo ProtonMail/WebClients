@@ -1,9 +1,9 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useIsMeetVideoConferenceEnabled } from '@proton/calendar-settings/settings/useIsMeetVideoConferenceEnabled';
 import { calendarSettingsActions } from '@proton/calendar/calendarUserSettings';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { useIsMeetVideoConferenceEnabled } from '@proton/components/containers/calendar/settings/useIsMeetVideoConferenceEnabled';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
@@ -20,17 +20,17 @@ vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 vi.mock('../../../private-app/store/hooks', () => ({ useAccountDispatch: () => mockDispatch }));
-vi.mock('@proton/components/containers/calendar/settings/useIsMeetVideoConferenceEnabled', () => ({
+vi.mock('@proton/calendar-settings/settings/useIsMeetVideoConferenceEnabled', () => ({
     useIsMeetVideoConferenceEnabled: vi.fn(),
 }));
 vi.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: vi.fn() }));
 
 // Selectors that save on their own are covered by their own tests; only their presence matters here
-vi.mock('@proton/components/containers/calendar/settings/PrimaryTimezoneSelector', () => ({
+vi.mock('@proton/calendar-settings/settings/PrimaryTimezoneSelector', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-vi.mock('@proton/components/containers/calendar/settings/WeekStartSelector', () => ({
+vi.mock('@proton/components/containers/general/WeekStartSelector', () => ({
     __esModule: true,
     default: () => <div id="week-start-select" />,
 }));
@@ -42,7 +42,7 @@ vi.mock('@proton/components/containers/general/TimeFormatSelector', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-vi.mock('@proton/components/containers/calendar/settings/InviteLocaleSelector', () => ({
+vi.mock('@proton/calendar-settings/settings/InviteLocaleSelector', () => ({
     __esModule: true,
     default: ({ id, locale }: { id: string; locale: string | null }) => <div id={id} data-locale={locale} />,
 }));

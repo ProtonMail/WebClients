@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import useAddEvents from '@proton/components/containers/calendar/hooks/useAddEvents';
+import useAddEvents from '@proton/calendar-settings/hooks/useAddEvents';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useLoading from '@proton/hooks/useLoading';
 import { getVeventWithDefaultCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';

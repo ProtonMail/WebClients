@@ -2,10 +2,10 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import CalendarShortcutsModal from '@proton/calendar-settings/shortcutsModal/CalendarShortcutsModal';
 import Commander from '@proton/components/components/commander/Commander';
 import type { CommanderItemInterface } from '@proton/components/components/commander/Commander';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import CalendarShortcutsModal from '@proton/components/containers/calendar/shortcutsModal/CalendarShortcutsModal';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';

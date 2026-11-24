@@ -5,14 +5,14 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import CalendarLimitReachedModal from '@proton/calendar-settings/CalendarLimitReachedModal';
+import useCalendarShareInvitationActions from '@proton/calendar-settings/hooks/useCalendarShareInvitationActions';
+import ShareCalendarWithSignatureVerificationErrorModal from '@proton/calendar-settings/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
-import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
 import useLoading from '@proton/hooks/useLoading';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
