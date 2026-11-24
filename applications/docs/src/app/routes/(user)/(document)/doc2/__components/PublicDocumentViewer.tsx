@@ -1,9 +1,14 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
+import { c } from 'ttag'
 
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useConfig } from '@proton/app-context/useConfig'
+import { useNotifications } from '@proton/app-context/useNotifications'
+import { Button } from '@proton/atoms/Button/Button'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { AnonymousUserDisplayName } from '@proton/docs-shared/AnonymousUser'
+import { RedirectAction } from '@proton/docs-shared/DocumentAction'
+import { getPublicLinkUrlParams } from '@proton/docs-shared/URL/getPublicLinkUrlParams'
 import { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
@@ -33,6 +38,7 @@ import {
   getPublicDocumentRole,
   hasAccessOfOwn,
 } from '../__utils/publicLink'
+import { usePublicDocumentCopying } from '../__utils/publicDocumentCopying'
 import { canRenamePublicDocument, renamePublicDocument } from '../__utils/publicRename'
 import { sendEditorBasics, getUserName, useEditorBasicsInSync, useIsEditorDarkMode } from '../__utils/useEditorBasics'
 import { useDocumentLoader } from '../__utils/useDocumentLoader'
@@ -51,6 +57,7 @@ import { IdleActivityCatcher } from './IdleActivityCatcher'
 import { LoadingScreen } from './LoadingScreen'
 import { OpenActionError } from './OpenActionError'
 import { PublicHeaderOptions } from './PublicHeaderOptions'
+import { useSignupFlowModal } from './SignupFlowModal'
 import { SessionStatus } from './SessionStatus'
 import { useWelcomeSplashModal } from './WelcomeSplashModal'
 import { WordCountOverlay, useWordCountState } from './WordCount'
@@ -93,6 +100,9 @@ export function PublicDocumentViewer({
   const [wordCount, setWordCountInfo] = useWordCountState()
   const [modal, showModal] = useGenericAlertModal()
   const [splashModal, openSplashModal] = useWelcomeSplashModal()
+  const [signupFlowModal, showSignupFlowModal] = useSignupFlowModal()
+  // The name a public rename gave, which the node from the Loader doesn't follow, for the copy's name
+  const [renamedName, setRenamedName] = useState<string>()
   const addresses = useVisitorAddresses(handoff.user)
   const { toggleDebugMode } = useDebugMode()
   const isDarkMode = useIsEditorDarkMode()
@@ -133,7 +143,7 @@ export function PublicDocumentViewer({
   // public viewer's toolbar click
   const onToolbarClicked = useEvent(() => {
     if (linkRole === 'Viewer') {
-      openSplashModal({})
+      openSplashModal({ onCreateCopy })
     }
   })
   // The viewer is keyed by the document, so these never change for it
@@ -186,10 +196,59 @@ export function PublicDocumentViewer({
     exportInvoker?.printAsPDF().catch((error) => logger.warn('Failed to print the document', error))
   }
   const download = (format: DataTypesThatDocumentCanBeExportedAs) => {
-    const name = node && getNodeName(node)
+    const name = renamedName ?? (node && getNodeName(node))
     if (exportInvoker && name) {
       void saveExport(exportInvoker, name, format, logger)
     }
+  }
+
+  // Create a copy, once the editor shows the document: its state goes to the copy window, in the visitor's own Drive
+  const createCopy = usePublicDocumentCopying({
+    getName: useEvent(() => renamedName ?? (node && getNodeName(node)) ?? ''),
+    getState: useEvent(() => {
+      if (!exportInvoker) {
+        return Promise.reject(new Error('The editor does not show the document yet'))
+      }
+      return exportInvoker.exportData('yjs')
+    }),
+  })
+  // The header's and the splash's Create a copy: an anonymous visitor signs up or in first, and comes back to make it
+  const requestCopy = () =>
+    handoff.user
+      ? createCopy()
+      : showSignupFlowModal({
+          urlPassword: getPublicLinkUrlParams(window.location).urlPassword,
+          redirectAction: RedirectAction.MakeCopy,
+          openInNewTab: true,
+        })
+  const onCreateCopy = exportInvoker ? requestCopy : undefined
+  // The copy asked for before signing in, offered for a click, as a window opened without one is a blocked popup: a
+  // viewer gets the welcome splash, which offers it, and an editor, who can already edit, a notification with the button
+  const { createNotification, removeNotification } = useNotifications()
+  const resumeCopy = () => {
+    if (linkRole === 'Viewer') {
+      openSplashModal({ onCreateCopy })
+      return
+    }
+    const id = createNotification({
+      type: 'info',
+      showCloseButton: true,
+      expiration: 60_000,
+      text: (
+        <span className="flex flex-nowrap items-center gap-2" data-testid="resume-copy-notification">
+          {c('Info').t`Create the copy you asked for.`}
+          <Button
+            size="small"
+            onClick={() => {
+              removeNotification(id)
+              onCreateCopy?.()
+            }}
+          >
+            {c('Action').t`Create a copy`}
+          </Button>
+        </span>
+      ),
+    })
   }
 
   useSessionNotices(liveSession)
@@ -238,7 +297,11 @@ export function PublicDocumentViewer({
             isEditor: linkRole === 'Editor',
             addresses,
           }),
-        rename: (name) => renamePublicDocument(handoff.publicDrive, node, name),
+        rename: (name) =>
+          renamePublicDocument(handoff.publicDrive, node, name).then((newName) => {
+            setRenamedName(newName)
+            return newName
+          }),
       }}
       publicOptions={
         <PublicHeaderOptions
@@ -247,6 +310,9 @@ export function PublicDocumentViewer({
           role={role}
           user={handoff.user}
           linkInfo={handoff.linkInfo}
+          onCreateCopy={onCreateCopy}
+          onResumeCopy={resumeCopy}
+          showSignupFlowModal={showSignupFlowModal}
         />
       }
       status={
@@ -281,6 +347,7 @@ export function PublicDocumentViewer({
         {revealed && <WordCountOverlay wordCount={wordCount} />}
         {modal}
         {splashModal}
+        {signupFlowModal}
         <DocumentSizeLimitModal
           session={liveSession}
           onDownloadCopy={exportInvoker && (() => onFileMenuAction({ type: 'download', format: 'docx' }))}

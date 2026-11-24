@@ -44,7 +44,7 @@ import { redirectToAccountSwitcher, redirectToSignUp } from '../__utils/publicRe
 import { useDocsBookmarks } from '../__utils/useDocsBookmarks'
 import { CommentsButton } from './CommentsButton'
 import { DocumentActiveUsers, type DocumentActiveUsersProps } from './DocumentActiveUsers'
-import { useSignupFlowModal } from './SignupFlowModal'
+import type { useSignupFlowModal } from './SignupFlowModal'
 
 // Adapted from `applications/docs/src/app/components/document/public/HeaderPublicOptions.tsx`, which reads docs-core's
 // public document state, editor controller and link info: the visitor's role, the user, the link and the copy come in
@@ -149,8 +149,18 @@ export type PublicHeaderOptionsProps = Pick<DocumentActiveUsersProps, 'participa
   /** The signed-in visitor; undefined for an anonymous one */
   user: UserModel | undefined
   linkInfo: Pick<PublicLinkHandoff['linkInfo'], 'linkId' | 'isSharedUrlAFolder' | 'customPassword'>
-  /** Creates a copy of the document in the visitor's Drive; without it, Create a copy is disabled */
+  /**
+   * Create a copy: the copy in the visitor's Drive, or for an anonymous visitor the sign-up modal first. Without it,
+   * Create a copy is disabled.
+   */
   onCreateCopy?: () => void
+  /**
+   * Offers the copy asked for before signing in, once there is one to make, for a click to make it: a window opened
+   * without one is a blocked popup. Without it, the copy is made at once.
+   */
+  onResumeCopy?: () => void
+  /** Opens the page's one sign-up modal, which an anonymous visitor's Save for later goes through */
+  showSignupFlowModal: ReturnType<typeof useSignupFlowModal>[1]
 }
 
 /**
@@ -166,6 +176,8 @@ export function PublicHeaderOptions({
   user,
   linkInfo,
   onCreateCopy,
+  onResumeCopy,
+  showSignupFlowModal,
 }: PublicHeaderOptionsProps) {
   const { logger } = useApplication()
   const { removeActionFromUrl } = useDocsUrlBar()
@@ -185,6 +197,16 @@ export function PublicHeaderOptions({
   // "Save for later" saves the shared URL, which would save the whole folder, not this doc.
   const canShowSaveForLaterOption = !isLoading && linkInfo.isSharedUrlAFolder === false
 
+  // A copy asked for on the way back from sign-in waits for the editor to show the document, which Create a copy needs
+  const [isCopyPending, setIsCopyPending] = useState(false)
+  useEffect(() => {
+    if (isCopyPending && onCreateCopy) {
+      setIsCopyPending(false)
+      const resume = onResumeCopy ?? onCreateCopy
+      resume()
+    }
+  }, [isCopyPending, onCreateCopy, onResumeCopy])
+
   /**
    * Handle coming back from redirection and perform the appropriate action, such as bookmarking or making a copy.
    * Then reset the URL to ensure the action is not triggered again. Read from the address as it is now, not as the app
@@ -200,7 +222,7 @@ export function PublicHeaderOptions({
 
     if (action === RedirectAction.MakeCopy) {
       if (user) {
-        onCreateCopy?.()
+        setIsCopyPending(true)
       }
     } else if (action === RedirectAction.Bookmark) {
       // Never for a link to a folder, which Save for later would save whole
@@ -210,8 +232,6 @@ export function PublicHeaderOptions({
     }
     removeActionFromUrl()
   })
-
-  const [signupFlowModal, showSignupFlowModal] = useSignupFlowModal()
 
   const {
     isAdding,
@@ -229,13 +249,7 @@ export function PublicHeaderOptions({
     ? c('drive:action').t`Open in ${DRIVE_SHORT_APP_NAME}`
     : c('drive:action').t`Save for later`
 
-  const handleMakeCopyClick = useCallback(() => {
-    if (!user) {
-      showSignupFlowModal({ urlPassword, redirectAction: RedirectAction.MakeCopy, openInNewTab: true })
-    } else {
-      onCreateCopy?.()
-    }
-  }, [onCreateCopy, showSignupFlowModal, urlPassword, user])
+  const handleMakeCopyClick = () => onCreateCopy?.()
 
   const handleSignUpButtonClick = useCallback(() => {
     void redirectToSignUp({
@@ -371,8 +385,6 @@ export function PublicHeaderOptions({
           )}
         </DropdownMenu>
       </Dropdown>
-
-      {signupFlowModal}
     </div>
   )
 }

@@ -210,6 +210,14 @@
     "notes": "The token case only, with the same localStorage key, so the user app finds the local id where /doc leaves it."
   },
   {
+    "doc2": "__components/PublicDocumentCopier.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/__components/PublicDocumentCopier.tsx",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "9776a3170034877008e797a7d456cd61bfaf7a26",
+    "notes": "The copy window: the ready message to the opener and the origin check, unchanged; the copy goes through doc2's duplicateWithState into My files instead of docs-core's DuplicateDocument, and opens in doc2. One copy per window; a missing opener or a failed copy shows the error page instead of the event bus."
+  },
+  {
     "doc2": "__components/PublicDocumentViewer.tsx",
     "doc2Symbol": "onToolbarClicked",
     "kind": "adaptation",
@@ -217,7 +225,7 @@
     "sourceSymbol": "the EditorEvent.ToolbarClicked effect",
     "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
     "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
-    "notes": "A public viewer's toolbar click opens the welcome splash, from the bridge's editorReportingEvent instead of docs-core's event bus."
+    "notes": "A public viewer's toolbar click opens the welcome splash, from the bridge's editorReportingEvent instead of docs-core's event bus. Its Create a copy sends an anonymous visitor through the sign-up modal first, where /doc's throws without a user."
   },
   {
     "doc2": "__components/PublicHeaderOptions.tsx",
@@ -225,7 +233,7 @@
     "source": "applications/docs/src/app/components/document/public/HeaderPublicOptions.tsx",
     "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
     "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
-    "notes": "The public header's items, with the role, the user, the link and the copy as props instead of docs-core's public document state, editor controller and link info. The comments button is disabled with a tooltip, as a public session has no comments; Create a copy is disabled until it gets a copy to make. The redirect action is read from the address as it is, so a retry doesn't perform it again. Its stylesheet, telemetry and spotlight helpers are imported from /doc."
+    "notes": "The public header's items, with the role, the user, the link and the copy as props instead of docs-core's public document state, editor controller and link info. The comments button is disabled with a tooltip, as a public session has no comments; Create a copy is disabled until it gets a copy to make. The redirect action is read from the address as it is, so a retry doesn't perform it again. Its stylesheet, telemetry and spotlight helpers are imported from /doc. A make-copy action resumed after sign-in waits for the editor to show the document, then is offered through onResumeCopy for a click (the welcome splash for a viewer, a notification for an editor), as a window opened from an effect is a blocked popup. The sign-up modal is the page's one, shown through a prop, and Create a copy runs the page's copy, which sends an anonymous visitor to sign up as /doc's header does."
   },
   {
     "doc2": "__components/PublicDocumentViewer.tsx",
@@ -651,6 +659,25 @@
     "sourceCommit": "952608e316c4b40e9a54936061b57f64c89d00d2",
     "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
     "notes": "The editor's address: the visitor's own, or docs-shared's AnonymousUserEmail for an anonymous visitor."
+  },
+  {
+    "doc2": "__utils/publicDocumentCopying.ts",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/public/utils.ts",
+    "sourceSymbol": "usePublicDocumentCopying, PublicDocumentPostMessageEvent, PublicDocumentPostMessageDataForCopying",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "9776a3170034877008e797a7d456cd61bfaf7a26",
+    "notes": "The public page's side of the handover, with the name and the editor's state as functions instead of docs-core's document state and editor controller. It opens /doc2?mode=copy-public, answers only the window it opened from the Docs origin, closes it when the state can't be read, and leaves the page alone when the popup is blocked."
+  },
+  {
+    "doc2": "__utils/publicDocumentCopying.ts",
+    "doc2Symbol": "getCopyFailedMessage",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/__components/PublicDocumentCopier.tsx",
+    "sourceSymbol": "performCopy",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "9776a3170034877008e797a7d456cd61bfaf7a26",
+    "notes": "The error a failed public copy shows, unchanged: the copy window's error page and the public page's blocked-popup notification."
   },
   {
     "doc2": "__utils/publicLink.ts",

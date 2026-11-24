@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom-v5-compat'
 import { c } from 'ttag'
 
 import { HOMEPAGE_RECENTS_PATH } from '../../../__utils/homepage-paths'
+import { getCopyFailedMessage } from '../__utils/publicDocumentCopying'
 import type { OpenResolution } from '../__utils/resolveOpenAction'
 import { DocumentShell } from './DocumentShell'
 import { ErrorHeader } from './ErrorHeader'
@@ -16,6 +17,7 @@ export type OpenActionErrorReason =
   | 'bootstrapFailed'
   | 'unreadableUpdate'
   | 'editorFailed'
+  | 'copyFailed'
 
 // Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its `invalid_open_action` branch: the
 // invalid URL and Slack messages, and the test id.
@@ -29,6 +31,7 @@ const messages: Record<OpenActionErrorReason, () => string> = {
   bootstrapFailed: () => c('Info').t`The document could not be loaded.`,
   unreadableUpdate: () => c('Info').t`Some of the document's content could not be read.`,
   editorFailed: () => c('Info').t`The editor could not be loaded.`,
+  copyFailed: getCopyFailedMessage,
 }
 
 export type OpenActionErrorProps = {

@@ -17,7 +17,6 @@ vi.mock('~/utils/docs-url-bar', () => ({ useDocsUrlBar: () => ({ removeActionFro
 vi.mock('../__utils/publicRedirects')
 vi.mock('../__utils/useDocsBookmarks')
 const mockShowSignupFlowModal = vi.fn()
-vi.mock('./SignupFlowModal', () => ({ useSignupFlowModal: () => [null, mockShowSignupFlowModal] }))
 
 const addBookmark = vi.fn(async () => {})
 const USER = { Email: 'visitor@proton.me', DisplayName: 'Visitor', Name: 'visitor' } as UserModel
@@ -87,18 +86,14 @@ describe('PublicHeaderOptions', () => {
     expect(localStorage.getItem('tooltip-public-docs-make-copy')).toBe('true')
   })
 
-  test("an anonymous visitor's Create a copy goes through the sign-up modal, coming back to make the copy", async () => {
+  test("Create a copy runs the page's copy, which handles an anonymous visitor's sign-up too", async () => {
     const onCreateCopy = vi.fn()
     renderOptions({ user: undefined, onCreateCopy })
 
     await userEvent.click(screen.getByTestId('make-a-copy-button'))
 
-    expect(mockShowSignupFlowModal).toHaveBeenCalledWith({
-      urlPassword: 'urlPassword',
-      redirectAction: RedirectAction.MakeCopy,
-      openInNewTab: true,
-    })
-    expect(onCreateCopy).not.toHaveBeenCalled()
+    expect(onCreateCopy).toHaveBeenCalledTimes(1)
+    expect(mockShowSignupFlowModal).not.toHaveBeenCalled()
   })
 
   test('Save for later bookmarks the link for a signed-in visitor, and reads Open in Drive once saved', async () => {
@@ -167,6 +162,29 @@ describe('PublicHeaderOptions', () => {
       expect(mockRemoveActionFromUrl).toHaveBeenCalledTimes(1)
     })
 
+    test('make-copy before the editor shows the document: the copy is made once Create a copy is there', () => {
+      setLocation('https://docs.proton.dev/doc2?mode=open-url&action=make-copy&token=TOKEN&linkId=LINK#urlPassword')
+      const { rerender } = renderOptions({ user: USER })
+      expect(mockRemoveActionFromUrl).toHaveBeenCalledTimes(1)
+
+      const onCreateCopy = vi.fn()
+      rerender(optionsElement({ user: USER, onCreateCopy }))
+      rerender(optionsElement({ user: USER, onCreateCopy }))
+
+      expect(onCreateCopy).toHaveBeenCalledTimes(1)
+    })
+
+    test('make-copy with onResumeCopy: the copy is offered for a click, not made from the effect, which a popup blocker stops', () => {
+      setLocation('https://docs.proton.dev/doc2?mode=open-url&action=make-copy&token=TOKEN&linkId=LINK#urlPassword')
+      const onCreateCopy = vi.fn()
+      const onResumeCopy = vi.fn()
+
+      renderOptions({ user: USER, onCreateCopy, onResumeCopy })
+
+      expect(onResumeCopy).toHaveBeenCalledTimes(1)
+      expect(onCreateCopy).not.toHaveBeenCalled()
+    })
+
     test('still anonymous: nothing is done, and the action leaves the address', () => {
       setLocation('https://docs.proton.dev/doc2?mode=open-url&action=bookmark&token=TOKEN&linkId=LINK#urlPassword')
 
@@ -230,6 +248,7 @@ function optionsElement(props: Partial<PublicHeaderOptionsProps>) {
       role={DEFAULT_ROLE}
       user={undefined}
       linkInfo={{ ...DOCUMENT_LINK, customPassword: 'custom' }}
+      showSignupFlowModal={mockShowSignupFlowModal}
       {...props}
     />
   )

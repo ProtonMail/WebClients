@@ -25,13 +25,14 @@ export type SeedingClient = Pick<ReturnType<typeof useRealtimeClient>, 'seedInit
 
 /**
  * The folder a new document goes in: the document's own folder, as docs-core `UseCase/CreateNewDocument.ts` picks it.
- * None, so My files, when the user may not organize the document (`canOrganizeDocument`) or it has no parent folder.
+ * None, so My files, when the user may not organize the document (`canOrganizeDocument`), it has no parent folder, or
+ * there is no document of the user's to go next to, as for a public document's copy.
  */
-function getSiblingFolder({ parentUid }: DocumentNode, canOrganize: boolean): NodeMeta | undefined {
-  if (!canOrganize || !parentUid) {
+function getSiblingFolder(node: DocumentNode | undefined, canOrganize: boolean): NodeMeta | undefined {
+  if (!canOrganize || !node?.parentUid) {
     return undefined
   }
-  const { volumeId, nodeId } = splitNodeUid(parentUid)
+  const { volumeId, nodeId } = splitNodeUid(node.parentUid)
   return { volumeId, linkId: nodeId }
 }
 
@@ -52,7 +53,7 @@ export function getNewDocumentHref(node: DocumentNode, canOrganize: boolean, loc
  * as docs-core `UseCase/CreateNewDocument.ts` and `UseCase/DuplicateDocument.ts` do.
  */
 async function createDocumentNextTo(
-  node: DocumentNode,
+  node: DocumentNode | undefined,
   canOrganize: boolean,
   driveCompat: DriveCompat,
   name: string,
@@ -84,8 +85,8 @@ export async function createSpreadsheet(
 
 /**
  * Creates a text document named `name` in `getSiblingFolder` and has the SDK seed it with `state`, a whole yjs
- * document, as its first commit (ADR-0013): the copy Make a copy makes, and later version history's restore as copy.
- * Rejects with the SDK's `SeedError` or `DocsApiError` when the seed fails, which leaves the new document empty, as
+ * document, as its first commit (ADR-0013): the copy Make a copy makes, and version history's restore as copy. Without
+ * a `node`, as for a public document's copy, it goes in My files. Rejects with the SDK's `SeedError` or `DocsApiError` when the seed fails, which leaves the new document empty, as
  * /doc's does.
  */
 export async function duplicateWithState(
@@ -96,9 +97,9 @@ export async function duplicateWithState(
     canOrganize,
     driveCompat,
     client,
-  }: { node: DocumentNode; canOrganize: boolean; driveCompat: DriveCompat; client: SeedingClient },
+  }: { node?: DocumentNode; canOrganize?: boolean; driveCompat: DriveCompat; client: SeedingClient },
 ): Promise<NodeMeta> {
-  const copy = await createDocumentNextTo(node, canOrganize, driveCompat, name, 'doc')
+  const copy = await createDocumentNextTo(node, canOrganize ?? false, driveCompat, name, 'doc')
   await client.seedInitialCommit({ nodeMeta: copy, state })
   return copy
 }
