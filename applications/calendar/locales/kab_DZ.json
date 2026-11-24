@@ -30,6 +30,9 @@
       "Add address": [
         "Rnu tansa"
       ],
+      "Add another account": [
+        "Rnu amiḍan nniḍen"
+      ],
       "Add birthday": [
         "Rnu azemz n tlalit"
       ],
@@ -301,6 +304,9 @@
       ],
       "Got it": [
         "Gziɣ"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
@@ -735,6 +741,12 @@
       "${ users } user": [
         "${ users } n useqdac",
         "${ users } yiseqdacen"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
+      ],
+      "Writing assistant seats": [
+        "Imukan n umalal n tira"
       ]
     },
     "Alarm notification": {
@@ -824,6 +836,11 @@
     "Badge": {
       "New!": [
         "Amynut!"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Mdel"
       ]
     },
     "bf2023: Deal details": {
@@ -937,6 +954,10 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "1 month": [
         "1 wayyur"
       ],
@@ -1186,6 +1207,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } n uḥraz"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
       ],
       "Save ${ upsellSavings }": [
         "Sekles ${ upsellSavings }"
@@ -2337,6 +2362,11 @@
         "Kkes asenqes"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Sider i Windows"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Priority support": [
         "Tallalt yezwaren"
@@ -3001,6 +3031,10 @@
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Tallunt n uḥraz i ak-yettwamudden: ${ assignedStorage }"
+      ],
+      "View the invitation": [
+        "Wali tinnubga",
+        "Wali tinnubgiwin"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Tettwaɛerḍeḍ ad ternuḍ ɣer ${ invite.OrganizationName }"
@@ -3686,6 +3720,9 @@
       "Import mailbox": [
         "Kter tabewwaḍt n yimayl"
       ],
+      "Important note": [
+        "Tamawt taxatart"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
@@ -3781,6 +3818,9 @@
       ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
+      ],
+      "Not connected": [
+        "Ur iqqin ara"
       ],
       "Numbers": [
         "Imḍanen"
@@ -3966,6 +4006,9 @@
       "Week and month views only apply to desktop.": [
         "Tiskanin n yimalas d wayyuren teddunt kan ɣef tnarit."
       ],
+      "When working remotely": [
+        "Mi ara txeddmeḍ s wudem anmeggag"
+      ],
       "Which event would you like to delete?": [
         "Would you like to delete all the events in the series?"
       ],
@@ -3998,6 +4041,9 @@
       ],
       "Would you like to update this event?": [
         "Tbɣiḍ ad tesnifleḍ tadyant-agi?"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
       ],
       "Yearly": [
         "S useggas"
@@ -4070,6 +4116,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
+      ],
+      "Your online activity is protected": [
+        "Armud-ik deg internet yettummesten"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -4735,6 +4784,12 @@
     "mail_signup_2024: Info": {
       "for ${ price }": [
         "i ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } yimtteki",
+        "${ n } yimttekkiyen"
       ]
     },
     "Message display when a new app version is available": {
@@ -5788,6 +5843,12 @@
         "Imayl uzzig seg ${ BRAND_NAME }"
       ]
     },
+    "Referral": {
+      "Friend joined": [
+        "Yerna-d umeddakel",
+        "Rnan-d imeddukal"
+      ]
+    },
     "Reload event button tooltip": {
       "Reload event": [
         "Sali tikkelt niḍen tadyant"
@@ -6061,10 +6122,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "Mazal ${ dayDiff } wass",
-        "Mazal ${ dayDiff } wussan"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } uḥraz i aseqdac"
       ],
@@ -6590,6 +6647,9 @@
       "Downgrade account": [
         "Sider aswir n umiḍan"
       ],
+      "Download the app": [
+        "Sider asnas"
+      ],
       "Drop to upload": [
         "Ẓuɣer asali"
       ],
@@ -6614,11 +6674,11 @@
       "Email settings": [
         "Iɣewwaren n yimayl"
       ],
+      "Enable 2FA": [
+        "Sermed 2FA"
+      ],
       "Encrypted event": [
         "Tadyant yettwagedlen"
-      ],
-      "Enter your password": [
-        "Sekcem awal-ik uffir"
       ],
       "Error": [
         "Tuccḍa"
@@ -6643,6 +6703,9 @@
       ],
       "Groups": [
         "Igrawen"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ],
       "Help center": [
         "Tallalt"
@@ -6777,6 +6840,9 @@
       "Save changes": [
         "Sekles ibeddilen"
       ],
+      "Security center": [
+        "Ammas n tɣellist"
+      ],
       "Select a plan": [
         "Fren aɣawas"
       ],
@@ -6887,6 +6953,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Tnecdeḍ-d imttekkiyen s yimaylen igdazalen"
+      ],
+      "Your account is protected": [
+        "Amiḍan-ik yettummesten"
       ],
       "Your calendar link": [
         "Aseɣwen n uwitayen-ik"

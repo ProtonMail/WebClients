@@ -350,11 +350,14 @@
       "Dismiss": [
         "Renunțare"
       ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
       "Display navigation bar": [
         "Afișare bară de navigare"
       ],
-      "Don't show this offer again": [
-        "Nu mai afișa această ofertă"
+      "Don't show this again": [
+        "Nu mai afișa asta"
       ],
       "Done": [
         "Gata"
@@ -475,6 +478,9 @@
       ],
       "Go to the next available appointment": [
         "Salt la următoarea planificare disponibilă"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
       ],
       "Google Drive": [
         "Google Drive"
@@ -638,6 +644,9 @@
       "Next": [
         "Înainte"
       ],
+      "Next contact": [
+        "Contact următor"
+      ],
       "Next day": [
         "Ziua următoare"
       ],
@@ -691,6 +700,9 @@
       ],
       "Previous": [
         "Anteriorul"
+      ],
+      "Previous contact": [
+        "Contact anterior"
       ],
       "Previous day": [
         "Ziua anterioară"
@@ -886,6 +898,9 @@
       ],
       "Skip": [
         "Omitere"
+      ],
+      "Skip to main content": [
+        "Salt la conținutul principal"
       ],
       "Skip verification": [
         "Ignorare verificare"
@@ -1125,6 +1140,9 @@
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizatori)",
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } de utilizatori)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
       ],
@@ -1151,6 +1169,11 @@
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
@@ -1336,6 +1359,11 @@
         "Nou!"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Închidere"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Manager de parole premium"
@@ -1344,6 +1372,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garanție de restituire a banilor în 30 de zile: anulați în termen de 30 de zile de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ofertă indisponibilă"
       ]
     },
     "BF2024: Deal details": {
@@ -3833,6 +3866,9 @@
       "Location is required": [
         "Locul este obligatoriu."
       ],
+      "Meeting not created. Try again.": [
+        "Conferința nu s-a creat. Reîncercați."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
         "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
@@ -3889,12 +3925,6 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
-      ],
-      "Organization key must be activated to create invited users": [
-        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
       ],
       "Password is required": [
         "Parola este obligatorie"
@@ -4058,9 +4088,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Creditul minim care poate fi adăugat este de ${ price }."
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Suma minimă de donație este de ${ price }."
       ],
       "The sending key is not valid": [
         "Cheia de trimitere nu este validă"
@@ -4583,8 +4610,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Solicitarea cheii de securitate a fost anulată sau a expirat. Reîncercați."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dispozitivul nu v-a putut finaliza solicitarea cheii de securitate. Reîncercați sau folosiți o altă metodă de conectare."
       ]
     },
     "fido2: Info": {
@@ -5169,7 +5202,7 @@
         "Licențe ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } video call": [
-        "Apel video ${ MEET_APP_NAME }"
+        "Videoconferință ${ MEET_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
@@ -6288,6 +6321,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pentru a contribui la menținerea siguranței contului, confirmați-vă identitatea înainte de a continua."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Pentru a vă ajuta să vă amintiți parola, vă vom solicita să o introduceți periodic. Vi se va solicita mai rar în timp."
       ],
@@ -6455,6 +6491,9 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licențele pentru asistentul de scriere nu se mai vând."
       ],
       "Yearly": [
         "Anual"
@@ -6879,6 +6918,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Parolă cont ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nume de utilizator ${ BRAND_NAME }"
       ],
@@ -7708,6 +7750,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activare ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2X Utilizare de bază"
+      ],
+      "5x Plus usage": [
+        "Utilizare Plus 5X"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acces la API, cu ${ credit } credit pe lună"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acces la API, cu ${ credit } credit pe lună per utilizator"
+      ],
+      "Everything in Basic, and:": [
+        "Torul din Basic și:"
+      ],
+      "Everything in Free, and:": [
+        "Totul din Free și:"
+      ],
+      "Everything in Plus, and:": [
+        "Totul din Plus și:"
+      ],
+      "Extended image generation": [
+        "Generare de imagini extinsă"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generare de imagini limitată"
+      ],
+      "Limited messages and chat history": [
+        "Mesaje si istoric conversații limitate"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Aptitudini, proiecte și sarcini planificate limitate"
+      ],
+      "Maximum image generation": [
+        "Maximum generări de imagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximum de proiecte și aptitudini"
+      ],
+      "More image generation": [
+        "Mai multe generări de imagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mai multe aptitudini, proiecte și sarcini planificate"
+      ],
+      "More usage": [
+        "Mai multă utilizare"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pentru programare și construire"
+      ],
+      "For everyday chats": [
+        "Pentru conversațiile zilnice"
+      ],
+      "For getting more done": [
+        "Pentru a realiza mai multe"
       ]
     },
     "Mail import summary": {
@@ -11062,11 +11171,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
       ],
-      "${ dayDiff } day left": [
-        "Zile rămase: ${ dayDiff }",
-        "Zile rămase: ${ dayDiff }",
-        "Zile rămase: ${ dayDiff }"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
       ],
@@ -11307,20 +11411,11 @@
       "What you give up when you cancel ${ planName }": [
         "La ce renunțați când anulați ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "După ce anulați planul ${ planName }, cotul va fi trecut la planul de bază ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Veți pierde și orice bonusuri pentru stocare acordate anterior."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Când anulați planul ${ planName }, contul va fi retrogradat la planul ${ BRAND_NAME } Free, care oferă doar până la 1 GiB spațiu de stocare în Mail și până la 5 GiB spațiu de stocare în Drive. Echipa va experimenta întreruperi în activitatea sa, deoarece utilizatorii suplimentari nu sunt acceptați în planul gratuit."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Când abonamentul ${ planName } se încheie la ${ expiryDate }, contul va fi trecut la planul ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Bonusuri de stocare gratuită anuală"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Încă mai aveți ${ expiryDate } din abonamentul ${ planName }. Vi se vor adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }. Asigurați-vă că nu depășiți limitele planului gratuit înainte de anulare. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Planul ${ planName } actual nu doar că vă păstrează datele și comunicațiile comerciale în siguranță. Vă sprijină și obiectivele de conformitate, vă scoate afacerea în evidență și vă menține echipa conectată."
@@ -12053,9 +12148,6 @@
       "Enhance security with 2FA": [
         "Îmbunătățiți securitatea cu A2F"
       ],
-      "Enter your password": [
-        "Introduceți parola"
-      ],
       "Error": [
         "Eroare"
       ],
@@ -12388,6 +12480,9 @@
       "Simplify password management": [
         "Simplificați gestionarea parolelor"
       ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
       "Start a new import": [
         "Începere importare nouă"
       ],
@@ -12453,6 +12548,9 @@
       ],
       "Verification failed": [
         "Verificarea a eșuat"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
       ],
       "Verify your password": [
         "Verificați-vă parola"
@@ -12770,6 +12868,71 @@
       ],
       "Open in a new tab": [
         "Deschidere in filă nouă"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per utilizator"
+      ],
+      "${ storage } shared": [
+        "${ storage } partajat"
+      ],
+      "10 years": [
+        "10 ani"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "O categorie de servere ${ VPN_APP_NAME } cu capacitate mai mare: fiecare server este utilizat de un număr mult mai mic de persoane și folosește adrese IP deținute de către ${ BRAND_NAME }. Funcția „Conectare rapidă” le selectează automat, acolo unde sunt disponibile."
+      ],
+      "Calendars": [
+        "Calendare"
+      ],
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Numit astfel în onoarea susținătorilor de pe platformele de finanțare comunitară care au făcut posibilă existența ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } în 2014. Toate serviciile premium ${ BRAND_NAME }, într-un singur abonament."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Servicii ${ BRAND_NAME } noi fără extra costuri"
+      ],
+      "Password vaults": [
+        "Seifuri de parole"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive și Pass premium"
+      ],
+      "Previous versions": [
+        "Versiuni anterioare"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
+      "Subscribers only": [
+        "Doar pentru abonați"
+      ],
+      "Ultra servers": [
+        "Servere ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servere ultra, rezervate pentru dvs."
+      ],
+      "Unlimited": [
+        "Nelimitat"
+      ],
+      "Up to ${ limit }": [
+        "Până la ${ limit }"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "VPN devices at once": [
+        "Dispozitive VPN simultane"
       ]
     },
     "VPN B2B cancellation reason": {

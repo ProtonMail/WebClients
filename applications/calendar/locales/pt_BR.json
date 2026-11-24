@@ -353,8 +353,8 @@
       "Display navigation bar": [
         "Mostrar barra de navegação"
       ],
-      "Don't show this offer again": [
-        "Não mostrar mais esta oferta"
+      "Don't show this again": [
+        "Não mostrar isso novamente"
       ],
       "Done": [
         "Concluído"
@@ -896,6 +896,9 @@
       "Skip": [
         "Ignorar"
       ],
+      "Skip to main content": [
+        "Pular para o conteúdo principal"
+      ],
       "Skip verification": [
         "Pular verificação"
       ],
@@ -1128,6 +1131,9 @@
         "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuário)",
         "Assistente de escrita da ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuários)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -1151,6 +1157,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
         "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licença de assistente de escrita do ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenças de assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } licença",
@@ -1332,6 +1342,11 @@
         "Novo!"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gerenciador de senha premium"
@@ -1340,6 +1355,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
       ]
     },
     "BF2024: Deal details": {
@@ -3809,6 +3829,9 @@
       "Location is required": [
         "A localização é obrigatória"
       ],
+      "Meeting not created. Try again.": [
+        "Reunião não criada. Tente novamente."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
         "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente da ${ BRAND_NAME }"
@@ -3862,12 +3885,6 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
-      ],
-      "Organization key must be activated to create invited users": [
-        "A chave da organização deve ser ativada para criar usuários convidados"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "A chave da organização deve ser ativada para criar usuários não privados"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -4029,9 +4046,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
-      ],
-      "The minimum donation amount is ${ price }": [
-        "O valor mínimo da doação é de ${ price }"
       ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
@@ -6380,6 +6394,9 @@
       "Writing assistant": [
         "Assistente de escrita"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "As licenças do assistente de escrita não são mais vendidas."
+      ],
       "Yearly": [
         "Anualmente"
       ],
@@ -6795,6 +6812,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Senha da conta da ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
       ],
@@ -7633,6 +7653,12 @@
       "5x Plus usage": [
         "5x uso do Plus"
       ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API com um crédito ${ credit } ao mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API com um crédito ${ credit } ao mês por usuário"
+      ],
       "Everything in Basic, and:": [
         "Tudo do plano básico e e:"
       ],
@@ -7679,6 +7705,9 @@
       ],
       "For everyday chats": [
         "Para todos os bate-papos"
+      ],
+      "For getting more done": [
+        "Para ter mais produtividade"
       ]
     },
     "Mail import summary": {
@@ -10935,10 +10964,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dia restante",
-        "${ dayDiff } dias restantes"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ],
@@ -11173,20 +11198,11 @@
       "What you give up when you cancel ${ planName }": [
         "Do que você abre mão quando cancela o ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ao cancelar o ${ planName }, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Você também perderá todos os bônus de armazenamento concedidos anteriormente."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Ao cancelar o ${ planName }, você fará o downgrade para o ${ BRAND_NAME } Free, que oferece somente até 1 GB para armazenamento do Mail e até 5 GB para armazenamento do Drive. Sua equipe sofrerá interrupções no trabalho, pois usuários adicionais não têm suporte no plano gratuito."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando sua assinatura do ${ planName } terminar em ${ expiryDate }, sua conta será rebaixada para o plano ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Bônus anuais de armazenamento gratuito"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Você ainda tem ${ expiryDate } na sua assinatura ${ planName }. Nós adicionaremos os créditos para o tempo restante na sua conta ${ BRAND_NAME }. Certifique-se de não exceder os limites do plano gratuito antes de cancelar. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Seu plano ${ planName } não apenas mantém os dados e comunicações de sua empresa seguros. Ele apoia seus objetivos de conformidade, destaca sua empresa e mantém sua equipe conectada."
@@ -11902,9 +11918,6 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com 2FA"
       ],
-      "Enter your password": [
-        "Digite sua senha"
-      ],
       "Error": [
         "Erro"
       ],
@@ -12236,6 +12249,9 @@
       "Simplify password management": [
         "Facilite o gerenciamento de senhas"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "Start a new import": [
         "Iniciar uma nova importação"
       ],
@@ -12301,6 +12317,9 @@
       ],
       "Verification failed": [
         "Erro na verificação"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ],
       "Verify your password": [
         "Verificar sua senha"
@@ -12616,6 +12635,68 @@
       ],
       "Open in a new tab": [
         "Abrir em uma nova guia"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuário"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartilhado"
+      ],
+      "10 years": [
+        "10 anos"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Custom email domains": [
+        "Domínios personalizados de e-mail"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Nome em homenagem aos apoiadores do financiamento coletivo que tornaram o ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possível em 2014. Todos os serviços premium da ${ BRAND_NAME }, em um único plano."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Serviços novos da ${ BRAND_NAME } sem custo adicional"
+      ],
+      "Password vaults": [
+        "Cofres de senhas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass premium"
+      ],
+      "Previous versions": [
+        "versões anteriores"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Subscribers only": [
+        "Somente assinantes"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra, reservado para você"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Até ${ limit }"
+      ],
+      "Users": [
+        "Usuários"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN ao mesmo tempo"
       ]
     },
     "VPN B2B cancellation reason": {

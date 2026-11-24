@@ -350,8 +350,8 @@
       "Display navigation bar": [
         "Vis navigasjonslinjen"
       ],
-      "Don't show this offer again": [
-        "Ikke vis dette tilbudet igjen"
+      "Don't show this again": [
+        "Ikke vis dette igjen"
       ],
       "Done": [
         "Utført"
@@ -884,6 +884,9 @@
       "Skip": [
         "Hopp over"
       ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
+      ],
       "Skip verification": [
         "Hopp over bekreftelse"
       ],
@@ -1320,9 +1323,19 @@
         "Ny!"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Lukk"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium passordbehandler"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbudet er utilgjengelig"
       ]
     },
     "BF2024: Deal details": {
@@ -3846,12 +3859,6 @@
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
-      ],
       "Password is required": [
         "Passord kreves"
       ],
@@ -4012,9 +4019,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimumbeløpet for donasjon er ${ price }"
       ],
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
@@ -10840,10 +10844,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag igjen",
-        "${ dayDiff } dager igjen"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ],
@@ -11078,20 +11078,11 @@
       "What you give up when you cancel ${ planName }": [
         "Dette gir du opp når du avbestiller ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Teamet ditt vil oppleve avbrudd i arbeidet siden flere brukere ikke støttes på gratisplanen."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når ${ planName }-abonnementet ditt avsluttes på ${ expiryDate }, blir du nedgradert til ${ BRAND_NAME } Free-abonnementet."
       ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagringsbonuser"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-abonnementet. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ."
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Planen din på ${ planName } holder ikke bare forretningsdata og kommunikasjon trygg. Den støtter samsvarsmålene dine, får virksomheten til å skille seg ut og holder teamet ditt tilkoblet."
@@ -11807,9 +11798,6 @@
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
-      "Enter your password": [
-        "Skriv inn passordet"
-      ],
       "Error": [
         "Feil"
       ],
@@ -12141,6 +12129,9 @@
       "Simplify password management": [
         "Forenkle passordadministrasjon"
       ],
+      "Special offer": [
+        "Spesialtilbud"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -12206,6 +12197,9 @@
       ],
       "Verification failed": [
         "Bekreftelse mislyktes"
+      ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
       ],
       "Verify your password": [
         "Bekreft passordet ditt"
