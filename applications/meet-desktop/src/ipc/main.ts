@@ -1,5 +1,6 @@
 import { ipcMain, IpcMainEvent, IpcMainInvokeEvent, shell } from "electron";
 import type { IPCMeetClientUpdateMessage } from "@proton/shared/lib/desktop/desktopTypes";
+import { setRecordingSaveInProgress } from "../utils/downloads";
 import { setSessionLocale } from "../utils/locale";
 import { ipcLogger } from "../utils/log";
 import { setApplicationMenu } from "../utils/menus/menuApplication";
@@ -51,6 +52,15 @@ export const handleIPCCalls = () => {
                 }
             })
             .catch((error) => ipcLogger.error("Failed to set the session locale", error));
+    });
+
+    ipcMain.on("meetRecordingSave:set", (event, isInProgress: unknown) => {
+        if (!isTrustedSender(event) || typeof isInProgress !== "boolean") {
+            ipcLogger.error("Rejected meetRecordingSave:set");
+            return;
+        }
+
+        setRecordingSaveInProgress(event.sender, isInProgress);
     });
 
     ipcMain.on("meetClientUpdate", (_e, message: unknown) => {

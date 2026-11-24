@@ -21,7 +21,7 @@ vi.mock('@proton/meet/telemetry/meetTelemetry', () => ({
 }));
 vi.mock('../../components/PageHeader/PageHeader', () => ({ PageHeader: () => null }));
 vi.mock('../../hooks/useMeetingRecorder/hooks/useRecordingDownload', () => ({
-    useRecordingDownload: () => ({ downloadRecording: vi.fn() }),
+    useRecordingDownload: () => ({ downloadRecording: vi.fn(), isRecordingSaving: () => false }),
 }));
 vi.mock('../../hooks/useMeetingRecorder/recordingStorage/recordingFiles', () => ({
     deleteOpfsRecording: vi.fn(),

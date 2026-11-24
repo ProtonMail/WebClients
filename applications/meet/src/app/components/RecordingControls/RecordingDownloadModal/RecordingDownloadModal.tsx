@@ -20,7 +20,7 @@ import { RecordingProcessingModal } from './RecordingProcessingModal';
 export const RecordingDownloadModal = () => {
     const dispatch = useMeetDispatch();
     const status = useMeetSelector(selectRecordingStatus);
-    const { downloadLastRecording } = useLastRecordingDownload();
+    const { downloadLastRecording, isSavingRecording } = useLastRecordingDownload();
     const announce = useAnnounce();
     const recording = useMeetSelector(selectRecording);
     const recordingReadyAtRef = useRef(0);
@@ -97,6 +97,7 @@ export const RecordingDownloadModal = () => {
             title={c('Title').t`Your recording is ready`}
             primaryText={c('Action').t`Download`}
             onPrimaryAction={handleDownload}
+            primaryLoading={isSavingRecording}
             secondaryText={c('Action').t`Close`}
             onSecondaryAction={dismiss}
             onClose={dismiss}
