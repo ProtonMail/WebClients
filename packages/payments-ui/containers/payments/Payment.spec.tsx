@@ -203,7 +203,6 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -244,7 +243,6 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -328,7 +326,6 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -403,7 +400,6 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -449,7 +445,6 @@ describe('Payment', () => {
                     }
                     savedPaymentMethods={[]}
                     showTaxCountry={true}
-                    paymentComponentLoaded={vi.fn()}
                     selectedProcessor={overrides.selectedProcessor}
                     processingPayment={overrides.processingPayment ?? false}
                 />
@@ -508,7 +503,6 @@ describe('Payment', () => {
                 directDebit={{ customer: {} as any, bankAccount: {} as any, reset: vi.fn() } as any}
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
                 {...props}

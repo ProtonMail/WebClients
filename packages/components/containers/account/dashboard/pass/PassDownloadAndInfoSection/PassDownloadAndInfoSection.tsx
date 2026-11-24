@@ -9,7 +9,6 @@ import {
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Loader } from '@proton/atoms/Loader/Loader';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import DashboardUpgradePlanButton from '../../shared/DashboardDownloadSection/DashboardUpgradePlanButton';
@@ -17,7 +16,7 @@ import { getDownloadAppText } from '../../shared/DashboardMoreInfoSection/helper
 import PassDownloadSection from './PassDownloadSection/PassDownloadSection';
 import PassGetMoreSection from './PassGetMoreSection/PassGetMoreSection';
 
-const PassDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
+const PassDownloadAndInfoSection = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
 
@@ -27,7 +26,7 @@ const PassDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
         return <Loader />;
     }
 
-    const upgradeButton = <DashboardUpgradePlanButton app={app} plan={plan} key="upgrade-button" />;
+    const upgradeButton = <DashboardUpgradePlanButton plan={plan} key="upgrade-button" />;
 
     const passPlusPlanName = PLAN_NAMES[plan];
     const downloadsSubtitle = !subscription?.Plans

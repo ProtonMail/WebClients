@@ -15,7 +15,6 @@ import { Loader } from '@proton/atoms/Loader/Loader';
 import { getDownloadAppText } from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/helpers';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAnyPlusWithoutVPN, hasFree } from '@proton/payments/core/subscription/helpers';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -32,14 +31,12 @@ export const VPNDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = hasAnyPlusWithoutVPN(subscription) ? PLANS.BUNDLE : PLANS.VPN2024;
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
-            telemetryFlow,
             onMount: () => {
                 void sendTelemetryReport({
                     api,

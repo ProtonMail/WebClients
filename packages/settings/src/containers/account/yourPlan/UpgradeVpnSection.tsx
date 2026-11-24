@@ -6,7 +6,6 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { useUpsellsToDisplay } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import UpsellPanels from '@proton/components/containers/payments/subscription/panels/UpsellPanels';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
@@ -29,7 +28,6 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
     const multiSubscriptionContext = useMultiSubscriptionContext();
     const openSubscriptionModal = useSubscriptionModalRaw();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     useLoad();
 
@@ -40,7 +38,6 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
         freePlan,
         openSubscriptionModal,
         user,
-        telemetryFlow,
         multiSubscriptionContext,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });

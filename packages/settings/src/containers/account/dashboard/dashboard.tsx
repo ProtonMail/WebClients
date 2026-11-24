@@ -51,8 +51,8 @@ const AccountMailDashboard = ({ app, config }: Props) => {
             <PendingInvitations />
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
-            <MailDownloadAndInfoSection app={app} />
-            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner app={app} />}>
+            <MailDownloadAndInfoSection />
+            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner />}>
                 <AlsoInYourPlanProtonPass />
                 <AlsoInYourPlanProtonDrive />
                 <AlsoInYourPlanProtonVPN />
@@ -68,8 +68,8 @@ const AccountPassDashboard = ({ app, config }: Props) => {
             <PendingInvitations />
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
-            <PassDownloadAndInfoSection app={app} />
-            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner app={app} />}>
+            <PassDownloadAndInfoSection />
+            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner />}>
                 <AlsoInYourPlanProtonMail />
                 <AlsoInYourPlanProtonVPN />
                 <AlsoInYourPlanProtonDrive />
@@ -85,8 +85,8 @@ const AccountDriveDashboard = ({ app, config }: Props) => {
             <PendingInvitations />
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
-            <DriveDownloadAndInfoSection app={app} />
-            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner app={app} />}>
+            <DriveDownloadAndInfoSection />
+            <AlsoInYourPlanSection app={app} upsellBanner={<BundleUpsellBanner />}>
                 <AlsoInYourPlanProtonPass />
                 <AlsoInYourPlanProtonMail />
                 <AlsoInYourPlanProtonVPN />
@@ -102,8 +102,8 @@ const AccountMeetDashboard = ({ app, config }: Props) => {
             <PendingInvitations />
             <YourPlanSectionV2 app={app} />
             <YourPlanUpsellsSectionV2 app={app} />
-            <MeetDownloadAndInfoSection app={app} />
-            <AlsoInYourPlanSection app={app} upsellBanner={<WorkspaceFromFreeBanner2 app={app} />}>
+            <MeetDownloadAndInfoSection />
+            <AlsoInYourPlanSection app={app} upsellBanner={<WorkspaceFromFreeBanner2 />}>
                 <AlsoInYourPlanProtonDrive />
                 <AlsoInYourPlanProtonPass />
                 <AlsoInYourPlanProtonMail />
@@ -124,7 +124,7 @@ const AccountGenericDashboard = ({ app, config }: Props) => {
                 app={app}
                 title={c('Title').t`Get more from your privacy suite`}
                 subtitle={c('Title').t`With your ${BRAND_NAME} Account, you get access to all ${BRAND_NAME} apps`}
-                upsellBanner={<BundleUpsellBanner app={app} />}
+                upsellBanner={<BundleUpsellBanner />}
             >
                 <AlsoInYourPlanProtonMail />
                 <AlsoInYourPlanProtonPass />

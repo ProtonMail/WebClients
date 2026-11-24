@@ -10,7 +10,6 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Loader } from '@proton/atoms/Loader/Loader';
 import useLoading from '@proton/hooks/useLoading';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
-import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import { isPaymentsPreloaded, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -111,7 +110,6 @@ interface GetUpsellSectionProps {
 export type UpsellsHook = {
     upsells: Upsell[];
     handleExplorePlans: () => void;
-    telemetryFlow: TelemetryPaymentFlow;
     plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
     user: UserModel;
@@ -339,7 +337,6 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                     vpnUpsells={vpnPlusFromFreeUpsells.upsells}
                     bundleUpsells={unlimitedBannerGradientUpsells.upsells}
                     handleExplorePlans={vpnPlusFromFreeUpsells.handleExplorePlans}
-                    telemetryFlow={vpnPlusFromFreeUpsells.telemetryFlow}
                     userCanHave24MonthPlan={userCanHave24MonthPlan}
                 />
             ),
@@ -360,7 +357,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -381,7 +378,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -402,7 +399,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -423,7 +420,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <DuoBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -438,7 +435,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...vpnPlusExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -457,7 +454,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -501,7 +498,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...mailPlusExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -519,7 +516,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -549,7 +546,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...passPlusExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -567,7 +564,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -582,7 +579,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         showUpsellPanels={true}
                         {...passFamilyBannerExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -592,7 +589,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
             upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <>
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -612,7 +609,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <DrivePlusFromFreeBanner app={app} />
+                    <DrivePlusFromFreeBanner />
                 </>
             ),
         },
@@ -627,7 +624,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...drivePlusExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -645,7 +642,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -660,7 +657,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...drivePlusOneTBExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <UnlimitedBannerPlain app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -678,7 +675,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -691,7 +688,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...meetProfessionalFromFreeUpsells}
                     />
-                    <WorkspaceBanner app={app} />
+                    <WorkspaceBanner />
                 </>
             ),
         },
@@ -703,8 +700,8 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
             upsells: meetProfessionalFromFreeUpsells.upsells,
             element: (
                 <>
-                    <MeetAddonBanner app={app} />
-                    <WorkspaceBanner app={app} />
+                    <MeetAddonBanner />
+                    <WorkspaceBanner />
                 </>
             ),
         },
@@ -719,7 +716,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         showUpsellPanels={true}
                         {...unlimitedBannerExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -727,7 +724,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
             enabled: hasBundle(subscription) && getCanAccessFamilyPlans(subscription),
             element: (
                 <>
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -743,7 +740,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         showUpsellPanels={true}
                         {...duoBannerExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -751,7 +748,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
             enabled: hasDuo(subscription) && getCanAccessFamilyPlans(subscription),
             element: (
                 <>
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <FamilyBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
@@ -767,7 +764,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         showUpsellPanels={true}
                         {...familyBannerExtendSubscriptionUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },
@@ -779,7 +776,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                 app === APPS.PROTONVPN_SETTINGS,
             element: (
                 <>
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                     <VPNB2BBanner app={app} />
                 </>
             ),
@@ -798,7 +795,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
         },
         {
             enabled: app !== APPS.PROTONVPN_SETTINGS && (hasFamily(subscription) || hasVisionary(subscription)),
-            element: <PBSB2BBanner app={app} />,
+            element: <PBSB2BBanner />,
         },
         {
             enabled: hasVPNPassBundle(subscription),
@@ -813,7 +810,7 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
                         subscription={subscription as Subscription}
                         {...unlimitedBannerGradientUpsells}
                     />
-                    <MeetAddonBanner app={app} />
+                    <MeetAddonBanner />
                 </>
             ),
         },

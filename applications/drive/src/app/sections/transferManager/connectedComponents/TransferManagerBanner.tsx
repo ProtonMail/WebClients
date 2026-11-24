@@ -4,13 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { hasDuo, hasFamily, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { TransferManagerBannerType } from '../transferManager.store';
@@ -40,7 +38,6 @@ interface TransferManagerBannerProps {
 
 export const TransferManagerBanner = ({ type, onAction, className, subscription }: TransferManagerBannerProps) => {
     const openSubscriptionModal = useSubscriptionModalRaw();
-    const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONDRIVE);
 
     const configs: Record<TransferManagerBannerType, BannerConfig> = {
         [TransferManagerBannerType.StorageFull]: {
@@ -56,7 +53,6 @@ export const TransferManagerBanner = ({ type, onAction, className, subscription 
                     onClick={() => {
                         void openSubscriptionModal({
                             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-                            telemetryFlow,
                         });
                         onAction();
                     }}

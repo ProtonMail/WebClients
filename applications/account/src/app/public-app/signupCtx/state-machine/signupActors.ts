@@ -35,7 +35,6 @@ import {
 import { getClientType } from '../context/helpers/getClientType';
 import { handleCreateUser } from '../context/helpers/handleCreateUser';
 import {
-    type OnSubscriptionPayment,
     type SignupContextSubscriptionData,
     handleSetPassword,
     handleSetupUser,
@@ -68,7 +67,6 @@ export interface SignupServices {
     persistent: boolean;
     /** The user is set up without keys: the flow sets them up with the password the user then chooses. */
     deferKeySetup: boolean;
-    onSubscriptionPayment: OnSubscriptionPayment | undefined;
     payments: Pick<PaymentsContextOptimisticType, 'initialize' | 'selectedPlan'>;
     onPaymentsInitialized: () => void;
     getKtActivation: () => Promise<KeyTransparencyActivation>;
@@ -299,7 +297,6 @@ export const createSignupActors = (services: SignupServices) => {
                     accountData,
                     persistent: services.persistent,
                     deferKeySetup: services.deferKeySetup,
-                    onPayment: services.onSubscriptionPayment,
                     api: silentApi,
                     keyTransparencyActivation: await services.getKtActivation(),
                     subscriptionData,
@@ -344,7 +341,6 @@ export const createSignupActors = (services: SignupServices) => {
                       productParam: app,
                       build: services.build,
                       telemetryContext: services.paymentsDataConfig.telemetryContext,
-                      onPayment: services.onSubscriptionPayment,
                   })
                 : undefined;
 

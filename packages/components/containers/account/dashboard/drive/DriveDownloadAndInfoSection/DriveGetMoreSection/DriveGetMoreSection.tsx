@@ -6,8 +6,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import DriveLogo from '../../../../../../components/logo/DriveLogo';
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../../../../payments/subscription/subscriptionModalContext';
+import { useSubscriptionModalRaw } from '../../../../../payments/subscription/subscriptionModalContext';
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
     DashboardMoreInfoSectionTag,
@@ -24,14 +23,12 @@ interface Props {
 
 const DriveGetMoreSection = ({ subscription }: Props) => {
     const isFreeSubscription = hasFree(subscription);
-    const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONDRIVE);
+    const openSubscriptionModal = useSubscriptionModalRaw();
 
     const handleDrivePlusUpsell = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.DRIVE,
-            telemetryFlow,
         });
     };
 

@@ -9,14 +9,13 @@ import {
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Loader } from '@proton/atoms/Loader/Loader';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import DashboardUpgradePlanButton from '../../shared/DashboardDownloadSection/DashboardUpgradePlanButton';
 import MailDownloadSection from './MailDownloadSection/MailDownloadSection';
 import { MailGetMoreSection } from './MailGetMoreSection/MailGetMoreSection';
 
-export const MailDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
+export const MailDownloadAndInfoSection = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const plan = PLANS.MAIL;
@@ -25,7 +24,7 @@ export const MailDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
         return <Loader />;
     }
 
-    const upgradeButton = <DashboardUpgradePlanButton app={app} plan={plan} key="upgrade-button" />;
+    const upgradeButton = <DashboardUpgradePlanButton plan={plan} key="upgrade-button" />;
 
     const mailPlusPlanName = PLAN_NAMES[plan];
     const downloadsSubtitle = !subscription?.Plans

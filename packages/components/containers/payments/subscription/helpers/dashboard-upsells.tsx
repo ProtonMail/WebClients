@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import useLoading from '@proton/hooks/useLoading';
-import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import {
     type PreloadedPaymentsContextType,
     isPaymentsPreloaded,
@@ -170,7 +169,6 @@ type GetUpsellArgs = {
     app: APP_NAMES;
     upsellPath: DASHBOARD_UPSELL_PATHS;
     customCycle?: CYCLE;
-    telemetryFlow: TelemetryPaymentFlow;
     onMount?: () => void;
 } & Partial<Upsell>;
 
@@ -328,7 +326,6 @@ const getMailPlusUpsell = ({
                 plan: PLANS.MAIL,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -346,7 +343,6 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPl
                 plan: PLANS.DRIVE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -366,7 +362,6 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPlan
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         customCycle: CYCLE.TWO_YEARS,
         ...rest,
@@ -385,7 +380,6 @@ const getLumoUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 plan: PLANS.LUMO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -420,7 +414,6 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: GetPla
                 plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -455,7 +448,6 @@ const getPassFamilyUpsell = ({ plansMap, openSubscriptionModal, app, ...rest }: 
                 plan: PLANS.PASS_FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -503,7 +495,6 @@ const getBundleUpsell = ({
                 plan: PLANS.BUNDLE,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         otherCtas: isTrialEnding ? [exploreAllPlansCTA(openSubscriptionModal)] : [],
         isTrialEnding,
@@ -544,7 +535,6 @@ const getDuoUpsell = ({ plansMap, freePlan, openSubscriptionModal, app, ...rest 
                 plan: PLANS.DUO,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -589,7 +579,6 @@ const getFamilyUpsell = ({
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -717,7 +706,6 @@ const getVPNPassProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPl
                 plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
             }),
         ...rest,
     });
@@ -747,7 +735,6 @@ type ResolveUpsellsToDisplayProps = {
     user: UserModel;
     isReferralExpansionEnabled?: boolean;
     isMeetPlansEnabled?: boolean;
-    telemetryFlow: TelemetryPaymentFlow;
     multiSubscriptionContext: MultiSubscriptionContext;
 };
 
@@ -778,7 +765,6 @@ export const resolveUpsellsToDisplay = ({
     user,
     isReferralExpansionEnabled,
     isMeetPlansEnabled,
-    telemetryFlow,
     multiSubscriptionContext,
     ...rest
 }: ResolveUpsellsToDisplayProps) => {
@@ -795,7 +781,6 @@ export const resolveUpsellsToDisplay = ({
             app,
             plansMap,
             freePlan,
-            telemetryFlow,
             ...rest,
         };
 

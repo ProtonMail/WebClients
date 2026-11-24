@@ -10,7 +10,6 @@ import {
 import { Loader } from '@proton/atoms/Loader/Loader';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -19,7 +18,7 @@ import { getDownloadAppText } from '../../shared/DashboardMoreInfoSection/helper
 import DriveDownloadSection from './DriveDownloadSection/DriveDownloadSection';
 import DriveGetMoreSection from './DriveGetMoreSection/DriveGetMoreSection';
 
-const DriveDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
+const DriveDownloadAndInfoSection = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
@@ -30,7 +29,7 @@ const DriveDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
         return <Loader />;
     }
 
-    const upgradeButton = <DashboardUpgradePlanButton app={app} plan={plan} key="upgrade-button" />;
+    const upgradeButton = <DashboardUpgradePlanButton plan={plan} key="upgrade-button" />;
 
     const planName = PLAN_NAMES[plan];
     const planMaxSpace = humanSize({ bytes: plansMap[plan]?.MaxSpace ?? 536870912000, unit: 'GB', fraction: 0 });

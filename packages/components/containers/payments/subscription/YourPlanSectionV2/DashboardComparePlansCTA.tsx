@@ -5,24 +5,17 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { getAudienceFromSubscription } from '@proton/payments/core/subscription/helpers';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../subscriptionModalContext';
 
-interface Props {
-    app: APP_NAMES;
-}
-const DashboardComparePlansCTA = ({ app }: Props) => {
+const DashboardComparePlansCTA = () => {
     const [subscription] = useSubscription();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: getAudienceFromSubscription(subscription),
-            telemetryFlow,
         });
     };
 

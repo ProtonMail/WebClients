@@ -25,7 +25,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import Info from '../../../../../../components/link/Info';
 import { Tabs } from '../../../../../../components/tabs/Tabs';
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import CycleSelector from '../../../../CycleSelector';
 import { getShortStorageFeatureB2B } from '../../../../features/drive';
 import type { PlanCardFeatureDefinition, UpsellFeature } from '../../../../features/interface';
@@ -152,20 +151,17 @@ export const useMeetProfessionalFromFreeUpsells = ({
     loadingSubscriptionModal: boolean;
 } => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
         plansMap,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
 
@@ -207,7 +203,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
             app,
             upsellPath: DASHBOARD_UPSELL_PATHS.MEET,
             customCycle: cycle,
-            telemetryFlow,
         };
 
         return [
@@ -225,7 +220,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
                         plan: PLANS.MEET_BUSINESS,
                         step: SUBSCRIPTION_STEPS.CHECKOUT,
                         disablePlanSelection: true,
-                        telemetryFlow,
                     }),
             }),
             getUpsell({
@@ -244,7 +238,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
                         plan: PLANS.BUNDLE_PRO_2024,
                         step: SUBSCRIPTION_STEPS.CHECKOUT,
                         disablePlanSelection: true,
-                        telemetryFlow,
                     }),
             }),
             getUpsell({
@@ -261,7 +254,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
                         plan: PLANS.BUNDLE_BIZ_2025,
                         step: SUBSCRIPTION_STEPS.CHECKOUT,
                         disablePlanSelection: true,
-                        telemetryFlow,
                     }),
             }),
         ].filter(isTruthy);
@@ -276,7 +268,6 @@ export const useMeetProfessionalFromFreeUpsells = ({
         b2bYearlyUpsells,
         loadingSubscriptionModal,
         handleExplorePlans,
-        telemetryFlow,
         plansMap,
         freePlan,
         user,

@@ -139,7 +139,6 @@ describe('YourPlanSection', () => {
                 plan: PLANS.FAMILY,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: 'mail-dashboard-variant-B',
             });
         });
     });

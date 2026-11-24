@@ -1,4 +1,3 @@
-import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import type { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import type { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -24,7 +23,6 @@ export interface OpenCallbackProps {
     defaultAudience?: Audience;
     disableCycleSelector?: boolean;
     defaultSelectedProductPlans?: SelectedProductPlans;
-    telemetryFlow?: TelemetryPaymentFlow;
     upsellRef?: string;
     maximumCycle?: Cycle;
     minimumCycle?: Cycle;

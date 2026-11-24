@@ -8,7 +8,6 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
@@ -22,7 +21,6 @@ interface Props extends UpsellSectionBaseProps {
 
 const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.BUNDLE;
     const { priceDifference, priceFallbackPerMonth, showPriceDifference } = useSubscriptionPriceComparison(
@@ -35,7 +33,6 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
-            telemetryFlow,
         });
     };
 

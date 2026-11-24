@@ -16,14 +16,12 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
-import { usePaymentsTelemetry } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { VatReverseChargeErrorModal } from '@proton/payments-ui/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { DEFAULT_CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { getPreferredCurrency } from '@proton/payments/core/currencies';
-import type { Currency, PaymentMethodFlow } from '@proton/payments/core/interface';
-import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
+import type { Currency } from '@proton/payments/core/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getHas2025OfferCoupon, getPlanIDs } from '@proton/payments/core/subscription/helpers';
@@ -56,7 +54,7 @@ import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/h
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
-import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
@@ -246,9 +244,6 @@ const SingleSignupContainerV2 = ({
     const { getPaymentsApi } = usePaymentsApi();
     const getPlans = useGetPlans();
     const getPaymentStatus = useGetPaymentStatus();
-    const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
-        flow: 'signup-pass',
-    });
     const [error, setError] = useState<any>();
     const [setupError, setSetupError] = useState<string>();
     const handleError = useErrorHandler();
@@ -1254,42 +1249,6 @@ const SingleSignupContainerV2 = ({
             ? getSimplePriceString(model.optimistic.currency || model.subscriptionData.currency, relativePricePerMonth)
             : undefined;
 
-    const getTelemetryParams = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
-        const method: PaymentProcessorType | 'n/a' = subscriptionData.payment?.paymentProcessorType ?? 'n/a';
-        const plan = getPlanNameFromIDs(subscriptionData.planIDs);
-
-        const flow: PaymentMethodFlow = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
-
-        return {
-            method,
-            overrides: {
-                plan,
-                flow,
-                cycle: subscriptionData.cycle,
-                amount: subscriptionData.checkResult.AmountDue,
-            },
-        };
-    };
-
-    const getReportPaymentSuccess = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
-        return () => {
-            const { method, overrides } = getTelemetryParams(subscriptionData, isAuthenticated);
-            reportPaymentSuccess(method, overrides);
-        };
-    };
-
-    const getReportPaymentFailure = (subscriptionData: SubscriptionData, isAuthenticated: boolean) => {
-        return async () => {
-            // in case if fails, for example, on the subscription stage, then this page will abort all
-            // API calls by triggering startUnAuthFlow which in turn calls the abort controller.
-            // This delay is to ensure that the reportPaymentFailure is called after the abort controller
-            // is called
-            await wait(0);
-            const { method, overrides } = getTelemetryParams(subscriptionData, isAuthenticated);
-            reportPaymentFailure(method, overrides);
-        };
-    };
-
     const handleSetupExistingUser = async (cache: UserCacheResult) => {
         const getMnemonicData = async () => {
             if (!canGenerateMnemonic) {
@@ -1315,14 +1274,10 @@ const SingleSignupContainerV2 = ({
         };
 
         const run = async () => {
-            const isAuthenticated = !!cache.session?.resumedSessionResult.UID;
-
             await handleSubscribeUser({
                 api: silentApi,
                 subscriptionData: cache.subscriptionData,
                 productParam,
-                reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
-                reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
                 telemetryContext: getTelemetryContext(cache.session),
                 provisioningToken: cache.provisioningToken,
             });
@@ -1347,16 +1302,12 @@ const SingleSignupContainerV2 = ({
     };
 
     const handleSetupNewUser = async (cache: SignupCacheResult, isRetry = false): Promise<SignupCacheResult> => {
-        const isAuthenticated = !!model.session?.resumedSessionResult.UID;
-
         const [result] = await Promise.all([
             handleSetupUser({
                 cache,
                 api: silentApi,
                 canGenerateMnemonic,
                 telemetryContext: getTelemetryContext(model.session),
-                reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
-                reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
                 isRetry,
             }),
             wait(3500),

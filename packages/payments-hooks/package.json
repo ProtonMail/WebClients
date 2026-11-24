@@ -10,7 +10,6 @@
         "./client-extensions/helpers": "./client-extensions/helpers.ts",
         "./client-extensions/useAutomaticCurrency": "./client-extensions/useAutomaticCurrency.ts",
         "./client-extensions/useHasRedeemedCoupons": "./client-extensions/useHasRedeemedCoupons.ts",
-        "./client-extensions/usePaymentsTelemetry": "./client-extensions/usePaymentsTelemetry.ts",
         "./client-extensions/validators/AbortSignalAny": "./client-extensions/validators/AbortSignalAny.ts",
         "./payment-methods/bitcoin/BitcoinInfoMessage": "./payment-methods/bitcoin/BitcoinInfoMessage.tsx",
         "./payment-methods/paypal/PayPalInfoMessage": "./payment-methods/paypal/PayPalInfoMessage.tsx",

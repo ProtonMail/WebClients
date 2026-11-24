@@ -18,8 +18,6 @@ vi.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [vi.fn(), false],
 }));
 
-vi.mock('../../../hooks/useDashboardPaymentFlow', () => ({ __esModule: true, default: () => 'subscription' }));
-
 const freeUser: Partial<UserModel> = { isFree: true, isPaid: false, Subscribed: 0 };
 const passLifetimeUser: Partial<UserModel> = { ...freeUser, hasPassLifetime: true };
 const freeSubscription = FREE_SUBSCRIPTION as unknown as Subscription;

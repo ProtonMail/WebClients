@@ -18,12 +18,11 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import Info from '../../../../../components/link/Info';
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
-import { useSubscriptionModal } from '../../subscriptionModalContext';
+import { useSubscriptionModalRaw } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionProps, UpsellsHook } from '../YourPlanUpsellsSectionV2';
@@ -113,7 +112,6 @@ const getVPNUpsell = ({
                 plan,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
-                telemetryFlow: rest.telemetryFlow,
                 onMount: () => {
                     void sendTelemetryReport({
                         api,
@@ -140,8 +138,7 @@ export const useVpnPlusFromFreeUpsells = ({
     freePlan,
     user,
 }: UpsellSectionProps): UpsellsHook => {
-    const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const api = useApi();
 
     const upsellsPayload: GetPlanUpsellArgs & { api: Api; user: User } = {
@@ -149,7 +146,6 @@ export const useVpnPlusFromFreeUpsells = ({
         plansMap,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
         api,
         user,
     };
@@ -157,7 +153,6 @@ export const useVpnPlusFromFreeUpsells = ({
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
             onMount: () => {
                 void sendTelemetryReport({
                     api,
@@ -204,7 +199,7 @@ export const useVpnPlusFromFreeUpsells = ({
             }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

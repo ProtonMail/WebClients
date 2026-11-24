@@ -373,7 +373,7 @@ const MainContainerContent: FunctionComponent = () => {
                                             <YourPlanSectionV2
                                                 app={app}
                                                 editBillingCycle={true}
-                                                cta={<DashboardComparePlansCTA app={app} />}
+                                                cta={<DashboardComparePlansCTA />}
                                             />
                                             <SubscriptionsSection />
                                             <PaymentMethodsSection app={app} />

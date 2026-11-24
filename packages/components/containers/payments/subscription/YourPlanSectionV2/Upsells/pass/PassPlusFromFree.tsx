@@ -16,12 +16,11 @@ import { DARK_WEB_MONITORING_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared
 import isTruthy from '@proton/utils/isTruthy';
 
 import Info from '../../../../../../components/link/Info';
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import type { PlanCardFeatureDefinition } from '../../../../features/interface';
 import { get2FAAuthenticatorText, getNVaultsText, getUnlimitedHideMyEmailAliasesText } from '../../../../features/pass';
 import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
-import { useSubscriptionModal } from '../../../subscriptionModalContext';
+import { useSubscriptionModalRaw } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';
 import type { UpsellSectionProps, UpsellsHook } from '../../YourPlanUpsellsSectionV2';
@@ -71,21 +70,18 @@ const getPassFeatures = (): PlanCardFeatureDefinition[] => {
 };
 
 export const usePassPlusFromFreeUpsells = ({ app, plansMap, freePlan, user }: UpsellSectionProps): UpsellsHook => {
-    const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
+    const openSubscriptionModal = useSubscriptionModalRaw();
 
     const upsellsPayload: GetPlanUpsellArgs = {
         app,
         plansMap,
         freePlan,
         openSubscriptionModal,
-        telemetryFlow,
     };
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
 
@@ -109,7 +105,7 @@ export const usePassPlusFromFreeUpsells = ({ app, plansMap, freePlan, user }: Up
         }),
     ].filter(isTruthy);
 
-    return { upsells, handleExplorePlans, telemetryFlow, plansMap, freePlan, user };
+    return { upsells, handleExplorePlans, plansMap, freePlan, user };
 };
 
 interface Props extends UpsellsHook {

@@ -12,7 +12,6 @@ import {
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
-import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAnyPlusWithoutVPN } from '@proton/payments/core/subscription/helpers';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -30,13 +29,11 @@ export const GetMoreSection = () => {
     const api = useApi();
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const telemetryFlow = useDashboardPaymentFlow(APPS.PROTONVPN_SETTINGS);
     const openSubscriptionModal = useSubscriptionModalRaw();
     const handleUnlimitedUpsell = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: PLANS.BUNDLE,
-            telemetryFlow,
             onMount: () => {
                 void sendTelemetryReport({
                     api,

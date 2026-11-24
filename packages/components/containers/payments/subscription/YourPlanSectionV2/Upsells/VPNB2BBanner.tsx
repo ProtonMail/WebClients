@@ -11,7 +11,6 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
@@ -23,13 +22,11 @@ const VPNB2BBanner = ({ app }: UpsellSectionBaseProps) => {
     const [user] = useUser();
     const api = useApi();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.B2B,
-            telemetryFlow,
             onMount: () => {
                 void sendTelemetryReport({
                     api,

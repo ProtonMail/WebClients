@@ -9,14 +9,13 @@ import {
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Loader } from '@proton/atoms/Loader/Loader';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import DashboardUpgradePlanButton from '../../shared/DashboardDownloadSection/DashboardUpgradePlanButton';
 import { getDownloadAppText } from '../../shared/DashboardMoreInfoSection/helpers';
 import MeetDownloadSection from './MeetDownloadSection/MeetDownloadSection';
 
-const MeetDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
+const MeetDownloadAndInfoSection = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
 
@@ -26,7 +25,7 @@ const MeetDownloadAndInfoSection = ({ app }: { app: APP_NAMES }) => {
         return <Loader />;
     }
 
-    const upgradeButton = <DashboardUpgradePlanButton app={app} plan={plan} key="upgrade-button" />;
+    const upgradeButton = <DashboardUpgradePlanButton plan={plan} key="upgrade-button" />;
 
     const planName = PLAN_NAMES[plan];
     const downloadsSubtitle = !subscription?.Plans

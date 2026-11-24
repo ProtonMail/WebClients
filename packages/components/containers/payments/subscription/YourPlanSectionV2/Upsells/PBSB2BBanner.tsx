@@ -5,23 +5,19 @@ import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../subscriptionModalContext';
+import { useSubscriptionModalRaw } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
-import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';
 import UpsellMultiBox from './UpsellMultiBox';
 
-const PBSB2BBanner = ({ app }: UpsellSectionBaseProps) => {
+const PBSB2BBanner = () => {
     const plan = PLANS.BUNDLE_PRO_2024;
-    const [openSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
+    const openSubscriptionModal = useSubscriptionModalRaw();
 
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.B2B,
-            telemetryFlow,
         });
     };
 

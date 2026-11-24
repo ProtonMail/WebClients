@@ -11,7 +11,6 @@ import { hasFreeOrPlus, isManagedExternally } from '@proton/payments/core/subscr
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import {
-    type APP_NAMES,
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     DOCS_SHORT_APP_NAME,
@@ -24,17 +23,15 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 
-import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import useLoad from '../../../../../../hooks/useLoad';
 import { PromotionBanner } from '../../../../../banner/PromotionBanner';
 import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';
 
-const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {
+const BundleUpsellBanner = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.BUNDLE_PRO_2024;
     const planIsManagedExternally = isManagedExternally(subscription);
 
@@ -59,7 +56,6 @@ const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
-            telemetryFlow,
         });
     };
 

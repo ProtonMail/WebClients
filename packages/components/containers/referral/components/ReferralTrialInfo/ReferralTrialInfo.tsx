@@ -2,7 +2,6 @@ import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
@@ -25,7 +24,6 @@ import ModalTwoFooter from '../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../../components/modalTwo/useModalState';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
-import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
 import { REACTIVATE_SOURCE } from '../../../payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '../../../payments/subscription/helpers/subscriptionExpires';
 import { useSubscriptionModal } from '../../../payments/subscription/subscriptionModalContext';
@@ -164,9 +162,7 @@ interface ReferralTrialInfoFooterProps {
 
 const ReferralTrialInfoFooter = ({ modalProps }: ReferralTrialInfoFooterProps) => {
     const [subscription, loadingSubscription] = useReferralTrialSubscription();
-    const { APP_NAME } = useConfig();
     const { onClose } = modalProps || {};
-    const telemetryFlow = useDashboardPaymentFlow(APP_NAME);
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const goToSettings = useSettingsLink();
 
@@ -176,7 +172,6 @@ const ReferralTrialInfoFooter = ({ modalProps }: ReferralTrialInfoFooterProps) =
         }
         void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            telemetryFlow,
         });
     };
 

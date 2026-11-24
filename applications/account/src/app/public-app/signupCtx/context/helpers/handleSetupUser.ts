@@ -45,11 +45,6 @@ export interface SignupContextSubscriptionData {
     trial?: boolean;
 }
 
-export type OnSubscriptionPayment = (
-    status: 'success' | 'failure',
-    subscriptionData: SignupContextSubscriptionData
-) => void;
-
 export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SignupContextSubscriptionData,
@@ -57,55 +52,46 @@ export const handleSubscribeUser = async (
         productParam,
         build,
         telemetryContext,
-        onPayment,
     }: {
         productParam: ProductParam;
         build: APP_NAMES;
         telemetryContext: PaymentTelemetryContext;
-        onPayment?: OnSubscriptionPayment;
     }
 ) => {
     if (hasFreePlanIDs(subscriptionData.planIDs)) {
         return;
     }
 
-    try {
-        const Codes = getCodes({ coupon: subscriptionData.checkResult.Coupon?.Code });
+    const Codes = getCodes({ coupon: subscriptionData.checkResult.Coupon?.Code });
 
-        const { Subscription } = await createPaymentSubscription(
-            api,
-            {
-                Plans: subscriptionData.planIDs,
-                Currency: subscriptionData.currency,
-                Cycle: subscriptionData.cycle,
-                BillingAddress: subscriptionData.billingAddress,
-                VatId: subscriptionData.vatNumber,
-                ...(subscriptionData.trial ? { StartTrial: true } : {}),
-                ...{
-                    Payment: subscriptionData.paymentToken,
-                    Amount: subscriptionData.checkResult.AmountDue,
-                    ...(Codes.length ? { Codes } : undefined),
-                },
+    const { Subscription } = await createPaymentSubscription(
+        api,
+        {
+            Plans: subscriptionData.planIDs,
+            Currency: subscriptionData.currency,
+            Cycle: subscriptionData.cycle,
+            BillingAddress: subscriptionData.billingAddress,
+            VatId: subscriptionData.vatNumber,
+            ...(subscriptionData.trial ? { StartTrial: true } : {}),
+            ...{
+                Payment: subscriptionData.paymentToken,
+                Amount: subscriptionData.checkResult.AmountDue,
+                ...(Codes.length ? { Codes } : undefined),
             },
-            {
-                product: productParam,
-                build,
-                telemetryContext,
-                // A new user has neither
-                userCurrency: undefined,
-                subscription: undefined,
-                paymentMethodType: subscriptionData.paymentToken?.paymentMethodType,
-                paymentMethodValue: subscriptionData.paymentToken?.paymentMethodValue,
-            }
-        );
+        },
+        {
+            product: productParam,
+            build,
+            telemetryContext,
+            // A new user has neither
+            userCurrency: undefined,
+            subscription: undefined,
+            paymentMethodType: subscriptionData.paymentToken?.paymentMethodType,
+            paymentMethodValue: subscriptionData.paymentToken?.paymentMethodValue,
+        }
+    );
 
-        onPayment?.('success', subscriptionData);
-
-        return Subscription;
-    } catch (error) {
-        onPayment?.('failure', subscriptionData);
-        throw error;
-    }
+    return Subscription;
 };
 
 const setupKeys = async ({
@@ -210,11 +196,9 @@ export const handleSetupUser = async ({
     build,
     telemetryContext,
     deferKeySetup,
-    onPayment,
     isRetry = false,
 }: {
     deferKeySetup?: boolean;
-    onPayment?: OnSubscriptionPayment;
     /** A previous attempt may have subscribed before failing, so the subscription is skipped if the user is paid. */
     isRetry?: boolean;
     accountData: AccountData;
@@ -266,7 +250,6 @@ export const handleSetupUser = async ({
             productParam,
             build,
             telemetryContext,
-            onPayment,
         });
     }
 
