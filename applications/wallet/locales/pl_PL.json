@@ -352,6 +352,9 @@
       "Sign out of all accounts": [
         "Wyloguj się ze wszystkich kont"
       ],
+      "Skip to main content": [
+        "Przejdź do głównej treści"
+      ],
       "Submit": [
         "Wyślij"
       ],
@@ -613,9 +616,19 @@
         "Ładowanie salda"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Zamknij"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta jest niedostępna"
       ]
     },
     "BF2024: Deal details": {
@@ -2384,12 +2397,6 @@
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
       ],
-      "Organization key must be activated to create invited users": [
-        "Musisz aktywować klucz organizacji, aby utworzyć zaproszonych użytkowników"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
-      ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
@@ -2461,9 +2468,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimalna kwota darowizny wynosi ${ price }"
       ],
       "The passphrases do not match": [
         "Frazy zabezpieczające nie pasują do siebie"
@@ -2771,6 +2775,9 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } / miesiąc)"
+      ],
+      "1 vault per user": [
+        "1 sejf na użytkownika"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
@@ -3403,9 +3410,6 @@
       ],
       "Optional": [
         "Opcjonalnie"
-      ],
-      "Password": [
-        "Hasło"
       ],
       "Payer": [
         "Płatnik"
@@ -4570,6 +4574,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Możesz anulować w dowolnym momencie przed ${ cancelDate }."
       ],
@@ -5495,6 +5502,9 @@
       "Payment method updated": [
         "Metoda płatności została zaktualizowana"
       ],
+      "Preference saved": [
+        "Ustawienia zostały zapisane"
+      ],
       "Problem reported": [
         "Problem został zgłoszony"
       ],
@@ -5661,9 +5671,6 @@
       "Enhance security with 2FA": [
         "Zwiększ bezpieczeństwo za pomocą uwierzytelniania dwustopniowego"
       ],
-      "Enter your password": [
-        "Wpisz hasło"
-      ],
       "Error": [
         "Błąd"
       ],
@@ -5765,6 +5772,9 @@
       ],
       "Verification failed": [
         "Weryfikacja nie powiodła się"
+      ],
+      "Verify it’s you": [
+        "Potwierdź swoją tożsamość"
       ],
       "Verifying your card...": [
         "Weryfikowanie karty..."

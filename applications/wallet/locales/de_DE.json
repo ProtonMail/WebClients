@@ -361,6 +361,9 @@
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
       ],
+      "Skip to main content": [
+        "Zum Hauptinhalt springen"
+      ],
       "Submit": [
         "Senden"
       ],
@@ -466,6 +469,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
         "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Plätze für den ${ LUMO_SHORT_APP_NAME }-Schreibassistenten"
       ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
@@ -621,9 +627,19 @@
         "Lade Kontostand"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Schließen"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium-Passwortmanager"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Angebot nicht verfügbar"
       ]
     },
     "BF2024: Deal details": {
@@ -2406,12 +2422,6 @@
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisationsschlüssel muss aktiviert sein, um eingeladene Benutzer anzulegen"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
-      ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
       ],
@@ -2483,9 +2493,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Der Mindestspendenbetrag ist ${ price }"
       ],
       "The passphrases do not match": [
         "Die Passphrasen stimmen nicht überein."
@@ -2595,8 +2602,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Die Anforderung des Sicherheitsschlüssels wurde abgebrochen oder ist abgelaufen. Bitte versuche es erneut."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Ihr Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder verwende eine andere Anmeldemethode."
       ]
     },
     "fido2: Info": {
@@ -3451,9 +3464,6 @@
       ],
       "Optional": [
         "Optional"
-      ],
-      "Password": [
-        "Passwort"
       ],
       "Payer": [
         "Zahlungsleistender"
@@ -5522,6 +5532,9 @@
       "Payment method updated": [
         "Zahlungsmethode aktualisiert"
       ],
+      "Preference saved": [
+        "Einstellung gespeichert"
+      ],
       "Problem reported": [
         "Problem gemeldet"
       ],
@@ -5688,9 +5701,6 @@
       "Enhance security with 2FA": [
         "Verbessere die Sicherheit mit 2FA"
       ],
-      "Enter your password": [
-        "Passwort eingeben"
-      ],
       "Error": [
         "Fehler"
       ],
@@ -5792,6 +5802,9 @@
       ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"
+      ],
+      "Verify it’s you": [
+        "Überprüfe, ob du es bist"
       ],
       "Verifying your card...": [
         "Deine Karte wird verifiziert..."
@@ -5916,6 +5929,71 @@
       "Try a shorter username (${ n } character max)": [
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } pro Benutzer"
+      ],
+      "${ storage } shared": [
+        "${ storage } gemeinsam genutzt"
+      ],
+      "10 years": [
+        "10 Jahre"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Eine Serverkategorie von ${ VPN_APP_NAME }-Servern mit höherer Kapazität: Jeder Server wird von weitaus weniger Nutzern gemeinsam genutzt, und sie verwenden IP-Adressen, die ${ BRAND_NAME } gehören. Quick Connect wählt diese automatisch aus, sofern sie verfügbar sind."
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "Custom email domains": [
+        "Eigene E-Mail-Domains"
+      ],
+      "Email addresses": [
+        "E-Mail-Adressen"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Benannt nach den Crowdfunding-Unterstützern, die ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } im Jahr 2014 möglich gemacht haben. Alle Premium-Dienste von ${ BRAND_NAME } in einem Paket."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Neue ${ BRAND_NAME }-Dienste ohne zusätzliche Kosten"
+      ],
+      "Password vaults": [
+        "Passwort-Tresore"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Kalender, Drive und Pass"
+      ],
+      "Previous versions": [
+        "Vorherige Versionen"
+      ],
+      "Storage": [
+        "Speicher"
+      ],
+      "Subscribers only": [
+        "Nur Abonnenten"
+      ],
+      "Ultra servers": [
+        "Ultra-Server"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-Server, die für dich reserviert sind"
+      ],
+      "Unlimited": [
+        "Unbegrenzt"
+      ],
+      "Up to ${ limit }": [
+        "Bis zu ${ limit }"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "VPN devices at once": [
+        "VPN-Geräte gleichzeitig"
       ]
     },
     "VPN B2B cancellation reason": {

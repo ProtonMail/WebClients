@@ -181,6 +181,9 @@
       "Go to settings": [
         "Перайсці ў налады"
       ],
+      "Go to today": [
+        "Перайсці да сённяшняга дня"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -360,6 +363,9 @@
       ],
       "Sign out of all accounts": [
         "Выйсці з усіх уліковых запісаў"
+      ],
+      "Skip to main content": [
+        "Перайсці да асноўнага змесціва"
       ],
       "Submit": [
         "Адправіць"
@@ -643,9 +649,19 @@
         "Загрузка балансу"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыць"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Прапанова недаступна"
       ]
     },
     "BF2024: Deal details": {
@@ -2440,12 +2456,6 @@
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
-      "Organization key must be activated to create invited users": [
-        "Ключ арганізацыі павінен быць актываваны, каб ствараць запрошаных карыстальнікаў"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
-      ],
       "Passwords do not match": [
         "Паролі не супадаюць"
       ],
@@ -2517,9 +2527,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Мінімальная сума ахвяравання складае ${ price }"
       ],
       "The passphrases do not match": [
         "Парольная фраза не супадае"
@@ -3505,9 +3512,6 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "Password": [
-        "Пароль"
-      ],
       "Payer": [
         "Плацельшчык"
       ],
@@ -3705,6 +3709,40 @@
       ],
       "Secondary amount": [
         "Другая сума"
+      ]
+    },
+    "lumo_2026: feature": {
+      "Everything in Basic, and:": [
+        "Усе функцыі тарыфнага плана Basic, а таксама:"
+      ],
+      "Everything in Free, and:": [
+        "Усе функцыі бясплатнага тарыфнага плана, а таксама:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе функцыі тарыфнага плана Plus, а таксама:"
+      ],
+      "Extended image generation": [
+        "Пашыраная колькасць генерацый"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "Limited image generation": [
+        "Абмежаваная колькасць генерацый відарысаў"
+      ],
+      "Maximum image generation": [
+        "Максімальная колькасць генерацый відарысаў"
+      ],
+      "Maximum Skills and Projects": [
+        "Максімальная колькасць навыкаў і праектаў"
+      ],
+      "More usage": [
+        "Іншыя варыянты выкарыстання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For everyday chats": [
+        "Для штодзённых чатаў"
       ]
     },
     "mail_signup_2024: Info": {
@@ -5674,6 +5712,9 @@
       "Payment method updated": [
         "Спосаб аплаты абноўлены"
       ],
+      "Preference saved": [
+        "Параметр захаваны"
+      ],
       "Problem reported": [
         "Паведамлена аб праблеме"
       ],
@@ -5840,9 +5881,6 @@
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
-      "Enter your password": [
-        "Увядзіце свой пароль"
-      ],
       "Error": [
         "Памылка"
       ],
@@ -5944,6 +5982,9 @@
       ],
       "Verification failed": [
         "Збой праверкі"
+      ],
+      "Verify it’s you": [
+        "Спраўдзіце, што гэта вы"
       ],
       "Verifying your card...": [
         "Спраўджанне вашай карткі..."
@@ -6069,6 +6110,44 @@
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } за карыстальніка"
+      ],
+      "${ storage } shared": [
+        "${ storage } абагулена"
+      ],
+      "10 years": [
+        "10 гадоў"
+      ],
+      "Calendars": [
+        "Календары"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Прэміяльныя Mail, Calendar, Drive і Pass"
+      ],
+      "Previous versions": [
+        "Папярэднія версіі"
+      ],
+      "Storage": [
+        "Сховішча"
+      ],
+      "Subscribers only": [
+        "Толькі падпісчыкі"
+      ],
+      "Unlimited": [
+        "Неабмежавана"
+      ],
+      "Up to ${ limit }": [
+        "Да ${ limit }"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "VPN devices at once": [
+        "Прылады VPN адначасова"
       ]
     },
     "VPN B2B cancellation reason": {

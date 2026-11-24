@@ -18,7 +18,7 @@
         "Format d'exportació"
       ],
       "Export your transactions for tax reporting or personal record-keeping. Choose your preferred format and download your file instantly.": [
-        "Exporteu les vostres transaccions per a informes fiscals o compte personal. Trieu el vostre format preferit i descarregueu el vostre fitxer instantàniament."
+        "Exporteu les transaccions per a informes fiscals o bé per al vostre arxiu personal. Trieu el format que preferiu i descarregueu el fitxer a l'instant."
       ]
     },
     "Action": {
@@ -89,7 +89,7 @@
         "Col·labora en documents"
       ],
       "Collapse wallets": [
-        "Redueix les carteres"
+        "Plega les carteres"
       ],
       "Confirm": [
         "Confirma"
@@ -113,7 +113,7 @@
         "Copieu el descriptor"
       ],
       "Copy public key (${ prefix })": [
-        "Copieu la clau pública (${ prefix })"
+        "Copia la clau pública (${ prefix })"
       ],
       "Copy version number to clipboard": [
         "Copia el número de versió al porta-retalls"
@@ -185,7 +185,7 @@
         "Ves a les preferències"
       ],
       "Go to today": [
-        "Vés a avui"
+        "Va a avui"
       ],
       "Got it": [
         "D'acord"
@@ -367,6 +367,9 @@
       "Sign out of all accounts": [
         "Tanca tots els comptes"
       ],
+      "Skip to main content": [
+        "Ves al contingut principal"
+      ],
       "Submit": [
         "Envia"
       ],
@@ -473,6 +476,9 @@
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuari)",
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME } (per a ${ quantity } usuaris)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
       ],
@@ -496,6 +502,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència de ${ LUMO_APP_NAME }",
         "${ seats } llicències de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } llicència d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } llicències d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } llicència de ${ MEET_APP_NAME }",
@@ -536,7 +546,7 @@
     },
     "Address list": {
       "Address copied": [
-        "S'ha copiat la direcció."
+        "S'ha copiat l'adreça."
       ],
       "Change address": [
         "Canvia l'adreça"
@@ -624,12 +634,22 @@
     },
     "Balance": {
       "Loading balance": [
-        "Carregant el saldo"
+        "S'està carregant el saldo"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Tanca"
       ]
     },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestor de contrasenyes prèmium"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "L'oferta no està disponible."
       ]
     },
     "BF2024: Deal details": {
@@ -684,7 +704,7 @@
     },
     "bitcoin buy": {
       "${ serviceFeePercentage }% Azteco service fee": [
-        "Comissió de servei Azteco de ${ serviceFeePercentage }%"
+        "Comissió de servei d'Azteco del ${ serviceFeePercentage }%"
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } s'ha associat amb ${ rampLink }, ${ banxaLink } i ${ moonpayLink }, tres serveis d'actius criptogràfics registrats, per facilitar la compra de BTC. Introduïu la vostra regió per veure els proveïdors i les formes de pagament disponibles."
@@ -699,10 +719,10 @@
         "Quantitat"
       ],
       "An error occurred while confirming this quote, please select another provider and try again.": [
-        "S'ha produït un error en confirmar aquesta quota. Seleccioneu un altre proveïdor i torneu-ho a provar."
+        "S'ha produït un error en confirmar aquesta cotització. Seleccioneu un altre proveïdor i torneu-ho a provar."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
-        "Com a usuari de pagament, esteu estalviant ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } a la tarifa de servei Azteco!"
+        "Com a usuari de pagament, esteu estalviant ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } a la tarifa de servei d'Azteco!"
       ],
       "Bank transfer": [
         "Transferència bancària"
@@ -720,13 +740,13 @@
         "Compra"
       ],
       "Buy Azteco vouchers": [
-        "Compra vals Azteco"
+        "Compra cupons d'Azteco"
       ],
       "Buying BTC through ${ WALLET_APP_NAME } is currently unavailable to UK residents due to FCA regulations.": [
         "La compra de BTC a través de ${ WALLET_APP_NAME } actualment no està disponible per als residents del Regne Unit a causa de les regulacions de la FCA."
       ],
       "Choose a country": [
-        "Trieu un país"
+        "Tria un país"
       ],
       "Coinbase": [
         "Coinbase"
@@ -783,10 +803,10 @@
         "Envia"
       ],
       "This quote is valid for the next 5 minutes": [
-        "Aquesta quota serà vàlida pels propers 5 minuts."
+        "Aquesta cotització serà vàlida per als pròxims 5 minuts."
       ],
       "Upgrade to Visionary plan to reduce Azteco service fee to 3%": [
-        "Milloreu al pla Visionary per reduir la tarifa del servei Azteco al 3%"
+        "Milloreu el pla a Visionary per a reduir la tarifa del servei d'Azteco al 3%"
       ],
       "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
         "També podeu comprar bitcoins a les plataformes d'intercanvi com ${ binanceLink }, ${ coinbaseLink } o ${ krakenLink }, i després enviar-los a la vostra adreça de recepció."
@@ -795,7 +815,7 @@
         "Heu rebut un 25% de descompte."
       ],
       "You pay": [
-        "Heu pagat"
+        "Pagueu"
       ],
       "You receive": [
         "Rebeu"
@@ -809,7 +829,7 @@
         "Pagament de ${ quote.provider }"
       ],
       "No quote available for the requested amount": [
-        "No hi ha oferta disponible per a l'import sol·licitat."
+        "No hi ha cap cotització disponible per a l'import sol·licitat"
       ],
       "The selected currency is not supported in your country or the requested amount is too low": [
         "La moneda seleccionada no s'admet al vostre país o l'import sol·licitat és massa baix."
@@ -834,7 +854,7 @@
         "Últim format amb millor privadesa però menys adoptat. L'adreça comença amb «bc1p»."
       ],
       "Lower fees and compatible with older systems. Address starts with \"3\".": [
-        "Les tarifes més baixes i compatibles amb sistemes antigues. L'adreça comença amb «3»."
+        "Tarifes més baixes i compatibilitat amb sistemes més antics. L'adreça comença amb «3»."
       ],
       "Original format. Most widely supported but higher fees. Address starts with \"1\".": [
         "Format original més compatible, però amb tarifes més altes. L'adreça comença amb «1»."
@@ -863,7 +883,7 @@
         "No s'ha trobat cap cartera"
       ],
       "Open QR code reader": [
-        "Obre el lector de codi QR"
+        "Obre el lector de codis QR"
       ],
       "Recipient email or BTC address": [
         "Correu electrònic del destinatari o adreça BTC"
@@ -875,10 +895,10 @@
         "Envia una invitació a ${ email }"
       ],
       "This email is not using a ${ WALLET_APP_NAME } yet. Invite them to create their own wallet for easier transactions.": [
-        "Aquest correu electrònic encara no utilitza ${ WALLET_APP_NAME }. Convideu-los a crear la seva pròpia cartera per a transaccions més fàcils."
+        "Aquest correu electrònic encara no utilitza ${ WALLET_APP_NAME }. Convideu-lo a crear la seva pròpia cartera per a fer transaccions més fàcilment."
       ],
       "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
-        "És possible que aquest usuari encara no tingui un ${ WALLET_APP_NAME } integrat amb el seu correu electrònic. Envieu-li un correu electrònic per dir-li que el voleu enviar en bitcoins."
+        "És possible que aquest usuari encara no tingui un ${ WALLET_APP_NAME } integrat amb el seu correu electrònic. Envieu-li un correu electrònic per a dir-li que li voleu enviar bitcoins."
       ],
       "To": [
         "Per a"
@@ -2227,13 +2247,13 @@
         "Guia de Bitcoin per a principiants"
       ],
       "Bitcoin is an innovative payment network that leverages peer-to-peer transactions to remove the need for a central bank. Bitcoin has revolutionized the core principles of value exchange by showing that a network of fully independent nodes can operate payments in a trustless and secure way.": [
-        "Bitcoin és una xarxa de pagament innovadora que aprofita les transaccions peer-to-peer per eliminar la necessitat d'un banc central. Bitcoin ha revolucionat els principis bàsics de l'intercanvi de valor mostrant que una xarxa de nodes totalment independents pot operar pagaments de manera segura i sense necessitat de confiança."
+        "Bitcoin és una xarxa de pagaments innovadora que es recolza en transaccions d'igual a igual per a eliminar la necessitat d'un banc central. Bitcoin ha revolucionat els principis fonamentals de l'intercanvi de valor en demostrar que una xarxa de nodes completament independents pot gestionar pagaments de manera segura i sense haver de confiar en tercers."
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
       ],
       "Bitcoin via Email is a unique feature in ${ WALLET_APP_NAME } that makes sending bitcoin as easy as sending an email. Any ${ WALLET_APP_NAME } user can frictionlessly receive bitcoin with their email.": [
-        "La característica Bitcoin via correu electrònic és única a ${ WALLET_APP_NAME } que fa que l'enviament de bitcoins sigui tan fàcil com enviar un correu electrònic. Qualsevol usuari de ${ WALLET_APP_NAME } pot rebre bitcoins sense problemes amb el seu correu electrònic."
+        "Bitcoin via correu electrònic és una característica única a ${ WALLET_APP_NAME } que fa que l'enviament de bitcoins sigui tan fàcil com enviar un correu electrònic. Qualsevol usuari de ${ WALLET_APP_NAME } pot rebre bitcoins fàcilment amb el seu correu electrònic."
       ],
       "Discover": [
         "Descobreix"
@@ -2242,7 +2262,7 @@
         "Com protegir el vostre ${ WALLET_APP_NAME }?"
       ],
       "We explain why ${ WALLET_APP_NAME } was created and what benefits it can bring to the ${ BRAND_NAME } community.": [
-        "Expliquem per què es va crear ${ WALLET_APP_NAME } i quins beneficis pot aportar a la comunitat ${ BRAND_NAME }."
+        "Expliquem per què es va crear ${ WALLET_APP_NAME } i quins beneficis pot aportar a la comunitat de ${ BRAND_NAME }."
       ],
       "We review how to secure your wallets and Bitcoin, including important recovery methods in case you ever forget your password.": [
         "Revisem com protegir les vostres carteres i Bitcoin, inclosos els mètodes de recuperació importants en cas que mai oblideu la vostra contrasenya."
@@ -2251,7 +2271,7 @@
         "Donem una ullada a algunes parts importants de la història i les característiques del bitcoin per als novells. També analitzem com el bitcoin permet la sobirania i la llibertat financeres. Finalment, explorem els reptes als quals s'enfronta el bitcoin i el seu potencial futur."
       ],
       "We review the key features and security architecture that make ${ WALLET_APP_NAME } a private and secure wallet that is as easy to use as email.": [
-        "Revisem les característiques clau i l'arquitectura de seguretat que fan de ${ WALLET_APP_NAME } una cartera privada i segura que és tan fàcil d'utilitzar com un correu electrònic."
+        "Revisem les característiques clau i l'arquitectura de seguretat que fan de ${ WALLET_APP_NAME } una cartera privada i segura que és tan fàcil d'utilitzar com el correu electrònic."
       ],
       "What is Bitcoin?": [
         "Què és Bitcoin?"
@@ -2341,7 +2361,7 @@
         "L'import és inferior al mínim (${ minimumAmount })."
       ],
       "Bitcoin via Email to self is not supported": [
-        "No s'admet Bitcoin per correu electrònic a un mateix."
+        "No s'admet enviar Bitcoin via correu electrònic a un mateix."
       ],
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
@@ -2411,12 +2431,6 @@
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
-      ],
-      "Organization key must be activated to create invited users": [
-        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "S'ha d'activar la clau d'organització per a crear usuaris no privats"
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
@@ -2489,9 +2503,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La quantitat mínima de crèdit que es pot afegir és ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "La donació mínima és de ${ price }"
       ],
       "The passphrases do not match": [
         "Les frases de contrasenya no coincideixen."
@@ -2575,7 +2586,7 @@
         "Prefereixo el ${ prefix }"
       ],
       "Import this descriptor into other wallet software to monitor your balance and generate receiving addresses without exposing your private keys.": [
-        "Importeu aquest descriptor en un altre programa de cartera per monitorar el vostre saldo i generar adreces de recepció sense exposar les vostres claus privades."
+        "Importeu aquest descriptor en un altre programa de cartera per a monitorar el saldo i generar adreces de recepció sense exposar les claus privades."
       ],
       "Public key (${ prefix }) copied to clipboard": [
         "S'ha copiat la clau pública (${ prefix }) al porta-retalls"
@@ -2601,8 +2612,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "S'ha cancel·lat la sol·licitud de clau de seguretat o s'ha esgotat el temps d'espera. Torneu-ho a provar."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "El vostre dispositiu no ha pogut completar la sol·licitud de clau de seguretat. Torneu-ho a provar o feu servir un altre mètode d'inici de sessió."
       ]
     },
     "fido2: Info": {
@@ -2699,7 +2716,7 @@
         "Suport per a ${ WALLET_APP_NAME }"
       ],
       "As soon as your payment is received, ${ WALLET_APP_NAME } will redeem the voucher according to the market price of BTC and network fee at that time.\nThe redeemed BTC will then be sent by ${ azteco } to your wallet.\nFor any questions related to Azteco bitcoin vouchers, please contact ${ support }.": [
-        "Tan bon punt es rebi el pagament, ${ WALLET_APP_NAME } bescanviarà el val d'acord amb el preu de mercat de BTC i la tarifa de xarxa en aquell moment.\nEl BTC bescanviat s'enviarà per ${ azteco } a la vostra cartera.\nPer a qualsevol pregunta relacionada amb els vals de bitcoins Azteco, poseu-vos en contacte amb ${ support }."
+        "Tan bon punt es rebi el pagament, ${ WALLET_APP_NAME } bescanviarà el val d'acord amb el preu de mercat de BTC i la tarifa de xarxa en aquell moment.\nEl BTC bescanviat s'enviarà per ${ azteco } a la vostra cartera.\nPer a qualsevol pregunta relacionada amb els vals de bitcoins d'Azteco, poseu-vos en contacte amb ${ support }."
       ],
       "Confirm": [
         "Confirma"
@@ -2717,7 +2734,7 @@
         "Ara no"
       ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ providerName } (${ websiteLink }).\nServices related to card payments, bank transfers, and any other fiat transactions are provided by ${ providerName },\na separate third-party platform. By proceeding and procuring services from ${ providerName },\nyou acknowledge that you have read and agreed to ${ providerName }'s Terms of Service (${ termOfUseLink })\nand Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }).\nFor any questions related to ${ providerName }'s services, please contact ${ providerName } at ${ supportEmailLink }": [
-        "Ara esteu sortint de ${ WALLET_APP_NAME } per ${ providerName } (${ websiteLink }).\nEls serveis relacionats amb els pagaments amb targeta, les transferències bancàries i qualsevol altra transacció fiduciaria els proporciona ${ providerName },\nuna plataforma independent de tercers. En procedir i adquirir serveis de ${ providerName },\nreconeixeu que heu llegit i acceptat les condicions del servei de ${ providerName } (${ termOfUseLink })\ni política de privadesa i galetes (${ privacyAndCookiesPolicyLink }).\nPer a qualsevol pregunta relacionada amb els serveis de ${ providerName }, poseu-vos en contacte amb ${ providerName } a ${ supportEmailLink }."
+        "Ara esteu sortint de ${ WALLET_APP_NAME } cap a ${ providerName } (${ websiteLink }).\nEls serveis relacionats amb els pagaments amb targeta, les transferències bancàries i qualsevol altra transacció fiduciaria els proporciona ${ providerName },\nuna plataforma independent de tercers. En procedir i adquirir serveis de ${ providerName },\nreconeixeu que heu llegit i acceptat les condicions del servei de ${ providerName } (${ termOfUseLink })\ni la política de privacitat i galetes (${ privacyAndCookiesPolicyLink }).\nPer a qualsevol pregunta relacionada amb els serveis de ${ providerName }, poseu-vos en contacte amb ${ providerName } a ${ supportEmailLink }."
       ],
       "You will now buy an Azteco bitcoin voucher with ${ WALLET_APP_NAME }. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.": [
         "Ara comprareu un val de bitcoins Azteco amb ${ WALLET_APP_NAME }. Funciona de manera semblant a una targeta de regal i és una de les maneres més fàcils i privades d'obtenir bitcoins."
@@ -3104,7 +3121,7 @@
         "El procés de verificació obrirà una pestanya nova del navegador. Desactiveu els bloquejadors de finestres emergents actius."
       ],
       "This address is for Bitcoin via Email": [
-        "Aquesta adreça és per a bitcoins via correu electrònic."
+        "Aquesta adreça és per a Bitcoin via correu electrònic."
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
@@ -3120,6 +3137,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per ajudar a mantenir el vostre compte segur, confirmeu que sou realment vós abans de continuar."
       ],
       "Total email addresses": [
         "Adreces de correu totals"
@@ -3292,6 +3312,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Contrasenya del compte de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
@@ -3460,9 +3483,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Password": [
-        "Contrasenya"
       ],
       "Payer": [
         "Pagador"
@@ -3635,7 +3655,7 @@
         "Tipus de mètodes de recuperació"
       ],
       "View on blockchain": [
-        "Visualitza a la blockchain"
+        "Mostra a la cadena de blocs"
       ],
       "What’s this?": [
         "Què és això?"
@@ -3646,7 +3666,7 @@
         "S'està carregant"
       ],
       "Loading data": [
-        "Carregant dades"
+        "S'estan carregant les dades"
       ],
       "Loading message": [
         "Carregant missatge"
@@ -4119,7 +4139,7 @@
         "Múltiples rols d'administració"
       ],
       "No streaming support": [
-        "No hi ha suport per la reproducció en continu"
+        "Sense suport d'estríming"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -5091,7 +5111,7 @@
         "Nom de l'empresa"
       ],
       "Confirm passphrase or leave empty": [
-        "Confirmeu la frase de contrasenya o deixeu el camp en blanc."
+        "Confirmeu la frase de contrasenya o deixeu-ho en blanc."
       ],
       "Cortex Inc.": [
         "Cortex Inc."
@@ -5103,7 +5123,7 @@
         "Introduïu un nom"
       ],
       "Enter a passphrase or leave empty": [
-        "Introduïu una frase de contrasenya o deixeu el camp en blanc."
+        "Introduïu una frase de contrasenya o deixeu en blanc."
       ],
       "Gift code": [
         "Codi regal"
@@ -5213,7 +5233,7 @@
     },
     "QRCode Reader": {
       "Could not find an available camera on your device": [
-        "No s'ha pogut trobar una càmera disponible al vostre dispositiu."
+        "No s'ha pogut trobar una càmera disponible al dispositiu."
       ],
       "Could not run QR code reader": [
         "No s'ha pogut executar el lector de codis QR."
@@ -5229,15 +5249,15 @@
     },
     "Receive bitcoin": {
       "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "A continuació es mostra l'última adreça de Bitcoin generada. Per a una millor privadesa, utilitzeu una adreça diferent per a cada transacció."
+        "A continuació, es mostra l'última adreça de Bitcoin generada. Per a una millor privacitat, utilitzeu una adreça diferent per a cada transacció."
       ],
       "Receive Bitcoin": [
-        "Rebre Bitcoin"
+        "Rep Bitcoin"
       ]
     },
     "Recipient details": {
       "Bitcoin address copied to clipboard": [
-        "S'ha copiat la direcció de Bitcoin copiada al porta-retalls."
+        "S'ha copiat la direcció de Bitcoin al porta-retalls."
       ],
       "BTC address": [
         "Adreça de BTC"
@@ -5598,6 +5618,9 @@
       "Payment method updated": [
         "Mètode de pagament actualitzat"
       ],
+      "Preference saved": [
+        "S'ha desat la preferència."
+      ],
       "Problem reported": [
         "S'ha notificat el problema."
       ],
@@ -5764,9 +5787,6 @@
       "Enhance security with 2FA": [
         "Milloreu la seguretat amb 2FA"
       ],
-      "Enter your password": [
-        "Introduïu la vostra contrasenya"
-      ],
       "Error": [
         "Error"
       ],
@@ -5777,7 +5797,7 @@
         "Regal"
       ],
       "Go to settings and recovery keys": [
-        "Aneu a les preferències i a les claus de recuperació"
+        "Ves a preferències i claus de recuperació"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -5869,6 +5889,9 @@
       "Verification failed": [
         "No s'ha pogut completar la verificació."
       ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
+      ],
       "Verifying your card...": [
         "S'està verificant la targeta…"
       ],
@@ -5917,13 +5940,13 @@
     },
     "Unknown sender": {
       "Add a name so you can remember who it was from.": [
-        "Afegiu un nom per al record de la seva procedència."
+        "Afegiu un nom perquè pugueu recordar de qui era."
       ],
       "Add their email address or leave empty": [
-        "Afegiu la seva adreça de correu electrònic o deixeu el camp en blanc."
+        "Afegiu la seva adreça de correu electrònic o deixeu-ho en blanc."
       ],
       "Add their email address to save as contact": [
-        "Afegiu la seva direcció de correu per guardar-lo com a contacte."
+        "Afegiu la seva adreça de correu electrònic per a desar-lo com a contacte."
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -5932,7 +5955,7 @@
         "L'adreça de correu electrònic no és vàlida."
       ],
       "Give a name to this sender": [
-        "Poseu-li un nom al remitent"
+        "Poseu-li un nom a aquest remitent"
       ],
       "Name": [
         "Nom"
@@ -5947,7 +5970,7 @@
         "Desa el remitent"
       ],
       "Transaction sender could not be updated": [
-        "No s'ha pogut actualitzar el remitent d'aquesta transacció."
+        "No s'ha pogut actualitzar el remitent de la transacció."
       ],
       "Transaction sender has been updated successfully": [
         "El remitent de la transacció s'ha actualitzat."
@@ -5992,6 +6015,71 @@
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per usuari"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartit"
+      ],
+      "10 years": [
+        "10 anys"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una categoria de servidors de ${ VPN_APP_NAME } de més capacitat: molts menys usuaris en comparteixen cadascun i utilitzen adreces IP pròpies de ${ BRAND_NAME }. Quick Connect els selecciona automàticament quan estan disponibles."
+      ],
+      "Calendars": [
+        "Calendaris"
+      ],
+      "Custom email domains": [
+        "Dominis de correu electrònic personalitzats"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Hide-my-email aliases": [
+        "Àlies de hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Anomenat així en honor als mecenes de micromecenatge que van fer possible ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME } el 2014. Tots els serveis prèmium de ${ BRAND_NAME }, en un sol pla."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nous serveis de ${ BRAND_NAME } sense cost addicional"
+      ],
+      "Password vaults": [
+        "Caixes fortes de contrasenyes"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive i Pass prèmium"
+      ],
+      "Previous versions": [
+        "Versions anteriors"
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
+      "Subscribers only": [
+        "Només per a subscriptors"
+      ],
+      "Ultra servers": [
+        "Servidors Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidors Ultra, reservats per a vós"
+      ],
+      "Unlimited": [
+        "Sense límit"
+      ],
+      "Up to ${ limit }": [
+        "Fins a ${ limit }"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "VPN devices at once": [
+        "Dispositius VPN alhora"
       ]
     },
     "VPN B2B cancellation reason": {
@@ -6069,7 +6157,7 @@
         "No s'han pogut obtenir les dades de les carteres."
       ],
       "Syncing new data": [
-        "Sincronitzant dades noves"
+        "S'estan sincronitzant les dades noves"
       ],
       "Your browser or device software does not support ${ WALLET_APP_NAME }. Please update your browser or device. Alternatively, you can use one of our mobile apps.": [
         "El programari del vostre navegador o dispositiu no admet ${ WALLET_APP_NAME }. Actualitzeu el vostre navegador o dispositiu. Alternativament, podeu utilitzar una de les nostres aplicacions mòbils."
@@ -6089,7 +6177,7 @@
         "Cancel·la"
       ],
       "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
-        "Creeu diversos comptes de cartera per separar les vostres activitats financeres per a una millor privadesa i organització."
+        "Creeu diversos comptes de cartera per a separar les vostres activitats financeres per a una millor privacitat i organització."
       ],
       "Create wallet account": [
         "Crea un compte de cartera"
@@ -6098,7 +6186,7 @@
         "Índex de compte personalitzat"
       ],
       "Custom index": [
-        "Index personalitzat"
+        "Índex personalitzat"
       ],
       "Error adding account to wallet. Please try again.": [
         "S'ha produït un error en afegir el compte a la cartera. Torneu-ho a provar."
@@ -6113,7 +6201,7 @@
         "Estalvi per vacances"
       ],
       "Your account was successfully created": [
-        "S'ha completat la creació del compte."
+        "S'ha creat el vostre compte."
       ]
     },
     "Wallet account": {
@@ -6133,7 +6221,7 @@
         "Aquest compte ja està creat."
       ],
       "We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.": [
-        "Per defecte, utilitzem Native Segwit, que ofereix les tarifes de xarxa més baixes. Podeu modificar-ho per rebre bitcoins d'altres serveis que només admeten altres tipus de transaccions."
+        "Per defecte, utilitzem Native Segwit, que ofereix les tarifes de xarxa més baixes. Podeu modificar-ho per a rebre bitcoins d'altres serveis que només admeten altres tipus de transaccions."
       ],
       "We default to the next unused index. You can change this to recover or to skip a previous account.": [
         "De manera predeterminada, utilitzem el següent índex no utilitzat. Podeu canviar-ho per recuperar o ignorar un compte anterior."
@@ -6147,12 +6235,12 @@
         "Falta el país. Actualitzeu la pàgina i torneu-ho a provar o poseu-vos en contacte amb el servei de suport."
       ],
       "Missing quote. Please refresh and try again or contact support": [
-        "Falta la quota. Actualitzeu la pàgina i torneu-ho a provar o poseu-vos en contacte amb el servei de suport."
+        "Manca la cotització. Actualitzeu la pàgina i torneu-ho a provar, o poseu-vos en contacte amb el servei d'assistència."
       ]
     },
     "wallet dashboard": {
       "You need to have a positive bitcoin balance with sufficient funds to transact": [
-        "El saldo del vostre compte de bitcoin ha de ser positiu i heu de tenir prou fons per completar la transacció."
+        "Heu de tenir un saldo de bitcoins positiu amb fons suficients per a fer transaccions"
       ]
     },
     "Wallet dashboard": {
@@ -6208,7 +6296,7 @@
         "La frase de contrasenya no és correcta. Torneu-ho a provar."
       ],
       "This wallet needs a passphrase to be used.": [
-        "Aquesta carta necessita una frase de contrasenya per al seu ús."
+        "Aquesta cartera necessita una frase de contrasenya per a poder-se utilitzar."
       ],
       "Upgrade": [
         "Millora"
@@ -6220,7 +6308,7 @@
         "Mostra les adreces de recepció"
       ],
       "We are having trouble opening your wallet. Please refresh the page or try again later.": [
-        "Tenim problemes per obrir la cartera. Actualitzeu la pàgina o torneu-ho a provar més tard."
+        "Tenim problemes per a obrir la cartera. Actualitzeu la pàgina o torneu-ho a provar més tard."
       ]
     },
     "Wallet import": {
@@ -6235,10 +6323,10 @@
     },
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
-        "Una frase de contrasenya de cartera és una contrasenya addicional que creeu per afegir seguretat a la vostra cartera de criptomoneda. Funciona al costat de la vostra frase de recuperació. Emmagatzemeu-la de manera segura, ja que perdre-lo us pot impedir l'accés a la cartera."
+        "Una frase de contrasenya de cartera és una contrasenya addicional que creeu per a afegir seguretat a la vostra cartera de criptomonedes. Funciona juntament amb la frase de recuperació. Emmagatzemeu-la de manera segura, ja que perdre-la us pot impedir l'accés a la cartera."
       ],
       "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Una frase de recuperació de cartera és una seqüència de 12 a 24 paraules generades per la vostra cartera. Actua com a clau mestra, que us permet recuperar els vostres fons. Mantingueu-la segura i no la compartiu mai, atès que permet accedir als vostres fons."
+        "Una frase de recuperació de cartera és una seqüència de 12 a 24 paraules generades per la cartera. Actua com a clau mestra, que us permet recuperar els fons. Mantingueu-la segura i no la compartiu mai, atès que permet accedir als vostres fons."
       ],
       "What’s a wallet passphrase?": [
         "Què és una frase de contrasenya de la cartera?"
@@ -6264,7 +6352,7 @@
         "S'ha enviat la invitació a ${ email }."
       ],
       "Invite your friends and family to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
-        "Convideu a les vostres amistats i familiars a ${ WALLET_APP_NAME } perquè podeu enviar Bitcoin via correu-e."
+        "Convideu les vostres amistats i familiars a ${ WALLET_APP_NAME } perquè tothom pugueu enviar Bitcoin via correu electrònic."
       ],
       "Invites": [
         "Invitacions"
@@ -6273,7 +6361,7 @@
         "Ara no"
       ],
       "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
-        "Feu-los saber que comproveu el seu correu electrònic i seguiu les instruccions per configurar el seu ${ WALLET_APP_NAME } amb Bitcoin per correu electrònic."
+        "Aviseu-los que comproven el correu electrònic i segueixin les instruccions per a configurar el seu ${ WALLET_APP_NAME } amb Bitcoin per correu electrònic."
       ],
       "Send invite email now": [
         "Envia ara el correu electrònic d'invitació"
@@ -6307,7 +6395,7 @@
         "L'empremta digital no coincideix amb l'emmagatzemada."
       ],
       "My wallet passphrase": [
-        "Fase de contrasenya de la cartera"
+        "Frase de contrasenya de la cartera"
       ],
       "To use this wallet, you need to input the passphrase": [
         "Per utilitzar aquesta cartera, heu d'introduir la contrasenya."
@@ -6363,7 +6451,7 @@
         "L'adreça de correu electrònic no és vàlida."
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
-        "Per a la majoria de la gent, això no importa perquè reben BTC de persones en qui confien. Tanmateix, si us preocupa això, us recomanem que utilitzeu aquest compte BTC principal sense activar Rebre Bitcoin via correu electrònic i fer transaccions amb els vostres altres comptes BTC amb Rebre Bitcoin via correu electrònic activat. Això millorarà la vostra privadesa de blockchain mantenint BTC en aquest compte separat de qualsevol BTC que rebeu automàticament."
+        "Per a la majoria de la gent, això no importa perquè reben BTC de persones en qui confien. Tanmateix, si us preocupa, recomanem que utilitzeu aquest compte BTC principal sense activar Rep Bitcoin via correu electrònic i fer transaccions amb els vostres altres comptes BTC amb Rep Bitcoin via correu electrònic activat. Això millorarà la privacitat de la cadena de blocs mantenint els BTC d'aquest compte separats de qualsevol BTC que rebeu automàticament."
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
         "Per a la majoria de la gent, això no importa perquè reben BTC de persones en qui confien. Tanmateix, si us preocupa això, podeu crear un nou compte de BTC perquè el nou BTC que rebeu se separi del vostre BTC existent."
@@ -6407,7 +6495,7 @@
         "Moneda per defecte"
       ],
       "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
-        "Per obtenir una millor privadesa, recomanem ${ walletAccountCreation } per rebre Bitcoin per correu electrònic. ${ learnMore }."
+        "Per a obtenir una millor privacitat, recomanem ${ walletAccountCreation } per a rebre Bitcoin via correu electrònic. ${ learnMore }."
       ],
       "Learn more": [
         "Més informació"
@@ -6439,18 +6527,18 @@
         "Més opcions"
       ],
       "Receive to": [
-        "Rebre a"
+        "Rep a"
       ],
       "To prevent a large gap, generating new addresses has been disabled. You can either use this address or a previously generated one": [
-        "Per evitar una gran diferència, s'ha desactivat la generació de noves adreces. Podeu utilitzar aquesta adreça o una prèviament generada."
+        "Per a evitar una gran diferència, s'ha desactivat la generació d'adreces noves. Podeu utilitzar aquesta adreça o una generada prèviament."
       ],
       "To prevent a large gap, you should either use this address or a previously generated one": [
-        "Per evitar una gran diferència, hauríeu d’utilitzar aquesta adreça o una prèviament generada."
+        "Per a evitar una gran diferència, hauríeu d’utilitzar aquesta adreça o una generada prèviament."
       ]
     },
     "Wallet receive": {
       "Address generation in progress": [
-        "Generació d'adreces en curs"
+        "La generació de l'adreça està en curs"
       ],
       "Copy Bitcoin address": [
         "Copia l'adreça de Bitcoin"
@@ -6461,7 +6549,7 @@
         "${ price } disponible"
       ],
       "10+ hours": [
-        "10 hores o més"
+        "Més de 10 hores"
       ],
       "Add a message": [
         "Afegeix un missatge"
@@ -6470,25 +6558,25 @@
         "Afegeix una nota"
       ],
       "Add private note to myself": [
-        "Afegeix una nota privada a mi mateix"
+        "Afegeix una nota privada per a mi"
       ],
       "Address is neither a valid bitcoin or email address": [
         "No és una adreça bitcoin o de correu electrònic vàlida."
       ],
       "Anonymous sender": [
-        "Remitent anònimo"
+        "Remitent anònim"
       ],
       "Bitcoin address signature could not be verified": [
         "No s'ha pogut verificar la signatura de l'adreça de Bitcoin."
       ],
       "Boost transaction": [
-        "Augmenta la prioritat de la transacció"
+        "Accelera la transacció"
       ],
       "Boost transaction priority": [
         "Augmenta la prioritat de la transacció"
       ],
       "By increasing the network fee, you can prioritize your transaction's speed, helping it get processed and confirmed faster.": [
-        "En augmentar la tarifa de xarxa, podeu augmentar la velocitat de la vostra transacció, ajudant-la a processar-la i confirmar-la més ràpidament."
+        "En augmentar la tarifa de xarxa, podeu prioritzar la velocitat de la transacció i ajudar a fer que es processi i es confirmi més ràpidament."
       ],
       "Cannot use QRCode scanner. Please check browser compatibility": [
         "No es pot utilitzar l'escàner de codi QRC. Comproveu la compatibilitat del navegador."
@@ -6506,7 +6594,7 @@
         "La transacció de bitcoin parcialment firmada (PSBT) no s'ha pogut crear."
       ],
       "Could not speed up transaction. Please sync your wallet and try again": [
-        "No s'ha pogut accelerar la transacció. Sincronitzeu la vostra cartera i torneu-ho a provar."
+        "No s'ha pogut accelerar la transacció. Sincronitzeu la cartera i torneu-ho a provar."
       ],
       "Current fee": [
         "Comissió actual"
@@ -6557,7 +6645,7 @@
         "Concediu permís a la càmera per utilitzar l'escàner de codi QR"
       ],
       "Please setup an email address in your account settings in order to send messages": [
-        "Configureu una adreça de correu electrònic a la configuració del vostre compte per enviar missatges."
+        "Configureu una adreça de correu electrònic a la configuració del compte per a enviar missatges."
       ],
       "Recent recipients": [
         "Destinataris recents"
@@ -6578,13 +6666,13 @@
         "Revisa"
       ],
       "Send all": [
-        "Envia tot"
+        "Envia-ho tot"
       ],
       "The transaction could not be sent. Please try again later": [
         "No s'ha pogut enviar la transacció. Proveu de nou més tard."
       ],
       "Transaction was successfully boosted": [
-        "S'ha augmentat la prioritat de la transacció."
+        "S'ha accelerat la transacció."
       ],
       "Transaction was successfully sent": [
         "S'ha enviat la transacció."
@@ -6593,7 +6681,7 @@
         "Afegiu una adreça de correu electrònic i comenceu a enviar bitcoins."
       ],
       "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
-        "Mentre espereu, convideu a la vostra família i amics a ${ WALLET_APP_NAME } perquè tothom pugui enviar Bitcoin per correu electrònic."
+        "Mentre espereu, convideu la vostra família i les amistats a ${ WALLET_APP_NAME } perquè tothom pugueu enviar Bitcoin per correu electrònic."
       ],
       "Who are you sending Bitcoin to?": [
         "A qui envieu Bitcoin?"
@@ -6637,22 +6725,22 @@
         "S'ha suprimit el compte"
       ],
       "An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.": [
-        "S'ha produït un error en modificar la vostra adreça Bitcoin per correu electrònic. Comproveu els detalls i torneu-ho a provar."
+        "En modificar, s'ha produït un error amb la vostra adreça de Bitcoin via correu electrònic. Comproveu els detalls i torneu-ho a provar."
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
       ],
       "Browser storage cleared. Please refresh the page": [
-        "L'emmagatzematge del navegador s'ha esborrat. Actualitzeu la pàgina."
+        "S'ha netejat l'emmagatzematge del navegador. Actualitzeu la pàgina."
       ],
       "Could not fill the pool after email address addition": [
-        "No s'ha pogut omplir el conjunt després d'afegir l'adreça electrònica."
+        "No s'ha pogut omplir el conjunt d'adreces Bitcoin després d'afegir l'adreça electrònica."
       ],
       "Could not fill the pool after email address replacement": [
-        "El grup no s'ha pogut omplir després de substituir l'adreça de correu electrònic."
+        "No s'ha pogut omplir el conjunt d'adreces Bitcoin després de substituir l'adreça de correu electrònic."
       ],
       "Create new email address": [
-        "Crea una nova adreça de correu electrònic"
+        "Crea una adreça de correu electrònic"
       ],
       "Email address could not be added. Please try again.": [
         "No s'ha pogut afegir l'adreça de correu electrònic. Torneu-ho a provar."
@@ -6679,7 +6767,7 @@
         "S'ha aplicat una nova moneda fiduciària."
       ],
       "Preferred bitcoin unit could not be changed. Please try again.": [
-        "La unitat de Bitcoin preferida no s'ha pogut canviar. Torneu-ho a provar."
+        "No s'ha pogut canviar la unitat de Bitcoin preferida. Torneu-ho a provar."
       ],
       "Preferred bitcoin unit was changed": [
         "S'ha canviat la unitat Bitcoin preferida"
@@ -6697,7 +6785,7 @@
         "No s'ha pogut canviar el nom del compte de la cartera. Torneu-ho a provar."
       ],
       "Wallet could not be deleted. Please try again.": [
-        "No s'ha pogut suprimir la cartera. Torneu-ho a provar."
+        "No s'ha pogut eliminar la cartera. Torneu-ho a provar."
       ],
       "Wallet name changed": [
         "S'ha canviat el nom de la cartera."
@@ -6716,7 +6804,7 @@
     },
     "Wallet setup": {
       "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
-        "Una frase de contrasenya actua com a segona contrasennya. No es pot canviar o afegir més tard. Assegureu-la en un bon lloc per a desblocar la cartera cada vegada que inicieu la sessió."
+        "Una frase de contrasenya actua com a segona contrasenya. No es pot canviar o afegir més tard. Assegureu-la en un bon lloc per a desbloquejar la cartera cada vegada que inicieu la sessió."
       ],
       "Add a passphrase": [
         "Afegeix una frase de contrasenya"
@@ -6740,10 +6828,10 @@
         "Crea una cartera"
       ],
       "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet at a later stage using the seed phrase.": [
-        "Si suprimiu aquesta cartera, se suprimiran totes les vostres dades dels servidors de ${ BRAND_NAME }. Podeu recuperar la cartera en una fase posterior utilitzant la frase de recuperació."
+        "Si elimineu aquesta cartera, se n'esborraran totes les dades dels servidors de ${ BRAND_NAME }. Podreu recuperar la cartera en una fase posterior utilitzant la frase de recuperació."
       ],
       "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.": [
-        "Si suprimiu aquesta cartera, se suprimiran totes les seves dades dels servidors de ${ BRAND_NAME }. Podeu recuperar la cartera reactivant les claus utilitzades durant la creació de la cartera al vostre compte."
+        "Si elimineu aquesta cartera, se n'esborraran totes les dades dels servidors de ${ BRAND_NAME }. Podreu recuperar la cartera reactivant les claus utilitzades durant la seva creació al vostre compte."
       ],
       "Done": [
         "Fet"
@@ -6788,7 +6876,7 @@
         "Trieu una moneda predeterminada perquè puguem mostrar el valor de les vostres transaccions de Bitcoin utilitzant les dades més recents del mercat en el moment de la transacció."
       ],
       "Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. You can recover this wallet at a later stage using the seed phrase.": [
-        "Transferiu els vostres bitcoins a una altra cartera abans de suprimir-los. Si suprimiu aquesta cartera, se suprimiran totes les seves dades dels servidors de ${ BRAND_NAME }. Podeu recuperar aquesta cartera en una fase posterior utilitzant la frase de recuperació."
+        "Transferiu els vostres bitcoins a una altra cartera abans d'eliminar-los. Si elimineu aquesta cartera, se n'esborraran totes les dades dels servidors de ${ BRAND_NAME }. Podreu recuperar aquesta cartera en una fase posterior utilitzant la frase de recuperació."
       ],
       "Primary account": [
         "Compte principal"
@@ -6797,16 +6885,16 @@
         "Frase de recuperació (de 12 a 24 paraules separades per espai)"
       ],
       "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
-        "Aquestes 12 paraules només s'han d'utilitzar per recuperar els actius d'aquesta cartera com a últim recurs, com ara si perdeu l'accés al vostre compte ${ BRAND_NAME }."
+        "Aquestes 12 paraules només s'han d'utilitzar per a recuperar els actius d'aquesta cartera com a últim recurs, com ara si perdeu l'accés al vostre compte de ${ BRAND_NAME }."
       ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
-        "Aquesta cartera ja no es pot desxifrar. Per tornar-la a desxifrar, heu de recuperar les claus utilitzades durant la seva creació al vostre compte. En cas contrari, també podeu eliminar-la per alliberar un espai de la cartera."
+        "Aquesta cartera ja no es pot desxifrar. Perquè torni a ser desxifrable, heu de recuperar les claus utilitzades durant la seva creació al vostre compte. En cas contrari, també podeu esborrar-la per a alliberar un espai de cartera."
       ],
       "This wallet seems to still have assets.": [
         "Sembla que aquesta cartera encara té actius."
       ],
       "Transfer your paper wallet funds to your account. Paste your private key or scan your QR code.": [
-        "Transfereix els fons de la cartera de paper al teu compte. Enganxa la teva clau privada o escaneja el teu codi QR."
+        "Transferiu els fons de la cartera de paper al vostre compte. Enganxeu la clau privada o escanegeu el codi QR."
       ],
       "View wallet seed phrase": [
         "Mostra la frase de recuperació de la cartera"
@@ -6818,7 +6906,7 @@
         "Frase de recuperació de la cartera"
       ],
       "Wallet seed phrase checksum is invalid. We only accept BIP39 seed phrases and do not support Electrum ones.": [
-        "La suma de comprovació de la frase de recuperació de la cartera no és vàlida. Només acceptem frases de recuperació BIP39 i no admetem les d'Electrum."
+        "La suma de verificació de la frase de recuperació de la cartera no és vàlida. Només acceptem frases de recuperació BIP39 i no admetem les d'Electrum."
       ],
       "Wallet seed phrase contains an unknown word: ${ word }. We only support the BIP39 English word list.": [
         "La frase de recuperació de la cartera conté una paraula desconeguda: ${ word }. Només admetem la llista de paraules en anglès BIP39."
@@ -6827,7 +6915,7 @@
         "La frase de recuperació d'una cartera codifica la clau privada que controla els vostres actius digitals."
       ],
       "Wallet seed phrase entropy is invalid. It should be between 128 and 256 bits in length.": [
-        "El nivell d'entropia o aleatorietat de la frase de recuperació de la cartera no és vàlid. Pot estar entre 128 i 256 bits."
+        "L'entropia de la frase de recuperació de la cartera no és vàlida. Ha de tenir una longitud entre 128 i 256 bits."
       ],
       "Wallet seed phrase is incorrect. Please check it and try again.": [
         "La frase de recuperació de la cartera no és correcta. Comproveu-la i torneu-ho a provar."
@@ -6848,7 +6936,7 @@
         "Què és una frase de recuperació de cartera?"
       ],
       "You can use the seed phrase to import your wallet on any wallet app.": [
-        "Podeu utilitzar la frase de recuperació per importar la vostra cartera a qualsevol aplicació de cartera."
+        "Podeu utilitzar la frase de recuperació per a importar la vostra cartera en qualsevol aplicació de cartera."
       ],
       "Your keys, your coins.": [
         "Les vostres claus, les vostres monedes."
@@ -6862,13 +6950,13 @@
         "Contacta amb el suport"
       ],
       "Create a new wallet": [
-        "Crear una cartera"
+        "Crea una cartera"
       ],
       "Discover": [
-        "Descobriu"
+        "Descobreix"
       ],
       "Expand user settings": [
-        "Expandeix la configuració de l'usuari"
+        "Expandeix les preferències de l'usuari"
       ],
       "Import wallet": [
         "Importa una cartera"
@@ -6899,10 +6987,10 @@
     },
     "Wallet Terms and Conditions": {
       "This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${ BRAND_NAME } can seize your assets.": [
-        "Es tracta d'una cartera de bitcoins autogestionada, és a dir, sou l'única persona que té un control complet sobre tots els bitcoins que compreu o rebeu. Fins i tot ${ BRAND_NAME } no pot agafar els vostres actius."
+        "Es tracta d'una cartera de bitcoins autogestionada, és a dir, sou l'única persona que té un control complet sobre tots els bitcoins que compreu o rebeu. Ni tan sols ${ BRAND_NAME } pot agafar els vostres actius."
       ],
       "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
-        "Per evitar perdre actius per oblidar la contrasenya o altres problemes d'accés, feu una còpia de seguretat de la vostra frase de recuperació de ${ BRAND_NAME } i de la frase de recuperació de la vostra cartera."
+        "Per a evitar perdre actius per oblidar la contrasenya o altres problemes d'accés, feu una còpia de seguretat de la frase de recuperació de ${ BRAND_NAME } i de la frase de recuperació de la cartera."
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
         "Hem creat dos comptes BTC per a vosaltres. Un compte principal i un segon per rebre Bitcoin per correu electrònic (a ${ emailEl }) d'altres usuaris de ${ WALLET_APP_NAME }."
@@ -6913,7 +7001,7 @@
         "S'ha produït un error amb l'acceptació dels termes i condicions. Torneu-ho a provar."
       ],
       "Terms and conditions were accepted": [
-        "Els termes i condicions han estat acceptats."
+        "S'han acceptat els termes i condicions."
       ]
     },
     "Wallet transaction": {
@@ -6933,7 +7021,7 @@
         "Quantitat"
       ],
       "Anonymous sender": [
-        "Remitent anònimo"
+        "Remitent anònim"
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
@@ -6954,7 +7042,7 @@
         "De"
       ],
       "From: ${ senderOrRecipientName }": [
-        "Des de: ${ senderOrRecipientName }"
+        "De: ${ senderOrRecipientName }"
       ],
       "In progress": [
         "En curs"
@@ -6963,7 +7051,7 @@
         "S'està carregant"
       ],
       "Loading balance": [
-        "Carregant el saldo"
+        "S'està carregant el saldo"
       ],
       "Message to recipient": [
         "Missatge al destinatari"
@@ -7055,7 +7143,7 @@
         "Sincronitza"
       ],
       "Syncing in progress. Please wait": [
-        "Sincronització en curs. Espereu un moment."
+        "La sincronització està en curs. Espereu un moment."
       ]
     },
     "Wallet Upgrade": {
@@ -7063,7 +7151,7 @@
         "En continuar, accepteu els nostres ${ termsAndConditionsLink }."
       ],
       "Upgrade to support financial freedom": [
-        "Milloreu el pla per donar suport a la llibertat financera."
+        "Milloreu el pla per a donar suport a la llibertat financera."
       ],
       "Upgrade your privacy": [
         "Milloreu la vostra privacitat"
@@ -7074,10 +7162,10 @@
     },
     "Wallet upgrade": {
       "Account limit reached": [
-        "S'ha assolit el límit de compte."
+        "S'ha assolit el límit del compte."
       ],
       "Contact your administrator to upgrade": [
-        "Poseu-vos en contacte amb el vostre administrador per millorar la vostra subscripció."
+        "Poseu-vos en contacte amb el vostre administrador per a millorar el pla."
       ],
       "Expand your address limit": [
         "Amplieu el vostre límit d'adreces"
@@ -7092,13 +7180,13 @@
         "Heu assolit el nombre màxim de comptes disponibles per al vostre pla. Actualitzeu per a crear-ne més. El vostre suport financer és essencial a la nostra lluita per a protegir la privadesa i la llibertat."
       ],
       "You have reached the maximum number of email addresses supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Heu assolit el nombre màxim d'adreces de correu electrònic admeses pel vostre pla actual. Milloreu el vostre pla per crear-ne més. El vostre suport també serà essencial per a la nostra lluita per protegir la privacitat i la llibertat financeres."
+        "Heu assolit el nombre màxim d'adreces de correu electrònic admeses pel vostre pla actual. Milloreu el pla per a crear-ne més. El vostre suport també serà essencial per a la nostra lluita per a protegir la privacitat i la llibertat financeres."
       ],
       "You have reached the maximum number of wallets supported by your current plan.": [
         "Heu assolit el nombre màxim de carteres disponibles per al vostre pla."
       ],
       "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
-        "Heu assolit el nombre màxim de carteres amb el vostre pla actual. Milloreu el vostre pla per crear-ne més. El vostre suport també serà essencial per a la nostra lluita per protegir la privadesa i la llibertat financeres."
+        "Heu assolit el nombre màxim de carteres del vostre pla actual. Milloreu el pla per a crear-ne més. El vostre suport també serà essencial per a la nostra lluita per protegir la privacitat i la llibertat financeres."
       ]
     },
     "Wallet Welcome": {

@@ -461,6 +461,9 @@
       "Domains": [
         "Domain nevek"
       ],
+      "Users": [
+        "Felhasználók"
+      ],
       "Writing assistant": [
         "Írási segéd"
       ],
@@ -555,9 +558,19 @@
         "Egyenleg betöltése"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Bezárás"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Prémium jelszókezelő"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Az ajánlat nem elérhető"
       ]
     },
     "BF2024: Deal details": {
@@ -2267,12 +2280,6 @@
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
       ],
-      "Organization key must be activated to create invited users": [
-        "A szervezeti kulcsot aktiválni kell, meghívott felhasználók létrehozásához"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "A szervezeti kulcsot aktiválni kell, nem-privát felhasználók létrehozásához"
-      ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
       ],
@@ -2326,9 +2333,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "A legkisebb lehetséges adomány ${ price }"
       ],
       "The passphrases do not match": [
         "A kulcsszövegek nem egyeznek meg"
@@ -2587,6 +2591,9 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /hónap)"
+      ],
+      "1 vault per user": [
+        "Felhasználónként 1 széf"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
@@ -3146,9 +3153,6 @@
       "Optional": [
         "Választható"
       ],
-      "Password": [
-        "Jelszó"
-      ],
       "Payer": [
         "Teherviselő"
       ],
@@ -3253,6 +3257,9 @@
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
       ],
+      "Customer Support": [
+        "Ügyfélszolgálat"
+      ],
       "Enforcing 2FA for organizations": [
         "Kétlépcsős hitelesítés megkövetelése a szervezetek számára"
       ],
@@ -3346,6 +3353,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írási segéd"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írássegéd"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írósegéd hozzáadása"
       ],
@@ -3357,6 +3367,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ price } per seat": [
+        "${ price } felhasználónként"
+      ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
@@ -4308,6 +4321,9 @@
       "Got it": [
         "Értem."
       ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% adót tartalmaz: ${ taxAmountElement }"
+      ],
       "MM/YY": [
         "HH/ÉÉ"
       ],
@@ -4427,6 +4443,11 @@
         "Hiba történt. A Google Pay ellenőrzése sikertelen."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "A megerősítéssel felhatalmazza a ${ BRAND_NAME } és a Stripe-ot - a fizetési szolgáltatónkat -, hogy az előfizetéshez kapcsolódó jövőbeli fizetéseket csoportos beszedési megbízás (SEPA) útján levonják erről a bankszámláról, és a bankját hogy ezeket az összegeket levonja a számlájáról. Az első fizetést most a(z) ${ IDEAL_WERO_BRAND_NAME } szolgáltatáson keresztül történik. Előfizetése automatikusan megújul, amíg le nem mondja; minden terhelés előtt értesítést küldünk. A csoportos beszedési megbízással teljesített fizetések esetén – a bankjával kötött megállapodás feltételei szerint – a terhelés napjától számított 8 héten belül kérheti a levont összeg visszatérítését. Ez nem vonatkozik a mostani ${ IDEAL_WERO_BRAND_NAME } befizetésre."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-előfizetés fel nem használt részéért"
@@ -4455,6 +4476,11 @@
     "Payments.plan_name": {
       "Free": [
         "Ingyenes"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kártya, a következő végződéssel: ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -4951,6 +4977,9 @@
       "Payment method updated": [
         "Fizetési mód frissítve"
       ],
+      "Preference saved": [
+        "Beállítások mentve"
+      ],
       "Problem reported": [
         "Hiba bejelentve"
       ],
@@ -5116,9 +5145,6 @@
       ],
       "Enhance security with 2FA": [
         "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"

@@ -352,6 +352,9 @@
       "Sign out of all accounts": [
         "登出所有帳號"
       ],
+      "Skip to main content": [
+        "跳至主要內容"
+      ],
       "Submit": [
         "送出"
       ],
@@ -589,9 +592,19 @@
         "正在載入餘額"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "關閉"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "進階版密碼管理器"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "優惠不再提供"
       ]
     },
     "BF2024: Deal details": {
@@ -2354,12 +2367,6 @@
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
-      "Organization key must be activated to create invited users": [
-        "需啟用組織金鑰才能建立邀請使用者"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "需啟用組織金鑰才能建立非私人使用者"
-      ],
       "Passwords do not match": [
         "密碼不一致"
       ],
@@ -2431,9 +2438,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐款金額為 ${ price }"
       ],
       "The passphrases do not match": [
         "密碼片語不符"
@@ -3349,9 +3353,6 @@
       ],
       "Optional": [
         "自由列席"
-      ],
-      "Password": [
-        "密碼"
       ],
       "Payer": [
         "付款人"
@@ -5323,6 +5324,9 @@
       "Payment method updated": [
         "付款方式已更新"
       ],
+      "Preference saved": [
+        "設定已儲存"
+      ],
       "Problem reported": [
         "以回報問題"
       ],
@@ -5489,9 +5493,6 @@
       "Enhance security with 2FA": [
         "透過雙重驗證強化安全性"
       ],
-      "Enter your password": [
-        "輸入您的密碼"
-      ],
       "Error": [
         "錯誤"
       ],
@@ -5593,6 +5594,9 @@
       ],
       "Verification failed": [
         "驗證失敗"
+      ],
+      "Verify it’s you": [
+        "驗證是您本人"
       ],
       "Verifying your card...": [
         "正在驗證您的信用卡..."
