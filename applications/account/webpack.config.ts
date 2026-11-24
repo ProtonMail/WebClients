@@ -8,6 +8,7 @@ import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/co
 import { addDevEntry, getConfig } from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
 import { getIndexChunks, getSupportedEntry } from '@proton/pack/webpack/entries';
+import { getReactResolve } from '@proton/pack/webpack/react';
 
 import appConfig from './appConfig';
 import type { HrefLang } from './pages/interface';
@@ -45,6 +46,8 @@ const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration>
         /* Ignore CSS order warning since we are managing it manually */
         ignoreCssOrderWarning: true,
     });
+    // Account is on the `react19` catalog
+    config.resolve = { ...config.resolve, ...getReactResolve(__dirname) };
     const pagePromise = getPages();
 
     const plugins = config.plugins || [];

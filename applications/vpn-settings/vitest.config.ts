@@ -3,6 +3,7 @@ import path from 'path';
 import { transformWithOxc } from 'vite';
 import { mergeConfig } from 'vitest/config';
 
+import { getReactTestResolve } from '@proton/vitest-config/react';
 import { sharedVitestConfig } from '@proton/vitest-config/shared';
 
 const fileMock = path.resolve(__dirname, './src/__mocks__/fileMock.js');
@@ -43,6 +44,8 @@ const jsAsJsx = {
 
 export default mergeConfig(sharedVitestConfig, {
     plugins: [requireContextStub, jsAsJsx, react()],
+    // VPN settings is on the `react19` catalog
+    resolve: getReactTestResolve(__dirname),
     test: {
         environment: 'jsdom',
         setupFiles: './vitest.setup.ts',

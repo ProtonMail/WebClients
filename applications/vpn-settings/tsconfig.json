@@ -1,5 +1,5 @@
 {
-    "extends": "../../tsconfig.base.json",
+    "extends": "../../tsconfig.react19.json",
     "compilerOptions": {
         "types": ["@proton/types", "global-types-monorepo", "webpack-env", "vitest/globals"]
     }

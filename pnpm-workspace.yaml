@@ -132,6 +132,14 @@ catalog:
     zod: ^4.6.7
 
 catalogs:
+    # React 19, for the apps that have moved to it. They load one React, their own, through the helpers in
+    # packages/pack/webpack/react.ts and packages/vitest-config/src/react.ts, and type-check against it
+    # through tsconfig.react19.json; once every app is here, this becomes the default catalog.
+    react19:
+        '@types/react': ^19.3.0
+        '@types/react-dom': ^19.3.0
+        react: ^19.3.1
+        react-dom: ^19.3.1
     # Docs' Lexical, at the version @proton-docs/docs-editor needs. A Docs manifest declaring a name
     # that is also in the default catalog needs an exception (see utilities/repo-rules/README.md).
     docs:

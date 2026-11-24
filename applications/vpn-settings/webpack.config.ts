@@ -9,6 +9,7 @@ import 'webpack-dev-server';
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
 import { getConfig } from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
+import { getReactResolve } from '@proton/pack/webpack/react';
 
 import appConfig from './appConfig';
 
@@ -39,6 +40,8 @@ const getTemplateParameters = (
 const result = async (opts: WebpackEnvArguments): Promise<Configuration> => {
     const webpackOptions = getWebpackOptions(opts, { appConfig });
     const config = getConfig(webpackOptions);
+    // VPN settings is on the `react19` catalog
+    config.resolve = { ...config.resolve, ...getReactResolve(__dirname) };
     const pagesPromise = getPages();
     const plugins = config.plugins || [];
     config.plugins = plugins;
