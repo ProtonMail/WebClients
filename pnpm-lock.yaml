@@ -2235,6 +2235,9 @@ importers:
 
   applications/docs-homepage-standalone:
     dependencies:
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../../packages/styles
       proton-docs:
         specifier: workspace:^
         version: link:../docs
@@ -2278,6 +2281,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2007
+      sass:
+        specifier: 'catalog:'
+        version: 1.97.1
       tailwindcss:
         specifier: ^3.4.19
         version: 3.4.19(tsx@4.23.15)(yaml@2.9.1)

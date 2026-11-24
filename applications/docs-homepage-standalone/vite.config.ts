@@ -1,11 +1,6 @@
 import react from '@vitejs/plugin-react';
-import { fileURLToPath } from 'node:url';
-import docsTailwindConfig from 'proton-docs/tailwind.config';
 import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
-
-const homepageDir = fileURLToPath(new URL('../docs/src/app/homepage', import.meta.url));
-const srcDir = fileURLToPath(new URL('./src', import.meta.url));
 
 export default defineConfig({
     plugins: [react()],
@@ -15,13 +10,8 @@ export default defineConfig({
     },
     css: {
         postcss: {
-            // The docs app's Tailwind setup, scanning only the homepage module and this app.
-            plugins: [
-                tailwindcss({
-                    ...docsTailwindConfig,
-                    content: [`${homepageDir}/**/*.{ts,tsx}`, `${srcDir}/**/*.tsx`],
-                }),
-            ],
+            // Each stylesheet names its config with `@config`: src/tailwind.css and the module's tailwind.scss.
+            plugins: [tailwindcss()],
         },
     },
     server: { port: 8098, strictPort: true },

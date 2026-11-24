@@ -1,5 +1,3 @@
-// Like drive/docs/realtime's packages/docs-editor/src/DocsStyleScope.tsx: roots the module's Ariakit portals.
-
 import * as Ariakit from '@ariakit/react'
 import { type PropsWithChildren, useState } from 'react'
 
@@ -12,9 +10,9 @@ export function HomepageStyleScope({ children }: HomepageStyleScopeProps) {
   const [portalRoot, setPortalRoot] = useState<HTMLDivElement | null>(null)
 
   return (
-    <div className="contents">
+    <div className="homepage-root contents">
       <Ariakit.PortalContext.Provider value={portalRoot}>{children}</Ariakit.PortalContext.Provider>
-      {/* Above Proton's phone-width sidebar (z-index 800), below its modals and dropdowns (900). */}
+      {/* Above the sidebar's drawer (z-index 800), below Proton's modals and dropdowns (900) in the Docs app. */}
       <div ref={setPortalRoot} className="fixed left-0 top-0 z-[850] h-0 w-0" />
     </div>
   )

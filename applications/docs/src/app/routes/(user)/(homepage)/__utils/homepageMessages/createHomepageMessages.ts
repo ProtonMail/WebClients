@@ -13,6 +13,7 @@ import { createNewDocumentMessages } from './newDocument'
 import { createPageTitleMessages } from './pageTitle'
 import { createSidebarMessages } from './sidebar'
 import { createSortMessages } from './sort'
+import { createStorageMessages } from './storage'
 import { createTrashMessages } from './trash'
 
 /** Recreate after the host activates a locale. All groups are mandatory. */
@@ -21,6 +22,7 @@ export function createHomepageMessages(): HomepageMessages {
     ...createHeaderMessages(),
     ...createPageTitleMessages(),
     ...createSidebarMessages(),
+    ...createStorageMessages(),
     ...createNewDocumentMessages(),
     ...createContentMessages(),
     ...createDocumentsTableMessages(),

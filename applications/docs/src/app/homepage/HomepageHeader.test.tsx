@@ -4,73 +4,77 @@ import type { ReactNode } from 'react'
 import { MemoryRouter, useLocation } from 'react-router'
 import { CompatRouter } from 'react-router-dom-v5-compat'
 
-import {
-  HomepageHeader,
-  type HomepageHeaderComponentProps,
-  type HomepageUserDropdownComponentProps,
-} from './HomepageHeader'
+import { HomepageHeader, type HomepageHeaderActionsComponentProps } from './HomepageHeader'
 import { HomepageViewContext, type HomepageViewState, type HomepageViewValue } from './homepageViewContext'
 import { useSearch, useType } from './homepageViewUtils'
-import { SidebarStateProvider } from './sidebarState'
+import { SidebarStateProvider, useSidebarState } from './sidebarState'
+
+function mockViewport(width: number) {
+  // At the default 16px font size.
+  const matches = (query: string) => width <= 16 * Number(/max-width: ([\d.]+)em/.exec(query)?.[1])
+  window.matchMedia = vi.fn((query: string) => ({
+    matches: matches(query),
+    addEventListener: () => {},
+    removeEventListener: () => {},
+  })) as unknown as typeof window.matchMedia
+}
+
+function SidebarExpanded() {
+  const { expanded } = useSidebarState()
+  return <output aria-label="Sidebar">{expanded ? 'open' : 'closed'}</output>
+}
+
+function renderHeader() {
+  const value = {
+    state: { view: 'recents-empty' },
+    setSearch: vi.fn(),
+    type: undefined,
+  } as unknown as HomepageViewValue
+
+  function HeaderActions({ isNarrow }: HomepageHeaderActionsComponentProps) {
+    return <div>Header actions {isNarrow ? 'narrow' : 'wide'}</div>
+  }
+
+  render(
+    <MemoryRouter initialEntries={['/recents']}>
+      <HomepageViewContext.Provider value={value}>
+        <SidebarStateProvider>
+          <HomepageHeader headerActions={HeaderActions} />
+          <SidebarExpanded />
+        </SidebarStateProvider>
+      </HomepageViewContext.Provider>
+    </MemoryRouter>,
+  )
+}
 
 describe('HomepageHeader', () => {
-  test('passes the homepage header state and actions to the injected component', async () => {
-    let headerProps: HomepageHeaderComponentProps | undefined
-    const value = {
-      state: { view: 'recents-empty' },
-      setSearch: vi.fn(),
-      type: undefined,
-    } as unknown as HomepageViewValue
+  beforeEach(() => mockViewport(1280))
 
-    function HeaderComponent(props: HomepageHeaderComponentProps) {
-      headerProps = props
-      return (
-        <>
-          {props.userDropdown}
-          {props.actionArea}
-          <button type="button" onClick={props.onToggleExpand}>
-            Toggle sidebar
-          </button>
-        </>
-      )
-    }
+  test('shows the search and the host actions in a banner', () => {
+    renderHeader()
 
-    function UserDropdownComponent({ app, reportDescriptionContext }: HomepageUserDropdownComponentProps) {
-      return (
-        <div>
-          User dropdown {app} {reportDescriptionContext.join(' ')}
-        </div>
-      )
-    }
+    const banner = screen.getByRole('banner')
+    expect(banner).toContainElement(screen.getByPlaceholderText('Search recents'))
+    expect(banner).toHaveTextContent('Header actions wide')
+  })
 
-    render(
-      <MemoryRouter initialEntries={['/recents']}>
-        <HomepageViewContext.Provider value={value}>
-          <SidebarStateProvider>
-            <HomepageHeader
-              protonHeader={HeaderComponent}
-              userDropdown={UserDropdownComponent}
-              reportDescriptionContext={['Report context']}
-            />
-          </SidebarStateProvider>
-        </HomepageViewContext.Provider>
-      </MemoryRouter>,
-    )
+  test('tells the host actions whether the viewport is narrow', () => {
+    mockViewport(400)
+    renderHeader()
 
-    expect(headerProps).toEqual(
-      expect.objectContaining({
-        app: 'proton-drive',
-        title: 'Docs',
-        expanded: false,
-      }),
-    )
-    expect(headerProps?.userDropdown).toBeTruthy()
-    expect(screen.getByText('User dropdown proton-docs Report context')).toBeInTheDocument()
-    expect(screen.getByPlaceholderText('Search recents')).toBeInTheDocument()
+    expect(screen.getByText('Header actions narrow')).toBeInTheDocument()
+  })
 
-    await userEvent.click(screen.getByRole('button', { name: 'Toggle sidebar' }))
+  test('the menu button opens and closes the sidebar', async () => {
+    renderHeader()
+    const menuButton = screen.getByRole('button', { name: 'Open navigation' })
+    expect(menuButton).toHaveAttribute('aria-expanded', 'false')
 
-    expect(headerProps?.expanded).toBe(true)
+    await userEvent.click(menuButton)
+
+    expect(screen.getByRole('status', { name: 'Sidebar' })).toHaveTextContent('open')
+    await userEvent.click(screen.getByRole('button', { name: 'Close navigation' }))
+    expect(screen.getByRole('status', { name: 'Sidebar' })).toHaveTextContent('closed')
   })
 })
 
@@ -103,18 +107,13 @@ function CurrentLocation() {
   return <output aria-label="Location">{`${pathname}${search}`}</output>
 }
 
-/** Proton's header, reduced to the search it shows in its action area. */
-function SearchOnlyHeader({ actionArea }: HomepageHeaderComponentProps) {
-  return <>{actionArea}</>
-}
-
 function renderSearch({ path = '/recents', searchView = 'search' }: { path?: string; searchView?: SearchView } = {}) {
   render(
     <MemoryRouter initialEntries={[path]}>
       <CompatRouter>
         <SearchViewProvider searchView={searchView}>
           <SidebarStateProvider>
-            <HomepageHeader protonHeader={SearchOnlyHeader} userDropdown={() => null} reportDescriptionContext={[]} />
+            <HomepageHeader headerActions={() => null} />
           </SidebarStateProvider>
           <CurrentLocation />
         </SearchViewProvider>

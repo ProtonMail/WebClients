@@ -4,23 +4,20 @@ import { useConfig } from '@proton/app-context/useConfig'
 import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner'
 import DrawerApp from '@proton/components/components/drawer/DrawerApp'
 import Logo from '@proton/components/components/logo/Logo'
-import ProtonSidebar from '@proton/components/components/sidebar/Sidebar'
-import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink'
-import ProtonAppVersion from '@proton/components/components/version/AppVersion'
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown'
-import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
-import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea'
 import TopBanners from '@proton/components/containers/topBanners/TopBanners'
-import { getAppVersion } from '@proton/components/helpers/appVersion'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 import { APPS } from '@proton/shared/lib/constants'
+import clsx from '@proton/utils/clsx'
 
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import {
   HomepageHeader,
-  type HomepageAppVersionComponentProps,
+  type HomepageHeaderActionsComponentProps,
+  type HomepageUserDropdownComponentProps,
+  HomepageLayout,
   HomepageSidebar,
   HomepageStyleScope,
   SidebarStateProvider,
@@ -32,52 +29,86 @@ export type HomepageShellProps = {
   children: ReactNode
 }
 
-function HomepageAppVersion({ appVersion: hostAppVersion }: HomepageAppVersionComponentProps) {
-  const appVersion = getAppVersion(hostAppVersion)
-
-  return <ProtonAppVersion appVersion={appVersion.split('+')[0]} fullVersion={appVersion} />
+function useReportDescriptionContext() {
+  const { APP_VERSION, CLIENT_TYPE } = useConfig()
+  return getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })
 }
 
-/** The Proton app frame around the dependency-light homepage module. */
-export function HomepageShell({ children }: HomepageShellProps) {
-  useAppTitle(useHomepageTitle())
-  const { APP_VERSION, CLIENT_TYPE } = useConfig()
-  const reportDescriptionContext = getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })
+// The Docs homepage's sizes for the name and initials of Proton's user dropdown.
+const USER_DROPDOWN_OVERRIDES =
+  '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2] [&_.user-initials]:!leading-[1.0714rem]'
+
+type HomepageSidebarUserDropdownProps = HomepageUserDropdownComponentProps
+
+/** Proton's user dropdown, in the sidebar's drawer on narrow viewports. */
+function HomepageSidebarUserDropdown(props: HomepageSidebarUserDropdownProps) {
+  return (
+    <div className={clsx('contents', USER_DROPDOWN_OVERRIDES)}>
+      <UserDropdown {...props} />
+    </div>
+  )
+}
+
+/**
+ * Proton's `PrivateHeader`, reduced to its actions: the business onboarding button, the upsell (for Drive, as the
+ * homepage always passed) and the user dropdown, with the storefront cookies it sets. Its frame is flattened into the
+ * homepage's header (`contents`), its menu button hidden, and the empty box it keeps for an action area removed.
+ */
+function HomepageHeaderActions({ isNarrow }: HomepageHeaderActionsComponentProps) {
+  const reportDescriptionContext = useReportDescriptionContext()
 
   return (
-    <HomepageStyleScope>
-      <SidebarStateProvider>
-        <PrivateAppContainer
-          containerRef={(element) => element?.classList.add('is-homepage')}
-          top={
-            <TopBanners app={APPS.PROTONDOCS}>
-              <PasswordReminderTopBanner />
-            </TopBanners>
-          }
-          header={
-            <HomepageHeader
-              protonHeader={PrivateHeader}
-              userDropdown={UserDropdown}
-              reportDescriptionContext={reportDescriptionContext}
-            />
-          }
-          sidebar={
-            <HomepageSidebar
-              appsDropdown={AppsDropdown}
-              appVersionComponent={HomepageAppVersion}
-              logo={Logo}
-              protonSidebar={ProtonSidebar}
-              sidebarListItemLink={SidebarListItemLink}
-              appVersion={APP_VERSION}
-            />
-          }
-          drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
-        >
-          <PrivateMainArea className="!border-t-0 small:ps-1 [&>div]:[block-size:100%]" hasToolbar>
+    // Its `<header>` sits in the homepage's, which is the page's banner: `role="none"` keeps it from being a second
+    // one. `PrivateHeader` doesn't pass other props to its `<header>`, so the role is set on the element.
+    <div
+      className={clsx('contents', USER_DROPDOWN_OVERRIDES)}
+      ref={(element) => element?.querySelector('header')?.setAttribute('role', 'none')}
+    >
+      <PrivateHeader
+        className="!contents [&>div:empty]:!hidden"
+        hideMenuButton
+        app={APPS.PROTONDRIVE}
+        userDropdown={<UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} />}
+        isSmallViewport={isNarrow}
+        expanded={false}
+      />
+    </div>
+  )
+}
+
+/** The Proton parts of the homepage around the dependency-light homepage module, which lays out the page. */
+export function HomepageShell({ children }: HomepageShellProps) {
+  useAppTitle(useHomepageTitle())
+  const reportDescriptionContext = useReportDescriptionContext()
+
+  return (
+    // `is-homepage` keeps the Docs app's styles for the document pages out (app.scss). `ui-standard` gives Proton's
+    // widgets the colours they had in Proton's frame: outside `HomepageStyleScope`, so that the module's own colour
+    // tokens, which it sets on its root, apply over Proton's.
+    <div className="is-homepage ui-standard contents">
+      <HomepageStyleScope>
+        <SidebarStateProvider>
+          <HomepageLayout
+            top={
+              <TopBanners app={APPS.PROTONDOCS}>
+                <PasswordReminderTopBanner />
+              </TopBanners>
+            }
+            sidebar={
+              <HomepageSidebar
+                appsDropdown={AppsDropdown}
+                logo={Logo}
+                userDropdown={HomepageSidebarUserDropdown}
+                reportDescriptionContext={reportDescriptionContext}
+              />
+            }
+            header={<HomepageHeader headerActions={HomepageHeaderActions} />}
+            drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
+          >
             {children}
-          </PrivateMainArea>
-        </PrivateAppContainer>
-      </SidebarStateProvider>
-    </HomepageStyleScope>
+          </HomepageLayout>
+        </SidebarStateProvider>
+      </HomepageStyleScope>
+    </div>
   )
 }

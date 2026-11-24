@@ -10,6 +10,7 @@
         "start": "vite"
     },
     "dependencies": {
+        "@proton/styles": "workspace:^",
         "proton-docs": "workspace:^",
         "react": "catalog:",
         "react-dom": "catalog:",
@@ -26,6 +27,7 @@
         "@vitejs/plugin-react": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "sass": "catalog:",
         "tailwindcss": "^3.4.19",
         "typescript": "catalog:",
         "vite": "catalog:"

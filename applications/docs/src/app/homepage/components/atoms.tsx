@@ -49,7 +49,7 @@ export type ButtonOptions = {
 export interface ButtonProps extends Omit<Ariakit.RoleProps<'button'>, 'color'>, ButtonOptions {}
 
 const buttonBaseClassName = clsx(
-  'cursor-pointer border border-solid [outline:none]',
+  'cursor-pointer border-[1px] border-solid [outline:none]',
   '[transition:0.15s_cubic-bezier(0.22,1,0.36,1),background-position_0s]',
   'focus-visible:border-[--focus-outline] focus-visible:shadow-[0_0_0_0.1875rem_var(--focus-ring)]',
   'disabled:pointer-events-none',
@@ -78,9 +78,10 @@ const buttonBackgroundClassNames: ButtonVariantClassNames = {
   },
 }
 
+// At rest, and when disabled, `--border-norm`: the colour the Docs app has always shown, set by Proton's global `.border`.
 const buttonBorderClassNames: Record<NonNullable<ButtonOptions['color']>, string> = {
-  weak: 'border-[--interaction-weak-major-1] hover:border-[--interaction-weak-major-2] active:border-[--interaction-weak-major-3]',
-  norm: 'border-[--interaction-norm-major-1] hover:border-[--interaction-norm-major-2] active:border-[--interaction-norm-major-3]',
+  weak: 'border-[--border-norm] hover:border-[--interaction-weak-major-2] active:border-[--interaction-weak-major-3]',
+  norm: 'border-[--border-norm] hover:border-[--interaction-norm-major-2] active:border-[--interaction-norm-major-3]',
 }
 
 const buttonTextClassNames: ButtonVariantClassNames = {
@@ -159,7 +160,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
           clsx(
             'disabled:opacity-50',
             buttonDisabledTextClassNames[shape][color],
-            shape === 'outline' && 'disabled:border-transparent disabled:bg-[--interaction-weak]',
+            shape === 'outline' && 'disabled:bg-[--interaction-weak]',
           ),
         shape === 'outline' ? buttonBorderClassNames[color] : 'border-transparent',
         !classNameSetsUtility(className, ['bg-[--']) && buttonBackgroundClassNames[shape][color],

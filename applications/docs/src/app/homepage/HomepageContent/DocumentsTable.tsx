@@ -283,7 +283,7 @@ function Head({ variant, sectionId, hasCheckbox, selectionControls }: HeadProps)
   const fourthHeaderSorted = variant === 'recents-location'
 
   return (
-    <Table.Head secondarySticky topLevelSticky topLevelStickyOnlyOnMobile className="border-weak border-b">
+    <Table.Head secondarySticky topLevelSticky topLevelStickyOnlyOnMobile className="border-b border-[--border-weak]">
       <Table.Header>
         {selectionControls ?? (
           <div className="flex items-center gap-3">
@@ -317,7 +317,7 @@ type SectionLabelProps = { sectionId: ItemsSectionId; hasCheckbox: boolean }
 function SectionLabel({ sectionId, hasCheckbox }: SectionLabelProps) {
   const messages = useHomepageMessages().documentsTable
   return (
-    <Table.Row className="border-weak !h-[2.75rem] border-y">
+    <Table.Row className="!h-[2.75rem] border-y border-[--border-weak]">
       <Table.Header>
         <span className="flex items-center gap-3">
           {/* Same width as the row checkboxes, so that the label aligns with the names. */}
@@ -386,7 +386,7 @@ type BodyProps = {
 
 function Body({ items, variant, selection, selectableIdsSet, isTrashing, openOnDoubleClick }: BodyProps) {
   return (
-    <Table.Body className="divide-weak divide-y">
+    <Table.Body className="divide-y divide-[--border-weak]">
       {items.map((recentDocument) => (
         <Row
           variant={variant}
@@ -410,6 +410,10 @@ const REFRESH_DATE_INTERVAL = 1000 * 60 // ms
 
 // Lifts controls above the row activator, so that they keep their own clicks.
 const RAISED = 'relative z-[1]'
+
+// As Proton's `mouse:group-hover:opacity-100`: hidden on mouse devices until its row (`group/row`) is hovered or focused.
+const SHOW_ON_ROW_HOVER =
+  '[@media(hover:hover)_and_(pointer:fine)]:opacity-0 group-hover/row:opacity-100 group-focus-within/row:opacity-100'
 
 type RowProps = {
   document: RecentDocumentsItem
@@ -467,7 +471,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
         }
       }}
       shape="ghost"
-      className={clsx('text-pre flex flex-nowrap items-center px-2', RAISED)}
+      className={clsx('flex flex-nowrap items-center whitespace-pre px-2', RAISED)}
       title={!isLocationPath ? locationLabel : undefined}
       data-testid="document-location-button"
     >
@@ -500,7 +504,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
     <Table.Row
       className={clsx(
         // `z-0` keeps the raised controls below the sticky head.
-        'group-hover-opacity-container relative z-0 hover:bg-[--optional-background-lowered]',
+        'group/row relative z-0 hover:bg-[--optional-background-lowered]',
         openOnDoubleClick ? 'select-none' : 'cursor-pointer',
         isSelected && 'bg-[--optional-background-lowered]',
       )}
@@ -530,7 +534,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
               className={clsx(
                 'flex w-5 shrink-0',
                 isSelectable && RAISED,
-                selection.selectedIds.length === 0 && 'mouse:group-hover:opacity-100',
+                selection.selectedIds.length === 0 && SHOW_ON_ROW_HOVER,
               )}
             >
               {isSelectable && (
@@ -609,7 +613,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
               }}
             />
           ) : (
-            <span className="text-pre text-ellipsis">{document.name}</span>
+            <span className="text-ellipsis !whitespace-pre">{document.name}</span>
           )}
         </span>
       </Table.DataCell>
@@ -623,7 +627,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
       <Table.DataCell target="medium">
         <span className="flex flex-nowrap items-center gap-2 overflow-hidden" title={displayName}>
           <Avatar>{avatarContent}</Avatar>
-          <span className="text-pre flex-1 text-ellipsis">{displayName}</span>
+          <span className="flex-1 text-ellipsis !whitespace-pre">{displayName}</span>
         </span>
       </Table.DataCell>
 
@@ -647,7 +651,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
               contextMenu.handleContextMenu(event)
             }}
             shape="ghost"
-            className={clsx('ml-auto shrink-0 px-2', RAISED, showActionsOnHover && 'mouse:group-hover:opacity-100')}
+            className={clsx('ml-auto shrink-0 px-2', RAISED, showActionsOnHover && SHOW_ON_ROW_HOVER)}
           >
             <Icon data={Icons.threeDotsVertical} />
           </IconButton>

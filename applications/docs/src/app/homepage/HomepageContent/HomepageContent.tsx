@@ -129,9 +129,9 @@ const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(functi
     <Ariakit.Button
       {...props}
       className={clsx(
-        'inline-flex h-9 items-center justify-center gap-2 rounded pl-3 pr-4 text-sm no-underline',
+        'inline-flex h-9 items-center justify-center gap-2 rounded pl-3 pr-4 text-sm leading-5 no-underline',
         '!text-[--text-norm] hover:bg-[#C2C1C0]/20 hover:text-[--text-norm] [[data-theme-mode=dark]_&]:hover:bg-[--interaction-default-hover]',
-        'border border-[#EAE7E4]',
+        'border-[1px] border-[--border-norm]',
         '!outline-none transition focus-visible:border-[#6D4AFF] focus-visible:ring-[3px] focus-visible:ring-[#6D4AFF33]',
         props.className,
       )}
@@ -198,7 +198,9 @@ function EmptyState({ variant }: EmptyStateProps) {
           src={variant === 'recents' ? images.recents : images.other}
           alt=""
         />
-        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant, messages)}</p>
+        <p className="m-0 mb-1 max-w-[25rem] text-center text-2xl font-bold leading-8">
+          {getEmptyStateText(variant, messages)}
+        </p>
         {variant === 'recents' ? <RecentsEmptyStateButtons /> : null}
       </div>
     </ContentSheet>

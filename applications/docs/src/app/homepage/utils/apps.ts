@@ -6,6 +6,9 @@ export const APPS = {
 
 export const DRIVE_APP_NAME = 'Proton Drive'
 
+/** `getAppName(APPS.PROTONDOCS)` of `@proton/shared/lib/apps/helper`. */
+export const DOCS_APP_NAME = 'Proton Docs'
+
 type HomepageApp = (typeof APPS)[keyof typeof APPS]
 
 /** The host's `getAppHref` for the signed-in user, its local ID bound, injected. */

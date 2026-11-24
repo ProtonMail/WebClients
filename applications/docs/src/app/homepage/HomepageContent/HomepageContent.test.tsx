@@ -942,8 +942,8 @@ describe('HomepageContent', () => {
       })
 
       describe('row Actions button', () => {
-        // Proton's utility hides it on mouse devices until the row is hovered or focused, and keeps it on touch devices.
-        const HOVER_ONLY = 'mouse:group-hover:opacity-100'
+        // Hidden on mouse devices until the row is hovered or focused, and always shown on touch devices.
+        const HOVER_ONLY = '[@media(hover:hover)_and_(pointer:fine)]:opacity-0'
         const findActionsButtons = () => screen.findAllByRole('button', { name: /Actions/ })
 
         test('shows only on hover', async () => {
@@ -1198,6 +1198,8 @@ describe('HomepageContent', () => {
           featureFlags: { bulkTrash: bulkTrashEnabled, bulkMove: bulkMoveEnabled },
           addresses: mockAddresses,
           contactEmails: mockContactEmails,
+          storage: undefined,
+          appVersion: undefined,
         }}
       >
         {children}

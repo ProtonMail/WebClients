@@ -162,6 +162,26 @@ input[type='number'] {
 			margin-inline-end: 0.75em;
 		}
 	}
+
+	// The promotion button's background matches the homepage's, which the homepage module sets (#f8fafc, or
+	// --background-norm in dark mode)
+	.button-promotion {
+		--upgrade-background-color: #f8fafc !important;
+
+		&:hover,
+		&:focus-visible {
+			--upgrade-background-color: #f1f1f1 !important;
+		}
+	}
+}
+
+[data-theme-mode='dark'] .homepage-header .button-promotion {
+	--upgrade-background-color: var(--background-norm) !important;
+
+	&:hover,
+	&:focus-visible {
+		--upgrade-background-color: var(--interaction-weak-minor-1) !important;
+	}
 }
 
 /*

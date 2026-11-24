@@ -8,6 +8,8 @@ import { isDoc2Path } from './routes/(user)/(document)/doc2/__utils/isDoc2Path'
 
 // Import this before ./style so that style takes precedence
 import './tailwind.scss'
+// Before Proton's styles too: Proton's responsive utilities (`hidden md:flex`) need theirs to come last.
+import '~/homepage/tailwind.scss'
 import './app.scss'
 
 const { searchParams, pathname } = new URL(window.location.href)
