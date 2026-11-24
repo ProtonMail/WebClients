@@ -1,4 +1,5 @@
 import type {
+    ChangeEvent,
     CompositionEvent,
     FormEvent,
     ForwardRefRenderFunction,
@@ -24,6 +25,11 @@ const getIsValidValue = (value: string, type: TotpInputProps['type']) => {
 // Input methods (e.g. ibus or fcitx on Linux) send composition input events, also empty ones on focus.
 // They're applied on compositionend instead, so they can't clear a digit or move the focus.
 const getIsComposing = (event: SyntheticEvent) => (event.nativeEvent as InputEvent).isComposing;
+
+// Android keyboards compose every letter typed in a text field and only end the composition on space or blur,
+// so a composed valid value is applied right away instead of being reset by the controlled input.
+const getIsPendingComposition = (event: ChangeEvent<HTMLInputElement>, type: TotpInputProps['type']) =>
+    getIsComposing(event) && !getIsValidValue(event.target.value, type);
 
 type TotpInputProps = {
     length: number;
@@ -266,7 +272,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                                 handleMultipleValues(event.data, i);
                             }}
                             onChange={(event) => {
-                                if (disableChange || getIsComposing(event)) {
+                                if (disableChange || getIsPendingComposition(event, type)) {
                                     return;
                                 }
                                 if (event.target.value.length > 1) {

@@ -197,7 +197,7 @@ describe('TotpInput component', () => {
             expectValues('1   ', inputNodes);
             expect(inputNodes[0]).toHaveFocus();
 
-            fireEvent.input(inputNodes[0], { target: { value: '2' }, isComposing: true });
+            fireEvent.input(inputNodes[0], { target: { value: '２' }, isComposing: true });
 
             expectValues('1   ', inputNodes);
             expect(inputNodes[0]).toHaveFocus();
@@ -206,6 +206,33 @@ describe('TotpInput component', () => {
 
             expectValues('2   ', inputNodes);
             expect(inputNodes[1]).toHaveFocus();
+        });
+
+        it('should apply a composed letter right away, like Android keyboards send', () => {
+            const AlphabetTest = () => {
+                const [value, setValue] = useState('');
+                return <TotpInput value={value} onValue={setValue} length={4} type="alphabet" />;
+            };
+            const { container } = render(<AlphabetTest />);
+            const inputNodes = container.querySelectorAll('input');
+            inputNodes[0].focus();
+
+            fireEvent.compositionStart(inputNodes[0]);
+            fireEvent.input(inputNodes[0], { target: { value: 'a' }, isComposing: true });
+
+            expectValues('a   ', inputNodes);
+            expect(inputNodes[1]).toHaveFocus();
+
+            fireEvent.compositionEnd(inputNodes[0], { data: 'a' });
+
+            expectValues('a   ', inputNodes);
+            expect(inputNodes[1]).toHaveFocus();
+
+            fireEvent.compositionStart(inputNodes[1]);
+            fireEvent.input(inputNodes[1], { target: { value: 'b' }, isComposing: true });
+
+            expectValues('ab  ', inputNodes);
+            expect(inputNodes[2]).toHaveFocus();
         });
     });
 
