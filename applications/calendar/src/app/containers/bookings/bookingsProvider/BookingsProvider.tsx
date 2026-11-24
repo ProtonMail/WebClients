@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { BookingsLimitReached } from '@proton/calendar-settings/BookingsLimitReached';
 import { createNewBookingPage, editBookingPage } from '@proton/calendar/bookings/store/actions';
 import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';
 import { BookingCreateAction, useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
@@ -15,7 +16,6 @@ import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hoo
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { BookingsLimitReached } from '@proton/components/containers/calendar/BookingsLimitReached';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import { useFlag } from '@proton/unleash/useFlag';
 

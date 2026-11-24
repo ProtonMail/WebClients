@@ -1,0 +1,131 @@
+import type { PublicKeyReference } from '@protontech/crypto';
+import { act, render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import type { RequestHandler } from 'msw';
+import { setupServer } from 'msw/node';
+
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { getHandlers } from '@proton/calendar/testing/handlers';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
+import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
+import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
+import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import createCache from '@proton/shared/lib/helpers/cache';
+import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
+import { addressBuilder, calendarBuilder } from '@proton/shared/testing/calendarBuilders';
+import { mockApiWithServer } from '@proton/test-api/vitest/mockApiWithServer';
+
+import ShareCalendarModal from './ShareCalendarModal';
+
+const server = setupServer(...(getHandlers() as RequestHandler[]));
+
+vi.mock('@proton/components/hooks/useGetEncryptionPreferences');
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/account/addresses/hooks');
+vi.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
+    useContactEmailsCache: () => ({
+        contactEmails: [],
+        contactGroups: [],
+        contactEmailsMap: {},
+        groupsWithContactsMap: {},
+    }),
+}));
+
+const mockedUseApi = vi.mocked(useApi);
+const mockedUseNotifications = vi.mocked(useNotifications);
+const mockedUseGetEncryptionPreferences = vi.mocked(useGetEncryptionPreferences);
+
+const mockedEncryptionPreferences: EncryptionPreferences = {
+    encrypt: true,
+    sign: true,
+    scheme: PGP_SCHEMES.PGP_INLINE,
+    mimeType: MIME_TYPES.PLAINTEXT,
+    isInternalWithDisabledE2EEForMail: false,
+    sendKey: 'anything' as unknown as PublicKeyReference,
+    apiKeys: [],
+    pinnedKeys: [],
+    verifyingPinnedKeys: [],
+    isInternal: true,
+    hasApiKeys: true,
+    hasPinnedKeys: true,
+    isContact: true,
+    // error: new EncryptionPreferencesError(ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR, 'EMAIL_ADDRESS_ERROR'),
+};
+
+function renderComponent({ members = [], invitations = [] } = {}) {
+    const Wrapper = ({ children }: any) => <CacheProvider cache={createCache()}>{children}</CacheProvider>;
+
+    return render(
+        <ShareCalendarModal
+            members={members}
+            invitations={invitations}
+            calendar={calendarBuilder()}
+            addresses={[addressBuilder()]}
+            onFinish={() => {}}
+            open
+        />,
+        { wrapper: Wrapper }
+    );
+}
+
+function addRecipients(emails: string[]) {
+    const emailInput = screen.getByTitle('Email address');
+
+    act(() => {
+        emails.forEach(async (email) => {
+            // FIXME: same issue as in MainContainer.spec.tsx, it doesn't enter recipients
+            await userEvent.type(emailInput, `${email}{enter}`);
+        });
+    });
+}
+
+describe.skip('ShareCalendarModal', () => {
+    beforeAll(() => server.listen());
+
+    afterAll(() => server.close());
+
+    beforeEach(() => {
+        mockedUseApi.mockImplementation(() => mockApiWithServer);
+        mockedUseNotifications.mockImplementation(() => mockNotifications);
+        mockedUseGetEncryptionPreferences.mockImplementation(() => () => Promise.resolve(mockedEncryptionPreferences));
+    });
+
+    afterEach(() => {
+        server.resetHandlers();
+    });
+
+    it(`removes duplicate recipients and self addresses when added and displays a notification`, async () => {
+        renderComponent();
+
+        addRecipients(['legit@pm.me']);
+
+        await waitFor(() => {
+            expect(screen.getByText(/legit@pm.me/)).toBeInTheDocument();
+        });
+        expect(screen.getByText(/decent.one@proton.me/)).toBeInTheDocument();
+        expect(screen.queryByText(/legit\+dog@pm.me/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/stest1@proton.black/)).not.toBeInTheDocument();
+
+        expect(mockedUseNotifications().createNotification).toHaveBeenCalledTimes(2);
+    });
+
+    it(`displays errors for existing members, invalid emails and exceeding the limit before submitting`, () => {
+        renderComponent();
+    });
+
+    it(`displays errors for non-proton, non-existing and other errors after submitting`, () => {
+        // assistive text when non-proton
+        renderComponent();
+    });
+
+    it(`disables the share button if there are no recipients or there are errors`, () => {
+        renderComponent();
+        expect(screen.getByText(/Share/, { selector: 'button' })).toBeDisabled();
+    });
+
+    it(`shows a loading state when submitting and a notification once done`, () => {
+        renderComponent();
+    });
+});

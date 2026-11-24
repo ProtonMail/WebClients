@@ -3,27 +3,27 @@ import { useEffect, useMemo } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useCalendarsInfoListener } from '@proton/calendar-settings/eventManager/useCalendarsInfoListener';
+import { useLoadAllowedTimeZones } from '@proton/calendar-settings/hooks/useLoadAllowedTimeZones';
+import CalendarExportSection from '@proton/calendar-settings/settings/CalendarExportSection';
+import CalendarInvitationsSection from '@proton/calendar-settings/settings/CalendarInvitationsSection';
+import CalendarLayoutSection from '@proton/calendar-settings/settings/CalendarLayoutSection';
+import CalendarOtherPreferencesSection from '@proton/calendar-settings/settings/CalendarOtherPreferencesSection';
+import CalendarSubpage from '@proton/calendar-settings/settings/CalendarSubpage';
+import CalendarTimeSection from '@proton/calendar-settings/settings/CalendarTimeSection';
+import CalendarsSettingsSection from '@proton/calendar-settings/settings/CalendarsSettingsSection';
 import { VideoConferenceToggle } from '@proton/calendar-video-conferencing/zoomIntegration/VideoConferenceToggle';
 import { useSubscribedCalendars } from '@proton/calendar/calendarSubscriptions/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
-import CalendarExportSection from '@proton/components/containers/calendar/settings/CalendarExportSection';
-import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
-import CalendarLayoutSection from '@proton/components/containers/calendar/settings/CalendarLayoutSection';
-import CalendarOtherPreferencesSection from '@proton/components/containers/calendar/settings/CalendarOtherPreferencesSection';
-import CalendarSubpage from '@proton/components/containers/calendar/settings/CalendarSubpage';
-import CalendarTimeSection from '@proton/components/containers/calendar/settings/CalendarTimeSection';
-import CalendarsSettingsSection from '@proton/components/containers/calendar/settings/CalendarsSettingsSection';
 import { InboxDesktopSettingsSection } from '@proton/components/containers/desktop/InboxDesktopSettingsSection';
-import { useCalendarsInfoListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import MobileAppSettingsSection from '@proton/components/containers/mobile/MobileAppSettingsSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
-import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,

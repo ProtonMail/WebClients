@@ -1,6 +1,6 @@
+import ImportModal from '@proton/calendar-settings/importModal/ImportModal';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import ImportModal from '@proton/components/containers/calendar/importModal/ImportModal';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS as DEFAULT_SETTINGS,
     getPreferredActiveWritableCalendar,

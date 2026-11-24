@@ -23,17 +23,17 @@ import { BookingsProvider } from '../bookings/bookingsProvider/BookingsProvider'
 import type { CalendarSidebarProps } from './CalendarSidebar';
 import CalendarSidebar from './CalendarSidebar';
 
-vi.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
+vi.mock('@proton/calendar-settings/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,
     PersonalCalendarModal: vi.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
 }));
 
-vi.mock('@proton/components/containers/calendar/calendarModal/subscribedCalendarModal/SubscribedCalendarModal', () => ({
+vi.mock('@proton/calendar-settings/calendarModal/subscribedCalendarModal/SubscribedCalendarModal', () => ({
     __esModule: true,
     default: vi.fn(({ open }) => <span>{open ? 'SubscribedCalendarModal' : null}</span>),
 }));
 
-vi.mock('@proton/components/containers/calendar/CalendarLimitReachedModal', () => ({
+vi.mock('@proton/calendar-settings/CalendarLimitReachedModal', () => ({
     __esModule: true,
     default: vi.fn(({ open }) => <span>{open ? 'CalendarLimitReachedModal' : null}</span>),
 }));
@@ -66,7 +66,7 @@ vi.mock('@proton/calendar/calendarSubscriptions/hooks', () => ({
     useSubscribedCalendars: vi.fn(() => ({ loading: true })),
 }));
 
-vi.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+vi.mock('@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: vi.fn(() => ({
         subscribe: vi.fn(),
     })),

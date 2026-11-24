@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import CalendarSelectIcon from '@proton/calendar-settings/calendarSelect/CalendarSelectIcon';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import SettingsListItem from '@proton/components/components/sidebar/SettingsListItem';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemButton from '@proton/components/components/sidebar/SidebarListItemButton';

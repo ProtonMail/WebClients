@@ -21,12 +21,12 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Cale
 import type { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 
-vi.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
+vi.mock('@proton/calendar-settings/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,
     PersonalCalendarModal: vi.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
 }));
 
-vi.mock('@proton/components/containers/calendar/importModal/ImportModal', () => ({
+vi.mock('@proton/calendar-settings/importModal/ImportModal', () => ({
     __esModule: true,
     default: vi.fn(() => <span>ImportModal</span>),
 }));

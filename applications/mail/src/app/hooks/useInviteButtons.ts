@@ -4,11 +4,11 @@ import { serverTime } from '@protontech/crypto';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useGetVtimezonesMap } from '@proton/calendar-settings/hooks/useGetVtimezonesMap';
+import useSendIcs from '@proton/calendar-settings/hooks/useSendIcs';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
-import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import { fetchPaginatedAttendeesInfo } from '@proton/shared/lib/calendar/attendeeInfos';
 import { withPartstat } from '@proton/shared/lib/calendar/attendees';

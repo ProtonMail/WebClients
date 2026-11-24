@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
+import useAddAttendees from '@proton/calendar-settings/hooks/useAddAttendees';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';

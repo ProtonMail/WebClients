@@ -6,9 +6,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { useCalendarModelEventManager } from '@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider';
 import { useGetCalendarEventRaw } from '@proton/calendar/calendarEvent/useGetCalendarEventRaw';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { defaultESContext } from '@proton/encrypted-search/constants';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/models/calendar';

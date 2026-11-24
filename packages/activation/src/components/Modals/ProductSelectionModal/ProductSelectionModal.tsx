@@ -8,6 +8,7 @@ import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import BYOEClaimProtonAddressModal from '@proton/byoe/src/components/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/byoe/src/constants';
+import useGetOrCreateCalendarAndSettings from '@proton/calendar-settings/hooks/useGetOrCreateCalendarAndSettings';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import {
     BorderedContainer,
@@ -21,7 +22,6 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { useFlag } from '@proton/unleash/useFlag';

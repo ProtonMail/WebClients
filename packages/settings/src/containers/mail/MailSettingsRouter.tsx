@@ -4,6 +4,7 @@ import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useLoadAllowedTimeZones } from '@proton/calendar-settings/hooks/useLoadAllowedTimeZones';
 import AliasPromotionSection from '@proton/components/containers/addresses/AliasPromotionSection';
 import IdentitySection from '@proton/components/containers/addresses/IdentitySection';
 import { AutoReplySection } from '@proton/components/containers/autoReply/AutoReplySection';
@@ -42,7 +43,6 @@ import SMTPSubmissionSection, {
     useShowSmtpSubmissionUpsell,
 } from '@proton/components/containers/smtp/SMTPSubmissionSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
-import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
 import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

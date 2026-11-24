@@ -3,11 +3,11 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import CalendarSelectIcon from '@proton/calendar-settings/calendarSelect/CalendarSelectIcon';
+import Notifications from '@proton/calendar-settings/notifications/Notifications';
+import NotificationsInDrawer from '@proton/calendar-settings/notifications/NotificationsInDrawer';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
-import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
