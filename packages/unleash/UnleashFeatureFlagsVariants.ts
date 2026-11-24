@@ -20,6 +20,7 @@ export const FLAGS_WITH_VARIANT = [
     'CheckoutCondensedAddons',
     'InboxBringYourOwnEmailImportPeriodExperiment',
     'PingOMaticEventLoopInterval',
+    'OnboardingStepsExperiment',
     'PostSignupSurveyExperiment',
     'VpnSignupMobileCheckout',
 ] satisfies FeatureFlag[];
@@ -48,6 +49,7 @@ export type EnableVpn2024AddonsExperimentVariant =
     | 'no-addon';
 export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
 export type InboxBringYourOwnEmailImportPeriodExperimentVariant = 'Control' | 'Treatment';
+export type OnboardingStepsExperimentVariant = 'Control' | 'Treatment1' | 'Treatment2' | 'Treatment3' | 'Treatment4';
 export type PostSignupSurveyExperimentVariant = 'Control' | 'Treatment';
 export type VpnSignupMobileCheckoutVariant = 'Control' | 'Treatment';
 
@@ -82,6 +84,7 @@ type FeatureFlagVariantMap = {
     CheckoutCondensedAddons: VariantReturnType<CheckoutCondensedAddonsVariant>;
     InboxBringYourOwnEmailImportPeriodExperiment: VariantReturnType<InboxBringYourOwnEmailImportPeriodExperimentVariant>;
     PingOMaticEventLoopInterval: VariantReturnType<PingOMaticEventLoopIntervalVariant>;
+    OnboardingStepsExperiment: VariantReturnType<OnboardingStepsExperimentVariant>;
     PostSignupSurveyExperiment: VariantReturnType<PostSignupSurveyExperimentVariant>;
     VpnSignupMobileCheckout: VariantReturnType<VpnSignupMobileCheckoutVariant>;
 };

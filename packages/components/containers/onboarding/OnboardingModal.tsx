@@ -22,6 +22,7 @@ interface Props {
     hideDiscoverApps?: boolean;
     /** Some onboarding modals need custom dimension / margins */
     hideOrganizationSetup?: boolean;
+    hideThemeSetup?: boolean;
     modalClassname?: string;
     modalContentClassname?: string;
     onClose?: () => void;
@@ -38,6 +39,7 @@ const OnboardingModal = ({
     genericSteps,
     hideDiscoverApps = false,
     hideOrganizationSetup = false,
+    hideThemeSetup = false,
     modalClassname,
     modalContentClassname = 'm-8',
     onDone,
@@ -72,6 +74,7 @@ const OnboardingModal = ({
         onBack: handleBack,
         hideDiscoverApps,
         hideOrganizationSetup,
+        hideThemeSetup,
         genericSteps,
     });
 

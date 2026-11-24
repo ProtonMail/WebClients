@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 
+import { useFlagsStatus } from '@unleash/proxy-client-react';
+
+import { organizationThunk } from '@proton/account/organization';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import OnboardingModal from '@proton/components/containers/onboarding/OnboardingModal';
 import type { OnboardingStepComponent } from '@proton/components/containers/onboarding/interface';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { useVariant } from '@proton/unleash/useVariant';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useMailDispatch } from '../../../store/hooks';
 import { useOnboardingTracking } from '../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from './interface';
+import { isRegularB2COnboarding } from './isRegularB2COnboarding';
 import ActivatePremiumFeaturesStep, {
     isActivatePremiumFeaturesStepEligible,
 } from './steps/ActivatePremiumFeaturesStep';
@@ -93,9 +98,32 @@ const STEPS: Record<
     },
 };
 
+/**
+ * DAWG-216: each treatment of the experiment removes one of the four cards of the regular B2C onboarding.
+ * Control, a disabled flag and an unknown variant remove nothing.
+ */
+const getStepRemovedByVariant = (variantName?: string): StepId | undefined => {
+    switch (variantName) {
+        case 'Treatment1':
+            return 'onboarding-welcome';
+        case 'Treatment2':
+            return 'get-desktop-app';
+        case 'Treatment3':
+            return 'get-mobile-app';
+        case 'Treatment4':
+            return 'new-onboarding-themes';
+        default:
+            return undefined;
+    }
+};
+
 const MailB2COnboardingModal = (props: MailOnboardingProps) => {
     const { call } = useEventManager();
-    const { endReplay } = useWelcomeFlags();
+    const { endReplay, welcomeFlags } = useWelcomeFlags();
+    const variant = useVariant('OnboardingStepsExperiment');
+    const { flagsReady, flagsError } = useFlagsStatus();
+    // The variant is only final once the flags are loaded, or failed to load (the user then stays on the control layout)
+    const variantFinal = flagsReady || !!flagsError;
     const dispatch = useMailDispatch();
     const { trackFlowFinished, trackFlowDismissed } = useOnboardingTracking();
     const [loading, setLoading] = useState(true);
@@ -132,14 +160,32 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
                 })
             );
 
+            // Only users who would see exactly the four regular cards are in the experiment
+            const organization = await dispatch(organizationThunk());
+            const isRegularB2C = isRegularB2COnboarding({
+                stepsToDisplay,
+                isReplay: welcomeFlags.isReplay,
+                hasGenericWelcomeStep: welcomeFlags.hasGenericWelcomeStep,
+                organization,
+            });
+
+            if (isRegularB2C) {
+                const removedStep = getStepRemovedByVariant(variant.name);
+                if (removedStep) {
+                    stepsToDisplay.delete(removedStep);
+                }
+            }
+
             setImgsToPreload(Array.from(toPreload));
             setSteps(stepsToDisplay);
             setLoading(false);
         };
 
-        void init();
+        if (variantFinal) {
+            void init();
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CE595C
-    }, []);
+    }, [variantFinal]);
 
     if (loading || !steps) {
         return null;
@@ -162,6 +208,8 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
                 modalContentClassname="mx-12 pt-12 pb-6"
                 modalClassname="onboarding-modal--larger onboarding-modal--new"
                 showGenericSteps={false}
+                // Without this the generic theme step is shown even when the step was removed
+                hideThemeSetup={!steps.has('new-onboarding-themes')}
                 extraProductStep={getStepComponent('activate-premium-features')}
                 stepDotClassName="mt-4"
                 data-testid="new-onboarding-variant"

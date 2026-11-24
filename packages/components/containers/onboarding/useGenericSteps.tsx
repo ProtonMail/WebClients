@@ -5,13 +5,13 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
 import type OnboardingModal from './OnboardingModal';
 import OnboardingSetupOrganization from './OnboardingSetupOrganization';
 import OnboardingThemes from './OnboardingThemes';
+import { canSetupOrganization } from './canSetupOrganization';
 import type { OnboardingStepRenderCallback } from './interface';
 
 type OnboardingModalProps = React.ComponentProps<typeof OnboardingModal>;
@@ -19,30 +19,25 @@ type OnboardingModalProps = React.ComponentProps<typeof OnboardingModal>;
 interface UseGenericStepsProps
     extends
         OnboardingStepRenderCallback,
-        Pick<OnboardingModalProps, 'hideDiscoverApps' | 'hideOrganizationSetup' | 'genericSteps'> {}
+        Pick<OnboardingModalProps, 'hideDiscoverApps' | 'hideOrganizationSetup' | 'hideThemeSetup' | 'genericSteps'> {}
 
 const useGenericSteps = ({
     onNext,
     onBack,
     hideDiscoverApps,
     hideOrganizationSetup,
+    hideThemeSetup,
     genericSteps,
 }: UseGenericStepsProps): (JSX.Element | null)[] => {
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const canSetupOrganization =
-        !loadingOrganization &&
-        !loadingSubscription &&
-        user.isAdmin &&
-        (organization?.MaxMembers || 0) > 1 &&
-        organization?.UsedMembers === 1 &&
-        !organization?.HasKeys &&
-        !hasVisionary(subscription);
+    const canSetupOrganizationStep =
+        !loadingOrganization && !loadingSubscription && canSetupOrganization({ user, organization, subscription });
 
     const setupOrganizationStep = () => {
-        if (!canSetupOrganization || hideOrganizationSetup) {
+        if (!canSetupOrganizationStep || hideOrganizationSetup) {
             return null;
         }
         const Component = genericSteps?.organizationStep || OnboardingSetupOrganization;
@@ -50,7 +45,7 @@ const useGenericSteps = ({
     };
 
     const setupThemeStep = () => {
-        if (isElectronOnSupportedApps(APP_NAME)) {
+        if (hideThemeSetup || isElectronOnSupportedApps(APP_NAME)) {
             return null;
         }
         const Component = genericSteps?.setupThemeStep || OnboardingThemes;
