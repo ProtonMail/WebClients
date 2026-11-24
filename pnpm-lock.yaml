@@ -2250,12 +2250,6 @@ importers:
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
-      react-router-dom:
-        specifier: 'catalog:'
-        version: 5.3.4(react@18.3.1)
-      react-router-dom-v5-compat:
-        specifier: ^6.30.6
-        version: 6.30.6(react-dom@18.3.1(react@18.3.1))(react-router-dom@5.3.4(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@proton/oxlint-config':
         specifier: workspace:^
@@ -2269,9 +2263,6 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
-      '@types/react-router-dom':
-        specifier: 'catalog:'
-        version: 5.3.3(@types/react@18.3.31)
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2

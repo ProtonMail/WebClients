@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [react()],
     // The module resolves these from applications/docs: keep one copy of each.
     resolve: {
-        dedupe: ['react', 'react-dom', 'react-router', 'react-router-dom', 'react-router-dom-v5-compat'],
+        dedupe: ['react', 'react-dom'],
     },
     css: {
         postcss: {

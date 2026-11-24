@@ -1,5 +1,4 @@
 import { useMemo, useState, type ReactNode } from 'react'
-import { useHistory, useRouteMatch } from 'react-router'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import type { HomepageMessages } from './messages/defaultHomepageMessages'
 
@@ -7,7 +6,7 @@ import { Input } from './components/atoms'
 import { Icon } from './components/Icon'
 import * as Icons from './components/icons'
 import { IconButton } from './components/ui'
-import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
+import { useHomepageRoute } from './homepageNavigation'
 import { useHomepageView } from './homepageViewContext'
 import { useSidebarState } from './sidebarState'
 import type { APPS } from './utils/apps'
@@ -105,16 +104,22 @@ type SearchProps = {
   className?: string
 }
 
-function Search({ value, onChange, type, className }: SearchProps) {
-  const isRecentsRoute = useRouteMatch(HOMEPAGE_RECENTS_PATH)
-  const history = useHistory()
+/** Searching from the trash goes to the recents, with the search, in a new history entry. */
+function useSearchChange(onChange: SearchProps['onChange']) {
+  const { route, navigate } = useHomepageRoute()
+  const isRecentsRoute = route.view === 'recents'
   const handleChange = useEvent((value: string | undefined) => {
-    // Ensure that the user is redirected to the recents page when searching.
-    if (value && value.length > 0 && !isRecentsRoute) {
-      history.push('/recents')
+    if (value && !isRecentsRoute) {
+      navigate({ view: 'recents', params: { ...route.params, q: value } })
+    } else {
+      onChange(value)
     }
-    onChange(value)
   })
+  return { isRecentsRoute, handleChange }
+}
+
+function Search({ value, onChange, type, className }: SearchProps) {
+  const { handleChange } = useSearchChange(onChange)
   const messages = useHomepageMessages().header
   const placeholder = useMemo(() => searchPlaceholder(type, messages), [type, messages])
   return (
@@ -141,15 +146,7 @@ function Search({ value, onChange, type, className }: SearchProps) {
 }
 
 function MobileSearch({ value, onChange, type, className }: SearchProps) {
-  const isRecentsRoute = useRouteMatch(HOMEPAGE_RECENTS_PATH)
-  const history = useHistory()
-  const handleChange = useEvent((value: string | undefined) => {
-    // Ensure that the user is redirected to the recents page when searching.
-    if (value && value.length > 0 && !isRecentsRoute) {
-      history.push('/recents')
-    }
-    onChange(value)
-  })
+  const { isRecentsRoute, handleChange } = useSearchChange(onChange)
   const [isActive, setActive] = useState(false)
   const isInput = (value && value.length > 0) || isActive
   const messages = useHomepageMessages().header

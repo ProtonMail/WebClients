@@ -3,19 +3,22 @@
 import './tailwind.css';
 import './fonts.css';
 import 'proton-docs/homepage/tailwind.scss';
+import { useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { CompatRouter } from 'react-router-dom-v5-compat';
 
 import {
     HomepageContent,
     type HomepageDependencies,
     HomepageDependenciesProvider,
     HomepageHeader,
+    type HomepageNavigation,
+    type HomepageRoute,
     HomepageLayout,
     HomepageSidebar,
     defaultHomepageMessages,
+    formatHomepageParams,
     HomepageStyleScope,
+    parseHomepageParams,
     SidebarStateProvider,
 } from 'proton-docs/homepage';
 
@@ -26,7 +29,44 @@ async function* noNodes() {
     yield* [];
 }
 
-const dependencies: HomepageDependencies = {
+// The homepage's navigation on the window's history, as realtime's editor demos keep their address.
+const historyListeners = new Set<() => void>();
+window.addEventListener('popstate', () => historyListeners.forEach((listener) => listener()));
+
+function subscribeToHistory(listener: () => void) {
+    historyListeners.add(listener);
+    return () => historyListeners.delete(listener);
+}
+
+function getHref({ view, params }: HomepageRoute) {
+    const search = formatHomepageParams(params);
+    return `/${view}${search && `?${search}`}`;
+}
+
+const navigate: HomepageNavigation['navigate'] = (to, { replace = false } = {}) => {
+    window.history[replace ? 'replaceState' : 'pushState'](null, '', getHref(to));
+    historyListeners.forEach((listener) => listener());
+};
+
+let route: HomepageRoute | undefined;
+let routeHref = '';
+function getRoute() {
+    const href = window.location.pathname + window.location.search;
+    if (!route || href !== routeHref) {
+        routeHref = href;
+        route = {
+            view: window.location.pathname === '/trash' ? 'trash' : 'recents',
+            params: parseHomepageParams(window.location.search),
+        };
+    }
+    return route;
+}
+
+if (!['/recents', '/trash'].includes(window.location.pathname)) {
+    window.history.replaceState(null, '', '/recents');
+}
+
+const dependencies: Omit<HomepageDependencies, 'navigation'> = {
     drive: {
         getMyFilesRootFolder: async () => ({ uid: '', name: '', treeEventScopeId: '' }),
         iterateNodes: noNodes,
@@ -64,10 +104,11 @@ const dependencies: HomepageDependencies = {
 };
 
 function Homepage() {
+    const navigation = { route: useSyncExternalStore(subscribeToHistory, getRoute), navigate, getHref };
     return (
         <HomepageStyleScope>
             <SidebarStateProvider>
-                <HomepageDependenciesProvider dependencies={dependencies}>
+                <HomepageDependenciesProvider dependencies={{ ...dependencies, navigation }}>
                     <HomepageLayout
                         sidebar={
                             <HomepageSidebar
@@ -87,13 +128,4 @@ function Homepage() {
     );
 }
 
-createRoot(document.getElementById('root')!).render(
-    <BrowserRouter>
-        <CompatRouter>
-            <Switch>
-                <Route path={['/recents', '/trash']} component={Homepage} />
-                <Redirect to="/recents" />
-            </Switch>
-        </CompatRouter>
-    </BrowserRouter>
-);
+createRoot(document.getElementById('root')!).render(<Homepage />);

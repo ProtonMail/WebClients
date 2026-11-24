@@ -1,6 +1,4 @@
 import { useCallback, useEffect, type ReactNode } from 'react'
-import { useHistory } from 'react-router'
-import { useLocation } from 'react-router-dom-v5-compat'
 
 import type { RecentDocumentsItem } from './recentDocumentsItem'
 import type { ProtonDocumentType } from './utils/mimetype'
@@ -17,6 +15,7 @@ import type {
 import { isMyDocument, type UserAddress } from './is-my-document'
 import { getOwnerName, type OwnerContact } from './get-owner-name'
 import type { HomepageMessages } from './messages/defaultHomepageMessages'
+import { useHomepageRoute, type HomepageRouteParams } from './homepageNavigation'
 import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
 import type { GetAppHref } from './utils/apps'
@@ -101,42 +100,43 @@ export type HomepageViewProviderProps = {
   appVersion?: HomepageAppVersion
 }
 
-function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {
+function useQueryState<T extends string | undefined>(
+  name: keyof HomepageRouteParams,
+  defaultValue: T,
+  allowedValues?: readonly T[],
+) {
   const isAllowed = useCallback(
     (value: string | null | undefined) => allowedValues?.includes(value as T) ?? true,
     [allowedValues],
   )
   const isDefault = useCallback((value: string | null | undefined) => value === defaultValue, [defaultValue])
 
-  const history = useHistory()
-  const location = useLocation()
+  const { route, navigate } = useHomepageRoute()
 
-  const params = new URLSearchParams(location.search)
-  const paramValue = params.get(name) ?? undefined
-  const hasParam = params.has(name)
+  const paramValue = route.params[name]
   const resolvedValue = isAllowed(paramValue) ? (paramValue as T) : defaultValue
 
   const setParam = useCallback(
     (value: T, exclusive = false) => {
-      const newParams = new URLSearchParams(exclusive ? undefined : location.search)
+      const params: HomepageRouteParams = exclusive ? {} : { ...route.params }
       if (isDefault(value) || value === undefined || value === '') {
-        newParams.delete(name)
+        delete params[name]
       } else {
-        newParams.set(name, value)
+        params[name] = value
       }
-      history.replace({ search: newParams.toString() })
+      navigate({ view: route.view, params }, { replace: true })
     },
-    [history, isDefault, location.search, name],
+    [route, navigate, isDefault, name],
   )
   const unsetParam = useCallback(() => setParam(undefined as T), [setParam])
 
   // If there's a param set, and the value is not allowed or it's the default
   // value, remove it from the URL.
   useEffect(() => {
-    if (!isAllowed(paramValue) || isDefault(paramValue)) {
+    if (paramValue !== undefined && (!isAllowed(paramValue) || isDefault(paramValue))) {
       unsetParam()
     }
-  }, [hasParam, isAllowed, isDefault, unsetParam, paramValue])
+  }, [isAllowed, isDefault, unsetParam, paramValue])
 
   return [resolvedValue, setParam] as const
 }

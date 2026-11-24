@@ -1,13 +1,13 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { act, cleanup, render, waitFor } from '@testing-library/react'
-import { type ReactNode, useState } from 'react'
-import { MemoryRouter, useHistory } from 'react-router'
-import { CompatRouter } from 'react-router-dom-v5-compat'
+import { type ReactNode, useEffect, useState } from 'react'
 
 import { ServerTime } from './utils/serverTime'
 import { buildRecentsState, buildSearchState, buildTrashState, HomepageViewProvider } from './HomepageViewProvider'
 import { defaultHomepageMessages, type HomepageMessages } from './messages/defaultHomepageMessages'
 import { HomepageMessagesProvider } from './messages/HomepageMessagesProvider'
+import { createMemoryNavigation } from './memoryNavigation'
+import type { HomepageRoute } from './homepageNavigation'
 import { useHomepageTitle } from './useHomepageTitle'
 import { useRecentsStore } from './useRecentsStore'
 import type { ProtonDocumentType } from './utils/mimetype'
@@ -312,14 +312,14 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
   }
   const reportTitle = vi.fn()
   const createNotification = vi.fn()
-  let history: ReturnType<typeof useHistory>
-  function CaptureHistory() {
-    history = useHistory()
-    return null
-  }
+  const navigation = createMemoryNavigation(path)
   // The title the host gives the tab, read as HomepageShell reads it.
+  let mounts = 0
   function CaptureTitle() {
     reportTitle(useHomepageTitle())
+    useEffect(() => {
+      mounts += 1
+    }, [])
     return null
   }
   // The host rebuilds its messages when the locale changes.
@@ -331,35 +331,32 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
   }
 
   render(
-    <MemoryRouter initialEntries={[path]}>
-      <CompatRouter>
-        <HostMessages>
-          <HomepageViewProvider
-            drive={drive}
-            eventSubscriber={{ initialize: vi.fn(), reset: vi.fn(), subscribeToSharedDocument: vi.fn() }}
-            coreEventSubscriber={coreEventSubscriber}
-            pendingInvitations={[]}
-            recentlyAcceptedInvitations={[]}
-            acceptInvitation={vi.fn()}
-            declineInvitation={vi.fn()}
-            reloadInvitations={vi.fn()}
-            api={api}
-            logger={{ debug: vi.fn(), error: vi.fn() }}
-            reportTelemetry={vi.fn()}
-            createNotification={createNotification}
-            getAppHref={(path) => path}
-            dateFormat={{ localeCode: 'en-US', hourCycle: 'h12' }}
-            errorTracking={ERROR_TRACKING}
-            featureFlags={FEATURE_FLAGS}
-            addresses={[]}
-            contactEmails={[]}
-          >
-            <CaptureHistory />
-            <CaptureTitle />
-          </HomepageViewProvider>
-        </HostMessages>
-      </CompatRouter>
-    </MemoryRouter>,
+    <navigation.NavigationProvider>
+      <HostMessages>
+        <HomepageViewProvider
+          drive={drive}
+          eventSubscriber={{ initialize: vi.fn(), reset: vi.fn(), subscribeToSharedDocument: vi.fn() }}
+          coreEventSubscriber={coreEventSubscriber}
+          pendingInvitations={[]}
+          recentlyAcceptedInvitations={[]}
+          acceptInvitation={vi.fn()}
+          declineInvitation={vi.fn()}
+          reloadInvitations={vi.fn()}
+          api={api}
+          logger={{ debug: vi.fn(), error: vi.fn() }}
+          reportTelemetry={vi.fn()}
+          createNotification={createNotification}
+          getAppHref={(path) => path}
+          dateFormat={{ localeCode: 'en-US', hourCycle: 'h12' }}
+          errorTracking={ERROR_TRACKING}
+          featureFlags={FEATURE_FLAGS}
+          addresses={[]}
+          contactEmails={[]}
+        >
+          <CaptureTitle />
+        </HomepageViewProvider>
+      </HostMessages>
+    </navigation.NavigationProvider>,
   )
   return {
     api,
@@ -371,7 +368,10 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
       act(() => {
         void reloadOnCoreEvent()
       }),
-    navigate: (to: string) => act(() => history.push(to)),
+    navigate: (to: HomepageRoute) => act(() => navigation.navigate(to)),
+    getMounts: () => mounts,
+    back: () => act(() => navigation.back()),
+    forward: () => act(() => navigation.forward()),
   }
 }
 
@@ -389,11 +389,29 @@ describe('HomepageViewProvider', () => {
     const { reportTitle, navigate } = renderProvider('/recents')
     await waitFor(() => expect(reportTitle).toHaveBeenLastCalledWith('Recents'))
 
-    navigate('/trash')
+    navigate({ view: 'trash', params: {} })
     await waitFor(() => expect(reportTitle).toHaveBeenLastCalledWith('Trash'))
 
-    navigate('/recents?q=plan')
+    navigate({ view: 'recents', params: { q: 'plan' } })
     await waitFor(() => expect(reportTitle).toHaveBeenLastCalledWith('Searching "plan"'))
+  })
+
+  test('back and forward change the view and load its documents again, without remounting the page', async () => {
+    const { api, iterateTrashedNodes, reportTitle, navigate, back, forward, getMounts } = renderProvider('/recents')
+    await waitFor(() => expect(api).toHaveBeenCalledTimes(1))
+    navigate({ view: 'trash', params: {} })
+    await waitFor(() => expect(iterateTrashedNodes).toHaveBeenCalledTimes(1))
+
+    back()
+
+    await waitFor(() => expect(api).toHaveBeenCalledTimes(2))
+    expect(reportTitle).toHaveBeenLastCalledWith('Recents')
+
+    forward()
+
+    await waitFor(() => expect(iterateTrashedNodes).toHaveBeenCalledTimes(2))
+    expect(reportTitle).toHaveBeenLastCalledWith('Trash')
+    expect(getMounts()).toBe(1)
   })
 
   test('on the trash page, loads the trash and not the recent documents', async () => {

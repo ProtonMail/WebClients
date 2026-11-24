@@ -1,14 +1,14 @@
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { act, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter } from 'react-router'
-import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import { useDocumentActions } from './documentActionsContext'
 import { HomepageDependenciesProvider, type HomepageDependencies } from './HomepageDependenciesProvider'
 import { useHomepageView } from './homepageViewContext'
 import { defaultHomepageMessages } from './messages/defaultHomepageMessages'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
+import { useHomepageRoute } from './homepageNavigation'
+import { createMemoryNavigation } from './memoryNavigation'
 import { RecentDocumentsItem } from './recentDocumentsItem'
 import { useRecentsStore } from './useRecentsStore'
 import { ServerTime } from './utils/serverTime'
@@ -27,7 +27,7 @@ const planDocument = RecentDocumentsItem.create({
   shareId: 'share1',
 })
 
-function createDependencies(): HomepageDependencies {
+function createDependencies(): Omit<HomepageDependencies, 'navigation'> {
   return {
     drive: {
       getMyFilesRootFolder: () => new Promise<never>(() => {}),
@@ -65,25 +65,28 @@ function HomepagePart() {
   const { pageTitle } = useHomepageMessages()
   const { getAppHref } = useHomepageView()
   const { share } = useDocumentActions()
+  const { route } = useHomepageRoute()
   return (
     <button type="button" onClick={() => share(planDocument)}>
-      {pageTitle.recents} {getAppHref('/recents', 'proton-docs')}
+      {pageTitle.recents} {getAppHref('/recents', 'proton-docs')} {route.view}
     </button>
   )
 }
 
-function renderWithDependencies(dependencies: HomepageDependencies) {
-  const tree = (value: HomepageDependencies) => (
-    <MemoryRouter initialEntries={['/recents']}>
-      <CompatRouter>
-        <HomepageDependenciesProvider dependencies={value}>
-          <HomepagePart />
-        </HomepageDependenciesProvider>
-      </CompatRouter>
-    </MemoryRouter>
-  )
-  const { rerender } = render(tree(dependencies))
-  return { rerender: (value: HomepageDependencies) => act(() => rerender(tree(value))) }
+type HostDependencies = Omit<HomepageDependencies, 'navigation'>
+
+function renderWithDependencies(dependencies: HostDependencies) {
+  const { useNavigation } = createMemoryNavigation('/recents')
+  // As HomepageAdapter: the host builds a new navigation object on every render.
+  function Host({ value }: { value: HostDependencies }) {
+    return (
+      <HomepageDependenciesProvider dependencies={{ ...value, navigation: useNavigation() }}>
+        <HomepagePart />
+      </HomepageDependenciesProvider>
+    )
+  }
+  const { rerender } = render(<Host value={dependencies} />)
+  return { rerender: (value: HostDependencies) => act(() => rerender(<Host value={value} />)) }
 }
 
 afterEach(() => {
@@ -91,11 +94,11 @@ afterEach(() => {
 })
 
 describe('HomepageDependenciesProvider', () => {
-  test('gives what it renders the messages, the view and the document actions from the dependencies', async () => {
+  test('gives what it renders the messages, the view, the route and the document actions from the dependencies', async () => {
     const dependencies = createDependencies()
     renderWithDependencies(dependencies)
 
-    await userEvent.click(screen.getByRole('button', { name: 'Récents https://docs.proton.me/recents' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Récents https://docs.proton.me/recents recents' }))
 
     expect(dependencies.openShareModal).toHaveBeenCalledWith({
       drive: dependencies.drive,

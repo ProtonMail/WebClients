@@ -1,6 +1,6 @@
 # Homepage
 
-The purpose of this module is to provide a dependency-free implementation of Docs homepage. To achieve this goal, code duplicates are allowed. No code from outside of this path should be imported: no `@proton/*` package and no `~/` alias of the Docs app, only third-party packages (React, Ariakit, Zustand, `@protontech/drive-sdk`, React Router for now). Legacy paths (drive-store) will NOT be ported here.
+The purpose of this module is to provide a dependency-free implementation of Docs homepage. To achieve this goal, code duplicates are allowed. No code from outside of this path should be imported: no `@proton/*` package and no `~/` alias of the Docs app, only third-party packages (React, Ariakit, Zustand, `@protontech/drive-sdk`). Legacy paths (drive-store) will NOT be ported here.
 
 Files inside this path import each other with relative paths, never through the `~/homepage` alias. Files outside this path import only from its public entry, `index.ts` (`~/homepage`), never from deeper paths.
 
@@ -16,4 +16,4 @@ UI components are built with Ariakit and Tailwind in `components/`, copied from 
 
 Icons: nothing here imports `@proton/icons` or `@proton/file-icons`. `components/icons.tsx` holds the SVG geometry of the icons it uses, copied from `@proton/icons` (camelCase names, alphabetical order), drawn with `<Icon data={Icons.x} />` from `components/Icon.tsx`; `components/FileTypeIcon.tsx` draws the Docs and Sheets file icons. To add an icon, copy its paths from `@proton/icons` into `icons.tsx`.
 
-Lint (`proton/restricted-imports` in `applications/docs/oxlint.config.mts`) enforces these rules: it rejects any `@proton/*` import (packages and subpaths, icons included), any `~/…` alias import and `ttag` in this folder. Not enforced yet: relative imports leaving the folder, React Router (navigation has to be injected by the host first) and Proton's global CSS classes.
+Lint (`proton/restricted-imports` in `applications/docs/oxlint.config.mts`) enforces these rules: it rejects any `@proton/*` import (packages and subpaths, icons included), any `~/…` alias import and `ttag` in this folder. Not enforced yet: relative imports leaving the folder and Proton's global CSS classes.
