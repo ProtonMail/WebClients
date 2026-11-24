@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { Loader } from '@proton/atoms/Loader/Loader';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import type { CaptchaTheme } from '@proton/shared/lib/interfaces/HumanVerification';
@@ -59,7 +61,7 @@ const Captcha = ({ token, theme, onSubmit }: Props) => {
             {loading && <Loader />}
             <iframe
                 onLoad={() => setLoading(false)}
-                title="Captcha"
+                title={c('Title').t`Captcha`}
                 ref={iframeRef}
                 className="w-full h-custom"
                 src={src}
