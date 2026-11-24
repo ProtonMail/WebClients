@@ -18,6 +18,7 @@
     "lint:warning": "oxlint",
     "pretty": "oxfmt --write \"src/app/**/*.{js,ts,tsx}\"",
     "start": "cross-env TS_NODE_TRANSPILE_ONLY=true TS_NODE_IGNORE_DIAGNOSTICS=5011 TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --optimizeAssets --babelLoader --noLogicalScss",
+    "start:lite": "vite optimize --config vite.dev.config.mts --logLevel warn && vite --config vite.dev.config.mts",
     "test": "vitest --run",
     "test:ci": "vitest run",
     "test:watch": "vitest"
@@ -97,6 +98,7 @@
     "sass": "catalog:",
     "tailwindcss": "^3.4.19",
     "typescript": "catalog:",
+    "vite": "catalog:",
     "vitest": "catalog:",
     "webpack": "catalog:"
   }

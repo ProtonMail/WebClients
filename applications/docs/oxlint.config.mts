@@ -19,6 +19,18 @@ export default createOxlintConfig({
             },
         },
         {
+            files: ['**/vite.dev.config.mts'],
+            rules: {
+                'proton/no-extraneous-dependencies': [
+                    'error',
+                    {
+                        devDependencies: [...extraneousDependenciesDevDependencies, '**/vite.dev.config.mts'],
+                        optionalDependencies: false,
+                    },
+                ],
+            },
+        },
+        {
             files: ['vitest.setup.dom.ts'],
             rules: {
                 'proton/no-extraneous-dependencies': [
