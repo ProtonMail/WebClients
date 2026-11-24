@@ -456,6 +456,9 @@
       "Display navigation bar": [
         "Tampilkan bilah navigasi"
       ],
+      "Don't show this again": [
+        "Jangan tampilkan ini lagi"
+      ],
       "Done": [
         "Selesai"
       ],
@@ -1410,6 +1413,9 @@
       "Skip": [
         "Lewati"
       ],
+      "Skip to main content": [
+        "Lompati ke konten utama"
+      ],
       "Skip verification": [
         "Lewati verifikasi"
       ],
@@ -1502,9 +1508,6 @@
       ],
       "Trust": [
         "Percayai"
-      ],
-      "Trust key": [
-        "Kunci tepercaya"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -1622,6 +1625,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gunakan mouse Anda untuk mengatur ukuran layar. Apabila Anda menggunakan keyboard, Anda juga dapat menggunakan tombol panah kiri dan panah kanan untuk mengatur ukuran layar."
+      ],
+      "Use “${ label }” setting": [
+        "Gunakan pengaturan \"${ label }\""
       ],
       "Verify": [
         "Verifikasi"
@@ -2005,9 +2011,19 @@
         "Masa uji coba gratis Anda berakhir dalam ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Tutup"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Penawaran tidak tersedia"
       ]
     },
     "BF2024: Deal details": {
@@ -4810,6 +4826,9 @@
       "Invalid public key file": [
         "File kunci publik tidak valid"
       ],
+      "Invalid URL": [
+        "URL tidak valid"
+      ],
       "Invalid VAT number": [
         "Nomor PPN tidak valid"
       ],
@@ -4890,12 +4909,6 @@
       ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak didekripsi"
-      ],
-      "Organization key must be activated to create invited users": [
-        "Kunci organisasi harus diaktifkan untuk membuat pengguna yang diundang"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Kunci organisasi harus diaktifkan untuk membuat pengguna non-privat"
       ],
       "Password is required": [
         "Kata sandi wajib diisi"
@@ -5050,6 +5063,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
       ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
+      ],
       "Something went wrong while converting the address": [
         "Terjadi kesalahan saat mengonversi alamat"
       ],
@@ -5109,9 +5125,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah kredit minimum yang dapat ditambahkan adalah ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Jumlah donasi minimal adalah ${ price }"
       ],
       "The sending key is not valid": [
         "Kunci pengiriman tidak valid"
@@ -9253,9 +9266,6 @@
       "Apply to future messages": [
         "Terapkan ke pesan yang akan datang"
       ],
-      "Archive": [
-        "Arsip"
-      ],
       "At": [
         "Di"
       ],
@@ -9940,9 +9950,6 @@
       "Sort": [
         "Urutkan"
       ],
-      "Spam": [
-        "Spam"
-      ],
       "Starred": [
         "Dibintangi"
       ],
@@ -10020,9 +10027,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaksi - Resi, pemesanan, tagihan, dan pesanan"
-      ],
-      "Trash": [
-        "Sampah"
       ],
       "Undisclosed Recipients": [
         "Penerima yang Dirahasiakan"
@@ -10160,6 +10164,14 @@
       ],
       "To": [
         "Kepada"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
       ]
     },
     "Label, credit card": {
@@ -12905,6 +12917,26 @@
         "Proses: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atribut"
+      ],
+      "content key": [
+        "kunci konten"
+      ],
+      "hash key": [
+        "kunci hash"
+      ],
+      "key": [
+        "kunci"
+      ],
+      "membership": [
+        "keanggotaan"
+      ],
+      "name": [
+        "nama"
+      ]
+    },
     "Property type": {
       "Address": [
         "Alamat"
@@ -13975,9 +14007,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } hari tersisa"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
@@ -14206,20 +14235,11 @@
       "What you give up when you cancel ${ planName }": [
         "Apa yang akan Anda korbankan pada saat Anda membatalkan ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menyediakan hingga ruang penyimpanan Mail hingga 1 GB dan Drie hingga 5 GB. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung dalam paket gratis."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Pada saat langganan ${ planName } Anda berakhir pada ${ expiryDate }, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Bonus ruang penyimpanan gratis tahunan"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Langganan ${ planName } Anda masih berlaku hingga ${ expiryDate }. Kami akan menambahkan kredit untuk sisa waktu ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batas paket gratis sebelum membatalkan. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Paket ${ planName } Anda tidak hanya menjaga keamanan data dan komunikasi bisnis Anda. Paket ini juga mendukung sasaran kepatuhan bisnis Anda, membuat bisnis Anda tampil menonjol, serta membuat tim Anda selalu terhubung."
@@ -15145,9 +15165,6 @@
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
       ],
-      "Enter your password": [
-        "Masukkan kata sandi Anda"
-      ],
       "Error": [
         "Kesalahan"
       ],
@@ -15771,6 +15788,9 @@
       ],
       "Verification failed": [
         "Verifikasi gagal"
+      ],
+      "Verify it’s you": [
+        "Verifikasi bahwa ini adalah Anda"
       ],
       "Verify your password": [
         "Verifikasi kata sandi Anda"

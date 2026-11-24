@@ -486,8 +486,8 @@
       "Dock to side panel": [
         "Acoplar al panel lateral"
       ],
-      "Don't show this offer again": [
-        "No volver a mostrar esta oferta"
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ],
       "Done": [
         "Hecho"
@@ -1294,6 +1294,12 @@
       "Save": [
         "Guardar"
       ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Guardar ${ name } en ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Guardar en ${ DRIVE_APP_NAME }"
+      ],
       "Saving${ ellipsis }": [
         "Guardando${ ellipsis }"
       ],
@@ -1486,6 +1492,9 @@
       "Skip": [
         "Omitir"
       ],
+      "Skip to main content": [
+        "Omitir al contenido principal"
+      ],
       "Skip verification": [
         "Omitir verificación"
       ],
@@ -1589,8 +1598,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Clave de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -1708,6 +1716,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utiliza el ratón para cambiar el tamaño de la vista. Si usas el teclado, puedes usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
+      ],
+      "Use “${ label }” setting": [
+        "Usar el ajuste «${ label }»"
       ],
       "Verify": [
         "Verificar"
@@ -1894,6 +1905,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencias del asistente de escritura"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -2135,6 +2149,11 @@
         "Tu periodo de prueba gratuito termina en ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
@@ -2143,6 +2162,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garantía de devolución del dinero en 30 días: cancela en un plazo de 30 días desde tu compra y contacta con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
       ]
     },
     "BF2024: Deal details": {
@@ -4790,6 +4814,9 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Es necesario incluir un mensaje al denunciar una infracción de derechos de autor o datos robados"
+      ],
       "A problem occurred, please try again.": [
         "Se ha producido un error. Inténtalo de nuevo."
       ],
@@ -4841,17 +4868,38 @@
       "Authentication error.": [
         "Error de autenticación."
       ],
+      "Bookmark password is not available": [
+        "La contraseña del marcador no está disponible"
+      ],
       "Calendar limit reached": [
         "Se ha alcanzado el límite de calendarios."
       ],
+      "Cannot add photo to album without a valid name": [
+        "No se puede añadir la foto al álbum sin un nombre válido"
+      ],
+      "Cannot download a folder": [
+        "No se puede descargar una carpeta"
+      ],
       "Cannot export this contact": [
         "No se puede exportar este contacto"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No se puede mover el elemento sin un nombre válido. Cambia primero su nombre"
       ],
       "Cannot send an empty message. Message is not sent.": [
         "No se puede enviar un mensaje vacío. El mensaje no ha sido enviado."
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "No se puede establecer una caducidad superior a la permitida por la política de retención."
+      ],
+      "Cannot share root folder": [
+        "No se puede compartir la carpeta raíz"
+      ],
+      "Cannot verify the author of this file": [
+        "No se puede verificar el autor de este archivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No se puede verificar quién subió este archivo"
       ],
       "Checkout expired, please try again": [
         "La compra ha expirado. Inténtalo de nuevo."
@@ -4893,14 +4941,47 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "No se puede activar la búsqueda de contenido. Reinicia la aplicación o borra los datos."
       ],
+      "Copy operation aborted": [
+        "Operación de copia cancelada"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No se permite copiar el elemento en uno que no es una carpeta"
+      ],
+      "Could not find an available name": [
+        "No se ha encontrado un nombre disponible"
+      ],
       "Could not grant access to the organization key": [
         "No se ha podido conceder acceso a la clave de la organización"
+      ],
+      "Could not load sharing details": [
+        "No se han podido cargar los detalles de uso compartido"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No se ha podido cargar la vista previa de la imagen: ${ message }"
       ],
       "Could not open created vault": [
         "No se ha podido abrir la caja fuerte creada."
       ],
       "Could not open updated vault": [
         "No se ha podido abrir la caja fuerte actualizada."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No se ha podido leer una parte de este archivo: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "No se ha podido desbloquear la carpeta superior"
+      ],
+      "Could not unlock this item": [
+        "No se ha podido desbloquear este elemento"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No se permite crear documentos en elementos que no son carpetas"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No se permite crear archivos en elementos que no son carpetas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No se permite crear carpetas en elementos que no son carpetas"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
@@ -4912,6 +4993,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario o",
         "Anula la selección de al menos ${ calendarsToFixCount } calendarios o"
+      ],
+      "Device not found": [
+        "No se ha encontrado el dispositivo"
       ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
@@ -4964,20 +5048,68 @@
       "Error while uploading attachments. Message is not sent.": [
         "Error al cargar archivos adjuntos. El mensaje no se ha enviado."
       ],
+      "Expiration date cannot be in the past": [
+        "La fecha de caducidad no puede ser una fecha pasada"
+      ],
       "Failed loading group members": [
         "Error al cargar los miembros del grupo"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "No se ha podido descifrar la clave del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "No se ha podido descifrar el nombre del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "No se ha podido descifrar la contraseña del marcador: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "No se ha podido descifrar la clave de contenido: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "No se ha podido descifrar el nombre del elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "No se ha podido descifrar la clave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "No se han podido descifrar los metadatos de la revisión"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Error al cifrar el archivo adjunto. Inténtalo de nuevo."
       ],
+      "Failed to get invitee keys": [
+        "No se han podido obtener las claves de los invitados"
+      ],
+      "Failed to get inviter keys": [
+        "No se han podido obtener las claves de la persona que invitó"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Error al cargar los datos de la suscripción. Inténtalo de nuevo más tarde."
+      ],
+      "Failed to load the membership": [
+        "No se ha podido cargar la pertenencia"
+      ],
+      "Failed to load the membership data": [
+        "No se han podido cargar los datos de pertenencia"
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa STL"
       ],
       "Failed to open to contact": [
         "Error al abrir el contacto"
+      ],
+      "Failed to verify invitation": [
+        "No se ha podido verificar la invitación"
+      ],
+      "Failed to verify membership": [
+        "No se ha podido verificar la pertenencia"
+      ],
+      "File download failed due to empty response": [
+        "La descarga del archivo ha fallado porque la respuesta está vacía"
+      ],
+      "File has no revision": [
+        "El archivo no tiene ninguna revisión"
       ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre."
@@ -4990,6 +5122,9 @@
       ],
       "Forward address is required": [
         "Se requiere una dirección de reenvío."
+      ],
+      "Image preview not found": [
+        "No se ha encontrado la vista previa de la imagen"
       ],
       "Image upload failed": [
         "Error al cargar la imagen"
@@ -5030,20 +5165,32 @@
       "Invalid public key file": [
         "Archivo de clave pública no válido"
       ],
+      "Invalid URL": [
+        "La URL no es válida."
+      ],
       "Invalid VAT number": [
         "Número de IVA incorrecto"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
+      "Invitation not found": [
+        "No se ha encontrado la invitación"
+      ],
       "Item content cannot exceed 40KB": [
         "El contenido del elemento no puede superar los 40 KB."
+      ],
+      "Item not found": [
+        "No se ha encontrado el elemento"
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
       ],
       "Last name is too long": [
         "El apellido es demasiado largo."
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "El enlace público antiguo no se puede actualizar. Vuelve a crear un enlace público nuevo."
       ],
       "Maximum expiration time reached.": [
         "Se ha alcanzado el tiempo máximo de expiración."
@@ -5061,14 +5208,36 @@
       "Message processing error.": [
         "Se ha producido un error al procesar el mensaje."
       ],
+      "Missing inviter email": [
+        "Falta el correo electrónico de quien envió la invitación"
+      ],
       "Missing key packet": [
         "Falta el paquete de claves."
       ],
       "Missing signature": [
         "Falta la firma."
       ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la firma de ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Se ha cancelado la operación de mover"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No se permite mover elementos a un elemento que no es una carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No se permite mover el elemento raíz"
+      ],
       "Name is required": [
         "El nombre es obligatorio."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nombre debe tener ${ MAX_NODE_NAME_LENGTH } carácter como máximo",
+        "El nombre debe tener ${ MAX_NODE_NAME_LENGTH } caracteres como máximo"
+      ],
+      "Name must not be empty": [
+        "El nombre no puede estar vacío"
       ],
       "Network error": [
         "Error de red"
@@ -5097,6 +5266,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ninguna clave externa recuperada para el usuario es válida para el envío."
       ],
+      "No file data was received. Please try again.": [
+        "No se han recibido datos del archivo. Inténtalo de nuevo."
+      ],
       "No valid address found": [
         "No se ha encontrado una dirección válida."
       ],
@@ -5111,14 +5283,20 @@
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
         "Algunos grupos no tienen contactos: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Solo los administradores pueden convertir invitaciones externas"
+      ],
+      "Operation aborted": [
+        "Operación cancelada"
+      ],
+      "Operation failed, try again later": [
+        "Error en la operación. Inténtalo más tarde."
+      ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
       ],
-      "Organization key must be activated to create invited users": [
-        "La clave de la organización debe activarse para crear usuarios invitados."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "La clave de la organización debe activarse para crear usuarios no privados."
+      "Part of the file appears to be corrupted": [
+        "Parte del archivo parece estar dañada"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -5140,6 +5318,12 @@
       ],
       "Permissions request failed.": [
         "Error con la solicitud de permisos"
+      ],
+      "Photo is already in the target album": [
+        "La foto ya está en el álbum de destino"
+      ],
+      "Photo not found": [
+        "No se ha encontrado la foto"
       ],
       "Please activate your search again": [
         "Activa de nuevo tu búsqueda."
@@ -5233,6 +5417,12 @@
         "Destinatario duplicado eliminado: ${ recipents }",
         "Destinatarios duplicados eliminados: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "No se permite cambiar el nombre del elemento raíz"
+      ],
+      "Request aborted": [
+        "Solicitud cancelada"
+      ],
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
@@ -5245,6 +5435,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "El envío de archivos adjuntos está restringido mientras excedas los límites del plan o hasta que lo mejores."
       ],
+      "Signature is missing": [
+        "Falta la firma"
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
@@ -5254,11 +5447,35 @@
       "Signature verification failed": [
         "Error al verificar la firma"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Error al verificar la firma: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Error al verificar la firma de ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Error al verificar la firma de ${ signatureType }: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "No se han podido eliminar algunos contactos."
       ],
+      "Some file data failed to upload. Please try again.": [
+        "No se han podido cargar algunos datos del archivo. Inténtalo de nuevo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "No se han podido subir algunas partes del archivo. Inténtalo de nuevo."
+      ],
       "Some groups could not be deleted": [
         "No se han podido eliminar algunos grupos."
+      ],
+      "Some invitations could not be loaded": [
+        "No se han podido cargar algunas invitaciones"
+      ],
+      "Some items could not be loaded": [
+        "No se han podido cargar algunos elementos"
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Algunas listas de correo no se pudieron dar de baja. Inténtelo de nuevo para terminar de darse de baja."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de tus nombres de carpetas no están disponibles. Personaliza la importación para editar estos nombres."
@@ -5274,6 +5491,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Modifica la importación para editar estos nombres."
+      ],
+      "Something went wrong": [
+        "Se ha producido un error."
       ],
       "Something went wrong while converting the address": [
         "Se ha producido un error al convertir la dirección"
@@ -5339,14 +5559,14 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "El importe mínimo de la donación es de ${ price }"
-      ],
       "The sending key is not valid": [
         "La clave de envío no es válida."
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
         "El sistema está ocupado por el momento. Intenta de nuevo en unos minutos."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El archivo cargado no coincide con el original. Inténtalo de nuevo."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "El asistente de escritura no puede proceder con la solicitud. Intenta con otro prompt."
@@ -5378,8 +5598,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
+      "This file has missing crypto material": [
+        "A este archivo le falta material criptográfico"
+      ],
+      "This file has no version available to download": [
+        "Este archivo no tiene ninguna versión disponible para descargar"
+      ],
+      "This file version could not be uploaded": [
+        "No se ha podido cargar esta versión del archivo"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nombre de carpeta no está disponible. Elige un nombre diferente."
+      ],
+      "This item has no image preview": [
+        "Este elemento no tiene vista previa de imagen"
+      ],
+      "This item is no longer shared": [
+        "Este elemento ya no está compartido"
+      ],
+      "This item is not shared": [
+        "Este elemento no está compartido"
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
@@ -5392,6 +5630,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces a un URL que no se pueden abrir correctamente en tu navegador actual."
+      ],
+      "Too many server errors, please try again later": [
+        "Demasiados errores del servidor. Inténtalo de nuevo más tarde"
+      ],
+      "Too many server requests, please try again later": [
+        "Demasiadas solicitudes al servidor. Inténtalo más tarde."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -5426,6 +5670,12 @@
       "VAT number must start with ${ prefixes }": [
         "El número de IVA debe empezar por ${ prefixes }."
       ],
+      "Verification keys are not available": [
+        "Las claves de verificación no están disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Las claves de verificación de ${ signatureType } no están disponibles"
+      ],
       "We couldn’t send a verification code using this method.": [
         "No hemos podido enviar un código de verificación con este método."
       ],
@@ -5438,6 +5688,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta. Inténtalo de nuevo o utiliza otro método de recuperación."
       ],
+      "You can create public links for your own files only": [
+        "Solo puedes crear enlaces públicos para tus propios archivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Solo puedes abandonar elementos que se han compartido contigo"
+      ],
+      "You can only upload a new version to a file": [
+        "Solo puedes subir una nueva versión a un archivo"
+      ],
+      "You can update a public link for your own files only": [
+        "Solo puedes actualizar un enlace público de tus propios archivos"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
         "No puedes enviar un correo a más de ${ maxContacts } destinatarios."
@@ -5448,6 +5710,12 @@
       ],
       "You did not provide a file.": [
         "No has proporcionado ningún archivo."
+      ],
+      "You do not have access to this item": [
+        "No tienes acceso a este elemento"
+      ],
+      "You do not have access to this shared item": [
+        "No tienes acceso a este elemento compartido"
       ],
       "You have reached the maximum number of calendars.": [
         "Ha alcanzado la cantidad máxima de calendarios."
@@ -5873,8 +6141,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de la clave de seguridad se ha cancelado o ha superado el tiempo de espera. Inténtalo de nuevo."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Tu dispositivo no ha podido completar la solicitud de la clave de seguridad. Inténtalo de nuevo o usa otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -7267,6 +7541,9 @@
       "Attention required": [
         "Atención requerida"
       ],
+      "Author is not provided on public link": [
+        "El enlace público no incluye el autor"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Elimina automáticamente los correos electrónicos movidos a la papelera y spam de hace más de 30 días."
       ],
@@ -7418,7 +7695,7 @@
         "Copiada al portapapeles"
       ],
       "Copy one-time codes from recent emails in one click": [
-        "Copia los códigos de uso único de los correos recientes en un solo clic"
+        "Copia los códigos de un solo uso de los correos recientes con un solo clic"
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -8159,6 +8436,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Este mensaje se enviará mañana a las ${ formattedTime }."
       ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Los mensajes de Spam y Papelera se eliminarán automáticamente después de 30 días."
+      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Los mensajes que hayan estado en la carpeta Papelera o Spam por más de 30 días serán eliminados automáticamente."
       ],
@@ -8190,7 +8470,7 @@
         "Mover aquí"
       ],
       "Move one-time code emails to Trash on copy": [
-        "Mueve los códigos de uso único a la papelera al copiarlos"
+        "Mover los correos con códigos de un solo uso a la papelera al copiarlos"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -9153,6 +9433,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ayudarnos a mantener segura su cuenta, confirme que es realmente usted antes de continuar."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para ayudarte a recordar tu contraseña, te pedimos que la introduzcas periódicamente. Con el tiempo, te la pedimos con menos frecuencia."
       ],
@@ -9371,9 +9654,6 @@
       ],
       "We couldn’t process your payment.": [
         "No hemos podido procesar tu pago."
-      ],
-      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Hemos detectado algunas listas de correo que no lees. Puedes darte de baja de ellas con un solo clic."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Tenemos planes diseñados específicamente para usuarios como tú que necesitan varias direcciones de correo electrónico."
@@ -10115,6 +10395,9 @@
       "${ boldActive } Move all messages to ${ boldFolderName }": [
         "${ boldActive } Mover todos los mensajes a ${ boldFolderName }"
       ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } contraseña de la cuenta"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -10228,9 +10511,6 @@
       ],
       "Apply to future messages": [
         "Aplicar a los mensajes futuros"
-      ],
-      "Archive": [
-        "Archivar"
       ],
       "At": [
         "A las"
@@ -10809,7 +11089,7 @@
         "Las notificaciones están desactivadas. Para activarlas cambia los ajustes del navegador."
       ],
       "One-time codes": [
-        "Códigos de uso único"
+        "Código de un solo uso"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -10946,10 +11226,6 @@
       "Search in": [
         "Buscar en"
       ],
-      "Select all ${ count } unused sender": [
-        "Seleccionar ${ count } remitente sin usar",
-        "Seleccionar los ${ count } remitentes sin usar"
-      ],
       "Select which Gmail address to connect": [
         "Selecciona qué dirección de Gmail conectar"
       ],
@@ -10991,9 +11267,6 @@
       ],
       "Sort": [
         "Ordenar"
-      ],
-      "Spam": [
-        "Spam"
       ],
       "Starred": [
         "Destacados"
@@ -11075,9 +11348,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transacciones - Recibos, reservas, facturas y pedidos"
-      ],
-      "Trash": [
-        "Papelera"
       ],
       "Undisclosed Recipients": [
         "Destinatarios ocultos"
@@ -11224,6 +11494,14 @@
       ],
       "To": [
         "Para"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
       ]
     },
     "Label, credit card": {
@@ -12918,6 +13196,12 @@
         "Soporte para ${ n } dominios de correo electrónico personalizado"
       ]
     },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } correo de los últimos 30 días. Abierto de vez en cuando.",
+        "${ count } correos de los últimos 30 días. Abiertos de vez en cuando."
+      ]
+    },
     "ngc_access_banner: action": {
       "Try it now": [
         "Pruébalo ahora"
@@ -13196,6 +13480,9 @@
       "browser": [
         "navegador"
       ],
+      "Choose your inbox layout": [
+        "Cambiar el diseño de tu buzón"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Borra los correos electrónicos eliminados y spam después de 30 días."
       ],
@@ -13267,6 +13554,9 @@
       ],
       "You are all set!": [
         "¡Ya está todo listo!"
+      ],
+      "You can change this anytime in settings.": [
+        "Puedes cambiar esto en cualquier momento desde la configuración."
       ],
       "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
         "El dominio ${ domain } y la suscripción ${ subscriptionName } están listos para usar."
@@ -14209,6 +14499,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Progreso: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "clave de contenido"
+      ],
+      "hash key": [
+        "clave hash"
+      ],
+      "key": [
+        "clave"
+      ],
+      "membership": [
+        "pertenencia"
+      ],
+      "name": [
+        "nombre"
       ]
     },
     "Property type": {
@@ -15327,10 +15637,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con características prémium"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } día restante",
-        "${ dayDiff } días restantes"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
       ],
@@ -15565,20 +15871,11 @@
       "What you give up when you cancel ${ planName }": [
         "A qué renuncias cuando cancelas ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Cuando canceles ${ planName }, se te pasará a ${ BRAND_NAME } Free el cual ofrece hasta 1 GB de almacenamiento en Mail y hasta 5 GB en Drive. También perderás cualquier bonificación de almacenamiento recibida anteriormente."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Cuando canceles ${ planName }, se te pasará a ${ BRAND_NAME } Free el cual ofrece hasta 1 GB de almacenamiento en Mail y hasta 5 GB en Drive. Tu equipo experimentará interrupciones en su trabajo debido a que los usuarios adicionales no están soportados en el plan gratuito."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando tu suscripción a ${ planName } termine el ${ expiryDate }, pasarás al plan gratuito ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Bono de almacenamiento gratuito al año"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Aún tienes ${ expiryDate } en la suscripción de ${ planName }. Añadiremos los créditos por el tiempo restante a la cuenta de ${ BRAND_NAME }. Asegúrate de no exceder los límites del plan gratuito antes de cancelar. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Tu plan ${ planName } no solo mantiene seguro los datos y comunicaciones de tu negocio. Respalda tus objetivos de cumplimiento, hace que tu negocio se destaque y mantiene a tu equipo conectado."
@@ -15929,10 +16226,10 @@
         "Movido a ${ label }. Los mensajes similares se clasificarán allí en el futuro."
       ],
       "One-time codes disabled": [
-        "Códigos de uso único desactivados"
+        "Códigos de un solo uso desactivados"
       ],
       "One-time codes enabled": [
-        "Códigos de uso único activados"
+        "Códigos de un solo uso activados"
       ],
       "Password copied to clipboard": [
         "Se ha copiado la contraseña al portapapeles."
@@ -15975,6 +16272,14 @@
       ],
       "Undo in progress": [
         "Deshacer en progreso"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Dado de baja de ${ count } listas de correo y sus mensajes movidos a Archive.",
+        "Dado de baja de ${ count } listas de correo y sus mensajes movidos a Archive."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Se dio de baja de la lista de correo ${ count }.",
+        "Dado de baja de la lista de correo ${ count }."
       ],
       "Verification successful": [
         "Verificación completada"
@@ -16563,9 +16868,6 @@
       "Enhance security with 2FA": [
         "Mejora la seguridad con 2FA"
       ],
-      "Enter your password": [
-        "Introduce tu contraseña"
-      ],
       "Error": [
         "Error"
       ],
@@ -17126,9 +17428,6 @@
       "Start import process": [
         "Iniciar el proceso de importación"
       ],
-      "Start with a cleaner Inbox": [
-        "Empieza por ordenar tu bandeja de entrada"
-      ],
       "Storage capacity warning": [
         "Advertencia de capacidad de almacenamiento"
       ],
@@ -17219,6 +17518,9 @@
       ],
       "Verification failed": [
         "Error de verificación"
+      ],
+      "Verify it’s you": [
+        "Verifica que eres tú"
       ],
       "Verify your password": [
         "Verifica tu contraseña"
@@ -17532,6 +17834,71 @@
       ],
       "Replay video": [
         "Reproducir video"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuario"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartido"
+      ],
+      "10 years": [
+        "10 años"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una capa de mayor capacidad con servidores ${ VPN_APP_NAME }: mucho menos personas comparten cada uno, y utilizan ${ BRAND_NAME } con direcciones IP propias. Quick Connect las selecciona automáticamente donde estén disponibles."
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Custom email domains": [
+        "Personalizar dominios de correo electrónico"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Llamado así por el financiamiento colectivo de los simpatizantes que hicieron posible ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } en 2014. Todos los servicios premium ${ BRAND_NAME } en un solo plan."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuevos ${ BRAND_NAME } servicios sin costo adicional"
+      ],
+      "Password vaults": [
+        "Bóveda de contraseñas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Correo premium, Calendario, Drive y Pass"
+      ],
+      "Previous versions": [
+        "Versiones anteriores"
+      ],
+      "Storage": [
+        "Almacenamiento"
+      ],
+      "Subscribers only": [
+        "Solo suscriptores"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra reservados para usted"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Hasta ${ limit }"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN de inmediato"
       ]
     },
     "VPN B2B cancellation reason": {

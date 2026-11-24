@@ -477,14 +477,17 @@
       "Dismiss": [
         "Afvis"
       ],
+      "Dismiss notification": [
+        "Luk notifikation"
+      ],
       "Display navigation bar": [
         "Fremvis navigationsbjælke"
       ],
       "Dock to side panel": [
         "Fastgør til sidepanel"
       ],
-      "Don't show this offer again": [
-        "Vis ikke dette tilbud igen"
+      "Don't show this again": [
+        "Vis ikke igen"
       ],
       "Done": [
         "Udført"
@@ -692,6 +695,9 @@
       ],
       "Go to settings": [
         "Gå til indstillinger"
+      ],
+      "Go to today": [
+        "Gå til i dag"
       ],
       "Google": [
         "Google"
@@ -1045,6 +1051,9 @@
       "Next": [
         "Næste"
       ],
+      "Next contact": [
+        "Næste kontakt"
+      ],
       "Next conversation": [
         "Næste samtale"
       ],
@@ -1125,6 +1134,9 @@
       ],
       "Previous": [
         "Forrige"
+      ],
+      "Previous contact": [
+        "Forrige kontakt"
       ],
       "Previous conversation": [
         "Forrige samtale"
@@ -1474,6 +1486,9 @@
       "Skip": [
         "Spring over"
       ],
+      "Skip to main content": [
+        "Spring til hovedindholdet"
+      ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
@@ -1575,10 +1590,6 @@
       ],
       "Trust": [
         "Hav tillid til"
-      ],
-      "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1696,6 +1707,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Brug din mus til at ændre på størrelsen af visningen. Hvis du bruger dit tastatur, kan du bruge venstre og højre piletast til at ændre størrelsen."
+      ],
+      "Use “${ label }” setting": [
+        "Brug “${ label }” indstilling"
       ],
       "Verify": [
         "Bekræft"
@@ -2123,6 +2137,11 @@
         "Din gratis prøveperiode udløber om ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Luk"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium adgangskodeadministrator"
@@ -2131,6 +2150,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbud ikke tilgængeligt"
       ]
     },
     "BF2024: Deal details": {
@@ -4778,6 +4802,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Det kræver en besked for at oprette en rapport om krænkelse af ophavsretten eller stjålet data"
+      ],
       "A problem occurred, please try again.": [
         "Der opstod et problem. Prøv igen."
       ],
@@ -4829,17 +4856,38 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
+      "Bookmark password is not available": [
+        "Adgangskoden for bogmærket er ikke tilgængeligt"
+      ],
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan ikke tilføj et foto til et album uden et gyldigt navn"
+      ],
+      "Cannot download a folder": [
+        "Kan ikke downloade en mappe"
+      ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakt"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan ikke flytte et element uden et gyldigt navn – omdøb det først"
       ],
       "Cannot send an empty message. Message is not sent.": [
         "Der kan ikke sendes en tom besked. Beskeden er ikke sendt."
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Udløb kan ikke indstilles til et tidspunkt senere end hvad opbevaringspolitikken tillader."
+      ],
+      "Cannot share root folder": [
+        "Kan ikke dele rodmappen"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekræfte forfatteren af filen"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan ikke bekræfte hvem, der uploadede filen"
       ],
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
@@ -4881,14 +4929,47 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
       ],
+      "Copy operation aborted": [
+        "Kopiering afbrudt"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering af et element til udenfor en mappe er ikke tilladt"
+      ],
+      "Could not find an available name": [
+        "Kunne ikke finde et tilgængeligt navn"
+      ],
       "Could not grant access to the organization key": [
         "Kunne ikke give adgang til organistationsnøglen"
+      ],
+      "Could not load sharing details": [
+        "Kunne ikke indlæse oplysninger om deling"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kunne ikke indlæse forhåndsvisningen: ${ message }"
       ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
       ],
       "Could not open updated vault": [
         "Kunne ikke åbne den opdaterede boks"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunne ikke læse en del af denne fil: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunne ikke låse op for den overordnede mappe"
+      ],
+      "Could not unlock this item": [
+        "Kunne ikke låse op for dette element"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Oprettelse af dokumenter udenfor mapper er ikke tilladt"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Oprettelse af filer udenfor mapper er ikke tilladt"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Oprettelse af mapper udenfor mapper er ikke tilladt"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
@@ -4900,6 +4981,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Fravælg mindst ${ calendarsToFixCount } kalender eller",
         "Fravælg mindst ${ calendarsToFixCount } kalendere eller"
+      ],
+      "Device not found": [
+        "Enheden blev ikke fundet"
       ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
@@ -4952,11 +5036,38 @@
       "Error while uploading attachments. Message is not sent.": [
         "Der opstod en fejl under upload af vedhæftede filer. Besked er ikke afsendt."
       ],
+      "Expiration date cannot be in the past": [
+        "Udløbsdatoen kan ikke være i fortiden"
+      ],
       "Failed loading group members": [
         "Kunne ikke indlæse gruppemedlemmer"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kunne ikke dekryptere bogmærkets nøgle: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kunne ikke dekryptere bogmærkets navn: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunne ikke dekryptere adgangskoden til bogmærket: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kunne ikke dekryptere indholdsnøglen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunne ikke dekryptere navnet på elementet: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Kunne ikke dekryptere knudens nøgle: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kunne ikke dekryptere revision metadata"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering af vedhæftning mislykkedes. Forsøg igen."
+      ],
+      "Failed to get inviter keys": [
+        "Kunne ikke hente invitationsnøgler"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
@@ -4966,6 +5077,15 @@
       ],
       "Failed to open to contact": [
         "Kunne ikke oprette kontakten"
+      ],
+      "Failed to verify invitation": [
+        "Kunne ikke bekræfte invitationen"
+      ],
+      "File download failed due to empty response": [
+        "Kunne ikke downloade på grund af tomt svar"
+      ],
+      "File has no revision": [
+        "Filen har ingen revisioner"
       ],
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
@@ -4978,6 +5098,9 @@
       ],
       "Forward address is required": [
         "Adresse til videresendelse er påkrævet."
+      ],
+      "Image preview not found": [
+        "Forhåndsvisning ikke fundet"
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
@@ -5018,20 +5141,32 @@
       "Invalid public key file": [
         "Ugyldig offentlig nøglefil"
       ],
+      "Invalid URL": [
+        "Ugyldig URL"
+      ],
       "Invalid VAT number": [
         "Ugyldigt VAT-/momsnummer"
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Invitation not found": [
+        "Invitation ikke fundet"
+      ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
+      ],
+      "Item not found": [
+        "Element ikke fundet"
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
       "Last name is too long": [
         "Efternavn er for langt"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Legacy offentlige links kan ikke opdateres. Opret et nyt offentligt link."
       ],
       "Maximum expiration time reached.": [
         "Maksimal udløbstid nået."
@@ -5049,14 +5184,36 @@
       "Message processing error.": [
         "Fejl i meddelelsesbehandling."
       ],
+      "Missing inviter email": [
+        "Mangler invitations-e-mail"
+      ],
       "Missing key packet": [
         "Manglende nøglepakke"
       ],
       "Missing signature": [
         "Manglende signatur"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Mangler signatur for ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flytning afbrudt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytning af et element til udenfor en mappe er ikke tilladt"
+      ],
+      "Moving root item is not allowed": [
+        "Flytning af rodelementet er ikke tilladt"
+      ],
       "Name is required": [
         "Navn er påkrævet"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må højst være på ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må højst være på ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
+      "Name must not be empty": [
+        "Navnet må ikke være tomt"
       ],
       "Network error": [
         "Netværksfejl"
@@ -5085,6 +5242,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ingen ekstern nøgle hentet for brugeren er gyldig til afsendelse"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata blev modtaget. Prøv igen."
+      ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
@@ -5099,14 +5259,20 @@
         "En af grupperne har ingen kontakter: ${ noContactGroupList }",
         "Nogle grupper har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Kun admins kan konvertere eksterne invitationer"
+      ],
+      "Operation aborted": [
+        "Handling afbrudt"
+      ],
+      "Operation failed, try again later": [
+        "Handlingen mislykkedes, prøv igen sere"
+      ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisationsnøglen skal aktiveres for at oprette inviterede brugere"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
+      "Part of the file appears to be corrupted": [
+        "En del af filen er tilsyneladende beskadiget"
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
@@ -5128,6 +5294,12 @@
       ],
       "Permissions request failed.": [
         "Tilladelsesanmodning mislykkedes."
+      ],
+      "Photo is already in the target album": [
+        "Fotoet er allerede i destinationsalbummet"
+      ],
+      "Photo not found": [
+        "Foto ikke fundet"
       ],
       "Please activate your search again": [
         "Aktiver venligst din søgning igen"
@@ -5221,6 +5393,12 @@
         "Duplikeret modtager fjernet: ${ recipents }",
         "Duplikerede modtagere fjernet: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "Omdøbning af rodelementet er ikke tilladt"
+      ],
+      "Request aborted": [
+        "Forespørgsel afbrudt"
+      ],
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
@@ -5233,6 +5411,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Afsendelse af vedhæftede filer er begrænset, så længe du overskrider dine abonnementsbegrænsninger, eller indtil du opgraderer dit abonnement."
       ],
+      "Signature is missing": [
+        "Signaturen mangler"
+      ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
       ],
@@ -5242,11 +5423,29 @@
       "Signature verification failed": [
         "Bekræftelse af signatur mislykkedes"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturbekræftelse mislykkedes: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturbekræftelse for ${ signatureType } mislykkedes"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturbekræftelse for ${ signatureType } mislykkedes: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Nogle kontakter kunne ikke slettes"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Noget fildata kunne ikke uploades. Prøv igen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Nogle fildele kunne ikke uploades. Prøv igen."
+      ],
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
+      ],
+      "Some items could not be loaded": [
+        "Nogle elementer kunne ikke indlæses"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
@@ -5262,6 +5461,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
       ],
       "Something went wrong while converting the address": [
         "Noget gik galt under konverteringen af adressen"
@@ -5327,14 +5529,14 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Det mindste donationsbeløb er ${ price }"
-      ],
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Systemet er optaget i øjeblikket. Prøv igen om et par minutter."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uploadede fil matcher ikke den originale. Prøv igen."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Skriveassistenten kan ikke gå videre med din anmodning. Prøv venligst en anden besked."
@@ -5366,8 +5568,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
+      "This file has missing crypto material": [
+        "Denne fil mangler krypto-materiale"
+      ],
+      "This file has no version available to download": [
+        "Filen har ingen versioner, der kan downloades"
+      ],
+      "This file version could not be uploaded": [
+        "Denne filversion kunne ikke uploades"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn."
+      ],
+      "This item has no image preview": [
+        "Dette element har ingen forhåndsvisning"
+      ],
+      "This item is no longer shared": [
+        "Dette element er ikke længere delt"
+      ],
+      "This item is not shared": [
+        "Dette element er ikke delt"
       ],
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
@@ -5380,6 +5600,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+      ],
+      "Too many server errors, please try again later": [
+        "For mange serverfejl, prøv igen senere"
+      ],
+      "Too many server requests, please try again later": [
+        "For mange serverforespørgsler, prøv igen senere"
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -5414,6 +5640,12 @@
       "VAT number must start with ${ prefixes }": [
         "Momsnummer skal starte med ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Bekræftelsesnøgler er ikke tilgængelige"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Bekræftelsesnøgler til ${ signatureType } er ikke tilgængelige"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekræftelseskode ved hjælp af denne metode."
       ],
@@ -5426,6 +5658,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
       ],
+      "You can create public links for your own files only": [
+        "Du kan kun oprette et offentligt link for dine egne filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan kun forlade elementer, som er delt med dig"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan kun uploade en ny version af en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan kun opdatere et offentligt link for dine egne filer"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtagere"
@@ -5436,6 +5680,12 @@
       ],
       "You did not provide a file.": [
         "Du har ikke angivet en fil."
+      ],
+      "You do not have access to this item": [
+        "Du har ikke adgang til dette element"
+      ],
+      "You do not have access to this shared item": [
+        "Du har ikke adgang til dette delte element"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
@@ -7254,6 +7504,9 @@
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
+      ],
+      "Author is not provided on public link": [
+        "Forfatter er ikke angivet på offentligt link"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Fjern automatisk e-mails, der er flyttet til papirkurven og spam for mere end 30 dage siden."
@@ -9360,9 +9613,6 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
-      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Vi har identificeret nogle mailinglister, som du ikke læser. Du kan afmelde dem med ét klik."
-      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Vi har abonnementer, der er designet specifikt til brugere som dig, der har brug for mere end én e-mailadresse."
       ],
@@ -9464,6 +9714,9 @@
       ],
       "writing assistant iframe": [
         "skriveassistentens iframe"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Pladser til skriveassistenten sælges ikke længere."
       ],
       "Yearly": [
         "Årlig"
@@ -10214,9 +10467,6 @@
       "Apply to future messages": [
         "Anvendes for fremtidige meddelelser"
       ],
-      "Archive": [
-        "Arkivér"
-      ],
       "At": [
         "Til"
       ],
@@ -10931,10 +11181,6 @@
       "Search in": [
         "Søg i"
       ],
-      "Select all ${ count } unused sender": [
-        "Vælg ${ count } ubrugt afsender",
-        "Vælg alle ${ count } ubrugte afsendere"
-      ],
       "Select which Gmail address to connect": [
         "Vælg hvilken Gmail-adresse der skal forbindes"
       ],
@@ -10976,9 +11222,6 @@
       ],
       "Sort": [
         "Sortér"
-      ],
-      "Spam": [
-        "Spam"
       ],
       "Starred": [
         "Stjernemarkeret"
@@ -11060,9 +11303,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaktioner - Kvitteringer, reservationer, regninger og ordrer"
-      ],
-      "Trash": [
-        "Papirkurv"
       ],
       "Undisclosed Recipients": [
         "Oplyste modtagere"
@@ -11209,6 +11449,14 @@
       ],
       "To": [
         "Til"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
       ]
     },
     "Label, credit card": {
@@ -11598,6 +11846,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Basic forbrug"
+      ],
+      "5x Plus usage": [
+        "5x Plus forbrug"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API-adgang med ${ credit } i kredit om måneden"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API-adgang med ${ credit } i kredit om måneden per bruger"
+      ],
+      "Everything in Basic, and:": [
+        "Alt i Basic, og:"
+      ],
+      "Everything in Free, and:": [
+        "Alt i Free, og:"
+      ],
+      "Everything in Plus, and:": [
+        "Alt i Plus, og:"
+      ],
+      "Extended image generation": [
+        "Udvidet billedegenerering"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "Limited image generation": [
+        "Begrænset billedegenerering"
+      ],
+      "Limited messages and chat history": [
+        "Begrænset besked- og chathistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begrænsede skills, projekter og planlagte opgaver"
+      ],
+      "Maximum image generation": [
+        "Maksimal billedegenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimale Skills og Projekter"
+      ],
+      "More image generation": [
+        "Mere billedegenerering"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Flere skills, projekter og planlagte opgaver"
+      ],
+      "More usage": [
+        "Mere forbrug"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Til at kode og bygge"
+      ],
+      "For everyday chats": [
+        "Til hverdagsbrug"
+      ],
+      "For getting more done": [
+        "For at få meget gjort"
       ]
     },
     "Mail import summary": {
@@ -14129,6 +14444,26 @@
         "Fremskridt: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "attributter"
+      ],
+      "content key": [
+        "indholdsnøgle"
+      ],
+      "hash key": [
+        "hash-nøgle"
+      ],
+      "key": [
+        "nøgle"
+      ],
+      "membership": [
+        "medlemsskab"
+      ],
+      "name": [
+        "navn"
+      ]
+    },
     "Property type": {
       "Address": [
         "Adresse"
@@ -15245,10 +15580,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag tilbage",
-        "${ dayDiff } dage tilbage"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
       ],
@@ -15483,20 +15814,11 @@
       "What you give up when you cancel ${ planName }": [
         "Dette frasiger du dig, når du opsiger ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du opsiger ${ planName }, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB Mail-lagerplads og op til 5 GB Drive-lagerplads. Desuden mister du alle tidligere tildelte lagerplads-bonusser."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Ved opsigelse af ${ planName } bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB mail-lagerplads og op til 5 GB drev-lagerplads. Dit team vil opleve afbrydelser i deres arbejde, eftersom yderligere brugere ikke understøttes på det gratis abonnement."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når dit ${ planName }-abonnement udløber ${ expiryDate }, vil du blive nedgraderet til abonnementet ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagerbonusser"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "På dit ${ planName }-abonnement gælder udløbsdato ${ expiryDate }stadig. Vi indsætter pengene for den resterende tid på din ${ BRAND_NAME }-konto. Sørg for at overholde grænserne for den gratis pakke før opsigelsen. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
@@ -16481,9 +16803,6 @@
       "Enhance security with 2FA": [
         "Forøg sikkerheden med 2FA"
       ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
       "Error": [
         "Fejl"
       ],
@@ -17038,14 +17357,14 @@
       "Snooze:": [
         "Udsæt:"
       ],
+      "Special offer": [
+        "Special tilbud"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
       "Start import process": [
         "Start importeringsprocessen"
-      ],
-      "Start with a cleaner Inbox": [
-        "Start med en mere ryddelig indbakke"
       ],
       "Storage capacity warning": [
         "Advarsel om lagerkapacitet"
@@ -17137,6 +17456,9 @@
       ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
+      ],
+      "Verify it’s you": [
+        "Bekræft at det er dig"
       ],
       "Verify your password": [
         "Bekræft din adgangskode"
