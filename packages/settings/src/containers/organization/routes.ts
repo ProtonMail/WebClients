@@ -4,6 +4,7 @@ import type { SectionConfig, SidebarConfig } from '@proton/components/containers
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { getAccessControlPageAvailability } from '@proton/console/organization/getAccessControlPageAvailability';
 import { getActivityMonitorPageAvailability } from '@proton/console/organization/getActivityMonitorPageAvailability';
+import { getGatewaysPageAvailability } from '@proton/console/organization/getGatewaysPageAvailability';
 import { getGroupsPageAvailability } from '@proton/console/organization/getGroupsPageAvailability';
 import { getOrganizationKeysPageAvailability } from '@proton/console/organization/getOrganizationKeysPageAvailability';
 import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
@@ -299,7 +300,7 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Gateways`,
             to: '/gateways',
             icon: IcServers,
-            available: permissions['account.gateway.read'] && entitlements.hasDedicatedIpsOrIsVpnB2B,
+            available: getGatewaysPageAvailability({ entitlements, permissions }).gateways,
             subsections: [
                 {
                     id: 'servers',

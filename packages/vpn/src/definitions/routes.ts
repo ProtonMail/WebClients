@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
+import { getGatewaysPageAvailability } from '@proton/console/organization/getGatewaysPageAvailability';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
@@ -250,9 +251,7 @@ const routesDefinition = {
                             id: 'organization.vpn.gateways',
                             label: () => c('Title').t`Gateways`,
                             to: '/gateways',
-                            isVisible: ({ context }) =>
-                                context.permissions['account.gateway.read'] &&
-                                context.entitlements.hasDedicatedIpsOrIsVpnB2B,
+                            isVisible: ({ context }) => getGatewaysPageAvailability(context).gateways,
                             sections: [{ id: 'organization.vpn.gateways.servers', to: 'servers' }],
                         },
                         {
