@@ -14,6 +14,8 @@
 	overflow: hidden;
 	border: 0;
 	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap; // otherwise each word wraps to its own line in the 1px box, and some screen readers read them run together
 }
 
 /* sr-only until it has keyboard focus, then shown in the top start corner, e.g. a skip link: class="sr-only sr-only-focusable" */
@@ -28,6 +30,8 @@
 	margin: 0;
 	overflow: visible;
 	clip: auto;
+	clip-path: none;
+	white-space: normal;
 	border: 1px solid var(--border-norm);
 	border-radius: var(--border-radius-full);
 	background-color: var(--background-norm);

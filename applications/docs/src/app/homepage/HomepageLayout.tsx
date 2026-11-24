@@ -8,7 +8,7 @@ const MAIN_CONTENT_ID = 'main-content'
 // Proton's `.sr-only-focusable` (packages/styles/scss/utilities/_visibility.scss): shown in the top start corner
 // while it has the keyboard focus.
 const SKIP_LINK_CLASS_NAME =
-  'sr-only focus:start-2 focus:top-2 focus:z-[2] focus:h-auto focus:w-auto focus:overflow-visible focus:whitespace-normal focus:[clip:auto] focus:m-0 focus:rounded-full focus:border-[1px] focus:border-solid focus:border-[--border-norm] focus:bg-[--background-norm] focus:px-4 focus:py-2 focus:font-semibold focus:text-[--text-norm] focus:no-underline'
+  'sr-only focus:start-2 focus:top-2 focus:z-[2] focus:h-auto focus:w-auto focus:overflow-visible focus:whitespace-normal focus:[clip:auto] focus:[clip-path:none] focus:m-0 focus:rounded-full focus:border-[1px] focus:border-solid focus:border-[--border-norm] focus:bg-[--background-norm] focus:px-4 focus:py-2 focus:font-semibold focus:text-[--text-norm] focus:no-underline'
 
 export type HomepageLayoutProps = {
   sidebar: ReactNode
