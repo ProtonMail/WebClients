@@ -46,7 +46,9 @@ const CheckoutForm = ({ onPaymentTokenProcessed }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
     const formRef = useRef<HTMLFormElement>(null);
 
-    const [submitting, withSubmitting] = useLoading();
+    const [processing, withSubmitting] = useLoading();
+    const [signingUp, withSigningUp] = useLoading();
+    const submitting = processing || signingUp;
 
     const { options } = payments;
 
@@ -62,7 +64,8 @@ const CheckoutForm = ({ onPaymentTokenProcessed }: Props) => {
         billingAddress: options.billingAddress,
         onChargeable: async (operations, data) => {
             signup.submitPaymentData(options, data);
-            return onPaymentTokenProcessed(companyRef.current);
+            // Keeps Pay disabled until the signup is done: the processor doesn't wait for onChargeable
+            return withSigningUp(onPaymentTokenProcessed(companyRef.current));
         },
         paymentStatus: payments.paymentStatus,
         flow: 'signup',
