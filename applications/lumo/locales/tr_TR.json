@@ -32,6 +32,9 @@
       "Add credit / debit card": [
         "Kredi ya da banka kartı ekle"
       ],
+      "Always allow this tool in Settings": [
+        "Ayarlar bölümünden bu araca her zaman izin verin"
+      ],
       "Answer now": [
         "Şimdi yanıtla"
       ],
@@ -150,6 +153,9 @@
       ],
       "Dismiss notification": [
         "Bildirimi yok say"
+      ],
+      "Don't ask again for this tool": [
+        "Bu araç için bir daha sorulmasın"
       ],
       "Done": [
         "Tamam"
@@ -355,9 +361,6 @@
       "Save": [
         "Kaydet"
       ],
-      "Saving...": [
-        "Kaydediliyor..."
-      ],
       "Scroll to bottom": [
         "En alta kaydır"
       ],
@@ -512,6 +515,9 @@
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
+      ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
       ],
@@ -535,6 +541,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } lisansı",
@@ -623,6 +633,11 @@
         "Aboneliği sürdür"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Kapat"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
@@ -631,6 +646,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif kullanılamıyor"
       ]
     },
     "BF2024: Deal details": {
@@ -1090,6 +1110,9 @@
       "Delete memory": [
         "Belleği sil"
       ],
+      "Download the desktop app": [
+        "Bilgisayar uygulamasını indirin"
+      ],
       "Draw a sketch": [
         "Bir taslak çiz"
       ],
@@ -1111,8 +1134,14 @@
       "Generate workflow": [
         "İş akışı oluştur"
       ],
-      "Hide usage details for ${ member.name }": [
-        "${ member.name } için kullanım ayrıntılarını gizle"
+      "Get ${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus edinin"
+      ],
+      "Get started": [
+        "Başlayalım"
+      ],
+      "Got it": [
+        "Anladım"
       ],
       "I like this response": [
         "Bu yanıtı beğendim"
@@ -1136,7 +1165,7 @@
         "Hesaba otomatik ekleme ve harcama sınırı yönetimi"
       ],
       "Manage balance": [
-        "Hesapta kalan tutar yönetimi"
+        "Hesap tutarı yönetimi"
       ],
       "Manage connectors": [
         "Bağlayıcı yönetimi"
@@ -1152,6 +1181,9 @@
       ],
       "New chat": [
         "Yeni sohbet"
+      ],
+      "Next": [
+        "İlerle"
       ],
       "Not now": [
         "Şimdi değil"
@@ -1186,6 +1218,9 @@
       "Send message": [
         "İletiyi gönder"
       ],
+      "Set up a connector": [
+        "Bir bağlayıcı ayarlayın"
+      ],
       "Share your thoughts": [
         "Düşüncelerinizi paylaşın"
       ],
@@ -1194,6 +1229,9 @@
       ],
       "Skills": [
         "Yetenekler"
+      ],
+      "Start chatting": [
+        "Sohbet etmeye başla"
       ],
       "Start generating": [
         "Üretmeye başlayın"
@@ -1217,7 +1255,7 @@
         "${ member.name } için API erişimini aç/kapat"
       ],
       "Top up balance": [
-        "Hesapta kalan tutara ek yap"
+        "Hesap tutarına ekleme yap"
       ],
       "Try again": [
         "Yeniden dene"
@@ -1233,6 +1271,9 @@
       ],
       "Turn on memory": [
         "Belleği aç"
+      ],
+      "Turn on notifications": [
+        "Bildirimleri aç"
       ],
       "Update from chats": [
         "Sohbetlerden güncelle"
@@ -1365,6 +1406,9 @@
       ],
       "Unlimited Projects": [
         "Sınırsız proje"
+      ],
+      "Unlimited skills": [
+        "Sınırsız sayıda yetenek"
       ],
       "Video meetings": [
         "Görüntülü görüşmeler"
@@ -1541,11 +1585,17 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "İlerlediğinizde, model menüsünde seçilmiş model olarak Apertus görüntülenir. Bu menüden istediğiniz zaman başka bir modele geçebilirsiniz."
       ],
+      "Ask questions, explore ideas, and get things done. Your conversations stay private, even from us.": [
+        "Sorular sorun, fikirleri keşfedin ve işleri yapın. Yazışmalarınız bizden bile gizli kalır."
+      ],
       "Choose the language you speak when using dictation.": [
         "Yazıya dönüştürme kullanırken konuşacağınız dili seçin."
       ],
       "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
         "Bilgisayar ayarları penceresinde uygulama ayarlarını, klavye kısayollarını ve güncellemeleri yapılandırın."
+      ],
+      "Connect an app or local folder so ${ LUMO_SHORT_APP_NAME } can help you find information, catch up on emails, and work with your files.": [
+        "Bir uygulama veya yerel klasör bağlayın. Böylece ${ LUMO_SHORT_APP_NAME } bilgileri bulmanıza, e-postaları yakalamanıza ve dosyalarınızla çalışmanıza yardımcı olabilir."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Betikleriniz ve araçlarınız ile ${ LUMO_SHORT_APP_NAME } bütünleştirmesi için bir anahtar oluşturun."
@@ -1558,6 +1608,12 @@
       ],
       "Fully open, Swiss-made model for lighter tasks": [
         "Daha hafif işler için tümüyle açık, İsviçre modeli"
+      ],
+      "Get notified when ${ LUMO_SHORT_APP_NAME } finishes a task or needs your approval. Change this anytime in Settings.": [
+        "${ LUMO_SHORT_APP_NAME } bir görevi bitirdiğinde veya onayınıza gerek duyduğunda bildirim alın. Bunu istediğiniz zaman Ayarlar bölümünden değiştirebilirsiniz."
+      ],
+      "Give ${ LUMO_SHORT_APP_NAME } access to your emails, messages, and files through connections that run locally on your device.": [
+        "Aygıtınızda yerel olarak çalışan bağlantılar ile ${ LUMO_SHORT_APP_NAME } için e-postalarınıza, iletilerinize ve dosyalarınıza erişin."
       ],
       "High-performance model for complex tasks": [
         "Karmaşık görevler için yüksek başarımlı model"
@@ -1595,6 +1651,9 @@
       "Memory lets ${ LUMO_SHORT_APP_NAME } remember stable preferences and context across general chats so you don't have to repeat yourself.": [
         "Bellek ${ LUMO_SHORT_APP_NAME } uygulamasının genel sohbetlerdeki kalıcı seçimleri ve bağlamı anımsamasını sağlar. Böylece kendinizi tekrarlamak zorunda kalmazsınız."
       ],
+      "More room for your ideas, projects, and everyday tasks. Upgrade for higher limits and unlimited projects and skills.": [
+        "Fikirleriniz, projeleriniz ve günlük görevleriniz için daha fazla alan. Daha yüksek sınırlar ve sınırsız sayıda proje ve yetenek için tarifenizi yükseltin."
+      ],
       "More thorough answers, but can take longer": [
         "Daha kapsamlı yanıt, ancak daha uzun sürebilir"
       ],
@@ -1615,6 +1674,18 @@
       ],
       "Reset the encrypted search index for your chats and Drive files.": [
         "Sohbetlerinizin ve Drive dosyalarınızın şifrelenmiş arama dizinini sıfırlar."
+      ],
+      "Save instructions and preferences that ${ LUMO_SHORT_APP_NAME } automatically applies across chats.": [
+        "${ LUMO_SHORT_APP_NAME } tarafından sohbetlerde otomatik olarak uygulanacak yönergeleri ve ayarları kaydedin."
+      ],
+      "Save instructions for tasks you do often, or start from ${ BRAND_NAME }'s skills. Type / in any chat to use one.": [
+        "Sık yaptığınız görevler için yönergeleri kaydedin veya ${ BRAND_NAME } yeteneklerini kullanmaya başlayın. Bir yeteneği kullanmak için herhangi bir sohbet içinde / yazın."
+      ],
+      "Schedule morning briefings, weekly recaps, and other recurring tasks. ${ LUMO_SHORT_APP_NAME } notifies you when they’re done.": [
+        "Sabah özetlerini, haftalık özetleri ve diğer yinelenen görevleri zamanlayın. İşlem tamamlandığında ${ LUMO_SHORT_APP_NAME } sizi bilgilendirir."
+      ],
+      "Set up recurring tasks like morning briefings, weekly recaps, and more.": [
+        "Sabah özetleri, haftalık özetler ve diğer yinelenen görevleri ayarlayın."
       ],
       "Show animated background on the home screen": [
         "Girişte canlandırılmış arka planı görüntüler"
@@ -1652,6 +1723,12 @@
       "Which other chats can ${ LUMO_SHORT_APP_NAME } look up. Ghost chats are never searched.": [
         "${ LUMO_SHORT_APP_NAME } hangi diğer sohbetleri arayabilir? Hayalet sohbetler asla aranmaz."
       ],
+      "Work with ${ MAIL_APP_NAME }, local folders, Slack, and more.": [
+        "${ MAIL_APP_NAME }, yerel klasörler, Slack ve daha fazlası ile çalışın."
+      ],
+      "You can download it on your computer later.": [
+        "Daha sonra bilgisayarınıza indirebilirsiniz."
+      ],
       "You can learn more on the ${ protonBlogLink }.": [
         "${ protonBlogLink } üzerinden ayrıntılı bilgi alabilirsiniz."
       ],
@@ -1675,6 +1752,12 @@
       ]
     },
     "collider_2025: Error": {
+      "A top-up is already in progress. Try again in a minute.": [
+        "Sürmekte olan bir hesaba ekleme işlemi var. Bir dakika sonra yeniden deneyin."
+      ],
+      "API access could not be loaded.": [
+        "API erişimi yüklenemedi."
+      ],
       "Automatic top-up could not be saved. Please try again.": [
         "Hesaba otomatik ekleme kaydedilemedi. Lütfen yeniden deneyin."
       ],
@@ -1700,7 +1783,7 @@
         "Bu anahtarın kullanımı yüklenemedi."
       ],
       "Could not load usage.": [
-        "Kullanım bilgisi yüklenemedi."
+        "Kullanım bilgileri yüklenemedi."
       ],
       "Could not open the desktop settings": [
         "Bilgisayar ayarları açılamadı"
@@ -1795,6 +1878,9 @@
       "This slide deck couldn't be read.": [
         "Bu slayt sunumu okunamadı."
       ],
+      "Threshold must be a whole amount between ${ formattedMinThreshold } and ${ formattedMaxThreshold }": [
+        "Eşik değeri ${ formattedMinThreshold } ile ${ formattedMaxThreshold } arasında bir tam sayı olmalıdır"
+      ],
       "Top-up amount must be a whole amount between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
         "Hesaba eklenecek tutar ${ formattedMinAmount } ile ${ formattedMaxAmount } arasında bir tam sayı olmalıdır"
       ],
@@ -1815,6 +1901,9 @@
       ],
       "Your existing ${ LUMO_SHORT_APP_NAME } data could not be decrypted with your available account keys. Recover your account keys, then retry.": [
         "Var olan ${ LUMO_SHORT_APP_NAME } verilerinizin şifresi kulanılabilecek hesap anahtarları ile çözülemedi. Hesap anahtarlarınızı kullanıma alıp yeniden deneyin."
+      ],
+      "Your settings couldn't be loaded, so what you see may be out of date. Reload the page to try again.": [
+        "Ayarlarınız yüklenemedi. Bu nedenle gördükleriniz güncel olmayabilir. Yeniden denemek için sayfayı yeniden yükleyin."
       ]
     },
     "collider_2025: Error (file processing)": {
@@ -2006,6 +2095,74 @@
         "İstediğiniz zaman yeniden kapatabilirsiniz."
       ]
     },
+    "collider_2025: Illustration": {
+      "${ LUMO_SHORT_APP_NAME } for desktop": [
+        "Bilgisayar için ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } connected": [
+        "${ MAIL_APP_NAME } bağlandı"
+      ],
+      "2m ago": [
+        "2 dakika önce"
+      ],
+      "3 meetings today. 2 emails need a reply.": [
+        "Bugün 3 toplantı. 2 e-postanın yanıtlanması gerekiyor."
+      ],
+      "3 sources": [
+        "3 kaynak"
+      ],
+      "Approve your weekly recap": [
+        "Haftalık özetinizi onaylayın"
+      ],
+      "Budget skill": [
+        "Bütçe yeteneği"
+      ],
+      "Dinner": [
+        "Akşam yemeği"
+      ],
+      "Email check": [
+        "E-posta denetimi"
+      ],
+      "Flight AF 178 · Paris → Mexico City": [
+        "Uçuş AF 178 · Paris → Mexico City"
+      ],
+      "Flight AF 179 · Mexico City → Paris": [
+        "Uçuş AF 179 · Mexico City → Paris"
+      ],
+      "Hotel Casa Roma": [
+        "Hotel Casa Roma"
+      ],
+      "Make a budget from this file.": [
+        "Bu dosyadan bir bütçe oluşturun."
+      ],
+      "Mexico City": [
+        "Mexico City"
+      ],
+      "Morning brief is ready": [
+        "Sabah özeti hazır"
+      ],
+      "Morning brief · 8:00 AM": [
+        "Sabah özeti · 8:00 AM"
+      ],
+      "now": [
+        "şimdi"
+      ],
+      "Review it in ${ LUMO_SHORT_APP_NAME } before sharing to Slack.": [
+        "Slack ile paylaşmadan önce ${ LUMO_SHORT_APP_NAME } içinde gözden geçirin."
+      ],
+      "Stays on this device": [
+        "Bu aygıtta kalır"
+      ],
+      "Stock market": [
+        "Borsa"
+      ],
+      "Teotihuacán": [
+        "Teotihuacán"
+      ],
+      "Train status": [
+        "Eğitim durumu"
+      ]
+    },
     "collider_2025: Image alt": {
       "Image generation": [
         "Görsel oluşturma"
@@ -2054,9 +2211,6 @@
         "Bu yanıtın kalanının sığması için en az ilgili ${ droppedForBudget.length } dosya katılmadı.",
         "Bu yanıtın kalanının sığması için en az ilgili ${ droppedForBudget.length } dosya katılmadı."
       ],
-      "${ enabledMemberCount } of ${ members.length }": [
-        "${ enabledMemberCount } / ${ members.length }"
-      ],
       "${ expiringInOneDay } chat will expire in 1 day": [
         "${ expiringInOneDay } sohbetin geçerlilik süresi 1 gün içinde sona erecek",
         "${ expiringInOneDay } sohbetin geçerlilik süresi 1 gün içinde sona erecek"
@@ -2073,8 +2227,12 @@
         "${ fileCount } dosya",
         "${ fileCount } dosya"
       ],
+      "${ formattedCredits } credit": [
+        "${ formattedCredits } kredi",
+        "${ formattedCredits } kredi"
+      ],
       "${ formattedSpent } of ${ formattedLimit } bought automatically this month": [
-        "Bu ay ${ formattedSpent } / ${ formattedLimit } tutar otomatik olarak harcandı"
+        "Bu ay otomatik olarak ${ formattedSpent } / ${ formattedLimit } harcandı"
       ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
@@ -2129,8 +2287,8 @@
       "Add your key to the authorization header and call a model.": [
         "Anahtarınızı yetkilendirme üst bilgisine ekleyin ve bir modeli çağırın."
       ],
-      "Adding ${ formattedAmount } when your balance falls below ${ formattedThreshold }": [
-        "Hesabınızda kalan tutar ${ formattedThreshold } altına düştüğünde ${ formattedAmount } eklenir"
+      "Adding ${ formattedAmount } when your balance reaches ${ formattedThreshold }": [
+        "Bakiyeniz ${ formattedThreshold } seviyesine ulaştığında ${ formattedAmount } eklenecek"
       ],
       "Advanced account and network security in one plan": [
         "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
@@ -2147,20 +2305,14 @@
       "API key management is not available for your account at the moment.": [
         "Hesabınızda şu anda API anahtarı yönetimi kullanılamıyor."
       ],
-      "API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "API anahtarları ${ LUMO_SHORT_APP_NAME }+ ile birlikte gelir. Hesabınıza bir ${ LUMO_SHORT_APP_NAME } koltuğu ataması için kuruluş yöneticiniz ile görüşün."
-      ],
-      "API usage and balance are available for ${ LUMO_SHORT_APP_NAME }+ subscribers.": [
-        "API kullanımı ve hesapta kalan tutarı ${ LUMO_SHORT_APP_NAME }+ aboneleri kullanabilir."
-      ],
-      "API usage is available with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "API ${ LUMO_SHORT_APP_NAME }+ tarifesi ile kullanılabilir. Kuruluş yöneticinizden hesabınıza ${ LUMO_SHORT_APP_NAME } lisansı atamasını isteyin."
-      ],
       "API usage is not available for your account at the moment.": [
         "Şu anda hesabınızda API kullanımı yok."
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } yardımcısına istediğiniz her şeyi sorun"
+      ],
+      "Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account to use the API.": [
+        "API kullanabilmek için kuruluş yöneticinizden hesabınıza ${ LUMO_SHORT_APP_NAME } koltuğu atamasını isteyin."
       ],
       "Assign a ${ LUMO_SHORT_APP_NAME } seat to create a personal API key.": [
         "Kişisel bir API anahtarı oluşturmak için bir ${ LUMO_SHORT_APP_NAME } koltuğu atayın."
@@ -2178,7 +2330,7 @@
         "Otomatik olarak eşleştirildi"
       ],
       "Balance unavailable": [
-        "Hesabın kalan tutarı kullanılamıyor"
+        "Hesap tutarı kullanılamıyor"
       ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Tanıdık olmayan etki alanlarına veya abartılı alt etki alanlarına karşı dikkatli olun"
@@ -2186,8 +2338,8 @@
       "Build privacy-first assistants with streaming and persistent context.": [
         "Yayın akışı ve kalıcı bağlam özellikleriyle gizlilik odaklı yardımcılar oluşturun."
       ],
-      "Cached input ${ formattedCacheInput } per 1M tokens. Prices shown in USD.": [
-        "1 milyon belirteç başına ön belleğe alınmış giriş ${ formattedCacheInput }. Fiyatlar ABD dolarıdır."
+      "Cached input ${ formattedCacheInput } per 1M tokens.": [
+        "1 milyon token başına önbelleğe alınmış girdi ${ formattedCacheInput }."
       ],
       "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
         "Zincir araç çağrıları, uçtan uca çok adımlı işlem hatlarını düzenlemek için."
@@ -2201,14 +2353,17 @@
       "Chat expiring very soon": [
         "Sohbetin geçerlilik süresi çok yakında dolacak"
       ],
+      "Chat usage isn't broken down by model. Select All models to include it.": [
+        "Sohbet kullanımı modele göre ayrılmaz. Katılacak tüm modelleri seçin."
+      ],
       "Check this is the site you expect to visit": [
         "Bunun ziyaret etmeyi beklediğiniz site olduğundan emin olun"
       ],
       "Check your organization access and create credentials before making your first API request.": [
         "İlk API isteğinizi yapmadan önce kuruluş erişiminizi denetleyin ve kimlik doğrulama bilgilerini oluşturun."
       ],
-      "Configure member access for when a balance is available. Usage shown for ${ periodLabel }.": [
-        "Hesapta kalan tutar yeterli olduğunda üye erişimini yapılandırın. ${ periodLabel } kullanım bilgileri görüntüleniyor."
+      "Context estimate unavailable.": [
+        "Bağlam öngörüsü kullanılamıyor."
       ],
       "Context usage for this conversation": [
         "Bu yazışmanın bağlam kullanımı"
@@ -2246,6 +2401,9 @@
       "Domain name": [
         "Etki alanı adı"
       ],
+      "Downloading ${ LUMO_SHORT_APP_NAME } for desktop…": [
+        "Bilgisayar için ${ LUMO_SHORT_APP_NAME } indiriliyor…"
+      ],
       "Downloading (${ progressPct }%)": [
         "İndiriliyor (%${ progressPct })"
       ],
@@ -2261,8 +2419,8 @@
       "Error processing attachment": [
         "Ek dosya işlenirken sorun çıktı"
       ],
-      "Estimated API spend": [
-        "Öngörülen API harcaması"
+      "Estimated spend": [
+        "Öngörülen harcama"
       ],
       "Exceeds ${ maxSize } limit": [
         "${ maxSize } sınırını aşıyor"
@@ -2305,9 +2463,6 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Sorularınıza göre otomatik olarak alınan dosyalar."
-      ],
-      "For now, the threshold is fixed at ${ formattedThreshold }.": [
-        "Şimdilik, eşik ${ formattedThreshold } olarak sabitlendi."
       ],
       "For this chat": [
         "Bu sohbet için"
@@ -2354,8 +2509,11 @@
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Bir müşteri iletisini al, ${ LUMO_SHORT_APP_NAME } ile önceliğini ve konusunu sınıflandır, bir üste çıkarmak gerekip gerekmediğine karar ver, ardından bir yanıt taslağı oluştur veya bir insana devret."
       ],
+      "Instructions": [
+        "Yönergeler"
+      ],
       "Keep API requests running when your balance gets low.": [
-        "Hesabınızın kalan tutarı azaldığında API isteklerinin kesilmemesini sağlayın."
+        "Hesabınızdaki tutar azaldığında API isteklerinin kesilmemesini sağlayın."
       ],
       "Last 30 days": [
         "Son 30 gün"
@@ -2373,7 +2531,7 @@
         "Kullanılabilecek modeller yükleniyor…"
       ],
       "Loading balance…": [
-        "Hesabınızın kalan tutarı yükleniyor…"
+        "Hesabınızdaki tutar yükleniyor…"
       ],
       "Loading usage…": [
         "Kullanım yükleniyor…"
@@ -2400,22 +2558,25 @@
         "Model yanıtları"
       ],
       "Monitor your API balance, tokens, and spending controls.": [
-        "API hesabınızın kalan tutarını, belirteçlerinizi ve harcama denetimlerinizi izleyin."
+        "API hesabınızdaki tutarı, belirteçlerinizi ve harcama denetimlerinizi izleyin."
       ],
       "Monitor your API usage and organization balance status.": [
-        "API kullanımınızı ve kuruluş hesabınızın kalan tutarını izleyin."
+        "API kullanımınızı ve kuruluş hesabınızdaki tutarı izleyin."
       ],
       "Monitor your balance, usage, spending controls, and access.": [
-        "Hesapta kalan tutarı, kullanımınızı, harcama sınırlarınızı ve erişim durumunuzu izleyin."
+        "Hesaptaki tutarı, kullanımınızı, harcama sınırlarınızı ve erişim durumunuzu izleyin."
       ],
       "Monitor your organization's API balance and token usage.": [
-        "Kuruluşunuzun API hesabında kalan tutarı ve belirteç kullanımını izleyin."
+        "Kuruluşunuzun API hesap tutarını ve belirteç kullanımını izleyin."
       ],
       "Monthly spending limit reached. Automatic top-ups are paused until next month.": [
         "Aylık harcama sınırı aşıldı. Hesaba otomatik eklemeler sonraki aya kadar duraklatıldı."
       ],
       "Monthly spending limit: ${ formattedSpent } of ${ formattedLimit } bought automatically (${ limitSpentPercent }%)": [
         "Aylık harcama sınırı: ${ formattedSpent } / ${ formattedLimit } tutar otomatik olarak harcandı (%${ limitSpentPercent })"
+      ],
+      "More than a year left at current usage": [
+        "Geçerli kullanım düzeyi ile bir yıldan fazla süre kaldı"
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "API anahtarlarını asla istemci tarafındaki paketlere eklemeyin. Üretim ortamında ortam değişkenlerini ve sunucu tarafındaki bir vekil sunucunu kullanın."
@@ -2434,6 +2595,9 @@
       ],
       "No files or creations yet": [
         "Henüz bir dosya veya yapıt yok"
+      ],
+      "No longer in the organization": [
+        "Artık kuruluş içinde değil"
       ],
       "No members match your search.": [
         "Aramanız ile eşleşen bir üye yok."
@@ -2456,6 +2620,9 @@
       "No usage yet": [
         "Henüz kullanılmamış"
       ],
+      "Not priced yet": [
+        "Henüz fiyatı belirlenmemiş"
+      ],
       "Notes:": [
         "Notlar:"
       ],
@@ -2468,17 +2635,17 @@
       "Partial content": [
         "İçeriği bir bölümü"
       ],
-      "Pass a model ID in your request. Prices are list prices in USD per million tokens (MTok).": [
-        "İsteğinizde bir model kimliği verin. Fiyatlar, milyon belirteç başına ABD Doları (MTok) olarak liste fiyatlarıdır."
+      "Pass a model ID in your request. Prices are in credits per million tokens (MTok).": [
+        "İsteğiniz bir model kimliği belirtin. Fiyatlar milyon token (MTok) başına kredi cinsindendir."
       ],
       "Pause automatic top-ups until next month once they reach this amount.": [
-        "Bu tutara ulaşıldığında hesaba otomatik eklemeler sonraki aya kadar duraklatılır."
+        "Bu tutara ulaşıldığında sonraki aya kadar hesaba otomatik ekleme duraklatılır."
       ],
-      "Pay only for the tokens you use. Prices in USD per 1M tokens.": [
-        "Yalnızca kullandığınız belirteçleri ödeyin. Fiyatlar 1 milyon belirteç için ABD dolarıdır."
+      "Pay only for the tokens you use. Prices in credits per 1M tokens.": [
+        "Yalnızca kullandığınız tokenler için ödeme yapın. Fiyatlar 1 milyon token başına kredi cinsinden belirtilmiştir."
       ],
-      "Pay per token. Prices in USD per 1 million tokens (MTok).": [
-        "Belirteç başına ödeme. Fiyatlar 1 milyon belirteç (MTok) başına ABD dolarıdır."
+      "Pay per token. Prices in credits per 1 million tokens (MTok).": [
+        "Token başına ödeme. Fiyatlar 1 milyon token (MTok) başına kredi cinsinden belirtilmiştir."
       ],
       "PDF": [
         "PDF"
@@ -2506,9 +2673,6 @@
       ],
       "Preparing ${ formatLabel }… (${ current } of ${ total })": [
         "${ formatLabel } hazırlanıyor… (${ current } / ${ total })"
-      ],
-      "Prices shown in USD.": [
-        "Fiyatlar ABD dolarıdır."
       ],
       "Pricing not yet listed": [
         "Fiyatlar henüz listelenmemiş"
@@ -2555,11 +2719,11 @@
       "Reserved to keep chatting": [
         "Sohbete ilerlemek için ayrıldı"
       ],
-      "Review spending and control API access by member for ${ periodLabel }.": [
-        "${ periodLabel } dönemi için üye bazında harcamaları inceleyin ve API erişimini denetleyin."
+      "Review API spending by member for ${ periodLabel }.": [
+        "${ periodLabel } dönemi için her üyenin API harcamalarını inceleyin."
       ],
       "Review token usage and balance deductions over time.": [
-        "Belirteç kullanımını ve zaman içinde hesapta kalan tutarın azalmasını gözden geçirin."
+        "Belirteç kullanımını ve zaman içinde hesap tutarının azalmasını gözden geçirin."
       ],
       "Safety information": [
         "Güvenlik bilgileri"
@@ -2585,6 +2749,9 @@
       "Show all files": [
         "Tüm dosyaları görüntüle"
       ],
+      "Showing the last context estimate.": [
+        "Son bağlam öngörüsü görüntüleniyor."
+      ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Sohbet bilgi tabanınıza ${ DRIVE_APP_NAME } (uçtan uca şifrelenmiş bulut depolama alanı) hizmetinizdeki dosyalara göz atmak ve dosya eklemek için oturum açın veya bir hesap oluşturun."
       ],
@@ -2598,7 +2765,7 @@
         "${ LUMO_SHORT_APP_NAME } ile iş akışları oluşturmak için oturum açın."
       ],
       "Sign in to view API usage and balance for ${ LUMO_SHORT_APP_NAME }.": [
-        "${ LUMO_SHORT_APP_NAME } API kullanımını ve hesapta kalan tutarı görüntülemek için oturum açın."
+        "${ LUMO_SHORT_APP_NAME } API kullanımını ve hesap tutarını görüntülemek için oturum açın."
       ],
       "Slide ${ slideNumber }": [
         "${ slideNumber }. slayt"
@@ -2614,6 +2781,9 @@
       ],
       "Space usage: ": [
         "Kullanılan alan: "
+      ],
+      "Step ${ stepNumber } of ${ count }": [
+        "${ stepNumber } / ${ count }. adım"
       ],
       "Table view": [
         "Tablo görünümü"
@@ -2678,17 +2848,20 @@
       "tokens / 30d": [
         "belirteç / 30 gün"
       ],
-      "Tool calls": [
-        "Araç çağrıları"
+      "Tools": [
+        "Araçlar"
       ],
       "Top up from your default payment method when your balance runs low.": [
-        "Belirteçleriniz azaldığında varsayılan ödeme yönteminiz ile hesapta kalan tutara ek yapın."
+        "Belirteçleriniz azaldığında varsayılan ödeme yönteminiz ile hesap tutarına ekleme yapın."
       ],
       "Top up your API balance so requests can run without interruption.": [
-        "API hesabınızın kalan tutarına ek yapın. Böylece istekler kesintisiz olarak işlenebilir."
+        "API hesabınızdaki tutara ekleme yapın. Böylece istekler kesintisiz olarak işlenebilir."
       ],
       "Trying...": [
         "Deneniyor..."
+      ],
+      "Turn on the ${ LUMO_APP_NAME } API for your organization first.": [
+        "Öncelikle kuruluşunuz için ${ LUMO_APP_NAME } API uygulamasını açın."
       ],
       "Unable to parse this file as a table.": [
         "Bu dosya bir tablo olarak işlenemedi."
@@ -2698,9 +2871,6 @@
       ],
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
         "Sınırsız sohbet, proje, daha büyük dosya yükleme ve diğer şeyler için tarifenizi yükseltin."
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME }+ to create API keys and use the API programmatically.": [
-        "API anahtarları oluşturmak ve program içinde API kullanmak için ${ LUMO_SHORT_APP_NAME }+ tarifesine yükseltin."
       ],
       "Upload files or add them from ${ DRIVE_APP_NAME } to give ${ LUMO_SHORT_APP_NAME } context. ${ LUMO_SHORT_APP_NAME } creations from this chat will appear here.": [
         "${ LUMO_SHORT_APP_NAME } bağlamını vermek için dosyaları yükleyin veya ${ DRIVE_APP_NAME } adresinden ekleyin. Bu sohbette oluşturulan ${ LUMO_SHORT_APP_NAME } yapıtları burada görüntülenir."
@@ -2760,7 +2930,7 @@
         "Bu dönem için görsel oluşturma sınırınıza ulaştınız. Görsel oluşturmayı sürdürmek için tarfienizi yükseltin."
       ],
       "Your administrator manages the shared API balance for your organization.": [
-        "Kuruluşunuzun paylaşılan API hesabındaki kalan tutarı yöneticiniz düzenler."
+        "Kuruluşunuzun paylaşılan API hesabındaki tutarı yöneticiniz düzenler."
       ],
       "Your memories are already up to date.": [
         "Bellekleriniz zaten güncel."
@@ -2770,6 +2940,9 @@
       ],
       "Your organization has not allowed API access for your account. Contact your organization administrator to request access.": [
         "Kuruluşunuz hesabınız için API erişimine izin vermiyor. Erişim istemek için kuruluş yöneticiniz ile görüşün."
+      ],
+      "Your plan doesn't include API access.": [
+        "Tarifenizde API erişimi özelliği yok."
       ]
     },
     "collider_2025: Job": {
@@ -2818,26 +2991,41 @@
       "Added": [
         "Eklendi"
       ],
+      "Admin": [
+        "Yönetici"
+      ],
       "AI model": [
         "Yapay zeka modeli"
       ],
       "All models": [
         "Tüm modeller"
       ],
-      "Allowed API access": [
-        "API erişimine izin verildi"
+      "All sources": [
+        "Tüm kaynaklar"
       ],
       "Answer mode": [
         "Yanıt kipi"
       ],
+      "API": [
+        "API"
+      ],
+      "API access": [
+        "API erişimi"
+      ],
       "API calls": [
         "API çağrıları"
+      ],
+      "API input": [
+        "API girişi"
+      ],
+      "API output": [
+        "API çıktısı"
       ],
       "Automatic top-up": [
         "Hesaba otomatik ekleme"
       ],
       "Balance used": [
-        "Hesapta kalan tutardan kullanılan"
+        "Hesap tutarından kullanılan"
       ],
       "Base URL": [
         "Temel adres"
@@ -2847,6 +3035,15 @@
       ],
       "Cached input": [
         "Ön belleğe alınmış giriş"
+      ],
+      "Chat": [
+        "Sohbet"
+      ],
+      "Chat input": [
+        "Sohbet girişi"
+      ],
+      "Chat output": [
+        "Sohbet çıktısı"
       ],
       "Code language": [
         "Kod dili"
@@ -2887,6 +3084,12 @@
       "Filter token usage by model": [
         "Model bazında belirteç kullanımını süz"
       ],
+      "Filter token usage by source": [
+        "Belirteç kullanımını kaynağa göre süz"
+      ],
+      "Former members": [
+        "Eski üyeler"
+      ],
       "From chats": [
         "Sohbetlerden"
       ],
@@ -2902,8 +3105,8 @@
       "Loop": [
         "Döngü"
       ],
-      "Members": [
-        "Üyeler"
+      "Member": [
+        "Üye"
       ],
       "Merge": [
         "Birleştir"
@@ -2923,8 +3126,14 @@
       "Monthly spending limit": [
         "Aylık harcama sınırı"
       ],
+      "Never used to train AI": [
+        "Asla yapay zekayı eğitmek için kullanılmaz"
+      ],
       "New": [
         "Yeni"
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
       ],
       "Not billed": [
         "Fatura kesilmedi"
@@ -2932,11 +3141,14 @@
       "Not factually correct": [
         "Aslında doğru değil"
       ],
+      "Notifications on": [
+        "Bildirimler açık"
+      ],
       "optional": [
         "i̇steğe bağlı"
       ],
       "Organization API balance": [
-        "Kuruluş API hesabının kalan tutarı"
+        "Kuruluş API hesabındaki tutar"
       ],
       "Other": [
         "Diğer"
@@ -2960,7 +3172,7 @@
         "Python"
       ],
       "Remaining balance": [
-        "Hesabın kalan tutarı"
+        "Hesaptaki tutar"
       ],
       "Removed": [
         "Kaldırıldı"
@@ -3002,10 +3214,16 @@
         "Araç çağrıları"
       ],
       "Top up by": [
-        "Hesabınıza şununla ek yapın"
+        "Hesabınıza şununla ekleme yapın"
+      ],
+      "Total tokens": [
+        "Toplam belirteç"
       ],
       "TypeScript": [
         "TypeScript"
+      ],
+      "Unknown member": [
+        "Üye bilinmiyor"
       ],
       "Unsafe or problematic": [
         "Güvenli değil ya da sorunlu"
@@ -3013,14 +3231,17 @@
       "Usage period": [
         "Kullanım dönemi"
       ],
-      "When balance falls below": [
-        "Hesabın kalan tutaru şu düzeyin altına düştüğünde"
+      "When balance reaches": [
+        "Bakiye şu seviyeye ulaştığında"
       ],
       "You": [
         "Siz"
       ],
       "Your workflow": [
         "İş akışınız"
+      ],
+      "Zero-access encryption": [
+        "Sıfır erişim şifrelemesi"
       ]
     },
     "collider_2025: Legal disclaimer": {
@@ -3281,11 +3502,8 @@
       "Active": [
         "Kullanıma alınmış"
       ],
-      "Allowed": [
-        "İzin verilen"
-      ],
       "API requests are paused. Top up your balance to resume requests.": [
-        "API istekleri duraklatıldı. İstekleri sürdürmek için hesabınızın kalan tutarına ek yapın."
+        "API istekleri duraklatıldı. İstekleri sürdürmek için hesabınızdaki tutara ekleme yapın."
       ],
       "Automatic payments are off for your payment method.": [
         "Ödeme yönteminiz için hesaba otomatik ekleme kapalı."
@@ -3295,9 +3513,6 @@
       ],
       "Automatic top-up paused. Update your payment method to resume automatic top-ups.": [
         "Hesaba otomatik ekleme duraklatıldı. Otomatik eklemeyi sürdürmek için ödeme yönteminizi güncelleyin."
-      ],
-      "Blocked": [
-        "Engellendi"
       ],
       "Copied!": [
         "Kopyalandı!"
@@ -3309,16 +3524,16 @@
         "Yakında süresi dolacak"
       ],
       "Organization API requests are paused. Contact your organization administrator to top up the balance.": [
-        "Kuruluş API istekleri duraklatıldı. Hesabınız kalan tutarına ek yapması için kuruluş yöneticiniz ile görüşün."
+        "Kuruluş API istekleri duraklatıldı. Hesabınızdaki tutara ekleme yapması için kuruluş yöneticiniz ile görüşün."
       ],
       "The last payment did not go through.": [
         "Son ödeme yapılamadı."
       ],
       "Your API balance is running low. Top up your balance to avoid interruptions.": [
-        "API hesabınızda kalan tutar azalıyor. Kesinti olmaması için hesabınızdaki tutarı artırın."
+        "API hesabınızdaki tutar azalıyor. Kesinti olmaması için hesabınıza ekleme yapın."
       ],
       "Your organization API balance is running low. Contact your organization administrator to avoid interruptions.": [
-        "Kuruluşunuzun API hesabının kalan tutarı azalıyor. Kesintileri önlemek için kuruluş yöneticiniz ile görüşün."
+        "Kuruluşunuzun API hesabındaki tutar azalıyor. Kesintileri önlemek için kuruluş yöneticiniz ile görüşün."
       ]
     },
     "collider_2025: Success": {
@@ -3420,7 +3635,7 @@
         "API özeti"
       ],
       "API usage & balance": [
-        "API kullanımı ve kalan tutar"
+        "API kullanımı ve hesaptaki tutar"
       ],
       "API usage dashboard": [
         "API kullanımı panosu"
@@ -3444,7 +3659,7 @@
         "Hesaba otomatik ekleme duraklatıldı"
       ],
       "Balance settings": [
-        "Hesap kalan tutarı ayarları"
+        "Hesaptaki tutar ayarları"
       ],
       "Build intelligent apps.": [
         "Akıllı uygulamalar oluşturun."
@@ -3466,6 +3681,12 @@
       ],
       "Clear chat-based memories?": [
         "Sohbet temelli bellekler temizlensin mi?"
+      ],
+      "Connect your apps and files": [
+        "Uygulamalarınızı ve dosyalarınızı bağlayın"
+      ],
+      "Connect your first app": [
+        "İlk uygulamanızı bağlayın"
       ],
       "Connectors": [
         "Bağlayıcılar"
@@ -3503,6 +3724,9 @@
       "Getting started": [
         "Başlangıç"
       ],
+      "Go further with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "${ LUMO_SHORT_APP_NAME } Plus ile daha fazlasını yapın"
+      ],
       "Got a minute?": [
         "Bir dakikanız var mı?"
       ],
@@ -3521,8 +3745,14 @@
       "Make your first request": [
         "İlk isteğinizi yapın"
       ],
+      "Meet ${ LUMO_SHORT_APP_NAME } for desktop": [
+        "Bilgisayar için ${ LUMO_SHORT_APP_NAME } ile tanışın"
+      ],
       "Meet Apertus 1.5": [
         "Apertus 1.5 ile tanışın"
+      ],
+      "Meet the ${ LUMO_SHORT_APP_NAME } desktop app": [
+        "Bilgisayar için ${ LUMO_SHORT_APP_NAME } uygulaması ile tanışın"
       ],
       "Member usage": [
         "Üyelerin kullanımı"
@@ -3599,6 +3829,9 @@
       "Saved memories": [
         "Kaydedilmiş bellekler"
       ],
+      "Schedules": [
+        "Zamanlamalar"
+      ],
       "Search": [
         "Ara"
       ],
@@ -3607,6 +3840,15 @@
       ],
       "Security note:": [
         "Güvenlik notu:"
+      ],
+      "Set tasks to repeat": [
+        "Yinelenecek görevleri ayarlayın"
+      ],
+      "Skills": [
+        "Yetenekler"
+      ],
+      "Teach ${ LUMO_SHORT_APP_NAME } how you work": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasına nasıl çalıştığınızı öğretin"
       ],
       "Theme": [
         "Tema"
@@ -3621,10 +3863,13 @@
         "Araçlar"
       ],
       "Top up balance": [
-        "Hesapta kalan tutara ek yap"
+        "Hesap tutarına ekleme yap"
       ],
       "Turn off memory?": [
         "Bellek kapatılsın mı?"
+      ],
+      "Turn on notifications": [
+        "Bildirimleri kapat"
       ],
       "Upload files": [
         "Dosya yükle"
@@ -3783,6 +4028,9 @@
       "calls": [
         "çağrı"
       ],
+      "credits": [
+        "kredi"
+      ],
       "tokens": [
         "belirteçler"
       ]
@@ -3903,6 +4151,9 @@
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Her zamankinden daha yoğun bir trafik var. Bu nedenle yanıtlar normalden biraz daha yavaş olabilir. Yoğun zamanlarda öncelikli erişim için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
+      "Your balance of ${ formattedBalance } has reached the threshold, so saving will top up ${ formattedAmount } right away.": [
+        "Hesabınızdaki tutar ${ formattedBalance } ve eşik değerine ulaştı. Bu nedenle hesabınıza hemen ${ formattedAmount } eklenecek."
+      ],
       "Your memories changed while reviewing. Please run Optimize again.": [
         "İnceleme sırasında bellekleriniz değişti. Lütfen iyileştirme işlemini yeniden yapın."
       ]
@@ -3952,7 +4203,7 @@
         "Ayrıntıları ekleyin"
       ],
       "Add from template": [
-        "Şablondan ekle"
+        "Kalıptan ekle"
       ],
       "Add more information to improve the response": [
         "Yanıtı geliştirmek için daha fazla bilgi ekleyin"
@@ -3967,7 +4218,7 @@
         "Yetenek grubu ekle"
       ],
       "Add skill to skill set": [
-        "Beceri setine beceri ekle"
+        "Yetenek paketine yetenek ekle"
       ],
       "Add to favorites": [
         "Sık kullanılanlara ekle"
@@ -4131,9 +4382,6 @@
       "Dismiss": [
         "Yok say"
       ],
-      "Dismiss questions": [
-        "Soruları yok say"
-      ],
       "Divider": [
         "Ayırıcı"
       ],
@@ -4284,6 +4532,9 @@
       "Markdown": [
         "Markdown"
       ],
+      "Minimize questions": [
+        "Soruları en aza indirin"
+      ],
       "Modify": [
         "Değiştir"
       ],
@@ -4426,7 +4677,7 @@
         "Yeniden adlandır"
       ],
       "Rename ${ name }": [
-        "${ name } yeniden adlandır"
+        "${ name } ögesini yeniden adlandır"
       ],
       "Rename chat": [
         "Sohbeti yeniden adlandır"
@@ -4502,6 +4753,10 @@
       ],
       "Show more": [
         "Diğerlerini görüntüle"
+      ],
+      "Show question": [
+        "Soruyu görüntüle",
+        "Soruları görüntüle"
       ],
       "Show sidebar": [
         "Kenar çubuğunu görüntüle"
@@ -4871,10 +5126,10 @@
         "${ projectName } sohbet veya dosya sayısı sınırına ulaştı."
       ],
       "A file named \"${ skillsFolder }\" is in the way. Rename or delete it to add a skill.": [
-        "\"${ skillsFolder }\" adlı dosya engel oluşturuyor. Beceri eklemek için bu dosyayı yeniden adlandırın veya silin."
+        "\"${ skillsFolder }\" adlı dosya engel oluyor. Yetenek eklemek için bu dosyayı yeniden adlandırın veya silin."
       ],
       "A file or folder with this name already exists": [
-        "Bu isimde dosya veya klasör zaten mevcut"
+        "Aynı adlı bir dosya veya klasör zaten var"
       ],
       "A skill can contain at most ${ MAX_SKILL_FILE_COUNT } files.": [
         "Bir yetenek içinde en fazla ${ MAX_SKILL_FILE_COUNT } dosya bulunabilir."
@@ -5211,10 +5466,10 @@
         "\"${ file.name }\" dosyası dizine ekleniyor. Gönderdiğinizde içerik yüklenecek."
       ],
       "\"${ name }\" and everything in it will be removed from this skill when you save.": [
-        "Kaydettikten sonra \"${ name }\" ve içindeki tüm içerik bu beceriden silinecek."
+        "Kaydettikten sonra \"${ name }\" ve içindeki tüm içerik bu yetenekten silinecek."
       ],
       "\"${ name }\" will be removed from this skill when you save.": [
-        "Kaydettikten sonra \"${ name }\" bu beceriden kaldırılacak."
+        "Kaydettikten sonra \"${ name }\" bu yetenekten kaldırılacak."
       ],
       "\"${ skillName }\" and its files will be deleted. This cannot be undone.": [
         "\"${ skillName }\" ve dosyaları silinecek. Bu işlem geri alınamaz."
@@ -5315,6 +5570,9 @@
       ],
       "A .md file with a name and description in its frontmatter, or a .zip or .skill file with a SKILL.md.": [
         "Frontmatter bölümünde bir ad ve açıklama bulunan bir .md dosyası ya da SKILL.md dosyasının bulunduğu bir .zip veya .skill dosyası."
+      ],
+      "A chat needs your attention": [
+        "Bir sohbet ilgilenmenizi bekliyor"
       ],
       "A Claude or ChatGPT plugin, as a folder, .zip or .plugin file. Its skills come across as a skill set, along with the connectors it asks for.": [
         "Bir klasör, .zip veya .plugin dosyası olarak bir Claude veya ChatGPT eklentisi. Oralardaki yetenekler, gerek duyulan bağlayıcılar ile bir yetenek paketi olarak karşımıza çıkar."
@@ -6036,6 +6294,9 @@
       "Some selected skills are unavailable. This task may run without them. Check your skills in settings.": [
         "Seçilmiş bazı yetenekler kullanılamıyor. Bu görev bu yetenekler olmadan da yürütülebilir. Ayarlar bölümünden yeteneklerinizi denetleyin."
       ],
+      "Something here is waiting for you": [
+        "Burada sizi bekleyen bir şey var"
+      ],
       "Something that looks like an API key or private key. Remove it before sharing the skill.": [
         "API anahtarı ya da kişisel anahtara benzeyen bir şey. Yeteneği paylaşmadan önce bunu silin."
       ],
@@ -6219,6 +6480,12 @@
       "v${ versionNumber }": [
         "${ versionNumber } sürümü"
       ],
+      "Waiting for your answer": [
+        "Yanıtınız bekleniyor"
+      ],
+      "Waiting for your approval": [
+        "Onayınız bekleniyor"
+      ],
       "We moved your ${ customLumoCount } Custom ${ LUMO_SHORT_APP_NAME } here. It works the same way, and you can now use it in any chat or scheduled task.": [
         "${ customLumoCount } özel ${ LUMO_SHORT_APP_NAME } uygulamanız buraya taşındı. Aynı şekilde çalışır ve artık herhangi bir sohbette veya zamanlanmış görevde kullanabilirsiniz.",
         "${ customLumoCount } özel ${ LUMO_SHORT_APP_NAME } uygulamanız buraya taşındı. Aynı şekilde çalışır ve artık herhangi bir sohbette veya zamanlanmış görevde kullanabilirsiniz."
@@ -6245,7 +6512,7 @@
         "Bu kategori için çalışır"
       ],
       "Works in ${ LUMO_SHORT_APP_NAME } Desktop only": [
-        "Yalnızca ${ LUMO_SHORT_APP_NAME } Masaüstü sürümünde çalışır"
+        "Yalnızca ${ LUMO_SHORT_APP_NAME } bilgisayar sürümünde çalışır"
       ],
       "Write, plan, and learn with ready-made sets of skills.": [
         "Hazır yetenek gurupları ile yazın, planlayın ve öğrenin."
@@ -7106,7 +7373,7 @@
         "Swift dosyası"
       ],
       "Templates": [
-        "Şablonlar"
+        "Kalıplar"
       ],
       "Text File": [
         "Yazı dosyası"
@@ -7327,7 +7594,7 @@
         "${ LUMO_SHORT_APP_NAME } uygulamasının üstlenmesini istediğiniz rolü, kapsamı ve davranışı tanımlayın."
       ],
       "Describe what ${ LUMO_SHORT_APP_NAME } should achieve with this skill.": [
-        "${ LUMO_SHORT_APP_NAME }'nun bu beceri ile neyi başarması gerektiğini açıklayın."
+        "Bu yetenek ile ${ LUMO_SHORT_APP_NAME } tarafından yapılması gerekeni açıklayın."
       ],
       "Describe what the skill should do, and when ${ LUMO_SHORT_APP_NAME } should use it": [
         "Yeteneğin ne yapması gerektiğini ve ${ LUMO_SHORT_APP_NAME } tarafından ne zaman kullanılması gerektiğini açıklayın"
@@ -7369,7 +7636,7 @@
         "Tatil planlayıcı"
       ],
       "New skill": [
-        "Yeni beceri"
+        "Yeni yetenek"
       ],
       "Next step.": [
         "Sonraki adım."
@@ -7408,16 +7675,16 @@
         "Oturum açmalısınız"
       ],
       "Skill name": [
-        "Beceri adı"
+        "Yetenek adı"
       ],
       "Skill set": [
-        "Beceri seti"
+        "Yetenek paketi"
       ],
       "Skills refer to kinds of tools by placeholder, such as ~~email in a step. Add one row per kind of tool.": [
-        "Beceriler bir adımdaki ~~e-posta gibi yer tutucularla belirtilen araç türlerini ifade eder. Her araç türü için bir satır ekleyin."
+        "Yetenekler bir adımdaki ~~e-posta gibi yer belirticiler ile belirtilen araç türlerini ifade eder. Her araç türü için bir satır ekleyin."
       ],
       "Something ${ LUMO_SHORT_APP_NAME } should always or never do, such as never inventing facts.": [
-        "${ LUMO_SHORT_APP_NAME }’nun her zaman yapması veya asla yapmaması gereken bir şey, örneğin asla gerçekleri uydurmamak gibi."
+        "${ LUMO_SHORT_APP_NAME } tarafından her zaman yapılacak veya asla yapılmayacak bir şey. Örneğin asla gerçekleri uydurmamak gibi."
       ],
       "Something else…": [
         "Başka birşey…"
@@ -7429,19 +7696,19 @@
         "Son çalışmamı üç bölümde özetle: Kazançlar, engelleyiciler ve sonraki adımlar. Tonu profesyonel tut ama sert olmasın..."
       ],
       "The format, length and tone of the result, such as a short reply, a table or an email.": [
-        "Sonucun biçimi, uzunluğu ve üslubu, örneğin kısa bir yanıt, bir tablo veya bir e-posta."
+        "Sonucun biçimi, uzunluğu ve tarzı. Örneğin kısa bir yanıt, bir tablo veya bir e-posta."
       ],
       "Weekly status report": [
         "Haftalık durum raporu"
       ],
       "What ${ LUMO_SHORT_APP_NAME } does first, and which details to ask for when they are missing.": [
-        "${ LUMO_SHORT_APP_NAME }’nun ilk olarak ne yaptığı ve bu bilgiler eksik olduğunda hangi ayrıntıları sormanız gerektiği."
+        "${ LUMO_SHORT_APP_NAME } tarafından ilk olarak ne yapılacağı ve bu bilgiler eksik olduğunda hangi ayrıntıların sorulması gerektiği."
       ],
       "What this skill does. Use when asked to …": [
-        "Bu becerinin işlevi. Şu durumlarda kullan: …"
+        "Bu yeteneğin ne yaptığı. Şu durumlarda kullanın…"
       ],
       "What this skill set is for and which skills it includes.": [
-        "Bu beceri setinin amacı nedir ve hangi becerileri içermektedir?"
+        "Bu yetenek paketinin amacı nedir ve hangi yetenekleri içerir?"
       ]
     },
     "collider_2025:Plugin description": {
@@ -8310,6 +8577,10 @@
       ],
       "Running soon…": [
         "Yakında yürütülecek…"
+      ],
+      "Waiting for your answer…": [
+        "Yanıtınız bekleniyor…",
+        "Yanıtlarınız bekleniyor…"
       ]
     },
     "collider_2025:Subline": {
@@ -10051,9 +10322,6 @@
       ]
     },
     "Error": {
-      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME } güncellendi. Lütfen sayfayı yenileyin."
-      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
@@ -10186,14 +10454,26 @@
       "Failed to download image. Please try again.": [
         "Görsel indirilemedi. Lütfen yeniden deneyin."
       ],
+      "Failed to get invitee keys": [
+        "Davetli anahtarları alınamadı"
+      ],
       "Failed to get inviter keys": [
         "Davet edilenin anahtarları alınamadı"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Failed to load the membership": [
+        "Üyelik yüklenemedi"
+      ],
+      "Failed to load the membership data": [
+        "Üyelik verileri yüklenemedi"
+      ],
       "Failed to verify invitation": [
         "Davet doğrulanamadı"
+      ],
+      "Failed to verify membership": [
+        "Üyelik doğrulanamadı"
       ],
       "File download failed due to empty response": [
         "Boş yanıt nedeniyle dosya indirilemedi"
@@ -10286,12 +10566,6 @@
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
-      "Organization key must be activated to create invited users": [
-        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
-      ],
       "Part of the file appears to be corrupted": [
         "Dosyanın bir bölümü bozulmuş gibi görünüyor"
       ],
@@ -10382,6 +10656,9 @@
       "Some file parts failed to upload. Please try again.": [
         "Bazı dosya parçaları yüklenemedi. Lütfen yeniden deneyin."
       ],
+      "Some invitations could not be loaded": [
+        "Bazı davetler yüklenemedi"
+      ],
       "Some items could not be loaded": [
         "Bazı ögeler yüklenemedi"
       ],
@@ -10402,9 +10679,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "En az bağış tutarı ${ price }"
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Toplam tutar hesaplanamadı. Yeniden denemek için tutarı değiştirin."
@@ -10548,8 +10822,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Güvenlik anahtarı isteği iptal edildi veya zaman aşımına uğrandı. Lütfen yeniden deneyin."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Aygıtınız güvenlik anahtarı isteğini tamamlayamadı. Yeniden deneyin veya başka bir oturum açma yöntemi kullanın."
       ]
     },
     "fido2: Info": {
@@ -10720,6 +11000,10 @@
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "${ VPN_SHORT_APP_NAME } trafiğinizi gizler. ${ PASS_SHORT_APP_NAME } kimliğinizi gizler.\nVerileriniz ele geçirilmesine karşı sınırsız **hide-my-email takma adları** ve **karanlık ağ uyarıları**."
       ],
+      "${ waiting } more approval waiting": [
+        "${ waiting } onay daha bekliyor",
+        "${ waiting } onay daha bekliyor"
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
       ],
@@ -10804,11 +11088,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
+      "command output": [
+        "komut çıktısı"
+      ],
       "Connecting…": [
         "Bağlantı kuruluyor…"
       ],
       "Connection error": [
         "Bağlantı hatası"
+      ],
+      "content from outside sources": [
+        "dış kaynaklardan içerik"
       ],
       "Country code": [
         "Ülke kodu"
@@ -10864,6 +11154,9 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
+      ],
+      "emails": [
+        "e-postalar"
       ],
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Çöp ve İstenmeyen klasörlerine taşınan 30 günden eski e-postalar otomatik olarak silinir."
@@ -10975,6 +11268,9 @@
       ],
       "Member": [
         "Üye"
+      ],
+      "messages and documents from connected apps": [
+        "bağlı uygulamalardan gelen iletiler ve belgeler"
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Tüm e-posta adreslerinize gönderilen iletiler gelen kutunuza gelir."
@@ -11109,6 +11405,15 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
+      "This conversation has read ${ read }, which can contain hidden instructions. Approving lets it change files on your computer.": [
+        "Bu yazışmada gizli yönergeler içerebilecek ${ read } okundu. Onaylamak, bilgisayarınızdaki dosyaların değiştirilmesini sağlar."
+      ],
+      "This conversation has read ${ read }, which can contain hidden instructions. Approving may send data outside ${ LUMO_SHORT_APP_NAME }.": [
+        "Bu yazışmada gizli yönergeler içerebilecek ${ read } okundu. Onaylamak, verileri ${ LUMO_SHORT_APP_NAME } dışına gönderebilir."
+      ],
+      "This conversation has read ${ read }, which can contain hidden instructions. Approving may send data to ${ destination }.": [
+        "Bu yazışmada gizli yönergeler içerebilecek ${ read } okundu. Onaylamak, verileri ${ destination } üzerine gönderebilir."
+      ],
       "This information is zero-access encrypted.": [
         "Bu bilgiler sıfır erişim şifrelemesi ile korunuyor."
       ],
@@ -11121,6 +11426,9 @@
       "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
         "Bu durum projelerin silindiğini ancak dizine eklenmiş dosyaların temizlenmediğini veya dizine eklenmiş veri tabanından alanların yüklenemediğini gösterebilir."
       ],
+      "This request contains invisible characters, shown below as codes like [U+200B]. They can hide data being sent out. Only approve if you expected them.": [
+        "Bu istekte, aşağıda [U+200B] gibi kodlar olarak gösterilen görünmez karakterler var. Bunlar gönderilen verileri gizleyebilir. Yalnızca onların olmasını bekliyorsanız onaylayın."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
@@ -11130,8 +11438,14 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+      ],
+      "tool descriptions from a connector you added": [
+        "eklediğiniz bir bağlayıcıdan araç açıklamaları"
+      ],
       "Top up your ${ LUMO_SHORT_APP_NAME } API balance. API usage is deducted from this balance.": [
-        "${ LUMO_SHORT_APP_NAME } API hesabınızın kalan tutarına ek yapın. API kullanımı bu kalan tutardan düşülür."
+        "${ LUMO_SHORT_APP_NAME } API hesabınızdaki tutara ek yapın. API kullanımı bu kalan tutardan düşülür."
       ],
       "Total conversations:": [
         "Toplam yazışma:"
@@ -11196,6 +11510,9 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
+      "web pages": [
+        "site sayfaları"
+      ],
       "Week": [
         "Hafta"
       ],
@@ -11212,7 +11529,7 @@
         "Yazma yardımcısı"
       ],
       "Writing assistant seats are no longer sold.": [
-        "Yazma yardımcısı koltukları artık satılmamaktadır."
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
@@ -11316,6 +11633,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Hesap parolası"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -11506,9 +11826,6 @@
       "Other amount": [
         "Diğer tutar"
       ],
-      "Password": [
-        "Parola"
-      ],
       "Payer": [
         "Ödeyen"
       ],
@@ -11528,7 +11845,7 @@
         "Posta kodu"
       ],
       "Proration": [
-        "Hesap bakiyesi"
+        "Hesabınızdaki tutar"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -11686,11 +12003,6 @@
         "Bu nedir?"
       ]
     },
-    "Loading": {
-      "Loading ${ LUMO_APP_NAME }": [
-        "${ LUMO_APP_NAME } yükleniyor"
-      ]
-    },
     "lumo: Debug View": {
       "Acceleration": [
         "Hızlandırma"
@@ -11705,13 +12017,13 @@
         "API erişimi"
       ],
       "API balance": [
-        "API hesabının kalan tutarı"
+        "API hesabındaki tutar"
       ],
       "API usage": [
         "API kullanımı"
       ],
       "API usage and balance": [
-        "API kullanımı ve hesabın kalan tutarı"
+        "API kullanımı ve hesaptaki tutar"
       ],
       "Assets": [
         "Varlıklar"
@@ -11771,7 +12083,7 @@
         "Boş"
       ],
       "Empty balance": [
-        "Hesabınızda kalan tutar sıfır"
+        "Hesabınızdaki tutar sıfır"
       ],
       "Export all chats (JSON)": [
         "Tüm sohbetleri dışa aktar (JSON)"
@@ -11819,7 +12131,7 @@
         "Kilitli"
       ],
       "Low balance ($5)": [
-        "Hesabınızda kalan tutar azaldı (5$)"
+        "Hesabınızdaki tutar azaldı (5$)"
       ],
       "max": [
         "max"
@@ -11870,7 +12182,7 @@
         "Sunucu ileti sınırı benzetimi için bir yazışma açın."
       ],
       "Open API usage to preview empty, low, and funded balance states. Overrides only affect the PoC UI.": [
-        "Hesapta kalan tutarın sıfır, düşük ve ödenmiş durumlarını ön izlemek için API kullanımını açın. Değişiklikler yalnızca PoC kullanıcı arayüzünü etkiler."
+        "Hesap tutarının sıfır, düşük ve ödenmiş durumlarını ön izlemek için API kullanımını açın. Değişiklikler yalnızca PoC kullanıcı arayüzünü etkiler."
       ],
       "Org admin": [
         "Kuruluş yöneticisi"
@@ -11906,7 +12218,7 @@
         "Oran"
       ],
       "Real balance": [
-        "Gerçek kalan tutar"
+        "Hesaptaki gerçek tutar"
       ],
       "Redux updates": [
         "Redux güncellemeleri"
@@ -12056,7 +12368,7 @@
         "Kullanım verileri"
       ],
       "Use real balance": [
-        "Gerçek kalan tutar kullanılsın"
+        "Hesaptaki gerçek tutar kullanılsın"
       ],
       "Weekly chat limit upsell": [
         "Haftalık sohbet sınırı ek satış"
@@ -12111,40 +12423,40 @@
         "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
       ],
       "Everything in Basic, and:": [
-        "Basic'teki her şey ve:"
+        "Basic tarifesindeki her şey ve:"
       ],
       "Everything in Free, and:": [
-        "Her şey Free ve:"
+        "Free tarifesindeki herşey ve:"
       ],
       "Everything in Plus, and:": [
-        "Plus'taki her şey ve:"
+        "Plus tarifesindeki her şey ve:"
       ],
       "Extended image generation": [
-        "Genişletilmiş görüntü oluşturma"
+        "Genişletilmiş görsel oluşturma"
       ],
       "Includes:": [
-        "Şunları içerir:"
+        "İçindekiler:"
       ],
       "Limited image generation": [
-        "Sınırlı görüntü oluşturma"
+        "Sınırlı görsel oluşturma"
       ],
       "Limited messages and chat history": [
-        "Sınırlı mesajlar ve sohbet geçmişi"
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
       ],
       "Maximum image generation": [
-        "Maksimum resim oluşturma"
+        "En fazla görsel oluşturma"
       ],
       "Maximum Skills and Projects": [
-        "Maksimum Beceri ve Projeler"
+        "En fazla yetenek ve projeler"
       ],
       "More image generation": [
-        "Daha fazla görüntü oluşturma"
+        "Daha fazla görsel oluşturma"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Daha fazla beceri, proje ve planlanmış görevler"
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
       ],
       "More usage": [
         "Daha fazla kullanım"
@@ -13469,7 +13781,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Krediler hesabınızın kalan tutarına eklenecek"
+        "Krediler hesabınızdaki tutara eklenecek"
       ]
     },
     "Payments.InfoBanner": {
@@ -14158,6 +14470,9 @@
       "Payment method updated": [
         "Ödeme yöntemi güncellendi"
       ],
+      "Preference saved": [
+        "Ayar kaydedildi"
+      ],
       "Problem reported": [
         "Sorun bildirildi"
       ],
@@ -14353,9 +14668,6 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
-      "Enter your password": [
-        "Parolanızı yazın"
-      ],
       "Error": [
         "Hata"
       ],
@@ -14469,6 +14781,9 @@
       ],
       "Verification failed": [
         "Doğrulanamadı"
+      ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
       ],
       "Verifying your card...": [
         "Kartınız doğrulanıyor..."
@@ -14588,6 +14903,71 @@
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "Her kullanıcı için ${ devicesPerUser }"
+      ],
+      "${ storage } shared": [
+        "${ storage } paylaşımlı"
+      ],
+      "10 years": [
+        "10 yıl"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "${ VPN_APP_NAME } sunucularının daha yüksek kapasiteli bir düzeyi: Her bir sunucuyu paylaşan kullanıcı sayısı çok daha azdır ve bu sunucular ${ BRAND_NAME } IP adreslerini kullanır. Hızlı bağlan seçeneği bu sunucular var olduğunda otomatik olarak onları seçer."
+      ],
+      "Calendars": [
+        "Takvimler"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Adını 2014 yılında ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } hizmetinin hayata geçmesini sağlayan kitle fonlaması destekçilerinden almıştır. Tüm ücretli ${ BRAND_NAME } hizmetleri tek tarifede."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Ek ücret ödemeden yararlanabileceğiniz yeni ${ BRAND_NAME } hizmetleri"
+      ],
+      "Password vaults": [
+        "Parola kasaları"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Ücretli Mail, Calendar, Drive ve Pass"
+      ],
+      "Previous versions": [
+        "Önceki sürümler"
+      ],
+      "Storage": [
+        "Depolama alanı"
+      ],
+      "Subscribers only": [
+        "Yalnızca aboneler"
+      ],
+      "Ultra servers": [
+        "Ultra sunucuları"
+      ],
+      "Ultra servers, reserved for you": [
+        "Size özel Ultra sunucuları"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "${ limit } taneye kadar"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "VPN devices at once": [
+        "Aynı anda bağlanabilecek VPN aygıtı"
       ]
     },
     "VPN B2B cancellation reason": {

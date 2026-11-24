@@ -314,9 +314,6 @@
       "Save": [
         "Zapisz"
       ],
-      "Saving...": [
-        "Zapisywanie..."
-      ],
       "Scroll to bottom": [
         "Przewiń na dół"
       ],
@@ -580,9 +577,19 @@
         "Zachowaj subskrypcję"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Zamknij"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta jest niedostępna"
       ]
     },
     "BF2024: Deal details": {
@@ -5122,9 +5129,6 @@
       ]
     },
     "Error": {
-      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME } został zaktualizowany. Odśwież stronę."
-      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Twoja nazwa użytkownika to ${ user.Name }. Aby utworzyć adres ${ emailAddress }, przejdź do: Ustawienia > Tożsamość i adresy > Krótka domena (pm.me)"
       ],
@@ -5209,12 +5213,6 @@
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
       ],
-      "Organization key must be activated to create invited users": [
-        "Musisz aktywować klucz organizacji, aby utworzyć zaproszonych użytkowników"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
-      ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
@@ -5292,9 +5290,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimalna kwota darowizny wynosi ${ price }"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
@@ -5555,6 +5550,9 @@
       ],
       "0 MB": [
         "0 MB"
+      ],
+      "1 vault per user": [
+        "1 sejf na użytkownika"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
@@ -6272,9 +6270,6 @@
       "Other amount": [
         "Inna kwota"
       ],
-      "Password": [
-        "Hasło"
-      ],
       "Payer": [
         "Płatnik"
       ],
@@ -6444,11 +6439,6 @@
       ],
       "What’s this?": [
         "Co to jest?"
-      ]
-    },
-    "Loading": {
-      "Loading ${ LUMO_APP_NAME }": [
-        "Ładowanie aplikacji ${ LUMO_APP_NAME }"
       ]
     },
     "lumo: Debug View": {
@@ -7665,6 +7655,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Możesz anulować w dowolnym momencie przed ${ cancelDate }."
       ],
@@ -8688,6 +8681,9 @@
       "Payment method updated": [
         "Metoda płatności została zaktualizowana"
       ],
+      "Preference saved": [
+        "Ustawienia zostały zapisane"
+      ],
       "Problem reported": [
         "Problem został zgłoszony"
       ],
@@ -8880,9 +8876,6 @@
       "Enhance security with 2FA": [
         "Zwiększ bezpieczeństwo za pomocą uwierzytelniania dwustopniowego"
       ],
-      "Enter your password": [
-        "Wpisz hasło"
-      ],
       "Error": [
         "Błąd"
       ],
@@ -8993,6 +8986,9 @@
       ],
       "Verification failed": [
         "Weryfikacja nie powiodła się"
+      ],
+      "Verify it’s you": [
+        "Potwierdź swoją tożsamość"
       ],
       "Verifying your card...": [
         "Weryfikowanie karty..."

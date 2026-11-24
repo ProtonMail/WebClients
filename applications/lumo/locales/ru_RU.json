@@ -320,9 +320,6 @@
       "Save": [
         "Сохранить"
       ],
-      "Saving...": [
-        "Сохранение..."
-      ],
       "Scroll to bottom": [
         "Прокрутить до самого низа"
       ],
@@ -583,9 +580,19 @@
         "Продолжить подписку"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыть"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Предложение недоступно"
       ]
     },
     "BF2024: Deal details": {
@@ -751,6 +758,11 @@
       ],
       "Yearly": [
         "Ежегодно"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     },
     "Bug category": {
@@ -1002,6 +1014,9 @@
       ],
       "Collapse ${ LUMO_SHORT_APP_NAME }": [
         "Свернуть ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Connectors": [
+        "Коннекторы"
       ],
       "Continue": [
         "Продолжить"
@@ -1893,6 +1908,9 @@
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Никогда не встраивайте API-ключи в клиентские сборки. В рабочей среде используйте переменные окружения и прокси-сервер на стороне сервера."
       ],
+      "No connected connectors": [
+        "Нет подключенных коннекторов"
+      ],
       "No content available.": [
         "Нет доступного содержимого."
       ],
@@ -2549,6 +2567,9 @@
       "Clear chat-based memories?": [
         "Очистить воспоминания на основе чатов?"
       ],
+      "Connectors": [
+        "Коннекторы"
+      ],
       "Conversational AI": [
         "Разговорный ИИ"
       ],
@@ -2897,11 +2918,20 @@
       ]
     },
     "collider_2025:Action": {
+      "Actions for ${ label }": [
+        "Действия для ${ label }"
+      ],
       "Add all": [
         "Добавить все"
       ],
+      "Add connector": [
+        "Добавить коннектор"
+      ],
       "Add details": [
         "Добавить информацию"
+      ],
+      "Add from template": [
+        "Добавить из шаблона"
       ],
       "Add more information to improve the response": [
         "Добавьте больше информации, чтобы улучшить ответ"
@@ -2929,6 +2959,9 @@
       ],
       "Close": [
         "Закрыть"
+      ],
+      "Connector settings": [
+        "Настройки коннектора"
       ],
       "Copy link & caption": [
         "Скопировать ссылку и подпись"
@@ -2966,11 +2999,17 @@
       "Download": [
         "Скачать"
       ],
+      "Download the desktop app": [
+        "Скачать приложение для компьютера"
+      ],
       "Edit agent": [
         "Изменить агента"
       ],
       "Edit instructions": [
         "Изменить инструкции"
+      ],
+      "Enable connector": [
+        "Включить коннектор"
       ],
       "Expand": [
         "Развернуть"
@@ -2992,6 +3031,9 @@
       ],
       "Make a copy": [
         "Создать копию"
+      ],
+      "Manage connectors": [
+        "Управление коннекторами"
       ],
       "Manage Drive folder link": [
         "Управлять ссылкой на папку в хранилище"
@@ -3034,6 +3076,9 @@
       ],
       "Remove": [
         "Удалить"
+      ],
+      "Remove ${ label }": [
+        "Удалить ${ label }"
       ],
       "Remove agent": [
         "Удалить агента"
@@ -3112,6 +3157,9 @@
       ],
       "View": [
         "Смотреть"
+      ],
+      "View all": [
+        "Смотреть все"
       ],
       "What needs changed?": [
         "Что нужно изменить?"
@@ -3223,6 +3271,11 @@
         "Загрузить с компьютера"
       ]
     },
+    "collider_2025:Description": {
+      "Allow this task to use these tools without asking each time.": [
+        "Разрешить этой задаче использовать эти инструменты без запроса подтверждения каждый раз."
+      ]
+    },
     "collider_2025:Error": {
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "Для работы ${ LUMO_SHORT_APP_NAME } требуется локальное хранилище баз данных (IndexedDB), но оно недоступно в этом браузере. Это может происходить из-за блокировки файлов cookie или данных веб-сайтов, при использовании режима инкогнито или при включенном режиме блокировки (Lockdown Mode). Разрешите сохранение данных для этого сайта и обновите страницу."
@@ -3230,8 +3283,14 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Невозможно привязать корневую папку. Пожалуйста, выберите подпапку."
       ],
+      "Could not load connectors": [
+        "Не удалось загрузить коннекторы"
+      ],
       "Could not read this file.": [
         "Не удалось прочитать этот файл."
+      ],
+      "Could not update this task. Reload the page and try again.": [
+        "Не удалось обновить эту задачу. Перезагрузите страницу и попробуйте снова."
       ],
       "Couldn't move the chat. Please try again.": [
         "Не удалось переместить чат. Пожалуйста, попробуйте снова."
@@ -3352,6 +3411,9 @@
       "All messages and chat history": [
         "Все сообщения и история чата"
       ],
+      "Already have it? Open the ${ LUMO_SHORT_APP_NAME } desktop app and go to Customize › Connectors.": [
+        "Уже установлено? Откройте настольное приложение ${ LUMO_SHORT_APP_NAME } и перейдите в раздел Настройка › Коннекторы."
+      ],
       "Ask a question to get started. Your conversation is private.": [
         "Задайте вопрос, чтобы начать. Ваша цепочка писем конфиденциальна."
       ],
@@ -3363,6 +3425,12 @@
       ],
       "Built-in ${ BRAND_NAME } agent": [
         "Встроенный агент ${ BRAND_NAME }"
+      ],
+      "Connect and enable the selected connectors before scheduling this task.": [
+        "Перед планированием этой задачи подключите и активируйте выбранные коннекторы."
+      ],
+      "Connector unavailable": [
+        "Коннектор недоступен"
       ],
       "Conversation encrypted": [
         "Беседа зашифрована"
@@ -3421,6 +3489,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Свяжите файлы из ${ DRIVE_APP_NAME } или загрузите их с компьютера."
       ],
+      "Loading connectors": [
+        "Загрузка коннекторов"
+      ],
       "Lockdown Mode is enabled on your device": [
         "На вашем устройстве включен режим блокировки (Lockdown Mode)"
       ],
@@ -3436,11 +3507,17 @@
         "Перемещение чата в ${ projectName }: сохранение ${ total } элементов…",
         "Перемещение чата в ${ projectName }: сохранение ${ total } элементов…"
       ],
+      "No connected connectors": [
+        "Нет подключенных коннекторов"
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "На этой карточке нет личных данных — только ваш показатель уязвимости по областям. Чем он ниже, тем меньше информации вы раскрыли."
       ],
       "No projects yet": [
         "Проектов пока нет"
+      ],
+      "No skills or tools added.": [
+        "Нет добавленных навыков или инструментов."
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "На iPhone или iPad перейдите в Настройки → Приложения → Safari и убедитесь, что параметр \"Блокировка всех файлов cookie\" отключен, а затем обновите страницу."
@@ -3490,11 +3567,20 @@
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Мы сохраним вашу карточку, чтобы вы могли прикрепить ее к посту, — соцсети не могут добавить изображение за вас."
       ],
+      "Works in ${ LUMO_SHORT_APP_NAME } Desktop only": [
+        "Работает только в ${ LUMO_SHORT_APP_NAME } на ПК"
+      ],
+      "You decide what ${ LUMO_SHORT_APP_NAME } does on its own and what needs your OK": [
+        "Вы решаете, что ${ LUMO_SHORT_APP_NAME } делает самостоятельно, а что потребует вашего подтверждения"
+      ],
       "You don't have any other projects yet.": [
         "У вас пока нет других проектов."
       ],
       "You're using private browsing": [
         "Вы используете режим инкогнито"
+      ],
+      "Your data is never used to train AI": [
+        "Ваши данные никогда не используются для обучения ИИ"
       ],
       "Your information is zero-access encrypted": [
         "Ваша информация зашифрована с нулевым доступом"
@@ -3527,6 +3613,9 @@
       ],
       "Card theme": [
         "Тема карточки"
+      ],
+      "Connected with issues": [
+        "Проблемы с подключением"
       ],
       "Conversation starters (optional)": [
         "Фразы для начала цепочки писем (необязательно)"
@@ -3570,6 +3659,9 @@
       "Image preview": [
         "Предпросмотр изображения"
       ],
+      "Include ${ tool.name } in this task": [
+        "Включить ${ tool.name } в эту задачу"
+      ],
       "Instructions": [
         "Инструкции"
       ],
@@ -3603,8 +3695,20 @@
       "Minimal": [
         "Минимальный"
       ],
+      "Not connected": [
+        "Не подключено"
+      ],
+      "Permission": [
+        "Разрешение"
+      ],
       "Politics": [
         "Политика"
+      ],
+      "Read and write": [
+        "Чтение и запись"
+      ],
+      "Read only": [
+        "Только чтение"
       ],
       "Scams": [
         "Мошенничество"
@@ -3614,6 +3718,9 @@
       ],
       "Share to": [
         "Поделиться в"
+      ],
+      "Skill": [
+        "Навык"
       ],
       "Thick": [
         "Толстый"
@@ -3654,6 +3761,9 @@
       "Ask anything…": [
         "Спросите что угодно…"
       ],
+      "Connectors": [
+        "Коннекторы"
+      ],
       "Describe the role, scope, and behavior you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
         "Опишите должность, сферу деятельности и поведение, которые вы хотите задать для ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -3671,6 +3781,9 @@
       ],
       "Help with login, password and recovery issues.": [
         "Помощь при проблемах с именем пользователя, паролем и восстановлением доступа."
+      ],
+      "Search connectors": [
+        "Поиск коннекторов"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Поиск пользовательских ${ LUMO_SHORT_APP_NAME }"
@@ -4030,6 +4143,11 @@
         "Папка успешно создана"
       ]
     },
+    "collider_2025:Tab": {
+      "Connectors": [
+        "Коннекторы"
+      ]
+    },
     "collider_2025:Time": {
       "Today at ${ time }": [
         "Сегодня в ${ time }"
@@ -4071,6 +4189,9 @@
       ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Пользовательские ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Customize": [
+        "Настройка"
       ],
       "Delete project?": [
         "Удалить проект?"
@@ -4150,6 +4271,9 @@
       "Older": [
         "Ранее"
       ],
+      "Other connectors": [
+        "Другие коннекторы"
+      ],
       "Oversharing blind spots": [
         "Слепые зоны избыточного раскрытия информации"
       ],
@@ -4167,6 +4291,9 @@
       ],
       "See your AI paper trail": [
         "Посмотреть свой цифровой след в ИИ"
+      ],
+      "Skills & tools": [
+        "Навыки и инструменты"
       ],
       "Sort by": [
         "Сортировать по"
@@ -5310,9 +5437,6 @@
       ]
     },
     "Error": {
-      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME } обновился. Обновите страницу."
-      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } - это ваше имя пользователя. Чтобы создать ${ emailAddress }, перейдите в Настройки > Идентификация и адреса > Короткий домен (pm.me)"
       ],
@@ -5391,12 +5515,6 @@
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
       ],
-      "Organization key must be activated to create invited users": [
-        "Ключ организации должен быть активирован для создания приглашенных пользователей"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Ключ организации должен быть активирован для создания нечастных пользователей"
-      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -5471,9 +5589,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Минимальная сумма пожертвования составляет ${ price }"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Длина этого поля превысила максимальные ${ maximumLength } символов."
@@ -6454,9 +6569,6 @@
       "Other amount": [
         "Другая сумма"
       ],
-      "Password": [
-        "Пароль"
-      ],
       "Payer": [
         "Плательщик"
       ],
@@ -6626,11 +6738,6 @@
       ],
       "What’s this?": [
         "Что это такое?"
-      ]
-    },
-    "Loading": {
-      "Loading ${ LUMO_APP_NAME }": [
-        "Загрузка ${ LUMO_APP_NAME }"
       ]
     },
     "lumo: Debug View": {
@@ -8876,6 +8983,9 @@
       "Payment method updated": [
         "Способ оплаты обновлён"
       ],
+      "Preference saved": [
+        "Настройки сохранены"
+      ],
       "Problem reported": [
         "О проблеме сообщено"
       ],
@@ -9086,9 +9196,6 @@
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
       ],
-      "Enter your password": [
-        "Введите пароль"
-      ],
       "Error": [
         "Ошибка"
       ],
@@ -9199,6 +9306,9 @@
       ],
       "Verification failed": [
         "Проверка не удалась"
+      ],
+      "Verify it’s you": [
+        "Подтвердите, что это вы"
       ],
       "Verifying your card...": [
         "Проверяем вашу карту..."

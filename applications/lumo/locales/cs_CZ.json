@@ -314,9 +314,6 @@
       "Save": [
         "Uložit"
       ],
-      "Saving...": [
-        "Ukládání..."
-      ],
       "Scroll to bottom": [
         "Posunout na konec"
       ],
@@ -580,9 +577,19 @@
         "Zachovat předplatné"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Zavřít"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Prémiový správce hesel"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Nabídka je nedostupná"
       ]
     },
     "BF2024: Deal details": {
@@ -5110,9 +5117,6 @@
       ]
     },
     "Error": {
-      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME } byl aktualizován. Prosíme obnovte stránku."
-      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Identita a adresy > Krátká doména (pm.me)"
       ],
@@ -5191,12 +5195,6 @@
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
-      "Organization key must be activated to create invited users": [
-        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
-      ],
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
@@ -5271,9 +5269,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimální výše daru je ${ price }"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
@@ -6251,9 +6246,6 @@
       "Other amount": [
         "Jiná částka"
       ],
-      "Password": [
-        "Heslo"
-      ],
       "Payer": [
         "Plátce"
       ],
@@ -6423,11 +6415,6 @@
       ],
       "What’s this?": [
         "Co je to?"
-      ]
-    },
-    "Loading": {
-      "Loading ${ LUMO_APP_NAME }": [
-        "Načítání ${ LUMO_APP_NAME }"
       ]
     },
     "lumo: Debug View": {
@@ -8680,6 +8667,9 @@
       "Payment method updated": [
         "Platební metoda byla aktualizována"
       ],
+      "Preference saved": [
+        "Nastavení uloženo"
+      ],
       "Problem reported": [
         "Problém nahlášen"
       ],
@@ -8872,9 +8862,6 @@
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
       ],
-      "Enter your password": [
-        "Zadejte své heslo"
-      ],
       "Error": [
         "Chyba"
       ],
@@ -8985,6 +8972,9 @@
       ],
       "Verification failed": [
         "Ověření selhalo"
+      ],
+      "Verify it’s you": [
+        "Potvrďte, že jste to vy"
       ],
       "Verifying your card...": [
         "Ověřování vaší karty..."

@@ -29,6 +29,9 @@
       "Add credit / debit card": [
         "Ajouter une carte de paiement"
       ],
+      "Always allow this tool in Settings": [
+        "Toujours autorisez cet outil dans les Paramètres"
+      ],
       "Answer now": [
         "Répondez maintenant"
       ],
@@ -141,6 +144,9 @@
       ],
       "Dismiss": [
         "Annuler"
+      ],
+      "Don't ask again for this tool": [
+        "Ne pas me redemander pour cet outil"
       ],
       "Done": [
         "Terminé"
@@ -340,9 +346,6 @@
       "Save": [
         "Enregistrer"
       ],
-      "Saving...": [
-        "Enregistrement..."
-      ],
       "Scroll to bottom": [
         "Défiler vers le bas"
       ],
@@ -497,6 +500,9 @@
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateur)",
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME } (pour ${ quantity } utilisateurs)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
       ],
@@ -520,6 +526,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
         "${ seats } accès à ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } licence ${ MEET_APP_NAME }",
@@ -608,9 +618,19 @@
         "Conserver l'abonnement"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Fermer"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offre non disponible"
       ]
     },
     "BF2024: Deal details": {
@@ -1079,6 +1099,9 @@
       "Generate workflow": [
         "Générer le workflow"
       ],
+      "Got it": [
+        "J'ai compris"
+      ],
       "I like this response": [
         "Cette réponse me convient."
       ],
@@ -1105,6 +1128,9 @@
       ],
       "New chat": [
         "Nouvelle session de chat"
+      ],
+      "Next": [
+        "Suivant"
       ],
       "Not now": [
         "Pas maintenant"
@@ -1610,6 +1636,9 @@
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
         "Ce projet est saturé jusqu'aux moustaches. Supprimez une conversation pour faire de la place à une nouvelle et permettre à ${ LUMO_SHORT_APP_NAME } de continuer à ronronner."
       ],
+      "Threshold must be a whole amount between ${ formattedMinThreshold } and ${ formattedMaxThreshold }": [
+        "Le seuil doit être un nombre entier compris entre ${ formattedMinThreshold } et ${ formattedMaxThreshold }."
+      ],
       "Top-up amount must be a whole amount between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
         "Le montant du rechargement doit être un nombre entier compris entre ${ formattedMinAmount } et ${ formattedMaxAmount }."
       ],
@@ -1859,6 +1888,10 @@
         "${ fileCount } fichier",
         "${ fileCount } fichiers"
       ],
+      "${ formattedCredits } credit": [
+        "${ formattedCredits } crédit",
+        "${ formattedCredits } crédits"
+      ],
       "${ formattedSpent } of ${ formattedLimit } bought automatically this month": [
         "${ formattedSpent } sur ${ formattedLimit } ont été dépensés automatiquement ce mois-ci"
       ],
@@ -1937,6 +1970,9 @@
       ],
       "Check this is the site you expect to visit": [
         "Vérifiez qu'il s'agit bien du site que vous souhaitez consulter."
+      ],
+      "Context estimate unavailable.": [
+        "Estimation du contexte indisponible."
       ],
       "Context usage for this conversation": [
         "Utilisation du contexte dans cette conversation"
@@ -2052,6 +2088,9 @@
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Traitez un message client, déterminez son niveau d'urgence et son sujet à l'aide de ${ LUMO_SHORT_APP_NAME }, décidez s'il doit être transmis à un niveau supérieur, puis rédigez une réponse ou transférez-le à un humain."
       ],
+      "Instructions": [
+        "Instructions"
+      ],
       "Last 30 days": [
         "Les 30 derniers jours"
       ],
@@ -2103,6 +2142,9 @@
       "No data rows found.": [
         "Aucune ligne de données n'a été trouvée."
       ],
+      "No longer in the organization": [
+        "Ne fait plus partie de l'organisation"
+      ],
       "No monthly limit on automatic top-ups": [
         "Pas de limite mensuelle pour les recharges automatiques"
       ],
@@ -2118,6 +2160,9 @@
       "No usage yet": [
         "Aucune utilisation pour l'instant"
       ],
+      "Not priced yet": [
+        "Prix non encore défini"
+      ],
       "Notes:": [
         "Notes :"
       ],
@@ -2132,6 +2177,9 @@
       ],
       "Pause automatic top-ups until next month once they reach this amount.": [
         "Suspendre les recharges automatiques jusqu'au mois prochain dès que ce montant est atteint."
+      ],
+      "Pay per token. Prices in credits per 1 million tokens (MTok).": [
+        "Paiement par jeton. Prix exprimés en crédits par 1 million de jetons (MTok)."
       ],
       "PDF": [
         "PDF"
@@ -2199,6 +2247,9 @@
       "Reserved to keep chatting": [
         "Réservé pour continuer à discuter"
       ],
+      "Review API spending by member for ${ periodLabel }.": [
+        "Consultez les dépenses liées à l'API par membre pour ${ periodLabel }."
+      ],
       "Safety information": [
         "Informations de sécurité"
       ],
@@ -2219,6 +2270,9 @@
       ],
       "Show all files": [
         "Afficher tous les fichiers"
+      ],
+      "Showing the last context estimate.": [
+        "Affichage de la dernière estimation contextuelle."
       ],
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Connectez-vous ou créez un compte pour parcourir et ajouter des fichiers depuis votre ${ DRIVE_APP_NAME } (espace de stockage cloud chiffré de bout en bout) à votre base de connaissances de chat."
@@ -2292,8 +2346,8 @@
       "tokens / 30d": [
         "jetons / 30j"
       ],
-      "Tool calls": [
-        "Appels d'outils"
+      "Tools": [
+        "Outils"
       ],
       "Trying...": [
         "Tentative..."
@@ -2396,11 +2450,23 @@
       "Added": [
         "Ajouté"
       ],
+      "Admin": [
+        "Administrateur"
+      ],
       "AI model": [
         "modèle IA"
       ],
+      "All sources": [
+        "Toutes les sources"
+      ],
       "Answer mode": [
         "Mode réponse"
+      ],
+      "API": [
+        "API"
+      ],
+      "API access": [
+        "Accès API"
       ],
       "API calls": [
         "Appels API"
@@ -2410,6 +2476,9 @@
       ],
       "Basic": [
         "Basique"
+      ],
+      "Chat": [
+        "Chat"
       ],
       "Code language": [
         "Langage du code"
@@ -2447,6 +2516,9 @@
       "File upload": [
         "Importer un fichier"
       ],
+      "Former members": [
+        "Anciens membres"
+      ],
       "From chats": [
         "Issu de chats"
       ],
@@ -2458,6 +2530,9 @@
       ],
       "Loop": [
         "Boucle"
+      ],
+      "Member": [
+        "Membre"
       ],
       "Merge": [
         "Fusionner"
@@ -2534,11 +2609,20 @@
       "Tool calls": [
         "Appels d'outils"
       ],
+      "Total tokens": [
+        "Total des jetons"
+      ],
       "TypeScript": [
         "TypeScript"
       ],
+      "Unknown member": [
+        "Membre inconnu"
+      ],
       "Unsafe or problematic": [
         "Dangereux ou problématique"
+      ],
+      "When balance reaches": [
+        "Lorsque le solde atteint"
       ],
       "You": [
         "Vous"
@@ -2767,9 +2851,6 @@
       ],
       "Automatic top-up paused. Update your payment method to resume automatic top-ups.": [
         "La recharge automatique est suspendu. Mettez à jour votre moyen de paiement pour réactiver les rechargements automatiques."
-      ],
-      "Blocked": [
-        "Bloqué"
       ],
       "Copied!": [
         "Copié !"
@@ -3165,6 +3246,9 @@
       "calls": [
         "appels"
       ],
+      "credits": [
+        "crédits"
+      ],
       "tokens": [
         "jetons"
       ]
@@ -3443,9 +3527,6 @@
       ],
       "Dismiss": [
         "Fermer"
-      ],
-      "Dismiss questions": [
-        "Fermer les questions"
       ],
       "Divider": [
         "Séparateur"
@@ -3731,6 +3812,10 @@
       ],
       "Show more": [
         "Afficher plus"
+      ],
+      "Show question": [
+        "Afficher la question",
+        "Afficher les questions"
       ],
       "Show sidebar": [
         "Afficher la barre latérale"
@@ -4458,6 +4543,9 @@
       ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "L'utilisation de ${ DRIVE_APP_NAME } permet à ${ LUMO_SHORT_APP_NAME } de travailler avec des fichiers plus volumineux."
+      ],
+      "Waiting for your answer": [
+        "En attente de votre réponse"
       ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Nous enregistrerons votre carte afin que vous puissiez la joindre à la publication, les réseaux sociaux ne peuvent pas ajouter l'image pour vous."
@@ -5506,6 +5594,10 @@
       ],
       "Running soon…": [
         "Démarrage bientôt…"
+      ],
+      "Waiting for your answer…": [
+        "En attente de votre réponse…",
+        "En attente de vos réponses…"
       ]
     },
     "collider_2025:Subline": {
@@ -6947,9 +7039,6 @@
       ]
     },
     "Error": {
-      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME } a été mis à jour. Nous vous invitons à actualiser la page."
-      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
@@ -6962,11 +7051,17 @@
       "An error occurred": [
         "Une erreur s’est produite."
       ],
+      "Cannot add photo to album without a valid name": [
+        "Il n'est pas possible d'ajouter une photo à un album sans un nom valide."
+      ],
       "Cannot share root folder": [
         "Le dossier racine ne peut pas être partagé."
       ],
       "Cannot verify the author of this file": [
         "L'auteur de ce fichier n'a pas pu être vérifié."
+      ],
+      "Cannot verify who uploaded this file": [
+        "L'auteur de cet import n'a pas pu être vérifié."
       ],
       "Checkout expired, please try again": [
         "La commande a expiré, nous vous invitons à réessayer."
@@ -6980,11 +7075,17 @@
       "Copying item to a non-folder is not allowed": [
         "Vous ne pouvez pas copier d'élément dans un élément qui n'est pas un dossier."
       ],
+      "Could not find an available name": [
+        "Aucun nom disponible n'a pu être trouvé."
+      ],
       "Could not grant access to the organization key": [
         "Impossible d'accorder l'accès à la clé de l'organisation"
       ],
       "Could not load sharing details": [
         "Les informations du partage n'ont pas pu être chargées."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Une partie de ce fichier n'a pas pu être lue : ${ message }"
       ],
       "Could not unlock the parent folder": [
         "Le dossier parent n'a pas pu être déverrouillé."
@@ -7019,6 +7120,9 @@
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
       ],
+      "Expiration date cannot be in the past": [
+        "La date d'expiration ne peut pas se situer dans le passé."
+      ],
       "Failed to decrypt bookmark key: ${ message }": [
         "La clé de signet n'a pas pu être déchiffrée : ${ message }"
       ],
@@ -7031,8 +7135,23 @@
       "Failed to decrypt item name: ${ message }": [
         "Le nom de l'élément n'a pas pu être déchiffré : ${ message }"
       ],
+      "Failed to decrypt node key: ${ message }": [
+        "La clé de contenu n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nous n'avons pas pu déchiffrer les métadonnées de révision."
+      ],
+      "Failed to get inviter keys": [
+        "Les clés de l'inviteur n'ont pas pu être récupérées."
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
+      "Failed to verify invitation": [
+        "L'invitation n'a pas pu être vérifiée."
+      ],
+      "File download failed due to empty response": [
+        "Impossible de télécharger le fichier : la réponse est vide"
       ],
       "File has no revision": [
         "Le fichier n'a aucune révision."
@@ -7095,11 +7214,17 @@
         "Le nom doit être composé d'${ MAX_NODE_NAME_LENGTH } caractère au maximum.",
         "Le nom doit être composé de ${ MAX_NODE_NAME_LENGTH } caractères au maximum."
       ],
+      "Name must not be empty": [
+        "Le nom ne doit pas être vide."
+      ],
       "No file data was received. Please try again.": [
         "Aucune donnée de fichier n'a été reçue. Veuillez réessayer."
       ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
+      ],
+      "Only admins can convert external invitations": [
+        "Seuls les administrateurs peuvent convertir des invitations externes."
       ],
       "Operation aborted": [
         "Opération annulée"
@@ -7109,12 +7234,6 @@
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
-      ],
-      "Organization key must be activated to create invited users": [
-        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ],
       "Part of the file appears to be corrupted": [
         "Une partie du fichier semble corrompue."
@@ -7173,6 +7292,9 @@
       "Process aborted": [
         "Le processus a été abandonné."
       ],
+      "Renaming root item is not allowed": [
+        "Renommer l'élément racine n'est pas autorisé."
+      ],
       "Request aborted": [
         "Requête interrompue"
       ],
@@ -7187,6 +7309,9 @@
       ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "La vérification de signature n'a pas abouti : ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
         "La vérification de signature pour ${ signatureType } n'a pas abouti."
@@ -7220,9 +7345,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Le montant minimum du crédit qui peut être ajouté est de ${ price }."
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Le montant minimum du don est de ${ price }."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "La somme totale n'a pas pu être calculée. Changez le montant pour essayer de nouveau."
@@ -7296,6 +7418,12 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
       ],
+      "You can create public links for your own files only": [
+        "Vous pouvez uniquement créer des liens publics pour vos propres fichiers."
+      ],
+      "You can only leave items that are shared with you": [
+        "Vous pouvez quitter des éléments uniquement s'ils sont partagés avec vous."
+      ],
       "You can update a public link for your own files only": [
         "Vous pouvez uniquement mettre à jour les liens publics pour vos propres fichiers."
       ],
@@ -7354,8 +7482,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La demande de clé de sécurité a été annulée ou a expiré. Veuillez réessayer."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Votre appareil n'a pas pu traiter la demande de clé de sécurité. Veuillez réessayer ou utiliser un autre moyen de connexion."
       ]
     },
     "fido2: Info": {
@@ -7915,6 +8049,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pour garantir la sécurité de votre compte, veuillez confirmer que c'est bien vous avant de continuer."
+      ],
       "Top up your ${ LUMO_SHORT_APP_NAME } API balance. API usage is deducted from this balance.": [
         "Rechargez votre crédit API ${ LUMO_SHORT_APP_NAME }. L'utilisation de l'API est déduite de ce crédit."
       ],
@@ -7977,6 +8114,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
+      ],
+      "web pages": [
+        "pages web"
       ],
       "Week": [
         "Semaine"
@@ -8092,6 +8232,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Mot de passe du compte ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
@@ -8282,9 +8425,6 @@
       "Other amount": [
         "Autre montant"
       ],
-      "Password": [
-        "Mot de passe"
-      ],
       "Payer": [
         "Payeur"
       ],
@@ -8457,11 +8597,6 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
-      ]
-    },
-    "Loading": {
-      "Loading ${ LUMO_APP_NAME }": [
-        "Chargement en cours de ${ LUMO_APP_NAME }"
       ]
     },
     "lumo: Debug View": {
@@ -9953,6 +10088,9 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
+      "Paid from your account credit.": [
+        "Payé avec le crédit de votre compte."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Payer avec ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -10783,6 +10921,9 @@
       "Payment method updated": [
         "Le moyen de paiement a été mis à jour."
       ],
+      "Preference saved": [
+        "La préférence a été enregistrée."
+      ],
       "Problem reported": [
         "Le problème a été signalé."
       ],
@@ -10978,9 +11119,6 @@
       "Enhance security with 2FA": [
         "Améliorez la sécurité avec l’A2F"
       ],
-      "Enter your password": [
-        "Saisissez votre mot de passe"
-      ],
       "Error": [
         "Erreur"
       ],
@@ -11094,6 +11232,9 @@
       ],
       "Verification failed": [
         "La vérification n'a pas abouti."
+      ],
+      "Verify it’s you": [
+        "Vérifiez que c'est bien vous"
       ],
       "Verifying your card...": [
         "Vérification de votre carte en cours"
@@ -11210,6 +11351,44 @@
       "Try a shorter username (${ n } character max)": [
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
+      ]
+    },
+    "Visionary upsell": {
+      "10 years": [
+        "10 ans"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Password vaults": [
+        "Coffre-fort de mot de passe"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive et Pass premium"
+      ],
+      "Previous versions": [
+        "Version précédente"
+      ],
+      "Storage": [
+        "Espace de stockage"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Jusqu'à ${ limit }"
+      ],
+      "Users": [
+        "Utilisateurs"
       ]
     },
     "VPN B2B cancellation reason": {
