@@ -332,6 +332,53 @@ describe('PaymentsContextOptimisticProvider selection', () => {
     });
 });
 
+describe('PaymentsContextOptimisticProvider pending choice', () => {
+    const answer = (data: { Cycle: number }) => ({ ...checkResult, Cycle: data.Cycle, requestData: data });
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        checkSubscription.mockImplementation(answer);
+        // A selection is checked 400 ms later: fake timers run that check on demand, and drop it when the test ends
+        vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+        vi.useRealTimers();
+    });
+
+    it('keeps a cycle picked while it initializes', async () => {
+        const getContext = renderProvider();
+        let initialization: Promise<void> = Promise.resolve();
+        act(() => {
+            initialization = getContext().initialize({
+                api: apiMock,
+                planToCheck: { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY },
+                paramCurrency: 'CHF',
+                telemetryContext: 'other',
+                product: 'proton-vpn-settings',
+            });
+        });
+
+        act(() => getContext().selectPlan({ cycle: CYCLE.TWO_YEARS }));
+        await act(() => initialization);
+
+        expect(getContext().options.cycle).toBe(CYCLE.TWO_YEARS);
+    });
+
+    it('stops loading the payment details when the check of a picked cycle fails', async () => {
+        const getContext = renderProvider();
+        await initialize(getContext);
+        checkSubscription.mockImplementation((data) =>
+            data.Cycle === CYCLE.TWO_YEARS ? Promise.reject(new Error('network down')) : answer(data)
+        );
+
+        act(() => getContext().selectPlan({ cycle: CYCLE.TWO_YEARS }));
+        await act(() => vi.runOnlyPendingTimersAsync());
+
+        expect(getContext().loadingPaymentDetails).toBe(false);
+    });
+});
+
 describe('PaymentsContextOptimisticProvider payment status', () => {
     it('guesses the usual payment methods, and those the page offers, until the payment status loads', () => {
         const getContext = renderProvider({ loadedPaymentStatus: null, optimisticVendorStates: { Bitcoin: true } });

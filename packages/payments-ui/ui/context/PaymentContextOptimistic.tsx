@@ -1,4 +1,4 @@
-import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
 
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { useHandler } from '@proton/hooks/useHandler';
@@ -12,7 +12,6 @@ import { getOptimisticPaymentStatus } from '@proton/payments/core/payment-status
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
-import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -50,14 +49,9 @@ export type PaymentsContextOptimisticType = Omit<PaymentsContextType, 'getPriceO
 
 const PaymentsContextOptimistic = createContext<PaymentsContextOptimisticType | null>(null);
 
-interface PaymentsContextOptimisticProviderProps {
-    children: ReactNode;
-    preload?: boolean;
-    authenticated?: boolean;
-    cachedPlans?: Plan[];
+interface PaymentsContextOptimisticProviderProps extends Omit<PaymentsContextProviderProps, 'withGuards'> {
     /** Payment methods the page offers beyond the usual ones, guessed active until the payment status loads */
     optimisticVendorStates?: Partial<PaymentStatus['VendorStates']>;
-    billingDetails?: PaymentsContextProviderProps['billingDetails'];
 }
 
 const InnerPaymentsContextOptimisticProvider = ({
