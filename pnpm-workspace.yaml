@@ -165,6 +165,11 @@ disallowWorkspaceCycles: true
 # pattern is set explicitly; the desktop apps package only the webpack output, not node_modules.
 hoistPattern:
     - '*'
+    # React's types are declared at the root, at the default catalog's version, so libraries without their
+    # own @types/react find those instead of whichever version pnpm hoists, which apps on the `react19`
+    # catalog would make React 19's.
+    - '!@types/react'
+    - '!@types/react-dom'
 
 # @electron/rebuild pulls @electron/node-gyp from a GitHub commit, and pnpm has no per-package
 # exception for it. Yarn accepted every git dependency (approvedGitRepositories: '**').
@@ -250,6 +255,14 @@ packageExtensions:
         peerDependenciesMeta:
             electron:
                 optional: true
+    # Declare @types/react as a dependency of any version, which pnpm resolves to the newest in the
+    # workspace: React 19's once an app is on the `react19` catalog. As a peer it follows the workspace.
+    '@types/react-router@5':
+        peerDependencies:
+            '@types/react': '*'
+    '@types/react-router-dom@5':
+        peerDependencies:
+            '@types/react': '*'
 
 overrides:
     '@babel/runtime-corejs3@^7.24.4': '7.29.14'

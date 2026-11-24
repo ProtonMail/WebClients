@@ -687,7 +687,7 @@ overrides:
   xlsx@^0.18.5: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
   yaml@^1.7.2: 1.10.3
 
-packageExtensionsChecksum: sha256-yVitNr0ySwXxIXPBNUDWWz55lxk9Dmew2Ba+ATwgtiM=
+packageExtensionsChecksum: sha256-NEG+1pO1HpBBWuBwMD91T9OxbacmZe7vPpBBMO4Z2WU=
 
 patchedDependencies:
   '@lexical/code@0.36.2': 669244df2f1c3971fc5e01710d3f6f5883935720852e163ed64b656b04389b18
@@ -733,6 +733,12 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 26.6.6
+      '@types/react':
+        specifier: 'catalog:'
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 18.3.7(@types/react@18.3.31)
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
@@ -918,7 +924,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@unleash/proxy-client-react':
         specifier: ^6.0.1
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
@@ -1114,7 +1120,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@unleash/proxy-client-react':
         specifier: ^6.0.1
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
@@ -1178,7 +1184,7 @@ importers:
         version: 26.6.6
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -1527,7 +1533,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@unleash/proxy-client-react':
         specifier: ^6.0.1
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
@@ -1597,7 +1603,7 @@ importers:
         version: 26.6.6
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/tinycolor2':
         specifier: 'catalog:'
         version: 1.4.6
@@ -1723,7 +1729,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@unleash/proxy-client-react':
         specifier: ^6.0.1
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
@@ -1962,10 +1968,10 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -2243,7 +2249,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
@@ -2481,7 +2487,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/react-window':
         specifier: ^1.8.8
         version: 1.8.8
@@ -2996,7 +3002,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/react-syntax-highlighter':
         specifier: ^15.5.13
         version: 15.5.13
@@ -3209,7 +3215,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@unleash/proxy-client-react':
         specifier: ^6.0.1
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
@@ -3294,7 +3300,7 @@ importers:
         version: 4.17.27
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/tinycolor2':
         specifier: 'catalog:'
         version: 1.4.6
@@ -3468,7 +3474,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/wicg-file-system-access':
         specifier: 2023.10.7
         version: 2023.10.7
@@ -3843,7 +3849,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -4012,7 +4018,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -4184,7 +4190,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/socketcluster-server':
         specifier: ^19.0.2
         version: 19.0.2
@@ -4393,7 +4399,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -4505,7 +4511,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -4539,7 +4545,7 @@ importers:
         version: 26.6.6
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -4659,7 +4665,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       history:
         specifier: 'catalog:'
         version: 4.10.1
@@ -4714,7 +4720,7 @@ importers:
         version: 4.17.27
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -4840,7 +4846,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       chart.js:
         specifier: ^4.6.1
         version: 4.6.1
@@ -5070,7 +5076,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -5433,10 +5439,10 @@ importers:
         version: 26.6.6
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -5966,7 +5972,7 @@ importers:
         version: 2.2.0(@types/node@26.6.6)(@typescript/typescript6@6.0.2)
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
@@ -6009,7 +6015,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -6139,7 +6145,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -6536,10 +6542,10 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/react-virtualized':
         specifier: ^9.22.4
         version: 9.22.4
@@ -7361,7 +7367,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -7755,7 +7761,7 @@ importers:
         version: 18.3.31
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -8837,7 +8843,7 @@ importers:
         version: 5.60.18
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       codemirror:
         specifier: ^5.65.21
         version: 5.65.21
@@ -9638,10 +9644,10 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router':
         specifier: 'catalog:'
-        version: 5.1.20
+        version: 5.1.20(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/react-virtualized':
         specifier: ^9.22.4
         version: 9.22.4
@@ -10037,7 +10043,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -10452,7 +10458,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -10739,7 +10745,7 @@ importers:
         version: 18.3.31
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
@@ -11382,7 +11388,7 @@ importers:
         version: 18.3.7(@types/react@18.3.31)
       '@types/react-router-dom':
         specifier: 'catalog:'
-        version: 5.3.3
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -18970,9 +18976,13 @@ packages:
 
   '@types/react-router-dom@5.3.3':
     resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
+    peerDependencies:
+      '@types/react': '*'
 
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
+    peerDependencies:
+      '@types/react': '*'
 
   '@types/react-syntax-highlighter@15.5.13':
     resolution: {integrity: sha512-uLGJ87j6Sz8UaBAooU0T6lWJ0dBmjZgN1PZTrj05TNql2/XpC6+4HhMT5syIdFUUt+FASfCeLLv4kBygNU+8qA==}
@@ -35928,13 +35938,13 @@ snapshots:
     dependencies:
       '@types/react': 18.3.31
 
-  '@types/react-router-dom@5.3.3':
+  '@types/react-router-dom@5.3.3(@types/react@18.3.31)':
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.3.31
-      '@types/react-router': 5.1.20
+      '@types/react-router': 5.1.20(@types/react@18.3.31)
 
-  '@types/react-router@5.1.20':
+  '@types/react-router@5.1.20(@types/react@18.3.31)':
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.3.31
