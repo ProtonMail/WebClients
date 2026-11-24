@@ -18,6 +18,8 @@ import DocumentPageV2 from './page'
 // The viewer has its own tests for downloading, or opening the history, once it shows the document; here, what the page
 // tells it, and across a retry, which remounts it
 const mockViewerMounts: DocumentViewerV2Props[] = []
+// The page reads the app's notifications context for its email opt-in
+vi.mock('../../__utils/notifications-context', () => ({ useDocsNotifications: () => ({ isReady: false }) }))
 vi.mock('./__components/DocumentViewerV2', async () => {
   const { useState } = await vi.importActual<typeof ReactModule>('react')
   return {

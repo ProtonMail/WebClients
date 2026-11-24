@@ -816,6 +816,15 @@
     "notes": "The history mode's updateParameters call, so a reload opens the document instead of its history again."
   },
   {
+    "doc2": "page.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "Content's email opt-in effect",
+    "sourceCommit": "66ba7286db7bb533fe77680f6b3e811da552e53d",
+    "copiedIn": "c91b1377204fafb70f09f6daff4642e5c1bf5948",
+    "notes": "The email opt-in trigger, in the page rather than the viewer, so a retry, which remounts the viewer, doesn't open it again. As on /doc, the modal shows over an opened document only."
+  },
+  {
     "doc2": "publicApp.tsx",
     "doc2Symbol": "PublicAppV2",
     "kind": "adaptation",

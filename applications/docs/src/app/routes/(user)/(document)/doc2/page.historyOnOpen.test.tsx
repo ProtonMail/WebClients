@@ -22,6 +22,8 @@ import DocumentPageV2 from './page'
 
 // mode=history through the page and the viewer, on a fake session and a fake Drive: the page's address bar and the
 // viewer's Reveal Point. The viewer's own tests cover the history itself; the page's mocked-viewer tests, a retry.
+// The page reads the app's notifications context for its email opt-in
+vi.mock('../../__utils/notifications-context', () => ({ useDocsNotifications: () => ({ isReady: false }) }))
 vi.mock('~/utils/flags', () => ({
   useIsSheetsEnabled: () => false,
   useDriveCompatSDK: () => false,

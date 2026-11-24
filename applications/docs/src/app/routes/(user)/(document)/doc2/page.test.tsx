@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { act, createEvent, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
@@ -14,6 +14,7 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
+import { DocsNotificationsProvider } from '../../__utils/notifications-context'
 import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import { createFakeSession } from './__utils/createFakeSession'
 import { EDITOR_FRAME_READY_TIMEOUT_MS } from './__utils/loadDocument'
@@ -22,10 +23,14 @@ import { docsLoadMarks, withNodePerformance } from './__utils/loadMarksTesting'
 import DocumentPageV2 from './page'
 
 let mockIsDriveCompatSDK = false
+let mockEmailOptInFlag = false
 vi.mock('~/utils/flags', () => ({
   useIsSheetsEnabled: () => true,
   useDriveCompatSDK: () => mockIsDriveCompatSDK,
   useIsDarkThemeEnabled: () => false,
+}))
+vi.mock('@proton/unleash/useFlag', () => ({
+  useFlag: (name: string) => name === 'DocsEnableNotificationsOnNewComment' && mockEmailOptInFlag,
 }))
 vi.mock('@proton/shared/lib/helpers/location')
 vi.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
@@ -61,6 +66,18 @@ vi.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockCli
 vi.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: vi.fn() }),
 }))
+// The app's notifications context, real, over the Drive settings API
+const mockSettings = { DocsCommentsNotificationsEnabled: null, DocsCommentsNotificationsIncludeDocumentName: null } as {
+  DocsCommentsNotificationsEnabled: boolean | null
+  DocsCommentsNotificationsIncludeDocumentName: boolean | null
+}
+const mockApi = vi.fn(async ({ method, data }: { method: string; data?: Partial<typeof mockSettings> }) => {
+  if (method === 'put') {
+    Object.assign(mockSettings, data)
+  }
+  return { UserSettings: { ...mockSettings } }
+})
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }))
 vi.mock('@proton/drive/sdk', async () => ({
   ...(await vi.importActual('@proton/drive/sdk')),
   getDrive: vi.fn(),
@@ -76,6 +93,9 @@ const getMyFilesRootFolder = vi.fn()
 describe('DocumentPageV2', () => {
   beforeEach(() => {
     mockIsDriveCompatSDK = false
+    mockEmailOptInFlag = false
+    mockSettings.DocsCommentsNotificationsEnabled = null
+    mockSettings.DocsCommentsNotificationsIncludeDocumentName = null
     vi.mocked(getDrive).mockReturnValue({
       getNode,
       getNodeHierarchy,
@@ -332,6 +352,83 @@ describe('DocumentPageV2', () => {
     })
   })
 
+  describe('the email opt-in', () => {
+    const openDocument = async () => {
+      renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
+      await waitFor(() => expect(mockCreateSession).toHaveBeenCalled())
+    }
+
+    test('with the flag on and a setting unset, opens; saving sets both settings, and it does not open again', async () => {
+      mockEmailOptInFlag = true
+      mockSettings.DocsCommentsNotificationsEnabled = true
+      await openDocument()
+
+      expect(await screen.findByTestId('email-opt-in-modal')).toBeInTheDocument()
+      // The unset setting's switch starts on, as on /doc
+      expect(screen.getByTestId('include-doc-name')).toBeChecked()
+      await userEvent.click(screen.getByTestId('enable-notifications'))
+      await userEvent.click(screen.getByRole('button', { name: 'Save preferences' }))
+
+      await endModalExit()
+      expect(mockApi).toHaveBeenCalledWith(
+        expect.objectContaining({
+          method: 'put',
+          data: { DocsCommentsNotificationsEnabled: false, DocsCommentsNotificationsIncludeDocumentName: true },
+        }),
+      )
+      expect(screen.queryByTestId('email-opt-in-modal')).not.toBeInTheDocument()
+    })
+
+    test('"Ask me next time" closes it, and a retry does not open it again', async () => {
+      mockEmailOptInFlag = true
+      mockCreateSession.mockReturnValueOnce(pendingSession(() => Promise.reject(new Error('Bootstrap failed'))))
+      await openDocument()
+
+      await userEvent.click(await screen.findByRole('button', { name: 'Ask me next time' }))
+      await endModalExit()
+      await userEvent.click(await screen.findByRole('button', { name: 'Reload' }))
+
+      await waitFor(() => expect(mockCreateSession).toHaveBeenCalledTimes(2))
+      expect(screen.queryByTestId('email-opt-in-modal')).not.toBeInTheDocument()
+      expect(mockApi).not.toHaveBeenCalledWith(expect.objectContaining({ method: 'put' }))
+    })
+
+    // jsdom plays no animation and its events carry no animationName: end the modal's exit by hand
+    const endModalExit = async () => {
+      const modalRoot = await waitFor(() => document.querySelector('.modal-two--out')!)
+      const exitAnimationEnd = createEvent.animationEnd(modalRoot)
+      Object.defineProperty(exitAnimationEnd, 'animationName', { value: 'anime-modal-two-out' })
+      fireEvent(modalRoot, exitAnimationEnd)
+      expect(screen.queryByTestId('email-opt-in-modal')).not.toBeInTheDocument()
+    }
+
+    test('shows over a document only, as on /doc: not over an error', async () => {
+      mockEmailOptInFlag = true
+      renderAt('/doc2?mode=open&volumeId=VOLUME')
+      await waitFor(() => expect(mockApi).toHaveBeenCalledWith(expect.objectContaining({ method: 'get' })))
+
+      expect(screen.getByTestId('invalid-openaction-error')).toBeInTheDocument()
+      expect(screen.queryByTestId('email-opt-in-modal')).not.toBeInTheDocument()
+    })
+
+    test('with the flag off, does not open', async () => {
+      await openDocument()
+      await waitFor(() => expect(mockApi).toHaveBeenCalledWith(expect.objectContaining({ method: 'get' })))
+
+      expect(screen.queryByTestId('email-opt-in-modal')).not.toBeInTheDocument()
+    })
+
+    test('with both settings set, does not open', async () => {
+      mockEmailOptInFlag = true
+      mockSettings.DocsCommentsNotificationsEnabled = false
+      mockSettings.DocsCommentsNotificationsIncludeDocumentName = false
+      await openDocument()
+      await waitFor(() => expect(mockApi).toHaveBeenCalledWith(expect.objectContaining({ method: 'get' })))
+
+      expect(screen.queryByTestId('email-opt-in-modal')).not.toBeInTheDocument()
+    })
+  })
+
   function pendingSession(bootstrap: () => Promise<unknown>) {
     return { on: vi.fn(() => vi.fn()), bootstrap }
   }
@@ -351,28 +448,30 @@ describe('DocumentPageV2', () => {
       <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
         <AuthenticationContext.Provider value={{ getLocalID: () => 1 } as any}>
           <ApplicationProvider application={application}>
-            <MemoryRouter initialEntries={[path]}>
-              <CompatRouter>
-                <DocsUrlContextProvider>
-                  <LocationDisplay />
-                  <Link to="/recents">Leave</Link>
-                  <Routes>
-                    <Route path="/doc2" element={page} />
-                    <Route path="/new2" element={page} />
-                    <Route path="/u/1/doc2" element={page} />
-                    <Route
-                      path="/recents"
-                      element={
-                        <>
-                          Recents page
-                          <Link to="/doc2?mode=convert&volumeId=VOLUME&linkId=LINK">Convert</Link>
-                        </>
-                      }
-                    />
-                  </Routes>
-                </DocsUrlContextProvider>
-              </CompatRouter>
-            </MemoryRouter>
+            <DocsNotificationsProvider>
+              <MemoryRouter initialEntries={[path]}>
+                <CompatRouter>
+                  <DocsUrlContextProvider>
+                    <LocationDisplay />
+                    <Link to="/recents">Leave</Link>
+                    <Routes>
+                      <Route path="/doc2" element={page} />
+                      <Route path="/new2" element={page} />
+                      <Route path="/u/1/doc2" element={page} />
+                      <Route
+                        path="/recents"
+                        element={
+                          <>
+                            Recents page
+                            <Link to="/doc2?mode=convert&volumeId=VOLUME&linkId=LINK">Convert</Link>
+                          </>
+                        }
+                      />
+                    </Routes>
+                  </DocsUrlContextProvider>
+                </CompatRouter>
+              </MemoryRouter>
+            </DocsNotificationsProvider>
           </ApplicationProvider>
         </AuthenticationContext.Provider>
       </ConfigContext.Provider>,
