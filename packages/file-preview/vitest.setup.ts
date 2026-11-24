@@ -1,4 +1,4 @@
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/unleash/testing/mockUnleash';
 
 const hasDom = typeof document !== 'undefined';
 
@@ -16,7 +16,7 @@ if (hasDom) {
 if (hasDom) {
     await import('@testing-library/jest-dom/vitest');
     // @ts-expect-error side-effect-only module without exports
-    await import('@proton/components/testing/vitest/mockMatchMedia');
+    await import('@proton/components/testing/mockMatchMedia');
     const { cleanup } = await import('@testing-library/react');
 
     afterEach(cleanup);

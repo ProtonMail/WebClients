@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import * as featureTourActions from '@proton/account/featuresTour/actions';
 import type { FeatureTourStepId } from '@proton/account/featuresTour/interface';
 
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import FeatureTourSteps from './FeatureTourSteps';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';
 

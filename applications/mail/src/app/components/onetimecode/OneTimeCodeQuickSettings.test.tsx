@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { MailFeatureFlag } from '@proton/unleash/Flags';

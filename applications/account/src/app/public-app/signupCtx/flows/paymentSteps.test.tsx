@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import { screen } from '@testing-library/react';
 
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';

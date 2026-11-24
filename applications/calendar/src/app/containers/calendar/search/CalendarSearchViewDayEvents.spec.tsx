@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
-import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
+import { mockUseAddresses } from '@proton/account/testing/mockUseAddresses';
 
 import CalendarSearchViewDayEvents from './CalendarSearchViewDayEvents';
 import type { VisualSearchItem } from './interface';

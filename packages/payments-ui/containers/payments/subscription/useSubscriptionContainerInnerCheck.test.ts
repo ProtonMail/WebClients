@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers/getAllowedCycles';
-import { getStoreWrapper } from '@proton/components/testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';

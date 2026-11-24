@@ -1,4 +1,4 @@
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 
 import type { Paths } from '../helper';
 import SignInContainer from '../sign-in/SignInContainer';

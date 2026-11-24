@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor, within } from '@testing-library/rea
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
+import { mockNotifications } from '@proton/components/testing/mockNotifications';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { localeCode, setLocales } from '@proton/shared/lib/i18n';
 import type { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';

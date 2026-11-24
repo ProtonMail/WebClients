@@ -1,6 +1,6 @@
 import '@proton/vitest-config/setup';
-import '@proton/app-context/testing/vitest/mockTelemetry';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/app-context/testing/mockTelemetry';
+import '@proton/unleash/testing/mockUnleash';
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({

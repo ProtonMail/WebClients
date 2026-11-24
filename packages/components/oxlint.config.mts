@@ -67,7 +67,7 @@ export default createOxlintConfig({
             },
         },
         {
-            files: ['testing/vitest/**'],
+            files: ['testing/**'],
             globals: {
                 assert: 'readonly',
                 assertType: 'readonly',

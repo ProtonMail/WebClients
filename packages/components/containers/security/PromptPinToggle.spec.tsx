@@ -1,14 +1,14 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
-import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
-import { withApi } from '../../testing/vitest/with-api';
-import { withEventManager } from '../../testing/vitest/with-event-manager';
-import { withReduxStore } from '../../testing/vitest/with-redux-store';
+import { mockUseMailSettings } from '../../testing/mockUseMailSettings';
+import { withApi } from '../../testing/with-api';
+import { withEventManager } from '../../testing/with-event-manager';
 import { withNotifications } from '../../testing/with-notifications';
+import { withReduxStore } from '../../testing/with-redux-store';
 import PromptPinToggle from './PromptPinToggle';
 
 const PromptPinToggleContext = applyHOCs(

@@ -8,7 +8,7 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import * as useFlagModule from '@proton/unleash/useFlag';
 
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import FeatureTour from './FeatureTour';
 
 vi.mock('@proton/features/useFeature', () => ({

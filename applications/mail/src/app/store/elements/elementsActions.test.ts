@@ -1,4 +1,4 @@
-import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
+import { mockNotifications } from '@proton/components/testing/mockNotifications';
 import type { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

@@ -10,7 +10,7 @@ import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import { LockedStateTopBanner } from './LockedStateTopBanner';
 
 const expectHrefParams = (link: HTMLElement, expected: Record<string, string>) => {

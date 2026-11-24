@@ -10,7 +10,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import ReferralTrialInfo from './ReferralTrialInfo';
 
 vi.mock('@proton/account/entitlementCatalog/hooks', async () => ({

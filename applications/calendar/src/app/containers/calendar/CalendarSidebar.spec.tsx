@@ -9,7 +9,7 @@ import type { Mock } from 'vitest';
 
 import { useSubscribedCalendars } from '@proton/calendar/calendarSubscriptions/hooks';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
-import { mockUseAuthentication } from '@proton/components/testing/vitest/mockUseAuthentication';
+import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
 import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';

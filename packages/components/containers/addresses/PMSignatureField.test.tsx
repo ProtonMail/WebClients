@@ -1,13 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { mockUseOrganization } from '@proton/account/testing/vitest/mockUseOrganization';
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
-import { mockUseUserSettings } from '@proton/account/testing/vitest/mockUseUserSettings';
+import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseUserSettings } from '@proton/account/testing/mockUseUserSettings';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { mockNotifications } from '../../testing/vitest/mockNotifications';
-import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
+import { mockNotifications } from '../../testing/mockNotifications';
+import { mockUseMailSettings } from '../../testing/mockUseMailSettings';
 import PMSignatureField from './PMSignatureField';
 
 vi.mock('@proton/app-context/useNotifications', () => ({

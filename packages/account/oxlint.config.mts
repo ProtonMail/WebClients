@@ -5,7 +5,16 @@ import {
 } from '@proton/oxlint-config/extraneousDependencies';
 
 export default createOxlintConfig({
-    ignorePatterns: ['testing/vitest/**'],
+    ignorePatterns: [
+        'testing/mockMatchMedia.ts',
+        'testing/mockUseAddressKeys.ts',
+        'testing/mockUseAddresses.ts',
+        'testing/mockUseOrganization.ts',
+        'testing/mockUseSubscription.ts',
+        'testing/mockUseUser.ts',
+        'testing/mockUseUserKeys.ts',
+        'testing/mockUseUserSettings.ts',
+    ],
     restrictedImports: {
         // @proton/components and the account domain UI packages depend on this package.
         patterns: [

@@ -12,7 +12,7 @@ import { flushPromises } from '@proton/test-api/flush-promises';
 import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import DomainMxTopBanner from './DomainMxTopBanner';
 
 vi.mock('@proton/unleash/useFlag');

@@ -3,10 +3,10 @@ import { type ChangeEvent, act } from 'react';
 import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
-import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
+import { mockUseAddresses } from '@proton/account/testing/mockUseAddresses';
+import { mockUseUserKeys } from '@proton/account/testing/mockUseUserKeys';
 import { WasmNetwork } from '@proton/andromeda';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
 import { mockUseFiatCurrencies } from '@proton/wallet/tests/mocks/useFiatCurrencies';

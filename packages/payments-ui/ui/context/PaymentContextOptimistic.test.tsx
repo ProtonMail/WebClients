@@ -1,7 +1,7 @@
 import { act, render } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
 import type { InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PaymentStatus } from '@proton/payments/core/interface';

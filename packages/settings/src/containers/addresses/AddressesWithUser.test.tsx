@@ -13,7 +13,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { SortableList } from '@proton/components/components/dnd/SortableList';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useAddressFlags from '@proton/components/hooks/useAddressFlags';
-import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
+import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

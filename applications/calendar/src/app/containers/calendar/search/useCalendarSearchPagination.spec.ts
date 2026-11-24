@@ -4,7 +4,7 @@ import { act, renderHook } from '@testing-library/react';
 import { vi } from 'vitest';
 import type { MockedFunction } from 'vitest';
 
-import { mockUseHistory } from '@proton/components/testing/vitest/mockUseHistory';
+import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
 
 import { DEFAULT_MAX_ITEMS_PER_PAGE } from './constants';
 import type { VisualSearchItem } from './interface';

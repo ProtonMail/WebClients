@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { ApiImportProvider, ApiImporterError } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';

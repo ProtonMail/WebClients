@@ -5,7 +5,7 @@ import {
     type UserSettings,
 } from '@proton/shared/lib/interfaces/UserSettings';
 
-import * as useUserSettingsModule from '../../userSettings/hooks';
+import * as useUserSettingsModule from '../userSettings/hooks';
 
 const defaultUserSettings: UserSettings = {
     '2FA': { Enabled: 0, Allowed: 0, ExpirationTime: null, RegisteredKeys: [] },

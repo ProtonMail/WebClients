@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { screen } from '@testing-library/react';
 
 import { getReadableTime } from '@proton/components/components/time/Time';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { ADDON_NAMES, CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';

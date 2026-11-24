@@ -9,7 +9,7 @@ import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
-import { getStoreWrapper } from '../../../../testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '../../../../testing/renderWithProviders';
 import { getUpsellPlanMonthlyPrice } from './getUpsellPlanMonthlyPrice';
 
 const checkUrl = 'payments/v5/subscription/check';

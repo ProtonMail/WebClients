@@ -4,7 +4,7 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "exports": {
-        "./testing/vitest/renderWithProviders": "./testing/vitest/renderWithProviders.tsx",
+        "./testing/renderWithProviders": "./testing/renderWithProviders.tsx",
         "./client-extensions/billed-user/BilledUserInlineMessage": "./client-extensions/billed-user/BilledUserInlineMessage.tsx",
         "./client-extensions/billed-user/billedUserWarning": "./client-extensions/billed-user/billedUserWarning.ts",
         "./client-extensions/helpers": "./client-extensions/helpers.ts",

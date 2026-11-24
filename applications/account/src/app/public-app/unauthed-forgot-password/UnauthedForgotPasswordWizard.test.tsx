@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 

@@ -1,5 +1,5 @@
-import '@proton/unleash/testing/vitest/mockUnleash';
-import '@proton/app-context/testing/vitest/mockTelemetry';
+import '@proton/unleash/testing/mockUnleash';
+import '@proton/app-context/testing/mockTelemetry';
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
@@ -17,8 +17,8 @@ if (typeof document !== 'undefined') {
     await Promise.all([
         import('@proton/vitest-config/setup'),
         // @ts-expect-error side-effect-only module without exports
-        import('@proton/components/testing/vitest/mockMatchMedia'),
-        import('@proton/components/testing/vitest/mockFlagSvg'),
+        import('@proton/components/testing/mockMatchMedia'),
+        import('@proton/components/testing/mockFlagSvg'),
     ]);
 
     // A <dialog> without `open` is hidden and its content is inaccessible. Our CSS reset shows it, tests do not load it.

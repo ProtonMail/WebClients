@@ -15,7 +15,7 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
 import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
 
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import TrialTopBanner from './TrialTopBanner';
 import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 

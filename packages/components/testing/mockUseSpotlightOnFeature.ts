@@ -1,9 +1,9 @@
 import type { Mock } from 'vitest';
 import { vi } from 'vitest';
 
-import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
+import useSpotlightOnFeature from '../hooks/useSpotlightOnFeature';
 
-vi.mock('../../hooks/useSpotlightOnFeature', () => ({
+vi.mock('../hooks/useSpotlightOnFeature', () => ({
     __esModule: true,
     default: vi.fn(),
 }));

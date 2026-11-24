@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
-import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 
 import { generateSubscriptionList } from '../components/view/NewsletterSubscription/testData';

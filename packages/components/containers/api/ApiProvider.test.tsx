@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 
 import { apiStatusActions } from '@proton/account/apiStatus';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 
-import { extendStore, setupStore } from '../../testing/vitest/store';
+import { extendStore, setupStore } from '../../testing/store';
 import ApiProvider from './ApiProvider';
 
 const dispatchMock = vi.fn();

@@ -1,6 +1,6 @@
 import '@proton/vitest-config/setup'
-import '@proton/components/testing/vitest/mockFlagSvg'
-import '@proton/components/testing/vitest/mockMatchMedia'
+import '@proton/components/testing/mockFlagSvg'
+import '@proton/components/testing/mockMatchMedia'
 
 window.ResizeObserver = class {
   observe = vi.fn()

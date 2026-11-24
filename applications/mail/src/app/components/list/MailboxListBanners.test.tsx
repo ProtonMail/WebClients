@@ -2,9 +2,9 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { Mock } from 'vitest';
 
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
-import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
-import { mockUseHistory } from '@proton/components/testing/vitest/mockUseHistory';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
+import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 

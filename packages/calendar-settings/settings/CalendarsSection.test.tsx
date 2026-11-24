@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { mockUseAuthentication } from '@proton/components/testing/vitest/mockUseAuthentication';
+import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { generateSimpleCalendar } from '@proton/shared/testing/calendarBuilders';
 

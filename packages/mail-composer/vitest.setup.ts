@@ -1,10 +1,10 @@
 import '@proton/vitest-config/setup';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/unleash/testing/mockUnleash';
 
 if (typeof window !== 'undefined') {
-    await import('@proton/components/testing/vitest/mockFlagSvg');
+    await import('@proton/components/testing/mockFlagSvg');
     // @ts-expect-error side-effect-only module without exports
-    await import('@proton/components/testing/vitest/mockMatchMedia');
+    await import('@proton/components/testing/mockMatchMedia');
 
     window.ResizeObserver = class ResizeObserverMock {
         observe = vi.fn();

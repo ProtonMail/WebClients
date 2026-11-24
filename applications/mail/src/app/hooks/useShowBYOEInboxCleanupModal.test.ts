@@ -11,7 +11,7 @@ import {
     selectReportsLoading,
 } from '@proton/activation/src/logic/reports/reports.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import type { Feature } from '@proton/features/interface';
 import { FeatureCode } from '@proton/features/interface';
 import { updateFeature } from '@proton/features/reducer';

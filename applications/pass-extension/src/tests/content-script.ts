@@ -4,7 +4,7 @@ import { FormType } from '@protontech/autofill/types';
 import { waitFor } from '@testing-library/react';
 import type { Runtime } from 'webextension-polyfill';
 
-import '@proton/components/testing/vitest/mockMatchMedia';
+import '@proton/components/testing/mockMatchMedia';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull } from '@proton/pass/types/utils';

@@ -1,5 +1,5 @@
 import '@proton/vitest-config/setup';
-import '@proton/components/testing/vitest/mockMatchMedia';
+import '@proton/components/testing/mockMatchMedia';
 
 /** Our CSS reset shows a <dialog> without `open`, tests do not load it */
 const style = document.createElement('style');

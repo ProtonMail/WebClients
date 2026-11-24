@@ -197,8 +197,8 @@
                 "breaches/breachAlertListener.ts",
                 "breaches/breachReportsSlice.ts",
                 "groupOwnerInvites/hooks.ts",
-                "testing/vitest/mockUseOrganization.ts",
-                "testing/vitest/mockUseUser.ts"
+                "testing/mockUseOrganization.ts",
+                "testing/mockUseUser.ts"
             ]
         },
         "packages/account-recovery": {

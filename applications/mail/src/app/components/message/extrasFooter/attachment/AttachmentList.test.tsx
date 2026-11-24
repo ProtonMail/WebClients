@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
-import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { clearAll } from '../../../../helpers/tests/helper';
 import { createEmbeddedImage, createMessageImages } from '../../../../helpers/tests/message';

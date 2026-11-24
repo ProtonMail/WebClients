@@ -2,8 +2,8 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { Mock } from 'vitest';
 
-import { mockUseSubscription } from '@proton/account/testing/vitest/mockUseSubscription';
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseSubscription } from '@proton/account/testing/mockUseSubscription';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';

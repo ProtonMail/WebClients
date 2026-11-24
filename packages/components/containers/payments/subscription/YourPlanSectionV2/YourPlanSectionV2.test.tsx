@@ -9,10 +9,10 @@ import { APPS } from '@proton/shared/lib/constants';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/payments/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { type TestPreloadedStateOverrides, buildPreloadedState } from '../../../../testing/buildPreloadedState';
-import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import YourPlanSectionV2 from './YourPlanSectionV2';
 
 vi.mock('@proton/app-context/useConfig');

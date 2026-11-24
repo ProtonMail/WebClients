@@ -6,7 +6,7 @@ import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePayme
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Invoice } from '@proton/payments/core/interface';
 
-import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
 import { EditInvoiceModal } from './EditInvoiceModal';
 
 vi.mock('@proton/app-context/useNotifications', () => ({

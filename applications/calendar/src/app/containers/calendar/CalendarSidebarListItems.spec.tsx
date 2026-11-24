@@ -6,7 +6,7 @@ import { createMemoryHistory } from 'history';
 import { vi } from 'vitest';
 import type { Mock } from 'vitest';
 
-import { mockUseAuthentication } from '@proton/components/testing/vitest/mockUseAuthentication';
+import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';

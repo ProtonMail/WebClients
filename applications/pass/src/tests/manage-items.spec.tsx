@@ -18,7 +18,7 @@ import { renderPrivateApp } from './render';
 
 vi.mock(import('@proton/pass/lib/items/item.requests'), async (importOriginal) => ({
     ...(await importOriginal()),
-    ...(await import('@proton/pass/testing/vitest/item.requests.mock')),
+    ...(await import('@proton/pass/testing/item.requests.mock')),
 }));
 
 describe('Manage items', () => {

@@ -10,7 +10,7 @@ import { TelemetryAccountCancellationFlowFeedbackEvents } from '@proton/shared/l
 import { APPS } from '@proton/shared/lib/constants';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { useFeedbackFirstCancellationFlow } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstCancellationFlow';
 import { getFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
 import { useSendFeedbackFirstReport } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstTelemetry';

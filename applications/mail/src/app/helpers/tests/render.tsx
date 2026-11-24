@@ -20,7 +20,7 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
-import { registerFeatureFlagsApiMock } from '@proton/features/testing/vitest/features';
+import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import { ComposerAssistantProvider } from '@proton/mail-composer/components/assistant/provider/ComposerAssistantProvider';
 import { ComposeProvider } from '@proton/mail-composer/containers/ComposeProvider';
 import { MailContentRefProvider } from '@proton/mail-composer/hooks/useClickMailContent';

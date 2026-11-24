@@ -2,7 +2,7 @@ import '@proton/vitest-config/setup';
 import { vi } from 'vitest';
 
 import '@proton/polyfill';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/unleash/testing/mockUnleash';
 
 import './testing/setup/mockMatchMedia';
 

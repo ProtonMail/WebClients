@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { act, render, screen } from '@testing-library/react';
 
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { ThemeColor } from '@proton/colors/types';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 

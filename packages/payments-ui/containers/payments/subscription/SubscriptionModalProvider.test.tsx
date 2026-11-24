@@ -12,7 +12,7 @@ import {
     mockSubscriptionApi,
     subscriptionDefaultResponse,
 } from '@proton/components/hooks/helpers/tests/vitest/useSubscription';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { formatSubscription } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';

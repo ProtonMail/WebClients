@@ -1,18 +1,18 @@
 import { fireEvent } from '@testing-library/react';
 import type { MockedFunction } from 'vitest';
 
-import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
+import { mockUseAddresses } from '@proton/account/testing/mockUseAddresses';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/vitest/render';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/vitest/with-api';
-import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
+import { withApi } from '@proton/components/testing/with-api';
 import { withAuthentication } from '@proton/components/testing/with-authentication';
 import { withCache } from '@proton/components/testing/with-cache';
 import { withConfig } from '@proton/components/testing/with-config';
+import { withEventManager } from '@proton/components/testing/with-event-manager';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { IncomingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';

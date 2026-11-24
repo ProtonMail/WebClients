@@ -1,6 +1,6 @@
 import { screen, within } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';

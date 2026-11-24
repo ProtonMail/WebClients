@@ -1,7 +1,7 @@
 import '@proton/vitest-config/setup';
-import '@proton/unleash/testing/vitest/mockUnleash';
-import '@proton/components/testing/vitest/mockFlagSvg';
-import '@proton/components/testing/vitest/mockMatchMedia';
+import '@proton/unleash/testing/mockUnleash';
+import '@proton/components/testing/mockFlagSvg';
+import '@proton/components/testing/mockMatchMedia';
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
 /* eslint-disable no-console -- test setup silences React/testing-library noise */

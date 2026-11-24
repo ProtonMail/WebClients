@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { WasmKeychainKind, WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
 import { mockUseFiatCurrencies } from '@proton/wallet/tests/mocks/useFiatCurrencies';
 import { mockUseGetExchangeRate } from '@proton/wallet/tests/mocks/useGetExchangeRate';

@@ -3,9 +3,9 @@ import { act } from 'react';
 import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { renderHook, waitFor } from '@testing-library/react';
 
-import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
+import { mockUseUserKeys } from '@proton/account/testing/mockUseUserKeys';
 import { type WasmApiWalletAccount, WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { apiWalletAccountOneA, apiWalletAccountOneB, apiWalletsData } from '@proton/wallet/tests/fixtures/api';
 import { mockUseWalletApiClients } from '@proton/wallet/tests/mocks/useWalletApi';

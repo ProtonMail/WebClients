@@ -8,9 +8,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { hookWrapper } from '../../../../../testing/hocs/helpers';
-import { withApi } from '../../../../../testing/vitest/with-api';
-import { withReduxStore } from '../../../../../testing/vitest/with-redux-store';
+import { withApi } from '../../../../../testing/with-api';
 import { withConfig } from '../../../../../testing/with-config';
+import { withReduxStore } from '../../../../../testing/with-redux-store';
 import { useSubscriptionPriceComparison } from './helper';
 
 const getWrapper = (plans?: Plan[]) =>

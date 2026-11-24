@@ -1,10 +1,10 @@
 import { vi } from 'vitest';
 
-import * as useCategoriesDataModule from '../../features/categoriesView/useCategoriesData';
+import * as useCategoriesDataModule from '../features/categoriesView/useCategoriesData';
 
-vi.mock('../../features/categoriesView/useCategoriesData', async () => ({
+vi.mock('../features/categoriesView/useCategoriesData', async () => ({
     __esModule: true,
-    ...(await vi.importActual('../../features/categoriesView/useCategoriesData')),
+    ...(await vi.importActual('../features/categoriesView/useCategoriesData')),
     useCategoriesData: vi.fn(),
 }));
 

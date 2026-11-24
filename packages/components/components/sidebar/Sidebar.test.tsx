@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
+import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -12,8 +12,8 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import { mockUseAuthentication } from '../../testing/vitest/mockUseAuthentication';
-import { mockUseLocation } from '../../testing/vitest/mockUseLocation';
+import { mockUseAuthentication } from '../../testing/mockUseAuthentication';
+import { mockUseLocation } from '../../testing/mockUseLocation';
 import Sidebar from './Sidebar';
 
 vi.mock('@proton/account/user/hooks', () => ({

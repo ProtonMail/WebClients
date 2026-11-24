@@ -4,8 +4,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { defaultApiStatus } from '@proton/account/apiStatus';
 import { useUser } from '@proton/account/user/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useOnline from '@proton/components/hooks/useOnline';

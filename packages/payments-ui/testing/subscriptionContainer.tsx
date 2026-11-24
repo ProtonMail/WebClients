@@ -1,9 +1,9 @@
 import { screen, waitFor } from '@testing-library/react';
 
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
-import { withDeprecatedModals } from '@proton/components/testing/vitest/with-deprecated-modals';
-import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';

@@ -4,8 +4,8 @@
     "exports": {
         "./interface": "./interface.ts",
         "./reducer": "./reducer.ts",
-        "./testing/vitest/features": "./testing/vitest/features.ts",
-        "./testing/vitest/mockUseFeature": "./testing/vitest/mockUseFeature.ts",
+        "./testing/features": "./testing/features.ts",
+        "./testing/mockUseFeature": "./testing/mockUseFeature.ts",
         "./useFeature": "./useFeature.ts",
         "./useFeatures": "./useFeatures.ts"
     },

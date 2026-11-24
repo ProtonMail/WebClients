@@ -4,7 +4,7 @@ import { render, waitFor } from '@testing-library/react';
 import type { MockInstance } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/components/testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
 import {
     PaymentsContextOptimisticProvider,
     usePaymentOptimistic,

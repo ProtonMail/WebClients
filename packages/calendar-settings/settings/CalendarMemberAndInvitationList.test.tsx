@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
+import { mockNotifications } from '@proton/components/testing/mockNotifications';
 import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 

@@ -20,7 +20,7 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import { plansDefaultResponse } from '../../hooks/helpers/tests/vitest/usePlans';
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import SubscriptionsSection from './SubscriptionsSection';
 
 const mockGetPaymentMethods = vi.fn();

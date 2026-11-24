@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { mockUseCategoriesData } from '@proton/mail/testing/vitest/mockUseCategoriesData';
-import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
+import { mockUseCategoriesData } from '@proton/mail/testing/mockUseCategoriesData';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { minimalCache } from '../../helpers/tests/cache';

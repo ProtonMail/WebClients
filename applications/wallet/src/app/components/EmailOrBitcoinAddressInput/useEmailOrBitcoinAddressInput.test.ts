@@ -3,7 +3,7 @@ import { act } from 'react';
 import { renderHook, waitFor } from '@testing-library/react';
 import type { QRCode } from 'jsqr';
 
-import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
+import { mockUseAddresses } from '@proton/account/testing/mockUseAddresses';
 import { WasmNetwork } from '@proton/andromeda';
 
 import { useEmailOrBitcoinAddressInput } from './useEmailOrBitcoinAddressInput';

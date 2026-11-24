@@ -10,7 +10,7 @@ import { mockStatusApi } from '@proton/components/hooks/helpers/tests/vitest/use
 import { mockPlansApi } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
 import { mockSubscriptionApi } from '@proton/components/hooks/helpers/tests/vitest/useSubscription';
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {

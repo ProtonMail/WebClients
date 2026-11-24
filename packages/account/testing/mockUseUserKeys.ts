@@ -1,6 +1,6 @@
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
-import * as useUserKeysModule from '../../userKeys/hooks';
+import * as useUserKeysModule from '../userKeys/hooks';
 
 export const mockUseUserKeys = (value: [DecryptedKey[]?, boolean?] = []) => {
     const [keys, cached = false] = value;

@@ -3,21 +3,26 @@ import type { JSX, PropsWithChildren, ReactElement } from 'react';
 import type { RenderOptions } from '@testing-library/react';
 import { render as originalRender } from '@testing-library/react';
 
-import { applyHOCs } from '../hocs/helpers';
-import { withCache } from '../hocs/with-cache';
-import { withConfig } from '../hocs/with-config';
-import { withMemoryRouter } from '../hocs/with-memory-router';
-import { withNotifications } from '../hocs/with-notifications';
-import { withApi } from './hocs/with-api';
-import { getPreloadedState, withReduxStore } from './hocs/with-redux-store';
+import { applyHOCs } from './hocs/helpers';
+import { withMemoryRouter } from './hocs/with-memory-router';
 import { setupStore } from './store';
+import { withApi } from './with-api';
+import { withAuthentication } from './with-authentication';
+import { withCache } from './with-cache';
+import { withConfig } from './with-config';
+import { withEventManager } from './with-event-manager';
+import { withNotifications } from './with-notifications';
+import { getPreloadedState, withReduxStore } from './with-redux-store';
 
-interface StoreWrapperOptions {
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
     preloadedState?: Partial<Parameters<typeof setupStore>[0]['preloadedState']>;
     initialUrl?: string;
 }
 
-interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'>, StoreWrapperOptions {}
+interface StoreWrapperOptions {
+    preloadedState?: ExtendedRenderOptions['preloadedState'];
+    initialUrl?: ExtendedRenderOptions['initialUrl'];
+}
 
 export const getStoreWrapper = ({ preloadedState, initialUrl }: StoreWrapperOptions = {}) => {
     const store = setupStore({
@@ -30,11 +35,11 @@ export const getStoreWrapper = ({ preloadedState, initialUrl }: StoreWrapperOpti
         withApi(),
         withCache(),
         withNotifications(),
+        withEventManager(),
+        withAuthentication(),
         withMemoryRouter(initialUrl ? [initialUrl] : undefined)
     );
 
-    // The wrapped component is built once, outside Wrapper's render. Rebuilding it per render would hand
-    // React a new component type every time and remount the whole subtree, wiping state on every rerender.
     const ChildrenWithProviders = applyProviders(({ children }: PropsWithChildren<{}>) => <>{children}</>);
 
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {

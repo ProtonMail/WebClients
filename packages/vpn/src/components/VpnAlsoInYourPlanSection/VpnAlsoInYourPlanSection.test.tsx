@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { buildPreloadedState } from '@proton/components/testing/buildPreloadedState';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';

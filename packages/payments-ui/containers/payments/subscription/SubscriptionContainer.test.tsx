@@ -3,7 +3,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { organizationDefaultResponse } from '@proton/components/hooks/helpers/tests/vitest/useOrganization';
 import { plansDefaultResponse } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
 import { defaultSubscriptionCache } from '@proton/components/hooks/helpers/tests/vitest/useSubscription';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';

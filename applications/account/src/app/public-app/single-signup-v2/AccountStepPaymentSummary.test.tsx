@@ -2,7 +2,7 @@ import React from 'react';
 
 import { screen, waitFor } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';

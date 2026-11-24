@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { createMockModel, createMockSignupParameters } from '@proton/payments/testing/signup';
 import { apiMock } from '@proton/test-api/vitest/api';
 

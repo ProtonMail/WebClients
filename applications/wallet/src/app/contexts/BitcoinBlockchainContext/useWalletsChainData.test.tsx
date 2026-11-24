@@ -6,7 +6,7 @@ import type { MockedFunction } from 'vitest';
 
 import type { WasmAccountSyncer } from '@proton/andromeda';
 import { WasmAccount, WasmWallet } from '@proton/andromeda';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { setupStore } from '@proton/wallet/store/store';

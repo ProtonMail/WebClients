@@ -1,6 +1,6 @@
 import { act, screen, waitFor } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 

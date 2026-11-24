@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { NodeType } from '@proton/drive/sdk';
 import type { MimeIconComponent } from '@proton/file-icons/component';
 import { MimeAlbum } from '@proton/file-icons/icons/MimeAlbum';

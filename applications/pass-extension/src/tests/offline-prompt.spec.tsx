@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
-import { findOfflinePasswordPrompt } from '@proton/pass/testing/vitest/actions';
+import { findOfflinePasswordPrompt } from '@proton/pass/testing/actions';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { createTestBackend, getSessionResumeHandlers, respond } from '@proton/pass/utils/tests/backend';
 import { createTestCache, hydrateTestPassCrypto } from '@proton/pass/utils/tests/fixtures/cache';

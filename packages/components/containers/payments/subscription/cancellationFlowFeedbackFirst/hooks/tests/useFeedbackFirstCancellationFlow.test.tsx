@@ -14,7 +14,7 @@ import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { apiMock } from '@proton/test-api/vitest/api';
 
-import { renderWithProviders } from '../../../../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../../../../testing/renderWithProviders';
 import { useFeedbackFirstCancellationFlow } from '../useFeedbackFirstCancellationFlow';
 
 vi.mock('@proton/atoms/Portal/Portal');

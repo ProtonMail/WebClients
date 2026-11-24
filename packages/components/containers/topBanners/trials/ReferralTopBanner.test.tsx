@@ -14,7 +14,7 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
 import ReferralTopBanner from './ReferralTopBanner';
 
 vi.mock('@proton/app-context/useConfig');

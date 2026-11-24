@@ -1,15 +1,10 @@
 import { addApiMock, addApiResolver } from '@proton/test-api/vitest/api';
 import lastItem from '@proton/utils/lastItem';
 
-import { createToken } from '../../core/api/api';
-import type { ProductCheckResponse } from '../../core/api/createPaymentSubscription';
-import {
-    Autopay,
-    DEFAULT_PAYMENT_VENDOR_STATES,
-    PAYMENT_METHOD_TYPES,
-    PAYMENT_TOKEN_STATUS,
-} from '../../core/constants';
-import type { PayPalDetails, PaymentStatus, SavedCardDetails, SavedPaymentMethod } from '../../core/interface';
+import { createToken } from '../core/api/api';
+import type { ProductCheckResponse } from '../core/api/createPaymentSubscription';
+import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../core/constants';
+import type { PayPalDetails, PaymentStatus, SavedCardDetails, SavedPaymentMethod } from '../core/interface';
 
 const tokensUrl = createToken({} as any).url;
 

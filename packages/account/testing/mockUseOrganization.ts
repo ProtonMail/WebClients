@@ -1,6 +1,6 @@
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
-import * as useOrganizationModule from '../../organization/hooks';
+import * as useOrganizationModule from '../organization/hooks';
 
 export const mockUseGetOrganization = (value: Partial<OrganizationExtended> = {}) => {
     const spy = vi.spyOn(useOrganizationModule, 'useGetOrganization');

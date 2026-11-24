@@ -5,7 +5,7 @@ import type { MockedFunction } from 'vitest';
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
+import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';

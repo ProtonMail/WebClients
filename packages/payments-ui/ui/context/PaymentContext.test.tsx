@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { act, render, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
 import type { BillingAddressExtraProperties } from '@proton/payments/core/billing-address/billing-address';

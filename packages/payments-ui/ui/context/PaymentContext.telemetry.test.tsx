@@ -4,7 +4,7 @@ import { render, waitFor } from '@testing-library/react';
 import type { MockInstance } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';

@@ -6,7 +6,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { mockDefaultBreakpoints } from '../../testing/mockUseActiveBreakpoint';
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import { AppSwitcher } from './AppSwitcher';
 
 vi.mock('../../hooks/useActiveBreakpoint');

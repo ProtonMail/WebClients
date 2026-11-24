@@ -1,10 +1,10 @@
 import { vi } from 'vitest';
 
-import * as useContactEmailsCacheModule from '../../containers/contacts/ContactEmailsProvider';
+import * as useContactEmailsCacheModule from '../containers/contacts/ContactEmailsProvider';
 
-vi.mock('../../containers/contacts/ContactEmailsProvider', async () => ({
+vi.mock('../containers/contacts/ContactEmailsProvider', async () => ({
     __esModule: true,
-    ...(await vi.importActual('../../containers/contacts/ContactEmailsProvider')),
+    ...(await vi.importActual('../containers/contacts/ContactEmailsProvider')),
 }));
 
 export const mockUseContactEmailsCache = (

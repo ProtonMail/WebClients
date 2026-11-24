@@ -2,8 +2,8 @@ import type { ComponentType, JSX } from 'react';
 
 import { vi } from 'vitest';
 
-import ModalsContext from '../../containers/modals/modalsContext';
-import type useModals from '../../hooks/useModals';
+import ModalsContext from '../containers/modals/modalsContext';
+import type useModals from '../hooks/useModals';
 
 const mockModals: ReturnType<typeof useModals> = {
     createModal: vi.fn(),

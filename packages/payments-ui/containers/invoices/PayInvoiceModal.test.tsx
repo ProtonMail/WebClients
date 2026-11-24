@@ -6,7 +6,7 @@ import type { Mock } from 'vitest';
 
 import { useGetPaymentsInit } from '@proton/account/paymentsInit/hooks';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { InvoiceState, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Invoice } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';

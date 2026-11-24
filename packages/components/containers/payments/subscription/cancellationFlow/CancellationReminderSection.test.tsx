@@ -16,7 +16,7 @@ import { apiMock } from '@proton/test-api/vitest/api';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
-import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { MAIN_CONTENT_ID } from '../../../layout/constants';
 import { CancellationReminderSection } from './CancellationReminderSection';
 

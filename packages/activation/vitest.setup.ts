@@ -1,10 +1,10 @@
 import '@proton/vitest-config/setup';
 import { afterEach, beforeEach, vi } from 'vitest';
 
-import '@proton/components/testing/vitest/mockFlagSvg';
-import '@proton/components/testing/vitest/mockMatchMedia';
+import '@proton/components/testing/mockFlagSvg';
+import '@proton/components/testing/mockMatchMedia';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/unleash/testing/mockUnleash';
 
 import ResizeObserver from './src/tests/mock/ResizeObserver';
 

@@ -1,8 +1,8 @@
 import '@proton/vitest-config/setup';
 import { webcrypto } from 'crypto';
 
-import '@proton/components/testing/vitest/mockMatchMedia';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/components/testing/mockMatchMedia';
+import '@proton/unleash/testing/mockUnleash';
 
 // Stub for webpack's `require.context`, rewritten into module code by the vitest config plugin.
 // Returns an empty context, which is sufficient for tests that don't assert on the loaded assets.
