@@ -46,7 +46,9 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const payments = usePaymentOptimistic();
     const formRef = useRef<HTMLFormElement>(null);
 
-    const [submitting, withSubmitting] = useLoading();
+    const [processing, withSubmitting] = useLoading();
+    const [signingUp, withSigningUp] = useLoading();
+    const submitting = processing || signingUp;
 
     const { options } = payments;
 
@@ -60,7 +62,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
         billingAddress: options.billingAddress,
         onChargeable: async (_, data) => {
             signup.submitPaymentData(options, data);
-            return onPaymentTokenProcessed();
+            // Keeps Pay disabled until the signup is done: the processor doesn't wait for onChargeable
+            return withSigningUp(onPaymentTokenProcessed());
         },
         paymentStatus: payments.paymentStatus,
         flow: 'signup',
