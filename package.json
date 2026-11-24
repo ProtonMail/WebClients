@@ -29,6 +29,8 @@
         "@proton/types": "workspace:^",
         "@types/global-types-monorepo": "workspace:^",
         "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
         "@typescript/native": "catalog:",
         "husky": "^9.1.7",
         "knip": "^6.45.1",

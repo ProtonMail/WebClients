@@ -3,6 +3,7 @@
     "description": "Shared vitest configuration for workspace packages",
     "type": "module",
     "exports": {
+        "./react": "./src/react.ts",
         "./setLocation": "./src/setLocation.ts",
         "./setup": "./src/setup.ts",
         "./shared": "./src/shared.ts"
