@@ -276,6 +276,18 @@ im.$media-expressions: $media-expressions;
 	--button-active-text-color: var(--interaction-norm);
 }
 
+// based on shape="solid" + color="weak"
+/* stylelint-disable declaration-property-value-disallowed-list */
+.button-secondary-weak {
+	--button-default-border-color: transparent;
+	--button-hover-border-color: transparent;
+	--button-active-border-color: transparent;
+	--button-default-background-color: var(--interaction-ngc-secondary);
+	--button-hover-background-color: var(--interaction-ngc-secondary-hover);
+	--button-active-background-color: var(--interaction-ngc-secondary-active);
+}
+/* stylelint-enable declaration-property-value-disallowed-list */
+
 /*
  * Modifiers
  */
