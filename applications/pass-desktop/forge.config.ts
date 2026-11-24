@@ -78,9 +78,8 @@ const wrapMacHostInBundle = async (stagingPath: string) => {
     await fs.copyFile(inContents(...assets, 'logo.icns'), inContents(...bundle, 'Resources', 'logo.icns'));
 };
 
-const bundleMacHost: PackagerHook = (stagingPath, _electronVersion, platform, _arch, done) => {
-    if (platform !== 'darwin') return done();
-    wrapMacHostInBundle(stagingPath).then(() => done(), done);
+const bundleMacHost: PackagerHook = async ({ buildPath, platform }) => {
+    if (platform === 'darwin') await wrapMacHostInBundle(buildPath);
 };
 
 const config: ForgeConfig = {
