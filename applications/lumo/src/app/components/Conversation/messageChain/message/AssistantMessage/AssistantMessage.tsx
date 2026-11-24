@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+import { isTauriApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ASK_USER_QUESTIONS_TOOL_NAME } from '../../../../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
@@ -409,6 +410,9 @@ const AssistantMessage = ({
 
             if (isEmailLink(href)) {
                 openEmailWarningModal(href);
+            } else if (isTauriApp) {
+                // Lumo desktop confirms links leaving Proton with a native dialog.
+                window.open(href, '_blank', 'noopener,noreferrer');
             } else {
                 openLinkWarningModal(href);
             }
