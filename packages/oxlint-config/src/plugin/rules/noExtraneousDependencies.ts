@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import { isBuiltin } from 'node:module';
 import path from 'node:path';
 
-import { type PackageRoot, findPackageRoot } from '../utils/packageRoot.ts';
+import { type PackageRoot, findPackageRoot, findWorkspaceRoot } from '../utils/packageRoot.ts';
 import { getRuleOptions } from '../utils/ruleOptions.ts';
 
 interface ExtraneousDependenciesOptions {
@@ -71,9 +71,12 @@ function isInstalledPackage(fromDirectory: string, packageName: string): boolean
     return result;
 }
 
-function isAllowedByGlobs(allowed: boolean | string[] | undefined, filename: string) {
+function isAllowedByGlobs(allowed: boolean | string[] | undefined, filename: string, workspaceRoot: string | null) {
     if (Array.isArray(allowed)) {
-        return allowed.some((glob) => path.matchesGlob(filename, glob));
+        // `**` never crosses a directory starting with a dot, so match from the monorepo root: in a checkout under
+        // one (~/.local/...) the absolute path misses every glob.
+        const file = workspaceRoot ? path.relative(workspaceRoot, filename) : filename;
+        return allowed.some((glob) => path.matchesGlob(file, glob));
     }
     return allowed !== false;
 }
@@ -119,7 +122,11 @@ export default defineRule({
             return {};
         }
         const manifest = getDeclaredDependencies(packageRoot);
-        const allowsDevDependencies = isAllowedByGlobs(options.devDependencies, context.physicalFilename);
+        const allowsDevDependencies = isAllowedByGlobs(
+            options.devDependencies,
+            context.physicalFilename,
+            findWorkspaceRoot(packageRoot.directory)
+        );
         const allowsOptionalDependencies = options.optionalDependencies !== false;
         const allowsPeerDependencies = options.peerDependencies !== false;
 

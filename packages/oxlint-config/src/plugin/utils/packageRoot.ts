@@ -35,3 +35,22 @@ export function findPackageRoot(directory: string): PackageRoot | null {
     packageRootByDirectory.set(directory, packageRoot);
     return packageRoot;
 }
+
+const workspaceRootByDirectory = new Map<string, string | null>();
+
+/** Nearest directory holding a pnpm-workspace.yaml, walking up from `directory`: the monorepo root. */
+export function findWorkspaceRoot(directory: string): string | null {
+    const cached = workspaceRootByDirectory.get(directory);
+    if (cached !== undefined) {
+        return cached;
+    }
+    let workspaceRoot: string | null;
+    if (fs.existsSync(path.join(directory, 'pnpm-workspace.yaml'))) {
+        workspaceRoot = directory;
+    } else {
+        const parent = path.dirname(directory);
+        workspaceRoot = parent === directory ? null : findWorkspaceRoot(parent);
+    }
+    workspaceRootByDirectory.set(directory, workspaceRoot);
+    return workspaceRoot;
+}

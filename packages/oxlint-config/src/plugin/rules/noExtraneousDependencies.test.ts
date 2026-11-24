@@ -11,6 +11,9 @@ import rule from './noExtraneousDependencies.ts';
  *                             optional `optional-only`, peer `peer-only`
  *   node_modules/<package>    real directories, so they count as external
  *   node_modules/@proton/<workspace> -> ../../workspace (symlinks, like pnpm workspace links)
+ *   .hidden/pnpm-workspace.yaml  a monorepo checked out under a directory starting with a dot (~/.local/...)
+ *   .hidden/tests/package.json   same manifest, in a package whose own directory is `tests` (like the e2e one)
+ *   e2e/pnpm-workspace.yaml, e2e/app/package.json  a monorepo checked out under a directory a glob names
  */
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'no-extraneous-dependencies-'));
 const app = path.join(root, 'app');
@@ -34,6 +37,17 @@ for (const name of ['workspace', 'declared-workspace']) {
     fs.symlinkSync(path.join(root, 'workspace'), path.join(root, 'node_modules', '@proton', name));
 }
 
+const hiddenCheckout = path.join(root, '.hidden');
+fs.mkdirSync(path.join(hiddenCheckout, 'tests', 'src'), { recursive: true });
+fs.writeFileSync(path.join(hiddenCheckout, 'pnpm-workspace.yaml'), '');
+fs.copyFileSync(path.join(app, 'package.json'), path.join(hiddenCheckout, 'tests', 'package.json'));
+const hiddenSourceFile = path.join(hiddenCheckout, 'tests', 'src', 'index.ts');
+
+const e2eCheckout = path.join(root, 'e2e');
+fs.mkdirSync(path.join(e2eCheckout, 'app'), { recursive: true });
+fs.writeFileSync(path.join(e2eCheckout, 'pnpm-workspace.yaml'), '');
+fs.copyFileSync(path.join(app, 'package.json'), path.join(e2eCheckout, 'app', 'package.json'));
+
 const sourceFile = path.join(app, 'src', 'index.ts');
 const testFile = path.join(app, 'src', 'index.test.ts');
 const options = [{ devDependencies: ['**/*.test.ts'], optionalDependencies: false, peerDependencies: true }];
@@ -45,6 +59,16 @@ ruleTester.run('no-extraneous-dependencies', rule, {
         { code: `import declared from 'declared';`, filename: sourceFile, options },
         { code: `import peer from 'peer-only';`, filename: sourceFile, options },
         { code: `import dev from 'dev-only';`, filename: testFile, options },
+        {
+            code: `import dev from 'dev-only';`,
+            filename: path.join(hiddenCheckout, 'tests', 'src', 'index.test.ts'),
+            options,
+        },
+        {
+            code: `import dev from 'dev-only';`,
+            filename: hiddenSourceFile,
+            options: [{ devDependencies: ['**/tests/**'] }],
+        },
         { code: `import fs from 'node:fs'; import path from 'path';`, filename: sourceFile, options },
         { code: `import local from './local';`, filename: sourceFile, options },
         { code: `import workspace from '@proton/declared-workspace/lib/thing';`, filename: sourceFile, options },
@@ -79,6 +103,18 @@ ruleTester.run('no-extraneous-dependencies', rule, {
             code: `import dev from 'dev-only';`,
             filename: sourceFile,
             options,
+            errors: [{ messageId: 'devDependency', data: { packageName: 'dev-only' } }],
+        },
+        {
+            code: `import dev from 'dev-only';`,
+            filename: hiddenSourceFile,
+            options,
+            errors: [{ messageId: 'devDependency', data: { packageName: 'dev-only' } }],
+        },
+        {
+            code: `import dev from 'dev-only';`,
+            filename: path.join(e2eCheckout, 'app', 'src', 'index.ts'),
+            options: [{ devDependencies: ['**/e2e/**'] }],
             errors: [{ messageId: 'devDependency', data: { packageName: 'dev-only' } }],
         },
         {
