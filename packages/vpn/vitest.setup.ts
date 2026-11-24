@@ -3,6 +3,11 @@ import { vi } from 'vitest';
 
 import '@proton/components/testing/vitest/mockFlagSvg';
 
+// happy-dom hides a <dialog> without `open`, so role queries skip its content. Our CSS reset shows it, tests do not load it.
+const style = document.createElement('style');
+style.textContent = 'dialog { display: block; }';
+document.head.append(style);
+
 global.AnimationEvent = class AnimationEvent extends Event implements AnimationEvent {
     private _animationName: string;
 
@@ -54,7 +59,7 @@ global.ResizeObserver = class {
     disconnect = vi.fn();
 } as unknown as typeof ResizeObserver;
 
-vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/LoadIndicator', () => ({
+vi.mock('./src/components/OpenVPNConfigurationSection/LoadIndicator', () => ({
     __esModule: true,
     default: () => null,
 }));

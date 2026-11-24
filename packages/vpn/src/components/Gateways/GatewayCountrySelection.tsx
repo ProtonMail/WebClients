@@ -3,10 +3,10 @@ import { useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { CountryFlagAndName } from '@proton/components/components/country/CountryFlagAndName';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
-import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { useNow } from '@proton/components/hooks/useNow';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';

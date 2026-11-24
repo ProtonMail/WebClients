@@ -2,7 +2,7 @@
 // TypeError: require.context is not a function
 // > 1 | const flags = require.context('@proton/styles/assets/img/flags', true, /.svg$/);
 
-vi.mock('../../containers/vpn/flag', () => ({
+vi.mock('../../components/country/flag', () => ({
     getFlagSvg: vi.fn().mockImplementation((it) => it),
 }));
 

@@ -2,8 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import Copy from '@proton/components/components/button/Copy';
+import { CountryFlagAndName } from '@proton/components/components/country/CountryFlagAndName';
 import TableRow from '@proton/components/components/table/TableRow';
-import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import clsx from '@proton/utils/clsx';
 

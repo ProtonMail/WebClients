@@ -2,12 +2,12 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { CountryFlagAndName } from '@proton/components/components/country/CountryFlagAndName';
 import Option from '@proton/components/components/option/Option';
 import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { defaultFilterFunction } from '@proton/components/components/selectTwo/helpers';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/CountryFlagAndName';
 
 import { type CountryItem, DEFAULT_COUNTRIES_SEPARATOR, getFullList } from '../../helpers/countries-sorted';
 

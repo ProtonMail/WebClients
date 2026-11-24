@@ -6,25 +6,30 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
-        "./types/Server": "./src/types/Server.ts",
-        "./constants/tvUserTier": "./constants/tvUserTier.ts",
+        "./components/AlwaysOn": "./src/components/AlwaysOn/AlwaysOn.tsx",
         "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
         "./components/NavSections": "./src/components/NavSections.tsx",
         "./components/Onboarding": "./src/components/Onboarding/index.tsx",
+        "./components/OpenVPNConfigurationSection": "./src/components/OpenVPNConfigurationSection/OpenVPNConfigurationSection.tsx",
+        "./components/OpenVPNCredentialsSection": "./src/components/OpenVPNCredentialsSection.tsx",
         "./components/tv/components/TvNotSignedIn": "./src/components/tv/components/TvNotSignedIn.tsx",
-        "./components/tv/containers/TVContainer": "./src/components/tv/containers/TVContainer.tsx",
         "./components/tv/containers/TvCheckoutContainer": "./src/components/tv/containers/TvCheckoutContainer.tsx",
+        "./components/tv/containers/TVContainer": "./src/components/tv/containers/TVContainer.tsx",
         "./components/tv/containers/TvContainerSignedIn": "./src/components/tv/containers/TvContainerSignedIn.tsx",
-        "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
+        "./components/VpnAlsoInYourPlanSection": "./src/components/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection.tsx",
+        "./components/VpnBlogSection": "./src/components/VpnBlogSection/VpnBlogSection.tsx",
         "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
-        "./components/AlwaysOn": "./src/components/AlwaysOn/AlwaysOn.tsx",
+        "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
+        "./components/WireGuardConfigurationSection": "./src/components/WireGuardConfigurationSection/WireGuardConfigurationSection.tsx",
+        "./constants/tvUserTier": "./constants/tvUserTier.ts",
+        "./contexts/navigation": "./src/contexts/NavigationContext.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
         "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
-        "./contexts/navigation": "./src/contexts/NavigationContext.tsx",
         "./routes/organization/AlwaysOnVpnRoute": "./src/routes/organization/AlwaysOnVpnRoute.tsx",
         "./routes/organization/GatewayMonitorRoute": "./src/routes/organization/GatewayMonitorRoute.tsx",
         "./routes/organization/GatewaysRoute": "./src/routes/organization/GatewaysRoute.tsx",
-        "./routes/organization/SharedServersRoute": "./src/routes/organization/SharedServersRoute.tsx"
+        "./routes/organization/SharedServersRoute": "./src/routes/organization/SharedServersRoute.tsx",
+        "./types/Server": "./src/types/Server.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
@@ -35,6 +40,7 @@
         "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
+        "@noble/ed25519": "1.7.5",
         "@proton/account": "workspace:^",
         "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",
@@ -51,6 +57,8 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "fast-xml-parser": "^5.12.1",
+        "lodash": "catalog:",
+        "react-router": "catalog:",
         "react-router-dom": "catalog:",
         "ttag": "catalog:"
     },
@@ -60,6 +68,7 @@
         "@testing-library/dom": "catalog:",
         "@testing-library/react": "catalog:",
         "@testing-library/user-event": "catalog:",
+        "@types/lodash": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
         "@types/react-router-dom": "catalog:",
@@ -77,6 +86,7 @@
         "vitest": "catalog:"
     },
     "peerDependencies": {
-        "react": "^18.3.1 || ^19.0.0"
+        "react": "^18.3.1 || ^19.0.0",
+        "react-dom": "^18.3.1 || ^19.0.0"
     }
 }

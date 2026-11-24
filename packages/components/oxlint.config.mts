@@ -34,6 +34,11 @@ export default createOxlintConfig({
                 group: ['@proton/file-preview', '@proton/file-preview/*'],
                 message: '@proton/components must not import @proton/file-preview.',
             },
+            {
+                // Depends on this package.
+                group: ['@proton/vpn', '@proton/vpn/*'],
+                message: '@proton/components must not import @proton/vpn.',
+            },
         ],
     },
     overrides: [

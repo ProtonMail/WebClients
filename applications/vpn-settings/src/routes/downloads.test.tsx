@@ -22,12 +22,12 @@ vi.mock('@proton/components/containers/layout/PrivateMainSettingsArea', () => ({
     ),
 }));
 
-vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection', () => ({
+vi.mock('@proton/vpn/components/OpenVPNConfigurationSection', () => ({
     __esModule: true,
     default: () => <div data-testid="openvpn-section" />,
 }));
 
-vi.mock('@proton/components/containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection', () => ({
+vi.mock('@proton/vpn/components/WireGuardConfigurationSection', () => ({
     __esModule: true,
     default: () => <div data-testid="wireguard-section" />,
 }));
