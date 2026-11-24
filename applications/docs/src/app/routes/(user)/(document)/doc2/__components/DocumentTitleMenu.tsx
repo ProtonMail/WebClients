@@ -68,6 +68,12 @@ export type DocumentTitleMenuProps = {
   isCreatingSpreadsheet: boolean
   isMakingACopy: boolean
   onFileMenuAction: (action: FileMenuAction) => void
+  /**
+   * A visitor through a share link: no member-only item, as /doc's public mode, since the document action permissions
+   * don't cover them: Rename, New document, New spreadsheet, Make a copy, Move to folder, See version history and Move
+   * to trash
+   */
+  isPublic?: boolean
 }
 
 /**
@@ -85,6 +91,7 @@ export function DocumentTitleMenu({
   isCreatingSpreadsheet,
   isMakingACopy,
   onFileMenuAction,
+  isPublic = false,
 }: DocumentTitleMenuProps) {
   const { logger } = useApplication()
   const { APP_VERSION } = useConfig()
@@ -106,7 +113,8 @@ export function DocumentTitleMenu({
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
 
-  const canOrganize = canOrganizeDocument(role, node)
+  // A public node has no membership, so the role alone would let a public editor organize it
+  const canOrganize = !isPublic && canOrganizeDocument(role, node)
 
   useAppTitle(title)
 
@@ -266,16 +274,18 @@ export function DocumentTitleMenu({
             </DropdownMenuButton>
           )}
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            onClick={() => onFileMenuAction({ type: 'new-document' })}
-            data-testid="dropdown-new-document"
-          >
-            <IcBrandProtonDocs className="color-weak mr-2" />
-            {c('Action').t`New document`}
-          </DropdownMenuButton>
+          {!isPublic && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => onFileMenuAction({ type: 'new-document' })}
+              data-testid="dropdown-new-document"
+            >
+              <IcBrandProtonDocs className="color-weak mr-2" />
+              {c('Action').t`New document`}
+            </DropdownMenuButton>
+          )}
 
-          {isSheetsEnabled && (
+          {!isPublic && isSheetsEnabled && (
             <DropdownMenuButton
               className="flex items-center text-left"
               disabled={isCreatingSpreadsheet}
@@ -288,16 +298,18 @@ export function DocumentTitleMenu({
             </DropdownMenuButton>
           )}
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            disabled={!exportInvoker || isMakingACopy}
-            onClick={() => onFileMenuAction({ type: 'make-a-copy' })}
-            data-testid="dropdown-duplicate"
-          >
-            <IcSquares className="color-weak mr-2" />
-            {c('Action').t`Make a copy`}
-            {isMakingACopy && <CircleLoader size="small" className="ml-auto" />}
-          </DropdownMenuButton>
+          {!isPublic && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              disabled={!exportInvoker || isMakingACopy}
+              onClick={() => onFileMenuAction({ type: 'make-a-copy' })}
+              data-testid="dropdown-duplicate"
+            >
+              <IcSquares className="color-weak mr-2" />
+              {c('Action').t`Make a copy`}
+              {isMakingACopy && <CircleLoader size="small" className="ml-auto" />}
+            </DropdownMenuButton>
+          )}
 
           {canOrganize && (
             <DropdownMenuButton
@@ -310,15 +322,17 @@ export function DocumentTitleMenu({
             </DropdownMenuButton>
           )}
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            disabled={!exportInvoker}
-            onClick={() => onFileMenuAction({ type: 'see-version-history' })}
-            data-testid="dropdown-versioning"
-          >
-            <IcClockRotateLeft className="color-weak mr-2" />
-            {c('Action').t`See version history`}
-          </DropdownMenuButton>
+          {!isPublic && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              disabled={!exportInvoker}
+              onClick={() => onFileMenuAction({ type: 'see-version-history' })}
+              data-testid="dropdown-versioning"
+            >
+              <IcClockRotateLeft className="color-weak mr-2" />
+              {c('Action').t`See version history`}
+            </DropdownMenuButton>
+          )}
 
           {isWordCountSupported && <WordCountMenu wordCount={wordCount} />}
 

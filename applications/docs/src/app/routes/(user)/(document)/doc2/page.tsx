@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom-v5-compat'
 import { getUrlPassword } from '@proton/docs-shared/URL/getUrlPassword'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
+import { assignUrl } from '@proton/shared/lib/helpers/location'
 import { version as realtimeSdkVersion } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
@@ -15,13 +16,14 @@ import { DocumentViewerV2 } from './__components/DocumentViewerV2'
 import { LoadingScreen } from './__components/LoadingScreen'
 import { OpenActionError } from './__components/OpenActionError'
 import { DocsLoadMark, markDocsLoad } from './__utils/loadMarks'
-import { resolveOpenAction } from './__utils/resolveOpenAction'
+import { getPublicLinkUrl } from './__utils/publicLink'
+import { loggableResolution, resolveOpenAction } from './__utils/resolveOpenAction'
 
 export type DocumentPageV2Props = { driveCompat: DriveCompat }
 
 export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
   const application = useApplication()
-  const { navigateToAction, updateParameters } = useDocsUrlBar()
+  const { updateParameters } = useDocsUrlBar()
   // A retry remounts the creator or viewer, which restarts everything it runs
   const [attempt, setAttempt] = useState(0)
   const retry = () => setAttempt((attempt) => attempt + 1)
@@ -37,15 +39,16 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
   })
 
   useEffect(() => {
-    application.logger.info('Resolved open action', { resolution })
+    application.logger.info('Resolved open action', loggableResolution(resolution))
   }, [application.logger, resolution])
 
-  // Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its `open-url-reauth` redirect
+  // Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its `open-url-reauth` redirect, back to
+  // the public link on /doc2 rather than /doc
   useEffect(() => {
     if (resolution.kind === 'redirect' && openAction?.mode === 'open-url-reauth') {
-      navigateToAction({ ...openAction, mode: 'open-url', urlPassword: getUrlPassword() }, 'public')
+      assignUrl(getPublicLinkUrl(openAction, getUrlPassword()))
     }
-  }, [navigateToAction, openAction, resolution.kind])
+  }, [openAction, resolution.kind])
 
   // Here, not in the viewer, which a retry remounts: once downloaded, a retry doesn't download it again
   const [downloadedOnOpen, setDownloadedOnOpen] = useState<string>()
@@ -75,6 +78,9 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
     switch (resolution.kind) {
       case 'error':
         return <OpenActionError reason={resolution.reason} />
+      // The public app opens a public link: the user app never gets one
+      case 'openPublicLink':
+        return <OpenActionError reason="unsupported" />
       case 'create':
         return <DocumentCreator key={attempt} parent={resolution.parent} driveCompat={driveCompat} onRetry={retry} />
       case 'open': {

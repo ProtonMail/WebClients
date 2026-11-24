@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { Refusal, Session } from '@proton-docs/realtime-sdk'
+import type { Refusal } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
 
 import { useApplication } from '~/utils/application-context'
+import type { DocumentSession } from './loadDocument'
 
 /** No toast for `documentSizeLimitReached`: the size-limit modal says it */
 const refusalMessages: Record<Exclude<Refusal['reason'], 'documentSizeLimitReached'>, () => string> = {
@@ -17,7 +18,7 @@ const refusalMessages: Record<Exclude<Refusal['reason'], 'documentSizeLimitReach
  * Tells the user about the edits the SDK refuses, discards or can't read. The Loader locks the editor for them
  * (`loadDocument.ts`).
  */
-export function useSessionNotices(session: Session | undefined) {
+export function useSessionNotices(session: DocumentSession | undefined) {
   const { logger } = useApplication()
   const { createNotification } = useNotifications()
 

@@ -66,7 +66,7 @@
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentLayout.tsx",
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
-    "notes": "The app container tree verbatim. No public branches, size modal or debug provider."
+    "notes": "The app container tree verbatim, with the banners and drawer for a member only, as the source shows them to its private user. No size modal or debug provider."
   },
   {
     "doc2": "__components/DocumentSizeLimitModal.tsx",
@@ -178,6 +178,46 @@
     "notes": "The Slack-truncation and missing-document strings and the test id; doc2 adds its own reasons and buttons."
   },
   {
+    "doc2": "__components/PublicAppRootV2.tsx",
+    "doc2Symbol": "DocumentLoader",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(public)/__components/PublicAppRootContainer.tsx",
+    "sourceSymbol": "DocumentLoader",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "Verbatim."
+  },
+  {
+    "doc2": "__components/PublicAppRootV2.tsx",
+    "doc2Symbol": "PublicDoc2Root",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(public)/__components/PublicAppRootContainer.tsx",
+    "sourceSymbol": "PublicAppRootContainer",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "PublicAppRootContainer, RenderPublicLink and usePublicUser: the Drive SDK, the Drive store and the visitor, on doc2's own sign-in hook."
+  },
+  {
+    "doc2": "__components/PublicAppRootV2.tsx",
+    "doc2Symbol": "RenderApplication",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(public)/__components/PublicAppRootContainer.tsx",
+    "sourceSymbol": "RenderApplication",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "The error, password and loading pages, then doc2's page in place of PublicApplicationContent. No path check: a spreadsheet loads the public app on /sheet instead."
+  },
+  {
+    "doc2": "__components/PublicAppRootV2.tsx",
+    "doc2Symbol": "setLocalIDForTokenInCache",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Services/CacheService.ts",
+    "sourceSymbol": "setLocalIDForDocumentInCache",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "The token case only, with the same localStorage key, so the user app finds the local id where /doc leaves it."
+  },
+  {
     "doc2": "__components/SessionStatus.tsx",
     "kind": "adaptation",
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx",
@@ -204,6 +244,16 @@
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "710e9cb2cecc1707b39748e4270ddb38ee32d364",
     "notes": "The 1 s Saving\u2026 stays shown at least, so the pill doesn't flicker."
+  },
+  {
+    "doc2": "__components/SessionStatus.tsx",
+    "doc2Symbol": "LinkRevokedPill",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(public)/__components/PublicAppRootContainer.tsx",
+    "sourceSymbol": "RenderApplication",
+    "sourceCommit": "a0b37d9d8132278e1da6061b3f1acc35ea0a599b",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The error page's title and message, as the pill for a share link turned off while the document is open (the SDK's linkRevoked stop)."
   },
   {
     "doc2": "__components/SingleRevisionViewer.tsx",
@@ -548,6 +598,73 @@
     "notes": "A commit DU limit of 50 on dev and black, so the SDK squashes when /doc does; the SDK's own default holds elsewhere."
   },
   {
+    "doc2": "__utils/loadDocument.ts",
+    "doc2Symbol": "openPublicLink",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Services/DocumentLoader/PublicDocLoader.ts",
+    "sourceSymbol": "initialize",
+    "sourceCommit": "a0b37d9d8132278e1da6061b3f1acc35ea0a599b",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The redirect for access of one's own, after the node step and before any session opens, to /doc2's private URL rather than getDocumentActionUrl's /doc. The flag read waits for Unleash in the shell instead of reading off."
+  },
+  {
+    "doc2": "__utils/loadDocument.ts",
+    "doc2Symbol": "initializeEditor",
+    "kind": "mirror",
+    "source": "packages/docs-core/lib/Services/Orchestrator/EditorOrchestrator.ts",
+    "sourceSymbol": "userAddress",
+    "sourceCommit": "952608e316c4b40e9a54936061b57f64c89d00d2",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The editor's address: the visitor's own, or docs-shared's AnonymousUserEmail for an anonymous visitor."
+  },
+  {
+    "doc2": "__utils/publicLink.ts",
+    "doc2Symbol": "getPublicDocumentRole",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/UseCase/LoadDocument.ts",
+    "sourceSymbol": "executePublic",
+    "sourceCommit": "a0b37d9d8132278e1da6061b3f1acc35ea0a599b",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The public role rule: Editor for an editor link while DocsPublicEditing is on, Viewer otherwise. The WithAccess roles are left out: those visitors are redirected first."
+  },
+  {
+    "doc2": "__utils/publicLink.ts",
+    "doc2Symbol": "hasAccessOfOwn",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/DriveSDK/hasDirectAccessToPublicNode.ts",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The link's answer, else the visitor's own Drive client; the link info is passed in rather than read from docs-core's singleton."
+  },
+  {
+    "doc2": "__utils/publicLink.ts",
+    "doc2Symbol": "getPrivateDocumentUrl",
+    "kind": "adaptation",
+    "source": "packages/docs-shared/lib/URL/getDocumentActionUrl.ts",
+    "sourceCommit": "1eac1e95a822505becee45bb4995eea2210bf670",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The open URL under the local id, with /doc2 in place of the type's path."
+  },
+  {
+    "doc2": "__utils/publicLink.ts",
+    "doc2Symbol": "getPublicLinkUrl",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/utils/docs-url-bar.tsx",
+    "sourceSymbol": "navigateToAction",
+    "sourceCommit": "5e9e9ddacd3df71ced3bb17a159abd4a0de98fde",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "navigateToAction's URL for a public action, on /doc2 rather than /doc, returned instead of assigned."
+  },
+  {
+    "doc2": "__utils/publicLink.ts",
+    "doc2Symbol": "getPublicAuthHeaders",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/DriveSDK/getPublicAuthHeaders.ts",
+    "sourceCommit": "1eac1e95a822505becee45bb4995eea2210bf670",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "Verbatim, with the share-URL client passed in rather than read from docs-core's singleton."
+  },
+  {
     "doc2": "__utils/useEditorBasics.ts",
     "doc2Symbol": "useIsEditorDarkMode, sendEditorBasics",
     "kind": "adaptation",
@@ -574,6 +691,94 @@
     "notes": "getRootShare and the address lookup inlined, typed with the SDK's DocumentKeys; no error tracing."
   },
   {
+    "doc2": "__utils/useOpenDocumentHeartbeat.ts",
+    "doc2Symbol": "useOpenDocumentHeartbeat",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Services/Metrics/MetricService.ts",
+    "sourceSymbol": "initialize",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "e024d3da79801d8e5cf20141866d5870cf20dec3",
+    "notes": "initialize and heartbeat as a hook, which also clears its interval on unmount; doc2's public page has no Application to start them."
+  },
+  {
+    "doc2": "__utils/useOpenDocumentHeartbeat.ts",
+    "doc2Symbol": "getBrowserForMetrics",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Services/Metrics/getBrowserForMetrics.ts",
+    "sourceSymbol": "getBrowserForMetrics",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "e024d3da79801d8e5cf20141866d5870cf20dec3",
+    "notes": "Verbatim, without the exported BROWSERS list."
+  },
+  {
+    "doc2": "__utils/usePublicLinkV2.ts",
+    "doc2Symbol": "openPublicLink",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/DriveSDK/authenticatePublicDrive.ts",
+    "sourceSymbol": "authenticatePublicDrive",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "authenticatePublicDrive and loadPublicLinkInfo with their helpers, returning the client and the link info (without the custom password, which doc2 doesn't read) instead of setting them."
+  },
+  {
+    "doc2": "__utils/usePublicLinkV2.ts",
+    "doc2Symbol": "traceErrorSDK",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/DriveSDK/traceErrorSDK.ts",
+    "sourceSymbol": "traceErrorSDK",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "traceErrorSDK and reportPublicDriveError, verbatim."
+  },
+  {
+    "doc2": "__utils/usePublicLinkV2.ts",
+    "doc2Symbol": "usePublicLinkV2",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/drive-sdk/usePublicLink.ts",
+    "sourceSymbol": "usePublicLink",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "The same handshake, password and states, returning the share-URL client and the link instead of leaving them in docs-core's module state."
+  },
+  {
+    "doc2": "__utils/usePublicLinkV2.ts",
+    "doc2Symbol": "PROTON_SHEET_VENDOR_TYPE",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(public)/__utils/useIsPathCorrectForVendorType.ts",
+    "sourceSymbol": "PROTON_SHEET_VENDOR_TYPE",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "e024d3da79801d8e5cf20141866d5870cf20dec3",
+    "notes": "Verbatim, exported for doc2's public root."
+  },
+  {
+    "doc2": "__utils/usePublicRealtimeClient.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/DriveSDK/getDocumentKeys.ts",
+    "sourceSymbol": "getPublicDocumentKeys",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The public keys: the share-URL client's content key, plus the default share address and its key for a signed-in visitor, none for an anonymous one, as /doc's DocumentViewer passes them. No trace to docs-core."
+  },
+  {
+    "doc2": "__utils/usePublicRealtimeClient.ts",
+    "doc2Symbol": "useGetDefaultShareAddressKeys",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Crypto/useGetDefaultShareAddressKeys.ts",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "The address lookup by the My files root's key author, returning the SDK's key shape. No trace to docs-core."
+  },
+  {
+    "doc2": "__utils/usePublicRealtimeClient.ts",
+    "doc2Symbol": "getMyFilesRootFolder",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/DriveSDK/getMyFilesNodeMeta.ts",
+    "sourceSymbol": "getMyFilesRootFolder",
+    "sourceCommit": "0713a849b27425986b207ed0b4d57d8e227b0bc2",
+    "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
+    "notes": "Verbatim: the retry for a main volume another client created first."
+  },
+  {
     "doc2": "__utils/useStopFollowUps.ts",
     "doc2Symbol": "useStopFollowUps",
     "kind": "copy",
@@ -590,7 +795,7 @@
     "sourceSymbol": "isRedirectBackToPublicContext",
     "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
     "copiedIn": "497a39eaf01752940e27d51e5b014af17d166e38",
-    "notes": "The open-url-reauth redirect call only."
+    "notes": "The open-url-reauth redirect call only, back to the public link on /doc2 rather than /doc."
   },
   {
     "doc2": "page.tsx",
@@ -609,5 +814,15 @@
     "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
     "copiedIn": "76e211c1a359b73f1a1903f5af5ffe01f7b736e5",
     "notes": "The history mode's updateParameters call, so a reload opens the document instead of its history again."
+  },
+  {
+    "doc2": "publicApp.tsx",
+    "doc2Symbol": "PublicAppV2",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(public)/page.tsx",
+    "sourceSymbol": "PublicApp",
+    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
+    "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
+    "notes": "The public app's bootstrap and providers around doc2's public root, which hands over to PublicAppRootContainer while DocsRealtimeSdkEnabled is off. No drawer state, which the public app never reads."
   }
 ]

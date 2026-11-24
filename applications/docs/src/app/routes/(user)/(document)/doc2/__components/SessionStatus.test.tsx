@@ -273,6 +273,17 @@ describe('SessionStatus', () => {
     },
   )
 
+  test("a share link turned off shows /doc's words for a public link that doesn't open, and no action", async () => {
+    renderStatus(stopped('linkRevoked', false))
+
+    expect(status()).toHaveTextContent(/^Something went wrong$/)
+    expect(actions()).toEqual([])
+
+    await userEvent.hover(screen.getByRole('button', { name: /Something went wrong/ }))
+
+    expect(await screen.findByText(/you may not have permission to view it/)).toBeInTheDocument()
+  })
+
   test("a stop's Offline pill has /doc's explanation and the condition as its disconnection code", async () => {
     renderStatus(stopped('authExpired', false))
 

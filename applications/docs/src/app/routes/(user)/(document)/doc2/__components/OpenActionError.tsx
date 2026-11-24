@@ -1,5 +1,7 @@
 import { Button } from '@proton/atoms/Button/Button'
-import { DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { APPS, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { assignUrl } from '@proton/shared/lib/helpers/location'
 import { useNavigate } from 'react-router-dom-v5-compat'
 import { c } from 'ttag'
 
@@ -29,20 +31,27 @@ const messages: Record<OpenActionErrorReason, () => string> = {
   editorFailed: () => c('Info').t`The editor could not be loaded.`,
 }
 
-export type OpenActionErrorProps = { reason: OpenActionErrorReason; onRetry?: () => void }
+export type OpenActionErrorProps = {
+  reason: OpenActionErrorReason
+  onRetry?: () => void
+  /** A share link's page, in the public app, which has no home route of its own */
+  isPublic?: boolean
+}
 
-export function OpenActionError({ reason, onRetry }: OpenActionErrorProps) {
+export function OpenActionError({ reason, onRetry, isPublic }: OpenActionErrorProps) {
   const navigate = useNavigate()
+  const goHome = () =>
+    isPublic ? assignUrl(getAppHref(HOMEPAGE_RECENTS_PATH, APPS.PROTONDOCS)) : navigate(HOMEPAGE_RECENTS_PATH)
 
   return (
-    <DocumentShell header={<ErrorHeader />}>
+    <DocumentShell header={<ErrorHeader isPublic={isPublic} />} isPublic={isPublic}>
       <div className="flex h-full w-full flex-col items-center justify-center gap-4">
         <div className="max-w-prose text-center" data-testid="invalid-openaction-error">
           {messages[reason]()}
         </div>
         <div className="flex gap-2">
           {onRetry && <Button onClick={onRetry}>{c('Action').t`Try again`}</Button>}
-          <Button color="norm" onClick={() => navigate(HOMEPAGE_RECENTS_PATH)}>
+          <Button color="norm" onClick={goHome}>
             {c('Action').t`Go to ${DOCS_SHORT_APP_NAME} home`}
           </Button>
         </div>

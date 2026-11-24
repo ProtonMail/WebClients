@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef } from 'react'
 
 import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
-import type { Session } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
 
 import type { EditorInvoker } from './EditorInvoker'
 import { type PeerClocks, encodeParticipantsForEditor, findEditorPresence } from './presenceBridge'
+import type { DocumentSession } from './loadDocument'
 
 /**
  * Bridges presence between the editor's awareness and `session`, once the editor gives its client id: the editor's own
@@ -16,7 +16,7 @@ import { type PeerClocks, encodeParticipantsForEditor, findEditorPresence } from
  * same editor goes on from the clocks that editor holds.
  */
 export function usePresenceBridge(
-  session: Session | undefined,
+  session: DocumentSession | undefined,
   editorInvoker: Pick<EditorInvoker, 'getClientId' | 'receiveMessage'> | undefined,
 ): (update: Uint8Array<ArrayBuffer>) => void {
   const { logger } = useApplication()

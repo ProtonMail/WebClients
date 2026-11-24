@@ -7,6 +7,8 @@ export type OpenResolution =
    */
   | { kind: 'open'; nodeMeta: { volumeId: string; linkId: string }; downloadOnOpen?: true; historyOnOpen?: true }
   | { kind: 'create'; parent?: { volumeId: string; linkId: string } }
+  /** A public link, which the public app opens: the link's own id comes from its sign-in, a folder's from the URL */
+  | { kind: 'openPublicLink'; token: string }
   | { kind: 'redirect'; to: 'public' }
   | { kind: 'error'; reason: 'invalidUrl' | 'slackTruncated' | 'unsupported' }
 
@@ -44,13 +46,22 @@ export function resolveOpenAction(openAction: DocumentAction | null, search: str
       return { kind: 'create' }
     case 'open-url-reauth':
       return { kind: 'redirect', to: 'public' }
-    // Not in doc2 yet: conversion, and the public links, the download one too, which need a public session
+    case 'open-url':
+      return { kind: 'openPublicLink', token: openAction.token }
+    // Not in doc2 yet: conversion, a public document's copy, and Drive's Download of a public link
     case 'convert':
     case 'copy-public':
-    case 'open-url':
     case 'open-url-download':
       return { kind: 'error', reason: 'unsupported' }
   }
+}
+
+/**
+ * What a log line may say of a resolution: its kind, and an error's reason. Never a public link's token, which grants
+ * access to the document and would leave in the logs a visitor downloads for support.
+ */
+export function loggableResolution(resolution: OpenResolution): { kind: OpenResolution['kind']; reason?: string } {
+  return resolution.kind === 'error' ? { kind: resolution.kind, reason: resolution.reason } : { kind: resolution.kind }
 }
 
 // Only a URL with no parameters at all creates a document, so a broken link never does.

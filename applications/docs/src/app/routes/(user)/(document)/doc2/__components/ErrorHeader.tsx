@@ -12,8 +12,11 @@ import { getWindowLocationExcludingDomain } from '../__utils/getWindowLocationEx
 
 // Copied from `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx`, its
 // `DocsHeaderNoDocument`, which imports docs-core.
-/** The header when there is no document to show: the logo, the app switcher and the user menu. */
-export function ErrorHeader() {
+/**
+ * The header when there is no document to show: the logo, the app switcher and the user menu, which a share link's
+ * page leaves out, as /doc's public header does.
+ */
+export function ErrorHeader({ isPublic }: { isPublic?: boolean }) {
   const { viewportWidth } = useActiveBreakpoint()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
 
@@ -31,11 +34,13 @@ export function ErrorHeader() {
         <span className="pt-0.5 text-sm">{c('Title').t`End-to-end encrypted`}</span>
       </div>
       <div className="no-doc-header">
-        <UserDropdown
-          app={APPS.PROTONDOCS}
-          reportDescriptionContext={getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })}
-          sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
-        />
+        {!isPublic && (
+          <UserDropdown
+            app={APPS.PROTONDOCS}
+            reportDescriptionContext={getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })}
+            sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
+          />
+        )}
       </div>
     </div>
   )

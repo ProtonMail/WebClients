@@ -124,6 +124,14 @@ describe('createDocsApiFetch', () => {
     expect(logger.warn).toHaveBeenCalledWith(message)
   })
 
+  test("logs a share link's URL outside the API without its token", async () => {
+    const outside = 'https://example.com/api/docs/urls/SHARETOKEN/documents/link-1/meta'
+    const message = 'Docs API URL outside the API: https://example.com/api/docs/urls/…/documents/…/meta'
+
+    await expect(docsApiFetch(outside, { method: 'GET' })).rejects.toThrow(message)
+    expect(logger.warn).toHaveBeenCalledWith(message)
+  })
+
   test("logs a comment URL outside the API without its thread's and comment's ids", async () => {
     const outside = 'https://example.com/api/docs/volumes/volume-1/documents/link-1/threads/thread-1/comments/comment-1'
     const message =

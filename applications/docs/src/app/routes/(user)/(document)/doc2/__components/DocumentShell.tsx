@@ -16,15 +16,18 @@ export type DocumentShellProps = {
   children?: ReactNode
   /** Covers the whole page, banners and header included, while given */
   loadingScreen?: ReactNode
+  /** A share link's page: no banners and no drawer, as /doc shows a public visitor */
+  isPublic?: boolean
 }
 
 /**
  * Adapted from `applications/docs/src/app/components/document/DocumentLayout/DocumentLayout.tsx`, /doc's app shell:
- * the banners, `header`, and the drawer with the quick settings. The native app's webview shows no header.
+ * the banners, `header`, and the drawer with the quick settings, the banners and drawer for a member only. The native
+ * app's webview shows no header.
  * Under `loadingScreen` the page stays mounted and laid out, never hidden, so it loads under the screen and nothing
  * moves when the screen lifts; it is busy and inert, so nothing under the screen takes focus or clicks.
  */
-export function DocumentShell({ header, children, loadingScreen }: DocumentShellProps) {
+export function DocumentShell({ header, children, loadingScreen, isPublic }: DocumentShellProps) {
   const loading = Boolean(loadingScreen)
 
   return (
@@ -33,13 +36,15 @@ export function DocumentShell({ header, children, loadingScreen }: DocumentShell
       <div className="h-full" aria-busy={loading || undefined} {...inertProps(loading)}>
         <PrivateAppContainer
           top={
-            <TopBanners app={APPS.PROTONDOCS}>
-              <PasswordReminderTopBanner />
-            </TopBanners>
+            isPublic ? null : (
+              <TopBanners app={APPS.PROTONDOCS}>
+                <PasswordReminderTopBanner />
+              </TopBanners>
+            )
           }
           header={isRunningInNativeMobileWeb() ? null : header}
           sidebar={null}
-          drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
+          drawerApp={isPublic ? null : <DrawerApp customAppSettings={<DocsQuickSettings />} />}
         >
           <PrivateMainArea hasToolbar className="[&>div]:h-full">
             {children}

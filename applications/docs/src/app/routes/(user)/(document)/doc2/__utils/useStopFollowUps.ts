@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 
-import type { Session, SessionStatus } from '@proton-docs/realtime-sdk'
+import type { SessionStatus } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
 
 import { useApplication } from '~/utils/application-context'
+import type { DocumentSession } from './loadDocument'
 
 export type AlertProps = { title: string; translatedMessage: string }
 
@@ -19,7 +20,7 @@ export type AlertProps = { title: string; translatedMessage: string }
  *   otherwise, as it does for `permissionsChanged`. Once per session, so a server that keeps refusing the credentials
  *   leaves the session stopped.
  */
-export function useStopFollowUps(session: Session | undefined, showAlert: (props: AlertProps) => void): void {
+export function useStopFollowUps(session: DocumentSession | undefined, showAlert: (props: AlertProps) => void): void {
   const { logger } = useApplication()
 
   useEffect(() => {

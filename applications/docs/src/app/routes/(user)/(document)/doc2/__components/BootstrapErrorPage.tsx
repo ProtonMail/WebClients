@@ -7,13 +7,18 @@ import { type DocumentError, DocumentErrorFallback } from './DocumentErrorFallba
 import { DocumentShell } from './DocumentShell'
 import { ErrorHeader } from './ErrorHeader'
 
-export type BootstrapErrorPageProps = { failure: BootstrapFailure; onRetry: () => void }
+export type BootstrapErrorPageProps = {
+  failure: BootstrapFailure
+  onRetry: () => void
+  /** A share link's page: no user menu, banners or drawer, which need a signed-in user */
+  isPublic?: boolean
+}
 
 /**
  * A document that could not be opened, on /doc's error card: no access as /doc shows it, and the rest as /doc's
  * "Something went wrong", with Reload where a retry can help. Reload opens the document again.
  */
-export function BootstrapErrorPage({ failure, onRetry }: BootstrapErrorPageProps) {
+export function BootstrapErrorPage({ failure, onRetry, isPublic }: BootstrapErrorPageProps) {
   const actionButton = isRetryableBootstrapFailure(failure) ? (
     <Button color="norm" shape="outline" onClick={onRetry}>
       {c('Action').t`Reload`}
@@ -31,7 +36,7 @@ export function BootstrapErrorPage({ failure, onRetry }: BootstrapErrorPageProps
   }
 
   return (
-    <DocumentShell header={<ErrorHeader />}>
+    <DocumentShell header={<ErrorHeader isPublic={isPublic} />} isPublic={isPublic}>
       <DocumentErrorFallback error={errors[failure]} actionButton={actionButton} />
     </DocumentShell>
   )

@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useUser } from '@proton/account/user/hooks'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
+import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 import { useApplication } from '~/utils/application-context'
@@ -22,6 +23,10 @@ export function useIsEditorDarkMode() {
  */
 export function useUserName(): string {
   const [user] = useUser()
+  return getUserName(user)
+}
+
+export function getUserName(user: Pick<UserModel, 'DisplayName' | 'Name' | 'Email'>): string {
   return user.DisplayName || user.Name || user.Email
 }
 

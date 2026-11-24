@@ -100,6 +100,9 @@ function getConnectionPill({ status }: SessionSnapshot) {
           .t`Looks like you're offline. You can keep editing: your changes are saved once you are back online.`}</OfflinePill>
       )
     case 'stopped':
+      if (status.condition === 'linkRevoked') {
+        return <LinkRevokedPill />
+      }
       return (
         <OfflinePill>
           <div>{c('Info')
@@ -112,6 +115,29 @@ function getConnectionPill({ status }: SessionSnapshot) {
     default:
       return null
   }
+}
+
+/**
+ * A share link turned off while the document is open. Copied from
+ * `applications/docs/src/app/routes/(public)/__components/PublicAppRootContainer.tsx`, the words of its error page for
+ * a public link that doesn't open.
+ */
+function LinkRevokedPill() {
+  return (
+    <PopoverPill
+      title={
+        <div className="flex gap-2" data-testid="network-status-link-revoked">
+          <IcExclamationCircle className="h-6 w-6 fill-current" />
+          <span>{c('Info').t`Something went wrong`}</span>
+        </div>
+      }
+      content={c('Info')
+        .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists or reach out to the owner for access.`}
+    >
+      <IcExclamationCircle className="h-4 w-4 fill-current" />
+      <span className={LABEL_CLASS}>{c('Info').t`Something went wrong`}</span>
+    </PopoverPill>
+  )
 }
 
 function OpeningPill() {
