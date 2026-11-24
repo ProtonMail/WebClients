@@ -1167,6 +1167,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Senha da conta da ${ BRAND_NAME }"
+      ],
       "Authenticator app": [
         "Aplicativo de autenticação"
       ],
@@ -1178,9 +1181,6 @@
       ],
       "Hide password": [
         "Ocultar senha"
-      ],
-      "Password": [
-        "Senha"
       ],
       "Phone number": [
         "Número do telefone"
@@ -1595,9 +1595,6 @@
       "Account temporarily locked": [
         "Conta temporariamente bloqueada"
       ],
-      "Enter your password": [
-        "Digite sua senha"
-      ],
       "Human verification": [
         "Verificação humana"
       ],
@@ -1609,6 +1606,9 @@
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Validation": {

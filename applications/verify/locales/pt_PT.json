@@ -944,6 +944,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com a sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "O navegador não suporta as chaves de segurança. Por favor, tente um navegador diferente."
       ]
     },
     "fido2: Info": {
@@ -1160,9 +1163,6 @@
       ],
       "Hide password": [
         "Ocultar a palavra-passe"
-      ],
-      "Password": [
-        "Palavra-passe"
       ],
       "Phone number": [
         "Número de telefone"
@@ -1571,9 +1571,6 @@
       "Account temporarily locked": [
         "Conta temporariamente bloqueada"
       ],
-      "Enter your password": [
-        "Introduza a sua palavra-passe"
-      ],
       "Human verification": [
         "Verificação humana"
       ],
@@ -1585,6 +1582,9 @@
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Validation": {

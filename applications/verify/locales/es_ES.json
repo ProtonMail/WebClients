@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de la clave de seguridad se ha cancelado o ha superado el tiempo de espera. Inténtalo de nuevo."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Tu dispositivo no ha podido completar la solicitud de la clave de seguridad. Inténtalo de nuevo o usa otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -1138,6 +1144,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ayudarnos a mantener segura su cuenta, confirme que es realmente usted antes de continuar."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Para eliminar restricciones, puedes mejorar a un plan de pago."
       ],
@@ -1167,6 +1176,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } contraseña de la cuenta"
+      ],
       "Authenticator app": [
         "Aplicación de autenticación"
       ],
@@ -1178,9 +1190,6 @@
       ],
       "Hide password": [
         "Ocultar contraseña"
-      ],
-      "Password": [
-        "Contraseña"
       ],
       "Phone number": [
         "Número de teléfono"
@@ -1595,9 +1604,6 @@
       "Account temporarily locked": [
         "Cuenta temporalmente bloqueada"
       ],
-      "Enter your password": [
-        "Introduce tu contraseña"
-      ],
       "Human verification": [
         "Verificación humana"
       ],
@@ -1609,6 +1615,9 @@
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Verify it’s you": [
+        "Verifica que eres tú"
       ]
     },
     "Validation": {

@@ -948,8 +948,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "セキュリティキーのリクエストがキャンセルされたかタイムアウトしました。もう一度お試しください。"
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "このデバイスではセキュリティキーのリクエストを完了できませんでした。もう一度試すか、別のサインイン方法を使用してください。"
       ]
     },
     "fido2: Info": {
@@ -1169,9 +1175,6 @@
       ],
       "Hide password": [
         "パスワードを隠す"
-      ],
-      "Password": [
-        "パスワード"
       ],
       "Phone number": [
         "電話番号"
@@ -1576,9 +1579,6 @@
       "Account temporarily locked": [
         "アカウントが一時的にロックされています"
       ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
       "Human verification": [
         "人間であることの検証"
       ],
@@ -1590,6 +1590,9 @@
       ],
       "Two-factor authentication": [
         "2 要素認証"
+      ],
+      "Verify it’s you": [
+        "ご本人確認"
       ]
     },
     "Validation": {

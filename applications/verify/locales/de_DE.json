@@ -948,8 +948,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Die Anforderung des Sicherheitsschlüssels wurde abgebrochen oder ist abgelaufen. Bitte versuche es erneut."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Ihr Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder verwende eine andere Anmeldemethode."
       ]
     },
     "fido2: Info": {
@@ -1175,9 +1181,6 @@
       ],
       "Hide password": [
         "Passwort ausblenden"
-      ],
-      "Password": [
-        "Passwort"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -1592,9 +1595,6 @@
       "Account temporarily locked": [
         "Konto vorübergehend gesperrt"
       ],
-      "Enter your password": [
-        "Passwort eingeben"
-      ],
       "Human verification": [
         "Captcha"
       ],
@@ -1606,6 +1606,9 @@
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
+      ],
+      "Verify it’s you": [
+        "Überprüfe, ob du es bist"
       ]
     },
     "Validation": {

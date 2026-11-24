@@ -944,6 +944,12 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "حدث خطأ أثناء المصادقة باستخدام مفتاح الأمان. يرجى المحاولة مجددًا."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "تم إلغاء طلب مفتاح الأمان أو انتهت مهلته. يرجى المحاولة مجددًا."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "تعذّر على جهازك إكمال طلب مفتاح الأمان. حاول مجددًا، أو استخدم طريقة أخرى لتسجيل الدخول."
       ]
     },
     "fido2: Info": {
@@ -1181,9 +1187,6 @@
       ],
       "Hide password": [
         "إخفاء كلمة المرور"
-      ],
-      "Password": [
-        "كلمة السر"
       ],
       "Phone number": [
         "رقم الهاتف"
@@ -1629,9 +1632,6 @@
       "Account temporarily locked": [
         "الحساب مقفل مؤقتًا"
       ],
-      "Enter your password": [
-        "أدخل كلمة مرورك"
-      ],
       "Human verification": [
         "التحقق البشري"
       ],
@@ -1643,6 +1643,9 @@
       ],
       "Two-factor authentication": [
         "المصادقة الثنائية"
+      ],
+      "Verify it’s you": [
+        "تحقق من أنك أنت"
       ]
     },
     "Validation": {
