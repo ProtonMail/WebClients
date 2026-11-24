@@ -1,4 +1,4 @@
-import * as useSaveVCardContactModule from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
+import * as useSaveVCardContactModule from '@proton/contacts/hooks/useSaveVCardContact';
 
 export const mockUseSaveVCardContact = (
     mockedValue?: ReturnType<typeof useSaveVCardContactModule.useSaveVCardContact>

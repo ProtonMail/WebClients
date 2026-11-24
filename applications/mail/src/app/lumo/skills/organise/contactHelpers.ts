@@ -1,4 +1,4 @@
-import { SaveVCardContactError } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
+import { SaveVCardContactError } from '@proton/contacts/hooks/useSaveVCardContact';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 

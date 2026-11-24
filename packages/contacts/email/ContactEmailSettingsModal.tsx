@@ -1,0 +1,398 @@
+import { useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { getKTUserContext } from '@proton/account/kt/actions';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { Button } from '@proton/atoms/Button/Button';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
+import Alert from '@proton/components/components/alert/Alert';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
+import Label from '@proton/components/components/label/Label';
+import Info from '@proton/components/components/link/Info';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useLoading from '@proton/hooks/useLoading';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import getPublicKeysEmailHelper from '@proton/key-transparency/keys/getPublicKeysEmailHelper';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
+import type { CONTACT_MIME_TYPES } from '@proton/shared/lib/constants';
+import { MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
+import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
+import {
+    createContactPropertyUid,
+    fromVCardProperties,
+    getVCardProperties,
+} from '@proton/shared/lib/contacts/properties';
+import type { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces/EncryptionPreferences';
+import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import {
+    getContactPublicKeyModel,
+    getVerifyingKeys,
+    sortApiKeys,
+    sortPinnedKeys,
+} from '@proton/shared/lib/keys/publicKeys';
+import clsx from '@proton/utils/clsx';
+import uniqueBy from '@proton/utils/uniqueBy';
+
+import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
+import ContactMIMETypeSelect from './ContactMIMETypeSelect';
+import ContactPGPSettings from './ContactPGPSettings';
+
+const { PGP_INLINE } = PGP_SCHEMES;
+
+export interface ContactEmailSettingsProps {
+    contactID: string;
+    vCardContact: VCardContact;
+    emailProperty: VCardProperty<string>;
+    onClose?: () => void;
+}
+
+type Props = ContactEmailSettingsProps & ModalProps;
+
+const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...rest }: Props) => {
+    const { value: emailAddressValue, group: emailGroup } = emailProperty;
+    const emailAddress = emailAddressValue as string;
+
+    const api = useApi();
+    const { call } = useEventManager();
+    const [model, setModel] = useState<ContactPublicKeyModelWithApiKeySource>();
+    const [showPgpSettings, setShowPgpSettings] = useState(false);
+    const [loadingPgpSettings, withLoadingPgpSettings] = useLoading(true);
+    const [loadingSave, withLoadingSave] = useLoading(false);
+    const { createNotification } = useNotifications();
+    const [mailSettings] = useMailSettings();
+    const [userSettings] = useUserSettings();
+    const dispatch = useDispatch();
+
+    const supportV6Keys = userSettings.Flags.SupportPgpV6Keys === 1;
+
+    const saveVCardContact = useSaveVCardContact();
+
+    // Avoid nested ternary
+    let isMimeTypeFixed: boolean;
+    if (model?.isPGPInternal) {
+        isMimeTypeFixed = false;
+    } else {
+        isMimeTypeFixed = model?.sign !== undefined ? model.sign : !!mailSettings.Sign;
+    }
+
+    const hasPGPInline = model && mailSettings ? extractScheme(model, mailSettings) === PGP_INLINE : false;
+
+    /**
+     * Initialize the key model for the modal
+     */
+    const prepare = async () => {
+        const apiKeysConfig = await getPublicKeysEmailHelper({
+            email: emailAddress,
+            includeInternalKeysWithE2EEDisabledForMail: true, // the keys are used in the context of calendar sharing, thus users may want to pin them
+            api,
+            ktUserContext: await dispatch(getKTUserContext()),
+            silence: true,
+        });
+        const apiKeysSourceMap = apiKeysConfig.publicKeys.reduce<
+            ContactPublicKeyModelWithApiKeySource['apiKeysSourceMap']
+        >((map, { publicKey, source }) => {
+            const fingerprint = publicKey.getFingerprint();
+            if (!map[source]) {
+                map[source] = new Set();
+            }
+            map[source]!.add(fingerprint);
+            return map;
+        }, {});
+        const pinnedKeysConfig = await getKeyInfoFromProperties(vCardContact, emailGroup || '');
+        const publicKeyModel = await getContactPublicKeyModel({
+            emailAddress,
+            apiKeysConfig,
+            pinnedKeysConfig: { ...pinnedKeysConfig, isContact: true },
+            preferV6Keys: true,
+        });
+        setModel({
+            ...publicKeyModel,
+            // Encryption enforces signing, so we can ignore the signing preference so that if the user
+            // disables encryption, the global default signing setting is automatically selected.
+            sign: publicKeyModel.encrypt ? undefined : publicKeyModel.sign,
+            apiKeysSourceMap,
+        });
+    };
+
+    /**
+     * Collect keys from the model to save
+     * @param group attached to the current email address
+     * @returns key properties to save in the vCard
+     */
+    const getKeysProperties = (group: string, model: ContactPublicKeyModelWithApiKeySource, allowV6Keys: boolean) => {
+        const allKeys = model?.isPGPInternal
+            ? [...model.publicKeys.apiKeys]
+            : [...model.publicKeys?.apiKeys, ...model.publicKeys.pinnedKeys];
+        const trustedKeys = allKeys.filter((publicKey) => model.trustedFingerprints.has(publicKey.getFingerprint()));
+        if (!allowV6Keys && trustedKeys.some((trustedKey) => trustedKey.getVersion() === 6)) {
+            // sanity check: the UI should prevent the user to reach this state.
+            throw new Error('v6 keys cannot be pinned without opting into v6 support');
+        }
+        const uniqueTrustedKeys = uniqueBy(trustedKeys, (publicKey) => publicKey.getFingerprint());
+        return Promise.all(uniqueTrustedKeys.map((publicKey, index) => toKeyProperty({ publicKey, group, index })));
+    };
+
+    /**
+     * Save relevant key properties in the vCard
+     */
+    const handleSubmit = async (model?: ContactPublicKeyModelWithApiKeySource) => {
+        if (!model) {
+            return;
+        }
+        const properties = getVCardProperties(vCardContact);
+        const newProperties = properties.filter(({ field, group }) => {
+            return !VCARD_KEY_FIELDS.includes(field) || (group && group !== emailGroup);
+        });
+        newProperties.push(...(await getKeysProperties(emailGroup || '', model, supportV6Keys)));
+
+        const mimeType = getMimeTypeVcard(model.mimeType);
+        if (mimeType) {
+            newProperties.push({
+                field: 'x-pm-mimetype',
+                value: mimeType,
+                group: emailGroup,
+                uid: createContactPropertyUid(),
+            });
+        }
+
+        if (model.isPGPExternal) {
+            const hasPinnedKeys = model.publicKeys.pinnedKeys.length > 0;
+            const hasApiKeys = model.publicKeys.apiKeys.length > 0; // from WKD or other untrusted servers
+
+            if ((hasPinnedKeys || hasApiKeys) && model.encrypt !== undefined) {
+                newProperties.push({
+                    field: hasPinnedKeys ? 'x-pm-encrypt' : 'x-pm-encrypt-untrusted',
+                    value: `${model.encrypt}`,
+                    group: emailGroup,
+                    uid: createContactPropertyUid(),
+                });
+            }
+
+            // Encryption automatically enables signing (but we do not store the info for non-pinned WKD keys).
+            const sign = model.encrypt || model.sign;
+            if (sign !== undefined) {
+                newProperties.push({
+                    field: 'x-pm-sign',
+                    value: `${sign}`,
+                    group: emailGroup,
+                    uid: createContactPropertyUid(),
+                });
+            }
+
+            if (model.scheme) {
+                newProperties.push({
+                    field: 'x-pm-scheme',
+                    value: model.scheme,
+                    group: emailGroup,
+                    uid: createContactPropertyUid(),
+                });
+            }
+        }
+
+        const newVCardContact = fromVCardProperties(newProperties);
+
+        try {
+            await saveVCardContact(contactID, newVCardContact);
+
+            await call();
+
+            createNotification({ text: c('Success').t`Preferences saved` });
+        } finally {
+            rest.onClose?.();
+        }
+    };
+
+    useEffect(() => {
+        /**
+         * On the first render, initialize the model
+         */
+        if (!model) {
+            void withLoadingPgpSettings(prepare());
+            return;
+        }
+        /**
+         * When the list of trusted, expired or revoked keys change,
+         * * update the list:
+         * * re-check if the new keys can send
+         * * re-order api keys (trusted take preference)
+         * * move expired keys to the bottom of the list
+         */
+
+        setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
+            if (!model) {
+                return;
+            }
+            const {
+                publicKeys,
+                trustedFingerprints,
+                obsoleteFingerprints,
+                compromisedFingerprints,
+                encryptionCapableFingerprints,
+                primaryKeyFingerprints,
+            } = model;
+            const apiKeys = sortApiKeys({
+                keys: publicKeys.apiKeys,
+                trustedFingerprints,
+                obsoleteFingerprints,
+                compromisedFingerprints,
+                primaryKeyFingerprints,
+                preferV6Keys: true,
+            });
+            const pinnedKeys = sortPinnedKeys({
+                keys: publicKeys.pinnedKeys,
+                obsoleteFingerprints,
+                compromisedFingerprints,
+                encryptionCapableFingerprints,
+                // only applicable if v6 keys are supported, otherwise pinning is disabled
+                preferV6Keys: supportV6Keys,
+            });
+            const verifyingPinnedKeys = getVerifyingKeys(pinnedKeys, model.compromisedFingerprints);
+
+            return {
+                ...model,
+                publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
+            };
+        });
+    }, [
+        model?.trustedFingerprints,
+        model?.obsoleteFingerprints,
+        model?.encryptionCapableFingerprints,
+        model?.compromisedFingerprints,
+        model?.primaryKeyFingerprints,
+    ]);
+
+    useEffect(() => {
+        // take into account rules relating email format and cryptographic scheme
+        if (!isMimeTypeFixed) {
+            return;
+        }
+        // PGP/Inline should force the email format to plaintext
+        if (hasPGPInline) {
+            return setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
+                if (!model) {
+                    return;
+                }
+                return { ...model, mimeType: MIME_TYPES.PLAINTEXT };
+            });
+        }
+        // If PGP/Inline is not selected, go back to automatic
+        setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
+            if (!model) {
+                return;
+            }
+            return { ...model, mimeType: MIME_TYPES_MORE.AUTOMATIC };
+        });
+    }, [isMimeTypeFixed, hasPGPInline]);
+
+    return (
+        // NB: actual modal size defined by custom CSS targeting `.contacts-modal`
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
+            <ModalTwoHeader
+                title={c('Title').t`Edit email settings`}
+                titleClassName="text-ellipsis"
+                subline={emailAddress}
+            />
+            <ModalTwoContent>
+                {!isMimeTypeFixed ? (
+                    <Alert className="mb-4">
+                        {c('Info')
+                            .t`Select the email format you want to be used by default when sending an email to this email address.`}
+                    </Alert>
+                ) : null}
+                {isMimeTypeFixed && hasPGPInline ? (
+                    <Alert className="mb-4">{c('Info').t`PGP/Inline is only compatible with Plain Text format.`}</Alert>
+                ) : null}
+                {isMimeTypeFixed && !hasPGPInline ? (
+                    <Alert className="mb-4">
+                        {c('Info').t`PGP/MIME automatically sends the message using the current composer mode.`}
+                    </Alert>
+                ) : null}
+                <Row>
+                    <Label>
+                        {c('Label').t`Email format`}
+                        <Info
+                            className="ml-2"
+                            title={c('Tooltip')
+                                .t`Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.`}
+                        />
+                    </Label>
+                    <Field>
+                        <ContactMIMETypeSelect
+                            disabled={loadingSave || isMimeTypeFixed}
+                            value={model?.mimeType || ''}
+                            onChange={(mimeType: CONTACT_MIME_TYPES) =>
+                                setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
+                                    if (!model) {
+                                        return;
+                                    }
+                                    return { ...model, mimeType };
+                                })
+                            }
+                        />
+                    </Field>
+                </Row>
+                <div className="mb-4">
+                    <Collapsible disabled={loadingPgpSettings}>
+                        <CollapsibleHeader
+                            suffix={
+                                <CollapsibleHeaderIconButton onClick={() => setShowPgpSettings(!showPgpSettings)}>
+                                    <IcChevronDown />
+                                </CollapsibleHeaderIconButton>
+                            }
+                            disableFullWidth
+                            onClick={() => setShowPgpSettings(!showPgpSettings)}
+                            className={clsx([
+                                'color-primary',
+                                loadingPgpSettings ? 'color-weak text-no-decoration' : 'text-underline',
+                            ])}
+                        >
+                            {showPgpSettings
+                                ? c('Action').t`Hide advanced PGP settings`
+                                : c('Action').t`Show advanced PGP settings`}
+                        </CollapsibleHeader>
+                        <CollapsibleContent className="mt-4">
+                            {showPgpSettings && model ? (
+                                <ContactPGPSettings
+                                    model={model}
+                                    setModel={setModel}
+                                    mailSettings={mailSettings}
+                                    supportV6Keys={supportV6Keys}
+                                />
+                            ) : null}
+                        </CollapsibleContent>
+                    </Collapsible>
+                </div>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button type="reset" onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button
+                    color="norm"
+                    loading={loadingSave}
+                    disabled={loadingSave || loadingPgpSettings}
+                    type="submit"
+                    onClick={() => withLoadingSave(handleSubmit(model))}
+                    data-testid="email-settings:save"
+                >
+                    {c('Action').t`Save`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
+    );
+};
+
+export default ContactEmailSettingsModal;

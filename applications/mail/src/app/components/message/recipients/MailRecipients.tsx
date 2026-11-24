@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/contacts/edit/ContactEditModal';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import type { RecipientOrGroup } from '@proton/mail-message/models/address';
 import type { MapStatusIcons } from '@proton/mail-message/models/crypto';

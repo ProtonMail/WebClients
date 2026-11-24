@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/contacts/edit/ContactEditModal';
 import type { RecipientOrGroup } from '@proton/mail-message/models/address';
 import type { MapStatusIcons, StatusIcon } from '@proton/mail-message/models/crypto';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';

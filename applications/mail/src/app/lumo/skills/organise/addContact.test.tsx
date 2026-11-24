@@ -1,5 +1,5 @@
 import { buildContactEmail } from '@proton/account/testing/buildContactEmail';
-import { SaveVCardContactError } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
+import { SaveVCardContactError } from '@proton/contacts/hooks/useSaveVCardContact';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';

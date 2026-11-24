@@ -7,7 +7,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/contacts/edit/ContactEditModal';
 import { FeatureCode } from '@proton/features/interface';
 import useFeatures from '@proton/features/useFeatures';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';

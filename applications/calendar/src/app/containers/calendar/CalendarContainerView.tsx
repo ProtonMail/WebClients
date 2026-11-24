@@ -27,8 +27,6 @@ import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import TopNavbarListItem from '@proton/components/components/topnavbar/TopNavbarListItem';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
-import type { CustomAction, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
-import { CONTACT_WIDGET_TABS } from '@proton/components/containers/contacts/widget/types';
 import DrawerAppFooter from '@proton/components/containers/drawer/DrawerAppFooter';
 import DrawerAppHeader from '@proton/components/containers/drawer/DrawerAppHeader';
 import DrawerAppHeaderCustomTitle from '@proton/components/containers/drawer/DrawerAppHeaderCustomTitle';
@@ -39,6 +37,10 @@ import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import DrawerContactModals from '@proton/contacts/drawer/DrawerContactModals';
+import DrawerContactView from '@proton/contacts/drawer/DrawerContactView';
+import type { CustomAction, CustomActionRenderProps } from '@proton/contacts/widget/types';
+import { CONTACT_WIDGET_TABS } from '@proton/contacts/widget/types';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useToggle from '@proton/hooks/useToggle';
@@ -658,9 +660,14 @@ const CalendarContainerView = ({
             drawerApp={
                 isDrawerApp ? null : (
                     <DrawerApp
-                        contactCustomActions={contactCustomActions}
                         customAppSettings={<CalendarQuickSettings onBackFromSearch={onBackFromSearch} />}
-                        contactsImportDropdown={<ContactsTabImportDropdown />}
+                        contactsView={
+                            <DrawerContactView
+                                customActions={contactCustomActions}
+                                importDropdown={<ContactsTabImportDropdown />}
+                            />
+                        }
+                        contactModals={<DrawerContactModals />}
                     />
                 )
             }
