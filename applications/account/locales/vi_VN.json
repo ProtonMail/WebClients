@@ -360,9 +360,6 @@
       "Connected": [
         "Đã kết nối"
       ],
-      "Contact support": [
-        "Liên hệ bộ trợ giúp"
-      ],
       "Contact Support Center": [
         "Liên hệ Trung tâm hỗ trợ"
       ],
@@ -603,8 +600,8 @@
       "Don't show again": [
         "Đừng hiện nữa"
       ],
-      "Donate": [
-        "Quyên góp"
+      "Don't show this again": [
+        "Không hiển thị lại"
       ],
       "Done": [
         "Xong"
@@ -891,9 +888,6 @@
       "Get verification code": [
         "Lấy mã xác thực"
       ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Nhận địa chỉ ${ MAIL_APP_NAME } riêng"
-      ],
       "Go back": [
         "Quay lại"
       ],
@@ -908,6 +902,9 @@
       ],
       "Go to settings": [
         "Đi tới cài đặt"
+      ],
+      "Go to today": [
+        "Đến ngày hôm nay"
       ],
       "Google": [
         "Google"
@@ -1128,6 +1125,9 @@
       "Next": [
         "Tiếp theo"
       ],
+      "Next contact": [
+        "Liên hệ tiếp theo"
+      ],
       "Next month": [
         "Tháng tiếp theo"
       ],
@@ -1206,8 +1206,14 @@
       "Preview": [
         "Xem trước"
       ],
+      "Preview logs": [
+        "Xem trước nhật ký"
+      ],
       "Previous": [
         "Trước"
+      ],
+      "Previous contact": [
+        "Liên hệ trước đó"
       ],
       "Previous month": [
         "Tháng trước"
@@ -1599,6 +1605,9 @@
       "Skip": [
         "Bỏ qua"
       ],
+      "Skip to main content": [
+        "Chuyển đến nội dung chính"
+      ],
       "Skip verification": [
         "Bỏ qua xác minh"
       ],
@@ -1676,9 +1685,6 @@
       ],
       "Try for free": [
         "Dùng thử miễn phí"
-      ],
-      "Try payment again": [
-        "Thử thanh toán lại"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Thử lưu lại. Lưu thất bại do: ${ saveError }"
@@ -1923,6 +1929,9 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } chỗ"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } chỗ trợ lý soạn thảo"
+      ],
       "${ price } per dedicated server": [
         "${ price } mỗi máy chủ chuyên dụng"
       ],
@@ -1943,6 +1952,9 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } chỗ"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } chỗ ngồi cho trợ lý viết ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } giấy phép ${ MEET_APP_NAME }"
@@ -2079,6 +2091,9 @@
       ],
       "Permission revoked": [
         "Đã thu hồi quyền"
+      ],
+      "Sign-in": [
+        "Đăng nhập"
       ]
     },
     "Admin": {
@@ -5755,9 +5770,6 @@
       "Delete this condition": [
         "Xóa điều kiện này"
       ],
-      "Edit conditions": [
-        "Chỉnh sửa điều kiện"
-      ],
       "Got it": [
         "Đã hiểu"
       ],
@@ -6552,9 +6564,6 @@
       "Could not open updated vault": [
         "Không thể mở kho đã cập nhật"
       ],
-      "Could not save preference": [
-        "Không thể lưu tùy chọn"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "Không thể tải hóa đơn. Vui lòng thử lại sau."
       ],
@@ -7025,9 +7034,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Số tiền tối thiểu có thể nạp thêm vào là ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Số tiền quyên góp tối thiểu là ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Tên chính sách phải dài từ 3 đến 40 ký tự."
@@ -7966,8 +7972,14 @@
       "Security key updated": [
         "Khóa bảo mật đã cập nhật"
       ],
+      "Still waiting?": [
+        "Vẫn đang chờ?"
+      ],
       "This will delete all security keys linked to your account.": [
         "Thao tác này sẽ xóa tất cả các khóa bảo mật liên kết với tài khoản."
+      ],
+      "Touch your security key to continue.": [
+        "Hãy chạm khoá bảo mật của bạn để tiếp tục."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Xác minh danh tính bằng khóa bảo mật vật lý U2F hoặc FIDO2"
@@ -8208,16 +8220,6 @@
       ],
       "Learn more": [
         "Tìm hiểu thêm"
-      ]
-    },
-    "Form heading": {
-      "Enter your email address": [
-        "Nhập địa chỉ email"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Voucher sẽ được gửi đến đây."
       ]
     },
     "Free trial dekstop": {
@@ -8545,29 +8547,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Một bước đơn giản hôm nay để đảm bảo an toàn kỹ thuật số cho con trẻ vào ngày mai"
-      ],
       "Activate your reserved email address": [
         "Kích hoạt địa chỉ email đã đặt trước"
-      ],
-      "Address reservation voucher": [
-        "Voucher đặt trước địa chỉ"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Quyên góp cho ${ BRAND_NAME } Foundation"
       ],
       "Enter verification code": [
         "Nhập mã xác minh"
       ],
       "Recover activation voucher": [
         "Khôi phục voucher kích hoạt"
-      ],
-      "Reserve child's email address": [
-        "Đặt trước địa chỉ email cho trẻ"
-      ],
-      "We emailed you the voucher": [
-        "Voucher đã được gửi qua email"
       ]
     },
     "Headline": {
@@ -10356,9 +10343,6 @@
       "Groups": [
         "Nhóm"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Giúp các gia đình khác mang lại cho con cái họ một khởi đầu an toàn trực tuyến. Hãy chia sẻ cột mốc này và lan tỏa thông điệp."
-      ],
       "here": [
         "ở đây"
       ],
@@ -10367,9 +10351,6 @@
       ],
       "High Priority": [
         "Ưu tiên cao"
-      ],
-      "How it works": [
-        "Cách thức hoạt động"
       ],
       "How to perform a signed-in reset": [
         "Cách thực hiện đặt lại khi đã đăng nhập"
@@ -10599,9 +10580,6 @@
       "Just confirm your selection and we'll do the rest.": [
         "Chỉ cần xác nhận lựa chọn và chúng tôi sẽ thực hiện phần còn lại."
       ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Giữ voucher an toàn cho đến khi cần, ví dụ như trong ${ DRIVE_APP_NAME }."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Giữ thông tin an toàn và riêng tư hơn với các hướng dẫn và mẹo này."
       ],
@@ -10688,6 +10666,9 @@
       ],
       "Loading...": [
         "Đang tải..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Các tệp nhật ký giúp chúng ta hiểu được những gì đã xảy ra trước khi sự cố xuất hiện. Chúng bao gồm các thao tác trong ứng dụng và thông báo lỗi, nhưng không chứa nội dung tin nhắn."
       ],
       "Low Priority": [
         "Ưu tiên thấp"
@@ -11112,9 +11093,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Nhận thông báo cho ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Nhận voucher đặt trước qua email. Có thể sử dụng voucher để kích hoạt địa chỉ trong vòng 15 năm tới. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Máy chủ đã sử dụng gần đây:"
       ],
@@ -11340,9 +11318,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Một số máy chủ có thể không xuất hiện trong danh sách trên. Tìm kiếm theo tên máy chủ (ví dụ: AT#62) để tìm chúng."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Đã xảy ra sự cố. Vui lòng thử lại hoặc liên hệ với bộ phận hỗ trợ khách hàng."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Chỉ định miền được phép xác thực với SAML SSO."
       ],
@@ -11510,9 +11485,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Liên kết báo cáo việc bạn chưa thiết lập tài khoản ${ BRAND_NAME } đã hết hạn. Vui lòng liên hệ đội ngũ hỗ trợ để giải quyết."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Số tiền quyên góp tối đa là ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Bản cập nhật dữ liệu gần nhất, không bao gồm các vi phạm."
@@ -11729,9 +11701,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Để cập nhật những phát triển mới nhất tại các sản phẩm ${ BRAND_NAME }, có thể đăng ký nhận các email khác nhau của chúng tôi và ${ blogLink } theo thời gian."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Để ngăn chặn lạm dụng hoặc gian lận, cần có khoản quyên góp tối thiểu là ${ minimumDonation }. Khoản này hỗ trợ công việc của ${ protonFoundationLink } trong việc bảo vệ quyền riêng tư kỹ thuật số trên toàn cầu và giúp bảo vệ thế hệ tương lai."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Để tiếp tục, hãy chọn phương thức khôi phục tài khoản để chúng tôi có thể xác minh yêu cầu."
@@ -11955,9 +11924,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Có thể sử dụng điện thoại khôi phục để gửi mã xác minh nhằm đặt lại mật khẩu, và để liên hệ nếu phát hiện hoạt động đáng ngờ."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Không thể hoàn tất giao dịch. Vui lòng thử lại."
-      ],
       "We couldn’t process your payment.": [
         "Không thể xử lý thanh toán."
       ],
@@ -12060,9 +12026,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Khi xóa máy chủ khỏi cổng, máy chủ sẽ chuyển sang giai đoạn hủy kích hoạt trong 10 ngày. Máy chủ này có thể được thêm vào cổng mới, nhưng không thể thay đổi quốc gia."
       ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Khi đã sẵn sàng kích hoạt địa chỉ, hãy quét mã QR hoặc sử dụng liên kết trong voucher."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Khi đăng ký làm mới, chúng tôi sẽ áp dụng mọi tín dụng hiện có trước khi chúng tôi tính phí phương pháp thanh toán ở trên."
       ],
@@ -12104,6 +12067,9 @@
       ],
       "Writing assistant": [
         "Trợ lý soạn thảo"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Các suất sử dụng công cụ hỗ trợ viết không còn được bán nữa."
       ],
       "X": [
         "X"
@@ -12474,9 +12440,6 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Bản dùng thử sẽ kết thúc sau ${ timeRemaining }."
       ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Voucher cho địa chỉ email ${ BRAND_NAME } đã đặt trước: ${ reservedEmail }"
-      ],
       "YouTube": [
         "YouTube"
       ],
@@ -12519,6 +12482,9 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Giúp viết, trả lời và soát lỗi email. Nếu bị vô hiệu hóa, chỉ quản trị viên mới có quyền truy cập. Quản lý cho từng người dùng trong ${ userAndAddresses } hoặc ${ addMoreSeats }"
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses }.": [
+        "Hỗ trợ soạn thảo, phản hồi và hiệu đính email. Nếu tính năng này bị tắt, chỉ quản trị viên mới có quyền truy cập. Bạn có thể quản lý cài đặt cho từng người dùng tại ${ userAndAddresses }."
       ]
     },
     "Info (sub-heading)": {
@@ -13153,6 +13119,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Truy cập ${ PASS_APP_NAME } an toàn từ thiết bị đầu cuối, phù hợp cho các quy trình công việc tạo tập lệnh, tự động hóa và phát triển."
       ],
+      "Access tokens": [
+        "Mã thông báo truy cập"
+      ],
       "Account holder": [
         "Chủ tài khoản"
       ],
@@ -13435,14 +13404,14 @@
       "Choose a name for the generated certificate file": [
         "Chọn tên cho tệp chứng chỉ được tạo"
       ],
-      "Choose an address to reserve for your child": [
-        "Chọn một địa chỉ để đặt trước cho trẻ"
-      ],
       "Choose your billing": [
         "Chọn chu kỳ thanh toán"
       ],
       "City": [
         "Thành phố"
+      ],
+      "Client version": [
+        "Phiên bản máy khách"
       ],
       "Code is 6 digits without spaces": [
         "Mã gồm 6 chữ số không có khoảng trắng"
@@ -13639,12 +13608,6 @@
       "Don't show this again": [
         "Không hiển thị lại mục này"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Quyên góp ${ minimumDonation } hoặc nhiều hơn cho Quỹ ${ BRAND_NAME }"
-      ],
-      "Donation amount": [
-        "Số tiền quyên góp"
-      ],
       "Drive": [
         "Ổ đĩa"
       ],
@@ -13737,9 +13700,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Nhập mật khẩu cho khóa có dấu vân tay: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Nhập địa chỉ email"
       ],
       "Enter your password": [
         "Nhập mật khẩu"
@@ -14530,9 +14490,6 @@
       "Tips and insights": [
         "Mẹo và thông tin chi tiết"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Để kích hoạt, hãy quét mã QR hoặc truy cập:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Để giúp chúng tôi cải thiện, vui lòng giải thích lý do bạn rời đi."
       ],
@@ -14695,17 +14652,11 @@
       "You don't have permissions": [
         "Không có quyền"
       ],
-      "Your activation code:": [
-        "Mã kích hoạt:"
-      ],
       "Your calendar URL": [
         "URL lịch của bạn"
       ],
       "Your credit balance": [
         "Số dư tín dụng của bạn"
-      ],
-      "Your email address": [
-        "Địa chỉ email"
       ],
       "Your password (admin)": [
         "Mật khẩu (quản trị viên)"
@@ -14721,9 +14672,6 @@
       ],
       "Your recovery phone number": [
         "Số điện thoại khôi phục"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Voucher cho địa chỉ email ${ BRAND_NAME } đã đặt trước:"
       ],
       "Zero-access architecture": [
         "Kiến trúc zero-access"
@@ -14790,6 +14738,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "Tìm thấy bản ghi ${ group.name } không hợp lệ"
+      ],
+      "Leave field blank": [
+        "Để trống trường này"
       ],
       "Priority": [
         "Độ ưu tiên"
@@ -14891,9 +14842,6 @@
       ],
       "${ labelName } updated": [
         "Đã cập nhật ${ labelName } "
-      ],
-      "Preference saved": [
-        "Đã lưu sở thích"
       ]
     },
     "Label; import email": {
@@ -14916,9 +14864,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "của ${ BRAND_NAME } Foundation"
-      ],
       "Activity log": [
         "Nhật ký hoạt động"
       ],
@@ -15162,20 +15107,6 @@
         "Người dùng và địa chỉ"
       ]
     },
-    "Link label": {
-      "Email": [
-        "Email"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
-      ]
-    },
     "Link label (optional)": {
       "Access": [
         "Truy cập"
@@ -15313,6 +15244,44 @@
       ],
       "Enable detailed events": [
         "Kích hoạt sự kiện chi tiết"
+      ]
+    },
+    "lumo_2026: feature": {
+      "2x Basic usage": [
+        "2x Mức sử dụng cơ bản"
+      ],
+      "5x Plus usage": [
+        "5x Mức sử dụng Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Quyền truy cập API, kèm theo hạn mức ${ credit } mỗi tháng"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Quyền truy cập API, với hạn mức ${ credit } mỗi tháng cho mỗi người dùng"
+      ],
+      "Everything in Basic, and:": [
+        "Tất cả trong gói Cơ bản, và:"
+      ],
+      "Everything in Free, and:": [
+        "Mọi thứ trong gói Miễn phí, cùng với:"
+      ],
+      "Includes:": [
+        "Bao gồm:"
+      ],
+      "Limited messages and chat history": [
+        "Số lượng tin nhắn và lịch sử trò chuyện bị giới hạn"
+      ],
+      "Maximum image generation": [
+        "Tạo hình ảnh tối đa"
+      ],
+      "Maximum Skills and Projects": [
+        "Các kỹ năng và dự án tối đa"
+      ],
+      "More image generation": [
+        "Tạo thêm hình ảnh"
+      ],
+      "More usage": [
+        "Thêm hạn mức"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -15683,9 +15652,6 @@
       "${ BRAND_NAME } Account": [
         "Tài khoản ${ BRAND_NAME }"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Một bước đơn giản hôm nay để đảm bảo an toàn kỹ thuật số cho con ngày mai. Đặt trước một địa chỉ email ${ BRAND_NAME } riêng tư cho con."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Kích hoạt địa chỉ email ${ BRAND_NAME } riêng tư dành riêng cho con và thiết lập tài khoản."
       ],
@@ -15721,9 +15687,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Khôi phục tài khoản ${ BRAND_NAME } của con | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Đặt trước email riêng tư cho con | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Đặt lại mật khẩu Tài khoản ${ BRAND_NAME }"
@@ -17049,17 +17012,11 @@
       "1 email per month": [
         "1 thư mỗi tháng"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 email mỗi tháng. Nhận tin tức mới nhất về quyền riêng tư và những gì đang diễn ra trong vũ trụ ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 thư mỗi quý"
       ],
       "1-2 emails per month": [
         "1-2 email mỗi tháng"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 email mỗi năm. Nhắc nhở cập nhật các phương thức khôi phục."
       ],
       "2-4 emails per year": [
         "2-4 email mỗi năm"
@@ -17084,9 +17041,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Trong tháng đầu tiên sử dụng sản phẩm ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Thông tin liên lạc qua email"
       ],
       "In-app notifications": [
         "Thông báo trong ứng dụng"
@@ -18713,9 +18667,6 @@
       ],
       "Address": [
         "Địa chỉ"
-      ],
-      "Amount": [
-        "Số tiền"
       ],
       "Anderson": [
         "Anderson"
@@ -22039,9 +21990,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } và ${ VPN_SHORT_APP_NAME } với các tính năng cao cấp"
       ],
-      "${ dayDiff } day left": [
-        "Còn lại ${ dayDiff } ngày"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Ứng dụng ${ MAIL_APP_NAME } trên máy tính để bàn"
       ],
@@ -22297,12 +22245,6 @@
       "What you give up when you cancel ${ planName }": [
         "Lợi ích bị mất khi hủy ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Khi hủy ${ planName }, bạn sẽ bị hạ cấp xuống ${ BRAND_NAME } miễn phí, gói này chỉ cung cấp tối đa 1 GB dung lượng Mail và tối đa 5 GB dung lượng Drive. Bạn cũng sẽ mất mọi phần thưởng dung lượng đã được tặng trước đó."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Khi hủy ${ planName }, bạn sẽ bị hạ cấp xuống ${ BRAND_NAME } Miễn phí, gói này chỉ cung cấp tối đa 1 GB dung lượng Mail và 5 GB dung lượng ổ đĩa. Nhóm sẽ gặp gián đoạn trong công việc vì người dùng bổ sung không được hỗ trợ trong gói miễn phí."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Khi đăng ký ${ planName } kết thúc vào ${ expiryDate }, bạn sẽ bị hạ cấp xuống gói ${ BRAND_NAME } Miễn phí."
       ],
@@ -22311,9 +22253,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Có thể tiếp tục tận hưởng mọi quyền lợi của gói hiện tại cho đến ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Bạn vẫn còn ${ expiryDate } ngày sử dụng gói đăng ký ${ planName }. Chúng tôi sẽ cộng tín dụng cho thời gian còn lại vào Tài khoản ${ BRAND_NAME }. Đảm bảo không vượt quá giới hạn của gói miễn phí trước khi hủy. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Gói ${ planName } không chỉ giữ an toàn cho dữ liệu và thông tin liên lạc của doanh nghiệp mà còn hỗ trợ các mục tiêu tuân thủ, giúp doanh nghiệp nổi bật và giúp đội ngũ luôn được kết nối."
@@ -22843,6 +22782,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Các thao tác"
+      ],
       "Size": [
         "Kích thước"
       ],
@@ -22867,9 +22809,6 @@
       ],
       "CSV field": [
         "Trường CSV"
-      ],
-      "Edit": [
-        "Chỉnh sửa"
       ],
       "Email address": [
         "Địa chỉ email"
@@ -23795,9 +23734,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Nhập chi tiết Tài khoản ${ BRAND_NAME } để tham gia chương trình Beta ${ app }"
       ],
-      "Enter your password": [
-        "Nhập mật khẩu"
-      ],
       "Error": [
         "Lỗi"
       ],
@@ -24274,12 +24210,6 @@
       ],
       "Priority support:": [
         "Ưu tiên hỗ trợ:"
-      ],
-      "Problem processing your payment": [
-        "Sự cố xử lý thanh toán"
-      ],
-      "Problem processing your request": [
-        "Sự cố khi xử lý yêu cầu"
       ],
       "Processing...": [
         "Đang xử lý..."
@@ -25824,6 +25754,62 @@
       ],
       "Replay video": [
         "Phát lại video"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } mỗi người dùng"
+      ],
+      "10 years": [
+        "10 năm"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Cấp máy chủ ${ VPN_APP_NAME } có dung lượng cao hơn: có ít người chia sẻ từng máy chủ hơn và họ sử dụng địa chỉ IP do ${ BRAND_NAME } sở hữu. Kết nối nhanh sẽ tự động chọn chúng nếu có."
+      ],
+      "Calendars": [
+        "Lịch"
+      ],
+      "Custom email domains": [
+        "Miền email tùy chỉnh"
+      ],
+      "Email addresses": [
+        "Địa chỉ email"
+      ],
+      "Hide-my-email aliases": [
+        "Biệt danh hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Được đặt tên theo những người ủng hộ qua hình thức gây quỹ cộng đồng – những người đã góp phần hiện thực hóa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } vào năm 2014. Mọi dịch vụ cao cấp của ${ BRAND_NAME } đều gói gọn trong một gói duy nhất."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Các dịch vụ ${ BRAND_NAME } mới không phát sinh thêm chi phí"
+      ],
+      "Password vaults": [
+        "Kho lưu trữ mật khẩu"
+      ],
+      "Previous versions": [
+        "Phiên bản trước"
+      ],
+      "Storage": [
+        "Lưu trữ"
+      ],
+      "Ultra servers": [
+        "Các máy chủ Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Các máy chủ Ultra, dành riêng cho bạn"
+      ],
+      "Unlimited": [
+        "Không giới hạn"
+      ],
+      "Up to ${ limit }": [
+        "Lên đến ${ limit }"
+      ],
+      "Users": [
+        "Người dùng"
+      ],
+      "VPN devices at once": [
+        "Các thiết bị VPN cùng lúc"
       ]
     },
     "VPN B2B cancellation reason": {

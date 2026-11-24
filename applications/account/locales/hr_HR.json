@@ -354,9 +354,6 @@
       "Connected": [
         "Povezano"
       ],
-      "Contact support": [
-        "Kontaktiraj podršku"
-      ],
       "Contact Support Center": [
         "Kontaktirajte centar za podršku"
       ],
@@ -597,8 +594,8 @@
       "Don't show again": [
         "Ne prikazuj ponovno"
       ],
-      "Donate": [
-        "Doniraj"
+      "Don't show this again": [
+        "Ne prikazuj ovo više"
       ],
       "Done": [
         "Gotovo"
@@ -884,9 +881,6 @@
       ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Nabavite vlastitu ${ MAIL_APP_NAME } adresu"
       ],
       "Go back": [
         "Idi natrag"
@@ -1593,6 +1587,9 @@
       "Skip": [
         "Preskoči"
       ],
+      "Skip to main content": [
+        "Preskoči na glavni sadržaj"
+      ],
       "Skip verification": [
         "Preskoči provjeru"
       ],
@@ -1670,9 +1667,6 @@
       ],
       "Try for free": [
         "Isprobaj besplatno"
-      ],
-      "Try payment again": [
-        "Pokušajte ponovno s plaćanjem"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokušajte ponovno spremiti. Spremanje nije uspjelo zbog: ${ saveError }"
@@ -5806,9 +5800,6 @@
       "Delete this condition": [
         "Izbriši ovaj uvjet"
       ],
-      "Edit conditions": [
-        "Uredi uvjete"
-      ],
       "Got it": [
         "Jasno"
       ],
@@ -6617,9 +6608,6 @@
       "Could not open updated vault": [
         "Nije moguće otvoriti ažurirani trezor"
       ],
-      "Could not save preference": [
-        "Nije moguće spremiti postavke"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "Nije moguće učitati račune. Pokušajte ponovno kasnije."
       ],
@@ -7102,9 +7090,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalni iznos kredita koji se može dodati je ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimalni iznos donacije je ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Naziv pravila mora biti između 3 i 40 znakova."
@@ -8321,16 +8306,6 @@
         "Saznajte više"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "Unesite svoju adresu e-pošte"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Vaučer će biti poslan ovdje."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "mrežna aplikacija"
@@ -8658,29 +8633,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Jednostavan korak danas za digitalnu sigurnost vašeg djeteta sutra"
-      ],
       "Activate your reserved email address": [
         "Aktivirajte svoju rezerviranu adresu e-pošte"
-      ],
-      "Address reservation voucher": [
-        "Vaučer za rezervaciju adrese"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Donirajte za Zakladu ${ BRAND_NAME }"
       ],
       "Enter verification code": [
         "Unesite kôd za potvrdu"
       ],
       "Recover activation voucher": [
         "Oporavite vaučer za aktivaciju"
-      ],
-      "Reserve child's email address": [
-        "Rezervirajte djetetovu adresu e-pošte"
-      ],
-      "We emailed you the voucher": [
-        "Poslali smo vam vaučer e-poštom"
       ]
     },
     "Headline": {
@@ -10564,9 +10524,6 @@
       "Groups": [
         "Grupe"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Pomozite drugim obiteljima da svojoj djeci pruže siguran početak na mreži. Podijelite ovu prekretnicu i proširite vijest."
-      ],
       "here": [
         "ovdje"
       ],
@@ -10575,9 +10532,6 @@
       ],
       "High Priority": [
         "Visoki prioritet"
-      ],
-      "How it works": [
-        "Kako funkcionira"
       ],
       "How to perform a signed-in reset": [
         "Kako izvršiti ponovno pokretanje nakon prijave"
@@ -10806,9 +10760,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Samo potvrdite svoj odabir i mi ćemo učiniti ostalo."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Čuvajte vaučer na sigurnom dok ne zatreba, na primjer u ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Držite svoje podatke sigurnijima i privatnijima uz ove vodiče i savjete."
@@ -11328,9 +11279,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Primaj obavijesti za ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Primite vaučer za rezervaciju putem e-pošte. Vi ili dijete možete ga upotrijebiti za aktivaciju adrese u sljedećih 15 godina. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Nedavno korišteni poslužitelji:"
       ],
@@ -11558,9 +11506,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Neki se poslužitelji možda neće pojaviti na gornjem popisu. Pretražite po nazivu poslužitelja (npr. AT#62) da biste ih pronašli."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Nešto je pošlo po zlu. Molimo pokušajte ponovno ili kontaktirajte korisničku podršku."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Navedite domenu kojoj je dopuštena autentifikacija pomoću SAML SSO-a."
       ],
@@ -11738,9 +11683,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Poveznica za prijavu da niste postavili ${ BRAND_NAME } korisnički račun je istekla. Obratite se našem timu za podršku kako bismo riješili ovaj problem."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Maksimalni iznos donacije je ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Najnovije ažuriranje podataka, osim povreda."
@@ -11957,9 +11899,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Kako biste bili u toku s najnovijim razvojem proizvoda ${ BRAND_NAME }, možete se pretplatiti na naše razne e-mailove i povremeno posjećivati ${ blogLink }."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Kako bismo spriječili zloupotrebu ili prijevaru, tražimo minimalnu donaciju u iznosu od ${ minimumDonation }. Time se podržava rad ${ protonFoundationLink } na zaštiti digitalne privatnosti diljem svijeta i pomaže u zaštiti sljedećih generacija."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Za nastavak, odaberite način za oporavak računa kako bismo mogli potvrditi zahtjev."
@@ -12180,9 +12119,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Možemo upotrijebiti vaš telefon za oporavak kako bismo vam poslali kôd za potvrdu za ponovno pokretanje lozinke i kako bismo vas kontaktirali ako primijetimo sumnjivu aktivnost."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Nismo uspjeli dovršiti transakciju. Molimo pokušajte ponovno."
-      ],
       "We couldn’t process your payment.": [
         "Nismo uspjeli obraditi vaše plaćanje."
       ],
@@ -12284,9 +12220,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Kada uklonite poslužitelj iz pristupnika, on ulazi u 10-dnevno razdoblje deaktivacije. Ovaj se poslužitelj može dodati novom pristupniku, ali njegova se zemlja ne može promijeniti."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Kada budete spremni za aktivaciju adrese, skenirajte QR kôd ili upotrijebite poveznicu u vaučeru."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kada se vaša pretplata obnovi, primijenit ćemo sve dostupne kredite prije nego što naplatimo gore navedeni način plaćanja."
@@ -12722,9 +12655,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaš probni period završava za ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Vaš vaučer za vašu rezerviranu ${ BRAND_NAME } adresu e-pošte: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13416,6 +13346,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Pristupite ${ PASS_APP_NAME } na siguran način iz terminala, idealno za skriptiranje, automatizaciju i razvojne procese."
       ],
+      "Access tokens": [
+        "Pristupni tokeni"
+      ],
       "Account holder": [
         "Vlasnik računa"
       ],
@@ -13692,9 +13625,6 @@
       "Choose a name for the generated certificate file": [
         "Odaberite naziv za generiranu konfiguracijsku datoteku"
       ],
-      "Choose an address to reserve for your child": [
-        "Odaberite adresu koju želite rezervirati za svoje dijete"
-      ],
       "Choose your billing": [
         "Odaberite naplatu"
       ],
@@ -13898,12 +13828,6 @@
       "Don't show this again": [
         "Ne prikazuj ponovno"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Donirajte ${ minimumDonation } ili više zakladi ${ BRAND_NAME }"
-      ],
-      "Donation amount": [
-        "Iznos donacije"
-      ],
       "Drive": [
         "Disk"
       ],
@@ -13996,9 +13920,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Unesite lozinku za ključ s otiskom prsta: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Unesite svoju adresu e-pošte"
       ],
       "Enter your password": [
         "Unesite lozinku"
@@ -14791,9 +14712,6 @@
       "Tips and insights": [
         "Savjeti i uvidi"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Za aktivaciju skenirajte QR kôd ili idite na:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Kako biste nam pomogli da se poboljšamo, objasnite zašto odlazite."
       ],
@@ -14956,17 +14874,11 @@
       "You don't have permissions": [
         "Nemate dozvole"
       ],
-      "Your activation code:": [
-        "Vaš kôd za aktivaciju:"
-      ],
       "Your calendar URL": [
         "URL vašeg kalendara"
       ],
       "Your credit balance": [
         "Vaše stanje kredita"
-      ],
-      "Your email address": [
-        "Vaša adresa e-pošte"
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
@@ -14982,9 +14894,6 @@
       ],
       "Your recovery phone number": [
         "Vaš telefonski broj za oporavak"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Vaš vaučer za vašu rezerviranu ${ BRAND_NAME } adresu e-pošte:"
       ],
       "Zero-access architecture": [
         "Arhitektura s nultim pristupom"
@@ -15154,9 +15063,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } ažurirano"
-      ],
-      "Preference saved": [
-        "Postavke su spremljene"
       ]
     },
     "Label; import email": {
@@ -15179,9 +15085,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "zaklade ${ BRAND_NAME }"
-      ],
       "Activity log": [
         "Zapisnici aktivnosti"
       ],
@@ -15420,20 +15323,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Korisnici i adrese"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "E-pošta"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15973,9 +15862,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } račun"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Jednostavan korak danas kako biste osigurali digitalnu sigurnost svog djeteta sutra. Rezervirajte privatnu adresu e-pošte ${ BRAND_NAME } za svoje dijete."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Aktivirajte privatnu adresu e-pošte ${ BRAND_NAME } rezerviranu za svoje dijete i postavite njegov korisnički račun."
       ],
@@ -16011,9 +15897,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Oporavite korisnički račun ${ BRAND_NAME } svog djeteta | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Rezervirajte privatnu e-poštu svog djeteta | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Ponovno postavite lozinku za svoj ${ BRAND_NAME } korisnički račun"
@@ -17401,17 +17284,11 @@
       "1 email per month": [
         "1 e-poruka mjesečno"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "Jedna poruka e-pošte mjesečno. Dobivajte najnovije vijesti o privatnosti i što se događa u ${ BRAND_NAME } svijetu."
-      ],
       "1 email per quarter": [
         "1 e-poruka u tromjesečju"
       ],
       "1-2 emails per month": [
         "1-2 e-poruke mjesečno"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 e-poruke godišnje. Podsjetnici za redovito ažuriranje metoda oporavka."
       ],
       "2-4 emails per year": [
         "2 do 4 e-poruke godišnje"
@@ -17436,9 +17313,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Tijekom prvog mjeseca korištenja ${ BRAND_NAME } proizvoda"
-      ],
-      "Email communications": [
-        "Komunikacija e-poštom"
       ],
       "In-app notifications": [
         "Obavijesti unutar aplikacije"
@@ -19097,9 +18971,6 @@
       ],
       "Address": [
         "Adresa"
-      ],
-      "Amount": [
-        "Iznos"
       ],
       "Anderson": [
         "Andrić"
@@ -22569,11 +22440,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } s premium značajkama"
       ],
-      "${ dayDiff } day left": [
-        "Preostao je još ${ dayDiff } dan",
-        "Preostala su još ${ dayDiff } dana",
-        "Preostalo je još ${ dayDiff } dana"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
       ],
@@ -22841,12 +22707,6 @@
       "What you give up when you cancel ${ planName }": [
         "Čega se odričete kada poništite ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Kada poništite plan ${ planName }, Vaš će plan biti unazađen na ${ BRAND_NAME } Free plan, koji nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Također ćete izgubiti sve prethodno dodijeljene bonuse za pohranu."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kada otkažete ${ planName }, bit ćete unazađeni na ${ BRAND_NAME } Free, koji nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Vaš će tim iskusiti prekide u radu budući da dodatni korisnici nisu podržani na besplatnoj pretplati."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kada vaša pretplata na ${ planName } završi dana ${ expiryDate }, bit ćete unazađeni na ${ BRAND_NAME } Free plan."
       ],
@@ -22855,9 +22715,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Možete nastaviti uživati u svim pogodnostima svog trenutačnog plana do ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Još uvijek imate ${ expiryDate } na svojoj pretplati za ${ planName }. Dodat ćemo kredite za preostalo vrijeme na Vaš ${ BRAND_NAME } korisnički račun. Pripazite da ne prekoračite ograničenja besplatnog plana prije nego što izvršite poništenje. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Vaš plan ${ planName } ne služi samo za zaštitu vaših poslovnih podataka i komunikacija. On pruža podršku za vaše ciljeve usklađenosti, ističe vaše poslovanje i održava vaš tim povezanim."
@@ -23387,6 +23244,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Radnje"
+      ],
       "Size": [
         "Veličina"
       ],
@@ -23411,9 +23271,6 @@
       ],
       "CSV field": [
         "CSV polje"
-      ],
-      "Edit": [
-        "Uredi"
       ],
       "Email address": [
         "Adresa e-pošte"
@@ -24369,9 +24226,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Unesite pojedinosti o svom ${ BRAND_NAME } korisničkom računu kako biste se pridružili ${ app } beta programu"
       ],
-      "Enter your password": [
-        "Unesite lozinku"
-      ],
       "Error": [
         "Pogreška"
       ],
@@ -24852,12 +24706,6 @@
       ],
       "Priority support:": [
         "Prioritetna podrška:"
-      ],
-      "Problem processing your payment": [
-        "Problem prilikom obrade plaćanja"
-      ],
-      "Problem processing your request": [
-        "Problem prilikom obrade vašeg zahtjeva"
       ],
       "Processing...": [
         "Obrada..."

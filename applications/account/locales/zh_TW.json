@@ -354,9 +354,6 @@
       "Connected": [
         "已連線"
       ],
-      "Contact support": [
-        "聯絡支援"
-      ],
       "Contact Support Center": [
         "聯絡支援中心"
       ],
@@ -597,11 +594,8 @@
       "Don't show again": [
         "日後免再顯示"
       ],
-      "Don't show this offer again": [
-        "不再顯示此優惠"
-      ],
-      "Donate": [
-        "捐贈"
+      "Don't show this again": [
+        "不再顯示此內容"
       ],
       "Done": [
         "完成"
@@ -887,9 +881,6 @@
       ],
       "Get verification code": [
         "取得驗證碼"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "獲取您專屬的 ${ MAIL_APP_NAME } 位址"
       ],
       "Go back": [
         "倒退"
@@ -1605,6 +1596,9 @@
       "Skip": [
         "略過"
       ],
+      "Skip to main content": [
+        "跳至主要內容"
+      ],
       "Skip verification": [
         "略過驗證"
       ],
@@ -1688,9 +1682,6 @@
       ],
       "Try for free": [
         "免費滿意體驗"
-      ],
-      "Try payment again": [
-        "再次嘗試付款"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
@@ -5780,9 +5771,6 @@
       "Delete this condition": [
         "刪除此條件"
       ],
-      "Edit conditions": [
-        "編輯條件"
-      ],
       "Got it": [
         "知道了"
       ],
@@ -6598,9 +6586,6 @@
       "Could not open updated vault": [
         "無法開啟已更新的保管庫"
       ],
-      "Could not save preference": [
-        "無法儲存偏好設定"
-      ],
       "Could not unlock this item": [
         "無法解鎖此項目"
       ],
@@ -7152,9 +7137,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐款金額為 ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "政策名稱長度必須介乎 3 至 40 個字元。"
@@ -8373,16 +8355,6 @@
         "進一步瞭解"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "輸入您的電子郵件地址"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "兌換券將傳送至此處。"
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "網頁應用程序"
@@ -8708,29 +8680,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "今天的簡單一步，確保孩子未來的數位安全"
-      ],
       "Activate your reserved email address": [
         "啟用您保留的電子郵件地址"
-      ],
-      "Address reservation voucher": [
-        "位址保留兌換券"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "捐贈給 ${ BRAND_NAME } 基金會"
       ],
       "Enter verification code": [
         "輸入驗證碼"
       ],
       "Recover activation voucher": [
         "復原啟用兌換券"
-      ],
-      "Reserve child's email address": [
-        "保留孩子的電子郵件地址"
-      ],
-      "We emailed you the voucher": [
-        "我們已將兌換券透過電子郵件寄給您"
       ]
     },
     "Headline": {
@@ -10543,9 +10500,6 @@
       "Groups": [
         "群組"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "協助其他家庭給予他們的孩子一個安全的線上起點。共享此里程碑並將此訊息傳遞出去。"
-      ],
       "here": [
         "這裡"
       ],
@@ -10554,9 +10508,6 @@
       ],
       "High Priority": [
         "首要優先順序"
-      ],
-      "How it works": [
-        "運作方式"
       ],
       "How to perform a signed-in reset": [
         "如何執行登入重設"
@@ -10779,9 +10730,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選擇，我們就會處理餘下一切。"
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "請妥善保管兌換券以備不時之需，例如將其存放在 ${ DRIVE_APP_NAME } 中。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "透過導引及建議確保您的資料安全及隱私。"
@@ -11296,9 +11244,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "替 ${ categoryLabel } 接受通知"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "透過電子郵件接收保留兌換券。您或孩子可以在接下來的 15 年內使用它來啟用該位址。${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "最近使用的伺服器:"
       ],
@@ -11524,9 +11469,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "部分伺服器可能不會顯示在上方清單中。請依照伺服器名稱（例如 AT#62）搜尋來尋找。"
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "發生錯誤。請再試一次或聯絡客戶支援服務。"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "指定允許以 SAML SSO 驗證的網域。"
       ],
@@ -11697,9 +11639,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "回報您並未設定 ${ BRAND_NAME } 的連結已過期。帳號已過期。請聯絡我們的支援團隊以解決此問題。"
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "捐款金額上限為 ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "最近一次的資料更新，不包括資料外洩。"
@@ -11916,9 +11855,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "想知道 ${ BRAND_NAME } 的最新發展嗎？您可以前往 ${ blogLink } 隨時訂閱我們的各種電子郵件通知。"
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "為防止濫用或欺詐，我們會要求至少 ${ minimumDonation } 的捐贈。這將支援 ${ protonFoundationLink } 在全球捍衛數位隱私的工作，並有助於保護下一代。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "為繼續此程序，選擇帳號復原手段，然後我們將能驗證您的需求。"
@@ -12139,9 +12075,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "我們可以使用您的復原電話向您傳送驗證碼以重設您的密碼，並在我們發現可疑活動時聯絡您。"
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "我們無法完成交易。請再試一次。"
-      ],
       "We couldn’t process your payment.": [
         "我們未能處理您的付款。"
       ],
@@ -12243,9 +12176,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "當您從閘道器移除伺服器，將進入10天整的停用期。此伺服器可被新增至其他閘道器，但無法變更國家。"
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "準備好啟用該位址時，請掃描 QR Code 或使用兌換券中的連結。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的付款方式扣款。"
@@ -12663,9 +12593,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的試用將於 ${ timeRemaining } 結束."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "您保留的 ${ BRAND_NAME } 電子郵件地址兌換券：${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13352,6 +13279,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
       ],
+      "Access tokens": [
+        "存取權杖"
+      ],
       "Account holder": [
         "帳戶持有人"
       ],
@@ -13628,9 +13558,6 @@
       "Choose a name for the generated certificate file": [
         "選擇一名稱用於生成的憑證檔案"
       ],
-      "Choose an address to reserve for your child": [
-        "選擇要為您的孩子保留的位址"
-      ],
       "Choose your billing": [
         "選擇您的帳單週期"
       ],
@@ -13835,12 +13762,6 @@
       "Don't show this again": [
         "不再顯示此內容"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "向 ${ BRAND_NAME } 基金會捐贈 ${ minimumDonation } 或更多資金"
-      ],
-      "Donation amount": [
-        "捐贈金額"
-      ],
       "Drive": [
         "磁碟"
       ],
@@ -13936,9 +13857,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "請輸入密碼以解密金鑰，金鑰指紋為：${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "輸入您的電子郵件地址"
       ],
       "Enter your password": [
         "請輸入您的密碼"
@@ -14732,9 +14650,6 @@
       "Tips and insights": [
         "提示與心得"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "若要啟用，請掃描 QR Code 或前往："
-      ],
       "To help us improve, please explain why you are leaving.": [
         "為了幫助我們改進，請說明您離開的原因。"
       ],
@@ -14897,17 +14812,11 @@
       "You don't have permissions": [
         "您沒有權限"
       ],
-      "Your activation code:": [
-        "您的啟用代碼："
-      ],
       "Your calendar URL": [
         "您的行事曆網址"
       ],
       "Your credit balance": [
         "您的可用額度餘額"
-      ],
-      "Your email address": [
-        "您的電子郵件地址"
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
@@ -14923,9 +14832,6 @@
       ],
       "Your recovery phone number": [
         "您的復原電話號碼"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "您保留的 ${ BRAND_NAME } 電子郵件地址兌換券："
       ],
       "Zero-access architecture": [
         "零存取架構"
@@ -15093,9 +14999,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } 已更新"
-      ],
-      "Preference saved": [
-        "偏好設定已儲存"
       ]
     },
     "Label; import email": {
@@ -15118,9 +15021,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } 基金會的"
-      ],
       "Activity log": [
         "活動記錄"
       ],
@@ -15362,20 +15262,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "使用者與位址"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "電子郵件"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15894,9 +15780,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 帳號"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "今天邁出簡單的一步，確保孩子明天的數位安全。為您的孩子預留一個私有的 ${ BRAND_NAME } 電子郵件地址。"
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "啟用為您的孩子保留的私有 ${ BRAND_NAME } 電子郵件地址並設定其帳號。"
       ],
@@ -15932,9 +15815,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "復原您孩子的 ${ BRAND_NAME } 帳號 | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "預留您孩子的私有電子郵件 | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重設您的 ${ BRAND_NAME } 帳號密碼"
@@ -17272,17 +17152,11 @@
       "1 email per month": [
         "每月 1 封電郵"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "每月 1 封電子郵件。獲取最新的隱私新聞以及 ${ BRAND_NAME } 領域中正在發生的事情。"
-      ],
       "1 email per quarter": [
         "每季 1 封電子郵件"
       ],
       "1-2 emails per month": [
         "每月 1-2 封電子郵件"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "每年 1-4 封電子郵件。提醒您保持最新的復原方法。"
       ],
       "2-4 emails per year": [
         "每年 2 - 4 封電子郵件電郵"
@@ -17307,9 +17181,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您開始使用 ${ BRAND_NAME } 產品的第一個月內"
-      ],
-      "Email communications": [
-        "電子郵件通訊"
       ],
       "In-app notifications": [
         "應用程式內通知"
@@ -18958,9 +18829,6 @@
       ],
       "Address": [
         "電郵位址"
-      ],
-      "Amount": [
-        "金額"
       ],
       "Anderson": [
         "安德松"
@@ -22307,9 +22175,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "剩下${ dayDiff }天"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
@@ -22565,12 +22430,6 @@
       "What you give up when you cancel ${ planName }": [
         "當您取消 ${ planName } 時您將放棄的權益"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "在您取消${ planName }訂購，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "當您的 ${ planName } 訂閱於 ${ expiryDate } 結束時，您將會降級至 ${ BRAND_NAME } 免費方案。"
       ],
@@ -22579,9 +22438,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "您可持續享受目前方案的福利直到${ boldedDate }。"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "您的${ planName }訂購授權還剩餘${ expiryDate }。我們將會在您的剩餘時間，給您的${ BRAND_NAME }帳號添加可用額度。在取消前，確保您沒有超出免費方案的限度。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "您的 ${ planName } 計畫不但能保護您的企業通訊與資料安全。還能協助您保持合規使您的業務脫穎而出，還能讓您的團隊保持聯繫。"
@@ -23111,6 +22967,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "操作"
+      ],
       "Size": [
         "大小"
       ],
@@ -23135,9 +22994,6 @@
       ],
       "CSV field": [
         "CSV 欄位"
-      ],
-      "Edit": [
-        "編輯"
       ],
       "Email address": [
         "電子郵件位址"
@@ -24066,9 +23922,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
       ],
-      "Enter your password": [
-        "輸入您的密碼"
-      ],
       "Error": [
         "錯誤"
       ],
@@ -24551,12 +24404,6 @@
       ],
       "Priority support:": [
         "優先支援:"
-      ],
-      "Problem processing your payment": [
-        "處理您的付款時發生問題"
-      ],
-      "Problem processing your request": [
-        "處理您的請求時發生問題"
       ],
       "Processing...": [
         "處理中..."

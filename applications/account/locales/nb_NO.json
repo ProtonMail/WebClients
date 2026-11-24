@@ -298,6 +298,9 @@
       "Referral rewards": [
         "Vervepremier"
       ],
+      "Reminder": [
+        "Påminnelse"
+      ],
       "Restrict app access": [
         "Begrens apptilgang"
       ],
@@ -482,6 +485,9 @@
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Legg til vervekobling til ${ MAIL_APP_NAME }-signaturen"
       ],
+      "Add service account": [
+        "Legg til tjenestekonto"
+      ],
       "Add sieve filter": [
         "Legg til sieve-filter"
       ],
@@ -593,6 +599,9 @@
       "Change password": [
         "Endre passord"
       ],
+      "Change plan": [
+        "Endre plan"
+      ],
       "Change second password": [
         "Endre andre passord"
       ],
@@ -701,9 +710,6 @@
       "Contact sales": [
         "Ta kontakt med salg"
       ],
-      "Contact support": [
-        "Kontakt brukerstøtte"
-      ],
       "Contact Support Center": [
         "Kontakt kundestøttesenteret"
       ],
@@ -730,6 +736,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Fortsett med ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsett med Bitcoin"
       ],
       "Continue with Free": [
         "Fortsett med gratis"
@@ -968,11 +977,8 @@
       "Don't show again": [
         "Ikke vis igjen"
       ],
-      "Don't show this offer again": [
-        "Ikke vis dette tilbudet igjen"
-      ],
-      "Donate": [
-        "Doner"
+      "Don't show this again": [
+        "Ikke vis dette igjen"
       ],
       "Done": [
         "Utført"
@@ -1280,9 +1286,6 @@
       "Get verification code": [
         "Få verifiseringskode"
       ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Skaff deg din egen ${ MAIL_APP_NAME }-adresse"
-      ],
       "Go back": [
         "Gå tilbake"
       ],
@@ -1330,6 +1333,9 @@
       ],
       "Hide more benefits": [
         "Skjul flere fordeler"
+      ],
+      "Hide plan details": [
+        "Skjul plandetaljer"
       ],
       "Hide plan features": [
         "Skjul planfunksjoner"
@@ -1712,6 +1718,9 @@
       "Remove": [
         "Fjern"
       ],
+      "Remove ${ name }": [
+        "Fjern ${ name }"
+      ],
       "Remove all other devices": [
         "Fjern alle andre enheter"
       ],
@@ -2024,6 +2033,9 @@
       "Show more benefits": [
         "Vis flere fordeler"
       ],
+      "Show plan details": [
+        "Vis plandetaljer"
+      ],
       "Show preview": [
         "Vis forhåndsvisning"
       ],
@@ -2071,6 +2083,9 @@
       ],
       "Skip": [
         "Hopp over"
+      ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
       ],
       "Skip verification": [
         "Hopp over bekreftelse"
@@ -2177,9 +2192,6 @@
       "Try for free": [
         "Prøv gratis"
       ],
-      "Try payment again": [
-        "Prøv betaling på nytt"
-      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv å lagre igjen. Lagring mislyktes på grunn av: ${ saveError }"
       ],
@@ -2224,6 +2236,9 @@
       ],
       "Upgrade now": [
         "Oppgrader nå"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Oppgrader til ${ planTitle }"
       ],
       "Upgrade to 2 devices or more": [
         "Oppgrader til 2 enheter eller flere"
@@ -2338,6 +2353,9 @@
       ],
       "View invoice": [
         "Vis faktura"
+      ],
+      "View keyboard shortcuts": [
+        "Vis tastatursnarveier"
       ],
       "View plans details": [
         "Vis plandetaljer"
@@ -3629,6 +3647,20 @@
     "BYOE": {
       "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
         "Dine nyeste e-poster blir importert først. E-poster du allerede har importert vil ikke bli kopiert igjen."
+      ]
+    },
+    "BYOE reminder": {
+      "Applies to all your connected Gmail addresses.": [
+        "Gjelder alle tilkoblede Gmail-adresser."
+      ],
+      "Don’t miss private emails while you still check Gmail. Emails from other ${ MAIL_APP_NAME } users stay in ${ MAIL_APP_NAME }, so we’ll remind you in Gmail with the subject and a link.": [
+        "Ikke gå glipp av private e-poster mens du fortsatt sjekker Gmail. E-poster fra andre ${ MAIL_APP_NAME }-brukere forblir i ${ MAIL_APP_NAME }, så vi minner deg på dette i Gmail med emnet og en kobling."
+      ],
+      "Get a reminder in Gmail when another ${ MAIL_APP_NAME } user emails you. Applies to all connected addresses.": [
+        "Få en påminnelse i Gmail når en annen ${ MAIL_APP_NAME }-bruker sender deg e-post. Gjelder alle tilkoblede adresser."
+      ],
+      "Private email reminders in Gmail": [
+        "Personlige epostpåminnelser i Gmail"
       ]
     },
     "Calendar access select label": {
@@ -6565,8 +6597,8 @@
       "Delete this condition": [
         "Slett denne betingelsen"
       ],
-      "Edit conditions": [
-        "Rediger betingelser"
+      "Edit": [
+        "Rediger"
       ],
       "Got it": [
         "Skjønner"
@@ -7196,6 +7228,9 @@
       "Time required before automatically granting them access": [
         "Tid som kreves før de automatisk får tilgang"
       ],
+      "To access their account, sign in to ${ ACCOUNT_APP_NAME } in a browser.": [
+        "For å få tilgang til kontoen deres, logg på ${ ACCOUNT_APP_NAME } i en nettleser."
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "For å deaktivere denne gjenopprettingsmetoden, fjern alle gjenopprettingskontaktene dine."
       ],
@@ -7328,6 +7363,9 @@
       "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
         "Aktivering mislyktes. Detaljene kan være feil, eller e-posten er allerede aktiv. Kontroller inndataene dine eller logg på."
       ],
+      "Add and verify a custom domain to create service accounts.": [
+        "Legg til og bekreft et egendefinert domene for å opprette tjenestekontoer."
+      ],
       "Add at least one action": [
         "Legg til minst én handling"
       ],
@@ -7406,6 +7444,9 @@
       "Cannot verify who uploaded this file": [
         "Kan ikke bekrefte opplasteren av denne filen"
       ],
+      "Changes could not be saved. Please try again.": [
+        "Endringene kunne ikke lagres. Prøv igjen."
+      ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
       ],
@@ -7456,9 +7497,6 @@
       ],
       "Could not read part of this file: ${ message }": [
         "Kunne ikke lese deler av denne filen: ${ message }"
-      ],
-      "Could not save preference": [
-        "Kunne ikke lagre preferanse"
       ],
       "Could not unlock the parent folder": [
         "Kunne ikke låse opp overordnet mappe"
@@ -7760,6 +7798,9 @@
       "Name already exists": [
         "Navnet finnes allerede"
       ],
+      "Name already used within your organization": [
+        "Navn allerede i bruk innenfor organisasjonen din"
+      ],
       "Name does not match": [
         "Navn samsvarer ikke"
       ],
@@ -7796,6 +7837,9 @@
       ],
       "No file data was received. Please try again.": [
         "Ingen fildata ble mottatt. Prøv på nytt."
+      ],
+      "No free address was found for this name. Try another name.": [
+        "Ingen ledig adresse ble funnet for dette navnet. Prøv et annet navn."
       ],
       "No image selected": [
         "Ingen bilde valgt"
@@ -7838,6 +7882,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
+      ],
+      "Organization users could not be loaded. Please try again.": [
+        "Organisasjonsbrukere kunne ikke lastes inn. Prøv igjen."
       ],
       "Part of the file appears to be corrupted": [
         "En del av filen ser ut til å være ødelagt"
@@ -8009,8 +8056,14 @@
       "Role changes were not saved because the user's roles could not be loaded.": [
         "Rolleendringer ble ikke lagret fordi brukerens roller ikke kunne lastes."
       ],
+      "Select a user from your organization.": [
+        "Velg en bruker fra organisasjonen din."
+      ],
       "Server not found": [
         "Server ikke funnet"
+      ],
+      "Service accounts could not be loaded.": [
+        "Kunne ikke laste tjenestekontoer"
       ],
       "Session expired. Please refresh the page.": [
         "Økten er utløpt. Last inn siden på nytt."
@@ -8056,6 +8109,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Some service account keys could not be decrypted.": [
+        "Noen tjenestekontonøkler kunne ikke dekrypteres."
       ],
       "Something went wrong": [
         "Noe gikk galt"
@@ -8126,14 +8182,20 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Minimumbeløpet for donasjon er ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Retningslinjenavnet må bestå av mellom 3 og 40 tegn."
       ],
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
+      ],
+      "The service account address is unavailable. Please try again.": [
+        "Tjenestekontoadressen er utilgjengelig. Prøv igjen."
+      ],
+      "The service account could not be updated. Please try again.": [
+        "Tjenestekontoen kunne ikke oppdateres. Prøv igjen."
+      ],
+      "The service account keys are unavailable. Please try again.": [
+        "Tjenestekontonøklene er utilgjengelige. Prøv igjen."
       ],
       "The session has expired. Please sign in again.": [
         "Økten er utløpt. Logg på nytt."
@@ -8192,11 +8254,20 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
       ],
+      "This manager has no encryption keys. Ask them to finish setting up their account.": [
+        "Denne administratoren har ingen krypteringsnøkler. Be dem om å fullføre konfigureringen av kontoen sin."
+      ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
       ],
+      "This name does not make a valid address. Try another name.": [
+        "Dette navnet utgjør ikke en gyldig adresse. Prøv et annet navn."
+      ],
       "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
         "Denne frasen kan ikke gjenopprette kontoen din. Du kan generere en ny for å sikre at kontoen kan gjenopprettes i fremtiden."
+      ],
+      "This service account no longer exists.": [
+        "Denne tjenestekontoen finnes ikke lenger."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
@@ -8237,6 +8308,12 @@
       "Unknown payment token status": [
         "Ukjent status for betalingstoken"
       ],
+      "Unlock your organization key to assign managers.": [
+        "Lås opp organisasjonsnøkkelen din for å tildele administratorer."
+      ],
+      "Unlock your organization key to set up this service account.": [
+        "Lås opp organisasjonsnøkkelen din for å konfigurere denne tjenestekontoen."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Opplastet fil er ikke en gyldig privat nøkkel. Verifiser og prøv på nytt."
       ],
@@ -8266,6 +8343,9 @@
       ],
       "We couldn't disconnect this address. Please try again.": [
         "Vi kunne ikke koble fra denne adressen. Prøv igjen."
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Vi kunne ikke laste inn de migrerte brukerne dine. Oppdater siden og prøv igjen"
       ],
       "We couldn't reconnect this address.": [
         "Vi kunne ikke koble til denne adressen på nytt."
@@ -8308,6 +8388,18 @@
       ],
       "You do not have access to this shared item": [
         "Du har ikke tilgang til dette delte elementet"
+      ],
+      "You do not have permission to create service accounts.": [
+        "Du har ikke tillatelse til å opprette tjenestekontoer."
+      ],
+      "You do not have permission to delete service accounts.": [
+        "Du har ikke tillatelse til å slette tjenestekontoer."
+      ],
+      "You do not have permission to make these changes.": [
+        "Du har ikke tillatelse til å gjøre disse endringene."
+      ],
+      "You do not have permission to update service accounts.": [
+        "Du har ikke tillatelse til å oppdatere tjenestekontoer."
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
@@ -9136,6 +9228,9 @@
       ],
       "This security key is already registered to your account.": [
         "Denne sikkerhetsnøkkelen er allerede registrert på kontoen din."
+      ],
+      "Your device couldn't complete the security key request. Try again, or register the key from another device.": [
+        "Enheten din kunne ikke fullføre forespørselen om sikkerhetsnøkkel. Prøv på nytt, eller registrer nøkkelen fra en annen enhet."
       ]
     },
     "fido2: Info": {
@@ -9459,16 +9554,6 @@
       ],
       "Learn more": [
         "Lær mer"
-      ]
-    },
-    "Form heading": {
-      "Enter your email address": [
-        "Angi din e-postadresse"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Verdikupongen vil bli sendt hit."
       ]
     },
     "Free trial dekstop": {
@@ -9843,29 +9928,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Et enkelt skritt i dag for å sikre barnets digitale sikkerhet i morgen"
-      ],
       "Activate your reserved email address": [
         "Aktiver din reserverte e-postadresse"
-      ],
-      "Address reservation voucher": [
-        "Verdikupong for adressereservasjon"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Doner til ${ BRAND_NAME }-stiftelsen"
       ],
       "Enter verification code": [
         "Angi verifiseringskode"
       ],
       "Recover activation voucher": [
         "Gjenopprett aktiveringskupong"
-      ],
-      "Reserve child's email address": [
-        "Reserver barnets e-postadresse"
-      ],
-      "We emailed you the voucher": [
-        "Vi sendte deg verdikupongen på e-post"
       ]
     },
     "Headline": {
@@ -10487,6 +10557,15 @@
       "${ name } is not available": [
         "${ name } er ikke tilgjengelig"
       ],
+      "${ nameElement } will be removed from your allow list.": [
+        "${ nameElement } vil bli fjernet fra tillatelseslisten."
+      ],
+      "${ nameElement } will be removed from your block list.": [
+        "${ nameElement } vil bli fjernet fra blokkeringslisten din."
+      ],
+      "${ nameElement } will be removed from your spam list.": [
+        "${ nameElement } vil bli fjernet fra søppelpostlisten."
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne policyen til å feilsøke eller teste."
       ],
@@ -10737,6 +10816,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
+      "A service account is a machine identity that belongs to your organization rather than to a single user. Use it to automate ${ BRAND_NAME } services through the CLI or API. No one can sign in to a service account—it acts only through access tokens.": [
+        "En tjenestekonto er en maskinidentitet som tilhører organisasjonen din i stedet for en enkelt bruker. Bruk den til å automatisere ${ BRAND_NAME }-tjenester gjennom CLI eller API. Ingen kan logge på en tjenestekonto – den fungerer bare gjennom tilgangstokener."
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
@@ -10757,6 +10839,9 @@
       ],
       "active": [
         "aktiv"
+      ],
+      "Active service accounts have a valid access token. Service accounts without a token or manager are marked accordingly.": [
+        "Aktive tjenestekontoer har et gyldig tilgangstoken. Tjenestekontoer uten token eller administrator er merket tilsvarende."
       ],
       "Activity Monitor": [
         "Aktivitetsovervåking"
@@ -10781,6 +10866,9 @@
       ],
       "add a recovery method": [
         "legger til en gjenoppretingsmetode"
+      ],
+      "Add additional users from your organization to manage this service account.": [
+        "Legg til flere brukere fra organisasjonen for å administrere denne tjenestekontoen."
       ],
       "Add additional users to **${ company.name }** from your organization to manage this company.": [
         "Legg til flere brukere fra organisasjonen din til **${ company.name }** for å administrere denne bedriften."
@@ -10832,6 +10920,9 @@
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Legger til gateway-server: ${ serverNumber } / ${ total }",
         "Legger til gateway-servere: ${ serverNumber } / ${ total }"
+      ],
+      "Adding service account": [
+        "Legger til tjenestekonto"
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -11473,6 +11564,9 @@
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
       ],
+      "Deleting ${ name } will revoke all its access tokens and remove its managers.": [
+        "Sletting av ${ name } vil trekke tilbake alle tilgangstokenene og fjerne administratorene."
+      ],
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter angitt **ventetid**."
       ],
@@ -11496,6 +11590,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Deaktivert på ${ boldValue }"
+      ],
+      "Disabling ${ name } will stop it from accessing ${ BRAND_NAME } services.": [
+        "Hvis du deaktiverer ${ name }, får den ikke tilgang til ${ BRAND_NAME }-tjenester."
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivering av autentiseringsapp 2FA vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
@@ -11662,6 +11759,9 @@
       ],
       "Employees can't go online without a VPN connection": [
         "Ansatte kan ikke gå på nett uten VPN-tilkobling"
+      ],
+      "Enable ${ name } to allow it to access ${ BRAND_NAME } services again.": [
+        "Aktiver ${ name } for å gi den tilgang til ${ BRAND_NAME }-tjenester igjen."
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Aktiver automatisk fornyelse for å beholde tilgangen til Plus-servere og -funksjoner."
@@ -11873,6 +11973,9 @@
       "Find out what can be migrated.": [
         "Finn ut hva som kan migreres."
       ],
+      "Folders are where your messages are stored. A message can only be in one folder.": [
+        "Mapper er der meldingene dine lagres. En melding kan bare være i én mappe."
+      ],
       "for ${ price }": [
         "for ${ price }"
       ],
@@ -11999,8 +12102,8 @@
       "Groups": [
         "Grupper"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Hjelp andre familier med å gi barna en trygg start på nettet. Del denne milepælen og spre ordet."
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Hjelp en organisasjon med å beskytte sensitive data mot datainnbrudd og overvåking"
       ],
       "here": [
         "her"
@@ -12013,9 +12116,6 @@
       ],
       "High Priority": [
         "Høy prioritet"
-      ],
-      "How it works": [
-        "Slik fungerer det"
       ],
       "How to perform a signed-in reset": [
         "Slik utfører du en tilbakestilling mens du er pålogget"
@@ -12269,9 +12369,6 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
       ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Oppbevar verdikupongen sikkert til du trenger den, for eksempel i ${ DRIVE_APP_NAME }."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Hold informasjonen din sikrere og mer privat med disse veiledningene og tipsene."
       ],
@@ -12289,6 +12386,9 @@
       ],
       "Label all imported messages as": [
         "Merk alle importerte meldinger som"
+      ],
+      "Labels are tags that make your messages easier to search and filter. A message can have several labels.": [
+        "Etiketter er tagger som gjør meldingene dine enklere å søke etter og filtrere. En melding kan ha flere etiketter."
       ],
       "Labels:": [
         "Etiketter:"
@@ -12547,6 +12647,12 @@
       ],
       "No results found": [
         "Ingen resultater funnet"
+      ],
+      "No service accounts match your search.": [
+        "Ingen tjenestekontoer samsvarer med søket ditt."
+      ],
+      "No service accounts yet. Add one to automate ${ BRAND_NAME } services.": [
+        "Ingen tjenestekontoer ennå. Legg til en for å automatisere ${ BRAND_NAME }-tjenester."
       ],
       "No single sign-on": [
         "Ingen enkel pålogging"
@@ -12876,9 +12982,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Motta varsler for ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Motta reservasjonskupongen på e-post. Du eller barnet kan bruke den til å aktivere adressen i løpet av de neste 15 årene. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Nylig brukte servere:"
       ],
@@ -13050,6 +13153,12 @@
       "Set password": [
         "Angi passord"
       ],
+      "Set the name and allocated licenses": [
+        "Angi navn og tildelte lisenser"
+      ],
+      "Set up a custom domain to use service accounts": [
+        "Konfigurer et egendefinert domene for å bruke tjenestekontoer"
+      ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
       ],
@@ -13143,9 +13252,6 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Enkelte servere vises kanskje ikke i listen ovenfor. Søk etter navn på server (f.eks. AT#62) for å finne dem."
-      ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Noe gikk galt. Prøv igjen eller kontakt kundestøtte."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO."
@@ -13329,9 +13435,6 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Koblingen for å rapportere at du ikke konfigurerte en ${ BRAND_NAME }-konto er utløpt. Ta kontakt med vår kundestøtte for å løse denne saken."
       ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Det maksimale donasjonsbeløpet er ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
-      ],
       "The most recent data update, excluding breaches.": [
         "Den nyeste dataoppdateringen, unntatt sikkerhetsbrudd."
       ],
@@ -13351,6 +13454,9 @@
       "The securest way to browse, stream, and be online.": [
         "Den tryggeste måten å surfe, strømme og være på nettet på."
       ],
+      "The service account was created. Retry saving to finish setting up its keys and managers.": [
+        "Tjenestekontoen ble opprettet. Prøv å lagre på nytt for å fullføre konfigureringen av nøklene og administratorene."
+      ],
       "The unpublished changes you made will be lost.": [
         "De upubliserte endringene du har gjort, vil gå tapt."
       ],
@@ -13365,6 +13471,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Denne påloggingsinformasjonen kan ikke brukes til å logge på våre offisielle ${ VPN_APP_NAME }-apper. ${ learnMore }"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "De får ende-til-ende kryptert e-post, lagring og samarbeidsverktøy"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne kontoen er suspendert på grunn av et potensielt brudd på retningslinjene."
@@ -13630,9 +13739,6 @@
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "For å migrere denne brukeren må du oppheve suspensjonen deres i ${ provider.adminConsoleName }."
       ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "For å forhindre misbruk eller svindel, ber vi om en donasjon på minst ${ minimumDonation }. Dette støtter arbeidet til ${ protonFoundationLink } med å forsvare digitalt personvern globalt og bidrar til å beskytte neste generasjon."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "For å fortsette, velg en kontogjenopprettingsmetode slik at vi kan verifisere forespørselen."
       ],
@@ -13713,6 +13819,9 @@
       ],
       "Unlock streaming with VPN Plus.": [
         "Lås opp strømming med VPN Plus"
+      ],
+      "Unlock your organization key to create service accounts and assign managers.": [
+        "Lås opp organisasjonsnøkkelen din for å opprette tjenestekontoer og tildele administratorer."
       ],
       "Unsaved changes": [
         "Endringer som ikke er lagret"
@@ -13900,9 +14009,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Vi kan bruke gjenopprettingstelefonen din til å sende deg en bekreftelseskode for å tilbakestille passordet ditt, og til å kontakte deg hvis vi oppdager mistenkelig aktivitet."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Vi kunne ikke fullføre transaksjonen. Prøv igjen."
-      ],
       "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
         "Vi kunne ikke koble til ${ emailAddress }. Prøv på nytt og velg alle boksene når Google ber om tilgang. ${ BRAND_NAME } bruker bare denne tilgangen til å koble til Gmail."
       ],
@@ -14068,9 +14174,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Når du fjerner en server fra en gateway, går den inn i en 10-dagers deaktiveringsperiode. Denne serveren kan legges til en ny gateway, men landet kan ikke endres."
       ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Når du er klar til å aktivere adressen, skann QR-koden eller bruk koblingen i verdikupongen."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når abonnementet ditt fornyes, vil vi legge til alle tilgjengelige kreditter før vi belaster betalingsmåten ovenfor."
       ],
@@ -14100,6 +14203,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du raskt og enkelt sende e-post til alle personene i en bestemt gruppe."
+      ],
+      "With managed companies, you can add, edit, and disable access for organizations you oversee.": [
+        "Med administrerte bedrifter kan du legge til, redigere og fjerne tilgang for organisasjoner du fører tilsyn med."
       ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "Med VPN Professional kan administratorer håndheve alltid-på VPN for alle organisasjonsmedlemmer, i tillegg til private gatewayer, tilgangsretningslinjer og overvåking."
@@ -14532,6 +14638,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst. Ta kontakt med kundestøtte hvis du trenger en umiddelbar planendring."
       ],
+      "Your organization has disabled personal access token creation. Enable it before adding service accounts.": [
+        "Organisasjonen din har deaktivert opprettelse av personlig tilgangstoken. Aktiver det før du legger til tjenestekontoer."
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
       ],
@@ -14586,9 +14695,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Prøveperioden avsluttes om ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Verdikupongen for din reserverte ${ BRAND_NAME }-e-postadresse: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -15205,6 +15311,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
       ],
+      "${ count } manager": [
+        "${ count } administrator",
+        "${ count } administratorerer"
+      ],
       "${ group.UserCount } user": [
         "${ group.UserCount } bruker",
         "${ group.UserCount } brukere"
@@ -15295,6 +15405,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Få tilgang til ${ PASS_APP_NAME } sikkert fra terminalen, ideelt for skripting, automatisering og utviklingsarbeidsflyter."
+      ],
+      "Access tokens": [
+        "Tilgangstokener"
       ],
       "Account credit": [
         "Kontokreditt"
@@ -15617,9 +15730,6 @@
       "Choose a name for the generated certificate file": [
         "Velg et navn for den genererte sertifikatfilen"
       ],
-      "Choose an address to reserve for your child": [
-        "Velg en adresse du vil reservere for barnet ditt"
-      ],
       "Choose your billing": [
         "Velg fakturering"
       ],
@@ -15846,12 +15956,6 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Doner ${ minimumDonation } eller mer til ${ BRAND_NAME } Foundation"
-      ],
-      "Donation amount": [
-        "Donasjonsbeløp"
-      ],
       "Drive": [
         "Drive"
       ],
@@ -15947,9 +16051,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Angi passordet for nøkkel med fingeravtrykk: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Skriv inn epostadressen din"
       ],
       "Enter your password": [
         "Skriv inn passordet"
@@ -16125,6 +16226,9 @@
       "Invite via email": [
         "Inviter via e-post"
       ],
+      "Invited via": [
+        "Invitert via"
+      ],
       "Invoice email": [
         "E-post for fakturaer"
       ],
@@ -16220,6 +16324,9 @@
       ],
       "Managed Companies": [
         "Administrerte bedrifter"
+      ],
+      "Managers": [
+        "Administratorer"
       ],
       "Mark as": [
         "Merk som"
@@ -16341,6 +16448,9 @@
       "No label found": [
         "Ingen etikett funnet"
       ],
+      "No manager": [
+        "Ingen administrator"
+      ],
       "Non-promotional content and news": [
         "Ikke-salgsfremmende innhold og nyheter"
       ],
@@ -16409,6 +16519,9 @@
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
+      ],
+      "Organization user": [
+        "Organisasjonsbruker"
       ],
       "Other": [
         "Annet"
@@ -16635,6 +16748,9 @@
       "Server name": [
         "Servernavn"
       ],
+      "Service name": [
+        "Tjenestenavn"
+      ],
       "Set password": [
         "Angi passord"
       ],
@@ -16806,9 +16922,6 @@
       ],
       "Tips and insights": [
         "Tips og innsikt"
-      ],
-      "To activate, scan the QR-code or go to:": [
-        "For å aktivere, skann QR-koden eller gå til:"
       ],
       "To help us improve, please explain why you are leaving.": [
         "For å hjelpe oss med å forbedre oss, vennligst forklar hvorfor du slutter."
@@ -16990,17 +17103,11 @@
       "You don't have permissions": [
         "Du har ikke tillatelser"
       ],
-      "Your activation code:": [
-        "Din aktiveringskode:"
-      ],
       "Your calendar URL": [
         "Nettadressen til kalenderen"
       ],
       "Your credit balance": [
         "Din kredittsaldo"
-      ],
-      "Your email address": [
-        "Din e-postadresse"
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
@@ -17016,9 +17123,6 @@
       ],
       "Your recovery phone number": [
         "Telefonnummeret ditt for gjenoppretting"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Verdikupongen for din reserverte ${ BRAND_NAME }-e-postadresse:"
       ],
       "Zero-access architecture": [
         "Nulltilgangsarkitektur"
@@ -17187,9 +17291,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } oppdatert"
-      ],
-      "Preference saved": [
-        "Preferanse lagret"
       ]
     },
     "Label; import email": {
@@ -17212,9 +17313,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "Stiftelsen ${ BRAND_NAME }"
-      ],
       "Activity log": [
         "Aktivitetslogg"
       ],
@@ -17465,20 +17563,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Brukere og adresser"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "E-post"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -18044,9 +18128,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-konto"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Et enkelt steg i dag for å sikre barnets digitale sikkerhet i morgen. Reserver en privat ${ BRAND_NAME }-e-postadresse for barnet ditt."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Aktiver den private ${ BRAND_NAME }-e-postadressen som er reservert for barnet ditt, og konfigurer kontoen deres."
       ],
@@ -18082,9 +18163,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Gjenopprett barnets ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Reserver barnets private e-postadresse | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Tilbakestill passordet for ${ BRAND_NAME }-kontoen din"
@@ -19453,17 +19531,14 @@
       "1 email per month": [
         "1 e-post per måned"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 e-post per måned. Få de siste personvernnyhetene og hva som skjer i ${ BRAND_NAME }-universet."
-      ],
       "1 email per quarter": [
         "1 e-post per kvartal"
       ],
       "1-2 emails per month": [
         "1-2 e-poster per måned"
       ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1–4 e-poster per år. Påminnelser om å holde gjenopprettingsmetodene dine oppdatert."
+      "1-4 emails per year": [
+        "1-4 e-poster per år"
       ],
       "2-4 emails per year": [
         "2-4 e-poster per år"
@@ -19489,8 +19564,11 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "I løpet av den første måneden du bruker et ${ BRAND_NAME }-produkt"
       ],
-      "Email communications": [
-        "E-postkommunikasjon"
+      "Email subscriptions": [
+        "E-postabonnementer"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Få de siste personvernnyhetene og hva som skjer i ${ BRAND_NAME }-universet."
       ],
       "In-app notifications": [
         "Varslinger i appen"
@@ -19503,6 +19581,9 @@
       ],
       "Recovery checklist": [
         "Sjekkliste for gjenoppretting"
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "Påminnelser om å holde gjenopprettingsmetoder oppdatert."
       ]
     },
     "ngc_access_banner: action": {
@@ -21360,9 +21441,6 @@
       "Address": [
         "Adresse"
       ],
-      "Amount": [
-        "Beløp"
-      ],
       "Anderson": [
         "Andersen"
       ],
@@ -21392,6 +21470,9 @@
       ],
       "domain.com": [
         "domene.no"
+      ],
+      "e.g. ci-bot": [
+        "f.eks. ci-bot"
       ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "f.eks. https://eksempel.com/app/protonvpn/XXXXX/sso/metadata"
@@ -21485,6 +21566,9 @@
       ],
       "Search for a company": [
         "Søk etter et selskap"
+      ],
+      "Search for a service account": [
+        "Søk etter en tjenestekonto"
       ],
       "Search for a user or address": [
         "Søk etter en bruker eller adresse"
@@ -23078,6 +23162,23 @@
       ],
       "to be deleted": [
         "skal slettes"
+      ]
+    },
+    "Service account status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Disabled": [
+        "Deaktivert"
+      ],
+      "No manager": [
+        "Ingen administrator"
+      ],
+      "No tokens": [
+        "Ingen tokener"
+      ],
+      "Unknown": [
+        "Ukjent"
       ]
     },
     "Service provider": {
@@ -25089,10 +25190,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag igjen",
-        "${ dayDiff } dager igjen"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ],
@@ -25354,12 +25451,6 @@
       "What you give up when you cancel ${ planName }": [
         "Dette gir du opp når du avbestiller ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Teamet ditt vil oppleve avbrudd i arbeidet siden flere brukere ikke støttes på gratisplanen."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når ${ planName }-abonnementet ditt avsluttes på ${ expiryDate }, blir du nedgradert til ${ BRAND_NAME } Free-abonnementet."
       ],
@@ -25368,9 +25459,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Du kan fortsette å nyte alle fordelene med din nåværende plan til ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-abonnementet. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ."
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Planen din på ${ planName } holder ikke bare forretningsdata og kommunikasjon trygg. Den støtter samsvarsmålene dine, får virksomheten til å skille seg ut og holder teamet ditt tilkoblet."
@@ -25738,6 +25826,18 @@
       "Server copied to clipboard": [
         "Server kopiert til utklippstavlen"
       ],
+      "Service account deleted": [
+        "Tjenestekonto slettet"
+      ],
+      "Service account disabled": [
+        "Tjenestekonto deaktivert"
+      ],
+      "Service account enabled": [
+        "Tjenestekonto aktivert"
+      ],
+      "Service account saved": [
+        "Tjenestekonto lagret"
+      ],
       "Session revoked": [
         "Økt opphevet"
       ],
@@ -25936,14 +26036,23 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Handlinger"
+      ],
       "Activated": [
         "Aktivert"
       ],
       "Estimated size": [
         "Estimert størrelse"
       ],
+      "Managers": [
+        "Administratorer"
+      ],
       "Migration status": [
         "Migreringsstatus"
+      ],
+      "Service name": [
+        "Tjenestenavn"
       ],
       "Size": [
         "Størrelse"
@@ -25972,9 +26081,6 @@
       ],
       "CSV field": [
         "CSV-felt"
-      ],
-      "Edit": [
-        "Rediger"
       ],
       "Email address": [
         "E-postadresse"
@@ -26304,11 +26410,17 @@
       "Add filter": [
         "Legg til filter"
       ],
+      "Add new company": [
+        "Legg til ny bedrift"
+      ],
       "Add PayPal payment method": [
         "Legg til PayPal som betalingsmåte"
       ],
       "Add pm.me subdomain": [
         "Legg til pm.me underdomene"
+      ],
+      "Add service account": [
+        "Legg til tjenestekonto"
       ],
       "Add Sieve filter": [
         "Legg til Sieve-filter"
@@ -26450,6 +26562,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge for ${ platform }"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Ta med ${ BRAND_NAME } på arbeid. Tjen kreditter."
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Ta med Gmail til ${ MAIL_APP_NAME }"
@@ -26784,6 +26899,9 @@
       "Delete folder?": [
         "Slette mappe?"
       ],
+      "Delete from list?": [
+        "Slette fra listen?"
+      ],
       "Delete group?": [
         "Slett gruppe?"
       ],
@@ -26795,6 +26913,9 @@
       ],
       "Delete organization logo?": [
         "Slette organisasjonens logo?"
+      ],
+      "Delete service account?": [
+        "Slette tjenestekontoen?"
       ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Slett serveren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dag).",
@@ -26847,6 +26968,9 @@
       ],
       "Disable device data backup?": [
         "Deaktivere sikkerhetskopiering av enhetsdata?"
+      ],
+      "Disable service account?": [
+        "Deaktivere tjenestekonto?"
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
@@ -26956,6 +27080,9 @@
       "Edit servers": [
         "Rediger servere"
       ],
+      "Edit service account": [
+        "Rediger tjenestekonto"
+      ],
       "Edit Sieve filter": [
         "Rediger Sieve-filter"
       ],
@@ -27007,6 +27134,9 @@
       "Enable advanced account protection": [
         "Aktiver avansert kontobeskyttelse"
       ],
+      "Enable service account?": [
+        "Aktivere tjenestekonto?"
+      ],
       "Encryption and keys": [
         "Kryptering og nøkler"
       ],
@@ -27024,9 +27154,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Angi din ${ BRAND_NAME }-kontoinformasjon for å bli med i ${ app }-testprogrammet"
-      ],
-      "Enter your password": [
-        "Skriv inn passordet"
       ],
       "Error": [
         "Feil"
@@ -27591,12 +27718,6 @@
       "Privacy": [
         "Personvern"
       ],
-      "Problem processing your payment": [
-        "Problem ved behandling av betaling"
-      ],
-      "Problem processing your request": [
-        "Problem ved behandling av forespørselen din"
-      ],
       "Processing...": [
         "Behandler..."
       ],
@@ -27795,6 +27916,9 @@
       "Service": [
         "Tjeneste"
       ],
+      "Service accounts": [
+        "Tjenestekontoer"
+      ],
       "Session management": [
         "Administrasjon av økter"
       ],
@@ -27935,6 +28059,9 @@
       ],
       "Spam, block, and allow lists": [
         "Lister over søppelpost, blokkeringer og tillatelser"
+      ],
+      "Special offer": [
+        "Spesialtilbud"
       ],
       "Special Offer": [
         "Spesialtilbud"
@@ -28227,6 +28354,9 @@
       ],
       "What is the dark web?": [
         "Hva er det mørke nettet?"
+      ],
+      "Why recommend ${ BRAND_NAME } for Business?": [
+        "Hvorfor anbefale ${ BRAND_NAME } for Business"
       ],
       "Windows": [
         "Windows"
@@ -28782,6 +28912,10 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto kan ha nådd båndbreddegrensen for 24 timer. ${ BRAND_NAME } vil forsøke å gjenoppta importen så snart som mulig."
+      ],
+      "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
+        "Din organisasjon har nådd grensen på ${ maxServiceAccounts } tjenestekonto.",
+        "Din organisasjon har nådd grensen på ${ maxServiceAccounts } tjenestekontoer."
       ]
     },
     "tooltip": {
@@ -29367,6 +29501,50 @@
         "Spill av video på nytt"
       ]
     },
+    "Visionary upsell": {
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } og Scribe inkludert"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } lagringsplass"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } faktureres hver 12. måned."
+      ],
+      "Early access to new features": [
+        "Tidlig tilgang til nye funksjoner"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Alt i ${ unlimitedName }, pluss:"
+      ],
+      "Exclusive to subscribers": [
+        "Eksklusivt for abonnenter"
+      ],
+      "Feature": [
+        "Funksjon"
+      ],
+      "Group plans": [
+        "Gruppeplaner"
+      ],
+      "Included": [
+        "Inkludert"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Inkluderer Ultra-servere, reservert for deg"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nye tjenester uten ekstra kostnad, og tidlig tilgang til det vi bygger videre."
+      ],
+      "Not included": [
+        "Ikke inkludert"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandler i én pakke."
+      ],
+      "Your plan": [
+        "Din plan"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Jeg fant en annen tjeneste som jeg liker bedre"
@@ -29502,6 +29680,15 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Tilgang til Secure Core-servere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "for ${ cycle } måned",
+        "for ${ cycle } måneder"
+      ],
+      "Premium calendar features": [
+        "Premium kalenderfunksjoner"
       ]
     },
     "VPNClient": {

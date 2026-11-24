@@ -354,9 +354,6 @@
       "Connected": [
         "Připojeno"
       ],
-      "Contact support": [
-        "Kontaktovat podporu"
-      ],
       "Contact Support Center": [
         "Kontaktovat centrum podpory"
       ],
@@ -597,8 +594,8 @@
       "Don't show again": [
         "Příště nezobrazovat"
       ],
-      "Donate": [
-        "Darovat"
+      "Don't show this again": [
+        "Příště nezobrazovat"
       ],
       "Done": [
         "Hotovo"
@@ -884,9 +881,6 @@
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Získejte vlastní adresu ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Zpět"
@@ -1593,6 +1587,9 @@
       "Skip": [
         "Přeskočit"
       ],
+      "Skip to main content": [
+        "Přeskočit na hlavní obsah"
+      ],
       "Skip verification": [
         "Přeskočit ověření"
       ],
@@ -1670,9 +1667,6 @@
       ],
       "Try for free": [
         "Vyzkoušet zdarma"
-      ],
-      "Try payment again": [
-        "Zkuste platbu znovu"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
@@ -5848,9 +5842,6 @@
       "Delete this condition": [
         "Smazat tuto podmínku"
       ],
-      "Edit conditions": [
-        "Upravit podmínky"
-      ],
       "Got it": [
         "Rozumím"
       ],
@@ -6666,9 +6657,6 @@
       "Could not open updated vault": [
         "Nelze aktualizovat vytvořený trezor"
       ],
-      "Could not save preference": [
-        "Nelze uložit předvolbu"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "Nelze načíst faktury. Zkuste to prosím později."
       ],
@@ -7157,9 +7145,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimální výše daru je ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Název zásady musí mít délku 3 až 40 znaků."
@@ -8393,16 +8378,6 @@
         "Více informací"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "Zadejte svou e-mailovou adresu"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Poukaz bude odeslán sem."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "webová aplikace"
@@ -8731,29 +8706,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Jednoduchý krok dnes pro zajištění digitální bezpečnosti vašeho dítěte zítra"
-      ],
       "Activate your reserved email address": [
         "Aktivujte svou rezervovanou e-mailovou adresu"
-      ],
-      "Address reservation voucher": [
-        "Poukaz na rezervaci adresy"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Darujte nadaci ${ BRAND_NAME } Foundation"
       ],
       "Enter verification code": [
         "Zadejte ověřovací kód"
       ],
       "Recover activation voucher": [
         "Obnovit aktivační poukaz"
-      ],
-      "Reserve child's email address": [
-        "Rezervovat e-mailovou adresu dítěte"
-      ],
-      "We emailed you the voucher": [
-        "Poukaz jsme vám zaslali e-mailem"
       ]
     },
     "Headline": {
@@ -10686,9 +10646,6 @@
       "Groups": [
         "Skupiny"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Pomozte dalším rodinám dopřát jejich dětem bezpečný start online. Sdílejte tento milník a šiřte povědomí dál."
-      ],
       "here": [
         "zde"
       ],
@@ -10697,9 +10654,6 @@
       ],
       "High Priority": [
         "Vysoká priorita"
-      ],
-      "How it works": [
-        "Jak to funguje"
       ],
       "How to perform a signed-in reset": [
         "Jak provést reset po přihlášení"
@@ -10931,9 +10885,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Uchovejte poukaz v bezpečí, dokud jej nebudete potřebovat, například v aplikaci ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Udržujte své informace v bezpečí a soukromí pomocí těchto návodů a tipů."
@@ -11457,9 +11408,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Přijímat oznámení ohledně ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Obdržíte rezervační poukaz e-mailem. Vy nebo dítě jej můžete použít k aktivaci adresy v příštích 15 letech. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -11688,9 +11636,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Některé servery se nemusí objevit v seznamu výše. Najděte je vyhledáním podle názvu serveru (např. AT#62)."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Něco se pokazilo. Zkuste to prosím znovu nebo kontaktujte zákaznickou podporu."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Určete doménu, která se smí ověřovat pomocí SAML SSO."
       ],
@@ -11873,9 +11818,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Vypršel odkaz na hlášení, že jste nenastavili ${ BRAND_NAME } účet. Kontaktujte prosím náš tým podpory pro vyřešení tohoto problému."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Maximální výše daru je ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Nejnovější aktualizace dat s výjimkou úniků informací."
@@ -12092,9 +12034,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Chcete-li držet krok s nejnovějším vývojem produktů ${ BRAND_NAME }, můžete se přihlásit k odběru našich e-mailů a občas ${ blogLink }."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Abychom předešli zneužití nebo podvodům, žádáme o minimální dar ve výši ${ minimumDonation }. Podpoříte tím práci organizace ${ protonFoundationLink } při obraně digitálního soukromí po celém světě a pomůžete chránit další generaci."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Chcete-li pokračovat, vyberte způsob obnovení účtu, abychom mohli žádost ověřit."
@@ -12315,9 +12254,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Na váš telefon pro obnovení vám můžeme zaslat ověřovací kód pro resetování hesla a také vás kontaktovat, pokud zaznamenáme podezřelou aktivitu."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Transakci se nepodařilo dokončit. Zkuste to prosím znovu."
-      ],
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
@@ -12419,9 +12355,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Pokud odeberete server z brány, začne běžet desetidenní deaktivační lhůta. Tento server lze přidat do nové brány, ale jeho zemi nelze změnit."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Až budete připraveni aktivovat adresu, naskenujte QR kód nebo použijte odkaz v poukazu."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Při obnovení vašeho předplatného, ještě před použitím vaší platební metody, budou použity všechny dostupné kredity."
@@ -12869,9 +12802,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Vaše zkušební verze skončí za ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Váš poukaz pro vaši rezervovanou e-mailovou adresu ${ BRAND_NAME }: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13570,6 +13500,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
       ],
+      "Access tokens": [
+        "Přístupové tokeny"
+      ],
       "Account holder": [
         "Majitel účtu"
       ],
@@ -13846,9 +13779,6 @@
       "Choose a name for the generated certificate file": [
         "Zvolte název vygenerovaného souboru certifikátu"
       ],
-      "Choose an address to reserve for your child": [
-        "Vyberte adresu, kterou chcete rezervovat pro své dítě"
-      ],
       "Choose your billing": [
         "Zvolte způsob platby"
       ],
@@ -14053,12 +13983,6 @@
       "Don't show this again": [
         "Příště nezobrazovat"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Darujte ${ minimumDonation } nebo více nadaci ${ BRAND_NAME }"
-      ],
-      "Donation amount": [
-        "Částka daru"
-      ],
       "Drive": [
         "Drive"
       ],
@@ -14151,9 +14075,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Zadejte heslo pro klíč s otiskem: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Zadejte svou e-mailovou adresu"
       ],
       "Enter your password": [
         "Zadejte své heslo"
@@ -14947,9 +14868,6 @@
       "Tips and insights": [
         "Doporučení a postřehy"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Pro aktivaci naskenujte QR kód nebo přejděte na:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Chcete-li nám pomoci se zlepšit, vysvětlete, proč odcházíte."
       ],
@@ -15112,17 +15030,11 @@
       "You don't have permissions": [
         "Nemáte oprávnění"
       ],
-      "Your activation code:": [
-        "Váš aktivační kód:"
-      ],
       "Your calendar URL": [
         "URL adresa vašeho kalendáře"
       ],
       "Your credit balance": [
         "Váš zůstatek kreditu"
-      ],
-      "Your email address": [
-        "Vaše e-mailová adresa"
       ],
       "Your password (admin)": [
         "Vaše heslo (správce)"
@@ -15138,9 +15050,6 @@
       ],
       "Your recovery phone number": [
         "Vaše telefonní číslo pro obnovení"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Váš poukaz pro vaši rezervovanou e-mailovou adresu ${ BRAND_NAME }:"
       ],
       "Zero-access architecture": [
         "Architektura s nulovým přístupem"
@@ -15311,9 +15220,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } byl aktualizován"
-      ],
-      "Preference saved": [
-        "Nastavení bylo uloženo"
       ]
     },
     "Label; import email": {
@@ -15336,9 +15242,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } Foundation"
-      ],
       "Activity log": [
         "Protokol o činnosti"
       ],
@@ -15577,20 +15480,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Uživatelé a adresy"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "E-mail"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -16145,9 +16034,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } účet"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Jednoduchý krok dnes zajistí digitální bezpečnost vašeho dítěte zítra. Zarezervujte svému dítěti soukromou e-mailovou adresu od společnosti ${ BRAND_NAME }."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Aktivujte soukromou e-mailovou adresu ${ BRAND_NAME } vyhrazenou pro vaše dítě a nastavte mu účet."
       ],
@@ -16183,9 +16069,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Obnovte účet ${ BRAND_NAME } svého dítěte | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Zarezervujte si soukromý e-mail pro své dítě | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo ke svém účtu ${ BRAND_NAME }."
@@ -17604,17 +17487,11 @@
       "1 email per month": [
         "1 e-mail za měsíc"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 e-mail za měsíc. Získejte nejnovější zprávy o ochraně soukromí a o dění v ekosystému ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 e-mail čtvrtletně"
       ],
       "1-2 emails per month": [
         "1-2 e-maily za měsíc"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1–4 e-maily ročně. Připomenutí, abyste udržovali své metody obnovení aktuální."
       ],
       "2-4 emails per year": [
         "2-4 e-maily za rok"
@@ -17639,9 +17516,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Během prvního měsíce používání produktu ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "E-mailová komunikace"
       ],
       "In-app notifications": [
         "Upozornění v aplikaci"
@@ -19326,9 +19200,6 @@
       ],
       "Address": [
         "Adresa"
-      ],
-      "Amount": [
-        "Částka"
       ],
       "Anderson": [
         "Příjmení"
@@ -22871,12 +22742,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
       ],
-      "${ dayDiff } day left": [
-        "Zbývá ${ dayDiff } den",
-        "Zbývají ${ dayDiff } dny",
-        "Zbývá ${ dayDiff } dnů",
-        "Zbývá ${ dayDiff } dnů"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
@@ -23150,12 +23015,6 @@
       "What you give up when you cancel ${ planName }": [
         "Čeho se vzdáváte zrušením ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Když zrušíte ${ planName }, bude vám snížen účet na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Jakmile vaše předplatné ${ planName } skončí ${ expiryDate }, bude sníženo na tarif ${ BRAND_NAME } Free."
       ],
@@ -23164,9 +23023,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Všechny výhody svého stávajícího tarifu můžete využívat až do ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Vaše předplatné ${ planName } trvá do ${ expiryDate }. Kredity za zbývající čas přičteme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že nepřekračujete limity bezplatného tarifu. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Váš tarif ${ planName } nechrání pouze vaše firemní data a komunikaci. Podporuje vaše cíle v oblasti dodržování předpisů, dává vaší firmě vyniknout a udržuje váš tým ve spojení."
@@ -23696,6 +23552,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Akce"
+      ],
       "Size": [
         "Velikost"
       ],
@@ -23720,9 +23579,6 @@
       ],
       "CSV field": [
         "CSV položka"
-      ],
-      "Edit": [
-        "Upravit"
       ],
       "Email address": [
         "E-mailová adresa"
@@ -24693,9 +24549,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
       ],
-      "Enter your password": [
-        "Zadejte své heslo"
-      ],
       "Error": [
         "Chyba"
       ],
@@ -25178,12 +25031,6 @@
       ],
       "Priority support:": [
         "Prioritní podpora:"
-      ],
-      "Problem processing your payment": [
-        "Problém se zpracováním vaší platby"
-      ],
-      "Problem processing your request": [
-        "Problém se zpracováním vašeho požadavku"
       ],
       "Processing...": [
         "Zpracovávání..."

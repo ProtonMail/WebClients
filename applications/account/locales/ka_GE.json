@@ -354,9 +354,6 @@
       "Connected": [
         "დაკავშირებულია"
       ],
-      "Contact support": [
-        "კონტაქტი მხარდაჭერის გუნდთან"
-      ],
       "Contact Support Center": [
         "დაუკავშირდით მხარდაჭერის ცენტრს"
       ],
@@ -597,8 +594,8 @@
       "Don't show again": [
         "აღარ მაჩვენო"
       ],
-      "Donate": [
-        "შემოწირულობა"
+      "Don't show this again": [
+        "ეს აღარ მაჩვენო"
       ],
       "Done": [
         "მზადაა"
@@ -884,9 +881,6 @@
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "მიიღეთ საკუთარი ${ MAIL_APP_NAME }-ის მისამართი"
       ],
       "Go back": [
         "უკან დაბრუნება"
@@ -1596,6 +1590,9 @@
       "Skip": [
         "გამოტოვება"
       ],
+      "Skip to main content": [
+        "მთავარ შინაარსზე გადასვლა"
+      ],
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
@@ -1673,9 +1670,6 @@
       ],
       "Try for free": [
         "სცადეთ უფასოდ"
-      ],
-      "Try payment again": [
-        "სცადეთ გადახდა თავიდან"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
@@ -5778,9 +5772,6 @@
       "Delete this condition": [
         "ამ პირობის წაშლა"
       ],
-      "Edit conditions": [
-        "პირობების ჩასწორება"
-      ],
       "Got it": [
         "გავიგე"
       ],
@@ -6582,9 +6573,6 @@
       "Could not open updated vault": [
         "განახლებული საცავის გახსნა შეუძლებელია"
       ],
-      "Could not save preference": [
-        "პარამეტრის შენახვა შეუძლებელია"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "ინვოისების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
       ],
@@ -7061,9 +7049,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "შემოწირულობის მინიმალური თანხაა ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "პოლიტიკის სახელი 3-40 სიმბოლოს უნდა შეიცავდეს."
@@ -8263,16 +8248,6 @@
         "შეიტყვეთ მეტი"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "შეიყვანეთ თქვენი ელფოსტის მისამართი"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "ვაუჩერი აქ გამოიგზავნება."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "ვებ-აპლიკაცია"
@@ -8599,29 +8574,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "მარტივი ნაბიჯი დღეს, თქვენი შვილის ციფრული უსაფრთხოების უზრუნველსაყოფად ხვალ"
-      ],
       "Activate your reserved email address": [
         "გაააქტიურეთ თქვენი დაჯავშნილი ელფოსტის მისამართი"
-      ],
-      "Address reservation voucher": [
-        "მისამართის ჯავშნის ვაუჩერი"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "გაიღეთ შემოწირულობა ${ BRAND_NAME }-ის ფონდისთვის"
       ],
       "Enter verification code": [
         "შეიყვანეთ დამოწმების კოდი"
       ],
       "Recover activation voucher": [
         "გააქტიურების ვაუჩერის აღდგენა"
-      ],
-      "Reserve child's email address": [
-        "ბავშვის ელფოსტის მისამართის დაჯავშნა"
-      ],
-      "We emailed you the voucher": [
-        "ვაუჩერი ელფოსტით გამოგიგზავნეთ"
       ]
     },
     "Headline": {
@@ -10459,9 +10419,6 @@
       "Groups": [
         "ჯგუფები"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "დაეხმარეთ სხვა ოჯახებს, მისცენ თავიანთ შვილებს უსაფრთხო დასაწყისი ონლაინ. გააზიარეთ ეს მიღწევა და გაავრცელეთ ინფორმაცია."
-      ],
       "here": [
         "აქ"
       ],
@@ -10470,9 +10427,6 @@
       ],
       "High Priority": [
         "მაღალი პრიორიტეტი"
-      ],
-      "How it works": [
-        "როგორ მუშაობს"
       ],
       "How to perform a signed-in reset": [
         "როგორ შევასრულოთ პაროლის გადატვირთვა აქტიური სესიიდან"
@@ -10698,9 +10652,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "შეინახეთ ვაუჩერი უსაფრთხოდ საჭიროებამდე, მაგალითად ${ DRIVE_APP_NAME }-ში."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "იქონიეთ თქვენი ინფორმაცია უფრო დაცული და კონფიდენციალური ამ სახელმძღვანელოებით და მინიშნებებით."
@@ -11216,9 +11167,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "შეტყობინებების მიღება ${ categoryLabel }-ისთვის"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "მიიღეთ ჯავშნის ვაუჩერი ელფოსტით. თქვენ ან თქვენს შვილს შეგიძლიათ გამოიყენოთ იგი მისამართის გასააქტიურებლად მომდევნო 15 წლის განმავლობაში. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "ახლახან გამოყენებული სერვერები:"
       ],
@@ -11445,9 +11393,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "ზოგიერთი სერვერი, შეიძლება, ზედა სიაში არ გამოჩნდეს. საპოვნელად მოძებნეთ სერვერის სახელით (მაგ: AT#62)."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "რაღაც არასწორად წავიდა. კიდევ სცადეთ ან დაუკავშირდით მომხმარებელთა მხარდაჭერას."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს."
       ],
@@ -11620,9 +11565,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "ბმულს, რომელის გაფრთხილებდათ, რომ ${ BRAND_NAME }-ის ანგარიში არ გაგიმართავთ, ვადა ამოეწურა. პრობლემის გადასაწყვეტად დაუკავშირდით ჩვენს მხარდაჭერის გუნდს."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "შემოწირულობის მაქსიმალური თანხაა ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "უახლესი მონაცემების განახლება, გაჟონვების გამოკლებით."
@@ -11839,9 +11781,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "იმისათვის, რომ ყოველთვის იცოდეთ ყველა სიახლე ${ BRAND_NAME }-ის პროდუქტების შესახებ, შეგიძლიათ გამოიწეროთ ჩვენი სხვადასხვა საფოსტო დაგზავნები და ხანდახან ჩვენს ${ blogLink }-ზე შეიხედოთ ხოლმე."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "ბოროტად გამოყენების ან თაღლითობის თავიდან ასაცილებლად, ჩვენ ვითხოვთ მინიმუმ ${ minimumDonation } შემოწირულობას. ეს მხარს უჭერს ${ protonFoundationLink }-ის მუშაობას ციფრული კონფიდენციალურობის გლობალურად დასაცავად და გვეხმარება მომავალი თაობის დაცვაში."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "გასაგრძელებლად აირჩიეთ ანგარიშის აღდგენის მეთოდი, რათა შევძლოთ მოთხოვნის გადამოწმება."
@@ -12062,9 +12001,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "ჩვენ შეგვიძლია გამოვიყენოთ თქვენი აღდგენის ტელეფონი, რათა გამოგიგზავნოთ დამოწმების კოდი პაროლის გადატვირთვისთვის, და დაგიკავშირდეთ, თუ საეჭვო აქტივობას შევამჩნევთ."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "ტრანზაქციის დასრულება ვერ მოხერხდა. თავიდან სცადეთ."
-      ],
       "We couldn’t process your payment.": [
         "თქვენი გადახდა ვერ დავამუშავეთ."
       ],
@@ -12166,9 +12102,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "როდესაც სერვერს ამოშლით კარიბჭიდან, ის გადადის 10-დღიან დეაქტივაციის პერიოდში. ეს სერვერი შეიძლება დაემატოს ახალ კარიბჭეს, მაგრამ მისი ქვეყანა ვერ შეიცვლება."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "როცა მზად იქნებით მისამართის გასააქტიურებლად, დაასკანერეთ QR კოდი ან გამოიყენეთ ვაუჩერში მოცემული ბმული."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "როცა თქვენი გამოწერის განახლების დრო მოვა, ანგარიშიდან თანხის ჩამოჭრამდე ჩვენ ყველა არსებულ კრედიტს გამოვიყენებთ."
@@ -12592,9 +12525,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "თქვენი გამოსაცდელი პერიოდის დასრულების დროა: ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "თქვენი დაჯავშნილი ${ BRAND_NAME }-ის ელფოსტის მისამართის ვაუჩერი: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13279,6 +13209,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "მიიღეთ წვდომა ${ PASS_APP_NAME } -ზე ტერმინალიდან უსაფრთხოდ, რაც იდეალურია სკრიპტინგისთვის, ავტომატიზაციისა და განვითარების სამუშაო პროცესებისთვის."
       ],
+      "Access tokens": [
+        "წვდომის ტოკენები"
+      ],
       "Account holder": [
         "ანგარიშის მფლობელი"
       ],
@@ -13558,9 +13491,6 @@
       "Choose a name for the generated certificate file": [
         "შეიყვანეთ გენერირებული სერტიფიკატის ფაილის სახელი"
       ],
-      "Choose an address to reserve for your child": [
-        "აირჩიეთ მისამართი თქვენი შვილისთვის დასაჯავშნად"
-      ],
       "Choose your billing": [
         "აირჩიეთ თქვენი გადახდის ტიპი"
       ],
@@ -13763,12 +13693,6 @@
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "გაიღეთ შემოწირულობა ${ minimumDonation } ან მეტი ოდენობით ${ BRAND_NAME }-ის ფონდისთვის"
-      ],
-      "Donation amount": [
-        "შემოწირულობის რაოდენობა"
-      ],
       "Drive": [
         "დისკი"
       ],
@@ -13861,9 +13785,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "შეიყვანეთ იმ გასაღების პაროლი, რომლის ანაბეჭდია: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "შეიყვანეთ თქვენი ელფოსტის მისამართი"
       ],
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
@@ -14655,9 +14576,6 @@
       "Tips and insights": [
         "მინიშნებები და ანალიტიკა"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "გასააქტიურებლად, დაასკანერეთ QR-კოდი ან გადადით:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "იმისათვის, რომ უკეთესები გავხდეთ, აგვიხსენთ, რატომ გვტოვებთ."
       ],
@@ -14820,17 +14738,11 @@
       "You don't have permissions": [
         "თქვენ არ გაქვთ ნებართვები"
       ],
-      "Your activation code:": [
-        "თქვენი გააქტიურების კოდი:"
-      ],
       "Your calendar URL": [
         "თქვენი კალენდრის ბმული"
       ],
       "Your credit balance": [
         "თქვენი საკრედიტო ბალანსი"
-      ],
-      "Your email address": [
-        "თქვენი ელფოსტის მისამართი"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -14846,9 +14758,6 @@
       ],
       "Your recovery phone number": [
         "თქვენი აღდგენის ტელეფონის ნომერი"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "თქვენი დაჯავშნილი ${ BRAND_NAME }-ის ელფოსტის მისამართის ვაუჩერი:"
       ],
       "Zero-access architecture": [
         "ნულოვანი წვდომის არქიტექტურა"
@@ -15017,9 +14926,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } განახლდა"
-      ],
-      "Preference saved": [
-        "პარამეტრები შენახულია"
       ]
     },
     "Label; import email": {
@@ -15042,9 +14948,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME }-ის ფონდის"
-      ],
       "Activity log": [
         "აქტივობის ჟურნალი"
       ],
@@ -15283,20 +15186,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "მომხმარებლები და მისამართები"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "ელფოსტა"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15821,9 +15710,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-ის ანგარიში"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "მარტივი ნაბიჯი დღეს თქვენი შვილის ხვალინდელი ციფრული უსაფრთხოების უზრუნველსაყოფად. დაარეზერვეთ პირადი ${ BRAND_NAME } ელფოსტის მისამართი თქვენი შვილისთვის."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "გააქტიურეთ თქვენი შვილისთვის რეზერვირებული პირადი ${ BRAND_NAME } ელფოსტის მისამართი და მოაწყვეთ მისი ანგარიში."
       ],
@@ -15859,9 +15745,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "აღადგინეთ თქვენი შვილის ${ BRAND_NAME } ანგარიში | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "დაარეზერვეთ თქვენი შვილის პირადი ელფოსტა | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "შეცვალეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი"
@@ -17218,17 +17101,11 @@
       "1 email per month": [
         "1 ელფოსტა თვეში"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 ელფოსტა თვეში. მიიღეთ უკანასკნელი კონფიდენციალობის სიახლეები და რა ხდება ${ BRAND_NAME }-ის სამყაროში."
-      ],
       "1 email per quarter": [
         "1 ელფოსტა კვარტალში"
       ],
       "1-2 emails per month": [
         "1-2 ელფოსტა თვეში"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "წელიწადში 1-4 ელფოსტა. შეხსენებები თქვენი აღდგენის მეთოდების განახლებულ მდგომარეობაში შესანარჩუნებლად."
       ],
       "2-4 emails per year": [
         "2-4 ელფოსტა წელიწადში"
@@ -17253,9 +17130,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME }-ის პროდუქტის გამოყენების პირველი თვის განმავლობაში"
-      ],
-      "Email communications": [
-        "ელფოსტის კომუნიკაციები"
       ],
       "In-app notifications": [
         "აპის შეტყობინებები"
@@ -18898,9 +18772,6 @@
       ],
       "Address": [
         "მისამართი"
-      ],
-      "Amount": [
-        "რაოდენობა"
       ],
       "Anderson": [
         "ღობეგლეჯიაშვილი"
@@ -22303,10 +22174,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
       ],
-      "${ dayDiff } day left": [
-        "დარჩენილია ${ dayDiff } დღე",
-        "დარჩენილია ${ dayDiff } დღე"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -22568,12 +22435,6 @@
       "What you give up when you cancel ${ planName }": [
         "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 1 გბ ელფოსტის საცავს და 5 გბ-მდე Drive-ის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "როცა თქვენი ${ planName }-ის გამოწერგას გააუქმებთ, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. თქვენი გუნდი დაკარგავს უნარს, იმუშაოს, რადგან უფასო სატარიფო გეგმაში დამატებითი მომხმარებლების ქონა მხარდაჭერილი არაა."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "როცა თქვენი ${ planName } გამოწერა დასრულდება ${ expiryDate }-ზე, თქენი სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა."
       ],
@@ -22582,9 +22443,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "თქვენი სატარიფო გეგმისგან სიამოვნების მიღება შეგიძლიათ თარიღამდე ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "თქვენს ${ planName } გამოწერაზე ${ expiryDate } დაგრჩათ. ჩვენ დაგიმატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშზე. დარწმუნდით, რომ არსცდებით უფასო სატარიფო გეგმის შეზღუდვებს, სანამ გააუქმებთ. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "თქვენი ${ planName } არა მხოლოდ იცავს თქვენი ბიზნესის მონაცემებს და ურთიერთობას. მას თქვენს სტანადრტებთან შესაბამისობის მხარდაჭერა აქვს, შეუძლია, გამოკვეთოს თქვენი ბიზნესი სხვებთან შედარებით და ინარჩუნებს გუნდებს ერთად, დაკავშირებულს."
@@ -23114,6 +22972,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "ქმედებები"
+      ],
       "Size": [
         "ზომა"
       ],
@@ -23138,9 +22999,6 @@
       ],
       "CSV field": [
         "CSV ველი"
-      ],
-      "Edit": [
-        "ჩასწორება"
       ],
       "Email address": [
         "ელფოსტის მისამართი"
@@ -24087,9 +23945,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
       ],
-      "Enter your password": [
-        "შეიყვანეთ თქვენი პაროლი"
-      ],
       "Error": [
         "შეცდომა"
       ],
@@ -24568,12 +24423,6 @@
       ],
       "Priority support:": [
         "პრიორიტეტული მხარდაჭერა:"
-      ],
-      "Problem processing your payment": [
-        "გადახდის დამუშავებისას დაფიქსირდა შეცდომა"
-      ],
-      "Problem processing your request": [
-        "თქვენი მოთხოვნის დამუშავებისას დაფიქსირდა შეცდომა"
       ],
       "Processing...": [
         "დამუშავება..."

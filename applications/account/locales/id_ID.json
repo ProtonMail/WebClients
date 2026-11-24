@@ -386,9 +386,6 @@
       "Connected": [
         "Terhubung"
       ],
-      "Contact support": [
-        "Hubungi layanan dukungan"
-      ],
       "Contact Support Center": [
         "Hubungi Pusat Dukungan"
       ],
@@ -629,8 +626,8 @@
       "Don't show again": [
         "Jangan tampilkan lagi"
       ],
-      "Donate": [
-        "Berdonasi"
+      "Don't show this again": [
+        "Jangan tampilkan ini lagi"
       ],
       "Done": [
         "Selesai"
@@ -916,9 +913,6 @@
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Dapatkan alamat ${ MAIL_APP_NAME } sendiri"
       ],
       "Go back": [
         "Kembali"
@@ -1625,6 +1619,9 @@
       "Skip": [
         "Lewati"
       ],
+      "Skip to main content": [
+        "Lompati ke konten utama"
+      ],
       "Skip verification": [
         "Lewati verifikasi"
       ],
@@ -1702,9 +1699,6 @@
       ],
       "Try for free": [
         "Coba gratis"
-      ],
-      "Try payment again": [
-        "Coba pembayaran lagi"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
@@ -5790,9 +5784,6 @@
       "Delete this condition": [
         "Hapus kondisi ini"
       ],
-      "Edit conditions": [
-        "Edit kondisi"
-      ],
       "Got it": [
         "Mengerti"
       ],
@@ -6587,9 +6578,6 @@
       "Could not open updated vault": [
         "Brankas yang diperbarui tidak dapat dibuka"
       ],
-      "Could not save preference": [
-        "Preferensi tidak dapat disimpan"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "Faktur tidak dapat dimuat. Silakan coba lagi nanti."
       ],
@@ -7060,9 +7048,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah kredit minimum yang dapat ditambahkan adalah ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Jumlah donasi minimal adalah ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Nama kebijakan harus terdiri dari 3 hingga 40 karakter."
@@ -8245,16 +8230,6 @@
         "Pelajari lebih lanjut"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "Masukkan alamat email"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Voucher akan dikirim ke sini."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "aplikasi web"
@@ -8580,29 +8555,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Langkah sederhana hari ini untuk memastikan keamanan digital anak esok hari"
-      ],
       "Activate your reserved email address": [
         "Aktifkan alamat email yang dipesan"
-      ],
-      "Address reservation voucher": [
-        "Voucher pemesanan alamat"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Berdonasi ke ${ BRAND_NAME } Foundation"
       ],
       "Enter verification code": [
         "Masukkan kode verifikasi"
       ],
       "Recover activation voucher": [
         "Pulihkan voucher aktivasi"
-      ],
-      "Reserve child's email address": [
-        "Pesan alamat email anak"
-      ],
-      "We emailed you the voucher": [
-        "Voucher telah dikirimkan melalui email"
       ]
     },
     "Headline": {
@@ -10391,9 +10351,6 @@
       "Groups": [
         "Grup"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Bantu keluarga lain memberikan awal yang aman secara daring bagi anak mereka. Bagikan pencapaian ini dan sebarkan."
-      ],
       "here": [
         "di sini"
       ],
@@ -10402,9 +10359,6 @@
       ],
       "High Priority": [
         "Prioritas Tinggi"
-      ],
-      "How it works": [
-        "Cara kerjanya"
       ],
       "How to perform a signed-in reset": [
         "Cara melakukan atur ulang saat masuk"
@@ -10627,9 +10581,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Simpan voucher dengan aman hingga dibutuhkan, misalnya di ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Jadikan informasi seputar diri Anda lebih aman dan privat dengan berbagai panduan dan tips berikut."
@@ -11144,9 +11095,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Terima notifikasi untuk ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Terima voucher pemesanan melalui email. Anda atau anak dapat menggunakannya untuk mengaktifkan alamat dalam kurun waktu 15 tahun ke depan. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Server yang baru digunakan:"
       ],
@@ -11372,9 +11320,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Beberapa server mungkin tidak muncul dalam daftar di atas. Cari berdasarkan nama server (mis., AT#62) untuk menemukannya."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Terjadi kesalahan. Silakan coba lagi atau hubungi dukungan pelanggan."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML."
       ],
@@ -11542,9 +11487,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Tautan untuk melaporkan bahwa Anda belum menyiapkan Akun ${ BRAND_NAME } telah kedaluwarsa. Silakan hubungi tim layanan dukungan kami untuk menyelesaikan masalah ini."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Jumlah donasi maksimum adalah ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Pembaruan data yang paling terkini, di samping informasi seputar pembobolan data."
@@ -11761,9 +11703,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Untuk mengikuti pengembangan terkini seputar produk ${ BRAND_NAME }, Anda dapat berlangganan ke milis kami serta ${ blogLink } dari waktu ke waktu."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Untuk mencegah penyalahgunaan atau penipuan, diperlukan donasi minimal sebesar ${ minimumDonation }. Hal ini mendukung pekerjaan ${ protonFoundationLink } dalam membela privasi digital secara global dan membantu melindungi generasi penerus."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
@@ -11984,9 +11923,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Kami dapat menggunakan telepon pemulihan untuk mengirimkan kode verifikasi guna mengatur ulang kata sandi, dan menghubungi Anda jika kami mendeteksi aktivitas mencurigakan."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Transaksi tidak dapat diselesaikan. Silakan coba lagi."
-      ],
       "We couldn’t process your payment.": [
         "Kami tidak dapat memproses pembayaran Anda."
       ],
@@ -12088,9 +12024,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ketika Anda menghapus server dari Gateway, server tersebut memasuki periode deaktivasi selama 10 hari. Server ini dapat ditambahkan ke Gateway baru, tetapi negaranya tidak dapat diubah."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Saat siap untuk mengaktifkan alamat, pindai kode QR atau gunakan tautan dalam voucher."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Saat langganan Anda diperpanjang, kami akan menerapkan kredit yang tersedia terlebih dahulu sebelum menagih metode pembayaran di atas."
@@ -12502,9 +12435,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Masa uji coba Anda akan berakhir dalam ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Voucher untuk alamat email ${ BRAND_NAME } yang dipesan: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13185,6 +13115,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
       ],
+      "Access tokens": [
+        "Token akses"
+      ],
       "Account holder": [
         "Pemilik akun"
       ],
@@ -13464,9 +13397,6 @@
       "Choose a name for the generated certificate file": [
         "Pilih nama untuk file sertifikat yang dihasilkan"
       ],
-      "Choose an address to reserve for your child": [
-        "Pilih alamat untuk dipesan bagi anak Anda"
-      ],
       "Choose your billing": [
         "Pilih penagihan Anda"
       ],
@@ -13671,12 +13601,6 @@
       "Don't show this again": [
         "Jangan tampilkan lagi"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Donasikan ${ minimumDonation } atau lebih ke ${ BRAND_NAME } Foundation"
-      ],
-      "Donation amount": [
-        "Jumlah donasi"
-      ],
       "Drive": [
         "Drive"
       ],
@@ -13769,9 +13693,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Masukkan kata sandi untuk kunci dengan kode sidik jari berikut: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Masukkan alamat email"
       ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
@@ -14565,9 +14486,6 @@
       "Tips and insights": [
         "Tip dan wawasan"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Untuk mengaktifkan, pindai kode QR atau kunjungi:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Untuk membantu kami meningkatkan, silakan menjelaskan mengapa Anda keluar."
       ],
@@ -14733,17 +14651,11 @@
       "You don't have permissions": [
         "Tidak memiliki izin"
       ],
-      "Your activation code:": [
-        "Kode aktivasi Anda:"
-      ],
       "Your calendar URL": [
         "URL kalender Anda"
       ],
       "Your credit balance": [
         "Saldo kredit Anda"
-      ],
-      "Your email address": [
-        "Alamat email Anda"
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
@@ -14759,9 +14671,6 @@
       ],
       "Your recovery phone number": [
         "Nomor telepon pemulihan Anda"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Voucher untuk alamat email ${ BRAND_NAME } yang dipesan:"
       ],
       "Zero-access architecture": [
         "Arsitektur zero-access"
@@ -14929,9 +14838,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } diperbarui"
-      ],
-      "Preference saved": [
-        "Preferensi disimpan"
       ]
     },
     "Label; import email": {
@@ -14954,9 +14860,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } Foundation"
-      ],
       "Activity log": [
         "Log aktivitas"
       ],
@@ -15198,20 +15101,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Pengguna dan alamat"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "Email"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -15726,9 +15615,6 @@
       "${ BRAND_NAME } Account": [
         "Akun ${ BRAND_NAME }"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Langkah sederhana hari ini untuk memastikan keselamatan digital anak Anda besok. Pesan alamat email ${ BRAND_NAME } pribadi untuk anak Anda."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Aktifkan alamat email ${ BRAND_NAME } pribadi yang dicadangkan untuk anak Anda dan siapkan akun mereka."
       ],
@@ -15764,9 +15650,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Pulihkan akun ${ BRAND_NAME } anak Anda | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Pesan email pribadi anak Anda | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Atur ulang kata sandi Akun ${ BRAND_NAME } Anda"
@@ -17092,17 +16975,11 @@
       "1 email per month": [
         "1 email per bulan"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 email per bulan. Dapatkan berita privasi terbaru dan informasi tentang apa yang sedang terjadi di dunia ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 email per kuartal"
       ],
       "1-2 emails per month": [
         "1-2 email per bulan"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 email per tahun. Pengingat agar metode pemulihan Anda tetap mutakhir."
       ],
       "2-4 emails per year": [
         "2-4 email per tahun"
@@ -17127,9 +17004,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Selama bulan pertama Anda mengunakan produk ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Komunikasi email"
       ],
       "In-app notifications": [
         "Notifikasi dalam aplikasi"
@@ -18769,9 +18643,6 @@
       ],
       "Address": [
         "Alamat"
-      ],
-      "Amount": [
-        "Jumlah"
       ],
       "Anderson": [
         "Anderson"
@@ -22129,9 +22000,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } hari tersisa"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
@@ -22387,12 +22255,6 @@
       "What you give up when you cancel ${ planName }": [
         "Apa yang akan Anda korbankan pada saat Anda membatalkan ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menyediakan hingga ruang penyimpanan Mail hingga 1 GB dan Drie hingga 5 GB. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung dalam paket gratis."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Pada saat langganan ${ planName } Anda berakhir pada ${ expiryDate }, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
       ],
@@ -22401,9 +22263,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Anda dapat tetap menikmati seluruh manfaat paket Anda saat ini hingga ${ boldedDate }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Langganan ${ planName } Anda masih berlaku hingga ${ expiryDate }. Kami akan menambahkan kredit untuk sisa waktu ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batas paket gratis sebelum membatalkan. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Paket ${ planName } Anda tidak hanya menjaga keamanan data dan komunikasi bisnis Anda. Paket ini juga mendukung sasaran kepatuhan bisnis Anda, membuat bisnis Anda tampil menonjol, serta membuat tim Anda selalu terhubung."
@@ -22933,6 +22792,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Tindakan"
+      ],
       "Size": [
         "Ukuran"
       ],
@@ -22957,9 +22819,6 @@
       ],
       "CSV field": [
         "Kolom CSV"
-      ],
-      "Edit": [
-        "Edit"
       ],
       "Email address": [
         "Alamat email"
@@ -23885,9 +23744,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
       ],
-      "Enter your password": [
-        "Masukkan kata sandi Anda"
-      ],
       "Error": [
         "Kesalahan"
       ],
@@ -24373,12 +24229,6 @@
       ],
       "Privacy": [
         "Privasi"
-      ],
-      "Problem processing your payment": [
-        "Masalah dalam memproses pembayaran Anda"
-      ],
-      "Problem processing your request": [
-        "Masalah dalam memproses permintaan Anda"
       ],
       "Processing...": [
         "Memproses..."
