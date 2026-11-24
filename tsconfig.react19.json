@@ -1,0 +1,16 @@
+{
+    // For the apps on the `react19` catalog, which extend this instead of tsconfig.base.json: shared code is
+    // type-checked against the app's own React types, not the React 18 ones it would resolve by itself. Redux Toolkit
+    // and React Redux come in a copy per React version too. Goes away once every app is on React 19.
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "paths": {
+            "react": ["${configDir}/node_modules/@types/react"],
+            "react/*": ["${configDir}/node_modules/@types/react/*"],
+            "react-dom": ["${configDir}/node_modules/@types/react-dom"],
+            "react-dom/*": ["${configDir}/node_modules/@types/react-dom/*"],
+            "@reduxjs/toolkit": ["${configDir}/node_modules/@reduxjs/toolkit"],
+            "react-redux": ["${configDir}/node_modules/react-redux"]
+        }
+    }
+}
