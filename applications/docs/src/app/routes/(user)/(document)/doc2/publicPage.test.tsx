@@ -13,6 +13,7 @@ import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimety
 import { setLocation } from '@proton/vitest-config/setLocation'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
+import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import { createFakePublicSession } from './__utils/createFakeSession'
 import type { PublicLinkHandoff } from './__utils/publicLink'
 import PublicDocumentPageV2 from './publicPage'
@@ -131,22 +132,13 @@ describe('PublicDocumentPageV2', () => {
     expect(assignUrl).not.toHaveBeenCalled()
   })
 
-  test("Drive's Download of a public link is not supported yet", () => {
-    start({ path: '/doc2?mode=open-url-download&token=TOKEN&linkId=LINK' })
-
-    expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('This link is not supported on this page.')
-    expect(mockCreateSession).not.toHaveBeenCalled()
-  })
-
-  function start(
-    options: { permissions?: SHARE_URL_PERMISSIONS; hasDirectAccess?: boolean | undefined; path?: string } = {},
-  ) {
-    const { permissions = SHARE_URL_PERMISSIONS.EDITOR, path = PUBLIC_URL } = options
+  function start(options: { permissions?: SHARE_URL_PERMISSIONS; hasDirectAccess?: boolean | undefined } = {}) {
+    const { permissions = SHARE_URL_PERMISSIONS.EDITOR } = options
     // Undefined when only the visitor's own Drive can tell
     const hasDirectAccess = 'hasDirectAccess' in options ? options.hasDirectAccess : false
     const fake = createFakePublicSession()
     mockCreateSession.mockReturnValue(fake.session)
-    setLocation(`${ORIGIN}${path}#urlPassword`)
+    setLocation(`${ORIGIN}${PUBLIC_URL}#urlPassword`)
     const application = {
       logger: { info: logInfo, warn: vi.fn(), error: vi.fn() },
     } as unknown as ApplicationProviderProps['application']
@@ -163,9 +155,11 @@ describe('PublicDocumentPageV2', () => {
       <ConfigContext.Provider value={{ APP_VERSION: '0.0.0', API_URL: `${ORIGIN}/api` } as ProtonConfig}>
         <AuthenticationContext.Provider value={{ getLocalID: () => 1 } as any}>
           <ApplicationProvider application={application}>
-            <MemoryRouter initialEntries={[path]}>
+            <MemoryRouter initialEntries={[PUBLIC_URL]}>
               <CompatRouter>
-                <PublicDocumentPageV2 {...handoff} />
+                <DocsUrlContextProvider>
+                  <PublicDocumentPageV2 {...handoff} />
+                </DocsUrlContextProvider>
               </CompatRouter>
             </MemoryRouter>
           </ApplicationProvider>

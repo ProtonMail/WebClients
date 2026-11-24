@@ -6,7 +6,7 @@ import { version as realtimeSdkVersion } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
-import { parseOpenAction } from '~/utils/docs-url-bar'
+import { parseOpenAction, useDocsUrlBar } from '~/utils/docs-url-bar'
 import { usePublicEditingEnabled } from './__utils/flags'
 import { OpenActionError } from './__components/OpenActionError'
 import { PublicDocumentViewer } from './__components/PublicDocumentViewer'
@@ -28,11 +28,23 @@ export default function PublicDocumentPageV2(handoff: PublicDocumentPageV2Props)
   const [attempt, setAttempt] = useState(0)
   const retry = () => setAttempt((attempt) => attempt + 1)
 
+  const { changeURLVisually } = useDocsUrlBar()
   const { pathname, search } = useLocation()
-  const resolution = useMemo(
-    () => resolveOpenAction(parseOpenAction(new URLSearchParams(search), pathname), search),
-    [pathname, search],
-  )
+  const openAction = useMemo(() => parseOpenAction(new URLSearchParams(search), pathname), [pathname, search])
+  const resolution = useMemo(() => resolveOpenAction(openAction, search), [openAction, search])
+
+  // Here, not in the viewer, which a retry remounts: once downloaded, a retry doesn't download it again
+  const [downloadedOnOpen, setDownloadedOnOpen] = useState(false)
+  // Unlike `page.tsx`'s `mode=download`, the address opens the link only once the docx is saved: a failed save
+  // downloads again on reload
+  const onDownloadOnOpen = (saved: Promise<boolean>) => {
+    setDownloadedOnOpen(true)
+    void saved.then((isSaved) => {
+      if (isSaved && openAction?.mode === 'open-url-download') {
+        changeURLVisually({ ...openAction, mode: 'open-url' })
+      }
+    })
+  }
 
   useEffectOnce(() => {
     application.logger.info('Public document page v2 on realtime SDK', {
@@ -59,6 +71,8 @@ export default function PublicDocumentPageV2(handoff: PublicDocumentPageV2Props)
             handoff={handoff}
             publicEditing={publicEditing}
             onRetry={retry}
+            downloadOnOpen={resolution.downloadOnOpen && !downloadedOnOpen}
+            onDownloadOnOpen={onDownloadOnOpen}
           />
         )
       case 'error':
