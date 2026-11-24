@@ -37,7 +37,6 @@ import {
 import { useCheckoutCondensedAddons } from '@proton/components/containers/payments/subscription/helpers/useCheckoutCondensedAddons';
 import SubscriptionThanks from '@proton/components/containers/payments/subscription/modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from '@proton/components/containers/payments/subscription/modal-components/helpers/canShowGiftCodeInput';
-import { PostSubscriptionModalLoadingContent } from '@proton/components/containers/payments/subscription/postSubscription/modals/PostSubscriptionModalsComponents';
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/subscriptionModalTypes';
 import useSubscriptionModalTelemetry from '@proton/components/containers/payments/subscription/useSubscriptionModalTelemetry';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
@@ -135,6 +134,7 @@ import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import { getCommonTelemetryPayload, reportChangeTelemetry, telemetryContext } from './helpers/subscriptionTelemetry';
 import { useVpn2024AddonsExperiment } from './helpers/useVpn2024AddonsExperiment';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
+import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import { getCouponCarriedFrom, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 
 import './SubscriptionContainer.scss';

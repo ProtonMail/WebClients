@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
+import type { LabelModel } from '@proton/mail-settings/labels/modals/EditLabelModal';
 import { getCategoryIconComponent } from '@proton/mail/features/categoriesView/CategoryIcon';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';

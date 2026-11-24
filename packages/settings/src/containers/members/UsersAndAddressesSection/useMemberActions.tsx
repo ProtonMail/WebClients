@@ -29,11 +29,11 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useSilentApi } from '@proton/app-context/useSilentApi';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useAccountSpotlights } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
-import AddressModal from '@proton/components/containers/addresses/AddressModal';
-import CreateMissingKeysAddressModal from '@proton/components/containers/addresses/missingKeys/CreateMissingKeysAddressModal';
 import { isB2bPlanSupportingScribe } from '@proton/components/helpers/assistant';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
+import AddressModal from '@proton/mail-settings/addresses/AddressModal';
+import CreateMissingKeysAddressModal from '@proton/mail-settings/addresses/missingKeys/CreateMissingKeysAddressModal';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import {
     getHasPassB2BPlan,

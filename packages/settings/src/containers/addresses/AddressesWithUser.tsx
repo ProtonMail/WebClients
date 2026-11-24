@@ -31,17 +31,17 @@ import UpsellModal from '@proton/components/components/upsell/UpsellModal/Upsell
 import { SettingsCardActions, SettingsCardBody } from '@proton/components/containers/account/SettingsCardSection';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { getSettingsCardTableProps } from '@proton/components/containers/account/getSettingsCardTableProps';
-import AddressStatus from '@proton/components/containers/addresses/AddressStatus';
-import ExternalAddressInfo from '@proton/components/containers/addresses/ExternalAddressInfo';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
+import AddressStatus from '@proton/mail-settings/addresses/AddressStatus';
+import ExternalAddressInfo from '@proton/mail-settings/addresses/ExternalAddressInfo';
 import {
     type AddressPermissions,
     type AddressStatuses,
     getPermissions,
     getStatus,
-} from '@proton/components/containers/addresses/helper';
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
-import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
+} from '@proton/mail-settings/addresses/helper';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {

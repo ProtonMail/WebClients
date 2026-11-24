@@ -8,11 +8,11 @@ import DWMUpsellModal from '@proton/components/components/upsell/modals/DWMUpsel
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modals/IncreasePrivacyUpsellModal';
 import LabelsUpsellModal from '@proton/components/components/upsell/modals/LabelsUpsellModal';
 import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import EditLabelModal from '@proton/mail-settings/labels/modals/EditLabelModal';
 import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';

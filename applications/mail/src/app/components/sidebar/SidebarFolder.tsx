@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import FolderIcon from '@proton/mail-settings/labels/FolderIcon';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';

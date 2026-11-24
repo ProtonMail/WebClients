@@ -7,10 +7,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import type { PostSubscriptionFlowName } from '@proton/components/containers/payments/subscription/postSubscription/interface';
-import {
-    PostSubscriptionModalLoadingContent,
-    PostSubscriptionModalWrapper,
-} from '@proton/components/containers/payments/subscription/postSubscription/modals/PostSubscriptionModalsComponents';
 import type { SubscriptionOverridableStep } from '@proton/components/containers/payments/subscription/subscriptionModalTypes';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
@@ -21,11 +17,16 @@ import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/shared/lib
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import {
+    PostSubscriptionModalLoadingContent,
+    PostSubscriptionModalWrapper,
+} from './modals/PostSubscriptionModalsComponents';
+
 const PostSubscriptionModal = lazy(
     () =>
         import(
             /* webpackChunkName: "PostSubscriptionModals" */
-            '@proton/components/containers/payments/subscription/postSubscription/PostSubscriptionModal'
+            './PostSubscriptionModal'
         )
 );
 

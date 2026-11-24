@@ -8,8 +8,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
-import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import type { IconComponent } from '@proton/icons/component';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
@@ -21,6 +19,8 @@ import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
+import type { LabelModel } from '../../labels/modals/EditLabelModal';
+import EditLabelModal from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';
 import type { Actions } from '../interfaces';
 

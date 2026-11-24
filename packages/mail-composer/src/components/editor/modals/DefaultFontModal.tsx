@@ -8,8 +8,8 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import FontFaceSelect from '@proton/components/containers/layouts/FontFaceSelect';
-import FontSizeSelect from '@proton/components/containers/layouts/FontSizeSelect';
+import FontFaceSelect from '@proton/mail-settings/layouts/FontFaceSelect';
+import FontSizeSelect from '@proton/mail-settings/layouts/FontSizeSelect';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import {
     DEFAULT_FONT_FACE,

@@ -5398,6 +5398,9 @@ importers:
       '@proton/mail':
         specifier: workspace:^
         version: link:../mail
+      '@proton/mail-settings':
+        specifier: workspace:^
+        version: link:../mail-settings
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
@@ -8606,6 +8609,9 @@ importers:
       '@proton/mail-message':
         specifier: workspace:^
         version: link:../mail-message
+      '@proton/mail-settings':
+        specifier: workspace:^
+        version: link:../mail-settings
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
@@ -8981,6 +8987,9 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../components
+      '@proton/features':
+        specifier: workspace:^
+        version: link:../features
       '@proton/hooks':
         specifier: workspace:^
         version: link:../hooks
@@ -8993,6 +9002,9 @@ importers:
       '@proton/mail':
         specifier: workspace:^
         version: link:../mail
+      '@proton/metrics':
+        specifier: workspace:^
+        version: link:../metrics
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
@@ -9020,6 +9032,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../unleash
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
@@ -9066,9 +9081,6 @@ importers:
       '@proton/test-api':
         specifier: workspace:^
         version: link:../test-api
-      '@proton/unleash':
-        specifier: workspace:^
-        version: link:../unleash
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
@@ -10147,6 +10159,12 @@ importers:
       '@proton/icons':
         specifier: workspace:^
         version: link:../icons
+      '@proton/mail':
+        specifier: workspace:^
+        version: link:../mail
+      '@proton/mail-settings':
+        specifier: workspace:^
+        version: link:../mail-settings
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
