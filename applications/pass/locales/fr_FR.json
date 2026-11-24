@@ -1011,8 +1011,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } n'a pas répondu dans le délai imparti."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } ne répond pas."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Le fichier ${ provider } n'a pu être analysé. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Une vérification biométrique pour le déverrouillage est déjà en cours."
       ],
       "A desktop unlock check is already in progress.": [
         "Une vérification du déverrouillage du bureau est déjà en cours."
@@ -1681,6 +1690,9 @@
         "${ n } élément",
         "${ n } éléments"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } souhaite déverrouiller l'extension de navigateur"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sera toujours accessible."
       ],
@@ -2188,6 +2200,9 @@
       "invites you to access items in": [
         "vous invite à accéder à des éléments dans"
       ],
+      "iOS and Android Apps": [
+        "Applications pour iOS et Android"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Vous semblez déjà connecté à ${ PASS_APP_NAME }. Si vous essayez de vous connecter avec un autre compte, déconnectez-vous d'abord de l'extension."
       ],
@@ -2284,8 +2299,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2824,6 +2838,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Débloquez ${ PASS_SHORT_APP_NAME } avec votre second mot de passe."
+      ],
+      "unlock the browser extension": [
+        "déverrouiller l'extension de navigateur"
       ],
       "Unpinning item...": [
         "Désépinglage de l'élément..."
@@ -5053,6 +5070,9 @@
       ],
       "Folder options": [
         "Options de dossier"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenir les applications mobile et de bureau"
       ],
       "Get mobile apps": [
         "Télécharger les applications mobiles"

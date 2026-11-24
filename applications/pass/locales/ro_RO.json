@@ -319,6 +319,9 @@
       "Dismiss": [
         "Renunțare"
       ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
       "Do not show again": [
         "Nu mai afișa asta"
       ],
@@ -408,6 +411,9 @@
       ],
       "Go back": [
         "Înapoi"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
       ],
       "Hide": [
         "Ascundere"
@@ -550,6 +556,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Deschidere articol"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -618,6 +627,9 @@
       ],
       "Remove member": [
         "Eliminare membru"
+      ],
+      "Remove passkey": [
+        "Eliminare cheie de acces"
       ],
       "Rename": [
         "Redenumire"
@@ -761,6 +773,9 @@
       ],
       "To mailbox": [
         "Către contul de e-mail"
+      ],
+      "Toggle section": [
+        "Comutare secțiune"
       ],
       "Transfer aliases": [
         "Transferare aliasuri"
@@ -1021,8 +1036,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } nu a răspuns la timp."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } nu răspunde."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } nu a putut fi analizat. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "O verificare a deblocării este deja în curs de desfășurare."
       ],
       "A desktop unlock check is already in progress.": [
         "O verificare a deblocării desktopului este deja în curs de desfășurare."
@@ -1710,6 +1734,9 @@
         "${ n } articole",
         "${ n } de articole"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } dorește să deblocheze extensia de navigator web."
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } va fi disponibil oricând"
       ],
@@ -2324,9 +2351,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui articol într-un alt seif va șterge legăturile sale securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2884,6 +2909,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu parola secundară."
+      ],
+      "unlock the browser extension": [
+        "deblocheze extensia de navigator web"
       ],
       "Unpinning item...": [
         "Se anulează fixarea articolului..."

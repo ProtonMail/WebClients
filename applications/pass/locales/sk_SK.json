@@ -1040,8 +1040,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "Od ${ PASS_APP_NAME } neprišla odpoveď včas."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } neodpovedá."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Overenie biometrického odomknutia už prebieha."
       ],
       "A desktop unlock check is already in progress.": [
         "V súčasnosti prebieha kontrola odblokovania desktopu."
@@ -1745,6 +1754,9 @@
         "${ n } položiek ",
         "${ n } položiek "
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } chce odomknúť rozšírenie prehliadača"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy dostupný"
       ],
@@ -2367,10 +2379,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2932,6 +2941,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho druhého hesla"
+      ],
+      "unlock the browser extension": [
+        "odomknúť rozšírenie prehliadača"
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
