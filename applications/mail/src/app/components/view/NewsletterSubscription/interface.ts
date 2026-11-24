@@ -59,3 +59,8 @@ export enum NewsletterFolderDestination {
     archive = 'archive',
     customFolder = 'customFolder',
 }
+
+export interface BYOEInboxCleanupChoice {
+    subscriptions: NewsletterSubscription[];
+    archive: boolean;
+}

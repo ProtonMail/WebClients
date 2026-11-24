@@ -31,6 +31,11 @@ vi.mock('proton-mail/metrics/useMailELDTMetric', () => ({
     },
 }));
 
+// Counts only the list requests, so requests from unrelated parts of the page (such as offers fetching plans) don't change the result
+const getListRequests = (listURL: string) => {
+    return api.mock.calls.filter(([{ url }]) => url === listURL);
+};
+
 describe('Mailbox elements list reacting to events', () => {
     const { labelID } = props;
 
@@ -90,7 +95,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(getListRequests('mail/v4/messages')).toHaveLength(2);
     });
 
     it('should not reload the list on an update event if a filter is active', async () => {
@@ -112,7 +117,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(3);
+        expect(getListRequests('mail/v4/conversations')).toHaveLength(1);
     });
 
     it('should not reload the list on an update event if has list from start', async () => {
@@ -131,7 +136,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(3);
+        expect(getListRequests('mail/v4/conversations')).toHaveLength(1);
     });
 
     it('should reload the list on an update event if has not list from start', async () => {
@@ -160,7 +165,7 @@ describe('Mailbox elements list reacting to events', () => {
         /**
          * `/get conversations` should be called twice at render and twice on reload
          */
-        expect(api).toHaveBeenCalledTimes(6);
+        expect(getListRequests('mail/v4/conversations')).toHaveLength(4);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
@@ -183,7 +188,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(getListRequests('mail/v4/messages')).toHaveLength(2);
     });
 
     it('should not reload the list on count event when a search is active', async () => {
@@ -198,7 +203,7 @@ describe('Mailbox elements list reacting to events', () => {
             MessageCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
         });
 
-        expect(api.mock.calls.length).toBe(3);
+        expect(getListRequests('mail/v4/messages')).toHaveLength(1);
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {

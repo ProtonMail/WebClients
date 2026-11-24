@@ -21,17 +21,13 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useMailGlobalModals } from '../containers/globalModals/globalModalContext';
-import type { BYOEInboxCleanupModalPayload } from '../containers/globalModals/inteface';
-import { ModalType } from '../containers/globalModals/inteface';
 import { loadSendersWhenFree } from '../helpers/byoeInboxCleanup';
 import { useMailDispatch } from '../store/hooks';
-import useBYOEInboxCleanupConfirm from './useBYOEInboxCleanupConfirm';
-import useShowBYOEInboxCleanupModal from './useShowBYOEInboxCleanupModal';
+import useBYOEInboxCleanupSenders from './useBYOEInboxCleanupSenders';
 
-vi.mock('./useShowBYOEInboxCleanupModal', async () => ({
+vi.mock('./useBYOEInboxCleanupSenders', async () => ({
     __esModule: true,
-    ...(await vi.importActual('./useShowBYOEInboxCleanupModal')),
+    ...(await vi.importActual('./useBYOEInboxCleanupSenders')),
 }));
 vi.mock('@proton/unleash/useFlag');
 vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: vi.fn() }));
@@ -46,8 +42,6 @@ vi.mock('@proton/activation/src/logic/reports/reports.actions', () => ({
 vi.mock('@proton/features/reducer', () => ({ updateFeature: vi.fn() }));
 vi.mock('@proton/features/useFeature', () => ({ __esModule: true, default: vi.fn() }));
 vi.mock('../store/hooks', () => ({ useMailDispatch: vi.fn() }));
-vi.mock('../containers/globalModals/globalModalContext', () => ({ useMailGlobalModals: vi.fn() }));
-vi.mock('./useBYOEInboxCleanupConfirm', () => ({ __esModule: true, default: vi.fn() }));
 vi.mock('../helpers/byoeInboxCleanup', async () => ({
     ...(await vi.importActual('../helpers/byoeInboxCleanup')),
     loadSendersWhenFree: vi.fn(),
@@ -93,6 +87,8 @@ type CleanupFeature = Partial<Feature<boolean>>;
 // The value Mail loaded, as `useFeature` returns it
 const store: { feature: CleanupFeature | undefined } = { feature: undefined };
 const easySwitch: EasySwitchState = { loading: 'idle', entries: [] };
+// Whether the Mailing lists view is ready to show the window, as the view hands it to the hook
+const view = { canShow: true };
 const dueFeature: CleanupFeature = { Value: true, UpdateTime: CONNECTION_TIME_BYOE };
 
 const mockWriteFeature = vi.fn(async (value: boolean) => {
@@ -103,15 +99,8 @@ const mockMailDispatch = vi.fn((action: { value: boolean }) => {
     return mockWriteFeature(action.value);
 });
 const mockEasySwitchDispatch = vi.fn();
-const mockNotify = vi.fn();
-const mockOnConfirm = vi.fn();
-const mockCreateConfirm = vi.fn(() => mockOnConfirm);
 const mockApi = vi.fn();
 const senders = [{ ID: 'sender-1' }, { ID: 'sender-2' }] as NewsletterSubscription[];
-
-const getShownPayload = () => {
-    return mockNotify.mock.calls[0][0] as BYOEInboxCleanupModalPayload;
-};
 
 const getLoadSignal = (call = 0) => {
     return vi.mocked(loadSendersWhenFree).mock.calls[call][0].signal;
@@ -136,7 +125,7 @@ const setup = ({ enabled = true, feature = dueFeature }: SetupOptions = {}) => {
         return name === 'InboxBringYourOwnEmailCleanup' && enabled;
     });
 
-    return renderHook(() => useShowBYOEInboxCleanupModal());
+    return renderHook(() => useBYOEInboxCleanupSenders(view.canShow));
 };
 
 const holdNextLoad = () => {
@@ -167,11 +156,12 @@ const putValueBack = async (rerender: () => void) => {
     await settle();
 };
 
-describe('useShowBYOEInboxCleanupModal', () => {
+describe('useBYOEInboxCleanupSenders', () => {
     beforeEach(() => {
         vi.clearAllMocks();
         easySwitch.loading = 'idle';
         easySwitch.entries = [];
+        view.canShow = true;
 
         vi.mocked(useFeature).mockImplementation(() => {
             return { feature: store.feature } as any;
@@ -190,24 +180,20 @@ describe('useShowBYOEInboxCleanupModal', () => {
         });
         vi.mocked(useAddresses).mockReturnValue([[byoeAddress], false] as any);
         vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: true } } as any);
-        vi.mocked(useMailGlobalModals).mockImplementation(() => {
-            return { notify: mockNotify } as any;
-        });
-        vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(mockCreateConfirm);
         vi.mocked(loadSendersWhenFree).mockResolvedValue(senders);
         mockUseApi(mockApi);
     });
 
     it("doesn't load the cleanup feature or do anything when the kill switch is off, even with a cleanup due and the import finished", async () => {
         easySwitch.entries = [buildEntry(ApiImporterState.DONE)];
-        setup({ enabled: false });
+        const { result } = setup({ enabled: false });
         await settle();
 
         expect(useFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
         expect(mockEasySwitchDispatch).not.toHaveBeenCalled();
         expect(loadSendersWhenFree).not.toHaveBeenCalled();
         expect(updateFeature).not.toHaveBeenCalled();
-        expect(mockNotify).not.toHaveBeenCalled();
+        expect(result.current).toBeUndefined();
     });
 
     it('loads the cleanup feature when the kill switch is on', async () => {
@@ -257,6 +243,17 @@ describe('useShowBYOEInboxCleanupModal', () => {
         expect(loadSendersWhenFree).not.toHaveBeenCalled();
     });
 
+    it('still clears a failed import before the view can show the window', async () => {
+        view.canShow = false;
+        easySwitch.loading = 'success';
+        easySwitch.entries = [buildEntry(ApiImporterState.FAILED)];
+        setup();
+        await settle();
+
+        expect(updateFeature).toHaveBeenCalledTimes(1);
+        expect(updateFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
+    });
+
     it("doesn't clear again when clearing after a failed import fails and the value comes back", async () => {
         failNextWrite();
         easySwitch.loading = 'success';
@@ -278,34 +275,34 @@ describe('useShowBYOEInboxCleanupModal', () => {
         expect(updateFeature).not.toHaveBeenCalled();
     });
 
-    it('opens the window once the import reports show the import finished, without a reload', async () => {
+    it('returns the senders once the import reports show the import finished, without a reload', async () => {
         easySwitch.loading = 'success';
         easySwitch.entries = [buildEntry(ApiImporterState.RUNNING)];
-        const { rerender } = setup();
+        const { result, rerender } = setup();
         await settle();
 
-        expect(mockNotify).not.toHaveBeenCalled();
+        expect(result.current).toBeUndefined();
 
         easySwitch.entries = [buildEntry(ApiImporterState.DONE)];
         rerender();
         await settle();
 
-        expect(mockNotify).toHaveBeenCalledTimes(1);
+        expect(result.current).toBeDefined();
     });
 
-    it('opens the window once the cleanup is marked due in this tab, without a reload', async () => {
+    it('returns the senders once the cleanup is marked due in this tab, without a reload', async () => {
         easySwitch.loading = 'success';
         easySwitch.entries = [buildEntry(ApiImporterState.DONE)];
-        const { rerender } = setup({ feature: { Value: false } });
+        const { result, rerender } = setup({ feature: { Value: false } });
         await settle();
 
-        expect(mockNotify).not.toHaveBeenCalled();
+        expect(result.current).toBeUndefined();
 
         store.feature = dueFeature;
         rerender();
         await settle();
 
-        expect(mockNotify).toHaveBeenCalledTimes(1);
+        expect(result.current).toBeDefined();
     });
 
     describe('when the import finished', () => {
@@ -314,8 +311,8 @@ describe('useShowBYOEInboxCleanupModal', () => {
             easySwitch.entries = [buildEntry(ApiImporterState.DONE)];
         });
 
-        it('loads the senders once the screen is free, then opens the window with them and the cleanup action', async () => {
-            setup();
+        it('loads the senders once the screen is free, then returns them and leaves the cleanup for the window to clear', async () => {
+            const { result } = setup();
             await settle();
 
             expect(loadSendersWhenFree).toHaveBeenCalledWith({
@@ -323,70 +320,40 @@ describe('useShowBYOEInboxCleanupModal', () => {
                 api: mockApi,
                 signal: expect.any(AbortSignal),
             });
-            expect(mockNotify).toHaveBeenCalledTimes(1);
-            expect(getShownPayload()).toEqual({
-                type: ModalType.BYOEInboxCleanup,
-                value: { subscriptions: senders, onConfirm: mockOnConfirm, onDisplayed: expect.any(Function) },
-            });
+            expect(result.current).toBe(senders);
             expect(updateFeature).not.toHaveBeenCalled();
         });
 
-        it('clears the cleanup when the window is displayed', async () => {
-            setup();
-            await settle();
-
-            act(() => {
-                getShownPayload().value.onDisplayed();
-            });
-
-            expect(updateFeature).toHaveBeenCalledTimes(1);
-            expect(updateFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
-        });
-
-        it("doesn't open again when clearing fails and the value comes back", async () => {
-            failNextWrite();
-            const { rerender } = setup();
-            await settle();
-            act(() => {
-                getShownPayload().value.onDisplayed();
-            });
-            await settle();
-            await putValueBack(rerender);
-
-            expect(loadSendersWhenFree).toHaveBeenCalledTimes(1);
-            expect(mockNotify).toHaveBeenCalledTimes(1);
-        });
-
-        it('clears and opens nothing when there are no senders', async () => {
+        it('clears the cleanup and returns nothing when there are no senders', async () => {
             vi.mocked(loadSendersWhenFree).mockResolvedValue([]);
-            setup();
+            const { result } = setup();
             await settle();
 
             expect(updateFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
-            expect(mockNotify).not.toHaveBeenCalled();
+            expect(result.current).toBeUndefined();
         });
 
-        it("opens nothing and leaves it due when the cleanup was cancelled or isn't due any more", async () => {
+        it("returns nothing and leaves it due when the cleanup was cancelled or isn't due any more", async () => {
             vi.mocked(loadSendersWhenFree).mockResolvedValue(undefined);
-            setup();
+            const { result } = setup();
             await settle();
 
-            expect(mockNotify).not.toHaveBeenCalled();
+            expect(result.current).toBeUndefined();
             expect(updateFeature).not.toHaveBeenCalled();
         });
 
-        it('opens nothing and leaves it due when a request fails', async () => {
+        it('returns nothing and leaves it due when a request fails', async () => {
             vi.mocked(loadSendersWhenFree).mockRejectedValue(new Error('offline'));
-            setup();
+            const { result } = setup();
             await settle();
 
-            expect(mockNotify).not.toHaveBeenCalled();
+            expect(result.current).toBeUndefined();
             expect(updateFeature).not.toHaveBeenCalled();
         });
 
-        it("waits while onboarding isn't done, and opens once it's done with nothing else changing", async () => {
+        it("waits while onboarding isn't done, and returns the senders once it's done with nothing else changing", async () => {
             vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: false } } as any);
-            const { rerender } = setup();
+            const { result, rerender } = setup();
             await settle();
 
             expect(loadSendersWhenFree).not.toHaveBeenCalled();
@@ -395,7 +362,35 @@ describe('useShowBYOEInboxCleanupModal', () => {
             rerender();
             await settle();
 
-            expect(mockNotify).toHaveBeenCalledTimes(1);
+            expect(result.current).toBeDefined();
+        });
+
+        it("waits while the view can't show the window yet, then returns the senders once it can", async () => {
+            view.canShow = false;
+            const { result, rerender } = setup();
+            await settle();
+
+            expect(loadSendersWhenFree).not.toHaveBeenCalled();
+            expect(updateFeature).not.toHaveBeenCalled();
+
+            view.canShow = true;
+            rerender();
+            await settle();
+
+            expect(result.current).toBeDefined();
+        });
+
+        it('the view no longer being ready while the senders load cancels them and leaves it due', async () => {
+            holdNextLoad();
+            const { rerender } = setup();
+            await settle();
+
+            view.canShow = false;
+            rerender();
+            await settle();
+
+            expect(getLoadSignal().aborted).toBe(true);
+            expect(updateFeature).not.toHaveBeenCalled();
         });
 
         it('cancels loading the senders when unmounted', async () => {
@@ -408,26 +403,8 @@ describe('useShowBYOEInboxCleanupModal', () => {
             expect(getLoadSignal().aborted).toBe(true);
         });
 
-        it('keeps loading the senders when the confirm factory changes, and opens with the latest one', async () => {
-            const resolveLoad = holdNextLoad();
-            const { rerender } = setup();
-            await settle();
-
-            const newOnConfirm = vi.fn();
-            vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(() => newOnConfirm);
-            rerender();
-            await settle();
-            resolveLoad(senders);
-            await settle();
-
-            expect(getLoadSignal().aborted).toBe(false);
-            expect(loadSendersWhenFree).toHaveBeenCalledTimes(1);
-            expect(mockNotify).toHaveBeenCalledTimes(1);
-            expect(getShownPayload().value.onConfirm).toBe(newOnConfirm);
-        });
-
         it("doesn't load the senders again when a report change leaves the import finished", async () => {
-            const { rerender } = setup();
+            const { result, rerender } = setup();
             await settle();
 
             easySwitch.entries = [...easySwitch.entries, buildEntry(ApiImporterState.RUNNING)];
@@ -435,15 +412,11 @@ describe('useShowBYOEInboxCleanupModal', () => {
             await settle();
 
             expect(loadSendersWhenFree).toHaveBeenCalledTimes(1);
-            expect(mockNotify).toHaveBeenCalledTimes(1);
+            expect(result.current).toBe(senders);
         });
 
-        it('offers a second connection made in the same tab on the next load, not in the same session', async () => {
-            const { rerender, unmount } = setup();
-            await settle();
-            act(() => {
-                getShownPayload().value.onDisplayed();
-            });
+        it('shows a second connection made in the same tab on the next visit, not in the same one', async () => {
+            const { result, rerender, unmount } = setup();
             await settle();
 
             const secondConnectionTime = CONNECTION_TIME_BYOE + 86_400;
@@ -452,13 +425,15 @@ describe('useShowBYOEInboxCleanupModal', () => {
             rerender();
             await settle();
 
-            expect(mockNotify).toHaveBeenCalledTimes(1);
+            expect(loadSendersWhenFree).toHaveBeenCalledTimes(1);
+            expect(result.current).toBe(senders);
 
             unmount();
-            renderHook(() => useShowBYOEInboxCleanupModal());
+            const nextVisit = renderHook(() => useBYOEInboxCleanupSenders(view.canShow));
             await settle();
 
-            expect(mockNotify).toHaveBeenCalledTimes(2);
+            expect(loadSendersWhenFree).toHaveBeenCalledTimes(2);
+            expect(nextVisit.result.current).toBeDefined();
         });
     });
 });

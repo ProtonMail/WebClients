@@ -1,5 +1,4 @@
 import type { Sync } from '@proton/activation/src/logic/sync/sync.interface';
-import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
 export enum ModalType {
@@ -9,7 +8,6 @@ export enum ModalType {
     CategoriesViewB2BOnboarding = 'categoriesViewB2BOnboarding',
     CategoriesViewB2COnboarding = 'categoriesViewB2COnboarding',
     BYOESpotlight = 'BYOESpotlight',
-    BYOEInboxCleanup = 'BYOEInboxCleanup',
 }
 
 export interface ScheduleModalPayload {
@@ -58,28 +56,13 @@ export interface BYOESpotlightModalPayload {
     };
 }
 
-export interface BYOEInboxCleanupChoice {
-    subscriptions: NewsletterSubscription[];
-    archive: boolean;
-}
-
-export interface BYOEInboxCleanupModalPayload {
-    type: ModalType.BYOEInboxCleanup;
-    value: {
-        subscriptions: NewsletterSubscription[];
-        onConfirm: (choice: BYOEInboxCleanupChoice) => Promise<void>;
-        onDisplayed: () => void;
-    };
-}
-
 export type ModalPayload =
     | ScheduleModalPayload
     | SnoozeModalPayload
     | UnsubscribeModalPayload
     | CategoriesViewB2BOnboardingModalPayload
     | CategoriesViewB2COnboardingModalPayload
-    | BYOESpotlightModalPayload
-    | BYOEInboxCleanupModalPayload;
+    | BYOESpotlightModalPayload;
 export interface GlobalModal {
     notify: (payload: ModalPayload) => void;
 }

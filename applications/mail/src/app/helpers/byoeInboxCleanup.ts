@@ -3,7 +3,7 @@ import { ImportType } from '@proton/activation/src/interface';
 import type { Report, ReportSummary } from '@proton/activation/src/logic/reports/reports.interface';
 import type { Feature } from '@proton/features/interface';
 import { FeatureCode } from '@proton/features/interface';
-import { fetchFeatures } from '@proton/features/reducer';
+import { fetchFeatures, updateFeature } from '@proton/features/reducer';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -23,6 +23,7 @@ import type {
     GetNewsletterSubscriptionsApiResponse,
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+import noop from '@proton/utils/noop';
 
 import type { MailDispatch } from '../store/store';
 
@@ -37,7 +38,7 @@ export const BYOE_INBOX_CLEANUP_SENDERS_QUERY =
 
 /**
  * Reads one page only: the next page is rejected by the server when the last sender of this one was never read.
- * Rejects when the request fails, so the caller can tell a failure apart from having nothing to offer.
+ * Rejects when the request fails, so the caller can tell a failure apart from there being no senders.
  */
 export const getBYOEInboxCleanupSenders = async (api: Api): Promise<NewsletterSubscription[]> => {
     const { NewsletterSubscriptions } = await getSilentApi(api)<GetNewsletterSubscriptionsApiResponse>(
@@ -284,6 +285,14 @@ export const waitForFreeScreen = (signal: AbortSignal) => {
     });
 };
 
+/**
+ * Marks the cleanup as no longer due, so the window doesn't open again until another BYOE connection with import.
+ * A failed request puts the value back, so the window opens again on the next load.
+ */
+export const clearBYOEInboxCleanup = (dispatch: MailDispatch) => {
+    dispatch(updateFeature(FeatureCode.BYOEInboxCleanupModal, false)).catch(noop);
+};
+
 interface LoadSendersWhenFreeOptions {
     dispatch: MailDispatch;
     api: Api;
@@ -291,9 +300,9 @@ interface LoadSendersWhenFreeOptions {
 }
 
 /**
- * Waits for a free screen, then loads the senders to offer, or resolves to `undefined` when aborted or no longer due.
+ * Waits for a free screen, then loads the senders for the cleanup window, or resolves to `undefined` when aborted or no longer due.
  * The value from `useFeature` is cached from page load and isn't updated by events, so another tab or device may have
- * shown or cleared the cleanup since. It's read fresh from the server right before opening, so it isn't shown twice.
+ * closed or cleared the cleanup since. It's read fresh from the server right before opening, so it isn't shown twice.
  * The senders load last so the list is current when the window opens.
  */
 export const loadSendersWhenFree = async ({ dispatch, api, signal }: LoadSendersWhenFreeOptions) => {

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
+import { useContext, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -16,11 +16,13 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { ModalCheckboxWithLabel } from '../../components/view/NewsletterSubscription/SubscriptionsList/ModalBlockSender/ModalSharedComponents';
-import { getReceivedMessagesCount } from '../../components/view/NewsletterSubscription/helper';
-import type { BYOEInboxCleanupSection } from '../../helpers/byoeInboxCleanup';
-import { groupBYOEInboxCleanupSenders } from '../../helpers/byoeInboxCleanup';
-import type { BYOEInboxCleanupModalPayload } from './inteface';
+import type { BYOEInboxCleanupSection } from '../../../helpers/byoeInboxCleanup';
+import { clearBYOEInboxCleanup, groupBYOEInboxCleanupSenders } from '../../../helpers/byoeInboxCleanup';
+import useBYOEInboxCleanupConfirm from '../../../hooks/useBYOEInboxCleanupConfirm';
+import { useMailDispatch } from '../../../store/hooks';
+import { ModalCheckboxWithLabel } from './SubscriptionsList/ModalBlockSender/ModalSharedComponents';
+import { getReceivedMessagesCount } from './helper';
+import type { BYOEInboxCleanupChoice } from './interface';
 
 interface InboxCleanupHeaderProps {
     count: number;
@@ -144,7 +146,7 @@ const SenderRow = ({ subscription, section, checked, disabled, onToggle }: Sende
 interface InboxCleanupModalProps {
     modalProps: ModalStateProps;
     subscriptions: NewsletterSubscription[];
-    onConfirm: BYOEInboxCleanupModalPayload['value']['onConfirm'];
+    onConfirm: (choice: BYOEInboxCleanupChoice) => Promise<void>;
 }
 
 const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanupModalProps) => {
@@ -257,22 +259,31 @@ const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanu
     );
 };
 
-interface GlobalBYOEInboxCleanupModalProps {
-    value: BYOEInboxCleanupModalPayload['value'];
+interface BYOEInboxCleanupModalProps {
+    subscriptions: NewsletterSubscription[];
     modalProps: ModalStateProps;
 }
 
-export const GlobalBYOEInboxCleanupModal = ({ value: modalValue, modalProps }: GlobalBYOEInboxCleanupModalProps) => {
-    const { onDisplayed } = modalValue;
-    useEffect(() => {
-        onDisplayed();
-    }, [onDisplayed]);
+export const BYOEInboxCleanupModal = ({ subscriptions, modalProps }: BYOEInboxCleanupModalProps) => {
+    const onConfirm = useBYOEInboxCleanupConfirm();
+    const dispatch = useMailDispatch();
+    // Closing while Unsubscribe is pending, then Unsubscribe succeeding, closes it a second time
+    const hasClearedRef = useRef(false);
+
+    // However it's closed, it doesn't open again; a reload while it's open leaves it due for the next visit
+    const handleClose = () => {
+        if (!hasClearedRef.current) {
+            hasClearedRef.current = true;
+            clearBYOEInboxCleanup(dispatch);
+        }
+        modalProps.onClose();
+    };
 
     return (
         <InboxCleanupModal
-            modalProps={modalProps}
-            subscriptions={modalValue.subscriptions}
-            onConfirm={modalValue.onConfirm}
+            modalProps={{ ...modalProps, onClose: handleClose }}
+            subscriptions={subscriptions}
+            onConfirm={onConfirm}
         />
     );
 };
