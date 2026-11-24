@@ -908,6 +908,12 @@
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов"
+      ],
+      "New": [
+        "Создать"
+      ],
+      "Skip to main content": [
+        "Перейти к основному содержимому"
       ]
     },
     "Actions message": {
@@ -5347,6 +5353,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы по-прежнему сможете просматривать данные своего аккаунта, но все аккаунты пользователей будут удалены из вашей организации."
+      ],
+      "Beta": [
+        "Бета"
       ]
     },
     "info": {
@@ -9475,6 +9484,9 @@
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
+      ],
+      "Verify it’s you": [
+        "Подтвердите, что это вы"
       ]
     },
     "Title header for keys table": {
@@ -9883,6 +9895,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Ваша пробная версия заканчивается ${ textDate }. Если вы отмените подписку до ${ textDate }, плата списана не будет. ${ action }"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     }
   }

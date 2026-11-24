@@ -956,6 +956,18 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
+      "Export this version (as odt)": [
+        "Exportovať túto verziu (ako odt)"
+      ],
+      "New": [
+        "Nové"
+      ],
+      "OpenDocument Text (.odt)": [
+        "OpenDocument Text (.odt)"
+      ],
+      "Skip to main content": [
+        "Prejsť na hlavný obsah"
       ]
     },
     "Actions message": {
@@ -1086,6 +1098,15 @@
       ],
       "Writing assistant seats": [
         "Licencie pre asistenta písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencií asistentov písania"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencia asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencie asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania"
       ]
     },
     "Alert": {
@@ -3669,6 +3690,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "Failed to get invitee keys": [
+        "Nepodarilo sa získať kľúče pozvaných osôb"
+      ],
+      "Failed to load the membership": [
+        "Načítanie členstva zlyhalo"
+      ],
+      "Failed to load the membership data": [
+        "Načítanie údajov o členstve zlyhalo"
+      ],
+      "Failed to verify membership": [
+        "Overenie členstva zlyhalo"
+      ],
+      "Some invitations could not be loaded": [
+        "Niektoré pozvánky sa nepodarilo načítať"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Nepodarilo sa nám overiť, či to možno vybrať z koša."
       ]
     },
     "error": {
@@ -4010,6 +4049,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Požiadavka na bezpečnostný kľúč bola zrušená alebo vypršala. Skúste to znova, prosím."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Vaše zariadenie nedokázalo dokončiť požiadavku na bezpečnostný kľúč. Skúste to znova alebo použite iný spôsob prihlásenia."
       ]
     },
     "fido2: Info": {
@@ -4023,7 +4068,7 @@
         "Stále čakáte?"
       ],
       "Touch your security key to continue.": [
-        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
+        "Ak chcete pokračovať, dotknite sa bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -5846,6 +5891,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Beta": [
+        "Beta"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "V záujme ochrany vášho účtu pred pokračovaním potvrďte svoju totožnosť."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licencie pre asistentov písania už nie sú v predaji."
+      ],
+      "Your current document will be replaced with this version.": [
+        "Váš súčasný dokument bude nahradený touto verziou."
       ]
     },
     "info": {
@@ -6345,6 +6402,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Heslo k účtu ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -10162,6 +10222,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Verify it’s you": [
+        "Overiť, že ste to vy"
       ]
     },
     "Title header for keys table": {
@@ -10585,6 +10648,73 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } kód"
+      ],
+      "2x Basic usage": [
+        "2-násobné využitie Basic"
+      ],
+      "5x Plus usage": [
+        "5-násobné využitie Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Prístup k API s kreditom ${ credit } na mesiac"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Prístup k API s kreditom ${ credit } na mesiac na používateľa"
+      ],
+      "Everything in Basic, and:": [
+        "Všetko z plánu Basic a navyše:"
+      ],
+      "Everything in Free, and:": [
+        "Všetko z plánu Free a:"
+      ],
+      "Everything in Plus, and:": [
+        "Všetko z Plus a navyše:"
+      ],
+      "Extended image generation": [
+        "Rozšírené vytváranie obrázkov"
+      ],
+      "Includes:": [
+        "Obsahuje:"
+      ],
+      "Limited image generation": [
+        "Obmedzené vytváranie obrázkov"
+      ],
+      "Limited messages and chat history": [
+        "Obmedzený počet správ a história chatu"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Obmedzené schopnosti, projekty a naplánované úlohy"
+      ],
+      "Maximum image generation": [
+        "Maximálne vytváranie obrázkov"
+      ],
+      "Maximum Skills and Projects": [
+        "Najlepšie schopnosti a projekty"
+      ],
+      "More image generation": [
+        "Viac vytváraní obrázkov"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Viac schopností, projektov a naplánovaných úloh"
+      ],
+      "More usage": [
+        "Ďalšie možnosti použitia"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pre programovanie a tvorbu"
+      ],
+      "For everyday chats": [
+        "Na každodenné chatovanie"
+      ],
+      "For getting more done": [
+        "Aby ste stihli viac práce"
       ]
     }
   }

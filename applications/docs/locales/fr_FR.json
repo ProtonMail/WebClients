@@ -925,6 +925,18 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "Export this version (as odt)": [
+        "Exporter cette version (en odt)"
+      ],
+      "New": [
+        "Nouveau"
+      ],
+      "OpenDocument Text (.odt)": [
+        "Texte OpenDocument (.odt)"
+      ],
+      "Skip to main content": [
+        "Passer au contenu principal"
       ]
     },
     "Actions message": {
@@ -1033,6 +1045,13 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -3498,6 +3517,54 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Il n'est pas possible d'ajouter une photo à un album sans un nom valide."
+      ],
+      "Cannot verify who uploaded this file": [
+        "L'auteur de cet import n'a pas pu être vérifié."
+      ],
+      "Could not find an available name": [
+        "Aucun nom disponible n'a pu être trouvé."
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Une partie de ce fichier n'a pas pu être lue : ${ message }"
+      ],
+      "Expiration date cannot be in the past": [
+        "La date d'expiration ne peut pas se situer dans le passé."
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "La clé de contenu n'a pas pu être déchiffrée : ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nous n'avons pas pu déchiffrer les métadonnées de révision."
+      ],
+      "Failed to get inviter keys": [
+        "Les clés de l'inviteur n'ont pas pu être récupérées."
+      ],
+      "Failed to verify invitation": [
+        "L'invitation n'a pas pu être vérifiée."
+      ],
+      "File download failed due to empty response": [
+        "Impossible de télécharger le fichier : la réponse est vide"
+      ],
+      "Name must not be empty": [
+        "Le nom ne doit pas être vide."
+      ],
+      "Only admins can convert external invitations": [
+        "Seuls les administrateurs peuvent convertir des invitations externes."
+      ],
+      "Renaming root item is not allowed": [
+        "Renommer l'élément racine n'est pas autorisé."
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "La vérification de signature n'a pas abouti : ${ errorMessage }"
+      ],
+      "You can create public links for your own files only": [
+        "Vous pouvez uniquement créer des liens publics pour vos propres fichiers."
+      ],
+      "You can only leave items that are shared with you": [
+        "Vous pouvez quitter des éléments uniquement s'ils sont partagés avec vous."
       ]
     },
     "error": {
@@ -3835,6 +3902,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La demande de clé de sécurité a été annulée ou a expiré. Veuillez réessayer."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Votre appareil n'a pas pu traiter la demande de clé de sécurité. Veuillez réessayer ou utiliser un autre moyen de connexion."
       ]
     },
     "fido2: Info": {
@@ -5525,6 +5598,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "Beta": [
+        "Version bêta"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pour garantir la sécurité de votre compte, veuillez confirmer que c'est bien vous avant de continuer."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Vous ne pourrez pas partager ${ fileName } une fois votre accès passé en lecture. Le propriétaire ou un éditeur avec le droit de partager pourra restaurer votre accès. Vous ne pouvez pas annuler ce changement par vous-même."
       ]
     },
     "info": {
@@ -6011,6 +6093,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Mot de passe du compte ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -9601,6 +9686,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Verify it’s you": [
+        "Vérifiez que c'est bien vous"
       ]
     },
     "Title header for keys table": {

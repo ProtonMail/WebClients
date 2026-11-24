@@ -85,7 +85,7 @@
         "Añadir método de pago"
       ],
       "Add people or groups to share": [
-        "Agregar personas o grupos para compartir"
+        "Añadir personas o grupos para compartir"
       ],
       "Add phone number": [
         "Agregar número telefónico"
@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "New": [
+        "Nuevo"
+      ],
+      "Skip to main content": [
+        "Saltar al contenido principal"
       ]
     },
     "Actions message": {
@@ -1057,6 +1063,13 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licencias del asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licencia de asistente de escritura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licencias de asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -3426,7 +3439,7 @@
         "La dirección podría estar mal escrita"
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
-        "El documento que intenta convertir es demasiado grande. Esto puede ocurrir si el documento tiene muchas imágenes u otra multimedia. Intente de nuevo con un documento más pequeño."
+        "El documento que intenta convertir es demasiado grande. Esto puede ocurrir si el documento tiene muchas imágenes u otra multimedia. Intente de nuevo con un documento pequeño."
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
@@ -3534,7 +3547,7 @@
         "Ubicación desconocida"
       ],
       "Update Too Large": [
-        "La actualización es demasiado grande."
+        "Actualización demasiado grande"
       ],
       "Username must begin with a letter or digit": [
         "El nombre de usuario debe comenzar con una letra o dígito"
@@ -3552,7 +3565,7 @@
         "Las claves de verificación para ${ signatureType } no están disponibles"
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
-        "Estamos teniendo problemas para guardar las ediciones recientes. Actualize la página."
+        "Estamos teniendo problemas para guardar las ediciones recientes. Refresque la página."
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Estamos teniendo problemas para sincronizar su documento. Actualice la página."
@@ -3614,6 +3627,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Failed to get invitee keys": [
+        "Error al obtener las claves de los invitados"
+      ],
+      "Failed to load the membership": [
+        "Error al cargar la membresía"
+      ],
+      "Failed to load the membership data": [
+        "Error al cargar los datos de la membresía"
+      ],
+      "Failed to verify membership": [
+        "Error al verificar la membresía"
+      ],
+      "Some invitations could not be loaded": [
+        "No se pudieron cargar algunas invitaciones"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "No pudimos comprobar si se puede recuperar de la papelera."
       ]
     },
     "error": {
@@ -3951,6 +3982,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite claves de seguridad. Intente con otro navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de llave de seguridad fue cancelada o se agotó la espera. Intente de nuevo."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Su dispositivo no pudo completar la solicitud de llave de seguridad. Intente de nuevo o use otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -4719,7 +4756,7 @@
         "Creando el documento..."
       ],
       "Creating new document…": [
-        "Creando el nuevo documento…"
+        "Creando el documento…"
       ],
       "Current plan": [
         "Plan actual"
@@ -5320,7 +5357,7 @@
         "La autoría de las ediciones en este documento no se pudo verificar. ¿Desea marcar este documento como verificado? Puede ignorar ahora y decidir después."
       ],
       "The Beginning": [
-        "Inicio"
+        "El inicio"
       ],
       "The document could not be created.": [
         "No se pudo crear el documento."
@@ -5332,7 +5369,7 @@
         "No se pudo cargar el editor."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
+        "La información expuesta fue filtrada desde un servicio de terceros. La información de su cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
@@ -5630,7 +5667,7 @@
         "Sus cambios se están sincronizando en Drive. No cierre la página web."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "Error al sincronizar los cambios. Drive intentará guardar los cambios automáticamente. No cierre la página web."
+        "Error al sincronizar sus cambios. Drive intentará guardar los cambios automáticamente. No cierre la página web."
       ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "El documento actual será reemplazado por esta versión. Los comentarios y sugerencias se eliminarán del documento, pero permanecerán accesibles en el historial de comentarios."
@@ -5639,10 +5676,10 @@
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
       "Your email address and password were leaked:": [
-        "La dirección de correo electrónico y contraseña fueron filtradas:"
+        "Su dirección de correo electrónico y contraseña fueron filtradas:"
       ],
       "Your email address was exposed:": [
-        "La dirección de correo electrónico fue expuesta:"
+        "Su dirección de correo electrónico fue expuesta:"
       ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
@@ -5675,7 +5712,7 @@
         "Su actividad en línea está protegida."
       ],
       "Your password was leaked:": [
-        "La contraseña fue filtrada:"
+        "Su contraseña fue filtrada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El número de teléfono sólo se usará para esta verificación única."
@@ -5704,6 +5741,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Beta": [
+        "Beta"
+      ],
+      "Your current document will be replaced with this version.": [
+        "Su documento actual se reemplazará con esta versión."
       ]
     },
     "info": {
@@ -6400,25 +6443,25 @@
     },
     "lumo_2026: feature": {
       "${ LUMO_SHORT_APP_NAME } Code": [
-        "${ LUMO_SHORT_APP_NAME } Código"
+        "${ LUMO_SHORT_APP_NAME } Code"
       ],
       "2x Basic usage": [
-        "El doble de uso que el plan Básico"
+        "2x del plan Basic"
       ],
       "5x Plus usage": [
         "Uso 5 veces superior al plan Plus"
       ],
       "API access, with ${ credit } a month credit": [
-        "Acceso con API, con ${ credit } de crédito mensual"
+        "Acceso a la API, con un crédito de ${ credit } al mes"
       ],
       "API access, with ${ credit } a month credit per user": [
-        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+        "Acceso a la API, con un crédito de ${ credit } al mes por usuario"
       ],
       "Everything in Basic, and:": [
-        "Todo en Básico, y:"
+        "Todo en Basic y:"
       ],
       "Everything in Free, and:": [
-        "Todo en Gratis, y:"
+        "Todo en Free y:"
       ],
       "Everything in Plus, and:": [
         "Todo en Plus, y:"
@@ -6430,13 +6473,13 @@
         "Incluye:"
       ],
       "Limited image generation": [
-        "Generación limitada de imágenes"
+        "Generación de imágenes limitada"
       ],
       "Limited messages and chat history": [
         "Mensajes limitados e historial de conversaciones"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Habilidades, proyectos y tareas programadas con límites"
+        "Habilidades, proyectos y tareas programadas limitados"
       ],
       "Maximum image generation": [
         "Generación máxima de imágenes"
@@ -6448,7 +6491,7 @@
         "Más generación de imágenes"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Más Habilidades, Proyectos y tareas programadas"
+        "Más habilidades, proyectos y tareas programadas"
       ],
       "More usage": [
         "Mayor uso"
@@ -6456,10 +6499,10 @@
     },
     "lumo_2026: Info": {
       "For coding and building": [
-        "Para programar y crear aplicaciones"
+        "Para programar y crear"
       ],
       "For everyday chats": [
-        "Para conversaciones cotidianas"
+        "Para charlas cotidianas"
       ],
       "For getting more done": [
         "Para lograr más"
@@ -7073,7 +7116,7 @@
         "Bóvedas compartidas ilimitadas de ${ PASS_SHORT_APP_NAME } por usuario"
       ],
       "Unlimited vault sharing": [
-        "Intercambios ilimitados de bóvedas"
+        "Compartir bóvedas ilimitado"
       ],
       "Unlimited vaults": [
         "Bóvedas ilimitadas"
@@ -7242,7 +7285,7 @@
         "${ VPN_APP_NAME }: Acceda a contenidos bloqueados y navegue de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de el escritorio"
+        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de su escritorio"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video"
@@ -7260,13 +7303,13 @@
         "Elimina automáticamente los mensajes anteriores a 30 días de la papelera y spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Reenvíe correos automáticamente enviados a la cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
+        "Reenvía correos automáticamente enviados a su cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue el mensaje"
+        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue su mensaje"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
@@ -8004,7 +8047,7 @@
     },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado las claves"
+        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado sus claves"
       ],
       "Organization key does not exist.": [
         "La clave de la organización no existe."
@@ -9564,7 +9607,7 @@
         "Obtenga más almacenamiento con ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
-        "Obtener las aplicaciones"
+        "Obtener las apps"
       ],
       "Groups": [
         "Grupos"
@@ -9881,6 +9924,9 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Verify it’s you": [
+        "Verifique que es usted"
       ]
     },
     "Title header for keys table": {

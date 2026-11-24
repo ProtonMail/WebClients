@@ -946,6 +946,21 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
+      ],
+      "Export this version (as odt)": [
+        "Exportar essa versão (como odt)"
+      ],
+      "New": [
+        "Novo"
+      ],
+      "OpenDocument Text (.odt)": [
+        "Texto OpenDocument (.odt)"
+      ],
+      "Skip to main content": [
+        "Pular para o conteúdo principal"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Expandir/recolher subpastas de ${ itemName }"
       ]
     },
     "Actions message": {
@@ -1054,6 +1069,13 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licença de assistente de escrita do ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenças de assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -3611,6 +3633,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "Some invitations could not be loaded": [
+        "Não foi possível carregar alguns convites"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Impossível verificar se é possível recuperar da lixeira."
       ]
     },
     "error": {
@@ -5698,6 +5726,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "Beta": [
+        "Beta"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "As licenças do assistente de escrita não são mais vendidas."
       ]
     },
     "info": {
@@ -6193,6 +6227,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Senha da conta da ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -6440,6 +6477,12 @@
       ],
       "More usage": [
         "Mais uso"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API com um crédito ${ credit } ao mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API com um crédito ${ credit } ao mês por usuário"
       ]
     },
     "lumo_2026: Info": {
@@ -6448,6 +6491,9 @@
       ],
       "For everyday chats": [
         "Para todos os bate-papos"
+      ],
+      "For getting more done": [
+        "Para ter mais produtividade"
       ]
     },
     "Mail import summary": {
@@ -9866,6 +9912,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Title header for keys table": {
