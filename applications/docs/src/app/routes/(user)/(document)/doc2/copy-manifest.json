@@ -104,14 +104,6 @@
     "notes": "The logo, app switcher and user menu, unchanged."
   },
   {
-    "doc2": "__components/ExportToPDFModal.tsx",
-    "kind": "copy",
-    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/ExportToPDFModal.tsx",
-    "sourceCommit": "f7ab3baa8b357a847de986f4af016fefbeb5ad98",
-    "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
-    "notes": "The modal and its strings; prints only once the modal and the backdrop have finished exiting."
-  },
-  {
     "doc2": "__components/HistoryTimeline.tsx",
     "kind": "copy",
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryTimeline.tsx",
@@ -739,16 +731,6 @@
     "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
     "copiedIn": "bead371a44edc4486e9b4ef9c08473433a23fd71",
     "notes": "The same handshake, password and states, returning the share-URL client and the link instead of leaving them in docs-core's module state."
-  },
-  {
-    "doc2": "__utils/usePublicLinkV2.ts",
-    "doc2Symbol": "PROTON_SHEET_VENDOR_TYPE",
-    "kind": "copy",
-    "source": "applications/docs/src/app/routes/(public)/__utils/useIsPathCorrectForVendorType.ts",
-    "sourceSymbol": "PROTON_SHEET_VENDOR_TYPE",
-    "sourceCommit": "a17d32178e57d6766d1b529417172ef5e174e7f0",
-    "copiedIn": "e024d3da79801d8e5cf20141866d5870cf20dec3",
-    "notes": "Verbatim, exported for doc2's public root."
   },
   {
     "doc2": "__utils/usePublicRealtimeClient.ts",

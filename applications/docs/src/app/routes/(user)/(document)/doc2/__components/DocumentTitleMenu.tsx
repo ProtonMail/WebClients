@@ -39,6 +39,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { c } from 'ttag'
 
 import { AutoGrowingInput } from '~/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/AutoGrowingInput'
+import { useExportToPDFModal } from '~/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/ExportToPDFModal'
 import { BetaFeatureBadge } from '~/components/document/DocumentLayout/DocumentHeader/BetaFeatureBadge'
 import { WordCountIcon } from '~/components/document/DocumentLayout/DocumentHeader/icons'
 import { useApplication } from '~/utils/application-context'
@@ -49,7 +50,6 @@ import { canOrganizeDocument, type DocumentRole } from '../__utils/getDocumentRo
 import { getNodeName } from '../__utils/getNodeName'
 import { renameDocument } from '../__utils/renameDocument'
 import type { TrashState } from '../__utils/useDocumentFileActions'
-import { useExportToPDFModal } from './ExportToPDFModal'
 import type { WordCount } from './WordCount'
 
 export type DocumentTitleMenuProps = {

@@ -21,7 +21,6 @@ vi.mock('@unleash/proxy-client-react', async () => ({
   useFlagsStatus: () => mockFlagsStatus,
 }))
 vi.mock('../__utils/usePublicLinkV2', () => ({
-  PROTON_SHEET_VENDOR_TYPE: 2,
   usePublicLinkV2: () => ({ publicLinkState: mockLinkState, submitPublicLinkPassword: vi.fn() }),
   traceErrorSDK: vi.fn(),
 }))
