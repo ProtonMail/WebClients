@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld("ipcMeetMessageBroker", {
     getScreenCaptureAccess: () => ipcRenderer.invoke("meetScreenCaptureAccess:get"),
     requestScreenCaptureAccess: () => ipcRenderer.invoke("meetScreenCaptureAccess:request"),
     setLocale: (locale) => ipcRenderer.send("meetLocale:set", locale),
+    setRecordingSaveInProgress: (isInProgress) => ipcRenderer.send("meetRecordingSave:set", isInProgress),
 } satisfies IPCMeetMessageBroker);
 
 disableMouseNavigation();

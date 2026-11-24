@@ -45,7 +45,7 @@ export const EndCallModalShell = ({
         dispatch(clearRecording());
     };
 
-    const { downloadLastRecording, hasRecordingToDownload } = useLastRecordingDownload();
+    const { downloadLastRecording, hasRecordingToDownload, isSavingRecording } = useLastRecordingDownload();
     const handleDownloadRecording = async () => {
         try {
             await downloadLastRecording();
@@ -75,8 +75,10 @@ export const EndCallModalShell = ({
                     <div className={clsx('flex flex-column md:flex-row gap-2 items-center w-full', !rejoin && 'pb-10')}>
                         {hasRecordingToDownload && (
                             <Button
-                                className="create-account-low-pressure-button rounded-full px-10 py-4 text-semibold w-full"
+                                className="create-account-low-pressure-button rounded-full py-4 text-semibold w-full"
+                                style={{ '--padding-inline': 'var(--space-10)' }}
                                 onClick={handleDownloadRecording}
+                                loading={isSavingRecording}
                                 size="medium"
                             >
                                 {c('Action').t`Download recording`}

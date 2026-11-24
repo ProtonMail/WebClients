@@ -58,7 +58,7 @@ const ConfirmationModalContent = ({
         <Button
             className={clsx(
                 'rounded-full text-semibold',
-                isRow && 'flex-1',
+                isRow ? 'flex-1' : 'w-full',
                 primaryButtonClass,
                 primaryLoading && primaryButtonClass === 'danger' && 'confirmation-modal-danger-loading'
             )}

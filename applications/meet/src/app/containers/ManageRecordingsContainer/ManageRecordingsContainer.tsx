@@ -15,7 +15,12 @@ import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { type OpfsRecording, selectRecordings, setRecordings } from '@proton/meet/store/slices/recordingsSlice';
+import {
+    type OpfsRecording,
+    getRecordingKey,
+    selectRecordings,
+    setRecordings,
+} from '@proton/meet/store/slices/recordingsSlice';
 import { selectUserId } from '@proton/meet/store/slices/userSlice';
 import { getRecordingSizeBucket } from '@proton/meet/telemetry/buckets';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -40,7 +45,7 @@ const formatDate = (timestamp: number) =>
 
 export const ManageRecordingsContainer = () => {
     const dispatch = useMeetDispatch();
-    const { downloadRecording } = useRecordingDownload();
+    const { downloadRecording, isRecordingSaving } = useRecordingDownload();
 
     const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
@@ -104,6 +109,34 @@ export const ManageRecordingsContainer = () => {
         }
     };
 
+    const renderDownloadButton = (recording: OpfsRecording) => {
+        const isSaving = isRecordingSaving(recording);
+
+        return (
+            <Button
+                size="small"
+                shape="ghost"
+                icon
+                onClick={() => {
+                    if (!isSaving) {
+                        void handleDownload(recording);
+                    }
+                }}
+                aria-disabled={isSaving}
+                title={c('Action').t`Download`}
+            >
+                {isSaving ? (
+                    <>
+                        <span className="sr-only">{c('Action').t`Download`}</span>
+                        <CircleLoader size="small" />
+                    </>
+                ) : (
+                    <IcArrowDownLine alt={c('Action').t`Download`} />
+                )}
+            </Button>
+        );
+    };
+
     const renderContent = () => {
         if (loading) {
             return (
@@ -134,7 +167,7 @@ export const ManageRecordingsContainer = () => {
                 <TableBody>
                     {recordings.map((recording) => (
                         <TableRow
-                            key={`${recording.folder ?? 'root'}/${recording.name}`}
+                            key={getRecordingKey(recording)}
                             labels={[
                                 c('Table header').t`Name`,
                                 c('Table header').t`Date`,
@@ -148,15 +181,7 @@ export const ManageRecordingsContainer = () => {
                                 formatDate(recording.createdAt),
                                 shortHumanSize(recording.size),
                                 <div className="flex flex-nowrap gap-2 justify-end">
-                                    <Button
-                                        size="small"
-                                        shape="ghost"
-                                        icon
-                                        onClick={() => handleDownload(recording)}
-                                        title={c('Action').t`Download`}
-                                    >
-                                        <IcArrowDownLine alt={c('Action').t`Download`} />
-                                    </Button>
+                                    {renderDownloadButton(recording)}
                                     <Button
                                         size="small"
                                         shape="ghost"

@@ -9,7 +9,7 @@ import { useRecordingDownload } from './useRecordingDownload';
 
 export const useLastRecordingDownload = () => {
     const { reportMeetError } = useMeetErrorReporting();
-    const { downloadRecording } = useRecordingDownload();
+    const { downloadRecording, isRecordingSaving } = useRecordingDownload();
 
     const recording = useMeetSelector(selectRecording);
     const recordingStatus = useMeetSelector(selectRecordingStatus);
@@ -37,5 +37,9 @@ export const useLastRecordingDownload = () => {
         }
     }, [recording, reportMeetError, downloadRecording]);
 
-    return { downloadLastRecording, hasRecordingToDownload };
+    return {
+        downloadLastRecording,
+        hasRecordingToDownload,
+        isSavingRecording: recording ? isRecordingSaving(recording) : false,
+    };
 };

@@ -1,10 +1,46 @@
-import { type DownloadItem, dialog } from "electron";
+import { type DownloadItem, type WebContents, dialog } from "electron";
 import { c } from "ttag";
 
 import { mainLogger } from "./log";
 import { appSession } from "./session";
 
 const activeDownloads = new Set<DownloadItem>();
+interface RecordingSaves {
+    count: number;
+    stopTracking: () => void;
+}
+
+const recordingSavesInProgress = new Map<WebContents, RecordingSaves>();
+
+export const setRecordingSaveInProgress = (webContents: WebContents, isInProgress: boolean) => {
+    const recordingSaves = recordingSavesInProgress.get(webContents);
+
+    if (recordingSaves) {
+        recordingSaves.count += isInProgress ? 1 : -1;
+        if (recordingSaves.count === 0) {
+            recordingSaves.stopTracking();
+        }
+        return;
+    }
+
+    if (!isInProgress) {
+        return;
+    }
+
+    const stopTracking = () => {
+        recordingSavesInProgress.delete(webContents);
+        webContents.off("did-navigate", stopTracking);
+        webContents.off("render-process-gone", stopTracking);
+        webContents.off("destroyed", stopTracking);
+        mainLogger.info("recording save finished");
+    };
+
+    webContents.on("did-navigate", stopTracking);
+    webContents.on("render-process-gone", stopTracking);
+    webContents.on("destroyed", stopTracking);
+    recordingSavesInProgress.set(webContents, { count: 1, stopTracking });
+    mainLogger.info("recording save started");
+};
 
 export const trackDownloads = () => {
     appSession().on("will-download", (_event, item) => {
@@ -19,7 +55,7 @@ export const trackDownloads = () => {
 };
 
 export const confirmQuitWithActiveDownloads = (): boolean => {
-    if (activeDownloads.size === 0) {
+    if (activeDownloads.size === 0 && recordingSavesInProgress.size === 0) {
         return true;
     }
 
@@ -43,6 +79,7 @@ export const confirmQuitWithActiveDownloads = (): boolean => {
             }
         }
         activeDownloads.clear();
+        [...recordingSavesInProgress.values()].forEach(({ stopTracking }) => stopTracking());
     }
 
     return quit;
