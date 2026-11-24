@@ -12,7 +12,6 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
-import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getReportInfo } from '@proton/components/helpers/report';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -29,6 +28,7 @@ import { composerActions } from '@proton/mail-composer/store/composers/composers
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import type { ConversationResult } from '@proton/mail-message/store/conversations/conversationsTypes';
+import { FILTER_VERSION } from '@proton/mail-settings/filters/constants';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { addFilter as addFilterAction, updateFilter as updateFilterAction } from '@proton/mail/store/filters/actions';

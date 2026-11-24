@@ -1,0 +1,201 @@
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/app-context/useNotifications';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import {
+    deleteForwarding,
+    requestConfirmation,
+    resendForwardingInvitation,
+    toggleForwardingInvitation,
+} from '@proton/mail/store/forwarding/outgoingForwardingActions';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { OutgoingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import isTruthy from '@proton/utils/isTruthy';
+
+import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
+import ForwardModal from './ForwardModal';
+
+interface Props {
+    existingForwardingConfig: OutgoingAddressForwarding;
+    user: UserModel;
+    addresses: Address[];
+    isLastOutgoingNonE2EEForwarding: boolean;
+    isLastOutgoingE2EEForwarding: boolean;
+}
+
+const OutgoingForwardActions = ({
+    user,
+    existingForwardingConfig,
+    addresses,
+    isLastOutgoingNonE2EEForwarding,
+    isLastOutgoingE2EEForwarding,
+}: Props) => {
+    const isPending = existingForwardingConfig.State === ForwardingState.Pending;
+    const isActive = existingForwardingConfig.State === ForwardingState.Active;
+    const isPaused = existingForwardingConfig.State === ForwardingState.Paused;
+    const isOutdated = existingForwardingConfig.State === ForwardingState.Outdated;
+    const isRejected = existingForwardingConfig.State === ForwardingState.Rejected;
+    const sentSuccessMessage = c('email_forwarding_2023: Success')
+        .t`Email sent to ${existingForwardingConfig.ForwardeeEmail}`;
+    const isInternal = existingForwardingConfig.Type === ForwardingType.InternalEncrypted;
+    const isExternal = existingForwardingConfig.Type === ForwardingType.ExternalUnencrypted;
+    const address = addresses.find((address) => address.ID === existingForwardingConfig.ForwarderAddressID) as Address;
+    const pointToProton = address?.ProtonMX === true; // the domain's record point to Proton servers
+    const reActivateE2EE = pointToProton && isLastOutgoingNonE2EEForwarding;
+    const reActivatePQC = isLastOutgoingE2EEForwarding;
+
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
+    const { createNotification } = useNotifications();
+    const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
+    const [confirmDeleteModalProps, setConfirmDeleteModalOpen, renderConfirmDeleteModal] = useModalState();
+
+    const handleDeleteForwarding = async () => {
+        try {
+            await dispatch(
+                deleteForwarding({
+                    address,
+                    forward: existingForwardingConfig,
+                    reActivateE2EE,
+                    reActivatePQC,
+                })
+            );
+            setConfirmDeleteModalOpen(false);
+            createNotification({ text: 'Forwarding deleted' });
+        } catch (e) {
+            handleError(e);
+        }
+    };
+
+    const list = [
+        user.hasPaidMail &&
+            (isActive || isPending) && {
+                key: 'edit',
+                text: c('email_forwarding_2023: Action').t`Edit`,
+                onClick: () => {
+                    showForwardModal({ existingForwardingConfig });
+                },
+            },
+        user.hasPaidMail &&
+            isInternal &&
+            isOutdated && {
+                key: 're-enable',
+                text: c('email_forwarding_2023: Action').t`Re-enable`,
+                onClick: async () => {
+                    // the primary keys might need fixing up, same as during initial forwarding setup
+                    showForwardModal({ existingForwardingConfig });
+                },
+            },
+        user.hasPaidMail &&
+            isInternal &&
+            isRejected && {
+                key: 'request-confirmation-internal',
+                text: c('email_forwarding_2023: Action').t`Request confirmation`,
+                onClick: async () => {
+                    try {
+                        await dispatch(requestConfirmation({ forward: existingForwardingConfig }));
+                        createNotification({ text: sentSuccessMessage });
+                    } catch (e) {
+                        handleError(e);
+                    }
+                },
+            },
+        user.hasPaidMail &&
+            isExternal &&
+            isRejected && {
+                key: 'request-confirmation-external',
+                text: c('email_forwarding_2023: Action').t`Request confirmation`,
+                onClick: async () => {
+                    try {
+                        await dispatch(resendForwardingInvitation({ forward: existingForwardingConfig }));
+                        createNotification({ text: sentSuccessMessage });
+                    } catch (e) {
+                        handleError(e);
+                    }
+                },
+            },
+        user.hasPaidMail &&
+            isExternal &&
+            isPending && {
+                key: 'resend-confirmation',
+                text: c('email_forwarding_2023: Action').t`Re-send confirmation email`,
+                onClick: async () => {
+                    try {
+                        await dispatch(resendForwardingInvitation({ forward: existingForwardingConfig }));
+                        createNotification({ text: sentSuccessMessage });
+                    } catch (e) {
+                        handleError(e);
+                    }
+                },
+            },
+        user.hasPaidMail &&
+            isActive && {
+                key: 'pause',
+                text: c('email_forwarding_2023: Action').t`Pause`,
+                onClick: async () => {
+                    try {
+                        await dispatch(
+                            toggleForwardingInvitation({ forward: existingForwardingConfig, enabled: false })
+                        );
+                        createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding paused` });
+                    } catch (e) {
+                        handleError(e);
+                    }
+                },
+            },
+        user.hasPaidMail &&
+            isPaused && {
+                key: 'resume',
+                text: c('email_forwarding_2023: Action').t`Resume`,
+                onClick: async () => {
+                    try {
+                        await dispatch(
+                            toggleForwardingInvitation({ forward: existingForwardingConfig, enabled: true })
+                        );
+                        createNotification({ text: c('email_forwarding_2023: Success').t`Forwarding resumed` });
+                    } catch (e) {
+                        handleError(e);
+                    }
+                },
+            },
+        {
+            key: 'delete',
+            text: c('email_forwarding_2023: Action').t`Delete`,
+            onClick: () => {
+                setConfirmDeleteModalOpen(true);
+            },
+        },
+    ].filter(isTruthy);
+
+    const { viewportWidth } = useActiveBreakpoint();
+
+    return (
+        <>
+            <DropdownActions
+                iconElement={viewportWidth['>=large'] ? <IcThreeDotsVertical /> : undefined}
+                list={list}
+                size="small"
+                shape="ghost"
+            />
+            {forwardModal}
+            {renderConfirmDeleteModal ? (
+                <ConfirmDeleteForwarding
+                    modalProps={confirmDeleteModalProps}
+                    onDelete={handleDeleteForwarding}
+                    onClose={() => setConfirmDeleteModalOpen(false)}
+                    reActivateE2EE={reActivateE2EE}
+                />
+            ) : null}
+        </>
+    );
+};
+
+export default OutgoingForwardActions;

@@ -1,8 +1,8 @@
-import { FILTER_VERSION } from '@proton/components/containers/filters/constants';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
+import { FILTER_VERSION } from '@proton/mail-settings/filters/constants';
 import type { Filter } from '@proton/sieve/filterModel';
 
 import type { MailToolDeps } from '../../toolModule';

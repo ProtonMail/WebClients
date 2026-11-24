@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { addWeeks, fromUnixTime, getUnixTime, isValid, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
-import { getMatchingTimezone } from '@proton/components/containers/autoReply/utils';
 import { IcClockPaperPlane } from '@proton/icons/icons/IcClockPaperPlane';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
@@ -14,6 +13,7 @@ import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { toText } from '@proton/mail-message/helpers/parserHtml';
 import { htmlEntities, replaceLineBreaks } from '@proton/mail-message/helpers/string';
+import { getMatchingTimezone } from '@proton/mail-settings/autoReply/utils';
 import { AutoReplyDuration } from '@proton/shared/lib/constants';
 import { getTimeZoneOptions, getTimezone } from '@proton/shared/lib/date/timezone';
 import type { AutoResponder } from '@proton/shared/lib/interfaces/MailSettings';

@@ -1,0 +1,93 @@
+import { useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { Href } from '@proton/atoms/Href/Href';
+import { Loader } from '@proton/atoms/Loader/Loader';
+import { SettingsCardSection } from '@proton/components/containers/account/SettingsCardSection';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
+import { filtersThunk } from '@proton/mail/store/filters';
+import { useFilters } from '@proton/mail/store/filters/hooks';
+import { CacheType } from '@proton/redux-utilities/interface';
+import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { Filter } from '@proton/sieve/filterModel';
+import move from '@proton/utils/move';
+
+import ActionsFilterToolbar from './ActionsFilterToolbar';
+import FilterSortableList from './FilterSortableList';
+import { useFilterDispatch } from './useFilterDispatch';
+
+function FiltersSection() {
+    const dispatch = useFilterDispatch();
+    const [filters, loading] = useFilters();
+    const api = useApi();
+    const { createNotification } = useNotifications();
+    const handleApplyFilter = async (filterId: string) => {
+        // Handle Filter API call
+        await api(applyFilters({ FilterIDs: [filterId] }));
+
+        createNotification({
+            text: c('Action').t`Filters are being applied. This might take a few minutes.`,
+            type: 'success',
+        });
+    };
+
+    const [list, setFilters] = useState<Filter[]>(() => filters || []);
+
+    useEffect(() => {
+        if (!Array.isArray(filters)) {
+            return;
+        }
+        setFilters(filters);
+    }, [filters]);
+
+    const onSortEnd = async ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => {
+        try {
+            const nextFilters = move(list, oldIndex, newIndex);
+            setFilters(nextFilters);
+
+            const filterIds = nextFilters.map(({ ID }) => ID);
+            await api(updateFilterOrder(filterIds));
+            await dispatch(filtersThunk({ cache: CacheType.None }));
+        } catch (e: any) {
+            setFilters(filters || []);
+        }
+    };
+
+    const contentRenderer = () => {
+        if (loading) {
+            return <Loader />;
+        }
+
+        return list.length ? (
+            <FilterSortableList
+                variant={SettingsLayoutVariant.Card}
+                items={list}
+                onSortEnd={onSortEnd}
+                onApplyFilter={handleApplyFilter}
+            />
+        ) : null;
+    };
+
+    return (
+        <SettingsCardSection
+            flush={!loading && !!list.length}
+            title={c('Title').t`Custom filters`}
+            description={
+                <>
+                    {c('FilterSettings')
+                        .t`Add a custom filter to automatically perform certain actions, like labeling or archiving messages.`}{' '}
+                    <Href href={getKnowledgeBaseUrl('/email-inbox-filters')}>{c('Link').t`Learn more`}</Href>
+                </>
+            }
+            actions={<ActionsFilterToolbar />}
+        >
+            {contentRenderer()}
+        </SettingsCardSection>
+    );
+}
+
+export default FiltersSection;

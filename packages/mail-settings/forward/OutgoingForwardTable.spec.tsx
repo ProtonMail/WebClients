@@ -1,0 +1,85 @@
+import type { MockedFunction } from 'vitest';
+
+import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/vitest/render';
+import { applyHOCs } from '@proton/components/testing/hocs/helpers';
+import { withApi } from '@proton/components/testing/vitest/with-api';
+import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
+import { withAuthentication } from '@proton/components/testing/with-authentication';
+import { withCache } from '@proton/components/testing/with-cache';
+import { withConfig } from '@proton/components/testing/with-config';
+import { withNotifications } from '@proton/components/testing/with-notifications';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+
+import OutgoingForwardTable from './OutgoingForwardTable';
+
+const OutgoingForwardTableContext = applyHOCs(
+    withApi(),
+    withEventManager(),
+    withCache(),
+    withNotifications(),
+    withConfig(),
+    withAuthentication()
+)(OutgoingForwardTable);
+
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
+
+vi.mock('@proton/account/addressKeys/hooks');
+const mockUserAddressesKeys = useAddressesKeys as MockedFunction<any>;
+
+describe('OutgoingForwardTable', () => {
+    beforeEach(() => {
+        const mockAddresses = [{ ID: 'AddressID' } as Address];
+        const mockAddressesKeys = [{}];
+        mockUseUser();
+        mockUseAddresses.mockReturnValue([mockAddresses, false]);
+        mockUserAddressesKeys.mockReturnValue(mockAddressesKeys);
+    });
+
+    const setup = () => {
+        const addresses = [
+            {
+                ID: 'addressID',
+                Email: 'forwarderEmail',
+            },
+        ] as Address[];
+        const chainedEmails = [''];
+        const user = {} as UserModel;
+        const outgoingAddressForwardings = [
+            {
+                ID: 'id',
+                ForwarderAddressID: 'addressID',
+                ForwardeeEmail: 'forwardeeEmail',
+                State: ForwardingState.Active,
+                CreateTime: 0,
+                Type: ForwardingType.InternalEncrypted,
+                Filter: null,
+            },
+        ];
+        const utils = renderWithProviders(
+            <OutgoingForwardTableContext
+                user={user}
+                outgoingAddressForwardings={outgoingAddressForwardings}
+                addresses={addresses}
+                chainedEmails={chainedEmails}
+            />
+        );
+        return { ...utils };
+    };
+    describe('when we display outgoing address forwarding', () => {
+        it('should show forwarder email address', () => {
+            const { getByText } = setup();
+            expect(getByText('forwarderEmail')).toBeInTheDocument();
+        });
+
+        it('should show forwardee email address', () => {
+            const { getByText } = setup();
+            expect(getByText('forwardeeEmail')).toBeInTheDocument();
+        });
+    });
+});
