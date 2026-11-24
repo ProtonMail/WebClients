@@ -101,6 +101,17 @@
         "Diensten"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Annuleer"
+      ],
+      "Clear application data": [
+        "Verwijder applicatiegegevens"
+      ],
+      "This removes all data associated with this app. The app will close and you will need to sign in again to use the app.": [
+        "Dit verwijdert alle gegevens die geassocieerd zijn met deze app. De app zal sluiten, waarna u opnieuw moet inloggen om de app opnieuw te gebruiken."
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "Nog steeds bezig met opslaan van een opname"
@@ -156,6 +167,67 @@
         "Venster"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Sta schermopname toe"
+      ],
+      "Cancel": [
+        "Annuleer"
+      ],
+      "Open System Settings": [
+        "Open Systeeminstellingen"
+      ],
+      "To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.": [
+        "Om je scherm te delen, sta Proton Meet toe in Systeem instellingen > Privacy & Veiligheid > Scherm & systeem audio-opnames"
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Ingebouwd"
+      ],
+      "Cancel": [
+        "Annuleer"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Display ${ screenNumber }": [
+        "Toon ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Volledig scherm"
+      ],
+      "External": [
+        "Extern"
+      ],
+      "Hide advanced options": [
+        "Verberg geavanceerde opties"
+      ],
+      "Just one app": [
+        "Maar één app"
+      ],
+      "No windows available to share": [
+        "Geen vensters beschikbaar om te delen"
+      ],
+      "Share": [
+        "Deel"
+      ],
+      "Share system audio": [
+        "Deel systeem audio"
+      ],
+      "Share your screen": [
+        "Scherm delen"
+      ],
+      "Show advanced options": [
+        "Toon geavanceerde opties"
+      ],
+      "Viewers only see this app, even if you switch windows.": [
+        "Deelnemers zien enkel deze app, zelfs als je van venster verandert"
+      ],
+      "Viewers see your entire screen, including apps and notifications.": [
+        "Deelnemers zien je hele scherm, inclusief apps en notificaties"
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Veranderingen die u heeft aangebracht worden mogelijk niet opgeslagen."
@@ -168,6 +240,20 @@
       ],
       "Stay": [
         "Blijf"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "${ MEET_APP_NAME } updaten"
+      ],
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "Er is een nieuwe versie van ${ MEET_APP_NAME } gedownload. Start de applicatie opnieuw op om de updates toe te passen."
+      ],
+      "Later": [
+        "Later"
+      ],
+      "Restart": [
+        "Herstart"
       ]
     }
   }
