@@ -130,8 +130,8 @@ const ApiKeysPanel = () => {
 
             <div className="flex items-center justify-space-between gap-4">
                 <div>
-                    <h1 className="m-0 lumo-title-large">{c('collider_2025: Title').t`Your API keys`}</h1>
-                    <p className="m-0 mt-1 lumo-body-small lumo-color-glyph-mid">
+                    <h1 className="m-0 mb-1 lumo-headline-small">{c('collider_2025: Title').t`Your API keys`}</h1>
+                    <p className="m-0 lumo-body-medium lumo-color-glyph-mid">
                         {c('collider_2025: Description')
                             .t`Create and revoke keys for your own programmatic access. Each key is shown only once.`}
                     </p>

@@ -172,7 +172,7 @@ export const ComposerToolbar = ({
 
     if (composerMode === ComposerMode.GALLERY) {
         return (
-            <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
+            <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1 pb-2">
                 <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                     <UploadMenuSection {...uploadSectionProps} buttonIcon={<LumoIcon name="ImagePlus" size={16} />} />
                 </div>

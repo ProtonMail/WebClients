@@ -70,7 +70,7 @@ const Segmented = <T extends string>({ value, onChange, options }: SegmentedProp
     <Tabs
         variant="modern"
         contained
-        className="customize-page-header__tabs shrink-0"
+        className="shrink-0"
         value={Math.max(
             0,
             options.findIndex((option) => option.value === value)

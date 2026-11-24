@@ -1,25 +1,4 @@
 .customize-page-header {
-	&__tabs.tabs.tabs--modern > .tabs-nav {
-		.tabs-list {
-			gap: var(--lumo-space-6);
-			padding: var(--lumo-space-4);
-			border-radius: var(--lumo-radius-12);
-		}
-
-		.tabs-list-link {
-			gap: var(--lumo-space-8);
-			padding-block: var(--lumo-space-6);
-			padding-inline: var(--lumo-space-12);
-			border-radius: var(--lumo-radius-8);
-			font: var(--lumo-type-label-large);
-		}
-
-		.tabs-indicator {
-			inset-block: var(--lumo-space-4);
-			border-radius: var(--lumo-radius-8);
-		}
-	}
-
 	&__add.button {
 		padding-block: calc(var(--lumo-space-8) - 1px);
 	}

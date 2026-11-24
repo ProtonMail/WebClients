@@ -116,13 +116,13 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                                 aiPaperTrailRoute && aiPaperTrailPopup && <PaperTrailPanel />
                             ))}
 
-                        <div className="composer-container md:px-4 w-full relative">
+                        <div className="composer-container relative w-full md:px-8">
                             <ImageLimitNotice exceedsLimit={imageLimitExceeded} exceedsPageLimit={pageLimitExceeded} />
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}
                                 handleSendMessage={handleSendMessage}
                                 isProcessingAttachment={isProcessingAttachment}
-                                className="main-container fixed bottom-0 md:static w-full z-20"
+                                className="main-container fixed z-20 md:static md:w-full"
                                 setIsEditorFocused={setIsEditorFocused}
                                 isEditorFocused={isEditorFocused}
                                 setIsEditorEmpty={setIsEditorEmpty}

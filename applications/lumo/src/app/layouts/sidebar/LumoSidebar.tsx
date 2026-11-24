@@ -1,5 +1,4 @@
 import { Suspense, lazy, memo, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -40,7 +39,6 @@ const ProjectsSidebarSection = lazy(() =>
 
 const LumoSidebarContent = () => {
     const { isSmallScreen, toggle, closeOnItemClick } = useSidebar();
-    const history = useHistory();
     const { showMobileHeader, showSearch, showGallery, showLibrary, showSchedules, showCustomize } =
         useSidebarVisibility();
     const isGuest = useIsGuest();
@@ -108,13 +106,12 @@ const LumoSidebarContent = () => {
                         {showLibrary && <LibrarySidebarButton onItemClick={closeOnItemClick} />}
                         {showCustomize && <CustomizeSidebarButton onItemClick={closeOnItemClick} />}
                         {apiKeyManagement && (
-                            <SidebarItem
+                            <SidebarRouteButton
                                 icon="CodeXml"
                                 label={c('collider_2025:Button').t`API`}
-                                onClick={() => {
-                                    history.push(hasVisitedApiDocs() ? '/docs/api#api-usage' : '/docs/api');
-                                    closeOnItemClick?.();
-                                }}
+                                onItemClick={closeOnItemClick}
+                                pathname="/docs/api"
+                                getDestination={() => (hasVisitedApiDocs() ? '/docs/api#api-usage' : '/docs/api')}
                             />
                         )}
                         {!isGuest && (

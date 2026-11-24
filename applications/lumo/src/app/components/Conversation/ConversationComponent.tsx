@@ -319,7 +319,7 @@ const ConversationLayout = ({
             >
                 <div
                     ref={chatContainerRef}
-                    className="conversation-split-row lumo-chat-container reset4print relative flex flex-column flex-1 w-full min-w-0 min-h-0 p-3 overflow-hidden"
+                    className="conversation-split-row lumo-chat-container relative flex flex-column flex-1 w-full min-w-0 min-h-0 px-0 pt-3 pb-8 overflow-hidden reset4print"
                 >
                     <div className="outer conversation-page-component reset4print flex flex-column flex-nowrap flex-1 w-full min-h-0 overflow-hidden radius-16">
                         <MessageChainComponent
@@ -337,33 +337,38 @@ const ConversationLayout = ({
                             composerContainerRef={composerContainerRef}
                             conversationId={conversationId}
                         />
-                        {conversationErrors.length > 0 && (
-                            <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
-                        )}
-                        <FileAnalysisLimitUpsell conversationId={conversationId} />
-                        <ConversationSurvey isGenerating={isGenerating} />
-                        <div
-                            ref={composerContainerRef}
-                            className="lumo-chat-item no-print flex flex-column flex-nowrap shrink-0 w-full max-w-custom mx-auto md:w-2/3"
-                            style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
-                        >
-                            <ImageLimitNotice exceedsLimit={imageLimitExceeded} exceedsPageLimit={pageLimitExceeded} />
-                            <ComposerComponent
-                                composerMode={ComposerMode.CONVERSATION}
-                                handleSendMessage={handleSendMessage}
-                                onAbort={handleAbort}
-                                isGenerating={isGenerating}
-                                isProcessingAttachment={isProcessingAttachment}
-                                inputContainerRef={inputContainerRef}
-                                messageChain={messageChain}
-                                handleOpenFiles={handleOpenFiles}
-                                onShowDriveBrowser={handleShowDriveBrowser}
-                                onOpenFilePreview={handleOpenFilePreview}
-                                initialQuery={initialQuery}
-                                prefillQuery={prefillQuery}
-                                spaceId={conversation?.spaceId}
-                                canShowGuestNotificationCard
-                            />
+                        <div className="flex flex-column flex-nowrap shrink-0 w-full px-8">
+                            {conversationErrors.length > 0 && (
+                                <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
+                            )}
+                            <FileAnalysisLimitUpsell conversationId={conversationId} />
+                            <ConversationSurvey isGenerating={isGenerating} />
+                            <div
+                                ref={composerContainerRef}
+                                className="lumo-chat-item flex flex-column flex-nowrap shrink-0 w-full max-w-custom mx-auto no-print"
+                                style={{ '--max-w-custom': '45rem' }}
+                            >
+                                <ImageLimitNotice
+                                    exceedsLimit={imageLimitExceeded}
+                                    exceedsPageLimit={pageLimitExceeded}
+                                />
+                                <ComposerComponent
+                                    composerMode={ComposerMode.CONVERSATION}
+                                    handleSendMessage={handleSendMessage}
+                                    onAbort={handleAbort}
+                                    isGenerating={isGenerating}
+                                    isProcessingAttachment={isProcessingAttachment}
+                                    inputContainerRef={inputContainerRef}
+                                    messageChain={messageChain}
+                                    handleOpenFiles={handleOpenFiles}
+                                    onShowDriveBrowser={handleShowDriveBrowser}
+                                    onOpenFilePreview={handleOpenFilePreview}
+                                    initialQuery={initialQuery}
+                                    prefillQuery={prefillQuery}
+                                    spaceId={conversation?.spaceId}
+                                    canShowGuestNotificationCard
+                                />
+                            </div>
                         </div>
                         <p className="relative hidden my-2 lumo-body-small text-center lumo-color-glyph-mid md:block">
                             {c('collider_2025: Disclosure')

@@ -88,8 +88,8 @@ function blobRadiusBreathe(timeSec, blob, freezePulse) {
     return { scale, opacity: scale };
 }
 
-const LUMO_DARK_BASE_COLOR = [11 / 255, 11 / 255, 11 / 255];
-const LUMO_LIGHT_BASE_COLOR = [245 / 255, 246 / 255, 254 / 255];
+const LUMO_DARK_BASE_COLOR = [6 / 255, 6 / 255, 6 / 255];
+const LUMO_LIGHT_BASE_COLOR = [250 / 255, 251 / 255, 1];
 
 function isLumoDarkTheme() {
     if (typeof document === 'undefined') {
@@ -99,7 +99,7 @@ function isLumoDarkTheme() {
 }
 
 /**
- * Resolves a CSS custom property (e.g. `--background-main-canvas`) to RGB 0–1 for the shader.
+ * Resolves a CSS custom property (e.g. `--lumo-page`) to RGB 0–1 for the shader.
  * @param {string | null | undefined} cssVar
  * @param {[number, number, number]} fallback
  * @returns {[number, number, number]}

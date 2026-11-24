@@ -837,19 +837,21 @@
 		}
 
 		&.tabs--modern > .tabs-nav .tabs-list {
-			padding: var(--lumo-space-2);
-			gap: var(--lumo-space-2);
-			border-radius: var(--lumo-radius-8);
+			padding: var(--lumo-space-4);
+			gap: var(--lumo-space-6);
+			border-radius: var(--lumo-radius-12);
 			background-color: var(--lumo-control-tab-track);
 		}
 
 		&:where(.tabs--modern > .tabs-nav) .tabs-list-link {
-			font: var(--lumo-type-label-small);
+			font: var(--lumo-type-label-large);
 		}
 
 		&.tabs--modern > .tabs-nav .tabs-list-link {
-			padding-block: var(--lumo-space-4);
-			padding-inline: var(--lumo-space-10);
+			gap: var(--lumo-space-8);
+			padding-block: var(--lumo-space-6);
+			padding-inline: var(--lumo-space-12);
+			border-radius: var(--lumo-radius-8);
 			color: var(--lumo-glyph-mid);
 
 			&[aria-selected='true'],
@@ -874,7 +876,8 @@
 		&.tabs--modern > .tabs-nav .tabs-indicator {
 			--lumo-tab-start: var(--tabs_translate, 0px);
 
-			inset-block: var(--lumo-space-2);
+			inset-block: var(--lumo-space-4);
+			border-radius: var(--lumo-radius-8);
 			inset-inline: var(--lumo-tab-start) calc(100% - var(--lumo-tab-start) - var(--tabs_width, 0px));
 			inline-size: auto;
 			transform: none;

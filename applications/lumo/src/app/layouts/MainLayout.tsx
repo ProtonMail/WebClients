@@ -49,13 +49,13 @@ const MainLayoutContent = ({ children }: Props) => {
             <div className="outer-layout-background relative flex flex-row w-full h-full overflow-hidden lumo-bg-page reset4print">
                 <div className="inner-layout-background absolute top-0 left-0 w-full h-full no-print">
                     <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
-                        <div className="main-layout-component flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative md:p-2">
+                        <div className="main-layout-component relative flex flex-row flex-nowrap flex-1 w-full min-h-0 reset4print md:p-2 md:pr-0">
                             <div className="lumo-sidebar-shell shrink-0 h-full min-h-0 self-stretch">
                                 <LumoSidebar />
                             </div>
                             <main
                                 ref={chatRef}
-                                className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative overflow-hidden min-w-0"
+                                className="relative flex flex-column flex-nowrap flex-1 min-w-0 overflow-hidden reset4print md:pr-2 md:rounded-xl"
                             >
                                 {isHomepage && <MainLayoutAnimatedBackground />}
                                 <HighLoadWarning />

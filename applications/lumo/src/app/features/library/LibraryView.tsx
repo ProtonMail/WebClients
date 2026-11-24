@@ -90,7 +90,7 @@ const CreationsContent = ({ searchQuery, creations }: CreationsContentProps) => 
 
     return (
         <div className="flex-1 min-h-0 overflow-auto">
-            <div className="library-inner mx-auto px-6 pb-8">
+            <div className="w-full max-w-custom mx-auto pb-10" style={{ '--max-w-custom': '75rem' }}>
                 <LibraryCreationsTab
                     entries={entries}
                     visibleEntries={matches.slice(0, shownCount)}
@@ -166,12 +166,12 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
-            <div className="flex flex-column flex-1 min-h-0">
-                <div className="library-inner mx-auto shrink-0 px-6 pt-8">
+            <div className="flex flex-column flex-1 min-h-0 px-8 pt-2">
+                <div className="shrink-0 w-full max-w-custom mx-auto" style={{ '--max-w-custom': '75rem' }}>
                     <div className="flex flex-row flex-wrap items-start justify-space-between gap-4 mb-6">
                         <div className="flex flex-column gap-1">
                             <h1 className="m-0 lumo-headline-small">{c('collider_2025:Title').t`Library`}</h1>
-                            <p className="m-0 lumo-color-glyph-mid">
+                            <p className="m-0 lumo-body-medium lumo-color-glyph-mid">
                                 {c('collider_2025:Info')
                                     .t`Creations and images ${LUMO_SHORT_APP_NAME} made in your chats.`}
                             </p>
@@ -221,7 +221,10 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                 ) : activeTab === 'creations' ? (
                     <CreationsContent searchQuery={searchQuery} creations={creations} />
                 ) : (
-                    <div className="relative flex flex-column flex-1 min-h-0">
+                    <div
+                        className="relative flex flex-column flex-1 w-full max-w-custom min-h-0 mx-auto"
+                        style={{ '--max-w-custom': '75rem' }}
+                    >
                         <GalleryView
                             layout="embedded"
                             isProcessingAttachment={isProcessingAttachment}

@@ -13,8 +13,15 @@ interface CustomizePageProps {
 
 /** Scrolling page body shared by the Customize screens, so they all have the same width. */
 export const CustomizePage = ({ className, fill = false, children }: CustomizePageProps) => (
-    <div className="customize-page w-full flex-1 overflow-auto px-6 pb-10 pt-8">
-        <div className={clsx('customize-page__inner mx-auto', fill && 'customize-page__inner--fill', className)}>
+    <div className="customize-page flex-1 w-full px-8 pt-2 pb-10 overflow-auto">
+        <div
+            className={clsx(
+                'customize-page__inner w-full max-w-custom mx-auto',
+                fill && 'customize-page__inner--fill',
+                className
+            )}
+            style={{ '--max-w-custom': '60rem' }}
+        >
             {children}
         </div>
     </div>
