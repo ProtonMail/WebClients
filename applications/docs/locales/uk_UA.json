@@ -4,14 +4,6 @@
     "language": "uk_UA"
   },
   "contexts": {
-    "account": {
-      "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Незабаром розпочнеться пересилання. Нові листи з'являться у вашій поштовій скриньці."
-      ],
-      "Mail forward stopped": [
-        "Пересилання пошти зупинено"
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Виявлено ${ name } та ${ remainingCount } інші потенційні витоки даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
@@ -132,17 +124,8 @@
       "Chat with us": [
         "Чат з нами"
       ],
-      "Check import progress": [
-        "Переглянути перебіг імпорту"
-      ],
       "Choose a file or drag it here": [
         "Виберіть файл або перетягніть його сюди"
-      ],
-      "Claim this address": [
-        "Отримати цю адресу"
-      ],
-      "Claim your free ${ BRAND_NAME } address": [
-        "Отримайте безкоштовну адресу ${ BRAND_NAME }"
       ],
       "Clear data": [
         "Стерти дані"
@@ -164,9 +147,6 @@
       ],
       "Collaborate on documents": [
         "Сумісна робота на документах"
-      ],
-      "Collapse": [
-        "Згорнути"
       ],
       "Collapse list": [
         "Згорнути список"
@@ -195,20 +175,8 @@
       "Continue": [
         "Продовжити"
       ],
-      "Continue import": [
-        "Продовжити імпорт"
-      ],
       "Continue to ${ planOrAppName }": [
         "Продовжити в ${ planOrAppName }"
-      ],
-      "Continue with Free": [
-        "Продовжити безкоштовно"
-      ],
-      "Continue with Google": [
-        "Продовжити з Google"
-      ],
-      "Continue with Outlook": [
-        "Продовжити з Outlook"
       ],
       "Copy address": [
         "Копіювати адресу"
@@ -243,17 +211,8 @@
       "Create new ${ SHEETS_APP_NAME }": [
         "Створити новий ${ SHEETS_APP_NAME }"
       ],
-      "Create new folder": [
-        "Створити нову теку"
-      ],
       "Create new password": [
         "Створити новий пароль"
-      ],
-      "Customize": [
-        "Налаштувати"
-      ],
-      "Customize import": [
-        "Налаштувати імпорт"
       ],
       "Decline invitation": [
         "Відхилити запрошення"
@@ -294,9 +253,6 @@
       "Deselect all": [
         "Скасувати вибір"
       ],
-      "Discard": [
-        "Відхилити"
-      ],
       "Dismiss": [
         "Відхилити"
       ],
@@ -330,9 +286,6 @@
       "Edit email address": [
         "Змінити адресу е-пошти"
       ],
-      "Edit label": [
-        "Редагувати мітку"
-      ],
       "Edit phone number": [
         "Змінити номер телефону"
       ],
@@ -347,9 +300,6 @@
       ],
       "Encrypted": [
         "Зашифровано"
-      ],
-      "Expand": [
-        "Розгорнути"
       ],
       "Explore other plans": [
         "Ознайомитися з іншими тарифними планами"
@@ -444,23 +394,11 @@
       "import": [
         "імпортувати"
       ],
-      "Import contacts": [
-        "Імпортувати контакти"
-      ],
       "Import data": [
         "Імпортувати дані"
       ],
       "Import emails, calendars, contacts": [
         "Імпортуйте електронні листи, календарі, контакти"
-      ],
-      "Import from .csv or vCard": [
-        "Імпортувати з .csv або vCard"
-      ],
-      "Import from Google": [
-        "Імпортувати з Google"
-      ],
-      "Import from Outlook": [
-        "Імпортувати з Outlook"
       ],
       "Keep my subscription": [
         "Зберегти передплату"
@@ -480,20 +418,11 @@
       "Make a copy": [
         "Зробити копію"
       ],
-      "Manage addresses": [
-        "Керувати адресами"
-      ],
       "Manage advanced account protections": [
         "Керуйте розширеним захистом облікового запису"
       ],
-      "Manage folders": [
-        "Керувати теками"
-      ],
       "Manage groups": [
         "Керуйте групами"
-      ],
-      "Manage labels": [
-        "Керувати мітками"
       ],
       "Manage users/addresses": [
         "Керуйте користувачами та адресами"
@@ -539,6 +468,9 @@
       ],
       "Move to trash": [
         "Перемістити до смітника"
+      ],
+      "New": [
+        "Створити"
       ],
       "New document": [
         "Новий документ"
@@ -597,17 +529,8 @@
       "Print": [
         "Друкувати"
       ],
-      "Quit": [
-        "Вийти"
-      ],
       "Re-sign": [
         "Перепідписати"
-      ],
-      "Reconnect": [
-        "Відновити з'єднання"
-      ],
-      "Reconnect to Gmail": [
-        "Повторно підключитися до Gmail"
       ],
       "Recover data": [
         "Відновити дані"
@@ -665,9 +588,6 @@
       ],
       "Resend invite": [
         "Повторно надіслати запрошення"
-      ],
-      "Reset to default": [
-        "Відновити типові"
       ],
       "Restore": [
         "Відновити"
@@ -774,17 +694,11 @@
       "Sign up": [
         "Зареєструватися"
       ],
-      "Skip verification": [
-        "Пропустити перевірку"
+      "Skip to main content": [
+        "Перейти до основного вмісту"
       ],
       "Sort by": [
         "Сортувати"
-      ],
-      "Start import": [
-        "Розпочати імпорт"
-      ],
-      "Stay": [
-        "Залишитися"
       ],
       "Stop sharing": [
         "Припинити спільний доступ"
@@ -1046,9 +960,6 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Якщо ви зараз вийдете, деякі контакти можуть не імпортуватися"
-      ],
-      "By leaving now, some events may not be imported": [
-        "Якщо ви зараз вийдете, деякі події можуть не імпортуватися"
       ]
     },
     "Apps dropdown": {
@@ -1062,26 +973,6 @@
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
         "Підніміть ефективність роботи з електронною поштою на новий рівень. Дозвольте ${ LUMO_SHORT_APP_NAME } допомогти вам писати, відповідати та вичитувати ваші електронні листи."
-      ]
-    },
-    "Attached ics file error": {
-      "Empty ICS file": [
-        "Порожній файл ICS"
-      ],
-      "Invalid event": [
-        "Недійсна подія"
-      ],
-      "Invalid ICS file": [
-        "Недійсний файл ICS"
-      ],
-      "Invalid method": [
-        "Недійсний спосіб"
-      ],
-      "Unsupported calendar component": [
-        "Непідтримуваний компонент календаря"
-      ],
-      "Unsupported event": [
-        "Непідтримувана подія"
       ]
     },
     "Autocomplete": {
@@ -1549,14 +1440,6 @@
       ],
       "strawberry": [
         "полуничний"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import customization?": [
-        "Закрити налаштування імпорту?"
-      ],
-      "Quit import?": [
-        "Вийти з імпорту?"
       ]
     },
     "Contact field label": {
@@ -2507,9 +2390,6 @@
       "Automatically forward incoming email to another email address.": [
         "Автоматично пересилайте вхідну пошту на іншу адресу електронної пошти."
       ],
-      "Available storage: ${ storageText }": [
-        "Доступне сховище: ${ storageText }"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Щоб активувати вашу організацію та налаштувати вашу адресу електронної пошти, спочатку налаштуйте це."
       ],
@@ -2531,17 +2411,11 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Легко синхронізуйте файли у хмару з комп'ютера та отримуйте доступ до них із мобільного пристрою."
       ],
-      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "Електронні листи, надіслані на ${ connectedAddressText }, тепер з'являтимуться в ${ MAIL_APP_NAME }."
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Сприяйте використанню двоетапної перевірки у вашій організації для додаткової безпеки."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
-      ],
-      "Enough room for years of emails, attachments and more.": [
-        "Достатньо місця для електронних листів, вкладень та багато чого іншого на роки вперед."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Забезпечте безпечний доступ до даних організації, навіть якщо ваша команда працює віддалено або використовує публічний WiFi."
@@ -2582,15 +2456,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Спростіть синхронізацію та планування за допомогою спільних календарів."
       ],
-      "This may happen if permissions were removed or your password changed.": [
-        "Це може статися, якщо дозволи було вилучено або ваш пароль змінився."
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
-        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свій обліковий запис."
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
-        "Щоб і надалі отримувати й надсилати повідомлення Gmail у ${ BRAND_NAME }, повторно підключіть свої облікові записи."
-      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Для гарантування максимальної безпеки вашого облікового запису налаштуйте фразу відновлення."
       ],
@@ -2603,9 +2468,6 @@
       "To start, give your organization a name.": [
         "Для початку вкажіть назву вашої організації."
       ],
-      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
-        "Розблокуйте 15 ГБ сховища всього за ${ config.offerPrice }."
-      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Покращте тарифний план до ${ planName }, щоб продовжувати ділитися файлами з доступом до змінення"
       ],
@@ -2615,41 +2477,20 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Скористайтеся цим посібником, щоб ваша організація могла швидко оцінити переваги провідних у галузі технологій шифрування та екосистеми приватності ${ BRAND_NAME }."
       ],
-      "We can't access ${ boldEmails } anymore.": [
-        "Ми більше не маємо доступу до ${ boldEmails }."
-      ],
-      "We will pause imports at 80% storage to reserve space for new messages.": [
-        "Ми призупинимо імпорт, коли сховище буде заповнено на 80%, щоб зберегти місце для нових повідомлень."
-      ],
-      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Ми почали імпортувати ваші електронні листи з Gmail. Ми повідомимо вас, коли процес завершиться."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам прикро, що ви йдете. Якщо у вас є хвилинка, ми будемо дуже вдячні почути причину, чому ви хочете скасувати передплату. Ваш відгук допомагає нам зробити ${ BRAND_NAME } кращим для кожного."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "З контактними групами ви можете відправляти листи всім у групі одним натисканням."
       ],
-      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Ви можете імпортувати події в форматі iCal (файл ICS). Максимальний розмір файлу повинен бути ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_EVENTS_STRING } подій. Якщо ваш файл більший, розділіть його на менші файли."
-      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Ви можете позначити ті контакти, які ви не хочете ані об'єднувати, ані зберігати. Видалення відбудеться лише після натискання кнопки об'єднання"
-      ],
-      "You can now send emails from ${ BRAND_NAME } using this address.": [
-        "Тепер ви можете надсилати електронні листи з ${ BRAND_NAME }, використовуючи цю адресу."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ваш обліковий запис і способи відновлення налаштовано, а двоетапну автентифікацію ввімкнено."
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ${ newUserStorageText } ваших найновіших повідомлень Gmail"
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "Ваш безкоштовний обліковий запис ${ MAIL_APP_NAME } має обмежений обсяг сховища, тому ми імпортуємо лише ваші найновіші електронні листи з Gmail."
       ]
     },
     "description": {
@@ -2711,7 +2552,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Proton Mail захищає ваші листи за допомогою наскрізного шифрування з нульовим доступом, щоб ніхто сторонній (навіть Proton) не зміг прочитати ваші листи."
+        "Допоможіть нам покращитися"
       ]
     },
     "Downgrade warning": {
@@ -2785,100 +2626,12 @@
         "Поділіться перевагами свого тарифного плану з ${ BRAND_NAME } Duo"
       ]
     },
-    "Email body for invitation": {
-      "${ eventTitle } was canceled.": [
-        "Подію ${ eventTitle } скасовано."
-      ],
-      "All events in this series were updated.": [
-        "Усі події в цій серії оновлено."
-      ],
-      "DESCRIPTION:": [
-        "ОПИС:"
-      ],
-      "Here's what changed:": [
-        "Ось що змінилося:"
-      ],
-      "LOCATION:": [
-        "РОЗТАШУВАННЯ:"
-      ],
-      "NOTE:": [
-        "ПРИМІТКА:"
-      ],
-      "This event occurrence was canceled.": [
-        "Це повторення події скасовано."
-      ],
-      "This event occurrence was updated.": [
-        "Це повторення події оновлено."
-      ],
-      "This event was updated.": [
-        "Цю подію оновлено."
-      ],
-      "TIME:": [
-        "ЧАС:"
-      ],
-      "TITLE:": [
-        "ЗАГОЛОВОК:"
-      ],
-      "You are invited to": [
-        "Вас запрошено на"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "TIME:\n${ formattedStart }": [
-        "ЧАС: \n${ formattedStart }"
-      ],
-      "TIME:\n${ formattedStart } (all day)": [
-        "ЧАС:\n${ formattedStart } (увесь день)"
-      ],
-      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "ЧАС:\n${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (event details part)": {
-      "Removed": [
-        "Вилучено"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає ваше запрошення на подію ${ eventTitle }"
-      ],
-      "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } відхиляє ваше запрошення на подію ${ eventTitle }"
-      ],
-      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } приймає із сумнівом ваше запрошення на подію ${ eventTitle }"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Скасування події ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Скасування події, що починається ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Запрошення на подію ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Запрошення на подію, що починається ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Оновлення для події ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Оновлення для події, що починається ${ formattedStart }"
-      ]
-    },
     "emergency_access": {
       "Trusted contact": [
         "Довірений контакт"
       ]
     },
     "Error": {
-      "${ BRAND_NAME } can't connect to your external account": [
-        "${ BRAND_NAME } не може під'єднатися до вашого зовнішнього облікового запису"
-      ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } оновлено. Будь ласка, оновіть сторінку."
       ],
@@ -2891,20 +2644,11 @@
         "Не вдалося перемістити ${ failureItems.length } елементів",
         "Не вдалося перемістити ${ failureItems.length } елементів"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } – ваше ім'я користувача. Щоб створити ${ emailAddress }, відкрийте Налаштування > Особистість й адреси > Короткий домен (pm.me)"
-      ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
       "A message is required when reporting copyright infringement or stolen data": [
         "Для звітування про порушення авторських прав або викрадення даних необхідно залишити повідомлення"
-      ],
-      "Address could not be added.": [
-        "Не вдалося додати адресу."
-      ],
-      "Address primary private key not found": [
-        "Основний приватний ключ адреси не знайдено"
       ],
       "Already a member of this share": [
         "Вже є учасником цього спільного доступу"
@@ -2927,17 +2671,8 @@
       "An error occurred while creating a new document. Please try again.": [
         "Виникла помилка при створенні нового документа. Спробуйте ще раз."
       ],
-      "Authentication canceled.": [
-        "Автентифікацію скасовано."
-      ],
-      "Authentication error.": [
-        "Помилка автентифікації."
-      ],
       "Bookmark password is not available": [
         "Пароль для закладки недоступний"
-      ],
-      "Calendar limit reached": [
-        "Досягнуто ліміту календарів"
       ],
       "Cannot add photo to album without a valid name": [
         "Неможливо додати фото до альбому без вказання правильної назви"
@@ -3005,26 +2740,11 @@
       "Creating folders in non-folders is not allowed": [
         "Створення тек в елементах, що не є теками, заборонено"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря або",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
-      ],
       "Device not found": [
         "Пристрій не знайдено"
       ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
-      ],
-      "Email address is required": [
-        "Адреса е-пошти обов'язкова"
       ],
       "Email is not valid": [
         "Е-пошта недійсна"
@@ -3034,9 +2754,6 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Введіть ім'я користувача без домену (@example.com)"
-      ],
-      "Error decrypting a computer": [
-        "Помилка розшифрування комп'ютера"
       ],
       "Expiration date cannot be in the past": [
         "Дата закінчення терміну дії не може бути минулою"
@@ -3122,17 +2839,11 @@
       "First name is too long": [
         "Ім'я занадто довге"
       ],
-      "Folder name cannot be empty.": [
-        "Тека не може бути без назви."
-      ],
       "Image preview not found": [
         "Попередній перегляд зображення не знайдено"
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
-      ],
-      "IMAP server is required": [
-        "Сервер IMAP обов'язковий"
       ],
       "Incorrect backup password. Please try again.": [
         "Неправильний резервний пароль. Будь ласка, спробуйте ще раз."
@@ -3164,23 +2875,11 @@
       "Item not found": [
         "Елемент не знайдено"
       ],
-      "Label name cannot be empty.": [
-        "Мітка не може бути без назви."
-      ],
       "Last name is too long": [
         "Прізвище занадто довге"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Старе публічне посилання неможливо оновити. Будь ласка, повторно створіть нове публічне посилання."
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarsToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }"
-      ],
-      "Missing key packet": [
-        "Відсутній пакунок ключів"
       ],
       "Missing signature": [
         "Відсутній підпис"
@@ -3199,18 +2898,6 @@
       ],
       "Name must not be empty": [
         "Поле «Ім’я» не може бути порожнім"
-      ],
-      "No calendars found to import": [
-        "Не знайдено календарів для імпортування"
-      ],
-      "No contacts found to import": [
-        "Не знайдено контактів для імпортування"
-      ],
-      "No drive found to import": [
-        "Не знайдено диска для імпортування"
-      ],
-      "No emails found to import - the account does not have an inbox": [
-        "Не знайдено електронних листів для імпортування - обліковий запис не має вхідних"
       ],
       "No file data was received. Please try again.": [
         "Дані файлу не отримано. Будь ласка, спробуйте ще раз."
@@ -3245,15 +2932,6 @@
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
       ],
-      "Organization key must be activated to create invited users": [
-        "Необхідно активувати ключ організації, щоб створити запрошених користувачів"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Щоб створити неприватних користувачів, необхідно активувати ключ організації"
-      ],
-      "Password is required": [
-        "Пароль обов'язковий"
-      ],
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
@@ -3275,12 +2953,6 @@
       "Please enter ZIP code": [
         "Введіть дійсний поштовий індекс"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Виправте вказану проблему, щоб продовжити.",
-        "Виправте вказані проблеми, щоб продовжити.",
-        "Виправте вказані проблеми, щоб продовжити.",
-        "Виправте вказані проблеми, щоб продовжити."
-      ],
       "Please provide either a first name, a last name or a display name": [
         "Введіть ім'я, прізвище або псевдонім"
       ],
@@ -3289,15 +2961,6 @@
       ],
       "Please select a state": [
         "Виберіть регіон"
-      ],
-      "Port is required": [
-        "Порт обов'язковий"
-      ],
-      "Primary address key is not decrypted": [
-        "Ключ основної адреси не розшифрований"
-      ],
-      "Primary address key is not decrypted.": [
-        "Ключ основної адреси не розшифрований."
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "Видалено дублікат запрошення: ${ joinedInvitee }",
@@ -3344,29 +3007,11 @@
       "Some items could not be loaded": [
         "Деякі елементи не вдалося завантажити"
       ],
-      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Назви деяких ваших тек недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
-      ],
-      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Назви деяких ваших тек перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
-      ],
-      "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Назви деяких ваших міток зарезервовані. Налаштуйте імпорт для зміни цих назв."
-      ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Назви деяких ваших міток недоступні. Будь ласка, налаштуйте імпорт для зміни цих назв."
-      ],
-      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
-      ],
       "Some trashed documents could not be loaded": [
         "Не вдалося завантажити деякі документи зі Смітника"
       ],
       "Something went wrong": [
         "Щось пішло не так"
-      ],
-      "Something went wrong while fetching available domains": [
-        "Під час отримання доступних доменів сталася помилка"
       ],
       "Something went wrong. Please try again.": [
         "Сталася помилка. Повторіть спробу пізніше."
@@ -3386,18 +3031,6 @@
       "The email addresses do not match": [
         "Електронні адреси відрізняються"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        "Назва теки неправильна. Оберіть іншу назву."
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        "Назва теки надто довга. Будь ласка, скоротіть назву."
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        "Назва мітки неправильна. Оберіть іншу назву."
-      ],
-      "The label name is too long. Please choose a different name.": [
-        "Назва мітки надто довга. Будь ласка, скоротіть назву."
-      ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Останнє оновлення, яке ви зробили в документі, або занадто велике, або перевищує загальний ліміт розміру документа. Редагування тимчасово вимкнено. Ваші зміни не будуть збережені. Експортуйте копію документа та перезавантажте сторінку."
       ],
@@ -3406,9 +3039,6 @@
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Вивантажений файл не відповідає оригіналу. Будь ласка, спробуйте ще раз."
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "У вашому зовнішньому обліковому записі надто багато тек. Будь ласка, налаштуйте імпорт для видалення деяких тек."
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Сталася помилка під час обробки оновлень документа. Будь ласка, перезавантажте сторінку та спробуйте знову."
@@ -3440,9 +3070,6 @@
       "This file version could not be uploaded": [
         "Цю версію файлу не вдалося вивантажити"
       ],
-      "This folder name is not available. Please choose a different name.": [
-        "Назва теки недоступна. Оберіть іншу назву."
-      ],
       "This item has no image preview": [
         "Для цього елемента немає попереднього перегляду зображення"
       ],
@@ -3451,9 +3078,6 @@
       ],
       "This item is not shared": [
         "Цей елемент не доступний для спільного використання"
-      ],
-      "This label name is not available. Please choose a different name.": [
-        "Назва мітки недоступна. Оберіть іншу назву."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
@@ -3472,12 +3096,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Не вдалося завантажити панель керування VPN. Перевірте з'єднання та спробуйте знову."
-      ],
-      "Unexpected error, we can't import the contacts": [
-        "Неочікувана помилка, неможливо імпортувати контакти"
-      ],
-      "Unexpected error, we can't import the files": [
-        "Неочікувана помилка, не вдалося імпортувати файли"
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -3508,6 +3126,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "У нас виникли проблеми із синхронізацією вашого документа. Оновіть сторінку."
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Нам не вдалося перевірити, чи можна витягнути це з кошика."
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Не вдалося імпортувати цей файл у ${ SHEETS_APP_NAME }. Спробуйте скопіювати та вставити вміст у новий ${ SHEETS_APP_NAME }."
@@ -3545,17 +3166,8 @@
       "You do not have access to this shared item": [
         "У вас немає доступу до цього спільного елемента"
       ],
-      "You have reached the maximum number of calendars.": [
-        "Ви досягли максимальної кількості календарів."
-      ],
-      "You have reached the number of contacts limit for your account": [
-        "Ви досягли ліміту кількості контактів для вашого облікового запису"
-      ],
       "You must set a name": [
         "Ви повинні вказати назву"
-      ],
-      "Your import will not be processed.": [
-        "Ваш імпорт не буде оброблений."
       ],
       "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
         "Ваші останні зміни занадто великі, щоб їх зберегти, тому редагування вимкнено. Скопіюйте необхідні зміни, а потім перезавантажте сторінку."
@@ -3567,47 +3179,9 @@
         "⚠️ Нерозшифровна назва"
       ]
     },
-    "error": {
-      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Будь ласка, увійдіть за допомогою адреси Gmail, з якої вже налаштовано пересилання на ${ MAIL_APP_NAME }"
-      ],
-      "Please sign in with the same Gmail address you originally connected": [
-        "Увійдіть із тією ж адресою Gmail, яку ви підключили спочатку"
-      ]
-    },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Сталася помилка під час читання вашого файлу ${ formattedFilename }. Неправильний формат файлу."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Дозволяються лише файли у форматі ICS."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Помилка під час вивантаження вашого файлу. Файл не вибрано."
-      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подію.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } події.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій."
-      ],
-      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Ваш файл ${ formattedFilename } не містить подій для імпортування."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Ваш файл ${ formattedFilename } порожній."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Ваш файл ${ formattedFilename } не є календарем."
       ]
     },
     "Error importing contact": {
@@ -3642,65 +3216,6 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Ваш файл ${ formattedFilename } порожній."
-      ]
-    },
-    "Error importing event": {
-      "Bad format. Component cannot be read.": [
-        "Неправильний формат. Не вдалося прочитати."
-      ],
-      "Calendar": [
-        "Календар"
-      ],
-      "Component with wrong format": [
-        "Компонент з неправильним форматом"
-      ],
-      "Custom time zone": [
-        "Власний часовий пояс"
-      ],
-      "Element": [
-        "Елемент"
-      ],
-      "Encryption failed": [
-        "Не вдалося зашифрувати"
-      ],
-      "Event": [
-        "Подія"
-      ],
-      "Free-busy time information": [
-        "Інформація про доступність та зайнятість"
-      ],
-      "Invalid event": [
-        "Недійсна подія"
-      ],
-      "Journal entry": [
-        "Запис журналу"
-      ],
-      "Missing start time": [
-        "Відсутній час початку"
-      ],
-      "No UID, title or start time": [
-        "Немає UID, заголовка або часу початку"
-      ],
-      "Notification out of bounds": [
-        "Сповіщення поза межами"
-      ],
-      "Original recurring event could not be found": [
-        "Не вдається знайти оригінальну повторювану подію"
-      ],
-      "Time zone": [
-        "Часовий пояс"
-      ],
-      "Time zone component ignored": [
-        "Компонент часового поясу ігнорується"
-      ],
-      "To-do entry": [
-        "Запис завдання"
-      ],
-      "Unknown": [
-        "Невідомо"
-      ],
-      "Unsupported event": [
-        "Непідтримувана подія"
       ]
     },
     "Error message": {
@@ -3739,154 +3254,12 @@
         "Жодного зображення не вибрано"
       ]
     },
-    "Event invistation error": {
-      "Unexpected error": [
-        "Непередбачувана помилка"
-      ]
-    },
-    "Event invitation error": {
-      "Attached ICS file could not be decrypted": [
-        "Не вдається розшифрувати вкладений ICS-файл"
-      ],
-      "Attached ICS file could not be read": [
-        "Не вдалося прочитати вкладений файл ICS"
-      ],
-      "Invalid invitation": [
-        "Недійсне запрошення"
-      ],
-      "Invalid response": [
-        "Недійсна відповідь"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        "Неможливо додати подію до вашого календаря. Відповідь не надіслано"
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        "Неможливо оновити подію вашого календаря. Відповідь не надіслано"
-      ],
-      "Unsupported invitation": [
-        "Непідтримуване запрошення"
-      ],
-      "Unsupported response": [
-        "Непідтримувана відповідь"
-      ],
-      "We could not cancel the event in your calendar": [
-        "Не вдається скасувати подію у вашому календарі"
-      ],
-      "We could not retrieve the event from your calendar": [
-        "Не вдається видобути подію з вашого календаря"
-      ],
-      "We could not update the event in your calendar": [
-        "Не вдається оновити подію у вашому календарі"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "Вашу відповідь надіслано, але подію не вдається додати до вашого календаря"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Вашу відповідь надіслано, але подію не вдалося оновити у вашому календарі"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(без назви)"
-      ]
-    },
-    "familyOffer_2023:Action": {
-      "Decline invitation": [
-        "Відхилити запрошення"
-      ],
-      "Got it": [
-        "Зрозуміло"
-      ],
-      "Switch plans": [
-        "Змінити тарифний план"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Групи ${ BRAND_NAME }"
-      ],
-      "Accounts with custom domains cannot join a family plan.": [
-        "Облікові записи з власними доменами не можуть приєднатися до сімейного тарифного плану."
-      ],
-      "customer support": [
-        "клієнтська підтримка"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Сімейні плани наразі не підтримують зовнішні облікові записи. Створіть адресу ${ BRAND_NAME } перед приєднанням. ${ link }"
-      ],
-      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Якщо ви приймете запрошення, ми змінимо ваш поточний тарифний план і зарахуємо невикористану частину коштів на ваш обліковий запис."
-      ],
-      "Invited by: ${ inviteEmail }": [
-        "Запрошення від: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a family plan.": [
-        "Довічні облікові записи не можуть бути приєднані до сімейного плану."
-      ],
-      "Manage addresses": [
-        "Керування адресами"
-      ],
-      "Owners of a plan with members cannot join another family plan.": [
-        "Власники плану з учасниками не можуть приєднатися до іншого сімейного плану."
-      ],
-      "Sorry, you can't switch plans at this time.": [
-        "На жаль, зараз вам не дозволено змінити план."
-      ],
-      "Storage assigned to you: ${ assignedStorage }": [
-        "Призначений вам обсяг сховища: ${ assignedStorage }"
-      ],
-      "The subscription will be billed to the primary admin of this plan.": [
-        "Рахунок за передплату буде виставлено головному адміністратору цього тарифного плану."
-      ],
-      "View the invitation": [
-        "Переглянути запрошення",
-        "Переглянути запрошення",
-        "Переглянути запрошення",
-        "Переглянути запрошення"
-      ],
-      "You are invited to join ${ invite.OrganizationName }": [
-        "Вас запрошено приєднатися до ${ invite.OrganizationName }"
-      ],
-      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "Ви можете прийняти лише 3 запрошення протягом 6 місяців. Якщо вам потрібно більше, зверніться до ${ supportLink }."
-      ],
-      "You cannot accept this invitation with your current plan.": [
-        "Ви не можете прийняти це запрошення з вашим поточним планом."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Вас запросили приєднатися до ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the family group": [
-        "Ви успішно приєдналися до сімейної групи"
-      ],
-      "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "У вас є неоплачені рахунки. Будь ласка, сплатіть їх до приєднання до сімейного плану."
-      ],
-      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Ваш обліковий запис має більше адрес електронної пошти, ніж доступно в цьому плані. ${ addressSettingsLink }"
-      ],
-      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Ваш обліковий запис використовує ${ usedSpace } обсягу сховища, що перевищує призначений вам обсяг ${ inviteSpace }. Видаліть деякі дані або попросіть адміністратора плану збільшити обсяг вашого сховища."
-      ]
-    },
     "Feature": {
-      "10+ premium features": [
-        "Понад 10 преміумфункцій"
-      ],
-      "Custom email domain": [
-        "Власний домен електронної пошти"
-      ],
-      "Email addresses": [
-        "Адреси електронної пошти"
-      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Зашифроване хмарне сховище для файлів, фотографій та документів"
       ],
       "More premium features": [
         "Більше преміумфункцій"
-      ],
-      "Storage": [
-        "Сховище"
       ],
       "Unlimited hide-my-email aliases": [
         "Необмежена кількість псевдонімів Hide-my-email"
@@ -3901,8 +3274,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Запит на отримання ключа безпеки було скасовано або закінчився час очікування. Спробуйте ще раз."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Ваш пристрій не зміг виконати запит на використання ключа безпеки. Спробуйте ще раз або скористайтеся іншим способом входу."
       ]
     },
     "fido2: Info": {
@@ -3968,11 +3347,6 @@
         "Терабайти",
         "Терабайтів",
         "Терабайтів"
-      ]
-    },
-    "Filter notification": {
-      "${ Label.Name } updated": [
-        "${ Label.Name } оновлено"
       ]
     },
     "Font face option": {
@@ -4059,111 +3433,14 @@
         "SMS"
       ]
     },
-    "ICS event error": {
-      "Calendar time zone not supported": [
-        "Часовий пояс календаря не підтримується"
-      ],
-      "Edited event not supported": [
-        "Відредагована подія не підтримується"
-      ],
-      "End time out of bounds": [
-        "Час завершення поза припустимим діапазоном"
-      ],
-      "Event validation failed": [
-        "Не вдалося перевірити подію"
-      ],
-      "Floating times not supported": [
-        "Пливучий час не підтримується"
-      ],
-      "Malformed all-day event": [
-        "Неправильна подія на цілий день"
-      ],
-      "Malformed end time": [
-        "Неправильний час завершення"
-      ],
-      "Malformed recurring event": [
-        "Неправильна повторювана подія"
-      ],
-      "Malformed start time": [
-        "Неправильний час початку"
-      ],
-      "Only the Gregorian calendar scale is allowed": [
-        "Допускається тільки григоріанський календар"
-      ],
-      "Recurring event has no occurrences": [
-        "Повторювана подія не має повторень"
-      ],
-      "Recurring rule not supported": [
-        "Правило повторення не підтримується"
-      ],
-      "Start time out of bounds": [
-        "Час початку поза припустимим діапазоном"
-      ],
-      "Time zone not supported": [
-        "Часовий пояс не підтримується"
-      ]
-    },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
-        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
-        "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
-        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
-        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
-        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
-        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
-      ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Сталася помилка під час шифрування й додавання ваших подій. Жодна подія не може бути імпортована."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Шифрування та додавання контактів: ${ totalImported }/${ totalToImport }"
-      ],
-      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Шифрування та додавання подій до вашого календаря: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Подію успішно імпортовано. Тепер вона з'явиться у вашому календарі."
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Події успішно імпортовано. Тепер вони з'являться у вашому календарі."
-      ],
-      "Please don't close the tab before the importing process is finished.": [
-        "Не закривайте цю вкладку доки не завершиться процес імпортування."
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } наразі не підтримує певні типи подій, подробиць та форматів."
-      ],
       "vCard versions < 3.0": [
         "vCard версії < 3.0"
-      ]
-    },
-    "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас за допомогою вашої адреси електронної пошти ${ BRAND_NAME }."
-      ],
-      "This file contains an event invitation:": [
-        "Цей файл містить запрошення на подію:",
-        "Цей файл містить запрошення на події:",
-        "Цей файл містить запрошення на події:",
-        "Цей файл містить запрошення на події:"
-      ],
-      "This file contains an invitation response:": [
-        "Цей файл містить відповідь на запрошення:",
-        "Цей файл містить відповіді на запрошення:",
-        "Цей файл містить відповіді на запрошення:",
-        "Цей файл містить відповіді на запрошення:"
-      ],
-      "This file contains some data that we cannot import:": [
-        "Цей файл містить деякі дані, які ми не можемо імпортувати:"
       ]
     },
     "Import contact": {
@@ -4215,166 +3492,12 @@
         "зараз"
       ]
     },
-    "Import error": {
-      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом. Переконайтеся, що:"
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що адреса поштового сервера і номер порту правильні."
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } не може з'єднатися з вашим зовнішнім обліковим записом. Переконайтеся, що:"
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що адреса поштового сервера і номер порту правильні."
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що:"
-      ],
-      "IMAP access is enabled in your external account.": [
-        "Доступ до IMAP увімкнено у вашому зовнішньому обліковому записі."
-      ],
-      "IMAP access is enabled in your Yahoo account.": [
-        "Доступ до IMAP увімкнено в вашому обліковому записі Yahoo."
-      ],
-      "Too many recent requests. Please try again in a few moments.": [
-        "Забагато недавніх запитів. Будь ласка, спробуйте ще раз за хвильку."
-      ],
-      "Two-factor authentication is enabled in your external account.": [
-        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі."
-      ],
-      "Two-factor authentication is enabled in your external email account.": [
-        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі електронної пошти."
-      ],
-      "Use your app password if:": [
-        "Використовуйте свій пароль програм, якщо:"
-      ],
-      "Use your app password instead of your regular password if:": [
-        "Використовуйте пароль програм замість свого звичайного пароля якщо:"
-      ],
-      "Your app password is correct. Do not use your regular password.": [
-        "Ваш пароль програм правильний. Не використовуйте свій звичайний пароль."
-      ],
-      "Your email account requires an app password to export your data.": [
-        "Щоб експортувати дані, потрібен пароль програм для вашого поштового облікового запису."
-      ],
-      "Your email account requires one to export your data.": [
-        "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
-      ],
-      "Your email address and app password are correct. Do not use your regular password.": [
-        "Ваша адреса е-пошти та пароль програм правильні. Не використовуйте свій звичайний пароль."
-      ],
-      "Your email address and password are correct.": [
-        "Ваші адреса е-пошти та пароль правильні."
-      ],
-      "Your password is correct.": [
-        "Ваш пароль правильний."
-      ]
-    },
-    "Import instructions": {
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Залежно від вашого провайдера електронної пошти, вам, можливо, доведеться згенерувати ${ knowledgeBaseLink }, перш ніж ви зможете імпортувати до ${ BRAND_NAME }."
-      ],
-      "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Розгорніть випадне меню, натиснувши на 3 крапки (...)."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від ${ BRAND_NAME }."
-      ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        "Перейдіть до ${ boldAccountInfo } у своєму профілі ${ yahooMailLink }."
-      ],
-      "Go to ${ boldAccountSecurity }.": [
-        "Відкрийте ${ boldAccountSecurity }."
-      ],
-      "Open your ${ yahooMailLink } contacts.": [
-        "Відкрийте свої контакти ${ yahooMailLink }."
-      ],
-      "Select ${ boldExportCSV }.": [
-        "Виберіть ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Щоб імпортувати календар до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Yahoo, виконавши 3 прості кроки:"
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Щоб імпортувати контакти до ${ BRAND_NAME }, вам необхідний ${ knowledgeBaseLink }. Завантажте його до початку процесу імпортування."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Щоб імпортувати листи до ${ BRAND_NAME }, вам необхідний ${ appPasswordLink } від Yahoo. Отримайте його, дотримуючись цих кроків:"
-      ]
-    },
-    "Import instructions emphasis": {
-      "Account info": [
-        "Інформація про обліковий запис"
-      ],
-      "Account security": [
-        "Безпека облікового запису"
-      ],
-      "app password": [
-        "пароль програм"
-      ],
-      "Export": [
-        "Експортувати"
-      ],
-      "Export to CSV file": [
-        "Експортувати у файл CSV"
-      ]
-    },
-    "Import instructions link": {
-      "app password": [
-        "пароль програм"
-      ],
-      "app password or enable IMAP": [
-        "пароль програми чи увімкнути IMAP"
-      ],
-      "CSV or a VCF (vCard) file": [
-        "Файл CSV або VCF (vCard)"
-      ],
-      "full calendar view": [
-        "повний вигляд календаря"
-      ],
-      "ICS file": [
-        "файл ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
-      ]
-    },
-    "Import instructions step": {
-      "Go to ${ calendarViewLink } in Yahoo.": [
-        "Перейдіть до ${ calendarViewLink } в Yahoo."
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Наведіть курсор миші на календар для імпорту й відкрийте випадне меню."
-      ],
-      "Select ${ boldExport } to export the calendar as an ICS file.": [
-        "Виберіть ${ boldExport }, щоб експортувати календар як файл ICS."
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } із ${ totalEvents } події не буде імпортовано. Розгорніть для подробиць.",
-        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
-        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
-        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
-      ],
       "No contact can be imported. Click for details": [
         "Неможливо імпортувати контакти. Натисніть для подробиць"
-      ],
-      "No event can be imported. Expand for details.": [
-        "Неможливо імпортувати події. Розгорніть для подробиць."
-      ],
-      "Part of your calendar content is not supported and will not be imported.": [
-        "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
     "Info": {
@@ -4398,18 +3521,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } новий календар",
-        "${ calendarsToBeCreatedCount } нові календарі",
-        "${ calendarsToBeCreatedCount } нових календарів",
-        "${ calendarsToBeCreatedCount } нових календарів"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } об'єднаний календар",
-        "${ calendarsToBeMergedCount } об'єднані календарі",
-        "${ calendarsToBeMergedCount } об'єднаних календарів",
-        "${ calendarsToBeMergedCount } об'єднаних календарів"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } контакт містить кілька адрес е-пошти.",
@@ -4465,41 +3576,11 @@
       "${ planName } expires today.": [
         "Термін дії ${ planName } закінчується сьогодні."
       ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "Знайдено ${ providerFoldersNumLocalized } теку",
-        "Знайдено ${ providerFoldersNumLocalized } теки",
-        "Знайдено ${ providerFoldersNumLocalized } тек",
-        "Знайдено ${ providerFoldersNumLocalized } тек"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } мітка знайдена в Gmail",
-        "${ providerFoldersNumLocalized } мітки знайдені в Gmail",
-        "${ providerFoldersNumLocalized } міток знайдено в Gmail",
-        "${ providerFoldersNumLocalized } міток знайдено в Gmail"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
-      ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "Вибрано ${ selectedContactsLength } контакт із ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "Вибрано ${ selectedFoldersCountLocalized } теку",
-        "Вибрано ${ selectedFoldersCountLocalized } теки",
-        "Вибрано ${ selectedFoldersCountLocalized } тек",
-        "Вибрано ${ selectedFoldersCountLocalized } тек"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } вибрана мітка",
-        "${ selectedFoldersCountLocalized } вибрані мітки",
-        "${ selectedFoldersCountLocalized } вибраних міток",
-        "${ selectedFoldersCountLocalized } вибраних міток"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
@@ -4564,38 +3645,11 @@
       "All": [
         "Усі"
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "Усі (${ totalFoldersCount } тека)",
-        "Усі (${ totalFoldersCount } теки)",
-        "Усі (${ totalFoldersCount } тек)",
-        "Усі (${ totalFoldersCount } теки)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Усі (${ totalFoldersCount } мітка)",
-        "Усі (${ totalFoldersCount } мітки)",
-        "Усі (${ totalFoldersCount } міток)",
-        "Усі (${ totalFoldersCount } мітки)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Усі ваші контакти будуть імпортовані, максимум до ${ maxContact }",
-        "Усі ваші контакти будуть імпортовані, максимум до ${ maxContact }",
-        "Усі ваші контакти будуть імпортовані, максимум до ${ maxContact }",
-        "Усі ваші контакти будуть імпортовані, максимум до ${ maxContact }"
-      ],
       "Already in this folder": [
         "Уже в цій папці"
       ],
-      "and": [
-        "та"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Ви дійсно хочете відхилити імпортування?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Ви дійсно хочете остаточно видалити ${ itemName } зі смітника?"
-      ],
-      "Are you sure you want to permanently delete selected items from trash?": [
-        "Ви дійсно бажаєте остаточно видалити вибрані елементи зі смітника?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Принаймні ${ BETTER_PASSWORD_LENGTH } символів"
@@ -4611,6 +3665,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
+      ],
+      "Beta": [
+        "Бета"
       ],
       "Calendar side panel": [
         "Бічна панель календаря"
@@ -4651,9 +3708,6 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
-      "Close this screen to exit.": [
-        "Закрийте це вікно, щоб вийти."
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Підключіться до ${ VPN_APP_NAME } для приватного перегляду"
       ],
@@ -4678,20 +3732,8 @@
       "Country code": [
         "Код країни"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Створити ${ calendarsToBeCreatedCount } новий календар",
-        "Створити ${ calendarsToBeCreatedCount } нові календарі",
-        "Створити ${ calendarsToBeCreatedCount } нових календарів",
-        "Створити ${ calendarsToBeCreatedCount } нових календарів"
-      ],
       "Create a copy to edit": [
         "Створіть копію для редагування"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також теки, які ви бажаєте імпортувати."
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також мітки, які ви бажаєте імпортувати."
       ],
       "Create a new contact group": [
         "Створити нову групу контактів"
@@ -4704,12 +3746,6 @@
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Створюйте наскрізно зашифровані документи та електронні таблиці."
-      ],
-      "Create in": [
-        "Створити у"
-      ],
-      "Create your first folder and start moving your files.": [
-        "Створіть свою першу теку та почніть переміщувати свої файли."
       ],
       "Current plan": [
         "Поточний план"
@@ -4771,9 +3807,6 @@
       "End-to-end encrypted.": [
         "Наскрізно зашифровано."
       ],
-      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Забезпечте повністю приватне й зашифроване спілкування. Отримайте безкоштовну адресу електронної пошти ${ BRAND_NAME } просто зараз."
-      ],
       "Enter code": [
         "Введіть код"
       ],
@@ -4782,9 +3815,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Введіть код з вашого додатку автентифікатора"
-      ],
-      "Enter the credentials of the email account you want to import from.": [
-        "Введіть дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -4816,9 +3846,6 @@
       "File \"${ name }\" was deleted during download": [
         "Файл \"${ name }\" було видалено під час завантаження"
       ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Лише файли (без фотографій, ${ DOCS_APP_NAME } або ${ SHEETS_APP_NAME }) — загалом до 100 ГБ, 100 000 файлів та 50 ГБ на файл"
-      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Теку \"${ link.name }\" було видалено під час завантаження"
       ],
@@ -4843,9 +3870,6 @@
       "Help us improve this experience by reporting the issue. If you’re comfortable sharing spreadsheet content, attach the debug information below to your report.": [
         "Допоможіть нам покращити роботу, повідомивши про проблему. Якщо ви не проти поділитися вмістом електронної таблиці, додайте інформацію для налагодження нижче до свого звіту."
       ],
-      "here": [
-        "тут"
-      ],
       "Hide table of contents": [
         "Сховати зміст"
       ],
@@ -4867,38 +3891,14 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Якщо ви вилучите себе, ви втратите доступ до «${ fileName }» і не зможете відкрити його знову, якщо тільки власник не поділиться ним з вами."
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
-      ],
-      "Import from": [
-        "Імпортувати з"
-      ],
-      "Import in progress": [
-        "Виконується імпортування"
-      ],
-      "Import mailbox": [
-        "Імпортувати поштову скриньку"
-      ],
       "Important note": [
         "Важлива інформація"
       ],
       "Importing ODS files is currently in beta": [
         "Імпортування файлів ODS наразі перебуває в бета-версії"
       ],
-      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
-      ],
       "In restrictive countries": [
         "У країнах із обмеженнями"
-      ],
-      "Included": [
-        "Включено"
-      ],
-      "Inherited from parent folder": [
-        "Успадковано від теки вищого рівня"
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
@@ -4918,9 +3918,6 @@
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Найкраще використовувати VPN постійно. Але ось випадки, коли загрози кібербезпеці можуть бути найвищими:"
       ],
-      "Just confirm your selection and we'll do the rest.": [
-        "Просто підтвердьте свій вибір, а ми зробимо решту."
-      ],
       "Just now": [
         "Щойно"
       ],
@@ -4930,14 +3927,8 @@
       "Key fingerprint": [
         "Цифровий відбиток ключа"
       ],
-      "Label all imported messages as": [
-        "Позначити всі імпортовані повідомлення"
-      ],
       "Labels:": [
         "Мітки:"
-      ],
-      "Large imports can take several days.": [
-        "Великий обсяг імпортування може тривати кілька днів."
       ],
       "Learn more": [
         "Докладніше"
@@ -4993,14 +3984,8 @@
       "Member": [
         "Учасник"
       ],
-      "Merged": [
-        "Об'єднано"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Більшість публічних мереж WiFi є безпечними, але деяким бракує безпеки, що наражає вас на кіберзагрози. VPN шифрує ваш трафік, забезпечуючи ваш захист."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
       "New": [
         "Нове"
@@ -5101,12 +4086,6 @@
       "Please provide a name and an email address for creating a group.": [
         "Щоб створити групу, вкажіть ім'я та адресу електронної пошти."
       ],
-      "Please select the folders you would like to import:": [
-        "Оберіть теки, які ви бажаєте імпортувати:"
-      ],
-      "Please select the labels you would like to import:": [
-        "Оберіть мітки, які ви бажаєте імпортувати:"
-      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Виберіть яку електронну адресу або адреси додати до ${ groupCount } групи.",
         "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
@@ -5176,9 +4155,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар згідно з кількістю календарів, доступною у вашому тарифному плані."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -5247,9 +4223,6 @@
       ],
       "Symbols (#$&)": [
         "Символи (#$&)"
-      ],
-      "Temporarily unavailable due to high demand. Please try again later.": [
-        "Тимчасово недоступно через високий попит. Спробуйте ще раз пізніше."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Не вдалося перевірити авторство змін у документі. Ви хочете позначити цей документ як перевірений? Ви можете вибрати «Ігнорувати», щоби прийняти рішення пізніше."
@@ -5350,14 +4323,8 @@
       "Update recent documents": [
         "Оновити нещодавні документи"
       ],
-      "Upgrade anytime to bring over the rest": [
-        "Покращте тарифний план у будь-який час, щоб перенести решту"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
-      ],
-      "Upgrade or clear space anytime to bring over the rest": [
-        "Покращте тарифний план або очистьте місце в будь-який час, щоб перенести решту"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Покращте тарифний план, щоб зберегти переваги ${ planTitle }."
@@ -5380,14 +4347,8 @@
       "Warning": [
         "Попередження"
       ],
-      "We'll email you once import is complete.": [
-        "Ми надішлемо вам електронного листа після завершення імпорту."
-      ],
       "We'll get back to you shortly.": [
         "Ми незабаром з вами зв'яжемося."
-      ],
-      "We'll notify you when the import is done.": [
-        "Ми сповістимо вас, коли імпорт буде завершено."
       ],
       "We'll remind you to verify your password again later": [
         "Ми нагадаємо вам підтвердити пароль знову пізніше"
@@ -5431,6 +4392,9 @@
       "Writing assistant": [
         "Помічник з написання"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Ліцензії для помічників із написання більше не продаються."
+      ],
       "you": [
         "ви"
       ],
@@ -5455,20 +4419,8 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Ви використовуєте більший обсяг сховища, ніж передбачено планом ${ downgradedPlanName }. Щоб перейти на нижчий тарифний план, звільніть місце в сховищі."
       ],
-      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "Ви також можете об'єднати імпортовані календарі з наявними календарями ${ BRAND_NAME }."
-      ],
-      "You can check the progress ${ importProgressLink }.": [
-        "Перебіг виконання можна переглянути ${ importProgressLink }."
-      ],
-      "You can close the tab or browser in the meantime.": [
-        "Ви можете закрити вкладку або браузер."
-      ],
       "You can now return to the application to continue": [
         "Тепер ви можете повернутися до програми для продовження роботи"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
       ],
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
@@ -5533,9 +4485,6 @@
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ваш поточний документ буде замінено на цю версію. Коментарі та пропозиції будуть вилучені з документа, але залишатимуться доступними в історії коментарів."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису ${ BRAND_NAME } готові."
-      ],
       "Your email address and password were leaked:": [
         "Вашу адресу електронної пошти та пароль було викрито:"
       ],
@@ -5559,9 +4508,6 @@
       ],
       "Your IP address is visible and can be used to track your online activity.": [
         "Ваша IP-адреса є видимою, і її можуть використати для відстеження вашої онлайн-активності."
-      ],
-      "Your login information will not be saved after the import is completed.": [
-        "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "Ваша наступна дата виставлення рахунку — ${ renewalTime }. Ви можете скасувати її в будь-який час."
@@ -5616,20 +4562,6 @@
         "Натисніть для подробиць"
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "Вибрано ${ selectedFoldersCount } теку",
-        "Вибрано ${ selectedFoldersCount } теки",
-        "Вибрано ${ selectedFoldersCount } тек",
-        "Вибрано ${ selectedFoldersCount } тек"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "Вибрано ${ selectedFoldersCount } мітку",
-        "Вибрано ${ selectedFoldersCount } мітки",
-        "Вибрано ${ selectedFoldersCount } міток",
-        "Вибрано ${ selectedFoldersCount } міток"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Активний підписувач"
@@ -5666,9 +4598,6 @@
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
       ],
-      "(Temporarily unavailable. Please check back later.)": [
-        "(Тимчасово недоступно. Повторіть спробу пізніше.)"
-      ],
       "Access": [
         "Доступ"
       ],
@@ -5702,9 +4631,6 @@
       "Anyone on the Internet with the link": [
         "Будь-хто в Інтернеті, хто має посилання"
       ],
-      "App password": [
-        "Пароль програми"
-      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -5719,9 +4645,6 @@
       ],
       "Browser version": [
         "Версія браузера"
-      ],
-      "Calendar": [
-        "Календар"
       ],
       "can edit": [
         "може змінити"
@@ -5746,9 +4669,6 @@
       ],
       "Confirm password": [
         "Підтвердити пароль"
-      ],
-      "Contacts": [
-        "Контакти"
       ],
       "Continue cancelling": [
         "Продовжити скасування"
@@ -5786,35 +4706,14 @@
       "Don't show this again": [
         "Більше не показувати"
       ],
-      "Drive": [
-        "Диск"
-      ],
       "Editor": [
         "Редактор"
-      ],
-      "Email": [
-        "Е-пошта"
       ],
       "Email address": [
         "Адреса е-пошти"
       ],
       "Email format": [
         "Формат повідомлень"
-      ],
-      "Emails (all messages)": [
-        "Е-пошта (усі повідомлення)"
-      ],
-      "Emails (last 12 months)": [
-        "Е-пошта (останні 12 місяців)"
-      ],
-      "Emails (last 3 months)": [
-        "Е-пошта (останні 3 місяці)"
-      ],
-      "Emails (last 6 months)": [
-        "Електронна пошта (за останні 6 місяців)"
-      ],
-      "Emails (last month)": [
-        "Е-пошта (останній місяць)"
       ],
       "Encrypt emails": [
         "Шифрувати листи"
@@ -5828,14 +4727,8 @@
       "File": [
         "Файл"
       ],
-      "Folder location": [
-        "Розташування теки"
-      ],
       "Folder name": [
         "Назва теки"
-      ],
-      "From: ${ fromEmail }": [
-        "Від: ${ fromEmail }"
       ],
       "Hide password": [
         "Приховати пароль"
@@ -5846,18 +4739,6 @@
       "Ignore": [
         "Ігнорувати"
       ],
-      "Import all messages": [
-        "Імпортувати всі повідомлення"
-      ],
-      "Import interval": [
-        "Інтервал імпорту"
-      ],
-      "Import to email address": [
-        "Електронна адреса для імпорту"
-      ],
-      "Import to:": [
-        "Імпортувати до:"
-      ],
       "Include application logs in bug report": [
         "Додати журнали програми до звіту про помилку"
       ],
@@ -5867,26 +4748,8 @@
       "Integrated 2FA authenticator": [
         "Інтегрований автентифікатор 2FA"
       ],
-      "Label messages as": [
-        "Позначити повідомлення"
-      ],
-      "Last 12 months only": [
-        "Лише останні 12 місяців"
-      ],
-      "Last 3 months only": [
-        "Лише останні 3 місяці"
-      ],
-      "Last 6 months only": [
-        "Лише за останні 6 місяців"
-      ],
-      "Last month only": [
-        "Лише останній місяць"
-      ],
       "Log in or sign up ": [
         "Увійти або зареєструватися "
-      ],
-      "Mail Server (IMAP)": [
-        "Поштовий сервер (IMAP)"
       ],
       "Main": [
         "Головна"
@@ -5894,17 +4757,8 @@
       "Main reason for cancelling": [
         "Основна причина скасування"
       ],
-      "Manage categories": [
-        "Керувати категоріями"
-      ],
       "Mark as verified": [
         "Позначити як перевірене"
-      ],
-      "Move to Archive": [
-        "Перемістити до архіву"
-      ],
-      "Move to Inbox": [
-        "Перемістити до вхідних"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Має містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
@@ -5923,9 +4777,6 @@
       ],
       "Not selected": [
         "Не вибрано"
-      ],
-      "Notification": [
-        "Сповіщення"
       ],
       "Operating system": [
         "Операційна система"
@@ -5950,9 +4801,6 @@
       ],
       "Please share any feedback to help us improve.": [
         "Поділіться своїм відгуком, щоб допомогти нам вдосконалюватися."
-      ],
-      "Port": [
-        "Порт"
       ],
       "Post office box": [
         "Поштова скринька"
@@ -6008,9 +4856,6 @@
       "Theme": [
         "Тема"
       ],
-      "To: ${ toEmail }": [
-        "Кому: ${ toEmail }"
-      ],
       "Trash": [
         "Смітник"
       ],
@@ -6019,9 +4864,6 @@
       ],
       "Upload picture": [
         "Завантажити зображення"
-      ],
-      "Username": [
-        "Ім'я користувача"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -6071,44 +4913,6 @@
     "Label for contact group name": {
       "Name": [
         "Назва"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Створити теку"
-      ],
-      "Create label": [
-        "Створити мітку"
-      ],
-      "Edit folder": [
-        "Редагувати теку"
-      ],
-      "Edit label": [
-        "Редагувати мітку"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } створено"
-      ]
-    },
-    "Label; import email": {
-      "From: ${ from }": [
-        "З: ${ from }"
-      ],
-      "To: ${ to }": [
-        "До: ${ to }"
-      ]
-    },
-    "Limit of calendars reached": {
-      "To add a new calendar, remove an existing one.": [
-        "Щоб додати новий календар, вилучіть наявний."
-      ],
-      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Щоб додати новий календар, вилучіть інший календар або змініть свій тарифний план ${ BRAND_NAME } на платний ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You've reached the maximum number of calendars available in your plan.": [
-        "Ви досягли максимальної кількості календарів для вашого тарифного плану."
       ]
     },
     "Link": {
@@ -6199,32 +5003,6 @@
         "Також включено:"
       ]
     },
-    "Loading info": {
-      "Almost there": [
-        "Майже готово"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
-      ],
-      "Connecting to your email provider": [
-        "З'єднання з вашим провайдером електронної пошти"
-      ],
-      "Creating new calendars": [
-        "Створення нового календаря"
-      ],
-      "Gathering your data": [
-        "Отримання ваших даних"
-      ],
-      "We're gathering your data from your provider": [
-        "Ми збираємо ваші дані від вашого постачальника"
-      ],
-      "Your import is starting": [
-        "Імпортування розпочинається"
-      ]
-    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Докладніше"
@@ -6259,30 +5037,71 @@
         "Увімкнути ${ reason }"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Код"
       ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
+      "2x Basic usage": [
+        "2x Базове використання"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
+      "5x Plus usage": [
+        "Використання 5x Plus"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
+      "API access, with ${ credit } a month credit": [
+        "Доступ до API з щомісячним лімітом у розмірі ${ credit }"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Доступ до API з ${ credit } кредиту на місяць на кожного користувача"
+      ],
+      "Everything in Basic, and:": [
+        "Усе, що в Basic, а також:"
+      ],
+      "Everything in Free, and:": [
+        "Усе безкоштовно, а також:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе, що є у Plus, а також:"
+      ],
+      "Extended image generation": [
+        "Розширене створення зображень"
+      ],
+      "Includes:": [
+        "Включає:"
+      ],
+      "Limited image generation": [
+        "Обмежене створення зображень"
+      ],
+      "Limited messages and chat history": [
+        "Обмежена кількість повідомлень та історія чату"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Обмежені навички, проекти та заплановані завдання"
+      ],
+      "Maximum image generation": [
+        "Максимальна кількість згенерованих зображень"
+      ],
+      "Maximum Skills and Projects": [
+        "Найкращі навички та проекти"
+      ],
+      "More image generation": [
+        "Більше генерації зображень"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Більше навичок, проєктів та запланованих завдань"
+      ],
+      "More usage": [
+        "Інші варіанти використання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Для програмування та розробки"
+      ],
+      "For everyday chats": [
+        "Для щоденних розмов"
+      ],
+      "For getting more done": [
+        "Щоб встигнути зробити більше"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6405,37 +5224,6 @@
       ],
       "Plain text": [
         "Звичайний текст"
-      ]
-    },
-    "Modal title": {
-      "How to import calendars from another service": [
-        "Як імпортувати календарі з іншого сервісу"
-      ],
-      "How to import calendars from Yahoo": [
-        "Як імпортувати календарі з Yahoo"
-      ],
-      "How to import contacts from another service": [
-        "Як імпортувати контакти з іншого сервісу"
-      ],
-      "How to import contacts from Yahoo": [
-        "Як імпортувати контакти з Yahoo"
-      ],
-      "How to import emails from another service": [
-        "Як імпортувати листи з іншого сервісу"
-      ],
-      "How to import emails from Yahoo": [
-        "Як імпортувати листи з Yahoo"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Колір"
-      ],
-      "Folder name": [
-        "Назва теки"
-      ],
-      "Label name": [
-        "Назва мітки"
       ]
     },
     "new_plans": {
@@ -7343,38 +6131,11 @@
       "\"${ ellipsedName }\" created successfully": [
         "«${ ellipsedName }» успішно створено"
       ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "Не вдалося створити «${ ellipsedName }»"
-      ],
       "\"${ ellipsedName }\" moved": [
         "«${ ellipsedName }» переміщено"
       ],
       "\"${ fileName }\" shared": [
         "Надано спільний доступ до «${ fileName }»"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" видалено зі смітника остаточно"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" не вдалося остаточно видалити зі смітника"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" не вдалося перемістити"
-      ],
-      "\"${ name }\" failed to be moved to trash": [
-        "\"${ name }\" не вдалося перемістити до смітника"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" не вдалося відновити зі смітника"
-      ],
-      "\"${ name }\" moved to trash": [
-        "\"${ name }\" переміщено до смітника"
-      ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" відновлено зі смітника"
-      ],
-      "\"${ newName }\" failed to be renamed": [
-        "\"${ newName }\" не вдалося перейменувати"
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" успішно перейменовано"
@@ -7384,36 +6145,6 @@
         "Не вдалося розшифрувати ${ count } елементи",
         "Не вдалося розшифрувати ${ count } елементів",
         "Не вдалося розшифрувати ${ count } елемента"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } елемент видалено зі смітника остаточно",
-        "${ numberOfItems } елементи видалено зі смітника остаточно",
-        "${ numberOfItems } елементів видалено зі смітника остаточно",
-        "${ numberOfItems } елементів видалено зі смітника остаточно"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } елемент не вдалося остаточно видалити зі смітника",
-        "${ numberOfItems } елементи не вдалося остаточно видалити зі смітника",
-        "${ numberOfItems } елементів не вдалося остаточно видалити зі смітника",
-        "${ numberOfItems } елемента не вдалося остаточно видалити зі смітника"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } елемент не вдалося перемістити",
-        "${ numberOfItems } елементи не вдалося перемістити",
-        "${ numberOfItems } елементів не вдалося перемістити",
-        "${ numberOfItems } елементів не вдалося перемістити"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "Не вдалося перемістити до смітника ${ numberOfItems } елемент",
-        "Не вдалося перемістити до смітника ${ numberOfItems } елементи",
-        "Не вдалося перемістити до смітника ${ numberOfItems } елементів",
-        "Не вдалося перемістити до смітника ${ numberOfItems } елемента"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Не вдалося відновити зі смітника ${ numberOfItems } елемент",
-        "Не вдалося відновити зі смітника ${ numberOfItems } елементи",
-        "Не вдалося відновити зі смітника ${ numberOfItems } елементів",
-        "Не вдалося відновити зі смітника ${ numberOfItems } елемента"
       ],
       "${ numberOfItems } item moved": [
         "Переміщено ${ numberOfItems } елемент",
@@ -7505,9 +6236,6 @@
       "Recent documents updated": [
         "Нещодавні документи оновлено"
       ],
-      "Root folder failed to be loaded": [
-        "Не вдалося завантажити кореневу теку"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Налаштування оновлено. Редактори можуть змінювати дозволи та ділитись."
       ],
@@ -7520,17 +6248,11 @@
       "Share invitation declined": [
         "Запрошення, яким поділилися, відхилено"
       ],
-      "Subfolder failed to be loaded": [
-        "Не вдалося завантажити підтеку"
-      ],
       "The link to your item was deleted": [
         "Посилання на ваш елемент було видалено"
       ],
       "You stopped sharing this item": [
         "Ви припинили спільний доступ для цього елемента"
-      ],
-      "Your ${ BRAND_NAME } address is ready to use": [
-        "Ваша адреса ${ BRAND_NAME } готова до використання"
       ],
       "Your settings have been changed successfully": [
         "Ваші налаштування успішно змінено"
@@ -7539,21 +6261,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Деякі зображення не вивантажено через дублікати назв."
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Далі вам потрібно буде ввійти до свого облікового запису Google і надати ${ BRAND_NAME } доступ до ваших даних."
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "Виберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати повідомлення електронної пошти та налаштування, переглядати та завантажувати контакти, переглядати та завантажувати всі календарі, до яких ви маєте доступ з Календаря Google."
       ]
     },
     "Offer": {
@@ -7729,17 +6436,6 @@
       ],
       "Ignore group": [
         "Ігнорувати групу"
-      ],
-      "No parent folder": [
-        "Немає теки вищого рівня"
-      ]
-    },
-    "Option group label": {
-      "Create new calendar": [
-        "Створити новий календар"
-      ],
-      "Merge with calendar": [
-        "Об'єднати з календарем"
       ]
     },
     "Page title": {
@@ -7751,11 +6447,6 @@
       ],
       "Trash": [
         "Смітник"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Ви"
       ]
     },
     "pass_signup_2023: Info": {
@@ -7999,9 +6690,6 @@
       ],
       "Search for name or email": [
         "Пошук за іменем чи е-поштою"
-      ],
-      "Search parent folder": [
-        "Пошук у теці верхнього рівня"
       ],
       "Select": [
         "Вибрати"
@@ -8304,11 +6992,6 @@
     "Select files": {
       "Upload": [
         "Вивантажити"
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Результатів не знайдено"
       ]
     },
     "session_recovery:available:action": {
@@ -9047,9 +7730,6 @@
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
-      "Canceling import": [
-        "Скасування імпорту"
-      ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
       ],
@@ -9077,12 +7757,6 @@
       "Fingerprint copied to clipboard": [
         "Цифровий відбиток скопійовано до буфера обміну"
       ],
-      "Import record deleted": [
-        "Запис імпорту видалено"
-      ],
-      "Invitation rejected": [
-        "Запрошення відхилено"
-      ],
       "Phone number copied to clipboard": [
         "Номер телефону скопійовано до буфера обміну"
       ],
@@ -9094,9 +7768,6 @@
       ],
       "Problem reported": [
         "Про проблему повідомлено"
-      ],
-      "Undo in progress": [
-        "Скасовується"
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
@@ -9272,9 +7943,6 @@
       "Change password": [
         "Змінити пароль"
       ],
-      "Claim your ${ MAIL_APP_NAME } address": [
-        "Отримайте адресу ${ MAIL_APP_NAME }"
-      ],
       "Clearing data": [
         "Стирання даних"
       ],
@@ -9305,12 +7973,6 @@
       "Contacts": [
         "Контакти"
       ],
-      "Continue with free storage": [
-        "Продовжити з безкоштовним сховищем"
-      ],
-      "Continue with partial import?": [
-        "Продовжити частковий імпорт?"
-      ],
       "Create a new folder": [
         "Створити нову теку"
       ],
@@ -9322,18 +7984,6 @@
       ],
       "Currency": [
         "Валюта"
-      ],
-      "Custom": [
-        "Власний"
-      ],
-      "Customize and confirm": [
-        "Налаштування та підтвердження"
-      ],
-      "Customize calendar import": [
-        "Налаштуйте імпорт календаря"
-      ],
-      "Customize your mail import": [
-        "Налаштуйте імпорт своєї пошти"
       ],
       "Data recovery": [
         "Відновлення даних"
@@ -9379,9 +8029,6 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
-      ],
-      "Disconnected from Gmail": [
-        "Від'єднано від Gmail"
       ],
       "Docs": [
         "Документи"
@@ -9434,9 +8081,6 @@
       "Enhance security with 2FA": [
         "Посильте безпеку за допомогою 2FA"
       ],
-      "Enter your password": [
-        "Введіть ваш пароль"
-      ],
       "Error Syncing": [
         "Помилка синхронізації"
       ],
@@ -9448,9 +8092,6 @@
       ],
       "Get more from your VPN": [
         "Отримайте більше від вашого VPN"
-      ],
-      "Get more storage with ${ MAIL_APP_NAME } Plus": [
-        "Отримайте більше місця у сховищі з ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Отримати програми"
@@ -9479,20 +8120,8 @@
       "Human verification": [
         "Перевірка \"Я не робот\""
       ],
-      "Import as simple event?": [
-        "Імпортувати як просту подію?",
-        "Імпортувати як прості події?",
-        "Імпортувати як прості події?",
-        "Імпортувати як прості події?"
-      ],
       "Import contacts": [
         "Імпорт контактів"
-      ],
-      "Import events": [
-        "Імпорт подій"
-      ],
-      "Import failed": [
-        "Не вдалося імпортувати"
       ],
       "Import groups": [
         "Імпорт груп"
@@ -9602,9 +8231,6 @@
       "Recommended actions": [
         "Рекомендовані дії"
       ],
-      "Reconnect your account": [
-        "Повторно під'єднайте свій обліковий запис"
-      ],
       "Recover data": [
         "Відновити дані"
       ],
@@ -9668,9 +8294,6 @@
       "Shared with me": [
         "Поширено для мене"
       ],
-      "Sign in and grant access": [
-        "Увійдіть і надайте доступ"
-      ],
       "Sign out": [
         "Вийти"
       ],
@@ -9682,12 +8305,6 @@
       ],
       "Something went wrong": [
         "Виникла проблема"
-      ],
-      "Start a new import": [
-        "Почати новий імпорт"
-      ],
-      "Start import process": [
-        "Початок процесу імпортування"
       ],
       "Stop sharing?": [
         "Припинити спільний доступ?"
@@ -9728,6 +8345,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Використовуйте ${ VPN_SHORT_APP_NAME } для приватності даних"
       ],
+      "Verify it’s you": [
+        "Підтвердьте, що це ви"
+      ],
       "Verify your password": [
         "Підтвердьте свій пароль"
       ],
@@ -9751,12 +8371,6 @@
       ],
       "When is it most important to use a VPN?": [
         "Коли найважливіше використовувати VPN?"
-      ],
-      "You are all set": [
-        "Усе готово"
-      ],
-      "You have no folders yet": [
-        "У вас поки немає тек"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Ваш безплатний пробний період ${ planName } завершується ${ textDate }"
@@ -9809,23 +8423,8 @@
       "Change shared item settings": [
         "Змінити налаштування спільного елемента"
       ],
-      "Customize import to reduce the number of folders": [
-        "Налаштуйте імпорт щоб зменшити кількість тек"
-      ],
-      "Customize import to reduce the number of labels": [
-        "Налаштуйте імпорт щоб зменшити кількість міток"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Цифровий підпис листів допомагає засвідчити справжність надісланих вами повідомлень"
-      ],
-      "Each imported email will have this label": [
-        "Кожен імпортований лист матиме цю мітку"
-      ],
-      "Edit folder names": [
-        "Змінити назви тек"
-      ],
-      "Edit label names": [
-        "Редагувати назви міток"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Шифрування пошти примусово застосовує цифровий підпис, щоб допомогти засвідчити справжність ваших надісланих повідомлень"
@@ -9835,9 +8434,6 @@
       ],
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
-      ],
-      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail автоматично присвоює категорії деяким електронним листам, як-от \"Соцмережі\" або \"Реклама\". Ви можете вибрати, куди імпортувати такі листи."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Миттєва допомога ШІ, живий експерт завжди поруч!"
@@ -9857,17 +8453,11 @@
       "Shared with end-to-end encryption": [
         "Поширено з наскрізним шифруванням"
       ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "Системні підтеки показуватимуться окремими теками в ${ MAIL_APP_NAME }"
-      ],
       "The image could not be loaded": [
         "Не вдалося завантажити зображення"
       ],
       "The image could not be loaded using proxy": [
         "Не вдалося завантажити зображення за допомогою проксі"
-      ],
-      "The import will start with the most recent messages.": [
-        "Імпортування розпочнеться з найновіших повідомлень."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Якщо зашифровані паролі не розшифровано, вони залишаються безпечними, навіть якщо їх було розкрито."
@@ -9979,14 +8569,6 @@
       ],
       "Name must not contain slashes (/)": [
         "Назва не повинна містити скісних рисок (/)"
-      ]
-    },
-    "Video control": {
-      "Click to replay the video": [
-        "Натисніть для повторного відтворення відео"
-      ],
-      "Replay video": [
-        "Повторно відтворити відео"
       ]
     },
     "VPN B2B cancellation reason": {
@@ -10106,12 +8688,6 @@
       ]
     },
     "Warning": {
-      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } об'єднає всі теки з однаковими назвами. Щоб уникнути цього, змініть їх назви перед імпортуванням."
-      ],
-      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Ви дійсно хочете остаточно видалити ${ count } контакт?",
         "Ви дійсно хочете остаточно видалити ${ count } контакти?",
@@ -10136,9 +8712,6 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
-      "Skip verification?": [
-        "Пропустити перевірку?"
-      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
       ],
@@ -10160,20 +8733,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Це незворотна дія. Будь ласка, для продовження введіть слово ${ boldDanger }."
       ],
-      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису ${ BRAND_NAME }. Розгляньте можливість налаштування вашого імпортування."
-      ],
       "This will replace all the data in the spreadsheet": [
         "Це замінить усі дані в електронній таблиці"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."
-      ],
-      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Ми не змогли перевірити поштовий сервер. Якщо ви йому довіряєте, можете пропустити цю перевірку."
-      ],
-      "You will lose any customization you made so far.": [
-        "Ви втратите будь-які попередні налаштування."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"
