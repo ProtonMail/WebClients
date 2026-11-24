@@ -1,5 +1,4 @@
 import type { Mock } from 'vitest'
-import '@testing-library/jest-dom/vitest'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsItem } from '../recentDocumentsItem'

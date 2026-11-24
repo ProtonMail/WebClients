@@ -76,9 +76,6 @@ export const findOfflinePasswordPrompt = async () => {
     return screen.findByRole('button', { name: 'Continue offline' });
 };
 
-/** Provided by the Jest apps and by `vitest.setup.ts` */
-declare const jest: { advanceTimersByTime: (ms: number) => void };
-
 const UNLOCK_ATTEMPTS = 3;
 
 /** The password input has no label: it is the only password field of the lock screen.
@@ -90,7 +87,7 @@ const UNLOCK_ATTEMPTS = 3;
 export const unlockWithPassword = async (password: string) => {
     /** `user-event` waits on a timer between keystrokes: with fake timers it must advance them */
     const fakeTimers = 'clock' in setTimeout;
-    const user = userEvent.setup(fakeTimers ? { advanceTimers: (ms) => jest.advanceTimersByTime(ms) } : {});
+    const user = userEvent.setup(fakeTimers ? { advanceTimers: (ms) => vi.advanceTimersByTime(ms) } : {});
 
     for (let attempt = 0; attempt < UNLOCK_ATTEMPTS; attempt++) {
         const input = document.querySelector<HTMLInputElement>('input[name="password"]');

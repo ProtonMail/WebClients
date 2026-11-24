@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/vitest'
 import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
 import { DocumentState, type DocumentStateValues } from '@proton/docs-core/State/DocumentState'
 import { render, screen } from '@testing-library/react'

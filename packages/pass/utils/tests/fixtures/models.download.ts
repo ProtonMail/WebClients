@@ -13,7 +13,7 @@ const download = async (url: string) => {
     return new Uint8Array(await response.arrayBuffer());
 };
 
-/** Jest global setup: downloads the registry and the remote models production serves today.
+/** Global setup: downloads the registry and the remote models production serves today.
  * Leaves no cache behind when offline or on a non-Pass MR, the remote model tests then skip. */
 export default async () => {
     await rm(MODELS_CACHE_DIR, { recursive: true, force: true });

@@ -31,6 +31,7 @@ describe('Popup during a backend outage', () => {
     beforeEach(() =>
         vi.useFakeTimers({
             now: clock,
+            shouldAdvanceTime: true,
             toFake: ['setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'Date', 'performance'],
         })
     );

@@ -11,7 +11,7 @@ import { getModelArch } from '../../../lib/extension/model-artifact/model-artifa
 import type { ModelRegistry } from '../../../lib/extension/model-registry/model-registry';
 import type { AutofillModelExperimentGroup } from '../../../types/api/features';
 
-/** Filled by the jest global setup `models.download.ts` on every run, one per checkout */
+/** Filled by the global setup `models.download.ts` on every run, one per checkout */
 export const MODELS_CACHE_DIR = join(
     tmpdir(),
     'pass-detection-models',

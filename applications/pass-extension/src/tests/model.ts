@@ -24,7 +24,7 @@ export const createModelWorker = (model: TestModel) => {
 
     return {
         model,
-        /** Remote models are downloaded by the jest global setup, missing when offline */
+        /** Remote models are downloaded by the global setup, missing when offline */
         available: hasDownloadedModels(),
         getModelId: () => modelStorage?.modelId ?? BUNDLED_MODEL_ID,
         startWorker: async ({ url, state }: Omit<TestWorkerInit, 'storage'>) => {

@@ -138,7 +138,7 @@ describe('Composer scheduled messages', () => {
         it('Should contain default fields', async () => {
             // Monday 2 2023
             const fakeNow = new Date(2023, 0, 2, 10, 0, 0);
-            vi.useFakeTimers().setSystemTime(fakeNow.getTime());
+            vi.useFakeTimers({ shouldAdvanceTime: true }).setSystemTime(fakeNow.getTime());
 
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
@@ -170,7 +170,7 @@ describe('Composer scheduled messages', () => {
         it('Should not contain "next monday" entry on "sunday"', async () => {
             // Sunday 1 2023
             const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
-            vi.useFakeTimers().setSystemTime(fakeNow.getTime());
+            vi.useFakeTimers({ shouldAdvanceTime: true }).setSystemTime(fakeNow.getTime());
 
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
@@ -205,7 +205,7 @@ describe('Composer scheduled messages', () => {
             ${'In the morning'} | ${new Date(2023, 0, 1, 2, 0, 0)}
             ${'In the morning'} | ${new Date(2023, 0, 1, 7, 30, 0)}
         `('Should display "$expected" on "$date"', async ({ expected, date }) => {
-            vi.useFakeTimers().setSystemTime(date.getTime());
+            vi.useFakeTimers({ shouldAdvanceTime: true }).setSystemTime(date.getTime());
 
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
@@ -227,7 +227,7 @@ describe('Composer scheduled messages', () => {
         it('Should contain "as scheduled" field when editing', async () => {
             // Sunday 1 2023
             const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
-            vi.useFakeTimers().setSystemTime(fakeNow.getTime());
+            vi.useFakeTimers({ shouldAdvanceTime: true }).setSystemTime(fakeNow.getTime());
 
             const message = setupMessage('Subject', [user as Recipient], getUnixTime(new Date(2023, 0, 5, 10, 0, 0)));
             setupTest();
@@ -405,7 +405,7 @@ describe('Composer scheduled messages', () => {
         });
 
         beforeEach(() => {
-            vi.useFakeTimers({ now: mockedDate.getTime() });
+            vi.useFakeTimers({ now: mockedDate.getTime(), shouldAdvanceTime: true });
         });
 
         afterEach(() => {

@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import { TextDecoder, TextEncoder } from 'util';
 
 // Needed for tests using JSDOM classes (ie. new JSDOM())

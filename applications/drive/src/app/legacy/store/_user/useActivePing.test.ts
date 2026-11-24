@@ -17,7 +17,7 @@ vi.mock('@proton/account/user/hooks', () => ({
 
 describe('useActivePing', () => {
     beforeAll(() => {
-        vi.useFakeTimers();
+        vi.useFakeTimers({ shouldAdvanceTime: true });
     });
 
     afterEach(() => {

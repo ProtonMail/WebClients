@@ -4,12 +4,17 @@
     "type": "module",
     "exports": {
         "./setLocation": "./src/setLocation.ts",
+        "./setup": "./src/setup.ts",
         "./shared": "./src/shared.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
         "lint:fix": "pnpm run lint --fix"
+    },
+    "dependencies": {
+        "@testing-library/dom": "catalog:",
+        "@testing-library/jest-dom": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",

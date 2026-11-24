@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest'
+import '@proton/vitest-config/setup'
 import '@proton/components/testing/vitest/mockFlagSvg'
 import '@proton/components/testing/vitest/mockMatchMedia'
 

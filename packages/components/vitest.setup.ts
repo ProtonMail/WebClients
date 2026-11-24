@@ -1,6 +1,4 @@
-import '@testing-library/jest-dom/vitest';
-import 'core-js/actual/typed-array/to-base64';
-import 'core-js/actual/typed-array/from-base64';
+import '@proton/vitest-config/setup';
 import fetch from 'cross-fetch';
 import * as webStreams from 'node:stream/web';
 
@@ -8,21 +6,6 @@ import '@proton/unleash/testing/vitest/mockUnleash';
 
 import './testing/vitest/mockFlagSvg';
 import './testing/vitest/mockMatchMedia';
-
-// jsdom and Node use distinct typed array realms: make the polyfilled methods available on the Node one too
-// (e.g. on the Uint8Array returned by TextEncoder)
-{
-    const nodeProto = Object.getPrototypeOf(new TextEncoder().encode(''));
-    (['toBase64', 'toHex'] as const).forEach((method) => {
-        if (nodeProto !== Uint8Array.prototype && !(method in nodeProto)) {
-            Object.defineProperty(nodeProto, method, {
-                value: (Uint8Array.prototype as any)[method],
-                writable: true,
-                configurable: true,
-            });
-        }
-    });
-}
 
 // The vm context of the test pool does not expose these Node globals (msw needs them)
 (['TransformStream', 'ReadableStream', 'WritableStream'] as const).forEach((name) => {

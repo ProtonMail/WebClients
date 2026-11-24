@@ -253,8 +253,7 @@
         },
         "packages/components": {
             "entry": [],
-            "project": ["**/*.{js,jsx,ts,tsx}"],
-            "ignoreDependencies": ["core-js"]
+            "project": ["**/*.{js,jsx,ts,tsx}"]
         },
         "packages/console": {
             "entry": [],

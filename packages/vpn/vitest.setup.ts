@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import { vi } from 'vitest';
 
 import '@proton/components/testing/vitest/mockFlagSvg';

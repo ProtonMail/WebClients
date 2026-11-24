@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/vitest'
 import { act, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { HomepageViewContext, type HomepageViewValue, type RecentsSort } from '../homepageViewContext'
@@ -145,7 +144,7 @@ describe('SortSelect', () => {
   })
 
   it('Closes on Escape when opened while its tooltip shows', async () => {
-    vi.useFakeTimers()
+    vi.useFakeTimers({ shouldAdvanceTime: true })
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
     const trigger = renderSortSelect()
     await user.hover(trigger)

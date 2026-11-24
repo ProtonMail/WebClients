@@ -1,4 +1,4 @@
-import * as jestDomMatchers from '@testing-library/jest-dom/matchers';
+import '@proton/vitest-config/setup';
 import { act, cleanup } from '@testing-library/react';
 import { webcrypto } from 'node:crypto';
 import * as webStreams from 'node:stream/web';
@@ -9,13 +9,7 @@ import '@proton/components/testing/vitest/mockFlagSvg';
 import '@proton/components/testing/vitest/mockMatchMedia';
 import '@proton/unleash/testing/vitest/mockUnleash';
 
-// Register the matchers on our own `expect`: `@testing-library/jest-dom/vitest` imports its own copy of vitest
-expect.extend(jestDomMatchers);
-
 afterEach(cleanup);
-
-// Testing Library only advances fake timers (for `waitFor`) through a `jest` global
-(globalThis as any).jest = { advanceTimersByTime: vi.advanceTimersByTime };
 
 // happy-dom has no user-agent stylesheet: give <bdi> its default isolation, which the bidi tests read back
 const bdiStyle = document.createElement('style');
@@ -48,12 +42,6 @@ document.head.append(bdiStyle);
 ).forEach((name) => {
     (globalThis as any)[name] = runInThisContext(name);
 });
-
-// Node < 25 lacks Uint8Array.fromBase64: polyfill after the constructors above are restored
-await import('core-js/actual/typed-array/from-base64');
-await import('core-js/actual/typed-array/from-hex');
-await import('core-js/actual/typed-array/to-base64');
-await import('core-js/actual/typed-array/to-hex');
 
 // Root __mocks__ are not applied automatically by Vitest, Jest did
 vi.mock('zustand');

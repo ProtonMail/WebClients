@@ -13,16 +13,13 @@ describe('Tooltip', () => {
     let timerUserEvent: UserEvent;
 
     beforeEach(() => {
-        vi.useFakeTimers();
-        // @testing-library/dom detects fake timers through the `jest` global to flush its async wrapper
-        vi.stubGlobal('jest', { advanceTimersByTime: (ms: number) => vi.advanceTimersByTime(ms) });
+        vi.useFakeTimers({ shouldAdvanceTime: true });
         timerUserEvent = userEvent.setup({ advanceTimers: (ms) => vi.advanceTimersByTime(ms) });
     });
 
     afterEach(() => {
         vi.runOnlyPendingTimers();
         vi.useRealTimers();
-        vi.unstubAllGlobals();
     });
 
     it('should show tooltip immediately when externally opened', () => {

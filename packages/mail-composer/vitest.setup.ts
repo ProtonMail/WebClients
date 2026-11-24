@@ -1,6 +1,4 @@
-import '@testing-library/jest-dom/vitest';
-// Node < 25 lacks Uint8Array.fromBase64
-import 'core-js/actual/typed-array/from-base64';
+import '@proton/vitest-config/setup';
 import '@proton/unleash/testing/vitest/mockUnleash';
 
 if (typeof window !== 'undefined') {
