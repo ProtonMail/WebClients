@@ -37,6 +37,7 @@ import { ResizableWrapper } from '../../list/ResizableWrapper';
 import { ResizeHandlePosition } from '../../list/ResizeHandle';
 import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
 import MessageOnlyView from '../../message/MessageOnlyView';
+import { BYOEInboxCleanup } from './BYOEInboxCleanup';
 import ModalOnboarding from './SubscriptionsList/ModalOnboarding';
 import { NewsletterSubscriptionListLoader } from './SubscriptionsList/NewsletterSubscriptionCardSkeleton/NewsletterSubscriptionListLoader';
 import { NewsletterSubscriptionList } from './SubscriptionsList/NewsletterSubscriptionList';
@@ -129,14 +130,21 @@ export const NewsletterSubscriptionView = ({ elementsData, actions }: Newsletter
         return redirectURL ? <Redirect to={redirectURL} /> : <Redirect to="/" />;
     }
 
+    // The cleanup is the first child with the same key in both returns, so it isn't remounted when the list loads
     if (subscriptionCount === 0) {
-        return <NewsletterSubscriptionViewPlaceholder loading={!!loadingSubscriptions} />;
+        return (
+            <>
+                <BYOEInboxCleanup key="byoe-inbox-cleanup" />
+                <NewsletterSubscriptionViewPlaceholder loading={!!loadingSubscriptions} />
+            </>
+        );
     }
 
     const hideEmailList = breakpoints.viewportWidth['<=medium'];
 
     return (
         <>
+            <BYOEInboxCleanup key="byoe-inbox-cleanup" />
             <ErrorBoundary component={<StandardErrorPage className="w-full" big />} logger={logger}>
                 <div ref={subscriptionContainerRef} className="flex flex-nowrap w-full subscription-container">
                     <ResizableWrapper

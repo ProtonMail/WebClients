@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
@@ -10,32 +10,25 @@ import {
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useApi } from '@proton/app-context/useApi';
 import { FeatureCode } from '@proton/features/interface';
-import { updateFeature } from '@proton/features/reducer';
 import useFeature from '@proton/features/useFeature';
+import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { useMailGlobalModals } from '../containers/globalModals/globalModalContext';
-import { ModalType } from '../containers/globalModals/inteface';
-import { getFinishedBYOEImportOutcome, loadSendersWhenFree } from '../helpers/byoeInboxCleanup';
+import { clearBYOEInboxCleanup, getFinishedBYOEImportOutcome, loadSendersWhenFree } from '../helpers/byoeInboxCleanup';
 import { useMailDispatch } from '../store/hooks';
-import type { MailDispatch } from '../store/store';
-import useBYOEInboxCleanupConfirm from './useBYOEInboxCleanupConfirm';
-
-const CLEANUP_FEATURE = FeatureCode.BYOEInboxCleanupModal;
-
-const clearCleanup = (dispatch: MailDispatch) => {
-    dispatch(updateFeature(CLEANUP_FEATURE, false)).catch(noop);
-};
 
 /**
- * Offers the BYOE inbox cleanup once the import into a newly connected BYOE address has finished.
- * The feature value is set when someone connects BYOE. Mail reads it once per load, so a connection made in another
- * tab while this one stays open is offered on the next load; one made in this tab is offered without a reload.
+ * Returns the senders for the BYOE inbox cleanup window once it should open, and `undefined` until then: when the
+ * import into a newly connected BYOE address has finished, onboarding is done and `canShow` is true.
+ *
+ * The cleanup is due while its feature value is true. Connecting BYOE sets it; closing the window clears it, and this
+ * hook clears it when the import failed or there are no senders. The value is read once per load and the senders once
+ * per visit to Mailing lists.
  */
-const useShowBYOEInboxCleanupModal = () => {
+const useBYOEInboxCleanupSenders = (canShow: boolean): NewsletterSubscription[] | undefined => {
     const isCleanupEnabled = useFlag('InboxBringYourOwnEmailCleanup');
-    const { feature } = useFeature<boolean>(CLEANUP_FEATURE, isCleanupEnabled);
+    const { feature } = useFeature<boolean>(FeatureCode.BYOEInboxCleanupModal, isCleanupEnabled);
     const dispatch = useMailDispatch();
     const easySwitchDispatch = useEasySwitchDispatch();
     const reportEntries = useEasySwitchSelector(selectReportEntriesByDate);
@@ -43,24 +36,17 @@ const useShowBYOEInboxCleanupModal = () => {
     const [addresses = []] = useAddresses();
     const { welcomeFlags } = useWelcomeFlags();
     const api = useApi();
-    const { notify } = useMailGlobalModals();
-    const createBYOEInboxCleanupConfirm = useBYOEInboxCleanupConfirm();
+    const [senders, setSenders] = useState<NewsletterSubscription[]>();
 
-    // A change of this mustn't restart loading the senders
-    const createConfirmRef = useRef(createBYOEInboxCleanupConfirm);
-    createConfirmRef.current = createBYOEInboxCleanupConfirm;
-
-    // Offered or cleared once per load, so a failed clear putting the value back doesn't loop
+    // Handled once per visit, so the senders aren't loaded twice and a failed clear putting the value back isn't retried
     const hasHandledCleanupRef = useRef(false);
 
-    // Flag is enabled and BYOE connection is complete - true
     const isCleanupDue = isCleanupEnabled && feature?.Value === true;
     const importOutcome = isCleanupDue
         ? getFinishedBYOEImportOutcome({ entries: reportEntries, addresses, feature })
         : undefined;
     const isOnboardingDone = welcomeFlags.isDone;
 
-    // Fetching the reports if clean up is due
     useEffect(() => {
         if (isCleanupDue && reportsLoading === 'idle') {
             void easySwitchDispatch(loadReports());
@@ -74,17 +60,17 @@ const useShowBYOEInboxCleanupModal = () => {
 
         if (importOutcome === 'failed') {
             hasHandledCleanupRef.current = true;
-            clearCleanup(dispatch);
+            clearBYOEInboxCleanup(dispatch);
             return;
         }
 
-        if (!isOnboardingDone) {
+        if (!isOnboardingDone || !canShow) {
             return;
         }
 
         const controller = new AbortController();
 
-        const offerCleanup = async () => {
+        const loadSenders = async () => {
             const subscriptions = await loadSendersWhenFree({ dispatch, api, signal: controller.signal });
             if (!subscriptions) {
                 return;
@@ -92,29 +78,22 @@ const useShowBYOEInboxCleanupModal = () => {
 
             hasHandledCleanupRef.current = true;
             if (subscriptions.length === 0) {
-                clearCleanup(dispatch);
+                clearBYOEInboxCleanup(dispatch);
                 return;
             }
 
-            notify({
-                type: ModalType.BYOEInboxCleanup,
-                value: {
-                    subscriptions,
-                    onConfirm: createConfirmRef.current(),
-                    onDisplayed: () => {
-                        clearCleanup(dispatch);
-                    },
-                },
-            });
+            setSenders(subscriptions);
         };
 
-        // A failed request leaves the cleanup due, to be offered on the next load
-        offerCleanup().catch(noop);
+        // A failed request leaves the cleanup due, to be tried again on the next visit
+        loadSenders().catch(noop);
 
         return () => {
             controller.abort();
         };
-    }, [importOutcome, isOnboardingDone, dispatch, api, notify]);
+    }, [importOutcome, isOnboardingDone, canShow, dispatch, api]);
+
+    return senders;
 };
 
-export default useShowBYOEInboxCleanupModal;
+export default useBYOEInboxCleanupSenders;

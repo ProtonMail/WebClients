@@ -55,7 +55,7 @@ describe('useBYOEInboxCleanupConfirm', () => {
         { count: 1, text: 'Unsubscribed from 1 mailing list and moved its messages to Archive.' },
     ])('shows the archive confirmation and resolves when every sender is done ($count)', async ({ count, text }) => {
         const { result } = setup();
-        const onConfirm = result.current();
+        const onConfirm = result.current;
 
         await expect(onConfirm({ subscriptions: generateSubscriptionList(count), archive: true })).resolves.toBe(
             undefined
@@ -70,7 +70,7 @@ describe('useBYOEInboxCleanupConfirm', () => {
         { count: 1, text: 'Unsubscribed from 1 mailing list.' },
     ])('shows the unsubscribe-only confirmation when archiving is off ($count)', async ({ count, text }) => {
         const { result } = setup();
-        const onConfirm = result.current();
+        const onConfirm = result.current;
 
         await onConfirm({ subscriptions: generateSubscriptionList(count), archive: false });
 
@@ -79,7 +79,7 @@ describe('useBYOEInboxCleanupConfirm', () => {
 
     it('shows one error naming no senders and rejects when some senders fail', async () => {
         const { result } = setup({ api: createFakeApi(['active-2']) });
-        const onConfirm = result.current();
+        const onConfirm = result.current;
 
         await expect(onConfirm({ subscriptions: generateSubscriptionList(3), archive: true })).rejects.toThrow();
 
@@ -97,22 +97,22 @@ describe('useBYOEInboxCleanupConfirm', () => {
         const api = createFakeApi();
         const { result } = setup({ api, hasPaidMail });
 
-        await result.current()({ subscriptions: generateSubscriptionList(1), archive: true });
+        await result.current({ subscriptions: generateSubscriptionList(1), archive: true });
 
         const filterRequests = api.mock.calls.map(([request]: [Request]) => request).filter(({ data }) => data);
         expect(filterRequests.map(({ data }) => data?.ApplyTo)).toEqual([applyTo]);
     });
 
-    it('on a second press only sends what failed the first time', async () => {
+    it('on a second press only sends what failed the first time, even after a re-render', async () => {
         const unsubscribeFails = ['active-2'];
         const api = createFakeApi(unsubscribeFails);
-        const { result } = setup({ api });
-        const onConfirm = result.current();
+        const { result, rerender } = setup({ api });
         const subscriptions = generateSubscriptionList(3);
-        await expect(onConfirm({ subscriptions, archive: false })).rejects.toThrow();
+        await expect(result.current({ subscriptions, archive: false })).rejects.toThrow();
 
         unsubscribeFails.length = 0;
-        await expect(onConfirm({ subscriptions, archive: false })).resolves.toBe(undefined);
+        rerender();
+        await expect(result.current({ subscriptions, archive: false })).resolves.toBe(undefined);
 
         expect(getRequestedURLs(api).slice(3)).toEqual(['mail/v4/newsletter-subscriptions/active-2/unsubscribe']);
         expect(createNotification).toHaveBeenLastCalledWith({ text: 'Unsubscribed from 3 mailing lists.' });
@@ -120,11 +120,12 @@ describe('useBYOEInboxCleanupConfirm', () => {
 
     it('starts afresh for each new window', async () => {
         const api = createFakeApi();
-        const { result } = setup({ api });
         const subscriptions = generateSubscriptionList(2);
-        await result.current()({ subscriptions, archive: false });
+        const { result: firstWindow } = setup({ api });
+        await firstWindow.current({ subscriptions, archive: false });
 
-        await result.current()({ subscriptions, archive: false });
+        const { result: secondWindow } = setup({ api });
+        await secondWindow.current({ subscriptions, archive: false });
 
         expect(getRequestedURLs(api)).toEqual([
             'mail/v4/newsletter-subscriptions/active-1/unsubscribe',
@@ -142,7 +143,7 @@ describe('useBYOEInboxCleanupConfirm', () => {
             });
         });
         const { result, unmount } = setup({ api });
-        const running = result.current()({ subscriptions: generateSubscriptionList(1), archive: false });
+        const running = result.current({ subscriptions: generateSubscriptionList(1), archive: false });
 
         unmount();
         finishRequest();
@@ -154,7 +155,7 @@ describe('useBYOEInboxCleanupConfirm', () => {
     it('refreshes the mailbox after a run', async () => {
         const { result } = setup();
 
-        await result.current()({ subscriptions: generateSubscriptionList(2), archive: true });
+        await result.current({ subscriptions: generateSubscriptionList(2), archive: true });
 
         expect(useEventManager.call).toHaveBeenCalledTimes(1);
     });

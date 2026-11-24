@@ -3,13 +3,21 @@ import { useEffect } from 'react';
 import { act, fireEvent, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { generateSubscriptionList } from '../../components/view/NewsletterSubscription/testData';
-import { mailTestRender } from '../../helpers/tests/render';
-import { useMailGlobalModals } from './globalModalContext';
-import type { BYOEInboxCleanupChoice, ModalPayload } from './inteface';
-import { ModalType } from './inteface';
+import { clearBYOEInboxCleanup } from '../../../helpers/byoeInboxCleanup';
+import { mailTestRender } from '../../../helpers/tests/render';
+import useBYOEInboxCleanupConfirm from '../../../hooks/useBYOEInboxCleanupConfirm';
+import { BYOEInboxCleanupModal } from './BYOEInboxCleanupModal';
+import type { BYOEInboxCleanupChoice } from './interface';
+import { generateSubscriptionList } from './testData';
+
+vi.mock('../../../hooks/useBYOEInboxCleanupConfirm', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('../../../helpers/byoeInboxCleanup', async () => ({
+    ...(await vi.importActual('../../../helpers/byoeInboxCleanup')),
+    clearBYOEInboxCleanup: vi.fn(),
+}));
 
 const TITLE = 'Your Gmail newsletters, now easier to manage';
 const getDescription = (newsletters: string) => {
@@ -63,30 +71,31 @@ interface RenderModalOptions {
     onConfirm?: (choice: BYOEInboxCleanupChoice) => Promise<void>;
 }
 
-const NotifyOnMount = ({ payload }: { payload: ModalPayload }) => {
-    const { notify } = useMailGlobalModals();
+interface OpenOnMountProps {
+    subscriptions: NewsletterSubscription[];
+}
+
+// Opens the window as the Mailing lists view does
+const OpenOnMount = ({ subscriptions }: OpenOnMountProps) => {
+    const { modalProps, openModal, render } = useModalStateObject();
 
     useEffect(() => {
-        notify(payload);
-    }, [notify, payload]);
+        openModal(true);
+    }, [openModal]);
 
-    return null;
+    return render ? <BYOEInboxCleanupModal subscriptions={subscriptions} modalProps={modalProps} /> : null;
 };
 
 const renderModal = async ({
     subscriptions = defaultSubscriptions,
     onConfirm = vi.fn(() => Promise.resolve()),
 }: RenderModalOptions = {}) => {
-    const onDisplayed = vi.fn();
-    const payload: ModalPayload = {
-        type: ModalType.BYOEInboxCleanup,
-        value: { subscriptions, onConfirm, onDisplayed },
-    };
-
-    await mailTestRender(<NotifyOnMount payload={payload} />);
+    vi.mocked(clearBYOEInboxCleanup).mockClear();
+    vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(onConfirm);
+    await mailTestRender(<OpenOnMount subscriptions={subscriptions} />);
     await screen.findByRole('heading', { name: TITLE });
 
-    return { onDisplayed, onConfirm };
+    return { onConfirm };
 };
 
 const getDialog = () => {
@@ -157,7 +166,7 @@ const closeWith: Record<string, () => void> = {
     },
 };
 
-describe('GlobalBYOEInboxCleanupModal', () => {
+describe('BYOEInboxCleanupModal', () => {
     describe('opening and closing', () => {
         it('opens with the new title, the magic wand icon and the number of senders', async () => {
             await renderModal();
@@ -174,11 +183,18 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             expect(screen.getByText(getDescription('1 newsletter'))).toBeInTheDocument();
         });
 
-        it('reports it was shown once when it opens', async () => {
-            const { onDisplayed } = await renderModal();
+        it("doesn't clear the cleanup just by opening, so a reload while it's open shows it again", async () => {
+            await renderModal();
 
-            expect(screen.getByText(TITLE)).toBeInTheDocument();
-            expect(onDisplayed).toHaveBeenCalledTimes(1);
+            expect(clearBYOEInboxCleanup).not.toHaveBeenCalled();
+        });
+
+        it.each(Object.keys(closeWith))('%s clears the cleanup, so it never opens again', async (closeMethod) => {
+            await renderModal();
+
+            closeWith[closeMethod]();
+
+            expect(clearBYOEInboxCleanup).toHaveBeenCalledTimes(1);
         });
 
         it.each(Object.keys(closeWith))('%s closes the window without confirming', async (closeMethod) => {
@@ -467,7 +483,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'false');
         });
 
-        it('closes when the answer succeeds', async () => {
+        it('closes and clears the cleanup when the answer succeeds', async () => {
             await renderModal();
             fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
 
@@ -476,6 +492,21 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             });
 
             expect(isClosing()).toBe(true);
+            expect(clearBYOEInboxCleanup).toHaveBeenCalledTimes(1);
+        });
+
+        it('clears the cleanup once when it is closed while waiting and the answer then succeeds', async () => {
+            const deferred = createDeferred();
+            await renderModal({ onConfirm: vi.fn(() => deferred.promise) });
+            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
+            fireEvent.click(getUnsubscribeButton());
+
+            closeWith.Skip();
+            await act(async () => {
+                deferred.resolve();
+            });
+
+            expect(clearBYOEInboxCleanup).toHaveBeenCalledTimes(1);
         });
 
         it('stays open with the same choices when the answer fails, and Unsubscribe can be pressed again with the current selection', async () => {
@@ -490,6 +521,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             });
 
             expect(isClosing()).toBe(false);
+            expect(clearBYOEInboxCleanup).not.toHaveBeenCalled();
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'false');
             expect(getUnsubscribeButton()).toBeEnabled();
             expect(getSenderCheckbox(defaultSubscriptions[0])).toBeChecked();

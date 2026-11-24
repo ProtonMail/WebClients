@@ -39,11 +39,6 @@ const GlobalBYOESpotlightModal = lazy(() =>
         default: m.GlobalBYOESpotlightModal,
     }))
 );
-const GlobalBYOEInboxCleanupModal = lazy(() =>
-    import(/* webpackChunkName: "global-byoe-inbox-cleanup-modal" */ './GlobalBYOEInboxCleanupModal').then((m) => ({
-        default: m.GlobalBYOEInboxCleanupModal,
-    }))
-);
 
 interface ActiveModal {
     // A new id for every opening, so a modal opened again starts from a clean state
@@ -65,8 +60,6 @@ const renderModal = (payload: ModalPayload, modalProps: ModalStateProps) => {
             return <GlobalCategoriesB2COnboarding value={payload.value} modalProps={modalProps} />;
         case ModalType.BYOESpotlight:
             return <GlobalBYOESpotlightModal value={payload.value} modalProps={modalProps} />;
-        case ModalType.BYOEInboxCleanup:
-            return <GlobalBYOEInboxCleanupModal value={payload.value} modalProps={modalProps} />;
     }
 };
 
