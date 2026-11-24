@@ -12,6 +12,7 @@
         "./components/Onboarding": "./src/components/Onboarding/index.tsx",
         "./components/OpenVPNConfigurationSection": "./src/components/OpenVPNConfigurationSection/OpenVPNConfigurationSection.tsx",
         "./components/OpenVPNCredentialsSection": "./src/components/OpenVPNCredentialsSection.tsx",
+        "./components/SharedServers": "./src/components/sharedServers/SharedServersSection.tsx",
         "./components/tv/components/TvNotSignedIn": "./src/components/tv/components/TvNotSignedIn.tsx",
         "./components/tv/containers/TvCheckoutContainer": "./src/components/tv/containers/TvCheckoutContainer.tsx",
         "./components/tv/containers/TVContainer": "./src/components/tv/containers/TVContainer.tsx",
