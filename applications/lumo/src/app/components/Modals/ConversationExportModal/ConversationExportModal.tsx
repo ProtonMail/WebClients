@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +11,9 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
-import { useLumoStore } from '../../../redux/hooks';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { useLumoDispatch } from '../../../redux/hooks';
+import { LocalExportAvailableError, prepareConversationExport } from '../../../redux/sagas/conversationSnapshot';
 import type { Conversation } from '../../../types';
 import type { Format } from './exportConversation';
 import { exportConversation } from './exportConversation';
@@ -22,18 +24,89 @@ interface Props extends ModalProps {
 
 export const ConversationExportModal = ({ conversation, onClose, ...rest }: Props) => {
     const [selectedFormat, setSelectedFormat] = useState<Format>('json');
-    const store = useLumoStore();
+    const [isPreparing, setIsPreparing] = useState(false);
+    const [error, setError] = useState<'empty' | 'failed' | 'available'>();
+    // Guard repeat clicks before React disables the button and identify which attempt owns the dialog state.
+    const pendingExport = useRef<AbortController | undefined>(undefined);
+    const dispatch = useLumoDispatch();
+    const isGuest = useIsGuest();
     const { createNotification } = useNotifications();
 
-    const onExportClick = () => {
-        exportConversation(store.getState(), conversation, selectedFormat);
-        createNotification({
-            // translator: Success notification shown after the conversation file has been exported/downloaded.
-            text: c('collider_2025:Success').t`Conversation exported`,
-            type: 'success',
-        });
+    // Unmounting can bypass close(), for example when the chat row disappears during a fetch.
+    useEffect(() => {
+        return () => {
+            pendingExport.current?.abort();
+            pendingExport.current = undefined;
+        };
+    }, []);
+
+    const close = () => {
+        // Stop preparing the snapshot and ignore any download handoff already in flight.
+        pendingExport.current?.abort();
+        pendingExport.current = undefined;
+        setIsPreparing(false);
+        setError(undefined);
         onClose?.();
     };
+
+    const onExportClick = async (allowUnverified = false) => {
+        if (pendingExport.current) {
+            return;
+        }
+        const attempt = new AbortController();
+        pendingExport.current = attempt;
+        setIsPreparing(true);
+        setError(undefined);
+
+        try {
+            const snapshot = await dispatch(
+                prepareConversationExport(conversation.id, isGuest, attempt.signal, allowUnverified)
+            );
+            if (pendingExport.current !== attempt) {
+                return;
+            }
+            if (!Object.values(snapshot.messages).some((message) => !message.placeholder)) {
+                setError('empty');
+                return;
+            }
+
+            // The dialog can also close while the download is being handed off, so check again before showing success.
+            await exportConversation(snapshot.conversation, snapshot.messages, selectedFormat);
+            if (pendingExport.current !== attempt) {
+                return;
+            }
+            createNotification({
+                // translator: Success notification shown after the conversation file has been exported/downloaded.
+                text: c('collider_2025:Success').t`Conversation exported`,
+                type: 'success',
+            });
+            close();
+        } catch (error) {
+            if (pendingExport.current === attempt) {
+                setError(error instanceof LocalExportAvailableError ? 'available' : 'failed');
+            }
+        } finally {
+            // A stale attempt must not clear the loading state of a newer export.
+            if (pendingExport.current === attempt) {
+                pendingExport.current = undefined;
+                setIsPreparing(false);
+            }
+        }
+    };
+
+    // translator: Button label that confirms and triggers the conversation export.
+    const exportLabel = c('collider_2025:Action').t`Export`;
+    // translator: Export button label shown while the chat transcript is being loaded for download.
+    const preparingLabel = c('collider_2025:Action').t`Preparing export…`;
+    // translator: Export dialog error for a chat that has no transcript messages.
+    const emptyMessage = c('collider_2025:Error').t`This chat has no messages to export.`;
+    // translator: Export dialog error when the transcript could not be loaded or saved.
+    const failedMessage = c('collider_2025:Error').t`Couldn't export this chat. Try again.`;
+    // translator: Explains why exporting only the messages on this device may produce an incomplete transcript.
+    const availableMessage = c('collider_2025:Info')
+        .t`Only messages available on this device will be exported. The export may be incomplete.`;
+    // translator: Button to export the messages available on this device, even if the transcript may be incomplete.
+    const exportAvailableLabel = c('collider_2025:Action').t`Export available messages`;
 
     // translator: Name of the JSON export format option, shown as a label above its description.
     const jsonLabel = c('collider_2025:Label').t`JSON`;
@@ -46,7 +119,7 @@ export const ConversationExportModal = ({ conversation, onClose, ...rest }: Prop
     const markdownDescription = c('collider_2025:Info').t`Text formatted with markdown, easy to read or share`;
 
     return (
-        <ModalTwo enableCloseWhenClickOutside onClose={onClose} size="large" {...rest}>
+        <ModalTwo enableCloseWhenClickOutside onClose={close} size="large" {...rest}>
             <ModalTwoHeader
                 title={
                     // translator: Title for a modal that lets the user export a conversation in different formats.
@@ -73,6 +146,7 @@ export const ConversationExportModal = ({ conversation, onClose, ...rest }: Prop
                                     </div>
                                 ),
                                 value: 'json',
+                                disabled: isPreparing,
                             },
                             {
                                 label: (
@@ -84,6 +158,7 @@ export const ConversationExportModal = ({ conversation, onClose, ...rest }: Prop
                                     </div>
                                 ),
                                 value: 'md',
+                                disabled: isPreparing,
                             },
                         ]}
                         value={selectedFormat}
@@ -96,13 +171,31 @@ export const ConversationExportModal = ({ conversation, onClose, ...rest }: Prop
                             .t`Some content, such as images and attachments, may not be included in the exported file.`
                     }
                 </div>
+                {error === 'available' && (
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+                    <p className="mt-4 mb-0 lumo-body-small lumo-color-glyph-mid" role="status">
+                        {availableMessage}
+                    </p>
+                )}
+                {error && error !== 'available' && (
+                    <p className="mt-4 mb-0 lumo-body-small lumo-color-signal-danger" role="alert">
+                        {error === 'empty' ? emptyMessage : failedMessage}
+                    </p>
+                )}
             </ModalTwoContent>
             <ModalTwoFooter className="justify-end">
-                <Button color="norm" onClick={onExportClick}>
-                    {
-                        // translator: Button label that confirms and triggers the conversation export.
-                        c('collider_2025:Action').t`Export`
-                    }
+                {error === 'available' && (
+                    <Button color="weak" onClick={() => onExportClick(true)}>
+                        {exportAvailableLabel}
+                    </Button>
+                )}
+                <Button
+                    color="norm"
+                    loading={isPreparing}
+                    aria-label={isPreparing ? preparingLabel : undefined}
+                    onClick={() => onExportClick()}
+                >
+                    {isPreparing ? preparingLabel : exportLabel}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>

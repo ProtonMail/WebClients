@@ -22,6 +22,7 @@ import {
     cleanMessage,
     cleanSerializedMessage,
     getSpaceDek,
+    isEmptyMessagePriv,
 } from '../../types';
 import { selectConversationById, selectMessageById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
 import type { PullAttachmentRequest } from '../slices/core/attachments';
@@ -357,19 +358,34 @@ export function* retryPushMessage({ payload }: { payload: PushMessageRequest }):
 
 /*** sync: remote -> local ***/
 
-export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload: RemoteMessage }): SagaIterator<any> {
+export function* refreshMessageFromRemote(
+    { payload: remoteMessage }: { payload: RemoteMessage },
+    snapshotSpaceId?: SpaceId
+): SagaIterator<Message | undefined> {
     console.log('Saga triggered: refreshMessageFromRemote', remoteMessage);
     const type = 'message';
     const dbApi: DbApi = yield getContext('dbApi');
     const { id: localId, conversationId: localConversationId, remoteId } = remoteMessage;
 
-    // Update the remote id mapping
-    yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true })); // Redux
+    const mapping = addIdMapEntry({ type, localId, remoteId, saveToIdb: true });
+    if (!snapshotSpaceId) {
+        yield put(mapping);
+    }
 
-    // Compare with object in Redux
-    const localConversation: Conversation = yield call(waitForConversation, localConversationId);
-    const localSpaceId: SpaceId = localConversation.spaceId;
-    const localSpace: Space = yield call(waitForSpace, localSpaceId);
+    // Background sync can receive a message before its parents. A snapshot starts from existing parents and
+    // must fail if they disappear during the fetch, since they may never be added again.
+    const localConversation: Conversation | undefined = snapshotSpaceId
+        ? yield select(selectConversationById(localConversationId))
+        : yield call(waitForConversation, localConversationId);
+    if (!localConversation || (snapshotSpaceId && localConversation.spaceId !== snapshotSpaceId)) {
+        throw new Error('Conversation is unavailable locally');
+    }
+    const localSpace: Space | undefined = snapshotSpaceId
+        ? yield select(selectSpaceById(snapshotSpaceId))
+        : yield call(waitForSpace, localConversation.spaceId);
+    if (!localSpace) {
+        throw new Error('Conversation space is unavailable locally');
+    }
     const spaceDek: AesGcmCryptoKey = yield call(getSpaceDek, localSpace);
     const deserializedRemoteMessage: Message | null = yield call(deserializeMessage, remoteMessage, spaceDek);
     if (!deserializedRemoteMessage) {
@@ -384,7 +400,7 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
             console.log('refreshMessageFromRemote: Redux message is placeholder, noop');
             return;
         }
-        if (isEqual(cleanRemote, cleanLocal)) {
+        if (!snapshotSpaceId && isEqual(cleanRemote, cleanLocal)) {
             console.log('refreshMessageFromRemote: received message is the same as the one in Redux, noop');
             return;
         }
@@ -392,8 +408,24 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
 
     // Compare with object in IDB
     const idbMessage: SerializedMessage | undefined = yield call([dbApi, dbApi.getMessageById], localId);
+    if (snapshotSpaceId) {
+        if (idbMessage?.deleted) {
+            throw new Error('Conversation message was deleted locally');
+        }
+        // An edit or a local decrypt may have completed while we fetched and read the database.
+        const latest: Message | undefined = yield select(selectMessageById(localId));
+        if (latest?.placeholder) {
+            return;
+        }
+        if (latest && !isEmptyMessagePriv(latest)) {
+            return latest;
+        }
+        if (idbMessage?.dirty) {
+            throw new Error('Conversation message has pending local changes');
+        }
+    }
     if (idbMessage) {
-        if (idbMessage.dirty) {
+        if (!snapshotSpaceId && idbMessage.dirty) {
             console.log(
                 `message ${localId}: idb object is dirty, but we received a remote object: clearing dirty flag`
             );
@@ -405,7 +437,7 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
         }
         const cleanSerializedRemote = cleanSerializedMessage(remoteMessage);
         const cleanSerializedLocal = cleanSerializedMessage(idbMessage);
-        if (isEqual(cleanSerializedRemote, cleanSerializedLocal)) {
+        if (!snapshotSpaceId && isEqual(cleanSerializedRemote, cleanSerializedLocal)) {
             console.log('refreshMessageFromRemote: received message is the same as the one in IDB, noop');
             return;
         }
@@ -423,9 +455,18 @@ export function* refreshMessageFromRemote({ payload: remoteMessage }: { payload:
         }
     }
 
+    if (snapshotSpaceId) {
+        const parent: Conversation | undefined = yield select(selectConversationById(localConversationId));
+        if (parent?.spaceId !== snapshotSpaceId || !(yield select(selectSpaceById(snapshotSpaceId)))) {
+            throw new Error('Conversation is unavailable locally');
+        }
+        yield put(mapping);
+    }
+
     // Update locally
     yield put(addMessage(cleanRemote)); // Redux
     yield call([dbApi, dbApi.updateMessage], remoteMessage, { dirty: false }); // IDB
+    return cleanRemote;
 }
 
 export function* pullMessage({ payload: shallowRemoteMessage }: { payload: RemoteMessage }): SagaIterator<void> {

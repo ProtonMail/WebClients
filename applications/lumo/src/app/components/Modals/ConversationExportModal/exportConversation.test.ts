@@ -1,7 +1,9 @@
 import type { Mock } from 'vitest';
 
+import { prepareConversationExport } from '../../../redux/sagas/conversationSnapshot';
 import type { LumoState } from '../../../redux/store';
-import type { Conversation, Message } from '../../../types';
+import type { LumoThunkArguments } from '../../../redux/thunk';
+import type { Conversation } from '../../../types';
 import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import { convertConversationToJson } from './convertConversationToJson';
 import { convertConversationToMarkdown } from './convertConversationToMarkdown';
@@ -10,8 +12,6 @@ import { makeMessage, testBaseConversation, toMessageMap } from './exportConvers
 
 vi.mock('../../../util/triggerFileDownload', () => ({ triggerFileDownload: vi.fn() }));
 
-const makeState = (messages: Message[]): LumoState => ({ messages: toMessageMap(messages) }) as LumoState;
-
 describe('exportConversation', () => {
     afterEach(() => {
         vi.clearAllMocks();
@@ -19,7 +19,7 @@ describe('exportConversation', () => {
 
     it('downloads a JSON file with an application/json blob and a sanitized filename', async () => {
         const messages = [makeMessage({ id: 'msg-1', createdAt: '2026-01-01T00:00:10.000Z', content: 'Hi there' })];
-        exportConversation(makeState(messages), testBaseConversation, 'json');
+        exportConversation(testBaseConversation, toMessageMap(messages), 'json');
 
         expect(triggerFileDownload).toHaveBeenCalledTimes(1);
         const [blob, filename] = (triggerFileDownload as Mock).mock.calls[0];
@@ -31,7 +31,7 @@ describe('exportConversation', () => {
 
     it('downloads a markdown file with a text/markdown blob and a sanitized filename', async () => {
         const messages = [makeMessage({ id: 'msg-1', createdAt: '2026-01-01T00:00:10.000Z', content: 'Hi there' })];
-        exportConversation(makeState(messages), testBaseConversation, 'md');
+        exportConversation(testBaseConversation, toMessageMap(messages), 'md');
 
         expect(triggerFileDownload).toHaveBeenCalledTimes(1);
         const [blob, filename] = (triggerFileDownload as Mock).mock.calls[0];
@@ -43,7 +43,7 @@ describe('exportConversation', () => {
 
     it('strips characters that are illegal in filenames on Windows/macOS/Linux', () => {
         const conversation: Conversation = { ...testBaseConversation, title: 'Q&A: "Best" Tips?' };
-        exportConversation(makeState([]), conversation, 'json');
+        exportConversation(conversation, {}, 'json');
 
         const [, filename] = (triggerFileDownload as Mock).mock.calls[0];
         expect(filename).toBe('Q&A Best Tips.json');
@@ -51,7 +51,7 @@ describe('exportConversation', () => {
 
     it('trims trailing dots and spaces from the sanitized filename', () => {
         const conversation: Conversation = { ...testBaseConversation, title: 'Draft Notes...   ' };
-        exportConversation(makeState([]), conversation, 'json');
+        exportConversation(conversation, {}, 'json');
 
         const [, filename] = (triggerFileDownload as Mock).mock.calls[0];
         expect(filename).toBe('Draft Notes.json');
@@ -59,7 +59,7 @@ describe('exportConversation', () => {
 
     it('falls back to a default filename when the title sanitizes to an empty string', () => {
         const conversation: Conversation = { ...testBaseConversation, title: '/\\:*?"<>|' };
-        exportConversation(makeState([]), conversation, 'md');
+        exportConversation(conversation, {}, 'md');
 
         const [, filename] = (triggerFileDownload as Mock).mock.calls[0];
         expect(filename).toBe('Untitled conversation.md');
@@ -67,21 +67,21 @@ describe('exportConversation', () => {
 
     it('only exports messages belonging to the requested conversation', async () => {
         const messages = [
-            makeMessage({
-                id: 'msg-1',
-                createdAt: '2026-01-01T00:00:10.000Z',
-                content: 'mine',
-                conversationId: 'conv-1',
-            }),
-            makeMessage({
-                id: 'msg-2',
-                createdAt: '2026-01-01T00:00:20.000Z',
-                content: 'other',
-                conversationId: 'conv-2',
-            }),
+            makeMessage({ id: 'msg-1', content: 'mine', conversationId: 'conv-1' }),
+            makeMessage({ id: 'msg-2', content: 'other', conversationId: 'conv-2' }),
         ];
-        exportConversation(makeState(messages), testBaseConversation, 'md');
+        const getState = () =>
+            ({
+                conversations: { [testBaseConversation.id]: testBaseConversation },
+                messages: toMessageMap(messages),
+            }) as LumoState;
+        const snapshot = await prepareConversationExport(testBaseConversation.id, true)(
+            vi.fn(),
+            getState,
+            {} as LumoThunkArguments
+        );
 
+        await exportConversation(snapshot.conversation, snapshot.messages, 'md');
         const [blob] = (triggerFileDownload as Mock).mock.calls[0];
         const text = await blob.text();
         expect(text).toContain('mine');

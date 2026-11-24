@@ -92,7 +92,7 @@ vi.mock('./attachments', async () => {
 vi.mock('./messages', () => ({
     refreshMessageFromRemote: function* ({ payload }: any) {
         mockDevice.idb.set(payload.id, payload);
-        mockDevice.state.messages[payload.id] = {
+        const message = {
             id: payload.id,
             createdAt: payload.createdAt,
             role: payload.role,
@@ -100,6 +100,8 @@ vi.mock('./messages', () => ({
             parentId: payload.parentId,
             content: `full-${payload.id}`,
         };
+        mockDevice.state.messages[payload.id] = message;
+        return message;
     },
 }));
 
@@ -151,12 +153,21 @@ const createState = ({
         conversations: { [conv.id]: conv },
         messages: Object.fromEntries(messages.map((m) => [m.id, m])),
         attachments: Object.fromEntries(attachments.map((a) => [a.id, a])),
-        idmap,
+        idmap: {
+            local2remote: {
+                conversation: {},
+                space: {},
+                ...(idmap as { local2remote: Partial<LumoState['idmap']['local2remote']> }).local2remote,
+            },
+        },
     }) as unknown as LumoState;
 
 /** Runs the saga, answering every push request like a server would (or failing conversation pushes). */
 const dbApi = {
     softDeleteMessage: vi.fn(),
+    getRemoteIdFromLocalId: vi.fn().mockResolvedValue(undefined),
+    getConversationById: vi.fn().mockResolvedValue(undefined),
+    getSpaceById: vi.fn().mockResolvedValue(undefined),
     getMessageById: vi.fn(async (id: string) => mockDevice.idb.get(id)),
     getAttachmentById: vi.fn(async (id: string) => mockDevice.attachmentIdb.get(id)),
 };
@@ -213,6 +224,9 @@ const run = async (
 describe('moveConversationToSpace saga', () => {
     beforeEach(() => {
         dbApi.softDeleteMessage.mockReset();
+        dbApi.getRemoteIdFromLocalId.mockReset().mockResolvedValue(undefined);
+        dbApi.getConversationById.mockReset().mockResolvedValue(undefined);
+        dbApi.getSpaceById.mockReset().mockResolvedValue(undefined);
         mockDevice.idb.clear();
         mockDevice.attachmentIdb.clear();
         mockDevice.fullAttachments.clear();
@@ -259,6 +273,55 @@ describe('moveConversationToSpace saga', () => {
             expect(copied.map((m) => m.content)).toEqual(['full-m1', 'full-m2']);
             expect(dispatched).toContainEqual(locallyDeleteSpaceFromLocalRequest(SOURCE));
             expect(dispatched.at(-1)).toMatchObject({ type: moveConversationToSpaceSuccess.type });
+        });
+
+        it('copies the verified transcript when only IndexedDB has the server ID', async () => {
+            const state = neverOpenedState();
+            delete state.idmap.local2remote.conversation['conv-1'];
+            dbApi.getRemoteIdFromLocalId.mockResolvedValueOnce('remote-conv-1');
+            const lumoApi = {
+                getConversation: vi.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: shallowList }),
+                getMessage: vi.fn(async (remoteId: string) => {
+                    const message = shallowList.find((item) => item.remoteId === remoteId)!;
+                    return { ...message, encrypted: `enc-${message.id}` };
+                }),
+            };
+
+            const dispatched = await run(state, { lumoApi });
+
+            expect(dispatched.filter(addMessage.match).map(({ payload }) => (payload as Message).content)).toEqual([
+                'full-m1',
+                'full-m2',
+            ]);
+            expect(dispatched).toContainEqual(locallyDeleteSpaceFromLocalRequest(SOURCE));
+        });
+
+        it('keeps the original when a dirty chat has lost its ID in a synced space', async () => {
+            const state = createState({
+                messages: [message('m1', '2026-01-01T00:00:01.000Z')],
+                idmap: { local2remote: { space: { [SOURCE]: 'remote-space' } } },
+            });
+            dbApi.getConversationById.mockResolvedValueOnce({ dirty: true });
+            const lumoApi = {
+                getSpace: vi.fn().mockResolvedValue({
+                    space: { id: SOURCE },
+                    conversations: [{ id: 'conv-1', remoteId: 'remote-conv-1' }],
+                    deletedConversations: [],
+                }),
+            };
+
+            const dispatched = await run(state, { lumoApi });
+
+            expect(lumoApi.getSpace).toHaveBeenCalledWith('remote-space');
+            expect(dispatched.some(addConversation.match)).toBe(false);
+            expect(dispatched.some(addMessage.match)).toBe(false);
+            expect(dispatched.some(locallyDeleteSpaceFromLocalRequest.match)).toBe(false);
+            expect(dispatched.some(locallyDeleteConversationFromLocalRequest.match)).toBe(false);
+            expect(dbApi.softDeleteMessage).not.toHaveBeenCalled();
+            expect(dispatched.at(-1)).toMatchObject({
+                type: moveConversationToSpaceFailure.type,
+                payload: { reason: 'unavailable' },
+            });
         });
 
         it('does not refetch messages that are already complete on the device', async () => {

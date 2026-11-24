@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { selectMessagesByConversationId } from '../../../redux/selectors';
-import type { LumoState } from '../../../redux/store';
+import type { MessageMap } from '../../../redux/slices/core/messages';
 import type { Conversation } from '../../../types';
 import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import { convertConversationToJson } from './convertConversationToJson';
@@ -27,23 +26,19 @@ const toFilename = (conversation: Conversation, extension: string) => {
     }.${extension}`;
 };
 
-export const exportConversation = (state: LumoState, conversation: Conversation, format: Format) => {
-    const messages = selectMessagesByConversationId(conversation.id)(state);
-
+export const exportConversation = (conversation: Conversation, messages: MessageMap, format: Format) => {
     switch (format) {
         case 'json': {
-            triggerFileDownload(
+            return triggerFileDownload(
                 new Blob([convertConversationToJson(conversation, messages)], { type: 'application/json' }),
                 toFilename(conversation, 'json')
             );
-            return;
         }
         case 'md': {
-            triggerFileDownload(
+            return triggerFileDownload(
                 new Blob([convertConversationToMarkdown(conversation, messages)], { type: 'text/markdown' }),
                 toFilename(conversation, 'md')
             );
-            return;
         }
     }
 };
