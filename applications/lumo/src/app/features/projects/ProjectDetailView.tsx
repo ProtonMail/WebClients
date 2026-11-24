@@ -330,14 +330,17 @@ const ProjectDetailViewInner = () => {
                 >
                     {/* Main area - similar to 'outer' in lumo-chat-container */}
                     <div className="outer">
-                        <div className="project-detail-main">
+                        <div className="project-detail-main px-8 pt-2">
                             {retainedConversations.length === 0 ? (
                                 <ProjectEmptyState
                                     promptSuggestions={promptSuggestions}
                                     onSelectSuggestion={setSuggestedPrompt}
                                 />
                             ) : (
-                                <div className="project-detail-conversations pt-5 mb-0">
+                                <div
+                                    className="project-detail-conversations w-full max-w-custom mx-auto"
+                                    style={{ '--max-w-custom': '60rem' }}
+                                >
                                     <ConversationExpirationLegend conversations={retainedConversations} />
                                     <ConversationListPanel
                                         title={c('collider_2025:Title').t`Chats`}

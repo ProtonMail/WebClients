@@ -5,13 +5,13 @@ export type AnimatedBackgroundBlobMode = 'ambient' | 'lavaLamp';
 
 export const DEFAULT_ANIMATED_BACKGROUND_BLOB_MODE: AnimatedBackgroundBlobMode = 'ambient';
 
-export const ANIMATED_BACKGROUND_BASE_CSS_VAR = '--background-main-canvas';
+export const ANIMATED_BACKGROUND_BASE_CSS_VAR = '--lumo-page';
 
-/** Matches `--background-main-canvas` in lumo-light.theme.css */
-const LIGHT_BASE_COLOR: [number, number, number] = [245 / 255, 246 / 255, 254 / 255];
+/** Matches `--lumo-page` in the light theme */
+const LIGHT_BASE_COLOR: [number, number, number] = [250 / 255, 251 / 255, 1];
 
-/** Matches `--background-main-canvas` in lumo-dark.theme.css */
-const DARK_BASE_COLOR: [number, number, number] = [11 / 255, 11 / 255, 11 / 255];
+/** Matches `--lumo-page` in the dark theme */
+const DARK_BASE_COLOR: [number, number, number] = [6 / 255, 6 / 255, 6 / 255];
 
 /** Cap device pixel ratio for background canvases (shader + particles). */
 export const ANIMATED_BACKGROUND_MAX_DPR = 1.1;
@@ -358,7 +358,6 @@ const ANIMATED_BACKGROUND_SHADER_CONFIG_LAVA_LAMP_DARK: WebglShaderBgConfig = {
     blobs: LAVA_LAMP_DARK_BLOBS,
 };
 
-
 export function getAnimatedBackgroundShaderConfig(
     isDark: boolean,
     mode: AnimatedBackgroundBlobMode = DEFAULT_ANIMATED_BACKGROUND_BLOB_MODE
@@ -394,7 +393,6 @@ const ANIMATED_BACKGROUND_PARTICLE_CONFIG_DARK: Partial<GridParticleFieldOptions
     ...PARTICLE_CONFIG_SHARED,
     alpha: 0.78,
 };
-
 
 export function getAnimatedBackgroundParticleConfig(
     isDark: boolean,

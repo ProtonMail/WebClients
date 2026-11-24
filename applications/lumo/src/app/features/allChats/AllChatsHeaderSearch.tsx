@@ -32,10 +32,11 @@ export const AllChatsHeaderSearch = ({ searchQuery, onSearchQueryChange }: Props
     return (
         // Input grows by default (flex-1), so the wrapper sets its width: the full row on small
         // screens, 280px beside the title above that.
-        <div className="w-full md:w-custom shrink-0" style={{ '--md-w-custom': '17.5rem' }}>
+        <div className="lumo-layout-header-control shrink-0 w-full md:w-custom" style={{ '--md-w-custom': '17.5rem' }}>
             <Input
                 dir="auto"
                 ref={inputRef}
+                className="lumo-search-field"
                 value={searchQuery}
                 onValue={onSearchQueryChange}
                 placeholder={c('collider_2025:Placeholder').t`Search chats`}

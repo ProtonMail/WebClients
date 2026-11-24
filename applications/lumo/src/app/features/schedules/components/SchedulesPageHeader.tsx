@@ -40,8 +40,8 @@ export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps
 
     return (
         <div className="schedules-page-header flex flex-nowrap items-start gap-3 w-full">
-            <div className="flex flex-column flex-1 gap-1 min-w-0">
-                <h2 className="lumo-headline-small">{c('collider_2025:Title').t`Scheduled tasks`}</h2>
+            <div className="flex flex-column flex-1 min-w-0">
+                <h2 className="m-0 mb-1 lumo-headline-small">{c('collider_2025:Title').t`Scheduled tasks`}</h2>
                 <p className="schedules-page-header__subtitle m-0 lumo-body-medium lumo-color-glyph-mid">
                     {
                         // translator: Introduction to scheduled tasks. ${LUMO_SHORT_APP_NAME} is the product name.

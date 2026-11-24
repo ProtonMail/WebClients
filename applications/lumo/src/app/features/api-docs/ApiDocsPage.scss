@@ -1,10 +1,28 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
 .api-docs-page {
 	position: relative;
 	overflow: hidden;
 }
 
+.api-docs-page-tabs {
+	@include im.media('<=small') {
+		&.lumo-layout-header-control {
+			margin-block: 0;
+		}
+
+		&.tabs--modern > .tabs-nav .tabs-list-link {
+			padding-block: var(--lumo-space-4);
+			padding-inline: var(--lumo-space-8);
+		}
+	}
+}
+
 .api-docs-page-body-panel {
-	max-inline-size: 76rem;
 	box-sizing: border-box;
 }
 
@@ -52,33 +70,6 @@
 
 	.api-docs-page-main-wrap {
 		display: block;
-	}
-}
-
-.api-docs-page-tabs {
-	inline-size: fit-content;
-	max-inline-size: 100%;
-}
-
-.api-docs-page-tab {
-	border: none;
-	background: transparent;
-	padding-block: 0.4rem;
-	cursor: pointer;
-	transition:
-		background var(--lumo-duration-100) var(--lumo-easing-standard),
-		color var(--lumo-duration-100) var(--lumo-easing-standard);
-
-	&:hover {
-		color: var(--lumo-glyph);
-		background: var(--lumo-control-fill);
-	}
-
-	&.is-active {
-		color: var(--lumo-glyph);
-		background: var(--lumo-panel);
-		font: var(--lumo-type-title-small);
-		box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
 	}
 }
 
@@ -150,13 +141,6 @@
 	text-transform: uppercase;
 }
 
-.api-docs-page-hero-title {
-	font-size: 2.5rem;
-	font-weight: 800;
-	line-height: 1.12;
-	letter-spacing: -0.02em;
-}
-
 .api-docs-page-hero-text {
 	max-inline-size: 38rem;
 }
@@ -165,10 +149,6 @@
 	.api-docs-page-hero {
 		padding-block: var(--lumo-space-24);
 		padding-inline: var(--lumo-space-20);
-	}
-
-	.api-docs-page-hero-title {
-		font: var(--lumo-type-headline-small);
 	}
 }
 

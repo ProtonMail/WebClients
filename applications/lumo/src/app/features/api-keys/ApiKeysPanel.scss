@@ -663,21 +663,12 @@ im.$media-expressions: $media-expressions;
 .api-usage-credit-balance {
 	min-inline-size: rem(110);
 
-	> span {
-		color: var(--lumo-glyph-mid);
-		font: var(--lumo-type-label-small);
-	}
-
 	.api-usage-balance-amount {
 		margin-block: rem(3);
 		color: var(--lumo-glyph);
 		font-size: rem(40);
 		font-weight: bold;
 		line-height: 1.1;
-	}
-
-	small {
-		font: var(--lumo-type-label-small);
 	}
 }
 

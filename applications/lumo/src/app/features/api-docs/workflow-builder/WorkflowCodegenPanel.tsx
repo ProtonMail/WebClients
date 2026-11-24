@@ -159,8 +159,8 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
     if (isGuest) {
         return (
             <div className="workflow-codegen-panel w-full min-w-0">
-                <h1 className="mt-0 mb-2 lumo-title-large">{c('collider_2025: Title').t`Workflow Builder`}</h1>
-                <p className="mt-0 mb-4 lumo-color-glyph-mid" style={{ lineHeight: 1.6 }}>
+                <h1 className="mt-0 mb-1 lumo-headline-small">{c('collider_2025: Title').t`Workflow Builder`}</h1>
+                <p className="m-0 mb-4 lumo-body-medium lumo-color-glyph-mid">
                     {c('collider_2025: Info')
                         .t`Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.`}
                 </p>
@@ -176,8 +176,8 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
 
     return (
         <div className="workflow-codegen-panel w-full min-w-0">
-            <h1 className="mt-0 mb-2 lumo-title-large">{c('collider_2025: Title').t`Workflow Builder`}</h1>
-            <p className="mt-0 mb-4 lumo-color-glyph-mid" style={{ lineHeight: 1.6 }}>
+            <h1 className="mt-0 mb-1 lumo-headline-small">{c('collider_2025: Title').t`Workflow Builder`}</h1>
+            <p className="m-0 mb-4 lumo-body-medium lumo-color-glyph-mid">
                 {c('collider_2025: Info')
                     .t`We can help you get started with using the ${LUMO_SHORT_APP_NAME} API. Describe what you want to automate. ${LUMO_SHORT_APP_NAME} returns a workflow graph and sample code that calls the ${LUMO_SHORT_APP_NAME} API.`}
             </p>

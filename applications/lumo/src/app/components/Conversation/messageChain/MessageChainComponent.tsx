@@ -459,7 +459,7 @@ export const MessageChainComponent = ({
         <AnswerNowButtonContainerContext.Provider value={answerNowButtonContainer}>
             <div
                 ref={messageChainRef}
-                className={`lumo-message-chain h-full overflow-y-auto px-6 md:px-0 flex-1 reset4print${className ? ` ${className}` : ''}`}
+                className={`lumo-message-chain flex-1 h-full px-8 overflow-y-auto reset4print${className ? ` ${className}` : ''}`}
             >
                 {messageChain.map((message, index) => {
                     const isLastMessage = index === messageChain.length - 1;

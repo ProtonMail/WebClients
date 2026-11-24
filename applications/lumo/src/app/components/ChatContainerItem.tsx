@@ -15,12 +15,10 @@ const ChatContainerItem = ({ className, children, ...props }: ChatContainerItemP
     return (
         <div
             className={clsx(
-                'lumo-chat-item reset4print flex flex-row flex-nowrap w-full md:w-2/3 mx-auto max-w-custom',
+                'lumo-chat-item flex flex-row flex-nowrap w-full max-w-custom mx-auto reset4print',
                 className
             )}
-            style={{
-                '--max-w-custom': '46.5rem',
-            }}
+            style={{ '--max-w-custom': '45rem' }}
             {...props}
         >
             {children}

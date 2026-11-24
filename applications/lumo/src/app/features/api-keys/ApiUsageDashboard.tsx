@@ -30,10 +30,10 @@ import {
     filterRowsBySource,
     getApiModelUsage,
     getAverageDailySpend,
-    getUsageDays,
     getCostLabel,
     getPeriodDates,
     getSourceUsageDays,
+    getUsageDays,
     isChatHiddenByModelFilter,
     sumUsage,
 } from './apiUsage';
@@ -240,10 +240,11 @@ const ApiUsageOverview = ({
 };
 
 const ApiUsageHeader = ({ isOrgMember }: { isOrgMember: boolean }) => (
-    <header className="pt-2 pb-3 min-w-0">
-        <h2 className="api-usage-dashboard__title m-0 lumo-title-large lumo-color-glyph">{c('collider_2025: Title')
-            .t`API usage & balance`}</h2>
-        <p className="api-usage-dashboard__subtitle m-0 mt-1 lumo-body-large lumo-color-glyph-mid">
+    <header className="min-w-0 pb-3">
+        <h2 className="api-usage-dashboard__title m-0 mb-1 lumo-headline-small lumo-color-glyph">{c(
+            'collider_2025: Title'
+        ).t`API usage & balance`}</h2>
+        <p className="api-usage-dashboard__subtitle m-0 lumo-body-medium lumo-color-glyph-mid">
             {isOrgMember
                 ? c('collider_2025: Info').t`Monitor your organization's API balance and token usage.`
                 : c('collider_2025: Info').t`Monitor your API balance, tokens, and spending controls.`}
@@ -371,24 +372,24 @@ const ApiBalanceCard = ({
         >
             <div className="api-usage-balance-card__main flex flex-column gap-4">
                 <div className="flex flex-nowrap items-center justify-space-between gap-4">
-                    <div className="api-usage-credit-balance flex flex-column items-start gap-0.5 min-w-0">
-                        <span id="api-usage-balance-label">
+                    <div className="api-usage-credit-balance flex flex-column items-start gap-1 min-w-0">
+                        <h3 id="api-usage-balance-label" className="lumo-title-medium">
                             {isOrgMember
                                 ? c('collider_2025: Label').t`Organization API balance`
                                 : c('collider_2025: Label').t`Remaining balance`}
-                        </span>
+                        </h3>
                         {balance === undefined ? (
-                            <small className="lumo-color-glyph-mid">
+                            <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                                 {isBalanceLoading
                                     ? c('collider_2025: Info').t`Loading balance…`
                                     : c('collider_2025: Info').t`Balance unavailable`}
-                            </small>
+                            </p>
                         ) : (
                             <>
                                 <span className="api-usage-balance-amount">{formatCredits(balance)}</span>
-                                <small className="lumo-color-glyph-mid">
+                                <p className="m-0 lumo-body-small lumo-color-glyph-mid">
                                     {getBalanceEstimate(balance, averageDailySpend)}
-                                </small>
+                                </p>
                             </>
                         )}
                     </div>

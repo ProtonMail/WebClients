@@ -146,8 +146,6 @@ im.$media-expressions: $media-expressions;
 
 .project-detail-main {
 	overflow: hidden auto; // Prevent horizontal scrolling // Allow vertical scrolling
-	padding-block: var(--lumo-space-8) 0;
-	padding-inline: var(--lumo-space-24);
 	position: relative;
 	min-inline-size: 0;
 	min-block-size: 0;
@@ -157,11 +155,6 @@ im.$media-expressions: $media-expressions;
 	display: flex !important;
 	flex-direction: column !important; // Ensure column layout is enforced
 	align-items: center; // Center children horizontally
-
-	@include im.media('<=small') {
-		padding-block: var(--lumo-space-8) 0;
-		padding-inline: var(--lumo-space-6) var(--lumo-space-8);
-	}
 }
 
 .project-detail-empty {
@@ -250,9 +243,6 @@ im.$media-expressions: $media-expressions;
 	flex: 1;
 	overflow: hidden;
 	min-block-size: 0;
-	inline-size: 100%;
-	max-inline-size: 51.25rem;
-	margin-inline: auto;
 	align-items: stretch;
 	box-sizing: border-box;
 
@@ -267,7 +257,6 @@ im.$media-expressions: $media-expressions;
 		inline-size: 100%;
 		margin-inline: 0;
 		padding-block: 0;
-		padding-inline: var(--lumo-space-20);
 	}
 }
 
@@ -282,7 +271,7 @@ im.$media-expressions: $media-expressions;
 .project-detail-composer {
 	z-index: 10; // Push to bottom
 	inline-size: 100%;
-	max-inline-size: 51.25rem;
+	max-inline-size: 45rem;
 	flex-shrink: 0;
 	display: flex !important;
 	flex-direction: column !important; // Ensure column layout
@@ -317,11 +306,6 @@ im.$media-expressions: $media-expressions;
 
 	.project-detail-title {
 		font: var(--lumo-type-title-medium);
-	}
-
-	.project-detail-main {
-		padding-block: var(--lumo-space-8) 0;
-		padding-inline: var(--lumo-space-16) var(--lumo-space-8);
 	}
 }
 

@@ -9,19 +9,20 @@ interface SidebarRouteButtonProps {
     label: string;
     onItemClick: () => void;
     pathname: string;
+    getDestination?: () => string;
 }
 
-export const SidebarRouteButton = ({ icon, label, onItemClick, pathname }: SidebarRouteButtonProps) => {
+export const SidebarRouteButton = ({ icon, label, onItemClick, pathname, getDestination }: SidebarRouteButtonProps) => {
     const history = useHistory();
     const match = useRouteMatch(pathname);
     const isExactMatch = match?.isExact ?? false;
 
     const handleClick = useCallback(() => {
-        if (!isExactMatch) {
-            history.push(pathname);
+        if (getDestination || !isExactMatch) {
+            history.push(getDestination?.() ?? pathname);
         }
         onItemClick();
-    }, [history, isExactMatch, onItemClick, pathname]);
+    }, [getDestination, history, isExactMatch, onItemClick, pathname]);
 
     return (
         <SidebarItem

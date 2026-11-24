@@ -22,8 +22,6 @@ import { createScheduleDetailsFrom, getEmptyScheduleDetails } from './components
 import type { ScheduleDetails, ScheduleTemplate } from './types';
 import { useScheduleLimit } from './useScheduleLimit';
 
-import './SchedulesView.scss';
-
 export const SchedulesView = () => {
     useNativeComposerVisibilityApi({ hideComposer: true });
 
@@ -92,15 +90,20 @@ export const SchedulesView = () => {
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
-            <div className="schedules-view pt-1.5 w-full px-6 overflow-auto lumo-color-glyph">
-                <SchedulesPageHeader onNewTaskClick={handleNewTaskClick} />
-                {Object.keys(schedules).length === 0 && <SchedulesEmptyState />}
-                <ScheduledTaskGrid
-                    onDeleteSchedule={handleDeleteSchedule}
-                    onEditSchedule={handleEditSchedule}
-                    schedules={schedules}
-                />
-                <ScheduleTemplateGrid onSelect={handleSelectTemplate} />
+            <div className="flex-1 w-full min-h-0 px-8 pt-2 pb-10 overflow-auto lumo-color-glyph">
+                <div
+                    className="flex flex-column gap-8 w-full max-w-custom mx-auto"
+                    style={{ '--max-w-custom': '60rem' }}
+                >
+                    <SchedulesPageHeader onNewTaskClick={handleNewTaskClick} />
+                    {Object.keys(schedules).length === 0 && <SchedulesEmptyState />}
+                    <ScheduledTaskGrid
+                        onDeleteSchedule={handleDeleteSchedule}
+                        onEditSchedule={handleEditSchedule}
+                        schedules={schedules}
+                    />
+                    <ScheduleTemplateGrid onSelect={handleSelectTemplate} />
+                </div>
             </div>
 
             {scheduleLimitModal.render && (

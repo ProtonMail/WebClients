@@ -24,7 +24,10 @@ export const ConversationSurvey = ({ isGenerating }: ConversationSurveyProps) =>
     }
 
     return (
-        <div className="lumo-chat-item flex flex-column w-full md:w-2/3 mx-auto max-w-custom no-print mb-4">
+        <div
+            className="lumo-chat-item flex flex-column w-full max-w-custom mx-auto mb-4 no-print"
+            style={{ '--max-w-custom': '45rem' }}
+        >
             <SurveyPanel onDismiss={handleSurveyDismiss} />
         </div>
     );

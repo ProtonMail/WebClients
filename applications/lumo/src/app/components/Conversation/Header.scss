@@ -4,6 +4,11 @@
 
 im.$breakpoints: $breakpoints-product;
 
+// Keep taller header controls within the shared row height to avoid the header from growing.
+.lumo-layout-header-control {
+	margin-block: calc(-1 * var(--lumo-space-8));
+}
+
 @include im.media('>=medium') {
 	.lumo-layout-header .lumo-layout-header-left {
 		align-self: start;

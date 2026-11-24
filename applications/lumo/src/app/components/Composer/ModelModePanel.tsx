@@ -255,7 +255,7 @@ export const ModelModePanel = ({
         <div
             className={clsx(
                 'model-mode-picker flex flex-column flex-nowrap w-full',
-                !isSheet && 'model-mode-picker--dropdown border radius-12 lumo-bg-panel-elevated lumo-elevation-3'
+                !isSheet && 'model-mode-picker--dropdown border radius-16 lumo-bg-panel-elevated lumo-elevation-3'
             )}
         >
             <div

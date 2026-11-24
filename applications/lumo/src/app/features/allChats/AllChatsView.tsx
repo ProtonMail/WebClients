@@ -78,7 +78,7 @@ export const AllChatsView = () => {
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={layoutHeader}>
-            <div className="flex flex-column flex-1 min-h-0 px-4 md:px-10 md:pt-2">
+            <div className="flex flex-column flex-1 min-h-0 px-8 pt-2">
                 <div
                     className="flex flex-column flex-1 min-h-0 w-full max-w-custom mx-auto"
                     style={{ '--max-w-custom': '60rem' }}

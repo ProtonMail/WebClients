@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import GenericError from '@proton/components/containers/error/GenericError';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -14,6 +15,7 @@ import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/
 import { SignInButton } from '../../components/Guest/SignInLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import config from '../../config';
+import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -119,6 +121,7 @@ interface ApiDocsPageContentProps {
 const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageContentProps) => {
     const history = useHistory();
     const location = useLocation();
+    const { isSmallScreen } = useIsLumoSmallScreen();
     const { apiKeyManagement } = useLumoFlags();
     const isGuest = useIsGuest();
     const { hasLumoPlus, isLumoPlanLoading, canShowTalkToAdminLumoUpsell, isOrgAdmin, userIsMember } = useLumoPlan();
@@ -140,7 +143,9 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
         apiKeyManagement &&
         (hasApiAccess || debugOrganizationView || debugOrganizationMemberView);
 
-    const [docsTab, setDocsTab] = useState<DocsTab>('api');
+    const hash = location.hash.replace(/^#/, '');
+    const docsTab: DocsTab =
+        hash === 'api-usage' ? 'usage' : hash === 'api-keys' ? 'keys' : hash === 'workflow' ? 'workflow' : 'api';
     const [activeNav, setActiveNav] = useState('overview');
     const [chatExample, setChatExample] = useState<ChatExampleVariant>('basic');
     const [apiModelsState, setApiModelsState] = useState<ApiModelsState>({ status: 'loading', models: [] });
@@ -174,7 +179,6 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
 
     const selectDocsTab = useCallback(
         (tab: DocsTab) => {
-            setDocsTab(tab);
             if (tab === 'usage') {
                 history.replace({ pathname: location.pathname, search: location.search, hash: '#api-usage' });
             } else if (tab === 'keys') {
@@ -189,24 +193,16 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
     );
 
     useEffect(() => {
-        const hash = location.hash.replace(/^#/, '');
-        if (hash !== 'api-usage' && hash !== 'api-keys' && hash !== 'workflow') {
-            markApiDocsVisited();
+        if (docsTab !== 'api') {
+            return;
         }
-        if (hash === 'api-usage') {
-            setDocsTab('usage');
-        } else if (hash === 'api-keys') {
-            setDocsTab('keys');
-        } else if (hash === 'workflow') {
-            setDocsTab('workflow');
-        } else {
-            setDocsTab('api');
-            if (hash) {
-                setActiveNav(hash);
-                requestAnimationFrame(() => scrollToAnchor(hash));
-            }
+        markApiDocsVisited();
+        if (hash) {
+            setActiveNav(hash);
+            const frame = requestAnimationFrame(() => scrollToAnchor(hash));
+            return () => cancelAnimationFrame(frame);
         }
-    }, [location.hash]);
+    }, [docsTab, hash]);
 
     const groupTitle = (groupId: string) => {
         switch (groupId) {
@@ -221,74 +217,39 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
 
     useNativeComposerVisibilityApi({ hideComposer: true });
 
+    const docsTabs = [
+        { value: 'usage', title: c('collider_2025: Tab').t`Overview` },
+        { value: 'api', title: c('collider_2025: Tab').t`Docs` },
+        { value: 'keys', title: c('collider_2025: Tab').t`API keys` },
+        { value: 'workflow', title: c('collider_2025: Tab').t`Workflow Builder` },
+    ] satisfies { value: DocsTab; title: string }[];
+
     const docsTabsHeader = (
-        <div className="api-docs-page-tabs-row flex flex-row justify-center w-full">
-            <div
-                className="api-docs-page-tabs gap-1 p-1 flex flex-wrap border radius-12 lumo-bg-control-fill"
-                role="tablist"
-                aria-label={c('collider_2025: Title').t`API docs sections`}
-            >
-                <button
-                    type="button"
-                    role="tab"
-                    aria-selected={docsTab === 'usage'}
-                    className={clsx(
-                        'api-docs-page-tab px-4 radius-8 lumo-label-large lumo-color-glyph-mid',
-                        docsTab === 'usage' && 'is-active'
-                    )}
-                    onClick={() => selectDocsTab('usage')}
-                >
-                    {c('collider_2025: Tab').t`Overview`}
-                </button>
-                <button
-                    type="button"
-                    role="tab"
-                    aria-selected={docsTab === 'api'}
-                    className={clsx(
-                        'api-docs-page-tab px-4 radius-8 lumo-label-large lumo-color-glyph-mid',
-                        docsTab === 'api' && 'is-active'
-                    )}
-                    onClick={() => selectDocsTab('api')}
-                >
-                    {c('collider_2025: Tab').t`Docs`}
-                </button>
-                <button
-                    type="button"
-                    role="tab"
-                    aria-selected={docsTab === 'keys'}
-                    className={clsx(
-                        'api-docs-page-tab px-4 radius-8 lumo-label-large lumo-color-glyph-mid',
-                        docsTab === 'keys' && 'is-active'
-                    )}
-                    onClick={() => selectDocsTab('keys')}
-                >
-                    {c('collider_2025: Tab').t`API keys`}
-                </button>
-                <button
-                    type="button"
-                    role="tab"
-                    aria-selected={docsTab === 'workflow'}
-                    className={clsx(
-                        'api-docs-page-tab px-4 radius-8 lumo-label-large lumo-color-glyph-mid',
-                        docsTab === 'workflow' && 'is-active'
-                    )}
-                    onClick={() => selectDocsTab('workflow')}
-                >
-                    {c('collider_2025: Tab').t`Workflow Builder`}
-                </button>
-            </div>
+        <div className="flex flex-row justify-center w-full">
+            <Tabs
+                variant="modern"
+                contained
+                className="api-docs-page-tabs lumo-layout-header-control max-w-full"
+                value={docsTabs.findIndex(({ value }) => value === docsTab)}
+                onChange={(index) => selectDocsTab(docsTabs[index].value)}
+                tabs={docsTabs}
+            />
         </div>
     );
 
     return (
-        <LumoLayoutWithDrawer drawer={{ disabled: true }} header={{ component: docsTabsHeader }}>
-            <div className="api-docs-page flex flex-1 flex-column min-h-0">
-                <div className="api-docs-page-body flex flex-1 min-h-0 overflow-y-auto flex-column items-center w-full">
+        <LumoLayoutWithDrawer drawer={{ disabled: true }} header={{ component: isSmallScreen ? null : docsTabsHeader }}>
+            <div className="api-docs-page flex flex-column flex-1 w-full min-h-0 px-8 pt-2">
+                <div
+                    className="api-docs-page-body flex flex-column flex-nowrap flex-1 items-center w-full max-w-custom min-h-0 mx-auto overflow-y-auto"
+                    style={{ '--max-w-custom': docsTab === 'api' ? '75rem' : '60rem' }}
+                >
+                    {isSmallScreen && <div className="shrink-0 w-full mb-4 overflow-x-auto">{docsTabsHeader}</div>}
                     {docsTab === 'api' && (
-                        <div className="api-docs-page-body-panel py-6 px-5 w-full min-w-0">
+                        <div className="api-docs-page-body-panel w-full min-w-0">
                             <div className="api-docs-page-layout gap-6">
                                 <nav
-                                    className="api-docs-page-nav pt-0 pb-4 pl-0 pr-2"
+                                    className="api-docs-page-nav"
                                     aria-label={c('collider_2025: Title').t`API documentation`}
                                 >
                                     <button
@@ -355,14 +316,14 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                     {c('collider_2025: Title')
                                                         .t`${LUMO_SHORT_APP_NAME} API · ${spec.versionLabel}`}
                                                 </div>
-                                                <h1 className="api-docs-page-hero-title mt-0 mb-4 mx-0 lumo-color-glyph">
+                                                <h1 className="mx-0 mt-0 mb-1 lumo-headline-small lumo-color-glyph">
                                                     {c('collider_2025: Title').t`Build intelligent apps.`}
                                                     <br />
                                                     <span className="api-docs-page-hero-title-accent lumo-color-glyph-brand-text">
                                                         {c('collider_2025: Title').t`Privacy included by default.`}
                                                     </span>
                                                 </h1>
-                                                <p className="api-docs-page-hero-text mt-0 mb-6 mx-0 lumo-body-large lumo-color-glyph-mid">
+                                                <p className="api-docs-page-hero-text m-0 mb-6 lumo-body-medium lumo-color-glyph-mid">
                                                     {c('collider_2025: Info')
                                                         .t`The ${LUMO_SHORT_APP_NAME} API gives you programmatic access to language models with ${BRAND_NAME}'s privacy architecture built in. No data training on your requests. No tracking.`}
                                                 </p>
@@ -372,7 +333,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                             <section aria-labelledby="api-getting-started-title" className="mb-10">
                                                 <h2
                                                     id="api-getting-started-title"
-                                                    className="mt-0 mb-2 lumo-title-large"
+                                                    className="mt-0 mb-1 lumo-headline-small"
                                                 >
                                                     {c('collider_2025: Title').t`Getting started`}
                                                 </h2>
@@ -391,7 +352,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                         <span className="api-docs-page-step-number flex items-center justify-center mb-3 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                                                             1
                                                         </span>
-                                                        <h3 className="m-0 mb-1 lumo-title-medium">
+                                                        <h3 className="m-0 mb-1 lumo-headline-small">
                                                             {isOrgMember
                                                                 ? c('collider_2025: Title').t`Check organization access`
                                                                 : c('collider_2025: Title').t`Top up balance`}
@@ -420,7 +381,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                         <span className="api-docs-page-step-number flex items-center justify-center mb-3 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                                                             2
                                                         </span>
-                                                        <h3 className="m-0 mb-1 lumo-title-medium">
+                                                        <h3 className="m-0 mb-1 lumo-headline-small">
                                                             {c('collider_2025: Title').t`Generate an API key`}
                                                         </h3>
                                                         <p className="api-docs-page-getting-started-copy flex-none m-0 mb-4 lumo-body-small lumo-color-glyph-mid">
@@ -442,7 +403,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                         <span className="api-docs-page-step-number flex items-center justify-center mb-3 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill">
                                                             3
                                                         </span>
-                                                        <h3 className="m-0 mb-1 lumo-title-medium">
+                                                        <h3 className="m-0 mb-1 lumo-headline-small">
                                                             {c('collider_2025: Title').t`Make your first request`}
                                                         </h3>
                                                         <p className="api-docs-page-getting-started-copy flex-none m-0 mb-4 lumo-body-small lumo-color-glyph-mid">
@@ -467,7 +428,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                 onViewModels={() => handleNav('models')}
                                             />
 
-                                            <h2 className="mt-0 mb-2 lumo-title-large">{c('collider_2025: Title')
+                                            <h2 className="mt-0 mb-1 lumo-headline-small">{c('collider_2025: Title')
                                                 .t`What you can build`}</h2>
                                             <p
                                                 className="mb-4 lumo-color-glyph-mid"
@@ -522,7 +483,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                 </div>
                                             </div>
 
-                                            <h3 className="mb-3 lumo-title-medium">{c('collider_2025: Title')
+                                            <h3 className="mb-1 lumo-headline-small">{c('collider_2025: Title')
                                                 .t`API endpoints overview`}</h3>
                                             <div className="api-docs-page-endpoint-table border">
                                                 <div className="api-docs-page-endpoint-head border-bottom lumo-border lumo-label-small lumo-color-glyph-mid lumo-bg-control-fill">
@@ -556,7 +517,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                         <div className="mb-10 border-top lumo-border" />
 
                                         <section id="authentication" className="api-docs-page-section-anchor mb-14">
-                                            <h2 className="mt-0 mb-2 lumo-title-large">{c('collider_2025: Title')
+                                            <h2 className="mt-0 mb-1 lumo-headline-small">{c('collider_2025: Title')
                                                 .t`Authentication`}</h2>
                                             <p className="mb-4 lumo-color-glyph-mid" style={{ lineHeight: 1.7 }}>
                                                 {c('collider_2025: Info')
@@ -580,7 +541,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                                 {'. '}
                                             </p>
 
-                                            <h3 className="mb-2 lumo-title-medium">{c('collider_2025: Title')
+                                            <h3 className="mb-1 lumo-headline-small">{c('collider_2025: Title')
                                                 .t`Required headers`}</h3>
                                             <div className="api-docs-page-param-table mt-4 mb-4 border radius-8">
                                                 <div className="api-docs-page-param-row gap-3 py-3 px-4">
@@ -641,7 +602,9 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                                         {spec.endpointGroups.map((group) => (
                                             <div key={group.id}>
                                                 <div className="flex items-center gap-3 mt-8 mb-5">
-                                                    <h2 className="m-0 lumo-title-large">{groupTitle(group.id)}</h2>
+                                                    <h2 className="m-0 mb-1 lumo-headline-small">
+                                                        {groupTitle(group.id)}
+                                                    </h2>
                                                     <div className="api-docs-page-group-divider-line flex-1" />
                                                 </div>
                                                 {group.endpoints.map((ep) => (
@@ -756,13 +719,13 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                     )}
 
                     {docsTab === 'usage' && (
-                        <div className="api-docs-page-body-panel py-6 px-5 w-full min-w-0">
+                        <div className="api-docs-page-body-panel w-full min-w-0">
                             {!canViewApiUsage && (
                                 <>
-                                    <h1 className="mt-0 mb-2 lumo-title-large">
+                                    <h1 className="mt-0 mb-1 lumo-headline-small">
                                         {c('collider_2025: Title').t`API overview`}
                                     </h1>
-                                    <p className="mt-0 mb-6 lumo-color-glyph-mid" style={{ lineHeight: 1.6 }}>
+                                    <p className="m-0 mb-6 lumo-body-medium lumo-color-glyph-mid">
                                         {isOrgMember
                                             ? c('collider_2025: Info')
                                                   .t`Monitor your API usage and organization balance status.`
@@ -801,7 +764,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                     )}
 
                     {docsTab === 'keys' && (
-                        <div className="api-docs-page-body-panel py-6 px-5 w-full min-w-0">
+                        <div className="api-docs-page-body-panel w-full min-w-0">
                             {isGuest ? (
                                 <div className="flex flex-column items-start gap-4 p-6 border radius-12 lumo-bg-control-fill">
                                     <p className="m-0 lumo-color-glyph-mid">
@@ -832,7 +795,7 @@ const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageCo
                     )}
 
                     {docsTab === 'workflow' && (
-                        <div className="api-docs-page-body-panel py-6 px-5 w-full min-w-0">
+                        <div className="api-docs-page-body-panel w-full min-w-0">
                             <WorkflowCodegenPanel isGuest={isGuest} />
                         </div>
                     )}
