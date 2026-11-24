@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import 'core-js/actual/typed-array/from-base64';
 import 'core-js/actual/typed-array/from-hex';
 import 'core-js/actual/typed-array/to-base64';
@@ -27,6 +27,3 @@ vi.mock(import('@proton/shared/lib/browser/extension'), async (importOriginal) =
     ...(await importOriginal()),
     sendExtensionMessage: vi.fn().mockResolvedValue({ type: 'error', error: 'No extension in tests' }),
 }));
-
-// Testing Library only advances fake timers through a `jest` global
-(globalThis as any).jest = { advanceTimersByTime: vi.advanceTimersByTime };

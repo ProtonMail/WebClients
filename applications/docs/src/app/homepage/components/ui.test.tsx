@@ -1,10 +1,9 @@
-import '@testing-library/jest-dom/vitest'
 import { act, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Button, Checkbox, IconButton } from './ui'
 
 describe('IconButton', () => {
-  beforeEach(() => vi.useFakeTimers())
+  beforeEach(() => vi.useFakeTimers({ shouldAdvanceTime: true }))
   afterEach(() => vi.useRealTimers())
 
   const user = () => userEvent.setup({ advanceTimers: vi.advanceTimersByTime })

@@ -35,7 +35,7 @@ const createNotification = (displayType: InAppNotificationDisplayType): InAppNot
 describe('useInAppNotificationVisibility', () => {
     beforeEach(() => {
         vi.clearAllMocks();
-        vi.useFakeTimers();
+        vi.useFakeTimers({ shouldAdvanceTime: true });
         isModalOpen.mockReturnValue(false);
     });
 

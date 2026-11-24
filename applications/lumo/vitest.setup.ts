@@ -1,8 +1,5 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import { cleanup } from '@testing-library/react';
-// Node < 25 lacks Uint8Array.fromBase64
-import 'core-js/actual/typed-array/from-base64';
-import 'core-js/actual/typed-array/to-base64';
 import { webcrypto } from 'node:crypto';
 import { afterEach, vi } from 'vitest';
 
@@ -12,9 +9,6 @@ declare global {
 }
 
 afterEach(cleanup);
-
-// Testing Library only advances fake timers (for `waitFor`) through a `jest` global
-(globalThis as any).jest = { advanceTimersByTime: vi.advanceTimersByTime };
 
 if (typeof document !== 'undefined') {
     // A <dialog> without `open` is hidden and nothing in it is reachable by role. Our modals render one and show it

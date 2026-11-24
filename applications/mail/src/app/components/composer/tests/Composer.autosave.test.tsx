@@ -40,7 +40,7 @@ describe('Composer autosave', () => {
 
     beforeEach(() => {
         clearAll();
-        vi.useFakeTimers();
+        vi.useFakeTimers({ shouldAdvanceTime: true });
         addApiKeys(false, toAddress, []);
     });
 

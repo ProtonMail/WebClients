@@ -1,11 +1,7 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import { Blob, File } from 'node:buffer';
 import * as webStreams from 'node:stream/web';
 import { TextDecoder, TextEncoder } from 'node:util';
-import 'core-js/actual/typed-array/from-base64';
-import 'core-js/actual/typed-array/from-hex';
-import 'core-js/actual/typed-array/to-base64';
-import 'core-js/actual/typed-array/to-hex';
 
 // The vm context of the test pool has its own typed arrays and lacks some Node globals: restore Node's ones,
 // so that `instanceof Uint8Array` (OpenPGP) and the streams APIs keep working
@@ -26,25 +22,6 @@ import 'core-js/actual/typed-array/to-hex';
         CompressionStream: webStreams.CompressionStream,
         DecompressionStream: webStreams.DecompressionStream,
     };
-    // carry the core-js polyfills (already applied to the vm typed array) over to Node's one
-    (['toBase64', 'toHex'] as const).forEach((method) => {
-        if (!(method in NodeUint8Array.prototype)) {
-            Object.defineProperty(NodeUint8Array.prototype, method, {
-                value: (VmUint8Array.prototype as any)[method],
-                writable: true,
-                configurable: true,
-            });
-        }
-    });
-    (['fromBase64', 'fromHex'] as const).forEach((method) => {
-        if (!(method in NodeUint8Array)) {
-            Object.defineProperty(NodeUint8Array, method, {
-                value: (VmUint8Array as any)[method],
-                writable: true,
-                configurable: true,
-            });
-        }
-    });
     // outside of a vm context everything is already Node's (or the DOM environment's own)
     const inVmContext = VmUint8Array !== NodeUint8Array;
     Object.entries(inVmContext ? overrides : {}).forEach(([name, value]) => {
@@ -108,6 +85,3 @@ if (typeof window !== 'undefined') {
         disconnect = vi.fn();
     };
 }
-
-// Testing Library only advances fake timers through a `jest` global
-(globalThis as any).jest = { advanceTimersByTime: vi.advanceTimersByTime };

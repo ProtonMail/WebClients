@@ -44,7 +44,7 @@ describe('useAllPersonalAccessTokensUsage', () => {
     });
 
     it('requests each key over the last days and keeps a failing key to its own card', async () => {
-        vi.useFakeTimers({ now: new Date('2026-11-09T12:00:00Z') });
+        vi.useFakeTimers({ now: new Date('2026-11-09T12:00:00Z'), toFake: ['Date'] });
         const days = [
             { Date: '2026-11-08', Usage: [] },
             { Date: '2026-11-09', Usage: [entry({ InputTokens: 5, OutputTokens: 2, Calls: 3 })] },

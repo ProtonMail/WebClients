@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import '@proton/app-context/testing/vitest/mockTelemetry';
 import '@proton/unleash/testing/vitest/mockUnleash';
 

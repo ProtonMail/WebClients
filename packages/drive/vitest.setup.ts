@@ -10,7 +10,7 @@ import '@proton/app-context/testing/vitest/mockTelemetry';
 });
 
 if (typeof document !== 'undefined') {
-    await import('@testing-library/jest-dom/vitest');
+    await import('@proton/vitest-config/setup');
     await import('@proton/components/testing/vitest/mockFlagSvg');
     // @ts-expect-error the module only has side effects
     await import('@proton/components/testing/vitest/mockMatchMedia');
@@ -24,9 +24,6 @@ if (typeof document !== 'undefined') {
         disconnect = vi.fn();
     };
 }
-
-// Testing Library only drives fake timers through a `jest` global.
-(globalThis as any).jest = { advanceTimersByTime: vi.advanceTimersByTime.bind(vi) };
 
 // Suppress console noise from drive-sdk telemetry during tests.
 vi.spyOn(console, 'debug').mockImplementation(() => {});

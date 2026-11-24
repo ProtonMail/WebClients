@@ -1,5 +1,5 @@
 import './vitest.typedArrays';
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import 'core-js/actual/typed-array/from-base64';
 import 'core-js/actual/typed-array/from-hex';
 import 'core-js/actual/typed-array/to-base64';
@@ -13,9 +13,6 @@ import { BroadcastChannel } from 'node:worker_threads';
 import '@proton/components/testing/vitest/mockFlagSvg';
 import '@proton/components/testing/vitest/mockMatchMedia';
 import '@proton/unleash/testing/vitest/mockUnleash';
-
-// Testing Library only advances fake timers through a `jest` global
-(globalThis as any).jest = { advanceTimersByTime: vi.advanceTimersByTime };
 
 // Our CSS reset shows <dialog> without `open`, tests do not load it
 const style = document.createElement('style');

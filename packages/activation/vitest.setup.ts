@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import { afterEach, beforeEach, vi } from 'vitest';
 
 import '@proton/components/testing/vitest/mockFlagSvg';

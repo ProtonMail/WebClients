@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 import { cleanup } from '@testing-library/react';
 import { vi } from 'vitest';
 

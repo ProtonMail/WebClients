@@ -43,7 +43,7 @@ describe('Composer writes reachable from outside it', () => {
 
     beforeEach(() => {
         clearAll();
-        vi.useFakeTimers();
+        vi.useFakeTimers({ shouldAdvanceTime: true });
         addApiKeys(false, toAddress, []);
     });
 

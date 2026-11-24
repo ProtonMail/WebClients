@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/vitest'
 import * as Ariakit from '@ariakit/react'
 import { RecentDocumentsItem } from '../../../recentDocumentsItem'
 import { ServerTime } from '../../../utils/serverTime'

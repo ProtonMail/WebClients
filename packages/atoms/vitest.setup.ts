@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 
 global.AnimationEvent = class AnimationEvent extends Event implements AnimationEvent {
     private _animationName: string;

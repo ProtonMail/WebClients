@@ -14,7 +14,7 @@ describe('useApiUsageSummary', () => {
     });
 
     it('reads the usage of every client of the last 90 UTC days in the given scope without notifying on failure', async () => {
-        vi.useFakeTimers({ now: new Date('2026-11-09T23:30:00Z') });
+        vi.useFakeTimers({ now: new Date('2026-11-09T23:30:00Z'), toFake: ['Date'] });
         const entry = {
             ClientType: 'api',
             Model: 'lumo-lite',

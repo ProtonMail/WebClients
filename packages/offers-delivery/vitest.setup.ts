@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/vitest';
+import '@proton/vitest-config/setup';
 
 window.ResizeObserver = vi.fn().mockImplementation(function () {
     return {

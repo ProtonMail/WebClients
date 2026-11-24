@@ -15,7 +15,7 @@ if (typeof document !== 'undefined') {
     // No @testing-library/react here: it registers its own afterEach(cleanup) with globals on, and loading it
     // in every file (including those that never render) costs ~75 ms each.
     await Promise.all([
-        import('@testing-library/jest-dom/vitest'),
+        import('@proton/vitest-config/setup'),
         // @ts-expect-error side-effect-only module without exports
         import('@proton/components/testing/vitest/mockMatchMedia'),
         import('@proton/components/testing/vitest/mockFlagSvg'),

@@ -1,12 +1,9 @@
-import type { jsPDF as JsPdf } from 'jspdf';
+import { jsPDF } from 'jspdf';
 
 import { parseDeck } from './deck';
 import { canWriteDeckPdfAsText, isWinAnsiText, writeDeckPdf } from './deckToPdf';
 import { SLIDES_EVAL_FIXTURES } from './eval/slidesEvalFixtures';
 import { layoutDeck } from './layoutDeck';
-
-// The browser build is ESM, which Jest doesn't transform; the Node build is the same library.
-const { jsPDF } = require('jspdf/dist/jspdf.node.min.js') as { jsPDF: typeof JsPdf };
 
 const laidOutFixture = (id: string) => {
     const fixture = SLIDES_EVAL_FIXTURES.find((candidate) => {

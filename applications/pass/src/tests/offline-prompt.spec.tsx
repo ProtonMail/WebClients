@@ -79,7 +79,7 @@ describe('Backend outage at start', () => {
     });
 
     describe('desktop', () => {
-        beforeEach(() => vi.useFakeTimers({ toFake: FAKE_TIMERS }));
+        beforeEach(() => vi.useFakeTimers({ toFake: FAKE_TIMERS, shouldAdvanceTime: true }));
         afterEach(() => vi.useRealTimers());
 
         /** Fake timers are never advanced: the connectivity retry loop cannot resume the app
@@ -108,7 +108,7 @@ describe('Backend outage at start', () => {
     });
 
     describe('while the app is open', () => {
-        beforeEach(() => vi.useFakeTimers({ toFake: FAKE_TIMERS }));
+        beforeEach(() => vi.useFakeTimers({ toFake: FAKE_TIMERS, shouldAdvanceTime: true }));
         afterEach(() => vi.useRealTimers());
 
         const expectSessionKept = () => {

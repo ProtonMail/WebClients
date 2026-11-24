@@ -14,7 +14,7 @@ if (hasDom) {
 }
 
 if (hasDom) {
-    await import('@testing-library/jest-dom/vitest');
+    await import('@proton/vitest-config/setup');
     // @ts-expect-error side-effect-only module without exports
     await import('@proton/components/testing/vitest/mockMatchMedia');
     const { cleanup } = await import('@testing-library/react');

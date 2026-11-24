@@ -1,10 +1,6 @@
-import '@testing-library/jest-dom/vitest'
-
+import '@proton/vitest-config/setup'
 import '@proton/components/testing/vitest/mockMatchMedia'
 import '@proton/unleash/testing/vitest/mockUnleash'
-
-// Testing Library only advances fake timers through a `jest` global
-;(globalThis as any).jest = { advanceTimersByTime: vi.advanceTimersByTime }
 
 window.ResizeObserver = class {
   observe = vi.fn()

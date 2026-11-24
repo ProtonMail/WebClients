@@ -964,9 +964,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1151,9 +1148,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1570,9 +1564,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1932,9 +1923,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2140,9 +2128,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2454,9 +2439,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@1.8.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2629,9 +2611,6 @@ importers:
       '@vercel/webpack-asset-relocator-loader':
         specifier: 'catalog:'
         version: 1.7.3
-      core-js:
-        specifier: 'catalog:'
-        version: 3.51.0
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
@@ -2972,9 +2951,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3279,9 +3255,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3544,9 +3517,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3828,9 +3798,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4175,9 +4142,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4714,9 +4678,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4907,9 +4868,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5064,9 +5022,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5246,9 +5201,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5400,9 +5352,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5619,9 +5568,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5746,9 +5692,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5849,9 +5792,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5967,9 +5907,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6177,9 +6114,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6488,9 +6422,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6518,9 +6449,6 @@ importers:
       '@webgpu/types':
         specifier: ^0.1.74
         version: 0.1.74
-      core-js:
-        specifier: 'catalog:'
-        version: 3.51.0
       cross-fetch:
         specifier: ^4.1.0
         version: 4.1.0(encoding@0.1.13)
@@ -6567,12 +6495,6 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
-      '@testing-library/dom':
-        specifier: 'catalog:'
-        version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -6686,9 +6608,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7095,9 +7014,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7246,9 +7162,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@1.8.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7890,9 +7803,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8021,9 +7931,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8411,9 +8318,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8447,9 +8351,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: 'catalog:'
         version: 5.1.1(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
-      core-js:
-        specifier: 'catalog:'
-        version: 3.51.0
       happy-dom:
         specifier: 'catalog:'
         version: 21.0.4
@@ -8547,9 +8448,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8641,12 +8539,6 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
-      '@testing-library/dom':
-        specifier: 'catalog:'
-        version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@types/node':
         specifier: 'catalog:'
         version: 26.6.6
@@ -8768,9 +8660,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8969,9 +8858,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9378,9 +9264,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9638,9 +9521,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9789,9 +9669,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -10122,9 +9999,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -10359,9 +10233,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -10546,9 +10417,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -11035,6 +10903,13 @@ importers:
         version: 5.1.1(@opentelemetry/api@1.9.1)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(happy-dom@21.0.4)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/vitest-config:
+    dependencies:
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
+      '@testing-library/jest-dom':
+        specifier: 'catalog:'
+        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
     devDependencies:
       '@proton/oxlint-config':
         specifier: workspace:^
@@ -11124,9 +10999,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -11248,9 +11120,6 @@ importers:
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
-      '@testing-library/jest-dom':
-        specifier: 'catalog:'
-        version: 8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -35912,25 +35781,6 @@ snapshots:
       dom-accessibility-api: 0.6.3
       picocolors: 1.1.1
       redent: 3.0.0
-
-  '@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@1.8.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)':
-    dependencies:
-      '@adobe/css-tools': 4.4.0
-      '@testing-library/dom': 10.4.2
-      aria-query: 5.3.2
-      css.escape: 1.5.1
-      dom-accessibility-api: 0.6.3
-      picocolors: 1.1.1
-      redent: 3.0.0
-    optionalDependencies:
-      vitest: 5.1.1(@opentelemetry/api@1.9.1)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(happy-dom@21.0.4)(jsdom@31.0.1(@noble/hashes@1.8.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
-    transitivePeerDependencies:
-      - '@vitest/browser'
-      - '@vitest/browser-playwright'
-      - '@vitest/coverage-v8'
-      - '@vitest/ui'
-      - jsdom
-      - msw
 
   '@testing-library/jest-dom@8.0.0(@testing-library/dom@10.4.2)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)':
     dependencies:

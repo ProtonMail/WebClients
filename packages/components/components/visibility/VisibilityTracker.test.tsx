@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 
 import { act, render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import type { Mock } from 'vitest';
 
 import { VisibilityTracker } from './VisibilityTracker';

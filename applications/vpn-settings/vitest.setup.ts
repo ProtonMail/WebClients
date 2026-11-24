@@ -1,11 +1,8 @@
-import * as matchers from '@testing-library/jest-dom/matchers';
+import '@proton/vitest-config/setup';
 import { webcrypto } from 'crypto';
-import { expect } from 'vitest';
 
 import '@proton/components/testing/vitest/mockMatchMedia';
 import '@proton/unleash/testing/vitest/mockUnleash';
-
-expect.extend(matchers);
 
 // Stub for webpack's `require.context`, rewritten into module code by the vitest config plugin.
 // Returns an empty context, which is sufficient for tests that don't assert on the loaded assets.

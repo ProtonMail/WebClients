@@ -298,7 +298,7 @@ describe('useSharingModalState', () => {
     });
 
     it('should update share node with direct sharing', async () => {
-        vi.useFakeTimers();
+        vi.useFakeTimers({ shouldAdvanceTime: true });
 
         const shareNodeSettings = {
             users: [{ email: 'new@example.com', role: MemberRole.Viewer }],

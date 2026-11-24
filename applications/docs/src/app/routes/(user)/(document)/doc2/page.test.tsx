@@ -313,7 +313,7 @@ describe('DocumentPageV2', () => {
     })
 
     test('an editor that never gets ready shows the error page, and retry loads the document again', async () => {
-      vi.useFakeTimers()
+      vi.useFakeTimers({ shouldAdvanceTime: true })
       mockCreateSession.mockReturnValueOnce(createFakeSession().session)
       renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
       await waitFor(() => expect(mockCreateSession).toHaveBeenCalledTimes(1))

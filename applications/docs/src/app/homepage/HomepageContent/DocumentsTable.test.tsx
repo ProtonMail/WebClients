@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/vitest'
 import type { MemberRole, ProtonDriveClient } from '@protontech/drive-sdk'
 import { act, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
