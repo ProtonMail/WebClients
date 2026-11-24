@@ -4,6 +4,7 @@ import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { ShareType } from '../_shares/interface';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import { useLinksActions } from './useLinksActions';
 
@@ -39,18 +40,40 @@ vi.mock('../_crypto/useDriveCrypto', () => {
     return { __esModule: true, default: useDriveCrypto };
 });
 
+const mockGetLink = vi.fn();
+
 vi.mock('./useLink', () => {
     const useLink = () => {
         return {
-            getLink: () => {},
-            getLinkPassphraseAndSessionKey: () => {},
-            getLinkPrivateKey: () => {},
-            getLinkHashKey: () => {},
+            getLink: mockGetLink,
+            getLinkPassphraseAndSessionKey: async () => ({ passphrase: 'passphrase', passphraseSessionKey: {} }),
+            getLinkPrivateKey: async () => ({}),
+            getLinkHashKey: async () => new Uint8Array(),
         };
     };
 
     return { __esModule: true, default: useLink };
 });
+
+vi.mock('@proton/shared/lib/keys/driveKeys', () => ({
+    generateLookupHash: async () => 'hash',
+    encryptPassphrase: async () => ({ NodePassphrase: 'nodePassphrase', NodePassphraseSignature: 'signature' }),
+}));
+
+vi.mock('@proton/shared/lib/keys/drivePassphrase', () => ({
+    getDecryptedSessionKey: async () => ({}),
+}));
+
+vi.mock('@protontech/crypto', () => ({
+    CryptoProxy: {
+        encryptMessage: async () => ({ message: 'encryptedName' }),
+    },
+}));
+
+vi.mock('@proton/drive/legacy/errorHandling', async () => ({
+    ...(await vi.importActual('@proton/drive/legacy/errorHandling')),
+    sendErrorReport: vi.fn(),
+}));
 
 const mockRequest = vi.fn();
 const mockGetLinks = vi.fn();
@@ -104,7 +127,8 @@ vi.mock('../_shares/useDefaultShare', () => {
 vi.mock('../_utils/useBatchHelper', () => {
     const useBatchHelper = () => ({
         batchAPIHelper: mockBatchHelper,
-        batchPromiseHelper: vi.fn(),
+        batchPromiseHelper: async <T, R>(items: T[], processFn: (item: T) => Promise<R>) =>
+            Promise.all(items.map(processFn)),
     });
     return { useBatchHelper };
 });
@@ -330,5 +354,123 @@ describe('useLinksActions', () => {
         expect(mockQueryDeleteTrashedLinks).toHaveBeenCalledWith(VOLUME_ID_1, ['linkId11']);
 
         expect(result.successes.sort()).toEqual(['linkId01', 'linkId04', 'linkId11'].sort());
+    });
+
+    describe('recoverPhotoLinks', () => {
+        const PHOTOS_SHARE_ID = 'photosShareId';
+        const ROOT_LINK_ID = 'rootLinkId';
+
+        const makeLink = (linkId: string, extra: object = {}) => ({
+            linkId,
+            name: `${linkId}.jpg`,
+            hash: `${linkId}-hash`,
+            parentLinkId: 'oldRootLinkId',
+            nameSignatureEmail: 'test@test.com',
+            signatureEmail: 'test@test.com',
+            digests: { sha1: 'sha1' },
+            ...extra,
+        });
+
+        const recover = (linkIds: string[]) =>
+            hook.current.recoverPhotoLinks(new AbortController().signal, VOLUME_ID_0, {
+                shareId: SHARE_ID_0,
+                linkIds,
+                newParentLinkId: ROOT_LINK_ID,
+                newShareId: PHOTOS_SHARE_ID,
+            });
+
+        let sentLinkIds: string[];
+        const getSentLinkIds = () => sentLinkIds;
+
+        beforeEach(() => {
+            sentLinkIds = [];
+            mockGetShare.mockImplementation((_ac, shareId) => ({ shareId, type: ShareType.photos }));
+
+            // Record the links sent in the recover request
+            const batchHelper = mockBatchHelper.getMockImplementation();
+            mockBatchHelper.mockImplementation((signal, { query, ...options }) =>
+                batchHelper?.(signal, {
+                    ...options,
+                    query: (batchLinkIds: string[]) => {
+                        const request = query(batchLinkIds);
+                        sentLinkIds.push(...request.data.Links.map(({ LinkID }: { LinkID: string }) => LinkID));
+                        return request;
+                    },
+                })
+            );
+        });
+
+        it('moves the other links when one cannot be prepared', async () => {
+            const links: Record<string, object> = {
+                linkId01: makeLink('linkId01'),
+                linkId02: makeLink('linkId02', { corruptedLink: true }),
+                linkId03: makeLink('linkId03'),
+            };
+            mockGetLink.mockImplementation(async (_ac, _shareId, linkId: string) => links[linkId]);
+
+            const result = await recover(['linkId01', 'linkId02', 'linkId03']);
+
+            expect(getSentLinkIds()).toEqual(['linkId01', 'linkId03']);
+            expect(result.successes.sort()).toEqual(['linkId01', 'linkId03']);
+            expect(Object.keys(result.failures)).toEqual(['linkId02']);
+        });
+
+        it('fails the main photo when one of its related photos cannot be prepared', async () => {
+            const links: Record<string, object> = {
+                linkId01: makeLink('linkId01', {
+                    activeRevision: { photo: { relatedPhotosLinkIds: ['relatedId01'] } },
+                }),
+                relatedId01: makeLink('relatedId01', { corruptedLink: true }),
+                linkId02: makeLink('linkId02'),
+            };
+            mockGetLink.mockImplementation(async (_ac, _shareId, linkId: string) => links[linkId]);
+
+            const result = await recover(['linkId01', 'linkId02']);
+
+            expect(getSentLinkIds()).toEqual(['linkId02']);
+            expect(result.successes).toEqual(['linkId02']);
+            expect(Object.keys(result.failures)).toEqual(['linkId01']);
+        });
+
+        it('fails a related photo listed on its own when its main photo cannot be prepared', async () => {
+            const links: Record<string, object> = {
+                linkId01: makeLink('linkId01', {
+                    corruptedLink: true,
+                    activeRevision: { photo: { relatedPhotosLinkIds: ['relatedId01'] } },
+                }),
+                relatedId01: makeLink('relatedId01', {
+                    activeRevision: { photo: { mainPhotoLinkId: 'linkId01' } },
+                }),
+                linkId02: makeLink('linkId02'),
+            };
+            mockGetLink.mockImplementation(async (_ac, _shareId, linkId: string) => links[linkId]);
+
+            const result = await recover(['linkId01', 'relatedId01', 'linkId02']);
+
+            expect(getSentLinkIds()).toEqual(['linkId02']);
+            expect(result.successes).toEqual(['linkId02']);
+            expect(Object.keys(result.failures).sort()).toEqual(['linkId01', 'relatedId01']);
+        });
+
+        it('sends nothing when no link can be prepared', async () => {
+            mockGetLink.mockImplementation(async (_ac, _shareId, linkId: string) =>
+                makeLink(linkId, { corruptedLink: true })
+            );
+
+            const result = await recover(['linkId01']);
+
+            expect(mockBatchHelper).not.toHaveBeenCalled();
+            expect(result.successes).toEqual([]);
+            expect(Object.keys(result.failures)).toEqual(['linkId01']);
+        });
+
+        it('still rejects when aborted', async () => {
+            const abortError = new Error('Aborted');
+            abortError.name = 'AbortError';
+            mockGetLink.mockRejectedValue(abortError);
+
+            await expect(recover(['linkId01'])).rejects.toBe(abortError);
+            expect(mockBatchHelper).not.toHaveBeenCalled();
+        });
     });
 });

@@ -63,7 +63,12 @@ export function useLinksListingHelpers() {
     /**
      * Decrypts links in parallel and caches them.
      */
-    const decryptAndCacheLinks = async (abortSignal: AbortSignal, shareId: string, links: EncryptedLink[]) => {
+    const decryptAndCacheLinks = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        links: EncryptedLink[],
+        showNotification = true
+    ) => {
         if (!links.length) {
             return {
                 links: [],
@@ -77,7 +82,7 @@ export function useLinksListingHelpers() {
             linksState.setLinks(shareId, result.links);
         }
 
-        if (result.errors.length) {
+        if (result.errors.length && showNotification) {
             showAggregatedErrorNotification(result.errors, (errors: any[]) => {
                 const count = errors.length;
                 return c('Notification').ngettext(
@@ -98,7 +103,8 @@ export function useLinksListingHelpers() {
         abortSignal: AbortSignal,
         shareId: string,
         links: EncryptedLink[],
-        parents: EncryptedLink[]
+        parents: EncryptedLink[],
+        showNotification = true
     ) => {
         // Set encrypted data right away because it is needed for decryption
         const allEncryptedLinks = [...parents, ...links].map((encrypted) => ({ encrypted }));
@@ -119,7 +125,7 @@ export function useLinksListingHelpers() {
         });
 
         // Merge results to return all provided links
-        const result = await decryptAndCacheLinks(abortSignal, shareId, encryptedLinks);
+        const result = await decryptAndCacheLinks(abortSignal, shareId, encryptedLinks, showNotification);
 
         return {
             links: [...decryptedLinks, ...result.links],
@@ -166,7 +172,7 @@ export function useLinksListingHelpers() {
                 fetchMeta.lastPage = currentPage;
                 fetchMeta.isEverythingFetched = links.length < PAGE_SIZE;
 
-                await cacheLoadedLinks(abortSignal, shareId, links, parents);
+                await cacheLoadedLinks(abortSignal, shareId, links, parents, showNotification);
 
                 return !fetchMeta.isEverythingFetched;
             })

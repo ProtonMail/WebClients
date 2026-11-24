@@ -2,7 +2,14 @@ import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
 import usePreventLeave from '@proton/components/hooks/usePreventLeave';
-import { EnrichedError, ValidationError, is4xx, is5xx, sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import {
+    EnrichedError,
+    ValidationError,
+    is4xx,
+    is5xx,
+    isIgnoredError,
+    sendErrorReport,
+} from '@proton/drive/legacy/errorHandling';
 import metrics from '@proton/metrics/metricsInstance';
 import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from '@proton/metrics/types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import {
@@ -373,33 +380,64 @@ export function useLinksActions({
                         }
                     > = new Map();
 
+                    const successes: string[] = [];
+                    const failures: { [linkId: string]: any } = {};
+
+                    // One link failing (e.g. it can't be decrypted) must not block the others
                     const datas = await preventLeave(
                         batchPromiseHelper(
                             linkIds,
-                            async (linkId) =>
-                                getMoveLinkData(abortSignal, {
-                                    shareId,
-                                    newParentLinkId,
-                                    linkId,
-                                    newShareId,
-                                    silence,
-                                }),
+                            async (linkId) => {
+                                try {
+                                    const { data, link } = await getMoveLinkData(abortSignal, {
+                                        shareId,
+                                        newParentLinkId,
+                                        linkId,
+                                        newShareId,
+                                        silence,
+                                    });
+                                    // Related photos move with their main photo, so if one fails the whole group fails
+                                    const related = await Promise.all(
+                                        (link.activeRevision?.photo?.relatedPhotosLinkIds || []).map((relatedId) =>
+                                            getMoveLinkData(abortSignal, {
+                                                shareId,
+                                                newParentLinkId,
+                                                linkId: relatedId,
+                                                newShareId,
+                                                silence,
+                                            })
+                                        )
+                                    );
+                                    return { data, link, related };
+                                } catch (error) {
+                                    if (isIgnoredError(error)) {
+                                        throw error;
+                                    }
+                                    failures[linkId] = error;
+                                    sendErrorReport(error);
+                                    return undefined;
+                                }
+                            },
                             10,
                             abortSignal
                         )
                     );
 
-                    for (const { data, link } of datas) {
+                    // Related photos can also be listed on their own, don't move them without their main photo
+                    const prepared = datas.filter(isTruthy).filter(({ link }) => {
+                        const mainPhotoLinkId = link.activeRevision?.photo?.mainPhotoLinkId;
+                        if (mainPhotoLinkId && failures[mainPhotoLinkId]) {
+                            failures[link.linkId] = failures[mainPhotoLinkId];
+                            return false;
+                        }
+                        return true;
+                    });
+
+                    for (const { data, link, related } of prepared) {
                         const relatedPhotoLinksToMove = new Map<string, MovePhotoLink>();
-                        for (const relatedId of link.activeRevision?.photo?.relatedPhotosLinkIds || []) {
+                        for (const relatedData of related) {
+                            const relatedId = relatedData.link.linkId;
                             originalParentIds[relatedId] = link.parentLinkId;
-                            const relatedData = await getMoveLinkData(abortSignal, {
-                                shareId,
-                                newParentLinkId,
-                                linkId: relatedId,
-                                newShareId,
-                                silence,
-                            });
                             relatedPhotoLinksToMove.set(relatedId, {
                                 ...relatedData.data,
                                 OriginalHash: relatedData.link.hash,
@@ -420,8 +458,6 @@ export function useLinksActions({
                         });
                     }
 
-                    const successes: string[] = [];
-                    const failures: { [linkId: string]: any } = {};
                     // If nothing to recover that means the share can be now deleted
                     // Can happen if everything was moved but not the share,
                     // the user will be able to retry and delete the share

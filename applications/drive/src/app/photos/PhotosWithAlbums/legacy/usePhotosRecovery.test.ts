@@ -58,6 +58,11 @@ vi.mock('@proton/app-context/useApi', () => ({
     useApi: vi.fn(),
 }));
 
+const mockedCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: mockedCreateNotification }),
+}));
+
 vi.mock('@proton/drive/sdk', async () => ({
     ...(await vi.importActual('@proton/drive/sdk')),
     getDriveForPhotos: vi.fn(() => ({
@@ -170,6 +175,7 @@ describe('usePhotosRecovery', () => {
         expect(mockedLoadChildren).toHaveBeenCalledTimes(1);
         expect(mockedApi).toHaveBeenCalledTimes(1); // queryDeletePhotosShare
         expect(mockedRemoveItem).toHaveBeenCalledWith('photos-recovery-state');
+        expect(mockedCreateNotification).not.toHaveBeenCalled();
     });
 
     it('should report failed count when some links fail to recover', async () => {
@@ -193,9 +199,63 @@ describe('usePhotosRecovery', () => {
         await waitFor(() => expect(result.current.state).toEqual('FAILED'));
         expect(result.current.countOfFailedLinks).toEqual(2);
         expect(result.current.countOfUnrecoveredLinksLeft).toEqual(0);
+        // Only the recovery notification, not the decryption one from the listing
+        expect(mockedLoadChildren).toHaveBeenCalledWith(
+            expect.anything(),
+            'shareId',
+            'rootLinkId',
+            undefined,
+            false,
+            true
+        );
+        expect(mockedCreateNotification).toHaveBeenCalledTimes(1);
+        expect(mockedCreateNotification).toHaveBeenCalledWith({
+            type: 'error',
+            text: '2 items failed to be recovered',
+        });
         expect(mockedApi).not.toHaveBeenCalled(); // share not empty, no delete
         expect(mockedSetItem).toHaveBeenCalledWith('photos-recovery-state', 'progress');
         expect(mockedSetItem).toHaveBeenCalledWith('photos-recovery-state', 'failed');
+    });
+
+    it('should move only once on retry when links keep failing', async () => {
+        const failingRun = () => {
+            mockedGetCachedChildren.mockReturnValueOnce({ links: [links[0]], isDecrypting: false }); // DECRYPTING
+            mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // DECRYPTING
+            mockedGetCachedChildren.mockReturnValueOnce({ links: [links[0]], isDecrypting: false }); // PREPARING
+            mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // PREPARING
+            mockedGetCachedChildren.mockReturnValueOnce({ links: [links[0]], isDecrypting: false }); // CLEANING
+            mockedGetCachedTrashed.mockReturnValueOnce({ links: [], isDecrypting: false }); // CLEANING
+        };
+        failingRun();
+        failingRun();
+
+        // Like the real hook, give a new recoverPhotoLinks on every render
+        // @ts-ignore
+        mockedUseLinksActions.mockImplementation(() => ({
+            recoverPhotoLinks: (...args: unknown[]) => mockedRecoverPhotoLinks(...args),
+        }));
+        // Like lockLinks, moving re-renders the hook before it resolves
+        mockedRecoverPhotoLinks.mockImplementation(async () => {
+            useSharesStore.getState().setShares([{ ...RESTORED_SHARE }]);
+            return { successes: [], failures: { linkId1: 'Cannot move corrupted file' } };
+        });
+
+        const { result } = renderHook(() => usePhotosRecovery());
+        act(() => {
+            result.current.start();
+        });
+        await waitFor(() => expect(result.current.state).toEqual('FAILED'));
+
+        act(() => {
+            result.current.start();
+        });
+        await waitFor(() => expect(result.current.state).toEqual('FAILED'));
+
+        expect(mockedRecoverPhotoLinks).toHaveBeenCalledTimes(2);
+        expect(result.current.countOfFailedLinks).toEqual(1);
+        // Shown again on retry
+        expect(mockedCreateNotification).toHaveBeenCalledTimes(2);
     });
 
     it('should reach FAILED when delete share fails', async () => {

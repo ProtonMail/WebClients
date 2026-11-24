@@ -1,8 +1,10 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import isEqual from 'lodash/isEqual';
+import { c, msgid } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { type NodeEntity, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive/sdk';
@@ -32,6 +34,7 @@ const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}) => {
     const api = useApi();
+    const { createNotification } = useNotifications();
     const { getRestoredPhotosShares, removeShares, sharesRecord } = useSharesStore((state) => ({
         getRestoredPhotosShares: state.getRestoredPhotosShares,
         removeShares: state.removeShares,
@@ -81,7 +84,8 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
     const handleDecryptLinks = useCallback(
         async (abortSignal: AbortSignal, shares: Share[] | ShareWithKey[]) => {
             for (const share of shares) {
-                await loadChildren(abortSignal, share.shareId, share.rootLinkId, undefined, undefined, true);
+                // No decryption notification, the move notifies about the photos that failed
+                await loadChildren(abortSignal, share.shareId, share.rootLinkId, undefined, false, true);
                 await waitFor(
                     () => {
                         const { isDecrypting } = getCachedChildren(abortSignal, share.shareId, share.rootLinkId);
@@ -145,6 +149,7 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
                 return Promise.reject('Missing volumeId or shareId for recovery');
             }
 
+            let failedCount = 0;
             for (const data of dataList) {
                 const { successes, failures } = await recoverPhotoLinks(abortSignal, volumeId, {
                     shareId: data.shareId,
@@ -168,9 +173,22 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
                     (prevState) => prevState - (successes.length + Object.keys(failures).length)
                 );
                 setCountOfFailedLinks((prevState) => prevState + Object.keys(failures).length);
+                failedCount += Object.keys(failures).length;
+            }
+
+            // Shown on every run, unlike the decryption notification which only shows when links are first listed
+            if (failedCount) {
+                createNotification({
+                    type: 'error',
+                    text: c('Notification').ngettext(
+                        msgid`${failedCount} item failed to be recovered`,
+                        `${failedCount} items failed to be recovered`,
+                        failedCount
+                    ),
+                });
             }
         },
-        [recoverPhotoLinks, volumeId, shareId]
+        [createNotification, recoverPhotoLinks, volumeId, shareId]
     );
 
     useEffect(() => {
@@ -206,10 +224,14 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
         };
     }, [handlePrepareLinks, restoredShares, state]);
 
+    // handleMoveLinks changes on every render, so the effect can run again before MOVING is applied.
+    // Only move once per run, start() allows the next one.
+    const isMovingRef = useRef(false);
     useEffect(() => {
-        if (state !== 'PREPARED' || !linkId) {
+        if (state !== 'PREPARED' || !linkId || isMovingRef.current) {
             return;
         }
+        isMovingRef.current = true;
         const abortController = new AbortController();
         setState('MOVING');
         void handleMoveLinks(abortController.signal, {
@@ -248,6 +270,9 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
 
     const start = useCallback(() => {
         setItem(RECOVERY_STATE_CACHE_KEY, 'progress');
+        setCountOfUnrecoveredLinksLeft(0);
+        setCountOfFailedLinks(0);
+        isMovingRef.current = false;
         setState('STARTED');
     }, []);
 
