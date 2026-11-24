@@ -310,6 +310,7 @@ enum LumoFeatureFlag {
 }
 
 export enum MailFeatureFlag {
+    MailDomainMxTopBanner = 'MailDomainMxTopBanner',
     MailMetrics = 'MailMetrics',
     OnboardingStepsExperiment = 'OnboardingStepsExperiment',
     PasswordNudge = 'PasswordNudge',
