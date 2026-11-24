@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
+import MailShortcutsModal from '@proton/mail-settings/mail/MailShortcutsModal';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import type { MessageOption } from './useMailUpsellOption';

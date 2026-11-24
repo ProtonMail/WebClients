@@ -5,21 +5,15 @@ import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useLoadAllowedTimeZones } from '@proton/calendar-settings/hooks/useLoadAllowedTimeZones';
-import AliasPromotionSection from '@proton/components/containers/addresses/AliasPromotionSection';
-import IdentitySection from '@proton/components/containers/addresses/IdentitySection';
-import { ProtonMailBridgeSection } from '@proton/components/containers/bridge/ProtonMailBridgeSection';
 import { InboxDesktopSettingsSection } from '@proton/components/containers/desktop/InboxDesktopSettingsSection';
 import CatchAllSection from '@proton/components/containers/domains/CatchAllSection';
 import DomainsSection, { useShowDomainsUpsell } from '@proton/components/containers/domains/DomainsSection';
 import { SimpleEditorProvider } from '@proton/components/containers/editor/SimpleEditorContext';
-import EmailPrivacySection from '@proton/components/containers/emailPrivacy/EmailPrivacySection';
 import PmMeSection from '@proton/components/containers/general/PmMeSection';
 import ImportExportAppSection from '@proton/components/containers/importExportApp/ImportExportAppSection';
 import AddressKeysSection from '@proton/components/containers/keys/AddressKeysSection';
 import PostQuantumKeysOptInSection from '@proton/components/containers/keys/PostQuantumKeysOptInSection/PostQuantumKeysOptInSection';
 import UserKeysSection from '@proton/components/containers/keys/UserKeysSection';
-import FoldersSection from '@proton/components/containers/labels/FoldersSection';
-import LabelsSection from '@proton/components/containers/labels/LabelsSection';
 import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -28,22 +22,26 @@ import {
     SettingsCardMaxWidth,
     SettingsLayoutVariant,
 } from '@proton/components/containers/layout/interface';
-import LayoutsSection from '@proton/components/containers/layouts/LayoutsSection';
-import MessagesOtherSection from '@proton/components/containers/layouts/MessagesOtherSection';
-import MessagesSection from '@proton/components/containers/messages/MessagesSection';
 import MobileAppSettingsSection from '@proton/components/containers/mobile/MobileAppSettingsSection';
-import { OtherMailPreferencesSection } from '@proton/components/containers/otherMailPreferences/OtherMailPreferencesSection';
-import { AddressVerificationSection } from '@proton/components/containers/security/AddressVerificationSection';
-import { ExternalPGPSettingsSection } from '@proton/components/containers/security/ExternalPGPSettingsSection';
-import SMTPSubmissionSection, {
-    useShowSmtpSubmissionUpsell,
-} from '@proton/components/containers/smtp/SMTPSubmissionSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
+import AliasPromotionSection from '@proton/mail-settings/addresses/AliasPromotionSection';
+import IdentitySection from '@proton/mail-settings/addresses/IdentitySection';
 import { AutoReplySection } from '@proton/mail-settings/autoReply/AutoReplySection';
+import { ProtonMailBridgeSection } from '@proton/mail-settings/bridge/ProtonMailBridgeSection';
+import EmailPrivacySection from '@proton/mail-settings/emailPrivacy/EmailPrivacySection';
 import FiltersSection from '@proton/mail-settings/filters/FiltersSection';
 import SpamFiltersSection from '@proton/mail-settings/filters/SpamFiltersSection';
 import ForwardSection from '@proton/mail-settings/forward/ForwardSection';
+import FoldersSection from '@proton/mail-settings/labels/FoldersSection';
+import LabelsSection from '@proton/mail-settings/labels/LabelsSection';
+import LayoutsSection from '@proton/mail-settings/layouts/LayoutsSection';
+import MessagesOtherSection from '@proton/mail-settings/layouts/MessagesOtherSection';
+import MessagesSection from '@proton/mail-settings/messages/MessagesSection';
+import { OtherMailPreferencesSection } from '@proton/mail-settings/otherMailPreferences/OtherMailPreferencesSection';
+import { AddressVerificationSection } from '@proton/mail-settings/security/AddressVerificationSection';
+import { ExternalPGPSettingsSection } from '@proton/mail-settings/security/ExternalPGPSettingsSection';
+import SMTPSubmissionSection, { useShowSmtpSubmissionUpsell } from '@proton/mail-settings/smtp/SMTPSubmissionSection';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 

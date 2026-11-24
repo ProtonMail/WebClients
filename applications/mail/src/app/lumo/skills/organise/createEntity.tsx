@@ -2,7 +2,6 @@ import { useEffect, useId } from 'react';
 
 import { c } from 'ttag';
 
-import ParentFolderSelector from '@proton/components/containers/labels/ParentFolderSelector';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcTagPlus } from '@proton/icons/icons/IcTagPlus';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
@@ -14,6 +13,7 @@ import type {
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
 import type { CardBodyProps, CardReferences, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import ParentFolderSelector from '@proton/mail-settings/labels/ParentFolderSelector';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL, ROOT_FOLDER } from '@proton/shared/lib/constants';

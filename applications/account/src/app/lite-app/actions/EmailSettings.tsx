@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import ViewModeToggle from '@proton/components/containers/layouts/ViewModeToggle';
-import AlmostAllMailToggle from '@proton/components/containers/messages/AlmostAllMailToggle';
-import AutoDeleteSpamAndTrashDaysToggle from '@proton/components/containers/messages/AutoDeleteSpamAndTrashDaysToggle';
-import DelaySendSecondsSelect from '@proton/components/containers/messages/DelaySendSecondsSelect';
-import NextMessageOnMoveToggle from '@proton/components/containers/messages/NextMessageOnMoveToggle';
-import ShowMovedToggle from '@proton/components/containers/messages/ShowMovedToggle';
-import SwipeActionSelect from '@proton/components/containers/messages/SwipeActionSelect';
+import ViewModeToggle from '@proton/mail-settings/layouts/ViewModeToggle';
+import AlmostAllMailToggle from '@proton/mail-settings/messages/AlmostAllMailToggle';
+import AutoDeleteSpamAndTrashDaysToggle from '@proton/mail-settings/messages/AutoDeleteSpamAndTrashDaysToggle';
+import DelaySendSecondsSelect from '@proton/mail-settings/messages/DelaySendSecondsSelect';
+import NextMessageOnMoveToggle from '@proton/mail-settings/messages/NextMessageOnMoveToggle';
+import ShowMovedToggle from '@proton/mail-settings/messages/ShowMovedToggle';
+import SwipeActionSelect from '@proton/mail-settings/messages/SwipeActionSelect';
 import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

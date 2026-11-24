@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/Button/Button';
-import ViewLayoutCards from '@proton/components/containers/layouts/ViewLayoutCards';
 import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
+import ViewLayoutCards from '@proton/mail-settings/layouts/ViewLayoutCards';
 import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';

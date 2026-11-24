@@ -7,10 +7,10 @@ import Row from '@proton/components/components/container/Row';
 import Label from '@proton/components/components/label/Label';
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPen } from '@proton/icons/icons/IcPen';
+import EditLabelModal from '@proton/mail-settings/labels/modals/EditLabelModal';
+import type { LabelModel } from '@proton/mail-settings/labels/modals/EditLabelModal';
 
 interface Props {
     label: Pick<LabelModel, 'Name' | 'Color' | 'Type'>;

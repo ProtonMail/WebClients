@@ -29,7 +29,6 @@ import { useElectronDefaultApp } from '@proton/components/containers/desktop/def
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
 import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import useLoading from '@proton/hooks/useLoading';
@@ -42,6 +41,7 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { IcWindowMaximised } from '@proton/icons/icons/IcWindowMaximised';
 import { IcWindowSmall } from '@proton/icons/icons/IcWindowSmall';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
+import MailShortcutsModal from '@proton/mail-settings/mail/MailShortcutsModal';
 import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';

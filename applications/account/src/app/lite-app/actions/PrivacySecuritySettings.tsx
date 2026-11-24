@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
-import RemoteToggle from '@proton/components/containers/emailPrivacy/RemoteToggle';
-import EmbeddedToggle from '@proton/components/containers/messages/EmbeddedToggle';
-import RemoveImageMetadataToggle from '@proton/components/containers/messages/RemoveImageMetadataToggle';
-import RequestLinkConfirmationToggle from '@proton/components/containers/messages/RequestLinkConfirmationToggle';
-import SenderImagesToggle from '@proton/components/containers/messages/SenderImagesToggle';
+import PreventTrackingToggle from '@proton/mail-settings/emailPrivacy/PreventTrackingToggle';
+import RemoteToggle from '@proton/mail-settings/emailPrivacy/RemoteToggle';
+import EmbeddedToggle from '@proton/mail-settings/messages/EmbeddedToggle';
+import RemoveImageMetadataToggle from '@proton/mail-settings/messages/RemoveImageMetadataToggle';
+import RequestLinkConfirmationToggle from '@proton/mail-settings/messages/RequestLinkConfirmationToggle';
+import SenderImagesToggle from '@proton/mail-settings/messages/SenderImagesToggle';
 import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 

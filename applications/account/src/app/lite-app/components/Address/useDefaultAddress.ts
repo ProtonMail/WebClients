@@ -2,8 +2,8 @@ import isDeepEqual from 'lodash/isEqual';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { getStatus } from '@proton/components/containers/addresses/helper';
 import useLoading from '@proton/hooks/useLoading';
+import { getStatus } from '@proton/mail-settings/addresses/helper';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import move from '@proton/utils/move';
