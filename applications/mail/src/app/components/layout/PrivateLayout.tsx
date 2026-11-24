@@ -10,6 +10,8 @@ import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import DomainMxTopBanner from '@proton/components/containers/topBanners/DomainMxTopBanner';
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
+import DrawerContactModals from '@proton/contacts/drawer/DrawerContactModals';
+import DrawerContactView from '@proton/contacts/drawer/DrawerContactView';
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '@proton/mail-composer/constants';
 import { useOnCompose, useOnMailTo } from '@proton/mail-composer/containers/ComposeProvider';
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
@@ -84,12 +86,17 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
             containerRef={ref}
             drawerApp={
                 <DrawerApp
-                    onCompose={handleContactsCompose}
-                    onMailTo={onMailTo}
                     customAppSettings={<MailQuickSettings />}
                     lumoDrawerView={<DrawerLumoView />}
                     passAliasesView={<PassAliasesContainer />}
-                    contactsImportDropdown={<ContactsTabImportDropdown />}
+                    contactsView={
+                        <DrawerContactView
+                            onCompose={handleContactsCompose}
+                            onMailTo={onMailTo}
+                            importDropdown={<ContactsTabImportDropdown />}
+                        />
+                    }
+                    contactModals={<DrawerContactModals />}
                     // when catching click action from drawer close overlay
                     onContainerClick={() => {
                         document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));

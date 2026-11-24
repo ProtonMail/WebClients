@@ -12,7 +12,7 @@ import { useVideoConferencingWidget } from '@proton/calendar-video-conferencing/
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import Info from '@proton/components/components/link/Info';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
+import { useContactModals } from '@proton/contacts/hooks/useContactModals';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';

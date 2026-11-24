@@ -19,6 +19,8 @@ import useAllowedProducts from '@proton/components/containers/organization/acces
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
+import DrawerContactModals from '@proton/contacts/drawer/DrawerContactModals';
+import DrawerContactView from '@proton/contacts/drawer/DrawerContactView';
 import { useFlagsDriveLumo } from '@proton/drive/modules/flags';
 import useToggle from '@proton/hooks/useToggle';
 import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
@@ -118,7 +120,8 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
                 <DrawerApp
                     customAppSettings={<DriveQuickSettings />}
                     lumoDrawerView={isDriveLumoEnabled ? <DrawerLumoView /> : undefined}
-                    contactsImportDropdown={<ContactsTabImportDropdown />}
+                    contactsView={<DrawerContactView importDropdown={<ContactsTabImportDropdown />} />}
+                    contactModals={<DrawerContactModals />}
                 />
             }
         >

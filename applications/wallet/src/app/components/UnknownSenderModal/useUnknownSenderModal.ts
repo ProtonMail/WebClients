@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
+import { useSaveVCardContact } from '@proton/contacts/hooks/useSaveVCardContact';
 import { addVCardProperty } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';

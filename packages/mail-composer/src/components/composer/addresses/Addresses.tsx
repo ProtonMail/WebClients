@@ -2,8 +2,8 @@ import type { MouseEvent, MutableRefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
-import ContactSelectorModal from '@proton/components/containers/contacts/selector/ContactSelectorModal';
+import { useContactModals } from '@proton/contacts/hooks/useContactModals';
+import ContactSelectorModal from '@proton/contacts/selector/ContactSelectorModal';
 import useToggle from '@proton/hooks/useToggle';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import noop from '@proton/utils/noop';

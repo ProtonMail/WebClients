@@ -6,7 +6,7 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
-import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
+import ContactImportModal from '@proton/contacts/import/ContactImportModal';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { useFlag } from '@proton/unleash/useFlag';
 

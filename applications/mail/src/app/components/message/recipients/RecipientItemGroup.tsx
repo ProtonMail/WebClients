@@ -10,7 +10,7 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
+import RecipientDropdownItem from '@proton/contacts/view/RecipientDropdownItem';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';

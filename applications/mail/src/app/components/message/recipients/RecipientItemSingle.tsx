@@ -5,7 +5,7 @@ import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReac
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
+import RecipientDropdownItem from '@proton/contacts/view/RecipientDropdownItem';
 import type { MapStatusIcons, StatusIcon } from '@proton/mail-message/models/crypto';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

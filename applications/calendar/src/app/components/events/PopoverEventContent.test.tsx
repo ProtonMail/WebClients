@@ -18,7 +18,7 @@ vi.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({ contactEmailsMap: {} }),
 }));
 
-vi.mock('@proton/components/containers/contacts/hooks/useContactModals', () => ({
+vi.mock('@proton/contacts/hooks/useContactModals', () => ({
     useContactModals: () => ({ modals: null, onDetails: vi.fn(), onEdit: vi.fn() }),
 }));
 

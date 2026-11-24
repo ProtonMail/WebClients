@@ -1,4 +1,4 @@
-import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
+import ContactImportModal from '@proton/contacts/import/ContactImportModal';
 
 import { selectDraftModal } from '../../logic/draft/draft.selector';
 import { readImapInstructions, resetImapDraft } from '../../logic/draft/imapDraft/imapDraft.actions';

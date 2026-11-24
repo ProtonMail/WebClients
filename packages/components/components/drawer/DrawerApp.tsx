@@ -8,19 +8,15 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Loader } from '@proton/atoms/Loader/Loader';
 import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import ErrorBoundary from '../../containers/app/ErrorBoundary';
 import StandardErrorPage from '../../containers/app/StandardErrorPage';
-import type { CustomAction } from '../../containers/contacts/widget/types';
 import { useReferralDiscover } from '../../containers/referral/hooks/useReferralDiscover';
 import useDrawer from '../../hooks/drawer/useDrawer';
 import DrawerBugModal from './DrawerBugModal';
-import DrawerContactModals from './DrawerContactModals';
-import DrawerContactView from './views/DrawerContactView';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
 import DrawerSettingsView from './views/DrawerSettingsView';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
@@ -40,17 +36,13 @@ interface Props {
     lumoDrawerView?: ReactNode;
     /** Pass aliases section of the security center; supplied by the product so components stays free of @proton/pass. */
     passAliasesView?: ReactNode;
-    /** Import dropdown of the contacts tab; supplied by the product so components stays free of @proton/activation. */
-    contactsImportDropdown?: ReactNode;
+    /** Contacts tab content; supplied by the product so components stays free of @proton/contacts. */
+    contactsView?: ReactNode;
     /**
-     * Mail specific
+     * Contact modals opened from the drawer iframes (for example the calendar side panel); always mounted.
+     * Supplied by the product so components stays free of @proton/contacts.
      */
-    onCompose?: (recipients: Recipient[], attachments: File[]) => void;
-    onMailTo?: (src: string) => void;
-    /**
-     * Calendar specific
-     */
-    contactCustomActions?: CustomAction[];
+    contactModals?: ReactNode;
     /**
      * To catch clicks on or bubbling to the `aside` element
      */
@@ -61,10 +53,8 @@ const DrawerApp = ({
     customAppSettings,
     lumoDrawerView,
     passAliasesView,
-    contactsImportDropdown,
-    onCompose,
-    onMailTo,
-    contactCustomActions,
+    contactsView,
+    contactModals,
     onContainerClick,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -106,7 +96,7 @@ const DrawerApp = ({
 
     return (
         <>
-            <DrawerContactModals />
+            {contactModals}
             <DrawerBugModal />
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
             <aside
@@ -140,14 +130,7 @@ const DrawerApp = ({
                                 />
                             ))}
 
-                        {appInView === DRAWER_NATIVE_APPS.CONTACTS && (
-                            <DrawerContactView
-                                onCompose={onCompose}
-                                onMailTo={onMailTo}
-                                customActions={contactCustomActions}
-                                importDropdown={contactsImportDropdown}
-                            />
-                        )}
+                        {appInView === DRAWER_NATIVE_APPS.CONTACTS && contactsView}
 
                         {appInView === DRAWER_NATIVE_APPS.QUICK_SETTINGS && (
                             <DrawerSettingsView customAppSettings={customAppSettings} />

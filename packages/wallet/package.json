@@ -93,6 +93,7 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
+        "@proton/contacts": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/unleash": "workspace:^",

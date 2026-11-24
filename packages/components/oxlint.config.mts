@@ -35,6 +35,11 @@ export default createOxlintConfig({
                 message: '@proton/components must not import @proton/calendar-settings.',
             },
             {
+                // Depends on this package; apps pass the drawer contacts view and modals in as props.
+                group: ['@proton/contacts', '@proton/contacts/*'],
+                message: '@proton/components must not import @proton/contacts.',
+            },
+            {
                 // Depends on this package.
                 group: ['@proton/file-preview', '@proton/file-preview/*'],
                 message: '@proton/components must not import @proton/file-preview.',

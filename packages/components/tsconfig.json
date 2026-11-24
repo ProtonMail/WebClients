@@ -1,7 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "@webgpu/types", "vitest/globals"]
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "node", "@webgpu/types", "vitest/globals"]
     },
     // vitest.config.ts is left out: it pulls in vitest's browser-mode matcher types, which clash with jest-dom's (toHaveTextContent(RegExp))
     "exclude": ["node_modules", "vitest.config.ts"]

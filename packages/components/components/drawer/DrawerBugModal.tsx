@@ -10,7 +10,7 @@ import { useModalStateWithData } from '../modalTwo/useModalState';
 
 /**
  * Hosts the "Report a problem" modal for native drawer tabs, which render in this window and so cannot
- * mount an app-shell modal themselves. Same postMessage seam {@link DrawerContactModals} uses.
+ * mount an app-shell modal themselves. Same postMessage seam `DrawerContactModals` (`@proton/contacts`) uses.
  */
 const DrawerBugModal = () => {
     const { APP_NAME } = useConfig();
