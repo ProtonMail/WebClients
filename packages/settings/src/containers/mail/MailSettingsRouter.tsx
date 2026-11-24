@@ -7,16 +7,12 @@ import { useUser } from '@proton/account/user/hooks';
 import { useLoadAllowedTimeZones } from '@proton/calendar-settings/hooks/useLoadAllowedTimeZones';
 import AliasPromotionSection from '@proton/components/containers/addresses/AliasPromotionSection';
 import IdentitySection from '@proton/components/containers/addresses/IdentitySection';
-import { AutoReplySection } from '@proton/components/containers/autoReply/AutoReplySection';
 import { ProtonMailBridgeSection } from '@proton/components/containers/bridge/ProtonMailBridgeSection';
 import { InboxDesktopSettingsSection } from '@proton/components/containers/desktop/InboxDesktopSettingsSection';
 import CatchAllSection from '@proton/components/containers/domains/CatchAllSection';
 import DomainsSection, { useShowDomainsUpsell } from '@proton/components/containers/domains/DomainsSection';
 import { SimpleEditorProvider } from '@proton/components/containers/editor/SimpleEditorContext';
 import EmailPrivacySection from '@proton/components/containers/emailPrivacy/EmailPrivacySection';
-import FiltersSection from '@proton/components/containers/filters/FiltersSection';
-import SpamFiltersSection from '@proton/components/containers/filters/SpamFiltersSection';
-import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import PmMeSection from '@proton/components/containers/general/PmMeSection';
 import ImportExportAppSection from '@proton/components/containers/importExportApp/ImportExportAppSection';
 import AddressKeysSection from '@proton/components/containers/keys/AddressKeysSection';
@@ -44,6 +40,10 @@ import SMTPSubmissionSection, {
 } from '@proton/components/containers/smtp/SMTPSubmissionSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
+import { AutoReplySection } from '@proton/mail-settings/autoReply/AutoReplySection';
+import FiltersSection from '@proton/mail-settings/filters/FiltersSection';
+import SpamFiltersSection from '@proton/mail-settings/filters/SpamFiltersSection';
+import ForwardSection from '@proton/mail-settings/forward/ForwardSection';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 

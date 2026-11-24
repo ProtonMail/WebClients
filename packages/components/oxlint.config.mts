@@ -41,6 +41,11 @@ export default createOxlintConfig({
             },
             {
                 // Depends on this package.
+                group: ['@proton/mail-settings', '@proton/mail-settings/*'],
+                message: '@proton/components must not import @proton/mail-settings.',
+            },
+            {
+                // Depends on this package.
                 group: ['@proton/vpn', '@proton/vpn/*'],
                 message: '@proton/components must not import @proton/vpn.',
             },

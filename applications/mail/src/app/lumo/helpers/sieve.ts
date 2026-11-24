@@ -1,5 +1,5 @@
-import type { AdvancedSimpleFilterModalModel } from '@proton/components/containers/filters/interfaces';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
+import type { AdvancedSimpleFilterModalModel } from '@proton/mail-settings/filters/interfaces';
 
 /**
  * `mail/v4/filters/check` answers in CodeMirror's lint vocabulary — the advanced filter modal hands its

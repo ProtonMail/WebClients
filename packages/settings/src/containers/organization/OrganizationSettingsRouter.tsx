@@ -14,7 +14,6 @@ import OrganizationPasswordRemindersSection from '@proton/components/containers/
 import OrganizationPasswordSection from '@proton/components/containers/organization/OrganizationPasswordSection';
 import OrganizationScheduleCallSection from '@proton/components/containers/organization/OrganizationScheduleCallSection';
 import OrganizationSection from '@proton/components/containers/organization/OrganizationSection';
-import OrganizationSpamFiltersSection from '@proton/components/containers/organization/OrganizationSpamFiltersSection';
 import OrganizationTwoFAEnforcementSection from '@proton/components/containers/organization/OrganizationTwoFAEnforcementSection';
 import OrganizationTwoFARemindersSection from '@proton/components/containers/organization/OrganizationTwoFARemindersSection';
 import { SetupOrganizationSection } from '@proton/components/containers/organization/SetupOrganizationSection';
@@ -23,6 +22,7 @@ import OrganizationGroupsManagementSection from '@proton/components/containers/o
 import OrganizationRetentionPoliciesSection from '@proton/components/containers/organization/retentionPolicy/OrganizationRetentionPoliciesSection';
 import SsoPage from '@proton/components/containers/organization/sso/SsoPage';
 import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
+import OrganizationSpamFiltersSection from '@proton/mail-settings/filters/OrganizationSpamFiltersSection';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import ServiceAccountsSection from '@proton/service-accounts/ServiceAccountsSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
