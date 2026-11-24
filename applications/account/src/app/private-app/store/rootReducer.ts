@@ -1,5 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
+import { membersWithoutRecoveryReducer } from '@proton/account-recovery/organization/membersWithoutRecovery';
 import { authDevicesReducer } from '@proton/account-security/sso/authDevices';
 import { memberAuthDevicesReducer } from '@proton/account-security/sso/memberAuthDevices';
 import { allowAddressDeletionReducer } from '@proton/account/allowAddressDeletion';
@@ -28,6 +29,7 @@ export const rootReducer = combineReducers({
     ...sharedReducers,
     ...offersDeliveryReducer,
     ...passwordPoliciesReducer,
+    ...membersWithoutRecoveryReducer,
     ...filtersReducer,
     ...incomingAddressForwardingsReducer,
     ...outgoingAddressForwardingsReducer,

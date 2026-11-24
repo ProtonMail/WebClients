@@ -1,6 +1,7 @@
 import { type ReactNode, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+import OrganizationAccountRecoverySection from '@proton/account-recovery/organization/OrganizationAccountRecoverySection';
 import ActivityMonitorDashboard from '@proton/components/containers/b2bDashboard/ActivityMonitor/ActivityMonitorDashboard';
 import CatchAllSection from '@proton/components/containers/domains/CatchAllSection';
 import DomainsSection from '@proton/components/containers/domains/DomainsSection';
@@ -168,6 +169,7 @@ const OrganizationSettingsRouter = ({
                     <PrivateMainSettingsArea config={security}>
                         <SentinelSection app={app} variant="organization" />
                         <OrganizationPasswordPoliciesSection organization={organization} />
+                        <OrganizationAccountRecoverySection organization={organization} />
                         <OrganizationPasswordRemindersSection organization={organization} />
                         <OrganizationTwoFARemindersSection organization={organization} />
                         <OrganizationTwoFAEnforcementSection organization={organization} />

@@ -145,6 +145,7 @@ const MainContainerContent: FunctionComponent = () => {
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
+    const isMemberResetEnabled = useFlag('MemberResetLink');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isAlwaysOnVpnEnabled = useFlag('B2BAlwaysOnEnabled');
 
@@ -200,6 +201,7 @@ const MainContainerContent: FunctionComponent = () => {
         isReferralBusinessEnabled: false,
         isDriveEasySwitchNewUIEnabled: false,
         showSignInRestrictionToggle,
+        isMemberResetEnabled,
     };
 
     const vpnRoutes = getRoutes({

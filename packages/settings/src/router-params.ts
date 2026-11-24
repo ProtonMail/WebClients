@@ -59,6 +59,7 @@ export type Flags = {
     isReferralBusinessEnabled: boolean;
     isDriveEasySwitchNewUIEnabled: boolean;
     showSignInRestrictionToggle: boolean;
+    isMemberResetEnabled: boolean;
 };
 
 export type OrganizationSettingsRouterParams = {

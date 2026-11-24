@@ -51,6 +51,7 @@ export const updateOrganizationSettings = (data: {
     SSOBackupPasswordDisabled?: boolean;
     PasswordReminderEnforced?: boolean;
     LumoApiEnabled?: boolean;
+    AdminOptionalForPasswordChange?: boolean;
     AllowedProducts?: OrganizationSettings['AllowedProducts'];
     PasswordPolicies?: OrganizationSettings['PasswordPolicies'];
     InvoiceEmail?: OrganizationSettings['InvoiceEmail'];
@@ -59,6 +60,16 @@ export const updateOrganizationSettings = (data: {
     url: 'core/v4/organizations/settings',
     method: 'put',
     data,
+});
+
+export const getMembersWithoutRecoveryCount = () => ({
+    url: 'core/v4/organizations/members/without-recovery/count',
+    method: 'get',
+});
+
+export const sendRecoveryMethodReminder = () => ({
+    url: 'core/v4/organizations/members/without-recovery/remind',
+    method: 'post',
 });
 
 export const getOrganizationSettings = () => ({

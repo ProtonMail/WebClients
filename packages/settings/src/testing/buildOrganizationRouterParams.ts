@@ -19,6 +19,7 @@ export const defaultFlags: Flags = {
     isReferralBusinessEnabled: false,
     isDriveEasySwitchNewUIEnabled: false,
     showSignInRestrictionToggle: false,
+    isMemberResetEnabled: false,
     canDisplayNonPrivateEmailPhone: false,
     isScribeEnabled: false,
     isZoomIntegrationEnabled: false,
