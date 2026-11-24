@@ -104,7 +104,7 @@
             "matchPackageNames": ["/babel/"]
         },
         {
-            "description": "exifreader >=4.52 ships ESM-only sources; drive Jest needs a transformIgnorePatterns update before it can land",
+            "description": "exifreader >=4.52 ships ESM-only sources; check the drive test config handles them before it can land",
             "groupName": "exifreader",
             "matchPackageNames": ["exifreader"]
         },
