@@ -235,6 +235,9 @@
       ],
       "Undo": [
         "Ångra"
+      ],
+      "Header row": [
+        "Rubrikrad"
       ]
     },
     "color": {
@@ -341,6 +344,12 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Kan inte konvertera Word-dokument. Är det lösenordsskyddat? Ta i så fall bort lösenordet och försök igen."
+      ],
+      "Could not load emoji. Close the picker and try again.": [
+        "Kunde inte ladda emoji. Stäng väljaren och försök igen."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Misslyckades med att importera OpenDocument-fil på grund av ett okänt fel."
       ]
     },
     "Error message": {
@@ -458,6 +467,12 @@
       ],
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
+      ],
+      "No emoji found": [
+        "Ingen emoji hittades"
+      ],
+      "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
+        "Öppna länken för att ladda ned bilden, använd sedan \"infoga bild\" för att lägga till den i det här dokumentet."
       ]
     },
     "Label": {
@@ -583,6 +598,9 @@
       ],
       "with \"${ replaceWith }\"": [
         "med ”${ replaceWith }”"
+      ],
+      "Emoji suggestions": [
+        "Emojiförslag"
       ]
     },
     "Placeholder": {
@@ -771,6 +789,27 @@
       ],
       "Top": [
         "Toppen"
+      ],
+      "Accounting": [
+        "Redovisning"
+      ],
+      "Clip": [
+        "Urklipp"
+      ],
+      "Fraction": [
+        "Bråkdel"
+      ],
+      "Overflow": [
+        "Överflöde"
+      ],
+      "Scientific": [
+        "Vetenskaplig"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Tidsformat visar datum- och tidsserienummer som datumvärden."
+      ],
+      "Wrap": [
+        "Radbryt"
       ]
     },
     "sheets_2025:Spreadsheet chartAggregates": {
@@ -785,6 +824,12 @@
       ],
       "Min": [
         "Min"
+      ],
+      "Count": [
+        "Antal"
+      ],
+      "Sum": [
+        "Summa"
       ]
     },
     "sheets_2025:Spreadsheet chartEditorDialog": {
@@ -804,6 +849,18 @@
       ],
       "Treemap": [
         "Trädkarta"
+      ],
+      "2D Pie": [
+        "2D Paj"
+      ],
+      "Doughnut": [
+        "Munk"
+      ],
+      "Line": [
+        "Rad"
+      ],
+      "Pie": [
+        "Paj"
       ]
     },
     "sheets_2025:Spreadsheet conditions": {
@@ -980,6 +1037,42 @@
       ],
       "Yesterday": [
         "Igår"
+      ],
+      "Bottom N percent": [
+        "De nedersta N procenten"
+      ],
+      "Date is before": [
+        "Datum är innan"
+      ],
+      "Date is equal to": [
+        "Datum är lika med"
+      ],
+      "Date is not equal to": [
+        "Datum är inte lika med"
+      ],
+      "Date is on or after": [
+        "Datum är på eller efter"
+      ],
+      "Date is on or before": [
+        "Datum är på eller innan"
+      ],
+      "Greater than": [
+        "Större än"
+      ],
+      "Greater than or equal to": [
+        "Större än eller lika med"
+      ],
+      "Greater than or equal to previous": [
+        "Större än eller lika med tidigare"
+      ],
+      "Greater than previous": [
+        "Större än föregående"
+      ],
+      "Less than previous": [
+        "Mindre än föregående"
+      ],
+      "Top N percent": [
+        "Topp N procent"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1956,6 +2049,12 @@
       ],
       "Zoom": [
         "Zooma"
+      ],
+      "Apply fill color": [
+        "Tillämpa fyllnadsfärg"
+      ],
+      "Choose fill color": [
+        "Välj fyllnadsfärg"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -2018,6 +2117,9 @@
       ],
       "Remove": [
         "Ta bort"
+      ],
+      "View": [
+        "Visa"
       ]
     },
     "sheets_2025:Spreadsheet gridFooter": {
@@ -2065,6 +2167,12 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Specify column width (px)": [
+        "Specificera kolumnbredd (px)"
+      ],
+      "Specify row height (px)": [
+        "Specificera radhöjd (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -2088,6 +2196,39 @@
       ],
       "Sum": [
         "Summa"
+      ],
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Visa i statutsfältet"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, inte applicerbart"
+      ],
+      "Copy": [
+        "Kopiera"
+      ],
+      "Copy formula": [
+        "Kopiera formel"
+      ],
+      "Copy value": [
+        "Kopiera värde"
+      ],
+      "Count numbers": [
+        "Räkna antalet"
+      ],
+      "Detach from selection": [
+        "Lossa från val"
+      ],
+      "Pin by the selection": [
+        "Fäst vid valet"
+      ],
+      "Selection summary": [
+        "Sammanfattning av urval"
+      ],
+      "Summary": [
+        "Sammanfattning"
+      ],
+      "Unpin from selection": [
+        "Lossa från val"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
@@ -2248,6 +2389,12 @@
       ],
       "Vertical axis title": [
         "Vertikalt axelrubrik"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Serier ${ seriesNumber } Namn"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -2541,6 +2688,20 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Ge förslag inuti kodblock stöds inte"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "History is a reserved name and can't be used for a sheet": [
+        "Historia är ett reserverat namn och kan inte användas för ett blad"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Bladnamn får inte vara längre än 31 tecken"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Bladnamn kan inte innehålla \\ / ? * [ ] eller :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Bladnamn kan inte börja eller sluta med en apostrof"
       ]
     }
   }
