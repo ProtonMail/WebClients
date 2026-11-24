@@ -53,6 +53,7 @@ export enum FeatureCode {
     InboxDesktopFreeTrialDates = 'InboxDesktopFreeTrialDates',
     InboxDesktopFreeTrialReminders = 'InboxDesktopFreeTrialReminders',
     MailActionsChunkSize = 'MailActionsChunkSize',
+    MailSkipMissingDomainMX = 'MailSkipMissingDomainMX',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     PassNudgeDontShowAgain = 'PassNudgeDontShowAgain',

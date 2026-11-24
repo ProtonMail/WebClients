@@ -2,6 +2,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { securityCenterReducer } from '@proton/account/accountSecurity/accountSecuritySlice';
 import { breachesCountReducer } from '@proton/account/breaches/breachNotificationsSlice';
+import { domainsAddressesReducer } from '@proton/account/domainsAddresses';
 import { protonDomainsReducer } from '@proton/account/protonDomains';
 import { retentionPoliciesReducer } from '@proton/account/retentionPolicies';
 import { internalBookingReducer } from '@proton/calendar/bookings/store';
@@ -49,6 +50,7 @@ export const rootReducer = combineReducers({
     ...securityCenterReducer,
     ...breachesCountReducer,
     ...protonDomainsReducer,
+    ...domainsAddressesReducer,
     ...retentionPoliciesReducer,
     ...newsletterSubscriptionsReducer,
 });

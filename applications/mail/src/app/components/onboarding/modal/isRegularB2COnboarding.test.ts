@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { PLANS } from '@proton/payments/core/constants';
 
 import { REGULAR_B2C_ONBOARDING_STEPS, isRegularB2COnboarding } from './isRegularB2COnboarding';
