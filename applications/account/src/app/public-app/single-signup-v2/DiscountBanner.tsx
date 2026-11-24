@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import clsx from '@proton/utils/clsx';
 
@@ -9,9 +10,11 @@ interface Props {
     discountPercent: number;
     selectedPlanTitle: string;
     className?: string;
+    /** Keeps the banner's box and shows a placeholder for its text */
+    loading?: boolean;
 }
 
-const DiscountBanner = ({ discountPercent, selectedPlanTitle, className }: Props) => {
+const DiscountBanner = ({ discountPercent, selectedPlanTitle, className, loading }: Props) => {
     const boldDiscountPercent = (
         <b key="bold-discount-percent">{
             // full sentence: Your 10% discount to Proton Pass has been applied
@@ -31,12 +34,16 @@ const DiscountBanner = ({ discountPercent, selectedPlanTitle, className }: Props
                 <IcTag size={4} />
             </div>
 
-            <span className="text-center">
-                {
-                    // full sentence: Your 10% discount to Proton Pass has been applied
-                    c('Info').jt`Your ${boldDiscountPercent} to ${boldPlanTitle} has been applied`
-                }
-            </span>
+            {loading ? (
+                <SkeletonLoader width="100%" height="1.5rem" />
+            ) : (
+                <span className="text-center">
+                    {
+                        // full sentence: Your 10% discount to Proton Pass has been applied
+                        c('Info').jt`Your ${boldDiscountPercent} to ${boldPlanTitle} has been applied`
+                    }
+                </span>
+            )}
         </div>
     );
 };
