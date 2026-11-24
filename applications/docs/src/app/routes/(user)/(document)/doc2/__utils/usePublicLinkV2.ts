@@ -13,14 +13,9 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { getSentryError, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 import type { HandshakeInfoVendorType } from '@proton/shared/lib/interfaces/drive/sharing'
 
+import { PROTON_SHEET_VENDOR_TYPE } from '../../../../(public)/__utils/useIsPathCorrectForVendorType'
 import type { ProviderType } from '../../../../../provider-type'
 import type { PublicLinkHandoff } from './publicLink'
-
-/**
- * `ProtonSheet` is not a member of the enum yet. Copied from
- * `applications/docs/src/app/routes/(public)/__utils/useIsPathCorrectForVendorType.ts`
- */
-export const PROTON_SHEET_VENDOR_TYPE = 2 as HandshakeInfoVendorType
 
 type Status = 'loading' | 'waitingForPasswordFromDriveWindow' | 'passwordNeeded' | 'ready' | 'error'
 

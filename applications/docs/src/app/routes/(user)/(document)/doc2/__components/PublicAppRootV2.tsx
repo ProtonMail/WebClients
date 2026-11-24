@@ -21,18 +21,13 @@ import config from '~/config'
 import { loggerForSDK, sharedLogger } from '~/drive-sdk/logger'
 import { PasswordPage } from '../../../../(public)/__components/PasswordPage'
 import { PublicAppRootContainer } from '../../../../(public)/__components/PublicAppRootContainer'
+import { PROTON_SHEET_VENDOR_TYPE } from '../../../../(public)/__utils/useIsPathCorrectForVendorType'
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { DocsUrlContextProvider, replaceLastPathSegment, useDocsUrlBar } from '~/utils/docs-url-bar'
 import { useRealtimeSdkEnabled } from '~/utils/flags'
 import type { ProviderType } from '../../../../../provider-type'
 import { useOpenDocumentHeartbeat } from '../__utils/useOpenDocumentHeartbeat'
-import {
-  PROTON_SHEET_VENDOR_TYPE,
-  type PublicLinkV2State,
-  type SignedInLink,
-  traceErrorSDK,
-  usePublicLinkV2,
-} from '../__utils/usePublicLinkV2'
+import { type PublicLinkV2State, type SignedInLink, traceErrorSDK, usePublicLinkV2 } from '../__utils/usePublicLinkV2'
 
 // The page and the editor load only once the share URL is signed into, under the app's error boundary
 const PublicDocumentPageV2 = lazy(() => import(/* webpackChunkName: "PublicDocumentPageV2" */ '../publicPage'))

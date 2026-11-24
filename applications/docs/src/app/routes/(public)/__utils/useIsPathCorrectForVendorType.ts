@@ -7,7 +7,7 @@ import { HandshakeInfoVendorType } from '@proton/shared/lib/interfaces/drive/sha
 import { replaceLastPathSegment } from '~/utils/docs-url-bar'
 
 /** `ProtonSheet` is not a member of the enum yet */
-const PROTON_SHEET_VENDOR_TYPE = 2 as HandshakeInfoVendorType
+export const PROTON_SHEET_VENDOR_TYPE = 2 as HandshakeInfoVendorType
 
 /**
  * Public links may name no document type (`/?mode=open-url…`) or the wrong one. The type is known from the
