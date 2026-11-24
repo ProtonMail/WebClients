@@ -9,7 +9,7 @@
         "url": "https://proton.me"
     },
     "type": "commonjs",
-    "main": ".webpack/main",
+    "main": ".webpack/main/index.cjs",
     "scripts": {
         "check": "pnpm run check:format && pnpm run check:lint && pnpm run check:types",
         "check:format": "oxfmt . --check",
