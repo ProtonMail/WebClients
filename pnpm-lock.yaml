@@ -522,56 +522,56 @@ catalogs:
       version: 4.6.7
   docs:
     '@lexical/clipboard':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/code':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/hashtag':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/headless':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/html':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/link':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/list':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/markdown':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/overflow':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/react':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/rich-text':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/selection':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/table':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/text':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/utils':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     '@lexical/yjs':
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
     lexical:
-      specifier: 0.34.0
-      version: 0.34.0
+      specifier: 0.35.0
+      version: 0.35.0
 
 overrides:
   '@babel/runtime-corejs3@^7.24.4': 7.29.14
@@ -692,13 +692,14 @@ packageExtensionsChecksum: sha256-yVitNr0ySwXxIXPBNUDWWz55lxk9Dmew2Ba+ATwgtiM=
 
 patchedDependencies:
   '@electron-forge/core@7.11.2': 49614044de5a377cfe0ae6415e228fd51f43bd38b5283b09e1c81af07b31eb36
-  '@lexical/code@0.34.0': e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462
-  '@lexical/selection@0.34.0': bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436
-  '@lexical/table@0.34.0': 063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249
-  '@lexical/yjs@0.34.0': 174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56
+  '@lexical/code@0.35.0': e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462
+  '@lexical/selection@0.35.0': 318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d
+  '@lexical/table@0.35.0': 063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249
+  '@lexical/yjs@0.35.0': dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac
   '@mlc-ai/web-llm@0.2.32': f2db861fd9b2307065c0dd450cb8471d7a1aff76a29cd7e383fb2555e831b1eb
   '@pdf-lib/standard-fonts@1.0.0': d6f2355d44f27790cc3b1497d17218c245fcceb9d07c5c7f48b7419c6d4b41f6
   html2canvas@1.4.1: 14946dac2dd4766cee981ebec008513f15e668c07fab63fb78bdaccb4439704f
+  lexical@0.35.0: 3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018
   mdast-util-gfm-autolink-literal@2.0.1: 0ef34f0227e6b109bae17f973b8ac48f689d36efc267ebe77775474d6862a314
   rfc2047@2.0.1: ebba2756caede0901db62e58251e1e0b72540dae6f8a6e2c60ccac1ebdf5fdd9
 
@@ -1785,7 +1786,7 @@ importers:
         version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/utils':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@proton-docs/realtime-sdk':
         specifier: 0.15.0
         version: 0.15.0(@types/node@26.6.6)(@typescript/typescript6@6.0.2)(yjs@13.6.27)
@@ -1890,7 +1891,7 @@ importers:
         version: 3.10.2
       lexical:
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -2011,55 +2012,55 @@ importers:
     dependencies:
       '@lexical/clipboard':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/code':
         specifier: catalog:docs
-        version: 0.34.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)
+        version: 0.35.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)
       '@lexical/hashtag':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/headless':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/html':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/link':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/list':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/markdown':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/overflow':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/react':
         specifier: catalog:docs
-        version: 0.34.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)
+        version: 0.35.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)
       '@lexical/rich-text':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/selection':
         specifier: catalog:docs
-        version: 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
+        version: 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
       '@lexical/table':
         specifier: catalog:docs
-        version: 0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
+        version: 0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
       '@lexical/text':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/utils':
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0
       '@lexical/yjs':
         specifier: catalog:docs
-        version: 0.34.0(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27)
+        version: 0.35.0(patch_hash=dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac)(yjs@13.6.27)
       '@proton-docs/docs-editor':
-        specifier: 0.9.1
-        version: 0.9.1(@lexical/clipboard@0.34.0)(@lexical/code@0.34.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462))(@lexical/hashtag@0.34.0)(@lexical/headless@0.34.0)(@lexical/html@0.34.0)(@lexical/link@0.34.0)(@lexical/list@0.34.0)(@lexical/markdown@0.34.0)(@lexical/overflow@0.34.0)(@lexical/react@0.34.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.34.0)(@lexical/selection@0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436))(@lexical/table@0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249))(@lexical/text@0.34.0)(@lexical/utils@0.34.0)(@lexical/yjs@0.34.0(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27))(@types/node@26.6.6)(@typescript/typescript6@6.0.2)(lexical@0.34.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
+        specifier: 0.10.0
+        version: 0.10.0(@lexical/clipboard@0.35.0)(@lexical/code@0.35.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462))(@lexical/hashtag@0.35.0)(@lexical/headless@0.35.0)(@lexical/html@0.35.0)(@lexical/link@0.35.0)(@lexical/list@0.35.0)(@lexical/markdown@0.35.0)(@lexical/overflow@0.35.0)(@lexical/react@0.35.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.35.0)(@lexical/selection@0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d))(@lexical/table@0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249))(@lexical/text@0.35.0)(@lexical/utils@0.35.0)(@lexical/yjs@0.35.0(patch_hash=dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac)(yjs@13.6.27))(@types/node@26.6.6)(@typescript/typescript6@6.0.2)(lexical@0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
       '@proton-docs/sheets-editor':
         specifier: 0.3.2
         version: 0.3.2(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
@@ -2104,7 +2105,7 @@ importers:
         version: 2.2.0(@types/node@26.6.6)(@typescript/typescript6@6.0.2)
       lexical:
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
@@ -6783,7 +6784,7 @@ importers:
         version: 4.0.0
       lexical:
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -6890,7 +6891,7 @@ importers:
         version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/yjs':
         specifier: catalog:docs
-        version: 0.34.0(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27)
+        version: 0.35.0(patch_hash=dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac)(yjs@13.6.27)
       '@proton/atoms':
         specifier: workspace:^
         version: link:../atoms
@@ -6923,7 +6924,7 @@ importers:
         version: 8.0.4
       lexical:
         specifier: catalog:docs
-        version: 0.34.0
+        version: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       lib0:
         specifier: ^0.2.120
         version: 0.2.120
@@ -14698,14 +14699,14 @@ packages:
   '@lexical/clipboard@0.31.2':
     resolution: {integrity: sha512-cedna5jXfNzbmGl0nLOiLoQoE42i3NfCU6wtugO/auWTLbv1/gD9g0egLg2lAUod+BApaCgdTU4tV2bqww2GWQ==}
 
-  '@lexical/clipboard@0.34.0':
-    resolution: {integrity: sha512-u0Jx6Lncb3AKW/BrCfI7E2mhlTT0eCp2bR1hefHnKHo2LIxil4QHg4gtj+DWTxG2vkZVQvvsrGgiC+SX8Va81A==}
+  '@lexical/clipboard@0.35.0':
+    resolution: {integrity: sha512-ko7xSIIiayvDiqjNDX6fgH9RlcM6r9vrrvJYTcfGVBor5httx16lhIi0QJZ4+RNPvGtTjyFv4bwRmsixRRwImg==}
 
   '@lexical/code@0.31.2':
     resolution: {integrity: sha512-pix3n43zJzzkOgiUV0aTkWL4syItiHrP7YkdenkXgauVMAqZq3IvmK1hSQYKeDsVw/3N8mU26oRp0g5kPDV1rA==}
 
-  '@lexical/code@0.34.0':
-    resolution: {integrity: sha512-jsr8I+DEan0FuZnjQzQmuyebH0TpSV/6ESnjpe1x4egNvaedelDAJV3/v4AZcfJuB4yM2YHFbMgb7GbUmj7usw==}
+  '@lexical/code@0.35.0':
+    resolution: {integrity: sha512-ox4DZwETQ9IA7+DS6PN8RJNwSAF7RMjL7YTVODIqFZ5tUFIf+5xoCHbz7Fll0Bvixlp12hVH90xnLwTLRGpkKw==}
 
   '@lexical/devtools-core@0.31.2':
     resolution: {integrity: sha512-Ae5jJzeo6+3DVEWj9n6h+Vz8R4eL+Z7egGHOAwSa3E65PVp8WNlAoM+Z0rNNpvmbFglWD7d9pSPHcK/G5B7Bfw==}
@@ -14713,8 +14714,8 @@ packages:
       react: '>=17.x'
       react-dom: '>=17.x'
 
-  '@lexical/devtools-core@0.34.0':
-    resolution: {integrity: sha512-m+QOdJOwK/UolrwpSDOId4665XsfMG1+MrYGm/ZGx+J7kai/j50CTTBaZ8vdslL3oPiJxGzsqm/UDubpDS6wwQ==}
+  '@lexical/devtools-core@0.35.0':
+    resolution: {integrity: sha512-C2wwtsMCR6ZTfO0TqpSM17RLJWyfHmifAfCTjFtOJu15p3M6NO/nHYK5Mt7YMQteuS89mOjB4ng8iwoLEZ6QpQ==}
     peerDependencies:
       react: '>=17.x'
       react-dom: '>=17.x'
@@ -14722,71 +14723,71 @@ packages:
   '@lexical/dragon@0.31.2':
     resolution: {integrity: sha512-exFqbyyLyfZmmKQgjB4sJOYHV5DQYIPw0orvxpGMeaVCOgfP0RvB21QLHyazmGlnVNcahscHYieZmLJdpwHYMQ==}
 
-  '@lexical/dragon@0.34.0':
-    resolution: {integrity: sha512-peKKMuI9/3GQMVZ2W5aZ8vn0YErBPbfyk6F9zV2koY6frIiCzL5pBJiPpXEvmweDxnxay2TYcFTOWYNGiUWuxw==}
+  '@lexical/dragon@0.35.0':
+    resolution: {integrity: sha512-SL6mT5pcqrt6hEbJ16vWxip5+r3uvMd0bQV5UUxuk+cxIeuP86iTgRh0HFR7SM2dRTYovL6/tM/O+8QLAUGTIg==}
 
   '@lexical/hashtag@0.31.2':
     resolution: {integrity: sha512-/sa8bsCq2CKmdpvN/l2B8K/sJrsmd4pAafFG4JWB7JXjPxJyDe80WbSaQfBPdrhvqdLY8l05GeWM17SsEV1sMw==}
 
-  '@lexical/hashtag@0.34.0':
-    resolution: {integrity: sha512-/dRzbQt+Wdt7aMAzLbnNU/M2XDhlzNGI5XpMItfiWRTYA2LT1D9hupcTHPsRRMTpidy1+JPqxPTeqGyoqHKcZQ==}
+  '@lexical/hashtag@0.35.0':
+    resolution: {integrity: sha512-LYJWzXuO2ZjKsvQwrLkNZiS2TsjwYkKjlDgtugzejquTBQ/o/nfSn/MmVx6EkYLOYizaJemmZbz3IBh+u732FA==}
 
-  '@lexical/headless@0.34.0':
-    resolution: {integrity: sha512-i7Tj8G9FJcuCOIYUOMh3qEZn6VMC7RPhSN9BhRg14E+FW7uRojjWaTCl65qVJC0Rcg3pvezNKGSLdQdykXyEPw==}
+  '@lexical/headless@0.35.0':
+    resolution: {integrity: sha512-UPmCqOsdGGC7/8Fkae2ADkTQfxTZOKxNEVKuqPfCkFs4Bag3s4z3V61jE+wYzqyU8eJh4DqZYSHoPzZCj8P9jg==}
 
   '@lexical/history@0.31.2':
     resolution: {integrity: sha512-q3Ykv3oi711XmuFdg7LuppLImyedgpLD5KekXLXRVyOGOTvvaNfb2YQfRjFBalxl3umj2QHYR22Zkamx8zfFXw==}
 
-  '@lexical/history@0.34.0':
-    resolution: {integrity: sha512-EVLMOWTmKTyt1LOxYP0lOYNWl9lNiVZkaUgZtvncQbQaZJGgEJqc0FrZvl5K+SrRIqXiSdQi7EEfgvGwgfRqCA==}
+  '@lexical/history@0.35.0':
+    resolution: {integrity: sha512-onjDRLLxGbCfHexSxxrQaDaieIHyV28zCDrbxR5dxTfW8F8PxjuNyuaG0z6o468AXYECmclxkP+P4aT6poHEpQ==}
 
   '@lexical/html@0.31.2':
     resolution: {integrity: sha512-92Oi9daBDNCaionS9ENnXkC+jzzz5WdFTHxTkPqcGaJZE/jF0rAe6LQo6356O/yr9dYK/KIsE8V79AJHqQKJhg==}
 
-  '@lexical/html@0.34.0':
-    resolution: {integrity: sha512-QoFm2P9PSFadInMCFGKJBQI8M2EPUjG6fGf+mUQG9WgX7gIAvTDr21lzUM+dNGtrBwtYxUSQizmUx1NeP6ShyQ==}
+  '@lexical/html@0.35.0':
+    resolution: {integrity: sha512-rXGFE5S5rKsg3tVnr1s4iEgOfCApNXGpIFI3T2jGEShaCZ5HLaBY9NVBXnE9Nb49e9bkDkpZ8FZd1qokCbQXbw==}
 
   '@lexical/link@0.31.2':
     resolution: {integrity: sha512-sLtpW+cuFdVq1V6vlEFUEC1BRHyHBxEdCrxwTP7T0CreJDKrUrBD2oBafb/4AiOPhM7CHAwW88pbuY5KvWOovw==}
 
-  '@lexical/link@0.34.0':
-    resolution: {integrity: sha512-4C8BtyqqFHZR1TA5osx/W6TrgPurxwwHsJhEflkZSRkcsyzwvtgWnfkp8vD3VGRsAUApYXmbl9InbJYzrs7k9Q==}
+  '@lexical/link@0.35.0':
+    resolution: {integrity: sha512-+0Wx6cBwO8TfdMzpkYFacsmgFh8X1rkiYbq3xoLvk3qV8upYxaMzK1s8Q1cpKmWyI0aZrU6z7fiK4vUqB7+69w==}
 
   '@lexical/list@0.31.2':
     resolution: {integrity: sha512-NbdpxSttk/MmYCSovsxiQwS2h3h2U/Kg3WwNfW9vgpvdZE+qmg6jqpzUFVe51/i+GF2WU0uRPG0J5StMGhtYlg==}
 
-  '@lexical/list@0.34.0':
-    resolution: {integrity: sha512-AVhkts0WMqfUZJsJIvw7wJXKtMF0AiUT8TdEeGS6G57AvcZgH+NXiHuTiqfLLYrezZ4NWDTu70M6WJkNd7LEng==}
+  '@lexical/list@0.35.0':
+    resolution: {integrity: sha512-owsmc8iwgExBX8sFe8fKTiwJVhYULt9hD1RZ/HwfaiEtRZZkINijqReOBnW2mJfRxBzhFSWc4NG3ISB+fHYzqw==}
 
   '@lexical/mark@0.31.2':
     resolution: {integrity: sha512-orzsqWaejgdUhSHXRFogF0HNzRWKf2HD7DgiGxKF7LrjVLl4j14+zA8UWX9d4qNwIbRPdfQkYfeOSPwbYx3iRw==}
 
-  '@lexical/mark@0.34.0':
-    resolution: {integrity: sha512-doQ/qRllCV/jgdOT46jJtEeGgIc7QV/7E2HS/4ayjHtVwQZOE8Dio7zEXqweIO83fYyt8DTb9hmWP/khrmNM1g==}
+  '@lexical/mark@0.35.0':
+    resolution: {integrity: sha512-W0hwMTAVeexvpk9/+J6n1G/sNkpI/Meq1yeDazahFLLAwXLHtvhIAq2P/klgFknDy1hr8X7rcsQuN/bqKcKHYg==}
 
   '@lexical/markdown@0.31.2':
     resolution: {integrity: sha512-2gWo7HiMONTor3whJo1237LZz769eVVRT8kGUgBq/p5QyFsb131NUYSxCperKdDaO43k+4ZQspPHyQJjoyOxHg==}
 
-  '@lexical/markdown@0.34.0':
-    resolution: {integrity: sha512-v3vp26LslpQ3CTTIci7jC9sUryL+OYG4gu21TOxO931yOF45j/RDgDKmEuySyaq5hcB6Q+kytALKUPfZtvIP1Q==}
+  '@lexical/markdown@0.35.0':
+    resolution: {integrity: sha512-BlNyXZAt4gWidMw0SRWrhBETY1BpPglFBZI7yzfqukFqgXRh7HUQA28OYeI/nsx9pgNob8TiUduUwShqqvOdEA==}
 
   '@lexical/offset@0.31.2':
     resolution: {integrity: sha512-f8bNvys2jNgnjQWoUd6us7KBXdB7AhKqgWqso7nGeoB1CWGTkd88Qxm8A9uX/muPK0cb6fed4X7wN2xuRDWpyQ==}
 
-  '@lexical/offset@0.34.0':
-    resolution: {integrity: sha512-j3tdGuQuiKPdOEsIBMd8ZU4Ka22v8LFCWWOlHyU7lT4xVoC6+921QKbdI7NY9w5lX8Yd28u5HFgHE2TaTsX4AA==}
+  '@lexical/offset@0.35.0':
+    resolution: {integrity: sha512-DRE4Df6qYf2XiV6foh6KpGNmGAv2ANqt3oVXpyS6W8hTx3+cUuAA1APhCZmLNuU107um4zmHym7taCu6uXW5Yg==}
 
   '@lexical/overflow@0.31.2':
     resolution: {integrity: sha512-l5jbPglBX8CiXZ7F+okTcfdOwfAgf1JIa8BJhkQrtRP/fEiY3NnCehBYfp/Iyd9uBZDWlVlp1+UsqFFtEeT3Yg==}
 
-  '@lexical/overflow@0.34.0':
-    resolution: {integrity: sha512-9f+9E++BxR4jtmcJg4VLnAmjT19IuOS5yyqaMvwEl7612DP5ch9sYG43HusL0w5cjUFbxX6Urkqp8bMPpo0BWA==}
+  '@lexical/overflow@0.35.0':
+    resolution: {integrity: sha512-B25YvnJQTGlZcrNv7b0PJBLWq3tl8sql497OHfYYLem7EOMPKKDGJScJAKM/91D4H/mMAsx5gnA/XgKobriuTg==}
 
   '@lexical/plain-text@0.31.2':
     resolution: {integrity: sha512-CMKuWPUCyDZ8ET10YZM7RxDyIB2UiHJ7mEwqEKl86OS9XOhWtp0qUQUonyeAy4f9yfuMTA7fQ2iLlEmAaeVu+g==}
 
-  '@lexical/plain-text@0.34.0':
-    resolution: {integrity: sha512-OmbET24smoKR1v7FKqG8ZvOns01Eaadkdg1FzcrgwnoT7lHXI3W2tO0XJ0yAQ4Z9pGX6lTNVZPf0T4ywknKYYg==}
+  '@lexical/plain-text@0.35.0':
+    resolution: {integrity: sha512-lwBCUNMJf7Gujp2syVWMpKRahfbTv5Wq+H3HK1Q1gKH1P2IytPRxssCHvexw9iGwprSyghkKBlbF3fGpEdIJvQ==}
 
   '@lexical/react@0.31.2':
     resolution: {integrity: sha512-A/Ub9Ub5vx9EE0WEhVeE3t/SMVecnaPGeN37Q5LMPXiGgQCsMKEYtjHKvAjjAXSk8YD1lGTd/k4LOjyl8Y9ZyA==}
@@ -14794,8 +14795,8 @@ packages:
       react: '>=17.x'
       react-dom: '>=17.x'
 
-  '@lexical/react@0.34.0':
-    resolution: {integrity: sha512-i1GyYyJUeFXe/wwk7WI+zqnx+gB8HsSfXp5vMA7prUbpAc6RooRL6XHlY2Fc2suCAmcZmrucLZt3UFKsb+F6KQ==}
+  '@lexical/react@0.35.0':
+    resolution: {integrity: sha512-uYAZSqumH8tRymMef+A0f2hQvMwplKK9DXamcefnk3vSNDHHqRWQXpiUo6kD+rKWuQmMbVa5RW4xRQebXEW+1A==}
     peerDependencies:
       react: '>=17.x'
       react-dom: '>=17.x'
@@ -14803,40 +14804,40 @@ packages:
   '@lexical/rich-text@0.31.2':
     resolution: {integrity: sha512-iBkqY0CvTKbwk3T+a4wtI6/OjhM/CdxXvha6b88Gb9d5tYj5k7cT5SznYF1sXPmwtqpXg9TWkBN2Puqv3LPvsg==}
 
-  '@lexical/rich-text@0.34.0':
-    resolution: {integrity: sha512-fFokmx+XsnertQLlBNBLxVDqirtUztDth47/7KZRfX2M63T9nX/jx2YvuUEaHdgJMG5NhcvKuQ727fRAel6AUA==}
+  '@lexical/rich-text@0.35.0':
+    resolution: {integrity: sha512-qEHu8g7vOEzz9GUz1VIUxZBndZRJPh9iJUFI+qTDHj+tQqnd5LCs+G9yz6jgNfiuWWpezTp0i1Vz/udNEuDPKQ==}
 
   '@lexical/selection@0.31.2':
     resolution: {integrity: sha512-8hwNgAVWob09y8/Z2QKknw0z6vFcfjsQfHkyDwXwXUeTcJFjlAokrXrc65PRuufI4TaFDQHnXQpP5GcOYROE6Q==}
 
-  '@lexical/selection@0.34.0':
-    resolution: {integrity: sha512-qnnNdAihfsKxPJNK6s3crsZumCyvIPclbdNzC9xMWXFjAKvt1EPMnptD7Dy//DvA5nK/e/9qKCZQ+2kgxwsZiw==}
+  '@lexical/selection@0.35.0':
+    resolution: {integrity: sha512-mMtDE7Q0nycXdFTTH/+ta6EBrBwxBB4Tg8QwsGntzQ1Cq//d838dpXpFjJOqHEeVHUqXpiuj+cBG8+bvz/rPRw==}
 
   '@lexical/table@0.31.2':
     resolution: {integrity: sha512-S4W6DdkDCYP32qL6QD4jyksEatyfapRBc4sqoRove83fQEWnFhJ1iBheiG3hSm3YDbDmLclZxcE2CuSIZ6bd0Q==}
 
-  '@lexical/table@0.34.0':
-    resolution: {integrity: sha512-MzH0OREk4zIzkDNuiSBZEDBzazEKOh9X9koQcgClySOEqL/86DEPwoDuB5h1P4oTMRlzPzyKeZhksKNoY4QoBQ==}
+  '@lexical/table@0.35.0':
+    resolution: {integrity: sha512-9jlTlkVideBKwsEnEkqkdg7A3mije1SvmfiqoYnkl1kKJCLA5iH90ywx327PU0p+bdnURAytWUeZPXaEuEl2OA==}
 
   '@lexical/text@0.31.2':
     resolution: {integrity: sha512-+rGRAqE4uKdJf25e4stqDImhBh5RgVmxMJf00OyQdwq1P2M+/xF3NddqRpoACHyMyHhuR1wOSONSnYbMqMtc6w==}
 
-  '@lexical/text@0.34.0':
-    resolution: {integrity: sha512-8T4RwSNP/cVEzg+yf4lMlfzyelnyZjSIsUl2sTiwHHb4RD/r6Zm+VrinCUhtMNq6aasVknV7GEi8Isx60x9XSQ==}
+  '@lexical/text@0.35.0':
+    resolution: {integrity: sha512-uaMh46BkysV8hK8wQwp5g/ByZW+2hPDt8ahAErxtf8NuzQem1FHG/f5RTchmFqqUDVHO3qLNTv4AehEGmXv8MA==}
 
   '@lexical/utils@0.31.2':
     resolution: {integrity: sha512-vtPzZuJt134cz+oiHAPSIHT3hGt/9Gtug/Cf8OftqJeg3/7P6dKiTdAvAql3q4QxHlCAup4Ed87Ec8PYsICGGg==}
 
-  '@lexical/utils@0.34.0':
-    resolution: {integrity: sha512-rLP1WTZFk+o3d4PiKkxs76ifj7q01PjqjbZjcvUyPxjL3ca5oL1iwPU3QqXXNSNrhnJ9oQoaI7fCeA7p+9/KSw==}
+  '@lexical/utils@0.35.0':
+    resolution: {integrity: sha512-2H393EYDnFznYCDFOW3MHiRzwEO5M/UBhtUjvTT+9kc+qhX4U3zc8ixQalo5UmZ5B2nh7L/inXdTFzvSRXtsRA==}
 
   '@lexical/yjs@0.31.2':
     resolution: {integrity: sha512-H1OV+NFGTmHqr+0BFkxo4bDBsdw1WmSwCzIoMVU1uA4levH7tLay/xBV/67ghh+5InSwGR6gcJeFdbL86URuOw==}
     peerDependencies:
       yjs: '>=13.5.22'
 
-  '@lexical/yjs@0.34.0':
-    resolution: {integrity: sha512-nnymAhO16k82ssiP9F0ph6Yq2icDImRgWeyI76SyRsYn1HqeOwaWUZV/bx03rFgYC0DNNtBQ6TS8me4CBjcVhA==}
+  '@lexical/yjs@0.35.0':
+    resolution: {integrity: sha512-3DSP7QpmTGYU9bN/yljP0PIao4tNIQtsR4ycauWNSawxs/GQCZtSmAPcLRnCm6qpqsDDjUtKjO/1Ej8FRp0m0w==}
     peerDependencies:
       yjs: '>=13.5.22'
 
@@ -17031,26 +17032,26 @@ packages:
   '@protobufjs/utf8@1.1.1':
     resolution: {integrity: sha512-oOAWABowe8EAbMyWKM0tYDKi8Yaox52D+HWZhAIJqQXbqe0xI/GV7FhLWqlEKreMkfDjshR5FKgi3mnle0h6Eg==}
 
-  '@proton-docs/docs-editor@0.9.1':
-    resolution: {integrity: sha256-unw23fel1eLZ/B+dSnHXuH/ob/FSXW0KC33cWynRcTY=}
+  '@proton-docs/docs-editor@0.10.0':
+    resolution: {integrity: sha256-BZu836wY59CWuz879pQI2MM9laeAKXrlJfwHPJwi2bA=}
     peerDependencies:
-      '@lexical/clipboard': 0.34.0
-      '@lexical/code': 0.34.0
-      '@lexical/hashtag': 0.34.0
-      '@lexical/headless': 0.34.0
-      '@lexical/html': 0.34.0
-      '@lexical/link': 0.34.0
-      '@lexical/list': 0.34.0
-      '@lexical/markdown': 0.34.0
-      '@lexical/overflow': 0.34.0
-      '@lexical/react': 0.34.0
-      '@lexical/rich-text': 0.34.0
-      '@lexical/selection': 0.34.0
-      '@lexical/table': 0.34.0
-      '@lexical/text': 0.34.0
-      '@lexical/utils': 0.34.0
-      '@lexical/yjs': 0.34.0
-      lexical: 0.34.0
+      '@lexical/clipboard': 0.35.0
+      '@lexical/code': 0.35.0
+      '@lexical/hashtag': 0.35.0
+      '@lexical/headless': 0.35.0
+      '@lexical/html': 0.35.0
+      '@lexical/link': 0.35.0
+      '@lexical/list': 0.35.0
+      '@lexical/markdown': 0.35.0
+      '@lexical/overflow': 0.35.0
+      '@lexical/react': 0.35.0
+      '@lexical/rich-text': 0.35.0
+      '@lexical/selection': 0.35.0
+      '@lexical/table': 0.35.0
+      '@lexical/text': 0.35.0
+      '@lexical/utils': 0.35.0
+      '@lexical/yjs': 0.35.0
+      lexical: 0.35.0
       react: ^18.3.1
       react-dom: ^18.3.1
       y-protocols: ^1.0.6
@@ -23616,8 +23617,8 @@ packages:
   lexical@0.31.2:
     resolution: {integrity: sha512-1GRqzl/QAdtzqOoYXVfMFOkyiSQKIIPcazsgIs+WvsLL8UIcwP16WWeKUtamJgyvS84GN/tuMJsd1Iv+Qzw9WA==}
 
-  lexical@0.34.0:
-    resolution: {integrity: sha512-oqQ87i49oGRt8u9qIXow+fWeqN6luRMtYAa1GAx1l9AaR3A8Tfrgnmj2+13ej6CMPK6JunKaUXbd+7FDy+s8XQ==}
+  lexical@0.35.0:
+    resolution: {integrity: sha512-3VuV8xXhh5xJA6tzvfDvE0YBCMkIZUmxtRilJQDDdCgJCc+eut6qAv2qbN+pbqvarqcQqPN1UF+8YvsjmyOZpw==}
 
   lib0@0.2.120:
     resolution: {integrity: sha512-/a2eRImR8sZbmMVKe2we1/KukDQkuPyPf8yol6epvCu2PH6hurjcRI3mdGFFAi0uGoRJGyns99JquZgxwW1tQg==}
@@ -31788,13 +31789,13 @@ snapshots:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/clipboard@0.34.0':
+  '@lexical/clipboard@0.35.0':
     dependencies:
-      '@lexical/html': 0.34.0
-      '@lexical/list': 0.34.0
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/html': 0.35.0
+      '@lexical/list': 0.35.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/code@0.31.2':
     dependencies:
@@ -31802,10 +31803,10 @@ snapshots:
       lexical: 0.31.2
       prismjs: 1.30.0
 
-  '@lexical/code@0.34.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)':
+  '@lexical/code@0.35.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)':
     dependencies:
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       prismjs: 1.30.0
 
   '@lexical/devtools-core@0.31.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
@@ -31819,14 +31820,14 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@lexical/devtools-core@0.34.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@lexical/devtools-core@0.35.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@lexical/html': 0.34.0
-      '@lexical/link': 0.34.0
-      '@lexical/mark': 0.34.0
-      '@lexical/table': 0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/html': 0.35.0
+      '@lexical/link': 0.35.0
+      '@lexical/mark': 0.35.0
+      '@lexical/table': 0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
@@ -31834,33 +31835,33 @@ snapshots:
     dependencies:
       lexical: 0.31.2
 
-  '@lexical/dragon@0.34.0':
+  '@lexical/dragon@0.35.0':
     dependencies:
-      lexical: 0.34.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/hashtag@0.31.2':
     dependencies:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/hashtag@0.34.0':
+  '@lexical/hashtag@0.35.0':
     dependencies:
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
-  '@lexical/headless@0.34.0':
+  '@lexical/headless@0.35.0':
     dependencies:
-      lexical: 0.34.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/history@0.31.2':
     dependencies:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/history@0.34.0':
+  '@lexical/history@0.35.0':
     dependencies:
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/html@0.31.2':
     dependencies:
@@ -31868,21 +31869,21 @@ snapshots:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/html@0.34.0':
+  '@lexical/html@0.35.0':
     dependencies:
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/link@0.31.2':
     dependencies:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/link@0.34.0':
+  '@lexical/link@0.35.0':
     dependencies:
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/list@0.31.2':
     dependencies:
@@ -31890,21 +31891,21 @@ snapshots:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/list@0.34.0':
+  '@lexical/list@0.35.0':
     dependencies:
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/mark@0.31.2':
     dependencies:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/mark@0.34.0':
+  '@lexical/mark@0.35.0':
     dependencies:
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/markdown@0.31.2':
     dependencies:
@@ -31916,31 +31917,31 @@ snapshots:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/markdown@0.34.0':
+  '@lexical/markdown@0.35.0':
     dependencies:
-      '@lexical/code': 0.34.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)
-      '@lexical/link': 0.34.0
-      '@lexical/list': 0.34.0
-      '@lexical/rich-text': 0.34.0
-      '@lexical/text': 0.34.0
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/code': 0.35.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)
+      '@lexical/link': 0.35.0
+      '@lexical/list': 0.35.0
+      '@lexical/rich-text': 0.35.0
+      '@lexical/text': 0.35.0
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/offset@0.31.2':
     dependencies:
       lexical: 0.31.2
 
-  '@lexical/offset@0.34.0':
+  '@lexical/offset@0.35.0':
     dependencies:
-      lexical: 0.34.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/overflow@0.31.2':
     dependencies:
       lexical: 0.31.2
 
-  '@lexical/overflow@0.34.0':
+  '@lexical/overflow@0.35.0':
     dependencies:
-      lexical: 0.34.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/plain-text@0.31.2':
     dependencies:
@@ -31949,12 +31950,12 @@ snapshots:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/plain-text@0.34.0':
+  '@lexical/plain-text@0.35.0':
     dependencies:
-      '@lexical/clipboard': 0.34.0
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/clipboard': 0.35.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/react@0.31.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)':
     dependencies:
@@ -31980,25 +31981,25 @@ snapshots:
     transitivePeerDependencies:
       - yjs
 
-  '@lexical/react@0.34.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)':
+  '@lexical/react@0.35.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)':
     dependencies:
       '@floating-ui/react': 0.27.20(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@lexical/devtools-core': 0.34.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@lexical/dragon': 0.34.0
-      '@lexical/hashtag': 0.34.0
-      '@lexical/history': 0.34.0
-      '@lexical/link': 0.34.0
-      '@lexical/list': 0.34.0
-      '@lexical/mark': 0.34.0
-      '@lexical/markdown': 0.34.0
-      '@lexical/overflow': 0.34.0
-      '@lexical/plain-text': 0.34.0
-      '@lexical/rich-text': 0.34.0
-      '@lexical/table': 0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
-      '@lexical/text': 0.34.0
-      '@lexical/utils': 0.34.0
-      '@lexical/yjs': 0.34.0(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27)
-      lexical: 0.34.0
+      '@lexical/devtools-core': 0.35.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@lexical/dragon': 0.35.0
+      '@lexical/hashtag': 0.35.0
+      '@lexical/history': 0.35.0
+      '@lexical/link': 0.35.0
+      '@lexical/list': 0.35.0
+      '@lexical/mark': 0.35.0
+      '@lexical/markdown': 0.35.0
+      '@lexical/overflow': 0.35.0
+      '@lexical/plain-text': 0.35.0
+      '@lexical/rich-text': 0.35.0
+      '@lexical/table': 0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
+      '@lexical/text': 0.35.0
+      '@lexical/utils': 0.35.0
+      '@lexical/yjs': 0.35.0(patch_hash=dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac)(yjs@13.6.27)
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-error-boundary: 3.1.4(react@18.3.1)
@@ -32012,20 +32013,20 @@ snapshots:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/rich-text@0.34.0':
+  '@lexical/rich-text@0.35.0':
     dependencies:
-      '@lexical/clipboard': 0.34.0
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/clipboard': 0.35.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/selection@0.31.2':
     dependencies:
       lexical: 0.31.2
 
-  '@lexical/selection@0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)':
+  '@lexical/selection@0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)':
     dependencies:
-      lexical: 0.34.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/table@0.31.2':
     dependencies:
@@ -32033,19 +32034,19 @@ snapshots:
       '@lexical/utils': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/table@0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)':
+  '@lexical/table@0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)':
     dependencies:
-      '@lexical/clipboard': 0.34.0
-      '@lexical/utils': 0.34.0
-      lexical: 0.34.0
+      '@lexical/clipboard': 0.35.0
+      '@lexical/utils': 0.35.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/text@0.31.2':
     dependencies:
       lexical: 0.31.2
 
-  '@lexical/text@0.34.0':
+  '@lexical/text@0.35.0':
     dependencies:
-      lexical: 0.34.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/utils@0.31.2':
     dependencies:
@@ -32054,12 +32055,12 @@ snapshots:
       '@lexical/table': 0.31.2
       lexical: 0.31.2
 
-  '@lexical/utils@0.34.0':
+  '@lexical/utils@0.35.0':
     dependencies:
-      '@lexical/list': 0.34.0
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      '@lexical/table': 0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
-      lexical: 0.34.0
+      '@lexical/list': 0.35.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      '@lexical/table': 0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
 
   '@lexical/yjs@0.31.2(yjs@13.6.27)':
     dependencies:
@@ -32068,11 +32069,11 @@ snapshots:
       lexical: 0.31.2
       yjs: 13.6.27
 
-  '@lexical/yjs@0.34.0(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27)':
+  '@lexical/yjs@0.35.0(patch_hash=dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac)(yjs@13.6.27)':
     dependencies:
-      '@lexical/offset': 0.34.0
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      lexical: 0.34.0
+      '@lexical/offset': 0.35.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       yjs: 13.6.27
 
   '@listr2/prompt-adapter-inquirer@2.0.22(@inquirer/prompts@6.0.1)':
@@ -34040,33 +34041,33 @@ snapshots:
 
   '@protobufjs/utf8@1.1.1': {}
 
-  '@proton-docs/docs-editor@0.9.1(@lexical/clipboard@0.34.0)(@lexical/code@0.34.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462))(@lexical/hashtag@0.34.0)(@lexical/headless@0.34.0)(@lexical/html@0.34.0)(@lexical/link@0.34.0)(@lexical/list@0.34.0)(@lexical/markdown@0.34.0)(@lexical/overflow@0.34.0)(@lexical/react@0.34.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.34.0)(@lexical/selection@0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436))(@lexical/table@0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249))(@lexical/text@0.34.0)(@lexical/utils@0.34.0)(@lexical/yjs@0.34.0(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27))(@types/node@26.6.6)(@typescript/typescript6@6.0.2)(lexical@0.34.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)':
-    dependencies:
+  ? '@proton-docs/docs-editor@0.10.0(@lexical/clipboard@0.35.0)(@lexical/code@0.35.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462))(@lexical/hashtag@0.35.0)(@lexical/headless@0.35.0)(@lexical/html@0.35.0)(@lexical/link@0.35.0)(@lexical/list@0.35.0)(@lexical/markdown@0.35.0)(@lexical/overflow@0.35.0)(@lexical/react@0.35.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.35.0)(@lexical/selection@0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d))(@lexical/table@0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249))(@lexical/text@0.35.0)(@lexical/utils@0.35.0)(@lexical/yjs@0.35.0(patch_hash=dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac)(yjs@13.6.27))(@types/node@26.6.6)(@typescript/typescript6@6.0.2)(lexical@0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)'
+  : dependencies:
       '@ariakit/react': 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@emoji-mart/data': 1.2.1
-      '@lexical/clipboard': 0.34.0
-      '@lexical/code': 0.34.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)
-      '@lexical/hashtag': 0.34.0
-      '@lexical/headless': 0.34.0
-      '@lexical/html': 0.34.0
-      '@lexical/link': 0.34.0
-      '@lexical/list': 0.34.0
-      '@lexical/markdown': 0.34.0
-      '@lexical/overflow': 0.34.0
-      '@lexical/react': 0.34.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)
-      '@lexical/rich-text': 0.34.0
-      '@lexical/selection': 0.34.0(patch_hash=bf613713bc01a04ce55554fa70adf7794be0105aae303bb81f14fde223dc9436)
-      '@lexical/table': 0.34.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
-      '@lexical/text': 0.34.0
-      '@lexical/utils': 0.34.0
-      '@lexical/yjs': 0.34.0(patch_hash=174e2de7411f3d0b43c0fb831d2f855a1363972b521e79e5666bec3861bb8b56)(yjs@13.6.27)
+      '@lexical/clipboard': 0.35.0
+      '@lexical/code': 0.35.0(patch_hash=e7952434f1376a289e419585ad80be67ea26c2ff0b5f1bbef815d8123ea7a462)
+      '@lexical/hashtag': 0.35.0
+      '@lexical/headless': 0.35.0
+      '@lexical/html': 0.35.0
+      '@lexical/link': 0.35.0
+      '@lexical/list': 0.35.0
+      '@lexical/markdown': 0.35.0
+      '@lexical/overflow': 0.35.0
+      '@lexical/react': 0.35.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)
+      '@lexical/rich-text': 0.35.0
+      '@lexical/selection': 0.35.0(patch_hash=318c086bc4592bc8b56b0c6fe87ec74bd135331309f8e05c9f533b05701cc34d)
+      '@lexical/table': 0.35.0(patch_hash=063c1a4ca60955066036e10f953aeb0944f18fbfdfa4571d00ee3f2cb51ba249)
+      '@lexical/text': 0.35.0
+      '@lexical/utils': 0.35.0
+      '@lexical/yjs': 0.35.0(patch_hash=dab90b07f1b5be073b00ce337e367ba118f7fcf4d3f6abae6fc8a519df7ce0ac)(yjs@13.6.27)
       '@protontech/crypto': 2.2.0(@types/node@26.6.6)(@typescript/typescript6@6.0.2)
       clsx: 2.1.1
       docx: 8.5.0
       docx-preview-cjs: 0.3.7
       dompurify: 3.4.18
       fflate: 0.8.3
-      lexical: 0.34.0
+      lexical: 0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018)
       lodash: 4.18.1
       odf-kit: 0.14.5
       react: 18.3.1
@@ -41993,7 +41994,7 @@ snapshots:
 
   lexical@0.31.2: {}
 
-  lexical@0.34.0: {}
+  lexical@0.35.0(patch_hash=3cddd0954de9e795a739a0a029bcd540a133b64dc4c0281a0f97f8d6096be018): {}
 
   lib0@0.2.120:
     dependencies:
