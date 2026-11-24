@@ -1062,8 +1062,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } non ha risposto in tempo."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } non risponde."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Impossibile analizzare il file di ${ provider }. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "È già in corso una verifica biometrica per lo sblocco."
       ],
       "A desktop unlock check is already in progress.": [
         "Una verifica di sblocco del desktop è già in corso."
@@ -1947,6 +1956,9 @@
         "${ n } elemento",
         "${ n } elementi"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } desidera sbloccare l'estensione per il browser"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sarà sempre accessibile"
       ],
@@ -2620,7 +2632,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte comporterà l'eliminazione dei link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3217,6 +3229,9 @@
       "Unlock it with your PIN to access the settings": [
         "Sbloccalo con il tuo PIN per accedere alle impostazioni"
       ],
+      "unlock the browser extension": [
+        "Sblocca l'estensione per il browser"
+      ],
       "Unpinning item...": [
         "Annullamento del fissaggio dell'elemento in corso"
       ],
@@ -3243,6 +3258,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Effettua l'aggiornamento a un piano a pagamento per poter creare casseforti multiple."
+      ],
+      "Use biometrics to unlock": [
+        "Sblocca con le credenziali biometriche"
       ],
       "User's access removed": [
         "Accesso dell'utente rimosso"
@@ -5977,6 +5995,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
+        "${ BRAND_NAME } sconsiglia di salvare la password di ${ BRAND_NAME } esclusivamente all'interno di ${ PASS_APP_NAME }. Se dovessi dimenticarla, non saresti in grado di accedere a ${ PASS_APP_NAME }."
+      ],
       "${ BRAND_NAME } password is required": [
         "È richiesta la password di ${ BRAND_NAME }"
       ],

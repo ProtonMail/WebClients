@@ -1062,8 +1062,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "Το ${ PASS_APP_NAME } δεν αποκρίθηκε εγκαίρως."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "Το ${ PASS_APP_NAME } δεν αποκρίνεται."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Ένας έλεγχος βιομετρικού ξεκλειδώματος βρίσκεται ήδη σε εξέλιξη."
       ],
       "A desktop unlock check is already in progress.": [
         "Ένας έλεγχος ξεκλειδώματος επιφάνειας εργασίας είναι ήδη σε εξέλιξη."
@@ -1946,6 +1955,9 @@
       "${ n } item": [
         "${ n } στοιχείο",
         "${ n } στοιχεία"
+      ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "Το ${ PASS_APP_NAME } θέλει να ξεκλειδώσει την προέκταση προγράμματος περιήγησης"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "Το ${ PASS_APP_NAME } θα είναι πάντα προσβάσιμο"
@@ -3217,6 +3229,9 @@
       "Unlock it with your PIN to access the settings": [
         "Ξεκλειδώστε το με το PIN σας για πρόσβαση στις ρυθμίσεις"
       ],
+      "unlock the browser extension": [
+        "ξεκλειδώστε την προέκταση προγράμματος περιήγησης"
+      ],
       "Unpinning item...": [
         "Ξεκαρφίτσωμα στοιχείου..."
       ],
@@ -3243,6 +3258,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
+      ],
+      "Use biometrics to unlock": [
+        "Χρήση βιομετρικών για ξεκλείδωμα"
       ],
       "User's access removed": [
         "Η πρόσβαση του χρήστη καταργήθηκε"
@@ -5977,6 +5995,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
+        "Η ${ BRAND_NAME } δε συνιστά να αποθηκεύετε τον κωδικό πρόσβασης για την ${ BRAND_NAME } αποκλειστικά στην εφαρμογή ${ PASS_APP_NAME }. Εάν τον ξεχάσετε, δε θα μπορείτε να συνδεθείτε στην εφαρμογή ${ PASS_APP_NAME }."
+      ],
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
       ],

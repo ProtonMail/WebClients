@@ -115,6 +115,9 @@
       "Bulk restore items from trash": [
         "Massåterställ objekt från papperskorg"
       ],
+      "Bulk select items": [
+        "Markera flera objekt"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -1056,8 +1059,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } svarade inte i tid."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } svarar inte."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "En kontroll av biometrisk upplåsning är redan på gång."
       ],
       "A desktop unlock check is already in progress.": [
         "En kontroll av skrivbordsupplåsning pågår redan."
@@ -1876,7 +1888,7 @@
         "Skicka"
       ],
       "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
-        "Den här gången, kommer du att bli ombedd att på nytt bekräfta ditt  ${ name } användarnamn och lösenord. Klicka på ${ submit }."
+        "Den här gången, kommer du att bli ombedd att på nytt bekräfta ditt ${ name } användarnamn och lösenord. Klicka på ${ submit }."
       ],
       "Vault": [
         "Valv"
@@ -1937,6 +1949,9 @@
       "${ n } item": [
         "${ n } objekt",
         "${ n } objekt"
+      ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } vill låsa upp webbläsartillägget"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } kommer alltid vara åtkomlig"
@@ -2056,6 +2071,9 @@
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Lägg till en betalningsmetod så att din prenumeration fortsätter när din provperiod slutar."
       ],
       "Add your custom email address to monitor:": [
         "Lägg till din anpassade e-postadress att övervaka:"
@@ -2322,7 +2340,7 @@
         "E-postadress inkluderad i övervakning"
       ],
       "Email headers illustration": [
-        "E-postrubrikillustration"
+        "Illustration av e-postrubriker"
       ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
         "E-posta denna adress och det kommer att se ut att ha skickats från t.ex. ${ exampleEmail }."
@@ -2411,8 +2429,17 @@
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Mapp “${ payload.folder.name }“ skapad"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Mapp “${ payload.folder.name }“ flyttad"
+      ],
       "Folder deleted": [
         "Mapp borttagen"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Mapp omdöpt till '${ payload.folder.name }'."
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Följ dessa steg för att importera dina data med en generisk CSV:"
@@ -2593,7 +2620,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2629,7 +2656,7 @@
         "Ingen inloggning hittades"
       ],
       "No matching service. Try a different name.": [
-        "Ingen matchningstjänst. Försök med ett annat namn. "
+        "Ingen matchningstjänst. Försök med ett annat namn."
       ],
       "No network connection": [
         "Ingen nätverksanslutning"
@@ -2672,6 +2699,9 @@
       ],
       "Open the extension here.": [
         "Öppna förlängning här."
+      ],
+      "Open the extension to unlock it": [
+        "Öppna tillägget för att låsa upp det"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Öppna Safaris inställningar, hitta ${ PASS_APP_NAME }, gå till “Behörigheter“och aktivera webbplatsbehörigheter."
@@ -2926,6 +2956,9 @@
       "Scan to download": [
         "Skanna för att ladda ner"
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Skanna för att ladda ner ${ PASS_APP_NAME } för iOS och Android"
+      ],
       "Secure links": [
         "Säkra länkar"
       ],
@@ -2984,10 +3017,10 @@
         "En SimpleLogin-anteckning sparas på samma plats som aliasadresser och medan den skyddas med kryptering under vila så är den inte E2E-krypterad vilket betyder att vem som helst med tillgång till SimpleLogin-databasen kan läsa den."
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
-        "Använd bara ${ emailBold } nästa gång du behöver ett alias: det kommer att skapas ${ automaticallyBold } första gången det tar emot ett e-postmeddelande. För att få bättre kontroll så kan du också skapa ${ rulesHyperLink }."
+        "Använd bara ${ emailBold } nästa gång du behöver ett alias: det kommer att skapas ${ automaticallyBold } första gången det tar emot ett e-postmeddelande. För att få mer finkornig kontroll så kan du också skapa ${ rulesHyperLink }."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
-        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt ${ BRAND_NAME } lösenord."
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt ${ BRAND_NAME }-lösenord."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
         "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt backup-lösenord."
@@ -3167,6 +3200,9 @@
       "Unlock it with your PIN to access the settings": [
         "Lås upp den med din PIN-kod för att komma åt inställningarna"
       ],
+      "unlock the browser extension": [
+        "lås upp webbläsartillägget"
+      ],
       "Unpinning item...": [
         "Lossar objekt …"
       ],
@@ -3194,6 +3230,9 @@
       "Upgrade to a paid plan to create multiple vaults.": [
         "Uppgradera till ett betalt paket för att skapa flera valv."
       ],
+      "Use biometrics to unlock": [
+        "Använd biometri för att låsa upp"
+      ],
       "User's access removed": [
         "Användaråtkomst borttagen"
       ],
@@ -3216,7 +3255,7 @@
         "Valvåtkomst beviljad"
       ],
       "Vault organization successfully updated": [
-        "Valvorganisation uppdaterad"
+        "Valvorganisation framgångsrikt uppdaterad"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Valvdelning: ${ vaultMembersCount } medlem",
@@ -4030,7 +4069,7 @@
         "Licensnyckel"
       ],
       "License number": [
-        "Körkortsnummer"
+        "Licensnummer"
       ],
       "License Number": [
         "Licensnummer"
@@ -4937,6 +4976,9 @@
       "Please describe the problem and include any error messages": [
         "Beskriv problemet och inkludera eventuella felmeddelanden"
       ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Skriv ”${ name }” igen för att bekräfta borttagning"
+      ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Sök ${ pluralItemType } i ${ vaultName }"
       ],
@@ -5119,7 +5161,7 @@
         "Objekten kan inte innehålla fler än ${ share.targetMaxMembers } användare."
       ],
       "Mailbox change successfully cancelled": [
-        "Ändring av brevlåda avbröts"
+        "Ändring av brevlåda avbröts framgångsrikt"
       ],
       "Mailbox successfully deleted": [
         "Brevlåda borttagen"
@@ -5912,6 +5954,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
+        "${ BRAND_NAME } rekommenderar inte att du sparar ditt ${ BRAND_NAME } lösenord bara i ${ PASS_APP_NAME }. Om du glömmer det, kommer du inte att kunna logga in på ${ PASS_APP_NAME }."
+      ],
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-lösenord är obligatoriskt"
       ],
@@ -6157,6 +6202,9 @@
       ],
       "Verification code is required": [
         "Verifieringskod är obligatoriskt"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Du kan inte flytta en mapp till den själv eller till dess undermappar."
       ],
       "You have reached the limit of members who can access this item.": [
         "Du har nått gränsen av medlemmar som kan komma åt detta objekt."

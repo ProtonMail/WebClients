@@ -331,6 +331,9 @@
       "Dismiss": [
         "Afvis"
       ],
+      "Dismiss notification": [
+        "Luk notifikation"
+      ],
       "Do not show again": [
         "Vis ikke igen"
       ],
@@ -420,6 +423,9 @@
       ],
       "Get Started": [
         "Kom i gang"
+      ],
+      "Go to today": [
+        "Gå til i dag"
       ],
       "Hide": [
         "Skjul"
@@ -565,6 +571,9 @@
       "OK": [
         "Ok"
       ],
+      "Open item": [
+        "Åbn element"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
@@ -627,6 +636,9 @@
       ],
       "Remove member": [
         "Fjern medlem"
+      ],
+      "Remove passkey": [
+        "Fjern adgangsnøgle"
       ],
       "Rename": [
         "Omdøb"
@@ -772,6 +784,9 @@
       ],
       "To mailbox": [
         "Til postkasse"
+      ],
+      "Toggle section": [
+        "Vis/skjul sektion"
       ],
       "Transfer aliases": [
         "Overfør aliasser"
@@ -2603,9 +2618,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
