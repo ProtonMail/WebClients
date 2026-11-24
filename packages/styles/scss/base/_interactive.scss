@@ -210,3 +210,14 @@
 		}
 	}
 }
+
+/*
+ * Forced colors (Windows High Contrast) drops box-shadow, so the focus ring above disappears.
+ * Containers focused by script (tabindex -1) are left out, so they don't get an outline around the whole area.
+ */
+@media (forced-colors: active) {
+	:focus-visible:not([tabindex='-1']) {
+		outline: 2px solid Highlight;
+		outline-offset: 2px;
+	}
+}
