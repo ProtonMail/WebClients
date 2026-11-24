@@ -1,0 +1,383 @@
+import type { ReactElement } from 'react';
+
+import { c } from 'ttag';
+
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
+import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton/atoms/DashboardCard/DashboardCard';
+import {
+    DashboardGrid,
+    DashboardGridSection,
+    DashboardGridSectionHeader,
+} from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Loader } from '@proton/atoms/Loader/Loader';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import PassLogo from '@proton/components/components/logo/PassLogo';
+import ProductLink from '@proton/components/containers/app/ProductLink';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
+import {
+    getDocumentEditor,
+    getStorageFeature,
+    getVersionHistory,
+} from '@proton/components/containers/payments/features/drive';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import {
+    getDarkWebMonitoringFeature,
+    getNAddressesFeature,
+    getNDomainsFeature,
+} from '@proton/components/containers/payments/features/mail';
+import {
+    PASS_PLUS_VAULT_SHARING,
+    get2FAAuthenticator,
+    getLoginsAndNotes,
+    getVaultSharing,
+} from '@proton/components/containers/payments/features/pass';
+import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
+import useLoad from '@proton/components/hooks/useLoad';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
+import { CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
+import { getPricePerCycle } from '@proton/payments/core/price-helpers';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import {
+    getPlanName,
+    getSubscriptionPlanTitle,
+    hasAllProductsB2CPlan,
+    isManagedExternally,
+} from '@proton/payments/core/subscription/helpers';
+import { getPlanNamesOfSubscriptions } from '@proton/payments/core/subscription/plan-names';
+import { getPlanByName, getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { getExploreText } from '@proton/shared/lib/apps/i18n';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    BRAND_NAME,
+    DRIVE_APP_NAME,
+    MAIL_APP_NAME,
+    PASS_APP_NAME,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
+import { getSpace } from '@proton/shared/lib/user/storage';
+
+import bundleLogo from './illustrations/bundle.svg';
+import drive from './illustrations/drive.jpg';
+import mail from './illustrations/mail.jpg';
+import pass from './illustrations/pass.jpg';
+
+interface Card {
+    app: APP_NAMES;
+    copy?: () => string;
+    features?: PlanCardFeatureDefinition[];
+    buttonCopy: () => string;
+    image: string;
+    logo: ReactElement;
+    shouldRender: (planNames: PLANS[]) => boolean;
+}
+
+const plusPlans = [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024, PLANS.LUMO];
+const freeAndPlusPlans = [PLANS.FREE, ...plusPlans];
+const vpnPlans = [PLANS.VPN, PLANS.VPN2024];
+const bundlePlans = [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO, PLANS.VISIONARY];
+
+const hasOnlyPlusPlansWithoutVpn = (planNames: PLANS[]) =>
+    planNames.every((name) => plusPlans.includes(name)) && !planNames.some((name) => vpnPlans.includes(name));
+const hasOnlyFreeOrPlusPlans = (planNames: PLANS[]) => planNames.every((name) => freeAndPlusPlans.includes(name));
+const hasBundlePlan = (planNames: PLANS[]) => planNames.some((name) => bundlePlans.includes(name));
+const canUpsellPlusPlan = (plusPlan: PLANS) => (planNames: PLANS[]) =>
+    !planNames.includes(plusPlan) && hasOnlyFreeOrPlusPlans(planNames);
+
+interface CardProps {
+    plan: Plan | undefined;
+    space: {
+        usedSpace: number;
+        usedBaseSpace: number;
+        usedDriveSpace: number;
+        maxSpace: number;
+        maxBaseSpace: number;
+        maxDriveSpace: number;
+        splitStorage: boolean;
+    };
+    freePlan: FreePlanDefault;
+}
+
+const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
+    const maxDriveSpace = humanSize({ bytes: space.maxDriveSpace, unit: 'GB', fraction: 0 });
+
+    return [
+        {
+            app: APPS.PROTONMAIL,
+            copy: () => c('VPN Dashboard').t`Communicate and schedule with end-to-end encryption.`,
+            image: mail,
+            buttonCopy: () => goToPlanOrAppNameText(MAIL_APP_NAME),
+            logo: <MailLogo />,
+            shouldRender: canUpsellPlusPlan(PLANS.MAIL),
+        },
+        {
+            app: APPS.PROTONMAIL,
+            image: mail,
+            buttonCopy: () => goToPlanOrAppNameText(MAIL_APP_NAME),
+            logo: <MailLogo />,
+            features: [
+                getNAddressesFeature({ n: plan?.MaxAddresses || 0 }),
+                getNDomainsFeature({ n: plan?.MaxDomains || 0 }),
+                getDarkWebMonitoringFeature(),
+            ],
+            shouldRender: hasBundlePlan,
+        },
+        {
+            app: APPS.PROTONDRIVE,
+            copy: () =>
+                c('VPN Dashboard').t`Keep your files, photos, and documents safe with ${maxDriveSpace} cloud storage.`,
+            image: drive,
+            buttonCopy: () => goToPlanOrAppNameText(DRIVE_APP_NAME),
+            logo: <DriveLogo />,
+            shouldRender: canUpsellPlusPlan(PLANS.DRIVE),
+        },
+        {
+            app: APPS.PROTONDRIVE,
+            image: drive,
+            buttonCopy: () => goToPlanOrAppNameText(DRIVE_APP_NAME),
+            logo: <DriveLogo />,
+            features: [
+                getStorageFeature(space.maxSpace, {
+                    freePlan,
+                    family: plan?.Name === PLANS.FAMILY,
+                    duo: plan?.Name === PLANS.DUO,
+                }),
+                getDocumentEditor(),
+                getVersionHistory(),
+            ],
+            shouldRender: hasBundlePlan,
+        },
+        {
+            app: APPS.PROTONPASS,
+            copy: () => c('VPN Dashboard').t`Set secure passwords without the hassle.`,
+            image: pass,
+            buttonCopy: () => goToPlanOrAppNameText(PASS_APP_NAME),
+            logo: <PassLogo />,
+            shouldRender: canUpsellPlusPlan(PLANS.PASS),
+        },
+        {
+            app: APPS.PROTONPASS,
+            image: pass,
+            buttonCopy: () => goToPlanOrAppNameText(PASS_APP_NAME),
+            logo: <PassLogo />,
+            features: [getLoginsAndNotes(), getVaultSharing(PASS_PLUS_VAULT_SHARING), get2FAAuthenticator(true)],
+            shouldRender: hasBundlePlan,
+        },
+    ];
+};
+
+export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
+    const api = useApi();
+    const [user] = useUser();
+    const { APP_NAME } = useConfig();
+    const [subscription, loadingSubscription] = useSubscriptionForApp(app);
+    const [allSubscriptions = []] = useAllSubscriptions();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const plan = PLANS.BUNDLE;
+
+    useLoad();
+
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans;
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
+
+    const space = getSpace(user);
+
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription ?? FREE_SUBSCRIPTION);
+    const loading = loadingSubscription || loadingPlans;
+
+    if (!plans || loading || !planName) {
+        return <Loader />;
+    }
+
+    const currency = subscription?.Currency || user.Currency || 'USD';
+
+    const plansMap = getPlansMap(plans, currency, false);
+    const bundle = getPlanByName(plansResult?.plans ?? [], plan, currency);
+    const planPricePerCycle = getPricePerCycle(bundle, CYCLE.YEARLY) ?? 0;
+
+    const priceString = bundle ? getSimplePriceString(currency, planPricePerCycle / CYCLE.YEARLY) : undefined;
+
+    const planNames = getPlanNamesOfSubscriptions(allSubscriptions, planName);
+    const bundleSubscription = allSubscriptions.find(hasAllProductsB2CPlan);
+    const cardsPlan = (() => {
+        const bundlePlanName = getPlanName(bundleSubscription);
+        if (bundleSubscription && bundlePlanName) {
+            return getPlansMap(plans, bundleSubscription.Currency, false)[bundlePlanName];
+        }
+
+        return plansMap[planName];
+    })();
+    const allSubscriptionsManagedExternally =
+        allSubscriptions.length > 0 && allSubscriptions.every(isManagedExternally);
+
+    const sectionSubtitleCopy = () => {
+        const planTitlePlusMaybeBrand = planName === PLANS.FREE ? `${BRAND_NAME} ${planTitle}` : planTitle;
+
+        if (hasOnlyPlusPlansWithoutVpn(planNames)) {
+            return c('VPN Dashboard')
+                .t`With ${planTitlePlusMaybeBrand}, you get free access to ${VPN_APP_NAME} and other privacy services.`;
+        }
+
+        if (hasOnlyFreeOrPlusPlans(planNames)) {
+            return c('VPN Dashboard')
+                .t`With ${planTitlePlusMaybeBrand}, you get free access to all ${BRAND_NAME} privacy services.`;
+        }
+
+        if (hasBundlePlan(planNames)) {
+            // Translator: Examples: "Get more from your Visionary subscription", "Get more from your Duo subscription"
+            return c('VPN Dashboard').t`Get more from your ${planTitle} subscription.`;
+        }
+    };
+
+    const filteredCards = cards({ plan: cardsPlan, space, freePlan }).filter((card) => card.shouldRender(planNames));
+
+    const showUnlimitedUpsell = user.canPay && hasOnlyFreeOrPlusPlans(planNames) && !allSubscriptionsManagedExternally;
+
+    if (filteredCards.length === 0) {
+        return false;
+    }
+
+    const handleGetPlan = () => {
+        void openSubscriptionModal({
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            plan: plan,
+            onMount: () => {
+                void sendTelemetryReport({
+                    api,
+                    delay: false,
+                    event: TelemetryAccountDashboardEvents.upsellCtaClick,
+                    measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                    dimensions: {
+                        app,
+                        cta: 'discover_unlimited_bottom_banner',
+                        user_tier: getTelemetryUserTier(user),
+                    },
+                });
+            },
+        });
+    };
+
+    const onCardClick = (product: APP_NAMES) => {
+        void sendTelemetryReport({
+            api,
+            delay: false,
+            event: TelemetryAccountDashboardEvents.crossProductClick,
+            measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+            dimensions: {
+                app,
+                product,
+                user_tier: getTelemetryUserTier(user),
+            },
+        });
+    };
+
+    return (
+        <>
+            <DashboardGrid columns={filteredCards.length}>
+                <DashboardGridSection spanAll="header">
+                    <DashboardGridSectionHeader
+                        title={c('Title').t`Also in your plan`}
+                        subtitle={sectionSubtitleCopy()}
+                    />
+                </DashboardGridSection>
+                {filteredCards.map((card) => (
+                    <DashboardGridSection key={card.app}>
+                        <DashboardCard className="flex flex-column">
+                            <DashboardCardImage>
+                                <img src={card.image} alt="" className="w-full" />
+                            </DashboardCardImage>
+                            <DashboardCardContent className="flex flex-column gap-2 grow">
+                                <div className="block">{card.logo}</div>
+                                {card.copy && <p className="m-0">{card.copy()}</p>}
+                                {card.features && (
+                                    <PlanCardFeatureList
+                                        features={card.features}
+                                        icon
+                                        odd={false}
+                                        margin={false}
+                                        className="gap-2"
+                                    />
+                                )}
+                                <footer className="mt-auto pt-2">
+                                    <ButtonLike
+                                        onAppClick={() => onCardClick(card.app)}
+                                        as={ProductLink}
+                                        ownerApp={APP_NAME}
+                                        appToLinkTo={card.app}
+                                        app={app}
+                                        user={user}
+                                        fullWidth
+                                        shape="solid"
+                                        color="weak"
+                                        className="flex items-center justify-center gap-2"
+                                    >
+                                        {card.buttonCopy()}
+                                        <IcArrowRight className="shrink-0 rtl:mirror" />
+                                    </ButtonLike>
+                                </footer>
+                            </DashboardCardContent>
+                        </DashboardCard>
+                    </DashboardGridSection>
+                ))}
+                {showUnlimitedUpsell ? (
+                    <DashboardGridSection spanAll="footer">
+                        <PromotionBanner
+                            rounded="lg"
+                            mode="banner"
+                            gradient="vertical"
+                            contentCentered={false}
+                            description={
+                                <div className="flex items-center gap-3 p-1">
+                                    <div className="flex shrink-0 items-center justify-center rounded-lg bg-norm p-2 flex-column md:flex-row flex-nowrap text-left">
+                                        <img src={bundleLogo} alt="" className="w-12 ratio-square" />
+                                    </div>
+                                    <div className="text-left">
+                                        <b className="color-hint text-sm text-semibold">{c('Info').t`Did you know?`}</b>
+                                        <p className="m-0 text-lg color-norm">
+                                            {priceString &&
+                                                getBoldFormattedText(
+                                                    c('Info')
+                                                        .t`You can get our premium privacy services in one bundle—and it’s just **${priceString}/month**.`
+                                                )}
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                            cta={
+                                <Button
+                                    color="norm"
+                                    shape="ghost"
+                                    className="flex items-center gap-1 flex-nowrap"
+                                    onClick={handleGetPlan}
+                                    loading={loadingSubscriptionModal}
+                                >
+                                    {getExploreText(PLAN_NAMES[plan])}
+                                    <IcArrowRight className="shrink-0 rtl:mirror" />
+                                </Button>
+                            }
+                        />
+                    </DashboardGridSection>
+                ) : undefined}
+            </DashboardGrid>
+        </>
+    );
+};

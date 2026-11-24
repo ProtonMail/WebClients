@@ -9,12 +9,12 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { parseISOSafely } from '@proton/shared/lib/helpers/time';
 import clsx from '@proton/utils/clsx';
 
+import { getFlagSvg } from '../../../components/country/flag';
 import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
 import Table from '../../../components/table/Table';
 import TableBody from '../../../components/table/TableBody';
 import TableRow from '../../../components/table/TableRow';
 import Time from '../../../components/time/Time';
-import { getFlagSvg } from '../../vpn/flag';
 import { NoEventsInfo } from '../NoEventsInfo';
 import { getVPNEventColor, getVPNEventIcon } from './helpers';
 import type { VPNEvent } from './interface';

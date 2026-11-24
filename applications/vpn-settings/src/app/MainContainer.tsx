@@ -63,9 +63,6 @@ import { SentinelSection } from '@proton/components/containers/sentinel/Sentinel
 import SessionsSection from '@proton/components/containers/sessions/SessionsSection';
 import ThemesSection from '@proton/components/containers/themes/ThemesSection';
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
-import OpenVPNCredentialsSection from '@proton/components/containers/vpn/OpenVPNCredentialsSection';
-import { VpnAlsoInYourPlanSection } from '@proton/components/containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
-import { VpnBlogSection } from '@proton/components/containers/vpn/VpnBlogSection/VpnBlogSection';
 import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
 import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
@@ -106,7 +103,10 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
+import OpenVPNCredentialsSection from '@proton/vpn/components/OpenVPNCredentialsSection';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
+import { VpnAlsoInYourPlanSection } from '@proton/vpn/components/VpnAlsoInYourPlanSection';
+import { VpnBlogSection } from '@proton/vpn/components/VpnBlogSection';
 import { TVContainer } from '@proton/vpn/components/tv/containers/TVContainer';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 

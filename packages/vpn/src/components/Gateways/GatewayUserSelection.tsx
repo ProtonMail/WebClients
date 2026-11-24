@@ -11,7 +11,6 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
-import ApplyPolicyButton from '@proton/components/containers/vpn/sharedServers/ApplyPolicyButton';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
@@ -19,6 +18,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { useEntityTableSearch } from '../../hooks/useEntityTableSearch';
 import type { GatewayDto, GatewayGroup, GatewayUser } from '../../types/Gateway';
+import ApplyPolicyButton from '../sharedServers/ApplyPolicyButton';
 import { EntityTableRow } from './EntityTableRow';
 import { TableHeader } from './TableHeader';
 

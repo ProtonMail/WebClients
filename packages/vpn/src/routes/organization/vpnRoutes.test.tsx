@@ -33,7 +33,7 @@ vi.mock('../../components/Gateways/GatewaysSection', () => ({
     GatewaysSection: () => <div data-testid="content" />,
 }));
 
-vi.mock('@proton/components/containers/vpn/sharedServers/SharedServersSection', () => ({
+vi.mock('../../components/sharedServers/SharedServersSection', () => ({
     __esModule: true,
     default: () => <div data-testid="content" />,
 }));

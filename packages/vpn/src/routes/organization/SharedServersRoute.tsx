@@ -3,9 +3,9 @@ import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
-import SharedServersSection from '@proton/components/containers/vpn/sharedServers/SharedServersSection';
 
 import { NavSections } from '../../components/NavSections';
+import SharedServersSection from '../../components/sharedServers/SharedServersSection';
 import { useB2BAdminNavigation } from '../../contexts/NavigationContext';
 import { findNavItem } from '../../definitions/routes';
 

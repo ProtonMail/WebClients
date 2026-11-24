@@ -42,8 +42,6 @@ import { RewardSection } from '@proton/components/containers/referral/rewards/Re
 import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
 import SessionsSection from '@proton/components/containers/sessions/SessionsSection';
 import ThemesSection from '@proton/components/containers/themes/ThemesSection';
-import { VpnAlsoInYourPlanSection } from '@proton/components/containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
-import { VpnBlogSection } from '@proton/components/containers/vpn/VpnBlogSection/VpnBlogSection';
 import { EmergencyContactSection } from '@proton/delegated-access/emergencyContact/EmergencyContactSection';
 import { RecoveryContactSection } from '@proton/delegated-access/recoveryContact/RecoveryContactSection';
 import InvoicesSection from '@proton/payments-ui/containers/invoices/InvoicesSection';
@@ -53,6 +51,8 @@ import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentC
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
+import { VpnAlsoInYourPlanSection } from '@proton/vpn/components/VpnAlsoInYourPlanSection';
+import { VpnBlogSection } from '@proton/vpn/components/VpnBlogSection';
 
 import { SettingsLinkRedirect, type SettingsLinkRedirectRule } from './SettingsLinkRedirect';
 import UpgradePage from './UpgradePage';

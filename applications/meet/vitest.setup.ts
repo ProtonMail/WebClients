@@ -63,8 +63,3 @@ vi.mock('@proton/components/components/input/TelInput', () => ({
     __esModule: true,
     default: () => null,
 }));
-
-vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/LoadIndicator', () => ({
-    __esModule: true,
-    default: () => null,
-}));

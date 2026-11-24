@@ -3,10 +3,10 @@ import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
-import OpenVPNConfigurationSection from '@proton/components/containers/vpn/OpenVPNConfigurationSection/OpenVPNConfigurationSection';
-import WireGuardConfigurationSection from '@proton/components/containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 import { NavSections } from '@proton/vpn/components/NavSections';
+import OpenVPNConfigurationSection from '@proton/vpn/components/OpenVPNConfigurationSection';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
+import WireGuardConfigurationSection from '@proton/vpn/components/WireGuardConfigurationSection';
 import { useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 import { findNavItem } from '@proton/vpn/definitions/routes';
 
