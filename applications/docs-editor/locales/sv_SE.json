@@ -122,6 +122,9 @@
       "Fit table to page width": [
         "Passa tabell till sidbredd"
       ],
+      "Header row": [
+        "Rubrikrad"
+      ],
       "Indent": [
         "Indrag"
       ],
@@ -315,6 +318,9 @@
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "Ett fel inträffade vid inläsning av dokumentet. För att förhindra att dokumentet blir korrupt så har redigeraren låsts. Uppdatera sidan och försök igen. Om felet kvarstår, öppna versionshistoriken från menyalternativen och försök att återställa dokumentet till en tidigare version."
       ],
+      "Could not load emoji. Close the picker and try again.": [
+        "Kunde inte ladda emoji. Stäng väljaren och försök igen."
+      ],
       "Failed to export document.": [
         "Misslyckades att exportera dokument."
       ],
@@ -323,6 +329,9 @@
       ],
       "Failed to import Markdown due to unknown error.": [
         "Misslyckades att importera Markdown på grund av okänt fel."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Misslyckades med att importera OpenDocument-fil på grund av ett okänt fel."
       ],
       "Failed to import Word document due to unknown error.": [
         "Misslyckades att importera Word-dokument på grund av okänt fel."
@@ -420,17 +429,20 @@
       "Loading emoji…": [
         "Laddar emoji …"
       ],
-      "NEW": [
-        "NYTT"
-      ],
       "New": [
         "Ny"
       ],
       "No comments": [
         "Inga kommentarer"
       ],
+      "No emoji found": [
+        "Ingen emoji hittades"
+      ],
       "No title": [
         "Ingen rubrik"
+      ],
+      "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
+        "Öppna länken för att ladda ned bilden, använd sedan \"infoga bild\" för att lägga till den i det här dokumentet."
       ],
       "Remote image blocked": [
         "Fjärrbild blockerad"
@@ -520,6 +532,9 @@
       ],
       "Emoji": [
         "Emoji"
+      ],
+      "Emoji suggestions": [
+        "Emojiförslag"
       ],
       "Format": [
         "Format"
@@ -671,6 +686,20 @@
         "Byt namn"
       ]
     },
+    "sheets_2025:Sheet tab rename": {
+      "History is a reserved name and can't be used for a sheet": [
+        "Historia är ett reserverat namn och kan inte användas för ett blad"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Bladnamn får inte vara längre än 31 tecken"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Bladnamn kan inte innehålla \\ / ? * [ ] eller :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Bladnamn kan inte börja eller sluta med en apostrof"
+      ]
+    },
     "sheets_2025:Spreadsheet border editor menu": {
       "All borders": [
         "Alla ramar"
@@ -733,11 +762,17 @@
       ]
     },
     "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Redovisning"
+      ],
       "Bottom": [
         "Bottom"
       ],
       "Center": [
         "Centrerat"
+      ],
+      "Clip": [
+        "Urklipp"
       ],
       "Currency": [
         "Valuta"
@@ -748,6 +783,9 @@
       "Date": [
         "Datum"
       ],
+      "Fraction": [
+        "Bråkdel"
+      ],
       "General": [
         "Allmänt"
       ],
@@ -757,11 +795,17 @@
       "Number": [
         "Nummer"
       ],
+      "Overflow": [
+        "Överflöde"
+      ],
       "Percentage": [
         "Procent"
       ],
       "Right": [
         "Höger"
+      ],
+      "Scientific": [
+        "Vetenskaplig"
       ],
       "Text": [
         "Text"
@@ -769,13 +813,22 @@
       "Time": [
         "Tid"
       ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Tidsformat visar datum- och tidsserienummer som datumvärden."
+      ],
       "Top": [
         "Toppen"
+      ],
+      "Wrap": [
+        "Radbryt"
       ]
     },
     "sheets_2025:Spreadsheet chartAggregates": {
       "Average": [
         "Genomsnittlig"
+      ],
+      "Count": [
+        "Antal"
       ],
       "Max": [
         "Max"
@@ -785,6 +838,9 @@
       ],
       "Min": [
         "Min"
+      ],
+      "Sum": [
+        "Summa"
       ]
     },
     "sheets_2025:Spreadsheet chartEditorDialog": {
@@ -793,11 +849,23 @@
       ]
     },
     "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "2D Paj"
+      ],
       "Column": [
         "Kolumn"
       ],
+      "Doughnut": [
+        "Munk"
+      ],
       "Hierarchy": [
         "Hierarki"
+      ],
+      "Line": [
+        "Rad"
+      ],
+      "Pie": [
+        "Paj"
       ],
       "Stacked column": [
         "Staplad kolumn"
@@ -822,17 +890,35 @@
       "Between": [
         "Mellan"
       ],
+      "Bottom N percent": [
+        "De nedersta N procenten"
+      ],
       "Checkbox": [
         "Kryssruta"
       ],
       "Date is after": [
         "Datum är efter"
       ],
+      "Date is before": [
+        "Datum är innan"
+      ],
       "Date is between": [
         "Datum är mellan"
       ],
+      "Date is equal to": [
+        "Datum är lika med"
+      ],
       "Date is not between": [
         "Datum är inte mellan"
+      ],
+      "Date is not equal to": [
+        "Datum är inte lika med"
+      ],
+      "Date is on or after": [
+        "Datum är på eller efter"
+      ],
+      "Date is on or before": [
+        "Datum är på eller innan"
       ],
       "Date is valid": [
         "Datum är giltigt"
@@ -851,6 +937,18 @@
       ],
       "February": [
         "Februari"
+      ],
+      "Greater than": [
+        "Större än"
+      ],
+      "Greater than or equal to": [
+        "Större än eller lika med"
+      ],
+      "Greater than or equal to previous": [
+        "Större än eller lika med tidigare"
+      ],
+      "Greater than previous": [
+        "Större än föregående"
       ],
       "Is empty": [
         "Är tom"
@@ -884,6 +982,9 @@
       ],
       "Less than": [
         "Mindre än"
+      ],
+      "Less than previous": [
+        "Mindre än föregående"
       ],
       "March": [
         "Mars"
@@ -974,6 +1075,9 @@
       ],
       "Tomorrow": [
         "Imorgon"
+      ],
+      "Top N percent": [
+        "Topp N procent"
       ],
       "Year to date": [
         "År till datum"
@@ -1840,6 +1944,9 @@
       "Apply border": [
         "Tillämpa ram"
       ],
+      "Apply fill color": [
+        "Tillämpa fyllnadsfärg"
+      ],
       "Apply text color": [
         "Tillämpa textfärg"
       ],
@@ -1851,6 +1958,9 @@
       ],
       "Choose border": [
         "Välj ram"
+      ],
+      "Choose fill color": [
+        "Välj fyllnadsfärg"
       ],
       "Choose text color": [
         "Välj textfärg"
@@ -2018,6 +2128,9 @@
       ],
       "Remove": [
         "Ta bort"
+      ],
+      "View": [
+        "Visa"
       ]
     },
     "sheets_2025:Spreadsheet gridFooter": {
@@ -2065,17 +2178,41 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Specify column width (px)": [
+        "Specificera kolumnbredd (px)"
+      ],
+      "Specify row height (px)": [
+        "Specificera radhöjd (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Visa i statutsfältet"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, inte applicerbart"
+      ],
       "Average": [
         "Genomsnittlig"
+      ],
+      "Copy": [
+        "Kopiera"
+      ],
+      "Copy formula": [
+        "Kopiera formel"
+      ],
+      "Copy value": [
+        "Kopiera värde"
       ],
       "Count": [
         "Antal"
       ],
-      "Customize Status Bar": [
-        "Anpassa statusfältet"
+      "Count numbers": [
+        "Räkna antalet"
+      ],
+      "Detach from selection": [
+        "Lossa från val"
       ],
       "Max": [
         "Max"
@@ -2083,11 +2220,20 @@
       "Min": [
         "Min"
       ],
-      "Numerical count": [
-        "Numeriskt antal"
+      "Pin by the selection": [
+        "Fäst vid valet"
+      ],
+      "Selection summary": [
+        "Sammanfattning av urval"
       ],
       "Sum": [
         "Summa"
+      ],
+      "Summary": [
+        "Sammanfattning"
+      ],
+      "Unpin from selection": [
+        "Lossa från val"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
@@ -2239,6 +2385,12 @@
       ],
       "Series": [
         "Serier"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Serier ${ seriesNumber } Namn"
       ],
       "Show data in hidden rows and columns": [
         "Visa data i dolda rader och kolumner"

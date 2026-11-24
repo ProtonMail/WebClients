@@ -405,8 +405,8 @@
       "Display previous": [
         "Zobraziť predchádzajúcu"
       ],
-      "Don't show this offer again": [
-        "Túto ponuku už nezobrazovať"
+      "Don't show this again": [
+        "Nabudúce nezobrazovať"
       ],
       "Done": [
         "Hotovo"
@@ -1110,6 +1110,9 @@
       "Skip": [
         "Preskočiť"
       ],
+      "Skip to main content": [
+        "Prejsť na hlavný obsah"
+      ],
       "Skip verification": [
         "Preskočiť overenie"
       ],
@@ -1387,6 +1390,9 @@
         "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)",
         "${ LUMO_SHORT_APP_NAME }, asistent písania (pre ${ quantity } používateľov)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencií asistentov písania"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -1416,6 +1422,12 @@
         "${ seats }${ LUMO_APP_NAME } licencie",
         "${ seats }${ LUMO_APP_NAME } licencií",
         "${ seats }${ LUMO_APP_NAME } licencií"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencia asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencie asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } licencia ${ MEET_APP_NAME }",
@@ -1556,6 +1568,11 @@
         "Pozvaný/á"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Zavrieť"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Prémiový správca hesiel"
@@ -1564,6 +1581,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-dňová záruka vrátenia peňazí: ak chcete zrušiť objednávku do 30 dní od nákupu, kontaktujte našu zákaznícku podporu ${ customerSupportLink } a požiadajte o vrátenie peňazí."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ponuka je nedostupná"
       ]
     },
     "BF2024: Deal details": {
@@ -3690,6 +3712,9 @@
       "Failed to get details, please try again later": [
         "Nepodarilo sa načítať podrobnosti, skúste to neskôr, prosím."
       ],
+      "Failed to get invitee keys": [
+        "Nepodarilo sa získať kľúče pozvaných osôb"
+      ],
       "Failed to get inviter keys": [
         "Nepodarilo sa získať kľúče pozývajúceho"
       ],
@@ -3698,6 +3723,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
+      "Failed to load the membership": [
+        "Načítanie členstva zlyhalo"
+      ],
+      "Failed to load the membership data": [
+        "Načítanie údajov o členstve zlyhalo"
       ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
@@ -3719,6 +3750,9 @@
       ],
       "Failed to verify invitation": [
         "Overenie pozvánky zlyhalo"
+      ],
+      "Failed to verify membership": [
+        "Overenie členstva zlyhalo"
       ],
       "File download failed due to empty response": [
         "Sťahovanie súboru sa nepodarilo kvôli prázdnej odpovedi"
@@ -3888,12 +3922,6 @@
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
       ],
-      "Organization key must be activated to create invited users": [
-        "Na vytvorenie pozvaných používateľov musí byť aktivovaný kľúč organizácie"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
-      ],
       "Part of the file appears to be corrupted": [
         "Zdá sa, že časť súboru je poškodená"
       ],
@@ -4026,6 +4054,9 @@
       "Some groups could not be deleted": [
         "Niektoré skupiny nie je možné odstrániť"
       ],
+      "Some invitations could not be loaded": [
+        "Niektoré pozvánky sa nepodarilo načítať"
+      ],
       "Some items could not be loaded": [
         "Niektoré položky sa nepodarilo načítať"
       ],
@@ -4100,9 +4131,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimálna výška kreditu, ktorý je možné pridať, je ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimálna výška daru je ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Nahratý súbor nezodpovedá originálu. Skúste to znova, prosím."
@@ -4654,8 +4682,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Požiadavka na bezpečnostný kľúč bola zrušená alebo vypršala. Skúste to znova, prosím."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Vaše zariadenie nedokázalo dokončiť požiadavku na bezpečnostný kľúč. Skúste to znova alebo použite iný spôsob prihlásenia."
       ]
     },
     "fido2: Info": {
@@ -4669,7 +4703,7 @@
         "Stále čakáte?"
       ],
       "Touch your security key to continue.": [
-        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
+        "Ak chcete pokračovať, dotknite sa bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -6906,6 +6940,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "V záujme ochrany vášho účtu pred pokračovaním potvrďte svoju totožnosť."
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Na vašu ochranu môže ${ DRIVE_APP_NAME } skenovať vaše súbory spôsobom zachovávajúcim súkromie a blokovať škodlivé súbory. Stále je však najlepšie sťahovať súbory len z dôveryhodných zdrojov. "
       ],
@@ -7161,6 +7198,9 @@
       "Writing assistant": [
         "Asistent písania"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Licencie pre asistentov písania už nie sú v predaji."
+      ],
       "Yes": [
         "Áno"
       ],
@@ -7223,6 +7263,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "Tento priečinok si môžete otvoriť po dokončení importu. Zatiaľ sme importovali ${ importedSize }. Akonáhle bude import hotový, pošleme vám email."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Tento priečinok si môžete otvoriť po dokončení importu. Akonáhle bude import hotový, pošleme vám email."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
@@ -7513,6 +7556,9 @@
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } z ${ albumProgress.total }"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Heslo k účtu ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
@@ -8499,6 +8545,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Povoliť ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } kód"
+      ],
+      "2x Basic usage": [
+        "2-násobné využitie Basic"
+      ],
+      "5x Plus usage": [
+        "5-násobné využitie Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Prístup k API s kreditom ${ credit } na mesiac"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Prístup k API s kreditom ${ credit } na mesiac na používateľa"
+      ],
+      "Everything in Basic, and:": [
+        "Všetko z plánu Basic a navyše:"
+      ],
+      "Everything in Free, and:": [
+        "Všetko z plánu Free a:"
+      ],
+      "Everything in Plus, and:": [
+        "Všetko z Plus a navyše:"
+      ],
+      "Extended image generation": [
+        "Rozšírené vytváranie obrázkov"
+      ],
+      "Includes:": [
+        "Obsahuje:"
+      ],
+      "Limited image generation": [
+        "Obmedzené vytváranie obrázkov"
+      ],
+      "Limited messages and chat history": [
+        "Obmedzený počet správ a história chatu"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Obmedzené schopnosti, projekty a naplánované úlohy"
+      ],
+      "Maximum image generation": [
+        "Maximálne vytváranie obrázkov"
+      ],
+      "Maximum Skills and Projects": [
+        "Najlepšie schopnosti a projekty"
+      ],
+      "More image generation": [
+        "Viac vytváraní obrázkov"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Viac schopností, projektov a naplánovaných úloh"
+      ],
+      "More usage": [
+        "Ďalšie možnosti použitia"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pre programovanie a tvorbu"
+      ],
+      "For everyday chats": [
+        "Na každodenné chatovanie"
+      ],
+      "For getting more done": [
+        "Aby ste stihli viac práce"
       ]
     },
     "Mail import summary": {
@@ -12012,12 +12125,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
       ],
-      "${ dayDiff } day left": [
-        "Zostáva ${ dayDiff } deň",
-        "Zostávajú ${ dayDiff } dni",
-        "Zostáva ${ dayDiff } dní",
-        "Zostáva ${ dayDiff } dní"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Desktopová aplikácia ${ MAIL_APP_NAME } "
       ],
@@ -12264,20 +12371,11 @@
       "What you give up when you cancel ${ planName }": [
         "O čo prídete, keď zrušíte ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Po zrušení ${ planName } bude váš plán znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Po zrušení ${ planName } dôjde k preradeniu na ${ BRAND_NAME } Free, ktorý ponúka len do 1 GB úložiska pre poštu a do 5 GB úložiska v Drive. Váš tím bude pociťovať výpadky v práci, pretože ďalší používatelia nie sú v bezplatnom pláne podporovaní."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Akonáhle vaše predplatné ${ planName } skončí ${ expiryDate }, bude znížené na tarifu ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Každoročné bonusy na kapacitu úložiska"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Na vašom ${ planName } predplatnom máte ešte ${ expiryDate }. Kredity za zostávajúci čas pripočítame k vášmu ${ BRAND_NAME } účtu. Pred zrušením sa uistite, že neprekračujete limity bezplatného plánu. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Váš plán ${ planName } nezabezpečuje iba vaše firemné údaje a komunikáciu. Podporuje vaše ciele v oblasti dodržiavania predpisov, dáva vyniknúť vašej firme a udržiava váš tím v kontakte."
@@ -13030,9 +13128,6 @@
       "Enhance security with 2FA": [
         "Zvýšte zabezpečenie pomocou 2FA"
       ],
-      "Enter your password": [
-        "Zadajte svoje heslo"
-      ],
       "Error": [
         "Chyba"
       ],
@@ -13492,6 +13587,9 @@
       "Sort files/folders": [
         "Zoradiť súbory/priečinky"
       ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ],
       "Start a new import": [
         "Zahájiť nový import"
       ],
@@ -13593,6 +13691,9 @@
       ],
       "Verification failed": [
         "Overovanie zlyhalo"
+      ],
+      "Verify it’s you": [
+        "Overiť, že ste to vy"
       ],
       "Verify your password": [
         "Overte svoje heslo"
@@ -13968,6 +14069,71 @@
       ],
       "Replay video": [
         "Prehrať video"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } za používateľa"
+      ],
+      "${ storage } shared": [
+        "${ storage } zdieľaného"
+      ],
+      "10 years": [
+        "10 rokov"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Vyššia kapacita ${ VPN_APP_NAME } serverov: každý z nich zdieľa oveľa menej používateľov a využívajú IP adresy vo vlastníctve spoločnosti ${ BRAND_NAME }. Funkcia Rýchle pripojenie ich automaticky vyberá, ak sú k dispozícii."
+      ],
+      "Calendars": [
+        "Kalendáre"
+      ],
+      "Custom email domains": [
+        "Vlastných emailových domén"
+      ],
+      "Email addresses": [
+        "Emailových adries"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasov"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Pomenované na počesť podporovateľov z crowdfundingu, vďaka ktorým vznikol v roku 2014 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }. Všetky prémiové služby ${ BRAND_NAME } v jednom balíku."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nové ${ BRAND_NAME } služby bez dodatočných nákladov"
+      ],
+      "Password vaults": [
+        "Trezorov na heslá"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive a Pass"
+      ],
+      "Previous versions": [
+        "Predchádzajúce verzie"
+      ],
+      "Storage": [
+        "Úložiska"
+      ],
+      "Subscribers only": [
+        "Len pre predplatiteľov"
+      ],
+      "Ultra servers": [
+        "Ultra serverov"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra serverov, vyhradených pre vás"
+      ],
+      "Unlimited": [
+        "Bez obmedzenia"
+      ],
+      "Up to ${ limit }": [
+        "Až do ${ limit }"
+      ],
+      "Users": [
+        "Používateľov"
+      ],
+      "VPN devices at once": [
+        "VPN zariadení súčasne"
       ]
     },
     "VPN B2B cancellation reason": {

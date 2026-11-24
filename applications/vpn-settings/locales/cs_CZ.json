@@ -404,6 +404,9 @@
       "Don't show again": [
         "Příště nezobrazovat"
       ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -1093,6 +1096,9 @@
       ],
       "Skip": [
         "Přeskočit"
+      ],
+      "Skip to main content": [
+        "Přeskočit na hlavní obsah"
       ],
       "Skip verification": [
         "Přeskočit ověření"
@@ -5040,9 +5046,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Minimální výše daru je ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Název zásady musí mít délku 3 až 40 znaků."
       ],
@@ -5442,9 +5445,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } skupiny"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Účty s vlastními doménami se nemohou připojit k rodinnému tarifu."
       ],
@@ -5502,12 +5502,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
-      "View the invitation": [
-        "Zobrazit pozvánku",
-        "Zobrazit pozvánky",
-        "Zobrazit pozvánky",
-        "Zobrazit pozvánky"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Jste pozváni do ${ invite.OrganizationName }"
       ],
@@ -5516,9 +5510,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "S vaším současným tarifem nemůžete přijmout tuto pozvánku."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Dosáhli jste limitu ${ n } přijaté pozvánky za 6 měsíců.",
@@ -9588,6 +9579,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Přistupujte k aplikaci ${ PASS_APP_NAME } bezpečně z terminálu, což je ideální pro skriptování, automatizaci a vývojářské pracovní postupy."
       ],
+      "Access tokens": [
+        "Přístupové tokeny"
+      ],
       "Account holder": [
         "Majitel účtu"
       ],
@@ -12443,17 +12437,11 @@
       "1 email per month": [
         "1 e-mail za měsíc"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 e-mail za měsíc. Získejte nejnovější zprávy o ochraně soukromí a o dění v ekosystému ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 e-mail čtvrtletně"
       ],
       "1-2 emails per month": [
         "1-2 e-maily za měsíc"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1–4 e-maily ročně. Připomenutí, abyste udržovali své metody obnovení aktuální."
       ],
       "2-4 emails per year": [
         "2-4 e-maily za rok"
@@ -12478,9 +12466,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Během prvního měsíce používání produktu ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "E-mailová komunikace"
       ],
       "In-app notifications": [
         "Upozornění v aplikaci"
@@ -13001,7 +12986,18 @@
         "Začněte používat ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Doporučeno"
+      ],
+      "Select your plan": [
+        "Vyberte tarif"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Navždy zdarma"
+      ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
       ],
@@ -15263,6 +15259,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "Celkem ${ value } šifrovaného úložiště"
+      ],
       "1 month": [
         "1 měsíc"
       ],
@@ -15271,6 +15270,9 @@
       ],
       "24 months": [
         "24 měsíců"
+      ],
+      "Free": [
+        "Free"
       ]
     },
     "Signup label": {
@@ -16123,12 +16125,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
       ],
-      "${ dayDiff } day left": [
-        "Zbývá ${ dayDiff } den",
-        "Zbývají ${ dayDiff } dny",
-        "Zbývá ${ dayDiff } dnů",
-        "Zbývá ${ dayDiff } dnů"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
@@ -16402,12 +16398,6 @@
       "What you give up when you cancel ${ planName }": [
         "Čeho se vzdáváte zrušením ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Když zrušíte ${ planName }, bude vám snížen účet na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Jakmile vaše předplatné ${ planName } skončí ${ expiryDate }, bude sníženo na tarif ${ BRAND_NAME } Free."
       ],
@@ -16416,9 +16406,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Všechny výhody svého stávajícího tarifu můžete využívat až do ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Vaše předplatné ${ planName } trvá do ${ expiryDate }. Kredity za zbývající čas přičteme na váš účet ${ BRAND_NAME }. Před zrušením se ujistěte, že nepřekračujete limity bezplatného tarifu. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Váš tarif ${ planName } nechrání pouze vaše firemní data a komunikaci. Podporuje vaše cíle v oblasti dodržování předpisů, dává vaší firmě vyniknout a udržuje váš tým ve spojení."
@@ -16839,6 +16826,14 @@
         "Pro jednotlivce"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Akce"
+      ],
+      "Status": [
+        "Stav"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Akce"
@@ -16851,9 +16846,6 @@
       ],
       "CSV field": [
         "CSV položka"
-      ],
-      "Edit": [
-        "Upravit"
       ],
       "Email address": [
         "E-mailová adresa"
@@ -17569,9 +17561,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
-      ],
-      "Enter your password": [
-        "Zadejte své heslo"
       ],
       "Error": [
         "Chyba"

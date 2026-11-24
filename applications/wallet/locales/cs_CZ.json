@@ -352,6 +352,9 @@
       "Sign out of all accounts": [
         "Odhlásit se ze všech účtů"
       ],
+      "Skip to main content": [
+        "Přeskočit na hlavní obsah"
+      ],
       "Submit": [
         "Odeslat"
       ],
@@ -613,9 +616,19 @@
         "Načítání zůstatku"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Zavřít"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Prémiový správce hesel"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Nabídka je nedostupná"
       ]
     },
     "BF2024: Deal details": {
@@ -2395,12 +2408,6 @@
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
-      "Organization key must be activated to create invited users": [
-        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
-      ],
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
@@ -2472,9 +2479,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimální výše daru je ${ price }"
       ],
       "The passphrases do not match": [
         "Hesla se neshodují"
@@ -3414,9 +3418,6 @@
       ],
       "Optional": [
         "Volitelné"
-      ],
-      "Password": [
-        "Heslo"
       ],
       "Payer": [
         "Plátce"
@@ -5516,6 +5517,9 @@
       "Payment method updated": [
         "Platební metoda byla aktualizována"
       ],
+      "Preference saved": [
+        "Nastavení uloženo"
+      ],
       "Problem reported": [
         "Problém nahlášen"
       ],
@@ -5682,9 +5686,6 @@
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
       ],
-      "Enter your password": [
-        "Zadejte své heslo"
-      ],
       "Error": [
         "Chyba"
       ],
@@ -5786,6 +5787,9 @@
       ],
       "Verification failed": [
         "Ověření selhalo"
+      ],
+      "Verify it’s you": [
+        "Potvrďte, že jste to vy"
       ],
       "Verifying your card...": [
         "Ověřování vaší karty..."

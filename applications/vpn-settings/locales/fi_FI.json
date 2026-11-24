@@ -448,6 +448,9 @@
       "Don't show again": [
         "Älä näytä uudelleen"
       ],
+      "Don't show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
       "Done": [
         "Valmis"
       ],
@@ -1146,6 +1149,9 @@
       ],
       "Skip": [
         "Ohita"
+      ],
+      "Skip to main content": [
+        "Siirry suoraan sisältöön"
       ],
       "Skip verification": [
         "Ohita vahvistus"
@@ -5043,9 +5049,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Lahjoituksen vähimmäismäärä on ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Käytännön nimen on oltava 3–40 merkkiä."
       ],
@@ -5446,9 +5449,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME }-ryhmää"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä perhetilaukseen."
       ],
@@ -5502,10 +5502,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Tilaus laskutetaan tämän tilauksen ensisijaiselta ylläpitäjältä."
       ],
-      "View the invitation": [
-        "Näytä kutsu",
-        "Näytä kutsut"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
       ],
@@ -5514,9 +5510,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Et voi hyväksyä tätä kutsua nykyisellä tilauksellasi."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Sinut on kutsuttu liittymään organisaatioon ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Olet saavuttanut kuuden kuukauden sisällä sallitun ${ n } hyväksytyn kutsun rajoituksen.",
@@ -9482,6 +9475,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Käytä ${ PASS_APP_NAME } turvallisesti terminaalista käsin. Sopii erinomaisesti skriptaukseen, automaatioon ja kehitystyöhön."
       ],
+      "Access tokens": [
+        "Käyttötunnisteet"
+      ],
       "Account holder": [
         "Tilinhaltija"
       ],
@@ -9496,6 +9492,9 @@
       ],
       "Add all organization members": [
         "Lisää kaikki organisaation jäsenet"
+      ],
+      "Add managers": [
+        "Lisää ylläpitäjiä"
       ],
       "Additional comments": [
         "Lisäkommentit"
@@ -12281,17 +12280,11 @@
       "1 email per month": [
         "Yksi viesti kuukaudessa"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "Yksi viesti kuukaudessa. Saat tuoreimmat tietosuojauutiset sekä tietoa ${ BRAND_NAME }-universumin tapahtumista."
-      ],
       "1 email per quarter": [
         "Yksi viesti neljännesvuodessa"
       ],
       "1-2 emails per month": [
         "1 - 2 viestiä kuukaudessa"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1–4 viestiä vuodessa. Muistuttaa palautusmenetelmien pitämisestä ajan tasalla."
       ],
       "2-4 emails per year": [
         "2–4 viestiä vuodessa"
@@ -12316,9 +12309,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Ensimmäisen ${ BRAND_NAME }-tuotteen käyttökuukautesi aikana"
-      ],
-      "Email communications": [
-        "Sähköpostiviestintä"
       ],
       "In-app notifications": [
         "Sovelluksensisäiset ilmoitukset"
@@ -12846,7 +12836,18 @@
         "Aloita ${ appName } -sovelluksen käyttö"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Suositus"
+      ],
+      "Select your plan": [
+        "Valitse tilauksesi"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Pysyvästi ilmainen"
+      ],
       "Secure vault sharing": [
         "Suojattu holvien jako"
       ],
@@ -13386,6 +13387,9 @@
       ],
       "Enter a name": [
         "Syötä nimi"
+      ],
+      "Enter name or email address": [
+        "Syötä nimi tai sähköpostiosoite"
       ],
       "example@domain.com": [
         "esimerkki@verkkotunnus.fi"
@@ -15044,6 +15048,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } salattua kokonaistallennustilaa"
+      ],
       "1 month": [
         "1 kuukausi"
       ],
@@ -15052,6 +15059,9 @@
       ],
       "24 months": [
         "24 kuukautta"
+      ],
+      "Free": [
+        "Ilmainen"
       ]
     },
     "Signup label": {
@@ -15847,10 +15857,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } päivä jäljellä",
-        "${ dayDiff } päivää jäljellä"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
@@ -16112,12 +16118,6 @@
       "What you give up when you cancel ${ planName }": [
         "Mitä menetä perumalla ${ planName }-tilauksen"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kun perut ${ planName }-tilauksesi, alennetaan tasoksesi ${ BRAND_NAME } Free, joka tarjoaa vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Tiimisi työskentely keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
@@ -16126,9 +16126,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Voit nauttia kaikista nykyisen tilauksesi eduista ${ boldedDate } saakka."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } -tilauksesi ei ainoastaan suojaa liiketoimintasi tietoja ja viestintää, vaan se tukee myös vaatimustenmukaisuustavoitteitasi, parantaa yrityksesi näkyvyyttä ja pitää tiimisi yhteydessä."
@@ -16552,6 +16549,14 @@
         "Yksityisille"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Status": [
+        "Tila"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Toiminto"
@@ -16564,9 +16569,6 @@
       ],
       "CSV field": [
         "CSV-kenttä"
-      ],
-      "Edit": [
-        "Muokkaa"
       ],
       "Email address": [
         "Sähköpostiosoite"
@@ -17276,9 +17278,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Liity sovelluksen ${ app } beetaohjelmaan syöttämällä ${ BRAND_NAME }-tilisi tiedot"
-      ],
-      "Enter your password": [
-        "Syötä salasanasi"
       ],
       "Error": [
         "Virhe"

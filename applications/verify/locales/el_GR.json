@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Το αίτημα κλειδιού ασφαλείας ακυρώθηκε ή έληξε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Η συσκευή σας δεν μπόρεσε να ολοκληρώσει το αίτημα κλειδιού ασφαλείας. Προσπαθήστε ξανά, ή επιλέξτε κάποια άλλη μέθοδο σύνδεσης."
       ]
     },
     "fido2: Info": {
@@ -1138,6 +1144,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Για να καταργήσετε τους περιορισμούς, μπορείτε να κάνετε αναβάθμιση σε πλάνο επί πληρωμή."
       ],
@@ -1167,6 +1176,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Κωδικός πρόσβασης Λογαριασμού ${ BRAND_NAME }"
+      ],
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
       ],
@@ -1178,9 +1190,6 @@
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
-      ],
-      "Password": [
-        "Κωδικός πρόσβασης"
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -1595,9 +1604,6 @@
       "Account temporarily locked": [
         "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
       ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό πρόσβασης σας"
-      ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
       ],
@@ -1609,6 +1615,9 @@
       ],
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ]
     },
     "Validation": {

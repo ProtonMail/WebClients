@@ -4,14 +4,6 @@
     "language": "sl_SI"
   },
   "contexts": {
-    "account": {
-      "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Posredovanje se bo kmalu začelo. V e-poštnem predalu se vam bodo pojavila nova sporočila."
-      ],
-      "Mail forward stopped": [
-        "Posredovanje pošte ustavljeno"
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } in ${ remainingCount } drugih možnih odtekanj podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
@@ -129,17 +121,8 @@
       "Chat with us": [
         "Klepetajte z nami"
       ],
-      "Check import progress": [
-        "Preveri napredek uvoza"
-      ],
       "Choose a file or drag it here": [
         "Izberite datoteko ali jo povlecite sem"
-      ],
-      "Claim this address": [
-        "Prevzemite ta naslov"
-      ],
-      "Claim your free ${ BRAND_NAME } address": [
-        "Prevzemite svoj brezplačni naslov ${ BRAND_NAME }"
       ],
       "Clear data": [
         "Počisti podatke"
@@ -161,9 +144,6 @@
       ],
       "Collaborate on documents": [
         "Sodelujte pri dokumentih"
-      ],
-      "Collapse": [
-        "Strni"
       ],
       "Collapse list": [
         "Strni seznam"
@@ -192,20 +172,8 @@
       "Continue": [
         "Nadaljuj"
       ],
-      "Continue import": [
-        "Nadaljuj z uvozom"
-      ],
       "Continue to ${ planOrAppName }": [
         "Nadaljuj v ${ planOrAppName }"
-      ],
-      "Continue with Free": [
-        "Nadaljujte z brezplačnim"
-      ],
-      "Continue with Google": [
-        "Nadaljuj z Googlovim računom"
-      ],
-      "Continue with Outlook": [
-        "Nadaljujte z Outlookom"
       ],
       "Copy address": [
         "Kopiraj naslov"
@@ -240,17 +208,8 @@
       "Create new ${ SHEETS_APP_NAME }": [
         "Ustvari nov ${ SHEETS_APP_NAME }"
       ],
-      "Create new folder": [
-        "Ustvari novo mapo"
-      ],
       "Create new password": [
         "Ustvari novo geslo"
-      ],
-      "Customize": [
-        "Prilagodi"
-      ],
-      "Customize import": [
-        "Prilagajanje uvoza"
       ],
       "Decline invitation": [
         "Zavrni povabilo"
@@ -291,9 +250,6 @@
       "Deselect all": [
         "Odznači vse"
       ],
-      "Discard": [
-        "Zavrzi"
-      ],
       "Dismiss": [
         "Opusti"
       ],
@@ -321,9 +277,6 @@
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
-      "Edit label": [
-        "Uredi oznako"
-      ],
       "Edit phone number": [
         "Uredi telefonsko številko"
       ],
@@ -338,9 +291,6 @@
       ],
       "Encrypted": [
         "Šifrirano"
-      ],
-      "Expand": [
-        "Razširi"
       ],
       "Export": [
         "Izvozi"
@@ -426,23 +376,11 @@
       "import": [
         "uvoz"
       ],
-      "Import contacts": [
-        "Uvozite stike"
-      ],
       "Import data": [
         "Uvozi podatke"
       ],
       "Import emails, calendars, contacts": [
         "Uvozi e-pošto, koledarje, stike"
-      ],
-      "Import from .csv or vCard": [
-        "Uvozi iz datoteke .csv ali vCard"
-      ],
-      "Import from Google": [
-        "Uvoz iz Googlovega računa"
-      ],
-      "Import from Outlook": [
-        "Uvoz iz Outlooka"
       ],
       "Keep my subscription": [
         "Ohrani mojo naročnino"
@@ -462,20 +400,11 @@
       "Make a copy": [
         "Naredi kopijo"
       ],
-      "Manage addresses": [
-        "Upravljanje naslovov"
-      ],
       "Manage advanced account protections": [
         "Upravljajte z naprednimi zaščitami računa"
       ],
-      "Manage folders": [
-        "Upravljanje map"
-      ],
       "Manage groups": [
         "Upravljanje skupin"
-      ],
-      "Manage labels": [
-        "Upravljanje oznak"
       ],
       "Manage users/addresses": [
         "Upravljanje uporabnikov/naslovov"
@@ -521,6 +450,9 @@
       ],
       "Move to trash": [
         "Premakni v smetnjak"
+      ],
+      "New": [
+        "Novo"
       ],
       "New document": [
         "Nov dokument"
@@ -573,17 +505,8 @@
       "Print": [
         "Natisni"
       ],
-      "Quit": [
-        "Zapusti"
-      ],
       "Re-sign": [
         "Ponovno podpiši"
-      ],
-      "Reconnect": [
-        "Znova poveži"
-      ],
-      "Reconnect to Gmail": [
-        "Znova se povežite z Gmailom"
       ],
       "Recover data": [
         "Obnovi podatke"
@@ -638,9 +561,6 @@
       ],
       "Resend invite": [
         "Ponovno pošlji povabilo"
-      ],
-      "Reset to default": [
-        "Ponastavi na privzeto"
       ],
       "Restore": [
         "Obnovi"
@@ -747,17 +667,8 @@
       "Sign up": [
         "Prijavite se"
       ],
-      "Skip verification": [
-        "Preskoči preverjanje"
-      ],
       "Sort by": [
         "Razvrsti po"
-      ],
-      "Start import": [
-        "Začni uvažati"
-      ],
-      "Stay": [
-        "Ostani"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"
@@ -989,9 +900,6 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Če prekinete zdaj, nekateri stiki morda ne bodo uvoženi"
-      ],
-      "By leaving now, some events may not be imported": [
-        "Če prekinete zdaj, nekateri dogodki morda ne bodo uvoženi"
       ]
     },
     "Apps dropdown": {
@@ -1005,26 +913,6 @@
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ LUMO_SHORT_APP_NAME } pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
-      ]
-    },
-    "Attached ics file error": {
-      "Empty ICS file": [
-        "Prazna datoteka ICS"
-      ],
-      "Invalid event": [
-        "Neveljaven dogodek"
-      ],
-      "Invalid ICS file": [
-        "Neveljavna datoteka ICS"
-      ],
-      "Invalid method": [
-        "Neveljaven način"
-      ],
-      "Unsupported calendar component": [
-        "Nepodprta komponenta koledarja"
-      ],
-      "Unsupported event": [
-        "Nepodprt dogodek"
       ]
     },
     "Autocomplete": {
@@ -1456,14 +1344,6 @@
       ],
       "strawberry": [
         "jagoda"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import customization?": [
-        "Ali želite prekiniti prilagajanje uvoza?"
-      ],
-      "Quit import?": [
-        "Prekini uvoz?"
       ]
     },
     "Contact field label": {
@@ -2414,9 +2294,6 @@
       "Automatically forward incoming email to another email address.": [
         "Samodejno posreduj dohodno e-pošto na drug e-poštni naslov."
       ],
-      "Available storage: ${ storageText }": [
-        "Razpoložljiva shramba: ${ storageText }"
-      ],
       "Connect your CRM, website, printers, and more.": [
         "Povežite svoj CRM, spletno stran, tiskalnike in drugo."
       ],
@@ -2435,14 +2312,8 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Preprosto sinhronizirajte datoteke v oblak iz namizja in do njih dostopajte iz mobilne naprave."
       ],
-      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "E-poštna sporočila, poslana na naslov ${ connectedAddressText }, bodo zdaj prikazana v ${ MAIL_APP_NAME }."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
-      ],
-      "Enough room for years of emails, attachments and more.": [
-        "Dovolj prostora za leta e-pošte, priponk in drugega."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zagotovite si varen dostop do podatkov organizacije, tudi če je vaša ekipa oddaljena ali uporablja javni WiFi."
@@ -2474,15 +2345,6 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavite način obnovitve, da preprečite izgubo dostopa do svojega računa."
       ],
-      "This may happen if permissions were removed or your password changed.": [
-        "To se lahko zgodi, če so bila dovoljenja odstranjena ali se je spremenilo vaše geslo."
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
-        "Če želite še naprej prejemati in pošiljati sporočila Gmail v ${ BRAND_NAME }, znova povežite svoj račun."
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
-        "Če želite še naprej prejemati in pošiljati sporočila Gmail v ${ BRAND_NAME }, znova povežite svoje račune."
-      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Za zagotovitev najvišje možne varnosti vašega računa nastavite obnovitveno frazo."
       ],
@@ -2495,9 +2357,6 @@
       "To start, give your organization a name.": [
         "Za začetek imenujte svojo organizacijo."
       ],
-      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
-        "Odklenite 15 GB shrambe za samo ${ config.offerPrice }."
-      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Nadgradite na ${ planName } $, da boste lahko še naprej delili datoteke z dostopom za urejanje"
       ],
@@ -2507,41 +2366,20 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
       ],
-      "We can't access ${ boldEmails } anymore.": [
-        "Do ${ boldEmails } ne moremo več dostopati."
-      ],
-      "We will pause imports at 80% storage to reserve space for new messages.": [
-        "Uvoz bomo začasno ustavili pri 80 % zasedenosti shrambe, da rezerviramo prostor za nova sporočila."
-      ],
-      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Začeli smo uvažati vašo e-pošto iz Gmaila. Obvestili vas bomo, ko bo končano."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "S skupinami stikov lahko pošljete e-pošto vsem v skupini z enim klikom."
       ],
-      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Dogodke lahko uvozite v formatu iCal (datoteka ICS). Datoteka ima lahko največjo velikost ${ MAX_IMPORT_FILE_SIZE_STRING } in vsebuje največ ${ MAX_IMPORT_EVENTS_STRING } dogodkov. Če je datoteka večja, jo razdelite na manjše datoteke."
-      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Stike, ki jih ne želite niti združiti niti ohraniti, lahko označite za izbris. Brisanje se izvede šele po kliku gumba za združevanje"
-      ],
-      "You can now send emails from ${ BRAND_NAME } using this address.": [
-        "Zdaj lahko s tega naslova pošiljate e-pošto iz ${ BRAND_NAME }."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Vaš račun in načini obnovitve podatkov so nastavljeni in 2FA je omogočen."
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le ${ newUserStorageText } vaših najnovejših sporočil Gmail."
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "Vaš brezplačni račun ${ MAIL_APP_NAME } ima omejeno shrambo, zato bomo uvozili le vaša najnovejša e-poštna sporočila iz Gmaila."
       ]
     },
     "description": {
@@ -2674,120 +2512,23 @@
         "Delite prednosti vašega paketa z ${ BRAND_NAME } Duo"
       ]
     },
-    "Email body for invitation": {
-      "${ eventTitle } was canceled.": [
-        "${ eventTitle } je bil preklican."
-      ],
-      "All events in this series were updated.": [
-        "Vsi dogodki v tej seriji so bili posodobljeni."
-      ],
-      "DESCRIPTION:": [
-        "OPIS:"
-      ],
-      "Here's what changed:": [
-        "Kaj se je spremenilo:"
-      ],
-      "LOCATION:": [
-        "LOKACIJA:"
-      ],
-      "NOTE:": [
-        "OPOMBA:"
-      ],
-      "This event occurrence was canceled.": [
-        "Ta dogodek je bil preklican."
-      ],
-      "This event occurrence was updated.": [
-        "Ta dogodek je bil posodobljen."
-      ],
-      "This event was updated.": [
-        "Ta dogodek je bil posodobljen."
-      ],
-      "TIME:": [
-        "ČAS:"
-      ],
-      "TITLE:": [
-        "NASLOV:"
-      ],
-      "You are invited to": [
-        "Povabljeni ste na"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "TIME:\n${ formattedStart }": [
-        "ČAS:\n${ formattedStart }"
-      ],
-      "TIME:\n${ formattedStart } (all day)": [
-        "ČAS:\n${ formattedStart } (cel dan)"
-      ],
-      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "ČAS:\n${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (event details part)": {
-      "Removed": [
-        "Odstranjeno"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } sprejel vaše vabilo na ${ eventTitle }"
-      ],
-      "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } zavrnil vaše vabilo na ${ eventTitle }"
-      ],
-      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } je pogojno sprejel vaše vabilo na ${ eventTitle }"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Preklic dogodka dne ${ formattedStart }"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Preklic dogodka, ki se začne ${ formattedStart }"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Povabilo na dogodek dne ${ formattedStart }"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Povabilo na dogodek s pričetkom ${ formattedStart }"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Posodobitev za dogodek dne ${ formattedStart }"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Posodobitev za dogodek, ki se začne ${ formattedStart }"
-      ]
-    },
     "emergency_access": {
       "Trusted contact": [
         "Zaupanja vreden stik"
       ]
     },
     "Error": {
-      "${ BRAND_NAME } can't connect to your external account": [
-        "${ BRAND_NAME } se ne more povezati z vašim zunanjim računom"
-      ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } je posodobljena. Osvežite stran."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } je vaše uporabniško ime. Če želite ustvariti ${ emailAddress }, pojdite v Nastavitve > Osebna identiteta in naslovi > Kratka domena (@pm.me)"
-      ],
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
       ],
       "A message is required when reporting copyright infringement or stolen data": [
         "Pri prijavi kršitve avtorskih pravic ali kraje podatkov je obvezno sporočilo"
-      ],
-      "Address could not be added.": [
-        "Naslova ni bilo mogoče dodati."
-      ],
-      "Address primary private key not found": [
-        "Primarni zasebni ključ naslova ni najden"
       ],
       "Already a member of this share": [
         "Ste že član te skupne rabe"
@@ -2807,17 +2548,8 @@
       "An error occurred while creating a new document. Please try again.": [
         "Prišlo je do napake pri ustvarjanju novega dokumenta. Poskusite znova."
       ],
-      "Authentication canceled.": [
-        "Preverjanje pristnosti preklicano."
-      ],
-      "Authentication error.": [
-        "Napaka pri preverjanju pristnosti."
-      ],
       "Bookmark password is not available": [
         "Geslo zaznamka ni na voljo"
-      ],
-      "Calendar limit reached": [
-        "Dosežena omejitev števila koledarjev."
       ],
       "Cannot download a folder": [
         "Mape ni mogoče prenesti"
@@ -2873,26 +2605,11 @@
       "Creating folders in non-folders is not allowed": [
         "Ustvarjanje map v mapah, ki to niso, ni dovoljeno"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Izberite vsaj ${ calendarsToFixCount } koledar manj",
-        "Izberite vsaj ${ calendarsToFixCount } koledarja manj",
-        "Izberite vsaj ${ calendarsToFixCount } koledarje manj",
-        "Izberite vsaj ${ calendarsToFixCount } koledarjev manj"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Izberite vsaj ${ calendarsToFixCount } koledar manj ali",
-        "Izberite vsaj ${ calendarsToFixCount } koledarja manj ali",
-        "Izberite vsaj ${ calendarsToFixCount } koledarje manj ali",
-        "Izberite vsaj ${ calendarsToFixCount } koledarjev manj ali"
-      ],
       "Device not found": [
         "Naprave ni bilo mogoče najti"
       ],
       "Domain not available, try again later": [
         "Domena ni na voljo, poskusite znova pozneje"
-      ],
-      "Email address is required": [
-        "Zahtevan je e-poštni naslov"
       ],
       "Email is not valid": [
         "E-pošta ni veljavna"
@@ -2902,9 +2619,6 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Vnesite svoje uporabniško ime brez domene (@primer.com)"
-      ],
-      "Error decrypting a computer": [
-        "Napaka pri dešifriranju računalnika"
       ],
       "Expiration date cannot be in the past": [
         "Datum poteka ne more biti v preteklosti"
@@ -2969,17 +2683,11 @@
       "First name is too long": [
         "Ime je predolgo"
       ],
-      "Folder name cannot be empty.": [
-        "Ime mape ne sme biti prazno."
-      ],
       "Image preview not found": [
         "Predogleda slike ni bilo mogoče najti"
       ],
       "Image upload failed": [
         "Nalaganje slike ni uspelo"
-      ],
-      "IMAP server is required": [
-        "Zahtevan je strežnik IMAP"
       ],
       "Incorrect backup password. Please try again.": [
         "Nepravilno varnostno geslo. Poskusite znova."
@@ -3014,20 +2722,8 @@
       "Item not found": [
         "Predmeta ni bilo mogoče najti"
       ],
-      "Label name cannot be empty.": [
-        "Ime oznake ne sme biti prazno."
-      ],
       "Last name is too long": [
         "Priimek je predolg."
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Združi vsaj ${ calendarsToFixCount } koledar z obstoječim koledarjem ${ BRAND_NAME }",
-        "Združi vsaj ${ calendarsToFixCount } koledarja z obstoječimi koledarji ${ BRAND_NAME }",
-        "Združi vsaj ${ calendarsToFixCount } koledarje z obstoječimi koledarji ${ BRAND_NAME }",
-        "Združi vsaj ${ calendarsToFixCount } koledarjev z obstoječimi koledarji ${ BRAND_NAME }"
-      ],
-      "Missing key packet": [
-        "Manjka paket ključev"
       ],
       "Missing signature": [
         "Manjka podpis"
@@ -3040,18 +2736,6 @@
       ],
       "Name must not be empty": [
         "Ime ne sme biti prazno"
-      ],
-      "No calendars found to import": [
-        "Ni najdenih koledarjev za uvoz."
-      ],
-      "No contacts found to import": [
-        "Nobenih stikov ni bilo najdenih za uvoz."
-      ],
-      "No drive found to import": [
-        "Ni mogoče najti pogona za uvoz"
-      ],
-      "No emails found to import - the account does not have an inbox": [
-        "Ni bilo najdenih e-poštnih sporočil za uvoz – račun nima prejete pošte."
       ],
       "No valid address found": [
         "Nobenega veljavnega naslova ni bilo mogoče najti."
@@ -3077,17 +2761,8 @@
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
       ],
-      "Organization key must be activated to create invited users": [
-        "Za ustvarjanje povabljenih uporabnikov mora biti ključ organizacije aktiviran."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
-      ],
       "Part of the file appears to be corrupted": [
         "Del datoteke se zdi poškodovan"
-      ],
-      "Password is required": [
-        "Zahtevano je geslo"
       ],
       "Passwords do not match": [
         "Gesli se ne ujemata"
@@ -3101,12 +2776,6 @@
       "Please enter a valid postal code": [
         "Prosimo vnesite veljavno poštno številko"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Pred nadaljevanjem razrešite označeni spor.",
-        "Pred nadaljevanjem razrešite označena spora.",
-        "Pred nadaljevanjem razrešite označene spore.",
-        "Pred nadaljevanjem razrešite označene spore."
-      ],
       "Please provide either a first name, a last name or a display name": [
         "Prosimo, vpišite ime, priimek ali prikazno ime."
       ],
@@ -3115,15 +2784,6 @@
       ],
       "Please select a state": [
         "Izberite državo"
-      ],
-      "Port is required": [
-        "Zahtevana so vrata"
-      ],
-      "Primary address key is not decrypted": [
-        "Primarni ključ naslova ni dešifriran"
-      ],
-      "Primary address key is not decrypted.": [
-        "Primarni ključ naslova ni dešifriran."
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "Odstranjen podvojen prejemnik: ${ joinedInvitee }",
@@ -3167,29 +2827,11 @@
       "Some items could not be loaded": [
         "Nekaterih predmetov ni bilo mogoče naložiti"
       ],
-      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Nekatera imena map niso na voljo. Prosimo prilagodite uvoz tako, da uredite takšna imena."
-      ],
-      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Nekatera imena vaših map presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
-      ],
-      "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Nekatera imena oznak so rezervirana. Prilagodite uvoz in uredite ta imena."
-      ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Nekatera imena vaših oznak niso na voljo. Prilagodite uvoz za urejanje teh imen."
-      ],
-      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
-      ],
       "Some trashed documents could not be loaded": [
         "Nekaterih dokumentov v smetnjaku ni mogoče naložiti"
       ],
       "Something went wrong": [
         "Nekaj je šlo narobe"
-      ],
-      "Something went wrong while fetching available domains": [
-        "Med pridobivanjem razpoložljivih domen je prišlo do napake"
       ],
       "Something went wrong. Please try again.": [
         "Nekaj je šlo narobe. Poskusite znova."
@@ -3209,26 +2851,11 @@
       "The email addresses do not match": [
         "E-poštna naslova se ne ujemata"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        "To ime mape ni veljavno. Izberite drugačno ime."
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        "Ime mape je predolgo. Izberite drugačno ime."
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        "To ime oznake ni veljavno. Izberite drugačno ime."
-      ],
-      "The label name is too long. Please choose a different name.": [
-        "Ime oznake je predolgo. Izberite drugačno ime."
-      ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Zadnja posodobitev, ki ste jo izvedli v dokumentu, je prevelika ali pa bi presegla skupno omejitev velikosti dokumenta. Urejanje je bilo začasno onemogočeno. Vaša sprememba ne bo shranjena. Izvozite kopijo dokumenta in znova naložite stran."
       ],
       "The link to your item failed to be deleted": [
         "Povezave do vašega predmeta ni bilo mogoče izbrisati"
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Prišlo je do napake pri obdelavi posodobitev dokumenta. Ponovno naložite stran in poskusite znova."
@@ -3251,12 +2878,6 @@
       "This file version could not be uploaded": [
         "Te različice datoteke ni bilo mogoče naložiti"
       ],
-      "This folder name is not available. Please choose a different name.": [
-        "To ime mape ni na voljo. Izberite drugačno ime."
-      ],
-      "This label name is not available. Please choose a different name.": [
-        "To ime oznake ni na voljo. Izberite drugačno ime."
-      ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
       ],
@@ -3274,12 +2895,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Ni mogoče naložiti nadzorne plošče VPN. Preverite svojo povezavo in poskusite znova."
-      ],
-      "Unexpected error, we can't import the contacts": [
-        "Nepričakovana napaka, ne moremo uvoziti stikov"
-      ],
-      "Unexpected error, we can't import the files": [
-        "Nepričakovana napaka, ne moremo uvoziti datotek"
       ],
       "Unknown error": [
         "Neznana napaka"
@@ -3338,17 +2953,8 @@
       "You do not have access to this shared item": [
         "Nimate dostopa do tega predmeta v skupni rabi"
       ],
-      "You have reached the maximum number of calendars.": [
-        "Dosegli ste največje število koledarjev."
-      ],
-      "You have reached the number of contacts limit for your account": [
-        "Dosegli ste mejo za število stikov v vašem računu."
-      ],
       "You must set a name": [
         "Vnesti morate ime"
-      ],
-      "Your import will not be processed.": [
-        "Vaš uvoz ne bo obdelan."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Naprava, katere ni možno dešifrirati"
@@ -3357,44 +2963,9 @@
         "⚠️ Ime, ki ga ni mogoče dešifrirati"
       ]
     },
-    "error": {
-      "Please sign in with the same Gmail address you originally connected": [
-        "Prijavite se z istim naslovom Gmail, s katerim ste se povezali prvič"
-      ]
-    },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Pri branju datoteke ${ formattedFilename } je prišlo do napake. Neveljavna oblika datoteke."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Pri nalaganju datoteke ${ formattedFilename } je prišlo do napake. Največja velikost datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Pri nalaganju datoteke ${ formattedFilename } je prišlo do napake. Dovoljene so samo oblike zapisa datotek ICS."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Pri nalaganju datoteke je prišlo do napake. Nobena datoteka ni bila izbrana."
-      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Prišlo je do nepričakovane napake. Uvoz je treba znova zagnati."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Datoteka ${ formattedFilename } vsebuje več kot ${ MAX_IMPORT_EVENTS } dogodek.",
-        "Datoteka ${ formattedFilename } vsebuje več kot ${ MAX_IMPORT_EVENTS } dogodka.",
-        "Datoteka ${ formattedFilename } vsebuje več kot ${ MAX_IMPORT_EVENTS } dogodke.",
-        "Datoteka ${ formattedFilename } vsebuje več kot ${ MAX_IMPORT_EVENTS } dogodkov."
-      ],
-      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Datoteka ${ formattedFilename } vsebuje neveljavno metodo in je ni mogoče uvoziti."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Datoteka ${ formattedFilename } ne vesbuje dogodkov, ki bi jih bilo treba uvoziti."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Datoteka ${ formattedFilename } je prazna."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Datoteka ${ formattedFilename } ni koledar."
       ]
     },
     "Error importing contact": {
@@ -3429,62 +3000,6 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Datoteka ${ formattedFilename } je prazna."
-      ]
-    },
-    "Error importing event": {
-      "Bad format. Component cannot be read.": [
-        "Datoteka je v napačni obliki. Komponente ni mogoče prebrati."
-      ],
-      "Calendar": [
-        "Kolendar"
-      ],
-      "Component with wrong format": [
-        "Komponenta z napačno obliko."
-      ],
-      "Custom time zone": [
-        "Časovni pas po meri"
-      ],
-      "Element": [
-        "Predmet"
-      ],
-      "Encryption failed": [
-        "Šifriranje ni uspelo"
-      ],
-      "Event": [
-        "Dogodek"
-      ],
-      "Free-busy time information": [
-        "Informacija o prostem/zasedenem času"
-      ],
-      "Invalid event": [
-        "Neveljaven dogodek"
-      ],
-      "Journal entry": [
-        "Dnevniški vnos"
-      ],
-      "Missing start time": [
-        "Manjka začetni čas"
-      ],
-      "No UID, title or start time": [
-        "Ni UID, naslova ali začetnega časa."
-      ],
-      "Notification out of bounds": [
-        "Obvestilo je izven meja."
-      ],
-      "Original recurring event could not be found": [
-        "Prvotni ponavljajoči se dogodek ni bil najden."
-      ],
-      "Time zone": [
-        "Časovni pas"
-      ],
-      "To-do entry": [
-        "Vnos opravila"
-      ],
-      "Unknown": [
-        "Neznano"
-      ],
-      "Unsupported event": [
-        "Nepodprt dogodek"
       ]
     },
     "Error message": {
@@ -3523,154 +3038,12 @@
         "Izbrana ni nobena slika"
       ]
     },
-    "Event invistation error": {
-      "Unexpected error": [
-        "Nepričakovana napaka"
-      ]
-    },
-    "Event invitation error": {
-      "Attached ICS file could not be decrypted": [
-        "Priložene datoteke ICS ni bilo mogoče dešifrirati"
-      ],
-      "Attached ICS file could not be read": [
-        "Priložene datoteke ICS ni bilo mogoče prebrati"
-      ],
-      "Invalid invitation": [
-        "Neveljavno povabilo"
-      ],
-      "Invalid response": [
-        "Neveljaven odziv"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        "Dogodka ni bilo mogoče dodati v vaš koledar. Odgovor ni bil poslan"
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        "Dogodka ni bilo mogoče posodobiti v vašem koledarju. Odgovor ni bil poslan"
-      ],
-      "Unsupported invitation": [
-        "Nepodprto povabilo"
-      ],
-      "Unsupported response": [
-        "Nepodprt odziv"
-      ],
-      "We could not cancel the event in your calendar": [
-        "Dogodka nismo mogli preklicati v vašem koledarju."
-      ],
-      "We could not retrieve the event from your calendar": [
-        "Dogodka nismo mogli pridobiti iz vašega koledarja."
-      ],
-      "We could not update the event in your calendar": [
-        "Dogodka nismo mogli posodobiti v vašem koledarju."
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "Vaš odgovor je bil poslan, vendar dogodka ni bilo mogoče dodati v vaš koledar"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Vaš odgovor je bil poslan, vendar dogodka ni bilo mogoče posodobiti v vašem koledarju"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(brez naslova)"
-      ]
-    },
-    "familyOffer_2023:Action": {
-      "Decline invitation": [
-        "Zavrni povabilo"
-      ],
-      "Got it": [
-        "Razumem"
-      ],
-      "Switch plans": [
-        "Zamenjaj paket"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Skupine ${ BRAND_NAME }"
-      ],
-      "Accounts with custom domains cannot join a family plan.": [
-        "Računi z domenami po meri se ne morejo pridružiti družinskemu paketu."
-      ],
-      "customer support": [
-        "podpora strankam"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Družinski paketi trenutno ne podpirajo zunanjih računov. Preden se pridružite, ustvarite naslov ${ BRAND_NAME }. ${ link }"
-      ],
-      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
-      ],
-      "Invited by: ${ inviteEmail }": [
-        "Vabilo od: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a family plan.": [
-        "Računi Lifetime ne morejo postati člani družinskega paketa."
-      ],
-      "Manage addresses": [
-        "Upravljanje naslovov"
-      ],
-      "Owners of a plan with members cannot join another family plan.": [
-        "Lastniki paketa s člani se ne morejo pridružiti drugemu družinskemu paketu."
-      ],
-      "Sorry, you can't switch plans at this time.": [
-        "Oprostite, trenutno ne morete zamenjati paketa."
-      ],
-      "Storage assigned to you: ${ assignedStorage }": [
-        "Prostor, ki vam je dodeljen: ${ assignedStorage }"
-      ],
-      "The subscription will be billed to the primary admin of this plan.": [
-        "Naročnina bo zaračunana glavnemu skrbniku tega paketa."
-      ],
-      "View the invitation": [
-        "Oglej si povabilo",
-        "Oglej si povabili",
-        "Oglej si povabila",
-        "Oglej si povabila"
-      ],
-      "You are invited to join ${ invite.OrganizationName }": [
-        "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
-      ],
-      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "V šestmesečnem obdobju lahko sprejmete največ tri povabila. Če želite zahtevati izjemo, se obrnite na ${ supportLink }."
-      ],
-      "You cannot accept this invitation with your current plan.": [
-        "S trenutnim paketom ne morete sprejeti tega povabila."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Povabljeni ste, da se pridružite organizaciji ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the family group": [
-        "Uspešno ste se pridružili družinski skupini"
-      ],
-      "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Imate neplačane račune. Plačajte jih, preden se boste pridružili družinskemu paketu."
-      ],
-      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Vaš račun ima več naslovov e-pošte, ko jih je na voljo za ta paket. ${ addressSettingsLink }"
-      ],
-      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Vaš račun zaseda ${ usedSpace } prostora za shranjevanje, kar presega vam dodeljenih ${ inviteSpace }. Izbrišite nekaj podatkov ali prosite skrbnika paketa, naj vam dodeli več prostora."
-      ]
-    },
     "Feature": {
-      "10+ premium features": [
-        "10+ premijskih funkcij"
-      ],
-      "Custom email domain": [
-        "E-poštna domena po meri"
-      ],
-      "Email addresses": [
-        "E-poštni naslovi"
-      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Šifrirana shramba v oblaku za datoteke, fotografije in dokumente"
       ],
       "More premium features": [
         "Več premijskih funkcij"
-      ],
-      "Storage": [
-        "Shramba"
       ],
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov hide-my-email"
@@ -3749,11 +3122,6 @@
         "Terabajta",
         "Terabajti",
         "Terabajtov"
-      ]
-    },
-    "Filter notification": {
-      "${ Label.Name } updated": [
-        "${ Label.Name } je posodobljen"
       ]
     },
     "Font face option": {
@@ -3840,111 +3208,14 @@
         "SMS"
       ]
     },
-    "ICS event error": {
-      "Calendar time zone not supported": [
-        "Časovni pas koledarja ni podprt"
-      ],
-      "Edited event not supported": [
-        "Urejen dogodek ni podprt."
-      ],
-      "End time out of bounds": [
-        "Končni čas je izven dovoljenih meja."
-      ],
-      "Event validation failed": [
-        "Preverjanje dogodka ni uspelo."
-      ],
-      "Floating times not supported": [
-        "Plavajoči časi niso podprti."
-      ],
-      "Malformed all-day event": [
-        "Napaka pri oblikovanju celodnevnega dogodka"
-      ],
-      "Malformed end time": [
-        "Nepravilni končni čas"
-      ],
-      "Malformed recurring event": [
-        "Nepravilno oblikovan ponavljajoči se dogodek"
-      ],
-      "Malformed start time": [
-        "Nepravilni začetni čas"
-      ],
-      "Only the Gregorian calendar scale is allowed": [
-        "Dovoljena je samo uporaba gregorijanskega koledarja."
-      ],
-      "Recurring event has no occurrences": [
-        "Ponavljajoči se dogodek nima ponovitev."
-      ],
-      "Recurring rule not supported": [
-        "Ponavljajoče se pravilo ni podprto."
-      ],
-      "Start time out of bounds": [
-        "Začetni čas je izven dovoljenih meja."
-      ],
-      "Time zone not supported": [
-        "Časovni pas ni podprt"
-      ]
-    },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "Šifriranje in dodajanje dogodkov v koledar: ${ totalImported }/${ totalToImport }",
-        "Šifriranje in dodajanje dogodkov v koledar: ${ totalImported }/${ totalToImport }",
-        "Šifriranje in dodajanje dogodkov v koledar: ${ totalImported }/${ totalToImport }",
-        "Šifriranje in dodajanje dogodkov v koledar: ${ totalImported }/${ totalToImport }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Pri šifriranju in dodajanju dogodka je prišlo do napake. ${ totalImported } dogodek od ${ totalToImport } je bil uspešno uvožen.",
-        "Pri šifriranju in dodajanju dogodkov je prišlo do napake. ${ totalImported } dogodka od ${ totalToImport } sta bila uspešno uvožena.",
-        "Pri šifriranju in dodajanju dogodkov je prišlo do napake. ${ totalImported } dogodki od ${ totalToImport } so bili uspešno uvoženi.",
-        "Pri šifriranju in dodajanju dogodkov je prišlo do napake. ${ totalImported } dogodkov od ${ totalToImport } je bilo uspešno uvoženih."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Med šifriranjem in dodajanjem dogodka je prišlo do napake. Uvoziti ni bilo mogoče nobenega dogodka."
-      ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "Med šifriranjem in dodajanjem dogodkov je prišlo do napake. Uvoziti ni bilo mogoče nobenega dogodka."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Šifriranje in dodajanje stikov: ${ totalImported }/${ totalToImport }"
-      ],
-      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Šifriranje in dodajanje dogodkov v koledar: ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Dogodek je bil uspešno uvožen. Zdaj bo prikazan v koledarju."
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Dogodki so bili uspešno uvoženi. Zdaj bodo prikazani v koledarju."
-      ],
-      "Please don't close the tab before the importing process is finished.": [
-        "Ne zapirajte zavihka, preden je postopek uvoza končan."
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } trenutno ne podpira določenih vrst dogodkov, podrobnosti in formatov."
-      ],
       "vCard versions < 3.0": [
         "vCard, različica < 3.0"
-      ]
-    },
-    "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Uvožena vabila so v ${ CALENDAR_APP_NAME } prikazana kot običajni dogodki brez podrobnosti o organizatorju ali udeležencu. Če želite prejemati posodobitve dogodka in si ogledati seznam udeležencev, od organizatorjev zahtevajte povabilo s svojim e-poštnim naslovom ${ BRAND_NAME }."
-      ],
-      "This file contains an event invitation:": [
-        "Ta datoteka vsebuje vabilo na dogodek:",
-        "Ta datoteka vsebuje vabili na dogodka:",
-        "Ta datoteka vsebuje vabila na dogodke:",
-        "Ta datoteka vsebuje vabila na dogodke:"
-      ],
-      "This file contains an invitation response:": [
-        "Ta datoteka vsebuje odgovor na vabilo:",
-        "Ta datoteka vsebuje odgovora na vabili:",
-        "Ta datoteka vsebuje odgovore na vabila:",
-        "Ta datoteka vsebuje odgovore na vabila:"
-      ],
-      "This file contains some data that we cannot import:": [
-        "Datoteka vsebuje podatke, ki jih ne moremo uvoziti:"
       ]
     },
     "Import contact": {
@@ -3996,166 +3267,12 @@
         "za zdaj"
       ]
     },
-    "Import error": {
-      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "${ BRAND_NAME } ne more vzpostaviti povezave z vašim računom. Prepričajte se, da:"
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } se ne more povezati z vašim zunanjim računom. Prepričajte se, da sta naslov poštnega strežnika in številka vrat pravilna."
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } se ne more povezati z vašim zunanjim računom. Prepričajte se, da:"
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } se ne more povezati z vašim računom Yahoo. Prepričajte se, da sta naslov poštnega strežnika in številka vrat pravilna."
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } ne more vzpostaviti povezave z vašim računom Yahoo. Prepričajte se, da:"
-      ],
-      "IMAP access is enabled in your external account.": [
-        "je v zunanjem računu omogočen dostop IMAP,"
-      ],
-      "IMAP access is enabled in your Yahoo account.": [
-        "je v računu Yahoo omogočen dostop IMAP"
-      ],
-      "Too many recent requests. Please try again in a few moments.": [
-        "Preveč nedavnih zahtevkov. Poskusite znova čez nekaj trenutkov."
-      ],
-      "Two-factor authentication is enabled in your external account.": [
-        "Dvojno preverjanje pristnosti je omogočeno v vašem zunanjem računu."
-      ],
-      "Two-factor authentication is enabled in your external email account.": [
-        "Dvojno preverjanje pristnosti je omogočeno v vašem zunanjem e-poštnem računu."
-      ],
-      "Use your app password if:": [
-        "Uporabite geslo za aplikacijo, če:"
-      ],
-      "Use your app password instead of your regular password if:": [
-        "Uporabite geslo aplikacije namesto navadnega gesla, če:"
-      ],
-      "Your app password is correct. Do not use your regular password.": [
-        "Vaše geslo za aplikacijo je pravilno. Ne uporabljajte svojega običajnega gesla."
-      ],
-      "Your email account requires an app password to export your data.": [
-        "vaš e-poštni račun zahteva geslo aplikacije za izvoz podatkov."
-      ],
-      "Your email account requires one to export your data.": [
-        "ga vaš e-poštni račun zahteva za izvoz podatkov."
-      ],
-      "Your email address and app password are correct. Do not use your regular password.": [
-        "Vaš e-poštni naslov in geslo za aplikacijo sta pravilna. Ne uporabljajte običajnega gesla."
-      ],
-      "Your email address and password are correct.": [
-        "sta e-poštni naslov in geslo pravilna."
-      ],
-      "Your password is correct.": [
-        "je geslo pravilno."
-      ]
-    },
-    "Import instructions": {
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Odvisno od vašega ponudnika e-pošte boste morda pred uvozom v ${ BRAND_NAME } morali ustvariti ${ knowledgeBaseLink }."
-      ],
-      "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Razširite spustni meni s klikom na gumb s tremi pikami (...)."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Ustvarite ${ boldAppPassword } in ga uporabite namesto običajnega gesla, ko vas ${ BRAND_NAME } pozove."
-      ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        "Pojdi na ${ boldAccountInfo } v vašem profilu v ${ yahooMailLink }."
-      ],
-      "Go to ${ boldAccountSecurity }.": [
-        "Pojdi na ${ boldAccountSecurity }"
-      ],
-      "Open your ${ yahooMailLink } contacts.": [
-        "Odprite svoje stike v pošti ${ yahooMailLink }."
-      ],
-      "Select ${ boldExportCSV }.": [
-        "Izberite ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Za uvoz koledarja v ${ BRAND_NAME } potrebujete ${ knowledgeBaseLink }. Prenesite jo iz pošte Yahoo v treh preprostih korakih:"
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Za uvoz koledarja v ${ BRAND_NAME } potrebujete ${ knowledgeBaseLink }. Prenesite si jo, preden začnete postopek uvoza."
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Za uvoz stikov v ${ BRAND_NAME } potrebujete ${ knowledgeBaseLink }. Prenesite jo iz pošte Yahoo v treh preprostih korakih:"
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Za uvoz stikov v ${ BRAND_NAME } potrebujete ${ knowledgeBaseLink }. Prenesite si jo, preden začnete postopek uvoza."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Za uvoz e-pošte v ${ BRAND_NAME } potrebujete ${ appPasswordLink } iz pošte Yahoo. Pridobite ga z naslednjimi koraki:"
-      ]
-    },
-    "Import instructions emphasis": {
-      "Account info": [
-        "Podatki o računu"
-      ],
-      "Account security": [
-        "Varnost računa"
-      ],
-      "app password": [
-        "geslo aplikacije"
-      ],
-      "Export": [
-        "Izvozi"
-      ],
-      "Export to CSV file": [
-        "Izvozi v datoteko CSV"
-      ]
-    },
-    "Import instructions link": {
-      "app password": [
-        "geslo aplikacije"
-      ],
-      "app password or enable IMAP": [
-        "geslo aplikacije ali omogočiti IMAP"
-      ],
-      "CSV or a VCF (vCard) file": [
-        "datoteko CSV ali VCF (vCard)"
-      ],
-      "full calendar view": [
-        "pogled celotnega koledarja"
-      ],
-      "ICS file": [
-        "datoteko ICS"
-      ],
-      "Yahoo": [
-        "Yahoo"
-      ]
-    },
-    "Import instructions step": {
-      "Go to ${ calendarViewLink } in Yahoo.": [
-        "Pojdite na ${ calendarViewLink } v Yahoo."
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Premaknite miško na koledar, ki ga želite uvoziti in odprite spustni meni."
-      ],
-      "Select ${ boldExport } to export the calendar as an ICS file.": [
-        "Izberite ${ boldExport } za izvoz koledarja kot datoteko ICS."
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } stikov ne bo uvoženih. Kliknite za podrobnosti"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } dogodek od ${ totalEvents } ne bo uvožen. Razširite za podrobnosti.",
-        "${ totalEventsDiscarded } dogodka od ${ totalEvents } ne bosta uvožena. Razširite za podrobnosti.",
-        "${ totalEventsDiscarded } dogodki od ${ totalEvents } ne bodo uvoženi. Razširite za podrobnosti.",
-        "${ totalEventsDiscarded } dogodkov od ${ totalEvents } ne bo uvoženih. Razširite za podrobnosti."
-      ],
       "No contact can be imported. Click for details": [
         "Uvoziti ni mogoče nobenega stika. Kliknite za podrobnosti"
-      ],
-      "No event can be imported. Expand for details.": [
-        "Nobenega dogodka ni mogoče uvoziti. Razširite za podrobnosti."
-      ],
-      "Part of your calendar content is not supported and will not be imported.": [
-        "Del vsebine koledarja ni podprt in ne bo uvožen."
       ]
     },
     "Info": {
@@ -4179,18 +3296,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nov koledar",
-        "${ calendarsToBeCreatedCount } nova koledarja",
-        "${ calendarsToBeCreatedCount } novi koledarji",
-        "${ calendarsToBeCreatedCount } novih koledarjev"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } združen koledar",
-        "${ calendarsToBeMergedCount } združena koledarja",
-        "${ calendarsToBeMergedCount } združeni koledarji",
-        "${ calendarsToBeMergedCount } združenih koledarjev"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } stik vsebuje več e-poštnih naslovov.",
@@ -4243,41 +3348,11 @@
         "${ planName } poteče v ${ daysLeft } dneh.",
         "${ planName } poteče v ${ daysLeft } dneh."
       ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } najdena mapa",
-        "${ providerFoldersNumLocalized } najdeni mapi",
-        "${ providerFoldersNumLocalized } najdene mape",
-        "${ providerFoldersNumLocalized } najdenih map"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "V Gmailu je odkrita ${ providerFoldersNumLocalized } oznaka",
-        "V Gmailu sta odkriti ${ providerFoldersNumLocalized } oznaki",
-        "V Gmailu so odkrite ${ providerFoldersNumLocalized } oznake",
-        "V Gmailu je odkritih ${ providerFoldersNumLocalized } oznak"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarja",
-        "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarjev",
-        "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarjev",
-        "${ selectedCalendarsTotal } od ${ providerCalendars.length } koledarjev"
-      ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } izbran stik",
         "${ selectedContactsLength }/${ contactsLength } izbrana stika",
         "${ selectedContactsLength }/${ contactsLength } izbrani stiki",
         "${ selectedContactsLength }/${ contactsLength } izbranih stikov"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } izbrana mapa",
-        "${ selectedFoldersCountLocalized } izbrani mapi",
-        "${ selectedFoldersCountLocalized } izbrane mape",
-        "${ selectedFoldersCountLocalized } izbranih map"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } izbrana oznaka",
-        "${ selectedFoldersCountLocalized } izbrani oznaki",
-        "${ selectedFoldersCountLocalized } izbrane oznake",
-        "${ selectedFoldersCountLocalized } izbranih oznak"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } stik je uspešno posodobljen.",
@@ -4342,38 +3417,20 @@
       "All": [
         "Vse"
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "Vse (${ totalFoldersCount } mapa)",
-        "Vse (${ totalFoldersCount } mapi)",
-        "Vse (${ totalFoldersCount } mape)",
-        "Vse (${ totalFoldersCount } map)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Vse (${ totalFoldersCount } oznaka)",
-        "Vse (${ totalFoldersCount } oznaki)",
-        "Vse (${ totalFoldersCount } oznake)",
-        "Vse (${ totalFoldersCount } oznak)"
-      ],
       "Already in this folder": [
         "Že v tej mapi"
       ],
-      "and": [
-        "in"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Ali ste prepričani, da želite zavreči uvoz?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Ali ste prepričani, da želite trajno izbrisati ${ itemName } iz smeti?"
-      ],
-      "Are you sure you want to permanently delete selected items from trash?": [
-        "Ali ste prepričani, da želite trajno izbrisati izbran predmet iz smeti?"
       ],
       "Attention required": [
         "Pozornost!"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Preden zahtevate novo kodo za preverjanje, preverite mapo za neželeno pošto in preverite, ali je ${ strong } pravilen naslov."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Calendar side panel": [
         "Stranska plošča s koledarjem"
@@ -4411,9 +3468,6 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
       ],
-      "Close this screen to exit.": [
-        "Za izhod zaprite ta zaslon."
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Povežite se s programom ${ VPN_APP_NAME } za zasebno brskanje"
       ],
@@ -4438,32 +3492,14 @@
       "Country code": [
         "Koda države"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Ustvari ${ calendarsToBeCreatedCount } nov koledar",
-        "Ustvari ${ calendarsToBeCreatedCount } nova koledarja",
-        "Ustvari ${ calendarsToBeCreatedCount } nove koledarje",
-        "Ustvari ${ calendarsToBeCreatedCount } novih koledarjev"
-      ],
       "Create a copy to edit": [
         "Ustvari kopijo za urejanje"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Ustvarite oznako za uvožena sporočila, določite časovni obseg uvoza in mape, ki jih želite uvoziti."
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Ustvarite oznako za uvožena sporočila, določite časovni obseg uvoza in oznake, ki jih želite uvoziti."
       ],
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Ustvarite dokumente in preglednice, šifrirane od konca do konca."
-      ],
-      "Create in": [
-        "Ustvari v"
-      ],
-      "Create your first folder and start moving your files.": [
-        "Najprej ustvarite mapo in nato pričnite s prenosom datotek."
       ],
       "Current plan": [
         "Trenutni paket"
@@ -4525,9 +3561,6 @@
       "End-to-end encrypted.": [
         "Popolnoma šifrirano."
       ],
-      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Zagotovite si popolnoma zasebno in šifrirano komunikacijo. Prevzemite svoj brezplačni e-poštni naslov ${ BRAND_NAME } zdaj."
-      ],
       "Enter code": [
         "Vnesi kodo"
       ],
@@ -4536,9 +3569,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Vnesite kodo iz aplikacije za preverjanje pristnosti"
-      ],
-      "Enter the credentials of the email account you want to import from.": [
-        "Vnesite poverilnice e-poštnega računa, iz katerega želite uvoziti podatke."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vnesite kodo za preverjanje, ki je bila poslana na ${ destinationText }."
@@ -4560,9 +3590,6 @@
       ],
       "File \"${ name }\" was deleted during download": [
         "Datoteka \"${ name }\" je bila med prenosom izbrisana"
-      ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Samo datoteke (brez fotografij, ${ DOCS_APP_NAME } ali ${ SHEETS_APP_NAME }) - do skupaj 100 GB, 100.000 datotek in 50 GB na datoteko"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mapa »${ link.name }« je bila med prenosom izbrisana"
@@ -4588,9 +3615,6 @@
       "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
         "Sporočite nam težavo in pomagajte izboljšati uporabniško izkušnjo. K poročilu priložite spodaj navedene podatke o napaki."
       ],
-      "here": [
-        "tukaj"
-      ],
       "Hide table of contents": [
         "Skrij kazalo"
       ],
@@ -4612,38 +3636,14 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite 1 od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Uvozi ${ calendarCount } od ${ totalCalendarsCount } koledarja",
-        "Uvozi ${ calendarCount } od ${ totalCalendarsCount } koledarjev",
-        "Uvozi ${ calendarCount } od ${ totalCalendarsCount } koledarjev",
-        "Uvozi ${ calendarCount } od ${ totalCalendarsCount } koledarjev"
-      ],
-      "Import from": [
-        "Uvozi iz"
-      ],
-      "Import in progress": [
-        "Uvoz v teku"
-      ],
-      "Import mailbox": [
-        "Uvoz nabiralnika"
-      ],
       "Important note": [
         "Pomembna opomba"
       ],
       "Importing ODS files is currently in beta": [
         "Uvoz ODS datotek je trenutno v beta različici"
       ],
-      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "Uvažanje podatkov iz ${ fromEmail } v ${ toEmail }."
-      ],
       "In restrictive countries": [
         "V državah z omejitvami"
-      ],
-      "Included": [
-        "Vključeno"
-      ],
-      "Inherited from parent folder": [
-        "Podedovano od nadrejene mape"
       ],
       "Internet connection lost": [
         "Internetna povezava je prekinjena"
@@ -4663,9 +3663,6 @@
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Najbolje je VPN uporabljati ves čas. Tukaj pa so kibernetske grožnje lahko največje:"
       ],
-      "Just confirm your selection and we'll do the rest.": [
-        "Samo potrdite svoj izbor, vse ostalo opravimo mi."
-      ],
       "Just now": [
         "Pravkar"
       ],
@@ -4675,14 +3672,8 @@
       "Key fingerprint": [
         "Ključ prstnega odtisa naprave"
       ],
-      "Label all imported messages as": [
-        "Označi vsa uvožena sporočila kot"
-      ],
       "Labels:": [
         "Oznake:"
-      ],
-      "Large imports can take several days.": [
-        "Uvažanje večjega števila sporočil lahko traja tudi več dni."
       ],
       "Learn more": [
         "Več o tem"
@@ -4735,14 +3726,8 @@
       "Member": [
         "Član"
       ],
-      "Merged": [
-        "Združeno"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
       ],
       "New": [
         "Novo"
@@ -4843,12 +3828,6 @@
       "Please provide a name and an email address for creating a group.": [
         "Za ustvaritev skupine vnesite ime in e-poštni naslov."
       ],
-      "Please select the folders you would like to import:": [
-        "Izberite mape, ki jih želite uvoziti:"
-      ],
-      "Please select the labels you would like to import:": [
-        "Izberite oznake, ki jih želite uvoziti:"
-      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Izberite, kateri e-poštni naslov oziroma naslove želite dodati v ${ groupCount } skupino.",
         "Izberite, kateri e-poštni naslov oziroma naslove želite dodati v ${ groupCount } skupini.",
@@ -4918,9 +3897,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Izberite obliko sporočil, ki jo želite uporabiti kot privzeto ob pošiljanju na ta e-poštni naslov."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Izberite, katere koledarje želite uvoziti. Za vsak uvoženi koledar bo ustvarjen nov koledar, odvisno od števila koledarjev, na voljo v vašem naročniškem paketu."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
       ],
@@ -4989,9 +3965,6 @@
       ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
-      ],
-      "Temporarily unavailable due to high demand. Please try again later.": [
-        "Trenutno ni dosegljivo zaradi visokega povpraševanja. Poskusite znova kasneje."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Avtorstva urejanj v dokumentu ni bilo mogoče preveriti. Želite označiti ta dokument kot preverjen? Lahko izberete Prezri in se odločite kasneje."
@@ -5086,14 +4059,8 @@
       "Update recent documents": [
         "Posodobi nedavne dokumente"
       ],
-      "Upgrade anytime to bring over the rest": [
-        "Nadgradite kadar koli, da prenesete preostalo"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
-      ],
-      "Upgrade or clear space anytime to bring over the rest": [
-        "Nadgradite ali kadar koli počistite prostor, da prenesete preostalo"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Nadgradite za ohranitev vaših ${ planTitle } ugodnosti."
@@ -5116,14 +4083,8 @@
       "Warning": [
         "Opozorilo"
       ],
-      "We'll email you once import is complete.": [
-        "Ko bo uvoz končan, vam pošljemo e-poštno sporočilo."
-      ],
       "We'll get back to you shortly.": [
         "Kmalu vam bomo odgovorili."
-      ],
-      "We'll notify you when the import is done.": [
-        "Obvestili vas bomo, ko se bo uvoz dokončal."
       ],
       "We'll remind you to verify your password again later": [
         "Kasneje vas bomo opomnili, da znova preverite vaše geslo."
@@ -5194,20 +4155,8 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Uporabljate več prostora za shranjevanje, kot je vključenega v paketu ${ downgradedPlanName }. Za spremembo paketa izbrišite ali odstranite podatke."
       ],
-      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "Uvožene koledarje lahko tudi združite z obstoječimi koledarji v ${ BRAND_NAME }u."
-      ],
-      "You can check the progress ${ importProgressLink }.": [
-        "Napredek si lahko ogledate ${ importProgressLink }."
-      ],
-      "You can close the tab or browser in the meantime.": [
-        "Medtem lahko zaprete zavihek ali brskalnik."
-      ],
       "You can now return to the application to continue": [
         "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
       ],
       "You cannot undo this action.": [
         "Tega dejanja ne morete razveljaviti."
@@ -5260,9 +4209,6 @@
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Trenutni dokument bo zamenjan s to različico. Opombe in predlogi bodo odstranjeni iz dokumenta, vendar bodo ostali dostopni v zgodovini komentarjev."
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
-      ],
       "Your email address and password were leaked:": [
         "Vaš e-poštni naslov in geslo sta bila izpostavljena :"
       ],
@@ -5286,9 +4232,6 @@
       ],
       "Your IP address is visible and can be used to track your online activity.": [
         "Vaš IP naslov je viden in se lahko uporablja za sledenje vaši spletni aktivnosti."
-      ],
-      "Your login information will not be saved after the import is completed.": [
-        "Po končanem uvozu vaši podatki za prijavo ne bodo shranjeni."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "Vaš naslednji datum obračuna je ${ renewalTime }. Prekličete lahko kadarkoli."
@@ -5337,20 +4280,6 @@
         "Kliknite za podrobnosti"
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } izbrana mapa",
-        "${ selectedFoldersCount } izbrani mapi",
-        "${ selectedFoldersCount } izbrane mape",
-        "${ selectedFoldersCount } izbranih map"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } izbrana oznaka",
-        "${ selectedFoldersCount } izbrani oznaki",
-        "${ selectedFoldersCount } izbrane oznake",
-        "${ selectedFoldersCount } izbranih oznak"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktivni podpisnik"
@@ -5381,9 +4310,6 @@
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
       ],
-      "(Temporarily unavailable. Please check back later.)": [
-        "(Začasno ni na voljo. Poskusite znova pozneje.)"
-      ],
       "Access": [
         "Dostop"
       ],
@@ -5411,9 +4337,6 @@
       "Anyone on the Internet with the link": [
         "Vsakdo na spletu s povezavo si lahko ogleda"
       ],
-      "App password": [
-        "Geslo aplikacije"
-      ],
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
       ],
@@ -5428,9 +4351,6 @@
       ],
       "Browser version": [
         "Različica brskalnika"
-      ],
-      "Calendar": [
-        "Koledar"
       ],
       "can edit": [
         "lahko ureja"
@@ -5461,9 +4381,6 @@
       ],
       "Confirm password": [
         "Potrdi geslo."
-      ],
-      "Contacts": [
-        "Stiki"
       ],
       "Continue cancelling": [
         "Nadaljuj s preklicem"
@@ -5501,35 +4418,14 @@
       "Don't show this again": [
         "Ne prikazuj več"
       ],
-      "Drive": [
-        "Pogon"
-      ],
       "Editor": [
         "Urejevalnik"
-      ],
-      "Email": [
-        "E-pošta"
       ],
       "Email address": [
         "E-poštni naslov"
       ],
       "Email format": [
         "Oblika e-pošte"
-      ],
-      "Emails (all messages)": [
-        "E-pošto (vsa sporočila)"
-      ],
-      "Emails (last 12 months)": [
-        "E-pošto (zadnjih 12 mesecev)"
-      ],
-      "Emails (last 3 months)": [
-        "E-pošto (zadnje 3 mesece)"
-      ],
-      "Emails (last 6 months)": [
-        "E-pošta (samo zadnjih 6 mesecev)"
-      ],
-      "Emails (last month)": [
-        "E-pošto (zadnji mesec)"
       ],
       "Encrypt emails": [
         "Šifriraj sporočila"
@@ -5543,14 +4439,8 @@
       "File": [
         "Datoteka"
       ],
-      "Folder location": [
-        "Mesto mape"
-      ],
       "Folder name": [
         "Ime mape"
-      ],
-      "From: ${ fromEmail }": [
-        "Od: ${ fromEmail }"
       ],
       "Hide password": [
         "Skrij geslo"
@@ -5561,18 +4451,6 @@
       "Ignore": [
         "Prezri"
       ],
-      "Import all messages": [
-        "Uvozi vsa sporočila"
-      ],
-      "Import interval": [
-        "Interval uvoza"
-      ],
-      "Import to email address": [
-        "Uvozi na e-poštni naslov"
-      ],
-      "Import to:": [
-        "Uvozi v:"
-      ],
       "Include debug information": [
         "Vključi podatke za odpravljanje napak"
       ],
@@ -5582,26 +4460,8 @@
       "Integrated 2FA authenticator": [
         "Vgrajen modul za preverjanje pristnosti 2FA"
       ],
-      "Label messages as": [
-        "Dodaj sporočilom oznako"
-      ],
-      "Last 12 months only": [
-        "Samo zadnjih 12 mesecev"
-      ],
-      "Last 3 months only": [
-        "Samo zadnje 3 mesece"
-      ],
-      "Last 6 months only": [
-        "Samo zadnjih 6 mesecev"
-      ],
-      "Last month only": [
-        "Samo zadnji mesec"
-      ],
       "Log in or sign up ": [
         "Vpišite se ali se registrirate "
-      ],
-      "Mail Server (IMAP)": [
-        "Poštni strežnik (IMAP)"
       ],
       "Main": [
         "Glavno"
@@ -5609,17 +4469,8 @@
       "Main reason for cancelling": [
         "Glavni razlog za preklic naročnine"
       ],
-      "Manage categories": [
-        "Upravljanje kategorij"
-      ],
       "Mark as verified": [
         "Označi kot preverjeno"
-      ],
-      "Move to Archive": [
-        "Premakni v arhiv"
-      ],
-      "Move to Inbox": [
-        "Premakni v Prejeto"
       ],
       "My files": [
         "Moje datoteke"
@@ -5635,9 +4486,6 @@
       ],
       "Not selected": [
         "Ni izbrano"
-      ],
-      "Notification": [
-        "Obvestilo"
       ],
       "Operating system": [
         "Operacijski sistem"
@@ -5662,9 +4510,6 @@
       ],
       "Please share any feedback to help us improve.": [
         "Prosimo, sporočite nam povratne informacije, da se nam pomagate izboljšati."
-      ],
-      "Port": [
-        "Vrata"
       ],
       "Post office box": [
         "Poštni predal"
@@ -5720,9 +4565,6 @@
       "Theme": [
         "Tema"
       ],
-      "To: ${ toEmail }": [
-        "Za: ${ toEmail }"
-      ],
       "Trash": [
         "Smeti"
       ],
@@ -5731,9 +4573,6 @@
       ],
       "Upload picture": [
         "Naloži fotografijo"
-      ],
-      "Username": [
-        "Uporabniško ime"
       ],
       "Verification code": [
         "Koda za preverjanje"
@@ -5780,44 +4619,6 @@
     "Label for contact group name": {
       "Name": [
         "Ime"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Ustvari mapo"
-      ],
-      "Create label": [
-        "Ustvarite oznako"
-      ],
-      "Edit folder": [
-        "Uredi mapo"
-      ],
-      "Edit label": [
-        "Uredi oznako"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } ustvarjeno"
-      ]
-    },
-    "Label; import email": {
-      "From: ${ from }": [
-        "Od: ${ from }"
-      ],
-      "To: ${ to }": [
-        "Za: ${ to }"
-      ]
-    },
-    "Limit of calendars reached": {
-      "To add a new calendar, remove an existing one.": [
-        "Pred dodajanjem novega koledarja odstranite enega izmed obstoječih."
-      ],
-      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Za dodajanje novega koledarja odstranite enega izmed obstoječih ali nadgradite ${ BRAND_NAME } na plačljivo naročnino ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You've reached the maximum number of calendars available in your plan.": [
-        "Dosegli ste največje možno število koledarjev v svojem naročniškem paketu."
       ]
     },
     "Link": {
@@ -5902,32 +4703,6 @@
         "Tudi vključeno:"
       ]
     },
-    "Loading info": {
-      "Almost there": [
-        "Še malo"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Število ustvarjenih koledarjev:  ${ createdCalendarCount } od ${ calendarsToBeCreated }",
-        "Število ustvarjenih koledarjev: ${ createdCalendarCount } od ${ calendarsToBeCreated }",
-        "Število ustvarjenih koledarjev: ${ createdCalendarCount } od ${ calendarsToBeCreated }",
-        "Število ustvarjenih koledarjev: ${ createdCalendarCount } od ${ calendarsToBeCreated }"
-      ],
-      "Connecting to your email provider": [
-        "Povezovanje s ponudnikom e-pošte"
-      ],
-      "Creating new calendars": [
-        "Ustvarjanje novih koledarjev"
-      ],
-      "Gathering your data": [
-        "Zbiranje vaših podatkov"
-      ],
-      "We're gathering your data from your provider": [
-        "Zbiramo vaše podatke od vašega ponudnika."
-      ],
-      "Your import is starting": [
-        "Uvoz se začenja"
-      ]
-    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Izvedi več."
@@ -5960,32 +4735,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Omogoči ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } mape in jim dodaj oznako",
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } map in jim dodaj oznako",
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } map in jim dodaj oznako",
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } map in jim dodaj oznako"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } oznake in jih označi kot",
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } oznak in jih označi kot",
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } oznak in jih označi kot",
-        "Uvozi vsa sporočila iz ${ itemsToImportCount } oznak in jih označi kot"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } mape in jih označi kot",
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } map in jih označi kot",
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } map in jih označi kot",
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } map in jih označi kot"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznake in jih označi kot",
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznak in jih označi kot",
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznak in jih označi kot",
-        "Uvozi vsa sporočila iz ${ selectedItemsToImportCount } od ${ itemsToImportCount } oznak in jih označi kot"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6093,37 +4842,6 @@
       ],
       "Plain text": [
         "Golo besedilo"
-      ]
-    },
-    "Modal title": {
-      "How to import calendars from another service": [
-        "Kako uvoziti koledarje iz druge storitve"
-      ],
-      "How to import calendars from Yahoo": [
-        "Kako uvoziti koledarje iz Yahoo"
-      ],
-      "How to import contacts from another service": [
-        "Kako uvoziti stike iz druge storitve"
-      ],
-      "How to import contacts from Yahoo": [
-        "Kako uvoziti stike iz Yahoo"
-      ],
-      "How to import emails from another service": [
-        "Kako uvoziti e-pošto iz druge storitve"
-      ],
-      "How to import emails from Yahoo": [
-        "Kako uvoziti e-pošto iz pošte Yahoo"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Barva"
-      ],
-      "Folder name": [
-        "Ime mape"
-      ],
-      "Label name": [
-        "Ime oznake"
       ]
     },
     "new_plans": {
@@ -7010,36 +5728,12 @@
       ],
       "Support for ${ n } custom email domain": [
         "Podpora za ${ n } e-poštno domeno po meri",
-        "Podpora za ${ n } e-poštnih domen po meri",
-        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštni domeni po meri",
+        "Podpora za ${ n } e-poštne domene po meri",
         "Podpora za ${ n } e-poštnih domen po meri"
       ]
     },
     "Notification": {
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name } je trajno izbrisan iz smetnjaka"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name } ni bilo mogoče trajno izbrisati iz smetnjaka"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "»${ name }« ni bilo mogoče premakniti"
-      ],
-      "\"${ name }\" failed to be moved to trash": [
-        "»${ name }« ni bilo mogoče premakniti v smetnjak"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name } ni bilo mogoče obnoviti iz smetnjaka"
-      ],
-      "\"${ name }\" moved to trash": [
-        "»${ name }« premaknjen v smetnjak"
-      ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name } obnovljen iz smetnjaka"
-      ],
-      "\"${ newName }\" failed to be renamed": [
-        "»${ newName }« ni bilo mogoče preimenovati"
-      ],
       "\"${ newName }\" renamed successfully": [
         "»${ newName }« je bilo uspešno preimenovano"
       ],
@@ -7048,36 +5742,6 @@
         "${ count } predmeta ni bilo mogoče dešifrirati",
         "${ count } predmetov ni bilo mogoče dešifrirati",
         "${ count } predmetov ni bilo mogoče dešifrirati"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } predmet je trajno izbrisan iz smetnjaka",
-        "${ numberOfItems } predmeta sta trajno izbrisana iz smetnjaka",
-        "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka",
-        "${ numberOfItems } predmeti so trajno izbrisani iz smetnjaka"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } predmeta ni bilo mogoče trajno izbrisati iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče trajno izbrisati iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče trajno izbrisati iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče trajno izbrisati iz smetnjaka"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } predmeta ni bilo mogoče premakniti",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } predmeta ni bilo mogoče premakniti v smetnjak",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti v smetnjak",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti v smetnjak",
-        "${ numberOfItems } predmetov ni bilo mogoče premakniti v smetnjak"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } predmeta ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka",
-        "${ numberOfItems } predmetov ni bilo mogoče obnoviti iz smetnjaka"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } predmet premaknjen v smetnjak",
@@ -7184,9 +5848,6 @@
       "Report submitted successfully": [
         "Poročilo je bilo uspešno poslano"
       ],
-      "Root folder failed to be loaded": [
-        "Korenske mape ni bilo mogoče naložiti"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Posodabljanje vsebine. Uredniki ne morejo spreminjati dovoljenj ali deliti."
       ],
@@ -7199,17 +5860,11 @@
       "Share invitation declined": [
         "Povabilo k skupni rabi je zavrnjeno."
       ],
-      "Subfolder failed to be loaded": [
-        "Podmape ni bilo mogoče naložiti"
-      ],
       "The link to your item was deleted": [
         "Povezava do vašega predmeta je bila izbrisana"
       ],
       "You stopped sharing this item": [
         "Prenehali ste deliti ta predmet."
-      ],
-      "Your ${ BRAND_NAME } address is ready to use": [
-        "Vaš naslov ${ BRAND_NAME } je pripravljen za uporabo"
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavitve so bile uspešno spremenjene"
@@ -7218,21 +5873,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Nekatere slike niso bile naložene zaradi podvojenih imen datotek v trenutnem izboru."
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Potem se boste morali prijaviti v vaš račun Google in dovoliti ${ BRAND_NAME } dostop do vaših podatkov."
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Uvoz bo uspešen, ko izberete vse zahtevane predmete, kot je prikazano v GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "Izberite, do česa lahko ${ BRAND_NAME } dostopa: ogled e-poštnih sporočil in nastavitev, ogled in prenos stikov, ogled in prenos vseh dnevnih redov, do katerih dostopate iz storitve Google Koledar."
       ]
     },
     "Offer": {
@@ -7384,17 +6024,6 @@
       ],
       "Ignore group": [
         "Prezri skupino"
-      ],
-      "No parent folder": [
-        "Ni nadrejene mape"
-      ]
-    },
-    "Option group label": {
-      "Create new calendar": [
-        "Ustvari nov koledar"
-      ],
-      "Merge with calendar": [
-        "Združi s koledarjem"
       ]
     },
     "Page title": {
@@ -7406,11 +6035,6 @@
       ],
       "Trash": [
         "Smeti"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Vi"
       ]
     },
     "pass_signup_2023: Info": {
@@ -7618,9 +6242,6 @@
       ],
       "Search for name or email": [
         "Poiščite ime ali e-poštni naslov"
-      ],
-      "Search parent folder": [
-        "Iskanje nadrejene mape"
       ],
       "Select": [
         "Izberi"
@@ -7855,11 +6476,6 @@
     "Select files": {
       "Upload": [
         "Naloži"
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Ni najdenih rezultatov"
       ]
     },
     "session_recovery:available:action": {
@@ -8544,9 +7160,6 @@
       "Address copied to clipboard": [
         "Naslov kopiran v odložišče"
       ],
-      "Canceling import": [
-        "Preklicevanje uvoza"
-      ],
       "Code sent to ${ methodTo }": [
         "Koda je poslana na ${ methodTo }"
       ],
@@ -8574,12 +7187,6 @@
       "Fingerprint copied to clipboard": [
         "Prstni odtis je kopiran v odložišče"
       ],
-      "Import record deleted": [
-        "Uvoženi zapis je izbrisan"
-      ],
-      "Invitation rejected": [
-        "Povabilo zavrnjeno."
-      ],
       "Phone number copied to clipboard": [
         "Telefonska številka kopirana v odložišče"
       ],
@@ -8591,9 +7198,6 @@
       ],
       "Problem reported": [
         "Težava je sporočena."
-      ],
-      "Undo in progress": [
-        "Razveljavljanje poteka"
       ],
       "Verification successful": [
         "Preverjanje uspešno"
@@ -8766,9 +7370,6 @@
       "Change password": [
         "Spremeni geslo"
       ],
-      "Claim your ${ MAIL_APP_NAME } address": [
-        "Prevzemite svoj naslov ${ MAIL_APP_NAME }"
-      ],
       "Clearing data": [
         "Čiščenje podatkov"
       ],
@@ -8799,12 +7400,6 @@
       "Contacts": [
         "Stiki"
       ],
-      "Continue with free storage": [
-        "Nadaljujte z brezplačno shrambo"
-      ],
-      "Continue with partial import?": [
-        "Nadaljujte z delnim uvozom?"
-      ],
       "Create a new folder": [
         "Ustvarite novo mapo"
       ],
@@ -8816,18 +7411,6 @@
       ],
       "Currency": [
         "Valuta"
-      ],
-      "Custom": [
-        "Po meri"
-      ],
-      "Customize and confirm": [
-        "Prilagodi in potrdi"
-      ],
-      "Customize calendar import": [
-        "Prilagoditev uvoza koledarja"
-      ],
-      "Customize your mail import": [
-        "Prilagodite uvoz pošte."
       ],
       "Data recovery": [
         "Obnovitev podatkov"
@@ -8873,9 +7456,6 @@
       ],
       "Discard changes?": [
         "Zavrzi spremembe?"
-      ],
-      "Disconnected from Gmail": [
-        "Povezava z Gmailom je prekinjena"
       ],
       "Docs": [
         "Dokumenti"
@@ -8925,9 +7505,6 @@
       "End-to-end encrypted": [
         "Celovito šifrirano"
       ],
-      "Enter your password": [
-        "Vnesite svoje geslo"
-      ],
       "Error Syncing": [
         "Napaka pri sinhronizaciji"
       ],
@@ -8939,9 +7516,6 @@
       ],
       "Get more from your VPN": [
         "Izkoristite več od svoje VPN"
-      ],
-      "Get more storage with ${ MAIL_APP_NAME } Plus": [
-        "Pridobite več shrambe s ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Namesti aplikacije"
@@ -8970,20 +7544,8 @@
       "Human verification": [
         "Ali si človek"
       ],
-      "Import as simple event?": [
-        "Uvozite kot preprost dogodek?",
-        "Uvozite kot preprosta dogodka?",
-        "Uvozite kot preproste dogodke?",
-        "Uvozite kot preproste dogodke?"
-      ],
       "Import contacts": [
         "Uvozite stike"
-      ],
-      "Import events": [
-        "Uvoz dogodkov"
-      ],
-      "Import failed": [
-        "Uvoz ni uspel"
       ],
       "Import groups": [
         "Uvozi skupine"
@@ -9096,9 +7658,6 @@
       "Recommended actions": [
         "Priporočena dejanja"
       ],
-      "Reconnect your account": [
-        "Znova povežite svoj račun"
-      ],
       "Recover data": [
         "Obnovi podatke"
       ],
@@ -9156,9 +7715,6 @@
       "Shared with me": [
         "Deljeno z mano"
       ],
-      "Sign in and grant access": [
-        "Prijavite se in dodelite dostop."
-      ],
       "Sign out": [
         "Odjava"
       ],
@@ -9170,12 +7726,6 @@
       ],
       "Something went wrong": [
         "Nekaj je šlo narobe."
-      ],
-      "Start a new import": [
-        "Začni z novim uvozom"
-      ],
-      "Start import process": [
-        "Začni uvažati"
       ],
       "Stop sharing?": [
         "Ustavi skupno rabo?"
@@ -9237,12 +7787,6 @@
       "When is it most important to use a VPN?": [
         "Kdaj je uporaba VPN najbolj pomembna?"
       ],
-      "You are all set": [
-        "Vse je nastavljeno"
-      ],
-      "You have no folders yet": [
-        "Nimate še map"
-      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Vaš ${ planName } brezplačen preizkus se konča ${ textDate }"
       ],
@@ -9282,23 +7826,8 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Samodejno preklapljajte med svojimi prednostnimi temami za dan in noč v skladu z dnevnim in nočnim načinom vašega sistema"
       ],
-      "Customize import to reduce the number of folders": [
-        "Prilagajanje uvoza za zmanjšanje števila map"
-      ],
-      "Customize import to reduce the number of labels": [
-        "Prilagajanje uvoza za zmanjšanje števila oznak"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitalni podpis je eno izmed zagotovil, da ste sporočilo resnično poslali vi"
-      ],
-      "Each imported email will have this label": [
-        "Vsako uvoženo e-poštno sporočilo bo imelo to oznako"
-      ],
-      "Edit folder names": [
-        "Uredi imena map"
-      ],
-      "Edit label names": [
-        "Uredi imena oznak"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Šifriranje e-pošte vsili podpis e-pošte za pomoč pri preverjanju pristnosti poslanih sporočil"
@@ -9308,9 +7837,6 @@
       ],
       "Encrypted data with verified digital signature": [
         "Šifrirani podatki s preverjenim digitalnim podpisom"
-      ],
-      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail nekatera e-poštna sporočila samodejno razvrsti v kategorijo družabnih omrežij ali promocij. Izberete lahko, kam želite uvoziti ta e-poštna sporočila."
       ],
       "Load image": [
         "Naloži sliko"
@@ -9327,17 +7853,11 @@
       "Shared with end-to-end encryption": [
         "V skupni rabi s šifriranjem od konca do konca"
       ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "Sistemske podmape bodo v ${ MAIL_APP_NAME }u prikazane kot ločene mape"
-      ],
       "The image could not be loaded": [
         "Slike ni bilo mogoče naložiti."
       ],
       "The image could not be loaded using proxy": [
         "Slike ni bilo mogoče naložiti z uporabo posredniškega strežnika."
-      ],
-      "The import will start with the most recent messages.": [
-        "Najprej se bodo uvozila najnovejša sporočila."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Če niso dešifrirana, šifrirana gesla ostanejo varna, tudi če so izpostavljena."
@@ -9424,14 +7944,6 @@
       ],
       "Name must not contain slashes (/)": [
         "Ime ne sme vsebovati poševnic (/)"
-      ]
-    },
-    "Video control": {
-      "Click to replay the video": [
-        "Kliknite za ponovno predvajanje videoposnetka"
-      ],
-      "Replay video": [
-        "Znova predvajaj videoposnetek"
       ]
     },
     "VPN B2B cancellation reason": {
@@ -9551,12 +8063,6 @@
       ]
     },
     "Warning": {
-      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } bo združil vse mape z enakim imenom. Če se želite temu izogniti, jih pred uvozom preimenujte."
-      ],
-      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } bo prenesel toliko podatkov, kot bo mogoče, začenši z najnovejšimi sporočili."
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Ali ste prepričani, da želite trajno izbrisati ${ count } stik?",
         "Ali ste prepričani, da želite trajno izbrisati ${ count } stika?",
@@ -9581,9 +8087,6 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."
       ],
-      "Skip verification?": [
-        "Preskoči preverjanje?"
-      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Pri nekaterih stikih, označenih za združitev, so prikazane napake. Preverite te stike"
       ],
@@ -9605,20 +8108,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Tega dejanja ni mogoče razveljaviti. Za nadaljevanje vpišite besedo ${ boldDanger } v polje."
       ],
-      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Uvoz morda presega količino prostora za shranjevanje, ki ga ima vaš račun ${ BRAND_NAME } trenutno na voljo. Razmislite o prilagoditvi uvoza."
-      ],
       "This will replace all the data in the spreadsheet": [
         "To bo zamenjalo vse podatke v preglednici"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Na žalost trenutno nismo na spletu. Izpolnite spodnji obrazec, da opišete svojo težavo, preučili jo bomo in se oglasili, ko bomo spet povezani."
-      ],
-      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Strežnika za pošto ni bilo mogoče preveriti. Če mu zaupate, lahko preverjanje preskočite."
-      ],
-      "You will lose any customization you made so far.": [
-        "Izgubili boste vse prilagoditve, ki ste jih doslej naredili."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Vaše brezplačno preizkusno obdobje se konča dne ${ textDate }. ${ action }"

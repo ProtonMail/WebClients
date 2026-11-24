@@ -462,6 +462,9 @@
       "Display navigation bar": [
         "Prikaži navigacijsku traku"
       ],
+      "Don't show this again": [
+        "Ne prikazuj ovo više"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -1418,6 +1421,9 @@
       "Skip": [
         "Preskoči"
       ],
+      "Skip to main content": [
+        "Preskoči na glavni sadržaj"
+      ],
       "Skip verification": [
         "Preskoči provjeru"
       ],
@@ -1507,11 +1513,6 @@
       ],
       "Trust": [
         "Vjeruj"
-      ],
-      "Trust key": [
-        "Vjeruj ključu",
-        "Vjeruj ključevima",
-        "Vjeruj ključevima"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -1629,6 +1630,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Koristite miš za promjenu veličine prikaza. Ako koristite tipkovnicu, možete koristiti lijevu i desnu tipku sa strelicom za promjenu veličine."
+      ],
+      "Use “${ label }” setting": [
+        "Koristi postavku „${ label }”"
       ],
       "Verify": [
         "Potvrdi"
@@ -2033,9 +2037,19 @@
         "Vaš besplatni probni period završava za ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Zatvori"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium upravitelj lozinkama"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ponuda nije dostupna"
       ]
     },
     "BF2024: Deal details": {
@@ -4875,6 +4889,9 @@
       "Invalid public key file": [
         "Nevažeća datoteka javnog ključa"
       ],
+      "Invalid URL": [
+        "Nevažeći URL"
+      ],
       "Invalid VAT number": [
         "Nevaljani PDV broj"
       ],
@@ -4961,12 +4978,6 @@
       ],
       "Organization key is not decrypted": [
         "Organizacijski ključ nije dešifriran"
-      ],
-      "Organization key must be activated to create invited users": [
-        "Ključ organizacije mora biti aktiviran kako bi se kreirali pozvani korisnici"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Ključ organizacije mora biti aktivan kako bi se kreirali neprivatni korisnici"
       ],
       "Password is required": [
         "Lozinka je obavezna"
@@ -5125,6 +5136,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
       ],
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
+      ],
       "Something went wrong while converting the address": [
         "Došlo je do pogreške prilikom pretvaranja adrese"
       ],
@@ -5186,9 +5200,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalni iznos kredita koji se može dodati je ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimalni iznos donacije je ${ price }"
       ],
       "The sending key is not valid": [
         "Ključ slanja nije važeći"
@@ -10188,9 +10199,6 @@
       "Sort": [
         "Sortiraj"
       ],
-      "Spam": [
-        "Neželjena pošta"
-      ],
       "Starred": [
         "Sa zvjezdicom"
       ],
@@ -10265,9 +10273,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transakcije - Računi, rezervacije i narudžbe"
-      ],
-      "Trash": [
-        "Otpad"
       ],
       "Undisclosed Recipients": [
         "Nedefinirani primatelji"
@@ -10393,6 +10398,14 @@
       ],
       "To": [
         "Za"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Stupac"
+      ],
+      "Row": [
+        "Redak"
       ]
     },
     "Label, credit card": {
@@ -14373,11 +14386,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } s premium značajkama"
       ],
-      "${ dayDiff } day left": [
-        "Preostao je još ${ dayDiff } dan",
-        "Preostala su još ${ dayDiff } dana",
-        "Preostalo je još ${ dayDiff } dana"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
       ],
@@ -14618,20 +14626,11 @@
       "What you give up when you cancel ${ planName }": [
         "Čega se odričete kada poništite ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Kada poništite plan ${ planName }, Vaš će plan biti unazađen na ${ BRAND_NAME } Free plan, koji nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Također ćete izgubiti sve prethodno dodijeljene bonuse za pohranu."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kada otkažete ${ planName }, bit ćete unazađeni na ${ BRAND_NAME } Free, koji nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Vaš će tim iskusiti prekide u radu budući da dodatni korisnici nisu podržani na besplatnoj pretplati."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kada vaša pretplata na ${ planName } završi dana ${ expiryDate }, bit ćete unazađeni na ${ BRAND_NAME } Free plan."
       ],
       "Yearly free storage bonuses": [
         "Godišnji besplatni bonusi za pohranu"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Još uvijek imate ${ expiryDate } na svojoj pretplati za ${ planName }. Dodat ćemo kredite za preostalo vrijeme na Vaš ${ BRAND_NAME } korisnički račun. Pripazite da ne prekoračite ograničenja besplatnog plana prije nego što izvršite poništenje. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Vaš plan ${ planName } ne služi samo za zaštitu vaših poslovnih podataka i komunikacija. On pruža podršku za vaše ciljeve usklađenosti, ističe vaše poslovanje i održava vaš tim povezanim."
@@ -15651,9 +15650,6 @@
       "Enhance security with 2FA": [
         "Poboljšaj sigurnost uz 2FA"
       ],
-      "Enter your password": [
-        "Unesite lozinku"
-      ],
       "Error": [
         "Pogreška"
       ],
@@ -16283,6 +16279,9 @@
       ],
       "Verification failed": [
         "Neuspješna provjera"
+      ],
+      "Verify it’s you": [
+        "Potvrdite da ste to vi"
       ],
       "Verify your password": [
         "Potvrdite svoju lozinku"

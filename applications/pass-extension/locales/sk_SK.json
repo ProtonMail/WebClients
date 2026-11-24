@@ -1072,8 +1072,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "Od ${ PASS_APP_NAME } neprišla odpoveď včas."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } neodpovedá."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } súbor nebolo možné analyzovať. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Overenie biometrického odomknutia už prebieha."
       ],
       "A desktop unlock check is already in progress.": [
         "V súčasnosti prebieha kontrola odblokovania desktopu."
@@ -1990,6 +1999,9 @@
         "${ n } položky",
         "${ n } položiek ",
         "${ n } položiek "
+      ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } chce odomknúť rozšírenie prehliadača"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy dostupný"
@@ -3287,6 +3299,9 @@
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
       ],
+      "unlock the browser extension": [
+        "odomknúť rozšírenie prehliadača"
+      ],
       "Unpinning item...": [
         "Odopínanie položky..."
       ],
@@ -3313,6 +3328,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Pre vytvorenie viacerých trezorov prejdite na platený plán."
+      ],
+      "Use biometrics to unlock": [
+        "Použiť biometrické údaje na odomknutie"
       ],
       "User's access removed": [
         "Prístup používateľa bol odstránený"

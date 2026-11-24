@@ -386,8 +386,8 @@
       "Display previous": [
         "पिछला दिखाएं"
       ],
-      "Don't show this offer again": [
-        "ये ऑफर दोबारा न दिखाएं"
+      "Don't show this again": [
+        "इसे दोबारा न दिखाएं"
       ],
       "Done": [
         "हो गया"
@@ -1082,6 +1082,9 @@
       "Skip": [
         "स्किप करें"
       ],
+      "Skip to main content": [
+        "मुख्य सामग्री पर जाएं"
+      ],
       "Skip verification": [
         "सत्यापन स्किप करें"
       ],
@@ -1483,9 +1486,19 @@
         "आमंत्रित"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "बंद करें"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "प्रीमियम पासवर्ड मैनेजर"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "ऑफर अनुपलब्ध"
       ]
     },
     "BF2024: Deal details": {
@@ -3772,12 +3785,6 @@
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
-      "Organization key must be activated to create invited users": [
-        "संगठन कुंजी को सक्रिय किया जाना चाहिए ताकि निमंत्रित यूज़र बनाए जा सकें"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "संगठन कुंजी को सक्रिय करना आवश्यक है ताकि गैर-प्राइवेट यूज़र बनाए जा सकें"
-      ],
       "Part of the file appears to be corrupted": [
         "फाइल का कुछ हिस्सा दूषित लग रहा है।"
       ],
@@ -3980,9 +3987,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "जोड़ने के लिए क्रेडिट रकम कम-से-कम ${ price } होना चाहिए"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "न्यूनतम दान राशि ${ price } है"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "अपलोड की गई फाइल मूल फाइल से मेल नहीं खाती। कृपया दोबारा कोशिश करें।"
@@ -11431,10 +11435,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } और ${ VPN_SHORT_APP_NAME } प्रीमियम खासियत के साथ"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } दिन बाकी",
-        "${ dayDiff } दिन बाकी"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } डेस्कटॉप ऐप"
       ],
@@ -11657,20 +11657,11 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName } रद्द करने पर क्या-क्या खोना पड़ेगा"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } को रद्द करने पर, आपको ${ BRAND_NAME } Free पर डाउनग्रेड कर दिया जाएगा, जो केवल 1 जीबी तक का ईमेल स्टोरेज और 5 जीबी तक का ड्राइव स्टोरेज प्रदान करता है। पहले से मिले सभी स्टोरेज बोनस भी खत्म हो जाएंगे।"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } को रद्द करने पर आपको ${ BRAND_NAME } Free पर डाउनग्रेड कर दिया जाएगा, जो केवल 1 जीबी तक का ईमेल स्टोरेज और 5 जीबी तक का ड्राइव स्टोरेज प्रदान करता है। आपकी टीम को उनके काम में रुकावटों का सामना करना पड़ेगा क्योंकि मुफ्त योजना पर अतिरिक्त यूज़र्स समर्थित नहीं हैं।"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "जब आपकी ${ planName } सदस्यता ${ expiryDate } को समाप्त हो जाएगी, तो आपको ${ BRAND_NAME } Free योजना पर डाउनग्रेड कर दिया जाएगा।"
       ],
       "Yearly free storage bonuses": [
         "वार्षिक मुफ्त स्टोरेज बोनस"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "आपकी ${ planName } सदस्यता पर अभी भी ${ expiryDate } शेष है। हम शेष समय के क्रेडिट आपके ${ BRAND_NAME } खाते में जोड़ देंगे। सुनिश्चित करें कि आप रद्द करने से पहले Free plan सीमाओं से अधिक न जाएं। ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "आपका ${ planName } प्लान केवल आपके व्यावसायिक डेटा और संचार को सुरक्षित नहीं रखता है। यह आपके अनुपालन उद्देश्यों की सहायता करता है, आपके व्यवसाय को अलग पहचान देता है और आपकी टीम को कनेक्ट रखता है।"
@@ -12395,9 +12386,6 @@
       "Enhance security with 2FA": [
         "2FA के साथ सुरक्षा बढ़ाएं"
       ],
-      "Enter your password": [
-        "आपका पासवर्ड दर्ज करें"
-      ],
       "Error": [
         "गड़बड़ी"
       ],
@@ -12949,6 +12937,9 @@
       ],
       "Verification failed": [
         "सत्यापन असफल"
+      ],
+      "Verify it’s you": [
+        "सत्यापित करें कि यह आप ही हैं"
       ],
       "Verify your password": [
         "अपना पासवर्ड सत्यापित करें"

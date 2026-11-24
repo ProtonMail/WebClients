@@ -1082,8 +1082,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } svarte ikke i tide."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } svarer ikke."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "En biometrisk opplåsingssjekk pågår allerede."
       ],
       "A desktop unlock check is already in progress.": [
         "En opplåsingssjekk for skrivebordet pågår allerede."
@@ -1786,6 +1795,9 @@
         "${ n } element",
         "${ n } elementer"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } ønsker å låse opp nettleserutvidelsen"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } vil alltid være tilgjengelig"
       ],
@@ -2407,8 +2419,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2986,6 +2997,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med det andre passordet ditt"
+      ],
+      "unlock the browser extension": [
+        "lås opp nettleserutvidelsen"
       ],
       "Unpinning item...": [
         "Løser element..."

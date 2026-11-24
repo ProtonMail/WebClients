@@ -54,6 +54,11 @@
         "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
       ]
     },
+    "account_search_index": {
+      "Reminder": [
+        "リマインダー"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "アカウント"
@@ -171,6 +176,9 @@
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "${ MAIL_APP_NAME }の署名に紹介リンクを追加する"
       ],
+      "Add service account": [
+        "サービスアカウントを追加"
+      ],
       "Add sieve filter": [
         "Sieveフィルタを追加"
       ],
@@ -230,6 +238,9 @@
       ],
       "Back": [
         "戻る"
+      ],
+      "Back to menu": [
+        "メニューに戻る"
       ],
       "Back to sign in": [
         "サインインに戻る"
@@ -369,9 +380,6 @@
       "Connected": [
         "接続済み"
       ],
-      "Contact support": [
-        "サポートへ連絡"
-      ],
       "Contact Support Center": [
         "サポートセンターに問い合わせる"
       ],
@@ -398,6 +406,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets } で続行"
+      ],
+      "Continue with Bitcoin": [
+        "ビットコインで続ける"
       ],
       "Continue with Free": [
         "無料で続行"
@@ -612,11 +623,8 @@
       "Don't show again": [
         "次回から表示しない"
       ],
-      "Don't show this offer again": [
-        "このオファーを今後表示しない"
-      ],
-      "Donate": [
-        "寄付"
+      "Don't show this again": [
+        "次回から表示しない"
       ],
       "Done": [
         "完了"
@@ -902,9 +910,6 @@
       ],
       "Get verification code": [
         "認証コードを取得"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "お客様専用の ${ MAIL_APP_NAME } アドレスを取得する"
       ],
       "Go back": [
         "もどる"
@@ -1290,6 +1295,9 @@
       "Remove": [
         "削除"
       ],
+      "Remove ${ name }": [
+        "${ name } を退出させる"
+      ],
       "Remove all other devices": [
         "全ての他のデバイスを削除する"
       ],
@@ -1623,6 +1631,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Skip to main content": [
+        "メインコンテンツへスキップ"
+      ],
       "Skip verification": [
         "検証をスキップする"
       ],
@@ -1710,9 +1721,6 @@
       "Try for free": [
         "無料で試す"
       ],
-      "Try payment again": [
-        "もう一度支払いを試す"
-      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "もう一度保存してみてください。保存に失敗しました: ${ saveError }"
       ],
@@ -1754,6 +1762,9 @@
       ],
       "Upgrade now": [
         "今すぐアップグレード"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "${ planTitle }にアップグレード"
       ],
       "Upgrade to Business": [
         "ビジネスへのアップグレード"
@@ -3045,6 +3056,20 @@
     "BYOE": {
       "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
         "最新のメールから順にインポートされます。すでにインポート済みのメールが再度コピーされることはありません。"
+      ]
+    },
+    "BYOE reminder": {
+      "Applies to all your connected Gmail addresses.": [
+        "接続したすべてのGmailアドレスに適用されます。"
+      ],
+      "Don’t miss private emails while you still check Gmail. Emails from other ${ MAIL_APP_NAME } users stay in ${ MAIL_APP_NAME }, so we’ll remind you in Gmail with the subject and a link.": [
+        "Gmailを使い続けていても、プライベートなメールを見逃すことはありません。他の ${ MAIL_APP_NAME } ユーザーからのメールは ${ MAIL_APP_NAME } に残るため件名とリンク付きで Gmail からお知らせします。"
+      ],
+      "Get a reminder in Gmail when another ${ MAIL_APP_NAME } user emails you. Applies to all connected addresses.": [
+        "他の ${ MAIL_APP_NAME } ユーザーからメールを受信したときにGmail でリマインダーを受け取ります。接続済みのすべてのアドレスに適用されます。"
+      ],
+      "Private email reminders in Gmail": [
+        "Gmailのプライベートなメールのリマインダー"
       ]
     },
     "Calendar access select label": {
@@ -5848,9 +5873,6 @@
       "Delete this condition": [
         "この条件を削除"
       ],
-      "Edit conditions": [
-        "条件を編集"
-      ],
       "Got it": [
         "分かりました"
       ],
@@ -6458,6 +6480,9 @@
       "Time required before automatically granting them access": [
         "自動的にアクセスを許可するまでに必要な時間"
       ],
+      "To access their account, sign in to ${ ACCOUNT_APP_NAME } in a browser.": [
+        "アカウントにアクセスするには、ブラウザーで${ ACCOUNT_APP_NAME }にサインインしてください。"
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "この復旧方法を無効化するには、すべての復旧連絡先を削除してください。"
       ],
@@ -6573,6 +6598,9 @@
       "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
         "有効化に失敗しました。詳細が間違っているか、メールがすでに有効になっている可能性があります。入力内容を確認するか、サインインしてください。"
       ],
+      "Add and verify a custom domain to create service accounts.": [
+        "サービスアカウントを作成するには、カスタムドメインを追加して認証してください。"
+      ],
       "Add at least one action": [
         "少なくとも1つのアクションを追加してください"
       ],
@@ -6645,6 +6673,9 @@
       "Cannot verify who uploaded this file": [
         "このファイルをアップロードしたユーザーを検証できません"
       ],
+      "Changes could not be saved. Please try again.": [
+        "変更を保存できませんでした。再度お試しください。"
+      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -6692,9 +6723,6 @@
       ],
       "Could not read part of this file: ${ message }": [
         "このファイルの一部を読み取ることができませんでした: ${ message }"
-      ],
-      "Could not save preference": [
-        "設定を保存できませんでした"
       ],
       "Could not unlock the parent folder": [
         "親フォルダをアンロックできませんでした"
@@ -6804,6 +6832,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "アクティブなセッションを取得できませんでした。${ refresh } するか、後ほど再度お試しください。"
       ],
+      "Failed to get invitee keys": [
+        "招待者の暗号鍵の取得に失敗しました"
+      ],
       "Failed to get inviter keys": [
         "招待者の暗号鍵の取得に失敗しました"
       ],
@@ -6812,6 +6843,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "サブスクリプションデータの読み込みに失敗しました。後ほどもう一度お試しください。"
+      ],
+      "Failed to load the membership": [
+        "メンバーシップの読み込みに失敗しました"
+      ],
+      "Failed to load the membership data": [
+        "メンバーシップデータの読み込みに失敗しました"
       ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
@@ -6830,6 +6867,9 @@
       ],
       "Failed to verify invitation": [
         "招待の検証に失敗しました"
+      ],
+      "Failed to verify membership": [
+        "メンバーシップの確認に失敗しました"
       ],
       "File download failed due to empty response": [
         "レスポンスが空のため、ファイルのダウンロードに失敗しました"
@@ -6972,6 +7012,9 @@
       "Name already exists": [
         "名前は既に存在します"
       ],
+      "Name already used within your organization": [
+        "あなたの組織内で既に使用されている名前です"
+      ],
       "Name does not match": [
         "名前が一致しません"
       ],
@@ -7008,6 +7051,9 @@
       "No file data was received. Please try again.": [
         "ファイルデータを受け取っていません。再度お試しください。"
       ],
+      "No free address was found for this name. Try another name.": [
+        "この名前で利用可能なアドレスが見つかりませんでした。別の名前を入力してください。"
+      ],
       "No image selected": [
         "画像が選択されていません"
       ],
@@ -7040,6 +7086,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
+      ],
+      "Organization users could not be loaded. Please try again.": [
+        "組織のユーザーを読み込めませんでした。もう一度お試しください。"
       ],
       "Part of the file appears to be corrupted": [
         "ファイルの一部が破損しているようです"
@@ -7191,8 +7240,14 @@
       "Role assignment could not be completed for ${ errors.length } member": [
         "${ errors.length }人のメンバーの役割の割り当てを完了できませんでした"
       ],
+      "Select a user from your organization.": [
+        "組織からユーザーを選択してください。"
+      ],
       "Server not found": [
         "サーバーが見つかりません"
+      ],
+      "Service accounts could not be loaded.": [
+        "サービスアカウントを読み込めませんでした。"
       ],
       "Session expired. Please refresh the page.": [
         "セッションは有効期限切れです。ページを更新してください。"
@@ -7221,6 +7276,9 @@
       "Some file parts failed to upload. Please try again.": [
         "ファイルの一部（チャンク）のアップロードに失敗しました。もう一度お試しください。"
       ],
+      "Some invitations could not be loaded": [
+        "一部の招待を読み込めませんでした"
+      ],
       "Some items could not be loaded": [
         "一部のアイテムを読み込めませんでした"
       ],
@@ -7238,6 +7296,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Some service account keys could not be decrypted.": [
+        "一部のサービスアカウントキーを解読できませんでした。"
       ],
       "Something went wrong": [
         "何か問題が発生しました"
@@ -7302,14 +7363,20 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
       ],
-      "The minimum donation amount is ${ price }": [
-        "最低寄付金額は ${ price } です。"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "ポリシー名は 3 文字以上 40 文字以下で入力してください。"
       ],
       "The sending key is not valid": [
         "送信用の鍵が有効ではありません"
+      ],
+      "The service account address is unavailable. Please try again.": [
+        "サービスアカウントのアドレスは利用できません。もう一度お試しください。"
+      ],
+      "The service account could not be updated. Please try again.": [
+        "サービスアカウントを更新できませんでした。再度お試しください。"
+      ],
+      "The service account keys are unavailable. Please try again.": [
+        "サービスアカウントのキーを取得できませんでした。もう一度お試しください。"
       ],
       "The session has expired. Please sign in again.": [
         "セッションがタイムアウトしました。再度サインインしてください。"
@@ -7362,8 +7429,17 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
+      "This manager has no encryption keys. Ask them to finish setting up their account.": [
+        "この管理者には暗号化キーがありません。アカウントの設定を完了するよう依頼してください。"
+      ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
+      ],
+      "This name does not make a valid address. Try another name.": [
+        "この名前では有効なアドレスを作成できません。別の名前を入力してください。"
+      ],
+      "This service account no longer exists.": [
+        "このサービスアカウントは存在しなくなりました。"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "非プライベート ユーザー アカウントを作成し、そのアカウントにアクセスするには、管理者権限を復元する必要があります。"
@@ -7404,6 +7480,12 @@
       "Unknown payment token status": [
         "支払いトークンの状態が不明です。"
       ],
+      "Unlock your organization key to assign managers.": [
+        "組織のキーのロックを解除して管理者を割り当てます。"
+      ],
+      "Unlock your organization key to set up this service account.": [
+        "組織キーのロックを解除して、このサービスアカウントを設定します。"
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "アップロードされたファイルは有効な秘密鍵ではありません。確認して再度お試しください。"
       ],
@@ -7430,6 +7512,9 @@
       ],
       "Verification keys for ${ signatureType } are not available": [
         "${ signatureType } の検証鍵を利用できません"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "移行されたユーザーを読み込むことができませんでした。ページをリロードし、再度お試しください。"
       ],
       "We couldn't sign you in": [
         "サインインできませんでした"
@@ -7469,6 +7554,18 @@
       ],
       "You do not have access to this shared item": [
         "この共有アイテムへのアクセス権がありません"
+      ],
+      "You do not have permission to create service accounts.": [
+        "サービスアカウントを作成する権限がありません。"
+      ],
+      "You do not have permission to delete service accounts.": [
+        "サービスアカウントを削除する権限がありません。"
+      ],
+      "You do not have permission to make these changes.": [
+        "これらの変更を行う権限がありません。"
+      ],
+      "You do not have permission to update service accounts.": [
+        "サービスアカウントを更新する権限がありません。"
       ],
       "You have reached the maximum number of calendars.": [
         "カレンダーの上限数に達しました。"
@@ -8273,11 +8370,20 @@
       "Something went wrong registering your security key. Please try again.": [
         "セキュリティキーの登録に失敗しました。もう一度お試しください。"
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "セキュリティキーのリクエストがキャンセルされたかタイムアウトしました。もう一度お試しください。"
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
       ],
       "This security key is already registered to your account.": [
         "このセキュリティキーは、すでにアカウントに登録されています。"
+      ],
+      "Your device couldn't complete the security key request. Try again, or register the key from another device.": [
+        "このデバイスではセキュリティキーのリクエストを完了できませんでした。もう一度試すか、別のデバイスからキーを登録してください。"
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "このデバイスではセキュリティキーのリクエストを完了できませんでした。もう一度試すか、別のサインイン方法を使用してください。"
       ]
     },
     "fido2: Info": {
@@ -8556,16 +8662,6 @@
       ],
       "Learn more": [
         "より詳しく"
-      ]
-    },
-    "Form heading": {
-      "Enter your email address": [
-        "メールアドレスを入力してください"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "バウチャーはこちらに送信されます。"
       ]
     },
     "Free trial dekstop": {
@@ -8896,29 +8992,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "お子様の将来のデジタル環境の安全を確保するための、今日の簡単なステップ"
-      ],
       "Activate your reserved email address": [
         "予約したお客様のメールアドレスを有効にする"
-      ],
-      "Address reservation voucher": [
-        "アドレス予約バウチャー"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "${ BRAND_NAME } Foundationへ寄付する"
       ],
       "Enter verification code": [
         "検証コードを入力"
       ],
       "Recover activation voucher": [
         "有効化バウチャーを回復する"
-      ],
-      "Reserve child's email address": [
-        "お子様のメールアドレスを予約する"
-      ],
-      "We emailed you the voucher": [
-        "バウチャーをメールで送信しました"
       ]
     },
     "Headline": {
@@ -9687,6 +9768,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
       ],
+      "A service account is a machine identity that belongs to your organization rather than to a single user. Use it to automate ${ BRAND_NAME } services through the CLI or API. No one can sign in to a service account—it acts only through access tokens.": [
+        "サービスアカウントは個々のユーザーではなく組織に属するマシンIDです。CLIやAPIを使用して、${ BRAND_NAME }のサービスを自動化できます。サービスアカウントにサインインできる人はおらず、アクセストークンを通じてのみ動作します。"
+      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
       ],
@@ -9708,6 +9792,9 @@
       "active": [
         "アクティブ"
       ],
+      "Active service accounts have a valid access token. Service accounts without a token or manager are marked accordingly.": [
+        "アクティブなサービスアカウントには有効なアクセストークンがあります。トークンまたは管理者が設定されていないサービスアカウントには、その状態が表示されます。"
+      ],
       "Activity Monitor": [
         "アクティビティモニター"
       ],
@@ -9728,6 +9815,9 @@
       ],
       "add a recovery method": [
         "回復手段の追加"
+      ],
+      "Add additional users from your organization to manage this service account.": [
+        "組織内の他のユーザーを追加して、このサービスアカウントを管理できるようにします。"
       ],
       "Add an email address in case we need to contact you": [
         "連絡が必要な場合に備えて、メールアドレスを追加してください"
@@ -9767,6 +9857,9 @@
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "ゲートウェイ サーバーの追加: ${ serverNumber } / ${ total }"
+      ],
+      "Adding service account": [
+        "サービスアカウントを追加しています"
       ],
       "Address copied to clipboard": [
         "アドレスをコピーしました"
@@ -10305,6 +10398,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
       ],
+      "Deleting ${ name } will revoke all its access tokens and remove its managers.": [
+        "${ name } を削除すると、すべてのアクセストークンが取り消され管理者も削除されます。"
+      ],
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "設定に応じて、すぐにアクセス権が提供されるか、指定された**待機期間**の後に提供されます"
       ],
@@ -10316,6 +10412,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "${ boldValue }に無効"
+      ],
+      "Disabling ${ name } will stop it from accessing ${ BRAND_NAME } services.": [
+        "${ name } を無効にすると、${ BRAND_NAME } サービスへのアクセスが停止されます。"
       ],
       "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
         "認証アプリの2FAを無効化すると、お客様のアカウントの安全性が低下します。必要に応じてのみ続行してください。"
@@ -10451,6 +10550,9 @@
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "「${ nameDeleted }」のラベルの付いたメールは削除されず、元のフォルダに残ります。"
+      ],
+      "Enable ${ name } to allow it to access ${ BRAND_NAME } services again.": [
+        "${ name } を有効にすると、再度 ${ BRAND_NAME } のサービスにアクセスできるようになります。"
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Plus サーバーと機能へのアクセスを維持するには、自動更新を有効にしてください。"
@@ -10743,9 +10845,6 @@
       "Groups": [
         "グループ"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "他のご家族がお子様に安全なオンラインのスタートを切れるよう支援しましょう。このマイルストーンを共有し、広めてください。"
-      ],
       "here": [
         "こちら"
       ],
@@ -10757,9 +10856,6 @@
       ],
       "High Priority": [
         "優先度：高"
-      ],
-      "How it works": [
-        "仕組み"
       ],
       "How to perform a signed-in reset": [
         "サインインした状態でのリセット実行手順"
@@ -10988,9 +11084,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "必要になるまで、バウチャーを ${ DRIVE_APP_NAME } などに安全に保管してください。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "これらのガイドとヒントを活用して、情報をより安全かつプライベートに保ちましょう。"
@@ -11231,6 +11324,12 @@
       ],
       "No results found": [
         "該当する項目がありません"
+      ],
+      "No service accounts match your search.": [
+        "検索条件に一致するサービスアカウントはありません。"
+      ],
+      "No service accounts yet. Add one to automate ${ BRAND_NAME } services.": [
+        "サービスアカウントはまだありません。追加すると、${ BRAND_NAME }のサービスを自動化できます。"
       ],
       "No single sign-on": [
         "シングルサインオンなし"
@@ -11514,9 +11613,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "${ categoryLabel }の通知を受け取る"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "メールで予約バウチャーを受け取ります。お客様またはお子様は、今後15年以内にこれを使用してアドレスを有効化できます。${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "最近使用したサーバー:"
       ],
@@ -11667,6 +11763,9 @@
       "Set password": [
         "パスワードを設定"
       ],
+      "Set up a custom domain to use service accounts": [
+        "サービスアカウントを使用するには、カスタムドメインを設定してください"
+      ],
       "Set up your organization": [
         "組織を設定"
       ],
@@ -11747,9 +11846,6 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "上記リストに表示されないサーバーがある場合があります。サーバー名 (例: AT#62) で検索して見つけてください。"
-      ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "問題が発生しました。もう一度お試しいただくか、カスタマーサポートにお問い合わせください。"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML SSO認証を許可するドメインを指定します。"
@@ -11919,9 +12015,6 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "有効期限が切れたため、${ BRAND_NAME }アカウントを設定しなかったことを報告するリンクは使用できません。この問題を解決するために、サポートチームにご連絡ください。"
       ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "寄付の上限額は ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] } です。"
-      ],
       "The most recent data update, excluding breaches.": [
         "侵害を除く最新のデータ更新。"
       ],
@@ -11936,6 +12029,9 @@
       ],
       "The securest way to browse, stream, and be online.": [
         "ブラウジング、ストリーム、オンラインをするための最も安全な方法。"
+      ],
+      "The service account was created. Retry saving to finish setting up its keys and managers.": [
+        "サービスアカウントを作成しました。キーと管理者の設定を完了するには、保存を再試行してください。"
       ],
       "The unpublished changes you made will be lost.": [
         "未公開の変更内容は失われます。"
@@ -12156,9 +12252,6 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 製品の最新の開発状況を把握するために、さまざまなメールや ${ blogLink } を随時購読していただけます。"
       ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "乱用や詐欺を防ぐため、最低 ${ minimumDonation } の寄付をお願いしております。これにより、世界中でデジタルプライバシーを保護する ${ protonFoundationLink } の活動をサポートし、次世代を守ることに繋がります。"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"
       ],
@@ -12233,6 +12326,9 @@
       ],
       "Unlock streaming with VPN Plus.": [
         "VPN Plusでストリーミングのロックを解除。"
+      ],
+      "Unlock your organization key to create service accounts and assign managers.": [
+        "組織キーのロックを解除してサービスアカウントの作成と管理者の割り当てを行います。"
       ],
       "Unsaved changes": [
         "未保存の変更"
@@ -12381,9 +12477,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "回復用電話番号宛に、パスワードリセット用の検証コードを送信したり、不審なアクティビティが検出された際に連絡したりするために使用します。"
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "取引を完了できませんでした。もう一度お試しください。"
-      ],
       "We couldn’t process your payment.": [
         "お支払いを処理できませんでした。"
       ],
@@ -12491,9 +12584,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "ゲートウェイからサーバーを削除した時、10 日間の非アクティベーション期間に入ります。このサーバーは新しいゲートウェイに追加することができますが、国を変更することはできません。"
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "アドレスを有効にする準備ができたら、QRコードをスキャンするか、バウチャーのリンクを使用してください。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "サブスクリプション更新時には、支払い方法よりも使用可能なクレジットが優先して使用されます。"
@@ -12888,6 +12978,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "次回の請求日は ${ renewalTime }です。いつでもキャンセルできます。すぐにプランの変更が必要な場合は、サポートにお問い合わせください。"
       ],
+      "Your organization has disabled personal access token creation. Enable it before adding service accounts.": [
+        "組織で個人用アクセストークンの作成が無効になっています。サービスアカウントを追加する前に有効にしてください。"
+      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "あなたの組織ではシングル サインオン (SSO) を使用しています。 SSO プロバイダーを続行するには、「サインイン」を押します。"
       ],
@@ -12935,9 +13028,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "トライアルは${ timeRemaining }に終了します。"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "お客様が予約された ${ BRAND_NAME } メールアドレスのバウチャー: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13540,6 +13630,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
+      "${ count } manager": [
+        "${ count } 名の管理者"
+      ],
       "${ group.UserCount } user": [
         "${ group.UserCount }人のユーザー"
       ],
@@ -13626,6 +13719,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "スクリプト、自動化、開発ワークフローに最適なターミナルから、${ PASS_APP_NAME } に安全にアクセスできます。"
+      ],
+      "Access tokens": [
+        "アクセストークン"
       ],
       "Account holder": [
         "アカウント所有者"
@@ -13909,9 +14005,6 @@
       "Choose a name for the generated certificate file": [
         "生成する設定ファイルの名前を選択"
       ],
-      "Choose an address to reserve for your child": [
-        "お子様のために予約するアドレスを選択してください"
-      ],
       "Choose your billing": [
         "請求サイクルを選択"
       ],
@@ -14125,12 +14218,6 @@
       "Don't show this again": [
         "次回から表示しない"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "${ BRAND_NAME } 財団に ${ minimumDonation } 以上を寄付する"
-      ],
-      "Donation amount": [
-        "寄付額"
-      ],
       "Drive": [
         "ドライブ"
       ],
@@ -14223,9 +14310,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
-      ],
-      "Enter your email address": [
-        "メールアドレスを入力してください"
       ],
       "Enter your password": [
         "パスワードを入力してください"
@@ -14467,6 +14551,9 @@
       "Manage categories": [
         "カテゴリーを管理"
       ],
+      "Managers": [
+        "管理者"
+      ],
       "Mark as": [
         "としてマークする"
       ],
@@ -14584,6 +14671,9 @@
       "No label found": [
         "ラベルが見つかりませんでした"
       ],
+      "No manager": [
+        "管理者がいません"
+      ],
       "Non-promotional content and news": [
         "プロモーション以外のコンテンツおよびニュース"
       ],
@@ -14649,6 +14739,9 @@
       ],
       "Organization password": [
         "組織のパスワード"
+      ],
+      "Organization user": [
+        "組織のユーザー"
       ],
       "Other": [
         "その他"
@@ -14854,6 +14947,9 @@
       "Server name": [
         "サーバー名"
       ],
+      "Service name": [
+        "サービス名"
+      ],
       "Set password": [
         "パスワードを設定"
       ],
@@ -15015,9 +15111,6 @@
       ],
       "Tips and insights": [
         "ヒントとインサイト"
-      ],
-      "To activate, scan the QR-code or go to:": [
-        "有効化するには、QRコードをスキャンするか、以下にアクセスしてください："
       ],
       "To help us improve, please explain why you are leaving.": [
         "今後の改善のために、なぜあなたが去ろうとしているのかを教えてください。"
@@ -15181,17 +15274,11 @@
       "You don't have permissions": [
         "権限がありません"
       ],
-      "Your activation code:": [
-        "お客様の有効化コード："
-      ],
       "Your calendar URL": [
         "カレンダーのURL"
       ],
       "Your credit balance": [
         "クレジット残高"
-      ],
-      "Your email address": [
-        "お客様のメールアドレス"
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
@@ -15207,9 +15294,6 @@
       ],
       "Your recovery phone number": [
         "回復用電話番号"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "お客様が予約された ${ BRAND_NAME } メールアドレスのバウチャー："
       ],
       "Zero-access architecture": [
         "ゼロアクセスアーキテクチャ"
@@ -15377,9 +15461,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } が更新されました"
-      ],
-      "Preference saved": [
-        "設定が保存されました"
       ]
     },
     "Label; import email": {
@@ -15402,9 +15483,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } Foundationの"
-      ],
       "Activity log": [
         "アクティビティログ"
       ],
@@ -15649,20 +15727,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "ユーザー名とアドレス"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "メール"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -16181,9 +16245,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウント"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "将来のお子様のデジタル安全を確保するために、今日からできるシンプルな一歩です。お子様用にプライベートな ${ BRAND_NAME } メールアドレスを予約しましょう。"
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "お子様のために予約されているプライベートな ${ BRAND_NAME } メールアドレスを有効化し、アカウントをセットアップします。"
       ],
@@ -16219,9 +16280,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "お子様の ${ BRAND_NAME } アカウントを回復する | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "お子様用のプライベートメールを予約する | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "お客様の${ BRAND_NAME }アカウントのパスワードをリセット"
@@ -17559,17 +17617,14 @@
       "1 email per month": [
         "月に 1 通のメール"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "月に 1 通のメール。最新のプライバシーニュースと${ BRAND_NAME }の世界での最新情報をお届けします。"
-      ],
       "1 email per quarter": [
         "四半期に 1 度のメール"
       ],
       "1-2 emails per month": [
         "月に 1-2 通のメール"
       ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "年間1〜4通のメール。復旧方法を最新の状態に維持するためのリマインダー。"
+      "1-4 emails per year": [
+        "年に 1-4通のメール"
       ],
       "2-4 emails per year": [
         "年に 2-4 通のメール"
@@ -17595,8 +17650,11 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME } 製品を使用している最初の1ヶ月間に"
       ],
-      "Email communications": [
-        "メールコミュニケーション"
+      "Email subscriptions": [
+        "メール購読"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "最新のプライバシーニュースと${ BRAND_NAME }の世界での最新情報をお届けします。"
       ],
       "In-app notifications": [
         "アプリ内通知"
@@ -17609,6 +17667,9 @@
       ],
       "Recovery checklist": [
         "復旧チェックリスト"
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "復旧方法を最新の状態に保つためのリマインダー。"
       ]
     },
     "ngc_access_banner: action": {
@@ -19300,9 +19361,6 @@
       "Address": [
         "アドレス"
       ],
-      "Amount": [
-        "金額"
-      ],
       "Anderson": [
         "アンダーソン"
       ],
@@ -19329,6 +19387,9 @@
       ],
       "domain.com": [
         "domain.com"
+      ],
+      "e.g. ci-bot": [
+        "例：ci-bot"
       ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "例:https://example.com/app/protonvpn/XXXXX/sso/metadata"
@@ -19416,6 +19477,9 @@
       ],
       "Search for a company": [
         "会社を検索"
+      ],
+      "Search for a service account": [
+        "サービスアカウントを検索"
       ],
       "Search for a user or address": [
         "ユーザーまたはアドレスを検索"
@@ -20899,6 +20963,23 @@
       ],
       "to be deleted": [
         "削除するために"
+      ]
+    },
+    "Service account status": {
+      "Active": [
+        "有効"
+      ],
+      "Disabled": [
+        "無効"
+      ],
+      "No manager": [
+        "管理者がいません"
+      ],
+      "No tokens": [
+        "トークンがありません"
+      ],
+      "Unknown": [
+        "不明"
       ]
     },
     "Service provider": {
@@ -22648,9 +22729,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
       ],
-      "${ dayDiff } day left": [
-        "残り ${ dayDiff } 日"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
@@ -22906,12 +22984,6 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName }をキャンセルすると失うもの"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。また、以前に付与されたストレージ ボーナスも失われます。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME } Freeにダウングレードされます。"
       ],
@@ -22920,9 +22992,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "${ boldedDate }までは現在のプランのすべての機能を引き続き利用できます。"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName } サブスクリプションには ${ expiryDate } がまだ残っています。残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。キャンセルする前に、無料プランの制限を超えていないことを確認してください。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } プランは、ビジネスデータと通信を安全に保つだけではありません。コンプライアンス目標をサポートし、ビジネスを目立たせ、チームの連携を保ちます。"
@@ -23262,6 +23331,18 @@
       "Server copied to clipboard": [
         "サーバーがクリップボードにコピーされました"
       ],
+      "Service account deleted": [
+        "サービスアカウントは削除されました"
+      ],
+      "Service account disabled": [
+        "サービスアカウントを無効にしました"
+      ],
+      "Service account enabled": [
+        "サービスアカウントを有効にしました"
+      ],
+      "Service account saved": [
+        "サービスアカウントを保存しました"
+      ],
       "Session revoked": [
         "セッションを失効しました"
       ],
@@ -23457,6 +23538,15 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "操作"
+      ],
+      "Managers": [
+        "管理者"
+      ],
+      "Service name": [
+        "サービス名"
+      ],
       "Size": [
         "サイズ"
       ],
@@ -23481,9 +23571,6 @@
       ],
       "CSV field": [
         "CSV フィールド"
-      ],
-      "Edit": [
-        "編集"
       ],
       "Email address": [
         "メールアドレス"
@@ -23787,6 +23874,9 @@
       ],
       "Add pm.me subdomain": [
         "pm.me サブドメインを追加"
+      ],
+      "Add service account": [
+        "サービスアカウントを追加"
       ],
       "Add Sieve filter": [
         "Sieve フィルターを追加"
@@ -24208,6 +24298,9 @@
       "Delete organization logo?": [
         "組織のロゴを削除しますか?"
       ],
+      "Delete service account?": [
+        "サービスアカウントを削除しますか？"
+      ],
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "サーバーを削除します (${ days } 日間はまだ復元できます)"
       ],
@@ -24246,6 +24339,9 @@
       ],
       "Disable device data backup?": [
         "デバイスのデータバックアップを無効化しますか？"
+      ],
+      "Disable service account?": [
+        "サービスアカウントを無効にしますか？"
       ],
       "Disable two-factor authentication": [
         "2要素認証を無効化"
@@ -24346,6 +24442,9 @@
       "Edit servers": [
         "サーバー編集"
       ],
+      "Edit service account": [
+        "サービスアカウントを編集"
+      ],
       "Edit Sieve filter": [
         "Sieve フィルターを編集"
       ],
@@ -24394,6 +24493,9 @@
       "Enable advanced account protection": [
         "高度なアカウント保護を有効にする"
       ],
+      "Enable service account?": [
+        "サービスアカウントを有効にしますか？"
+      ],
       "Encryption and keys": [
         "暗号化と鍵"
       ],
@@ -24411,9 +24513,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ BRAND_NAME } アカウントの詳細を入力して ${ app } ベータ プログラムに参加してください"
-      ],
-      "Enter your password": [
-        "パスワードを入力してください"
       ],
       "Error": [
         "エラー"
@@ -24898,12 +24997,6 @@
       "Priority support:": [
         "優先サポート:"
       ],
-      "Problem processing your payment": [
-        "支払いの処理に問題があります。"
-      ],
-      "Problem processing your request": [
-        "リクエストの処理に問題があります"
-      ],
       "Processing...": [
         "処理中..."
       ],
@@ -25078,6 +25171,9 @@
       "Service": [
         "サービス"
       ],
+      "Service accounts": [
+        "サービスアカウント"
+      ],
       "Session management": [
         "セッション管理"
       ],
@@ -25191,6 +25287,9 @@
       ],
       "Spam, block, and allow lists": [
         "迷惑メール・ブロックアドレス・許可アドレスリスト"
+      ],
+      "Special offer": [
+        "特別オファー"
       ],
       "Special Offer": [
         "特別オファー"
@@ -25926,6 +26025,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
+      ],
+      "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
+        "組織のサービスアカウント数が上限の${ maxServiceAccounts }件に達しました。"
       ]
     },
     "tooltip": {
@@ -26467,6 +26569,50 @@
         "ビデオを再生"
       ]
     },
+    "Visionary upsell": {
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet },${ lumo },Scribeが含まれます"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } ストレージ"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "12ヶ月で ${ yearlyTotal } を請求"
+      ],
+      "Early access to new features": [
+        "新機能への早期アクセス"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "${ unlimitedName } のすべての機能， さらに："
+      ],
+      "Exclusive to subscribers": [
+        "購読者限定"
+      ],
+      "Feature": [
+        "機能"
+      ],
+      "Included": [
+        "含まれる"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "専用の特別サーバーをあなたに"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "追加料金なしで${ BRAND_NAME }を使用"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "追加料金なしで新しいサービスを利用でき、次の早期アクセスを入手します。"
+      ],
+      "Not included": [
+        "含まれません"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME } 、クラウドストレージ、そしてパスワードマネージャーが1つのバンドルに含まれています。"
+      ],
+      "Your plan": [
+        "あなたのプラン"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "もっと気に入ったサービスを見つけた"
@@ -26594,6 +26740,14 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core サーバーへのアクセス、高速 P2P/BitTorrent ダウンロード、Tor over VPN など。"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "${ cycle } ヶ月"
+      ],
+      "Premium calendar features": [
+        "プレミアムカレンダー機能"
       ]
     },
     "VPNClient": {

@@ -8,11 +8,17 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "About ${ name }": [
+        "Over ${ name }"
+      ],
       "Add": [
         "Voeg toe"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Add ${ name }": [
+        "${ name } toevoegen"
       ],
       "Add account": [
         "Account toevoegen"
@@ -22,6 +28,9 @@
       ],
       "Add credit / debit card": [
         "Krediet / debietkaart toevoegen"
+      ],
+      "Always allow this tool in Settings": [
+        "Laat deze tool altijd toe via Instellingen"
       ],
       "Apply": [
         "Toepassen"
@@ -132,6 +141,12 @@
       ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
+      "Don't ask again for this tool": [
+        "Vraag niet opnieuw voor deze tool"
       ],
       "Done": [
         "Klaar"
@@ -321,9 +336,6 @@
       ],
       "Save": [
         "Opslaan"
-      ],
-      "Saving...": [
-        "Opslaan..."
       ],
       "Scroll to bottom": [
         "Naar beneden scrollen"
@@ -581,6 +593,11 @@
         "Abonnement behouden"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Sluiten"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
@@ -589,6 +606,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Aanbieding niet beschikbaar"
       ]
     },
     "BF2024: Deal details": {
@@ -1256,6 +1278,10 @@
     "collider_2025: Compaction": {
       "${ removed } freed": [
         "${ removed } vrijgemaakt"
+      ],
+      "${ stats.summarizedMessageCount } earlier message summarized for new replies": [
+        "${ stats.summarizedMessageCount } eerder bericht samengevat voor nieuwe antwoorden",
+        "${ stats.summarizedMessageCount } eerdere berichten samengevat voor nieuwe antwoorden"
       ]
     },
     "collider_2025: Context": {
@@ -1505,6 +1531,9 @@
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
         "Dit project is tot in de puntjes gevuld. Verwijder een gesprek om ruimte te maken voor een nieuw gesprek en laat ${ LUMO_SHORT_APP_NAME } draaien."
       ],
+      "Threshold must be a whole amount between ${ formattedMinThreshold } and ${ formattedMaxThreshold }": [
+        "De drempelwaarde moet een geheel bedrag zijn tussen ${ formattedMinThreshold } en ${ formattedMaxThreshold }"
+      ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus voor onbeperkte gesprekken, uitgebreide geschiedenis, toegang tot geavanceerde AI-modellen en meer."
       ],
@@ -1683,6 +1712,10 @@
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "\"${ fileName }\" bevat meerdere werkbladen. Selecteer de werkbladen die u in de conversatie wilt opnemen."
       ],
+      "${ characterCount } character processed": [
+        "${ characterCount } teken verwerkt",
+        "${ characterCount } tekens verwerkt"
+      ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } opslagruimte is nog niet ingesteld"
       ],
@@ -1698,8 +1731,16 @@
         "${ expiringToday } chat verloopt vandaag",
         "${ expiringToday } chats verlopen vandaag"
       ],
+      "${ fileCount } file": [
+        "${ fileCount } bestand",
+        "${ fileCount } bestanden"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
+      ],
+      "${ onDemandCount } large file is read on demand: ${ LUMO_SHORT_APP_NAME } looks up the parts it needs instead of loading it all.": [
+        "${ onDemandCount } groot bestand wordt op aanvraag gelezen: ${ LUMO_SHORT_APP_NAME } leest alleen de nodige delen in plaats van alles in te laden.",
+        "${ onDemandCount } grote bestand worden op aanvraag gelezen: ${ LUMO_SHORT_APP_NAME } leest alleen de nodige delen in plaats van alles in te laden."
       ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } chat verloopt binnen 24 uur",
@@ -1924,6 +1965,9 @@
       "No files or creations yet": [
         "Nog geen bestanden of creaties"
       ],
+      "No longer in the organization": [
+        "Niet meer in de organisatie"
+      ],
       "No new memories were found in your recent chats.": [
         "Er zijn geen nieuwe herinneringen gevonden in uw recente chats."
       ],
@@ -1935,6 +1979,9 @@
       ],
       "No usage yet": [
         "Nog niet gebruikt"
+      ],
+      "Not priced yet": [
+        "Nog niet geprijsd"
       ],
       "Over capacity": [
         "Capaciteit overschreden"
@@ -1986,6 +2033,9 @@
       ],
       "Reserved to keep chatting": [
         "Gereserveerd om te blijven chatten"
+      ],
+      "Review API spending by member for ${ periodLabel }.": [
+        "Bekijk het API-gebruik per lid voor ${ periodLabel }."
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Sla al uw gesprekken op in een gespreksgeschiedenis die alleen u kunt zien. Meld u aan of maak een account aan."
@@ -2163,6 +2213,9 @@
       ]
     },
     "collider_2025: Label": {
+      "Admin": [
+        "Beheerder"
+      ],
       "AI model": [
         "AI-model"
       ],
@@ -2211,11 +2264,17 @@
       "File upload": [
         "Bestand opladen"
       ],
+      "Former members": [
+        "Voormalige leden"
+      ],
       "From chats": [
         "Van chats"
       ],
       "Loop": [
         "Lus"
+      ],
+      "Member": [
+        "Lid"
       ],
       "Merge": [
         "Samenvoegen"
@@ -2274,8 +2333,14 @@
       "Tool calls": [
         "Tool-aanroepen"
       ],
+      "Total tokens": [
+        "Totaal tokens"
+      ],
       "TypeScript": [
         "TypeScript"
+      ],
+      "Unknown member": [
+        "Onbekend lid"
       ],
       "Unsafe or problematic": [
         "Onveilig of problematisch"
@@ -3495,6 +3560,10 @@
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "“${ file.name }” wordt nog geïndexeerd. De inhoud wordt geladen zodra u het verstuurt."
       ],
+      "${ count } skill · by ${ author }": [
+        "${ count } skill · door ${ author }",
+        "${ count } skills · door ${ author }"
+      ],
       "${ lineCount } line": [
         "${ lineCount } lijn",
         "${ lineCount } lijnen"
@@ -3522,6 +3591,10 @@
       ],
       "${ report.sensitiveCategories.length } sensitive categories": [
         "${ report.sensitiveCategories.length } gevoelige categorieën"
+      ],
+      "${ skillCount } skill": [
+        "${ skillCount } skill",
+        "${ skillCount } skills"
       ],
       "${ wordCount } word": [
         "${ wordCount } woord",
@@ -3713,6 +3786,10 @@
       "Initializing Drive...": [
         "Drive initialiseren..."
       ],
+      "Large content (${ lineCount } line) converted to attachment": [
+        "Grote inhoud (${ lineCount } regel) omgezet naar een bijlage",
+        "Grote inhoud (${ lineCount } regels) omgezet naar een bijlage"
+      ],
       "Learn more about how project knowledge works": [
         "Meer informatie over hoe projectkennis werkt"
       ],
@@ -3724,6 +3801,18 @@
       ],
       "Look for Export data, then click Export": [
         "Zoek naar Gegevens exporteren en klik vervolgens op Exporteren"
+      ],
+      "Next run in ${ count } day": [
+        "Volgende uitvoering in ${ count } dag",
+        "Volgende uitvoering in ${ count } dagen"
+      ],
+      "Next run in ${ count } hour": [
+        "Volgende uitvoering in ${ count } uur",
+        "Volgende uitvoering in ${ count } uur"
+      ],
+      "Next run in ${ count } minute": [
+        "Volgende uitvoering in ${ count } minuut",
+        "Volgende uitvoering in ${ count } minuten"
       ],
       "No content generated": [
         "Er is geen inhoud gegenereerd"
@@ -3803,6 +3892,18 @@
       ],
       "Start a new chat to see it here.": [
         "Start een nieuwe chat om deze hier te bekijken."
+      ],
+      "Started ${ count } day ago": [
+        "${ count } dag geleden gestart",
+        "${ count } dagen geleden gestart"
+      ],
+      "Started ${ count } hour ago": [
+        "${ count } uur geleden gestart",
+        "${ count } uur geleden gestart"
+      ],
+      "Started ${ count } minute ago": [
+        "${ count } minuut geleden gestart",
+        "${ count } minuten geleden gestart"
       ],
       "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
         "Hoe hoger de lat, hoe meer van dat gebied Big Tech kon reconstrueren. Lager is beter."
@@ -3961,8 +4062,24 @@
       ]
     },
     "collider_2025:Label": {
+      "${ file.tokenCount } token": [
+        "${ file.tokenCount } token",
+        "${ file.tokenCount } tokens"
+      ],
+      "${ fileCount } file": [
+        "${ fileCount } bestand",
+        "${ fileCount } bestanden"
+      ],
+      "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
+        "${ progress.indexed }/${ progress.total } bestand (${ percentage }%)",
+        "${ progress.indexed }/${ progress.total } bestanden (${ percentage }%)"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } geselecteerd"
+      ],
+      "${ subSkillCount } skill": [
+        "${ subSkillCount } skill",
+        "${ subSkillCount } skills"
       ],
       "16:9": [
         "16:9"
@@ -4296,7 +4413,29 @@
         "Wat moet ik weten over noodfondsen en waar kan ik ze het beste bewaren?"
       ]
     },
+    "collider_2025:Question selection": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } geselecteerd",
+        "${ selectedCount } geselecteerd"
+      ]
+    },
     "collider_2025:Reasoning": {
+      "${ failedCount } failed": [
+        "${ failedCount } mislukt",
+        "${ failedCount } mislukt"
+      ],
+      "${ resultCount } result": [
+        "${ resultCount } resultaat",
+        "${ resultCount } resultaten"
+      ],
+      "${ urlCount } URL": [
+        "${ urlCount } URL",
+        "${ urlCount } URLs"
+      ],
+      "and ${ more } more": [
+        "en ${ more } meer",
+        "en ${ more } meer"
+      ],
       "Checked ${ BRAND_NAME } knowledge": [
         "Kennis over ${ BRAND_NAME } geraadpleegd"
       ],
@@ -5928,9 +6067,6 @@
       ]
     },
     "Error": {
-      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME } is bijgewerkt. Vernieuw de pagina."
-      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
@@ -6154,12 +6290,6 @@
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisatiesleutel moet geactiveerd zijn om uitgenodigde gebruikers aan te maken."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
-      ],
       "Part of the file appears to be corrupted": [
         "Een deel van het bestand lijkt beschadigd te zijn"
       ],
@@ -6270,9 +6400,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Het minimale donatiebedrag is ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
@@ -6588,6 +6715,9 @@
       "0 MB": [
         "0 MB"
       ],
+      "1 vault per user": [
+        "1 kluis per gebruiker"
+      ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
       ],
@@ -6817,6 +6947,9 @@
       "Member": [
         "Lid"
       ],
+      "messages and documents from connected apps": [
+        "berichten en documenten van verbonden apps"
+      ],
       "Messages to all your email addresses will go to your inbox.": [
         "Berichten naar al uw e-mailadressen gaan naar uw inbox."
       ],
@@ -6953,6 +7086,9 @@
       "This may indicate that projects were deleted but their indexed files weren't cleaned up, or that spaces failed to load from IndexedDB.": [
         "Dit kan erop wijzen dat projecten zijn verwijderd, maar dat hun geïndexeerde bestanden niet zijn opgeschoond, of dat ruimtes niet uit IndexedDB konden worden geladen."
       ],
+      "This request contains invisible characters, shown below as codes like [U+200B]. They can hide data being sent out. Only approve if you expected them.": [
+        "Dit verzoek bevat onzichtbare tekens, hieronder weergegeven als codes zoals [U+200B]. Ze kunnen de verzonden gegevens verbergen. Keur het alleen goed als je het verwachtte."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
@@ -6961,6 +7097,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "tool descriptions from a connector you added": [
+        "beschrijvingen hulpmiddel van een connector die u hebt toegevoegd"
       ],
       "Total conversations:": [
         "Totaal aantal gesprekken:"
@@ -7141,6 +7280,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
       ],
       "${ n } month": [
         "${ n } maand",
@@ -7323,9 +7465,6 @@
       "Other amount": [
         "Ander bedrag"
       ],
-      "Password": [
-        "Wachtwoord"
-      ],
       "Payer": [
         "Betaler"
       ],
@@ -7498,11 +7637,6 @@
       ],
       "What’s this?": [
         "Wat is dit?"
-      ]
-    },
-    "Loading": {
-      "Loading ${ LUMO_APP_NAME }": [
-        "${ LUMO_APP_NAME } laden"
       ]
     },
     "lumo: Debug View": {
@@ -7768,6 +7902,34 @@
       ],
       "Test Renderer": [
         "Test Renderer"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5 × Plus gebruik"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API toegang, met ${ credit } per maand krediet per gebruiker"
+      ],
+      "Everything in Free, and:": [
+        "Alles in het Free Plan, en:"
+      ],
+      "Everything in Plus, and:": [
+        "Alles in het Plus Plan, en:"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "Limited messages and chat history": [
+        "Gelimiteerde berichten en gespreksgechiedenis"
+      ],
+      "More usage": [
+        "Meer gebruik"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Voor coderen en bouwen"
       ]
     },
     "mail_signup_2024: Info": {
@@ -9288,6 +9450,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organisatie Beheerder"
+      ],
       "Security Admin": [
         "Beveiligingsbeheerder"
       ],
@@ -9718,6 +9883,9 @@
       "Payment method updated": [
         "Betalingsmethode bijgewerkt"
       ],
+      "Preference saved": [
+        "Voorkeur opgeslagen"
+      ],
       "Problem reported": [
         "Probleem gerapporteerd"
       ],
@@ -9767,6 +9935,18 @@
       ]
     },
     "Time": {
+      "${ days } day ago": [
+        "${ days } dag geleden",
+        "${ days } dagen geleden"
+      ],
+      "${ hours } hour ago": [
+        "${ hours } uur geleden",
+        "${ hours } uren geleden"
+      ],
+      "${ minutes } minute ago": [
+        "${ minutes } minuut geleden",
+        "${ minutes } minuten geleden"
+      ],
       "Just now": [
         "Zojuist"
       ],
@@ -9898,9 +10078,6 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
       "Error": [
         "Fout"
       ],
@@ -10012,6 +10189,9 @@
       "Verification failed": [
         "Verificatie mislukt"
       ],
+      "Verify it’s you": [
+        "Uw identiteit verifiëren"
+      ],
       "Verifying your card...": [
         "Uw kaart wordt geverifieerd..."
       ],
@@ -10109,6 +10289,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Deze gebruiker krijgt beheerdersrechten bij de volgende aanmelding."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ],
@@ -10127,6 +10310,20 @@
       "Try a shorter username (${ n } character max)": [
         "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
+    "Visionary upsell": {
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Een hoger capaciteitsniveau van ${ VPN_APP_NAME } servers: veel minder mensen delen deze en gebruiken ${ BRAND_NAME }-eigendom IP-adressen. Quick Connect kiest ze automatisch waar beschikbaar."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nieuwe ${ BRAND_NAME } diensten zonder extra kosten"
+      ],
+      "Unlimited": [
+        "Ongelimiteerd"
+      ],
+      "Up to ${ limit }": [
+        "Tot ${ limit }"
       ]
     },
     "VPN B2B cancellation reason": {

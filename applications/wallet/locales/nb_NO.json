@@ -361,6 +361,9 @@
       "Sign out of all accounts": [
         "Logg av alle kontoer"
       ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
+      ],
       "Submit": [
         "Send inn"
       ],
@@ -621,9 +624,19 @@
         "Laster saldo"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Lukk"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium passordbehandler"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbudet er utilgjengelig"
       ]
     },
     "BF2024: Deal details": {
@@ -2406,12 +2419,6 @@
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
-      ],
       "Passwords do not match": [
         "Passordene samsvarer ikke"
       ],
@@ -2483,9 +2490,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimumbeløpet for donasjon er ${ price }"
       ],
       "The passphrases do not match": [
         "Passordfrasene samsvarer ikke"
@@ -3445,9 +3449,6 @@
       ],
       "Optional": [
         "Valgfritt"
-      ],
-      "Password": [
-        "Passord"
       ],
       "Payer": [
         "Betaler"
@@ -5513,6 +5514,9 @@
       "Payment method updated": [
         "Betalingsmåte oppdatert"
       ],
+      "Preference saved": [
+        "Preferanse lagret"
+      ],
       "Problem reported": [
         "Problem rapportert"
       ],
@@ -5679,9 +5683,6 @@
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
-      "Enter your password": [
-        "Skriv inn passordet"
-      ],
       "Error": [
         "Feil"
       ],
@@ -5783,6 +5784,9 @@
       ],
       "Verification failed": [
         "Bekreftelse mislyktes"
+      ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
       ],
       "Verifying your card...": [
         "Verifiserer kortet ditt..."

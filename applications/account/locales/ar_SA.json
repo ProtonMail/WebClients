@@ -54,6 +54,11 @@
         "عُثر على معلوماتك في تسريب بيانات واحد على الأقل. شغّل ${ DARK_WEB_MONITORING_NAME } لعرض التفاصيل واتخاذ الإجراءات اللازمة. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Reminder": [
+        "تذكير"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "حسابات"
@@ -363,9 +368,6 @@
       "Contact sales": [
         "اتصل بالمبيعات"
       ],
-      "Contact support": [
-        "التواصل مع الدعم الفني"
-      ],
       "Contact Support Center": [
         "الاتصال بمركز الدعم"
       ],
@@ -609,8 +611,8 @@
       "Don't show again": [
         "لا تظهره مرة اخرى"
       ],
-      "Donate": [
-        "تبرع"
+      "Don't show this again": [
+        "لا تظهر هذا مرة أخرى"
       ],
       "Done": [
         "تم"
@@ -896,9 +898,6 @@
       ],
       "Get verification code": [
         "احصل على رمز التحقق"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "احصل على عنوان ${ MAIL_APP_NAME } الخاص بك"
       ],
       "Go back": [
         "رجوع"
@@ -1617,6 +1616,9 @@
       "Skip": [
         "تخطي"
       ],
+      "Skip to main content": [
+        "التخطي إلى المحتوى الرئيسي"
+      ],
       "Skip verification": [
         "تخطي التحقق"
       ],
@@ -1700,9 +1702,6 @@
       ],
       "Try for free": [
         "جرب مجانًا"
-      ],
-      "Try payment again": [
-        "حاول الدفع مرة أخرى"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "حاول الحفظ مرة أخرى. فشل الحفظ بسبب: ${ saveError }"
@@ -3115,6 +3114,20 @@
         "سيتم استيراد أحدث رسائل البريد الإلكتروني أولاً، ولن يتم نسخ الرسائل التي سبق استيرادها مرة أخرى."
       ]
     },
+    "BYOE reminder": {
+      "Applies to all your connected Gmail addresses.": [
+        "ينطبق على جميع عناوين Gmail المرتبطة بك."
+      ],
+      "Don’t miss private emails while you still check Gmail. Emails from other ${ MAIL_APP_NAME } users stay in ${ MAIL_APP_NAME }, so we’ll remind you in Gmail with the subject and a link.": [
+        "لا تفوّت رسائل البريد الإلكتروني الخاصة أثناء استخدامك لـ Gmail. تظل الرسائل الواردة من مستخدمين آخرين لـ ${ MAIL_APP_NAME } داخل ${ MAIL_APP_NAME }، لذا سنقوم بتنبيهك عبر Gmail من خلال إرسال رسالة تتضمن عنوان البريد الإلكتروني ورابطاً للوصول إليه."
+      ],
+      "Get a reminder in Gmail when another ${ MAIL_APP_NAME } user emails you. Applies to all connected addresses.": [
+        "تلقَّ تذكيراً في Gmail عندما يرسل إليك مستخدم آخر لـ ${ MAIL_APP_NAME } رسالة عبر البريد الإلكتروني. ينطبق هذا على جميع العناوين المرتبطة."
+      ],
+      "Private email reminders in Gmail": [
+        "تذكيرات البريد الإلكتروني الخاصة في Gmail"
+      ]
+    },
     "Calendar access select label": {
       "Add people or groups": [
         "إضافة أشخاص أو مجموعات"
@@ -3417,6 +3430,14 @@
       ],
       "Total": [
         "الإجمالي"
+      ],
+      "Total for ${ cycle } months": [
+        "الإجمالي لمدة ${ cycle } أشهر",
+        "الإجمالي لمدة ${ cycle } شهر",
+        "الإجمالي لمدة ${ cycle } شهرين",
+        "الإجمالي لمدة ${ cycle } أشهر",
+        "الإجمالي لمدة ${ cycle } شهرًا",
+        "الإجمالي لمدة ${ cycle } شهر"
       ]
     },
     "Collapsible tooltip": {
@@ -5932,9 +5953,6 @@
       "Delete this condition": [
         "حذف هذا الشرط"
       ],
-      "Edit conditions": [
-        "تعديل الشروط"
-      ],
       "Got it": [
         "مفهوم"
       ],
@@ -6767,9 +6785,6 @@
       "Could not open updated vault": [
         "تعذّر فتح الخزنة المحدثة"
       ],
-      "Could not save preference": [
-        "تعذر حفظ التفضيل"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "تعذر تحميل الفواتير. يُرجى المحاولة مرة أخرى لاحقًا."
       ],
@@ -7270,9 +7285,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "الحد الأدنى للرصيد الذي يمكن إضافته هو ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "الحد الأدنى لمبلغ التبرع هو ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "يجب أن يتراوح اسم السياسة بين 3 و 40 حرفًا."
@@ -8231,6 +8243,15 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "تم إلغاء طلب مفتاح الأمان أو انتهت مهلته. يرجى المحاولة مجددًا."
+      ],
+      "Your device couldn't complete the security key request. Try again, or register the key from another device.": [
+        "تعذّر على جهازك إكمال طلب مفتاح الأمان. حاول مجددًا، أو قم بتسجيل المفتاح من جهاز آخر."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "تعذّر على جهازك إكمال طلب مفتاح الأمان. حاول مجددًا، أو استخدم طريقة أخرى لتسجيل الدخول."
       ]
     },
     "fido2: Info": {
@@ -8538,16 +8559,6 @@
       ],
       "Learn more": [
         "معرفة المزيد"
-      ]
-    },
-    "Form heading": {
-      "Enter your email address": [
-        "أدخل عنوان بريدك الإلكتروني"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "سيتم إرسال القسيمة إلى هنا."
       ]
     },
     "Free trial dekstop": {
@@ -8883,29 +8894,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "خطوة بسيطة اليوم لضمان السلامة الرقمية لطفلك غدًا"
-      ],
       "Activate your reserved email address": [
         "تنشيط عنوان بريدك الإلكتروني المحجوز"
-      ],
-      "Address reservation voucher": [
-        "قسيمة حجز العنوان"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "تبرع لمؤسسة ${ BRAND_NAME }"
       ],
       "Enter verification code": [
         "أدخل رمز التحقق"
       ],
       "Recover activation voucher": [
         "استرداد قسيمة التنشيط"
-      ],
-      "Reserve child's email address": [
-        "حجز عنوان البريد الإلكتروني للطفل"
-      ],
-      "We emailed you the voucher": [
-        "أرسلنا لك القسيمة عبر البريد الإلكتروني"
       ]
     },
     "Headline": {
@@ -10981,9 +10977,6 @@
       "Groups": [
         "المجموعات"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "ساعد العائلات الأخرى على منح أطفالهم بداية آمنة على الإنترنت. شارك هذا الإنجاز وانشر الكلمة."
-      ],
       "here": [
         "هنا"
       ],
@@ -10995,9 +10988,6 @@
       ],
       "High Priority": [
         "أولوية عالية"
-      ],
-      "How it works": [
-        "كيفية العمل"
       ],
       "How to perform a signed-in reset": [
         "كيفية إجراء إعادة تعيين تسجيل الدخول"
@@ -11235,9 +11225,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "ما عليك سوى تأكيد اختيارك وسنتولى الباقي."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "احتفظ بالقسيمة في مكان آمن لحين الحاجة إليها، على سبيل المثال في ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "حافظ على معلوماتك أكثر أمانًا وخصوصية مع هذه الإرشادات والنصائح."
@@ -11778,9 +11765,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "تلقي إشعارات لـ ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "احصل على قسيمة الحجز عبر البريد الإلكتروني. يمكنك أو يمكن للطفل استخدامها لتنشيط العنوان خلال الـ 15 عامًا القادمة. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "الخوادم المستخدمة مؤخرًا:"
       ],
@@ -12017,9 +12001,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "قد لا تظهر بعض الخوادم في القائمة أعلاه. يمكن البحث باستخدام اسم الخادم (على سبيل المثال، AT#62) للعثور عليها."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "حدث خطأ ما. يرجى المحاولة مرة أخرى أو الاتصال بدعم العملاء."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "حدد النطاق المسموح به للمصادقة باستخدام SAML SSO."
       ],
@@ -12212,9 +12193,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "انتهت صلاحية الرابط الإبلاغ عن عدم إنشاء حساب ${ BRAND_NAME } يُرجى التواصل مع فريق الدعم لدينا لحل هذه المشكلة"
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "الحد الأقصى لمبلغ التبرع هو ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "أحدث تحديث للبيانات، باستثناء الاختراقات."
@@ -12450,9 +12428,6 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "لمواكبة آخر التطورات في منتجات ${ BRAND_NAME }، يمكنك الاشتراك في رسائل البريد الإلكتروني المختلفة لدينا و ${ blogLink } من وقت لآخر."
       ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "لمنع إساءة الاستخدام أو الاحتيال، نطلب تبرعًا بحد أدنى قدره ${ minimumDonation }. يدعم ذلك عمل ${ protonFoundationLink } في الدفاع عن الخصوصية الرقمية عالميًا ويساعد على حماية الجيل القادم."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "للمتابعة، حدد طريقة استرداد الحساب حتى نتمكن من التحقق من الطلب."
       ],
@@ -12681,9 +12656,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "يمكن استخدام هاتف الاسترداد لإرسال رمز تحقق لإعادة تعيين كلمة المرور، وللاتصال بك في حال ملاحظة نشاط مريب."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "تعذر إكمال المعاملة. يرجى المحاولة مرة أخرى."
-      ],
       "We couldn’t process your payment.": [
         "تعذر علينا معالجة دفعتك."
       ],
@@ -12788,9 +12760,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "عند إزالة خادم من بوابة، فإنه يدخل فترة إلغاء تنشيط مدتها 10 أيام. يمكن إضافة هذا الخادم إلى بوابة جديدة، ولكن لا يمكن تغيير بلده."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "عند الاستعداد لتنشيط العنوان، امسح رمز QR أو استخدم الرابط الموجود في القسيمة."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "عند تجديد اشتراكك ، سيتم استخدام أي رصيد متاح أولاً قبل أن نفرض على طرق الدفع الخاصة بك أعلاه."
@@ -13274,9 +13243,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "ستنتهي تجربتك في غضون ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "قسيمتك لعنوان بريد ${ BRAND_NAME } الإلكتروني المحجوز: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13992,6 +13958,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "يمكنك الوصول إلى ${ PASS_APP_NAME } بأمان من خلال الطرفية، وهو مثالي لعمليات البرمجة النصية والأتمتة وتدفقات عمل التطوير."
       ],
+      "Access tokens": [
+        "رموز الوصول"
+      ],
       "Account holder": [
         "صاحب الحساب"
       ],
@@ -14274,9 +14243,6 @@
       "Choose a name for the generated certificate file": [
         "اختر اسما لملف الشهادة الذي تم إنشاؤه"
       ],
-      "Choose an address to reserve for your child": [
-        "اختر عنوانًا لحجزه لطفلك"
-      ],
       "Choose your billing": [
         "تحديد طريقة الفوترة"
       ],
@@ -14486,12 +14452,6 @@
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "تبرع بقيمة ${ minimumDonation } أو أكثر لمؤسسة ${ BRAND_NAME }"
-      ],
-      "Donation amount": [
-        "مبلغ التبرع"
-      ],
       "Drive": [
         "سحابة التخزين"
       ],
@@ -14584,9 +14544,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "أدخل كلمة المرور للمفتاح مع بصمة الإصبع: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "أدخل عنوان بريدك الإلكتروني"
       ],
       "Enter your password": [
         "أدخِل كلمة مرورك"
@@ -15388,9 +15345,6 @@
       "Tips and insights": [
         "نصائح ورؤى"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "للتنشيط، امسح رمز QR أو انتقل إلى:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "لمساعدتنا على التحسين، يُرجى توضيح سبب مغادرتك."
       ],
@@ -15556,17 +15510,11 @@
       "You don't have permissions": [
         "لا تتوفر الأذونات اللازمة"
       ],
-      "Your activation code:": [
-        "رمز التنشيط:"
-      ],
       "Your calendar URL": [
         "عنوان URL الخاص بتقويمك"
       ],
       "Your credit balance": [
         "رصيد الائتمان"
-      ],
-      "Your email address": [
-        "عنوان بريدك الإلكتروني"
       ],
       "Your password (admin)": [
         "كلمة المرور الخاصة بك (المشرف)"
@@ -15582,9 +15530,6 @@
       ],
       "Your recovery phone number": [
         "رقم هاتف الاسترداد"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "قسيمتك لعنوان بريد ${ BRAND_NAME } الإلكتروني المحجوز:"
       ],
       "Zero-access architecture": [
         "بنية تحتية خالية من الوصول"
@@ -15757,9 +15702,6 @@
       ],
       "${ labelName } updated": [
         "تم تحديث ${ labelName }"
-      ],
-      "Preference saved": [
-        "تم حفظ التفضيل"
       ]
     },
     "Label; import email": {
@@ -15782,9 +15724,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "مؤسسة ${ BRAND_NAME }"
-      ],
       "Activity log": [
         "سجل النشاط"
       ],
@@ -16026,20 +15965,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "المستخدمون والعناوين"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "البريد الإلكتروني"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "لينكد إن"
-      ],
-      "Twitter (X)": [
-        "تويتر (X)"
       ]
     },
     "Link label (optional)": {
@@ -16624,9 +16549,6 @@
       "${ BRAND_NAME } Account": [
         "حساب ${ BRAND_NAME }"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "خطوة بسيطة اليوم لضمان السلامة الرقمية للطفل غدًا. حجز عنوان بريد إلكتروني خاص بـ ${ BRAND_NAME } للطفل."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "تنشيط عنوان البريد الإلكتروني الخاص بـ ${ BRAND_NAME } والمخصص للطفل وإعداد الحساب الخاص به."
       ],
@@ -16662,9 +16584,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "استرداد حساب ${ BRAND_NAME } للطفل | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "حجز البريد الإلكتروني الخاص للطفل | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "إعادة تعيين كلمة مرور حساب ${ BRAND_NAME }"
@@ -18148,17 +18067,11 @@
       "1 email per month": [
         "1 بريد إلكتروني في الشهر"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "بريد إلكتروني واحد شهريًا. احصل على آخر أخبار الخصوصية وما يجري في عالم ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 بريد إلكتروني في 3 أشهر"
       ],
       "1-2 emails per month": [
         "1-2 بريد الإلكتروني في الشهر"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 رسائل بريد إلكتروني سنويا. تذكيرات للحفاظ على تحديث طرق الاسترداد الخاصة بك."
       ],
       "2-4 emails per year": [
         "2-4 رسائل بريد إلكتروني سنويًا"
@@ -18183,9 +18096,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "خلال شهرك الأول من استخدام منتج ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "اتصالات البريد الإلكتروني"
       ],
       "In-app notifications": [
         "إشعارات داخل التطبيق"
@@ -19903,9 +19813,6 @@
       ],
       "Address": [
         "العنوان"
-      ],
-      "Amount": [
-        "المبلغ"
       ],
       "Anderson": [
         "Anderson"
@@ -23627,14 +23534,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } مع ميزات مميزة"
       ],
-      "${ dayDiff } days left": [
-        "تبقى ${ dayDiff } يوم",
-        "تبقى ${ dayDiff } يوم",
-        "تبقى ${ dayDiff } يومان",
-        "تبقى ${ dayDiff } أيام",
-        "تبقى ${ dayDiff } يومًا",
-        "تبقى ${ dayDiff } يوم"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "تطبيق سطح المكتب ${ MAIL_APP_NAME }"
       ],
@@ -23920,12 +23819,6 @@
       "What you give up when you cancel ${ planName }": [
         "ستفقد الميزات التالية عند إلغاء خطة ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "عند إلغاء ${ planName }، سيُخفّض اشتراكك إلى ${ BRAND_NAME } Free، الذي يوفر فقط ما يصل إلى 1 جيجابايت من سعة تخزين البريد وما يصل إلى 5 جيجابايت من سعة تخزين Drive. ستفقد أيضًا أي مكافآت تخزين مُنحت سابقًا."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "عند إلغاء ${ planName }، سيُخفّض اشتراكك إلى ${ BRAND_NAME } Free، الذي يوفر فقط ما يصل إلى 1 جيجابايت من سعة تخزين البريد وما يصل إلى 5 جيجابايت من سعة تخزين Drive. سيواجه فريقك انقطاعات في عملهم نظرًا لعدم دعم المستخدمين الإضافيين في الخطة المجانية."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "عندما ينتهي اشتراكك في ${ planName } في ${ expiryDate }، سيتم تخفيض خطتك إلى خطة ${ BRAND_NAME } المجانية."
       ],
@@ -23934,9 +23827,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "يمكنك الاستمرار في التمتع بجميع مزايا خطتك الحالية حتى ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "لا يزال لديك ${ expiryDate } في اشتراك ${ planName }. سنضيف الرصيد المتبقي إلى حسابك في ${ BRAND_NAME }. تأكد من عدم تجاوز حدود خطة Free plan قبل الإلغاء. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "خطتك ${ planName } لا تحافظ فقط على أمان بيانات عملك واتصالاته، بل تدعم أهداف الامتثال لديك، وتجعل عملك متميزًا، وتحافظ على تواصل فريقك."
@@ -24469,6 +24359,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "الإجراءات"
+      ],
       "Size": [
         "الحجم"
       ],
@@ -24493,9 +24386,6 @@
       ],
       "CSV field": [
         "حقل CSV"
-      ],
-      "Edit": [
-        "تعديل"
       ],
       "Email address": [
         "عنوان البريد الإلكتروني"
@@ -25502,9 +25392,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } للانضمام إلى برنامج ${ app } التجريبي"
       ],
-      "Enter your password": [
-        "أدخل كلمة مرورك"
-      ],
       "Error": [
         "خلل"
       ],
@@ -26012,12 +25899,6 @@
       ],
       "Priority support:": [
         "أولوية في الدعم:"
-      ],
-      "Problem processing your payment": [
-        "مشكلة في معالجة الدفع"
-      ],
-      "Problem processing your request": [
-        "مشكلة في معالجة طلبك"
       ],
       "Processing...": [
         "قيد المعالجة..."

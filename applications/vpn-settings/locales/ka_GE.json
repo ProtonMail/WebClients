@@ -404,6 +404,9 @@
       "Don't show again": [
         "აღარ მაჩვენო"
       ],
+      "Don't show this again": [
+        "ეს აღარ მაჩვენო"
+      ],
       "Done": [
         "მზადაა"
       ],
@@ -1096,6 +1099,9 @@
       ],
       "Skip": [
         "გამოტოვება"
+      ],
+      "Skip to main content": [
+        "მთავარ შინაარსზე გადასვლა"
       ],
       "Skip verification": [
         "შემოწმების გამოტოვება"
@@ -4960,9 +4966,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "შემოწირულობის მინიმალური თანხაა ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "პოლიტიკის სახელი 3-40 სიმბოლოს უნდა შეიცავდეს."
       ],
@@ -5360,9 +5363,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } ჯგუფები"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "მომხმარებლის დომენის მქონე ანგარიშები ოჯახის ტარიფს ვერ მიიღებენ."
       ],
@@ -5416,10 +5416,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
       ],
-      "View the invitation": [
-        "მოსაწვევის ნახვა",
-        "მოსაწვევების ნახვა"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "მოსაწვევი, შეუერთდეთ ${ invite.OrganizationName }-ს"
       ],
@@ -5428,9 +5424,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "მიმდინარე სატარიფო გეგმით მოსაწვევს ვერ დაეთანხმებით."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "გაქვთ მოსაწვევი, ${ bannerOrganization }-ს შეუერთდეთ. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "6 თვეში ${ n } დადასტურებული მოსაწვევის ზღვარს მიაღწიეთ.",
@@ -9321,6 +9314,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "მიიღეთ წვდომა ${ PASS_APP_NAME } -ზე ტერმინალიდან უსაფრთხოდ, რაც იდეალურია სკრიპტინგისთვის, ავტომატიზაციისა და განვითარების სამუშაო პროცესებისთვის."
       ],
+      "Access tokens": [
+        "წვდომის ტოკენები"
+      ],
       "Account holder": [
         "ანგარიშის მფლობელი"
       ],
@@ -12091,17 +12087,11 @@
       "1 email per month": [
         "1 ელფოსტა თვეში"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 ელფოსტა თვეში. მიიღეთ უკანასკნელი კონფიდენციალობის სიახლეები და რა ხდება ${ BRAND_NAME }-ის სამყაროში."
-      ],
       "1 email per quarter": [
         "1 ელფოსტა კვარტალში"
       ],
       "1-2 emails per month": [
         "1-2 ელფოსტა თვეში"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "წელიწადში 1-4 ელფოსტა. შეხსენებები თქვენი აღდგენის მეთოდების განახლებულ მდგომარეობაში შესანარჩუნებლად."
       ],
       "2-4 emails per year": [
         "2-4 ელფოსტა წელიწადში"
@@ -12126,9 +12116,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME }-ის პროდუქტის გამოყენების პირველი თვის განმავლობაში"
-      ],
-      "Email communications": [
-        "ელფოსტის კომუნიკაციები"
       ],
       "In-app notifications": [
         "აპის შეტყობინებები"
@@ -12643,7 +12630,18 @@
         "${ appName }-ის გამოყენების დაწყება"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "რეკომენდებულია"
+      ],
+      "Select your plan": [
+        "აირჩიეთ თქვენი გეგმა"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "სამუდამოდ უფასო"
+      ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
       ],
@@ -14825,6 +14823,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "სულ ${ value } დაშიფრული საცავი"
+      ],
       "1 month": [
         "1 თვე"
       ],
@@ -14833,6 +14834,9 @@
       ],
       "24 months": [
         "24 თვე"
+      ],
+      "Free": [
+        "Free"
       ]
     },
     "Signup label": {
@@ -15631,10 +15635,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
       ],
-      "${ dayDiff } day left": [
-        "დარჩენილია ${ dayDiff } დღე",
-        "დარჩენილია ${ dayDiff } დღე"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -15896,12 +15896,6 @@
       "What you give up when you cancel ${ planName }": [
         "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 1 გბ ელფოსტის საცავს და 5 გბ-მდე Drive-ის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "როცა თქვენი ${ planName }-ის გამოწერგას გააუქმებთ, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. თქვენი გუნდი დაკარგავს უნარს, იმუშაოს, რადგან უფასო სატარიფო გეგმაში დამატებითი მომხმარებლების ქონა მხარდაჭერილი არაა."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "როცა თქვენი ${ planName } გამოწერა დასრულდება ${ expiryDate }-ზე, თქენი სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა."
       ],
@@ -15910,9 +15904,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "თქვენი სატარიფო გეგმისგან სიამოვნების მიღება შეგიძლიათ თარიღამდე ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "თქვენს ${ planName } გამოწერაზე ${ expiryDate } დაგრჩათ. ჩვენ დაგიმატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშზე. დარწმუნდით, რომ არსცდებით უფასო სატარიფო გეგმის შეზღუდვებს, სანამ გააუქმებთ. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "თქვენი ${ planName } არა მხოლოდ იცავს თქვენი ბიზნესის მონაცემებს და ურთიერთობას. მას თქვენს სტანადრტებთან შესაბამისობის მხარდაჭერა აქვს, შეუძლია, გამოკვეთოს თქვენი ბიზნესი სხვებთან შედარებით და ინარჩუნებს გუნდებს ერთად, დაკავშირებულს."
@@ -16333,6 +16324,14 @@
         "ინდივიდუალური პირებისთვის"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "ქმედებები"
+      ],
+      "Status": [
+        "სტატუსი"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "ქმედება"
@@ -16345,9 +16344,6 @@
       ],
       "CSV field": [
         "CSV ველი"
-      ],
-      "Edit": [
-        "ჩასწორება"
       ],
       "Email address": [
         "ელფოსტის მისამართი"
@@ -17051,9 +17047,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
-      ],
-      "Enter your password": [
-        "შეიყვანეთ თქვენი პაროლი"
       ],
       "Error": [
         "შეცდომა"

@@ -72,6 +72,9 @@
       "Bulk user import": [
         "Masseimportering af brugere"
       ],
+      "Business referral link": [
+        "Henvisningslink til virksomheder"
+      ],
       "Cancel plan": [
         "Annuller abonnement"
       ],
@@ -385,6 +388,9 @@
       "Back": [
         "Tilbage"
       ],
+      "Back to menu": [
+        "Back to menu"
+      ],
       "Back to sign in": [
         "Tilbage til login"
       ],
@@ -628,6 +634,12 @@
       "Delete policy": [
         "Slet politik"
       ],
+      "Delete security key ${ keyName }": [
+        "Slet sikkerhedsnøglen ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Slet serveren ${ serverLocation }"
+      ],
       "Delete user": [
         "Slet bruger"
       ],
@@ -673,7 +685,13 @@
       "Dismiss": [
         "Afvis"
       ],
+      "Dismiss notification": [
+        "Luk notifikation"
+      ],
       "Don't show again": [
+        "Vis ikke igen"
+      ],
+      "Don't show this again": [
         "Vis ikke igen"
       ],
       "Done": [
@@ -699,6 +717,9 @@
       ],
       "Download recovery file": [
         "Download gendannelsesfil"
+      ],
+      "Download recovery kit": [
+        "Download gendannelsessæt"
       ],
       "Download updated file": [
         "Download opdateret fil"
@@ -747,6 +768,9 @@
       ],
       "Edit phone number": [
         "Redigér telefonnummer"
+      ],
+      "Edit security key ${ keyName }": [
+        "Rediger sikkerhedsnøglen ${ keyName }"
       ],
       "Edit servers": [
         "Rediger servere"
@@ -867,6 +891,9 @@
       ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
+      ],
+      "Go to today": [
+        "Gå til i dag"
       ],
       "Google": [
         "Google"
@@ -1033,6 +1060,9 @@
       "Next": [
         "Næste"
       ],
+      "Next contact": [
+        "Næste kontakt"
+      ],
       "Next month": [
         "Næste måned"
       ],
@@ -1090,6 +1120,9 @@
       "Previous": [
         "Forrige"
       ],
+      "Previous contact": [
+        "Forrige kontakt"
+      ],
       "Previous month": [
         "Forrige måned"
       ],
@@ -1144,6 +1177,9 @@
       "Remove": [
         "Fjern"
       ],
+      "Remove ${ name }": [
+        "Fjern ${ name }"
+      ],
       "Remove all other devices": [
         "Fjern alle andre enheder"
       ],
@@ -1161,6 +1197,12 @@
       ],
       "Remove gift code": [
         "Fjern gavekode"
+      ],
+      "Remove logo": [
+        "Fjern logo"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Fjern afventende server ${ serverLocation }"
       ],
       "Removed ${ memberName } as group owner": [
         "Fjernede ${ memberName } som gruppeejer"
@@ -1399,11 +1441,17 @@
       "Skip": [
         "Spring over"
       ],
+      "Skip to main content": [
+        "Spring til hovedindholdet"
+      ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special Offer": [
+        "Særtilbud"
       ],
       "Start import": [
         "Start importering"
@@ -4953,6 +5001,9 @@
       "Time required before automatically granting them access": [
         "Krævet tid før der automatisk gives adgang"
       ],
+      "To access their account, sign in to ${ ACCOUNT_APP_NAME } in a browser.": [
+        "Åben din browser for at logge på konto${ ACCOUNT_APP_NAME }"
+      ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
       ],
@@ -5509,9 +5560,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Det mindste donationsbeløb er ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Politiknavnet skal være mellem 3 og 40 tegn lang."
       ],
@@ -5927,9 +5975,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupper"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Konti med tilpassede domæner kan ikke deltage i et familieabonnement."
       ],
@@ -5983,10 +6028,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administrator af denne abonnement."
       ],
-      "View the invitation": [
-        "Vis invitationen",
-        "Vis invitationerne"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
       ],
@@ -5995,9 +6036,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Du er blevet inviteret til at blive medlem af ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Du har nået grænsen på ${ n } accepteret invitation på 6 måneder.",
@@ -7907,6 +7945,9 @@
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Ved at deaktivere sikkerhedskopiering af data på denne enhed, mister du muligheden for automatisk at låse op for din krypterede data efter du har nulstillet adgangskoden."
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
       ],
@@ -9720,6 +9761,9 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Pladser til skriveassistenten sælges ikke længere."
+      ],
       "X": [
         "X"
       ],
@@ -10292,6 +10336,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Få sikker adgang til ${ PASS_APP_NAME } fra terminalen, ideelt til scripting, automatisering og udviklingsarbejdsgange."
       ],
+      "Access tokens": [
+        "Adgangstokens"
+      ],
       "Account credit": [
         "Kontokredit"
       ],
@@ -10309,6 +10356,9 @@
       ],
       "Add all organization members": [
         "Tilføj alle organisationsmedlemmer"
+      ],
+      "Add managers": [
+        "Tilføj administratorer"
       ],
       "Additional comments": [
         "Yderligere kommentarer"
@@ -11079,6 +11129,9 @@
       "Server name": [
         "Servernavn"
       ],
+      "Share your invite link": [
+        "Del dit invitationslink"
+      ],
       "Share your referral link": [
         "Del dit henvisningslink"
       ],
@@ -11732,6 +11785,73 @@
       ],
       "Enable detailed events": [
         "Aktiver detaljerede begivenheder"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Basic forbrug"
+      ],
+      "5x Plus usage": [
+        "5x Plus forbrug"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API-adgang med ${ credit } i kredit om måneden"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API-adgang med ${ credit } i kredit om måneden per bruger"
+      ],
+      "Everything in Basic, and:": [
+        "Alt i Basic, og:"
+      ],
+      "Everything in Free, and:": [
+        "Alt i Free, og:"
+      ],
+      "Everything in Plus, and:": [
+        "Alt i Plus, og:"
+      ],
+      "Extended image generation": [
+        "Udvidet billedegenerering"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "Limited image generation": [
+        "Begrænset billedegenerering"
+      ],
+      "Limited messages and chat history": [
+        "Begrænset besked- og chathistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begrænsede skills, projekter og planlagte opgaver"
+      ],
+      "Maximum image generation": [
+        "Maksimal billedegenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimale Skills og Projekter"
+      ],
+      "More image generation": [
+        "Mere billedegenerering"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Flere skills, projekter og planlagte opgaver"
+      ],
+      "More usage": [
+        "Mere forbrug"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Til at kode og bygge"
+      ],
+      "For everyday chats": [
+        "Til hverdagsbrug"
+      ],
+      "For getting more done": [
+        "For at få meget gjort"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -13185,17 +13305,11 @@
       "1 email per month": [
         "1 e-mail pr. måned"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 e-mail pr. måned. Få de seneste nyheder om privatlivets fred, og om hvad der foregår i ${ BRAND_NAME }-universet."
-      ],
       "1 email per quarter": [
         "1 e-mail pr. kvartal"
       ],
       "1-2 emails per month": [
         "1-2 e-mails pr. måned"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 e-mails om året. Påmindelser om at holde dine gendannelsesmetoder opdaterede."
       ],
       "2-4 emails per year": [
         "2-4 e-mails pr. år"
@@ -13220,9 +13334,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "I løbet af din første måned med et ${ BRAND_NAME }-produkt"
-      ],
-      "Email communications": [
-        "E-mail-kommunikation"
       ],
       "In-app notifications": [
         "Notifikationer i appen"
@@ -13896,7 +14007,18 @@
         "Begynd at bruge ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Anbefalet"
+      ],
+      "Select your plan": [
+        "Vælg dit abonnement"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Gratis for evigt"
+      ],
       "Secure vault sharing": [
         "Sikker deling af boks"
       ],
@@ -14471,6 +14593,12 @@
       "Enter a name": [
         "Indtast et navn"
       ],
+      "Enter email address, name, or contact group": [
+        "Indtast e-mailadresse, navn eller kontaktgruppe"
+      ],
+      "Enter name or email address": [
+        "Indtast navn eller e-mailadresse"
+      ],
       "example@domain.com": [
         "eksempel@domæne.dk"
       ],
@@ -14958,6 +15086,9 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
         "Jeg har brugt ${ BRAND_NAME }, og jeg tænkte, at du måske vil kunne lide det. Det er en sikker e-mail, sky-lagring, adgangskodeadministrator og VPN, der beskytter dit privatliv. Tilmeld dig med dette link for at få ${ refereeRewardAmount } i rabat på dit næste abonnement: ${ referralLink }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Jeg har brugt ${ BRAND_NAME }, og jeg tænkte, at dit team måske vil kunne lide det. Det er en sikker e-mail, cloud-lagring, adgangskodeadministrator og VPN, der beskytter dit privatliv. Tilmeld dig med dette link for at få ${ refereeRewardAmount } rabat på første år med ${ BRAND_NAME } for Business: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Hvis du annullerer inden da, nedgraderes du til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }, når prøveversionen udløber. Hvis du ikke annullerer, starter dit fulde abonnement, og du modtager **${ referrerRewardAmount }** i kreditter."
@@ -16172,6 +16303,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } samlet krypteret lagerplads"
+      ],
       "1 month": [
         "1 måned"
       ],
@@ -16180,6 +16314,9 @@
       ],
       "24 months": [
         "24 måneder"
+      ],
+      "Free": [
+        "Gratis"
       ]
     },
     "Signup label": {
@@ -17018,10 +17155,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag tilbage",
-        "${ dayDiff } dage tilbage"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
       ],
@@ -17283,12 +17416,6 @@
       "What you give up when you cancel ${ planName }": [
         "Dette frasiger du dig, når du opsiger ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du opsiger ${ planName }, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB Mail-lagerplads og op til 5 GB Drive-lagerplads. Desuden mister du alle tidligere tildelte lagerplads-bonusser."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Ved opsigelse af ${ planName } bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB mail-lagerplads og op til 5 GB drev-lagerplads. Dit team vil opleve afbrydelser i deres arbejde, eftersom yderligere brugere ikke understøttes på det gratis abonnement."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når dit ${ planName }-abonnement udløber ${ expiryDate }, vil du blive nedgraderet til abonnementet ${ BRAND_NAME } Free."
       ],
@@ -17297,9 +17424,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Du kan fortsætte med at nyde fordelene ved dit nuværende abonnement indtil ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "På dit ${ planName }-abonnement gælder udløbsdato ${ expiryDate }stadig. Vi indsætter pengene for den resterende tid på din ${ BRAND_NAME }-konto. Sørg for at overholde grænserne for den gratis pakke før opsigelsen. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
@@ -17737,6 +17861,14 @@
         "Til enkeltpersoner"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Handling"
@@ -17749,9 +17881,6 @@
       ],
       "CSV field": [
         "CSV-felt"
-      ],
-      "Edit": [
-        "Redigér"
       ],
       "Email address": [
         "E-mailadresse"
@@ -18096,6 +18225,9 @@
       ],
       "Block trackers and malware": [
         "Blokér trackere og malware"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Flyt ${ BRAND_NAME } til din arbejdsplads. Optjen kredit."
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Flyt din Gmail ind i ${ MAIL_APP_NAME }"
@@ -18492,9 +18624,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Indtast dine ${ BRAND_NAME } kontooplysninger for at deltage i ${ app } beta-programmet"
       ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
       "Error": [
         "Fejl"
       ],
@@ -18827,6 +18956,9 @@
       "Refer a friend": [
         "Henvis en ven"
       ],
+      "Refer businesses": [
+        "Henvis virksomhed"
+      ],
       "Reject device?": [
         "Afvis enhed?"
       ],
@@ -19024,6 +19156,9 @@
       ],
       "Spam, block, and allow lists": [
         "Spam-, blokerings- og tilladelseslister"
+      ],
+      "Special offer": [
+        "Special tilbud"
       ],
       "Start a new import": [
         "Start en ny import"

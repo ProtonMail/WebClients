@@ -335,6 +335,9 @@
       "Display navigation bar": [
         "Näytä navigointipalkki"
       ],
+      "Don't show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
       "Done": [
         "Valmis"
       ],
@@ -860,6 +863,9 @@
       "Skip": [
         "Ohita"
       ],
+      "Skip to main content": [
+        "Siirry suoraan sisältöön"
+      ],
       "Skip verification": [
         "Ohita vahvistus"
       ],
@@ -1274,9 +1280,19 @@
         "Uutta!"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Sulje"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium-salasanahallinta"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tarjous ei ole saatavilla"
       ]
     },
     "BF2024: Deal details": {
@@ -3785,12 +3801,6 @@
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
-      ],
       "Password is required": [
         "Salasana vaaditaan"
       ],
@@ -3951,9 +3961,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Lahjoituksen vähimmäismäärä on ${ price }"
       ],
       "The sending key is not valid": [
         "Lähetysavain ei kelpaa"
@@ -10624,10 +10631,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } päivä jäljellä",
-        "${ dayDiff } päivää jäljellä"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
@@ -10862,20 +10865,11 @@
       "What you give up when you cancel ${ planName }": [
         "Mitä menetä perumalla ${ planName }-tilauksen"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kun perut ${ planName }-tilauksesi, alennetaan tasoksesi ${ BRAND_NAME } Free, joka tarjoaa vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Tiimisi työskentely keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kun ${ planName }-tilauksesi päättyy ${ expiryDate }, sinut allennetaan ${ BRAND_NAME } Free -tilaukseen."
       ],
       "Yearly free storage bonuses": [
         "Ilmaista lisätallennustilaa vuosittain"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } -tilauksesi ei ainoastaan suojaa liiketoimintasi tietoja ja viestintää, vaan se tukee myös vaatimustenmukaisuustavoitteitasi, parantaa yrityksesi näkyvyyttä ja pitää tiimisi yhteydessä."
@@ -11591,9 +11585,6 @@
       "Enhance security with 2FA": [
         "Paranna tietoturvaa 2FA:lla"
       ],
-      "Enter your password": [
-        "Syötä salasanasi"
-      ],
       "Error": [
         "Virhe"
       ],
@@ -11987,6 +11978,9 @@
       ],
       "Verification failed": [
         "Vahvistus epäonnistui"
+      ],
+      "Verify it’s you": [
+        "Vahvista henkilöllisyytesi"
       ],
       "Verify your password": [
         "Vahvista salasananne"

@@ -8,8 +8,14 @@
       "(opens in new tab)": [
         "(opent in nieuw tabblad)"
       ],
+      "Camera off": [
+        "Camera uit"
+      ],
       "camera off": [
         "camera uit"
+      ],
+      "Camera on": [
+        "Camera aan"
       ],
       "camera on": [
         "camera aan"
@@ -20,8 +26,14 @@
       "microphone muted": [
         "microfoon gedempt"
       ],
+      "Microphone on": [
+        "Microfoon aan"
+      ],
       "microphone on": [
         "microfoon aan"
+      ],
+      "speaking": [
+        "spreekt"
       ]
     },
     "Accessibility announcement": {
@@ -46,6 +58,10 @@
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
       ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } vermelding suggestie beschikbaar",
+        "${ suggestionCount } vermelding suggesties beschikbaar"
+      ],
       "A participant joined the meeting": [
         "Een deelnemer is aan de vergadering toegevoegd"
       ],
@@ -61,17 +77,41 @@
       "A participant reacted with ${ emoji }": [
         "Een deelnemer reageerde met ${ emoji }"
       ],
+      "Background removed": [
+        "Achtergrond verwijderd."
+      ],
+      "Beach landscape background applied": [
+        "Strandlandschap achtergrond toegepast"
+      ],
+      "Blurred office background applied": [
+        "Vervaagde kantoorachtergrond toegepast"
+      ],
       "Connection lost. Reconnecting…": [
         "Verbinding verbroken. Opnieuw verbinden…"
+      ],
+      "Library background applied": [
+        "Bibliotheek achtergrond toegepast"
+      ],
+      "Live captions allowed for this meeting": [
+        "Live ondertiteling is toegestaan voor deze vergadering"
+      ],
+      "Live captions turned off": [
+        "Live ondertiteling uitgeschakeld"
+      ],
+      "Live captions turned off for this meeting": [
+        "Live ondertiteling uitgeschakeld voor deze vergadering"
+      ],
+      "Live captions turned on": [
+        "Live ondertiteling ingeschakeld"
+      ],
+      "Mountain landscape background applied": [
+        "Berglandschap achtergrond toegepast"
       ],
       "New chat message: ${ message }": [
         "Nieuw chatbericht: ${ message }"
       ],
       "Now starting recording": [
         "Opname wordt nu gestart"
-      ],
-      "Reconnected to the meeting": [
-        "Opnieuw verbonden met de vergadering"
       ],
       "Recording saved": [
         "Opname opgeslagen"
@@ -121,11 +161,11 @@
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "U bent de enige deelnemer. De vergadering sluit over 2 minuten tenzij er iemand deelneemt."
       ],
-      "You have been disconnected from the meeting": [
-        "Uw verbinding met de vergadering is verbroken"
-      ],
       "You have been muted by the host": [
         "U bent gedempt door de host"
+      ],
+      "You were mentioned: ${ message }": [
+        "Je werd vermeld: ${ message }"
       ],
       "Your camera has been turned off by the host": [
         "Uw camera is uitgeschakeld door de host"
@@ -134,6 +174,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } nieuwe vermelding",
+        "${ newMentionCount } nieuwe vermeldingen"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } nieuwe",
@@ -153,6 +197,9 @@
       ],
       "Allow access": [
         "Toegang verlenen"
+      ],
+      "Allow live captions": [
+        "Sta live ondertiteling toe"
       ],
       "Anyone with the link can join immediately": [
         "Iedereen met de koppeling kan direct deelnemen"
@@ -177,6 +224,9 @@
       ],
       "Back": [
         "Terug"
+      ],
+      "Backgrounds and effects": [
+        "Achtergronden en effecten"
       ],
       "Cancel": [
         "Annuleren"
@@ -205,8 +255,8 @@
       "Continue without camera": [
         "Doorgaan zonder camera"
       ],
-      "Continue without mic and camera": [
-        "Doorgaan zonder microfoon en camera"
+      "Continue without camera and microphone": [
+        "Ga verder zonder camera en microfoon"
       ],
       "Continue without microphone": [
         "Doorgaan zonder microfoon"
@@ -270,6 +320,9 @@
       ],
       "Dismiss new messages": [
         "Nieuwe berichten negeren"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
       ],
       "Done": [
         "Klaar"
@@ -352,11 +405,20 @@
       "Hide timezones": [
         "Tijdzones verbergen"
       ],
+      "Incoming video": [
+        "Inkomend videogesprek"
+      ],
       "Insert emoji": [
         "Emoji invoegen"
       ],
       "Join": [
         "Deelnemen"
+      ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Deelnemen met de ${ MEET_APP_NAME } app"
+      ],
+      "Join in browser": [
+        "Deelnemen in de browser"
       ],
       "Join meeting": [
         "Deelnemen aan vergadering"
@@ -370,11 +432,20 @@
       "Kick out ${ participantName }": [
         "Verwijder ${ participantName }"
       ],
+      "Layout": [
+        "Opmaak"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
       "Leave": [
         "Verlaat"
       ],
       "Leave meeting": [
         "Vergadering verlaten"
+      ],
+      "Live captions": [
+        "Live ondertiteling"
       ],
       "Lock meeting": [
         "Vergadering vergrendelen"
@@ -385,6 +456,12 @@
       "Lower hand": [
         "Hand laten zakken"
       ],
+      "Meeting debug": [
+        "Vergadering debug"
+      ],
+      "Meeting info": [
+        "Vergaderinginfo"
+      ],
       "Minimize preview": [
         "Voorbeeld minimaliseren"
       ],
@@ -393,6 +470,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
+      ],
+      "More options": [
+        "Meer opties"
       ],
       "More options for accounts": [
         "Meer opties voor accounts"
@@ -406,6 +486,9 @@
       "Next page": [
         "Volgende pagina"
       ],
+      "No effect": [
+        "Geen effect"
+      ],
       "Noise cancellation": [
         "Ruisonderdrukking"
       ],
@@ -415,6 +498,9 @@
       "Open link": [
         "Link openen"
       ],
+      "Participants": [
+        "Deelnemers"
+      ],
       "Participants join after you approve them": [
         "Deelnemers nemen deel nadat u ze heeft goedgekeurd"
       ],
@@ -423,6 +509,9 @@
       ],
       "Pause": [
         "Onderbreken"
+      ],
+      "Playing sound...": [
+        "Geluid afspelen..."
       ],
       "Previous month": [
         "Vorige maand"
@@ -455,6 +544,9 @@
       "Refresh audio and video tracks": [
         "Vernieuw audio- en videotracks"
       ],
+      "Refresh page": [
+        "Pagina vernieuwen"
+      ],
       "Refresh screen share track": [
         "Vernieuw de schermdeeltrack"
       ],
@@ -466,6 +558,9 @@
       ],
       "Rejoin meeting": [
         "Opnieuw deelnemen aan vergadering"
+      ],
+      "Remove ${ name }": [
+        "Verwijder ${ name }"
       ],
       "Remove reaction ${ emoji }, ${ identities.length } reaction": [
         "Reactie ${ emoji } verwijderen, ${ identities.length } reactie",
@@ -495,9 +590,6 @@
       "Resume": [
         "Hervatten"
       ],
-      "Retry": [
-        "Opnieuw proberen"
-      ],
       "Return to dashboard": [
         "Terug naar dashboard"
       ],
@@ -519,8 +611,14 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Inplannen in ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Scherm delen"
+      ],
       "Search countries": [
         "Zoek landen"
+      ],
+      "Self view": [
+        "Eigen weergave"
       ],
       "Send an encrypted message": [
         "Stuur een versleuteld bericht"
@@ -530,6 +628,12 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Share screen": [
+        "Scherm delen"
+      ],
+      "Show captions": [
+        "Ondertitels weergeven"
       ],
       "Show options": [
         "Opties tonen"
@@ -561,11 +665,17 @@
       "Skip to main content": [
         "Direct naar hoofdinhoud"
       ],
+      "Speaker": [
+        "Spreker"
+      ],
       "Start an instant meeting": [
         "Start een directe vergadering"
       ],
       "Start meeting": [
         "Start vergadering"
+      ],
+      "Start meeting in browser": [
+        "Start vergadering in browser"
       ],
       "Start new meeting": [
         "Start een nieuwe vergadering"
@@ -609,8 +719,17 @@
       "Tap to unblock audio playback": [
         "Tik om audio te deblokkeren"
       ],
+      "Test microphone": [
+        "Test microfoon"
+      ],
+      "Test speakers": [
+        "Luidsprekers testen"
+      ],
       "The current link will stop working.": [
         "De huidige koppeling zal stoppen met werken"
+      ],
+      "Transcription": [
+        "Transcriptie"
       ],
       "Try again": [
         "Opnieuw proberen"
@@ -660,6 +779,9 @@
       "View invoice": [
         "Factuur bekijken"
       ],
+      "Virtual backgrounds": [
+        "Virtuele achtergronden"
+      ],
       "Waiting room": [
         "Wachtruimte"
       ],
@@ -673,6 +795,9 @@
     "Alt": {
       "Audio settings": [
         "Audio-instellingen"
+      ],
+      "Backgrounds": [
+        "Achtergronden"
       ],
       "Blur background": [
         "Achtergrond vervagen"
@@ -692,11 +817,20 @@
       "Go to dashboard": [
         "Ga naar dashboard"
       ],
+      "Incoming video": [
+        "Inkomend videogesprek"
+      ],
       "Leave Meeting": [
         "Vergadering verlaten"
       ],
+      "Live captions": [
+        "Live ondertiteling"
+      ],
       "Lock meeting": [
         "Vergadering vergrendelen"
+      ],
+      "Meeting timer": [
+        "Vergadertimer"
       ],
       "More options": [
         "Meer opties"
@@ -713,11 +847,17 @@
       "Participant host control options": [
         "Opties voor deelnemersbeheer door de host"
       ],
+      "Picture-in-picture while sharing": [
+        "Picture-in-picture tijdens delen"
+      ],
       "Rotate camera": [
         "Camera roteren"
       ],
       "Save my name on this device": [
         "Mijn naam opslaan op dit apparaat"
+      ],
+      "Self view": [
+        "Eigen perspectief"
       ],
       "Stop recording and download.": [
         "Stop met opnemen en download de video."
@@ -782,6 +922,9 @@
       ],
       "Video settings": [
         "Video-instellingen"
+      ],
+      "Virtual backgrounds": [
+        "Virtuele achtergronden"
       ]
     },
     "Badge": {
@@ -1751,11 +1894,41 @@
       "An error occurred": [
         "Er is een fout opgetreden"
       ],
-      "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "Initialisatie van achtergrondonscherpte is mislukt. Schakel uw camera of achtergrondvervaging opnieuw in"
+      "Background blur failed. Turn it off and on again.": [
+        "Achtergrond vervaging mislukt. Zet het uit en opnieuw aan."
+      ],
+      "Background blur isn’t supported in this browser": [
+        "Achtergrondvervaging wordt niet ondersteund in deze browser"
+      ],
+      "Background failed. Pick it again.": [
+        "Achtergrond gefaald. Probeer opnieuw."
+      ],
+      "Background limit reached. Remove one to add another.": [
+        "Achtergronden limiet bereikt. Verwijder één om een andere toe te voegen."
+      ],
+      "Background not added. Check your connection and try again.": [
+        "Achtergrond niet toegevoegd. Controleer je verbinding en probeer opnieuw."
+      ],
+      "Background not added. Try again.": [
+        "Achtergrond niet toegevoegd. Probeer opnieuw."
+      ],
+      "Background not removed. Check your connection and try again.": [
+        "Achtergrond niet verwijderd. Controleer je verbinding en probeer opnieuw."
+      ],
+      "Background not removed. Try again.": [
+        "Achtergrond niet verwijderd. Probeer opnieuw."
+      ],
+      "Background not saved in this browser.": [
+        "Achtergrond niet opgeslagen in deze browser."
       ],
       "Bookmark password is not available": [
         "Wachtwoord voor bladwijzer is niet beschikbaar"
+      ],
+      "Camera and microphone didn’t start. Try turning them on again.": [
+        "Camera en microfoon zijn niet gestart. Probeer ze opnieuw aan te zetten."
+      ],
+      "Camera didn’t start. Try turning it on again.": [
+        "Camera startte niet. Probeer deze opnieuw aan te zetten."
       ],
       "Cannot add photo to album without a valid name": [
         "Kan geen foto aan album toevoegen zonder een geldige naam"
@@ -1775,11 +1948,20 @@
       "Cannot verify who uploaded this file": [
         "Kan niet verifiëren wie dit bestand heeft geüpload"
       ],
-      "Check your audio settings and try again": [
-        "Controleer uw audio-instellingen en probeer het opnieuw"
+      "Caption language not changed. Try again.": [
+        "Ondertitellingstaal niet gewijzigd. Probeer opnieuw."
       ],
-      "Connection lost — captions will resume when reconnected": [
-        "Verbinding verbroken: de ondertiteling wordt hervat wanneer er opnieuw verbinding wordt gemaakt"
+      "Character limit reached. Remove some text to add a mention.": [
+        "Teken limiet bereikt. Verwijder wat tekst om een vermelding toe te voegen."
+      ],
+      "Character limit reached. Remove some text to add an emoji.": [
+        "Teken limiet bereikt. Verwijder wat tekst om een emoji toe te voegen."
+      ],
+      "Chat unavailable. Refresh the page to use it again.": [
+        "Gesprek niet beschikbaar. Herlaad de pagina om deze opnieuw te gebruiken."
+      ],
+      "Connection lost. Captions will start again when you’re reconnected.": [
+        "Verbinding verloren. Ondertiteling zal opnieuw starten wanneer je terug verbonden bent."
       ],
       "Copy operation aborted": [
         "Kopieerbewerking afgebroken"
@@ -1805,6 +1987,21 @@
       "Could not unlock this item": [
         "Kan dit item niet ontgrendelen"
       ],
+      "Couldn’t admit participants. Try again.": [
+        "Kon deelnemers niet toelaten. Probeer opnieuw."
+      ],
+      "Couldn’t deny participant. Try again.": [
+        "Kon deelnemer niet weigeren. Probeer opnieuw."
+      ],
+      "Couldn’t play the test sound on this speaker.": [
+        "Kon het test geluid niet afspelen op deze luidspreker."
+      ],
+      "Couldn’t prepare the recording": [
+        "Kon de opname niet voorbereiden"
+      ],
+      "Couldn’t start the microphone test.": [
+        "Kon de microfoon test niet starten."
+      ],
       "Creating documents in non-folders is not allowed": [
         "Het aanmaken van documenten in niet-mappen is niet toegestaan"
       ],
@@ -1820,6 +2017,9 @@
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
+      "Download failed. Try again.": [
+        "Downloaden is mislukt. Probeer opnieuw."
+      ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
@@ -1829,26 +2029,11 @@
       "Enter your username without the domain (@example.com)": [
         "Voer uw gebruikersnaam in zonder het domein (@example.com)"
       ],
-      "Event deleted": [
-        "Afspraak verwijderd"
+      "Event not deleted. Try again.": [
+        "Evenement niet verwijderd. Probeer opnieuw."
       ],
       "Expiration date cannot be in the past": [
         "De vervaldatum mag niet in het verleden liggen"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "Kan de deelnemer niet toelaten. Probeer het opnieuw."
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "Het is niet gelukt de deelnemers toe te laten. Probeer het opnieuw."
-      ],
-      "Failed to assign host": [
-        "Host toewijzen mislukt"
-      ],
-      "Failed to create meeting": [
-        "Maken van vergadering is mislukt"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Aanmaken van de persoonlijke vergadering is mislukt, vernieuw de pagina."
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Kan de bladwijzersleutel niet decoderen: ${ message }"
@@ -1874,24 +2059,6 @@
       "Failed to decrypt session key": [
         "Decoderen van de sessiesleutel mislukt."
       ],
-      "Failed to delete event": [
-        "Afspraak verwijderen mislukt"
-      ],
-      "Failed to delete recording": [
-        "Kon opname niet verwijderen"
-      ],
-      "Failed to delete room": [
-        "Fout bij het verwijderen van de ruimte"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "Kan de deelnemer niet weigeren. Probeer het opnieuw."
-      ],
-      "Failed to download recording": [
-        "Kon opname niet downloaden"
-      ],
-      "Failed to edit room name": [
-        "Naam van de ruimte bewerken mislukt"
-      ],
       "Failed to get inviter keys": [
         "Kan uitnodigingssleutels niet ophalen"
       ],
@@ -1901,41 +2068,26 @@
       "Failed to join meeting. Please try again.": [
         "Deelnemen aan de vergadering mislukt. Probeer het opnieuw."
       ],
-      "Failed to lock meeting": [
-        "Vergrendelen van vergadering is mislukt"
-      ],
       "Failed to rotate personal meeting link": [
         "Roteren van de persoonlijke vergadering link is mislukt."
       ],
-      "Failed to send chat message. Please try again.": [
-        "Het is niet gelukt om een chat bericht te sturen. Probeer het opnieuw."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Het is niet gelukt om een emoji te verzenden. Probeer het opnieuw."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Het is niet gelukt om een reactie te verzenden. Probeer het opnieuw."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Vergadering starten mislukt. Probeer het opnieuw."
-      ],
-      "Failed to start recording": [
-        "Kon opname niet starten"
-      ],
-      "Failed to unlock meeting": [
-        "Ontgrendelen van vergadering is mislukt"
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "Kan de wachtkamerinstelling niet updaten. Probeer het opnieuw."
-      ],
       "Failed to verify invitation": [
         "Kan de uitnodiging niet verifiëren"
+      ],
+      "Feedback not sent. Try again.": [
+        "Feedback niet verstuurt. Probeer opnieuw."
       ],
       "File download failed due to empty response": [
         "Het downloaden van bestanden is mislukt vanwege een leeg antwoord"
       ],
       "File has no revision": [
         "Bestand heeft geen revisie"
+      ],
+      "Host not changed. Try again.": [
+        "Host niet verandert. Probeer opnieuw."
+      ],
+      "If you think this was a mistake, try joining again.": [
+        "Als je denkt dat dit een fout was, probeer opnieuw deel te nemen."
       ],
       "Image preview not found": [
         "Afbeeldingsvoorbeeld niet gevonden"
@@ -1948,9 +2100,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Onjuist tweede wachtwoord. Probeer het opnieuw."
-      ],
-      "Invalid meeting link": [
-        "Ongeldige vergaderlink"
       ],
       "Invalid URL": [
         "Ongeldige URL"
@@ -1966,6 +2115,33 @@
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
+      ],
+      "Live captions failed": [
+        "Live ondertiteling mislukt"
+      ],
+      "Live captions failed. Turn them on to try again.": [
+        "Live ondertiteling mislukt. Zet ze aan om opnieuw te proberen."
+      ],
+      "Live captions not updated. Try again.": [
+        "Live ondertiteling niet bijgewerkt. Probeer opnieuw."
+      ],
+      "Live captions paused": [
+        "Live ondertiteling gepauzeerd"
+      ],
+      "Meeting full": [
+        "Vergadering volzet"
+      ],
+      "Meeting not locked. Try again.": [
+        "Vergadering niet ontgrendeld. Probeer opnieuw."
+      ],
+      "Meeting not unlocked. Try again.": [
+        "Vergadering niet ontgrendeld. Probeer opnieuw."
+      ],
+      "Message not sent. Check your connection and try again.": [
+        "Bericht niet verzonden. Controleer je internetverbinding en probeer opnieuw."
+      ],
+      "Microphone blocked": [
+        "Microfoon geblokkeerd"
       ],
       "Microphone not detected": [
         "Microfoon niet gedetecteerd"
@@ -1998,11 +2174,17 @@
       "No file data was received. Please try again.": [
         "Geen bestandsgegevens ontvangen. Probeer het opnieuw."
       ],
+      "Noise cancellation turned off because your device is running slowly. Turn it back on in audio settings.": [
+        "Ruisonderdrukking is uitgeschakeld omdat je apparaat traag werkt. Je kunt deze weer inschakelen in de audio-instellingen."
+      ],
       "Not a valid number": [
         "Geen geldig getal"
       ],
       "Only admins can convert external invitations": [
         "Alleen beheerders kunnen externe uitnodigingen converteren"
+      ],
+      "Only part of the meeting was recorded.": [
+        "De vergadering is slechts gedeeltelijk opgenomen."
       ],
       "Operation aborted": [
         "Bewerking afgebroken"
@@ -2025,6 +2207,24 @@
       "Photo not found": [
         "Foto niet gevonden"
       ],
+      "Picture-in-picture failed. Try again.": [
+        "Picture-in-picture mislukt. Probeer opnieuw."
+      ],
+      "Reaction not sent. Try again.": [
+        "Reactie niet verstuurt. Probeer opnieuw."
+      ],
+      "Recording didn’t start. Try again.": [
+        "Opname niet gestart. Probeer opnieuw."
+      ],
+      "Recording not deleted. Try again.": [
+        "Opname niet verwijderd. Probeer opnieuw."
+      ],
+      "Recording stopped because it could not be saved. We kept it up to this point.": [
+        "Opname gestopt omdat het niet kon worden opgeslagen. We hebben het tot dit punt bijgehouden."
+      ],
+      "Recording stopped unexpectedly. Start a new recording to continue.": [
+        "Opname onverwacht gestopt. Start een nieuwe opname om verder te gaan."
+      ],
       "Renaming root item is not allowed": [
         "Het hernoemen van het rootitem is niet toegestaan"
       ],
@@ -2034,11 +2234,14 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
-      "Room deleted": [
-        "Verwijder ruimte"
+      "Room not deleted. Try again.": [
+        "Ruimte niet verwijderd. Probeer opnieuw."
       ],
       "Screen share is not supported on mobile browsers": [
         "Scherm delen wordt niet ondersteund op mobiele browsers"
+      ],
+      "Setting not saved. Try again.": [
+        "Instelling niet opgeslagen. Probeer opnieuw."
       ],
       "Signature is missing": [
         "Handtekening ontbreekt"
@@ -2067,6 +2270,9 @@
       "Something went wrong": [
         "Er is iets fout gegaan."
       ],
+      "Something went wrong while saving it.": [
+        "Er is iets misgegaan tijdens het opslaan."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
@@ -2076,14 +2282,20 @@
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
       ],
-      "The meeting password is incorrect": [
-        "Het wachtwoord voor de vergadering is onjuist."
+      "The host didn’t admit you": [
+        "De host heeft u niet toegelaten"
       ],
-      "The meeting password is invalid": [
-        "Het wachtwoord voor de vergadering is onjuist."
+      "The link may be incomplete or expired. Check it, or start a new meeting.": [
+        "De link is onvolledig of vervallen. Controleer deze, of start een nieuwe vergadering."
+      ],
+      "The selected microphone is no longer available.": [
+        "De geselecteerde microfoon is niet meer beschikbaar."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
+      ],
+      "This emoji can’t be used as a reaction. Pick another one.": [
+        "Deze emoji kan niet gebruikt worden als reactie. Kies een andere."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -2100,8 +2312,17 @@
       "This file has no version available to download": [
         "Er is geen versie beschikbaar om te downloaden van dit bestand"
       ],
+      "This file is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Dit bestand is te groot. Kies een kleiner dan ${ maxMegabytes } MB."
+      ],
+      "This file name is too long. Rename the image and try again.": [
+        "Deze bestandsnaam is te lang. Hernoem de afbeelding en probeer opnieuw."
+      ],
       "This file version could not be uploaded": [
         "Deze bestandsversie kan niet worden geüpload"
+      ],
+      "This image can’t be opened. Pick another one.": [
+        "Deze afbeelding kan niet geopend worden. Kies een andere."
       ],
       "This item has no image preview": [
         "Dit item heeft geen afbeeldingsvoorbeeld"
@@ -2115,20 +2336,26 @@
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Deze vergadering gebruikt een oudere versie; de host moet deze beëindigen en Meet vernieuwen om te herstarten met de nieuwste versie."
       ],
+      "To share your screen, allow it in your browser settings, then rejoin the call.": [
+        "Om je scherm te delen, sta dit toe in je browserinstellingen en neem dan opnieuw deel aan de vergadering."
+      ],
+      "To use them, allow them in your browser settings, then rejoin the call.": [
+        "Om ze te gebruiken, sta ze toe in je browser instelling, neem dan opnieuw deel aan het gesprek."
+      ],
+      "To use your camera, allow it in your browser settings, then rejoin the call.": [
+        "Om je camera te gebruiken, sta dit toe in je browserinstellingen en neem dan opnieuw deel aan de vergadering."
+      ],
       "Too many server errors, please try again later": [
         "Te veel serverfouten. Probeer het later opnieuw"
       ],
       "Too many server requests, please try again later": [
         "Te veel serververzoeken. Probeer het later opnieuw"
       ],
-      "Try turning live captions off and on again.": [
-        "Probeer live ondertiteling uit en weer in te schakelen."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
-      "Unable to generate captions": [
-        "Kan geen bijschriften genereren."
+      "Turn live captions off and on again.": [
+        "Zet live ondertiteling uit en opnieuw aan."
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -2144,6 +2371,9 @@
       ],
       "Verification keys for ${ signatureType } are not available": [
         "Verificatiesleutels voor ${ signatureType } zijn niet beschikbaar"
+      ],
+      "Waiting room setting not saved. Try again.": [
+        "Wachtruimte instellingen niet opgeslagen. Probeer opnieuw."
       ],
       "We couldn’t send a verification code using this method.": [
         "We konden via deze methode geen verificatiecode verzenden."
@@ -2174,6 +2404,9 @@
       ],
       "Your device's clock appears to be out of sync. Please check your system time and try again.": [
         "De klok van uw apparaat lijkt niet gesynchroniseerd te zijn. Controleer de systeemtijd en probeer het opnieuw."
+      ],
+      "Your microphone is busy. Close other apps or tabs using it, then try again.": [
+        "Je microfoon is in gebruik. Sluit andere apps of tabbladen die deze gebruiken, probeer dan opnieuw."
       ]
     },
     "Error message": {
@@ -2367,14 +2600,25 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } heeft microfoontoegang nodig zodat anderen u kunnen horen tijdens het gesprek. U kunt het op elk gewenst moment uitschakelen."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } heeft WebRTC nodig om te functioneren. Update uw browser of apparaat naar een versie die WebRTC ondersteunt, probeer een andere browser, of schakel extensies uit die deze mogelijk blokkeren."
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } deelnemer",
+        "${ mlsMemberCount } deelnemers"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } deelnemer is verbonden, terwijl de beveiligde groep ${ mlsMemberCountText } heeft. Dit kan tijdelijk voorvallen als iemand deelneemt of weggaat.",
+        "${ participantCount } deelnemers zijn verbonden, terwijl de beveiligde groep ${ mlsMemberCountText } heeft. Dit kan tijdelijk voorvallen als iemand deelneemt of weggaat."
       ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } en ${ otherParticipantsCount } anderen zijn aan het opnemen"
       ],
       "${ participantName } is recording": [
         "${ participantName } is aan het opnemen"
+      ],
+      "${ participantName } joined": [
+        "${ participantName } neemt nu deel"
+      ],
+      "${ participantName } left": [
+        "${ participantName } is vertrokken"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (u) is aan het presenteren"
@@ -2392,6 +2636,12 @@
         "${ replyCount } antwoord",
         "${ replyCount } antwoorden"
       ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } heeft jou vermeld"
+      ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } is de actieve spreker."
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } van maximaal ${ maxParticipants } deelnemers"
       ],
@@ -2406,14 +2656,23 @@
       "(You)": [
         "(U)"
       ],
-      "-Removed dangerous URL-": [
-        "-Gevaarlijke URL verwijderd-"
-      ],
       "1 reply draft": [
         "1 conceptantwoord"
       ],
+      "A participant joined": [
+        "Een deelnemer is aangesloten"
+      ],
+      "A participant left": [
+        "Een deelnemer is vertrokken"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
+      "Adding ${ name }": [
+        "${ name } toevoegen"
+      ],
+      "Admit": [
+        "Toestaan"
       ],
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Geavanceerde modus: stem elke vervagingsconstante af en pas vervolgens toe om het voorbeeld opnieuw op te bouwen. Overschrijvingen hebben voorrang op bestands- en Unleash-waarden."
@@ -2424,17 +2683,26 @@
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anoniem ${ particle } ${ participantNumber }"
       ],
+      "App didn't open?": [
+        "App niet geopend?"
+      ],
       "Are you sure you want to leave?": [
         "Weet u zeker dat u wilt verlaten?"
       ],
       "Are you sure you want to stop recording?": [
         "Weet u zeker dat u de opname wilt stoppen?"
       ],
+      "Ask the host to unlock it so you can join.": [
+        "Vraag de beheerder te ontgrendelen zodat je kan deelnemen."
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
       "Author is not provided on public link": [
         "De auteur wordt niet vermeld op de openbare link"
+      ],
+      "Available with a paid plan": [
+        "Beschikbaar met een betalend plan"
       ],
       "Background blur initializing": [
         "Initialisatie van achtergrondonscherpte"
@@ -2451,8 +2719,11 @@
       "camera": [
         "camera"
       ],
-      "Camera permission denied": [
-        "Cameratoegang geweigerd"
+      "Camera effects": [
+        "Camera-effecten"
+      ],
+      "Camera is starting": [
+        "Camera start op"
       ],
       "Captions on": [
         "Onderschriften aan"
@@ -2471,15 +2742,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
-      ],
-      "Connection failed": [
-        "Verbinding mislukt"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Verbinding onderbroken. Opnieuw verbinding maken..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Verbindingsprobleem gedetecteerd. Herstelpoging..."
       ],
       "Connection lost. Reconnecting…": [
         "Verbinding verbroken. Opnieuw verbinden"
@@ -2523,6 +2785,12 @@
       "Delete room": [
         "Verwijder ruimte"
       ],
+      "Do you want people to hear you in the meeting?": [
+        "Wilt u dat mensen u horen in de vergadering?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Wilt u dat mensen u zien in de vergadering?"
+      ],
       "Download current logs": [
         "Huidige logboeken downloaden"
       ],
@@ -2540,6 +2808,9 @@
       ],
       "End the meeting for everyone?": [
         "Vergadering voor iedereen beëindigen?"
+      ],
+      "End to end encrypted chat": [
+        "End-to-end versleutelde chat"
       ],
       "End-to-end encryption is active for audio and video.": [
         "End-to-end encryptie is actief voor audio en video."
@@ -2567,6 +2838,18 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
+      ],
+      "Epoch ${ epoch }": [
+        "Epoch ${ epoch }"
+      ],
+      "Epoch ${ previousEpoch } → ${ epoch }": [
+        "Epoch ${ previousEpoch } → ${ epoch }"
+      ],
+      "Error at epoch ${ epoch }": [
+        "Fout bij epoch ${ epoch }"
+      ],
+      "Event deleted": [
+        "Evenement verwijderd"
       ],
       "Everyone has been disconnected from the call.": [
         "De verbinding met iedereen is verbroken."
@@ -2598,11 +2881,14 @@
       "Get a secure meeting link then add it to your calendar": [
         "Krijg een beveiligde vergaderingslink en voeg deze vervolgens toe aan uw agenda"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Ga naar about:config, zoek naar media.peerconnection.enabled, en stel het in op true."
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Geniet van de beste ervaring met de ${ protonMeet } desktop-app"
       ],
       "Host": [
         "Host"
+      ],
+      "Host has disabled live captions for this meeting.": [
+        "Host heeft live vertalingen uitgeschakeld voor deze vergadering."
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Host uw eigen veilige vergadering. Start een gesprek in ${ MEET_APP_NAME } en deel de link om iedereen uit te nodigen. Eenvoudig, veilig en gratis."
@@ -2616,14 +2902,8 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Als u de toegang tot uw authenticator-app bent kwijtgeraakt, kunt u 1 van de 16 back-upherstelcodes gebruiken die u krijgt bij het instellen van tweefactorauthenticatie. ${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Als u Firefox gebruikt, zorg er dan voor dat PeerConnection is ingeschakeld."
-      ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "Deelnameverzoek is verlopen. De gastheer heeft u niet op tijd toegelaten. Stuur een nieuw verzoek om lid te worden."
       ],
       "Joined ${ roomNameLabel }": [
         "Deelname aan ${ roomNameLabel }"
@@ -2688,6 +2968,9 @@
       "Meeting ended": [
         "Vergadering beëindigd"
       ],
+      "Meeting full": [
+        "Vergadering volzet"
+      ],
       "Meeting full (${ maxParticipants } participants)": [
         "Vergadering vol (${ maxParticipants } deelnemers)"
       ],
@@ -2703,6 +2986,9 @@
       "Meeting recordings aren’t supported in Firefox.": [
         "Video-opnames worden niet ondersteund in Firefox."
       ],
+      "Meeting recordings aren’t supported in Safari private mode.": [
+        "Video-opnames worden niet ondersteund in Safari privé-modus."
+      ],
       "Meeting time is up": [
         "De vergadertijd is voorbij"
       ],
@@ -2714,6 +3000,9 @@
       ],
       "Member": [
         "Lid"
+      ],
+      "Mention from ${ senderName }": [
+        "Vermelding van ${ senderName }"
       ],
       "Message actions": [
         "Berichtacties"
@@ -2727,8 +3016,8 @@
       "Microphone effects": [
         "Microfoon effecten"
       ],
-      "Microphone permission denied": [
-        "Microfoontoegang geweigerd"
+      "More options": [
+        "Meer opties"
       ],
       "Mute microphone": [
         "Microfoon dempen"
@@ -2754,14 +3043,8 @@
       "No camera detected": [
         "Geen camera gedetecteerd"
       ],
-      "No camera detected.": [
-        "Geen camera gedetecteerd."
-      ],
       "No microphone detected": [
         "Geen microfoon gedetecteerd"
-      ],
-      "No microphone detected.": [
-        "Geen microfoon gedetecteerd."
       ],
       "No publications": [
         "Geen publicaties"
@@ -2781,14 +3064,23 @@
       "No speaker detected": [
         "Geen luidspreker gedetecteerd"
       ],
-      "Not sent, check your connection.": [
-        "Niet verzonden, controleer uw verbinding."
+      "notify everyone here": [
+        "Iedereen een melding sturen"
+      ],
+      "Now using ${ first } and ${ second }.": [
+        "Gebruikt nu ${ first } en ${ second }."
+      ],
+      "Now using ${ first }, ${ second } and ${ third }.": [
+        "Gebruikt nu ${ first }, ${ second } en ${ third }."
       ],
       "Only meetings you created appear here": [
         "Alleen vergaderingen die u hebt aangemaakt, worden hier weergegeven"
       ],
       "Open external link": [
         "Externe link openen"
+      ],
+      "Open the window you want to share, then try again.": [
+        "Open het venster dat je wil delen, probeer dan opnieuw."
       ],
       "Other accounts": [
         "Andere accounts"
@@ -2802,17 +3094,20 @@
       "Participant": [
         "Deelnemer"
       ],
+      "Participant counts don’t match": [
+        "Deelnemer hoeveelheid komt niet overeen"
+      ],
+      "Participants can’t use live captions": [
+        "Deelnemers kunnen geen live ondertiteling gebruiken"
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Plak uw ${ MEET_APP_NAME } link om deel te nemen aan een veilige vergadering"
-      ],
-      "Permissions not given.": [
-        "Machtigingen niet verleend."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Schakel de toegang in tot uw ${ microphoneLinkButton }${ andString }${ cameraLinkButton } voor de beste ervaring."
       ],
-      "Please try again or try another browser": [
-        "Probeer het opnieuw of probeer een andere browser"
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Update ${ MEET_APP_NAME } om de app te blijven gebruiken. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Slechte verbinding"
@@ -2823,6 +3118,9 @@
       "Presenting": [
         "Wij stellen u voor"
       ],
+      "Preview unavailable": [
+        "Voorbeeldweergave niet beschikbaar"
+      ],
       "privacy": [
         "privacy"
       ],
@@ -2831,12 +3129,6 @@
       ],
       "Reactions": [
         "Reacties"
-      ],
-      "Reconnected successfully": [
-        "Succesvol opnieuw verbonden"
-      ],
-      "Reconnecting to meeting...": [
-        "Opnieuw verbinden met de vergadering..."
       ],
       "Reconnecting…": [
         "Bezig met verbinden..."
@@ -2874,6 +3166,12 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Rejecting": [
+        "Afwijzen"
+      ],
+      "Room deleted": [
+        "Ruimte verwijderd"
+      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Plan uw volgende vergadering. Maak een account om vergaderingen te plannen met uw agenda."
       ],
@@ -2889,6 +3187,21 @@
       "Select a speaker": [
         "Selecteer een luidspreker"
       ],
+      "Selected camera has disconnected.": [
+        "Geselecteerde camera is losgekoppeld."
+      ],
+      "Selected microphone and camera have disconnected.": [
+        "Geselecteerd microfoon en luidspreker zijn losgekoppeld."
+      ],
+      "Selected microphone and speaker have disconnected.": [
+        "Geselecteerd microfoon en luidspreker zijn losgekoppeld"
+      ],
+      "Selected microphone has disconnected.": [
+        "Geselecteerd microfoon is losgekoppeld"
+      ],
+      "Selected speaker has disconnected.": [
+        "Geselecteerde luidspreker is losgekoppeld."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
@@ -2900,6 +3213,12 @@
       ],
       "Share screen": [
         "Scherm delen"
+      ],
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Deel deze link om andere uit te nodigen. Je kan deze ook steeds terugvinden onder Vergadering-info in het menu Meer opties."
+      ],
+      "Show live captions?": [
+        "Toon live ondertiteling?"
       ],
       "Sign in": [
         "Inloggen"
@@ -2928,11 +3247,20 @@
       "Thank you for joining.": [
         "Bedankt voor uw deelname."
       ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "De ondertiteling service gebruikt vergadering audio. Ondertitels zijn enkel voor jou zichtbaar en worden niet opgeslagen."
+      ],
+      "The host has another meeting in progress.": [
+        "De organisator heeft nog een vergadering gaande."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "De host heeft u uit deze vergadering verwijderd. Als dit een vergissing was, vraag de host dan om u opnieuw uit te nodigen."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "De vergaderingslink die u probeerde te openen, bestaat niet of is mogelijk verlopen. Zorg ervoor dat de link correct is, of start in plaats daarvan een nieuwe beveiligde vergadering."
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "De organisator is momenteel niet aanwezig in de vergadering. Het aantal deelnemers zal weer overeen komen wanneer de organisator deelneemt."
+      ],
+      "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
+        "Deze browser ondersteunt de end-to-end encryptie niet die ${ MEET_APP_NAME } gebruikt om deze vergadering te beveiligen."
       ],
       "This conversation started before you joined.": [
         "Dit gesprek is gestart voordat u deelnam."
@@ -2940,14 +3268,17 @@
       "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
         "Dit is een begin-tot-eind versleutelde chat met vergankelijke berichten, die verdwijnen aan het einde van het gesprek."
       ],
+      "This meeting has a time limit. This call will disconnect soon.": [
+        "Deze vergadering heeft een tijdslimiet. Dit gesprek wordt binnenkort afgesloten."
+      ],
       "This meeting is being recorded": [
         "Deze sessie wordt opgenomen"
       ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Deze vergadering is vergrendeld. Neem contact op met de host om deel te nemen."
-      ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Deze bijeenkomst bereikte de tijdslimiet van een gratis plan. Upgrade om de lengte van uw vergadering bij toekomstige gesprekken te verlengen."
+      ],
+      "This meeting reached the time limit.": [
+        "Deze vergadering heeft de tijdslimiet bereikt."
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Deze opname wordt definitief van dit apparaat verwijderd. Deze actie kan niet ongedaan worden gemaakt."
@@ -2961,11 +3292,17 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
+      "Time is up for ${ meetingName }": [
+        "Tijd voor ${ meetingName } is om"
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Om een ruimte aan te maken, hebt u **een gratis ${ BRAND_NAME } Account** nodig, zodat we de ruimte kunnen opslaan. Dit duurt slechts enkele seconden."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
+      ],
+      "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
+        "Om deel te nemen, gebruik een andere browser of apparaat, of de ${ MEET_APP_NAME } app op je telefoon."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Om een afspraak in te plannen, hebt u **een gratis ${ BRAND_NAME } Account** nodig, zodat we de afspraak kunnen opslaan. Dit duurt slechts enkele seconden."
@@ -2985,8 +3322,8 @@
       "Turn on camera": [
         "Zet camera aan"
       ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Het lukt niet om opnieuw verbinding te maken met de vergadering. Probeer opnieuw deel te nemen of verlaat de vergadering."
+      "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
+        "Activeer Firefox in ${ settingsPath }. Herstart Firefox dan en neem opnieuw deel aan het gesprek."
       ],
       "unlimited meeting": [
         "onbeperkte vergadering"
@@ -3009,6 +3346,9 @@
       "View ": [
         "Bekijken "
       ],
+      "Virtual background initializing": [
+        "Virtuele achtergrond initialiseren"
+      ],
       "Waiting for speech…": [
         "Wachten op spraak…"
       ],
@@ -3017,6 +3357,9 @@
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Wachten tot de host begint. U neemt deel wanneer de gastheer de vergadering start en u toelaat."
+      ],
+      "Waiting since ${ receivedTime }": [
+        "Wachtend sinds ${ receivedTime }"
       ],
       "Warning": [
         "Waarschuwing"
@@ -3048,8 +3391,20 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
+      "You can save up to ${ max } of your own backgrounds.": [
+        "Je kan tot ${ max } van je eigen achtergronden opslaan."
+      ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "U kunt uw microfoon en camera op elk moment tijdens de vergadering uitschakelen"
+      ],
+      "You have too many meetings in progress": [
+        "Je hebt te veel actieve vergaderingen"
+      ],
+      "You joined": [
+        "Je bent toegetreden tot"
+      ],
+      "You left ${ meetingName }": [
+        "Je verliet ${ meetingName }"
       ],
       "You left the meeting": [
         "U heeft de vergadering verlaten"
@@ -3057,11 +3412,11 @@
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "U heeft een betaald ${ MEET_SHORT_APP_NAME } of Workspace-abonnement nodig voor deze functie. Neem contact op met uw organisatiebeheerder om te upgraden."
       ],
+      "You were removed from ${ meetingName }": [
+        "U bent uit ${ meetingName } verwijderd"
+      ],
       "You were removed from the meeting": [
         "U bent uit de vergadering verwijderd"
-      ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "U bent niet toegelaten tot deze bijeenkomst. U kunt proberen opnieuw lid te worden als u denkt dat dit een vergissing was."
       ],
       "You will leave the meeting. Others will continue.": [
         "U verlaat de vergadering. Anderen gaan door."
@@ -3075,20 +3430,8 @@
       "Your always available meeting room": [
         "Uw vaste vergaderruimte"
       ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Uw browser heeft de toegang tot uw camera en microfoon geblokkeerd. Om deze in te schakelen, past u uw browserinstellingen aan en neemt u opnieuw deel aan het gesprek."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Uw browser heeft de toegang tot uw camera geblokkeerd. Om deze in te schakelen, past u uw browserinstellingen aan en neemt u opnieuw deel aan het gesprek."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Uw browser heeft de toegang tot uw microfoon geblokkeerd. Om deze in te schakelen, past u uw browserinstellingen aan en neemt u opnieuw deel aan het gesprek."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Uw browser heeft de toegang tot schermdeling geblokkeerd. Om dit in te schakelen, past u uw browserinstellingen aan en neemt u opnieuw deel aan het gesprek."
-      ],
-      "Your browser or device isn’t supported": [
-        "Uw browser of apparaat wordt niet ondersteund"
+      "Your camera is still starting": [
+        "Je camera is nog aan het starten"
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -3106,6 +3449,9 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
       ],
       "${ numberOfStars } star": [
         "${ numberOfStars } ster",
@@ -3131,6 +3477,12 @@
       ],
       "Authenticator app": [
         "Authenticatie app"
+      ],
+      "Auto-detect": [
+        "Automatisch detecteren"
+      ],
+      "Beach landscape background": [
+        "Strandlandschap achtergrond"
       ],
       "Blurred (next)": [
         "Vervagen (volgende)"
@@ -3183,6 +3535,9 @@
       "Does not repeat": [
         "Wordt niet herhaald"
       ],
+      "Don’t show this message again": [
+        "Dit bericht niet meer tonen"
+      ],
       "Download .ics": [
         "Download .ics"
       ],
@@ -3197,6 +3552,12 @@
       ],
       "Enabled": [
         "Ingeschakeld"
+      ],
+      "End date": [
+        "Einddatum"
+      ],
+      "End time": [
+        "Eindtijd"
       ],
       "Ended": [
         "Afgelopen"
@@ -3215,6 +3576,9 @@
       ],
       "Every year": [
         "Elk jaar"
+      ],
+      "everyone": [
+        "iedereen"
       ],
       "Google Calendar": [
         "Google-agenda"
@@ -3240,6 +3604,9 @@
       "Leave meeting options": [
         "Opties voor verlaten vergadering"
       ],
+      "Library background": [
+        "Bibliotheekachtergrond"
+      ],
       "Live captions": [
         "Live ondertiteling"
       ],
@@ -3252,6 +3619,9 @@
       "Meeting link": [
         "Vergaderingkoppeling"
       ],
+      "Mention a participant": [
+        "Vermeld een deelnemer"
+      ],
       "Message": [
         "Bericht"
       ],
@@ -3263,6 +3633,9 @@
       ],
       "More options": [
         "Meer opties"
+      ],
+      "Mountain landscape background": [
+        "Berglandschap achtergrond"
       ],
       "Muted": [
         "Gedempt"
@@ -3285,9 +3658,6 @@
       "Participants join after you approve them": [
         "Deelnemers nemen deel nadat u ze heeft goedgekeurd"
       ],
-      "Password": [
-        "Wachtwoord"
-      ],
       "Phone number": [
         "Telefoonnummer"
       ],
@@ -3296,6 +3666,9 @@
       ],
       "Raw": [
         "Ruw"
+      ],
+      "Reaction picker": [
+        "Reactie kiezer"
       ],
       "Reactions": [
         "Reacties"
@@ -3330,6 +3703,15 @@
       "Selected Speaker": [
         "Geselecteerde luidspreker"
       ],
+      "Spoken language": [
+        "Gesproken taal"
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "Start time": [
+        "Starttijd"
+      ],
       "Subscribed": [
         "Geabonneerd"
       ],
@@ -3338,6 +3720,9 @@
       ],
       "Track SID": [
         "Track SID"
+      ],
+      "unknown": [
+        "onbekend"
       ],
       "Uploaded image": [
         "Geüploade afbeelding"
@@ -3371,6 +3756,9 @@
       "clearing your browser cache": [
         "browsercache legen"
       ],
+      "download": [
+        "download"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -3390,6 +3778,74 @@
         "Wat is dit?"
       ]
     },
+    "Lumo emoji name": {
+      "Alert": [
+        "Melding"
+      ],
+      "Browse folders": [
+        "Doorblader folders"
+      ],
+      "Celebrate": [
+        "Vieren"
+      ],
+      "Cheers": [
+        "Proost"
+      ],
+      "Chef's kiss": [
+        "Chef's kiss"
+      ],
+      "Cowboy": [
+        "Cowboy"
+      ],
+      "Encrypt": [
+        "Encrypteren"
+      ],
+      "Gaming": [
+        "Gaming"
+      ],
+      "Halo": [
+        "Aureool"
+      ],
+      "Love": [
+        "Liefde"
+      ],
+      "Mild panic": [
+        "Milde paniek"
+      ],
+      "Mind blown": [
+        "Verbluft"
+      ],
+      "Perk": [
+        "Opgewekt"
+      ],
+      "Popcorn": [
+        "Popcorn"
+      ],
+      "Rocket": [
+        "Raket"
+      ],
+      "Sad": [
+        "Bedroefd"
+      ],
+      "Search": [
+        "Zoeken"
+      ],
+      "Sit": [
+        "Zitten"
+      ],
+      "Sleepy": [
+        "Slaperig"
+      ],
+      "Thank you": [
+        "Bedankt"
+      ],
+      "Think": [
+        "Denken"
+      ],
+      "This is fine": [
+        "Dit is oke."
+      ]
+    },
     "meet": {
       "Create and copy link": [
         "Link aanmaken en kopiëren"
@@ -3402,11 +3858,6 @@
       ],
       "Save and copy link": [
         "Link opslaan en kopiëren"
-      ]
-    },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Uw browser of apparaat software ondersteunt ${ MEET_APP_NAME } niet. ${ MEET_APP_NAME } vereist WebAssembly (Wasm) om te kunnen functioneren. Update uw browser of apparaat naar een versie die Wasm ondersteunt, of probeer een andere browser te gebruiken."
       ]
     },
     "meet_2025": {
@@ -3422,9 +3873,52 @@
         "Blijf in de vergadering"
       ]
     },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Kon beeld-in-beeld niet starten"
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } en ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } tot ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "Repeats every ${ interval } day": [
+        "Herhaalt elke ${ interval } dag",
+        "Herhaalt elke ${ interval } dagen"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Herhaalt elke ${ interval } maand op de ${ ordinalDay }",
+        "Herhaalt elke ${ interval } maanden op de ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Herhaalt elke ${ interval } week op ${ weekdayName }",
+        "Herhaalt elke ${ interval } weken op ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Herhaalt elk ${ interval } jaar op ${ monthDay }",
+        "Herhaalt elke ${ interval } jaren op ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Herhaalt elke ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Herhaalt elke weekdag"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Herhaald elk jaar op ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Herhaald maandelijks"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Herhaald op de ${ ordinalDay } van iedere maand"
+      ],
+      "Today · ${ monthDay }": [
+        "Vandaag · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Herhaalt elke ${ interval } week op ${ weekdayList }",
+        "Herhaalt elke ${ interval } weken op ${ weekdayList }"
       ]
     },
     "Notification": {
@@ -3434,9 +3928,6 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
-      "Could not send feedback": [
-        "Kan feedback niet verzenden"
-      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
@@ -3445,9 +3936,6 @@
       ],
       "Successfully rotated your personal meeting": [
         "Uw persoonlijke vergadering is succesvol geroteerd"
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "U kunt geen feedback verzenden voor een vergadering waar u niet aan hebt deelgenomen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -3508,6 +3996,9 @@
       "Enter time": [
         "Voer tijd in"
       ],
+      "Enter your name to join": [
+        "Geef je naam in om deel te nemen"
+      ],
       "Find...": [
         "Zoeken..."
       ],
@@ -3566,6 +4057,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organisatie Beheerder"
+      ],
       "Security Admin": [
         "Beveiligingsbeheerder"
       ],
@@ -3661,8 +4155,16 @@
       "No": [
         "Nee"
       ],
+      "Transcribing...": [
+        "Transcriberen..."
+      ],
       "Yes": [
         "Ja"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "De systeemagent maakt live ondertiteling. Het is geen deelnemer en kan geen berichten verzetten."
       ]
     },
     "Success": {
@@ -3736,8 +4238,17 @@
       "Available Speakers": [
         "Beschikbare luidsprekers"
       ],
+      "Background": [
+        "Achtergrond"
+      ],
       "Background blur preview": [
         "Voorbeeld van achtergrondonscherpte"
+      ],
+      "Backgrounds": [
+        "Achtergronden"
+      ],
+      "Browser not supported": [
+        "Browser wordt niet ondersteund"
       ],
       "Camera and microphone are blocked": [
         "Camera en microfoon zijn geblokkeerd."
@@ -3745,14 +4256,14 @@
       "Camera is blocked": [
         "Camera is geblokkeerd"
       ],
+      "Can’t join from this browser": [
+        "Kan niet deelnemen via deze browser"
+      ],
       "Chat": [
         "Chat"
       ],
       "Constants": [
         "Constanten"
-      ],
-      "Couldn't prepare the recording": [
-        "Kon de opname niet voorbereiden"
       ],
       "Create new room": [
         "Maak nieuwe ruimte aan"
@@ -3768,9 +4279,6 @@
       ],
       "Delete recording?": [
         "Opname verwijderen?"
-      ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
       ],
       "Epoch": [
         "Epoch"
@@ -3792,9 +4300,6 @@
       ],
       "Info": [
         "Informatie"
-      ],
-      "Invalid meeting link": [
-        "Ongeldige vergaderlink"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -3827,6 +4332,9 @@
       "Meeting": [
         "Vergadering"
       ],
+      "Meeting actions": [
+        "Vergadering acties"
+      ],
       "Meeting created": [
         "Vergadering aangemaakt"
       ],
@@ -3851,6 +4359,9 @@
       "No results found": [
         "Geen resultaten"
       ],
+      "Participant counts don’t match": [
+        "Deelnemer hoeveelheid komt niet overeen"
+      ],
       "Participants": [
         "Deelnemers"
       ],
@@ -3865,6 +4376,9 @@
       ],
       "Publications": [
         "Publicaties"
+      ],
+      "Quick reactions": [
+        "Snelle reacties"
       ],
       "Reconnection Testing": [
         "Testen opnieuw verbinden"
@@ -3911,11 +4425,11 @@
       "Stop recording": [
         "Stop met opnemen"
       ],
+      "System": [
+        "Systeem"
+      ],
       "Talk confidentially": [
         "Vertrouwelijk communiceren"
-      ],
-      "The host didn't admit you": [
-        "De host heeft u niet toegelaten"
       ],
       "Time": [
         "Tijd"
@@ -3925,6 +4439,15 @@
       ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
+      ],
+      "Verify it’s you": [
+        "Uw identiteit verifiëren"
+      ],
+      "Video and audio": [
+        "Video en audio"
+      ],
+      "Virtual backgrounds": [
+        "Virtuele achtergronden"
       ],
       "Waiting for the host": [
         "Wachten op de host"
@@ -3945,9 +4468,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Achtergrondvervaging wordt niet ondersteund door uw browser"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Genereer een nieuwe vergaderlink. De huidige link zal niet meer werken."
       ],
@@ -3956,6 +4476,9 @@
       ],
       "Recurring meeting": [
         "Terugkerende vergadering"
+      ],
+      "Stop sharing your screen to change this setting": [
+        "Stop je schermdelen om deze instelling aan te passen"
       ],
       "You can generate a new meeting link once per day.": [
         "U kunt één keer per dag een nieuwe vergaderlink genereren."
@@ -3980,23 +4503,8 @@
       "Connection is taking longer than expected": [
         "De verbinding duurt langer dan verwacht"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Kon geen toegang krijgen tot de camera of microfoon. U kunt proberen deze opnieuw in te schakelen via de vergaderingsbediening."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Geen toegang tot de camera. U kunt proberen deze opnieuw in te schakelen via de vergaderingsbediening."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Geen toegang tot de microfoon. U kunt proberen deze opnieuw in te schakelen via de vergaderingsbediening."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "STUN UDP-verbinding mislukt, proberen met TURN-relay…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "Time-out van STUN UDP-verbinding, proberen met TURN-relay"
       ],
       "Trying another route…": [
         "Een andere route proberen…"

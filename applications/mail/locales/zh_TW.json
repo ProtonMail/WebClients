@@ -459,8 +459,8 @@
       "Display navigation bar": [
         "顯示側邊導覽欄"
       ],
-      "Don't show this offer again": [
-        "不再顯示此優惠"
+      "Don't show this again": [
+        "不再顯示此內容"
       ],
       "Done": [
         "完成"
@@ -1431,6 +1431,9 @@
       "Skip": [
         "略過"
       ],
+      "Skip to main content": [
+        "跳至主要內容"
+      ],
       "Skip verification": [
         "略過驗證"
       ],
@@ -1529,9 +1532,6 @@
       ],
       "Trust": [
         "信任"
-      ],
-      "Trust key": [
-        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -1649,6 +1649,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用您的滑鼠調整檢視大小。若您使用鍵盤，您也可以使用左右方向鍵來調整。"
+      ],
+      "Use “${ label }” setting": [
+        "使用「${ label }」設定"
       ],
       "Verify": [
         "驗證"
@@ -2051,9 +2054,19 @@
         "您的免費滿意體驗將於 ${ timeRemaining } 結束"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "關閉"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "進階版密碼管理器"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "優惠不再提供"
       ]
     },
     "BF2024: Deal details": {
@@ -4705,11 +4718,23 @@
       "Calendar limit reached": [
         "行事曆數量已達上限"
       ],
+      "Cannot download a folder": [
+        "無法下載個資料夾"
+      ],
       "Cannot export this contact": [
         "無法匯出通訊名片"
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "無法設置長於保留政策允許的過期時間。"
+      ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
+      "Cannot verify who uploaded this file": [
+        "無法驗證上傳此檔案的人"
       ],
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
@@ -4747,11 +4772,29 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
       ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允許將項目複製到非資料夾"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "無法載入照片預覽: ${ message }"
+      ],
       "Could not open created vault": [
         "無法開啟被新增的保管庫"
       ],
       "Could not open updated vault": [
         "無法開啟已更新的保管庫"
+      ],
+      "Could not unlock this item": [
+        "無法解鎖此項目"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "允許於非資料夾內創建檔案"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允許於非資料夾內創建資料夾"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
@@ -4761,6 +4804,9 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
+      ],
+      "Device not found": [
+        "找不到裝置"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -4813,6 +4859,18 @@
       "Failed loading group members": [
         "無法再入群組成員"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密書籤金鑰失敗: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密內容金鑰失敗: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
       ],
@@ -4836,6 +4894,9 @@
       ],
       "Forward address is required": [
         "轉寄電郵地址為必填"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
       ],
       "Image upload failed": [
         "影像上載失敗"
@@ -4876,14 +4937,23 @@
       "Invalid public key file": [
         "公開金鑰檔案無效"
       ],
+      "Invalid URL": [
+        "URL 無效"
+      ],
       "Invalid VAT number": [
         "錯誤的統一編號"
       ],
       "Invalid verification code": [
         "驗證碼無效"
       ],
+      "Invitation not found": [
+        "未找到邀請"
+      ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
+      ],
+      "Item not found": [
+        "找不到項目"
       ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
@@ -4906,14 +4976,29 @@
       "Message processing error.": [
         "郵件處理錯誤。"
       ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
       "Missing key packet": [
         "缺少金鑰封包"
       ],
       "Missing signature": [
         "簽章遺失"
       ],
+      "Move operation aborted": [
+        "以終止移動操作"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允許將項目移動到非資料夾"
+      ],
       "Name is required": [
         "名稱為必填"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
+      ],
+      "Name must not be empty": [
+        "名稱不得留空"
       ],
       "Network error": [
         "網路連線錯誤"
@@ -4954,14 +5039,14 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "部份群組無聯絡人：${ noContactGroupList }"
       ],
+      "Operation aborted": [
+        "操作取消"
+      ],
+      "Operation failed, try again later": [
+        "作業失敗。稍後再試。"
+      ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
-      ],
-      "Organization key must be activated to create invited users": [
-        "需啟用組織金鑰才能建立邀請使用者"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "需啟用組織金鑰才能建立非私人使用者"
       ],
       "Password is required": [
         "密碼為必填"
@@ -4983,6 +5068,12 @@
       ],
       "Permissions request failed.": [
         "權限請求失敗。"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在於目標相簿中"
+      ],
+      "Photo not found": [
+        "找不到照片"
       ],
       "Please activate your search again": [
         "請再次啟用搜尋"
@@ -5074,6 +5165,9 @@
       "Removed duplicate recipient: ${ recipents }": [
         "已移除重複的收件者：${ recipents }"
       ],
+      "Request aborted": [
+        "請求已中止"
+      ],
       "Request timed out": [
         "需求逾時"
       ],
@@ -5086,6 +5180,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "當您超出方案限制時，附件無法使用，直到升級您的方案。"
       ],
+      "Signature is missing": [
+        "缺少簽名"
+      ],
       "Signature not verified": [
         "簽章尚未驗證"
       ],
@@ -5095,11 +5192,26 @@
       "Signature verification failed": [
         "簽名驗證失敗"
       ],
+      "Signature verification for ${ signatureType } failed": [
+        "失敗替 ${ signatureType } 簽名驗證"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "某些聯絡名片無法刪除"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "部分檔案上載失敗。請稍後再試。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "檔案部分上傳失敗。請稍後再試。"
+      ],
       "Some groups could not be deleted": [
         "部分聯絡人群組無法刪除"
+      ],
+      "Some items could not be loaded": [
+        "無法載入部分項目"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
@@ -5115,6 +5227,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
+      ],
+      "Something went wrong": [
+        "發生錯誤"
       ],
       "Something went wrong while converting the address": [
         "轉換位址時發生錯誤"
@@ -5176,9 +5291,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐款金額為 ${ price }"
-      ],
       "The sending key is not valid": [
         "寄送金鑰無效"
       ],
@@ -5215,8 +5327,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
+      "This file has missing crypto material": [
+        "此檔案缺乏密鑰元件"
+      ],
+      "This file has no version available to download": [
+        "此檔案無可下載版本"
+      ],
+      "This file version could not be uploaded": [
+        "此檔案的版本紀錄無法被上傳"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "此資料夾名稱不適用。請選擇其它名稱。"
+      ],
+      "This item has no image preview": [
+        "此項目無可預覽的項目"
+      ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
+      "This item is not shared": [
+        "此項目未被共享"
       ],
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請選擇其它名稱。"
@@ -5229,6 +5359,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
+      ],
+      "Too many server errors, please try again later": [
+        "太多伺服器錯誤，請稍後再試"
+      ],
+      "Too many server requests, please try again later": [
+        "太多伺服器查詢，請稍後再試"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
@@ -5263,6 +5399,9 @@
       "VAT number must start with ${ prefixes }": [
         "增值稅號碼必須以 ${ prefixes } 開頭"
       ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
+      ],
       "We couldn’t send a verification code using this method.": [
         "我們無法使用此方法傳送驗證碼。"
       ],
@@ -5275,6 +5414,9 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "錯誤的恢復短語。重試或使用其它復原方法。"
       ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
@@ -5283,6 +5425,12 @@
       ],
       "You did not provide a file.": [
         "您沒有提供檔案。"
+      ],
+      "You do not have access to this item": [
+        "您沒有權限訪問此項目"
+      ],
+      "You do not have access to this shared item": [
+        "您沒有權限訪問此共享的項目"
       ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
@@ -9577,9 +9725,6 @@
       "Apply to future messages": [
         "套用至今後的訊息"
       ],
-      "Archive": [
-        "封存"
-      ],
       "At": [
         "於"
       ],
@@ -10240,9 +10385,6 @@
       "Search in": [
         "搜尋於"
       ],
-      "Select all ${ count } unused sender": [
-        "選取全部 ${ count } 未使用的寄件者"
-      ],
       "Select which Gmail address to connect": [
         "選取 Gmail 位址以連線"
       ],
@@ -10284,9 +10426,6 @@
       ],
       "Sort": [
         "排序"
-      ],
-      "Spam": [
-        "垃圾郵件"
       ],
       "Starred": [
         "已加星號"
@@ -10365,9 +10504,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "交易 - 回條、預訂、帳單和訂單"
-      ],
-      "Trash": [
-        "垃圾桶"
       ],
       "Undisclosed Recipients": [
         "隱名收件者"
@@ -10508,6 +10644,14 @@
       ],
       "To": [
         "收件者"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "欄"
+      ],
+      "Row": [
+        "列"
       ]
     },
     "Label, credit card": {
@@ -13306,6 +13450,26 @@
         "進度：${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "內容金鑰"
+      ],
+      "hash key": [
+        "雜湊金鑰"
+      ],
+      "key": [
+        "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
+      ]
+    },
     "Property type": {
       "Address": [
         "位址"
@@ -14387,9 +14551,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "剩下${ dayDiff }天"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
@@ -14618,20 +14779,11 @@
       "What you give up when you cancel ${ planName }": [
         "當您取消 ${ planName } 時您將放棄的權益"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "在您取消${ planName }訂購，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "當您的 ${ planName } 訂閱於 ${ expiryDate } 結束時，您將會降級至 ${ BRAND_NAME } 免費方案。"
       ],
       "Yearly free storage bonuses": [
         "年度免費儲存加成"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "您的${ planName }訂購授權還剩餘${ expiryDate }。我們將會在您的剩餘時間，給您的${ BRAND_NAME }帳號添加可用額度。在取消前，確保您沒有超出免費方案的限度。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "您的 ${ planName } 計畫不但能保護您的企業通訊與資料安全。還能協助您保持合規使您的業務脫穎而出，還能讓您的團隊保持聯繫。"
@@ -15560,9 +15712,6 @@
       "Enhance security with 2FA": [
         "透過雙重驗證強化安全性"
       ],
-      "Enter your password": [
-        "輸入您的密碼"
-      ],
       "Error": [
         "錯誤"
       ],
@@ -16198,6 +16347,9 @@
       ],
       "Verification failed": [
         "驗證失敗"
+      ],
+      "Verify it’s you": [
+        "驗證是您本人"
       ],
       "Verify your password": [
         "驗證您的密碼"

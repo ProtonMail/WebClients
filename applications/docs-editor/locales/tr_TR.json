@@ -444,9 +444,6 @@
       "Loading spreadsheet content...": [
         "Elektronik tablo içeriği yükleniyor..."
       ],
-      "NEW": [
-        "YENİ"
-      ],
       "New": [
         "Yeni"
       ],
@@ -710,6 +707,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Aynı adlı bir sayfa zaten var"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "History ayrılmış bir addır ve sayfa adı olarak kullanılamaz"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Sayfa adları 31 karakterden uzun olamaz"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Sayfa adlarında \\ / ? * [ ] : veya şu karakterler bulunamaz:"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Sayfa adları kesme işareti ile başlayamaz veya bitemez"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -2253,14 +2262,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Durum çubuğunda göster"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, uygulanamaz"
+      ],
       "Average": [
         "Ortalama"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Copy formula": [
+        "Formülü kopyala"
+      ],
+      "Copy value": [
+        "Değeri kopyala"
       ],
       "Count": [
         "Sayı"
       ],
-      "Customize Status Bar": [
-        "Durum çubuğunu özelleştir"
+      "Count numbers": [
+        "Sayıları say"
+      ],
+      "Detach from selection": [
+        "Seçimden çıkar"
       ],
       "Max": [
         "En fazla"
@@ -2268,11 +2295,20 @@
       "Min": [
         "En az"
       ],
-      "Numerical count": [
-        "Sayım"
+      "Pin by the selection": [
+        "Seçime göre sabitle"
+      ],
+      "Selection summary": [
+        "Seçimin özeti"
       ],
       "Sum": [
         "Toplam"
+      ],
+      "Summary": [
+        "Özet"
+      ],
+      "Unpin from selection": [
+        "Seçimden sabitlemeyi kaldır"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

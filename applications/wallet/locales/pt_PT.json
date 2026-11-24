@@ -41,10 +41,10 @@
         "Adicionar ${ name }"
       ],
       "Add account": [
-        "Adicionar uma conta"
+        "Adicionar conta"
       ],
       "Add another account": [
-        "Adicionar outra conta"
+        "Adicionar Outra Conta"
       ],
       "Add credit / debit card": [
         "Adicionar cartão de crédito/débito"
@@ -68,7 +68,7 @@
         "Cancelar subscrição"
       ],
       "Cancel trial and pay": [
-        "Cancelar o período de avaliação e pagar"
+        "Cancelar o período de testes e pagar"
       ],
       "Change password": [
         "Alterar a palavra-passe"
@@ -143,7 +143,7 @@
         "Editar"
       ],
       "Edit billing address": [
-        "Editar o endereço da fatura"
+        "Editar a morada da fatura"
       ],
       "Edit email address": [
         "Editar o endereço de e-mail"
@@ -206,7 +206,7 @@
         "Introduza a frase secreta"
       ],
       "Keep my subscription": [
-        "Manter a minha assinatura"
+        "Manter a minha subscrição"
       ],
       "Learn more": [
         "Saber mais"
@@ -358,11 +358,17 @@
       "Sign out of all accounts": [
         "Sair de todas as contas"
       ],
+      "Skip to main content": [
+        "Ignorar para o conteúdo principal"
+      ],
       "Submit": [
         "Submeter"
       ],
       "Switch or add account": [
         "Trocar ou adicionar conta"
+      ],
+      "Switch to ${ planName }": [
+        "Mudar para ${ planName }"
       ],
       "Take a tour": [
         "Visita guiada"
@@ -457,6 +463,10 @@
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenças"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita de ${ LUMO_SHORT_APP_NAME } (para ${ quantity } utilizador)",
+        "Assistente de escrita de ${ LUMO_SHORT_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -498,6 +508,12 @@
       ],
       "Domains": [
         "Domínios"
+      ],
+      "Managed Service Provider": [
+        "Provedor de Serviço Gerido"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "As organizações com o complemento \"Provedor de Serviço Gerido\"  podem criar e gerir organizações subsidiárias."
       ],
       "Servers": [
         "Servidores"
@@ -580,7 +596,7 @@
         "Pode ter até ${ TRIAL_MAX_USERS } utilizadores durante o período de avaliação."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Você não pode adicionar domínios personalizados durante o período de avaliação."
+        "Não pode adicionar domínios personalizados durante o período de testes."
       ],
       "You have reached the trial limit.": [
         "Atingiu o limite da avaliação."
@@ -599,9 +615,19 @@
         "A carregar o saldo"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
       ]
     },
     "BF2024: Deal details": {
@@ -883,6 +909,11 @@
         "SAT"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Aplicação de PC"
+      ]
+    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problema com o ${ LUMO_SHORT_APP_NAME }"
@@ -1085,6 +1116,15 @@
         "${ users } utilizador",
         "${ users } utilizadores"
       ],
+      "Amount due": [
+        "Montante devido"
+      ],
+      "Amount due after trial": [
+        "Montante devido depois da avaliação"
+      ],
+      "Amount due now": [
+        "Montante devido agora"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1094,6 +1134,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total para ${ cycle } mês",
+        "Total para ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -2187,7 +2231,7 @@
         "Bitcoin via e-mail"
       ],
       "Bitcoin via Email is a unique feature in ${ WALLET_APP_NAME } that makes sending bitcoin as easy as sending an email. Any ${ WALLET_APP_NAME } user can frictionlessly receive bitcoin with their email.": [
-        "O Bitcoin via e-mail é uma funcionalidade exclusiva do ${ WALLET_APP_NAME } que torna o envio de bitcoin tão simples quanto enviar um e-mail. Qualquer utilizador do ${ WALLET_APP_NAME } pode receber bitcoin facilmente através do seu e-mail."
+        "O Bitcoin via E-mail é uma funcionalidade exclusiva do ${ WALLET_APP_NAME } que torna o envio de Bitcoin tão simples quanto enviar uma mensagem. Qualquer utilizador do ${ WALLET_APP_NAME } pode receber Bitcoin facilmente através do seu ''e-mail''."
       ],
       "Discover": [
         "Descobrir"
@@ -2205,7 +2249,7 @@
         "Fazemos um panorama de alguns acontecimentos históricos significativos e das funcionalidades do bitcoin para iniciantes. Também analisámos como o bitcoin possibilita a soberania e a liberdade financeiras. Por fim, explorámos os desafios que o bitcoin enfrenta e o seu potencial futuro."
       ],
       "We review the key features and security architecture that make ${ WALLET_APP_NAME } a private and secure wallet that is as easy to use as email.": [
-        "Examinamos as principais funcionalidades e a arquitetura de segurança que tornam o ${ WALLET_APP_NAME } uma carteira privada e segura que é tão fácil de utilizar quanto um e-mail."
+        "Nós revemos as principais funcionalidades e a arquitetura de segurança que tornam o ${ WALLET_APP_NAME } uma carteira privada e segura que é tão fácil de utilizar quanto um ''e-mail''."
       ],
       "What is Bitcoin?": [
         "O que é um bitcoin?"
@@ -2285,6 +2329,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é o seu nome de utilizador. Para criar ${ emailAddress }, aceda a Definições > Identidade e endereços > Domínio curto (pm.me)."
       ],
+      "A contact with this email address already exists": [
+        "Já existe um contacto com este endereço de correio eletrónico"
+      ],
       "Amount above the maximum.": [
         "Quantia acima do máximo."
       ],
@@ -2302,6 +2349,9 @@
       ],
       "Contact could not be saved": [
         "Não foi possível guardar o contacto."
+      ],
+      "Could not grant access to the organization key": [
+        "Não foi possível conceder acesso à chave da organização"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
@@ -2359,12 +2409,6 @@
       ],
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
-      ],
-      "Organization key must be activated to create invited users": [
-        "A chave da organização deve ser ativada para criar utilizadores convidados."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "A chave da organização deve ser ativada para criar utilizadores não privados."
       ],
       "Passwords do not match": [
         "As palavras-passe não correspondem."
@@ -2437,9 +2481,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O montante mínimo de crédito que pode ser adicionado é ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "O valor mínimo do donativo é ${ price }"
       ],
       "The passphrases do not match": [
         "As frases secretas não coincidem."
@@ -2548,6 +2589,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com a sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "O navegador não suporta as chaves de segurança. Por favor, tente um navegador diferente."
       ]
     },
     "fido2: Info": {
@@ -2700,8 +2744,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "marca ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "O ${ LUMO_APP_NAME } inclui o assistente de escrita ${ BRAND_NAME } Scribe."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclui o assistente de escrita"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
@@ -2777,7 +2827,7 @@
         "Quantia abaixo do mínimo (${ amount })."
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "No final da sua avaliação ${ boldCancelDate }, irá regredir para o ${ boldProtonFree }. Todas as contas de utilizador serão removidas da sua organização."
+        "No final do seu período de testes ${ boldCancelDate }, será transferido para ${ boldProtonFree }. Todas as contas de utilizador serão removidas da sua organização."
       ],
       "Attention required": [
         "Atenção Requerida"
@@ -2947,6 +2997,9 @@
       ],
       "No payment is required at this time.": [
         "Nenhum pagamento é necessário neste momento."
+      ],
+      "No payment is required.": [
+        "Não é necessário pagamento."
       ],
       "No results found": [
         "Nenhum resultado"
@@ -3370,9 +3423,6 @@
       "Optional": [
         "Opcional"
       ],
-      "Password": [
-        "Palavra-passe"
-      ],
       "Payer": [
         "Pagante"
       ],
@@ -3582,6 +3632,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adicionar o assistente de escrita ${ BRAND_NAME } Scribe"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adicionar assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add-on with free trial": [
         "Complemento com avaliação gratuita"
       ],
@@ -3672,7 +3725,7 @@
         "${ seats } licenças incluídas"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
+        "Pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de testes."
       ]
     },
     "New Label form": {
@@ -4270,7 +4323,7 @@
         "Domínios personalizados para aliases, caixas de correio adicionais, a capacidade de enviar e-mails de aliases, e mais"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
+        "Os servidores dedicados com endereços de IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
@@ -4478,6 +4531,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visite o nosso ${ helpCenterLink } ou ${ contactSupportLink }."
       ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancele a qualquer momento antes do ${ cancelDate }."
       ],
@@ -4493,11 +4549,17 @@
       "help center": [
         "centro de ajuda"
       ],
+      "If you continue after your trial,": [
+        "Se continuar depois da avaliação,"
+      ],
       "If you need help,": [
         "Se precisar de ajuda,"
       ],
       "Once your full subscription starts...": [
         "Assim que a sua subscrição completa começar..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Ainda pode cancelar no prazo de 30 dias e obter um reembolso proporcional."
@@ -4506,7 +4568,7 @@
         "Poderá usar ${ planTitle } até o fim da avaliação e não lhe será cobrado."
       ],
       "Your free trial has started": [
-        "A sua avaliação gratuita começou."
+        "O seu período de testes começou."
       ]
     },
     "Option": {
@@ -4536,7 +4598,7 @@
         "Registo de atividades"
       ],
       "Admin panel to manage users and subscription": [
-        "Painel de administração para gerir utilizadores e subscrição"
+        "Painel de administração para gerir os utilizadores e a subscrição"
       ],
       "Advanced account protection": [
         "Proteção avançada de conta"
@@ -4609,7 +4671,7 @@
     },
     "Payments": {
       "${ formattedPrice } (excl. tax)": [
-        "${ formattedPrice } (excl. imposto)"
+        "${ formattedPrice } (excluindo imposto)"
       ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Imposto de ${ rate }%: ${ taxAmountElement }"
@@ -4639,7 +4701,7 @@
         "Durante este período, não poderá modificar ou cancelar a sua subscrição. Aguarde até que o seu pagamento esteja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
       "Edit billing address": [
-        "Editar o endereço de faturação"
+        "Editar a morada de faturação"
       ],
       "Got it": [
         "Entendido"
@@ -4670,6 +4732,9 @@
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a subscrição seja ativada após o término do período de avaliação."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Mudar de plano é incompatível pelos seguintes motivos:"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative primeiro a sua subscrição antes para diminuir o número de complementos."
@@ -4702,7 +4767,7 @@
         "O preço com desconto especial é válido para ${ subscriptionLength } meses."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "O preço com desconto especial é válido para o primeiro mês. Em seguida, será renovado automaticamente por ${ renewPriceStr } todos os meses. Pode cancelar a qualquer momento."
+        "O preço com desconto especial é válido para o primeiro mês. Depois, será renovado automaticamente por ${ renewPriceStr } todos os meses. Pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "O preço especial com desconto de ${ priceWithDiscount } é válido durante ${ couponRedemptions } mês. Depois disso, a subscrição será renovada automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento.",
@@ -4727,6 +4792,9 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este tornar-se-á o seu novo método de pagamento predefinido para todas as renovações futuras."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta subscrição não pode ser concluída agora. Por favor, tente novamente. "
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
@@ -4757,6 +4825,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Nao foi possivel inicializar ${ IDEAL_WERO_BRAND_NAME }. Por favor, tente novamente mais tarde."
+      ],
       "Invalid card number": [
         "O número de cartão é inválido."
       ],
@@ -4765,6 +4836,9 @@
       ],
       "Invalid security code": [
         "O código de segurança inválido."
+      ],
+      "Please enter the account holder name": [
+        "Por favor, insira o nome do titular da conta"
       ],
       "Something went wrong. Please try again later.": [
         "Ocorreu um erro. Tente novamente mais tarde."
@@ -4779,6 +4853,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, autoriza a ${ BRAND_NAME } e a Stripe, o nosso prestador de serviços de pagamento, a cobrar os futuros pagamentos da sua subscrição a partir desta conta bancária por débito direto SEPA, e autoriza o seu banco a debitar esses pagamentos. O seu primeiro pagamento é efetuado agora através de ${ IDEAL_WERO_BRAND_NAME }. O seu plano renova-se automaticamente até que o cancele; nós notificamo-lo antes de cada cobrança. Nas cobranças por débito direto, pode pedir um reembolso ao seu banco no prazo de 8 semanas a contar da data do débito, nos termos do acordo celebrado com o seu banco. Isto não se aplica ao pagamento através de ${ IDEAL_WERO_BRAND_NAME } que está a efetuar agora."
       ]
     },
     "Payments.info": {
@@ -4823,6 +4902,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "O preço de renovação depende da região de faturação e do número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -5014,7 +5098,7 @@
     },
     "Receive bitcoin": {
       "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "Abaixo está o último endereço de bitcoin gerado. Para uma melhor privacidade, utilize um endereço diferente para cada transação."
+        "Em baixo está o último endereço de Bitcoin gerado. Para uma melhor privacidade, utilize um endereço diferente para cada transação."
       ],
       "Receive Bitcoin": [
         "Receber bitcoin"
@@ -5380,6 +5464,9 @@
       "Payment method updated": [
         "Método de pagamento atualizado"
       ],
+      "Preference saved": [
+        "Preferência guardada"
+      ],
       "Problem reported": [
         "Problema comunicado"
       ],
@@ -5535,7 +5622,7 @@
         "Transferir as aplicações do ${ DRIVE_APP_NAME }"
       ],
       "Edit billing address": [
-        "Editar o endereço da fatura"
+        "Editar a morada da fatura"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -5545,9 +5632,6 @@
       ],
       "Enhance security with 2FA": [
         "Aumente a segurança com a A2F"
-      ],
-      "Enter your password": [
-        "Introduza a sua palavra-passe"
       ],
       "Error": [
         "Erro"
@@ -5650,6 +5734,9 @@
       ],
       "Verification failed": [
         "Erro na verificação"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ],
       "Verifying your card...": [
         "Verificação do seu cartão..."
@@ -5756,6 +5843,12 @@
       "This user gets administrator rights the next time they sign in.": [
         "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
       ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Atualizar para um plano suportado para utilizar funções de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Não pode alterar as suas próprias funções. Peça a outro administrador para as alterar."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
       ]
@@ -5856,10 +5949,10 @@
         "Índice da conta"
       ],
       "Add wallet account": [
-        "Adicionar uma conta na carteira"
+        "Adicionar conta na carteira"
       ],
       "Address type": [
-        "Categoria de endereço"
+        "Tipo de endereço"
       ],
       "Cancel": [
         "Cancelar"
@@ -5868,7 +5961,7 @@
         "Crie várias contas de carteira para separar as suas atividades financeiras e ter melhor privacidade e organização."
       ],
       "Create wallet account": [
-        "Criar uma conta de carteira"
+        "Criar conta da carteira"
       ],
       "Custom account index": [
         "Índice de conta personalizado"
@@ -5889,7 +5982,7 @@
         "Poupança para férias"
       ],
       "Your account was successfully created": [
-        "A sua conta foi criada."
+        "A sua conta foi criada com sucesso."
       ]
     },
     "Wallet account": {
@@ -5897,7 +5990,7 @@
         "Índice da conta"
       ],
       "Address Type": [
-        "Categoria de endereço"
+        "Tipo de Endereço"
       ],
       "Advanced settings": [
         "Definições avançadas"
@@ -5912,7 +6005,7 @@
         "Nós utilizamos por defeito o Native Segwit, que tem as menores taxas de rede. Pode alterar isto para receber bitcoin de outros serviços que apenas suportam outros tipos."
       ],
       "We default to the next unused index. You can change this to recover or to skip a previous account.": [
-        "Nós utilizamos por defeito o próximo índice não utilizado. Pode alterar isto para recuperar ou para saltar uma conta anterior."
+        "Nós utilizamos por predefinição o próximo índice não utilizado. Pode alterar isto para recuperar ou para ignorar uma conta anterior."
       ]
     },
     "Wallet buy": {
@@ -5964,7 +6057,7 @@
         "Fazer cópia de segurança da frase de recuperação desta carteira"
       ],
       "Backup your ${ BRAND_NAME } account data": [
-        "Fazer cópia de segurança dos dados da sua conta ${ BRAND_NAME }"
+        "Efetuar cópia de segurança dos dados da sua conta ${ BRAND_NAME }"
       ],
       "Discover": [
         "Descobrir"
@@ -5981,10 +6074,10 @@
         "Proteja a sua carteira"
       ],
       "The passphrase is incorrect. Please try again.": [
-        "A frase secreta está incorreta. Tente novamente."
+        "A frase-passe está incorreta. Por favor, tente novamente."
       ],
       "This wallet needs a passphrase to be used.": [
-        "Esta carteira precisa de uma frase secreta para ser utilizada."
+        "Esta carteira precisa de uma frase-passe para ser utilizada."
       ],
       "Upgrade": [
         "Melhorar"
@@ -6011,13 +6104,13 @@
     },
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
-        "Uma frase secreta de carteira é uma palavra-passe adicional extra que cria para adicionar segurança à sua carteira de criptomoedas. Ela funciona com a sua frase de recuperação. Guarde-a com segurança, pois perdê-la pode trancá-lo fora da sua carteira."
+        "Uma frase-passe da carteira é uma palavra-passe extra que cria para adicionar segurança à sua carteira de criptomoedas. Esta funciona com a sua frase de recuperação. Guarde-a em segurança, pois perdê-la pode bloqueá-lo da sua carteira."
       ],
       "A wallet seed phrase is a sequence of 12 to 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
         "Uma frase integrada da carteira é uma sequência de 12 a 24 palavras gerada pela sua carteira. Esta funciona como uma chave principal que lhe permite recuperar os seus fundos. Guarde-a em segurança e nunca a partilhe, pois esta dá acesso aos seus fundos."
       ],
       "What’s a wallet passphrase?": [
-        "O que é uma frase secreta de carteira?"
+        "O que é uma frase-passe da carteira?"
       ],
       "What’s a wallet seed phrase?": [
         "O que é uma frase de recuperação de carteira?"
@@ -6080,13 +6173,13 @@
     },
     "Wallet passphrase": {
       "Fingerprint doesn't match stored one": [
-        "A impressão digital não corresponde à armazenada."
+        "A impressão digital não corresponde à guardada."
       ],
       "My wallet passphrase": [
         "A frase secreta da minha carteira"
       ],
       "To use this wallet, you need to input the passphrase": [
-        "Para utilizar esta carteira, é necessário introduzir a frase secreta."
+        "Para utilizar esta carteira, tem de inserir a frase-passe"
       ],
       "Wallet passphrase": [
         "Frase secreta da carteira"
@@ -6492,13 +6585,13 @@
     },
     "Wallet setup": {
       "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
-        "Uma frase secreta atua como uma segunda palavra-passe. Não pode ser alterada ou adicionada posteriormente. Faça uma cópia de segurança de forma segura para desbloquear a sua carteira cada vez que iniciar sessão."
+        "Uma frase-passe atua como uma segunda palavra-passe. Não pode ser alterada ou adicionada posteriormente. Faça uma cópia de segurança de forma segura para desbloquear a sua carteira cada vez que iniciar a sessão."
       ],
       "Add a passphrase": [
-        "Adicione uma frase secreta"
+        "Adicione uma frase-passe"
       ],
       "Add a passphrase (optional)": [
-        "Adicione uma frase secreta (opcional)"
+        "Adicione uma frase-passe (opcional)"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
@@ -6510,7 +6603,7 @@
         "Confirmar"
       ],
       "Confirm Passphrase": [
-        "Confirmar a frase secreta"
+        "Confirmar Frase-passe"
       ],
       "Create new wallet": [
         "Criar uma carteira nova"
@@ -6546,7 +6639,7 @@
         "Saiba mais"
       ],
       "My wallet had a passphrase": [
-        "A minha carteira tinha uma frase secreta."
+        "A minha carteira tinha uma frase-passe."
       ],
       "Name": [
         "Nome"
@@ -6558,7 +6651,7 @@
         "Agora não"
       ],
       "Passphrase": [
-        "Frase secreta"
+        "Frase-passe"
       ],
       "Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.": [
         "Escolha uma moeda padrão para podermos exibir o valor das suas transações em bitcoin utilizando os dados de mercado mais recentes no momento da transação."
@@ -6618,7 +6711,7 @@
         "Configuração da carteira"
       ],
       "What's a wallet passphrase?": [
-        "O que é uma frase secreta de carteira?"
+        "O que é uma frase-passe da carteira?"
       ],
       "What's a wallet seed phrase?": [
         "O que é uma frase de recuperação de carteira?"
@@ -6670,7 +6763,7 @@
     },
     "Wallet sidebar": {
       "Add account": [
-        "Adicionar uma conta"
+        "Adicionar conta"
       ]
     },
     "Wallet Terms and Conditions": {
@@ -6681,7 +6774,7 @@
         "Para evitar perder os seus ativos devido ao esquecimento da palavra-passe ou outros problemas de acesso, faça uma cópia de segurança da sua frase de recuperação da ${ BRAND_NAME }e da frase de recuperação da carteira."
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
-        "Criámos duas contas BTC para si. Uma conta principal e uma segunda conta para receber btcoin via e-mail (em ${ emailEl }) de outros utilizadores de ${ WALLET_APP_NAME }."
+        "Nós criámos duas contas BTC para si. Uma conta principal e uma segunda conta para receber Btcoin via E-mail (em ${ emailEl }) de outros utilizadores de ${ WALLET_APP_NAME }."
       ]
     },
     "Wallet terms and conditions": {

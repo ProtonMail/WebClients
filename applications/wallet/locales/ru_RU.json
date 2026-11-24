@@ -352,6 +352,9 @@
       "Sign out of all accounts": [
         "Выйти из всех учётных записей"
       ],
+      "Skip to main content": [
+        "Перейти к основному содержимому"
+      ],
       "Submit": [
         "Отправить"
       ],
@@ -610,9 +613,19 @@
         "Загрузка баланса"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыть"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Предложение недоступно"
       ]
     },
     "BF2024: Deal details": {
@@ -896,6 +909,11 @@
       ],
       "Sats": [
         "сатоши"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     },
     "Bug category": {
@@ -2381,12 +2399,6 @@
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
       ],
-      "Organization key must be activated to create invited users": [
-        "Ключ организации должен быть активирован для создания приглашенных пользователей"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Ключ организации должен быть активирован для создания нечастных пользователей"
-      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -2458,9 +2470,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Минимальная сумма пожертвования составляет ${ price }"
       ],
       "The passphrases do not match": [
         "Кодовые фразы не совпадают"
@@ -3403,9 +3412,6 @@
       ],
       "Optional": [
         "Необязательно"
-      ],
-      "Password": [
-        "Пароль"
       ],
       "Payer": [
         "Плательщик"
@@ -5492,6 +5498,9 @@
       "Payment method updated": [
         "Способ оплаты обновлён"
       ],
+      "Preference saved": [
+        "Настройки сохранены"
+      ],
       "Problem reported": [
         "О проблеме сообщено"
       ],
@@ -5658,9 +5667,6 @@
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
       ],
-      "Enter your password": [
-        "Введите пароль"
-      ],
       "Error": [
         "Ошибка"
       ],
@@ -5762,6 +5768,9 @@
       ],
       "Verification failed": [
         "Проверка не удалась"
+      ],
+      "Verify it’s you": [
+        "Подтвердите, что это вы"
       ],
       "Verifying your card...": [
         "Проверяем вашу карту..."

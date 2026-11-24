@@ -395,8 +395,8 @@
       "Display previous": [
         "Visa föregående"
       ],
-      "Don't show this offer again": [
-        "Visa inte detta erbjudande igen"
+      "Don't show this again": [
+        "Visa inte detta igen"
       ],
       "Done": [
         "Klar"
@@ -980,6 +980,9 @@
       "Search is unavailable": [
         "Sök är inte tillgänglig"
       ],
+      "Search recent items": [
+        "Sök senaste använda objekt"
+      ],
       "See how": [
         "Se hur"
       ],
@@ -1096,6 +1099,9 @@
       ],
       "Skip": [
         "Hoppa över"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
       ],
       "Skip verification": [
         "Hoppa över verifiering"
@@ -1362,6 +1368,9 @@
         "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
         "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
+      ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
       ],
@@ -1385,6 +1394,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplats",
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME }-licens",
@@ -1483,6 +1496,9 @@
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenser under provperioden."
       ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS }${ LUMO_SHORT_APP_NAME } \nplatser för skrivassistenter under provperioden."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-licenser under provperioden."
       ],
@@ -1514,9 +1530,24 @@
         "Inbjuden"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Stäng"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium lösenordshanterare"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink } för att få en återbetalning."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Erbjudande ej tillgängligt"
       ]
     },
     "BF2024: Deal details": {
@@ -3404,6 +3435,9 @@
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Ett meddelande krävs för att rapportera brott mot upphovsrätt eller stulen data"
+      ],
       "Address could not be added.": [
         "Adress kunde inte läggas till."
       ],
@@ -3427,6 +3461,9 @@
       ],
       "Authentication error.": [
         "Autentiseringsfel."
+      ],
+      "Bookmark password is not available": [
+        "Lösenord för bokmärke är inte tillgängligt"
       ],
       "Calendar limit reached": [
         "Kalendergräns nådd"
@@ -3505,6 +3542,9 @@
       ],
       "Could not unlock this item": [
         "Kunde inte låsa upp detta objekt"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Upprättande av dokument utanför mappar är inte tillåtet"
       ],
       "Creating files in non-folders is not allowed": [
         "Upprättande av mappar utanför mappar är inte tillåtet"
@@ -3595,6 +3635,12 @@
       "Failed to decrypt item name: ${ message }": [
         "Kunde inte dekryptera objekt: ${ message }"
       ],
+      "Failed to decrypt node key: ${ message }": [
+        "Misslyckades avkryptera nodnyckel: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Misslyckades att avkryptera revisionsmetadata"
+      ],
       "Failed to expand folder": [
         "Misslyckades att expandera mapp"
       ],
@@ -3607,6 +3653,9 @@
       "Failed to get details, please try again later": [
         "Misslyckades att hämta detaljer, försök igen senare"
       ],
+      "Failed to get invitee keys": [
+        "Misslyckades med att hämta nycklar för den inbjudne"
+      ],
       "Failed to get inviter keys": [
         "Misslyckades med att hämta inbjudningsnycklar"
       ],
@@ -3615,6 +3664,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
+      "Failed to load the membership": [
+        "Misslyckades med att ladda medlemsskapet"
+      ],
+      "Failed to load the membership data": [
+        "Misslyckades med att ladda medlemskapsdatan"
       ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
@@ -3636,6 +3691,9 @@
       ],
       "Failed to verify invitation": [
         "Misslyckades med att verifiera inbjudan"
+      ],
+      "Failed to verify membership": [
+        "Misslyckades med att bekräfta medlemsskapet"
       ],
       "File download failed due to empty response": [
         "Filnedladdning misslyckades på grund av tomt svar"
@@ -3797,12 +3855,6 @@
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisationsnyckel måste vara aktiverad för att skapa inbjudna användare"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
-      ],
       "Part of the file appears to be corrupted": [
         "Del av filen verkar vara skadad"
       ],
@@ -3931,6 +3983,9 @@
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
       ],
+      "Some invitations could not be loaded": [
+        "Några inbjudningar kunde inte laddas"
+      ],
       "Some items could not be loaded": [
         "Några objekt kunde inte laddas"
       ],
@@ -4005,9 +4060,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minsta donationsbelopp är ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den uppladdade filen matchar inte originalet. Försök igen."
@@ -4183,6 +4235,9 @@
       ],
       "You must set a name": [
         "Du måste ange ett namn"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Du nådde maxantalet av anslutna adresser"
       ],
       "Your import will not be processed.": [
         "Din import kommer inte att bearbetas."
@@ -4548,8 +4603,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Begäran om säkerhetsnyckel avbröts eller löpte ut. Försök igen."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Din enhet kunde inte slutföra begäran om säkerhetsnyckel. Försök igen, eller använd en annan inloggningsmetod."
       ]
     },
     "fido2: Info": {
@@ -5069,7 +5130,7 @@
         "${ calendarsToBeMergedCount } sammanslagna kalendrar"
       ],
       "${ claimedAuthor } (unverified sender)": [
-        "${ claimedAuthor }(obekräftad avsändare)"
+        "${ claimedAuthor } (ej verifierad avsändare)"
       ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } av ${ items.length } överföringar slutförda"
@@ -5122,6 +5183,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
       ],
       "${ importedSize } imported": [
         "${ importedSize } importerades"
@@ -5203,6 +5267,9 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } poster"
+      ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
       ],
@@ -5252,6 +5319,9 @@
       ],
       "1 vault per user": [
         "1 valv per användare"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink }för att få en återbetalning."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "En ny version av ${ DRIVE_APP_NAME } är tillgänglig. Ladda om för att fortsätta använda sök."
@@ -5400,6 +5470,9 @@
       "Balance from your previous subscription": [
         "Saldo från din tidigare prenumeration"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Eftersom ${ DRIVE_APP_NAME } är end-to-end-krypterad kan vi inte komma åt eller dekryptera dina filer åt dig. För att låsa upp din Drive efter en lösenordsåterställning måste du ha något av följande:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
       ],
@@ -5486,6 +5559,9 @@
       ],
       "Continue": [
         "Fortsätt"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Fortsätt använda ${ DRIVE_APP_NAME } och lås upp Drive senare"
       ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
@@ -5647,6 +5723,9 @@
       "Enabling auto-deletion…": [
         "Aktiverar automatisk borttagning…"
       ],
+      "Enabling drive search": [
+        "Aktivera sökning i Drive"
+      ],
       "End-to-end encrypted": [
         "End-to-end-krypterat"
       ],
@@ -5777,10 +5856,13 @@
         "Om du har en av dessa, fortsätt till ${ BRAND_NAME }-kontoinställning för att starta avblockeringsprocessen."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+        "Om du har förlorat tillgången till din autentiseringsapp, kan du använda 1 av de 16 återställningskoder som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Om du redan har uppgraderat, kan fortsätta din import i ${ easySwitchSettingsLink }. Du kan också avbryta den där."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
@@ -5803,6 +5885,9 @@
       ],
       "Import your files and folders": [
         "Importera dina filer och mappar"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importera dina filer och mappar från Google Drive och håll dem privata i ${ DRIVE_APP_NAME }."
       ],
       "Important note": [
         "Viktigt meddelande"
@@ -6105,6 +6190,9 @@
       "On public WiFi networks": [
         "På offentliga WiFi-nätverk"
       ],
+      "One encrypted suite. Full business protection.": [
+        "En krypterad svit. Fullständigt skydd för företaget."
+      ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "En av dina krypterade diskar är låst. Det mest sannolika är att det beror på att lösenordet nyligen återställts."
       ],
@@ -6340,6 +6428,9 @@
       ],
       "Scan to download": [
         "Skanna för att ladda ner"
+      ],
+      "Search covers your recent items": [
+        "Sökningen omfattar dina senaste objekt"
       ],
       "Search data can't be read": [
         "Sökdata kan inte läsas"
@@ -6620,11 +6711,17 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "För att ladda ner dessa filer, öppna dem i ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME } och exportera dem."
       ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "För att aktivera sökning behöver vi indexera dina filer lokalt. Du kan fortfarande använda ${ DRIVE_APP_NAME } normalt, och vi talar om för dig när indexering är gjord. Om du lämnar den här sidan kommer indexering att pausas och återupptas när du kommer tillbaka."
+      ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "För att aktivera verkligt privat sökning måste ${ DRIVE_APP_NAME } indexera dina filer lokalt."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor. "
@@ -6680,8 +6777,14 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Tyvärr verkar det som om filen eller en del av dess data inte kan dekrypteras."
       ],
+      "UnionPay logo": [
+        "UnionPay-logga"
+      ],
       "Unknown date": [
         "Okänt datum"
+      ],
+      "Unlock drive to recover files": [
+        "Lås upp Drive för att återställa filer"
       ],
       "Unsaved changes": [
         "Osparade ändringar"
@@ -6790,14 +6893,23 @@
         "Vi kunde inte lägga till detta foto till ditt album",
         "Vi kunde inte lägga till några foton till ditt album"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi kommer att omdirigera dig till ${ IDEAL_WERO_BRAND_NAME } i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi kopierar dem från Google Drive till ${ DRIVE_APP_NAME }."
       ],
       "We'll email you once import is complete.": [
         "Vi skickar e-post till dig när importen är klar."
       ],
       "We'll email you when your import is complete.": [
         "Vi skickar e-post till dig när importen är klar."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi mejlar dig när importen är färdig. Dina filer kommer att finnas i en mapp i ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Vi återkommer snart till dig."
@@ -6914,7 +7026,10 @@
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
-        "Du kan öppna den här mappen är importen är klar. Hittills har vi importerat ${ importedSize }.  Vi skickar e-post till dig när det är klart."
+        "Du kan öppna den här mappen är importen är klar. Hittills har vi importerat ${ importedSize }. Vi skickar e-post till dig när det är klart."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Du kan öppna den här mappen är importen är klar. Vi skickar e-post till dig när det är klart."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
@@ -7000,8 +7115,14 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
       ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Din webbläsare fick slut på utrymme när den indexerade filer för sökning. Gör utrymme ledigt, återuppbygg sedan indexet."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Din Drive är för stor för att indexera helt i den här webbläsaren, så sökning tittar på dina senast använda saker. Andra filer kanske inte syns i resultaten."
       ],
       "Your email address and password were leaked:": [
         "Din e-postadress och ditt lösenord läcktes:"
@@ -7011,6 +7132,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Dina filer är krypterade och säkert förvarade i ${ DRIVE_APP_NAME }."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dina filer är inte längre åtkomliga på grund av en lösenordsåterställning. Ladda upp den gamla krypteringsnyckeln igen för att återfå åtkomsten. ${ KeyReactivationButton }"
@@ -7024,6 +7148,9 @@
       "Your files will be encrypted and then saved.": [
         "Dina filer kommer krypteras och sedan sparas."
       ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra."
+      ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en ${ cycle }-månaders prenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
       ],
@@ -7032,6 +7159,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Din Google Drive kan vara tom eller innehålla bara filer som inte stöds."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Din import är blockerad. Uppgradera nu för att föra över resten av dina filer."
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "Din import är pausad eftersom vi förlorade åtkomst till ditt Google-konto. Anslut igen för att överföra resten av dina filer."
@@ -7176,6 +7306,9 @@
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } av ${ albumProgress.total }"
       ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Kontolösenord"
+      ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
@@ -7259,6 +7392,9 @@
       ],
       "App password": [
         "Applösenord"
+      ],
+      "Applications in a business setting": [
+        "Applikationer i företagsmiljö"
       ],
       "Apply to all duplicated files": [
         "Tillämpa till alla duplicerade filer"
@@ -7410,6 +7546,9 @@
       ],
       "Deleted": [
         "Borttagen"
+      ],
+      "Deleted ${ deleted }": [
+        "Tog bort ${ deleted }"
       ],
       "Device": [
         "Enhet"
@@ -7839,6 +7978,9 @@
       ],
       "Unlock drive": [
         "Lås upp Drive"
+      ],
+      "Unlock drive (recommended)": [
+        "Lås upp drive (rekommenderas)"
       ],
       "Unlock later": [
         "Lås upp senare"
@@ -9518,6 +9660,9 @@
       "\"${ ellipsedName }\" created successfully": [
         "”${ ellipsedName }” skapades utan problem"
       ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "”${ ellipsedName }” togs bort permanent från papperskorg"
+      ],
       "\"${ ellipsedName }\" moved": [
         "”${ ellipsedName }” flyttad"
       ],
@@ -9964,6 +10109,9 @@
       "Faster uploads for large or multiple files": [
         "Snabbare uppladdningar för stora eller flera filer"
       ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Filer som laddas upp nu räknas inte in i din lagringsgräns"
+      ],
       "Final approval in progress": [
         "Slutligt godkännande pågår"
       ],
@@ -10035,6 +10183,9 @@
       ],
       "Work together": [
         "Arbeta tillsammans"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Du har precis knipit åt dig lite gratis data och säkrat dina filer med end-to-end-kryptering – på rekordtid!"
       ]
     },
     "Onboarding Trial": {
@@ -10044,8 +10195,14 @@
       "**Add a payment method** to keep using all of the features after your trial ends.": [
         "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
       ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Avbryt när som helst innan dess.** Du kommer att kunna använda ${ planTitle } tills provperioden är slut, gratis."
+      ],
       "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
         "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
@@ -10073,6 +10230,12 @@
       ],
       "Once your full subscription starts...": [
         "När din fullständiga prenumeration startar …"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "för att kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan avbryta inom 30 dagar och få en proportionell återbetalning."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
@@ -10318,6 +10481,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Prenumerationsbyte är inkompatibelt av följande skäl:"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
@@ -10448,6 +10614,11 @@
       ],
       "Credits will be added to your balance": [
         "Krediter kommer att läggas till ditt saldo"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Att ändra din fakturaadress kan påverka skatter på kommande fakturor."
       ]
     },
     "Payments.ModificationWarning": {
@@ -11562,10 +11733,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ VPN_SHORT_APP_NAME } med premiumfunktioner"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag kvar",
-        "${ dayDiff } dagar kvar"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-app för stationär dator"
       ],
@@ -11800,20 +11967,11 @@
       "What you give up when you cancel ${ planName }": [
         "Vad du förlorar när du avbryter ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Du kommer också att förlora alla tidigare intjänade bonusar för lagringsutrymme."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "När du avbryter ${ planName } kommer du att nedgraderas till ${ BRAND_NAME } Free som endast erbjuder lagringsutrymmen upp till 1 GB för Mail och upp till 5 GB för Drive. Ditt team kommer att uppleva avbrott i sitt arbete eftersom ytterligare användare inte stöds av gratispaketet."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När din ${ planName }-prenumeration slutar den ${ expiryDate } kommer du nedgraderas till ${ BRAND_NAME } Free-paketet."
       ],
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Du har fortfarande ${ expiryDate } av din ${ planName }-prenumeration. Vi kommer att lägga till krediter för den kvarvarande tiden till ditt ${ BRAND_NAME }-konto. Se till att du inte överskrider gränserna för gratispaketet innan uppsägning. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ditt ${ planName }-paket håller inte bara din ditt företags data och kommunikationer säkra. Det stödjer dina efterlevnadsmål och får ditt företag att sticka ut och håller ditt team hopkopplat."
@@ -11900,6 +12058,9 @@
       ],
       "Albums you've shared will appear here": [
         "Album du delat kommer visas här"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importera dina filer och mappar från Google Drive och håll dem privata i ${ DRIVE_APP_NAME }."
       ],
       "Shared by ${ sharedBy }": [
         "Delat av ${ sharedBy }"
@@ -12490,6 +12651,12 @@
       "Drop to upload": [
         "Släpp för att ladda upp"
       ],
+      "Easy switch": [
+        "Enkel växling"
+      ],
+      "Easy Switch from Google Drive": [
+        "Enkelt byte från Google Drive"
+      ],
       "Edit billing address": [
         "Redigera faktureringsadress"
       ],
@@ -12528,9 +12695,6 @@
       ],
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
-      ],
-      "Enter your password": [
-        "Ange ditt lösenord"
       ],
       "Error": [
         "Fel"
@@ -12982,6 +13146,9 @@
       "Sort files/folders": [
         "Sortera filer/mappar"
       ],
+      "Special offer": [
+        "Specialerbjudande"
+      ],
       "Start a new import": [
         "Starta en ny import"
       ],
@@ -13083,6 +13250,9 @@
       ],
       "Verification failed": [
         "Verifiering misslyckades"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ],
       "Verify your password": [
         "Verifiera ditt lösenord"
@@ -13449,6 +13619,62 @@
       ],
       "Replay video": [
         "Spela video igen"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per användare"
+      ],
+      "${ storage } shared": [
+        "${ storage } delat"
+      ],
+      "10 years": [
+        "10 år"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Custom email domains": [
+        "Anpassade e-postdomäner"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "Password vaults": [
+        "Lösenords-valv"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive och Pass"
+      ],
+      "Previous versions": [
+        "Tidigare versioner"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
+      ],
+      "Subscribers only": [
+        "Endast prenumeranter"
+      ],
+      "Ultra servers": [
+        "Ultraservrar"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-servrar, reserverade för dig"
+      ],
+      "Unlimited": [
+        "Obegränsad"
+      ],
+      "Up to ${ limit }": [
+        "Upp till ${ limit }"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "VPN devices at once": [
+        "VPN-enheter samtidigt"
       ]
     },
     "VPN B2B cancellation reason": {

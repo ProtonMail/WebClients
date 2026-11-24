@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Güvenlik anahtarı isteği iptal edildi veya zaman aşımına uğrandı. Lütfen yeniden deneyin."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Aygıtınız güvenlik anahtarı isteğini tamamlayamadı. Yeniden deneyin veya başka bir oturum açma yöntemi kullanın."
       ]
     },
     "fido2: Info": {
@@ -1138,6 +1144,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Kısıtlamaları kaldırmak için ücretli bir tarifeye geçebilirsiniz."
       ],
@@ -1167,6 +1176,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Hesap parolası"
+      ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
@@ -1178,9 +1190,6 @@
       ],
       "Hide password": [
         "Parolayı gizle"
-      ],
-      "Password": [
-        "Parola"
       ],
       "Phone number": [
         "Telefon numarası"
@@ -1595,9 +1604,6 @@
       "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"
       ],
-      "Enter your password": [
-        "Parolanızı yazın"
-      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -1609,6 +1615,9 @@
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
+      ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
       ]
     },
     "Validation": {

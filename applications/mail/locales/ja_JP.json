@@ -474,8 +474,8 @@
       "Dock to side panel": [
         "サイドパネルに固定"
       ],
-      "Don't show this offer again": [
-        "このオファーを今後表示しない"
+      "Don't show this again": [
+        "次回から表示しない"
       ],
       "Done": [
         "完了"
@@ -1272,6 +1272,12 @@
       "Save": [
         "保存"
       ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "${ name } を ${ DRIVE_APP_NAME } に保存"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }に保存"
+      ],
       "Saving${ ellipsis }": [
         "保存中${ ellipsis }"
       ],
@@ -1464,6 +1470,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Skip to main content": [
+        "メインコンテンツへスキップ"
+      ],
       "Skip verification": [
         "検証をスキップする"
       ],
@@ -1566,9 +1575,6 @@
       "Trust": [
         "信頼する"
       ],
-      "Trust key": [
-        "鍵を信頼する"
-      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1613,6 +1619,9 @@
       ],
       "Unsubscribe": [
         "登録解除"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "${ selectedCount }の登録を解除しますか？"
       ],
       "Unsubscribed": [
         "登録解除済み"
@@ -1685,6 +1694,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "マウスを使うことで表示のサイズを変更することができます。キーボードを使っている場合は、左矢印キーと右矢印キーを使ってサイズを変更することができます。"
+      ],
+      "Use “${ label }” setting": [
+        "「${ label }」を使用"
       ],
       "Verify": [
         "検証"
@@ -2096,6 +2108,11 @@
         "無料トライアルは ${ timeRemaining } に終了します。"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "閉じる"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -2104,6 +2121,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "オファーは利用できません"
       ]
     },
     "BF2024: Deal details": {
@@ -4726,6 +4748,9 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "著作権侵害や盗難データの報告を行う場合は、メッセージの入力が必須です"
+      ],
       "A problem occurred, please try again.": [
         "問題が発生しました。もう一度お試しください。"
       ],
@@ -4777,14 +4802,35 @@
       "Authentication error.": [
         "認証エラー。"
       ],
+      "Bookmark password is not available": [
+        "ブックマークのパスワードを利用できません"
+      ],
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "有効な名前がないアルバムに写真を追加することはできません"
+      ],
+      "Cannot download a folder": [
+        "フォルダーをダウンロードすることはできません"
       ],
       "Cannot export this contact": [
         "この連絡先はエクスポートできません"
       ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "有効な名前がないアイテムは移動できません。まずアイテムの名前を変更してください"
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "保持ポリシーで許可されているよりも長い有効期限を設定することはできません。"
+      ],
+      "Cannot share root folder": [
+        "ルートフォルダーを共有することはできません"
+      ],
+      "Cannot verify the author of this file": [
+        "このファイルの作成者を確認できません"
+      ],
+      "Cannot verify who uploaded this file": [
+        "このファイルをアップロードしたユーザーを検証できません"
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
@@ -4825,14 +4871,47 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
+      "Copy operation aborted": [
+        "コピー操作が中断されました"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "フォルダではない場所へのアイテムのコピーはできません"
+      ],
+      "Could not find an available name": [
+        "利用可能な名前が見つかりませんでした"
+      ],
       "Could not grant access to the organization key": [
         "組織の鍵へのアクセス権を付与できませんでした"
+      ],
+      "Could not load sharing details": [
+        "共有の詳細を読み込めませんでした"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "画像のプレビューを読み込めませんでした: ${ message }"
       ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
       ],
       "Could not open updated vault": [
         "更新された保管庫を開けませんでした"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "このファイルの一部を読み取ることができませんでした: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "親フォルダをアンロックできませんでした"
+      ],
+      "Could not unlock this item": [
+        "このアイテムをアンロックできませんでした"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "フォルダー以外の場所にドキュメントを作成することはできません"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "フォルダー以外の場所にファイルを作成することはできません"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "フォルダではない場所にフォルダを作成することはできません"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
@@ -4842,6 +4921,9 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "${ calendarsToFixCount } 件のカレンダーの選択を解除するか"
+      ],
+      "Device not found": [
+        "デバイスが見つかりません"
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
@@ -4891,20 +4973,68 @@
       "Error while uploading attachments. Message is not sent.": [
         "添付ファイルのアップロード中にエラーが発生しました。メッセージは送信されていません。"
       ],
+      "Expiration date cannot be in the past": [
+        "有効期限に過去の日付を指定することはできません"
+      ],
       "Failed loading group members": [
         "グループメンバーの読み込みに失敗しました"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "ブックマークキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "ブックマーク名の復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "ブックマークのパスワードの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "コンテンツキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "アイテム名の復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "ノードキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "リビジョンメタデータの復号に失敗しました"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
       ],
+      "Failed to get invitee keys": [
+        "招待者の暗号鍵の取得に失敗しました"
+      ],
+      "Failed to get inviter keys": [
+        "招待者の暗号鍵の取得に失敗しました"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "サブスクリプションデータの読み込みに失敗しました。後ほどもう一度お試しください。"
+      ],
+      "Failed to load the membership": [
+        "メンバーシップの読み込みに失敗しました"
+      ],
+      "Failed to load the membership data": [
+        "メンバーシップデータの読み込みに失敗しました"
       ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
       ],
       "Failed to open to contact": [
         "連絡先を開けませんでした"
+      ],
+      "Failed to verify invitation": [
+        "招待の検証に失敗しました"
+      ],
+      "Failed to verify membership": [
+        "メンバーシップの確認に失敗しました"
+      ],
+      "File download failed due to empty response": [
+        "レスポンスが空のため、ファイルのダウンロードに失敗しました"
+      ],
+      "File has no revision": [
+        "ファイルに修正はありません"
       ],
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
@@ -4917,6 +5047,9 @@
       ],
       "Forward address is required": [
         "転送先アドレスは必須です"
+      ],
+      "Image preview not found": [
+        "画像のプレビューが見つかりません"
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました"
@@ -4957,20 +5090,32 @@
       "Invalid public key file": [
         "無効な公開鍵ファイル"
       ],
+      "Invalid URL": [
+        "無効なURL"
+      ],
       "Invalid VAT number": [
         "無効なVAT番号です"
       ],
       "Invalid verification code": [
         "無効な検証コード"
       ],
+      "Invitation not found": [
+        "招待が見つかりません"
+      ],
       "Item content cannot exceed 40KB": [
         "アイテムの内容が40KBを超えることはできません"
+      ],
+      "Item not found": [
+        "アイテムが見つかりません"
       ],
       "Label name cannot be empty.": [
         "ラベル名は空欄にできません。"
       ],
       "Last name is too long": [
         "姓が長すぎます。"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "レガシー公開リンクは変更できません。新しい公開リンクを再生成してください。"
       ],
       "Maximum expiration time reached.": [
         "最大有効期限に達しています。"
@@ -4987,14 +5132,35 @@
       "Message processing error.": [
         "メッセージの処理にエラーが発生しました。"
       ],
+      "Missing inviter email": [
+        "招待者のメールアドレスがありません"
+      ],
       "Missing key packet": [
         "キーパケットが見つかりません"
       ],
       "Missing signature": [
         "署名がありません"
       ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } の署名がありません"
+      ],
+      "Move operation aborted": [
+        "移動操作が中断されました"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "フォルダー以外の場所にアイテムを移動することはできません"
+      ],
+      "Moving root item is not allowed": [
+        "ルート項目を移動することはできません"
+      ],
       "Name is required": [
         "名前は必須です"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
+      ],
+      "Name must not be empty": [
+        "名前を入力してください"
       ],
       "Network error": [
         "ネットワークエラーが発生しました"
@@ -5023,6 +5189,9 @@
       "No external key retrieved for user is valid for sending": [
         "送信に有効なキーが取得されませんでした"
       ],
+      "No file data was received. Please try again.": [
+        "ファイルデータを受け取っていません。再度お試しください。"
+      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -5035,14 +5204,20 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "外部からの招待を変換できるのは管理者のみです"
+      ],
+      "Operation aborted": [
+        "操作は中断されました"
+      ],
+      "Operation failed, try again later": [
+        "操作に失敗しました。しばらくしてからもう一度お試しください"
+      ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
-      "Organization key must be activated to create invited users": [
-        "招待ユーザーを作成するには、組織の鍵を有効にする必要があります"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
+      "Part of the file appears to be corrupted": [
+        "ファイルの一部が破損しているようです"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -5064,6 +5239,12 @@
       ],
       "Permissions request failed.": [
         "権限リクエストに失敗しました。"
+      ],
+      "Photo is already in the target album": [
+        "写真はすでに移動先のアルバムに存在します"
+      ],
+      "Photo not found": [
+        "写真が見つかりません"
       ],
       "Please activate your search again": [
         "検索を再度有効にしてください"
@@ -5155,6 +5336,12 @@
       "Removed duplicate recipient: ${ recipents }": [
         "重複していた宛先を削除しました: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "ルート項目の名前を変更することはできません"
+      ],
+      "Request aborted": [
+        "リクエストが中断されました"
+      ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
@@ -5167,6 +5354,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "添付ファイルの送信は、プランの制限を超えている間は制限されます。プランをアップグレードすれば、制限を解除できます。"
       ],
+      "Signature is missing": [
+        "署名がありません"
+      ],
       "Signature not verified": [
         "署名が検証されていません"
       ],
@@ -5176,11 +5366,35 @@
       "Signature verification failed": [
         "署名の検証に失敗しました"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "署名の検証に失敗しました: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } の署名検証に失敗しました"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } の署名検証に失敗しました: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "一部の連絡先を削除できませんでした"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "一部のファイルデータのアップロードに失敗しました。もう一度お試しください。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "ファイルの一部（チャンク）のアップロードに失敗しました。もう一度お試しください。"
+      ],
       "Some groups could not be deleted": [
         "一部のグループは削除できませんでした"
+      ],
+      "Some invitations could not be loaded": [
+        "一部の招待を読み込めませんでした"
+      ],
+      "Some items could not be loaded": [
+        "一部のアイテムを読み込めませんでした"
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "一部のメーリングリストを登録解除できませんでした。再度お試しください。"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
@@ -5196,6 +5410,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
+      ],
+      "Something went wrong": [
+        "何か問題が発生しました"
       ],
       "Something went wrong while converting the address": [
         "アドレスの変換中にエラーが発生しました"
@@ -5260,14 +5477,14 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
       ],
-      "The minimum donation amount is ${ price }": [
-        "最低寄付金額は ${ price } です。"
-      ],
       "The sending key is not valid": [
         "送信用の鍵が有効ではありません"
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
         "現在システムが混雑しています。数分後にもう一度お試しください。"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "アップロードされたファイルが元のファイルと一致しません。もう一度お試しください。"
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "執筆アシスタントはリクエストを続行できません。別のプロンプトをお試しください。"
@@ -5299,8 +5516,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
       ],
+      "This file has missing crypto material": [
+        "このファイルには必要な暗号化データ（鍵情報）が不足しています"
+      ],
+      "This file has no version available to download": [
+        "このファイルにはダウンロード可能なバージョンがありません"
+      ],
+      "This file version could not be uploaded": [
+        "このファイルバージョンをアップロードできませんでした"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください。"
+      ],
+      "This item has no image preview": [
+        "このアイテムには画像のプレビューがありません"
+      ],
+      "This item is no longer shared": [
+        "このアイテムはもう共有されません"
+      ],
+      "This item is not shared": [
+        "このアイテムは共有されていません"
       ],
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
@@ -5313,6 +5548,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
+      ],
+      "Too many server errors, please try again later": [
+        "サーバーエラーが多発しています。しばらくしてからもう一度お試しください"
+      ],
+      "Too many server requests, please try again later": [
+        "サーバーへのリクエストが多すぎます。しばらくしてからもう一度お試しください"
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -5347,6 +5588,12 @@
       "VAT number must start with ${ prefixes }": [
         "VAT番号は ${ prefixes } で始まる必要があります"
       ],
+      "Verification keys are not available": [
+        "検証キーは利用できません"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } の検証鍵を利用できません"
+      ],
       "We couldn’t send a verification code using this method.": [
         "この方法を使用して認証コードを送信することはできません。"
       ],
@@ -5359,6 +5606,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
       ],
+      "You can create public links for your own files only": [
+        "公開リンクを作成できるのは、自分が所有するファイルのみです"
+      ],
+      "You can only leave items that are shared with you": [
+        "退出できるのは、自分に共有されているアイテムのみです"
+      ],
+      "You can only upload a new version to a file": [
+        "新しいバージョンをアップロードできるのはファイルのみです"
+      ],
+      "You can update a public link for your own files only": [
+        "公開リンクを更新できるのは、自分が所有するファイルのみです"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
       ],
@@ -5367,6 +5626,12 @@
       ],
       "You did not provide a file.": [
         "ファイルが選択されていません。"
+      ],
+      "You do not have access to this item": [
+        "このアイテムにはアクセスできません"
+      ],
+      "You do not have access to this shared item": [
+        "この共有アイテムへのアクセス権がありません"
       ],
       "You have reached the maximum number of calendars.": [
         "カレンダーの上限数に達しました。"
@@ -5789,8 +6054,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "セキュリティキーのリクエストがキャンセルされたかタイムアウトしました。もう一度お試しください。"
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "このデバイスではセキュリティキーのリクエストを完了できませんでした。もう一度試すか、別のサインイン方法を使用してください。"
       ]
     },
     "fido2: Info": {
@@ -7085,6 +7356,9 @@
       "Attention required": [
         "注意が必要です"
       ],
+      "Author is not provided on public link": [
+        "公開リンクに作成者情報が指定されていません"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30 日以上前にゴミ箱やスパムに移動されたメールを自動的に削除します。"
       ],
@@ -7102,6 +7376,9 @@
       ],
       "Balance from your previous subscription": [
         "前回の定期購入時の残高"
+      ],
+      "Based only on which emails you've opened.": [
+        "開封したメールのみに基づいています。"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "一般的なナビゲーションと基本操作はキーボードショートカットの設定に関係なく利用できます。"
@@ -7940,6 +8217,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "メッセージは明日の ${ formattedTime } に送信されます"
       ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "迷惑メール/ゴミ箱内のメッセージは、30日後に自動的に削除されます。"
+      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "ゴミ箱・迷惑メールへ移動したメッセージは 30 日後に自動的に削除されます。"
       ],
@@ -7969,6 +8249,9 @@
       ],
       "Move here": [
         "ここに移動"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "過去のメールをアーカイブに移動します。検索は引き続き可能です。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -9095,6 +9378,9 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "次の広告主および組織が、このメールを開いた時間、使用されているデバイス、位置情報などを確認できないようにブロックしました。"
       ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "${ count }件のニュースレターを取り込み、送信者ごとにまとめました。それぞれの送信頻度を確認して、ワンクリックで受信を続ける、移動、または購読を解除できます。"
+      ],
       "We cannot enable message content search in this browser.": [
         "このブラウザではメッセージ内容の検索はできません。"
       ],
@@ -9916,9 +10202,6 @@
       "Apply to future messages": [
         "今後のメッセージに適用する"
       ],
-      "Archive": [
-        "アーカイブ"
-      ],
       "At": [
         "At"
       ],
@@ -10669,9 +10952,6 @@
       "Sort": [
         "並び替え"
       ],
-      "Spam": [
-        "迷惑メール"
-      ],
       "Starred": [
         "スター付き"
       ],
@@ -10752,9 +11032,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "取引 - 領収書、予約、請求書、注文"
-      ],
-      "Trash": [
-        "ごみ箱"
       ],
       "Undisclosed Recipients": [
         "非公開の宛先"
@@ -10901,6 +11178,14 @@
       ],
       "To": [
         "宛先"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
       ]
     },
     "Label, credit card": {
@@ -12485,6 +12770,20 @@
         "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "過去30日間に${ count }通のメールが届いています。未開封です。"
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "過去30日間に${ count }通のメールが届いています。頻繁に開封されています。"
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "過去30日間に${ count }通のメールが届いています。ときどき開封されています。"
+      ],
+      "No emails in the last 30 days.": [
+        "過去30日間にメールは届いていません。"
+      ]
+    },
     "ngc_access_banner: action": {
       "Try it now": [
         "今すぐ試す"
@@ -13759,6 +14058,26 @@
         "進捗: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "コンテンツキー"
+      ],
+      "hash key": [
+        "ハッシュキー"
+      ],
+      "key": [
+        "鍵"
+      ],
+      "membership": [
+        "メンバーシップ"
+      ],
+      "name": [
+        "名前"
+      ]
+    },
     "Property type": {
       "Address": [
         "住所"
@@ -14843,9 +15162,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
       ],
-      "${ dayDiff } day left": [
-        "残り ${ dayDiff } 日"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
@@ -15074,20 +15390,11 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName }をキャンセルすると失うもの"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。また、以前に付与されたストレージ ボーナスも失われます。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME } Freeにダウングレードされます。"
       ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName } サブスクリプションには ${ expiryDate } がまだ残っています。残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。キャンセルする前に、無料プランの制限を超えていないことを確認してください。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } プランは、ビジネスデータと通信を安全に保つだけではありません。コンプライアンス目標をサポートし、ビジネスを目立たせ、チームの連携を保ちます。"
@@ -15450,6 +15757,12 @@
       ],
       "Undo in progress": [
         "取り消し中"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "${ count }件のメーリングリストを登録解除し、アーカイブに移動しました。"
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "メーリングリストから ${ count } 件を登録解除しました。"
       ],
       "Verification successful": [
         "検証に成功しました"
@@ -16019,9 +16332,6 @@
       "Enhance security with 2FA": [
         "2要素認証でセキュリティを強化"
       ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
       "Error": [
         "エラー"
       ],
@@ -16334,6 +16644,9 @@
       "No-reply address detected": [
         "返信できないアドレスが検知されました"
       ],
+      "Not opened in a while": [
+        "しばらく開封していません"
+      ],
       "Notes": [
         "メモ"
       ],
@@ -16571,6 +16884,9 @@
       "Snooze:": [
         "スヌーズ:"
       ],
+      "Special offer": [
+        "特別オファー"
+      ],
       "Start a new import": [
         "新しいインポートを開始"
       ],
@@ -16667,6 +16983,9 @@
       "Verification failed": [
         "検証に失敗しました"
       ],
+      "Verify it’s you": [
+        "ご本人確認"
+      ],
       "Verify your password": [
         "パスワードの確認"
       ],
@@ -16715,6 +17034,12 @@
       "You can now create unlimited folders and labels": [
         "無制限のフォルダとラベルを作成できるようになりました"
       ],
+      "You open these sometimes": [
+        "これらのメールをときどき開いています"
+      ],
+      "You read these often": [
+        "これらのメールをよく読んでいます"
+      ],
       "You're in control": [
         "あなたの思い通りに"
       ],
@@ -16735,6 +17060,9 @@
       ],
       "Your free trial has ended": [
         "無料トライアルが終了しました"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Gmailのニュースレターをもっと簡単に管理"
       ],
       "Your inbox, automatically organized": [
         "受信トレイを自動的に整理"
@@ -16976,6 +17304,11 @@
       ],
       "Replay video": [
         "ビデオを再生"
+      ]
+    },
+    "Visionary upsell": {
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "追加料金なしで${ BRAND_NAME }を使用"
       ]
     },
     "VPN B2B cancellation reason": {

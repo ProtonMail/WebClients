@@ -44,6 +44,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "About ${ name }": [
+        "Over ${ name }"
+      ],
       "Activate recovery": [
         "Herstel activeren"
       ],
@@ -52,6 +55,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Add ${ name }": [
+        "${ name } toevoegen"
       ],
       "Add a date": [
         "Datum toevoegen"
@@ -128,6 +134,9 @@
       ],
       "Cancel subscription": [
         "Abonnement opzeggen"
+      ],
+      "Cancel trial": [
+        "Proefperiode annuleren"
       ],
       "Cancel trial and pay": [
         "Annuleer proefversie en betaal"
@@ -332,11 +341,14 @@
       "Dismiss": [
         "Negeren"
       ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
       "Display navigation bar": [
         "Navigatiebalk weergeven"
       ],
-      "Don't show this offer again": [
-        "Toon deze aanbieding niet opnieuw"
+      "Don't show this again": [
+        "Laat dit niet meer zien"
       ],
       "Done": [
         "Klaar"
@@ -620,6 +632,9 @@
       "Next": [
         "Volgende"
       ],
+      "Next contact": [
+        "Volgend contact"
+      ],
       "Next day": [
         "Volgende dag"
       ],
@@ -670,6 +685,9 @@
       ],
       "Previous": [
         "Vorige"
+      ],
+      "Previous contact": [
+        "Vorig contact"
       ],
       "Previous day": [
         "Vorige dag"
@@ -865,6 +883,9 @@
       ],
       "Skip": [
         "Overslaan"
+      ],
+      "Skip to main content": [
+        "Direct naar hoofdinhoud"
       ],
       "Skip verification": [
         "Verificatie overslaan"
@@ -1290,6 +1311,11 @@
         "Nieuw"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Sluiten"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
@@ -1298,6 +1324,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Aanbieding niet beschikbaar"
       ]
     },
     "BF2024: Deal details": {
@@ -3813,12 +3844,6 @@
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisatiesleutel moet geactiveerd zijn om uitgenodigde gebruikers aan te maken."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
-      ],
       "Password is required": [
         "Wachtwoord is vereist"
       ],
@@ -3979,9 +4004,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Het minimale donatiebedrag is ${ price }"
       ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
@@ -5136,6 +5158,9 @@
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**U krijgt ${ referrerRewardAmount }** aan credits voor elke vriend die zich abonneert."
+      ],
+      "1 vault per user": [
+        "1 kluis per gebruiker"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
@@ -6715,6 +6740,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
+      ],
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
@@ -7532,6 +7560,34 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } inschakelen"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5 × Plus gebruik"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API toegang, met ${ credit } per maand krediet per gebruiker"
+      ],
+      "Everything in Free, and:": [
+        "Alles in het Free Plan, en:"
+      ],
+      "Everything in Plus, and:": [
+        "Alles in het Plus Plan, en:"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "Limited messages and chat history": [
+        "Gelimiteerde berichten en gespreksgechiedenis"
+      ],
+      "More usage": [
+        "Meer gebruik"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Voor coderen en bouwen"
       ]
     },
     "Mail import summary": {
@@ -10010,6 +10066,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organisatie Beheerder"
+      ],
       "Security Admin": [
         "Beveiligingsbeheerder"
       ],
@@ -10728,10 +10787,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag over",
-        "${ dayDiff } dagen over"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
@@ -10966,20 +11021,11 @@
       "What you give up when you cancel ${ planName }": [
         "Wat u opgeeft wanneer u ${ planName } annuleert"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, die slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. U verliest ook alle eerder toegekende opslagbonussen."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat tot slechts 1 GB aan Mail-opslag en 5 GB aan Drive-opslag biedt. Uw team zal onderbrekingen ondervinden in hun werk, aangezien extra gebruikers niet ondersteund worden binnen het gratis abonnement."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer uw ${ planName } abonnement op ${ expiryDate } eindigt, wordt u gedegradeerd tot het ${ BRAND_NAME } Gratis abonnement."
       ],
       "Yearly free storage bonuses": [
         "Jaarlijkse gratis opslagbonussen"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "U heeft nog ${ expiryDate } te gaan op uw ${ planName }-abonnement. We zullen het tegoed voor de resterende tijd toevoegen aan uw ${ BRAND_NAME } Account. Zorg ervoor dat u de limieten van het gratis abonnement niet overschrijdt voordat u deze annuleert. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Uw ${ planName }-abonnement houdt niet alleen uw bedrijfsgegevens en communicatie veilig. Het ondersteunt uw compliancedoelstellingen, zorgt ervoor dat uw bedrijf erbovenuit springt en het houdt uw team verbonden."
@@ -11695,9 +11741,6 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
       "Error": [
         "Fout"
       ],
@@ -12092,6 +12135,9 @@
       "Verification failed": [
         "Verificatie mislukt"
       ],
+      "Verify it’s you": [
+        "Uw identiteit verifiëren"
+      ],
       "Verify your password": [
         "Controleer uw wachtwoord"
       ],
@@ -12369,6 +12415,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Deze gebruiker krijgt beheerdersrechten bij de volgende aanmelding."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ],
@@ -12403,6 +12452,20 @@
       ],
       "Open in a new tab": [
         "Openen in een nieuw tabblad"
+      ]
+    },
+    "Visionary upsell": {
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Een hoger capaciteitsniveau van ${ VPN_APP_NAME } servers: veel minder mensen delen deze en gebruiken ${ BRAND_NAME }-eigendom IP-adressen. Quick Connect kiest ze automatisch waar beschikbaar."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nieuwe ${ BRAND_NAME } diensten zonder extra kosten"
+      ],
+      "Unlimited": [
+        "Ongelimiteerd"
+      ],
+      "Up to ${ limit }": [
+        "Tot ${ limit }"
       ]
     },
     "VPN B2B cancellation reason": {

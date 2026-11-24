@@ -444,9 +444,6 @@
       "Loading spreadsheet content...": [
         "Caricamento del contenuto del foglio di calcolo in corso..."
       ],
-      "NEW": [
-        "NOVITA'"
-      ],
       "New": [
         "Nuovo"
       ],
@@ -710,6 +707,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Esiste già un foglio con questo nome"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "Cronologia è un nome riservato e non può essere utilizzato per un foglio"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "I nomi dei fogli non possono essere più lunghi di 31 caratteri"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "I nomi dei fogli non possono contenere \\ / ? * [ ] o :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "I nomi dei fogli non possono iniziare o terminare con un apostrofo"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -2253,14 +2262,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Mostra nella barra di stato"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, non applicabile"
+      ],
       "Average": [
         "Media"
+      ],
+      "Copy": [
+        "Copia"
+      ],
+      "Copy formula": [
+        "Copia formula"
+      ],
+      "Copy value": [
+        "Copia valore"
       ],
       "Count": [
         "Conteggio"
       ],
-      "Customize Status Bar": [
-        "Personalizza barra di stato"
+      "Count numbers": [
+        "Conta i numeri"
+      ],
+      "Detach from selection": [
+        "Separare dalla selezione"
       ],
       "Max": [
         "Max"
@@ -2268,11 +2295,20 @@
       "Min": [
         "Min"
       ],
-      "Numerical count": [
-        "Conteggio numerico"
+      "Pin by the selection": [
+        "Fissa in base alla selezione"
+      ],
+      "Selection summary": [
+        "Riepilogo della selezione"
       ],
       "Sum": [
         "Somma"
+      ],
+      "Summary": [
+        "Riepilogo"
+      ],
+      "Unpin from selection": [
+        "Rimuovi dalla selezione"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

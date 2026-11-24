@@ -404,6 +404,9 @@
       "Don't show again": [
         "日後免再顯示"
       ],
+      "Don't show this again": [
+        "不再顯示此內容"
+      ],
       "Done": [
         "完成"
       ],
@@ -1100,11 +1103,17 @@
       "Skip": [
         "略過"
       ],
+      "Skip to main content": [
+        "跳至主要內容"
+      ],
       "Skip verification": [
         "略過驗證"
       ],
       "Spam": [
         "垃圾郵件"
+      ],
+      "Special Offer": [
+        "特別優惠"
       ],
       "Start import": [
         "開始匯入"
@@ -4948,9 +4957,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐款金額為 ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "政策名稱長度必須介乎 3 至 40 個字元。"
       ],
@@ -5347,9 +5353,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } 群組"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "有自訂網域的帳號無法加入家庭方案。"
       ],
@@ -5401,9 +5404,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "此訂購授權將向主要管理員收取方案費用。"
       ],
-      "View the invitation": [
-        "檢視邀請"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "謹邀請閣下加入 ${ invite.OrganizationName }"
       ],
@@ -5412,9 +5412,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "您無法使用目前方案接受此邀請函。"
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "你已達到每6個月${ n }個邀請函限制。"
@@ -9239,6 +9236,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "透過終端機安全地存取 ${ PASS_APP_NAME }，適合程式、自動化、和開發流程。"
       ],
+      "Access tokens": [
+        "存取權杖"
+      ],
       "Account holder": [
         "帳戶持有人"
       ],
@@ -12003,17 +12003,11 @@
       "1 email per month": [
         "每月 1 封電郵"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "每月 1 封電子郵件。獲取最新的隱私新聞以及 ${ BRAND_NAME } 領域中正在發生的事情。"
-      ],
       "1 email per quarter": [
         "每季 1 封電子郵件"
       ],
       "1-2 emails per month": [
         "每月 1-2 封電子郵件"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "每年 1-4 封電子郵件。提醒您保持最新的復原方法。"
       ],
       "2-4 emails per year": [
         "每年 2 - 4 封電子郵件電郵"
@@ -12038,9 +12032,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您開始使用 ${ BRAND_NAME } 產品的第一個月內"
-      ],
-      "Email communications": [
-        "電子郵件通訊"
       ],
       "In-app notifications": [
         "應用程式內通知"
@@ -12560,7 +12551,18 @@
         "開始使用 ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "建議"
+      ],
+      "Select your plan": [
+        "選擇你的方案"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "永久免費"
+      ],
       "Secure vault sharing": [
         "安全分享保管庫"
       ],
@@ -14721,6 +14723,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "共 ${ value } 的加密儲存空間"
+      ],
       "1 month": [
         "1 個月"
       ],
@@ -14729,6 +14734,9 @@
       ],
       "24 months": [
         "24 個月"
+      ],
+      "Free": [
+        "免費"
       ]
     },
     "Signup label": {
@@ -15494,9 +15502,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "剩下${ dayDiff }天"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
@@ -15752,12 +15757,6 @@
       "What you give up when you cancel ${ planName }": [
         "當您取消 ${ planName } 時您將放棄的權益"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "在您取消${ planName }訂購，您將會被降級至${ BRAND_NAME }Free，這僅提供最多1GB的Mail儲存量和最多5GB的Drive儲存量。您也會失去之前任何額外給予您的儲存量。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "當您的 ${ planName } 訂閱於 ${ expiryDate } 結束時，您將會降級至 ${ BRAND_NAME } 免費方案。"
       ],
@@ -15766,9 +15765,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "您可持續享受目前方案的福利直到${ boldedDate }。"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "您的${ planName }訂購授權還剩餘${ expiryDate }。我們將會在您的剩餘時間，給您的${ BRAND_NAME }帳號添加可用額度。在取消前，確保您沒有超出免費方案的限度。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "您的 ${ planName } 計畫不但能保護您的企業通訊與資料安全。還能協助您保持合規使您的業務脫穎而出，還能讓您的團隊保持聯繫。"
@@ -16189,6 +16185,14 @@
         "個人使用"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "操作"
+      ],
+      "Status": [
+        "狀態"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "動作"
@@ -16201,9 +16205,6 @@
       ],
       "CSV field": [
         "CSV 欄位"
-      ],
-      "Edit": [
-        "編輯"
       ],
       "Email address": [
         "電子郵件位址"
@@ -16895,9 +16896,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
-      ],
-      "Enter your password": [
-        "輸入您的密碼"
       ],
       "Error": [
         "錯誤"

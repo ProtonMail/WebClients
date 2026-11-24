@@ -367,6 +367,9 @@
       "Sign out of all accounts": [
         "Cerrar la sesión de todas las cuentas"
       ],
+      "Skip to main content": [
+        "Saltar al contenido principal"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -437,7 +440,7 @@
         "Ver la factura"
       ],
       "Visit knowledge base": [
-        "Consultar la base de conocimientos"
+        "Visitar base de conocimientos"
       ],
       "What do I get?": [
         "¿Qué obtengo?"
@@ -473,6 +476,9 @@
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licencias del asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -496,6 +502,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licencia de asistente de escritura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licencias de asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
@@ -627,9 +637,19 @@
         "Cargando el saldo"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
       ]
     },
     "BF2024: Deal details": {
@@ -744,7 +764,7 @@
         "Tarjeta de crédito"
       ],
       "Finally, you will complete the Buy process on the provider’s site and any purchased BTC will be sent to a BTC address generated from your wallet account.": [
-        "Finalmente, completará el proceso de compra en el sitio del proveedor y cualquier BTC comprado se enviará a una dirección de BTC generada desde su cuenta de cartera."
+        "Finalmente, completará el proceso de compra en el sitio del proveedor y cualquier BTC comprado se enviará a una dirección BTC generada desde su cuenta de cartera."
       ],
       "Instant payment": [
         "Pago instantáneo"
@@ -774,7 +794,7 @@
         "Destinatarios"
       ],
       "Review": [
-        "Revisar"
+        "Verificar"
       ],
       "See details": [
         "Ver detalles"
@@ -806,7 +826,7 @@
     },
     "Bitcoin buy": {
       "${ quote.provider } checkout": [
-        "Pago de ${ quote.provider }"
+        "pago de ${ quote.provider }"
       ],
       "No quote available for the requested amount": [
         "No hay presupuesto disponible para el monto solicitado."
@@ -845,7 +865,7 @@
     },
     "Bitcoin send": {
       "Add recipient": [
-        "Agregar destinatario"
+        "Añadir destinatario"
       ],
       "Invitation could not be sent to recipient. Please check details and try again.": [
         "No se pudo enviar la invitación al destinatario. Verifique los detalles y vuelva a intentarlo."
@@ -2412,12 +2432,6 @@
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
       ],
-      "Organization key must be activated to create invited users": [
-        "La clave de la organización debe activarse para crear usuarios invitados"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "La clave de la organización debe activarse para crear usuarios no privados"
-      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
@@ -2490,11 +2504,8 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede agregar es de ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "El importe mínimo de la donación es de ${ price }"
-      ],
       "The passphrases do not match": [
-        "Las frases de contraseña no coinciden."
+        "La frase de contraseña no coincide"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -2601,8 +2612,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de llave de seguridad fue cancelada o se agotó la espera. Intente de nuevo."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite claves de seguridad. Intente con otro navegador."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Su dispositivo no pudo completar la solicitud de llave de seguridad. Intente de nuevo o use otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -3217,7 +3234,7 @@
         "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, agregue un método de pago."
+        "Tiene la suscripción de prueba ${ planTitle }. Si desea continuar su suscripción después del periodo de prueba, añada un método de pago."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. La suscripción será renovada automáticamente al finalizar el periodo de prueba."
@@ -3461,9 +3478,6 @@
       "Optional": [
         "Opcional"
       ],
-      "Password": [
-        "Contraseña"
-      ],
       "Payer": [
         "Pagador"
       ],
@@ -3665,25 +3679,25 @@
     },
     "lumo_2026: feature": {
       "${ LUMO_SHORT_APP_NAME } Code": [
-        "${ LUMO_SHORT_APP_NAME } Código"
+        "${ LUMO_SHORT_APP_NAME } Code"
       ],
       "2x Basic usage": [
-        "El doble de uso que el plan Básico"
+        "2x del plan Basic"
       ],
       "5x Plus usage": [
         "Uso 5 veces superior al plan Plus"
       ],
       "API access, with ${ credit } a month credit": [
-        "Acceso con API, con ${ credit } de crédito mensual"
+        "Acceso a la API, con un crédito de ${ credit } al mes"
       ],
       "API access, with ${ credit } a month credit per user": [
-        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+        "Acceso a la API, con un crédito de ${ credit } al mes por usuario"
       ],
       "Everything in Basic, and:": [
-        "Todo en Básico, y:"
+        "Todo en Basic y:"
       ],
       "Everything in Free, and:": [
-        "Todo en Gratis, y:"
+        "Todo en Free y:"
       ],
       "Everything in Plus, and:": [
         "Todo en Plus, y:"
@@ -3695,13 +3709,13 @@
         "Incluye:"
       ],
       "Limited image generation": [
-        "Generación limitada de imágenes"
+        "Generación de imágenes limitada"
       ],
       "Limited messages and chat history": [
         "Mensajes limitados e historial de conversaciones"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Habilidades, proyectos y tareas programadas con límites"
+        "Habilidades, proyectos y tareas programadas limitados"
       ],
       "Maximum image generation": [
         "Generación máxima de imágenes"
@@ -3713,7 +3727,7 @@
         "Más generación de imágenes"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Más Habilidades, Proyectos y tareas programadas"
+        "Más habilidades, proyectos y tareas programadas"
       ],
       "More usage": [
         "Mayor uso"
@@ -3721,10 +3735,10 @@
     },
     "lumo_2026: Info": {
       "For coding and building": [
-        "Para programar y crear aplicaciones"
+        "Para programar y crear"
       ],
       "For everyday chats": [
-        "Para conversaciones cotidianas"
+        "Para charlas cotidianas"
       ],
       "For getting more done": [
         "Para lograr más"
@@ -4242,7 +4256,7 @@
         "Bóvedas compartidas ilimitadas de ${ PASS_SHORT_APP_NAME } por usuario"
       ],
       "Unlimited vault sharing": [
-        "Intercambios ilimitados de bóvedas"
+        "Compartir bóvedas ilimitado"
       ],
       "Unlimited vaults": [
         "Bóvedas ilimitadas"
@@ -4400,7 +4414,7 @@
         "${ VPN_APP_NAME }: Acceda a contenidos bloqueados y navegue de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de el escritorio"
+        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de su escritorio"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video"
@@ -4418,13 +4432,13 @@
         "Elimina automáticamente los mensajes anteriores a 30 días de la papelera y spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Reenvíe correos automáticamente enviados a la cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
+        "Reenvía correos automáticamente enviados a su cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue el mensaje"
+        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue su mensaje"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
@@ -4732,7 +4746,7 @@
     },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado las claves"
+        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado sus claves"
       ],
       "Organization key does not exist.": [
         "La clave de la organización no existe."
@@ -4955,7 +4969,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid security code": [
-        "El código de seguridad no es válido."
+        "Código de seguridad inválido"
       ],
       "Please enter the account holder name": [
         "Ingrese el nombre del titular de la cuenta"
@@ -4967,7 +4981,7 @@
         "No podemos autenticar su método de pago. Elija un método de pago diferente o intente de nuevo."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
+        "Su tarjeta fue rechazada, pruebe otra tarjeta o póngase en contacto con su banco para autorizar el cargo."
       ]
     },
     "Payments.error": {
@@ -5598,6 +5612,9 @@
       "Payment method updated": [
         "Método de pago actualizado"
       ],
+      "Preference saved": [
+        "Preferencia guardada"
+      ],
       "Problem reported": [
         "Se notificó el problema."
       ],
@@ -5764,14 +5781,11 @@
       "Enhance security with 2FA": [
         "Mejore la seguridad con 2FA"
       ],
-      "Enter your password": [
-        "Ingrese su contraseña"
-      ],
       "Error": [
         "Error"
       ],
       "Get the apps": [
-        "Obtener las aplicaciones"
+        "Obtener las apps"
       ],
       "Gift": [
         "Regalía"
@@ -5869,6 +5883,9 @@
       "Verification failed": [
         "Error con la verificación"
       ],
+      "Verify it’s you": [
+        "Verifique que es usted"
+      ],
       "Verifying your card...": [
         "Verificando la tarjeta..."
       ],
@@ -5917,13 +5934,13 @@
     },
     "Unknown sender": {
       "Add a name so you can remember who it was from.": [
-        "Agregue un nombre para que pueda recordar de quién era."
+        "Añada un nombre para que pueda recordar de quién era."
       ],
       "Add their email address or leave empty": [
-        "Agregue su dirección de correo electrónico o déjela vacío."
+        "Añada su dirección de correo o déjelo vacío"
       ],
       "Add their email address to save as contact": [
-        "Agregue su dirección de correo electrónico para guardarla como contacto."
+        "Añada su dirección de correo para guardarlo como contacto"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -5944,7 +5961,7 @@
         "Guardar como contacto"
       ],
       "Save sender": [
-        "Guardar remitente"
+        "Guardar remintente"
       ],
       "Transaction sender could not be updated": [
         "No se ha podido actualizar el remitente de la transacción."
@@ -5992,6 +6009,71 @@
       "Try a shorter username (${ n } character max)": [
         "Intente con un nombre de usuario corto (${ n } caracter máx.)",
         "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuario"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartido"
+      ],
+      "10 years": [
+        "10 años"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Un nivel de servidores de ${ VPN_APP_NAME } de mayor capacidad: menos personas comparten cada uno y usan direcciones IP propiedad de ${ BRAND_NAME }. Conexión Rápida los selecciona automáticamente cuando están disponibles."
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Custom email domains": [
+        "Dominios de correo personalizados"
+      ],
+      "Email addresses": [
+        "Direcciones de correo"
+      ],
+      "Hide-my-email aliases": [
+        "Alias de hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Nombrado en honor a los patrocinadores de financiación colectiva que hicieron posible ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } en 2014. Todos los servicios premium de ${ BRAND_NAME } en un solo plan."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Servicios nuevos de ${ BRAND_NAME } sin costo adicional"
+      ],
+      "Password vaults": [
+        "Bóvedas de contraseñas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Correo premium, Calendario, Drive y Pass"
+      ],
+      "Previous versions": [
+        "Versiones anteriores"
+      ],
+      "Storage": [
+        "Almacenamiento"
+      ],
+      "Subscribers only": [
+        "Solo para suscriptores"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra reservados para usted"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Hasta ${ limit }"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN simultáneos"
       ]
     },
     "VPN B2B cancellation reason": {
@@ -6080,7 +6162,7 @@
         "Índice de la cuenta"
       ],
       "Add wallet account": [
-        "Agregue una cuenta de cartera"
+        "Añada una cuenta de cartera"
       ],
       "Address type": [
         "Tipo de dirección"
@@ -6104,7 +6186,7 @@
         "Error al agregar la cuenta a la cartera. Intente de nuevo."
       ],
       "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
-        "Si desea recibir Bitcoin por correo electrónico con varias direcciones, necesita crear una cuenta de cartera para cada dirección."
+        "Si desea recibir Bitcoin por correo electrónico con varias direcciones de correo, necesita crear una cuenta de cartera para cada dirección."
       ],
       "Name": [
         "Nombre"
@@ -6144,7 +6226,7 @@
         "Falta la dirección de bitcoin. Actualice e intente de nuevo o contacte con soporte."
       ],
       "Missing country. Please refresh and try again or contact support": [
-        "Falta el país. Actualice e intente de nuevo o contacte con soporte."
+        "Falta el país. Refresque e intente de nuevo o contacte con soporte"
       ],
       "Missing quote. Please refresh and try again or contact support": [
         "Falta la cotización. Actualice e intente de nuevo o contacte con soporte."
@@ -6330,13 +6412,13 @@
         "Borrar almacenamiento del navegador"
       ],
       "Copy seed phrase": [
-        "Copiar frase de recuperación"
+        "Copiar la frase de recuperación"
       ],
       "Create email": [
         "Crear correo electrónico"
       ],
       "Create email address": [
-        "Crear dirección de correo electrónico"
+        "Crear una dirección de correo"
       ],
       "Delete account": [
         "Eliminar cuenta"
@@ -6404,7 +6486,7 @@
         "crear una cuenta de BTC"
       ],
       "Default currency": [
-        "Moneda por defecto"
+        "Moneda predeterminada"
       ],
       "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
         "Para una mejor privacidad, recomendamos ${ walletAccountCreation } para recibir Bitcoin por correo electrónico. ${ learnMore }."
@@ -6464,10 +6546,10 @@
         "Más de 10 horas"
       ],
       "Add a message": [
-        "Agregar un mensaje"
+        "Añadir un mensaje"
       ],
       "Add a note": [
-        "Agregar una nota"
+        "Añadir una nota"
       ],
       "Add private note to myself": [
         "Agregar nota privada para mí"
@@ -6587,7 +6669,7 @@
         "Se ha aumentado la prioridad de la transacción."
       ],
       "Transaction was successfully sent": [
-        "La transacción se envió correctamente."
+        "Transacción enviada con éxito"
       ],
       "Try adding an email address to start sending Bitcoin!": [
         "¡Intente agregar una dirección de correo electrónico para empezar a enviar Bitcoin!"
@@ -6661,10 +6743,10 @@
         "No se pudo eliminar la dirección de correo electrónico. Intente de nuevo."
       ],
       "Email address has been added": [
-        "Se agregó la dirección de correo electrónico."
+        "La dirección de correo fue añadida"
       ],
       "Email address has been removed": [
-        "Se eliminó la dirección de correo electrónico."
+        "La dirección de correo fue borrada"
       ],
       "Email address has been replaced": [
         "Se reemplazó la dirección de correo electrónico."
@@ -6716,10 +6798,10 @@
     },
     "Wallet setup": {
       "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
-        "Una frase de contraseña actúa como una segunda contraseña. No se puede cambiar o agregar más tarde. Haga una copia de seguridad para desbloquear su cartera cada vez que inicie sesión."
+        "Una frase de contraseña actúa como una segunda contraseña. No se puede cambiar o añadir más tarde. Haga una copia de seguridad para desbloquear su cartera cada vez que inicie sesión."
       ],
       "Add a passphrase": [
-        "Agregar una frase de contraseña"
+        "Añadir una frase de contraseña"
       ],
       "Add a passphrase (optional)": [
         "Agregar una frase de contraseña (opcional)"
@@ -6927,7 +7009,7 @@
         "Agregue Bitcoins a su cartera"
       ],
       "Add note": [
-        "Agregar nota"
+        "Añadir nota"
       ],
       "Amount": [
         "Monto"
@@ -6999,7 +7081,7 @@
         "Para: ${ senderOrRecipientName }"
       ],
       "Total (Amount + fee)": [
-        "Total (monto + comisión)"
+        "Total (importe enviado + comisión)"
       ],
       "Total (sent amount + fee)": [
         "Total (importe enviado + comisión)"

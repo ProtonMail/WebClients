@@ -404,6 +404,9 @@
       "Don't show again": [
         "Ne prikazuj ponovno"
       ],
+      "Don't show this again": [
+        "Ne prikazuj ovo više"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -1093,6 +1096,9 @@
       ],
       "Skip": [
         "Preskoči"
+      ],
+      "Skip to main content": [
+        "Preskoči na glavni sadržaj"
       ],
       "Skip verification": [
         "Preskoči provjeru"
@@ -4993,9 +4999,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalni iznos kredita koji se može dodati je ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Minimalni iznos donacije je ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Naziv pravila mora biti između 3 i 40 znakova."
       ],
@@ -5394,9 +5397,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } grupe"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Korisnički računi s prilagođenim domenama ne mogu se pridružiti obiteljskom planu."
       ],
@@ -5452,11 +5452,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Pretplata će se naplatiti primarnom administratoru ovog plana."
       ],
-      "View the invitation": [
-        "Prikaži pozivnicu",
-        "Prikaži pozivnice",
-        "Prikaži pozivnice"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Pozvani ste da se pridružite ${ invite.OrganizationName }"
       ],
@@ -5465,9 +5460,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Ne možete prihvatiti ovu pozivnicu s trenutnim planom."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Pozvani ste da se pridružite organizaciji ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Dosegnuli ste ograničenje od ${ n } prihvaćene pozivnice u razdoblju od 6 mjeseci.",
@@ -9446,6 +9438,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Pristupite ${ PASS_APP_NAME } na siguran način iz terminala, idealno za skriptiranje, automatizaciju i razvojne procese."
       ],
+      "Access tokens": [
+        "Pristupni tokeni"
+      ],
       "Account holder": [
         "Vlasnik računa"
       ],
@@ -12257,17 +12252,11 @@
       "1 email per month": [
         "1 e-poruka mjesečno"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "Jedna poruka e-pošte mjesečno. Dobivajte najnovije vijesti o privatnosti i što se događa u ${ BRAND_NAME } svijetu."
-      ],
       "1 email per quarter": [
         "1 e-poruka u tromjesečju"
       ],
       "1-2 emails per month": [
         "1-2 e-poruke mjesečno"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 e-poruke godišnje. Podsjetnici za redovito ažuriranje metoda oporavka."
       ],
       "2-4 emails per year": [
         "2 do 4 e-poruke godišnje"
@@ -12292,9 +12281,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Tijekom prvog mjeseca korištenja ${ BRAND_NAME } proizvoda"
-      ],
-      "Email communications": [
-        "Komunikacija e-poštom"
       ],
       "In-app notifications": [
         "Obavijesti unutar aplikacije"
@@ -12812,7 +12798,18 @@
         "Započnite koristiti ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Preporučeno"
+      ],
+      "Select your plan": [
+        "Odaberite svoju pretplatu"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Besplatno zauvijek"
+      ],
       "Secure vault sharing": [
         "Sigurno dijeljenje trezora"
       ],
@@ -15029,6 +15026,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "Ukupno ${ value } šifrirane pohrane"
+      ],
       "1 month": [
         "1 mjesec"
       ],
@@ -15037,6 +15037,9 @@
       ],
       "24 months": [
         "24 mjeseca"
+      ],
+      "Free": [
+        "Free"
       ]
     },
     "Signup label": {
@@ -15859,11 +15862,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } s premium značajkama"
       ],
-      "${ dayDiff } day left": [
-        "Preostao je još ${ dayDiff } dan",
-        "Preostala su još ${ dayDiff } dana",
-        "Preostalo je još ${ dayDiff } dana"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop aplikacija"
       ],
@@ -16131,12 +16129,6 @@
       "What you give up when you cancel ${ planName }": [
         "Čega se odričete kada poništite ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Kada poništite plan ${ planName }, Vaš će plan biti unazađen na ${ BRAND_NAME } Free plan, koji nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Također ćete izgubiti sve prethodno dodijeljene bonuse za pohranu."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kada otkažete ${ planName }, bit ćete unazađeni na ${ BRAND_NAME } Free, koji nudi samo do 1 GB pohrane za Mail i do 5 GB pohrane za Drive. Vaš će tim iskusiti prekide u radu budući da dodatni korisnici nisu podržani na besplatnoj pretplati."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kada vaša pretplata na ${ planName } završi dana ${ expiryDate }, bit ćete unazađeni na ${ BRAND_NAME } Free plan."
       ],
@@ -16145,9 +16137,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Možete nastaviti uživati u svim pogodnostima svog trenutačnog plana do ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Još uvijek imate ${ expiryDate } na svojoj pretplati za ${ planName }. Dodat ćemo kredite za preostalo vrijeme na Vaš ${ BRAND_NAME } korisnički račun. Pripazite da ne prekoračite ograničenja besplatnog plana prije nego što izvršite poništenje. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Vaš plan ${ planName } ne služi samo za zaštitu vaših poslovnih podataka i komunikacija. On pruža podršku za vaše ciljeve usklađenosti, ističe vaše poslovanje i održava vaš tim povezanim."
@@ -16568,6 +16557,14 @@
         "Za pojedince"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Radnje"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Radnja"
@@ -16580,9 +16577,6 @@
       ],
       "CSV field": [
         "CSV polje"
-      ],
-      "Edit": [
-        "Uredi"
       ],
       "Email address": [
         "Adresa e-pošte"
@@ -17289,9 +17283,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Unesite pojedinosti o svom ${ BRAND_NAME } korisničkom računu kako biste se pridružili ${ app } beta programu"
-      ],
-      "Enter your password": [
-        "Unesite lozinku"
       ],
       "Error": [
         "Pogreška"

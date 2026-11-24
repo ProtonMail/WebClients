@@ -354,9 +354,6 @@
       "Connected": [
         "Połączono"
       ],
-      "Contact support": [
-        "Skontaktuj się ze wsparciem technicznym"
-      ],
       "Contact Support Center": [
         "Skontaktuj się z Centrum Pomocy"
       ],
@@ -597,8 +594,8 @@
       "Don't show again": [
         "Nie pokazuj ponownie"
       ],
-      "Donate": [
-        "Wspomóż nas"
+      "Don't show this again": [
+        "Nie pokazuj tego ponownie"
       ],
       "Done": [
         "Gotowe"
@@ -884,9 +881,6 @@
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Uzyskaj własny adres ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Wróć"
@@ -1593,6 +1587,9 @@
       "Skip": [
         "Pomiń"
       ],
+      "Skip to main content": [
+        "Przejdź do głównej treści"
+      ],
       "Skip verification": [
         "Pomiń weryfikację"
       ],
@@ -1670,9 +1667,6 @@
       ],
       "Try for free": [
         "Wypróbuj za darmo"
-      ],
-      "Try payment again": [
-        "Spróbuj ponownie dokonać płatności"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
@@ -5837,9 +5831,6 @@
       "Delete this condition": [
         "Usuń ten warunek"
       ],
-      "Edit conditions": [
-        "Edytuj warunki"
-      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -6655,9 +6646,6 @@
       "Could not open updated vault": [
         "Nie można otworzyć zaktualizowanego sejfu"
       ],
-      "Could not save preference": [
-        "Nie można zapisać preferencji"
-      ],
       "Could not unlock this item": [
         "Nie można odblokować elementu"
       ],
@@ -7155,9 +7143,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minimalna kwota darowizny wynosi ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Nazwa zasady musi zawierać od 3 do 40 znaków."
@@ -8391,16 +8376,6 @@
         "Dowiedz się więcej"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "Wpisz adres e-mail"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Kupon wyślemy tutaj."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "aplikacji internetowej"
@@ -8729,29 +8704,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Prosty krok dzisiaj, aby zapewnić cyfrowe bezpieczeństwo Twojego dziecka jutro"
-      ],
       "Activate your reserved email address": [
         "Aktywuj swój zarezerwowany adres e-mail"
-      ],
-      "Address reservation voucher": [
-        "Kupon rezerwacji adresu"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Wspomóż nas, wspierając Fundację ${ BRAND_NAME }"
       ],
       "Enter verification code": [
         "Wpisz kod weryfikacyjny"
       ],
       "Recover activation voucher": [
         "Odzyskaj kupon aktywacyjny"
-      ],
-      "Reserve child's email address": [
-        "Zarezerwuj adres e-mail dziecka"
-      ],
-      "We emailed you the voucher": [
-        "Wysłaliśmy Ci kupon jako wiadomość e-mail"
       ]
     },
     "Headline": {
@@ -9585,6 +9545,9 @@
         "+ ${ invisibleCount } więcej",
         "+ ${ invisibleCount } więcej",
         "+ ${ invisibleCount } więcej"
+      ],
+      "1 vault per user": [
+        "1 sejf na użytkownika"
       ],
       "2FA disabled": [
         "Uwierzytelnianie dwustopniowe jest wyłączone"
@@ -10687,9 +10650,6 @@
       "Groups": [
         "Grupy"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Pomóż innym rodzinom zapewnić ich dzieciom bezpieczny start online. Udostępnij ten kamień milowy i podziel się tą informacją."
-      ],
       "here": [
         "tutaj"
       ],
@@ -10698,9 +10658,6 @@
       ],
       "High Priority": [
         "Wysoki priorytet"
-      ],
-      "How it works": [
-        "Jak to działa"
       ],
       "How to perform a signed-in reset": [
         "Jak wykonać resetowanie hasła po zalogowaniu"
@@ -10935,9 +10892,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Potwierdź swój wybór, a my zajmiemy się resztą."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Przechowuj kupon w bezpiecznym miejscu do momentu, gdy będzie potrzebny, na przykład w ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Zachowaj bezpieczeństwo i prywatność swoich danych dzięki tym przewodnikom i wskazówkom."
@@ -11461,9 +11415,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Otrzymuj powiadomienia dla kategorii ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Odbierz kupon rezerwacyjny jako wiadomość e-mail. Ty lub dziecko możecie go użyć, aby aktywować adres w ciągu najbliższych 15 lat. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Ostatnio używane serwery:"
       ],
@@ -11692,9 +11643,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Niektóre serwery mogą nie pojawiać się na powyższej liście. Wyszukaj je według nazwy serwera (np. AT#62)."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Coś poszło nie tak. Spróbuj ponownie lub skontaktuj się ze wsparciem klienta."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Wybierz dozwoloną domenę dla logowania SSO (SAML)."
       ],
@@ -11877,9 +11825,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Link umożliwiający zgłoszenie, że to nie jest Twoje konto ${ BRAND_NAME } wygasł. Skontaktuj się z naszym zespołem pomocy technicznej, aby rozwiązać ten problem."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Maksymalna kwota darowizny wynosi ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Najnowsza aktualizacja danych, z wyłączeniem wycieków danych."
@@ -12099,9 +12044,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Aby na bieżąco śledzić rozwój usług ${ BRAND_NAME }, możesz zapisać się do naszych list mailingowych, a także okazjonalnie ${ blogLink }."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Aby zapobiec nadużyciom i oszustwom, prosimy o minimalną darowiznę w wysokości ${ minimumDonation }. Stanowi to wsparcie dla działań ${ protonFoundationLink } na rzecz obrony cyfrowej prywatności na całym świecie i pomaga chronić następne pokolenie."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
@@ -12325,9 +12267,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Możemy użyć Twojego numeru pomocniczego do wysłania kodu weryfikacyjnego w celu zresetowania hasła, a także do skontaktowania się z Tobą w przypadku zauważenia podejrzanej aktywności."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Nie udało nam się zrealizować transakcji. Spróbuj ponownie."
-      ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
@@ -12429,9 +12368,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Usunięcie serwera z bramy spowoduje rozpoczęcie 10-dniowego okresu dezaktywacji. Serwer można dodać do nowej bramy, ale nie można zmienić jego kraju."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Gdy będziesz w gotowości, aby aktywować adres, zeskanuj kod QR lub użyj linku w kuponie."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Podczas odnawiania subskrypcji, dostępne środki na koncie zostaną użyte w pierwszej kolejności."
@@ -12882,9 +12818,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Wersja próbna zakończy się za ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Twój kupon na zarezerwowany adres e-mail ${ BRAND_NAME }: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -13583,6 +13516,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Uzyskaj bezpieczny dostęp do ${ PASS_APP_NAME } z terminala, co jest idealne do skryptów, automatyzacji i przepływów pracy programistycznej."
       ],
+      "Access tokens": [
+        "Tokeny dostępu"
+      ],
       "Account holder": [
         "Właściciel konta"
       ],
@@ -13859,9 +13795,6 @@
       "Choose a name for the generated certificate file": [
         "Wybierz nazwę pliku dla wygenerowanego certyfikatu"
       ],
-      "Choose an address to reserve for your child": [
-        "Wybierz adres do zarezerwowania dla swojego dziecka"
-      ],
       "Choose your billing": [
         "Wybierz cykl rozliczeniowy"
       ],
@@ -14069,12 +14002,6 @@
       "Don't show this again": [
         "Nie pokazuj ponownie"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Przekaż ${ minimumDonation } lub więcej dla Fundacji ${ BRAND_NAME }"
-      ],
-      "Donation amount": [
-        "Kwota darowizny"
-      ],
       "Drive": [
         "Dysk"
       ],
@@ -14167,9 +14094,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Wpisz adres e-mail"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -14268,7 +14192,7 @@
         "Przejdź do Płatności"
       ],
       "Go to Updates": [
-        "Przejdź do Aktualizacji"
+        "Przejdź do Powiadomień"
       ],
       "Group address": [
         "Adres grupy"
@@ -14963,9 +14887,6 @@
       "Tips and insights": [
         "Wskazówki i rady"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Aby aktywować, zeskanuj kod QR lub przejdź do:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Wyjaśnij, dlaczego odchodzisz."
       ],
@@ -15128,17 +15049,11 @@
       "You don't have permissions": [
         "Nie masz uprawnień"
       ],
-      "Your activation code:": [
-        "Twój kod aktywacyjny:"
-      ],
       "Your calendar URL": [
         "Twój adres URL kalendarza"
       ],
       "Your credit balance": [
         "Twoje saldo środków"
-      ],
-      "Your email address": [
-        "Twój adres e-mail"
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
@@ -15154,9 +15069,6 @@
       ],
       "Your recovery phone number": [
         "Twój pomocniczy numer telefonu"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Twój kupon na zarezerwowany adres e-mail ${ BRAND_NAME }:"
       ],
       "Zero-access architecture": [
         "Architektura zero-access"
@@ -15327,9 +15239,6 @@
       ],
       "${ labelName } updated": [
         "Zaktualizowano ${ labelName }"
-      ],
-      "Preference saved": [
-        "Ustawienia zostały zapisane"
       ]
     },
     "Label; import email": {
@@ -15352,9 +15261,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "Fundacji ${ BRAND_NAME }"
-      ],
       "Activity log": [
         "Logi"
       ],
@@ -15593,20 +15499,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Użytkownicy i adresy"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "Wiadomość e-mail"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -16161,9 +16053,6 @@
       "${ BRAND_NAME } Account": [
         "Konto ${ BRAND_NAME }"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Prosty krok dzisiaj, aby zapewnić cyfrowe bezpieczeństwo Twojego dziecka jutro. Zarezerwuj prywatny adres e-mail ${ BRAND_NAME } dla swojego dziecka."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Aktywuj prywatny adres e-mail ${ BRAND_NAME } zarezerwowany dla Twojego dziecka i skonfiguruj jego konto."
       ],
@@ -16199,9 +16088,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Odzyskaj konto ${ BRAND_NAME } Twojego dziecka | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Zarezerwuj prywatną pocztę e-mail dla swojego dziecka | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Zresetuj hasło do konta ${ BRAND_NAME }"
@@ -17620,17 +17506,11 @@
       "1 email per month": [
         "1 wiadomość miesięcznie"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 wiadomość miesięcznie. Najnowsze wiadomości na temat prywatności i tego, co dzieje się w świecie ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 wiadomość kwartalnie"
       ],
       "1-2 emails per month": [
         "1-2 wiadomości miesięcznie"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 wiadomości rocznie. Przypomnienia o dbaniu o aktualność metod odzyskiwania."
       ],
       "2-4 emails per year": [
         "2-4 wiadomości rocznie"
@@ -17655,9 +17535,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Podczas pierwszego miesiąca korzystania z usługi ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Wiadomości e-mail"
       ],
       "In-app notifications": [
         "Powiadomienia w aplikacji"
@@ -18012,6 +17889,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
+      ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Możesz anulować w dowolnym momencie przed ${ cancelDate }."
@@ -19332,9 +19212,6 @@
       ],
       "Address": [
         "Adres"
-      ],
-      "Amount": [
-        "Kwota"
       ],
       "Anderson": [
         "Nowak"
@@ -22877,12 +22754,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
       ],
-      "${ dayDiff } day left": [
-        "Pozostał ${ dayDiff } dzień",
-        "Pozostały ${ dayDiff } dni",
-        "Pozostało ${ dayDiff } dni",
-        "Pozostało ${ dayDiff } dnia"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
       ],
@@ -23156,12 +23027,6 @@
       "What you give up when you cancel ${ planName }": [
         "Z czego rezygnujesz, anulując plan ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Po anulowaniu planu ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 1 GB przestrzeni dyskowej Proton Mail i 5 GB przestrzeni dyskowej Proton Drive. Stracisz również bonusową przestrzeń dyskową."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Po anulowaniu planu ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 1 GB przestrzeni dyskowej Proton Mail i 5 GB przestrzeni dyskowej Proton Drive. Twój zespół doświadczy przerw w pracy, ponieważ darmowy plan nie obsługuje dodatkowych użytkowników."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Gdy subskrypcja ${ planName } zakończy się w dniu ${ expiryDate }, zostaniesz przeniesiony do planu ${ BRAND_NAME } Free."
       ],
@@ -23170,9 +23035,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Do ${ boldedDate } możesz nadal cieszyć się wszystkimi bonusami obecnego planu."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Subskrypcja ${ planName } wygaśnie za ${ expiryDate }. Środki za pozostały czas zostaną dodane do konta ${ BRAND_NAME }. Sprawdź, czy nie przekroczysz limitów darmowego planu. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Twój plan ${ planName } nie tylko zapewnia bezpieczeństwo danych biznesowych i komunikacji. Wspiera on zgodności z przepisami, wyróżnia firmę i zapewnia łączność zespołowi."
@@ -23702,6 +23564,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Akcje"
+      ],
       "Size": [
         "Rozmiar"
       ],
@@ -23726,9 +23591,6 @@
       ],
       "CSV field": [
         "Pole CSV"
-      ],
-      "Edit": [
-        "Edytuj"
       ],
       "Email address": [
         "Adres e-mail"
@@ -24699,9 +24561,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Wpisz szczegóły konta ${ BRAND_NAME }, aby dołączyć do ${ app } w wersji beta"
       ],
-      "Enter your password": [
-        "Wpisz hasło"
-      ],
       "Error": [
         "Błąd"
       ],
@@ -25184,12 +25043,6 @@
       ],
       "Priority support:": [
         "Priorytetowe wsparcie:"
-      ],
-      "Problem processing your payment": [
-        "Problem z przetwarzaniem Twojej płatności"
-      ],
-      "Problem processing your request": [
-        "Problem z przetwarzaniem Twojego żądania"
       ],
       "Processing...": [
         "Przetwarzanie..."

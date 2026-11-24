@@ -112,6 +112,9 @@
       "Bulk restore items from trash": [
         "Bulk herstel items uit de prullenbak"
       ],
+      "Bulk select items": [
+        "Bulk selecteer items"
+      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -313,6 +316,9 @@
       "Dismiss": [
         "Negeren"
       ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
       "Do not show again": [
         "Niet meer weergeven"
       ],
@@ -321,6 +327,9 @@
       ],
       "Don't show this again": [
         "Laat dit niet meer zien"
+      ],
+      "Download for Linux": [
+        "Download voor Linux"
       ],
       "Download for macOS": [
         "Download voor macOS"
@@ -502,6 +511,9 @@
       "Move all items": [
         "Alle items verplaatsen"
       ],
+      "Move folder": [
+        "Verplaats map"
+      ],
       "Move to": [
         "Verplaatsen naar"
       ],
@@ -510,6 +522,9 @@
       ],
       "Move to Trash": [
         "Verplaats naar prullenbak"
+      ],
+      "Multiple select": [
+        "Meerkeuze"
       ],
       "New token": [
         "Nieuwe token"
@@ -531,6 +546,9 @@
       ],
       "Open navigation": [
         "Navigatie openen"
+      ],
+      "Open the browser again": [
+        "Open de browser opnieuw"
       ],
       "Organize vaults": [
         "Kluizen organiseren"
@@ -1702,6 +1720,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Met toegangstokens, gebruikt in combinatie met ${ passCliLink }, kunt u CI/CD automatiseren of uw AI-agent toegang geven tot wat hij nodig heeft om zijn werk uit te voeren."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Voeg een betaalmethode toe zodat je abonnement doorloopt wanneer je proefperiode afloopt."
+      ],
       "Add your custom email address to monitor:": [
         "Voeg uw aangepast e-mailadres toe om te monitoren:"
       ],
@@ -1830,6 +1851,9 @@
       ],
       "Canceled by user": [
         "Geannuleerd door gebruiker"
+      ],
+      "Choose how you want to sign in": [
+        "Kies je loginmethode"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bevestig uw extra wachtwoord om verder te gaan met de verwijdering ervan."
@@ -2177,12 +2201,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
-      ],
       "Moving items": [
         "Items verplaatsen"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Het verplaatsen van items naar een andere kluis verwijdert hun beveiligde links."
       ],
       "Moving items to trash": [
         "Items verplaatsen naar prullenbak"
@@ -2445,6 +2468,9 @@
       ],
       "Restoring trashed items...": [
         "Verwijderde items herstellen..."
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scan om ${ PASS_APP_NAME } te downloaden voor iOS en Android"
       ],
       "Secure links": [
         "Beveiligde links"
@@ -2870,6 +2896,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Your session could not be authorized.": [
+        "Uw sessie kon niet worden geautoriseerd."
       ]
     },
     "Keyboard key": {
@@ -2915,6 +2944,9 @@
       "${ hours } hour": [
         "${ hours } uur",
         "${ hours } uren"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
       ],
       "${ minutes } minute": [
         "${ minutes } minuut",
@@ -3017,6 +3049,9 @@
       ],
       "Account Type": [
         "Accounttype"
+      ],
+      "Add a payment method": [
+        "Betaalmethode toevoegen"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Voeg een willekeurige prefix toe voor dit domein bij het maken van een nieuwe alias."
@@ -3519,11 +3554,17 @@
       "LinkedIn account": [
         "LinkedIn-account"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Inloggen"
       ],
       "Logins": [
         "Logins"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Postvakken"
@@ -4082,6 +4123,9 @@
       ],
       "WiFi network": [
         "Wifi-netwerk"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Werk gegevens"
@@ -4672,6 +4716,9 @@
       "Activity for \"${ token.Name }\"": [
         "Activiteit voor \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Account toevoegen"
+      ],
       "Add custom domain": [
         "Eigen domeinnaam toevoegen"
       ],
@@ -4847,6 +4894,9 @@
       "Folder options": [
         "Mapopties"
       ],
+      "Get mobile apps": [
+        "Download mobiele apps"
+      ],
       "Get Started": [
         "Aan de slag"
       ],
@@ -4882,6 +4932,9 @@
       ],
       "Item": [
         "Item"
+      ],
+      "Keep your subscription active": [
+        "Hou je abonnement actief"
       ],
       "Last autofill": [
         "Laatste automatische aanvulling"
@@ -4924,6 +4977,9 @@
       ],
       "Modified": [
         "Gewijzigd"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Verplaats \"${ folderName }\" naar"
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount } item naar prullenbak verplaatsen?",
@@ -5077,6 +5133,9 @@
       ],
       "Shared via": [
         "Gedeeld via"
+      ],
+      "Signing you in": [
+        "Je wordt ingelogd"
       ],
       "Something went wrong": [
         "Er is iets fout gegaan."
@@ -5504,6 +5563,9 @@
       ],
       "Verification code is required": [
         "Verificatiecode is vereist"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Je kan een map niet in zichzelf of in submappen verplaatsen"
       ],
       "You have reached the limit of members who can access this item.": [
         "U heeft de limiet voor gebruikers die toegang hebben tot dit item bereikt."

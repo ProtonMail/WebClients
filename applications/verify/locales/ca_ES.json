@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "S'ha cancel·lat la sol·licitud de clau de seguretat o s'ha esgotat el temps d'espera. Torneu-ho a provar."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "El vostre dispositiu no ha pogut completar la sol·licitud de clau de seguretat. Torneu-ho a provar o feu servir un altre mètode d'inici de sessió."
       ]
     },
     "fido2: Info": {
@@ -1138,6 +1144,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per ajudar a mantenir el vostre compte segur, confirmeu que sou realment vós abans de continuar."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Per a eliminar restriccions, podeu millorar a un pla de pagament."
       ],
@@ -1167,6 +1176,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Contrasenya del compte de ${ BRAND_NAME }"
+      ],
       "Authenticator app": [
         "Aplicació d'autenticació"
       ],
@@ -1178,9 +1190,6 @@
       ],
       "Hide password": [
         "Amaga la contrasenya"
-      ],
-      "Password": [
-        "Contrasenya"
       ],
       "Phone number": [
         "Número de telèfon"
@@ -1595,9 +1604,6 @@
       "Account temporarily locked": [
         "El compte s'ha bloquejat temporalment"
       ],
-      "Enter your password": [
-        "Introduïu la vostra contrasenya"
-      ],
       "Human verification": [
         "Verificació humana"
       ],
@@ -1609,6 +1615,9 @@
       ],
       "Two-factor authentication": [
         "Autenticació de doble factor"
+      ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
       ]
     },
     "Validation": {

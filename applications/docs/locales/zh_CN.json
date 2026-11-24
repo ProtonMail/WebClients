@@ -4,14 +4,6 @@
     "language": "zh_CN"
   },
   "contexts": {
-    "account": {
-      "Forwarding will start soon. New emails will appear in your inbox.": [
-        "转发将很快开始。 新邮件将出现在您的收件箱中。"
-      ],
-      "Mail forward stopped": [
-        "邮件转发已停止"
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
@@ -141,17 +133,8 @@
       "Chat with us": [
         "与我们实时对话"
       ],
-      "Check import progress": [
-        "查看导入进度"
-      ],
       "Choose a file or drag it here": [
         "选择文件或将文件拖至此处"
-      ],
-      "Claim this address": [
-        "认领地址"
-      ],
-      "Claim your free ${ BRAND_NAME } address": [
-        "认领您的免费 ${ BRAND_NAME } 地址"
       ],
       "Clear data": [
         "清除数据"
@@ -173,9 +156,6 @@
       ],
       "Collaborate on documents": [
         "协作处理文件"
-      ],
-      "Collapse": [
-        "收起"
       ],
       "Collapse list": [
         "收起列表"
@@ -204,20 +184,8 @@
       "Continue": [
         "继续"
       ],
-      "Continue import": [
-        "继续导入"
-      ],
       "Continue to ${ planOrAppName }": [
         "继续使用 ${ planOrAppName }"
-      ],
-      "Continue with Free": [
-        "注册免费账户"
-      ],
-      "Continue with Google": [
-        "通过 Google 继续"
-      ],
-      "Continue with Outlook": [
-        "使用 Outlook 继续"
       ],
       "Copy address": [
         "复制邮箱地址"
@@ -252,17 +220,8 @@
       "Create new ${ SHEETS_APP_NAME }": [
         "新建 ${ SHEETS_APP_NAME }"
       ],
-      "Create new folder": [
-        "创建文件夹"
-      ],
       "Create new password": [
         "创建新密码"
-      ],
-      "Customize": [
-        "定制"
-      ],
-      "Customize import": [
-        "自定义导入"
       ],
       "Decline invitation": [
         "拒绝邀请"
@@ -297,9 +256,6 @@
       "Deselect all": [
         "取消全选"
       ],
-      "Discard": [
-        "放弃"
-      ],
       "Dismiss": [
         "忽略"
       ],
@@ -330,9 +286,6 @@
       "Edit email address": [
         "更改邮箱地址"
       ],
-      "Edit label": [
-        "编辑标签"
-      ],
       "Edit phone number": [
         "编辑手机号码"
       ],
@@ -347,9 +300,6 @@
       ],
       "Encrypted": [
         "已加密"
-      ],
-      "Expand": [
-        "展开"
       ],
       "Explore other plans": [
         "浏览其他套餐"
@@ -368,9 +318,6 @@
       ],
       "Export this version (as docx)": [
         "导出此版本 (docx 格式)"
-      ],
-      "Export this version (as odt) (Beta)": [
-        "导出此版本 (.odt) (Beta)"
       ],
       "Export this version (as xlsx)": [
         "导出此版本 (xlsx 格式)"
@@ -411,9 +358,6 @@
       "Go to label": [
         "转至标签"
       ],
-      "Google Drive": [
-        "Google Drive"
-      ],
       "Got it": [
         "知道了"
       ],
@@ -447,23 +391,11 @@
       "import": [
         "导入"
       ],
-      "Import contacts": [
-        "导入联系人"
-      ],
       "Import data": [
         "导入数据"
       ],
       "Import emails, calendars, contacts": [
         "导入电子邮件、日历、联系人"
-      ],
-      "Import from .csv or vCard": [
-        "从 .csv 或 vCard 导入"
-      ],
-      "Import from Google": [
-        "从 Google 导入"
-      ],
-      "Import from Outlook": [
-        "从 Outlook 导入"
       ],
       "Keep my subscription": [
         "保留订阅"
@@ -483,20 +415,11 @@
       "Make a copy": [
         "创建副本"
       ],
-      "Manage addresses": [
-        "管理邮箱地址"
-      ],
       "Manage advanced account protections": [
         "管理高级账户保护"
       ],
-      "Manage folders": [
-        "管理文件夹"
-      ],
       "Manage groups": [
         "管理群组"
-      ],
-      "Manage labels": [
-        "管理标签"
       ],
       "Manage users/addresses": [
         "管理用户/地址"
@@ -543,6 +466,9 @@
       "Move to trash": [
         "移至回收站"
       ],
+      "New": [
+        "新建"
+      ],
       "New document": [
         "新建文档"
       ],
@@ -582,9 +508,6 @@
       "Open navigation": [
         "打开导航栏"
       ],
-      "OpenDocument Text (.odt) (Beta)": [
-        "OpenDocument 文本  (.odt) (Beta)"
-      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
@@ -606,17 +529,8 @@
       "Print": [
         "打印"
       ],
-      "Quit": [
-        "退出"
-      ],
       "Re-sign": [
         "重新签名"
-      ],
-      "Reconnect": [
-        "重新连接"
-      ],
-      "Reconnect to Gmail": [
-        "重新关联 Gmail"
       ],
       "Recover data": [
         "恢复数据"
@@ -674,9 +588,6 @@
       ],
       "Resend invite": [
         "重新发送邀请"
-      ],
-      "Reset to default": [
-        "重置所有选项"
       ],
       "Restore": [
         "恢复"
@@ -786,17 +697,11 @@
       "Sign up": [
         "注册"
       ],
-      "Skip verification": [
-        "跳过验证"
+      "Skip to main content": [
+        "跳转到主要内容"
       ],
       "Sort by": [
         "排序方式"
-      ],
-      "Start import": [
-        "开始导入"
-      ],
-      "Stay": [
-        "留在此页"
       ],
       "Stop sharing": [
         "停止分享"
@@ -1028,9 +933,6 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
-      ],
-      "By leaving now, some events may not be imported": [
-        "如果现在退出，某些日程可能无法导入"
       ]
     },
     "Apps dropdown": {
@@ -1044,26 +946,6 @@
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
         "将邮件生产力提升至新高度，让 ${ LUMO_SHORT_APP_NAME } 帮助您撰写、回复和校对邮件。"
-      ]
-    },
-    "Attached ics file error": {
-      "Empty ICS file": [
-        "ICS 文件为空"
-      ],
-      "Invalid event": [
-        "无效的日程"
-      ],
-      "Invalid ICS file": [
-        "无效的 ICS 文件"
-      ],
-      "Invalid method": [
-        "无效方式"
-      ],
-      "Unsupported calendar component": [
-        "不受支持的日历组件"
-      ],
-      "Unsupported event": [
-        "不支持的日程"
       ]
     },
     "Autocomplete": {
@@ -1530,14 +1412,6 @@
       ],
       "strawberry": [
         "草莓红"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import customization?": [
-        "退出导入定制？"
-      ],
-      "Quit import?": [
-        "退出导入？"
       ]
     },
     "Contact field label": {
@@ -2488,9 +2362,6 @@
       "Automatically forward incoming email to another email address.": [
         "自动将收到的电子邮件转发到另一个邮箱地址。"
       ],
-      "Available storage: ${ storageText }": [
-        "可用空间：${ storageText }"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
@@ -2512,17 +2383,11 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
       ],
-      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "发送至 ${ connectedAddressText } 的邮件现在会显示在 ${ MAIL_APP_NAME } 中。"
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "建议在组织内使用双因素身份验证以提高安全性。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
-      ],
-      "Enough room for years of emails, attachments and more.": [
-        "充足空间，可容纳多年邮件、附件等内容。"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "确保对组织数据的安全访问，即使您的团队在远程或使用公共 WiFi 时也是如此。"
@@ -2563,15 +2428,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
       ],
-      "This may happen if permissions were removed or your password changed.": [
-        "如果权限被移除或密码被更改，可能会发生此情况。"
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
-        "若要继续在 ${ BRAND_NAME } 中收发 Gmail 邮件，请重新关联您的账户。"
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
-        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
-      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "为确保您账户的最高安全性，请设置恢复短语！"
       ],
@@ -2584,9 +2440,6 @@
       "To start, give your organization a name.": [
         "首先，请为您的组织命名。"
       ],
-      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
-        "仅需 ${ config.offerPrice } 即可解锁 15 GB 存储空间"
-      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "升级至 ${ planName } 套餐，继续共享文件并保留编辑权限"
       ],
@@ -2596,41 +2449,20 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
       ],
-      "We can't access ${ boldEmails } anymore.": [
-        "我们无法再访问 ${ boldEmails }。"
-      ],
-      "We will pause imports at 80% storage to reserve space for new messages.": [
-        "存储空间使用量达到 80% 时，我们会暂停导入，为接收新邮件预留空间。"
-      ],
-      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "我们已开始从 Gmail 导入您的邮件，导入完成后将通知您。"
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "有了联系人群组，只需点击一下，就可以向群组中的每个人发送电子邮件。"
       ],
-      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
-      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
-      ],
-      "You can now send emails from ${ BRAND_NAME } using this address.": [
-        "您现在可以使用此地址从 ${ BRAND_NAME } 发送邮件。"
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的账户和数据恢复方法均已设置，并且已启用 2FA。"
       ],
       "Your account and data recovery methods are set.": [
         "您的账户恢复方式已设置。"
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入 ${ newUserStorageText } 的最近 Gmail 邮件"
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "您的免费 ${ MAIL_APP_NAME } 账户存储空间有限，因此我们仅导入您最近的 Gmail 邮件"
       ]
     },
     "description": {
@@ -2766,100 +2598,12 @@
         "使用 ${ BRAND_NAME } Duo 分享您的套餐"
       ]
     },
-    "Email body for invitation": {
-      "${ eventTitle } was canceled.": [
-        "${ eventTitle } 已被取消。"
-      ],
-      "All events in this series were updated.": [
-        "此系列中的所有事件都已更新。"
-      ],
-      "DESCRIPTION:": [
-        "描述："
-      ],
-      "Here's what changed:": [
-        "新变化："
-      ],
-      "LOCATION:": [
-        "位置："
-      ],
-      "NOTE:": [
-        "注意："
-      ],
-      "This event occurrence was canceled.": [
-        "此事件已被取消。"
-      ],
-      "This event occurrence was updated.": [
-        "此事件已更新。"
-      ],
-      "This event was updated.": [
-        "此事件已更新。"
-      ],
-      "TIME:": [
-        "时间："
-      ],
-      "TITLE:": [
-        "标题："
-      ],
-      "You are invited to": [
-        "您受邀参加"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "TIME:\n${ formattedStart }": [
-        "时间：\n${ formattedStart }"
-      ],
-      "TIME:\n${ formattedStart } (all day)": [
-        "时间：\n${ formattedStart }（全天）"
-      ],
-      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "时间：\n${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (event details part)": {
-      "Removed": [
-        "已删除"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 接受了您的 ${ eventTitle } 邀请"
-      ],
-      "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } 拒绝了您的 ${ eventTitle } 邀请"
-      ],
-      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } 暂时接受了您的 ${ eventTitle } 邀请"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "取消 ${ formattedStart } 的活动"
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "取消开始于 ${ formattedStart } 的活动"
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "${ formattedStart } 的活动邀请函"
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "开始于 ${ formattedStart } 的活动邀请函"
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "更新 ${ formattedStart } 的活动"
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "更新开始于 ${ formattedStart } 的活动"
-      ]
-    },
     "emergency_access": {
       "Trusted contact": [
         "已信任联系人"
       ]
     },
     "Error": {
-      "${ BRAND_NAME } can't connect to your external account": [
-        "${ BRAND_NAME } 无法连接到您的外部账户"
-      ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } 已更新。请刷新页面。"
       ],
@@ -2869,9 +2613,6 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } 个项目移动失败"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
-      ],
       "A contact with this email address already exists": [
         "该邮箱地址的联系人已存在"
       ],
@@ -2880,12 +2621,6 @@
       ],
       "A message is required when reporting copyright infringement or stolen data": [
         "举报版权侵权或数据被盗时必须填写消息"
-      ],
-      "Address could not be added.": [
-        "无法添加地址！"
-      ],
-      "Address primary private key not found": [
-        "找不到地址主私钥"
       ],
       "Already a member of this share": [
         "已经是此共享的成员"
@@ -2908,20 +2643,11 @@
       "An error occurred while creating a new document. Please try again.": [
         "创建新文档时出错。请重试。"
       ],
-      "Authentication canceled.": [
-        "验证已取消。"
-      ],
-      "Authentication error.": [
-        "验证出错。"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "由于此文档位于共享文件夹中，只有文件夹所有者可以恢复它"
       ],
       "Bookmark password is not available": [
         "书签密码不可用"
-      ],
-      "Calendar limit reached": [
-        "日历数量达到上限"
       ],
       "Cannot add photo to album without a valid name": [
         "无法将照片添加到没有有效名称的相册"
@@ -2992,20 +2718,11 @@
       "Creating folders in non-folders is not allowed": [
         "不允许在非文件夹中创建文件夹"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "至少取消选择 ${ calendarsToFixCount } 份日历"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "至少取消选择 ${ calendarsToFixCount } 份日历或"
-      ],
       "Device not found": [
         "未找到设备"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
-      ],
-      "Email address is required": [
-        "邮箱地址必须填写"
       ],
       "Email is not valid": [
         "无效邮箱"
@@ -3015,9 +2732,6 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "请输入您的用户名（不含 @example.com 域名）"
-      ],
-      "Error decrypting a computer": [
-        "解密计算机时出错"
       ],
       "Expiration date cannot be in the past": [
         "过期日期不能是过去的时间"
@@ -3109,17 +2823,11 @@
       "First name is too long": [
         "名字太长。"
       ],
-      "Folder name cannot be empty.": [
-        "文件夹名称不能为空。"
-      ],
       "Image preview not found": [
         "未找到图片预览"
       ],
       "Image upload failed": [
         "图像上传失败"
-      ],
-      "IMAP server is required": [
-        "IMAP 服务器必须填写"
       ],
       "Incorrect backup password. Please try again.": [
         "备份密码不正确，请重试。"
@@ -3154,23 +2862,14 @@
       "Item not found": [
         "未找到项目"
       ],
-      "Label name cannot be empty.": [
-        "标签名称不能为空。"
-      ],
       "Last name is too long": [
         "姓氏太长。"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "旧版公开链接无法更新，请重新创建新的公开链接！"
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
-      ],
       "Missing inviter email": [
         "缺少邀请人邮箱"
-      ],
-      "Missing key packet": [
-        "缺少密钥数据包"
       ],
       "Missing signature": [
         "缺少签名"
@@ -3192,18 +2891,6 @@
       ],
       "Name must not be empty": [
         "名称不能为空"
-      ],
-      "No calendars found to import": [
-        "未找到可导入的日历"
-      ],
-      "No contacts found to import": [
-        "未找到可导入的联系人"
-      ],
-      "No drive found to import": [
-        "未找到要导入的云端硬盘"
-      ],
-      "No emails found to import - the account does not have an inbox": [
-        "未找到可导入的邮件——账户无收件箱"
       ],
       "No file data was received. Please try again.": [
         "未收到任何文件数据，请重试！"
@@ -3232,17 +2919,8 @@
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
-      "Organization key must be activated to create invited users": [
-        "必须激活组织密钥才能创建受邀用户"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "组织密钥必须激活才能创建非私人用户"
-      ],
       "Part of the file appears to be corrupted": [
         "文件部分内容似乎已损坏"
-      ],
-      "Password is required": [
-        "密码必须填写"
       ],
       "Passwords do not match": [
         "密码不匹配"
@@ -3265,9 +2943,6 @@
       "Please enter ZIP code": [
         "请输入邮政编码"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "请修复高亮的冲突以继续。"
-      ],
       "Please provide either a first name, a last name or a display name": [
         "请提供名字、姓氏或一个称呼"
       ],
@@ -3276,15 +2951,6 @@
       ],
       "Please select a state": [
         "请选择州"
-      ],
-      "Port is required": [
-        "端口号必须填写"
-      ],
-      "Primary address key is not decrypted": [
-        "主密钥尚未解密"
-      ],
-      "Primary address key is not decrypted.": [
-        "主密钥尚未解密。"
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "已删除重复的受邀者：${ joinedInvitee }"
@@ -3337,29 +3003,11 @@
       "Some items could not be loaded": [
         "部分项目无法加载"
       ],
-      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "部分文件夹名称不可用，请自定导入内容并予以更改。"
-      ],
-      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
-      ],
-      "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "部分标签名称与系统内部名称冲突，请在导入内容中予以更改。"
-      ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "部分标签名称不可用，请自定导入内容并予以更改。"
-      ],
-      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
-      ],
       "Some trashed documents could not be loaded": [
         "部分已删除的文档无法加载"
       ],
       "Something went wrong": [
         "出了些问题"
-      ],
-      "Something went wrong while fetching available domains": [
-        "获取可用域名时出错"
       ],
       "Something went wrong. Please try again.": [
         "出错了，请再试一次。"
@@ -3379,18 +3027,6 @@
       "The email addresses do not match": [
         "邮箱地址不一致"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        "文件夹名称无效，请更改。"
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        "文件夹名称过长，请重新填写。"
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        "标签名称无效，请更改。"
-      ],
-      "The label name is too long. Please choose a different name.": [
-        "标签名称过长，请重新填写。"
-      ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "您上次对文档进行的更新要么太大，要么超出了文档总大小限制。编辑功能已暂时禁用。您的更改将不会保存。请导出文档副本并重新加载页面。"
       ],
@@ -3399,9 +3035,6 @@
       ],
       "The uploaded file does not match the original. Please try again.": [
         "上传的文件与原始文件不匹配，请重试。"
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "更新文件时出错，请重新加载页面并重试。"
@@ -3430,9 +3063,6 @@
       "This file version could not be uploaded": [
         "此文件版本无法上传"
       ],
-      "This folder name is not available. Please choose a different name.": [
-        "文件夹名称不可用，请重新填写。"
-      ],
       "This item has no image preview": [
         "此项目没有图片预览"
       ],
@@ -3441,9 +3071,6 @@
       ],
       "This item is not shared": [
         "此项目未共享"
-      ],
-      "This label name is not available. Please choose a different name.": [
-        "标签名称不可用，请重新填写。"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此邮件含有浏览器不能打开的链接."
@@ -3462,12 +3089,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "无法加载 VPN 控制面板！请检查您的网络连接，然后重试。"
-      ],
-      "Unexpected error, we can't import the contacts": [
-        "意外错误，无法导入联系人"
-      ],
-      "Unexpected error, we can't import the files": [
-        "出现意外错误，无法导入文件"
       ],
       "Unknown error": [
         "未知错误"
@@ -3532,20 +3153,8 @@
       "You do not have access to this shared item": [
         "您无权访问此共享项目"
       ],
-      "You have reached the maximum number of calendars.": [
-        "您已达到日历创建数量的上限。"
-      ],
-      "You have reached the number of contacts limit for your account": [
-        "您的账户联系人数量已达上限"
-      ],
       "You must set a name": [
         "请输入名称（必填）"
-      ],
-      "You reached the maximum number of connected addresses": [
-        "您已达到关联地址的最大数量"
-      ],
-      "Your import will not be processed.": [
-        "此次导入将不会进行。"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ 无法解密的设备"
@@ -3554,44 +3163,9 @@
         "⚠️ 无法解密的名称"
       ]
     },
-    "error": {
-      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "请使用已设置转发至 ${ MAIL_APP_NAME } 的 Gmail 地址登录"
-      ],
-      "Please sign in with the same Gmail address you originally connected": [
-        "请使用您最初关联的同一 Gmail 地址登录"
-      ]
-    },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "文件 ${ formattedFilename } 上传失败，我们只接受 ICS 文件格式。"
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "文件上传失败，尚未选择文件。"
-      ],
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS }。"
-      ],
-      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "文件 ${ formattedFilename } 中没有可导入的事件。"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "文件 ${ formattedFilename } 为空。"
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "文件 ${ formattedFilename } 不是日历文件。"
       ]
     },
     "Error importing contact": {
@@ -3626,65 +3200,6 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "文件 ${ formattedFilename } 为空。"
-      ]
-    },
-    "Error importing event": {
-      "Bad format. Component cannot be read.": [
-        "格式错误，组件无法读取。"
-      ],
-      "Calendar": [
-        "日历"
-      ],
-      "Component with wrong format": [
-        "组件格式错误"
-      ],
-      "Custom time zone": [
-        "自定义时区"
-      ],
-      "Element": [
-        "元素"
-      ],
-      "Encryption failed": [
-        "加密失败"
-      ],
-      "Event": [
-        "事件"
-      ],
-      "Free-busy time information": [
-        "忙碌空闲时间信息"
-      ],
-      "Invalid event": [
-        "无效的日程"
-      ],
-      "Journal entry": [
-        "记录条目"
-      ],
-      "Missing start time": [
-        "缺少启动时间"
-      ],
-      "No UID, title or start time": [
-        "没有 UID、标题或开始时间"
-      ],
-      "Notification out of bounds": [
-        "通知超出范围"
-      ],
-      "Original recurring event could not be found": [
-        "找不到原始重复事件"
-      ],
-      "Time zone": [
-        "时区"
-      ],
-      "Time zone component ignored": [
-        "忽略时区组件"
-      ],
-      "To-do entry": [
-        "待办事项"
-      ],
-      "Unknown": [
-        "未知"
-      ],
-      "Unsupported event": [
-        "不支持的日程"
       ]
     },
     "Error message": {
@@ -3723,154 +3238,12 @@
         "没有选择图像"
       ]
     },
-    "Event invistation error": {
-      "Unexpected error": [
-        "非预期错误"
-      ]
-    },
-    "Event invitation error": {
-      "Attached ICS file could not be decrypted": [
-        "无法解密附加的 ICS 文件"
-      ],
-      "Attached ICS file could not be read": [
-        "无法读取 ICS 附件"
-      ],
-      "Invalid invitation": [
-        "邀请无效"
-      ],
-      "Invalid response": [
-        "无效回复"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        "该事件不能被添加到您的日历。没有已发送的结果"
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        "该事件无法在您的日历中更新。没有已发送的结果"
-      ],
-      "Unsupported invitation": [
-        "不支持的邀请"
-      ],
-      "Unsupported response": [
-        "不支持的回复"
-      ],
-      "We could not cancel the event in your calendar": [
-        "我们无法取消您日历中的事件"
-      ],
-      "We could not retrieve the event from your calendar": [
-        "我们无法从您的日历中检索事件"
-      ],
-      "We could not update the event in your calendar": [
-        "我们无法更新您日历中的事件"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "您的回复已发送，但活动无法添加到您的日历"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "您的回复已发送，但事件无法在您的日历中更新"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(无标题)"
-      ]
-    },
-    "familyOffer_2023:Action": {
-      "Decline invitation": [
-        "拒绝邀请"
-      ],
-      "Got it": [
-        "了解"
-      ],
-      "Switch plans": [
-        "变更账户等级"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } 团体账户"
-      ],
-      "Accounts with custom domains cannot join a family plan.": [
-        "带有自定义域的账户无法加入家庭套餐。"
-      ],
-      "customer support": [
-        "客户支持"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "家庭套餐目前不支持外部账户，加入前请先创建 ${ BRAND_NAME } 地址。${ link }"
-      ],
-      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
-      ],
-      "Invited by: ${ inviteEmail }": [
-        "邀请人：${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a family plan.": [
-        "终身账户无法加入家庭套餐。"
-      ],
-      "Manage addresses": [
-        "地址管理"
-      ],
-      "Owners of a plan with members cannot join another family plan.": [
-        "有成员的套餐所有者无法加入另一个家庭套餐。"
-      ],
-      "Sorry, you can't switch plans at this time.": [
-        "抱歉，您目前无法变更账户等级。"
-      ],
-      "Storage assigned to you: ${ assignedStorage }": [
-        "分配给您的存储空间：${ assignedStorage }"
-      ],
-      "The subscription will be billed to the primary admin of this plan.": [
-        "订购费用将向该计划的主要管理员收取。"
-      ],
-      "View the invitation": [
-        "查看邀请"
-      ],
-      "You are invited to join ${ invite.OrganizationName }": [
-        "有人邀请您加入 ${ invite.OrganizationName }"
-      ],
-      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "6 个月内您只能接受 3 次邀请。如果另有需要，请联系${ supportLink }。"
-      ],
-      "You cannot accept this invitation with your current plan.": [
-        "您目前的计划不能接受此邀请。"
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "有人邀请您加入 ${ bannerOrganization }。${ viewInviteButton }"
-      ],
-      "You have successfully joined the family group": [
-        "您已成功加入家庭组"
-      ],
-      "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "您有未付发票。请在加入家庭计划前支付。"
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
-        "您已被邀请将您的 ${ BRAND_NAME } 账户关联至此家庭组，并享受其所有高级功能。"
-      ],
-      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "您已有的邮箱地址数量超过了此账户分配给您的邮箱地址数。${ addressSettingsLink }"
-      ],
-      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "您已使用 ${ usedSpace } 存储空间，超过了账户分配的 ${ inviteSpace } 上限。请清理部分数据或要求账户管理员为您的邮箱扩容。"
-      ]
-    },
     "Feature": {
-      "10+ premium features": [
-        "10+ 高级功能"
-      ],
-      "Custom email domain": [
-        "自定义邮箱域名"
-      ],
-      "Email addresses": [
-        "邮箱地址"
-      ],
       "Encrypted cloud storage for files, photos and documents": [
         "用于文件、照片和文档的加密云存储"
       ],
       "More premium features": [
         "更多高级功能"
-      ],
-      "Storage": [
-        "存储空间"
       ],
       "Unlimited hide-my-email aliases": [
         "无限 Hide-my-email 别名"
@@ -3940,11 +3313,6 @@
       ],
       "Terabyte": [
         "TB"
-      ]
-    },
-    "Filter notification": {
-      "${ Label.Name } updated": [
-        "${ Label.Name } 标签已更改"
       ]
     },
     "Font face option": {
@@ -4028,99 +3396,14 @@
         "短信验证"
       ]
     },
-    "ICS event error": {
-      "Calendar time zone not supported": [
-        "不支持此日历时区"
-      ],
-      "Edited event not supported": [
-        "不支持已编辑的事件"
-      ],
-      "End time out of bounds": [
-        "超出终止时间限制"
-      ],
-      "Event validation failed": [
-        "事件验证失败"
-      ],
-      "Floating times not supported": [
-        "不支持浮动时间"
-      ],
-      "Malformed all-day event": [
-        "全天事件格式不正确"
-      ],
-      "Malformed end time": [
-        "错误的终止时间"
-      ],
-      "Malformed recurring event": [
-        "错误的周期性事件"
-      ],
-      "Malformed start time": [
-        "错误的开始时间"
-      ],
-      "Only the Gregorian calendar scale is allowed": [
-        "仅允许公历日历表"
-      ],
-      "Recurring event has no occurrences": [
-        "周期性事件没有发生"
-      ],
-      "Recurring rule not supported": [
-        "不支持循环规则"
-      ],
-      "Start time out of bounds": [
-        "超出开始时间限制"
-      ],
-      "Time zone not supported": [
-        "不支持此时区"
-      ]
-    },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "加密并添加日程时出错。未能导入任何日程。"
-      ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "加密并添加日程时出错。未能导入任何日程。"
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
-      ],
-      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "日程导入成功。已显示在您的日历中。"
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "日程导入成功。已显示在您的日历中。"
-      ],
-      "Please don't close the tab before the importing process is finished.": [
-        "导入结束前请勿关闭此网页。"
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } 当前不支持某些日程类型、详情和格式。"
-      ],
       "vCard versions < 3.0": [
         "vCard 版本低于 3.0"
-      ]
-    },
-    "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 ${ BRAND_NAME } 邮箱地址邀请您。"
-      ],
-      "This file contains an event invitation:": [
-        "此文件包含活动邀请："
-      ],
-      "This file contains an invitation response:": [
-        "此文件包含邀请回复："
-      ],
-      "This file contains some data that we cannot import:": [
-        "此文件包含一些无法导入的数据："
       ]
     },
     "Import contact": {
@@ -4166,163 +3449,12 @@
         "暂时"
       ]
     },
-    "Import error": {
-      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "${ BRAND_NAME } 无法连接该账户，请确认："
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } 无法连接该邮箱，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } 无法连接该邮箱，请确认："
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认邮件服务器地址和端口号是否正确。"
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } 无法连接您的 Yahoo 账户，请确认："
-      ],
-      "IMAP access is enabled in your external account.": [
-        "您的外部账户已开启 IMAP 访问。"
-      ],
-      "IMAP access is enabled in your Yahoo account.": [
-        "您的 Yahoo 账户已开启 IMAP 访问。"
-      ],
-      "Too many recent requests. Please try again in a few moments.": [
-        "请求过于频繁，请稍后再试。"
-      ],
-      "Two-factor authentication is enabled in your external account.": [
-        "您的外部账户已启用 2FA"
-      ],
-      "Two-factor authentication is enabled in your external email account.": [
-        "您的外部邮箱账户已启用 2FA"
-      ],
-      "Use your app password if:": [
-        "在以下情况下使用您的应用密码："
-      ],
-      "Use your app password instead of your regular password if:": [
-        "下列情况需使用应用专用密码，不能用平常输入的密码："
-      ],
-      "Your app password is correct. Do not use your regular password.": [
-        "您的应用程序密码正确。请勿使用常规密码。"
-      ],
-      "Your email account requires an app password to export your data.": [
-        "该邮箱需要应用专用密码才能导出数据."
-      ],
-      "Your email account requires one to export your data.": [
-        "该邮箱需要应用专用密码才能导出数据."
-      ],
-      "Your email address and app password are correct. Do not use your regular password.": [
-        "您的邮箱地址和应用程序密码正确，请勿使用常规密码。"
-      ],
-      "Your email address and password are correct.": [
-        "您输入的邮箱地址和密码正确。"
-      ],
-      "Your password is correct.": [
-        "密码输入无误。"
-      ]
-    },
-    "Import instructions": {
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "各类邮箱操作步骤不尽相同，您可能需要先${ knowledgeBaseLink }才能导入至 ${ BRAND_NAME }。"
-      ],
-      "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "点击三点图标（...）展开下拉菜单。"
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "生成 ${ boldAppPassword } 并在 ${ BRAND_NAME } 中根据提示使用。"
-      ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        "前往 ${ yahooMailLink } 中您个人资料下的${ boldAccountInfo }。"
-      ],
-      "Go to ${ boldAccountSecurity }.": [
-        "前往 ${ boldAccountSecurity }。"
-      ],
-      "Open your ${ yahooMailLink } contacts.": [
-        "打开您的 ${ yahooMailLink } 通讯录。"
-      ],
-      "Select ${ boldExportCSV }.": [
-        "选择 ${ boldExportCSV }。"
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "将 Yahoo 日程导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "如需将日程导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "将 Yahoo 通讯录导入 ${ BRAND_NAME }，需要按以下三步下载一份 ${ knowledgeBaseLink }："
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "如需将通讯录导入 ${ BRAND_NAME }，您需要先下载一份 ${ knowledgeBaseLink }。"
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "将 Yahoo 邮件导入 ${ BRAND_NAME }，需要按以下步骤获取 ${ appPasswordLink }："
-      ]
-    },
-    "Import instructions emphasis": {
-      "Account info": [
-        "账户信息"
-      ],
-      "Account security": [
-        "账户安全"
-      ],
-      "app password": [
-        "应用专用密码"
-      ],
-      "Export": [
-        "导出"
-      ],
-      "Export to CSV file": [
-        "导出至 CSV 文件"
-      ]
-    },
-    "Import instructions link": {
-      "app password": [
-        "应用专用密码"
-      ],
-      "app password or enable IMAP": [
-        "生成应用专用密码或开启 IMAP 功能"
-      ],
-      "CSV or a VCF (vCard) file": [
-        "CSV 或 VCF (vCard) 文件"
-      ],
-      "full calendar view": [
-        "全日历视图"
-      ],
-      "ICS file": [
-        "ICS 文件"
-      ],
-      "Yahoo": [
-        "Yahoo"
-      ]
-    },
-    "Import instructions step": {
-      "Go to ${ calendarViewLink } in Yahoo.": [
-        "转至 Yahoo Mail 中的 ${ calendarViewLink }."
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "将光标指向您要导入的日历，打开下拉菜单."
-      ],
-      "Select ${ boldExport } to export the calendar as an ICS file.": [
-        "选择 ${ boldExport } 将日历作为 ICS 文件下载."
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
-      ],
       "No contact can be imported. Click for details": [
         "没有联系人可以导入。点击查看详情"
-      ],
-      "No event can be imported. Expand for details.": [
-        "未能导入任何日程，展开查看详情。"
-      ],
-      "Part of your calendar content is not supported and will not be imported.": [
-        "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
     "Info": {
@@ -4343,12 +3475,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } 个新日历"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } 名联系人各有多个邮箱地址。"
@@ -4389,23 +3515,8 @@
       "${ planName } expires today.": [
         "${ planName } 今天到期。"
       ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "已找到 ${ providerFoldersNumLocalized } 个文件夹"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
-      ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "试用期剩余 ${ timeRemaining }。${ addPaymentMethodLink } 以避免失去访问权限。${ learnMoreLink }"
@@ -4470,29 +3581,11 @@
       "All": [
         "全部"
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "全部（${ totalFoldersCount } 个文件夹）"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "全部（${ totalFoldersCount } 个标签）"
-      ],
-      "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "将导入您所有的联系人，上限为 ${ maxContact } 人"
-      ],
       "Already in this folder": [
         "已在此文件夹中"
       ],
-      "and": [
-        "并"
-      ],
-      "Are you sure you want to discard your import?": [
-        "确定要放弃导入吗？"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "确定要从回收站中永久删除“${ itemName }”吗？"
-      ],
-      "Are you sure you want to permanently delete selected items from trash?": [
-        "确定要从回收站中永久删除所选项吗？"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
@@ -4508,6 +3601,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
+      ],
+      "Beta": [
+        "测试版"
       ],
       "Calendar side panel": [
         "日历侧边栏"
@@ -4548,9 +3644,6 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
       ],
-      "Close this screen to exit.": [
-        "关闭这个窗口以退出"
-      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "连接到 ${ VPN_APP_NAME } 实现隐私浏览"
       ],
@@ -4578,17 +3671,8 @@
       "Country code": [
         "国家/地区代码"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "创建 ${ calendarsToBeCreatedCount } 份新日历"
-      ],
       "Create a copy to edit": [
         "创建副本以编辑"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
       ],
       "Create a new contact group": [
         "创建联系人群组"
@@ -4598,12 +3682,6 @@
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "创建端到端加密的文档和电子表格。"
-      ],
-      "Create in": [
-        "创建于"
-      ],
-      "Create your first folder and start moving your files.": [
-        "创建您的第一个文件夹并开始移动文件。"
       ],
       "Creating new document...": [
         "正在新建文档..."
@@ -4671,9 +3749,6 @@
       "End-to-end encrypted.": [
         "端到端加密."
       ],
-      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "确保通信完全私密且加密，立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
-      ],
       "Enter code": [
         "输入代码"
       ],
@@ -4682,9 +3757,6 @@
       ],
       "Enter the code from your authenticator app": [
         "请输入身份验证应用中的验证码"
-      ],
-      "Enter the credentials of the email account you want to import from.": [
-        "请输入您要导入的邮箱账户的凭据。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4722,9 +3794,6 @@
       "File \"${ name }\" was deleted during download": [
         "文件“${ name }”在下载过程中被删除"
       ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "仅限文件 (不含照片、${ DOCS_APP_NAME } 或 ${ SHEETS_APP_NAME }) - 总计上限 100 GB，文件数量上限 100,000 个，单文件大小上限 50 GB"
-      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "文件夹“${ link.name }”在下载过程中被删除"
       ],
@@ -4755,9 +3824,6 @@
       "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
         "通过报告问题来帮助我们改善体验，请在报告中附上下方的调试信息。"
       ],
-      "here": [
-        "此处"
-      ],
       "Hide table of contents": [
         "隐藏目录"
       ],
@@ -4782,35 +3848,14 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "如果移除您自己，您将失去对“${ fileName }”的访问权限，除非所有者与您再次分享，否则您将无法再次打开它。"
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
-      ],
-      "Import from": [
-        "导入自"
-      ],
-      "Import in progress": [
-        "导入中"
-      ],
-      "Import mailbox": [
-        "导入收件箱"
-      ],
       "Important note": [
         "重要提示"
       ],
       "Importing ODS files is currently in beta": [
         "导入 ODS 文件功能目前处于测试阶段"
       ],
-      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
-      ],
       "In restrictive countries": [
         "在网络受限的国家"
-      ],
-      "Included": [
-        "已包含"
-      ],
-      "Inherited from parent folder": [
-        "与上层文件夹一致"
       ],
       "Internet connection lost": [
         "网络连接已断开"
@@ -4830,9 +3875,6 @@
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "建议您始终使用VPN，但在以下情况下，网络安全威胁可能最为严重："
       ],
-      "Just confirm your selection and we'll do the rest.": [
-        "只需确认您的选择，剩下的交给我们即可。"
-      ],
       "Just now": [
         "刚刚"
       ],
@@ -4842,14 +3884,8 @@
       "Key fingerprint": [
         "指纹码"
       ],
-      "Label all imported messages as": [
-        "给导入的所有邮件加标签"
-      ],
       "Labels:": [
         "标签："
-      ],
-      "Large imports can take several days.": [
-        "大批量的导入可能需要几天才能完成。"
       ],
       "Learn more": [
         "了解详情"
@@ -4905,14 +3941,8 @@
       "Member": [
         "成员"
       ],
-      "Merged": [
-        "已合并"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
       "New": [
         "新"
@@ -5016,12 +4046,6 @@
       "Please provide a name and an email address for creating a group.": [
         "请填写名称和邮箱地址以创建群组。"
       ],
-      "Please select the folders you would like to import:": [
-        "请选择要导入的文件夹："
-      ],
-      "Please select the labels you would like to import:": [
-        "请选择要导入的标签："
-      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
       ],
@@ -5088,9 +4112,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
@@ -5156,9 +4177,6 @@
       ],
       "Symbols (#$&)": [
         "符号 (#$&)"
-      ],
-      "Temporarily unavailable due to high demand. Please try again later.": [
-        "由于需求过高暂时不可用，请稍后重试。"
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "无法验证文档中编辑者的身份。您是否希望将此文档标记为已验证？您可以选择忽略，稍后再决定。"
@@ -5259,14 +4277,8 @@
       "Update recent documents": [
         "更新最近文档"
       ],
-      "Upgrade anytime to bring over the rest": [
-        "随时升级以迁移剩余内容"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
-      ],
-      "Upgrade or clear space anytime to bring over the rest": [
-        "随时升级或清理空间以迁移剩余内容"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益！"
@@ -5289,14 +4301,8 @@
       "Warning": [
         "注意"
       ],
-      "We'll email you once import is complete.": [
-        "导入完成后，我们会向您发送一封电子邮件。"
-      ],
       "We'll get back to you shortly.": [
         "我们会尽快回复您。"
-      ],
-      "We'll notify you when the import is done.": [
-        "当导入完成时我们将通知您"
       ],
       "We'll remind you to verify your password again later": [
         "稍后我们会再次提醒您验证密码"
@@ -5367,20 +4373,8 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您当前使用的存储空间已超出 ${ downgradedPlanName } 套餐所包含的容量。请删除数据以便降级。"
       ],
-      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "您也可以将导入的日历与 ${ BRAND_NAME } 现有日历合并。"
-      ],
-      "You can check the progress ${ importProgressLink }.": [
-        "您可以在${ importProgressLink } 查看导入进度"
-      ],
-      "You can close the tab or browser in the meantime.": [
-        "同时，您也可以关闭当前标签页或浏览器。"
-      ],
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
       ],
       "You cannot undo this action.": [
         "您无法撤销此操作。"
@@ -5451,9 +4445,6 @@
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "您的当前文档将被此版本替换。评论和建议将从文档中移除，但仍可在评论历史中访问。"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "您的数据可以从 ${ importedEmailAddressStrong } 导入 ${ BRAND_NAME } 账户了。"
-      ],
       "Your email address and password were leaked:": [
         "您的邮箱地址和密码已泄露："
       ],
@@ -5477,9 +4468,6 @@
       ],
       "Your IP address is visible and can be used to track your online activity.": [
         "您的真实 IP 地址已暴露，他人可借此追踪您的在线活动。"
-      ],
-      "Your login information will not be saved after the import is completed.": [
-        "导入完成后，您的登录信息将不会被保存。"
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "下次账单日期为 ${ renewalTime }，您可以随时取消。"
@@ -5531,14 +4519,6 @@
         "点击查看详情"
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "已选择 ${ selectedFoldersCount } 个文件夹"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "已选择 ${ selectedFoldersCount } 个标签"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "活跃签名人"
@@ -5578,9 +4558,6 @@
       "${ length }/${ maxLength } characters": [
         "${ length } / ${ maxLength } 个字符"
       ],
-      "(Temporarily unavailable. Please check back later.)": [
-        "（暂时不可用。请稍后再试。）"
-      ],
       "Access": [
         "访问权限"
       ],
@@ -5614,9 +4591,6 @@
       "Anyone on the Internet with the link": [
         "互联网上任何拥有此链接的人"
       ],
-      "App password": [
-        "应用密码"
-      ],
       "Attach screenshot(s)": [
         "截图"
       ],
@@ -5631,9 +4605,6 @@
       ],
       "Browser version": [
         "浏览器版本"
-      ],
-      "Calendar": [
-        "日历"
       ],
       "can edit": [
         "可以编辑"
@@ -5664,9 +4635,6 @@
       ],
       "Confirm password": [
         "确认密码"
-      ],
-      "Contacts": [
-        "通讯录"
       ],
       "Continue cancelling": [
         "继续取消"
@@ -5704,35 +4672,14 @@
       "Don't show this again": [
         "不再显示"
       ],
-      "Drive": [
-        "云盘"
-      ],
       "Editor": [
         "编辑者"
-      ],
-      "Email": [
-        "邮箱"
       ],
       "Email address": [
         "邮箱地址"
       ],
       "Email format": [
         "邮件格式"
-      ],
-      "Emails (all messages)": [
-        "所有邮件"
-      ],
-      "Emails (last 12 months)": [
-        "邮件（过去 12 个月）"
-      ],
-      "Emails (last 3 months)": [
-        "邮件（过去 3 个月）"
-      ],
-      "Emails (last 6 months)": [
-        "邮件 (过去 6 个月)"
-      ],
-      "Emails (last month)": [
-        "邮件（上个月）"
       ],
       "Enable email notifications": [
         "启用邮件通知"
@@ -5749,14 +4696,8 @@
       "File": [
         "文件"
       ],
-      "Folder location": [
-        "文件夹位置"
-      ],
       "Folder name": [
         "文件夹名称"
-      ],
-      "From: ${ fromEmail }": [
-        "发件人：${ fromEmail }"
       ],
       "Hide password": [
         "隐藏密码"
@@ -5766,18 +4707,6 @@
       ],
       "Ignore": [
         "忽略"
-      ],
-      "Import all messages": [
-        "导入所有邮件"
-      ],
-      "Import interval": [
-        "导入间隔"
-      ],
-      "Import to email address": [
-        "导入到邮箱地址"
-      ],
-      "Import to:": [
-        "导入到："
       ],
       "Include application logs in bug report": [
         "在问题反馈中包含应用日志"
@@ -5794,26 +4723,8 @@
       "Integrated 2FA authenticator": [
         "内置 2FA 验证器"
       ],
-      "Label messages as": [
-        "给导入的邮件加标签"
-      ],
-      "Last 12 months only": [
-        "仅过去 12 个月"
-      ],
-      "Last 3 months only": [
-        "仅过去 3 个月"
-      ],
-      "Last 6 months only": [
-        "仅过去 6 个月"
-      ],
-      "Last month only": [
-        "仅上个月"
-      ],
       "Log in or sign up ": [
         "登录或注册 "
-      ],
-      "Mail Server (IMAP)": [
-        "邮件服务器 (IMAP)"
       ],
       "Main": [
         "主要"
@@ -5821,17 +4732,8 @@
       "Main reason for cancelling": [
         "取消的主要原因"
       ],
-      "Manage categories": [
-        "管理分类"
-      ],
       "Mark as verified": [
         "标记为已验证"
-      ],
-      "Move to Archive": [
-        "移至归档"
-      ],
-      "Move to Inbox": [
-        "移至收件箱"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "必须至少有 ${ MIN_PASSWORD_LENGTH } 个字符"
@@ -5850,9 +4752,6 @@
       ],
       "Not selected": [
         "未选中"
-      ],
-      "Notification": [
-        "通知"
       ],
       "Operating system": [
         "操作系统"
@@ -5877,9 +4776,6 @@
       ],
       "Please share any feedback to help us improve.": [
         "请分享任何反馈意见，以帮助我们改进工作。"
-      ],
-      "Port": [
-        "端口"
       ],
       "Post office box": [
         "邮局信箱"
@@ -5935,9 +4831,6 @@
       "Theme": [
         "主题"
       ],
-      "To: ${ toEmail }": [
-        "收件人：${ toEmail }"
-      ],
       "Trash": [
         "回收站"
       ],
@@ -5946,9 +4839,6 @@
       ],
       "Upload picture": [
         "上传图片"
-      ],
-      "Username": [
-        "用户名"
       ],
       "Verification code": [
         "验证码"
@@ -6001,44 +4891,6 @@
     "Label for contact group name": {
       "Name": [
         "名称"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "创建文件夹"
-      ],
-      "Create label": [
-        "创建标签"
-      ],
-      "Edit folder": [
-        "更改文件夹"
-      ],
-      "Edit label": [
-        "更改标签"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } 已创建"
-      ]
-    },
-    "Label; import email": {
-      "From: ${ from }": [
-        "发件人：${ from }"
-      ],
-      "To: ${ to }": [
-        "收件人：${ to }"
-      ]
-    },
-    "Limit of calendars reached": {
-      "To add a new calendar, remove an existing one.": [
-        "需要先删除一份现有日历才能添加新日历。"
-      ],
-      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "如需继续添加日历，请先删除一份现有日历，或开通付费 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } 账户。"
-      ],
-      "You've reached the maximum number of calendars available in your plan.": [
-        "您的日历数量已达到当前账户等级的上限。"
       ]
     },
     "Link": {
@@ -6132,29 +4984,6 @@
         "还包括："
       ]
     },
-    "Loading info": {
-      "Almost there": [
-        "即将准备就绪"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "已创建的日历数量: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
-      ],
-      "Connecting to your email provider": [
-        "正在连接到您的邮件提供商"
-      ],
-      "Creating new calendars": [
-        "正在创建新日历"
-      ],
-      "Gathering your data": [
-        "正在收集您的数据"
-      ],
-      "We're gathering your data from your provider": [
-        "我们正在通过您原先的服务商调取您的数据"
-      ],
-      "Your import is starting": [
-        "正在启动导入"
-      ]
-    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "了解详情"
@@ -6187,20 +5016,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "启用 ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "导入带有 ${ itemsToImportCount } 类标签的邮件并加标签"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "导入 ${ selectedItemsToImportCount }/${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6308,37 +5123,6 @@
       ],
       "Plain text": [
         "纯文本"
-      ]
-    },
-    "Modal title": {
-      "How to import calendars from another service": [
-        "如何从其他服务导入日历"
-      ],
-      "How to import calendars from Yahoo": [
-        "如何从Yahoo导入日历"
-      ],
-      "How to import contacts from another service": [
-        "如何从其他服务导入联系人"
-      ],
-      "How to import contacts from Yahoo": [
-        "如何从Yahoo导入联系人"
-      ],
-      "How to import emails from another service": [
-        "如何从其他邮件服务导入邮件"
-      ],
-      "How to import emails from Yahoo": [
-        "如何从Yahoo导入邮件"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "颜色"
-      ],
-      "Folder name": [
-        "文件夹名称"
-      ],
-      "Label name": [
-        "标签名称"
       ]
     },
     "new_plans": {
@@ -7181,38 +5965,11 @@
       "\"${ ellipsedName }\" created successfully": [
         "“${ ellipsedName }”创建成功"
       ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "“${ ellipsedName }”创建失败"
-      ],
       "\"${ ellipsedName }\" moved": [
         "“${ ellipsedName }”已移动"
       ],
       "\"${ fileName }\" shared": [
         "“${ fileName }”已共享"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" 已从回收站永久删除"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" 回收站永久删除失败"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" 移动失败"
-      ],
-      "\"${ name }\" failed to be moved to trash": [
-        "\"${ name }\" 移到回收站失败"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" 从回收站还原失败"
-      ],
-      "\"${ name }\" moved to trash": [
-        "\"${ name }\" 已移动到回收站"
-      ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" 已从回收站恢复"
-      ],
-      "\"${ newName }\" failed to be renamed": [
-        "\"${ newName }\" 重命名失败"
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName } 重命名成功"
@@ -7222,21 +5979,6 @@
       ],
       "${ count } item failed to be decrypted": [
         "${ count } 个项目解密失败"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } 个项目已从回收站永久删除"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems }\" 个项目从回收站永久删除失败"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } 个项目移动失败"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } 个项目移到回收站失败"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems }\" 个项目从回收站还原失败"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } 个项目已移动"
@@ -7334,9 +6076,6 @@
       "Report submitted successfully": [
         "报告提交成功"
       ],
-      "Root folder failed to be loaded": [
-        "加载根目录失败"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "设置已更新，编辑者可以更改权限和共享。"
       ],
@@ -7349,17 +6088,11 @@
       "Share invitation declined": [
         "分享邀请被拒绝"
       ],
-      "Subfolder failed to be loaded": [
-        "加载子文件夹失败"
-      ],
       "The link to your item was deleted": [
         "共享链接已删除"
       ],
       "You stopped sharing this item": [
         "您已停止共享此项目"
-      ],
-      "Your ${ BRAND_NAME } address is ready to use": [
-        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
@@ -7368,21 +6101,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "由于当前选中的文件名重复，某些图像未上传。"
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "接下来您需要登录 Google 账户并允许 ${ BRAND_NAME } 获取您的数据。"
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        "为顺利完成导入，您需要如下图所示勾选所有权限。"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "选择 ${ BRAND_NAME } 可以访问的内容：查看电子邮件信息和设置、查看和下载联系人信息、查看和下载从 Google 日历访问的所有日程。"
       ]
     },
     "Offer": {
@@ -7588,17 +6306,6 @@
       ],
       "Ignore group": [
         "忽略分组"
-      ],
-      "No parent folder": [
-        "无上层文件夹"
-      ]
-    },
-    "Option group label": {
-      "Create new calendar": [
-        "创建新日历"
-      ],
-      "Merge with calendar": [
-        "与日历合并"
       ]
     },
     "Page title": {
@@ -7610,11 +6317,6 @@
       ],
       "Trash": [
         "回收站"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "你"
       ]
     },
     "pass_signup_2023: Info": {
@@ -7840,9 +6542,6 @@
       ],
       "Search for name or email": [
         "搜索名称或邮箱地址"
-      ],
-      "Search parent folder": [
-        "搜索上层文件夹"
       ],
       "Select": [
         "选择"
@@ -8130,11 +6829,6 @@
     "Select files": {
       "Upload": [
         "上传"
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "未找到结果"
       ]
     },
     "session_recovery:available:action": {
@@ -8801,9 +7495,6 @@
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
-      "Canceling import": [
-        "正在取消导入"
-      ],
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
       ],
@@ -8825,12 +7516,6 @@
       "Fingerprint copied to clipboard": [
         "指纹已复制到剪贴板"
       ],
-      "Import record deleted": [
-        "导入记录已删除"
-      ],
-      "Invitation rejected": [
-        "邀请已被拒绝"
-      ],
       "Phone number copied to clipboard": [
         "电话号码已复制到剪贴板"
       ],
@@ -8842,9 +7527,6 @@
       ],
       "Problem reported": [
         "问题报告"
-      ],
-      "Undo in progress": [
-        "正在撤销"
       ],
       "Verification successful": [
         "验证成功"
@@ -9002,9 +7684,6 @@
       "Change password": [
         "更改密码"
       ],
-      "Claim your ${ MAIL_APP_NAME } address": [
-        "认领您的 ${ MAIL_APP_NAME } 地址"
-      ],
       "Clearing data": [
         "数据清除中"
       ],
@@ -9035,12 +7714,6 @@
       "Contacts": [
         "通讯录"
       ],
-      "Continue with free storage": [
-        "继续使用免费存储空间"
-      ],
-      "Continue with partial import?": [
-        "继续以部分导入进行吗？"
-      ],
       "Create a new folder": [
         "新建文件夹"
       ],
@@ -9052,18 +7725,6 @@
       ],
       "Currency": [
         "货币"
-      ],
-      "Custom": [
-        "自定义"
-      ],
-      "Customize and confirm": [
-        "自定义并确认"
-      ],
-      "Customize calendar import": [
-        "自定义日历导入"
-      ],
-      "Customize your mail import": [
-        "自定义您的邮件导入"
       ],
       "Data recovery": [
         "数据恢复"
@@ -9103,9 +7764,6 @@
       ],
       "Discard changes?": [
         "放弃更改？"
-      ],
-      "Disconnected from Gmail": [
-        "取消关联 Gmail"
       ],
       "Docs": [
         "文档"
@@ -9158,9 +7816,6 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
-      "Enter your password": [
-        "请输入您的密码"
-      ],
       "Error Syncing": [
         "同步出错"
       ],
@@ -9172,9 +7827,6 @@
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
-      ],
-      "Get more storage with ${ MAIL_APP_NAME } Plus": [
-        "使用 ${ MAIL_APP_NAME } Plus 获取更多存储空间"
       ],
       "Get the apps": [
         "下载应用"
@@ -9203,17 +7855,8 @@
       "Human verification": [
         "身份验证"
       ],
-      "Import as simple event?": [
-        "导入为简单活动？"
-      ],
       "Import contacts": [
         "导入联系人"
-      ],
-      "Import events": [
-        "导入事件"
-      ],
-      "Import failed": [
-        "导入失败"
       ],
       "Import groups": [
         "导入群组"
@@ -9326,9 +7969,6 @@
       "Recommended actions": [
         "建议采取的行动"
       ],
-      "Reconnect your account": [
-        "重新连接账户"
-      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -9392,9 +8032,6 @@
       "Shared with me": [
         "与我共享"
       ],
-      "Sign in and grant access": [
-        "登录并授予权限"
-      ],
       "Sign out": [
         "登出"
       ],
@@ -9406,12 +8043,6 @@
       ],
       "Something went wrong": [
         "出了些问题"
-      ],
-      "Start a new import": [
-        "开始导入"
-      ],
-      "Start import process": [
-        "开始导入过程"
       ],
       "Stop sharing?": [
         "要停止共享吗？"
@@ -9452,6 +8083,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 保护隐私"
       ],
+      "Verify it’s you": [
+        "验证您的身份"
+      ],
       "Verify your password": [
         "请验证您的密码"
       ],
@@ -9475,12 +8109,6 @@
       ],
       "When is it most important to use a VPN?": [
         "什么时候最需要使用 VPN 呢？"
-      ],
-      "You are all set": [
-        "一切就绪"
-      ],
-      "You have no folders yet": [
-        "您尚未添加文件夹"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
@@ -9533,23 +8161,8 @@
       "Change shared item settings": [
         "更改共享项目设置"
       ],
-      "Customize import to reduce the number of folders": [
-        "自定义导入，减少文件夹数量。"
-      ],
-      "Customize import to reduce the number of labels": [
-        "自定义导入以减少标签数量"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "数字签名电子邮件有助于验证您发送的消息"
-      ],
-      "Each imported email will have this label": [
-        "每一封导入的邮件都会有这个标签"
-      ],
-      "Edit folder names": [
-        "更改文件夹名称"
-      ],
-      "Edit label names": [
-        "编辑标签名称"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "电子邮件加密迫使电子邮件签名，以帮助验证您发送的信息。"
@@ -9559,9 +8172,6 @@
       ],
       "Encrypted data with verified digital signature": [
         "已加密并验证数字签名"
-      ],
-      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
       "Instant AI assistance, human expert on hand!": [
         "获取 AI 和人工专家的即时协助！"
@@ -9581,17 +8191,11 @@
       "Shared with end-to-end encryption": [
         "通过端到端加密共享"
       ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
-      ],
       "The image could not be loaded": [
         "无法加载图像"
       ],
       "The image could not be loaded using proxy": [
         "通过代理服务器无法加载图像"
-      ],
-      "The import will start with the most recent messages.": [
-        "导入将从最近的信息开始。"
       ],
       "This link has expired. Please extend expiration date": [
         "此链接已过期，请延长有效期"
@@ -9702,14 +8306,6 @@
         "名称不能包含斜杠 (/)"
       ]
     },
-    "Video control": {
-      "Click to replay the video": [
-        "点击回放视频"
-      ],
-      "Replay video": [
-        "回放视频"
-      ]
-    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "不如别的产品好用"
@@ -9794,12 +8390,6 @@
       ]
     },
     "Warning": {
-      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } 将合并所有同名文件夹，无需合并的文件夹请在导入前更改名称。"
-      ],
-      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
-      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "您确定要永久删除 ${ count } 联系人吗？"
       ],
@@ -9820,9 +8410,6 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
-      ],
-      "Skip verification?": [
-        "跳过验证？"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "部分需合并的联系人无法显示，请单独查看。"
@@ -9845,20 +8432,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "此操作不可逆，请在字段中输入 ${ boldDanger } 以继续"
       ],
-      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "此次导入可能会耗尽您的 ${ BRAND_NAME } 账户存储空间，请考虑缩减导入内容。"
-      ],
       "This will replace all the data in the spreadsheet": [
         "这将替换电子表格中的所有数据"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
-      ],
-      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "邮件服务器验证失败，如果您信任该服务器，可以跳过此项验证。"
-      ],
-      "You will lose any customization you made so far.": [
-        "当前的导入设置将无法恢复。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免费体验期将于 ${ textDate } 结束。${ action }"

@@ -31,6 +31,9 @@
       "Add address": [
         "Rnu tansa"
       ],
+      "Add another account": [
+        "Rnu amiḍan nniḍen"
+      ],
       "Add Bcc recipients": [
         "Rnu anɣal uffir n yiɣarwaḍen"
       ],
@@ -268,6 +271,9 @@
       "Create alias": [
         "Rnu alias"
       ],
+      "Create and copy alias": [
+        "Snulfu-d sakin nɣel azunisem"
+      ],
       "Create folder": [
         "Snulfu-d akaram"
       ],
@@ -491,6 +497,9 @@
       ],
       "Got it": [
         "Gziɣ"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
@@ -1225,6 +1234,9 @@
       "Yes, I'll attend": [
         "Ih, ad ttikkiɣ"
       ],
+      "Your email writing assistant": [
+        "Amalal n tira n yimayl-ik"
+      ],
       "Zoom in": [
         "Semɣer"
       ],
@@ -1288,6 +1300,12 @@
       "${ users } user": [
         "${ users } n useqdac",
         "${ users } yiseqdacen"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
+      ],
+      "Writing assistant seats": [
+        "Imukan n umalal n tira"
       ]
     },
     "Alert": {
@@ -1354,6 +1372,14 @@
         "Isnasen n ${ BRAND_NAME }"
       ]
     },
+    "Assistant option": {
+      "Run on device": [
+        "Selkem ɣef yibenk"
+      ],
+      "Securely run on device": [
+        "Selkem ɣef yibenk s wudem aɣelsan"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Afaylu ICS ilem"
@@ -1385,6 +1411,11 @@
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Sefsex ajerred"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Mdel"
       ]
     },
     "bf2023: Deal details": {
@@ -1498,6 +1529,10 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "1 month": [
         "1 wayyur"
       ],
@@ -1876,6 +1911,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } n uḥraz"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
       ],
       "Save ${ upsellSavings }": [
         "Sekles ${ upsellSavings }"
@@ -3166,6 +3205,11 @@
         "Kkes asenqes"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Sider i Windows"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Priority support": [
         "Tallalt yezwaren"
@@ -3233,6 +3277,9 @@
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
+      "Alias is not valid": [
+        "Azunisem d arameɣtu"
+      ],
       "Alias options could not be resolved": [
         "Tixtiṛiyin n alias ggummant ad ṣegment"
       ],
@@ -3241,6 +3288,9 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Azal ddaw n wadday (${ minimumAmount })."
+      ],
+      "An error occurred while saving your alias": [
+        "Teḍra-d tuccḍa deg usekles n wazunisem-ik"
       ],
       "Authentication canceled.": [
         "Yefsex usesteb."
@@ -3256,6 +3306,10 @@
       ],
       "Choose a date in the future.": [
         "Fren azemz deg yimal."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Fren azemz deg ${ n } n wass i d-itteddun.",
+        "Fren azemz deg ${ n } n wussan i d-itteddun."
       ],
       "Condition incomplete": [
         "Tawtilt tarummidt"
@@ -3359,6 +3413,9 @@
       "Invalid public key file": [
         "Afaylu n tsarut tazayezt ur d ameɣtu"
       ],
+      "Invalid URL": [
+        "Yir URL"
+      ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
@@ -3379,6 +3436,9 @@
       ],
       "Missing signature": [
         "Ixuṣ uzmul"
+      ],
+      "Name is required": [
+        "Isem yettwasra"
       ],
       "Network error": [
         "Tuccḍa n uzeṭṭa"
@@ -3487,6 +3547,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Kra n yismawen n tebzimin ɛeddan talast tafellayt n yisekkilen n ${ MAIL_APP_NAME }. Ttxil sagen akatar akken ad tẓergeḍ ismawen-a."
+      ],
+      "Something went wrong": [
+        "Yella wayen yeḍran"
       ],
       "Something went wrong. Please try again.": [
         "Yella kra i yeḍran, ttxil ɛreḍ tikkelt-nniḍen."
@@ -3830,6 +3893,10 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Tallunt n uḥraz i ak-yettwamudden: ${ assignedStorage }"
       ],
+      "View the invitation": [
+        "Wali tinnubga",
+        "Wali tinnubgiwin"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Tettwaɛerḍeḍ ad ternuḍ ɣer ${ invite.OrganizationName }"
       ],
@@ -4154,6 +4221,9 @@
       ],
       "Search": [
         "Nadi"
+      ],
+      "Set up the writing assistant": [
+        "Sbed amalal n tira"
       ]
     },
     "Hint": {
@@ -4977,6 +5047,9 @@
       "Import mailbox": [
         "Kter tabewwaḍt n yimayl"
       ],
+      "Important note": [
+        "Tamawt taxatart"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
@@ -5015,6 +5088,9 @@
       ],
       "Learn more": [
         "Issin ugar"
+      ],
+      "Learn more about the writing assistant": [
+        "Issin ugar ɣef umalal n tira"
       ],
       "Left to Right": [
         "Seg uzelmad s ayeffus"
@@ -5153,6 +5229,9 @@
       ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
+      ],
+      "Not connected": [
+        "Ur iqqin ara"
       ],
       "Numbers": [
         "Imḍanen"
@@ -5330,6 +5409,9 @@
         "Asenqed n ${ contactNames } yecceḍ: anermis ur yettuzmel ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n unermis i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg anermis.",
         "Asenqed n ${ contactNames } yecceḍ: inermisen ur ttuzemlen ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n yinermisen i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg inermisen."
       ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Amalal n tira yesra ad ifak asider send ad yettwaseqdec."
+      ],
       "Themes can give your inbox a new look.": [
         "Isental zemren ad d-fken i tebwaḍt-ik·im udem amaynut."
       ],
@@ -5506,6 +5588,9 @@
       "Upgrade to support privacy and get more features.": [
         "Sali ɣer lqem unnig akken ad tɛawneḍ tabaḍnit yerna ad tesɛuḍ ugar n tmahilin."
       ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Sali leqqem iwakken ad tesqedceḍ tiririt tawurmant mi ara tbeɛɛdeḍ."
+      ],
       "Upload picture": [
         "Sili tugna"
       ],
@@ -5563,6 +5648,9 @@
       "When do you want your message to self-destruct?": [
         "Melmi i tebɣiḍ ad yettwakkes yizen-ik·im s wudem awurman?"
       ],
+      "When working remotely": [
+        "Mi ara txeddmeḍ s wudem anmeggag"
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Mi tesremdeḍ tisura yettwamanen i ${ senderName }, tisura tizayazin ttwarnant ɣer telɣut n unermis."
       ],
@@ -5574,6 +5662,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Tebɣiḍ ad teṭṭfeḍ tangalt tamaynutt n uselken ?"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
       ],
       "Yearly": [
         "S useggas"
@@ -5677,6 +5768,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Iminig-ik ur yessefrak ara amalal n tira, Ɛreḍ ad t-tselkameḍ ɣef uqeddac."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Isefka-k wejden i uktar seg ${ importedEmailAddressStrong } ɣer umiḍan-ik ${ BRAND_NAME }."
       ],
@@ -5698,6 +5792,9 @@
       ],
       "Your message will expire tomorrow.": [
         "Izen-ik·im ad immet azekka."
+      ],
+      "Your online activity is protected": [
+        "Armud-ik deg internet yettummesten"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -5962,6 +6059,14 @@
       ],
       "${ BRAND_NAME } username": [
         "Isem n useqdac ${ BRAND_NAME }"
+      ],
+      "${ count } unread conversation": [
+        "${ count } n udiwenni ur yettwaɣran ara",
+        "${ count } idiwenniyen ur nettwaɣra ara"
+      ],
+      "${ count } unread message": [
+        "${ count } n yizen ur yettwaɣran ara",
+        "${ count } n yiznan ur nettwaɣri ara"
       ],
       "${ n } month": [
         "${ n } wayyur",
@@ -6483,9 +6588,6 @@
       "Social": [
         "Anmetti"
       ],
-      "Spam": [
-        "Aspam"
-      ],
       "Starred": [
         "S yitran"
       ],
@@ -6534,9 +6636,6 @@
       "Toolbar": [
         "Tafeggagt n ifecka"
       ],
-      "Trash": [
-        "Taqecwalt"
-      ],
       "Undisclosed Recipients": [
         "Iɣerwaḍen ur ttwaskanen ara"
       ],
@@ -6569,6 +6668,9 @@
       ],
       "Without attachment": [
         "War afaylu yeddan"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
       ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
@@ -6796,6 +6898,9 @@
       "Trash": [
         "Taqecwalt n yiḍumman"
       ],
+      "Views": [
+        "Timeẓriyin"
+      ],
       "What’s this?": [
         "D acu-t wa?"
       ],
@@ -6896,6 +7001,12 @@
       ],
       "Trash": [
         "Taqecwalt"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } yimtteki",
+        "${ n } yimttekkiyen"
       ]
     },
     "Message": {
@@ -7485,6 +7596,9 @@
       "Desktop": [
         "Tanarit"
       ],
+      "Download the desktop app": [
+        "Sider asnas n tnarit"
+      ],
       "Maybe later": [
         "Ahat ticki"
       ],
@@ -7736,6 +7850,9 @@
       "Text": [
         "Aḍris"
       ],
+      "the writing assistant": [
+        "amallal n tira"
+      ],
       "Thomas": [
         "Thomas"
       ],
@@ -7863,6 +7980,12 @@
         "Yettwaḥrez s uwgelhen ilem n unekcum"
       ]
     },
+    "Referral": {
+      "Friend joined": [
+        "Yerna-d umeddakel",
+        "Rnan-d imeddukal"
+      ]
+    },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
         "${ remainingDays } wussan",
@@ -7906,6 +8029,9 @@
     "Security Center": {
       "Create alias": [
         "Rnu alias"
+      ],
+      "Create an alias": [
+        "Snulfu-d azunisem"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliases"
@@ -8305,10 +8431,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "Mazal ${ dayDiff } wass",
-        "Mazal ${ dayDiff } wussan"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } uḥraz i aseqdac"
       ],
@@ -8459,6 +8581,9 @@
       ],
       "Address verification disabled": [
         "Asenqed n tansa yensa"
+      ],
+      "Alias saved and copied": [
+        "Azunisem yettwasekles yerna yettwanɣel"
       ],
       "Canceling import": [
         "Asefsex n uktar"
@@ -8628,6 +8753,9 @@
       ],
       "Verification successful": [
         "Asenqed yedda akken iwata"
+      ],
+      "Writing assistant enabled": [
+        "Amalal n tira yermed"
       ]
     },
     "Success notification": {
@@ -8999,6 +9127,9 @@
       "Downgrade account": [
         "Sider aswir n umiḍan"
       ],
+      "Download the app": [
+        "Sider asnas"
+      ],
       "Edit contact": [
         "Ẓreg anermis"
       ],
@@ -9029,11 +9160,11 @@
       "Email settings": [
         "Iɣewwaren n yimayl"
       ],
+      "Enable 2FA": [
+        "Sermed 2FA"
+      ],
       "Enable message content search": [
         "Rmed anadi n ugbur n yizen"
-      ],
-      "Enter your password": [
-        "Sekcem awal-ik uffir"
       ],
       "Error": [
         "Tuccḍa"
@@ -9061,6 +9192,9 @@
       ],
       "Groups": [
         "Igrawen"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ],
       "Help center": [
         "Tallalt"
@@ -9309,6 +9443,9 @@
       "Schedule send:": [
         "Sɣiwes tuzna:"
       ],
+      "Security center": [
+        "Ammas n tɣellist"
+      ],
       "Select a plan": [
         "Fren aɣawas"
       ],
@@ -9441,6 +9578,9 @@
       ],
       "Welcome ${ userName }": [
         "Ansuf ${ userName }"
+      ],
+      "Your account is protected": [
+        "Amiḍan-ik yettummesten"
       ],
       "Your changes are not synced yet": [
         "Isenfal-ik mazal ur mtawan ara"

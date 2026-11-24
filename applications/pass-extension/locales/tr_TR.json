@@ -1062,8 +1062,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } zamanında yanıt vermedi."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } yanıt vermiyor."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Biyometrik kilit açma kontrolü halihazırda devam ediyor."
       ],
       "A desktop unlock check is already in progress.": [
         "Bir bilgisayar kilit açma denetimi zaten yapılıyor."
@@ -1947,6 +1956,9 @@
         "${ n } öge",
         "${ n } öge"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } tarayıcı eklentisinin kilidini açmak istiyor"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } her zaman erişilebilir olacak"
       ],
@@ -2253,7 +2265,7 @@
         "${ PASS_APP_NAME } uygulamasını betikleriniz ve araçlarınızla bütünleştirmek için bir kod oluşturun."
       ],
       "Create contact illustration": [
-        "Kişi oluşturma görseli"
+        "Kişi oluşturmayı gösteren görsel"
       ],
       "Created ${ createdDate }": [
         "Oluşturulma: ${ createdDate }"
@@ -2337,7 +2349,7 @@
         "E-posta adresi izlemeye eklendi"
       ],
       "Email headers illustration": [
-        "E-posta üst bilgileri görseli"
+        "E-posta üst bilgilerini gösteren görsel"
       ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
         "Bu adrese e-posta gönderdiğinizde örneğin ${ exampleEmail } adresinden gönderilmiş gibi görünecek."
@@ -2620,7 +2632,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir öğeyi başka bir kasaya taşıdığınızda o öğenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3217,6 +3229,9 @@
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
       ],
+      "unlock the browser extension": [
+        "tarayıcı eklentisinin kilidini aç"
+      ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
       ],
@@ -3243,6 +3258,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Birden çok kasa oluşturabilmek için ücretli bir tarifeye geçin."
+      ],
+      "Use biometrics to unlock": [
+        "Kilidi açmak için biyometrik kullanılsın"
       ],
       "User's access removed": [
         "Kullanıcının erişimi kaldırıldı"
@@ -4308,7 +4326,7 @@
         "PIN kodu"
       ],
       "Points Balance": [
-        "Kalan puan tutarı"
+        "Puan tutarı"
       ],
       "Port": [
         "Bağlantı noktası"
@@ -5977,6 +5995,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
+        "${ BRAND_NAME }, ${ BRAND_NAME } parolanızı yalnızca ${ PASS_APP_NAME } uygulamasında kaydetmenizi önermemektedir. Parolanızı unutursanız ${ PASS_APP_NAME } uygulamasında oturum açamazsınız."
+      ],
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } parolası gereklidir"
       ],

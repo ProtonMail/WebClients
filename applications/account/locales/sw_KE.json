@@ -674,9 +674,6 @@
       "Contact sales": [
         "Wasiliana na timu ya mauzo"
       ],
-      "Contact support": [
-        "Wasiliana na usaidizi"
-      ],
       "Contact Support Center": [
         "Wasiliana na Kituo cha Usaidizi"
       ],
@@ -926,11 +923,8 @@
       "Don't show again": [
         "Usionyeshe tena"
       ],
-      "Don't show this offer again": [
-        "Usionyeshe ofa hii tena"
-      ],
-      "Donate": [
-        "Changia"
+      "Don't show this again": [
+        "Usionyeshe hili tena"
       ],
       "Done": [
         "Imekamilika"
@@ -1228,9 +1222,6 @@
       ],
       "Get verification code": [
         "Pata msimbo wa uthibitishaji"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Pata anwani yako binafsi ya ${ MAIL_APP_NAME }"
       ],
       "Go back": [
         "Rudi nyuma"
@@ -1637,6 +1628,9 @@
       "Remove": [
         "Ondoa"
       ],
+      "Remove ${ name }": [
+        "Ondoa ${ name }"
+      ],
       "Remove all other devices": [
         "Ondoa vifaa vingine vyote"
       ],
@@ -1982,6 +1976,9 @@
       "Skip": [
         "Ruka"
       ],
+      "Skip to main content": [
+        "Ruka hadi maudhui makuu"
+      ],
       "Skip verification": [
         "Ruka uthibitisho"
       ],
@@ -2074,9 +2071,6 @@
       ],
       "Try for free": [
         "Jaribu bila malipo"
-      ],
-      "Try payment again": [
-        "Jaribu malipo tena"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Jaribu kuhifadhi tena. Kuhifadhi hukuweza kufanyika kwa sababu ya: ${ saveError }"
@@ -6366,9 +6360,6 @@
       "Delete this condition": [
         "Futa sharti hili"
       ],
-      "Edit conditions": [
-        "Hariri masharti"
-      ],
       "Got it": [
         "Nimeelewa"
       ],
@@ -7239,9 +7230,6 @@
       "Could not read part of this file: ${ message }": [
         "Sehemu ya faili hii haikuweza kusomwa: ${ message }."
       ],
-      "Could not save preference": [
-        "Mapendeleo hayakuweza kuhifadhiwa."
-      ],
       "Could not unlock the parent folder": [
         "Imeshindikana kufungua folda kuu."
       ],
@@ -7877,9 +7865,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Kiasi kidogo kabisa cha salio kinachoweza kuongezwa ni ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Kiasi cha chini cha mchango ni ${ price }."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Jina la sera linapaswa kuwa kati ya herufi 3 na 40."
@@ -9163,16 +9148,6 @@
         "Pata maelezo zaidi"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "Weka anwani yako ya barua pepe"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Vocha itatumwa hapa."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "programu ya wavuti"
@@ -9539,29 +9514,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Hatua rahisi leo ya kuhakikisha usalama wa kidijitali wa mtoto wako kesho"
-      ],
       "Activate your reserved email address": [
         "Amilisha anwani yako ya barua pepe iliyohifadhiwa"
-      ],
-      "Address reservation voucher": [
-        "Kuponi ya kuhifadhi anwani"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Changia ${ BRAND_NAME } Foundation"
       ],
       "Enter verification code": [
         "Weka msimbo wa uthibitishaji"
       ],
       "Recover activation voucher": [
         "Rejesha kuponi ya uamilishaji"
-      ],
-      "Reserve child's email address": [
-        "Hifadhi anwani ya barua pepe ya mtoto"
-      ],
-      "We emailed you the voucher": [
-        "Tumekutumia vocha kwa barua pepe"
       ]
     },
     "Headline": {
@@ -11622,9 +11582,6 @@
       "Groups": [
         "Vikundi"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Saidia familia nyingine kuwapa watoto wao mwanzo salama mtandaoni. Shiriki hatua hii na uenezeshe habari."
-      ],
       "here": [
         "hapa"
       ],
@@ -11636,9 +11593,6 @@
       ],
       "High Priority": [
         "Kipaumbele cha Juu"
-      ],
-      "How it works": [
-        "Jinsi inavyofanya kazi"
       ],
       "How to perform a signed-in reset": [
         "Jinsi ya kuweka upya nenosiri ukiwa umeingia"
@@ -11869,9 +11823,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Thibitisha tu uchaguzi wako na sisi tutashughulikia mengine."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Weka kuponi salama hadi inapohitajika, kwa mfano kwenye ${ DRIVE_APP_NAME }."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Weka taarifa zako salama na za faragha zaidi kwa miongozo na vidokezo hivi."
@@ -12459,9 +12410,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Pokea arifa kwa ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Pokea kuponi ya kuhifadhi anwani kwa barua pepe. Wewe au mtoto mnaweza kuitumia kuamilisha anwani ndani ya miaka 15 ijayo. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Seva zilizotumika hivi karibuni:"
       ],
@@ -12712,9 +12660,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Seva zingine zinaweza kusionekane kwenye orodha iliyo hapo juu. Tafuta kwa jina la seva (kwa mfano, AT#62) ili kuzipata."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Hitilafu imetokea. Tafadhali jaribu tena au wasiliana na huduma kwa wateja."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Bainisha kikoa linaloruhusiwa kuthibitisha utambulisho kwa kutumia SAML SSO."
       ],
@@ -12893,9 +12838,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Kiungo cha kuripoti kuwa hukusanidi Akaunti ya ${ BRAND_NAME } kimeisha muda. Tafadhali wasiliana na timu yetu ya usaidizi ili kutatua tatizo hili."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Kiasi cha juu zaidi cha mchango ni ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }."
       ],
       "The most recent data update, excluding breaches.": [
         "Sasisho la hivi karibuni la data, bila kujumuisha uvunjaji wa data"
@@ -13137,9 +13079,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Ili kufuatilia maendeleo mapya ya bidhaa za ${ BRAND_NAME }, unaweza kujisajili kwenye barua pepe zetu mbalimbali na kutembelea ${ blogLink } mara kwa mara."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Ili kuzuia matumizi mabaya au udanganyifu, tunaomba mchango wa chini kabisa wa ${ minimumDonation }. Hii inasaidia kazi ya ${ protonFoundationLink } ya kutetea faragha ya kidijitali duniani kote na husaidia kulinda kizazi kijacho."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Ili kuendelea, teua njia ya urejeshaji wa akaunti ili tuweze kuthibitisha ombi."
@@ -13405,9 +13344,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Tunaweza kutumia simu yako ya urejeshaji kukutumia msimbo wa uthibitishaji wa kuweka upya nenosiri lako, na kukufikia tukiona shughuli inayotiliwa shaka."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Hatukuweza kukamilisha muamala. Tafadhali jaribu tena."
-      ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Hatukuweza kutuma ankara kwa anwani yako ya barua pepe. Utoaji wa ankara wa kiotomatiki umesitishwa hadi usasishe anwani."
       ],
@@ -13536,9 +13472,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ukiondoa seva kutoka Lango, inaingia kwenye kipindi cha kuzimwa cha siku 10. Seva hii inaweza kuongezwa kwenye Lango jipya, lakini nchi yake haiwezi kubadilishwa."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Ukiwa tayari kuamilisha anwani, changanua msimbo wa QR au tumia kiungo kilicho kwenye vocha."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Usajili wako unapojiandikisha upya, tutatumia salio lolote lililopatikana kabla ya kutoza njia ya kulipa iliyo hapo juu."
@@ -14019,9 +13952,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Jaribio lako litaisha baada ya ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Kuponi ya anwani yako ya barua pepe ya ${ BRAND_NAME } iliyohifadhiwa: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -14729,6 +14659,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Fikia ${ PASS_APP_NAME } kwa usalama kutoka kwenye terminali, jambo linalofaa kwa scripting, automation na mtiririko wa kazi wa maendeleo."
       ],
+      "Access tokens": [
+        "Tokeni za ufikiaji"
+      ],
       "Account holder": [
         "Mmiliki wa akaunti"
       ],
@@ -15035,9 +14968,6 @@
       "Choose a name for the generated certificate file": [
         "Chagua jina kwa faili la cheti litakalotengenezwa"
       ],
-      "Choose an address to reserve for your child": [
-        "Chagua anwani ya kuhifadhi kwa mtoto wako"
-      ],
       "Choose your billing": [
         "Chagua kipindi chako cha malipo"
       ],
@@ -15255,12 +15185,6 @@
       "Don't show this again": [
         "Usionyeshe hili tena"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Changia ${ minimumDonation } au zaidi kwa Shirika la ${ BRAND_NAME }"
-      ],
-      "Donation amount": [
-        "Kiasi cha mchango"
-      ],
       "Drive": [
         "Hifadhi"
       ],
@@ -15356,9 +15280,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Weka nenosiri la ufunguo wenye alama ya kidole: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Weka anwani yako ya barua pepe"
       ],
       "Enter your password": [
         "Weka nenosiri lako"
@@ -16186,9 +16107,6 @@
       "Tips and insights": [
         "Vidokezo na maarifa"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Ili kuamilisha, changanua Msimbo wa QR au nenda kwenye:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Ili kutusaidia kuboresha, tafadhali eleza kwa nini unaondoka."
       ],
@@ -16360,17 +16278,11 @@
       "You don't have permissions": [
         "Hauna ruhusa"
       ],
-      "Your activation code:": [
-        "Msimbo wako wa uamilishaji:"
-      ],
       "Your calendar URL": [
         "URL ya kalenda yako"
       ],
       "Your credit balance": [
         "Salio lako la mkopo"
-      ],
-      "Your email address": [
-        "Anwani yako ya barua pepe"
       ],
       "Your password (admin)": [
         "Nenosiri lako (msimamizi)"
@@ -16386,9 +16298,6 @@
       ],
       "Your recovery phone number": [
         "Namba yako ya simu ya urejeshaji"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Kuponi ya anwani yako ya barua pepe ya ${ BRAND_NAME } iliyohifadhiwa:"
       ],
       "Zero-access architecture": [
         "Mfumo wa ufikiaji wa sifuri"
@@ -16557,9 +16466,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } imesasishwa"
-      ],
-      "Preference saved": [
-        "Mapendeleo yamehifadhiwa."
       ]
     },
     "Label; import email": {
@@ -16582,9 +16488,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "Shirika la ${ BRAND_NAME }"
-      ],
       "Activity log": [
         "Kumbukumbu ya shughuli"
       ],
@@ -16832,20 +16735,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Watumiaji na anwani"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "Barua pepe"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17393,9 +17282,6 @@
       "${ BRAND_NAME } Account": [
         "Akaunti ya ${ BRAND_NAME }"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Hatua rahisi leo kuhakikisha usalama wa kidijitali wa mtoto wako kesho. Hifadhi anwani ya barua pepe ya faragha ya ${ BRAND_NAME } kwa mtoto wako."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Amilisha anwani ya barua pepe ya faragha ya ${ BRAND_NAME } iliyohifadhiwa kwa mtoto wako na usanidi akaunti yake."
       ],
@@ -17431,9 +17317,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Rejesha akaunti ya mtoto wako ya ${ BRAND_NAME } | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Hifadhi barua pepe ya faragha ya mtoto wako | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Weka upya nenosiri la akaunti yako ya ${ BRAND_NAME }"
@@ -18798,17 +18681,11 @@
       "1 email per month": [
         "Barua pepe 1 kwa mwezi"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "Barua pepe 1 kwa mwezi. Pata habari za hivi punde za faragha na yaliyotendeka katika ulimwengu wa ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "Barua pepe 1 kwa robo mwaka"
       ],
       "1-2 emails per month": [
         "Barua pepe 1 hadi 2 kwa mwezi"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "Barua pepe 1 hadi 4 kwa mwaka. Vikumbusho vya kukuhakikisha kuwa njia zako za kurejesha ni za kisasa."
       ],
       "2-4 emails per year": [
         "Barua pepe 2 hadi 4 kwa mwaka"
@@ -18833,9 +18710,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Wakati wa mwezi wako wa kwanza wa kutumia bidhaa ya ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Mawasiliano ya barua pepe"
       ],
       "In-app notifications": [
         "Arifa ndani ya programu"
@@ -20670,9 +20544,6 @@
       ],
       "Address": [
         "Anwani"
-      ],
-      "Amount": [
-        "Kiasi"
       ],
       "Anderson": [
         "Otieno"
@@ -24225,10 +24096,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } na ${ VPN_SHORT_APP_NAME } pamoja na vipengele vya kiwango cha juu"
       ],
-      "${ dayDiff } day left": [
-        "Siku ${ dayDiff } imebaki",
-        "Siku ${ dayDiff } zimebaki"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Programu ya kompyuta ya ${ MAIL_APP_NAME }"
       ],
@@ -24490,12 +24357,6 @@
       "What you give up when you cancel ${ planName }": [
         "Unachokipoteza unapoghairi ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ukighairi ${ planName }, utashushwa daraja hadi ${ BRAND_NAME } Free, ambayo inatoa hadi 1 GB tu ya hifadhi ya Mail na hadi 5 GB tu ya hifadhi ya Drive. Utapoteza pia bonasi zote za hifadhi ulizopewa awali."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Unapoghairi ${ planName }, utashushwa daraja hadi ${ BRAND_NAME } Free, ambayo inatoa hadi 1 GB tu ya hifadhi ya Mail na hadi 5 GB tu ya hifadhi ya Drive. Kazi ya timu yako itakatizwa kwa kuwa watumiaji wanaoongezwa hawaungwi mkono kwenye Free plan."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Usajili wako wa ${ planName } utakapokwisha tarehe ${ expiryDate }, utashushwa daraja hadi mpango wa ${ BRAND_NAME } Free."
       ],
@@ -24504,9 +24365,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Unaweza kuendelea kufurahia manufaa zote za mpango wako wa sasa hadi ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Bado una ${ expiryDate } kwenye usajili wako wa ${ planName }. Tutaongeza masalio ya muda uliobaki kwenye Akaunti yako ya ${ BRAND_NAME }. Hakikisha hutazidi mipaka ya Free plan kabla ya kughairi. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Mpango wako wa ${ planName } haukulindi tu data na mawasiliano ya biashara yako. Unaauni malengo yako ya ufuasi, huifanya biashara yako kujitofautisha, na kuweka timu yako ikiwa pamoja."
@@ -25061,6 +24919,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Vitendo"
+      ],
       "Size": [
         "Ukubwa"
       ],
@@ -25085,9 +24946,6 @@
       ],
       "CSV field": [
         "Sehemu ya CSV"
-      ],
-      "Edit": [
-        "Hariri"
       ],
       "Email address": [
         "Anwani ya barua pepe"
@@ -26091,9 +25949,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Weka maelezo ya akaunti yako ya ${ BRAND_NAME } ili kujiunga na programu ya beta ya ${ app }"
       ],
-      "Enter your password": [
-        "Weka nenosiri lako"
-      ],
       "Error": [
         "Hitilafu"
       ],
@@ -26634,12 +26489,6 @@
       ],
       "Privacy": [
         "Faragha"
-      ],
-      "Problem processing your payment": [
-        "Hitilafu imetokea wakati wa kuchakata malipo yako."
-      ],
-      "Problem processing your request": [
-        "Hitilafu katika kuchakata ombi lako"
       ],
       "Processing...": [
         "Inachakata..."

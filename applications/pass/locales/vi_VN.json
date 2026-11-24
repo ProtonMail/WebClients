@@ -112,6 +112,9 @@
       "Bulk restore items from trash": [
         "Khôi phục nhiều mục từ thùng rác"
       ],
+      "Bulk select items": [
+        "Chọn nhiều mục"
+      ],
       "Cancel": [
         "Hủy"
       ],
@@ -313,6 +316,9 @@
       "Don't show this again": [
         "Không hiển thị lại"
       ],
+      "Download for Linux": [
+        "Tải xuống cho Linux"
+      ],
       "Download for macOS": [
         "Tải xuống cho macOS"
       ],
@@ -387,6 +393,9 @@
       ],
       "Go back": [
         "Quay lại"
+      ],
+      "Go to today": [
+        "Đến ngày hôm nay"
       ],
       "Hide": [
         "Ẩn"
@@ -493,6 +502,9 @@
       "Move all items": [
         "Di chuyển tất cả mục"
       ],
+      "Move folder": [
+        "Di chuyển thư mục"
+      ],
       "Move to": [
         "Chuyển vào"
       ],
@@ -501,6 +513,9 @@
       ],
       "Move to Trash": [
         "Di chuyển vào thùng rác"
+      ],
+      "Multiple select": [
+        "Chọn nhiều"
       ],
       "New token": [
         "Mã thông báo mới"
@@ -522,6 +537,12 @@
       ],
       "Open navigation": [
         "Mở điều hướng"
+      ],
+      "Open platform selection dropdown": [
+        "Mở menu thả xuống chọn nền tảng"
+      ],
+      "Open the browser again": [
+        "Mở lại trình duyệt"
       ],
       "Organize vaults": [
         "Sắp xếp kho"
@@ -684,6 +705,9 @@
       ],
       "Show more": [
         "Hiển thị thêm"
+      ],
+      "Sign in in the app instead": [
+        "Đăng nhập vào ứng dụng thay vào đó"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Đăng nhập bằng ${ BRAND_NAME }"
@@ -860,8 +884,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Biệt danh email hoạt động giống như địa chỉ email, nhưng giảm thiểu thư rác và giữ ẩn địa chỉ email thực và danh tính."
       ],
+      "Change these passwords immediately": [
+        "Hãy thay đổi các mật khẩu này ngay lập tức"
+      ],
       "Change your passwords": [
         "Thay đổi các mật khẩu của bạn"
+      ],
+      "Check if your passwords have been exposed": [
+        "Kiểm tra xem mật khẩu của bạn có bị lộ hay không"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Đang kiểm tra ${ compromised.progress.completed } trên tổng số ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Tạo mật khẩu duy nhất"
@@ -916,6 +949,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tài khoản này không an toàn, hãy tới dịch vụ và thay đổi mật khẩu."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Mật khẩu đăng nhập này đã xuất hiện trong một vụ rò rỉ dữ liệu. Vui lòng truy cập dịch vụ đó và thay đổi mật khẩu."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Dịch vụ này hỗ trợ 2FA. Hãy kích hoạt để tăng cường bảo mật cho tài khoản."
@@ -1157,6 +1193,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Không di chuyển được mọi mục từ \"${ payload.content.name }\""
+      ],
+      "Failed to move folder": [
+        "Di chuyển thư mục thất bại"
       ],
       "Failed to move items": [
         "Không thể di chuyển mục"
@@ -1647,6 +1686,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Mã thông báo truy cập, được sử dụng cùng với ${ passCliLink }, cho phép tự động hóa CI/CD hoặc cấp cho trợ lý AI quyền truy cập trong phạm vi cần thiết để thực hiện công việc."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Hãy thêm phương thức thanh toán để gói đăng ký của bạn được tiếp tục khi thời gian dùng thử kết thúc."
+      ],
       "Add your custom email address to monitor:": [
         "Thêm địa chỉ email tùy chỉnh để giám sát:"
       ],
@@ -1772,6 +1814,12 @@
       ],
       "Can view this item.": [
         "Có thể xem mục này."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Đang kiểm tra ${ compromised.progress.completed } trong tổng số ${ compromised.progress.total } mật khẩu"
+      ],
+      "Choose how you want to sign in": [
+        "Chọn cách bạn muốn đăng nhập"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Xác nhận mật khẩu cấp hai để tiếp tục với việc gỡ bỏ nó."
@@ -1950,6 +1998,9 @@
       "Fill in the CSV with your data": [
         "Điền vào tệp CSV bằng dữ liệu của bạn"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Thư mục \"${ payload.folder.name }\" đã được di chuyển"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Làm theo các bước sau để nhập dữ liệu bằng tệp CSV chung:"
       ],
@@ -2115,11 +2166,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
-      ],
       "Moving items": [
         "Đang chuyển mục"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Việc di chuyển một mục sang kho lưu trữ khác sẽ xóa các liên kết bảo mật của mục đó."
       ],
       "Moving items to trash": [
         "Đang di chuyển mục vào thùng rác"
@@ -2379,6 +2430,9 @@
       "Restoring trashed items...": [
         "Đang khôi phục các mục trong thùng rác..."
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Quét để tải xuống ${ PASS_APP_NAME } cho iOS và Android"
+      ],
       "Secure links": [
         "Các liên kết bảo mật"
       ],
@@ -2429,6 +2483,9 @@
       ],
       "Shared item invitation": [
         "Lời mời chia sẻ mục"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Hãy đăng nhập và xác nhận trong cửa sổ trình duyệt vừa mở. ${ PASS_APP_NAME } sẽ tự động nhận diện ngay khi bạn hoàn tất."
       ],
       "Sign in to your account": [
         "Đăng nhập vào tài khoản của bạn"
@@ -2490,6 +2547,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Mật khẩu bổ sung sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
       ],
+      "The folder is already here": [
+        "Thư mục đã có ở đây rồi"
+      ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Không thể nhập ${ totalIgnored } mục sau đây:"
       ],
@@ -2498,6 +2558,9 @@
       ],
       "The secure link has been removed": [
         "Liên kết bảo mật đã bị xóa"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Việc đăng nhập đã không được xác nhận kịp thời."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
@@ -2673,6 +2736,9 @@
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Khi được kích hoạt, vẫn có thể truy cập dữ liệu ${ PASS_SHORT_APP_NAME } nếu mất kết nối internet hoặc nếu không thể truy cập máy chủ ${ BRAND_NAME }."
       ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Khi di chuyển các mục giữa các kho lưu trữ, chúng tôi sẽ bảo lưu tối đa 50 thay đổi gần nhất đã thực hiện trên mỗi mục đó."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Khi gửi email từ biệt danh này, email sẽ hiển thị ${ emailSender } là người gửi."
       ],
@@ -2783,6 +2849,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tổ chức yêu cầu phải bảo mật truy cập tới ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Không thể xác thực phiên."
       ]
     },
     "Keyboard key": {
@@ -2916,6 +2985,9 @@
       ],
       "Account Type": [
         "Loại tài khoản"
+      ],
+      "Add a payment method": [
+        "Thêm phương thức thanh toán"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Thêm tiền tố ngẫu nhiên cho miền này khi tạo biệt danh mới."
@@ -3415,11 +3487,17 @@
       "LinkedIn account": [
         "Tài khoản LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Đăng nhập"
       ],
       "Logins": [
         "Đăng nhập"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Hộp thư"
@@ -3978,6 +4056,9 @@
       ],
       "WiFi network": [
         "Mạng WiFi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Thông tin công việc"
@@ -4554,6 +4635,9 @@
       "Activity for \"${ token.Name }\"": [
         "Hoạt động của \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Thêm tài khoản"
+      ],
       "Add custom domain": [
         "Thêm miền tùy chỉnh"
       ],
@@ -4605,6 +4689,12 @@
       "Clear clipboard": [
         "Xóa bảng tạm"
       ],
+      "Compromised password": [
+        "Mật khẩu bị lộ"
+      ],
+      "Compromised passwords": [
+        "Mật khẩu bị lộ"
+      ],
       "Confirm extra password": [
         "Xác nhận mật khẩu bổ sung"
       ],
@@ -4619,6 +4709,9 @@
       ],
       "Contacts": [
         "Liên hệ"
+      ],
+      "Continue in your browser": [
+        "Tiếp tục trong trình duyệt"
       ],
       "Create a vault": [
         "Tạo kho"
@@ -4719,6 +4812,9 @@
       "Folder options": [
         "Tùy chọn thư mục"
       ],
+      "Get mobile apps": [
+        "Tải ứng dụng di động"
+      ],
       "Get Started": [
         "Bắt Đầu"
       ],
@@ -4754,6 +4850,9 @@
       ],
       "Item": [
         "Mục"
+      ],
+      "Keep your subscription active": [
+        "Duy trì trạng thái đăng ký của bạn"
       ],
       "Last autofill": [
         "Tự động điền mới nhất"
@@ -4797,6 +4896,9 @@
       "Modified": [
         "Đã chỉnh sửa"
       ],
+      "Move \"${ folderName }\" to": [
+        "Di chuyển \"${ folderName }\" đến"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Di chuyển ${ trashedItemsCount } mục vào Thùng rác?"
       ],
@@ -4808,6 +4910,9 @@
       ],
       "No access tokens yet": [
         "Chưa có mã thông báo truy cập nào"
+      ],
+      "No compromised passwords": [
+        "Không có mật khẩu nào bị lộ"
       ],
       "No excluded items": [
         "Không có mục bị loại trừ"
@@ -4944,6 +5049,12 @@
       "Shared via": [
         "Chia sẻ qua"
       ],
+      "Sign in timed out": [
+        "Phiên đăng nhập đã hết thời gian"
+      ],
+      "Signing you in": [
+        "Đang đăng nhập cho bạn"
+      ],
       "Something went wrong": [
         "Đã xảy ra sự cố"
       ],
@@ -4988,6 +5099,9 @@
       ],
       "Update available": [
         "Có bản cập nhật"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Nâng cấp để kiểm tra xem mật khẩu có bị xâm phạm hay không"
       ],
       "URL matching": [
         "Khớp URL"
@@ -5240,6 +5354,9 @@
       "Move to trash": [
         "Di chuyển vào thùng rác"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Việc di chuyển thư mục vào đây sẽ vượt quá cấp độ lồng thư mục tối đa"
+      ],
       "No items": [
         "Không có mục nào"
       ],
@@ -5344,6 +5461,9 @@
       ],
       "Verification code is required": [
         "Yêu cầu mã xác minh"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Bạn không thể di chuyển một thư mục vào chính nó hoặc vào các thư mục con của nó."
       ],
       "You have reached the limit of members who can access this item.": [
         "Đã đạt đến giới hạn thành viên có thể truy cập mục này."

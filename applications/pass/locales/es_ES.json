@@ -907,7 +907,7 @@
     },
     "Description": {
       "${ count } more": [
-        "${ count } más\n\nEn las dos formas iguales, Uno y Otro, porque en español “más” no cambia con el número.",
+        "${ count } más",
         "${ count } más"
       ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
@@ -2311,8 +2311,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Al mover un objeto a otra bóveda se borrarán sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2684,13 +2683,13 @@
         "Simplemente usa ${ emailBold } la próxima vez que necesites un alias: se creará ${ automaticallyBold } la primera vez que reciba un correo electrónico. Para tener un control más detallado, también puedes definir ${ rulesHyperLink }."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
-        "Comenar ${ PASS_APP_NAME } offline requerirá tu ${ BRAND_NAME } contraseña.\n/fe-pass/source-file-full.xliff\nbd85466333415fc4f216b8a44acb15aa47b5d529\ncontexto: Info\nSOCIEDAD:\n- Contraseña\nArchivos:\n- packages/pass/components/Settings/LockSetup.tsx:55\n\n* No se guarda ninguna clave en el disco si no está ligada a la app: al iniciar sin conexión te pide la contraseña\nFile: Browser extension"
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu contraseña de ${ BRAND_NAME }."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
         "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu contraseña de respaldo."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
-        "Comenzar ${ PASS_APP_NAME } offline requerirá contraseña adicional.\n\n/fe-pass/source-file-full.xliff\n4bed79e2fcda19f186f694ea7d9be747f359a5d5\ncontexto: Info\nSOCIEDAD:\n- Contraseña\nArchivos:\n- packages/pass/components/Settings/LockSetup.tsx:53\n\n* No se guarda ninguna clave en el disco si no está ligada a la app: en caso de inicio sin conexión, se recurre a la contraseña.\nArchivo: Browser extension"
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu contraseña adicional."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu segunda contraseña."

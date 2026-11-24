@@ -118,6 +118,9 @@
       "Cancel": [
         "Отменить"
       ],
+      "Cancel bulk selection": [
+        "Отменить массовый выбор"
+      ],
       "Cancel email change": [
         "Отменить изменение электронной почты"
       ],
@@ -535,6 +538,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Открыть элемент"
+      ],
       "Open navigation": [
         "Открыть панель навигации"
       ],
@@ -600,6 +606,9 @@
       ],
       "Remove member": [
         "Удалить участника"
+      ],
+      "Remove passkey": [
+        "Удалить ключ доступа"
       ],
       "Rename": [
         "Переименовать"
@@ -706,6 +715,9 @@
       "Show more": [
         "Показать больше"
       ],
+      "Sign in in the app instead": [
+        "Вместо этого войдите в приложение"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Войти с ${ BRAND_NAME }"
       ],
@@ -741,6 +753,9 @@
       ],
       "To mailbox": [
         "В почтовый ящик"
+      ],
+      "Toggle section": [
+        "Переключить раздел"
       ],
       "Transfer aliases": [
         "Перенести псевдонимы"
@@ -848,6 +863,11 @@
       ],
       "Vault": [
         "Хранилище"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     },
     "Button": {
@@ -1020,6 +1040,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Аутентификация не удалась. Подтвердите ваш второй пароль для продолжения экспорта"
       ],
+      "Biometric authentication cancelled.": [
+        "Биометрическая аутентификация отменена."
+      ],
       "Biometric authentication failed.": [
         "Биометрическая аутентификация не удалась."
       ],
@@ -1173,6 +1196,12 @@
       "Failed to delete email address from monitoring": [
         "Не удалось исключить адрес электронной почты из мониторинга"
       ],
+      "Failed to delete folder": [
+        "Не удалось удалить папку",
+        "Не удалось удалить папки",
+        "Не удалось удалить папки",
+        "Не удалось удалить папки"
+      ],
       "Failed to delete selected items": [
         "Не удалось удалить выбранные элементы"
       ],
@@ -1263,6 +1292,9 @@
       "Failed to update domain name.": [
         "Не удалось обновить имя домена."
       ],
+      "Failed to update folder": [
+        "Не удалось обновить папку"
+      ],
       "Failed to update monitoring settings": [
         "Не удалось обновить настройки мониторинга"
       ],
@@ -1289,6 +1321,9 @@
       ],
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
+      ],
+      "Folder name does not match": [
+        "Название папки не совпадает"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Не удалось выполнить импорт для хранилища «${ vaultData.name }»: ${ errorMessage }"
@@ -1421,6 +1456,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Минимальная длина для этого поля ${ minimumLength } символов."
+      ],
+      "This invite is no longer available": [
+        "Это приглашение больше недоступно"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Слишком много неудачных попыток. Пожалуйста, войдите снова."
@@ -2070,8 +2108,17 @@
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Папка \"${ payload.folder.name }\" создана"
+      ],
       "Folder \"${ payload.folder.name }\" moved": [
         "Папка \"${ payload.folder.name }\" перемещена"
+      ],
+      "Folder deleted": [
+        "Папка удалена"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Папка переименована в \"${ payload.folder.name }\""
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выполните эти шаги, чтобы импортировать данные с помощью стандартного CSV:"
@@ -2253,17 +2300,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
-      ],
       "Moving items": [
         "Перемещение элементов"
       ],
       "Moving items to another vault will erase their secure links.": [
-        "Перемещение элементов в другое хранилище удалит их защищенные ссылки."
+        "Перемещение элементов в другое хранилище удалит их защищённые ссылки."
       ],
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
@@ -2309,6 +2350,24 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."
+      ],
+      "Only aliases are shown": [
+        "Отображаются только псевдонимы"
+      ],
+      "Only cards are shown": [
+        "Отображаются только карты"
+      ],
+      "Only custom items are shown": [
+        "Отображаются только пользовательские элементы"
+      ],
+      "Only identities are shown": [
+        "Отображаются только личные данные"
+      ],
+      "Only logins are shown": [
+        "Отображаются только логины"
+      ],
+      "Only notes are shown": [
+        "Отображаются только заметки"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Отображаются только токены, срок действия которых истек за последние 30 дней. Более старые токены удаляются автоматически."
@@ -2595,6 +2654,9 @@
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Просто используйте ${ emailBold } в следующий раз, когда вам понадобится псевдоним: он будет ${ automaticallyBold } создан при первом получении письма. Чтобы получить более точное управление, вы также можете определить ${ rulesHyperLink }."
       ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Для запуска приложения ${ PASS_APP_NAME } в режиме офлайн потребуется ваш дополнительный пароль."
+      ],
       "Successfully exported all your items": [
         "Все ваши элементы успешно экспортированы"
       ],
@@ -2726,6 +2788,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Чтобы просмотреть ваши импортированные данные, нажмите на значок ${ PASS_APP_NAME } на панели инструментов вашего браузера."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Для настройки разблокировки по биометрии ${ PASS_APP_NAME } требуется новое разрешение для браузера."
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Чтобы настроить разблокировку по биометрии, для ${ PASS_APP_NAME } требуется новое разрешение браузера. После того как вы примете его, расширение перезагрузится. Пожалуйста, откройте эту страницу заново после этого."
@@ -2951,6 +3016,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "В вашей организации запрещено использование кодов 2FA, хранящихся в ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "В вашей организации запрещено использование ключей доступа, хранящихся в ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
@@ -3259,6 +3330,9 @@
       "Company": [
         "Компания"
       ],
+      "Confirm folder name": [
+        "Подтвердите название папки"
+      ],
       "Confirm vault name": [
         "Подтвердите название хранилища"
       ],
@@ -3288,6 +3362,9 @@
       ],
       "Create a custom item": [
         "Создать пользовательский элемент"
+      ],
+      "Create a folder": [
+        "Создать папку"
       ],
       "Create a hide-my-email alias": [
         "Создать псевдоним hide-my-email"
@@ -3453,6 +3530,9 @@
       ],
       "Folder": [
         "Папка"
+      ],
+      "Folders": [
+        "Папки"
       ],
       "For a one-off sharing": [
         "Для разового обмена"
@@ -4532,6 +4612,9 @@
       "Enter username": [
         "Введите имя пользователя"
       ],
+      "Folder name": [
+        "Название папки"
+      ],
       "Full Name": [
         "Полное имя"
       ],
@@ -4558,6 +4641,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Введите \"${ name }\", чтобы подтвердить удаление"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Искать ${ pluralItemType } в ${ vaultName }"
@@ -4596,6 +4682,12 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Этот URL НЕ будет заблокирован для автозаполнения"
+      ],
+      "URL doesn't match the rule": [
+        "URL не соответствует правилу"
+      ],
+      "URL matches the rule": [
+        "URL соответствует правилу"
       ]
     },
     "Security Center - Info": {
@@ -4884,11 +4976,17 @@
       "Create contact": [
         "Создать контакт"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Создать папку в \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Создать новый токен доступа"
       ],
       "Create PIN code": [
         "Создать PIN-код"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Создать подпапку в \"${ folderName }\""
       ],
       "Created": [
         "Создан"
@@ -4926,11 +5024,17 @@
       "Delete domain": [
         "Удалить домен"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Удалить папку \"${ name }\"?"
+      ],
       "Delete mailbox": [
         "Удалить почтовый ящик"
       ],
       "Delete this item?": [
         "Удалить этот элемент?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Удалить хранилище \"${ name }\"?"
       ],
       "Did you know?": [
         "Вы знали?"
@@ -4949,6 +5053,9 @@
       ],
       "Domain ownership verification": [
         "Проверка владения доменом"
+      ],
+      "Enable offline mode": [
+        "Включить режим офлайн"
       ],
       "Encrypted import": [
         "Зашифрованный импорт"
@@ -5076,6 +5183,12 @@
       "Move all items to \"${ target }\"?": [
         "Переместить все элементы в \"${ target }\"?"
       ],
+      "Move all items?": [
+        "Переместить все элементы?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Переместить элемент в \"${ target }\""
+      ],
       "MX record": [
         "Запись MX"
       ],
@@ -5172,6 +5285,9 @@
       "Remove secure link?": [
         "Удалить защищенную ссылку?"
       ],
+      "Rename folder": [
+        "Переименовать папку"
+      ],
       "Reset history for this item?": [
         "Сбросить историю для этого элемента?"
       ],
@@ -5189,6 +5305,9 @@
         "Повторно использовано ${ count } раза",
         "Повторно использовано ${ count } раз",
         "Повторно использовано ${ count } раз"
+      ],
+      "Reused password": [
+        "Повторно использованный пароль"
       ],
       "Reused passwords": [
         "Повторно используемые пароли"
@@ -5325,6 +5444,9 @@
       "Your exposed information": [
         "Ваша раскрытая информация"
       ],
+      "Your folder is empty": [
+        "Папка пуста"
+      ],
       "Your new access token": [
         "Ваш новый токен доступа"
       ],
@@ -5432,8 +5554,11 @@
       "Aliases in trash will continue forwarding emails.": [
         "Псевдонимы в корзине будут продолжать пересылать письма."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Все элементы в этой папке, включая ее подпапки, будут удалены. Отменить это действие невозможно."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Все ваши объекты, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
+        "Все ваши элементы, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
       ],
       "An error occurred while exporting your data": [
         "При экспорте данных произошла ошибка"
@@ -5518,6 +5643,9 @@
       ],
       "Failed to load breaches.": [
         "Не удалось загрузить утечки."
+      ],
+      "Folder name is required": [
+        "Название папки обязательно"
       ],
       "Identity could not be confirmed": [
         "Личные данные не могут быть подтверждены"
@@ -5654,6 +5782,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Хранилище \"${ name }\" и все его элементы будут безвозвратно удалены. Отменить это действие невозможно."
+      ],
       "Vault name is required": [
         "Требуется название хранилища"
       ],
@@ -5661,7 +5792,7 @@
         "Требуется код подтверждения"
       ],
       "You can't move a folder into itself or its subfolders": [
-        "Вы не можете переместить папку саму в себя или в ее подпапки"
+        "Вы не можете переместить папку саму в себя или в её подпапки"
       ],
       "You have reached the limit of members who can access this item.": [
         "Вы достигли предела количества пользователей, которые могут получить доступ к этому элементу."
@@ -5689,6 +5820,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больше не будет доступа к этому хранилищу. Чтобы присоединиться снова, вам понадобится новое приглашение."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Вы достигли максимального уровня вложенности папок"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Вы достигли максимального количества папок в этом хранилище"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Ваш администратор должен создать для вас хранилище, прежде чем вы сможете создавать элементы."

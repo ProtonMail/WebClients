@@ -480,8 +480,8 @@
       "Dock to side panel": [
         "停靠至侧边栏"
       ],
-      "Don't show this offer again": [
-        "不再显示此优惠"
+      "Don't show this again": [
+        "不再显示"
       ],
       "Done": [
         "完成"
@@ -1476,6 +1476,9 @@
       "Skip": [
         "跳过"
       ],
+      "Skip to main content": [
+        "跳转到主要内容"
+      ],
       "Skip verification": [
         "跳过验证"
       ],
@@ -1577,9 +1580,6 @@
       ],
       "Trust": [
         "信任"
-      ],
-      "Trust key": [
-        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -1697,6 +1697,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "使用鼠标调整视图大小。若使用键盘，可使用左右箭头键进行调整。"
+      ],
+      "Use “${ label }” setting": [
+        "使用 “${ label }” 设置"
       ],
       "Verify": [
         "验证"
@@ -2111,6 +2114,11 @@
         "您的免费体验期将于 ${ timeRemaining } 结束。"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "关闭"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "高级密码管理器"
@@ -2119,6 +2127,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "优惠不可用"
       ]
     },
     "BF2024: Deal details": {
@@ -4747,6 +4760,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "举报版权侵权或数据被盗时必须填写消息"
+      ],
       "A problem occurred, please try again.": [
         "出现了问题，请重试。"
       ],
@@ -4798,17 +4814,38 @@
       "Authentication error.": [
         "验证出错。"
       ],
+      "Bookmark password is not available": [
+        "书签密码不可用"
+      ],
       "Calendar limit reached": [
         "日历数量达到上限"
       ],
+      "Cannot add photo to album without a valid name": [
+        "无法将照片添加到没有有效名称的相册"
+      ],
+      "Cannot download a folder": [
+        "无法下载文件夹"
+      ],
       "Cannot export this contact": [
         "无法导出此联系人"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "无法移动没有有效名称的项目，请先重命名该项目"
       ],
       "Cannot send an empty message. Message is not sent.": [
         "无法发送空邮件，邮件未发送。"
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "无法设置比保留策略允许更长的过期时间"
+      ],
+      "Cannot share root folder": [
+        "无法共享根文件夹"
+      ],
+      "Cannot verify the author of this file": [
+        "无法验证此文件的作者"
+      ],
+      "Cannot verify who uploaded this file": [
+        "无法验证谁上传了此文件"
       ],
       "Checkout expired, please try again": [
         "支付超时，请重试"
@@ -4849,14 +4886,47 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "无法启用内容搜索。请重新启动应用或清除数据。"
       ],
+      "Copy operation aborted": [
+        "复制操作已中止"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允许将项目复制到非文件夹中"
+      ],
+      "Could not find an available name": [
+        "找不到可用的名称"
+      ],
       "Could not grant access to the organization key": [
         "无法授予组织密钥访问权限"
+      ],
+      "Could not load sharing details": [
+        "无法加载共享详情"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "无法加载图片预览：${ message }"
       ],
       "Could not open created vault": [
         "无法打开创建的保险库"
       ],
       "Could not open updated vault": [
         "无法打开已更新的保险库"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "无法读取此文件的部分内容：${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "无法解锁父文件夹"
+      ],
+      "Could not unlock this item": [
+        "无法解锁此项目"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "不允许在非文件夹中创建文档"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允许在非文件夹中创建文件夹"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：解密此邮件的加密内容时出错！"
@@ -4866,6 +4936,9 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "至少取消选择 ${ calendarsToFixCount } 份日历或"
+      ],
+      "Device not found": [
+        "未找到设备"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -4918,11 +4991,38 @@
       "Error while uploading attachments. Message is not sent.": [
         "上传附件时出错，邮件未能发送。"
       ],
+      "Expiration date cannot be in the past": [
+        "过期日期不能是过去的时间"
+      ],
       "Failed loading group members": [
         "加载群组成员失败"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密书签密钥失败：${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "解密书签名称失败：${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密书签密码失败：${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密内容密钥失败：${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密项目名称失败：${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "解密节点密钥失败：${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "解密版本元数据失败"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失败，请重试。"
+      ],
+      "Failed to get inviter keys": [
+        "获取邀请人密钥失败"
       ],
       "Failed to load subscription data. Please try again later.": [
         "加载订阅数据失败，请稍后重试。"
@@ -4932,6 +5032,15 @@
       ],
       "Failed to open to contact": [
         "无法打开联系人"
+      ],
+      "Failed to verify invitation": [
+        "验证邀请失败"
+      ],
+      "File download failed due to empty response": [
+        "文件下载失败，因响应为空"
+      ],
+      "File has no revision": [
+        "文件没有历史版本"
       ],
       "Filter with this name already exists": [
         "已存在同名筛选"
@@ -4944,6 +5053,9 @@
       ],
       "Forward address is required": [
         "转发邮箱为必填项"
+      ],
+      "Image preview not found": [
+        "未找到图片预览"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -4984,20 +5096,32 @@
       "Invalid public key file": [
         "公钥文件无效"
       ],
+      "Invalid URL": [
+        "链接无效"
+      ],
       "Invalid VAT number": [
         "无效增值税号"
       ],
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Invitation not found": [
+        "未找到邀请"
+      ],
       "Item content cannot exceed 40KB": [
         "项目内容不能超过 40KB"
+      ],
+      "Item not found": [
+        "未找到项目"
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
       ],
       "Last name is too long": [
         "姓氏太长。"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "旧版公开链接无法更新，请重新创建新的公开链接！"
       ],
       "Maximum expiration time reached.": [
         "有效期过长"
@@ -5014,14 +5138,35 @@
       "Message processing error.": [
         "邮件处理错误"
       ],
+      "Missing inviter email": [
+        "缺少邀请人邮箱"
+      ],
       "Missing key packet": [
         "缺少密钥数据包"
       ],
       "Missing signature": [
         "缺少签名"
       ],
+      "Missing signature for ${ signatureType }": [
+        "缺少 ${ signatureType } 的签名"
+      ],
+      "Move operation aborted": [
+        "移动操作已中止"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允许将项目移动到非文件夹中"
+      ],
+      "Moving root item is not allowed": [
+        "不允许移动根项目"
+      ],
       "Name is required": [
         "名称为必填项"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NODE_NAME_LENGTH } 个字符"
+      ],
+      "Name must not be empty": [
+        "名称不能为空"
       ],
       "Network error": [
         "网络错误"
@@ -5050,6 +5195,9 @@
       "No external key retrieved for user is valid for sending": [
         "没有为用户检索到的有效密钥用于发送"
       ],
+      "No file data was received. Please try again.": [
+        "未收到任何文件数据，请重试！"
+      ],
       "No valid address found": [
         "未找到有效地址"
       ],
@@ -5062,14 +5210,20 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "某个/些群组没有联系人：${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "只有管理员可以转换外部邀请"
+      ],
+      "Operation aborted": [
+        "操作中止"
+      ],
+      "Operation failed, try again later": [
+        "操作失败，请稍后重试"
+      ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
-      "Organization key must be activated to create invited users": [
-        "必须激活组织密钥才能创建受邀用户"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "组织密钥必须激活才能创建非私人用户"
+      "Part of the file appears to be corrupted": [
+        "文件部分内容似乎已损坏"
       ],
       "Password is required": [
         "密码必须填写"
@@ -5091,6 +5245,12 @@
       ],
       "Permissions request failed.": [
         "权限请求失败。"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在于目标相册中"
+      ],
+      "Photo not found": [
+        "未找到照片"
       ],
       "Please activate your search again": [
         "请重新开启全文搜索"
@@ -5182,6 +5342,12 @@
       "Removed duplicate recipient: ${ recipents }": [
         "已移除重复收件人：${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "不允许重命名根项目"
+      ],
+      "Request aborted": [
+        "请求中止"
+      ],
       "Request timed out": [
         "请求超时"
       ],
@@ -5194,6 +5360,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "由于超出套餐限制，或在升级套餐之前，发送附件受到限制。"
       ],
+      "Signature is missing": [
+        "缺少签名"
+      ],
       "Signature not verified": [
         "签名未验证"
       ],
@@ -5203,11 +5372,29 @@
       "Signature verification failed": [
         "签名验证失败"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "签名验证失败：${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } 签名验证失败"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } 签名验证失败：${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "无法删除部分联系人"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "部分文件数据上传失败，请重试。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "部分文件片段上传失败，请重试。"
+      ],
       "Some groups could not be deleted": [
         "无法删除部分群组"
+      ],
+      "Some items could not be loaded": [
+        "部分项目无法加载"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "部分文件夹名称不可用，请自定导入内容并予以更改。"
@@ -5223,6 +5410,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ],
       "Something went wrong while converting the address": [
         "转换地址时出错"
@@ -5287,14 +5477,14 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐赠金额为 ${ price }"
-      ],
       "The sending key is not valid": [
         "发送密钥无效"
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
         "当前系统繁忙，请稍后再试。"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "上传的文件与原始文件不匹配，请重试。"
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "写作助手无法处理您的请求，请尝试使用其他提示词。"
@@ -5326,8 +5516,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "该字段至少需要 ${ minimumLength } 个字符。"
       ],
+      "This file has missing crypto material": [
+        "此文件缺少加密材料"
+      ],
+      "This file has no version available to download": [
+        "此文件没有可下载的版本"
+      ],
+      "This file version could not be uploaded": [
+        "此文件版本无法上传"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "文件夹名称不可用，请重新填写。"
+      ],
+      "This item has no image preview": [
+        "此项目没有图片预览"
+      ],
+      "This item is no longer shared": [
+        "此项目已不再共享"
+      ],
+      "This item is not shared": [
+        "此项目未共享"
       ],
       "This label name is not available. Please choose a different name.": [
         "标签名称不可用，请重新填写。"
@@ -5340,6 +5548,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此邮件含有浏览器不能打开的链接."
+      ],
+      "Too many server errors, please try again later": [
+        "服务器错误过多，请稍后重试"
+      ],
+      "Too many server requests, please try again later": [
+        "服务器请求过多，请稍后重试"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
@@ -5374,6 +5588,12 @@
       "VAT number must start with ${ prefixes }": [
         "增值税号必须以 ${ prefixes } 开头"
       ],
+      "Verification keys are not available": [
+        "验证密钥不可用"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } 的验证密钥不可用"
+      ],
       "We couldn’t send a verification code using this method.": [
         "我们无法通过此类方式发送验证码。"
       ],
@@ -5386,6 +5606,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "恢复短语错误，请重试或使用其他恢复方法。"
       ],
+      "You can create public links for your own files only": [
+        "您只能为自己拥有的文件创建公开链接"
+      ],
+      "You can only leave items that are shared with you": [
+        "您只能离开已共享给您的项目"
+      ],
+      "You can only upload a new version to a file": [
+        "您只能上传新版本到文件中"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新自己文件的公开链接"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "邮件收件人不能超过 ${ maxContacts } 位"
       ],
@@ -5394,6 +5626,12 @@
       ],
       "You did not provide a file.": [
         "您尚未选择文件"
+      ],
+      "You do not have access to this item": [
+        "您无权访问此项目"
+      ],
+      "You do not have access to this shared item": [
+        "您无权访问此共享项目"
       ],
       "You have reached the maximum number of calendars.": [
         "您已达到日历创建数量的上限。"
@@ -7132,6 +7370,9 @@
       ],
       "Attention required": [
         "需要关注"
+      ],
+      "Author is not provided on public link": [
+        "公开链接未提供作者信息"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "自动清除 30 天前移至回收站和垃圾邮件的邮件。"
@@ -9212,9 +9453,6 @@
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
-      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "我们发现了一些您未阅读的邮件列表，您可以一键退订。"
-      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "我们的套餐专为您这样需要多个邮箱地址的用户所设计。"
       ],
@@ -10036,9 +10274,6 @@
       "Apply to future messages": [
         "应用于未来邮件"
       ],
-      "Archive": [
-        "归档"
-      ],
       "At": [
         "在"
       ],
@@ -10753,9 +10988,6 @@
       "Search in": [
         "搜索范围"
       ],
-      "Select all ${ count } unused sender": [
-        "全选 ${ count } 位未使用的发件人"
-      ],
       "Select which Gmail address to connect": [
         "请选择要关联的 Gmail 地址"
       ],
@@ -10797,9 +11029,6 @@
       ],
       "Sort": [
         "排序"
-      ],
-      "Spam": [
-        "垃圾邮件"
       ],
       "Starred": [
         "星标邮件"
@@ -10881,9 +11110,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "交易 - 收据、预订、账单和订单"
-      ],
-      "Trash": [
-        "回收站"
       ],
       "Undisclosed Recipients": [
         "非公开收件人"
@@ -11030,6 +11256,14 @@
       ],
       "To": [
         "收件人"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "分列"
+      ],
+      "Row": [
+        "分行"
       ]
     },
     "Label, credit card": {
@@ -13896,6 +14130,26 @@
         "进度：${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "内容密钥"
+      ],
+      "hash key": [
+        "哈希密钥"
+      ],
+      "key": [
+        "密钥"
+      ],
+      "membership": [
+        "成员资格"
+      ],
+      "name": [
+        "名称"
+      ]
+    },
     "Property type": {
       "Address": [
         "地址"
@@ -14980,9 +15234,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "剩余 ${ dayDiff } 天"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
@@ -15211,20 +15462,11 @@
       "What you give up when you cancel ${ planName }": [
         "取消 ${ planName } 时您所放弃的内容"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "当您取消 ${ planName } 订阅后，您将被降级为 ${ BRAND_NAME } 免费计划。该计划仅提供至多1GB的邮件存储和最多5GB的网盘存储。 您还将失去所有先前获得的额外存储空间。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "当您取消 ${ planName } 时，您将降级为 ${ BRAND_NAME } 免费计划，该计划仅提供最多 1 GB 的邮件存储空间和最多 5 GB 的设备存储空间。由于免费计划不支持额外的用户，因此您团队的工作会受到影响。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "当您的 ${ planName } 订阅在 ${ expiryDate } 终止时，您将降级为 ${ BRAND_NAME } 免费计划。"
       ],
       "Yearly free storage bonuses": [
         "年度免费存储奖励"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "您的 ${ planName } 订阅还有 ${ expiryDate }。我们会将剩余时间的点数加入您的 ${ BRAND_NAME } 账户。取消前请确保没有超过免费计划的限额。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "您的 ${ planName } 计划不仅能确保您的业务数据和通信安全。它支持您的合规目标，让您的企业脱颖而出，并让您的团队保持联系。"
@@ -16162,9 +16404,6 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
-      "Enter your password": [
-        "请输入您的密码"
-      ],
       "Error": [
         "失败"
       ],
@@ -16723,9 +16962,6 @@
       "Start import process": [
         "开始导入过程"
       ],
-      "Start with a cleaner Inbox": [
-        "从更清爽的收件箱开始"
-      ],
       "Storage capacity warning": [
         "存储容量警告"
       ],
@@ -16815,6 +17051,9 @@
       ],
       "Verification failed": [
         "验证失败"
+      ],
+      "Verify it’s you": [
+        "验证您的身份"
       ],
       "Verify your password": [
         "请验证您的密码"

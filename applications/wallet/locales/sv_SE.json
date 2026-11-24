@@ -367,6 +367,9 @@
       "Sign out of all accounts": [
         "Logga ut från alla konton"
       ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
+      ],
       "Submit": [
         "Skicka"
       ],
@@ -473,6 +476,9 @@
         "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)",
         "${ LUMO_SHORT_APP_NAME } skrivassistent (för ${ quantity } användare)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
+      ],
       "${ price } per dedicated server": [
         "${ price } per dedikerad server"
       ],
@@ -496,6 +502,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplats",
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME }-licens",
@@ -598,6 +608,9 @@
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenser under provperioden."
       ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS }${ LUMO_SHORT_APP_NAME } \nplatser för skrivassistenter under provperioden."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-licenser under provperioden."
       ],
@@ -624,9 +637,19 @@
         "Laddar saldo"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Stäng"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium lösenordshanterare"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Erbjudande ej tillgängligt"
       ]
     },
     "BF2024: Deal details": {
@@ -2409,12 +2432,6 @@
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisationsnyckel måste vara aktiverad för att skapa inbjudna användare"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
-      ],
       "Passwords do not match": [
         "Lösenorden matchar inte"
       ],
@@ -2486,9 +2503,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Minsta donationsbelopp är ${ price }"
       ],
       "The passphrases do not match": [
         "Lösenfraserna matchar inte"
@@ -2598,8 +2612,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Begäran om säkerhetsnyckel avbröts eller löpte ut. Försök igen."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Din enhet kunde inte slutföra begäran om säkerhetsnyckel. Försök igen, eller använd en annan inloggningsmetod."
       ]
     },
     "fido2: Info": {
@@ -2755,6 +2775,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderar ${ BRAND_NAME } Scribe-skrivassistent"
       ],
@@ -2800,6 +2823,9 @@
       ],
       "1 vault per user": [
         "1 valv per användare"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink }för att få en återbetalning."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
@@ -2962,7 +2988,7 @@
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+        "Om du har förlorat tillgången till din autentiseringsapp, kan du använda 1 av de 16 återställningskoder som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
@@ -3109,6 +3135,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+      ],
       "Total email addresses": [
         "Totalt antal e-postadresser"
       ],
@@ -3120,6 +3149,9 @@
       ],
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
+      ],
+      "UnionPay logo": [
+        "UnionPay-logga"
       ],
       "Users": [
         "Användare"
@@ -3147,6 +3179,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "Vi använder 3-D Secure för att skydda dina betalningar"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi kommer att omdirigera dig till ${ IDEAL_WERO_BRAND_NAME } i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi kommer att omdirigera dig till PayPal i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
@@ -3274,6 +3309,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Kontolösenord"
+      ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
@@ -3442,9 +3480,6 @@
       ],
       "Optional": [
         "Valfritt"
-      ],
-      "Password": [
-        "Lösenord"
       ],
       "Payer": [
         "Betalare"
@@ -4657,6 +4692,12 @@
       "Once your full subscription starts...": [
         "När din fullständiga prenumeration startar …"
       ],
+      "to keep using all of the features after your trial ends.": [
+        "för att kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan avbryta inom 30 dagar och få en proportionell återbetalning."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kan fortfarande avbryta inom 30 dagar och få en proportionell återbetalning."
       ],
@@ -4835,6 +4876,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalningsmetod krävs för att prenumerationen ska aktiveras efter provperioden är slut."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Prenumerationsbyte är inkompatibelt av följande skäl:"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
@@ -4965,6 +5009,11 @@
       ],
       "Credits will be added to your balance": [
         "Krediter kommer att läggas till ditt saldo"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Att ändra din fakturaadress kan påverka skatter på kommande fakturor."
       ]
     },
     "Payments.ModificationWarning": {
@@ -5572,6 +5621,9 @@
       "Payment method updated": [
         "Betalningsmetod uppdaterad"
       ],
+      "Preference saved": [
+        "Preferens sparad"
+      ],
       "Problem reported": [
         "Problem rapporterat"
       ],
@@ -5738,9 +5790,6 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
-      "Enter your password": [
-        "Ange ditt lösenord"
-      ],
       "Error": [
         "Fel"
       ],
@@ -5842,6 +5891,9 @@
       ],
       "Verification failed": [
         "Verifiering misslyckades"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
@@ -5963,6 +6015,62 @@
       "Try a shorter username (${ n } character max)": [
         "Prova ett kortare användarnamn (max ${ n } antal tecken)",
         "Prova ett kortare användarnamn (max ${ n } antal tecken)"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per användare"
+      ],
+      "${ storage } shared": [
+        "${ storage } delat"
+      ],
+      "10 years": [
+        "10 år"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Custom email domains": [
+        "Anpassade e-postdomäner"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "Password vaults": [
+        "Lösenords-valv"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive och Pass"
+      ],
+      "Previous versions": [
+        "Tidigare versioner"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
+      ],
+      "Subscribers only": [
+        "Endast prenumeranter"
+      ],
+      "Ultra servers": [
+        "Ultraservrar"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-servrar, reserverade för dig"
+      ],
+      "Unlimited": [
+        "Obegränsad"
+      ],
+      "Up to ${ limit }": [
+        "Upp till ${ limit }"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "VPN devices at once": [
+        "VPN-enheter samtidigt"
       ]
     },
     "VPN B2B cancellation reason": {

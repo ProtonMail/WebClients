@@ -298,6 +298,9 @@
       "Referral rewards": [
         "Empfehlungsprämien"
       ],
+      "Reminder": [
+        "Erinnerungen"
+      ],
       "Restrict app access": [
         "App-Zugriff beschränken"
       ],
@@ -482,6 +485,9 @@
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Füge den Empfehlungs-Link zur ${ MAIL_APP_NAME }-Signatur hinzu"
       ],
+      "Add service account": [
+        "Dienstkonto hinzufügen"
+      ],
       "Add sieve filter": [
         "Sieve-Filter hinzufügen"
       ],
@@ -593,6 +599,9 @@
       "Change password": [
         "Passwort ändern"
       ],
+      "Change plan": [
+        "Plan ändern"
+      ],
       "Change second password": [
         "Zusätzliches Passwort ändern"
       ],
@@ -700,9 +709,6 @@
       ],
       "Contact sales": [
         "Vertrieb kontaktieren"
-      ],
-      "Contact support": [
-        "Support kontaktieren"
       ],
       "Contact Support Center": [
         "Support-Center kontaktieren"
@@ -971,11 +977,8 @@
       "Don't show again": [
         "Nicht wieder anzeigen"
       ],
-      "Don't show this offer again": [
-        "Dieses Angebot nicht erneut anzeigen"
-      ],
-      "Donate": [
-        "Spende"
+      "Don't show this again": [
+        "Nicht mehr anzeigen"
       ],
       "Done": [
         "Fertig"
@@ -1282,9 +1285,6 @@
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Deine eigene ${ MAIL_APP_NAME }-E-Mail-Adresse erhalten"
       ],
       "Go back": [
         "Zurück"
@@ -1715,6 +1715,9 @@
       "Remove": [
         "Entfernen"
       ],
+      "Remove ${ name }": [
+        "${ name } entfernen"
+      ],
       "Remove all other devices": [
         "Alle anderen Geräte entfernen"
       ],
@@ -2075,6 +2078,9 @@
       "Skip": [
         "Überspringen"
       ],
+      "Skip to main content": [
+        "Zum Hauptinhalt springen"
+      ],
       "Skip verification": [
         "Überprüfung überspringen"
       ],
@@ -2180,9 +2186,6 @@
       "Try for free": [
         "Kostenlos ausprobieren"
       ],
-      "Try payment again": [
-        "Zahlung erneut versuchen"
-      ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
@@ -2227,6 +2230,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Auf ${ planTitle } umsteigen"
       ],
       "Upgrade to 2 devices or more": [
         "Auf 2 oder mehr Geräte upgraden"
@@ -2341,6 +2347,9 @@
       ],
       "View invoice": [
         "Rechnung anzeigen"
+      ],
+      "View keyboard shortcuts": [
+        "Tastenkürzel anzeigen"
       ],
       "View plans details": [
         "Details zum Abonnement ansehen"
@@ -2463,6 +2472,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)",
         "${ LUMO_SHORT_APP_NAME } Schreibassistent (für ${ quantity } Benutzer)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Plätze für den ${ LUMO_SHORT_APP_NAME }-Schreibassistenten"
       ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
@@ -3637,6 +3649,20 @@
     "BYOE": {
       "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
         "Dein neuesten E-Mails werden zuerst importiert. E-Mails, die bereits importiert wurden, werden nicht erneut kopiert."
+      ]
+    },
+    "BYOE reminder": {
+      "Applies to all your connected Gmail addresses.": [
+        "Gilt für alle deine verknüpften Gmail-Adressen."
+      ],
+      "Don’t miss private emails while you still check Gmail. Emails from other ${ MAIL_APP_NAME } users stay in ${ MAIL_APP_NAME }, so we’ll remind you in Gmail with the subject and a link.": [
+        "Verpasse keine privaten E-Mails, während du weiterhin Gmail nutzt. E-Mails von anderen ${ MAIL_APP_NAME }-Nutzern bleiben in ${ MAIL_APP_NAME }, daher erinnern wir dich in Gmail mit dem Betreff und einem Link daran."
+      ],
+      "Get a reminder in Gmail when another ${ MAIL_APP_NAME } user emails you. Applies to all connected addresses.": [
+        "Du erhältst eine Benachrichtigung in Gmail, wenn dir ein anderer ${ MAIL_APP_NAME }-Nutzer eine E-Mail schickt. Dies gilt für alle verknüpften E-Mail-Adressen."
+      ],
+      "Private email reminders in Gmail": [
+        "Private E-Mail-Erinnerungen in Gmail"
       ]
     },
     "Calendar access select label": {
@@ -6573,8 +6599,8 @@
       "Delete this condition": [
         "Diese Bedingung löschen"
       ],
-      "Edit conditions": [
-        "Bedingungen bearbeiten"
+      "Edit": [
+        "Bearbeiten"
       ],
       "Got it": [
         "Verstanden"
@@ -7465,9 +7491,6 @@
       "Could not read part of this file: ${ message }": [
         "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
       ],
-      "Could not save preference": [
-        "Einstellung konnte nicht gespeichert werden."
-      ],
       "Could not unlock the parent folder": [
         "Der übergeordnete Ordner konnte nicht entsperrt werden"
       ],
@@ -7584,6 +7607,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Aktive Sitzungen konnten nicht erhalten werden. Bitte ${ refresh } oder später erneut versuchen."
       ],
+      "Failed to get invitee keys": [
+        "Einladeschlüssel konnten nicht abgerufen werden"
+      ],
       "Failed to get inviter keys": [
         "Schlüssel des Einladers konnten nicht abgerufen werden"
       ],
@@ -7598,6 +7624,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
+      "Failed to load the membership": [
+        "Mitgliedschaft konnte nicht geladen werden"
+      ],
+      "Failed to load the membership data": [
+        "Daten der Mitgliedschaft konnten nicht geladen werden"
       ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
@@ -7616,6 +7648,9 @@
       ],
       "Failed to verify invitation": [
         "Einladung konnte nicht verifiziert werden"
+      ],
+      "Failed to verify membership": [
+        "Mitgliedschaft konnte nicht geprüft werden"
       ],
       "File download failed due to empty response": [
         "Das Herunterladen der Datei ist aufgrund einer leeren Antwort fehlgeschlagen"
@@ -7767,6 +7802,9 @@
       ],
       "Name already exists": [
         "Name existiert bereits"
+      ],
+      "Name already used within your organization": [
+        "Name wird bereits in deiner Organisation verwendet"
       ],
       "Name does not match": [
         "Name stimmt nicht überein"
@@ -8047,6 +8085,9 @@
       "Some file parts failed to upload. Please try again.": [
         "Einige Dateiteile konnten nicht hochgeladen werden. Bitte versuche es erneut."
       ],
+      "Some invitations could not be loaded": [
+        "Einige Einladungen konnten nicht geladen werden"
+      ],
       "Some items could not be loaded": [
         "Einige Einträge konnten nicht geladen werden"
       ],
@@ -8064,6 +8105,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Some service account keys could not be decrypted.": [
+        "Einige Schlüssel von Dienstkonten konnten nicht entsperrt werden"
       ],
       "Something went wrong": [
         "Etwas ist schief gelaufen."
@@ -8134,14 +8178,14 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Der Mindestspendenbetrag ist ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Der Name der Richtlinie muss zwischen 3 und 40 Zeichen lang sein."
       ],
       "The sending key is not valid": [
         "Der Sendeschlüssel ist ungültig"
+      ],
+      "The service account address is unavailable. Please try again.": [
+        "Die Adresse des Dienstkontos ist nicht verfügbar. Bitte versuche es erneut."
       ],
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
@@ -8245,6 +8289,9 @@
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
       ],
+      "Unlock your organization key to assign managers.": [
+        "Entsperren deinen Organisationsschlüssel, um Verantwortliche zuweisen zu können."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Die hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut."
       ],
@@ -8274,6 +8321,9 @@
       ],
       "We couldn't disconnect this address. Please try again.": [
         "Deine E-Mail-Adresse konnte nicht getrennt werden. Bitte versuche es erneut."
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Deine migrierten Benutzer konnten nicht geladen werden. Bitte aktualisiere die Seite und versuche es erneut."
       ],
       "We couldn't reconnect this address.": [
         "Es konnte keine Verbindung zu dieser E-Mail-Adresse hergestellt werden."
@@ -8316,6 +8366,12 @@
       ],
       "You do not have access to this shared item": [
         "Du hast keinen Zugriff auf diesen geteilten Eintrag"
+      ],
+      "You do not have permission to delete service accounts.": [
+        "Du hast keine Berechtigung, Dienstkonten zu löschen."
+      ],
+      "You do not have permission to update service accounts.": [
+        "Du hast keine Berechtigung, Dienstkonten zu aktualisieren."
       ],
       "You have reached the maximum number of calendars.": [
         "Du hast die maximale Anzahl an Kalendern erreicht."
@@ -9139,11 +9195,20 @@
       "Something went wrong registering your security key. Please try again.": [
         "Etwas ist beim Registrieren deines Sicherheitsschlüssels schief gelaufen. Bitte versuche es erneut."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Die Anforderung des Sicherheitsschlüssels wurde abgebrochen oder ist abgelaufen. Bitte versuche es erneut."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
       ],
       "This security key is already registered to your account.": [
         "Dieser Sicherheitsschlüssel ist bereits in deinem Konto registriert."
+      ],
+      "Your device couldn't complete the security key request. Try again, or register the key from another device.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder registriere den Schlüssel von einem anderen Gerät aus."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Ihr Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder verwende eine andere Anmeldemethode."
       ]
     },
     "fido2: Info": {
@@ -9467,16 +9532,6 @@
       ],
       "Learn more": [
         "Mehr erfahren"
-      ]
-    },
-    "Form heading": {
-      "Enter your email address": [
-        "E-Mail-Adresse eingeben"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "Der Gutschein wird hierhin gesendet."
       ]
     },
     "Free trial dekstop": {
@@ -9851,29 +9906,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Ein einfacher Schritt heute, um morgen die digitale Sicherheit deines Kindes zu gewährleisten"
-      ],
       "Activate your reserved email address": [
         "Deine reservierte E-Mail-Adresse aktivieren"
-      ],
-      "Address reservation voucher": [
-        "Gutschein für die Reservierung der E-Mail-Adresse"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Spende an die ${ BRAND_NAME } Foundation"
       ],
       "Enter verification code": [
         "Bestätigungscode eingeben"
       ],
       "Recover activation voucher": [
         "Aktivierungsgutschein wiederherstellen"
-      ],
-      "Reserve child's email address": [
-        "E-Mail-Adresse des Kindes reservieren"
-      ],
-      "We emailed you the voucher": [
-        "Wir haben dir den Gutschein per E-Mail geschickt"
       ]
     },
     "Headline": {
@@ -10495,6 +10535,15 @@
       "${ name } is not available": [
         "${ name } ist nicht verfügbar"
       ],
+      "${ nameElement } will be removed from your allow list.": [
+        "${ nameElement } wird von deiner Zulassungsliste entfernt."
+      ],
+      "${ nameElement } will be removed from your block list.": [
+        "${ nameElement } wird von deiner Sperrliste entfernt."
+      ],
+      "${ nameElement } will be removed from your spam list.": [
+        "${ nameElement } wird von deiner Spam-Liste entfernt."
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: Keine Quarantäne oder Ablehnung nicht autorisierter E-Mails. Normalerweise wird diese Richtlinie nur zum Troubleshooting oder Testen verwendet."
       ],
@@ -10769,6 +10818,9 @@
       "active": [
         "aktiv"
       ],
+      "Active service accounts have a valid access token. Service accounts without a token or manager are marked accordingly.": [
+        "Aktive Dienstkonten verfügen über ein gültiges Zugriffstoken. Dienstkonten ohne Token oder Manager werden entsprechend gekennzeichnet."
+      ],
       "Activity Monitor": [
         "Aktivitätsüberwachung"
       ],
@@ -10792,6 +10844,9 @@
       ],
       "add a recovery method": [
         "eine Wiederherstellungsmethode hinzufügst"
+      ],
+      "Add additional users from your organization to manage this service account.": [
+        "Füge weitere Benutzer aus deiner Organisation hinzu, um dieses Dienstkonto verwalten zu können."
       ],
       "Add additional users to **${ company.name }** from your organization to manage this company.": [
         "Füge weitere Benutzer aus deiner Organisation zu **${ company.name }** hinzu, um dieses Unternehmen zu verwalten."
@@ -11484,6 +11539,9 @@
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
       ],
+      "Deleting ${ name } will revoke all its access tokens and remove its managers.": [
+        "Durch das Löschen von ${ name } werden alle zugehörigen Zugriffstoken widerrufen und die zugehörigen Manager entfernt."
+      ],
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
         "Je nach Einstellungen erhalten sie sofort oder nach einer festgelegten **Wartezeit** Zugriff."
       ],
@@ -11884,6 +11942,9 @@
       "Find out what can be migrated.": [
         "Erfahre, was übertragen werden kann."
       ],
+      "Folders are where your messages are stored. A message can only be in one folder.": [
+        "In Ordnern werden deine Nachrichten gespeichert. Eine Nachricht kann nur in einem Ordner liegen."
+      ],
       "for ${ price }": [
         "für ${ price }"
       ],
@@ -12013,9 +12074,6 @@
       "Help an organization protect sensitive data from breaches and surveillance": [
         "Hilf einer Organisation dabei, sensible Daten vor Datenoffenlegung und Überwachung zu schützen"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Hilf anderen Familien, ihren Kindern einen sicheren Start ins Netz zu ermöglichen. Teile diesen Meilenstein und lass andere davon wissen."
-      ],
       "here": [
         "hier"
       ],
@@ -12027,9 +12085,6 @@
       ],
       "High Priority": [
         "Hohe Priorität"
-      ],
-      "How it works": [
-        "So funktioniert's"
       ],
       "How to perform a signed-in reset": [
         "Wie man einen angemeldeten Reset durchführt"
@@ -12289,9 +12344,6 @@
       "Just confirm your selection and we'll do the rest.": [
         "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
       ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Bewahre den Gutschein sicher auf, bis du ihn brauchst, zum Beispiel in ${ DRIVE_APP_NAME }."
-      ],
       "Keep your info more secure and private with these guides and tips.": [
         "Mit diesen Anleitungen und Tipps kannst du deine Daten schützen."
       ],
@@ -12309,6 +12361,9 @@
       ],
       "Label all imported messages as": [
         "Alle importierten Nachrichten kennzeichnen als"
+      ],
+      "Labels are tags that make your messages easier to search and filter. A message can have several labels.": [
+        "Labels sind Markierungen, mit denen du deine Nachrichten leichter durchsuchen und filtern kannst. Eine Nachricht kann mehrere Labels haben."
       ],
       "Labels:": [
         "Kategorien:"
@@ -12896,9 +12951,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Benachrichtigungen für ${ categoryLabel } erhalten"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Du erhältst den Reservierungsgutschein per E-Mail. Du oder das Kind könnt ihn innerhalb der nächsten 15 Jahre verwenden, um die E-Mail-Adresse zu aktivieren. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Zuletzt genutzte Server:"
       ],
@@ -13070,6 +13122,9 @@
       "Set password": [
         "Passwort festlegen"
       ],
+      "Set the name and allocated licenses": [
+        "Name und zugewiesene Lizenzen festlegen"
+      ],
       "Set up your organization": [
         "Organisation einrichten"
       ],
@@ -13163,9 +13218,6 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Einige Server erscheinen möglicherweise nicht in der obigen Liste. Suche nach Servernamen (z. B. AT#62), um sie zu finden."
-      ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Etwas ist schiefgelaufen. Bitte versuche es erneut oder kontaktiere den Kundensupport."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
@@ -13348,9 +13400,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Der Link zur Meldung, dass du kein ${ BRAND_NAME }-Konto eingerichtet hast, ist abgelaufen. Bitte setze dich mit unserem Support-Team in Verbindung, um dieses Problem zu lösen."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Der maximale Spendenbetrag ist ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Die jüngste Datenaktualisierung, mit Ausnahme von Datenlecks."
@@ -13653,9 +13702,6 @@
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Um diesen Benutzer zu übertragen, hebe die Sperre in deiner ${ provider.adminConsoleName } auf."
       ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Um Missbrauch oder Betrug zu verhindern, bitten wir um eine Mindestspende von ${ minimumDonation }. Dies unterstützt die Arbeit der ${ protonFoundationLink } zur Verteidigung der digitalen Privatsphäre weltweit und hilft, die nächste Generation zu schützen."
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Wähle um fortzufahren eine Kontowiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
       ],
@@ -13739,6 +13785,9 @@
       ],
       "Unlock streaming with VPN Plus.": [
         "Streaming mit VPN Plus freischalten."
+      ],
+      "Unlock your organization key to create service accounts and assign managers.": [
+        "Entsperre deinen Organisationsschlüssel, um Dienstkonten anlegen und Verantwortliche zuweisen zu können."
       ],
       "Unsaved changes": [
         "Ungespeicherte Änderungen"
@@ -13926,9 +13975,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Wir können deine Wiederherstellungs-Telefonnummer verwenden, um dir einen Bestätigungscode zum Zurücksetzen deines Passworts zu senden und dich zu kontaktieren, wenn wir verdächtige Aktivitäten feststellen."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "Wir konnten die Transaktion nicht abschließen. Bitte versuche es erneut."
-      ],
       "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
         "Es konnte keine Verbindung zu ${ emailAddress } hergestellt werden. Versuche es erneut und aktiviere alle Kontrollkästchen, wenn Google dich um Zugriff bittet. ${ BRAND_NAME } nutzt diesen Zugriff ausschließlich, um eine Verbindung zu deinem Gmail-Konto herzustellen."
       ],
@@ -14094,9 +14140,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Wenn du einen Server von einem Gateway entfernst, wird er für 10 Tage deaktiviert. Dieser Server kann zu einem neuen Gateway hinzugefügt werden, aber sein Land kann nicht geändert werden."
       ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Wenn du bereit bist, die E-Mail-Adresse zu aktivieren, scanne den QR-Code oder benutze den Link im Gutschein."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wenn dein Abonnement verlängert wird, werden wir das verfügbare Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
       ],
@@ -14126,6 +14169,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Mit Gruppen kannst Du schnell und einfach E-Mails an alle Mitglieder einer bestimmten Gruppe senden."
+      ],
+      "With managed companies, you can add, edit, and disable access for organizations you oversee.": [
+        "Mit verwalteten Unternehmen kannst du den Zugriff für Organisationen, die du betreust, hinzufügen, bearbeiten und deaktivieren."
       ],
       "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
         "Mit VPN Professional können Administratoren für alle Mitglieder der Organisation ein stets aktives VPN sowie private Gateways, Zugriffsrichtlinien und Überwachungsfunktionen durchsetzen."
@@ -14613,9 +14659,6 @@
       "Your trial will end in ${ timeRemaining }.": [
         "Deine Testversion endet in ${ timeRemaining }."
       ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Dein Gutschein für deine reservierte ${ BRAND_NAME }-E-Mail-Adresse: ${ reservedEmail }"
-      ],
       "YouTube": [
         "YouTube"
       ],
@@ -14658,6 +14701,9 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Hilft beim Schreiben, Antworten und Korrekturlesen von E-Mails. Wenn deaktiviert, haben nur Administratoren Zugriff. Verwalte dies für einzelne Benutzer in ${ userAndAddresses } oder ${ addMoreSeats }"
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses }.": [
+        "Hilft beim Schreiben, Beantworten und Korrekturlesen von E-Mails. Wenn deaktiviert, haben nur Administratoren Zugriff. Für einzelne Benutzer unter ${ userAndAddresses } verwalten."
       ]
     },
     "Info (sub-heading)": {
@@ -15231,6 +15277,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ count } manager": [
+        "${ count } Manager",
+        "${ count } Manager"
+      ],
       "${ group.UserCount } user": [
         "${ group.UserCount } Benutzer",
         "${ group.UserCount } Benutzer"
@@ -15321,6 +15371,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Greife sicher vom Terminal auf ${ PASS_APP_NAME } zu, ideal für Skripterstellung, Automatisierung und Entwicklungs-Workflows."
+      ],
+      "Access tokens": [
+        "Zugangstoken"
       ],
       "Account credit": [
         "Kontoguthaben"
@@ -15646,9 +15699,6 @@
       "Choose a name for the generated certificate file": [
         "Wähle einen Namen für die erzeugte Zertifikatsdatei"
       ],
-      "Choose an address to reserve for your child": [
-        "Eine Adresse wählen, die für dein Kind reserviert wird"
-      ],
       "Choose your billing": [
         "Deine Abrechnung wählen"
       ],
@@ -15875,12 +15925,6 @@
       "Don't show this again": [
         "Nicht erneut anzeigen"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Spende ${ minimumDonation } oder mehr an die ${ BRAND_NAME }-Stiftung"
-      ],
-      "Donation amount": [
-        "Spendenbetrag"
-      ],
       "Drive": [
         "Drive"
       ],
@@ -15976,9 +16020,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Gib das Passwort für den Schlüssel mit dem folgenden Fingerabdruck ein: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Deine E-Mail-Adresse eingeben"
       ],
       "Enter your password": [
         "Passwort eingeben"
@@ -16252,6 +16293,9 @@
       ],
       "Managed Companies": [
         "Verwaltete Unternehmen"
+      ],
+      "Managers": [
+        "Manager"
       ],
       "Mark as": [
         "Markieren als"
@@ -16839,9 +16883,6 @@
       "Tips and insights": [
         "Tipps und Hintergründe"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Zum Aktivieren scanne den QR-Code oder gehe zu:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Um uns zu helfen, uns zu verbessern, erkläre bitte, warum du gehst."
       ],
@@ -17022,17 +17063,11 @@
       "You don't have permissions": [
         "Du hast keine Berechtigung"
       ],
-      "Your activation code:": [
-        "Dein Aktivierungscode:"
-      ],
       "Your calendar URL": [
         "Deine Kalender-URL"
       ],
       "Your credit balance": [
         "Dein Guthaben"
-      ],
-      "Your email address": [
-        "Deine E-Mail-Adresse"
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
@@ -17048,9 +17083,6 @@
       ],
       "Your recovery phone number": [
         "Deine Wiederherstellungs-Telefonnummer"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Dein Gutschein für deine reservierte ${ BRAND_NAME }-E-Mail-Adresse:"
       ],
       "Zero-access architecture": [
         "Zero-Access-Architektur"
@@ -17222,9 +17254,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } aktualisiert"
-      ],
-      "Preference saved": [
-        "Einstellung gespeichert"
       ]
     },
     "Label; import email": {
@@ -17247,9 +17276,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } Foundation"
-      ],
       "Activity log": [
         "Ereignisprotokoll"
       ],
@@ -17503,20 +17529,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Benutzer und E-Mail-Adressen"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "E-Mail"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -18082,9 +18094,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Ein einfacher Schritt heute, um die digitale Sicherheit deines Kindes morgen zu gewährleisten. Richte eine private ${ BRAND_NAME }-E-Mail-Adresse für dein Kind ein."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Die private ${ BRAND_NAME }-E-Mail-Adresse aktivieren, die für dein Kind reserviert ist, und dessen Konto einrichten."
       ],
@@ -18120,9 +18129,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Das ${ BRAND_NAME }-Konto deines Kindes wiederherstellen | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Sichere dir eine persönliche E-Mail-Adresse für dein Kind | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Passwort für dein ${ BRAND_NAME } Konto zurücksetzen"
@@ -19491,17 +19497,14 @@
       "1 email per month": [
         "1 E-Mail pro Monat"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 E-Mail pro Monat. Erhalte die neuesten Nachrichten zum Thema Privatsphäre und was im ${ BRAND_NAME }-Universum vor sich geht."
-      ],
       "1 email per quarter": [
         "1 E-Mail pro Quartal"
       ],
       "1-2 emails per month": [
         "1-2 E-Mails pro Monat"
       ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1 – 4 E-Mails pro Jahr. Erinnerungen daran, deine Wiederherstellungsmethoden auf dem neuesten Stand zu halten."
+      "1-4 emails per year": [
+        "1-4 E-Mails pro Jahr"
       ],
       "2-4 emails per year": [
         "2-4 E-Mails pro Jahr"
@@ -19527,8 +19530,11 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "Während des ersten Monats, in dem das Produkt ${ BRAND_NAME } verwendet wird"
       ],
-      "Email communications": [
-        "E-Mail-Kommunikation"
+      "Email subscriptions": [
+        "E-Mail-Abonnements"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Erhalte die neuesten Nachrichten zum Thema Privatsphäre und was im ${ BRAND_NAME }-Universum vor sich geht."
       ],
       "In-app notifications": [
         "Benachrichtigungen in der App"
@@ -19541,6 +19547,9 @@
       ],
       "Recovery checklist": [
         "Checkliste für die Wiederherstellung"
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "Erinnerungen, damit deine Wiederherstellungsmethoden immer aktuell bleiben."
       ]
     },
     "ngc_access_banner: action": {
@@ -19550,7 +19559,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+        "Du hast nun Zugriff auf den neuen ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
@@ -21398,9 +21407,6 @@
       "Address": [
         "Adresse"
       ],
-      "Amount": [
-        "Betrag"
-      ],
       "Anderson": [
         "Mustermann"
       ],
@@ -21523,6 +21529,9 @@
       ],
       "Search for a company": [
         "Nach einem Unternehmen suchen"
+      ],
+      "Search for a service account": [
+        "Dienstkonto durchsuchen"
       ],
       "Search for a user or address": [
         "Nach einem Benutzer oder einer Adresse suchen"
@@ -23116,6 +23125,14 @@
       ],
       "to be deleted": [
         "zu löschen"
+      ]
+    },
+    "Service account status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Disabled": [
+        "Deaktiviert"
       ]
     },
     "Service provider": {
@@ -25127,10 +25144,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } verbleibender Tag",
-        "${ dayDiff } verbleibende Tage"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
       ],
@@ -25392,12 +25405,6 @@
       "What you give up when you cancel ${ planName }": [
         "Bei der Kündigung von ${ planName } verlierst du folgende Vorteile"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Du verlierst auch alle zuvor gewährten Speicherplatzboni."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Wenn du ${ planName } kündigst, wirst du auf ${ BRAND_NAME } Free herabgestuft, das nur bis zu 1 GB Mail-Speicher und bis zu 5 GB Drive-Speicher bietet. Dein Team wird in seiner Arbeit unterbrochen werden, da zusätzliche Benutzer im kostenlosen Abonnement nicht unterstützt werden."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn dein ${ planName }-Abonnement am ${ expiryDate } endet, wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
       ],
@@ -25406,9 +25413,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Du kannst weiterhin alle Vorteile deines aktuellen Tarifs bis ${ boldedDate } nutzen."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Du hast noch ${ expiryDate } in deinem ${ planName }-Abonnement verbleibend. Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu. Vergewissere dich, dass du die Grenzen des kostenlosen Abonnements nicht überschreitest, bevor du kündigst. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Dein ${ planName }-Abonnement schützt nicht nur deine Unternehmensdaten und -kommunikation. Es unterstützt deine Compliance-Ziele, hebt dein Unternehmen hervor und sorgt dafür, dass dein Team in Verbindung bleibt."
@@ -25776,6 +25780,9 @@
       "Server copied to clipboard": [
         "Server in die Zwischenablage kopiert"
       ],
+      "Service account enabled": [
+        "Dienstkonto aktiviert"
+      ],
       "Session revoked": [
         "Sitzung zurückgenommen"
       ],
@@ -25974,6 +25981,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Aktionen"
+      ],
       "Activated": [
         "Aktiviert"
       ],
@@ -26010,9 +26020,6 @@
       ],
       "CSV field": [
         "CSV-Feld"
-      ],
-      "Edit": [
-        "Bearbeiten"
       ],
       "Email address": [
         "E‐Mail‐Adresse"
@@ -26342,11 +26349,17 @@
       "Add filter": [
         "Filter hinzufügen"
       ],
+      "Add new company": [
+        "Neues Unternehmen hinzufügen"
+      ],
       "Add PayPal payment method": [
         "PayPal als Zahlungsmethode hinzufügen"
       ],
       "Add pm.me subdomain": [
         "pm.me-Subdomain hinzufügen"
+      ],
+      "Add service account": [
+        "Dienstkonto hinzufügen"
       ],
       "Add Sieve filter": [
         "Sieve-Filter hinzufügen"
@@ -26825,6 +26838,9 @@
       "Delete folder?": [
         "Ordner löschen?"
       ],
+      "Delete from list?": [
+        "Aus der Liste löschen?"
+      ],
       "Delete group?": [
         "Gruppe löschen?"
       ],
@@ -27065,9 +27081,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
-      ],
-      "Enter your password": [
-        "Passwort eingeben"
       ],
       "Error": [
         "Fehler"
@@ -27631,12 +27644,6 @@
       ],
       "Privacy": [
         "Privatsphäre"
-      ],
-      "Problem processing your payment": [
-        "Problem bei der Bearbeitung deiner Zahlung"
-      ],
-      "Problem processing your request": [
-        "Problem bei der Bearbeitung deiner Anfrage"
       ],
       "Processing...": [
         "Wird verarbeitet..."
@@ -28826,6 +28833,10 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dein externes Konto könnte sein 24-Stunden-Bandbreitenlimit erreicht haben. ${ BRAND_NAME } wird versuchen, den Import so bald wie möglich fortzusetzen."
+      ],
+      "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
+        "Deine Organisation hat die maximale Anzahl von ${ maxServiceAccounts } Dienstkonto erreicht.",
+        "Deine Organisation hat die maximale Anzahl von ${ maxServiceAccounts } Dienstkonten erreicht."
       ]
     },
     "tooltip": {
@@ -29411,6 +29422,113 @@
         "Video erneut wiedergeben"
       ]
     },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } pro Benutzer"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } und Scribe sind enthalten"
+      ],
+      "${ storage } shared": [
+        "${ storage } gemeinsam genutzt"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage }-Speicherplatz"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } werden alle 12 Monate in Rechnung gestellt."
+      ],
+      "10 years": [
+        "10 Jahre"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Eine Serverkategorie von ${ VPN_APP_NAME }-Servern mit höherer Kapazität: Jeder Server wird von weitaus weniger Nutzern gemeinsam genutzt, und sie verwenden IP-Adressen, die ${ BRAND_NAME } gehören. Quick Connect wählt diese automatisch aus, sofern sie verfügbar sind."
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "Custom email domains": [
+        "Eigene E-Mail-Domains"
+      ],
+      "Early access to new features": [
+        "Vorabzugang zu neuen Funktionen"
+      ],
+      "Email addresses": [
+        "E-Mail-Adressen"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Alles aus ${ unlimitedName } und zusätzlich:"
+      ],
+      "Exclusive to subscribers": [
+        "Exklusiv für Abonnenten"
+      ],
+      "Feature": [
+        "Funktion"
+      ],
+      "Group plans": [
+        "Gruppenpläne"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
+      "Included": [
+        "Enthalten"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Beinhaltet Ultra-Server, die für dich reserviert sind"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Benannt nach den Crowdfunding-Unterstützern, die ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } im Jahr 2014 möglich gemacht haben. Alle Premium-Dienste von ${ BRAND_NAME } in einem Paket."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Neue ${ BRAND_NAME }-Dienste ohne zusätzliche Kosten"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Neue Dienste ohne zusätzliche Kosten und vorab Zugriff auf unsere nächsten Projekte."
+      ],
+      "Not included": [
+        "Nicht enthalten"
+      ],
+      "Password vaults": [
+        "Passwort-Tresore"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Kalender, Drive und Pass"
+      ],
+      "Previous versions": [
+        "Vorherige Versionen"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Datenschutz-Paket mit sicherer E-Mail, ${ VPN_SHORT_APP_NAME }, Cloud-Speicher und Passwort-Manager in einem Paket."
+      ],
+      "Storage": [
+        "Speicher"
+      ],
+      "Subscribers only": [
+        "Nur Abonnenten"
+      ],
+      "Ultra servers": [
+        "Ultra-Server"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-Server, die für dich reserviert sind"
+      ],
+      "Unlimited": [
+        "Unbegrenzt"
+      ],
+      "Up to ${ limit }": [
+        "Bis zu ${ limit }"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "VPN devices at once": [
+        "VPN-Geräte gleichzeitig"
+      ],
+      "Your plan": [
+        "Dein Abonnement"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
@@ -29546,6 +29664,15 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "für ${ cycle } Monat",
+        "für ${ cycle } Monate"
+      ],
+      "Premium calendar features": [
+        "Funktionen des Premium-Kalenders"
       ]
     },
     "VPNClient": {

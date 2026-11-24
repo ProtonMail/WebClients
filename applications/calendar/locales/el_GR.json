@@ -353,8 +353,8 @@
       "Display navigation bar": [
         "Εμφάνιση γραμμής περιήγησης"
       ],
-      "Don't show this offer again": [
-        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -896,6 +896,9 @@
       "Skip": [
         "Παράλειψη"
       ],
+      "Skip to main content": [
+        "Μετάβαση στο κύριο περιεχόμενο"
+      ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
       ],
@@ -1128,6 +1131,9 @@
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστη)",
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής (για ${ quantity } χρήστες)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
+      ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
       ],
@@ -1151,6 +1157,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } θέση",
         "${ seats } ${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέση βοηθού γραφής",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } άδεια χρήσης",
@@ -1332,6 +1342,11 @@
         "Νέο!"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
@@ -1340,6 +1355,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Η προσφορά δεν είναι διαθέσιμη"
       ]
     },
     "BF2024: Deal details": {
@@ -3809,6 +3829,9 @@
       "Location is required": [
         "Η τοποθεσία είναι υποχρεωτική"
       ],
+      "Meeting not created. Try again.": [
+        "Η σύσκεψη δεν δημιουργήθηκε. Δοκιμάστε ξανά."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
@@ -3862,12 +3885,6 @@
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
-      ],
-      "Organization key must be activated to create invited users": [
-        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία προσκεκλημένων χρηστών"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -4029,9 +4046,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Το ελάχιστο ποσό πίστωσης που μπορεί να προστεθεί είναι ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Το ελάχιστο ποσό δωρεάς είναι ${ price }"
       ],
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
@@ -4549,8 +4563,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Το αίτημα κλειδιού ασφαλείας ακυρώθηκε ή έληξε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Η συσκευή σας δεν μπόρεσε να ολοκληρώσει το αίτημα κλειδιού ασφαλείας. Προσπαθήστε ξανά, ή επιλέξτε κάποια άλλη μέθοδο σύνδεσης."
       ]
     },
     "fido2: Info": {
@@ -6212,6 +6232,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Για να σας βοηθήσουμε να θυμάστε τον κωδικό πρόσβασής σας, θα σας ζητάμε να τον εισάγετε περιοδικά. Με την πάροδο του χρόνου, θα σας ζητάμε λιγότερο."
       ],
@@ -6798,6 +6821,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Κωδικός πρόσβασης Λογαριασμού ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
@@ -10941,10 +10967,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } ημέρα απομένει",
-        "${ dayDiff } ημέρες απομένουν"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
@@ -11179,20 +11201,11 @@
       "What you give up when you cancel ${ planName }": [
         "Τι εγκαταλείπετε όταν ακυρώσετε το ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πλάνα."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν η συνδρομή σας ${ planName } λήξει στις ${ expiryDate }, θα υποβαθμιστείτε στο Free πλάνο ${ BRAND_NAME }."
       ],
       "Yearly free storage bonuses": [
         "Ετήσια δωρεάν μπόνους αποθήκευσης"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Εξακολουθείτε να έχετε ${ expiryDate } στη ${ planName } συνδρομή σας. Θα προσθέσουμε τις πιστώσεις για τον υπόλοιπο χρόνο στον λογαριασμό σας ${ BRAND_NAME }. Βεβαιωθείτε ότι δεν υπερβαίνετε τα όρια του δωρεάν πλάνου πριν ακυρώσετε.${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Το ${ planName } πλάνο σας δε διατηρεί απλώς ασφαλή τα δεδομένα και τις επικοινωνίες της επιχείρησής σας. Υποστηρίζει τους στόχους συμμόρφωσης, κάνει την επιχείρησή σας να ξεχωρίζει και διατηρεί την ομάδα σας συνδεδεμένη."
@@ -11908,9 +11921,6 @@
       "Enhance security with 2FA": [
         "Ενισχύστε την ασφάλεια με την πιστοποίηση δύο παραγόντων (2FA)"
       ],
-      "Enter your password": [
-        "Εισάγετε τον κωδικό πρόσβασης σας"
-      ],
       "Error": [
         "Σφάλμα"
       ],
@@ -12242,6 +12252,9 @@
       "Simplify password management": [
         "Απλοποιήστε τη διαχείριση κωδικών πρόσβασης"
       ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
       ],
@@ -12307,6 +12320,9 @@
       ],
       "Verification failed": [
         "Αποτυχία επαλήθευσης"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ],
       "Verify your password": [
         "Επαληθεύστε τον κωδικό πρόσβασής σας"
@@ -12622,6 +12638,71 @@
       ],
       "Open in a new tab": [
         "Άνοιγμα σε νέα καρτέλα"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } ανά χρήστη"
+      ],
+      "${ storage } shared": [
+        "${ storage } κοινόχρηστος"
+      ],
+      "10 years": [
+        "10 χρόνια"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Μια κατηγορία διακομιστών του ${ VPN_APP_NAME } με μεγαλύτερη χωρητικότητα: κάθε διακομιστής χρησιμοποιείται από πολύ λιγότερους χρήστες και αξιοποιεί διευθύνσεις IP που ανήκουν στην ${ BRAND_NAME }. Η λειτουργία Quick Connect τους επιλέγει αυτόματα, όπου είναι διαθέσιμοι."
+      ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Ονομάστηκε προς τιμήν των υποστηρικτών από τη διαδικασία συλλογικής χρηματοδότησης που κατέστησαν δυνατή την υλοποίηση του ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } το 2014. Όλες οι premium υπηρεσίες του ${ BRAND_NAME }, σε ένα ενιαίο πρόγραμμα."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Νέες υπηρεσίες ${ BRAND_NAME } χωρίς επιπλέον κόστος"
+      ],
+      "Password vaults": [
+        "Κρύπτες κωδικών πρόσβασης"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive και Pass"
+      ],
+      "Previous versions": [
+        "Προηγούμενες εκδόσεις"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
+      ],
+      "Subscribers only": [
+        "Μόνο συνδρομητές"
+      ],
+      "Ultra servers": [
+        "Διακομιστές Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Διακομιστές Ultra, δεσμευμένοι για εσάς"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Έως ${ limit }"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "VPN devices at once": [
+        "Συσκευές VPN ταυτόχρονα"
       ]
     },
     "VPN B2B cancellation reason": {

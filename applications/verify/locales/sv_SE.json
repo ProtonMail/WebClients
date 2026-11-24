@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Begäran om säkerhetsnyckel avbröts eller löpte ut. Försök igen."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Din enhet kunde inte slutföra begäran om säkerhetsnyckel. Försök igen, eller använd en annan inloggningsmetod."
       ]
     },
     "fido2: Info": {
@@ -1112,7 +1118,7 @@
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+        "Om du har förlorat tillgången till din autentiseringsapp, kan du använda 1 av de 16 återställningskoder som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
@@ -1134,6 +1140,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "För att ta bort restriktionerna kan du uppgradera till ett betalt paket."
@@ -1164,6 +1173,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Kontolösenord"
+      ],
       "Authenticator app": [
         "Autentiseringsapp"
       ],
@@ -1175,9 +1187,6 @@
       ],
       "Hide password": [
         "Dölj lösenord"
-      ],
-      "Password": [
-        "Lösenord"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -1592,9 +1601,6 @@
       "Account temporarily locked": [
         "Konto tillfälligt låst"
       ],
-      "Enter your password": [
-        "Ange ditt lösenord"
-      ],
       "Human verification": [
         "Mänsklig verifiering"
       ],
@@ -1606,6 +1612,9 @@
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ]
     },
     "Validation": {

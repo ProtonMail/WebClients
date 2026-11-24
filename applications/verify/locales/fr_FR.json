@@ -948,8 +948,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La demande de clé de sécurité a été annulée ou a expiré. Veuillez réessayer."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Votre appareil n'a pas pu traiter la demande de clé de sécurité. Veuillez réessayer ou utiliser un autre moyen de connexion."
       ]
     },
     "fido2: Info": {
@@ -1129,6 +1135,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pour garantir la sécurité de votre compte, veuillez confirmer que c'est bien vous avant de continuer."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Pour lever ces restrictions, vous pouvez passer à un abonnement payant."
       ],
@@ -1158,6 +1167,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Mot de passe du compte ${ BRAND_NAME }"
+      ],
       "Authenticator app": [
         "Application d'authentification"
       ],
@@ -1169,9 +1181,6 @@
       ],
       "Hide password": [
         "Masquer le mot de passe"
-      ],
-      "Password": [
-        "Mot de passe"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -1586,9 +1595,6 @@
       "Account temporarily locked": [
         "Compte temporairement verrouillé"
       ],
-      "Enter your password": [
-        "Saisissez votre mot de passe"
-      ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
       ],
@@ -1600,6 +1606,9 @@
       ],
       "Two-factor authentication": [
         "Authentification à deux facteurs"
+      ],
+      "Verify it’s you": [
+        "Vérifiez que c'est bien vous"
       ]
     },
     "Validation": {

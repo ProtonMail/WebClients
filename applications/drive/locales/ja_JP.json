@@ -333,8 +333,8 @@
       "Display navigation bar": [
         "ナビゲーションバーを表示する"
       ],
-      "Don't show this offer again": [
-        "このオファーを今後表示しない"
+      "Don't show this again": [
+        "次回から表示しない"
       ],
       "Done": [
         "完了"
@@ -900,6 +900,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Skip to main content": [
+        "メインコンテンツへスキップ"
+      ],
       "Skip verification": [
         "検証をスキップする"
       ],
@@ -1264,6 +1267,11 @@
         "無料トライアルは ${ timeRemaining } に終了します。"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "閉じる"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -1272,6 +1280,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "オファーは利用できません"
       ]
     },
     "BF2024: Deal details": {
@@ -3336,6 +3349,9 @@
       "Failed to get details, please try again later": [
         "詳細の取得に失敗しました。後ほど再度お試しください。"
       ],
+      "Failed to get invitee keys": [
+        "招待者の暗号鍵の取得に失敗しました"
+      ],
       "Failed to get inviter keys": [
         "招待者の暗号鍵の取得に失敗しました"
       ],
@@ -3344,6 +3360,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "サブスクリプションデータの読み込みに失敗しました。後ほどもう一度お試しください。"
+      ],
+      "Failed to load the membership": [
+        "メンバーシップの読み込みに失敗しました"
+      ],
+      "Failed to load the membership data": [
+        "メンバーシップデータの読み込みに失敗しました"
       ],
       "Failed to load the STL preview": [
         "STLプレビューの読み込みに失敗しました"
@@ -3365,6 +3387,9 @@
       ],
       "Failed to verify invitation": [
         "招待の検証に失敗しました"
+      ],
+      "Failed to verify membership": [
+        "メンバーシップの確認に失敗しました"
       ],
       "File download failed due to empty response": [
         "レスポンスが空のため、ファイルのダウンロードに失敗しました"
@@ -3513,12 +3538,6 @@
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
-      "Organization key must be activated to create invited users": [
-        "招待ユーザーを作成するには、組織の鍵を有効にする必要があります"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
-      ],
       "Part of the file appears to be corrupted": [
         "ファイルの一部が破損しているようです"
       ],
@@ -3642,6 +3661,9 @@
       "Some groups could not be deleted": [
         "一部のグループは削除できませんでした"
       ],
+      "Some invitations could not be loaded": [
+        "一部の招待を読み込めませんでした"
+      ],
       "Some items could not be loaded": [
         "一部のアイテムを読み込めませんでした"
       ],
@@ -3704,9 +3726,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "追加クレジットの最低金額は ${ price } です。"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "最低寄付金額は ${ price } です。"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "アップロードされたファイルが元のファイルと一致しません。もう一度お試しください。"
@@ -4199,8 +4218,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "セキュリティキーのリクエストがキャンセルされたかタイムアウトしました。もう一度お試しください。"
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "このデバイスではセキュリティキーのリクエストを完了できませんでした。もう一度試すか、別のサインイン方法を使用してください。"
       ]
     },
     "fido2: Info": {
@@ -10035,9 +10060,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } のプレミアム機能"
       ],
-      "${ dayDiff } day left": [
-        "残り ${ dayDiff } 日"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
@@ -10266,20 +10288,11 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName }をキャンセルすると失うもの"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。また、以前に付与されたストレージ ボーナスも失われます。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } をキャンセルすると、${ BRAND_NAME } Free にダウングレードされ、最大 1 GB のメール ストレージと最大 5 GB のドライブ ストレージのみが提供されます。無料プランでは追加ユーザーがサポートされていないため、チームの作業が中断されます。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "${ expiryDate }に${ planName }サブスクリプションが終了すると、${ BRAND_NAME } Freeにダウングレードされます。"
       ],
       "Yearly free storage bonuses": [
         "年間無料ストレージボーナス"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName } サブスクリプションには ${ expiryDate } がまだ残っています。残りの時間分のクレジットが ${ BRAND_NAME } アカウントに追加されます。キャンセルする前に、無料プランの制限を超えていないことを確認してください。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } プランは、ビジネスデータと通信を安全に保つだけではありません。コンプライアンス目標をサポートし、ビジネスを目立たせ、チームの連携を保ちます。"
@@ -10883,9 +10896,6 @@
       "Enhance security with 2FA": [
         "2要素認証でセキュリティを強化"
       ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
       "Error": [
         "エラー"
       ],
@@ -11222,6 +11232,9 @@
       "Sort files/folders": [
         "ファイル・フォルダーの並べ替え"
       ],
+      "Special offer": [
+        "特別オファー"
+      ],
       "Start a new import": [
         "新しいインポートを開始"
       ],
@@ -11317,6 +11330,9 @@
       ],
       "Verification failed": [
         "検証に失敗しました"
+      ],
+      "Verify it’s you": [
+        "ご本人確認"
       ],
       "Verify your password": [
         "パスワードの確認"
@@ -11645,6 +11661,11 @@
       ],
       "Replay video": [
         "ビデオを再生"
+      ]
+    },
+    "Visionary upsell": {
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "追加料金なしで${ BRAND_NAME }を使用"
       ]
     },
     "VPN B2B cancellation reason": {

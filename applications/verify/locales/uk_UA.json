@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Запит на отримання ключа безпеки було скасовано або закінчився час очікування. Спробуйте ще раз."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Ваш пристрій не зміг виконати запит на використання ключа безпеки. Спробуйте ще раз або скористайтеся іншим способом входу."
       ]
     },
     "fido2: Info": {
@@ -1178,9 +1184,6 @@
       ],
       "Hide password": [
         "Приховати пароль"
-      ],
-      "Password": [
-        "Пароль"
       ],
       "Phone number": [
         "Номер телефону"
@@ -1609,9 +1612,6 @@
       "Account temporarily locked": [
         "Обліковий запис тимчасово заблоковано"
       ],
-      "Enter your password": [
-        "Введіть ваш пароль"
-      ],
       "Human verification": [
         "Перевірка \"Я не робот\""
       ],
@@ -1623,6 +1623,9 @@
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"
+      ],
+      "Verify it’s you": [
+        "Підтвердьте, що це ви"
       ]
     },
     "Validation": {

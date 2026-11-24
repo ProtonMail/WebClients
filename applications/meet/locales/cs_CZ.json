@@ -70,9 +70,6 @@
       "Now starting recording": [
         "Nyní se spouští nahrávání"
       ],
-      "Reconnected to the meeting": [
-        "Opětovně připojeno ke schůzce"
-      ],
       "Recording saved": [
         "Nahrávka byla uložena"
       ],
@@ -120,9 +117,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Jste jediným účastníkem. Pokud se nikdo nepřipojí, schůzka se za 2 minuty zavře."
-      ],
-      "You have been disconnected from the meeting": [
-        "Byl jste odpojen ze schůzky"
       ],
       "You have been muted by the host": [
         "Byl jste ztlumen hostitelem"
@@ -206,9 +200,6 @@
       ],
       "Continue without camera": [
         "Pokračovat bez fotoaparátu"
-      ],
-      "Continue without mic and camera": [
-        "Pokračovat bez mikrofonu a kamery"
       ],
       "Continue without microphone": [
         "Pokračovat bez mikrofonu"
@@ -366,6 +357,9 @@
       "Kick out ${ participantName }": [
         "Vyhodit ${ participantName }"
       ],
+      "Learn more": [
+        "Více informací"
+      ],
       "Leave": [
         "Opustit"
       ],
@@ -386,6 +380,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
+      ],
+      "More options": [
+        "Více možností"
       ],
       "More options for accounts": [
         "Další možnosti účtů"
@@ -488,9 +485,6 @@
       ],
       "Resume": [
         "Pokračovat"
-      ],
-      "Retry": [
-        "Opakovat"
       ],
       "Return to dashboard": [
         "Zpět na ovládací panel"
@@ -1750,35 +1744,8 @@
       "Enter your username without the domain (@example.com)": [
         "Zadejte své uživatelské jméno bez domény (@example.com)"
       ],
-      "Event deleted": [
-        "Událost smazána"
-      ],
-      "Failed to assign host": [
-        "Přiřazení hostitele selhalo"
-      ],
-      "Failed to create meeting": [
-        "Vytvoření schůzky selhalo"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Vytvoření osobní schůzky selhalo, obnovte prosím stránku"
-      ],
       "Failed to decrypt session key": [
         "Dešifrování klíče relace selhalo"
-      ],
-      "Failed to delete event": [
-        "Nepodařilo se smazat událost"
-      ],
-      "Failed to delete recording": [
-        "Smazání nahrávky selhalo"
-      ],
-      "Failed to delete room": [
-        "Nepodařilo se odstranit místnost"
-      ],
-      "Failed to download recording": [
-        "Stažení nahrávky selhalo"
-      ],
-      "Failed to edit room name": [
-        "Úprava názvu místnosti selhala"
       ],
       "Failed to join meeting. Please try again later.": [
         "Připojení ke schůzce selhalo. Zkuste to prosím později."
@@ -1786,29 +1753,8 @@
       "Failed to join meeting. Please try again.": [
         "Nepodařilo se připojit ke schůzce. Zkuste to prosím znovu."
       ],
-      "Failed to lock meeting": [
-        "Uzamknutí schůzky selhalo"
-      ],
       "Failed to rotate personal meeting link": [
         "Obnovení odkazu na osobní schůzku selhalo"
-      ],
-      "Failed to send chat message. Please try again.": [
-        "Nepodařilo se odeslat zprávu v chatu. Zkuste to prosím znovu."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Nepodařilo se odeslat reakci pomocí emoji. Zkuste to prosím znovu."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Nepodařilo se odeslat reakci. Zkuste to prosím znovu."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Nepodařilo se zahájit schůzku. Zkuste to prosím znovu."
-      ],
-      "Failed to start recording": [
-        "Spuštění nahrávání selhalo"
-      ],
-      "Failed to unlock meeting": [
-        "Odemknutí schůzky selhalo"
       ],
       "Incorrect backup password. Please try again.": [
         "Nesprávné záložní heslo. Zkuste to prosím znovu."
@@ -1818,9 +1764,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Nesprávné druhé heslo. Zkuste to prosím znovu."
-      ],
-      "Invalid meeting link": [
-        "Neplatný odkaz na schůzku"
       ],
       "Invalid URL": [
         "Neplatná URL"
@@ -1843,9 +1786,6 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
-      "Room deleted": [
-        "Místnost odstraněna"
-      ],
       "Screen share is not supported on mobile browsers": [
         "Sdílení obrazovky není v mobilních prohlížečích podporováno"
       ],
@@ -1863,12 +1803,6 @@
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
-      ],
-      "The meeting password is incorrect": [
-        "Heslo ke schůzce je nesprávné"
-      ],
-      "The meeting password is invalid": [
-        "Heslo ke schůzce je neplatné"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
@@ -2104,9 +2038,6 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } potřebuje přístup k mikrofonu, aby vás ostatní během hovoru slyšeli. Můžete jej kdykoli vypnout."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } potřebuje ke spuštění WebRTC. Prosím, aktualizujte svůj prohlížeč nebo zařízení na verzi, která podporuje WebRTC, zkuste jiný prohlížeč, nebo deaktivujte všechna rozšíření, která by jej mohla blokovat."
-      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } a dalších ${ otherParticipantsCount } účastníků právě nahrávají"
       ],
@@ -2143,9 +2074,6 @@
       "(You)": [
         "(Vy)"
       ],
-      "-Removed dangerous URL-": [
-        "-Nebezpečná adresa URL byla odebrána-"
-      ],
       "1 reply draft": [
         "1 rozepsaná odpověď"
       ],
@@ -2176,9 +2104,6 @@
       "camera": [
         "fotoaparát"
       ],
-      "Camera permission denied": [
-        "Oprávnění ke kameře bylo zamítnuto"
-      ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Změny jsou připraveny. Použijte je pro opětovné sestavení náhledu s novými konstantami."
       ],
@@ -2193,15 +2118,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
-      ],
-      "Connection failed": [
-        "Připojení selhalo"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Připojení přerušeno. Znovu se připojujeme…"
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Byla zjištěna chyba připojení. Probíhá pokus o obnovení…"
       ],
       "Connection lost. Reconnecting…": [
         "Připojení ztraceno. Probíhá opětovné připojení…"
@@ -2311,9 +2227,6 @@
       "Get a secure meeting link then add it to your calendar": [
         "Získejte zabezpečený odkaz na schůzku a poté jej přidejte do svého kalendáře"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Přejděte na about:config, vyhledejte media.peerconnection.enabled a nastavte na true."
-      ],
       "Host": [
         "Hostitel"
       ],
@@ -2325,9 +2238,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
-      ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Pokud používáte Firefox, ujistěte se, že je PeerConnection povoleno."
       ],
       "Internet connection lost": [
         "Připojení k Internetu bylo ztraceno"
@@ -2425,9 +2335,6 @@
       "Microphone effects": [
         "Efekty mikrofonu"
       ],
-      "Microphone permission denied": [
-        "Oprávnění k mikrofonu bylo zamítnuto"
-      ],
       "Mute microphone": [
         "Ztlumit mikrofon"
       ],
@@ -2452,14 +2359,8 @@
       "No camera detected": [
         "Nerozpoznán žádný fotoaparát"
       ],
-      "No camera detected.": [
-        "Nerozpoznán žádný fotoaparát."
-      ],
       "No microphone detected": [
         "Nerozpoznán žádný mikrofon"
-      ],
-      "No microphone detected.": [
-        "Nebyl rozpoznán žádný mikrofon."
       ],
       "No publications": [
         "Žádné publikace"
@@ -2478,9 +2379,6 @@
       ],
       "No speaker detected": [
         "Nenalezen žádný reproduktor"
-      ],
-      "Not sent, check your connection.": [
-        "Neodesláno, zkontrolujte své připojení."
       ],
       "Only meetings you created appear here": [
         "Zde se zobrazí pouze schůzky, které jste vytvořili"
@@ -2503,14 +2401,8 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Vložte svůj odkaz ${ MEET_APP_NAME } pro připojení k zabezpečené schůzce"
       ],
-      "Permissions not given.": [
-        "Oprávnění nebyla udělena."
-      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Povolte prosím přístup k vašemu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pro nejlepší zážitek."
-      ],
-      "Please try again or try another browser": [
-        "Zkuste to prosím znovu, nebo zkuste jiný prohlížeč"
       ],
       "Poor connection": [
         "Slabé připojení"
@@ -2529,12 +2421,6 @@
       ],
       "Reactions": [
         "Reakce"
-      ],
-      "Reconnected successfully": [
-        "Úspěšně znovu připojeno"
-      ],
-      "Reconnecting to meeting...": [
-        "Znovu se připojujeme ke schůzce…"
       ],
       "Reconnecting…": [
         "Opětovné připojování…"
@@ -2629,9 +2515,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Pořadatel vás z této schůzky odebral. Pokud se jedná o chybu, požádejte ho o novou pozvánku."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Odkaz na schůzku, který jste se pokusili otevřít, neexistuje nebo vypršel. Ujistěte se, že je odkaz správný, nebo místo toho zahajte novou zabezpečenou schůzku."
-      ],
       "This conversation started before you joined.": [
         "Tato konverzace začala předtím, než jste se připojili."
       ],
@@ -2640,9 +2523,6 @@
       ],
       "This meeting is being recorded": [
         "Tato schůzka je nahrávána"
-      ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Tato schůzka je uzamčena. Pro připojení kontaktujte hostitele."
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Tato schůzka dosáhla časového limitu bezplatného plánu. Upgradujte svůj plán, abyste v budoucích hovorech prodloužili délku schůzek."
@@ -2682,9 +2562,6 @@
       ],
       "Turn on camera": [
         "Zapnout fotoaparát"
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Nelze se znovu připojit ke schůzce. Zkuste se připojit znovu nebo schůzku opustit."
       ],
       "unlimited meeting": [
         "neomezené schůzky"
@@ -2757,21 +2634,6 @@
       ],
       "Your always available meeting room": [
         "Vaše vždy dostupná zasedací místnost"
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Váš prohlížeč zablokoval přístup k vaší kameře a mikrofonu. Chcete-li přístup povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Váš prohlížeč zablokoval přístup k vaší kameře. Chcete-li přístup povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Váš prohlížeč zablokoval přístup k mikrofonu. Chcete-li jej povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Váš prohlížeč zablokoval přístup k vašemu sdílení obrazovky. Chcete-li sdílení povolit, upravte nastavení prohlížeče a znovu se připojte k hovoru."
-      ],
-      "Your browser or device isn’t supported": [
-        "Váš prohlížeč nebo zařízení není podporováno"
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
@@ -2877,6 +2739,12 @@
       "Enabled": [
         "Povoleno"
       ],
+      "End date": [
+        "Datum ukončení"
+      ],
+      "End time": [
+        "Čas ukončení"
+      ],
       "Ended": [
         "Ukončeno"
       ],
@@ -2958,9 +2826,6 @@
       "Participants join after you approve them": [
         "Účastníci se připojí poté, co je schválíte"
       ],
-      "Password": [
-        "Heslo"
-      ],
       "Phone number": [
         "Telefonní číslo"
       ],
@@ -2996,6 +2861,12 @@
       ],
       "Selected Speaker": [
         "Vybraný reproduktor"
+      ],
+      "Start date": [
+        "Datum zahájení"
+      ],
+      "Start time": [
+        "Čas zahájení"
       ],
       "Subscribed": [
         "Odebíráno"
@@ -3065,11 +2936,6 @@
         "Uložit a zkopírovat odkaz"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Váš prohlížeč nebo software zařízení nepodporuje ${ MEET_APP_NAME }. ${ MEET_APP_NAME } vyžaduje ke spuštění WebAssembly (Wasm). Prosím, aktualizujte svůj prohlížeč nebo zařízení na verzi, která podporuje Wasm, nebo zkuste použít jiný prohlížeč."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Jelikož jste jediným účastníkem této schůzky, schůzka bude automaticky ukončena. Chcete zůstat v této schůzce?"
@@ -3083,20 +2949,12 @@
         "Zůstat na schůzce"
       ]
     },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Zahájení režimu Obraz v obraze selhalo"
-      ]
-    },
     "Notification": {
       "Coming soon": [
         "Již brzy"
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
-      ],
-      "Could not send feedback": [
-        "Nelze odeslat zpětnou vazbu"
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
@@ -3106,9 +2964,6 @@
       ],
       "Successfully rotated your personal meeting": [
         "Úspěšně jste změnili vaši osobní schůzku"
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "Nemůžete odeslat zpětnou vazbu ke schůzce, které jste se nezúčastnili"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -3388,9 +3243,6 @@
       "Constants": [
         "Konstanty"
       ],
-      "Couldn't prepare the recording": [
-        "Nepodařilo se připravit nahrávku"
-      ],
       "Create new room": [
         "Vytvořit novou místnost"
       ],
@@ -3402,9 +3254,6 @@
       ],
       "Delete recording?": [
         "Smazat nahrávku?"
-      ],
-      "Enter your password": [
-        "Zadejte své heslo"
       ],
       "Epoch": [
         "Epocha"
@@ -3426,9 +3275,6 @@
       ],
       "Info": [
         "Informace"
-      ],
-      "Invalid meeting link": [
-        "Neplatný odkaz na schůzku"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -3556,6 +3402,9 @@
       "Two-factor authentication": [
         "Dvoufázové ověření"
       ],
+      "Verify it’s you": [
+        "Potvrďte, že jste to vy"
+      ],
       "Waiting room": [
         "Čekárna"
       ],
@@ -3572,9 +3421,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Rozostření pozadí není ve vašem prohlížeči podporováno"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Vytvořte nový odkaz na schůzku. Stávající odkaz přestane fungovat."
       ],
@@ -3611,23 +3457,8 @@
       "Connection is taking longer than expected": [
         "Připojení trvá déle, než se očekávalo"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Nepodařilo se získat přístup ke kameře nebo mikrofonu. Můžete je zkusit znovu povolit pomocí ovládacích prvků schůzky."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Nepodařilo se získat přístup ke kameře. Můžete ji zkusit znovu povolit pomocí ovládacích prvků schůzky."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Nepodařilo se získat přístup k mikrofonu. Můžete jej zkusit znovu povolit pomocí ovládacích prvků schůzky."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "Připojení STUN UDP selhalo, zkouší se připojení přes TURN…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "Časový limit pro připojení STUN UDP vypršel, zkouší se připojení přes TURN"
       ],
       "Trying another route…": [
         "Zkouší se jiná trasa…"

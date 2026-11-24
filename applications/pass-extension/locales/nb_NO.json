@@ -1056,8 +1056,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } svarte ikke i tide."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } svarer ikke."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "En biometrisk opplåsingssjekk pågår allerede."
       ],
       "A desktop unlock check is already in progress.": [
         "En opplåsingssjekk for skrivebordet pågår allerede."
@@ -1940,6 +1949,9 @@
       "${ n } item": [
         "${ n } element",
         "${ n } elementer"
+      ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } ønsker å låse opp nettleserutvidelsen"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } vil alltid være tilgjengelig"
@@ -3211,6 +3223,9 @@
       "Unlock it with your PIN to access the settings": [
         "Lås den opp med PIN-koden din for å få tilgang til innstillingene"
       ],
+      "unlock the browser extension": [
+        "lås opp nettleserutvidelsen"
+      ],
       "Unpinning item...": [
         "Løser element..."
       ],
@@ -3237,6 +3252,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Oppgrader til en betalt plan for å opprette flere hvelv."
+      ],
+      "Use biometrics to unlock": [
+        "Bruk biometri for å låse opp"
       ],
       "User's access removed": [
         "Brukerens tilgang fjernet"

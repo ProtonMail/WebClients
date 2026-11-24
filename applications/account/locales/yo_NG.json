@@ -674,9 +674,6 @@
       "Contact sales": [
         "Kàn sí ẹgbẹ́ ìtajà"
       ],
-      "Contact support": [
-        "Kàn sí àtìlẹ́yìn"
-      ],
       "Contact Support Center": [
         "Kàn sí Àárín Àtìlẹ́yìn"
       ],
@@ -926,11 +923,8 @@
       "Don't show again": [
         "Má fi hàn mọ́"
       ],
-      "Don't show this offer again": [
-        "Má fi ìpèsè yìí hàn mọ́"
-      ],
-      "Donate": [
-        "Gbọnwọ́ sáwo"
+      "Don't show this again": [
+        "Ẹ má fi hàn mi mọ́"
       ],
       "Done": [
         "Ti tán"
@@ -1228,9 +1222,6 @@
       ],
       "Get verification code": [
         "Gba kóòdù ìjẹ́rìísí"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "Ẹ gba àdírẹ́sì ${ MAIL_APP_NAME } tirẹ̀"
       ],
       "Go back": [
         "Padà sí ẹ̀yìn"
@@ -1637,6 +1628,9 @@
       "Remove": [
         "Yọ ọ́ kúrò"
       ],
+      "Remove ${ name }": [
+        "Yọ ${ name } kúrò"
+      ],
       "Remove all other devices": [
         "Yọ àwọn irin iṣẹ́ mìíràn gbogbo kúrò"
       ],
@@ -1982,6 +1976,9 @@
       "Skip": [
         "Fò ó"
       ],
+      "Skip to main content": [
+        "Fò kọjá sí àkóri àkọ́kọ́"
+      ],
       "Skip verification": [
         "Fò ìjẹ́rìísí"
       ],
@@ -2074,9 +2071,6 @@
       ],
       "Try for free": [
         "Ẹ gbìyànjú ní ọ̀fẹ́"
-      ],
-      "Try payment again": [
-        "Gbìyànjú ìsanwó lẹ́ẹ̀kan"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Ẹ tún gbìyànjú láti fipamọ́. A kò lè fipamọ́ nítorí: ${ saveError }"
@@ -6328,9 +6322,6 @@
       "Delete this condition": [
         "Pa ìpèdè yìí rẹ́"
       ],
-      "Edit conditions": [
-        "Ṣe àtúkọ àwọn ìpòsí"
-      ],
       "Got it": [
         "Ó yá"
       ],
@@ -7197,9 +7188,6 @@
       "Could not read part of this file: ${ message }": [
         "A kò lè kà apá kan fáìlì yìí: ${ message }."
       ],
-      "Could not save preference": [
-        "A kò lè fipamọ́ ìyànfẹ́ náà."
-      ],
       "Could not unlock the parent folder": [
         "A kò lè ṣí olórí àwọn fóldà náà sílẹ̀."
       ],
@@ -7838,9 +7826,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Iye krẹ́díìtì tí a lè fi kún kéré jù ni ${ price }."
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Ìwapọ̀ owó ìfúnra lọ́wọ́ jẹ́ ${ price }."
       ],
       "The policy name must be between 3 and 40 characters.": [
         "Orúkọ ìlànà náà gbọdọ̀ wà láàrin 3 àti 40 àmì."
@@ -9107,16 +9092,6 @@
         "Mọ̀ síi"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "Tẹ̀ àdírẹ́sì ímeèlì yín wọlé"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "A ó fi ìwé ìjẹ́rìísí náà ránṣẹ́ sí ibí."
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "áàpù wẹ́ẹ̀bù"
@@ -9482,29 +9457,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "Ìgbésẹ̀ rọrùn kan òní láti rí i dájú pé ọmọ yín ní ààbò lórí ayélujára lọ́lá"
-      ],
       "Activate your reserved email address": [
         "Ṣí àdírẹ́sì ímeèlì tí ẹ kọ̀ sí"
-      ],
-      "Address reservation voucher": [
-        "Ìwé ìjẹ́rìísí ìkọ̀ sí àdírẹ́sì"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "Ẹ gbọnwọ́ sáwo fún ${ BRAND_NAME } Foundation"
       ],
       "Enter verification code": [
         "Tẹ̀ kóòdù ìjẹ́rìísí wọlé"
       ],
       "Recover activation voucher": [
         "Gbà ìwé ìjẹ́rìísí ìṣíṣẹ́ padà"
-      ],
-      "Reserve child's email address": [
-        "Kọ̀ sí àdírẹ́sì ímeèlì fún ọmọ yín"
-      ],
-      "We emailed you the voucher": [
-        "A ti fi fùchá náà ránṣẹ́ ní ímeèlì fún yín"
       ]
     },
     "Headline": {
@@ -11515,9 +11475,6 @@
       "Groups": [
         "Àwọn ẹgbẹ́"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "Ràn àwọn ébí mìírán lọ́wọ́ kí wọ́n fún àwọn ọmọ wọn ní ìbẹ̀rẹ̀ ààbò lórí ayélujára. Ṣe alábàápín àṣeyọrí pàtàkì yìí kí àwọn mìírán sì gbọ́."
-      ],
       "here": [
         "níbí"
       ],
@@ -11529,9 +11486,6 @@
       ],
       "High Priority": [
         "Ìpàtàkì gíga"
-      ],
-      "How it works": [
-        "Bí ó ṣe ń ṣiṣẹ́"
       ],
       "How to perform a signed-in reset": [
         "Bí a ṣe lè tún ọ̀rọ̀ ìgbaniwọlé ṣe nígbà tí a ti wọlé"
@@ -11763,9 +11717,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Ẹ kan jẹ́rìísí ohun tí ẹ yàn, a ó ṣe ìyókù náà."
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "Tọ́jú ìwé ìjẹ́rìísí náà dáadáa títí ẹ yóò fi lò ó, ní ${ DRIVE_APP_NAME } fún àpẹẹrẹ."
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "Ẹ jẹ́ kí àlàyé yín túbọ̀ wà ní ààbò, kí ó sì jẹ́ ti àṣírí pẹ̀lú àwọn ìtọ́sọ́nà àti ìmọ̀ràn wọ̀nyí."
@@ -12352,9 +12303,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "Gba àwọn ìwífúnni fún ${ categoryLabel }"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "Gba ìwé ìjẹ́rìísí ìkọ̀ sí náà nípa ímeèlì. Ìwọ yín tàbí ọmọ náà lè lo ó láti ṣí àdírẹ́sì náà ṣiṣẹ́ láàárín àwọn ọdún 15 tí ń bọ̀. ${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "Àwọn sáfà tí a ti lò láìpẹ́:"
       ],
@@ -12601,9 +12549,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Àwọn sáfà kan lè má hàn nínú àkójọ tí ó wà ní òkè yìí. Ẹ wá wọn nípa orúkọ sáfà (fún àpẹẹrẹ, AT#62)."
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "Àṣìṣe kan wáyé. Jọ̀wọ́, ẹ tún gbìyànjú tàbí kí ẹ kàn sí ẹ̀ka àtìlẹ́yìn oníbàárà."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Ẹ tọ́ka ojú òpó tí a gba láàyè láti jẹ́rìísí pẹ̀lú SAML SSO."
       ],
@@ -12777,9 +12722,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Ojú òpó tí a fi ń jẹ́ kí a mọ̀ pé ẹ kò ṣètò Àkántì ${ BRAND_NAME } kan ti wá sí òpin. Jọ̀wọ́, ẹ bá àwọn ẹgbẹ́ àtìlẹ́yìn wa sọ̀rọ̀ láti yanju ìṣòro yìí."
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "Iye owó tọrẹ ti ó pọ̀ jùlọ ni ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Àtúnṣe dátà tó ṣẹ̀ṣẹ̀ ṣẹlẹ̀ jù, láì ka àwọn ìrúfin."
@@ -13041,9 +12983,6 @@
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Láti kó olùmúlò yìí lọ, ẹ gban ìdẹ̀sì rẹ̀ nínú ${ provider.adminConsoleName } yín."
-      ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "Láti dènà ìlòburúú tàbí irọ́, a ń tọrẹ owó àtìlẹ́yìn tí ó kéré jùlọ tí ń jẹ́ ${ minimumDonation }. Owó yìí ń tìlẹ́yìn ìṣẹ́ ${ protonFoundationLink } láti dáàbò bò ó lọ̀wọ́ àṣírí ayélujára ní àgbáyé, ó sì ń ran wa lọ́wọ́ láti dáàbò bo ìran tí ń bọ̀."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Láti tẹ̀ síwájú, ẹ yàn ọ̀nà ìgbàpadà àkántì kan kí a lè jẹ́rìísí àbẹ̀wọ̀ náà."
@@ -13309,9 +13248,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "A lè fi fọ́n ìgbàpadà yín rán kóòdù ìjẹ́rìísí kan láti tún ọ̀rọ̀ ìgbaniwọlé yín ètò ṣe, àti láti bá yín sọ̀rọ̀ tí a bá rí ìṣe tí kò bójú mu."
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "A kò lè parí ìṣura owó náà. Jọ̀wọ́, ẹ tún gbìyànjú."
-      ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "A kò lè fi ímeèlì rán àwọn ìwé owó sí àdírẹ́sì ímeèlì yín. A ti dá ìṣètò ìwé owó láìfọwọ́yi dúró títí tí ẹ yóò fi mú àdírẹ́sì náà dé ojú ìwọ̀n."
       ],
@@ -13440,9 +13376,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Nígbà tí ẹ bá yọ sáfà kan kúrò ní ipa ọ̀nà kan, ó máa wọ inú àsìkò ìpàárẹ̀ ti ọjọ́ 10. A lè fi sáfà yìí sí ipa ọ̀nà tuntun, ṣùgbọ́n a kò lè yí orílẹ̀-èdè rẹ̀ padà."
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "Nígbà tí ẹ bá ṣetán láti ṣí àdírẹ́sì náà ṣiṣẹ́, ẹ ṣe àyẹ̀wò kóòdù QR tàbí lo ojú òpó tí ń bẹ nínú ìwé ìjẹ́rìísí náà."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Nígbà ìmúnádóko ìforúkọsílẹ̀ yín, a ó fi krẹ́díìtì èyíkéyìí tí ó wà ní ọ̀wọ́ sílò kí a tó fi owó lé ọ̀nà ìsanwó tí ó wà ní òkè yẹn."
@@ -13911,9 +13844,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Ìdánwò yín ó tan lẹ́yìn ${ timeRemaining }."
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "Ìwé ìjẹ́rìísí yín fún àdírẹ́sì ímeèlì ${ BRAND_NAME } tí ẹ kọ̀ sí: ${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -14614,6 +14544,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Ẹ ní ìráàyèsí sí ${ PASS_APP_NAME } ní ìbámu àṣírí láti inú tẹ́mínàlì, èyí tí ó dára fún kíkọ ìwé àṣẹ, automation, àti ìgbésẹ̀ ìdàgbàsókè ìṣẹ́."
       ],
+      "Access tokens": [
+        "Àwọn amì ìráàyèsí"
+      ],
       "Account holder": [
         "Oní àkántì"
       ],
@@ -14920,9 +14853,6 @@
       "Choose a name for the generated certificate file": [
         "Yàn orúkọ kan fún fáìlì ìjẹ́rìísí tí a ti ṣẹ̀dá"
       ],
-      "Choose an address to reserve for your child": [
-        "Yan àdírẹ́sì kan láti fi pa mọ́ fún ọmọ yín"
-      ],
       "Choose your billing": [
         "Yan ìsanwó yín"
       ],
@@ -15139,12 +15069,6 @@
       "Don't show this again": [
         "Ẹ má fi èyí hàn mọ́"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "Gbọnwọ́ sáwo ${ minimumDonation } tàbí jù bẹ́ẹ̀ lọ fún ${ BRAND_NAME } Foundation"
-      ],
-      "Donation amount": [
-        "Iye owó ìtìlẹ́yìn"
-      ],
       "Drive": [
         "Ibi ìpamọ́"
       ],
@@ -15240,9 +15164,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Tẹ̀ ọ̀rọ̀ ìgbaniwọlé wọlé fún kọ́kọ́rọ́ tí ó ní ìtẹ̀ka: ${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "Tẹ̀ àdírẹ́sì ímeèlì yín wọlé"
       ],
       "Enter your password": [
         "Ẹ tẹ̀ ọ̀rọ̀ ìgbaniwọlé yín sínú"
@@ -16069,9 +15990,6 @@
       "Tips and insights": [
         "Ìmọ̀ràn àti ìmọ̀ jínjìn"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "Láti ṣí i ṣiṣẹ́, ẹ ṣe àyẹ̀wò kóòdù QR tàbí kí ẹ lọ sí:"
-      ],
       "To help us improve, please explain why you are leaving.": [
         "Kí a lè dàgbà sókè, jọ̀wọ́ sọ ìdí tí ẹ fi ń kúrò."
       ],
@@ -16243,17 +16161,11 @@
       "You don't have permissions": [
         "Ẹ kò ní àṣẹ"
       ],
-      "Your activation code:": [
-        "Kóòdù ìṣíṣẹ́ yín:"
-      ],
       "Your calendar URL": [
         "URL kàlẹ́ndà yín"
       ],
       "Your credit balance": [
         "Iwọn owó krẹ́díìtì yín"
-      ],
-      "Your email address": [
-        "Àdírẹ́sì ímeèlì yín"
       ],
       "Your password (admin)": [
         "Ọ̀rọ̀ ìgbaniwọlé yín (alákòóso)"
@@ -16269,9 +16181,6 @@
       ],
       "Your recovery phone number": [
         "Nọ́mbà fọ́n ìgbàpadà yín"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "Ìwé ìjẹ́rìísí yín fún àdírẹ́sì ímeèlì ${ BRAND_NAME } tí ẹ kọ̀ sí:"
       ],
       "Zero-access architecture": [
         "Àgbékalẹ̀ tí kò fún ẹnìkankan ní ìráàyèsí"
@@ -16439,9 +16348,6 @@
       ],
       "${ labelName } updated": [
         "A ti mú ${ labelName } dé ojú ìwọ̀n"
-      ],
-      "Preference saved": [
-        "A ti fipamọ́ àwọn ìyànfẹ́."
       ]
     },
     "Label; import email": {
@@ -16464,9 +16370,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } Foundation"
-      ],
       "Activity log": [
         "Àkọsílẹ̀ ìṣẹ́"
       ],
@@ -16714,20 +16617,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "Àwọn olùmúlò àti àdírẹ́sì"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "Ímeèlì"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17278,9 +17167,6 @@
       "${ BRAND_NAME } Account": [
         "Àkántì ${ BRAND_NAME }"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "Ìgbésẹ̀ kékeré kan lónìí láti ríi dájú pé ọmọ yín ní ààbò ayélujára lọ́jọ́ iwájú. Fi àdírẹ́sì ímeèlì ti àṣírí ${ BRAND_NAME } pa mọ́ fún ọmọ yín."
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "Ṣí àdírẹ́sì ímeèlì àṣírí ${ BRAND_NAME } tí a kọ̀ sí fún ọmọ yín, kí ẹ sì ṣètò àkántì rẹ̀"
       ],
@@ -17316,9 +17202,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "Mú àkántì ${ BRAND_NAME } ti ọmọ yín bọ̀ sípò | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "Fi ímeèlì àṣírí ọmọ yín pa mọ́ | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Tún ọ̀rọ̀ ìgbaniwọlé àkántì ${ BRAND_NAME } yín ṣe"
@@ -18656,17 +18539,11 @@
       "1 email per month": [
         "Ímeèlì 1 ní oṣù kan"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 ímeèlì ní oṣù kan. Ẹ gba àwọn ìròyìn àṣírí tí ó tuntun jùlọ àti ohun tí ó ń ṣẹlẹ̀ ní àgbáyé ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 ímeèlì ní oṣù mẹ́ta kan"
       ],
       "1-2 emails per month": [
         "Ímeèlì 1 sí 2 ní oṣù kan"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "Ímeèlì 1 sí 4 ní ọdún kan. Àwọn ìkìlọ̀ láti jẹ́ kí àwọn ọ̀nà ìmúgbàpadà yín má ba ti parun."
       ],
       "2-4 emails per year": [
         "2 sí 4 ímeèlì ní ọdún kan"
@@ -18691,9 +18568,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Ní àkọ́kọ́ oṣù yín ti lílo ọ̀kan nínú àwọn ọjà ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Àwọn ìbánisọ̀rọ̀ ímeèlì"
       ],
       "In-app notifications": [
         "Àwọn ìwífúnni nínú áàpù"
@@ -20506,9 +20380,6 @@
       ],
       "Address": [
         "Àdírẹ́sì"
-      ],
-      "Amount": [
-        "Iye owó"
       ],
       "Anderson": [
         "Ògúnrìndé"
@@ -23987,9 +23858,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } àti ${ VPN_SHORT_APP_NAME } pẹ̀lú àwọn àfikún àbùdá"
       ],
-      "${ dayDiff } day left": [
-        "Ọjọ́ ${ dayDiff } ṣẹ̀kù"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Áàpù dẹ́sítọ̀pù ${ MAIL_APP_NAME }"
       ],
@@ -24245,12 +24113,6 @@
       "What you give up when you cancel ${ planName }": [
         "Ohun tí ẹ yóò kọ̀ sílẹ̀ nígbà tí ẹ bá fagi lé ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Nígbà tí ẹ bá fagi lé ${ planName }, a máa rẹ̀ yín sílẹ̀ sí ${ BRAND_NAME } Free, èyí tí kò fi ànìfà kí ó jù 1 GB ìfipamọ́ Mail àti 5 GB ìfipamọ́ Drive lọ. Ẹ máa sankú àwọn ànìfàní ìfipamọ́ tí a ti fún yín tẹ́lẹ̀ náà."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Nígbà tí ẹ bá fagi lé ${ planName }, a yóò rẹ̀ yín sílẹ̀ sí ${ BRAND_NAME } Free, èyí tí kò fún yín ní ju 1 GB ìfipamọ́ Mail àti 5 GB ìfipamọ́ Drive lọ. Àwọn ará ẹgbẹ́ yín yóò ní ìdàmú nínú iṣẹ́ wọn nítorí pé Free plan kò tìlẹ́yìn àwọn olùmúlò àfikún."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Nígbà tí ìforúkọsílẹ̀ ${ planName } yín bá parí ní ${ expiryDate }, a yóò rẹ̀ yín sílẹ̀ sí Free plan ${ BRAND_NAME }."
       ],
@@ -24259,9 +24121,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Ẹ lè máa tẹ̀síwájú láti gbádùn àwọn ànfààní gbogbo ètò yín ìsinsìnyí títí di ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ìforúkọsílẹ̀ yín ${ planName } wà ní ${ expiryDate } tó ṣẹ̀kù. A máa fi àwọn krẹ́díìtì fún àsìkò tó ṣẹ̀kù sínú àkántì ${ BRAND_NAME } yín. Ríi dájú pé ẹ kò kọjà àwọn àápẹ́nù Free plan kí ẹ tó fagi lé e. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ètò ${ planName } yín kì ṣe kí ó ń dáàbò bo dátà iṣẹ́ yín àti ìbánisọ̀rọ̀ yín nìkan. Ó ń tìlẹ́yìn àwọn àfojúsùn ìmọ̀ra òfin yín, ó ń mú kí iṣẹ́ yín yàtọ̀ sí ti àwọn mìíràn, ó sì ń so ẹgbẹ́ yín mọ́ ara wọn."
@@ -24815,6 +24674,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "Àwọn ìṣe"
+      ],
       "Estimated size": [
         "Ìṣirò títóbi"
       ],
@@ -24842,9 +24704,6 @@
       ],
       "CSV field": [
         "Ààyè CSV"
-      ],
-      "Edit": [
-        "Ṣe àtúkọ rẹ̀"
       ],
       "Email address": [
         "Àdírẹ́sì ímeèlì"
@@ -25833,9 +25692,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ẹ tẹ àwọn àlàyé àkántì ${ BRAND_NAME } yín sílẹ̀ láti darapọ̀ mọ́ ètò bẹ́tà ${ app }"
       ],
-      "Enter your password": [
-        "Tẹ̀ ọ̀rọ̀ ìgbaniwọlé yín sínú"
-      ],
       "Error": [
         "Àṣìṣe"
       ],
@@ -26378,12 +26234,6 @@
       ],
       "Privacy": [
         "Àṣírí"
-      ],
-      "Problem processing your payment": [
-        "Iṣòro nígbà ìtọ́jú ìsanwó yín"
-      ],
-      "Problem processing your request": [
-        "Iṣòro nígbà ìṣíṣe ìbéèrè yín"
       ],
       "Processing...": [
         "Ó ń ṣiṣẹ́..."

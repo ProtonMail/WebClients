@@ -20,6 +20,9 @@
       "camera on": [
         "kamera på"
       ],
+      "host": [
+        "värd"
+      ],
       "Meeting controls": [
         "Möteskontroller"
       ],
@@ -31,6 +34,9 @@
       ],
       "microphone on": [
         "mikrofon på"
+      ],
+      "speaking": [
+        "talar"
       ]
     },
     "Accessibility announcement": {
@@ -85,6 +91,9 @@
       "Dark ${ BRAND_NAME } background applied": [
         "Mörk ${ BRAND_NAME }-bakgrund tillämpad"
       ],
+      "Disconnected from the meeting": [
+        "Frånkopplad från mötet"
+      ],
       "Library background applied": [
         "Biblioteksbakgrund tillämpad"
       ],
@@ -97,8 +106,8 @@
       "Now starting recording": [
         "Börjar spela in nu"
       ],
-      "Reconnected to the meeting": [
-        "Återansluten till mötet"
+      "Reconnected": [
+        "Anslöt igen"
       ],
       "Recording saved": [
         "Inspelning sparad"
@@ -147,9 +156,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Du är den enda deltagaren. Mötet kommer avslutas om 2 minuter om inte någon ansluter sig."
-      ],
-      "You have been disconnected from the meeting": [
-        "Du har blivit frånkopplad från mötet"
       ],
       "You have been muted by the host": [
         "Du har tystats av värden"
@@ -250,8 +256,8 @@
       "Continue without camera": [
         "Fortsätt utan kamera"
       ],
-      "Continue without mic and camera": [
-        "Fortsätt utan mikrofon och kamera"
+      "Continue without camera and microphone": [
+        "Fortsätt utan kamera och mikrofon"
       ],
       "Continue without microphone": [
         "Fortsätt utan mikrofon"
@@ -439,6 +445,9 @@
       "Layout": [
         "Layout"
       ],
+      "Learn more": [
+        "Lär dig mer"
+      ],
       "Leave": [
         "Lämna"
       ],
@@ -465,6 +474,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
+      ],
+      "More options": [
+        "Fler alternativ"
       ],
       "More options for accounts": [
         "Fler alternativ för konton"
@@ -548,6 +560,9 @@
       "Refresh audio and video tracks": [
         "Uppdatera ljud- och videospår"
       ],
+      "Refresh page": [
+        "Uppdatera sida"
+      ],
       "Refresh screen share track": [
         "Uppdatera spår för skärmdelning"
       ],
@@ -590,9 +605,6 @@
       ],
       "Resume": [
         "Återuppta"
-      ],
-      "Retry": [
-        "Försök igen"
       ],
       "Return to dashboard": [
         "Tillbaka till adminpanel"
@@ -808,6 +820,9 @@
       ],
       "Copy meeting link": [
         "Kopiera möteslänk"
+      ],
+      "Debug": [
+        "Felsökning"
       ],
       "Go to dashboard": [
         "Gå till adminpanel"
@@ -1891,8 +1906,56 @@
       ]
     },
     "Error": {
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Ett meddelande krävs för att rapportera brott mot upphovsrätt eller stulen data"
+      ],
       "An error occurred": [
         "Ett fel uppstod"
+      ],
+      "Background blur failed. Turn it off and on again.": [
+        "Bakgrundsoskärpa misslyckades. Slå av den och på den igen."
+      ],
+      "Background blur isn’t supported in this browser": [
+        "Bakgrundsoskärpa stöds inte i den här webbläsaren"
+      ],
+      "Background effects aren’t supported in this browser": [
+        "Bakgrundseffekter stöds inte i denna webbläsare"
+      ],
+      "Background failed. Pick it again.": [
+        "Bakgrund misslyckades. Välj den igen."
+      ],
+      "Background limit reached. Remove one to add another.": [
+        "Bakgrundsgräns nådd. Ta bort en för att lägga till en ny."
+      ],
+      "Background not added. Check your connection and try again.": [
+        "Bakgrund lades inte till. Kolla din anslutning och försök igen."
+      ],
+      "Background not added. Try again.": [
+        "Bakgrund lades inte till. Försök igen."
+      ],
+      "Background not removed. Check your connection and try again.": [
+        "Bakgrund togs inte bort. Kolla din anslutning och försök igen."
+      ],
+      "Background not removed. Try again.": [
+        "Bakgrund togs inte bort. Försök igen."
+      ],
+      "Background not saved in this browser.": [
+        "Bakgrund sparades inte i denna webbläsare."
+      ],
+      "Backgrounds didn’t load. You can’t add new ones right now.": [
+        "Bakgrunder lades inte till. Du kan inte lägga till nya just nu."
+      ],
+      "Bookmark password is not available": [
+        "Lösenord för bokmärke är inte tillgängligt"
+      ],
+      "Camera and microphone didn’t start. Try turning them on again.": [
+        "Kamera och mikrofon startade inte. Försök slå på dem igen."
+      ],
+      "Camera blocked": [
+        "Kameran är blockerad"
+      ],
+      "Camera didn’t start. Try turning it on again.": [
+        "Kamera startade inte. Försök slå på den igen."
       ],
       "Cannot add photo to album without a valid name": [
         "Kan inte lägga till foto i album utan ett giltigt namn"
@@ -1912,17 +1975,29 @@
       "Cannot verify who uploaded this file": [
         "Kan inte verifiera vem som laddade upp denna fil"
       ],
+      "Caption language not changed. Try again.": [
+        "Språket för bildtexten har inte ändrats."
+      ],
+      "Character limit reached. Remove some text to add a mention.": [
+        "Teckengränsen har nåtts. Ta bort lite text för att kunna lägga till ett omnämnande."
+      ],
+      "Character limit reached. Remove some text to add an emoji.": [
+        "Teckengränsen har nåtts. Ta bort lite text för att kunna lägga till en emoji."
+      ],
+      "Chat unavailable. Refresh the page to use it again.": [
+        "Chatt otillgänglig. Uppdatera sidan för att använda den igen."
+      ],
+      "Check your audio settings and try again.": [
+        "Kontrollera dina ljudinställningar och försök igen."
+      ],
+      "Connection lost. Captions will start again when you’re reconnected.": [
+        "Anslutningen avbröts. Textningen återupptas när anslutningen har upprättats igen."
+      ],
       "Copy operation aborted": [
         "Kopieringsåtgärd avbröts"
       ],
       "Copying item to a non-folder is not allowed": [
         "Kopiering av objekt till utanför en mapp är inte tillåtet"
-      ],
-      "Could not add this background. Check your connection and try again.": [
-        "Kunde inte lägga till denna bakgrund. Kontrollera din anslutning och försök igen."
-      ],
-      "Could not add this background. Please try again.": [
-        "Kunde inte lägga till denna bakgrund. Försök igen."
       ],
       "Could not find an available name": [
         "Kunde inte hitta ett tillgängligt namn"
@@ -1933,17 +2008,20 @@
       "Could not read part of this file: ${ message }": [
         "Kunde inte läsa del av denna fil: ${ message }"
       ],
-      "Could not remove this background. Check your connection and try again.": [
-        "Kunde inte ta bort bakgrunden. Kontrollera din anslutning och försök igen."
-      ],
-      "Could not remove this background. Please try again.": [
-        "Kunde inte ta bort denna bakgrund. Försök igen."
-      ],
       "Could not unlock the parent folder": [
         "Kunde inte låsa upp den överordnade mappen"
       ],
       "Could not unlock this item": [
         "Kunde inte låsa upp detta objekt"
+      ],
+      "Couldn’t admit participant. Try again.": [
+        "Kunde inte tillåta deltagare. Försök igen."
+      ],
+      "Couldn’t admit participants. Try again.": [
+        "Kunde inte tillåta deltagare. Försök igen."
+      ],
+      "Couldn’t deny participant. Try again.": [
+        "Kunde inte neka deltagare. Försök igen."
       ],
       "Couldn’t play the recording on this speaker.": [
         "Kunde inte spela upp inspelningen på denna högtalare."
@@ -1951,8 +2029,14 @@
       "Couldn’t play the test sound on this speaker.": [
         "Kunde inte spela upp testljudet på denna högtalare."
       ],
+      "Couldn’t prepare the recording": [
+        "Kunde inte förbereda inspelningen"
+      ],
       "Couldn’t start the microphone test.": [
         "Kunde inte starta mikrofontestet."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Upprättande av dokument utanför mappar är inte tillåtet"
       ],
       "Creating files in non-folders is not allowed": [
         "Upprättande av mappar utanför mappar är inte tillåtet"
@@ -1966,32 +2050,35 @@
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
       ],
+      "Download failed. Try again.": [
+        "Nedladdning misslyckades. Försök igen."
+      ],
       "Email is not valid": [
         "E-post är inte giltig"
+      ],
+      "End time must be after start time": [
+        "Sluttid måste vara efter starttid"
       ],
       "Enter 6 digits": [
         "Ange 6 siffror"
       ],
+      "Enter a date": [
+        "Ange ett datum"
+      ],
+      "Enter a meeting name": [
+        "Ange ett mötesnamn"
+      ],
+      "Enter a time": [
+        "Ange en tid"
+      ],
       "Enter your username without the domain (@example.com)": [
         "Ange ditt användarnamn utan domänen (@example.com)"
       ],
-      "Event deleted": [
-        "Händelsen borttagen"
+      "Event not deleted. Try again.": [
+        "Händelse togs inte bort. Försök igen."
       ],
       "Expiration date cannot be in the past": [
         "Utgångsdatum kan inte vara i det förflutna"
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "Misslyckades med att släppa in deltagarna. Försök igen."
-      ],
-      "Failed to assign host": [
-        "Misslyckades att tilldela värd"
-      ],
-      "Failed to create meeting": [
-        "Misslyckades att skapa möte"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Misslyckades att skapa personligt möte, uppdatera sidan"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Misslyckades avkryptera innehållsnyckel: ${ message }"
@@ -2008,29 +2095,17 @@
       "Failed to decrypt item name: ${ message }": [
         "Kunde inte dekryptera objekt: ${ message }"
       ],
+      "Failed to decrypt node key: ${ message }": [
+        "Misslyckades avkryptera nodnyckel: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Misslyckades att avkryptera revisionsmetadata"
+      ],
       "Failed to decrypt session key": [
         "Misslyckades att avkryptera sessionsnyckel"
       ],
-      "Failed to delete event": [
-        "Misslyckades att ta bort händelse"
-      ],
-      "Failed to delete recording": [
-        "Misslyckades att ta bort inspelning"
-      ],
-      "Failed to delete room": [
-        "Misslyckades att ta bort rum"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "Misslyckades med att neka deltagaren. Försök igen."
-      ],
-      "Failed to download recording": [
-        "Misslyckades att ladda ner inspelning"
-      ],
-      "Failed to edit meeting": [
-        "Misslyckades att redigera möte"
-      ],
-      "Failed to edit room name": [
-        "Misslyckades att redigera rumsnamn"
+      "Failed to get invitee keys": [
+        "Misslyckades med att hämta nycklar för den inbjudne"
       ],
       "Failed to get inviter keys": [
         "Misslyckades med att hämta inbjudningsnycklar"
@@ -2041,41 +2116,35 @@
       "Failed to join meeting. Please try again.": [
         "Misslyckades att gå med i möte. Försök igen."
       ],
-      "Failed to lock meeting": [
-        "Misslyckades att låsa möte"
+      "Failed to load the membership": [
+        "Misslyckades med att ladda medlemsskapet"
+      ],
+      "Failed to load the membership data": [
+        "Misslyckades med att ladda medlemskapsdatan"
       ],
       "Failed to rotate personal meeting link": [
         "Misslyckades att rotera personlig möteslänk"
       ],
-      "Failed to send chat message. Please try again.": [
-        "Misslyckades att skicka chattmeddelande. Försök igen."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Misslyckades att skicka emoji-reaktion. Försök igen."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Misslyckades att skicka reaktion. Försök igen."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Misslyckades att starta möte. Försök igen."
-      ],
-      "Failed to start recording": [
-        "Misslyckades att starta inspelning"
-      ],
-      "Failed to unlock meeting": [
-        "Misslyckades att låsa upp möte"
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "Misslyckades med att uppdatera inställningar för väntrummet. Försök igen."
-      ],
       "Failed to verify invitation": [
         "Misslyckades med att verifiera inbjudan"
+      ],
+      "Failed to verify membership": [
+        "Misslyckades med att bekräfta medlemsskapet"
+      ],
+      "Feedback not sent. Try again.": [
+        "Feedback skickades inte. Försök igen."
       ],
       "File download failed due to empty response": [
         "Filnedladdning misslyckades på grund av tomt svar"
       ],
       "File has no revision": [
         "Fil har ingen version"
+      ],
+      "Host not changed. Try again.": [
+        "Värd ändrades inte. Försök igen."
+      ],
+      "If you think this was a mistake, try joining again.": [
+        "Om du tror att detta var ett misstag, försök gå med på nytt."
       ],
       "Image preview not found": [
         "Förhandsvisning av bild hittades inte"
@@ -2088,9 +2157,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "Felaktigt andra lösenord. Försök igen."
-      ],
-      "Invalid meeting link": [
-        "Ogiltig möteslänk"
       ],
       "Invalid URL": [
         "Ogiltig URL"
@@ -2107,11 +2173,59 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
       ],
-      "Message is too long to send": [
-        "Meddelandet är för långt för att skickas"
+      "Link removed": [
+        "Länk borttagen"
       ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "Mikrofonåtkomst är blockerad. Tillåt det i dina webbläsarinställningar."
+      "Live captions didn’t start. Turn them on to try again.": [
+        "Liveundertexter startade inte. Aktivera dem för att försöka igen."
+      ],
+      "Live captions failed": [
+        "Liveundertexter misslyckades"
+      ],
+      "Live captions failed. Turn them on to try again.": [
+        "Liveundertexter misslyckades. Aktivera dem för att försöka igen."
+      ],
+      "Live captions not updated. Try again.": [
+        "Liveundertexter uppdaterades inte. Försök igen."
+      ],
+      "Live captions paused": [
+        "Liveundertexter pausades"
+      ],
+      "Live captions stopped. Turn them on to try again.": [
+        "Liveundertexter stoppades. Aktivera dem för att försöka igen."
+      ],
+      "Meeting full": [
+        "Möte är fullt"
+      ],
+      "Meeting link not found": [
+        "Möteslänk hittades inte"
+      ],
+      "Meeting not created. Try again.": [
+        "Möte skapades inte. Försök igen."
+      ],
+      "Meeting not locked. Try again.": [
+        "Möte låstes inte. Försök igen."
+      ],
+      "Meeting not unlocked. Try again.": [
+        "Möte låstes inte upp. Försök igen."
+      ],
+      "Meeting not updated. Try again.": [
+        "Möte uppdaterades inte. Försök igen."
+      ],
+      "Message not sent. Check your connection and try again.": [
+        "Meddelande skickades inte. Kolla din anslutning och försök igen."
+      ],
+      "Message too long. Remove some text and try again.": [
+        "Meddelande är för långt. Ta bort lite text och försök igen."
+      ],
+      "Microphone blocked": [
+        "Mikrofon är blockerad"
+      ],
+      "Microphone blocked. Allow it in your browser settings.": [
+        "Mikrofon är blockerad. Tillåt det i dina webbläsarinställningar."
+      ],
+      "Microphone didn’t start. Try turning it on again.": [
+        "Mikrofon startade inte. Försök slå på den igen."
       ],
       "Missing inviter email": [
         "Saknar e-post för inbjudan"
@@ -2138,14 +2252,29 @@
       "Name must not be empty": [
         "Namn får inte vara tomt"
       ],
+      "No camera detected": [
+        "Ingen kamera upptäcktes"
+      ],
       "No file data was received. Please try again.": [
         "Ingen fildata togs emot. Försök igen."
+      ],
+      "No microphone detected": [
+        "Ingen mikrofon upptäcktes"
+      ],
+      "Noise cancellation turned off because your device is running slowly. Turn it back on in audio settings.": [
+        "Brusreducering stängdes av eftersom din enhet körs långsamt. Slå på den igen i ljudinställningar."
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
+      "Not sent. Check your connection.": [
+        "Inte skickat. Kontrollera din anslutning."
+      ],
       "Only admins can convert external invitations": [
         "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Only part of the meeting was recorded.": [
+        "Endast en del av mötet spelades in."
       ],
       "Operation aborted": [
         "Åtgärd avbröts"
@@ -2162,6 +2291,12 @@
       "Passwords do not match": [
         "Lösenorden matchar inte"
       ],
+      "Paste the full meeting link": [
+        "Klistra in den fullständiga möteslänken"
+      ],
+      "Personal meeting not created. Refresh the page to try again.": [
+        "Personligt möte skapades inte. Uppdatera sidan för att försöka igen."
+      ],
       "Photo is already in the target album": [
         "Foto är redan i målalbum"
       ],
@@ -2170,6 +2305,21 @@
       ],
       "Pick a JPEG, PNG or WebP image.": [
         "Välj en JPEG, PNG eller WebP-bild."
+      ],
+      "Picture-in-picture failed. Try again.": [
+        "Bild-i-bild misslyckades. Försök igen."
+      ],
+      "Reaction not sent. Try again.": [
+        "Reaktion skickades inte. Försök igen."
+      ],
+      "Recording didn’t start. Try again.": [
+        "Inspelning påbörjades inte. Försök igen."
+      ],
+      "Recording not deleted. Try again.": [
+        "Inspelning togs inte bort. Försök igen."
+      ],
+      "Recording stopped unexpectedly. Start a new recording to continue.": [
+        "Inspelning stoppades oväntat. Starta en ny inspelning för att fortsätta."
       ],
       "Renaming root item is not allowed": [
         "Byta namn på root objekt är inte tillåtet"
@@ -2180,14 +2330,20 @@
       "Request timed out": [
         "Förfrågan gjorde timeout"
       ],
-      "Room deleted": [
-        "Rum borttaget"
+      "Room name not updated. Try again.": [
+        "Rumsnamn uppdaterades inte. Försök igen."
+      ],
+      "Room not deleted. Try again.": [
+        "Rum togs inte bort. Försök igen."
       ],
       "Screen share is not supported on mobile browsers": [
         "Skärmdelning stöds inte på mobila webbläsare"
       ],
       "Screen share is not supported on your device": [
         "Skärmdelning stöds inte på din enhet"
+      ],
+      "Setting not saved. Try again.": [
+        "Inställning sparades inte. Försök igen."
       ],
       "Signature is missing": [
         "Signatur saknas"
@@ -2210,11 +2366,17 @@
       "Some file parts failed to upload. Please try again.": [
         "Några fildelar misslyckades att laddas upp. Försök igen."
       ],
+      "Some invitations could not be loaded": [
+        "Några inbjudningar kunde inte laddas"
+      ],
       "Some items could not be loaded": [
         "Några objekt kunde inte laddas"
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "Something went wrong while saving it.": [
+        "Något gick fel när den sparades."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
@@ -2225,11 +2387,14 @@
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
       ],
-      "The meeting password is incorrect": [
-        "Möteslösenordet är felaktigt"
+      "The host didn’t admit you": [
+        "Värden släppte inte in dig"
       ],
-      "The meeting password is invalid": [
-        "Möteslösenordet är felaktigt"
+      "The host didn’t admit you in time. Send a new request to join.": [
+        "Värden släppte inte in dig i tid. Skicka en ny begäran om att gå med."
+      ],
+      "The link may be incomplete or expired. Check it, or start a new meeting.": [
+        "Den här länken kan vara inkomplett eller ha gått ut. Kolla den, eller påbörja ett nytt möte."
       ],
       "The selected microphone is no longer available.": [
         "Den valda mikrofonen är inte längre tillgänglig."
@@ -2237,11 +2402,8 @@
       "The uploaded file does not match the original. Please try again.": [
         "Den uppladdade filen matchar inte originalet. Försök igen."
       ],
-      "This background could not be saved in this browser.": [
-        "Denna bakgrund kunde inte sparas i denna webbläsare."
-      ],
-      "This emoji can’t be used as a reaction": [
-        "Den här emojin kan inte användas som en reaktion"
+      "This emoji can’t be used as a reaction. Pick another one.": [
+        "Den här emojin kan inte användas som en reaktion. Välj en annan."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
@@ -2258,14 +2420,14 @@
       "This file has no version available to download": [
         "Denna fil har ingen version tillgänglig att ladda ner"
       ],
+      "This file is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Denna filen är för stor. Välj en som är under ${ maxMegabytes } MB."
+      ],
       "This file version could not be uploaded": [
         "Denna filversion kunde inte laddas upp"
       ],
-      "This image could not be read. Pick another one.": [
-        "Denna bild kunde inte läsas. Välj en annan."
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "Denna bild är för stor. Välj en som är under ${ maxMegabytes } MB."
+      "This image can’t be opened. Pick another one.": [
+        "Denna bild kunde inte öppnas. Välj en annan."
       ],
       "This item has no image preview": [
         "Detta objekt har ingen bild förhandsgranskning"
@@ -2279,6 +2441,18 @@
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Detta möte är i en äldre version. Värden måste avsluta det och uppdatera Meet för att starta om med den senaste versionen."
       ],
+      "To share your screen, allow it in your browser settings, then rejoin the call.": [
+        "För att dela din skärm, tillåt det i dina webbläsarinställningar, gå sedan med i samtalet på nytt."
+      ],
+      "To use them, allow them in your browser settings, then rejoin the call.": [
+        "För att använda dem, tillåt dem i dina webbläsarinställningar, gå sedan med i samtalet på nytt."
+      ],
+      "To use your camera, allow it in your browser settings, then rejoin the call.": [
+        "För att använda din kamera, tillåt det i dina webbläsarinställningar, gå sedan med i samtalet på nytt."
+      ],
+      "To use your microphone, allow it in your browser settings, then rejoin the call.": [
+        "För att använda din mikrofon, tillåt det i dina webbläsarinställningar, gå sedan med i samtalet på nytt."
+      ],
       "Too many server errors, please try again later": [
         "För många serverfel, försök igen senare"
       ],
@@ -2287,6 +2461,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
+      ],
+      "Turn live captions off and on again.": [
+        "Slå på och av liveundertexter igen."
       ],
       "Unknown error": [
         "Okänt fel"
@@ -2303,6 +2480,9 @@
       "Verification keys for ${ signatureType } are not available": [
         "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
       ],
+      "Waiting room setting not saved. Try again.": [
+        "Väntrumsinställning sparades inte. Försök igen."
+      ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
       ],
@@ -2318,6 +2498,9 @@
       "You can only upload a new version to a file": [
         "Du kan bara ladda upp en ny version till en fil"
       ],
+      "You can send feedback only for meetings you joined.": [
+        "Du kan bara skicka feedback för möten du var med på."
+      ],
       "You can update a public link for your own files only": [
         "Du kan endast uppdatera en offentlig länk för dina egna filer"
       ],
@@ -2326,9 +2509,6 @@
       ],
       "You do not have access to this shared item": [
         "Du har inte åtkomst till detta delade objekt"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "Du har nått det maximala antalet anpassade bakgrunder."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Din webbläsare har slut på lagringsutrymme. Vi har sparat inspelningen fram till denna punkt."
@@ -2375,8 +2555,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Begäran om säkerhetsnyckel avbröts eller löpte ut. Försök igen."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Din enhet kunde inte slutföra begäran om säkerhetsnyckel. Försök igen, eller använd en annan inloggningsmetod."
       ]
     },
     "fido2: Info": {
@@ -2519,6 +2705,16 @@
       " and ": [
         " och "
       ],
+      "${ count } person has access but isn't in the call": [
+        "${ count } person har åtkomst men är inte i samtalet",
+        "${ count } personer har åtkomst men är inte i samtalet"
+      ],
+      "${ hiddenParticipantTitle }. Meeting almost full": [
+        "${ hiddenParticipantTitle }. Möte nästan fullt"
+      ],
+      "${ hiddenParticipantTitle }. Meeting full": [
+        "${ hiddenParticipantTitle }. Möte fullt"
+      ],
       "${ maxParticipants } participant limit reached": [
         "Gränsen på ${ maxParticipants } deltagare har uppnåtts"
       ],
@@ -2531,8 +2727,11 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } behöver mikrofonåtkomst så att andra kan höra dig under samtalet. Du kan stänga av den när som helst."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } behöver WebRTC för att köras. Uppdatera din webbläsare eller enhet till en version som stöder WebRTC, prova en annan webbläsare eller inaktivera eventuella tillägg som kan blockera det."
+      "${ MEET_APP_NAME } needs WebAssembly, which is off or not available in this browser. Turn it on, or use another browser.": [
+        "${ MEET_APP_NAME } behöver WebAssembly, vilken är avstängd eller inte tillgänglig i den här webbläsaren. Slå på den eller använd en annan webbläsare."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.": [
+        "${ MEET_APP_NAME } behöver WebRTC, vilken är avstängd eller blockerad i den här webbläsaren. Slå på den, stäng av tillägg som blockerar den, eller använd en annan webbläsare."
       ],
       "${ meetingName } has ended": [
         "${ meetingName } har slutat"
@@ -2546,6 +2745,12 @@
       ],
       "${ participantName } is recording": [
         "${ participantName } spelar in"
+      ],
+      "${ participantName } joined": [
+        "${ participantName } gick med"
+      ],
+      "${ participantName } left": [
+        "${ participantName } kvar"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (du) presenterar"
@@ -2583,11 +2788,14 @@
       "(You)": [
         "(Du)"
       ],
-      "-Removed dangerous URL-": [
-        "-Tog bort farlig URL-"
-      ],
       "1 reply draft": [
         "1 svarsutkast"
+      ],
+      "A participant joined": [
+        "En deltagare gick med"
+      ],
+      "A participant left": [
+        "En deltagare lämnade"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
@@ -2619,6 +2827,9 @@
       "Are you sure you want to stop recording?": [
         "Är du säker på att du vill stoppa inspelning?"
       ],
+      "Ask the host to unlock it so you can join.": [
+        "Be värden låsa upp det så du kan gå med."
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -2627,9 +2838,6 @@
       ],
       "Available with a paid plan": [
         "Tillgänglig med ett betalt paket"
-      ],
-      "Background effects are not supported on your browser": [
-        "Bakgrundseffekter stöds inte i din webbläsare"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
@@ -2646,9 +2854,6 @@
       "Camera effects": [
         "Kameraeffekter"
       ],
-      "Camera permission denied": [
-        "Kamerabehörighet nekad"
-      ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Ändringarna är redo. Tillämpa för att bygga om förhandsgranskningen med de nya konstanterna."
       ],
@@ -2664,14 +2869,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
-      "Connection failed": [
-        "Anslutning misslyckades"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Anslutning avbruten. Återansluter …"
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Anslutningsproblem upptäckt. Försöker att återställa …"
+      "Connection lost": [
+        "Anslutning förlorad"
       ],
       "Connection lost. Reconnecting…": [
         "Anslutning förlorad. Återansluter …"
@@ -2699,6 +2898,9 @@
       ],
       "Custom combination": [
         "Anpassad kombination"
+      ],
+      "Debug": [
+        "Felsök"
       ],
       "Decrypting meetings...": [
         "Dekrypterar möten …"
@@ -2745,6 +2947,9 @@
       "End-to-end encryption is active for this chat.": [
         "End-to-end-kryptering är aktiv för denna chatt."
       ],
+      "enter": [
+        "enter"
+      ],
       "Enter code": [
         "Ange kod"
       ],
@@ -2762,6 +2967,18 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
+      "Epoch ${ epoch }": [
+        "Epok ${ epoch }"
+      ],
+      "Epoch ${ previousEpoch } → ${ epoch }": [
+        "Epok ${ previousEpoch } → ${ epoch }"
+      ],
+      "Error at epoch ${ epoch }": [
+        "Fel på epok ${ epoch }"
+      ],
+      "Event deleted": [
+        "Händelsen borttagen"
       ],
       "Everyone has been disconnected from the call.": [
         "Alla har kopplats bort från samtalet."
@@ -2793,9 +3010,6 @@
       "Get a secure meeting link then add it to your calendar": [
         "Skaffa en säker möteslänk och lägg sedan till den i din kalender"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Gå till about:config, sök efter media.peerconnection.enabled och ställ in det på true."
-      ],
       "Host": [
         "Värd"
       ],
@@ -2812,19 +3026,16 @@
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+        "Om du har förlorat tillgången till din autentiseringsapp, kan du använda 1 av de 16 återställningskoder som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Om du använder Firefox, se till att PeerConnection är aktiverat."
+      "In Firefox, open ${ configPage } and set ${ preference } to ${ value }.": [
+        "I Firefox, öppna ${ configPage } och ställ in ${ preference } till ${ value }."
       ],
       "Incoming video off": [
         "Inkommande video av"
       ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "Begäran om att gå med har löpt ut. Värden släppte inte in dig i tid. Skicka en ny begäran om att gå med."
       ],
       "Joined ${ roomNameLabel }": [
         "Gick med ${ roomNameLabel }"
@@ -2883,17 +3094,20 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Möte utan begränsningar. Uppgradera för att ta bort tidsgränsen på 1 timme och bjud in upp till 100 deltagare."
       ],
+      "Meeting almost full": [
+        "Möte nästan fullt"
+      ],
       "Meeting ended": [
         "Möte slutat"
+      ],
+      "Meeting full": [
+        "Möte fullt"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Mötet fullt (${ maxParticipants } deltagare)"
       ],
       "Meeting is decrypting...": [
         "Mötet dekrypteras …"
-      ],
-      "Meeting is full": [
-        "Möte är fullt"
       ],
       "Meeting link": [
         "Möteslänk"
@@ -2931,9 +3145,6 @@
       "Microphone effects": [
         "Mikrofoneffekter"
       ],
-      "Microphone permission denied": [
-        "Mikrofonbehörighet nekad"
-      ],
       "More options": [
         "Fler alternativ"
       ],
@@ -2961,14 +3172,8 @@
       "No camera detected": [
         "Ingen kamera upptäckt"
       ],
-      "No camera detected.": [
-        "Ingen kamera upptäckt."
-      ],
       "No microphone detected": [
         "Ingen mikrofon upptäckt"
-      ],
-      "No microphone detected.": [
-        "Ingen mikrofon upptäckt."
       ],
       "No publications": [
         "Inga publikationer"
@@ -2987,9 +3192,6 @@
       ],
       "No speaker detected": [
         "Ingen högtalare upptäckt"
-      ],
-      "Not sent, check your connection.": [
-        "Inte skickat, kontrollera din anslutning."
       ],
       "notify everyone here": [
         "avisera alla här"
@@ -3030,14 +3232,8 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Klistra in din ${ MEET_APP_NAME }-länk för att gå med i ett säkert möte."
       ],
-      "Permissions not given.": [
-        "Behörigheter har inte getts."
-      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Aktivera åtkomst till din ${ microphoneLinkButton }${ andString }${ cameraLinkButton } för den bästa upplevelsen."
-      ],
-      "Please try again or try another browser": [
-        "Försök igen eller prova annan webbläsare"
       ],
       "Poor connection": [
         "Dålig anslutning"
@@ -3060,11 +3256,11 @@
       "Reactions": [
         "Reaktioner"
       ],
-      "Reconnected successfully": [
-        "Återanslutningen lyckades"
+      "Reconnected": [
+        "Anslöt igen"
       ],
-      "Reconnecting to meeting...": [
-        "Återansluter till möte …"
+      "Reconnecting didn’t work. Check your internet connection, then rejoin.": [
+        "Det gick inte att återansluta. Kontrollera din internetanslutning och gå sedan med igen."
       ],
       "Reconnecting…": [
         "Återansluter …"
@@ -3104,6 +3300,9 @@
       ],
       "Rejecting": [
         "Avisar"
+      ],
+      "Room deleted": [
+        "Rum borttaget"
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Schemalägg ditt nästa möte. Skapa ett konto för att schemalägga möten med din kalender."
@@ -3180,11 +3379,17 @@
       "Thank you for joining.": [
         "Tack för att du går med."
       ],
+      "The host has another meeting in progress.": [
+        "Värden har ett annat pågående möte."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Värden har tagit bort dig från detta möte. Om detta var ett misstag, be värden att bjuda in dig igen."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Möteslänken du försökte öppna finns inte eller kan ha löpt ut. Se till att länken är korrekt eller starta ett nytt säkert möte istället."
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "Värden är inte i mötet just nu. Deltagarantalet kommer att stämma igen när värden går med."
+      ],
+      "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
+        "Den här webbläsaren stöder inte ändpunkt-till-ändpunkt-krypteringen som ${ MEET_APP_NAME } använder för att skydda varje möte."
       ],
       "This conversation started before you joined.": [
         "Den här konversationen började innan du gick med."
@@ -3198,14 +3403,14 @@
       "This meeting is being recorded": [
         "Detta möte spelas in"
       ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Detta möte är låst. Kontakta värden för att gå med."
-      ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Det här mötet har nått tidsgränsen för ett kostnadsfritt paket. Uppgradera för att förlänga din möteslängd i framtida samtal."
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Denna inspelning kommer att tas bort permanent från denna enhet. Denna åtgärd kan inte ångras."
+      ],
+      "This usually means a lost connection. It should clear on its own.": [
+        "Det här betyder vanligtvis en förlorad anslutning. Den borde rensa sig själv."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Detta kommer avsluta mötet för alla deltagare och stoppa din skärmdelning."
@@ -3224,6 +3429,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+      ],
+      "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
+        "För att gå med, använd en annan webbläsare eller enhet, eller ${ MEET_APP_NAME } appen på din telefon."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "För att schemalägga en händelse behöver du **ett gratis ${ BRAND_NAME }-konto** så att vi kan spara händelsen. Det tar bara några sekunder."
@@ -3245,9 +3456,6 @@
       ],
       "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
         "Slå på Firefox i ${ settingsPath }. Starta sedan om Firefox och återanslut till samtalet."
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Kunde inte återansluta till mötet. Gå med igen eller lämna."
       ],
       "unlimited meeting": [
         "obegränsat möte"
@@ -3318,6 +3526,9 @@
       "You have too many meetings in progress": [
         "Du har för många pågående möten"
       ],
+      "You joined": [
+        "Du gick med"
+      ],
       "You left ${ meetingName }": [
         "Du lämnade ${ meetingName }"
       ],
@@ -3330,9 +3541,6 @@
       "You were removed from the meeting": [
         "Du togs bort från mötet"
       ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "Du blev inte insläppt i detta möte. Du kan försöka gå med igen om du tror att det var ett misstag."
-      ],
       "You will leave the meeting. Others will continue.": [
         "Du kommer lämna mötet. Andra kommer fortsätta."
       ],
@@ -3344,24 +3552,6 @@
       ],
       "Your always available meeting room": [
         "Ditt alltid åtkomliga mötesrum"
-      ],
-      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
-        "Dina bakgrunder kunde inte laddas, så en ny kan inte läggas till just nu."
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Din webbläsare har blockerat åtkomst till din kamera och mikrofon. För att aktivera dem, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Din webbläsare har blockerat åtkomst till din kamera. För att aktivera den, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Din webbläsare har blockerat åtkomst till din mikrofon. För att aktivera den, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Din webbläsare har blockerat åtkomst till din skärmdelning. För att aktivera det, uppdatera dina webbläsarinställningar och gå med i samtalet igen."
-      ],
-      "Your browser or device isn’t supported": [
-        "Din webbläsare eller enhet stöds inte"
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
@@ -3377,6 +3567,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Kontolösenord"
+      ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
       ],
@@ -3407,6 +3600,9 @@
       ],
       "Audio": [
         "Ljud"
+      ],
+      "Audio: ${ microphoneLabel }": [
+        "Ljud: ${ microphoneLabel }"
       ],
       "Authenticator app": [
         "Autentiseringsapp"
@@ -3456,6 +3652,9 @@
       "Dark ${ BRAND_NAME } background": [
         "Mörk ${ BRAND_NAME }-bakgrund"
       ],
+      "Debug": [
+        "Felsök"
+      ],
       "Delete": [
         "Ta bort"
       ],
@@ -3485,6 +3684,12 @@
       ],
       "Enabled": [
         "Aktiverat"
+      ],
+      "End date": [
+        "Slutdatum"
+      ],
+      "End time": [
+        "Sluttid"
       ],
       "Ended": [
         "Avslutad"
@@ -3582,9 +3787,6 @@
       "Participants join after you approve them": [
         "Deltagare går med efter att du har godkänt dem"
       ],
-      "Password": [
-        "Lösenord"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -3633,6 +3835,12 @@
       "Spoken language": [
         "Talat språk"
       ],
+      "Start date": [
+        "Startdatum"
+      ],
+      "Start time": [
+        "Starttid"
+      ],
       "Subscribed": [
         "Prenumererad"
       ],
@@ -3662,6 +3870,9 @@
       ],
       "Video": [
         "Video"
+      ],
+      "Video: ${ cameraLabel }": [
+        "Video: ${ cameraLabel }"
       ],
       "What happened?": [
         "Vad hände?"
@@ -3712,6 +3923,9 @@
       "Celebrate": [
         "Fira"
       ],
+      "Cheers": [
+        "Tack"
+      ],
       "Coffee": [
         "Kaffe"
       ],
@@ -3724,6 +3938,9 @@
       "Gaming": [
         "Spel"
       ],
+      "Halo": [
+        "Gloria"
+      ],
       "Happy": [
         "Glad"
       ],
@@ -3735,6 +3952,9 @@
       ],
       "Party": [
         "Party"
+      ],
+      "Perk": [
+        "Förmån"
       ],
       "Popcorn": [
         "Popcorn"
@@ -3760,6 +3980,9 @@
       "Thank you": [
         "Tack"
       ],
+      "This is fine": [
+        "Det här är bra"
+      ],
       "Watch left": [
         "Titta vänster"
       ],
@@ -3784,11 +4007,6 @@
         "Spara och kopiera länk"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Din webbläsare eller enhetsmjukvara stöder inte ${ MEET_APP_NAME }. ${ MEET_APP_NAME } kräver WebAssembly (Wasm) för att köras. Uppdatera din webbläsare eller enhet till en version som stöder Wasm, eller prova använda en annan webbläsare."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Eftersom du är den enda deltagaren i detta möte kommer mötet att stängas automatiskt. Vill du stanna kvar i detta möte?"
@@ -3802,12 +4020,22 @@
         "Stanna i mötet"
       ]
     },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Misslyckades att starta bild-i-bild"
-      ]
-    },
     "Meeting schedule": {
+      "Repeats daily": [
+        "Upprepas dagligen"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Upprepas varje ${ weekdayName }"
+      ],
+      "Repeats monthly": [
+        "Upprepas månadsvis"
+      ],
+      "Repeats weekly": [
+        "Upprepas veckovis"
+      ],
+      "Repeats yearly": [
+        "Upprepas årligen"
+      ],
       "Today · ${ monthDay }": [
         "Idag · ${ monthDay }"
       ],
@@ -3822,9 +4050,6 @@
       "Copied to clipboard": [
         "Kopierat till urklipp"
       ],
-      "Could not send feedback": [
-        "Kunde inte skicka feedback"
-      ],
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
       ],
@@ -3836,9 +4061,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "Tack! Din feedback har skickats."
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "Du kan inte skicka feedback för ett möte du inte har varit på"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4142,20 +4364,26 @@
       "Backgrounds": [
         "Bakgrunder"
       ],
+      "Browser not supported": [
+        "Webbläsare stöds inte"
+      ],
       "Camera and microphone are blocked": [
         "Kamera och mikrofon är blockerade"
       ],
       "Camera is blocked": [
         "Kamera är blockerad"
       ],
+      "Can’t join from this browser": [
+        "Kan inte gå med från den här webbläsaren"
+      ],
       "Chat": [
         "Chatt"
       ],
+      "Connection failed": [
+        "Anslutning misslyckades"
+      ],
       "Constants": [
         "Konstanter"
-      ],
-      "Couldn't prepare the recording": [
-        "Kunde inte förbereda inspelningen"
       ],
       "Create new room": [
         "Skapa nytt rum"
@@ -4174,9 +4402,6 @@
       ],
       "Display": [
         "Visa"
-      ],
-      "Enter your password": [
-        "Ange ditt lösenord"
       ],
       "Epoch": [
         "Epoch"
@@ -4204,9 +4429,6 @@
       ],
       "Info": [
         "Info"
-      ],
-      "Invalid meeting link": [
-        "Ogiltig möteslänk"
       ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
@@ -4247,6 +4469,9 @@
       ],
       "Meeting edited": [
         "Mötet redigerat"
+      ],
+      "Meeting locked": [
+        "Möte låstes"
       ],
       "Messaging Layer Security": [
         "Messaging Layer Security"
@@ -4353,6 +4578,9 @@
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
       ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
+      ],
       "Video and audio": [
         "Video och ljud"
       ],
@@ -4378,12 +4606,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Bakgrundsoskärpa stöds inte på din webbläsare"
-      ],
-      "Background effects are not supported on your browser": [
-        "Bakgrundseffekter stöds inte i din webbläsare"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Generera en ny möteslänk. Nuvarande länken kommer sluta fungera."
       ],
@@ -4419,23 +4641,8 @@
       "Connection is taking longer than expected": [
         "Anslutning tar längre tid än väntat"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Kunde inte komma åt kamera eller mikrofon. Du kan försöka aktivera dem igen från möteskontrollerna."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Kunde inte komma åt kamera. Du kan försöka aktivera den igen från möteskontrollerna."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Kunde inte komma åt mikrofon. Du kan försöka aktivera den igen från möteskontrollerna."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "STUN UDP-anslutning misslyckades, försöker med TURN-relä …"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "Tidsgräns för STUN UDP-anslutning nåddes, försöker med TURN-relä"
       ],
       "Trying another route…": [
         "Försöker med en annan väg…"

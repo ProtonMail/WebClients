@@ -23,6 +23,9 @@
       "Dismiss": [
         "Renunțare"
       ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
       "Edit email address": [
         "Editare adresa de e-mail"
       ],
@@ -948,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Solicitarea cheii de securitate a fost anulată sau a expirat. Reîncercați."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dispozitivul nu v-a putut finaliza solicitarea cheii de securitate. Reîncercați sau folosiți o altă metodă de conectare."
       ]
     },
     "fido2: Info": {
@@ -1141,6 +1150,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pentru a contribui la menținerea siguranței contului, confirmați-vă identitatea înainte de a continua."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Pentru a elimina restricția, puteți trece la un plan cu plată."
       ],
@@ -1170,6 +1182,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Parolă cont ${ BRAND_NAME }"
+      ],
       "Authenticator app": [
         "Aplicația Authenticator"
       ],
@@ -1181,9 +1196,6 @@
       ],
       "Hide password": [
         "Ascundere parolă"
-      ],
-      "Password": [
-        "Parola"
       ],
       "Phone number": [
         "Număr de telefon"
@@ -1608,9 +1620,6 @@
       "Account temporarily locked": [
         "Cont blocat temporar"
       ],
-      "Enter your password": [
-        "Introduceți parola"
-      ],
       "Human verification": [
         "Verificare persoană"
       ],
@@ -1622,6 +1631,9 @@
       ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
       ]
     },
     "Validation": {

@@ -4,14 +4,6 @@
     "language": "nb_NO"
   },
   "contexts": {
-    "account": {
-      "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Videresending starter snart. Nye e-poster vil vises i innboksen din."
-      ],
-      "Mail forward stopped": [
-        "Videresending av e-post stoppet"
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
@@ -142,17 +134,8 @@
       "Chat with us": [
         "Snakk med oss"
       ],
-      "Check import progress": [
-        "Kontroller importfremdriften"
-      ],
       "Choose a file or drag it here": [
         "Velg en fil eller dra den hit"
-      ],
-      "Claim this address": [
-        "Gjør krav på denne adressen"
-      ],
-      "Claim your free ${ BRAND_NAME } address": [
-        "Gjør krav på din gratis ${ BRAND_NAME }-adresse"
       ],
       "Clear data": [
         "Tøm data"
@@ -174,9 +157,6 @@
       ],
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
-      ],
-      "Collapse": [
-        "Skjul"
       ],
       "Collapse list": [
         "Skjul liste"
@@ -208,20 +188,8 @@
       "Continue": [
         "Fortsett"
       ],
-      "Continue import": [
-        "Fortsett importen"
-      ],
       "Continue to ${ planOrAppName }": [
         "Fortsett til ${ planOrAppName }"
-      ],
-      "Continue with Free": [
-        "Fortsett med gratis"
-      ],
-      "Continue with Google": [
-        "Fortsett med Google"
-      ],
-      "Continue with Outlook": [
-        "Fortsett med Outlook"
       ],
       "Copy address": [
         "Kopier adresse"
@@ -256,17 +224,8 @@
       "Create new ${ SHEETS_APP_NAME }": [
         "Opprett ny ${ SHEETS_APP_NAME }"
       ],
-      "Create new folder": [
-        "Opprett ny mappe"
-      ],
       "Create new password": [
         "Opprett nytt passord"
-      ],
-      "Customize": [
-        "Tilpass"
-      ],
-      "Customize import": [
-        "Tilpass import"
       ],
       "Decline invitation": [
         "Avslå invitasjon"
@@ -303,9 +262,6 @@
       "Deselect all": [
         "Fjern merket for alle"
       ],
-      "Discard": [
-        "Forkast"
-      ],
       "Dismiss": [
         "Avvis"
       ],
@@ -336,9 +292,6 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
-      "Edit label": [
-        "Rediger etikett"
-      ],
       "Edit phone number": [
         "Rediger telefonnummer"
       ],
@@ -353,9 +306,6 @@
       ],
       "Encrypted": [
         "Kryptert"
-      ],
-      "Expand": [
-        "Utvid"
       ],
       "Explore other plans": [
         "Utforsk andre planer"
@@ -375,8 +325,8 @@
       "Export this version (as docx)": [
         "Eksporter denne versjonen (som docx)"
       ],
-      "Export this version (as odt) (Beta)": [
-        "Eksporter denne versjonen (som odt) (Beta)"
+      "Export this version (as odt)": [
+        "Eksporter denne versjonen (som odt)"
       ],
       "Export this version (as xlsx)": [
         "Eksporter denne versjonen (som xlsx)"
@@ -420,9 +370,6 @@
       "Go to label": [
         "Gå til etikett"
       ],
-      "Google Drive": [
-        "Google Drive"
-      ],
       "Got it": [
         "Skjønner"
       ],
@@ -456,23 +403,11 @@
       "import": [
         "importer"
       ],
-      "Import contacts": [
-        "Importer kontakter"
-      ],
       "Import data": [
         "Importer data"
       ],
       "Import emails, calendars, contacts": [
         "Importer e-poster, kalendere, kontakter"
-      ],
-      "Import from .csv or vCard": [
-        "Importer fra .csv eller vCard"
-      ],
-      "Import from Google": [
-        "Importer fra Google"
-      ],
-      "Import from Outlook": [
-        "Importer fra Outlook"
       ],
       "Keep my subscription": [
         "Behold mitt abonnement"
@@ -492,20 +427,11 @@
       "Make a copy": [
         "Lag en kopi"
       ],
-      "Manage addresses": [
-        "Administrer adresser"
-      ],
       "Manage advanced account protections": [
         "Administrer avansert kontobeskyttelse"
       ],
-      "Manage folders": [
-        "Behandle mapper"
-      ],
       "Manage groups": [
         "Administrer grupper"
-      ],
-      "Manage labels": [
-        "Behandle etiketter"
       ],
       "Manage users/addresses": [
         "Administrer brukere/adresser"
@@ -552,6 +478,9 @@
       "Move to trash": [
         "Flytt til papirkurven"
       ],
+      "New": [
+        "Ny"
+      ],
       "New document": [
         "Nytt dokument"
       ],
@@ -588,8 +517,8 @@
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
-      "OpenDocument Text (.odt) (Beta)": [
-        "OpenDocument-tekst (.odt) (Beta)"
+      "OpenDocument Text (.odt)": [
+        "OpenDocument-tekst (.odt)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -609,17 +538,8 @@
       "Print": [
         "Skriv ut"
       ],
-      "Quit": [
-        "Avslutt"
-      ],
       "Re-sign": [
         "Signér på nytt"
-      ],
-      "Reconnect": [
-        "Koble til på nytt"
-      ],
-      "Reconnect to Gmail": [
-        "Koble til Gmail på nytt"
       ],
       "Recover data": [
         "Gjenopprett data"
@@ -677,9 +597,6 @@
       ],
       "Resend invite": [
         "Send invitasjon på nytt"
-      ],
-      "Reset to default": [
-        "Tilbakestill til standard"
       ],
       "Restore": [
         "Gjenopprett"
@@ -789,17 +706,11 @@
       "Sign up": [
         "Registrer deg"
       ],
-      "Skip verification": [
-        "Hopp over bekreftelse"
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
       ],
       "Sort by": [
         "Sorter etter"
-      ],
-      "Start import": [
-        "Start importen"
-      ],
-      "Stay": [
-        "Bli"
       ],
       "Stop sharing": [
         "Avslutt deling"
@@ -1047,9 +958,6 @@
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved å forlate nå kan det hende at enkelte kontakter ikke blir importert."
-      ],
-      "By leaving now, some events may not be imported": [
-        "Ved å forlate nå kan det hende at enkelte hendelser ikke blir importert."
       ]
     },
     "Apps dropdown": {
@@ -1063,26 +971,6 @@
       ],
       "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktiviteten til nye nivåer. La ${ LUMO_SHORT_APP_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
-      ]
-    },
-    "Attached ics file error": {
-      "Empty ICS file": [
-        "Tom ICS-fil"
-      ],
-      "Invalid event": [
-        "Ugyldig hendelse"
-      ],
-      "Invalid ICS file": [
-        "Ugyldig ICS-fil"
-      ],
-      "Invalid method": [
-        "Ugyldig metode"
-      ],
-      "Unsupported calendar component": [
-        "Ikke støttet kalenderkomponent"
-      ],
-      "Unsupported event": [
-        "Ikke støttet hendelse"
       ]
     },
     "Autocomplete": {
@@ -1547,14 +1435,6 @@
       ],
       "strawberry": [
         "jordbær"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import customization?": [
-        "Avslutte importtilpasning?"
-      ],
-      "Quit import?": [
-        "Avslutt import?"
       ]
     },
     "Contact field label": {
@@ -2505,9 +2385,6 @@
       "Automatically forward incoming email to another email address.": [
         "Videresend automatisk innkommende e-post til en annen e-postadresse."
       ],
-      "Available storage: ${ storageText }": [
-        "Tilgjengelig lagringsplass: ${ storageText }"
-      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for å aktivere organisasjonen din og tilpasse e-postadressen din."
       ],
@@ -2529,17 +2406,11 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser filer enkelt til skyen fra datamaskinen din, og få tilgang til dem fra mobilenheten din."
       ],
-      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "E-poster sendt til ${ connectedAddressText } vil nå vises i ${ MAIL_APP_NAME }."
-      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Oppmuntre bruken av tofaktorautentisering i organisasjonen din for ekstra sikkerhet."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
-      ],
-      "Enough room for years of emails, attachments and more.": [
-        "Nok plass til årevis med e-poster, vedlegg og mer."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Sørg for sikker tilgang til organisasjonsdata, selv om teamet ditt er eksternt eller bruker offentlig WiFi."
@@ -2580,15 +2451,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
       ],
-      "This may happen if permissions were removed or your password changed.": [
-        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
-        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
-      ],
-      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
-        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
-      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
@@ -2601,9 +2463,6 @@
       "To start, give your organization a name.": [
         "For å starte, gi organisasjonen din et navn."
       ],
-      "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
-        "Lås opp 15 GB lagringsplass for kun ${ config.offerPrice }."
-      ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Oppgrader til ${ planName } for å fortsette å dele filer med redigeringstilgang"
       ],
@@ -2613,41 +2472,20 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
       ],
-      "We can't access ${ boldEmails } anymore.": [
-        "Vi får ikke lenger tilgang til ${ boldEmails }."
-      ],
-      "We will pause imports at 80% storage to reserve space for new messages.": [
-        "Vi setter importene på pause ved 80 % lagringsplass for å reservere plass til nye meldinger."
-      ],
-      "We've started importing your emails from Gmail. We'll let you know when it's done.": [
-        "Vi har begynt å importere e-postene dine fra Gmail. Vi gir deg beskjed når det er ferdig."
-      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
       ],
-      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
-      ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan merke for sletting kontaktene du ikke vil at hverken skal slås sammen eller beholdes. Sletting vil bare finne sted etter at fletteknappen er klikket."
-      ],
-      "You can now send emails from ${ BRAND_NAME } using this address.": [
-        "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
       ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Konto- og datagjenopprettingsmetodene dine er angitt, og 2FA er aktivert."
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagjenopprettingsmetoder er angitt."
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import ${ newUserStorageText } of your most recent Gmail messages": [
-        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare ${ newUserStorageText } av de nyeste Gmail-meldingene dine."
-      ],
-      "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "Din gratis ${ MAIL_APP_NAME }-konto har begrenset lagringsplass, så vi importerer bare de nyeste Gmail-e-postene dine."
       ]
     },
     "description": {
@@ -2783,100 +2621,12 @@
         "Del fordelene med planen din med ${ BRAND_NAME } Duo"
       ]
     },
-    "Email body for invitation": {
-      "${ eventTitle } was canceled.": [
-        "${ eventTitle } ble kansellert."
-      ],
-      "All events in this series were updated.": [
-        "Alle hendelsene i denne serien ble oppdatert."
-      ],
-      "DESCRIPTION:": [
-        "BESKRIVELSE:"
-      ],
-      "Here's what changed:": [
-        "Her er hva som er endret:"
-      ],
-      "LOCATION:": [
-        "STED:"
-      ],
-      "NOTE:": [
-        "NOTAT:"
-      ],
-      "This event occurrence was canceled.": [
-        "Denne hendelsesforekomsten ble kansellert."
-      ],
-      "This event occurrence was updated.": [
-        "Denne hendelsesforekomsten ble oppdatert."
-      ],
-      "This event was updated.": [
-        "Denne hendelsen ble oppdatert."
-      ],
-      "TIME:": [
-        "TIDSPUNKT:"
-      ],
-      "TITLE:": [
-        "TITTEL:"
-      ],
-      "You are invited to": [
-        "Du er invitert til"
-      ]
-    },
-    "Email body for invitation (date part)": {
-      "TIME:\n${ formattedStart }": [
-        "Tidspunkt:\n${ formattedStart }"
-      ],
-      "TIME:\n${ formattedStart } (all day)": [
-        "Tidspunkt:\n${ formattedStart } (hele dagen)"
-      ],
-      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
-        "Tidspunkt:\n${ formattedStart } - ${ formattedEnd }"
-      ]
-    },
-    "Email body for invitation (event details part)": {
-      "Removed": [
-        "Fjernet"
-      ]
-    },
-    "Email body for response to invitation": {
-      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } aksepterte din invitasjon til ${ eventTitle }"
-      ],
-      "${ emailAddress } declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } avslo invitasjonen din til ${ eventTitle }"
-      ],
-      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } foreløpig aksepterte invitasjonen din til ${ eventTitle }"
-      ]
-    },
-    "Email subject": {
-      "Cancellation of an event on ${ formattedStart }": [
-        "Avlysning av en hendelse den ${ formattedStart }."
-      ],
-      "Cancellation of an event starting on ${ formattedStart }": [
-        "Avlysning av en hendelse med start den ${ formattedStart }."
-      ],
-      "Invitation for an event on ${ formattedStart }": [
-        "Invitasjon til en hendelse den ${ formattedStart }."
-      ],
-      "Invitation for an event starting on ${ formattedStart }": [
-        "Invitasjon til en hendelse med start den ${ formattedStart }."
-      ],
-      "Update for an event on ${ formattedStart }": [
-        "Oppdatering til en hendelse den ${ formattedStart }."
-      ],
-      "Update for an event starting on ${ formattedStart }": [
-        "Oppdatering til en hendelse med start den ${ formattedStart }."
-      ]
-    },
     "emergency_access": {
       "Trusted contact": [
         "Betrodd kontakt"
       ]
     },
     "Error": {
-      "${ BRAND_NAME } can't connect to your external account": [
-        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen"
-      ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } er oppdatert. Oppfrisk siden."
       ],
@@ -2887,9 +2637,6 @@
         "${ failureItems.length } element kunne ikke flyttes",
         "${ failureItems.length } elementer kunne ikke flyttes"
       ],
-      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
-        "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
-      ],
       "A contact with this email address already exists": [
         "En kontakt med denne e-postadressen finnes allerede"
       ],
@@ -2898,12 +2645,6 @@
       ],
       "A message is required when reporting copyright infringement or stolen data": [
         "En melding er nødvendig når du rapporterer brudd på opphavsrett eller stjålne data"
-      ],
-      "Address could not be added.": [
-        "Adressen kunne ikke legges til."
-      ],
-      "Address primary private key not found": [
-        "Adresse til primærprivatnøkkel ikke funnet"
       ],
       "Already a member of this share": [
         "Allerede et medlem av denne delte ressursen"
@@ -2926,20 +2667,11 @@
       "An error occurred while creating a new document. Please try again.": [
         "Det oppstod en feil under oppretting av et nytt dokument. Prøv på nytt."
       ],
-      "Authentication canceled.": [
-        "Autentisering avbrutt"
-      ],
-      "Authentication error.": [
-        "Autentiseringsfeil"
-      ],
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Siden dette dokumentet lå i en delt mappe, er det bare mappeieren som kan gjenopprette det."
       ],
       "Bookmark password is not available": [
         "Bokmerkepassordet er ikke tilgjengelig"
-      ],
-      "Calendar limit reached": [
-        "Kalendergrensen nådd"
       ],
       "Cannot add photo to album without a valid name": [
         "Kan ikke legge til bilde i albumet uten et gyldig navn"
@@ -3010,22 +2742,11 @@
       "Creating folders in non-folders is not allowed": [
         "Det er ikke tillatt å opprette mapper i elementer som ikke er mapper."
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Fjern valget fra minst ${ calendarsToFixCount } kalender",
-        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Fjern valget fra minst ${ calendarsToFixCount } kalender eller",
-        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere eller"
-      ],
       "Device not found": [
         "Enhet ikke funnet"
       ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
-      ],
-      "Email address is required": [
-        "E-postadresse kreves"
       ],
       "Email is not valid": [
         "E-post er ikke gyldig"
@@ -3035,9 +2756,6 @@
       ],
       "Enter your username without the domain (@example.com)": [
         "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
-      ],
-      "Error decrypting a computer": [
-        "Feil ved dekryptering av datamaskin"
       ],
       "Expiration date cannot be in the past": [
         "Utløpsdatoen kan ikke være i fortiden"
@@ -3129,17 +2847,11 @@
       "First name is too long": [
         "Fornavnet er for langt"
       ],
-      "Folder name cannot be empty.": [
-        "Mappenavn kan ikke være tomt."
-      ],
       "Image preview not found": [
         "Forhåndsvisning av bilde ikke funnet"
       ],
       "Image upload failed": [
         "Bildeopplasting mislyktes"
-      ],
-      "IMAP server is required": [
-        "IMAP-server kreves"
       ],
       "Incorrect backup password. Please try again.": [
         "Feil reservepassord. Forsøk igjen."
@@ -3174,24 +2886,14 @@
       "Item not found": [
         "Element ikke funnet"
       ],
-      "Label name cannot be empty.": [
-        "Etikettnavn kan ikke være tomt."
-      ],
       "Last name is too long": [
         "Etternavnet er for langt"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Eldre offentlig kobling kan ikke oppdateres. Opprett en ny offentlig kobling på nytt."
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
-        "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
-      ],
       "Missing inviter email": [
         "Invitørens e-postadresse mangler"
-      ],
-      "Missing key packet": [
-        "Mangler nøkkelpakke"
       ],
       "Missing signature": [
         "Mangler signatur"
@@ -3214,18 +2916,6 @@
       ],
       "Name must not be empty": [
         "Navn kan ikke være tomt"
-      ],
-      "No calendars found to import": [
-        "Fant ingen kalendere å importere"
-      ],
-      "No contacts found to import": [
-        "Fant ingen kontakter å importere"
-      ],
-      "No drive found to import": [
-        "Ingen disker å importere funnet"
-      ],
-      "No emails found to import - the account does not have an inbox": [
-        "Fant ingen e-poster å importere - kontoen har ikke en innboks"
       ],
       "No file data was received. Please try again.": [
         "Ingen fildata ble mottatt. Prøv på nytt."
@@ -3256,17 +2946,8 @@
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
-      ],
       "Part of the file appears to be corrupted": [
         "En del av filen ser ut til å være ødelagt"
-      ],
-      "Password is required": [
-        "Passord kreves"
       ],
       "Passwords do not match": [
         "Passordene samsvarer ikke"
@@ -3289,10 +2970,6 @@
       "Please enter ZIP code": [
         "Skriv inn postnummer"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Løs den uthevede konflikten for å fortsette.",
-        "Løs de uthevede konfliktene for å fortsette."
-      ],
       "Please provide either a first name, a last name or a display name": [
         "Angi enten et fornavn, et etternavn eller et visningsnavn."
       ],
@@ -3301,15 +2978,6 @@
       ],
       "Please select a state": [
         "Velg en stat"
-      ],
-      "Port is required": [
-        "Port kreves"
-      ],
-      "Primary address key is not decrypted": [
-        "Hovedadressenøkkelen er ikke dekryptert"
-      ],
-      "Primary address key is not decrypted.": [
-        "Hovedadresseøkkelen er ikke dekryptert."
       ],
       "Removed duplicate invitee: ${ joinedInvitee }": [
         "Fjernet duplikat av invitert: ${ joinedInvitee }",
@@ -3366,21 +3034,6 @@
       "Some of the document could not be read, so your changes can't be saved.": [
         "Noe av dokumentet kunne ikke leses, så endringene dine kan ikke lagres."
       ],
-      "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Noen av dine mappenavn er utilgjengelige. Tilpass importen for å redigere disse navnene."
-      ],
-      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Noen av dine mappenavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense. Tilpass importen for å redigere disse navnene."
-      ],
-      "Some of your label names are reserved. Please customize the import to edit these names.": [
-        "Noen av dine etikettnavn er reservert. Tilpass importen for å redigere disse navnene."
-      ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Noen av dine etikettnavn er utilgjengelige. Tilpass importen for å endre disse navnene."
-      ],
-      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
-      ],
       "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
         "Noen av de siste endringene dine kunne ikke lagres, så redigering er deaktivert. Kopier alt du trenger, og last deretter inn på nytt."
       ],
@@ -3389,9 +3042,6 @@
       ],
       "Something went wrong": [
         "Noe gikk galt"
-      ],
-      "Something went wrong while fetching available domains": [
-        "Noe gikk galt under henting av tilgjengelige domener"
       ],
       "Something went wrong. Please try again.": [
         "Noe gikk galt. Forsøk igjen."
@@ -3411,18 +3061,6 @@
       "The email addresses do not match": [
         "E-postadressene samsvarer ikke"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        "Mappenavnet er ikke gyldig. Velg et annet navn."
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        "Mappenavnet er for langt. Velg et annet navn."
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        "Etikettnavnet er ikke gyldig. Velg et annet navn."
-      ],
-      "The label name is too long. Please choose a different name.": [
-        "Etikettnavnet er for langt. Velg et annet navn."
-      ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
         "Den siste oppdateringen du gjorde i dokumentet, er enten for stor eller overskrider den totale grensen for dokumentstørrelse. Redigering er midlertidig deaktivert. Endringen blir ikke lagret. Eksporter en kopi av dokumentet og last inn siden på nytt."
       ],
@@ -3431,9 +3069,6 @@
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den opplastede filen samsvarer ikke med originalen. Prøv på nytt."
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Det er for mange mapper i din eksterne konto. Tilpass importen for å slette noen mapper."
       ],
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Det oppstod en feil under behandling av oppdateringer til dokumentet. Last inn siden på nytt og prøv igjen."
@@ -3465,9 +3100,6 @@
       "This file version could not be uploaded": [
         "Denne filversjonen kunne ikke lastes opp"
       ],
-      "This folder name is not available. Please choose a different name.": [
-        "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
-      ],
       "This item has no image preview": [
         "Dette elementet har ingen forhåndsvisning av bilde"
       ],
@@ -3476,9 +3108,6 @@
       ],
       "This item is not shared": [
         "Dette elementet er ikke delt"
-      ],
-      "This label name is not available. Please choose a different name.": [
-        "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
@@ -3500,12 +3129,6 @@
       ],
       "Unable to load VPN dashboard. Please check your connection and try again.": [
         "Kan ikke laste VPN-kontrollpanelet. Kontroller tilkoblingen og prøv på nytt."
-      ],
-      "Unexpected error, we can't import the contacts": [
-        "Uventet feil, vi kan ikke importere kontaktene"
-      ],
-      "Unexpected error, we can't import the files": [
-        "Uventet feil, vi kan ikke importere filene"
       ],
       "Unknown error": [
         "Ukjent feil"
@@ -3536,6 +3159,9 @@
       ],
       "We are having trouble syncing your document. Please refresh the page.": [
         "Vi har problemer med å synkronisere dokumentet ditt. Oppdater siden."
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Vi kunne ikke sjekke om du kan ta det ut av papirkurven."
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Vi kunne ikke importere denne filen til ${ SHEETS_APP_NAME }. Du kan prøve å kopiere og lime inn innholdet i en ny ${ SHEETS_APP_NAME }."
@@ -3571,20 +3197,8 @@
       "You do not have access to this shared item": [
         "Du har ikke tilgang til dette delte elementet"
       ],
-      "You have reached the maximum number of calendars.": [
-        "Du har nådd maksimalt antall kalendere."
-      ],
-      "You have reached the number of contacts limit for your account": [
-        "Du har nådd grensen for antall kontakter for kontoen din"
-      ],
       "You must set a name": [
         "Du må angi et navn"
-      ],
-      "You reached the maximum number of connected addresses": [
-        "Du har nådd det maksimale antallet tilkoblede adresser"
-      ],
-      "Your import will not be processed.": [
-        "Importen din blir ikke behandlet."
       ],
       "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
         "Den siste endringen din er for stor til å lagres, så redigering er slått av. Kopier det du trenger, og last deretter inn på nytt."
@@ -3596,45 +3210,9 @@
         "⚠️ Navn som ikke kan dekrypteres"
       ]
     },
-    "error": {
-      "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Logg på med en Gmail-adresse som allerede videresender til ${ MAIL_APP_NAME }"
-      ],
-      "Please sign in with the same Gmail address you originally connected": [
-        "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
-      ]
-    },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Det oppstod en feil under opplasting av filen ${ formattedFilename }. Kun ICS-filformat støttes."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
-      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Det oppstod en uventet feil. Importen må startes på nytt."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelse.",
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelser."
-      ],
-      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Filen ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        "Filen ${ formattedFilename } har ingen hendelser å importere."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Filen ${ formattedFilename } er tom."
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        "Filen ${ formattedFilename } er ikke en kalender."
       ]
     },
     "Error importing contact": {
@@ -3669,65 +3247,6 @@
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Filen ${ formattedFilename } er tom."
-      ]
-    },
-    "Error importing event": {
-      "Bad format. Component cannot be read.": [
-        "Dårlig format. Komponenten kan ikke leses."
-      ],
-      "Calendar": [
-        "Kalender"
-      ],
-      "Component with wrong format": [
-        "Komponent med feil format"
-      ],
-      "Custom time zone": [
-        "Tilpasset tidssone"
-      ],
-      "Element": [
-        "Element"
-      ],
-      "Encryption failed": [
-        "Kryptering mislyktes"
-      ],
-      "Event": [
-        "Hendelse"
-      ],
-      "Free-busy time information": [
-        "Ledig-opptatt tidsinformasjon"
-      ],
-      "Invalid event": [
-        "Ugyldig hendelse"
-      ],
-      "Journal entry": [
-        "Journalinnlegg"
-      ],
-      "Missing start time": [
-        "Mangler starttidspunkt"
-      ],
-      "No UID, title or start time": [
-        "Ingen UID, tittel eller starttid"
-      ],
-      "Notification out of bounds": [
-        "Varsel utenfor grensene"
-      ],
-      "Original recurring event could not be found": [
-        "Opprinnelig gjentakende hendelse ikke funnet"
-      ],
-      "Time zone": [
-        "Tidssone"
-      ],
-      "Time zone component ignored": [
-        "Tidssonekomponent ignorert"
-      ],
-      "To-do entry": [
-        "Gjøremålsoppføring"
-      ],
-      "Unknown": [
-        "Ukjent"
-      ],
-      "Unsupported event": [
-        "Ikke støttet hendelse"
       ]
     },
     "Error message": {
@@ -3766,155 +3285,12 @@
         "Ingen bilde valgt"
       ]
     },
-    "Event invistation error": {
-      "Unexpected error": [
-        "Uventet feil"
-      ]
-    },
-    "Event invitation error": {
-      "Attached ICS file could not be decrypted": [
-        "Vedlagt ICS-fil kunne ikke dekrypteres"
-      ],
-      "Attached ICS file could not be read": [
-        "Vedlagt ICS-fil kunne ikke leses"
-      ],
-      "Invalid invitation": [
-        "Ugyldig invitasjon"
-      ],
-      "Invalid response": [
-        "Ugyldig svar"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        "Hendelsen kunne ikke legges til kalenderen din. Ingen svar ble sendt."
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        "Hendelsen kunne ikke oppdateres i kalenderen din. Ingen svar ble sendt."
-      ],
-      "Unsupported invitation": [
-        "Ikke støttet invitasjon"
-      ],
-      "Unsupported response": [
-        "Ikke støttet respons"
-      ],
-      "We could not cancel the event in your calendar": [
-        "Vi kunne ikke avbryte hendelsen i kalenderen din."
-      ],
-      "We could not retrieve the event from your calendar": [
-        "Vi kunne ikke hente hendelsen fra kalenderen din"
-      ],
-      "We could not update the event in your calendar": [
-        "Vi kunne ikke oppdatere hendelsen i kalenderen din"
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        "Svaret ditt ble sendt, men hendelsen kunne ikke legges til kalenderen din."
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        "Svaret ditt ble sendt, men hendelsen kunne ikke oppdateres i kalenderen din."
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(ingen tittel)"
-      ]
-    },
-    "familyOffer_2023:Action": {
-      "Decline invitation": [
-        "Avslå invitasjon"
-      ],
-      "Got it": [
-        "Skjønner"
-      ],
-      "Switch plans": [
-        "Bytt plan"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME }-grupper"
-      ],
-      "Accounts with custom domains cannot join a family plan.": [
-        "Kontoer med egendefinerte domener kan ikke bli med i en familieplan."
-      ],
-      "customer support": [
-        "kundestøtte"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
-        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
-      ],
-      "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
-        "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
-      ],
-      "Invited by: ${ inviteEmail }": [
-        "Invitert av: ${ inviteEmail }"
-      ],
-      "Lifetime accounts cannot join a family plan.": [
-        "Livsvarige kontoer kan ikke bli med i en familieplan."
-      ],
-      "Manage addresses": [
-        "Administrer adresser"
-      ],
-      "Owners of a plan with members cannot join another family plan.": [
-        "Eiere av en plan med medlemmer kan ikke bli med i en annen familieplan."
-      ],
-      "Sorry, you can't switch plans at this time.": [
-        "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
-      ],
-      "Storage assigned to you: ${ assignedStorage }": [
-        "Lagringsplass tilordnet deg: ${ assignedStorage }"
-      ],
-      "The subscription will be billed to the primary admin of this plan.": [
-        "Abonnementet faktureres til den primære administratoren for denne planen."
-      ],
-      "View the invitation": [
-        "Se invitasjonen",
-        "Se invitasjonene"
-      ],
-      "You are invited to join ${ invite.OrganizationName }": [
-        "Du er invitert til å bli med ${ invite.OrganizationName }"
-      ],
-      "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
-        "Du kan bare godta 3 invitasjoner i løpet av en 6-måneders periode. Ta kontakt med ${ supportLink } hvis du trenger et unntak."
-      ],
-      "You cannot accept this invitation with your current plan.": [
-        "Du kan ikke godta denne invitasjonen med din nåværende plan."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Du har blitt invitert til å bli med ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have successfully joined the family group": [
-        "Du har blitt med i familiegruppen"
-      ],
-      "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Du har ubetalte fakturaer. Betal dem før du blir med i en familieplan."
-      ],
-      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
-        "Du er invitert til å koble ${ BRAND_NAME }-kontoen til denne familiegruppen og nyte alle premiumfunksjonene."
-      ],
-      "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
-        "Kontoen din har flere e-postadresser enn det som er tilgjengelig for deg i denne planen. ${ addressSettingsLink }"
-      ],
-      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
-      ]
-    },
     "Feature": {
-      "10+ premium features": [
-        "10+ premiumfunksjoner"
-      ],
-      "Custom email domain": [
-        "Egendefinert e-postdomene"
-      ],
-      "Email addresses": [
-        "E-postadresser"
-      ],
       "Encrypted cloud storage for files, photos and documents": [
         "Kryptert skylagring for filer, bilder og dokumenter"
       ],
       "More premium features": [
         "Flere premiumfunksjoner"
-      ],
-      "Storage": [
-        "Lagring"
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
@@ -3990,11 +3366,6 @@
       "Terabyte": [
         "Terabyte",
         "Terabytes"
-      ]
-    },
-    "Filter notification": {
-      "${ Label.Name } updated": [
-        "${ Label.Name } oppdatert"
       ]
     },
     "Font face option": {
@@ -4079,103 +3450,14 @@
         "SMS"
       ]
     },
-    "ICS event error": {
-      "Calendar time zone not supported": [
-        "Tidssone for kalender ikke støttet"
-      ],
-      "Edited event not supported": [
-        "Redigert hendelse ikke støttet"
-      ],
-      "End time out of bounds": [
-        "Sluttid utenfor grensene"
-      ],
-      "Event validation failed": [
-        "Hendelsesvalidering mislyktes"
-      ],
-      "Floating times not supported": [
-        "Flytende tider ikke støttet"
-      ],
-      "Malformed all-day event": [
-        "Misdannet heldagshendelse"
-      ],
-      "Malformed end time": [
-        "Misdannet sluttidspunkt"
-      ],
-      "Malformed recurring event": [
-        "Misdannet gjentakende hendelse"
-      ],
-      "Malformed start time": [
-        "Misdannet starttidspunkt"
-      ],
-      "Only the Gregorian calendar scale is allowed": [
-        "Bare den gregorianske kalenderskalaen er tillatt"
-      ],
-      "Recurring event has no occurrences": [
-        "Gjentakende hendelse har ingen forekomster"
-      ],
-      "Recurring rule not supported": [
-        "Gjentakende regel ikke støttet"
-      ],
-      "Start time out of bounds": [
-        "Starttid utenfor grensene"
-      ],
-      "Time zone not supported": [
-        "Tidssone ikke støttet"
-      ]
-    },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } hendelse kryptert og lagt til i kalenderen",
-        "${ totalImported }/${ totalToImport } hendelser kryptert og lagt til i kalenderen"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Det oppstod en feil under kryptering og tillegging av hendelsen din. ${ totalImported } av ${ totalToImport } hendelse importert.",
-        "Det oppstod en feil under kryptering og tillegging av hendelsene dine. ${ totalImported } av ${ totalToImport } hendelser importert."
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "En feil oppstod mens hendelsen din ble kryptert og lagt til. Ingen hendelse kunne importeres."
-      ],
-      "An error occurred while encrypting and adding your events. No event could be imported.": [
-        "En feil oppstod mens hendelsene dine ble kryptert og lagt til. Ingen hendelse kunne importeres."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Krypterer og legger til kontakter: ${ totalImported }/${ totalToImport }"
-      ],
-      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "Krypterer og legger til hendelser i kalenderen: ${ totalImported }/${ totalToImport }."
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "Hendelsen er importert. Den importerte hendelsen vises nå i kalenderen din."
-      ],
-      "Events successfully imported. The imported events will now appear in your calendar.": [
-        "Hendelsene er importert. De importerte hendelsene vises nå i kalenderen din."
-      ],
-      "Please don't close the tab before the importing process is finished.": [
-        "Ikke lukk fanen før importprosessen er fullført."
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } støtter foreløpig ikke enkelte typer hendelser, detaljer og formater."
-      ],
       "vCard versions < 3.0": [
         "vCard-versjoner < 3.0"
-      ]
-    },
-    "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Importerte invitasjoner vises i ${ CALENDAR_APP_NAME } som enkle hendelser uten arrangør- og deltakerdetaljer. For å få hendelsesoppdateringer og se deltakere, be arrangørene om å invitere deg ved å bruke ${ BRAND_NAME }-e-postadressen."
-      ],
-      "This file contains an event invitation:": [
-        "Denne filen inneholder en hendelsesinvitasjon:",
-        "Denne filen inneholder hendelsesinvitasjoner:"
-      ],
-      "This file contains an invitation response:": [
-        "Denne filen inneholder et svar på en invitasjon:",
-        "Denne filen inneholder svar på invitasjoner:"
-      ],
-      "This file contains some data that we cannot import:": [
-        "Denne filen inneholder data som ikke kan importeres:"
       ]
     },
     "Import contact": {
@@ -4223,164 +3505,12 @@
         "for nå"
       ]
     },
-    "Import error": {
-      "${ BRAND_NAME } can't connect to your account. Please make sure that:": [
-        "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-postserveradressen og portnummeret er riktige."
-      ],
-      "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-postserveradressen og portnummeret stemmer."
-      ],
-      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
-      ],
-      "IMAP access is enabled in your external account.": [
-        "IMAP-adgang er aktivert på din eksterne konto."
-      ],
-      "IMAP access is enabled in your Yahoo account.": [
-        "IMAP-adgang er aktivert på din Yahoo-konto."
-      ],
-      "Too many recent requests. Please try again in a few moments.": [
-        "For mange nylige forespørsler. Prøv igjen om noen få øyeblikk."
-      ],
-      "Two-factor authentication is enabled in your external account.": [
-        "Tofaktorautentisering er aktivert i den eksterne kontoen din."
-      ],
-      "Two-factor authentication is enabled in your external email account.": [
-        "Tofaktorautentisering er aktivert i den eksterne e-postkontoen din."
-      ],
-      "Use your app password if:": [
-        "Bruk app-passordet ditt hvis:"
-      ],
-      "Use your app password instead of your regular password if:": [
-        "Bruk app-passordet istedenfor det vanlige passordet hvis:"
-      ],
-      "Your app password is correct. Do not use your regular password.": [
-        "App-passordet ditt er riktig. Ikke bruk ditt vanlige passord."
-      ],
-      "Your email account requires an app password to export your data.": [
-        "Din e-postkonto krever et app-passord for å eksportere dine data."
-      ],
-      "Your email account requires one to export your data.": [
-        "Din e-postkonto krever ett for å eksportere dine data."
-      ],
-      "Your email address and app password are correct. Do not use your regular password.": [
-        "E-postadressen og app-passordet ditt er riktig. Ikke bruk ditt vanlige passord."
-      ],
-      "Your email address and password are correct.": [
-        "e-postadressen og passordet er riktig."
-      ],
-      "Your password is correct.": [
-        "Passordet ditt er riktig."
-      ]
-    },
-    "Import instructions": {
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Avhengig av e-postleverandøren din, må du kanskje generere en ${ knowledgeBaseLink } først før du kan importere til ${ BRAND_NAME }."
-      ],
-      "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Utvid rullegardinmenyen ved å klikke på de 3 prikkene (...)."
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Generer ${ boldAppPassword } og bruk det i stedet for ditt vanlige passord når du blir bedt om det av ${ BRAND_NAME }."
-      ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        "Gå til ${ boldAccountInfo } under profilen din i ${ yahooMailLink }."
-      ],
-      "Go to ${ boldAccountSecurity }.": [
-        "Gå til ${ boldAccountSecurity }."
-      ],
-      "Open your ${ yahooMailLink } contacts.": [
-        "Åpne dine ${ yahooMailLink }-kontakter."
-      ],
-      "Select ${ boldExportCSV }.": [
-        "Velg ${ boldExportCSV }."
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "For å importere en kalender til ${ BRAND_NAME }, vil du trenge ${ knowledgeBaseLink }. Last ned dette fra Yahoo i 3 enkle trinn:"
-      ],
-      "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "For å importere en kalender til ${ BRAND_NAME }, vil du trenge ${ knowledgeBaseLink }. Last ned dette før du starter importprosessen."
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "For å importere kontakter til ${ BRAND_NAME }, vil du trenge en ${ knowledgeBaseLink }. Last ned dette fra Yahoo i 3 enkle trinn:"
-      ],
-      "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "For å importere kontakter til ${ BRAND_NAME }, vil du trenge en ${ knowledgeBaseLink }. Last ned dette før du starter importprosessen."
-      ],
-      "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "For å importere e-postmeldinger til ${ BRAND_NAME }, trenger du et ${ appPasswordLink } fra Yahoo. Få det ved å følge disse trinnene:"
-      ]
-    },
-    "Import instructions emphasis": {
-      "Account info": [
-        "Kontoinformasjon"
-      ],
-      "Account security": [
-        "Kontosikkerhet"
-      ],
-      "app password": [
-        "app-passord"
-      ],
-      "Export": [
-        "Eksporter"
-      ],
-      "Export to CSV file": [
-        "Eksporter til CSV-fil"
-      ]
-    },
-    "Import instructions link": {
-      "app password": [
-        "app-passord"
-      ],
-      "app password or enable IMAP": [
-        "app-passord eller aktiver IMAP"
-      ],
-      "CSV or a VCF (vCard) file": [
-        "CSV- eller en VCF (vCard)-fil"
-      ],
-      "full calendar view": [
-        "full kalendervisning"
-      ],
-      "ICS file": [
-        "ICS-fil"
-      ],
-      "Yahoo": [
-        "Yahoo"
-      ]
-    },
-    "Import instructions step": {
-      "Go to ${ calendarViewLink } in Yahoo.": [
-        "Gå til ${ calendarViewLink } i Yahoo."
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Hold musepekeren over kalenderen du ønsker å importere, og åpne rullegardinmenyen."
-      ],
-      "Select ${ boldExport } to export the calendar as an ICS file.": [
-        "Velg ${ boldExport } for å eksportere kalenderen som en ICS-fil."
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ut av ${ totalContacts } blir ikke importert. Klikk for detaljer."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } av ${ totalEvents } hendelse vil ikke bli importert. Utvid for detaljer.",
-        "${ totalEventsDiscarded } av ${ totalEvents } hendelser vil ikke bli importert. Utvid for detaljer."
-      ],
       "No contact can be imported. Click for details": [
         "Ingen kontakt kunne importeres. Klikk for detaljer."
-      ],
-      "No event can be imported. Expand for details.": [
-        "Ingen hendelser kan importeres. Utvid for mer informasjon."
-      ],
-      "Part of your calendar content is not supported and will not be imported.": [
-        "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
     "Info": {
@@ -4402,14 +3532,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } ny kalender",
-        "${ calendarsToBeCreatedCount } nye kalendere"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } sammenslått kalender",
-        "${ calendarsToBeMergedCount } sammenslåtte kalendere"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kontakt har flere e-postadresser.",
@@ -4456,29 +3578,9 @@
       "${ planName } expires today.": [
         "${ planName } utløper i dag."
       ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } mappe funnet",
-        "${ providerFoldersNumLocalized } mapper funnet"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } etikett funnet i Gmail",
-        "${ providerFoldersNumLocalized } etiketter funnet i Gmail"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
-        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
-      ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
         "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } mappe valgt",
-        "${ selectedFoldersCountLocalized } mapper valgt"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } etikett valgt",
-        "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
       "${ selection.selectedIds.length } selected": [
         "${ selection.selectedIds.length } valgt",
@@ -4549,32 +3651,11 @@
       "All": [
         "Alle"
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "(${ totalFoldersCount } mappe)",
-        "Alle (${ totalFoldersCount } mapper)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "(${ totalFoldersCount } etikett)",
-        "Alle (${ totalFoldersCount } etiketter)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ maxContact }": [
-        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }.",
-        "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }."
-      ],
       "Already in this folder": [
         "Allerede i denne mappen"
       ],
-      "and": [
-        "og"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Er du sikker på at du vil forkaste importen din?"
-      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Er du sikker på at du vil slette \"${ itemName }\" fra papirkurven permanent?"
-      ],
-      "Are you sure you want to permanently delete selected items from trash?": [
-        "Er du sikker på at du vil slette valgte elementer fra papirkurven permanent?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
@@ -4591,6 +3672,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
@@ -4605,6 +3689,9 @@
       ],
       "Can view only": [
         "Kan bare se"
+      ],
+      "Can't connect": [
+        "Kan ikke koble til"
       ],
       "Can't move a folder into itself": [
         "Kan ikke flytte en mappe inn i seg selv"
@@ -4629,12 +3716,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
-      ],
-      "Close this screen to exit.": [
-        "Lukk dette skjermbildet for å avslutte."
-      ],
-      "Comments are not available yet": [
-        "Kommentarer er ikke tilgjengelige ennå"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Koble til ${ VPN_APP_NAME } for å surfe privat"
@@ -4663,18 +3744,8 @@
       "Country code": [
         "Landskode"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Opprett ${ calendarsToBeCreatedCount } ny kalender",
-        "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
-      ],
       "Create a copy to edit": [
         "Opprett en kopi for å redigere"
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og mappene du vil importere."
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
       ],
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
@@ -4686,14 +3757,11 @@
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Opprett ende-til-ende-krypterte dokumenter og regneark."
       ],
-      "Create in": [
-        "Opprett i"
-      ],
-      "Create your first folder and start moving your files.": [
-        "Opprett din første mappe og begynn å flytte filene dine."
-      ],
       "Creating new document...": [
         "Oppretter nytt dokument..."
+      ],
+      "Creating new document…": [
+        "Oppretter nytt dokument…"
       ],
       "Current plan": [
         "Gjeldende plan"
@@ -4703,6 +3771,9 @@
       ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
+      ],
+      "Decrypting document…": [
+        "Dekrypterer dokumentet…"
       ],
       "Decrypting your document": [
         "Dekrypterer dokumentet ditt"
@@ -4758,9 +3829,6 @@
       "End-to-end encrypted.": [
         "Ende-til-ende-kryptert."
       ],
-      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
-        "Sikre fullstendig privat og kryptert kommunikasjon. Gjør krav på din gratis ${ BRAND_NAME }-e-postadresse nå."
-      ],
       "Enter code": [
         "Skriv inn koden"
       ],
@@ -4769,9 +3837,6 @@
       ],
       "Enter the code from your authenticator app": [
         "Skriv inn koden fra autentiseringsappen"
-      ],
-      "Enter the credentials of the email account you want to import from.": [
-        "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Skriv inn verifiseringskoden som ble sendt til ${ destinationText }."
@@ -4812,9 +3877,6 @@
       "File \"${ name }\" was deleted during download": [
         "Fil \"${ name }\" ble slettet under nedlasting"
       ],
-      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Bare filer (ingen bilder, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – opptil 100 GB totalt, 100 000 filer og 50 GB per fil"
-      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mappe \"${ link.name }\" ble slettet under nedlasting"
       ],
@@ -4845,9 +3907,6 @@
       "Help us improve this experience by reporting the issue. Please attach the debug information below to your report.": [
         "Hjelp oss med å forbedre denne opplevelsen ved å rapportere problemet. Legg ved feilsøkingsinformasjonen nedenfor i rapporten din."
       ],
-      "here": [
-        "her"
-      ],
       "Hide table of contents": [
         "Skjul innholdsfortegnelse"
       ],
@@ -4872,36 +3931,14 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Hvis du fjerner deg selv, mister du tilgangen til \"${ fileName }\" og kan ikke åpne den igjen med mindre eieren deler den med deg på nytt."
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
-        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
-      ],
-      "Import from": [
-        "Importer fra"
-      ],
-      "Import in progress": [
-        "Import pågår"
-      ],
-      "Import mailbox": [
-        "Importer postboks"
-      ],
       "Important note": [
         "Viktig merknad"
       ],
       "Importing ODS files is currently in beta": [
         "Importering av ODS-filer er for øyeblikket i beta"
       ],
-      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
       "In restrictive countries": [
         "I restriktive land"
-      ],
-      "Included": [
-        "Inkludert"
-      ],
-      "Inherited from parent folder": [
-        "Arvet fra overordnet mappe"
       ],
       "Internet connection lost": [
         "Mistet internettilkobling"
@@ -4921,9 +3958,6 @@
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Det er best å bruke et VPN til enhver tid. Men her er når cybersikkerhetstrusler kan være høyest:"
       ],
-      "Just confirm your selection and we'll do the rest.": [
-        "Bare bekreft valget ditt og vi vil gjøre resten."
-      ],
       "Just now": [
         "Akkurat nå"
       ],
@@ -4933,14 +3967,8 @@
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
       ],
-      "Label all imported messages as": [
-        "Merk alle importerte meldinger som"
-      ],
       "Labels:": [
         "Etiketter:"
-      ],
-      "Large imports can take several days.": [
-        "Store importer kan ta flere dager."
       ],
       "Learn more": [
         "Lær mer"
@@ -5000,14 +4028,8 @@
       "Member": [
         "Medlem"
       ],
-      "Merged": [
-        "Slått sammen"
-      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
-      ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
       ],
       "New": [
         "Ny"
@@ -5039,9 +4061,6 @@
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
-      "Not available yet": [
-        "Ikke tilgjengelig ennå"
-      ],
       "Not connected": [
         "Ikke tilkoblet"
       ],
@@ -5062,6 +4081,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
+      ],
+      "Opening document…": [
+        "Åpner dokument…"
       ],
       "Opening...": [
         "Åpner..."
@@ -5117,12 +4139,6 @@
       "Please provide a name and an email address for creating a group.": [
         "Oppgi et navn og en e-postadresse for å opprette en gruppe."
       ],
-      "Please select the folders you would like to import:": [
-        "Velg mappene du vil importere:"
-      ],
-      "Please select the labels you would like to import:": [
-        "Velg etikettene du vil importere:"
-      ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Velg hvilke e-postadresser som skal legges til i ${ groupCount } gruppe.",
         "Velg hvilke e-postadresser som skal legges til i ${ groupCount } grupper."
@@ -5138,6 +4154,9 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
+      ],
+      "Preparing editor…": [
+        "Forbereder redigeringsverktøy…"
       ],
       "Primary": [
         "Primær"
@@ -5162,6 +4181,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
+      ],
+      "Redirecting…": [
+        "Omdirigerer…"
       ],
       "Referral link copied to your clipboard": [
         "Vervekobling kopiert til utklippstavlen din"
@@ -5195,9 +4217,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Velg hvilke kalendere du vil importere. En ny kalender opprettes for hver importerte kalender i henhold til antall kalendere som er tilgjengelige i planen din."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
@@ -5272,8 +4291,8 @@
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
-      "Temporarily unavailable due to high demand. Please try again later.": [
-        "Midlertidig utilgjengelig på grunn av høy etterspørsel. Prøv igjen senere."
+      "Syncing latest changes…": [
+        "Synkroniserer siste endringer…"
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Forfatteren av redigeringene i dokumentet kunne ikke bekreftes. Vil du merke dette dokumentet som bekreftet? Du kan velge å ignorere for å bestemme deg senere."
@@ -5398,14 +4417,8 @@
       "Update recent documents": [
         "Oppdater nylige dokumenter"
       ],
-      "Upgrade anytime to bring over the rest": [
-        "Oppgrader når som helst for å få med deg resten"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
-      ],
-      "Upgrade or clear space anytime to bring over the rest": [
-        "Oppgrader eller frigjør plass når som helst for å ta med resten"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
@@ -5428,14 +4441,8 @@
       "Warning": [
         "Advarsel"
       ],
-      "We'll email you once import is complete.": [
-        "Vi sender deg en e-post når importen er fullført."
-      ],
       "We'll get back to you shortly.": [
         "Vi vil komme tilbake til deg innen kort tid."
-      ],
-      "We'll notify you when the import is done.": [
-        "Vi varsler deg når importen er ferdig."
       ],
       "We'll remind you to verify your password again later": [
         "Vi minner deg på å bekrefte passordet ditt igjen senere."
@@ -5506,20 +4513,8 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
       ],
-      "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
-        "Du kan også slå sammen importerte kalendere med eksisterende ${ BRAND_NAME }-kalendere."
-      ],
-      "You can check the progress ${ importProgressLink }.": [
-        "Du kan sjekke fremdriften ${ importProgressLink }."
-      ],
-      "You can close the tab or browser in the meantime.": [
-        "Du kan lukke fanen eller nettleseren i mellomtiden."
-      ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
-      ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
       "You cannot undo this action.": [
         "Du kan ikke angre denne handlingen."
@@ -5588,11 +4583,11 @@
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Endringene kunne ikke synkroniseres. Drive vil automatisk prøve å lagre endringene. Ikke lukk nettsiden."
       ],
+      "Your current document will be replaced with this version.": [
+        "Ditt nåværende dokument vil bli erstattet med denne versjonen."
+      ],
       "Your current document will be replaced with this version. Comments and suggestions will be removed from the document but will remain accessible in the comment history.": [
         "Ditt nåværende dokument vil bli erstattet med denne versjonen. Kommentarer og forslag vil bli fjernet fra dokumentet, men vil fortsatt være tilgjengelige i kommentarloggen."
-      ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
-        "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
       "Your email address and password were leaked:": [
         "Din e-postadresse og passord ble lekket:"
@@ -5617,9 +4612,6 @@
       ],
       "Your IP address is visible and can be used to track your online activity.": [
         "IP-adressen din er synlig og kan brukes til å spore nettaktiviteten din."
-      ],
-      "Your login information will not be saved after the import is completed.": [
-        "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "Din neste faktureringsdato er ${ renewalTime }. Du kan avbryte når som helst."
@@ -5672,16 +4664,6 @@
         "Klikk for detaljer"
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappe valgt",
-        "${ selectedFoldersCount } mapper valgt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett valgt",
-        "${ selectedFoldersCount } etiketter valgt"
-      ]
-    },
     "Key badge": {
       "Active Signer": [
         "Aktiv underskriver"
@@ -5721,9 +4703,6 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } tegn"
       ],
-      "(Temporarily unavailable. Please check back later.)": [
-        "(Midlertidig utilgjengelig. Kom tilbake senere)."
-      ],
       "Access": [
         "Tilgang"
       ],
@@ -5757,9 +4736,6 @@
       "Anyone on the Internet with the link": [
         "Alle på internett med koblingen"
       ],
-      "App password": [
-        "App-passord"
-      ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
       ],
@@ -5774,9 +4750,6 @@
       ],
       "Browser version": [
         "Nettleserversjon"
-      ],
-      "Calendar": [
-        "Kalender"
       ],
       "can edit": [
         "kan redigere"
@@ -5807,9 +4780,6 @@
       ],
       "Confirm password": [
         "Bekreft passord"
-      ],
-      "Contacts": [
-        "Kontakter"
       ],
       "Continue cancelling": [
         "Fortsett avbestillingen"
@@ -5853,35 +4823,14 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
-      "Drive": [
-        "Drive"
-      ],
       "Editor": [
         "Redigerer"
-      ],
-      "Email": [
-        "E-post"
       ],
       "Email address": [
         "E-postadresse"
       ],
       "Email format": [
         "E-postformat"
-      ],
-      "Emails (all messages)": [
-        "E-poster (alle meldinger)"
-      ],
-      "Emails (last 12 months)": [
-        "E-poster (siste 12 måneder)"
-      ],
-      "Emails (last 3 months)": [
-        "E-poster (siste 3 måneder)"
-      ],
-      "Emails (last 6 months)": [
-        "E-poster (siste 6 måneder)"
-      ],
-      "Emails (last month)": [
-        "E-poster (siste måned)"
       ],
       "Enable email notifications": [
         "Aktiver epostvarsler"
@@ -5898,14 +4847,8 @@
       "File": [
         "Fil"
       ],
-      "Folder location": [
-        "Mappeplassering"
-      ],
       "Folder name": [
         "Mappenavn"
-      ],
-      "From: ${ fromEmail }": [
-        "Fra: ${ fromEmail }"
       ],
       "Hide password": [
         "Skjul passord"
@@ -5915,18 +4858,6 @@
       ],
       "Ignore": [
         "Ignorer"
-      ],
-      "Import all messages": [
-        "Importer alle meldinger"
-      ],
-      "Import interval": [
-        "Importintervall"
-      ],
-      "Import to email address": [
-        "Importer til e-postadresse"
-      ],
-      "Import to:": [
-        "Importer til:"
       ],
       "Include application logs in bug report": [
         "Inkluder applikasjonslogger i feilrapport"
@@ -5943,20 +4874,8 @@
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
       ],
-      "Label messages as": [
-        "Merk meldinger som"
-      ],
-      "Last 12 months only": [
-        "Kun siste 12 måneder"
-      ],
-      "Last 3 months only": [
-        "Kun siste 3 måneder"
-      ],
-      "Last 6 months only": [
-        "Kun siste 6 måneder"
-      ],
-      "Last month only": [
-        "Kun siste måned"
+      "Loading": [
+        "Laster"
       ],
       "Location ${ locationLabel }": [
         "Plassering: ${ locationLabel }"
@@ -5964,26 +4883,14 @@
       "Log in or sign up ": [
         "Logg på eller registrer deg "
       ],
-      "Mail Server (IMAP)": [
-        "E-postserver (IMAP)"
-      ],
       "Main": [
         "Hjem"
       ],
       "Main reason for cancelling": [
         "Hovedårsaken til kanselleringen"
       ],
-      "Manage categories": [
-        "Administrer kategorier"
-      ],
       "Mark as verified": [
         "Merk som verifisert"
-      ],
-      "Move to Archive": [
-        "Flytt til arkiv"
-      ],
-      "Move to Inbox": [
-        "Flytt til innboks"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Må minst ha ${ MIN_PASSWORD_LENGTH } tegn"
@@ -6002,9 +4909,6 @@
       ],
       "Not selected": [
         "Ikke valgt"
-      ],
-      "Notification": [
-        "Varsel"
       ],
       "Operating system": [
         "Operativsystem"
@@ -6029,9 +4933,6 @@
       ],
       "Please share any feedback to help us improve.": [
         "Gjerne del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
-      ],
-      "Port": [
-        "Port"
       ],
       "Post office box": [
         "Postboks"
@@ -6096,9 +4997,6 @@
       "Theme": [
         "Tema"
       ],
-      "To: ${ toEmail }": [
-        "Til: ${ toEmail }"
-      ],
       "Trash": [
         "Papirkurv"
       ],
@@ -6107,9 +5005,6 @@
       ],
       "Upload picture": [
         "Last opp bilde"
-      ],
-      "Username": [
-        "Brukernavn"
       ],
       "Verification code": [
         "Verifiseringskode"
@@ -6162,44 +5057,6 @@
     "Label for contact group name": {
       "Name": [
         "Navn"
-      ]
-    },
-    "Label/folder modal": {
-      "Create folder": [
-        "Opprett mappe"
-      ],
-      "Create label": [
-        "Opprett etikett"
-      ],
-      "Edit folder": [
-        "Rediger mappe"
-      ],
-      "Edit label": [
-        "Rediger etikett"
-      ]
-    },
-    "label/folder notification": {
-      "${ Label.Name } created": [
-        "${ Label.Name } opprettet"
-      ]
-    },
-    "Label; import email": {
-      "From: ${ from }": [
-        "Fra: ${ from }"
-      ],
-      "To: ${ to }": [
-        "Til: ${ to }"
-      ]
-    },
-    "Limit of calendars reached": {
-      "To add a new calendar, remove an existing one.": [
-        "For å legge til en ny kalender, fjern en eksisterende."
-      ],
-      "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "For å legge til en ny kalender, fjern en annen kalender eller oppgrader din ${ BRAND_NAME }-plan til en ${ MAIL_SHORT_APP_NAME }-betalt plan."
-      ],
-      "You've reached the maximum number of calendars available in your plan.": [
-        "Du har nådd maksimalt antall kalendere som er tilgjengelige i planen din."
       ]
     },
     "Link": {
@@ -6290,30 +5147,6 @@
         "Også inkludert:"
       ]
     },
-    "Loading info": {
-      "Almost there": [
-        "Nesten der"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Mengde kalender opprettet: ${ createdCalendarCount } av ${ calendarsToBeCreated }.",
-        "Mengde kalendere opprettet: ${ createdCalendarCount } ut av ${ calendarsToBeCreated }."
-      ],
-      "Connecting to your email provider": [
-        "Kobler til e-postleverandøren din"
-      ],
-      "Creating new calendars": [
-        "Oppretter nye kalendere"
-      ],
-      "Gathering your data": [
-        "Samler dataene dine"
-      ],
-      "We're gathering your data from your provider": [
-        "Vi samler inn dataene dine fra leverandøren din"
-      ],
-      "Your import is starting": [
-        "Importen din starter"
-      ]
-    },
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Lær mer"
@@ -6346,24 +5179,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importer alle meldinger fra ${ itemsToImportCount } mappe og merk dem som.",
-        "Importer alle meldinger fra ${ itemsToImportCount } mapper og merk dem som."
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importer alle meldinger fra ${ itemsToImportCount } etikett og merk dem som.",
-        "Importer alle meldinger fra ${ itemsToImportCount } etiketter og merk dem som."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mappe og merk dem som.",
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mapper og merk dem som."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etikett og merk dem som.",
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etiketter og merk dem som."
       ]
     },
     "mail_signup_2024: Info": {
@@ -6478,37 +5293,6 @@
       ],
       "Plain text": [
         "Ren tekst"
-      ]
-    },
-    "Modal title": {
-      "How to import calendars from another service": [
-        "Slik importerer du kalendere fra en annen tjeneste"
-      ],
-      "How to import calendars from Yahoo": [
-        "Slik importerer du kalendere fra Yahoo"
-      ],
-      "How to import contacts from another service": [
-        "Slik importerer du kontakter fra en annen tjeneste"
-      ],
-      "How to import contacts from Yahoo": [
-        "Slik importerer du kontakter fra Yahoo"
-      ],
-      "How to import emails from another service": [
-        "Slik importerer du e-post fra en annen tjeneste"
-      ],
-      "How to import emails from Yahoo": [
-        "Slik importerer du e-post fra Yahoo"
-      ]
-    },
-    "New Label form": {
-      "Color": [
-        "Farge"
-      ],
-      "Folder name": [
-        "Mappenavn"
-      ],
-      "Label name": [
-        "Etikettnavn"
       ]
     },
     "new_plans": {
@@ -7378,38 +6162,11 @@
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" opprettet"
       ],
-      "\"${ ellipsedName }\" failed to be created": [
-        "\"${ ellipsedName }\" kunne ikke opprettes"
-      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" flyttet"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" slettet permanent fra papirkurven"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" kunne ikke slettes permanent fra papirkurven."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" kunne ikke flyttes"
-      ],
-      "\"${ name }\" failed to be moved to trash": [
-        "\"${ name }\" kunne ikke flyttes til papirkurven"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" kunne ikke gjenopprettes fra papirkurven"
-      ],
-      "\"${ name }\" moved to trash": [
-        "\"${ name }\" flyttet til papirkurven"
-      ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" gjenopprettet fra papirkurven"
-      ],
-      "\"${ newName }\" failed to be renamed": [
-        "\"${ newName }\" kunne ikke gis nytt navn"
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" har fått nytt navn"
@@ -7424,26 +6181,6 @@
       "${ count } item failed to be decrypted": [
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } element slettet permanent fra papirkurven",
-        "${ numberOfItems } elementer slettet permanent fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } element kunne ikke slettes permanent fra papirkurven",
-        "${ numberOfItems } elementer kunne ikke slettes permanent fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } element kunne ikke flyttes",
-        "${ numberOfItems } elementer kunne ikke flyttes"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } element kunne ikke flyttes til papirkurven",
-        "${ numberOfItems } elementer kunne ikke flyttes til papirkurven"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } element kunne ikke gjenopprettes fra papirkurven",
-        "${ numberOfItems } elementer kunne ikke gjenopprettes fra papirkurven"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } element flyttet",
@@ -7553,9 +6290,6 @@
       "Report submitted successfully": [
         "Rapport ble sendt"
       ],
-      "Root folder failed to be loaded": [
-        "Rotmappen kunne ikke lastes inn"
-      ],
       "Setting updated. Editors can change permissions and share.": [
         "Innstilling oppdatert. Redigeringspersoner kan endre tillatelser og dele."
       ],
@@ -7568,17 +6302,11 @@
       "Share invitation declined": [
         "Delingsinvitasjon avslått"
       ],
-      "Subfolder failed to be loaded": [
-        "Undermappen kunne ikke lastes inn"
-      ],
       "The link to your item was deleted": [
         "Koblingen til elementet ditt ble slettet"
       ],
       "You stopped sharing this item": [
         "Du stoppet å dele dette elementet"
-      ],
-      "Your ${ BRAND_NAME } address is ready to use": [
-        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
@@ -7587,21 +6315,6 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Noen bilder ble ikke lastet opp på grunn av dupliserte filnavn i gjeldende utvalg."
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
-        "Deretter må du logge på Google-kontoen din og gi ${ BRAND_NAME } tilgang til dataene dine."
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Calendar."
       ]
     },
     "Offer": {
@@ -7807,17 +6520,6 @@
       ],
       "Ignore group": [
         "Ignorer gruppe"
-      ],
-      "No parent folder": [
-        "Ingen overordnet mappe"
-      ]
-    },
-    "Option group label": {
-      "Create new calendar": [
-        "Opprett ny kalender"
-      ],
-      "Merge with calendar": [
-        "Slå sammen med kalender"
       ]
     },
     "Page title": {
@@ -7829,11 +6531,6 @@
       ],
       "Trash": [
         "Papirkurv"
-      ]
-    },
-    "Participant name": {
-      "You": [
-        "Deg"
       ]
     },
     "pass_signup_2023: Info": {
@@ -8066,9 +6763,6 @@
       ],
       "Search for name or email": [
         "Søk etter navn eller e-post"
-      ],
-      "Search parent folder": [
-        "Søk i overordnet mappe"
       ],
       "Select": [
         "Velg"
@@ -8362,11 +7056,6 @@
     "Select files": {
       "Upload": [
         "Last opp"
-      ]
-    },
-    "Select search results": {
-      "No results found": [
-        "Ingen resultater funnet"
       ]
     },
     "session_recovery:available:action": {
@@ -9058,9 +7747,6 @@
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
       ],
-      "Canceling import": [
-        "Avbryter import"
-      ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
@@ -9084,12 +7770,6 @@
       "Fingerprint copied to clipboard": [
         "Fingeravtrykk kopiert til utklippstavlen"
       ],
-      "Import record deleted": [
-        "Importpost slettet"
-      ],
-      "Invitation rejected": [
-        "Invitasjon avslått"
-      ],
       "Phone number copied to clipboard": [
         "Telefonnummer kopiert til utklippstavlen"
       ],
@@ -9101,9 +7781,6 @@
       ],
       "Problem reported": [
         "Problem rapportert"
-      ],
-      "Undo in progress": [
-        "Angre pågår"
       ],
       "Verification successful": [
         "Vellykket verifisering"
@@ -9267,9 +7944,6 @@
       "Change password": [
         "Endre passord"
       ],
-      "Claim your ${ MAIL_APP_NAME } address": [
-        "Gjør krav på din ${ MAIL_APP_NAME }-adresse"
-      ],
       "Clearing data": [
         "Tømmer data"
       ],
@@ -9300,12 +7974,6 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Continue with free storage": [
-        "Fortsett med gratis lagring"
-      ],
-      "Continue with partial import?": [
-        "Fortsette med delvis import?"
-      ],
       "Create a new folder": [
         "Opprett en ny mappe"
       ],
@@ -9317,18 +7985,6 @@
       ],
       "Currency": [
         "Valuta"
-      ],
-      "Custom": [
-        "Tilpasset"
-      ],
-      "Customize and confirm": [
-        "Tilpass og bekreft"
-      ],
-      "Customize calendar import": [
-        "Tilpass kalenderimport"
-      ],
-      "Customize your mail import": [
-        "Tilpass e-postimporten din"
       ],
       "Data recovery": [
         "Datagjenoppretting"
@@ -9370,9 +8026,6 @@
       ],
       "Discard changes?": [
         "Forkaste endringer?"
-      ],
-      "Disconnected from Gmail": [
-        "Frakoblet fra Gmail"
       ],
       "Docs": [
         "Docs"
@@ -9425,9 +8078,6 @@
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
-      "Enter your password": [
-        "Skriv inn passordet"
-      ],
       "Error syncing": [
         "Feil ved synkronisering"
       ],
@@ -9442,9 +8092,6 @@
       ],
       "Get more from your VPN": [
         "Får mer ut av ditt VPN"
-      ],
-      "Get more storage with ${ MAIL_APP_NAME } Plus": [
-        "Skaff deg mer lagringsplass med ${ MAIL_APP_NAME } Plus"
       ],
       "Get the apps": [
         "Skaff deg appene"
@@ -9473,18 +8120,8 @@
       "Human verification": [
         "Menneskelig verifisering"
       ],
-      "Import as simple event?": [
-        "Importer som enkel hendelse?",
-        "Importer som enkle hendelser?"
-      ],
       "Import contacts": [
         "Importer kontakter"
-      ],
-      "Import events": [
-        "Importer hendelser"
-      ],
-      "Import failed": [
-        "Importen mislyktes"
       ],
       "Import groups": [
         "Importer grupper"
@@ -9597,9 +8234,6 @@
       "Recommended actions": [
         "Anbefalte tiltak"
       ],
-      "Reconnect your account": [
-        "Koble til kontoen din på nytt"
-      ],
       "Recover data": [
         "Gjenopprett data"
       ],
@@ -9663,9 +8297,6 @@
       "Shared with me": [
         "Delt med meg"
       ],
-      "Sign in and grant access": [
-        "Logg på og gi tilgang"
-      ],
       "Sign out": [
         "Logg av"
       ],
@@ -9677,12 +8308,6 @@
       ],
       "Something went wrong": [
         "Noe gikk galt"
-      ],
-      "Start a new import": [
-        "Start en ny import"
-      ],
-      "Start import process": [
-        "Start importprosessen"
       ],
       "Stop sharing?": [
         "Avslutt deling?"
@@ -9723,6 +8348,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Bruk ${ VPN_SHORT_APP_NAME } for personvern"
       ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
+      ],
       "Verify your password": [
         "Bekreft passordet ditt"
       ],
@@ -9746,12 +8374,6 @@
       ],
       "When is it most important to use a VPN?": [
         "Når er det viktigst å bruke et VPN?"
-      ],
-      "You are all set": [
-        "Du er klar"
-      ],
-      "You have no folders yet": [
-        "Du har ingen mapper enda"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
@@ -9804,23 +8426,8 @@
       "Change shared item settings": [
         "Endre innstillinger for delt element"
       ],
-      "Customize import to reduce the number of folders": [
-        "Tilpass import for å redusere antall mapper"
-      ],
-      "Customize import to reduce the number of labels": [
-        "Tilpass import for å redusere antall etiketter"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitalt signering av e-postmeldinger bidrar til å autentisere at meldinger sendes av deg."
-      ],
-      "Each imported email will have this label": [
-        "Hver importert e-post vil ha denne etiketten"
-      ],
-      "Edit folder names": [
-        "Rediger mappenavn"
-      ],
-      "Edit label names": [
-        "Rediger navn på etiketter"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "E-postkryptering tvinger e-postsignaturen til å hjelpe med godkjenning av dine sendte meldinger."
@@ -9830,9 +8437,6 @@
       ],
       "Encrypted data with verified digital signature": [
         "Kryptert data med bekreftet digital signatur"
-      ],
-      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
@@ -9852,17 +8456,11 @@
       "Shared with end-to-end encryption": [
         "Delt med ende-til-ende-kryptering"
       ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
-      ],
       "The image could not be loaded": [
         "Kan ikke laste bildet"
       ],
       "The image could not be loaded using proxy": [
         "Bildet kan ikke lastes inn ved hjelp av proxy"
-      ],
-      "The import will start with the most recent messages.": [
-        "Importen starter med de nyeste meldingene."
       ],
       "This link has expired. Please extend expiration date": [
         "Denne koblingen har utløpt. Forleng utløpsdatoen."
@@ -9976,14 +8574,6 @@
         "Navn må ikke inneholde skråstreker (/)"
       ]
     },
-    "Video control": {
-      "Click to replay the video": [
-        "Klikk for å spille av videoen på nytt"
-      ],
-      "Replay video": [
-        "Spill av video på nytt"
-      ]
-    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Jeg fant en annen tjeneste som jeg liker bedre"
@@ -10079,12 +8669,6 @@
       ]
     },
     "Warning": {
-      "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
-        "${ BRAND_NAME } vil slå sammen alle mapper med samme navn. Du kan unngå dette ved å endre navnene før import."
-      ],
-      "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
-        "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
-      ],
       "A change from another editor could not be read and is missing from this page.": [
         "En endring fra en annen som redigerer, kunne ikke leses og mangler på denne siden."
       ],
@@ -10110,9 +8694,6 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
-      "Skip verification?": [
-        "Hopp over bekreftelse?"
-      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
       ],
@@ -10137,20 +8718,11 @@
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Denne handlingen er irreversibel. Skriv inn ordet ${ boldDanger } i feltet for å fortsette."
       ],
-      "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Denne importen kan overskride lagringskapasiteten som for øyeblikket er tilgjengelig på ${ BRAND_NAME }-kontoen. Vurder å tilpasse importen."
-      ],
       "This will replace all the data in the spreadsheet": [
         "Dette vil erstatte alle data i regnearket"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
-      ],
-      "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Vi kan ikke bekrefte e-postserveren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
-      ],
-      "You will lose any customization you made so far.": [
-        "Du vil miste enhver tilpasning du har gjort så langt."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"

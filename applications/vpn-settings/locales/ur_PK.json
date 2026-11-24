@@ -652,6 +652,9 @@
       "Don't show again": [
         "دوبارہ نہ دکھائیں"
       ],
+      "Don't show this again": [
+        "اسے دوبارہ نہ دکھائیں"
+      ],
       "Done": [
         "ہو گیا"
       ],
@@ -1114,6 +1117,9 @@
       "Remove": [
         "ہٹائیں"
       ],
+      "Remove ${ name }": [
+        "${ name } ہٹائیں"
+      ],
       "Remove all other devices": [
         "باقی تمام ڈیوائسز ہٹائیں"
       ],
@@ -1366,11 +1372,17 @@
       "Skip": [
         "چھوڑیں"
       ],
+      "Skip to main content": [
+        "بنیادی مواد پر جائیں"
+      ],
       "Skip verification": [
         "توثیق چھوڑیں"
       ],
       "Spam": [
         "اسپام"
+      ],
+      "Special Offer": [
+        "خصوصی پیشکش"
       ],
       "Start import": [
         "درآمد شروع کریں"
@@ -5379,9 +5391,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "کریڈٹ کی کم از کم رقم جو شامل کی جا سکتی ہے ${ price } ہے۔"
       ],
-      "The minimum donation amount is ${ price }": [
-        "کم از کم عطیہ کی رقم ${ price } ہے۔"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "پالیسی کا نام 3 سے 40 حروف کے درمیان ہونا چاہیے۔"
       ],
@@ -5784,9 +5793,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } گروپس"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "حسب ضرورت ڈومین والے اکاؤنٹس کسی Family plan میں شامل نہیں ہو سکتے۔"
       ],
@@ -5840,10 +5846,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "سبسکرپشن کی بلنگ اس پلان کے پرائمری ایڈمن سے کی جائے گی۔"
       ],
-      "View the invitation": [
-        "دعوت دیکھیں",
-        "دعوتیں دیکھیں"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "آپ کو ${ invite.OrganizationName } میں شامل ہونے کی دعوت دی گئی ہے"
       ],
@@ -5852,9 +5854,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "آپ کا موجودہ پلان اس دعوت کو قبول کرنے کی اجازت نہیں دیتا۔"
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "آپ کو ${ bannerOrganization } میں شامل ہونے کی دعوت دی گئی ہے۔ ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "آپ 6 ماہ میں ${ n } قبول شدہ دعوت کی حد تک پہنچ گئے ہیں۔",
@@ -7713,6 +7712,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "اس ڈیوائس پر ڈیٹا بیک اپ غیر فعال کرنے سے پاس ورڈ ری سیٹ کے بعد آپ اپنا انکرپٹ شدہ ڈیٹا خودکار طور پر کھولنے سے محروم ہو جائیں گے۔"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "رعایتیں معیاری ماہانہ قیمتوں کی بنیاد پر دی جاتی ہیں۔ بلنگ سائیکل کے اختتام پر آپ کا سبسکرپشن معیاری سالانہ قیمت پر تجدید ہو جائے گا۔"
       ],
       "Discover new features unlocked and start using them right away!": [
         "ان لاک ہوئی نئی خصوصیات دریافت کریں اور ان کا فوری طور پر استعمال شروع کریں۔"
@@ -10039,6 +10041,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "ٹرمینل سے ${ PASS_APP_NAME } تک محفوظ طریقے سے رسائی حاصل کریں، جو اسکرپٹنگ، آٹومیشن اور ڈیولپمنٹ ورک فلو کے لیے مثالی ہے۔"
       ],
+      "Access tokens": [
+        "ایکسیس ٹوکنز"
+      ],
       "Account holder": [
         "اکاؤنٹ ہولڈر"
       ],
@@ -10053,6 +10058,9 @@
       ],
       "Add all organization members": [
         "تنظیم کے تمام ممبران شامل کریں"
+      ],
+      "Add managers": [
+        "مینیجرز شامل کریں"
       ],
       "Additional comments": [
         "اضافی تبصرے"
@@ -12864,17 +12872,11 @@
       "1 email per month": [
         "ماہانہ 1 ای میل"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "ماہانہ 1 ای میل۔ ${ BRAND_NAME } کی دنیا کی تازہ ترین پیش رفت اور رازداری سے متعلق تازہ ترین خبریں حاصل کریں۔"
-      ],
       "1 email per quarter": [
         "ہر سہ ماہی میں 1 ای میل"
       ],
       "1-2 emails per month": [
         "ماہانہ 1-2 ای میلز"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "سال میں 1-4 ای میلز۔ آپ کے بازیابی کے طریقوں کو اپ ڈیٹ رکھنے کے لیے یاد دہانیاں۔"
       ],
       "2-4 emails per year": [
         "سال میں 2-4 ای میلز"
@@ -12899,9 +12901,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME } کی کسی مصنوعات کے استعمال کے پہلے مہینے کے دوران"
-      ],
-      "Email communications": [
-        "ای میل اطلاعات"
       ],
       "In-app notifications": [
         "ایپ کے اندر اطلاعات"
@@ -13572,7 +13571,18 @@
         "${ appName } استعمال کرنا شروع کریں"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "تجویز کردہ"
+      ],
+      "Select your plan": [
+        "اپنا پلان منتخب کریں"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "ہمیشہ کے لیے مفت"
+      ],
       "Secure vault sharing": [
         "محفوظ والٹ شیئرنگ"
       ],
@@ -14132,6 +14142,9 @@
       ],
       "Enter a name": [
         "نام درج کریں"
+      ],
+      "Enter name or email address": [
+        "نام یا ای میل پتہ درج کریں"
       ],
       "example@domain.com": [
         "example@domain.pk"
@@ -15813,6 +15826,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } کل انکرپٹ شدہ اسٹوریج"
+      ],
       "1 month": [
         "1 ماہ"
       ],
@@ -15821,6 +15837,9 @@
       ],
       "24 months": [
         "24 ماہ"
+      ],
+      "Free": [
+        "مفت"
       ]
     },
     "Signup label": {
@@ -16641,10 +16660,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }، ${ DRIVE_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME } اور ${ VPN_SHORT_APP_NAME } پریمیم خصوصیات کے ساتھ"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } دن باقی ہے",
-        "${ dayDiff } دن باقی ہیں"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } ڈیسک ٹاپ ایپ"
       ],
@@ -16902,12 +16917,6 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName } منسوخ کرنے پر آپ کیا چھوڑتے ہیں"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "جب ${ planName } منسوخ کیا جائے گا، تو آپ ${ BRAND_NAME } Free میں ڈاؤن گریڈ کر دیے جائیں گے، جو صرف 1 GB تک Mail اسٹوریج اور 5 GB تک Drive اسٹوریج پیش کرتا ہے۔ آپ پہلے دیے گئے اسٹوریج بونس بھی کھو دیں گے۔"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "جب آپ ${ planName } منسوخ کریں گے تو آپ کو ${ BRAND_NAME } Free میں ڈاؤن گریڈ کر دیا جائے گا، جو صرف 1 GB تک Mail اسٹوریج اور 5 GB تک Drive اسٹوریج فراہم کرتا ہے۔ چونکہ Free plan پر اضافی صارفین کی سپورٹ نہیں ہے، اس لیے آپ کی ٹیم کے کام میں رکاوٹیں پیش آئیں گی۔"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "${ expiryDate } کو آپ کی ${ planName } سبسکرپشن ختم ہونے پر آپ ${ BRAND_NAME } Free plan پر ڈاؤن گریڈ ہو جائیں گے۔"
       ],
@@ -16916,9 +16925,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "آپ ${ boldedDate } تک اپنے موجودہ پلان کے تمام فوائد سے لطف اندوز ہوتے رہ سکتے ہیں۔"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "آپ کی ${ planName } سبسکرپشن میں ${ expiryDate } ابھی باقی ہے۔ ہم باقی وقت کے کریڈٹ آپ کے ${ BRAND_NAME } اکاؤنٹ میں جمع کر دیں گے۔ منسوخ کرنے سے پہلے یقینی بنائیں کہ آپ Free plan کی حدود سے تجاوز نہ کریں۔ ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "آپ کا ${ planName } پلان صرف آپ کے کاروباری ڈیٹا اور مواصلات کو محفوظ رکھنا نہیں۔ یہ آپ کے کمپلائنس کے اہداف کی سپورٹ کرتا ہے، آپ کے کاروبار کو نمایاں بناتا ہے، اور آپ کی ٹیم کو جوڑے رکھتا ہے۔"
@@ -17348,6 +17354,14 @@
         "افراد کے لیے"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "کارروائیاں"
+      ],
+      "Status": [
+        "حالت"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "کارروائی"
@@ -17360,9 +17374,6 @@
       ],
       "CSV field": [
         "CSV فیلڈ"
-      ],
-      "Edit": [
-        "ترمیم کریں"
       ],
       "Email address": [
         "ای میل پتہ"
@@ -18099,9 +18110,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } بیٹا پروگرام میں شامل ہونے کے لیے اپنے ${ BRAND_NAME } اکاؤنٹ کی تفصیلات درج کریں"
-      ],
-      "Enter your password": [
-        "اپنا پاس ورڈ درج کریں"
       ],
       "Error": [
         "نقص"

@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Požiadavka na bezpečnostný kľúč bola zrušená alebo vypršala. Skúste to znova, prosím."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Vaše zariadenie nedokázalo dokončiť požiadavku na bezpečnostný kľúč. Skúste to znova alebo použite iný spôsob prihlásenia."
       ]
     },
     "fido2: Info": {
@@ -966,7 +972,7 @@
         "Stále čakáte?"
       ],
       "Touch your security key to continue.": [
-        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
+        "Ak chcete pokračovať, dotknite sa bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -1150,6 +1156,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "V záujme ochrany vášho účtu pred pokračovaním potvrďte svoju totožnosť."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Ak chcete odstrániť obmedzenia, môžete prejsť na platený plán."
       ],
@@ -1179,6 +1188,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Heslo k účtu ${ BRAND_NAME }"
+      ],
       "Authenticator app": [
         "Overovacia aplikácia"
       ],
@@ -1190,9 +1202,6 @@
       ],
       "Hide password": [
         "Skryť heslo"
-      ],
-      "Password": [
-        "Heslo"
       ],
       "Phone number": [
         "Telefónne číslo"
@@ -1627,9 +1636,6 @@
       "Account temporarily locked": [
         "Účet dočasne zablokovaný"
       ],
-      "Enter your password": [
-        "Zadajte svoje heslo"
-      ],
       "Human verification": [
         "Overenie, že nie ste robot"
       ],
@@ -1641,6 +1647,9 @@
       ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
+      ],
+      "Verify it’s you": [
+        "Overiť, že ste to vy"
       ]
     },
     "Validation": {

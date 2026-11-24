@@ -107,6 +107,9 @@
       "Dark ${ BRAND_NAME } background applied": [
         "S'ha aplicat el fons fosc de ${ BRAND_NAME }"
       ],
+      "Disconnected from the meeting": [
+        "Desconnectat de la reunió"
+      ],
       "Library background applied": [
         "S'ha aplicat el fons de biblioteca"
       ],
@@ -134,8 +137,8 @@
       "Now starting recording": [
         "Ara comença l'enregistrament"
       ],
-      "Reconnected to the meeting": [
-        "Se us ha tornat a connectar amb la reunió."
+      "Reconnected": [
+        "S'ha tornat a connectar"
       ],
       "Recording saved": [
         "S'ha desat l'enregistrament"
@@ -185,9 +188,6 @@
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Sou l'únic participant. La reunió es tancarà en 2 minuts si no s'hi uneix ningú més."
       ],
-      "You have been disconnected from the meeting": [
-        "Se us ha desconnectat de la reunió."
-      ],
       "You have been muted by the host": [
         "L'amfitrió us ha silenciat"
       ],
@@ -229,7 +229,7 @@
         "Admet-los tots"
       ],
       "Allow access": [
-        "Permeteu l'accés"
+        "Permet l'accés"
       ],
       "Allow live captions": [
         "Permet els subtítols en directe"
@@ -294,8 +294,8 @@
       "Continue without camera": [
         "Continua sense càmera"
       ],
-      "Continue without mic and camera": [
-        "Continua sense micròfon ni càmera"
+      "Continue without camera and microphone": [
+        "Continuar sense càmera ni micròfon"
       ],
       "Continue without microphone": [
         "Continua sense micròfon"
@@ -445,7 +445,7 @@
         "S'està preparant..."
       ],
       "Go to today": [
-        "Vés a avui"
+        "Va a avui"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -495,6 +495,9 @@
       "Layout": [
         "Disposició"
       ],
+      "Learn more": [
+        "Més informació"
+      ],
       "Leave": [
         "Surt"
       ],
@@ -530,6 +533,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
+      ],
+      "More options": [
+        "Més opcions"
       ],
       "More options for accounts": [
         "Més opcions per als comptes"
@@ -622,6 +628,9 @@
       "Refresh audio and video tracks": [
         "Actualitza les pistes d'àudio i vídeo"
       ],
+      "Refresh page": [
+        "Actualitza la pàgina"
+      ],
       "Refresh screen share track": [
         "Actualitza la pista de compartició de pantalla"
       ],
@@ -664,9 +673,6 @@
       ],
       "Resume": [
         "Continuar"
-      ],
-      "Retry": [
-        "Reintenta"
       ],
       "Return to dashboard": [
         "Torna al tauler de control"
@@ -897,6 +903,9 @@
       ],
       "Copy meeting link": [
         "Copia l'enllaç de la reunió"
+      ],
+      "Debug": [
+        "Depuració"
       ],
       "Go to dashboard": [
         "Ves al tauler de control"
@@ -1998,11 +2007,50 @@
       "An error occurred": [
         "S'ha produït un error"
       ],
-      "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "Ha fallat la inicialització del desenfocament del fons. Torneu a activar la càmera o el desenfocament del fons"
+      "Background blur failed. Turn it off and on again.": [
+        "No s'ha pogut difuminar el fons. Desactiveu-lo i torneu-lo a activar."
+      ],
+      "Background blur isn’t supported in this browser": [
+        "El difuminat del fons no s'admet en aquest navegador."
+      ],
+      "Background effects aren’t supported in this browser": [
+        "Els efectes de fons no són compatibles amb aquest navegador"
+      ],
+      "Background failed. Pick it again.": [
+        "Ha fallat el fons. Torneu-lo a seleccionar."
+      ],
+      "Background limit reached. Remove one to add another.": [
+        "S'ha arribat al límit de fons. Esborreu-ne un per a afegir-ne un altre."
+      ],
+      "Background not added. Check your connection and try again.": [
+        "No s'ha pogut afegir el fons. Comproveu la connexió i torneu-ho a provar."
+      ],
+      "Background not added. Try again.": [
+        "No s'ha pogut afegir el fons. Torneu-ho a provar."
+      ],
+      "Background not removed. Check your connection and try again.": [
+        "No s'ha pogut eliminar el fons. Comproveu la connexió i torneu-ho a provar."
+      ],
+      "Background not removed. Try again.": [
+        "No s'ha pogut eliminar el fons. Torneu-ho a provar."
+      ],
+      "Background not saved in this browser.": [
+        "No s'ha desat el fons en aquest navegador."
+      ],
+      "Backgrounds didn’t load. You can’t add new ones right now.": [
+        "No s'han pogut carregar els fons. No en podeu afegir de nous ara mateix."
       ],
       "Bookmark password is not available": [
         "La contrasenya de l'adreça d'interès no està disponible"
+      ],
+      "Camera and microphone didn’t start. Try turning them on again.": [
+        "No s'han pogut iniciar la càmera i el micròfon. Torneu-los a activar."
+      ],
+      "Camera blocked": [
+        "La càmera està bloquejada"
+      ],
+      "Camera didn’t start. Try turning it on again.": [
+        "No s'ha pogut iniciar la càmera. Torneu a activar-la."
       ],
       "Cannot add photo to album without a valid name": [
         "No es pot afegir la foto a l'àlbum sense un nom vàlid"
@@ -2022,23 +2070,29 @@
       "Cannot verify who uploaded this file": [
         "No es pot verificar qui ha carregat aquest fitxer"
       ],
-      "Check your audio settings and try again": [
-        "Comproveu les preferències d'àudio i torneu-ho a provar"
+      "Caption language not changed. Try again.": [
+        "No s'ha pogut canviar l'idioma dels subtítols. Torneu-ho a provar."
       ],
-      "Connection lost — captions will resume when reconnected": [
-        "S'ha perdut la connexió: els subtítols es reprendran en reconnectar-se"
+      "Character limit reached. Remove some text to add a mention.": [
+        "S'ha arribat al límit de caràcters. Elimineu text per a afegir una menció."
+      ],
+      "Character limit reached. Remove some text to add an emoji.": [
+        "S'ha arribat al límit de caràcters. Elimineu text per a afegir un emoji."
+      ],
+      "Chat unavailable. Refresh the page to use it again.": [
+        "El xat no està disponible. Actualitzeu la pàgina per a tornar-lo a utilitzar."
+      ],
+      "Check your audio settings and try again.": [
+        "Comproveu les preferències d'àudio i torneu-ho a provar."
+      ],
+      "Connection lost. Captions will start again when you’re reconnected.": [
+        "S'ha perdut la connexió. Els subtítols es reprendran quan torneu a estar connectats."
       ],
       "Copy operation aborted": [
         "S'ha cancel·lat l'operació de còpia"
       ],
       "Copying item to a non-folder is not allowed": [
         "No es permet copiar un element a un element que no sigui una carpeta"
-      ],
-      "Could not add this background. Check your connection and try again.": [
-        "No s'ha pogut afegir aquest fons. Comproveu la connexió i torneu-ho a intentar."
-      ],
-      "Could not add this background. Please try again.": [
-        "No s'ha pogut afegir aquest fons. Torneu-ho a intentar."
       ],
       "Could not find an available name": [
         "No s'ha pogut trobar cap nom disponible"
@@ -2052,23 +2106,29 @@
       "Could not read part of this file: ${ message }": [
         "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
       ],
-      "Could not remove this background. Check your connection and try again.": [
-        "No s'ha pogut eliminar aquest fons. Comproveu la connexió i torneu-ho a intentar."
-      ],
-      "Could not remove this background. Please try again.": [
-        "No s'ha pogut eliminar aquest fons. Torneu-ho a intentar."
-      ],
       "Could not unlock the parent folder": [
         "No s'ha pogut desbloquejar la carpeta principal"
       ],
       "Could not unlock this item": [
         "No s'ha pogut desbloquejar aquest element"
       ],
+      "Couldn’t admit participant. Try again.": [
+        "No s'ha pogut admetre el participant. Torneu-ho a provar."
+      ],
+      "Couldn’t admit participants. Try again.": [
+        "No s'han pogut admetre els participants. Torneu-ho a provar."
+      ],
+      "Couldn’t deny participant. Try again.": [
+        "No s'ha pogut denegar l'accés al participant. Torneu-ho a provar."
+      ],
       "Couldn’t play the recording on this speaker.": [
         "No s'ha pogut reproduir l'enregistrament en aquest altaveu."
       ],
       "Couldn’t play the test sound on this speaker.": [
         "No s'ha pogut reproduir el so de prova en aquest altaveu."
+      ],
+      "Couldn’t prepare the recording": [
+        "No s'ha pogut preparar l'enregistrament"
       ],
       "Couldn’t start the microphone test.": [
         "No s'ha pogut iniciar la prova del micròfon."
@@ -2088,35 +2148,35 @@
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
+      "Download failed. Try again.": [
+        "No s'ha pogut descarregar. Torneu-ho a provar."
+      ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
+      ],
+      "End time must be after start time": [
+        "L'hora de finalització ha de ser posterior a l'hora d'inici"
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
       ],
+      "Enter a date": [
+        "Introduïu una data"
+      ],
+      "Enter a meeting name": [
+        "Introduïu un nom per a la reunió"
+      ],
+      "Enter a time": [
+        "Introduïu una hora"
+      ],
       "Enter your username without the domain (@example.com)": [
         "Introduïu el vostre nom d'usuari sense el domini (@exemple.cat)"
       ],
-      "Event deleted": [
-        "S'ha eliminat l'esdeveniment"
+      "Event not deleted. Try again.": [
+        "No s'ha pogut eliminar l'esdeveniment. Torneu-ho a provar."
       ],
       "Expiration date cannot be in the past": [
         "La data de caducitat no pot ser en el passat"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "No s'ha pogut admetre el participant. Torneu-ho a provar."
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "No s'ha pogut admetre els participants. Torneu-ho a provar."
-      ],
-      "Failed to assign host": [
-        "No s'ha pogut assignar l'amfitrió"
-      ],
-      "Failed to create meeting": [
-        "No s'ha pogut crear la reunió."
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "No s'ha pogut crear la reunió personal. Actualitzeu la pàgina."
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
@@ -2142,26 +2202,8 @@
       "Failed to decrypt session key": [
         "No s'ha pogut desxifrar la clau de sessió"
       ],
-      "Failed to delete event": [
-        "No s'ha pogut eliminar l'esdeveniment"
-      ],
-      "Failed to delete recording": [
-        "No s'ha pogut eliminar l'enregistrament"
-      ],
-      "Failed to delete room": [
-        "No s'ha pogut eliminar la sala"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "No s'ha pogut refusar el participant. Torneu-ho a provar."
-      ],
-      "Failed to download recording": [
-        "No s'ha pogut descarregar l'enregistrament"
-      ],
-      "Failed to edit meeting": [
-        "No s'ha pogut editar la reunió"
-      ],
-      "Failed to edit room name": [
-        "No s'ha pogut editar el nom de la sala"
+      "Failed to get invitee keys": [
+        "No s'han pogut obtenir les claus del convidat"
       ],
       "Failed to get inviter keys": [
         "No s'han pogut obtenir les claus de qui convida"
@@ -2172,53 +2214,35 @@
       "Failed to join meeting. Please try again.": [
         "No us heu pogut unir a la reunió. Torneu-ho a provar."
       ],
-      "Failed to lock meeting": [
-        "No s'ha pogut bloquejar la reunió"
+      "Failed to load the membership": [
+        "No s'ha pogut carregar l'afiliació"
       ],
-      "Failed to request live captions": [
-        "No s'han pogut sol·licitar els subtítols en directe"
+      "Failed to load the membership data": [
+        "No s'han pogut carregar les dades d'afiliació"
       ],
       "Failed to rotate personal meeting link": [
         "No s'ha pogut renovar l'enllaç de la reunió personal"
       ],
-      "Failed to send chat message. Please try again.": [
-        "No s'ha pogut enviar el missatge de xat. Torneu-ho a provar."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "No s'ha pogut enviar la reacció amb emoji. Torneu-ho a provar."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "No s'ha pogut enviar la reacció. Torneu-ho a provar."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "No s'ha pogut iniciar la reunió. Torneu-ho a provar."
-      ],
-      "Failed to start recording": [
-        "No s'ha pogut iniciar l'enregistrament"
-      ],
-      "Failed to unlock meeting": [
-        "No s'ha pogut desbloquejar la reunió"
-      ],
-      "Failed to update caption language. Please try again.": [
-        "No s'ha pogut actualitzar l'idioma dels subtítols. Torneu-ho a provar."
-      ],
-      "Failed to update live captions availability": [
-        "No s'ha pogut actualitzar la disponibilitat dels subtítols en directe"
-      ],
-      "Failed to update live captions. Please try again.": [
-        "No s'han pogut actualitzar els subtítols en directe. Torneu-ho a provar."
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "No s'han pogut actualitzar les preferències de la sala d'espera. Torneu-ho a provar."
-      ],
       "Failed to verify invitation": [
         "No s'ha pogut verificar la invitació"
+      ],
+      "Failed to verify membership": [
+        "No s'ha pogut verificar l'afiliació"
+      ],
+      "Feedback not sent. Try again.": [
+        "No s'ha pogut enviar el comentari. Torneu-ho a provar."
       ],
       "File download failed due to empty response": [
         "Ha fallat la descàrrega del fitxer perquè la resposta era buida"
       ],
       "File has no revision": [
         "El fitxer no té cap revisió"
+      ],
+      "Host not changed. Try again.": [
+        "No s'ha pogut canviar l'amfitrió. Torneu-ho a provar."
+      ],
+      "If you think this was a mistake, try joining again.": [
+        "Si creieu que això és un error, torneu a provar de connectar-vos-hi."
       ],
       "Image preview not found": [
         "No s’ha trobat la vista prèvia de la imatge"
@@ -2231,9 +2255,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
-      ],
-      "Invalid meeting link": [
-        "L'enllaç de la reunió no és vàlid"
       ],
       "Invalid URL": [
         "L'URL no és vàlid."
@@ -2250,17 +2271,59 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
       ],
-      "Live captions couldn't be started.": [
-        "No s'han pogut iniciar els subtítols en directe."
+      "Link removed": [
+        "S'ha eliminat l'enllaç"
       ],
-      "Live captions have stopped.": [
-        "S'han aturat els subtítols en directe."
+      "Live captions didn’t start. Turn them on to try again.": [
+        "No s'han pogut iniciar els subtítols en directe. Activeu-los per a tornar-ho a provar."
       ],
-      "Message is too long to send": [
-        "El missatge és massa llarg per a enviar-lo"
+      "Live captions failed": [
+        "Han fallat els subtítols en directe"
       ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "L'accés al micròfon està bloquejat. Permeteu-lo a les preferències del navegador."
+      "Live captions failed. Turn them on to try again.": [
+        "Han fallat els subtítols en directe. Activeu-los per a tornar-ho a provar."
+      ],
+      "Live captions not updated. Try again.": [
+        "No s'han actualitzat els subtítols en directe. Torneu-ho a provar."
+      ],
+      "Live captions paused": [
+        "S'han pausat els subtítols en directe"
+      ],
+      "Live captions stopped. Turn them on to try again.": [
+        "S'han aturat els subtítols en directe. Activeu-los per a tornar-ho a provar."
+      ],
+      "Meeting full": [
+        "La reunió està plena"
+      ],
+      "Meeting link not found": [
+        "No s'ha trobat l'enllaç de la reunió"
+      ],
+      "Meeting not created. Try again.": [
+        "No s'ha pogut crear la reunió. Torneu-ho a provar."
+      ],
+      "Meeting not locked. Try again.": [
+        "No s'ha pogut bloquejar la reunió. Torneu-ho a provar."
+      ],
+      "Meeting not unlocked. Try again.": [
+        "La reunió no està desbloquejada. Torneu-ho a provar."
+      ],
+      "Meeting not updated. Try again.": [
+        "No s'ha pogut actualitzar la reunió. Torneu-ho a provar."
+      ],
+      "Message not sent. Check your connection and try again.": [
+        "No s'ha pogut enviar el missatge. Comproveu la connexió i torneu-ho a provar."
+      ],
+      "Message too long. Remove some text and try again.": [
+        "El missatge és massa llarg. Elimineu text i torneu-ho a provar."
+      ],
+      "Microphone blocked": [
+        "El micròfon està bloquejat"
+      ],
+      "Microphone blocked. Allow it in your browser settings.": [
+        "El micròfon està bloquejat. Permeteu-ho a les preferències del navegador."
+      ],
+      "Microphone didn’t start. Try turning it on again.": [
+        "El micròfon no s'ha iniciat. Torneu a activar-lo."
       ],
       "Microphone not detected": [
         "No s'ha detectat el micròfon"
@@ -2290,8 +2353,17 @@
       "Name must not be empty": [
         "El nom no pot estar buit"
       ],
+      "No camera detected": [
+        "No s'ha detectat cap càmera"
+      ],
       "No file data was received. Please try again.": [
         "No s'han rebut dades del fitxer. Torneu-ho a provar."
+      ],
+      "No microphone detected": [
+        "No s'ha detectat cap micròfon"
+      ],
+      "Noise cancellation turned off because your device is running slowly. Turn it back on in audio settings.": [
+        "S'ha desactivat la cancel·lació de soroll perquè el dispositiu va lent. Torneu a activar-la a les preferències d'àudio."
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -2299,8 +2371,14 @@
       "Not enough storage space to record. Free up space and try again.": [
         "No hi ha prou espai d'emmagatzematge per a enregistrar. Allibereu-ne i torneu-ho a provar."
       ],
+      "Not sent. Check your connection.": [
+        "No s'ha enviat. Comproveu la connexió."
+      ],
       "Only admins can convert external invitations": [
         "Només els administradors poden convertir invitacions externes"
+      ],
+      "Only part of the meeting was recorded.": [
+        "Només s'ha gravat una part de la reunió."
       ],
       "Operation aborted": [
         "S'ha cancel·lat l'operació"
@@ -2317,6 +2395,12 @@
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
       ],
+      "Paste the full meeting link": [
+        "Enganxeu l'enllaç complet de la reunió"
+      ],
+      "Personal meeting not created. Refresh the page to try again.": [
+        "No s'ha creat la reunió personal. Actualitzeu la pàgina per tornar-ho a provar."
+      ],
       "Photo is already in the target album": [
         "La foto ja és a l'àlbum de destí"
       ],
@@ -2326,11 +2410,23 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Seleccioneu una imatge JPEG, PNG o WebP."
       ],
+      "Picture-in-picture failed. Try again.": [
+        "No s'ha pogut activar la imatge en imatge. Torneu-ho a provar."
+      ],
+      "Reaction not sent. Try again.": [
+        "No s'ha pogut enviar la reacció. Torneu-ho a provar."
+      ],
+      "Recording didn’t start. Try again.": [
+        "No s'ha pogut iniciar la gravació. Torneu-ho a provar."
+      ],
+      "Recording not deleted. Try again.": [
+        "No s'ha pogut eliminar la gravació. Torneu-ho a provar."
+      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "La gravació s'ha aturat perquè no es podia desar. L'hem mantinguda fins a aquest punt."
       ],
-      "Recording stopped because of an error.": [
-        "S'ha aturat la gravació a causa d'un error."
+      "Recording stopped unexpectedly. Start a new recording to continue.": [
+        "La gravació s'ha aturat de manera inesperada. Inicieu-ne una nova per a continuar."
       ],
       "Renaming root item is not allowed": [
         "No es permet canviar el nom de l'element arrel"
@@ -2341,14 +2437,20 @@
       "Request timed out": [
         "La sol·licitud ha caducat"
       ],
-      "Room deleted": [
-        "S'ha eliminat la sala"
+      "Room name not updated. Try again.": [
+        "No s'ha pogut actualitzar el nom de la sala. Torneu-ho a provar."
+      ],
+      "Room not deleted. Try again.": [
+        "No s'ha pogut eliminar la sala. Torneu-ho a provar."
       ],
       "Screen share is not supported on mobile browsers": [
         "La compartició de pantalla no és compatible amb els navegadors mòbils"
       ],
       "Screen share is not supported on your device": [
         "La compartició de pantalla no és compatible amb el vostre dispositiu"
+      ],
+      "Setting not saved. Try again.": [
+        "No s'ha desat la preferència. Torneu-ho a provar."
       ],
       "Signature is missing": [
         "Falta la signatura"
@@ -2371,11 +2473,17 @@
       "Some file parts failed to upload. Please try again.": [
         "No s'han pogut carregar algunes parts del fitxer. Torneu-ho a provar."
       ],
+      "Some invitations could not be loaded": [
+        "No s'han pogut carregar algunes invitacions"
+      ],
       "Some items could not be loaded": [
         "No s'han pogut carregar alguns elements"
       ],
       "Something went wrong": [
         "S'ha produït un error."
+      ],
+      "Something went wrong while saving it.": [
+        "S'ha produït un error en desar-ho. Torneu-ho a provar."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
@@ -2386,20 +2494,14 @@
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
       ],
-      "The emoji could not be added because the message is at its character limit": [
-        "No s'ha pogut afegir l'emoji perquè el missatge ha assolit el límit de caràcters."
+      "The host didn’t admit you": [
+        "L'amfitrió no us ha admès"
       ],
-      "The meeting password is incorrect": [
-        "La contrasenya de la reunió és incorrecta"
+      "The host didn’t admit you in time. Send a new request to join.": [
+        "L'amfitrió no us ha admès a temps. Envieu una sol·licitud nova per a unir-vos-hi."
       ],
-      "The meeting password is invalid": [
-        "La contrasenya de la reunió no és vàlida"
-      ],
-      "The mention could not be added because the message is at its character limit": [
-        "La menció no s'ha pogut afegir perquè el missatge ha arribat al límit de caràcters."
-      ],
-      "The message field is unavailable. Please reload the page.": [
-        "El camp de missatge no està disponible. Torneu a carregar la pàgina."
+      "The link may be incomplete or expired. Check it, or start a new meeting.": [
+        "L'enllaç pot estar incomplet o haver caducat. Comproveu-lo o inicieu una nova reunió."
       ],
       "The selected microphone is no longer available.": [
         "El micròfon seleccionat ja no està disponible."
@@ -2407,11 +2509,8 @@
       "The uploaded file does not match the original. Please try again.": [
         "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
       ],
-      "This background could not be saved in this browser.": [
-        "No s'ha pogut desar el fons en aquest navegador."
-      ],
-      "This emoji can’t be used as a reaction": [
-        "Aquest emoji no es pot utilitzar com a reacció"
+      "This emoji can’t be used as a reaction. Pick another one.": [
+        "Aquest emoji no es pot utilitzar com a reacció. Trieu-ne un altre."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -2428,20 +2527,20 @@
       "This file has no version available to download": [
         "Aquest fitxer no té cap versió disponible per a descarregar"
       ],
+      "This file is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Aquest fitxer és massa gran. Trieu-ne un de menys de ${ maxMegabytes } MB."
+      ],
       "This file name is too long. Rename the image and try again.": [
         "Aquest nom de fitxer és massa llarg. Canvieu el nom de la imatge i torneu-ho a intentar."
       ],
       "This file version could not be uploaded": [
         "No s'ha pogut carregar aquesta versió del fitxer"
       ],
-      "This image could not be read. Pick another one.": [
-        "No s'ha pogut llegir aquesta imatge. Trieu-ne una altra."
+      "This image can’t be opened. Pick another one.": [
+        "No es pot obrir aquesta imatge. Trieu-ne una altra."
       ],
       "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
         "Aquesta imatge és massa gran. Trieu-ne una de fins a ${ maxEdge } píxels d'amplada i d'alçada."
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "Aquesta imatge és massa gran. Seleccioneu-ne una de menys de ${ maxMegabytes } MB."
       ],
       "This item has no image preview": [
         "Aquest element no té cap vista prèvia de la imatge"
@@ -2455,20 +2554,29 @@
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Aquesta reunió té lloc en una versió antiga. L'amfitrió ha de finalitzar-la i actualitzar el Meet per reiniciar-la amb la darrera versió."
       ],
+      "To share your screen, allow it in your browser settings, then rejoin the call.": [
+        "Per a compartir la pantalla, permeteu-ho a les preferències del navegador i torneu-vos a unir a la trucada."
+      ],
+      "To use them, allow them in your browser settings, then rejoin the call.": [
+        "Per a utilitzar-los, activeu-los a la configuració del navegador i torneu a connectar-vos a la trucada."
+      ],
+      "To use your camera, allow it in your browser settings, then rejoin the call.": [
+        "Per a utilitzar la càmera, permeteu-ho a les preferències del navegador i torneu-vos a unir a la trucada."
+      ],
+      "To use your microphone, allow it in your browser settings, then rejoin the call.": [
+        "Per a utilitzar el micròfon, permeteu-ho a les preferències del navegador i torneu a unir-vos a la trucada."
+      ],
       "Too many server errors, please try again later": [
         "S'han produït massa errors del servidor. Torneu-ho a provar més tard"
       ],
       "Too many server requests, please try again later": [
         "Hi ha hagut massa sol·licituds al servidor. Torneu-ho a provar més tard"
       ],
-      "Try turning live captions off and on again.": [
-        "Proveu de desactivar i tornar a activar els subtítols en directe."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
       ],
-      "Unable to generate captions": [
-        "No s'han pogut generar els subtítols"
+      "Turn live captions off and on again.": [
+        "Desactiveu els subtítols en directe i torneu-los a activar."
       ],
       "Unknown error": [
         "Error desconegut"
@@ -2485,8 +2593,8 @@
       "Verification keys for ${ signatureType } are not available": [
         "Les claus de verificació per a ${ signatureType } no estan disponibles"
       ],
-      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
-        "Ha fallat la inicialització del fons virtual. Canvieu la càmera o torneu a seleccionar un fons"
+      "Waiting room setting not saved. Try again.": [
+        "No s'ha desat la configuració de la sala d'espera. Torneu-ho a provar."
       ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
@@ -2503,6 +2611,9 @@
       "You can only upload a new version to a file": [
         "Només podeu carregar una nova versió a un fitxer"
       ],
+      "You can send feedback only for meetings you joined.": [
+        "Només podeu enviar comentaris sobre les reunions a les quals us hàgiu unit."
+      ],
       "You can update a public link for your own files only": [
         "Només podeu actualitzar un enllaç públic per als vostres propis fitxers"
       ],
@@ -2511,9 +2622,6 @@
       ],
       "You do not have access to this shared item": [
         "No teniu accés a aquest element compartit"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "Heu assolit el nombre màxim de fons personalitzats."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "El vostre navegador s'ha quedat sense espai d'emmagatzematge. S'ha desat l'enregistrament fins a aquest punt."
@@ -2560,8 +2668,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "S'ha cancel·lat la sol·licitud de clau de seguretat o s'ha esgotat el temps d'espera. Torneu-ho a provar."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "El vostre dispositiu no ha pogut completar la sol·licitud de clau de seguretat. Torneu-ho a provar o feu servir un altre mètode d'inici de sessió."
       ]
     },
     "fido2: Info": {
@@ -2707,6 +2821,16 @@
       " and ": [
         " i "
       ],
+      "${ count } person has access but isn't in the call": [
+        "${ count } persona hi té accés però no és a la trucada",
+        "${ count } persones hi tenen accés però no són a la trucada"
+      ],
+      "${ hiddenParticipantTitle }. Meeting almost full": [
+        "${ hiddenParticipantTitle }. La reunió és gairebé plena"
+      ],
+      "${ hiddenParticipantTitle }. Meeting full": [
+        "${ hiddenParticipantTitle }. La reunió és plena"
+      ],
       "${ maxParticipants } participant limit reached": [
         "S'ha arribat al límit de ${ maxParticipants } participants"
       ],
@@ -2722,8 +2846,11 @@
       "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
         "${ MEET_APP_NAME } necessita accés a l'enregistrament de la pantalla perquè pugueu compartir-la durant la trucada. Un cop ho autoritzeu, macOS us demanarà que torneu a obrir l'aplicació."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } necessita WebRTC per funcionar. Actualitzeu el navegador o el dispositiu a una versió que sigui compatible amb WebRTC, proveu un altre navegador o desactiveu qualsevol extensió que l'estigui bloquejant."
+      "${ MEET_APP_NAME } needs WebAssembly, which is off or not available in this browser. Turn it on, or use another browser.": [
+        "${ MEET_APP_NAME } necessita WebAssembly, que està desactivat o no està disponible en aquest navegador. Activeu-lo o utilitzeu un altre navegador."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.": [
+        "${ MEET_APP_NAME } necessita WebRTC, que està desactivat o bloquejat en aquest navegador. Activeu-lo i desactiveu les extensions que el bloquegin o utilitzeu un altre navegador."
       ],
       "${ meetingName } has ended": [
         "${ meetingName } ha finalitzat"
@@ -2741,6 +2868,12 @@
       ],
       "${ participantName } is recording": [
         "${ participantName } està enregistrant"
+      ],
+      "${ participantName } joined": [
+        "${ participantName } s'ha unit"
+      ],
+      "${ participantName } left": [
+        "${ participantName } ha marxat"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (vós) està presentant"
@@ -2778,11 +2911,14 @@
       "(You)": [
         "(Vós)"
       ],
-      "-Removed dangerous URL-": [
-        "-S'ha esborrat un URL perillós-"
-      ],
       "1 reply draft": [
         "1 esborrany de resposta"
+      ],
+      "A participant joined": [
+        "S'ha unit un participant"
+      ],
+      "A participant left": [
+        "Un participant ha marxat"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
@@ -2823,6 +2959,12 @@
       "Are you sure you want to stop recording?": [
         "Segur que voleu aturar l'enregistrament?"
       ],
+      "Ask the host to end the meeting, refresh ${ MEET_APP_NAME } and start it again.": [
+        "Demaneu a l'amfitrió que finalitzi la reunió, actualitzeu ${ MEET_APP_NAME } i torneu-la a iniciar."
+      ],
+      "Ask the host to unlock it so you can join.": [
+        "Demaneu a l'amfitrió que el desbloquegi perquè pugueu unir-vos-hi."
+      ],
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
@@ -2834,9 +2976,6 @@
       ],
       "Background blur initializing": [
         "S'està inicialitzant la difuminació del fons"
-      ],
-      "Background effects are not supported on your browser": [
-        "El vostre navegador no admet els efectes de fons"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
@@ -2856,9 +2995,6 @@
       "Camera is starting": [
         "S'està iniciant la càmera"
       ],
-      "Camera permission denied": [
-        "S'ha denegat el permís de la càmera"
-      ],
       "Captions on": [
         "S'han activat els subtítols"
       ],
@@ -2867,6 +3003,12 @@
       ],
       "Chat with everyone": [
         "Xategeu amb tothom"
+      ],
+      "Check that you copied the full meeting link and try again.": [
+        "Comproveu que heu copiat l'enllaç complet de la reunió i torneu-ho a provar."
+      ],
+      "Check your internet connection and try again. If that doesn’t work, try another browser.": [
+        "Comproveu la connexió a internet i torneu-ho a provar. Si no funciona, proveu amb un altre navegador."
       ],
       "Check your system settings to make sure that a camera is available.": [
         "Comproveu les preferències del sistema per a assegurar-vos que hi ha una càmera disponible."
@@ -2877,14 +3019,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
-      "Connection failed": [
-        "La connexió ha fallat"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "La connexió s'ha interromput. S'està tornant a connectar..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "S'ha detectat un problema de connexió. S'està intentant recuperar..."
+      "Connection lost": [
+        "S'ha perdut la connexió"
       ],
       "Connection lost. Reconnecting…": [
         "S'ha perdut la connexió. S'està tornant a connectar…"
@@ -2912,6 +3048,9 @@
       ],
       "Custom combination": [
         "Combinació personalitzada"
+      ],
+      "Debug": [
+        "Depuració"
       ],
       "Decrypting meetings...": [
         "S'estan desxifrant les reunions..."
@@ -2985,6 +3124,18 @@
       "Enter your own password (as trusted contact).": [
         "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
+      "Epoch ${ epoch }": [
+        "Època ${ epoch }"
+      ],
+      "Epoch ${ previousEpoch } → ${ epoch }": [
+        "Època ${ previousEpoch } → ${ epoch }"
+      ],
+      "Error at epoch ${ epoch }": [
+        "S'ha produït un error a l'època ${ epoch }"
+      ],
+      "Event deleted": [
+        "S'ha eliminat l'esdeveniment"
+      ],
       "Everyone has been disconnected from the call.": [
         "Tothom ha estat desconnectat de la trucada."
       ],
@@ -3018,9 +3169,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "Obtingueu la millor experiència amb l'aplicació d'escriptori ${ protonMeet }"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "Aneu a about:config, cerqueu media.peerconnection.enabled i establiu el valor a \"true\"."
-      ],
       "Host": [
         "Amfitrió"
       ],
@@ -3042,17 +3190,14 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Si esteu utilitzant el Firefox, assegureu-vos que PeerConnection estigui activat."
+      "In Firefox, open ${ configPage } and set ${ preference } to ${ value }.": [
+        "A Firefox, obriu ${ configPage } i configureu ${ preference } com a ${ value }."
       ],
       "Incoming video off": [
         "S'ha desactivat el vídeo entrant"
       ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "La sol·licitud d'unió ha caducat. L'amfitrió no us ha admès a temps. Envieu una sol·licitud nova per a unir-vos-hi."
       ],
       "Joined ${ roomNameLabel }": [
         "Us heu unit a ${ roomNameLabel }"
@@ -3108,9 +3253,6 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Repetiu en bucle un vídeo carregat o la càmera en directe amb difuminació de fons."
       ],
-      "Lost connection to the meeting server. Reconnecting…": [
-        "S'ha perdut la connexió amb el servidor de la reunió. S'està reconnectant…"
-      ],
       "Lower participant's hand": [
         "Abaixa la mà del participant"
       ],
@@ -3134,9 +3276,6 @@
       ],
       "Meeting is decrypting...": [
         "S'està desxifrant la reunió..."
-      ],
-      "Meeting is full": [
-        "La reunió està plena"
       ],
       "Meeting link": [
         "Enllaç de la reunió"
@@ -3180,9 +3319,6 @@
       "Microphone is starting": [
         "S'està iniciant el micròfon"
       ],
-      "Microphone permission denied": [
-        "S'ha denegat el permís del micròfon"
-      ],
       "More options": [
         "Més opcions"
       ],
@@ -3210,14 +3346,8 @@
       "No camera detected": [
         "No s'ha detectat cap càmera"
       ],
-      "No camera detected.": [
-        "No s'ha detectat cap càmera."
-      ],
       "No microphone detected": [
         "No s'ha detectat cap micròfon"
-      ],
-      "No microphone detected.": [
-        "No s'ha detectat cap micròfon."
       ],
       "No publications": [
         "No hi ha publicacions"
@@ -3237,12 +3367,6 @@
       "No speaker detected": [
         "No s'ha detectat cap altaveu"
       ],
-      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
-        "S'ha desactivat la cancel·lació de soroll perquè el dispositiu té problemes de rendiment. Podeu tornar-la a activar a les preferències d'àudio."
-      ],
-      "Not sent, check your connection.": [
-        "No s'ha enviat. Comproveu la connexió."
-      ],
       "notify everyone here": [
         "notificar-ho a tothom aquí"
       ],
@@ -3254,9 +3378,6 @@
       ],
       "Now using ${ first }.": [
         "Ara s'està utilitzant ${ first }."
-      ],
-      "Only a partial meeting recording was available.": [
-        "Només hi havia una gravació parcial de la reunió."
       ],
       "Only meetings you created appear here": [
         "Només les reunions que heu creat apareixen aquí"
@@ -3294,17 +3415,11 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Enganxeu l'enllaç de ${ MEET_APP_NAME } per unir-vos a una reunió segura"
       ],
-      "Permissions not given.": [
-        "No s'han concedit els permisos."
-      ],
       "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
         "Feu clic a ${ downloadLink } i instal·leu l'aplicació. Després, torneu a fer clic a Uneix-me a l'aplicació ${ MEET_APP_NAME }."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Habiliteu l'accés al ${ microphoneLinkButton }${ andString }a la ${ cameraLinkButton } per a una experiència òptima."
-      ],
-      "Please try again or try another browser": [
-        "Torneu-ho a provar o feu-ho amb un altre navegador"
       ],
       "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
         "Actualitzeu ${ MEET_APP_NAME } per a continuar utilitzant l'aplicació. ${ downloadUpdate }"
@@ -3330,11 +3445,11 @@
       "Reactions": [
         "Reaccions"
       ],
-      "Reconnected successfully": [
-        "S'ha reconnectat correctament"
+      "Reconnected": [
+        "Reconnectat"
       ],
-      "Reconnecting to meeting...": [
-        "S'està tornant a connectar amb la reunió..."
+      "Reconnecting didn’t work. Check your internet connection, then rejoin.": [
+        "Si tornar-vos a connectar no ha funcionat, comproveu la connexió a internet i uniu-vos-hi de nou."
       ],
       "Reconnecting…": [
         "S'està tornant a connectar…"
@@ -3374,6 +3489,9 @@
       ],
       "Rejecting": [
         "S'està rebutjant"
+      ],
+      "Room deleted": [
+        "S'ha eliminat la sala"
       ],
       "Run your live camera through the custom background processor. Upload an image to use as the background.": [
         "Passeu la càmera en directe pel processador de fons personalitzat. Carregueu una imatge per a fer-la servir de fons."
@@ -3423,6 +3541,9 @@
       "Set up a permanent meeting room for your team or clients": [
         "Configureu una sala de reunions permanent per al vostre equip o per als vostres clients"
       ],
+      "Set your device’s date and time to update automatically, then try again.": [
+        "Configureu la data i l'hora del dispositiu perquè s'actualitzin automàticament i torneu-ho a provar."
+      ],
       "Share screen": [
         "Comparteix la pantalla"
       ],
@@ -3468,11 +3589,17 @@
       "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
         "El servei de subtitulació utilitza l'àudio de la reunió. Els subtítols només són visibles per a vós i no es desen."
       ],
+      "The host has another meeting in progress.": [
+        "L'amfitrió té una altra reunió en curs."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'amfitrió us ha tret d'aquesta reunió. Si ha estat un error, demaneu-li que us torni a convidar."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "L'enllaç de la reunió que heu intentat obrir no existeix o pot haver caducat. Assegureu-vos que l'enllaç és correcte o inicieu una reunió segura nova ."
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "L'amfitrió no és a la reunió en aquest moment. El recompte de participants tornarà a coincidir quan l'amfitrió s'hi uneixi."
+      ],
+      "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
+        "Aquest navegador no admet el xifratge d'extrem a extrem que utilitza ${ MEET_APP_NAME } per a protegir totes les reunions."
       ],
       "This conversation started before you joined.": [
         "Aquesta conversa ha començat abans que us hi uníssiu."
@@ -3489,9 +3616,6 @@
       "This meeting is being recorded": [
         "S'està enregistrant aquesta reunió"
       ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Aquesta reunió està bloquejada. Contacteu amb l'amfitrió per unir-vos-hi."
-      ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Aquesta reunió ha assolit el límit de temps d'un pla gratuït. Milloreu de pla per ampliar la durada de la reunió en futures trucades."
       ],
@@ -3500,6 +3624,9 @@
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Aquest enregistrament s'eliminarà permanentment del dispositiu. Aquesta acció no es podrà desfer."
+      ],
+      "This usually means a lost connection. It should clear on its own.": [
+        "Això normalment vol dir una connexió perduda. S'hauria de resoldre per si sola."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Això finalitzarà la reunió per a tots els participants i deixareu de compartir la vostra pantalla."
@@ -3518,6 +3645,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per ajudar a mantenir el vostre compte segur, confirmeu que sou realment vós abans de continuar."
+      ],
+      "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
+        "Per a unir-vos-hi, utilitzeu un altre navegador o dispositiu, o bé l'aplicació ${ MEET_APP_NAME } del vostre telèfon."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Per programar un esdeveniment, necessitareu **un compte gratuït de ${ BRAND_NAME }** perquè puguem desar l'esdeveniment. Només us portarà uns segons."
@@ -3539,9 +3672,6 @@
       ],
       "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
         "Activeu Firefox a ${ settingsPath }. A continuació, reinicieu Firefox i torneu a unir-vos a la trucada."
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "No s'ha pogut tornar a connectar a la reunió. Torneu-vos-hi a unir o sortiu-ne."
       ],
       "unlimited meeting": [
         "reunions il·limitades"
@@ -3621,6 +3751,9 @@
       "You have too many meetings in progress": [
         "Teniu massa reunions en curs"
       ],
+      "You joined": [
+        "Us heu unit"
+      ],
       "You left ${ meetingName }": [
         "Heu sortit de ${ meetingName }"
       ],
@@ -3636,9 +3769,6 @@
       "You were removed from the meeting": [
         "Us han tret de la reunió"
       ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "No se us ha admès a aquesta reunió. Podeu provar de tornar-vos-hi a unir si creieu que es tracta d'un error."
-      ],
       "You will leave the meeting. Others will continue.": [
         "Deixareu la reunió. Els altres continuaran."
       ],
@@ -3650,24 +3780,6 @@
       ],
       "Your always available meeting room": [
         "La vostra sala de reunions sempre disponible"
-      ],
-      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
-        "No s'han pogut carregar els vostres fons, així que ara mateix no se n'hi pot afegir cap de nou."
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "El navegador ha bloquejat l'accés a la càmera i al micròfon. Per a activar-los, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "El navegador ha bloquejat l'accés a la càmera. Per a activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "El navegador ha bloquejat l'accés al micròfon. Per a activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "El navegador ha bloquejat l'accés a la compartició de pantalla. Per a activar-lo, actualitzeu les preferències del navegador i torneu a entrar a la trucada."
-      ],
-      "Your browser or device isn’t supported": [
-        "El vostre navegador o dispositiu no és compatible"
       ],
       "Your camera is still starting": [
         "La càmera encara s'està iniciant"
@@ -3689,6 +3801,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Contrasenya del compte de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
@@ -3719,6 +3834,9 @@
       ],
       "Audio": [
         "Àudio"
+      ],
+      "Audio: ${ microphoneLabel }": [
+        "Àudio: ${ microphoneLabel }"
       ],
       "Authenticator app": [
         "Aplicació d'autenticació"
@@ -3774,6 +3892,9 @@
       "Dark ${ BRAND_NAME } background": [
         "Fons fosc de ${ BRAND_NAME }"
       ],
+      "Debug": [
+        "Depuració"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -3803,6 +3924,12 @@
       ],
       "Enabled": [
         "Habilitat"
+      ],
+      "End date": [
+        "Data de finalització"
+      ],
+      "End time": [
+        "Hora de finalització"
       ],
       "Ended": [
         "Finalitzada"
@@ -3909,9 +4036,6 @@
       "Participants join after you approve them": [
         "Els participants s'hi podran unir un cop els aproveu"
       ],
-      "Password": [
-        "Contrasenya"
-      ],
       "Phone number": [
         "Número de telèfon"
       ],
@@ -3960,6 +4084,12 @@
       "Spoken language": [
         "Idioma parlat"
       ],
+      "Start date": [
+        "Data d'inici"
+      ],
+      "Start time": [
+        "Hora d'inici"
+      ],
       "Subscribed": [
         "Subscrit"
       ],
@@ -3989,6 +4119,9 @@
       ],
       "Video": [
         "Vídeo"
+      ],
+      "Video: ${ cameraLabel }": [
+        "Vídeo: ${ cameraLabel }"
       ],
       "What happened?": [
         "Què ha passat?"
@@ -4144,11 +4277,6 @@
         "Desa i copia l'enllaç"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "El navegador o el programari del vostre dispositiu no és compatible amb ${ MEET_APP_NAME }. ${ MEET_APP_NAME } necessita WebAssembly (Wasm) per a funcionar. Actualitzeu el navegador o dispositiu a una versió compatible amb Wasm o proveu d'utilitzar un navegador diferent."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Com que sou l'únic participant en aquesta reunió, es tancarà automàticament. Voleu continuar-hi?"
@@ -4160,11 +4288,6 @@
       ],
       "Stay in the meeting": [
         "Roman a la reunió"
-      ]
-    },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "No s'ha pogut iniciar el mode Imatge sobre imatge"
       ]
     },
     "Meeting schedule": {
@@ -4240,9 +4363,6 @@
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
       ],
-      "Could not send feedback": [
-        "No s'ha pogut enviar el comentari"
-      ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
       ],
@@ -4254,9 +4374,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "Gràcies. S'han enviat els vostres comentaris."
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "No podeu enviar comentaris d'una reunió a la qual no heu assistit"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4574,20 +4691,32 @@
       "Blur and personal": [
         "Difuminat i personal"
       ],
+      "Browser not supported": [
+        "Aquest navegador no és compatible"
+      ],
       "Camera and microphone are blocked": [
         "La càmera i el micròfon estan bloquejats"
       ],
       "Camera is blocked": [
         "La càmera està bloquejada"
       ],
+      "Can’t join from this browser": [
+        "No us podeu connectar des d'aquest navegador."
+      ],
       "Chat": [
         "Xat"
+      ],
+      "Connection failed": [
+        "Ha fallat la connexió"
       ],
       "Constants": [
         "Constants"
       ],
-      "Couldn't prepare the recording": [
-        "No s'ha pogut preparar l'enregistrament"
+      "Couldn’t join the meeting": [
+        "No us heu pogut unir a la reunió"
+      ],
+      "Couldn’t start the meeting": [
+        "No s'ha pogut iniciar la reunió"
       ],
       "Create new room": [
         "Crea una sala"
@@ -4606,9 +4735,6 @@
       ],
       "Display": [
         "Visualització"
-      ],
-      "Enter your password": [
-        "Introduïu la vostra contrasenya"
       ],
       "Epoch": [
         "Època"
@@ -4634,11 +4760,14 @@
       "Human verification": [
         "Verificació humana"
       ],
+      "Incorrect date and time": [
+        "La data i l'hora són incorrectes"
+      ],
+      "Incorrect meeting password": [
+        "La contrasenya de la reunió és incorrecta"
+      ],
       "Info": [
         "Informació"
-      ],
-      "Invalid meeting link": [
-        "L'enllaç de la reunió no és vàlid"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
@@ -4682,6 +4811,12 @@
       ],
       "Meeting edited": [
         "S'ha editat la reunió"
+      ],
+      "Meeting locked": [
+        "S'ha bloquejat la reunió"
+      ],
+      "Meeting out of date": [
+        "La reunió ha caducat"
       ],
       "Messaging Layer Security": [
         "Seguretat de la capa de missatgeria"
@@ -4782,9 +4917,6 @@
       "Talk confidentially": [
         "Parleu amb confidencialitat"
       ],
-      "The host didn't admit you": [
-        "L'amfitrió no us ha admès"
-      ],
       "Time": [
         "Hora"
       ],
@@ -4793,6 +4925,9 @@
       ],
       "Two-factor authentication": [
         "Autenticació de doble factor"
+      ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
       ],
       "Video and audio": [
         "Vídeo i àudio"
@@ -4819,12 +4954,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "La difuminació del fons no és compatible amb el vostre navegador"
-      ],
-      "Background effects are not supported on your browser": [
-        "El vostre navegador no admet els efectes de fons"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Genera un enllaç de reunió nou. L'enllaç actual deixarà de funcionar."
       ],
@@ -4866,23 +4995,8 @@
       "Connection is taking longer than expected": [
         "La connexió està tardant més de l'esperat"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "No s'ha pogut accedir a la càmera o al micròfon. Podeu provar de tornar-los a activar des dels controls de la reunió."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "No s'ha pogut accedir a la càmera. Podeu provar de tornar-la a activar des dels controls de la reunió."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "No s'ha pogut accedir al micròfon. Podeu provar d'habilitar-lo de nou des dels controls de la reunió."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "La connexió UDP de STUN ha fallat. S'està provant amb el reenviament de TURN…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "La connexió UDP de STUN ha superat el temps d'espera. S'està provant amb el reenviament de TURN"
       ],
       "Trying another route…": [
         "S'està provant una altra ruta…"

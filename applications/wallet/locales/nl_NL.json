@@ -25,6 +25,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
+      "About ${ name }": [
+        "Over ${ name }"
+      ],
       "Activate recovery": [
         "Herstel activeren"
       ],
@@ -33,6 +36,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } toevoegen"
+      ],
+      "Add ${ name }": [
+        "${ name } toevoegen"
       ],
       "Add account": [
         "Account toevoegen"
@@ -123,6 +129,9 @@
       ],
       "Dismiss": [
         "Negeren"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
       ],
       "Done": [
         "Klaar"
@@ -351,6 +360,9 @@
       ],
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
+      ],
+      "Skip to main content": [
+        "Direct naar hoofdinhoud"
       ],
       "Submit": [
         "Versturen"
@@ -603,9 +615,19 @@
         "Saldo laden"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Sluiten"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Aanbieding niet beschikbaar"
       ]
     },
     "BF2024: Deal details": {
@@ -2380,12 +2402,6 @@
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisatiesleutel moet geactiveerd zijn om uitgenodigde gebruikers aan te maken."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisatiesleutel moet worden geactiveerd om niet-privé gebruikers te maken"
-      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -2457,9 +2473,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Het minimale donatiebedrag is ${ price }"
       ],
       "The passphrases do not match": [
         "De wachtwoordzinnen komen niet overeen"
@@ -2768,6 +2781,9 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/maand)"
+      ],
+      "1 vault per user": [
+        "1 kluis per gebruiker"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 dagen geld-terug-garantie: annuleer binnen 30 dagen na uw aankoop en neem contact op met onze ${ customerSupportLink } om uw geld terug te krijgen."
@@ -3245,6 +3261,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
+      ],
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
@@ -3407,9 +3426,6 @@
       ],
       "Optional": [
         "Optioneel"
-      ],
-      "Password": [
-        "Wachtwoord"
       ],
       "Payer": [
         "Betaler"
@@ -3608,6 +3624,34 @@
       ],
       "Secondary amount": [
         "Secundair bedrag"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5 × Plus gebruik"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API toegang, met ${ credit } per maand krediet per gebruiker"
+      ],
+      "Everything in Free, and:": [
+        "Alles in het Free Plan, en:"
+      ],
+      "Everything in Plus, and:": [
+        "Alles in het Plus Plan, en:"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "Limited messages and chat history": [
+        "Gelimiteerde berichten en gespreksgechiedenis"
+      ],
+      "More usage": [
+        "Meer gebruik"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Voor coderen en bouwen"
       ]
     },
     "mail_signup_2024: Info": {
@@ -5096,6 +5140,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Organisatie Beheerder"
+      ],
       "Security Admin": [
         "Beveiligingsbeheerder"
       ],
@@ -5444,6 +5491,9 @@
       "Payment method updated": [
         "Betalingsmethode bijgewerkt"
       ],
+      "Preference saved": [
+        "Voorkeur opgeslagen"
+      ],
       "Problem reported": [
         "Probleem gerapporteerd"
       ],
@@ -5610,9 +5660,6 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
-      "Enter your password": [
-        "Voer uw wachtwoord in"
-      ],
       "Error": [
         "Fout"
       ],
@@ -5714,6 +5761,9 @@
       ],
       "Verification failed": [
         "Verificatie mislukt"
+      ],
+      "Verify it’s you": [
+        "Uw identiteit verifiëren"
       ],
       "Verifying your card...": [
         "Uw kaart wordt geverifieerd..."
@@ -5817,6 +5867,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Deze gebruiker krijgt beheerdersrechten bij de volgende aanmelding."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Upgrade naar een ondersteund abonnement om beheerdersrollen te gebruiken."
       ],
@@ -5835,6 +5888,20 @@
       "Try a shorter username (${ n } character max)": [
         "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
+    "Visionary upsell": {
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Een hoger capaciteitsniveau van ${ VPN_APP_NAME } servers: veel minder mensen delen deze en gebruiken ${ BRAND_NAME }-eigendom IP-adressen. Quick Connect kiest ze automatisch waar beschikbaar."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nieuwe ${ BRAND_NAME } diensten zonder extra kosten"
+      ],
+      "Unlimited": [
+        "Ongelimiteerd"
+      ],
+      "Up to ${ limit }": [
+        "Tot ${ limit }"
       ]
     },
     "VPN B2B cancellation reason": {

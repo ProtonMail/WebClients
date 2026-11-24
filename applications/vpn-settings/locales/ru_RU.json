@@ -418,6 +418,9 @@
       "Don't show again": [
         "Больше не показывать"
       ],
+      "Don't show this again": [
+        "Больше не показывать это"
+      ],
       "Done": [
         "Готово"
       ],
@@ -1110,6 +1113,9 @@
       ],
       "Skip": [
         "Пропустить"
+      ],
+      "Skip to main content": [
+        "Перейти к основному содержимому"
       ],
       "Skip verification": [
         "Пропустить проверку"
@@ -2026,6 +2032,11 @@
       ],
       "Working with sensitive data?": [
         "Работаете с конфиденциальными данными?"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     },
     "Bug category": {
@@ -5051,9 +5062,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Минимальная сумма пожертвования составляет ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Название политики должно содержать от 3 до 40 символов."
       ],
@@ -5453,9 +5461,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Группы ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Аккаунты с пользовательскими доменами не могут присоединиться к семейному тарифному тарифу."
       ],
@@ -5513,12 +5518,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Счет за подписку будет выставлен основному администратору этого тарифа."
       ],
-      "View the invitation": [
-        "Посмотреть приглашение",
-        "Посмотреть приглашения",
-        "Посмотреть приглашения",
-        "Посмотреть приглашения"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
       ],
@@ -5527,9 +5526,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Вы не можете принять это приглашение со своим текущим планом."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Вы достигли лимита в ${ n } принятое приглашение за полгода.",
@@ -9605,6 +9601,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Безопасный доступ к ${ PASS_APP_NAME } из терминала, что идеально подходит для создания скриптов, автоматизации и рабочих процессов разработки."
       ],
+      "Access tokens": [
+        "Токены доступа"
+      ],
       "Account holder": [
         "Владелец счёта"
       ],
@@ -12457,17 +12456,11 @@
       "1 email per month": [
         "1 письмо в месяц"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 электронное письмо в месяц. Получайте последние новости о защите частной жизни и о том, что происходит во вселенной ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 письмо в квартал"
       ],
       "1-2 emails per month": [
         "1-2 письма в месяц"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 писем в год. Напоминания о необходимости поддерживать ваши методы восстановления в актуальном состоянии."
       ],
       "2-4 emails per year": [
         "2-4 электронных писем в год"
@@ -12492,9 +12485,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "В течение первого месяца использования продукта ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Рассылки по электронной почте"
       ],
       "In-app notifications": [
         "Уведомления в приложении"
@@ -13015,7 +13005,18 @@
         "Начните использовать ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Рекомендовано"
+      ],
+      "Select your plan": [
+        "Выберете себе план"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Бесплатно навсегда"
+      ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
       ],
@@ -15267,6 +15268,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "Всего ${ value } зашифрованного хранения"
+      ],
       "1 month": [
         "1 месяц"
       ],
@@ -15275,6 +15279,9 @@
       ],
       "24 months": [
         "24 месяца"
+      ],
+      "Free": [
+        "Free"
       ]
     },
     "Signup label": {
@@ -16127,12 +16134,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } день остался",
-        "${ dayDiff } дня осталось",
-        "${ dayDiff } дней осталось",
-        "${ dayDiff } дней осталось"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
@@ -16406,12 +16407,6 @@
       "What you give up when you cancel ${ planName }": [
         "От чего вы отказываетесь при отмене ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "При отказе от ${ planName } вы будете переведены на ${ BRAND_NAME } Free, который предлагает только до 1 ГБ хранилища для почты и до 5 ГБ хранилища для дисков. Вы также потеряете все ранее предоставленные бонусы на хранилище."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "При отказе от ${ planName } вы будете переведены на ${ BRAND_NAME } Free, который предлагает только до 1 ГБ хранилища для почты и до 5 ГБ хранилища для Drive. Ваша команда будет испытывать перебои в работе, поскольку дополнительные пользователи не поддерживаются на бесплатном тарифе."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Когда ваша подписка на тариф ${ planName } закончится ${ expiryDate }, вы будете переведены на тарифный план ${ BRAND_NAME } Free."
       ],
@@ -16420,9 +16415,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Вы можете продолжать пользоваться всеми преимуществами вашего текущего тарифа до ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вас еще есть ${ expiryDate } на подписке ${ planName }. Мы добавим остаток на счете за оставшееся время к вашему аккаунту ${ BRAND_NAME }. Перед отменой подписки убедитесь, что вы не превысили предел бесплатного тарифа. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш тариф ${ planName } не просто обеспечивает защищенность ваших деловых данных и связей. Он поддерживает ваши цели по соблюдению нормативных требований, делает ваш бизнес заметным и обеспечивает связь между вашими сотрудниками."
@@ -16848,6 +16840,14 @@
         "Для частных лиц"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Действия"
+      ],
+      "Status": [
+        "Состояние"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Действие"
@@ -16860,9 +16860,6 @@
       ],
       "CSV field": [
         "Поле CSV-файла"
-      ],
-      "Edit": [
-        "Изменить"
       ],
       "Email address": [
         "Адрес электронной почты"
@@ -17578,9 +17575,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
-      ],
-      "Enter your password": [
-        "Введите пароль"
       ],
       "Error": [
         "Ошибка"
@@ -18559,7 +18553,7 @@
         "Этот адрес электронной почты будет показан всем членам организации при выполнении операций управления аккаунтом."
       ],
       "This setting is managed by your organization": [
-        "Этой настройкой управляет ваша организация."
+        "Этой настройкой управляет ваша организация"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."

@@ -483,8 +483,8 @@
       "Dock to side panel": [
         "Fest til sidepanelet"
       ],
-      "Don't show this offer again": [
-        "Ikke vis dette tilbudet igjen"
+      "Don't show this again": [
+        "Ikke vis dette igjen"
       ],
       "Done": [
         "Utført"
@@ -1282,6 +1282,12 @@
       "Save": [
         "Lagre"
       ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Lagre ${ name } i ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Lagre i ${ DRIVE_APP_NAME }"
+      ],
       "Saving${ ellipsis }": [
         "Lagrer${ ellipsis }"
       ],
@@ -1474,6 +1480,9 @@
       "Skip": [
         "Hopp over"
       ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
+      ],
       "Skip verification": [
         "Hopp over bekreftelse"
       ],
@@ -1576,10 +1585,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -1624,6 +1629,10 @@
       ],
       "Unsubscribe": [
         "Avslutt abonnement"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Avslutt ${ selectedCount } abonnement",
+        "Avslutt ${ selectedCount } abonnementer"
       ],
       "Unsubscribed": [
         "Abonnement avsluttet"
@@ -1696,6 +1705,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Bruk musen for å endre størrelsen på visningen. Bruker du tastaturet, kan du bruke venstre og høyre piltast for å endre størrelsen."
+      ],
+      "Use “${ label }” setting": [
+        "Bruk “${ label }”-innstilling"
       ],
       "Verify": [
         "Verifiser"
@@ -2123,9 +2135,19 @@
         "Prøveperioden avsluttes om ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Lukk"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium passordbehandler"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbudet er utilgjengelig"
       ]
     },
     "BF2024: Deal details": {
@@ -4773,6 +4795,9 @@
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "En melding er nødvendig når du rapporterer brudd på opphavsrett eller stjålne data"
+      ],
       "A problem occurred, please try again.": [
         "En feil oppstod. Forsøk igjen."
       ],
@@ -4824,17 +4849,38 @@
       "Authentication error.": [
         "Autentiseringsfeil"
       ],
+      "Bookmark password is not available": [
+        "Bokmerkepassordet er ikke tilgjengelig"
+      ],
       "Calendar limit reached": [
         "Kalendergrensen nådd"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Kan ikke legge til bilde i albumet uten et gyldig navn"
+      ],
+      "Cannot download a folder": [
+        "Kan ikke laste ned en mappe"
+      ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan ikke flytte elementet uten et gyldig navn. Gi elementet nytt navn først."
       ],
       "Cannot send an empty message. Message is not sent.": [
         "Kan ikke sende en tom melding. Meldingen ble ikke sendt."
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Kan ikke angi utløpsdato som er lenger enn det retningslinjen for oppbevaring tillater."
+      ],
+      "Cannot share root folder": [
+        "Kan ikke dele rotmappe"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekrefte forfatteren av denne filen"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan ikke bekrefte opplasteren av denne filen"
       ],
       "Checkout expired, please try again": [
         "Utsjekkingen utløpt. Prøv igjen."
@@ -4876,14 +4922,47 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
       ],
+      "Copy operation aborted": [
+        "Kopieringsoperasjonen ble avbrutt"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Could not find an available name": [
+        "Finner ikke et tilgjengelig navn"
+      ],
       "Could not grant access to the organization key": [
         "Kunne ikke gi tilgang til organisasjonsnøkkelen"
+      ],
+      "Could not load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kunne ikke laste inn forhåndsvisningen av bildet: ${ message }"
       ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
       ],
       "Could not open updated vault": [
         "Kunne ikke åpne oppdatert hvelv"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunne ikke lese deler av denne filen: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunne ikke låse opp overordnet mappe"
+      ],
+      "Could not unlock this item": [
+        "Kunne ikke låse opp dette elementet"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette dokumenter i elementer som ikke er mapper."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette filer i elementer som ikke er mapper."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette mapper i elementer som ikke er mapper."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfeil: kunne ikke dekryptere innholdet i denne meldingen."
@@ -4895,6 +4974,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Fjern valget fra minst ${ calendarsToFixCount } kalender eller",
         "Fjern valgene fra minst ${ calendarsToFixCount } kalendere eller"
+      ],
+      "Device not found": [
+        "Enhet ikke funnet"
       ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
@@ -4947,11 +5029,38 @@
       "Error while uploading attachments. Message is not sent.": [
         "Feil under opplasting av vedlegg. Melding er ikke sendt."
       ],
+      "Expiration date cannot be in the past": [
+        "Utløpsdatoen kan ikke være i fortiden"
+      ],
       "Failed loading group members": [
         "Kunne ikke laste inn gruppemedlemmer"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenavnet: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Klarte ikke å dekryptere bokmerkepassordet: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kunne ikke dekryptere innholdsnøkkelen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunne ikke dekryptere elementnavnet: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Klarte ikke å dekryptere nodenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kunne ikke dekryptere revisjonsmetadata"
+      ],
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering av vedlegg mislyktes. Forsøk igjen."
+      ],
+      "Failed to get inviter keys": [
+        "Kunne ikke hente invitasjonsnøkler"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
@@ -4961,6 +5070,15 @@
       ],
       "Failed to open to contact": [
         "Kontakten kunne ikke åpnes."
+      ],
+      "Failed to verify invitation": [
+        "Kunne ikke bekrefte invitasjonen"
+      ],
+      "File download failed due to empty response": [
+        "Filnedlasting mislyktes på grunn av tomt svar"
+      ],
+      "File has no revision": [
+        "Filen har ingen revisjon"
       ],
       "Filter with this name already exists": [
         "Et filter med dette navnet eksisterer allerede"
@@ -4973,6 +5091,9 @@
       ],
       "Forward address is required": [
         "Videresendingsadresse kreves"
+      ],
+      "Image preview not found": [
+        "Forhåndsvisning av bilde ikke funnet"
       ],
       "Image upload failed": [
         "Bildeopplasting mislyktes"
@@ -5013,20 +5134,32 @@
       "Invalid public key file": [
         "Ugyldig offentlig nøkkelfil"
       ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
+      ],
       "Invalid VAT number": [
         "Ugyldig MVA-nummer"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
+      "Invitation not found": [
+        "Invitasjon ikke funnet"
+      ],
       "Item content cannot exceed 40KB": [
         "Elementinnhold kan ikke overskride 40KB"
+      ],
+      "Item not found": [
+        "Element ikke funnet"
       ],
       "Label name cannot be empty.": [
         "Etikettnavn kan ikke være tomt."
       ],
       "Last name is too long": [
         "Etternavnet er for langt"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eldre offentlig kobling kan ikke oppdateres. Opprett en ny offentlig kobling på nytt."
       ],
       "Maximum expiration time reached.": [
         "Maksimal utløpstid nådd."
@@ -5044,14 +5177,36 @@
       "Message processing error.": [
         "Feil ved meldingsbehandling"
       ],
+      "Missing inviter email": [
+        "Invitørens e-postadresse mangler"
+      ],
       "Missing key packet": [
         "Mangler nøkkelpakke"
       ],
       "Missing signature": [
         "Mangler signatur"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Mangler signatur for ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flytteoperasjonen ble avbrutt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytting av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Moving root item is not allowed": [
+        "Det er ikke tillatt å flytte rotelement"
+      ],
       "Name is required": [
         "Navn kreves"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
+      "Name must not be empty": [
+        "Navn kan ikke være tomt"
       ],
       "Network error": [
         "Nettverksfeil"
@@ -5080,6 +5235,9 @@
       "No external key retrieved for user is valid for sending": [
         "Ingen ekstern nøkkel hentet for bruker er gyldig for sending"
       ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata ble mottatt. Prøv på nytt."
+      ],
       "No valid address found": [
         "Ingen gyldig adresse funnet"
       ],
@@ -5094,14 +5252,20 @@
         "En av gruppene har ingen kontakter: ${ noContactGroupList }",
         "Noen av gruppene har ingen kontakter: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Bare administratorer kan konvertere eksterne invitasjoner"
+      ],
+      "Operation aborted": [
+        "Operasjon avbrutt"
+      ],
+      "Operation failed, try again later": [
+        "Operasjon mislyktes, prøv igjen senere"
+      ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
+      "Part of the file appears to be corrupted": [
+        "En del av filen ser ut til å være ødelagt"
       ],
       "Password is required": [
         "Passord kreves"
@@ -5123,6 +5287,12 @@
       ],
       "Permissions request failed.": [
         "Forespørsel om tillatelser mislyktes."
+      ],
+      "Photo is already in the target album": [
+        "Bildet er allerede i målalbumet"
+      ],
+      "Photo not found": [
+        "Bilde ikke funnet"
       ],
       "Please activate your search again": [
         "Aktiver søket ditt på nytt"
@@ -5216,6 +5386,12 @@
         "Fjernet duplisert mottaker: ${ recipents }",
         "Fjernet dupliserte mottakere: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "Det er ikke tillatt å gi nytt navn til rotelement"
+      ],
+      "Request aborted": [
+        "Forespørsel avbrutt"
+      ],
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
       ],
@@ -5228,6 +5404,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Det er begrenset å sende vedlegg mens du overskrider plangrensene eller til du oppgraderer planen."
       ],
+      "Signature is missing": [
+        "Signatur mangler"
+      ],
       "Signature not verified": [
         "Signatur ikke bekreftet"
       ],
@@ -5237,11 +5416,32 @@
       "Signature verification failed": [
         "Signaturbekreftelse mislyktes"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Bekreftelse av signatur mislyktes: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifisering for ${ signatureType } mislyktes"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifisering for ${ signatureType } mislyktes: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Noen kontakter kunne ikke slettes"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
       "Some groups could not be deleted": [
         "Noen grupper kunne ikke slettes"
+      ],
+      "Some items could not be loaded": [
+        "Kunne ikke laste inn enkelte dokumenter"
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Abonnementet på noen e-postlister kunne ikke avsluttes. Prøv igjen for å avslutte resten."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Noen av dine mappenavn er utilgjengelige. Tilpass importen for å redigere disse navnene."
@@ -5257,6 +5457,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ],
       "Something went wrong while converting the address": [
         "Noe gikk galt under konvertering av adressen"
@@ -5322,14 +5525,14 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Minimumbeløpet for donasjon er ${ price }"
-      ],
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Systemet er travelt for øyeblikket. Prøv igjen om noen minutter."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den opplastede filen samsvarer ikke med originalen. Prøv på nytt."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Skriveassistenten kan ikke gå videre med forespørselen din. Prøv en annen ledetekst."
@@ -5361,8 +5564,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette feltet krever minimum ${ minimumLength } tegn."
       ],
+      "This file has missing crypto material": [
+        "Denne filen mangler kryptomateriale"
+      ],
+      "This file has no version available to download": [
+        "Denne filen har ingen versjon tilgjengelig for nedlasting"
+      ],
+      "This file version could not be uploaded": [
+        "Denne filversjonen kunne ikke lastes opp"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Dette mappenavnet er ikke tilgjengelig. Velg et annet navn."
+      ],
+      "This item has no image preview": [
+        "Dette elementet har ingen forhåndsvisning av bilde"
+      ],
+      "This item is no longer shared": [
+        "Dette elementet deles ikke lenger"
+      ],
+      "This item is not shared": [
+        "Dette elementet er ikke delt"
       ],
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavnet er ikke tilgjengelig. Velg et annet navn."
@@ -5375,6 +5596,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
+      ],
+      "Too many server errors, please try again later": [
+        "For mange serverfeil. Prøv igjen senere."
+      ],
+      "Too many server requests, please try again later": [
+        "For mange serverforespørsler. Prøv igjen senere."
       ],
       "Trusted keys are not valid for sending": [
         "Klarerte nøkler er ikke gyldige for sending."
@@ -5409,6 +5636,12 @@
       "VAT number must start with ${ prefixes }": [
         "MVA-nummeret må starte med ${ prefixes }"
       ],
+      "Verification keys are not available": [
+        "Verifiseringsnøkler er ikke tilgjengelige"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifiseringsnøkler for ${ signatureType } er ikke tilgjengelige"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekreftelseskode med denne metoden."
       ],
@@ -5421,6 +5654,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
       ],
+      "You can create public links for your own files only": [
+        "Du kan bare opprette offentlige koblinger for dine egne filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan bare forlate elementer som er delt med deg"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bare laste opp en ny versjon av en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan bare oppdatere en offentlig kobling for dine egne filer"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
@@ -5431,6 +5676,12 @@
       ],
       "You did not provide a file.": [
         "Du har ikke oppgitt en fil."
+      ],
+      "You do not have access to this item": [
+        "Du har ikke tilgang til dette elementet"
+      ],
+      "You do not have access to this shared item": [
+        "Du har ikke tilgang til dette delte elementet"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
@@ -6848,6 +7099,10 @@
         "${ n } ulest samtale",
         "${ n } uleste samtaler"
       ],
+      "${ n } unread message": [
+        "${ n } ulest melding",
+        "${ n } uleste meldinger"
+      ],
       "${ name } in ${ parentName }": [
         "${ name } i ${ parentName }"
       ],
@@ -7243,6 +7498,9 @@
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
+      "Author is not provided on public link": [
+        "Forfatter er ikke oppgitt på offentlig kobling"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Fjern automatisk e-poster som ble flyttet til papirkurven og søppelpost for mer enn 30 dager siden."
       ],
@@ -7263,6 +7521,9 @@
       ],
       "Balance from your previous subscription": [
         "Balanse fra ditt forrige abonnement"
+      ],
+      "Based only on which emails you've opened.": [
+        "Basert kun på hvilke e-poster du har åpnet."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grunnleggende navigering og handlinger forblir tilgjengelige uavhengig av om hurtigtaster er aktive eller ikke i innstillingene."
@@ -8135,6 +8396,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Meldingen blir sendt i morgen kl. ${ formattedTime }"
       ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Meldinger i Søppelpost/Papirkurv vil slettes automatisk etter 30 dager."
+      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Meldinger i papirkurven eller søppelposten som har vært der lenger enn 30 dager, slettes automatisk."
       ],
@@ -8167,6 +8431,9 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Flytt e-poster med engangskoder til papirkurven når koden kopieres"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Flytt tidligere e-poster fra avsenderen til Arkiv. Du kan fortsatt søke etter dem."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
@@ -9336,6 +9603,10 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Vi har blokkert følgende annonsører og organisasjoner fra å se når du åpner denne e-posten, hvilken enhet du bruker, og hvor du befinner deg."
       ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Vi har overført ${ count } nyhetsbrev, gruppert etter avsender. Se hvor ofte hver avsender sender deg e-post, og behold, flytt eller avslutt abonnementet med ett klikk.",
+        "Vi har overført ${ count } nyhetsbrev, gruppert etter avsender. Se hvor ofte hver avsender sender deg e-post, og behold, flytt eller avslutt abonnementet med ett klikk."
+      ],
       "We cannot enable message content search in this browser.": [
         "Vi kan ikke aktivere søk etter meldingsinnhold i denne nettleseren."
       ],
@@ -9344,9 +9615,6 @@
       ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
-      ],
-      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Vi fant noen e-postlister du ikke leser. Du kan melde deg av dem med ett klikk."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Vi har planer designet spesielt for brukere som deg som trenger mer enn én e-postadresse."
@@ -10199,9 +10467,6 @@
       "Apply to future messages": [
         "Anvend på fremtidige meldinger"
       ],
-      "Archive": [
-        "Arkiv"
-      ],
       "At": [
         "Kl."
       ],
@@ -10916,10 +11181,6 @@
       "Search in": [
         "Søk i"
       ],
-      "Select all ${ count } unused sender": [
-        "Velg ${ count } ubrukt avsender",
-        "Velg alle ${ count } ubrukte avsendere"
-      ],
       "Select which Gmail address to connect": [
         "Velg hvilken Gmail-adresse du vil koble til"
       ],
@@ -10961,9 +11222,6 @@
       ],
       "Sort": [
         "Sorter"
-      ],
-      "Spam": [
-        "Søppelpost"
       ],
       "Starred": [
         "Stjernemerket"
@@ -11045,9 +11303,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Transaksjoner – Kvitteringer, bestillinger, regninger og bestillinger"
-      ],
-      "Trash": [
-        "Papirkurv"
       ],
       "Undisclosed Recipients": [
         "Ikke avslørte mottakere"
@@ -11194,6 +11449,14 @@
       ],
       "To": [
         "Til"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Rad"
       ]
     },
     "Label, credit card": {
@@ -12818,6 +13081,23 @@
         "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } e-post de siste 30 dagene. Åpnes ikke.",
+        "${ count } e-poster de siste 30 dagene. Åpnes ikke."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } e-post de siste 30 dagene. Åpnes ofte.",
+        "${ count } e-poster de siste 30 dagene. Åpnes ofte."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } e-post de siste 30 dagene. Åpnes av og til.",
+        "${ count } e-poster de siste 30 dagene. Åpnes av og til."
+      ],
+      "No emails in the last 30 days.": [
+        "Ingen e-poster de siste 30 dagene."
+      ]
+    },
     "ngc_access_banner: action": {
       "Try it now": [
         "Prøv nå"
@@ -13096,6 +13376,9 @@
       "browser": [
         "nettleser"
       ],
+      "Choose your inbox layout": [
+        "Velg oppsett for innboksen"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Tøm slettede e-poster og søppelpost etter 30 dager."
       ],
@@ -13167,6 +13450,9 @@
       ],
       "You are all set!": [
         "Du er klar!"
+      ],
+      "You can change this anytime in settings.": [
+        "Du kan endre dette når som helst i innstillinger."
       ],
       "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
         "Domenet ditt ${ domain } og ${ subscriptionName }-abonnementet er klart til bruk."
@@ -14109,6 +14395,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Fremdrift: ${ combinedProgress }%"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributter"
+      ],
+      "content key": [
+        "innholdsnøkkel"
+      ],
+      "hash key": [
+        "hashnøkkel"
+      ],
+      "key": [
+        "nøkkel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "navn"
       ]
     },
     "Property type": {
@@ -15227,10 +15533,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag igjen",
-        "${ dayDiff } dager igjen"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
       ],
@@ -15465,20 +15767,11 @@
       "What you give up when you cancel ${ planName }": [
         "Dette gir du opp når du avbestiller ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Du vil også miste eventuelle tidligere tildelte lagringsbonuser."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Når du avbryter ${ planName }, blir du nedgradert til ${ BRAND_NAME } Free, som bare tilbyr opptil 1 GB Mail-lagring og opptil 5 GB Drive-lagring. Teamet ditt vil oppleve avbrudd i arbeidet siden flere brukere ikke støttes på gratisplanen."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når ${ planName }-abonnementet ditt avsluttes på ${ expiryDate }, blir du nedgradert til ${ BRAND_NAME } Free-abonnementet."
       ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagringsbonuser"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Du har fortsatt ${ expiryDate } igjen på ${ planName }-abonnementet. Vi legger kreditten for den gjenstående tiden til ${ BRAND_NAME }-kontoen din. Forsikre deg om at du ikke overskrider grensene for gratis plan før du kansellerer. ${ learnMoreLink } ."
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Planen din på ${ planName } holder ikke bare forretningsdata og kommunikasjon trygg. Den støtter samsvarsmålene dine, får virksomheten til å skille seg ut og holder teamet ditt tilkoblet."
@@ -15875,6 +16168,14 @@
       ],
       "Undo in progress": [
         "Angre pågår"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Avsluttet abonnementet på ${ count } e-postliste og flyttet meldingene fra den til Arkiv.",
+        "Avsluttet abonnementet på ${ count } e-postlister og flyttet meldingene fra dem til Arkiv."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Avsluttet abonnementet på ${ count } e-postliste",
+        "Avsluttet abonnementet på ${ count } e-postlister"
       ],
       "Verification successful": [
         "Vellykket verifisering"
@@ -16463,9 +16764,6 @@
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
       ],
-      "Enter your password": [
-        "Skriv inn passordet"
-      ],
       "Error": [
         "Feil"
       ],
@@ -16783,6 +17081,9 @@
       "No-reply address detected": [
         "Ingen svaradresse oppdaget"
       ],
+      "Not opened in a while": [
+        "Ikke åpnet på en stund"
+      ],
       "Notes": [
         "Notater"
       ],
@@ -17020,14 +17321,14 @@
       "Snooze:": [
         "Slumre:"
       ],
+      "Special offer": [
+        "Spesialtilbud"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
       "Start import process": [
         "Start importprosessen"
-      ],
-      "Start with a cleaner Inbox": [
-        "Start med en mer ryddig innboks"
       ],
       "Storage capacity warning": [
         "Advarsel om lagringskapasitet"
@@ -17120,6 +17421,9 @@
       "Verification failed": [
         "Bekreftelse mislyktes"
       ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
+      ],
       "Verify your password": [
         "Bekreft passordet ditt"
       ],
@@ -17169,6 +17473,12 @@
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
       ],
+      "You open these sometimes": [
+        "Du åpner disse noen ganger"
+      ],
+      "You read these often": [
+        "Du leser disse ofte"
+      ],
       "You're in control": [
         "Du har kontrollen"
       ],
@@ -17189,6 +17499,9 @@
       ],
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Gmail-nyhetsbrevene dine, nå enklere å administrere"
       ],
       "Your inbox, automatically organized": [
         "Din innboks, organisert automatisk"

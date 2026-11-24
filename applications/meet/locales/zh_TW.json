@@ -70,9 +70,6 @@
       "Now starting recording": [
         "現在開始錄影"
       ],
-      "Reconnected to the meeting": [
-        "已重新連線至會議"
-      ],
       "Recording saved": [
         "錄影已儲存"
       ],
@@ -120,9 +117,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "您是唯一的參與者。除非有人加入，否則會議將在 2 分鐘內關閉。"
-      ],
-      "You have been disconnected from the meeting": [
-        "您的會議連線已中斷"
       ],
       "You have been muted by the host": [
         "您已被主持人靜音"
@@ -203,9 +197,6 @@
       ],
       "Continue without camera": [
         "在無相機的情況下繼續"
-      ],
-      "Continue without mic and camera": [
-        "在無麥克風與相機的情況下繼續"
       ],
       "Continue without microphone": [
         "繼續，不進行麥克風"
@@ -363,6 +354,9 @@
       "Kick out ${ participantName }": [
         "將 ${ participantName } 踢出"
       ],
+      "Learn more": [
+        "瞭解詳情"
+      ],
       "Leave": [
         "離開"
       ],
@@ -383,6 +377,9 @@
       ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
+      ],
+      "More options": [
+        "更多選項"
       ],
       "More options for accounts": [
         "更多帳號選項"
@@ -479,9 +476,6 @@
       ],
       "Resume": [
         "繼續"
-      ],
-      "Retry": [
-        "重試"
       ],
       "Return to dashboard": [
         "返回儀表板"
@@ -1769,18 +1763,6 @@
       "Enter your username without the domain (@example.com)": [
         "輸入不包含網域 (@example.com) 的使用者名稱"
       ],
-      "Event deleted": [
-        "事件已刪除"
-      ],
-      "Failed to assign host": [
-        "無法指派主控者"
-      ],
-      "Failed to create meeting": [
-        "建立會議失敗"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "建立個人會議失敗，請重新整理頁面"
-      ],
       "Failed to decrypt bookmark key: ${ message }": [
         "解密書籤金鑰失敗: ${ message }"
       ],
@@ -1796,50 +1778,14 @@
       "Failed to decrypt session key": [
         "解密工作階段金鑰失敗"
       ],
-      "Failed to delete event": [
-        "刪除事件失敗"
-      ],
-      "Failed to delete recording": [
-        "刪除錄影失敗"
-      ],
-      "Failed to delete room": [
-        "刪除會議室失敗"
-      ],
-      "Failed to download recording": [
-        "下載錄影失敗"
-      ],
-      "Failed to edit room name": [
-        "無法編輯會議室名稱"
-      ],
       "Failed to join meeting. Please try again later.": [
         "加入會議失敗。請稍後再試。"
       ],
       "Failed to join meeting. Please try again.": [
         "無法加入會議。請再試一次。"
       ],
-      "Failed to lock meeting": [
-        "無法鎖定會議"
-      ],
       "Failed to rotate personal meeting link": [
         "無法輪換個人會議連結"
-      ],
-      "Failed to send chat message. Please try again.": [
-        "無法傳送聊天訊息。請再試一次。"
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "無法傳送表情符號回應。請再試一次。"
-      ],
-      "Failed to send reaction. Please try again.": [
-        "傳送回應失敗。請再試一次。"
-      ],
-      "Failed to start meeting. Please try again.": [
-        "無法開始會議。請再試一次。"
-      ],
-      "Failed to start recording": [
-        "無法開始錄影"
-      ],
-      "Failed to unlock meeting": [
-        "無法解鎖會議"
       ],
       "Image preview not found": [
         "查無照片預覽"
@@ -1852,9 +1798,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "第二密碼錯誤。請重新再試。"
-      ],
-      "Invalid meeting link": [
-        "無效的會議連結"
       ],
       "Invalid URL": [
         "URL 無效"
@@ -1913,9 +1856,6 @@
       "Request timed out": [
         "需求逾時"
       ],
-      "Room deleted": [
-        "會議室已刪除"
-      ],
       "Screen share is not supported on mobile browsers": [
         "行動瀏覽器不支援畫面共享"
       ],
@@ -1951,12 +1891,6 @@
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
-      ],
-      "The meeting password is incorrect": [
-        "會議密碼錯誤"
-      ],
-      "The meeting password is invalid": [
-        "會議密碼無效"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
@@ -2210,9 +2144,6 @@
       "${ MEET_APP_NAME } needs microphone access so others can hear you during the call. You can turn it off at any time.": [
         "${ MEET_APP_NAME } 需要麥克風存取權限，以便其他人在通話期間聽到您的聲音。您可以隨時關閉此權限。"
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } 需要 WebRTC 才能執行。請將您的瀏覽器或裝置更新至支援 WebRTC 的版本、嘗試使用其他瀏覽器，或停用任何可能阻擋它的延伸功能。"
-      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } 和其他 ${ otherParticipantsCount } 人正在錄製"
       ],
@@ -2242,9 +2173,6 @@
       ],
       "(You)": [
         "(您)"
-      ],
-      "-Removed dangerous URL-": [
-        "-已移除危險的網址-"
       ],
       "1 reply draft": [
         "1 個回覆草稿"
@@ -2276,9 +2204,6 @@
       "camera": [
         "相機"
       ],
-      "Camera permission denied": [
-        "拒絕相機權限"
-      ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "變更已暫存。套用以使用新的常數重建預覽。"
       ],
@@ -2293,15 +2218,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
-      ],
-      "Connection failed": [
-        "連線失敗"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "連線中斷。正在重新連線…"
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "偵測到連線問題。正在嘗試復原…"
       ],
       "Connection lost. Reconnecting…": [
         "連線已中斷。正在重新連線…"
@@ -2411,9 +2327,6 @@
       "Get a secure meeting link then add it to your calendar": [
         "取得安全會議連結，然後將其新增至您的行事曆"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "前往 about:config，搜尋 media.peerconnection.enabled，並將其設定為 true。"
-      ],
       "Host": [
         "主持"
       ],
@@ -2425,9 +2338,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
-      ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "如果您使用的是 Firefox，請確保已啟用 PeerConnection。"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
@@ -2525,9 +2435,6 @@
       "Microphone effects": [
         "麥克風效果"
       ],
-      "Microphone permission denied": [
-        "拒絕麥克風權限"
-      ],
       "Mute microphone": [
         "靜音麥克風"
       ],
@@ -2552,14 +2459,8 @@
       "No camera detected": [
         "沒有偵測到鏡頭"
       ],
-      "No camera detected.": [
-        "未偵測到相機。"
-      ],
       "No microphone detected": [
         "未偵測到麥克風"
-      ],
-      "No microphone detected.": [
-        "未檢測到麥克風"
       ],
       "No publications": [
         "無相關論文發表"
@@ -2578,9 +2479,6 @@
       ],
       "No speaker detected": [
         "未偵測到揚聲器"
-      ],
-      "Not sent, check your connection.": [
-        "未傳送，請檢查您的連線。"
       ],
       "Only meetings you created appear here": [
         "只有您建立的會議會顯示在此處"
@@ -2603,14 +2501,8 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "貼上您的 ${ MEET_APP_NAME } 連結以加入安全會議"
       ],
-      "Permissions not given.": [
-        "未授予權限。"
-      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "請啟用您 ${ microphoneLinkButton }${ andString }${ cameraLinkButton } 的存取權以獲得最佳體驗。"
-      ],
-      "Please try again or try another browser": [
-        "請再試一次，或嘗試其他瀏覽器"
       ],
       "Poor connection": [
         "連線品質不佳"
@@ -2629,12 +2521,6 @@
       ],
       "Reactions": [
         "反應"
-      ],
-      "Reconnected successfully": [
-        "已成功重新連線"
-      ],
-      "Reconnecting to meeting...": [
-        "正在重新連線到會議……"
       ],
       "Record your meetings": [
         "錄製您的會議"
@@ -2726,9 +2612,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "主持人已將您從此會議中移除。如果這是個錯誤，請要求主持人再次邀請您。"
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "您嘗試開啟的會議連結不存在或可能已過期。請確認連結正確，或是改為發起新的安全會議。"
-      ],
       "This conversation started before you joined.": [
         "此對話在您加入前便已開始。"
       ],
@@ -2737,9 +2620,6 @@
       ],
       "This meeting is being recorded": [
         "本次會議正在錄製中"
-      ],
-      "This meeting is locked. Please contact the host to join.": [
-        "此會議已鎖定。請聯絡主持人以加入。"
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "此會議已達到免費方案的時間限制。升級方案可在未來的通話中延長您的會議長度。"
@@ -2779,9 +2659,6 @@
       ],
       "Turn on camera": [
         "開啟相機"
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "無法重新連線至會議。請重新加入或離開。"
       ],
       "unlimited meeting": [
         "無限次會議"
@@ -2854,21 +2731,6 @@
       ],
       "Your always available meeting room": [
         "您的專屬會議室"
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "您的瀏覽器已阻擋存取您的相機與麥克風。若要啟用它們，請更新您的瀏覽器設定並重新加入通話。"
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "您的瀏覽器已阻擋存取您的相機。若要啟用它，請更新您的瀏覽器設定並重新加入通話。"
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "您的瀏覽器已阻擋存取您的麥克風。若要啟用它，請更新您的瀏覽器設定並重新加入通話。"
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "您的瀏覽器已阻擋存取您的螢幕共享。若要啟用它，請更新您的瀏覽器設定並重新加入通話。"
-      ],
-      "Your browser or device isn’t supported": [
-        "您的瀏覽器或裝置不受支援"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -2971,6 +2833,12 @@
       "Enabled": [
         "啟用"
       ],
+      "End date": [
+        "結束日期"
+      ],
+      "End time": [
+        "結束時間"
+      ],
       "Ended": [
         "結束"
       ],
@@ -3052,9 +2920,6 @@
       "Participants join after you approve them": [
         "參與者在您批准後加入"
       ],
-      "Password": [
-        "密碼"
-      ],
       "Phone number": [
         "手機號碼"
       ],
@@ -3090,6 +2955,12 @@
       ],
       "Selected Speaker": [
         "所選揚聲器"
+      ],
+      "Start date": [
+        "開始日期"
+      ],
+      "Start time": [
+        "開始時間"
       ],
       "Subscribed": [
         "訂閱中"
@@ -3159,11 +3030,6 @@
         "儲存並複製連結"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "您的瀏覽器或裝置軟體不支援 ${ MEET_APP_NAME }。${ MEET_APP_NAME } 需要 WebAssembly (Wasm) 才能執行。請將您的瀏覽器或裝置更新至支援 Wasm 的版本，或嘗試使用其他瀏覽器。"
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "由於您是這場會議中唯一的參與者，會議將會自動關閉。您要留在會議中嗎？"
@@ -3177,20 +3043,12 @@
         "留在會議中"
       ]
     },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "無法啟動子母畫面"
-      ]
-    },
     "Notification": {
       "Coming soon": [
         "正在開發中，敬請期待"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
-      ],
-      "Could not send feedback": [
-        "無法傳送意見回報"
       ],
       "Link copied to clipboard": [
         "已複製連結到剪貼簿"
@@ -3200,9 +3058,6 @@
       ],
       "Successfully rotated your personal meeting": [
         "已成功輪換您的個人會議"
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "您無法針對您未曾參加過的會議傳送意見回饋"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -3499,9 +3354,6 @@
       "Constants": [
         "常數"
       ],
-      "Couldn't prepare the recording": [
-        "無法準備錄影"
-      ],
       "Create new room": [
         "建立新協作會議室"
       ],
@@ -3513,9 +3365,6 @@
       ],
       "Delete recording?": [
         "刪除錄影？"
-      ],
-      "Enter your password": [
-        "輸入您的密碼"
       ],
       "Epoch": [
         "Epoch"
@@ -3537,9 +3386,6 @@
       ],
       "Info": [
         "資訊"
-      ],
-      "Invalid meeting link": [
-        "無效的會議連結"
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -3664,6 +3510,9 @@
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
+      "Verify it’s you": [
+        "驗證是您本人"
+      ],
       "Waiting room": [
         "等候室"
       ],
@@ -3680,9 +3529,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "您的瀏覽器不支援背景模糊效果"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "產生新的會議連結。目前的連結將停止運作。"
       ],
@@ -3713,23 +3559,8 @@
       "Connection is taking longer than expected": [
         "連線比預期花費更長的時間"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "無法存取相機或麥克風。您可以嘗試從會議控制項中再次啟用。"
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "無法存取相機。您可以嘗試從會議控制項中再次啟用。"
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "無法存取麥克風。您可以嘗試從會議控制項中再次啟用。"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "STUN UDP 連線失敗，正在嘗試使用 TURN 轉送…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "STUN UDP 連線逾時，嘗試使用 TURN 轉送"
       ],
       "Trying another route…": [
         "正在嘗試其他路由…"

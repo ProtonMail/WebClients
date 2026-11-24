@@ -107,6 +107,9 @@
       "Dark ${ BRAND_NAME } background applied": [
         "Koyu ${ BRAND_NAME } arka planı uygulandı"
       ],
+      "Disconnected from the meeting": [
+        "Görüşme bağlantısı kesildi"
+      ],
       "Library background applied": [
         "Kitaplık arka planı uygulandı"
       ],
@@ -134,8 +137,8 @@
       "Now starting recording": [
         "Kayıt şimdi başlatılıyor"
       ],
-      "Reconnected to the meeting": [
-        "Görüşme ile yeniden bağlantı kuruldu"
+      "Reconnected": [
+        "Yeniden bağlandı"
       ],
       "Recording saved": [
         "Görüşme kaydı kaydedildi"
@@ -184,9 +187,6 @@
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Tek katılımcı sizsiniz. Biri katılmadığı sürece toplantı 2 dakika içinde kapanacak."
-      ],
-      "You have been disconnected from the meeting": [
-        "Görüşme bağlantınız kesildi"
       ],
       "You have been muted by the host": [
         "Sesiniz görüşme sahibi tarafından kapatıldı"
@@ -294,8 +294,8 @@
       "Continue without camera": [
         "Kamera olmadan ilerle"
       ],
-      "Continue without mic and camera": [
-        "Mikrofon ve kamera olmadan ilerle"
+      "Continue without camera and microphone": [
+        "Kamera ve mikrofon olmadan ilerle"
       ],
       "Continue without microphone": [
         "Mikrofon olmadan ilerle"
@@ -495,6 +495,9 @@
       "Layout": [
         "Yerleşim"
       ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
       "Leave": [
         "Ayrıl"
       ],
@@ -530,6 +533,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
+      "More options": [
+        "Diğer seçenekler"
       ],
       "More options for accounts": [
         "Hesaplar için diğer seçenekler"
@@ -622,6 +628,9 @@
       "Refresh audio and video tracks": [
         "Ses ve görüntü izlerini yenile"
       ],
+      "Refresh page": [
+        "Sayfayı yenile"
+      ],
       "Refresh screen share track": [
         "Ekran paylaşımı kaydını yenile"
       ],
@@ -664,9 +673,6 @@
       ],
       "Resume": [
         "Sürdür"
-      ],
-      "Retry": [
-        "Yeniden dene"
       ],
       "Return to dashboard": [
         "Panoya dön"
@@ -897,6 +903,9 @@
       ],
       "Copy meeting link": [
         "Görüşme bağlantısını kopyala"
+      ],
+      "Debug": [
+        "Hata ayıklama"
       ],
       "Go to dashboard": [
         "Panoya git"
@@ -1998,11 +2007,50 @@
       "An error occurred": [
         "Bir sorun çıktı"
       ],
-      "Background blur initialization failed. Please toggle your camera or background blur again": [
-        "Arka plan bulanıklığı hazırlanamadı. Lütfen kameranızı veya arka plan bulanıklığını yeniden kapatıp açın"
+      "Background blur failed. Turn it off and on again.": [
+        "Arka plan bulanıklaştırılamadı. Kapatıp yeniden açın."
+      ],
+      "Background blur isn’t supported in this browser": [
+        "Bu tarayıcıda arka plan bulanıklığı desteklenmiyor"
+      ],
+      "Background effects aren’t supported in this browser": [
+        "Bu tarayıcıda arka plan etkileri desteklenmiyor"
+      ],
+      "Background failed. Pick it again.": [
+        "Arka plan görüntülenemedi. Yeniden seçin."
+      ],
+      "Background limit reached. Remove one to add another.": [
+        "Arka plan sayısı sınırına ulaşıldı. Yeni bir arka plan eklemek için var olan birini kaldırın."
+      ],
+      "Background not added. Check your connection and try again.": [
+        "Arka plan eklenmedi. Bağlantınızı denetleyip yeniden deneyin."
+      ],
+      "Background not added. Try again.": [
+        "Arka plan eklenmedi. Yeniden deneyin."
+      ],
+      "Background not removed. Check your connection and try again.": [
+        "Arka plan kaldırılmadı. Bağlantınızı denetleyip yeniden deneyin."
+      ],
+      "Background not removed. Try again.": [
+        "Arka plan silinemedi. Yeniden deneyin."
+      ],
+      "Background not saved in this browser.": [
+        "Arka plan bu tarayıcıya kaydedilmedi."
+      ],
+      "Backgrounds didn’t load. You can’t add new ones right now.": [
+        "Arka planlar yüklenmedi. Şu anda yenilerini ekleyemezsiniz."
       ],
       "Bookmark password is not available": [
         "Yer imi parolası kullanılamıyor"
+      ],
+      "Camera and microphone didn’t start. Try turning them on again.": [
+        "Kamera ve mikrofon çalışmadı. Yeniden açmayı deneyin."
+      ],
+      "Camera blocked": [
+        "Kamera engellendi"
+      ],
+      "Camera didn’t start. Try turning it on again.": [
+        "Kamera başlatılamadı. Yeniden açmayı deneyin."
       ],
       "Cannot add photo to album without a valid name": [
         "Fotoğraf, geçerli bir adı olmadan albüme eklenemez"
@@ -2022,23 +2070,29 @@
       "Cannot verify who uploaded this file": [
         "Bu dosyanın yükleyen kişi doğrulanamadı"
       ],
-      "Check your audio settings and try again": [
-        "Ses ayarlarınızı denetleyip yeniden deneyin"
+      "Caption language not changed. Try again.": [
+        "Alt yazı dili değiştirilmedi. Yeniden deneyin."
       ],
-      "Connection lost — captions will resume when reconnected": [
-        "Bağlantı kesildi. Bağlantı yeniden kurulduğunda alt yazılar sürdürülecek"
+      "Character limit reached. Remove some text to add a mention.": [
+        "Karakter sayısı sınırına ulaşıldı. Birini anmak için yazıyı kısaltın."
+      ],
+      "Character limit reached. Remove some text to add an emoji.": [
+        "Karakter sayısı sınırına ulaşıldı. Emoji eklemek için yazıyı kısaltın."
+      ],
+      "Chat unavailable. Refresh the page to use it again.": [
+        "Sohbet kullanılamıyor. Yeniden kullanmak için sayfayı yenileyin."
+      ],
+      "Check your audio settings and try again.": [
+        "Ses ayarlarınızı denetleyip yeniden deneyin."
+      ],
+      "Connection lost. Captions will start again when you’re reconnected.": [
+        "Bağlantı kesildi. Yeniden bağlandığınızda alt yazılar yeniden başlayacak."
       ],
       "Copy operation aborted": [
         "Kopyalama işlemi iptal edildi"
       ],
       "Copying item to a non-folder is not allowed": [
         "Öge, klasör olmayan bir ögeye kopyalanamaz"
-      ],
-      "Could not add this background. Check your connection and try again.": [
-        "Bu arka plan eklenemedi. İnternet bağlantınızı denetleyip yeniden deneyin."
-      ],
-      "Could not add this background. Please try again.": [
-        "Bu arka plan eklenemedi. Lütfen yeniden deneyin."
       ],
       "Could not find an available name": [
         "Kullanılabilecek bir ad bulunamadı"
@@ -2052,23 +2106,29 @@
       "Could not read part of this file: ${ message }": [
         "Bu dosyanın bir parçası okunamadı: ${ message }"
       ],
-      "Could not remove this background. Check your connection and try again.": [
-        "Bu arka plan kaldırılamadı. Bağlantınızı denetleyip yeniden deneyin."
-      ],
-      "Could not remove this background. Please try again.": [
-        "Bu arka plan kaldırılamadı. Lütfen yeniden deneyin."
-      ],
       "Could not unlock the parent folder": [
         "Üst klasörün kilidi açılamadı"
       ],
       "Could not unlock this item": [
         "Bu ögenin kilidi açılamadı"
       ],
+      "Couldn’t admit participant. Try again.": [
+        "Katılımcı kabul edilemedi. Yeniden deneyin."
+      ],
+      "Couldn’t admit participants. Try again.": [
+        "Katılımcılar kabul edilemedi. Yeniden deneyin."
+      ],
+      "Couldn’t deny participant. Try again.": [
+        "Katılımcı reddedilemedi. Yeniden deneyin."
+      ],
       "Couldn’t play the recording on this speaker.": [
         "Kayıt bu hoparlörde oynatılamadı."
       ],
       "Couldn’t play the test sound on this speaker.": [
         "Bu hoparlörde deneme sesi oynatılamadı."
+      ],
+      "Couldn’t prepare the recording": [
+        "Kayıt hazırlanamadı"
       ],
       "Couldn’t start the microphone test.": [
         "Mikrofon denemesi başlatılamadı."
@@ -2088,35 +2148,35 @@
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
+      "Download failed. Try again.": [
+        "İndirilemedi. Yeniden deneyin."
+      ],
       "Email is not valid": [
         "E-posta geçersiz"
+      ],
+      "End time must be after start time": [
+        "Bitiş saati başlangıç saatinden sonra olmalıdır"
       ],
       "Enter 6 digits": [
         "6 rakam yazın"
       ],
+      "Enter a date": [
+        "Bir tarih yazın"
+      ],
+      "Enter a meeting name": [
+        "Bir görüşme adı yazın"
+      ],
+      "Enter a time": [
+        "Bir saat yazın"
+      ],
       "Enter your username without the domain (@example.com)": [
         "Kullanıcı adınızı etki alanı (@example.com) olmadan yazın"
       ],
-      "Event deleted": [
-        "Etkinlik silindi"
+      "Event not deleted. Try again.": [
+        "Etkinlik silinmedi. Yeniden deneyin."
       ],
       "Expiration date cannot be in the past": [
         "Geçerlilik sonu tarihi geçmişte olamaz"
-      ],
-      "Failed to admit the participant. Please try again.": [
-        "Katılımcı kabul edilemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to admit the participants. Please try again.": [
-        "Katılımcılar kabul edilemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to assign host": [
-        "Görüşme sahibi atanamadı"
-      ],
-      "Failed to create meeting": [
-        "Görüşme oluşturulamadı"
-      ],
-      "Failed to create personal meeting, please refresh the page": [
-        "Kişisel görüşme oluşturulamadı, lütfen sayfayı yenileyin."
       ],
       "Failed to decrypt bookmark key: ${ message }": [
         "Yer imi anahtarının şifresi çözülemedi: ${ message }"
@@ -2142,26 +2202,8 @@
       "Failed to decrypt session key": [
         "Oturum anahtarının şifresi çözülemedi"
       ],
-      "Failed to delete event": [
-        "Etkinlik silinemedi"
-      ],
-      "Failed to delete recording": [
-        "Kayıt silinemedi"
-      ],
-      "Failed to delete room": [
-        "Oda silinemedi"
-      ],
-      "Failed to deny the participant. Please try again.": [
-        "Katılımcı kabul edilemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to download recording": [
-        "Kayıt indirilemedi"
-      ],
-      "Failed to edit meeting": [
-        "Görüşme düzenlenemedi"
-      ],
-      "Failed to edit room name": [
-        "Oda adı düzenlenemedi"
+      "Failed to get invitee keys": [
+        "Davetli anahtarları alınamadı"
       ],
       "Failed to get inviter keys": [
         "Davet edilenin anahtarları alınamadı"
@@ -2172,53 +2214,35 @@
       "Failed to join meeting. Please try again.": [
         "Görüşmeye katılınamadı. Lütfen yeniden deneyin."
       ],
-      "Failed to lock meeting": [
-        "Görüşme kilitlenemedi"
+      "Failed to load the membership": [
+        "Üyelik yüklenemedi"
       ],
-      "Failed to request live captions": [
-        "Canlı alt yazı isteği yapılamadı"
+      "Failed to load the membership data": [
+        "Üyelik verileri yüklenemedi"
       ],
       "Failed to rotate personal meeting link": [
         "Kişisel görüşme bağlantısı değiştirilemedi"
       ],
-      "Failed to send chat message. Please try again.": [
-        "Sohbet iletisi gönderilemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to send emoji reaction. Please try again.": [
-        "Emoji tepkisi gönderilemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to send reaction. Please try again.": [
-        "Tepki gönderilemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to start meeting. Please try again.": [
-        "Görüşme başlatılamadı. Lütfen yeniden deneyin."
-      ],
-      "Failed to start recording": [
-        "Görüşme kaydı başlatılamadı"
-      ],
-      "Failed to unlock meeting": [
-        "Görüşmenin kilidi açılamadı"
-      ],
-      "Failed to update caption language. Please try again.": [
-        "Alt yazı dili güncellenemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to update live captions availability": [
-        "Canlı alt yazı kullanılabilirliği güncellenemedi"
-      ],
-      "Failed to update live captions. Please try again.": [
-        "Canlı alt yazı güncellenemedi. Lütfen yeniden deneyin."
-      ],
-      "Failed to update waiting room setting. Please try again.": [
-        "Bekleme odası ayarı güncellenemedi. Lütfen yeniden deneyin."
-      ],
       "Failed to verify invitation": [
         "Davet doğrulanamadı"
+      ],
+      "Failed to verify membership": [
+        "Üyelik doğrulanamadı"
+      ],
+      "Feedback not sent. Try again.": [
+        "Geri bildirim gönderilmedi. Yeniden deneyin."
       ],
       "File download failed due to empty response": [
         "Boş yanıt nedeniyle dosya indirilemedi"
       ],
       "File has no revision": [
         "Dosyanın bir sürümü yok"
+      ],
+      "Host not changed. Try again.": [
+        "Görüşme sahibi değişmedi. Yeniden deneyin."
+      ],
+      "If you think this was a mistake, try joining again.": [
+        "Bir yanlışlık olduğunu düşünüyorsanız yeniden katılmayı deneyin."
       ],
       "Image preview not found": [
         "Görsel ön izlemesi bulunamadı"
@@ -2231,9 +2255,6 @@
       ],
       "Incorrect second password. Please try again.": [
         "İkinci parola yanlış. Lütfen yeniden deneyin."
-      ],
-      "Invalid meeting link": [
-        "Görüşme bağlantısı geçersiz"
       ],
       "Invalid URL": [
         "Adres geçersiz"
@@ -2250,17 +2271,59 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
       ],
-      "Live captions couldn't be started.": [
-        "Canlı alt yazı başlatılamadı."
+      "Link removed": [
+        "Bağlantı kaldırıldı"
       ],
-      "Live captions have stopped.": [
-        "Canlı alt yazı durdu."
+      "Live captions didn’t start. Turn them on to try again.": [
+        "Canlı alt yazılar başlamadı. Yeniden denemek için açın."
       ],
-      "Message is too long to send": [
-        "İleti gönderilemeyecek kadar uzun"
+      "Live captions failed": [
+        "Canlı alt yazılar görüntülenemedi"
       ],
-      "Microphone access is blocked. Allow it in your browser settings.": [
-        "Mikrofona erişim engellendi. Tarayıcı ayarlarınızdan erişme izni verin."
+      "Live captions failed. Turn them on to try again.": [
+        "Canlı alt yazılar açılamadı. Yeniden denemek için açın."
+      ],
+      "Live captions not updated. Try again.": [
+        "Canlı alt yazılar güncellenmedi. Yeniden deneyin."
+      ],
+      "Live captions paused": [
+        "Canlı alt yazılar duraklatıldı"
+      ],
+      "Live captions stopped. Turn them on to try again.": [
+        "Canlı alt yazılar durdu. Yeniden denemek için açın."
+      ],
+      "Meeting full": [
+        "Görüşme dolu"
+      ],
+      "Meeting link not found": [
+        "Görüşme bağlantısı bulunamadı"
+      ],
+      "Meeting not created. Try again.": [
+        "Görüşme oluşturulmadı. Yeniden deneyin."
+      ],
+      "Meeting not locked. Try again.": [
+        "Görüşme kilitlenmedi. Yeniden deneyin."
+      ],
+      "Meeting not unlocked. Try again.": [
+        "Toplantı kilidi açılmadı. Yeniden deneyin."
+      ],
+      "Meeting not updated. Try again.": [
+        "Toplantı güncellenmedi. Yeniden deneyin."
+      ],
+      "Message not sent. Check your connection and try again.": [
+        "İleti gönderilmedi. Bağlantınızı denetleyip yeniden deneyin."
+      ],
+      "Message too long. Remove some text and try again.": [
+        "İleti çok uzun. Yazıyı kısaltıp yeniden deneyin."
+      ],
+      "Microphone blocked": [
+        "Mikrofon engellendi"
+      ],
+      "Microphone blocked. Allow it in your browser settings.": [
+        "Mikrofon engellendi. Tarayıcı ayarlarınızdan izin verin."
+      ],
+      "Microphone didn’t start. Try turning it on again.": [
+        "Mikrofon başlatılamadı. Yeniden açmayı deneyin."
       ],
       "Microphone not detected": [
         "Mikrofon bulunamadı"
@@ -2290,8 +2353,17 @@
       "Name must not be empty": [
         "Ad boş olamaz"
       ],
+      "No camera detected": [
+        "Herhangi bir kamera bulunamadı"
+      ],
       "No file data was received. Please try again.": [
         "Herhangi bir dosya verisi alınmadı. Lütfen yeniden deneyin."
+      ],
+      "No microphone detected": [
+        "Herhangi bir mikrofon bulunamadı"
+      ],
+      "Noise cancellation turned off because your device is running slowly. Turn it back on in audio settings.": [
+        "Aygıtınız yavaş çalıştığı için gürültü önleme kapatıldı. Ses ayarlarından yeniden açın."
       ],
       "Not a valid number": [
         "Numara geçerli değil"
@@ -2299,8 +2371,14 @@
       "Not enough storage space to record. Free up space and try again.": [
         "Kayıt için yeterli depolama alanı yok. Yer açıp yeniden deneyin."
       ],
+      "Not sent. Check your connection.": [
+        "Gönderilmedi. Bağlantınızı denetleyin."
+      ],
       "Only admins can convert external invitations": [
         "Yalnızca yöneticiler dış davetleri dönüştürebilir"
+      ],
+      "Only part of the meeting was recorded.": [
+        "Toplantının yalnızca bir bölümü kaydedildi."
       ],
       "Operation aborted": [
         "İşlem iptal edildi"
@@ -2317,6 +2395,12 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
+      "Paste the full meeting link": [
+        "Görüşme bağlantısının tümünü yapıştırın"
+      ],
+      "Personal meeting not created. Refresh the page to try again.": [
+        "Kişisel görüşme oluşturulmadı. Yeniden denemek için sayfayı yenileyin."
+      ],
       "Photo is already in the target album": [
         "Fotoğraf zaten hedef albümde bulunuyor"
       ],
@@ -2326,11 +2410,23 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Bir JPEG, PNG veya WebP görseli seçin."
       ],
+      "Picture-in-picture failed. Try again.": [
+        "Resim içinde resim görüntülenemedi. Yeniden deneyin."
+      ],
+      "Reaction not sent. Try again.": [
+        "Tepki gönderilmedi. Yeniden deneyin."
+      ],
+      "Recording didn’t start. Try again.": [
+        "Kayıt başlamadı. Yeniden deneyin."
+      ],
+      "Recording not deleted. Try again.": [
+        "Kayıt silinmedi. Yeniden deneyin."
+      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Dosya kaydedilemediğinden görüşme kaydı durduruldu. Bu ana kadar kayıt yapıldı."
       ],
-      "Recording stopped because of an error.": [
-        "Kayıt bir sorun nedeniyle durduruldu."
+      "Recording stopped unexpectedly. Start a new recording to continue.": [
+        "Kayıt beklenmedik bir şekilde durdu. İlerlemek için yeni bir kayıt başlatın."
       ],
       "Renaming root item is not allowed": [
         "Kök öge yeniden adlandırılamaz"
@@ -2341,14 +2437,20 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
-      "Room deleted": [
-        "Oda silindi"
+      "Room name not updated. Try again.": [
+        "Oda adı güncellenmedi. Yeniden deneyin."
+      ],
+      "Room not deleted. Try again.": [
+        "Oda silinmedi. Yeniden deneyin."
       ],
       "Screen share is not supported on mobile browsers": [
         "Mobil tarayıcılar ekran paylaşımını desteklemiyor"
       ],
       "Screen share is not supported on your device": [
         "Aygıtınızda ekran paylaşımı desteklenmiyor"
+      ],
+      "Setting not saved. Try again.": [
+        "Ayar kaydedilmedi. Yeniden deneyin."
       ],
       "Signature is missing": [
         "İmza eksik"
@@ -2371,11 +2473,17 @@
       "Some file parts failed to upload. Please try again.": [
         "Bazı dosya parçaları yüklenemedi. Lütfen yeniden deneyin."
       ],
+      "Some invitations could not be loaded": [
+        "Bazı davetler yüklenemedi"
+      ],
       "Some items could not be loaded": [
         "Bazı ögeler yüklenemedi"
       ],
       "Something went wrong": [
         "Bir sorun çıktı"
+      ],
+      "Something went wrong while saving it.": [
+        "Kaydedilirken sorun çıktı."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -2386,20 +2494,14 @@
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
-      "The emoji could not be added because the message is at its character limit": [
-        "İleti karakter sınırına ulaştığından emoji eklenemedi"
+      "The host didn’t admit you": [
+        "Görüşme sahibi sizi kabul etmedi."
       ],
-      "The meeting password is incorrect": [
-        "Görüşme parolası yanlış"
+      "The host didn’t admit you in time. Send a new request to join.": [
+        "Görüşme sahibi sizi zamanında kabul etmedi. Katılmak için yeni bir istek gönderin."
       ],
-      "The meeting password is invalid": [
-        "Görüşme parolası geçersiz"
-      ],
-      "The mention could not be added because the message is at its character limit": [
-        "İleti karakter sınırına ulaşıldığından bu anma eklenemedi"
-      ],
-      "The message field is unavailable. Please reload the page.": [
-        "İleti alanı kullanılamıyor. Lütfen sayfayı yeniden yükleyin."
+      "The link may be incomplete or expired. Check it, or start a new meeting.": [
+        "Bağlantı eksik veya geçerlilik süresi dolmuş olabilir. Bağlantıyı denetleyin ya da yeni bir toplantı başlatın."
       ],
       "The selected microphone is no longer available.": [
         "Seçilmiş mikrofon artık yok."
@@ -2407,11 +2509,8 @@
       "The uploaded file does not match the original. Please try again.": [
         "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
       ],
-      "This background could not be saved in this browser.": [
-        "Bu arka plan bu tarayıcıda kaydedilemedi."
-      ],
-      "This emoji can’t be used as a reaction": [
-        "Bu emoji tepki olarak kullanılamaz"
+      "This emoji can’t be used as a reaction. Pick another one.": [
+        "Bu emoji bir tepki olarak kullanılamaz. Başka bir emoji seçin."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -2428,20 +2527,20 @@
       "This file has no version available to download": [
         "Bu dosyanın indirilebilecek bir sürümü yok"
       ],
+      "This file is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Bu dosya çok büyük. ${ maxMegabytes } MB boyutundan küçük bir dosya seçin."
+      ],
       "This file name is too long. Rename the image and try again.": [
         "Bu dosya adı çok uzun. Görseli yeniden adlandırıp yeniden deneyin."
       ],
       "This file version could not be uploaded": [
         "Bu dosya sürümü yüklenemedi"
       ],
-      "This image could not be read. Pick another one.": [
-        "Bu görsel okunamadı. Başka bir görsel seçin."
+      "This image can’t be opened. Pick another one.": [
+        "Bu görsel açılamadı. Başka bir görsel seçin."
       ],
       "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
         "Bu görsel çok büyük. Genişliği ve yüksekliği en fazla ${ maxEdge } piksel olan bir görsel seçin."
-      ],
-      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
-        "Bu görsel çok büyük. ${ maxMegabytes } MB boyutundan küçük bir görsel seçin."
       ],
       "This item has no image preview": [
         "Bu ögenin görsel ön izlemesi yok"
@@ -2455,20 +2554,29 @@
       "This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.": [
         "Bu görüşmenin sürümü eski. Sahibi onu sonlandırmalı ve Meet uygulamasının sürümünü güncelledikten sonra yeniden başlatmalı."
       ],
+      "To share your screen, allow it in your browser settings, then rejoin the call.": [
+        "Ekranınızı paylaşmak için tarayıcı ayarlarınızdan izin verin ardından aramaya yeniden katılın."
+      ],
+      "To use them, allow them in your browser settings, then rejoin the call.": [
+        "Bunları kullanmak için tarayıcı ayarlarınızdan izin verin ardından aramaya yeniden katılın."
+      ],
+      "To use your camera, allow it in your browser settings, then rejoin the call.": [
+        "Kameranızı kullanmak için tarayıcı ayarlarınızdan kameraya erişme izni verin ve aramaya yeniden katılın."
+      ],
+      "To use your microphone, allow it in your browser settings, then rejoin the call.": [
+        "Mikrofonunuzu kullanmak için tarayıcı ayarlarınızdan mikrofona erişme izni verin ve aramaya yeniden katılın."
+      ],
       "Too many server errors, please try again later": [
         "Çok fazla sayıda sunucu sorunu çıktı. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Too many server requests, please try again later": [
         "Çok fazla sayıda sunucu isteği yapıldı. Lütfen bir süre sonra yeniden deneyin"
       ],
-      "Try turning live captions off and on again.": [
-        "Canlı alt yazıyı kapatıp yeniden açmayı deneyin."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
-      "Unable to generate captions": [
-        "Alt yazı oluşturulamadı"
+      "Turn live captions off and on again.": [
+        "Canlı alt yazıları kapatıp yeniden açın."
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -2485,8 +2593,8 @@
       "Verification keys for ${ signatureType } are not available": [
         "${ signatureType } için doğrulama anahtarları yok"
       ],
-      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
-        "Sanal arka plan hazırlanamadı. Lütfen kameranızı değiştirin ya da yeniden bir arka plan seçin"
+      "Waiting room setting not saved. Try again.": [
+        "Bekleme odası ayarları kaydedilmedi. Yeniden deneyin."
       ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
@@ -2503,6 +2611,9 @@
       "You can only upload a new version to a file": [
         "Bir dosyaya yalnızca yeni bir sürüm yükleyebilirsiniz"
       ],
+      "You can send feedback only for meetings you joined.": [
+        "Yalnızca katıldığınız toplantılar için geri bildirim gönderebilirsiniz."
+      ],
       "You can update a public link for your own files only": [
         "Yalnızca kendi dosyalarınızın herkese açık bağlantısını güncelleyebilirsiniz"
       ],
@@ -2511,9 +2622,6 @@
       ],
       "You do not have access to this shared item": [
         "Bu paylaşılan ögeye erişme izniniz yok"
-      ],
-      "You have reached the maximum number of custom backgrounds.": [
-        "Olabilecek en fazla özel arka plan sayısına ulaştınız."
       ],
       "Your browser ran out of storage space. We saved the recording up to this point.": [
         "Tarayıcınızın depolama alanı doldu. Bu ana kadar olan kayıt kaydedildi."
@@ -2560,8 +2668,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Güvenlik anahtarı isteği iptal edildi veya zaman aşımına uğrandı. Lütfen yeniden deneyin."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Aygıtınız güvenlik anahtarı isteğini tamamlayamadı. Yeniden deneyin veya başka bir oturum açma yöntemi kullanın."
       ]
     },
     "fido2: Info": {
@@ -2707,6 +2821,16 @@
       " and ": [
         " ve "
       ],
+      "${ count } person has access but isn't in the call": [
+        "${ count } kişinin erişme izni var ancak aramada yok",
+        "${ count } kişinin erişme izni var ancak aramada yoklar"
+      ],
+      "${ hiddenParticipantTitle }. Meeting almost full": [
+        "${ hiddenParticipantTitle }. Görüşme neredeyse dolu"
+      ],
+      "${ hiddenParticipantTitle }. Meeting full": [
+        "${ hiddenParticipantTitle }. Görüşme dolu"
+      ],
       "${ maxParticipants } participant limit reached": [
         "${ maxParticipants } katılımcı sınırına ulaşıldı"
       ],
@@ -2722,8 +2846,11 @@
       "${ MEET_APP_NAME } needs screen recording access so you can share your screen during the call. After you allow it, macOS will ask you to reopen the app.": [
         "${ MEET_APP_NAME } çağrı sırasında ekranınızı paylaşabilmeniz için ekran kaydı yapma iznine gerek duyar. İzin verdikten sonra macOS sizden uygulamayı yeniden açmanızı isteyecek."
       ],
-      "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
-        "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
+      "${ MEET_APP_NAME } needs WebAssembly, which is off or not available in this browser. Turn it on, or use another browser.": [
+        "${ MEET_APP_NAME } için WebAssembly gereklidir. Bu tarayıcıda WebAssembly kullanımdan kaldırılmış veya kullanılamıyor. WebAssembly eklentisini kullanıma alın ya da başka bir tarayıcı kullanın."
+      ],
+      "${ MEET_APP_NAME } needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.": [
+        "${ MEET_APP_NAME } için WebRTC gereklidir. Bu tarayıcıda WebRTC kapalı veya engellenmiş. WebRTC eklentisini açın, engelleyen eklentileri kullanımdan kaldırın ya da başka bir tarayıcı kullanın."
       ],
       "${ meetingName } has ended": [
         "${ meetingName } görüşmesi sona erdi"
@@ -2741,6 +2868,12 @@
       ],
       "${ participantName } is recording": [
         "${ participantName } kaydediyor"
+      ],
+      "${ participantName } joined": [
+        "${ participantName } katıldı"
+      ],
+      "${ participantName } left": [
+        "${ participantName } ayrıldı"
       ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (siz) sunum yapıyorsunuz"
@@ -2778,11 +2911,14 @@
       "(You)": [
         "(Siz)"
       ],
-      "-Removed dangerous URL-": [
-        "-Tehlikeli adres kaldırıldı-"
-      ],
       "1 reply draft": [
         "1 yanıt taslağı"
+      ],
+      "A participant joined": [
+        "Bir katılımcı katıldı"
+      ],
+      "A participant left": [
+        "Bir katılımcı ayrıldı"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
@@ -2823,6 +2959,12 @@
       "Are you sure you want to stop recording?": [
         "Kaydı durdurmak istediğinize emin misiniz?"
       ],
+      "Ask the host to end the meeting, refresh ${ MEET_APP_NAME } and start it again.": [
+        "Görüşme sahibinden görüşmeyi sonlandırmasını isteyin, ${ MEET_APP_NAME } uygulamasını yenileyin ve görüşmeyi yeniden başlatın."
+      ],
+      "Ask the host to unlock it so you can join.": [
+        "Görüşme sahibinden kilidi açmasını isteyin. Böylece katılabilirsiniz."
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -2834,9 +2976,6 @@
       ],
       "Background blur initializing": [
         "Arka plan bulanıklığı hazırlanıyor"
-      ],
-      "Background effects are not supported on your browser": [
-        "Tarayıcınızda arka plan etkileri desteklenmiyor"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -2856,9 +2995,6 @@
       "Camera is starting": [
         "Kamera başlatılıyor"
       ],
-      "Camera permission denied": [
-        "Kameraya erişme izni verilmedi"
-      ],
       "Captions on": [
         "Alt yazı açık"
       ],
@@ -2867,6 +3003,12 @@
       ],
       "Chat with everyone": [
         "Herkesle sohbet edin"
+      ],
+      "Check that you copied the full meeting link and try again.": [
+        "Görüşme bağlantısının tümünü kopyaladığınızdan emin olun ve yeniden deneyin."
+      ],
+      "Check your internet connection and try again. If that doesn’t work, try another browser.": [
+        "İnternet bağlantınızı denetleyip yeniden deneyin. Bu işe yaramazsa başka bir tarayıcı deneyin."
       ],
       "Check your system settings to make sure that a camera is available.": [
         "Kullanılabilecek bir kamera olduğundan emin olmak için sistem ayarlarınızı denetleyin."
@@ -2877,14 +3019,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
-      "Connection failed": [
-        "Bağlantı kurulamadı"
-      ],
-      "Connection interrupted. Reconnecting...": [
-        "Bağlantı kesildi. Yeniden bağlanıyor..."
-      ],
-      "Connection issue detected. Attempting to recover…": [
-        "Bağlantı sorunu bulundu. Kurtarılmaya çalışılıyor…"
+      "Connection lost": [
+        "Bağlantı kesildi"
       ],
       "Connection lost. Reconnecting…": [
         "Bağlantı kesildi. Bağlantı yeniden kuruluyor…"
@@ -2912,6 +3048,9 @@
       ],
       "Custom combination": [
         "Özel kombinasyon"
+      ],
+      "Debug": [
+        "Hata ayıklama"
       ],
       "Decrypting meetings...": [
         "Görüşmelerin şifresi çözülüyor..."
@@ -2985,6 +3124,18 @@
       "Enter your own password (as trusted contact).": [
         "Kendi parolanızı yazın (güvenilen kişi olarak)."
       ],
+      "Epoch ${ epoch }": [
+        "Epoch ${ epoch }"
+      ],
+      "Epoch ${ previousEpoch } → ${ epoch }": [
+        "Epoch ${ previousEpoch } → ${ epoch }"
+      ],
+      "Error at epoch ${ epoch }": [
+        "Epoch ${ epoch } zamanında sorun"
+      ],
+      "Event deleted": [
+        "Etkinlik silindi"
+      ],
       "Everyone has been disconnected from the call.": [
         "Çağrı herkes için sonlandırıldı."
       ],
@@ -3018,9 +3169,6 @@
       "Get the best experience with the ${ protonMeet } desktop app": [
         "${ protonMeet } bilgisayar uygulaması ile en iyi deneyimi yaşayın"
       ],
-      "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
-        "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
-      ],
       "Host": [
         "Sunucu"
       ],
@@ -3042,17 +3190,14 @@
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ],
-      "If you’re using Firefox, make sure PeerConnection is enabled.": [
-        "Firefox kullanıyorsanız, PeerConnection özelliğinin açık olduğundan emin olun."
+      "In Firefox, open ${ configPage } and set ${ preference } to ${ value }.": [
+        "Firefox ile ${ configPage } sayfasını açın ve ${ preference } değerini ${ value } olarak ayarlayın."
       ],
       "Incoming video off": [
         "Gelen görüntü kapalı"
       ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
-      ],
-      "Join request expired. The host didn't admit you in time. Send a new request to join.": [
-        "Katılma isteğinin geçerlilik süresi dolmuş. Görüşme sahibi sizi zamanında kabul etmedi. Yeni bir katılma isteği gönderin."
       ],
       "Joined ${ roomNameLabel }": [
         "${ roomNameLabel } odasına katılındı"
@@ -3108,9 +3253,6 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Yüklediğiniz veya canlı kamera görüntüsünü arka plan bulanıklaştırması ile sürekli oynatın."
       ],
-      "Lost connection to the meeting server. Reconnecting…": [
-        "Görüşme sunucusu ile bağlantı kesildi. Bağlantı yeniden kuruluyor…"
-      ],
       "Lower participant's hand": [
         "Katılımcının elini indir"
       ],
@@ -3134,9 +3276,6 @@
       ],
       "Meeting is decrypting...": [
         "Toplantının şifresi çözülüyor..."
-      ],
-      "Meeting is full": [
-        "Görüşme dolu"
       ],
       "Meeting link": [
         "Görüşme bağlantısı"
@@ -3180,9 +3319,6 @@
       "Microphone is starting": [
         "Mikrofon başlatılıyor"
       ],
-      "Microphone permission denied": [
-        "Mikrofona erişme izni verilmedi"
-      ],
       "More options": [
         "Diğer seçenekler"
       ],
@@ -3210,14 +3346,8 @@
       "No camera detected": [
         "Bir kamera bulunamadı"
       ],
-      "No camera detected.": [
-        "Bir kamera bulunamadı."
-      ],
       "No microphone detected": [
         "Bir mikrofon bulunamadı"
-      ],
-      "No microphone detected.": [
-        "Bir mikrofon bulunamadı."
       ],
       "No publications": [
         "Herhangi bir yayın yok"
@@ -3237,12 +3367,6 @@
       "No speaker detected": [
         "Bir hoparlör bulunamadı"
       ],
-      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
-        "Aygıtınızda başarım sorunları yaşadığından gürültü engelleme kapatıldı. Ses ayarlarından yeniden açabilirsiniz."
-      ],
-      "Not sent, check your connection.": [
-        "Gönderilmedi, bağlantınızı denetleyin."
-      ],
       "notify everyone here": [
         "buradaki herkese bildir"
       ],
@@ -3255,9 +3379,6 @@
       "Now using ${ first }.": [
         "Şu anda ${ first } kullanılıyor."
       ],
-      "Only a partial meeting recording was available.": [
-        "Görüşme kaydının yalnızca bir bölümü vardı."
-      ],
       "Only meetings you created appear here": [
         "Burada yalnızca sizin oluşturduğunuz görüşmeler görüntülenir"
       ],
@@ -3265,7 +3386,7 @@
         "Dış bağlantıyı aç"
       ],
       "Open the window you want to share, then try again.": [
-        "Paylaşmak istediğiniz pencereyi açın ardından tekrar deneyin."
+        "Paylaşmak istediğiniz pencereyi açın ve yeniden deneyin."
       ],
       "Other accounts": [
         "Diğer hesaplar"
@@ -3294,17 +3415,11 @@
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."
       ],
-      "Permissions not given.": [
-        "İzinler verilmemiş."
-      ],
       "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
         "Lütfen uygulamayı ${ downloadLink } ve kurun. Ardından yeniden ${ MEET_APP_NAME } uygulaması ile katıl üzerine tıklayın."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "En iyi deneyim için lütfen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } erişme izinlerini verin."
-      ],
-      "Please try again or try another browser": [
-        "Lütfen yeniden deneyin ya da başka bir tarayıcı kullanın"
       ],
       "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
         "${ MEET_APP_NAME } uygulamasını kullanmayı sürdürmek için lütfen güncelleyin. ${ downloadUpdate }"
@@ -3330,11 +3445,11 @@
       "Reactions": [
         "Tepkiler"
       ],
-      "Reconnected successfully": [
+      "Reconnected": [
         "Yeniden bağlandı"
       ],
-      "Reconnecting to meeting...": [
-        "Görüşmeye yeniden bağlanıyor..."
+      "Reconnecting didn’t work. Check your internet connection, then rejoin.": [
+        "Yeniden bağlanmak işe yaramadı. İnternet bağlantınızı denetleyip yeniden katılın."
       ],
       "Reconnecting…": [
         "Yeniden bağlantı kuruluyor…"
@@ -3374,6 +3489,9 @@
       ],
       "Rejecting": [
         "Reddediliyor"
+      ],
+      "Room deleted": [
+        "Oda silindi"
       ],
       "Run your live camera through the custom background processor. Upload an image to use as the background.": [
         "Canlı kamera görüntünüzde özel arka plan işleyici kullanın. Arka plan olarak kullanılacak bir görsel yükleyin."
@@ -3423,6 +3541,9 @@
       "Set up a permanent meeting room for your team or clients": [
         "Ekibiniz veya müşterileriniz için bir kalıcı görüşme odası ayarlayın"
       ],
+      "Set your device’s date and time to update automatically, then try again.": [
+        "Aygtınızın tarih ve saat ayarlarını otomatik güncellemeye ayarladıktan sonra yeniden deneyin."
+      ],
       "Share screen": [
         "Ekran paylaşımı"
       ],
@@ -3436,7 +3557,7 @@
         "Oturum aç"
       ],
       "Something went wrong. Please try again.": [
-        "Bir hata oluştu. Lütfen tekrar deneyin."
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "Sort by": [
         "Sıralama"
@@ -3457,7 +3578,7 @@
         "destek ekibi"
       ],
       "System Settings → Privacy & Security → Screen Recording": [
-        "Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydetme"
+        "Sistem Ayarları → Gizlilik ve güvenlik → Ekran kaydı"
       ],
       "Thank you for hosting a premium meeting.": [
         "Ücretli bir görüşmeye ev sahipliği yaptığınız için teşekkür ederiz."
@@ -3468,11 +3589,17 @@
       "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
         "Alt yazı hizmeti görüşmenin sesini kullanır. Alt yazılar yalnızca sizin tarafınızdan görülebilir ve kaydedilmez."
       ],
+      "The host has another meeting in progress.": [
+        "Toplantı sahibinin şu anda devam eden başka bir toplantısı var."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Görüşme sahibi sizi bu görüşmeden çıkardı. Bir yanlışlık olduğunu düşünüyorsanız görüşme sahibinden sizi yeniden davet etmesini isteyin."
       ],
-      "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Açmaya çalıştığınız görüşme bağlantısı bulunamadı veya süresi dolmuş olabilir. Bağlantının doğru olduğundan emin olun ya da bunun yerine yeni bir güvenli görüşme başlatın."
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "Toplantı sahibi şu anda toplantıda değil. Toplantı sahibi katıldığında katılımcı sayıları tekrar eşleşecektir."
+      ],
+      "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
+        "Bu tarayıcı ${ MEET_APP_NAME } uygulamasının her toplantıyı korumak için kullandığı uçtan uca şifrelemeyi desteklemiyor."
       ],
       "This conversation started before you joined.": [
         "Bu görüşme siz katılmadan önce başlamıştı."
@@ -3489,9 +3616,6 @@
       "This meeting is being recorded": [
         "Bu görüşme kaydediliyor"
       ],
-      "This meeting is locked. Please contact the host to join.": [
-        "Bu görüşme kilitlenmiş. Katılmak için lütfen sahibi ile görüşün."
-      ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Bu görüşme ücretsiz tarifenin zaman sınırına ulaştı. Gelecek görüşmelerinizde toplantı süresini uzatmak için tarifenizi yükseltin."
       ],
@@ -3500,6 +3624,9 @@
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Bu kayıt bu aygıttan kalıcı olarak silinecek. Bu işlem geri alınamaz."
+      ],
+      "This usually means a lost connection. It should clear on its own.": [
+        "Bu durum genellikle bağlantının kesildiğini gösterir. Sorun kendiliğinden çözülmelidir."
       ],
       "This will end the meeting for all participants and stop your screen sharing.": [
         "Bu işlem görüşmeyi tüm katılımcılar için sonlandırır ve ekran paylaşımınızı durdurur."
@@ -3518,6 +3645,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+      ],
+      "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
+        "Katılmak için farklı bir tarayıcı, aygıt veya telefonunuzdaki ${ MEET_APP_NAME } uygulamasını kullanın."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Bir etkinlik zamanlarken, etkinlik bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -3538,10 +3671,7 @@
         "Kamerayı aç"
       ],
       "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
-        "${ settingsPath } konumundan Firefox’u açın. Ardından Firefox’u yeniden başlatın ve görüşmeye tekrar katılın."
-      ],
-      "Unable to reconnect to the meeting. Please rejoin or leave.": [
-        "Görüşme ile yeniden bağlantı kurulamadı. Lütfen yeniden katılın ya da görüşmeden ayrılın."
+        "${ settingsPath } bölümünden Firefox seçeneğini açın. Ardından Firefox uygulamasını yeniden başlatın ve görüşmeye yeniden katılın."
       ],
       "unlimited meeting": [
         "sınırsız görüşme"
@@ -3621,6 +3751,9 @@
       "You have too many meetings in progress": [
         "Sürmekte olan çok fazla görüşmeniz var"
       ],
+      "You joined": [
+        "Katıldınız"
+      ],
       "You left ${ meetingName }": [
         "${ meetingName } görüşmesinden ayrıldınız"
       ],
@@ -3636,9 +3769,6 @@
       "You were removed from the meeting": [
         "Görüşmeden çıkarıldınız"
       ],
-      "You weren't admitted to this meeting. You can try joining again if you think this was a mistake.": [
-        "Bu görüşmeye katılmanız kabul edilmedi. Bir yanlışlık olduğunu düşünüyorsanız yeniden katılmayı deneyebilirsiniz."
-      ],
       "You will leave the meeting. Others will continue.": [
         "Siz görüşmeden ayrılacaksınız. Diğerleri kalacak."
       ],
@@ -3650,24 +3780,6 @@
       ],
       "Your always available meeting room": [
         "Her zaman kullanabileceğiniz görüşme odası"
-      ],
-      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
-        "Arka planlarınız yüklenemedi. Bu nedenle şu anda yeni bir arka plan eklenemiyor."
-      ],
-      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
-        "Tarayıcınız kameraya ve mikrofona erişme izni vermedi. Erişme izinlerini vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
-      ],
-      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
-        "Tarayıcınız kameranıza erişme izni vermedi. Erişme izni vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
-      ],
-      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Tarayıcınız mikrofonunuza erişme izni vermedi. Erişme izni vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
-      ],
-      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
-        "Tarayıcınız ekran paylaşımına erişme izni vermedi. Erişme izni vermek için tarayıcı ayarlarınızı değiştirin ve görüşmeye yeniden katılın."
-      ],
-      "Your browser or device isn’t supported": [
-        "Tarayıcınız veya aygıtınız desteklenmiyor"
       ],
       "Your camera is still starting": [
         "Kameranızın başlatılması sürüyor"
@@ -3689,6 +3801,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Hesap parolası"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -3719,6 +3834,9 @@
       ],
       "Audio": [
         "Ses"
+      ],
+      "Audio: ${ microphoneLabel }": [
+        "Ses: ${ microphoneLabel }"
       ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
@@ -3774,6 +3892,9 @@
       "Dark ${ BRAND_NAME } background": [
         "Koyu ${ BRAND_NAME } arka planı"
       ],
+      "Debug": [
+        "Hata ayıklama"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -3803,6 +3924,12 @@
       ],
       "Enabled": [
         "Kullanılıyor"
+      ],
+      "End date": [
+        "Bitiş tarihi"
+      ],
+      "End time": [
+        "Bitiş saati"
       ],
       "Ended": [
         "Sona erdi"
@@ -3909,9 +4036,6 @@
       "Participants join after you approve them": [
         "Katılımcıların katılması için onay vermeniz gerekir"
       ],
-      "Password": [
-        "Parola"
-      ],
       "Phone number": [
         "Telefon numarası"
       ],
@@ -3960,6 +4084,12 @@
       "Spoken language": [
         "Konuşulan dil"
       ],
+      "Start date": [
+        "Başlangıç tarihi"
+      ],
+      "Start time": [
+        "Başlangıç saati"
+      ],
       "Subscribed": [
         "Abone olundu"
       ],
@@ -3989,6 +4119,9 @@
       ],
       "Video": [
         "Görüntü"
+      ],
+      "Video: ${ cameraLabel }": [
+        "Görüntü: ${ cameraLabel }"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -4144,11 +4277,6 @@
         "Kaydet ve bağlantıyı kopyala"
       ]
     },
-    "Meet": {
-      "Your browser or device software does not support ${ MEET_APP_NAME }. ${ MEET_APP_NAME } requires WebAssembly (Wasm) to run. Please update your browser or device to a version that supports Wasm, or try using a different browser.": [
-        "Tarayıcınız veya aygıt yazılımınız ${ MEET_APP_NAME } uygulamasını desteklemiyor. ${ MEET_APP_NAME } uygulamasının çalışması için WebAssembly (Wasm) gereklidir. Lütfen tarayıcınızı veya aygıtınızı Wasm hizmetini destekleyen bir sürüme güncelleyin veya farklı bir tarayıcı kullanmayı deneyin."
-      ]
-    },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
         "Bu görüşme, tek katılımcısı siz olduğunuz için otomatik olarak kapatılacak. Bu görüşmede kalmak istiyor musunuz?"
@@ -4160,11 +4288,6 @@
       ],
       "Stay in the meeting": [
         "Görüşmede kal"
-      ]
-    },
-    "meet_2025 Error": {
-      "Failed to start Picture-in-Picture": [
-        "Resim içinde resim başlatılamadı"
       ]
     },
     "Meeting schedule": {
@@ -4240,9 +4363,6 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
-      "Could not send feedback": [
-        "Geri bildirim gönderilemedi"
-      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -4254,9 +4374,6 @@
       ],
       "Thanks! Your feedback has been submitted.": [
         "Teşekkürler! Geri bildiriminiz gönderildi."
-      ],
-      "You can't send a feedback for a meeting you haven't been to": [
-        "Katılmadığınız bir toplantı için geri bildirim gönderemezsiniz"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4536,10 +4653,10 @@
         "Kameraya erişme izni ver "
       ],
       "Allow camera and microphone": [
-        "Kameraya ve mikrofona erişme izin ver"
+        "Kameraya ve mikrofona erişme izni ver"
       ],
       "Allow microphone": [
-        "Mikrofona erişme izin ver"
+        "Mikrofona erişme izni ver"
       ],
       "Allow screen recording": [
         "Ekran kaydı alınabilsin"
@@ -4574,20 +4691,32 @@
       "Blur and personal": [
         "Bulanık ve kişisel"
       ],
+      "Browser not supported": [
+        "Tarayıcı desteklenmiyor"
+      ],
       "Camera and microphone are blocked": [
         "Kamera ve mikrofon engellendi"
       ],
       "Camera is blocked": [
         "Kamera engellendi"
       ],
+      "Can’t join from this browser": [
+        "Bu tarayıcıdan katılamazsınız"
+      ],
       "Chat": [
         "Sohbet"
+      ],
+      "Connection failed": [
+        "Bağlantı kurulamadı"
       ],
       "Constants": [
         "Sabitler"
       ],
-      "Couldn't prepare the recording": [
-        "Kayıt hazırlanamadı"
+      "Couldn’t join the meeting": [
+        "Görüşmeye katılınamadı"
+      ],
+      "Couldn’t start the meeting": [
+        "Görüşme başlatılamadı"
       ],
       "Create new room": [
         "Yeni oda oluştur"
@@ -4607,9 +4736,6 @@
       "Display": [
         "Görüntü"
       ],
-      "Enter your password": [
-        "Parolanızı yazın"
-      ],
       "Epoch": [
         "Epoch"
       ],
@@ -4620,7 +4746,7 @@
         "Epoch ${ log.epoch } zamanında sorun"
       ],
       "Firefox can’t record your screen": [
-        "Firefox ekranınızı kaydedemiyor"
+        "Firefox ekranınızı kaydedemez"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -4634,11 +4760,14 @@
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
+      "Incorrect date and time": [
+        "Tarih ve saat yanlış"
+      ],
+      "Incorrect meeting password": [
+        "Görüşme parolası yanlış"
+      ],
       "Info": [
         "Bilgiler"
-      ],
-      "Invalid meeting link": [
-        "Görüşme bağlantısı geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -4683,6 +4812,12 @@
       "Meeting edited": [
         "Görüşme düzenlendi"
       ],
+      "Meeting locked": [
+        "Görüşme kilitlendi"
+      ],
+      "Meeting out of date": [
+        "Görüşme tarihi geçmiş"
+      ],
       "Messaging Layer Security": [
         "İletişim katmanı güvenliği"
       ],
@@ -4702,7 +4837,7 @@
         "Herhangi bir sonuç bulunamadı"
       ],
       "No screen or window found": [
-        "Ekran veya pencere bulunamadı"
+        "Herhangi bir ekran veya pencere bulunamadı"
       ],
       "Participant counts don’t match": [
         "Katılımcı sayıları uyuşmuyor"
@@ -4753,7 +4888,7 @@
         "Görüşme planlayın"
       ],
       "Screen share failed": [
-        "Ekran paylaşımı başarısız oldu"
+        "Ekran paylaşılamadı"
       ],
       "Screen share is blocked": [
         "Ekran paylaşımı engellendi"
@@ -4782,9 +4917,6 @@
       "Talk confidentially": [
         "Gizliliğinizi koruyarak konuşun"
       ],
-      "The host didn't admit you": [
-        "Görüşme sahibi sizi kabul etmedi"
-      ],
       "Time": [
         "Zaman"
       ],
@@ -4793,6 +4925,9 @@
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
+      ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
       ],
       "Video and audio": [
         "Görüntü ve ses"
@@ -4819,12 +4954,6 @@
       ]
     },
     "Tooltip": {
-      "Background blur is not supported on your browser": [
-        "Tarayıcınız arka planın bulanıklaştırılmasını desteklemiyor"
-      ],
-      "Background effects are not supported on your browser": [
-        "Tarayıcınızda arka plan etkileri desteklenmiyor"
-      ],
       "Generate a new meeting link. The current link will stop working.": [
         "Yeni bir görüşme bağlantısı oluşturun. Var olan bağlantı artık çalışmayacak."
       ],
@@ -4866,23 +4995,8 @@
       "Connection is taking longer than expected": [
         "Bağlantının kurulması beklenenden uzun sürüyor"
       ],
-      "Could not access camera or microphone. You can try enabling them again from the meeting controls.": [
-        "Kameraya veya mikrofona erişilemedi. Görüşme denetimlerinden yeniden açmayı deneyebilirsiniz."
-      ],
-      "Could not access camera. You can try enabling it again from the meeting controls.": [
-        "Kameraya erişilemedi. Görüşme denetimlerinden yeniden açmayı deneyebilirsiniz."
-      ],
-      "Could not access microphone. You can try enabling it again from the meeting controls.": [
-        "Mikrofona erişilemedi. Görüşme denetimlerinden yeniden etkinleştirmeyi deneyebilirsiniz."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
-      ],
-      "STUN UDP connection failed, trying with TURN relay…": [
-        "STUN UDP bağlantısı kurulamadı. TURN aktarımıyla deneniyor…"
-      ],
-      "STUN UDP connection timeout, trying with TURN relay": [
-        "STUN UDP bağlantısı zaman aşımına uğradı. TURN aktarmıyla deneniyor"
       ],
       "Trying another route…": [
         "Başka bir yol deneniyor…"

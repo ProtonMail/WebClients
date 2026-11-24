@@ -698,9 +698,6 @@
       "Contact sales": [
         "联系销售"
       ],
-      "Contact support": [
-        "联系客服"
-      ],
       "Contact Support Center": [
         "联系支持中心"
       ],
@@ -965,11 +962,8 @@
       "Don't show again": [
         "不再显示"
       ],
-      "Don't show this offer again": [
-        "不再显示此优惠"
-      ],
-      "Donate": [
-        "捐赠"
+      "Don't show this again": [
+        "不再显示"
       ],
       "Done": [
         "完成"
@@ -1276,9 +1270,6 @@
       ],
       "Get verification code": [
         "获取验证码"
-      ],
-      "Get your own ${ MAIL_APP_NAME } address": [
-        "获取您自己的 ${ MAIL_APP_NAME } 地址"
       ],
       "Go back": [
         "返回"
@@ -1715,6 +1706,9 @@
       "Remove": [
         "移除"
       ],
+      "Remove ${ name }": [
+        "移除 ${ name }"
+      ],
       "Remove all other devices": [
         "移除所有其他设备"
       ],
@@ -2078,6 +2072,9 @@
       "Skip": [
         "跳过"
       ],
+      "Skip to main content": [
+        "跳转到主要内容"
+      ],
       "Skip verification": [
         "跳过验证"
       ],
@@ -2182,9 +2179,6 @@
       ],
       "Try for free": [
         "免费试用"
-      ],
-      "Try payment again": [
-        "再次尝试付款"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
@@ -6535,9 +6529,6 @@
       "Delete this condition": [
         "删除此条件"
       ],
-      "Edit conditions": [
-        "编辑条件"
-      ],
       "Got it": [
         "明白"
       ],
@@ -7419,9 +7410,6 @@
       "Could not read part of this file: ${ message }": [
         "无法读取此文件的部分内容：${ message }"
       ],
-      "Could not save preference": [
-        "无法保存偏好设置"
-      ],
       "Could not unlock the parent folder": [
         "无法解锁父文件夹"
       ],
@@ -8078,9 +8066,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐赠金额为 ${ price }"
       ],
       "The policy name must be between 3 and 40 characters.": [
         "策略名称必须在 3 至 40 个字符之间。"
@@ -9397,16 +9382,6 @@
         "了解详情"
       ]
     },
-    "Form heading": {
-      "Enter your email address": [
-        "请输入您的邮箱地址"
-      ]
-    },
-    "Form paragraph": {
-      "The voucher will be sent here.": [
-        "凭证将发送到此地址"
-      ]
-    },
     "Free trial dekstop": {
       "web app": [
         "网页应用"
@@ -9778,29 +9753,14 @@
       ]
     },
     "Heading": {
-      "A simple step today to ensure your child's digital safety tomorrow": [
-        "今天采取简单的一步，确保您的孩子明天的数字安全"
-      ],
       "Activate your reserved email address": [
         "激活您预留的邮箱地址"
-      ],
-      "Address reservation voucher": [
-        "地址预留凭证"
-      ],
-      "Donate to the ${ BRAND_NAME } Foundation": [
-        "向 ${ BRAND_NAME } 基金会捐赠"
       ],
       "Enter verification code": [
         "输入验证码"
       ],
       "Recover activation voucher": [
         "恢复激活凭证"
-      ],
-      "Reserve child's email address": [
-        "预留儿童邮箱地址"
-      ],
-      "We emailed you the voucher": [
-        "我们已将凭证通过邮件发送给您！"
       ]
     },
     "Headline": {
@@ -11877,9 +11837,6 @@
       "Groups": [
         "群组"
       ],
-      "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
-        "帮助其他家庭为他们的孩子提供一个安全的在线起点。分享这一里程碑并广为传播。"
-      ],
       "here": [
         "此处"
       ],
@@ -11891,9 +11848,6 @@
       ],
       "High Priority": [
         "首要优先顺序"
-      ],
-      "How it works": [
-        "如何运作"
       ],
       "How to perform a signed-in reset": [
         "如何执行已登录状态下的重置？"
@@ -12149,9 +12103,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "只需确认您的选择，剩下的交给我们即可。"
-      ],
-      "Keep the voucher secure until needed, for example in ${ DRIVE_APP_NAME }.": [
-        "请妥善保管凭证，例如存放在 ${ DRIVE_APP_NAME } 中，直到需要使用时。"
       ],
       "Keep your info more secure and private with these guides and tips.": [
         "使用这些指南和技巧，让您的信息更安全、更私密。"
@@ -12753,9 +12704,6 @@
       "Receive notifications for ${ categoryLabel }": [
         "接收关于 ${ categoryLabel } 的通知"
       ],
-      "Receive the reservation voucher by email. You or the child can use it to activate the address within the next 15 years. ${ learnMoreLink }": [
-        "通过邮件接收预留凭证，您或孩子可以在未来 15 年内使用该凭证激活地址。${ learnMoreLink }"
-      ],
       "Recently used servers:": [
         "近期使用的服务器："
       ],
@@ -13020,9 +12968,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "部分服务器可能未显示在上方列表中，可通过服务器名称（例如 AT#62）进行搜索查找"
       ],
-      "Something went wrong. Please try again or contact customer support.": [
-        "出错了。请重试或联系客户支持。"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "指定允许使用 SAML SSO 进行身份验证的域。"
       ],
@@ -13196,9 +13141,6 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "用于报告您未设置 ${ BRAND_NAME } 账户的链接已过期。请联系我们的支持团队来解决此问题。"
-      ],
-      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
-        "最高捐赠金额为 ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "最近的数据更新（数据泄露除外）"
@@ -13497,9 +13439,6 @@
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "要迁移此用户，请在您的 ${ provider.adminConsoleName } 中解除其暂停状态。"
       ],
-      "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
-        "为防止滥用或欺诈，我们要求最低捐赠 ${ minimumDonation }。这支持了 ${ protonFoundationLink } 在全球范围内捍卫数字隐私的工作，并有助于保护下一代。"
-      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "您需要选择一种账户恢复方式，验证身份后方可继续操作。"
       ],
@@ -13770,9 +13709,6 @@
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "我们可以使用您的密保手机向您发送重置密码的验证码，并在发现可疑活动时与您联系。"
       ],
-      "We couldn't complete the transaction. Please try again.": [
-        "我们无法完成交易。请重试。"
-      ],
       "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
         "我们无法关联 ${ emailAddress }。请重试，并在 Google 请求访问权限时勾选所有选项。${ BRAND_NAME } 仅使用此权限来关联您的 Gmail。"
       ],
@@ -13937,9 +13873,6 @@
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
-      ],
-      "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
-        "当您准备激活地址时，请扫描二维码或使用凭证中的链接。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
@@ -14441,9 +14374,6 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "您的试用将于 ${ timeRemaining } 结束。"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
-        "您的预留 ${ BRAND_NAME } 邮箱地址凭证：${ reservedEmail }"
       ],
       "YouTube": [
         "YouTube"
@@ -15144,6 +15074,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
       ],
+      "Access tokens": [
+        "访问令牌"
+      ],
       "Account credit": [
         "账户余额"
       ],
@@ -15468,9 +15401,6 @@
       "Choose a name for the generated certificate file": [
         "输入所创建证书文件的名称"
       ],
-      "Choose an address to reserve for your child": [
-        "选择一个地址为您的孩子保留"
-      ],
       "Choose your billing": [
         "选择您的账单周期"
       ],
@@ -15696,12 +15626,6 @@
       "Don't show this again": [
         "不再显示"
       ],
-      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
-        "向 ${ BRAND_NAME } 基金会捐赠 ${ minimumDonation } 或更多"
-      ],
-      "Donation amount": [
-        "捐赠金额"
-      ],
       "Drive": [
         "云盘"
       ],
@@ -15797,9 +15721,6 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
-      ],
-      "Enter your email address": [
-        "请输入您的邮箱地址"
       ],
       "Enter your password": [
         "请输入您的密码"
@@ -16653,9 +16574,6 @@
       "Tips and insights": [
         "提示与洞察"
       ],
-      "To activate, scan the QR-code or go to:": [
-        "若要激活，请扫描二维码或转至："
-      ],
       "To help us improve, please explain why you are leaving.": [
         "为了帮助我们改进工作，请解释您离开的原因。"
       ],
@@ -16836,17 +16754,11 @@
       "You don't have permissions": [
         "您没有权限"
       ],
-      "Your activation code:": [
-        "您的激活代码："
-      ],
       "Your calendar URL": [
         "您的日历链接"
       ],
       "Your credit balance": [
         "您的信用余额"
-      ],
-      "Your email address": [
-        "您的邮箱地址"
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
@@ -16862,9 +16774,6 @@
       ],
       "Your recovery phone number": [
         "您的密保手机"
-      ],
-      "Your voucher for your reserved ${ BRAND_NAME } email address:": [
-        "您的预留 ${ BRAND_NAME } 邮箱地址凭证："
       ],
       "Zero-access architecture": [
         "零访问架构"
@@ -17035,9 +16944,6 @@
       ],
       "${ labelName } updated": [
         "${ labelName } 已更新"
-      ],
-      "Preference saved": [
-        "设置已保存"
       ]
     },
     "Label; import email": {
@@ -17060,9 +16966,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME } Foundation's": [
-        "${ BRAND_NAME } 基金会的"
-      ],
       "Activity log": [
         "活动日志"
       ],
@@ -17316,20 +17219,6 @@
     "Link (Scribe)": {
       "Users and addresses": [
         "用户与地址"
-      ]
-    },
-    "Link label": {
-      "Email": [
-        "邮箱"
-      ],
-      "Facebook": [
-        "Facebook"
-      ],
-      "LinkedIn": [
-        "LinkedIn"
-      ],
-      "Twitter (X)": [
-        "Twitter (X)"
       ]
     },
     "Link label (optional)": {
@@ -17880,9 +17769,6 @@
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 账户"
       ],
-      "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
-        "今天的一小步，是您孩子未来数字安全的一大步。请为您的孩子预留一个私密的 ${ BRAND_NAME } 邮箱地址。"
-      ],
       "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
         "激活为您孩子预留的私人 ${ BRAND_NAME } 邮箱地址并设置其账户。"
       ],
@@ -17918,9 +17804,6 @@
       ],
       "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
         "恢复您孩子的 ${ BRAND_NAME } 账户 | ${ BRAND_NAME }"
-      ],
-      "Reserve your child's private email | ${ BRAND_NAME }": [
-        "为您的孩子预留私密邮箱 | ${ BRAND_NAME }"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重置您的 ${ BRAND_NAME } 账户密码"
@@ -19258,17 +19141,11 @@
       "1 email per month": [
         "每月 1 封邮件"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "每月 1 封邮件。获取最新的隐私保护要闻与 ${ BRAND_NAME } 动态。"
-      ],
       "1 email per quarter": [
         "每个季度 1 封邮件"
       ],
       "1-2 emails per month": [
         "每月 1 至 2 封邮件"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "每年 1-4 封邮件，提醒您更新恢复方式！"
       ],
       "2-4 emails per year": [
         "每年 2 至 4 封邮件"
@@ -19293,9 +19170,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您使用 ${ BRAND_NAME } 产品的第一个月里"
-      ],
-      "Email communications": [
-        "邮件通讯"
       ],
       "In-app notifications": [
         "应用内通知"
@@ -21141,9 +21015,6 @@
       ],
       "Address": [
         "地址"
-      ],
-      "Amount": [
-        "金额"
       ],
       "Anderson": [
         "Anderson"
@@ -24779,9 +24650,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "剩余 ${ dayDiff } 天"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
@@ -25037,12 +24905,6 @@
       "What you give up when you cancel ${ planName }": [
         "取消 ${ planName } 时您所放弃的内容"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "当您取消 ${ planName } 订阅后，您将被降级为 ${ BRAND_NAME } 免费计划。该计划仅提供至多1GB的邮件存储和最多5GB的网盘存储。 您还将失去所有先前获得的额外存储空间。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "当您取消 ${ planName } 时，您将降级为 ${ BRAND_NAME } 免费计划，该计划仅提供最多 1 GB 的邮件存储空间和最多 5 GB 的设备存储空间。由于免费计划不支持额外的用户，因此您团队的工作会受到影响。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "当您的 ${ planName } 订阅在 ${ expiryDate } 终止时，您将降级为 ${ BRAND_NAME } 免费计划。"
       ],
@@ -25051,9 +24913,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "在 ${ boldedDate } 之前，您可以继续享受当前套餐的所有权益。"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "您的 ${ planName } 订阅还有 ${ expiryDate }。我们会将剩余时间的点数加入您的 ${ BRAND_NAME } 账户。取消前请确保没有超过免费计划的限额。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "您的 ${ planName } 计划不仅能确保您的业务数据和通信安全。它支持您的合规目标，让您的企业脱颖而出，并让您的团队保持联系。"
@@ -25618,6 +25477,9 @@
       ]
     },
     "Table header": {
+      "Actions": [
+        "操作"
+      ],
       "Activated": [
         "已激活"
       ],
@@ -25654,9 +25516,6 @@
       ],
       "CSV field": [
         "CSV 字段"
-      ],
-      "Edit": [
-        "更改"
       ],
       "Email address": [
         "邮箱地址"
@@ -26684,9 +26543,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "请输入您的 ${ BRAND_NAME } 账户详细信息以加入 ${ app } Beta 计划"
       ],
-      "Enter your password": [
-        "请输入您的密码"
-      ],
       "Error": [
         "失败"
       ],
@@ -27244,12 +27100,6 @@
       ],
       "Privacy": [
         "隐私设置"
-      ],
-      "Problem processing your payment": [
-        "处理您的付款遇到问题"
-      ],
-      "Problem processing your request": [
-        "处理您的请求遇到问题"
       ],
       "Processing...": [
         "正在处理..."

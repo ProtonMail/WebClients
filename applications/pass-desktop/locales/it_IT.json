@@ -1088,8 +1088,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } non ha risposto in tempo."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } non risponde."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Impossibile analizzare il file di ${ provider }. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "È già in corso una verifica biometrica per lo sblocco."
       ],
       "A desktop unlock check is already in progress.": [
         "Una verifica di sblocco del desktop è già in corso."
@@ -1792,6 +1801,9 @@
         "${ n } elemento",
         "${ n } elementi"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } desidera sbloccare l'estensione per il browser"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sarà sempre accessibile"
       ],
@@ -2413,8 +2425,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte comporterà l'eliminazione dei link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2992,6 +3003,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Sblocca ${ PASS_SHORT_APP_NAME } con la tua password secondaria"
+      ],
+      "unlock the browser extension": [
+        "Sblocca l'estensione per il browser"
       ],
       "Unpinning item...": [
         "Annullamento del fissaggio dell'elemento in corso"

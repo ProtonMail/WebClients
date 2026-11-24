@@ -395,8 +395,8 @@
       "Display previous": [
         "Öncekini görüntüle"
       ],
-      "Don't show this offer again": [
-        "Bu teklif bir daha görüntülenmesin"
+      "Don't show this again": [
+        "Bunu yeniden gösterme"
       ],
       "Done": [
         "Tamam"
@@ -1100,6 +1100,9 @@
       "Skip": [
         "Atla"
       ],
+      "Skip to main content": [
+        "Ana içeriğe git"
+      ],
       "Skip verification": [
         "Doğrulamayı atla"
       ],
@@ -1365,6 +1368,9 @@
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
+      ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
       ],
@@ -1388,6 +1394,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } lisansı",
@@ -1520,6 +1530,11 @@
         "Davet edildi"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Kapat"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
@@ -1528,6 +1543,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif kullanılamıyor"
       ]
     },
     "BF2024: Deal details": {
@@ -3636,6 +3656,9 @@
       "Failed to get details, please try again later": [
         "Ayrıntılar alınamadı. Lütfen bir süre sonra yeniden deneyin"
       ],
+      "Failed to get invitee keys": [
+        "Davetli anahtarları alınamadı"
+      ],
       "Failed to get inviter keys": [
         "Davet edilenin anahtarları alınamadı"
       ],
@@ -3644,6 +3667,12 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Failed to load the membership": [
+        "Üyelik yüklenemedi"
+      ],
+      "Failed to load the membership data": [
+        "Üyelik verileri yüklenemedi"
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -3665,6 +3694,9 @@
       ],
       "Failed to verify invitation": [
         "Davet doğrulanamadı"
+      ],
+      "Failed to verify membership": [
+        "Üyelik doğrulanamadı"
       ],
       "File download failed due to empty response": [
         "Boş yanıt nedeniyle dosya indirilemedi"
@@ -3826,12 +3858,6 @@
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
-      "Organization key must be activated to create invited users": [
-        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
-      ],
       "Part of the file appears to be corrupted": [
         "Dosyanın bir bölümü bozulmuş gibi görünüyor"
       ],
@@ -3960,6 +3986,9 @@
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
       ],
+      "Some invitations could not be loaded": [
+        "Bazı davetler yüklenemedi"
+      ],
       "Some items could not be loaded": [
         "Bazı ögeler yüklenemedi"
       ],
@@ -4034,9 +4063,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "En az bağış tutarı ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
@@ -4580,8 +4606,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Güvenlik anahtarı isteği iptal edildi veya zaman aşımına uğrandı. Lütfen yeniden deneyin."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Aygıtınız güvenlik anahtarı isteğini tamamlayamadı. Yeniden deneyin veya başka bir oturum açma yöntemi kullanın."
       ]
     },
     "fido2: Info": {
@@ -6718,6 +6750,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilir kaynaklardan indirmeniz en iyisidir. "
       ],
@@ -6968,7 +7003,7 @@
         "Yazma yardımcısı"
       ],
       "Writing assistant seats are no longer sold.": [
-        "Yazma yardımcısı koltukları artık satılmamaktadır."
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ],
       "Yes": [
         "Evet"
@@ -7028,6 +7063,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "İçe aktarma tamamlandığında bu klasörü açabilirsiniz. Şimdiye kadar ${ importedSize } içe aktarıldı. Tamamlandığında size e-posta göndereceğiz."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "İçe aktarma tamamlandığında bu klasörü açabilirsiniz. İşlem bittiğinde size e-posta göndereceğiz."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -7306,6 +7344,9 @@
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } / ${ albumProgress.total }"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Hesap parolası"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -7849,7 +7890,7 @@
         "Posta kodu"
       ],
       "Proration": [
-        "Hesap bakiyesi"
+        "Hesabınızdaki tutar"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -8301,40 +8342,40 @@
         "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
       ],
       "Everything in Basic, and:": [
-        "Basic'teki her şey ve:"
+        "Basic tarifesindeki her şey ve:"
       ],
       "Everything in Free, and:": [
-        "Her şey Free ve:"
+        "Free tarifesindeki herşey ve:"
       ],
       "Everything in Plus, and:": [
-        "Plus'taki her şey ve:"
+        "Plus tarifesindeki her şey ve:"
       ],
       "Extended image generation": [
-        "Genişletilmiş görüntü oluşturma"
+        "Genişletilmiş görsel oluşturma"
       ],
       "Includes:": [
-        "Şunları içerir:"
+        "İçindekiler:"
       ],
       "Limited image generation": [
-        "Sınırlı görüntü oluşturma"
+        "Sınırlı görsel oluşturma"
       ],
       "Limited messages and chat history": [
-        "Sınırlı mesajlar ve sohbet geçmişi"
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
       ],
       "Maximum image generation": [
-        "Maksimum resim oluşturma"
+        "En fazla görsel oluşturma"
       ],
       "Maximum Skills and Projects": [
-        "Maksimum Beceri ve Projeler"
+        "En fazla yetenek ve projeler"
       ],
       "More image generation": [
-        "Daha fazla görüntü oluşturma"
+        "Daha fazla görsel oluşturma"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Daha fazla beceri, proje ve planlanmış görevler"
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
       ],
       "More usage": [
         "Daha fazla kullanım"
@@ -10554,7 +10595,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Krediler hesabınızın kalan tutarına eklenecek"
+        "Krediler hesabınızdaki tutara eklenecek"
       ]
     },
     "Payments.InfoBanner": {
@@ -11674,10 +11715,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } gün kaldı",
-        "${ dayDiff } gün kaldı"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
@@ -11912,20 +11949,11 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName } tarifesini iptal ederek vazgeçtikleriniz"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 1 GB Mail depolama alanı ve 5 GB Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilmiş depolama alanı hediyelerinizi de kaybedeceksiniz."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 1 GB Mail depolama alanı ve 5 GB Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Free tarifesinde ek kullanıcılar desteklenmediği için ekibinizin çalışmaları kesintiye uğrayacaktır."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "${ planName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde, ${ BRAND_NAME } Free tarifesine düşürülecek."
       ],
       "Yearly free storage bonuses": [
         "Yıllık ücretsiz depolama alanı ödülleri"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName } aboneliğinizin ${ expiryDate } süresi daha var. Kalan süreye karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } tarifeniz yalnızca kurumsal verilerinizi ve iletişimlerinizi güvende tutmaz. Uyumluluk gereksinimlerinizi karşılar, kuruluşunuzu öne çıkarır ve ekibinizin bağlantıda kalmasını sağlar."
@@ -12650,9 +12678,6 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
-      "Enter your password": [
-        "Parolanızı yazın"
-      ],
       "Error": [
         "Hata"
       ],
@@ -13106,6 +13131,9 @@
       "Sort files/folders": [
         "Dosyaları/klasörleri sırala"
       ],
+      "Special offer": [
+        "Özel teklif"
+      ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
       ],
@@ -13207,6 +13235,9 @@
       ],
       "Verification failed": [
         "Doğrulanamadı"
+      ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
       ],
       "Verify your password": [
         "Parolanızı doğrulayın"
@@ -13576,6 +13607,71 @@
       ],
       "Replay video": [
         "Görüntüyü yeniden oynat"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "Her kullanıcı için ${ devicesPerUser }"
+      ],
+      "${ storage } shared": [
+        "${ storage } paylaşımlı"
+      ],
+      "10 years": [
+        "10 yıl"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "${ VPN_APP_NAME } sunucularının daha yüksek kapasiteli bir düzeyi: Her bir sunucuyu paylaşan kullanıcı sayısı çok daha azdır ve bu sunucular ${ BRAND_NAME } IP adreslerini kullanır. Hızlı bağlan seçeneği bu sunucular var olduğunda otomatik olarak onları seçer."
+      ],
+      "Calendars": [
+        "Takvimler"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Adını 2014 yılında ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } hizmetinin hayata geçmesini sağlayan kitle fonlaması destekçilerinden almıştır. Tüm ücretli ${ BRAND_NAME } hizmetleri tek tarifede."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Ek ücret ödemeden yararlanabileceğiniz yeni ${ BRAND_NAME } hizmetleri"
+      ],
+      "Password vaults": [
+        "Parola kasaları"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Ücretli Mail, Calendar, Drive ve Pass"
+      ],
+      "Previous versions": [
+        "Önceki sürümler"
+      ],
+      "Storage": [
+        "Depolama alanı"
+      ],
+      "Subscribers only": [
+        "Yalnızca aboneler"
+      ],
+      "Ultra servers": [
+        "Ultra sunucuları"
+      ],
+      "Ultra servers, reserved for you": [
+        "Size özel Ultra sunucuları"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "${ limit } taneye kadar"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "VPN devices at once": [
+        "Aynı anda bağlanabilecek VPN aygıtı"
       ]
     },
     "VPN B2B cancellation reason": {

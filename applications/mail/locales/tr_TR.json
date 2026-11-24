@@ -486,8 +486,8 @@
       "Dock to side panel": [
         "Yan panoya kenetlen"
       ],
-      "Don't show this offer again": [
-        "Bu teklif bir daha görüntülenmesin"
+      "Don't show this again": [
+        "Bunu yeniden gösterme"
       ],
       "Done": [
         "Tamam"
@@ -1294,6 +1294,12 @@
       "Save": [
         "Kaydet"
       ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "${ name } dosyasını ${ DRIVE_APP_NAME } üzerine kaydet"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } konumuna kaydet"
+      ],
       "Saving${ ellipsis }": [
         "Kaydediliyor${ ellipsis }"
       ],
@@ -1486,6 +1492,9 @@
       "Skip": [
         "Atla"
       ],
+      "Skip to main content": [
+        "Ana içeriğe git"
+      ],
       "Skip verification": [
         "Doğrulamayı atla"
       ],
@@ -1589,8 +1598,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1636,6 +1644,10 @@
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "${ selectedCount } abonelikten ayrıl",
+        "${ selectedCount } abonelikten ayrıl"
       ],
       "Unsubscribed": [
         "Abonelik sonlandırıldı"
@@ -1708,6 +1720,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Fareyi ya da klavyedeki sağ ve sol ok tuşlarını kullanarak görünümün boyutunu değiştirebilirsiniz."
+      ],
+      "Use “${ label }” setting": [
+        "\"${ label }\" ayarı kullanılsın"
       ],
       "Verify": [
         "Doğrula"
@@ -1895,6 +1910,9 @@
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)",
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı ( ${ quantity } kullanıcı için)"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
+      ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
       ],
@@ -1918,6 +1936,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
         "${ seats } ${ MEET_APP_NAME } lisansı",
@@ -2135,6 +2157,11 @@
         "Ücretsiz deneme süreniz ${ timeRemaining } sonra bitecek"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Kapat"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
@@ -2143,6 +2170,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif kullanılamıyor"
       ]
     },
     "BF2024: Deal details": {
@@ -4790,6 +4822,9 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Telif hakkı ihlali veya çalıntı verileri bildirirken bir ileti yazılmalıdır"
+      ],
       "A problem occurred, please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -4841,17 +4876,38 @@
       "Authentication error.": [
         "Kimlik doğrulama sorunu."
       ],
+      "Bookmark password is not available": [
+        "Yer imi parolası kullanılamıyor"
+      ],
       "Calendar limit reached": [
         "Takvim sayısı sınırına ulaşıldı"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Fotoğraf, geçerli bir adı olmadan albüme eklenemez"
+      ],
+      "Cannot download a folder": [
+        "Bir klasör indirilemedi"
+      ],
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Öge, geçerli bir adı olmadan taşınamaz. Lütfen önce ögeyi yeniden adlandırın"
       ],
       "Cannot send an empty message. Message is not sent.": [
         "Boş bir ileti gönderemezsiniz. İleti gönderilmedi."
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Geçerlilik sonu tarihi, verileri tutma ilkesinin izin verdiğinden daha uzun bir süre için ayarlanamaz."
+      ],
+      "Cannot share root folder": [
+        "Kök klasör paylaşılamaz"
+      ],
+      "Cannot verify the author of this file": [
+        "Bu dosyanın sahibi doğrulanamadı"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Bu dosyanın yükleyen kişi doğrulanamadı"
       ],
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
@@ -4893,14 +4949,47 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
       ],
+      "Copy operation aborted": [
+        "Kopyalama işlemi iptal edildi"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye kopyalanamaz"
+      ],
+      "Could not find an available name": [
+        "Kullanılabilecek bir ad bulunamadı"
+      ],
       "Could not grant access to the organization key": [
         "Kuruluş anahtarına erişme izni verilemedi"
+      ],
+      "Could not load sharing details": [
+        "Paylaşım ayrıntıları yüklenemedi"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Görsel ön izlemesi yüklenemedi: ${ message }"
       ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
       ],
       "Could not open updated vault": [
         "Güncellenen kasa açılamadı"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Bu dosyanın bir parçası okunamadı: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Üst klasörün kilidi açılamadı"
+      ],
+      "Could not unlock this item": [
+        "Bu ögenin kilidi açılamadı"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde belge oluşturulamaz"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde dosya oluşturulamaz"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Klasör olmayan ögelerin içinde klasör oluşturulamaz"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme sorunu: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
@@ -4912,6 +5001,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
         "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
+      ],
+      "Device not found": [
+        "Aygıt bulunamadı"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -4964,20 +5056,68 @@
       "Error while uploading attachments. Message is not sent.": [
         "Ek dosyalar yüklenirken sorun çıktı. İleti gönderilmedi."
       ],
+      "Expiration date cannot be in the past": [
+        "Geçerlilik sonu tarihi geçmişte olamaz"
+      ],
       "Failed loading group members": [
         "Grup üyeleri yüklenemedi"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Yer imi anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Yer imi adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Yer iminin şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "İçerik anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Öge adının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Düğüm anahtarının şifresi çözülemedi: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Sürüm üst bilgilerinin şifresi çözülemedi"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Ek dosya şifrelenemedi. Lütfen yeniden deneyin."
       ],
+      "Failed to get invitee keys": [
+        "Davetli anahtarları alınamadı"
+      ],
+      "Failed to get inviter keys": [
+        "Davet edilenin anahtarları alınamadı"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Failed to load the membership": [
+        "Üyelik yüklenemedi"
+      ],
+      "Failed to load the membership data": [
+        "Üyelik verileri yüklenemedi"
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
       "Failed to open to contact": [
         "Kişiye açılamadı"
+      ],
+      "Failed to verify invitation": [
+        "Davet doğrulanamadı"
+      ],
+      "Failed to verify membership": [
+        "Üyelik doğrulanamadı"
+      ],
+      "File download failed due to empty response": [
+        "Boş yanıt nedeniyle dosya indirilemedi"
+      ],
+      "File has no revision": [
+        "Dosyanın bir sürümü yok"
       ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
@@ -4990,6 +5130,9 @@
       ],
       "Forward address is required": [
         "İletilecek adresin yazılması zorunludur"
+      ],
+      "Image preview not found": [
+        "Görsel ön izlemesi bulunamadı"
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
@@ -5030,20 +5173,32 @@
       "Invalid public key file": [
         "Herkese açık anahtar dosyası geçersiz"
       ],
+      "Invalid URL": [
+        "Adres geçersiz"
+      ],
       "Invalid VAT number": [
         "KDV numarası geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
+      "Invitation not found": [
+        "Davet bulunamadı"
+      ],
       "Item content cannot exceed 40KB": [
         "Öge içeriği 40KB boyutundan büyük olamaz"
+      ],
+      "Item not found": [
+        "Öge bulunamadı"
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
       ],
       "Last name is too long": [
         "Soyad çok uzun"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
       ],
       "Maximum expiration time reached.": [
         "En uzun geçerlilik süresine ulaşıldı."
@@ -5061,14 +5216,36 @@
       "Message processing error.": [
         "İleti işleme sorunu."
       ],
+      "Missing inviter email": [
+        "Davet edilenin e-posta adresi eksik"
+      ],
       "Missing key packet": [
         "Anahtar paketi eksik"
       ],
       "Missing signature": [
         "İmza eksik"
       ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } için imza eksik"
+      ],
+      "Move operation aborted": [
+        "Taşıma işlemi iptal edildi"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Öge, klasör olmayan bir ögeye taşınamaz"
+      ],
+      "Moving root item is not allowed": [
+        "Kök öge taşınamaz"
+      ],
       "Name is required": [
         "Adın yazılması zorunludur"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir",
+        "Ad en fazla ${ MAX_NODE_NAME_LENGTH } karakter uzunluğunda olabilir"
+      ],
+      "Name must not be empty": [
+        "Ad boş olamaz"
       ],
       "Network error": [
         "Ağ sorunu"
@@ -5097,6 +5274,9 @@
       "No external key retrieved for user is valid for sending": [
         "Kullanıcının alınan hiçbir dış anahtarı gönderim için geçerli değil"
       ],
+      "No file data was received. Please try again.": [
+        "Herhangi bir dosya verisi alınmadı. Lütfen yeniden deneyin."
+      ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
       ],
@@ -5111,14 +5291,20 @@
         "Gruplardan birinde kişi yok: ${ noContactGroupList }",
         "Gruplardan bazılarında kişi yok: ${ noContactGroupList }"
       ],
+      "Only admins can convert external invitations": [
+        "Yalnızca yöneticiler dış davetleri dönüştürebilir"
+      ],
+      "Operation aborted": [
+        "İşlem iptal edildi"
+      ],
+      "Operation failed, try again later": [
+        "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
+      ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
-      "Organization key must be activated to create invited users": [
-        "Davet edilen kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
+      "Part of the file appears to be corrupted": [
+        "Dosyanın bir bölümü bozulmuş gibi görünüyor"
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
@@ -5140,6 +5326,12 @@
       ],
       "Permissions request failed.": [
         "Erişim izni isteği yapılamadı."
+      ],
+      "Photo is already in the target album": [
+        "Fotoğraf zaten hedef albümde bulunuyor"
+      ],
+      "Photo not found": [
+        "Fotoğraf bulunamadı"
       ],
       "Please activate your search again": [
         "Lütfen arama özelliğini yeniden açın"
@@ -5233,6 +5425,12 @@
         "Yinelenen alıcı kaldırıldı: ${ recipents }",
         "Yinelenen alıcılar kaldırıldı: ${ recipents }"
       ],
+      "Renaming root item is not allowed": [
+        "Kök öge yeniden adlandırılamaz"
+      ],
+      "Request aborted": [
+        "İstek iptal edildi"
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
@@ -5245,6 +5443,9 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Tarifenizin sınırlarını aştığınızda veya tarifenizi yükseltene dek ek dosyalar gönderemeyeceksiniz."
       ],
+      "Signature is missing": [
+        "İmza eksik"
+      ],
       "Signature not verified": [
         "İmza doğrulanamadı"
       ],
@@ -5254,11 +5455,35 @@
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "İmza doğrulanamadı: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } için imza doğrulanamadı"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } için imza doğrulanamadı: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Bazı kişiler silinemedi"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "Bazı dosya verileri yüklenemedi. Lütfen yeniden deneyin."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Bazı dosya parçaları yüklenemedi. Lütfen yeniden deneyin."
+      ],
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
+      ],
+      "Some invitations could not be loaded": [
+        "Bazı davetler yüklenemedi"
+      ],
+      "Some items could not be loaded": [
+        "Bazı ögeler yüklenemedi"
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Bazı e-posta listelerinin aboneliği iptal edilemedi. Abonelikten ayrılmak için yeniden deneyin."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
@@ -5274,6 +5499,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
       ],
       "Something went wrong while converting the address": [
         "Adres dönüştürülürken bir sorun çıktı"
@@ -5339,14 +5567,14 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "En az bağış tutarı ${ price }"
-      ],
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
         "Sistem şu anda meşgul. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Yazma yardımcısı isteğinizi yerine getiremiyor. Lütfen farklı bir istekte bulunun."
@@ -5378,8 +5606,26 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
+      "This file has missing crypto material": [
+        "Bu dosyada şifreleme materyali eksik"
+      ],
+      "This file has no version available to download": [
+        "Bu dosyanın indirilebilecek bir sürümü yok"
+      ],
+      "This file version could not be uploaded": [
+        "Bu dosya sürümü yüklenemedi"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin."
+      ],
+      "This item has no image preview": [
+        "Bu ögenin görsel ön izlemesi yok"
+      ],
+      "This item is no longer shared": [
+        "Bu öge artık paylaşılmıyor"
+      ],
+      "This item is not shared": [
+        "Bu öge paylaşılmıyor"
       ],
       "This label name is not available. Please choose a different name.": [
         "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
@@ -5392,6 +5638,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
+      ],
+      "Too many server errors, please try again later": [
+        "Çok fazla sayıda sunucu sorunu çıktı. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Too many server requests, please try again later": [
+        "Çok fazla sayıda sunucu isteği yapıldı. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Trusted keys are not valid for sending": [
         "Güvenilen anahtarlar gönderim için geçerli değil"
@@ -5426,6 +5678,12 @@
       "VAT number must start with ${ prefixes }": [
         "KDV numarası ${ prefixes } ile başlamalıdır"
       ],
+      "Verification keys are not available": [
+        "Doğrulama anahtarları bulunamadı"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } için doğrulama anahtarları yok"
+      ],
       "We couldn’t send a verification code using this method.": [
         "Doğrulama kodu bu yöntemle gönderilemedi."
       ],
@@ -5438,6 +5696,18 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
       ],
+      "You can create public links for your own files only": [
+        "Yalnızca kendi dosyalarınız için herkese açık bağlantı oluşturabilirsiniz"
+      ],
+      "You can only leave items that are shared with you": [
+        "Yalnızca sizinle paylaşılan ögelerden ayrılabilirsiniz"
+      ],
+      "You can only upload a new version to a file": [
+        "Bir dosyaya yalnızca yeni bir sürüm yükleyebilirsiniz"
+      ],
+      "You can update a public link for your own files only": [
+        "Yalnızca kendi dosyalarınızın herkese açık bağlantısını güncelleyebilirsiniz"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz",
         "Bir e-postayı ${ maxContacts } taneden fazla alıcıya göndermezsiniz"
@@ -5448,6 +5718,12 @@
       ],
       "You did not provide a file.": [
         "Bir dosya seçmediniz."
+      ],
+      "You do not have access to this item": [
+        "Bu ögeye erişme izniniz yok"
+      ],
+      "You do not have access to this shared item": [
+        "Bu paylaşılan ögeye erişme izniniz yok"
       ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
@@ -5873,8 +6149,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Güvenlik anahtarı isteği iptal edildi veya zaman aşımına uğrandı. Lütfen yeniden deneyin."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Aygıtınız güvenlik anahtarı isteğini tamamlayamadı. Yeniden deneyin veya başka bir oturum açma yöntemi kullanın."
       ]
     },
     "fido2: Info": {
@@ -7267,6 +7549,9 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Author is not provided on public link": [
+        "Sahip herkese açık bağlantıda belirtilmemiş"
+      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Çöp ve İstenmeyen kutularındaki 30 günden eski e-postaları otomatik olarak temizleyin."
       ],
@@ -7287,6 +7572,9 @@
       ],
       "Balance from your previous subscription": [
         "Önceki aboneliğinizden kalan tutar"
+      ],
+      "Based only on which emails you've opened.": [
+        "Yalnızca hangi e-postaları açtığınıza göre."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının kullanımda olup olmadığından bağımsız olarak kullanılabilir kalır."
@@ -8159,6 +8447,9 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Bu ileti yarın ${ formattedTime } saatinde gönderilecek"
       ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "İstenmeyen/Çöp kutusundaki iletiler 30 gün sonra otomatik olarak silinir."
+      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Çöp ve istenmeyen kutularında 30 günden uzun süredir bulunan iletiler otomatik olarak silinir."
       ],
@@ -8191,6 +8482,9 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Kopyalama sırasında tek kullanımlık kod bulunan e-postalar çöpe atılsın"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Eski e-postalarınızı Arşive taşıyın. Bunları yine de arayabilirsiniz."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -9153,6 +9447,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
       ],
@@ -9363,6 +9660,10 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Şu reklam verenlerin ve kuruluşların bu e-postayı ne zaman açtığınızı, hangi aygıtı kullandığınızı ve nerede bulunduğunuzu görmesini engelledik."
       ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "${ count } haber bültenini buraya aktardık ve gönderenlere göre gruplandırdık. Size ne sıklıkla e-posta gönderildiğini görün ardından tek bir tıklamayla bunları saklayın, başka bir yere taşıyın veya aboneliğinizi iptal edin.",
+        "${ count } haber bültenini buraya aktardık ve gönderenlere göre gruplandırdık. Size ne sıklıkla e-posta gönderildiğini görün ardından tek bir tıklamayla bunları saklayın, başka bir yere taşıyın veya aboneliğinizi iptal edin."
+      ],
       "We cannot enable message content search in this browser.": [
         "Bu tarayıcıda iletilerin içeriklerinde arama özelliği açılamadı."
       ],
@@ -9371,9 +9672,6 @@
       ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
-      ],
-      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Bazı listelerinden gelen e-postaları okumadığınızı farkettik. Tek tıkla aboneliğinizi iptal edebilirsiniz."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Sizin gibi birden fazla e-posta adresine gerek duyan kullanıcılar için özel olarak tasarlanmış tarifelerimiz var."
@@ -9478,7 +9776,7 @@
         "yazma yardımcısı iFrame"
       ],
       "Writing assistant seats are no longer sold.": [
-        "Yazma yardımcısı koltukları artık satılmamaktadır."
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ],
       "Yearly": [
         "Yıllık"
@@ -10115,6 +10413,9 @@
       "${ boldActive } Move all messages to ${ boldFolderName }": [
         "${ boldActive } Tüm iletileri ${ boldFolderName } içine taşı"
       ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Hesap parolası"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -10228,9 +10529,6 @@
       ],
       "Apply to future messages": [
         "Gelecekteki iletilere uygulansın"
-      ],
-      "Archive": [
-        "Arşivle"
       ],
       "At": [
         "Saat"
@@ -10890,7 +11188,7 @@
         "Tanıtımlar - Fırsatlar, teklifler ve pazarlama e-postaları"
       ],
       "Proration": [
-        "Hesap bakiyesi"
+        "Hesabınızdaki tutar"
       ],
       "Public domain": [
         "Herkese açık etki alanı"
@@ -10946,10 +11244,6 @@
       "Search in": [
         "Şurada ara"
       ],
-      "Select all ${ count } unused sender": [
-        "Kullanılmamış ${ count } göndericinin tümünü seç",
-        "Kullanılmamış ${ count } göndericinin tümünü seç"
-      ],
       "Select which Gmail address to connect": [
         "Hangi Gmail adresine bağlanılacağını seçin"
       ],
@@ -10991,9 +11285,6 @@
       ],
       "Sort": [
         "Sırala"
-      ],
-      "Spam": [
-        "İstenmeyen e-posta"
       ],
       "Starred": [
         "Yıldızlı"
@@ -11075,9 +11366,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "İşlemler - Alındılar, kayıtlar, faturalar ve siparişler"
-      ],
-      "Trash": [
-        "Çöp kutusu"
       ],
       "Undisclosed Recipients": [
         "Gizli alıcılar"
@@ -11224,6 +11512,14 @@
       ],
       "To": [
         "Kime"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Satır"
       ]
     },
     "Label, credit card": {
@@ -11632,40 +11928,40 @@
         "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
       ],
       "Everything in Basic, and:": [
-        "Basic'teki her şey ve:"
+        "Basic tarifesindeki her şey ve:"
       ],
       "Everything in Free, and:": [
-        "Her şey Free ve:"
+        "Free tarifesindeki herşey ve:"
       ],
       "Everything in Plus, and:": [
-        "Plus'taki her şey ve:"
+        "Plus tarifesindeki her şey ve:"
       ],
       "Extended image generation": [
-        "Genişletilmiş görüntü oluşturma"
+        "Genişletilmiş görsel oluşturma"
       ],
       "Includes:": [
-        "Şunları içerir:"
+        "İçindekiler:"
       ],
       "Limited image generation": [
-        "Sınırlı görüntü oluşturma"
+        "Sınırlı görsel oluşturma"
       ],
       "Limited messages and chat history": [
-        "Sınırlı mesajlar ve sohbet geçmişi"
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
       ],
       "Maximum image generation": [
-        "Maksimum resim oluşturma"
+        "En fazla görsel oluşturma"
       ],
       "Maximum Skills and Projects": [
-        "Maksimum Beceri ve Projeler"
+        "En fazla yetenek ve projeler"
       ],
       "More image generation": [
-        "Daha fazla görüntü oluşturma"
+        "Daha fazla görsel oluşturma"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Daha fazla beceri, proje ve planlanmış görevler"
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
       ],
       "More usage": [
         "Daha fazla kullanım"
@@ -12918,6 +13214,23 @@
         "${ n } özel e-posta etki alanı desteği"
       ]
     },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } e-posta son 30 gün içinde. Açılmamış.",
+        "${ count } e-posta son 30 gün içinde. Açılmamış."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } e-posta son 30 gün içinde. Sık sık açıldı.",
+        "${ count } e-posta son 30 gün içinde. Sık sık açıldı."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "Son 30 günde ${ count } e-posta. Ara sıra açıldı.",
+        "${ count } e-posta son 30 gün içinde. Bazen açıldı."
+      ],
+      "No emails in the last 30 days.": [
+        "Son 30 gün içinde e-posta yok."
+      ]
+    },
     "ngc_access_banner: action": {
       "Try it now": [
         "Hemen deneyin"
@@ -13196,6 +13509,9 @@
       "browser": [
         "tarayıcı"
       ],
+      "Choose your inbox layout": [
+        "Gelen kutusu yerleşiminizi seçin"
+      ],
       "Clear out deleted and spam emails after 30 days.": [
         "Silinmiş ve istenmeyen e-postaları 30 gün sonra temizleyin."
       ],
@@ -13267,6 +13583,9 @@
       ],
       "You are all set!": [
         "Her şey tamam!"
+      ],
+      "You can change this anytime in settings.": [
+        "Bunu istediğiniz zaman ayarlar bölümünden değiştirebilirsiniz."
       ],
       "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
         "${ domain } etki alanınız ve ${ subscriptionName } aboneliğiniz kullanılmaya hazır."
@@ -13833,7 +14152,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Krediler hesabınızın kalan tutarına eklenecek"
+        "Krediler hesabınızdaki tutara eklenecek"
       ]
     },
     "Payments.InfoBanner": {
@@ -14209,6 +14528,26 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "İlerleme: %${ combinedProgress }"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "öznitelikler"
+      ],
+      "content key": [
+        "içerik anahtarı"
+      ],
+      "hash key": [
+        "karma anahtarı"
+      ],
+      "key": [
+        "anahtar"
+      ],
+      "membership": [
+        "üyelik"
+      ],
+      "name": [
+        "ad"
       ]
     },
     "Property type": {
@@ -15327,10 +15666,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } gün kaldı",
-        "${ dayDiff } gün kaldı"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
       ],
@@ -15565,20 +15900,11 @@
       "What you give up when you cancel ${ planName }": [
         "${ planName } tarifesini iptal ederek vazgeçtikleriniz"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 1 GB Mail depolama alanı ve 5 GB Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilmiş depolama alanı hediyelerinizi de kaybedeceksiniz."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 1 GB Mail depolama alanı ve 5 GB Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Free tarifesinde ek kullanıcılar desteklenmediği için ekibinizin çalışmaları kesintiye uğrayacaktır."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "${ planName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde, ${ BRAND_NAME } Free tarifesine düşürülecek."
       ],
       "Yearly free storage bonuses": [
         "Yıllık ücretsiz depolama alanı ödülleri"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "${ planName } aboneliğinizin ${ expiryDate } süresi daha var. Kalan süreye karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } tarifeniz yalnızca kurumsal verilerinizi ve iletişimlerinizi güvende tutmaz. Uyumluluk gereksinimlerinizi karşılar, kuruluşunuzu öne çıkarır ve ekibinizin bağlantıda kalmasını sağlar."
@@ -15975,6 +16301,14 @@
       ],
       "Undo in progress": [
         "Geri alınıyor"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "${ count } e-posta listesinin aboneliği iptal edildi ve bu listeye ait iletiler Arşive taşındı.",
+        "${ count } e-posta listesinin aboneliği iptal edildi ve bu listeye ait iletiler Arşive taşındı."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "${ count } e-posta listesinin aboneliği iptal edildi.",
+        "${ count } e-posta listesinin aboneliği iptal edildi."
       ],
       "Verification successful": [
         "Doğrulandı"
@@ -16563,9 +16897,6 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
-      "Enter your password": [
-        "Parolanızı yazın"
-      ],
       "Error": [
         "Hata"
       ],
@@ -16883,6 +17214,9 @@
       "No-reply address detected": [
         "No-reply adresi bulundu"
       ],
+      "Not opened in a while": [
+        "Bir süredir açılmamış"
+      ],
       "Notes": [
         "Notlar"
       ],
@@ -17120,14 +17454,14 @@
       "Snooze:": [
         "Ertele:"
       ],
+      "Special offer": [
+        "Özel teklif"
+      ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
-      ],
-      "Start with a cleaner Inbox": [
-        "Daha temiz bir Gelen kutusu kullanmaya başlayın"
       ],
       "Storage capacity warning": [
         "Depolama alanı uyarısı"
@@ -17220,6 +17554,9 @@
       "Verification failed": [
         "Doğrulanamadı"
       ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
+      ],
       "Verify your password": [
         "Parolanızı doğrulayın"
       ],
@@ -17269,6 +17606,12 @@
       "You can now create unlimited folders and labels": [
         "Artık sınırsız sayıda klasör ve etiket oluşturabilirsiniz"
       ],
+      "You open these sometimes": [
+        "Bunları ara sıra açıyorsunuz"
+      ],
+      "You read these often": [
+        "Bunları sık sık okuyorsunuz"
+      ],
       "You're in control": [
         "Kontrol sizde"
       ],
@@ -17289,6 +17632,9 @@
       ],
       "Your free trial has ended": [
         "Ücretsiz deneme süreniz sona erdi"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Gmail bültenlerinizi artık daha kolay yönetebilirsiniz"
       ],
       "Your inbox, automatically organized": [
         "Gelen kutunuz otomatik olarak düzenlendi"
@@ -17532,6 +17878,71 @@
       ],
       "Replay video": [
         "Görüntüyü yeniden oynat"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "Her kullanıcı için ${ devicesPerUser }"
+      ],
+      "${ storage } shared": [
+        "${ storage } paylaşımlı"
+      ],
+      "10 years": [
+        "10 yıl"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "${ VPN_APP_NAME } sunucularının daha yüksek kapasiteli bir düzeyi: Her bir sunucuyu paylaşan kullanıcı sayısı çok daha azdır ve bu sunucular ${ BRAND_NAME } IP adreslerini kullanır. Hızlı bağlan seçeneği bu sunucular var olduğunda otomatik olarak onları seçer."
+      ],
+      "Calendars": [
+        "Takvimler"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Adını 2014 yılında ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } hizmetinin hayata geçmesini sağlayan kitle fonlaması destekçilerinden almıştır. Tüm ücretli ${ BRAND_NAME } hizmetleri tek tarifede."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Ek ücret ödemeden yararlanabileceğiniz yeni ${ BRAND_NAME } hizmetleri"
+      ],
+      "Password vaults": [
+        "Parola kasaları"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Ücretli Mail, Calendar, Drive ve Pass"
+      ],
+      "Previous versions": [
+        "Önceki sürümler"
+      ],
+      "Storage": [
+        "Depolama alanı"
+      ],
+      "Subscribers only": [
+        "Yalnızca aboneler"
+      ],
+      "Ultra servers": [
+        "Ultra sunucuları"
+      ],
+      "Ultra servers, reserved for you": [
+        "Size özel Ultra sunucuları"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "${ limit } taneye kadar"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "VPN devices at once": [
+        "Aynı anda bağlanabilecek VPN aygıtı"
       ]
     },
     "VPN B2B cancellation reason": {

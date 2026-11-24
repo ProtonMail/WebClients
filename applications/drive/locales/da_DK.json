@@ -383,6 +383,9 @@
       "Dismiss": [
         "Afvis"
       ],
+      "Dismiss notification": [
+        "Luk notifikation"
+      ],
       "Display navigation bar": [
         "Fremvis navigationsbjælke"
       ],
@@ -392,8 +395,8 @@
       "Display previous": [
         "Vis forrige"
       ],
-      "Don't show this offer again": [
-        "Vis ikke dette tilbud igen"
+      "Don't show this again": [
+        "Vis ikke igen"
       ],
       "Done": [
         "Udført"
@@ -550,6 +553,9 @@
       ],
       "Go to settings": [
         "Gå til indstillinger"
+      ],
+      "Go to today": [
+        "Gå til i dag"
       ],
       "Google Drive": [
         "Google Drive"
@@ -755,6 +761,9 @@
       "Next": [
         "Næste"
       ],
+      "Next contact": [
+        "Næste kontakt"
+      ],
       "Next month": [
         "Næste måned"
       ],
@@ -796,6 +805,9 @@
       ],
       "Previous": [
         "Forrige"
+      ],
+      "Previous contact": [
+        "Forrige kontakt"
       ],
       "Previous month": [
         "Forrige måned"
@@ -1088,6 +1100,9 @@
       "Skip": [
         "Spring over"
       ],
+      "Skip to main content": [
+        "Spring til hovedindholdet"
+      ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
@@ -1153,6 +1168,9 @@
       ],
       "Toggle settings": [
         "Åbn/luk indstillinger"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Vis/skjul undermapper i ${ itemName }"
       ],
       "Trust": [
         "Hav tillid til"
@@ -1505,6 +1523,11 @@
         "Inviteret"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Luk"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium adgangskodeadministrator"
@@ -1513,6 +1536,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbud ikke tilgængeligt"
       ]
     },
     "BF2024: Deal details": {
@@ -3811,12 +3839,6 @@
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
       ],
-      "Organization key must be activated to create invited users": [
-        "Organisationsnøglen skal aktiveres for at oprette inviterede brugere"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
-      ],
       "Part of the file appears to be corrupted": [
         "En del af filen er tilsyneladende beskadiget"
       ],
@@ -4019,9 +4041,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Det mindste donationsbeløb er ${ price }"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den uploadede fil matcher ikke den originale. Prøv igen."
@@ -6952,6 +6971,9 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Pladser til skriveassistenten sælges ikke længere."
+      ],
       "Yes": [
         "Ja"
       ],
@@ -8264,6 +8286,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Basic forbrug"
+      ],
+      "5x Plus usage": [
+        "5x Plus forbrug"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API-adgang med ${ credit } i kredit om måneden"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API-adgang med ${ credit } i kredit om måneden per bruger"
+      ],
+      "Everything in Basic, and:": [
+        "Alt i Basic, og:"
+      ],
+      "Everything in Free, and:": [
+        "Alt i Free, og:"
+      ],
+      "Everything in Plus, and:": [
+        "Alt i Plus, og:"
+      ],
+      "Extended image generation": [
+        "Udvidet billedegenerering"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "Limited image generation": [
+        "Begrænset billedegenerering"
+      ],
+      "Limited messages and chat history": [
+        "Begrænset besked- og chathistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begrænsede skills, projekter og planlagte opgaver"
+      ],
+      "Maximum image generation": [
+        "Maksimal billedegenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimale Skills og Projekter"
+      ],
+      "More image generation": [
+        "Mere billedegenerering"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Flere skills, projekter og planlagte opgaver"
+      ],
+      "More usage": [
+        "Mere forbrug"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Til at kode og bygge"
+      ],
+      "For everyday chats": [
+        "Til hverdagsbrug"
+      ],
+      "For getting more done": [
+        "For at få meget gjort"
       ]
     },
     "Mail import summary": {
@@ -11589,10 +11678,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag tilbage",
-        "${ dayDiff } dage tilbage"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop applikation."
       ],
@@ -11827,20 +11912,11 @@
       "What you give up when you cancel ${ planName }": [
         "Dette frasiger du dig, når du opsiger ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Når du opsiger ${ planName }, bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB Mail-lagerplads og op til 5 GB Drive-lagerplads. Desuden mister du alle tidligere tildelte lagerplads-bonusser."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Ved opsigelse af ${ planName } bliver du nedgraderet til ${ BRAND_NAME } Free, som kun tilbyder op til 1 GB mail-lagerplads og op til 5 GB drev-lagerplads. Dit team vil opleve afbrydelser i deres arbejde, eftersom yderligere brugere ikke understøttes på det gratis abonnement."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når dit ${ planName }-abonnement udløber ${ expiryDate }, vil du blive nedgraderet til abonnementet ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Årlige gratis lagerbonusser"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "På dit ${ planName }-abonnement gælder udløbsdato ${ expiryDate }stadig. Vi indsætter pengene for den resterende tid på din ${ BRAND_NAME }-konto. Sørg for at overholde grænserne for den gratis pakke før opsigelsen. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Dit ${ planName }-abonnement beskytter ikke bare din virksomheds data og kommunikation. Den understøtter dine overholdelsesmål, får din virksomhed til at skille sig ud og holder dit team forbundet."
@@ -12565,9 +12641,6 @@
       "Enhance security with 2FA": [
         "Forøg sikkerheden med 2FA"
       ],
-      "Enter your password": [
-        "Indtast din adgangskode"
-      ],
       "Error": [
         "Fejl"
       ],
@@ -13021,6 +13094,9 @@
       "Sort files/folders": [
         "Sorter filer/mapper"
       ],
+      "Special offer": [
+        "Special tilbud"
+      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -13122,6 +13198,9 @@
       ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
+      ],
+      "Verify it’s you": [
+        "Bekræft at det er dig"
       ],
       "Verify your password": [
         "Bekræft din adgangskode"

@@ -361,6 +361,9 @@
       "Sign out of all accounts": [
         "登出所有账户"
       ],
+      "Skip to main content": [
+        "跳转到主要内容"
+      ],
       "Submit": [
         "提交"
       ],
@@ -610,9 +613,19 @@
         "正在加载余额"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "关闭"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "高级密码管理器"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "优惠不可用"
       ]
     },
     "BF2024: Deal details": {
@@ -2389,12 +2402,6 @@
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
       ],
-      "Organization key must be activated to create invited users": [
-        "必须激活组织密钥才能创建受邀用户"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "组织密钥必须激活才能创建非私人用户"
-      ],
       "Passwords do not match": [
         "密码不匹配"
       ],
@@ -2466,9 +2473,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐赠金额为 ${ price }"
       ],
       "The passphrases do not match": [
         "密码不匹配"
@@ -3420,9 +3424,6 @@
       ],
       "Optional": [
         "非必填"
-      ],
-      "Password": [
-        "密码"
       ],
       "Payer": [
         "付款人"
@@ -5439,6 +5440,9 @@
       "Payment method updated": [
         "支付方式已更改"
       ],
+      "Preference saved": [
+        "设置已生效"
+      ],
       "Problem reported": [
         "问题报告"
       ],
@@ -5605,9 +5609,6 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
-      "Enter your password": [
-        "请输入您的密码"
-      ],
       "Error": [
         "失败"
       ],
@@ -5709,6 +5710,9 @@
       ],
       "Verification failed": [
         "验证失败"
+      ],
+      "Verify it’s you": [
+        "验证您的身份"
       ],
       "Verifying your card...": [
         "正在验证您的银行卡..."

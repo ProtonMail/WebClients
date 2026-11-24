@@ -71,7 +71,7 @@
         "Agregar elemento nuevo"
       ],
       "Add section": [
-        "Agregar sección"
+        "Añadir sección"
       ],
       "Add username field": [
         "Agregar un campo de nombre de usuario"
@@ -518,7 +518,7 @@
         "Marcar como resuelta"
       ],
       "Maximum views": [
-        "Número máximo de vistas"
+        "Vistas máximas"
       ],
       "More details about how to export": [
         "Más detalles de cómo exportar"
@@ -587,7 +587,7 @@
         "Pass Monitor"
       ],
       "Pause monitoring": [
-        "Pausar el monitoreo"
+        "Pausar monitoreo"
       ],
       "Pin item": [
         "Anclar elemento"
@@ -638,7 +638,7 @@
         "Eliminar el miembro"
       ],
       "Remove passkey": [
-        "Eliminar passkey"
+        "Eliminar clave de acceso"
       ],
       "Rename": [
         "Renombrar"
@@ -650,7 +650,7 @@
         "Reenviar código"
       ],
       "Resend code (in ${ remaining }s)": [
-        "Reenviar el código (en ${ remaining }s)"
+        "Reenviar código (en ${ remaining }s)"
       ],
       "Resend invitation": [
         "Reenviar invitación"
@@ -674,7 +674,7 @@
         "Restringir el número de vistas"
       ],
       "Resume monitoring": [
-        "Reanudar el monitoreo"
+        "Reanudar monitoreo"
       ],
       "Retry": [
         "Reintentar"
@@ -856,7 +856,7 @@
         "Ver registros de la aplicación"
       ],
       "View details": [
-        "Mostrar los detalles"
+        "Ver detalles"
       ],
       "View history": [
         "Mostrar historial"
@@ -942,7 +942,7 @@
         "Otros ${ total } inicios de sesión usan la misma contraseña."
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
-        "La autenticación 2FA agrega otra capa de seguridad a sus inicios de sesión. ${ PASS_APP_NAME } hace más fácil usar la autenticación 2FA al almacenar y rellenar automáticamente los códigos 2FA."
+        "2FA añade otra capa de seguridad a sus inicios de sesión. ${ PASS_APP_NAME } hace más fácil usar 2FA al almacenar y completar automáticamente los códigos 2FA."
       ],
       "A checked box means the feature is disabled.": [
         "Una casilla marcada significa que la función está desactivada."
@@ -1017,10 +1017,10 @@
         "La norma SPF ${ WIKIPEDIA_LINK_SPF } es un método de autenticación de correo electrónico diseñado para detectar direcciones de remitentes falsificadas durante la entrega del correo electrónico. Se recomienda encarecidamente configurar SPF para reducir la posibilidad de que sus correos electrónicos terminen en la carpeta de spam del destinatario."
       ],
       "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
-        "Empiece a monitorear vulneraciones de datos relacionadas a cuentas creadas con la dirección de correo y los alias de hide-my-email."
+        "Empiece a monitorear vulneraciones de datos relacionadas a cuentas creadas con su dirección de correo y sus alias de hide-my-email."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "La dark web es una parte de internet oculta donde se puede comprar y vender información robada como identidades."
+        "La dark web es una parte de internet oculta donde la información robada, como identidades, puede ser comprada y vendida."
       ],
       "These items remain at risk": [
         "Estos elementos siguen en riesgo"
@@ -1270,7 +1270,7 @@
         "Error al editar el acceso del usuario."
       ],
       "Failed to load access tokens": [
-        "No se pudieron cargar las instrucciones de configuración del agente. Copie el token de abajo, no se mostrará de nuevo."
+        "No se pudieron cargar los tokens de acceso"
       ],
       "Failed to load breaches for this address": [
         "Error al cargar vulneraciones para esta dirección"
@@ -1363,7 +1363,7 @@
         "Error al actualizar los ajustes de ${ PROTON_SENTINEL_NAME }"
       ],
       "Failed updating monitoring status for this email address": [
-        "Error al actualizar el estado de monitoreo para esta dirección de correo electrónico"
+        "Error al actualizar el estado de monitoreo para esta dirección de correo"
       ],
       "Failed updating monitoring status for this item": [
         "Error al actualizar el estado de monitoreo para este elemento"
@@ -2052,7 +2052,7 @@
         "El acceso a ${ PASS_APP_NAME } siempre requerirá su segunda contraseña."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
-        "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o el código PIN del dispositivo."
+        "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o PIN del dispositivo."
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
         "El token de acceso «${ action.token.Name }» ya expiró. Si lo elimina ya no se mostrará."
@@ -2169,7 +2169,7 @@
         "Se registró el bloqueo automático biométrico. Úselo para desbloquear ${ PASS_APP_NAME }."
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
-        "Los datos biométricos se desactivarán y será necesario activarlos nuevamente."
+        "La biometría se desactivará y será necesario activarla nuevamente."
       ],
       "Breaches detected": [
         "Vulneraciones detectadas"
@@ -2328,7 +2328,7 @@
         "Editor"
       ],
       "Email address successfully deleted from monitoring": [
-        "La dirección de correo electrónico fue eliminada del monitoreo."
+        "Dirección de correo eliminada del monitoreo"
       ],
       "Email address successfully excluded from monitoring": [
         "Dirección de correo excluida del monitoreo."
@@ -2376,7 +2376,7 @@
         "Error al activar el bloqueo por contraseña"
       ],
       "Enabling PIN auto-lock": [
-        "Activando el bloqueo automático por código PIN"
+        "Activando el bloqueo automático por PIN"
       ],
       "Enter the address you want to email.": [
         "Ingrese la dirección a la que desea enviar un correo electrónico."
@@ -2619,9 +2619,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
-      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -2686,7 +2683,7 @@
         "Modo sin conexión"
       ],
       "Offline mode could not be enabled at the moment": [
-        "No se pudo activar el modo sin conexión por ahora."
+        "No se pudo habilitar el modo sin conexión por ahora"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
@@ -2736,7 +2733,7 @@
         "Contraseña oculta. Aún puede completarla automáticamente."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Se registró el bloqueo por contraseña. Úsela para desbloquear ${ PASS_APP_NAME }"
+        "Bloqueo por contraseña registrado con éxito. Úsela para desbloquear ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
@@ -2761,7 +2758,7 @@
         "Compruebe la carpeta de spam o intente reenviar el código."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
-        "Confirme la contraseña de ${ BRAND_NAME } para activar el modo sin conexión."
+        "Confirme su contraseña de ${ BRAND_NAME } para habilitar el modo sin conexión"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme la contraseña de ${ BRAND_NAME } para exportar los datos de ${ PASS_APP_NAME }"
@@ -2812,7 +2809,7 @@
         "Confirme su contraseña"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Confirme la contraseña para bloquear automáticamente con datos biométricos."
+        "Confirme su contraseña para bloquear automáticamente con biométrica."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Confirme su contraseña para bloquear automáticamente con su contraseña."
@@ -2929,7 +2926,7 @@
         "Registrando la contraseña adicional..."
       ],
       "Registering PIN lock failed": [
-        "Error al registrar el bloqueo por código PIN"
+        "Error al registrar el bloqueo por PIN"
       ],
       "Removing all inactive secure links...": [
         "Eliminando todos los enlaces seguros..."
@@ -3088,7 +3085,7 @@
         "El archivo de exportación está cifrado con PGP y requiere una frase de contraseña segura."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
+        "La información expuesta fue filtrada desde un servicio de terceros. La información de su cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de su contraseña de ${ BRAND_NAME }."
@@ -3200,7 +3197,7 @@
         "Desbloquee ${ PASS_APP_NAME } para guardar esta clave de acceso"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
-        "Desbloquee ${ PASS_SHORT_APP_NAME } con datos biométricos"
+        "Desbloquee ${ PASS_SHORT_APP_NAME } con biométrica"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de ${ BRAND_NAME }"
@@ -3243,6 +3240,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Mejore a un plan de pago para crear varias bóvedas."
+      ],
+      "Use biometrics to unlock": [
+        "Utilizar biometría para desbloquear"
       ],
       "User's access removed": [
         "Se eliminó el acceso del usuario."
@@ -3322,7 +3322,7 @@
         "También puede definir un código PIN para desbloquear ${ PASS_APP_NAME }."
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
-        "Ahora puede usar la contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
+        "Ahora puede usar su contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
       ],
       "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ahora puede usar la contraseña de respaldo para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
@@ -3390,7 +3390,7 @@
         "Se le notificará las vulneraciones de datos para estas direcciones de correo electrónico."
       ],
       "You will be notified of data breaches for this email address.": [
-        "Se le notificará las vulneraciones de datos para esta dirección de correo electrónico."
+        "Se le notificará las vulneraciones de datos para esta dirección de correo."
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
         "No se le notificará las vulneraciones de datos para estas direcciones de correo electrónico."
@@ -3597,7 +3597,7 @@
         "Agregue un prefijo aleatorio para este dominio al crear un nuevo alias."
       ],
       "Add section": [
-        "Agregar sección"
+        "Añadir sección"
       ],
       "Additional details": [
         "Detalles adicionales"
@@ -3684,7 +3684,7 @@
         "Completado automático básico de autenticaciones"
       ],
       "Biometrics": [
-        "Datos biométricos"
+        "Biométrico"
       ],
       "Birthdate": [
         "Fecha de nacimiento"
@@ -3873,7 +3873,7 @@
         "Vaciar la papelera"
       ],
       "Enable offline access": [
-        "Activar el acceso sin conexión"
+        "Habilitar acceso sin conexión"
       ],
       "Enter email or username": [
         "Ingresar correo o nombre de usuario"
@@ -5363,7 +5363,7 @@
         "Monitoreo de correo electrónico personalizado"
       ],
       "Custom emails": [
-        "Correos electrónicos personalizados"
+        "Correos personalizados"
       ],
       "Default": [
         "Por defecto"
@@ -5869,7 +5869,7 @@
         "Contraseña débil"
       ],
       "Weak passwords": [
-        "Contraseñas poco seguras"
+        "Contraseñas débiles"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Le damos la bienvenida a ${ brandNameJSX }"
@@ -6225,7 +6225,7 @@
         "El título es requerido"
       ],
       "Too many attempts": [
-        "Hubo demasiados intentos."
+        "Demasiados intentos"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "¿Transferir la propiedad de esta bóveda a ${ email }?"

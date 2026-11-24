@@ -2275,7 +2275,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
+        "アイテムを別の保管庫に移動すると、セキュアリンクが削除されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2846,6 +2846,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "複数保管庫を作成するには有料プランへアップグレードしてください。"
+      ],
+      "Use biometrics to unlock": [
+        "生体認証でロック解除"
       ],
       "User's access removed": [
         "ユーザーのアクセス権を削除しました。"

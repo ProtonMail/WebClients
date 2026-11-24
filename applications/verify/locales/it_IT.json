@@ -951,8 +951,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La richiesta della chiave di sicurezza è stata annullata o è scaduta. Riprova."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Il tuo dispositivo non è riuscito a completare la richiesta della chiave di sicurezza. Riprova oppure utilizza un altro metodo di accesso."
       ]
     },
     "fido2: Info": {
@@ -1138,6 +1144,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per contribuire a mantenere il tuo account al sicuro, conferma di essere davvero tu prima di continuare."
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Per rimuovere le restrizioni, puoi effettuare l’upgrade e passare al piano a pagamento."
       ],
@@ -1167,6 +1176,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Password dell'account ${ BRAND_NAME }"
+      ],
       "Authenticator app": [
         "App di autenticazione"
       ],
@@ -1178,9 +1190,6 @@
       ],
       "Hide password": [
         "Nascondi la password"
-      ],
-      "Password": [
-        "Password"
       ],
       "Phone number": [
         "Numero di telefono"
@@ -1595,9 +1604,6 @@
       "Account temporarily locked": [
         "Account temporaneamente bloccato"
       ],
-      "Enter your password": [
-        "Inserisci la tua password"
-      ],
       "Human verification": [
         "Verifica umana"
       ],
@@ -1609,6 +1615,9 @@
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
+      ],
+      "Verify it’s you": [
+        "Verifica che sia tu"
       ]
     },
     "Validation": {

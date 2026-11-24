@@ -4470,9 +4470,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Najmanjši znesek, ki ga lahko dodate, je ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Najmanjši znesek donacije je ${ price }"
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
       ],
@@ -4848,9 +4845,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Skupine ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Računi z domenami po meri se ne morejo pridružiti družinskemu paketu."
       ],
@@ -4908,12 +4902,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Naročnina bo zaračunana glavnemu skrbniku tega paketa."
       ],
-      "View the invitation": [
-        "Oglej si povabilo",
-        "Oglej si povabili",
-        "Oglej si povabila",
-        "Oglej si povabila"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -4922,9 +4910,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "S trenutnim paketom ne morete sprejeti tega povabila."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Povabljeni ste, da se pridružite organizaciji ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Dosegli ste omejitev ${ n } sprejetih povabil v 6 mesecih.",
@@ -10638,8 +10623,8 @@
       ],
       "Support for ${ n } custom email domain": [
         "Podpora za ${ n } e-poštno domeno po meri",
-        "Podpora za ${ n } e-poštnih domen po meri",
-        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštni domeni po meri",
+        "Podpora za ${ n } e-poštne domene po meri",
         "Podpora za ${ n } e-poštnih domen po meri"
       ]
     },
@@ -10674,17 +10659,11 @@
       "1 email per month": [
         "1 sporočilo na mesec"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 sporočilo na mesec z najnovejšimi novicami na temo zasebnosti in kaj se dogaja v okolju ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 sporočilo na četrtletje"
       ],
       "1-2 emails per month": [
         "1 do 2 sporočili na mesec"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1 do 4 sporočila na leto. Opomniki za posodobitev vaših načinov obnovitve računa."
       ],
       "2-4 emails per year": [
         "2 do 4 sporočila na leto"
@@ -10706,9 +10685,6 @@
       ],
       "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
         "Če to onemogočite, potem ne boste prejemali obvestil znotraj aplikacije o novih funkcijah, akcijah in novih storitvah ${ BRAND_NAME } ter o opomnikih."
-      ],
-      "Email communications": [
-        "E-poštna komunikacija"
       ],
       "In-app notifications": [
         "Obvestila znotraj aplikacije"
@@ -11150,7 +11126,18 @@
         "Začnite uporabljati ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Priporočeno"
+      ],
+      "Select your plan": [
+        "Izberite paket."
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Brezplačno za vedno."
+      ],
       "Secure vault sharing": [
         "Varna in zanesljiva skupna raba"
       ],
@@ -12519,6 +12506,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } skupne šifrirane shrambe"
+      ],
       "1 month": [
         "1 mesec"
       ],
@@ -12527,6 +12517,9 @@
       ],
       "24 months": [
         "24 mesecev"
+      ],
+      "Free": [
+        "Brezplačno"
       ]
     },
     "Signup label": {
@@ -13203,12 +13196,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME } s premijskimi funkcijami"
       ],
-      "${ dayDiff } day left": [
-        "Še ${ dayDiff } dan",
-        "Še ${ dayDiff } dneva",
-        "Še ${ dayDiff } dni",
-        "Še ${ dayDiff } dni"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
       ],
@@ -13464,9 +13451,6 @@
       "What you give up when you cancel ${ planName }": [
         "Čemu se odpoveste, ko prekličete ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na Drive. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Vaša naročnina ${ planName } se izteče ${ expiryDate }, po poteku boste preusmerjeni na brezplačni paket ${ BRAND_NAME }."
       ],
@@ -13475,9 +13459,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Prednosti vašega trenutnega paketa lahko še naprej uporabljate do ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Na paketu ${ planName } vam je preostalo še ${ expiryDate }. Dobroimetje za preostali čas bomo dodali na vaš račun ${ BRAND_NAME }. Pred preklicem naročnine se prepričajte, da niste presegli omejitev brezplačne naročnine. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Vaš paket ${ planName } ne varuje samo vaših poslovnih podatkov in komunikacije. Podpira tudi vaše cilje glede skladnosti, poskrbi, da vaše podjetje izstopa, in povezuje vašo ekipo."
@@ -13791,6 +13772,14 @@
         "Za posameznike"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Dejanja"
+      ],
+      "Status": [
+        "Stanje"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Dejanje"
@@ -13803,9 +13792,6 @@
       ],
       "CSV field": [
         "Polje CSV"
-      ],
-      "Edit": [
-        "Uredi"
       ],
       "Email address": [
         "E-poštni naslov"
@@ -14369,9 +14355,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vpišite podrobnosti vašega računa ${ BRAND_NAME } za vključitev v beta preizkuševalni program za ${ app }."
-      ],
-      "Enter your password": [
-        "Vnesite svoje geslo"
       ],
       "Error": [
         "Napaka"

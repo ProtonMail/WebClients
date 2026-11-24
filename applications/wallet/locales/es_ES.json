@@ -367,6 +367,9 @@
       "Sign out of all accounts": [
         "Cerrar sesión en todas las cuentas"
       ],
+      "Skip to main content": [
+        "Omitir al contenido principal"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -472,6 +475,9 @@
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencias del asistente de escritura"
       ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
@@ -627,9 +633,19 @@
         "Cargando el balance"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
       ]
     },
     "BF2024: Deal details": {
@@ -2412,12 +2428,6 @@
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
       ],
-      "Organization key must be activated to create invited users": [
-        "La clave de la organización debe activarse para crear usuarios invitados."
-      ],
-      "Organization key must be activated to create non-private users": [
-        "La clave de la organización debe activarse para crear usuarios no privados."
-      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
@@ -2489,9 +2499,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "El importe mínimo de la donación es de ${ price }"
       ],
       "The passphrases do not match": [
         "Las frases de contraseña no coinciden."
@@ -2601,8 +2608,14 @@
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
       ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de la clave de seguridad se ha cancelado o ha superado el tiempo de espera. Inténtalo de nuevo."
+      ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Tu dispositivo no ha podido completar la solicitud de la clave de seguridad. Inténtalo de nuevo o usa otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -3121,6 +3134,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ayudarnos a mantener segura su cuenta, confirme que es realmente usted antes de continuar."
+      ],
       "Total email addresses": [
         "Direcciones de correo electrónico totales"
       ],
@@ -3292,6 +3308,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } contraseña de la cuenta"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -3460,9 +3479,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Password": [
-        "Contraseña"
       ],
       "Payer": [
         "Emisor del pago"
@@ -5598,6 +5614,9 @@
       "Payment method updated": [
         "Método de pago actualizado"
       ],
+      "Preference saved": [
+        "Preferencia guardada"
+      ],
       "Problem reported": [
         "Se ha notificado el problema."
       ],
@@ -5764,9 +5783,6 @@
       "Enhance security with 2FA": [
         "Mejora la seguridad con 2FA"
       ],
-      "Enter your password": [
-        "Introduce tu contraseña"
-      ],
       "Error": [
         "Error"
       ],
@@ -5868,6 +5884,9 @@
       ],
       "Verification failed": [
         "Error de verificación"
+      ],
+      "Verify it’s you": [
+        "Verifica que eres tú"
       ],
       "Verifying your card...": [
         "Verificando tu tarjeta..."
@@ -5992,6 +6011,71 @@
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuario"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartido"
+      ],
+      "10 years": [
+        "10 años"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una capa de mayor capacidad con servidores ${ VPN_APP_NAME }: mucho menos personas comparten cada uno, y utilizan ${ BRAND_NAME } con direcciones IP propias. Quick Connect las selecciona automáticamente donde estén disponibles."
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Custom email domains": [
+        "Personalizar dominios de correo electrónico"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Llamado así por el financiamiento colectivo de los simpatizantes que hicieron posible ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } en 2014. Todos los servicios premium ${ BRAND_NAME } en un solo plan."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuevos ${ BRAND_NAME } servicios sin costo adicional"
+      ],
+      "Password vaults": [
+        "Bóveda de contraseñas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Correo premium, Calendario, Drive y Pass"
+      ],
+      "Previous versions": [
+        "Versiones anteriores"
+      ],
+      "Storage": [
+        "Almacenamiento"
+      ],
+      "Subscribers only": [
+        "Solo suscriptores"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra reservados para usted"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Hasta ${ limit }"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN de inmediato"
       ]
     },
     "VPN B2B cancellation reason": {

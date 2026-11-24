@@ -2367,9 +2367,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
-      ],
       "Moving items": [
         "Переміщення елементів"
       ],
@@ -2942,6 +2939,9 @@
       ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "Перейдіть на платний тарифний план, щоб створити кілька сховищ."
+      ],
+      "Use biometrics to unlock": [
+        "Використовуйте біометрію для розблокування"
       ],
       "User's access removed": [
         "Доступ користувача вилучено"

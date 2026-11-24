@@ -28,6 +28,9 @@
       "Add address": [
         "Rnu tansa"
       ],
+      "Add another account": [
+        "Rnu amiḍan nniḍen"
+      ],
       "Add birthday": [
         "Rnu azemz n tlalit"
       ],
@@ -317,6 +320,9 @@
       ],
       "Grid layout": [
         "Tissi n uferrug"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
@@ -769,6 +775,12 @@
       "${ users } user": [
         "${ users } n useqdac",
         "${ users } yiseqdacen"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
+      ],
+      "Writing assistant seats": [
+        "Imukan n umalal n tira"
       ]
     },
     "Alert": {
@@ -807,6 +819,11 @@
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Sefsex ajerred"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Mdel"
       ]
     },
     "bf2023: Deal details": {
@@ -920,6 +937,10 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "1 month": [
         "1 wayyur"
       ],
@@ -1033,6 +1054,10 @@
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
         "${ maxSpaceTB } n uḥraz"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
       ],
       "Save ${ upsellSavings }": [
         "Sekles ${ upsellSavings }"
@@ -2078,6 +2103,11 @@
         "Kkes asenqes"
       ]
     },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Sider i Windows"
+      ]
+    },
     "drive:action": {
       "Open in ${ DRIVE_SHORT_APP_NAME }": [
         "Ldi deg ${ DRIVE_SHORT_APP_NAME }"
@@ -2574,6 +2604,10 @@
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Tallunt n uḥraz i ak-yettwamudden: ${ assignedStorage }"
+      ],
+      "View the invitation": [
+        "Wali tinnubga",
+        "Wali tinnubgiwin"
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Tettwaɛerḍeḍ ad ternuḍ ɣer ${ invite.OrganizationName }"
@@ -3224,6 +3258,9 @@
       "Import mailbox": [
         "Kter tabewwaḍt n yimayl"
       ],
+      "Important note": [
+        "Tamawt taxatart"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
       ],
@@ -3310,6 +3347,9 @@
       ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
+      ],
+      "Not connected": [
+        "Ur iqqin ara"
       ],
       "Numbers": [
         "Imḍanen"
@@ -3486,11 +3526,17 @@
       "What do you want to do?": [
         "Acu tebɣiḍ ad txedmeḍ?"
       ],
+      "When working remotely": [
+        "Mi ara txeddmeḍ s wudem anmeggag"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
       ],
       "Would you like to receive a new verification code?": [
         "Tebɣiḍ ad teṭṭfeḍ tangalt tamaynutt n uselken ?"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
       ],
       "Yes": [
         "Ih"
@@ -3536,6 +3582,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
+      ],
+      "Your online activity is protected": [
+        "Armud-ik deg internet yettummesten"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -4180,6 +4229,12 @@
     "mail_signup_2024: Info": {
       "for ${ price }": [
         "i ${ price }"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } yimtteki",
+        "${ n } yimttekkiyen"
       ]
     },
     "Message display when a new app version is available": {
@@ -4930,6 +4985,12 @@
         "Imayl uzzig seg ${ BRAND_NAME }"
       ]
     },
+    "Referral": {
+      "Friend joined": [
+        "Yerna-d umeddakel",
+        "Rnan-d imeddukal"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Ali"
@@ -5170,10 +5231,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "Mazal ${ dayDiff } wass",
-        "Mazal ${ dayDiff } wussan"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } uḥraz i aseqdac"
       ],
@@ -5570,6 +5627,9 @@
       "Downgrade account": [
         "Sider aswir n umiḍan"
       ],
+      "Download the app": [
+        "Sider asnas"
+      ],
       "Download unverified file?": [
         "Sader afaylu ur yettwasneqden ara?"
       ],
@@ -5603,8 +5663,8 @@
       "Empty trash": [
         "Silem iḍumman"
       ],
-      "Enter your password": [
-        "Sekcem awal-ik uffir"
+      "Enable 2FA": [
+        "Sermed 2FA"
       ],
       "Error": [
         "Tuccḍa"
@@ -5626,6 +5686,9 @@
       ],
       "Groups": [
         "Igrawen"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ],
       "Help center": [
         "Tallalt"
@@ -5772,6 +5835,9 @@
       "Request sent": [
         "Tettwaceyyeɛ tsutert"
       ],
+      "Security center": [
+        "Ammas n tɣellist"
+      ],
       "Select a plan": [
         "Fren aɣawas"
       ],
@@ -5867,6 +5933,9 @@
       ],
       "Warning: suspected fake website": [
         "Ɣur-k•m: yettban d yir asmel web"
+      ],
+      "Your account is protected": [
+        "Amiḍan-ik yettummesten"
       ],
       "Your changes are not synced yet": [
         "Isenfal-ik mazal ur mtawan ara"

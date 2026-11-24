@@ -459,6 +459,9 @@
       "Display navigation bar": [
         "ნავიგაციის პანელის ჩვენება"
       ],
+      "Don't show this again": [
+        "ეს აღარ მაჩვენო"
+      ],
       "Done": [
         "მზადაა"
       ],
@@ -1414,6 +1417,9 @@
       "Skip": [
         "გამოტოვება"
       ],
+      "Skip to main content": [
+        "მთავარ შინაარსზე გადასვლა"
+      ],
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
@@ -1503,10 +1509,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -1624,6 +1626,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "ზომის შესაცვლელად გამოიყენეთ თაგუნა. კლავიატურით იმავეს მიღწევა მარცხნივ და მარჯვნივ ისრებით შეგიძლიათ."
+      ],
+      "Use “${ label }” setting": [
+        "\"${ label }\" პარამეტრის გამოყენება"
       ],
       "Verify": [
         "გადამოწმება"
@@ -2016,9 +2021,19 @@
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "დახურვა"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "შეთავაზება ხელმიუწვდომელია"
       ]
     },
     "BF2024: Deal details": {
@@ -4838,6 +4853,9 @@
       "Invalid public key file": [
         "არასწორი საჯარო გასაღების ფაილი"
       ],
+      "Invalid URL": [
+        "არასწორი URL"
+      ],
       "Invalid VAT number": [
         "არასწორი დღგს ნომერი"
       ],
@@ -4921,12 +4939,6 @@
       ],
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
-      ],
-      "Organization key must be activated to create invited users": [
-        "მოწვეული მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
       ],
       "Password is required": [
         "პაროლი აუცილებელია"
@@ -5083,6 +5095,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
       ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
+      ],
       "Something went wrong while converting the address": [
         "მისამართის კონვერტაციისას დაფიქსირდა შეცდომა"
       ],
@@ -5143,9 +5158,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "შემოწირულობის მინიმალური თანხაა ${ price }"
       ],
       "The sending key is not valid": [
         "გაგზავნის გასაღები არასწორია"
@@ -10031,9 +10043,6 @@
       "Sort": [
         "დალაგება"
       ],
-      "Spam": [
-        "სპამი"
-      ],
       "Starred": [
         "ვარსკვლავიანები"
       ],
@@ -10111,9 +10120,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "ტრანზაქციები - ქვითრები, ჯავშნები, გადასახადები და შეკვეთები"
-      ],
-      "Trash": [
-        "სანაგვე ყუთი"
       ],
       "Undisclosed Recipients": [
         "გაუმჟღავნებელი მიმღებები"
@@ -10245,6 +10251,14 @@
       ],
       "To": [
         "ვის"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "სვეტი"
+      ],
+      "Row": [
+        "მწკრივი"
       ]
     },
     "Label, credit card": {
@@ -14140,10 +14154,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
       ],
-      "${ dayDiff } day left": [
-        "დარჩენილია ${ dayDiff } დღე",
-        "დარჩენილია ${ dayDiff } დღე"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
@@ -14378,20 +14388,11 @@
       "What you give up when you cancel ${ planName }": [
         "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 1 გბ ელფოსტის საცავს და 5 გბ-მდე Drive-ის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "როცა თქვენი ${ planName }-ის გამოწერგას გააუქმებთ, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. თქვენი გუნდი დაკარგავს უნარს, იმუშაოს, რადგან უფასო სატარიფო გეგმაში დამატებითი მომხმარებლების ქონა მხარდაჭერილი არაა."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "როცა თქვენი ${ planName } გამოწერა დასრულდება ${ expiryDate }-ზე, თქენი სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა."
       ],
       "Yearly free storage bonuses": [
         "წლიური უფასო საცავის ბონუსები"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "თქვენს ${ planName } გამოწერაზე ${ expiryDate } დაგრჩათ. ჩვენ დაგიმატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშზე. დარწმუნდით, რომ არსცდებით უფასო სატარიფო გეგმის შეზღუდვებს, სანამ გააუქმებთ. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "თქვენი ${ planName } არა მხოლოდ იცავს თქვენი ბიზნესის მონაცემებს და ურთიერთობას. მას თქვენს სტანადრტებთან შესაბამისობის მხარდაჭერა აქვს, შეუძლია, გამოკვეთოს თქვენი ბიზნესი სხვებთან შედარებით და ინარჩუნებს გუნდებს ერთად, დაკავშირებულს."
@@ -15364,9 +15365,6 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
-      "Enter your password": [
-        "შეიყვანეთ თქვენი პაროლი"
-      ],
       "Error": [
         "შეცდომა"
       ],
@@ -15993,6 +15991,9 @@
       ],
       "Verification failed": [
         "გადამოწმების შეცდომა"
+      ],
+      "Verify it’s you": [
+        "დაადასტურეთ, რომ ეს თქვენ ხართ"
       ],
       "Verify your password": [
         "დაადასტურეთ თქვენი პაროლი"

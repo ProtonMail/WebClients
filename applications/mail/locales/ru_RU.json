@@ -465,6 +465,9 @@
       "Display navigation bar": [
         "Показать панель навигации"
       ],
+      "Don't show this again": [
+        "Больше не показывать это"
+      ],
       "Done": [
         "Готово"
       ],
@@ -1422,6 +1425,9 @@
       "Skip": [
         "Пропустить"
       ],
+      "Skip to main content": [
+        "Перейти к основному содержимому"
+      ],
       "Skip verification": [
         "Пропустить проверку"
       ],
@@ -1511,12 +1517,6 @@
       ],
       "Trust": [
         "Доверять"
-      ],
-      "Trust key": [
-        "Доверенный ключ",
-        "Доверенных ключа",
-        "Доверенных ключей",
-        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1634,6 +1634,9 @@
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Используйте мышь для изменения размера просмотра. Если вы используете клавиатуру, для изменения размера можно использовать клавиши со стрелками влево и вправо."
+      ],
+      "Use “${ label }” setting": [
+        "Использовать настройку «${ label }»"
       ],
       "Verify": [
         "Подтвердить"
@@ -2047,9 +2050,19 @@
         "Ваш бесплатный пробный период заканчивается через ${ timeRemaining }"
       ]
     },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыть"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Предложение недоступно"
       ]
     },
     "BF2024: Deal details": {
@@ -2215,6 +2228,11 @@
       ],
       "Yearly": [
         "Ежегодно"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     },
     "Bug category": {
@@ -4920,6 +4938,9 @@
       "Invalid public key file": [
         "Недействительный файл открытого ключа"
       ],
+      "Invalid URL": [
+        "Недействительный URL"
+      ],
       "Invalid VAT number": [
         "Недействительный номер НДС"
       ],
@@ -5009,12 +5030,6 @@
       ],
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
-      ],
-      "Organization key must be activated to create invited users": [
-        "Ключ организации должен быть активирован для создания приглашенных пользователей"
-      ],
-      "Organization key must be activated to create non-private users": [
-        "Ключ организации должен быть активирован для создания нечастных пользователей"
       ],
       "Password is required": [
         "Нужно ввести пароль"
@@ -5175,6 +5190,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
+      "Something went wrong": [
+        "Что-то пошло не так"
+      ],
       "Something went wrong while converting the address": [
         "Что-то пошло не так при конвертации адреса"
       ],
@@ -5237,9 +5255,6 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Минимальная сумма кредита, которая может быть добавлена, составляет ${ price }"
-      ],
-      "The minimum donation amount is ${ price }": [
-        "Минимальная сумма пожертвования составляет ${ price }"
       ],
       "The sending key is not valid": [
         "Недействительный ключ отправки"
@@ -10389,9 +10404,6 @@
       "Sort": [
         "Сортировать"
       ],
-      "Spam": [
-        "Спам"
-      ],
       "Starred": [
         "Отмеченные *"
       ],
@@ -10466,9 +10478,6 @@
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
         "Транзакции — чеки, бронирования, счета и заказы"
-      ],
-      "Trash": [
-        "Корзина"
       ],
       "Undisclosed Recipients": [
         "Скрытые получатели"
@@ -10594,6 +10603,14 @@
       ],
       "To": [
         "Получатель"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Строка"
       ]
     },
     "Label, credit card": {
@@ -14656,12 +14673,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } день остался",
-        "${ dayDiff } дня осталось",
-        "${ dayDiff } дней осталось",
-        "${ dayDiff } дней осталось"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
@@ -14908,20 +14919,11 @@
       "What you give up when you cancel ${ planName }": [
         "От чего вы отказываетесь при отмене ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "При отказе от ${ planName } вы будете переведены на ${ BRAND_NAME } Free, который предлагает только до 1 ГБ хранилища для почты и до 5 ГБ хранилища для дисков. Вы также потеряете все ранее предоставленные бонусы на хранилище."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "При отказе от ${ planName } вы будете переведены на ${ BRAND_NAME } Free, который предлагает только до 1 ГБ хранилища для почты и до 5 ГБ хранилища для Drive. Ваша команда будет испытывать перебои в работе, поскольку дополнительные пользователи не поддерживаются на бесплатном тарифе."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Когда ваша подписка на тариф ${ planName } закончится ${ expiryDate }, вы будете переведены на тарифный план ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Ежегодные бесплатные бонусы для места в хранилище"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "У вас еще есть ${ expiryDate } на подписке ${ planName }. Мы добавим остаток на счете за оставшееся время к вашему аккаунту ${ BRAND_NAME }. Перед отменой подписки убедитесь, что вы не превысили предел бесплатного тарифа. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш тариф ${ planName } не просто обеспечивает защищенность ваших деловых данных и связей. Он поддерживает ваши цели по соблюдению нормативных требований, делает ваш бизнес заметным и обеспечивает связь между вашими сотрудниками."
@@ -15988,9 +15990,6 @@
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
       ],
-      "Enter your password": [
-        "Введите пароль"
-      ],
       "Error": [
         "Ошибка"
       ],
@@ -16623,6 +16622,9 @@
       ],
       "Verification failed": [
         "Проверка не удалась"
+      ],
+      "Verify it’s you": [
+        "Подтвердите, что это вы"
       ],
       "Verify your password": [
         "Подтвердите ваш пароль"
