@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
+import { isTauriApp } from '@proton/shared/lib/helpers/desktop';
 
 import { getMessageBlocks } from '../../../../../messageHelpers';
 import type { Message } from '../../../../../types';
@@ -44,6 +45,9 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
 
         if (isEmailLink(href)) {
             openEmailWarningModal(href);
+        } else if (isTauriApp) {
+            // Lumo desktop confirms links leaving Proton with a native dialog.
+            window.open(href, '_blank', 'noopener,noreferrer');
         } else {
             openLinkWarningModal(href);
         }
