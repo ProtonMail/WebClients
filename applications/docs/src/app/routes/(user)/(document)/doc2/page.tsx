@@ -4,15 +4,18 @@ import { useLocation } from 'react-router-dom-v5-compat'
 import { getUrlPassword } from '@proton/docs-shared/URL/getUrlPassword'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
+import { useFlag } from '@proton/unleash/useFlag'
 import { assignUrl } from '@proton/shared/lib/helpers/location'
 import { version as realtimeSdkVersion } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
 import { parseOpenAction, useDocsUrlBar } from '~/utils/docs-url-bar'
+import { useDocsNotifications } from '../../__utils/notifications-context'
 import { DocumentCreator } from './__components/DocumentCreator'
 import { DocumentShell } from './__components/DocumentShell'
 import { DocumentViewerV2 } from './__components/DocumentViewerV2'
+import { useEmailOptInModal } from '../doc/__components/EmailOptInModal/EmailOptInModal'
 import { LoadingScreen } from './__components/LoadingScreen'
 import { OpenActionError } from './__components/OpenActionError'
 import { DocsLoadMark, markDocsLoad } from './__utils/loadMarks'
@@ -72,7 +75,26 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
     }
   }, [historyOnOpen, openAction, updateParameters])
 
-  return <DebugModeProvider>{renderResolution()}</DebugModeProvider>
+  // Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its email opt-in trigger. Here, not in
+  // the viewer, which a retry remounts, so a retry does not open it again. As on /doc, it shows over a document only.
+  const [emailOptInModal, openEmailOptInModal] = useEmailOptInModal()
+  const emailFeatureEnabled = useFlag('DocsEnableNotificationsOnNewComment')
+  const { emailTitleEnabled, emailNotificationsEnabled, isReady: isNotificationsReady } = useDocsNotifications()
+  useEffect(() => {
+    if (!isNotificationsReady || !emailFeatureEnabled) {
+      return
+    }
+    if (emailTitleEnabled === null || emailNotificationsEnabled === null) {
+      openEmailOptInModal({})
+    }
+  }, [emailTitleEnabled, emailNotificationsEnabled, openEmailOptInModal, isNotificationsReady, emailFeatureEnabled])
+
+  return (
+    <DebugModeProvider>
+      {renderResolution()}
+      {resolution.kind === 'open' && emailOptInModal}
+    </DebugModeProvider>
+  )
 
   function renderResolution() {
     switch (resolution.kind) {
