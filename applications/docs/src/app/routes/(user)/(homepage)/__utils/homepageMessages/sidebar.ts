@@ -19,6 +19,8 @@ export function createSidebarMessages(): Pick<HomepageMessages, 'sidebar'> {
       navigationLabel: c('Label').t`Main`,
       // translator: This is a hidden headline for users with screen readers to highlight the main navigation
       navigationHeading: c('Label').t`Navigation`,
+      // Copied from Proton's `Hamburger` (packages/components/components/sidebar/Hamburger.tsx).
+      closeNavigation: c('Action').t`Close navigation`,
     },
   }
 }

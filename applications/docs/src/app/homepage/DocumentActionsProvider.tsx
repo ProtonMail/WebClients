@@ -85,7 +85,7 @@ export function DocumentActionsProvider({
         await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
         const successNotificationText = messages.renamed(newName)
         createNotification({
-          text: <span className="text-pre-wrap">{successNotificationText}</span>,
+          text: <span className="whitespace-pre-wrap">{successNotificationText}</span>,
         })
       } catch (error) {
         traceErrorSDK(errorTracking, error, 'DocsRenameWithDriveSDK')

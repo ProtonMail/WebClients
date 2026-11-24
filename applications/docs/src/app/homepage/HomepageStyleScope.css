@@ -1,49 +1,149 @@
-/* TODO: styles are a mess, until we can clean up I'm just hacking these in */
+.homepage-root {
+  /* No font family: as the realtime editors, the module inherits the host page's font (Proton's Inter in the Docs app).
+     Proton's body text, which the relative `text-*` sizes (see tailwind.config.js) are measured from. */
+  font-size: 0.875rem;
+  line-height: calc(20 / 14);
 
-.content-container,
-.content,
-.sidebar,
-.homepage-header,
-.header,
-.main-area,
-.main-area--with-toolbar {
-  background: #f8fafc !important;
-  background-color: #f8fafc !important;
+  /* Proton's radii, which `rounded-*` reads. */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-radius-xxl: 1.5rem;
+  --border-radius-full: 9999em;
+
+  /* The module owns these colours, as the editors' `docs.scss` does: hosts only select light or dark mode.
+     In the Docs app this root also wraps Proton's components, so the values are those of Docs' themes:
+     Snow here, Carbon in dark mode. */
+  --backdrop-norm: rgb(38 42 51 / 0.48);
+  --background-norm: white;
+  --background-strong: #e5e4e1;
+  --background-weak: #f5f4f2;
+  --border-norm: #d1cfcd;
+  --border-weak: #eae7e4;
+  --docs-blue-color: #4695f3;
+
+  /* The page and sidebar background, which no Proton token names. Dark mode uses `--background-norm`. */
+  --homepage-background: #f8fafc;
+
+  /* The drawer's backdrop, as Proton's `.sidebar-backdrop`: `--backdrop-norm` of the theme's prominent area. */
+  --homepage-drawer-backdrop: rgb(0 0 0 / 0.32);
+  --field-background-color: white;
+  --field-disabled: #d1cfcd;
+  --field-disabled-background-color: white;
+  --field-disabled-text-color: #c2bfbc;
+  --field-focus-background-color: white;
+  --field-focus-text-color: #0c0c14;
+  --field-hover: #8f8d8a;
+  --field-hover-background-color: white;
+  --field-hover-text-color: #0c0c14;
+  --field-norm: #adaba8;
+  --field-text-color: #0c0c14;
+  --focus-outline: #6d4aff;
+  --focus-ring: rgb(109 74 255 / 0.2);
+  --interaction-default: transparent;
+  --interaction-default-active: rgb(194 192 190 / 0.35);
+  --interaction-default-hover: rgb(194 193 192 / 0.2);
+  --interaction-norm: #6d4aff;
+  --interaction-norm-contrast: white;
+  --interaction-norm-hover: #6243e6;
+  --interaction-norm-major-1: #6243e6;
+  --interaction-norm-major-2: #573bcc;
+  --interaction-norm-major-3: #4c34b3;
+  --interaction-norm-minor-1: #e2dbff;
+  --interaction-norm-minor-2: #f0edff;
+  --interaction-weak: #eae7e4;
+  --interaction-weak-major-1: #dedbd9;
+  --interaction-weak-major-2: #d3d0cd;
+  --interaction-weak-major-3: #c7c4c2;
+  --interaction-weak-minor-1: #f5f3f2;
+  --interaction-weak-minor-2: #f9f8f7;
+  --link-norm: #6d4aff;
+  --modal-background-color: white;
+  --modal-text-color: #0c0c14;
+  --optional-background-lowered: #f8f8f6;
+  --shadow-lifted: 0 0.5rem 1.5rem rgb(0 0 0 / 0.16);
+  --signal-danger: #dc3251;
+  --signal-danger-contrast: white;
+  --signal-danger-major-1: #c62d49;
+  --signal-danger-major-2: #b02841;
+  --signal-warning: #f90;
+  --text-disabled: #c2bfbc;
+  --text-hint: #8f8d8a;
+  --text-norm: #0c0c14;
+  --text-weak: #5c5958;
+
+  color: var(--text-norm);
 }
 
-.button-promotion {
-  --upgrade-background-color: #f8fafc !important;
+[data-theme-mode='dark'] .homepage-root {
+  --backdrop-norm: rgb(22 20 28 / 0.48);
+  --homepage-drawer-backdrop: rgb(22 20 28 / 0.48);
+  --background-norm: #16141c;
+  --background-strong: #3f3b4c;
+  --background-weak: #292733;
+  --border-norm: #4a4658;
+  --border-weak: #343140;
+  --field-background-color: #16141c;
+  --field-disabled: #3f3b4c;
+  --field-disabled-background-color: #16141c;
+  --field-disabled-text-color: #5b576b;
+  --field-focus-background-color: #16141c;
+  --field-focus-text-color: white;
+  --field-hover: #6d697d;
+  --field-hover-background-color: #16141c;
+  --field-hover-text-color: white;
+  --field-norm: #5b576b;
+  --field-text-color: white;
+  --focus-ring: rgb(109 74 255 / 0.3);
+  --interaction-default-active: rgb(91 87 107 / 0.4);
+  --interaction-default-hover: rgb(91 87 107 / 0.2);
+  --interaction-norm-hover: #7c5cff;
+  --interaction-norm-major-1: #7c5cff;
+  --interaction-norm-major-2: #8a6eff;
+  --interaction-norm-major-3: #9980ff;
+  --interaction-norm-minor-1: #21164d;
+  --interaction-norm-minor-2: #160f33;
+  --interaction-weak: #4a4658;
+  --interaction-weak-major-1: #5c5969;
+  --interaction-weak-major-2: #6e6b79;
+  --interaction-weak-major-3: #807e8a;
+  --interaction-weak-minor-1: #25232c;
+  --interaction-weak-minor-2: #16151a;
+  --link-norm: #7c5cff;
+  --modal-background-color: #16141c;
+  --modal-text-color: white;
+  --optional-background-lowered: #0e0d12;
+  --shadow-lifted: 0 0.5rem 1.5rem rgb(0 0 0 / 0.75);
+  --signal-danger: #f5385a;
+  --signal-danger-major-1: #f64c6b;
+  --signal-danger-major-2: #f7607b;
+  --text-disabled: #5b576b;
+  --text-hint: #6d697d;
+  --text-norm: white;
+  --text-weak: #a7a4b5;
 }
 
-.button-promotion:hover,
-.button-promotion:focus-visible {
-  --upgrade-background-color: #f1f1f1 !important;
+/* Proton's utilities of these names add these declarations, and the Docs app still loads Proton.
+   Without them the standalone app would lay out differently; `:where()` keeps any Tailwind class in charge. */
+:where(.homepage-root) :where(.flex, .inline-flex) {
+  flex-wrap: wrap;
 }
 
-:root[data-theme-mode='dark'] .content-container,
-:root[data-theme-mode='dark'] .content,
-:root[data-theme-mode='dark'] .sidebar,
-:root[data-theme-mode='dark'] .homepage-header,
-:root[data-theme-mode='dark'] .header,
-:root[data-theme-mode='dark'] .main-area,
-:root[data-theme-mode='dark'] .main-area--with-toolbar {
-  background: var(--background-norm) !important;
-  background-color: var(--background-norm) !important;
+:where(.homepage-root) :where(.flex) > * {
+  min-block-size: 0;
+  min-inline-size: 0;
 }
 
-:root[data-theme-mode='dark'] .button-promotion {
-  --upgrade-background-color: var(--background-norm) !important;
+:where(.homepage-root) :where(.absolute, .sticky) {
+  z-index: 1;
 }
 
-:root[data-theme-mode='dark'] .button-promotion:hover,
-:root[data-theme-mode='dark'] .button-promotion:focus-visible {
-  --upgrade-background-color: var(--interaction-weak-minor-1) !important;
+:where(.homepage-root) :where(.text-ellipsis) {
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-/** Hack to prevent too much spacing when other blocks (with their own left padding)
-show up after the targeted one, e.g. the upsell section, but still have a right padding
-when missing. */
-
-div:has(> .mobile-search-hack):last-child {
-  padding-right: 0.5rem;
+:where(.homepage-root) :where(.opacity-0) {
+  pointer-events: none;
 }

@@ -1,120 +1,86 @@
-import type { ComponentType, ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
-import type { NavLinkProps } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import * as Ariakit from '@ariakit/react'
 
 import { Icon } from './components/Icon'
 import * as Icons from './components/icons'
-import { SidebarList, SidebarListItem, SidebarListItemDiv, SidebarNav } from './components/sidebar'
+import {
+  SIDEBAR_LINK_CLASS_NAME,
+  SidebarList,
+  SidebarListItem,
+  SidebarListItemDiv,
+  SidebarNav,
+  SidebarStorage,
+} from './components/sidebar'
 import { IconButton } from './components/ui'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
+import type { HomepageUserDropdownComponentProps } from './HomepageHeader'
 import { useHomepageView } from './homepageViewContext'
 import { COLOR_BY_TYPE } from './HomepageContent/shared'
 import { NewDocumentMenu } from './HomepageContent/NewDocumentMenu'
 import { useSidebarState } from './sidebarState'
 import { useReloadRecents } from './useReloadRecents'
-import { APPS, DRIVE_APP_NAME } from './utils/apps'
+import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from './utils/apps'
 import { clsx } from './utils/clsx'
 import { TelemetryEvent } from './utils/telemetry'
+import { useDrawerFocusTrap } from './utils/useDrawerFocusTrap'
+import { useIsNarrow } from './utils/useIsNarrow'
 
-const USER_DROPDOWN_OVERRIDES =
-  '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2] [&_.user-initials]:!leading-[1.0714rem]'
+/**
+ * Proton's `.sidebar` (packages/styles/scss/layout/_structure.scss) as Docs styles it: a column beside the content,
+ * which becomes a drawer on narrow viewports, slid out of view and hidden while closed.
+ */
+const SIDEBAR_CLASS_NAME = clsx(
+  'relative flex w-[15.625rem] shrink-0 flex-col flex-nowrap overflow-auto outline-none [contain:content] print:!hidden',
+  '-me-1 bg-[--homepage-background] text-[--text-norm] [[data-theme-mode=dark]_&]:bg-[--background-norm]',
+  'narrow:!fixed narrow:inset-0 narrow:z-[800] narrow:w-full narrow:max-w-[17rem] narrow:pt-3',
+  'narrow:[transition:visibility_0s_ease,transform_0.25s_ease]',
+  'narrow:data-[expanded=false]:invisible narrow:data-[expanded=false]:-translate-x-full narrow:data-[expanded=false]:[transition-delay:0.25s,0s]',
+  'rtl:narrow:data-[expanded=false]:translate-x-full',
+)
+
+// The `.logo-container` of Proton's `Sidebar`, whose logo is a link that takes the free width.
+const LOGO_ROW_CLASS_NAME = clsx(
+  'flex h-[3.75rem] shrink-0 flex-nowrap items-center justify-between gap-0.5 px-4 narrow:!hidden',
+  '[&>a]:flex [&>a]:flex-auto [&>a]:self-center [&>a::after]:[border-radius:var(--border-radius-md)]',
+)
 
 export type HomepageAppsDropdownComponentProps = {
   app: (typeof APPS)[keyof typeof APPS]
-}
-
-export type HomepageAppVersionComponentProps = {
-  appVersion: string
 }
 
 export type HomepageLogoComponentProps = {
   appName: (typeof APPS)[keyof typeof APPS]
 }
 
-export interface HomepageSidebarListItemLinkComponentProps extends Omit<NavLinkProps, 'className'> {
-  children: ReactNode
-  itemClassName?: string
-  className?: string
-  forceReload?: boolean
-}
-
 export type HomepageSidebarProps = {
   appsDropdown: (props: HomepageAppsDropdownComponentProps) => ReactNode
-  appVersionComponent: (props: HomepageAppVersionComponentProps) => ReactNode
   logo: (props: HomepageLogoComponentProps) => ReactNode
-  protonSidebar: ComponentType<HomepageSidebarComponentProps>
-  sidebarListItemLink: ComponentType<HomepageSidebarListItemLinkComponentProps>
-  /** The host's `APP_VERSION`. */
-  appVersion: string
-}
-
-export type HomepageSidebarComponentProps = {
-  app: (typeof APPS)[keyof typeof APPS]
-  appsDropdown: ReactNode
-  logo: ReactNode
-  expanded: boolean
-  onToggleExpand: () => void
-  className: string
-  primary: ReactNode
-  version: ReactNode
-  children: ReactNode
+  /** Shown in the sidebar on narrow viewports, as Proton's `Sidebar` does: the header shows it on wider ones. */
+  userDropdown: (props: HomepageUserDropdownComponentProps) => ReactNode
+  reportDescriptionContext: string[]
 }
 
 export function HomepageSidebar({
-  appsDropdown,
-  appVersionComponent,
-  logo,
-  protonSidebar,
-  sidebarListItemLink,
-  appVersion,
+  appsDropdown: AppsDropdown,
+  logo: Logo,
+  userDropdown: UserDropdown,
+  reportDescriptionContext,
 }: HomepageSidebarProps) {
   const { expanded, toggleExpanded, setExpanded } = useSidebarState()
-
-  return (
-    <Sidebar
-      appsDropdown={appsDropdown}
-      appVersionComponent={appVersionComponent}
-      logo={logo}
-      protonSidebar={protonSidebar}
-      sidebarListItemLink={sidebarListItemLink}
-      expanded={expanded}
-      onToggle={toggleExpanded}
-      setExpanded={setExpanded}
-      appVersion={appVersion}
-    />
-  )
-}
-
-type SidebarProps = {
-  appsDropdown: (props: HomepageAppsDropdownComponentProps) => ReactNode
-  appVersionComponent: (props: HomepageAppVersionComponentProps) => ReactNode
-  logo: (props: HomepageLogoComponentProps) => ReactNode
-  protonSidebar: ComponentType<HomepageSidebarComponentProps>
-  sidebarListItemLink: ComponentType<HomepageSidebarListItemLinkComponentProps>
-  expanded: boolean
-  onToggle: () => void
-  setExpanded: (value: boolean) => void
-  appVersion: string
-}
-
-function Sidebar({
-  appsDropdown: AppsDropdown,
-  appVersionComponent: AppVersion,
-  logo: Logo,
-  protonSidebar: ProtonSidebar,
-  sidebarListItemLink: SidebarListItemLink,
-  expanded,
-  onToggle,
-  setExpanded,
-  appVersion,
-}: SidebarProps) {
+  const isNarrow = useIsNarrow()
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
-  const { isRecentsUpdating, type, reportTelemetry, getAppHref } = useHomepageView()
+  const { isRecentsUpdating, type, reportTelemetry, getAppHref, storage, appVersion } = useHomepageView()
   const messages = useHomepageMessages().sidebar
   const reloadRecents = useReloadRecents()
+  const rootRef = useRef<HTMLDivElement>(null)
+  // Only a drawer traps the focus: on wide viewports, the sidebar stays open whatever `expanded` says.
+  const isDrawerOpen = expanded && isNarrow
+  useDrawerFocusTrap(rootRef, isDrawerOpen)
+
   const newDocumentButton = (
     <Ariakit.MenuProvider>
       <Ariakit.MenuButton className="flex w-full items-center justify-center gap-2 rounded-[0.5rem] !bg-[--docs-blue-color] px-4 py-2.5 text-[#fff]">
@@ -126,143 +92,180 @@ function Sidebar({
   )
 
   return (
-    <ProtonSidebar
-      app={APPS.PROTONDOCS}
-      appsDropdown={<AppsDropdown app={APPS.PROTONDOCS} />}
-      logo={<Logo appName={APPS.PROTONDOCS} />}
-      expanded={expanded}
-      onToggleExpand={onToggle}
-      className={clsx(
-        'ui-standard -me-1 !pt-3 small:!pt-0 [&_.logo-container]:!hidden small:[&_.logo-container]:!flex',
-        USER_DROPDOWN_OVERRIDES,
-      )}
-      primary={newDocumentButton}
-      version={<AppVersion appVersion={appVersion} />}
-    >
-      <div className="px-3 pb-3 pt-2 small:hidden">{newDocumentButton}</div>
-      <SidebarNav>
-        <div className="flex items-center justify-between px-3 py-2">
-          <div className="px-3 !text-xs text-[#8F8D8A] [[data-theme-mode=dark]_&]:!text-[--text-weak]">
-            {messages.recents}
+    <>
+      <div
+        ref={rootRef}
+        data-expanded={expanded}
+        tabIndex={isDrawerOpen ? -1 : undefined}
+        className={SIDEBAR_CLASS_NAME}
+      >
+        {/* As the `Hamburger` of Proton's `Sidebar`, visible only while focused. `opacity-0` also turns pointer events
+            off (Proton's, or the shim in HomepageStyleScope.css): focused, it takes them back, as Proton's
+            `focus:opacity-100` does. */}
+        <IconButton
+          label={messages.closeNavigation}
+          shape="ghost"
+          className="absolute end-0 me-5 mt-2 hidden shrink-0 bg-[--background-norm] opacity-0 focus:pointer-events-auto focus:opacity-100 narrow:!inline-flex"
+          onClick={toggleExpanded}
+        >
+          <Icon data={Icons.cross} />
+        </IconButton>
+
+        <h1 className="sr-only">{DOCS_APP_NAME}</h1>
+
+        <div className={LOGO_ROW_CLASS_NAME}>
+          <Logo appName={APPS.PROTONDOCS} />
+          <div className="h-9 w-9 shrink-0 grow-0">
+            <AppsDropdown app={APPS.PROTONDOCS} />
           </div>
-          <IconButton
-            label={messages.updateRecentDocuments}
-            size="small"
-            shape="ghost"
-            className="-mr-1"
-            disabled={isRecentsUpdating}
-            onClick={async (e) => {
-              e.stopPropagation()
-              e.preventDefault()
-              if (!isRecents) {
-                history.push('/recents')
-              }
-              await reloadRecents()
-              setExpanded(false)
-            }}
-          >
-            <Icon
-              data={Icons.arrowRotateRight}
-              data-updating={isRecentsUpdating ? '' : undefined}
-              className="data-[updating]:animate-spin"
-            />
-          </IconButton>
         </div>
-        <SidebarList>
-          <SidebarListItem onClick={() => setExpanded(false)}>
-            <SidebarListItemLink
-              to={(location) => {
-                const search = new URLSearchParams(location.search)
-                search.delete('type')
-                return { ...location, pathname: '/recents', search: search.toString() }
-              }}
-              exact={true}
-              data-updating={isRecentsUpdating ? '' : undefined}
-              className="flex items-center justify-between"
-              activeClassName="!font-semibold"
-              isActive={(match) => Boolean(match?.isExact && !type)}
-            >
-              <span className="flex items-center gap-2">
-                <Icon data={Icons.house} />
-                <span>{messages.all}</span>
-              </span>
-            </SidebarListItemLink>
-          </SidebarListItem>
-          <SidebarListItem onClick={() => setExpanded(false)}>
-            <SidebarListItemLink
-              to={(location) => {
-                const search = new URLSearchParams(location.search)
-                search.set('type', 'document')
-                return { ...location, pathname: '/recents', search: search.toString() }
-              }}
-              exact={true}
-              data-updating={isRecentsUpdating ? '' : undefined}
-              className="flex items-center justify-between"
-              activeClassName="!font-semibold"
-              isActive={(match) => Boolean(match?.isExact && type === 'document')}
-            >
-              <span className="flex items-center gap-2">
-                <Icon
-                  data={Icons.brandProtonDocs}
-                  className="shrink-0 text-[--icon-color]"
-                  style={{ '--icon-color': COLOR_BY_TYPE.document }}
-                />
-                <span>{messages.documents}</span>
-              </span>
-            </SidebarListItemLink>
-          </SidebarListItem>
-          <SidebarListItem onClick={() => setExpanded(false)}>
-            <SidebarListItemLink
-              to={(location) => {
-                const search = new URLSearchParams(location.search)
-                search.set('type', 'spreadsheet')
-                return { ...location, pathname: '/recents', search: search.toString() }
-              }}
-              exact={true}
-              data-updating={isRecentsUpdating ? '' : undefined}
-              className="flex items-center justify-between"
-              activeClassName="!font-semibold"
-              isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
-            >
-              <span className="flex items-center gap-2">
-                <Icon
-                  data={Icons.brandProtonSheets}
-                  className="shrink-0 text-[--icon-color]"
-                  style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
-                />
-                <span>{messages.spreadsheets}</span>
-              </span>
-            </SidebarListItemLink>
-          </SidebarListItem>
-          <li className="px-6">
-            <hr className="my-3 h-px bg-[#EAE7E4] [[data-theme-mode=dark]_&]:!bg-[--border-norm]" />
-          </li>
 
-          <SidebarListItem onClick={() => setExpanded(false)}>
-            <SidebarListItemLink to="/trash" exact={true} activeClassName="!font-semibold">
-              <span className="flex items-center gap-2">
-                <Icon data={Icons.trash} />
-                <span>{messages.trash}</span>
-              </span>
-            </SidebarListItemLink>
-          </SidebarListItem>
+        {isNarrow && (
+          <div className="shrink-0 px-3">
+            <UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} hasAppLinks />
+          </div>
+        )}
 
-          <SidebarListItem onClick={() => setExpanded(false)}>
-            <a
-              className="!text-[var(--sidebar-text-color,var(--text-norm))] no-underline"
-              href={getAppHref('/', APPS.PROTONDRIVE)}
-              target="_blank"
-              onClick={() => {
-                reportTelemetry(TelemetryEvent.drive_opened)
-              }}
-            >
-              <SidebarListItemDiv className="flex items-center gap-2">
-                <Icon data={Icons.brandProtonDrive} /> {messages.goTo(DRIVE_APP_NAME)}
-              </SidebarListItemDiv>
-            </a>
-          </SidebarListItem>
-        </SidebarList>
-      </SidebarNav>
-    </ProtonSidebar>
+        <div className="shrink-0 px-3 pb-2 narrow:hidden">{newDocumentButton}</div>
+        <div className="narrow:mt-1" aria-hidden="true" />
+        <div className="mt-2 flex flex-1 flex-col flex-nowrap overflow-auto pb-2 narrow:!mt-0" tabIndex={-1}>
+          <div className="hidden px-3 pb-3 pt-2 narrow:!block">{newDocumentButton}</div>
+          <SidebarNav>
+            <div className="flex items-center justify-between px-3 py-2">
+              <div className="px-3 !text-[.75rem]/4 text-[--text-hint] [[data-theme-mode=dark]_&]:!text-[--text-weak]">
+                {messages.recents}
+              </div>
+              <IconButton
+                label={messages.updateRecentDocuments}
+                size="small"
+                shape="ghost"
+                className="-mr-1"
+                disabled={isRecentsUpdating}
+                onClick={async (e) => {
+                  e.stopPropagation()
+                  e.preventDefault()
+                  if (!isRecents) {
+                    history.push('/recents')
+                  }
+                  await reloadRecents()
+                  setExpanded(false)
+                }}
+              >
+                <Icon
+                  data={Icons.arrowRotateRight}
+                  data-updating={isRecentsUpdating ? '' : undefined}
+                  className="data-[updating]:animate-spin"
+                />
+              </IconButton>
+            </div>
+            <SidebarList>
+              <SidebarListItem onClick={() => setExpanded(false)}>
+                <NavLink
+                  to={(location) => {
+                    const search = new URLSearchParams(location.search)
+                    search.delete('type')
+                    return { ...location, pathname: '/recents', search: search.toString() }
+                  }}
+                  exact={true}
+                  data-updating={isRecentsUpdating ? '' : undefined}
+                  className={clsx(SIDEBAR_LINK_CLASS_NAME, 'justify-between')}
+                  activeClassName="!font-semibold"
+                  isActive={(match) => Boolean(match?.isExact && !type)}
+                >
+                  <span className="flex items-center gap-2">
+                    <Icon data={Icons.house} />
+                    <span>{messages.all}</span>
+                  </span>
+                </NavLink>
+              </SidebarListItem>
+              <SidebarListItem onClick={() => setExpanded(false)}>
+                <NavLink
+                  to={(location) => {
+                    const search = new URLSearchParams(location.search)
+                    search.set('type', 'document')
+                    return { ...location, pathname: '/recents', search: search.toString() }
+                  }}
+                  exact={true}
+                  data-updating={isRecentsUpdating ? '' : undefined}
+                  className={clsx(SIDEBAR_LINK_CLASS_NAME, 'justify-between')}
+                  activeClassName="!font-semibold"
+                  isActive={(match) => Boolean(match?.isExact && type === 'document')}
+                >
+                  <span className="flex items-center gap-2">
+                    <Icon
+                      data={Icons.brandProtonDocs}
+                      className="shrink-0 text-[--icon-color]"
+                      style={{ '--icon-color': COLOR_BY_TYPE.document }}
+                    />
+                    <span>{messages.documents}</span>
+                  </span>
+                </NavLink>
+              </SidebarListItem>
+              <SidebarListItem onClick={() => setExpanded(false)}>
+                <NavLink
+                  to={(location) => {
+                    const search = new URLSearchParams(location.search)
+                    search.set('type', 'spreadsheet')
+                    return { ...location, pathname: '/recents', search: search.toString() }
+                  }}
+                  exact={true}
+                  data-updating={isRecentsUpdating ? '' : undefined}
+                  className={clsx(SIDEBAR_LINK_CLASS_NAME, 'justify-between')}
+                  activeClassName="!font-semibold"
+                  isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
+                >
+                  <span className="flex items-center gap-2">
+                    <Icon
+                      data={Icons.brandProtonSheets}
+                      className="shrink-0 text-[--icon-color]"
+                      style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
+                    />
+                    <span>{messages.spreadsheets}</span>
+                  </span>
+                </NavLink>
+              </SidebarListItem>
+              <li className="px-6">
+                <hr className="my-3 h-px border-0 bg-[--border-weak] [[data-theme-mode=dark]_&]:!bg-[--border-norm]" />
+              </li>
+
+              <SidebarListItem onClick={() => setExpanded(false)}>
+                <NavLink to="/trash" exact={true} className={SIDEBAR_LINK_CLASS_NAME} activeClassName="!font-semibold">
+                  <span className="flex items-center gap-2">
+                    <Icon data={Icons.trash} />
+                    <span>{messages.trash}</span>
+                  </span>
+                </NavLink>
+              </SidebarListItem>
+
+              <SidebarListItem onClick={() => setExpanded(false)}>
+                <a
+                  className="!text-[var(--sidebar-text-color,var(--text-norm))] no-underline"
+                  href={getAppHref('/', APPS.PROTONDRIVE)}
+                  target="_blank"
+                  onClick={() => {
+                    reportTelemetry(TelemetryEvent.drive_opened)
+                  }}
+                >
+                  <SidebarListItemDiv className="flex items-center gap-2">
+                    <Icon data={Icons.brandProtonDrive} /> {messages.goTo(DRIVE_APP_NAME)}
+                  </SidebarListItemDiv>
+                </a>
+              </SidebarListItem>
+            </SidebarList>
+          </SidebarNav>
+        </div>
+
+        {storage && storage.maxSpace > 0 && <SidebarStorage storage={storage} appVersion={appVersion} />}
+      </div>
+      {/* Proton's `.sidebar-backdrop`, shown only under the drawer. */}
+      {expanded && (
+        // A pointer shortcut, as Proton's: keyboards close the drawer with its close button.
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div
+          className="fixed inset-0 z-[799] hidden bg-[--homepage-drawer-backdrop] narrow:!block"
+          onClick={toggleExpanded}
+        />
+      )}
+    </>
   )
 }

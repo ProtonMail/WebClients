@@ -1,4 +1,4 @@
-import { useMemo, useState, type ComponentType, type ReactNode } from 'react'
+import { useMemo, useState, type ReactNode } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import type { HomepageMessages } from './messages/defaultHomepageMessages'
@@ -10,42 +10,42 @@ import { IconButton } from './components/ui'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
 import { useHomepageView } from './homepageViewContext'
 import { useSidebarState } from './sidebarState'
-import { APPS } from './utils/apps'
+import type { APPS } from './utils/apps'
 import { clsx } from './utils/clsx'
 import { useEvent } from './utils/useEvent'
 import { useIsNarrow } from './utils/useIsNarrow'
 import type { ProtonDocumentType } from './utils/mimetype'
 
-const USER_DROPDOWN_OVERRIDES =
-  '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2] [&_.user-initials]:!leading-[1.0714rem]'
+/**
+ * Proton's `.header` (packages/styles/scss/layout/_structure.scss) as Docs styles it. Its narrow values are
+ * `!important` to beat Proton's utilities of the same names in the Docs app.
+ */
+const HEADER_CLASS_NAME = clsx(
+  'flex h-[3.75rem] shrink-0 flex-nowrap items-center px-0 py-3 [contain:content]',
+  'narrow:!h-[2.75rem] narrow:!py-1 narrow:!pe-2 narrow:!ps-3 narrow:![contain:none]',
+)
 
-export type HomepageHeaderComponentProps = {
-  className?: string
-  app: (typeof APPS)[keyof typeof APPS]
-  userDropdown: ReactNode
-  title: string
-  expanded: boolean
-  onToggleExpand: () => void
-  isSmallViewport: boolean
-  actionArea: ReactNode
+export type HomepageHeaderActionsComponentProps = {
+  /** Whether the viewport is narrow, where Proton's `PrivateHeader` hides some of its actions. */
+  isNarrow: boolean
 }
 
 export type HomepageUserDropdownComponentProps = {
   app: (typeof APPS)[keyof typeof APPS]
   reportDescriptionContext: string[]
+  /** Set in the sidebar's drawer, which hides the apps dropdown, as Proton's `Sidebar` does: lists the apps. */
+  hasAppLinks?: boolean
 }
 
 export type HomepageHeaderProps = {
-  protonHeader: ComponentType<HomepageHeaderComponentProps>
-  userDropdown: (props: HomepageUserDropdownComponentProps) => ReactNode
-  reportDescriptionContext: string[]
+  /**
+   * The end of the header: the host's actions, such as its upgrade button and user dropdown. Rendered as a component,
+   * so keep it the same across renders.
+   */
+  headerActions: (props: HomepageHeaderActionsComponentProps) => ReactNode
 }
 
-export function HomepageHeader({
-  protonHeader: ProtonHeader,
-  userDropdown: UserDropdown,
-  reportDescriptionContext,
-}: HomepageHeaderProps) {
+export function HomepageHeader({ headerActions: HeaderActions }: HomepageHeaderProps) {
   const { expanded, toggleExpanded } = useSidebarState()
   const isNarrow = useIsNarrow()
   const { state, type, setSearch } = useHomepageView()
@@ -54,32 +54,35 @@ export function HomepageHeader({
   const messages = useHomepageMessages().header
 
   return (
+    // `homepage-header` is for the Docs app's stylesheets, which style the host's widgets in it.
     <div className="homepage-header shrink-0 items-center justify-center small:pe-[.625rem]">
-      <ProtonHeader
-        className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
-        app={APPS.PROTONDRIVE}
-        userDropdown={<UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} />}
-        title={messages.title}
-        expanded={expanded}
-        onToggleExpand={toggleExpanded}
-        isSmallViewport={isNarrow}
-        actionArea={
-          <>
-            <MobileSearch
-              className="mobile-search-hack small:!hidden"
-              value={searchValue}
-              onChange={(value) => setSearch(value, false)}
-              type={type}
-            />
-            <Search
-              className="!hidden ps-1 small:!flex"
-              value={searchValue}
-              onChange={(value) => setSearch(value, false)}
-              type={type}
-            />
-          </>
-        }
-      />
+      <header className={HEADER_CLASS_NAME}>
+        {/* Proton's `Hamburger`: opens the sidebar's drawer, on narrow viewports only. */}
+        <IconButton
+          label={expanded ? messages.closeNavigation : messages.openNavigation}
+          shape="ghost"
+          aria-expanded={expanded ? undefined : false}
+          className="me-[.1em] hidden shrink-0 narrow:!block print:!hidden"
+          onClick={toggleExpanded}
+        >
+          <Icon data={expanded ? Icons.cross : Icons.hamburger} />
+        </IconButton>
+        <div className="flex flex-1 items-center">
+          <MobileSearch
+            className="small:!hidden"
+            value={searchValue}
+            onChange={(value) => setSearch(value, false)}
+            type={type}
+          />
+          <Search
+            className="!hidden ps-1 small:!flex"
+            value={searchValue}
+            onChange={(value) => setSearch(value, false)}
+            type={type}
+          />
+        </div>
+        <HeaderActions isNarrow={isNarrow} />
+      </header>
     </div>
   )
 }

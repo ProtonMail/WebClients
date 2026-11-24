@@ -21,6 +21,8 @@ import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
 import { useHomepageLocalization } from '../__utils/useHomepageLocalization'
+import { useHomepageStorage } from '../__utils/useHomepageStorage'
+import { useHomepageAppVersion } from '../__utils/useHomepageAppVersion'
 import { toHomepageDateFormat } from '../__utils/toHomepageDateFormat'
 import { useHomepageInvitations } from './HomepageInvitations'
 import { withNotificationAction } from './withNotificationAction'
@@ -63,6 +65,8 @@ export function HomepageAdapter({ children }: HomepageAdapterProps) {
   )
   const [addresses] = useAddresses()
   const [contactEmails] = useContactEmails()
+  const storage = useHomepageStorage(getLocalID())
+  const appVersion = useHomepageAppVersion()
   const {
     invitations,
     reloadInvitations,
@@ -98,6 +102,8 @@ export function HomepageAdapter({ children }: HomepageAdapterProps) {
             featureFlags,
             addresses,
             contactEmails,
+            storage,
+            appVersion,
             messages,
             openShareModal: showSharingModal,
             openMoveItemsModal: showMoveItemsModal,

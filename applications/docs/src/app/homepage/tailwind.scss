@@ -1,0 +1,5 @@
+// The module's utilities, from its own config. The host brings Tailwind's preflight (`@tailwind base`).
+// A `.scss` file, since the Docs app runs Tailwind only on Sass files.
+@config './tailwind.config.js';
+@tailwind components;
+@tailwind utilities;

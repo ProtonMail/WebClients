@@ -57,6 +57,8 @@ export function HomepageViewProvider({
   featureFlags,
   addresses,
   contactEmails,
+  storage,
+  appVersion,
 }: HomepageViewProviderProps) {
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
@@ -214,6 +216,8 @@ export function HomepageViewProvider({
       featureFlags,
       addresses,
       contactEmails,
+      storage,
+      appVersion,
     }),
     [
       state,
@@ -239,6 +243,8 @@ export function HomepageViewProvider({
       featureFlags,
       addresses,
       contactEmails,
+      storage,
+      appVersion,
     ],
   )
 

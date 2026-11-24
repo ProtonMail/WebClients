@@ -1,0 +1,34 @@
+/* The page font as Proton's styles set it up in the Docs app (packages/styles/scss/base/_fonts.scss): its Inter
+   variable font, on the root, through the variables of the user's font setting. The homepage module inherits it.
+   Proton's static Inter fallback, for browsers without variable fonts, is left out. */
+
+@font-face {
+    font-family: InterVariable;
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src:
+        url(@proton/styles/assets/fonts/InterVariable.woff2) format('woff2 supports variations(gvar)'),
+        url(@proton/styles/assets/fonts/InterVariable.woff2) format('woff2-variations'),
+        url(@proton/styles/assets/fonts/InterVariable.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: InterVariable;
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+    src:
+        url(@proton/styles/assets/fonts/InterVariable-Italic.woff2) format('woff2 supports variations(gvar)'),
+        url(@proton/styles/assets/fonts/InterVariable-Italic.woff2) format('woff2-variations'),
+        url(@proton/styles/assets/fonts/InterVariable-Italic.woff2) format('woff2');
+}
+
+html {
+    font-family: var(--setting-font-family, var(--optional-font-family, 'InterVariable', system-ui, sans-serif));
+    font-synthesis: none;
+    font-weight: normal;
+    font-style: normal;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}

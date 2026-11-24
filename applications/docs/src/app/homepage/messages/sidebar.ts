@@ -10,5 +10,6 @@ export const sidebarMessages = {
     goTo: (planOrAppName: string) => `Go to ${planOrAppName}`,
     navigationLabel: 'Main',
     navigationHeading: 'Navigation',
+    closeNavigation: 'Close navigation',
   },
 }

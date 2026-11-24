@@ -16,6 +16,8 @@ import type { GetAppHref } from './utils/apps'
 import type { DateFormatter } from './utils/dateFormatter'
 import type { ErrorTracking } from './utils/errorTracking'
 import type { FeatureFlags } from './utils/featureFlags'
+import type { HomepageStorage } from './utils/storage'
+import type { HomepageAppVersion } from './utils/appVersion'
 import type { UserAddress } from './is-my-document'
 import type { OwnerContact } from './get-owner-name'
 
@@ -73,6 +75,8 @@ export type HomepageViewValue = {
   featureFlags: FeatureFlags
   addresses: UserAddress[] | undefined
   contactEmails: OwnerContact[] | undefined
+  storage: HomepageStorage | undefined
+  appVersion: HomepageAppVersion | undefined
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)

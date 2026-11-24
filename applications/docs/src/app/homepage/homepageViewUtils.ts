@@ -22,6 +22,8 @@ import type { Logger } from './utils/logger'
 import type { GetAppHref } from './utils/apps'
 import type { ErrorTracking } from './utils/errorTracking'
 import type { FeatureFlags } from './utils/featureFlags'
+import type { HomepageStorage } from './utils/storage'
+import type { HomepageAppVersion } from './utils/appVersion'
 import type { CreateNotification } from './utils/notifications'
 import type { HomepageDateFormat } from './utils/dateFormatter'
 import type { ReportTelemetry } from './utils/telemetry'
@@ -90,6 +92,13 @@ export type HomepageViewProviderProps = {
   addresses: UserAddress[] | undefined
   /** The user's contacts, undefined while they load. */
   contactEmails: OwnerContact[] | undefined
+  /**
+   * The user's storage, for the sidebar. Without it, or with `maxSpace` 0, the sidebar shows none. Keep it the same
+   * object while it doesn't change: the context value depends on it.
+   */
+  storage?: HomepageStorage
+  /** The app version, which the sidebar shows beside the storage. Keep it the same object while it doesn't change. */
+  appVersion?: HomepageAppVersion
 }
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {

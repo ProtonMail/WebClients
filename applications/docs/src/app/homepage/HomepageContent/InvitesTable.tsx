@@ -62,7 +62,7 @@ export function InvitesTable(props: InvitesTableProps) {
       className={clsx('shrink-0', props.className)}
     >
       <Table.Table data-testid="invites-table">
-        <Table.Head topLevelSticky className="border-weak border-b">
+        <Table.Head topLevelSticky className="border-b border-[--border-weak]">
           <Table.Header isTitle data-testid="invite-column-name">
             <div className="flex w-full items-center justify-between">
               <span className="flex flex-nowrap items-center gap-[.375rem]">
@@ -87,7 +87,7 @@ export function InvitesTable(props: InvitesTableProps) {
             </div>
           </Table.Header>
         </Table.Head>
-        <Table.Body className="divide-weak divide-y">
+        <Table.Body className="divide-y divide-[--border-weak]">
           {visibleInvites.map((invite) => {
             const type = isProtonDocsDocument(invite.link.mimeType) ? 'document' : 'spreadsheet'
 
@@ -105,7 +105,7 @@ export function InvitesTable(props: InvitesTableProps) {
                         className="shrink-0 text-[--icon-color]"
                         style={{ '--icon-color': COLOR_BY_TYPE[type] }}
                       />
-                      <span className="text-pre text-ellipsis" data-testid="invite-document-name">
+                      <span className="text-ellipsis !whitespace-pre" data-testid="invite-document-name">
                         {invite.decryptedLinkName}
                       </span>
                     </span>
@@ -133,7 +133,7 @@ export function InvitesTable(props: InvitesTableProps) {
                   <span className="flex flex-nowrap items-center gap-2 overflow-hidden">
                     <Avatar>{getInitials(invite.invitation.inviterEmail)}</Avatar>
                     <span
-                      className="text-pre flex-1 text-ellipsis"
+                      className="flex-1 text-ellipsis !whitespace-pre"
                       data-testid="invite-shared-by"
                       title={invite.invitation.inviterEmail}
                     >

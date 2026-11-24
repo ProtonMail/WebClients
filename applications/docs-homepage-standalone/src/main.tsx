@@ -1,5 +1,10 @@
+// As the Docs app: Tailwind's preflight and the page's height, Proton's page font, then the module's utilities, which
+// the host loads.
+import './tailwind.css';
+import './fonts.css';
+import 'proton-docs/homepage/tailwind.scss';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, NavLink, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { CompatRouter } from 'react-router-dom-v5-compat';
 
 import {
@@ -7,18 +12,12 @@ import {
     type HomepageDependencies,
     HomepageDependenciesProvider,
     HomepageHeader,
-    type HomepageHeaderComponentProps,
+    HomepageLayout,
     HomepageSidebar,
-    type HomepageSidebarComponentProps,
-    type HomepageSidebarListItemLinkComponentProps,
     defaultHomepageMessages,
     HomepageStyleScope,
     SidebarStateProvider,
 } from 'proton-docs/homepage';
-
-import './tailwind.css';
-
-// Standalone host: every dependency the module needs, empty. Nothing here is interactive.
 
 const noop = () => {};
 const empty = () => null;
@@ -56,67 +55,32 @@ const dependencies: HomepageDependencies = {
     featureFlags: { bulkTrash: false, bulkMove: false },
     addresses: [],
     contactEmails: [],
+    // A free user's quarter-full storage, who can upgrade.
+    storage: { usedSpace: 512 * 1024 ** 2, maxSpace: 2 * 1024 ** 3, upgradeHref: '#' },
+    appVersion: { version: '0.4.8.6', fullVersion: '0.4.8.6+standalone' },
     messages: defaultHomepageMessages,
     openShareModal: noop,
     openMoveItemsModal: noop,
 };
-
-// Stand-ins for the Proton components the real host injects.
-
-function Header({ title, actionArea, userDropdown }: HomepageHeaderComponentProps) {
-    return (
-        <header className="flex items-center gap-4 p-2">
-            <strong>{title}</strong>
-            {actionArea}
-            {userDropdown}
-        </header>
-    );
-}
-
-function Sidebar({ logo, primary, children, version }: HomepageSidebarComponentProps) {
-    return (
-        <aside className="flex w-64 shrink-0 flex-col gap-2 p-2">
-            {logo}
-            {primary}
-            {children}
-            {version}
-        </aside>
-    );
-}
-
-function SidebarListItemLink({
-    children,
-    itemClassName,
-    className,
-    forceReload,
-    ...props
-}: HomepageSidebarListItemLinkComponentProps) {
-    return (
-        <NavLink {...props} className={className}>
-            {children}
-        </NavLink>
-    );
-}
 
 function Homepage() {
     return (
         <HomepageStyleScope>
             <SidebarStateProvider>
                 <HomepageDependenciesProvider dependencies={dependencies}>
-                    <div className="flex h-screen">
-                        <HomepageSidebar
-                            appsDropdown={empty}
-                            appVersionComponent={empty}
-                            logo={empty}
-                            protonSidebar={Sidebar}
-                            sidebarListItemLink={SidebarListItemLink}
-                            appVersion=""
-                        />
-                        <main className="flex min-w-0 grow flex-col">
-                            <HomepageHeader protonHeader={Header} userDropdown={empty} reportDescriptionContext={[]} />
-                            <HomepageContent />
-                        </main>
-                    </div>
+                    <HomepageLayout
+                        sidebar={
+                            <HomepageSidebar
+                                appsDropdown={empty}
+                                logo={empty}
+                                userDropdown={empty}
+                                reportDescriptionContext={[]}
+                            />
+                        }
+                        header={<HomepageHeader headerActions={empty} />}
+                    >
+                        <HomepageContent />
+                    </HomepageLayout>
                 </HomepageDependenciesProvider>
             </SidebarStateProvider>
         </HomepageStyleScope>

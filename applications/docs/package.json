@@ -5,7 +5,7 @@
   "author": "",
   "exports": {
     "./homepage": "./src/app/homepage/index.ts",
-    "./tailwind.config": "./tailwind.config.js"
+    "./homepage/tailwind.scss": "./src/app/homepage/tailwind.scss"
   },
   "scripts": {
     "build:web": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack build --appMode=sso --handleSupportAndErrors --optimizeAssets --babelLoader --noLogicalScss ",

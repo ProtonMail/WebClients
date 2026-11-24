@@ -1,3 +1,5 @@
+// Named explicitly: Tailwind's plugin keeps the last `@config` it saw (the homepage module's) for files without one.
+@config '../../tailwind.config.js';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

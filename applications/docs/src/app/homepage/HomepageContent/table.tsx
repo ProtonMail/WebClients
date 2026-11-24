@@ -31,14 +31,14 @@ export function Title({ topLevelSticky, ...props }: TitleProps) {
     <div
       {...props}
       className={clsx(
-        'sticky top-[1px] z-[1] hidden h-11 border-b text-[1rem] font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] small:!block [[data-theme-mode=dark]_&]:before:!bg-[--background-norm]',
+        'sticky top-[1px] z-[1] hidden h-11 border-b border-[--border-weak] text-[1rem] font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-lg before:bg-[--background-norm] small:!block [[data-theme-mode=dark]_&]:before:!bg-[--background-norm]',
         props.className,
       )}
     >
       {topLevelSticky ? (
         <div className="relative z-[-1] mx-[-1px] h-0">
           <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc] [[data-theme-mode=dark]_&]:!bg-[--background-norm]" />
-          <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border" />
+          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border-[1px] border-[--border-weak] bg-[--background-norm]" />
         </div>
       ) : null}
       <div className="!flex h-full items-center justify-between pe-2 ps-5">{props.children}</div>
@@ -69,7 +69,7 @@ export function Head({ children, secondarySticky, topLevelSticky, topLevelSticky
       {topLevelSticky ? (
         <div className={clsx('relative z-[-1] mx-[-1px] h-0', topLevelStickyOnlyOnMobile && 'small:!hidden')}>
           <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full bg-[#f8fafc] [[data-theme-mode=dark]_&]:!bg-[--background-norm]" />
-          <div className="bg-norm border-weak absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border !border-b-0" />
+          <div className="absolute top-[-1px] h-[calc(2.75rem+1px)] w-full rounded-lg !rounded-b-none border-[1px] !border-b-0 border-[--border-weak] bg-[--background-norm]" />
         </div>
       ) : null}
       <div role="row" className="flex h-[2.75rem] items-center text-left">
@@ -90,7 +90,7 @@ export function Header({ target = 'all', isTitle, ...props }: HeaderProps) {
       role="columnheader"
       {...props}
       className={clsx(
-        'relative flex h-full items-center whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] small:[[data-bg-hack-mobile]_&]:before:bg-[#fff] [[data-bg-hack]_&]:before:bg-[#fff] [[data-secondary-header]_&]:before:rounded-se-xl [[data-secondary-header]_&]:before:rounded-ss-xl',
+        'relative flex h-full items-center whitespace-nowrap font-semibold before:absolute before:inset-0 before:z-[-1] small:[[data-bg-hack-mobile]_&]:before:bg-[#fff] [[data-bg-hack]_&]:before:bg-[#fff] [[data-secondary-header]_&]:before:rounded-se-lg [[data-secondary-header]_&]:before:rounded-ss-lg',
         // As the light background above: only in a head without its own rounded backdrop, which a square fill would cover.
         'small:[[data-theme-mode=dark]_[data-bg-hack-mobile]_&]:before:!bg-[--background-norm] [[data-theme-mode=dark]_[data-bg-hack]_&]:before:!bg-[--background-norm]',
         isTitle && '[&:nth-child(1)]:text-[1rem]',

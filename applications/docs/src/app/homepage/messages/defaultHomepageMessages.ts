@@ -11,12 +11,14 @@ import { newDocumentMessages } from './newDocument'
 import { pageTitleMessages } from './pageTitle'
 import { sidebarMessages } from './sidebar'
 import { sortMessages } from './sort'
+import { storageMessages } from './storage'
 import { trashMessages } from './trash'
 
 export const defaultHomepageMessages = {
   ...headerMessages,
   ...pageTitleMessages,
   ...sidebarMessages,
+  ...storageMessages,
   ...newDocumentMessages,
   ...contentMessages,
   ...documentsTableMessages,

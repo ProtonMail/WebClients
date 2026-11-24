@@ -1,113 +1,111 @@
 import { render, screen } from '@testing-library/react'
 import type { ComponentType, ReactNode } from 'react'
 
+import PrivateHeader from '@proton/components/containers/heading/PrivateHeader'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 
 import { HomepageShell } from './HomepageShell'
 
 vi.mock('~/homepage', () => ({
-  HomepageHeader: ({
-    protonHeader: ProtonHeader,
+  HomepageLayout: ({
+    top,
+    sidebar,
+    header,
+    drawerApp,
+    children,
+  }: {
+    top: ReactNode
+    sidebar: ReactNode
+    header: ReactNode
+    drawerApp: ReactNode
+    children: ReactNode
+  }) => (
+    <div data-testid="layout">
+      {top}
+      <aside>{sidebar}</aside>
+      <header>{header}</header>
+      <main>{children}</main>
+      {drawerApp}
+    </div>
+  ),
+  HomepageHeader: ({ headerActions: HeaderActions }: { headerActions: ComponentType<{ isNarrow: boolean }> }) => (
+    <HeaderActions isNarrow={false} />
+  ),
+  HomepageSidebar: ({
+    appsDropdown: AppsDropdown,
+    logo: Logo,
     userDropdown: UserDropdown,
     reportDescriptionContext,
   }: {
-    protonHeader: ComponentType
+    appsDropdown: ComponentType
+    logo: ComponentType<{ appName: string }>
     userDropdown: ComponentType<{ app: string; reportDescriptionContext: string[] }>
     reportDescriptionContext: string[]
   }) => (
     <>
-      Header {reportDescriptionContext.join(' ')}
-      <ProtonHeader />
+      Sidebar
+      <AppsDropdown />
+      <Logo appName="proton-docs" />
       <UserDropdown app="proton-docs" reportDescriptionContext={reportDescriptionContext} />
     </>
   ),
-  HomepageSidebar: ({
-    appsDropdown: AppsDropdown,
-    appVersionComponent: AppVersion,
-    logo: Logo,
-    protonSidebar: ProtonSidebar,
-    sidebarListItemLink: SidebarListItemLink,
-    appVersion,
-  }: {
-    appsDropdown: ComponentType
-    appVersionComponent: ComponentType<{ appVersion: string }>
-    logo: ComponentType<{ appName: string }>
-    protonSidebar: ComponentType
-    sidebarListItemLink: ComponentType<{ children: ReactNode; to: string }>
-    appVersion: string
-  }) => (
-    <>
-      Sidebar {appVersion}
-      <ProtonSidebar />
-      <AppsDropdown />
-      <Logo appName="proton-docs" />
-      <AppVersion appVersion={appVersion} />
-      <SidebarListItemLink to="/recents">Sidebar item link</SidebarListItemLink>
-    </>
-  ),
-  HomepageStyleScope: ({ children }: { children: ReactNode }) => children,
+  HomepageStyleScope: ({ children }: { children: ReactNode }) => <div data-testid="style-scope">{children}</div>,
   SidebarStateProvider: ({ children }: { children: ReactNode }) => children,
   useHomepageTitle: () => 'Recents',
 }))
-vi.mock('@proton/components/containers/app/PrivateAppContainer', () => ({
-  default: ({
-    containerRef,
-    header,
-    sidebar,
-    children,
-  }: {
-    containerRef: (element: HTMLDivElement | null) => void
-    header: ReactNode
-    sidebar: ReactNode
-    children: ReactNode
-  }) => (
-    <div ref={containerRef} data-testid="shell-container">
-      <header>{header}</header>
-      <aside>{sidebar}</aside>
-      {children}
-    </div>
-  ),
+vi.mock('@proton/components/containers/topBanners/TopBanners', () => ({
+  default: ({ children }: { children: ReactNode }) => <div>Top banners {children}</div>,
 }))
-vi.mock('@proton/components/containers/layout/PrivateMainArea', () => ({
-  default: ({ children }: { children: ReactNode }) => <main>{children}</main>,
+vi.mock('@proton/account-recovery/passwordReminder/PasswordReminderTopBanner', () => ({
+  default: () => 'Password reminder',
 }))
-vi.mock('@proton/components/containers/topBanners/TopBanners', () => ({ default: () => null }))
-vi.mock('@proton/components/components/drawer/DrawerApp', () => ({ default: () => null }))
+vi.mock('@proton/components/components/drawer/DrawerApp', () => ({ default: () => 'Drawer app' }))
+vi.mock('~/components/DocsQuickSettings', () => ({ DocsQuickSettings: () => null }))
 vi.mock('@proton/components/components/logo/Logo', () => ({
   default: ({ appName }: { appName: string }) => `Logo ${appName}`,
 }))
-vi.mock('@proton/components/components/sidebar/Sidebar', () => ({ default: () => 'Proton sidebar' }))
-vi.mock('@proton/components/components/sidebar/SidebarListItemLink', () => ({
-  __esModule: true,
-  default: ({ children }: { children: ReactNode }) => children,
-}))
-vi.mock('@proton/components/components/version/AppVersion', () => ({
-  default: ({ appVersion, fullVersion }: { appVersion: string; fullVersion: string }) =>
-    `App version ${appVersion} ${fullVersion}`,
-}))
 vi.mock('@proton/components/containers/app/AppsDropdown', () => ({ default: () => 'Apps dropdown' }))
-vi.mock('@proton/components/containers/heading/PrivateHeader', () => ({ default: () => 'Private header' }))
-vi.mock('@proton/components/containers/heading/UserDropdown', () => ({ default: () => 'User dropdown' }))
-vi.mock('@proton/components/helpers/appVersion', () => ({
-  getAppVersion: (appVersion: string) => `${appVersion}+commit`,
+vi.mock('@proton/components/containers/heading/PrivateHeader', () => ({
+  __esModule: true,
+  default: vi.fn(({ userDropdown }: { userDropdown: ReactNode }) => <header>Private header {userDropdown}</header>),
 }))
+vi.mock('@proton/components/containers/heading/UserDropdown', () => ({ default: () => 'User dropdown' }))
 vi.mock('@proton/components/hooks/useAppTitle', () => ({ __esModule: true, default: vi.fn() }))
 vi.mock('@proton/app-context/useConfig', () => ({
   useConfig: () => ({ APP_VERSION: '1.0.0', CLIENT_TYPE: 1 }),
 }))
+
 describe('HomepageShell', () => {
-  test('places the homepage parts in the Proton app frame', () => {
+  test('passes the Proton parts to the homepage layout', () => {
     render(<HomepageShell>Content</HomepageShell>)
 
-    const banner = screen.getByRole('banner')
-    expect(banner).toHaveTextContent(/^Header Automatically collected information:/)
-    expect(banner).toHaveTextContent('Client version: 1.0.0+commit Client type: 1')
-    expect(banner).toHaveTextContent(/Private headerUser dropdown$/)
-    expect(screen.getByRole('complementary')).toHaveTextContent(
-      'Sidebar 1.0.0Proton sidebarApps dropdownLogo proton-docsApp version 1.0.0 1.0.0+commitSidebar item link',
-    )
+    const layout = screen.getByTestId('layout')
+    expect(layout).toHaveTextContent(/^Top banners Password reminder/)
+    expect(layout).toHaveTextContent(/Drawer app$/)
+    expect(screen.getByRole('complementary')).toHaveTextContent('SidebarApps dropdownLogo proton-docsUser dropdown')
     expect(screen.getByRole('main')).toHaveTextContent('Content')
-    expect(screen.getByTestId('shell-container')).toHaveClass('is-homepage')
     expect(useAppTitle).toHaveBeenCalledWith('Recents')
+  })
+
+  test("keeps the Docs app's homepage styles and Proton's colours outside the module's style scope", () => {
+    render(<HomepageShell>Content</HomepageShell>)
+
+    // Outside, so the colour tokens the module sets on its root apply over Proton's.
+    expect(screen.getByTestId('style-scope').parentElement).toHaveClass('is-homepage', 'ui-standard')
+  })
+
+  test("the header's actions are Proton's, without its menu button or frame", () => {
+    render(<HomepageShell>Content</HomepageShell>)
+
+    // Proton's own `<header>` isn't a second banner.
+    expect(screen.getByRole('banner')).toHaveTextContent('Private header User dropdown')
+    expect(vi.mocked(PrivateHeader).mock.lastCall?.[0]).toEqual(
+      expect.objectContaining({
+        app: 'proton-drive',
+        hideMenuButton: true,
+        isSmallViewport: false,
+        className: expect.stringContaining('!contents'),
+      }),
+    )
   })
 })

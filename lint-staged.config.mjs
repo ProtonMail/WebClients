@@ -18,7 +18,7 @@ export default {
             `oxfmt --write --no-error-on-unmatched-pattern ${quote(files)}`,
         ];
     },
-    '(*.scss|.css)': ['oxfmt --write --no-error-on-unmatched-pattern', 'stylelint --fix'],
+    '(*.scss|.css)': ['oxfmt --write --no-error-on-unmatched-pattern', 'stylelint --fix --allow-empty-input'],
     '(!(package).json|*.md|*.mdx|*.html|*.mjs|*.yml)': 'oxfmt --write --no-error-on-unmatched-pattern',
     'package.json': [() => 'pnpm run check:constraints', 'sort-package-json'],
     'ci/bin/drive-release/drive-release': 'ci/bin/drive-release/check-binary-platform.sh',

@@ -1,19 +1,19 @@
 export {
   HomepageHeader,
-  type HomepageHeaderComponentProps,
+  type HomepageHeaderActionsComponentProps,
   type HomepageHeaderProps,
   type HomepageUserDropdownComponentProps,
 } from './HomepageHeader'
+export { HomepageLayout, type HomepageLayoutProps } from './HomepageLayout'
 export { useHomepageTitle } from './useHomepageTitle'
 export {
   HomepageSidebar,
-  type HomepageAppVersionComponentProps,
   type HomepageAppsDropdownComponentProps,
   type HomepageLogoComponentProps,
-  type HomepageSidebarComponentProps,
-  type HomepageSidebarListItemLinkComponentProps,
   type HomepageSidebarProps,
 } from './HomepageSidebar'
+export type { HomepageStorage } from './utils/storage'
+export type { HomepageAppVersion } from './utils/appVersion'
 export { SidebarStateProvider, type SidebarStateProviderProps } from './sidebarState'
 export { HomepageContent } from './HomepageContent/HomepageContent'
 export { HomepageStyleScope, type HomepageStyleScopeProps } from './HomepageStyleScope'

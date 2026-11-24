@@ -18,7 +18,7 @@ export const Menu = forwardRef<HTMLDivElement, MenuProps>(function Menu(props, r
       {...MENU_DEFAULTS}
       {...props}
       className={clsx(
-        'border-weak z-10 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border bg-[--background-norm] py-2 text-[--text-norm] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
+        'border-[--border-weak] z-10 max-h-[--popover-available-height] max-w-[--popover-available-width] overflow-auto overscroll-contain rounded-[.5rem] border-[1px] bg-[--background-norm] py-2 text-[--text-norm] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.16)] focus:outline-none',
         props.className,
       )}
       render={<Ariakit.Menu render={props.render} />}
