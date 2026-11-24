@@ -1,9 +1,13 @@
 import { c } from 'ttag';
 
+import { organizationThunk } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { subscriptionThunk } from '@proton/account/subscription';
+import { userThunk } from '@proton/account/user';
 import { Button } from '@proton/atoms/Button/Button';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
+import { canSetupOrganization } from '@proton/components/containers/onboarding/canSetupOrganization';
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
@@ -13,7 +17,21 @@ import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
-export const isNewOnboardingOrganizationStepEligible: OnboardingStepEligibleCallback = async () => {
+/**
+ * Uses the same `canSetupOrganization` as `useGenericSteps`, which renders the step: a step reported as displayable
+ * but never rendered would break the regular B2C check.
+ */
+export const isNewOnboardingOrganizationStepEligible: OnboardingStepEligibleCallback = async (dispatch) => {
+    const [user, organization, subscription] = await Promise.all([
+        dispatch(userThunk()),
+        dispatch(organizationThunk()),
+        dispatch(subscriptionThunk()),
+    ]);
+
+    if (!canSetupOrganization({ user, organization, subscription })) {
+        return { canDisplay: false };
+    }
+
     return {
         canDisplay: true,
         preload: [onboardingFamilyPlan],

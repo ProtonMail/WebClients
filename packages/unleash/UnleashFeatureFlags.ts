@@ -309,6 +309,7 @@ enum LumoFeatureFlag {
 
 export enum MailFeatureFlag {
     MailMetrics = 'MailMetrics',
+    OnboardingStepsExperiment = 'OnboardingStepsExperiment',
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     PostSignupSurvey = 'PostSignupSurvey',
