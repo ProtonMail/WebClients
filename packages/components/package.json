@@ -598,6 +598,7 @@
         "./containers/organization/useOrganizationUnprivatizationModals": "./containers/organization/useOrganizationUnprivatizationModals.tsx",
         "./containers/otherMailPreferences/OtherMailPreferencesSection": "./containers/otherMailPreferences/OtherMailPreferencesSection.tsx",
         "./containers/password/AuthModal": "./containers/password/AuthModal.tsx",
+        "./containers/password/getAuthPasswordCopy": "./containers/password/getAuthPasswordCopy.ts",
         "./containers/password/getReAuthTwoFactorTypes": "./containers/password/getReAuthTwoFactorTypes.ts",
         "./containers/password/SSOAuthModal": "./containers/password/SSOAuthModal.tsx",
         "./containers/password/TwoFactorAuth": "./containers/password/TwoFactorAuth.tsx",

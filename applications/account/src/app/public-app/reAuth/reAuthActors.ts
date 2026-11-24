@@ -1,10 +1,12 @@
 import { fromPromise } from 'xstate';
 
-import { queryScopes } from '@proton/shared/lib/api/auth';
+import { getInfo, queryScopes } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import type { InfoAuthedResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
@@ -41,19 +43,33 @@ export const createReAuthActors = ({ api, preSubmit, login }: ReAuthServices) =>
 
     return {
         preSubmit: fromPromise(preSubmit),
+        /**
+         * How an admin or delegated session re-authenticates: it's the admin's or trusted contact's own account that
+         * signs in, which the session's user doesn't tell. Their backup password wouldn't unlock this account's keys.
+         */
+        fetchMethod: fromPromise<'idp' | 'password'>(async () => {
+            try {
+                const info = await api<SSOInfoResponse | InfoAuthedResponse>({
+                    ...getInfo({ intent: 'Auto', reauthScope: 'locked' }),
+                    silence: true,
+                });
+                return 'SSOChallengeToken' in info ? 'idp' : 'password';
+            } catch (error) {
+                if (getApiError(error).code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO) {
+                    return 'idp';
+                }
+                throw error;
+            }
+        }),
         /** Checks the password; signs in, or returns the salts when the keys have their own password. */
         submitPassword: fromPromise<
             { unlockWithSalts: KeySalt[] | undefined },
-            { state: ReAuthState; password: string }
-        >(async ({ input: { state, password } }) => {
+            { state: ReAuthState; password: string; needsKeys: boolean }
+        >(async ({ input: { state, password, needsKeys } }) => {
             await preSubmit();
             await srpAuth({ api, credentials: { password }, config: { ...queryUnlock(), silence: true } });
 
-            if (
-                state.reAuthType === 'default' ||
-                !!state.session.data.offlineKey ||
-                !state.session.data.User.Keys.length
-            ) {
+            if (!needsKeys) {
                 await loginReAuthenticated(state.session);
                 return { unlockWithSalts: undefined };
             }
