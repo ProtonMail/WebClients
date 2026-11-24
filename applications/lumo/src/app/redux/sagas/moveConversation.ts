@@ -1,20 +1,14 @@
 import type { Action, PayloadAction } from '@reduxjs/toolkit';
 import isEqual from 'lodash/isEqual';
-import type { SagaIterator } from 'redux-saga';
-import type { Channel } from 'redux-saga';
+import type { Channel, SagaIterator } from 'redux-saga';
 import { buffers } from 'redux-saga';
-import { actionChannel, all, call, getContext, put, select, take } from 'redux-saga/effects';
+import type { SagaReturnType } from 'redux-saga/effects';
+import { actionChannel, call, getContext, put, select, take } from 'redux-saga/effects';
 
 import { MAX_ASSETS_PER_SPACE, MAX_CONVERSATIONS_PER_SPACE } from '../../constants/limits';
 import type { DbApi } from '../../indexedDb/db';
 import type { LumoApi } from '../../remote/api';
-import type {
-    GetConversationRemote,
-    GetSpaceRemote,
-    RemoteDeletedAttachment,
-    RemoteFilledAttachment,
-    RemoteMessage,
-} from '../../remote/types';
+import type { GetSpaceRemote, RemoteDeletedAttachment, RemoteFilledAttachment } from '../../remote/types';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import type {
     Attachment,
@@ -24,7 +18,6 @@ import type {
     Message,
     MessageId,
     SerializedAttachment,
-    SerializedMessage,
     ShallowAttachment,
     Space,
 } from '../../types';
@@ -78,8 +71,8 @@ import {
     refreshFilledAttachmentFromRemote,
     softDeleteAttachmentFromLocal,
 } from './attachments';
-import { refreshConversationFromRemote, softDeleteConversationFromLocal } from './conversations';
-import { refreshMessageFromRemote } from './messages';
+import { loadSyncedConversation, resolveConversationRemoteId } from './conversationSnapshot';
+import { softDeleteConversationFromLocal } from './conversations';
 import { softDeleteSpaceFromLocal } from './spaces';
 
 class MoveConversationError extends Error {
@@ -236,104 +229,6 @@ function* resolveFullAttachment(
     throw new MoveConversationError(`attachment ${id} could not be loaded`, 'unavailable');
 }
 
-// Full messages fetched in parallel while completing a conversation before a move.
-const FETCH_MESSAGES_CONCURRENCY = 8;
-
-/**
- * Moving copies what is on this device and then deletes the original, so the local copy must be complete.
- * A chat that was never opened here only has what the space-list pull brought: no messages, or shallow ones
- * (no payload). Those are fetched when a chat is opened, so do the same here and wait for it. Throws when
- * completeness can't be confirmed, so the move is aborted before anything is created or deleted.
- *
- * Chats that were never pushed have no remote counterpart and are complete locally.
- */
-function* ensureConversationFullyLoaded(
-    conversation: Conversation,
-    request: MoveConversationToSpaceRequest
-): SagaIterator<void> {
-    const remoteConversationId: string | undefined = yield select(
-        (s: LumoState) => s.idmap?.local2remote?.conversation?.[conversation.id]
-    );
-    if (!remoteConversationId) {
-        return;
-    }
-
-    // Fetching is where a slow connection hurts, so let the user know what is going on.
-    yield put(moveConversationToSpaceProgress({ ...request, stage: 'loading' }));
-
-    const lumoApi: LumoApi = yield getContext('lumoApi');
-    const dbApi: DbApi = yield getContext('dbApi');
-
-    let remote: GetConversationRemote | null;
-    try {
-        remote = yield call([lumoApi, lumoApi.getConversation], remoteConversationId, conversation.spaceId);
-    } catch (e) {
-        console.error('moveConversation: cannot fetch the conversation', e);
-        throw new MoveConversationError('cannot fetch the conversation', 'unavailable');
-    }
-    if (!remote || remote.conversation.deleted) {
-        throw new MoveConversationError('conversation is not available remotely', 'unavailable');
-    }
-
-    // The response carries the conversation's current metadata (title, `artifactAssets`...), which may be newer than
-    // Redux. Take it in before anything is copied: the copy is built from, and later compared with, what Redux holds.
-    try {
-        yield call(refreshConversationFromRemote, { payload: remote.conversation });
-    } catch (e) {
-        console.error('moveConversation: cannot refresh the conversation', e);
-        throw new MoveConversationError('cannot refresh the conversation', 'unavailable');
-    }
-
-    const remoteMessages = remote.messages.filter((m) => !m.deleted);
-
-    const isFilledLocally = function* (messageId: MessageId): SagaIterator<boolean> {
-        const idbMessage: SerializedMessage | undefined = yield call([dbApi, dbApi.getMessageById], messageId);
-        return Boolean(idbMessage?.encrypted);
-    };
-
-    for (let i = 0; i < remoteMessages.length; i += FETCH_MESSAGES_CONCURRENCY) {
-        const chunk = remoteMessages.slice(i, i + FETCH_MESSAGES_CONCURRENCY);
-        yield all(
-            chunk.map((shallow) =>
-                call(function* (): SagaIterator<void> {
-                    if (yield call(isFilledLocally, shallow.id)) {
-                        return;
-                    }
-                    let full: RemoteMessage | null;
-                    try {
-                        full = shallow.encrypted
-                            ? shallow
-                            : yield call(
-                                  [lumoApi, lumoApi.getMessage],
-                                  shallow.remoteId,
-                                  shallow.conversationId,
-                                  shallow.parentId,
-                                  shallow.remoteConversationId
-                              );
-                    } catch (e) {
-                        console.error(`moveConversation: cannot fetch message ${shallow.id}`, e);
-                        throw new MoveConversationError(`message ${shallow.id} could not be fetched`, 'unavailable');
-                    }
-                    if (!full || !full.encrypted) {
-                        throw new MoveConversationError(`message ${shallow.id} is not available`, 'unavailable');
-                    }
-                    // Awaited: stores the message in Redux and IndexedDB and pulls its attachments.
-                    yield call(refreshMessageFromRemote, { payload: full });
-                })
-            )
-        );
-    }
-
-    // Confirm instead of assuming: every remote message must now be complete on this device.
-    const inRedux: Record<MessageId, Message> = yield select(selectMessagesByConversationId(conversation.id));
-    for (const { id } of remoteMessages) {
-        const filled: boolean = yield call(isFilledLocally, id);
-        if (!filled || !inRedux[id]) {
-            throw new MoveConversationError(`message ${id} could not be loaded`, 'unavailable');
-        }
-    }
-}
-
 function remapShallowAttachment(
     attachment: ShallowAttachment,
     idMap: Map<AttachmentId, AttachmentId>,
@@ -423,24 +318,36 @@ function* copyConversation(request: MoveConversationToSpaceRequest, created: Cre
         throw new MoveConversationError('a generated file is still being saved', 'busy');
     }
 
-    // The copy is only as complete as what is on this device, so make sure all of it is here first.
-    yield call(ensureConversationFullyLoaded, conversation, request);
+    // Establish whether the source is synced before copying or scheduling any cleanup.
+    let snapshot: SagaReturnType<typeof loadSyncedConversation> | undefined;
+    try {
+        const remoteId: string | undefined = yield call(resolveConversationRemoteId, conversation);
+        if (remoteId) {
+            yield put(moveConversationToSpaceProgress({ ...request, stage: 'loading' }));
+            snapshot = yield call(loadSyncedConversation, conversation, remoteId);
+        }
+    } catch {
+        throw new MoveConversationError('cannot load the complete conversation', 'unavailable');
+    }
 
-    // Loading can take a while: copy the conversation as it is now, not as it was before.
-    const refreshed: Conversation | undefined = yield select(selectConversationById(conversationId));
+    const refreshed: Conversation | undefined =
+        snapshot?.conversation ?? (yield select(selectConversationById(conversationId)));
     if (!refreshed) {
         throw new MoveConversationError('conversation no longer exists', 'unavailable');
     }
     conversation = refreshed;
     const copiedConversation = conversation;
 
-    const messagesMap: Record<MessageId, Message> = yield select(selectMessagesByConversationId(conversationId));
-    const messages = Object.values(messagesMap).sort(
-        (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-    );
-    if (messages.some((m) => m.placeholder)) {
+    const originalMessages: Record<MessageId, Message> = yield select(selectMessagesByConversationId(conversationId));
+    if (
+        conversation.status === ConversationStatus.GENERATING ||
+        Object.values(originalMessages).some((m) => m.placeholder)
+    ) {
         throw new MoveConversationError('conversation is generating a response', 'busy');
     }
+    const messages = Object.values(snapshot?.messages ?? originalMessages).sort(
+        (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+    );
 
     // Limits are enforced by the server, check upfront so the move doesn't fail halfway.
     const targetConversations: Record<string, Conversation> = yield select(selectConversationsBySpaceId(targetSpaceId));
@@ -568,7 +475,10 @@ function* copyConversation(request: MoveConversationToSpaceRequest, created: Cre
     );
 
     // Everything is in Redux before the first push, so the push sagas find what they need.
-    const channel = yield actionChannel((action: Action) => getPushOutcome(action) !== undefined, buffers.expanding(100));
+    const channel = yield actionChannel(
+        (action: Action) => getPushOutcome(action) !== undefined,
+        buffers.expanding(100)
+    );
     try {
         const pending = new Set<string>([
             pushKey('conversation', newConvId),
@@ -597,9 +507,10 @@ function* copyConversation(request: MoveConversationToSpaceRequest, created: Cre
         channel.close();
     }
 
-    // Anything added to the original while the copy was syncing would be lost when it is deleted.
+    // Compare against all source entries at snapshot time. The verified copy can deliberately omit
+    // cached entries that the server marks as deleted.
     const latest: Record<MessageId, Message> = yield select(selectMessagesByConversationId(conversationId));
-    if (Object.values(latest).some((m) => !messageIdMap.has(m.id) || m.placeholder)) {
+    if (!isEqual(latest, originalMessages)) {
         throw new MoveConversationError('conversation changed while moving', 'busy');
     }
     // Metadata changes too, without any new message: a generated file that finishes uploading adds an
@@ -631,7 +542,10 @@ function* purgeMessages(ids: MessageId[]): SagaIterator<void> {
     }
 }
 
-function* removeOriginal(conversationId: ConversationId, copiedSourceAttachmentIds: AttachmentId[]): SagaIterator<void> {
+function* removeOriginal(
+    conversationId: ConversationId,
+    copiedSourceAttachmentIds: AttachmentId[]
+): SagaIterator<void> {
     const conversation: Conversation | undefined = yield select(selectConversationById(conversationId));
     if (!conversation) {
         return;
