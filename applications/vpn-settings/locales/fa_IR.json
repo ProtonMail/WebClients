@@ -551,6 +551,9 @@
       "Spam": [
         "هرزنامه"
       ],
+      "Special Offer": [
+        "پیشنهاد ویژه"
+      ],
       "Start import": [
         "آغاز واردات"
       ],
@@ -5567,6 +5570,14 @@
         "شروع به استفاده از ${ appName } کنید"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "توصیه شده"
+      ],
+      "Select your plan": [
+        "اشتراکتان را انتخاب کنید"
+      ]
+    },
     "passwordless": {
       "Permission denied, administrator privileges have been restricted.": [
         "دسترسی رد شد، امتیازات مدیر محدود شده است."
@@ -6023,6 +6034,9 @@
       ],
       "24 months": [
         "24 ماه"
+      ],
+      "Free": [
+        "رایگان"
       ]
     },
     "Signup label": {
@@ -6249,10 +6263,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "${ dayDiff } روز مانده",
-        "${ dayDiff } روز مانده"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
       ],
@@ -6470,6 +6480,14 @@
         "برای اشخاص"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "اقدامات"
+      ],
+      "Status": [
+        "وضعیت"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "اقدام"
@@ -6482,9 +6500,6 @@
       ],
       "CSV field": [
         "کادر CSV"
-      ],
-      "Edit": [
-        "ویرایش"
       ],
       "Email address": [
         "نشانی ایمیل"
@@ -6783,9 +6798,6 @@
       ],
       "Email categories": [
         "دسته‌بندی‌های ایمیل"
-      ],
-      "Enter your password": [
-        "کلمه عبور خود را وارد نمایید"
       ],
       "Error": [
         "خطا"

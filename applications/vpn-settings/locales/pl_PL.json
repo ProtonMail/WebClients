@@ -404,6 +404,9 @@
       "Don't show again": [
         "Nie pokazuj ponownie"
       ],
+      "Don't show this again": [
+        "Nie pokazuj tego ponownie"
+      ],
       "Done": [
         "Gotowe"
       ],
@@ -1093,6 +1096,9 @@
       ],
       "Skip": [
         "Pomiń"
+      ],
+      "Skip to main content": [
+        "Przejdź do głównej treści"
       ],
       "Skip verification": [
         "Pomiń weryfikację"
@@ -5029,9 +5035,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Minimalna kwota darowizny wynosi ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Nazwa zasady musi zawierać od 3 do 40 znaków."
       ],
@@ -5431,9 +5434,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Grupy ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Konta z niestandardową domenę nie mogą dołączać do planu rodzinnego."
       ],
@@ -5491,12 +5491,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Subskrypcja zostanie naliczona głównemu administratorowi planu."
       ],
-      "View the invitation": [
-        "Wyświetl zaproszenie",
-        "Wyświetl zaproszenia",
-        "Wyświetl zaproszenia",
-        "Wyświetl zaproszenia"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dołącz do organizacji ${ invite.OrganizationName }"
       ],
@@ -5505,9 +5499,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Nie możesz zaakceptować zaproszenia w obecnym planie."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Dołącz do organizacji ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Osiągnięto maksymalną liczbę ${ n } zaakceptowanego zaproszenia w ciągu 6 miesięcy.",
@@ -6884,6 +6875,9 @@
         "+ ${ invisibleCount } więcej",
         "+ ${ invisibleCount } więcej",
         "+ ${ invisibleCount } więcej"
+      ],
+      "1 vault per user": [
+        "1 sejf na użytkownika"
       ],
       "2FA disabled": [
         "Uwierzytelnianie dwustopniowe jest wyłączone"
@@ -9579,6 +9573,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Uzyskaj bezpieczny dostęp do ${ PASS_APP_NAME } z terminala, co jest idealne do skryptów, automatyzacji i przepływów pracy programistycznej."
+      ],
+      "Access tokens": [
+        "Tokeny dostępu"
       ],
       "Account holder": [
         "Właściciel konta"
@@ -12435,17 +12432,11 @@
       "1 email per month": [
         "1 wiadomość miesięcznie"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 wiadomość miesięcznie. Najnowsze wiadomości na temat prywatności i tego, co dzieje się w świecie ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 wiadomość kwartalnie"
       ],
       "1-2 emails per month": [
         "1-2 wiadomości miesięcznie"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 wiadomości rocznie. Przypomnienia o dbaniu o aktualność metod odzyskiwania."
       ],
       "2-4 emails per year": [
         "2-4 wiadomości rocznie"
@@ -12470,9 +12461,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Podczas pierwszego miesiąca korzystania z usługi ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Wiadomości e-mail"
       ],
       "In-app notifications": [
         "Powiadomienia w aplikacji"
@@ -12712,6 +12700,9 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
+      ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Możesz anulować w dowolnym momencie przed ${ cancelDate }."
@@ -12993,7 +12984,18 @@
         "Zacznij korzystać z ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Zalecany"
+      ],
+      "Select your plan": [
+        "Wybierz plan"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Darmowy na zawsze"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],
@@ -15245,6 +15247,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "łącznie ${ value } szyfrowanej przestrzeni dyskowej"
+      ],
       "1 month": [
         "1 miesiąc"
       ],
@@ -15253,6 +15258,9 @@
       ],
       "24 months": [
         "24 miesiące"
+      ],
+      "Free": [
+        "Za darmo"
       ]
     },
     "Signup label": {
@@ -16105,12 +16113,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } z funkcjami premium"
       ],
-      "${ dayDiff } day left": [
-        "Pozostał ${ dayDiff } dzień",
-        "Pozostały ${ dayDiff } dni",
-        "Pozostało ${ dayDiff } dni",
-        "Pozostało ${ dayDiff } dnia"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
       ],
@@ -16384,12 +16386,6 @@
       "What you give up when you cancel ${ planName }": [
         "Z czego rezygnujesz, anulując plan ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Po anulowaniu planu ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 1 GB przestrzeni dyskowej Proton Mail i 5 GB przestrzeni dyskowej Proton Drive. Stracisz również bonusową przestrzeń dyskową."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Po anulowaniu planu ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 1 GB przestrzeni dyskowej Proton Mail i 5 GB przestrzeni dyskowej Proton Drive. Twój zespół doświadczy przerw w pracy, ponieważ darmowy plan nie obsługuje dodatkowych użytkowników."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Gdy subskrypcja ${ planName } zakończy się w dniu ${ expiryDate }, zostaniesz przeniesiony do planu ${ BRAND_NAME } Free."
       ],
@@ -16398,9 +16394,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Do ${ boldedDate } możesz nadal cieszyć się wszystkimi bonusami obecnego planu."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Subskrypcja ${ planName } wygaśnie za ${ expiryDate }. Środki za pozostały czas zostaną dodane do konta ${ BRAND_NAME }. Sprawdź, czy nie przekroczysz limitów darmowego planu. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Twój plan ${ planName } nie tylko zapewnia bezpieczeństwo danych biznesowych i komunikacji. Wspiera on zgodności z przepisami, wyróżnia firmę i zapewnia łączność zespołowi."
@@ -16821,6 +16814,14 @@
         "Dla Ciebie"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Akcje"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Akcja"
@@ -16833,9 +16834,6 @@
       ],
       "CSV field": [
         "Pole CSV"
-      ],
-      "Edit": [
-        "Edytuj"
       ],
       "Email address": [
         "Adres e-mail"
@@ -17551,9 +17549,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Wpisz szczegóły konta ${ BRAND_NAME }, aby dołączyć do ${ app } w wersji beta"
-      ],
-      "Enter your password": [
-        "Wpisz hasło"
       ],
       "Error": [
         "Błąd"

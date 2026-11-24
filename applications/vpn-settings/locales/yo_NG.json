@@ -652,6 +652,9 @@
       "Don't show again": [
         "Má fi hàn mọ́"
       ],
+      "Don't show this again": [
+        "Ẹ má fi hàn mi mọ́"
+      ],
       "Done": [
         "Ti tán"
       ],
@@ -1114,6 +1117,9 @@
       "Remove": [
         "Yọ ọ́ kúrò"
       ],
+      "Remove ${ name }": [
+        "Yọ ${ name } kúrò"
+      ],
       "Remove all other devices": [
         "Yọ àwọn irin iṣẹ́ mìíràn gbogbo kúrò"
       ],
@@ -1366,11 +1372,17 @@
       "Skip": [
         "Fò ó"
       ],
+      "Skip to main content": [
+        "Fò kọjá sí àkóri àkọ́kọ́"
+      ],
       "Skip verification": [
         "Fò ìjẹ́rìísí"
       ],
       "Spam": [
         "Spáàmù"
+      ],
+      "Special Offer": [
+        "Àkànṣe ìfifúnni"
       ],
       "Start import": [
         "Bẹ̀rẹ̀ gbígbé wọlé"
@@ -5342,9 +5354,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Iye krẹ́díìtì tí a lè fi kún kéré jù ni ${ price }."
       ],
-      "The minimum donation amount is ${ price }": [
-        "Ìwapọ̀ owó ìfúnra lọ́wọ́ jẹ́ ${ price }."
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Orúkọ ìlànà náà gbọdọ̀ wà láàrin 3 àti 40 àmì."
       ],
@@ -5750,9 +5759,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Àwọn ẹgbẹ́ ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Àwọn àkántì tí wọ́n ní àgbègbè ìkápá àkànṣe kò lè dàpọ̀ mọ́ Family plan."
       ],
@@ -5804,9 +5810,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Alákòóso ìṣáájú ètò yìí ni yóò san owó ìforúkọsílẹ̀ náà."
       ],
-      "View the invitation": [
-        "Wo àwọn ìpè"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "A pè yín láti dara pọ̀ mọ́ ${ invite.OrganizationName }"
       ],
@@ -5815,9 +5818,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Ẹ kò lè gbà ìpè yìí pẹ̀lú ètò tí ẹ wà níyìí."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "A ti pè yín láti dara pọ̀ mọ́ ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Ẹ ti dé ìdíwọ̀n ìpè ${ n } tí a gbà nínú oṣù 6."
@@ -7634,6 +7634,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Pípà àtìlẹ́yìn dátà lórí irin iṣẹ́ yìí yóò dènì yín lọ́wọ́ kí ẹ le ṣí dátà yín tí a sọ di àṣírí sílẹ̀ láìfọwọ́ lẹ́yìn ìṣatúnṣe ètò ọ̀rọ̀ ìgbaniwọlé."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Àwọn ẹ̀dínwó wà nípasẹ̀ owó oṣùòṣù àṣà. Ìforúkọsílẹ̀ yín á tún gbilẹ̀ ní owó ọdún àṣà nígbà tí sáà ìdíyeléni bá parí."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Ẹ ṣe àwárí àwọn àbùdá tuntun tí a ṣí, kí ẹ sì bẹ̀rẹ̀ sí lílo wọn lẹ́sẹ̀kẹ́sẹ̀!"
@@ -9929,6 +9932,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Ẹ ní ìráàyèsí sí ${ PASS_APP_NAME } ní ìbámu àṣírí láti inú tẹ́mínàlì, èyí tí ó dára fún kíkọ ìwé àṣẹ, automation, àti ìgbésẹ̀ ìdàgbàsókè ìṣẹ́."
       ],
+      "Access tokens": [
+        "Àwọn amì ìráàyèsí"
+      ],
       "Account holder": [
         "Oní àkántì"
       ],
@@ -9943,6 +9949,9 @@
       ],
       "Add all organization members": [
         "Ṣàfikún gbogbo àwọn ọmọ ẹgbẹ́ àjọ"
+      ],
+      "Add managers": [
+        "Ṣàfikún àwọn olùṣàkóso"
       ],
       "Additional comments": [
         "Àsọyé àfikún"
@@ -12746,17 +12755,11 @@
       "1 email per month": [
         "Ímeèlì 1 ní oṣù kan"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 ímeèlì ní oṣù kan. Ẹ gba àwọn ìròyìn àṣírí tí ó tuntun jùlọ àti ohun tí ó ń ṣẹlẹ̀ ní àgbáyé ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 ímeèlì ní oṣù mẹ́ta kan"
       ],
       "1-2 emails per month": [
         "Ímeèlì 1 sí 2 ní oṣù kan"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "Ímeèlì 1 sí 4 ní ọdún kan. Àwọn ìkìlọ̀ láti jẹ́ kí àwọn ọ̀nà ìmúgbàpadà yín má ba ti parun."
       ],
       "2-4 emails per year": [
         "2 sí 4 ímeèlì ní ọdún kan"
@@ -12781,9 +12784,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Ní àkọ́kọ́ oṣù yín ti lílo ọ̀kan nínú àwọn ọjà ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Àwọn ìbánisọ̀rọ̀ ímeèlì"
       ],
       "In-app notifications": [
         "Àwọn ìwífúnni nínú áàpù"
@@ -13445,7 +13445,18 @@
         "Bẹ̀rẹ̀ sí nílo ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "A dábàá èyí"
+      ],
+      "Select your plan": [
+        "Yàn ètò yín"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Ọ̀fẹ́ fún ìgbà tí kò ní òpin"
+      ],
       "Secure vault sharing": [
         "Pípín ibi ìpamọ́ tó ní ààbò"
       ],
@@ -13998,6 +14009,9 @@
       ],
       "Enter a name": [
         "Tẹ̀ orúkọ kan sínú"
+      ],
+      "Enter name or email address": [
+        "Tẹ̀ orúkọ tàbí àdírẹ́sì ímeèlì"
       ],
       "example@domain.com": [
         "apeere@domeeni.ng"
@@ -15651,6 +15665,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } ìfipamọ́ tí a sọ di àṣírí lápapọ̀"
+      ],
       "1 month": [
         "Oṣù 1"
       ],
@@ -15659,6 +15676,9 @@
       ],
       "24 months": [
         "Oṣù 24"
+      ],
+      "Free": [
+        "Ọ̀fẹ́"
       ]
     },
     "Signup label": {
@@ -16448,9 +16468,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } àti ${ VPN_SHORT_APP_NAME } pẹ̀lú àwọn àfikún àbùdá"
       ],
-      "${ dayDiff } day left": [
-        "Ọjọ́ ${ dayDiff } ṣẹ̀kù"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Áàpù dẹ́sítọ̀pù ${ MAIL_APP_NAME }"
       ],
@@ -16706,12 +16723,6 @@
       "What you give up when you cancel ${ planName }": [
         "Ohun tí ẹ yóò kọ̀ sílẹ̀ nígbà tí ẹ bá fagi lé ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Nígbà tí ẹ bá fagi lé ${ planName }, a máa rẹ̀ yín sílẹ̀ sí ${ BRAND_NAME } Free, èyí tí kò fi ànìfà kí ó jù 1 GB ìfipamọ́ Mail àti 5 GB ìfipamọ́ Drive lọ. Ẹ máa sankú àwọn ànìfàní ìfipamọ́ tí a ti fún yín tẹ́lẹ̀ náà."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Nígbà tí ẹ bá fagi lé ${ planName }, a yóò rẹ̀ yín sílẹ̀ sí ${ BRAND_NAME } Free, èyí tí kò fún yín ní ju 1 GB ìfipamọ́ Mail àti 5 GB ìfipamọ́ Drive lọ. Àwọn ará ẹgbẹ́ yín yóò ní ìdàmú nínú iṣẹ́ wọn nítorí pé Free plan kò tìlẹ́yìn àwọn olùmúlò àfikún."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Nígbà tí ìforúkọsílẹ̀ ${ planName } yín bá parí ní ${ expiryDate }, a yóò rẹ̀ yín sílẹ̀ sí Free plan ${ BRAND_NAME }."
       ],
@@ -16720,9 +16731,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Ẹ lè máa tẹ̀síwájú láti gbádùn àwọn ànfààní gbogbo ètò yín ìsinsìnyí títí di ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ìforúkọsílẹ̀ yín ${ planName } wà ní ${ expiryDate } tó ṣẹ̀kù. A máa fi àwọn krẹ́díìtì fún àsìkò tó ṣẹ̀kù sínú àkántì ${ BRAND_NAME } yín. Ríi dájú pé ẹ kò kọjà àwọn àápẹ́nù Free plan kí ẹ tó fagi lé e. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ètò ${ planName } yín kì ṣe kí ó ń dáàbò bo dátà iṣẹ́ yín àti ìbánisọ̀rọ̀ yín nìkan. Ó ń tìlẹ́yìn àwọn àfojúsùn ìmọ̀ra òfin yín, ó ń mú kí iṣẹ́ yín yàtọ̀ sí ti àwọn mìíràn, ó sì ń so ẹgbẹ́ yín mọ́ ara wọn."
@@ -17152,6 +17160,14 @@
         "Fún àwọn ènìyàn èyọ̀kẹ́lù"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Àwọn ìṣe"
+      ],
+      "Status": [
+        "Ìpò"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Ìṣe"
@@ -17164,9 +17180,6 @@
       ],
       "CSV field": [
         "Ààyè CSV"
-      ],
-      "Edit": [
-        "Ṣe àtúkọ rẹ̀"
       ],
       "Email address": [
         "Àdírẹ́sì ímeèlì"
@@ -17894,9 +17907,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ẹ tẹ àwọn àlàyé àkántì ${ BRAND_NAME } yín sílẹ̀ láti darapọ̀ mọ́ ètò bẹ́tà ${ app }"
-      ],
-      "Enter your password": [
-        "Tẹ̀ ọ̀rọ̀ ìgbaniwọlé yín sínú"
       ],
       "Error": [
         "Àṣìṣe"

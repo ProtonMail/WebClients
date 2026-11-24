@@ -404,6 +404,9 @@
       "Don't show again": [
         "ไม่ต้องแสดงให้เห็นอีก"
       ],
+      "Don't show this again": [
+        "ไม่ต้องแสดงอีก"
+      ],
       "Done": [
         "เสร็จสมบูรณ์"
       ],
@@ -1093,6 +1096,9 @@
       ],
       "Skip": [
         "ข้าม"
+      ],
+      "Skip to main content": [
+        "ข้ามไปยังเนื้อหาหลัก"
       ],
       "Skip verification": [
         "ข้ามการยืนยัน"
@@ -4921,9 +4927,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "จำนวนเครดิตขั้นต่ำที่สามารถเพิ่มได้คือ ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "จำนวนเงินบริจาคขั้นต่ำคือ ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "ชื่อนโยบายต้องมีความยาวระหว่าง 3 ถึง 40 ตัวอักษร"
       ],
@@ -5320,9 +5323,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "กลุ่ม ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "บัญชีที่มีโดเมนที่กำหนดเองไม่สามารถเข้าร่วม Family plan ได้"
       ],
@@ -5374,9 +5374,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "ค่าสมาชิกจะถูกเรียกเก็บจากผู้ดูแลระบบหลักของแผนนี้"
       ],
-      "View the invitation": [
-        "ดูคำเชิญ"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "คุณได้รับเชิญให้เข้าร่วม ${ invite.OrganizationName }"
       ],
@@ -5385,9 +5382,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "คุณไม่สามารถตอบรับคำเชิญนี้ด้วยแผนปัจจุบันของคุณได้"
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "คุณได้รับเชิญให้เข้าร่วม ${ bannerOrganization } ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "คุณถึงขีดจำกัดคำเชิญที่ตอบรับ ${ n } รายการในรอบ 6 เดือนแล้ว"
@@ -9184,6 +9178,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "เข้าถึง ${ PASS_APP_NAME } อย่างปลอดภัยจากเทอร์มินัล เหมาะสำหรับการเขียนสคริปต์ ระบบอัตโนมัติ และเวิร์กโฟลว์การพัฒนา"
       ],
+      "Access tokens": [
+        "โทเค็นการเข้าถึง"
+      ],
       "Account holder": [
         "เจ้าของบัญชี"
       ],
@@ -11907,17 +11904,11 @@
       "1 email per month": [
         "1 อีเมล ต่อเดือน"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 อีเมลต่อเดือน รับข่าวสารล่าสุดเกี่ยวกับความเป็นส่วนตัวและความเคลื่อนไหวในจักรวาล ${ BRAND_NAME }"
-      ],
       "1 email per quarter": [
         "1 อีเมลทุกๆ 3 เดือน"
       ],
       "1-2 emails per month": [
         "1-2 อีเมล ต่อเดือน"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "อีเมล 1-4 ฉบับต่อปี ตัวแจ้งเตือนเพื่อให้อัปเดตวิธีการกู้คืนให้เป็นปัจจุบันอยู่เสมอ"
       ],
       "2-4 emails per year": [
         "2-4 อีเมลต่อปี"
@@ -11942,9 +11933,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "ในช่วงเดือนแรกของการใช้ผลิตภัณฑ์ ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "การสื่อสารทางอีเมล"
       ],
       "In-app notifications": [
         "การแจ้งเตือนในแอป"
@@ -12456,7 +12444,18 @@
         "เริ่มใช้งาน ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "แนะนำ"
+      ],
+      "Select your plan": [
+        "เลือกแผน"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "ฟรีตลอดไป"
+      ],
       "Secure vault sharing": [
         "การแชร์ห้องนิรภัยที่ปลอดภัย"
       ],
@@ -14603,6 +14602,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "พื้นที่จัดเก็บที่เข้ารหัสทั้งหมด ${ value }"
+      ],
       "1 month": [
         "1 เดือน"
       ],
@@ -14611,6 +14613,9 @@
       ],
       "24 months": [
         "24 เดือน"
+      ],
+      "Free": [
+        "ฟรี"
       ]
     },
     "Signup label": {
@@ -15373,9 +15378,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } และ ${ VPN_SHORT_APP_NAME } พร้อมคุณสมบัติพรีเมียม"
       ],
-      "${ dayDiff } day left": [
-        "เหลืออีก ${ dayDiff } วัน"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "แอปเดสก์ท็อป ${ MAIL_APP_NAME }"
       ],
@@ -15631,12 +15633,6 @@
       "What you give up when you cancel ${ planName }": [
         "สิ่งที่จะเสียไปเมื่อยกเลิก ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "เมื่อยกเลิก ${ planName } บัญชีจะถูกดาวน์เกรดเป็น ${ BRAND_NAME } Free ซึ่งให้พื้นที่จัดเก็บเมลสูงสุด 1 GB และไดรฟ์สูงสุด 5 GB นอกจากนี้คุณจะเสียโบนัสพื้นที่จัดเก็บที่ได้รับก่อนหน้านี้"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "เมื่อยกเลิก ${ planName } บัญชีจะถูกดาวน์เกรดเป็น ${ BRAND_NAME } Free ซึ่งให้พื้นที่จัดเก็บเมลสูงสุด 1 GB และไดรฟ์สูงสุด 5 GB ทีมของคุณอาจประสบปัญหาในการทำงานเนื่องจาก Free plan ไม่รองรับผู้ใช้เพิ่มเติม"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "เมื่อการสมัครสมาชิก ${ planName } สิ้นสุดลงในวันที่ ${ expiryDate } คุณจะถูกดาวน์เกรดเป็นแผน ${ BRAND_NAME } Free"
       ],
@@ -15645,9 +15641,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "สามารถเพลิดเพลินกับสิทธิประโยชน์ทั้งหมดของแผนปัจจุบันได้จนถึง ${ boldedDate }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "คุณยังคงมีเวลาใช้งานแผน ${ planName } จนถึง ${ expiryDate } เราจะเพิ่มเครดิตสำหรับเวลาที่เหลือไปยังบัญชี ${ BRAND_NAME } ของคุณ ตรวจสอบให้แน่ใจว่าการใช้งานไม่เกินขีดจำกัดของ Free plan ก่อนยกเลิก ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "แผน ${ planName } ไม่เพียงแต่รักษาความปลอดภัยข้อมูลและการสื่อสารของธุรกิจเท่านั้น แต่ยังช่วยสนับสนุนวัตถุประสงค์ด้านการปฏิบัติตามกฎระเบียบ สร้างความโดดเด่นให้ธุรกิจ และช่วยให้ทีมเชื่อมต่อกันอยู่เสมอ"
@@ -16068,6 +16061,14 @@
         "สำหรับบุคคลทั่วไป"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "ปฏิบัติการ"
+      ],
+      "Status": [
+        "สถานะ"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "การดำเนินการ"
@@ -16080,9 +16081,6 @@
       ],
       "CSV field": [
         "ช่องข้อมูล CSV"
-      ],
-      "Edit": [
-        "แก้ไข"
       ],
       "Email address": [
         "ที่อยู่อีเมล"
@@ -16771,9 +16769,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "ป้อนรายละเอียดบัญชี ${ BRAND_NAME } ของคุณเพื่อเข้าร่วมโปรแกรม ${ app } เบต้า"
-      ],
-      "Enter your password": [
-        "ป้อนรหัสผ่าน"
       ],
       "Error": [
         "ข้อผิดพลาด"

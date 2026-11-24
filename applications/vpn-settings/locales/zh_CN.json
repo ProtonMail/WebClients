@@ -679,6 +679,9 @@
       "Don't show again": [
         "不再显示"
       ],
+      "Don't show this again": [
+        "不再显示"
+      ],
       "Done": [
         "完成"
       ],
@@ -1159,6 +1162,9 @@
       "Remove": [
         "移除"
       ],
+      "Remove ${ name }": [
+        "移除 ${ name }"
+      ],
       "Remove all other devices": [
         "移除所有其他设备"
       ],
@@ -1420,11 +1426,17 @@
       "Skip": [
         "跳过"
       ],
+      "Skip to main content": [
+        "跳转到主要内容"
+      ],
       "Skip verification": [
         "跳过验证"
       ],
       "Spam": [
         "垃圾邮件"
+      ],
+      "Special Offer": [
+        "超值特惠"
       ],
       "Start import": [
         "开始导入"
@@ -5484,9 +5496,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "最低捐赠金额为 ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "策略名称必须在 3 至 40 个字符之间。"
       ],
@@ -5901,9 +5910,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "${ BRAND_NAME } 团体账户"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "带有自定义域的账户无法加入家庭套餐。"
       ],
@@ -5955,9 +5961,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "订购费用将向该计划的主要管理员收取。"
       ],
-      "View the invitation": [
-        "查看邀请"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "有人邀请您加入 ${ invite.OrganizationName }"
       ],
@@ -5966,9 +5969,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "您目前的计划不能接受此邀请。"
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "有人邀请您加入 ${ bannerOrganization }。${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "您在过去的 6 个月内已达到接受邀请 ${ n } 次的上限。"
@@ -7812,6 +7812,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "在此设备上禁用数据备份后，您将无法在重置密码后自动解锁加密数据。"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
       ],
       "Discover new features unlocked and start using them right away!": [
         "发现解锁的新功能，并立即开始使用！"
@@ -10167,6 +10170,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
       ],
+      "Access tokens": [
+        "访问令牌"
+      ],
       "Account credit": [
         "账户余额"
       ],
@@ -10184,6 +10190,9 @@
       ],
       "Add all organization members": [
         "添加所有组织成员"
+      ],
+      "Add managers": [
+        "添加管理员"
       ],
       "Additional comments": [
         "附加备注"
@@ -13016,17 +13025,11 @@
       "1 email per month": [
         "每月 1 封邮件"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "每月 1 封邮件。获取最新的隐私保护要闻与 ${ BRAND_NAME } 动态。"
-      ],
       "1 email per quarter": [
         "每个季度 1 封邮件"
       ],
       "1-2 emails per month": [
         "每月 1 至 2 封邮件"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "每年 1-4 封邮件，提醒您更新恢复方式！"
       ],
       "2-4 emails per year": [
         "每年 2 至 4 封邮件"
@@ -13051,9 +13054,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您使用 ${ BRAND_NAME } 产品的第一个月里"
-      ],
-      "Email communications": [
-        "邮件通讯"
       ],
       "In-app notifications": [
         "应用内通知"
@@ -13718,7 +13718,18 @@
         "开始使用 ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "推荐"
+      ],
+      "Select your plan": [
+        "选择账户等级"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "永久免费"
+      ],
       "Secure vault sharing": [
         "安全保险库共享"
       ],
@@ -14285,6 +14296,9 @@
       ],
       "Enter a name": [
         "请输入名称"
+      ],
+      "Enter name or email address": [
+        "请输入用户名或邮箱地址"
       ],
       "example@domain.com": [
         "example@domain.com"
@@ -15956,6 +15970,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } 总计加密存储空间"
+      ],
       "1 month": [
         "1 个月"
       ],
@@ -15964,6 +15981,9 @@
       ],
       "24 months": [
         "24 个月"
+      ],
+      "Free": [
+        "Free"
       ]
     },
     "Signup label": {
@@ -16771,9 +16791,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
       ],
-      "${ dayDiff } day left": [
-        "剩余 ${ dayDiff } 天"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
@@ -17029,12 +17046,6 @@
       "What you give up when you cancel ${ planName }": [
         "取消 ${ planName } 时您所放弃的内容"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "当您取消 ${ planName } 订阅后，您将被降级为 ${ BRAND_NAME } 免费计划。该计划仅提供至多1GB的邮件存储和最多5GB的网盘存储。 您还将失去所有先前获得的额外存储空间。"
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "当您取消 ${ planName } 时，您将降级为 ${ BRAND_NAME } 免费计划，该计划仅提供最多 1 GB 的邮件存储空间和最多 5 GB 的设备存储空间。由于免费计划不支持额外的用户，因此您团队的工作会受到影响。"
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "当您的 ${ planName } 订阅在 ${ expiryDate } 终止时，您将降级为 ${ BRAND_NAME } 免费计划。"
       ],
@@ -17043,9 +17054,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "在 ${ boldedDate } 之前，您可以继续享受当前套餐的所有权益。"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "您的 ${ planName } 订阅还有 ${ expiryDate }。我们会将剩余时间的点数加入您的 ${ BRAND_NAME } 账户。取消前请确保没有超过免费计划的限额。${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "您的 ${ planName } 计划不仅能确保您的业务数据和通信安全。它支持您的合规目标，让您的企业脱颖而出，并让您的团队保持联系。"
@@ -17483,6 +17491,14 @@
         "面向个人"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "操作"
+      ],
+      "Status": [
+        "状态"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "操作"
@@ -17495,9 +17511,6 @@
       ],
       "CSV field": [
         "CSV 字段"
-      ],
-      "Edit": [
-        "更改"
       ],
       "Email address": [
         "邮箱地址"
@@ -18228,9 +18241,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "请输入您的 ${ BRAND_NAME } 账户详细信息以加入 ${ app } Beta 计划"
-      ],
-      "Enter your password": [
-        "请输入您的密码"
       ],
       "Error": [
         "失败"

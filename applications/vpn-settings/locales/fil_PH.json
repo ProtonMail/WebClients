@@ -404,6 +404,9 @@
       "Don't show again": [
         "Huwag ipakita muli"
       ],
+      "Don't show this again": [
+        "Huwag na itong ipakita muli"
+      ],
       "Done": [
         "Tapos na"
       ],
@@ -1093,6 +1096,9 @@
       ],
       "Skip": [
         "Laktawan"
+      ],
+      "Skip to main content": [
+        "Laktawan at pumunta sa pangunahing nilalaman"
       ],
       "Skip verification": [
         "Laktawan ang verification"
@@ -4957,9 +4963,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Ang pinakamababang halaga ng credit na maaaring idagdag ay ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Ang minimum na halaga ng donasyon ay ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Ang pangalan ng patakaran ay dapat nasa pagitan ng 3 at 40 character."
       ],
@@ -5357,9 +5360,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Mga pangkat ng ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Hindi makakasali ang mga account na may mga custom na domain sa family plan."
       ],
@@ -5413,10 +5413,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Sisingilin ang subscription sa pangunahing admin ng planong ito."
       ],
-      "View the invitation": [
-        "Tingnan ang imbitasyon",
-        "Tingnan ang mga imbitasyon"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Inimbitahang sumali sa ${ invite.OrganizationName }"
       ],
@@ -5425,9 +5421,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Hindi mo matatanggap ang imbitasyong ito gamit ang kasalukuyang plano."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Inimbitahang sumali sa ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Naabot mo na ang limitasyon na ${ n } tinanggap na imbitasyon sa loob ng 6 na buwan.",
@@ -9315,6 +9308,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "I-access ang ${ PASS_APP_NAME } nang ligtas mula sa terminal, mainam para sa scripting, automation, at development workflow."
       ],
+      "Access tokens": [
+        "Mga access token"
+      ],
       "Account holder": [
         "Holder ng account"
       ],
@@ -12082,17 +12078,11 @@
       "1 email per month": [
         "1 email bawat buwan"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 email bawat buwan. Makakuha ng pinakabagong balita sa privacy at kung ano ang nangyayari sa universe ng ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 email bawat quarter"
       ],
       "1-2 emails per month": [
         "1-2 email bawat buwan"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 na email bawat taon. Mga paalala na panatilihing updated ang iyong mga paraan ng pag-recover."
       ],
       "2-4 emails per year": [
         "2-4 na email bawat taon"
@@ -12117,9 +12107,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Sa iyong unang buwan ng paggamit ng produktong ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Mga komunikasyon sa email"
       ],
       "In-app notifications": [
         "Mga in-app na abiso"
@@ -12634,7 +12621,18 @@
         "Simulan ang paggamit ng ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Inirerekomenda"
+      ],
+      "Select your plan": [
+        "Piliin ang plano"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Libre habambuhay"
+      ],
       "Secure vault sharing": [
         "Ligtas na pag-share ng vault"
       ],
@@ -14816,6 +14814,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } kabuuang naka-encrypt na storage"
+      ],
       "1 month": [
         "1 buwan"
       ],
@@ -14824,6 +14825,9 @@
       ],
       "24 months": [
         "24 na buwan"
+      ],
+      "Free": [
+        "Libre"
       ]
     },
     "Signup label": {
@@ -15616,10 +15620,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, at ${ VPN_SHORT_APP_NAME } na may mga premium feature"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } araw na lang",
-        "${ dayDiff } araw na lang"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktop app"
       ],
@@ -15881,12 +15881,6 @@
       "What you give up when you cancel ${ planName }": [
         "Ang isusuko mo kapag kinansela mo ang ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Kapag kinansela ang ${ planName }, ida-downgrade ito sa ${ BRAND_NAME } Free, na nag-aalok lang ng hanggang 1 GB ng Mail storage at hanggang 5 GB ng Drive storage. Mawawala rin ang anumang storage bonus na dating natanggap."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kapag kinansela ang ${ planName }, ida-downgrade ito sa ${ BRAND_NAME } Free, na nag-aalok lang ng hanggang 1 GB ng Mail storage at hanggang 5 GB ng Drive storage. Makakaranas ang team ng mga abala sa trabaho dahil hindi sinusuportahan ang mga karagdagang user sa free plan."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kapag natapos ang iyong ${ planName } subscription sa ${ expiryDate }, ida-downgrade ka sa ${ BRAND_NAME } Free plan."
       ],
@@ -15895,9 +15889,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Maaari kang patuloy na mag-enjoy sa lahat ng benepisyo ng kasalukuyang plano hanggang ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "May ${ expiryDate } pa sa ${ planName } subscription. Idadagdag ang mga credit para sa natitirang panahon sa ${ BRAND_NAME } Account. Tiyaking hindi lalampas sa mga limitasyon ng Free plan bago kanselahin. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Hindi lang pinapanatiling ligtas ng ${ planName } plan ang data at komunikasyon ng negosyo. Sinusuportahan nito ang mga layunin sa pagsunod, pinapatingkad ang negosyo, at pinapanatiling konektado ang team."
@@ -16318,6 +16309,14 @@
         "Para sa mga indibidwal"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Mga Aksyon"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Aksyon"
@@ -16330,9 +16329,6 @@
       ],
       "CSV field": [
         "CSV field"
-      ],
-      "Edit": [
-        "I-edit"
       ],
       "Email address": [
         "Email address"
@@ -17030,9 +17026,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ilagay ang mga detalye ng iyong ${ BRAND_NAME } Account upang sumali sa ${ app } Beta program"
-      ],
-      "Enter your password": [
-        "Ilagay ang password"
       ],
       "Error": [
         "Error"

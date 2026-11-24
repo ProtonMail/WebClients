@@ -32,6 +32,11 @@
         "عُثر على معلوماتك في تسريب بيانات واحد على الأقل. شغّل ${ DARK_WEB_MONITORING_NAME } لعرض التفاصيل واتخاذ الإجراءات اللازمة. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Reminder": [
+        "تذكير"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "حسابات"
@@ -406,6 +411,9 @@
       ],
       "Don't show again": [
         "لا تظهره مرة اخرى"
+      ],
+      "Don't show this again": [
+        "لا تظهر هذا مرة أخرى"
       ],
       "Done": [
         "تم"
@@ -1102,6 +1110,9 @@
       ],
       "Skip": [
         "تخطي"
+      ],
+      "Skip to main content": [
+        "التخطي إلى المحتوى الرئيسي"
       ],
       "Skip verification": [
         "تخطي التحقق"
@@ -2281,6 +2292,14 @@
       ],
       "Total": [
         "الإجمالي"
+      ],
+      "Total for ${ cycle } months": [
+        "الإجمالي لمدة ${ cycle } أشهر",
+        "الإجمالي لمدة ${ cycle } شهر",
+        "الإجمالي لمدة ${ cycle } شهرين",
+        "الإجمالي لمدة ${ cycle } أشهر",
+        "الإجمالي لمدة ${ cycle } شهرًا",
+        "الإجمالي لمدة ${ cycle } شهر"
       ]
     },
     "Collapsible tooltip": {
@@ -5139,9 +5158,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "الحد الأدنى للرصيد الذي يمكن إضافته هو ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "الحد الأدنى لمبلغ التبرع هو ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "يجب أن يتراوح اسم السياسة بين 3 و 40 حرفًا."
       ],
@@ -5543,9 +5559,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "مجموعات ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "لا يمكن للحسابات ذات النطاقات المخصصة الانضمام إلى خطة عائلية."
       ],
@@ -5607,14 +5620,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "ستُصدر فاتورة الاشتراك للمسؤول الأساسي لهذه الخطة."
       ],
-      "View the invitations": [
-        "رؤية الدعوة",
-        "رؤية الدعوة",
-        "عرض الدعوات",
-        "عرض الدعوات",
-        "رؤية الدعوات",
-        "عرض الدعوة"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "أنت مدعو للانضمام إلى ${ invite.OrganizationName }"
       ],
@@ -5623,9 +5628,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "لا يمكنك قبول هذه الدعوة بخطتك الحالية."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "تمت دعوتك للانضمام إلى ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitations in 6 months.": [
         "لقد وصلت إلى حد ${ n } من الدعوات المقبولة في 6 أشهر.",
@@ -5934,6 +5936,15 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "حدث خطأ ما أثناء تسجيل مفتاح الأمان الخاص بك. يُرجى المحاولة مرة أخرى."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "تم إلغاء طلب مفتاح الأمان أو انتهت مهلته. يرجى المحاولة مجددًا."
+      ],
+      "Your device couldn't complete the security key request. Try again, or register the key from another device.": [
+        "تعذّر على جهازك إكمال طلب مفتاح الأمان. حاول مجددًا، أو قم بتسجيل المفتاح من جهاز آخر."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "تعذّر على جهازك إكمال طلب مفتاح الأمان. حاول مجددًا، أو استخدم طريقة أخرى لتسجيل الدخول."
       ]
     },
     "fido2: Info": {
@@ -9928,6 +9939,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "يمكنك الوصول إلى ${ PASS_APP_NAME } بأمان من خلال الطرفية، وهو مثالي لعمليات البرمجة النصية والأتمتة وتدفقات عمل التطوير."
       ],
+      "Access tokens": [
+        "رموز الوصول"
+      ],
       "Account holder": [
         "صاحب الحساب"
       ],
@@ -12874,17 +12888,11 @@
       "1 email per month": [
         "1 بريد إلكتروني في الشهر"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "بريد إلكتروني واحد شهريًا. احصل على آخر أخبار الخصوصية وما يجري في عالم ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 بريد إلكتروني في 3 أشهر"
       ],
       "1-2 emails per month": [
         "1-2 بريد الإلكتروني في الشهر"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 رسائل بريد إلكتروني سنويا. تذكيرات للحفاظ على تحديث طرق الاسترداد الخاصة بك."
       ],
       "2-4 emails per year": [
         "2-4 رسائل بريد إلكتروني سنويًا"
@@ -12909,9 +12917,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "خلال شهرك الأول من استخدام منتج ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "اتصالات البريد الإلكتروني"
       ],
       "In-app notifications": [
         "إشعارات داخل التطبيق"
@@ -13438,7 +13443,18 @@
         "ابدأ باستخدام ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "موصى به"
+      ],
+      "Select your plan": [
+        "حدد اشتراكك"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "مجاني للأبد"
+      ],
       "Secure vault sharing": [
         "مشاركة آمنة للخزنة"
       ],
@@ -15780,6 +15796,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } إجمالي مساحة التخزين المُشفّرة"
+      ],
       "1 month": [
         "شهر واحد"
       ],
@@ -15788,6 +15807,9 @@
       ],
       "24 months": [
         "24 شهرًا"
+      ],
+      "Free": [
+        "مجاني"
       ]
     },
     "Signup label": {
@@ -16706,14 +16728,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } مع ميزات مميزة"
       ],
-      "${ dayDiff } days left": [
-        "تبقى ${ dayDiff } يوم",
-        "تبقى ${ dayDiff } يوم",
-        "تبقى ${ dayDiff } يومان",
-        "تبقى ${ dayDiff } أيام",
-        "تبقى ${ dayDiff } يومًا",
-        "تبقى ${ dayDiff } يوم"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "تطبيق سطح المكتب ${ MAIL_APP_NAME }"
       ],
@@ -16999,12 +17013,6 @@
       "What you give up when you cancel ${ planName }": [
         "ستفقد الميزات التالية عند إلغاء خطة ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "عند إلغاء ${ planName }، سيُخفّض اشتراكك إلى ${ BRAND_NAME } Free، الذي يوفر فقط ما يصل إلى 1 جيجابايت من سعة تخزين البريد وما يصل إلى 5 جيجابايت من سعة تخزين Drive. ستفقد أيضًا أي مكافآت تخزين مُنحت سابقًا."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "عند إلغاء ${ planName }، سيُخفّض اشتراكك إلى ${ BRAND_NAME } Free، الذي يوفر فقط ما يصل إلى 1 جيجابايت من سعة تخزين البريد وما يصل إلى 5 جيجابايت من سعة تخزين Drive. سيواجه فريقك انقطاعات في عملهم نظرًا لعدم دعم المستخدمين الإضافيين في الخطة المجانية."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "عندما ينتهي اشتراكك في ${ planName } في ${ expiryDate }، سيتم تخفيض خطتك إلى خطة ${ BRAND_NAME } المجانية."
       ],
@@ -17013,9 +17021,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "يمكنك الاستمرار في التمتع بجميع مزايا خطتك الحالية حتى ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "لا يزال لديك ${ expiryDate } في اشتراك ${ planName }. سنضيف الرصيد المتبقي إلى حسابك في ${ BRAND_NAME }. تأكد من عدم تجاوز حدود خطة Free plan قبل الإلغاء. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "خطتك ${ planName } لا تحافظ فقط على أمان بيانات عملك واتصالاته، بل تدعم أهداف الامتثال لديك، وتجعل عملك متميزًا، وتحافظ على تواصل فريقك."
@@ -17436,6 +17441,14 @@
         "للأفراد"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "الإجراءات"
+      ],
+      "Status": [
+        "الحالة"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "الإجراء"
@@ -17448,9 +17461,6 @@
       ],
       "CSV field": [
         "حقل CSV"
-      ],
-      "Edit": [
-        "تعديل"
       ],
       "Email address": [
         "عنوان البريد الإلكتروني"
@@ -18184,9 +18194,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } للانضمام إلى برنامج ${ app } التجريبي"
-      ],
-      "Enter your password": [
-        "أدخل كلمة مرورك"
       ],
       "Error": [
         "خلل"

@@ -652,6 +652,9 @@
       "Don't show again": [
         "Usionyeshe tena"
       ],
+      "Don't show this again": [
+        "Usionyeshe hili tena"
+      ],
       "Done": [
         "Imekamilika"
       ],
@@ -1114,6 +1117,9 @@
       "Remove": [
         "Ondoa"
       ],
+      "Remove ${ name }": [
+        "Ondoa ${ name }"
+      ],
       "Remove all other devices": [
         "Ondoa vifaa vingine vyote"
       ],
@@ -1366,11 +1372,17 @@
       "Skip": [
         "Ruka"
       ],
+      "Skip to main content": [
+        "Ruka hadi maudhui makuu"
+      ],
       "Skip verification": [
         "Ruka uthibitisho"
       ],
       "Spam": [
         "Barua taka"
+      ],
+      "Special Offer": [
+        "Ofa maalum"
       ],
       "Start import": [
         "Anza uletaji"
@@ -5387,9 +5399,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Kiasi kidogo kabisa cha salio kinachoweza kuongezwa ni ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Kiasi cha chini cha mchango ni ${ price }."
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Jina la sera linapaswa kuwa kati ya herufi 3 na 40."
       ],
@@ -5796,9 +5805,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Makundi ya ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Akaunti zenye vikoa maalum haziwezi kujiunga na family plan."
       ],
@@ -5852,10 +5858,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Usajili utalipwa kwa msimamizi wa msingi wa mpango huu."
       ],
-      "View the invitation": [
-        "Angalia mwaliko",
-        "Angalia miwaliko"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Umealikwa kujiunga na ${ invite.OrganizationName }"
       ],
@@ -5864,9 +5866,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Huwezi kukubali mwaliko huu ukitumia mpango wako wa sasa."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Umealikwa kujiunga na ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Umefikia kikomo cha ${ n } mwaliko uliokubaliwa ndani ya miezi 6.",
@@ -7741,6 +7740,9 @@
       ],
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Kuzima nakala rudufu ya data kwenye kifaa hiki kutakuzuia kufungua kiotomatiki data yako iliyosimbwa fiche baada ya kuweka upya nenosiri."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Punguzo hutolewa kulingana na bei ya kawaida ya kila mwezi. Usajili wako utahuishwa kwa kiwango cha kawaida cha mwaka mzunguko wa malipo unapoisha."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Gundua vipengele vipya vilivyofunguliwa na uanze kuzitumia mara moja."
@@ -10063,6 +10065,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Fikia ${ PASS_APP_NAME } kwa usalama kutoka kwenye terminali, jambo linalofaa kwa scripting, automation na mtiririko wa kazi wa maendeleo."
       ],
+      "Access tokens": [
+        "Tokeni za ufikiaji"
+      ],
       "Account holder": [
         "Mmiliki wa akaunti"
       ],
@@ -10077,6 +10082,9 @@
       ],
       "Add all organization members": [
         "Ongeza wanachama wote wa shirika"
+      ],
+      "Add managers": [
+        "Ongeza wameneja"
       ],
       "Additional comments": [
         "Maoni ya ziada"
@@ -12890,17 +12898,11 @@
       "1 email per month": [
         "Barua pepe 1 kwa mwezi"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "Barua pepe 1 kwa mwezi. Pata habari za hivi punde za faragha na yaliyotendeka katika ulimwengu wa ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "Barua pepe 1 kwa robo mwaka"
       ],
       "1-2 emails per month": [
         "Barua pepe 1 hadi 2 kwa mwezi"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "Barua pepe 1 hadi 4 kwa mwaka. Vikumbusho vya kukuhakikisha kuwa njia zako za kurejesha ni za kisasa."
       ],
       "2-4 emails per year": [
         "Barua pepe 2 hadi 4 kwa mwaka"
@@ -12925,9 +12927,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Wakati wa mwezi wako wa kwanza wa kutumia bidhaa ya ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Mawasiliano ya barua pepe"
       ],
       "In-app notifications": [
         "Arifa ndani ya programu"
@@ -13598,7 +13597,18 @@
         "Anza kutumia ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Inapendekezwa"
+      ],
+      "Select your plan": [
+        "Teua mpango wako"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Bure milele"
+      ],
       "Secure vault sharing": [
         "Kushiriki kasha kwa usalama"
       ],
@@ -14158,6 +14168,9 @@
       ],
       "Enter a name": [
         "Weka jina"
+      ],
+      "Enter name or email address": [
+        "Weka jina au anwani ya barua pepe"
       ],
       "example@domain.com": [
         "mfano@kikoa.ke"
@@ -15839,6 +15852,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "${ value } ya hifadhi iliyosimbwa fiche kwa jumla"
+      ],
       "1 month": [
         "Mwezi 1"
       ],
@@ -15847,6 +15863,9 @@
       ],
       "24 months": [
         "Miezi 24"
+      ],
+      "Free": [
+        "Bure"
       ]
     },
     "Signup label": {
@@ -16659,10 +16678,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } na ${ VPN_SHORT_APP_NAME } pamoja na vipengele vya kiwango cha juu"
       ],
-      "${ dayDiff } day left": [
-        "Siku ${ dayDiff } imebaki",
-        "Siku ${ dayDiff } zimebaki"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Programu ya kompyuta ya ${ MAIL_APP_NAME }"
       ],
@@ -16924,12 +16939,6 @@
       "What you give up when you cancel ${ planName }": [
         "Unachokipoteza unapoghairi ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ukighairi ${ planName }, utashushwa daraja hadi ${ BRAND_NAME } Free, ambayo inatoa hadi 1 GB tu ya hifadhi ya Mail na hadi 5 GB tu ya hifadhi ya Drive. Utapoteza pia bonasi zote za hifadhi ulizopewa awali."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Unapoghairi ${ planName }, utashushwa daraja hadi ${ BRAND_NAME } Free, ambayo inatoa hadi 1 GB tu ya hifadhi ya Mail na hadi 5 GB tu ya hifadhi ya Drive. Kazi ya timu yako itakatizwa kwa kuwa watumiaji wanaoongezwa hawaungwi mkono kwenye Free plan."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Usajili wako wa ${ planName } utakapokwisha tarehe ${ expiryDate }, utashushwa daraja hadi mpango wa ${ BRAND_NAME } Free."
       ],
@@ -16938,9 +16947,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Unaweza kuendelea kufurahia manufaa zote za mpango wako wa sasa hadi ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Bado una ${ expiryDate } kwenye usajili wako wa ${ planName }. Tutaongeza masalio ya muda uliobaki kwenye Akaunti yako ya ${ BRAND_NAME }. Hakikisha hutazidi mipaka ya Free plan kabla ya kughairi. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Mpango wako wa ${ planName } haukulindi tu data na mawasiliano ya biashara yako. Unaauni malengo yako ya ufuasi, huifanya biashara yako kujitofautisha, na kuweka timu yako ikiwa pamoja."
@@ -17370,6 +17376,14 @@
         "Kwa watu binafsi"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Vitendo"
+      ],
+      "Status": [
+        "Hali"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Kitendo"
@@ -17382,9 +17396,6 @@
       ],
       "CSV field": [
         "Sehemu ya CSV"
-      ],
-      "Edit": [
-        "Hariri"
       ],
       "Email address": [
         "Anwani ya barua pepe"
@@ -18117,9 +18128,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Weka maelezo ya akaunti yako ya ${ BRAND_NAME } ili kujiunga na programu ya beta ya ${ app }"
-      ],
-      "Enter your password": [
-        "Weka nenosiri lako"
       ],
       "Error": [
         "Hitilafu"

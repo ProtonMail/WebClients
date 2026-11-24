@@ -421,6 +421,9 @@
       "Don't show again": [
         "Jangan tampilkan lagi"
       ],
+      "Don't show this again": [
+        "Jangan tampilkan ini lagi"
+      ],
       "Done": [
         "Selesai"
       ],
@@ -1110,6 +1113,9 @@
       ],
       "Skip": [
         "Lewati"
+      ],
+      "Skip to main content": [
+        "Lompati ke konten utama"
       ],
       "Skip verification": [
         "Lewati verifikasi"
@@ -4952,9 +4958,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah kredit minimum yang dapat ditambahkan adalah ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Jumlah donasi minimal adalah ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Nama kebijakan harus terdiri dari 3 hingga 40 karakter."
       ],
@@ -5351,9 +5354,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Grup ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Akun dengan domain khusus tidak dapat bergabung ke paket keluarga."
       ],
@@ -5405,9 +5405,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
-      "View the invitation": [
-        "Lihat undangan"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Anda diundang untuk bergabung ke ${ invite.OrganizationName }"
       ],
@@ -5416,9 +5413,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Anda telah mencapai batas ${ n } undangan yang diterima dalam kurun waktu 6 bulan."
@@ -9218,6 +9212,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Akses ${ PASS_APP_NAME } secara aman dari terminal. Ideal untuk pemrograman, automasi, dan alur kerja pengembangan."
       ],
+      "Access tokens": [
+        "Token akses"
+      ],
       "Account holder": [
         "Pemilik akun"
       ],
@@ -11952,17 +11949,11 @@
       "1 email per month": [
         "1 email per bulan"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 email per bulan. Dapatkan berita privasi terbaru dan informasi tentang apa yang sedang terjadi di dunia ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 email per kuartal"
       ],
       "1-2 emails per month": [
         "1-2 email per bulan"
-      ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "1-4 email per tahun. Pengingat agar metode pemulihan Anda tetap mutakhir."
       ],
       "2-4 emails per year": [
         "2-4 email per tahun"
@@ -11987,9 +11978,6 @@
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Selama bulan pertama Anda mengunakan produk ${ BRAND_NAME }"
-      ],
-      "Email communications": [
-        "Komunikasi email"
       ],
       "In-app notifications": [
         "Notifikasi dalam aplikasi"
@@ -12514,7 +12502,18 @@
         "Mulai gunakan ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Direkomendasikan"
+      ],
+      "Select your plan": [
+        "Pilih paket Anda"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Gratis untuk selamanya"
+      ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
       ],
@@ -14661,6 +14660,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "Total penyimpanan terenkripsi ${ value }"
+      ],
       "1 month": [
         "1 bulan"
       ],
@@ -14669,6 +14671,9 @@
       ],
       "24 months": [
         "24 bulan"
+      ],
+      "Free": [
+        "Gratis"
       ]
     },
     "Signup label": {
@@ -15437,9 +15442,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } dengan berbagai fitur premium"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } hari tersisa"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
@@ -15695,12 +15697,6 @@
       "What you give up when you cancel ${ planName }": [
         "Apa yang akan Anda korbankan pada saat Anda membatalkan ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menyediakan hingga ruang penyimpanan Mail hingga 1 GB dan Drie hingga 5 GB. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung dalam paket gratis."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Pada saat langganan ${ planName } Anda berakhir pada ${ expiryDate }, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
       ],
@@ -15709,9 +15705,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Anda dapat tetap menikmati seluruh manfaat paket Anda saat ini hingga ${ boldedDate }"
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Langganan ${ planName } Anda masih berlaku hingga ${ expiryDate }. Kami akan menambahkan kredit untuk sisa waktu ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batas paket gratis sebelum membatalkan. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Paket ${ planName } Anda tidak hanya menjaga keamanan data dan komunikasi bisnis Anda. Paket ini juga mendukung sasaran kepatuhan bisnis Anda, membuat bisnis Anda tampil menonjol, serta membuat tim Anda selalu terhubung."
@@ -16132,6 +16125,14 @@
         "Untuk individu"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Tindakan"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Tindakan"
@@ -16144,9 +16145,6 @@
       ],
       "CSV field": [
         "Kolom CSV"
-      ],
-      "Edit": [
-        "Edit"
       ],
       "Email address": [
         "Alamat email"
@@ -16835,9 +16833,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
-      ],
-      "Enter your password": [
-        "Masukkan kata sandi Anda"
       ],
       "Error": [
         "Kesalahan"

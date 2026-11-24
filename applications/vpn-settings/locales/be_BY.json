@@ -213,6 +213,9 @@
       "Referral rewards": [
         "Рэферальныя ўзнагароды"
       ],
+      "Reminder": [
+        "Напамін"
+      ],
       "Restrict app access": [
         "Абмежаваць доступ да праграм"
       ],
@@ -349,6 +352,9 @@
       "Add referral link to ${ MAIL_APP_NAME } signature": [
         "Дадаць рэферальную спасылку ў подпіс ${ MAIL_APP_NAME }"
       ],
+      "Add service account": [
+        "Дадаць сэрвісны ўліковы запіс"
+      ],
       "Add user": [
         "Дадаць карыстальніка"
       ],
@@ -426,6 +432,9 @@
       ],
       "Change password": [
         "Змяніць пароль"
+      ],
+      "Change plan": [
+        "Змяніць тарыфны план"
       ],
       "Change second password": [
         "Змяніць другі пароль"
@@ -673,6 +682,9 @@
       "Don't show again": [
         "Больш не паказваць"
       ],
+      "Don't show this again": [
+        "Больш не паказваць"
+      ],
       "Done": [
         "Гатова"
       ],
@@ -865,6 +877,9 @@
       "Go to panel ${ index }": [
         "Перайсці ў панэль ${ index }"
       ],
+      "Go to today": [
+        "Перайсці да сённяшняга дня"
+      ],
       "Google": [
         "Google"
       ],
@@ -888,6 +903,9 @@
       ],
       "Hide more benefits": [
         "Схаваць больш пераваг"
+      ],
+      "Hide plan details": [
+        "Паглядзець падрабязнасці тарыфнага плана"
       ],
       "Hide plan features": [
         "Схаваць функцыі тарыфнага плана"
@@ -1087,6 +1105,9 @@
       "Previous": [
         "Папярэдні"
       ],
+      "Previous contact": [
+        "Папярэдні кантакт"
+      ],
       "Previous month": [
         "Папярэдні месяц"
       ],
@@ -1141,6 +1162,9 @@
       "Remove": [
         "Выдаліць"
       ],
+      "Remove ${ name }": [
+        "Выдаліць ${ name }"
+      ],
       "Remove all other devices": [
         "Выдаліць усе іншыя прылады"
       ],
@@ -1158,6 +1182,9 @@
       ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
+      ],
+      "Remove logo": [
+        "Выдаліць лагатып"
       ],
       "Removed ${ memberName } as group owner": [
         "Выдаліць ${ memberName } як уладальніка групы"
@@ -1372,6 +1399,9 @@
       "Show more benefits": [
         "Паказаць больш пераваг"
       ],
+      "Show plan details": [
+        "Паказаць падрабязнасці тырыфнага плана"
+      ],
       "Show preview": [
         "Папярэдні прагляд"
       ],
@@ -1396,11 +1426,17 @@
       "Skip": [
         "Прапусціць"
       ],
+      "Skip to main content": [
+        "Перайсці да асноўнага змесціва"
+      ],
       "Skip verification": [
         "Прапусціць спраўджанне"
       ],
       "Spam": [
         "Спам"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
       ],
       "Start import": [
         "Пачаць імпартаванне"
@@ -1506,6 +1542,9 @@
       ],
       "Upgrade now": [
         "Палепшыць зараз"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Палепшыць да ${ planTitle }"
       ],
       "Upgrade to Business": [
         "Палепшыць да Business"
@@ -5476,8 +5515,14 @@
         "Не ўдалося завяршыць прызначэнне ролі для ${ failedCount } удзельнікаў",
         "Не ўдалося завяршыць прызначэнне ролі для ${ failedCount } удзельнікаў"
       ],
+      "Select a user from your organization.": [
+        "Выберыце карыстальніка ў сваёй арганізацыі."
+      ],
       "Server not found": [
         "Сервер не знойдзены"
+      ],
+      "Service accounts could not be loaded.": [
+        "Сэрвісныя ўліковыя запісы не ўдалося загрузіць."
       ],
       "Signature verification failed": [
         "Не ўдалося спраўдзіць подпіс"
@@ -5551,9 +5596,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Мінімальная сума крэдытаў, якую можна ўнесці, складае ${ price }"
       ],
-      "The minimum donation amount is ${ price }": [
-        "Мінімальная сума ахвяравання складае ${ price }"
-      ],
       "The policy name must be between 3 and 40 characters.": [
         "Назва палітыкі павінна мець даўжыню ад 3 да 40 сімвалаў."
       ],
@@ -5592,6 +5634,9 @@
       ],
       "This phrase cannot recover your account. You can generate a new one to ensure your account can be recovered in the future.": [
         "Гэта фраза не зможа аднавіць ваш уліковы запіс. Вы зможаце згенерыраваць новую фразу для ўпэўненасці ў тым, што ваш уліковы запіс можна будзе аднавіць у будучыні."
+      ],
+      "This service account no longer exists.": [
+        "Гэты сэрвісны ўліковы запіс больш не існуе."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Вам неабходна аднавіць правы адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
@@ -5971,9 +6016,6 @@
       ]
     },
     "familyOffer_2023:Family plan": {
-      "${ BRAND_NAME } groups": [
-        "Групы ${ BRAND_NAME }"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да сямейнага тарыфнага плана."
       ],
@@ -6031,12 +6073,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
-      "View the invitation": [
-        "Паглядзець запрашэнне",
-        "Паглядзець запрашэнні",
-        "Паглядзець запрашэнні",
-        "Паглядзець запрашэнні"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
       ],
@@ -6045,9 +6081,6 @@
       ],
       "You cannot accept this invitation with your current plan.": [
         "Вы не можаце прыняць гэта запрашэнне з вашым бягучым тарыфным планам."
-      ],
-      "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
-        "Вас запрасілі далучыцца да ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months.": [
         "Вы дасягнулі абмежавання ў ${ n } прынятае запрашэнне за 6 месяцаў.",
@@ -8039,6 +8072,9 @@
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Адключэнне рэзервовага капіявання даных на гэтай прыладзе не дазволіць вам аўтаматычна разблакіраваць вашы зашыфраваныя даныя пасля скідання пароля."
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
       ],
@@ -8746,6 +8782,9 @@
       ],
       "No results found": [
         "Нічога не знойдзена"
+      ],
+      "No service accounts match your search.": [
+        "Няма сэрвісных уліковых запісаў, якія адпавядаюць вашаму пошуку."
       ],
       "No single sign-on": [
         "Няма адзінага ўваходу"
@@ -10378,6 +10417,12 @@
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
+      "${ count } manager": [
+        "${ count } менеджар",
+        "${ count } менеджары",
+        "${ count } менеджараў",
+        "${ count } менеджараў"
+      ],
       "${ group.UserCount } user": [
         "${ group.UserCount } карыстальнік",
         "${ group.UserCount } карыстальнікі",
@@ -10423,6 +10468,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
       ],
+      "Access tokens": [
+        "Токены доступу"
+      ],
       "Account credit": [
         "Крэдыты ўліковага запісу"
       ],
@@ -10440,6 +10488,9 @@
       ],
       "Add all organization members": [
         "Дадаць удзельнікаў арганізацыі"
+      ],
+      "Add managers": [
+        "Дадаць менеджараў"
       ],
       "Additional comments": [
         "Дадатковыя каментарыі"
@@ -10942,6 +10993,9 @@
       "Manage categories": [
         "Кіраванне катэгорыямі"
       ],
+      "Managers": [
+        "Менеджары"
+      ],
       "Maximum number of characters is ${ MAX_CHARS }": [
         "Максімальная колькасць сімвалаў: ${ MAX_CHARS }"
       ],
@@ -11014,6 +11068,9 @@
       "No filter": [
         "Не фільтраваць"
       ],
+      "No manager": [
+        "Без менеджара"
+      ],
       "Non-standard ports": [
         "Нестандартныя парты"
       ],
@@ -11055,6 +11112,9 @@
       ],
       "Organization password": [
         "Пароль арганізацыі"
+      ],
+      "Organization user": [
+        "Карыстальнік арганізацыі"
       ],
       "Other": [
         "Іншае"
@@ -11211,6 +11271,9 @@
       ],
       "Server name": [
         "Назва сервера"
+      ],
+      "Service name": [
+        "Назва сэрвісу"
       ],
       "Share your referral link": [
         "Абагуліць сваю рэферальную спасылку"
@@ -11871,6 +11934,40 @@
       ],
       "Enable detailed events": [
         "Уключыць падрабязныя падзеі"
+      ]
+    },
+    "lumo_2026: feature": {
+      "Everything in Basic, and:": [
+        "Усе функцыі тарыфнага плана Basic, а таксама:"
+      ],
+      "Everything in Free, and:": [
+        "Усе функцыі бясплатнага тарыфнага плана, а таксама:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе функцыі тарыфнага плана Plus, а таксама:"
+      ],
+      "Extended image generation": [
+        "Пашыраная колькасць генерацый"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "Limited image generation": [
+        "Абмежаваная колькасць генерацый відарысаў"
+      ],
+      "Maximum image generation": [
+        "Максімальная колькасць генерацый відарысаў"
+      ],
+      "Maximum Skills and Projects": [
+        "Максімальная колькасць навыкаў і праектаў"
+      ],
+      "More usage": [
+        "Іншыя варыянты выкарыстання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For everyday chats": [
+        "Для штодзённых чатаў"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -13404,17 +13501,14 @@
       "1 email per month": [
         "1 ліст у месяц"
       ],
-      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
-        "1 ліст у месяц. Атрымлівайце апошнія навіны прыватнасці і падзеі, якія адбываюцца ў сусвеце ${ BRAND_NAME }."
-      ],
       "1 email per quarter": [
         "1 ліст у квартал"
       ],
       "1-2 emails per month": [
         "1-2 лісты ў месяц"
       ],
-      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
-        "Ад 1 да 4 лістоў у год. Напаміны аб неабходнасці актуалізацыі спосабаў аднаўлення."
+      "1-4 emails per year": [
+        "Ад 1 да 4 лістоў у год"
       ],
       "2-4 emails per year": [
         "2-4 лісты ў год"
@@ -13440,8 +13534,8 @@
       "During your first month of using a ${ BRAND_NAME } product": [
         "На працягу першага месяца выкарыстання прадукту ${ BRAND_NAME }"
       ],
-      "Email communications": [
-        "Камунікацыі па электроннай пошце"
+      "Email subscriptions": [
+        "Падпіскі электроннай пошты"
       ],
       "In-app notifications": [
         "Апавяшчэнні ў праграме"
@@ -14109,7 +14203,18 @@
         "Пачаць выкарыстоўваць ${ appName }"
       ]
     },
+    "pass_signup_2023: Header": {
+      "Recommended": [
+        "Рэкамендавана"
+      ],
+      "Select your plan": [
+        "Выберыце тарыфны план"
+      ]
+    },
     "pass_signup_2023: Info": {
+      "Free forever": [
+        "Бясплатна назаўсёды"
+      ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
       ],
@@ -14672,6 +14777,9 @@
       "domain.com": [
         "domain.com"
       ],
+      "e.g. ci-bot": [
+        "напрыклад, ci-bot"
+      ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "напрыклад, https://example.com/app/protonvpn/XXXXX/sso/metadata"
       ],
@@ -14692,6 +14800,9 @@
       ],
       "Enter a name": [
         "Увядзіце назву"
+      ],
+      "Enter name or email address": [
+        "Увядзіце імя або адрас электроннай пошты"
       ],
       "example@domain.com": [
         "pryklad@domain.com"
@@ -14734,6 +14845,9 @@
       ],
       "Search": [
         "Пошук"
+      ],
+      "Search for a service account": [
+        "Пошук сэрвіснага ўліковага запісу"
       ],
       "Search for a user or address": [
         "Пошук карыстальніка або адраса"
@@ -16093,6 +16207,23 @@
         "будзе выдалены"
       ]
     },
+    "Service account status": {
+      "Active": [
+        "Актыўны"
+      ],
+      "Disabled": [
+        "Адключана"
+      ],
+      "No manager": [
+        "Без менеджара"
+      ],
+      "No tokens": [
+        "Без токенаў"
+      ],
+      "Unknown": [
+        "Невядомы"
+      ]
+    },
     "Service provider": {
       "Allows you to add a Zoom video conference to any of your calendar events": [
         "Дазваляе дадаваць відэаканферэнцыю Zoom у любыя падзеі вашага календара"
@@ -16456,6 +16587,9 @@
       ]
     },
     "Signup": {
+      "${ value } total encrypted storage": [
+        "Агулам ${ value } зашыфраванага сховішча"
+      ],
       "1 month": [
         "1 месяц"
       ],
@@ -16464,6 +16598,9 @@
       ],
       "24 months": [
         "24 месяцы"
+      ],
+      "Free": [
+        "Бясплатна"
       ]
     },
     "Signup label": {
@@ -17361,12 +17498,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
       ],
-      "${ dayDiff } day left": [
-        "Застаўся ${ dayDiff } дзень",
-        "Засталося ${ dayDiff } дні",
-        "Засталося ${ dayDiff } дзён",
-        "Засталося ${ dayDiff } дзён"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Праграма для камп'ютара ${ MAIL_APP_NAME }"
       ],
@@ -17640,12 +17771,6 @@
       "What you give up when you cancel ${ planName }": [
         "Што вы страціце, калі скасуеце ${ planName }"
       ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
-      ],
-      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Калі вы скасуеце падпіску ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
-      ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } Free, калі ваша падпіска ${ planName } завершыцца ${ expiryDate }"
       ],
@@ -17654,9 +17779,6 @@
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
         "Вы можаце працягваць атрымліваць асалоду ад усіх пераваг свайго тарыфнага плана да ${ boldedDate }."
-      ],
-      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
-        "Ваша падпіска на тарыфным плане ${ planName } міне ${ expiryDate }. Будуць дададзены крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }. Пераканайцеся, што вы не перавысілі абмежаванні бясплатнага тарыфнага плана перад скасаваннем. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "Ваш тарыфны план ${ planName } не толькі захоўвае вашы дзелавыя даныя і бяспеку зносін, але і падтрымлівае выкананне вашых мэт, вылучае ваш бізнес і захоўвае сувязь паміж вашай камандай."
@@ -17945,6 +18067,9 @@
       "Problem reported": [
         "Паведамлена аб праблеме"
       ],
+      "Service account disabled": [
+        "Сэрвісны ўліковы запіс адключаны"
+      ],
       "Session revoked": [
         "Сеанс адкліканы"
       ],
@@ -18094,6 +18219,20 @@
         "Асабісты"
       ]
     },
+    "Table header": {
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Managers": [
+        "Менеджары"
+      ],
+      "Service name": [
+        "Назва сэрвісу"
+      ],
+      "Status": [
+        "Статус"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Дзеянне"
@@ -18106,9 +18245,6 @@
       ],
       "CSV field": [
         "Поле CSV"
-      ],
-      "Edit": [
-        "Рэдагаваць"
       ],
       "Email address": [
         "Адрас электроннай пошты"
@@ -18371,6 +18507,9 @@
       ],
       "Add pm.me subdomain": [
         "Дадаць паддамен pm.me"
+      ],
+      "Add service account": [
+        "Дадаць сэрвісны ўліковы запіс"
       ],
       "Add to allow list": [
         "Дадаць у спіс дазволеных"
@@ -18705,6 +18844,9 @@
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
+      "Delete from list?": [
+        "Выдаліць са спіса?"
+      ],
       "Delete group?": [
         "Выдаліць групу?"
       ],
@@ -18752,6 +18894,9 @@
       ],
       "Disable device data backup?": [
         "Адключыць рэзервовую копію даных прылады?"
+      ],
+      "Disable service account?": [
+        "Адключыць сэрвісны ўліковы запіс?"
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
@@ -18825,6 +18970,9 @@
       "Edit servers": [
         "Рэдагаваць серверы"
       ],
+      "Edit service account": [
+        "Рэдагаваць сэрвісны ўліковы запіс"
+      ],
       "Edit the list of servers of the gateway": [
         "Рэдагаваць спіс сервераў шлюза"
       ],
@@ -18866,9 +19014,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
-      ],
-      "Enter your password": [
-        "Увядзіце свой пароль"
       ],
       "Error": [
         "Памылка"
@@ -20439,6 +20584,80 @@
         "Прайграць відэа"
       ]
     },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } за карыстальніка"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } і Scribe уключаны"
+      ],
+      "${ storage } shared": [
+        "${ storage } абагулена"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } сховішча"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "Аплачваецца ${ yearlyTotal } кожныя 12 месяцаў."
+      ],
+      "10 years": [
+        "10 гадоў"
+      ],
+      "Calendars": [
+        "Календары"
+      ],
+      "Early access to new features": [
+        "Ранні доступ да новых функцый"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Усе функцыі тарыфнага плана ${ unlimitedName }, а яшчэ:"
+      ],
+      "Exclusive to subscribers": [
+        "Выключна для падпісчыкаў"
+      ],
+      "Feature": [
+        "Функцыя"
+      ],
+      "Group plans": [
+        "Групавыя тарыфныя планы"
+      ],
+      "Included": [
+        "Уключана"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Уключае серверы Ultra, якія зарэзерваваныя для вас"
+      ],
+      "Not included": [
+        "Не ўключана"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Прэміяльныя Mail, Calendar, Drive і Pass"
+      ],
+      "Previous versions": [
+        "Папярэднія версіі"
+      ],
+      "Storage": [
+        "Сховішча"
+      ],
+      "Subscribers only": [
+        "Толькі падпісчыкі"
+      ],
+      "Unlimited": [
+        "Неабмежавана"
+      ],
+      "Up to ${ limit }": [
+        "Да ${ limit }"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "VPN devices at once": [
+        "Прылады VPN адначасова"
+      ],
+      "Your plan": [
+        "Ваш тарыфны план"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Я знайшоў больш прывабны сэрвіс"
@@ -20590,6 +20809,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "за ${ cycle } месяц",
+        "за ${ cycle } месяцы",
+        "за ${ cycle } месяцаў",
+        "за ${ cycle } месяцаў"
+      ],
+      "Premium calendar features": [
+        "Прэміяльныя функцыі календара"
       ]
     },
     "VPNClient": {
