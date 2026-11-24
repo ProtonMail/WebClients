@@ -491,6 +491,40 @@ describe('signupStateMachine', () => {
         expect(actions.reportErrorPage).toHaveBeenCalledTimes(1);
     });
 
+    it('creates and sets up the account once when the flow runs its steps twice at the same time', async () => {
+        const createUser = vi.fn(async () => {});
+        const setupUser = vi.fn(async () => setupResult);
+        const { actor, actions, ready, signup } = start({ createUser, setupUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+
+        const submit = async () => {
+            await signup.createUser();
+            await signup.setupUser();
+        };
+        await Promise.all([submit(), submit()]);
+        await signup.createUser();
+
+        expect(createUser).toHaveBeenCalledTimes(1);
+        expect(setupUser).toHaveBeenCalledTimes(1);
+        expect(actions.reportInvalidStage).not.toHaveBeenCalled();
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it('fails the signup when another account is submitted after the setup', async () => {
+        const { actor, actions, ready, signup } = start();
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await signup.setupUser();
+
+        actor.send({ type: 'account.submitted', accountData: { ...accountData, email: 'other@example.com' } });
+        await signup.createUser();
+
+        expect(actor.getSnapshot().matches('failed')).toBe(true);
+        expect(actions.reportInvalidStage).toHaveBeenCalledWith(expect.anything(), { operation: 'user.create' });
+    });
+
     it('runs an operation started during another one after it', async () => {
         let finishSending = () => {};
         const sendRecoveryPhrase = () => new Promise<void>((resolve) => (finishSending = resolve));

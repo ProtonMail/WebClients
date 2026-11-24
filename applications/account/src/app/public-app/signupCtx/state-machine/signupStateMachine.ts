@@ -415,6 +415,11 @@ export const signupStateMachine = setup({
         },
         userSetup: {
             initial: 'idle',
+            on: {
+                // A second submit of the same account, e.g. Pay tapped twice: its user is already created and set up
+                'user.create': [{ guard: 'isCreatedAccount' }, invalidStage],
+                'user.setup': [{ guard: 'isCreatedAccount' }, invalidStage],
+            },
             states: {
                 idle: {
                     on: {
