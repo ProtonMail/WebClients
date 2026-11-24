@@ -34,6 +34,14 @@ describe('DocumentHeaderV2', () => {
     expect(screen.getByText('User menu')).toBeInTheDocument()
   })
 
+  test("a public link's visitor gets no user menu, as /doc's public header has none", () => {
+    render(headerElement('Editor', undefined, { isPublic: true }))
+
+    expect(screen.getByText('Title menu')).toBeInTheDocument()
+    expect(screen.queryByText('User menu')).not.toBeInTheDocument()
+    expect(screen.getByTestId('comments-button')).toBeDisabled()
+  })
+
   test('shows the status next to the title menu, before the view-only pill', () => {
     renderHeader('Viewer', <output>Saving…</output>)
 
@@ -143,7 +151,7 @@ function renderHeader(role: DocumentRole, status?: ReactNode) {
 function headerElement(
   role: DocumentRole,
   status?: ReactNode,
-  comments: Pick<DocumentHeaderV2Props, 'hasUnreadComments' | 'onShowComments'> = {},
+  props: Pick<DocumentHeaderV2Props, 'hasUnreadComments' | 'onShowComments' | 'isPublic'> = {},
 ) {
   return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
@@ -164,7 +172,7 @@ function headerElement(
         isMakingACopy={false}
         onFileMenuAction={vi.fn()}
         status={status}
-        {...comments}
+        {...props}
       />
     </ConfigContext.Provider>
   )

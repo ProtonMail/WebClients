@@ -34,7 +34,8 @@ export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
  * /doc's header for a document (`DocsHeaderForDocument` in `DocumentHeader.tsx`): the Docs home link, the title menu,
  * the status pills, the view-only pill, the Share button (Admin only), the comments button and the user menu, under the
  * workspace promo banner. Sharing never rewrites the address bar to the public link, as /doc does: doc2 can't open
- * that URL, and the link is copied from the sharing modal.
+ * that URL, and the link is copied from the sharing modal. A share link's visitor gets neither the banner nor the user
+ * menu, as /doc's public header has neither.
  */
 export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps) {
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
@@ -43,7 +44,7 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
 
   return (
     <>
-      <WorkspacePromoBanner />
+      {!props.isPublic && <WorkspacePromoBanner />}
       <div className="flex select-none flex-nowrap items-center gap-2 px-3 py-2" data-testid="docs-header">
         <div className="flex flex-1 flex-nowrap items-center head-480-749:!flex-none head-max-479:!basis-auto">
           <a className="flex-shrink-0" href={getAppHref('/', APPS.PROTONDOCS)} data-testid="docs-home-link">
@@ -71,16 +72,18 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
           )}
           {role !== 'Viewer' && <CommentsButton hasUnread={hasUnreadComments} onShowComments={onShowComments} />}
           <div className="w-2" />
-          <UserDropdown
-            app={APPS.PROTONDOCS}
-            reportDescriptionContext={getDocsReportContextLines({
-              documentType: 'doc',
-              role: new DocumentRole(role),
-              appVersion: APP_VERSION,
-              clientType: CLIENT_TYPE,
-            })}
-            sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
-          />
+          {!props.isPublic && (
+            <UserDropdown
+              app={APPS.PROTONDOCS}
+              reportDescriptionContext={getDocsReportContextLines({
+                documentType: 'doc',
+                role: new DocumentRole(role),
+                appVersion: APP_VERSION,
+                clientType: CLIENT_TYPE,
+              })}
+              sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
+            />
+          )}
         </div>
       </div>
       {sharingModal}

@@ -21,7 +21,7 @@ import { exportAndDownload } from '../__utils/downloadExport'
 import { fetchExternalImageAsBase64 } from '../__utils/fetchExternalImageAsBase64'
 import { getNodeName } from '../__utils/getNodeName'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
-import type { LoaderDeps } from '../__utils/loadDocument'
+import { type LoaderDeps, commentsOf } from '../__utils/loadDocument'
 import { getLoadingScreenStatus, isLocked } from '../__utils/loadingScreen'
 import { createVersionHistory } from '../__utils/NativeVersionHistory'
 import { useDocumentFileActions } from '../__utils/useDocumentFileActions'
@@ -136,9 +136,10 @@ export function DocumentViewerV2({
   const role = ('role' in status && status.role) || 'Viewer'
   const node = useLiveDocumentNode('node' in status ? status.node : undefined)
   const snapshot = useSyncExternalStore(session?.subscribe ?? subscribeToNothing, session?.getSnapshot ?? getNothing)
+  const sessionComments = commentsOf(session)
   const comments = useSyncExternalStore(
-    session?.comments?.subscribe ?? subscribeToNothing,
-    session?.comments?.getSnapshot ?? getNothing,
+    sessionComments?.subscribe ?? subscribeToNothing,
+    sessionComments?.getSnapshot ?? getNothing,
   )
   // The editor's lock, as the Loader computes it, for what edits the document outside the editor: the history's restore
   const editRefused = status.name === 'revealed' && status.editRefused
@@ -247,7 +248,7 @@ export function DocumentViewerV2({
       onFileMenuAction={onFileMenuAction}
       hasUnreadComments={comments?.hasUnread ?? false}
       // A viewer made an editor after the session opened has no comments until the document opens again
-      onShowComments={exportInvoker && session?.comments && showComments}
+      onShowComments={exportInvoker && sessionComments && showComments}
       status={editorInvoker && snapshot && <SessionStatus snapshot={snapshot} onRetry={retryConnection} />}
     />
   )
@@ -275,7 +276,7 @@ export function DocumentViewerV2({
           {waitingForActivity && <IdleActivityCatcher />}
         </div>
         {revealed && <WordCountOverlay wordCount={wordCount} />}
-        {isDebugMode && session && snapshot && exportInvoker && (
+        {isDebugMode && session && 'squash' in session && snapshot && exportInvoker && (
           <DocumentDebugMenu session={session} snapshot={snapshot} editorInvoker={exportInvoker} />
         )}
         {modal}

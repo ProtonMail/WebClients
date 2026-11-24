@@ -134,16 +134,31 @@ describe('DocumentPageV2', () => {
     expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('This link is not supported on this page.')
   })
 
-  test('open-url-reauth goes back to the public document', () => {
+  test('open-url-reauth goes back to the public document on /doc2', () => {
     renderAt('/u/1/doc2?mode=open-url-reauth&token=TOKEN&linkId=LINK', '#urlPassword')
 
     expect(screen.getByRole('status')).toHaveTextContent('Redirecting…')
     const url = new URL(vi.mocked(assignUrl).mock.lastCall![0])
-    expect(url.pathname).toBe('/doc')
+    expect(url.origin).toBe(ORIGIN)
+    expect(url.pathname).toBe('/doc2')
     expect(url.searchParams.get('mode')).toBe('open-url')
     expect(url.searchParams.get('token')).toBe('TOKEN')
     expect(url.searchParams.get('linkId')).toBe('LINK')
     expect(url.hash).toBe('#urlPassword')
+  })
+
+  test('open-url-reauth keeps the action to resume after the sign-in', () => {
+    renderAt('/u/1/doc2?mode=open-url-reauth&token=TOKEN&linkId=LINK&action=make-copy', '#urlPassword')
+
+    const url = new URL(vi.mocked(assignUrl).mock.lastCall![0])
+    expect(url.pathname).toBe('/doc2')
+    expect(url.searchParams.get('action')).toBe('make-copy')
+  })
+
+  test('a public link, which only the public app opens, is unsupported here', () => {
+    renderAt('/u/1/doc2?mode=open-url&token=TOKEN&linkId=LINK', '#urlPassword')
+
+    expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('This link is not supported on this page.')
   })
 
   describe('creating a document', () => {

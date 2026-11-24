@@ -132,6 +132,24 @@ describe('DocumentTitleMenu', () => {
     },
   )
 
+  test.each<DocumentRole>(['Editor', 'Viewer'])(
+    "a public link's %s gets none of the member-only items, though a public node has no membership",
+    async (role) => {
+      await openMenu(role, { isPublic: true })
+
+      expect(menuItemNames()).toEqual([
+        'Word count',
+        'Hide table of contents',
+        'Print',
+        'Download',
+        'Copy as markdown',
+        'Help',
+        'Open Proton Drive',
+        'Download logs',
+      ])
+    },
+  )
+
   test('New spreadsheet needs sheets enabled', async () => {
     mockIsSheetsEnabled = false
 

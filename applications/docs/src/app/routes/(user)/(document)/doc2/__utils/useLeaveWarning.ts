@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
-
-import type { Session } from '@proton-docs/realtime-sdk'
+import type { DocumentSession } from './loadDocument'
 
 /**
  * Has the browser ask before the page is left while `session` holds edits the server has not acknowledged, which a
  * closed tab loses (ADR-0010). Reads `delivery` when the user leaves, so anything but `synced` warns.
  */
-export function useLeaveWarning(session: Session | undefined): void {
+export function useLeaveWarning(session: DocumentSession | undefined): void {
   useEffect(() => {
     if (!session) {
       return

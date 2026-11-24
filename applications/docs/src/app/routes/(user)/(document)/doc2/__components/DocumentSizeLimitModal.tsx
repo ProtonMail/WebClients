@@ -5,11 +5,11 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal'
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader'
-import type { Session } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
+import type { DocumentSession } from '../__utils/loadDocument'
 
 export type DocumentSizeLimitModalProps = {
-  session: Session | undefined
+  session: DocumentSession | undefined
   /** Saves the document as docx, once the editor shows it */
   onDownloadCopy: (() => void) | undefined
 }

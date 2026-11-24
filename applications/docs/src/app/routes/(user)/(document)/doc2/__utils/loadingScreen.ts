@@ -33,6 +33,8 @@ export function getLoadingScreenStatus(status: LoaderStatus): LoadingScreenStatu
       return 'cantConnect'
     case 'revealed':
       return undefined
+    case 'redirecting':
+      return 'redirecting'
     default:
       return LOADING_STAGES.node
   }

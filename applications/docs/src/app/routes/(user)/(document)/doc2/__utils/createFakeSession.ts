@@ -4,6 +4,7 @@ import type {
   CommentsEvents,
   CommentsSnapshot,
   HistoryEntry,
+  PublicSession,
   Session,
   SessionEvents,
   SessionSnapshot,
@@ -11,9 +12,13 @@ import type {
 
 /**
  * A session for tests, pending until bootstrapped: its snapshot changes and its events fire by hand, and every method is
- * a jest mock. Its `comments` are on, with no threads, whatever the config asked.
+ * a mock. Its `comments` are on, with no threads, whatever the config asked. With `publicLink`, it stands in for a public
+ * session: see `createFakePublicSession`.
  */
-export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
+export function createFakeSession(
+  snapshot: Partial<SessionSnapshot> = {},
+  options: { publicLink?: { userOwnAddress?: string } } = {},
+) {
   const comments = createFakeComments()
   const listeners = new Map<string, Set<(payload: unknown) => void>>()
   const snapshotListeners = new Set<(snapshot: SessionSnapshot) => void>()
@@ -45,8 +50,18 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
     getSnapshot: () => current,
     getBaseState: vi.fn((): BaseState => ({ commitId: 'commit-1', updates: [] })),
     getHistory: vi.fn((): HistoryEntry[] => []),
-    getNodeMeta: vi.fn(() => ({ volumeId: 'VOLUME', linkId: 'LINK', userOwnAddress: 'member@example.com' })),
-    config: { documentType: 'doc', nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' }, clientId: 1 },
+    // A public session's getNodeMeta is the private shape: the SDK reads the volume from the document's meta, and the
+    // share link's token is only in config.nodeMeta
+    getNodeMeta: vi.fn(() => ({
+      volumeId: 'VOLUME',
+      linkId: 'LINK',
+      userOwnAddress: options.publicLink ? options.publicLink.userOwnAddress : 'member@example.com',
+    })),
+    config: {
+      documentType: 'doc',
+      nodeMeta: options.publicLink ? { token: 'TOKEN', linkId: 'LINK' } : { volumeId: 'VOLUME', linkId: 'LINK' },
+      clientId: 1,
+    },
     // A pending session and the session it bootstraps into are one object, as in the SDK
     bootstrap: vi.fn(async (): Promise<Session> => session as unknown as Session),
     connect: vi.fn(async () => {}),
@@ -54,6 +69,8 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
     pause: vi.fn(async () => {}),
     resume: vi.fn(async () => {}),
     retry: vi.fn(async () => {}),
+    // A public session never squashes, so it has no squash to call
+    ...(options.publicLink ? {} : { squash: vi.fn(async () => {}) }),
     sendUpdate: vi.fn(),
     setPresence: vi.fn(),
     comments: comments.comments,
@@ -140,4 +157,17 @@ export function fakeThread(change: Partial<CommentThread> = {}): CommentThread {
     isPlaceholder: false,
     ...change,
   }
+}
+
+/**
+ * A session for tests standing in for a public one, a document reached through a share link: `createFakeSession` with a
+ * share link's node meta, and a `getNodeMeta` whose `userOwnAddress` is undefined, an anonymous visitor's, unless the
+ * test names one. As the SDK's public session, it has no `squash`.
+ */
+export function createFakePublicSession(
+  snapshot: Partial<SessionSnapshot> = {},
+  options: { userOwnAddress?: string } = {},
+) {
+  const fake = createFakeSession(snapshot, { publicLink: options })
+  return { ...fake, session: fake.session as unknown as PublicSession }
 }

@@ -1,5 +1,5 @@
 import { parseOpenAction } from '~/utils/docs-url-bar'
-import { resolveOpenAction } from './resolveOpenAction'
+import { loggableResolution, resolveOpenAction } from './resolveOpenAction'
 
 function resolveUrl(url: string) {
   const { pathname, search } = new URL(url, 'https://docs.proton.dev')
@@ -66,10 +66,16 @@ describe('resolveOpenAction', () => {
     })
   })
 
+  test.each(['/doc2?mode=open-url&token=TOKEN&linkId=LINK', '/doc2?mode=open-url&token=TOKEN'])(
+    '%s opens the public link',
+    (url) => {
+      expect(resolveUrl(url)).toEqual({ kind: 'openPublicLink', token: 'TOKEN' })
+    },
+  )
+
   test.each([
     '/doc2?mode=convert&volumeId=VOLUME&linkId=LINK',
     '/doc2?mode=copy-public',
-    '/doc2?mode=open-url&token=TOKEN&linkId=LINK',
     '/doc2?mode=open-url-download&token=TOKEN&linkId=LINK',
   ])('%s is unsupported on this page', (url) => {
     expect(resolveUrl(url)).toEqual({ kind: 'error', reason: 'unsupported' })
@@ -90,4 +96,16 @@ describe('resolveOpenAction', () => {
       expect(resolveUrl(url)).toEqual({ kind: 'error', reason: 'slackTruncated' })
     },
   )
+})
+
+describe('loggableResolution', () => {
+  test("a public link's resolution logs its kind, never its token", () => {
+    const logged = loggableResolution(resolveUrl('/doc2?mode=open-url&token=TOKEN&linkId=LINK'))
+    expect(logged).toEqual({ kind: 'openPublicLink' })
+    expect(JSON.stringify(logged)).not.toContain('TOKEN')
+  })
+
+  test("an error's resolution logs its reason", () => {
+    expect(loggableResolution(resolveUrl('/doc2?foo=bar'))).toEqual({ kind: 'error', reason: 'invalidUrl' })
+  })
 })

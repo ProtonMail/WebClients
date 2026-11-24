@@ -1,10 +1,19 @@
+import { AnonymousUserEmail } from '@proton/docs-shared/AnonymousUser'
 import { DocUpdateOrigin } from '@proton/docs-shared/Doc/DocState'
 import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
-import { type NodeEntity, generateNodeUid, type getDrive } from '@proton/drive/sdk'
+import { type NodeEntity, generateNodeUid, type getDrive, splitNodeUid } from '@proton/drive/sdk'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import type { BootstrapPrefetch, PrivateNodeMeta, Session } from '@proton-docs/realtime-sdk'
+import type {
+  PendingPublicSession,
+  PendingSession,
+  PrivateNodeMeta,
+  PublicNodeMeta,
+  PublicRealtimeClient,
+  PublicSession,
+  Session,
+} from '@proton-docs/realtime-sdk'
 
 import { ClientEditorBridge } from './ClientEditorBridge'
 import type { EditorInvoker } from './EditorInvoker'
@@ -14,6 +23,7 @@ import { type ClientHandlerDependencies, createClientHandler } from './createCli
 import { type DocumentRole, getDocumentRole } from './getDocumentRole'
 import { DocsLoadMark, type DocsLoadMarkName, markDocsLoad } from './loadMarks'
 import { type LockCall, isLocked, isRevealPoint } from './loadingScreen'
+import { getPublicDocumentRole } from './publicLink'
 import type { useRealtimeClient } from './useRealtimeClient'
 
 export const EDITOR_FRAME_READY_TIMEOUT_MS = 30_000
@@ -26,11 +36,19 @@ export type LoaderStep = 'node' | 'bootstrap' | 'frame' | 'baseState' | 'catchUp
 
 export type LoaderFailure = 'unsupported' | 'unreadableUpdate' | 'editorFailed' | BootstrapFailure
 
+/** A member's session, or a visitor's at a share link, which has no squash */
+export type DocumentSession = Session | PublicSession
+
+/** The session's comments, when on: a public session has none, as public links have no comments yet */
+export function commentsOf(session: DocumentSession | undefined): Session['comments'] | undefined {
+  return session && 'comments' in session ? session.comments : undefined
+}
+
 /** What the page has of the document so far, for the header and the hooks that follow the session and the editor */
 type Opened = {
   node?: NodeEntity
   role?: DocumentRole
-  session?: Session
+  session?: DocumentSession
   /** Once the editor holds the base state */
   editorInvoker?: EditorInvoker
 }
@@ -43,26 +61,51 @@ export type LoaderStatus =
       name: 'revealed'
       node: NodeEntity
       role: DocumentRole
-      session: Session
+      session: DocumentSession
       editorInvoker: EditorInvoker
       /** The SDK refused an edit, a lock cause the session's snapshot doesn't hold */
       editRefused: boolean
     }
   /** In the trash: RTS refuses a trashed document a token, so no session opens until it is restored */
   | { name: 'trashed'; node: NodeEntity; role: DocumentRole }
+  /** A visitor with access of their own, sent to the document's private URL: no session opens */
+  | { name: 'redirecting' }
   /** A failed editor leaves its session open, so the edits it sent are still delivered */
-  | { name: 'failed'; reason: LoaderFailure; session?: Session }
+  | { name: 'failed'; reason: LoaderFailure; session?: DocumentSession }
 
-export type LoaderDeps = {
+/** A document the user reaches as a member */
+export type PrivateLoaderDeps = LoaderCommonDeps & {
   client: Pick<ReturnType<typeof useRealtimeClient>, 'createSession' | 'prefetchBootstrap'>
   drive: Pick<ReturnType<typeof getDrive>, 'getNodeHierarchy'>
   nodeMeta: PrivateNodeMeta
+  /** The document's name as it is now, for the comment notification emails */
+  getDocumentName: () => string | undefined
+  publicLink?: undefined
+}
+
+/** A document a visitor reaches through a share link, signed in or not (`documentation/specs/doc2-public-links.md`) */
+export type PublicLinkLoaderDeps = {
+  client: Pick<PublicRealtimeClient, 'createSession'>
+  nodeMeta: PublicNodeMeta
+  /** The share-URL client's node of the document */
+  getNode: () => Promise<NodeEntity>
+  /** Whether the link lets its visitors edit */
+  isEditorLink: boolean
+  /** `DocsPublicEditing`, read once Unleash is ready: off, the visitor views the latest commit and nothing connects */
+  publicEditing: boolean
+  /** Whether a signed-in visitor can reach the document as a member; always false for an anonymous one */
+  hasAccessOfOwn: (node: NodeEntity) => Promise<boolean>
+  /** Leaves for the document's private URL, `/doc2?mode=open` */
+  openPrivately: (nodeMeta: PrivateNodeMeta) => void
+}
+
+export type LoaderDeps = PrivateLoaderDeps | (LoaderCommonDeps & { publicLink: PublicLinkLoaderDeps })
+
+type LoaderCommonDeps = {
   logger: LoggerInterface
   appVersion: string
   /** Gives the editor the theme, the user's settings and name, sent before it is initialized; never throws */
   sendEditorBasics: (editorInvoker: EditorInvoker) => void
-  /** The document's name as it is now, for the comment notification emails */
-  getDocumentName: () => string | undefined
   /** Stable, so that the bridge built with them is built once */
   bridgeHandlers: Omit<
     ClientHandlerDependencies,
@@ -124,7 +167,7 @@ class LoaderRun {
   private currentStep: LoaderStep = 'node'
   private node?: NodeEntity
   private role?: DocumentRole
-  private session?: Session
+  private session?: DocumentSession
   private editorInvoker?: EditorInvoker
   private editorShown = false
   private editorRendered = false
@@ -191,39 +234,90 @@ class LoaderRun {
    * node step, which they don't need, and the session's bootstrap takes them. Confirmed at once, so the realtime token
    * is fetched beside the node step too: a document in the trash then gets one refused token request, which costs less
    * than waiting for the node step on every open. Ended here too, for a run that opens no session. Resolves `false` for
-   * a document in the trash.
+   * a document in the trash, or a visitor sent to its private URL.
    */
   async open(): Promise<boolean> {
-    const prefetch = this.deps.client.prefetchBootstrap(this.deps.nodeMeta)
+    const { deps } = this
+    if (deps.publicLink) {
+      return this.openPublicLink(deps.publicLink)
+    }
+    const prefetch = deps.client.prefetchBootstrap(deps.nodeMeta)
     prefetch.confirm()
     try {
-      const { node, role } = await this.step('node', () => this.readNode())
+      const { node, role } = await this.step('node', () => this.readNode(deps))
       if (node.trashTime) {
         this.openTrashed(node, role)
         return false
       }
-      await this.step('bootstrap', () => this.bootstrap(prefetch))
+      await this.step('bootstrap', () =>
+        this.bootstrap(
+          () =>
+            deps.client.createSession({
+              documentType: 'doc',
+              nodeMeta: deps.nodeMeta,
+              prefetch,
+              // Comments are on for admins and editors only; /doc also shows a viewer the threads, read-only.
+              ...((this.role === 'Admin' || this.role === 'Editor') && {
+                comments: { getDocumentNameForEmails: deps.getDocumentName },
+              }),
+              // As /doc squashes on dev and black. Mirrors `packages/docs-core/lib/Types/SquashingConstants.ts`, its
+              // `GetCommitDULimit`.
+              ...(isDevOrBlack() && { commitDuLimit: 50 }),
+            }),
+          async () => getDocumentRole(await deps.drive.getNodeHierarchy(nodeUid(deps.nodeMeta))),
+        ),
+      )
       return true
     } finally {
       prefetch.end()
     }
   }
 
+  /**
+   * The `node` and `bootstrap` steps through a share link. No Early Start: every public read needs the share-URL
+   * session first. Adapted from `packages/docs-core/lib/Services/DocumentLoader/PublicDocLoader.ts`, its redirect for
+   * access of one's own, before any session opens.
+   */
+  async openPublicLink(link: PublicLinkLoaderDeps): Promise<boolean> {
+    const { redirect } = await this.step('node', () => this.readPublicNode(link))
+    if (redirect) {
+      this.deps.logger.info('Visitor has access of their own, redirecting to the private document')
+      this.dispatch({ name: 'redirecting' })
+      link.openPrivately(redirect)
+      return false
+    }
+    // The link's role is read once, from the share-URL sign-in, so a rebootstrap doesn't read it again
+    await this.step('bootstrap', () =>
+      this.bootstrap(() => link.client.createSession({ documentType: 'doc', nodeMeta: link.nodeMeta })),
+    )
+    return true
+  }
+
   /** The node is the last item of its hierarchy, so one read gives both it and the user's role */
-  async readNode(): Promise<{ node: NodeEntity; role: DocumentRole }> {
-    const nodeUid = this.nodeUid()
-    const hierarchy = await this.deps.drive.getNodeHierarchy(nodeUid)
+  async readNode(deps: PrivateLoaderDeps): Promise<{ node: NodeEntity; role: DocumentRole }> {
+    const uid = nodeUid(deps.nodeMeta)
+    const hierarchy = await deps.drive.getNodeHierarchy(uid)
     const node = hierarchy.at(-1)
-    if (node?.uid !== nodeUid) {
+    if (node?.uid !== uid) {
       throw new Error('The node hierarchy does not end with the document')
     }
-    if (!isProtonDocsDocument(node.mediaType ?? '')) {
-      this.deps.logger.info('Node is not a text document', { mediaType: node.mediaType })
-      throw new LoaderFailureError('unsupported')
-    }
+    this.requireTextDocument(node)
     this.node = node
     this.role = getDocumentRole(hierarchy)
     return { node, role: this.role }
+  }
+
+  /** The share-URL client's node, and where a visitor with access of their own goes instead */
+  async readPublicNode(link: PublicLinkLoaderDeps): Promise<{ redirect?: PrivateNodeMeta }> {
+    const node = await link.getNode()
+    this.requireTextDocument(node)
+    if (await link.hasAccessOfOwn(node)) {
+      const { volumeId, nodeId } = splitNodeUid(node.uid)
+      return { redirect: { volumeId, linkId: nodeId } }
+    }
+    this.node = node
+    this.role = getPublicDocumentRole(link)
+    return {}
   }
 
   openTrashed(node: NodeEntity, role: DocumentRole) {
@@ -233,22 +327,15 @@ class LoaderRun {
 
   /**
    * A base state with an unreadable update fails, since showing the rest would pass an incomplete document as whole.
-   * The session is disconnected when the run is aborted, once bootstrapped if it was still bootstrapping. Comments are
-   * on for admins and editors only; /doc also shows a viewer the threads, read-only.
+   * The session is disconnected when the run is aborted, once bootstrapped if it was still bootstrapping. `readRole`,
+   * when given, reads the role again after each rebootstrap.
    */
-  async bootstrap(prefetch: BootstrapPrefetch): Promise<void> {
-    const { client, nodeMeta, logger, getDocumentName } = this.deps
-    const pending = client.createSession({
-      documentType: 'doc',
-      nodeMeta,
-      prefetch,
-      ...((this.role === 'Admin' || this.role === 'Editor') && {
-        comments: { getDocumentNameForEmails: getDocumentName },
-      }),
-      // As /doc squashes on dev and black. Mirrors `packages/docs-core/lib/Types/SquashingConstants.ts`, its
-      // `GetCommitDULimit`.
-      ...(isDevOrBlack() && { commitDuLimit: 50 }),
-    })
+  async bootstrap(
+    createSession: () => PendingSession | PendingPublicSession,
+    readRole?: () => Promise<DocumentRole>,
+  ): Promise<void> {
+    const { logger } = this.deps
+    const pending = createSession()
     const unreadableBaseStateUuids: string[] = []
     this.listen(
       pending.on('updateUnreadable', ({ uuid, origin }) => {
@@ -277,7 +364,9 @@ class LoaderRun {
         this.publish()
       }),
     )
-    this.listen(this.rereadRoleAfterRebootstraps(session))
+    if (readRole) {
+      this.listen(this.rereadRoleAfterRebootstraps(session, readRole))
+    }
   }
 
   /** Builds the bridge once the frame is there, within EDITOR_FRAME_READY_TIMEOUT_MS of this step's start */
@@ -289,7 +378,7 @@ class LoaderRun {
       createClientHandler({
         ...this.deps.bridgeHandlers,
         editorFrame,
-        comments: session.comments,
+        comments: commentsOf(session),
         sendUpdate: (update) => session.sendUpdate(update),
         onEditorError: (error) => this.failEditor(error),
         onEditorRendered: () => {
@@ -330,10 +419,15 @@ class LoaderRun {
 
   /**
    * As docs-core's EditorController, waits for RTS to replay the edits it has not committed yet: before that the
-   * editor may hold nothing. A connect that rejects has stopped the session, which the status shows.
+   * editor may hold nothing. A connect that rejects has stopped the session, which the status shows. A share link's
+   * session with `DocsPublicEditing` off never connects: the base state is all there is.
    */
   async catchUp(): Promise<void> {
     const session = this.requireSession()
+    if (this.deps.publicLink && !this.deps.publicLink.publicEditing) {
+      this.deps.logger.info('Public editing is off, viewing the latest commit without connecting')
+      return
+    }
     session.connect().catch((error) => {
       if (!this.io.signal.aborted) {
         this.deps.logger.error('Failed to connect the document session', error)
@@ -345,7 +439,8 @@ class LoaderRun {
   /**
    * Initializes the editor for the user's role with the updates it holds. A viewer's read-only preview copies the
    * editor's content as it initializes and throws on an empty one (Lexical #38), so only once it holds the whole
-   * document.
+   * document. An anonymous visitor has no address: the editor gets /doc's anonymous one. Mirrors
+   * `packages/docs-core/lib/Services/Orchestrator/EditorOrchestrator.ts`, its `userAddress`.
    */
   async initializeEditor(): Promise<void> {
     const editorInvoker = this.requireEditorInvoker()
@@ -353,13 +448,13 @@ class LoaderRun {
     const { userOwnAddress } = this.requireSession().getNodeMeta()
     await editorInvoker.initializeEditor(
       GenerateUUID(),
-      userOwnAddress,
+      userOwnAddress ?? AnonymousUserEmail,
       this.requireRole(),
-      false,
+      Boolean(this.deps.publicLink),
       this.deps.appVersion,
     )
     // Not before: the editor throws on a call before it is initialized, and reads the threads itself once it mounts
-    const { comments } = this.requireSession()
+    const comments = commentsOf(this.requireSession())
     if (comments) {
       this.listen(pushCommentsToEditor(comments, editorInvoker, this.deps.logger))
     }
@@ -481,7 +576,7 @@ class LoaderRun {
    * `opening`. Only the latest read counts, and one that fails keeps the role. A read applies the lock again even when
    * the role is unchanged.
    */
-  private rereadRoleAfterRebootstraps(session: Session): () => void {
+  private rereadRoleAfterRebootstraps(session: DocumentSession, readRole: () => Promise<DocumentRole>): () => void {
     let rebootstrapping = session.getSnapshot().status.name === 'opening'
     let latestRead = 0
 
@@ -495,12 +590,12 @@ class LoaderRun {
       }
       rebootstrapping = false
       const read = ++latestRead
-      this.deps.drive.getNodeHierarchy(this.nodeUid()).then(
-        (hierarchy) => {
+      readRole().then(
+        (role) => {
           if (this.io.signal.aborted || read !== latestRead) {
             return
           }
-          this.role = getDocumentRole(hierarchy)
+          this.role = role
           this.deps.logger.info('Read the role again after a rebootstrap', { role: this.role })
           this.publish()
           this.syncLock(true)
@@ -586,15 +681,19 @@ class LoaderRun {
     this.io.signal.addEventListener('abort', fn, { once: true })
   }
 
-  private disconnect(session: Session) {
+  private disconnect(session: DocumentSession) {
     session.disconnect().catch((error) => this.deps.logger.warn('Failed to disconnect the document session', error))
   }
 
-  private nodeUid() {
-    return generateNodeUid(this.deps.nodeMeta.volumeId, this.deps.nodeMeta.linkId)
+  /** Only a text document opens: anything else is `unsupported` */
+  private requireTextDocument(node: NodeEntity) {
+    if (!isProtonDocsDocument(node.mediaType ?? '')) {
+      this.deps.logger.info('Node is not a text document', { mediaType: node.mediaType })
+      throw new LoaderFailureError('unsupported')
+    }
   }
 
-  private requireSession(): Session {
+  private requireSession(): DocumentSession {
     if (!this.session) {
       throw new Error('No session before the bootstrap step')
     }
@@ -614,6 +713,10 @@ class LoaderRun {
     }
     return this.role
   }
+}
+
+function nodeUid({ volumeId, linkId }: PrivateNodeMeta) {
+  return generateNodeUid(volumeId, linkId)
 }
 
 /** Resolves with `promise`, or rejects once `ms` pass first, or at once on abort, so nothing builds on a late frame */

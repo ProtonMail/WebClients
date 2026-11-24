@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 
-import type { Session, SessionStatus } from '@proton-docs/realtime-sdk'
+import type { SessionStatus } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
+import type { DocumentSession } from './loadDocument'
 
 /** As docs-core `Realtime/WebsocketConnection.ts` closes its connection after the document hides for an hour */
 export const PAUSE_WHEN_HIDDEN_FOR_MS = 60 * 60 * 1000
@@ -15,7 +16,7 @@ const PAUSABLE_STATUSES: SessionStatus['name'][] = ['connecting', 'connected', '
  * from some statuses, and a status can change after the browser event that asked for it. The SDK never pauses on its
  * own.
  */
-export function usePauseWhileAway(session: Session | undefined): void {
+export function usePauseWhileAway(session: DocumentSession | undefined): void {
   const { logger } = useApplication()
 
   useEffect(() => {

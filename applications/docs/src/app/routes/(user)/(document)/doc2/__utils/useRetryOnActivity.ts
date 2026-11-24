@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import type { Session, SessionStatus } from '@proton-docs/realtime-sdk'
+import type { SessionStatus } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
+import type { DocumentSession } from './loadDocument'
 
 const ACTIVITY_EVENTS = ['pointerdown', 'pointermove', 'wheel', 'keydown'] as const
 
@@ -18,7 +19,7 @@ function isIdleEvicted(status: SessionStatus): boolean {
  * next. Activity inside the editor frame reaches only the frame's own window, so while this waits, the caller covers
  * the frame with an element of the page, which then gets that activity.
  */
-export function useRetryOnActivity(session: Session | undefined): boolean {
+export function useRetryOnActivity(session: DocumentSession | undefined): boolean {
   const { logger } = useApplication()
   const [waiting, setWaiting] = useState(false)
 

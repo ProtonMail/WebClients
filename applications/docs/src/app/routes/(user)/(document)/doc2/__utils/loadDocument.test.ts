@@ -1,5 +1,6 @@
 import { waitFor } from '@testing-library/react'
 
+import { AnonymousUserEmail } from '@proton/docs-shared/AnonymousUser'
 import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
 import { MemberRole, ValidationError, generateNodeUid } from '@proton/drive/sdk'
 import { isDevOrBlack } from '@proton/shared/lib/env'
@@ -8,11 +9,12 @@ import { DocsApiError, DocsApiErrorCode } from '@proton-docs/realtime-sdk'
 import type { Participant, SessionSnapshot } from '@proton-docs/realtime-sdk'
 
 import type { ClientHandler } from './createClientHandler'
-import { createFakeSession, fakeThread } from './createFakeSession'
+import { createFakePublicSession, createFakeSession, fakeThread } from './createFakeSession'
 import {
   EDITOR_FRAME_READY_TIMEOUT_MS,
   type LoaderDeps,
   type LoaderStatus,
+  type PrivateLoaderDeps,
   type LoaderStep,
   loadDocument,
 } from './loadDocument'
@@ -127,7 +129,7 @@ function startLoad({
       fetchExternalImageAsBase64: vi.fn(),
       logger,
     },
-  } as unknown as LoaderDeps
+  } as unknown as PrivateLoaderDeps
   let giveFrame: () => void = () => {}
   const frame = new Promise<HTMLIFrameElement>(
     (resolve) => (giveFrame = () => resolve(document.createElement('iframe'))),
@@ -975,5 +977,170 @@ describe('loadDocument', () => {
       expect(load.fake.mocks.disconnect).toHaveBeenCalledTimes(1)
       expect(load.drive.getNodeHierarchy).toHaveBeenCalledTimes(1)
     })
+  })
+})
+
+/**
+ * Starts a load through a share link with fakes, as `startLoad` does: a public session that catches up only when told,
+ * the share-URL client's node, and the visitor's access of their own
+ */
+function startPublicLoad({
+  isEditorLink = true,
+  publicEditing = true,
+  accessOfOwn = false,
+  userOwnAddress,
+  mediaType = PROTON_DOCS_DOCUMENT_MIMETYPE,
+}: {
+  isEditorLink?: boolean
+  publicEditing?: boolean
+  accessOfOwn?: boolean
+  userOwnAddress?: string
+  mediaType?: string
+} = {}) {
+  const fake = createFakePublicSession({}, { userOwnAddress })
+  fake.mocks.getBaseState.mockReturnValue({ commitId: 'commit-1', updates: BASE_UPDATES.map(update) })
+  const publicLink = {
+    client: { createSession: vi.fn((_config: unknown) => fake.session) },
+    nodeMeta: { token: 'TOKEN', linkId: 'LINK' },
+    getNode: vi.fn(async () => ({ uid: NODE_UID, mediaType })),
+    isEditorLink,
+    publicEditing,
+    hasAccessOfOwn: vi.fn(async () => accessOfOwn),
+    openPrivately: vi.fn(),
+  }
+  const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn(), debug: vi.fn() }
+  const deps = {
+    publicLink,
+    logger,
+    appVersion: '1.2.3',
+    sendEditorBasics: vi.fn(),
+    bridgeHandlers: {
+      isFlagEnabled: () => false,
+      onWordCount: vi.fn(),
+      showModal: vi.fn(),
+      onFileMenuAction: vi.fn(),
+      onPresenceUpdate: vi.fn(),
+      fetchExternalImageAsBase64: vi.fn(),
+      logger,
+    },
+  } as unknown as LoaderDeps
+  const frame = Promise.resolve(document.createElement('iframe'))
+  const statuses: LoaderStatus[] = []
+  const controller = new AbortController()
+  const done = loadDocument(deps, { frame, dispatch: (status) => statuses.push(status), signal: controller.signal })
+
+  return {
+    fake,
+    publicLink,
+    statuses,
+    controller,
+    done,
+    latest: () => statuses.at(-1)!,
+    steps: () => statuses.flatMap((status) => ('step' in status ? [status.step] : [])),
+    catchUp: () => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }),
+    render: () => mockClientHandler.updateFrameSize(480),
+  }
+}
+
+describe('loadDocument through a share link', () => {
+  afterEach(() => {
+    mockEditorCalls.length = 0
+    vi.clearAllMocks()
+  })
+
+  describe('with public editing on', () => {
+    test.each([
+      { link: 'an editor link', isEditorLink: true, role: 'Editor', lock: 'unlock' },
+      { link: 'a viewer link', isEditorLink: false, role: 'Viewer', lock: 'lock' },
+    ])('$link opens live for a $role, on a public session with no prefetch', async ({ isEditorLink, role, lock }) => {
+      const load = startPublicLoad({ isEditorLink })
+      await waitFor(() => expect(load.fake.mocks.connect).toHaveBeenCalled())
+      load.catchUp()
+      await waitFor(() => expect(mockEditorCalls).toContain(lock))
+      load.render()
+      await waitFor(() => expect(load.latest().name).toBe('revealed'))
+
+      expect([...new Set(load.steps())]).toEqual(STEPS)
+      expect(load.publicLink.client.createSession).toHaveBeenCalledWith({
+        documentType: 'doc',
+        nodeMeta: { token: 'TOKEN', linkId: 'LINK' },
+      })
+      expect(mockEditorCalls).toContain(`initializeEditor:${role}`)
+      expect(load.latest()).toMatchObject({ name: 'revealed', role, node: { uid: NODE_UID } })
+      expect(load.publicLink.openPrivately).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('with public editing off', () => {
+    test.each([
+      { link: 'an editor link', isEditorLink: true },
+      { link: 'a viewer link', isEditorLink: false },
+    ])('$link shows the latest commit read-only and never connects', async ({ isEditorLink }) => {
+      const load = startPublicLoad({ isEditorLink, publicEditing: false })
+      await waitFor(() => expect(mockEditorCalls).toContain('lock'))
+      load.render()
+      await waitFor(() => expect(load.latest().name).toBe('revealed'))
+
+      expect([...new Set(load.steps())]).toEqual(STEPS)
+      expect(load.fake.mocks.connect).not.toHaveBeenCalled()
+      expect(mockEditorCalls).toEqual([
+        'receiveMessage:1:base',
+        'receiveMessage:2:base',
+        'initializeEditor:Viewer',
+        'showEditor',
+        'lock',
+      ])
+      expect(load.latest()).toMatchObject({ name: 'revealed', role: 'Viewer' })
+    })
+  })
+
+  test.each([
+    { visitor: 'an anonymous visitor', userOwnAddress: undefined, address: AnonymousUserEmail },
+    { visitor: 'a signed-in visitor', userOwnAddress: 'visitor@example.com', address: 'visitor@example.com' },
+  ])('initializes the editor in public mode, under $address for $visitor', async ({ userOwnAddress, address }) => {
+    const load = startPublicLoad({ userOwnAddress })
+    await waitFor(() => expect(load.fake.mocks.connect).toHaveBeenCalled())
+    load.catchUp()
+
+    await waitFor(() =>
+      expect(mockEditor.initializeEditor).toHaveBeenCalledWith(expect.any(String), address, 'Editor', true, '1.2.3'),
+    )
+  })
+
+  test('sends a visitor with access of their own to the private document before any session opens', async () => {
+    const load = startPublicLoad({ accessOfOwn: true })
+    await load.done
+
+    expect(load.publicLink.hasAccessOfOwn).toHaveBeenCalledWith({
+      uid: NODE_UID,
+      mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
+    })
+    expect(load.publicLink.openPrivately).toHaveBeenCalledWith({ volumeId: 'VOLUME', linkId: 'LINK' })
+    expect(load.publicLink.client.createSession).not.toHaveBeenCalled()
+    expect(load.latest()).toEqual({ name: 'redirecting' })
+    expect(mockBridgeBuilt).not.toHaveBeenCalled()
+  })
+
+  test('fails a link to anything but a text document as unsupported, opening no session', async () => {
+    const load = startPublicLoad({ mediaType: 'application/vnd.proton.sheet' })
+    await load.done
+
+    expect(load.latest()).toMatchObject({ name: 'failed', reason: 'unsupported' })
+    expect(load.publicLink.client.createSession).not.toHaveBeenCalled()
+  })
+
+  test("keeps the link's role after a rebootstrap, reading the node only once", async () => {
+    const load = startPublicLoad()
+    await waitFor(() => expect(load.fake.mocks.connect).toHaveBeenCalled())
+    load.catchUp()
+    load.render()
+    await waitFor(() => expect(load.latest().name).toBe('revealed'))
+
+    load.fake.setSnapshot({ status: { name: 'opening' } })
+    load.fake.setSnapshot({ status: { name: 'connected' } })
+    await flush()
+
+    expect(load.publicLink.getNode).toHaveBeenCalledTimes(1)
+    expect(load.latest()).toMatchObject({ name: 'revealed', role: 'Editor' })
   })
 })
