@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 import { type Mock, type MockedFunction, vi } from 'vitest';
 
 import { FeatureCode } from '@proton/features/interface';
-import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
+import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useMarkBYOEInboxCleanupDue from './useMarkBYOEInboxCleanupDue';

@@ -14,7 +14,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
-import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { CancelSubscriptionSection } from './CancelSubscriptionSection';
 
 const mockStartCancellation = vi.fn();

@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react';
 
 import type { Conversation } from '@proton/mail-message/models/conversation';
-import { mockUseFolders } from '@proton/mail/testing/vitest/mockUseFolders';
-import { mockUseLabels } from '@proton/mail/testing/vitest/mockUseLabels';
+import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';

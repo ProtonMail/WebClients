@@ -5,7 +5,7 @@ import {
 } from '@proton/oxlint-config/extraneousDependencies';
 
 export default createOxlintConfig({
-    ignorePatterns: ['testing/vitest/**'],
+    ignorePatterns: ['testing/mockUnleash.ts', 'testing/mockUseFlag.ts'],
     overrides: [
         {
             files: ['testing/**'],

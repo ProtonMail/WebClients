@@ -3,8 +3,8 @@ import 'core-js/actual/typed-array/from-base64';
 import 'core-js/actual/typed-array/from-hex';
 import 'core-js/actual/typed-array/to-base64';
 import 'core-js/actual/typed-array/to-hex';
-import '@proton/components/testing/vitest/mockMatchMedia';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/components/testing/mockMatchMedia';
+import '@proton/unleash/testing/mockUnleash';
 
 /** `DESKTOP_BUILD` is a build-time constant: tests drive it as a writable global */
 (globalThis as any).DESKTOP_BUILD = false;
@@ -15,9 +15,9 @@ vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: vi.fn(),
 }));
 
-vi.mock('loglevel', () => import('@proton/pass/testing/vitest/loglevel.mock'));
+vi.mock('loglevel', () => import('@proton/pass/testing/loglevel.mock'));
 vi.mock('@proton/pass/lib/core/ui.proxy', async () => ({
-    default: (await import('@proton/pass/testing/vitest/ui.proxy.mock')).default,
+    default: (await import('@proton/pass/testing/ui.proxy.mock')).default,
     preloadPassUI: async () => undefined,
 }));
 vi.mock('webextension-polyfill', () => ({ default: {} }));

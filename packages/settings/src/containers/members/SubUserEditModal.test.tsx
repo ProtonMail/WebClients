@@ -13,7 +13,7 @@ import { PREDEFINED_ROLE_NAME, ROLE_SOURCE } from '@proton/shared/lib/interfaces
 
 import SubUserEditModal from './SubUserEditModal';
 
-vi.mock('@proton/atoms/Portal/Portal', () => import('@proton/atoms/testing/vitest/Portal'));
+vi.mock('@proton/atoms/Portal/Portal', () => import('@proton/atoms/testing/Portal'));
 
 vi.mock('@proton/account/members/editMember', async () => ({
     ...(await vi.importActual('@proton/account/members/editMember')),

@@ -13,7 +13,7 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { mockPlansApi } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
 import { FeatureCode } from '@proton/features/interface';
-import { getFeatureFlagsState } from '@proton/features/testing/vitest/features';
+import { getFeatureFlagsState } from '@proton/features/testing/features';
 import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';

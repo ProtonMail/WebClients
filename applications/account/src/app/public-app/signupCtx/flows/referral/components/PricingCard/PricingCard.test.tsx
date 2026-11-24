@@ -1,6 +1,6 @@
 import { screen, within } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';

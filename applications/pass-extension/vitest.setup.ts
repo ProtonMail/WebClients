@@ -10,7 +10,7 @@ vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 }));
 
 vi.mock('@proton/pass/lib/core/ui.proxy');
-vi.mock('loglevel', async () => ({ default: (await import('@proton/pass/testing/vitest/loglevel.mock')).default }));
+vi.mock('loglevel', async () => ({ default: (await import('@proton/pass/testing/loglevel.mock')).default }));
 vi.mock('webextension-polyfill', async () => ({
     default: (await import('./src/__mocks__/webextension-polyfill')).default,
 }));

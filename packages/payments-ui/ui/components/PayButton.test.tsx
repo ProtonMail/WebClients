@@ -4,7 +4,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 import { BILLING_ADDRESS_VALID } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';

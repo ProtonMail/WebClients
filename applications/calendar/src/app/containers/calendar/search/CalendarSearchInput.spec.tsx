@@ -5,7 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
-import { mockUseSpotlightOnFeature } from '@proton/components/testing/vitest/mockUseSpotlightOnFeature';
+import { mockUseSpotlightOnFeature } from '@proton/components/testing/mockUseSpotlightOnFeature';
 
 import CalendarSearchInput from './CalendarSearchInput';
 

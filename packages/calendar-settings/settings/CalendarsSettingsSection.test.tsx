@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
-import { mockUseAuthentication } from '@proton/components/testing/vitest/mockUseAuthentication';
+import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';

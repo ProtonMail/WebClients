@@ -35,7 +35,7 @@ describe('createOxlintConfig', () => {
     });
 
     it('puts the restricted imports rule first, then the workspace overrides', () => {
-        const workspaceOverride = { files: ['testing/**'], rules: { 'no-console': 'off' as const } };
+        const workspaceOverride = { files: ['testing/vitest/**'], rules: { 'no-console': 'off' as const } };
 
         const config = createOxlintConfig({
             restrictedImports: { paths: [{ name: 'some-package' }] },

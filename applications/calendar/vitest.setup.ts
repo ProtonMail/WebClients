@@ -3,9 +3,9 @@ import { cleanup } from '@testing-library/react';
 import { webcrypto } from 'crypto';
 import { vi } from 'vitest';
 
-import '@proton/components/testing/vitest/mockFlagSvg';
-import '@proton/components/testing/vitest/mockMatchMedia';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/components/testing/mockFlagSvg';
+import '@proton/components/testing/mockMatchMedia';
+import '@proton/unleash/testing/mockUnleash';
 
 afterEach(cleanup);
 

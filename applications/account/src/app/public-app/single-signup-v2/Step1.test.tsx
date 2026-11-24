@@ -4,7 +4,7 @@ import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getReadableTime } from '@proton/components/components/time/Time';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import type { Coupon } from '@proton/payments/core/subscription/interface';

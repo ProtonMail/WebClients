@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import type { Mock } from 'vitest';
 import { fromCallback, fromPromise } from 'xstate';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import type { InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';

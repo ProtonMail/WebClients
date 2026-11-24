@@ -9,7 +9,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
 import LegacyReferralTopBanner from './LegacyReferralTopBanner';
 
 vi.mock('@proton/app-context/useConfig');

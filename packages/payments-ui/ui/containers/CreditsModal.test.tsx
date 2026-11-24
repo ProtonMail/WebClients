@@ -2,23 +2,19 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
+import { mockEventManager } from '@proton/components/testing/event-manager';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { mockEventManager } from '@proton/components/testing/vitest/event-manager';
-import { withApi } from '@proton/components/testing/vitest/with-api';
-import { withDeprecatedModals } from '@proton/components/testing/vitest/with-deprecated-modals';
-import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
-import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
+import { withApi } from '@proton/components/testing/with-api';
 import { withAuthentication } from '@proton/components/testing/with-authentication';
 import { withCache } from '@proton/components/testing/with-cache';
 import { withConfig } from '@proton/components/testing/with-config';
+import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
+import { withEventManager } from '@proton/components/testing/with-event-manager';
 import { withNotifications } from '@proton/components/testing/with-notifications';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
-import {
-    MOCK_PAYMENT_STATUS,
-    mockPaymentMethods,
-    mockPaymentStatus,
-} from '@proton/payments/testing/vitest/api-endpoints';
+import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/test-api/vitest/api';

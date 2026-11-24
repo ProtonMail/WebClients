@@ -1,18 +1,14 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { componentWrapper } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/vitest/with-api';
-import { withDeprecatedModals } from '@proton/components/testing/vitest/with-deprecated-modals';
-import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
+import { withApi } from '@proton/components/testing/with-api';
 import { withAuthentication } from '@proton/components/testing/with-authentication';
 import { withConfig } from '@proton/components/testing/with-config';
+import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
 import { withNotifications } from '@proton/components/testing/with-notifications';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import {
-    MOCK_PAYMENT_STATUS,
-    mockPaymentMethods,
-    mockPaymentStatus,
-} from '@proton/payments/testing/vitest/api-endpoints';
+import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 

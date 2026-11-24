@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { getStoreWrapper } from '@proton/components/testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
 import { AbuseCategory, NodeType } from '@proton/drive/sdk';
 
 import { type UseReportAbuseModalProps, useReportAbuseModalState } from './useReportAbuseModalState';

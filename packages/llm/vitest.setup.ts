@@ -1,9 +1,9 @@
 import '@proton/vitest-config/setup';
 import { cleanup } from '@testing-library/react';
 
-import '@proton/components/testing/vitest/mockFlagSvg';
-import '@proton/components/testing/vitest/mockMatchMedia';
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/components/testing/mockFlagSvg';
+import '@proton/components/testing/mockMatchMedia';
+import '@proton/unleash/testing/mockUnleash';
 
 afterEach(cleanup);
 

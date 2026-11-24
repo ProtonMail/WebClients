@@ -10,7 +10,7 @@ import {
 } from '@proton/mail-renderer/constants';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { addApiKeys } from '../../../helpers/tests/crypto';
 import { getIframeRootDiv, setup } from './Message.test.helpers';

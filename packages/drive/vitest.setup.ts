@@ -1,6 +1,6 @@
 import * as webStreams from 'node:stream/web';
 
-import '@proton/app-context/testing/vitest/mockTelemetry';
+import '@proton/app-context/testing/mockTelemetry';
 
 // The vm context of the test pool does not expose these Node globals (the drive SDK needs them)
 (['TransformStream', 'ReadableStream', 'WritableStream'] as const).forEach((name) => {
@@ -11,9 +11,9 @@ import '@proton/app-context/testing/vitest/mockTelemetry';
 
 if (typeof document !== 'undefined') {
     await import('@proton/vitest-config/setup');
-    await import('@proton/components/testing/vitest/mockFlagSvg');
+    await import('@proton/components/testing/mockFlagSvg');
     // @ts-expect-error the module only has side effects
-    await import('@proton/components/testing/vitest/mockMatchMedia');
+    await import('@proton/components/testing/mockMatchMedia');
     const { cleanup } = await import('@testing-library/react');
 
     afterEach(cleanup);

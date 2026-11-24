@@ -4,8 +4,8 @@ import { renderHook as baseRenderHook } from '@testing-library/react';
 import type { Mock, MockedFunction } from 'vitest';
 
 import { componentWrapper } from '@proton/components/testing/hocs/helpers';
-import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { withConfig } from '@proton/components/testing/with-config';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';

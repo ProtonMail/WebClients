@@ -9,7 +9,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { getHandlers } from '@proton/calendar/testing/handlers';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
-import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
+import { mockNotifications } from '@proton/components/testing/mockNotifications';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';

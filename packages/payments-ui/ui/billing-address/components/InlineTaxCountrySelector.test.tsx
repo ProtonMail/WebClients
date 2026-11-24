@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import type { Mock, MockedFunction } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 import { WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';

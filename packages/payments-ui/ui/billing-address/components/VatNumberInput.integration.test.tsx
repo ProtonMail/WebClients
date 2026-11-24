@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 

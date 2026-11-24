@@ -1,8 +1,8 @@
 import { getModelState } from '@proton/account/testing/getModelState';
 import { userDefault } from '@proton/components/hooks/helpers/tests/useUser';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
-import { withApi } from '@proton/components/testing/vitest/with-api';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { withApi } from '@proton/components/testing/with-api';
 import { withCache } from '@proton/components/testing/with-cache';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';

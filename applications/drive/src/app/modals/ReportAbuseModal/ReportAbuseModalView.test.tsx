@@ -3,7 +3,7 @@ import React from 'react';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { AbuseCategory, NodeType } from '@proton/drive/sdk';
 
 import { ReportAbuseModalView } from './ReportAbuseModalView';

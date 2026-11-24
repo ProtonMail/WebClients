@@ -11,6 +11,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { buildPreloadedState } from '@proton/components/testing/buildPreloadedState';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import {
     addresses,
     calendars,
@@ -19,7 +20,6 @@ import {
     subscriptionBundle,
     user,
 } from '@proton/components/testing/subscriptionData';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
@@ -27,7 +27,7 @@ import { EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import YourPlanSection from './YourPlanSection';
 

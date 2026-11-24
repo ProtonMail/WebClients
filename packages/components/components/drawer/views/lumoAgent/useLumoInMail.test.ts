@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
+import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';

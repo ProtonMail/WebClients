@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { userDefault } from '@proton/components/hooks/helpers/tests/useUser';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';

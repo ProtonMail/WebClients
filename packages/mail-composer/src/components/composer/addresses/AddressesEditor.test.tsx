@@ -7,7 +7,7 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { addApiMock } from '@proton/test-api/vitest/api';
-import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { addComposerAction } from '../../../store/composers/composerActions';

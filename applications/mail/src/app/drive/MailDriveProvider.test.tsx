@@ -8,7 +8,7 @@ import type { ProtonDriveClient } from '@proton/drive/sdk';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { getStoreWrapper } from '../helpers/tests/render';
 import { MailDriveProvider, useMailDrive } from './MailDriveProvider';

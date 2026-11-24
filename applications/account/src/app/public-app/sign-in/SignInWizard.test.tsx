@@ -1,7 +1,7 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { fromCallback, fromPromise } from 'xstate';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { TelemetryUnauthLost2FAEvents } from '@proton/shared/lib/api/telemetry';
 import {
     BackupPasswordError,

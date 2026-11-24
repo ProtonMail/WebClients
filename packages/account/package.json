@@ -280,9 +280,9 @@
         "./testing/getModelState": "./testing/getModelState.ts",
         "./testing/redux-state": "./testing/redux-state.ts",
         "./testing/TestStoreProvider": "./testing/TestStoreProvider.tsx",
-        "./testing/vitest/mockUseAddresses": "./testing/vitest/mockUseAddresses.ts",
-        "./testing/vitest/mockUseAddressKeys": "./testing/vitest/mockUseAddressKeys.ts",
-        "./testing/vitest/mockUseUserKeys": "./testing/vitest/mockUseUserKeys.ts",
+        "./testing/mockUseAddresses": "./testing/mockUseAddresses.ts",
+        "./testing/mockUseAddressKeys": "./testing/mockUseAddressKeys.ts",
+        "./testing/mockUseUserKeys": "./testing/mockUseUserKeys.ts",
         "./tests/getServerEvent": "./tests/getServerEvent.ts",
         "./user": "./user/index.ts",
         "./user/hooks": "./user/hooks.ts",
@@ -301,10 +301,10 @@
         "./userSettings/hooks": "./userSettings/hooks.ts",
         "./userSettings/listener": "./userSettings/listener.ts",
         "./welcomeFlags": "./welcomeFlags/index.ts",
-        "./testing/vitest/mockUseOrganization": "./testing/vitest/mockUseOrganization.ts",
-        "./testing/vitest/mockUseSubscription": "./testing/vitest/mockUseSubscription.ts",
-        "./testing/vitest/mockUseUser": "./testing/vitest/mockUseUser.ts",
-        "./testing/vitest/mockUseUserSettings": "./testing/vitest/mockUseUserSettings.ts"
+        "./testing/mockUseOrganization": "./testing/mockUseOrganization.ts",
+        "./testing/mockUseSubscription": "./testing/mockUseSubscription.ts",
+        "./testing/mockUseUser": "./testing/mockUseUser.ts",
+        "./testing/mockUseUserSettings": "./testing/mockUseUserSettings.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

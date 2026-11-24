@@ -2,7 +2,7 @@ import type { JSX, PropsWithChildren } from 'react';
 
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { mockUseGetAddressKeys } from '@proton/account/testing/vitest/mockUseAddressKeys';
+import { mockUseGetAddressKeys } from '@proton/account/testing/mockUseAddressKeys';
 import { type WasmApiWalletBitcoinAddress, WasmNetwork } from '@proton/andromeda';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';

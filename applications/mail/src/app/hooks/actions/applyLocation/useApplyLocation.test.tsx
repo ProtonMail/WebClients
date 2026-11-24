@@ -3,10 +3,10 @@ import type { ReactNode } from 'react';
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { mockUseCategoriesData } from '@proton/mail/testing/vitest/mockUseCategoriesData';
-import { mockUseFolders } from '@proton/mail/testing/vitest/mockUseFolders';
-import { mockUseLabels } from '@proton/mail/testing/vitest/mockUseLabels';
-import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
+import { mockUseCategoriesData } from '@proton/mail/testing/mockUseCategoriesData';
+import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';

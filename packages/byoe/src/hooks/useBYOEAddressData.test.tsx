@@ -3,7 +3,7 @@ import { type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { hookWrapper } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/vitest/with-api';
+import { withApi } from '@proton/components/testing/with-api';
 import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

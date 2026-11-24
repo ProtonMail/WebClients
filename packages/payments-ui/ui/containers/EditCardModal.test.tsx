@@ -12,7 +12,7 @@
 //     withNotifications,
 // } from '@proton/testing';
 
-// import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+// import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 // import EditCardModal from './EditCardModal';
 
 // vi.mock('@proton/atoms/Portal/Portal');

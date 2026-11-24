@@ -14,8 +14,8 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { apiMock } from '@proton/test-api/vitest/api';
 
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { organization } from '../../../../testing/subscriptionData';
-import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
 import NotificationsChildren from '../../../notifications/Children';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 

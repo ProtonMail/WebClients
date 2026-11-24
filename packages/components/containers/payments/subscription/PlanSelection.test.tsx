@@ -29,7 +29,7 @@ import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/c
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../../testing/renderWithProviders';
 import PlanSelection, {
     type AccessiblePlansHookProps,
     getCurrencyForNewTab,

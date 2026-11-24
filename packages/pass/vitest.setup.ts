@@ -31,7 +31,7 @@ import { TextDecoder, TextEncoder } from 'node:util';
     });
 }
 
-import '@proton/components/testing/vitest/mockFlagSvg';
+import '@proton/components/testing/mockFlagSvg';
 
 vi.mock('./lib/import/helpers/zip.reader.wasm', () => ({ wasmURI: undefined }));
 
@@ -41,14 +41,14 @@ vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: vi.fn(),
 }));
 
-vi.mock('loglevel', () => import('./testing/vitest/loglevel.mock'));
+vi.mock('loglevel', () => import('./testing/loglevel.mock'));
 vi.mock('webextension-polyfill', () => ({ default: {} }));
 // The WASM twins are loaded lazily: only by the files that import the proxies
 vi.mock('./lib/core/ui.proxy', async () => ({
-    default: (await import('./testing/vitest/ui.proxy.mock')).default,
+    default: (await import('./testing/ui.proxy.mock')).default,
     preloadPassUI: async () => undefined,
 }));
-vi.mock('./lib/core/core.proxy', () => import('./testing/vitest/core.proxy.mock'));
+vi.mock('./lib/core/core.proxy', () => import('./testing/core.proxy.mock'));
 vi.mock('./lib/crypto/utils/worker');
 
 expect.extend({

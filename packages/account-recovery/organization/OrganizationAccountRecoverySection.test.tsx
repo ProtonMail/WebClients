@@ -3,8 +3,8 @@ import type { Mock } from 'vitest';
 
 import { TestStoreProvider } from '@proton/account/testing/TestStoreProvider';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
-import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';

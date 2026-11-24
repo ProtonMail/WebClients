@@ -6,7 +6,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
-import { getStoreWrapper } from '../testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '../testing/renderWithProviders';
 import type { Props } from './useMethods';
 import { useMethods } from './useMethods';
 

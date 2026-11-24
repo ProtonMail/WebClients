@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/vitest/with-api';
-import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
+import { withApi } from '@proton/components/testing/with-api';
 import { withCache } from '@proton/components/testing/with-cache';
 import { withConfig } from '@proton/components/testing/with-config';
 import { withNotifications } from '@proton/components/testing/with-notifications';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcBrandVisa } from '@proton/icons/icons/IcBrandVisa';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';

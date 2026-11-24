@@ -11,7 +11,7 @@ import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSuppor
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
-import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { deferred } from '../contentSearch/integration/import/testFakes';
 import { getESFreeBlobKey } from '../helpers/encryptedSearch/esUtils';

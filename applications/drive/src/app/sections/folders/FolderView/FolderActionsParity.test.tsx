@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 
 import { ActionsDropdown } from '../buttons/ActionsDropdown';

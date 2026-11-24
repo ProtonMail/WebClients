@@ -1,15 +1,15 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { FeatureCode } from '@proton/features/interface';
-import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
+import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
-import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { mockUseMailSettings } from '../../testing/mockUseMailSettings';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import MessagesSection from './MessagesSection';
 
 describe('MessagesSection', () => {

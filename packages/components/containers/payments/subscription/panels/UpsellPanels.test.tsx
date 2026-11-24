@@ -2,8 +2,8 @@ import { within } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments/core/constants';
 
+import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { familyUpsell, subscriptionMail, unlimitedUpsell } from '../../../../testing/subscriptionData';
-import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
 import UpsellPanels from './UpsellPanels';
 
 describe('UpsellPanel', () => {

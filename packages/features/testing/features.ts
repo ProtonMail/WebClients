@@ -1,6 +1,6 @@
 import { addApiMock } from '@proton/test-api/vitest/api';
 
-import { defaultFeatureFlagValue, getFeatureFlagsState } from '../featureFlagsState';
+import { defaultFeatureFlagValue, getFeatureFlagsState } from './featureFlagsState';
 
 export { getFeatureFlagsState };
 

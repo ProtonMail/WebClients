@@ -4,7 +4,7 @@ import type { Mock, MockedFunction } from 'vitest';
 import { changeBillingAddress } from '@proton/account/paymentStatus';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
-import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 

@@ -1,6 +1,6 @@
 import type { ComponentType, JSX } from 'react';
 
-import EventManagerContext from '../../containers/eventManager/context';
+import EventManagerContext from '../containers/eventManager/context';
 import { mockEventManager } from './event-manager';
 
 export const withEventManager =

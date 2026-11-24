@@ -7,7 +7,7 @@ import { userEvent } from '@testing-library/user-event';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { getModelState } from '@proton/account/testing/getModelState';
-import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 
 import { useSharingModal } from './SharingModal';
 import type { SharingModalInnerProps } from './useSharingModalState';

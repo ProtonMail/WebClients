@@ -3,9 +3,9 @@ import userEvent from '@testing-library/user-event';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
-import { mockUseAuthentication } from '@proton/components/testing/vitest/mockUseAuthentication';
-import { mockUseLocation } from '@proton/components/testing/vitest/mockUseLocation';
+import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
+import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
+import { mockUseLocation } from '@proton/components/testing/mockUseLocation';
 import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';

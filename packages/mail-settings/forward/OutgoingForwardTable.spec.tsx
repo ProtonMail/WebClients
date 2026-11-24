@@ -2,14 +2,14 @@ import type { MockedFunction } from 'vitest';
 
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/vitest/render';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/vitest/with-api';
-import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
+import { withApi } from '@proton/components/testing/with-api';
 import { withAuthentication } from '@proton/components/testing/with-authentication';
 import { withCache } from '@proton/components/testing/with-cache';
 import { withConfig } from '@proton/components/testing/with-config';
+import { withEventManager } from '@proton/components/testing/with-event-manager';
 import { withNotifications } from '@proton/components/testing/with-notifications';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';

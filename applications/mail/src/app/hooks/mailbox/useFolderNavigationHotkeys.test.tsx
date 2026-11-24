@@ -1,5 +1,5 @@
-import { mockUseHistory } from '@proton/components/testing/vitest/mockUseHistory';
-import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
+import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { ALMOST_ALL_MAIL, SHORTCUTS, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 

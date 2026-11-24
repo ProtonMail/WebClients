@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react';
 
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { useCanUpdateBilling } from '@proton/account/userPermissions/hooks';
-import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 
 import { useDriveRoomCheck } from './useDriveRoomCheck';
 

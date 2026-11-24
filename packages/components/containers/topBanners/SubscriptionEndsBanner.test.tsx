@@ -7,7 +7,7 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
+import { renderWithProviders } from '../../testing/renderWithProviders';
 import SubscriptionEndsBanner from './SubscriptionEndsBanner';
 
 vi.mock('../../hooks/useShowVPNDashboard', () => ({

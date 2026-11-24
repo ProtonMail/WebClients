@@ -1,14 +1,14 @@
 import { fireEvent, render } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { mockUseOrganization } from '@proton/account/testing/vitest/mockUseOrganization';
+import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
 import { useUser } from '@proton/account/user/hooks';
 import useApiResult from '@proton/components/hooks/useApiResult';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { withConfig } from '@proton/components/testing/with-config';
 import { withNotifications } from '@proton/components/testing/with-notifications';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { APPS, INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
 import type { InvoiceEmailSettings, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';

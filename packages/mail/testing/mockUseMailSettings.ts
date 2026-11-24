@@ -4,7 +4,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import * as useMailSettingsModule from '../../store/mailSettings/hooks';
+import * as useMailSettingsModule from '../store/mailSettings/hooks';
 
 const defaultMailSettings: MailSettings = {
     ...DEFAULT_MAIL_SETTINGS,
@@ -19,9 +19,9 @@ const defaultMailSettings: MailSettings = {
     AutoDeleteSpamAndTrashDays: 0,
 };
 
-vi.mock('../../store/mailSettings/hooks', async () => ({
+vi.mock('../store/mailSettings/hooks', async () => ({
     __esModule: true,
-    ...(await vi.importActual('../../store/mailSettings/hooks')),
+    ...(await vi.importActual('../store/mailSettings/hooks')),
 }));
 
 export const mockUseMailSettings = (params?: [Partial<MailSettings>?, boolean?, (() => void)?]) => {

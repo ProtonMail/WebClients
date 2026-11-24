@@ -2,10 +2,10 @@ import '@proton/vitest-config/setup';
 import fetch from 'cross-fetch';
 import * as webStreams from 'node:stream/web';
 
-import '@proton/unleash/testing/vitest/mockUnleash';
+import '@proton/unleash/testing/mockUnleash';
 
-import './testing/vitest/mockFlagSvg';
-import './testing/vitest/mockMatchMedia';
+import './testing/mockFlagSvg';
+import './testing/mockMatchMedia';
 
 // The vm context of the test pool does not expose these Node globals (msw needs them)
 (['TransformStream', 'ReadableStream', 'WritableStream'] as const).forEach((name) => {

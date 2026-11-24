@@ -15,7 +15,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { mockCache } from '@proton/components/testing/cache';
 import { withNotifications } from '@proton/components/testing/with-notifications';
-import { registerFeatureFlagsApiMock } from '@proton/features/testing/vitest/features';
+import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import { mailContactsInitialState } from '@proton/mail-message/store/contacts/contactsInitialState';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';

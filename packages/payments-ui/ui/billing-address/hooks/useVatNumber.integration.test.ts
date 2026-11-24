@@ -3,7 +3,7 @@ import { act } from 'react';
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 

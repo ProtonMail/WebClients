@@ -13,7 +13,7 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { getFeatureFlagsState } from '@proton/features/testing/vitest/features';
+import { getFeatureFlagsState } from '@proton/features/testing/features';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';

@@ -2,13 +2,13 @@ import { render } from '@testing-library/react';
 
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/mockUseUser';
 import { Loader } from '@proton/atoms/Loader/Loader';
 import useModals from '@proton/components/hooks/useModals';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
-import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { defaultProtonConfig, withConfig } from '@proton/components/testing/with-config';
+import { withEventManager } from '@proton/components/testing/with-event-manager';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 

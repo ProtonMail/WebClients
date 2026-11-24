@@ -1,10 +1,10 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { MOCK_PAYMENT_STATUS } from '@proton/payments/testing/api-endpoints';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { MOCK_PAYMENT_STATUS } from '@proton/payments/testing/vitest/api-endpoints';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { ChargebeeIdealButton } from '../components/ChargebeeIdealButton';

@@ -5,7 +5,7 @@ import { InvoiceOwner, TransactionState, TransactionType } from '@proton/payment
 import { addApiMock } from '@proton/test-api/vitest/api';
 
 import { hookWrapper } from '../../testing/hocs/helpers';
-import { withApi } from '../../testing/vitest/with-api';
+import { withApi } from '../../testing/with-api';
 import useTransactions from './useTransactions';
 
 const wrapper = hookWrapper(withApi());

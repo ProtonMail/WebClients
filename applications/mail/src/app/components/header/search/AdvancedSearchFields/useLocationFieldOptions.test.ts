@@ -1,8 +1,8 @@
 import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
-import { mockUseFolders } from '@proton/mail/testing/vitest/mockUseFolders';
-import { mockUseLabels } from '@proton/mail/testing/vitest/mockUseLabels';
-import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
+import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
+import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import { mockUseScheduleSendFeature } from '../../../../helpers/tests/mockUseScheduleSendFeature';

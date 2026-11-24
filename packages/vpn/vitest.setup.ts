@@ -1,7 +1,7 @@
 import '@proton/vitest-config/setup';
 import { vi } from 'vitest';
 
-import '@proton/components/testing/vitest/mockFlagSvg';
+import '@proton/components/testing/mockFlagSvg';
 
 // happy-dom hides a <dialog> without `open`, so role queries skip its content. Our CSS reset shows it, tests do not load it.
 const style = document.createElement('style');
