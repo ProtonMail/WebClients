@@ -897,23 +897,27 @@ describe('PaymentsContext billing details', () => {
         });
         const vatForm = () => form.current!.vatNumber!;
         await select({ planIDs: { [PLANS.BUNDLE_PRO_2024]: 1 }, cycle: CYCLE.YEARLY, currency: 'CHF' });
+        vi.useFakeTimers();
+        onTestFinished(() => {
+            vi.useRealTimers();
+        });
+        const settleDebouncedChecks = () => act(() => vi.runOnlyPendingTimersAsync());
         act(() => vatForm().setUnauthenticatedCollapsed(false));
         act(() => vatForm().setCompany('Acme'));
         act(() => vatForm().setAddress('Main 1'));
         act(() => vatForm().setCity('Brussels'));
         act(() => vatForm().setVatNumber('BE0123123123'));
-        await waitFor(() => expect(getContext().vatNumber).toBe('BE0123123123'));
+        await settleDebouncedChecks();
+        expect(getContext().vatNumber).toBe('BE0123123123');
         expect(getContext().billingAddress.Company).toBe('Acme');
 
         // Unchecks "I'm purchasing as a business"
         act(() => vatForm().setUnauthenticatedCollapsed(true));
 
-        // The VAT number and the address are debounced separately, so each can settle in its own check: wait for both
-        await waitFor(() => {
-            expect(getContext().vatNumber).toBe('');
-            expect(getContext().billingAddress.Company).toBeUndefined();
-            expect(getContext().loading).toBe(false);
-        });
+        await settleDebouncedChecks();
+        expect(getContext().vatNumber).toBe('');
+        expect(getContext().billingAddress.Company).toBeUndefined();
+        expect(getContext().loading).toBe(false);
         expect(sentData().at(-1)).not.toHaveProperty('VatId');
     });
 
