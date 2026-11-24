@@ -75,6 +75,15 @@ module.exports = {
         'function-url-quotes': 'never',
 
         'liberty/use-logical-spec': 'always',
+
+        'declaration-property-value-disallowed-list': [
+            {
+                '/.*/': [/var\(\s*--interaction-ngc-secondary(-hover|-active)?\s*[,)]/],
+            },
+            {
+                message: 'These properties should be only used for button-secondary-weak',
+            },
+        ],
     },
     plugins: ['stylelint-use-logical-spec'],
 };

@@ -128,6 +128,10 @@
 
 		toggle-container-unchecked-loader-color: var(--interaction-norm-contrast),
 
+		interaction-ngc-secondary: var(--interaction-weak),
+		interaction-ngc-secondary-hover: var(--interaction-weak-major-1),
+		interaction-ngc-secondary-active: var(--interaction-weak-major-2),
+
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});
