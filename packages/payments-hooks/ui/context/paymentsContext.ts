@@ -42,6 +42,19 @@ export interface InitializeProps {
     product: ProductParam;
 }
 
+/** How far `initialize()` has got */
+export interface InitializationStatus {
+    /**
+     * `initialize()` was called. With the optimistic provider, the selection it was called with shows from then on, so
+     * the page can render with it
+     */
+    triggered: boolean;
+    /** `initialize()` finished: the selection and the available plans are checked */
+    pricingInitialized: boolean;
+    /** Why the initialization failed, when the plans or the prices couldn't be loaded */
+    error?: unknown;
+}
+
 /** What a check is made for */
 export interface CheckInputs {
     planToCheck: PlanToCheck;
@@ -60,11 +73,14 @@ export interface PaymentsContextType {
     initialize: (props: InitializeProps) => Promise<void>;
     /** The plans and the payment status are loaded. `initialize()` may still be running */
     preloaded: boolean;
+    initializationStatus: InitializationStatus;
     selectPlanIDs: (planIDs: PlanIDs) => Promise<void>;
     selectCycle: (cycle: Cycle) => Promise<void>;
     selectCurrency: (currency: Currency) => Promise<void>;
     selectFullBillingAddress: (fullBillingAddress: FullBillingAddressFlat) => void;
     checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionEstimation[]>;
+    /** Whether `checkMultiplePlans` is checking this plan, cycle and currency right now, with any coupon */
+    isCheckingPrice: (planToCheck: PlanToCheck) => boolean;
     /**
      * Returns the cached version of the subscription response. Returns null if the cache is missing.
      * Make sure to call `checkMultiplePlans` first.

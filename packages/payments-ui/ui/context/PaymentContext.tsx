@@ -17,6 +17,7 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import {
     type CheckInputs,
+    type InitializationStatus,
     type InitializeProps,
     type IsTrialResolver,
     PaymentsContext,
@@ -124,6 +125,8 @@ export const PaymentsContextProvider = ({
     const { createNotification } = useNotifications();
 
     const [, rerender] = useState<{}>({});
+    // The plan batches `checkMultiplePlans` is checking right now
+    const [checkingPlans, setCheckingPlans] = useState<PlanToCheck[][]>([]);
     const [initialState] = useState(() =>
         getInitialState({
             user,
@@ -264,15 +267,10 @@ export const PaymentsContextProvider = ({
                     AmountDue: 0,
                     PeriodEnd: 0,
                 },
+                // Only a free-plan selection shows the billing address the user asked for. It stays requested either
+                // way, so the next check sends it
+                ...(paymentForbiddenReason.reason === 'paid-plan-required' && { billingAddress: newBillingAddress }),
             });
-
-            // Only a free-plan selection shows the billing address the user asked for. It stays requested either way,
-            // so the next check sends it
-            if (paymentForbiddenReason.reason === 'paid-plan-required') {
-                setState({
-                    billingAddress: newBillingAddress,
-                });
-            }
 
             return newCheckResult;
         }
@@ -281,7 +279,6 @@ export const PaymentsContextProvider = ({
         const abortController = new AbortController();
         abortControllerRef.current = abortController;
 
-        let shouldRetryWithoutBillingChanges = false;
         try {
             const selection = { planIDs: newPlanToCheck.planIDs, cycle: newPlanToCheck.cycle };
             const shouldValidateGuards =
@@ -343,14 +340,13 @@ export const PaymentsContextProvider = ({
             ) {
                 throw error;
             }
-            shouldRetryWithoutBillingChanges = true;
         } finally {
             // Unless a newer change aborted it, this check settled what was asked for: checked now, or failed and dropped
             if (!abortController.signal.aborted) {
                 requestedRef.current = {};
             }
-            // Unless a newer check replaced it, whose price is still loading, or the retry below still loads it
-            if (abortControllerRef.current === abortController && !shouldRetryWithoutBillingChanges) {
+            // Unless a newer check replaced it, whose price is still loading. The retry below sets it again at once
+            if (abortControllerRef.current === abortController) {
                 setState({ loading: false });
             }
         }
@@ -383,7 +379,7 @@ export const PaymentsContextProvider = ({
 
         const action = getEstimationChangeAction(stateRef.current.planToCheck, newPlanToCheck);
 
-        if (action && stateRef.current.initialized) {
+        if (action && stateRef.current.initializationStatus.pricingInitialized) {
             checkoutTelemetry.reportSubscriptionEstimationChange({
                 action,
                 context: stateRef.current.telemetryContext,
@@ -451,7 +447,7 @@ export const PaymentsContextProvider = ({
             multiSubscriptionContext: getMultiSubscriptionContext(),
         });
 
-    const initialize = async ({
+    const initializeInner = async ({
         api,
         paramCurrency,
         planToCheck: requestedPlanToCheck,
@@ -533,7 +529,21 @@ export const PaymentsContextProvider = ({
 
         await availablePlansCheck;
 
-        setState({ telemetryContext, product, initialized: true });
+        setState({ telemetryContext, product });
+    };
+
+    const initialize = async (props: InitializeProps) => {
+        const setStatus = (status: Partial<InitializationStatus>) =>
+            setState({ initializationStatus: { ...stateRef.current.initializationStatus, ...status } });
+
+        setStatus({ triggered: true, error: undefined });
+        try {
+            await initializeInner(props);
+        } catch (error) {
+            setStatus({ error });
+            throw error;
+        }
+        setStatus({ pricingInitialized: true });
     };
 
     const getHasEssentialData = () => {
@@ -548,25 +558,19 @@ export const PaymentsContextProvider = ({
         preloadPaymentsData().catch(noop);
     }, []);
 
+    const changeSelection = (change: Partial<PlanToCheck>) =>
+        selectNewPlan({ ...getRequested().planToCheck, ...change });
+
     const selectPlanIDs = async (planIDs: PlanIDs) => {
-        await selectNewPlan({
-            ...getRequested().planToCheck,
-            planIDs,
-        });
+        await changeSelection({ planIDs });
     };
 
     const selectCycle = async (cycle: Cycle) => {
-        await selectNewPlan({
-            ...getRequested().planToCheck,
-            cycle,
-        });
+        await changeSelection({ cycle });
     };
 
     const selectCurrency = async (currency: Currency) => {
-        await selectNewPlan({
-            ...getRequested().planToCheck,
-            currency,
-        });
+        await changeSelection({ currency });
     };
 
     const selectCoupon = async (coupon: string) => {
@@ -578,10 +582,7 @@ export const PaymentsContextProvider = ({
             return;
         }
 
-        const checkResult = await selectNewPlan({
-            ...getRequested().planToCheck,
-            coupon,
-        });
+        const checkResult = await changeSelection({ coupon });
 
         if (
             checkResult &&
@@ -640,15 +641,16 @@ export const PaymentsContextProvider = ({
         instantSelectBillingAddress(billingAddress, vatNumber);
     };
 
-    const getFallbackPrice = (planToCheck: PlanToCheck): PricesResult => {
-        const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
-        const checkResult = getOptimisticCheckResult(planToCheck);
-
-        return {
+    const toPrice = (planToCheck: PlanToCheck, checkResult: SubscriptionEstimation): PricesResult => ({
+        checkResult,
+        checkoutUi: getCheckoutUi({
+            planIDs: planToCheck.planIDs,
+            plansMap: getLocalizedPlansMap({ paramCurrency: planToCheck.currency }),
             checkResult,
-            checkoutUi: getCheckoutUi({ planIDs: planToCheck.planIDs, plansMap: localizedPlansMap, checkResult }),
-        };
-    };
+        }),
+    });
+
+    const getFallbackPrice = (planToCheck: PlanToCheck) => toPrice(planToCheck, getOptimisticCheckResult(planToCheck));
 
     const getPrice: PaymentsContextType['getPrice'] = (planToCheck) => {
         const subscriptionData = getSubscriptionDataFromPlanToCheck({
@@ -663,25 +665,11 @@ export const PaymentsContextProvider = ({
             return planToCheck.coupon ? null : getFallbackPrice(planToCheck);
         }
 
-        const localizedPlansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
-        return {
-            checkResult: result,
-            checkoutUi: getCheckoutUi({
-                planIDs: planToCheck.planIDs,
-                plansMap: localizedPlansMap,
-                checkResult: result,
-            }),
-        };
+        return toPrice(planToCheck, result);
     };
 
-    const getPriceOrFallback: PaymentsContextType['getPriceOrFallback'] = (planToCheck) => {
-        const price = getPrice(planToCheck);
-        if (!price) {
-            return getFallbackPrice(planToCheck);
-        }
-
-        return price;
-    };
+    const getPriceOrFallback: PaymentsContextType['getPriceOrFallback'] = (planToCheck) =>
+        getPrice(planToCheck) ?? getFallbackPrice(planToCheck);
 
     const getCoupon: PaymentsContextType['getCoupon'] = (planToCheck) => {
         const result = paymentsApiRef.current.getCachedCheckByPlans(planToCheck.planIDs);
@@ -693,9 +681,6 @@ export const PaymentsContextProvider = ({
             );
         })?.Coupon?.Code;
     };
-
-    const isGroupLoading = multiCheckGroups.isGroupLoading;
-    const isGroupChecked = multiCheckGroups.isGroupChecked;
 
     const setVatNumberInner = (vatNumber: string) => {
         const requestedVatNumber = getRequested().vatNumber;
@@ -713,14 +698,13 @@ export const PaymentsContextProvider = ({
 
     const setVatNumber = useHandler(setVatNumberInner, { debounce: userInputDebounceDelay });
 
-    const reRunPaymentChecks = async () => {
-        return selectNewPlan(getRequested().planToCheck);
-    };
+    const reRunPaymentChecks = () => changeSelection({});
 
     const value: PaymentsContextType = {
         multiSubscriptionContext: getMultiSubscriptionContext(),
         initialize,
         preloaded: getHasEssentialData(),
+        initializationStatus: stateRef.current.initializationStatus,
         selectPlanIDs,
         selectCycle,
         selectedPlan: getCurrentSelectedPlan(),
@@ -747,11 +731,21 @@ export const PaymentsContextProvider = ({
         selectCurrency,
         selectFullBillingAddress,
         checkMultiplePlans: async (plansToCheck) => {
-            const results = await checkPlans(plansToCheck);
-            // The results land in the price cache that getPrice reads: render them
-            rerender({});
-            return results;
+            setCheckingPlans((checking) => [...checking, plansToCheck]);
+            try {
+                return await checkPlans(plansToCheck);
+            } finally {
+                // This also renders the results, which land in the price cache that getPrice reads
+                setCheckingPlans((checking) => checking.filter((plans) => plans !== plansToCheck));
+            }
         },
+        // Any coupon: a card that takes it from `getCoupon` has none in a new currency until this check returns
+        isCheckingPrice: (planToCheck) =>
+            checkingPlans.some((plans) =>
+                plans.some(
+                    (plan) => plan.currency === planToCheck.currency && isSubscriptionSelectionEqual(plan, planToCheck)
+                )
+            ),
         plans: stateRef.current.plansData.plans,
         freePlan: stateRef.current.plansData.freePlan,
         plansMap: getPlansMap(),
@@ -771,8 +765,8 @@ export const PaymentsContextProvider = ({
         }),
         paymentStatus: stateRef.current.paymentStatus,
         paymentsApi: paymentsApiRef.current,
-        isGroupLoading,
-        isGroupChecked,
+        isGroupLoading: multiCheckGroups.isGroupLoading,
+        isGroupChecked: multiCheckGroups.isGroupChecked,
         subscription: stateRef.current.subscription,
         setVatNumber,
         vatNumber: stateRef.current.vatNumber,
