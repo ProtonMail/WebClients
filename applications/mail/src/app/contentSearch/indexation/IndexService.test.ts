@@ -640,7 +640,38 @@ describe('IndexService', () => {
         }
     };
 
+    describe('clearing data', () => {
+        it('reports the index deleted to its own listeners', async () => {
+            mockCreateWorker.mockImplementation(fakeWorker(completesCatchup).create);
+            await service.enable();
+            await workerRun();
+
+            await service.deleteIndex();
+            await flush();
+
+            expect(service.isEnabled).toBe(false);
+            expect(listener.reportStatusUpdate).toHaveBeenLastCalledWith(undefined);
+            expect(await readStoredStatus()).toBeUndefined();
+        });
+    });
+
     describe('clearing data in a follower', () => {
+        it('reports the index deleted in the follower too', async () => {
+            mockCreateWorker.mockImplementation(fakeWorker(failsWhenItsConnectionCloses).create);
+            await service.enable();
+            await flush();
+            const { follower, close } = openFollower();
+            await follower.initialize();
+            const followerListener = makeListener();
+            follower.subscribe(followerListener);
+
+            await follower.deleteIndex();
+            await flush(20);
+
+            expect(followerListener.reportStatusUpdate).toHaveBeenLastCalledWith(undefined);
+            close();
+        });
+
         it('deletes the database, and the leader stops indexing for good', async () => {
             mockCreateWorker.mockImplementation(fakeWorker(failsWhenItsConnectionCloses).create);
             await service.enable();

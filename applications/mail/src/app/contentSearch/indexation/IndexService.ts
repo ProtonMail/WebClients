@@ -622,6 +622,10 @@ export class IndexService {
         // The in-memory status mirrors the DB we just deleted. Keeping it would make `enable()` believe
         // it's already enabled and skip writing the status and starting the worker.
         this.status = undefined;
+        // This tab doesn't receive its own broadcast.
+        this.listeners.forEach((l) => {
+            l.reportStatusUpdate(undefined);
+        });
     }
 }
 
