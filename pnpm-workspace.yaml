@@ -135,23 +135,23 @@ catalogs:
     # Docs' Lexical, at the version @proton-docs/docs-editor needs. A Docs manifest declaring a name
     # that is also in the default catalog needs an exception (see utilities/repo-rules/README.md).
     docs:
-        '@lexical/clipboard': 0.34.0
-        '@lexical/code': 0.34.0
-        '@lexical/hashtag': 0.34.0
-        '@lexical/headless': 0.34.0
-        '@lexical/html': 0.34.0
-        '@lexical/link': 0.34.0
-        '@lexical/list': 0.34.0
-        '@lexical/markdown': 0.34.0
-        '@lexical/overflow': 0.34.0
-        '@lexical/react': 0.34.0
-        '@lexical/rich-text': 0.34.0
-        '@lexical/selection': 0.34.0
-        '@lexical/table': 0.34.0
-        '@lexical/text': 0.34.0
-        '@lexical/utils': 0.34.0
-        '@lexical/yjs': 0.34.0
-        lexical: 0.34.0
+        '@lexical/clipboard': 0.35.0
+        '@lexical/code': 0.35.0
+        '@lexical/hashtag': 0.35.0
+        '@lexical/headless': 0.35.0
+        '@lexical/html': 0.35.0
+        '@lexical/link': 0.35.0
+        '@lexical/list': 0.35.0
+        '@lexical/markdown': 0.35.0
+        '@lexical/overflow': 0.35.0
+        '@lexical/react': 0.35.0
+        '@lexical/rich-text': 0.35.0
+        '@lexical/selection': 0.35.0
+        '@lexical/table': 0.35.0
+        '@lexical/text': 0.35.0
+        '@lexical/utils': 0.35.0
+        '@lexical/yjs': 0.35.0
+        lexical: 0.35.0
 
 # Yarn resolved any range that a workspace satisfies to that workspace, including the `*` peer
 # dependencies between @proton packages.
@@ -204,22 +204,25 @@ allowBuilds:
 
 patchedDependencies:
     '@electron-forge/core@7.11.2': patches/@electron-forge__core@7.11.2.patch
-    # The four @lexical patches are the same as @proton-docs/docs-editor's, which needs them applied.
+    # The five Lexical patches are the same as @proton-docs/docs-editor's, which needs them applied.
+    # The `lexical` one is with the unscoped packages below.
     # A code block in a language Prism has no grammar for (`kotlin` from Markdown) is highlighted as
     # JavaScript, as before 0.34.0. Without it the block is not highlighted and Tab on a selection
     # in it throws.
-    '@lexical/code@0.34.0': patches/@lexical__code@0.34.0.patch
-    # No direction inversion in right-to-left text, as before 0.34.0. With it the arrow keys select
-    # an inline image and then move the caret back where it came from, never past the image.
-    '@lexical/selection@0.34.0': patches/@lexical__selection@0.34.0.patch
+    '@lexical/code@0.35.0': patches/@lexical__code@0.35.0.patch
+    # No direction inversion in right-to-left text, as before 0.34.0. Without it Left or Right
+    # selects an inline image, and only the next press moves the caret past it.
+    '@lexical/selection@0.35.0': patches/@lexical__selection@0.35.0.patch
     # Touch-only fixes: tapping from a cell in one table into another threw "Cell not found in table."
     # and locked the Docs editor (upstream has the same check from 0.52.0), and a touch drag across
-    # cells selected nothing, which 0.33.0 and 0.34.0 alone break.
-    '@lexical/table@0.34.0': patches/@lexical__table@0.34.0.patch
+    # cells selected nothing, which 0.33.0 and later alone break.
+    '@lexical/table@0.35.0': patches/@lexical__table@0.35.0.patch
     # TabNodes written by Lexical before 0.32.1 can hold more than a tab character, and from 0.32.1
     # TabNode.setTextContent throws on them, so the paragraph loaded empty. This restores 0.32.0's
-    # direct write; @proton-docs/docs-editor's FixBrokenTabNode then repairs the tab.
-    '@lexical/yjs@0.34.0': patches/@lexical__yjs@0.34.0.patch
+    # direct write; @proton-docs/docs-editor's FixBrokenTabNode then repairs the tab. It also ignores
+    # the direction Lexical before 0.30.0 stored for a block, which would otherwise stay whatever
+    # its text is now.
+    '@lexical/yjs@0.35.0': patches/@lexical__yjs@0.35.0.patch
     '@mlc-ai/web-llm@0.2.32': patches/@mlc-ai__web-llm@0.2.32.patch
     '@pdf-lib/standard-fonts@1.0.0': patches/@pdf-lib__standard-fonts@1.0.0.patch
     # LUMO-988: copy the full scaled iframe bitmap instead of its top-left quarter.
@@ -227,6 +230,10 @@ patchedDependencies:
     # tests/lumo/iframe-capture.test.ts in Chromium and WebKit at scales 1 and 2;
     # otherwise update the patch for the replacement version.
     html2canvas@1.4.1: patches/html2canvas@1.4.1.patch
+    # Docs: each list item and each paragraph in a table cell keeps the direction of its own text,
+    # as before 0.35.0 (without it, it takes the direction of the first text in its list or table),
+    # and a direction stored in pasted or saved content is ignored. Same as @proton-docs/docs-editor's.
+    lexical@0.35.0: patches/lexical@0.35.0.patch
     # Preserve email autolinking without unsupported negative lookbehind on Safari <16.4.
     # https://github.com/syntax-tree/mdast-util-gfm-autolink-literal/issues/10
     mdast-util-gfm-autolink-literal@2.0.1: patches/mdast-util-gfm-autolink-literal@2.0.1.patch
