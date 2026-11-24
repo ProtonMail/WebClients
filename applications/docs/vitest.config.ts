@@ -16,7 +16,7 @@ const styleMock = require.resolve('@proton/components/__mocks__/styleMock.js')
 const domFiles = [
   'src/app/utils/docs-url-bar.test.ts',
   'src/app/utils/flags.test.ts',
-  'src/app/routes/**/doc2/__utils/{ClientEditorBridge,debugDownloads,signRealtimeDocumentUpdate,documentFileActions,downloadExport,fetchExternalImageAsBase64,loadDocument,resolveOpenAction}.test.ts',
+  'src/app/routes/**/doc2/__utils/{ClientEditorBridge,debugDownloads,signRealtimeDocumentUpdate,documentFileActions,downloadExport,fetchExternalImageAsBase64,loadDocument,publicRedirects,resolveOpenAction}.test.ts',
   'src/app/routes/**/doc2/__utils/comments/verifyCommentSignature.test.ts',
   'src/app/components/document/public/utils.test.ts',
   // Hook specs that render with Testing Library or read window

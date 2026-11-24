@@ -34,12 +34,14 @@ describe('DocumentHeaderV2', () => {
     expect(screen.getByText('User menu')).toBeInTheDocument()
   })
 
-  test("a public link's visitor gets no user menu, as /doc's public header has none", () => {
-    render(headerElement('Editor', undefined, { isPublic: true }))
+  test("a public link's visitor gets the public options in place of the member's, as /doc's public header", () => {
+    render(headerElement('Admin', undefined, { isPublic: true, publicOptions: <div>Public options</div> }))
 
     expect(screen.getByText('Title menu')).toBeInTheDocument()
+    expect(screen.getByText('Public options')).toBeInTheDocument()
     expect(screen.queryByText('User menu')).not.toBeInTheDocument()
-    expect(screen.getByTestId('comments-button')).toBeDisabled()
+    expect(screen.queryByTestId('share-button')).not.toBeInTheDocument()
+    expect(screen.queryByTestId('comments-button')).not.toBeInTheDocument()
   })
 
   test('shows the status next to the title menu, before the view-only pill', () => {
@@ -151,7 +153,7 @@ function renderHeader(role: DocumentRole, status?: ReactNode) {
 function headerElement(
   role: DocumentRole,
   status?: ReactNode,
-  props: Pick<DocumentHeaderV2Props, 'hasUnreadComments' | 'onShowComments' | 'isPublic'> = {},
+  props: Pick<DocumentHeaderV2Props, 'hasUnreadComments' | 'onShowComments' | 'isPublic' | 'publicOptions'> = {},
 ) {
   return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>

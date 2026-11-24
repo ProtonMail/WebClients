@@ -28,6 +28,8 @@ export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
   hasUnreadComments?: boolean
   /** Opens the editor's comments panel, once the editor shows the document */
   onShowComments?: () => void
+  /** A share link visitor's items, in place of the member's active users, Share, comments button and user menu */
+  publicOptions?: ReactNode
 }
 
 /**
@@ -35,11 +37,11 @@ export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
  * the status pills, the view-only pill, the Share button (Admin only), the comments button and the user menu, under the
  * workspace promo banner. Sharing never rewrites the address bar to the public link, as /doc does: doc2 can't open
  * that URL, and the link is copied from the sharing modal. A share link's visitor gets neither the banner nor the user
- * menu, as /doc's public header has neither.
+ * menu, but the public options, as /doc's public header.
  */
 export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps) {
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
-  const { role, status, hasUnreadComments = false, onShowComments, ...titleMenuProps } = props
+  const { role, status, hasUnreadComments = false, onShowComments, publicOptions, ...titleMenuProps } = props
   const { sharingModal, showSharingModal } = useSharingModal()
 
   return (
@@ -62,27 +64,31 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
         </div>
 
         <div className="flex flex-1 flex-nowrap items-center justify-end head-max-479:!flex-shrink-0 head-max-479:!basis-auto">
-          <DocumentActiveUsers
-            className="mr-2 hidden md:flex"
-            participants={props.participants}
-            editorInvoker={props.editorInvoker}
-          />
-          {role === 'Admin' && (
-            <HeaderShareButton onClick={() => showSharingModal({ drive: getDrive(), nodeUid: props.node.uid })} />
-          )}
-          {role !== 'Viewer' && <CommentsButton hasUnread={hasUnreadComments} onShowComments={onShowComments} />}
-          <div className="w-2" />
-          {!props.isPublic && (
-            <UserDropdown
-              app={APPS.PROTONDOCS}
-              reportDescriptionContext={getDocsReportContextLines({
-                documentType: 'doc',
-                role: new DocumentRole(role),
-                appVersion: APP_VERSION,
-                clientType: CLIENT_TYPE,
-              })}
-              sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
-            />
+          {props.isPublic ? (
+            publicOptions
+          ) : (
+            <>
+              <DocumentActiveUsers
+                className="mr-2 hidden md:flex"
+                participants={props.participants}
+                editorInvoker={props.editorInvoker}
+              />
+              {role === 'Admin' && (
+                <HeaderShareButton onClick={() => showSharingModal({ drive: getDrive(), nodeUid: props.node.uid })} />
+              )}
+              {role !== 'Viewer' && <CommentsButton hasUnread={hasUnreadComments} onShowComments={onShowComments} />}
+              <div className="w-2" />
+              <UserDropdown
+                app={APPS.PROTONDOCS}
+                reportDescriptionContext={getDocsReportContextLines({
+                  documentType: 'doc',
+                  role: new DocumentRole(role),
+                  appVersion: APP_VERSION,
+                  clientType: CLIENT_TYPE,
+                })}
+                sessionOptions={{ path: getWindowLocationExcludingDomain(), target: '_self' }}
+              />
+            </>
           )}
         </div>
       </div>

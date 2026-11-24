@@ -211,6 +211,24 @@
   },
   {
     "doc2": "__components/PublicDocumentViewer.tsx",
+    "doc2Symbol": "onToolbarClicked",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx",
+    "sourceSymbol": "the EditorEvent.ToolbarClicked effect",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "A public viewer's toolbar click opens the welcome splash, from the bridge's editorReportingEvent instead of docs-core's event bus."
+  },
+  {
+    "doc2": "__components/PublicHeaderOptions.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/public/HeaderPublicOptions.tsx",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "The public header's items, with the role, the user, the link and the copy as props instead of docs-core's public document state, editor controller and link info. The comments button is disabled with a tooltip, as a public session has no comments; Create a copy is disabled until it gets a copy to make. The redirect action is read from the address as it is, so a retry doesn't perform it again. Its stylesheet, telemetry and spotlight helpers are imported from /doc."
+  },
+  {
+    "doc2": "__components/PublicDocumentViewer.tsx",
     "kind": "mirror",
     "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx",
     "sourceSymbol": "isDownloadAction",
@@ -257,6 +275,14 @@
     "notes": "The error page's title and message, as the pill for a share link turned off while the document is open (the SDK's linkRevoked stop)."
   },
   {
+    "doc2": "__components/SignupFlowModal.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/public/SignupFlowModal.tsx",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "Unchanged but its imports: doc2's redirects, as /doc's file of them imports docs-core's types, and /doc's telemetry."
+  },
+  {
     "doc2": "__components/SingleRevisionViewer.tsx",
     "doc2Symbol": "createRevisionClientHandler",
     "kind": "adaptation",
@@ -291,6 +317,14 @@
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
     "notes": "Text documents only, through the EditorInvoker. Left out: the spreadsheet time travel, and the multi-tab sync over a local relay."
+  },
+  {
+    "doc2": "__components/WelcomeSplashModal.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/public/WelcomeSplashModal.tsx",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "The copy comes in as a prop instead of from docs-core's editor controller and document state; Create a copy is disabled without one."
   },
   {
     "doc2": "__components/WordCount.tsx",
@@ -654,7 +688,7 @@
     "sourceSymbol": "navigateToAction",
     "sourceCommit": "5e9e9ddacd3df71ced3bb17a159abd4a0de98fde",
     "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
-    "notes": "navigateToAction's URL for a public action, on /doc2 rather than /doc, returned instead of assigned."
+    "notes": "navigateToAction's URL for a public action, on /doc2 rather than /doc, returned instead of assigned; the user app's /u/<n> stays, so the link opens under the account just chosen."
   },
   {
     "doc2": "__utils/publicLink.ts",
@@ -664,6 +698,43 @@
     "sourceCommit": "1eac1e95a822505becee45bb4995eea2210bf670",
     "copiedIn": "88ec5bcd46a5dbf736349f5339111ac05d465e20",
     "notes": "Verbatim, with the share-URL client passed in rather than read from docs-core's singleton."
+  },
+  {
+    "doc2": "__utils/publicRedirects.ts",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/public/utils.ts",
+    "sourceSymbol": "redirectToAccountSwitcher, redirectToSignUp, redirectToSignIn",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "The account switcher, sign-up and sign-in redirects, unchanged; the return path is the page's own, /doc2. The copy handover, which reads docs-core's types, is left out."
+  },
+  {
+    "doc2": "__utils/publicRename.ts",
+    "doc2Symbol": "canRenamePublicDocument",
+    "kind": "adaptation",
+    "source": "applications/drive/src/app/sections/publicPage/actions/actionsItemsChecker.ts",
+    "sourceSymbol": "getIsOwnedByUser",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "The signed-in creator's check on the node's key author (the claimed one when unverified, as usePublicFolderLoader reads it), on a link to a folder, for a visitor who edits: Drive's editor link, while public editing is on, so a public viewer gets no Rename. No 59-minute window: a live check on a scientist env found the server lets the creator rename after 66 minutes. No anonymous branch: Drive's in-memory uploads aren't readable from Docs."
+  },
+  {
+    "doc2": "__utils/publicRename.ts",
+    "doc2Symbol": "renamePublicDocument",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/DriveSDK/renamePublicNode.ts",
+    "sourceSymbol": "renamePublicNode",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "The share-URL client is passed in instead of docs-core's module state; returns the new name."
+  },
+  {
+    "doc2": "__utils/useDocsBookmarks.ts",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/public/useDocsBookmarks.ts",
+    "sourceCommit": "b913e72643f5d74196a9b407648fd614117eca16",
+    "copiedIn": "ea8319adfbd07181ac7e1f2b5853115ae20f81ec",
+    "notes": "doc2's copy of traceErrorSDK; the stable createNotification and withLoading in the hooks' dependency lists; the loaded list adds to the bookmarks instead of replacing them, so a bookmark saved while it loads stays."
   },
   {
     "doc2": "__utils/useEditorBasics.ts",

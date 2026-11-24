@@ -9,12 +9,14 @@ import { type ProtonDrivePublicLinkClient, generateNodeUid, getDrive } from '@pr
 import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { assignUrl } from '@proton/shared/lib/helpers/location'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
+import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import { setLocation } from '@proton/vitest-config/setLocation'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import { createFakePublicSession } from './__utils/createFakeSession'
+import type { DocumentHeaderV2Props } from './__components/DocumentHeaderV2'
 import type { PublicLinkHandoff } from './__utils/publicLink'
 import PublicDocumentPageV2 from './publicPage'
 
@@ -39,14 +41,21 @@ vi.mock('./__components/DocumentShell', () => ({
   ),
 }))
 vi.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
+let mockHeaderProps: DocumentHeaderV2Props | undefined
 vi.mock('./__components/DocumentHeaderV2', () => ({
-  DocumentHeaderV2: ({ role, status }: { role: string; status: ReactNode }) => (
-    <div>
-      Document header for a {role}
-      {status}
-    </div>
-  ),
+  DocumentHeaderV2: (props: DocumentHeaderV2Props) => {
+    mockHeaderProps = props
+    return (
+      <div>
+        Document header for a {props.role}
+        {props.status}
+      </div>
+    )
+  },
 }))
+// The visitor's addresses come from the account store
+const mockGetAddresses = vi.fn(async (): Promise<{ Email: string }[]> => [])
+vi.mock('@proton/account/addresses/hooks', () => ({ useGetAddresses: () => mockGetAddresses }))
 const mockCreateSession = vi.fn()
 vi.mock('./__utils/usePublicRealtimeClient', () => ({
   usePublicRealtimeClient: () => ({ createSession: mockCreateSession }),
@@ -132,8 +141,62 @@ describe('PublicDocumentPageV2', () => {
     expect(assignUrl).not.toHaveBeenCalled()
   })
 
-  function start(options: { permissions?: SHARE_URL_PERMISSIONS; hasDirectAccess?: boolean | undefined } = {}) {
-    const { permissions = SHARE_URL_PERMISSIONS.EDITOR } = options
+  describe("the title menu's Rename, for a signed-in visitor on a link to a folder", () => {
+    const VISITOR = { Email: 'visitor@proton.me' } as UserModel
+
+    beforeEach(() => {
+      mockGetAddresses.mockResolvedValue([{ Email: 'other@proton.me' }, { Email: 'visitor@proton.me' }])
+      getPublicNode.mockResolvedValue({
+        uid: NODE_UID,
+        name: 'Plans',
+        mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
+        keyAuthor: { ok: true, value: 'visitor@proton.me' },
+        creationTime: new Date(),
+      })
+    })
+
+    test('is allowed on a document they created, once their addresses load, with public editing on', async () => {
+      start({ isSharedUrlAFolder: true, user: VISITOR })
+
+      await screen.findByText('Document header for a Editor')
+      await waitFor(() => expect(mockHeaderProps?.publicRename?.isAllowed()).toBe(true))
+      expect(mockHeaderProps?.publicOptions).toBeTruthy()
+    })
+
+    test('is not for a viewer: an editor link with public editing off', async () => {
+      mockPublicEditing = false
+      start({ isSharedUrlAFolder: true, user: VISITOR })
+
+      await screen.findByText('Document header for a Viewer')
+      await waitFor(() => expect(mockGetAddresses).toHaveBeenCalled())
+      expect(mockHeaderProps?.publicRename?.isAllowed()).toBe(false)
+    })
+
+    test('is not on a link to the document itself', async () => {
+      start({ user: VISITOR })
+      await screen.findByText('Document header for a Editor')
+      await waitFor(() => expect(mockGetAddresses).toHaveBeenCalled())
+      expect(mockHeaderProps?.publicRename?.isAllowed()).toBe(false)
+    })
+
+    test('is not for an anonymous visitor, whose addresses are never read', async () => {
+      start({ isSharedUrlAFolder: true })
+
+      await screen.findByText('Document header for a Editor')
+      expect(mockGetAddresses).not.toHaveBeenCalled()
+      expect(mockHeaderProps?.publicRename?.isAllowed()).toBe(false)
+    })
+  })
+
+  function start(
+    options: {
+      permissions?: SHARE_URL_PERMISSIONS
+      hasDirectAccess?: boolean | undefined
+      isSharedUrlAFolder?: boolean
+      user?: UserModel
+    } = {},
+  ) {
+    const { permissions = SHARE_URL_PERMISSIONS.EDITOR, isSharedUrlAFolder = false, user } = options
     // Undefined when only the visitor's own Drive can tell
     const hasDirectAccess = 'hasDirectAccess' in options ? options.hasDirectAccess : false
     const fake = createFakePublicSession()
@@ -147,8 +210,9 @@ describe('PublicDocumentPageV2', () => {
         getNode: getPublicNode,
         experimental: { getSessionInfo: () => ({ uid: 'PUBLIC_UID' }) },
       } as unknown as ProtonDrivePublicLinkClient,
-      linkInfo: { linkId: 'LINK', volumeId: 'VOLUME', permissions, isSharedUrlAFolder: false, hasDirectAccess },
-      providerType: 'public-unauthenticated',
+      linkInfo: { linkId: 'LINK', volumeId: 'VOLUME', permissions, isSharedUrlAFolder, hasDirectAccess },
+      user,
+      providerType: user ? 'public-authenticated' : 'public-unauthenticated',
     }
 
     render(

@@ -70,10 +70,15 @@ export type DocumentTitleMenuProps = {
   onFileMenuAction: (action: FileMenuAction) => void
   /**
    * A visitor through a share link: no member-only item, as /doc's public mode, since the document action permissions
-   * don't cover them: Rename, New document, New spreadsheet, Make a copy, Move to folder, See version history and Move
-   * to trash
+   * don't cover them: New document, New spreadsheet, Make a copy, Move to folder, See version history and Move to trash.
+   * Rename only with `publicRename`.
    */
   isPublic?: boolean
+  /**
+   * A public visitor's Rename, through the share link: shown while `isAllowed` says so, asked each time the menu
+   * renders
+   */
+  publicRename?: { isAllowed: () => boolean; rename: (name: string) => Promise<string> }
 }
 
 /**
@@ -92,6 +97,7 @@ export function DocumentTitleMenu({
   isMakingACopy,
   onFileMenuAction,
   isPublic = false,
+  publicRename,
 }: DocumentTitleMenuProps) {
   const { logger } = useApplication()
   const { APP_VERSION } = useConfig()
@@ -115,6 +121,7 @@ export function DocumentTitleMenu({
 
   // A public node has no membership, so the role alone would let a public editor organize it
   const canOrganize = !isPublic && canOrganizeDocument(role, node)
+  const canRename = isPublic ? !!publicRename?.isAllowed() : canOrganize
 
   useAppTitle(title)
 
@@ -190,7 +197,8 @@ export function DocumentTitleMenu({
     setTitle(typedName)
     setIsRenamePending(true)
     // The name Drive gave the document, which differs from the typed one when that was taken
-    renameDocument(node, typedName)
+    const renamed = publicRename ? publicRename.rename(typedName) : renameDocument(node, typedName)
+    renamed
       .then(
         (newName) => {
           latestNodeNameRef.current = newName
@@ -262,7 +270,7 @@ export function DocumentTitleMenu({
         contentProps={{ className: 'after:!h-0' }}
       >
         <DropdownMenu>
-          {canOrganize && (
+          {canRename && (
             <DropdownMenuButton
               className="flex items-center text-left"
               disabled={isRenamePending}
