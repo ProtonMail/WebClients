@@ -22,6 +22,7 @@ import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
+import { getDriveFileFromDownload } from '../../helpers/attachment/prepareForDrive';
 import { useMailDispatch } from '../../store/hooks';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 
@@ -95,27 +96,18 @@ export const useDownload = () => {
         [api]
     );
 
-    const getDownloadStreamInfo = useCallback(
+    /**
+     * Gets an attachment's decrypted contents for saving to Drive, with download's checks but no browser download.
+     */
+    const prepareForDrive = useCallback(
         async (message: MessageStateWithData, attachment: Attachment, outsideKey?: MessageKeys) => {
             const download = await getDownload(message, attachment, outsideKey);
-            const blob = new Blob([download.data]);
-            return {
-                // A byte stream of the attachment.
-                stream: blob.stream(),
-                // The unencrypted size of the attachment. The encrypted size is
-                // always a little bigger due to encryption overhead
-                // This value needs to be used when uploading via the Drive SDK
-                // for integrity verification
-                size: blob.size,
-                // The MIME type of the attachment.
-                type: blob.type,
-            };
+            return getDriveFileFromDownload(download);
         },
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-436A5C
-        []
+        [getDownload]
     );
 
-    return { handleDownload, confirmDownloadModal, getDownloadStreamInfo };
+    return { handleDownload, confirmDownloadModal, prepareForDrive };
 };
 
 export const useDownloadAll = () => {
