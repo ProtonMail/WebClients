@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useRouteMatch } from 'react-router'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import type { HomepageMessages } from './messages/defaultHomepageMessages'
 import { useEvent } from './utils/useEvent'
@@ -35,7 +34,7 @@ import { useTrashed } from './useTrashed'
 
 import { traceRecentsError } from './traceRecentsError'
 import { DateFormatter } from './utils/dateFormatter'
-import { HOMEPAGE_TRASH_PATH } from './homepage-paths'
+import { useHomepageRoute } from './homepageNavigation'
 
 export function HomepageViewProvider({
   children,
@@ -91,7 +90,7 @@ export function HomepageViewProvider({
     errorTracking,
   )
 
-  const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
+  const isTrashRoute = useHomepageRoute().route.view === 'trash'
 
   const abortLoad = useRef<AbortController>(undefined)
   const loadData = useCallback(() => {

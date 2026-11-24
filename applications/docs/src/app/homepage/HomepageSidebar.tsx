@@ -1,6 +1,4 @@
-import { useRef, type ReactNode } from 'react'
-import { useHistory, useRouteMatch } from 'react-router'
-import { NavLink } from 'react-router-dom'
+import { useRef, type ComponentProps, type ReactNode } from 'react'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import * as Ariakit from '@ariakit/react'
 
@@ -15,7 +13,7 @@ import {
   SidebarStorage,
 } from './components/sidebar'
 import { IconButton } from './components/ui'
-import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
+import { useHomepageRoute, type HomepageRoute } from './homepageNavigation'
 import type { HomepageUserDropdownComponentProps } from './HomepageHeader'
 import { useHomepageView } from './homepageViewContext'
 import { COLOR_BY_TYPE } from './HomepageContent/shared'
@@ -71,8 +69,8 @@ export function HomepageSidebar({
 }: HomepageSidebarProps) {
   const { expanded, toggleExpanded, setExpanded } = useSidebarState()
   const isNarrow = useIsNarrow()
-  const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
-  const history = useHistory()
+  const { route, navigate } = useHomepageRoute()
+  const isRecents = route.view === 'recents'
   const { isRecentsUpdating, type, reportTelemetry, getAppHref, storage, appVersion } = useHomepageView()
   const messages = useHomepageMessages().sidebar
   const reloadRecents = useReloadRecents()
@@ -145,7 +143,7 @@ export function HomepageSidebar({
                   e.stopPropagation()
                   e.preventDefault()
                   if (!isRecents) {
-                    history.push('/recents')
+                    navigate({ view: 'recents', params: {} })
                   }
                   await reloadRecents()
                   setExpanded(false)
@@ -160,36 +158,24 @@ export function HomepageSidebar({
             </div>
             <SidebarList>
               <SidebarListItem onClick={() => setExpanded(false)}>
-                <NavLink
-                  to={(location) => {
-                    const search = new URLSearchParams(location.search)
-                    search.delete('type')
-                    return { ...location, pathname: '/recents', search: search.toString() }
-                  }}
-                  exact={true}
+                <SidebarLink
+                  to={{ view: 'recents', params: { ...route.params, type: undefined } }}
+                  isActive={isRecents && !type}
                   data-updating={isRecentsUpdating ? '' : undefined}
-                  className={clsx(SIDEBAR_LINK_CLASS_NAME, 'justify-between')}
-                  activeClassName="!font-semibold"
-                  isActive={(match) => Boolean(match?.isExact && !type)}
+                  className="justify-between"
                 >
                   <span className="flex items-center gap-2">
                     <Icon data={Icons.house} />
                     <span>{messages.all}</span>
                   </span>
-                </NavLink>
+                </SidebarLink>
               </SidebarListItem>
               <SidebarListItem onClick={() => setExpanded(false)}>
-                <NavLink
-                  to={(location) => {
-                    const search = new URLSearchParams(location.search)
-                    search.set('type', 'document')
-                    return { ...location, pathname: '/recents', search: search.toString() }
-                  }}
-                  exact={true}
+                <SidebarLink
+                  to={{ view: 'recents', params: { ...route.params, type: 'document' } }}
+                  isActive={isRecents && type === 'document'}
                   data-updating={isRecentsUpdating ? '' : undefined}
-                  className={clsx(SIDEBAR_LINK_CLASS_NAME, 'justify-between')}
-                  activeClassName="!font-semibold"
-                  isActive={(match) => Boolean(match?.isExact && type === 'document')}
+                  className="justify-between"
                 >
                   <span className="flex items-center gap-2">
                     <Icon
@@ -199,20 +185,14 @@ export function HomepageSidebar({
                     />
                     <span>{messages.documents}</span>
                   </span>
-                </NavLink>
+                </SidebarLink>
               </SidebarListItem>
               <SidebarListItem onClick={() => setExpanded(false)}>
-                <NavLink
-                  to={(location) => {
-                    const search = new URLSearchParams(location.search)
-                    search.set('type', 'spreadsheet')
-                    return { ...location, pathname: '/recents', search: search.toString() }
-                  }}
-                  exact={true}
+                <SidebarLink
+                  to={{ view: 'recents', params: { ...route.params, type: 'spreadsheet' } }}
+                  isActive={isRecents && type === 'spreadsheet'}
                   data-updating={isRecentsUpdating ? '' : undefined}
-                  className={clsx(SIDEBAR_LINK_CLASS_NAME, 'justify-between')}
-                  activeClassName="!font-semibold"
-                  isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
+                  className="justify-between"
                 >
                   <span className="flex items-center gap-2">
                     <Icon
@@ -222,19 +202,19 @@ export function HomepageSidebar({
                     />
                     <span>{messages.spreadsheets}</span>
                   </span>
-                </NavLink>
+                </SidebarLink>
               </SidebarListItem>
               <li className="px-6">
                 <hr className="my-3 h-px border-0 bg-[--border-weak] [[data-theme-mode=dark]_&]:!bg-[--border-norm]" />
               </li>
 
               <SidebarListItem onClick={() => setExpanded(false)}>
-                <NavLink to="/trash" exact={true} className={SIDEBAR_LINK_CLASS_NAME} activeClassName="!font-semibold">
+                <SidebarLink to={{ view: 'trash', params: {} }} isActive={route.view === 'trash'}>
                   <span className="flex items-center gap-2">
                     <Icon data={Icons.trash} />
                     <span>{messages.trash}</span>
                   </span>
-                </NavLink>
+                </SidebarLink>
               </SidebarListItem>
 
               <SidebarListItem onClick={() => setExpanded(false)}>
@@ -267,5 +247,38 @@ export function HomepageSidebar({
         />
       )}
     </>
+  )
+}
+
+type SidebarLinkProps = Omit<ComponentProps<'a'>, 'href'> & { to: HomepageRoute; isActive: boolean }
+
+/** A link to a homepage route, which a plain click follows in this page. Others, such as a middle click, open its address. */
+function SidebarLink({ to, isActive, className, children, ...props }: SidebarLinkProps) {
+  const { route, getHref, navigate } = useHomepageRoute()
+  return (
+    <a
+      {...props}
+      href={getHref(to)}
+      aria-current={isActive ? 'page' : undefined}
+      className={clsx(SIDEBAR_LINK_CLASS_NAME, className, isActive && '!font-semibold')}
+      onClick={(event) => {
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.altKey ||
+          event.ctrlKey ||
+          event.shiftKey
+        ) {
+          return
+        }
+        event.preventDefault()
+        // As the React Router links it replaces: a new history entry, so Back returns to the previous filter or view,
+        // unless it's the current address, whose entry it replaces. Sort and search replace theirs instead.
+        navigate(to, { replace: getHref(to) === getHref(route) })
+      }}
+    >
+      {children}
+    </a>
   )
 }

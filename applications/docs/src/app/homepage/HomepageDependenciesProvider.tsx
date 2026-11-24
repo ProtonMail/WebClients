@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { DocumentActionsProvider, type DocumentActionsProviderProps } from './DocumentActionsProvider'
+import { HomepageNavigationProvider, type HomepageNavigation } from './homepageNavigation'
 import { HomepageViewProvider } from './HomepageViewProvider'
 import type { HomepageViewProviderProps } from './homepageViewUtils'
 import { HomepageMessagesProvider } from './messages/HomepageMessagesProvider'
@@ -13,6 +14,7 @@ import type { HomepageMessages } from './messages/defaultHomepageMessages'
 export type HomepageDependencies = Omit<HomepageViewProviderProps, 'children'> &
   Omit<DocumentActionsProviderProps, 'children' | 'drive'> & {
     messages: HomepageMessages
+    navigation: HomepageNavigation
   }
 
 export type HomepageDependenciesProviderProps = {
@@ -21,19 +23,21 @@ export type HomepageDependenciesProviderProps = {
 }
 
 export function HomepageDependenciesProvider({ children, dependencies }: HomepageDependenciesProviderProps) {
-  const { messages, openShareModal, openMoveItemsModal, ...viewDependencies } = dependencies
+  const { messages, navigation, openShareModal, openMoveItemsModal, ...viewDependencies } = dependencies
 
   return (
     <HomepageMessagesProvider messages={messages}>
-      <HomepageViewProvider {...viewDependencies}>
-        <DocumentActionsProvider
-          drive={viewDependencies.drive}
-          openShareModal={openShareModal}
-          openMoveItemsModal={openMoveItemsModal}
-        >
-          {children}
-        </DocumentActionsProvider>
-      </HomepageViewProvider>
+      <HomepageNavigationProvider navigation={navigation}>
+        <HomepageViewProvider {...viewDependencies}>
+          <DocumentActionsProvider
+            drive={viewDependencies.drive}
+            openShareModal={openShareModal}
+            openMoveItemsModal={openMoveItemsModal}
+          >
+            {children}
+          </DocumentActionsProvider>
+        </HomepageViewProvider>
+      </HomepageNavigationProvider>
     </HomepageMessagesProvider>
   )
 }

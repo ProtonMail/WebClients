@@ -1,10 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { MemoryRouter } from 'react-router'
 
 import { HomepageSidebar } from './HomepageSidebar'
 import type { HomepageUserDropdownComponentProps } from './HomepageHeader'
 import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
+import { createMemoryNavigation } from './memoryNavigation'
 import { SidebarStateProvider, useSidebarState } from './sidebarState'
 import { DateFormatter } from './utils/dateFormatter'
 import type { HomepageAppVersion } from './utils/appVersion'
@@ -46,7 +46,8 @@ function getSidebar() {
 function renderSidebar({
   storage,
   appVersion = { version: '1.0.0', fullVersion: '1.0.0+abc' },
-}: { storage?: HomepageStorage; appVersion?: HomepageAppVersion } = {}) {
+  path = '/recents',
+}: { storage?: HomepageStorage; appVersion?: HomepageAppVersion; path?: string } = {}) {
   let finishUpdate = () => {}
   const updateRecentDocuments = vi.fn(
     () =>
@@ -61,7 +62,7 @@ function renderSidebar({
     updateRecentDocuments,
     reloadInvitations,
     isRecentsUpdating: false,
-    type: undefined,
+    type: new URLSearchParams(path.split('?')[1]).get('type') ?? undefined,
     reportTelemetry: vi.fn(),
     createNotification: vi.fn(),
     getAppHref: (path: string) => path,
@@ -70,8 +71,9 @@ function renderSidebar({
     appVersion,
   } as unknown as HomepageViewValue
 
+  const navigation = createMemoryNavigation(path)
   render(
-    <MemoryRouter initialEntries={['/recents']}>
+    <navigation.NavigationProvider>
       <HomepageViewContext.Provider value={value}>
         <SidebarStateProvider>
           <MenuButton />
@@ -83,9 +85,9 @@ function renderSidebar({
           />
         </SidebarStateProvider>
       </HomepageViewContext.Provider>
-    </MemoryRouter>,
+    </navigation.NavigationProvider>,
   )
-  return { updateRecentDocuments, reloadInvitations, finishUpdate: () => finishUpdate(), value }
+  return { updateRecentDocuments, reloadInvitations, finishUpdate: () => finishUpdate(), value, navigation }
 }
 
 describe('HomepageSidebar', () => {
@@ -108,10 +110,70 @@ describe('HomepageSidebar', () => {
     await waitFor(() => expect(value.createNotification).toHaveBeenCalledWith({ text: 'Recent documents updated' }))
   })
 
+  test('the reload button in the trash goes to the recents, in a new history entry, and reloads them', async () => {
+    const { updateRecentDocuments, navigation } = renderSidebar({ path: '/trash' })
+
+    await userEvent.click(screen.getByRole('button', { name: 'Update recent documents' }))
+
+    expect(navigation.getEntries()).toEqual(['/trash', '/recents'])
+    expect(updateRecentDocuments).toHaveBeenCalledTimes(1)
+  })
+
   test('rendering the sidebar does not reload the invitations', () => {
     const { reloadInvitations } = renderSidebar()
 
     expect(reloadInvitations).not.toHaveBeenCalled()
+  })
+
+  describe('links', () => {
+    const getLink = (name: string) => screen.getByRole('link', { name })
+
+    test('All, Documents and Spreadsheets keep the other parameters and set the type, Trash drops them all', () => {
+      renderSidebar({ path: '/recents?q=plan&sort=name&type=document&ref=mail' })
+
+      expect(getLink('All')).toHaveAttribute('href', '/recents?q=plan&sort=name&ref=mail')
+      expect(getLink('Documents')).toHaveAttribute('href', '/recents?q=plan&sort=name&type=document&ref=mail')
+      expect(getLink('Spreadsheets')).toHaveAttribute('href', '/recents?q=plan&sort=name&type=spreadsheet&ref=mail')
+      expect(getLink('Trash')).toHaveAttribute('href', '/trash')
+    })
+
+    test.each([
+      ['/recents', 'All'],
+      ['/recents?type=document', 'Documents'],
+      ['/recents?sort=name&type=spreadsheet', 'Spreadsheets'],
+      ['/trash', 'Trash'],
+    ])('on %s, only %s is the current page', (path, name) => {
+      renderSidebar({ path })
+
+      expect(screen.getAllByRole('link', { current: 'page' })).toEqual([getLink(name)])
+    })
+
+    test('a filter or the trash pushes a history entry, as on main, and the current link replaces its entry', async () => {
+      const { navigation } = renderSidebar({ path: '/recents?q=plan' })
+
+      await userEvent.click(getLink('Spreadsheets'))
+      expect(navigation.getEntries()).toEqual(['/recents?q=plan', '/recents?q=plan&type=spreadsheet'])
+
+      await userEvent.click(getLink('Trash'))
+      await userEvent.click(getLink('Trash'))
+      expect(navigation.getEntries()).toEqual(['/recents?q=plan', '/recents?q=plan&type=spreadsheet', '/trash'])
+    })
+
+    test('a click with a modifier, or another button, leaves the link to the browser', async () => {
+      const { navigation } = renderSidebar()
+      const clicks: boolean[] = []
+      document.addEventListener('click', (event) => clicks.push(event.defaultPrevented), { once: true })
+      document.addEventListener('auxclick', (event) => clicks.push(event.defaultPrevented), { once: true })
+
+      const user = userEvent.setup()
+      await user.keyboard('{Control>}')
+      await user.click(getLink('Trash'))
+      await user.keyboard('{/Control}')
+      await user.pointer({ keys: '[MouseMiddle]', target: getLink('Trash') })
+
+      expect(clicks).toEqual([false, false])
+      expect(navigation.getEntries()).toEqual(['/recents'])
+    })
   })
 
   describe('storage', () => {

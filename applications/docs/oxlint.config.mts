@@ -48,6 +48,11 @@ export default createOxlintConfig({
                 'proton/restricted-imports': createRestrictedImportRule({
                     paths: [
                         { name: 'ttag', message: 'The host translates the homepage strings: see src/app/homepage/README.md.' },
+                        ...['react-router', 'react-router-dom', 'react-router-dom-v5-compat'].map((name) => ({
+                            name,
+                            message:
+                                'The host owns the paths and the history: read and change the route with useHomepageRoute(), from HomepageDependencies.navigation.',
+                        })),
                     ],
                     patterns: [
                         {

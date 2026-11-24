@@ -1,9 +1,7 @@
 import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
 import { ServerTime } from './utils/serverTime'
 import { act, renderHook } from '@testing-library/react'
-import type { ReactNode } from 'react'
-import { MemoryRouter } from 'react-router'
-import { CompatRouter, useLocation } from 'react-router-dom-v5-compat'
+import { createMemoryNavigation } from './memoryNavigation'
 
 import type { ItemsSection, ItemsSectionId } from './homepageViewContext'
 import {
@@ -191,23 +189,9 @@ function expectSections(sections: ReturnType<typeof splitIntoSectionsByTime>) {
 }
 
 function renderQueryHook<T>(useHook: () => T, path: string) {
-  let location = ''
-  function CurrentLocation() {
-    const { pathname, search } = useLocation()
-    location = `${pathname}${search}`
-    return null
-  }
-  const { result } = renderHook(useHook, {
-    wrapper: ({ children }: { children: ReactNode }) => (
-      <MemoryRouter initialEntries={[path]}>
-        <CompatRouter>
-          {children}
-          <CurrentLocation />
-        </CompatRouter>
-      </MemoryRouter>
-    ),
-  })
-  return { result, getLocation: () => location }
+  const navigation = createMemoryNavigation(path)
+  const { result } = renderHook(useHook, { wrapper: navigation.NavigationProvider })
+  return { result, getLocation: navigation.getLocation, getEntries: navigation.getEntries }
 }
 
 describe('useRecentsSort', () => {
@@ -230,15 +214,23 @@ describe('useRecentsSort', () => {
 
     expect(getLocation()).toBe('/recents?q=plan&type=document')
   })
+
+  test('a sort replaces the address, in the trash too', () => {
+    const { result, getEntries } = renderQueryHook(useRecentsSort, '/trash')
+
+    act(() => result.current[1]('name'))
+
+    expect(getEntries()).toEqual(['/trash?sort=name'])
+  })
 })
 
 describe('useSearch', () => {
-  test('an emptied search leaves the address', () => {
-    const { result, getLocation } = renderQueryHook(useSearch, '/recents?q=plan&sort=name')
+  test("an emptied search leaves the address, and the parameters the homepage doesn't know stay", () => {
+    const { result, getLocation } = renderQueryHook(useSearch, '/recents?q=plan&ref=mail&sort=name')
 
     act(() => result.current[1](''))
 
-    expect(getLocation()).toBe('/recents?sort=name')
+    expect(getLocation()).toBe('/recents?ref=mail&sort=name')
     expect(result.current[0]).toBeUndefined()
   })
 })

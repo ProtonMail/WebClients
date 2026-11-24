@@ -13,16 +13,13 @@
         "@proton/styles": "workspace:^",
         "proton-docs": "workspace:^",
         "react": "catalog:",
-        "react-dom": "catalog:",
-        "react-router-dom": "catalog:",
-        "react-router-dom-v5-compat": "^6.30.6"
+        "react-dom": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
-        "@types/react-router-dom": "catalog:",
         "@typescript/native": "catalog:",
         "@vitejs/plugin-react": "catalog:",
         "oxlint": "catalog:",
