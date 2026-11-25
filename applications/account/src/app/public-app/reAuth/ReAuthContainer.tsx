@@ -41,7 +41,13 @@ import { PublicAppContext } from '../state-machine/PublicAppContext';
 import { selectPaths, selectPreAppIntent } from '../state-machine/publicAppStateMachine';
 import { runLogin } from '../state-machine/runLogin';
 import { createReAuthActors } from './reAuthActors';
-import { reAuthStateMachine, selectAwaitingProvider, selectMethod, selectSubmitting } from './reAuthStateMachine';
+import {
+    reAuthStateMachine,
+    selectAwaitingProvider,
+    selectMethod,
+    selectPasswordError,
+    selectSubmitting,
+} from './reAuthStateMachine';
 import type { ReAuthState } from './reauthContainerState';
 
 interface SrpFormProps {
@@ -50,11 +56,13 @@ interface SrpFormProps {
     onSubmit: (password: string) => void;
     submitting: boolean;
     below: ReactNode;
+    /** Why the last password was rejected, shown under the field. */
+    error: string | undefined;
+    onChange: () => void;
 }
 
-const SrpForm = ({ label, info, onSubmit, submitting, below }: SrpFormProps) => {
+const SrpForm = ({ label, info, onSubmit, submitting, below, error, onChange }: SrpFormProps) => {
     const { validator, onFormSubmit } = useFormErrors();
-    const [errorMsg, setErrorMsg] = useState<string | null>(null);
     const [password, setPassword] = useState('');
 
     return (
@@ -62,7 +70,6 @@ const SrpForm = ({ label, info, onSubmit, submitting, below }: SrpFormProps) => 
             name="loginForm"
             onSubmit={(event) => {
                 event.preventDefault();
-                setErrorMsg(null);
                 if (!onFormSubmit()) {
                     return;
                 }
@@ -75,15 +82,17 @@ const SrpForm = ({ label, info, onSubmit, submitting, below }: SrpFormProps) => 
                 id="password"
                 bigger
                 label={label}
-                error={validator([requiredValidator(password)]) || !!errorMsg}
+                error={validator([requiredValidator(password)]) || error}
                 as={PasswordInputTwo}
                 disableChange={submitting}
                 autoComplete="current-password"
                 autoFocus
                 value={password}
-                onValue={setPassword}
+                onValue={(value: string) => {
+                    setPassword(value);
+                    onChange();
+                }}
                 rootClassName="mt-2"
-                onChange={() => setErrorMsg(null)}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-4">
                 {c('Action').t`Continue`}
@@ -114,6 +123,8 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
     );
     const submitting = selectSubmitting(snapshot);
     const awaitingProvider = selectAwaitingProvider(snapshot);
+    const passwordError = selectPasswordError(snapshot);
+    const onPasswordEdited = () => send({ type: 'password.edited' });
     const [ssoModalProps, setSSOModalOpen, renderSSOModal] = useModalState();
 
     useEffect(() => {
@@ -133,6 +144,8 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
             {...getAuthPasswordCopy(getAccessTypeFromMask(getSessionAccessTypeMask(User)))}
             onSubmit={(password) => send({ type: 'password.submitted', password })}
             submitting={submitting}
+            error={passwordError}
+            onChange={onPasswordEdited}
             below={
                 <>
                     <hr className="my-4" />
@@ -166,6 +179,8 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
     const unlockForm = (
         <UnlockForm
             submitting={submitting}
+            error={passwordError}
+            onChange={onPasswordEdited}
             onSubmit={(keyPassword) => send({ type: 'unlockPassword.submitted', keyPassword })}
         />
     );
@@ -188,6 +203,8 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
     const backupPasswordForm = (
         <SSOBackupPasswordForm
             submitting={submitting}
+            error={passwordError}
+            onChange={onPasswordEdited}
             onSubmit={(keyPassword) => send({ type: 'backupPassword.submitted', keyPassword })}
         />
     );
@@ -231,6 +248,7 @@ const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
                     scope="locked"
                     config={queryUnlock()}
                     onSuccess={() => send({ type: 'idp.authenticated' })}
+                    onError={errorHandler}
                     onClose={() => send({ type: 'idp.cancelled' })}
                     onCancel={() => send({ type: 'idp.cancelled' })}
                 />

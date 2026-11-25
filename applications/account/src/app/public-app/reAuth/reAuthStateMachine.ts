@@ -1,17 +1,20 @@
 /**
  * Re-authentication of a signed-in session before a fork: with the password (SRP), then the key password in
  * two-password mode, or for SSO accounts with the identity provider or the backup password. Each step ends with the
- * login, so a failure keeps the user on the step. An admin or delegated session signs in with the admin's or trusted
- * contact's own account, so the machine first asks the API how that account signs in, and never unlocks keys.
- * `createReAuthActors` provides the actors.
+ * login, so a failure keeps the user on the step: a wrong password shows under its field, other errors in a
+ * notification. An admin or delegated session signs in with the admin's or trusted contact's own account, so the
+ * machine first asks the API how that account signs in, and never unlocks keys. `createReAuthActors` provides the
+ * actors.
  */
 import { type SnapshotFrom, assertEvent, assign, emit, setup } from 'xstate';
 
+import { PasswordError } from '@proton/shared/lib/authentication/error';
 import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import { getIsSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
 import { isSelf } from '@proton/shared/lib/user/helpers';
 
-import { reportActorError, unprovidedActors } from '../sign-in/state-machine/machineHelpers';
+import { errorOf, isErrorOf, reportActorError, unprovidedActors } from '../sign-in/state-machine/machineHelpers';
+import { InvalidLoginError } from '../sign-in/steps/credentials/state-machine/credentialsErrors';
 import type { ReAuthActors } from './reAuthActors';
 import type { ReAuthState } from './reauthContainerState';
 
@@ -19,6 +22,7 @@ export type ReAuthEvent =
     | { type: 'password.submitted'; password: string }
     | { type: 'unlockPassword.submitted'; keyPassword: string }
     | { type: 'backupPassword.submitted'; keyPassword: string }
+    | { type: 'password.edited' }
     | { type: 'idp.started' }
     | { type: 'idp.authenticated' }
     | { type: 'idp.cancelled' };
@@ -37,7 +41,15 @@ interface ReAuthContext {
     method: ReAuthMethod | undefined;
     /** Whether the password re-authentication unlocks the keys, see `getNeedsKeys`. */
     needsKeys: boolean;
+    /** Why the last password was rejected, shown under the form's field until it's edited or submitted again. */
+    passwordError: string | undefined;
 }
+
+/** Shows the failed request's error under the password field, so the user can try again. */
+const showPasswordError = {
+    type: 'setPasswordError' as const,
+    params: ({ event }: { event: { error: unknown } }) => ({ error: event.error }),
+};
 
 /**
  * How the account's own user re-authenticates. An SSO account uses its backup password when the fork needs its keys,
@@ -91,8 +103,13 @@ export const reAuthStateMachine = setup({
         assignBackupPassword: assign((_, { backupPassword }: { backupPassword: string }) => ({ backupPassword })),
         forgetBackupPassword: assign({ backupPassword: '' }),
         assignMethod: assign((_, { method }: { method: ReAuthMethod }) => ({ method })),
+        setPasswordError: assign((_, { error }: { error: unknown }) => ({
+            passwordError: error instanceof Error ? error.message : undefined,
+        })),
+        clearPasswordError: assign({ passwordError: undefined }),
     },
     guards: {
+        isErrorOf,
         hasNoMethod: ({ context }) => context.method === undefined,
         usesIdP: ({ context }) => context.method === 'idp',
         hasSalts: (_, { salts }: { salts: KeySalt[] | undefined }) => salts !== undefined,
@@ -106,7 +123,11 @@ export const reAuthStateMachine = setup({
         backupPassword: '',
         method: isSelf(input.session.data.User) ? getOwnMethod(input) : undefined,
         needsKeys: getNeedsKeys(input),
+        passwordError: undefined,
     }),
+    on: {
+        'password.edited': { actions: 'clearPasswordError' },
+    },
     states: {
         starting: {
             always: [
@@ -129,6 +150,7 @@ export const reAuthStateMachine = setup({
             },
         },
         awaitingPassword: {
+            exit: 'clearPasswordError',
             on: {
                 'password.submitted': 'submittingPassword',
                 'backupPassword.submitted': {
@@ -155,10 +177,14 @@ export const reAuthStateMachine = setup({
                     target: 'awaitingUnlockPassword',
                     actions: { type: 'assignSalts', params: ({ event }) => ({ salts: event.output.unlockWithSalts }) },
                 },
-                onError: { target: 'awaitingPassword', actions: reportActorError },
+                onError: [
+                    { guard: errorOf(InvalidLoginError), target: 'awaitingPassword', actions: showPasswordError },
+                    { target: 'awaitingPassword', actions: reportActorError },
+                ],
             },
         },
         awaitingUnlockPassword: {
+            exit: 'clearPasswordError',
             on: { 'unlockPassword.submitted': 'unlocking' },
         },
         unlocking: {
@@ -169,7 +195,10 @@ export const reAuthStateMachine = setup({
                     assertEvent(event, 'unlockPassword.submitted');
                     return { state: context.state, keyPassword: event.keyPassword, salts: context.salts ?? [] };
                 },
-                onError: { target: 'awaitingUnlockPassword', actions: reportActorError },
+                onError: [
+                    { guard: errorOf(PasswordError), target: 'awaitingUnlockPassword', actions: showPasswordError },
+                    { target: 'awaitingUnlockPassword', actions: reportActorError },
+                ],
             },
         },
         withIdP: {
@@ -242,7 +271,14 @@ export const reAuthStateMachine = setup({
                         }),
                         // Signed in: the page leaves, or the login shows its next step
                         onDone: { actions: 'forgetBackupPassword' },
-                        onError: { target: '#reAuth.awaitingPassword', actions: reportActorError },
+                        onError: [
+                            {
+                                guard: errorOf(PasswordError),
+                                target: '#reAuth.awaitingPassword',
+                                actions: showPasswordError,
+                            },
+                            { target: '#reAuth.awaitingPassword', actions: reportActorError },
+                        ],
                     },
                 },
             },
@@ -261,3 +297,6 @@ export const selectAwaitingProvider = (snapshot: ReAuthSnapshot) =>
 
 /** How the user re-authenticates; undefined while it loads. */
 export const selectMethod = (snapshot: ReAuthSnapshot) => snapshot.context.method;
+
+/** Why the last password was rejected, shown under the form's field. */
+export const selectPasswordError = (snapshot: ReAuthSnapshot) => snapshot.context.passwordError;
