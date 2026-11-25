@@ -60,8 +60,7 @@ const MEETING_PASSWORD = 'meeting-password';
 const AGENT_DEVICE_ID = 'agent-device-1';
 
 const createMeetCoreClient = () => ({
-    joinMeeting2: vi.fn().mockResolvedValue(undefined),
-    joinMeetingWithAccessTokenWithSwitchJoinType: vi.fn().mockResolvedValue(undefined),
+    joinMeeting: vi.fn().mockResolvedValue(undefined),
     setMlsGroupUpdateHandler: vi.fn().mockResolvedValue(undefined),
     setLiveKitAdminChangeHandler: vi.fn().mockResolvedValue(undefined),
     setMlsSyncStateUpdateHandler: vi.fn().mockResolvedValue(undefined),
@@ -142,38 +141,9 @@ describe('useMlsSession', () => {
         vi.useRealTimers();
     });
 
-    it('joins with joinMeetingWithAccessTokenWithSwitchJoinType when MeetNewJoinFunctions is off', async () => {
-        await setup();
-
-        expect(meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType).toHaveBeenCalledWith(
-            'access-token',
-            MEETING_LINK_NAME,
-            MEETING_PASSWORD,
-            'session-uid',
-            true,
-            false
-        );
-        expect(meetCoreClient.joinMeeting2).not.toHaveBeenCalled();
-    });
-
-    it('joins with joinMeeting2 when MeetNewJoinFunctions is on', async () => {
-        vi.mocked(useFlag).mockImplementation((name: string) => name === 'MeetNewJoinFunctions');
-
-        await setup();
-
-        expect(meetCoreClient.joinMeeting2).toHaveBeenCalledWith(
-            'access-token',
-            MEETING_LINK_NAME,
-            MEETING_PASSWORD,
-            'session-uid',
-            false
-        );
-        expect(meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType).not.toHaveBeenCalled();
-    });
-
     describe('when joining the MLS session fails', () => {
         const joinMeetingFailing = (error: unknown = new Error('join failed')) => {
-            meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType.mockRejectedValue(error);
+            meetCoreClient.joinMeeting.mockRejectedValue(error);
             return renderHook(() => useMlsSession(createParams())).result.current;
         };
 

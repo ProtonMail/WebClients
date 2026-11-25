@@ -13,10 +13,7 @@ export type MeetCoreClientMock = MeetCoreClient & Record<keyof MeetCoreClient, M
 const createDefaultMocks = () =>
     ({
         ping: vi.fn().mockResolvedValue(undefined),
-        joinMeetingWithAccessToken: vi.fn().mockResolvedValue(undefined),
-        joinMeeting2: vi.fn().mockResolvedValue(undefined),
-        joinMeetingWithAccessTokenWithSwitchJoinType: vi.fn().mockResolvedValue(undefined),
-        joinRoomWithProposal: vi.fn().mockResolvedValue(undefined),
+        joinMeeting: vi.fn().mockResolvedValue(undefined),
         // An empty list rather than `undefined`, since callers iterate the result.
         listPendingAgents: vi.fn().mockResolvedValue([]),
         admitAgent: vi.fn().mockResolvedValue(undefined),

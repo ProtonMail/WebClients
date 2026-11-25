@@ -400,7 +400,6 @@ enum MeetFeatureFlag {
     MeetLiveCaptions = 'MeetLiveCaptions',
     MeetMeetingTimeout = 'MeetMeetingTimeout',
     MeetNewChatHandling = 'MeetNewChatHandling',
-    MeetNewJoinFunctions = 'MeetNewJoinFunctions',
     MeetOpenDesktopAppOnLoad = 'MeetOpenDesktopAppOnLoad',
     MeetPastMeetings = 'MeetPastMeetings',
     MeetPrepareLiveKitConnection = 'MeetPrepareLiveKitConnection',

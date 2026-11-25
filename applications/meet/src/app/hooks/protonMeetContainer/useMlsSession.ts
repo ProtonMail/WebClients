@@ -9,7 +9,6 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
 import { meetingLogger } from '@proton/meet/utils/meetingLogger';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { CAPTIONS_AGENT_RETRY_DELAYS_MS } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -84,8 +83,6 @@ export const useMlsSession = ({
     const liveCaptionsEnabled = useLiveCaptionsFeatureEnabled();
     const liveCaptionsEnabledRef = useRef(liveCaptionsEnabled);
     liveCaptionsEnabledRef.current = liveCaptionsEnabled;
-
-    const isMeetNewJoinFunctionsEnabled = useFlag('MeetNewJoinFunctions');
 
     const agentAdmissionRef = useRef<AgentAdmissionController | null>(null);
 
@@ -222,26 +219,8 @@ export const useMlsSession = ({
 
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
-            if (isMeetNewJoinFunctionsEnabled) {
-                meetingLogger.info('Joining meeting with join function v2');
-                await meetCoreClient.joinMeeting2(
-                    accessToken,
-                    meetingLinkName,
-                    meetingPassword,
-                    sessionId,
-                    isWaitingRoom
-                );
-            } else {
-                meetingLogger.info('Joining meeting with join function v1');
-                await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
-                    accessToken,
-                    meetingLinkName,
-                    meetingPassword,
-                    sessionId,
-                    true,
-                    isWaitingRoom
-                );
-            }
+
+            await meetCoreClient.joinMeeting(accessToken, meetingLinkName, meetingPassword, sessionId, isWaitingRoom);
 
             await meetCoreClient.setMlsGroupUpdateHandler();
             await meetCoreClient.setLiveKitAdminChangeHandler();

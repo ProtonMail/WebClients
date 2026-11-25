@@ -210,14 +210,8 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
     switch (request.method) {
         case 'ping':
             return activeApp.ping();
-        case 'joinMeetingWithAccessToken':
-            return activeApp.joinMeetingWithAccessToken(...request.params);
-        case 'joinMeeting2':
-            return activeApp.joinMeeting2(...request.params);
-        case 'joinMeetingWithAccessTokenWithSwitchJoinType':
-            return activeApp.joinMeetingWithAccessTokenWithSwitchJoinType(...request.params);
-        case 'joinRoomWithProposal':
-            return activeApp.joinRoomWithProposal(...request.params);
+        case 'joinMeeting':
+            return activeApp.joinMeeting(...request.params);
         case 'listPendingAgents':
             return activeApp.listPendingAgents(...request.params);
         case 'admitAgent':

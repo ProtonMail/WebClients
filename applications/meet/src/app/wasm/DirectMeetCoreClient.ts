@@ -39,22 +39,8 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         return this.app.ping();
     }
 
-    public joinMeetingWithAccessToken(...args: Parameters<App['joinMeetingWithAccessToken']>): Promise<void> {
-        return this.app.joinMeetingWithAccessToken(...args);
-    }
-
-    public joinMeeting2(...args: Parameters<App['joinMeeting2']>): Promise<void> {
-        return this.app.joinMeeting2(...args);
-    }
-
-    public joinMeetingWithAccessTokenWithSwitchJoinType(
-        ...args: Parameters<App['joinMeetingWithAccessTokenWithSwitchJoinType']>
-    ): Promise<void> {
-        return this.app.joinMeetingWithAccessTokenWithSwitchJoinType(...args);
-    }
-
-    public joinRoomWithProposal(...args: Parameters<App['joinRoomWithProposal']>): Promise<void> {
-        return this.app.joinRoomWithProposal(...args);
+    public joinMeeting(...args: Parameters<App['joinMeeting']>): Promise<void> {
+        return this.app.joinMeeting(...args);
     }
 
     public listPendingAgents(...args: Parameters<App['listPendingAgents']>): Promise<string[]> {

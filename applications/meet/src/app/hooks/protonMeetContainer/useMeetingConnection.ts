@@ -416,7 +416,7 @@ export const useMeetingConnection = ({
             signal.throwIfAborted();
 
             // Always await leaveMeeting when MLS was active. We do this here (not in the disconnect
-            // handler) so it is properly awaited before a rejoin calls joinMeetingWithAccessToken.
+            // handler) so it is properly awaited before a rejoin calls joinMeeting.
             if (wasMlsActive) {
                 try {
                     await leaveMlsGroup();
