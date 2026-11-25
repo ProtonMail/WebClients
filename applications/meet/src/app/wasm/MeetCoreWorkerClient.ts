@@ -93,24 +93,8 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('ping', []);
     }
 
-    public joinMeetingWithAccessToken(
-        ...args: Parameters<MeetCoreClient['joinMeetingWithAccessToken']>
-    ): Promise<void> {
-        return this.request('joinMeetingWithAccessToken', args);
-    }
-
-    public joinMeeting2(...args: Parameters<MeetCoreClient['joinMeeting2']>): Promise<void> {
-        return this.request('joinMeeting2', args);
-    }
-
-    public joinMeetingWithAccessTokenWithSwitchJoinType(
-        ...args: Parameters<MeetCoreClient['joinMeetingWithAccessTokenWithSwitchJoinType']>
-    ): Promise<void> {
-        return this.request('joinMeetingWithAccessTokenWithSwitchJoinType', args);
-    }
-
-    public joinRoomWithProposal(...args: Parameters<MeetCoreClient['joinRoomWithProposal']>): Promise<void> {
-        return this.request('joinRoomWithProposal', args);
+    public joinMeeting(...args: Parameters<MeetCoreClient['joinMeeting']>): Promise<void> {
+        return this.request('joinMeeting', args);
     }
 
     public listPendingAgents(...args: Parameters<MeetCoreClient['listPendingAgents']>): Promise<string[]> {

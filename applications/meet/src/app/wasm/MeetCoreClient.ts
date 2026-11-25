@@ -71,12 +71,7 @@ export interface ParticipantTrackSettingsInfoData {
 
 export interface MeetCoreClient {
     ping(): Promise<bigint>;
-    joinMeetingWithAccessToken(...args: Parameters<App['joinMeetingWithAccessToken']>): Promise<void>;
-    joinMeeting2(...args: Parameters<App['joinMeeting2']>): Promise<void>;
-    joinMeetingWithAccessTokenWithSwitchJoinType(
-        ...args: Parameters<App['joinMeetingWithAccessTokenWithSwitchJoinType']>
-    ): Promise<void>;
-    joinRoomWithProposal(...args: Parameters<App['joinRoomWithProposal']>): Promise<void>;
+    joinMeeting(...args: Parameters<App['joinMeeting']>): Promise<void>;
     listPendingAgents(...args: Parameters<App['listPendingAgents']>): Promise<string[]>;
     admitAgent(...args: Parameters<App['admitAgent']>): Promise<void>;
     // Safe to call from every client that wants captions: core arbitrates who actually asks.
