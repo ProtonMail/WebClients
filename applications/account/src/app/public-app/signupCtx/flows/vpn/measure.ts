@@ -42,6 +42,13 @@ export type TelemetryMeasurementData =
           };
       }
     | {
+          event: TelemetryAccountSignupEvents.planCardClick;
+          dimensions: {
+              plan: PLANS;
+              cycle: `${CYCLE}`;
+          };
+      }
+    | {
           event: TelemetryAccountSignupEvents.currencySelect;
           dimensions: {
               currency: Currency;

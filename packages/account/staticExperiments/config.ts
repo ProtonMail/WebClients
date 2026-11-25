@@ -27,6 +27,9 @@ export const staticExperimentsConfig = {
     /**
      * VPN signup: Free, VPN Plus and Proton Unlimited cards instead of the VPN Plus cycle selector.
      * Only the default B2C pricing page takes part, see `useVpnSignupThreePlans`.
+     * Works as an on/off switch: the cards are only shown with `Treatment` and on links with `?v=b`,
+     * Growth splits the traffic between links. Turn it on with `{ Control: 0, Treatment: 100 }`,
+     * which needs an MR and a release.
      */
     VpnSignupThreePlans: {
         enabled: true,
