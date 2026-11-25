@@ -7,6 +7,7 @@ import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettings';
 
 import type { AuthSession } from '../authSession';
+import { InvalidLoginError } from '../sign-in/steps/credentials/state-machine/credentialsErrors';
 import { createReAuthActors } from './reAuthActors';
 import type { ReAuthState } from './reauthContainerState';
 
@@ -75,11 +76,16 @@ describe('submitPassword', () => {
         expect(login).not.toHaveBeenCalled();
     });
 
-    it('signs nothing in with a wrong password', async () => {
-        const error = new Error('Incorrect login credentials');
-        mockSrpAuth.mockRejectedValue(error);
+    it('signs nothing in with a wrong password, which it rejects as an invalid login', async () => {
+        mockSrpAuth.mockRejectedValue({
+            status: 422,
+            data: {
+                Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN,
+                Error: 'Incorrect login credentials. Please try again',
+            },
+        });
         const { output, login } = submitPassword({ needsKeys: false });
-        await expect(output).rejects.toBe(error);
+        await expect(output).rejects.toBeInstanceOf(InvalidLoginError);
         expect(login).not.toHaveBeenCalled();
     });
 });

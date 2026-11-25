@@ -1,11 +1,20 @@
 import { createActor, fromPromise, waitFor } from 'xstate';
 
+import { BackupPasswordError, SecondPasswordError } from '@proton/shared/lib/authentication/error';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { UserType } from '@proton/shared/lib/interfaces/User';
 
 import type { AuthSession } from '../authSession';
-import { reAuthStateMachine, selectAwaitingProvider, selectMethod, selectSubmitting } from './reAuthStateMachine';
+import { InvalidLoginError } from '../sign-in/steps/credentials/state-machine/credentialsErrors';
+import {
+    reAuthStateMachine,
+    selectAwaitingProvider,
+    selectMethod,
+    selectPasswordError,
+    selectSubmitting,
+} from './reAuthStateMachine';
 import type { ReAuthState } from './reauthContainerState';
 
 const salts: KeySalt[] = [{ ID: 'key', KeySalt: 'salt' }];
@@ -73,6 +82,54 @@ describe('reAuthStateMachine', () => {
         actor.send({ type: 'password.submitted', password: 'password' });
         await waitFor(actor, (state) => state.matches('awaitingPassword'));
         expect(onError).toHaveBeenCalledWith(error);
+        expect(selectPasswordError(actor.getSnapshot())).toBeUndefined();
+    });
+
+    it('shows a wrong password under its field until it is edited', async () => {
+        const wrongPassword = new InvalidLoginError({
+            status: 422,
+            data: {
+                Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN,
+                Error: 'Incorrect login credentials. Please try again',
+            },
+        });
+        const { actor, onError } = start(getState({}), { submitPassword: () => Promise.reject(wrongPassword) });
+        actor.send({ type: 'password.submitted', password: 'password' });
+        await waitFor(actor, (state) => state.matches('awaitingPassword'));
+        expect(selectPasswordError(actor.getSnapshot())).toBe('Incorrect login credentials. Please try again');
+        expect(onError).not.toHaveBeenCalled();
+        actor.send({ type: 'password.edited' });
+        expect(selectPasswordError(actor.getSnapshot())).toBeUndefined();
+    });
+
+    it('shows a wrong second password under its field until it is submitted again', async () => {
+        const unlockKeys = vi
+            .fn()
+            .mockRejectedValueOnce(new SecondPasswordError())
+            .mockReturnValue(new Promise(() => {}));
+        const { actor, onError } = start(getState({}), {
+            submitPassword: async () => ({ unlockWithSalts: salts }),
+            unlockKeys,
+        });
+        actor.send({ type: 'password.submitted', password: 'password' });
+        await waitFor(actor, (state) => state.matches('awaitingUnlockPassword'));
+        actor.send({ type: 'unlockPassword.submitted', keyPassword: 'key password' });
+        await waitFor(actor, (state) => selectPasswordError(state) !== undefined);
+        expect(actor.getSnapshot().value).toBe('awaitingUnlockPassword');
+        expect(onError).not.toHaveBeenCalled();
+        actor.send({ type: 'unlockPassword.submitted', keyPassword: 'other key password' });
+        expect(selectPasswordError(actor.getSnapshot())).toBeUndefined();
+    });
+
+    it('shows a wrong backup password under its field', async () => {
+        const { actor, onError } = start(getState(ssoUser), {
+            fetchSSOSalts: async () => salts,
+            unlockKeys: () => Promise.reject(new BackupPasswordError()),
+        });
+        actor.send({ type: 'backupPassword.submitted', keyPassword: 'backup password' });
+        await waitFor(actor, (state) => state.matches('awaitingPassword'));
+        expect(selectPasswordError(actor.getSnapshot())).toBe('Incorrect backup password. Please try again.');
+        expect(onError).not.toHaveBeenCalled();
     });
 
     it('starts with the identity provider for an SSO account, and offers it again when cancelled', async () => {

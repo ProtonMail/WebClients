@@ -16,6 +16,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 
 import type { AuthSession } from '../authSession';
 import { withInterruption } from '../interruptions';
+import { rethrowCredentialsError } from '../sign-in/steps/credentials/state-machine/credentialsErrors';
 import { handleReAuthKeyPassword } from './reAuthKeyPassword';
 import type { ReAuthState } from './reauthContainerState';
 
@@ -61,13 +62,18 @@ export const createReAuthActors = ({ api, preSubmit, login }: ReAuthServices) =>
                 throw error;
             }
         }),
-        /** Checks the password; signs in, or returns the salts when the keys have their own password. */
+        /**
+         * Checks the password; signs in, or returns the salts when the keys have their own password. A wrong password
+         * throws `InvalidLoginError`.
+         */
         submitPassword: fromPromise<
             { unlockWithSalts: KeySalt[] | undefined },
             { state: ReAuthState; password: string; needsKeys: boolean }
         >(async ({ input: { state, password, needsKeys } }) => {
             await preSubmit();
-            await srpAuth({ api, credentials: { password }, config: { ...queryUnlock(), silence: true } });
+            await srpAuth({ api, credentials: { password }, config: { ...queryUnlock(), silence: true } }).catch(
+                rethrowCredentialsError
+            );
 
             if (!needsKeys) {
                 await loginReAuthenticated(state.session);
