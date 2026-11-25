@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useCanUpdateBilling } from '@proton/account/userPermissions/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
+import ContactAdminUpsell from '@proton/components/components/upsell/ContactAdminUpsell';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
@@ -27,7 +28,7 @@ const SentinelUpgradeButton = ({ app, variant }: Props) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     if (!canUpdateBilling) {
-        return null;
+        return <ContactAdminUpsell className="mb-6" />;
     }
 
     const handleUpgrade = () => {
