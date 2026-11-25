@@ -1,4 +1,4 @@
-import type { FocusEvent, MutableRefObject } from 'react';
+import type { FocusEvent, MutableRefObject, PointerEvent } from 'react';
 import { useEffect, useRef } from 'react';
 
 import usePrevious from '@proton/hooks/usePrevious';
@@ -6,6 +6,9 @@ import usePrevious from '@proton/hooks/usePrevious';
 const LONG_TAP_TIMEOUT = 500;
 const OPEN_DELAY_TIMEOUT = 1000;
 const CLOSE_DELAY_TIMEOUT = 250;
+// Time for the pointer to cross the gap between the trigger and the tooltip (WCAG 1.4.13 hoverable),
+// even when `closeDelay` is 0
+const MIN_POINTER_LEAVE_CLOSE_DELAY = 100;
 
 let visibleTimeout = 0;
 let visibleTimeoutOwner = 0;
@@ -75,6 +78,12 @@ export const useTooltipHandlers = ({
     const closeRef = useRef(outsideClose);
     const openRef = useRef(outsideOpen);
     const wasExternallyOpened = usePrevious(isExternalOpen);
+    const triggerRef = useRef<HTMLElement | null>(null);
+
+    const isTriggerFocused = () => {
+        const trigger = triggerRef.current;
+        return !!trigger && trigger.ownerDocument.activeElement === trigger;
+    };
 
     useEffect(() => {
         const entry = tooltips.get(id);
@@ -111,7 +120,7 @@ export const useTooltipHandlers = ({
         openRef.current(immediate);
     };
 
-    const close = () => {
+    const closeAfter = (delay: number) => {
         window.clearTimeout(visibleTimeout);
         // Trying to close something that isn't open.
         if (tooltips.get(id)?.state !== State.Opened) {
@@ -119,7 +128,7 @@ export const useTooltipHandlers = ({
         }
 
         window.clearTimeout(closeTimeoutRef.current);
-        if (!closeDelay) {
+        if (!delay) {
             outsideClose();
             tooltips.delete(id);
             return;
@@ -132,8 +141,13 @@ export const useTooltipHandlers = ({
                 entry.close.current(false);
                 tooltips.delete(id);
             }
-        }, closeDelay);
+        }, delay);
     };
+
+    // Takes no arguments: it's also used directly as a `touchstart` listener
+    const close = () => closeAfter(closeDelay);
+
+    const closeOnPointerLeave = () => closeAfter(Math.max(closeDelay, MIN_POINTER_LEAVE_CLOSE_DELAY));
 
     const handleCloseTooltip = () => {
         window.clearTimeout(longTapTimeoutRef.current);
@@ -228,7 +242,7 @@ export const useTooltipHandlers = ({
         if (ignoreNonTouchEventsRef.current) {
             return;
         }
-        close();
+        closeOnPointerLeave();
     };
 
     const handleFocus = (event?: FocusEvent<HTMLElement>) => {
@@ -281,17 +295,71 @@ export const useTooltipHandlers = ({
         }
     }, [isExternalOpen, isOpen]);
 
+    useEffect(() => {
+        // Controlled tooltips (e.g. InputField errors) are dismissed by their owner
+        if (!isOpen || isExternalOpen !== undefined) {
+            return;
+        }
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key !== 'Escape' || event.isComposing || tooltips.get(id)?.state !== State.Opened) {
+                return;
+            }
+            // When focus is on the trigger, the first Escape only dismisses the tooltip (capture phase,
+            // before the modal or dropdown around it) and the next one reaches them. A tooltip only
+            // hovered while focus is elsewhere closes without taking the key from that element.
+            if (isTriggerFocused()) {
+                event.stopPropagation();
+            }
+            window.clearTimeout(visibleTimeout);
+            window.clearTimeout(closeTimeoutRef.current);
+            tooltips.delete(id);
+            outsideClose();
+        };
+        document.addEventListener('keydown', handleKeyDown, true);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown, true);
+        };
+    }, [isOpen, isExternalOpen, id]);
+
+    // The tooltip stays open while hovered, so its content can be read (WCAG 1.4.13).
+    // The pointer entering it only cancels a pending close: it never opens or re-animates the tooltip.
+    // Touch is ignored: tapping the tooltip starts closing it (document `touchstart`), and the
+    // compatibility mouse events that follow the tap must not cancel that.
+    const handleTooltipPointerEnter = (event: PointerEvent<HTMLElement>) => {
+        if (event.pointerType === 'touch') {
+            return;
+        }
+        if (tooltips.get(id)?.state === State.Closing) {
+            open();
+        }
+    };
+
+    // A tooltip opened by focusing its trigger stays open while the trigger has focus
+    const handleTooltipPointerLeave = (event: PointerEvent<HTMLElement>) => {
+        if (event.pointerType === 'touch' || isTriggerFocused()) {
+            return;
+        }
+        closeOnPointerLeave();
+    };
+
     if (isExternalOpen !== undefined) {
-        return {};
+        return { triggerHandlers: {}, tooltipHandlers: {}, triggerRef };
     }
 
     return {
-        onTouchEnd: handleTouchEnd,
-        onTouchStart: handleTouchStart,
-        onMouseDown: handleMouseDown,
-        onMouseEnter: handleMouseEnter,
-        onMouseLeave: handleMouseLeave,
-        onFocus: handleFocus,
-        onBlur: focusVisibleOnly ? handleFocusVisibleOnlyBlur : handleCloseTooltip,
+        triggerHandlers: {
+            onTouchEnd: handleTouchEnd,
+            onTouchStart: handleTouchStart,
+            onMouseDown: handleMouseDown,
+            onMouseEnter: handleMouseEnter,
+            onMouseLeave: handleMouseLeave,
+            onFocus: handleFocus,
+            onBlur: focusVisibleOnly ? handleFocusVisibleOnlyBlur : handleCloseTooltip,
+        },
+        tooltipHandlers: {
+            onPointerEnter: handleTooltipPointerEnter,
+            onPointerLeave: handleTooltipPointerLeave,
+        },
+        triggerRef,
     };
 };
