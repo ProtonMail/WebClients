@@ -9,13 +9,21 @@ import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 import { DeviceSelect } from './DeviceSelect';
 
-const mocks = vi.hoisted(() => ({
-    isTruncated: true,
-}));
+const mocks = vi.hoisted(() => {
+    const truncatedSpans: string[] = [];
+    return { truncatedSpans };
+});
 
-vi.mock('../PageHeader/useIsTextTruncated', () => ({
-    useIsTextTruncated: () => ({ ref: () => {}, isTruncated: mocks.isTruncated }),
-}));
+vi.mock('../PageHeader/useIsTextTruncated', async () => {
+    const { useState } = await import('react');
+    return {
+        useIsTextTruncated: () => {
+            const [element, setElement] = useState<HTMLElement | null>(null);
+            const isTruncated = mocks.truncatedSpans.some((className) => element?.classList.contains(className));
+            return { ref: setElement, isTruncated };
+        },
+    };
+});
 
 const cameraName = 'MacBook Pro Camera With A Very Long Name (0000:0001)';
 
@@ -60,7 +68,7 @@ const renderCameraSelect = ({
     isTruncated: boolean;
     hasButtonBefore?: boolean;
 }) => {
-    mocks.isTruncated = isTruncated;
+    mocks.truncatedSpans = isTruncated ? ['device-select__label-full', 'device-select__label-start'] : [];
     render(<CameraSelect hasButtonBefore={hasButtonBefore} />);
     return screen.getByRole('button', { name: `Video: ${cameraName}` });
 };
@@ -140,6 +148,21 @@ describe('DeviceSelect', () => {
 
         expect(queryTooltip()).toBeVisible();
     });
+
+    it.each([
+        ['the whole name', 'device-select__label-full'],
+        ['the start of the middle cut', 'device-select__label-start'],
+    ])(
+        'shows the full device name in a tooltip when the pointer enters the selector and only %s is cut off',
+        (_, truncatedSpan) => {
+            mocks.truncatedSpans = [truncatedSpan];
+            render(<CameraSelect hasButtonBefore={false} />);
+
+            fireEvent.mouseEnter(screen.getByRole('button', { name: `Video: ${cameraName}` }));
+
+            expect(queryTooltip()).toBeVisible();
+        }
+    );
 
     it('hides the tooltip on Escape and keeps focus on the selector', async () => {
         const user = userEvent.setup();

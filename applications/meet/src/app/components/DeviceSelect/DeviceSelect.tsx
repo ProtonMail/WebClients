@@ -37,7 +37,9 @@ export const DeviceSelect = <T extends object>({
 }: DeviceSelectProps<T>) => {
     const anchorRef = useRef<HTMLButtonElement>(null);
     const [tooltipState, setTooltipState] = useState<TooltipState>('idle');
-    const { ref: labelStartRef, isTruncated } = useIsTextTruncated<HTMLSpanElement>();
+    const { ref: labelStartRef, isTruncated: isStartTruncated } = useIsTextTruncated<HTMLSpanElement>();
+    const { ref: labelFullRef, isTruncated: isFullTruncated } = useIsTextTruncated<HTMLSpanElement>();
+    const isLabelTruncated = isStartTruncated || isFullTruncated;
     const { start, end } = splitDeviceLabel(label);
 
     // The menu's focus trap gives focus back while the menu unmounts, before this effect sees it closed.
@@ -60,7 +62,7 @@ export const DeviceSelect = <T extends object>({
         >
             <Tooltip
                 title={label}
-                isOpen={isTruncated && !isOpen && tooltipState === 'requested'}
+                isOpen={isLabelTruncated && !isOpen && tooltipState === 'requested'}
                 describeChild={false}
                 originalPlacement="top"
                 closeDelay={0}
@@ -95,11 +97,14 @@ export const DeviceSelect = <T extends object>({
                         </div>
                         <div className="flex flex-nowrap flex-column flex-1 min-w-0">
                             <div className="color-weak text-sm">{title}</div>{' '}
-                            <span className="flex flex-nowrap">
-                                <span ref={labelStartRef} className="text-ellipsis text-pre">
+                            <span className="device-select__label flex flex-nowrap">
+                                <span ref={labelFullRef} className="device-select__label-full text-ellipsis text-pre">
+                                    {label}
+                                </span>
+                                <span ref={labelStartRef} className="device-select__label-start text-ellipsis text-pre">
                                     {start}
                                 </span>
-                                {end && <span className="shrink-0 text-pre">{end}</span>}
+                                {end && <span className="device-select__label-end shrink-0 text-pre">{end}</span>}
                             </span>
                         </div>
                     </div>
