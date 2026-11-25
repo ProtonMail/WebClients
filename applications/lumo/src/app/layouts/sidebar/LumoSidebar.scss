@@ -62,8 +62,8 @@ im.$media-expressions: $media-expressions;
 	}
 
 	.apps-dropdown-button-icon {
-		inline-size: #{rem(20)};
-		block-size: #{rem(20)};
+		inline-size: var(--lumo-icon-size-24);
+		block-size: var(--lumo-icon-size-24);
 		fill: var(--lumo-glyph);
 		stroke: var(--lumo-glyph);
 		stroke-width: 0.5px;

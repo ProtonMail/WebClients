@@ -531,23 +531,23 @@
 			// Proton's hover/loading selectors also use these variables for the thumb.
 			--field-hover: var(--lumo-control-fill-contrast);
 			--interaction-norm-hover: var(--lumo-control-fill-contrast);
-			--lumo-toggle-track-border: var(--lumo-control-border-strong);
+			--lumo-toggle-track-color: var(--lumo-control-fill-strongest);
 
 			inline-size: var(--lumo-space-32);
 			min-block-size: var(--lumo-space-20);
 			max-block-size: var(--lumo-space-20);
 			border-radius: var(--lumo-radius-full);
-			background-color: var(--lumo-control-fill-strongest);
+			background-color: var(--lumo-toggle-track-color);
 
 			&::after {
 				inline-size: 100%;
-				border: var(--border-width-1, 1px) solid var(--lumo-toggle-track-border);
+				border: var(--border-width-1, 1px) solid var(--lumo-toggle-track-color);
 				border-radius: var(--lumo-radius-full);
 			}
 
 			&::before {
 				inset-block: var(--lumo-space-2);
-				inset-inline-start: calc(var(--lumo-space-2) + 1px);
+				inset-inline-start: var(--lumo-space-2);
 				inline-size: var(--lumo-icon-size-16);
 				block-size: var(--lumo-icon-size-16);
 				background-color: var(--lumo-control-fill-contrast);
@@ -555,16 +555,14 @@
 			}
 
 			&.toggle-container--checked {
-				--lumo-toggle-track-border: transparent;
-
-				background-color: var(--lumo-control-brand-fill);
+				--lumo-toggle-track-color: var(--lumo-control-brand-fill);
 
 				&::before {
-					transform: translateX(var(--lumo-space-10));
+					transform: translateX(var(--lumo-space-12));
 				}
 
 				&:dir(rtl)::before {
-					transform: translateX(calc(-1 * var(--lumo-space-10)));
+					transform: translateX(calc(-1 * var(--lumo-space-12)));
 				}
 			}
 
@@ -591,8 +589,14 @@
 			}
 		}
 
+		&.toggle-container {
+			transition-property: background-color;
+			transition-duration: var(--lumo-duration-150);
+			transition-timing-function: var(--lumo-easing-standard);
+		}
+
 		&.toggle-container:not(.toggle-container--disabled):has(:focus-visible)::after {
-			border-color: var(--lumo-toggle-track-border);
+			border-color: var(--lumo-toggle-track-color);
 			outline: var(--border-width-2, 2px) solid var(--lumo-control-border-focus);
 			outline-offset: 2px;
 			box-shadow: none;
