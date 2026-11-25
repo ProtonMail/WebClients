@@ -9,7 +9,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { setJoinedRoom, setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
+import { roomJoined, setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import { setCurrentMeeting } from '@proton/meet/store/slices/currentMeeting';
 import {
     meetingInfoThunk,
@@ -291,6 +291,8 @@ export const useJoinFlow = ({
         failureFeedback?: 'modal' | 'notification';
     }): Promise<boolean> => {
         setDisplayName(displayName);
+        // Set before connecting: a failed join can still complete through the rejoin, and leaving reads it
+        meetingLinkRef.current = getMeetingLink(meetingLinkName, meetingPassword);
 
         let connectResult: ConnectWithMlsResult | undefined;
 
@@ -310,8 +312,6 @@ export const useJoinFlow = ({
                 notifyMlsErrors: failureFeedback === 'notification' ? 'all' : 'none',
                 silencedAccessTokenErrors: [MEETING_LOCKED_ERROR_CODE, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
             });
-
-            meetingLinkRef.current = getMeetingLink(meetingLinkName, meetingPassword);
 
             trackJoinSucceeded({
                 room,
@@ -349,8 +349,7 @@ export const useJoinFlow = ({
 
             // In case of mobile devices we need to set these states early, as the camera preview being active while initializing the devices for LiveKit causes issues.
             if (isMobile()) {
-                dispatch(setJoinedRoom(true));
-                dispatch(setJoiningInProgress(false));
+                dispatch(roomJoined());
                 await wait(50);
             }
 
@@ -362,8 +361,7 @@ export const useJoinFlow = ({
             };
 
             if (!isMobile()) {
-                dispatch(setJoinedRoom(true));
-                dispatch(setJoiningInProgress(false));
+                dispatch(roomJoined());
             }
 
             // Log successful room join (only once)

@@ -7,7 +7,7 @@ import { ConnectionState } from 'livekit-client';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     setIsReconnecting,
-    setJoinedRoom,
+    roomJoined,
     setMlsRetrying,
     setPrejoinParticipantCount,
     setReconnectionFailed,
@@ -466,7 +466,7 @@ export const useMeetingConnection = ({
         }
 
         if (outcome.status === 'joined') {
-            dispatch(setJoinedRoom(true));
+            dispatch(roomJoined());
             dispatch(setIsReconnecting(false));
             endRun();
             allowHealthCheck();

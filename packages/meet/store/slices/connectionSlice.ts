@@ -33,6 +33,10 @@ const slice = createSlice({
         setJoiningInProgress: (state, action: PayloadAction<boolean>) => {
             state.joiningInProgress = action.payload;
         },
+        roomJoined: (state) => {
+            state.joinedRoom = true;
+            state.joiningInProgress = false;
+        },
         setIsReconnecting: (state, action: PayloadAction<boolean>) => {
             state.isReconnecting = action.payload;
         },
@@ -55,6 +59,7 @@ const slice = createSlice({
 export const {
     setJoinedRoom,
     setJoiningInProgress,
+    roomJoined,
     setIsReconnecting,
     setReconnectionFailed,
     setMlsRetrying,

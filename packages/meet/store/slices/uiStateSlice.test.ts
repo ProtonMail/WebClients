@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 
 import { resetMeetingState } from '../resetMeetingState';
 import type { MeetState } from '../rootReducer';
+import { roomJoined, selectJoinedRoom, selectJoiningInProgress, setJoiningInProgress } from './connectionSlice';
 import { meetReducers } from './index';
 import {
     MeetingSideBars,
@@ -122,6 +123,19 @@ describe('uiStateSlice', () => {
             store.dispatch(resetMeetingState() as any);
 
             expect(selectJoinError(store.getState() as MeetState)).toBeNull();
+        });
+
+        it('is cleared when a join completes after it was shown', () => {
+            const store = configureStore({ reducer: meetReducers });
+            store.dispatch(setJoiningInProgress(true));
+            store.dispatch(setJoinError('connectionFailed'));
+
+            store.dispatch(roomJoined());
+
+            const state = store.getState() as MeetState;
+            expect(selectJoinError(state)).toBeNull();
+            expect(selectJoinedRoom(state)).toBe(true);
+            expect(selectJoiningInProgress(state)).toBe(false);
         });
     });
 });
