@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { MeetState } from '../rootReducer';
+import { roomJoined } from './connectionSlice';
 
 export enum MeetingSideBars {
     Participants = 'Participants',
@@ -210,6 +211,11 @@ const slice = createSlice({
             // Not joinError: a failed join's room disconnect also resets the ui, and its modal must stay up
             // (resetMeetingState clears it on leave).
         },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(roomJoined, (state) => {
+            state.joinError = null;
+        });
     },
 });
 

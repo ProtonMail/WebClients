@@ -10,6 +10,7 @@ import {
     selectMeetingInfoModel,
 } from '@proton/meet/store/slices/meetingInfoModel';
 import { setJoinError } from '@proton/meet/store/slices/uiStateSlice';
+import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
@@ -319,6 +320,18 @@ describe('useJoinFlow join failures', () => {
 
         expect(dispatch).toHaveBeenCalledWith(setJoinError('joinFailed'));
         expect(refreshMeetingInfoThunk).not.toHaveBeenCalled();
+    });
+
+    it('keeps the meeting link of a failed join, for when the rejoin completes it in the background', async () => {
+        mockConnectWithMls.mockRejectedValue(new Error('Connection timeout after 20000ms'));
+        const { result, params } = renderJoinFlow();
+
+        await act(async () => {
+            await result.current.joinMeeting('Alice');
+        });
+
+        expect(dispatch).toHaveBeenCalledWith(setJoinError('connectionFailed'));
+        expect(params.meetingLinkRef.current).toBe(getMeetingLink('meeting-abc', 'pw'));
     });
 
     it('asks the connection not to notify MLS errors itself, since the join shows them', async () => {

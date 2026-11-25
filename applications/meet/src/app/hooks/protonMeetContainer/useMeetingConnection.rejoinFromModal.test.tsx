@@ -7,7 +7,7 @@ import { DisconnectReason, RoomEvent } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
-import { setJoinedRoom, setReconnectionFailed } from '@proton/meet/store/slices/connectionSlice';
+import { roomJoined, setReconnectionFailed } from '@proton/meet/store/slices/connectionSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -157,7 +157,7 @@ describe('rejoining from the Connection lost modal', () => {
         expect(room.disconnect).toHaveBeenCalledTimes(2);
         expect(mockGetAccessDetails).toHaveBeenCalledTimes(2);
         expect(getParticipants).toHaveBeenCalledTimes(2);
-        expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+        expect(mockDispatch).toHaveBeenCalledWith(roomJoined());
     });
 });
 

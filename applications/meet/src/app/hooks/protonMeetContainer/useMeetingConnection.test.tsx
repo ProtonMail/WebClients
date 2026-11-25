@@ -7,7 +7,7 @@ import type { Mock } from 'vitest';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     setIsReconnecting,
-    setJoinedRoom,
+    roomJoined,
     setMlsRetrying,
     setPrejoinParticipantCount,
     setReconnectionFailed,
@@ -378,7 +378,7 @@ describe('useMeetingConnection', () => {
             expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(false));
             expect(mockDispatch).toHaveBeenCalledWith(setMlsRetrying(false));
             expect(mockGetAccessDetails).toHaveBeenCalled();
-            expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+            expect(mockDispatch).toHaveBeenCalledWith(roomJoined());
             expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(false));
             expect(params.allowHealthCheck).toHaveBeenCalledTimes(1);
             expect(result.current.isReconnectingRef.current).toBe(false);
@@ -413,13 +413,13 @@ describe('useMeetingConnection', () => {
             });
 
             expect(params.getParticipants).toHaveBeenCalledWith('meeting-abc');
-            expect(mockDispatch).not.toHaveBeenCalledWith(setJoinedRoom(true));
+            expect(mockDispatch).not.toHaveBeenCalledWith(roomJoined());
 
             await act(async () => {
                 resolveParticipantsFetch();
             });
 
-            expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+            expect(mockDispatch).toHaveBeenCalledWith(roomJoined());
         });
 
         it('restores the joined state without waiting for the devices', async () => {
@@ -432,7 +432,7 @@ describe('useMeetingConnection', () => {
             });
 
             expect(params.initializeDevices).toHaveBeenCalled();
-            expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+            expect(mockDispatch).toHaveBeenCalledWith(roomJoined());
         });
 
         it('marks the reconnection as failed and clears credentials when it throws', async () => {
@@ -510,7 +510,7 @@ describe('useMeetingConnection', () => {
                     expect.anything()
                 );
                 expect(params.handleMlsSetup).toHaveBeenCalled();
-                expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+                expect(mockDispatch).toHaveBeenCalledWith(roomJoined());
                 expect(result.current.isReconnectingRef.current).toBe(false);
             });
 
@@ -723,7 +723,7 @@ describe('useMeetingConnection', () => {
 
                 await expect(run).resolves.toBe('joined');
                 expect(mockGetAccessDetails).toHaveBeenCalledTimes(2);
-                expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+                expect(mockDispatch).toHaveBeenCalledWith(roomJoined());
                 expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
                 expect(vi.getTimerCount()).toBe(0);
             });
