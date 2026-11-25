@@ -36,6 +36,7 @@ import {
 } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -146,7 +147,8 @@ export const useInitializeMessage = () => {
                 await maybeCreateNotificationForDecryptionError(message.data);
             }
 
-            if (isUnreadMessage(getData())) {
+            const isInDeletedFolder = labelID === MAILBOX_LABEL_IDS.SOFT_DELETED;
+            if (isUnreadMessage(getData()) && !isInDeletedFolder) {
                 void markAs({
                     elements: [getData()],
                     labelID,

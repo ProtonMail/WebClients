@@ -291,6 +291,10 @@ const MessageView = (
      *     If the message is read: mark message or conversation as read again if DisplaySnoozedReminder present (snooze feature)
      */
     useEffect(() => {
+        if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED) {
+            return;
+        }
+
         const element = message.data as Element;
         if (expanded && unread && bodyLoaded) {
             void markAs({
