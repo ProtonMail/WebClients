@@ -1,6 +1,7 @@
 import lumoGhostAvatarDark from '@proton/styles/assets/img/lumo/lumo-ghost-avatar-dark.svg';
 import lumoGhostAvatar from '@proton/styles/assets/img/lumo/lumo-ghost-avatar.svg';
 
+import { useLumoAnimatedBackground } from '../../../hooks/useLumoAnimatedBackground';
 import type { ToolCallName } from '../../../lib/toolCall/types';
 import { useLumoTheme } from '../../../providers';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
@@ -104,6 +105,7 @@ const useThemeLumoAvatarAnimation = (isGenerating: boolean, toolCallName?: ToolC
 const LumoAvatar = ({ isGenerating, toolCallName }: LumoAvatarProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
     const { getAnimationData, animationKey } = useThemeLumoAvatarAnimation(isGenerating, toolCallName);
+    const { isAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
 
     return (
         <div className="self-start shrink-0 relative no-print">
@@ -113,6 +115,7 @@ const LumoAvatar = ({ isGenerating, toolCallName }: LumoAvatarProps) => {
                     alt=""
                     getAnimationData={getAnimationData}
                     loop={true}
+                    paused={!isAnimatedBackgroundEnabled}
                     className="lumo-avatar"
                 />
             ) : (
