@@ -84,6 +84,9 @@ export interface BookingSlotConfirmationPayload {
         Email: string;
         Subject: string;
         Body: string;
+        Title: string;
+        Location?: string;
+        Description?: string;
         Ics: string;
         Type: 'external'; // TODO always use external for now, but we might want to do E2EE confirmation mail for logged-in users later
     };
