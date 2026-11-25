@@ -226,5 +226,54 @@ describe('messageRemote', () => {
             loadBackgroundImages({ images: remoteImages, document: messageDocument });
             expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
         });
+
+        describe('decoy copies of the URL outside the proton-url token', () => {
+            const originalURL = 'https://attacker.example/track.png';
+            const proxyURL = 'https://mail.proton.me/api/core/v4/images?Url=track';
+            const remoteImages = [
+                {
+                    type: 'remote',
+                    url: proxyURL,
+                    originalURL,
+                    id: 'remote-0',
+                    tracker: undefined,
+                    status: 'loaded',
+                },
+            ] as MessageRemoteImage[];
+
+            it.each([
+                ['quoted custom property', `--d: "${originalURL}"; background: proton-url("${originalURL}")`],
+                ['unquoted custom property', `--d: ${originalURL}; background: proton-url(${originalURL})`],
+                ['content value', `content: "${originalURL}"; background: proton-url("${originalURL}")`],
+                ['single quotes', `--d: '${originalURL}'; background: proton-url('${originalURL}')`],
+            ])('should only load the proxied URL with a decoy in a %s', (_, style) => {
+                const messageDocument = parseDOMStringToBodyElement(`<div>Element</div>`);
+                const element = messageDocument.querySelector('div') as HTMLElement;
+                element.setAttribute('style', style);
+
+                loadBackgroundImages({ images: remoteImages, document: messageDocument });
+
+                const result = element.getAttribute('style') || '';
+                expect(result).toContain(`url(${proxyURL})`);
+                expect(result).not.toMatch(/(^|[^-\w])url\(\s*['"]?https:\/\/attacker\.example/);
+                expect(result).not.toContain('proton-url');
+            });
+
+            it('should replace every registered token and leave unregistered ones inert', () => {
+                const otherURL = 'https://attacker.example/other.png';
+                const messageDocument = parseDOMStringToBodyElement(`<div>Element</div>`);
+                const element = messageDocument.querySelector('div') as HTMLElement;
+                element.setAttribute(
+                    'style',
+                    `background: proton-url(${originalURL}); border-image: proton-url(${otherURL}); --x: proton-url("${originalURL}")`
+                );
+
+                loadBackgroundImages({ images: remoteImages, document: messageDocument });
+
+                expect(element.getAttribute('style')).toBe(
+                    `background: url(${proxyURL}); border-image: proton-url(${otherURL}); --x: url(${proxyURL})`
+                );
+            });
+        });
     });
 });
