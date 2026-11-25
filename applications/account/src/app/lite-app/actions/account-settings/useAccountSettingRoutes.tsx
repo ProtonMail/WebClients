@@ -14,7 +14,6 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
-import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcKey } from '@proton/icons/icons/IcKey';
@@ -44,7 +43,6 @@ export const useAccountSettingRoutes = () => {
     const isDelegatedAccessAvailable =
         isOutgoingDelegatedAccessSupported && user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const recoveryNotification = useRecoveryNotification(false, false);
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
     const [referralInfo] = useReferralInfo();
     const credits = referralInfo.uiData.maxRewardAmount;
@@ -72,7 +70,6 @@ export const useAccountSettingRoutes = () => {
                 .t`${BRAND_NAME}'s end-to-end encryption means only you can unlock your data. Set up recovery options now to ensure you never lose access.`,
             icon: IcKey,
             available: isAccountRecoveryAvailable,
-            notification: recoveryNotification?.color,
             subsections: [
                 {
                     text: '',

@@ -1,10 +1,13 @@
 import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
-import type { ThemeColor } from '@proton/colors/types';
 import { filterNews, getEmailSubscriptions } from '@proton/components/containers/account/constants/email-subscriptions';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import type { SectionConfig, SubrouteGroup } from '@proton/components/containers/layout/interface';
+import type {
+    SectionConfig,
+    SettingsNotification,
+    SubrouteGroup,
+} from '@proton/components/containers/layout/interface';
 import { getBillingPageAvailability } from '@proton/console/billing/getBillingPageAvailability';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcArrowUpBigLine } from '@proton/icons/icons/IcArrowUpBigLine';
@@ -237,7 +240,7 @@ export const getRecoverySettings = ({
     recoveryNotification,
 }: {
     accountRecoveryRouterFlags: AccountRecoveryRouterFlags;
-    recoveryNotification?: ThemeColor;
+    recoveryNotification?: SettingsNotification;
 }) => {
     const recoverySubrouteGroups = {
         passwordReset: {
@@ -370,7 +373,8 @@ export const getRecoverySettings = ({
         to: '/recovery',
         icon: IcKey,
         available: isAccountRecoveryAvailable,
-        notification: recoveryNotification,
+        notification: recoveryNotification?.color,
+        notificationLabel: recoveryNotification?.label,
         subsections: [
             {
                 text: '',

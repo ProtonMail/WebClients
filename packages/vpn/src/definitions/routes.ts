@@ -392,7 +392,12 @@ const routesDefinition = {
                     to: '/recovery',
                     icon: IcKey,
                     meta: ({ context }) =>
-                        context.notifications?.recovery ? { hasNotifications: context.notifications.recovery } : {},
+                        context.notifications?.recovery
+                            ? {
+                                  hasNotifications: context.notifications.recovery.color,
+                                  notificationLabel: context.notifications.recovery.label,
+                              }
+                            : {},
                     sections: [
                         {
                             id: 'my-account.recovery.account',

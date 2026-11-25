@@ -8,7 +8,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { QuickSettingsRemindersContext } from '../../containers/drawer/MailQuickSettingsReminderContext';
 import MailQuickSettingsReminderContextProvider from '../../containers/drawer/MailQuickSettingsReminderContextProvider';
-import useRecoveryNotification from '../useRecoveryNotification';
+import { useRecoveryIndicator } from '../useRecoveryIndicators';
 
 /**
  * Quick settings are now part of the drawer.
@@ -32,7 +32,7 @@ export default function useQuickSettingsReminders() {
 export const QuickSettingsRemindersProvider = ({ children }: { children: ReactNode }) => {
     const { APP_NAME } = useConfig();
 
-    const recoveryNotification = useRecoveryNotification(false, true);
+    const recoveryNotification = useRecoveryIndicator('quickSettings');
 
     const reminders: ThemeColor[] = [recoveryNotification?.color].filter(isTruthy);
 

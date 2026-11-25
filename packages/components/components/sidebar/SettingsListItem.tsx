@@ -3,7 +3,6 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors/types';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
@@ -13,6 +12,7 @@ import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
 import { navigationIconClassName } from './SidebarListItemContentIcon';
 import SidebarListItemLink from './SidebarListItemLink';
+import { SidebarNotificationIndicator } from './SidebarNotificationIndicator';
 
 function OptionalItemLink({ to, exact, children }: { to?: string; exact?: boolean; children: ReactNode }) {
     if (!to) {
@@ -25,7 +25,11 @@ function OptionalItemLink({ to, exact, children }: { to?: string; exact?: boolea
     );
 }
 
-function getRightComponent(notification: ThemeColor | undefined, upgradeRequired: boolean | undefined) {
+function getRightComponent(
+    notification: ThemeColor | undefined,
+    notificationLabel: string | undefined,
+    upgradeRequired: boolean | undefined
+) {
     if (upgradeRequired) {
         return (
             <PromotionButton
@@ -41,7 +45,7 @@ function getRightComponent(notification: ThemeColor | undefined, upgradeRequired
     }
 
     if (notification) {
-        return <NotificationDot color={notification} alt={c('Info').t`Attention required`} />;
+        return <SidebarNotificationIndicator color={notification} label={notificationLabel} />;
     }
 
     return null;
@@ -52,18 +56,19 @@ interface Props {
     exact?: boolean; // if true, the item is only active on this exact path, not on its sub-paths
     icon?: IconComponent;
     notification?: ThemeColor;
+    notificationLabel?: string;
     upgradeRequired?: boolean; // if true, will show an upgrade badge
     children: ReactNode;
 }
 
 const SettingsListItem = forwardRef<HTMLLIElement, Props>(
-    ({ to, exact, icon: IconComponent, children, notification, upgradeRequired }, ref) => {
+    ({ to, exact, icon: IconComponent, children, notification, notificationLabel, upgradeRequired }, ref) => {
         return (
             <SidebarListItem ref={ref}>
                 <OptionalItemLink to={to} exact={exact}>
                     <SidebarListItemContent
                         left={IconComponent ? <IconComponent className={navigationIconClassName} /> : null}
-                        right={getRightComponent(notification, upgradeRequired)}
+                        right={getRightComponent(notification, notificationLabel, upgradeRequired)}
                     >
                         {children}
                     </SidebarListItemContent>

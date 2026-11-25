@@ -25,7 +25,7 @@ vi.mock('@proton/account/recovery/dataRecovery', () => ({
 vi.mock('@proton/account/recovery/sessionRecoveryHooks', () => ({
     useIsSessionRecoveryAvailable: () => [true, false],
 }));
-vi.mock('@proton/components/hooks/useRecoveryNotification', () => ({ default: () => undefined }));
+vi.mock('@proton/components/hooks/useRecoveryIndicators', () => ({ useRecoverySidebarNotification: () => undefined }));
 vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-account' }) }));
 vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 vi.mock('../definitions/routes', () => ({ resolveNavigation: vi.fn(() => 'nav') }));

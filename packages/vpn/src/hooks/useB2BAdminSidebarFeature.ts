@@ -9,7 +9,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { SidebarTree } from '@proton/components/components/sidebar/nav/interface';
-import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
+import { useRecoverySidebarNotification } from '@proton/components/hooks/useRecoveryIndicators';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { applyPrefix } from '@proton/nav/api/applyPrefix';
 import { defineSearchOptions } from '@proton/nav/api/defineSearchOptions';
@@ -55,7 +55,7 @@ export const useB2BAdminSidebarFeature = ({
         permissions === null;
     const isEnabled = useFlag('B2BSidebarRefreshEnabled');
     const { APP_NAME } = useConfig();
-    const recoveryNotification = useRecoveryNotification(false, false);
+    const recoveryNotification = useRecoverySidebarNotification();
     const [{ isDataRecoveryAvailable }] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
 
@@ -88,7 +88,7 @@ export const useB2BAdminSidebarFeature = ({
         allSubscriptions,
         entitlements,
         organization,
-        notifications: { recovery: recoveryNotification?.color },
+        notifications: { recovery: recoveryNotification },
         flags: {
             SsoForPbs,
             ZoomIntegrationDisabled,

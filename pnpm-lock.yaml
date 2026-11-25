@@ -4614,9 +4614,6 @@ importers:
       '@proton/calendar-video-conferencing':
         specifier: workspace:^
         version: link:../../packages/calendar-video-conferencing
-      '@proton/colors':
-        specifier: workspace:^
-        version: link:../../packages/colors
       '@proton/components':
         specifier: workspace:^
         version: link:../../packages/components
@@ -10993,9 +10990,6 @@ importers:
       '@proton/calendar-video-conferencing':
         specifier: workspace:^
         version: link:../calendar-video-conferencing
-      '@proton/colors':
-        specifier: workspace:^
-        version: link:../colors
       '@proton/components':
         specifier: workspace:^
         version: link:../components

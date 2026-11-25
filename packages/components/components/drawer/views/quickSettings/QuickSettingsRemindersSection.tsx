@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useRecoveryNotification from '../../../../hooks/useRecoveryNotification';
+import { useRecoveryIndicator } from '../../../../hooks/useRecoveryIndicators';
 import useSettingsLink from '../../../link/useSettingsLink';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsReminder from './QuickSettingsReminder';
@@ -15,7 +15,7 @@ interface Props {
 const QuickSettingsRemindersSection = ({ inAppReminders = [] }: Props) => {
     const goToSettings = useSettingsLink();
 
-    const insideDropdownRecoveryNotification = useRecoveryNotification(false, true);
+    const insideDropdownRecoveryNotification = useRecoveryIndicator('quickSettings');
 
     const reminders: QuickSettingsReminders[] = useMemo(() => {
         const recoveryNotificationReminder: QuickSettingsReminders | undefined = insideDropdownRecoveryNotification
