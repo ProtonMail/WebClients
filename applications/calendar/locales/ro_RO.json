@@ -1068,6 +1068,12 @@
       ],
       "Previous contact": [
         "Contact anterior"
+      ],
+      "Don't show this again": [
+        "Nu mai afișa asta"
+      ],
+      "Skip to main content": [
+        "Salt la conținutul principal"
       ]
     },
     "action": {
@@ -1208,6 +1214,14 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }"
       ]
     },
     "Alarm notification": {
@@ -4609,6 +4623,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Solicitarea cheii de securitate a fost anulată sau a expirat. Reîncercați."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dispozitivul nu v-a putut finaliza solicitarea cheii de securitate. Reîncercați sau folosiți o altă metodă de conectare."
       ]
     },
     "fido2: Info": {
@@ -5193,7 +5213,7 @@
         "Licențe ${ MEET_APP_NAME }"
       ],
       "${ MEET_APP_NAME } video call": [
-        "Apel video ${ MEET_APP_NAME }"
+        "Videoconferință ${ MEET_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
@@ -6712,6 +6732,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Licențele pentru asistentul de scriere nu se mai vând."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pentru a contribui la menținerea siguranței contului, confirmați-vă identitatea înainte de a continua."
       ]
     },
     "info": {
@@ -7476,6 +7499,9 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Parolă cont ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12639,6 +12665,15 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13416,6 +13451,81 @@
       ],
       "For getting more done": [
         "Pentru a realiza mai multe"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Închidere"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ofertă indisponibilă"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per utilizator"
+      ],
+      "${ storage } shared": [
+        "${ storage } partajat"
+      ],
+      "10 years": [
+        "10 ani"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "O categorie de servere ${ VPN_APP_NAME } cu capacitate mai mare: fiecare server este utilizat de un număr mult mai mic de persoane și folosește adrese IP deținute de către ${ BRAND_NAME }. Funcția „Conectare rapidă” le selectează automat, acolo unde sunt disponibile."
+      ],
+      "Calendars": [
+        "Calendare"
+      ],
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Numit astfel în onoarea susținătorilor de pe platformele de finanțare comunitară care au făcut posibilă existența ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } în 2014. Toate serviciile premium ${ BRAND_NAME }, într-un singur abonament."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Servicii ${ BRAND_NAME } noi fără extra costuri"
+      ],
+      "Password vaults": [
+        "Seifuri de parole"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive și Pass premium"
+      ],
+      "Previous versions": [
+        "Versiuni anterioare"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
+      "Subscribers only": [
+        "Doar pentru abonați"
+      ],
+      "Ultra servers": [
+        "Servere ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servere ultra, rezervate pentru dvs."
+      ],
+      "Unlimited": [
+        "Nelimitat"
+      ],
+      "Up to ${ limit }": [
+        "Până la ${ limit }"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "VPN devices at once": [
+        "Dispozitive VPN simultane"
       ]
     }
   }

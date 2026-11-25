@@ -1064,6 +1064,12 @@
       ],
       "Previous contact": [
         "Contacte anterior"
+      ],
+      "Don't show this again": [
+        "No ho tornis a mostrar"
+      ],
+      "Skip to main content": [
+        "Ves al contingut principal"
       ]
     },
     "action": {
@@ -1193,6 +1199,13 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } llicència d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } llicències d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alarm notification": {
@@ -4563,6 +4576,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "S'ha cancel·lat la sol·licitud de clau de seguretat o s'ha esgotat el temps d'espera. Torneu-ho a provar."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "El vostre dispositiu no ha pogut completar la sol·licitud de clau de seguretat. Torneu-ho a provar o feu servir un altre mètode d'inici de sessió."
       ]
     },
     "fido2: Info": {
@@ -6620,6 +6639,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Les llicències d'assistent d'escriptura ja no es venen."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per ajudar a mantenir el vostre compte segur, confirmeu que sou realment vós abans de continuar."
       ]
     },
     "info": {
@@ -7378,6 +7400,9 @@
       ],
       "Zoom meeting": [
         "Reunió de Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contrasenya del compte de ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12411,6 +12436,15 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13144,6 +13178,81 @@
       ],
       "For getting more done": [
         "Per a fer més coses"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Tanca"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "L'oferta no està disponible."
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per usuari"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartit"
+      ],
+      "10 years": [
+        "10 anys"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una categoria de servidors de ${ VPN_APP_NAME } de més capacitat: molts menys usuaris en comparteixen cadascun i utilitzen adreces IP pròpies de ${ BRAND_NAME }. Quick Connect els selecciona automàticament quan estan disponibles."
+      ],
+      "Calendars": [
+        "Calendaris"
+      ],
+      "Custom email domains": [
+        "Dominis de correu electrònic personalitzats"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Hide-my-email aliases": [
+        "Àlies de hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Anomenat així en honor als mecenes de micromecenatge que van fer possible ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME } el 2014. Tots els serveis prèmium de ${ BRAND_NAME }, en un sol pla."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nous serveis de ${ BRAND_NAME } sense cost addicional"
+      ],
+      "Password vaults": [
+        "Caixes fortes de contrasenyes"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive i Pass prèmium"
+      ],
+      "Previous versions": [
+        "Versions anteriors"
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
+      "Subscribers only": [
+        "Només per a subscriptors"
+      ],
+      "Ultra servers": [
+        "Servidors Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidors Ultra, reservats per a vós"
+      ],
+      "Unlimited": [
+        "Sense límit"
+      ],
+      "Up to ${ limit }": [
+        "Fins a ${ limit }"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "VPN devices at once": [
+        "Dispositius VPN alhora"
       ]
     }
   }

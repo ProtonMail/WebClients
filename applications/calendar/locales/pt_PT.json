@@ -66,13 +66,13 @@
         "Adicionar um método de pagamento"
       ],
       "Add account": [
-        "Adicionar uma conta"
+        "Adicionar conta"
       ],
       "Add address": [
         "Adicionar um endereço"
       ],
       "Add another account": [
-        "Adicionar outra conta"
+        "Adicionar Outra Conta"
       ],
       "Add another booking range to this day": [
         "Adicionar outro intervalo de agendamento a este dia"
@@ -142,7 +142,7 @@
         "Cancelar subscrição"
       ],
       "Cancel trial and pay": [
-        "Cancelar o período de avaliação e pagar"
+        "Cancelar o período de testes e pagar"
       ],
       "Change password": [
         "Alterar a palavra-passe"
@@ -366,7 +366,7 @@
         "Editar"
       ],
       "Edit billing address": [
-        "Editar o endereço da fatura"
+        "Editar a morada da fatura"
       ],
       "Edit booking page": [
         "Editar página de reserva"
@@ -546,7 +546,7 @@
         "Manter o fuso horário actual"
       ],
       "Keep my subscription": [
-        "Manter a minha assinatura"
+        "Manter a minha subscrição"
       ],
       "Later": [
         "Mais tarde"
@@ -1040,6 +1040,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Cancel trial": [
+        "Cancelar período de teste"
+      ],
+      "Don't show this again": [
+        "Não mostrar novamente"
+      ],
+      "Skip to main content": [
+        "Ignorar para o conteúdo principal"
+      ],
+      "Switch to ${ planName }": [
+        "Mudar para ${ planName }"
       ]
     },
     "action": {
@@ -1159,6 +1171,16 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita de ${ LUMO_SHORT_APP_NAME } (para ${ quantity } utilizador)",
+        "Assistente de escrita de ${ LUMO_SHORT_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
+      "Managed Service Provider": [
+        "Provedor de Serviço Gerido"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "As organizações com o complemento \"Provedor de Serviço Gerido\"  podem criar e gerir organizações subsidiárias."
       ]
     },
     "Alarm notification": {
@@ -1274,7 +1296,7 @@
         "Pode ter até ${ TRIAL_MAX_USERS } utilizadores durante o período de avaliação."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Você não pode adicionar domínios personalizados durante o período de avaliação."
+        "Não pode adicionar domínios personalizados durante o período de testes."
       ],
       "You have reached the trial limit.": [
         "Atingiu o limite da avaliação."
@@ -1290,7 +1312,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "A sua avaliação gratuita termina em ${ timeRemaining }."
+        "O seu período de testes gratuito termina em ${ timeRemaining }."
       ]
     },
     "Badge": {
@@ -1839,6 +1861,19 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Montante devido"
+      ],
+      "Amount due after trial": [
+        "Montante devido depois da avaliação"
+      ],
+      "Amount due now": [
+        "Montante devido agora"
+      ],
+      "Total for ${ cycle } month": [
+        "Total para ${ cycle } mês",
+        "Total para ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -1997,7 +2032,7 @@
         "Período anterior"
       ],
       "Search events": [
-        "Procurar eventos"
+        "Pesquisar eventos"
       ],
       "Today": [
         "Hoje"
@@ -4069,6 +4104,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "A sua ligação ao Zoom expirou. Volte a ligar-se para continuar."
+      ],
+      "A contact with this email address already exists": [
+        "Já existe um contacto com este endereço de correio eletrónico"
+      ],
+      "Could not grant access to the organization key": [
+        "Não foi possível conceder acesso à chave da organização"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Atingiu o número máximo de endereços conetados"
       ]
     },
     "error": {
@@ -4339,6 +4383,9 @@
     "Event popover close button": {
       "Close popover": [
         "Fechar balão"
+      ],
+      "Close": [
+        "Fechar"
       ]
     },
     "Event reply": {
@@ -4479,6 +4526,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com a sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "O navegador não suporta as chaves de segurança. Por favor, tente um navegador diferente."
       ]
     },
     "fido2: Info": {
@@ -5170,7 +5220,7 @@
         "Está ativada a verificação de endereço com chaves confiadas para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser utilizadas para enviar."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Os anunciantes rastreiam a sua navegação para mostrar anúncios segmentados. O ${ VPN_APP_NAME } bloqueia os rastreadores e os anúncios, tornando a sua ligação mais rápida e melhorando a sua experiência online."
+        "Os anunciantes rastreiam a sua navegação para mostrar anúncios segmentados. O ${ VPN_APP_NAME } bloqueia os rastreadores e os anúncios, tornando a sua ligação mais rápida e melhorando a sua experiência ''on-line''."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistente com tecnologia de IA para ajudá-lo a criar e-mails melhores, de forma rápida e sem esforço."
@@ -5236,7 +5286,7 @@
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "No final da sua avaliação ${ boldCancelDate }, irá regredir para o ${ boldProtonFree }. Todas as contas de utilizador serão removidas da sua organização."
+        "No final do seu período de testes ${ boldCancelDate }, será transferido para ${ boldProtonFree }. Todas as contas de utilizador serão removidas da sua organização."
       ],
       "Attention required": [
         "Atenção Requerida"
@@ -5835,7 +5885,7 @@
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Indique um nome e um endereço de e-mail para criar um grupo."
+        "Por favor, forneça um nome e um endereço de correio eletrónico para criar um grupo."
       ],
       "Please remove the duplicates and try again.": [
         "Remova os duplicados e tente novamente."
@@ -5887,7 +5937,7 @@
         "Privacidade por predefinição"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
-        "A navegação privada (ou modo «incógnito») só é útil para manter a sua atividade oculta no seu dispositivo. Impede que o seu navegador guarde histórico e cookies, mas não o torna invisível. O seu ISP, o administrador de rede e os sítios web que visita ainda podem ver o que faz online."
+        "A navegação privada (ou modo \"incógnito\") só é útil para manter a sua atividade oculta no seu dispositivo. Isto impede que o seu navegador guarde o histórico e os ''cookies'', mas não o torna invisível. O seu ISP, o administrador de rede, e os ''sites'' da Web que visita ainda podem ver o que faz ''on-line''."
       ],
       "Range already exists.": [
         "O intervalo já existe."
@@ -5954,7 +6004,7 @@
         "Partilhe esta página para permitir que outros reservem tempo no seu calendário. Pode encontrá-la e editá-la na barra lateral em Páginas de \"Reserva\"."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
-        "Alguns governos bloqueiam ou restringem o acesso a determinados sítios web. Uma VPN ajuda a contornar a censura, mantendo a sua atividade e identidade privadas."
+        "Alguns governos bloqueiam ou restringem o acesso a determinados ''sites'' da Web. Uma VPN ajuda a contornar a censura, mantendo a sua atividade e identidade privadas."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
@@ -6420,7 +6470,7 @@
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "A sua avaliação gratuita foi convertida para uma subscrição de ${ cycle } meses. A sua data de renovação é o ${ nextBillingDate }."
+        "O seu período de testes gratuito foi convertido para uma subscrição de ${ cycle } meses. A sua data de renovação é ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "A sua avaliação gratuita foi convertida para uma subscrição mensal. A sua data de renovação é o ${ nextBillingDate }."
@@ -6481,10 +6531,28 @@
         "Vai perder o acesso ao ${ boldPlanTitle } em ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
-        "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+        "Ainda poderá ver os seus dados da conta, mas todas as contas de utilizador serão removidas da sua organização."
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Atingiu o limite de vagas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "marca ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclui o assistente de escrita"
+      ],
+      "No payment is required.": [
+        "Não é necessário pagamento."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Por favor, atualize ${ MAIL_APP_NAME } para continuar a utilizar a aplicação. ${ downloadUpdate }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tem uma fatura em aberto com vencimento em ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "O seu período de testes gratuito terminou. Subscreva agora para manter o acesso da sua equipa sem interrupções e as contas seguras."
       ]
     },
     "info": {
@@ -7416,6 +7484,9 @@
       ],
       "What’s this?": [
         "O que é isto?"
+      ],
+      "Pay it": [
+        "Pague-a"
       ]
     },
     "Link label (optional)": {
@@ -7524,6 +7595,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adicionar assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -7614,7 +7688,7 @@
     },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "A sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
+        "O seu período de testes gratuito terminou. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "O seu teste gratuito terminou. O acesso à sua conta será desativado em breve. ${ action }"
@@ -8501,7 +8575,7 @@
         "Domínios personalizados para aliases, caixas de correio adicionais, a capacidade de enviar e-mails de aliases, e mais"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
+        "Os servidores dedicados com endereços de IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
@@ -9090,10 +9164,28 @@
         "Poderá usar ${ planTitle } até o fim da avaliação e não lhe será cobrado."
       ],
       "Your free trial has started": [
-        "A sua avaliação gratuita começou."
+        "O seu período de testes começou."
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "A sua subscrição completa do ${ planTitle } começa em ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adicione um método de pagamento** para continuar a utilizar todas as funcionalidades depois de acabar o período de testes."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele a qualquer momento antes dessa data.** Poderá utilizar o ${ planTitle } até ao fim do período de teste, sem qualquer custo."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Assim que a sua subscrição completa começar...** Ainda pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
+      ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
+      "If you continue after your trial,": [
+        "Se continuar depois da avaliação,"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
       ]
     },
     "Option": {
@@ -9210,7 +9302,7 @@
         "Registo de atividades"
       ],
       "Admin panel to manage users and subscription": [
-        "Painel de administração para gerir utilizadores e subscrição"
+        "Painel de administração para gerir os utilizadores e a subscrição"
       ],
       "Advanced account protection": [
         "Proteção avançada de conta"
@@ -9391,7 +9483,7 @@
         "O preço com desconto especial é válido para ${ subscriptionLength } meses."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "O preço com desconto especial é válido para o primeiro mês. Em seguida, será renovado automaticamente por ${ renewPriceStr } todos os meses. Pode cancelar a qualquer momento."
+        "O preço com desconto especial é válido para o primeiro mês. Depois, será renovado automaticamente por ${ renewPriceStr } todos os meses. Pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "O preço especial com desconto de ${ priceWithDiscount } é válido durante ${ couponRedemptions } mês. Depois disso, a subscrição será renovada automaticamente por ${ renewPriceStr } por 1 mês. Pode cancelar a qualquer momento.",
@@ -9455,6 +9547,12 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "A sua conta é muito antiga para a iniciativa de Born Private."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Mudar de plano é incompatível pelos seguintes motivos:"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta subscrição não pode ser concluída agora. Por favor, tente novamente. "
       ]
     },
     "Payments.Error": {
@@ -9475,6 +9573,12 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente com outro cartão ou contacte o seu banco para autorizar esta compra."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Nao foi possivel inicializar ${ IDEAL_WERO_BRAND_NAME }. Por favor, tente novamente mais tarde."
+      ],
+      "Please enter the account holder name": [
+        "Por favor, insira o nome do titular da conta"
       ]
     },
     "Payments.error": {
@@ -9877,7 +9981,7 @@
         "${ referrerRewardAmount } por cada recomendação"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
-        "**Se cancelar antes desta data,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
+        "**Se cancelar antes desta data,** a sua conta será **transferida** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando o período de testes terminar."
       ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Se não subscrever,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -9889,7 +9993,7 @@
         "**Se subscrever antes desta data,** obterá **${ referrerRewardAmount }** em créditos."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Após essa data, a sua conta será regredida para **${ BRAND_NAME } Free**. Se mudar de ideias, pode **reativar a sua subscrição** para manter o acesso às funcionalidades premium."
+        "Depois dessa data, a sua conta é transferida para o plano **${ BRAND_NAME } Grátis**. Se mudar de ideias, pode **reativar a sua subscrição** para manter o acesso às funcionalidades Premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe até ${ maxRewardAmount } em crédito. Receberá ${ referrerRewardAmount } quando a pessoa que convidou subscrever um plano ${ BRAND_NAME }."
@@ -10854,7 +10958,7 @@
         "Enviar e-mails com anexos"
       ],
       "Stay secure and connected anywhere": [
-        "Mantenha-se seguro e conectado em qualquer lugar"
+        "Mantenha-se seguro e ligado em qualquer lugar"
       ],
       "Support your compliance objectives": [
         "Apoie os seus objetivos de conformidade"
@@ -10878,7 +10982,7 @@
         "As subscrições de utilizadores são a única fonte de receita da ${ BRAND_NAME }. O seu apoio mantém-nos independentes, promove a nossa missão pela privacidade online e apoia ativistas e organizações que lutam pela liberdade."
       ],
       "Users won’t be able to manage their calendars": [
-        "Os utilizadores não poderão gerir os seus calendários."
+        "Os utilizadores não poderão gerir os seus calendários"
       ],
       "Users won’t be able to send emails": [
         "Os utilizadores não poderão enviar e-mails."
@@ -11593,7 +11697,7 @@
         "Solte para enviar"
       ],
       "Edit billing address": [
-        "Editar o endereço da fatura"
+        "Editar a morada da fatura"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -12077,7 +12181,7 @@
         "Convidou participantes com endereços equivalentes"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
+        "O seu período de testes gratuito ${ planName } termina em ${ textDate }."
       ],
       "Your ${ planTitle } subscription has started": [
         "A sua subscrição do ${ planTitle } começou."
@@ -12105,6 +12209,15 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Subscrever ${ planTitle }"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12307,6 +12420,12 @@
       ],
       "This user gets administrator rights the next time they sign in.": [
         "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Atualizar para um plano suportado para utilizar funções de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Não pode alterar as suas próprias funções. Peça a outro administrador para as alterar."
       ]
     },
     "Validation": {
@@ -12775,6 +12894,41 @@
     "Payment Method": {
       "Bank Account": [
         "Conta Bancária"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Aplicação de PC"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, autoriza a ${ BRAND_NAME } e a Stripe, o nosso prestador de serviços de pagamento, a cobrar os futuros pagamentos da sua subscrição a partir desta conta bancária por débito direto SEPA, e autoriza o seu banco a debitar esses pagamentos. O seu primeiro pagamento é efetuado agora através de ${ IDEAL_WERO_BRAND_NAME }. O seu plano renova-se automaticamente até que o cancele; nós notificamo-lo antes de cada cobrança. Nas cobranças por débito direto, pode pedir um reembolso ao seu banco no prazo de 8 semanas a contar da data do débito, nos termos do acordo celebrado com o seu banco. Isto não se aplica ao pagamento através de ${ IDEAL_WERO_BRAND_NAME } que está a efetuar agora."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     }
   }

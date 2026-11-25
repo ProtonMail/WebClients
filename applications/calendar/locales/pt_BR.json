@@ -1064,6 +1064,12 @@
       ],
       "Previous contact": [
         "Contato anterior"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
+      ],
+      "Skip to main content": [
+        "Pular para o conteúdo principal"
       ]
     },
     "action": {
@@ -1193,6 +1199,13 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licença de assistente de escrita do ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenças de assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alarm notification": {
@@ -6617,6 +6630,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "As licenças do assistente de escrita não são mais vendidas."
       ]
     },
     "info": {
@@ -7375,6 +7394,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Senha da conta da ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12414,6 +12436,12 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13130,6 +13158,12 @@
       ],
       "More usage": [
         "Mais uso"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API com um crédito ${ credit } ao mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API com um crédito ${ credit } ao mês por usuário"
       ]
     },
     "lumo_2026: Info": {
@@ -13138,6 +13172,84 @@
       ],
       "For everyday chats": [
         "Para todos os bate-papos"
+      ],
+      "For getting more done": [
+        "Para ter mais produtividade"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuário"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartilhado"
+      ],
+      "10 years": [
+        "10 anos"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Custom email domains": [
+        "Domínios personalizados de e-mail"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Nome em homenagem aos apoiadores do financiamento coletivo que tornaram o ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possível em 2014. Todos os serviços premium da ${ BRAND_NAME }, em um único plano."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Serviços novos da ${ BRAND_NAME } sem custo adicional"
+      ],
+      "Password vaults": [
+        "Cofres de senhas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass premium"
+      ],
+      "Previous versions": [
+        "versões anteriores"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Subscribers only": [
+        "Somente assinantes"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra, reservado para você"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Até ${ limit }"
+      ],
+      "Users": [
+        "Usuários"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN ao mesmo tempo"
       ]
     }
   }

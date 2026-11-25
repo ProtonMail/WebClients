@@ -691,6 +691,12 @@
       ],
       "Yes, I'll attend": [
         "Ih, ad ttikkiɣ"
+      ],
+      "Add another account": [
+        "Rnu amiḍan nniḍen"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ]
     },
     "action": {
@@ -741,6 +747,12 @@
       "${ users } user": [
         "${ users } n useqdac",
         "${ users } yiseqdacen"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
+      ],
+      "Writing assistant seats": [
+        "Imukan n umalal n tira"
       ]
     },
     "Alarm notification": {
@@ -960,6 +972,10 @@
       ],
       "Yearly": [
         "S useggas"
+      ],
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
       ]
     },
     "Bug category": {
@@ -1198,6 +1214,10 @@
       ],
       "Try ${ planName }": [
         "Ɛreḍ ${ planName }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
       ]
     },
     "Checkout row": {
@@ -3018,6 +3038,10 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Tettwanecdeḍ ad ternuḍ i${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "View the invitation": [
+        "Wali tinnubga",
+        "Wali tinnubgiwin"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -4099,6 +4123,9 @@
       ],
       "Your online activity is protected": [
         "Armud-ik deg internet yettummesten"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
       ]
     },
     "info": {
@@ -6928,6 +6955,9 @@
       ],
       "Your account is protected": [
         "Amiḍan-ik yettummesten"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7434,6 +7464,23 @@
     "Drawer tab, Action": {
       "Download for Windows": [
         "Sider i Windows"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Mdel"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } yimtteki",
+        "${ n } yimttekkiyen"
+      ]
+    },
+    "Referral": {
+      "Friend joined": [
+        "Yerna-d umeddakel",
+        "Rnan-d imeddukal"
       ]
     }
   }

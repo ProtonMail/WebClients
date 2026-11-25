@@ -1064,6 +1064,12 @@
       ],
       "Previous contact": [
         "Προηγούμενη επαφή"
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
+      "Skip to main content": [
+        "Μετάβαση στο κύριο περιεχόμενο"
       ]
     },
     "action": {
@@ -1193,6 +1199,13 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέση βοηθού γραφής",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
       ]
     },
     "Alarm notification": {
@@ -4563,6 +4576,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Το αίτημα κλειδιού ασφαλείας ακυρώθηκε ή έληξε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Η συσκευή σας δεν μπόρεσε να ολοκληρώσει το αίτημα κλειδιού ασφαλείας. Προσπαθήστε ξανά, ή επιλέξτε κάποια άλλη μέθοδο σύνδεσης."
       ]
     },
     "fido2: Info": {
@@ -6620,6 +6639,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Οι θέσεις για βοηθούς συγγραφής δεν πωλούνται πλέον."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
       ]
     },
     "info": {
@@ -7378,6 +7400,9 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Κωδικός πρόσβασης Λογαριασμού ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12411,6 +12436,15 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13144,6 +13178,81 @@
       ],
       "For getting more done": [
         "Για να πετυχαίνετε περισσότερα"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Η προσφορά δεν είναι διαθέσιμη"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } ανά χρήστη"
+      ],
+      "${ storage } shared": [
+        "${ storage } κοινόχρηστος"
+      ],
+      "10 years": [
+        "10 χρόνια"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Μια κατηγορία διακομιστών του ${ VPN_APP_NAME } με μεγαλύτερη χωρητικότητα: κάθε διακομιστής χρησιμοποιείται από πολύ λιγότερους χρήστες και αξιοποιεί διευθύνσεις IP που ανήκουν στην ${ BRAND_NAME }. Η λειτουργία Quick Connect τους επιλέγει αυτόματα, όπου είναι διαθέσιμοι."
+      ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Ονομάστηκε προς τιμήν των υποστηρικτών από τη διαδικασία συλλογικής χρηματοδότησης που κατέστησαν δυνατή την υλοποίηση του ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } το 2014. Όλες οι premium υπηρεσίες του ${ BRAND_NAME }, σε ένα ενιαίο πρόγραμμα."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Νέες υπηρεσίες ${ BRAND_NAME } χωρίς επιπλέον κόστος"
+      ],
+      "Password vaults": [
+        "Κρύπτες κωδικών πρόσβασης"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive και Pass"
+      ],
+      "Previous versions": [
+        "Προηγούμενες εκδόσεις"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
+      ],
+      "Subscribers only": [
+        "Μόνο συνδρομητές"
+      ],
+      "Ultra servers": [
+        "Διακομιστές Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Διακομιστές Ultra, δεσμευμένοι για εσάς"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Έως ${ limit }"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "VPN devices at once": [
+        "Συσκευές VPN ταυτόχρονα"
       ]
     }
   }

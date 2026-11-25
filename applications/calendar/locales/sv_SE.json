@@ -1064,6 +1064,12 @@
       ],
       "Previous contact": [
         "Tidigare kontakt"
+      ],
+      "Don't show this again": [
+        "Visa inte detta igen"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
       ]
     },
     "action": {
@@ -1193,6 +1199,13 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Visar sätt att få hjälp med verifiering"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplats",
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
       ]
     },
     "Alarm notification": {
@@ -1315,6 +1328,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nått provperiodsgränsen."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS }${ LUMO_SHORT_APP_NAME } \nplatser för skrivassistenter under provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -4133,6 +4149,9 @@
       ],
       "Meeting not created. Try again.": [
         "Möte skapades inte. Försök igen."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Du nådde maxantalet av anslutna adresser"
       ]
     },
     "error": {
@@ -4191,7 +4210,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "FN-egenskap saknas"
+        "Egenskapen FN saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -4552,6 +4571,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Begäran om säkerhetsnyckel avbröts eller löpte ut. Försök igen."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Din enhet kunde inte slutföra begäran om säkerhetsnyckel. Försök igen, eller använd en annan inloggningsmetod."
       ]
     },
     "fido2: Info": {
@@ -6199,7 +6224,7 @@
         "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln genererades."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
+        "För att använda Adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Total email addresses": [
         "Totalt antal e-postadresser"
@@ -6584,10 +6609,25 @@
         "Efter uppdatering, din Mac kan komma att fråga efter ett lösenord. Skriv lösenordet du använder för att låsa upp din Mac, klicka sedan på Tillåt Alltid för att fortsätta vara inloggad. ${ learnMore }"
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+        "Om du har förlorat tillgången till din autentiseringsapp, kan du använda 1 av de 16 återställningskoder som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "Writing assistant seats are no longer sold.": [
         "Platser för skrivassistenten säljs inte längre"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink }för att få en återbetalning."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+      ],
+      "UnionPay logo": [
+        "UnionPay-logga"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi kommer att omdirigera dig till ${ IDEAL_WERO_BRAND_NAME } i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra."
       ]
     },
     "info": {
@@ -7092,7 +7132,7 @@
         "Efternamn"
       ],
       "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
-        "Låt andra veta om du har en konflikt, kommer bli sen eller inte kan vänta på händelsen."
+        "Låt andra veta om du har förhinder, blir sen eller inte kan vänta på evenemanget."
       ],
       "Location": [
         "Plats"
@@ -7346,6 +7386,9 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Kontolösenord"
       ]
     },
     "label": {
@@ -9246,6 +9289,18 @@
       ],
       "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
         "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Avbryt när som helst innan dess.** Du kommer att kunna använda ${ planTitle } tills provperioden är slut, gratis."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "för att kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan avbryta inom 30 dagar och få en proportionell återbetalning."
       ]
     },
     "Option": {
@@ -9630,6 +9685,9 @@
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Genom att byta godkänner du våra ${ termsLink }."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Prenumerationsbyte är inkompatibelt av följande skäl:"
       ]
     },
     "Payments.Error": {
@@ -10635,7 +10693,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
@@ -12303,6 +12361,15 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Specialerbjudande"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13038,6 +13105,82 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Stäng"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink } för att få en återbetalning."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Erbjudande ej tillgängligt"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Att ändra din fakturaadress kan påverka skatter på kommande fakturor."
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per användare"
+      ],
+      "${ storage } shared": [
+        "${ storage } delat"
+      ],
+      "10 years": [
+        "10 år"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Custom email domains": [
+        "Anpassade e-postdomäner"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "Password vaults": [
+        "Lösenords-valv"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive och Pass"
+      ],
+      "Previous versions": [
+        "Tidigare versioner"
+      ],
+      "Storage": [
+        "Lagringsutrymme"
+      ],
+      "Subscribers only": [
+        "Endast prenumeranter"
+      ],
+      "Ultra servers": [
+        "Ultraservrar"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-servrar, reserverade för dig"
+      ],
+      "Unlimited": [
+        "Obegränsad"
+      ],
+      "Up to ${ limit }": [
+        "Upp till ${ limit }"
+      ],
+      "Users": [
+        "Användare"
+      ],
+      "VPN devices at once": [
+        "VPN-enheter samtidigt"
       ]
     }
   }

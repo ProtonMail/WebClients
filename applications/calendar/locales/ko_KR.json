@@ -1027,6 +1027,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Don't show this again": [
+        "다시 보지 않기"
+      ],
+      "Skip to main content": [
+        "본문으로 건너뛰기"
       ]
     },
     "action": {
@@ -1142,6 +1148,9 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Managed Service Provider 애드온이 있는 조직은 자회사 조직을 만들고 관리할 수 있습니다."
       ]
     },
     "Alarm notification": {
@@ -6431,6 +6440,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "1 vault per user": [
+        "사용자 당 금고 1개"
+      ],
+      "No payment is required.": [
+        "결제 필요 없음."
       ]
     },
     "info": {
@@ -12041,6 +12056,12 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Special offer": [
+        "특별 제안"
+      ],
+      "Verify it’s you": [
+        "본인 여부 확인"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12660,6 +12681,16 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "닫기"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "제안 사용 불가"
       ]
     }
   }

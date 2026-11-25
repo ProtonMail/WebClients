@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Don't show this again": [
+        "Ne plus afficher"
+      ],
+      "Skip to main content": [
+        "Passer au contenu principal"
       ]
     },
     "action": {
@@ -1178,6 +1184,13 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alarm notification": {
@@ -4540,6 +4553,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La demande de clé de sécurité a été annulée ou a expiré. Veuillez réessayer."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Votre appareil n'a pas pu traiter la demande de clé de sécurité. Veuillez réessayer ou utiliser un autre moyen de connexion."
       ]
     },
     "fido2: Info": {
@@ -6579,6 +6598,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pour garantir la sécurité de votre compte, veuillez confirmer que c'est bien vous avant de continuer."
       ]
     },
     "info": {
@@ -7337,6 +7359,9 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Mot de passe du compte ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12364,6 +12389,15 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Offre spéciale"
+      ],
+      "Verify it’s you": [
+        "Vérifiez que c'est bien vous"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13027,6 +13061,54 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fermer"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offre non disponible"
+      ]
+    },
+    "Visionary upsell": {
+      "10 years": [
+        "10 ans"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Password vaults": [
+        "Coffre-fort de mot de passe"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive et Pass premium"
+      ],
+      "Previous versions": [
+        "Version précédente"
+      ],
+      "Storage": [
+        "Espace de stockage"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Jusqu'à ${ limit }"
+      ],
+      "Users": [
+        "Utilisateurs"
       ]
     }
   }

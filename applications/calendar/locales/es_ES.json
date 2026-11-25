@@ -1064,6 +1064,12 @@
       ],
       "Previous contact": [
         "Contacto anterior"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
+      "Skip to main content": [
+        "Omitir al contenido principal"
       ]
     },
     "action": {
@@ -1193,6 +1199,9 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencias del asistente de escritura"
       ]
     },
     "Alarm notification": {
@@ -4141,6 +4150,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Tu conexión de Zoom ha expirado. Vuelve a conectarte para continuar."
+      ],
+      "Meeting not created. Try again.": [
+        "No se ha creado la reunión. Inténtalo de nuevo."
       ]
     },
     "error": {
@@ -4560,6 +4572,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de la clave de seguridad se ha cancelado o ha superado el tiempo de espera. Inténtalo de nuevo."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Tu dispositivo no ha podido completar la solicitud de la clave de seguridad. Inténtalo de nuevo o usa otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -5359,7 +5377,7 @@
         "Ciclo de facturación: ${ text }"
       ],
       "Booking contact email: ${ selectedCalendar.Email }": [
-        "Correo de contacto para reservas: ${ selectedCalendar.Email }"
+        "Para reservas recurrir al correo: ${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "Página de reservas eliminada"
@@ -5618,7 +5636,7 @@
         "No se ha podido actualizar la programación de la reunión"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos de 50 GB cada uno"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -5907,7 +5925,7 @@
         "Otras cuentas"
       ],
       "Other location": [
-        "Otra ubicación"
+        "Ubicación adicional"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Otros usuarios en tu organización verán tus espacios ocupados. No se comparten los detalles del evento."
@@ -6617,6 +6635,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Ya no se ofrecen lugares como asistentes de redacción"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ayudarnos a mantener segura su cuenta, confirme que es realmente usted antes de continuar."
       ]
     },
     "info": {
@@ -6914,7 +6935,7 @@
         "Categoría"
       ],
       "Check additional calendars for availability": [
-        "Consultar disponibilidad en otros calendarios"
+        "Revisar disponibilidad en otros calendarios"
       ],
       "City": [
         "Ciudad"
@@ -7375,6 +7396,9 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } contraseña de la cuenta"
       ]
     },
     "label": {
@@ -12408,6 +12432,12 @@
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifica que eres tú"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13141,6 +13171,81 @@
       ],
       "For getting more done": [
         "Por hacer más"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuario"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartido"
+      ],
+      "10 years": [
+        "10 años"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una capa de mayor capacidad con servidores ${ VPN_APP_NAME }: mucho menos personas comparten cada uno, y utilizan ${ BRAND_NAME } con direcciones IP propias. Quick Connect las selecciona automáticamente donde estén disponibles."
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Custom email domains": [
+        "Personalizar dominios de correo electrónico"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Llamado así por el financiamiento colectivo de los simpatizantes que hicieron posible ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } en 2014. Todos los servicios premium ${ BRAND_NAME } en un solo plan."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuevos ${ BRAND_NAME } servicios sin costo adicional"
+      ],
+      "Password vaults": [
+        "Bóveda de contraseñas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Correo premium, Calendario, Drive y Pass"
+      ],
+      "Previous versions": [
+        "Versiones anteriores"
+      ],
+      "Storage": [
+        "Almacenamiento"
+      ],
+      "Subscribers only": [
+        "Solo suscriptores"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra reservados para usted"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Hasta ${ limit }"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN de inmediato"
       ]
     }
   }

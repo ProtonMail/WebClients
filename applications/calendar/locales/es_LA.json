@@ -1064,6 +1064,12 @@
       ],
       "Previous contact": [
         "Contacto anterior"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
+      "Skip to main content": [
+        "Saltar al contenido principal"
       ]
     },
     "action": {
@@ -1193,6 +1199,13 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licencias del asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licencia de asistente de escritura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licencias de asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alarm notification": {
@@ -4563,6 +4576,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite claves de seguridad. Intente con otro navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de llave de seguridad fue cancelada o se agotó la espera. Intente de nuevo."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Su dispositivo no pudo completar la solicitud de llave de seguridad. Intente de nuevo o use otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -5913,7 +5932,7 @@
         "Otra ubicación"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
-        "Otros usuarios en la organización verán sus espacios ocupados. No se comparten detalles del evento."
+        "Otros usuarios en su organización verán sus espacios ocupados. No se comparten detalles del evento."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nuestras alertas ponen la seguridad en primer lugar. Si no reconoce la información vulnerada, puede ignorar este informe."
@@ -6129,7 +6148,7 @@
         "Gracias por suscribirse. La navegación segura comienza ahora."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
-        "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
+        "La información expuesta fue filtrada desde un servicio de terceros. La información de su cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
       "The following participants cannot be notified about your changes:": [
         "Los siguientes participantes no pueden ser notificados de los cambios:"
@@ -6449,7 +6468,7 @@
         "Reciba notificaciones si su contraseña u otro dato fue filtrado desde un servicio de terceros."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
-        "Tiene una suscripción de prueba ${ planTitle }. Si desea continuar la suscripción después del periodo de prueba, agregue un método de pago."
+        "Tiene la suscripción de prueba ${ planTitle }. Si desea continuar su suscripción después del periodo de prueba, añada un método de pago."
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. La suscripción será renovada automáticamente al finalizar el periodo de prueba."
@@ -6534,10 +6553,10 @@
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
       "Your email address and password were leaked:": [
-        "La dirección de correo electrónico y contraseña fueron filtradas:"
+        "Su dirección de correo electrónico y contraseña fueron filtradas:"
       ],
       "Your email address was exposed:": [
-        "La dirección de correo electrónico fue expuesta:"
+        "Su dirección de correo electrónico fue expuesta:"
       ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
@@ -6582,7 +6601,7 @@
         "Su actividad en línea está protegida."
       ],
       "Your password was leaked:": [
-        "La contraseña fue filtrada:"
+        "Su contraseña fue filtrada:"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El número de teléfono sólo se usará para esta verificación única."
@@ -6620,6 +6639,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Ya no se venden licencias del asistente de escritura."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para mantener su cuenta segura, confirme que es realmente usted antes de continuar."
       ]
     },
     "info": {
@@ -7378,6 +7400,9 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contraseña de la cuenta de ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -8435,7 +8460,7 @@
         "Bóvedas compartidas ilimitadas de ${ PASS_SHORT_APP_NAME } por usuario"
       ],
       "Unlimited vault sharing": [
-        "Intercambios ilimitados de bóvedas"
+        "Compartir bóvedas ilimitado"
       ],
       "Unlimited vaults": [
         "Bóvedas ilimitadas"
@@ -8620,7 +8645,7 @@
         "${ VPN_APP_NAME }: Acceda a contenidos bloqueados y navegue de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
-        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de el escritorio"
+        "Acceda a ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME } desde la comodidad de su escritorio"
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video"
@@ -8638,13 +8663,13 @@
         "Elimina automáticamente los mensajes anteriores a 30 días de la papelera y spam"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Reenvíe correos automáticamente enviados a la cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
+        "Reenvía correos automáticamente enviados a su cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
-        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue el mensaje"
+        "Elija horarios personalizados para recibir recordatorios de un correo o para que llegue su mensaje"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
@@ -9440,7 +9465,7 @@
     },
     "passwordless": {
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado las claves"
+        "Los usuarios no privados podrán ser promovidos a administradores cuando hayan configurado sus claves"
       ],
       "Organization key does not exist.": [
         "La clave de la organización no existe."
@@ -9741,7 +9766,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid security code": [
-        "El código de seguridad no es válido."
+        "Código de seguridad inválido"
       ],
       "Please enter the account holder name": [
         "Ingrese el nombre del titular de la cuenta"
@@ -9753,7 +9778,7 @@
         "No podemos autenticar su método de pago. Elija un método de pago diferente o intente de nuevo."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
+        "Su tarjeta fue rechazada, pruebe otra tarjeta o póngase en contacto con su banco para autorizar el cargo."
       ]
     },
     "Payments.error": {
@@ -11040,7 +11065,7 @@
         "2 usuarios"
       ],
       "Add any new files": [
-        "Agregar archivos nuevos"
+        "Añadir archivos nuevos"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Después de que expire la suscripción a ${ planName }, se le pasará a ${ BRAND_NAME } Free el cual ofrece hasta 1 GB de almacenamiento en Mail y hasta 5 GB en Drive. También perderá cualquier bonificación de almacenamiento recibida anteriormente."
@@ -11058,7 +11083,7 @@
         "Reenvío de correo automático"
       ],
       "Back up photos from your devices": [
-        "Respaldar fotos desde dispositivos"
+        "Respaldar fotos desde sus dispositivos"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genere confianza y reconocimiento de marca con direcciones de correo profesionales en su propio dominio."
@@ -11130,10 +11155,10 @@
         "Haga que su negocio se destaque"
       ],
       "Manage your calendar": [
-        "Gestionar los calendarios"
+        "Gestionar sus calendarios"
       ],
       "Online privacy, for your whole family": [
-        "Privacidad en línea para toda la familia"
+        "Privacidad en línea para toda su familia"
       ],
       "Our fight against censorship in Russia": [
         "Nuestra lucha contra la censura en Rusia"
@@ -11974,7 +11999,7 @@
         "Obtenga las aplicaciones de ${ appName[APP_NAME] }"
       ],
       "Get the apps": [
-        "Obtener las aplicaciones"
+        "Obtener las apps"
       ],
       "Gift": [
         "Regalía"
@@ -12411,6 +12436,15 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique que es usted"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13144,6 +13178,81 @@
       ],
       "For getting more done": [
         "Para lograr más"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuario"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartido"
+      ],
+      "10 years": [
+        "10 años"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Un nivel de servidores de ${ VPN_APP_NAME } de mayor capacidad: menos personas comparten cada uno y usan direcciones IP propiedad de ${ BRAND_NAME }. Conexión Rápida los selecciona automáticamente cuando están disponibles."
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Custom email domains": [
+        "Dominios de correo personalizados"
+      ],
+      "Email addresses": [
+        "Direcciones de correo"
+      ],
+      "Hide-my-email aliases": [
+        "Alias de hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Nombrado en honor a los patrocinadores de financiación colectiva que hicieron posible ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } en 2014. Todos los servicios premium de ${ BRAND_NAME } en un solo plan."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Servicios nuevos de ${ BRAND_NAME } sin costo adicional"
+      ],
+      "Password vaults": [
+        "Bóvedas de contraseñas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Correo premium, Calendario, Drive y Pass"
+      ],
+      "Previous versions": [
+        "Versiones anteriores"
+      ],
+      "Storage": [
+        "Almacenamiento"
+      ],
+      "Subscribers only": [
+        "Solo para suscriptores"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra reservados para usted"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Hasta ${ limit }"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN simultáneos"
       ]
     }
   }

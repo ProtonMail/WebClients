@@ -1030,6 +1030,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Бесплатная пробная версия вашего приложения заканчивается на ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Don't show this again": [
+        "Больше не показывать это"
+      ],
+      "Skip to main content": [
+        "Перейти к основному содержимому"
       ]
     },
     "action": {
@@ -12482,6 +12488,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Verify it’s you": [
+        "Подтвердите, что это вы"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13235,6 +13244,16 @@
     "Browser": {
       "${ appName } Desktop application": [
         "Приложение ${ appName } для ПК"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыть"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Предложение недоступно"
       ]
     }
   }

@@ -1064,6 +1064,12 @@
       ],
       "Previous contact": [
         "Önceki kişi"
+      ],
+      "Don't show this again": [
+        "Bunu yeniden gösterme"
+      ],
+      "Skip to main content": [
+        "Ana içeriğe git"
       ]
     },
     "action": {
@@ -1193,6 +1199,13 @@
       ],
       "Writing assistant seats": [
         "Yazma asistanı koltuk sayısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
       ]
     },
     "Alarm notification": {
@@ -4563,6 +4576,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Güvenlik anahtarı isteği iptal edildi veya zaman aşımına uğrandı. Lütfen yeniden deneyin."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Aygıtınız güvenlik anahtarı isteğini tamamlayamadı. Yeniden deneyin veya başka bir oturum açma yöntemi kullanın."
       ]
     },
     "fido2: Info": {
@@ -6620,6 +6639,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Yazma yardımcısı koltukları artık satılmıyor"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ]
     },
     "info": {
@@ -7227,7 +7249,7 @@
         "Birincil"
       ],
       "Proration": [
-        "Hesap bakiyesi"
+        "Hesabınızdaki tutar"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -7378,6 +7400,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } hesabı parolası"
       ]
     },
     "label": {
@@ -9771,7 +9796,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Krediler hesabınızın kalan tutarına eklenecek"
+        "Krediler hesabınızdaki tutara eklenecek"
       ]
     },
     "Payments.InfoBanner": {
@@ -12411,6 +12436,15 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Özel teklif"
+      ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13144,6 +13178,81 @@
       ],
       "For getting more done": [
         "Daha fazlasını yapmak için"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Kapat"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif kullanılamıyor"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "Her kullanıcı için ${ devicesPerUser }"
+      ],
+      "${ storage } shared": [
+        "${ storage } paylaşımlı"
+      ],
+      "10 years": [
+        "10 yıl"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "${ VPN_APP_NAME } sunucularının daha yüksek kapasiteli bir düzeyi: Her bir sunucuyu paylaşan kullanıcı sayısı çok daha azdır ve bu sunucular ${ BRAND_NAME } IP adreslerini kullanır. Hızlı bağlan seçeneği bu sunucular var olduğunda otomatik olarak onları seçer."
+      ],
+      "Calendars": [
+        "Takvimler"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Adını 2014 yılında ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } hizmetinin hayata geçmesini sağlayan kitle fonlaması destekçilerinden almıştır. Tüm ücretli ${ BRAND_NAME } hizmetleri tek tarifede."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Ek ücret ödemeden yararlanabileceğiniz yeni ${ BRAND_NAME } hizmetleri"
+      ],
+      "Password vaults": [
+        "Parola kasaları"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Ücretli Mail, Calendar, Drive ve Pass"
+      ],
+      "Previous versions": [
+        "Önceki sürümler"
+      ],
+      "Storage": [
+        "Depolama alanı"
+      ],
+      "Subscribers only": [
+        "Yalnızca aboneler"
+      ],
+      "Ultra servers": [
+        "Ultra sunucuları"
+      ],
+      "Ultra servers, reserved for you": [
+        "Size özel Ultra sunucuları"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "${ limit } taneye kadar"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "VPN devices at once": [
+        "Aynı anda bağlanabilecek VPN aygıtı"
       ]
     }
   }

@@ -1022,6 +1022,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Don't show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
+      "Skip to main content": [
+        "Siirry suoraan sisältöön"
       ]
     },
     "action": {
@@ -12071,6 +12077,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Verify it’s you": [
+        "Vahvista henkilöllisyytesi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12739,6 +12748,16 @@
       ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay – kortti päättyen ${ Last4 }"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Sulje"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tarjous ei ole saatavilla"
       ]
     }
   }
