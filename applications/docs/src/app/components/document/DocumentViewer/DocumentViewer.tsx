@@ -65,6 +65,7 @@ import {
   useIsOpenTracerEnabled,
   useIsSheetsEnabled,
 } from '~/utils/flags'
+import { usePrintShortcut } from '~/utils/printShortcut'
 import type { ProviderType } from '../../../provider-type'
 import TracerAlert from '../../../tracer/TracerAlert'
 import { EditorFrame } from '../EditorFrame'
@@ -243,6 +244,12 @@ export function DocumentViewer({
   const renderEditor = !application.isPublicMode ? true : isPublicViewer != undefined
 
   useChangeAddressWhenPubliclyShared(nodeMeta, documentState)
+
+  usePrintShortcut(
+    ready && editorController && bridge
+      ? () => editorController.printAsPDF().catch((error) => application.logger.error('Failed to print', error))
+      : undefined,
+  )
 
   const { isSuggestionsEnabled } = useSuggestionsFeatureFlag()
   useEffect(() => {
