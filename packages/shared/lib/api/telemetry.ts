@@ -255,6 +255,7 @@ export enum TelemetryIcsSurgeryEvents {
 export enum TelemetryAccountSignupEvents {
     pageLoad = 'fe.page_load',
     planSelect = 'user.plan_select',
+    planCardClick = 'user.plan_card_click',
     cycleSelect = 'user.cycle_select',
     currencySelect = 'user.currency_select',
     userSignIn = 'user.sign_in',

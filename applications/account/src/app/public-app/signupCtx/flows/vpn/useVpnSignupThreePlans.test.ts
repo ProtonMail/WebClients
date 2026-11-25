@@ -19,6 +19,7 @@ const eligibleOptions = {
     coupon: undefined,
     trial: undefined,
     preSelectedPlan: undefined,
+    urlVariant: 'b',
 };
 
 describe('useVpnSignupThreePlans', () => {
@@ -30,6 +31,16 @@ describe('useVpnSignupThreePlans', () => {
         const { result } = renderHook(() => useVpnSignupThreePlans(eligibleOptions));
 
         expect(result.current).toEqual({ variant: 'Treatment', showThreePlans: true });
+    });
+
+    it.each([
+        ['without the v parameter', undefined],
+        ['with another v value', 'a'],
+        ['with a value of the VPN 2024 signup experiment', 'pass-addon-only'],
+    ])('tags eligible users of the Treatment variant as Control %s', (_, urlVariant) => {
+        const { result } = renderHook(() => useVpnSignupThreePlans({ ...eligibleOptions, urlVariant }));
+
+        expect(result.current).toEqual({ variant: 'Control', showThreePlans: false });
     });
 
     it('tags eligible users of the Control variant without showing the three plans', () => {
@@ -64,6 +75,10 @@ describe('useVpnSignupThreePlans', () => {
         ['trials', { trial: true }],
         ['links that preselect another plan', { preSelectedPlan: PLANS.VPN_PASS_BUNDLE }],
         ['links that preselect the free plan', { preSelectedPlan: 'free' }],
+        [
+            'links that preselect another plan, even with ?v=b',
+            { preSelectedPlan: PLANS.VPN_PASS_BUNDLE, urlVariant: 'b' },
+        ],
     ])('leaves out %s', (_, options) => {
         const { result } = renderHook(() => useVpnSignupThreePlans({ ...eligibleOptions, ...options }));
 

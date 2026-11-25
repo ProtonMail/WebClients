@@ -556,6 +556,7 @@ const VpnSignup = ({ onLogin, onPreSubmit, onStartAuth, onSessionExpired, toApp,
         coupon: signupParameters.coupon,
         trial: signupParameters.trial,
         preSelectedPlan: signupParameters.preSelectedPlan,
+        urlVariant: signupParameters.vpn2024SignupExperimentVariant,
     });
 
     const planToCheck = {

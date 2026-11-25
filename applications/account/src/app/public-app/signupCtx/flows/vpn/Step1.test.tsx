@@ -9,9 +9,11 @@ import { getOptimisticPaymentStatus } from '@proton/payments/core/payment-status
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 import { createMockModel, createMockSignupParameters } from '@proton/payments/testing/signup';
+import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 
 import { Steps } from '../../../single-signup-v2/interface';
 import Step1 from './Step1';
+import type { Measure } from './interface';
 
 vi.mock('./PaymentSummary', () => ({
     __esModule: true,
@@ -102,9 +104,10 @@ interface HarnessProps {
     email?: string;
     reservedUser?: boolean;
     showThreePlans?: boolean;
+    measure?: Measure;
 }
 
-const Harness = ({ email, reservedUser, showThreePlans = false }: HarnessProps) => (
+const Harness = ({ email, reservedUser, showThreePlans = false, measure = vi.fn() }: HarnessProps) => (
     <ModalsProvider>
         <Step1
             activeBreakpoint={{ viewportWidth: { '>=large': true } } as any}
@@ -120,7 +123,7 @@ const Harness = ({ email, reservedUser, showThreePlans = false }: HarnessProps) 
             model={{ step: Steps.Account, subscriptionData: undefined, reservedUser }}
             sessionUID={undefined}
             upsellImg={<div />}
-            measure={vi.fn()}
+            measure={measure}
             toAppName="Proton VPN"
             telemetryContext={{} as any}
             signupParameters={{ ...createMockSignupParameters(), email }}
@@ -296,5 +299,17 @@ describe('VPN Step1 three plans', () => {
         expect(payments.selectPlan).toHaveBeenCalledWith(
             expect.objectContaining({ planIDs: { [PLANS.BUNDLE]: 1 }, coupon: 'GIFT10' })
         );
+    });
+
+    it.each([PLANS.FREE, PLANS.VPN2024, PLANS.BUNDLE])('measures the click on the CTA of the %s card', async (plan) => {
+        const measure = vi.fn().mockResolvedValue(undefined);
+        render({ showThreePlans: true, measure });
+
+        await userEvent.click(await screen.findByTestId(`three-plans-select-${plan}`));
+
+        expect(measure).toHaveBeenCalledWith({
+            event: TelemetryAccountSignupEvents.planCardClick,
+            dimensions: { plan, cycle: expect.any(String) },
+        });
     });
 });

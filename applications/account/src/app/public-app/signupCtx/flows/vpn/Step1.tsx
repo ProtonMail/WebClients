@@ -472,6 +472,14 @@ const Step1 = ({
         select({ planIDs });
     };
 
+    /** CTA of a card of the three plans page, sent even if the plan is already selected */
+    const measurePlanCardClick = (planName: PLANS) => {
+        void measure({
+            event: TelemetryAccountSignupEvents.planCardClick,
+            dimensions: { plan: planName, cycle: `${options.cycle}` },
+        });
+    };
+
     const handleChangeCycle = ({ cycle, mode, planIDs }: { cycle: Cycle; mode?: 'upsell'; planIDs?: PlanIDs }) => {
         if (mode === 'upsell') {
             void measure({
@@ -1039,13 +1047,17 @@ const Step1 = ({
                                 handleChangeCycle({ cycle });
                             }}
                             onSelectPlan={(planName) => {
+                                measurePlanCardClick(planName);
                                 setToggleUpsell(undefined);
                                 if (options.plan.Name !== planName) {
                                     void handleChangePlanIds({ [planName]: 1 }, planName);
                                 }
                                 accountDetailsRef.current?.scrollInto('email');
                             }}
-                            onSelectFree={handleSelectFree}
+                            onSelectFree={() => {
+                                measurePlanCardClick(PLANS.FREE);
+                                void handleSelectFree();
+                            }}
                         />
                     </Box>
                 )}
