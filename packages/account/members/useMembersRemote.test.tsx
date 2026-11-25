@@ -12,7 +12,7 @@ import { membersPageReducer } from './membersPage';
 import { useMembersRemote } from './useMembersRemote';
 
 const setup = () => {
-    const api = vi.fn(async () => ({ Members: [{ ID: 'a', Name: 'a' } as Member], Total: 1 }));
+    const api = vi.fn(async (_config: { url: string }) => ({ Members: [{ ID: 'a', Name: 'a' } as Member], Total: 1 }));
     const { store } = getTestStore({
         reducer: { ...membersPageReducer, ...membersReducer },
         extraThunkArguments: { api } as unknown as ProtonThunkArguments,
@@ -48,5 +48,21 @@ describe('useMembersRemote', () => {
 
         await waitFor(() => expect(result.current.data).toHaveLength(1));
         expect(api).toHaveBeenCalledTimes(1);
+    });
+
+    it('fetches a search once while paging through its results', async () => {
+        const { api, wrapper } = setup();
+        const { result, rerender } = renderHook(
+            ({ page }) => useMembersRemote({ page, pageSize: 10, keywords: 'member' }),
+            { wrapper, initialProps: { page: 1 } }
+        );
+        await waitFor(() => expect(result.current.loading).toBe(false));
+
+        rerender({ page: 2 });
+        rerender({ page: 1 });
+
+        await waitFor(() => expect(result.current.loading).toBe(false));
+        expect(api).toHaveBeenCalledTimes(1);
+        expect(api).toHaveBeenCalledWith(expect.objectContaining({ url: 'core/v4/members/search' }));
     });
 });
