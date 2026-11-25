@@ -725,6 +725,8 @@ export const membersEventLoopV6Thunk = ({
             return;
         }
         await updateCollectionAsyncV6({
+            // Refetching the whole list is slow for a big org, and the remote users page refetches after it too
+            n: 25,
             events: event.Members,
             get: (ID) => getMember(api, ID),
             refetch: () => dispatch(membersThunk({ cache: CacheType.None })),
