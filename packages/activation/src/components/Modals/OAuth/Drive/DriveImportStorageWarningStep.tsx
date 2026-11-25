@@ -6,7 +6,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 
 import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '../../../../logic/store';
-import { DriveStepModal } from './DriveStepModal';
+import { EasySwitchStepModal } from '../../EasySwitchStepModal/EasySwitchStepModal';
 import { TransferDestinationErrorIllustration } from './illustrations/TransferDestinationErrorIllustration';
 
 export const DriveImportStorageWarningStep = () => {
@@ -28,16 +28,15 @@ export const DriveImportStorageWarningStep = () => {
     };
 
     return (
-        <DriveStepModal
+        <EasySwitchStepModal
             onClose={handleIgnore}
             media={<TransferDestinationErrorIllustration />}
-            secondaryAction={{ label: c('Action').t`Ignore`, onClick: handleIgnore }}
+            secondaryAction={{ label: c('Action').t`Maybe later`, onClick: handleIgnore }}
             primaryAction={{ label: c('Action').t`Upgrade`, onClick: handleUpgrade }}
+            title={c('Title').t`More storage needed to finish your import`}
         >
-            <h3 className="text-bold">{c('Title')
-                .t`Import started, but your storage won't be enough for this import`}</h3>
-            <p className="color-weak mt-2 mb-0">{c('Info')
-                .t`Please upgrade to ensure that the import finishes successfully.`}</p>
-        </DriveStepModal>
+            <p className="color-weak m-0">{c('Info')
+                .t`Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.`}</p>
+        </EasySwitchStepModal>
     );
 };

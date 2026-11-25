@@ -8,6 +8,9 @@ import { Href } from '@proton/atoms/Href/Href';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -21,19 +24,20 @@ import {
 } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
 import { useDriveSdk } from '../../../../logic/driveContext';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../logic/store';
+import { EasySwitchStepFeatureList } from '../../EasySwitchStepModal/EasySwitchStepFeatureList';
+import { EasySwitchStepModal } from '../../EasySwitchStepModal/EasySwitchStepModal';
 import { createImporterTask } from '../StepLoading/useStepLoadingImporting.helpers';
 import { DriveImportEmptyStep } from './DriveImportEmptyStep';
 import { DriveImportGenericErrorStep } from './DriveImportGenericErrorStep';
 import { DriveImportStorageWarningStep } from './DriveImportStorageWarningStep';
-import { DriveStepModal } from './DriveStepModal';
+import { DRIVE_IMPORT_STEPS } from './driveImportSteps';
 import { TransferringIllustration } from './illustrations/TransferringIllustration';
 
 /**
  * Drive only ever has one product, so this single modal covers gathering data, starting the
- * import task, and the final success message. It stays mounted across those steps (used for the
- * LoadingImporter, Prepare and Success slots) so the illustration keeps playing instead of
- * blinking closed/reopen - OAuthModal.tsx unmounts/remounts whenever the rendered component type
- * changes between steps.
+ * import task, and the final success message. DriveImportFlow renders it for every step after
+ * 'instructions', so it stays mounted from 'loading-importer' to 'success': the import task is
+ * started once and the illustration keeps playing instead of restarting.
  */
 export const DriveImportProcessModal = () => {
     const dispatch = useEasySwitchDispatch();
@@ -101,24 +105,45 @@ export const DriveImportProcessModal = () => {
     }
 
     return (
-        <DriveStepModal
-            onClose={isDone ? handleClose : undefined}
+        <EasySwitchStepModal
+            step={isDone ? DRIVE_IMPORT_STEPS.started : DRIVE_IMPORT_STEPS.preparing}
+            onClose={handleClose}
             closeDisabled={!isDone}
             media={<TransferringIllustration />}
             primaryAction={{ label: c('Action').t`Got it`, onClick: handleClose, disabled: !isDone }}
+            title={isDone ? c('Title').t`Import started` : c('Title').t`Preparing your import`}
         >
-            <h3 className="text-bold">{isDone ? c('Title').t`Import started` : c('Title').t`Preparing your import`}</h3>
-            <p className="color-weak mt-2 mb-0">
+            <p className="color-weak m-0">
                 {isDone
-                    ? c('Info')
-                          .t`We'll email you when your import is complete. Your files will appear in a folder in ${DRIVE_APP_NAME}.`
+                    ? c('Info').t`We're copying your files from Google Drive to ${DRIVE_APP_NAME}.`
                     : c('Info').t`Connecting to Google Drive and preparing your import.`}
             </p>
             {isDone && (
-                <p className="mt-2 mb-0">
-                    <Href href={getKnowledgeBaseUrl('/import-files-google-drive')}>{c('Link').t`Learn more`}</Href>
-                </p>
+                <>
+                    <p className="mt-2 mb-6">
+                        <Href href={getKnowledgeBaseUrl('/import-files-google-drive')}>{c('Link').t`Learn more`}</Href>
+                    </p>
+                    <EasySwitchStepFeatureList
+                        items={[
+                            {
+                                icon: <IcArrowsRotate />,
+                                title: c('Info').t`Runs in the background`,
+                                description: c('Info').t`You can close this and keep using ${DRIVE_APP_NAME}.`,
+                            },
+                            {
+                                icon: <IcFolder />,
+                                title: c('Info').t`Find your files`,
+                                description: c('Info').t`They'll be in a new folder in My files.`,
+                            },
+                            {
+                                icon: <IcEnvelopeDot />,
+                                title: c('Info').t`Know when it's done`,
+                                description: c('Info').t`We'll email you when your import is complete.`,
+                            },
+                        ]}
+                    />
+                </>
             )}
-        </DriveStepModal>
+        </EasySwitchStepModal>
     );
 };

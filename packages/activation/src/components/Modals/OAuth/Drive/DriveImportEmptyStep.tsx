@@ -5,7 +5,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '../../../../logic/store';
-import { DriveStepModal } from './DriveStepModal';
+import { EasySwitchStepModal } from '../../EasySwitchStepModal/EasySwitchStepModal';
 import { TransferSourceErrorIllustration } from './illustrations/TransferSourceErrorIllustration';
 
 export const DriveImportEmptyStep = () => {
@@ -20,18 +20,17 @@ export const DriveImportEmptyStep = () => {
     };
 
     return (
-        <DriveStepModal
+        <EasySwitchStepModal
             onClose={handleClose}
             media={<TransferSourceErrorIllustration />}
-            secondaryAction={{ label: c('Action').t`Close`, onClick: handleClose }}
             primaryAction={{ label: c('Action').t`Try again`, onClick: handleRetry }}
+            title={c('Title').t`Nothing to import`}
         >
-            <h3 className="text-bold">{c('Title').t`We could not find anything to import`}</h3>
-            <p className="color-weak mt-2 mb-0">{c('Info')
+            <p className="color-weak m-0">{c('Info')
                 .t`Your Google Drive may be empty or contain only files that are not supported.`}</p>
             <p className="mt-2 mb-0">
                 <Href href={getKnowledgeBaseUrl('/drive-easy-switch-troubleshooting')}>{c('Link').t`Learn more`}</Href>
             </p>
-        </DriveStepModal>
+        </EasySwitchStepModal>
     );
 };

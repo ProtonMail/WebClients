@@ -5,12 +5,13 @@ import useSettingsLink from '@proton/components/components/link/useSettingsLink'
 import { useOptionalSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import useLoading from '@proton/hooks/useLoading';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { ApiImporterError } from '../../../../api/api.interface';
 import { useReconnectOAuthImport } from '../../../../hooks/useReconnectOAuthImport';
 import { EASY_SWITCH_SOURCES, ImportType } from '../../../../interface';
 import type { Importer } from '../../../../logic/importers/importers.interface';
-import { DriveStepModal } from './DriveStepModal';
+import { EasySwitchStepModal } from '../../EasySwitchStepModal/EasySwitchStepModal';
 import { TransferDestinationErrorIllustration } from './illustrations/TransferDestinationErrorIllustration';
 import { TransferSourceErrorIllustration } from './illustrations/TransferSourceErrorIllustration';
 
@@ -40,48 +41,50 @@ export const DriveImportPausedStep = ({ importer, errorCode, onClose }: Props) =
         onClose();
     };
 
-    const easySwitchSettingsLink = (
+    // Resume and cancel are only available in the Easy Switch settings for now, not in Drive
+    const getSettingsLink = (label: string) => (
         <SettingsLink key="easy-switch-settings" path="/easy-switch" onClick={onClose}>
-            {c('Link').t`settings`}
+            {label}
         </SettingsLink>
     );
 
+    const resumeSettingsLink = getSettingsLink(c('Link').t`Resume or cancel your import in settings`);
+
     if (errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION) {
         return (
-            <DriveStepModal
+            <EasySwitchStepModal
                 onClose={onClose}
                 media={<TransferSourceErrorIllustration />}
-                secondaryAction={{ label: c('Action').t`Dismiss`, onClick: onClose }}
                 primaryAction={{
                     label: c('Action').t`Reconnect`,
                     onClick: handleReconnect,
                     disabled: loadingConfig || loadingReconnect,
                 }}
+                title={c('Title').t`Your import was interrupted`}
             >
-                <h3 className="text-bold">{c('Title').t`Reconnect to finish your import`}</h3>
-                <p className="color-weak mt-2 mb-0">{c('Info')
-                    .t`Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.`}</p>
-                <p className="color-weak mt-2 mb-0">
-                    {c('Info').jt`You can also cancel your import in ${easySwitchSettingsLink}.`}
-                </p>
-            </DriveStepModal>
+                <p className="color-weak m-0">{c('Info')
+                    .t`${BRAND_NAME} lost access to your Google Drive. Reconnect to continue the import.`}</p>
+                <p className="mt-2 mb-0">{getSettingsLink(c('Link').t`Cancel your import in settings`)}</p>
+            </EasySwitchStepModal>
         );
     }
 
     return (
-        <DriveStepModal
+        <EasySwitchStepModal
             onClose={onClose}
             media={<TransferDestinationErrorIllustration />}
-            secondaryAction={{ label: c('Action').t`Dismiss`, onClick: onClose }}
+            secondaryAction={{ label: c('Action').t`Maybe later`, onClick: onClose }}
             primaryAction={{ label: c('Action').t`Upgrade`, onClick: handleUpgrade }}
+            title={c('Title').t`More storage needed to finish your import`}
         >
-            <h3 className="text-bold">{c('Title').t`More storage needed to finish your import`}</h3>
-            <p className="color-weak mt-2 mb-0">{c('Info')
-                .t`Your import is blocked. Upgrade now to bring the rest of your files over.`}</p>
+            <p className="color-weak m-0">{c('Info')
+                .t`Your import is paused. Upgrade now to bring the rest of your files over.`}</p>
             <p className="color-weak mt-2 mb-0">
-                {c('Info')
-                    .jt`If you've already upgraded, you can resume your import in ${easySwitchSettingsLink}. You can also cancel it there.`}
+                {
+                    // translator: full sentence "Already upgraded? Resume or cancel your import in settings"
+                    c('Info').jt`Already upgraded? ${resumeSettingsLink}`
+                }
             </p>
-        </DriveStepModal>
+        </EasySwitchStepModal>
     );
 };
