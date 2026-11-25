@@ -290,7 +290,7 @@ const Dropdown = ({
                 ref={combinedDropdownRef}
             >
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
-                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}-
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
                 <div
                     // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     role="button"
