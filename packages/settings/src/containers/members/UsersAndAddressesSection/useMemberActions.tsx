@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import {
@@ -67,6 +68,7 @@ import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
+import { canConfigureLumoSeats } from './canConfigureLumoSeats';
 import { useMemberRoleAssignmentRetry } from './useMemberRoleAssignmentRetry';
 
 export const useMemberActions = ({
@@ -94,6 +96,7 @@ export const useMemberActions = ({
 
     const getOrganizationKey = useGetOrganizationKey();
     const [subscription, loadingSubscription] = useSubscription();
+    const [allSubscriptions] = useAllSubscriptions();
     const [organization, loadingOrganization] = useOrganization();
     const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
@@ -149,6 +152,7 @@ export const useMemberActions = ({
     const allowLumoConfiguration =
         !isSubsidiaryOrg &&
         lumoAddonAvailable &&
+        canConfigureLumoSeats({ maxLumo: organization?.MaxLumo ?? 0, subscriptions: allSubscriptions }) &&
         !visionary &&
         app !== APPS.PROTONVPN_SETTINGS &&
         app !== APPS.PROTONPASS;
