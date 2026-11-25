@@ -15,7 +15,11 @@ function getAbsolutePath(value) {
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 export default {
-    addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-docs')],
+    addons: [
+        getAbsolutePath('@storybook/addon-links'),
+        getAbsolutePath('@storybook/addon-docs'),
+        getAbsolutePath('@storybook/addon-a11y'),
+    ],
     core: {
         disableTelemetry: true,
     },

@@ -4436,6 +4436,9 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
+      '@storybook/addon-a11y':
+        specifier: ^10.6.8
+        version: 10.6.8(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/addon-docs':
         specifier: ^10.6.8
         version: 10.6.8(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
@@ -18436,6 +18439,11 @@ packages:
   '@standardnotes/domain-core@1.41.3':
     resolution: {integrity: sha512-RM07Qv726gflw2mm3DyX85X5mE+0hGi1GYrfUFRc0OoJCfhPZgzHi4/kc1LI7iXMZGVmwbMMLqIbpzSEg7FEOg==}
     engines: {node: '>=18.0.0 <21.0.0'}
+
+  '@storybook/addon-a11y@10.6.8':
+    resolution: {integrity: sha512-+tzs6nyvy4A4/tCFcXZoYrt7d5K8nQN8p7H1nP1GFicTHY4mlQpebP2PZUBcitupXUpyvHfYvw8fJUhrQKJC4Q==}
+    peerDependencies:
+      storybook: ^10.6.8
 
   '@storybook/addon-docs@10.6.8':
     resolution: {integrity: sha512-5Xa3HX/OHDxFlMwCe5CBRjUbxntTyI6O1s4vo9crDiHqO3wZJY1zwdVLzNCbdZ58sh2pxAWrATk9rKi6MjWp/w==}
@@ -35485,6 +35493,12 @@ snapshots:
   '@standardnotes/domain-core@1.41.3':
     dependencies:
       uuid: 9.0.1
+
+  '@storybook/addon-a11y@10.6.8(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))':
+    dependencies:
+      '@storybook/global': 5.0.0
+      axe-core: 4.14.0
+      storybook: 10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
 
   '@storybook/addon-docs@10.6.8(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))':
     dependencies:
