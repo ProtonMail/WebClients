@@ -31,6 +31,7 @@ const passDesktopDevDependencies = [
     ...passDesktopMainProcessDevDependencies,
     ...withLintStagedPaths([
         'forge.config.ts',
+        'tools/build-webpack-only.ts',
         'webpack.main.config.ts',
         'webpack.renderer.config.ts',
         'webpack.plugins.ts',
