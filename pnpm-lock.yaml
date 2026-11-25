@@ -700,7 +700,7 @@ overrides:
   xlsx@^0.18.5: https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz
   yaml@^1.7.2: 1.10.3
 
-packageExtensionsChecksum: sha256-NEG+1pO1HpBBWuBwMD91T9OxbacmZe7vPpBBMO4Z2WU=
+packageExtensionsChecksum: sha256-BoSLXgNprRVV6ZQg8c/EqGUPgVL2R6C3Qypq3dH9dlg=
 
 patchedDependencies:
   '@lexical/code@0.38.2': 04c61ae6ca19fc6797d9b7d3d468e0a0a40b3ab86aad8926449aa7dbd4f7483e
@@ -11380,7 +11380,7 @@ importers:
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       '@unleash/toolbar':
         specifier: ^1.2.1
-        version: 1.2.1(@unleash/proxy-client-react@6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2))(unleash-proxy-client@3.8.2)
+        version: 1.2.1(@unleash/proxy-client-react@6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2))(react@18.3.1)(unleash-proxy-client@3.8.2)
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
@@ -19503,6 +19503,7 @@ packages:
     peerDependencies:
       '@unleash/nextjs': '*'
       '@unleash/proxy-client-react': '*'
+      react: '*'
       unleash-proxy-client: ^3.0.0
     peerDependenciesMeta:
       '@unleash/nextjs':
@@ -36596,9 +36597,10 @@ snapshots:
       unleash-proxy-client: 3.8.2
       use-sync-external-store: 1.6.0(react@19.3.1)
 
-  '@unleash/toolbar@1.2.1(@unleash/proxy-client-react@6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2))(unleash-proxy-client@3.8.2)':
+  '@unleash/toolbar@1.2.1(@unleash/proxy-client-react@6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2))(react@18.3.1)(unleash-proxy-client@3.8.2)':
     dependencies:
       lit: 3.3.3
+      react: 18.3.1
       unleash-proxy-client: 3.8.2
     optionalDependencies:
       '@unleash/proxy-client-react': 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
