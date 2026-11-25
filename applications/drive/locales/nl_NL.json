@@ -1401,6 +1401,9 @@
       ],
       "Skip to main content": [
         "Direct naar hoofdinhoud"
+      ],
+      "Don't show this again": [
+        "Laat dit niet meer zien"
       ]
     },
     "Action: Docs": {
@@ -10850,6 +10853,10 @@
       ],
       "Failed to load sharing details": [
         "Kan de details over het delen niet laden"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } item kan niet hersteld worden",
+        "${ failedCount } items kunnen niet hersteld worden"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14707,6 +14714,9 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Verify it’s you": [
+        "Uw identiteit verifiëren"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15697,6 +15707,16 @@
       ],
       "Up to ${ limit }": [
         "Tot ${ limit }"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Sluiten"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Aanbieding niet beschikbaar"
       ]
     }
   }

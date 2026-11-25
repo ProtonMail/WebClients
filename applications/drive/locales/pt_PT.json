@@ -1374,6 +1374,9 @@
       ],
       "Switch to ${ planName }": [
         "Mudar para ${ planName }"
+      ],
+      "Don't show this again": [
+        "Não mostrar novamente"
       ]
     },
     "Actions": {
@@ -1484,6 +1487,9 @@
       ],
       "Managed Service Provider": [
         "Provedor de Serviço Gerido"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "As organizações com o complemento \"Provedor de Serviço Gerido\"  podem criar e gerir organizações subsidiárias."
       ]
     },
     "Alert": {
@@ -4210,6 +4216,15 @@
       ],
       "You can update a public link for your own files only": [
         "Pode atualizar uma hiperligação pública apenas para os seus próprios ficheiros"
+      ],
+      "A contact with this email address already exists": [
+        "Já existe um contacto com este endereço de correio eletrónico"
+      ],
+      "Could not grant access to the organization key": [
+        "Não foi possível conceder acesso à chave da organização"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Atingiu o número máximo de endereços conetados"
       ]
     },
     "Error importing calendar": {
@@ -7492,6 +7507,21 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Pode abrir esta pasta quando a importação terminar. Nós iremos enviar-lhe uma mensagem quando estiver concluída."
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "marca ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclui o assistente de escrita"
+      ],
+      "Thinking about this": [
+        "A pensar sobre isto"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tem uma fatura em aberto com vencimento em ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "O seu período de testes gratuito terminou. Subscreva agora para manter o acesso da sua equipa sem interrupções e as contas seguras."
       ]
     },
     "info": {
@@ -8671,6 +8701,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adicionar assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Message": {
@@ -10269,6 +10302,10 @@
       ],
       "This secure link expired, please change expire date in sharing settings": [
         "Está hiperligação segura expirou, por favor, altere a data de expiração nas definições de partilha"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "Não foi possível recuperar ${ failedCount } item",
+        "Não foi possível recuperar ${ failedCount } itens"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10642,6 +10679,12 @@
       ],
       "**Add a payment method** to keep using all of the features after your trial ends.": [
         "**Adicione um método de pagamento** para continuar a utilizar todas as funcionalidades depois de acabar o período de testes."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele a qualquer momento antes dessa data.** Poderá utilizar o ${ planTitle } até ao fim do período de teste, sem qualquer custo."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Assim que a sua subscrição completa começar...** Ainda pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
       ]
     },
     "Option": {
@@ -10965,6 +11008,12 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "A sua conta é muito antiga para a iniciativa de Born Private."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Mudar de plano é incompatível pelos seguintes motivos:"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta subscrição não pode ser concluída agora. Por favor, tente novamente. "
       ]
     },
     "Payments.Error": {
@@ -10988,6 +11037,9 @@
       ],
       "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
         "Nao foi possivel inicializar ${ IDEAL_WERO_BRAND_NAME }. Por favor, tente novamente mais tarde."
+      ],
+      "Please enter the account holder name": [
+        "Por favor, insira o nome do titular da conta"
       ]
     },
     "Payments.plan_name": {
@@ -13992,6 +14044,12 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Subscrever ${ planTitle }"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15149,6 +15207,26 @@
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
         "Agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, autoriza a ${ BRAND_NAME } e a Stripe, o nosso prestador de serviços de pagamento, a cobrar os futuros pagamentos da sua subscrição a partir desta conta bancária por débito direto SEPA, e autoriza o seu banco a debitar esses pagamentos. O seu primeiro pagamento é efetuado agora através de ${ IDEAL_WERO_BRAND_NAME }. O seu plano renova-se automaticamente até que o cancele; nós notificamo-lo antes de cada cobrança. Nas cobranças por débito direto, pode pedir um reembolso ao seu banco no prazo de 8 semanas a contar da data do débito, nos termos do acordo celebrado com o seu banco. Isto não se aplica ao pagamento através de ${ IDEAL_WERO_BRAND_NAME } que está a efetuar agora."
       ]
     }
   }

@@ -1448,6 +1448,9 @@
       ],
       "Skip to main content": [
         "Prejsť na hlavný obsah"
+      ],
+      "Don't show this again": [
+        "Nabudúce nezobrazovať"
       ]
     },
     "Action: Docs": {
@@ -8494,6 +8497,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Tento priečinok si môžete otvoriť po dokončení importu. Akonáhle bude import hotový, pošleme vám email."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "V záujme ochrany vášho účtu pred pokračovaním potvrďte svoju totožnosť."
       ]
     },
     "info": {
@@ -9434,6 +9440,9 @@
       ],
       "Why would you like to cancel?": [
         "Prečo chcete zrušiť?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Heslo k účtu ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -11532,6 +11541,12 @@
       ],
       "Failed to load sharing details": [
         "Nepodarilo sa načítať podrobnosti zdieľania"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } položku sa nepodarilo obnoviť",
+        "${ failedCount } položky sa nepodarilo obnoviť",
+        "${ failedCount } položiek sa nepodarilo obnoviť",
+        "${ failedCount } položiek sa nepodarilo obnoviť"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15592,6 +15607,15 @@
       ],
       "Reconnect to finish your import": [
         "Znovu sa pripojte, aby ste dokončili import"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ],
+      "Verify it’s you": [
+        "Overiť, že ste to vy"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16718,6 +16742,16 @@
       ],
       "VPN devices at once": [
         "VPN zariadení súčasne"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Zavrieť"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ponuka je nedostupná"
       ]
     }
   }

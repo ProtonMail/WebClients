@@ -1416,6 +1416,9 @@
       ],
       "Skip to main content": [
         "Omitir al contenido principal"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ]
     },
     "Action: Docs": {
@@ -7785,7 +7788,7 @@
         "No se pudo verificar que ${ nameAuthor } subiera ${ nodeName }. El orden de los datos del archivo podría haber sido manipulado. Ábrelo solo si confías en él."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos de 50 GB cada uno"
       ],
       "Each code can only be used once": [
         "Cada código solo se puede usar una vez"
@@ -8077,6 +8080,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Podrás abrir esta carpeta cuando finalice la importación. Te enviaremos un correo electrónico cuando termine."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ayudarnos a mantener segura su cuenta, confirme que es realmente usted antes de continuar."
       ]
     },
     "info": {
@@ -9008,6 +9014,9 @@
       ],
       "Image": [
         "Imagen"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } contraseña de la cuenta"
       ]
     },
     "Label for contact group color": {
@@ -14978,6 +14987,12 @@
       ],
       "Your import is in progress": [
         "Tu importación está en curso"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifica que eres tú"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16024,6 +16039,16 @@
       ],
       "VPN devices at once": [
         "Dispositivos VPN de inmediato"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
       ]
     }
   }

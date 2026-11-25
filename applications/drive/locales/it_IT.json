@@ -1422,6 +1422,9 @@
       ],
       "Skip to main content": [
         "Passa direttamente al contenuto principale"
+      ],
+      "Don't show this again": [
+        "Non mostrare più"
       ]
     },
     "Action: Docs": {
@@ -8137,6 +8140,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "È possibile aprire questa cartella al termine dell'importazione. Verrà inviata un'email al termine dell'operazione."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per contribuire a mantenere il tuo account al sicuro, conferma di essere davvero tu prima di continuare."
       ]
     },
     "info": {
@@ -9065,6 +9071,9 @@
       ],
       "Why would you like to cancel?": [
         "Perché vorresti annullare?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Password dell'account ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -11067,6 +11076,10 @@
       ],
       "Setting updated. Editors can't change permissions or share.": [
         "Impostazione aggiornata. Gli editor non possono modificare i permessi o condividere."
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "Recupero di ${ failedCount } elemento non riuscito",
+        "Recupero di ${ failedCount } elementi non riuscito"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15056,6 +15069,15 @@
       ],
       "Your import is in progress": [
         "L'importazione è in corso"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Offerta speciale"
+      ],
+      "Verify it’s you": [
+        "Verifica che sia tu"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16162,6 +16184,16 @@
       ],
       "VPN devices at once": [
         "Dispositivi VPN contemporaneamente"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Chiudi"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offerta non disponibile"
       ]
     }
   }

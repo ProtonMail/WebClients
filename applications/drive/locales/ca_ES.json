@@ -1434,6 +1434,9 @@
       ],
       "Skip to main content": [
         "Ves al contingut principal"
+      ],
+      "Don't show this again": [
+        "No ho tornis a mostrar"
       ]
     },
     "Action: Docs": {
@@ -8262,6 +8265,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Podreu obrir aquesta carpeta quan acabi la importació. Us enviarem un correu electrònic quan estigui llesta."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per ajudar a mantenir el vostre compte segur, confirmeu que sou realment vós abans de continuar."
       ]
     },
     "info": {
@@ -9193,6 +9199,9 @@
       ],
       "Why would you like to cancel?": [
         "Per què voleu cancel·lar?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contrasenya del compte de ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -11204,6 +11213,10 @@
       ],
       "Failed to load sharing details": [
         "No s'han pogut carregar els detalls de compartició"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "No s'ha pogut recuperar ${ failedCount } element",
+        "No s'han pogut recuperar ${ failedCount } elements"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15136,6 +15149,15 @@
       ],
       "Reconnect to finish your import": [
         "Torneu-vos a connectar per acabar la importació"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16249,6 +16271,16 @@
       ],
       "VPN devices at once": [
         "Dispositius VPN alhora"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Tanca"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "L'oferta no està disponible."
       ]
     }
   }

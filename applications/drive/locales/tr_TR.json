@@ -1434,6 +1434,9 @@
       ],
       "Skip to main content": [
         "Ana içeriğe git"
+      ],
+      "Don't show this again": [
+        "Bunu yeniden gösterme"
       ]
     },
     "Action: Docs": {
@@ -8262,6 +8265,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "İçe aktarma tamamlandığında bu klasörü açabilirsiniz. İşlem bittiğinde size e-posta göndereceğiz."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ]
     },
     "info": {
@@ -9190,6 +9196,9 @@
       ],
       "Why would you like to cancel?": [
         "Neden iptal etmek istiyorsunuz?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } hesabı parolası"
       ]
     },
     "Label for contact group color": {
@@ -11144,6 +11153,10 @@
       ],
       "Failed to load sharing details": [
         "Paylaşım ayrıntıları yüklenemedi"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } öğe kurtarılamadı",
+        "${ failedCount } öğe kurtarılamadı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15172,6 +15185,15 @@
       ],
       "Reconnect to finish your import": [
         "İçe aktarmayı tamamlamak için yeniden bağlanın"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Özel teklif"
+      ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16285,6 +16307,16 @@
       ],
       "VPN devices at once": [
         "Aynı anda bağlanabilecek VPN aygıtı"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Kapat"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif kullanılamıyor"
       ]
     }
   }

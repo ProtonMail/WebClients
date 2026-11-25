@@ -1431,6 +1431,9 @@
       ],
       "Toggle subfolders of ${ itemName }": [
         "Expandir/recolher subpastas de ${ itemName }"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
       ]
     },
     "Action: Docs": {
@@ -4610,6 +4613,9 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
+      ],
+      "Some invitations could not be loaded": [
+        "Não foi possível carregar alguns convites"
       ]
     },
     "error": {
@@ -8160,6 +8166,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "As licenças do assistente de escrita não são mais vendidas."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
       ]
     },
     "info": {
@@ -9091,6 +9100,9 @@
       ],
       "Why would you like to cancel?": [
         "Porque você gostaria de cancelar?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Senha da conta da ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -15115,6 +15127,12 @@
       ],
       "Reconnect to finish your import": [
         "Reconecte-se para concluir sua importação"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16205,6 +16223,19 @@
       ],
       "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
         "Nome em homenagem aos apoiadores do financiamento coletivo que tornaram o ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possível em 2014. Todos os serviços premium da ${ BRAND_NAME }, em um único plano."
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
       ]
     }
   }

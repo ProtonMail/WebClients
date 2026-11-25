@@ -1422,6 +1422,9 @@
       ],
       "Skip to main content": [
         "Hopp over til hovedinnhold"
+      ],
+      "Don't show this again": [
+        "Ikke vis dette igjen"
       ]
     },
     "Action: Docs": {
@@ -11113,6 +11116,10 @@
       ],
       "Failed to load sharing details": [
         "Kunne ikke laste inn delingsdetaljene"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } element kunne ikke gjenopprettes",
+        "${ failedCount } elementer kunne ikke gjenopprettes"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15105,6 +15112,12 @@
       ],
       "Your import is in progress": [
         "Importen pågår"
+      ],
+      "Special offer": [
+        "Spesialtilbud"
+      ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16060,6 +16073,16 @@
     "Payment Method": {
       "Bank Account": [
         "Bankkonto"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Lukk"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbudet er utilgjengelig"
       ]
     }
   }

@@ -1416,6 +1416,9 @@
       ],
       "Skip to main content": [
         "Passer au contenu principal"
+      ],
+      "Don't show this again": [
+        "Ne plus afficher"
       ]
     },
     "Action: Docs": {
@@ -8134,6 +8137,9 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
         "Vous ne pourrez pas partager ${ fileName } une fois votre accès passé en lecture. Le propriétaire ou un éditeur avec le droit de partager pourra restaurer votre accès. Vous ne pouvez pas annuler ce changement par vous-même."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pour garantir la sécurité de votre compte, veuillez confirmer que c'est bien vous avant de continuer."
       ]
     },
     "info": {
@@ -9065,6 +9071,9 @@
       ],
       "Why would you like to cancel?": [
         "Pourquoi voulez-vous annuler votre abonnement ?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Mot de passe du compte ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -11073,6 +11082,10 @@
       ],
       "Failed to load sharing details": [
         "Les informations du partage n'ont pas pu être chargés"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } élément n'a pas pu être récupéré",
+        "${ failedCount } éléments n'ont pas pu être récupérés"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15092,6 +15105,15 @@
       ],
       "Reconnect to finish your import": [
         "Reconnectez-vous pour terminer l'import"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Offre spéciale"
+      ],
+      "Verify it’s you": [
+        "Vérifiez que c'est bien vous"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16107,6 +16129,16 @@
       ],
       "Users": [
         "Utilisateurs"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fermer"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offre non disponible"
       ]
     }
   }

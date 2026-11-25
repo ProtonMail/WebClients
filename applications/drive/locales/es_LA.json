@@ -1434,6 +1434,9 @@
       ],
       "Skip to main content": [
         "Saltar al contenido principal"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ]
     },
     "Action: Docs": {
@@ -8250,6 +8253,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Puede abrir esta carpeta cuando la importación finalice. Le enviaremos un correo cuando se complete."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para mantener su cuenta segura, confirme que es realmente usted antes de continuar."
       ]
     },
     "info": {
@@ -9181,6 +9187,9 @@
       ],
       "Why would you like to cancel?": [
         "¿Por qué quiere cancelar?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contraseña de la cuenta de ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -11192,6 +11201,10 @@
       ],
       "Failed to load sharing details": [
         "Error al cargar los detalles de uso compartido"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "Error al recuperar ${ failedCount } elemento",
+        "Error al recuperar ${ failedCount } elementos"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15220,6 +15233,15 @@
       ],
       "Reconnect to finish your import": [
         "Vuelva a conectar para finalizar la importación"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique que es usted"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16310,6 +16332,16 @@
       ],
       "VPN devices at once": [
         "Dispositivos VPN simultáneos"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
       ]
     }
   }

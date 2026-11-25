@@ -1441,6 +1441,9 @@
       ],
       "Toggle subfolders of ${ itemName }": [
         "Comutare subfoldere din ${ itemName }"
+      ],
+      "Don't show this again": [
+        "Nu mai afișa asta"
       ]
     },
     "Action: Docs": {
@@ -8387,6 +8390,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Puteți deschide acest folder când importarea s-a finalizat. Veți primi un e-mail când va fi gata."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pentru a contribui la menținerea siguranței contului, confirmați-vă identitatea înainte de a continua."
       ]
     },
     "info": {
@@ -9321,6 +9327,9 @@
       ],
       "Why would you like to cancel?": [
         "De ce doriți să anulați?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Parolă cont ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -11347,6 +11356,11 @@
       ],
       "Failed to load sharing details": [
         "Încărcarea detaliilor de partajare a eșuat."
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "Eșuare recuperare articole: ${ failedCount }",
+        "Eșuare recuperare articole: ${ failedCount }",
+        "Eșuare recuperare articole: ${ failedCount }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15439,6 +15453,15 @@
       ],
       "Reconnect to finish your import": [
         "Reconectați-vă pentru a finaliza importarea"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16570,6 +16593,16 @@
       ],
       "VPN devices at once": [
         "Dispozitive VPN simultane"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Închidere"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ofertă indisponibilă"
       ]
     }
   }

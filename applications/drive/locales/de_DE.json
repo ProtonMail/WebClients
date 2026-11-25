@@ -1422,6 +1422,9 @@
       ],
       "Skip to main content": [
         "Zum Hauptinhalt springen"
+      ],
+      "Don't show this again": [
+        "Nicht mehr anzeigen"
       ]
     },
     "Action: Docs": {
@@ -8228,6 +8231,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Du kannst diesen Ordner öffnen, sobald der Import abgeschlossen ist. Wir schicken dir eine E-Mail, wenn er fertig ist."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
       ]
     },
     "info": {
@@ -9156,6 +9162,9 @@
       ],
       "Why would you like to cancel?": [
         "Warum möchtest du stornieren?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
       ]
     },
     "Label for contact group color": {
@@ -11167,6 +11176,10 @@
       ],
       "Failed to load sharing details": [
         "Die Details zur gemeinsamen Nutzung konnten nicht geladen werden"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } Eintrag konnte nicht wiederhergestellt werden",
+        "${ failedCount } Einträge konnten nicht wiederhergestellt werden"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15192,6 +15205,12 @@
       ],
       "Reconnect to finish your import": [
         "Stelle die Verbindung erneut her, um den Import abschließen zu können"
+      ],
+      "Special offer": [
+        "Sonderangebot"
+      ],
+      "Verify it’s you": [
+        "Überprüfe, ob du es bist"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16232,6 +16251,16 @@
       ],
       "VPN devices at once": [
         "VPN-Geräte gleichzeitig"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Schließen"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Angebot nicht verfügbar"
       ]
     }
   }

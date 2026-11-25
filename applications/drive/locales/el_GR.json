@@ -1434,6 +1434,9 @@
       ],
       "Skip to main content": [
         "Μετάβαση στο κύριο περιεχόμενο"
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
       ]
     },
     "Action: Docs": {
@@ -8262,6 +8265,9 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Μπορείτε να ανοίξετε αυτόν τον φάκελο μόλις ολοκληρωθεί η εισαγωγή. Θα σας στείλουμε ένα email όταν ολοκληρωθεί η διαδικασία."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
       ]
     },
     "info": {
@@ -9190,6 +9196,9 @@
       ],
       "Why would you like to cancel?": [
         "Γιατί θέλετε να ακυρώσετε;"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Κωδικός πρόσβασης Λογαριασμού ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -11144,6 +11153,10 @@
       ],
       "Failed to load sharing details": [
         "Αποτυχία φόρτωσης λεπτομερειών κοινής χρήσης"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } στοιχείο απέτυχε να ανακτηθεί",
+        "${ failedCount } στοιχεία απέτυχαν να ανακτηθούν"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15076,6 +15089,15 @@
       ],
       "Reconnect to finish your import": [
         "Συνδεθείτε ξανά για να ολοκληρώσετε την εισαγωγή σας"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16175,6 +16197,16 @@
       ],
       "VPN devices at once": [
         "Συσκευές VPN ταυτόχρονα"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Η προσφορά δεν είναι διαθέσιμη"
       ]
     }
   }

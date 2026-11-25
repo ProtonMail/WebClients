@@ -1431,6 +1431,9 @@
       ],
       "Skip to main content": [
         "Hoppa över till huvudinnehåll"
+      ],
+      "Don't show this again": [
+        "Visa inte detta igen"
       ]
     },
     "Action: Docs": {
@@ -4618,6 +4621,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Du nådde maxantalet av anslutna adresser"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Misslyckades att avkryptera revisionsmetadata"
       ]
     },
     "error": {
@@ -4666,7 +4672,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "FN-egenskap saknas"
+        "Egenskapen FN saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -7182,7 +7188,7 @@
         "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln genererades."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
+        "För att använda Adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Today": [
         "Idag"
@@ -8032,7 +8038,7 @@
         "Vi återkommer snart till dig."
       ],
       "${ claimedAuthor } (unverified sender)": [
-        "${ claimedAuthor }(obekräftad avsändare)"
+        "${ claimedAuthor } (ej verifierad avsändare)"
       ],
       "You can also cancel your import in ${ easySwitchSettingsLink }.": [
         "Du kan också avbryta din import om ${ easySwitchSettingsLink }."
@@ -8141,6 +8147,12 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Dina filer är krypterade och säkert förvarade i ${ DRIVE_APP_NAME }."
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Ett oväntat fel uppstod vid import av dina data. Försök igen senare."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ]
     },
     "info": {
@@ -9069,6 +9081,9 @@
       ],
       "Why would you like to cancel?": [
         "Vad vill du avbryta?"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Kontolösenord"
       ]
     },
     "Label for contact group color": {
@@ -11077,6 +11092,10 @@
       ],
       "Failed to load sharing details": [
         "Misslyckades att ladda delningsdetaljer"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } objekt misslyckades att återställas",
+        "${ failedCount } objekt misslyckades att återställas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12926,7 +12945,7 @@
         "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar per användare, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alla våra premiumtjänster med sina högsta gränser: 100 e-postadresser, stöd för 10 anpassade domäner, obegränsade Hide-my-email-alias, kalenderdelning, krypterad molnlagring och fildelning och mer."
@@ -15039,6 +15058,15 @@
       ],
       "Easy Switch from Google Drive": [
         "Enkelt byte från Google Drive"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Specialerbjudande"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16111,6 +16139,16 @@
       ],
       "VPN devices at once": [
         "VPN-enheter samtidigt"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Stäng"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Erbjudande ej tillgängligt"
       ]
     }
   }
