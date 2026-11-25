@@ -271,6 +271,12 @@ packageExtensions:
     '@types/react-router-dom@5':
         peerDependencies:
             '@types/react': '*'
+    # Imports react without declaring it, so it took the newest React in the workspace: React 19's once an app is on
+    # the `react19` catalog, a second copy in the React 18 apps ("Invalid hook call" in UnleashToolbarFlagProvider).
+    # As a peer it uses the React of @proton/unleash, and the react19 apps alias it to theirs.
+    '@unleash/toolbar@1':
+        peerDependencies:
+            react: '*'
 
 overrides:
     '@babel/runtime-corejs3@^7.24.4': '7.29.14'
