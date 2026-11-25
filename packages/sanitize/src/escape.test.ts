@@ -172,6 +172,23 @@ describe('Escape', () => {
             expect(sanitized).not.toContain('</');
         });
 
+        describe('style that keeps changing between decode and comment stripping', () => {
+            // Each level hides every `/` behind a comment-split reference, so it needs one more pass to settle
+            const hideSlashes = (style: string, levels: number): string =>
+                levels === 0 ? style : hideSlashes(style.replaceAll('/', '&#/**/47;'), levels - 1);
+            const style = 'color:red;/*x*/background:url(https://attacker.example/p.png)';
+
+            it('should keep a style that settles on the last allowed pass', () => {
+                expect(escapeURLinStyle(hideSlashes(style, 3))).toBe(
+                    'color:red;background:proton-url(https://attacker.example/p.png)'
+                );
+            });
+
+            it('should drop a style that does not settle within the allowed passes', () => {
+                expect(escapeURLinStyle(hideSlashes(style, 4))).toBe('');
+            });
+        });
+
         it('should escape a URL obfuscated with a hex escape and a CRLF pair', () => {
             const style = 'background-image:\\75\r\nrl(https://attacker.example/image.png)';
 
