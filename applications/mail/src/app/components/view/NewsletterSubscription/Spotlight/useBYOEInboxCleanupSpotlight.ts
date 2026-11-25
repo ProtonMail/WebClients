@@ -3,6 +3,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import useFinishedBYOEImportSenders from '../../../../hooks/useFinishedBYOEImportSenders';
 
@@ -24,6 +25,10 @@ export const useBYOEInboxCleanupSpotlight = () => {
         FeatureCode.NewsletterSubscriptionViewOnboarding,
         isCleanupEnabled
     );
+    const { update: updateNewsletterSpotlight } = useFeature<boolean>(
+        FeatureCode.NewsletterSubscriptionSpotlight,
+        false
+    );
 
     // Waits for the Mailing lists welcome value, so the copy doesn't switch once the spotlight is on screen
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
@@ -33,5 +38,11 @@ export const useBYOEInboxCleanupSpotlight = () => {
     const shouldShowSpotlight = useSpotlightShow(show, 0);
     const isNewToMailingLists = mailingListsOnboarding?.Value !== true;
 
-    return { shouldShowSpotlight, isNewToMailingLists, onDisplayed, onClose };
+    // It doubles as the introduction to Mailing lists, so Mail's own Mailing lists spotlight never shows after it
+    const handleDisplayed = () => {
+        onDisplayed();
+        updateNewsletterSpotlight(false).catch(noop);
+    };
+
+    return { shouldShowSpotlight, isNewToMailingLists, onDisplayed: handleDisplayed, onClose };
 };

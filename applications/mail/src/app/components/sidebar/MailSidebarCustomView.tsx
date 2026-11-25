@@ -37,7 +37,8 @@ const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: Sideba
         ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, newsletterSub.tabs.active.totalCount)
         : c('Title').t`Newsletters`;
 
-    // Both spotlights share the item's one Spotlight; they never show together, as Mail shows one spotlight per load
+    // Both spotlights share the item's one Spotlight; they never show together, as the newsletter one is hidden while
+    // the cleanup spotlight is due, and Mail shows one spotlight per load
     const isBYOESpotlightShown = byoeSpotlight.shouldShowSpotlight;
     const activeSpotlight = isBYOESpotlightShown ? byoeSpotlight : newsletterSpotlight;
 
