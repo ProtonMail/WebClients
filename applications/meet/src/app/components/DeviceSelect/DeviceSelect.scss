@@ -19,6 +19,25 @@
 	}
 }
 
+.device-select__label {
+	container-type: inline-size;
+
+	.device-select__label-full {
+		display: none;
+	}
+
+	@container (max-width: 14ch) {
+		.device-select__label-full {
+			display: block;
+		}
+
+		.device-select__label-start,
+		.device-select__label-end {
+			display: none;
+		}
+	}
+}
+
 .device-select__dropdown-item {
 	background-color: transparent !important;
 	color: var(--color-weak);
