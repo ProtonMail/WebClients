@@ -50,6 +50,7 @@ describe('DriveImportProcessModal', () => {
 
         easySwitchRender(<DriveImportProcessModal />);
 
+        screen.getByText('3 of 4');
         screen.getByText('Preparing your import');
         expect(screen.getByText('Got it')).toBeDisabled();
         expect(screen.getByTestId('modal:close')).toBeDisabled();
@@ -61,6 +62,8 @@ describe('DriveImportProcessModal', () => {
         easySwitchRender(<DriveImportProcessModal />);
 
         screen.getByText('Import started');
+        screen.getByText('4 of 4');
+        screen.getByText('Runs in the background');
         expect(screen.getByText('Got it')).toBeEnabled();
         expect(screen.getByTestId('modal:close')).toBeEnabled();
     });
@@ -79,7 +82,7 @@ describe('DriveImportProcessModal', () => {
 
         easySwitchRender(<DriveImportProcessModal />);
 
-        screen.getByText(/storage won't be enough for this import/);
+        screen.getByText('More storage needed to finish your import');
     });
 
     it('does not start the import on a blocking drive error', () => {
@@ -95,7 +98,7 @@ describe('DriveImportProcessModal', () => {
 
         easySwitchRender(<DriveImportProcessModal />);
 
-        screen.getByText('We could not find anything to import');
+        screen.getByText('Nothing to import');
     });
 
     it('shows the generic error step with the backend message for any other drive error', () => {

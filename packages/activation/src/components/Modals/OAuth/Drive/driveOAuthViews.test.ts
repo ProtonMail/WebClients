@@ -11,12 +11,12 @@ describe('driveOAuthViewsOverride', () => {
         );
     });
 
-    it('keeps LoadingImporter, Prepare and Success on the same component so it stays mounted across those steps', () => {
+    it('keeps Instructions, LoadingImporter, Prepare and Success on the same component so the dialog stays open across those steps', () => {
         const { Instructions, LoadingImporter, Prepare, Success } = driveOAuthViewsOverride.views;
 
         expect(typeof LoadingImporter).toBe('function');
         expect(Prepare).toBe(LoadingImporter);
         expect(Success).toBe(LoadingImporter);
-        expect(Instructions).not.toBe(LoadingImporter);
+        expect(Instructions).toBe(LoadingImporter);
     });
 });

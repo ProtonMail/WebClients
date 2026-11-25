@@ -5,6 +5,8 @@ import useSettingsLink from '@proton/components/components/link/useSettingsLink'
 import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
+import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
+import type * as OauthDraftActions from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import { easySwitchRender } from '../../../../tests/render';
 import { DriveImportStorageWarningStep } from './DriveImportStorageWarningStep';
 
@@ -17,14 +19,21 @@ vi.mock('@proton/components/components/link/useSettingsLink', () => ({
 
 const mockUseSettingsLink = useSettingsLink as Mock;
 
+// Keep the real action, only record the calls
+vi.mock('../../../../logic/draft/oauthDraft/oauthDraft.actions', async (importOriginal) => {
+    const actual = await importOriginal<typeof OauthDraftActions>();
+    return { ...actual, resetOauthDraft: vi.fn(actual.resetOauthDraft) };
+});
+
 describe('DriveImportStorageWarningStep', () => {
     it('lets the user ignore the warning without navigating away', () => {
         const goToSettings = vi.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(<DriveImportStorageWarningStep />);
-        fireEvent.click(screen.getByText('Ignore'));
+        fireEvent.click(screen.getByText('Maybe later'));
 
+        expect(resetOauthDraft).toHaveBeenCalledTimes(1);
         expect(goToSettings).not.toHaveBeenCalled();
     });
 

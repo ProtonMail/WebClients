@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DriveStepModal } from './DriveStepModal';
+import { EasySwitchStepModal } from '../../EasySwitchStepModal/EasySwitchStepModal';
 import { TransferDestinationErrorIllustration } from './illustrations/TransferDestinationErrorIllustration';
 
 interface Props {
@@ -9,14 +9,14 @@ interface Props {
 }
 
 export const DriveImportGenericErrorStep = ({ message, onClose }: Props) => (
-    <DriveStepModal
+    <EasySwitchStepModal
         onClose={onClose}
         media={<TransferDestinationErrorIllustration />}
         primaryAction={{ label: c('Action').t`Got it`, onClick: onClose }}
+        title={c('Title').t`Something went wrong`}
     >
-        <h3 className="text-bold">{c('Title').t`Something went wrong`}</h3>
-        <p className="color-weak mt-2 mb-0">
+        <p className="color-weak m-0">
             {message || c('Info').t`An unexpected error occurred while importing your data. Please try again later.`}
         </p>
-    </DriveStepModal>
+    </EasySwitchStepModal>
 );

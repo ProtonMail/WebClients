@@ -4,7 +4,8 @@ import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '../../../../logic/store';
-import { DriveStepModal } from './DriveStepModal';
+import { EasySwitchStepModal } from '../../EasySwitchStepModal/EasySwitchStepModal';
+import { DRIVE_IMPORT_STEPS } from './driveImportSteps';
 import { AuthorizationIllustration } from './illustrations/AuthorizationIllustration';
 
 interface Props {
@@ -19,17 +20,17 @@ export const DriveOauthTutorial = ({ triggerOAuth }: Props) => {
     };
 
     return (
-        <DriveStepModal
+        <EasySwitchStepModal
+            step={DRIVE_IMPORT_STEPS.grantAccess}
             onClose={handleClose}
             media={<AuthorizationIllustration />}
-            secondaryAction={{ label: c('Action').t`Cancel`, onClick: handleClose, color: 'weak' }}
             primaryAction={{ label: c('Action').t`Sign in with Google`, onClick: () => triggerOAuth() }}
+            title={c('Title').t`Sign in and grant access`}
         >
-            <h3 className="text-bold">{c('Title').t`Sign in and grant access`}</h3>
-            <p className="color-weak mt-2 mb-0">{c('Info')
+            <p className="color-weak m-0">{c('Info')
                 .t`Next, sign in to your Google Account and allow ${BRAND_NAME} to access Google Drive. We'll import your files and folders to ${DRIVE_APP_NAME}.`}</p>
             <p className="color-weak mt-2 mb-0">{c('Info')
                 .t`${BRAND_NAME} only uses this access for the import. Google never gets access to your ${BRAND_NAME} account.`}</p>
-        </DriveStepModal>
+        </EasySwitchStepModal>
     );
 };

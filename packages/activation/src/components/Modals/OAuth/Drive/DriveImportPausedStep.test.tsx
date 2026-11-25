@@ -41,7 +41,8 @@ describe('DriveImportPausedStep', () => {
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(<DriveImportPausedStep importer={importer} onClose={onClose} />);
-        fireEvent.click(screen.getByText('Dismiss'));
+        screen.getByText('Resume or cancel your import in settings');
+        fireEvent.click(screen.getByText('Maybe later'));
 
         expect(onClose).toHaveBeenCalled();
         expect(goToSettings).not.toHaveBeenCalled();
@@ -88,10 +89,29 @@ describe('DriveImportPausedStep', () => {
                 onClose={onClose}
             />
         );
+        screen.getByText('Your import was interrupted');
+        screen.getByText('Cancel your import in settings');
         expect(screen.queryByText('Upgrade')).not.toBeInTheDocument();
+        expect(screen.queryByText('Maybe later')).not.toBeInTheDocument();
         fireEvent.click(screen.getByText('Reconnect'));
 
         await waitFor(() => expect(onClose).toHaveBeenCalled());
         expect(reconnectOAuthImport).toHaveBeenCalledWith(importer, ImportType.DRIVE);
+    });
+
+    it('lets the user dismiss the connection error with the close button, its only way out', () => {
+        const onClose = vi.fn();
+
+        easySwitchRender(
+            <DriveImportPausedStep
+                importer={importer}
+                errorCode={ApiImporterError.ERROR_CODE_IMAP_CONNECTION}
+                onClose={onClose}
+            />
+        );
+        fireEvent.click(screen.getByTestId('modal:close'));
+
+        expect(onClose).toHaveBeenCalledTimes(1);
+        expect(reconnectOAuthImport).not.toHaveBeenCalled();
     });
 });

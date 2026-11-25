@@ -335,7 +335,7 @@ describe('FolderBrowser keyboard a11y (cell content)', () => {
         {
             errorCode: ApiImporterError.ERROR_CODE_IMAP_CONNECTION,
             tooltip: 'Reconnect Google Drive',
-            modalTitle: 'Reconnect to finish your import',
+            modalTitle: 'Your import was interrupted',
         },
     ])(
         'shows why the import paused and opens the matching modal ($tooltip)',
