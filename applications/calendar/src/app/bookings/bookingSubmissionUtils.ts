@@ -12,7 +12,7 @@ import {
     ICAL_ATTENDEE_STATUS,
     ICAL_METHOD,
 } from '@proton/shared/lib/calendar/constants';
-import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
+import { generateProtonCalendarUID, getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import {
     createInviteIcs,
     generateEmailBody,
@@ -310,6 +310,9 @@ export const prepareBookingSubmission = async ({
             email: attendeeEmail,
             subject: emailSubject,
             body: emailBody,
+            title: getDisplayTitle(vevent.summary?.value),
+            location: vevent.location?.value,
+            description: vevent.description?.value,
         },
         ics: fullIcs,
         meetingLinkName,
