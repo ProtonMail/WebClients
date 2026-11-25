@@ -214,3 +214,10 @@
 		inset-inline-start: calc(#{rem(5)} + #{rem(22)});
 	}
 }
+
+.topnav-listItem-button {
+	&#{&} {
+		inline-size: rem(40);
+		block-size: rem(40);
+	}
+}

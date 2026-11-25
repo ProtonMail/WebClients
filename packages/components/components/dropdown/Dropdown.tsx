@@ -265,8 +265,10 @@ const Dropdown = ({
 
     return (
         <Portal>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
             <div
                 style={rootStyle}
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 role="dialog"
                 className={popperClassName}
                 onClick={handleClickContent}
@@ -288,7 +290,9 @@ const Dropdown = ({
                 ref={combinedDropdownRef}
             >
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}-
                 <div
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     role="button"
                     tabIndex={0}
                     data-ignore-close="true"
