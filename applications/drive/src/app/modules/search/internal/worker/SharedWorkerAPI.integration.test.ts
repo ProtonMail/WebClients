@@ -22,8 +22,11 @@ import { FakeBroadcastChannel } from '../testing/FakeBroadcastChannel';
 import { FakeLockManager } from '../testing/FakeLockManager';
 import { FakeMainThreadBridge } from '../testing/FakeMainThreadBridge';
 import { setupRealSearchLibraryWasm } from '../testing/setupRealSearchLibraryWasm';
+import { SearchIndexKeyManager } from './SearchIndexKeyManager';
 import { SharedWorkerAPI } from './SharedWorkerAPI';
 import { IndexReader } from './index/IndexReader';
+import { IndexRegistry } from './index/IndexRegistry';
+import { IndexerTaskQueue } from './indexer/IndexerTaskQueue';
 
 setupRealSearchLibraryWasm();
 
@@ -42,6 +45,7 @@ Object.defineProperty(global.navigator, 'locks', { value: fakeLockManager, confi
 const USER_ID = 'test-user' as UserId;
 const CLIENT_A = 'client-a' as ClientId;
 const CLIENT_B = 'client-b' as ClientId;
+const CLIENT_C = 'client-c' as ClientId;
 const APP_VERSION = '1.0.0';
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
 const SCOPE_ID_2 = 'scope-2' as TreeEventScopeId;
@@ -198,6 +202,9 @@ class SearchModuleStateStream {
 
         for (let i = 0; i < maxIterations; i++) {
             await vi.advanceTimersByTimeAsync(200);
+            // Fake timers don't wait for IndexedDB, which runs on the real setImmediate: on a slow
+            // machine a timer would otherwise be scheduled only after the loop gave up.
+            await new Promise((resolve) => setImmediate(resolve));
             const found = this.buffer.findIndex(predicate);
             if (found !== -1) {
                 const match = this.buffer[found];
@@ -414,6 +421,20 @@ async function verifyThatUserCanSearchIndexProperly(api: SharedWorkerAPI) {
     expect(allDeleted).toHaveLength(0);
 }
 
+// Every indexer stop() really stops, but returns only once released.
+function holdIndexerStops() {
+    let release = () => {};
+    const released = new Promise<void>((resolve) => {
+        release = resolve;
+    });
+    const stop = IndexerTaskQueue.prototype.stop;
+    vi.spyOn(IndexerTaskQueue.prototype, 'stop').mockImplementation(async function (this: IndexerTaskQueue) {
+        await stop.call(this);
+        await released;
+    });
+    return release;
+}
+
 // --- Tree setup ---
 
 function buildComplexTree(bridge: FakeMainThreadBridge) {
@@ -492,8 +513,10 @@ describe('SharedWorkerAPI integration', () => {
 
     afterEach(() => {
         state.close();
-        api.disconnectClient(CLIENT_A);
+        // A last, so its teardown never hands the worker over to a leftover tab.
+        api.disconnectClient(CLIENT_C);
         api.disconnectClient(CLIENT_B);
+        api.disconnectClient(CLIENT_A);
         vi.useRealTimers();
     });
 
@@ -780,6 +803,7 @@ describe('SharedWorkerAPI integration', () => {
                     break;
                 }
                 await vi.advanceTimersByTimeAsync(100);
+                await new Promise((resolve) => setImmediate(resolve));
             }
             expect(genOne).toHaveLength(0);
 
@@ -853,6 +877,196 @@ describe('SharedWorkerAPI integration', () => {
         }, 15_000);
     });
 
+    describe('Scenario: new tab joins a running worker', () => {
+        it('tells the new tab the index is searchable', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Tab B starts listening only now, so it missed every broadcast tab A received.
+            const stateB = new SearchModuleStateStream();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+
+            await stateB.waitForSearchable(5_000);
+            stateB.expectNeverInitialIndexingSinceCheckpoint();
+            stateB.close();
+            // Disconnect B first, so the teardown of A doesn't hand the worker over to it.
+            api.disconnectClient(CLIENT_B);
+        });
+
+        it('keeps a permanent error from a search in existing tabs and gives it to the new tab', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            vi.spyOn(IndexReader.prototype, 'execute').mockImplementation(async function* () {
+                throw new SearchLibraryError('Search library WASM failed: query execute', new Error('boom'));
+            });
+            await expect(search(api, 'report')).rejects.toThrow(SearchLibraryError);
+            await state.waitForPermanentError();
+
+            const stateB = new SearchModuleStateStream();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await vi.advanceTimersByTimeAsync(200);
+
+            expect(state.history.at(-1)).toEqual(
+                expect.objectContaining({ isSearchable: true, permanentError: 'search_library_error' })
+            );
+            expect(stateB.history.at(-1)).toEqual(
+                expect.objectContaining({ isSearchable: true, permanentError: 'search_library_error' })
+            );
+            stateB.close();
+            api.disconnectClient(CLIENT_B);
+        });
+
+        it('broadcasts nothing when a tab joins while the indexer is starting', async () => {
+            // Hold the indexer startup on its first network call.
+            const driveSdk = bridge.asBridge().driveSdk;
+            const getMyFilesRootFolder = driveSdk.getMyFilesRootFolder.bind(driveSdk);
+            let finishStartup = () => {};
+            const startupCall = vi.spyOn(driveSdk, 'getMyFilesRootFolder').mockImplementationOnce(
+                () =>
+                    new Promise((resolve) => {
+                        finishStartup = () => resolve(getMyFilesRootFolder());
+                    })
+            );
+
+            state.checkpoint();
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await vi.waitFor(() => expect(startupCall).toHaveBeenCalled());
+
+            const stateB = new SearchModuleStateStream();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await vi.advanceTimersByTimeAsync(200);
+
+            stateB.expectNoUpdatesSinceCheckpoint();
+            state.expectNoUpdatesSinceCheckpoint();
+
+            finishStartup();
+            await stateB.waitForSearchable(5_000);
+            stateB.close();
+            api.disconnectClient(CLIENT_B);
+        });
+
+        it('broadcasts nothing when a tab joins a worker with no indexer', async () => {
+            // Not a permanent error, so startup fails silently and leaves no indexer.
+            const getOrCreateKey = vi
+                .spyOn(SearchIndexKeyManager, 'getOrCreateKey')
+                .mockRejectedValue(new Error('network down'));
+
+            state.checkpoint();
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await vi.waitFor(() => expect(getOrCreateKey).toHaveBeenCalled());
+            await vi.advanceTimersByTimeAsync(200);
+
+            const stateB = new SearchModuleStateStream();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await vi.advanceTimersByTimeAsync(200);
+
+            stateB.expectNoUpdatesSinceCheckpoint();
+            state.expectNoUpdatesSinceCheckpoint();
+            stateB.close();
+            api.disconnectClient(CLIENT_B);
+        });
+
+        it('broadcasts nothing when an already registered tab registers again', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await state.expectNext({ isSearchable: true });
+
+            state.checkpoint();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await vi.advanceTimersByTimeAsync(1_000);
+
+            state.expectNoUpdatesSinceCheckpoint();
+            api.disconnectClient(CLIENT_B);
+        });
+
+        it('broadcasts nothing to a tab joining while the worker hands over to another tab', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await vi.advanceTimersByTimeAsync(200);
+
+            // B is elected and the old indexer starts stopping; C joins before it is gone.
+            api.disconnectClient(CLIENT_A);
+            const stateC = new SearchModuleStateStream();
+            void api.registerClient(USER_ID, CLIENT_C, createBridge().asBridge());
+            expect(stateC.history).toHaveLength(0);
+
+            // C still hears the state of the new indexer.
+            await stateC.waitForSearchable(5_000);
+            stateC.close();
+        });
+    });
+
+    describe('Scenario: teardown while the old indexer is still stopping', () => {
+        it('neither broadcasts nor replays a state change of the stopping indexer', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await state.expectNext({ isSearchable: true });
+
+            const releaseStop = holdIndexerStops();
+            api.disconnectClient(CLIENT_A);
+            await vi.advanceTimersByTimeAsync(200);
+            const stoppingIndexer = vi.mocked(IndexerTaskQueue.prototype.stop).mock.contexts[0] as IndexerTaskQueue;
+
+            // A task still in flight reports progress after its indexer was told to stop.
+            state.checkpoint();
+            stoppingIndexer.notifyIndexingProgress();
+            await vi.advanceTimersByTimeAsync(1_000);
+            state.expectNoUpdatesSinceCheckpoint();
+
+            const stateC = new SearchModuleStateStream();
+            await api.registerClient(USER_ID, CLIENT_C, createBridge().asBridge());
+            expect(stateC.history).toHaveLength(0);
+
+            releaseStop();
+            await stateC.waitForSearchable(5_000);
+            stateC.close();
+        });
+
+        it('disposeAll waits for the stop when the next tab takes over', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await api.registerClient(USER_ID, CLIENT_C, createBridge().asBridge());
+            api.heartbeatClient(CLIENT_B, true);
+            await vi.advanceTimersByTimeAsync(200);
+
+            const releaseStop = holdIndexerStops();
+            const disposeAll = vi.spyOn(IndexRegistry.prototype, 'disposeAll');
+
+            // B takes over and stops A's indexer, then C takes over before that stop is done.
+            api.disconnectClient(CLIENT_A);
+            api.disconnectClient(CLIENT_B);
+            await vi.advanceTimersByTimeAsync(200);
+            expect(disposeAll).not.toHaveBeenCalled();
+
+            releaseStop();
+            await vi.waitFor(() => expect(disposeAll).toHaveBeenCalled());
+        });
+
+        it('waits for it before clearing the database on reset', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await vi.advanceTimersByTimeAsync(200);
+
+            const releaseStop = holdIndexerStops();
+            const clear = vi.spyOn(SearchDB.prototype, 'clear');
+
+            api.disconnectClient(CLIENT_A);
+            const reset = api.reset();
+            await vi.advanceTimersByTimeAsync(200);
+            expect(clear).not.toHaveBeenCalled();
+
+            releaseStop();
+            await reset;
+            expect(clear).toHaveBeenCalled();
+        });
+    });
+
     describe('Scenario: tab switching', () => {
         it('client B takes over when client A disconnects', async () => {
             const bridgeB = createBridge();
@@ -860,6 +1074,8 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
             await api.registerClient(USER_ID, CLIENT_B, bridgeB.asBridge());
+            // B joining gets the current state.
+            await state.expectNext({ isSearchable: true });
 
             await verifyThatUserCanSearchIndexProperly(api);
 
@@ -912,6 +1128,37 @@ describe('SharedWorkerAPI integration', () => {
 
             const errorState = await state.waitForPermanentError();
             expectState(errorState, { permanentError: 'search_library_error' });
+        });
+    });
+
+    describe('Scenario: permanent error from a search that outlived its searcher', () => {
+        it('is not broadcast once another tab took over', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
+            await vi.advanceTimersByTimeAsync(200);
+
+            // The search on A's searcher fails only after B took over.
+            let failSearch = () => {};
+            const searchFailed = new Promise<void>((resolve) => {
+                failSearch = resolve;
+            });
+            vi.spyOn(IndexReader.prototype, 'execute').mockImplementationOnce(async function* () {
+                await searchFailed;
+                throw new SearchLibraryError('Search library WASM failed: query execute', new Error('boom'));
+            });
+            const staleSearch = expect(search(api, 'report')).rejects.toThrow(SearchLibraryError);
+            await vi.advanceTimersByTimeAsync(0);
+
+            state.checkpoint();
+            api.disconnectClient(CLIENT_A);
+            await state.waitForSearchable();
+
+            failSearch();
+            await staleSearch;
+            await vi.advanceTimersByTimeAsync(200);
+
+            expect(state.history.at(-1)?.permanentError ?? null).toBeNull();
         });
     });
 

@@ -36,6 +36,15 @@ describe('ClientCoordinator', () => {
             expect(coordinator.getActiveClientId()).toBe(CLIENT_1);
         });
 
+        it('isRegistered tells whether a client is registered', () => {
+            expect(coordinator.isRegistered(CLIENT_1)).toBe(false);
+            coordinator.register(USER_1, CLIENT_1, BRIDGE);
+            expect(coordinator.isRegistered(CLIENT_1)).toBe(true);
+            expect(coordinator.isRegistered(CLIENT_2)).toBe(false);
+            coordinator.disconnect(CLIENT_1);
+            expect(coordinator.isRegistered(CLIENT_1)).toBe(false);
+        });
+
         it('second client does not replace active', () => {
             coordinator.register(USER_1, CLIENT_1, BRIDGE);
             coordinator.register(USER_1, CLIENT_2, BRIDGE);

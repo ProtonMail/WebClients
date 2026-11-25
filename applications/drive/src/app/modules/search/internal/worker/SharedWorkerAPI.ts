@@ -13,6 +13,7 @@ import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStat
 import type {
     ClientId,
     IndexKind,
+    SearchModuleState,
     SearchQuery,
     SerializedAttributeValue,
     SerializedIndexEntry,
@@ -45,8 +46,12 @@ export class SharedWorkerAPI {
     private db: SearchDB | null = null;
     private dbUserId: string | null = null;
     private indexer: IndexerTaskQueue | null = null;
+    // Awaited by every teardown, so none goes on while the old process loop still runs.
+    private indexerStopped: Promise<void> = Promise.resolve();
     private searcher: SearchQueryExecutor | null = null;
     private stateChannel: SearchModuleStateUpdateChannel | null = null;
+    // Everything broadcast on stateChannel since the last indexer teardown, merged. Replayed to new tabs.
+    private broadcastedState: Partial<SearchModuleState> = {};
     private searchMetrics: SearchMetrics | null = null;
     private appVersionChannel: SearchAppVersionChannel;
     private releaseEngineLock: (() => void) | null = null;
@@ -111,7 +116,16 @@ export class SharedWorkerAPI {
     }
 
     async registerClient(userId: UserId, clientId: ClientId, bridge: MainThreadBridge): Promise<void> {
+        const isNewClient = !this.clientsCoordinator.isRegistered(clientId);
         this.clientsCoordinator.register(userId, clientId, bridge);
+
+        // State is only broadcast on change, so a new tab would never hear it. A tab that becomes
+        // active clears the copy in onClientAvailable, so it is never replayed; the check keeps
+        // that true if the order changes.
+        const isActiveClient = this.clientsCoordinator.getActiveClientId() === clientId;
+        if (isNewClient && !isActiveClient && Object.keys(this.broadcastedState).length > 0) {
+            this.stateChannel?.postMessage(this.broadcastedState);
+        }
     }
 
     heartbeatClient(clientId: ClientId, isForeground: boolean): { isClientRegistered: boolean } {
@@ -148,9 +162,7 @@ export class SharedWorkerAPI {
     /** Clear all search data and restart indexing from scratch. */
     async reset(): Promise<void> {
         Logger.info('SharedWorkerAPI: resetting search data');
-        await this.indexer?.stop();
-        this.indexer = null;
-        this.searcher = null;
+        await this.stopIndexer();
 
         this.indexRegistry?.disposeAll();
 
@@ -159,7 +171,7 @@ export class SharedWorkerAPI {
         }
 
         // Notify all tabs that search has been deactivated.
-        this.stateChannel?.postMessage({
+        this.broadcastState({
             isUserOptIn: false,
             isIndexing: false,
             isSearchable: false,
@@ -178,9 +190,7 @@ export class SharedWorkerAPI {
      */
     async rebuild(): Promise<void> {
         Logger.info('SharedWorkerAPI: rebuilding search index');
-        await this.indexer?.stop();
-        this.indexer = null;
-        this.searcher = null;
+        await this.stopIndexer();
 
         this.indexRegistry?.disposeAll();
 
@@ -188,7 +198,7 @@ export class SharedWorkerAPI {
             await this.db.clearIndex();
         }
 
-        this.stateChannel?.postMessage({
+        this.broadcastState({
             isIndexing: false,
             isSearchable: false,
             permanentError: null,
@@ -210,7 +220,8 @@ export class SharedWorkerAPI {
     async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
         const stopTimer = startSearchTimer();
 
-        if (!this.searcher) {
+        const searcher = this.searcher;
+        if (!searcher) {
             this.searchMetrics?.markSearchQueryFailed({
                 error: new Error('No searcher available'),
                 diagnostics: this.db ? await gatherSearchDiagnostics(this.db, this.indexRegistry) : undefined,
@@ -219,7 +230,7 @@ export class SharedWorkerAPI {
             return;
         }
         try {
-            for await (const item of this.searcher.performSearch(query)) {
+            for await (const item of searcher.performSearch(query)) {
                 onEvent?.({ type: 'item', ...item });
             }
             this.searchMetrics?.markSearchQuerySucceeded({ durationInSeconds: stopTimer() });
@@ -231,9 +242,10 @@ export class SharedWorkerAPI {
             // Search bypasses the task queue entirely (see SearchQueryExecutor), so nothing else
             // would ever surface a permanent error from this path - without this, the rebuild
             // banner (driven by `permanentError`) would never appear for a failure hit mid-query.
+            // A searcher replaced meanwhile no longer speaks for the worker.
             const permanentError = classifyPermanentError(error);
-            if (permanentError) {
-                this.stateChannel?.postMessage({ permanentError });
+            if (permanentError && this.searcher === searcher) {
+                this.broadcastState({ permanentError });
             }
             throw error;
         } finally {
@@ -300,9 +312,7 @@ export class SharedWorkerAPI {
     }
 
     private async disposeInternals(): Promise<void> {
-        await this.indexer?.stop();
-        this.indexer = null;
-        this.searcher = null;
+        await this.stopIndexer();
         this.stateChannel?.close();
         this.stateChannel = null;
         this.indexRegistry?.disposeAll();
@@ -350,6 +360,36 @@ export class SharedWorkerAPI {
         });
     }
 
+    private async stopIndexer(): Promise<void> {
+        // Dropped before stopping, so a tab joining meanwhile never gets the old indexer's state.
+        const indexer = this.indexer;
+        this.indexer = null;
+        this.searcher = null;
+        this.broadcastedState = {};
+        if (indexer) {
+            this.indexerStopped = indexer.stop();
+        }
+        await this.indexerStopped;
+    }
+
+    private broadcastState(patch: Partial<SearchModuleState>) {
+        if (!this.stateChannel) {
+            return;
+        }
+        this.broadcastedState = { ...this.broadcastedState, ...patch };
+        this.stateChannel.postMessage(patch);
+    }
+
+    private broadcastIndexerState(state: IndexerState) {
+        this.broadcastState({
+            isIndexing: state.isIndexing,
+            isSearchable: state.isSearchable,
+            permanentError: state.permanentError,
+            indexPopulatorStatuses: state.indexPopulatorStatuses,
+            isIndexPartial: state.isIndexPartial,
+        });
+    }
+
     private async onClientAvailable(clientContext: ClientContext): Promise<void> {
         await this.disposeInternals();
 
@@ -368,7 +408,7 @@ export class SharedWorkerAPI {
 
             const treeSubscriptionRegistry = await TreeSubscriptionRegistry.create(clientContext.bridge, db);
             this.searcher = new SearchQueryExecutor(indexRegistry, db);
-            this.indexer = new IndexerTaskQueue(
+            const indexer = new IndexerTaskQueue(
                 clientContext.userId,
                 indexRegistry,
                 clientContext.bridge,
@@ -377,17 +417,16 @@ export class SharedWorkerAPI {
                 this.searchMetrics
             );
 
-            this.indexer.onStateChange((state) => {
-                this.stateChannel?.postMessage({
-                    isIndexing: state.isIndexing,
-                    isSearchable: state.isSearchable,
-                    permanentError: state.permanentError,
-                    indexPopulatorStatuses: state.indexPopulatorStatuses,
-                    isIndexPartial: state.isIndexPartial,
-                });
+            this.indexer = indexer;
+
+            // Ignore a stopping indexer, it no longer speaks for the worker.
+            indexer.onStateChange((state) => {
+                if (this.indexer === indexer) {
+                    this.broadcastIndexerState(state);
+                }
             });
 
-            await this.indexer.start();
+            await indexer.start();
         } catch (error) {
             Logger.error('SharedWorkerAPI: failed to start indexer', error);
             // Startup runs outside the task queue, so nothing else would ever set permanentError:
@@ -395,7 +434,7 @@ export class SharedWorkerAPI {
             // and no recovery action.
             const permanentError = classifyPermanentError(error);
             if (permanentError) {
-                this.stateChannel?.postMessage({ isIndexing: false, isSearchable: false, permanentError });
+                this.broadcastState({ isIndexing: false, isSearchable: false, permanentError });
             }
             throw error;
         }
