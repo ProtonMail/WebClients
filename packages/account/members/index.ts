@@ -127,6 +127,16 @@ export interface UpsertMemberPayload {
     invalidateAddresses?: boolean;
 }
 
+export const toEnhancedMember = (member: Member): EnhancedMember => ({
+    ...member,
+    addressState: 'partial',
+    roleState: 'initial',
+    UserOrganizationRoles: [],
+    requiresOrgKeyPromotion: false,
+    requiresOrgKeyDemotion: false,
+    hasScheduledOrgKeyDemotion: false,
+});
+
 const applyMemberUpsert = (state: ModelState<EnhancedMember[]>, payload: UpsertMemberPayload) => {
     if (!state.value) {
         return;
@@ -138,15 +148,7 @@ const applyMemberUpsert = (state: ModelState<EnhancedMember[]>, payload: UpsertM
         }
         return;
     }
-    const newMember = {
-        ...payload.member,
-        addressState: 'partial' as const,
-        roleState: 'initial' as const,
-        UserOrganizationRoles: [],
-        requiresOrgKeyPromotion: false,
-        requiresOrgKeyDemotion: false,
-        hasScheduledOrgKeyDemotion: false,
-    };
+    const newMember = toEnhancedMember(payload.member);
     if (memberIndex === -1) {
         state.value.push(newMember);
     } else {
@@ -200,16 +202,7 @@ const slice = createSlice({
         eventLoopV6: (state, action: PayloadAction<UpdateCollectionV6<Member>>) => {
             if (state.value) {
                 state.value = updateCollectionV6(state.value, action.payload, {
-                    create: (a): EnhancedMember => ({
-                        ...a,
-                        // In the event loop v6 we are always fetching individual members and get partial addresses
-                        addressState: 'partial',
-                        roleState: 'initial',
-                        UserOrganizationRoles: [],
-                        requiresOrgKeyPromotion: false,
-                        requiresOrgKeyDemotion: false,
-                        hasScheduledOrgKeyDemotion: false,
-                    }),
+                    create: toEnhancedMember,
                     merge: (a, b): EnhancedMember => ({
                         ...a,
                         ...b,
@@ -381,17 +374,7 @@ const slice = createSlice({
                     model: state.value,
                     events: action.payload.Members,
                     itemKey: 'Member',
-                    create: (a): EnhancedMember => {
-                        return {
-                            ...a,
-                            addressState: 'partial',
-                            roleState: 'initial',
-                            UserOrganizationRoles: [],
-                            requiresOrgKeyPromotion: false,
-                            requiresOrgKeyDemotion: false,
-                            hasScheduledOrgKeyDemotion: false,
-                        };
-                    },
+                    create: toEnhancedMember,
                     merge: (a, b): EnhancedMember => {
                         return {
                             ...a,
@@ -426,17 +409,7 @@ const modelThunk = (options?: {
                 return defaultValue;
             }
             try {
-                const value = await getAllMembers(extraArgument.api).then((members): EnhancedMember[] => {
-                    return members.map((member) => ({
-                        ...member,
-                        addressState: 'partial' as const,
-                        roleState: 'initial' as const,
-                        UserOrganizationRoles: [],
-                        requiresOrgKeyPromotion: false,
-                        requiresOrgKeyDemotion: false,
-                        hasScheduledOrgKeyDemotion: false,
-                    }));
-                });
+                const value = await getAllMembers(extraArgument.api).then((members) => members.map(toEnhancedMember));
                 return {
                     value,
                     type: ValueType.complete,
@@ -752,6 +725,8 @@ export const membersEventLoopV6Thunk = ({
             return;
         }
         await updateCollectionAsyncV6({
+            // Refetching the whole list is slow for a big org, and the remote users page refetches after it too
+            n: 25,
             events: event.Members,
             get: (ID) => getMember(api, ID),
             refetch: () => dispatch(membersThunk({ cache: CacheType.None })),

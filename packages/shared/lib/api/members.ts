@@ -13,7 +13,7 @@ import type { PaginationParams } from './interface';
  * Member pages are expensive on the API (especially with `IncludeAddresses`), and organizations with
  * thousands of members need a lot of them, so they get a longer timeout than the default fetch one.
  */
-const MEMBERS_TIMEOUT = MINUTE;
+const MEMBERS_TIMEOUT = 2 * MINUTE;
 
 export const searchMembers = (keywords?: string) => ({
     method: 'get',
