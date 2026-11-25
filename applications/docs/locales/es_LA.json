@@ -854,6 +854,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "Export this version (as odt)": [
+        "Exportar esta versión (como odt)"
+      ],
+      "OpenDocument Text (.odt)": [
+        "Texto de OpenDocument (.odt)"
       ]
     },
     "Actions message": {
@@ -4697,6 +4703,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Comments are not available yet": [
+        "Los comentarios aún no están disponibles"
+      ],
+      "Copy “${ version }” to clipboard": [
+        "Copiar «${ version }» al portapapeles"
+      ],
+      "Create the copy you asked for.": [
+        "Cree la copia que solicitó."
+      ],
+      "Encrypted": [
+        "Cifrado"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para mantener su cuenta segura, confirme que es realmente usted antes de continuar."
       ]
     },
     "info": {
@@ -5092,6 +5113,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contraseña de la cuenta de ${ BRAND_NAME }"
       ]
     },
     "Label for contact group color": {
@@ -8501,6 +8525,9 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Captcha": [
+        "CAPTCHA"
       ]
     },
     "Title header for keys table": {

@@ -527,7 +527,7 @@
         "Gezinmeyi aç"
       ],
       "OpenDocument Text (.odt)": [
-        "OpenDocument Metin (.odt)"
+        "OpenDocument yazısı (.odt)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -4430,7 +4430,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ],
       "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
         "Sorunu gidermeye yardımcı olmak için hata ayıklama bilgileri Drive alanınıza yüklenecek ve ${ BRAND_NAME } destek ekibiyle güvenli bir şekilde paylaşılacak. Bu bilgilerde dosya içeriğini bulunabilir. İstediğiniz zaman paylaşmayı durdurabilirsiniz. İnceleme tamamlandığında paylaşılan veriler silinir."
@@ -4703,6 +4703,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Comments are not available yet": [
+        "Yorumlar henüz kullanıma açık değil"
+      ],
+      "Copy “${ version }” to clipboard": [
+        "“${ version }” ifadesini panoya kopyala"
+      ],
+      "Create the copy you asked for.": [
+        "İstediğiniz kopyayı oluşturun."
+      ],
+      "Encrypted": [
+        "Şifrelenmiş"
       ]
     },
     "info": {
@@ -4749,7 +4761,7 @@
     },
     "Label": {
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Hesap parolası"
+        "${ BRAND_NAME } hesabı parolası"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -8510,6 +8522,9 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Captcha": [
+        "Captcha"
       ]
     },
     "Title header for keys table": {

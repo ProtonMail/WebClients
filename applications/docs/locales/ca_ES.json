@@ -3977,7 +3977,7 @@
         "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
-        "Si us elimineu, perdreu l'accés a \"${ fileName }\" i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
+        "Si us elimineu, perdreu l'accés a «${ fileName }» i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
       ],
       "Important note": [
         "Nota important"
@@ -4706,6 +4706,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Comments are not available yet": [
+        "Els comentaris encara no estan disponibles"
+      ],
+      "Copy “${ version }” to clipboard": [
+        "Copia «${ version }» al porta-retalls"
+      ],
+      "Create the copy you asked for.": [
+        "Creeu la còpia que heu demanat."
+      ],
+      "Encrypted": [
+        "Xifrat"
       ]
     },
     "info": {
@@ -8513,6 +8525,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Captcha": [
+        "Captcha"
       ]
     },
     "Title header for keys table": {

@@ -839,6 +839,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "Export this version (as odt)": [
+        "Diese Version (als ODT) exportieren"
+      ],
+      "OpenDocument Text (.odt)": [
+        "OpenDocument Text (.odt)"
       ]
     },
     "Actions message": {
@@ -4654,6 +4660,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
       ]
     },
     "info": {
@@ -5046,6 +5055,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
       ]
     },
     "Label for contact group color": {
