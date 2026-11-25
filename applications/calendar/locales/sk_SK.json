@@ -1069,6 +1069,9 @@
       ],
       "Skip to main content": [
         "Prejsť na hlavný obsah"
+      ],
+      "Don't show this again": [
+        "Nabudúce nezobrazovať"
       ]
     },
     "action": {
@@ -4658,6 +4661,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Požiadavka na bezpečnostný kľúč bola zrušená alebo vypršala. Skúste to znova, prosím."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Vaše zariadenie nedokázalo dokončiť požiadavku na bezpečnostný kľúč. Skúste to znova alebo použite iný spôsob prihlásenia."
       ]
     },
     "fido2: Info": {
@@ -4671,7 +4680,7 @@
         "Stále čakáte?"
       ],
       "Touch your security key to continue.": [
-        "Dotknite sa svojho bezpečnostného kľúča, aby ste pokračovali."
+        "Ak chcete pokračovať, dotknite sa bezpečnostného kľúča."
       ]
     },
     "fido2: Label": {
@@ -5789,7 +5798,7 @@
         "Aktualizácia názvu schôdzky zlyhala"
       ],
       "Failed to update meeting schedule": [
-        "Nepodarilo sa aktualizovať rozvrh schôdzky"
+        "Nepodarilo sa aktualizovať čas schôdze"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
@@ -6807,6 +6816,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Licencie pre asistentov písania už nie sú v predaji."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "V záujme ochrany vášho účtu pred pokračovaním potvrďte svoju totožnosť."
       ]
     },
     "info": {
@@ -7577,6 +7589,9 @@
       ],
       "Zoom meeting": [
         "Zoom schôdzka"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Heslo k účtu ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12792,6 +12807,15 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Špeciálna ponuka"
+      ],
+      "Verify it’s you": [
+        "Overiť, že ste to vy"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13678,6 +13702,16 @@
       ],
       "VPN devices at once": [
         "VPN zariadení súčasne"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Zavrieť"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ponuka je nedostupná"
       ]
     }
   }

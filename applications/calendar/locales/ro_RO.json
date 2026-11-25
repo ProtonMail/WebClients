@@ -1065,6 +1065,9 @@
       ],
       "Skip to main content": [
         "Salt la conținutul principal"
+      ],
+      "Don't show this again": [
+        "Nu mai afișa asta"
       ]
     },
     "action": {
@@ -4611,6 +4614,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Solicitarea cheii de securitate a fost anulată sau a expirat. Reîncercați."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dispozitivul nu v-a putut finaliza solicitarea cheii de securitate. Reîncercați sau folosiți o altă metodă de conectare."
       ]
     },
     "fido2: Info": {
@@ -6714,6 +6723,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Licențele pentru asistentul de scriere nu se mai vând."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pentru a contribui la menținerea siguranței contului, confirmați-vă identitatea înainte de a continua."
       ]
     },
     "info": {
@@ -7478,6 +7490,9 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Parolă cont ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12563,6 +12578,15 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13405,6 +13429,16 @@
       ],
       "VPN devices at once": [
         "Dispozitive VPN simultane"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Închidere"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ofertă indisponibilă"
       ]
     }
   }

@@ -1049,6 +1049,9 @@
       ],
       "Skip to main content": [
         "Zum Hauptinhalt springen"
+      ],
+      "Don't show this again": [
+        "Nicht mehr anzeigen"
       ]
     },
     "action": {
@@ -4545,6 +4548,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Die Anforderung des Sicherheitsschlüssels wurde abgebrochen oder ist abgelaufen. Bitte versuche es erneut."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Ihr Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder verwende eine andere Anmeldemethode."
       ]
     },
     "fido2: Info": {
@@ -6599,6 +6608,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
       ]
     },
     "info": {
@@ -7357,6 +7369,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
       ]
     },
     "label": {
@@ -12312,6 +12327,12 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Special offer": [
+        "Sonderangebot"
+      ],
+      "Verify it’s you": [
+        "Überprüfe, ob du es bist"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13043,6 +13064,16 @@
       ],
       "VPN devices at once": [
         "VPN-Geräte gleichzeitig"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Schließen"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Angebot nicht verfügbar"
       ]
     }
   }

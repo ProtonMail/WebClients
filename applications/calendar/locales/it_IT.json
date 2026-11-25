@@ -1061,6 +1061,9 @@
       ],
       "Skip to main content": [
         "Passa direttamente al contenuto principale"
+      ],
+      "Don't show this again": [
+        "Non mostrare più"
       ]
     },
     "action": {
@@ -4564,6 +4567,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La richiesta della chiave di sicurezza è stata annullata o è scaduta. Riprova."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Il tuo dispositivo non è riuscito a completare la richiesta della chiave di sicurezza. Riprova oppure utilizza un altro metodo di accesso."
       ]
     },
     "fido2: Info": {
@@ -6621,6 +6630,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per contribuire a mantenere il tuo account al sicuro, conferma di essere davvero tu prima di continuare."
       ]
     },
     "info": {
@@ -7379,6 +7391,9 @@
       ],
       "Zoom meeting": [
         "Riunione Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Password dell'account ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12401,6 +12416,15 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Offerta speciale"
+      ],
+      "Verify it’s you": [
+        "Verifica che sia tu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13132,6 +13156,16 @@
       ],
       "VPN devices at once": [
         "Dispositivi VPN contemporaneamente"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Chiudi"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offerta non disponibile"
       ]
     }
   }

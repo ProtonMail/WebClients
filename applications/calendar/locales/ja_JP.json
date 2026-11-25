@@ -1039,6 +1039,9 @@
       ],
       "Skip to main content": [
         "メインコンテンツへスキップ"
+      ],
+      "Don't show this again": [
+        "次回から表示しない"
       ]
     },
     "action": {
@@ -4487,6 +4490,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "セキュリティキーのリクエストがキャンセルされたかタイムアウトしました。もう一度お試しください。"
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "このデバイスではセキュリティキーのリクエストを完了できませんでした。もう一度試すか、別のサインイン方法を使用してください。"
       ]
     },
     "fido2: Info": {
@@ -6495,6 +6504,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "アカウントの安全を保つため、続行する前にご本人確認を行ってください。"
       ]
     },
     "info": {
@@ -7247,6 +7259,9 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME }アカウントパスワード"
       ]
     },
     "label": {
@@ -12064,6 +12079,12 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Special offer": [
+        "特別オファー"
+      ],
+      "Verify it’s you": [
+        "ご本人確認"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12691,6 +12712,16 @@
     "Visionary upsell": {
       "New ${ BRAND_NAME } services at no extra cost": [
         "追加料金なしで${ BRAND_NAME }を使用"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "閉じる"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "オファーは利用できません"
       ]
     }
   }

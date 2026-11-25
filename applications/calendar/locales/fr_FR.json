@@ -1046,6 +1046,9 @@
       ],
       "Skip to main content": [
         "Passer au contenu principal"
+      ],
+      "Don't show this again": [
+        "Ne plus afficher"
       ]
     },
     "action": {
@@ -4541,6 +4544,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La demande de clé de sécurité a été annulée ou a expiré. Veuillez réessayer."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Votre appareil n'a pas pu traiter la demande de clé de sécurité. Veuillez réessayer ou utiliser un autre moyen de connexion."
       ]
     },
     "fido2: Info": {
@@ -6580,6 +6589,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pour garantir la sécurité de votre compte, veuillez confirmer que c'est bien vous avant de continuer."
       ]
     },
     "info": {
@@ -7338,6 +7350,9 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Mot de passe du compte ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12290,6 +12305,15 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Offre spéciale"
+      ],
+      "Verify it’s you": [
+        "Vérifiez que c'est bien vous"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12991,6 +13015,16 @@
       ],
       "Users": [
         "Utilisateurs"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fermer"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offre non disponible"
       ]
     }
   }

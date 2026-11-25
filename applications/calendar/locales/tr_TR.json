@@ -1061,6 +1061,9 @@
       ],
       "Skip to main content": [
         "Ana içeriğe git"
+      ],
+      "Don't show this again": [
+        "Bunu yeniden gösterme"
       ]
     },
     "action": {
@@ -4564,6 +4567,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Güvenlik anahtarı isteği iptal edildi veya zaman aşımına uğrandı. Lütfen yeniden deneyin."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Aygıtınız güvenlik anahtarı isteğini tamamlayamadı. Yeniden deneyin veya başka bir oturum açma yöntemi kullanın."
       ]
     },
     "fido2: Info": {
@@ -6621,6 +6630,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ]
     },
     "info": {
@@ -7228,7 +7240,7 @@
         "Birincil"
       ],
       "Proration": [
-        "Hesap bakiyesi"
+        "Hesabınızdaki tutar"
       ],
       "Public keys": [
         "Herkese açık anahtarlar"
@@ -7379,6 +7391,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } hesabı parolası"
       ]
     },
     "label": {
@@ -9761,7 +9776,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Krediler hesabınızın kalan tutarına eklenecek"
+        "Krediler hesabınızdaki tutara eklenecek"
       ]
     },
     "Payments.InfoBanner": {
@@ -12401,6 +12416,15 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Özel teklif"
+      ],
+      "Verify it’s you": [
+        "Siz olduğunuzu doğrulayın"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13132,6 +13156,16 @@
       ],
       "VPN devices at once": [
         "Aynı anda bağlanabilecek VPN aygıtı"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Kapat"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif kullanılamıyor"
       ]
     }
   }

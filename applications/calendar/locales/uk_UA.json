@@ -1045,6 +1045,9 @@
       ],
       "Skip to main content": [
         "Перейти до основного вмісту"
+      ],
+      "Don't show this again": [
+        "Більше не показувати"
       ]
     },
     "action": {
@@ -4575,6 +4578,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Запит на отримання ключа безпеки було скасовано або закінчився час очікування. Спробуйте ще раз."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Ваш пристрій не зміг виконати запит на використання ключа безпеки. Спробуйте ще раз або скористайтеся іншим способом входу."
       ]
     },
     "fido2: Info": {
@@ -6661,6 +6670,12 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Ліцензії для помічників із написання більше не продаються."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Попросіть адміністратора змінити тарифний план або видалити сторінку з бічної панелі «Сторінки бронювання» у ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Щоб додати нову сторінку бронювання, видаліть існуючу з бічної панелі сторінок бронювання в ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -12523,6 +12538,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Verify it’s you": [
+        "Підтвердьте, що це ви"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13341,6 +13359,16 @@
       ],
       "For getting more done": [
         "Щоб встигнути зробити більше"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Закрити"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Пропозиція недоступна"
       ]
     }
   }

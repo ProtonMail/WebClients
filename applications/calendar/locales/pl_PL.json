@@ -1027,6 +1027,9 @@
       ],
       "Skip to main content": [
         "Przejdź do głównej treści"
+      ],
+      "Don't show this again": [
+        "Nie pokazuj tego ponownie"
       ]
     },
     "action": {
@@ -6621,6 +6624,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Osiągnięto limit przedziałów rezerwacji (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "1 vault per user": [
+        "1 sejf na użytkownika"
       ]
     },
     "info": {
@@ -9349,6 +9355,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Subskrypcja ${ planTitle } rozpocznie się ${ boldEndDate }."
+      ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
       ]
     },
     "Option": {
@@ -12474,6 +12483,9 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Verify it’s you": [
+        "Potwierdź swoją tożsamość"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13219,6 +13231,16 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Zamknij"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta jest niedostępna"
       ]
     }
   }

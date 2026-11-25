@@ -1061,6 +1061,9 @@
       ],
       "Skip to main content": [
         "Saltar al contenido principal"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ]
     },
     "action": {
@@ -4564,6 +4567,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Este navegador no admite claves de seguridad. Intente con otro navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La solicitud de llave de seguridad fue cancelada o se agotó la espera. Intente de nuevo."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Su dispositivo no pudo completar la solicitud de llave de seguridad. Intente de nuevo o use otro método de inicio de sesión."
       ]
     },
     "fido2: Info": {
@@ -6621,6 +6630,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ha alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para mantener su cuenta segura, confirme que es realmente usted antes de continuar."
       ]
     },
     "info": {
@@ -7379,6 +7391,9 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contraseña de la cuenta de ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12401,6 +12416,15 @@
       ],
       "Your shorter address is now ready": [
         "Su dirección en formato más corto ya está lista."
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique que es usted"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13132,6 +13156,16 @@
       ],
       "VPN devices at once": [
         "Dispositivos VPN simultáneos"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Cerrar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
       ]
     }
   }

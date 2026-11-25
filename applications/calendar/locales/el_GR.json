@@ -1061,6 +1061,9 @@
       ],
       "Skip to main content": [
         "Μετάβαση στο κύριο περιεχόμενο"
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
       ]
     },
     "action": {
@@ -4564,6 +4567,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Το αίτημα κλειδιού ασφαλείας ακυρώθηκε ή έληξε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Η συσκευή σας δεν μπόρεσε να ολοκληρώσει το αίτημα κλειδιού ασφαλείας. Προσπαθήστε ξανά, ή επιλέξτε κάποια άλλη μέθοδο σύνδεσης."
       ]
     },
     "fido2: Info": {
@@ -6621,6 +6630,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
       ]
     },
     "info": {
@@ -7379,6 +7391,9 @@
       ],
       "Zoom meeting": [
         "Τηλεδιάσκεψη Zoom"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Κωδικός πρόσβασης Λογαριασμού ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -12401,6 +12416,15 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13132,6 +13156,16 @@
       ],
       "VPN devices at once": [
         "Συσκευές VPN ταυτόχρονα"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Η προσφορά δεν είναι διαθέσιμη"
       ]
     }
   }
