@@ -1682,7 +1682,7 @@ describe('SignInStateMachine', () => {
             await waitUntil(() => passwordAccount(actor).getSnapshot().matches('completing'));
             const snapshot = passwordAccount(actor).getSnapshot();
             expect(snapshot.context.screen).toBe('lostTwoFactor');
-            // Compared by session: a failing match on the actors themselves overflows Jest's serializer
+            // Compared by session: a failing match on the actors themselves overflows the test serializer
             expect(snapshot.children.lostTwoFactor?.sessionId).toBe(flow.sessionId);
             expect(flow.getSnapshot().matches({ requestBackupCode: 'reported' })).toBe(true);
             expect(flow.getSnapshot().hasTag('submitting')).toBe(true);
@@ -1926,7 +1926,7 @@ describe('SignInStateMachine', () => {
             // Waiting, loading, until the next page loads
             expect(flow.getSnapshot().matches('resettingPassword')).toBe(true);
             // Still the named child, which the page reads the screen from. Compared by session: a failing match on the
-            // actors themselves overflows Jest's serializer
+            // actors themselves overflows the test serializer
             const snapshot = passwordAccount(actor).getSnapshot();
             expect(selectScreenActor(snapshot)).toBe('lostTwoFactor');
             expect(snapshot.children.lostTwoFactor?.sessionId).toBe(flow.sessionId);

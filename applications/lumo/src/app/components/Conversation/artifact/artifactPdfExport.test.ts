@@ -28,8 +28,6 @@ vi.mock('./artifactDeckPdf', () => ({
 vi.mock('../../../util/triggerFileDownload', () => ({
     triggerFileDownload: vi.fn(async () => {}),
 }));
-vi.mock('vega-embed', () => ({ __esModule: true, default: vi.fn() }));
-vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 const documentArtifact: ParsedArtifact = {
     id: 'doc-1',

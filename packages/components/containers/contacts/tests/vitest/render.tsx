@@ -59,7 +59,7 @@ window.ResizeObserver = class {
 
     disconnect = vi.fn();
 } as unknown as typeof ResizeObserver;
-// https://github.com/nickcolley/jest-axe/issues/147#issuecomment-758804533
+// Drop the pseudo-element argument: jsdom does not implement it and logs "Not implemented" errors
 const { getComputedStyle } = window;
 window.getComputedStyle = (elt) => getComputedStyle(elt);
 

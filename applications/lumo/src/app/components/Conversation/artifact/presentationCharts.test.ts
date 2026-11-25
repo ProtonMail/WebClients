@@ -1,15 +1,14 @@
 import { renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
 
-// `vega-embed` ships ESM-only and isn't wired into this repo's Jest transform allowlist (unlike
+// `vega-embed` ships ESM-only (unlike
 // `vega` itself, which already resolves cleanly for secureVegaLoader.test.ts) — mocking it here
 // keeps this suite focused on our own placeholder-detection/splicing/fallback logic rather than
-// on vega-embed's internals, and sidesteps that unrelated Jest config gap entirely.
+// on vega-embed's internals.
 const mockEmbed = vi.fn();
 vi.mock('vega-embed', () => ({
     __esModule: true,
     default: (...args: unknown[]) => mockEmbed(...args),
 }));
-vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 function chartPlaceholder(specJson: string): string {
     return `<script type="application/lumo-vega-lite+json">${specJson}</script>`;

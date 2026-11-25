@@ -38,7 +38,7 @@ const BitcoinTestComponent = (props: InnerProps) => {
 };
 
 beforeEach(() => {
-    // waitFor only auto-advances fake timers under jest, so let them follow the real clock
+    // waitFor does not auto-advance Vitest fake timers, so let them follow the real clock
     vi.useFakeTimers({ shouldAdvanceTime: true });
 });
 

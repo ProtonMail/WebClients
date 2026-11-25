@@ -24,7 +24,7 @@ export const readSessionKey = (key: any) => {
     };
 };
 
-// Blob type in Jest doesn't have the new arrayBuffer function, maybe not yet implemented in JSDom
+// Blob type in the test environment doesn't have the new arrayBuffer function, maybe not yet implemented in JSDom
 const readBlob = async (blob: Blob) =>
     new Promise<Uint8Array<ArrayBuffer>>((resolve, reject) => {
         const fileReader = new FileReader();

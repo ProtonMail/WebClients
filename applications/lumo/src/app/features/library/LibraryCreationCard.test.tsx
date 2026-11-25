@@ -34,7 +34,7 @@ vi.mock('../../redux/hooks', () => {
 vi.mock('./LibraryCreationThumbnail', () => {
     return { LibraryCreationThumbnail: () => null };
 });
-// The real exporters pull in ESM-only libraries Jest can't load; the menu wiring is what's tested.
+// The real exporters pull in ESM-only libraries; the menu wiring is what's tested.
 vi.mock('../../components/Conversation/artifact/artifactSourceDownload', () => {
     return { getArtifactSourceDownloadMimeType: () => 'text/plain;charset=utf-8' };
 });

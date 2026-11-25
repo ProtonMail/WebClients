@@ -18,7 +18,7 @@ import { BODY, BODY_BOX } from './slideTokens';
 import { measureTextPt, wrapText } from './textMetrics';
 
 // pptxgenjs lazily imports node:fs when it sees Node, for media files these decks don't have, and
-// Jest can't run that import. The tests run in a browser-like environment, so take the browser path.
+// the tests can't run that import. The tests run in a browser-like environment, so take the browser path.
 const releaseName = Object.getOwnPropertyDescriptor(process.release, 'name')!;
 beforeAll(() => {
     Object.defineProperty(process.release, 'name', { ...releaseName, value: 'jsdom' });

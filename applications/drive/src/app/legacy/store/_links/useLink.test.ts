@@ -70,8 +70,8 @@ describe('useLink', () => {
 
     beforeAll(() => {
         // Time relative function can have issue with test environments
-        // To prevent hanging async function we use Timer Mocks from jest
-        // https://jestjs.io/docs/timer-mocks
+        // To prevent hanging async function we use fake timers
+        // https://vitest.dev/guide/mocking/timers
         vi.useFakeTimers();
     });
 
