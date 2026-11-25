@@ -242,4 +242,204 @@ describe('Tooltip', () => {
             expect(screen.queryByTestId('tooltip')).toBeNull();
         });
     });
+
+    describe('Escape', () => {
+        it('should close the tooltip and keep Escape from reaching parents only while open', async () => {
+            const onParentKeyDown = vi.fn();
+            const { container } = render(
+                <Tooltip title={<span data-testid="tooltip">World</span>}>
+                    <button type="button">Hello</button>
+                </Tooltip>
+            );
+            container.addEventListener('keydown', onParentKeyDown);
+
+            await timerUserEvent.tab();
+            expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
+
+            await timerUserEvent.keyboard('{Escape}');
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out' });
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+            expect(onParentKeyDown).not.toHaveBeenCalled();
+
+            await timerUserEvent.keyboard('{Escape}');
+            expect(onParentKeyDown).toHaveBeenCalledTimes(1);
+        });
+
+        it('should close a hovered tooltip without moving focus or pointer', async () => {
+            render(
+                <Tooltip title={<span data-testid="tooltip">World</span>}>
+                    <span data-testid="span">Hello</span>
+                </Tooltip>
+            );
+
+            await timerUserEvent.hover(screen.getByTestId('span'));
+            act(() => {
+                vi.advanceTimersByTime(1000);
+            });
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-in-first' });
+
+            await timerUserEvent.keyboard('{Escape}');
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out' });
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+        });
+
+        it('should not close an externally opened tooltip', async () => {
+            render(
+                <Tooltip title={<span data-testid="tooltip">World</span>} isOpen>
+                    <span>Hello</span>
+                </Tooltip>
+            );
+
+            await timerUserEvent.keyboard('{Escape}');
+            act(() => {
+                vi.advanceTimersByTime(500);
+            });
+            expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
+        });
+    });
+
+    describe('Escape with focus elsewhere', () => {
+        it('should close a hovered tooltip and still let the focused element handle Escape', async () => {
+            const onInputKeyDown = vi.fn();
+            render(
+                <>
+                    <input aria-label="Search" onKeyDown={onInputKeyDown} />
+                    <Tooltip title={<span data-testid="tooltip">World</span>}>
+                        <span data-testid="span">Hello</span>
+                    </Tooltip>
+                </>
+            );
+
+            act(() => screen.getByRole('textbox', { name: 'Search' }).focus());
+            await timerUserEvent.hover(screen.getByTestId('span'));
+            act(() => {
+                vi.advanceTimersByTime(1000);
+            });
+
+            await timerUserEvent.keyboard('{Escape}');
+            expect(onInputKeyDown).toHaveBeenCalledTimes(1);
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out' });
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+        });
+
+        it('should stop listening for Escape once unmounted while open', async () => {
+            const onParentKeyDown = vi.fn();
+            const { container, rerender } = render(
+                <Tooltip title="World">
+                    <button type="button">Hello</button>
+                </Tooltip>
+            );
+            container.addEventListener('keydown', onParentKeyDown);
+            await timerUserEvent.tab();
+
+            rerender(<button type="button">Hello</button>);
+            await timerUserEvent.tab();
+            await timerUserEvent.keyboard('{Escape}');
+            expect(onParentKeyDown).toHaveBeenCalledTimes(1);
+        });
+    });
+
+    describe('hovering the tooltip', () => {
+        it('should leave time to reach the tooltip even with closeDelay={0}', async () => {
+            render(
+                <Tooltip title={<span data-testid="tooltip">World</span>} openDelay={0} closeDelay={0}>
+                    <span data-testid="span">Hello</span>
+                </Tooltip>
+            );
+
+            await timerUserEvent.hover(screen.getByTestId('span'));
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-in' });
+
+            await timerUserEvent.unhover(screen.getByTestId('span'));
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-out');
+            await timerUserEvent.hover(screen.getByRole('tooltip'));
+            act(() => {
+                vi.advanceTimersByTime(500);
+            });
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-out');
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-out-last');
+
+            await timerUserEvent.unhover(screen.getByRole('tooltip'));
+            act(() => {
+                vi.advanceTimersByTime(100);
+            });
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+        });
+
+        it('should keep a focus-opened tooltip open when the pointer passes over it', async () => {
+            render(
+                <Tooltip title={<span data-testid="tooltip">World</span>}>
+                    <button type="button">Hello</button>
+                </Tooltip>
+            );
+
+            await timerUserEvent.tab();
+            fireEvent.animationEnd(screen.getByRole('tooltip'), { animationName: 'anime-tooltip-in' });
+            await timerUserEvent.hover(screen.getByRole('tooltip'));
+            // Already open: hovering it must not replay the opening animation
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-in');
+            await timerUserEvent.unhover(screen.getByRole('tooltip'));
+            act(() => {
+                vi.advanceTimersByTime(500);
+            });
+
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-out');
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-out-last');
+        });
+
+        it('should close when the tooltip itself is tapped', async () => {
+            render(
+                <Tooltip title={<span data-testid="tooltip">World</span>} openDelay={0}>
+                    <span data-testid="span">Hello</span>
+                </Tooltip>
+            );
+
+            await timerUserEvent.hover(screen.getByTestId('span'));
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-in' });
+
+            // A tap fires touch pointer events and touch events, then compatibility mouse events
+            const tooltip = screen.getByRole('tooltip');
+            fireEvent.pointerEnter(tooltip, { pointerType: 'touch' });
+            fireEvent.touchStart(tooltip);
+            fireEvent.pointerLeave(tooltip, { pointerType: 'touch' });
+            fireEvent.touchEnd(tooltip);
+            fireEvent.mouseEnter(tooltip);
+            act(() => {
+                vi.advanceTimersByTime(500);
+            });
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
+
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+        });
+
+        it('should stay open while the pointer is on the tooltip', async () => {
+            render(
+                <Tooltip title={<span data-testid="tooltip">World</span>}>
+                    <span data-testid="span">Hello</span>
+                </Tooltip>
+            );
+
+            await timerUserEvent.hover(screen.getByTestId('span'));
+            act(() => {
+                vi.advanceTimersByTime(1000);
+            });
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-in-first' });
+
+            await timerUserEvent.unhover(screen.getByTestId('span'));
+            await timerUserEvent.hover(screen.getByRole('tooltip'));
+            act(() => {
+                vi.advanceTimersByTime(500);
+            });
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-out-last');
+            expect(screen.getByRole('tooltip')).not.toHaveClass('tooltip-out');
+
+            await timerUserEvent.unhover(screen.getByRole('tooltip'));
+            act(() => {
+                vi.advanceTimersByTime(500);
+            });
+            fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
+            expect(screen.queryByTestId('tooltip')).toBeNull();
+        });
+    });
 });

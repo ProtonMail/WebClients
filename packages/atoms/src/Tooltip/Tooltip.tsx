@@ -144,7 +144,7 @@ const TooltipBase = (
         updateAnimationFrame,
     });
 
-    const tooltipHandlers = useTooltipHandlers({
+    const { triggerHandlers, tooltipHandlers, triggerRef } = useTooltipHandlers({
         open,
         close,
         isOpen,
@@ -156,7 +156,7 @@ const TooltipBase = (
     });
 
     const child = Children.only(children);
-    const mergedRef = useCombinedRefs(getElementRef(child), reference, ref);
+    const mergedRef = useCombinedRefs(getElementRef(child), reference, ref, triggerRef);
 
     if (!title) {
         return cloneElement(child, {
@@ -180,13 +180,14 @@ const TooltipBase = (
             {cloneElement(child, {
                 ref: mergedRef,
                 ...rest,
-                ...mergeCallbacks(tooltipHandlers, child.props),
+                ...mergeCallbacks(triggerHandlers, child.props),
                 'aria-describedby':
                     [child.props['aria-describedby'], describeChild && uid].filter(isTruthy).join(' ') || undefined,
             })}
             <Popper
                 divRef={floating}
                 id={uid}
+                {...tooltipHandlers}
                 isOpen={!!title && isOpen}
                 style={{ ...position, ...arrow, ...tooltipStyle }}
                 onAnimationEnd={(event) => {
