@@ -47,6 +47,7 @@ import BreachInformationCard from './BreachInformationCard';
 import BreachModal from './BreachModal';
 import BreachMonitoringToggle from './BreachMonitoringToggle';
 import BreachesList from './BreachesList';
+import DWMUpgrade from './DWMUpgrade';
 import EmptyBreachListCard from './EmptyBreachListCard';
 import NoBreachesView from './NoBreachesView';
 import {
@@ -91,10 +92,10 @@ const CredentialLeakSection = () => {
     const [hasBeenInteractedWith, setHasBeenInteractedWith] = useState<boolean>(false);
     const dwmUpsellModal = useModalStateObject();
 
+    const isEligible = BreachAlerts.Eligible === DARK_WEB_MONITORING_ELIGIBILITY_STATE.PAID;
     // TODO: change nums to constants
     const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(
-        BreachAlerts.Eligible === DARK_WEB_MONITORING_ELIGIBILITY_STATE.PAID &&
-            BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED
+        isEligible && BreachAlerts.Value === DARK_WEB_MONITORING_STATE.ENABLED
     );
     const [hasEmailsEnabled, setHasEmailsEnabled] = useState<boolean>(
         BreachAlerts.EmailNotifications === DARK_WEB_MONITORING_EMAILS_STATE.ENABLED
@@ -330,6 +331,16 @@ const CredentialLeakSection = () => {
                                     />
                                 </div>
                             </div>
+                        );
+                    }
+
+                    // Some paid plans don't include it (e.g. Pass Basic): offer an upgrade instead of toggles that can't work
+                    if (!isEligible) {
+                        return (
+                            <>
+                                {breachAlertIntroText}
+                                <DWMUpgrade />
+                            </>
                         );
                     }
 
