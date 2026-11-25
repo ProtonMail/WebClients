@@ -16,7 +16,7 @@ vi.mock('../../../util/triggerFileDownload', () => {
 vi.mock('../../../util/telemetry', async () => {
     return { ...(await vi.importActual('../../../util/telemetry')), sendArtifactDownloadedEvent: vi.fn() };
 });
-// The exporters pull in ESM-only markdown and chart libraries Jest can't load; they aren't run here.
+// The exporters pull in ESM-only markdown and chart libraries; they aren't run here.
 // Support rules mirror artifactHtmlDocument.
 vi.mock('./artifactFileBytes', () => {
     return { buildArtifactFileForSave: vi.fn() };

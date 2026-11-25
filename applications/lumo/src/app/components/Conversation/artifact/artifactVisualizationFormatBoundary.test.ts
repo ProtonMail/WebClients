@@ -24,7 +24,6 @@ vi.mock('vega-embed', () => ({
         },
     }),
 }));
-vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 /**
  * Format-boundary regression tests: chat viz fences vs artifact renderers.

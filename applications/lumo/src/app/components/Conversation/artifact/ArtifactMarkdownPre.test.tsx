@@ -4,7 +4,7 @@ import type { Element } from 'hast';
 import { ArtifactMarkdownPre } from './ArtifactMarkdownPre';
 import { readArtifactChartFence, readArtifactCodeFence } from './artifactCharts';
 
-// react-markdown is ESM-only and not in this package's Jest transform allowlist, so these tests feed
+// react-markdown is ESM-only, so these tests feed
 // the `pre` override the same hast node react-markdown passes it, rather than rendering markdown.
 vi.mock('../../LumoMarkdown/vega/VegaLiteChart', () => ({
     VegaLiteChart: ({ code, language }: { code: string; language: string }) => {

@@ -28,7 +28,7 @@ function chartSummaryText(code: string): string {
     return subtitle ? `${label} — ${subtitle}` : label;
 }
 
-/** The `pre` override export HTML uses; exported for tests (react-markdown can't load under Jest). */
+/** The `pre` override export HTML uses; exported for tests (react-markdown is ESM-only). */
 export function createExportPreComponent(charts: MarkdownChartOutput) {
     return function ExportPre({ node, children, ...rest }: ComponentPropsWithoutRef<'pre'> & ExtraProps) {
         const fence = readArtifactChartFence(node);

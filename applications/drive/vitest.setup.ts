@@ -43,7 +43,7 @@ document.head.append(bdiStyle);
     (globalThis as any)[name] = runInThisContext(name);
 });
 
-// Root __mocks__ are not applied automatically by Vitest, Jest did
+// Root __mocks__ are not applied automatically by Vitest
 vi.mock('zustand');
 vi.mock('comlink');
 vi.mock('idb-keyval');

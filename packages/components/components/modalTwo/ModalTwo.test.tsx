@@ -240,7 +240,7 @@ describe('ModalTwo Hotkeys', () => {
 
 /**
  * Due to a JSDom issue `dialog` tag is not understood correctly
- * Delete this test when the Jest will implement the fix
+ * Delete this test when JSDom implements the fix
  * - Issue: https://github.com/jsdom/jsdom/issues/3294
  * - Fix pull request: https://github.com/jsdom/jsdom/pull/3403
  */

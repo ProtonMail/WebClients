@@ -5,7 +5,6 @@ vi.mock('vega-embed', () => ({
     __esModule: true,
     default: (...args: unknown[]) => mockEmbed(...args),
 }));
-vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 // A PNG header for a 1300 × 760 image: signature, then IHDR with big-endian width and height.
 function pngDataUrl(width: number, height: number): string {

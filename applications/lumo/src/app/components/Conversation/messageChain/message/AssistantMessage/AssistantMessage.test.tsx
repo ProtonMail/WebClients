@@ -14,8 +14,6 @@ import { setRemainingLimits } from '../../../../../services/usageLimitsStore';
 import type { Message } from '../../../../../types';
 import { Role } from '../../../../../types-api';
 import AssistantMessage from './AssistantMessage';
-
-vi.mock('vega-embed', () => ({ __esModule: true, default: vi.fn() }));
 vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: vi.fn() }),
 }));

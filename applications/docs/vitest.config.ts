@@ -41,8 +41,7 @@ const shared = {
   },
   test: {
     globals: true,
-    // CI runs several test tasks at once on an 8GB pod. Measured with CI=1 (jest --runInBand: 40s,
-    // 1.4GB): 4 workers 15s 1.9GB, 2 workers 29s 1.1GB, 1 worker 56s 0.8GB.
+    // CI runs several test tasks at once on an 8GB pod. Measured with CI=1: 4 workers 15s 1.9GB, 2 workers 29s 1.1GB, 1 worker 56s 0.8GB.
     maxWorkers: process.env.CI ? 2 : undefined,
     setupFiles: ['./vitest.setup.ts'],
     server: { deps: { inline: [/@protontech\/crypto/] } },

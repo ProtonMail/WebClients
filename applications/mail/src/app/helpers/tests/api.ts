@@ -31,7 +31,7 @@ export const parseFormData = (data: any) => {
 
 export const mockDomApi = () => {
     window.HTMLElement.prototype.scrollIntoView = vi.fn();
-    // https://github.com/nickcolley/jest-axe/issues/147#issuecomment-758804533
+    // Drop the pseudo-element argument: jsdom does not implement it and logs "Not implemented" errors
     const { getComputedStyle } = window;
     window.getComputedStyle = (elt) => getComputedStyle(elt);
     window.ResizeObserver = vi.fn(function () {

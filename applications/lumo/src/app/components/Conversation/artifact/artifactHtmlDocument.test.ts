@@ -33,7 +33,6 @@ vi.mock('./artifactPresentationHtml', () => ({
 }));
 
 vi.mock('vega-embed', () => ({ __esModule: true, default: vi.fn() }));
-vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 describe('artifactSupportsPdfExport', () => {
     it('supports document and presentation artifacts', () => {

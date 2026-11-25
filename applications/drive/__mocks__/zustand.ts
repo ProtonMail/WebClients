@@ -1,4 +1,4 @@
-// Taken from zustand doc: https://zustand.docs.pmnd.rs/guides/testing#jest
+// Taken from zustand doc: https://zustand.docs.pmnd.rs/guides/testing
 import { vi } from 'vitest';
 import type * as ZustandExportedTypes from 'zustand';
 

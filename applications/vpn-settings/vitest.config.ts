@@ -11,8 +11,7 @@ const styleMock = path.resolve(__dirname, './src/__mocks__/styleMock.js');
 
 /**
  * Webpack's `require.context` (used by a few @proton modules) has no Vite equivalent.
- * The old Jest setup handled it via the `transform-require-context` babel plugin; here we
- * rewrite it to a global stub installed in vitest.setup.ts that yields an empty context.
+ * We rewrite it to a global stub installed in vitest.setup.ts that yields an empty context.
  */
 const requireContextStub = {
     name: 'require-context-stub',
@@ -26,8 +25,7 @@ const requireContextStub = {
 };
 
 /**
- * Some @proton workspace packages ship JSX inside plain `.js` files. The old Jest setup ran
- * `@babel/preset-react` over `.js`; Vite's default `.js` loader can't parse JSX, so we compile
+ * Some @proton workspace packages ship JSX inside plain `.js` files. Vite's default `.js` loader can't parse JSX, so we compile
  * those files (outside node_modules) with oxc's jsx parser before the React plugin runs.
  */
 const jsAsJsx = {
