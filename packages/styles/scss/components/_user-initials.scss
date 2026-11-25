@@ -10,4 +10,11 @@
 		min-inline-size: rem(28);
 		min-block-size: rem(28);
 	}
+
+	&--bigger {
+		&#{&} {
+			min-inline-size: rem(40);
+			min-block-size: rem(40);
+		}
+	}
 }
