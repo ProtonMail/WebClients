@@ -22,6 +22,7 @@ import useFeature from '@proton/features/useFeature';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import googleDriveLogo from '@proton/styles/assets/img/import/providers/google-drive.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -158,7 +159,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                             )}
                         >
                             <span className={clsx('text-sm color-weak text-semibold', collapsed && 'sr-only')}>
-                                {c('Title').t`Easy switch`}
+                                {PRODUCT_NAMES.EASY_SWITCH}
                             </span>
                             {!collapsed && !hasOngoingImport && (
                                 <Button
@@ -192,7 +193,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                                     ) : undefined
                                 }
                             >
-                                <span className="text-ellipsis">{label}</span>
+                                <span className="text-break">{label}</span>
                             </SidebarListItemContent>
                         </button>
                     </SidebarListItem>

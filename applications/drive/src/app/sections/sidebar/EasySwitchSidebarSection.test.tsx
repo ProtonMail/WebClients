@@ -2,6 +2,8 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { PRODUCT_NAMES } from '@proton/shared/lib/constants';
+
 import { EasySwitchSidebarSection } from './EasySwitchSidebarSection';
 import { type EasySwitchSidebarUserInfo, EasySwitchUserType, NO_USER_INFO } from './getEasySwitchSidebarUserType';
 import { useDriveImportStatus } from './useDriveImportStatus';
@@ -110,7 +112,7 @@ describe('EasySwitchSidebarSection', () => {
             renderWithImport(false);
 
             expect(screen.queryByText('Import from Google')).toBeNull();
-            expect(screen.queryByText('Easy switch')).toBeNull();
+            expect(screen.queryByText(PRODUCT_NAMES.EASY_SWITCH)).toBeNull();
         });
 
         it('hides the import entry while the B2B status is loading', () => {
