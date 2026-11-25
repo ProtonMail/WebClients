@@ -148,6 +148,30 @@ describe('Escape', () => {
             expect(escapeURLinStyle(style)).toEqual(` color: red;`);
         });
 
+        // SECBTY-2037: removing a comment can join a character reference that the next decode turns into `url(`
+        it.each([
+            ['decimal reference', 'background:&#/**/117;rl(https://attacker.example/p.png)'],
+            ['hex reference', 'background:&#x/**/75;rl(https://attacker.example/p.png)'],
+            ['comment after the ampersand', 'background:&/**/#117;rl(https://attacker.example/p.png)'],
+            ['already decoded neighbour', 'color:&#98;lue;background:&#/**/117;rl(https://attacker.example/p.png)'],
+            ['nested comments', 'background:&#/**/x/**/75;rl(https://attacker.example/p.png)'],
+            ['image-set', "background-image:&#/**/105;mage-set('https://attacker.example/p.png' 1x)"],
+            ['@import url', '@import &#/**/117;rl(https://attacker.example/a.css);'],
+        ])('should not let a comment inside a character reference rebuild a URL function (%s)', (_name, style) => {
+            const sanitized = escapeForbiddenStyle(escapeURLinStyle(style));
+
+            expect(sanitized).not.toMatch(/(^|[^-\w])(url|image-set)\s*\(/i);
+            expect(sanitized).toMatch(/proton-(url|image-set)\(/);
+        });
+
+        it('should not let a comment inside a character reference rebuild a </style> breakout', () => {
+            const style = 'color:red;&#/**/60;/style&#/**/62;&#/**/60;img src=https://attacker.example/p.png&#/**/62;';
+
+            const sanitized = neutralizeStyleBreakout(escapeForbiddenStyle(escapeURLinStyle(style)));
+
+            expect(sanitized).not.toContain('</');
+        });
+
         it('should escape a URL obfuscated with a hex escape and a CRLF pair', () => {
             const style = 'background-image:\\75\r\nrl(https://attacker.example/image.png)';
 

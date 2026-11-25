@@ -232,6 +232,34 @@ describe('protonizer - style element breakout', () => {
     });
 });
 
+describe('protonizer - comment inside a character reference', () => {
+    const URL_FUNCTION = /(^|[^-\w])(url|image-set)\s*\(/i;
+
+    it.each(['&#/**/117;rl', '&#x/**/75;rl', '&/**/#117;rl'])(
+        'should not let %s( load a remote image from a style attribute',
+        (keyword) => {
+            const html = `<html><body><div style="background:${keyword}(https://attacker.example/p.png)">a</div></body></html>`;
+            const result = protonizer(html, true);
+            const style = result.querySelector('div')?.getAttribute('style') || '';
+
+            expect(style).not.toMatch(URL_FUNCTION);
+            expect(style).toContain('proton-url(');
+        }
+    );
+
+    it.each(['&#/**/117;rl', '&#x/**/75;rl', '&/**/#117;rl'])(
+        'should not let %s( load a remote image from a style element',
+        (keyword) => {
+            const html = `<html><head><style>.y{background:${keyword}(https://attacker.example/p.png)}</style></head><body></body></html>`;
+            const result = protonizer(html, true);
+            const css = result.querySelector('style')?.textContent || '';
+
+            expect(css).not.toMatch(URL_FUNCTION);
+            expect(css).toContain('proton-url(');
+        }
+    );
+});
+
 describe('sanitizeComposerReply', () => {
     it('should remove all <style> tags from the input element', () => {
         const input = document.createElement('div');
