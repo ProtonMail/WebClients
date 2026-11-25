@@ -30,20 +30,16 @@ export const loadBackgroundImages = ({ images, document }: LoadBackgroundImagesP
         const styleAttribute = element.getAttribute('style');
 
         if (styleAttribute && styleAttribute.includes('proton-url')) {
-            const rawUrlMatch = styleAttribute.match(/proton-url\((.*?)\)/)?.[1];
-            const cleanUrlMatch = rawUrlMatch?.replace(/('|")/g, '');
-
-            if (cleanUrlMatch) {
+            // Replace whole tokens only: the same URL can appear elsewhere in the style (e.g. a custom property),
+            // and a token without a loaded image must stay inert
+            const loadedStyle = styleAttribute.replace(/proton-url\((.*?)\)/g, (token, rawUrl: string) => {
                 // Find the corresponding image to get its url (same url if loading without proxy, or blob if loading through proxy)
-                const loadedUrl = urlByOriginalURL.get(cleanUrlMatch);
+                const loadedUrl = urlByOriginalURL.get(rawUrl.replace(/('|")/g, ''));
+                return loadedUrl ? `url(${loadedUrl})` : token;
+            });
 
-                // Set attribute with the right URL (normal or blob depending on the setting)
-                if (loadedUrl && rawUrlMatch) {
-                    element.setAttribute(
-                        'style',
-                        styleAttribute.replace(rawUrlMatch, loadedUrl).replace('proton-url', 'url')
-                    );
-                }
+            if (loadedStyle !== styleAttribute) {
+                element.setAttribute('style', loadedStyle);
             }
         }
     });
