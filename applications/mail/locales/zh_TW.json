@@ -1742,6 +1742,12 @@
       ],
       "Skip to main content": [
         "跳至主要內容"
+      ],
+      "Don't show this again": [
+        "不再顯示此內容"
+      ],
+      "Use “${ label }” setting": [
+        "使用「${ label }」設定"
       ]
     },
     "action": {
@@ -5319,6 +5325,150 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜尋結果過多。請縮小您的搜尋範圍並重新試試。"
+      ],
+      "Cannot download a folder": [
+        "無法下載個資料夾"
+      ],
+      "Cannot share root folder": [
+        "無法複製根資料夾"
+      ],
+      "Cannot verify the author of this file": [
+        "無法驗證此檔案的作者"
+      ],
+      "Cannot verify who uploaded this file": [
+        "無法驗證上傳此檔案的人"
+      ],
+      "Copy operation aborted": [
+        "以放棄移動操作"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "不允許將項目複製到非資料夾"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "無法載入照片預覽: ${ message }"
+      ],
+      "Could not unlock this item": [
+        "無法解鎖此項目"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "允許於非資料夾內創建檔案"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "不允許於非資料夾內創建資料夾"
+      ],
+      "Device not found": [
+        "找不到裝置"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "解密書籤金鑰失敗: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "解密書籤密碼失敗: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "解密內容金鑰失敗: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "解密失敗的項目名稱: ${ message }"
+      ],
+      "Image preview not found": [
+        "查無照片預覽"
+      ],
+      "Invalid URL": [
+        "URL 無效"
+      ],
+      "Invitation not found": [
+        "未找到邀請"
+      ],
+      "Item not found": [
+        "找不到項目"
+      ],
+      "Missing inviter email": [
+        "缺少邀請電子郵件"
+      ],
+      "Move operation aborted": [
+        "以終止移動操作"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "不允許將項目移動到非資料夾"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名稱長度最多為 ${ MAX_NODE_NAME_LENGTH } 個字元"
+      ],
+      "Name must not be empty": [
+        "名稱不得留空"
+      ],
+      "Operation aborted": [
+        "操作取消"
+      ],
+      "Operation failed, try again later": [
+        "作業失敗。稍後再試。"
+      ],
+      "Photo is already in the target album": [
+        "照片已存在於目標相簿中"
+      ],
+      "Photo not found": [
+        "找不到照片"
+      ],
+      "Request aborted": [
+        "請求已中止"
+      ],
+      "Signature is missing": [
+        "缺少簽名"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "失敗替 ${ signatureType } 簽名驗證"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "部分檔案上載失敗。請稍後再試。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "檔案部分上傳失敗。請稍後再試。"
+      ],
+      "Some items could not be loaded": [
+        "無法載入部分項目"
+      ],
+      "Something went wrong": [
+        "發生錯誤"
+      ],
+      "This file has missing crypto material": [
+        "此檔案缺乏密鑰元件"
+      ],
+      "This file has no version available to download": [
+        "此檔案無可下載版本"
+      ],
+      "This file version could not be uploaded": [
+        "此檔案的版本紀錄無法被上傳"
+      ],
+      "This item has no image preview": [
+        "此項目無可預覽的項目"
+      ],
+      "This item is no longer shared": [
+        "此項目已停止共享"
+      ],
+      "This item is not shared": [
+        "此項目未被共享"
+      ],
+      "Too many server errors, please try again later": [
+        "太多伺服器錯誤，請稍後再試"
+      ],
+      "Too many server requests, please try again later": [
+        "太多伺服器查詢，請稍後再試"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "無可用於 ${ signatureType } 種類的金鑰驗證"
+      ],
+      "You can update a public link for your own files only": [
+        "您只能更新您的檔案公開連結"
+      ],
+      "You do not have access to this item": [
+        "您沒有權限訪問此項目"
+      ],
+      "You do not have access to this shared item": [
+        "您沒有權限訪問此共享的項目"
       ]
     },
     "error": {
@@ -16294,6 +16444,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "訂閱至 ${ planTitle }"
+      ],
+      "Verify it’s you": [
+        "驗證是您本人"
       ]
     },
     "Title header for keys table": {
@@ -16916,6 +17069,44 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "關閉"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "優惠不再提供"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "欄"
+      ],
+      "Row": [
+        "列"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "內容金鑰"
+      ],
+      "hash key": [
+        "雜湊金鑰"
+      ],
+      "key": [
+        "金鑰"
+      ],
+      "membership": [
+        "會員資格"
+      ],
+      "name": [
+        "名稱"
       ]
     }
   }

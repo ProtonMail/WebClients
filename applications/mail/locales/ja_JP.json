@@ -1573,7 +1573,7 @@
         "信頼する"
       ],
       "Trust key": [
-        "鍵を信頼する"
+        "キーを信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -1778,6 +1778,21 @@
       ],
       "Skip to main content": [
         "メインコンテンツへスキップ"
+      ],
+      "Don't show this again": [
+        "次回から表示しない"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "${ name } を ${ DRIVE_APP_NAME } に保存"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }に保存"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "${ selectedCount }の登録を解除しますか？"
+      ],
+      "Use “${ label }” setting": [
+        "「${ label }」を使用"
       ]
     },
     "action": {
@@ -5409,6 +5424,255 @@
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
         "一部のメーリングリストを登録解除できませんでした。再度お試しください。"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "著作権侵害や盗難データの報告を行う場合は、メッセージの入力が必須です"
+      ],
+      "Bookmark password is not available": [
+        "ブックマークのパスワードを利用できません"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "有効な名前がないアルバムに写真を追加することはできません"
+      ],
+      "Cannot download a folder": [
+        "フォルダーをダウンロードすることはできません"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "有効な名前がないアイテムは移動できません。まずアイテムの名前を変更してください"
+      ],
+      "Cannot share root folder": [
+        "ルートフォルダーを共有することはできません"
+      ],
+      "Cannot verify the author of this file": [
+        "このファイルの作成者を確認できません"
+      ],
+      "Cannot verify who uploaded this file": [
+        "このファイルをアップロードしたユーザーを検証できません"
+      ],
+      "Copy operation aborted": [
+        "コピー操作が中断されました"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "フォルダではない場所へのアイテムのコピーはできません"
+      ],
+      "Could not find an available name": [
+        "利用可能な名前が見つかりませんでした"
+      ],
+      "Could not load sharing details": [
+        "共有の詳細を読み込めませんでした"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "画像のプレビューを読み込めませんでした: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "このファイルの一部を読み取ることができませんでした: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "親フォルダをアンロックできませんでした"
+      ],
+      "Could not unlock this item": [
+        "このアイテムをアンロックできませんでした"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "フォルダー以外の場所にドキュメントを作成することはできません"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "フォルダー以外の場所にファイルを作成することはできません"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "フォルダではない場所にフォルダを作成することはできません"
+      ],
+      "Device not found": [
+        "デバイスが見つかりません"
+      ],
+      "Expiration date cannot be in the past": [
+        "有効期限に過去の日付を指定することはできません"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "ブックマークキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "ブックマーク名の復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "ブックマークのパスワードの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "コンテンツキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "アイテム名の復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "ノードキーの復号に失敗しました: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "リビジョンメタデータの復号に失敗しました"
+      ],
+      "Failed to get invitee keys": [
+        "招待者の暗号鍵の取得に失敗しました"
+      ],
+      "Failed to get inviter keys": [
+        "招待者の暗号鍵の取得に失敗しました"
+      ],
+      "Failed to load the membership": [
+        "メンバーシップの読み込みに失敗しました"
+      ],
+      "Failed to load the membership data": [
+        "メンバーシップデータの読み込みに失敗しました"
+      ],
+      "Failed to verify invitation": [
+        "招待の検証に失敗しました"
+      ],
+      "Failed to verify membership": [
+        "メンバーシップの確認に失敗しました"
+      ],
+      "File download failed due to empty response": [
+        "レスポンスが空のため、ファイルのダウンロードに失敗しました"
+      ],
+      "File has no revision": [
+        "ファイルに修正はありません"
+      ],
+      "Image preview not found": [
+        "画像のプレビューが見つかりません"
+      ],
+      "Invalid URL": [
+        "無効なURL"
+      ],
+      "Invitation not found": [
+        "招待が見つかりません"
+      ],
+      "Item not found": [
+        "アイテムが見つかりません"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "レガシー公開リンクは変更できません。新しい公開リンクを再生成してください。"
+      ],
+      "Missing inviter email": [
+        "招待者のメールアドレスがありません"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } の署名がありません"
+      ],
+      "Move operation aborted": [
+        "移動操作が中断されました"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "フォルダー以外の場所にアイテムを移動することはできません"
+      ],
+      "Moving root item is not allowed": [
+        "ルート項目を移動することはできません"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
+      ],
+      "Name must not be empty": [
+        "名前を入力してください"
+      ],
+      "No file data was received. Please try again.": [
+        "ファイルデータを受け取っていません。再度お試しください。"
+      ],
+      "Only admins can convert external invitations": [
+        "外部からの招待を変換できるのは管理者のみです"
+      ],
+      "Operation aborted": [
+        "操作は中断されました"
+      ],
+      "Operation failed, try again later": [
+        "操作に失敗しました。しばらくしてからもう一度お試しください"
+      ],
+      "Part of the file appears to be corrupted": [
+        "ファイルの一部が破損しているようです"
+      ],
+      "Photo is already in the target album": [
+        "写真はすでに移動先のアルバムに存在します"
+      ],
+      "Photo not found": [
+        "写真が見つかりません"
+      ],
+      "Renaming root item is not allowed": [
+        "ルート項目の名前を変更することはできません"
+      ],
+      "Request aborted": [
+        "リクエストが中断されました"
+      ],
+      "Signature is missing": [
+        "署名がありません"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "署名の検証に失敗しました: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } の署名検証に失敗しました"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } の署名検証に失敗しました: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "一部のファイルデータのアップロードに失敗しました。もう一度お試しください。"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "ファイルの一部（チャンク）のアップロードに失敗しました。もう一度お試しください。"
+      ],
+      "Some invitations could not be loaded": [
+        "一部の招待を読み込めませんでした"
+      ],
+      "Some items could not be loaded": [
+        "一部のアイテムを読み込めませんでした"
+      ],
+      "Something went wrong": [
+        "何か問題が発生しました"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "アップロードされたファイルが元のファイルと一致しません。もう一度お試しください。"
+      ],
+      "This file has missing crypto material": [
+        "このファイルには必要な暗号化データ（鍵情報）が不足しています"
+      ],
+      "This file has no version available to download": [
+        "このファイルにはダウンロード可能なバージョンがありません"
+      ],
+      "This file version could not be uploaded": [
+        "このファイルバージョンをアップロードできませんでした"
+      ],
+      "This item has no image preview": [
+        "このアイテムには画像のプレビューがありません"
+      ],
+      "This item is no longer shared": [
+        "このアイテムはもう共有されません"
+      ],
+      "This item is not shared": [
+        "このアイテムは共有されていません"
+      ],
+      "Too many server errors, please try again later": [
+        "サーバーエラーが多発しています。しばらくしてからもう一度お試しください"
+      ],
+      "Too many server requests, please try again later": [
+        "サーバーへのリクエストが多すぎます。しばらくしてからもう一度お試しください"
+      ],
+      "Verification keys are not available": [
+        "検証キーは利用できません"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } の検証鍵を利用できません"
+      ],
+      "You can create public links for your own files only": [
+        "公開リンクを作成できるのは、自分が所有するファイルのみです"
+      ],
+      "You can only leave items that are shared with you": [
+        "退出できるのは、自分に共有されているアイテムのみです"
+      ],
+      "You can only upload a new version to a file": [
+        "新しいバージョンをアップロードできるのはファイルのみです"
+      ],
+      "You can update a public link for your own files only": [
+        "公開リンクを更新できるのは、自分が所有するファイルのみです"
+      ],
+      "You do not have access to this item": [
+        "このアイテムにはアクセスできません"
+      ],
+      "You do not have access to this shared item": [
+        "この共有アイテムへのアクセス権がありません"
       ]
     },
     "error": {
@@ -5803,6 +6067,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "セキュリティキーのリクエストがキャンセルされたかタイムアウトしました。もう一度お試しください。"
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "このデバイスではセキュリティキーのリクエストを完了できませんでした。もう一度試すか、別のサインイン方法を使用してください。"
       ]
     },
     "fido2: Info": {
@@ -9508,6 +9778,24 @@
       ],
       "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
         "${ LUMO_SHORT_APP_NAME } とチャットして、メールの検索、閲覧、整理、下書きを作成できます。"
+      ],
+      "Author is not provided on public link": [
+        "公開リンクに作成者情報が指定されていません"
+      ],
+      "Based only on which emails you've opened.": [
+        "開封したメールのみに基づいています。"
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "迷惑メール/ゴミ箱内のメッセージは、30日後に自動的に削除されます。"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "過去のメールをアーカイブに移動します。検索は引き続き可能です。"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "アカウントの安全を保つため、続行する前にご本人確認を行ってください。"
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "${ count }件のニュースレターを取り込み、送信者ごとにまとめました。それぞれの送信頻度を確認して、ワンクリックで受信を続ける、移動、または購読を解除できます。"
       ]
     },
     "info": {
@@ -10878,6 +11166,9 @@
       ],
       "Model": [
         "モデル"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME }アカウントパスワード"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16852,6 +17143,24 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Not opened in a while": [
+        "しばらく開封していません"
+      ],
+      "Special offer": [
+        "特別オファー"
+      ],
+      "Verify it’s you": [
+        "ご本人確認"
+      ],
+      "You open these sometimes": [
+        "これらのメールをときどき開いています"
+      ],
+      "You read these often": [
+        "これらのメールをよく読んでいます"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Gmailのニュースレターをもっと簡単に管理"
       ]
     },
     "Title header for keys table": {
@@ -17485,6 +17794,58 @@
     "Visionary upsell": {
       "New ${ BRAND_NAME } services at no extra cost": [
         "追加料金なしで${ BRAND_NAME }を使用"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "閉じる"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "オファーは利用できません"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "列"
+      ],
+      "Row": [
+        "行"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "過去30日間に${ count }通のメールが届いています。未開封です。"
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "過去30日間に${ count }通のメールが届いています。頻繁に開封されています。"
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "過去30日間に${ count }通のメールが届いています。ときどき開封されています。"
+      ],
+      "No emails in the last 30 days.": [
+        "過去30日間にメールは届いていません。"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "属性"
+      ],
+      "content key": [
+        "コンテンツキー"
+      ],
+      "hash key": [
+        "ハッシュキー"
+      ],
+      "key": [
+        "鍵"
+      ],
+      "membership": [
+        "メンバーシップ"
+      ],
+      "name": [
+        "名前"
       ]
     }
   }

@@ -1802,6 +1802,18 @@
       ],
       "Skip to main content": [
         "Pular para o conteúdo principal"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Salvar ${ name } para o ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Salvar no ${ DRIVE_APP_NAME }"
+      ],
+      "Use “${ label }” setting": [
+        "Usar configuração “${ label }”"
       ]
     },
     "action": {
@@ -1963,6 +1975,13 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licença de assistente de escrita do ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenças de assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -5487,6 +5506,247 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Uma mensagem é necessária ao denunciar violação de direitos autorais ou dados roubados"
+      ],
+      "Bookmark password is not available": [
+        "A senha do marcador não está disponível"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Não é possível adicionar foto ao álbum sem um nome válido"
+      ],
+      "Cannot download a folder": [
+        "Não é possível baixar uma pasta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Não é possível mover o item sem um nome válido, por favor, renomeie o item primeiro"
+      ],
+      "Cannot share root folder": [
+        "Não é possível compartilhar a pasta raiz"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste arquivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem é autor enviou este arquivo"
+      ],
+      "Copy operation aborted": [
+        "Operação de cópia interrompida"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes do compartilhamento"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização da imagem: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Não foi possível ler parte deste arquivo: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta pai"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Não é permitido criar documentos dentro de itens que não sejam pastas"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Não é permitido criar arquivos dentro de itens que não sejam pastas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de itens que não sejam pastas"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
+      ],
+      "Expiration date cannot be in the past": [
+        "A data de expiração não pode ser anterior ao passado"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Falha ao descriptografar a chave de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Falha ao descriptografar o nome de marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Falha ao descriptografar a senha dos favoritos: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Falha ao descriptografar a chave de conteúdo: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Falha ao descriptografar o nome do item: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Falha ao descriptografar a chave de nó: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Falha ao descriptografar os metadados da revisão"
+      ],
+      "Failed to get inviter keys": [
+        "Não conseguiu obter as chaves do convidado"
+      ],
+      "Failed to verify invitation": [
+        "Erro ao verificar o convite"
+      ],
+      "File download failed due to empty response": [
+        "O download do arquivo falhou devido à resposta vazia"
+      ],
+      "File has no revision": [
+        "O arquivo não possui revisão"
+      ],
+      "Image preview not found": [
+        "Pré-visualização da imagem não encontrada"
+      ],
+      "Invalid URL": [
+        "O URL não é válido."
+      ],
+      "Invitation not found": [
+        "Convite não encontrado"
+      ],
+      "Item not found": [
+        "Item não encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Crie um novo link público."
+      ],
+      "Missing inviter email": [
+        "E-mail de quem fez o convite ausente"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta a assinatura para ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Operação de movimento interrompida"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Não é permitido mover o item para um local que não seja uma pasta"
+      ],
+      "Moving root item is not allowed": [
+        "Item de raiz em movimento não é permitido"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caractere",
+        "O nome deve ter no máximo ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "O nome não pode estar vazio"
+      ],
+      "No file data was received. Please try again.": [
+        "Nenhum dado de arquivo foi recebido. Tente novamente."
+      ],
+      "Only admins can convert external invitations": [
+        "Somente os administradores podem converter convites externos"
+      ],
+      "Operation aborted": [
+        "Operação abortada"
+      ],
+      "Operation failed, try again later": [
+        "Erro na operação, tente novamente mais tarde"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do arquivo parece estar corrompida"
+      ],
+      "Photo is already in the target album": [
+        "A foto já está no álbum alvo"
+      ],
+      "Photo not found": [
+        "Foto não encontrada"
+      ],
+      "Renaming root item is not allowed": [
+        "Não é permitido renomear o item, raiz"
+      ],
+      "Request aborted": [
+        "Solicitação abortada"
+      ],
+      "Signature is missing": [
+        "Assinatura ausente"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Falha na assinatura do remetente: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "A verificação de assinatura para ${ signatureType } falhou"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "A verificação de assinatura para ${ signatureType } falhou: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "O envio de alguns dados de arquivo falhou. Tente novamente."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "O envio de algumas partes de arquivo falhou. Tente novamente."
+      ],
+      "Some invitations could not be loaded": [
+        "Não foi possível carregar alguns convites"
+      ],
+      "Some items could not be loaded": [
+        "Não foi possível carregar alguns itens"
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Não foi possível se desvincular de algumas correspondências. Tente novamente."
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
+      ],
+      "This file has missing crypto material": [
+        "Este arquivo tem material de criptografia ausente"
+      ],
+      "This file has no version available to download": [
+        "O arquivo não possui uma versão para download"
+      ],
+      "This file version could not be uploaded": [
+        "Não foi possível fazer o envio desta versão do arquivo"
+      ],
+      "This item has no image preview": [
+        "Este item não tem visualização de imagem"
+      ],
+      "This item is no longer shared": [
+        "Este item não está mais sendo compartilhado"
+      ],
+      "This item is not shared": [
+        "Este item não está compartilhado"
+      ],
+      "Too many server errors, please try again later": [
+        "Muitos erros ao servidor, tente novamente mais tarde"
+      ],
+      "Too many server requests, please try again later": [
+        "Muitas solicitações ao servidor, tente novamente mais tarde"
+      ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "As chaves de verificação para ${ signatureType } não estão disponíveis"
+      ],
+      "You can create public links for your own files only": [
+        "Você pode criar links públicos apenas para seus próprios arquivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Você só pode deixar itens compartilhados com você"
+      ],
+      "You can only upload a new version to a file": [
+        "Você só pode carregar uma nova versão para um arquivo"
+      ],
+      "You can update a public link for your own files only": [
+        "Você pode atualizar um link público apenas para seus próprios arquivos"
+      ],
+      "You do not have access to this item": [
+        "Você não tem acesso a esse item"
+      ],
+      "You do not have access to this shared item": [
+        "Você não tem acesso a esse item compartilhado"
       ]
     },
     "error": {
@@ -9807,6 +10067,15 @@
       "${ n } unread message": [
         "${ n } mensagem não lida",
         "${ n } mensagens não lidas"
+      ],
+      "Author is not provided on public link": [
+        "O autor não forneceu um link público"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "As licenças do assistente de escrita não são mais vendidas."
       ]
     },
     "info": {
@@ -11195,6 +11464,9 @@
       ],
       "Model": [
         "Modelo"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Senha da conta da ${ BRAND_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11554,6 +11826,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Você precisa reativar suas chaves para ver o convite atualizado"
+      ],
+      "Activate": [
+        "Ativar"
       ]
     },
     "Link to calendar event": {
@@ -13215,6 +13490,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Seu domínio e assinatura estão prontos para uso."
+      ],
+      "Choose your inbox layout": [
+        "Escolha o layout da sua caixa de entrada"
+      ],
+      "You can change this anytime in settings.": [
+        "Você pode alterar isso a qualquer momento em configurações."
       ]
     },
     "Onboarding Proton": {
@@ -16022,6 +16303,14 @@
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
         "Assistente de IA do ${ LUMO_SHORT_APP_NAME } ativado"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Removido da correspondência de ${ count } e mensagens movidas para Arquivo.",
+        "Removido das correspondências de ${ count } e mensagens movidas para Arquivo."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Removido da correspondência de ${ count }.",
+        "Removido das correspondências de ${ count }."
       ]
     },
     "Success notification": {
@@ -17333,6 +17622,12 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ]
     },
     "Title header for keys table": {
@@ -18070,6 +18365,9 @@
       ],
       "For everyday chats": [
         "Para todos os bate-papos"
+      ],
+      "For getting more done": [
+        "Para ter mais produtividade"
       ]
     },
     "Visionary upsell": {
@@ -18129,6 +18427,50 @@
       ],
       "VPN devices at once": [
         "Dispositivos VPN ao mesmo tempo"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Nome em homenagem aos apoiadores do financiamento coletivo que tornaram o ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possível em 2014. Todos os serviços premium da ${ BRAND_NAME }, em um único plano."
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coluna"
+      ],
+      "Row": [
+        "Linha"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
+      ],
+      "hash key": [
+        "chave hash"
+      ],
+      "key": [
+        "chave"
+      ],
+      "membership": [
+        "subscrição"
+      ],
+      "name": [
+        "nome"
       ]
     }
   }

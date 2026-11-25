@@ -1248,6 +1248,9 @@
       ],
       "Help and feedback": [
         "Tallalt d iwenniten"
+      ],
+      "Your email writing assistant": [
+        "Amalal n tira n yimayl-ik"
       ]
     },
     "action": {
@@ -1306,6 +1309,12 @@
       "${ users } user": [
         "${ users } n useqdac",
         "${ users } yiseqdacen"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
+      ],
+      "Writing assistant seats": [
+        "Imukan n umalal n tira"
       ]
     },
     "Alert": {
@@ -1533,6 +1542,10 @@
       ],
       "Yearly": [
         "S useggas"
+      ],
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
       ]
     },
     "Bug category": {
@@ -1900,6 +1913,10 @@
       ],
       "Try ${ planName }": [
         "Ɛreḍ ${ planName }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
       ]
     },
     "Checkout row": {
@@ -3627,6 +3644,16 @@
       ],
       "Name is required": [
         "Isem yettwasra"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Fren azemz deg ${ n } n wass i d-itteddun.",
+        "Fren azemz deg ${ n } n wussan i d-itteddun."
+      ],
+      "Invalid URL": [
+        "Yir URL"
+      ],
+      "Something went wrong": [
+        "Yella wayen yeḍran"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3862,6 +3889,10 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Tettwanecdeḍ ad ternuḍ i${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "View the invitation": [
+        "Wali tinnubga",
+        "Wali tinnubgiwin"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -4161,6 +4192,9 @@
       ],
       "Search": [
         "Nadi"
+      ],
+      "Set up the writing assistant": [
+        "Sbed amalal n tira"
       ]
     },
     "Hint": {
@@ -5720,6 +5754,53 @@
       ],
       "Your online activity is protected": [
         "Armud-ik deg internet yettummesten"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } n udiwenni ad yettwacreḍ amzun yettwaɣra.",
+        "${ elementsCount } n yidiwenniyen ad ttwacerḍen amzun ttwaɣran."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } n yizen ad yettwabzem am:",
+        "${ elementsCount } n yenzan ad ttwabzmen am:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } n yizen ad yettwacreḍ amzun yettwaɣra.",
+        "${ elementsCount } n yenzan ad ttwacerḍen amzun ttwaɣran."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } n yizen ad yettwacreḍ amzun ur yettwaɣri ara.",
+        "${ elementsCount } n yenzan ad ttwacerḍen amzun ur ttwaɣrin ara."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } n yizen ad yettwakkes",
+        "${ elementsCount } n yiznan ad ttwakksen"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Aɛraḍ baṭel i ${ ASSISTANT_TRIAL_TIME_DAYS } n wass",
+        "Aɛraḍ baṭel i ${ ASSISTANT_TRIAL_TIME_DAYS } n wussan"
+      ],
+      "Learn more about the writing assistant": [
+        "Issin ugar ɣef umalal n tira"
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Amalal n tira yesra ad ifak asider send ad yettwaseqdec."
+      ],
+      "Upgrade to use auto-reply when you're away.": [
+        "Sali leqqem iwakken ad tesqedceḍ tiririt tawurmant mi ara tbeɛɛdeḍ."
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Tferneḍ **${ elementsCount } n yizen** deg ${ location }",
+        "Tferneḍ **${ elementsCount } n yiznan deg** ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Tferneḍ **${ elementsCount } n yizen**.",
+        "Tferneḍ **${ elementsCount } n yiznan**."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Iminig-ik ur yessefrak ara amalal n tira, Ɛreḍ ad t-tselkameḍ ɣef uqeddac."
       ]
     },
     "info": {
@@ -6594,6 +6675,17 @@
       ],
       "Social": [
         "Anmetti"
+      ],
+      "${ count } unread conversation": [
+        "${ count } n udiwenni ur yettwaɣran ara",
+        "${ count } idiwenniyen ur nettwaɣra ara"
+      ],
+      "${ count } unread message": [
+        "${ count } n yizen ur yettwaɣran ara",
+        "${ count } n yiznan ur nettwaɣri ara"
+      ],
+      "Writing assistant": [
+        "Amallal n tira"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -7518,6 +7610,9 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Ansuf ɣer ${ MAIL_APP_NAME }"
+      ],
+      "Download the desktop app": [
+        "Sider asnas n tnarit"
       ]
     },
     "Onboarding Proton": {
@@ -7769,6 +7864,9 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "the writing assistant": [
+        "amallal n tira"
       ]
     },
     "Placeholder for contact group name": {
@@ -8656,6 +8754,21 @@
       ],
       "Alias saved and copied": [
         "Azunisem yettwasekles yerna yettwanɣel"
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } udiwenni yettwakkes deg Yitran.",
+        "${ elementsCount } idiwenniyen ttwakksen seg Yitran."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } udiwenni deg uraǧu",
+        "${ elementsCount } n yidiwenniyen deg uraǧu"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } udiwenni yettwakkes deg uraǧu",
+        "${ elementsCount } idiwenniyen ttwakksen deg uraǧu"
+      ],
+      "Writing assistant enabled": [
+        "Amalal n tira yermed"
       ]
     },
     "Success notification": {
@@ -10014,6 +10127,31 @@
     "Drawer tab, Action": {
       "Download for Windows": [
         "Sider i Windows"
+      ]
+    },
+    "Assistant option": {
+      "Run on device": [
+        "Selkem ɣef yibenk"
+      ],
+      "Securely run on device": [
+        "Selkem ɣef yibenk s wudem aɣelsan"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Mdel"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } yimtteki",
+        "${ n } yimttekkiyen"
+      ]
+    },
+    "Referral": {
+      "Friend joined": [
+        "Yerna-d umeddakel",
+        "Rnan-d imeddukal"
       ]
     }
   }

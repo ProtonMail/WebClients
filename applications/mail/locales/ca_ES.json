@@ -1583,8 +1583,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Confia en aquesta clau",
-        "Confia en aquestes claus"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1802,6 +1802,22 @@
       ],
       "Skip to main content": [
         "Ves al contingut principal"
+      ],
+      "Don't show this again": [
+        "No ho tornis a mostrar"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Deseu ${ name } a ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Desa a ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Dona'm de baixa de ${ selectedCount }",
+        "Dona'm de baixa de ${ selectedCount }"
+      ],
+      "Use “${ label }” setting": [
+        "Utilitza la preferència \"${ label }\""
       ]
     },
     "action": {
@@ -1963,6 +1979,13 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } llicència d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } llicències d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -5490,6 +5513,256 @@
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
         "No s'ha pogut anul·lar la subscripció d'algunes llistes de correu. Torneu-ho a provar per a acabar d'anul·lar-les."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
+      ],
+      "Bookmark password is not available": [
+        "La contrasenya de l'adreça d'interès no està disponible"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No es pot afegir la foto a l'àlbum sense un nom vàlid"
+      ],
+      "Cannot download a folder": [
+        "No es pot descarregar una carpeta"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No es pot moure l'element sense un nom vàlid. Canvieu-ne el nom primer"
+      ],
+      "Cannot share root folder": [
+        "No es pot compartir la carpeta arrel"
+      ],
+      "Cannot verify the author of this file": [
+        "No es pot verificar l'autoria d'aquest fitxer"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No es pot verificar qui ha carregat aquest fitxer"
+      ],
+      "Copy operation aborted": [
+        "S'ha cancel·lat l'operació de còpia"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No es permet copiar un element a un element que no sigui una carpeta"
+      ],
+      "Could not find an available name": [
+        "No s'ha pogut trobar cap nom disponible"
+      ],
+      "Could not load sharing details": [
+        "No s'han pogut carregar els detalls de compartició"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No s'ha pogut carregar la vista prèvia de la imatge: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No s'ha pogut llegir una part d'aquest fitxer: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "No s'ha pogut desbloquejar la carpeta principal"
+      ],
+      "Could not unlock this item": [
+        "No s'ha pogut desbloquejar aquest element"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No es permet crear documents dins d'elements que no siguin carpetes"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No es permet crear fitxers dins d'elements que no siguin carpetes"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No es permet crear carpetes dins d'elements que no siguin carpetes"
+      ],
+      "Device not found": [
+        "No s'ha trobat el dispositiu"
+      ],
+      "Expiration date cannot be in the past": [
+        "La data de caducitat no pot ser en el passat"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "No s'ha pogut desxifrar el nom de l'adreça d'interès: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "No s'ha pogut desxifrar la clau de contingut: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "No s'ha pogut desxifrar el nom de l'element: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "No s'ha pogut desxifrar la clau del node: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "No s'han pogut desxifrar les metadades de la revisió"
+      ],
+      "Failed to get invitee keys": [
+        "No s'han pogut obtenir les claus del convidat"
+      ],
+      "Failed to get inviter keys": [
+        "No s'han pogut obtenir les claus de qui convida"
+      ],
+      "Failed to load the membership": [
+        "No s'ha pogut carregar l'afiliació"
+      ],
+      "Failed to load the membership data": [
+        "No s'han pogut carregar les dades d'afiliació"
+      ],
+      "Failed to verify invitation": [
+        "No s'ha pogut verificar la invitació"
+      ],
+      "Failed to verify membership": [
+        "No s'ha pogut verificar l'afiliació"
+      ],
+      "File download failed due to empty response": [
+        "Ha fallat la descàrrega del fitxer perquè la resposta era buida"
+      ],
+      "File has no revision": [
+        "El fitxer no té cap revisió"
+      ],
+      "Image preview not found": [
+        "No s’ha trobat la vista prèvia de la imatge"
+      ],
+      "Invalid URL": [
+        "L'URL no és vàlid."
+      ],
+      "Invitation not found": [
+        "No s'ha trobat la invitació"
+      ],
+      "Item not found": [
+        "No s'ha trobat l'element"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
+      ],
+      "Missing inviter email": [
+        "Falta l'adreça electrònica de qui convida"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la signatura per a ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "S'ha avortat l'operació de desplaçament"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No es permet moure un element a un element que no sigui una carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No es permet moure l'element arrel"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NODE_NAME_LENGTH } caràcters"
+      ],
+      "Name must not be empty": [
+        "El nom no pot estar buit"
+      ],
+      "No file data was received. Please try again.": [
+        "No s'han rebut dades del fitxer. Torneu-ho a provar."
+      ],
+      "Only admins can convert external invitations": [
+        "Només els administradors poden convertir invitacions externes"
+      ],
+      "Operation aborted": [
+        "S'ha cancel·lat l'operació"
+      ],
+      "Operation failed, try again later": [
+        "Ha fallat l'operació. Torneu-ho a provar més tard"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Sembla que una part del fitxer està malmesa"
+      ],
+      "Photo is already in the target album": [
+        "La foto ja és a l'àlbum de destí"
+      ],
+      "Photo not found": [
+        "No s’ha trobat la foto"
+      ],
+      "Renaming root item is not allowed": [
+        "No es permet canviar el nom de l'element arrel"
+      ],
+      "Request aborted": [
+        "Sol·licitud cancel·lada"
+      ],
+      "Signature is missing": [
+        "Falta la signatura"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Ha fallat la verificació de la signatura: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "No s'ha pogut verificar la signatura per a ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "No s'ha pogut verificar la signatura per a ${ signatureType }: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "No s'han pogut carregar algunes parts del fitxer. Torneu-ho a provar."
+      ],
+      "Some invitations could not be loaded": [
+        "No s'han pogut carregar algunes invitacions"
+      ],
+      "Some items could not be loaded": [
+        "No s'han pogut carregar alguns elements"
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El fitxer carregat no coincideix amb l'original. Torneu-ho a provar."
+      ],
+      "This file has missing crypto material": [
+        "Falta material criptogràfic en aquest fitxer"
+      ],
+      "This file has no version available to download": [
+        "Aquest fitxer no té cap versió disponible per a descarregar"
+      ],
+      "This file version could not be uploaded": [
+        "No s'ha pogut carregar aquesta versió del fitxer"
+      ],
+      "This item has no image preview": [
+        "Aquest element no té cap vista prèvia de la imatge"
+      ],
+      "This item is no longer shared": [
+        "Aquest element ja no està compartit"
+      ],
+      "This item is not shared": [
+        "Aquest element no està compartit"
+      ],
+      "Too many server errors, please try again later": [
+        "S'han produït massa errors del servidor. Torneu-ho a provar més tard"
+      ],
+      "Too many server requests, please try again later": [
+        "Hi ha hagut massa sol·licituds al servidor. Torneu-ho a provar més tard"
+      ],
+      "Verification keys are not available": [
+        "Les claus de verificació no estan disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Les claus de verificació per a ${ signatureType } no estan disponibles"
+      ],
+      "You can create public links for your own files only": [
+        "Només podeu crear enllaços públics per als vostres propis fitxers"
+      ],
+      "You can only leave items that are shared with you": [
+        "Només podeu deixar elements que se us hagin compartit"
+      ],
+      "You can only upload a new version to a file": [
+        "Només podeu carregar una nova versió a un fitxer"
+      ],
+      "You can update a public link for your own files only": [
+        "Només podeu actualitzar un enllaç públic per als vostres propis fitxers"
+      ],
+      "You do not have access to this item": [
+        "No teniu accés a aquest element"
+      ],
+      "You do not have access to this shared item": [
+        "No teniu accés a aquest element compartit"
       ]
     },
     "error": {
@@ -5887,6 +6160,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "S'ha cancel·lat la sol·licitud de clau de seguretat o s'ha esgotat el temps d'espera. Torneu-ho a provar."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "El vostre dispositiu no ha pogut completar la sol·licitud de clau de seguretat. Torneu-ho a provar o feu servir un altre mètode d'inici de sessió."
       ]
     },
     "fido2: Info": {
@@ -9813,6 +10092,39 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Les llicències d'assistent d'escriptura ja no es venen."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Activeu ${ MAIL_APP_NAME } per començar a rebre correus electrònics a ${ count } dels vostres dominis.",
+        "Activeu ${ MAIL_APP_NAME } per començar a rebre correus electrònics a ${ count } dels vostres dominis."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Activeu ${ MAIL_APP_NAME } per començar a rebre correus electrònics a ${ domainName }. ${ activateLink }"
+      ],
+      "Author is not provided on public link": [
+        "No s'ha proporcionat l'autor a l'enllaç públic"
+      ],
+      "Based only on which emails you've opened.": [
+        "Basat només en els correus electrònics que heu obert."
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Els missatges del correu brossa/paperera s'eliminaran automàticament al cap de 30 dies."
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Mou els seus correus electrònics anteriors a l'arxiu. Encara els podreu cercar."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per ajudar a mantenir el vostre compte segur, confirmeu que sou realment vós abans de continuar."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Hem importat més d'${ count } butlletí i els hem agrupat per remitent. Vegeu amb quina freqüència cadascun us envia correus electrònics i, a continuació, mantingueu, canvieu o doneu-vos de baixa amb un sol clic.",
+        "Hem importat més de ${ count } butlletins i els hem agrupat per remitent. Vegeu amb quina freqüència cadascun us envia correus electrònics i, a continuació, mantingueu, canvieu o doneu-vos de baixa amb un sol clic."
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "No rebreu correus electrònics a ${ count } dels vostres dominis fins que activeu ${ MAIL_APP_NAME }. Ho podeu fer en qualsevol moment a Preferències > Noms de domini.",
+        "No rebreu correus electrònics a ${ count } dels vostres dominis fins que activeu ${ MAIL_APP_NAME }. Ho podeu fer en qualsevol moment a Preferències > Noms de domini."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "No rebreu correus electrònics a ${ domainName } fins que activeu ${ MAIL_APP_NAME }. Ho podeu fer en qualsevol moment a Preferències > Noms de domini."
       ]
     },
     "info": {
@@ -10521,7 +10833,7 @@
         "Entrades"
       ],
       "Exact host matching": [
-        "Coincidència exacta d'amfitrió"
+        "Coincidència exacta de l'amfitrió"
       ],
       "Exact URL matching": [
         "Coincidència exacta d'URL"
@@ -11201,6 +11513,9 @@
       ],
       "Model": [
         "Model"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contrasenya del compte de ${ BRAND_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11560,6 +11875,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Cal que reactiveu les vostres claus per veure la invitació actualitzada"
+      ],
+      "Activate": [
+        "Activa"
       ]
     },
     "Link to calendar event": {
@@ -11779,7 +12097,7 @@
         "Regla de coincidència exacta d'URL"
       ],
       "Never fill with this exact URL": [
-        "No ho emplenis mai amb aquest URL exacte"
+        "No emplenis mai amb aquest URL exacte"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "El ${ date }, ${ senderString } va escriure:"
@@ -13221,6 +13539,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El vostre domini i la subscripció ja es poden utilitzar."
+      ],
+      "Choose your inbox layout": [
+        "Trieu el disseny de la safata d'entrada"
+      ],
+      "You can change this anytime in settings.": [
+        "Ho podeu canviar en qualsevol moment a les preferències."
       ]
     },
     "Onboarding Proton": {
@@ -17341,6 +17665,30 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Hide this reminder?": [
+        "Voleu amagar aquest recordatori?"
+      ],
+      "Not opened in a while": [
+        "Fa temps que no els heu obert"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
+      ],
+      "You open these sometimes": [
+        "Aquests els obriu a vegades"
+      ],
+      "You read these often": [
+        "Aquests els llegiu sovint"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Els vostres butlletins de Gmail ara més fàcils de gestionar"
       ]
     },
     "Title header for keys table": {
@@ -17676,7 +18024,7 @@
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de pesca de credencials."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
@@ -18146,6 +18494,61 @@
       ],
       "VPN devices at once": [
         "Dispositius VPN alhora"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Tanca"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "L'oferta no està disponible."
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } correu electrònic en els darrers 30 dies. No s'ha obert.",
+        "${ count } correus electrònics en els darrers 30 dies. No s'han obert."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } correu electrònic en els darrers 30 dies. Obert sovint.",
+        "${ count } correus electrònics en els darrers 30 dies. Oberts sovint."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } correu electrònic en els darrers 30 dies. Obert de vegades.",
+        "${ count } correus electrònics en els darrers 30 dies. Oberts de vegades."
+      ],
+      "No emails in the last 30 days.": [
+        "No hi ha hagut cap correu electrònic en els darrers 30 dies."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributs"
+      ],
+      "content key": [
+        "clau de contingut"
+      ],
+      "hash key": [
+        "empremta electrònica"
+      ],
+      "key": [
+        "clau"
+      ],
+      "membership": [
+        "subscripció"
+      ],
+      "name": [
+        "nom"
       ]
     }
   }

@@ -5107,6 +5107,25 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "Cannot verify the author of this file": [
+        "A fájl szerzője nem ellenőrizhető"
+      ],
+      "Invalid URL": [
+        "Érvénytelen URL cím"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet",
+        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet"
+      ],
+      "Part of the file appears to be corrupted": [
+        "A fájl egy része sérült"
+      ],
+      "Something went wrong": [
+        "Hiba történt"
+      ],
+      "Verification keys are not available": [
+        "Az ellenőrzési kulcsok nem érhetők el"
       ]
     },
     "error": {
@@ -16015,6 +16034,21 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - kártya, a következő végződéssel: ${ Last4 }"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Bezárás"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Az ajánlat nem elérhető"
+      ]
+    },
+    "Label to change view layout": {
+      "Row": [
+        "Sor"
       ]
     }
   }

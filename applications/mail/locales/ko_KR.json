@@ -1540,7 +1540,7 @@
         "신뢰"
       ],
       "Trust key": [
-        "키 신뢰"
+        "신뢰하는 키"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -1745,6 +1745,24 @@
       ],
       "Skip to main content": [
         "본문으로 건너뛰기"
+      ],
+      "Don't show this again": [
+        "다시 보지 않기"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "${ LUMO_SHORT_APP_NAME } 왼쪽으로 이동"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "${ name }을(를) ${ DRIVE_APP_NAME }에 저장"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 저장"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "${ selectedCount }개 구독 해지"
+      ],
+      "Use “${ label }” setting": [
+        "\"${ label }\" 설정값 사용"
       ]
     },
     "action": {
@@ -1892,6 +1910,9 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Managed Service Provider 애드온이 있는 조직은 자회사 조직을 만들고 관리할 수 있습니다."
       ]
     },
     "Alert": {
@@ -4368,6 +4389,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "High-performance model for complex tasks": [
+        "복잡한 작업을 위한 고성능 모델"
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "메일을 주고받지 않고 사람들이 이메일로 일정을 잡을 수 있도록 하세요."
       ]
     },
     "description": {
@@ -5343,6 +5370,240 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "저작권 침해나 데이터 유실에 대한 리포트 제출 시 메시지가 필요합니다."
+      ],
+      "Bookmark password is not available": [
+        "북마크 비밀번호를 사용할 수 없습니다"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "유효한 이름 없이는 앨범에 사진을 추가할 수 없습니다"
+      ],
+      "Cannot download a folder": [
+        "폴더를 다운로드할 수 없음"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "유효한 이름 없이는 항목을 이동할 수 없습니다. 항목 이동 전 이름을 변경하세요."
+      ],
+      "Cannot share root folder": [
+        "상위 폴더를 공유할 수 없습니다"
+      ],
+      "Cannot verify the author of this file": [
+        "이 파일의 소유자를 확인할 수 없습니다"
+      ],
+      "Cannot verify who uploaded this file": [
+        "이 파일을 업로드한 사용자의 진위를 파악할 수 없음"
+      ],
+      "Copy operation aborted": [
+        "복사 작업 중단됨"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 복사하는 것이 허용되지 않습니다"
+      ],
+      "Could not find an available name": [
+        "사용 가능한 이름을 찾을 수 없음"
+      ],
+      "Could not load sharing details": [
+        "공유 상세 정보를 불러올 수 없음"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "이미지 미리보기를 불러올 수 없음: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "해당 파일의 일부를 읽을 수 없음: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "상위 폴더를 잠금할 수 없습니다"
+      ],
+      "Could not unlock this item": [
+        "이 항목을 잠금 해제할 수 없음"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "폴더가 없는 곳에 문서를 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "폴더가 없는 곳에 파일을 생성하는 것이 허용되지 않습니다."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "폴더가 없는 곳에 폴더를 생성하는 것이 허용되지 않습니다."
+      ],
+      "Device not found": [
+        "기기를 찾을 수 없음"
+      ],
+      "Expiration date cannot be in the past": [
+        "만료일은 과거일 수 없습니다"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "북마크 키 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "북마크 이름 복호화 불가: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "북마크 비밀번호 복호화 실패: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "콘텐츠 키를 복호화할 수 없습니다: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "항목 이름을 복호화할 수 없음: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "노드 키 복호화 실패: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "수정 메타데이터를 복호화할 수 없음"
+      ],
+      "Failed to get inviter keys": [
+        "초대한 사람의 키를 받을 수 없음"
+      ],
+      "Failed to verify invitation": [
+        "초대장 확인 실패"
+      ],
+      "File download failed due to empty response": [
+        "응답이 비어있어 파일을 다운로드할 수 없습니다."
+      ],
+      "File has no revision": [
+        "파일에 수정 사항 없음"
+      ],
+      "Image preview not found": [
+        "이미지 미리보기를 사용할 수 없음"
+      ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
+      ],
+      "Invitation not found": [
+        "초대를 찾을 수 없음"
+      ],
+      "Item not found": [
+        "항목을 찾을 수 없습니다"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "기존 공개 링크는 업데이트되지 않습니다. 새로운 공개 링크로 다시 생성해야 합니다."
+      ],
+      "Missing inviter email": [
+        "초대한 사람의 이메일 누락"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType }에 대한 서명 유실"
+      ],
+      "Move operation aborted": [
+        "이동 작업 중단됨"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "폴더가 없는 곳에 항목을 이동하는 것이 허용되지 않습니다"
+      ],
+      "Moving root item is not allowed": [
+        "상위 항목에 대한 이동은 허용되지 않습니다."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "이름은 최대 ${ MAX_NODE_NAME_LENGTH }글자까지입니다."
+      ],
+      "Name must not be empty": [
+        "이름은 필수 입력 항목입니다"
+      ],
+      "No file data was received. Please try again.": [
+        "수신된 데이터가 없습니다. 다시 시도하세요."
+      ],
+      "Only admins can convert external invitations": [
+        "관리자만 외부 초대로 변경할 수 있습니다"
+      ],
+      "Operation aborted": [
+        "작업이 중단됨"
+      ],
+      "Operation failed, try again later": [
+        "작업에 실패했습니다. 나중에 다시 시도하세요."
+      ],
+      "Part of the file appears to be corrupted": [
+        "파일 일부가 손상되었을 가능성이 있습니다"
+      ],
+      "Photo is already in the target album": [
+        "해당 앨범에 같은 사진이 이미 존재합니다."
+      ],
+      "Photo not found": [
+        "사진을 찾을 수 없음"
+      ],
+      "Renaming root item is not allowed": [
+        "상위 항목에 대한 이름 변경은 허용되지 않습니다."
+      ],
+      "Request aborted": [
+        "요청 중지됨"
+      ],
+      "Signature is missing": [
+        "서명이 유실되었습니다"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "서명 인증 실패: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType }에 대한 서명 인증 실패"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType }에 대한 서명 인증 실패:${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "일부 파일의 데이터 업로드가 실패했습니다. 다시 시도하세요."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "일부 파일의 부분을 업로드할 수 없습니다. 다시 시도하세요."
+      ],
+      "Some items could not be loaded": [
+        "일부 항목을 불러올 수 없습니다."
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "업로드된 파일과 원본 파일이 일치하지 않습니다. 다시 시도해 주세요."
+      ],
+      "This file has missing crypto material": [
+        "이 파일에 필요한 암호화 키가 누락되었습니다"
+      ],
+      "This file has no version available to download": [
+        "이 파일에 다운로드할 수 있는 사용 가능한 버전이 없습니다."
+      ],
+      "This file version could not be uploaded": [
+        "해당 파일 버전은 업로드할 수 없습니다."
+      ],
+      "This item has no image preview": [
+        "해당 항목의 이미지 미리보기가 없습니다."
+      ],
+      "This item is no longer shared": [
+        "더 이상 공유되지 않는 항목입니다."
+      ],
+      "This item is not shared": [
+        "더 이상 공유되지 않는 항목입니다."
+      ],
+      "Too many server errors, please try again later": [
+        "서버 오류가 너무 많습니다. 나중에 다시 시도하십시오."
+      ],
+      "Too many server requests, please try again later": [
+        "서버 요청이 너무 많습니다. 나중에 다시 시도하십시오."
+      ],
+      "Verification keys are not available": [
+        "인증 키를 사용할 수 없습니다"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType }용 인증 키가 사용할 수 없습니다"
+      ],
+      "You can create public links for your own files only": [
+        "내가 소유한 파일만 공개 링크를 생성할 수 있습니다."
+      ],
+      "You can only leave items that are shared with you": [
+        "나와 공유된 항목에는 나갈 수만 있습니다."
+      ],
+      "You can only upload a new version to a file": [
+        "새로운 버전의 파일만 업로드할 수 있습니다."
+      ],
+      "You can update a public link for your own files only": [
+        "내가 소유한 파일만 공개 링크를 업데이트할 수 있습니다."
+      ],
+      "You do not have access to this item": [
+        "이 항목에 접근할 권한이 없습니디"
+      ],
+      "You do not have access to this shared item": [
+        "해당 항목에 대한 접근 권한이 없습니다."
       ]
     },
     "error": {
@@ -6166,6 +6427,9 @@
       ],
       "Username": [
         "사용자 이름"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "${ MAIL_APP_NAME } 전에 어떤 이메일을 가장 많이 사용하셨나요?"
       ]
     },
     "Hint": {
@@ -9340,6 +9604,72 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (구성원 ${ numberOfContacts }명)"
+      ],
+      "${ n } unread message": [
+        "읽지 않은 메시지 ${ n }개"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }**이 또한 ${ MAIL_APP_NAME } 밖의 다른 ${ BRAND_NAME } 계정 로그인에 사용됩니다."
+      ],
+      "1 vault per user": [
+        "사용자 당 금고 1개"
+      ],
+      "A new or separate address": [
+        "새로운 혹은 별개 주소"
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "${ MAIL_APP_NAME } 활성화 후 ${ count }개 도메인에서 이메일 받기 시작"
+      ],
+      "Almost done": [
+        "거의 끝났어요"
+      ],
+      "Author is not provided on public link": [
+        "작성자가 공개 링크에서 제공되지 않았습니다"
+      ],
+      "Dismiss": [
+        "닫기"
+      ],
+      "I use other Proton products": [
+        "다른 Proton 제품을 사용합니다"
+      ],
+      "Next": [
+        "다음"
+      ],
+      "No ads": [
+        "광고 없음"
+      ],
+      "No booking pages yet": [
+        "아직 설정된 예약 페이지가 없습니다"
+      ],
+      "No payment is required.": [
+        "결제 필요 없음."
+      ],
+      "Other (tell us)": [
+        "기타 (저희에게 알려주세요)"
+      ],
+      "Protection from hackers and leaks": [
+        "해킹과 유출로부터 보호"
+      ],
+      "Someone recommended it": [
+        "누군가 추천했어요"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "설문은 종단간 암호화 되지 않으므로 민감한 정보를 입력하지 마세요."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "${ count }개의 뉴스레터를 가져와 발신자별로 그룹화했습니다. 각 뉴스레터가 얼마나 자주 이메일을 보내는지 확인한 후, 클릭 한 번으로 보관, 이동 또는 구독 해지하세요."
+      ],
+      "Work or business": [
+        "업무 또는 비지니스"
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "${ MAIL_APP_NAME } 활성화 전 까지 ${ count }개 도메인에서 이메일을 받지 않습니다. 언제든지. 설정 -> 도메인 이름에서 활성화 할 수 있습니다."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Gmail이 이 ${ MAIL_APP_NAME } 주소에 연결됩니다"
       ]
     },
     "info": {
@@ -10686,6 +11016,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI 어시스턴트"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11042,6 +11375,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
+      ],
+      "Activate": [
+        "활성화"
       ]
     },
     "Link to calendar event": {
@@ -12660,6 +12996,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "도메인과 구독을 사용할 수 있습니다."
+      ],
+      "You can change this anytime in settings.": [
+        "언제든지 설정에서 변경할 수 있습니다."
       ]
     },
     "Onboarding Proton": {
@@ -15323,6 +15662,21 @@
       ],
       "You have successfully canceled your subscription.": [
         "구독을 성공적으로 취소하셨습니다."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI 어시스턴트 비활성화 됨"
+      ],
+      "One-time codes disabled": [
+        "1회용 코드 비활성화 됨"
+      ],
+      "One-time codes enabled": [
+        "1회용 코드 활성화 됨"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "${ count }개 메일링 리스트에서 구독을 취소했으며 메시지를 보관함으로 보냈습니다."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "${ count }개 메일링 리스트에서 구독을 취소했습니다."
       ]
     },
     "Success notification": {
@@ -16599,6 +16953,18 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Filter on": [
+        "필터 켬"
+      ],
+      "Share your availability": [
+        "빈 시간 공유"
+      ],
+      "Special offer": [
+        "특별 제안"
+      ],
+      "Verify it’s you": [
+        "본인 여부 확인"
       ]
     },
     "Title header for keys table": {
@@ -17224,6 +17590,55 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "닫기"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "제안 사용 불가"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "열"
+      ],
+      "Row": [
+        "행"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "지난 30일 간 ${ count }개 이메일. 열람하지 않음."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "지난 30일 간 ${ count }개 이메일. 자주 열람함."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "지난 30일 간 ${ count }개 이메일. 가끔 열람함."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "속성"
+      ],
+      "content key": [
+        "콘텐츠 키"
+      ],
+      "hash key": [
+        "해시 키"
+      ],
+      "key": [
+        "키"
+      ],
+      "membership": [
+        "멤버쉽"
+      ],
+      "name": [
+        "이름"
       ]
     }
   }

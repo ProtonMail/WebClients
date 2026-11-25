@@ -1587,9 +1587,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie",
-        "Aprobare chei",
-        "Aprobare chei"
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1808,6 +1808,23 @@
       ],
       "Skip to main content": [
         "Salt la conținutul principal"
+      ],
+      "Don't show this again": [
+        "Nu mai afișa asta"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Salvare ${ name } în ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Salvare în ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Dezabonare de la ${ selectedCount }",
+        "Dezabonare de la ${ selectedCount }",
+        "Dezabonare de la ${ selectedCount }"
+      ],
+      "Use “${ label }” setting": [
+        "Utilizare setarea „${ label }”"
       ]
     },
     "action": {
@@ -1980,6 +1997,14 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }"
       ]
     },
     "Alert": {
@@ -5538,6 +5563,257 @@
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
         "Dezabonarea de la unele liste de corespondență nu a putut fi efectuată. Reîncercați pentru a finaliza dezabonarea."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Când se raportează încălcarea drepturilor de autor sau furtul de date este necesar un mesaj."
+      ],
+      "Bookmark password is not available": [
+        "Parola semnului de carte nu este disponibilă."
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Fotografia nu se poate adăuga în album fără un nume valid."
+      ],
+      "Cannot download a folder": [
+        "Nu se poate descărca un folder."
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Nu se poate muta articolul fără un nume valid. Redenumiți-l mai întâi."
+      ],
+      "Cannot share root folder": [
+        "Folderul rădăcină nu se poate partaja."
+      ],
+      "Cannot verify the author of this file": [
+        "Autorul acestui fișier nu poate fi verificat."
+      ],
+      "Cannot verify who uploaded this file": [
+        "Nu se poate verifica autorul care a încărcat acest fișier."
+      ],
+      "Copy operation aborted": [
+        "Operația de copiere a fost anulată."
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Copierea articolului într-un alt folder nu este permisă."
+      ],
+      "Could not find an available name": [
+        "Nu s-a găsit un nume disponibil."
+      ],
+      "Could not load sharing details": [
+        "Nu s-au putut încărca detaliile de partajare."
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Nu s-a putut încărca previzualizarea imaginii: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Nu s-a putut citi o parte din acest fișier: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Nu s-a putut debloca folderul părinte."
+      ],
+      "Could not unlock this item": [
+        "Nu s-a putut debloca acest articol."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Crearea de documente în non-foldere nu este permisă."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Crearea de fișiere în non-foldere nu este permisă."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Crearea de foldere în non-foldere nu este permisă."
+      ],
+      "Device not found": [
+        "Dispozitivul nu a fost găsit."
+      ],
+      "Expiration date cannot be in the past": [
+        "Data de expirare nu poate fi în trecut."
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Nu s-a putut decripta cheia semnului de carte: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Nu s-a putut decripta numele semnului de carte: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Nu s-a putut decripta parola pentru semnul de carte: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Nu s-a putut decripta cheia conținutului: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Decriptarea numelui articolului a eșuat: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Nu s-a putut decripta cheia nodului: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Nu s-au putut decripta metadatele reviziei."
+      ],
+      "Failed to get invitee keys": [
+        "Nu s-au putut obține cheile persoanei invitate."
+      ],
+      "Failed to get inviter keys": [
+        "Eșuare obținere cheie a celui care a invitat."
+      ],
+      "Failed to load the membership": [
+        "Încărcarea calității de membru a eșuat."
+      ],
+      "Failed to load the membership data": [
+        "Încărcarea datelor de membru a eșuat."
+      ],
+      "Failed to verify invitation": [
+        "Verificarea invitației a eșuat."
+      ],
+      "Failed to verify membership": [
+        "Verificarea calității de membru a eșuat."
+      ],
+      "File download failed due to empty response": [
+        "Descărcarea fișierului a eșuat din cauza unui răspuns gol."
+      ],
+      "File has no revision": [
+        "Fișierul nu are nicio revizie."
+      ],
+      "Image preview not found": [
+        "Previzualizarea imaginii nu a fost găsită."
+      ],
+      "Invalid URL": [
+        "Adresă URL nevalidă."
+      ],
+      "Invitation not found": [
+        "Invitația nu a fost găsită."
+      ],
+      "Item not found": [
+        "Articol negăsit."
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Legătura web publică veche nu poate fi actualizată. Creați o legătură web publică nouă."
+      ],
+      "Missing inviter email": [
+        "Lipsește adresa de e-mail a persoanei care a invitat."
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Lipsește semnătura pentru ${ signatureType }."
+      ],
+      "Move operation aborted": [
+        "Operația de mutare a fost anulată."
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Mutarea articolului într-un non-folder nu este permisă."
+      ],
+      "Moving root item is not allowed": [
+        "Mutarea articolului rădăcină nu este permisă."
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caracter.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } caractere.",
+        "Numele trebuie să aibă cel mult ${ MAX_NODE_NAME_LENGTH } de caractere."
+      ],
+      "Name must not be empty": [
+        "Numele nu poate fi gol."
+      ],
+      "No file data was received. Please try again.": [
+        "Nu s-au primit date despre fișier. Reîncercați."
+      ],
+      "Only admins can convert external invitations": [
+        "Doar administratorii pot converti invitațiile externe."
+      ],
+      "Operation aborted": [
+        "Operație anulată."
+      ],
+      "Operation failed, try again later": [
+        "Operația a eșuat. Reîncercați."
+      ],
+      "Part of the file appears to be corrupted": [
+        "O parte a fișierului pare a fi coruptă."
+      ],
+      "Photo is already in the target album": [
+        "Fotografia este deja în albumul țintă."
+      ],
+      "Photo not found": [
+        "Fotografie negăsită."
+      ],
+      "Renaming root item is not allowed": [
+        "Redenumirea articolului rădăcină nu este permisă."
+      ],
+      "Request aborted": [
+        "Solicitare anulată."
+      ],
+      "Signature is missing": [
+        "Semnătura lipsește."
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verificarea semnăturii a eșuat: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verificarea semnăturii pentru ${ signatureType } a eșuat."
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verificarea semnăturii pentru ${ signatureType } a eșuat: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Unele date din fișier nu au putut fi încărcate. Reîncercați."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Unele părți din fișier nu au putut fi încărcate. Reîncercați."
+      ],
+      "Some invitations could not be loaded": [
+        "Unele invitații nu au putut fi încărcate."
+      ],
+      "Some items could not be loaded": [
+        "Unele articole nu au putut fi încărcate."
+      ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Fișierul încărcat nu corespunde cu originalul. Reîncercați."
+      ],
+      "This file has missing crypto material": [
+        "Acest fișier are materiale criptografice lipsă."
+      ],
+      "This file has no version available to download": [
+        "Acest fișier nu are nicio versiune disponibilă pentru descărcare."
+      ],
+      "This file version could not be uploaded": [
+        "Această versiune de fișier nu a putut fi încărcată."
+      ],
+      "This item has no image preview": [
+        "Acest articol nu are o imagine de examinat."
+      ],
+      "This item is no longer shared": [
+        "Acest articol nu mai este partajat."
+      ],
+      "This item is not shared": [
+        "Acest articol nu este partajat."
+      ],
+      "Too many server errors, please try again later": [
+        "Prea multe erori de server. Reîncercați mai târziu."
+      ],
+      "Too many server requests, please try again later": [
+        "Prea multe solicitări pentru server. Reîncercați mai târziu."
+      ],
+      "Verification keys are not available": [
+        "Cheile de verificare nu sunt disponibile."
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Cheile de verificare pentru ${ signatureType } nu sunt disponibile."
+      ],
+      "You can create public links for your own files only": [
+        "Puteți crea o legătură web publică doar pentru propriile fișiere."
+      ],
+      "You can only leave items that are shared with you": [
+        "Puteți lăsa doar articolele care vă sunt partajate."
+      ],
+      "You can only upload a new version to a file": [
+        "Puteți încărca doar o versiune nouă a unui fișier."
+      ],
+      "You can update a public link for your own files only": [
+        "Puteți actualiza o legătură web publică doar pentru propriile fișiere."
+      ],
+      "You do not have access to this item": [
+        "Nu aveți acces la acest articol."
+      ],
+      "You do not have access to this shared item": [
+        "Nu aveți acces la acest articol."
       ]
     },
     "error": {
@@ -5938,6 +6214,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Solicitarea cheii de securitate a fost anulată sau a expirat. Reîncercați."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dispozitivul nu v-a putut finaliza solicitarea cheii de securitate. Reîncercați sau folosiți o altă metodă de conectare."
       ]
     },
     "fido2: Info": {
@@ -9986,6 +10268,42 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Licențele pentru asistentul de scriere nu se mai vând."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje pe ${ count } dintre domeniile personale.",
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje pe ${ count } dintre domeniile personale.",
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje pe ${ count } dintre domeniile personale."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje la ${ domainName }. ${ activateLink }"
+      ],
+      "Author is not provided on public link": [
+        "Autorul nu este furnizat în legătura web publică."
+      ],
+      "Based only on which emails you've opened.": [
+        "Doar pe baza mesajelor pe care le-ați deschis."
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Mesajele din Nedorite/Gunoi vor fi șterse automat după 30 de zile."
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Mutați mesajele mai vechi în Arhivă. Le veți putea căuta în continuare."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Pentru a contribui la menținerea siguranței contului, confirmați-vă identitatea înainte de a continua."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Am preluat ${ count } buletin informativ și l-am grupat în funcție de expeditor. Vedeți cât de des vă trimite mesaje, apoi păstrați-l, mutați-l sau dezabonați-vă – totul cu un singur clic.",
+        "Am preluat ${ count } buletine informative și le-am grupat în funcție de expeditor. Vedeți cât de des vă trimite fiecare mesaje, apoi păstrați-le, mutați-le sau dezabonați-vă – totul cu un singur clic.",
+        "Am preluat ${ count } de buletine informative și le-am grupat în funcție de expeditor. Vedeți cât de des vă trimite fiecare mesaje, apoi păstrați-le, mutați-le sau dezabonați-vă – totul cu un singur clic."
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Nu veți primi e-mailuri pentru ${ count } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii.",
+        "Nu veți primi e-mailuri pentru ${ count } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii.",
+        "Nu veți primi e-mailuri pentru ${ count } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Nu veți primi mesaje pentru ${ domainName } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii."
       ]
     },
     "info": {
@@ -11383,6 +11701,9 @@
       ],
       "One-time codes": [
         "Cod de unică folosință"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Parolă cont ${ BRAND_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11742,6 +12063,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "Activate": [
+        "Activare"
       ]
     },
     "Link to calendar event": {
@@ -13446,6 +13770,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domeniul și abonamentul sunt pregătite de utilizare."
+      ],
+      "Choose your inbox layout": [
+        "Alegeți aspectul interfeței"
+      ],
+      "You can change this anytime in settings.": [
+        "Puteți modifica oricând aceasta în setări."
       ]
     },
     "Onboarding Proton": {
@@ -17669,6 +17999,30 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
+      "Hide this reminder?": [
+        "Ascundeți această notificare?"
+      ],
+      "Not opened in a while": [
+        "Nedeschise de un timp"
+      ],
+      "Special offer": [
+        "Ofertă specială"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
+      ],
+      "You open these sometimes": [
+        "Deschideți astea uneori"
+      ],
+      "You read these often": [
+        "Citiți astea des"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Buletinele informative din Gmail, acum mai ușor de gestionat"
       ]
     },
     "Title header for keys table": {
@@ -18519,6 +18873,64 @@
       ],
       "VPN devices at once": [
         "Dispozitive VPN simultane"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Închidere"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Ofertă indisponibilă"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } e-mail în ultimele 30 de zile. Nedeschis.",
+        "${ count } e-mailuri în ultimele 30 de zile. Nedeschise.",
+        "${ count } de e-mailuri în ultimele 30 de zile. Nedeschise."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } e-mail în ultimele 30 de zile. Deschis des.",
+        "${ count } e-mailuri în ultimele 30 de zile. Deschise des.",
+        "${ count } de e-mailuri în ultimele 30 de zile. Deschise des."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } e-mail în ultimele 30 de zile. Deschis ocazional.",
+        "${ count } e-mailuri în ultimele 30 de zile. Deschise ocazional.",
+        "${ count } de e-mailuri în ultimele 30 de zile. Deschise ocazional."
+      ],
+      "No emails in the last 30 days.": [
+        "Niciun mesaj în ultimele 30 de zile."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atribute"
+      ],
+      "content key": [
+        "cheia conținutului"
+      ],
+      "hash key": [
+        "cheia hash"
+      ],
+      "key": [
+        "cheie"
+      ],
+      "membership": [
+        "apartenență"
+      ],
+      "name": [
+        "nume"
       ]
     }
   }

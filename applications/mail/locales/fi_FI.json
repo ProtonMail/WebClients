@@ -1721,6 +1721,12 @@
       ],
       "Skip to main content": [
         "Siirry suoraan sisältöön"
+      ],
+      "Don't show this again": [
+        "Älä näytä tätä uudelleen"
+      ],
+      "Use “${ label }” setting": [
+        "Käyttäkää ”${ label }” -asetusta"
       ]
     },
     "action": {
@@ -5316,6 +5322,30 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Invalid URL": [
+        "Virheellinen URL"
+      ],
+      "Invitation not found": [
+        "Kutsua ei löytynyt"
+      ],
+      "Item not found": [
+        "Kohdetta ei löytynyt"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Vanhanmallista julkista linkkiä ei voida päivittää. Luo uusi julkinen linkki."
+      ],
+      "Name must not be empty": [
+        "Nimi ei voi olla tyhjä"
+      ],
+      "Photo not found": [
+        "Kuvaa ei löytynyt"
+      ],
+      "Signature is missing": [
+        "Allekirjoitus puuttuu"
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ]
     },
     "error": {
@@ -16252,6 +16282,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Verify it’s you": [
+        "Vahvista henkilöllisyytesi"
       ]
     },
     "Title header for keys table": {
@@ -16927,6 +16960,32 @@
       ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay – kortti päättyen ${ Last4 }"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Sulje"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tarjous ei ole saatavilla"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sarake"
+      ],
+      "Row": [
+        "Rivi"
+      ]
+    },
+    "Property": {
+      "key": [
+        "avain"
+      ],
+      "name": [
+        "nimi"
       ]
     }
   }
