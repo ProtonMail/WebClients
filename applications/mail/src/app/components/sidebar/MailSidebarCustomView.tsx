@@ -1,6 +1,9 @@
+import { useHistory } from 'react-router-dom';
+
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import NewFeatureTag from '@proton/components/components/newFeatureTag/NewFeatureTag';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -11,7 +14,9 @@ import noop from '@proton/utils/noop';
 
 import { useNewsletterSubscriptions } from '../../store/newsletterSubscriptions/hook';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
+import { BYOEInboxCleanupSpotlight } from '../view/NewsletterSubscription/Spotlight/BYOEInboxCleanupSpotlight';
 import { NewsletterSubscription } from '../view/NewsletterSubscription/Spotlight/NewsletterSubscriptionSpotlight';
+import { useBYOEInboxCleanupSpotlight } from '../view/NewsletterSubscription/Spotlight/useBYOEInboxCleanupSpotlight';
 import { useNewsletterSubscriptionSpotlight } from '../view/NewsletterSubscription/Spotlight/useNewsletterSubscriptionSpotlight';
 import SidebarItem from './SidebarItem';
 
@@ -21,7 +26,9 @@ interface SidebarItemProps {
 }
 
 const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: SidebarItemProps) => {
-    const spotlight = useNewsletterSubscriptionSpotlight();
+    const history = useHistory();
+    const newsletterSpotlight = useNewsletterSubscriptionSpotlight();
+    const byoeSpotlight = useBYOEInboxCleanupSpotlight();
 
     const [newsletterSub] = useNewsletterSubscriptions();
     const { canUseCategoryView } = useCategoriesView();
@@ -30,14 +37,40 @@ const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: Sideba
         ? c('Title').ngettext(msgid`Mailing list`, `Mailing lists`, newsletterSub.tabs.active.totalCount)
         : c('Title').t`Newsletters`;
 
+    // Both spotlights share the item's one Spotlight; they never show together, as Mail shows one spotlight per load
+    const isBYOESpotlightShown = byoeSpotlight.shouldShowSpotlight;
+    const activeSpotlight = isBYOESpotlightShown ? byoeSpotlight : newsletterSpotlight;
+
+    const openMailingLists = () => {
+        byoeSpotlight.onClose();
+        history.push(CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route);
+    };
+
+    const handleItemClick = () => {
+        newsletterSpotlight.onClose();
+        // Closing it before it shows would hide it for the rest of this visit
+        if (isBYOESpotlightShown) {
+            byoeSpotlight.onClose();
+        }
+    };
+
     return (
         <Spotlight
             borderRadius="lg"
             innerClassName="py-3 pl-4"
-            content={<NewsletterSubscription />}
-            show={spotlight.shouldShowSpotlight}
-            onDisplayed={spotlight.onDisplayed}
-            onClose={spotlight.onClose}
+            content={
+                isBYOESpotlightShown ? (
+                    <BYOEInboxCleanupSpotlight
+                        isNewToMailingLists={byoeSpotlight.isNewToMailingLists}
+                        onOpen={openMailingLists}
+                    />
+                ) : (
+                    <NewsletterSubscription />
+                )
+            }
+            show={activeSpotlight.shouldShowSpotlight}
+            onDisplayed={activeSpotlight.onDisplayed}
+            onClose={activeSpotlight.onClose}
             originalPlacement="right"
         >
             <div>
@@ -48,10 +81,15 @@ const NewsletterSubscriptionButton = ({ hideNotificationDot, collapsed }: Sideba
                     isFolder={false}
                     icon={IcEnvelopeCheck}
                     text={title}
+                    badge={
+                        isBYOESpotlightShown && byoeSpotlight.isNewToMailingLists ? (
+                            <NewFeatureTag featureKey="byoe-inbox-cleanup-mailing-lists" className="text-uppercase" />
+                        ) : undefined
+                    }
                     moveToFolder={noop}
                     applyLabels={noop}
                     unreadCount={hideNotificationDot ? 0 : newsletterSub.tabs.active.totalCount}
-                    onClickCallback={() => spotlight.onClose()}
+                    onClickCallback={handleItemClick}
                     hideCountOnHover={false}
                     hideSpinner
                 />

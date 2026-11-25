@@ -107,4 +107,19 @@ describe('SidebarItem', () => {
 
         expect(useEventManager.call).not.toHaveBeenCalled();
     });
+
+    it('shows the badge after the title', async () => {
+        await mailTestRender(<SidebarItem {...defaultProps} badge={<span>Badge</span>} />);
+
+        const title = screen.getByText('Inbox');
+        const badge = screen.getByText('Badge');
+
+        expect(title.compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
+
+    it('leaves the badge out when collapsed', async () => {
+        await mailTestRender(<SidebarItem {...defaultProps} collapsed badge={<span>Badge</span>} />);
+
+        expect(screen.queryByText('Badge')).toBeNull();
+    });
 });

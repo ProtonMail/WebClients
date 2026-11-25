@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 // jsdom kept: happy-dom returns hex colours where the test expects rgb()
-import { act, fireEvent, getAllByText, screen } from '@testing-library/react';
+import { act, fireEvent, getAllByText, getByText, queryByText, screen } from '@testing-library/react';
 import { addDays, subDays } from 'date-fns';
 import loudRejection from 'loud-rejection';
 import type { MockedFunction } from 'vitest';
@@ -31,9 +31,30 @@ import { minimalCache } from '../../helpers/tests/cache';
 import { clearAll, getDropdown } from '../../helpers/tests/helper';
 import { mailTestRender } from '../../helpers/tests/render';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
+import { useBYOEInboxCleanupSpotlight } from '../view/NewsletterSubscription/Spotlight/useBYOEInboxCleanupSpotlight';
 import MailSidebar from './MailSidebar';
 
 vi.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
+
+// The real hook needs the Easy Switch store, which the test render doesn't provide
+vi.mock('../view/NewsletterSubscription/Spotlight/useBYOEInboxCleanupSpotlight', () => ({
+    useBYOEInboxCleanupSpotlight: vi.fn(),
+}));
+const mockedUseBYOEInboxCleanupSpotlight = vi.mocked(useBYOEInboxCleanupSpotlight);
+const mockOnBYOESpotlightDisplayed = vi.fn();
+const mockOnBYOESpotlightClose = vi.fn();
+const mockBYOESpotlight = (shouldShowSpotlight: boolean, isNewToMailingLists = true) => {
+    mockedUseBYOEInboxCleanupSpotlight.mockReturnValue({
+        shouldShowSpotlight,
+        isNewToMailingLists,
+        onDisplayed: mockOnBYOESpotlightDisplayed,
+        onClose: mockOnBYOESpotlightClose,
+    });
+};
+
+beforeEach(() => {
+    mockBYOESpotlight(false);
+});
 
 vi.mock('@proton/account/userSettings/hooks');
 const mockedUserSettings = useUserSettings as MockedFunction<any>;
@@ -557,6 +578,109 @@ describe('MailSidebar', () => {
             const target = document.querySelector('[data-shortcut-target="item-container"]');
 
             assertFocus(target);
+        });
+    });
+
+    describe('Mailing lists spotlight after a BYOE import', () => {
+        const getMailingListsItem = () => {
+            return screen.getByTestId('navigation-link:views/newsletters');
+        };
+
+        it('shows someone new to Mailing lists the spotlight copy and a New badge while the spotlight shows', async () => {
+            mockBYOESpotlight(true);
+            await setup();
+
+            screen.getByText('Meet Mailing lists');
+            screen.getByText(
+                'Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.'
+            );
+            screen.getByRole('button', { name: 'Open Mailing lists' });
+            screen.getByTestId('spotlight-inner-close-button');
+            expect(getByText(getMailingListsItem(), 'New')).toBeInTheDocument();
+        });
+
+        it('tells someone who has opened Mailing lists before about their Gmail newsletters, with no New badge', async () => {
+            mockBYOESpotlight(true, false);
+            await setup();
+
+            screen.getByText('Your Gmail newsletters are here');
+            screen.getByText(
+                "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place."
+            );
+            screen.getByRole('button', { name: 'Open Mailing lists' });
+            expect(screen.queryByText('Meet Mailing lists')).toBeNull();
+            expect(queryByText(getMailingListsItem(), 'New')).toBeNull();
+        });
+
+        it('says Mailing lists even when the item is called Newsletters', async () => {
+            const previousUseFlag = mockUseFlag.getMockImplementation();
+            mockUseFlag.mockImplementation((flag) => {
+                return flag === 'CategoryViewDisabled';
+            });
+            mockBYOESpotlight(true);
+
+            try {
+                await setup();
+
+                expect(getMailingListsItem()).toHaveTextContent('Newsletters');
+                screen.getByText('Meet Mailing lists');
+                screen.getByRole('button', { name: 'Open Mailing lists' });
+            } finally {
+                if (previousUseFlag) {
+                    mockUseFlag.mockImplementation(previousUseFlag);
+                } else {
+                    mockUseFlag.mockReset();
+                }
+            }
+        });
+
+        it('Open Mailing lists opens Mailing lists and closes the spotlight', async () => {
+            mockBYOESpotlight(true);
+            const { history } = await setup();
+
+            fireEvent.click(screen.getByRole('button', { name: 'Open Mailing lists' }));
+
+            expect(history.location.pathname).toBe('/views/newsletters');
+            expect(mockOnBYOESpotlightClose).toHaveBeenCalledTimes(1);
+        });
+
+        it('clicking the item closes the spotlight', async () => {
+            mockBYOESpotlight(true);
+            await setup();
+
+            fireEvent.click(getMailingListsItem());
+
+            expect(mockOnBYOESpotlightClose).toHaveBeenCalledTimes(1);
+        });
+
+        it('showing the spotlight tells the BYOE hook it was displayed', async () => {
+            mockBYOESpotlight(true);
+            await setup();
+
+            expect(mockOnBYOESpotlightDisplayed).toHaveBeenCalledTimes(1);
+        });
+
+        it('the close button closes the BYOE spotlight', async () => {
+            mockBYOESpotlight(true);
+            await setup();
+
+            fireEvent.click(screen.getByTestId('spotlight-inner-close-button'));
+
+            expect(mockOnBYOESpotlightClose).toHaveBeenCalledTimes(1);
+        });
+
+        it("no badge when the spotlight isn't showing", async () => {
+            await setup();
+
+            expect(queryByText(getMailingListsItem(), 'New')).toBeNull();
+        });
+
+        it("clicking the item doesn't dismiss a spotlight that isn't showing yet", async () => {
+            await setup();
+
+            fireEvent.click(getMailingListsItem());
+
+            expect(mockOnBYOESpotlightClose).not.toHaveBeenCalled();
         });
     });
 });

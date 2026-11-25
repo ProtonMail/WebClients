@@ -58,6 +58,8 @@ interface Props {
     text: string;
     shortcutText?: string;
     content?: ReactNode;
+    /** Shown after the title, pushed to the right, and left out when the sidebar is collapsed */
+    badge?: ReactNode;
     itemOptions?: ReactNode;
     color?: string;
     unreadCount?: number;
@@ -81,6 +83,7 @@ const SidebarItem = ({
     text,
     shortcutText,
     content = text,
+    badge,
     itemOptions,
     color,
     isFolder,
@@ -251,6 +254,7 @@ const SidebarItem = ({
                     >
                         {content}
                     </span>
+                    {badge && !collapsed && <span className="ml-auto flex shrink-0">{badge}</span>}
                 </SidebarListItemContent>
             </SidebarListItemLink>
         </SidebarListItem>
