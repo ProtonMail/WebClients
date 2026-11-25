@@ -108,27 +108,29 @@ const MAX_STYLE_NORMALIZATION_PASSES = 5;
  * Decode escapes and strip CSS comments until neither changes the string.
  * Removing a comment can join a new character reference (`&#/**\/117;` -> `&#117;`), and
  * escapeForbiddenStyle decodes its input again, so URL checks must run on a string that
- * no further decode can change. Returns an empty string if it does not settle.
+ * no further decode can change. Returns null if decoding gives up or the style does not settle
+ * within MAX_STYLE_NORMALIZATION_PASSES.
  */
-const normalizeStyle = (style: string) => {
+const normalizeStyle = (style: string): { normalized: string; decoded: boolean } | null => {
     let current = style;
     let decoded = false;
 
     for (let pass = 0; pass < MAX_STYLE_NORMALIZATION_PASSES; pass++) {
         const unescaped = recurringUnescapeCSSEncoding(current);
-        if (unescaped === '') {
-            return { normalized: '', decoded };
-        }
-        decoded ||= unescaped !== current;
-
         const withoutComments = unescaped.replace(/\/\*[\s\S]*?\*\//g, '');
-        if (withoutComments === current) {
+
+        if (unescaped === current && withoutComments === unescaped) {
             return { normalized: current, decoded };
         }
+        if (unescaped === '') {
+            return null;
+        }
+
+        decoded ||= unescaped !== current;
         current = withoutComments;
     }
 
-    return { normalized: '', decoded };
+    return null;
 };
 
 /**
@@ -140,13 +142,15 @@ export const escapeURLinStyle = (style: string) => {
     // handle the case where the value is html encoded, e.g.:
     // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
     // Comments are stripped so the sanitizer sees the same tokens the CSS parser would.
-    const { normalized: withoutCSSComments, decoded: escapeFlag } = normalizeStyle(style);
+    const normalization = normalizeStyle(style);
 
-    // If we cancelled the unescape encoding step because it was too long, we are returning an empty string.
-    // In that case we also need to return an empty string in this function, otherwise we will not escape correctly the content
-    if (withoutCSSComments === '') {
+    // If decoding gave up or the style never settled, we cannot know what the CSS parser will see,
+    // so we drop the whole style rather than escape a string that could still change
+    if (!normalization) {
         return '';
     }
+
+    const { normalized: withoutCSSComments, decoded: escapeFlag } = normalization;
 
     const escapedStyle = withoutCSSComments
         .replace(/\\r/g, 'r')
