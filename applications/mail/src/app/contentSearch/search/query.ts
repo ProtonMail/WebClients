@@ -2,6 +2,32 @@ import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mai
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
+import { normalizeIndexedEmail } from '../engine/addresses';
+
+/**
+ * Matches the input against every address of the given attributes: its email (tag or text) and display name.
+ * Whole tokens in the order typed (an exact phrase under `Equals`), not fuzzy (`Matches`) nor order-free: the
+ * element list still filters search results again on sender and recipients (`matchFrom` / `matchTo`, a substring
+ * check), so a hit it rejects, such as a typo or reordered words, would be dropped from the list but still counted
+ * in its total, leaving loading placeholders that never resolve.
+ * One gap is left until the element list stops filtering again: the phrase ignores separators while the substring
+ * check doesn't, so `john doe` finds `john.doe@x.com` (and `jean luc` finds `Jean-Luc`) but the list drops it.
+ */
+function createAddressQuery(attributeNames: [string, ...string[]], input: string | undefined): Expression | undefined {
+    // Normalized like the indexed emails, so that a full address hits the email tag regardless of case.
+    const term = normalizeIndexedEmail(input);
+    if (!term) {
+        return undefined;
+    }
+    return attributeNames
+        .map((attributeName) => {
+            return Expression.attr(attributeName, Func.Equals, TermValue.phrase(term));
+        })
+        .reduce((previousExp, exp) => {
+            return previousExp.or(exp);
+        });
+}
+
 function createBasicQuery(query: string): Expression {
     return Expression.attr('body', Func.Matches, TermValue.text(query))
         .or(Expression.attr('subject', Func.Matches, TermValue.text(query)))
@@ -20,8 +46,8 @@ function anyLabel(labelIds: string[]): Expression | undefined {
 
 function createExtentedQuery(params: {
     keywords?: string;
-    sender?: string;
-    recipient?: string;
+    from?: string;
+    to?: string;
     addressId?: string;
     afterDate?: number;
     beforeDate?: number;
@@ -41,11 +67,13 @@ function createExtentedQuery(params: {
         }
     }
 
-    if (params.sender !== undefined) {
-        exp = and(Expression.attr('sender', Func.Equals, TermValue.text(params.sender)));
+    const fromExp = createAddressQuery(['from'], params.from);
+    if (fromExp) {
+        exp = and(fromExp);
     }
-    if (params.recipient !== undefined) {
-        exp = and(Expression.attr('recipient', Func.Equals, TermValue.text(params.recipient)));
+    const toExp = createAddressQuery(['to', 'cc', 'bcc'], params.to);
+    if (toExp) {
+        exp = and(toExp);
     }
     if (params.addressId !== undefined) {
         exp = and(Expression.attr('addressId', Func.Equals, TermValue.text(params.addressId)));
@@ -85,8 +113,8 @@ function createExtentedQuery(params: {
 export const buildQuery = (params: NormalizedSearchParams) => {
     return createExtentedQuery({
         keywords: params.search.keyword,
-        sender: params.search.from,
-        recipient: params.search.to,
+        from: params.search.from,
+        to: params.search.to,
         afterDate: params.search.begin,
         beforeDate: params.search.end,
         labelIds: params.labelIDs,

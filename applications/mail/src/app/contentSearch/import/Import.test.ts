@@ -55,6 +55,7 @@ const makeDoc = (
         Sender: { Address: sender, Name: 'Sender' },
         ToList: [{ Address: to, Name: 'To' }],
         CCList: [],
+        BCCList: [],
         LabelIDs: labelIDs,
         AddressID: 'address-1',
     } as any as ESBaseMessage,
@@ -236,12 +237,13 @@ describe('Importer', () => {
         expect(doc.identifier).toBe('m1');
         expect(doc.attributes).toMatchObject({
             addressId: ['address-1'],
-            sender: ['sender@proton.me'],
-            recipient: ['to@proton.me'],
             labelId: ['0'],
             hasAttachments: [false],
             time: [1_700_000_000],
         });
+        // each address starts with its email as a tag
+        expect(doc.attributes.from[0]).toBe('sender@proton.me');
+        expect(doc.attributes.to[0]).toBe('to@proton.me');
         // ...and the subject/body are tokenised into [position, token] pairs.
         const tokens = (attribute: [number, string][][]) => attribute[0].map(([, token]) => token);
         expect(tokens(doc.attributes.subject)).toEqual(['invoice', 'march']);

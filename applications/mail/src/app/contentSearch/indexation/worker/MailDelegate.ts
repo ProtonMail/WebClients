@@ -1,10 +1,12 @@
 import { html_to_text_fast } from '@protontech/mail-html-to-text-fast-wasm';
 
 import { type Document, Value } from '@proton/proton-foundation-search';
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import type { ESBaseMessage } from '../../../models/encryptedSearch';
+import { normalizeIndexedEmail } from '../../engine/addresses';
 
 /**
  * Separator between filenames in the `attachment` attribute (mail-specs search-indexing, "Attachment names").
@@ -117,19 +119,37 @@ export const getIndexedAttachmentNames = (attachmentsMetadata: AttachmentsMetada
         .join(ATTACHMENT_NAME_SEPARATOR);
 };
 
+/**
+ * The three values each address contributes to `from`, `to`, `cc` and `bcc`, in this order: the email as a tag,
+ * the email as text, and the display name as text (mail-specs search-indexing, "Addresses",
+ * https://gitlab.protontech.ch/ProtonMail/mail-specs/-/tree/main/specs/search-indexing#addresses).
+ * A match's position tells which address and which part matched, so the values are never reordered nor omitted:
+ * a missing display name is an empty text value, which never matches but keeps the next address aligned.
+ * Without an email, an empty text value takes the place of the tag too, as an empty tag would match.
+ */
+const getIndexedAddressValues = (recipient: Pick<Recipient, 'Address' | 'Name'>) => {
+    const email = normalizeIndexedEmail(recipient.Address);
+    return [email ? Value.tag(email) : Value.text(''), Value.text(email), Value.text((recipient.Name ?? '').trim())];
+};
+
+const addAddressAttribute = (doc: Document, attributeName: string, recipients: Recipient[] | undefined) => {
+    for (const recipient of recipients ?? []) {
+        for (const value of getIndexedAddressValues(recipient)) {
+            doc.addAttribute(attributeName, value);
+        }
+    }
+};
+
 export class MailDelegate {
     stageMetadata(metadata: ESBaseMessage, doc: Document) {
         doc.addAttribute('subject', Value.text(metadata.Subject));
         doc.addAttribute('time', Value.int(BigInt(metadata.Time)));
         doc.addAttribute('hasAttachments', Value.bool(metadata.NumAttachments > 0));
         doc.addAttribute('attachment', Value.text(getIndexedAttachmentNames(metadata.AttachmentsMetadata)));
-        doc.addAttribute('sender', Value.tag(metadata.Sender.Address));
-        for (const to of metadata.ToList) {
-            doc.addAttribute('recipient', Value.tag(to.Address));
-        }
-        for (const cc of metadata.CCList) {
-            doc.addAttribute('recipient', Value.tag(cc.Address));
-        }
+        addAddressAttribute(doc, 'from', [metadata.Sender]);
+        addAddressAttribute(doc, 'to', metadata.ToList);
+        addAddressAttribute(doc, 'cc', metadata.CCList);
+        addAddressAttribute(doc, 'bcc', metadata.BCCList);
         for (const label of metadata.LabelIDs) {
             doc.addAttribute('labelId', Value.tag(label));
         }
