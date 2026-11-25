@@ -5,6 +5,8 @@ import { c, msgid } from 'ttag';
 import { useMembers } from '@proton/account/members/hooks';
 import { useMembersUsage } from '@proton/account/members/useMembersUsage';
 import SearchInput from '@proton/components/components/input/SearchInput';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import usePagination from '@proton/components/components/pagination/usePagination';
 import RoleAssignmentPausedBanner from '@proton/components/containers/members/rolesAndPermissions/RoleAssignmentPausedBanner';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -14,6 +16,8 @@ import noop from '@proton/utils/noop';
 import { MembersTable } from './MembersTable';
 import { MembersTableHeader } from './MembersTableHeader';
 import { useMemberActions } from './useMemberActions';
+
+const pageSize = 50;
 
 export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showUsage?: boolean }) => {
     const [keywords, setKeywords] = useState('');
@@ -47,6 +51,7 @@ export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showU
     }, [keywords, members]);
 
     const total = filteredMembers.length;
+    const { page, list, onNext, onPrevious, onSelect } = usePagination(filteredMembers, 1, pageSize);
 
     return (
         <>
@@ -57,7 +62,10 @@ export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showU
                 app={app}
                 searchInput={
                     <SearchInput
-                        onChange={(value) => setKeywords(value)}
+                        onChange={(value) => {
+                            setKeywords(value);
+                            onSelect(1);
+                        }}
                         placeholder={c('Placeholder').t`Search for a user or address`}
                         value={keywords}
                         aria-label={c('Placeholder').t`Search users`}
@@ -79,11 +87,22 @@ export const MembersLocal = ({ app, showUsage = false }: { app: APP_NAMES; showU
             </span>
 
             <MembersTable
-                members={filteredMembers}
+                members={list}
                 loadingMembers={loadingMembers}
                 membersHook={membersHook}
                 membersUsage={showUsage ? membersUsage : undefined}
             />
+
+            <div className="text-center">
+                <Pagination
+                    total={total}
+                    limit={pageSize}
+                    page={page}
+                    onNext={onNext}
+                    onPrevious={onPrevious}
+                    onSelect={onSelect}
+                />
+            </div>
         </>
     );
 };
