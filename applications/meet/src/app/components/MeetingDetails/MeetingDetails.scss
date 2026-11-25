@@ -1,5 +1,5 @@
 .meeting-info-wrapper {
-	background-color: #ffffff0a;
+	background-color: var(--background-alpha-weak);
 	border: 1px solid #ffffff05;
 	font-weight: 500 !important;
 
@@ -19,9 +19,9 @@
 }
 
 .meeting-count-mismatch-card {
-	border: 1px solid rgb(255 255 255 / 0.08);
+	border: 1px solid var(--border-alpha-norm);
 	border-radius: var(--border-radius-xxl);
-	background-color: rgb(255 255 255 / 0.04);
+	background-color: var(--background-alpha-weak);
 
 	&--warning {
 		border-color: rgb(255 151 97 / 0.08);
