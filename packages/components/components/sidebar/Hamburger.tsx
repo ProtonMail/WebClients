@@ -19,7 +19,7 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle, iconSize = 4, ...rest
             shape="ghost"
             color="weak"
             className="hamburger md:hidden no-print"
-            aria-expanded={expanded === false ? false : undefined}
+            aria-expanded={expanded}
             aria-controls={sidebarId}
             onClick={onToggle}
             {...rest}
