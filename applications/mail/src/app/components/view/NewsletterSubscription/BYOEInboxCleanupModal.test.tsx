@@ -4,9 +4,10 @@ import { act, fireEvent, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import { FeatureCode } from '@proton/features/interface';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
-import { clearBYOEInboxCleanup } from '../../../helpers/byoeInboxCleanup';
+import { clearBYOEFeature } from '../../../helpers/byoeInboxCleanup';
 import { mailTestRender } from '../../../helpers/tests/render';
 import useBYOEInboxCleanupConfirm from '../../../hooks/useBYOEInboxCleanupConfirm';
 import { BYOEInboxCleanupModal } from './BYOEInboxCleanupModal';
@@ -16,7 +17,7 @@ import { generateSubscriptionList } from './testData';
 vi.mock('../../../hooks/useBYOEInboxCleanupConfirm', () => ({ __esModule: true, default: vi.fn() }));
 vi.mock('../../../helpers/byoeInboxCleanup', async () => ({
     ...(await vi.importActual('../../../helpers/byoeInboxCleanup')),
-    clearBYOEInboxCleanup: vi.fn(),
+    clearBYOEFeature: vi.fn(),
 }));
 
 const TITLE = 'Your Gmail newsletters, now easier to manage';
@@ -90,7 +91,7 @@ const renderModal = async ({
     subscriptions = defaultSubscriptions,
     onConfirm = vi.fn(() => Promise.resolve()),
 }: RenderModalOptions = {}) => {
-    vi.mocked(clearBYOEInboxCleanup).mockClear();
+    vi.mocked(clearBYOEFeature).mockClear();
     vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(onConfirm);
     await mailTestRender(<OpenOnMount subscriptions={subscriptions} />);
     await screen.findByRole('heading', { name: TITLE });
@@ -186,7 +187,7 @@ describe('BYOEInboxCleanupModal', () => {
         it("doesn't clear the cleanup just by opening, so a reload while it's open shows it again", async () => {
             await renderModal();
 
-            expect(clearBYOEInboxCleanup).not.toHaveBeenCalled();
+            expect(clearBYOEFeature).not.toHaveBeenCalled();
         });
 
         it.each(Object.keys(closeWith))('%s clears the cleanup, so it never opens again', async (closeMethod) => {
@@ -194,7 +195,8 @@ describe('BYOEInboxCleanupModal', () => {
 
             closeWith[closeMethod]();
 
-            expect(clearBYOEInboxCleanup).toHaveBeenCalledTimes(1);
+            expect(clearBYOEFeature).toHaveBeenCalledTimes(1);
+            expect(clearBYOEFeature).toHaveBeenCalledWith(expect.anything(), FeatureCode.BYOEInboxCleanupModal);
         });
 
         it.each(Object.keys(closeWith))('%s closes the window without confirming', async (closeMethod) => {
@@ -492,7 +494,8 @@ describe('BYOEInboxCleanupModal', () => {
             });
 
             expect(isClosing()).toBe(true);
-            expect(clearBYOEInboxCleanup).toHaveBeenCalledTimes(1);
+            expect(clearBYOEFeature).toHaveBeenCalledTimes(1);
+            expect(clearBYOEFeature).toHaveBeenCalledWith(expect.anything(), FeatureCode.BYOEInboxCleanupModal);
         });
 
         it('clears the cleanup once when it is closed while waiting and the answer then succeeds', async () => {
@@ -506,7 +509,8 @@ describe('BYOEInboxCleanupModal', () => {
                 deferred.resolve();
             });
 
-            expect(clearBYOEInboxCleanup).toHaveBeenCalledTimes(1);
+            expect(clearBYOEFeature).toHaveBeenCalledTimes(1);
+            expect(clearBYOEFeature).toHaveBeenCalledWith(expect.anything(), FeatureCode.BYOEInboxCleanupModal);
         });
 
         it('stays open with the same choices when the answer fails, and Unsubscribe can be pressed again with the current selection', async () => {
@@ -521,7 +525,7 @@ describe('BYOEInboxCleanupModal', () => {
             });
 
             expect(isClosing()).toBe(false);
-            expect(clearBYOEInboxCleanup).not.toHaveBeenCalled();
+            expect(clearBYOEFeature).not.toHaveBeenCalled();
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'false');
             expect(getUnsubscribeButton()).toBeEnabled();
             expect(getSenderCheckbox(defaultSubscriptions[0])).toBeChecked();

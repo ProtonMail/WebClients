@@ -187,7 +187,7 @@ vi.mock('./src/app/hooks/useShowBYOESpotlightModal', () => ({
     default: vi.fn(),
 }));
 
-vi.mock('./src/app/hooks/useBYOEInboxCleanupSenders', () => ({
+vi.mock('./src/app/hooks/useFinishedBYOEImportSenders', () => ({
     __esModule: true,
     default: vi.fn(),
 }));

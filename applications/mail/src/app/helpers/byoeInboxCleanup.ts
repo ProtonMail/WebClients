@@ -1,8 +1,7 @@
 import { ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import type { Report, ReportSummary } from '@proton/activation/src/logic/reports/reports.interface';
-import type { Feature } from '@proton/features/interface';
-import { FeatureCode } from '@proton/features/interface';
+import type { Feature, FeatureCode } from '@proton/features/interface';
 import { fetchFeatures, updateFeature } from '@proton/features/reducer';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -12,8 +11,7 @@ import {
     getNewsletterSubscription,
     unsubscribeNewsletterSubscription,
 } from '@proton/shared/lib/api/newsletterSubscription';
-import { domIsBusy } from '@proton/shared/lib/busy/busy';
-import { HTTP_STATUS_CODE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
+import { HTTP_STATUS_CODE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -260,66 +258,41 @@ export const getFinishedBYOEImportOutcome = ({
     return latestOutcome;
 };
 
+/** The per-user codes that say the BYOE cleanup window or its Mailing lists spotlight is due after a BYOE import */
+export type BYOEImportFeatureCode = FeatureCode.BYOEInboxCleanupModal | FeatureCode.BYOEInboxCleanupSpotlight;
+
 /**
- * Resolves once nothing is on screen, checking every second with no time limit, as `StartupModals` does.
- * Stops checking and resolves when the signal aborts.
+ * Marks the cleanup window or its Mailing lists spotlight as no longer due, so it doesn't show again until another BYOE
+ * connection with import. A failed request puts the value back, so it shows again on the next load.
  */
-export const waitForFreeScreen = (signal: AbortSignal) => {
-    return new Promise<void>((resolve) => {
-        if (!domIsBusy()) {
-            resolve();
-            return;
-        }
-
-        const intervalID = window.setInterval(() => {
-            if (!domIsBusy()) {
-                window.clearInterval(intervalID);
-                resolve();
-            }
-        }, SECOND);
-
-        signal.addEventListener('abort', () => {
-            window.clearInterval(intervalID);
-            resolve();
-        });
-    });
+export const clearBYOEFeature = (dispatch: MailDispatch, featureCode: BYOEImportFeatureCode) => {
+    dispatch(updateFeature(featureCode, false)).catch(noop);
 };
 
 /**
- * Marks the cleanup as no longer due, so the window doesn't open again until another BYOE connection with import.
- * A failed request puts the value back, so the window opens again on the next load.
+ * Whether the BYOE cleanup (or its Mailing lists spotlight) is still due, read fresh from the server. The value from
+ * `useFeature` is cached from page load and isn't updated by events, so another tab or device may have shown or cleared
+ * it since.
  */
-export const clearBYOEInboxCleanup = (dispatch: MailDispatch) => {
-    dispatch(updateFeature(FeatureCode.BYOEInboxCleanupModal, false)).catch(noop);
+export const fetchIsBYOEFeatureDue = async (dispatch: MailDispatch, featureCode: BYOEImportFeatureCode) => {
+    const features = await dispatch(fetchFeatures([featureCode], { cache: CacheType.None }));
+    return features[featureCode].Value === true;
 };
 
-interface LoadSendersWhenFreeOptions {
-    dispatch: MailDispatch;
-    api: Api;
-    signal: AbortSignal;
-}
-
 /**
- * Waits for a free screen, then loads the senders for the cleanup window, or resolves to `undefined` when aborted or no longer due.
- * The value from `useFeature` is cached from page load and isn't updated by events, so another tab or device may have
- * closed or cleared the cleanup since. It's read fresh from the server right before opening, so it isn't shown twice.
- * The senders load last so the list is current when the window opens.
+ * Reads the code fresh and, if it's still due, loads the cleanup's senders. Resolves to `undefined` when it's no longer
+ * due, and to an empty list when there are no senders. Either request failing rejects, so a failure is never taken for
+ * "no senders". The senders load last, so the list is current when it's shown.
  */
-export const loadSendersWhenFree = async ({ dispatch, api, signal }: LoadSendersWhenFreeOptions) => {
-    await waitForFreeScreen(signal);
-    if (signal.aborted) {
+export const fetchSendersIfStillDue = async (
+    dispatch: MailDispatch,
+    api: Api,
+    featureCode: BYOEImportFeatureCode
+): Promise<NewsletterSubscription[] | undefined> => {
+    const isStillDue = await fetchIsBYOEFeatureDue(dispatch, featureCode);
+    if (!isStillDue) {
         return undefined;
     }
 
-    const features = await dispatch(fetchFeatures([FeatureCode.BYOEInboxCleanupModal], { cache: CacheType.None }));
-    if (signal.aborted || features[FeatureCode.BYOEInboxCleanupModal].Value !== true) {
-        return undefined;
-    }
-
-    const subscriptions = await getBYOEInboxCleanupSenders(api);
-    if (signal.aborted) {
-        return undefined;
-    }
-
-    return subscriptions;
+    return getBYOEInboxCleanupSenders(api);
 };
