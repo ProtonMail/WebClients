@@ -16,6 +16,8 @@ im.$media-expressions: $media-expressions;
 	overflow: hidden;
 	border: 0;
 	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
 
 	&:focus {
 		inset-block-start: var(--space-2);
@@ -28,6 +30,8 @@ im.$media-expressions: $media-expressions;
 		margin: 0;
 		overflow: visible;
 		clip: auto;
+		clip-path: none;
+		white-space: normal;
 		border: 1px solid var(--border-norm);
 		border-radius: var(--border-radius-full);
 		background-color: var(--background-norm);
