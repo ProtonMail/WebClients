@@ -33,6 +33,7 @@ const state: { senders: NewsletterSubscription[] | undefined; onboarding: Mailin
 
 const mockOnDisplayed = vi.fn();
 const mockOnClose = vi.fn();
+const mockUpdateNewsletterSpotlight = vi.fn();
 
 const getInitialShow = () => {
     return vi.mocked(useSpotlightOnFeature).mock.lastCall?.[1];
@@ -67,12 +68,16 @@ describe('useBYOEInboxCleanupSpotlight', () => {
             if (code === FeatureCode.NewsletterSubscriptionViewOnboarding) {
                 return state.onboarding as any;
             }
+            if (code === FeatureCode.NewsletterSubscriptionSpotlight) {
+                return { update: mockUpdateNewsletterSpotlight } as any;
+            }
             return {} as any;
         });
         vi.mocked(useSpotlightOnFeature).mockImplementation((_code, initialShow) => {
             return { show: !!initialShow, onDisplayed: mockOnDisplayed, onClose: mockOnClose };
         });
         vi.mocked(useSpotlightShow).mockImplementation((show) => show);
+        mockUpdateNewsletterSpotlight.mockResolvedValue(undefined);
     });
 
     it('waits for senders on the BYOEInboxCleanupSpotlight code, with nothing else to wait for', async () => {
@@ -98,8 +103,44 @@ describe('useBYOEInboxCleanupSpotlight', () => {
         expect(useSpotlightOnFeature).toHaveBeenLastCalledWith(FeatureCode.BYOEInboxCleanupSpotlight, true);
         expect(useSpotlightShow).toHaveBeenLastCalledWith(true, 0);
         expect(result.current.shouldShowSpotlight).toBe(true);
-        expect(result.current.onDisplayed).toBe(mockOnDisplayed);
         expect(result.current.onClose).toBe(mockOnClose);
+    });
+
+    it.each([
+        { version: 'Meet Mailing lists', introductionSeen: false },
+        { version: 'Your Gmail newsletters are here', introductionSeen: true },
+    ])(
+        "displaying the $version version clears its own code and stops Mail's Mailing lists spotlight for good",
+        async ({ introductionSeen }) => {
+            state.onboarding = { feature: { Value: introductionSeen }, loading: false };
+            const { result } = setup();
+            await settle();
+
+            expect(useFeature).toHaveBeenCalledWith(FeatureCode.NewsletterSubscriptionSpotlight, false);
+            expect(mockUpdateNewsletterSpotlight).not.toHaveBeenCalled();
+
+            act(() => {
+                result.current.onDisplayed();
+            });
+
+            expect(mockOnDisplayed).toHaveBeenCalledTimes(1);
+            expect(mockUpdateNewsletterSpotlight).toHaveBeenCalledTimes(1);
+            expect(mockUpdateNewsletterSpotlight).toHaveBeenCalledWith(false);
+        }
+    );
+
+    it("a failed write for Mail's Mailing lists spotlight doesn't break displaying it", async () => {
+        mockUpdateNewsletterSpotlight.mockRejectedValue(new Error('offline'));
+        const { result } = setup();
+        await settle();
+
+        act(() => {
+            result.current.onDisplayed();
+        });
+        await settle();
+
+        expect(mockOnDisplayed).toHaveBeenCalledTimes(1);
+        expect(result.current.shouldShowSpotlight).toBe(true);
     });
 
     describe('whether someone is new to Mailing lists', () => {
