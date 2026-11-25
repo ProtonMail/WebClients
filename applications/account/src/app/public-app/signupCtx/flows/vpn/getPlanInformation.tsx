@@ -6,7 +6,11 @@ import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import VpnPassLogo from '@proton/components/components/logo/VpnPassLogo';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
-import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
+import {
+    getDocsAppFeature,
+    getDriveAppFeature,
+    getSheetsAppFeature,
+} from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
@@ -31,7 +35,6 @@ import {
     getVPNAppFeature,
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
-import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import FreeLogo from '@proton/components/containers/payments/subscription/FreeLogo/FreeLogo';
 import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
@@ -131,10 +134,11 @@ export const getPlanInformation = ({
             features: [
                 getMailAppFeature(),
                 getCalendarAppFeature(),
-                getDriveAppFeature(),
                 getVPNAppFeature(),
+                getDriveAppFeature(),
+                getDocsAppFeature(),
+                getSheetsAppFeature(),
                 getPassAppFeature(),
-                getWalletAppFeature(),
             ],
         };
     }
@@ -152,8 +156,10 @@ export const getPlanInformation = ({
                 countryPlaceholder || getCountries(plusServers),
                 getMailAppFeature(),
                 getCalendarAppFeature({ duo: true }),
-                getDriveAppFeature({ duo: true }),
                 getVPNAppFeature({ duo: true }),
+                getDriveAppFeature({ duo: true }),
+                getDocsAppFeature(),
+                getSheetsAppFeature(),
                 getPassAppFeature(),
             ],
         };
@@ -172,8 +178,10 @@ export const getPlanInformation = ({
                 countryPlaceholder || getCountries(plusServers),
                 getMailAppFeature(),
                 getCalendarAppFeature({ family: true }),
-                getDriveAppFeature({ family: true }),
                 getVPNAppFeature({ family: true }),
+                getDriveAppFeature({ family: true }),
+                getDocsAppFeature(),
+                getSheetsAppFeature(),
                 getPassAppFeature(),
             ],
         };
