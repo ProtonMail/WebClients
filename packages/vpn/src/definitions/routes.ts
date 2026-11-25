@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
+import { getAlwaysOnVpnPageAvailability } from '@proton/console/organization/getAlwaysOnVpnPageAvailability';
 import { getGatewaysPageAvailability } from '@proton/console/organization/getGatewaysPageAvailability';
 import { getSharedServersPageAvailability } from '@proton/console/organization/getSharedServersPageAvailability';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
@@ -268,7 +269,10 @@ const routesDefinition = {
                             to: '/always-on-vpn',
                             meta: { beta: true },
                             isVisible: ({ context }) =>
-                                !!context.flags.B2BAlwaysOnEnabled && context.permissions['account.always_on.read'],
+                                getAlwaysOnVpnPageAvailability({
+                                    ...context,
+                                    isAlwaysOnVpnEnabled: !!context.flags.B2BAlwaysOnEnabled,
+                                }).alwaysOnVpn,
                         },
                         {
                             id: 'organization.vpn.gateway-monitor',
