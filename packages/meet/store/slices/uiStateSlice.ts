@@ -34,7 +34,9 @@ export type JoinError =
     | 'deviceClock'
     | 'wrongPassword'
     | 'connectionFailed'
-    | 'meetingNotAllowed';
+    | 'meetingNotAllowed'
+    | 'meetingLocked'
+    | 'webRtcUnsupported';
 
 enum ParticipantListTabs {
     WaitingRoom = 0,

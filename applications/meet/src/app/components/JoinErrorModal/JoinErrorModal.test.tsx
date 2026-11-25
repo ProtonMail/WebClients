@@ -5,6 +5,17 @@ import type { JoinError } from '@proton/meet/store/slices/uiStateSlice';
 
 import { JoinErrorModal } from './JoinErrorModal';
 
+const mocks = vi.hoisted(() => ({
+    isFirefox: vi.fn(() => false),
+    isMobile: vi.fn(() => false),
+}));
+
+vi.mock('@proton/shared/lib/helpers/browser', async (importOriginal) => ({
+    ...(await importOriginal<object>()),
+    isFirefox: mocks.isFirefox,
+    isMobile: mocks.isMobile,
+}));
+
 // ModalTwo renders <dialog> without `open` and shows it through the app's CSS, which happy-dom does not load,
 // so happy-dom's default `display: none` for a <dialog> without `open` would hide it from role queries.
 beforeAll(() => {
@@ -31,6 +42,19 @@ const renderModal = (joinError: JoinError, { canLeave = false }: { canLeave?: bo
         .map((button) => button.textContent);
     return { onRetry, onClose, onLeave, dialog, buttonNames };
 };
+
+const webRtcAdvice =
+    'Proton Meet needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.';
+
+const getImageSize = (dialog: HTMLElement) => {
+    const image = dialog.querySelector('img');
+    return [image?.style.getPropertyValue('--w-custom'), image?.style.getPropertyValue('--h-custom')];
+};
+
+beforeEach(() => {
+    mocks.isFirefox.mockReturnValue(false);
+    mocks.isMobile.mockReturnValue(false);
+});
 
 describe('JoinErrorModal', () => {
     describe.each([
@@ -95,6 +119,16 @@ describe('JoinErrorModal', () => {
             joinError: 'meetingNotAllowed' as const,
             title: 'Couldn’t start the meeting',
             message: 'The host has another meeting in progress.',
+        },
+        {
+            joinError: 'meetingLocked' as const,
+            title: 'Meeting locked',
+            message: 'Ask the host to unlock it so you can join.',
+        },
+        {
+            joinError: 'webRtcUnsupported' as const,
+            title: 'Browser not supported',
+            message: webRtcAdvice,
         },
     ])('when the error is $joinError', ({ joinError, title, message }) => {
         it('shows its title and next step', () => {
@@ -169,10 +203,53 @@ describe('JoinErrorModal', () => {
         'wrongPassword',
         'connectionFailed',
         'meetingNotAllowed',
+        'meetingLocked',
+        'webRtcUnsupported',
     ] as const)('keeps the %s illustration out of the accessibility tree', (joinError) => {
         const { dialog } = renderModal(joinError);
 
         expect(within(dialog).queryByRole('img')).not.toBeInTheDocument();
         expect(dialog.querySelector('img')).toHaveAttribute('alt', '');
+    });
+
+    describe('when the browser does not support WebRTC', () => {
+        it('adds the Firefox setting to the advice, with the technical values in bold, on Firefox', () => {
+            mocks.isFirefox.mockReturnValue(true);
+            const { dialog } = renderModal('webRtcUnsupported');
+
+            expect(dialog).toHaveAccessibleDescription(
+                expect.stringContaining(
+                    `${webRtcAdvice} In Firefox, open about:config and set media.peerconnection.enabled to true`
+                )
+            );
+            expect(
+                within(dialog)
+                    .getAllByRole('strong')
+                    .map((element) => element.textContent)
+            ).toEqual(['about:config', 'media.peerconnection.enabled', 'true']);
+        });
+
+        it.each([
+            { device: 'phones', isMobile: true, size: '3rem' },
+            { device: 'desktop', isMobile: false, size: '5rem' },
+        ])('shows the warning at $size on $device', ({ isMobile, size }) => {
+            mocks.isMobile.mockReturnValue(isMobile);
+            const { dialog } = renderModal('webRtcUnsupported');
+
+            expect(getImageSize(dialog)).toEqual([size, size]);
+        });
+    });
+
+    it.each([true, false])('shows the lock at 7.5rem whether on a phone or not (%s)', (isMobile) => {
+        mocks.isMobile.mockReturnValue(isMobile);
+        const { dialog } = renderModal('meetingLocked');
+
+        expect(getImageSize(dialog)).toEqual(['7.5rem', '7.5rem']);
+    });
+
+    it('shows the other illustrations at 5rem', () => {
+        const { dialog } = renderModal('joinFailed');
+
+        expect(getImageSize(dialog)).toEqual(['5rem', '5rem']);
     });
 });

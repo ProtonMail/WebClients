@@ -1,4 +1,4 @@
-import { type Dispatch, type MutableRefObject, type SetStateAction, useCallback, useRef } from 'react';
+import { type MutableRefObject, useCallback, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useRoomContext } from '@livekit/components-react';
@@ -62,8 +62,6 @@ interface UseJoinFlowParams {
     meetingLinkNameRef: MutableRefObject<string>;
     isExpiringRef: MutableRefObject<boolean>;
     joinedRoomLoggedRef: MutableRefObject<boolean>;
-    setIsWebRtcUnsupportedModalOpen: Dispatch<SetStateAction<boolean>>;
-    setIsMeetingLockedModalOpen: Dispatch<SetStateAction<boolean>>;
     isUsingTurnRelay: boolean;
     reportMeetError: ReportMeetError;
     displayName: string;
@@ -93,6 +91,7 @@ const joinErrorByMeetingErrorKind: Partial<Record<MeetingErrorKind, JoinError>> 
     [MeetingErrorKind.DeviceClock]: 'deviceClock',
     [MeetingErrorKind.WrongPassword]: 'wrongPassword',
     [MeetingErrorKind.MeetingNotAllowed]: 'meetingNotAllowed',
+    [MeetingErrorKind.MeetingLocked]: 'meetingLocked',
 };
 
 const getNetworkHints = () => {
@@ -179,8 +178,6 @@ export const useJoinFlow = ({
     meetingLinkNameRef,
     isExpiringRef,
     joinedRoomLoggedRef,
-    setIsWebRtcUnsupportedModalOpen,
-    setIsMeetingLockedModalOpen,
     isUsingTurnRelay,
     reportMeetError,
     displayName,
@@ -219,7 +216,7 @@ export const useJoinFlow = ({
 
     const handleWebRtcUnsupported = () => {
         if (!isWebRtcSupported()) {
-            setIsWebRtcUnsupportedModalOpen(true);
+            dispatch(setJoinError('webRtcUnsupported'));
             throw new Error('Your browser does not support WebRTC');
         }
     };
@@ -248,6 +245,9 @@ export const useJoinFlow = ({
                 return;
             case MeetingErrorKind.MeetingNotAllowed:
                 dispatch(setJoinError('meetingNotAllowed'));
+                return;
+            case MeetingErrorKind.MeetingLocked:
+                dispatch(setJoinError('meetingLocked'));
                 return;
             default:
                 notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
@@ -400,9 +400,7 @@ export const useJoinFlow = ({
             dispatch(setJoiningInProgress(false));
             joinBlockedRef.current = false;
 
-            if (errorKind === MeetingErrorKind.MeetingLocked) {
-                setIsMeetingLockedModalOpen(true);
-            } else if (failureFeedback === 'notification') {
+            if (failureFeedback === 'notification') {
                 notifyJoinFailure(errorKind);
             } else {
                 showJoinFailure(errorKind, fallbackJoinError);

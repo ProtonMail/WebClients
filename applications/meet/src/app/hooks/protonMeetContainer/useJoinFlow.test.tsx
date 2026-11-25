@@ -25,6 +25,7 @@ const mocks = vi.hoisted(() => ({
     notifyError: vi.fn(),
     getSessionKey: vi.fn(),
     enabledFlags: new Set<string>(),
+    isWebRtcSupported: vi.fn(() => true),
     meetCoreClient: {
         logStartToJoinRoom: vi.fn(),
         logJoinedRoomFailed: vi.fn(),
@@ -47,7 +48,7 @@ vi.mock('@proton/meet/store/slices/meetingInfoModel', () => ({
     refreshMeetingInfoThunk: vi.fn((options) => ({ type: 'refreshMeetingInfoThunk', options })),
     selectMeetingInfoModel: vi.fn(),
 }));
-vi.mock('@proton/shared/lib/helpers/isWebRtcSupported', () => ({ isWebRtcSupported: () => true }));
+vi.mock('@proton/shared/lib/helpers/isWebRtcSupported', () => ({ isWebRtcSupported: mocks.isWebRtcSupported }));
 vi.mock('@proton/meet/utils/cryptoUtils', () => ({
     deriveEncryptionKeyFromSessionKey: async () => ({}),
     encryptDisplayNameWithKey: async () => 'encrypted-name',
@@ -93,8 +94,6 @@ const createParams = (): any => ({
     meetingLinkNameRef: { current: '' },
     isExpiringRef: { current: false },
     joinedRoomLoggedRef: { current: false },
-    setIsWebRtcUnsupportedModalOpen: vi.fn(),
-    setIsMeetingLockedModalOpen: vi.fn(),
     isUsingTurnRelay: false,
     reportMeetError: vi.fn(),
     displayName: 'Alice',
@@ -127,6 +126,7 @@ beforeEach(() => {
     mockMeetingInfo.mockResolvedValue({ meetingInfo });
     mocks.useWaitingRoom.mockReturnValue({ beginJoin: mocks.beginWaitingRoomJoin, providerProps: {} });
     mocks.enabledFlags.clear();
+    mocks.isWebRtcSupported.mockReturnValue(true);
     mocks.getSessionKey.mockResolvedValue(undefined);
     mocks.meetCoreClient.logStartToJoinRoom.mockResolvedValue(undefined);
     mocks.meetCoreClient.logJoinedRoomFailed.mockResolvedValue(undefined);
@@ -209,7 +209,7 @@ describe('useJoinFlow joinMeeting meeting session', () => {
 });
 
 describe('useJoinFlow joining a locked meeting', () => {
-    it('shows the Meeting locked modal and asks the token request not to notify the lock as well', async () => {
+    it('shows that the meeting is locked and asks the token request not to notify the lock as well', async () => {
         mocks.beginWaitingRoomJoin.mockResolvedValue({ handled: false, isWaitingRoomHostJoin: false });
         const { result, params } = renderJoinFlow('meeting-abc');
         params.connectWithMls.mockRejectedValue(apiError(422, 2502));
@@ -221,8 +221,38 @@ describe('useJoinFlow joining a locked meeting', () => {
         expect(params.connectWithMls).toHaveBeenCalledWith(
             expect.objectContaining({ meetingLinkName: 'meeting-abc', silencedAccessTokenErrors: [2502, 2011] })
         );
-        expect(params.setIsMeetingLockedModalOpen).toHaveBeenCalledWith(true);
+        expect(dispatch).toHaveBeenCalledWith(setJoinError('meetingLocked'));
     });
+
+    it('shows that the meeting is locked when the token refuses the join after admission', async () => {
+        mockConnectWithMls.mockRejectedValue(apiError(422, 2502));
+        renderJoinFlow();
+
+        await act(async () => {
+            await mocks.useWaitingRoom.mock.lastCall![0].joinAfterAdmission('meeting-abc');
+        });
+
+        expect(dispatch).toHaveBeenCalledWith(setJoinError('meetingLocked'));
+        expect(mocks.notifyError).not.toHaveBeenCalled();
+    });
+});
+
+describe('useJoinFlow in a browser without WebRTC', () => {
+    it.each(['joinMeeting', 'joinInstantMeeting'] as const)(
+        'shows that the browser is not supported and stops %s before connecting',
+        async (join) => {
+            mocks.isWebRtcSupported.mockReturnValue(false);
+            const { result, params } = renderJoinFlow('meeting-abc');
+
+            await act(async () => {
+                await expect(result.current[join]('Alice')).rejects.toThrow('Your browser does not support WebRTC');
+            });
+
+            expect(dispatch).toHaveBeenCalledWith(setJoinError('webRtcUnsupported'));
+            expect(params.connectWithMls).not.toHaveBeenCalled();
+            expect(mocks.createInstantMeeting).not.toHaveBeenCalled();
+        }
+    );
 });
 
 describe('useJoinFlow joining a not allowed meeting', () => {

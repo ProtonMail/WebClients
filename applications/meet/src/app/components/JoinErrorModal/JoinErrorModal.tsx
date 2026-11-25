@@ -1,8 +1,12 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import type { JoinError } from '@proton/meet/store/slices/uiStateSlice';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import blockedImg from '@proton/styles/assets/img/meet/blocked-icon.svg';
+import lockImg from '@proton/styles/assets/img/meet/lock-icon.png';
 import warningImg from '@proton/styles/assets/img/meet/warning-icon.svg';
 
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
@@ -10,11 +14,32 @@ import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 interface JoinErrorContent {
     image: string;
     getTitle: () => string;
-    getMessage: () => string;
+    getMessage: () => ReactNode;
     actions: 'retryOrClose' | 'retryOrLeave' | 'close';
+    /** 5rem when not given. */
+    getImageSize?: () => string;
 }
 
 const getSomethingWentWrongMessage = () => c('Info').t`Something went wrong. Please try again.`;
+
+const getFirefoxPeerConnectionMessage = () => {
+    const configPage = <strong key="config-page">about:config</strong>;
+    const preference = <strong key="preference">media.peerconnection.enabled</strong>;
+    const value = <strong key="value">true</strong>;
+
+    // translator: full sentence is "In Firefox, open about:config and set media.peerconnection.enabled to true." where "about:config", "media.peerconnection.enabled" and "true" are bold and stay in English, as Firefox shows them
+    return c('Info').jt`In Firefox, open ${configPage} and set ${preference} to ${value}.`;
+};
+
+const getWebRtcUnsupportedMessage = () => (
+    <>
+        <p className="m-0">
+            {c('Info')
+                .t`${MEET_APP_NAME} needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.`}
+        </p>
+        {isFirefox() && <p className="mt-2 mb-0">{getFirefoxPeerConnectionMessage()}</p>}
+    </>
+);
 
 const joinErrorContents: Record<JoinError, JoinErrorContent> = {
     joinFailed: {
@@ -60,6 +85,20 @@ const joinErrorContents: Record<JoinError, JoinErrorContent> = {
         getMessage: () => c('Info').t`The host has another meeting in progress.`,
         actions: 'close',
     },
+    meetingLocked: {
+        image: lockImg,
+        getTitle: () => c('Title').t`Meeting locked`,
+        getMessage: () => c('Info').t`Ask the host to unlock it so you can join.`,
+        actions: 'close',
+        getImageSize: () => '7.5rem',
+    },
+    webRtcUnsupported: {
+        image: warningImg,
+        getTitle: () => c('Title').t`Browser not supported`,
+        getMessage: getWebRtcUnsupportedMessage,
+        actions: 'close',
+        getImageSize: () => (isMobile() ? '3rem' : '5rem'),
+    },
 };
 
 interface JoinErrorModalProps {
@@ -71,11 +110,17 @@ interface JoinErrorModalProps {
 }
 
 export const JoinErrorModal = ({ joinError, onRetry, onClose, onLeave }: JoinErrorModalProps) => {
-    const { image, getTitle, getMessage, actions } = joinErrorContents[joinError];
+    const { image, getTitle, getMessage, actions, getImageSize } = joinErrorContents[joinError];
     const closeText = c('Action').t`Close`;
+    const imageSize = getImageSize?.() ?? '5rem';
 
     const icon = (
-        <img className="w-custom h-custom" src={image} alt="" style={{ '--w-custom': '5rem', '--h-custom': '5rem' }} />
+        <img
+            className="w-custom h-custom"
+            src={image}
+            alt=""
+            style={{ '--w-custom': imageSize, '--h-custom': imageSize }}
+        />
     );
 
     if (actions === 'close') {

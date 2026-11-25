@@ -45,9 +45,7 @@ import noop from '@proton/utils/noop';
 
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { JoinErrorModal } from '../../components/JoinErrorModal/JoinErrorModal';
-import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
-import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
@@ -117,8 +115,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const history = useHistory();
 
-    const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
-    const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
     const joinError = useMeetSelector(selectJoinError);
 
     const { urlMeetingLinkName, urlMeetingPassword, isUrlMeetingPasswordInvalid } = useMeetingSetup();
@@ -295,8 +291,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         meetingLinkNameRef,
         isExpiringRef,
         joinedRoomLoggedRef,
-        setIsWebRtcUnsupportedModalOpen,
-        setIsMeetingLockedModalOpen,
         isUsingTurnRelay,
         reportMeetError,
         displayName,
@@ -495,7 +489,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     return (
         <div className="h-full w-full">
-            {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
             <WaitingRoomProvider {...waitingRoomProviderProps}>
                 {(joinedRoom || isReconnecting || reconnectionFailed) && room && displayName ? (
                     <MeetingRecorderProvider>
@@ -534,9 +527,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                 )}
             </WaitingRoomProvider>
 
-            {isWebRtcUnsupportedModalOpen && (
-                <WebRtcUnsupportedModal onClose={() => setIsWebRtcUnsupportedModalOpen(false)} />
-            )}
             {reconnectionFailed && (
                 <ConnectionLostModal
                     onRejoin={() => {
