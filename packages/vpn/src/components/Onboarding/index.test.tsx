@@ -14,7 +14,7 @@ vi.mock('@proton/account/organization/hooks', () => ({
     useOrganization: vi.fn(),
 }));
 
-vi.mock('@proton/components/containers/organization/SetupOrganizationNameModal', () => ({
+vi.mock('@proton/organization/SetupOrganizationNameModal', () => ({
     SetupOrganizationNameModal: ({ onSubmit, open }: { onSubmit: (name: string) => void; open: boolean }) =>
         open ? <button onClick={() => onSubmit('My Org')}>setup-org-modal</button> : null,
 }));

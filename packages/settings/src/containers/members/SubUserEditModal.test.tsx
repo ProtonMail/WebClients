@@ -99,7 +99,7 @@ vi.mock('@proton/components/hooks/useSpotlightOnFeature', () => ({
     __esModule: true,
     default: () => ({ show: false, onDisplayed: vi.fn(), onClose: vi.fn() }),
 }));
-vi.mock('@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight', () => ({
+vi.mock('@proton/organization/members/rolesAndPermissions/AdminRolesSpotlight', () => ({
     __esModule: true,
     default: ({ children }: { children: JSX.Element }) => children,
 }));

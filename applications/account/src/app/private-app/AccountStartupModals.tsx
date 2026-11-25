@@ -3,14 +3,12 @@ import { Suspense, lazy } from 'react';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import StartupModals from '@proton/components/components/startupModals/StartupModals';
-import {
-    useLightLabellingFeatureModal,
-    useScimGroupsOnboardingModal,
-} from '@proton/components/components/startupModals/startupModalHooks';
+import { useLightLabellingFeatureModal } from '@proton/components/components/startupModals/startupModalHooks';
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useIsB2BAdmin from '@proton/components/hooks/useIsB2BAdmin';
 import { useOfferStartupModal } from '@proton/offers-delivery/components/useOfferStartupModal';
+import { useScimGroupsOnboardingModal } from '@proton/organization/useScimGroupsOnboardingModal';
 import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
 import { useTrialEndedModal } from '@proton/payments-ui/containers/subscription/useTrialEndedModal';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';

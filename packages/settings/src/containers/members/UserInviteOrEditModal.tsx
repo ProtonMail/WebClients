@@ -16,11 +16,11 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import MemberStorageSelector from '@proton/components/containers/members/MemberStorageSelector';
-import { disableStorageSelection } from '@proton/components/containers/members/helper';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import LumoUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/lumo/LumoUpdateSubscriptionButton';
 import useLoading from '@proton/hooks/useLoading';
+import MemberStorageSelector from '@proton/organization/members/MemberStorageSelector';
+import { disableStorageSelection } from '@proton/organization/members/helper';
 import {
     type MaybeFreeSubscription,
     hasDuo,

@@ -50,6 +50,11 @@ export default createOxlintConfig({
                 message: '@proton/components must not import @proton/mail-settings.',
             },
             {
+                // Depends on this package; apps pass the organization startup modal in themselves.
+                group: ['@proton/organization', '@proton/organization/*'],
+                message: '@proton/components must not import @proton/organization.',
+            },
+            {
                 // Depends on this package.
                 group: ['@proton/vpn', '@proton/vpn/*'],
                 message: '@proton/components must not import @proton/vpn.',

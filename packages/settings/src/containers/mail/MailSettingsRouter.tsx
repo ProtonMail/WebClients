@@ -6,8 +6,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useLoadAllowedTimeZones } from '@proton/calendar-settings/hooks/useLoadAllowedTimeZones';
 import { InboxDesktopSettingsSection } from '@proton/components/containers/desktop/InboxDesktopSettingsSection';
-import CatchAllSection from '@proton/components/containers/domains/CatchAllSection';
-import DomainsSection, { useShowDomainsUpsell } from '@proton/components/containers/domains/DomainsSection';
 import { SimpleEditorProvider } from '@proton/components/containers/editor/SimpleEditorContext';
 import PmMeSection from '@proton/components/containers/general/PmMeSection';
 import ImportExportAppSection from '@proton/components/containers/importExportApp/ImportExportAppSection';
@@ -44,6 +42,8 @@ import { ExternalPGPSettingsSection } from '@proton/mail-settings/security/Exter
 import SMTPSubmissionSection, { useShowSmtpSubmissionUpsell } from '@proton/mail-settings/smtp/SMTPSubmissionSection';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import CatchAllSection from '@proton/organization/domains/CatchAllSection';
+import DomainsSection, { useShowDomainsUpsell } from '@proton/organization/domains/DomainsSection';
 
 import AddressesSection from '../addresses/AddressesSection';
 import MessagesGeneralSection from './MessagesGeneralSection';

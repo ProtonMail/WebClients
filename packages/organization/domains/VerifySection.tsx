@@ -1,0 +1,77 @@
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { Href } from '@proton/atoms/Href/Href';
+import Alert from '@proton/components/components/alert/Alert';
+import Copy from '@proton/components/components/button/Copy';
+import Label from '@proton/components/components/label/Label';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import type { DnsRecord } from '@proton/shared/lib/domains/dnsRecords';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { Domain } from '@proton/shared/lib/interfaces/Domain';
+
+interface Props {
+    domain: Partial<Domain>;
+    record: DnsRecord;
+}
+
+const VerifySection = ({ domain, record }: Props) => {
+    const { createNotification } = useNotifications();
+    const handleCopy = () => createNotification({ text: c('Success').t`Verification code copied to clipboard` });
+    const domainName = domain?.DomainName || '';
+    const kbLink = <Href href={getKnowledgeBaseUrl('/custom-domain')} key="kb">{c('Link').t`here`}</Href>;
+    return (
+        <>
+            <Alert className="mb-4">
+                {/*
+                 * translator: Variables are the following
+                 * ${domainName}: Domain "name" in bold
+                 * ${boldTxt}: text "TXT" in bold
+                 * ${kbLink}: Link redirecting the user to the related knowledge base article
+                 * full sentence for reference: "For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips here."
+                 */}
+                {c('Info for domain modal')
+                    .jt`For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${kbLink}.`}
+            </Alert>
+            <Alert className="mb-4" type="warning">
+                {c('Warning for domain modal')
+                    .t`After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.`}
+            </Alert>
+            <Label>{c('Label for domain modal')
+                .t`Please add the following TXT record. Note: DNS records can take several hours to update.`}</Label>
+            <Table responsive="cards" className="mt-4">
+                <TableHeader
+                    cells={[
+                        c('Header for domain modal').t`Type`,
+                        c('Header for domain modal').t`Host name`,
+                        c('Header for domain modal').t`Value / Data / Points to`,
+                    ]}
+                />
+                <TableBody>
+                    <TableRow
+                        labels={[
+                            c('Header for domain modal').t`Type`,
+                            c('Header for domain modal').t`Host name`,
+                            c('Header for domain modal').t`Value / Data / Points to`,
+                        ]}
+                        cells={[
+                            <code key="type">{record.type}</code>,
+                            <code key="hostname">{record.hostname}</code>,
+                            <div className="flex flex-nowrap items-center" key="value">
+                                <Copy onCopy={handleCopy} size="small" className="shrink-0 mr-2" value={record.value} />{' '}
+                                <code className="text-ellipsis lh-rg" title={record.value}>
+                                    {record.value}
+                                </code>
+                            </div>,
+                        ]}
+                    />
+                </TableBody>
+            </Table>
+        </>
+    );
+};
+
+export default VerifySection;

@@ -15,11 +15,11 @@ vi.mock('@proton/app-context/useApi', () => ({
     useApi: () => apiMock,
 }));
 
-vi.mock('@proton/components/containers/b2bDashboard/VPN/api', () => ({
+vi.mock('@proton/organization/b2bDashboard/VPN/api', () => ({
     updateMonitoringSetting: (enabling: boolean) => ({ __updateMonitoring: enabling }),
 }));
 
-vi.mock('@proton/components/containers/b2bDashboard/VPN/TogglingMonitoringModal', () => ({
+vi.mock('@proton/organization/b2bDashboard/VPN/TogglingMonitoringModal', () => ({
     __esModule: true,
     default: () => <div>toggling-monitoring-modal</div>,
 }));

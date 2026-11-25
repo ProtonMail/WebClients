@@ -38,7 +38,7 @@ vi.mock('../../components/sharedServers/SharedServersSection', () => ({
     default: () => <div data-testid="content" />,
 }));
 
-vi.mock('@proton/components/containers/b2bDashboard/VPN/VPNEvents', () => ({
+vi.mock('@proton/organization/b2bDashboard/VPN/VPNEvents', () => ({
     VPNEvents: () => <div data-testid="content" />,
 }));
 
