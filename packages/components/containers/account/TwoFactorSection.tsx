@@ -142,7 +142,7 @@ const TwoFactorSection = () => {
             />
             <DashboardCard>
                 <DashboardCardContent>
-                    <SettingsIconRow icon={IcPinCode}>
+                    <SettingsIconRow icon={<IcPinCode size={6} className="color-weak" />}>
                         <SettingsToggleRow
                             id="twoFactorToggle"
                             label={
@@ -160,7 +160,7 @@ const TwoFactorSection = () => {
                     {hasSecurityKeySupport && (
                         <>
                             <DashboardCardDivider />
-                            <SettingsIconRow icon={IcSecurityKey}>
+                            <SettingsIconRow icon={<IcSecurityKey size={6} className="color-weak" />}>
                                 <SettingsToggleRow
                                     id="twoFactorKeyToggle"
                                     label={
@@ -182,7 +182,7 @@ const TwoFactorSection = () => {
                                 />
                             </SettingsIconRow>
                             <DashboardCardDivider />
-                            <SettingsIconRow icon={IcPinCode}>
+                            <SettingsIconRow icon={<IcPinCode size={6} className="color-weak" />}>
                                 <SettingsToggleRow
                                     id="requireSecurityKey"
                                     label={

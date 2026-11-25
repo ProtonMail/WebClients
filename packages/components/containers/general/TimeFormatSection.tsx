@@ -8,7 +8,7 @@ import TimeFormatSelector from './TimeFormatSelector';
 
 const TimeSection = () => {
     return (
-        <SettingsIconRow icon={IcClock}>
+        <SettingsIconRow icon={<IcClock size={6} className="color-weak" />}>
             <SettingsSelectRow
                 id="time-format-select"
                 label={<SettingsSelectRow.Label>{c('Label').t`Time format`}</SettingsSelectRow.Label>}

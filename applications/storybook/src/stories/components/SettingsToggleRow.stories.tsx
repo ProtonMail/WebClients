@@ -45,7 +45,7 @@ export const Default: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcPinCode}>
+                <SettingsIconRow icon={<IcPinCode size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="authenticatorAppToggle"
                         label={<SettingsToggleRow.Label>Authenticator app</SettingsToggleRow.Label>}
@@ -68,7 +68,7 @@ export const WithDescription: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcSecurityKey}>
+                <SettingsIconRow icon={<IcSecurityKey size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="securityKeyToggle"
                         label={
@@ -98,7 +98,7 @@ export const WithLinkInDescription: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcPinCode}>
+                <SettingsIconRow icon={<IcPinCode size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="twoPasswordModeToggle"
                         label={
@@ -138,7 +138,7 @@ export const Loading: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcBell}>
+                <SettingsIconRow icon={<IcBell size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="loadingToggle"
                         label={
@@ -174,7 +174,7 @@ export const Loading: Story = {
 export const Disabled: Story = {
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcPinCode}>
+            <SettingsIconRow icon={<IcPinCode size={6} className="color-weak" />}>
                 <SettingsToggleRow
                     id="disabledToggle"
                     label={
@@ -230,7 +230,7 @@ export const MultipleRows: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcPinCode}>
+                <SettingsIconRow icon={<IcPinCode size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="multiTotpToggle"
                         label={
@@ -252,7 +252,7 @@ export const MultipleRows: Story = {
 
                 <DashboardCardDivider />
 
-                <SettingsIconRow icon={IcSecurityKey}>
+                <SettingsIconRow icon={<IcSecurityKey size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="multiSecurityKeyToggle"
                         label={
@@ -274,7 +274,7 @@ export const MultipleRows: Story = {
 
                 <DashboardCardDivider />
 
-                <SettingsIconRow icon={IcPinCode}>
+                <SettingsIconRow icon={<IcPinCode size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="multiRequirePinToggle"
                         label={<SettingsToggleRow.Label>Require PIN for security key</SettingsToggleRow.Label>}

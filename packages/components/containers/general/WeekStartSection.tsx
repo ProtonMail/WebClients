@@ -8,7 +8,7 @@ import WeekStartSelector from './WeekStartSelector';
 
 const WeekStartSection = () => {
     return (
-        <SettingsIconRow icon={IcCalendarGrid}>
+        <SettingsIconRow icon={<IcCalendarGrid size={6} className="color-weak" />}>
             <SettingsSelectRow
                 // WeekStartSelector owns this id on its own select
                 id="week-start-select"

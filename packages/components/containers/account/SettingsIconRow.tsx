@@ -1,21 +1,27 @@
 import type { ReactNode } from 'react';
 
-import type { IconComponent } from '@proton/icons/component';
 import clsx from '@proton/utils/clsx';
 
 import './SettingsIconRow.scss';
 
 interface SettingsIconRowProps {
-    icon?: IconComponent;
+    /**
+     * Shown in the 24px column before the content, centered and hidden from screen readers.
+     * Icons look best at `size={6}` in weak color: `<IcBell size={6} className="color-weak" />`.
+     * Product logos use `size={6}` too: `<Logo appName={appName} variant="glyph-only" size={6} />`.
+     */
+    icon?: ReactNode;
     centered?: boolean;
     children: ReactNode;
     className?: string;
 }
 
-const SettingsIconRow = ({ icon: Icon, centered = true, children, className }: SettingsIconRowProps) => {
+const SettingsIconRow = ({ icon, centered = true, children, className }: SettingsIconRowProps) => {
     return (
         <div className={clsx('settings-icon-row w-full grid gap-3', centered && 'items-center', className)}>
-            {Icon ? <Icon className="settings-icon-row-icon shrink-0 color-weak" size={6} /> : <span aria-hidden />}
+            <span className="flex justify-center" aria-hidden="true">
+                {icon}
+            </span>
             {children}
         </div>
     );

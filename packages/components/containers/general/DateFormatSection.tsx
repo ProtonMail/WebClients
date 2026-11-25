@@ -36,7 +36,7 @@ const DateFormatSection = () => {
     const defaultFormat = getDefaultDateFormat()?.toUpperCase();
 
     return (
-        <SettingsIconRow icon={IcCalendarToday}>
+        <SettingsIconRow icon={<IcCalendarToday size={6} className="color-weak" />}>
             <SettingsSelectRow
                 id="date-format-select"
                 label={<SettingsSelectRow.Label>{c('Label').t`Date format`}</SettingsSelectRow.Label>}

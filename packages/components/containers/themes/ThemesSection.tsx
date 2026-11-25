@@ -35,7 +35,7 @@ const ThemesSection = () => {
             />
             <DashboardCard>
                 <DashboardCardContent>
-                    <SettingsIconRow icon={IcCircleHalfFilled}>
+                    <SettingsIconRow icon={<IcCircleHalfFilled size={6} className="color-weak" />}>
                         <SettingsToggleRow
                             id="themeSyncToggle"
                             label={
