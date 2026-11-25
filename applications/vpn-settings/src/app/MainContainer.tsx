@@ -65,7 +65,7 @@ import { getZendeskTags } from '@proton/components/containers/zendesk/helper';
 import { useZendeskChat } from '@proton/components/containers/zendesk/useZendeskChat';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
-import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
+import { useRecoverySidebarNotification } from '@proton/components/hooks/useRecoveryIndicators';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { OfferStartupModal } from '@proton/offers-delivery/components/OfferStartupModal';
@@ -155,7 +155,7 @@ const MainContainerContent: FunctionComponent = () => {
     const [{ isMnemonicAvailable, isRecoveryFileAvailable, isDataRecoveryAvailable }, loadingDataRecovery] =
         useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const recoveryNotification = useRecoveryNotification(false, false);
+    const recoveryNotification = useRecoverySidebarNotification();
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
     const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
 
@@ -212,7 +212,7 @@ const MainContainerContent: FunctionComponent = () => {
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
         referralInfo: referralInfo.uiData,
-        recoveryNotification: recoveryNotification?.color,
+        recoveryNotification,
         organizationSettingsRouterParams,
         flags,
         accountRecoveryRouterFlags,

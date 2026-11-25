@@ -2,6 +2,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { ThemeColor } from '@proton/colors/types';
 import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
 import { IcHouse } from '@proton/icons/icons/IcHouse';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
@@ -97,7 +98,7 @@ const routes: SidebarTree = {
                     id: 'my-account.recovery',
                     label: 'Recovery',
                     to: '/vpn/recovery',
-                    meta: {},
+                    meta: { hasNotifications: ThemeColor.Danger, notificationLabel: 'Some of your data is locked.' },
                     children: undefined,
                     icon: undefined,
                 },
@@ -258,6 +259,12 @@ describe('Tree', () => {
         renderTree({ pathname: '/vpn/gateways' });
         const leaf = screen.getByText('Always-on VPN').closest('a')!;
         expect(leaf.querySelector('[data-testid="beta-badge"]')).toHaveTextContent('Beta');
+    });
+
+    it('explains why a leaf needs attention', () => {
+        renderTree({ pathname: '/vpn/gateways' });
+        const leaf = screen.getByText('Recovery').closest('a')!;
+        expect(leaf).toHaveTextContent('Some of your data is locked.');
     });
 
     it('leaves non-beta items unbadged', () => {

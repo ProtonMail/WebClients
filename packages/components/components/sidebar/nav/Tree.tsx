@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 
 import { Sidebar } from '.';
 import { Badge } from '../../badge/Badge';
+import { SidebarNotificationIndicator } from '../SidebarNotificationIndicator';
 import type { SidebarNode, SidebarTree } from './interface';
 import { getActiveBranches } from './traverse';
 
@@ -18,6 +18,10 @@ function isThemeColor(value: unknown): value is ThemeColor {
 
 function hasNotifications(meta: SidebarNode['meta']): meta is SidebarNode['meta'] & { hasNotifications: ThemeColor } {
     return 'hasNotifications' in meta && isThemeColor(meta.hasNotifications);
+}
+
+function getNotificationLabel(meta: SidebarNode['meta']): string | undefined {
+    return typeof meta.notificationLabel === 'string' ? meta.notificationLabel : undefined;
 }
 
 function isBeta(meta: SidebarNode['meta']): boolean {
@@ -42,7 +46,9 @@ function Leaf({ item }: { item: SidebarNode }) {
             {isBeta(item.meta) ? (
                 <Badge className="color-weak text-capitalize" data-testid="beta-badge">{c('Info').t`Beta`}</Badge>
             ) : null}
-            {notification ? <NotificationDot color={notification} alt={c('Info').t`Attention required`} /> : null}
+            {notification ? (
+                <SidebarNotificationIndicator color={notification} label={getNotificationLabel(item.meta)} />
+            ) : null}
         </Sidebar.Leaf>
     );
 }

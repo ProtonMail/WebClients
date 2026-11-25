@@ -33,6 +33,7 @@ const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
                                 exact
                                 icon={section.icon}
                                 notification={section.notification}
+                                notificationLabel={section.notificationLabel}
                                 key={section.to}
                             >
                                 <span className="text-ellipsis" title={section.text}>
@@ -48,6 +49,7 @@ const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
                             to={getSectionPath(prefix, section)}
                             icon={section.icon}
                             notification={section.notification}
+                            notificationLabel={section.notificationLabel}
                             upgradeRequired={section.upgradeRequired}
                             key={section.to}
                         >

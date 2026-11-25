@@ -60,12 +60,20 @@ export interface SubrouteGroup {
     subroutes: Record<string, SubrouteConfig>;
 }
 
+/** A sidebar item's call for attention */
+export interface SettingsNotification {
+    color: ThemeColor;
+    /** Why it needs attention: shown in a tooltip and read by screen readers */
+    label?: string;
+}
+
 export interface SectionConfig extends SettingsAreaConfig {
     id: string;
     to: string;
     icon: IconComponent;
     available?: boolean;
     notification?: ThemeColor;
+    notificationLabel?: string;
     upgradeRequired?: boolean;
     subroutes?: { [key: string]: SubrouteConfig };
     subrouteGroups?: Record<string, SubrouteGroup>;

@@ -1,4 +1,4 @@
-import type { ThemeColor } from '@proton/colors/types';
+import type { SettingsNotification } from '@proton/components/containers/layout/interface';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -24,7 +24,7 @@ export type AccountRecoveryRouterFlags = {
 
 export type AccountSettingsRouterParams = {
     accountRecoveryRouterFlags: AccountRecoveryRouterFlags;
-    recoveryNotification?: ThemeColor;
+    recoveryNotification?: SettingsNotification;
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     showThemeSelection: boolean;

@@ -50,7 +50,7 @@ import useShowDashboard, {
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
-import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
+import { useRecoverySidebarNotification } from '@proton/components/hooks/useRecoveryIndicators';
 import useShowThemeSelection from '@proton/components/hooks/useShowThemeSelection';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import { OutgoingEmergencyContactTopBanner } from '@proton/delegated-access/emergencyContact/outgoing/OutgoingEmergencyContactTopBanner';
@@ -134,7 +134,7 @@ const MainContainerContent = () => {
     const [{ isMnemonicAvailable, isRecoveryFileAvailable, isDataRecoveryAvailable }, loadingDataRecovery] =
         useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const recoveryNotification = useRecoveryNotification(false, false);
+    const recoveryNotification = useRecoverySidebarNotification();
 
     const { app, appFromPathname, isGenericSettings } = useSettingsApp();
     const appSlug = isGenericSettings ? '' : getSlugFromApp(app);
@@ -179,7 +179,7 @@ const MainContainerContent = () => {
 
     const accountSettingsRouterParams: AccountSettingsRouterParams = {
         accountRecoveryRouterFlags,
-        recoveryNotification: recoveryNotification?.color,
+        recoveryNotification,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
         showThemeSelection,

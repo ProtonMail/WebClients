@@ -38,10 +38,26 @@ describe('SettingsListItem', () => {
     });
 
     it('shows notification', () => {
-        const { container } = render(<SettingsListItem notification={ThemeColor.Weak}>{children}</SettingsListItem>);
-        const element = container.querySelector('.notification-dot');
+        render(<SettingsListItem notification={ThemeColor.Weak}>{children}</SettingsListItem>);
+        const element = screen.getByText('Attention required');
 
         expect(element).toBeInTheDocument();
+    });
+
+    it('announces the notification with its label', () => {
+        render(
+            <SettingsListItem notification={ThemeColor.Danger} notificationLabel="Update recovery file">
+                {children}
+            </SettingsListItem>
+        );
+
+        expect(screen.getByText('Update recovery file')).toHaveClass('sr-only');
+    });
+
+    it('announces the notification with a generic label by default', () => {
+        render(<SettingsListItem notification={ThemeColor.Danger}>{children}</SettingsListItem>);
+
+        expect(screen.getByText('Attention required')).toHaveClass('sr-only');
     });
 
     it('shows both `to` and `icon`', () => {

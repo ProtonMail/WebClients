@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
-import type { ThemeColor } from '@proton/colors/types';
-import type { SectionConfig } from '@proton/components/containers/layout/interface';
+import type { SectionConfig, SettingsNotification } from '@proton/components/containers/layout/interface';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
@@ -43,7 +42,7 @@ interface Arguments {
     allSubscriptions: Subscription[];
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
-    recoveryNotification?: ThemeColor;
+    recoveryNotification?: SettingsNotification;
     referralInfo: {
         refereeRewardAmount: string;
         referrerRewardAmount: string;

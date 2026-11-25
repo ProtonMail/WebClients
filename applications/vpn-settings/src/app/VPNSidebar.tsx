@@ -73,6 +73,7 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
                                         to={getSectionPath('', section)}
                                         icon={section.icon}
                                         notification={section.notification}
+                                        notificationLabel={section.notificationLabel}
                                         key={section.to}
                                     >
                                         <span className="text-ellipsis" title={section.text}>

@@ -221,6 +221,7 @@
         "./recovery/lastModifiedTime": "./recovery/lastModifiedTime.ts",
         "./recovery/mnemonic": "./recovery/mnemonic.ts",
         "./recovery/mnemonicActions": "./recovery/mnemonicActions.ts",
+        "./recovery/recoveryConditions": "./recovery/recoveryConditions.ts",
         "./recovery/recoveryFile": "./recovery/recoveryFile.ts",
         "./recovery/recoveryKit/generateDeferredMnemonicData": "./recovery/recoveryKit/generateDeferredMnemonicData.ts",
         "./recovery/recoveryKit/RecoveryKitAction": "./recovery/recoveryKit/RecoveryKitAction.tsx",
