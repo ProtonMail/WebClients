@@ -1,11 +1,28 @@
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render as baseRender, screen, waitFor } from '@testing-library/react';
+
+import { membersReducer } from '@proton/account/members';
+import { membersPageReducer } from '@proton/account/members/membersPage';
+import { TestStoreProvider } from '@proton/account/testing/TestStoreProvider';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 
 import ServiceAccountManagers from './ServiceAccountManagers';
 
 const mockApi = vi.fn();
-vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+
+// The search results live in the members page slice, which fetches through the store's api.
+const render = (ui: ReactElement) => {
+    const { store } = getTestStore({
+        reducer: { ...membersPageReducer, ...membersReducer },
+        extraThunkArguments: { api: mockApi } as unknown as ProtonThunkArguments,
+    });
+    return baseRender(ui, {
+        wrapper: ({ children }) => <TestStoreProvider store={store}>{children}</TestStoreProvider>,
+    });
+};
+
 vi.mock('@proton/components/components/dropdown/Dropdown', () => ({
     __esModule: true,
     default: ({ children }: { children: ReactNode }) => <div>{children}</div>,

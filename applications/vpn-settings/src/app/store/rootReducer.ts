@@ -5,6 +5,7 @@ import { authDevicesReducer } from '@proton/account-security/sso/authDevices';
 import { memberAuthDevicesReducer } from '@proton/account-security/sso/memberAuthDevices';
 import { allowAddressDeletionReducer } from '@proton/account/allowAddressDeletion';
 import { domainsAddressesReducer } from '@proton/account/domainsAddresses';
+import { membersPageReducer } from '@proton/account/members/membersPage';
 import { mspSubsidiariesReducer } from '@proton/account/mspSubsidiaries';
 import { passwordPoliciesReducer } from '@proton/account/passwordPolicies';
 import { samlReducer } from '@proton/account/samlSSO';
@@ -18,6 +19,7 @@ export const rootReducer = combineReducers({
     ...sharedReducers,
     ...passwordPoliciesReducer,
     ...membersWithoutRecoveryReducer,
+    ...membersPageReducer,
     ...domainsAddressesReducer,
     ...calendarsReducer,
     ...samlReducer,

@@ -8,7 +8,6 @@ import SearchInput from '@proton/components/components/input/SearchInput';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import RoleAssignmentPausedBanner from '@proton/organization/members/rolesAndPermissions/RoleAssignmentPausedBanner';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 import { MembersTable } from './MembersTable';
@@ -20,7 +19,7 @@ export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; show
     const [keywords, setKeywords] = useState('');
 
     const {
-        data: rawMembers,
+        data: members,
         loading: loadingMembers,
         sync: syncMembers,
         total,
@@ -29,21 +28,6 @@ export const MembersRemote = ({ app, showUsage = false }: { app: APP_NAMES; show
 
     // The actual page considers the total pages and the page number, it's used to display the correct page number in the pagination UI
     const actualPage = useMemo(() => Math.min(page, totalPages), [page, totalPages]);
-
-    // convert raw members to enhanced members with partial addresses to prevent fetching addresses for each member in useMemberAddresses
-    const members = useMemo(
-        () =>
-            rawMembers.map((member): EnhancedMember => ({
-                ...member,
-                addressState: 'partial',
-                roleState: 'initial',
-                UserOrganizationRoles: [],
-                requiresOrgKeyPromotion: false,
-                requiresOrgKeyDemotion: false,
-                hasScheduledOrgKeyDemotion: false,
-            })),
-        [rawMembers]
-    );
 
     const membersHook = useMemberActions({ app, members, loadingMembers, syncMembers });
 
