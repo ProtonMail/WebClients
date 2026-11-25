@@ -64,6 +64,13 @@ im.$media-expressions: $media-expressions;
 			color: var(--ghost-text);
 		}
 
+		// The composer stays dark even when the surrounding page uses the light theme.
+		.composer-toolbar .button-ghost-weak {
+			--lumo-glyph: var(--ghost-text);
+			--lumo-control-fill: var(--ghost-bg-secondary);
+			--lumo-control-fill-mid: color-mix(in srgb, var(--ghost-bg-secondary), var(--ghost-text) 8%);
+		}
+
 		// Input field styling
 		.lumo-input {
 			background-color: var(--ghost-bg-primary);
