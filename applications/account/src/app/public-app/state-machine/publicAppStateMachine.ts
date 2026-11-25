@@ -378,19 +378,17 @@ export const publicAppStateMachine = setup({
             forkState: resolved.forkState,
             activeSessions: resolved.sessions ?? context.activeSessions,
         })),
-        /** Keeps a login result that needs more input, and its session; a finished login only redirects. */
+        /**
+         * Keeps a login result that needs more input; a finished login only redirects. Either way its session joins a
+         * loaded list, as the page can stay or come back while a finished login redirects.
+         */
         applyLoginResult: assign(({ context }, { result }: { result: LoginResult }) => {
-            if (result.type === 'done') {
-                return {};
-            }
             const payload = result.payload;
-            return {
-                locationState: result,
-                activeSessions:
-                    payload && 'session' in payload
-                        ? addSession(context.activeSessions, payload.session)
-                        : context.activeSessions,
-            };
+            const activeSessions =
+                payload && 'session' in payload && payload.session
+                    ? addSession(context.activeSessions, payload.session)
+                    : context.activeSessions;
+            return result.type === 'done' ? { activeSessions } : { locationState: result, activeSessions };
         }),
         /** Redirects to a finished login's URL, or goes to the login result's location. */
         followLoginResult: (_, _params: { result: LoginResult }) => unprovidedAction('followLoginResult'),
