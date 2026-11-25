@@ -15,6 +15,7 @@ import InputFieldStackedGroup from '../../components/inputFieldStacked/InputFiel
 import Info from '../../components/link/Info';
 import Logo from '../../components/logo/Logo';
 import Toggle from '../../components/toggle/Toggle';
+import { SettingsIconRow } from './SettingsIconRow';
 import { SettingsValueRow } from './SettingsValueRow';
 import type { EmailSubscription } from './constants/email-subscriptions';
 
@@ -118,26 +119,35 @@ export const EmailSubscriptionCardToggles = ({
     return subscriptions.map((subscription, index) => {
         const { id, title, frequency, tooltip, appName } = subscription;
 
+        const row = (
+            <SettingsValueRow
+                label={
+                    <>
+                        <SettingsValueRow.Label>
+                            <label htmlFor={id}>{title}</label>
+                            {tooltip && <Info title={tooltip} />}
+                        </SettingsValueRow.Label>
+                        {layout === 'stacked' && frequency && (
+                            <SettingsValueRow.Description>{frequency}</SettingsValueRow.Description>
+                        )}
+                    </>
+                }
+                value={layout === 'inline' ? frequency : undefined}
+                truncateValue={false}
+                action={<EmailSubscriptionToggle subscription={subscription} {...rest} />}
+            />
+        );
+
         return (
             <Fragment key={id}>
                 {index > 0 && <DashboardCardDivider />}
-                <SettingsValueRow
-                    label={
-                        <>
-                            <SettingsValueRow.Label>
-                                <label htmlFor={id}>{title}</label>
-                                {tooltip && <Info title={tooltip} />}
-                            </SettingsValueRow.Label>
-                            {layout === 'stacked' && frequency && (
-                                <SettingsValueRow.Description>{frequency}</SettingsValueRow.Description>
-                            )}
-                        </>
-                    }
-                    icon={appName && <Logo appName={appName} variant="glyph-only" size={6} />}
-                    value={layout === 'inline' ? frequency : undefined}
-                    truncateValue={false}
-                    action={<EmailSubscriptionToggle subscription={subscription} {...rest} />}
-                />
+                {appName ? (
+                    <SettingsIconRow icon={<Logo appName={appName} variant="glyph-only" size={6} />}>
+                        {row}
+                    </SettingsIconRow>
+                ) : (
+                    row
+                )}
             </Fragment>
         );
     });

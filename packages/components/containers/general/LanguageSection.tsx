@@ -34,7 +34,7 @@ export const LanguageTranslationHelp = () => {
 
 const LanguageSection = ({ locales = {} }: Props) => {
     return (
-        <SettingsIconRow icon={IcLanguage}>
+        <SettingsIconRow icon={<IcLanguage size={6} className="color-weak" />}>
             <SettingsSelectRow
                 id="languageSelect"
                 label={<SettingsSelectRow.Label>{c('Label').t`Default language`}</SettingsSelectRow.Label>}

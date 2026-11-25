@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import Logo from '@proton/components/components/logo/Logo';
 import Option from '@proton/components/components/option/Option';
 import { SettingsIconRow } from '@proton/components/containers/account/SettingsIconRow';
 import { SettingsSelectRow } from '@proton/components/containers/account/SettingsSelectRow';
@@ -13,6 +14,7 @@ import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcLanguage } from '@proton/icons/icons/IcLanguage';
 import { IcPassword } from '@proton/icons/icons/IcPassword';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { APPS } from '@proton/shared/lib/constants';
 
 const Card = ({ children }: { children: ReactNode }) => (
     <div className="bg-weak p-4 md:p-8">
@@ -29,7 +31,7 @@ const meta: Meta<typeof SettingsIconRow> = {
         docs: {
             description: {
                 component:
-                    'The two-column grid (`24px` icon + content) every settings row sits in. Pass the icon as a component, not an element — it is rendered internally at `size={6}` with weak color, so call sites never style it. Omitting `icon` keeps the column so rows stay aligned with their icon-bearing siblings. Use it inside `DashboardCard` / `DashboardCardContent`, one row per icon row, separated by `DashboardCardDivider`.',
+                    'The two-column grid (`24px` icon + content) every settings row sits in. Pass the icon as an element, at `size={6}` in weak color: `<IcBell size={6} className="color-weak" />`. Other visuals, such as a product logo, work the same way and are centered in the column. Omitting `icon` keeps the column so rows stay aligned with their icon-bearing siblings. Use it inside `DashboardCard` / `DashboardCardContent`, one row per icon row, separated by `DashboardCardDivider`.',
             },
         },
     },
@@ -43,7 +45,7 @@ type Story = StoryObj<typeof SettingsIconRow>;
 export const Default: Story = {
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcUserCircle}>
+            <SettingsIconRow icon={<IcUserCircle size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Username</SettingsValueRow.Label>}
                     value="alice.anderson@proton.me"
@@ -74,12 +76,48 @@ export const WithoutIcon: Story = {
 
             <DashboardCardDivider />
 
-            <SettingsIconRow icon={IcPassword}>
+            <SettingsIconRow icon={<IcPassword size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Password</SettingsValueRow.Label>}
                     action={<SettingsValueRow.EditButton title="Change password" onClick={() => {}} />}
                 />
             </SettingsIconRow>
+        </Card>
+    ),
+};
+
+export const WithProductLogo: Story = {
+    name: 'With a product logo',
+    parameters: {
+        docs: {
+            description: {
+                story: 'Product logos go in the same column as icons, at `size={6}` (24px).',
+            },
+        },
+    },
+    render: () => (
+        <Card>
+            {[
+                { appName: APPS.PROTONMAIL, title: 'Proton Mail and Calendar updates', frequency: '1 email per month' },
+                { appName: APPS.PROTONDRIVE, title: 'Proton Drive updates', frequency: '4-6 emails per year' },
+                { appName: APPS.PROTONPASS, title: 'Proton Pass updates', frequency: '4-6 emails per year' },
+            ].map(({ appName, title, frequency }, index) => (
+                <div key={appName}>
+                    {index > 0 && <DashboardCardDivider />}
+                    <SettingsIconRow icon={<Logo appName={appName} variant="glyph-only" size={6} />}>
+                        <SettingsToggleRow
+                            id={appName}
+                            label={
+                                <>
+                                    <SettingsToggleRow.Label>{title}</SettingsToggleRow.Label>
+                                    <SettingsToggleRow.Description>{frequency}</SettingsToggleRow.Description>
+                                </>
+                            }
+                            toggle={<SettingsToggleRow.Toggle checked={index !== 1} onChange={() => {}} />}
+                        />
+                    </SettingsIconRow>
+                </div>
+            ))}
         </Card>
     ),
 };
@@ -99,7 +137,7 @@ export const NotCentered: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcBell}>
+                <SettingsIconRow icon={<IcBell size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="centeredToggle"
                         label={
@@ -114,7 +152,7 @@ export const NotCentered: Story = {
 
                 <DashboardCardDivider />
 
-                <SettingsIconRow icon={IcBell} centered={false}>
+                <SettingsIconRow icon={<IcBell size={6} className="color-weak" />} centered={false}>
                     <SettingsToggleRow
                         id="notCenteredToggle"
                         label={
@@ -139,7 +177,7 @@ export const MixedRows: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcUserCircle}>
+                <SettingsIconRow icon={<IcUserCircle size={6} className="color-weak" />}>
                     <SettingsValueRow
                         label={<SettingsValueRow.Label>Username</SettingsValueRow.Label>}
                         value="alice.anderson@proton.me"
@@ -149,7 +187,7 @@ export const MixedRows: Story = {
 
                 <DashboardCardDivider />
 
-                <SettingsIconRow icon={IcLanguage}>
+                <SettingsIconRow icon={<IcLanguage size={6} className="color-weak" />}>
                     <SettingsSelectRow
                         id="mixedLanguageSelect"
                         label={<SettingsSelectRow.Label>Default language</SettingsSelectRow.Label>}
@@ -165,7 +203,7 @@ export const MixedRows: Story = {
 
                 <DashboardCardDivider />
 
-                <SettingsIconRow icon={IcBell}>
+                <SettingsIconRow icon={<IcBell size={6} className="color-weak" />}>
                     <SettingsToggleRow
                         id="mixedRemindersToggle"
                         label={

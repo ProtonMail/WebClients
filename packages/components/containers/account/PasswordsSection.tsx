@@ -230,7 +230,7 @@ const PasswordsSection = ({ verifyPasswordButton }: Props) => {
                             {sectionHeader}
                             <DashboardCard>
                                 <DashboardCardContent>
-                                    <SettingsIconRow icon={IcPassword}>
+                                    <SettingsIconRow icon={<IcPassword size={6} className="color-weak" />}>
                                         <SettingsValueRow
                                             label={
                                                 <SettingsValueRow.Label>
@@ -257,7 +257,7 @@ const PasswordsSection = ({ verifyPasswordButton }: Props) => {
                         {sectionHeader}
                         <DashboardCard>
                             <DashboardCardContent>
-                                <SettingsIconRow icon={IcPassword}>
+                                <SettingsIconRow icon={<IcPassword size={6} className="color-weak" />}>
                                     <SettingsValueRow
                                         label={
                                             <>
@@ -278,7 +278,7 @@ const PasswordsSection = ({ verifyPasswordButton }: Props) => {
                                 {hasTwoPasswordOption && (
                                     <>
                                         <DashboardCardDivider />
-                                        <SettingsIconRow icon={IcLocks}>
+                                        <SettingsIconRow icon={<IcLocks size={6} className="color-weak" />}>
                                             <SettingsToggleRow
                                                 id="passwordModeToggle"
                                                 label={
@@ -317,7 +317,7 @@ const PasswordsSection = ({ verifyPasswordButton }: Props) => {
                                         {!isOnePasswordMode && (
                                             <>
                                                 <DashboardCardDivider />
-                                                <SettingsIconRow icon={IcPassword}>
+                                                <SettingsIconRow icon={<IcPassword size={6} className="color-weak" />}>
                                                     <SettingsValueRow
                                                         label={
                                                             <SettingsValueRow.Label>

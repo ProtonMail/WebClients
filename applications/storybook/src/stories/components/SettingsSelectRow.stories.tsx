@@ -44,7 +44,7 @@ export const Default: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcLanguage}>
+                <SettingsIconRow icon={<IcLanguage size={6} className="color-weak" />}>
                     <SettingsSelectRow
                         id="languageSelect"
                         label={<SettingsSelectRow.Label>Default language</SettingsSelectRow.Label>}
@@ -69,7 +69,7 @@ export const WithDescription: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcTextSize}>
+                <SettingsIconRow icon={<IcTextSize size={6} className="color-weak" />}>
                     <SettingsSelectRow
                         id="fontSizeSelect"
                         label={
@@ -107,7 +107,7 @@ export const WithRichOptions: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcTextSize}>
+                <SettingsIconRow icon={<IcTextSize size={6} className="color-weak" />}>
                     <SettingsSelectRow
                         id="richFontSizeSelect"
                         label={<SettingsSelectRow.Label>Font size</SettingsSelectRow.Label>}
@@ -151,7 +151,7 @@ export const MultipleRows: Story = {
 
         return (
             <Card>
-                <SettingsIconRow icon={IcCalendarGrid}>
+                <SettingsIconRow icon={<IcCalendarGrid size={6} className="color-weak" />}>
                     <SettingsSelectRow
                         id="dateFormatSelect"
                         label={<SettingsSelectRow.Label>Date format</SettingsSelectRow.Label>}
@@ -167,7 +167,7 @@ export const MultipleRows: Story = {
 
                 <DashboardCardDivider />
 
-                <SettingsIconRow icon={IcClock}>
+                <SettingsIconRow icon={<IcClock size={6} className="color-weak" />}>
                     <SettingsSelectRow
                         id="timeFormatSelect"
                         label={<SettingsSelectRow.Label>Time format</SettingsSelectRow.Label>}
@@ -182,7 +182,7 @@ export const MultipleRows: Story = {
 
                 <DashboardCardDivider />
 
-                <SettingsIconRow icon={IcCalendarGrid}>
+                <SettingsIconRow icon={<IcCalendarGrid size={6} className="color-weak" />}>
                     <SettingsSelectRow
                         id="weekStartSelect"
                         label={<SettingsSelectRow.Label>Week start</SettingsSelectRow.Label>}

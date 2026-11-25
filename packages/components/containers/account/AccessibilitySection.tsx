@@ -42,7 +42,7 @@ const AccessibilitySection = () => {
             />
             <DashboardCard>
                 <DashboardCardContent>
-                    <SettingsIconRow icon={IcTextFontFamily}>
+                    <SettingsIconRow icon={<IcTextFontFamily size={6} className="color-weak" />}>
                         <SettingsSelectRow
                             id="fontFaceSelect"
                             label={<SettingsSelectRow.Label>{c('Label').t`Font family`}</SettingsSelectRow.Label>}
@@ -105,7 +105,7 @@ const AccessibilitySection = () => {
 
                     <DashboardCardDivider />
 
-                    <SettingsIconRow icon={IcTextSize}>
+                    <SettingsIconRow icon={<IcTextSize size={6} className="color-weak" />}>
                         <SettingsSelectRow
                             id="fontSizeSelect"
                             label={<SettingsSelectRow.Label>{c('Label').t`Font size`}</SettingsSelectRow.Label>}
@@ -156,7 +156,7 @@ const AccessibilitySection = () => {
 
                     <DashboardCardDivider />
 
-                    <SettingsIconRow icon={IcChevronUpDown}>
+                    <SettingsIconRow icon={<IcChevronUpDown size={6} className="color-weak" />}>
                         <SettingsToggleRow
                             id="scrollbarsToggle"
                             label={
@@ -183,7 +183,7 @@ const AccessibilitySection = () => {
 
                     <DashboardCardDivider />
 
-                    <SettingsIconRow icon={IcPauseAnimation}>
+                    <SettingsIconRow icon={<IcPauseAnimation size={6} className="color-weak" />}>
                         <SettingsToggleRow
                             id="animationsToggle"
                             label={

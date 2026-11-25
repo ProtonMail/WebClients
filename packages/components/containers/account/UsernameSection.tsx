@@ -210,7 +210,7 @@ const UsernameSection = ({ app }: Props) => {
 
                 <DashboardCard>
                     <DashboardCardContent>
-                        <SettingsIconRow icon={IcUserCircle}>
+                        <SettingsIconRow icon={<IcUserCircle size={6} className="color-weak" />}>
                             <SettingsValueRow
                                 label={
                                     <>
@@ -267,7 +267,7 @@ const UsernameSection = ({ app }: Props) => {
                         {(primaryAddress || loadingAddresses) && (
                             <>
                                 <DashboardCardDivider />
-                                <SettingsIconRow icon={IcCardIdentity}>
+                                <SettingsIconRow icon={<IcCardIdentity size={6} className="color-weak" />}>
                                     <SettingsValueRow
                                         label={
                                             <SettingsValueRow.Label>
@@ -302,7 +302,7 @@ const UsernameSection = ({ app }: Props) => {
                         {APP_NAME === APPS.PROTONVPN_SETTINGS && user.Type === UserType.PROTON && (
                             <>
                                 <DashboardCardDivider />
-                                <SettingsIconRow icon={IcEnvelope}>
+                                <SettingsIconRow icon={<IcEnvelope size={6} className="color-weak" />}>
                                     <SettingsValueRow
                                         label={
                                             <SettingsValueRow.Label>

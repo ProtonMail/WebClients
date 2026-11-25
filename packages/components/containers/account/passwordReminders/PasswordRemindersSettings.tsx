@@ -105,7 +105,7 @@ const PasswordRemindersSettings = () => {
     return (
         <DashboardCard>
             <DashboardCardContent>
-                <SettingsIconRow icon={IcBell}>
+                <SettingsIconRow icon={<IcBell size={6} className="color-weak" />}>
                     <PasswordRemindersRow />
                 </SettingsIconRow>
             </DashboardCardContent>

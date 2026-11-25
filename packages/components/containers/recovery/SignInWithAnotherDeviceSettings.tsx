@@ -19,7 +19,7 @@ const SignInWithAnotherDeviceSettings = () => {
     return (
         <>
             {renderModalState && <SignInWithAnotherDeviceModal {...modalProps} />}
-            <SettingsIconRow icon={IcQrCode}>
+            <SettingsIconRow icon={<IcQrCode size={6} className="color-weak" />}>
                 <SettingsToggleRow
                     id="edmToggle"
                     label={

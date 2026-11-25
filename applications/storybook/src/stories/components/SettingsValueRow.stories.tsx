@@ -4,7 +4,6 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import Info from '@proton/components/components/link/Info';
-import Logo from '@proton/components/components/logo/Logo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { SettingsIconRow } from '@proton/components/containers/account/SettingsIconRow';
 import { SettingsValueRow } from '@proton/components/containers/account/SettingsValueRow';
@@ -12,7 +11,6 @@ import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcPassword } from '@proton/icons/icons/IcPassword';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
-import { APPS } from '@proton/shared/lib/constants';
 
 /**
  * Settings rows are always rendered inside a DashboardCard, which is what gives them their
@@ -34,7 +32,7 @@ const meta: Meta<typeof SettingsValueRow> = {
         docs: {
             description: {
                 component:
-                    'A read-only settings row displaying a label and its current value, optionally with an action such as an edit button. Compose it with `SettingsValueRow.Label`, `SettingsValueRow.Description` and `SettingsValueRow.EditButton`, place it inside a `SettingsIconRow` for the leading icon column (or pass `icon` to render any node, such as a product logo, centered in a 24×24 box), and stack rows in a `DashboardCard` / `DashboardCardContent` separated by `DashboardCardDivider`. On mobile the value wraps below the label; from `md` up it takes the right half of the row. Long values are shortened with an ellipsis unless `truncateValue` is `false`.',
+                    'A read-only settings row displaying a label and its current value, optionally with an action such as an edit button. Compose it with `SettingsValueRow.Label`, `SettingsValueRow.Description` and `SettingsValueRow.EditButton`, place it inside a `SettingsIconRow` for the leading icon column, and stack rows in a `DashboardCard` / `DashboardCardContent` separated by `DashboardCardDivider`. On mobile the value wraps below the label; from `md` up it takes the right half of the row. Long values are shortened with an ellipsis unless `truncateValue` is `false`.',
             },
         },
     },
@@ -48,7 +46,7 @@ type Story = StoryObj<typeof SettingsValueRow>;
 export const Default: Story = {
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcCardIdentity}>
+            <SettingsIconRow icon={<IcCardIdentity size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Display name</SettingsValueRow.Label>}
                     value="Alice Anderson"
@@ -69,7 +67,7 @@ export const WithDescription: Story = {
     name: 'With description and Info tooltip',
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcUserCircle}>
+            <SettingsIconRow icon={<IcUserCircle size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={
                         <>
@@ -107,7 +105,7 @@ export const WithoutValue: Story = {
     },
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcPassword}>
+            <SettingsIconRow icon={<IcPassword size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Password</SettingsValueRow.Label>}
                     action={
@@ -126,7 +124,7 @@ export const WithoutValue: Story = {
 export const WithoutAction: Story = {
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcEnvelope}>
+            <SettingsIconRow icon={<IcEnvelope size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Email address</SettingsValueRow.Label>}
                     value="alice.anderson@proton.me"
@@ -147,7 +145,7 @@ export const LongValue: Story = {
     },
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcEnvelope}>
+            <SettingsIconRow icon={<IcEnvelope size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Email address</SettingsValueRow.Label>}
                     value="alice.anderson.with.a.very.long.email.address@a-very-long-domain-name.example.com"
@@ -193,7 +191,7 @@ export const MultipleRows: Story = {
     name: 'Multiple rows in one card',
     render: () => (
         <Card>
-            <SettingsIconRow icon={IcUserCircle}>
+            <SettingsIconRow icon={<IcUserCircle size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Username</SettingsValueRow.Label>}
                     value="alice.anderson@proton.me"
@@ -203,7 +201,7 @@ export const MultipleRows: Story = {
 
             <DashboardCardDivider />
 
-            <SettingsIconRow icon={IcCardIdentity}>
+            <SettingsIconRow icon={<IcCardIdentity size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Display name</SettingsValueRow.Label>}
                     value="Alice Anderson"
@@ -213,46 +211,12 @@ export const MultipleRows: Story = {
 
             <DashboardCardDivider />
 
-            <SettingsIconRow icon={IcPassword}>
+            <SettingsIconRow icon={<IcPassword size={6} className="color-weak" />}>
                 <SettingsValueRow
                     label={<SettingsValueRow.Label>Password</SettingsValueRow.Label>}
                     action={<SettingsValueRow.EditButton title="Change password" onClick={() => {}} />}
                 />
             </SettingsIconRow>
-        </Card>
-    ),
-};
-
-export const WithIcon: Story = {
-    name: 'With icon',
-    parameters: {
-        docs: {
-            description: {
-                story: 'The `icon` prop takes any node, such as a product logo, and centers it in a 24×24 box, 16px before the label. Use it when the leading visual is not an `IconComponent`; for plain icons, `SettingsIconRow` is still available.',
-            },
-        },
-    },
-    render: () => (
-        <Card>
-            {[
-                { appName: APPS.PROTONMAIL, title: 'Proton Mail and Calendar updates', frequency: '1 email per month' },
-                { appName: APPS.PROTONDRIVE, title: 'Proton Drive updates', frequency: '4-6 emails per year' },
-                { appName: APPS.PROTONPASS, title: 'Proton Pass updates', frequency: '4-6 emails per year' },
-            ].map(({ appName, title, frequency }, index) => (
-                <div key={appName}>
-                    {index > 0 && <DashboardCardDivider />}
-                    <SettingsValueRow
-                        icon={<Logo appName={appName} variant="glyph-only" size={6} />}
-                        label={
-                            <SettingsValueRow.Label>
-                                <label htmlFor={appName}>{title}</label>
-                            </SettingsValueRow.Label>
-                        }
-                        value={frequency}
-                        action={<Toggle id={appName} checked={index !== 1} onChange={() => {}} />}
-                    />
-                </div>
-            ))}
         </Card>
     ),
 };
