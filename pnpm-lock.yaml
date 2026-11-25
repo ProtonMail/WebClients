@@ -10811,6 +10811,9 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
+      '@types/react-router-dom':
+        specifier: 'catalog:'
+        version: 5.3.3(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
