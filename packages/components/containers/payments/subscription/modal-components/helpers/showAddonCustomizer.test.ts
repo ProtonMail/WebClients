@@ -1,4 +1,6 @@
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { buildMultiSubscriptionContext } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
@@ -15,6 +17,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1 },
                     })
                 ).toBe(false);
@@ -29,6 +32,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1 },
                     })
                 ).toBe(false);
@@ -41,6 +45,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.BUNDLE]: 1 },
                     })
                 ).toBe(true);
@@ -53,6 +58,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.LUMO]: 1 },
                     })
                 ).toBe(false);
@@ -63,6 +69,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: {},
                     })
                 ).toBe(false);
@@ -77,6 +84,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1 },
                     })
                 ).toBe(true);
@@ -89,6 +97,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: { hideLumoAddonBanner: true, coupons: [], hidden: false },
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1 },
                     })
                 ).toBe(false);
@@ -99,6 +108,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 },
                     })
                 ).toBe(true);
@@ -109,6 +119,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: { hideLumoAddonBanner: true, coupons: [], hidden: false },
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 },
                     })
                 ).toBe(true);
@@ -123,6 +134,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.MEET, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MEET]: 1 },
                     })
                 ).toBe(false);
@@ -133,6 +145,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.MEET, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: {},
                     })
                 ).toBe(false);
@@ -143,6 +156,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.MEET, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.BUNDLE]: 1 },
                     })
                 ).toBe(true);
@@ -155,6 +169,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.MEET, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: { hideMeetAddonBanner: true, coupons: [], hidden: false },
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.BUNDLE]: 1 },
                     })
                 ).toBe(false);
@@ -165,6 +180,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.MEET, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 },
                     })
                 ).toBe(true);
@@ -175,6 +191,7 @@ describe('showAddonCustomizer', () => {
                     showAddonCustomizer(ADDON_PREFIXES.MEET, {
                         subscription: FREE_SUBSCRIPTION,
                         couponConfig: { hideMeetAddonBanner: true, coupons: [], hidden: false },
+                        multiSubscriptionContext: noSubscriptionContext,
                         planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 },
                     })
                 ).toBe(true);
@@ -188,6 +205,7 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(ADDON_PREFIXES.MEET, {
                     subscription: FREE_SUBSCRIPTION,
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.DRIVE]: 1 },
                     app: APPS.PROTONDRIVE,
                 })
@@ -199,6 +217,7 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                     subscription: FREE_SUBSCRIPTION,
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.DRIVE]: 1 },
                     app: APPS.PROTONDRIVE,
                 })
@@ -210,6 +229,7 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(ADDON_PREFIXES.MEET, {
                     subscription: buildSubscription({ [PLANS.DRIVE]: 1, [ADDON_NAMES.MEET_DRIVE]: 1 }),
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.DRIVE]: 1 },
                     app: APPS.PROTONDRIVE,
                 })
@@ -221,8 +241,44 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(ADDON_PREFIXES.MEET, {
                     subscription: FREE_SUBSCRIPTION,
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.BUNDLE]: 1 },
                     app: APPS.PROTONDRIVE,
+                })
+            ).toBe(true);
+        });
+    });
+
+    describe('Lumo on a single-user B2C plan', () => {
+        it('hides lumo on Mail Plus when the context has LumoMultiSubscriptions on', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.LUMO, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    multiSubscriptionContext: buildMultiSubscriptionContext([]),
+                    planIDs: { [PLANS.MAIL]: 1 },
+                })
+            ).toBe(false);
+        });
+
+        it('shows lumo on Mail Plus when the context has LumoMultiSubscriptions off', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.LUMO, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    multiSubscriptionContext: buildMultiSubscriptionContext([], false),
+                    planIDs: { [PLANS.MAIL]: 1 },
+                })
+            ).toBe(true);
+        });
+
+        it('shows lumo on Proton Family when the context has LumoMultiSubscriptions on', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.LUMO, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    multiSubscriptionContext: buildMultiSubscriptionContext([]),
+                    planIDs: { [PLANS.FAMILY]: 1 },
                 })
             ).toBe(true);
         });
@@ -239,6 +295,7 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(addonType, {
                     subscription: FREE_SUBSCRIPTION,
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.MAIL]: 1 },
                     app,
                 })
@@ -250,6 +307,7 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(ADDON_PREFIXES.LUMO, {
                     subscription: FREE_SUBSCRIPTION,
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 },
                     app: APPS.PROTONMAIL,
                 })
@@ -261,6 +319,7 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(ADDON_PREFIXES.MEET, {
                     subscription: FREE_SUBSCRIPTION,
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.MAIL]: 1 },
                     app: APPS.PROTONDRIVE,
                 })
@@ -277,6 +336,7 @@ describe('showAddonCustomizer', () => {
                 showAddonCustomizer(addonType, {
                     subscription: FREE_SUBSCRIPTION,
                     couponConfig: undefined,
+                    multiSubscriptionContext: noSubscriptionContext,
                     planIDs: { [PLANS.MAIL_BUSINESS]: 1 },
                     app,
                 })

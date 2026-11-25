@@ -6,6 +6,7 @@ import Time from '@proton/components/components/time/Time';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { ADDON_PREFIXES, PLANS, TRIAL_DURATION_DAYS, TRIAL_MAX_USERS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
@@ -64,6 +65,7 @@ export const PaymentlessTrialOrganizationSize = ({
             addonFlags={{}}
             isTrialMode
             telemetryContext={telemetryContext}
+            multiSubscriptionContext={model.session?.multiSubscriptionContext ?? noSubscriptionContext}
         />
         <div className="mt-1 text-sm color-primary">
             {c('b2b_trials_2025_Info').t`Up to ${TRIAL_MAX_USERS} users, during the trial period`}

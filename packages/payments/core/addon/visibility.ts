@@ -47,17 +47,8 @@ export const notOfferedOnDrivePlus =
 export const notExternallyManagedLumo: AddonVisibilityRule = ({ subscription }) =>
     hasNoExternallyManagedLumoSubscription(subscription);
 
-export const notSoldOnSingleUserB2CPlan: AddonVisibilityRule = ({
-    planIDs,
-    subscription,
-    featureFlagEnabled,
-    entitlementCatalog,
-}) =>
-    !isLumoAddonExcluded(
-        { lumoMultiSubscriptions: featureFlagEnabled, entitlementCatalog },
-        planIDs,
-        getPlanIDs(subscription)
-    );
+export const notSoldOnSingleUserB2CPlan: AddonVisibilityRule = ({ planIDs, subscription, multiSubscriptionContext }) =>
+    !isLumoAddonExcluded(multiSubscriptionContext, planIDs, getPlanIDs(subscription));
 
 /** Domain on VPN Business: hidden during signup; otherwise shown only behind the flag or when the
  *  current subscription already has a domain addon (grandfathering). Other plans always show it. */

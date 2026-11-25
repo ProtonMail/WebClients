@@ -6,11 +6,11 @@ import { getAddonConfigByName } from '@proton/payments/core/addon/addons';
 import type { AddonFlags, CustomizerCopyContext } from '@proton/payments/core/addon/interfaces';
 import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
-import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
 import { setQuantity } from '@proton/payments/core/planIDs';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -184,7 +184,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     app?: ProductParam;
     /** Checkout experiment CheckoutCondensedAddons: group Lumo/Meet into one card. Only SubscriptionContainer passes it. */
     condensedAddons?: boolean;
-    entitlementCatalog?: EntitlementCatalog;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }
 
 const isCondensableAddon = (addonName: ADDON_NAMES) => {
@@ -213,7 +213,7 @@ export const ProtonPlanCustomizer = ({
     header,
     app,
     condensedAddons = false,
-    entitlementCatalog,
+    multiSubscriptionContext,
     ...rest
 }: Props) => {
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
@@ -234,7 +234,7 @@ export const ProtonPlanCustomizer = ({
         couponConfig,
         isSignup: mode === 'signup',
         app,
-        entitlementCatalog,
+        multiSubscriptionContext,
     });
 
     if (addonCustomizerItems.length === 0) {

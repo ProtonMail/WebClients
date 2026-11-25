@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
@@ -52,6 +53,7 @@ const buildProps = ({
     loading?: boolean;
 }): Props => ({
     currency: 'EUR',
+    multiSubscriptionContext: noSubscriptionContext,
     cycle: CYCLE.MONTHLY,
     selectedPlanIDs,
     onChangePlanIDs: onChangePlanIDsMock,

@@ -174,6 +174,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                                 [ADDON_PREFIXES.MEET]: false,
                             }}
                             showUsersTooltip
+                            multiSubscriptionContext={payments.multiSubscriptionContext}
                             telemetryContext={payments.telemetryContext}
                         />
                     );

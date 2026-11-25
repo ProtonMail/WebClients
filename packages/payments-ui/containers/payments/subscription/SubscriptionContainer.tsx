@@ -1333,7 +1333,7 @@ const SubscriptionContainerInner = ({
                                                         : {}),
                                                 }}
                                                 couponConfig={couponConfig}
-                                                entitlementCatalog={entitlementCatalog}
+                                                multiSubscriptionContext={multiSubscriptionContext}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}

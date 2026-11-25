@@ -180,6 +180,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                                     [ADDON_PREFIXES.MEET]: false,
                                 }}
                                 showUsersTooltip
+                                multiSubscriptionContext={payments.multiSubscriptionContext}
                                 telemetryContext={payments.telemetryContext}
                             />
                         );
