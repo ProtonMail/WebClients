@@ -68,7 +68,7 @@
         "applications/console": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/styles"]
+            "ignoreDependencies": ["@proton/styles", "react-router"]
         },
         "applications/docs": {
             "entry": [
@@ -179,7 +179,8 @@
         },
         "applications/verify": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/Verify.scss"],
-            "project": ["src/**/*.{ts,tsx}"]
+            "project": ["src/**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@unleash/proxy-client-react"]
         },
         "applications/vpn-settings": {
             "entry": ["src/app/index.{ts,tsx}", "src/pages/**/*.{ts,tsx}", "webpack.config.{js,ts}"],
