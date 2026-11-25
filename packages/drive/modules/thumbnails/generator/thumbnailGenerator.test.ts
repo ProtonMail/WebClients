@@ -6,7 +6,14 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { ThumbnailProcessor } from './handlerRegistry';
-import { CanvasError, NoHandlerError, ThumbnailSizeError, UnsupportedFormatError, wrapError } from './thumbnailError';
+import {
+    CanvasError,
+    FileTooLargeError,
+    NoHandlerError,
+    ThumbnailSizeError,
+    UnsupportedFormatError,
+    wrapError,
+} from './thumbnailError';
 import { generateThumbnail } from './thumbnailGenerator';
 
 vi.mock('./handlerRegistry');
@@ -266,5 +273,23 @@ describe('generateThumbnail', () => {
         await thumbnailsPromise;
 
         expect(mockTraceError).toHaveBeenCalledTimes(1);
+    });
+
+    it('should neither report FileTooLargeError to Sentry nor count it in any metric', async () => {
+        mockProcess.mockRejectedValue(
+            new FileTooLargeError('large image', {
+                context: { handler: 'ImageHandler', inputMimeType: 'image/png', fileSize: 200 * 1024 * 1024 },
+            })
+        );
+
+        const blob = new Blob(['test'], { type: 'image/png' });
+        const { thumbnailsPromise } = generateThumbnail(blob, 'test.png', blob.size);
+        const result = await thumbnailsPromise;
+
+        expect(result.ok).toBe(false);
+        expect(mockTraceError).not.toHaveBeenCalled();
+        expect(mockErrorsIncrement).not.toHaveBeenCalled();
+        expect(mockSuccessRateIncrement).not.toHaveBeenCalled();
+        expect(mockNoHandlerIncrement).not.toHaveBeenCalled();
     });
 });

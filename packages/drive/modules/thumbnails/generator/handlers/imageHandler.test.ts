@@ -1,9 +1,30 @@
+import { ThumbnailType } from '@protontech/drive-sdk';
+
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+
+import { FileLoadError, FileTooLargeError } from '../thumbnailError';
 import { ImageHandler } from './imageHandler';
+import { getImageFromFile } from './utils/getImageFromFile';
+
+vi.mock('./utils/getImageFromFile', () => ({
+    getImageFromFile: vi.fn(),
+}));
+
+const generate = (handler: ImageHandler, fileSize: number) =>
+    handler.generate(
+        new Blob(['image'], { type: 'image/png' }),
+        'image.png',
+        fileSize,
+        SupportedMimeTypes.webp,
+        [ThumbnailType.Type1],
+        'image/png'
+    );
 
 describe('ImageHandler', () => {
     let handler: ImageHandler;
 
     beforeEach(() => {
+        vi.clearAllMocks();
         handler = new ImageHandler();
     });
 
@@ -39,6 +60,20 @@ describe('ImageHandler', () => {
     describe('metadata', () => {
         test('Handler name is ImageHandler', () => {
             expect(handler.handlerName).toBe('ImageHandler');
+        });
+    });
+
+    describe('generate', () => {
+        test('Throws FileTooLargeError without decoding images over 100 MB', async () => {
+            await expect(generate(handler, 100 * 1024 * 1024 + 1)).rejects.toThrow(FileTooLargeError);
+            expect(getImageFromFile).not.toHaveBeenCalled();
+        });
+
+        test('Decodes images of 100 MB or less', async () => {
+            vi.mocked(getImageFromFile).mockRejectedValue(new Error('decode stopped by the test'));
+
+            await expect(generate(handler, 100 * 1024 * 1024)).rejects.toThrow(FileLoadError);
+            expect(getImageFromFile).toHaveBeenCalled();
         });
     });
 });

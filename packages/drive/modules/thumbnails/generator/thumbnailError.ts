@@ -130,6 +130,18 @@ export class UnsupportedFormatError extends ThumbnailError {
 }
 
 /**
+ * Error thrown when a file is over the size we generate thumbnails for
+ * This is a deliberate skip, not a failure: it is neither reported nor counted
+ */
+export class FileTooLargeError extends ThumbnailError {
+    constructor(description: string, options: ThumbnailErrorOptions = {}) {
+        super(`File too large for a thumbnail: ${description}`, options);
+        this.name = 'FileTooLargeError';
+        Object.setPrototypeOf(this, FileTooLargeError.prototype);
+    }
+}
+
+/**
  * Error thrown when a file is missing expected data
  * This is expected for certain file types and should be logged as info
  */

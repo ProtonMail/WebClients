@@ -10,7 +10,7 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 
 import { MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS, isIosDevice } from '../constants';
-import { MissingDataError, ThumbnailError, UnsupportedFormatError } from '../thumbnailError';
+import { FileTooLargeError, MissingDataError, ThumbnailError, UnsupportedFormatError } from '../thumbnailError';
 import { BaseHandler } from './baseHandler';
 import type { ThumbnailGenerationResult } from './interfaces';
 import { getImageFromFile } from './utils/getImageFromFile';
@@ -36,7 +36,7 @@ export class RawImageHandler extends BaseHandler {
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
         if (isIosDevice && fileSize > MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS) {
-            throw new UnsupportedFormatError('large RAW image on iOS Safari', {
+            throw new FileTooLargeError('large RAW image on iOS Safari', {
                 context: {
                     stage: 'RAW size check',
                     fileSize: fileSize,
