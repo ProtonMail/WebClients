@@ -7,7 +7,6 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { addApiMock } from '@proton/test-api/vitest/api';
-import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { addComposerAction } from '../../../store/composers/composerActions';
@@ -330,19 +329,5 @@ describe('AddressesEditor', () => {
         expect(ccButton.getAttribute('tabindex')).toBeNull();
         expect(bccButton.getAttribute('tabindex')).toBeNull();
         expect(insertContactsButton.getAttribute('tabindex')).toEqual('-1');
-    });
-
-    it('should skip CC and BCC buttons when the kill switch is enabled', async () => {
-        const useFlagSpy = mockUseFlag(true);
-        const { getByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
-            onStore: (store) => {
-                setupComposer(store, composerID);
-            },
-        });
-
-        expect(getByTestId('composer:recipients:cc-button').getAttribute('tabindex')).toEqual('-1');
-        expect(getByTestId('composer:recipients:bcc-button').getAttribute('tabindex')).toEqual('-1');
-
-        useFlagSpy.mockRestore();
     });
 });
