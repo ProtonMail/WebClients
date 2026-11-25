@@ -13,6 +13,7 @@ import { MX_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import type { ApiImporterOrganizationUser } from '../../../api/api.interface';
 import { ApiImporterOrganizationState, type ApiImporterProduct } from '../../../api/api.interface';
+import { progressOf } from '../../../helpers/progressOf';
 import type { MigrationModel } from '../../types';
 import { useProviderUsers } from '../../useProviderUsers';
 import { isTerminal } from '../MigrationAssistant/ImportStatus';
@@ -134,7 +135,7 @@ const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
                                 <div className="px-6">
                                     <div className="color-weak pb-2">{c('Label').t`Users activated`}</div>
                                     <div className="text-bold color-primary text-xl text-tabular-nums">
-                                        {c('Info').t`${relevantCount} of ${totalCount}`}
+                                        {progressOf(relevantCount, totalCount)}
                                     </div>
                                 </div>
 
