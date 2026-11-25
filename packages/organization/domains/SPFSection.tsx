@@ -1,0 +1,93 @@
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { Href } from '@proton/atoms/Href/Href';
+import Alert from '@proton/components/components/alert/Alert';
+import Copy from '@proton/components/components/button/Copy';
+import Label from '@proton/components/components/label/Label';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import type { DnsRecord } from '@proton/shared/lib/domains/dnsRecords';
+import { getBlogURL } from '@proton/shared/lib/helpers/url';
+
+interface Props {
+    record: DnsRecord;
+}
+
+const SPFSection = ({ record }: Props) => {
+    const { createNotification } = useNotifications();
+    const handleCopy = () => createNotification({ text: c('Success').t`SPF value copied to clipboard` });
+
+    const spf = <strong key="spf">include:_spf.protonmail.ch</strong>;
+    const spfValue = <strong key="spf-value">v=spf1</strong>;
+    const spfExample = (
+        <code key="example">
+            v=spf1 <strong>include:_spf.protonmail.ch</strong> include:spf.example.com ~all
+        </code>
+    );
+
+    return (
+        <>
+            <Alert className="mb-4">
+                {c('Info')
+                    .t`Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.`}
+                <br />
+                {c('Info')
+                    .t`SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).`}
+                <br />
+                <Href href={getBlogURL('/what-is-sender-policy-framework-spf')}>{c('Link').t`Learn more`}</Href>
+            </Alert>
+            <Label>{c('Label')
+                .t`Please add the following TXT record. Note: DNS records can take several hours to update.`}</Label>
+            <Table responsive="cards" className="mt-4">
+                <TableHeader
+                    cells={[
+                        c('Header for domain modal').t`Type`,
+                        c('Header for domain modal').t`Host name`,
+                        c('Header for domain modal').t`Value / Data / Points to`,
+                    ]}
+                />
+                <TableBody>
+                    <TableRow
+                        labels={[
+                            c('Header for domain modal').t`Type`,
+                            c('Header for domain modal').t`Host name`,
+                            c('Header for domain modal').t`Value / Data / Points to`,
+                        ]}
+                        cells={[
+                            <code key="type">{record.type}</code>,
+                            <code key="hostname">{record.hostname}</code>,
+                            <div className="flex flex-nowrap items-center" key="value">
+                                <Copy size="small" onCopy={handleCopy} className="shrink-0 mr-2" value={record.value} />{' '}
+                                <code className="text-ellipsis lh-rg" title={record.value}>
+                                    {record.value}
+                                </code>
+                            </div>,
+                        ]}
+                    />
+                </TableBody>
+            </Table>
+            <Alert className="mb-4">
+                {/*
+                 * translator: Variables are the following
+                 * ${spf}: Proton mail spf in bold
+                 * ${spfValue}: spf value in bold
+                 * full sentence for reference: "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add include:_spf.protonmail.ch to your current record (put it after v=spf1)."
+                 */}
+                {c('Info')
+                    .jt`Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${spf} to your current record (put it after ${spfValue}).`}
+                <br />
+                {/*
+                 * translator:
+                 * ${spfExample}: spf example inside an HTML code tag
+                 * full sentence for reference: "Example: v=spf1 include:_spf.protonmail.ch include:spf.example.com ~all"
+                 */}
+                {c('Info').jt`Example: ${spfExample}`}
+            </Alert>
+        </>
+    );
+};
+
+export default SPFSection;

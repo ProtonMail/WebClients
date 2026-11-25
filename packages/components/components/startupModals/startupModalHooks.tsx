@@ -7,10 +7,8 @@ import { npsConfig } from '../../containers/netPromoterScore/config';
 import { getFeatureCode } from '../../containers/netPromoterScore/helpers';
 import { useNPSEligiblity } from '../../containers/netPromoterScore/hooks/useNPSEligibility';
 import type { NPSApplication } from '../../containers/netPromoterScore/interface';
-import ScimGroupsOnboardingModal from '../../containers/organization/ScimGroupsOnboardingModal';
 import LightLabellingFeatureModal from '../../containers/organization/logoUpload/LightLabellingFeatureModal';
 import { useShowLightLabellingFeatureModal } from '../../containers/organization/logoUpload/useShowLightLabellingFeatureModal';
-import { useShowScimGroupsOnboardingModal } from '../../containers/organization/useShowScimGroupsOnboardingModal';
 import CancellationReminderModal from '../../containers/payments/subscription/cancellationReminder/CancellationReminderModal';
 import type { ReminderFlag } from '../../containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { shouldOpenReminderModal } from '../../containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
@@ -26,18 +24,6 @@ export const useLightLabellingFeatureModal: () => StartupModal = () => {
         showModal: showLightLabellingFeatureModal,
         activateModal: () => setModal(true),
         component: renderModal ? <LightLabellingFeatureModal {...modal} /> : null,
-    };
-};
-
-export const useScimGroupsOnboardingModal: () => StartupModal = () => {
-    const [modal, setModal, renderModal] = useModalState();
-
-    const showScimGroupsOnboardingModal = useShowScimGroupsOnboardingModal();
-
-    return {
-        showModal: showScimGroupsOnboardingModal,
-        activateModal: () => setModal(true),
-        component: renderModal ? <ScimGroupsOnboardingModal {...modal} /> : null,
     };
 };
 

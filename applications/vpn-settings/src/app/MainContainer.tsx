@@ -31,7 +31,6 @@ import EmailSubscriptionSection from '@proton/components/containers/account/Emai
 import PasswordsSection from '@proton/components/containers/account/PasswordsSection';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import UsernameSection from '@proton/components/containers/account/UsernameSection';
-import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
 import LanguageSection, { LanguageTranslationHelp } from '@proton/components/containers/general/LanguageSection';
@@ -41,7 +40,6 @@ import PrivateMainAreaLoading from '@proton/components/containers/layout/Private
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import LogsSection from '@proton/components/containers/logs/LogsSection';
 import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSection';
 import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
 import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
@@ -59,7 +57,6 @@ import ReferralPageTelemetry from '@proton/components/containers/referral/compon
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import { InviteSection } from '@proton/components/containers/referral/invite/InviteSection';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
-import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
 import SessionsSection from '@proton/components/containers/sessions/SessionsSection';
 import ThemesSection from '@proton/components/containers/themes/ThemesSection';
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
@@ -74,6 +71,9 @@ import useToggle from '@proton/hooks/useToggle';
 import { OfferStartupModal } from '@proton/offers-delivery/components/OfferStartupModal';
 import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
 import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
+import LogsSection from '@proton/organization/logs/LogsSection';
+import { SentinelSection } from '@proton/organization/sentinel/SentinelSection';
+import SSODomainUnverifiedBanner from '@proton/organization/sso/SSODomainUnverifiedBanner';
 import InvoicesSection from '@proton/payments-ui/containers/invoices/InvoicesSection';
 import CreditsSection from '@proton/payments-ui/containers/payments/CreditsSection';
 import PlansSection from '@proton/payments-ui/containers/payments/PlansSection';

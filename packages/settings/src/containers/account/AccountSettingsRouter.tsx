@@ -19,7 +19,6 @@ import LanguageAndTimeSection from '@proton/components/containers/general/Langua
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import LogsSection from '@proton/components/containers/logs/LogsSection';
 import GiftCodeSection from '@proton/components/containers/payments/GiftCodeSection';
 import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
 import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
@@ -38,11 +37,12 @@ import { BusinessReferralSection } from '@proton/components/containers/referral/
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { InviteSection } from '@proton/components/containers/referral/invite/InviteSection';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
-import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
 import SessionsSection from '@proton/components/containers/sessions/SessionsSection';
 import ThemesSection from '@proton/components/containers/themes/ThemesSection';
 import { EmergencyContactSection } from '@proton/delegated-access/emergencyContact/EmergencyContactSection';
 import { RecoveryContactSection } from '@proton/delegated-access/recoveryContact/RecoveryContactSection';
+import LogsSection from '@proton/organization/logs/LogsSection';
+import { SentinelSection } from '@proton/organization/sentinel/SentinelSection';
 import InvoicesSection from '@proton/payments-ui/containers/invoices/InvoicesSection';
 import CreditsSection from '@proton/payments-ui/containers/payments/CreditsSection';
 import PaymentMethodsSection from '@proton/payments-ui/containers/payments/methods/PaymentMethodsSection';

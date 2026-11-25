@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { PassEvents } from '@proton/components/containers/b2bDashboard/Pass/PassEvents';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { PassEvents } from '@proton/organization/b2bDashboard/Pass/PassEvents';
 import PassPolicies from '@proton/pass/components/Organization/Policies/PassPolicies';
 import { PassReports } from '@proton/pass/components/Organization/Reports/PassReports';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';

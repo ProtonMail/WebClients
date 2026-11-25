@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Loader } from '@proton/atoms/Loader/Loader';
-import { VPNEvents } from '@proton/components/containers/b2bDashboard/VPN/VPNEvents';
 import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
+import { VPNEvents } from '@proton/organization/b2bDashboard/VPN/VPNEvents';
 
 import { NavSections } from '../../components/NavSections';
 import { useB2BAdminNavigation } from '../../contexts/NavigationContext';

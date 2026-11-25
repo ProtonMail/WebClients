@@ -9,8 +9,8 @@ import {
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import { disableStorageSelection } from '@proton/components/containers/members/helper';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
+import { disableStorageSelection } from '@proton/organization/members/helper';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getCodes } from '@proton/payments/core/subscription/helpers';

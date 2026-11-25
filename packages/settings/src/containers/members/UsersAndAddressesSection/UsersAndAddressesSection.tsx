@@ -6,13 +6,13 @@ import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissi
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import DomainModal from '@proton/components/containers/domains/DomainModal';
-import AdminRolesOnboardingModal from '@proton/components/containers/members/rolesAndPermissions/AdminRolesOnboardingModal';
-import ScimSetupBannerAndModal from '@proton/components/containers/organization/ScimSetupBannerAndModal';
-import useOrganizationModals from '@proton/components/containers/organization/useOrganizationModals';
-import useOrganizationUnprivatizationModals from '@proton/components/containers/organization/useOrganizationUnprivatizationModals';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import ScimSetupBannerAndModal from '@proton/organization/ScimSetupBannerAndModal';
+import DomainModal from '@proton/organization/domains/DomainModal';
+import AdminRolesOnboardingModal from '@proton/organization/members/rolesAndPermissions/AdminRolesOnboardingModal';
+import useOrganizationModals from '@proton/organization/useOrganizationModals';
+import useOrganizationUnprivatizationModals from '@proton/organization/useOrganizationUnprivatizationModals';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { useFlag } from '@proton/unleash/useFlag';

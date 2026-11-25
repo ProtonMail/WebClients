@@ -1,0 +1,170 @@
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { useOrganization } from '@proton/account/organization/hooks';
+import type { AcceptOrganizationKeyInvitePayload } from '@proton/account/organizationKey/actions';
+import {
+    acceptOrganizationKeyInvite,
+    prepareAcceptOrganizationKeyInvite,
+} from '@proton/account/organizationKey/actions';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
+import { Button } from '@proton/atoms/Button/Button';
+import { Card } from '@proton/atoms/Card/Card';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
+
+interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {
+    onResetKeys?: () => void;
+}
+
+const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) => {
+    const [organizationKey] = useOrganizationKey();
+    const [organization] = useOrganization();
+    const organizationName = organization?.Name || '';
+    const adminEmail = organizationKey?.Key.SignatureAddress || '';
+    const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
+    const errorHandler = useErrorHandler();
+    const [payload, setPayload] = useState<AcceptOrganizationKeyInvitePayload | null>(null);
+    const silentApi = useSilentApi();
+
+    const [loading, withLoading] = useLoading();
+    const [loadingInit, withLoadingInit] = useLoading(true);
+
+    useEffect(() => {
+        void withLoadingInit(
+            dispatch(
+                prepareAcceptOrganizationKeyInvite({
+                    api: silentApi,
+                    adminEmail,
+                })
+            )
+                .then(setPayload)
+                .catch((e) => {
+                    errorHandler(e);
+                    rest.onClose?.();
+                })
+        );
+    }, []);
+
+    const handleSubmit = async () => {
+        if (payload?.state === 'verified') {
+            try {
+                await dispatch(acceptOrganizationKeyInvite({ api: silentApi, payload }));
+                createNotification({ text: c('passwordless').t`Organization key activated` });
+                rest.onClose?.();
+            } catch (e: any) {
+                errorHandler(e);
+            }
+        } else {
+        }
+    };
+
+    const handleClose = loading ? noop : rest.onClose;
+
+    return (
+        <ModalTwo open {...rest} onClose={handleClose}>
+            <ModalTwoHeader title={c('Title').t`Activate organization key`} {...rest} />
+            <ModalTwoContent>
+                {(() => {
+                    if (payload === null || loadingInit) {
+                        return (
+                            <div className="text-center">
+                                <CircleLoader />
+                            </div>
+                        );
+                    }
+                    const intro = (
+                        <div className="text-break mb-2">
+                            {getBoldFormattedText(
+                                c('passwordless')
+                                    .t`You have been made administrator of the organization **${organizationName}** by`
+                            )}
+                        </div>
+                    );
+                    const getCard = (icon: ReactNode) => {
+                        return (
+                            <Card rounded className="text-break">
+                                <div className="flex justify-space-between gap-1">
+                                    <div className="flex-1">{adminEmail}</div>
+                                    <div className="shrink-0">{icon}</div>
+                                </div>
+                            </Card>
+                        );
+                    };
+
+                    if (payload.state === 'verified') {
+                        return (
+                            <>
+                                {intro}
+                                {getCard(<IcCheckmarkCircleFilled className="color-success" />)}
+                                <div className="mt-2 color-weak">
+                                    {c('passwordless')
+                                        .t`We have verified the authenticity of this sender and invitation.`}
+                                    <br />
+                                    <br />
+                                    {c('passwordless')
+                                        .t`To enable administrator rights on your account, activate the organization key.`}
+                                </div>
+                            </>
+                        );
+                    }
+
+                    return (
+                        <>
+                            {intro}
+                            {getCard(<IcInfoCircleFilled className="color-danger" />)}
+                            <div className="mt-2 color-danger">
+                                {c('passwordless')
+                                    .t`We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${BRAND_NAME} Customer Support.`}
+                            </div>
+                        </>
+                    );
+                })()}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                {payload === null || payload.state === 'verified' ? (
+                    <>
+                        <Button disabled={loading} onClick={handleClose}>
+                            {c('Action').t`Cancel`}
+                        </Button>
+                        <Button
+                            color="norm"
+                            loading={loading}
+                            onClick={() => {
+                                void withLoading(handleSubmit());
+                            }}
+                        >
+                            {c('Action').t`Activate`}
+                        </Button>
+                    </>
+                ) : (
+                    <>
+                        <div />
+                        <Button color="norm" disabled={loading} onClick={handleClose}>
+                            {c('Action').t`Got it`}
+                        </Button>
+                    </>
+                )}
+            </ModalTwoFooter>
+        </ModalTwo>
+    );
+};
+
+export default ActivatePasswordlessOrganizationKey;

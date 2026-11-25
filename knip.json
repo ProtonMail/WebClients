@@ -390,6 +390,10 @@
             "project": ["**/*.{ts,tsx}"],
             "ignoreDependencies": ["@proton/styles"]
         },
+        "packages/organization": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/pack": {
             "entry": [
                 "webpack.config.ts",

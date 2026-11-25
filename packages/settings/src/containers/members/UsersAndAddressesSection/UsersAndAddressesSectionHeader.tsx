@@ -7,10 +7,10 @@ import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissi
 import Info from '@proton/components/components/link/Info';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import TableCell from '@proton/components/components/table/TableCell';
-import AdminRolesSpotlight from '@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import AdminRolesSpotlight from '@proton/organization/members/rolesAndPermissions/AdminRolesSpotlight';
 import type { MemberUsageColumnDisplay } from '@proton/shared/lib/api/members';
 import { SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

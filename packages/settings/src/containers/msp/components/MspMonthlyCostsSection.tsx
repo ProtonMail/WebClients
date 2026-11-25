@@ -17,11 +17,11 @@ import TableRow from '@proton/components/components/table/TableRow';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
-import { downloadEvents } from '@proton/components/containers/b2bDashboard/VPN/helpers';
 import IllustrationPlaceholder from '@proton/components/containers/illustration/IllustrationPlaceholder';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { downloadEvents } from '@proton/organization/b2bDashboard/VPN/helpers';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import {
     type MspCsvReportType,
