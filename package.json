@@ -33,20 +33,20 @@
         "@types/react-dom": "catalog:",
         "@typescript/native": "catalog:",
         "husky": "^9.1.7",
-        "knip": "^6.45.1",
-        "lint-staged": "^17.6.1",
+        "knip": "^6.47.0",
+        "lint-staged": "^17.6.2",
         "nyc": "^17.1.0",
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "sort-package-json": "^4.1.0",
         "stylelint": "catalog:",
-        "turbo": "2.11.12"
+        "turbo": "2.11.13"
     },
-    "packageManager": "pnpm@12.21.0",
+    "packageManager": "pnpm@12.22.0",
     "engines": {
         "node": "^26.13.1",
-        "pnpm": "^12.21.0"
+        "pnpm": "^12.22.0"
     },
     "publishConfig": {
         "registry": "https://pkg.protontech.ch/npm/web-npm/"
