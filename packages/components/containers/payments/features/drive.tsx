@@ -1,7 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
+import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
+import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets';
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
@@ -11,12 +13,14 @@ import {
     CALENDAR_APP_NAME,
     CALENDAR_SHORT_APP_NAME,
     CONTACTS_SHORT_APP_NAME,
+    DOCS_APP_NAME,
     DRIVE_APP_NAME,
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
+    SHEETS_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -216,6 +220,28 @@ export const getDriveAppFeature = (options?: { family?: boolean; duo?: boolean }
         tooltip,
         included: true,
         icon: IcBrandProtonDrive,
+    };
+};
+
+export const getDocsAppFeature = (): PlanCardFeatureDefinition => {
+    return {
+        id: 'docs-app',
+        text: DOCS_APP_NAME,
+        tooltip: c('new_plans: tooltip')
+            .t`${DOCS_APP_NAME}: Create, edit, and collaborate on end-to-end encrypted docs.`,
+        included: true,
+        icon: IcBrandProtonDocs,
+    };
+};
+
+export const getSheetsAppFeature = (): PlanCardFeatureDefinition => {
+    return {
+        id: 'sheets-app',
+        text: SHEETS_APP_NAME,
+        tooltip: c('new_plans: tooltip')
+            .t`${SHEETS_APP_NAME}: Create, edit, and collaborate on end-to-end encrypted sheets.`,
+        included: true,
+        icon: IcBrandProtonSheets,
     };
 };
 

@@ -22,13 +22,29 @@ describe('getPlanInformation', () => {
             'countries',
             'mail-app',
             'calendar-app',
-            'drive-app',
             'vpn-app',
+            'drive-app',
+            'docs-app',
+            'sheets-app',
             'pass-app',
         ]);
         expect(information?.features[0].text).toBe(users);
         expect(information?.features[1].text).toBe(
             getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries)
         );
+    });
+
+    it('describes Proton Unlimited with its apps', () => {
+        const information = getPlanInformation({ loading: false, selectedPlan: getPlan(PLANS.BUNDLE) });
+
+        expect(information?.features.map(({ id }) => id)).toEqual([
+            'mail-app',
+            'calendar-app',
+            'vpn-app',
+            'drive-app',
+            'docs-app',
+            'sheets-app',
+            'pass-app',
+        ]);
     });
 });
