@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect } from 'react';
+import { Fragment, type ReactNode, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,6 +12,7 @@ import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 
 import type { ProduceDesktopForkParameters } from '../actions/desktopForkInterface';
 import successImg from '../assets/method-success.svg';
+import { purifyMessage } from '../components/purifyMessage';
 import Content from '../layout/Content';
 import Layout from '../layout/Layout';
 import Main from '../layout/Main';
@@ -71,7 +72,9 @@ const AuthDesktop = ({ state }: { state: AuthDesktopState }) => {
                         );
                     }
 
-                    const errorMessage = result.errorMessage;
+                    const errorMessage = result.errorMessage ? (
+                        <Fragment key="error-message">{purifyMessage(result.errorMessage)}</Fragment>
+                    ) : undefined;
                     return (
                         <View image={errorImg} title={c('Error message').t`Oops, something went wrong`}>
                             <Text className="mt-4">
@@ -81,7 +84,7 @@ const AuthDesktop = ({ state }: { state: AuthDesktopState }) => {
                             </Text>
                             {errorMessage && (
                                 <div className="text-weak text-sm mt-4">
-                                    {c('Error message').t`Error: ${errorMessage}`}
+                                    {c('Error message').jt`Error: ${errorMessage}`}
                                 </div>
                             )}
                         </View>
