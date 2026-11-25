@@ -1589,8 +1589,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Chiave attendibile",
-        "Chiavi attendibili"
+        "Considera la chiave attendibile",
+        "Considera le chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -1799,6 +1799,19 @@
       ],
       "Use “${ label }” setting": [
         "Usa l’impostazione “${ label }”"
+      ],
+      "Don't show this again": [
+        "Non mostrare più"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Salva ${ name } in ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Salva in ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Disiscriviti da ${ selectedCount }",
+        "Disiscriviti da ${ selectedCount }"
       ]
     },
     "action": {
@@ -5493,7 +5506,257 @@
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
-        "Impossibile annullare l'iscrizione ad alcune mailing list. Riprova per completare la cancellazione."
+        "Impossibile disiscriversi da alcune mailing list. Riprova per completare la cancellazione."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "É richiesto inserire un messaggio quando si segnala una violazione del copyright o di dati rubati"
+      ],
+      "Bookmark password is not available": [
+        "La password dell'elemento preferito non è disponibile"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot download a folder": [
+        "Non è possibile scaricare una cartella"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Non è possibile spostare un elemento senza un nome valido, rinomina l'elemento prima di continuare"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
+      ],
+      "Cannot verify the author of this file": [
+        "Impossibile verificare l'autore di questo file"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Impossibile verificare chi ha caricato questo file."
+      ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
+      "Could not find an available name": [
+        "Impossibile trovare un nome disponibile"
+      ],
+      "Could not load sharing details": [
+        "Impossibile caricare i dettagli della condivisione"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Impossibile caricare l'immagine di anteprima: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Impossibile leggere parte di questo file: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Impossibile sbloccare la cartella principale."
+      ],
+      "Could not unlock this item": [
+        "Impossibile sbloccare questo elemento."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Non è permesso creare documenti al di fuori delle cartelle"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
+      ],
+      "Expiration date cannot be in the past": [
+        "La data di scadenza non può essere nel passato"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Impossibile decriptare il nome dell'elemento preferito: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Impossibile decrittografare la password del segnalibro: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Impossibile decrittografare la chiave del contenuto: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Impossibile decriptare la chiave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Impossibile decriptare i metadati di revisione"
+      ],
+      "Failed to get invitee keys": [
+        "Impossibile ottenere le chiavi dell'invitato"
+      ],
+      "Failed to get inviter keys": [
+        "Impossibile ottenere le chiavi dell'invitante"
+      ],
+      "Failed to load the membership": [
+        "Impossibile caricare l'iscrizione"
+      ],
+      "Failed to load the membership data": [
+        "Impossibile caricare i dati dell'iscrizione"
+      ],
+      "Failed to verify invitation": [
+        "Impossibile verificare l'invito"
+      ],
+      "Failed to verify membership": [
+        "Impossibile verificare l'iscrizione"
+      ],
+      "File download failed due to empty response": [
+        "Download del file non riuscito a causa di una risposta vuota."
+      ],
+      "File has no revision": [
+        "Il file non ha revisioni"
+      ],
+      "Image preview not found": [
+        "Anteprima dell'immagine non trovata"
+      ],
+      "Invalid URL": [
+        "URL non valido"
+      ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
+      ],
+      "Missing inviter email": [
+        "Manca l'indirizzo email dell'invitante"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Firma per ${ signatureType } mancante"
+      ],
+      "Move operation aborted": [
+        "Spostamento annullato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
+        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
+      ],
+      "No file data was received. Please try again.": [
+        "Non sono stati ricevuti dati del file. Riprova."
+      ],
+      "Only admins can convert external invitations": [
+        "Solo gli admin possono convertire inviti esterni"
+      ],
+      "Operation aborted": [
+        "Operazione interrotta"
+      ],
+      "Operation failed, try again later": [
+        "Operazione non riuscita. Riprova più tardi."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del file sembra essere danneggiata"
+      ],
+      "Photo is already in the target album": [
+        "La foto è già presente nell'album di destinazione."
+      ],
+      "Photo not found": [
+        "Foto non trovata"
+      ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
+      "Request aborted": [
+        "Richiesta annullata"
+      ],
+      "Signature is missing": [
+        "Manca la firma"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verifica della firma non riuscita: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
+      "Some invitations could not be loaded": [
+        "Impossibile caricare alcuni inviti"
+      ],
+      "Some items could not be loaded": [
+        "Alcuni elementi non sono stati caricati"
+      ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Il file caricato non corrisponde all'originale. Riprova."
+      ],
+      "This file has missing crypto material": [
+        "Questo file ha materiale crittografico mancante."
+      ],
+      "This file has no version available to download": [
+        "Non è disponibile alcuna versione di questo file da scaricare"
+      ],
+      "This file version could not be uploaded": [
+        "Questa versione del file non può essere caricata."
+      ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
+      "This item is no longer shared": [
+        "Questo elemento non è più condiviso"
+      ],
+      "This item is not shared": [
+        "Questo elemento non è condiviso"
+      ],
+      "Too many server errors, please try again later": [
+        "Troppi errori del server, riprova più tardi"
+      ],
+      "Too many server requests, please try again later": [
+        "Troppe richieste. Riprova più tardi"
+      ],
+      "Verification keys are not available": [
+        "Le chiavi di verifica non sono disponibili"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
+      ],
+      "You can create public links for your own files only": [
+        "Puoi creare link pubblici solo per i tuoi file."
+      ],
+      "You can only leave items that are shared with you": [
+        "Puoi lasciare soltanto gli oggetti che sono stati condivisi con te"
+      ],
+      "You can only upload a new version to a file": [
+        "È possibile caricare solo nuove versioni ad un file"
+      ],
+      "You can update a public link for your own files only": [
+        "Puoi aggiornare un link pubblico solo per i tuoi file."
+      ],
+      "You do not have access to this item": [
+        "Non hai accesso a questo elemento"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ]
     },
     "error": {
@@ -5891,6 +6154,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "La richiesta della chiave di sicurezza è stata annullata o è scaduta. Riprova."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Il tuo dispositivo non è riuscito a completare la richiesta della chiave di sicurezza. Riprova oppure utilizza un altro metodo di accesso."
       ]
     },
     "fido2: Info": {
@@ -9817,6 +10086,39 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Attiva ${ MAIL_APP_NAME } per iniziare a ricevere email su ${ count } dei tuoi domini.",
+        "Attiva ${ MAIL_APP_NAME } per iniziare a ricevere email su ${ count } dei tuoi domini."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Attiva ${ MAIL_APP_NAME } per iniziare a ricevere email su ${ domainName }. ${ activateLink }"
+      ],
+      "Author is not provided on public link": [
+        "L’autore non è indicato nel link pubblico."
+      ],
+      "Based only on which emails you've opened.": [
+        "Solo sulla base delle email che hai aperto."
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "I messaggi nella cartella Spam/Cestino verranno eliminati automaticamente dopo 30 giorni."
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Sposta le email precedenti nell'archivio. Sarà comunque possibile cercarle."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Per contribuire a mantenere il tuo account al sicuro, conferma di essere davvero tu prima di continuare."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "${ count } newsletter sono state trasferite e raggruppate per mittente. Scopri con quale frequenza ciascuna di esse ti invia un'email; quindi mantieni l'iscrizione, sposta le email o disiscriviti con un clic.",
+        "${ count } newsletter sono state trasferite e raggruppate per mittente. Scopri con quale frequenza ciascuna di esse ti invia un'email; quindi mantieni l'iscrizione, sposta le email o disiscriviti con un clic."
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Non riceverai email su ${ count } dei tuoi domini finché non attiverai ${ MAIL_APP_NAME }. Puoi farlo in qualsiasi momento in Impostazioni > Nomi di dominio.",
+        "Non riceverai email su ${ count } dei tuoi domini finché non attiverai ${ MAIL_APP_NAME }. Puoi farlo in qualsiasi momento in Impostazioni > Nomi di dominio."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Non riceverai email all'indirizzo ${ domainName } finché non attiverai ${ MAIL_APP_NAME }. Puoi farlo in qualsiasi momento in Impostazioni > Nomi di dominio."
       ]
     },
     "info": {
@@ -11202,6 +11504,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Password dell'account ${ BRAND_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11561,6 +11866,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
+      ],
+      "Activate": [
+        "Attiva"
       ]
     },
     "Link to calendar event": {
@@ -16018,8 +16326,8 @@
         "L'iscrizione a ${ count } mailing list è stata annullata e i messaggi sono stati spostati nell'archivio."
       ],
       "Unsubscribed from ${ count } mailing list.": [
-        "L'iscrizione a ${ count } mailing list è stata annullata.",
-        "L'iscrizione a ${ count } mailing list è stata annullata."
+        "Disiscritto da ${ count } mailing list.",
+        "Disiscritto da ${ count } mailing list."
       ]
     },
     "Success notification": {
@@ -17331,6 +17639,30 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Hide this reminder?": [
+        "Nascondere questo promemoria?"
+      ],
+      "Not opened in a while": [
+        "Non aperto da molto tempo"
+      ],
+      "Special offer": [
+        "Offerta speciale"
+      ],
+      "Verify it’s you": [
+        "Verifica che sia tu"
+      ],
+      "You open these sometimes": [
+        "Le apri spesso"
+      ],
+      "You read these often": [
+        "Le leggi spesso"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Le tue newsletter di Gmail, ora più facili da gestire"
       ]
     },
     "Title header for keys table": {
@@ -18077,6 +18409,53 @@
       ],
       "VPN devices at once": [
         "Dispositivi VPN contemporaneamente"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Chiudi"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offerta non disponibile"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } email negli ultimi 30 giorni. Non aperta.",
+        "${ count } email negli ultimi 30 giorni. Non aperta."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } email negli ultimi 30 giorni. Aperta spesso.",
+        "${ count } email negli ultimi 30 giorni. Aperte spesso."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } email negli ultimi 30 giorni. Aperta qualche volta.",
+        "${ count } email negli ultimi 30 giorni. Aperte qualche volta."
+      ],
+      "No emails in the last 30 days.": [
+        "Nessuna email negli ultimi 30 giorni."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Attributi"
+      ],
+      "content key": [
+        "Chiave del contenuto"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
+      "key": [
+        "chiave"
+      ],
+      "membership": [
+        "abbonamento"
+      ],
+      "name": [
+        "nome"
       ]
     }
   }

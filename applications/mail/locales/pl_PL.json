@@ -1718,6 +1718,12 @@
       ],
       "Use “${ label }” setting": [
         "Użyj ustawienia „${ label }”"
+      ],
+      "Don't show this again": [
+        "Nie pokazuj tego ponownie"
+      ],
+      "New chat": [
+        "Nowy czat"
       ]
     },
     "action": {
@@ -5387,6 +5393,21 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "Could not unlock this item": [
+        "Nie można odblokować elementu"
+      ],
+      "Image preview not found": [
+        "Nie znaleziono podglądu zdjęcia"
+      ],
+      "Invalid URL": [
+        "Adres URL jest nieprawidłowy"
+      ],
+      "Signature is missing": [
+        "Brak podpisu"
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
       ]
     },
     "error": {
@@ -9351,6 +9372,108 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "${ count } email": [
+        "${ count } wiadomość",
+        "${ count } wiadomości",
+        "${ count } wiadomości",
+        "${ count } wiadomości"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } z ${ steps }"
+      ],
+      "${ n } unread message": [
+        "${ n } nieprzeczytana wiadomość",
+        "${ n } nieprzeczytane wiadomości",
+        "${ n } nieprzeczytanych wiadomości",
+        "${ n } nieprzeczytanych wiadomości"
+      ],
+      "1 vault per user": [
+        "1 sejf na użytkownika"
+      ],
+      "Add a contact": [
+        "Dodaj kontakt"
+      ],
+      "Add contact": [
+        "Dodaj kontakt"
+      ],
+      "Change your theme": [
+        "Zmień motyw"
+      ],
+      "Create a filter": [
+        "Utwórz filtr"
+      ],
+      "Create a folder": [
+        "Utwórz folder"
+      ],
+      "Create a label": [
+        "Utwórz etykietę"
+      ],
+      "Create filter": [
+        "Utwórz filtr"
+      ],
+      "Create folder": [
+        "Utwórz folder"
+      ],
+      "Create label": [
+        "Utwórz etykierę"
+      ],
+      "Dismiss": [
+        "Odrzuć"
+      ],
+      "Edit ${ contact }": [
+        "Edytuj ${ contact }"
+      ],
+      "Edit a contact": [
+        "Edytuj kontakt"
+      ],
+      "Edit contact": [
+        "Edytuj kontakt"
+      ],
+      "Found ${ count } contact": [
+        "Znaleziono ${ count } kontakt",
+        "Znaleziono ${ count } kontakty",
+        "Znaleziono ${ count } kontaktów",
+        "Znaleziono ${ count } kontaktów"
+      ],
+      "Mark all as unread": [
+        "Oznacz wszystkie jako nieprzeczytane"
+      ],
+      "Mark as read": [
+        "Oznacz jako przeczytane"
+      ],
+      "Move emails": [
+        "Przenieś wiadomości"
+      ],
+      "Next": [
+        "Dalej"
+      ],
+      "No ads": [
+        "Brak reklam"
+      ],
+      "Remove signature": [
+        "Usuń podpis"
+      ],
+      "Rename folder": [
+        "Zmień nazwę folderu"
+      ],
+      "Rename this folder": [
+        "Zmień nazwę folderu"
+      ],
+      "Set signature": [
+        "Ustaw podpis"
+      ],
+      "Set your signature": [
+        "Ustaw podpis"
+      ],
+      "Update the filter ${ filter }": [
+        "Zaktualizuj filtr ${ filter }"
+      ],
+      "Update this filter": [
+        "Zaktualizuj filtr"
+      ],
+      "What can you do?": [
+        "Co umiesz zrobić?"
       ]
     },
     "info": {
@@ -10081,7 +10204,7 @@
         "Przejdź do Płatności"
       ],
       "Go to Updates": [
-        "Przejdź do Aktualizacji"
+        "Przejdź do Powiadomień"
       ],
       "Has attachments": [
         "Zawiera załącznik"
@@ -10510,7 +10633,7 @@
         "Anulowano subskrypcję ${ truncatedName }."
       ],
       "Updates": [
-        "Aktualizacje"
+        "Powiadomienia"
       ],
       "Updates - Automated confirmations, alerts, and account updates": [
         "Powiadomienia – automatyczne potwierdzenia, alerty i aktualizacje konta"
@@ -10586,6 +10709,39 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Compact": [
+        "Kompaktowy"
+      ],
+      "Document ID": [
+        "Identyfikator dokumentu"
+      ],
+      "Filter name": [
+        "Nazwa filtra"
+      ],
+      "Model": [
+        "Model"
+      ],
+      "Move to Trash": [
+        "Przenieś do kosza"
+      ],
+      "New name": [
+        "Nowa nazwa"
+      ],
+      "Row": [
+        "Wiersz"
+      ],
+      "Sieve script": [
+        "Skrypt Sieve"
+      ],
+      "Single messages": [
+        "Pojedyncze wiadomości"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12710,6 +12866,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Subskrypcja ${ planTitle } rozpocznie się ${ boldEndDate }."
+      ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
       ]
     },
     "Option": {
@@ -13460,6 +13619,9 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Ask anything…": [
+        "Zapytaj o cokolwiek…"
       ]
     },
     "Placeholder for contact group name": {
@@ -16743,6 +16905,9 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Verify it’s you": [
+        "Potwierdź swoją tożsamość"
       ]
     },
     "Title header for keys table": {
@@ -17505,6 +17670,26 @@
       ],
       "Row": [
         "Wiersz"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Zmień nazwę folderu ${ folder } na…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Zmień nazwę etykiety ${ label } na…"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Zamknij"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta jest niedostępna"
       ]
     }
   }

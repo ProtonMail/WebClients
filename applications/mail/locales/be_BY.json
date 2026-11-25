@@ -1799,6 +1799,21 @@
       ],
       "Use “${ label }” setting": [
         "Выкарыстоўваць налады “${ label }”"
+      ],
+      "Don't show this again": [
+        "Больш не паказваць"
+      ],
+      "Go to today": [
+        "Перайсці да сённяшняга дня"
+      ],
+      "Previous contact": [
+        "Папярэдні кантакт"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Захаваць ${ name } у ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Захаваць у ${ DRIVE_APP_NAME }"
       ]
     },
     "action": {
@@ -5554,6 +5569,255 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паўтарыце спробу."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Пры справаздачы аб парушэнні аўтарскіх правоў або крадзяжы даных вы павінны пакінуць паведамленне"
+      ],
+      "Bookmark password is not available": [
+        "Пароль закладкі недаступны"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Немагчыма дадаць фатаграфію ў альбом без сапраўднай назвы"
+      ],
+      "Cannot download a folder": [
+        "Немагчыма спампаваць папку"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Немагчыма перанесці элемент без сапраўднай назвы. Спачатку дайце яму іншую назву."
+      ],
+      "Cannot share root folder": [
+        "Немагчыма абагуліць каранёвую папку"
+      ],
+      "Cannot verify the author of this file": [
+        "Немагчыма спраўдзіць аўтара гэтага файла"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Немагчыма спраўдзіць хто запампаваў гэты файл"
+      ],
+      "Copy operation aborted": [
+        "Аперацыя капіявання перарвана"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Капіяванне элементаў па-за межы папкі забаронена"
+      ],
+      "Could not find an available name": [
+        "Немагчыма знайсці даступную назву"
+      ],
+      "Could not load sharing details": [
+        "Немагчыма загрузіць абагуленыя падрабязнасці"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Немагчыма загрузіць папярэдні прагляд відарыса: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Немагчыма прачытаць частку гэтага файла: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Немагчыма разблакіраваць бацькоўскую папку"
+      ],
+      "Could not unlock this item": [
+        "Немагчыма разблакіраваць гэты элемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Стварэнне дакументаў па-за іх межамі забаронена"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Стварэнне файлаў па-за іх межамі забаронена"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Стварэнне папак па-за іх межамі забаронена"
+      ],
+      "Device not found": [
+        "Прылада не знойдзена"
+      ],
+      "Expiration date cannot be in the past": [
+        "Дата завяршэння не можа быць у мінулым"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не ўдалося расшыфраваць назву закладкі: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не ўдалося расшыфраваць пароль закладкі: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ змесціва: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Не ўдалося расшыфраваць назву элемента: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не ўдалося расшыфраваць ключ вузла: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Не ўдалося расшыфраваць метаданыя рэдакцыі"
+      ],
+      "Failed to get invitee keys": [
+        "Не ўдалося атрымаць ключы запрошаных асоб"
+      ],
+      "Failed to get inviter keys": [
+        "Не ўдалося атрымаць ключы запрашэння"
+      ],
+      "Failed to load the membership data": [
+        "Не ўдалося загрузіць даныя ўдзелу"
+      ],
+      "Failed to verify invitation": [
+        "Не ўдалося спраўдзіць запрашэнне"
+      ],
+      "Failed to verify membership": [
+        "Не ўдалося спраўдзіць удзел"
+      ],
+      "File download failed due to empty response": [
+        "Збой спампоўвання файла. Прычына: пусты адказ"
+      ],
+      "File has no revision": [
+        "У файла адсутнічае рэдакцыя"
+      ],
+      "Image preview not found": [
+        "Папярэдні прагляд відарыса не знойдзены"
+      ],
+      "Invalid URL": [
+        "Памылковы URL-адрас"
+      ],
+      "Invitation not found": [
+        "Запрашэнне не знойдзена"
+      ],
+      "Item not found": [
+        "Элемент не знойдзены"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Састарэлая публічная спасылка не можа быць абноўлена. Паўторна стварыце новую публічную спасылку."
+      ],
+      "Missing inviter email": [
+        "Электронная пошта запрошанай асобы адсутнічае"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Адсутнічае паведамленне для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Аперацыя перамяшчэння перарвана"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Перамяшчэнне элементаў па-за межы папкі забаронена"
+      ],
+      "Moving root item is not allowed": [
+        "Перамяшчэнне элемента суперкарыстальніка забаронена"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвала",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NODE_NAME_LENGTH } сімвалаў"
+      ],
+      "Name must not be empty": [
+        "Назва не можа быць пустой"
+      ],
+      "No file data was received. Please try again.": [
+        "Ніякія даныя файла не былі атрыманы. Паўтарыце спробу."
+      ],
+      "Only admins can convert external invitations": [
+        "Толькі ў адміністратараў ёсць правы для пераўтварэння знешніх запрашэнняў"
+      ],
+      "Operation aborted": [
+        "Аперацыя перарвана"
+      ],
+      "Operation failed, try again later": [
+        "Збой выканання аперацыі. Паўтарыце спробу пазней"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Здаецца, што частка файла пашкоджана"
+      ],
+      "Photo is already in the target album": [
+        "Фатаграфія ўжо знаходзіцца ў мэтавым альбоме"
+      ],
+      "Photo not found": [
+        "Фатаграфія не знойдзена"
+      ],
+      "Renaming root item is not allowed": [
+        "Перайменаванне элемента суперкарыстальніка забаронена"
+      ],
+      "Request aborted": [
+        "Запыт перарваны"
+      ],
+      "Signature is missing": [
+        "Подпіс адсутнічае"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Збой спраўджання подпісу для ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Збой спраўджання подпісу для ${ signatureType }: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Некаторыя даныя файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Некаторыя часткі файла не ўдалося запампаваць. Паўтарыце спробу."
+      ],
+      "Some invitations could not be loaded": [
+        "Некаторыя запрашэнні немагчыма загрузіць"
+      ],
+      "Some items could not be loaded": [
+        "Некаторыя элементы немагчыма загрузіць"
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
+      ],
+      "This file has missing crypto material": [
+        "У гэтага файла адсутнічае крыптаграфічны матэрыял"
+      ],
+      "This file has no version available to download": [
+        "У гэтага файла адсутнічае даступная версія для спампоўвання"
+      ],
+      "This file version could not be uploaded": [
+        "Не ўдалося запампаваць гэтую версію файла"
+      ],
+      "This item has no image preview": [
+        "У гэтага элемента адсутнічае папярэдні прагляд відарыса"
+      ],
+      "This item is no longer shared": [
+        "Гэты элемент больш не абагульваецца"
+      ],
+      "This item is not shared": [
+        "Гэты элемент не абагульваецца"
+      ],
+      "Too many server errors, please try again later": [
+        "Занадта шмат памылак сервера. Паўтарыце спробу пазней"
+      ],
+      "Too many server requests, please try again later": [
+        "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
+      ],
+      "Verification keys are not available": [
+        "Ключы спраўджання недаступны"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Ключы спраўджання для ${ signatureType } недаступны"
+      ],
+      "You can create public links for your own files only": [
+        "Вы можаце ствараць публічныя спасылкі толькі для сваіх уласных файлаў"
+      ],
+      "You can only leave items that are shared with you": [
+        "У вас ёсць магчымасць толькі выйсці з элементаў, якія абагульваюцца з вамі"
+      ],
+      "You can only upload a new version to a file": [
+        "Вы можаце толькі запампаваць новую версію ў файл"
+      ],
+      "You can update a public link for your own files only": [
+        "Вы можаце абнавіць публічную спасылку толькі для вашых уласных файлаў"
+      ],
+      "You do not have access to this item": [
+        "У вас няма доступу да гэтага элемента"
+      ],
+      "You do not have access to this shared item": [
+        "У вас няма доступу да гэтага абагуленага элемента"
       ]
     },
     "error": {
@@ -10070,6 +10334,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Author is not provided on public link": [
+        "Аўтар не пазначаны ў публічнай спасылцы"
       ]
     },
     "info": {
@@ -13576,6 +13843,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ваш дамен і падпіска гатовыя да выкарыстання."
+      ],
+      "You can change this anytime in settings.": [
+        "Вы можаце змяніць свой выбар у любы час у наладах."
       ]
     },
     "Onboarding Proton": {
@@ -17798,6 +18068,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Verify it’s you": [
+        "Спраўдзіце, што гэта вы"
       ]
     },
     "Title header for keys table": {
@@ -18566,6 +18839,108 @@
       ],
       "Row": [
         "Радкамі"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыць"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Прапанова недаступна"
+      ]
+    },
+    "lumo_2026: feature": {
+      "Everything in Basic, and:": [
+        "Усе функцыі тарыфнага плана Basic, а таксама:"
+      ],
+      "Everything in Free, and:": [
+        "Усе функцыі бясплатнага тарыфнага плана, а таксама:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе функцыі тарыфнага плана Plus, а таксама:"
+      ],
+      "Extended image generation": [
+        "Пашыраная колькасць генерацый"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "Limited image generation": [
+        "Абмежаваная колькасць генерацый відарысаў"
+      ],
+      "Maximum image generation": [
+        "Максімальная колькасць генерацый відарысаў"
+      ],
+      "Maximum Skills and Projects": [
+        "Максімальная колькасць навыкаў і праектаў"
+      ],
+      "More usage": [
+        "Іншыя варыянты выкарыстання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For everyday chats": [
+        "Для штодзённых чатаў"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрыбуты"
+      ],
+      "content key": [
+        "ключ змесціва"
+      ],
+      "hash key": [
+        "хэш-ключ"
+      ],
+      "key": [
+        "ключ"
+      ],
+      "membership": [
+        "удзельніцтва"
+      ],
+      "name": [
+        "назва"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } за карыстальніка"
+      ],
+      "${ storage } shared": [
+        "${ storage } абагулена"
+      ],
+      "10 years": [
+        "10 гадоў"
+      ],
+      "Calendars": [
+        "Календары"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Прэміяльныя Mail, Calendar, Drive і Pass"
+      ],
+      "Previous versions": [
+        "Папярэднія версіі"
+      ],
+      "Storage": [
+        "Сховішча"
+      ],
+      "Subscribers only": [
+        "Толькі падпісчыкі"
+      ],
+      "Unlimited": [
+        "Неабмежавана"
+      ],
+      "Up to ${ limit }": [
+        "Да ${ limit }"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "VPN devices at once": [
+        "Прылады VPN адначасова"
       ]
     }
   }

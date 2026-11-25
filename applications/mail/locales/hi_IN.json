@@ -1777,6 +1777,9 @@
       ],
       "Use “${ label }” setting": [
         "“${ label }” सेटिंग का उपयोग करें"
+      ],
+      "Don't show this again": [
+        "इसे दोबारा न दिखाएं"
       ]
     },
     "action": {
@@ -5432,6 +5435,241 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "आपकी खोज का मिलान बहुत अधिक परिणामों से हुआ. कृपया अपनी खोज सीमित करें और पुन: प्रयास करें।"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "कॉपीराइट उल्लंघन या चुराए गए डेटा की रिपोर्ट करते समय संदेश देना ज़रूरी है"
+      ],
+      "Bookmark password is not available": [
+        "बुकमार्क का पासवर्ड उपलब्ध नहीं है"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "मान्य नाम के बिना फोटो एल्बम में नहीं जोड़ा जा सकता।"
+      ],
+      "Cannot download a folder": [
+        "फोल्डर डाउनलोड नहीं किया जा सकता"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "मान्य नाम के बिना आइटम को ले जाया नहीं जा सकता, कृपया पहले आइटम का नाम बदलें"
+      ],
+      "Cannot share root folder": [
+        "रूट फोल्डर शेयर नहीं किया जा सकता"
+      ],
+      "Cannot verify the author of this file": [
+        "इस फाइल के लेखक की पुष्टि नहीं हो सकती।"
+      ],
+      "Cannot verify who uploaded this file": [
+        "ये फाइल किसने अपलोड की, ये सत्यापित नहीं किया जा सकता।"
+      ],
+      "Copy operation aborted": [
+        "कॉपी कार्रवाई निरस्त की गई"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "आइटम को गैर-फोल्डर में कॉपी करने की अनुमति नहीं है"
+      ],
+      "Could not find an available name": [
+        "कोई उपलब्ध नाम नहीं मिला।"
+      ],
+      "Could not load sharing details": [
+        "शेयरिंग की जानकारी लोड नहीं हो सकी"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "इमेज प्रीव्यू लोड नहीं हो सका: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "इस फाइल का हिस्सा पढ़ा नहीं जा सका: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "मुख्य फोल्डर अनलॉक नहीं हो सका।"
+      ],
+      "Could not unlock this item": [
+        "ये आइटम अनलॉक नहीं हो सका।"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "गैर-फोल्डर में डॉक्यूमेंट बनाने की अनुमति नहीं है"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "गैर-फोल्डर में फाइलें बनाने की अनुमति नहीं।"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "गैर-फोल्डर में फोल्डर बनाने की अनुमति नहीं है"
+      ],
+      "Device not found": [
+        "डिवाइस नहीं मिला।"
+      ],
+      "Expiration date cannot be in the past": [
+        "समय सीमा की तारीख अतीत में नहीं हो सकती"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "बुकमार्क कुंजी डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "बुकमार्क का नाम डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "बुकमार्क पासवर्ड डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "कंटेंट कुंजी डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "आइटम का नाम डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "नोड कुंजी डीक्रिप्ट करने में असफल: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "रिवीज़न मेटाडेटा डीक्रिप्ट करने में असफल।"
+      ],
+      "Failed to get inviter keys": [
+        "न्योता भेजने वाले की कुंजियां लेने में असफल।"
+      ],
+      "Failed to verify invitation": [
+        "निमंत्रण सत्यापित करने में असफल"
+      ],
+      "File download failed due to empty response": [
+        "खाली रिस्पॉन्स की वजह से फाइल डाउनलोड असफल हुआ।"
+      ],
+      "File has no revision": [
+        "फाइल का कोई रिवीजन नहीं है"
+      ],
+      "Image preview not found": [
+        "इमेज प्रीव्यू नहीं मिला"
+      ],
+      "Invalid URL": [
+        "अमान्य URL"
+      ],
+      "Invitation not found": [
+        "निमंत्रण नहीं मिला"
+      ],
+      "Item not found": [
+        "आइटम नहीं मिला।"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "विरासत पब्लिक लिंक अपडेट नहीं हो सकता। कृपया नया पब्लिक लिंक दोबारा बनाएं।"
+      ],
+      "Missing inviter email": [
+        "इनवाइट करने वाले का ईमेल मौजूद नहीं है"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "${ signatureType } के लिए हस्ताक्षर मौजूद नहीं"
+      ],
+      "Move operation aborted": [
+        "स्थानांतरण कार्य निरस्त किया गया"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "आइटम को गैर-फोल्डर पे ले जाने की अनुमति नहीं है"
+      ],
+      "Moving root item is not allowed": [
+        "रूट आइटम को ले जाने की अनुमति नहीं है।"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NODE_NAME_LENGTH } वर्ण लंबा हो सकता है",
+        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NODE_NAME_LENGTH } वर्ण लंबा हो सकता है"
+      ],
+      "Name must not be empty": [
+        "नाम खाली नहीं होना चाहिए।"
+      ],
+      "No file data was received. Please try again.": [
+        "कोई फाइल डेटा प्राप्त नहीं हुआ। कृपया दोबारा कोशिश करें।"
+      ],
+      "Only admins can convert external invitations": [
+        "सिर्फ एडमिन बाहरी न्योतों को रूपांतरित कर सकते हैं"
+      ],
+      "Operation aborted": [
+        "ऑपरेशन रद्द कर दिया गया"
+      ],
+      "Operation failed, try again later": [
+        "कार्रवाई असफल हुई, बाद में वापिस कोशिश करें।"
+      ],
+      "Part of the file appears to be corrupted": [
+        "फाइल का कुछ हिस्सा दूषित लग रहा है।"
+      ],
+      "Photo is already in the target album": [
+        "फोटो पहले से टारगेट एल्बम में है।"
+      ],
+      "Photo not found": [
+        "फोटो नहीं मिली"
+      ],
+      "Renaming root item is not allowed": [
+        "रूट आइटम का नाम बदलने की अनुमति नहीं है।"
+      ],
+      "Request aborted": [
+        "अनुरोध निरस्त किया गया"
+      ],
+      "Signature is missing": [
+        "हस्ताक्षर मौजूद नहीं है"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "हस्ताक्षर सत्यापन विफल: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "${ signatureType } का हस्ताक्षर सत्यापन असफल"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "${ signatureType } का हस्ताक्षर सत्यापन असफल: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "कुछ फाइल डेटा अपलोड नहीं हुआ। कृपया दोबारा कोशिश करें।"
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "फाइल के कुछ हिस्से अपलोड नहीं हुए। कृपया वापिस कोशिश करें।"
+      ],
+      "Some items could not be loaded": [
+        "कुछ आइटम लोड नहीं हुए।"
+      ],
+      "Something went wrong": [
+        "कोई गड़बड़ हो गई"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "अपलोड की गई फाइल मूल फाइल से मेल नहीं खाती। कृपया दोबारा कोशिश करें।"
+      ],
+      "This file has missing crypto material": [
+        "इस फाइल में क्रिप्टो मटीरियल मौजूद नहीं है।"
+      ],
+      "This file has no version available to download": [
+        "इस फाइल का डाउनलोड करने के लिए कोई वर्जन उपलब्ध नहीं है"
+      ],
+      "This file version could not be uploaded": [
+        "ये फाइल संस्करण अपलोड नहीं हो सका"
+      ],
+      "This item has no image preview": [
+        "इस आइटम का कोई इमेज प्रीव्यू नहीं है।"
+      ],
+      "This item is no longer shared": [
+        "ये आइटम अब शेयर नहीं है।"
+      ],
+      "This item is not shared": [
+        "ये आइटम शेयर नहीं है"
+      ],
+      "Too many server errors, please try again later": [
+        "कई सारी सर्वर गड़बड़ियां, कृपया बाद में दोबारा कोशिश करें"
+      ],
+      "Too many server requests, please try again later": [
+        "कई सारे सर्वर अनुरोध, कृपया बाद में वापिस कोशिश करें।"
+      ],
+      "Verification keys are not available": [
+        "वेरिफिकेशन कुंजियां उपलब्ध नहीं हैं।"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "${ signatureType } के सत्यापन कुंजियां उपलब्ध नहीं हैं"
+      ],
+      "You can create public links for your own files only": [
+        "सिर्फ अपनी फाइलों के पब्लिक लिंक बनाए जा सकते हैं।"
+      ],
+      "You can only leave items that are shared with you": [
+        "सिर्फ उन आइटम को छोड़ा जा सकता है जो आपके साथ शेयर किए गए हैं"
+      ],
+      "You can only upload a new version to a file": [
+        "नया संस्करण सिर्फ किसी फाइल में अपलोड किया जा सकता है"
+      ],
+      "You can update a public link for your own files only": [
+        "सिर्फ अपनी फाइलों का पब्लिक लिंक अपडेट किया जा सकता है"
+      ],
+      "You do not have access to this item": [
+        "आपके पास इस आइटम का एक्सेस नहीं है"
+      ],
+      "You do not have access to this shared item": [
+        "आपको इस शेयर किए गए आइटम का एक्सेस नहीं है।"
       ]
     },
     "error": {
@@ -9702,6 +9940,13 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "आप एक व्यवस्थित और साफ इन्बॉक्स से बस कुछ ही क्लिक दूर हैं"
+      ],
+      "${ n } unread message": [
+        "${ n } बिना पढ़ा संदेश",
+        "${ n } बिना पढ़े संदेश"
+      ],
+      "Author is not provided on public link": [
+        "पब्लिक लिंक पे लेखक की जानकारी नहीं दी गई है।"
       ]
     },
     "info": {
@@ -17052,6 +17297,9 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Verify it’s you": [
+        "सत्यापित करें कि यह आप ही हैं"
       ]
     },
     "Title header for keys table": {
@@ -17726,6 +17974,36 @@
       ],
       "Row": [
         "पंक्ति"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "बंद करें"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "ऑफर अनुपलब्ध"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "विशेषताएं"
+      ],
+      "content key": [
+        "कंटेंट चाबी"
+      ],
+      "hash key": [
+        "हैश चाबी"
+      ],
+      "key": [
+        "कुंजी"
+      ],
+      "membership": [
+        "सदस्यता"
+      ],
+      "name": [
+        "नाम"
       ]
     }
   }

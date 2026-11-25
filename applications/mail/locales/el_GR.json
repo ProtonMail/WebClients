@@ -1799,6 +1799,19 @@
       ],
       "Use “${ label }” setting": [
         "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Αποθήκευση ${ name } στο ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Αποθήκευση στο ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Κατάργηση εγγραφής από ${ selectedCount }",
+        "Κατάργηση εγγραφής από ${ selectedCount }"
       ]
     },
     "action": {
@@ -5494,6 +5507,256 @@
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
         "Δεν ήταν δυνατή η κατάργηση της εγγραφής από ορισμένες λίστες αλληλογραφίας. Προσπαθήστε ξανά για να ολοκληρώσετε την κατάργηση της εγγραφής."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Απαιτείται μήνυμα κατά την αναφορά παραβίασης πνευματικών δικαιωμάτων ή κλοπής δεδομένων"
+      ],
+      "Bookmark password is not available": [
+        "Ο κωδικός πρόσβασης σελιδοδείκτη δεν είναι διαθέσιμος"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Δεν είναι δυνατή η προσθήκη φωτογραφίας στο άλμπουμ χωρίς έγκυρο όνομα"
+      ],
+      "Cannot download a folder": [
+        "Δεν είναι δυνατή η λήψη ενός φακέλου"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Δεν είναι δυνατή η μετακίνηση στοιχείου χωρίς έγκυρο όνομα. Παρακαλούμε μετονομάστε το στοιχείο πρώτα."
+      ],
+      "Cannot share root folder": [
+        "Δεν είναι δυνατή η κοινοποίηση του ριζικού φακέλου"
+      ],
+      "Cannot verify the author of this file": [
+        "Δεν είναι δυνατή η επαλήθευση του δημιουργού αυτού του αρχείου"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "Copy operation aborted": [
+        "Η λειτουργία αντιγραφής διακόπηκε"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Η αντιγραφή στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Could not find an available name": [
+        "Δεν ήταν δυνατή η εύρεση ενός διαθέσιμου ονόματος"
+      ],
+      "Could not load sharing details": [
+        "Δεν ήταν δυνατή η φόρτωση των λεπτομερειών κοινής χρήσης"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Δεν ήταν δυνατή η φόρτωση της προεπισκόπησης εικόνας: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους αυτού του αρχείου: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Δεν ήταν δυνατό το ξεκλείδωμα του γονικού φακέλου"
+      ],
+      "Could not unlock this item": [
+        "Αδυναμία ξεκλείδωσης αυτού του στοιχείου"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Η δημιουργία εγγράφων σε μη φακέλους δεν επιτρέπεται"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία αρχείων σε μη φακέλους"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Δεν επιτρέπεται η δημιουργία φακέλων σε μη φακέλους"
+      ],
+      "Device not found": [
+        "Η συσκευή δε βρέθηκε"
+      ],
+      "Expiration date cannot be in the past": [
+        "Η ημερομηνία λήξης δεν μπορεί να είναι στο παρελθόν"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κωδικού πρόσβασης σελιδοδείκτη: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης κλειδιού περιεχομένου: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης ονόματος στοιχείου: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Αποτυχία αποκρυπτογράφησης του κλειδιού κόμβου: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Απέτυχε η αποκρυπτογράφηση των μεταδεδομένων αναθεώρησης"
+      ],
+      "Failed to get invitee keys": [
+        "Αποτυχία λήψης των κλειδιών του προσκεκλημένου"
+      ],
+      "Failed to get inviter keys": [
+        "Αποτυχία λήψης κλειδιών προσκλητού"
+      ],
+      "Failed to load the membership": [
+        "Αποτυχία φόρτωσης της συνδρομής"
+      ],
+      "Failed to load the membership data": [
+        "Αποτυχία φόρτωσης των δεδομένων συνδρομών"
+      ],
+      "Failed to verify invitation": [
+        "Αποτυχία επαλήθευσης πρόσκλησης"
+      ],
+      "Failed to verify membership": [
+        "Αποτυχία επαλήθευσης της συνδρομής"
+      ],
+      "File download failed due to empty response": [
+        "Δεν είναι δυνατή η επαλήθευση ποιος ανέβασε αυτό το αρχείο"
+      ],
+      "File has no revision": [
+        "Το αρχείο δεν έχει αναθεώρηση"
+      ],
+      "Image preview not found": [
+        "Δεν βρέθηκε προεπισκόπηση εικόνας"
+      ],
+      "Invalid URL": [
+        "Μη έγκυρη διεύθυνση URL"
+      ],
+      "Invitation not found": [
+        "Η πρόσκληση δεν βρέθηκε"
+      ],
+      "Item not found": [
+        "Το στοιχείο δεν βρέθηκε"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Δεν είναι δυνατή η ενημέρωση του παλαιού δημόσιου συνδέσμου. Δημιουργήστε ξανά έναν νέο δημόσιο σύνδεσμο."
+      ],
+      "Missing inviter email": [
+        "Λείπει η διεύθυνση ηλεκτρονικού ταχυδρομείου προσκλητή"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Λείπει η υπογραφή για ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Η λειτουργία μετακίνησης ματαιώθηκε"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Η μετακίνηση στοιχείου σε μη φάκελο δεν επιτρέπεται"
+      ],
+      "Moving root item is not allowed": [
+        "Δεν επιτρέπεται η μετακίνηση ριζικού στοιχείου"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Το όνομα δεν πρέπει να υπερβαίνει τον ${ MAX_NODE_NAME_LENGTH } χαρακτήρα",
+        "Το όνομα δεν πρέπει να υπερβαίνει τους ${ MAX_NODE_NAME_LENGTH } χαρακτήρες"
+      ],
+      "Name must not be empty": [
+        "Το όνομα δεν πρέπει να είναι κενό"
+      ],
+      "No file data was received. Please try again.": [
+        "Δεν ελήφθησαν δεδομένα αρχείου. Δοκιμάστε ξανά."
+      ],
+      "Only admins can convert external invitations": [
+        "Μόνο οι διαχειριστές μπορούν να μετατρέψουν εξωτερικές προσκλήσεις"
+      ],
+      "Operation aborted": [
+        "Η λειτουργία ακυρώθηκε"
+      ],
+      "Operation failed, try again later": [
+        "Η λειτουργία απέτυχε, δοκιμάστε ξανά αργότερα"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Μέρος του αρχείου φαίνεται να είναι κατεστραμμένο"
+      ],
+      "Photo is already in the target album": [
+        "Η φωτογραφία είναι ήδη στο άλμπουμ προορισμού"
+      ],
+      "Photo not found": [
+        "Η Φωτογραφία δε βρέθηκε"
+      ],
+      "Renaming root item is not allowed": [
+        "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
+      ],
+      "Request aborted": [
+        "Το αίτημα ακυρώθηκε"
+      ],
+      "Signature is missing": [
+        "Λείπει η υπογραφή"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Αποτυχία επαλήθευσης υπογραφής: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Η επαλήθευση υπογραφής για το ${ signatureType } απέτυχε: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων δεδομένων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Η μεταφόρτωση ορισμένων τμημάτων αρχείου απέτυχε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Some invitations could not be loaded": [
+        "Ορισμένες προσκλήσεις δεν ήταν δυνατό να φορτωθούν"
+      ],
+      "Some items could not be loaded": [
+        "Δεν ήταν δυνατή η φόρτωση ορισμένων στοιχείων"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Το μεταφορτωμένο αρχείο δεν ταιριάζει με το πρωτότυπο. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "This file has missing crypto material": [
+        "Σε αυτό το αρχείο λείπει υλικό κρυπτογράφησης"
+      ],
+      "This file has no version available to download": [
+        "Αυτό το αρχείο δεν έχει διαθέσιμη έκδοση για λήψη"
+      ],
+      "This file version could not be uploaded": [
+        "Δεν ήταν δυνατή η μεταφόρτωση αυτής της έκδοσης αρχείου"
+      ],
+      "This item has no image preview": [
+        "Αυτό το στοιχείο δεν έχει προεπισκόπηση εικόνας"
+      ],
+      "This item is no longer shared": [
+        "Αυτό το στοιχείο δεν είναι πλέον κοινόχρηστο"
+      ],
+      "This item is not shared": [
+        "Αυτό το στοιχείο δεν είναι κοινόχρηστο"
+      ],
+      "Too many server errors, please try again later": [
+        "Πάρα πολλά σφάλματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Too many server requests, please try again later": [
+        "Πάρα πολλά αιτήματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
+      "Verification keys are not available": [
+        "Τα κλειδιά επαλήθευσης δεν είναι διαθέσιμα"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Τα κλειδιά επαλήθευσης για ${ signatureType } δεν είναι διαθέσιμα"
+      ],
+      "You can create public links for your own files only": [
+        "Μπορείτε να δημιουργήσετε δημόσιους συνδέσμους μόνο για τα δικά σας αρχεία"
+      ],
+      "You can only leave items that are shared with you": [
+        "Μπορείτε να αφήσετε μόνο στοιχεία που έχουν κοινοποιηθεί σε εσάς"
+      ],
+      "You can only upload a new version to a file": [
+        "Μπορείτε να ανεβάσετε μόνο μια νέα έκδοση σε ένα αρχείο"
+      ],
+      "You can update a public link for your own files only": [
+        "Μπορείτε να ενημερώσετε έναν δημόσιο σύνδεσμο μόνο για τα δικά σας αρχεία"
+      ],
+      "You do not have access to this item": [
+        "Δεν έχετε πρόσβαση σε αυτό το στοιχείο"
+      ],
+      "You do not have access to this shared item": [
+        "Δεν έχετε πρόσβαση σε αυτό το κοινόχρηστο στοιχείο"
       ]
     },
     "error": {
@@ -5891,6 +6154,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Το αίτημα κλειδιού ασφαλείας ακυρώθηκε ή έληξε. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Η συσκευή σας δεν μπόρεσε να ολοκληρώσει το αίτημα κλειδιού ασφαλείας. Προσπαθήστε ξανά, ή επιλέξτε κάποια άλλη μέθοδο σύνδεσης."
       ]
     },
     "fido2: Info": {
@@ -9817,6 +10086,39 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Ενεργοποιήστε το ${ MAIL_APP_NAME } για να αρχίσετε να λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας.",
+        "Ενεργοποιήστε το ${ MAIL_APP_NAME } για να αρχίσετε να λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Ενεργοποιήστε το ${ MAIL_APP_NAME } για να αρχίσετε να λαμβάνετε ηλεκτρονικά μηνύματα σε ${ domainName }. ${ activateLink }"
+      ],
+      "Author is not provided on public link": [
+        "Ο συγγραφέας δεν παρέχεται σε δημόσιο σύνδεσμο"
+      ],
+      "Based only on which emails you've opened.": [
+        "Με βάση μόνο το ποια ηλεκτρονικά μηνύματα έχετε ανοίξει."
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Τα μηνύματα στα Ανεπιθύμητα/Κάδο θα διαγραφούν αυτόματα μετά από 30 ημέρες."
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Μετακινήστε τα παλαιότερα ηλεκτρονικά μηνύματά τους στο Αρχείο. Μπορείτε ακόμα να τα αναζητήσετε."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Συγκεντρώσαμε ${ count } ενημερωτικό δελτίο και το ομαδοποιήσαμε ανά αποστολέα. Δείτε πόσο συχνά σας στέλνει ηλεκτρονικά μηνύματα το καθένα και, στη συνέχεια, διατηρήστε το, μετακινήστε το ή διαγραφείτε από τη λίστα με ένα κλικ.",
+        "Συγκεντρώσαμε ${ count } ενημερωτικά δελτία και τα ομαδοποιήσαμε ανά αποστολέα. Δείτε πόσο συχνά σας στέλνει ηλεκτρονικά μηνύματα το καθένα και, στη συνέχεια, διατηρήστε τα, μετακινήστε τα ή διαγραφείτε από τη λίστα με ένα κλικ."
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Δε θα λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας μέχρι να ενεργοποιήσετε το ${ MAIL_APP_NAME }. Μπορείτε να το κάνετε αυτό ανά πάσα στιγμή, μεταβαίνοντας στις Ρυθμίσεις > Ονόματα τομέα.",
+        "Δε θα λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας μέχρι να ενεργοποιήσετε το ${ MAIL_APP_NAME }. Μπορείτε να το κάνετε αυτό ανά πάσα στιγμή, μεταβαίνοντας στις Ρυθμίσεις > Ονόματα τομέα."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Δε θα λαμβάνετε ηλεκτρονικά μηνύματα στο ${ domainName } μέχρι να ενεργοποιήσετε το ${ MAIL_APP_NAME }. Μπορείτε να το κάνετε αυτό ανά πάσα στιγμή, μεταβαίνοντας στις Ρυθμίσεις > Ονόματα τομέα."
       ]
     },
     "info": {
@@ -11202,6 +11504,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Κωδικός πρόσβασης Λογαριασμού ${ BRAND_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11561,6 +11866,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Πρέπει να επανενεργοποιήσετε τα κλειδιά σας για να δείτε την ενημερωμένη πρόσκληση"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ]
     },
     "Link to calendar event": {
@@ -17331,6 +17639,30 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Hide this reminder?": [
+        "Απόκρυψη αυτής της υπενθύμισης;"
+      ],
+      "Not opened in a while": [
+        "Έχει καιρό να ανοιχτούν"
+      ],
+      "Special offer": [
+        "Ειδική προσφορά"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
+      ],
+      "You open these sometimes": [
+        "Αυτά τα ανοίγετε μερικές φορές"
+      ],
+      "You read these often": [
+        "Τα διαβάζετε συχνά"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Τα ενημερωτικά δελτία από το Gmail, τώρα πιο εύκολα στη διαχείριση"
       ]
     },
     "Title header for keys table": {
@@ -18077,6 +18409,53 @@
       ],
       "VPN devices at once": [
         "Συσκευές VPN ταυτόχρονα"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Κλείσιμο"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Η προσφορά δεν είναι διαθέσιμη"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } ηλεκτρονικό μήνυμα τις τελευταίες 30 ημέρες. Δεν ανοίχτηκε.",
+        "${ count } ηλεκτρονικά μηνύματα τις τελευταίες 30 ημέρες. Δεν ανοίχτηκαν."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } ηλεκτρονικό μήνυμα τις τελευταίες 30 ημέρες. Ανοίχτηκε συχνά.",
+        "${ count } ηλεκτρονικά μηνύματα τις τελευταίες 30 ημέρες. Ανοίχτηκαν συχνά."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } ηλεκτρονικό μήνυμα τις τελευταίες 30 ημέρες. Ανοίχτηκε ορισμένες φορές.",
+        "${ count } ηλεκτρονικά μηνύματα τις τελευταίες 30 ημέρες. Ανοίχτηκαν ορισμένες φορές."
+      ],
+      "No emails in the last 30 days.": [
+        "Κανένα ηλεκτρονικό μήνυμα τις τελευταίες 30 ημέρες."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "χαρακτηριστικά"
+      ],
+      "content key": [
+        "κλειδί περιεχομένου"
+      ],
+      "hash key": [
+        "κλειδί hash"
+      ],
+      "key": [
+        "κλειδί"
+      ],
+      "membership": [
+        "συνδρομή"
+      ],
+      "name": [
+        "όνομα"
       ]
     }
   }

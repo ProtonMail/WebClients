@@ -1718,6 +1718,9 @@
       ],
       "Use “${ label }” setting": [
         "Использовать настройку «${ label }»"
+      ],
+      "Don't show this again": [
+        "Больше не показывать это"
       ]
     },
     "action": {
@@ -5384,6 +5387,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "Invalid URL": [
+        "Недействительный URL"
+      ],
+      "Something went wrong": [
+        "Что-то пошло не так"
       ]
     },
     "error": {
@@ -16713,6 +16722,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш укороченный адрес готов"
+      ],
+      "Verify it’s you": [
+        "Подтвердите, что это вы"
       ]
     },
     "Title header for keys table": {
@@ -17483,6 +17495,16 @@
       ],
       "Row": [
         "Строка"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Закрыть"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Предложение недоступно"
       ]
     }
   }

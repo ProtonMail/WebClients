@@ -1751,6 +1751,9 @@
       ],
       "Use “${ label }” setting": [
         "Використовувати налаштування «${ label }»"
+      ],
+      "Don't show this again": [
+        "Більше не показувати"
       ]
     },
     "action": {
@@ -5435,6 +5438,219 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Для звітування про порушення авторських прав або викрадення даних необхідно залишити повідомлення"
+      ],
+      "Bookmark password is not available": [
+        "Пароль для закладки недоступний"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Неможливо додати фото до альбому без вказання правильної назви"
+      ],
+      "Cannot download a folder": [
+        "Не вдається завантажити теку"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Неможливо перемістити елемент без дійсної назви. Спочатку перейменуйте елемент."
+      ],
+      "Cannot share root folder": [
+        "Неможливо надати спільний доступ до кореневої теки"
+      ],
+      "Cannot verify the author of this file": [
+        "Неможливо перевірити автора цього файлу"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Неможливо перевірити, хто вивантажив цей файл"
+      ],
+      "Copy operation aborted": [
+        "Операція копіювання перервана"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Копіювання елемента в місце, яке не є текою, заборонено"
+      ],
+      "Could not find an available name": [
+        "Не вдалося знайти вільне ім’я"
+      ],
+      "Could not load sharing details": [
+        "Не вдалося завантажити дані про спільний доступ"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Не вдалося завантажити попередній перегляд зображення: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Не вдалося прочитати частину цього файлу: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Не вдалося розблокувати батьківську теку"
+      ],
+      "Could not unlock this item": [
+        "Не вдалося розблокувати цей елемент"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Створення документів поза теками заборонено"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Створення файлів поза теками заборонено"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Створення тек в елементах, що не є теками, заборонено"
+      ],
+      "Device not found": [
+        "Пристрій не знайдено"
+      ],
+      "Expiration date cannot be in the past": [
+        "Дата закінчення терміну дії не може бути минулою"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Не вдалося розшифрувати ключ закладки: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Не вдалося розшифрувати назву закладки: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Не вдалося розшифрувати пароль закладки: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Не вдалося розшифрувати ключ вмісту: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Не вдалося розшифрувати ключ вузла: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Не вдалося розшифрувати метадані версії"
+      ],
+      "Failed to get inviter keys": [
+        "Не вдалося отримати ключі запрошувача"
+      ],
+      "Failed to verify invitation": [
+        "Не вдалося підтвердити запрошення"
+      ],
+      "File download failed due to empty response": [
+        "Завантаження файлу не вдалося через порожню відповідь"
+      ],
+      "File has no revision": [
+        "Файл не має редакції"
+      ],
+      "Image preview not found": [
+        "Попередній перегляд зображення не знайдено"
+      ],
+      "Invalid URL": [
+        "Недійсна URL-адреса"
+      ],
+      "Item not found": [
+        "Елемент не знайдено"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Старе публічне посилання неможливо оновити. Будь ласка, повторно створіть нове публічне посилання."
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Відсутній підпис для ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Операція переміщення перервана"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Переміщення елемента в місце, яке не є текою, заборонено"
+      ],
+      "Moving root item is not allowed": [
+        "Переміщення кореневого елемента заборонено"
+      ],
+      "Name must not be empty": [
+        "Поле «Ім’я» не може бути порожнім"
+      ],
+      "No file data was received. Please try again.": [
+        "Дані файлу не отримано. Будь ласка, спробуйте ще раз."
+      ],
+      "Only admins can convert external invitations": [
+        "Перетворювати зовнішні запрошення можуть лише адміністратори"
+      ],
+      "Operation aborted": [
+        "Операцію перервано"
+      ],
+      "Operation failed, try again later": [
+        "Операція не вдалася, спробуйте пізніше"
+      ],
+      "Photo is already in the target album": [
+        "Фотографія вже знаходиться в цільовому альбомі"
+      ],
+      "Photo not found": [
+        "Фотографію не знайдено"
+      ],
+      "Renaming root item is not allowed": [
+        "Перейменування кореневого елемента заборонено"
+      ],
+      "Request aborted": [
+        "Запит перервано"
+      ],
+      "Signature is missing": [
+        "Відсутній підпис"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Помилка перевірки підпису: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Деякі дані файлів не вдалося вивантажити. Будь ласка, спробуйте ще раз."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Деякі частини файлу не вдалося вивантажити. Будь ласка, спробуйте ще раз."
+      ],
+      "Some items could not be loaded": [
+        "Деякі елементи не вдалося завантажити"
+      ],
+      "Something went wrong": [
+        "Щось пішло не так"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Вивантажений файл не відповідає оригіналу. Будь ласка, спробуйте ще раз."
+      ],
+      "This file has missing crypto material": [
+        "У цьому файлі відсутні криптографічні дані"
+      ],
+      "This file has no version available to download": [
+        "Цей файл не має версій, доступних для завантаження"
+      ],
+      "This file version could not be uploaded": [
+        "Цю версію файлу не вдалося вивантажити"
+      ],
+      "This item has no image preview": [
+        "Для цього елемента немає попереднього перегляду зображення"
+      ],
+      "This item is no longer shared": [
+        "Цей елемент більше не доступний для спільного використання"
+      ],
+      "This item is not shared": [
+        "Цей елемент не доступний для спільного використання"
+      ],
+      "Too many server errors, please try again later": [
+        "Занадто багато помилок сервера. Будь ласка, спробуйте ще раз пізніше."
+      ],
+      "Too many server requests, please try again later": [
+        "Занадто багато запитів до сервера. Будь ласка, спробуйте ще раз пізніше."
+      ],
+      "Verification keys are not available": [
+        "Ключі для перевірки недоступні"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Ключі верифікації для ${ signatureType } недоступні"
+      ],
+      "You can create public links for your own files only": [
+        "Ви можете створювати загальнодоступні посилання лише на свої власні файли"
+      ],
+      "You can only leave items that are shared with you": [
+        "Ви можете залишати лише ті елементи, до яких вам надано спільний доступ"
+      ],
+      "You can only upload a new version to a file": [
+        "Ви можете вивантажити нову версію лише для одного файлу"
+      ],
+      "You can update a public link for your own files only": [
+        "Ви можете оновлювати публічне посилання лише для своїх власних файлів"
+      ],
+      "You do not have access to this item": [
+        "У вас немає доступу до цього елемента"
+      ],
+      "You do not have access to this shared item": [
+        "У вас немає доступу до цього спільного елемента"
       ]
     },
     "error": {
@@ -5835,6 +6051,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Запит на отримання ключа безпеки було скасовано або закінчився час очікування. Спробуйте ще раз."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Ваш пристрій не зміг виконати запит на використання ключа безпеки. Спробуйте ще раз або скористайтеся іншим способом входу."
       ]
     },
     "fido2: Info": {
@@ -9408,6 +9630,15 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Ліцензії для помічників із написання більше не продаються."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Попросіть адміністратора змінити тарифний план або видалити сторінку з бічної панелі «Сторінки бронювання» у ${ CALENDAR_APP_NAME }."
+      ],
+      "Author is not provided on public link": [
+        "У публічному посиланні не вказано автора"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Щоб додати нову сторінку бронювання, видаліть існуючу з бічної панелі сторінок бронювання в ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -16848,6 +17079,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваша коротша адреса готова"
+      ],
+      "Verify it’s you": [
+        "Підтвердьте, що це ви"
       ]
     },
     "Title header for keys table": {
@@ -17683,6 +17917,36 @@
       ],
       "For getting more done": [
         "Щоб встигнути зробити більше"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Закрити"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Пропозиція недоступна"
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "атрибути"
+      ],
+      "content key": [
+        "ключ вмісту"
+      ],
+      "hash key": [
+        "хеш-ключ"
+      ],
+      "key": [
+        "ключ"
+      ],
+      "membership": [
+        "членство"
+      ],
+      "name": [
+        "назва"
       ]
     }
   }

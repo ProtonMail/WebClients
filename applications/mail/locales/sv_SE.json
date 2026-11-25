@@ -139,13 +139,13 @@
         "Alla lästa"
       ],
       "All Starred": [
-        "Alla stjärnmärkta"
+        "Alla Stjärnmärkta"
       ],
       "All Unread": [
         "Alla olästa"
       ],
       "All Unstarred": [
-        "Alla ej stjärnmärkta"
+        "Alla ej Stjärnmärkta"
       ],
       "Apply": [
         "Tillämpa"
@@ -1586,8 +1586,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Betrodd nyckel",
+        "Betrodda nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1796,6 +1796,22 @@
       ],
       "Use “${ label }” setting": [
         "Använd “${ label }”-inställning"
+      ],
+      "Don't show this again": [
+        "Visa inte detta igen"
+      ],
+      "Get index size on disk": [
+        "Få indexstorlek på disk"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Spara ${ name } till ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Spara till ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Avsluta prenumeration från ${ selectedCount }",
+        "Avsluta prenumerationer från ${ selectedCount }"
       ]
     },
     "action": {
@@ -3072,7 +3088,7 @@
         "Gå till skräppost"
       ],
       "Go to Starred": [
-        "Gå till stjärnmärkt"
+        "Gå till Stjärnmärkt"
       ],
       "Go to Trash": [
         "Gå till papperskorg"
@@ -4376,10 +4392,10 @@
         "Börja med att ge din organisation ett namn."
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "För att använda  ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, lägg till den i din prenumeration."
+        "För att använda ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, lägg till den i din prenumeration."
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
-        "För att använda ${ LUMO_SHORT_APP_NAME } i  ${ MAIL_APP_NAME },  begär tillgång från din administratör."
+        "För att använda ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, begär åtkomst från din administratör."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på skydd för e-postspårning för att förhindra annonsörer och andra från att spåra din plats och onlineaktivitet."
@@ -5477,7 +5493,257 @@
         "Inbäddade bilder kunde inte tas bort. Meddelandet ändrades inte till oformaterad text."
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
-        "\nDet gick inte att avsluta prenumerationen på vissa e-postlistor. Försök igen för att slutföra avregistreringen."
+        "Det gick inte att avsluta prenumerationen på vissa e-postlistor. Försök igen för att slutföra avregistreringen."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Ett meddelande krävs för att rapportera brott mot upphovsrätt eller stulen data"
+      ],
+      "Bookmark password is not available": [
+        "Lösenord för bokmärke är inte tillgängligt"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan inte lägga till foto i album utan ett giltigt namn"
+      ],
+      "Cannot download a folder": [
+        "Kan inte ladda ner en mapp"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan inte, flytta objekt utan giltigt namn, byt namn på objektet först"
+      ],
+      "Cannot share root folder": [
+        "Kan inte dela rotmapp"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan inte verifiera författaren för denna fil"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan inte verifiera vem som laddade upp denna fil"
+      ],
+      "Copy operation aborted": [
+        "Kopieringsåtgärd avbröts"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av objekt till utanför en mapp är inte tillåtet"
+      ],
+      "Could not find an available name": [
+        "Kunde inte hitta ett tillgängligt namn"
+      ],
+      "Could not load sharing details": [
+        "Kunde inte ladda delningsdetaljer"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunde inte läsa del av denna fil: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunde inte låsa upp den överordnade mappen"
+      ],
+      "Could not unlock this item": [
+        "Kunde inte låsa upp detta objekt"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Upprättande av dokument utanför mappar är inte tillåtet"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Upprättande av mappar utanför mappar är inte tillåtet"
+      ],
+      "Device not found": [
+        "Enhet hittades inte"
+      ],
+      "Expiration date cannot be in the past": [
+        "Utgångsdatum kan inte vara i det förflutna"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Misslyckades avkryptera bokmärksnamn: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Misslyckades avkryptera innehållsnyckel: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunde inte dekryptera objekt: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Misslyckades avkryptera nodnyckel: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Misslyckades att avkryptera revisionsmetadata"
+      ],
+      "Failed to get invitee keys": [
+        "Misslyckades med att hämta nycklar för den inbjudne"
+      ],
+      "Failed to get inviter keys": [
+        "Misslyckades med att hämta inbjudningsnycklar"
+      ],
+      "Failed to load the membership": [
+        "Misslyckades med att ladda medlemsskapet"
+      ],
+      "Failed to load the membership data": [
+        "Misslyckades med att ladda medlemskapsdatan"
+      ],
+      "Failed to verify invitation": [
+        "Misslyckades med att verifiera inbjudan"
+      ],
+      "Failed to verify membership": [
+        "Misslyckades med att bekräfta medlemsskapet"
+      ],
+      "File download failed due to empty response": [
+        "Filnedladdning misslyckades på grund av tomt svar"
+      ],
+      "File has no revision": [
+        "Fil har ingen version"
+      ],
+      "Image preview not found": [
+        "Förhandsvisning av bild hittades inte"
+      ],
+      "Invalid URL": [
+        "Ogiltig URL"
+      ],
+      "Invitation not found": [
+        "Inbjudan hittades inte"
+      ],
+      "Item not found": [
+        "Objekt hittades inte"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
+      ],
+      "Missing inviter email": [
+        "Saknar e-post för inbjudan"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Saknar signatur för ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flyttningsåtgärd avbröts"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytt av objekt till utanför en mapp är inte tillåtet"
+      ],
+      "Moving root item is not allowed": [
+        "Att flytta rotobjekt är inte tillåtet"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest",
+        "Namn måste vara ${ MAX_NODE_NAME_LENGTH } tecken långt som mest"
+      ],
+      "Name must not be empty": [
+        "Namn får inte vara tomt"
+      ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata togs emot. Försök igen."
+      ],
+      "Only admins can convert external invitations": [
+        "Endast administratörer kan konvertera externa inbjudningar"
+      ],
+      "Operation aborted": [
+        "Åtgärd avbröts"
+      ],
+      "Operation failed, try again later": [
+        "Åtgärd misslyckades, försök igen senare"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Del av filen verkar vara skadad"
+      ],
+      "Photo is already in the target album": [
+        "Foto är redan i målalbum"
+      ],
+      "Photo not found": [
+        "Foto hittades inte"
+      ],
+      "Renaming root item is not allowed": [
+        "Byta namn på root objekt är inte tillåtet"
+      ],
+      "Request aborted": [
+        "Åtgärd avbruten"
+      ],
+      "Signature is missing": [
+        "Signatur saknas"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturverifiering misslyckades: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifiering för ${ signatureType } misslyckades"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Viss fildata kunde inte laddas upp. Vänligen pröva igen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Några fildelar misslyckades att laddas upp. Försök igen."
+      ],
+      "Some invitations could not be loaded": [
+        "Några inbjudningar kunde inte laddas"
+      ],
+      "Some items could not be loaded": [
+        "Några objekt kunde inte laddas"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den uppladdade filen matchar inte originalet. Försök igen."
+      ],
+      "This file has missing crypto material": [
+        "Den här filen har saknat kryptomaterial"
+      ],
+      "This file has no version available to download": [
+        "Denna fil har ingen version tillgänglig att ladda ner"
+      ],
+      "This file version could not be uploaded": [
+        "Denna filversion kunde inte laddas upp"
+      ],
+      "This item has no image preview": [
+        "Detta objekt har ingen bild förhandsgranskning"
+      ],
+      "This item is no longer shared": [
+        "Detta objekt är inte delat längre"
+      ],
+      "This item is not shared": [
+        "Detta objekt är inte delat"
+      ],
+      "Too many server errors, please try again later": [
+        "För många serverfel, försök igen senare"
+      ],
+      "Too many server requests, please try again later": [
+        "För många serverförfrågningar, försök igen senare"
+      ],
+      "Verification keys are not available": [
+        "Verifieringsnycklar är inte tillgängliga"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifieringsnycklar för ${ signatureType } är inte tillgängliga"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan endast skapa offentliga länkar för dina egna filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan endast lämna objekt som är delade med dig."
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bara ladda upp en ny version till en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan endast uppdatera en offentlig länk för dina egna filer"
+      ],
+      "You do not have access to this item": [
+        "Du har inte åtkomst till detta objekt"
+      ],
+      "You do not have access to this shared item": [
+        "Du har inte åtkomst till detta delade objekt"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Du nådde maxantalet av anslutna adresser"
       ]
     },
     "error": {
@@ -5549,7 +5815,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "FN-egenskap saknas"
+        "Egenskapen FN saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -5875,6 +6141,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Begäran om säkerhetsnyckel avbröts eller löpte ut. Försök igen."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Din enhet kunde inte slutföra begäran om säkerhetsnyckel. Försök igen, eller använd en annan inloggningsmetod."
       ]
     },
     "fido2: Info": {
@@ -7334,7 +7606,7 @@
         "Ändra ditt tema"
       ],
       "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
-        "Chatta med  ${ LUMO_SHORT_APP_NAME } för att söka, läsa, organisera och göra utkast till din e-post."
+        "Chatta med ${ LUMO_SHORT_APP_NAME } för att söka, läsa, organisera och göra utkast till din e-post."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
@@ -7865,7 +8137,7 @@
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
-        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+        "Om du har förlorat tillgången till din autentiseringsapp, kan du använda 1 av de 16 återställningskoder som tillhandahölls när du konfigurerade tvåfaktorsautentisering. ${ learnMoreLink }"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Om ditt alias säljs, läcker eller missbrukas är det bara att inaktivera det för att sluta ta emot skräppost."
@@ -9052,7 +9324,7 @@
         "Denna offentliga nyckel kommer automatiskt att användas för att kryptera e-post som skickas till denna adress."
       ],
       "This sender's public key has not been trusted yet.": [
-        "Avsändarens publika nyckal har inte blivit betrodd ännu."
+        "Denna avsändares offentliga nyckel har inte blivit betrodd ännu."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denna unika kod kan användas av webbplatser och ISP:er (internetleverantörer) för att koppla din plats och surfhistorik till din enhet"
@@ -9112,7 +9384,7 @@
         "För att avsluta prenumeration från denna e-postlista kommer du att tas till följande URL där instruktioner kommer att ges av avsändaren av nyhetsbrevet:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
+        "För att använda Adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Today": [
         "Idag"
@@ -9761,7 +10033,70 @@
         "UnionPay-logga"
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
-        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra.\n"
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink }för att få en återbetalning."
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "En snabb genomgång av vad jag kan hjälpa dig med i din inkorg, från att hitta gamla mail till att göra utkast, och vad jag inte kan göra."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Aktivera ${ MAIL_APP_NAME } för att börja ta emot e-post på ${ count } av dina domäner.",
+        "Aktivera ${ MAIL_APP_NAME } för att börja ta emot e-post på ${ count } av dina domäner."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Aktivera ${ MAIL_APP_NAME } för att börja ta emot e-post på ${ domainName }${ activateLink }"
+      ],
+      "Author is not provided on public link": [
+        "Författare är inte angiven på offentlig länk"
+      ],
+      "Based only on which emails you've opened.": [
+        "Baserat bara på vilka mejl du har öppnat"
+      ],
+      "Document in foundation-search index": [
+        "Dokument i foundation-search-indexet"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Sökning efter dokument ${ lookup.result.docId }"
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Meddelanden i Skräp-/Papperskorgen kommer automatiskt att tas bort efter 30 dagar."
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Flytta de här gamla mejlen till Arkiv. Du kan fortfarande söka efter dem"
+      ],
+      "Not found in the encrypted search index.": [
+        "Hittades inte i det krypterade sökningsindexet."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Ingenting ändras i ditt andra ${ BRAND_NAME } konto."
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Den här Gmail-adressen är registrerad med ett annat ${ BRAND_NAME } konto ( ${ VPN_SHORT_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME }${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, och andra). Vi arbetar för att göra den här kopplingen felfri men just nu måste du ta några få steg."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Vi förde över ${ count }nyhetsbrev och grupperade dem efter avsändare. Se hur ofta var och en mejlar dig, behåll, flytta eller avprenumerera med ett klick.",
+        "Vi förde över ${ count }nyhetsbrev och grupperade dem efter avsändare. Se hur ofta var och en mejlar dig, behåll, flytta eller avprenumerera med ett klick."
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Vi kommer att omdirigera dig till ${ IDEAL_WERO_BRAND_NAME } i en ny webbläsarflik för att slutföra denna transaktion. Om du använder några popup-blockerare, inaktivera dem för att fortsätta."
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Skriver ${ REALISTIC_ENTRIES } realistiska loggrader som strömmar in under en minut – precis som i en verklig session – istället för att alla dyker upp på en gång. Det tar ungefär en minut att köra. Se till att den här fliken är aktiv; mätningarna pausas nämligen om fliken hamnar i bakgrunden."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "\nSkriver realistiska loggrader i tät följd och läser sedan upp dem alla. Visar hur kostnaderna för skrivning respektive läsning/export skalar i förhållande till antalet lagrade poster."
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du kommer inte att få e-post på ${ count } av dina domäner förrän du aktiverar ${ MAIL_APP_NAME }. Du kan göra det när som helst i Inställningar > Domännamn.",
+        "Du kommer inte att få e-post på ${ count } av dina domäner förrän du aktiverar ${ MAIL_APP_NAME }. Du kan göra det när som helst i Inställningar > Domännamn."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du kommer inte att få e-post på ${ domainName } förrän du aktiverar ${ MAIL_APP_NAME }. Du kan göra det när som helst i Inställningar > Domännamn."
       ]
     },
     "info": {
@@ -9849,7 +10184,7 @@
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Du har aktiverat adressverifiering med betrodda nycklar för denna e-postadress, men ingen aktiv krypteringsnyckel har blivit betrodd.\nDu måste lita på en giltig nyckel för att skicka ett meddelande till den här e-postadressen.",
-        "Du har aktiverat adressverifiering med betrodda nycklar för denna e-postadress, men ingen aktiva krypteringsnycklar har blivit betrodda.\nDu måste lita på giltiga nycklar för att skicka ett meddelande till den här e-postadressen."
+        "Du har aktiverat Adressverifiering med betrodda nycklar för dessa e-postadresser, men ingen aktiva krypteringsnycklar har blivit betrodda.\nDu måste lita på giltiga nycklar för att skicka ett meddelande till den här e-postadresserna."
       ]
     },
     "Key validation warning": {
@@ -9913,7 +10248,7 @@
         "Gå till skräppost"
       ],
       "Go to Starred": [
-        "Gå till stjärnmärkt"
+        "Gå till Stjärnmärkt"
       ],
       "Go to Trash": [
         "Gå till papperskorg"
@@ -10091,7 +10426,7 @@
         "${ length }/${ maxLength } tecken"
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant": [
-        "${ LUMO_SHORT_APP_NAME } AI-assistent "
+        "${ LUMO_SHORT_APP_NAME } AI-assistent"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
@@ -11141,6 +11476,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } Kontolösenord"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Lägg till en bokningssida till din e-post och låt folk föreslå en tid som fungerar."
+      ],
+      "Write-chain drain after last line": [
+        "Skriv kedjeavlopp"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11500,6 +11844,9 @@
       ],
       "Add formatting, links or images": [
         "Lägg till formattering, länkar eller bilder"
+      ],
+      "Activate": [
+        "Aktivera"
       ]
     },
     "Link to calendar event": {
@@ -13316,6 +13663,15 @@
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Avbryt när som helst innan dess.** Du kommer att kunna använda ${ planTitle } tills provperioden är slut, gratis."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "för att kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan avbryta inom 30 dagar och få en proportionell återbetalning."
       ]
     },
     "Option": {
@@ -13745,6 +14101,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Prenumerationsbyte är inkompatibelt av följande skäl:"
       ]
     },
     "Payments.Error": {
@@ -15015,7 +15374,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
@@ -15635,7 +15994,7 @@
         "${ elementsCount } konversationer markerade som lästa."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } konversation markerad som stjärnmärkt.",
+        "${ elementsCount } konversation markerad som Stjärnmärkt.",
         "${ elementsCount } konversationer markerade som stjärnmärkta."
       ],
       "${ elementsCount } conversation marked as unread.": [
@@ -15659,8 +16018,8 @@
         "${ elementsCount } konversationer borttagna från ${ labelName }."
       ],
       "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } konversation borttagen från stjärnmärkt.",
-        "${ elementsCount } konversationer borttagna från stjärnmärkt."
+        "${ elementsCount } konversation borttagen från Stjärnmärkt.",
+        "${ elementsCount } konversationer borttagna från Stjärnmärkt."
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } konversation snoozad",
@@ -15679,8 +16038,8 @@
         "${ elementsCount } meddelanden markerade som lästa."
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } meddelande markerat som stjärnmärkt.",
-        "${ elementsCount } meddelanden markerade som stjärnmärkta."
+        "${ elementsCount } meddelande markerat som Stjärnmärkt.",
+        "${ elementsCount } meddelanden markerade som Stjärnmärkta."
       ],
       "${ elementsCount } message marked as unread.": [
         "${ elementsCount } meddelande markerat som oläst.",
@@ -15703,8 +16062,8 @@
         "${ elementsCount } meddelanden borttagna från ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } meddelande borttaget från stjärnmärkt.",
-        "${ elementsCount } meddelanden borttagna från stjärnmärkt."
+        "${ elementsCount } meddelande borttaget från Stjärnmärkt.",
+        "${ elementsCount } meddelanden borttagna från Stjärnmärkt."
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
         "${ LUMO_SHORT_APP_NAME } AI-assistent inaktiverad"
@@ -15760,7 +16119,7 @@
         "Konversation markerad som läst."
       ],
       "Conversation marked as Starred.": [
-        "Konversation markerad som stjärnmärkt."
+        "Konversation markerad som Stjärnmärkt."
       ],
       "Conversation marked as unread.": [
         "Konversation markerad som oläst."
@@ -15778,7 +16137,7 @@
         "Konversation borttagen från ${ labelName }."
       ],
       "Conversation removed from Starred.": [
-        "Konversation borttagen från stjärnmärkt."
+        "Konversation borttagen från Stjärnmärkt."
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Konversationer från ${ sendersList } kommer att märkas som ${ labelsList }"
@@ -15841,7 +16200,7 @@
         "Meddelande markerat som läst."
       ],
       "Message marked as Starred.": [
-        "Meddelande markerat som stjärnmärkt."
+        "Meddelande markerat som Stjärnmärkt."
       ],
       "Message marked as unread.": [
         "Meddelande markerat som oläst."
@@ -15859,7 +16218,7 @@
         "Meddelande borttaget från ${ labelName }."
       ],
       "Message removed from Starred.": [
-        "Meddelande borttaget från stjärnmärkt."
+        "Meddelande borttaget från Stjärnmärkt."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Meddelanden från ${ sendersList } kommer att märkas som ${ labelsList }"
@@ -17259,6 +17618,30 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Hide this reminder?": [
+        "Göm den här påminnelsen?"
+      ],
+      "Not opened in a while": [
+        "Inte öppnad på ett tag"
+      ],
+      "Special offer": [
+        "Specialerbjudande"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
+      ],
+      "You open these sometimes": [
+        "Du öppnar dessa ibland"
+      ],
+      "You read these often": [
+        "Du läser dessa ofta"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Dina Gmail nyhetsbrev, nu enklare att hantera"
       ]
     },
     "Title header for keys table": {
@@ -17976,7 +18359,7 @@
         "Tidigare versioner"
       ],
       "Storage": [
-        "Lagring"
+        "Lagringsutrymme"
       ],
       "Subscribers only": [
         "Endast prenumeranter"
@@ -17986,6 +18369,75 @@
       ],
       "Users": [
         "Användare"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-servrar, reserverade för dig"
+      ],
+      "Unlimited": [
+        "Obegränsad"
+      ],
+      "Up to ${ limit }": [
+        "Upp till ${ limit }"
+      ],
+      "VPN devices at once": [
+        "VPN-enheter samtidigt"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Stäng"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Erbjudande ej tillgängligt"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dina senaste mejl kommer att importeras först. Mejl du redan har importerat kommer inte att kopieras igen."
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } mejl de senaste 30 dagarna. Inte öppnade.",
+        "${ count } mejl de senaste 30 dagarna. Inte öppnade."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } mejl de senaste 30 dagarna. Öppnade ofta.",
+        "${ count } mejl de senaste 30 dagarna. Öppnade ofta."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } mejl de senaste 30 dagarna. Öppnade ibland.",
+        "${ count } mejl de senaste 30 dagarna. Öppnade ibland."
+      ],
+      "No emails in the last 30 days.": [
+        "Ingen e-post under de senaste 30 dagarna."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Att ändra din fakturaadress kan påverka skatter på kommande fakturor."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attribut"
+      ],
+      "content key": [
+        "innehållsnyckel"
+      ],
+      "hash key": [
+        "hash-nyckel"
+      ],
+      "key": [
+        "nyckel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "namn"
       ]
     }
   }

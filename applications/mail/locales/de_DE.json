@@ -1578,7 +1578,7 @@
       ],
       "Trust key": [
         "Schlüssel vertrauen",
-        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1787,6 +1787,19 @@
       ],
       "Use “${ label }” setting": [
         "Einstellung \"${ label }\" verwenden"
+      ],
+      "Don't show this again": [
+        "Nicht mehr anzeigen"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "${ name } speichern in ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Speichern in ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Von ${ selectedCount } abmelden",
+        "Von ${ selectedCount } abmelden"
       ]
     },
     "action": {
@@ -5478,6 +5491,256 @@
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
         "Bei einigen Mailinglisten war das Abmelden nicht möglich. Versuche es erneut, um das Abmelden abzuschließen."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Bei der Meldung von Urheberrechtsverletzungen oder gestohlenen Daten ist eine Nachricht erforderlich."
+      ],
+      "Bookmark password is not available": [
+        "Lesezeichen-Passwort nicht verfügbar"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Ohne einen gültigen Namen kann kein Foto zum Album hinzugefügt werden"
+      ],
+      "Cannot download a folder": [
+        "Ordner kann nicht heruntergeladen werden"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Der Eintrag kann ohne gültigen Namen nicht verschoben werden. Bitte benenne den Eintrag zunächst um."
+      ],
+      "Cannot share root folder": [
+        "Der Stammordner konnte nicht geteilt werden"
+      ],
+      "Cannot verify the author of this file": [
+        "Der Urheber dieser Datei kann nicht überprüft werden"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Es lässt sich nicht feststellen, wer diese Datei hochgeladen hat"
+      ],
+      "Copy operation aborted": [
+        "Kopiervorgang abgebrochen"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Das Kopieren eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Could not find an available name": [
+        "Es konnte kein verfügbarer Name gefunden werden"
+      ],
+      "Could not load sharing details": [
+        "Freigabeinformationen konnten nicht geladen werden"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Bildvorschau konnte nicht geladen werden: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Ein Teil dieser Datei konnte nicht gelesen werden: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Der übergeordnete Ordner konnte nicht entsperrt werden"
+      ],
+      "Could not unlock this item": [
+        "Dieser Eintrag konnte nicht entsperrt werden"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Das Erstellen von Dokumenten außerhalb von Ordnern ist nicht zulässig"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Das Erstellen von Ordnern außerhalb von Ordnern ist nicht zulässig."
+      ],
+      "Device not found": [
+        "Gerät nicht gefunden"
+      ],
+      "Expiration date cannot be in the past": [
+        "Ablaufdatum darf nicht in der Vergangenheit liegen"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Lesezeichenschlüssel konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Name des Lesezeichens konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Das Lesezeichen-Passwort konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Entschlüsselung des Inhaltsschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Name des Eintrags konnte nicht entschlüsselt werden: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Entschlüsselung des Knotenschlüssels fehlgeschlagen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Die Entschlüsselung der Versionsmetadaten ist fehlgeschlagen"
+      ],
+      "Failed to get invitee keys": [
+        "Einladeschlüssel konnten nicht abgerufen werden"
+      ],
+      "Failed to get inviter keys": [
+        "Schlüssel des Einladers konnten nicht abgerufen werden"
+      ],
+      "Failed to load the membership": [
+        "Mitgliedschaft konnte nicht geladen werden"
+      ],
+      "Failed to load the membership data": [
+        "Daten der Mitgliedschaft konnten nicht geladen werden"
+      ],
+      "Failed to verify invitation": [
+        "Einladung konnte nicht verifiziert werden"
+      ],
+      "Failed to verify membership": [
+        "Mitgliedschaft konnte nicht geprüft werden"
+      ],
+      "File download failed due to empty response": [
+        "Das Herunterladen der Datei ist aufgrund einer leeren Antwort fehlgeschlagen"
+      ],
+      "File has no revision": [
+        "Datei hat keine Versionen"
+      ],
+      "Image preview not found": [
+        "Bildvorschau nicht gefunden"
+      ],
+      "Invalid URL": [
+        "Ungültige URL"
+      ],
+      "Invitation not found": [
+        "Einladung nicht gefunden"
+      ],
+      "Item not found": [
+        "Eintrag nicht gefunden"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Der alte öffentliche Link kann nicht aktualisiert werden. Bitte erstelle einen neuen öffentlichen Link."
+      ],
+      "Missing inviter email": [
+        "E-Mail-Adresse des Einladers fehlt"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Signatur für ${ signatureType } fehlt"
+      ],
+      "Move operation aborted": [
+        "Verschiebevorgang abgebrochen"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Das Verschieben eines Eintrags nach außerhalb eines Ordners ist nicht zulässig"
+      ],
+      "Moving root item is not allowed": [
+        "Das Verschieben des Stammeintrags ist nicht zulässig"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein",
+        "Name darf höchstens ${ MAX_NODE_NAME_LENGTH } Zeichen lang sein"
+      ],
+      "Name must not be empty": [
+        "Name darf nicht leer sein"
+      ],
+      "No file data was received. Please try again.": [
+        "Es wurden keine Dateidaten empfangen. Bitte versuche es erneut."
+      ],
+      "Only admins can convert external invitations": [
+        "Nur Administratoren können externe Einladungen umwandeln"
+      ],
+      "Operation aborted": [
+        "Vorgang abgebrochen"
+      ],
+      "Operation failed, try again later": [
+        "Vorgang fehlgeschlagen, versuche es später erneut"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Ein Teil der Datei scheint beschädigt zu sein"
+      ],
+      "Photo is already in the target album": [
+        "Foto befindet sich bereits im Zielalbum"
+      ],
+      "Photo not found": [
+        "Foto nicht gefunden"
+      ],
+      "Renaming root item is not allowed": [
+        "Das Umbenennen des Stammeintrags ist nicht zulässig"
+      ],
+      "Request aborted": [
+        "Anfrage abgebrochen"
+      ],
+      "Signature is missing": [
+        "Signatur fehlt"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Signaturprüfung ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturprüfung für ${ signatureType } ist fehlgeschlagen: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Einige Dateidaten konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Einige Dateiteile konnten nicht hochgeladen werden. Bitte versuche es erneut."
+      ],
+      "Some invitations could not be loaded": [
+        "Einige Einladungen konnten nicht geladen werden"
+      ],
+      "Some items could not be loaded": [
+        "Einige Einträge konnten nicht geladen werden"
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
+      ],
+      "This file has missing crypto material": [
+        "In dieser Datei fehlt Kryptomaterial"
+      ],
+      "This file has no version available to download": [
+        "Für diese Datei steht keine Version zum Herunterladen zur Verfügung"
+      ],
+      "This file version could not be uploaded": [
+        "Diese Dateiversion konnte nicht hochgeladen werden"
+      ],
+      "This item has no image preview": [
+        "Dieser Eintrag hat keine Bildvorschau"
+      ],
+      "This item is no longer shared": [
+        "Dieser Eintrag wird nicht länger geteilt"
+      ],
+      "This item is not shared": [
+        "Dieser Eintrag wird nicht geteilt"
+      ],
+      "Too many server errors, please try again later": [
+        "Zu viele Server-Fehler, bitte versuche es später erneut"
+      ],
+      "Too many server requests, please try again later": [
+        "Zu viele Server-Anfragen bitte versuche es später erneut"
+      ],
+      "Verification keys are not available": [
+        "Verifizierungsschlüssel sind nicht verfügbar"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifizierungsschlüssel für ${ signatureType } sind nicht verfügbar"
+      ],
+      "You can create public links for your own files only": [
+        "Du kannst öffentliche Links nur für deine eigenen Dateien erstellen"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kannst nur Einträge verlassen, die für dich freigegeben sind"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kannst nur eine neue Version einer Datei hochladen"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kannst einen öffentlichen Link nur für deine eigenen Dateien aktualisieren"
+      ],
+      "You do not have access to this item": [
+        "Du hast keinen Zugriff auf diesen Eintrag"
+      ],
+      "You do not have access to this shared item": [
+        "Du hast keinen Zugriff auf diesen geteilten Eintrag"
       ]
     },
     "error": {
@@ -5875,6 +6138,12 @@
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
         "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "The security key request was cancelled or timed out. Please try again.": [
+        "Die Anforderung des Sicherheitsschlüssels wurde abgebrochen oder ist abgelaufen. Bitte versuche es erneut."
+      ],
+      "Your device couldn't complete the security key request. Try again, or use another sign-in method.": [
+        "Dein Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Ihr Gerät konnte die Sicherheitsschlüsselanforderung nicht abschließen. Versuche es erneut oder verwende eine andere Anmeldemethode."
       ]
     },
     "fido2: Info": {
@@ -9798,6 +10067,25 @@
       "${ n } unread message": [
         "${ n } ungelesene Nachricht",
         "${ n } ungelesene Nachrichten"
+      ],
+      "Author is not provided on public link": [
+        "Urheber wird unter dem öffentlichen Link nicht angegeben"
+      ],
+      "Based only on which emails you've opened.": [
+        "Basiert ausschließlich darauf, welche E-Mails du geöffnet hast."
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Nachrichten im Ordner „Spam/Papierkorb“ werden nach 30 Tagen automatisch gelöscht."
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Verschiebe deine bisherigen E-Mails ins Archiv. Sie können weiterhin durchsucht werden."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Es wurden über ${ count } Newsletter importiert und nach Absender gruppiert. Erfahre, wie oft du von jedem Absender E-Mails erhältst, und entscheide dann mit einem Klick, ob du den Newsletter behalten, verschieben oder abbestellen möchtest.",
+        "Es wurden über ${ count } Newsletter importiert und nach Absender gruppiert. Erfahre, wie oft du von jedem Absender E-Mails erhältst, und entscheide dann mit einem Klick, ob du den Newsletter behalten, verschieben oder abbestellen möchtest."
       ]
     },
     "info": {
@@ -11183,6 +11471,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17245,6 +17536,24 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Not opened in a while": [
+        "Du hast sie schon eine Weile nicht mehr geöffnet"
+      ],
+      "Special offer": [
+        "Sonderangebot"
+      ],
+      "Verify it’s you": [
+        "Überprüfe, ob du es bist"
+      ],
+      "You open these sometimes": [
+        "Du öffnest sie selten"
+      ],
+      "You read these often": [
+        "Du liest sie oft"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Deine Gmail-Newsletter lassen sich jetzt noch einfacher verwalten"
       ]
     },
     "Title header for keys table": {
@@ -17991,6 +18300,53 @@
       ],
       "VPN devices at once": [
         "VPN-Geräte gleichzeitig"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Schließen"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Angebot nicht verfügbar"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } E-Mail in den letzten 30 Tagen. Keine geöffnet.",
+        "${ count } E-Mails in den letzten 30 Tagen. Keine geöffnet."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } E-Mail in den letzten 30 Tagen. Häufig geöffnet.",
+        "${ count } E-Mails in den letzten 30 Tagen. Häufig geöffnet."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } E-Mail in den letzten 30 Tagen. Selten geöffnet.",
+        "${ count } E-Mails in den letzten 30 Tagen. Gelegentlich geöffnet."
+      ],
+      "No emails in the last 30 days.": [
+        "Keine E-Mails in den letzten 30 Tagen."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "Merkmale"
+      ],
+      "content key": [
+        "Inhaltsschlüssel"
+      ],
+      "hash key": [
+        "Hash-Schlüssel"
+      ],
+      "key": [
+        "Schlüssel"
+      ],
+      "membership": [
+        "Mitgliedschaft"
+      ],
+      "name": [
+        "Name"
       ]
     }
   }

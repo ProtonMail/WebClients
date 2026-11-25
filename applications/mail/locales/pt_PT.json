@@ -1760,6 +1760,37 @@
       ],
       "Use “${ label }” setting": [
         "Utilizar a definição “${ label }”"
+      ],
+      "Dock to side panel": [
+        "Fixar no painel lateral"
+      ],
+      "Don't show this again": [
+        "Não mostrar novamente"
+      ],
+      "Get index size on disk": [
+        "Obter o tamanho do índice em disco"
+      ],
+      "Got it, connect my Gmail": [
+        "Entendido, conetar o meu Gmail"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Mover ${ LUMO_SHORT_APP_NAME } para a direita"
+      ],
+      "Run realistic session": [
+        "Executar sessão realista"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Guardar ${ name } em ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Guardar para ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Cancelar subscrição de ${ selectedCount }",
+        "Cancelar subscrição de ${ selectedCount }"
+      ],
+      "View guide": [
+        "Ver guia"
       ]
     },
     "action": {
@@ -1913,6 +1944,9 @@
       ],
       "Managed Service Provider": [
         "Provedor de Serviço Gerido"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "As organizações com o complemento \"Provedor de Serviço Gerido\"  podem criar e gerir organizações subsidiárias."
       ]
     },
     "Alert": {
@@ -4409,6 +4443,12 @@
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
         "Para utilizar ${ LUMO_SHORT_APP_NAME } no ${ MAIL_APP_NAME }, adicione-a à sua subscrição."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permita que as pessoas marquem tempo consigo diretamente a partir das suas mensagens, sem idas e vindas."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para utilizar ${ LUMO_SHORT_APP_NAME } no ${ MAIL_APP_NAME }, peça acesso ao seu administrador."
       ]
     },
     "description": {
@@ -4428,6 +4468,9 @@
       "${ messageCount } new message": [
         "${ messageCount } nova mensagem",
         "${ messageCount } novas mensagens"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "De: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -5385,6 +5428,160 @@
       ],
       "Contact your administrator to start a migration.": [
         "Contacte o seu administrador para iniciar uma migração."
+      ],
+      "A contact with this email address already exists": [
+        "Já existe um contacto com este endereço de correio eletrónico"
+      ],
+      "Cannot download a folder": [
+        "Não é possível transferir uma pasta"
+      ],
+      "Cannot share root folder": [
+        "Não é possível partilhar a pasta raiz"
+      ],
+      "Cannot verify the author of this file": [
+        "Não é possível verificar o autor deste ficheiro"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem enviou este ficheiro"
+      ],
+      "Copy operation aborted": [
+        "Operação de cópia cancelada"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Não é permitido copiar um item para um local que não seja uma pasta"
+      ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
+      ],
+      "Could not grant access to the organization key": [
+        "Não foi possível conceder acesso à chave da organização"
+      ],
+      "Could not load sharing details": [
+        "Não foi possível carregar os detalhes da partilha"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização de imagem: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Não foi possível ler parte deste ficheiro: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Não foi possível desbloquear a pasta principal"
+      ],
+      "Could not unlock this item": [
+        "Não foi possível desbloquear este item"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Não é permitido criar pastas dentro de elementos que não sejam pastas"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Não foi possível descodificar a palavra-passe do marcador: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Não foi possível desencriptar a chave do conteúdo: ${ message }"
+      ],
+      "Failed to verify invitation": [
+        "Não foi possível verificar o convite"
+      ],
+      "File download failed due to empty response": [
+        "A transferência do ficheiro falhou devido a uma resposta em branco"
+      ],
+      "File has no revision": [
+        "O ficheiro não tem nenhuma revisão"
+      ],
+      "Image preview not found": [
+        "Não foi encontrada a pré-visualização da imagem"
+      ],
+      "Invalid URL": [
+        "O URL não é válido."
+      ],
+      "Invitation not found": [
+        "Convite não foi encontrado."
+      ],
+      "Item not found": [
+        "Item não encontrado"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "O link público antigo não pode ser atualizado. Por favor, crie um novo link público."
+      ],
+      "Missing inviter email": [
+        "Falta o e-mail do convidante"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } carácter",
+        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "O nome não deve estar em branco"
+      ],
+      "No file data was received. Please try again.": [
+        "Não foram recebidos dados do ficheiro. Por favor, tente novamente."
+      ],
+      "Only admins can convert external invitations": [
+        "Só os administradores podem converter convites externos"
+      ],
+      "Operation aborted": [
+        "Operação cancelada"
+      ],
+      "Operation failed, try again later": [
+        "Operação falhou, tente novamente mais tarde"
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte do ficheiro parece estar corrompida"
+      ],
+      "Photo is already in the target album": [
+        "A fotografia já está no álbum de destino"
+      ],
+      "Photo not found": [
+        "Fotografia não encontrada"
+      ],
+      "Signature is missing": [
+        "Assinatura em falta"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Não foi possível enviar alguns dados do ficheiro. Por favor, tente novamente."
+      ],
+      "Something went wrong": [
+        "Algo correu mal"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O ficheiro enviado não corresponde com o original. Por favor, tente novamente."
+      ],
+      "This file has missing crypto material": [
+        "Este ficheiro tem material cripto em falta"
+      ],
+      "This file has no version available to download": [
+        "Este ficheiro não tem nenhuma versão disponível para descarregar"
+      ],
+      "This file version could not be uploaded": [
+        "Não foi possível enviar esta versão de ficheiro"
+      ],
+      "This item has no image preview": [
+        "Este item não tem pré-visualização de imagem"
+      ],
+      "This item is no longer shared": [
+        "Este item já não está partilhado"
+      ],
+      "This item is not shared": [
+        "Este item não é partilhado"
+      ],
+      "Too many server requests, please try again later": [
+        "Demasiados pedidos de servidor. Por favor, tente novamente mais tarde"
+      ],
+      "Verification keys are not available": [
+        "As chaves de verificação não estão disponíveis"
+      ],
+      "You can update a public link for your own files only": [
+        "Pode atualizar uma hiperligação pública apenas para os seus próprios ficheiros"
+      ],
+      "You do not have access to this item": [
+        "Não tem acesso a este artigo"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Atingiu o número máximo de endereços conetados"
       ]
     },
     "error": {
@@ -6216,6 +6413,9 @@
       ],
       "Before ${ MAIL_APP_NAME }, which email did you use most?": [
         "Antes de ${ MAIL_APP_NAME }, qual era o ''e-mail'' que mais utilizava?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Qual é o principal motivo pelo qual aderiu ao ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -9360,6 +9560,193 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "O seu Gmail liga a este endereço ${ MAIL_APP_NAME }"
+      ],
+      "${ count } email": [
+        "${ count } e-mail",
+        "${ count } e-mails"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "marca ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } inclui o assistente de escrita"
+      ],
+      "A specific feature (tell us)": [
+        "Uma funcionalidade específica (diga-nos)"
+      ],
+      "Add ${ contact } to your contacts": [
+        "Adicione ${ contact } aos seus contactos"
+      ],
+      "Author is not provided on public link": [
+        "O autor não é fornecido na hiperligação pública"
+      ],
+      "Based only on which emails you've opened.": [
+        "Com base apenas nas mensagens que abriu."
+      ],
+      "Change display setting": [
+        "Alterar definição de visualização"
+      ],
+      "Change your mailbox layout": [
+        "Altere a apresentação da sua caixa de entrada"
+      ],
+      "Checked Proton support": [
+        "Verificado o apoio da Proton"
+      ],
+      "Choose all that apply.": [
+        "Escolha tudo que se aplica."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Escolha um. Isso ajuda-nós a melhorar ${ MAIL_APP_NAME }"
+      ],
+      "Create label": [
+        "Criar etiqueta"
+      ],
+      "Draft an ${ kind }": [
+        "Redigir um ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Redija um ${ kind } para ${ recipient }"
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Olá, Lumo, eu vou ausentar-me e quero configurar uma resposta automática de ausência do escritório. Pergunta-me as datas e o que ela deve dizer e, antes de a ativares, mostra-me a mensagem."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Olá, Lumo, procura as minhas mensagens dos últimos 7 dias e diz-me quais delas precisam realmente de uma resposta minha. Dá-me uma linha sobre o que cada uma pede e deixa de fora tudo o que eu posso ignorar."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Olá, Lumo, explica-me como me podes ajudar com a minha caixa de correio. Que tipo de coisas te posso pedir e com o que é que não me podes ajudar?"
+      ],
+      "Label ${ emails }": [
+        "Etiquetar ${ emails }"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mover as mensagens com códigos de utilização única para o Lixo ao copiar"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Mova os respetivos ''e-mails'' anteriores para o Arquivo. Pode continuar a pesquisá-los."
+      ],
+      "No booking pages yet": [
+        "Ainda sem páginas de reservas"
+      ],
+      "No conversation to read": [
+        "Nenhuma conversação para ler"
+      ],
+      "No email open": [
+        "Nenhuma mensagem aberta"
+      ],
+      "No emails selected": [
+        "Sem mensagens selecionadas"
+      ],
+      "No location selected": [
+        "Nenhuma localização selecionada"
+      ],
+      "Not found in the encrypted search index.": [
+        "Não foi encontrado no índice de pesquisa encriptado."
+      ],
+      "Not found in the foundation-search index.": [
+        "Não foi encontrado no índice de pesquisa da fundação."
+      ],
+      "Not supported by this browser": [
+        "Não suportado por este navegador "
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Nada muda na sua outra conta ${ BRAND_NAME }."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Por favor, atualize ${ MAIL_APP_NAME } para continuar a utilizar a aplicação. ${ downloadUpdate }"
+      ],
+      "Read ${ count } email": [
+        "Leia ${ count } mensagem",
+        "Leia ${ count } mensagens"
+      ],
+      "Read ${ count } message in this thread": [
+        "Leia ${ count } mensagem neste tópico",
+        "Leia ${ count } mensagens neste tópico"
+      ],
+      "Read open email “${ subject }”": [
+        "Ler a mensagem aberta “${ subject }”"
+      ],
+      "Read your ${ count } filter": [
+        "Leia o seu ${ count } filtro",
+        "Leia os seus ${ count } filtros"
+      ],
+      "Read your ${ count } folder": [
+        "Leia a sua ${ count } pasta",
+        "Leia as suas ${ count } pastas"
+      ],
+      "Read your ${ count } label": [
+        "Leia a sua ${ count } etiqueta",
+        "Leia as suas ${ count } etiquetas"
+      ],
+      "Results came from the server.": [
+        "Os resultados vieram do servidor."
+      ],
+      "Revise the ${ draft }": [
+        "Reveja ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Reescrito e reencaminhado"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Reescreveu e endereçou novamente o rascunho"
+      ],
+      "Searched ${ targetName }": [
+        "Pesquisou ${ targetName }"
+      ],
+      "Searched for mail from ${ sender }": [
+        "Pesquisou por correio de ${ sender }"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "Pesquisou por correio para ${ recipient }"
+      ],
+      "Searched your mail": [
+        "Procurou o seu ''e-mail''"
+      ],
+      "Set auto-reply": [
+        "Definir resposta automática"
+      ],
+      "Set your signature": [
+        "Defina a sua assinatura"
+      ],
+      "Snooze emails": [
+        "Adiar mensagens"
+      ],
+      "Someone recommended it": [
+        "Alguém recomendou"
+      ],
+      "Star ${ emails }": [
+        "Iniciar ${ emails }"
+      ],
+      "Tell us more (optional)": [
+        "Diga-nos mais (opcional)"
+      ],
+      "Thinking about this": [
+        "A pensar sobre isto"
+      ],
+      "Tidy up my inbox": [
+        "Organizar a minha caixa de entrada"
+      ],
+      "Turn off your away message": [
+        "Desativar a mensagem de ausência"
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Nós trouxemos ${ count } boletim informativo e agrupámo-lo por remetente. Veja com que frequência cada um lhe envia mensagens e depois mantenha, mova ou anule a subscrição com um clique.",
+        "Nós trouxemos ${ count } boletins informativos e agrupámo-los por remetente. Veja com que frequência cada um lhe envia mensagens e depois mantenha, mova ou anule a subscrição com um clique."
+      ],
+      "What can you do?": [
+        "O que pode fazer?"
+      ],
+      "What needs handling?": [
+        "O que precisa de ser tratado?"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tem uma fatura em aberto com vencimento em ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "Irá escolher um novo nome de utilizador"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "O seu período de testes gratuito terminou. Subscreva agora para manter o acesso da sua equipa sem interrupções e as contas seguras."
       ]
     },
     "info": {
@@ -10681,6 +11068,12 @@
       ],
       "Until time": [
         "Até à hora"
+      ],
+      "Log performance": [
+        "Registar desempenho"
+      ],
+      "Until date": [
+        "Até à data"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11137,6 +11530,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Adicionar assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Mailbox": {
@@ -12755,6 +13151,12 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancele a qualquer momento antes dessa data.** Poderá utilizar o ${ planTitle } até ao fim do período de teste, sem qualquer custo."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Assim que a sua subscrição completa começar...** Ainda pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
       ]
     },
     "Option": {
@@ -13175,6 +13577,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "A sua subscrição beneficia atualmente de um desconto. Ao aderir a esta nova promoção, o desconto atual deixará de ser aplicado."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Mudar de plano é incompatível pelos seguintes motivos:"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Esta subscrição não pode ser concluída agora. Por favor, tente novamente. "
       ]
     },
     "Payments.Error": {
@@ -13198,6 +13606,9 @@
       ],
       "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
         "Nao foi possivel inicializar ${ IDEAL_WERO_BRAND_NAME }. Por favor, tente novamente mais tarde."
+      ],
+      "Please enter the account holder name": [
+        "Por favor, insira o nome do titular da conta"
       ]
     },
     "Payments.error": {
@@ -15324,6 +15735,26 @@
       ],
       "You have successfully canceled your subscription.": [
         "A sua subscrição foi cancelada."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Assistente de IA ${ LUMO_SHORT_APP_NAME } desativado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Assistente de IA ${ LUMO_SHORT_APP_NAME } ativado"
+      ],
+      "One-time codes disabled": [
+        "Códigos de utilização única desativados"
+      ],
+      "One-time codes enabled": [
+        "Códigos de utilização única ativados"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Cancelou a subscrição de ${ count } lista de correio e moveu as respetivas mensagens para o Arquivo.",
+        "Cancelou a subscrição de ${ count } listas de correio e moveu as respetivas mensagens para o Arquivo."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Cancelou a subscrição de ${ count } lista de correio.",
+        "Cancelou a subscrição de ${ count } listas de correio."
       ]
     },
     "Success notification": {
@@ -16617,6 +17048,30 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Subscrever ${ planTitle }"
+      ],
+      "Filter on": [
+        "Filtrar por"
+      ],
+      "Insert a booking page": [
+        "Inserir uma página de reservas"
+      ],
+      "Not opened in a while": [
+        "Não aberta há algum tempo"
+      ],
+      "Special offer": [
+        "Oferta especial"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
+      ],
+      "You open these sometimes": [
+        "Abre estas algumas vezez"
+      ],
+      "You read these often": [
+        "Lê estas com frequência"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Os seus boletins informativos do Gmail, agora mais fácil de gerir"
       ]
     },
     "Title header for keys table": {
@@ -17327,6 +17782,60 @@
       ],
       "Snooze ${ emails } until ${ wakeTime }": [
         "Adiar ${ emails } até ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Adiar ${ emails }"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Fechar"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta indisponível"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } mensagem nós últimos 30 dias. Não aberta.",
+        "${ count } mensagens nós últimos 30 dias. Não abertas."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } mensagem nós últimos 30 dias. Abertas com frequência.",
+        "${ count } mensagens nós últimos 30 dias. Abertas com frequência."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } mensagem nós últimos 30 dias. Abertas algumas vezes.",
+        "${ count } mensagens nós últimos 30 dias. Abertas algumas vezes"
+      ],
+      "No emails in the last 30 days.": [
+        "Sem mensagens nós últimos 30 dias."
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Experimente agora"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, autoriza a ${ BRAND_NAME } e a Stripe, o nosso prestador de serviços de pagamento, a cobrar os futuros pagamentos da sua subscrição a partir desta conta bancária por débito direto SEPA, e autoriza o seu banco a debitar esses pagamentos. O seu primeiro pagamento é efetuado agora através de ${ IDEAL_WERO_BRAND_NAME }. O seu plano renova-se automaticamente até que o cancele; nós notificamo-lo antes de cada cobrança. Nas cobranças por débito direto, pode pedir um reembolso ao seu banco no prazo de 8 semanas a contar da data do débito, nos termos do acordo celebrado com o seu banco. Isto não se aplica ao pagamento através de ${ IDEAL_WERO_BRAND_NAME } que está a efetuar agora."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
+      ],
+      "key": [
+        "chave"
+      ],
+      "name": [
+        "nome"
       ]
     }
   }

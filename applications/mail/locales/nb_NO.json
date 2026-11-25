@@ -1787,6 +1787,19 @@
       ],
       "Use “${ label }” setting": [
         "Bruk “${ label }”-innstilling"
+      ],
+      "Don't show this again": [
+        "Ikke vis dette igjen"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "Lagre ${ name } i ${ DRIVE_APP_NAME }"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Lagre i ${ DRIVE_APP_NAME }"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Avslutt ${ selectedCount } abonnement",
+        "Avslutt ${ selectedCount } abonnementer"
       ]
     },
     "action": {
@@ -5470,6 +5483,241 @@
       ],
       "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
         "Abonnementet på noen e-postlister kunne ikke avsluttes. Prøv igjen for å avslutte resten."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "En melding er nødvendig når du rapporterer brudd på opphavsrett eller stjålne data"
+      ],
+      "Bookmark password is not available": [
+        "Bokmerkepassordet er ikke tilgjengelig"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Kan ikke legge til bilde i albumet uten et gyldig navn"
+      ],
+      "Cannot download a folder": [
+        "Kan ikke laste ned en mappe"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Kan ikke flytte elementet uten et gyldig navn. Gi elementet nytt navn først."
+      ],
+      "Cannot share root folder": [
+        "Kan ikke dele rotmappe"
+      ],
+      "Cannot verify the author of this file": [
+        "Kan ikke bekrefte forfatteren av denne filen"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Kan ikke bekrefte opplasteren av denne filen"
+      ],
+      "Copy operation aborted": [
+        "Kopieringsoperasjonen ble avbrutt"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "Kopiering av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Could not find an available name": [
+        "Finner ikke et tilgjengelig navn"
+      ],
+      "Could not load sharing details": [
+        "Kunne ikke laste inn delingsdetaljene"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Kunne ikke laste inn forhåndsvisningen av bildet: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Kunne ikke lese deler av denne filen: ${ message }"
+      ],
+      "Could not unlock the parent folder": [
+        "Kunne ikke låse opp overordnet mappe"
+      ],
+      "Could not unlock this item": [
+        "Kunne ikke låse opp dette elementet"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette dokumenter i elementer som ikke er mapper."
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette filer i elementer som ikke er mapper."
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "Det er ikke tillatt å opprette mapper i elementer som ikke er mapper."
+      ],
+      "Device not found": [
+        "Enhet ikke funnet"
+      ],
+      "Expiration date cannot be in the past": [
+        "Utløpsdatoen kan ikke være i fortiden"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Kunne ikke dekryptere bokmerkenavnet: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "Klarte ikke å dekryptere bokmerkepassordet: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Kunne ikke dekryptere innholdsnøkkelen: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Kunne ikke dekryptere elementnavnet: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Klarte ikke å dekryptere nodenøkkelen: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Kunne ikke dekryptere revisjonsmetadata"
+      ],
+      "Failed to get inviter keys": [
+        "Kunne ikke hente invitasjonsnøkler"
+      ],
+      "Failed to verify invitation": [
+        "Kunne ikke bekrefte invitasjonen"
+      ],
+      "File download failed due to empty response": [
+        "Filnedlasting mislyktes på grunn av tomt svar"
+      ],
+      "File has no revision": [
+        "Filen har ingen revisjon"
+      ],
+      "Image preview not found": [
+        "Forhåndsvisning av bilde ikke funnet"
+      ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
+      ],
+      "Invitation not found": [
+        "Invitasjon ikke funnet"
+      ],
+      "Item not found": [
+        "Element ikke funnet"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Eldre offentlig kobling kan ikke oppdateres. Opprett en ny offentlig kobling på nytt."
+      ],
+      "Missing inviter email": [
+        "Invitørens e-postadresse mangler"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Mangler signatur for ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flytteoperasjonen ble avbrutt"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Flytting av element til en ikke-mappe er ikke tillatt"
+      ],
+      "Moving root item is not allowed": [
+        "Det er ikke tillatt å flytte rotelement"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn",
+        "Navnet må maksimalt bestå av ${ MAX_NODE_NAME_LENGTH } tegn"
+      ],
+      "Name must not be empty": [
+        "Navn kan ikke være tomt"
+      ],
+      "No file data was received. Please try again.": [
+        "Ingen fildata ble mottatt. Prøv på nytt."
+      ],
+      "Only admins can convert external invitations": [
+        "Bare administratorer kan konvertere eksterne invitasjoner"
+      ],
+      "Operation aborted": [
+        "Operasjon avbrutt"
+      ],
+      "Operation failed, try again later": [
+        "Operasjon mislyktes, prøv igjen senere"
+      ],
+      "Part of the file appears to be corrupted": [
+        "En del av filen ser ut til å være ødelagt"
+      ],
+      "Photo is already in the target album": [
+        "Bildet er allerede i målalbumet"
+      ],
+      "Photo not found": [
+        "Bilde ikke funnet"
+      ],
+      "Renaming root item is not allowed": [
+        "Det er ikke tillatt å gi nytt navn til rotelement"
+      ],
+      "Request aborted": [
+        "Forespørsel avbrutt"
+      ],
+      "Signature is missing": [
+        "Signatur mangler"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Bekreftelse av signatur mislyktes: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Signaturverifisering for ${ signatureType } mislyktes"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Signaturverifisering for ${ signatureType } mislyktes: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "Deler av filen kunne ikke lastes opp. Prøv igjen."
+      ],
+      "Some items could not be loaded": [
+        "Kunne ikke laste inn enkelte dokumenter"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
+      ],
+      "The uploaded file does not match the original. Please try again.": [
+        "Den opplastede filen samsvarer ikke med originalen. Prøv på nytt."
+      ],
+      "This file has missing crypto material": [
+        "Denne filen mangler kryptomateriale"
+      ],
+      "This file has no version available to download": [
+        "Denne filen har ingen versjon tilgjengelig for nedlasting"
+      ],
+      "This file version could not be uploaded": [
+        "Denne filversjonen kunne ikke lastes opp"
+      ],
+      "This item has no image preview": [
+        "Dette elementet har ingen forhåndsvisning av bilde"
+      ],
+      "This item is no longer shared": [
+        "Dette elementet deles ikke lenger"
+      ],
+      "This item is not shared": [
+        "Dette elementet er ikke delt"
+      ],
+      "Too many server errors, please try again later": [
+        "For mange serverfeil. Prøv igjen senere."
+      ],
+      "Too many server requests, please try again later": [
+        "For mange serverforespørsler. Prøv igjen senere."
+      ],
+      "Verification keys are not available": [
+        "Verifiseringsnøkler er ikke tilgjengelige"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Verifiseringsnøkler for ${ signatureType } er ikke tilgjengelige"
+      ],
+      "You can create public links for your own files only": [
+        "Du kan bare opprette offentlige koblinger for dine egne filer"
+      ],
+      "You can only leave items that are shared with you": [
+        "Du kan bare forlate elementer som er delt med deg"
+      ],
+      "You can only upload a new version to a file": [
+        "Du kan bare laste opp en ny versjon av en fil"
+      ],
+      "You can update a public link for your own files only": [
+        "Du kan bare oppdatere en offentlig kobling for dine egne filer"
+      ],
+      "You do not have access to this item": [
+        "Du har ikke tilgang til dette elementet"
+      ],
+      "You do not have access to this shared item": [
+        "Du har ikke tilgang til dette delte elementet"
       ]
     },
     "error": {
@@ -9784,6 +10032,36 @@
       "${ n } unread message": [
         "${ n } ulest melding",
         "${ n } uleste meldinger"
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Aktiver ${ MAIL_APP_NAME } for å begynne å motta e-post på ${ count } av domenene dine.",
+        "Aktiver ${ MAIL_APP_NAME } for å begynne å motta e-post på ${ count } av domenene dine."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Aktiver ${ MAIL_APP_NAME } for å begynne å motta e-post på ${ domainName } . ${ activateLink }."
+      ],
+      "Author is not provided on public link": [
+        "Forfatter er ikke oppgitt på offentlig kobling"
+      ],
+      "Based only on which emails you've opened.": [
+        "Basert kun på hvilke e-poster du har åpnet."
+      ],
+      "Messages in Spam/Trash will automatically be deleted after 30 days.": [
+        "Meldinger i Søppelpost/Papirkurv vil slettes automatisk etter 30 dager."
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Flytt tidligere e-poster fra avsenderen til Arkiv. Du kan fortsatt søke etter dem."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Vi har overført ${ count } nyhetsbrev, gruppert etter avsender. Se hvor ofte hver avsender sender deg e-post, og behold, flytt eller avslutt abonnementet med ett klikk.",
+        "Vi har overført ${ count } nyhetsbrev, gruppert etter avsender. Se hvor ofte hver avsender sender deg e-post, og behold, flytt eller avslutt abonnementet med ett klikk."
+      ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du vil ikke motta e-poster på ${ count } av dine domener før du aktiverer ${ MAIL_APP_NAME }. Du kan gjøre dette når som helst i Innstillinger > Domenenavn.",
+        "Du vil ikke motta e-poster på ${ count } av dine domener før du aktiverer ${ MAIL_APP_NAME }. Du kan gjøre dette når som helst i Innstillinger > Domenenavn."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du vil ikke motta e-poster på ${ domainName } før du aktiverer ${ MAIL_APP_NAME }. Du kan gjøre dette når som helst i Innstillinger > Domenenavn."
       ]
     },
     "info": {
@@ -11525,6 +11803,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Activate": [
+        "Aktiver"
       ]
     },
     "Link to calendar event": {
@@ -17228,6 +17509,27 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Hide this reminder?": [
+        "Vil du skjule denne påminnelsen?"
+      ],
+      "Not opened in a while": [
+        "Ikke åpnet på en stund"
+      ],
+      "Special offer": [
+        "Spesialtilbud"
+      ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
+      ],
+      "You open these sometimes": [
+        "Du åpner disse noen ganger"
+      ],
+      "You read these often": [
+        "Du leser disse ofte"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Gmail-nyhetsbrevene dine, nå enklere å administrere"
       ]
     },
     "Title header for keys table": {
@@ -17909,6 +18211,53 @@
       ],
       "Row": [
         "Rad"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Lukk"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbudet er utilgjengelig"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } e-post de siste 30 dagene. Åpnes ikke.",
+        "${ count } e-poster de siste 30 dagene. Åpnes ikke."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } e-post de siste 30 dagene. Åpnes ofte.",
+        "${ count } e-poster de siste 30 dagene. Åpnes ofte."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } e-post de siste 30 dagene. Åpnes av og til.",
+        "${ count } e-poster de siste 30 dagene. Åpnes av og til."
+      ],
+      "No emails in the last 30 days.": [
+        "Ingen e-poster de siste 30 dagene."
+      ]
+    },
+    "Property": {
+      "attributes": [
+        "attributter"
+      ],
+      "content key": [
+        "innholdsnøkkel"
+      ],
+      "hash key": [
+        "hashnøkkel"
+      ],
+      "key": [
+        "nøkkel"
+      ],
+      "membership": [
+        "medlemskap"
+      ],
+      "name": [
+        "navn"
       ]
     }
   }
