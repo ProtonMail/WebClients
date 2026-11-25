@@ -102,6 +102,35 @@ export const recurringUnescapeCSSEncoding = (str: string, stop = 5): string => {
     }
 };
 
+const MAX_STYLE_NORMALIZATION_PASSES = 5;
+
+/**
+ * Decode escapes and strip CSS comments until neither changes the string.
+ * Removing a comment can join a new character reference (`&#/**\/117;` -> `&#117;`), and
+ * escapeForbiddenStyle decodes its input again, so URL checks must run on a string that
+ * no further decode can change. Returns an empty string if it does not settle.
+ */
+const normalizeStyle = (style: string) => {
+    let current = style;
+    let decoded = false;
+
+    for (let pass = 0; pass < MAX_STYLE_NORMALIZATION_PASSES; pass++) {
+        const unescaped = recurringUnescapeCSSEncoding(current);
+        if (unescaped === '') {
+            return { normalized: '', decoded };
+        }
+        decoded ||= unescaped !== current;
+
+        const withoutComments = unescaped.replace(/\/\*[\s\S]*?\*\//g, '');
+        if (withoutComments === current) {
+            return { normalized: current, decoded };
+        }
+        current = withoutComments;
+    }
+
+    return { normalized: '', decoded };
+};
+
 /**
  * Escape some WTF from the CSSParser, cf spec files
  * @param  {String} style
@@ -110,20 +139,14 @@ export const recurringUnescapeCSSEncoding = (str: string, stop = 5): string => {
 export const escapeURLinStyle = (style: string) => {
     // handle the case where the value is html encoded, e.g.:
     // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
-
-    const unescapedEncoding = recurringUnescapeCSSEncoding(style);
+    // Comments are stripped so the sanitizer sees the same tokens the CSS parser would.
+    const { normalized: withoutCSSComments, decoded: escapeFlag } = normalizeStyle(style);
 
     // If we cancelled the unescape encoding step because it was too long, we are returning an empty string.
     // In that case we also need to return an empty string in this function, otherwise we will not escape correctly the content
-    if (unescapedEncoding === '') {
+    if (withoutCSSComments === '') {
         return '';
     }
-
-    // Strip CSS comments so the sanitizer sees the same tokens the CSS parser would.
-    // This prevents attackers from hiding url() calls inside comment boundaries.
-    const withoutCSSComments = unescapedEncoding.replace(/\/\*[\s\S]*?\*\//g, '');
-
-    const escapeFlag = unescapedEncoding !== style;
 
     const escapedStyle = withoutCSSComments
         .replace(/\\r/g, 'r')
