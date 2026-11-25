@@ -83,7 +83,10 @@ export type UnprivatizationMemberFailure = {
 interface UnprivatizationMemberState {
     members: {
         [id: string]:
-            UnprivatizationMemberSuccess | UnprivatizationMemberFailure | UnprivatizationMemberApproval | undefined;
+            | UnprivatizationMemberSuccess
+            | UnprivatizationMemberFailure
+            | UnprivatizationMemberApproval
+            | undefined;
     };
     loading: {
         approval: boolean;
@@ -286,19 +289,20 @@ const slice = createSlice({
             }
         },
         memberRolesFetchPending: (state, action: PayloadAction<{ members: Member[] }>) => {
-            action.payload.members.forEach((target) => {
-                const member = getMemberFromState(state, target);
-                if (member) {
+            const ids = new Set(action.payload.members.map(({ ID }) => ID));
+            state.value?.forEach((member) => {
+                if (ids.has(member.ID)) {
                     member.roleState = 'pending';
                 }
             });
         },
         memberRolesFetchSettled: (state, action: PayloadAction<MemberRolesResult[]>) => {
-            action.payload.forEach(({ member: target, response }) => {
-                const member = getMemberFromState(state, target);
-                if (!member) {
+            const responseByID = new Map(action.payload.map(({ member, response }) => [member.ID, response]));
+            state.value?.forEach((member) => {
+                if (!responseByID.has(member.ID)) {
                     return;
                 }
+                const response = responseByID.get(member.ID);
                 if (!response) {
                     member.roleState = 'rejected';
                     return;
@@ -617,9 +621,10 @@ export const getMemberRolesBatch = ({
         if (!isAdminRoleEnabled) {
             return;
         }
-        const state = selectMembers(getState());
+        // One pass over the list: this runs for every member, again on every change to the list.
+        const roleStateByID = new Map(selectMembers(getState()).value?.map((member) => [member.ID, member.roleState]));
         const targets = members.filter((member) => {
-            const roleState = getMemberFromState(state, member)?.roleState;
+            const roleState = roleStateByID.get(member.ID);
             return roleState === 'initial' || roleState === 'stale';
         });
         if (!targets.length) {
