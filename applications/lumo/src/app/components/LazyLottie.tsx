@@ -6,11 +6,39 @@ const LazyLottieComponent = lazy(() => import('lottie-react'));
 
 interface Props extends Omit<LottieComponentProps, 'animationData' | 'ref'> {
     getAnimationData: () => Promise<{ default: object }>;
+    /** Hold a looping animation still. */
+    paused?: boolean;
 }
 
-export const LazyLottie = ({ getAnimationData, ...props }: Props) => {
+const isWindowActive = () => !document.hidden && document.hasFocus();
+
+export const LazyLottie = ({ getAnimationData, paused = false, ...props }: Props) => {
     const [animationData, setAnimationData] = useState<object | null>(null);
+    const [windowActive, setWindowActive] = useState(isWindowActive);
     const lottieRef = useRef<LottieRefCurrentProps | null>(null);
+    // One-shot animations always finish so `onComplete` fires.
+    const shouldPause = !!props.loop && (paused || !windowActive);
+    const autoplay = props.autoplay !== false;
+
+    useEffect(() => {
+        const update = () => setWindowActive(isWindowActive());
+        window.addEventListener('focus', update);
+        window.addEventListener('blur', update);
+        document.addEventListener('visibilitychange', update);
+        return () => {
+            window.removeEventListener('focus', update);
+            window.removeEventListener('blur', update);
+            document.removeEventListener('visibilitychange', update);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (shouldPause) {
+            lottieRef.current?.pause();
+        } else if (autoplay) {
+            lottieRef.current?.play();
+        }
+    }, [shouldPause, autoplay]);
 
     useEffect(() => {
         let cancelled = false;
@@ -47,7 +75,12 @@ export const LazyLottie = ({ getAnimationData, ...props }: Props) => {
 
     return (
         <Suspense fallback={fallback}>
-            <LazyLottieComponent lottieRef={lottieRef as LottieRef} animationData={animationData} {...props} />
+            <LazyLottieComponent
+                lottieRef={lottieRef as LottieRef}
+                animationData={animationData}
+                {...props}
+                autoplay={autoplay && !shouldPause}
+            />
         </Suspense>
     );
 };

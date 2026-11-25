@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import clsx from '@proton/utils/clsx';
 import { c } from 'ttag';
 
-import { LazyLottie } from '../../LazyLottie';
-import { getPersistedLumoCatHomeStage, persistLumoCatHomeStage } from '../../../util/lumoCatHomeStageStorage';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
-import LumoCatHoverHintArrow from './LumoCatHoverHintArrow';
+import { useLumoAnimatedBackground } from '../../../hooks/useLumoAnimatedBackground';
+import { getPersistedLumoCatHomeStage, persistLumoCatHomeStage } from '../../../util/lumoCatHomeStageStorage';
+import { LazyLottie } from '../../LazyLottie';
+
 import './LumoCatAnimation.scss';
-import {LUMO_SHORT_APP_NAME} from "@proton/shared/lib/constants";
+import LumoCatHoverHintArrow from './LumoCatHoverHintArrow';
 
 const LOTTIE_CLASS = 'lumo-cat-animation__lottie';
 const GHOST_ANIMATION_LAST_FRAME = 119;
@@ -63,6 +65,7 @@ const LumoCatAnimation = ({ isGhostMode }: LumoCatAnimationProps) => {
     );
     const [playGhostActivated, setPlayGhostActivated] = useState(false);
     const isInitialMount = useRef(true);
+    const { isAnimatedBackgroundEnabled } = useLumoAnimatedBackground();
 
     const isShowingGhostAnimation = isGhostMode || ghostAnimationKind !== null;
     const isTransitioning = homeStage === 'get-out' || homeStage === 'back-in';
@@ -138,9 +141,7 @@ const LumoCatAnimation = ({ isGhostMode }: LumoCatAnimationProps) => {
                         loop={false}
                         autoplay={playGhostActivated}
                         initialSegment={
-                            playGhostActivated
-                                ? undefined
-                                : [GHOST_ANIMATION_LAST_FRAME, GHOST_ANIMATION_LAST_FRAME]
+                            playGhostActivated ? undefined : [GHOST_ANIMATION_LAST_FRAME, GHOST_ANIMATION_LAST_FRAME]
                         }
                         className={LOTTIE_CLASS}
                     />
@@ -166,6 +167,7 @@ const LumoCatAnimation = ({ isGhostMode }: LumoCatAnimationProps) => {
                     alt="Lumo"
                     getAnimationData={getLumoHomeStage1Animation}
                     loop
+                    paused={!isAnimatedBackgroundEnabled}
                     className={LOTTIE_CLASS}
                 />
             );
@@ -191,6 +193,7 @@ const LumoCatAnimation = ({ isGhostMode }: LumoCatAnimationProps) => {
                     alt="Lumo"
                     getAnimationData={getLumoHomeStage3Animation}
                     loop
+                    paused={!isAnimatedBackgroundEnabled}
                     className={LOTTIE_CLASS}
                 />
             );
@@ -229,10 +232,7 @@ const LumoCatAnimation = ({ isGhostMode }: LumoCatAnimationProps) => {
             {renderAnimation()}
             {isClickable ? (
                 <div
-                    className={clsx(
-                        'lumo-cat-animation__hint',
-                        isOutsideStable && 'lumo-cat-animation__hint--outside'
-                    )}
+                    className={clsx('lumo-cat-animation__hint', isOutsideStable && 'lumo-cat-animation__hint--outside')}
                     aria-hidden="true"
                 >
                     <p className="lumo-cat-animation__hint-text">{hoverHintText}</p>
