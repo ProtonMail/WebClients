@@ -17,6 +17,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { loadLocales } from '@proton/account/bootstrap'
 import { dateLocale } from '@proton/shared/lib/i18n'
 import { reportErrorToSentry } from '../Utils/errorMessage'
+import { listenForPrintShortcut } from '../Utils/printShortcut'
 import {
   $getSelection,
   $isRangeSelection,
@@ -247,6 +248,23 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     }
   }, [])
 
+  const printDocument = useCallback(() => {
+    applyBeforePrintFixesForChrome()
+    if (IS_CHROME) {
+      // Because of the chrome print bug, we need to wait for the
+      // removal of the selection to actually get committed before
+      // we call `window.print`. The timeout is not required when
+      // the print dialog is opened directly.
+      setTimeout(() => {
+        window.print()
+      })
+    } else {
+      window.print()
+    }
+  }, [applyBeforePrintFixesForChrome])
+
+  useEffect(() => listenForPrintShortcut(window, printDocument), [printDocument])
+
   const onEditorLoadError = useCallback(
     (message: string) => {
       const error = new Error(message)
@@ -455,18 +473,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       },
 
       async printAsPDF(): Promise<void> {
-        applyBeforePrintFixesForChrome()
-        if (IS_CHROME) {
-          // Because of the chrome print bug, we need to wait for the
-          // removal of the selection to actually get committed before
-          // we call `window.print`. The timeout is not required when
-          // the print dialog is opened directly.
-          setTimeout(() => {
-            window.print()
-          })
-        } else {
-          window.print()
-        }
+        printDocument()
       },
 
       async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
@@ -608,13 +615,13 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     notifyParentEditorIsReady()
   }, [
     application,
-    applyBeforePrintFixesForChrome,
     bridge,
     docMap,
     docState,
     documentType,
     notifyParentEditorIsReady,
     onEditorLoadError,
+    printDocument,
     setEditingLocked,
     setEditorConfig,
     setEditorHidden,

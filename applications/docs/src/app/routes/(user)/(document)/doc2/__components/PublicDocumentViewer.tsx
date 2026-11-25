@@ -25,6 +25,7 @@ import { EditorFrame } from '~/components/document/EditorFrame'
 import { useApplication } from '~/utils/application-context'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import { useEvent } from '~/utils/misc'
+import { usePrintShortcut } from '~/utils/printShortcut'
 
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { exportAndDownload } from '../__utils/downloadExport'
@@ -257,6 +258,7 @@ export function PublicDocumentViewer({
   useStopFollowUps(liveSession, showModal)
   useLeaveWarning(liveSession)
   useEditorBasicsInSync(exportInvoker, { isDarkMode, userName })
+  usePrintShortcut(exportInvoker ? print : undefined)
   const receivePresenceFromEditor = usePresenceBridge(liveSession, editorInvoker)
 
   // Mirrors `applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx`, its `isDownloadAction`
