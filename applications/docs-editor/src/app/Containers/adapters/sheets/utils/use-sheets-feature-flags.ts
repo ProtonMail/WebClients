@@ -42,6 +42,7 @@ export function useSheetsFeatureFlags(clientInvoker: EditorRequiresClientMethods
   const SheetsDriftDetectionEnabled = useFeatureFlag(clientInvoker, 'SheetsDriftDetectionEnabled')
   const SheetsODSExportEnabled = useFeatureFlag(clientInvoker, 'SheetsODSExportEnabled')
   const SheetsPatchesStorageEnabled = useFeatureFlag(clientInvoker, 'SheetsPatchesStorageEnabled')
+  const SheetsSdkFormatting = useFeatureFlag(clientInvoker, 'SheetsSdkFormatting')
   const SheetsStatusBarEnabled = useFeatureFlag(clientInvoker, 'SheetsStatusBarEnabled')
   const SheetsTablesEnabled = useFeatureFlag(clientInvoker, 'SheetsTablesEnabled')
 
@@ -53,6 +54,7 @@ export function useSheetsFeatureFlags(clientInvoker: EditorRequiresClientMethods
       SheetsDriftDetectionEnabled,
       SheetsODSExportEnabled,
       SheetsPatchesStorageEnabled,
+      SheetsSdkFormatting,
       SheetsStatusBarEnabled,
       SheetsTablesEnabled,
     }),
@@ -63,6 +65,7 @@ export function useSheetsFeatureFlags(clientInvoker: EditorRequiresClientMethods
       SheetsDriftDetectionEnabled,
       SheetsODSExportEnabled,
       SheetsPatchesStorageEnabled,
+      SheetsSdkFormatting,
       SheetsStatusBarEnabled,
       SheetsTablesEnabled,
     ],
