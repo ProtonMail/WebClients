@@ -5,7 +5,7 @@ import { FeatureCode } from '@proton/features/interface';
 import { getFeatureFlagsState } from '@proton/features/testing/features';
 
 import { mailTestRender } from '../../../helpers/tests/render';
-import useBYOEInboxCleanupSenders from '../../../hooks/useBYOEInboxCleanupSenders';
+import useFinishedBYOEImportSenders from '../../../hooks/useFinishedBYOEImportSenders';
 import * as newsletterSelectors from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { BYOEInboxCleanup } from './BYOEInboxCleanup';
 import { generateSubscriptionList } from './testData';
@@ -47,33 +47,33 @@ const finishClosing = () => {
 
 describe('BYOEInboxCleanup', () => {
     beforeEach(() => {
-        vi.mocked(useBYOEInboxCleanupSenders).mockReset();
+        vi.mocked(useFinishedBYOEImportSenders).mockReset();
         mockedSubscriptionCount.mockReturnValue(3);
         mockedTabLoading.mockReturnValue(false);
     });
 
     it('opens the window once the senders are ready', async () => {
-        vi.mocked(useBYOEInboxCleanupSenders).mockReturnValue(senders);
+        vi.mocked(useFinishedBYOEImportSenders).mockReturnValue(senders);
         await render(undefined, { introductionSeen: true });
 
         expect(await screen.findByRole('heading', { name: TITLE })).toBeInTheDocument();
     });
 
     it("doesn't open the window while there are no senders", async () => {
-        vi.mocked(useBYOEInboxCleanupSenders).mockReturnValue(undefined);
+        vi.mocked(useFinishedBYOEImportSenders).mockReturnValue(undefined);
         await render(undefined, { introductionSeen: true });
 
         expect(screen.queryByRole('heading', { name: TITLE })).not.toBeInTheDocument();
     });
 
     it("after Skip it doesn't reopen on the next render", async () => {
-        vi.mocked(useBYOEInboxCleanupSenders).mockReturnValue(senders);
+        vi.mocked(useFinishedBYOEImportSenders).mockReturnValue(senders);
         const { rerender } = await render(undefined, { introductionSeen: true });
         await screen.findByRole('heading', { name: TITLE });
 
         fireEvent.click(screen.getByRole('button', { name: 'Skip' }));
         finishClosing();
-        rerender(<BYOEInboxCleanup />);
+        await rerender(<BYOEInboxCleanup />);
 
         expect(screen.queryByRole('heading', { name: TITLE })).not.toBeInTheDocument();
     });
@@ -82,27 +82,33 @@ describe('BYOEInboxCleanup', () => {
         it("is not ready while the introduction feature hasn't loaded", async () => {
             await render();
 
-            expect(useBYOEInboxCleanupSenders).toHaveBeenCalledWith(false);
-            expect(useBYOEInboxCleanupSenders).not.toHaveBeenCalledWith(true);
+            expect(useFinishedBYOEImportSenders).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
+            expect(useFinishedBYOEImportSenders).not.toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, true);
         });
 
         it("is not ready while the introduction hasn't been seen and the list has newsletters", async () => {
             await render(undefined, { introductionSeen: false });
 
-            expect(useBYOEInboxCleanupSenders).not.toHaveBeenCalledWith(true);
+            expect(useFinishedBYOEImportSenders).not.toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, true);
         });
 
         it('is ready once the introduction has been seen', async () => {
             await render(undefined, { introductionSeen: true });
 
-            expect(vi.mocked(useBYOEInboxCleanupSenders).mock.lastCall).toEqual([true]);
+            expect(vi.mocked(useFinishedBYOEImportSenders).mock.lastCall).toEqual([
+                FeatureCode.BYOEInboxCleanupModal,
+                true,
+            ]);
         });
 
         it('is ready when the list has loaded empty, as the introduction only shows with newsletters', async () => {
             mockedSubscriptionCount.mockReturnValue(0);
             await render(undefined, { introductionSeen: false });
 
-            expect(vi.mocked(useBYOEInboxCleanupSenders).mock.lastCall).toEqual([true]);
+            expect(vi.mocked(useFinishedBYOEImportSenders).mock.lastCall).toEqual([
+                FeatureCode.BYOEInboxCleanupModal,
+                true,
+            ]);
         });
 
         it('is not ready while the list is still loading', async () => {
@@ -110,14 +116,14 @@ describe('BYOEInboxCleanup', () => {
             mockedTabLoading.mockReturnValue(true);
             await render(undefined, { introductionSeen: false });
 
-            expect(useBYOEInboxCleanupSenders).not.toHaveBeenCalledWith(true);
+            expect(useFinishedBYOEImportSenders).not.toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, true);
         });
     });
 
     it("a window that throws while rendering renders nothing and doesn't break the view", async () => {
         const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
         // Senders the window can't read make it throw while rendering
-        vi.mocked(useBYOEInboxCleanupSenders).mockReturnValue({} as any);
+        vi.mocked(useFinishedBYOEImportSenders).mockReturnValue({} as any);
 
         await render(
             <>

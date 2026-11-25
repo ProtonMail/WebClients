@@ -5,7 +5,7 @@ import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 
-import useBYOEInboxCleanupSenders from '../../../hooks/useBYOEInboxCleanupSenders';
+import useFinishedBYOEImportSenders from '../../../hooks/useFinishedBYOEImportSenders';
 import { useMailSelector } from '../../../store/hooks';
 import {
     allSubscriptionCount,
@@ -25,7 +25,7 @@ export const BYOEInboxCleanup = () => {
 
     const isListLoadedEmpty = !loadingSubscriptions && subscriptionCount === 0;
     const isViewReady = introduction?.Value === true || isListLoadedEmpty;
-    const senders = useBYOEInboxCleanupSenders(isViewReady);
+    const senders = useFinishedBYOEImportSenders(FeatureCode.BYOEInboxCleanupModal, isViewReady);
 
     const { modalProps, openModal, render } = useModalStateObject();
 

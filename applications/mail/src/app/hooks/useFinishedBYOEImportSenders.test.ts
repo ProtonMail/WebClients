@@ -21,13 +21,13 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { loadSendersWhenFree } from '../helpers/byoeInboxCleanup';
+import { fetchSendersIfStillDue } from '../helpers/byoeInboxCleanup';
 import { useMailDispatch } from '../store/hooks';
-import useBYOEInboxCleanupSenders from './useBYOEInboxCleanupSenders';
+import useFinishedBYOEImportSenders from './useFinishedBYOEImportSenders';
 
-vi.mock('./useBYOEInboxCleanupSenders', async () => ({
+vi.mock('./useFinishedBYOEImportSenders', async () => ({
     __esModule: true,
-    ...(await vi.importActual('./useBYOEInboxCleanupSenders')),
+    ...(await vi.importActual('./useFinishedBYOEImportSenders')),
 }));
 vi.mock('@proton/unleash/useFlag');
 vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: vi.fn() }));
@@ -44,7 +44,7 @@ vi.mock('@proton/features/useFeature', () => ({ __esModule: true, default: vi.fn
 vi.mock('../store/hooks', () => ({ useMailDispatch: vi.fn() }));
 vi.mock('../helpers/byoeInboxCleanup', async () => ({
     ...(await vi.importActual('../helpers/byoeInboxCleanup')),
-    loadSendersWhenFree: vi.fn(),
+    fetchSendersIfStillDue: vi.fn(),
 }));
 
 const CONNECTION_TIME_BYOE = 1_700_000_000;
@@ -87,8 +87,11 @@ type CleanupFeature = Partial<Feature<boolean>>;
 // The value Mail loaded, as `useFeature` returns it
 const store: { feature: CleanupFeature | undefined } = { feature: undefined };
 const easySwitch: EasySwitchState = { loading: 'idle', entries: [] };
-// Whether the Mailing lists view is ready to show the window, as the view hands it to the hook
-const view = { canShow: true };
+// The caller's feature code, and whether it's ready to show what it offers, as it hands them to the hook
+const view: { code: FeatureCode.BYOEInboxCleanupModal | FeatureCode.BYOEInboxCleanupSpotlight; canShow: boolean } = {
+    code: FeatureCode.BYOEInboxCleanupModal,
+    canShow: true,
+};
 const dueFeature: CleanupFeature = { Value: true, UpdateTime: CONNECTION_TIME_BYOE };
 
 const mockWriteFeature = vi.fn(async (value: boolean) => {
@@ -101,10 +104,6 @@ const mockMailDispatch = vi.fn((action: { value: boolean }) => {
 const mockEasySwitchDispatch = vi.fn();
 const mockApi = vi.fn();
 const senders = [{ ID: 'sender-1' }, { ID: 'sender-2' }] as NewsletterSubscription[];
-
-const getLoadSignal = (call = 0) => {
-    return vi.mocked(loadSendersWhenFree).mock.calls[call][0].signal;
-};
 
 const settle = async () => {
     await act(async () => {
@@ -125,18 +124,20 @@ const setup = ({ enabled = true, feature = dueFeature }: SetupOptions = {}) => {
         return name === 'InboxBringYourOwnEmailCleanup' && enabled;
     });
 
-    return renderHook(() => useBYOEInboxCleanupSenders(view.canShow));
+    return renderHook(() => useFinishedBYOEImportSenders(view.code, view.canShow));
 };
 
-const holdNextLoad = () => {
+// Holds the fresh read and senders load until the returned function answers it
+const holdLoad = () => {
     let resolveLoad = (_subscriptions: NewsletterSubscription[] | undefined) => {};
-    vi.mocked(loadSendersWhenFree).mockImplementationOnce(() => {
+    vi.mocked(fetchSendersIfStillDue).mockImplementationOnce(() => {
         return new Promise((resolve) => {
             resolveLoad = resolve;
         });
     });
-    return (subscriptions: NewsletterSubscription[] | undefined) => {
+    return async (subscriptions: NewsletterSubscription[] | undefined) => {
         resolveLoad(subscriptions);
+        await settle();
     };
 };
 
@@ -156,11 +157,12 @@ const putValueBack = async (rerender: () => void) => {
     await settle();
 };
 
-describe('useBYOEInboxCleanupSenders', () => {
+describe('useFinishedBYOEImportSenders', () => {
     beforeEach(() => {
         vi.clearAllMocks();
         easySwitch.loading = 'idle';
         easySwitch.entries = [];
+        view.code = FeatureCode.BYOEInboxCleanupModal;
         view.canShow = true;
 
         vi.mocked(useFeature).mockImplementation(() => {
@@ -180,7 +182,7 @@ describe('useBYOEInboxCleanupSenders', () => {
         });
         vi.mocked(useAddresses).mockReturnValue([[byoeAddress], false] as any);
         vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: true } } as any);
-        vi.mocked(loadSendersWhenFree).mockResolvedValue(senders);
+        vi.mocked(fetchSendersIfStillDue).mockResolvedValue(senders);
         mockUseApi(mockApi);
     });
 
@@ -191,7 +193,7 @@ describe('useBYOEInboxCleanupSenders', () => {
 
         expect(useFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
         expect(mockEasySwitchDispatch).not.toHaveBeenCalled();
-        expect(loadSendersWhenFree).not.toHaveBeenCalled();
+        expect(fetchSendersIfStillDue).not.toHaveBeenCalled();
         expect(updateFeature).not.toHaveBeenCalled();
         expect(result.current).toBeUndefined();
     });
@@ -227,7 +229,7 @@ describe('useBYOEInboxCleanupSenders', () => {
         await settle();
 
         expect(mockEasySwitchDispatch).not.toHaveBeenCalled();
-        expect(loadSendersWhenFree).not.toHaveBeenCalled();
+        expect(fetchSendersIfStillDue).not.toHaveBeenCalled();
         expect(updateFeature).not.toHaveBeenCalled();
     });
 
@@ -240,7 +242,7 @@ describe('useBYOEInboxCleanupSenders', () => {
 
         expect(updateFeature).toHaveBeenCalledTimes(1);
         expect(updateFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
-        expect(loadSendersWhenFree).not.toHaveBeenCalled();
+        expect(fetchSendersIfStillDue).not.toHaveBeenCalled();
     });
 
     it('still clears a failed import before the view can show the window', async () => {
@@ -271,7 +273,7 @@ describe('useBYOEInboxCleanupSenders', () => {
         setup();
         await settle();
 
-        expect(loadSendersWhenFree).not.toHaveBeenCalled();
+        expect(fetchSendersIfStillDue).not.toHaveBeenCalled();
         expect(updateFeature).not.toHaveBeenCalled();
     });
 
@@ -305,27 +307,67 @@ describe('useBYOEInboxCleanupSenders', () => {
         expect(result.current).toBeDefined();
     });
 
+    describe("with the Mailing lists spotlight's code", () => {
+        beforeEach(() => {
+            view.code = FeatureCode.BYOEInboxCleanupSpotlight;
+            easySwitch.loading = 'success';
+        });
+
+        it('reads, checks fresh and returns the senders on that code', async () => {
+            easySwitch.entries = [buildEntry(ApiImporterState.DONE)];
+            const { result } = setup();
+            await settle();
+
+            expect(useFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupSpotlight, true);
+            expect(useFeature).not.toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, expect.anything());
+            expect(fetchSendersIfStillDue).toHaveBeenCalledWith(
+                mockMailDispatch,
+                mockApi,
+                FeatureCode.BYOEInboxCleanupSpotlight
+            );
+            expect(result.current).toBe(senders);
+        });
+
+        it('clears that code when the import failed', async () => {
+            easySwitch.entries = [buildEntry(ApiImporterState.CANCELED)];
+            setup();
+            await settle();
+
+            expect(updateFeature).toHaveBeenCalledTimes(1);
+            expect(updateFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupSpotlight, false);
+        });
+
+        it('clears that code when there are no senders', async () => {
+            easySwitch.entries = [buildEntry(ApiImporterState.DONE)];
+            vi.mocked(fetchSendersIfStillDue).mockResolvedValue([]);
+            setup();
+            await settle();
+
+            expect(updateFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupSpotlight, false);
+        });
+    });
+
     describe('when the import finished', () => {
         beforeEach(() => {
             easySwitch.loading = 'success';
             easySwitch.entries = [buildEntry(ApiImporterState.DONE)];
         });
 
-        it('loads the senders once the screen is free, then returns them and leaves the cleanup for the window to clear', async () => {
+        it('loads the senders if the code is still due, returns them and leaves the cleanup for the window to clear', async () => {
             const { result } = setup();
             await settle();
 
-            expect(loadSendersWhenFree).toHaveBeenCalledWith({
-                dispatch: mockMailDispatch,
-                api: mockApi,
-                signal: expect.any(AbortSignal),
-            });
+            expect(fetchSendersIfStillDue).toHaveBeenCalledWith(
+                mockMailDispatch,
+                mockApi,
+                FeatureCode.BYOEInboxCleanupModal
+            );
             expect(result.current).toBe(senders);
             expect(updateFeature).not.toHaveBeenCalled();
         });
 
         it('clears the cleanup and returns nothing when there are no senders', async () => {
-            vi.mocked(loadSendersWhenFree).mockResolvedValue([]);
+            vi.mocked(fetchSendersIfStillDue).mockResolvedValue([]);
             const { result } = setup();
             await settle();
 
@@ -333,8 +375,8 @@ describe('useBYOEInboxCleanupSenders', () => {
             expect(result.current).toBeUndefined();
         });
 
-        it("returns nothing and leaves it due when the cleanup was cancelled or isn't due any more", async () => {
-            vi.mocked(loadSendersWhenFree).mockResolvedValue(undefined);
+        it("returns nothing and leaves it alone when the fresh read says it isn't due any more", async () => {
+            vi.mocked(fetchSendersIfStillDue).mockResolvedValue(undefined);
             const { result } = setup();
             await settle();
 
@@ -343,7 +385,7 @@ describe('useBYOEInboxCleanupSenders', () => {
         });
 
         it('returns nothing and leaves it due when a request fails', async () => {
-            vi.mocked(loadSendersWhenFree).mockRejectedValue(new Error('offline'));
+            vi.mocked(fetchSendersIfStillDue).mockRejectedValue(new Error('offline'));
             const { result } = setup();
             await settle();
 
@@ -356,7 +398,7 @@ describe('useBYOEInboxCleanupSenders', () => {
             const { result, rerender } = setup();
             await settle();
 
-            expect(loadSendersWhenFree).not.toHaveBeenCalled();
+            expect(fetchSendersIfStillDue).not.toHaveBeenCalled();
 
             vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: true } } as any);
             rerender();
@@ -370,7 +412,7 @@ describe('useBYOEInboxCleanupSenders', () => {
             const { result, rerender } = setup();
             await settle();
 
-            expect(loadSendersWhenFree).not.toHaveBeenCalled();
+            expect(fetchSendersIfStillDue).not.toHaveBeenCalled();
             expect(updateFeature).not.toHaveBeenCalled();
 
             view.canShow = true;
@@ -380,27 +422,29 @@ describe('useBYOEInboxCleanupSenders', () => {
             expect(result.current).toBeDefined();
         });
 
-        it('the view no longer being ready while the senders load cancels them and leaves it due', async () => {
-            holdNextLoad();
-            const { rerender } = setup();
+        it('ignores a load that finishes after the view stopped being ready, and leaves it due', async () => {
+            const finishLoad = holdLoad();
+            const { result, rerender } = setup();
             await settle();
 
             view.canShow = false;
             rerender();
             await settle();
+            await finishLoad(senders);
 
-            expect(getLoadSignal().aborted).toBe(true);
+            expect(result.current).toBeUndefined();
             expect(updateFeature).not.toHaveBeenCalled();
         });
 
-        it('cancels loading the senders when unmounted', async () => {
-            holdNextLoad();
+        it("doesn't clear the code when unmounted before a load with no senders finishes", async () => {
+            const finishLoad = holdLoad();
             const { unmount } = setup();
             await settle();
 
             unmount();
+            await finishLoad([]);
 
-            expect(getLoadSignal().aborted).toBe(true);
+            expect(updateFeature).not.toHaveBeenCalled();
         });
 
         it("doesn't load the senders again when a report change leaves the import finished", async () => {
@@ -411,7 +455,7 @@ describe('useBYOEInboxCleanupSenders', () => {
             rerender();
             await settle();
 
-            expect(loadSendersWhenFree).toHaveBeenCalledTimes(1);
+            expect(fetchSendersIfStillDue).toHaveBeenCalledTimes(1);
             expect(result.current).toBe(senders);
         });
 
@@ -425,14 +469,14 @@ describe('useBYOEInboxCleanupSenders', () => {
             rerender();
             await settle();
 
-            expect(loadSendersWhenFree).toHaveBeenCalledTimes(1);
+            expect(fetchSendersIfStillDue).toHaveBeenCalledTimes(1);
             expect(result.current).toBe(senders);
 
             unmount();
-            const nextVisit = renderHook(() => useBYOEInboxCleanupSenders(view.canShow));
+            const nextVisit = renderHook(() => useFinishedBYOEImportSenders(view.code, view.canShow));
             await settle();
 
-            expect(loadSendersWhenFree).toHaveBeenCalledTimes(2);
+            expect(fetchSendersIfStillDue).toHaveBeenCalledTimes(2);
             expect(nextVisit.result.current).toBeDefined();
         });
     });

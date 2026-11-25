@@ -10,6 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import ContactImage from '@proton/components/containers/contacts/ContactImage';
+import { FeatureCode } from '@proton/features/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
@@ -17,7 +18,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import type { BYOEInboxCleanupSection } from '../../../helpers/byoeInboxCleanup';
-import { clearBYOEInboxCleanup, groupBYOEInboxCleanupSenders } from '../../../helpers/byoeInboxCleanup';
+import { clearBYOEFeature, groupBYOEInboxCleanupSenders } from '../../../helpers/byoeInboxCleanup';
 import useBYOEInboxCleanupConfirm from '../../../hooks/useBYOEInboxCleanupConfirm';
 import { useMailDispatch } from '../../../store/hooks';
 import { ModalCheckboxWithLabel } from './SubscriptionsList/ModalBlockSender/ModalSharedComponents';
@@ -274,7 +275,7 @@ export const BYOEInboxCleanupModal = ({ subscriptions, modalProps }: BYOEInboxCl
     const handleClose = () => {
         if (!hasClearedRef.current) {
             hasClearedRef.current = true;
-            clearBYOEInboxCleanup(dispatch);
+            clearBYOEFeature(dispatch, FeatureCode.BYOEInboxCleanupModal);
         }
         modalProps.onClose();
     };

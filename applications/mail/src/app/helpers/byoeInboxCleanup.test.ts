@@ -7,8 +7,7 @@ import type { Feature } from '@proton/features/interface';
 import { FeatureCode } from '@proton/features/interface';
 import { fetchFeatures } from '@proton/features/reducer';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { domIsBusy } from '@proton/shared/lib/busy/busy';
-import { ADDRESS_FLAGS, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
+import { ADDRESS_FLAGS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
@@ -17,14 +16,13 @@ import type { BYOEInboxCleanupProgress } from './byoeInboxCleanup';
 import {
     BYOE_INBOX_CLEANUP_SENDERS_QUERY,
     cleanUpBYOEInboxSenders,
+    fetchIsBYOEFeatureDue,
+    fetchSendersIfStillDue,
     getBYOEInboxCleanupSenders,
     getFinishedBYOEImportOutcome,
     groupBYOEInboxCleanupSenders,
-    loadSendersWhenFree,
-    waitForFreeScreen,
 } from './byoeInboxCleanup';
 
-vi.mock('@proton/shared/lib/busy/busy', () => ({ domIsBusy: vi.fn() }));
 vi.mock('@proton/features/reducer', () => ({ fetchFeatures: vi.fn() }));
 
 const withoutOneClick = (subscription: NewsletterSubscription): NewsletterSubscription => ({
@@ -679,164 +677,82 @@ describe('getFinishedBYOEImportOutcome', () => {
     });
 });
 
-const trackSettled = <T>(promise: Promise<T>) => {
-    const state: { settled: boolean; value?: T } = { settled: false };
-    void promise.then((value) => {
-        state.settled = true;
-        state.value = value;
-    });
-    return state;
-};
+describe('fetchIsBYOEFeatureDue', () => {
+    const mockDispatch = vi.fn();
 
-const createDeferred = <T>() => {
-    let resolve = (_value: T) => {};
-    const promise = new Promise<T>((resolvePromise) => {
-        resolve = resolvePromise;
-    });
-    return { promise, resolve };
-};
-
-describe('waitForFreeScreen', () => {
     beforeEach(() => {
         vi.clearAllMocks();
-        vi.useFakeTimers();
+        vi.mocked(fetchFeatures).mockImplementation(() => ({ type: 'fetchFeatures' }) as any);
     });
 
-    afterEach(() => {
-        vi.useRealTimers();
+    it.each([FeatureCode.BYOEInboxCleanupModal, FeatureCode.BYOEInboxCleanupSpotlight] as const)(
+        'reads %s fresh from the server, skipping the cache',
+        async (featureCode) => {
+            mockDispatch.mockResolvedValue({ [featureCode]: { Value: true } });
+
+            await expect(fetchIsBYOEFeatureDue(mockDispatch, featureCode)).resolves.toBe(true);
+            expect(fetchFeatures).toHaveBeenCalledWith([featureCode], { cache: CacheType.None });
+            expect(mockDispatch).toHaveBeenCalledWith({ type: 'fetchFeatures' });
+        }
+    );
+
+    it.each([false, undefined, 'true'])('is not due when the value is %s', async (Value) => {
+        mockDispatch.mockResolvedValue({ [FeatureCode.BYOEInboxCleanupSpotlight]: { Value } });
+
+        await expect(fetchIsBYOEFeatureDue(mockDispatch, FeatureCode.BYOEInboxCleanupSpotlight)).resolves.toBe(false);
     });
 
-    it('resolves straight away when the screen is free', async () => {
-        vi.mocked(domIsBusy).mockReturnValue(false);
+    // Not due would make the hook leave it alone for this mount, so a failure has to reach it as one
+    it('rejects when the read fails', async () => {
+        mockDispatch.mockRejectedValue(new Error('offline'));
 
-        const wait = trackSettled(waitForFreeScreen(new AbortController().signal));
-        await vi.advanceTimersByTimeAsync(0);
-
-        expect(wait.settled).toBe(true);
-        expect(domIsBusy).toHaveBeenCalledTimes(1);
-    });
-
-    it('checks every second with no time limit while the screen is busy, and resolves once it is free', async () => {
-        vi.mocked(domIsBusy).mockReturnValue(true);
-
-        const wait = trackSettled(waitForFreeScreen(new AbortController().signal));
-        await vi.advanceTimersByTimeAsync(60 * SECOND);
-
-        expect(domIsBusy).toHaveBeenCalledTimes(61);
-        expect(wait.settled).toBe(false);
-
-        vi.mocked(domIsBusy).mockReturnValue(false);
-        await vi.advanceTimersByTimeAsync(SECOND);
-
-        expect(wait.settled).toBe(true);
-    });
-
-    it('stops checking and resolves when aborted', async () => {
-        vi.mocked(domIsBusy).mockReturnValue(true);
-        const controller = new AbortController();
-
-        const wait = trackSettled(waitForFreeScreen(controller.signal));
-        controller.abort();
-        await vi.advanceTimersByTimeAsync(3 * SECOND);
-
-        expect(wait.settled).toBe(true);
-        expect(domIsBusy).toHaveBeenCalledTimes(1);
+        await expect(fetchIsBYOEFeatureDue(mockDispatch, FeatureCode.BYOEInboxCleanupModal)).rejects.toThrow('offline');
     });
 });
 
-describe('loadSendersWhenFree', () => {
+describe('fetchSendersIfStillDue', () => {
     const senders = generateSubscriptionList(2);
-    const due = { [FeatureCode.BYOEInboxCleanupModal]: { Value: true } };
-    const notDue = { [FeatureCode.BYOEInboxCleanupModal]: { Value: false } };
-
     const mockDispatch = vi.fn();
     const mockApi = vi.fn();
 
-    const load = (signal = new AbortController().signal) => {
-        return loadSendersWhenFree({ dispatch: mockDispatch, api: mockApi, signal });
+    const fetchSenders = () => {
+        return fetchSendersIfStillDue(mockDispatch, mockApi, FeatureCode.BYOEInboxCleanupSpotlight);
     };
 
     beforeEach(() => {
         vi.clearAllMocks();
-        vi.useFakeTimers();
-        vi.mocked(domIsBusy).mockReturnValue(false);
-        vi.mocked(fetchFeatures).mockImplementation(() => ({ type: 'fetchFeatures' }) as any);
-        mockDispatch.mockResolvedValue(due);
-        mockSubscriptionsResponse(mockApi, senders);
-    });
-
-    afterEach(() => {
-        vi.useRealTimers();
-    });
-
-    it('reads the cleanup feature fresh from the server only once the screen is free, then returns the senders', async () => {
-        vi.mocked(domIsBusy).mockReturnValue(true);
-
-        const result = trackSettled(load());
-        await vi.advanceTimersByTimeAsync(SECOND);
-
-        expect(mockDispatch).not.toHaveBeenCalled();
-        expect(mockApi).not.toHaveBeenCalled();
-
-        vi.mocked(domIsBusy).mockReturnValue(false);
-        await vi.advanceTimersByTimeAsync(SECOND);
-
-        expect(fetchFeatures).toHaveBeenCalledWith([FeatureCode.BYOEInboxCleanupModal], { cache: CacheType.None });
-        expect(mockDispatch).toHaveBeenCalledWith({ type: 'fetchFeatures' });
-        expect(mockApi).toHaveBeenCalledTimes(1);
-        expect(result.value).toEqual(senders);
-    });
-
-    it("returns undefined and loads no senders when the cleanup isn't due any more", async () => {
-        mockDispatch.mockResolvedValue(notDue);
-
-        await expect(load()).resolves.toBeUndefined();
-        expect(mockApi).not.toHaveBeenCalled();
-    });
-
-    it('returns undefined and reads nothing when aborted while waiting for a free screen', async () => {
-        vi.mocked(domIsBusy).mockReturnValue(true);
-        const controller = new AbortController();
-
-        const result = load(controller.signal);
-        controller.abort();
-
-        await expect(result).resolves.toBeUndefined();
-        expect(mockDispatch).not.toHaveBeenCalled();
-    });
-
-    it('returns undefined and loads no senders when aborted while reading the feature', async () => {
-        const read = createDeferred<typeof due>();
-        mockDispatch.mockReturnValue(read.promise);
-        const controller = new AbortController();
-
-        const result = load(controller.signal);
-        await vi.advanceTimersByTimeAsync(0);
-        controller.abort();
-        read.resolve(due);
-
-        await expect(result).resolves.toBeUndefined();
-        expect(mockApi).not.toHaveBeenCalled();
-    });
-
-    it('returns undefined when aborted while loading the senders', async () => {
-        const sendersResponse = createDeferred<unknown>();
         mockApi.mockReset();
-        mockApi.mockReturnValue(sendersResponse.promise);
-        const controller = new AbortController();
-
-        const result = load(controller.signal);
-        await vi.advanceTimersByTimeAsync(0);
-        controller.abort();
-        sendersResponse.resolve({ NewsletterSubscriptions: senders, PageInfo: { Total: 2, NextPage: null } });
-
-        await expect(result).resolves.toBeUndefined();
+        vi.mocked(fetchFeatures).mockImplementation(() => ({ type: 'fetchFeatures' }) as any);
+        mockDispatch.mockResolvedValue({ [FeatureCode.BYOEInboxCleanupSpotlight]: { Value: true } });
     });
 
-    // Returning no senders would make the hook clear the cleanup, so a failure has to reach it as one
+    it('reads the code it is given fresh, then loads and returns the senders', async () => {
+        mockSubscriptionsResponse(mockApi, senders);
+
+        await expect(fetchSenders()).resolves.toEqual(senders);
+        expect(fetchFeatures).toHaveBeenCalledWith([FeatureCode.BYOEInboxCleanupSpotlight], {
+            cache: CacheType.None,
+        });
+        expect(mockDispatch.mock.invocationCallOrder[0]).toBeLessThan(mockApi.mock.invocationCallOrder[0]);
+    });
+
+    it("returns undefined and loads no senders when the code isn't due any more", async () => {
+        mockDispatch.mockResolvedValue({ [FeatureCode.BYOEInboxCleanupSpotlight]: { Value: false } });
+
+        await expect(fetchSenders()).resolves.toBeUndefined();
+        expect(mockApi).not.toHaveBeenCalled();
+    });
+
+    it('returns an empty list when there are no senders', async () => {
+        mockSubscriptionsResponse(mockApi, []);
+
+        await expect(fetchSenders()).resolves.toEqual([]);
+    });
+
+    // An empty list would make the hook clear the code, so a failure has to reach it as one
     it.each([
         {
-            request: 'reading the feature',
+            request: 'the fresh read',
             fail: () => {
                 mockDispatch.mockRejectedValue(new Error('offline'));
             },
@@ -844,13 +760,12 @@ describe('loadSendersWhenFree', () => {
         {
             request: 'loading the senders',
             fail: () => {
-                mockApi.mockReset();
                 mockApi.mockRejectedValue(new Error('offline'));
             },
         },
-    ])('rejects when $request fails, so the cleanup stays due', async ({ fail }) => {
+    ])('rejects when $request fails', async ({ fail }) => {
         fail();
 
-        await expect(load()).rejects.toThrow('offline');
+        await expect(fetchSenders()).rejects.toThrow('offline');
     });
 });
