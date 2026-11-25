@@ -4,6 +4,7 @@ import type { SectionConfig, SidebarConfig } from '@proton/components/containers
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { getAccessControlPageAvailability } from '@proton/console/organization/getAccessControlPageAvailability';
 import { getActivityMonitorPageAvailability } from '@proton/console/organization/getActivityMonitorPageAvailability';
+import { getAlwaysOnVpnPageAvailability } from '@proton/console/organization/getAlwaysOnVpnPageAvailability';
 import { getGatewaysPageAvailability } from '@proton/console/organization/getGatewaysPageAvailability';
 import { getGroupsPageAvailability } from '@proton/console/organization/getGroupsPageAvailability';
 import { getOrganizationKeysPageAvailability } from '@proton/console/organization/getOrganizationKeysPageAvailability';
@@ -338,7 +339,7 @@ export const getOrganizationAppRoutes = ({
                 .t`Enforce VPN usage across your organization by blocking internet access unless a VPN connection is active.`,
             to: '/always-on-vpn',
             icon: IcVault,
-            available: isAlwaysOnVpnEnabled && permissions['account.always_on.read'] && entitlements.isVpnB2B,
+            available: getAlwaysOnVpnPageAvailability({ entitlements, permissions, isAlwaysOnVpnEnabled }).alwaysOnVpn,
         },
         connectionEvents: {
             id: 'connectionEvents',
