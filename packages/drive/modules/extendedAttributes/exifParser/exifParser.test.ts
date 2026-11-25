@@ -49,13 +49,62 @@ const createLargeJpegWithExif = () => {
     );
 };
 
+// ExifReader does not check chunk CRCs, so they are left as zeros
+const createPngChunk = (type: string, data: Uint8Array<ArrayBuffer>) => {
+    const chunk = new Uint8Array(4 + 4 + data.length + 4);
+    new DataView(chunk.buffer).setUint32(0, data.length);
+    chunk.set(new TextEncoder().encode(type), 4);
+    chunk.set(data, 8);
+    return chunk;
+};
+
+// The eXIf chunk starts after the signature (8 bytes), the IHDR chunk (25 bytes) and the IDAT chunk (12 bytes + data)
+const EXIF_CHUNK_OFFSET_WITHOUT_IMAGE_DATA = 8 + 25 + 12;
+const EXIF_CHUNK_SIZE = 12 + 64; // chunk framing + the 64-byte TIFF block
+
+const createPngWithExifAfterImageData = (imageDataSize = 2 * 1024 * 1024) => {
+    const header = new Uint8Array(13);
+    const view = new DataView(header.buffer);
+    view.setUint32(0, 1);
+    view.setUint32(4, 1);
+    header.set([8, 6, 0, 0, 0], 8);
+    return new File(
+        [
+            new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+            createPngChunk('IHDR', header),
+            // The default 2 MB of image data puts the eXIf chunk past the 1 MB head read for images over 100 MB
+            createPngChunk('IDAT', new Uint8Array(imageDataSize)),
+            createPngChunk('eXIf', createTiffWithDateTimeOriginal()),
+            createPngChunk('IEND', new Uint8Array(0)),
+        ],
+        'image.png',
+        { type: 'image/png' }
+    );
+};
+
+// Reports a multi-GB size without allocating it: reads only reach the real content
+const withReportedSize = (file: File, size: number) => {
+    Object.defineProperty(file, 'size', { value: size });
+    return file;
+};
+
+const TEN_GB = 10 * 1024 * 1024 * 1024;
+const MAX_EXIF_FULL_READ_SIZE = 100 * 1024 * 1024;
+const EXIF_HEAD_SIZE = 1024 * 1024;
+
+// Counts the bytes loaded into memory: ExifReader reads blobs with FileReader, the fallback with arrayBuffer().
+// Slices are not counted, they reference the file without reading it.
 const trackBytesRead = () => {
-    const originalSlice = Blob.prototype.slice;
+    const originalReadAsArrayBuffer = FileReader.prototype.readAsArrayBuffer;
+    const originalArrayBuffer = Blob.prototype.arrayBuffer;
     let bytesRead = 0;
-    vi.spyOn(Blob.prototype, 'slice').mockImplementation(function (this: Blob, ...args) {
-        const chunk = originalSlice.apply(this, args);
-        bytesRead += chunk.size;
-        return chunk;
+    vi.spyOn(FileReader.prototype, 'readAsArrayBuffer').mockImplementation(function (this: FileReader, blob: Blob) {
+        bytesRead += blob.size;
+        return originalReadAsArrayBuffer.call(this, blob);
+    });
+    vi.spyOn(Blob.prototype, 'arrayBuffer').mockImplementation(function (this: Blob) {
+        bytesRead += this.size;
+        return originalArrayBuffer.call(this);
     });
     return { getBytesRead: () => bytesRead };
 };
@@ -151,4 +200,60 @@ describe('getExifInfo', () => {
         expect(result).toBeUndefined();
         expect(consoleWarnSpy).toHaveBeenCalledWith('Cannot read exif data');
     });
+
+    it('should not load a multi-GB image whose head has no readable metadata', async () => {
+        const file = withReportedSize(
+            new File([new Uint8Array(PADDING_SIZE)], 'image.png', { type: 'image/png' }),
+            TEN_GB
+        );
+        file.arrayBuffer = vi.fn();
+        const bytesRead = trackBytesRead();
+
+        const result = await getExifInfo(file, 'image/png');
+
+        expect(result).toBeUndefined();
+        expect(file.arrayBuffer).not.toHaveBeenCalled();
+        expect(bytesRead.getBytesRead()).toBeLessThanOrEqual(2 * 1024 * 1024);
+    });
+
+    it('should read EXIF data from the head of a multi-GB plain TIFF without loading the whole file', async () => {
+        const file = withReportedSize(
+            new File([createTiffWithDateTimeOriginal(), new Uint8Array(PADDING_SIZE)], 'photo.tiff', {
+                type: 'image/tiff',
+            }),
+            TEN_GB
+        );
+        const bytesRead = trackBytesRead();
+
+        const result = await getExifInfo(file, 'image/tiff');
+
+        expect(result?.exif?.DateTimeOriginal?.description).toBe(DATE_TIME_ORIGINAL);
+        expect(bytesRead.getBytesRead()).toBeLessThanOrEqual(2 * 1024 * 1024);
+    });
+
+    it.each([
+        { size: MAX_EXIF_FULL_READ_SIZE, expected: DATE_TIME_ORIGINAL },
+        { size: MAX_EXIF_FULL_READ_SIZE + 1, expected: undefined },
+    ])('should read EXIF data past the 1 MB head only up to 100 MB (size $size)', async ({ size, expected }) => {
+        const file = withReportedSize(createPngWithExifAfterImageData(), size);
+
+        const result = await getExifInfo(file, 'image/png');
+
+        expect(result?.exif?.DateTimeOriginal?.description).toBe(expected);
+    });
+
+    it.each([
+        { position: 'ending at 1 MB', exifChunkOffset: EXIF_HEAD_SIZE - EXIF_CHUNK_SIZE, expected: DATE_TIME_ORIGINAL },
+        { position: 'starting at 1 MB', exifChunkOffset: EXIF_HEAD_SIZE, expected: undefined },
+    ])(
+        'should read EXIF data of an image over 100 MB only from the 1 MB head (eXIf chunk $position)',
+        async ({ exifChunkOffset, expected }) => {
+            const imageDataSize = exifChunkOffset - EXIF_CHUNK_OFFSET_WITHOUT_IMAGE_DATA;
+            const file = withReportedSize(createPngWithExifAfterImageData(imageDataSize), MAX_EXIF_FULL_READ_SIZE + 1);
+
+            const result = await getExifInfo(file, 'image/png');
+
+            expect(result?.exif?.DateTimeOriginal?.description).toBe(expected);
+        }
+    );
 });

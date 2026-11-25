@@ -2,7 +2,7 @@ import metrics from '@proton/metrics/metricsInstance';
 import type { HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson } from '@proton/metrics/types/drive_thumbnail_errors_total_v1.schema';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { NoHandlerError, ThumbnailError, UnsupportedFormatError, wrapError } from './thumbnailError';
+import { FileTooLargeError, NoHandlerError, ThumbnailError, UnsupportedFormatError, wrapError } from './thumbnailError';
 
 type ThumbnailErrorMetricLabels = HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson['Labels'];
 type ThumbnailHandler = ThumbnailErrorMetricLabels['handler'];
@@ -97,6 +97,11 @@ function reportGenerationError(thumbnailError: ThumbnailError): void {
 
 export function reportThumbnailError(error: unknown): void {
     const thumbnailError = error instanceof ThumbnailError ? error : wrapError(error);
+    if (thumbnailError instanceof FileTooLargeError) {
+        // A deliberate size skip, not a failure. Its context carries the exact file size, so it never
+        // goes to Sentry.
+        return;
+    }
     if (thumbnailError instanceof NoHandlerError) {
         reportNoHandler();
     } else {

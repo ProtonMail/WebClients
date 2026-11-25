@@ -4,7 +4,8 @@ import { type SupportedMimeTypes, THUMBNAIL_MAX_SIDE } from '@proton/shared/lib/
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 
-import { FileLoadError, ThumbnailError } from '../thumbnailError';
+import { MAX_SVG_SIZE_FOR_THUMBNAIL } from '../constants';
+import { FileLoadError, FileTooLargeError, ThumbnailError } from '../thumbnailError';
 import { BaseHandler } from './baseHandler';
 import type { ThumbnailGenerationResult } from './interfaces';
 import { getImageFromFile } from './utils/getImageFromFile';
@@ -25,6 +26,15 @@ export class SVGHandler extends BaseHandler {
         originalMimeType: string,
         debug: boolean = false
     ): Promise<ThumbnailGenerationResult> {
+        if (fileSize > MAX_SVG_SIZE_FOR_THUMBNAIL) {
+            throw new FileTooLargeError('large SVG image', {
+                context: {
+                    stage: 'SVG size check',
+                    mimeType: content.type,
+                },
+            });
+        }
+
         const perf = this.createPerformanceTracker(debug);
 
         try {

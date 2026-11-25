@@ -3,7 +3,7 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import * as constants from '../constants';
-import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
+import { FileTooLargeError, MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { CbzHandler } from './cbzHandler';
 
 vi.mock('@proton/file-preview/ComicBookPreview', () => ({
@@ -41,7 +41,7 @@ describe('CbzHandler', () => {
     });
 
     describe('generate', () => {
-        test('Throws UnsupportedFormatError for large CBZ files on iOS', async () => {
+        test('Throws FileTooLargeError for large CBZ files on iOS', async () => {
             Object.defineProperty(constants, 'isIosDevice', { value: true, writable: true });
 
             const largeSize = 150 * 1024 * 1024; // 150MB, exceeds 100MB limit
@@ -56,7 +56,7 @@ describe('CbzHandler', () => {
                     [ThumbnailType.Type1],
                     'application/x-cbz'
                 )
-            ).rejects.toThrow(UnsupportedFormatError);
+            ).rejects.toThrow(FileTooLargeError);
 
             Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
         });

@@ -3,7 +3,7 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import * as constants from '../constants';
-import { UnsupportedFormatError } from '../thumbnailError';
+import { FileTooLargeError, UnsupportedFormatError } from '../thumbnailError';
 import { VideoHandler } from './videoHandler';
 
 vi.mock('../constants', async () => ({
@@ -103,7 +103,7 @@ describe('VideoHandler', () => {
             ).rejects.toThrow(UnsupportedFormatError);
         });
 
-        test('Throws UnsupportedFormatError for large videos on iOS', async () => {
+        test('Throws FileTooLargeError for large videos on iOS', async () => {
             Object.defineProperty(constants, 'isIosDevice', { value: true, writable: true });
 
             const largeSize = 600 * 1024 * 1024; // 600MB, exceeds 500MB limit
@@ -118,7 +118,7 @@ describe('VideoHandler', () => {
                     [ThumbnailType.Type1],
                     'video/mp4'
                 )
-            ).rejects.toThrow(UnsupportedFormatError);
+            ).rejects.toThrow(FileTooLargeError);
 
             Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
         });

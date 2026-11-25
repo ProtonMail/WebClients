@@ -5,7 +5,7 @@ import type { createWorker } from '@proton/raw-images/createWorker';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import * as constants from '../constants';
-import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
+import { FileTooLargeError, MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { RawImageHandler } from './rawImageHandler';
 
 vi.mock('@proton/raw-images/createWorker', () => ({
@@ -51,7 +51,7 @@ describe('RawImageHandler', () => {
     });
 
     describe('generate', () => {
-        test('Throws UnsupportedFormatError for large RAW images on iOS', async () => {
+        test('Throws FileTooLargeError for large RAW images on iOS', async () => {
             Object.defineProperty(constants, 'isIosDevice', { value: true, writable: true });
 
             const largeSize = 150 * 1024 * 1024; // 150MB, exceeds 100MB limit
@@ -66,7 +66,7 @@ describe('RawImageHandler', () => {
                     [ThumbnailType.Type1],
                     'image/x-nikon-nef'
                 )
-            ).rejects.toThrow(UnsupportedFormatError);
+            ).rejects.toThrow(FileTooLargeError);
 
             Object.defineProperty(constants, 'isIosDevice', { value: false, writable: true });
         });

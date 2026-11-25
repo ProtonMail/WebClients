@@ -84,6 +84,10 @@ Supported photo tags:
 - `PhotoTag.Portraits` - Portrait mode photo
 - `PhotoTag.Selfies` - Selfie photo
 
+## Limits
+
+- For images over 100 MB, only the first 1 MB is parsed for metadata, so metadata stored past it (for example a PNG `eXIf` chunk after the image data) is not read. Reading a multi-GB file whole crashes the tab.
+
 ## Architecture
 
 The module follows a functional architecture pattern similar to the thumbnails module:

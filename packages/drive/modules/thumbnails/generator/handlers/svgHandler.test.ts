@@ -1,5 +1,21 @@
-import { FileLoadError } from '../thumbnailError';
+import { ThumbnailType } from '@protontech/drive-sdk';
+
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import type * as browserHelpers from '@proton/shared/lib/helpers/browser';
+
+import { FileLoadError, FileTooLargeError } from '../thumbnailError';
 import { SVGHandler } from './svgHandler';
+import { getImageFromFile } from './utils/getImageFromFile';
+
+vi.mock('./utils/getImageFromFile', () => ({
+    getImageFromFile: vi.fn(),
+}));
+
+vi.mock('@proton/shared/lib/helpers/browser', async (importOriginal) => ({
+    ...(await importOriginal<typeof browserHelpers>()),
+    isFirefox: vi.fn(),
+}));
 
 if (!global.Blob.prototype.text) {
     global.Blob.prototype.text = async function (this: Blob) {
@@ -20,6 +36,8 @@ describe('SVGHandler', () => {
     let handler: SVGHandler;
 
     beforeEach(() => {
+        vi.clearAllMocks();
+        vi.mocked(isFirefox).mockReturnValue(false);
         handler = new SVGHandler();
     });
 
@@ -39,6 +57,45 @@ describe('SVGHandler', () => {
     describe('metadata', () => {
         test('Handler name is SVGHandler', () => {
             expect(handler.handlerName).toBe('SVGHandler');
+        });
+    });
+
+    describe('generate', () => {
+        test('Throws FileTooLargeError without reading SVG files over 10 MB', async () => {
+            // Firefox reads the whole SVG as text before decoding it
+            vi.mocked(isFirefox).mockReturnValue(true);
+            const blob = new Blob(['<svg></svg>'], { type: 'image/svg+xml' });
+            const textSpy = vi.spyOn(blob, 'text');
+
+            await expect(
+                handler.generate(
+                    blob,
+                    'large.svg',
+                    10 * 1024 * 1024 + 1,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/svg+xml'
+                )
+            ).rejects.toThrow(FileTooLargeError);
+            expect(getImageFromFile).not.toHaveBeenCalled();
+            expect(textSpy).not.toHaveBeenCalled();
+        });
+
+        test('Decodes SVG files of 10 MB or less', async () => {
+            vi.mocked(getImageFromFile).mockRejectedValue(new Error('decode stopped by the test'));
+            const blob = new Blob(['<svg></svg>'], { type: 'image/svg+xml' });
+
+            await expect(
+                handler.generate(
+                    blob,
+                    'small.svg',
+                    10 * 1024 * 1024,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'image/svg+xml'
+                )
+            ).rejects.toThrow(FileLoadError);
+            expect(getImageFromFile).toHaveBeenCalledWith(blob);
         });
     });
 

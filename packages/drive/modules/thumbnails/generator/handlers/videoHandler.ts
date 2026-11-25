@@ -4,7 +4,7 @@ import { type SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@pro
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS, isIosDevice } from '../constants';
-import { FileLoadError, UnsupportedFormatError } from '../thumbnailError';
+import { FileLoadError, FileTooLargeError, UnsupportedFormatError } from '../thumbnailError';
 import { BaseHandler } from './baseHandler';
 import type { ThumbnailGenerationResult } from './interfaces';
 import { getImageFromCanvas } from './utils/getImageFromCanvas';
@@ -37,7 +37,7 @@ export class VideoHandler extends BaseHandler {
         }
 
         if (isIosDevice && fileSize > MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS) {
-            throw new UnsupportedFormatError('large video on iOS Safari', {
+            throw new FileTooLargeError('large video on iOS Safari', {
                 context: {
                     stage: 'video size check',
                     fileSize,
