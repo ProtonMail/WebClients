@@ -59,6 +59,10 @@ export class ClientCoordinator {
         }
     }
 
+    isRegistered(clientId: ClientId): boolean {
+        return this.clients.has(clientId);
+    }
+
     /**
      * Mark `clientId` as alive and update foreground tracking if it claims foreground.
      * Returns `isClientRegistered: false` when the coordinator has no record of this
