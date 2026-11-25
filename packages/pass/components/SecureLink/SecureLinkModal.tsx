@@ -22,6 +22,7 @@ type SecureLinkModalProps = ModalProps & {
 
 export const SecureLinkModal: FC<SecureLinkModalProps> = ({ itemId, shareId, itemSecureLink = null, ...props }) => {
     const [secureLink, setSecureLink] = useState<MaybeNull<SecureLink>>(null);
+    const [generated, setGenerated] = useState(false);
     const item = useItem(shareId, itemId);
 
     useEffect(() => {
@@ -51,12 +52,15 @@ export const SecureLinkModal: FC<SecureLinkModalProps> = ({ itemId, shareId, ite
             />
 
             {secureLink ? (
-                <SecureLinkDetails {...secureLink} key={`${key}-details`} />
+                <SecureLinkDetails {...secureLink} autoCopy={generated} key={`${key}-details`} />
             ) : (
                 <SecureLinkGenerate
                     itemId={itemId}
                     shareId={shareId}
-                    onLinkGenerated={setSecureLink}
+                    onLinkGenerated={(link) => {
+                        setGenerated(true);
+                        setSecureLink(link);
+                    }}
                     key={`${key}-create`}
                 />
             )}

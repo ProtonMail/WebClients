@@ -1,4 +1,4 @@
-import { type FC, useMemo, useRef, useState } from 'react';
+import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,16 +19,36 @@ import { useCopyToClipboard } from '../Settings/Clipboard/ClipboardProvider';
 
 type SecureLinkCard = { title: string; subtitle: string; icon: IconComponent; className?: string };
 
-export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCount, maxReadCount, expirationDate }) => {
+type Props = SecureLink & {
+    /** Automatically copies the link to the clipboard on mount (eg: right after generating it) */
+    autoCopy?: boolean;
+};
+
+export const SecureLinkDetails: FC<Props> = ({
+    active,
+    secureLink,
+    readCount,
+    maxReadCount,
+    expirationDate,
+    autoCopy = false,
+}) => {
     const copyToClipboard = useCopyToClipboard();
     const [linkCopied, setLinkCopied] = useState(false);
     const ref = useRef<HTMLButtonElement>(null);
+    const autoCopied = useRef(false);
 
     const copyLink = async () => {
         await copyToClipboard(secureLink);
         ref.current?.focus();
         setLinkCopied(true);
     };
+
+    useEffect(() => {
+        if (autoCopy && !autoCopied.current) {
+            autoCopied.current = true;
+            void copyLink();
+        }
+    }, [autoCopy]);
 
     const optionCards = useMemo<SecureLinkCard[]>(() => {
         const cards: SecureLinkCard[] = [
