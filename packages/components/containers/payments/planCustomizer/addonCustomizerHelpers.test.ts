@@ -11,6 +11,7 @@ import {
     TRIAL_MAX_USERS,
 } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
@@ -43,6 +44,7 @@ describe('computeAddonCustomizerItems', () => {
             [ADDON_PREFIXES.SCRIBE]: true,
             [ADDON_PREFIXES.LUMO]: true,
         },
+        multiSubscriptionContext: noSubscriptionContext,
     };
 
     it('allowedAddonTypes filters to specified prefixes only', () => {
@@ -798,6 +800,7 @@ describe('Scribe row with ScribeToLumo', () => {
             addonFlags,
             scribeToLumo,
             isSignup,
+            multiSubscriptionContext: noSubscriptionContext,
         }).map((item) => item.addonName);
 
     const getProps = ({

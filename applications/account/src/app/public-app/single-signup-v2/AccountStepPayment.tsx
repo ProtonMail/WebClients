@@ -26,6 +26,7 @@ import type {
     TokenPayment,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
@@ -349,6 +350,7 @@ const AccountStepPayment = ({
                                 [ADDON_PREFIXES.MEET]: showMeetCustomizer,
                             }}
                             telemetryContext={telemetryContext}
+                            multiSubscriptionContext={model.session?.multiSubscriptionContext ?? noSubscriptionContext}
                         />
                     );
                 })()}

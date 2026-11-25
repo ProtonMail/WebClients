@@ -1,9 +1,10 @@
 import { APPS } from '@proton/shared/lib/constants';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
-import { multiSubscriptionTestCatalog } from '../../testing/buildMultiSubscriptionContext';
+import { buildMultiSubscriptionContext } from '../../testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION, PLANS } from '../constants';
+import { noSubscriptionContext } from '../subscription/multi-subscription-context';
 import type { AddonCustomizerContext } from './interfaces';
 import {
     domainVpnBusinessGate,
@@ -21,6 +22,7 @@ const ctx = (overrides: Partial<AddonCustomizerContext> = {}): AddonCustomizerCo
     bannerHiddenByCoupon: false,
     featureFlagEnabled: false,
     isSignup: false,
+    multiSubscriptionContext: noSubscriptionContext,
     ...overrides,
 });
 
@@ -196,7 +198,7 @@ describe('domainVpnBusinessGate', () => {
 });
 
 describe('notSoldOnSingleUserB2CPlan', () => {
-    const flagOn = { featureFlagEnabled: true, entitlementCatalog: multiSubscriptionTestCatalog };
+    const flagOn = { multiSubscriptionContext: buildMultiSubscriptionContext([]) };
     const mailPlusWithLumoAddon = buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
 
     it.each([PLANS.MAIL, PLANS.BUNDLE, PLANS.VPN2024])('hides the Lumo addon on %s with the flag on', (planName) => {
@@ -240,7 +242,10 @@ describe('notSoldOnSingleUserB2CPlan', () => {
     it('shows the Lumo addon on Mail Plus with the flag off', () => {
         expect(
             notSoldOnSingleUserB2CPlan(
-                ctx({ entitlementCatalog: multiSubscriptionTestCatalog, planIDs: { [PLANS.MAIL]: 1 } })
+                ctx({
+                    multiSubscriptionContext: buildMultiSubscriptionContext([], false),
+                    planIDs: { [PLANS.MAIL]: 1 },
+                })
             )
         ).toBe(true);
     });

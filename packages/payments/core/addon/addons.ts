@@ -2,6 +2,7 @@ import type { PLANS } from '../constants';
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '../constants';
 import type { FeatureLimitKey } from '../interface';
 import { getAddonType, getSupportedAddons, supportsAddonType } from '../plan/addons';
+import { noSubscriptionContext } from '../subscription/multi-subscription-context';
 import { DOMAIN_ADDON_CONFIG } from './configs/domainAddonConfig';
 import { IP_ADDON_CONFIG } from './configs/ipAddonConfig';
 import { LUMO_ADDON_CONFIG } from './configs/lumoAddonConfig';
@@ -58,6 +59,7 @@ export const planOffersAddonAtSignup = (plan: PLANS, addonType: ADDON_PREFIXES):
         bannerHiddenByCoupon: false,
         featureFlagEnabled: false,
         isSignup: true,
+        multiSubscriptionContext: noSubscriptionContext,
     };
 
     return (getAddonConfigByType(addonType)?.visibility?.rules ?? []).every((rule) => rule(context));
