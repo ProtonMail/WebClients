@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { RecipientType } from '@proton/mail-message/models/address';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -18,8 +17,6 @@ interface Props {
 }
 
 const AddressesCCButton = ({ type, onClick, onFocus, disabled, classNames }: Omit<Props, 'title'>) => {
-    // Kill switch: when enabled, CC/BCC are skipped by Tab again (previous behaviour)
-    const isTabStopDisabled = useFlag('ComposerCcBccTabStopDisabled');
     const title = (() => {
         if (type === 'CCList') {
             return c('Action').t`Carbon Copy`;
@@ -59,7 +56,6 @@ const AddressesCCButton = ({ type, onClick, onFocus, disabled, classNames }: Omi
                 color="norm"
                 shape="ghost"
                 size="small"
-                tabIndex={isTabStopDisabled ? -1 : undefined}
                 icon
                 title={title}
                 onClick={onClick}
