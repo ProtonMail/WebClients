@@ -1,7 +1,5 @@
 import { type ReactNode, useContext } from 'react';
 
-import { c } from 'ttag';
-
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { ModalContext } from '@proton/components/components/modalTwo/Modal';
@@ -9,6 +7,7 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import clsx from '@proton/utils/clsx';
 
+import { progressOf } from '../../../helpers/progressOf';
 import {
     EasySwitchStepModalHost,
     useEasySwitchStepModalHost,
@@ -80,9 +79,6 @@ export const EasySwitchStepModal = (props: EasySwitchStepModalProps) => {
         );
     }
 
-    const current = step?.current;
-    const total = step?.total;
-
     return (
         <>
             <ModalHeaderCloseButton
@@ -102,10 +98,7 @@ export const EasySwitchStepModal = (props: EasySwitchStepModalProps) => {
                     {step && (
                         <div className="mb-4 sm:mb-6 shrink-0">
                             <Pill rounded="rounded-sm" className="text-xs">
-                                {
-                                    // translator: progress in the import flow, e.g. "1 of 4"
-                                    c('Info').t`${current} of ${total}`
-                                }
+                                {step && progressOf(step.current, step.total)}
                             </Pill>
                         </div>
                     )}

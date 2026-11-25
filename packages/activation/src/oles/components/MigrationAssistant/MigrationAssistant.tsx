@@ -22,6 +22,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { ApiImporterOrganizationUser, ApiImporterProduct } from '../../../api/api.interface';
+import { progressOf } from '../../../helpers/progressOf';
 import { useErrorHandler } from '../../errors';
 import { isProviderUserSelectable, isRelevantAddress, shouldCreateUserPredicate } from '../../helpers';
 import { createMigrationBatch, setupJoiningLink } from '../../thunk';
@@ -276,7 +277,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                                 {showUsersLoader ? (
                                     <CircleLoader size="small" />
                                 ) : (
-                                    c('Info').t`${relevantCount} of ${totalCount}`
+                                    progressOf(relevantCount, totalCount)
                                 )}
                             </div>
                         </div>
