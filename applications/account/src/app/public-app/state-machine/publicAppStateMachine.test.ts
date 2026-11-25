@@ -556,6 +556,27 @@ describe('publicAppStateMachine', () => {
             expect(selectLoggingIn(actor.getSnapshot())).toBe(false);
         });
 
+        it('adds the session of a finished login to a loaded list, which the page shows if it stays', async () => {
+            const newSession = {
+                data: { localID: 1, UID: 'uid-1', User: { ID: 'user-1', Name: 'new', Email: 'new@proton.me' } },
+            } as unknown as AuthSession;
+            const { actor } = start({
+                pathname: SSO_PATHS.LOGIN,
+                initialSessionsLength: 0,
+                login: async () => ({
+                    type: 'done',
+                    payload: { session: newSession, url: new URL('https://mail.proton.me') },
+                }),
+            });
+            actor.send({
+                type: 'sessions.updated',
+                sessions: [{ remote: { LocalID: 0 } }] as unknown as ActiveSession[],
+            });
+            actor.send({ type: 'login.requested', session: newSession });
+            await waitFor(actor, (state) => state.matches({ page: { ready: { redirect: 'pending' } } }));
+            expect(actor.getSnapshot().context.activeSessions?.map(({ remote }) => remote.LocalID)).toEqual([0, 1]);
+        });
+
         it('applies the result and hands it to whoever asked', async () => {
             const { actor, followLoginResult } = start({
                 pathname: SSO_PATHS.LOGIN,
