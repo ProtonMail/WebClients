@@ -3,6 +3,7 @@ import { type Mock, type MockedFunction, vi } from 'vitest';
 
 import { FeatureCode } from '@proton/features/interface';
 import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
+import type useFeature from '@proton/features/useFeature';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useMarkBYOEInboxCleanupDue from './useMarkBYOEInboxCleanupDue';
@@ -14,48 +15,81 @@ vi.mock('@proton/unleash/useFlag', () => ({
 const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
 describe('useMarkBYOEInboxCleanupDue', () => {
-    let mockUpdate: Mock;
+    let mockUpdateCleanup: Mock;
+    let mockUpdateSpotlight: Mock;
     let mockedUseFeature: ReturnType<typeof mockUseFeature>;
 
     beforeEach(() => {
         vi.clearAllMocks();
-        mockUpdate = vi.fn().mockResolvedValue(undefined);
-        mockedUseFeature = mockUseFeature({ update: mockUpdate });
+        mockUpdateCleanup = vi.fn().mockResolvedValue(undefined);
+        mockUpdateSpotlight = vi.fn().mockResolvedValue(undefined);
+        mockedUseFeature = mockUseFeature();
+        mockedUseFeature.mockImplementation(
+            (code) =>
+                ({
+                    feature: undefined,
+                    loading: false,
+                    get: vi.fn(),
+                    update: code === FeatureCode.BYOEInboxCleanupSpotlight ? mockUpdateSpotlight : mockUpdateCleanup,
+                    code,
+                }) as unknown as ReturnType<typeof useFeature>
+        );
         mockUseFlag.mockImplementation((flag) => flag === 'InboxBringYourOwnEmailCleanup');
     });
 
-    it('sets the cleanup feature code to true when the cleanup is on and emails are imported', async () => {
+    it('marks the spotlight due as well as the cleanup when import is on', async () => {
         const { result } = renderHook(() => useMarkBYOEInboxCleanupDue());
 
         await result.current({ importEmails: true });
 
         expect(mockedUseFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupModal, false);
-        expect(mockUpdate).toHaveBeenCalledTimes(1);
-        expect(mockUpdate).toHaveBeenCalledWith(true);
+        expect(mockedUseFeature).toHaveBeenCalledWith(FeatureCode.BYOEInboxCleanupSpotlight, false);
+        expect(mockUpdateCleanup).toHaveBeenCalledTimes(1);
+        expect(mockUpdateCleanup).toHaveBeenCalledWith(true);
+        expect(mockUpdateSpotlight).toHaveBeenCalledTimes(1);
+        expect(mockUpdateSpotlight).toHaveBeenCalledWith(true);
     });
 
-    it("does nothing when emails aren't imported", async () => {
+    it('marks neither when import is off', async () => {
         const { result } = renderHook(() => useMarkBYOEInboxCleanupDue());
 
         await result.current({ importEmails: false });
 
-        expect(mockUpdate).not.toHaveBeenCalled();
+        expect(mockUpdateCleanup).not.toHaveBeenCalled();
+        expect(mockUpdateSpotlight).not.toHaveBeenCalled();
     });
 
-    it('does nothing when the cleanup switch is off', async () => {
+    it('marks neither when the cleanup is switched off', async () => {
         mockUseFlag.mockReturnValue(false);
         const { result } = renderHook(() => useMarkBYOEInboxCleanupDue());
 
         await result.current({ importEmails: true });
 
-        expect(mockUpdate).not.toHaveBeenCalled();
+        expect(mockUpdateCleanup).not.toHaveBeenCalled();
+        expect(mockUpdateSpotlight).not.toHaveBeenCalled();
     });
 
-    it('resolves without throwing when saving the feature code fails', async () => {
-        mockUpdate.mockRejectedValue(new Error('Feature code not found'));
+    it('still marks the cleanup when saving the spotlight fails', async () => {
+        mockUpdateSpotlight.mockRejectedValue(new Error('Feature code not found'));
         const { result } = renderHook(() => useMarkBYOEInboxCleanupDue());
 
         await expect(result.current({ importEmails: true })).resolves.toBeUndefined();
-        expect(mockUpdate).toHaveBeenCalledWith(true);
+        expect(mockUpdateCleanup).toHaveBeenCalledWith(true);
+    });
+
+    it('still marks the spotlight when saving the cleanup fails', async () => {
+        mockUpdateCleanup.mockRejectedValue(new Error('Feature code not found'));
+        const { result } = renderHook(() => useMarkBYOEInboxCleanupDue());
+
+        await expect(result.current({ importEmails: true })).resolves.toBeUndefined();
+        expect(mockUpdateSpotlight).toHaveBeenCalledWith(true);
+    });
+
+    it('resolves when both saves fail', async () => {
+        mockUpdateCleanup.mockRejectedValue(new Error('Feature code not found'));
+        mockUpdateSpotlight.mockRejectedValue(new Error('Feature code not found'));
+        const { result } = renderHook(() => useMarkBYOEInboxCleanupDue());
+
+        await expect(result.current({ importEmails: true })).resolves.toBeUndefined();
     });
 });

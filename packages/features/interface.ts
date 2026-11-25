@@ -148,6 +148,7 @@ export enum FeatureCode {
     // BYOE
     BYOESpotlightModal = 'BYOESpotlightModal',
     BYOEInboxCleanupModal = 'BYOEInboxCleanupModal',
+    BYOEInboxCleanupSpotlight = 'BYOEInboxCleanupSpotlight',
 
     // Lumo
     LumoSmoothedRendering = 'LumoSmoothedRendering',
