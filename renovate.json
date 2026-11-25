@@ -163,6 +163,12 @@
             "groupName": "ignore standardnotes",
             "matchPackageNames": ["@standardnotes/*"],
             "enabled": false
+        },
+        {
+            "description": "The drive-test-metrics include ref in ci/jobs/e2e/drive/e2e-drive.gitlab-ci.yml must match DRIVE_METRICS_VERSION in load-test.yml and performance.yml, which Renovate does not update. The Drive team bumps them together by hand.",
+            "groupName": "ignore drive-test-metrics",
+            "matchPackageNames": ["drive/qa/drive-test-metrics"],
+            "enabled": false
         }
     ]
 }
