@@ -43,7 +43,7 @@
         "@proton/icons": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/utils": "workspace:^",
-        "markdown-it": "^14.3.3",
+        "markdown-it": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -52,7 +52,7 @@
         "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/react": "catalog:",
-        "@types/markdown-it": "^13.0.9",
+        "@types/markdown-it": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",

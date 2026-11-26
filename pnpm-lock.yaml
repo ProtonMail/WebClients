@@ -173,6 +173,9 @@ settings:
 
 catalogs:
   default:
+    '@ariakit/react':
+      specifier: 0.4.29
+      version: 0.4.29
     '@dnd-kit/abstract':
       specifier: ^0.5.3
       version: 0.5.3
@@ -227,18 +230,45 @@ catalogs:
     '@electron/fuses':
       specifier: ^2.1.3
       version: 2.1.3
+    '@emoji-mart/data':
+      specifier: ^1.0.3
+      version: 1.2.1
+    '@floating-ui/dom':
+      specifier: ^1.8.0
+      version: 1.8.0
     '@lexical/react':
       specifier: 0.31.2
       version: 0.31.2
     '@lexical/utils':
       specifier: 0.31.2
       version: 0.31.2
+    '@mattiasbuelens/web-streams-adapter':
+      specifier: 0.1.0
+      version: 0.1.0
+    '@noble/ed25519':
+      specifier: 1.7.5
+      version: 1.7.5
+    '@noble/hashes':
+      specifier: ^1.8.0
+      version: 1.8.0
     '@oxlint/plugins':
       specifier: 1.94.0
       version: 1.94.0
+    '@pdfme/common':
+      specifier: ^6.1.13
+      version: 6.1.13
+    '@pdfme/schemas':
+      specifier: ^6.1.13
+      version: 6.1.13
     '@pmmmwh/react-refresh-webpack-plugin':
       specifier: ^0.6.3
       version: 0.6.3
+    '@prometheus-io/client':
+      specifier: ^0.16.1
+      version: 0.16.1
+    '@protontech/autofill':
+      specifier: 0.0.42001045
+      version: 0.0.42001045
     '@protontech/crypto':
       specifier: ^2.2.0
       version: 2.2.0
@@ -248,6 +278,9 @@ catalogs:
     '@protontech/logger':
       specifier: ^1.1.0
       version: 1.1.0
+    '@protontech/mimemessage':
+      specifier: ~v1.1.4
+      version: 1.1.4
     '@protontech/pass-rust-core':
       specifier: 2.3.4
       version: 2.3.4
@@ -263,9 +296,18 @@ catalogs:
     '@sentry/browser':
       specifier: ^7.120.4
       version: 7.120.4
+    '@sentry/electron':
+      specifier: ^7.20.2
+      version: 7.20.2
     '@sentry/types':
       specifier: ^7.120.4
       version: 7.120.4
+    '@storybook/addon-docs':
+      specifier: ^10.6.8
+      version: 10.6.8
+    '@storybook/react-webpack5':
+      specifier: ^10.6.8
+      version: 10.6.8
     '@tanstack/react-virtual':
       specifier: ^3.14.13
       version: 3.14.13
@@ -284,6 +326,9 @@ catalogs:
     '@types/chrome':
       specifier: ^0.3.7
       version: 0.3.7
+    '@types/fs-extra':
+      specifier: ^11.0.4
+      version: 11.0.4
     '@types/history':
       specifier: ^4.7.11
       version: 4.7.11
@@ -293,9 +338,18 @@ catalogs:
     '@types/lodash':
       specifier: ^4.17.27
       version: 4.17.27
+    '@types/markdown-it':
+      specifier: ^13.0.9
+      version: 13.0.9
+    '@types/mustache':
+      specifier: ^4.2.6
+      version: 4.2.6
     '@types/node':
       specifier: ^26.6.6
       version: 26.6.6
+    '@types/papaparse':
+      specifier: ^5.5.2
+      version: 5.5.2
     '@types/react':
       specifier: ^18.3.31
       version: 18.3.31
@@ -308,15 +362,30 @@ catalogs:
     '@types/react-router-dom':
       specifier: ^5.3.3
       version: 5.3.3
+    '@types/react-virtualized':
+      specifier: ^9.22.4
+      version: 9.22.4
+    '@types/semver':
+      specifier: ^7.8.0
+      version: 7.8.0
     '@types/tinycolor2':
       specifier: ^1.4.6
       version: 1.4.6
+    '@types/turndown':
+      specifier: ^5.0.6
+      version: 5.0.6
+    '@types/webextension-polyfill':
+      specifier: ^0.12.6
+      version: 0.12.6
     '@types/webpack-env':
       specifier: ^1.18.8
       version: 1.18.8
     '@typescript/native':
       specifier: npm:typescript@^7.0.2
       version: 7.0.2
+    '@unleash/proxy-client-react':
+      specifier: ^6.0.1
+      version: 6.0.1
     '@vercel/webpack-asset-relocator-loader':
       specifier: 1.7.3
       version: 1.7.3
@@ -332,12 +401,36 @@ catalogs:
     '@vitest/ui':
       specifier: ^5.1.1
       version: 5.1.1
+    '@webgpu/types':
+      specifier: ^0.1.74
+      version: 0.1.74
+    '@xmldom/xmldom':
+      specifier: ^0.9.12
+      version: 0.9.12
+    autoprefixer:
+      specifier: ^10.7.0
+      version: 10.7.0
+    axios:
+      specifier: ^1.20.0
+      version: 1.20.0
+    axios-retry:
+      specifier: ^4.5.0
+      version: 4.5.0
     browserslist:
       specifier: ^4.29.6
       version: 4.29.6
+    chart.js:
+      specifier: ^4.6.1
+      version: 4.6.1
+    client-zip:
+      specifier: ^2.5.1
+      version: 2.5.1
     clsx:
       specifier: ^2.1.1
       version: 2.1.1
+    comlink:
+      specifier: ^4.4.2
+      version: 4.4.2
     commander:
       specifier: ^14.0.3
       version: 14.0.3
@@ -356,6 +449,9 @@ catalogs:
     date-fns:
       specifier: ^4.4.0
       version: 4.4.0
+    diff-dom:
+      specifier: ^5.2.1
+      version: 5.2.1
     dompurify:
       specifier: ^3.4.18
       version: 3.4.18
@@ -365,6 +461,15 @@ catalogs:
     electron-store:
       specifier: ^8.2.0
       version: 8.2.0
+    emoji-mart:
+      specifier: ^5.1.0
+      version: 5.6.0
+    esbuild:
+      specifier: ^0.28.2
+      version: 0.28.2
+    exifreader:
+      specifier: ^4.46.0
+      version: 4.46.0
     fake-indexeddb:
       specifier: ^6.2.8
       version: 6.2.8
@@ -374,6 +479,15 @@ catalogs:
     formik:
       specifier: ^2.4.9
       version: 2.4.9
+    fs-extra:
+      specifier: ^11.4.1
+      version: 11.4.1
+    glob:
+      specifier: ^14.0.6
+      version: 14.0.6
+    googleapis:
+      specifier: ^131.0.0
+      version: 131.0.0
     happy-dom:
       specifier: ^21.0.4
       version: 21.0.4
@@ -386,27 +500,57 @@ catalogs:
     html2canvas:
       specifier: 1.4.1
       version: 1.4.1
+    ibantools:
+      specifier: 4.5.4
+      version: 4.5.4
     idb:
       specifier: ^8.0.4
       version: 8.0.4
+    include-media:
+      specifier: ^2.0.0
+      version: 2.0.0
     jsdom:
       specifier: ^31.0.1
       version: 31.0.1
+    json-schema-to-typescript:
+      specifier: ^13.1.2
+      version: 13.1.2
+    jsqr:
+      specifier: ^1.4.0
+      version: 1.4.0
     jszip:
       specifier: ^3.10.2
       version: 3.10.2
     lexical:
       specifier: 0.31.2
       version: 0.31.2
+    livekit-client:
+      specifier: 2.25.0
+      version: 2.25.0
     lodash:
       specifier: ^4.18.1
       version: 4.18.1
+    lottie-react:
+      specifier: ^2.4.2
+      version: 2.4.2
+    loud-rejection:
+      specifier: ^2.2.0
+      version: 2.2.0
+    markdown-it:
+      specifier: ^14.3.3
+      version: 14.3.3
     mini-css-extract-plugin:
       specifier: ^2.10.2
       version: 2.10.2
     msw:
       specifier: 2.12.14
       version: 2.12.14
+    mustache:
+      specifier: ^4.2.0
+      version: 4.2.0
+    node-loader:
+      specifier: ^2.1.0
+      version: 2.1.0
     oxfmt:
       specifier: 0.79.0
       version: 0.79.0
@@ -416,12 +560,21 @@ catalogs:
     oxlint-tsgolint:
       specifier: 7.0.2008
       version: 7.0.2008
+    papaparse:
+      specifier: ^5.7.1
+      version: 5.7.1
+    path-browserify:
+      specifier: ^1.0.1
+      version: 1.0.1
     postcss:
       specifier: ^8.5.33
       version: 8.5.33
     react:
       specifier: ^18.3.1
       version: 18.3.1
+    react-chartjs-2:
+      specifier: ^5.3.1
+      version: 5.3.1
     react-dom:
       specifier: ^18.3.1
       version: 18.3.1
@@ -434,6 +587,15 @@ catalogs:
     react-router-dom:
       specifier: ^5.3.4
       version: 5.3.4
+    react-router-dom-v5-compat:
+      specifier: ^6.30.6
+      version: 6.30.6
+    react-virtualized:
+      specifier: ^9.22.6
+      version: 9.22.6
+    recharts:
+      specifier: ^3.11.0
+      version: 3.11.0
     redux:
       specifier: ^5.0.1
       version: 5.0.1
@@ -446,12 +608,36 @@ catalogs:
     sass:
       specifier: ^1.80.3
       version: 1.97.1
+    semver:
+      specifier: ^7.8.6
+      version: 7.8.6
+    storybook:
+      specifier: ^10.6.8
+      version: 10.6.8
+    style-loader:
+      specifier: ^4.0.0
+      version: 4.0.0
     stylelint:
       specifier: ^15.11.0
       version: 15.11.0
+    stylelint-config-standard-scss:
+      specifier: ^10.0.0
+      version: 10.0.0
+    stylelint-use-logical-spec:
+      specifier: ^5.0.1
+      version: 5.0.1
+    tailwindcss:
+      specifier: ^3.4.19
+      version: 3.4.19
+    terser-webpack-plugin:
+      specifier: ^5.6.1
+      version: 5.6.1
     tinycolor2:
       specifier: ^1.6.0
       version: 1.6.0
+    tldts:
+      specifier: ^7.5.5
+      version: 7.5.5
     ts-loader:
       specifier: ^9.6.2
       version: 9.6.2
@@ -467,27 +653,60 @@ catalogs:
     ttag-cli:
       specifier: ^1.12.0
       version: 1.12.0
+    turndown:
+      specifier: ^7.2.5
+      version: 7.2.5
     typescript:
       specifier: npm:@typescript/typescript6@^6.0.2
       version: 6.0.2
+    unleash-proxy-client:
+      specifier: ^3.8.2
+      version: 3.8.2
+    update-electron-app:
+      specifier: ^3.3.0
+      version: 3.3.0
     uuid:
       specifier: ^14.0.3
       version: 14.0.3
     vite:
       specifier: ^8.3.8
       version: 8.3.8
+    vite-plugin-mkcert:
+      specifier: ^1.17.12
+      version: 1.17.12
+    vite-plugin-singlefile:
+      specifier: ^2.3.4
+      version: 2.3.4
+    vite-plugin-wasm:
+      specifier: ^3.6.0
+      version: 3.6.0
     vitest:
       specifier: ^5.1.1
       version: 5.1.1
+    wait-on:
+      specifier: ^9.5.1
+      version: 9.5.1
+    webextension-polyfill:
+      specifier: ^0.12.0
+      version: 0.12.0
     webpack:
       specifier: ^5.113.0
       version: 5.113.0
+    webpack-bundle-analyzer:
+      specifier: ^5.4.3
+      version: 5.4.3
+    webpack-cli:
+      specifier: ^7.3.1
+      version: 7.3.1
     webpack-dev-server:
       specifier: ^6.1.0
       version: 6.1.0
     y-protocols:
       specifier: ^1.0.6
       version: 1.0.6
+    yaml:
+      specifier: ^2.9.1
+      version: 2.9.1
     yjs:
       specifier: ^13.6.15
       version: 13.6.27
@@ -700,10 +919,10 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0
       stylelint-config-standard-scss:
-        specifier: ^10.0.0
+        specifier: 'catalog:'
         version: 10.0.0(postcss@8.5.33)(stylelint@15.11.0(supports-color@11.0.0)(typescript@6.0.3))
       stylelint-use-logical-spec:
-        specifier: ^5.0.1
+        specifier: 'catalog:'
         version: 5.0.1(stylelint@15.11.0(supports-color@11.0.0)(typescript@6.0.3))
       typescript:
         specifier: ^6.0.3
@@ -917,7 +1136,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@19.3.0)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@19.3.1)(unleash-proxy-client@3.8.2)
       '@xstate/react':
         specifier: ^6.1.0
@@ -1116,7 +1335,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@19.3.0)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@19.3.1)(unleash-proxy-client@3.8.2)
       cross-env:
         specifier: 'catalog:'
@@ -1324,7 +1543,7 @@ importers:
         specifier: 'catalog:'
         version: 2.4.9(react@18.3.1)
       jsqr:
-        specifier: ^1.4.0
+        specifier: 'catalog:'
         version: 1.4.0
       react:
         specifier: 'catalog:'
@@ -1538,7 +1757,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@18.3.31)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       date-fns:
         specifier: 'catalog:'
@@ -1737,7 +1956,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@19.3.0)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@19.3.1)(unleash-proxy-client@3.8.2)
       cross-env:
         specifier: 'catalog:'
@@ -1804,7 +2023,7 @@ importers:
   applications/docs:
     dependencies:
       '@ariakit/react':
-        specifier: 0.4.29
+        specifier: 'catalog:'
         version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/utils':
         specifier: catalog:docs
@@ -1903,7 +2122,7 @@ importers:
         specifier: 'catalog:'
         version: 2.15.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       history:
         specifier: 'catalog:'
@@ -1927,7 +2146,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
       react-router-dom-v5-compat:
-        specifier: ^6.30.6
+        specifier: 'catalog:'
         version: 6.30.6(react-dom@18.3.1(react@18.3.1))(react-router-dom@5.3.4(react@18.3.1))(react@18.3.1)
       ttag:
         specifier: 'catalog:'
@@ -2012,7 +2231,7 @@ importers:
         specifier: 'catalog:'
         version: 1.97.1
       tailwindcss:
-        specifier: ^3.4.19
+        specifier: 'catalog:'
         version: 3.4.19(tsx@4.23.15)(yaml@2.9.1)
       typescript:
         specifier: 'catalog:'
@@ -2208,7 +2427,7 @@ importers:
         specifier: 'catalog:'
         version: 1.97.1
       tailwindcss:
-        specifier: ^3.4.19
+        specifier: 'catalog:'
         version: 3.4.19(tsx@4.23.15)(yaml@2.9.1)
       typescript:
         specifier: 'catalog:'
@@ -2269,7 +2488,7 @@ importers:
         specifier: 'catalog:'
         version: 1.97.1
       tailwindcss:
-        specifier: ^3.4.19
+        specifier: 'catalog:'
         version: 3.4.19(tsx@4.23.15)(yaml@2.9.1)
       typescript:
         specifier: 'catalog:'
@@ -2281,10 +2500,10 @@ importers:
   applications/drive:
     dependencies:
       '@mattiasbuelens/web-streams-adapter':
-        specifier: 0.1.0
+        specifier: 'catalog:'
         version: 0.1.0
       '@noble/hashes':
-        specifier: ^1.8.0
+        specifier: 'catalog:'
         version: 1.8.0
       '@proton/account':
         specifier: workspace:^
@@ -2404,13 +2623,13 @@ importers:
         specifier: 'catalog:'
         version: 3.14.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@xmldom/xmldom':
-        specifier: ^0.9.12
+        specifier: 'catalog:'
         version: 0.9.12
       client-zip:
-        specifier: ^2.5.1
+        specifier: 'catalog:'
         version: 2.5.1
       comlink:
-        specifier: ^4.4.2
+        specifier: 'catalog:'
         version: 4.4.2
       core-js:
         specifier: 'catalog:'
@@ -2419,7 +2638,7 @@ importers:
         specifier: 'catalog:'
         version: 4.4.0
       exifreader:
-        specifier: ^4.46.0
+        specifier: 'catalog:'
         version: 4.46.0
       history:
         specifier: 'catalog:'
@@ -2443,7 +2662,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
       react-router-dom-v5-compat:
-        specifier: ^6.30.6
+        specifier: 'catalog:'
         version: 6.30.6(react-dom@18.3.1(react@18.3.1))(react-router-dom@5.3.4(react@18.3.1))(react@18.3.1)
       react-window:
         specifier: ^1.8.11
@@ -2531,7 +2750,7 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2008
       path-browserify:
-        specifier: ^1.0.1
+        specifier: 'catalog:'
         version: 1.0.1
       typescript:
         specifier: 'catalog:'
@@ -2573,7 +2792,7 @@ importers:
         specifier: 'catalog:'
         version: 1.12.0(@typescript-eslint/types@8.71.2)(encoding@0.1.13)(supports-color@11.0.0)
       update-electron-app:
-        specifier: ^3.3.0
+        specifier: 'catalog:'
         version: 3.3.0
       zod:
         specifier: 'catalog:'
@@ -2628,7 +2847,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/vitest-config
       '@sentry/electron':
-        specifier: ^7.20.2
+        specifier: 'catalog:'
         version: 7.20.2(@opentelemetry/core@2.12.0(@opentelemetry/api@1.9.1))(supports-color@11.0.0)
       '@types/lodash':
         specifier: 'catalog:'
@@ -2664,7 +2883,7 @@ importers:
         specifier: ^2019.4.13
         version: 2019.4.13
       node-loader:
-        specifier: ^2.1.0
+        specifier: 'catalog:'
         version: 2.1.0(webpack@5.113.0)
       oxlint:
         specifier: 'catalog:'
@@ -2673,7 +2892,7 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2008
       style-loader:
-        specifier: ^4.0.0
+        specifier: 'catalog:'
         version: 4.0.0(webpack@5.113.0)
       ts-loader:
         specifier: 'catalog:'
@@ -2829,7 +3048,7 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       '@xyflow/react':
         specifier: ^12.12.1
@@ -2868,7 +3087,7 @@ importers:
         specifier: 'catalog:'
         version: 4.18.1
       lottie-react:
-        specifier: ^2.4.2
+        specifier: 'catalog:'
         version: 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lucide-react:
         specifier: ^1.77.0
@@ -2910,7 +3129,7 @@ importers:
         specifier: ^8.5.9
         version: 8.5.9(@types/react@18.3.31)(react@18.3.1)
       recharts:
-        specifier: ^3.11.0
+        specifier: 'catalog:'
         version: 3.11.0(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.8)(react@18.3.1)(redux@5.0.1)
       redux-saga:
         specifier: 'catalog:'
@@ -2934,7 +3153,7 @@ importers:
         specifier: 'catalog:'
         version: 1.6.0
       tldts:
-        specifier: ^7.5.5
+        specifier: 'catalog:'
         version: 7.5.5
       toposort:
         specifier: ^2.0.2
@@ -2943,7 +3162,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       turndown:
-        specifier: ^7.2.5
+        specifier: 'catalog:'
         version: 7.2.5
       unified:
         specifier: ^11.0.5
@@ -3016,7 +3235,7 @@ importers:
         specifier: ^15.5.13
         version: 15.5.13
       '@types/turndown':
-        specifier: ^5.0.6
+        specifier: 'catalog:'
         version: 5.0.6
       '@types/webpack-env':
         specifier: 'catalog:'
@@ -3028,7 +3247,7 @@ importers:
         specifier: 'catalog:'
         version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       autoprefixer:
-        specifier: ^10.7.0
+        specifier: 'catalog:'
         version: 10.7.0(postcss@8.5.33)
       cross-env:
         specifier: 'catalog:'
@@ -3229,13 +3448,13 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@18.3.31)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       clsx:
         specifier: 'catalog:'
         version: 2.1.1
       comlink:
-        specifier: ^4.4.2
+        specifier: 'catalog:'
         version: 4.4.2
       core-js:
         specifier: 'catalog:'
@@ -3256,7 +3475,7 @@ importers:
         specifier: 'catalog:'
         version: 4.18.1
       loud-rejection:
-        specifier: ^2.2.0
+        specifier: 'catalog:'
         version: 2.2.0
       react:
         specifier: 'catalog:'
@@ -3323,7 +3542,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@webgpu/types':
-        specifier: ^0.1.74
+        specifier: 'catalog:'
         version: 0.1.74
       fake-indexeddb:
         specifier: 'catalog:'
@@ -3371,10 +3590,10 @@ importers:
         specifier: 'catalog:'
         version: 0.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@emoji-mart/data':
-        specifier: ^1.0.3
+        specifier: 'catalog:'
         version: 1.2.1
       '@floating-ui/dom':
-        specifier: ^1.8.0
+        specifier: 'catalog:'
         version: 1.8.0
       '@lexical/react':
         specifier: 'catalog:'
@@ -3491,7 +3710,7 @@ importers:
         specifier: 2023.10.7
         version: 2023.10.7
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       '@workadventure/noise-suppression':
         specifier: 0.2.0
@@ -3506,7 +3725,7 @@ importers:
         specifier: 'catalog:'
         version: 4.4.0
       emoji-mart:
-        specifier: ^5.1.0
+        specifier: 'catalog:'
         version: 5.6.0
       history:
         specifier: 'catalog:'
@@ -3518,7 +3737,7 @@ importers:
         specifier: 'catalog:'
         version: 0.31.2
       livekit-client:
-        specifier: 2.25.0
+        specifier: 'catalog:'
         version: 2.25.0
       lodash:
         specifier: 'catalog:'
@@ -3603,7 +3822,7 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2008
       path-browserify:
-        specifier: ^1.0.1
+        specifier: 'catalog:'
         version: 1.0.1
       typescript:
         specifier: 'catalog:'
@@ -3636,7 +3855,7 @@ importers:
         specifier: 'catalog:'
         version: 1.12.0(@typescript-eslint/types@8.71.2)(encoding@0.1.13)(supports-color@11.0.0)
       update-electron-app:
-        specifier: ^3.3.0
+        specifier: 'catalog:'
         version: 3.3.0
       zod:
         specifier: 'catalog:'
@@ -3691,7 +3910,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/vitest-config
       '@sentry/electron':
-        specifier: ^7.20.2
+        specifier: 'catalog:'
         version: 7.20.2(@opentelemetry/core@2.12.0(@opentelemetry/api@1.9.1))(supports-color@11.0.0)
       '@types/lodash':
         specifier: 'catalog:'
@@ -3724,7 +3943,7 @@ importers:
         specifier: 'catalog:'
         version: 9.2.0(@typescript/typescript6@6.0.2)(webpack@5.113.0)
       node-loader:
-        specifier: ^2.1.0
+        specifier: 'catalog:'
         version: 2.1.0(webpack@5.113.0)
       oxlint:
         specifier: 'catalog:'
@@ -3733,7 +3952,7 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2008
       style-loader:
-        specifier: ^4.0.0
+        specifier: 'catalog:'
         version: 4.0.0(webpack@5.113.0)
       ts-loader:
         specifier: 'catalog:'
@@ -3896,7 +4115,7 @@ importers:
         specifier: 'catalog:'
         version: 5.1.1(@opentelemetry/api@1.9.1)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(happy-dom@21.0.4)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       webextension-polyfill:
-        specifier: ^0.12.0
+        specifier: 'catalog:'
         version: 0.12.0
       webpack:
         specifier: 'catalog:'
@@ -4014,7 +4233,7 @@ importers:
         specifier: 'catalog:'
         version: 0.3.7
       '@types/fs-extra':
-        specifier: ^11.0.4
+        specifier: 'catalog:'
         version: 11.0.4
       '@types/history':
         specifier: 'catalog:'
@@ -4050,13 +4269,13 @@ importers:
         specifier: 26.18.0
         version: 26.18.0(supports-color@11.0.0)
       fs-extra:
-        specifier: ^11.4.1
+        specifier: 'catalog:'
         version: 11.4.1
       mini-css-extract-plugin:
         specifier: 'catalog:'
         version: 2.10.2(webpack@5.113.0)
       node-loader:
-        specifier: ^2.1.0
+        specifier: 'catalog:'
         version: 2.1.0(webpack@5.113.0)
       oxlint:
         specifier: 'catalog:'
@@ -4116,7 +4335,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/autofill':
-        specifier: 0.0.42001045
+        specifier: 'catalog:'
         version: 0.0.42001045
       '@protontech/fathom':
         specifier: 0.0.42001045
@@ -4158,7 +4377,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       webextension-polyfill:
-        specifier: ^0.12.0
+        specifier: 'catalog:'
         version: 0.12.0
     devDependencies:
       '@pmmmwh/react-refresh-webpack-plugin':
@@ -4207,7 +4426,7 @@ importers:
         specifier: ^19.0.2
         version: 19.0.2
       '@types/webextension-polyfill':
-        specifier: ^0.12.6
+        specifier: 'catalog:'
         version: 0.12.6
       '@types/webpack-env':
         specifier: 'catalog:'
@@ -4270,7 +4489,7 @@ importers:
         specifier: 'catalog:'
         version: 5.113.0(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)(webpack-cli@7.3.1)
       webpack-bundle-analyzer:
-        specifier: ^5.4.3
+        specifier: 'catalog:'
         version: 5.4.3
       webpack-dev-server:
         specifier: 'catalog:'
@@ -4279,10 +4498,10 @@ importers:
   applications/pdf-ui:
     dependencies:
       '@pdfme/common':
-        specifier: ^6.1.13
+        specifier: 'catalog:'
         version: 6.1.13
       '@pdfme/schemas':
-        specifier: ^6.1.13
+        specifier: 'catalog:'
         version: 6.1.13(@pdfme/common@6.1.13)
       '@pdfme/ui':
         specifier: ^6.1.13
@@ -4353,7 +4572,7 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       esbuild:
-        specifier: ^0.28.2
+        specifier: 'catalog:'
         version: 0.28.2
       oxlint:
         specifier: 'catalog:'
@@ -4441,13 +4660,13 @@ importers:
         specifier: ^10.6.8
         version: 10.6.8(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/addon-docs':
-        specifier: ^10.6.8
+        specifier: 'catalog:'
         version: 10.6.8(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/addon-links':
         specifier: ^10.6.8
         version: 10.6.8(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/react-webpack5':
-        specifier: ^10.6.8
+        specifier: 'catalog:'
         version: 10.6.8(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@26.6.6))(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)
       '@types/node':
         specifier: 'catalog:'
@@ -4480,13 +4699,13 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       storybook:
-        specifier: ^10.6.8
+        specifier: 'catalog:'
         version: 10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
       terser-webpack-plugin:
-        specifier: ^5.6.1
+        specifier: 'catalog:'
         version: 5.6.1(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(webpack@5.113.0)
       wait-on:
-        specifier: ^9.5.1
+        specifier: 'catalog:'
         version: 9.5.1(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
 
   applications/verify:
@@ -4568,7 +4787,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@19.3.1)(unleash-proxy-client@3.8.2)
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -4746,7 +4965,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@19.3.1)(unleash-proxy-client@3.8.2)
       '@vitejs/plugin-react':
         specifier: 'catalog:'
@@ -4872,7 +5091,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@18.3.31)
       chart.js:
-        specifier: ^4.6.1
+        specifier: 'catalog:'
         version: 4.6.1
       cross-env:
         specifier: 'catalog:'
@@ -4881,19 +5100,19 @@ importers:
         specifier: 'catalog:'
         version: 4.4.0
       jsqr:
-        specifier: ^1.4.0
+        specifier: 'catalog:'
         version: 1.4.0
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
       path-browserify:
-        specifier: ^1.0.1
+        specifier: 'catalog:'
         version: 1.0.1
       react:
         specifier: 'catalog:'
         version: 18.3.1
       react-chartjs-2:
-        specifier: ^5.3.1
+        specifier: 'catalog:'
         version: 5.3.1(chart.js@4.6.1)(react@18.3.1)
       react-dom:
         specifier: 'catalog:'
@@ -4954,7 +5173,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vite-plugin-wasm:
-        specifier: ^3.6.0
+        specifier: 'catalog:'
         version: 3.6.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       vitest:
         specifier: 'catalog:'
@@ -5062,7 +5281,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       unleash-proxy-client:
-        specifier: ^3.8.2
+        specifier: 'catalog:'
         version: 3.8.2
     devDependencies:
       '@proton/oxlint-config':
@@ -5434,7 +5653,7 @@ importers:
         specifier: 'catalog:'
         version: 4.18.1
       lottie-react:
-        specifier: ^2.4.2
+        specifier: 'catalog:'
         version: 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
@@ -5553,10 +5772,10 @@ importers:
         specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1)
       vite-plugin-mkcert:
-        specifier: ^1.17.12
+        specifier: 'catalog:'
         version: 1.17.12(supports-color@11.0.0)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       vite-plugin-singlefile:
-        specifier: ^2.3.4
+        specifier: 'catalog:'
         version: 2.3.4(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/app-context:
@@ -5623,7 +5842,7 @@ importers:
   packages/atoms:
     dependencies:
       '@floating-ui/dom':
-        specifier: ^1.8.0
+        specifier: 'catalog:'
         version: 1.8.0
       '@proton/colors':
         specifier: workspace:^
@@ -5681,7 +5900,7 @@ importers:
         specifier: 'catalog:'
         version: 4.17.27
       '@types/mustache':
-        specifier: ^4.2.6
+        specifier: 'catalog:'
         version: 4.2.6
       '@types/node':
         specifier: 'catalog:'
@@ -5714,7 +5933,7 @@ importers:
         specifier: 'catalog:'
         version: 21.0.4
       mustache:
-        specifier: ^4.2.0
+        specifier: 'catalog:'
         version: 4.2.0
       oxlint:
         specifier: 'catalog:'
@@ -6320,10 +6539,10 @@ importers:
         specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1)
       vite-plugin-mkcert:
-        specifier: ^1.17.12
+        specifier: 'catalog:'
         version: 1.17.12(supports-color@11.0.0)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       vite-plugin-singlefile:
-        specifier: ^2.3.4
+        specifier: 'catalog:'
         version: 2.3.4(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       vitest:
         specifier: 'catalog:'
@@ -6341,10 +6560,10 @@ importers:
         specifier: workspace:^
         version: link:../utils
       chart.js:
-        specifier: ^4.6.1
+        specifier: 'catalog:'
         version: 4.6.1
       react-chartjs-2:
-        specifier: ^5.3.1
+        specifier: 'catalog:'
         version: 5.3.1(chart.js@4.6.1)(react@18.3.1)
     devDependencies:
       '@proton/oxlint-config':
@@ -6466,7 +6685,7 @@ importers:
         specifier: 'catalog:'
         version: 5.113.0(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)(webpack-cli@7.3.1)
       webpack-cli:
-        specifier: ^7.3.1
+        specifier: 'catalog:'
         version: 7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.3)(webpack-dev-server@6.1.0)(webpack@5.113.0)
 
   packages/components:
@@ -6577,10 +6796,10 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@18.3.31)
       '@types/react-virtualized':
-        specifier: ^9.22.4
+        specifier: 'catalog:'
         version: 9.22.4
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       card-validator:
         specifier: ^10.0.4
@@ -6598,7 +6817,7 @@ importers:
         specifier: 'catalog:'
         version: 4.18.1
       lottie-react:
-        specifier: ^2.4.2
+        specifier: 'catalog:'
         version: 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       punycode.js:
         specifier: ^2.3.1
@@ -6613,7 +6832,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
       react-virtualized:
-        specifier: ^9.22.6
+        specifier: 'catalog:'
         version: 9.22.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tabbable:
         specifier: ^6.5.2
@@ -6671,7 +6890,7 @@ importers:
         specifier: 'catalog:'
         version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       '@webgpu/types':
-        specifier: ^0.1.74
+        specifier: 'catalog:'
         version: 0.1.74
       cross-fetch:
         specifier: ^4.1.0
@@ -6810,7 +7029,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
       react-virtualized:
-        specifier: ^9.22.6
+        specifier: 'catalog:'
         version: 9.22.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tinycolor2:
         specifier: 'catalog:'
@@ -6856,7 +7075,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@18.3.31)
       '@types/react-virtualized':
-        specifier: ^9.22.4
+        specifier: 'catalog:'
         version: 9.22.4
       '@types/tinycolor2':
         specifier: 'catalog:'
@@ -7169,7 +7388,7 @@ importers:
   packages/docs-shared:
     dependencies:
       '@ariakit/react':
-        specifier: 0.4.29
+        specifier: 'catalog:'
         version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/yjs':
         specifier: catalog:docs
@@ -7335,19 +7554,19 @@ importers:
         specifier: 'catalog:'
         version: 26.6.6
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       '@xmldom/xmldom':
-        specifier: ^0.9.12
+        specifier: 'catalog:'
         version: 0.9.12
       comlink:
-        specifier: ^4.4.2
+        specifier: 'catalog:'
         version: 4.4.2
       core-js:
         specifier: 'catalog:'
         version: 3.51.0
       exifreader:
-        specifier: ^4.46.0
+        specifier: 'catalog:'
         version: 4.46.0
       heic-to:
         specifier: ^1.6.7
@@ -7365,7 +7584,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       unleash-proxy-client:
-        specifier: ^3.8.2
+        specifier: 'catalog:'
         version: 3.8.2
       zustand:
         specifier: ^4.5.7
@@ -7405,7 +7624,7 @@ importers:
         specifier: 'catalog:'
         version: 4.29.6
       esbuild:
-        specifier: ^0.28.2
+        specifier: 'catalog:'
         version: 0.28.2
       fake-indexeddb:
         specifier: 'catalog:'
@@ -7438,10 +7657,10 @@ importers:
   packages/drive-store:
     dependencies:
       '@mattiasbuelens/web-streams-adapter':
-        specifier: 0.1.0
+        specifier: 'catalog:'
         version: 0.1.0
       '@noble/hashes':
-        specifier: ^1.8.0
+        specifier: 'catalog:'
         version: 1.8.0
       '@proton/account':
         specifier: workspace:^
@@ -7483,10 +7702,10 @@ importers:
         specifier: 'catalog:'
         version: 7.120.4
       client-zip:
-        specifier: ^2.5.1
+        specifier: 'catalog:'
         version: 2.5.1
       comlink:
-        specifier: ^4.4.2
+        specifier: 'catalog:'
         version: 4.4.2
       core-js:
         specifier: 'catalog:'
@@ -7748,7 +7967,7 @@ importers:
         specifier: 'catalog:'
         version: 21.1.7
       '@types/mustache':
-        specifier: ^4.2.6
+        specifier: 'catalog:'
         version: 4.2.6
       '@types/node':
         specifier: 'catalog:'
@@ -7763,7 +7982,7 @@ importers:
         specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@2.4.0)
       mustache:
-        specifier: ^4.2.0
+        specifier: 'catalog:'
         version: 4.2.0
       oxlint:
         specifier: 'catalog:'
@@ -7980,7 +8199,7 @@ importers:
         specifier: ^7.0.1
         version: 7.0.1
       glob:
-        specifier: ^14.0.6
+        specifier: 'catalog:'
         version: 14.0.6
       ttag-cli:
         specifier: 'catalog:'
@@ -8005,14 +8224,14 @@ importers:
         specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@2.4.0)
       mustache:
-        specifier: ^4.2.0
+        specifier: 'catalog:'
         version: 4.2.0
     devDependencies:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
       '@types/mustache':
-        specifier: ^4.2.6
+        specifier: 'catalog:'
         version: 4.2.6
       '@types/react':
         specifier: 'catalog:'
@@ -8036,7 +8255,7 @@ importers:
   packages/key-transparency:
     dependencies:
       '@noble/ed25519':
-        specifier: 1.7.5
+        specifier: 'catalog:'
         version: 1.7.5
       '@proton/cross-storage':
         specifier: workspace:^
@@ -8197,7 +8416,7 @@ importers:
         specifier: 'catalog:'
         version: 5.1.1(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@webgpu/types':
-        specifier: ^0.1.74
+        specifier: 'catalog:'
         version: 0.1.74
       oxlint:
         specifier: 'catalog:'
@@ -8279,7 +8498,7 @@ importers:
         specifier: workspace:^
         version: link:../utils
       markdown-it:
-        specifier: ^14.3.3
+        specifier: 'catalog:'
         version: 14.3.3
       ttag:
         specifier: 'catalog:'
@@ -8301,7 +8520,7 @@ importers:
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/markdown-it':
-        specifier: ^13.0.9
+        specifier: 'catalog:'
         version: 13.0.9
       '@types/node':
         specifier: 'catalog:'
@@ -8383,10 +8602,10 @@ importers:
         specifier: workspace:^
         version: link:../../types
       '@storybook/addon-docs':
-        specifier: ^10.6.8
+        specifier: 'catalog:'
         version: 10.6.8(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/react-webpack5':
-        specifier: ^10.6.8
+        specifier: 'catalog:'
         version: 10.6.8(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@26.6.6))(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)
       '@types/node':
         specifier: 'catalog:'
@@ -8413,10 +8632,10 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2008
       storybook:
-        specifier: ^10.6.8
+        specifier: 'catalog:'
         version: 10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
       terser-webpack-plugin:
-        specifier: ^5.6.1
+        specifier: 'catalog:'
         version: 5.6.1(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(webpack@5.113.0)
       typescript:
         specifier: 'catalog:'
@@ -8476,7 +8695,7 @@ importers:
         specifier: 'catalog:'
         version: 2.15.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       history:
         specifier: 'catalog:'
@@ -8549,7 +8768,7 @@ importers:
   packages/mail-composer:
     dependencies:
       '@emoji-mart/data':
-        specifier: ^1.0.3
+        specifier: 'catalog:'
         version: 1.2.1
       '@proton/account':
         specifier: workspace:^
@@ -8642,7 +8861,7 @@ importers:
         specifier: 'catalog:'
         version: 4.4.0
       emoji-mart:
-        specifier: ^5.1.0
+        specifier: 'catalog:'
         version: 5.6.0
       lodash:
         specifier: 'catalog:'
@@ -8733,7 +8952,7 @@ importers:
         specifier: 'catalog:'
         version: 31.0.1(@noble/hashes@2.4.0)
       loud-rejection:
-        specifier: ^2.2.0
+        specifier: 'catalog:'
         version: 2.2.0
       oxlint:
         specifier: 'catalog:'
@@ -8787,7 +9006,7 @@ importers:
         specifier: 'catalog:'
         version: 1.1.0(@protontech/crypto@2.2.0(@types/node@26.6.6)(@typescript/typescript6@6.0.2))
       '@protontech/mimemessage':
-        specifier: ~v1.1.4
+        specifier: 'catalog:'
         version: 1.1.4(supports-color@11.0.0)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
@@ -8802,13 +9021,13 @@ importers:
         specifier: 'catalog:'
         version: 3.10.2
       markdown-it:
-        specifier: ^14.3.3
+        specifier: 'catalog:'
         version: 14.3.3
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
       turndown:
-        specifier: ^7.2.5
+        specifier: 'catalog:'
         version: 7.2.5
     devDependencies:
       '@proton/oxlint-config':
@@ -8827,7 +9046,7 @@ importers:
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/markdown-it':
-        specifier: ^13.0.9
+        specifier: 'catalog:'
         version: 13.0.9
       '@types/node':
         specifier: 'catalog:'
@@ -8836,7 +9055,7 @@ importers:
         specifier: 'catalog:'
         version: 18.3.31
       '@types/turndown':
-        specifier: ^5.0.6
+        specifier: 'catalog:'
         version: 5.0.6
       '@types/webpack-env':
         specifier: 'catalog:'
@@ -9177,7 +9396,7 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       livekit-client:
-        specifier: 2.25.0
+        specifier: 'catalog:'
         version: 2.25.0
       react-redux:
         specifier: 'catalog:'
@@ -9278,7 +9497,7 @@ importers:
         specifier: 'catalog:'
         version: 21.0.4
       json-schema-to-typescript:
-        specifier: ^13.1.2
+        specifier: 'catalog:'
         version: 13.1.2
       oxlint:
         specifier: 'catalog:'
@@ -9673,7 +9892,7 @@ importers:
         specifier: ^1.16.22
         version: 1.16.22(@swc/helpers@0.5.17)
       autoprefixer:
-        specifier: ^10.7.0
+        specifier: 'catalog:'
         version: 10.7.0(postcss@8.5.33)
       babel-loader:
         specifier: ^10.1.1
@@ -9742,16 +9961,16 @@ importers:
         specifier: ^0.2.7
         version: 0.2.7(@swc/core@1.16.22(@swc/helpers@0.5.17))(webpack@5.113.0)
       terser-webpack-plugin:
-        specifier: ^5.6.1
+        specifier: 'catalog:'
         version: 5.6.1(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(webpack@5.113.0)
       webpack:
         specifier: 'catalog:'
         version: 5.113.0(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(sharp@0.35.5(@types/node@26.6.6))(svgo@4.1.0)(webpack-cli@7.3.1)
       webpack-bundle-analyzer:
-        specifier: ^5.4.3
+        specifier: 'catalog:'
         version: 5.4.3
       webpack-cli:
-        specifier: ^7.3.1
+        specifier: 'catalog:'
         version: 7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.3)(webpack-dev-server@6.1.0)(webpack@5.113.0)
       webpack-dev-server:
         specifier: 'catalog:'
@@ -9836,7 +10055,7 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/autofill':
-        specifier: 0.0.42001045
+        specifier: 'catalog:'
         version: 0.0.42001045
       '@protontech/crypto':
         specifier: 'catalog:'
@@ -9851,7 +10070,7 @@ importers:
         specifier: ^2.25.0
         version: 2.25.0
       client-zip:
-        specifier: ^2.5.1
+        specifier: 'catalog:'
         version: 2.5.1
       date-fns:
         specifier: 'catalog:'
@@ -9878,7 +10097,7 @@ importers:
         specifier: ^9.6.0
         version: 9.6.0
       papaparse:
-        specifier: ^5.7.1
+        specifier: 'catalog:'
         version: 5.7.1
       react-redux:
         specifier: 'catalog:'
@@ -9890,7 +10109,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
       react-virtualized:
-        specifier: ^9.22.6
+        specifier: 'catalog:'
         version: 9.22.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       redux:
         specifier: 'catalog:'
@@ -9902,13 +10121,13 @@ importers:
         specifier: ^5.1.2
         version: 5.1.2
       tldts:
-        specifier: ^7.5.5
+        specifier: 'catalog:'
         version: 7.5.5
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
       webextension-polyfill:
-        specifier: ^0.12.0
+        specifier: 'catalog:'
         version: 0.12.0
       x2js:
         specifier: ^3.4.5
@@ -9951,7 +10170,7 @@ importers:
         specifier: 'catalog:'
         version: 4.17.27
       '@types/papaparse':
-        specifier: ^5.5.2
+        specifier: 'catalog:'
         version: 5.5.2
       '@types/react':
         specifier: 'catalog:'
@@ -9966,10 +10185,10 @@ importers:
         specifier: 'catalog:'
         version: 5.3.3(@types/react@18.3.31)
       '@types/react-virtualized':
-        specifier: ^9.22.4
+        specifier: 'catalog:'
         version: 9.22.4
       '@types/webextension-polyfill':
-        specifier: ^0.12.6
+        specifier: 'catalog:'
         version: 0.12.6
       '@types/webpack-env':
         specifier: 'catalog:'
@@ -9990,7 +10209,7 @@ importers:
         specifier: 'catalog:'
         version: 21.0.4
       json-schema-to-typescript:
-        specifier: ^13.1.2
+        specifier: 'catalog:'
         version: 13.1.2
       jszip:
         specifier: 'catalog:'
@@ -10071,7 +10290,7 @@ importers:
         specifier: 'catalog:'
         version: 4.4.0
       ibantools:
-        specifier: 4.5.4
+        specifier: 'catalog:'
         version: 4.5.4
       lodash:
         specifier: 'catalog:'
@@ -10165,7 +10384,7 @@ importers:
         specifier: 'catalog:'
         version: 4.4.0
       ibantools:
-        specifier: 4.5.4
+        specifier: 'catalog:'
         version: 4.5.4
       lodash:
         specifier: 'catalog:'
@@ -10307,7 +10526,7 @@ importers:
         specifier: 'catalog:'
         version: 2.15.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       date-fns:
         specifier: 'catalog:'
@@ -10487,13 +10706,13 @@ importers:
         specifier: ^12.3.2
         version: 12.3.2
       '@pdfme/common':
-        specifier: ^6.1.13
+        specifier: 'catalog:'
         version: 6.1.13
       '@pdfme/generator':
         specifier: ^6.1.13
         version: 6.1.13(@pdfme/common@6.1.13)(@pdfme/schemas@6.1.13(@pdfme/common@6.1.13))
       '@pdfme/schemas':
-        specifier: ^6.1.13
+        specifier: 'catalog:'
         version: 6.1.13(@pdfme/common@6.1.13)
       '@proton/shared':
         specifier: workspace:^
@@ -11079,13 +11298,13 @@ importers:
         specifier: 'catalog:'
         version: 4.18.1
       papaparse:
-        specifier: ^5.7.1
+        specifier: 'catalog:'
         version: 5.7.1
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
       recharts:
-        specifier: ^3.11.0
+        specifier: 'catalog:'
         version: 3.11.0(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.8)(react@18.3.1)(redux@5.0.1)
       ttag:
         specifier: 'catalog:'
@@ -11113,7 +11332,7 @@ importers:
         specifier: 'catalog:'
         version: 26.6.6
       '@types/papaparse':
-        specifier: ^5.5.2
+        specifier: 'catalog:'
         version: 5.5.2
       '@types/react-dom':
         specifier: 'catalog:'
@@ -11179,7 +11398,7 @@ importers:
         specifier: 'catalog:'
         version: 2.2.0(@types/node@26.6.6)(@typescript/typescript6@6.0.2)
       '@protontech/mimemessage':
-        specifier: ~v1.1.4
+        specifier: 'catalog:'
         version: 1.1.4(supports-color@11.0.0)
       '@protontech/mutex-browser':
         specifier: ^1.0.5
@@ -11209,7 +11428,7 @@ importers:
         specifier: 'catalog:'
         version: 26.6.6
       '@types/papaparse':
-        specifier: ^5.5.2
+        specifier: 'catalog:'
         version: 5.5.2
       '@types/ua-parser-js':
         specifier: ^0.7.39
@@ -11245,13 +11464,13 @@ importers:
         specifier: ^1.2.8
         version: 1.2.8
       papaparse:
-        specifier: ^5.7.1
+        specifier: 'catalog:'
         version: 5.7.1
       tinycolor2:
         specifier: 'catalog:'
         version: 1.6.0
       tldts:
-        specifier: ^7.5.5
+        specifier: 'catalog:'
         version: 7.5.5
       ttag:
         specifier: 'catalog:'
@@ -11315,7 +11534,7 @@ importers:
         specifier: 'catalog:'
         version: 5.1.1(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/ui@5.1.1)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vitest@5.1.1)
       '@webgpu/types':
-        specifier: ^0.1.74
+        specifier: 'catalog:'
         version: 0.1.74
       oxlint:
         specifier: 'catalog:'
@@ -11385,10 +11604,10 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0(stylelint@15.11.0(supports-color@11.0.0)(typescript@6.0.3))
       stylelint-config-standard-scss:
-        specifier: ^10.0.0
+        specifier: 'catalog:'
         version: 10.0.0(postcss@8.5.33)(stylelint@15.11.0(supports-color@11.0.0)(typescript@6.0.3))
       stylelint-use-logical-spec:
-        specifier: ^5.0.1
+        specifier: 'catalog:'
         version: 5.0.1(stylelint@15.11.0(supports-color@11.0.0)(typescript@6.0.3))
     devDependencies:
       '@proton/oxlint-config':
@@ -11502,7 +11721,7 @@ importers:
         specifier: workspace:^
         version: link:../shared
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       '@unleash/toolbar':
         specifier: ^1.2.1
@@ -11511,7 +11730,7 @@ importers:
         specifier: 'catalog:'
         version: 4.4.0
       unleash-proxy-client:
-        specifier: ^3.8.2
+        specifier: 'catalog:'
         version: 3.8.2
     devDependencies:
       '@proton/oxlint-config':
@@ -11625,7 +11844,7 @@ importers:
   packages/vpn:
     dependencies:
       '@noble/ed25519':
-        specifier: 1.7.5
+        specifier: 'catalog:'
         version: 1.7.5
       '@proton/account':
         specifier: workspace:^
@@ -11870,7 +12089,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vite-plugin-wasm:
-        specifier: ^3.6.0
+        specifier: 'catalog:'
         version: 3.6.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       vitest:
         specifier: 'catalog:'
@@ -11890,7 +12109,7 @@ importers:
         specifier: ^1.65.0
         version: 1.65.0
       '@prometheus-io/client':
-        specifier: ^0.16.1
+        specifier: 'catalog:'
         version: 0.16.1
       '@proton/colors':
         specifier: workspace:^
@@ -11950,13 +12169,13 @@ importers:
         specifier: ^1.8.2
         version: 1.8.2
       fs-extra:
-        specifier: ^11.4.1
+        specifier: 'catalog:'
         version: 11.4.1
       gmail-tester:
         specifier: ^1.5.0
         version: 1.5.0(encoding@0.1.13)(supports-color@11.0.0)
       googleapis:
-        specifier: ^131.0.0
+        specifier: 'catalog:'
         version: 131.0.0(encoding@0.1.13)(supports-color@11.0.0)
       json-to-zod:
         specifier: ^1.1.2
@@ -11993,7 +12212,7 @@ importers:
         specifier: ^1.1.8
         version: 1.1.8
       '@types/fs-extra':
-        specifier: ^11.0.4
+        specifier: 'catalog:'
         version: 11.0.4
       '@types/node':
         specifier: 'catalog:'
@@ -12089,10 +12308,10 @@ importers:
         specifier: 'catalog:'
         version: 2.15.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
-        specifier: ^6.0.1
+        specifier: 'catalog:'
         version: 6.0.1(react@18.3.1)(unleash-proxy-client@3.8.2)
       diff-dom:
-        specifier: ^5.2.1
+        specifier: 'catalog:'
         version: 5.2.1
       react:
         specifier: 'catalog:'
@@ -12120,10 +12339,10 @@ importers:
         specifier: 'catalog:'
         version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       glob:
-        specifier: ^14.0.6
+        specifier: 'catalog:'
         version: 14.0.6
       include-media:
-        specifier: ^2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       oxlint:
         specifier: 'catalog:'
@@ -12141,7 +12360,7 @@ importers:
         specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1)
       wait-on:
-        specifier: ^9.5.1
+        specifier: 'catalog:'
         version: 9.5.1(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
 
   tests/mail-renderer:
@@ -12168,7 +12387,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       diff-dom:
-        specifier: ^5.2.1
+        specifier: 'catalog:'
         version: 5.2.1
       react:
         specifier: 'catalog:'
@@ -12193,10 +12412,10 @@ importers:
         specifier: 'catalog:'
         version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
       glob:
-        specifier: ^14.0.6
+        specifier: 'catalog:'
         version: 14.0.6
       include-media:
-        specifier: ^2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       oxlint:
         specifier: 'catalog:'
@@ -12217,7 +12436,7 @@ importers:
         specifier: 'catalog:'
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1)
       wait-on:
-        specifier: ^9.5.1
+        specifier: 'catalog:'
         version: 9.5.1(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
 
   tests/packages/gmail-token:
@@ -12226,7 +12445,7 @@ importers:
         specifier: ^4.3.3
         version: 4.3.3
       googleapis:
-        specifier: ^131.0.0
+        specifier: 'catalog:'
         version: 131.0.0(encoding@0.1.13)(supports-color@11.0.0)
       ts-node:
         specifier: 'catalog:'
@@ -12250,13 +12469,13 @@ importers:
         specifier: ^16.6.1
         version: 16.6.1
       semver:
-        specifier: ^7.8.6
+        specifier: 'catalog:'
         version: 7.8.6
       undici:
         specifier: 8.13.1
         version: 8.13.1
       yaml:
-        specifier: ^2.9.1
+        specifier: 'catalog:'
         version: 2.9.1
     devDependencies:
       '@proton/oxlint-config':
@@ -12269,7 +12488,7 @@ importers:
         specifier: 'catalog:'
         version: 26.6.6
       '@types/semver':
-        specifier: ^7.8.0
+        specifier: 'catalog:'
         version: 7.8.0
       '@typescript/native':
         specifier: 'catalog:'
@@ -12311,13 +12530,13 @@ importers:
         specifier: 'catalog:'
         version: 14.0.3
       semver:
-        specifier: ^7.8.6
+        specifier: 'catalog:'
         version: 7.8.6
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
       yaml:
-        specifier: ^2.9.1
+        specifier: 'catalog:'
         version: 2.9.1
     devDependencies:
       '@proton/oxlint-config':
@@ -12333,7 +12552,7 @@ importers:
         specifier: 'catalog:'
         version: 26.6.6
       '@types/semver':
-        specifier: ^7.8.0
+        specifier: 'catalog:'
         version: 7.8.0
       '@typescript/native':
         specifier: 'catalog:'
@@ -12354,7 +12573,7 @@ importers:
   utilities/ci-scripts:
     dependencies:
       '@prometheus-io/client':
-        specifier: ^0.16.1
+        specifier: 'catalog:'
         version: 0.16.1
       '@proton/ci-tools':
         specifier: workspace:^
@@ -12369,7 +12588,7 @@ importers:
         specifier: 'catalog:'
         version: 14.0.3
       glob:
-        specifier: ^14.0.6
+        specifier: 'catalog:'
         version: 14.0.6
       jszip:
         specifier: 'catalog:'
@@ -12415,16 +12634,16 @@ importers:
   utilities/ci-tools:
     dependencies:
       '@prometheus-io/client':
-        specifier: ^0.16.1
+        specifier: 'catalog:'
         version: 0.16.1
       '@proton/gitlab':
         specifier: workspace:^
         version: link:../gitlab
       axios:
-        specifier: ^1.20.0
+        specifier: 'catalog:'
         version: 1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
       axios-retry:
-        specifier: ^4.5.0
+        specifier: 'catalog:'
         version: 4.5.0(axios@1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0))
     devDependencies:
       '@proton/oxlint-config':
@@ -12455,7 +12674,7 @@ importers:
   utilities/collect-metrics:
     dependencies:
       '@prometheus-io/client':
-        specifier: ^0.16.1
+        specifier: 'catalog:'
         version: 0.16.1
       '@proton/ci-tools':
         specifier: workspace:^
@@ -12498,10 +12717,10 @@ importers:
   utilities/gitlab:
     dependencies:
       axios:
-        specifier: ^1.20.0
+        specifier: 'catalog:'
         version: 1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
       axios-retry:
-        specifier: ^4.5.0
+        specifier: 'catalog:'
         version: 4.5.0(axios@1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0))
     devDependencies:
       '@proton/oxlint-config':
@@ -12620,7 +12839,7 @@ importers:
   utilities/repo-rules:
     dependencies:
       glob:
-        specifier: ^14.0.6
+        specifier: 'catalog:'
         version: 14.0.6
       typescript:
         specifier: 'catalog:'
@@ -12688,7 +12907,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       axios:
-        specifier: ^1.20.0
+        specifier: 'catalog:'
         version: 1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
       oxlint:
         specifier: 'catalog:'

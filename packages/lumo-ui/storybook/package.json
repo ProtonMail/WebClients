@@ -22,8 +22,8 @@
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
         "@proton/types": "workspace:^",
-        "@storybook/addon-docs": "^10.6.8",
-        "@storybook/react-webpack5": "^10.6.8",
+        "@storybook/addon-docs": "catalog:",
+        "@storybook/react-webpack5": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -32,8 +32,8 @@
         "mini-css-extract-plugin": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "storybook": "^10.6.8",
-        "terser-webpack-plugin": "^5.6.1",
+        "storybook": "catalog:",
+        "terser-webpack-plugin": "catalog:",
         "typescript": "catalog:"
     }
 }

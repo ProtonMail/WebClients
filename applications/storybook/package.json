@@ -46,9 +46,9 @@
         "@playwright/test": "^1.65.0",
         "@proton/oxlint-config": "workspace:^",
         "@storybook/addon-a11y": "^10.6.8",
-        "@storybook/addon-docs": "^10.6.8",
+        "@storybook/addon-docs": "catalog:",
         "@storybook/addon-links": "^10.6.8",
-        "@storybook/react-webpack5": "^10.6.8",
+        "@storybook/react-webpack5": "catalog:",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
@@ -59,8 +59,8 @@
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "rimraf": "^6.1.4",
-        "storybook": "^10.6.8",
-        "terser-webpack-plugin": "^5.6.1",
-        "wait-on": "^9.5.1"
+        "storybook": "catalog:",
+        "terser-webpack-plugin": "catalog:",
+        "wait-on": "catalog:"
     }
 }

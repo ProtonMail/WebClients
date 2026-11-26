@@ -102,7 +102,7 @@
     "test:watch": "pnpm run test --watch"
   },
   "dependencies": {
-    "@ariakit/react": "0.4.29",
+    "@ariakit/react": "catalog:",
     "@lexical/yjs": "catalog:docs",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
@@ -125,13 +125,13 @@
   },
   "devDependencies": {
     "@proton/oxlint-config": "workspace:^",
-    "@proton/vitest-config": "workspace:^",
     "@proton/unleash": "workspace:^",
+    "@proton/vitest-config": "workspace:^",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/webpack-env": "catalog:",
-    "@vitest/coverage-v8": "catalog:",
     "@typescript/native": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
     "happy-dom": "catalog:",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",

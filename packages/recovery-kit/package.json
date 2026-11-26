@@ -14,9 +14,9 @@
     },
     "dependencies": {
         "@formatjs/intl-segmenter": "^12.3.2",
-        "@pdfme/common": "^6.1.13",
+        "@pdfme/common": "catalog:",
         "@pdfme/generator": "^6.1.13",
-        "@pdfme/schemas": "^6.1.13",
+        "@pdfme/schemas": "catalog:",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^"
     },

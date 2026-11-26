@@ -62,7 +62,7 @@
         "test:dev": "vitest --watch"
     },
     "dependencies": {
-        "@emoji-mart/data": "^1.0.3",
+        "@emoji-mart/data": "catalog:",
         "@proton/account": "workspace:^",
         "@proton/activation": "workspace:^",
         "@proton/app-context": "workspace:^",
@@ -93,7 +93,7 @@
         "@protontech/logger": "catalog:",
         "@reduxjs/toolkit": "catalog:",
         "date-fns": "catalog:",
-        "emoji-mart": "^5.1.0",
+        "emoji-mart": "catalog:",
         "lodash": "catalog:",
         "roosterjs": "8.47.0",
         "roosterjs-content-model-api": "^9.62.0",
@@ -125,7 +125,7 @@
         "@vitest/coverage-v8": "catalog:",
         "happy-dom": "catalog:",
         "jsdom": "catalog:",
-        "loud-rejection": "^2.2.0",
+        "loud-rejection": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react": "catalog:",

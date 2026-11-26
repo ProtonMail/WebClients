@@ -39,7 +39,7 @@
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/autofill": "0.0.42001045",
+        "@protontech/autofill": "catalog:",
         "@protontech/fathom": "0.0.42001045",
         "@redux-devtools/remote": "^0.9.5",
         "@reduxjs/toolkit": "catalog:",
@@ -53,7 +53,7 @@
         "redux-saga": "catalog:",
         "ts-node": "catalog:",
         "ttag": "catalog:",
-        "webextension-polyfill": "^0.12.0"
+        "webextension-polyfill": "catalog:"
     },
     "devDependencies": {
         "@pmmmwh/react-refresh-webpack-plugin": "catalog:",
@@ -71,7 +71,7 @@
         "@types/react-dom": "catalog:",
         "@types/react-router-dom": "catalog:",
         "@types/socketcluster-server": "^19.0.2",
-        "@types/webextension-polyfill": "^0.12.6",
+        "@types/webextension-polyfill": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "@vitejs/plugin-react": "catalog:",
@@ -92,7 +92,7 @@
         "typescript": "catalog:",
         "vitest": "catalog:",
         "webpack": "catalog:",
-        "webpack-bundle-analyzer": "^5.4.3",
+        "webpack-bundle-analyzer": "catalog:",
         "webpack-dev-server": "catalog:"
     },
     "peerDependencies": {

@@ -17,6 +17,7 @@ packages:
 # check:constraints requires every workspace to declare these dependencies as "catalog:" or
 # "catalog:<name>" from a named catalog below; see utilities/repo-rules/README.md for the exceptions.
 catalog:
+    '@ariakit/react': 0.4.29
     '@dnd-kit/abstract': ^0.5.3
     '@dnd-kit/collision': ^0.5.3
     '@dnd-kit/dom': ^0.5.3
@@ -35,99 +36,173 @@ catalog:
     '@electron-forge/publisher-github': ^8.0.1
     '@electron-forge/shared-types': ^8.0.1
     '@electron/fuses': ^2.1.3
+    '@emoji-mart/data': ^1.0.3
+    '@floating-ui/dom': ^1.8.0
     # Meet's Lexical. Docs takes its own from the `docs` catalog. `lexical` and every `@lexical/*`
     # package in one catalog must share one exact version.
     '@lexical/react': 0.31.2
     '@lexical/utils': 0.31.2
+    '@mattiasbuelens/web-streams-adapter': 0.1.0
+    '@noble/ed25519': 1.7.5
+    '@noble/hashes': ^1.8.0
     # Must stay on the same version as oxlint.
     '@oxlint/plugins': 1.94.0
+    '@pdfme/common': ^6.1.13
+    '@pdfme/schemas': ^6.1.13
     '@pmmmwh/react-refresh-webpack-plugin': ^0.6.3
+    '@prometheus-io/client': ^0.16.1
+    '@protontech/autofill': 0.0.42001045
     '@protontech/crypto': ^2.2.0
     # Shared so that every workspace importing the Drive SDK resolves the same version.
     '@protontech/drive-sdk': ^0.24.0
     '@protontech/logger': ^1.1.0
+    '@protontech/mimemessage': ~v1.1.4
     '@protontech/pass-rust-core': 2.3.4
     '@protontech/proton-apps': ^1.1.0
     '@protontech/timezone-support': 2.2.0
     '@reduxjs/toolkit': ^2.15.0
     '@sentry/browser': ^7.120.4
+    '@sentry/electron': ^7.20.2
     '@sentry/types': ^7.120.4
+    '@storybook/addon-docs': ^10.6.8
+    '@storybook/react-webpack5': ^10.6.8
     '@tanstack/react-virtual': ^3.14.13
     '@testing-library/dom': ^10.4.2
     '@testing-library/jest-dom': ^8.0.0
     '@testing-library/react': ^16.3.3
     '@testing-library/user-event': ^14.6.13
     '@types/chrome': ^0.3.7
+    '@types/fs-extra': ^11.0.4
     '@types/history': ^4.7.11
     '@types/jsdom': ^21.1.7
     '@types/lodash': ^4.17.27
+    '@types/markdown-it': ^13.0.9
+    '@types/mustache': ^4.2.6
     '@types/node': ^26.6.6
+    '@types/papaparse': ^5.5.2
     '@types/react': ^18.3.31
     '@types/react-dom': ^18.3.7
     '@types/react-router': ^5.1.20
     '@types/react-router-dom': ^5.3.3
+    '@types/react-virtualized': ^9.22.4
+    '@types/semver': ^7.8.0
     '@types/tinycolor2': ^1.4.6
+    '@types/turndown': ^5.0.6
+    '@types/webextension-polyfill': ^0.12.6
     '@types/webpack-env': ^1.18.8
     '@typescript/native': npm:typescript@^7.0.2
+    '@unleash/proxy-client-react': ^6.0.1
     '@vercel/webpack-asset-relocator-loader': 1.7.3
     '@vitejs/plugin-react': ^6.3.0
     '@vitest/browser-playwright': ^5.1.1
     '@vitest/coverage-v8': ^5.1.1
     '@vitest/ui': ^5.1.1
+    '@webgpu/types': ^0.1.74
+    '@xmldom/xmldom': ^0.9.12
+    autoprefixer: ^10.7.0
+    axios: ^1.20.0
+    axios-retry: ^4.5.0
     browserslist: ^4.29.6
+    chart.js: ^4.6.1
+    client-zip: ^2.5.1
     clsx: ^2.1.1
+    comlink: ^4.4.2
     commander: ^14.0.3
     copy-webpack-plugin: ^14.0.0
     core-js: ^3.51.0
     cross-env: ^10.1.0
     css-loader: ^7.1.5
     date-fns: ^4.4.0
+    diff-dom: ^5.2.1
     dompurify: ^3.4.18
     electron-log: ^5.4.4
     electron-store: ^8.2.0
+    emoji-mart: ^5.1.0
+    esbuild: ^0.28.2
+    exifreader: ^4.46.0
     fake-indexeddb: ^6.2.8
     fork-ts-checker-webpack-plugin: ^9.2.0
     formik: ^2.4.9
+    fs-extra: ^11.4.1
+    glob: ^14.0.6
+    googleapis: ^131.0.0
     happy-dom: ^21.0.4
     history: ^4.10.1
     html-webpack-plugin: ^5.6.8
     # Keep Lumo and its export tests on the version targeted by the patch below.
     html2canvas: 1.4.1
+    ibantools: 4.5.4
     idb: ^8.0.4
+    immer: 11.2.10
+    include-media: ^2.0.0
     jsdom: ^31.0.1
+    json-schema-to-typescript: ^13.1.2
+    jsqr: ^1.4.0
     jszip: ^3.10.2
     lexical: 0.31.2
+    livekit-client: 2.25.0
     lodash: ^4.18.1
+    lottie-react: ^2.4.2
+    loud-rejection: ^2.2.0
+    markdown-it: ^14.3.3
     mini-css-extract-plugin: ^2.10.2
     msw: 2.12.14
+    mustache: ^4.2.0
+    node-loader: ^2.1.0
     oxfmt: 0.79.0
     oxlint: 1.94.0
     oxlint-tsgolint: 7.0.2008
+    papaparse: ^5.7.1
+    path-browserify: ^1.0.1
     postcss: ^8.5.33
     react: ^18.3.1
+    react-chartjs-2: ^5.3.1
     react-dom: ^18.3.1
     react-redux: ^9.3.1
     react-router: ^5.3.4
     react-router-dom: ^5.3.4
+    react-router-dom-v5-compat: ^6.30.6
+    react-virtualized: ^9.22.6
+    recharts: ^3.11.0
     redux: ^5.0.1
     redux-saga: ^1.6.0
     redux-thunk: ^3.1.0
     sass: ^1.80.3
+    semver: ^7.8.6
+    storybook: ^10.6.8
+    style-loader: ^4.0.0
     stylelint: ^15.11.0
+    stylelint-config-standard-scss: ^10.0.0
+    stylelint-use-logical-spec: ^5.0.1
+    tailwindcss: ^3.4.19
+    terser-webpack-plugin: ^5.6.1
     tinycolor2: ^1.6.0
+    tldts: ^7.5.5
     ts-loader: ^9.6.2
     ts-node: ^10.9.2
     tsx: ^4.23.15
     ttag: ^1.8.12
     ttag-cli: ^1.12.0
+    turndown: ^7.2.5
     # A few workspaces (including the root) still declare the real `typescript` package directly.
     typescript: npm:@typescript/typescript6@^6.0.2
+    undici: ^8.13.1
+    unleash-proxy-client: ^3.8.2
+    update-electron-app: ^3.3.0
     uuid: ^14.0.3
     vite: ^8.3.8
+    vite-plugin-mkcert: ^1.17.12
+    vite-plugin-singlefile: ^2.3.4
+    vite-plugin-wasm: ^3.6.0
     vitest: ^5.1.1
+    wait-on: ^9.5.1
+    webextension-polyfill: ^0.12.0
     webpack: ^5.113.0
+    webpack-bundle-analyzer: ^5.4.3
+    webpack-cli: ^7.3.1
     webpack-dev-server: ^6.1.0
     y-protocols: ^1.0.6
+    yaml: ^2.9.1
     yjs: ^13.6.15
     zod: ^4.6.7
 
