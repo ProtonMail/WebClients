@@ -1,4 +1,8 @@
+import { format, isValid, parse } from 'date-fns';
+
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { getDateFnLocaleWithTimeFormat } from '@proton/shared/lib/i18n/dateFnLocale';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 export const shouldUse12HourClock = (timeFormat: SETTINGS_TIME_FORMAT) => {
@@ -9,17 +13,14 @@ export const shouldUse12HourClock = (timeFormat: SETTINGS_TIME_FORMAT) => {
     );
 };
 
-export const formatTimeHHMM = (hours: number, minutes: number, timeFormat: SETTINGS_TIME_FORMAT): string => {
-    const locale = dateLocale.code || 'en-US';
-    const use12Hour = shouldUse12HourClock(timeFormat);
+const getTimeLocale = (timeFormat: SETTINGS_TIME_FORMAT) =>
+    getDateFnLocaleWithTimeFormat(dateLocale, shouldUse12HourClock(timeFormat));
 
-    const formatter = new Intl.DateTimeFormat(locale, {
-        timeZone: 'UTC',
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: use12Hour,
-    });
+export const formatTimeHHMM = (hours: number, minutes: number, timeFormat: SETTINGS_TIME_FORMAT): string =>
+    formatUTC(new Date(Date.UTC(1970, 0, 1, hours, minutes)), 'p', { locale: getTimeLocale(timeFormat) });
 
-    const timeString = formatter.format(new Date(Date.UTC(1970, 0, 1, hours, minutes)));
-    return use12Hour ? timeString.toUpperCase() : timeString;
+export const parseTimeHHMM = (text: string, timeFormat: SETTINGS_TIME_FORMAT): string | null => {
+    const locale = getTimeLocale(timeFormat);
+    const time = parse(text, 'p', new Date(1970, 0, 1), { locale });
+    return isValid(time) ? format(time, 'HH:mm', { locale }) : null;
 };

@@ -9,7 +9,7 @@ import type { InputFieldProps } from '@proton/components/components/v2/field/Inp
 import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 
-import { formatTimeHHMM } from '../../utils/timeFormat';
+import { formatTimeHHMM, parseTimeHHMM } from '../../utils/timeFormat';
 
 import './TimeInput.scss';
 
@@ -33,7 +33,6 @@ export const TimeInput = ({
     onChange,
     placeholder,
     className,
-    error,
     options,
     timeFormat,
     ...rest
@@ -55,8 +54,8 @@ export const TimeInput = ({
     const activeOption = options.find((option) => option.value >= value);
 
     const displayValue = (() => {
-        if (!value) {
-            return '';
+        if (!normaliseInput(value)) {
+            return value;
         }
         const [hours, minutes] = value.split(':');
         return formatTimeHHMM(parseInt(hours), parseInt(minutes), timeFormat);
@@ -85,11 +84,10 @@ export const TimeInput = ({
             skipBlurRef.current = false;
             return;
         }
-        const normalised = normaliseInput(inputBuffer);
-        if (normalised) {
-            onChange(normalised);
+        if (inputBuffer === displayValue) {
+            return;
         }
-        // if invalid, silently revert — buffer resets to displayValue on next focus
+        onChange(parseTimeHHMM(inputBuffer, timeFormat) ?? normaliseInput(inputBuffer) ?? inputBuffer);
     };
 
     return (
@@ -102,7 +100,6 @@ export const TimeInput = ({
                 onChange={(e) => setInputBuffer(e.target.value)}
                 placeholder={currentPlaceholder}
                 autoComplete="off"
-                error={error || (value && !normaliseInput(value))}
                 {...rest}
                 ref={anchorRef}
             />

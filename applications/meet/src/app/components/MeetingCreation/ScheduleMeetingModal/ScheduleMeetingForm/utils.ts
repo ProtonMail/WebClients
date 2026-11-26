@@ -17,8 +17,10 @@ import type { FormErrors, FormValues } from './types';
 
 const timeZoneOptions = getTimeZoneOptions();
 
+export const validateTime = (time: string) => /^([01]\d|2[0-3]):[0-5]\d$/.test(time);
+
 export const combineDateAndTime = (date: Date | undefined, time: string, timeZone: string) => {
-    if (!(date instanceof Date)) {
+    if (!(date instanceof Date) || !validateTime(time)) {
         return new Date(NaN);
     }
     const [hours, minutes] = time.split(':').map(Number);
@@ -54,30 +56,6 @@ const validateDate = (date?: any): date is Date => {
     const isDateInstance = date instanceof Date;
 
     return !!date && isDateInstance;
-};
-
-const checkIfCorrectMinuteOrSeconds = (text: string) => {
-    const integerValue = parseInt(text);
-
-    if (isNaN(integerValue)) {
-        return false;
-    }
-
-    return integerValue >= 0 && integerValue < 60;
-};
-
-const validateTime = (time?: string) => {
-    if (!time) {
-        return false;
-    }
-
-    const parts = time.split(':');
-
-    if (parts.length !== 2 || parts[0].length !== 2 || parts[1].length !== 2) {
-        return false;
-    }
-
-    return checkIfCorrectMinuteOrSeconds(parts[0]) && checkIfCorrectMinuteOrSeconds(parts[1]);
 };
 
 export const validate = (values: FormValues): FormErrors => {
