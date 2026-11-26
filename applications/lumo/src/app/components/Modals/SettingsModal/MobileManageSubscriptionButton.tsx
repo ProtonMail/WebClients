@@ -2,24 +2,27 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import clsx from '@proton/utils/clsx';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { MobileSelectors } from '../../../mobileSelectors';
-import { isNativeMobileApp } from '../../../util/userAgent';
+import { getNativeAppInfo } from '../../../util/userAgent';
 
 /**
- * "Manage Subscription" CTA for paid users in the native mobile app.
+ * "Manage Subscription" CTA for paid users in the native app that matches the store purchase.
  *
  * Store subscriptions can only be managed natively, so the mobile client injects JS that
  * intercepts clicks on `manageSubscriptionTrigger` — the same mechanism as the upgrade triggers —
- * and opens its own flow. The path is only a web fallback. Renders nothing outside the mobile app,
- * and nothing for free users, who get the upsell section instead.
+ * and opens its own flow. The path is only a web fallback.
  */
-const MobileManageSubscriptionButton = () => {
+const MobileManageSubscriptionButton = ({ platform }: { platform: SubscriptionPlatform }) => {
     const { isLumoPaid } = useLumoPlan();
+    const nativePlatform = getNativeAppInfo()?.platform;
+    const matchesStore =
+        (platform === SubscriptionPlatform.iOS && nativePlatform === 'ios') ||
+        (platform === SubscriptionPlatform.Android && nativePlatform === 'android');
 
-    if (!isNativeMobileApp() || !isLumoPaid) {
+    if (!matchesStore || !isLumoPaid) {
         return null;
     }
 
@@ -29,8 +32,7 @@ const MobileManageSubscriptionButton = () => {
             path={MobileSelectors.manageSubscriptionPath}
             shape="solid"
             color="norm"
-            className={clsx(MobileSelectors.manageSubscriptionTrigger, 'mx-4')}
-            style={{ '--padding-inline': 'var(--space-4)' }}
+            className={MobileSelectors.manageSubscriptionTrigger}
         >
             {c('collider_2025: Action').t`Manage Subscription`}
         </ButtonLike>

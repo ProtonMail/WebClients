@@ -114,16 +114,19 @@ export const PlanTiersModal = ({
                     </div>
                 ) : (
                     <PlanTierTabs value={cycle} onChange={onCycleChange} savingsLabel={savingsLabel}>
+                        {/* Stays mounted from loading to ready so screen readers announce the message. */}
+                        <div aria-live="polite">
+                            {status === 'ready' && selectableCards.length === 0 && (
+                                <p className="mx-4 mt-0 mb-3 lumo-body-medium text-center">
+                                    {c('collider_2025:Error').t`Paid plans are currently unavailable.`}
+                                </p>
+                            )}
+                        </div>
+
                         {status === 'loading' ? (
                             <Loader className="mx-auto px-6 py-8" />
                         ) : (
                             <>
-                                {selectableCards.length === 0 && (
-                                    <p className="mx-4 mt-0 mb-3 lumo-body-medium text-center" aria-live="polite">
-                                        {c('collider_2025:Error').t`Paid plans are currently unavailable.`}
-                                    </p>
-                                )}
-
                                 {/* Desktop cards each have their own action. */}
                                 <div className="lumo-plan-tiers-modal__plans px-6">
                                     {cards.map(({ tier, title, price, variant, action }) => (
