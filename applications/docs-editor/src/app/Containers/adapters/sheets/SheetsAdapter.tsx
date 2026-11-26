@@ -102,6 +102,7 @@ export function SheetsAdapter({ children, clientInvoker, sheetsEditor }: SheetsA
           .catch(console.error)
       },
       hasBasePatchesStored: () => clientInvoker.hasBasePatchesStored(),
+      fetchExternalImage: (url) => clientInvoker.fetchExternalImageAsBase64(url),
       showGenericInfoModal: (props) => {
         clientInvoker.showGenericInfoModal(props)
       },
