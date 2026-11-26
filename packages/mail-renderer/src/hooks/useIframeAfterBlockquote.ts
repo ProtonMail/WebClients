@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import { MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID } from '../constants';
 import { getIframeDocument } from '../helpers/getIframeDocument';
+import { getIframeSlot } from '../helpers/iframeSlots';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement | null>;
@@ -20,7 +21,8 @@ const useIframeAfterBlockquote = ({ iframeRef, initStatus, afterBlockquoteConten
         if (initStatus === 'start') {
             return;
         }
-        const iframeAfterBlockquoteDiv = getIframeDocument(iframeRef.current)?.getElementById(
+        const iframeAfterBlockquoteDiv = getIframeSlot(
+            getIframeDocument(iframeRef.current),
             MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID
         );
         if (!iframeAfterBlockquoteDiv) {

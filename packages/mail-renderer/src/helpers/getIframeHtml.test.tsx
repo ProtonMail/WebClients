@@ -22,6 +22,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             expect(htmlString).not.toContain(MESSAGE_IFRAME_PRINT_CLASS);
@@ -38,6 +39,7 @@ describe('getIframeHTML', () => {
                 isPrint: true,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             expect(htmlString).toContain(MESSAGE_IFRAME_PRINT_CLASS);
@@ -56,6 +58,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             expect(htmlString).not.toContain(MESSAGE_IFRAME_PRINT_CLASS);
@@ -72,6 +75,7 @@ describe('getIframeHTML', () => {
                 isPrint: true,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             expect(htmlString).toContain(MESSAGE_IFRAME_PRINT_CLASS);
@@ -90,6 +94,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             expect(htmlString).toMatch(/<html\s+lang="en">/);
@@ -105,6 +110,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             expect(htmlString).toContain('<html lang="en">');
@@ -120,6 +126,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             expect(htmlString).not.toContain('lang=');
@@ -140,6 +147,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             const rendered = new DOMParser().parseFromString(htmlString, 'text/html');
@@ -159,6 +167,7 @@ describe('getIframeHTML', () => {
                 isPrint: false,
                 themeCSSVariables: '',
                 iframeCSSStyles: '',
+                slotToken: 'token',
             });
 
             // Parse the rendered iframe HTML and verify the malicious payload did not break out

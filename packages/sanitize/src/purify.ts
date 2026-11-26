@@ -18,6 +18,13 @@ const shouldPrefix = (tagName: string, attributeName: string) => {
     return !MAP_PROTON_ATTR_TAG_WHITELIST[tagName] && MAP_PROTON_ATTR[attributeName];
 };
 
+/**
+ * The message iframe uses `proton-*` ids for its own slots (`proton-root`, `proton-toggle`, ...).
+ * An email element carrying one of them would be returned instead of the real slot.
+ */
+const isReservedIdentifier = (attributeName: string, value: string | null) =>
+    (attributeName === 'id' || attributeName === 'name') && !!value && /^\s*proton-/i.test(value);
+
 export enum PurifyConfig {
     DEFAULT = 'default',
     RAW = 'raw',
@@ -163,6 +170,11 @@ const beforeSanitizeElements = (node: Node) => {
 
     Array.from(element.attributes).forEach((type) => {
         const item = type.name;
+
+        if (isReservedIdentifier(item, element.getAttribute(item))) {
+            element.removeAttribute(item);
+            return;
+        }
 
         if (shouldPrefix(element.tagName, item)) {
             element.setAttribute(`proton-${item}`, element.getAttribute(item) || '');

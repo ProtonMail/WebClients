@@ -8,6 +8,7 @@ import {
     MESSAGE_IFRAME_PRINT_HEADER_ID,
     MESSAGE_IFRAME_ROOT_ID,
 } from '../constants';
+import { getIframeSlotAttribute } from './iframeSlots';
 
 type Options = {
     emailContent: string;
@@ -16,6 +17,7 @@ type Options = {
     themeCSSVariables: string;
     isPrint: boolean;
     iframeCSSStyles: string;
+    slotToken: string;
 };
 
 const escapeHTMLAttribute = (value: string) =>
@@ -33,7 +35,10 @@ const getIframeHtml = ({
     themeCSSVariables,
     isPrint,
     iframeCSSStyles,
+    slotToken,
 }: Options) => {
+    const slotAttr = getIframeSlotAttribute(slotToken);
+
     /**
      * Defense-in-depth: `messageHead` is serialized to a string and written verbatim into
      * the iframe document. `<style>` is a rawtext element, so a `</style>` inside a style's
@@ -67,12 +72,12 @@ const getIframeHtml = ({
     // Plain text needs content needs to have no spaces in order to be correctly displayed
     if (isPlainText) {
         const emailHead = `<head><style>${themeCSSVariables}</style><style>${iframeCSSStyles}</style>${messageHead}</head>`;
-        const emailBody = `<body ${bodyLangAttr}><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text ${
+        const emailBody = `<body ${bodyLangAttr}><div id="${MESSAGE_IFRAME_ROOT_ID}" ${slotAttr} class="proton-plain-text ${
             isPrint ? MESSAGE_IFRAME_PRINT_CLASS : ''
         }">${
-            isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''
+            isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}" ${slotAttr}></div>` : ''
         }<div style="width: 100% !important;padding-bottom:10px;!important">${emailContent}</div>${
-            isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>` : ''
+            isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}" ${slotAttr}></div>` : ''
         }</div></body>`;
 
         return `<html ${htmlLangAttr}>${emailHead}${emailBody}</html>`;
@@ -106,8 +111,8 @@ const getIframeHtml = ({
           ${messageHead}
         </head>
         <body ${bodyLangAttr}>
-        <div id="${MESSAGE_IFRAME_ROOT_ID}" ${isPrint ? `class="${MESSAGE_IFRAME_PRINT_CLASS}"` : ''}>
-          ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>` : ''}
+        <div id="${MESSAGE_IFRAME_ROOT_ID}" ${slotAttr} ${isPrint ? `class="${MESSAGE_IFRAME_PRINT_CLASS}"` : ''}>
+          ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}" ${slotAttr}></div>` : ''}
           <div ${
               isPrint ? 'class="proton-print-content reset4print"' : ''
           } style="display: block !important; width: 100% !important;">
@@ -115,7 +120,7 @@ const getIframeHtml = ({
           ${htmlContent}
           </div>
           </div>
-          ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>` : ''}
+          ${isPrint ? `<div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}" ${slotAttr}></div>` : ''}
         </div>
         </body>
       </html>
