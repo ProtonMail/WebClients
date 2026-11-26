@@ -49,6 +49,9 @@ catalog:
     '@oxlint/plugins': 1.94.0
     '@pdfme/common': ^6.1.13
     '@pdfme/schemas': ^6.1.13
+    # ci-base and the tests image install this version, through ci/bin/playwright-version.sh. Keep
+    # `playwright` and the Playwright images in ci/jobs on the same version.
+    '@playwright/test': ^1.65.0
     '@pmmmwh/react-refresh-webpack-plugin': ^0.6.3
     '@prometheus-io/client': ^0.16.1
     '@protontech/autofill': 0.0.42001045
@@ -154,6 +157,7 @@ catalog:
     oxlint-tsgolint: 7.0.2008
     papaparse: ^5.7.1
     path-browserify: ^1.0.1
+    playwright: ^1.65.0
     postcss: ^8.5.33
     react: ^18.3.1
     react-chartjs-2: ^5.3.1
