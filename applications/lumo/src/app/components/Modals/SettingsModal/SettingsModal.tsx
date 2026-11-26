@@ -1,12 +1,17 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { selectEntitlementCatalog } from '@proton/account/entitlementCatalog';
+import { useGetEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
@@ -14,7 +19,20 @@ import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/M
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+import { PLAN_NAMES, PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
+import { createEntitlementResolverForSelection } from '@proton/payments/core/entitlements/resolver';
+import { getUnreadableSubscriptionsReason } from '@proton/payments/core/entitlements/unreadable-subscriptions';
+import { isManagedExternally } from '@proton/payments/core/subscription/helpers/external-management';
+import { getPlanIDs } from '@proton/payments/core/subscription/helpers/plan-ids';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { LUMO_TIER_PLANS } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
+import { getPlanName as getSubscriptionPlanName } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
+import noop from '@proton/utils/noop';
 
 import { useLumoUserSettings } from '../../../hooks';
 import { useDictationLanguage } from '../../../hooks/useDictationLanguage';
@@ -47,9 +65,9 @@ import { type IconName, LumoIcon } from '../../LumoIcon/LumoIcon';
 import AboutPanel from './AboutPanel';
 import DeleteAllButton from './DeleteAllButton';
 import DesktopSettingsPanel from './DesktopSettingsPanel';
+import { ExternallyManagedSubscriptionSection } from './ExternallyManagedSubscriptionSection';
 import { FontSizeSettingRow } from './FontSizeSettingRow';
 import MemoryPanel from './MemoryPanel';
-import MobileManageSubscriptionButton from './MobileManageSubscriptionButton';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
 import { SettingsGroup, SettingsSectionItem } from './SettingsSectionItem';
@@ -478,17 +496,87 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
 };
 const getPlanName = (hasLumoSeat: boolean, isVisionary: boolean, hasLumoB2B: boolean) => {
     if (hasLumoB2B) {
+        // translator: Generic badge for a Lumo business seat whose subscription name is unavailable.
         return c('collider_2025: Title').t`${LUMO_SHORT_APP_NAME} Business`;
     }
     if (hasLumoSeat || isVisionary) {
+        // translator: Badge next to the user's account name. ${LUMO_SHORT_APP_NAME} is the product name.
         return c('collider_2025: Title').t`${LUMO_SHORT_APP_NAME} Plus`;
     }
     return;
 };
+
+const getStoreManagedLumoPlan = (subscriptions: Subscription[] = []) => {
+    for (const subscription of subscriptions) {
+        if (!isManagedExternally(subscription)) {
+            continue;
+        }
+
+        const plans = getPlanIDs(subscription);
+        const tier = LUMO_TIER_PLANS.findLast((plan) => (plans[plan] ?? 0) > 0);
+        if (tier) {
+            return { managedBy: 'native', subscription, tier } as const;
+        }
+    }
+};
+
+const getFamilyPlanName = (organization?: Organization) => {
+    if (isOrganizationDuo(organization)) {
+        return PLAN_NAMES[PLANS.DUO];
+    }
+    if (isOrganizationFamily(organization)) {
+        return PLAN_NAMES[PLANS.FAMILY];
+    }
+};
+
+const getBusinessPlanName = (subscriptions: Subscription[], catalog: EntitlementCatalog) => {
+    const seatSubscriptions = subscriptions.filter(
+        (subscription) =>
+            createEntitlementResolverForSelection(catalog, subscription).quantityTotal(EntitlementName.MaxLumoSeats) > 0
+    );
+
+    // The member's seat is allocated from the organization, so multiple matches are ambiguous.
+    if (seatSubscriptions.length === 1) {
+        const plan = getSubscriptionPlanName(seatSubscriptions[0]);
+        return plan ? PLAN_NAMES[plan] : undefined;
+    }
+};
+
 const AccountSettingsPanel = () => {
     const [user] = useUser();
-    const { hasLumoSeat, isVisionary, hasLumoB2B } = useLumoPlan();
-    const planName = getPlanName(hasLumoSeat, isVisionary, hasLumoB2B);
+    const [organization] = useOrganization();
+    const { hasLumoSeat, isVisionary, hasLumoB2B, userIsMember, isLumoPlanLoading } = useLumoPlan();
+    const [subscriptions, subscriptionsLoading] = useAllSubscriptions();
+    const storePlan = getStoreManagedLumoPlan(subscriptions);
+    const { value: entitlementCatalog } = useLumoSelector(selectEntitlementCatalog);
+    const getEntitlementCatalog = useGetEntitlementCatalog();
+    const visibleBusinessSubscriptions =
+        hasLumoB2B && !storePlan && !getUnreadableSubscriptionsReason({ user, organization })
+            ? subscriptions
+            : undefined;
+    const shouldLoadEntitlementCatalog = !!visibleBusinessSubscriptions?.length && !entitlementCatalog;
+
+    useEffect(() => {
+        if (shouldLoadEntitlementCatalog) {
+            void getEntitlementCatalog().catch(noop);
+        }
+    }, [shouldLoadEntitlementCatalog, getEntitlementCatalog]);
+
+    const familyPlanName = hasLumoSeat && userIsMember ? getFamilyPlanName(organization) : undefined;
+    const businessPlanName =
+        visibleBusinessSubscriptions && entitlementCatalog
+            ? getBusinessPlanName(visibleBusinessSubscriptions, entitlementCatalog)
+            : undefined;
+    const managedSeat =
+        hasLumoB2B && userIsMember
+            ? ({ managedBy: 'organization', planName: businessPlanName } as const)
+            : familyPlanName
+              ? ({ managedBy: 'family', planName: familyPlanName } as const)
+              : undefined;
+    const managedSubscription = storePlan ?? managedSeat;
+    const planName = storePlan
+        ? PLAN_NAMES[storePlan.tier]
+        : (businessPlanName ?? familyPlanName ?? getPlanName(hasLumoSeat, isVisionary, hasLumoB2B));
     const { isEnabled: isNativeAuthEnabled, trigger: triggerAuthAction } = useLumoAuthAction();
 
     // On native mobile the account settings live outside the WebView, so hand the
@@ -511,10 +599,12 @@ const AccountSettingsPanel = () => {
             >
                 <Avatar className="shrink-0 lumo-title-small">{getInitials(user.DisplayName ?? user.Name)}</Avatar>
                 <div className="flex flex-column flex-nowrap flex-1 items-start gap-0.5 min-w-0">
-                    <div className="flex flex-row flex-nowrap items-center gap-2 min-w-0">
-                        <span className="lumo-title-small lumo-color-glyph">{user.DisplayName ?? user.Name}</span>
+                    <div className="flex flex-wrap items-center gap-2 min-w-0">
+                        <span className="min-w-0 lumo-title-small text-break lumo-color-glyph">
+                            {user.DisplayName ?? user.Name}
+                        </span>
                         {planName && (
-                            <span className="plan-name inline-flex items-center px-2 py-0.5 radius-full lumo-label-small lumo-color-glyph-brand-text lumo-bg-control-fill-mid">
+                            <span className="plan-name inline-flex items-center min-w-0 px-2 py-0.5 radius-full lumo-label-small text-break lumo-color-glyph-brand-text lumo-bg-control-fill-mid">
                                 {planName}
                             </span>
                         )}
@@ -525,14 +615,20 @@ const AccountSettingsPanel = () => {
                             </span>
                         )}
                     </div>
-                    <span className="lumo-body-medium text-left lumo-color-glyph-mid">{user.Email}</span>
+                    <span className="min-w-0 lumo-body-medium text-break lumo-color-glyph-mid">{user.Email}</span>
                 </div>
-                <LumoIcon name="ChevronRight" className="shrink-0 lumo-color-glyph-mid" size={16} />
+                <LumoIcon name="ChevronRight" className="shrink-0 lumo-color-glyph-mid" size={16} aria-hidden="true" />
             </ButtonLike>
 
-            <MobileManageSubscriptionButton />
-
-            <LumoSettingsUpsellSection />
+            {managedSubscription ? (
+                <ExternallyManagedSubscriptionSection {...managedSubscription} />
+            ) : subscriptionsLoading || isLumoPlanLoading ? (
+                <output className="flex justify-center py-3">
+                    <CircleLoader size="small" aria-hidden="true" />
+                </output>
+            ) : (
+                <LumoSettingsUpsellSection />
+            )}
         </div>
     );
 };

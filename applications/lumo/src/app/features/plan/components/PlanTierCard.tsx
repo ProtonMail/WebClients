@@ -17,7 +17,7 @@ import { formatLumoPrice, getLumoPlanDetails, getLumoSavingsLabel } from './util
 import './PlanTierCard.scss';
 
 interface TierCardAction {
-    /** Defaults to "Current plan" on the current plan's card. */
+    /** Defaults to "Current plan" on the current plan's card. Other cards without a label show no button. */
     label?: string;
     /** Omit to disable the action. */
     onClick?: () => void;
@@ -78,9 +78,9 @@ export const PlanTierCard = ({
     const featureItems = features.map(({ id, text }) => (
         <li key={id} className="flex flex-nowrap items-start gap-2.5">
             <Dot
-                size={16}
-                strokeWidth={compact ? 6 : 4}
-                className={clsx('shrink-0', compact ? 'lumo-icon-size-18' : 'mt-0.5 lumo-icon-size-16')}
+                size={compact ? 18 : 16}
+                strokeWidth={6}
+                className={clsx('shrink-0', !compact && 'mt-0.5')}
                 aria-hidden="true"
             />
             <span>{text}</span>
@@ -92,8 +92,9 @@ export const PlanTierCard = ({
             <Card
                 background={false}
                 padded={false}
+                rounded="xl"
                 className={clsx(
-                    'lumo-plan-tier-card lumo-plan-tier-card--compact flex flex-column flex-nowrap min-w-0 radius-16 lumo-bg-panel',
+                    'lumo-plan-tier-card lumo-plan-tier-card--compact flex flex-column flex-nowrap min-w-0 lumo-bg-panel',
                     selected ? 'lumo-plan-tier-card--selected border-2' : 'lumo-border-mid'
                 )}
             >
@@ -177,8 +178,9 @@ export const PlanTierCard = ({
             as="section"
             background={false}
             padded={false}
+            rounded="xl"
             className={clsx(
-                'lumo-plan-tier-card relative flex flex-column flex-nowrap gap-6 min-w-0 px-5 py-7 radius-16 text-break lumo-bg-panel',
+                'lumo-plan-tier-card relative flex flex-column flex-nowrap gap-6 min-w-0 px-5 py-7 text-break lumo-bg-panel',
                 variant === 'recommended' ? 'border-1.5 lumo-border-control-strong' : 'lumo-border-mid'
             )}
         >
