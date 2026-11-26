@@ -53,6 +53,18 @@ type RequiredState = KtState &
     ProtonDomainsState &
     UserSettingsState;
 
+/** The user tried to create their own username at the premium domain (pm.me) here; they are told where to do it instead. */
+class PremiumAddressError extends Error {
+    name = 'PremiumAddressError';
+
+    trace = false;
+
+    constructor(message: string) {
+        super(message);
+        Object.setPrototypeOf(this, PremiumAddressError.prototype);
+    }
+}
+
 export const orderAddresses = ({
     member,
     addresses,
@@ -98,7 +110,7 @@ export const createAddress = ({
 
         const hasPremium = addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
         if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === emailAddress.toLowerCase()) {
-            throw new Error(
+            throw new PremiumAddressError(
                 c('Error')
                     .t`${user.Name} is your username. To create ${emailAddress}, please go to Settings > Identity and addresses > Short domain (pm.me)`
             );
