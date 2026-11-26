@@ -1,0 +1,48 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// From the Figma `add-calendar-from-url` frame (🟢 Settings › add-calendar), inside `LiteSettingsPage`
+.lite-settings.lite-settings .calendar-add-from-url {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: rem(16);
+
+	.calendar-add-from-url-description {
+		margin: 0;
+		padding-inline: rem(4);
+		font-size: rem(14);
+		line-height: rem(20);
+		color: var(--lite-settings-glyph-mid);
+	}
+
+	.calendar-add-from-url-input {
+		min-block-size: rem(56);
+		padding-inline: rem(4);
+		border: 0;
+		border-radius: rem(24);
+		background-color: var(--lite-settings-panel);
+		font-size: rem(16);
+
+		&.error {
+			box-shadow: inset 0 0 0 1px var(--signal-danger);
+		}
+	}
+
+	.calendar-add-from-url-link {
+		display: inline-block;
+		text-decoration: none;
+		padding-inline: rem(16);
+		font-size: rem(14);
+		line-height: rem(20);
+		font-weight: var(--font-weight-medium);
+		color: var(--lite-settings-switch-on);
+	}
+
+	// Pinned to the bottom of the sheet, like the Figma Add / Cancel buttons
+	.calendar-add-from-url-actions {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		margin-block-start: auto;
+	}
+}

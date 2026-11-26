@@ -1,9 +1,7 @@
 import type { ChangeEvent } from 'react';
-import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Loader } from '@proton/atoms/Loader/Loader';
@@ -11,24 +9,10 @@ import Form from '@proton/components/components/form/Form';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import GenericError from '@proton/components/containers/error/GenericError';
-import useLoading from '@proton/hooks/useLoading';
-import { validateSubscription } from '@proton/shared/lib/api/calendars';
-import { CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
-import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
-import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
-import useGetCalendarActions from '../../hooks/useGetCalendarActions';
-import useGetCalendarSetup from '../../hooks/useGetCalendarSetup';
 import BusySlotsCheckbox from '../BusySlotsCheckbox';
-import {
-    getCalendarPayload,
-    getCalendarSettingsPayload,
-    getDefaultModel,
-} from '../personalCalendarModal/calendarModalState';
+import useSubscribeCalendarForm from './useSubscribeCalendarForm';
 
 interface Props {
     open: boolean;
@@ -38,57 +22,19 @@ interface Props {
 }
 
 const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Props) => {
-    const [, setCalendar] = useState<VisualCalendar | undefined>();
-    const [calendarURL, setCalendarURL] = useState('');
-    const [model, setModel] = useState(() => getDefaultModel(CALENDAR_TYPE.SUBSCRIPTION));
-    const [error, setError] = useState(false);
-    const [validationError, setValidationError] = useState<CALENDAR_SUBSCRIPTION_STATUS>();
-
-    const [loadingAction, withLoadingAction] = useLoading();
-    const api = useApi();
-
-    const { error: setupError, loading: loadingSetup } = useGetCalendarSetup({ setModel });
-    const handleClose = () => {
-        setValidationError(undefined);
-        setCalendarURL('');
-        onClose?.();
-    };
-    const { handleCreateCalendar } = useGetCalendarActions({
-        setCalendar,
-        setError,
-        onClose: handleClose,
-        onCreateCalendar,
-        isSubscribedCalendar: true,
-    });
-
-    const handleProcessCalendar = async () => {
-        const formattedModel = {
-            ...model,
-            name: truncateMore({ string: calendarURL, charsToDisplay: MAX_CHARS_API.CALENDAR_NAME }),
-            url: calendarURL,
-        };
-        const calendarPayload = getCalendarPayload(formattedModel);
-        const calendarSettingsPayload = getCalendarSettingsPayload(formattedModel);
-
-        const {
-            ValidationResult: { Result: result },
-        } = await api<{ ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS } }>({
-            ...validateSubscription({ url: calendarURL }),
-            silence: true,
-        }).catch((error) => {
-            if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
-                return { ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.INVALID_URL } };
-            }
-
-            return { ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.OK } };
-        });
-
-        if (result === CALENDAR_SUBSCRIPTION_STATUS.OK) {
-            return handleCreateCalendar(formattedModel.addressID, calendarPayload, calendarSettingsPayload);
-        }
-
-        setValidationError(result);
-    };
+    const {
+        calendarURL,
+        changeCalendarURL,
+        shareBusySlots,
+        setShareBusySlots,
+        errorText,
+        isSubmitDisabled,
+        loadingSetup,
+        loading,
+        hasError,
+        submit,
+        close: handleClose,
+    } = useSubscribeCalendarForm({ onClose, onCreateCalendar });
 
     const {
         title,
@@ -96,9 +42,7 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
         errorContent = null,
         onSubmit,
     } = (() => {
-        const disabled = !calendarURL || !!validationError;
-
-        if (error || setupError) {
+        if (hasError) {
             const onSubmitError = () => window.location.reload();
 
             return {
@@ -107,22 +51,20 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
                 onSubmit: onSubmitError,
                 submitProps: {
                     children: c('Action').t`Close`,
-                    disabled,
+                    disabled: isSubmitDisabled,
                 },
             };
         }
 
-        const loading = loadingSetup || loadingAction;
-        const onSubmit = () => withLoadingAction(handleProcessCalendar());
         const titleAndSubmitCopy = c('Modal title and action').t`Add calendar`;
 
         return {
             title: titleAndSubmitCopy,
-            onSubmit,
+            onSubmit: submit,
             submitProps: {
                 loading,
                 children: titleAndSubmitCopy,
-                disabled,
+                disabled: isSubmitDisabled,
             },
         };
     })();
@@ -132,18 +74,6 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
             'Subscribe to calendar modal description'
         ).t`Learn how to get a private calendar link.`}</Href>
     );
-
-    const getError = () => {
-        if (validationError === CALENDAR_SUBSCRIPTION_STATUS.INVALID_URL) {
-            return c('Error message').t`Invalid URL`;
-        }
-
-        if (validationError) {
-            return getCalendarStatusInfo(validationError)?.text;
-        }
-
-        return null;
-    };
 
     return (
         <BasicModal
@@ -177,23 +107,15 @@ ${kbLink}
 `}</p>
                         <InputFieldTwo
                             autoFocus
-                            error={getError()}
+                            error={errorText}
                             label={c('Subscribe to calendar modal').t`Calendar URL`}
                             value={calendarURL}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                                setValidationError(undefined);
-                                setCalendarURL(e.target.value.trim());
-                            }}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => changeCalendarURL(e.target.value)}
                             data-testid="input:calendar-subscription"
                             className="mb-4"
                         />
 
-                        <BusySlotsCheckbox
-                            value={model.shareBusySlots}
-                            onChange={(shareBusySlots) => {
-                                setModel({ ...model, shareBusySlots });
-                            }}
-                        />
+                        <BusySlotsCheckbox value={shareBusySlots} onChange={setShareBusySlots} />
                     </>
                 )
             )}
