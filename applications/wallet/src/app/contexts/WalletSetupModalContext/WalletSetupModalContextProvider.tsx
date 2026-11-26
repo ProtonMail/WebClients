@@ -99,12 +99,22 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
         setWalletSetupModal(data);
     };
 
+    const needsFirstWallet = Boolean(apiWalletsData && !apiWalletsData.length);
+    const needsWelcomePrompt = (!settings.AcceptTermsAndConditions && !loadingSettings) || walletWelcomeModal.open;
+    const walletWithoutWalletAccount = apiWalletsData?.find((w) => !w.WalletAccounts.length);
+    const isModalOpen =
+        needsFirstWallet ||
+        needsWelcomePrompt ||
+        Boolean(walletWithoutWalletAccount) ||
+        (Boolean(walletUpgradeModal.data) && renderWalletUpgradeModal) ||
+        (Boolean(walletSetupModal.data) && renderSetupModal);
+
     return (
-        <WalletSetupModalContext.Provider value={{ close, open }}>
+        <WalletSetupModalContext.Provider value={{ close, open, isModalOpen }}>
             {children}
 
             {(() => {
-                if (apiWalletsData && !apiWalletsData.length) {
+                if (needsFirstWallet) {
                     // We want to open wallet creation modal whenever there is no wallet setup on for the user
                     return (
                         <WalletCreationModal
@@ -120,7 +130,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                     );
                 }
 
-                if ((!settings.AcceptTermsAndConditions && !loadingSettings) || walletWelcomeModal.open) {
+                if (needsWelcomePrompt) {
                     return (
                         <WalletWelcomePrompt
                             open
@@ -130,8 +140,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                     );
                 }
 
-                const walletWithoutWalletAccount = apiWalletsData?.find((w) => !w.WalletAccounts.length);
-                if (apiWalletsData && walletWithoutWalletAccount) {
+                if (walletWithoutWalletAccount) {
                     // We want to open wallet account creation modal whenever there is no wallet account setup on for the wallet
                     return (
                         <WalletAccountCreationModal

@@ -4,9 +4,11 @@ import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 import { meetReducers } from './slices';
 
-export const rootReducer = combineReducers({
+export const meetRootReducers = {
     ...sharedReducers,
     ...meetReducers,
-});
+};
+
+export const rootReducer = combineReducers(meetRootReducers);
 
 export type MeetState = ReturnType<typeof rootReducer>;

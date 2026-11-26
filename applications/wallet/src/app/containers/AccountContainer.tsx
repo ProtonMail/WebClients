@@ -8,6 +8,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
+import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -29,6 +30,7 @@ import { useWalletPassphrase } from '../hooks/useWalletPassphrase';
 import { getThemeForWallet } from '../utils';
 
 export const AccountContainer = () => {
+    const offerEntry = useOfferNavbarEntry();
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
 
     const { isNarrow } = useResponsiveContainerContext();
@@ -135,7 +137,11 @@ export const AccountContainer = () => {
                                 <IcChevronRight alt={c('Action').t`Secure your wallet`} className="ml-2" />
                             </Button>
                             <InvitesButton walletAccount={walletAccount} />
-                            <UpgradeButton />
+                            {offerEntry.button ? (
+                                <span className="inline-flex align-middle my-2 ml-2">{offerEntry.button}</span>
+                            ) : (
+                                <UpgradeButton />
+                            )}
                             {!isNarrow && <ThemeButton />}
                         </div>
                     </div>
@@ -197,6 +203,7 @@ export const AccountContainer = () => {
                     {...walletPreferencesModalState}
                 />
             )}
+            {offerEntry.modal}
         </>
     );
 };

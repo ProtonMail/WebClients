@@ -7,6 +7,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
+import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -29,6 +30,7 @@ import { useWalletPassphrase } from '../hooks/useWalletPassphrase';
 import { getThemeForWallet } from '../utils';
 
 export const WalletContainer = () => {
+    const offerEntry = useOfferNavbarEntry();
     const { walletId } = useParams<{ walletId: string }>();
     const { openDrawer } = useWalletDrawerContext();
 
@@ -134,7 +136,11 @@ export const WalletContainer = () => {
                                 <IcChevronRight alt={c('Action').t`Secure your wallet`} className="ml-2" />
                             </Button>
                             <InvitesButton walletAccount={firstWalletAccount} />
-                            <UpgradeButton />
+                            {offerEntry.button ? (
+                                <span className="inline-flex align-middle my-2 ml-2">{offerEntry.button}</span>
+                            ) : (
+                                <UpgradeButton />
+                            )}
                             {!isNarrow && <ThemeButton />}
                         </div>
                     </div>
@@ -191,6 +197,7 @@ export const WalletContainer = () => {
             )}
 
             {renderBitcoinBuyModal && <BitcoinBuyModal wallet={wallet} modal={walletBuyModal} />}
+            {offerEntry.modal}
         </>
     );
 };
