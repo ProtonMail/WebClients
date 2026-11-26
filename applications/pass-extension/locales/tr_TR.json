@@ -1072,7 +1072,7 @@
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
       "A biometric unlock check is already in progress.": [
-        "Biyometrik kilit açma kontrolü halihazırda devam ediyor."
+        "Biyometrik kilit açma denetimi zaten yapılıyor."
       ],
       "A desktop unlock check is already in progress.": [
         "Bir bilgisayar kilit açma denetimi zaten yapılıyor."
@@ -2632,7 +2632,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir öğeyi başka bir kasaya taşıdığınızda o öğenin güvenli bağlantıları silinir."
+        "Bir öğeyi başka bir kasaya taşıdığınızda güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -5996,7 +5996,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
-        "${ BRAND_NAME }, ${ BRAND_NAME } parolanızı yalnızca ${ PASS_APP_NAME } uygulamasında kaydetmenizi önermemektedir. Parolanızı unutursanız ${ PASS_APP_NAME } uygulamasında oturum açamazsınız."
+        "${ BRAND_NAME }, ${ BRAND_NAME } parolanızı yalnızca ${ PASS_APP_NAME } uygulamasına kaydetmenizi önermiyor. Parolanızı unutursanız ${ PASS_APP_NAME } uygulamasında da oturum açamazsınız."
       ],
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } parolası gereklidir"

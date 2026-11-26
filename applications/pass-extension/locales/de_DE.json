@@ -1056,8 +1056,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } antwortete nicht rechtzeitig."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } antwortet nicht."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Ein biometrischer Entsperrvorgang wird bereits ausgeführt."
       ],
       "A desktop unlock check is already in progress.": [
         "Die Desktop-Entsperrung wird bereits durchgeführt."
@@ -1940,6 +1949,9 @@
       "${ n } item": [
         "${ n } Eintrag",
         "${ n } Einträge"
+      ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } möchte die Browser-Erweiterung freischalten"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } wird immer zugänglich sein"
@@ -3207,6 +3219,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
+      ],
+      "unlock the browser extension": [
+        "Browser-Erweiterung freischalten"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
@@ -5971,6 +5986,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
+        "${ BRAND_NAME } rät davon ab, dein ${ BRAND_NAME }-Passwort ausschließlich in ${ PASS_APP_NAME } zu speichern. Solltest du dieses vergessen, ist eine Anmeldung bei ${ PASS_APP_NAME } nicht mehr möglich."
+      ],
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-Passwort erforderlich"
       ],

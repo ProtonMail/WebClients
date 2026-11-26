@@ -2325,7 +2325,7 @@
         "No tanqueu aquesta pestanya"
       ],
       "Download pass-cli from ${ passCliLink }.": [
-        "Descarregueu-vos pass-cli des de ${ passCliLink }."
+        "Descarregueu pass-cli des de ${ passCliLink }."
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per a carregar-lo."
@@ -2632,7 +2632,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Moure un element a una altra caixa forta farà que se n'esborrin els enllaços segurs."
+        "Moure un element a una altra caixa forta farà que s'esborrin els seus enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2920,7 +2920,7 @@
         "Ordenat per camp (primer el títol, després el nom d'usuari o correu electrònic, el lloc web i les notes) i per la precisió de la coincidència (exacta, comença per, conté)."
       ],
       "Read item": [
-        "Llegir l'element"
+        "Llegeix l'element"
       ],
       "Reconnect": [
         "Torna a connectar"
@@ -3125,7 +3125,7 @@
         "L'usuari encara no ha acceptat la invitació."
       ],
       "Then you can go to ${ url } to copy the instructions to send to your AI agent.": [
-        "Llavors podeu anar a ${ url } per copiar les instruccions per enviar al vostre agent d'IA."
+        "Llavors podeu anar a ${ url } per a copiar les instruccions per a enviar al vostre agent d'IA."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
@@ -3230,7 +3230,7 @@
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
       ],
       "unlock the browser extension": [
-        "desbloqueja l'extensió del navegador"
+        "desbloquejar l'extensió del navegador"
       ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
@@ -3278,7 +3278,7 @@
         "S'ha actualitzat la caixa forta \"${ payload.share.content.name }\""
       ],
       "Vault \"${ share.content.name }\" was removed.": [
-        "La caixa forta \"${ share.content.name }\" s'ha esborrat."
+        "S'ha esborrat la caixa forta «${ share.content.name }»."
       ],
       "Vault access granted": [
         "S'ha permès l'accés a la caixa forta"
@@ -3396,7 +3396,7 @@
         "Ara teniu accés a «${ itemName }» perquè al vostre grup ${ groupName } se li ha concedit."
       ],
       "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
-        "Ara teniu accés a \"caixa forta ${ vaultName }\" perquè s'ha concedit accés al vostre grup ${ groupName }."
+        "Ara teniu accés a la «caixa forta ${ vaultName }» perquè s'ha concedit accés al vostre grup ${ groupName }."
       ],
       "You will be able to customize your domain settings (catch-all email aliases, default display name for aliases etc...) after verifying your domain.": [
         "Podreu personalitzar la configuració del vostre domini (àlies de correu electrònic d'arreplega, nom per a mostrar predeterminat per als àlies, etc.) després de verificar-lo."
@@ -4897,10 +4897,10 @@
         "El fitxer que esteu intentant importar està buit."
       ],
       "This feature is not supported in your plan. ${ upgradeLink }": [
-        "Aquesta funció no està disponible en el vostre pla. ${ upgradeLink }"
+        "Aquesta característica no és compatible amb el vostre pla. ${ upgradeLink }"
       ],
       "This feature is not supported in your plan. Contact your admin to gain access.": [
-        "Aquesta funció no està disponible en el vostre pla. Contacteu amb l'administrador per obtenir-hi accés."
+        "Aquesta característica no és compatible amb el vostre pla. Contacteu amb l'administrador per a obtenir-hi accés."
       ],
       "Total files: ": [
         "Nombre total de fitxers: "
@@ -5111,7 +5111,7 @@
         "S'ha produït un error en rebutjar l'inic de sessió."
       ],
       "Sign-in requested on another device. Was it you?": [
-        "S'ha sol·licitat un inici de sessió en un altre dispositiu. Heu estat vosaltres?"
+        "Hi ha hagut una sol·licitud d'inici de sessió en un altre dispositiu. Ha estat vostra?"
       ],
       "Sign-in requested on another device. Was it you? ": [
         "Hi ha una sol·licitud d'inici de sessió en un altre dispositiu. És vostra? "
@@ -5351,7 +5351,7 @@
         "Crea un contacte"
       ],
       "Create folder in \"${ vaultName }\"": [
-        "Crear la carpeta a «${ vaultName }»"
+        "Crea la carpeta a «${ vaultName }»"
       ],
       "Create new access token": [
         "Crea un testimoni d'accés"
@@ -5589,7 +5589,7 @@
         "Bústia de correu"
       ],
       "Manage vault access": [
-        "Gestionar l'accés a la caixa forta"
+        "Gestió de l'accés a la caixa forta"
       ],
       "Mark as resolved?": [
         "Marca com a resolt?"
@@ -5872,7 +5872,7 @@
         "Caixa forta compartida amb un grup que administreu"
       ],
       "Vault shared with you": [
-        "Caixa forta compartida amb vosaltres"
+        "Caixa forta compartida amb vós"
       ],
       "Visible vaults": [
         "Caixes fortes visibles"
@@ -5996,7 +5996,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
-        "${ BRAND_NAME } no recomana desar la vostra contrasenya de ${ BRAND_NAME } únicament a ${ PASS_APP_NAME }. Si l'oblideu, no podreu iniciar sessió a ${ PASS_APP_NAME }."
+        "${ BRAND_NAME } no recomana desar la contrasenya de ${ BRAND_NAME } únicament a ${ PASS_APP_NAME }. Si l'oblideu, no podreu iniciar la sessió a ${ PASS_APP_NAME }."
       ],
       "${ BRAND_NAME } password is required": [
         "Es requereix la contrasenya de ${ BRAND_NAME }."
