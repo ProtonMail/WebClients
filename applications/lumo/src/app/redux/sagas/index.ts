@@ -6,7 +6,6 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import {
-    ASSET_STORE,
     ATTACHMENT_STORE,
     CONVERSATION_STORE,
     type DbApi,
@@ -16,7 +15,16 @@ import {
     type UnsyncedMaps,
 } from '../../indexedDb/db';
 import { SearchService } from '../../services/search/searchService';
-import type { Attachment, Conversation, ConversationId, Message, Space, SpaceId } from '../../types';
+import type {
+    Attachment,
+    AttachmentId,
+    Conversation,
+    ConversationId,
+    Message,
+    SerializedAttachment,
+    Space,
+    SpaceId,
+} from '../../types';
 import { SpaceType, getSpaceDek } from '../../types';
 import { mapEmpty, mapIds, mapLength } from '../../util/collections';
 import { syncArtifactAssetRequest } from '../slices/artifactAssetSync';
@@ -235,7 +243,7 @@ function* loadReduxFromIdb(): SagaIterator {
     const dbApi: DbApi = yield getContext('dbApi');
 
     const getAllIdbData = () => {
-        const stores = [SPACE_STORE, CONVERSATION_STORE, MESSAGE_STORE, ATTACHMENT_STORE, ASSET_STORE, REMOTE_ID_STORE];
+        const stores = [SPACE_STORE, CONVERSATION_STORE, MESSAGE_STORE, ATTACHMENT_STORE, REMOTE_ID_STORE];
         // oxfmt-ignore
         return dbApi.newTransaction(stores, 'readonly')
             .then(tx => ({tx}))
@@ -246,8 +254,7 @@ function* loadReduxFromIdb(): SagaIterator {
                 conversations
             })))
             .then(({tx, ...rest}) => dbApi.getAllMessages(tx).then((messages) => ({tx, ...rest, messages})))
-            .then(({tx, ...rest}) => dbApi.getAllAttachments(tx).then((attachments) => ({tx, ...rest, attachments})))
-            .then(({tx, ...rest}) => dbApi.getAllAssets(tx).then((assets) => ({tx, ...rest, assets})))
+            .then(({tx, ...rest}) => dbApi.getAllAttachmentIds(tx).then((attachmentIds) => ({tx, ...rest, attachmentIds})))
             .then(({tx, ...rest}) => rest);
     };
 
@@ -326,13 +333,17 @@ function* loadReduxFromIdb(): SagaIterator {
         }
     }
 
-    // Load attachments from IDB
-    const { attachments } = allIdbData;
-    for (const serializedAttachment of attachments) {
+    // Attachments hold file bytes, so they are read one at a time to keep a single payload in memory.
+    const attachmentIds: AttachmentId[] = allIdbData.attachmentIds;
+    for (const attachmentId of attachmentIds) {
         try {
-            const { id, spaceId, deleted } = serializedAttachment;
-            if (deleted) continue;
-            const spaceDek = spaceDekMap[spaceId];
+            const serializedAttachment: SerializedAttachment | undefined = yield call(
+                [dbApi, dbApi.getAttachmentById],
+                attachmentId
+            );
+            if (!serializedAttachment || serializedAttachment.deleted) continue;
+            const { id, spaceId } = serializedAttachment;
+            const spaceDek = spaceId === undefined ? undefined : spaceDekMap[spaceId];
             if (!spaceDek) {
                 console.warn(`deserializing attachment ${id} failed: cannot get space dek for space ${spaceId}`);
                 continue;
