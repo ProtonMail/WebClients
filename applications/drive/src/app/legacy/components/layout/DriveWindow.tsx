@@ -23,6 +23,7 @@ import DrawerContactModals from '@proton/contacts/drawer/DrawerContactModals';
 import DrawerContactView from '@proton/contacts/drawer/DrawerContactView';
 import { useFlagsDriveLumo } from '@proton/drive/modules/flags';
 import useToggle from '@proton/hooks/useToggle';
+import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
 import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
@@ -66,6 +67,7 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
             <PendingInvitationTopBanner />
             <PasswordReminderTopBanner />
             {fileRecoveryBanner}
+            <OfferTopBanner />
         </TopBanners>
     );
 

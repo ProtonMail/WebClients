@@ -9,6 +9,7 @@ import {
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
 import useNewFeatureOnboarding from '@proton/components/hooks/useNewFeatureOnboarding';
+import { useOfferStartupModal } from '@proton/offers-delivery/components/useOfferStartupModal';
 import { useTrialEndedModal } from '@proton/payments-ui/containers/subscription/useTrialEndedModal';
 
 import { useDriveDocsFeatureFlag } from '../../../legacy/store/_documents';
@@ -52,7 +53,17 @@ const useStartupModals = () => {
     const lightLabellingFeatureModal = useLightLabellingFeatureModal();
     const netPromoterScoreModal = useNetPromoterScoreModal(NPSApplication.WebDrive);
 
-    return [trialEndedModal, welcomeModal, docsModal, reminderModal, lightLabellingFeatureModal, netPromoterScoreModal];
+    const offerModal = useOfferStartupModal();
+
+    return [
+        trialEndedModal,
+        welcomeModal,
+        docsModal,
+        reminderModal,
+        lightLabellingFeatureModal,
+        netPromoterScoreModal,
+        offerModal,
+    ];
 };
 
 export const DriveStartupModals = () => {
