@@ -5366,7 +5366,7 @@
         "Ciclo de facturación: ${ text }"
       ],
       "Booking contact email: ${ selectedCalendar.Email }": [
-        "Correo de contacto para reservas: ${ selectedCalendar.Email }"
+        "Para reservas recurrir al correo: ${ selectedCalendar.Email }"
       ],
       "Booking page deleted": [
         "Página de reservas eliminada"
@@ -5625,7 +5625,7 @@
         "No se ha podido actualizar la programación de la reunión"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos de 50 GB cada uno"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -5914,7 +5914,7 @@
         "Otras cuentas"
       ],
       "Other location": [
-        "Otra ubicación"
+        "Ubicación adicional"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Otros usuarios en tu organización verán tus espacios ocupados. No se comparten los detalles del evento."
@@ -6927,7 +6927,7 @@
         "Categoría"
       ],
       "Check additional calendars for availability": [
-        "Consultar disponibilidad en otros calendarios"
+        "Revisar disponibilidad en otros calendarios"
       ],
       "City": [
         "Ciudad"
@@ -12247,6 +12247,9 @@
       ],
       "Simplify password management": [
         "Simplifica la gestión de contraseñas"
+      ],
+      "Special offer": [
+        "Oferta especial"
       ],
       "Start a new import": [
         "Iniciar una nueva importación"

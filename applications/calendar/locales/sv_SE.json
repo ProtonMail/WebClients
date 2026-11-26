@@ -4207,7 +4207,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "FN-egenskap saknas"
+        "Egenskapen FN saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -6224,7 +6224,7 @@
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+        "För att hjälpa dig att hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
@@ -6236,7 +6236,7 @@
         "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln genererades."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
+        "För att använda Adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Total email addresses": [
         "Totalt antal e-postadresser"
@@ -6813,7 +6813,7 @@
     },
     "Label": {
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Kontolösenord"
+        "${ BRAND_NAME } kontolösenord"
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -7129,7 +7129,7 @@
         "Efternamn"
       ],
       "Let others know if you have a conflict, will be late, or can’t wait for the event.": [
-        "Låt andra veta om du har en konflikt, kommer bli sen eller inte kan vänta på händelsen."
+        "Låt andra veta om du har förhinder, blir sen eller inte kan vänta på evenemanget."
       ],
       "Location": [
         "Plats"
@@ -8682,11 +8682,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } Skapa, redigera och samarbeta i kalkylblad med end-to-end kryptering"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få åtkomst till blockerat innehåll och surfa privat. Inkluderar ${ serversAndCountries }, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
@@ -10743,7 +10749,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
@@ -11745,6 +11751,9 @@
       "Cannot create more Booking pages": [
         "Kan inte skapa fler bokningssidor"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Kortverifiering"
       ],
@@ -12444,6 +12453,9 @@
       ]
     },
     "Tooltip": {
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Lägg till en e-post för återställning eller telefon så att du kan återställa ditt lösenord om du glömmer det."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
       ],

@@ -8580,11 +8580,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME } : Créez, modifiez et collaborez sur des documents chiffrés de bout en bout."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } : Créez, modifiez et collaborez sur des feuilles de calcul chiffrées de bout en bout."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME } : accédez aux contenus bloqués et naviguez de manière privée. Comprend ${ serversAndCountries }, les vitesses VPN les plus élevées, l'accès aux services de streaming du monde entier, une protection contre les logiciels malveillants, un bloqueur de publicités, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
@@ -11637,6 +11643,9 @@
       "Cannot create more Booking pages": [
         "Vous ne pouvez pas créer de pages de réservation supplémentaire."
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Vérification de la carte"
       ],
@@ -12336,6 +12345,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Ajoutez une méthode de récupération des données pour déverrouiller vos données si vous oubliez votre mot de passe."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Ajoutez une adresse e-mail ou un numéro de téléphone de récupération afin de pouvoir réinitialiser votre mot de passe si vous l'oubliez."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatique : le format utilisé dans l'éditeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
       ],
@@ -12344,6 +12359,9 @@
       ],
       "Change start date to unselect": [
         "Modifier la date de début pour annuler la sélection"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Créez une phrase de récupération afin de pouvoir récupérer vos données si vous oubliez votre mot de passe."
       ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
@@ -12372,6 +12390,9 @@
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Créez une phrase de récupération pour protéger votre compte contre toute perte de données."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
       ],
@@ -12396,6 +12417,9 @@
       "Show side panel": [
         "Afficher le panneau latéral"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Certaines de vos données sont verrouillées. Utilisez une méthode de récupération pour les déverrouiller."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
       ],
@@ -12419,6 +12443,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Clé OpenPGP version 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Votre fichier de récupération n'est plus à jour. Téléchargez-en un nouveau afin de pouvoir récupérer vos données."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Votre phrase de récupération n'est plus valide. Générez-en une nouvelle afin de pouvoir continuer à récupérer vos données."
       ]
     },
     "tooltip": {

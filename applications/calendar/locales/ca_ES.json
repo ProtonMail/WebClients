@@ -5541,7 +5541,7 @@
         "Descarrega els registres actuals"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
+        "Descarregueu la vostra aplicació favorita avui i emporteu-vos la privadesa allà on aneu."
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per a carregar-lo."
@@ -8691,11 +8691,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creeu, editeu i col·laboreu en documents xifrats d'extrem a extrem."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Protegiu els fitxers amb l'emmagatzematge xifrat al núvol. Inclou, entre d'altres, sincronització automàtica i compartició de fitxers xifrats."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creeu, editeu i col·laboreu en fulls de càlcul xifrats d'extrem a extrem."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accediu a contingut bloquejat i navegueu de manera privada. Inclou ${ serversAndCountries }, les velocitats més altes de VPN, accés a serveis d'estríming de tot el món, bloqueig de programari maliciós i publicitat, descàrregues ràpides de BitTorrent, etc."
@@ -11748,6 +11754,9 @@
       "Cannot create more Booking pages": [
         "No es poden crear més pàgines de reserves"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verificació de la targeta"
       ],
@@ -12447,6 +12456,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Afegeix un mètode de recuperació de dades per desbloquejar-les si oblideu la contrasenya."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Afegiu un correu electrònic o un telèfon de recuperació per poder restablir la contrasenya si l'oblideu."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
       ],
@@ -12455,6 +12470,9 @@
       ],
       "Change start date to unselect": [
         "Canvieu la data d'inici per a anul·lar la selecció"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creeu una frase de recuperació per poder recuperar les dades si oblideu la contrasenya."
       ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
@@ -12483,6 +12501,9 @@
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereu una frase de recuperació per protegir el compte davant la pèrdua de dades."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
@@ -12507,6 +12528,9 @@
       "Show side panel": [
         "Mostra el panell lateral"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per desbloquejar-les."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
       ],
@@ -12530,6 +12554,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Clau OpenPGP de la versió 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "El fitxer de recuperació ha caducat. Descarregueu-ne un de nou perquè pugueu recuperar les dades."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La frase de recuperació ha caducat. Aconseguiu-ne una de nova per a poder recuperar les dades."
       ]
     },
     "tooltip": {
