@@ -51,7 +51,7 @@ export function useIsDarkThemeEnabled() {
 }
 
 export function useIsODTEnabled() {
-  return useFlag('DocsODTEnabled') || isDevOrBlack()
+  return useFlag('DocsODTEnabled')
 }
 
 /**

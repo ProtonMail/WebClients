@@ -3,7 +3,6 @@ import { handleDocsCustomPassword } from '@proton/drive/modules/publicDocsSharin
 import { splitNodeUid } from '@proton/drive/sdk';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { isDevOrBlack } from '@proton/shared/lib/env';
 import type { OpenInDocsType, ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
@@ -27,7 +26,7 @@ enum RedirectAction {
 
 export const getOpenInDocsInfo = (mediaType: string): OpenInDocsType | undefined => {
     const isODSImportEnabled = featureFlagStore.getState().isEnabled('SheetsODSImportEnabled');
-    const isODTEnabled = featureFlagStore.getState().isEnabled('DocsODTEnabled') || isDevOrBlack();
+    const isODTEnabled = featureFlagStore.getState().isEnabled('DocsODTEnabled');
     const isSheetsDisabled = featureFlagStore.getState().isEnabled('DocsSheetsDisabled');
     const isDocsDisabled = featureFlagStore.getState().isEnabled('DriveDocsDisabled');
 
