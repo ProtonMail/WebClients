@@ -8180,6 +8180,24 @@
       ],
       "You can open this folder when the import is finished. We'll email you when it's done.": [
         "Du kan åpne denne mappen når importen er fullført. Vi sender deg en e-post når det er ferdig."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } mistet tilgangen til Google Disk. Koble til på nytt for å fortsette importen."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
+      ],
+      "Runs in the background": [
+        "Kjører i bakgrunnen"
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Du kan lukke denne og fortsette å bruke ${ DRIVE_APP_NAME }."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Importen din har startet, men den stopper når lagringsplassen er full. Oppgrader nå for å ta med alle filene dine."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Importen er satt på pause. Oppgrader nå for å ta med resten av filene dine."
       ]
     },
     "info": {
@@ -15118,6 +15136,12 @@
       ],
       "Verify it’s you": [
         "Bekreft at det er deg"
+      ],
+      "Nothing to import": [
+        "Ingenting å importere"
+      ],
+      "Your import was interrupted": [
+        "Importen ble avbrutt"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15233,6 +15257,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Denne koblingen har utløpt. Forleng utløpsdatoen."
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Legg til en datagjenopprettingsmetode for å låse opp dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Legg til en e-postadresse eller telefon for gjenoppretting slik at du kan tilbakestille passordet ditt hvis du glemmer det."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lag en gjenopprettingsfrase slik at du kan gjenopprette dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generer en gjenopprettingsfrase for å beskytte kontoen din mot tap av data."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Noen av dataene dine er låst. Bruk en gjenopprettingsmetode for å låse de opp."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Last ned en ny slik at du fortsatt kan gjenopprette dataene dine."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Skaff deg en ny slik at du fortsatt kan gjenopprette dataene dine."
       ]
     },
     "tooltip": {

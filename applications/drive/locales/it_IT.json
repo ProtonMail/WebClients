@@ -8143,6 +8143,36 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Per contribuire a mantenere il tuo account al sicuro, conferma di essere davvero tu prima di continuare."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } ha perso l'accesso al tuo account Google Drive. Riconnettiti per continuare l'importazione."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } di ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Hai già effettuato l'upgrade? ${ resumeSettingsLink }"
+      ],
+      "Find your files": [
+        "Trova i tuoi file"
+      ],
+      "Runs in the background": [
+        "È In esecuzione in background"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Si troveranno in una nuova cartella in I miei file."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Copia dei tuoi file da Google Drive a ${ DRIVE_APP_NAME }."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Puoi chiudere questa finestra e continuare a utilizzare ${ DRIVE_APP_NAME }."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "L'importazione è iniziata, ma verrà interrotta quando lo spazio di archiviazione sarà pieno. Effettua l'upgrade ora per trasferire tutti i tuoi file."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "L'importazione è in pausa. Effettua l'upgrade ora per trasferire il resto dei file."
       ]
     },
     "info": {
@@ -9245,6 +9275,12 @@
       ],
       "Pay it": [
         "Paga"
+      ],
+      "Cancel your import in settings": [
+        "Annulla l'importazione nelle impostazioni"
+      ],
+      "Resume or cancel your import in settings": [
+        "Riprendi o annulla l'importazione nelle impostazioni."
       ]
     },
     "List title": {
@@ -10610,6 +10646,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Crea, modifica e collabora su documenti crittografati end-to-end."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Crea, modifica e collabora su fogli crittografati end-to-end."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -15078,6 +15120,12 @@
       ],
       "Verify it’s you": [
         "Verifica che sia tu"
+      ],
+      "Nothing to import": [
+        "Nulla da importare"
+      ],
+      "Your import was interrupted": [
+        "L'importazione è stata interrotta"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15190,6 +15238,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Questo link è scaduto. Si prega di prorogare la data di scadenza"
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Aggiungi un metodo di recupero dati per sbloccare i tuoi dati nel caso in cui dimenticassi la password."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Aggiungi un indirizzo email o un numero di telefono di recupero per poter reimpostare la password nel caso in cui la dimenticassi."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Crea una frase di recupero per poter recuperare i tuoi dati nel caso in cui dimenticassi la password."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genera una frase di recupero per proteggere il tuo account dalla perdita di dati."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Alcuni dei tuoi dati sono bloccati. Utilizza un metodo di recupero per sbloccarli."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Il tuo file di ripristino non è aggiornato. Scaricane uno nuovo per poter recuperare i tuoi dati."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La tua frase di recupero è scaduta. Richiedine una nuova per poter recuperare i tuoi dati."
       ]
     },
     "tooltip": {

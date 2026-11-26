@@ -8169,6 +8169,21 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } perdeu o acesso ao seu Google Drive. Reconecte para continuar a importação."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Já fez o upgrade? ${ resumeSettingsLink }"
+      ],
+      "Runs in the background": [
+        "Executa em segundo plano"
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Estamos copiando seus arquivos do Google Drive para ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -9274,6 +9289,12 @@
       ],
       "Customer Support": [
         "Suporte ao cliente"
+      ],
+      "Cancel your import in settings": [
+        "Cancele sua importação nas configurações"
+      ],
+      "Resume or cancel your import in settings": [
+        "Retomar ou cancelar sua importação nas configurações"
       ]
     },
     "List title": {
@@ -15133,6 +15154,15 @@
       ],
       "Verify it’s you": [
         "Verifique se é você"
+      ],
+      "Captcha": [
+        "Captcha"
+      ],
+      "Nothing to import": [
+        "Nada para importar"
+      ],
+      "Your import was interrupted": [
+        "Sua importação foi interrompida"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15248,6 +15278,9 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Este link expirou. Estenda a data de validade"
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Sua frase de recuperação está desatualizada. Obtenha uma nova para que você ainda possa recuperar seus dados."
       ]
     },
     "tooltip": {

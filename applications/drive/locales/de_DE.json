@@ -10710,6 +10710,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kannst mehr als einen Administrator haben. Alle Administratoren können Benutzer hinzufügen und verwalten, aber nur der Hauptadministrator hat Zugriff auf die Abrechnung."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Ende-zu-Ende-verschlüsselte Dokumente erstellen, bearbeiten und gemeinsam daran arbeiten."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Ende-zu-Ende-verschlüsselte Tabellen erstellen, bearbeiten und gemeinsam daran arbeiten."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -15326,6 +15332,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Dieser Link ist abgelaufen. Bitte verlängere das Ablaufdatum."
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Füge eine Methode zur Datenwiederherstellung hinzu, um deine Daten zu entsperren, falls du dein Passwort vergisst."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Füge eine E-Mail-Adresse oder eine Telefonnummer für das Zurücksetzen des Passworts hinzu, falls du es vergessen solltest."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lege eine Wiederherstellungsphrase fest, damit du deine Daten wiederherstellen kannst, falls du dein Passwort vergisst."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Erstelle eine Wiederherstellungsphrase, um dein Konto vor Datenverlust zu schützen."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Einige deiner Daten sind gesperrt. Nutze eine Wiederherstellungsmethode, um wieder darauf zugreifen zu können."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Deine Wiederherstellungsdatei ist veraltet. Lade eine neue herunter, damit du deine Daten wiederherstellen kannst."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Ihre Wiederherstellungsphrase ist veraltet. Es wird eine neue benötigt, damit deine Daten weiterhin wiederhergestellt werden können."
       ]
     },
     "tooltip": {

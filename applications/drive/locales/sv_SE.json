@@ -8152,7 +8152,37 @@
         "Ett oväntat fel uppstod vid import av dina data. Försök igen senare."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+        "För att hjälpa dig att hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } förlorade åtkomst till din Google Drive. Återanslut nu för att fortsätta importen."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Redan uppgraderad? ${ resumeSettingsLink }"
+      ],
+      "Find your files": [
+        "Hitta dina filer"
+      ],
+      "Runs in the background": [
+        "Körs i bakgrunden"
+      ],
+      "They'll be in a new folder in My files.": [
+        "De kommer att vara i en ny mapp i Mina filer."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi kopierar dina filer från Google Drive till ${ DRIVE_APP_NAME }."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Du kan stänga den här och fortsätta använda ${ DRIVE_APP_NAME }"
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Din import har påbörjats men den kommer att pausas när ditt lagringsutrymme är fullt. Uppgradera nu för att överföra alla dina filer."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Din import är pausad. Uppgradera nu för att föra över resten av dina filer."
       ]
     },
     "info": {
@@ -9083,7 +9113,7 @@
         "Vad vill du avbryta?"
       ],
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Kontolösenord"
+        "${ BRAND_NAME } kontolösenord"
       ]
     },
     "Label for contact group color": {
@@ -9255,6 +9285,12 @@
       ],
       "Pay it": [
         "Betala den"
+      ],
+      "Cancel your import in settings": [
+        "Avbryt din import i inställningar"
+      ],
+      "Resume or cancel your import in settings": [
+        "Återuppta eller avbryt din import i Inställningar"
       ]
     },
     "List title": {
@@ -10626,6 +10662,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } Skapa, redigera och samarbeta i kalkylblad med end-to-end kryptering"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11094,8 +11136,8 @@
         "Misslyckades att ladda delningsdetaljer"
       ],
       "${ failedCount } item failed to be recovered": [
-        "${ failedCount } objekt misslyckades att återställas",
-        "${ failedCount } objekt misslyckades att återställas"
+        "${ failedCount } objekt kunde inte återställas",
+        "${ failedCount } objekt kunde inte återställas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15067,6 +15109,12 @@
       ],
       "Verify it’s you": [
         "Verifiera att det är du"
+      ],
+      "Nothing to import": [
+        "Inget att importera"
+      ],
+      "Your import was interrupted": [
+        "Din import avbröts"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15182,6 +15230,9 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Denna länk har löpt ut. Förläng utgångsdatumet."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Lägg till en e-post för återställning eller telefon så att du kan återställa ditt lösenord om du glömmer det."
       ]
     },
     "tooltip": {

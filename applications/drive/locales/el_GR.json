@@ -8268,6 +8268,36 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Για να διατηρήσετε τον λογαριασμό σας ασφαλή, επιβεβαιώστε ότι είστε όντως εσείς πριν συνεχίσετε."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "Το ${ BRAND_NAME } έχασε την πρόσβαση στο Google Drive σας. Συνδεθείτε ξανά για να συνεχίσετε την εισαγωγή."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } από ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Έχετε ήδη κάνει αναβάθμιση; ${ resumeSettingsLink }"
+      ],
+      "Find your files": [
+        "Βρείτε τα αρχεία σας"
+      ],
+      "Runs in the background": [
+        "Εκτελείται στο παρασκήνιο"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Θα βρίσκονται σε έναν νέο φάκελο στο Τα αρχεία μου."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Αντιγράφουμε τα αρχεία σας από το Google Drive στο ${ DRIVE_APP_NAME }."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Μπορείτε να κλείσετε αυτό το παράθυρο και να συνεχίσετε να χρησιμοποιείτε το ${ DRIVE_APP_NAME }."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Η εισαγωγή σας έχει ξεκινήσει, αλλά θα διακοπεί όταν γεμίσει ο αποθηκευτικός σας χώρος. Κάντε αναβάθμιση τώρα για να μεταφέρετε όλα τα αρχεία σας."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Η εισαγωγή σας έχει τεθεί σε παύση. Κάντε αναβάθμιση τώρα για να μεταφέρετε τα υπόλοιπα αρχεία σας."
       ]
     },
     "info": {
@@ -9370,6 +9400,12 @@
       ],
       "Customer Support": [
         "Υποστήριξη Πελατών"
+      ],
+      "Cancel your import in settings": [
+        "Ακυρώστε την εισαγωγή σας στις ρυθμίσεις"
+      ],
+      "Resume or cancel your import in settings": [
+        "Συνεχίστε ή ακυρώστε την εισαγωγή σας στις ρυθμίσεις"
       ]
     },
     "List title": {
@@ -10687,6 +10723,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Μπορείτε να έχετε περισσότερους από έναν διαχειριστές. Όλοι οι διαχειριστές μπορούν να προσθέτουν και να διαχειρίζονται χρήστες, αλλά μόνο ο κύριος διαχειριστής έχει τον έλεγχο της χρέωσης."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε έγγραφα με διατερματική κρυπτογράφηση."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε υπολογιστικά φύλλα με διατερματική κρυπτογράφηση."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -15098,6 +15140,12 @@
       ],
       "Verify it’s you": [
         "Επαλήθευση ταυτότητας"
+      ],
+      "Nothing to import": [
+        "Δεν υπάρχει κάτι για εισαγωγή"
+      ],
+      "Your import was interrupted": [
+        "Η εισαγωγή σας διακόπηκε"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15219,6 +15267,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Αυτός ο σύνδεσμος έχει λήξει. Παρατείνετε την ημερομηνία λήξης"
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Προσθέστε μια μέθοδο ανάκτησης δεδομένων για να ξεκλειδώσετε τα δεδομένα σας, σε περίπτωση που ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή έναν αριθμό τηλεφώνου ανάκτησης, ώστε να μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας αν τον ξεχάσετε."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Δημιουργήστε μια φράση ανάκτησης, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας αν ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Δημιουργήστε μια φράση ανάκτησης για να προστατεύσετε τον λογαριασμό σας από απώλεια δεδομένων."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Ορισμένα από τα δεδομένα σας είναι κλειδωμένα. Χρησιμοποιήστε μια μέθοδο ανάκτησης για να τα ξεκλειδώσετε."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Το αρχείο αποκατάστασής σας δεν είναι ενημερωμένο. Κατεβάστε ένα νέο, ώστε να μπορείτε ακόμα να ανακτήσετε τα δεδομένα σας."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Η φράση ανάκτησής σας δεν είναι πλέον έγκυρη. Αποκτήστε μια νέα, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας."
       ]
     },
     "tooltip": {

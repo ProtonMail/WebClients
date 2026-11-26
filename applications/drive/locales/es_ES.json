@@ -8083,6 +8083,36 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Para ayudarnos a mantener segura su cuenta, confirme que es realmente usted antes de continuar."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } perdió el acceso a su Google Drive. Reconéctese para continuar con la importación."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "¿Ya ascendió? ${ resumeSettingsLink }"
+      ],
+      "Find your files": [
+        "Encuentre sus archivos"
+      ],
+      "Runs in the background": [
+        "Se ejecuta en segundo plano"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Estarán en una nueva carpeta en Mis archivos."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Estamos copiando sus archivos desde Google Drive a ${ DRIVE_APP_NAME }."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Puede cerrar esto y seguir usando ${ DRIVE_APP_NAME }."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Su importación ha comenzado, pero se detendrá cuando su almacenamiento esté lleno. Ascienda ahora para traer todos sus archivos."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Su importación se ha pausado. Ascienda ahora para traer el resto de sus archivos."
       ]
     },
     "info": {
@@ -9188,6 +9218,12 @@
       ],
       "Pay it": [
         "Págala"
+      ],
+      "Cancel your import in settings": [
+        "Cancele su importación en la configuración"
+      ],
+      "Resume or cancel your import in settings": [
+        "Reanude o cancele su importación en la configuración"
       ]
     },
     "List title": {
@@ -14993,6 +15029,12 @@
       ],
       "Verify it’s you": [
         "Verifica que eres tú"
+      ],
+      "Nothing to import": [
+        "Nada para importar"
+      ],
+      "Your import was interrupted": [
+        "Su importación se ha interrumpido"
       ]
     },
     "Today icon tooltip in mini calendar": {

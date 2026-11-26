@@ -6175,7 +6175,7 @@
         "La descàrrega ha estat cancel·lada"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
+        "Descarregueu la vostra aplicació favorita avui i emporteu-vos la privadesa allà on aneu."
       ],
       "Downloaded": [
         "Descarregat"
@@ -6386,7 +6386,7 @@
         "Si baixeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
-        "Si us elimineu, perdreu l'accés a \"${ fileName }\" i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
+        "Si us elimineu, perdreu l'accés a «${ fileName }» i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
@@ -8268,6 +8268,36 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Per ajudar a mantenir el vostre compte segur, confirmeu que sou realment vós abans de continuar."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } ha perdut l'accés al vostre Google Drive. Torneu-vos a connectar per continuar la importació."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Ja heu millorat el pla? ${ resumeSettingsLink }"
+      ],
+      "Find your files": [
+        "Trobeu els vostres fitxers"
+      ],
+      "Runs in the background": [
+        "S'executa en segon pla"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Seran en una carpeta nova a Els meus fitxers."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Estem copiant els vostres fitxers de Google Drive a ${ DRIVE_APP_NAME }."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Podeu tancar això i continuar fent servir ${ DRIVE_APP_NAME }."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "La importació ha començat, però es posarà en pausa quan l'emmagatzematge estigui ple. Milloreu el pla ara per portar tots els vostres fitxers."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "La importació està en pausa. Milloreu el pla ara per portar la resta dels vostres fitxers."
       ]
     },
     "info": {
@@ -9373,6 +9403,12 @@
       ],
       "Customer Support": [
         "Servei d'atenció al client"
+      ],
+      "Cancel your import in settings": [
+        "Cancel·leu la importació a les preferències"
+      ],
+      "Resume or cancel your import in settings": [
+        "Repreneu o cancel·leu la importació a les preferències"
       ]
     },
     "List title": {
@@ -10747,6 +10783,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Podeu tenir més d'un administrador. Tots els administradors poden afegir i gestionar usuaris, però només l'administrador principal té control sobre la facturació."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creeu, editeu i col·laboreu en documents xifrats d'extrem a extrem."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creeu, editeu i col·laboreu en fulls de càlcul xifrats d'extrem a extrem."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -15158,6 +15200,12 @@
       ],
       "Verify it’s you": [
         "Verifiqueu que sou vós"
+      ],
+      "Nothing to import": [
+        "No hi ha res per importar"
+      ],
+      "Your import was interrupted": [
+        "S'ha interromput la importació"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15279,6 +15327,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Aquest enllaç ha caducat. Amplieu la data de caducitat"
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Afegeix un mètode de recuperació de dades per desbloquejar-les si oblideu la contrasenya."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Afegiu un correu electrònic o un telèfon de recuperació per poder restablir la contrasenya si l'oblideu."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creeu una frase de recuperació per poder recuperar les dades si oblideu la contrasenya."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereu una frase de recuperació per protegir el compte davant la pèrdua de dades."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per desbloquejar-les."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "El fitxer de recuperació ha caducat. Descarregueu-ne un de nou perquè pugueu recuperar les dades."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La frase de recuperació ha caducat. Aconseguiu-ne una de nova per a poder recuperar les dades."
       ]
     },
     "tooltip": {

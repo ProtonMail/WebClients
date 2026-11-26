@@ -8268,6 +8268,36 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME }, Google Drive erişimini kaybetti. İçe aktarmayı sürüdrmek için yeniden bağlanın."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } / ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Tarifenizi zaten yükselttiniz mi? ${ resumeSettingsLink }"
+      ],
+      "Find your files": [
+        "Dosyalarınızı bulun"
+      ],
+      "Runs in the background": [
+        "Arka planda yürütülür"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Dosyalarım içinde yeni bir klasörde olacaklar."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınız Google Drive üzerinden ${ DRIVE_APP_NAME } hesabınıza kopyalanıyor."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Bu bildirimi kapatabilir ve ${ DRIVE_APP_NAME } kullanmayı sürdürebilirsiniz."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "İçe aktarma işleminiz başladı ancak depolama alanınız dolduğunda duraklatılacak. Tüm dosyalarınızı almak için şimdi tarifenizi yükseltin."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "İçe aktarma işleminiz duraklatıldı. Dosyalarınızın geri kalanını almak için şimdi tarifenizi yükseltin."
       ]
     },
     "info": {
@@ -9370,6 +9400,12 @@
       ],
       "Customer Support": [
         "Müşteri desteği"
+      ],
+      "Cancel your import in settings": [
+        "Ayarlar bölümünden içe aktarma işlemini iptal edin"
+      ],
+      "Resume or cancel your import in settings": [
+        "Ayarlar bölümünden içe aktarmayı sürdürün ya da iptal edin"
       ]
     },
     "List title": {
@@ -10687,6 +10723,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalama işlemlerini yönetebilir."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Uçtan uca şifrelenmiş belgeler oluşturun, düzenleyin ve bu belgeler üzerinde birlikte çalışın."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş elektronik tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11155,8 +11197,8 @@
         "Paylaşım ayrıntıları yüklenemedi"
       ],
       "${ failedCount } item failed to be recovered": [
-        "${ failedCount } öğe kurtarılamadı",
-        "${ failedCount } öğe kurtarılamadı"
+        "${ failedCount } öge kurtarılamadı",
+        "${ failedCount } öge kurtarılamadı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15194,6 +15236,12 @@
       ],
       "Verify it’s you": [
         "Siz olduğunuzu doğrulayın"
+      ],
+      "Nothing to import": [
+        "İçe aktarılacak bir şey yok"
+      ],
+      "Your import was interrupted": [
+        "İçe aktarma işleminiz kesintiye uğradı"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15315,6 +15363,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Bu bağlantının geçerlilik süresi dolmuş. Lütfen geçerlilik sonu tarihini uzatın"
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinize erişebilmek için bir veri kurtarma yöntemi ekleyin."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için bir kurtarma e-posta adresi veya telefon numarası ekleyin."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinizi geri alabilmek için bir kurtarma ifadesi oluşturun."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Hesabınızdaki verilerin kaybolmasını engellemek için bir kurtarma ifadesi oluşturun."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Verilerinizin bir kısmı kilitli. Kilidi açmak için bir kurtarma yöntemi kullanın."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Kurtarma dosyanız güncel değil. Verilerinizi kurtarabilmek için yeni bir dosya indirin."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Kurtarma ifadenizin geçerlilik süresi doldu. Verilerinizi kurtarabilmek için yeni bir tane alın."
       ]
     },
     "tooltip": {

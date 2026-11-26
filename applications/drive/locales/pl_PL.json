@@ -1358,6 +1358,9 @@
       ],
       "Don't show this again": [
         "Nie pokazuj tego ponownie"
+      ],
+      "Stop": [
+        "Zatrzymaj"
       ]
     },
     "Actions": {
@@ -1481,6 +1484,9 @@
         "${ quantity } niestandardowe domeny",
         "${ quantity } niestandardowych domen",
         "${ quantity } niestandardowych domen"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizacje posiadające dodatek „Managed Service Provider” mogą tworzyć organizacje zależne i zarządzać nimi."
       ]
     },
     "Alert": {
@@ -8719,6 +8725,9 @@
       ],
       "What’s this?": [
         "Co to jest?"
+      ],
+      "Pay it": [
+        "Opłać"
       ]
     },
     "List title": {
@@ -11403,6 +11412,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay — karta kończąca się na ${ paymentMethod.Details.Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay – karta kończąca się na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14596,6 +14608,9 @@
       ],
       "Version 6 OpenPGP key": [
         "Klucz OpenPGP w wersji 6"
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Dodaj pomocniczy adres e-mail lub numer telefonu, aby móc zresetować hasło jeśli je zapomnisz."
       ]
     },
     "tooltip": {
@@ -15547,6 +15562,11 @@
     "bf2023: Title": {
       "Offer unavailable": [
         "Oferta jest niedostępna"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potwierdzając, upoważniasz ${ BRAND_NAME } oraz Stripe, naszego dostawcę usług płatniczych, do pobierania przyszłych opłat za subskrypcję z tego konta bankowego metodą SEPA Direct Debit, a także upoważniasz swój bank do obciążenia tego konta tymi opłatami. Pierwsza opłata zostanie pobrana teraz przez ${ IDEAL_WERO_BRAND_NAME }. Twój plan będzie automatycznie odnawiany do momentu anulowania; przed każdym pobraniem opłaty poinformujemy Cię o tym. W przypadku realizacji polecenia zapłaty możesz wystąpić do swojego banku o zwrot środków w ciągu 8 tygodni od daty obciążenia, zgodnie z warunkami umowy zawartej z bankiem. Nie dotyczy to płatności na rzecz ${ IDEAL_WERO_BRAND_NAME }, której dokonujesz teraz."
       ]
     }
   }

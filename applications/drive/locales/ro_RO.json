@@ -8393,6 +8393,36 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Pentru a contribui la menținerea siguranței contului, confirmați-vă identitatea înainte de a continua."
+      ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } a pierdut accesul la Google Drive. Reconectați-vă pentru a continua importarea."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } din ${ total }"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Deja ați trecut la un plan superior? ${ resumeSettingsLink }"
+      ],
+      "Find your files": [
+        "Găsiți-vă fișierele"
+      ],
+      "Runs in the background": [
+        "Rulează în fundal"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Vor fi într-un folder nou în Fișierele mele."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Se copiază fișierele din Google Drive în ${ DRIVE_APP_NAME }."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Puteți închide asta și să continuați să utilizați ${ DRIVE_APP_NAME }."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Importarea început, dar se va întrerupe atunci când spațiul de stocare va fi plin. Treceți la un plan superior acum pentru a transfera toate fișierele."
+      ],
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Importarea este suspendată. Treceți la un plan superior acum pentru a transfera și restul fișierelor."
       ]
     },
     "info": {
@@ -9501,6 +9531,12 @@
       ],
       "Customer Support": [
         "Asistența pentru clienți"
+      ],
+      "Cancel your import in settings": [
+        "Anulați importarea în setări"
+      ],
+      "Resume or cancel your import in settings": [
+        "Reluați sau anulați importarea în setări"
       ]
     },
     "List title": {
@@ -10854,6 +10890,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creați, editați și colaborați la documente criptate bilateral."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creați, editați și colaborați la foi de calcul criptate bilateral."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -15462,6 +15504,12 @@
       ],
       "Verify it’s you": [
         "Verificați-vă autenticitatea"
+      ],
+      "Nothing to import": [
+        "Nimic de importat"
+      ],
+      "Your import was interrupted": [
+        "Importarea a fost întreruptă"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15583,6 +15631,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Această legătură web a expirat. Prelungiți data expirării."
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Adăugați o metodă de recuperare a datelor pentru a debloca datele dacă vă uitați parola."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Adăugați o adresă de e-mail sau un număr de telefon de recuperare, pentru a vă putea reseta parola în cazul în care o uitați."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creați o frază de recuperare, astfel încât să vă puteți recupera datele dacă vă uitați parola."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generați o frază de recuperare pentru a vă proteja contul împotriva pierderii datelor."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Unele dintre date sunt blocate. Utilizați o metodă de recuperare pentru a le debloca."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Fișierul de recuperare este învechit. Descărcați unul nou pentru a vă putea recupera în continuare datele."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Fraza de recuperare este învechită. Obțineți una nouă pentru a vă putea recupera în continuare datele."
       ]
     },
     "tooltip": {

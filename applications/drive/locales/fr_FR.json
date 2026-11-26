@@ -8140,6 +8140,9 @@
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
         "Pour garantir la sécurité de votre compte, veuillez confirmer que c'est bien vous avant de continuer."
+      ],
+      "${ current } of ${ total }": [
+        "${ current } sur ${ total }"
       ]
     },
     "info": {
@@ -10616,6 +10619,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
+      ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME } : Créez, modifiez et collaborez sur des documents chiffrés de bout en bout."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } : Créez, modifiez et collaborez sur des feuilles de calcul chiffrées de bout en bout."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -15114,6 +15123,9 @@
       ],
       "Verify it’s you": [
         "Vérifiez que c'est bien vous"
+      ],
+      "Nothing to import": [
+        "Il n'y a rien à importer"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15226,6 +15238,27 @@
       ],
       "This link has expired. Please extend expiration date": [
         "Ce lien a expiré. Veuillez prolonger sa durée de validité."
+      ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Ajoutez une méthode de récupération des données pour déverrouiller vos données si vous oubliez votre mot de passe."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Ajoutez une adresse e-mail ou un numéro de téléphone de récupération afin de pouvoir réinitialiser votre mot de passe si vous l'oubliez."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Créez une phrase de récupération afin de pouvoir récupérer vos données si vous oubliez votre mot de passe."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Créez une phrase de récupération pour protéger votre compte contre toute perte de données."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Certaines de vos données sont verrouillées. Utilisez une méthode de récupération pour les déverrouiller."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Votre fichier de récupération n'est plus à jour. Téléchargez-en un nouveau afin de pouvoir récupérer vos données."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Votre phrase de récupération n'est plus valide. Générez-en une nouvelle afin de pouvoir continuer à récupérer vos données."
       ]
     },
     "tooltip": {
