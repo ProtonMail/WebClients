@@ -2259,11 +2259,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. In der Statusleiste anzeigen"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, nicht zutreffend"
+      ],
       "Average": [
         "Durchschnitt"
       ],
+      "Copy": [
+        "Kopieren"
+      ],
+      "Copy formula": [
+        "Formel kopieren"
+      ],
+      "Copy value": [
+        "Wert kopieren"
+      ],
       "Count": [
         "Anzahl"
+      ],
+      "Count numbers": [
+        "Anzahl Zahlen"
+      ],
+      "Detach from selection": [
+        "Von Auswahl trennen"
       ],
       "Max": [
         "Maximum"
@@ -2271,8 +2292,20 @@
       "Min": [
         "Minimum"
       ],
+      "Pin by the selection": [
+        "Mit Auswahl anheften"
+      ],
+      "Selection summary": [
+        "Zusammenfassung der Auswahl"
+      ],
       "Sum": [
         "Summe"
+      ],
+      "Summary": [
+        "Zusammenfassung"
+      ],
+      "Unpin from selection": [
+        "Aus Auswahl lösen"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

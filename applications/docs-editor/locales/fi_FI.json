@@ -423,6 +423,9 @@
       "Loading": [
         "Ladataan"
       ],
+      "Loading spreadsheet content...": [
+        "Ladataan laskentataulukon sisältöä..."
+      ],
       "New": [
         "Uusi"
       ],
@@ -990,7 +993,7 @@
         "Linkki kopioitiin leikepöydälle"
       ],
       "Convert to table": [
-        "Tämän laskentataulukon asetukset"
+        "Muunna taulukoksi"
       ],
       "Copy": [
         "Kopioi"
@@ -1351,7 +1354,7 @@
         "Kaikkia rivejä ei voi poistaa"
       ],
       "Find in sheet": [
-        "Pyöristetty valuutta"
+        "Hae taulukosta"
       ]
     },
     "sheets_2025:Spreadsheet editor cell merge options": {
@@ -1376,7 +1379,7 @@
         "Luo suodatin"
       ],
       "Data validation": [
-        "Tietojen kelpoisuuden tarkistaminen"
+        "Tarkista data"
       ],
       "Protect range": [
         "Vaakasuora tasaus"
@@ -1428,7 +1431,7 @@
         "Liitä"
       ],
       "Paste special": [
-        "Sovita automaattisesti tietoihin"
+        "Liitä määräten"
       ],
       "Redo": [
         "Tee uudelleen"
@@ -1710,7 +1713,7 @@
         "Kirjanpito"
       ],
       "CN¥ Chinese Yuan": [
-        "Kopioi muotoilu"
+        "¥ Kiinan juan"
       ],
       "Currency": [
         "Valuutta"
@@ -1804,7 +1807,7 @@
         "Laskentataulukon asetukset"
       ],
       "This affects formatting details such as functions, dates and currency": [
-        "Valuuttasymboli"
+        "Vaikuttaa muotoiluun funktioissa, päivämäärissä ja valuutoissa"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
@@ -1887,7 +1890,7 @@
         "Lisää muistiinpano"
       ],
       "Italic": [
-        "Kursivointi"
+        "Kursivoi"
       ],
       "Merge cells": [
         "Väriasteikko"
@@ -1917,7 +1920,7 @@
         "Tekstin rivitys"
       ],
       "Underline": [
-        "Alleviivaus"
+        "Alleviivaa"
       ],
       "Undo": [
         "Kumoa"
@@ -1929,7 +1932,7 @@
         "Tasaa pystysuunnassa"
       ],
       "Zoom": [
-        "Näytä suodatinpainike"
+        "Suurennos"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -2359,7 +2362,7 @@
     },
     "sheets_2025:Spreadsheet sidebar data validation dialog": {
       "Add another named range": [
-        "Katkaise"
+        "Lisää toinen väli"
       ],
       "Add another range": [
         "Lisää toinen väli"
@@ -2371,13 +2374,13 @@
         "Salli tyhjät"
       ],
       "Apply to range": [
-        "Ylivuoto"
+        "Käytä väliä"
       ],
       "Cancel": [
         "Peruuta"
       ],
       "Data validation": [
-        "Minimipiste"
+        "Tietojen tarkistus"
       ],
       "Delete data validation rule": [
         "Lajittele taulukko järjestyksessä Z–A"
@@ -2398,7 +2401,7 @@
         "Lisää toinen alue"
       ],
       "Validation rules": [
-        "Vahvistussäännöt"
+        "Tarkistussäännöt"
       ]
     },
     "sheets_2025:Spreadsheet sidebar dialog": {
