@@ -95,6 +95,40 @@ const nodeEvent = (
         isShared: false,
     }) as DriveEvent;
 
+// --- Fake time ---
+
+// WebCrypto (index blob encryption) runs on Node's thread pool in real time, which fake timers can't wait for.
+// On a busy machine an encryption can outlast hundreds of polling iterations, so wait for it before moving on.
+const pendingCryptoOps = new Set<Promise<unknown>>();
+// eslint-disable-next-line no-restricted-properties -- only wrapped to track pending calls, not used directly
+const subtle = crypto.subtle;
+
+function trackPendingCryptoOps() {
+    for (const method of ['encrypt', 'decrypt', 'generateKey', 'importKey', 'exportKey'] as const) {
+        const original = subtle[method].bind(subtle) as (...args: unknown[]) => Promise<unknown>;
+        vi.spyOn(subtle, method).mockImplementation(((...args: unknown[]) => {
+            const op = original(...args);
+            pendingCryptoOps.add(op);
+            void op.then(
+                () => pendingCryptoOps.delete(op),
+                () => pendingCryptoOps.delete(op)
+            );
+            return op;
+        }) as never);
+    }
+}
+
+/** Advances fake timers, then lets the real-time work they started (IndexedDB, WebCrypto) finish. */
+async function advanceTime(ms: number) {
+    await vi.advanceTimersByTimeAsync(ms);
+    // fake-indexeddb runs on the real setImmediate
+    await new Promise((resolve) => setImmediate(resolve));
+    while (pendingCryptoOps.size > 0) {
+        await Promise.allSettled(pendingCryptoOps);
+        await new Promise((resolve) => setImmediate(resolve));
+    }
+}
+
 // --- State stream ---
 
 type StateMessage = Partial<SearchModuleState>;
@@ -201,10 +235,7 @@ class SearchModuleStateStream {
         }
 
         for (let i = 0; i < maxIterations; i++) {
-            await vi.advanceTimersByTimeAsync(200);
-            // Fake timers don't wait for IndexedDB, which runs on the real setImmediate: on a slow
-            // machine a timer would otherwise be scheduled only after the loop gave up.
-            await new Promise((resolve) => setImmediate(resolve));
+            await advanceTime(200);
             const found = this.buffer.findIndex(predicate);
             if (found !== -1) {
                 const match = this.buffer[found];
@@ -316,7 +347,7 @@ async function advanceUntilSearch(
                 throw e;
             }
         }
-        await vi.advanceTimersByTimeAsync(200);
+        await advanceTime(200);
     }
     throw new Error(`advanceUntilSearch('${query}') timed out`);
 }
@@ -355,7 +386,7 @@ async function advanceUntilExport(
                 throw e;
             }
         }
-        await vi.advanceTimersByTimeAsync(200);
+        await advanceTime(200);
     }
     throw new Error('advanceUntilExport timed out');
 }
@@ -371,7 +402,7 @@ async function retryWhileWriterBusy(fn: () => Promise<void>, maxIterations = 50)
             if (!(e instanceof Error) || !/write session|write handle/.test(e.message)) {
                 throw e;
             }
-            await vi.advanceTimersByTimeAsync(100);
+            await advanceTime(100);
         }
     }
     throw new Error('retryWhileWriterBusy: timed out');
@@ -386,7 +417,7 @@ async function advanceUntilRepairEntry(nodeUid: string, maxIterations = 1000): P
             if (entries.some((e) => e.nodeUid === nodeUid)) {
                 return;
             }
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
         }
     } finally {
         db.close();
@@ -402,7 +433,7 @@ async function advanceUntilRepairTableEmpty(maxIterations = 100): Promise<void> 
             if ((await db.getAllRepairEntries()).length === 0) {
                 return;
             }
-            await vi.advanceTimersByTimeAsync(100);
+            await advanceTime(100);
         }
     } finally {
         db.close();
@@ -506,6 +537,7 @@ describe('SharedWorkerAPI integration', () => {
         indexedDB = new IDBFactory();
         FakeBroadcastChannel.reset();
         fakeLockManager.reset();
+        trackPendingCryptoOps();
         api = new SharedWorkerAPI(APP_VERSION, USER_ID, vi.fn());
         bridge = createBridge();
         state = new SearchModuleStateStream();
@@ -518,6 +550,8 @@ describe('SharedWorkerAPI integration', () => {
         api.disconnectClient(CLIENT_B);
         api.disconnectClient(CLIENT_A);
         vi.useRealTimers();
+        // crypto.subtle may be shared with other test files of this worker
+        vi.restoreAllMocks();
     });
 
     describe('Scenario: full bootstrap + search for MyFiles', () => {
@@ -802,8 +836,7 @@ describe('SharedWorkerAPI integration', () => {
                 if (genOne.length === 0) {
                     break;
                 }
-                await vi.advanceTimersByTimeAsync(100);
-                await new Promise((resolve) => setImmediate(resolve));
+                await advanceTime(100);
             }
             expect(genOne).toHaveLength(0);
 
@@ -865,9 +898,7 @@ describe('SharedWorkerAPI integration', () => {
                 if (oldScopeResults.length === 0) {
                     break;
                 }
-                await vi.advanceTimersByTimeAsync(100);
-                // Let the real (setImmediate based) IndexedDB work of the cleanup progress
-                await new Promise((resolve) => setImmediate(resolve));
+                await advanceTime(100);
             }
             expect(oldScopeResults).toHaveLength(0);
 
@@ -905,7 +936,7 @@ describe('SharedWorkerAPI integration', () => {
 
             const stateB = new SearchModuleStateStream();
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             expect(state.history.at(-1)).toEqual(
                 expect.objectContaining({ isSearchable: true, permanentError: 'search_library_error' })
@@ -935,7 +966,7 @@ describe('SharedWorkerAPI integration', () => {
 
             const stateB = new SearchModuleStateStream();
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             stateB.expectNoUpdatesSinceCheckpoint();
             state.expectNoUpdatesSinceCheckpoint();
@@ -955,11 +986,11 @@ describe('SharedWorkerAPI integration', () => {
             state.checkpoint();
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await vi.waitFor(() => expect(getOrCreateKey).toHaveBeenCalled());
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             const stateB = new SearchModuleStateStream();
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             stateB.expectNoUpdatesSinceCheckpoint();
             state.expectNoUpdatesSinceCheckpoint();
@@ -975,7 +1006,7 @@ describe('SharedWorkerAPI integration', () => {
 
             state.checkpoint();
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
-            await vi.advanceTimersByTimeAsync(1_000);
+            await advanceTime(1_000);
 
             state.expectNoUpdatesSinceCheckpoint();
             api.disconnectClient(CLIENT_B);
@@ -985,7 +1016,7 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             // B is elected and the old indexer starts stopping; C joins before it is gone.
             api.disconnectClient(CLIENT_A);
@@ -1008,13 +1039,13 @@ describe('SharedWorkerAPI integration', () => {
 
             const releaseStop = holdIndexerStops();
             api.disconnectClient(CLIENT_A);
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
             const stoppingIndexer = vi.mocked(IndexerTaskQueue.prototype.stop).mock.contexts[0] as IndexerTaskQueue;
 
             // A task still in flight reports progress after its indexer was told to stop.
             state.checkpoint();
             stoppingIndexer.notifyIndexingProgress();
-            await vi.advanceTimersByTimeAsync(1_000);
+            await advanceTime(1_000);
             state.expectNoUpdatesSinceCheckpoint();
 
             const stateC = new SearchModuleStateStream();
@@ -1032,7 +1063,7 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
             await api.registerClient(USER_ID, CLIENT_C, createBridge().asBridge());
             api.heartbeatClient(CLIENT_B, true);
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             const releaseStop = holdIndexerStops();
             const disposeAll = vi.spyOn(IndexRegistry.prototype, 'disposeAll');
@@ -1040,7 +1071,7 @@ describe('SharedWorkerAPI integration', () => {
             // B takes over and stops A's indexer, then C takes over before that stop is done.
             api.disconnectClient(CLIENT_A);
             api.disconnectClient(CLIENT_B);
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
             expect(disposeAll).not.toHaveBeenCalled();
 
             releaseStop();
@@ -1051,14 +1082,14 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             const releaseStop = holdIndexerStops();
             const clear = vi.spyOn(SearchDB.prototype, 'clear');
 
             api.disconnectClient(CLIENT_A);
             const reset = api.reset();
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
             expect(clear).not.toHaveBeenCalled();
 
             releaseStop();
@@ -1136,7 +1167,7 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();
             await api.registerClient(USER_ID, CLIENT_B, createBridge().asBridge());
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             // The search on A's searcher fails only after B took over.
             let failSearch = () => {};
@@ -1148,7 +1179,7 @@ describe('SharedWorkerAPI integration', () => {
                 throw new SearchLibraryError('Search library WASM failed: query execute', new Error('boom'));
             });
             const staleSearch = expect(search(api, 'report')).rejects.toThrow(SearchLibraryError);
-            await vi.advanceTimersByTimeAsync(0);
+            await advanceTime(0);
 
             state.checkpoint();
             api.disconnectClient(CLIENT_A);
@@ -1156,7 +1187,7 @@ describe('SharedWorkerAPI integration', () => {
 
             failSearch();
             await staleSearch;
-            await vi.advanceTimersByTimeAsync(200);
+            await advanceTime(200);
 
             expect(state.history.at(-1)?.permanentError ?? null).toBeNull();
         });
@@ -1314,7 +1345,7 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
 
             // Give it a moment — if re-indexing were triggered we'd see isIndexing: true.
-            await vi.advanceTimersByTimeAsync(1_000);
+            await advanceTime(1_000);
             state.expectNoUpdatesSinceCheckpoint();
 
             // Search still works with the existing index.
@@ -1573,7 +1604,7 @@ describe('SharedWorkerAPI integration', () => {
                         throw e;
                     }
                 }
-                await vi.advanceTimersByTimeAsync(200);
+                await advanceTime(200);
             }
 
             const burstResults = (await search(api, 'burst')).map((r) => r.nodeUid).sort();
