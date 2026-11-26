@@ -22,7 +22,6 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
-import { isDevOrBlack } from '@proton/shared/lib/env';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
@@ -115,7 +114,7 @@ const Header = ({
     };
 
     const isODSImportEnabled = useFlag('SheetsODSImportEnabled');
-    const isODTEnabled = useFlag('DocsODTEnabled') || isDevOrBlack();
+    const isODTEnabled = useFlag('DocsODTEnabled');
     const openInDocsType = mimeTypeToOpenInDocsType(mimeType, isODSImportEnabled, isODTEnabled);
     const MimeTypeIcon = mimeType ? getFileIcon(mimeType) : undefined;
 
