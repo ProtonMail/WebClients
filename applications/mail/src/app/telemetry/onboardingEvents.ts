@@ -10,6 +10,7 @@ import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { mailContext } from './context';
+import { isFromWebSignup } from './signupOrigin';
 
 type OnboardingThemeLabel = (typeof ONBOARDING_THEMES)[number]['label'];
 
@@ -167,7 +168,12 @@ const trackStepLoaded = (step: ONBOARDING_STEPS) => {
     tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
 };
 
+/** Only for the accounts created with the web signup, the other ones have no signup events to link with */
 const trackSignupPocWelcomeLoaded = () => {
+    if (!isFromWebSignup()) {
+        return;
+    }
+
     tracker.emit(
         signupPocStepLoad,
         {

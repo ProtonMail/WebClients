@@ -5,6 +5,7 @@ import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@prot
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { ONBOARDING_STEPS, useOnboardingTracking } from './onboardingEvents';
+import { rememberWebSignup } from './signupOrigin';
 
 vi.mock('@proton/account/welcomeFlags');
 
@@ -94,6 +95,7 @@ describe('signup proof of concept', () => {
     beforeEach(() => {
         vi.clearAllMocks();
         sessionStorage.clear();
+        rememberWebSignup('?welcome=true&signupProduct=Mail');
         setReplay(false);
     });
 
@@ -118,6 +120,17 @@ describe('signup proof of concept', () => {
                 step: ONBOARDING_STEPS.welcome,
             },
         });
+    });
+
+    it('does not send it when the account was not created by the web signup', () => {
+        sessionStorage.clear();
+        const { result } = renderHook(() => useOnboardingTracking());
+
+        result.current.trackStepLoaded(ONBOARDING_STEPS.welcome);
+
+        expect(getPocEvents()).toHaveLength(0);
+        // The regular onboarding events are not affected
+        expect(getEmittedEvents()).toHaveLength(1);
     });
 
     it('does not send it on a replay', () => {
