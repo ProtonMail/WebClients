@@ -23,6 +23,7 @@ export const FLAGS_WITH_VARIANT = [
     'OnboardingStepsExperiment',
     'PostSignupSurveyExperiment',
     'VpnSignupMobileCheckout',
+    'BookmarkNudgeExperiment',
 ] satisfies FeatureFlag[];
 
 /**
@@ -52,6 +53,7 @@ export type InboxBringYourOwnEmailImportPeriodExperimentVariant = 'Control' | 'T
 export type OnboardingStepsExperimentVariant = 'Control' | 'Treatment1' | 'Treatment2' | 'Treatment3' | 'Treatment4';
 export type PostSignupSurveyExperimentVariant = 'Control' | 'Treatment';
 export type VpnSignupMobileCheckoutVariant = 'Control' | 'Treatment';
+export type BookmarkNudgeExperimentVariant = 'Control' | 'Treatment';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -87,6 +89,7 @@ type FeatureFlagVariantMap = {
     OnboardingStepsExperiment: VariantReturnType<OnboardingStepsExperimentVariant>;
     PostSignupSurveyExperiment: VariantReturnType<PostSignupSurveyExperimentVariant>;
     VpnSignupMobileCheckout: VariantReturnType<VpnSignupMobileCheckoutVariant>;
+    BookmarkNudgeExperiment: VariantReturnType<BookmarkNudgeExperimentVariant>;
 };
 
 /**
