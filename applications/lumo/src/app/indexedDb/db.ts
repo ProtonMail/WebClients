@@ -35,7 +35,7 @@ export const SPACE_STORE = 'spaces_v4';
 export const CONVERSATION_STORE = 'conversations_v4';
 export const MESSAGE_STORE = 'messages_v4';
 export const ATTACHMENT_STORE = 'attachments_v4';
-export const ASSET_STORE = 'assets_v1';
+const ASSET_STORE = 'assets_v1';
 export const REMOTE_ID_STORE = 'remote_ids_v4';
 const FOUNDATION_SEARCH_STORE = 'foundation_search_v1';
 const SKILL_STORE = 'skills_v1';
@@ -224,6 +224,34 @@ class StoreOperations<T extends BaseResource> {
             });
         } catch (error) {
             throw this.wrapError(error, `getAll ${this.config.type}`);
+        }
+    }
+
+    async getAllIds(tx?: IDBTransaction): Promise<string[]> {
+        try {
+            tx ??= await this.getTransaction('readonly');
+            const store = tx.objectStore(this.config.storeName);
+            return (await requestToPromise(store.getAllKeys())) as string[];
+        } catch (error) {
+            throw this.wrapError(error, `getAllIds ${this.config.type}`);
+        }
+    }
+
+    // Reads one record at a time, so only the matches stay in memory.
+    async filter(predicate: (item: T) => boolean, tx?: IDBTransaction): Promise<T[]> {
+        try {
+            tx ??= await this.getTransaction('readonly');
+            const store = tx.objectStore(this.config.storeName);
+            const matches: T[] = [];
+            await withCursor(store, async (cursor) => {
+                const item = this.config.cleanFunction(cursor.value);
+                if (predicate(item)) {
+                    matches.push(item);
+                }
+            });
+            return matches;
+        } catch (error) {
+            throw this.wrapError(error, `filter ${this.config.type}`);
         }
     }
 
@@ -782,6 +810,10 @@ export class DbApi {
         return this.executeWithRetry(() => this.attachmentStore.getAll(tx), 'getAllAttachments');
     };
 
+    public getAllAttachmentIds = async (tx?: IDBTransaction): Promise<AttachmentId[]> => {
+        return this.executeWithRetry(() => this.attachmentStore.getAllIds(tx), 'getAllAttachmentIds');
+    };
+
     public getAllIdMaps = async (tx?: IDBTransaction): Promise<IdMapEntry[]> => {
         tx ??= await this.newTransaction(REMOTE_ID_STORE, 'readonly');
         const store = tx.objectStore(REMOTE_ID_STORE);
@@ -1333,27 +1365,27 @@ export class DbApi {
         });
     };
 
-    // todo: it is quite inefficient, and we'd better use an index
+    // Scans with a cursor: `dirty` is a boolean, which IndexedDB cannot index.
     public findUnsyncedResources = async (tx?: IDBTransaction): Promise<UnsyncedMaps> => {
         tx ??= (await this.db).transaction(
             [MESSAGE_STORE, CONVERSATION_STORE, SPACE_STORE, ATTACHMENT_STORE],
             'readonly'
         );
 
-        const [allMessages, allConversations, allSpaces, allAttachments] = await Promise.all([
-            this.getAllMessages(tx),
-            this.getAllConversations(tx),
-            this.getAllSpaces(tx),
-            this.getAllAttachments(tx),
+        const isDirty = (resource: { dirty?: boolean }) => resource.dirty === true;
+        const [messages, conversations, spaces, attachments] = await Promise.all([
+            this.messageStore.filter(isDirty, tx),
+            this.conversationStore.filter(isDirty, tx),
+            this.spaceStore.filter(isDirty, tx),
+            this.attachmentStore.filter(isDirty, tx),
         ]);
 
-        // Filter resources by dirty flag instead of checking remote IDs
-        const unsyncedMessages = mapify(allMessages.filter((m) => m.dirty === true));
-        const unsyncedConversations = mapify(allConversations.filter((c) => c.dirty === true));
-        const unsyncedSpaces = mapify(allSpaces.filter((s) => s.dirty === true));
-        const unsyncedAttachments = mapify(allAttachments.filter((a) => a.dirty === true));
-
-        return { unsyncedMessages, unsyncedConversations, unsyncedSpaces, unsyncedAttachments };
+        return {
+            unsyncedMessages: mapify(messages),
+            unsyncedConversations: mapify(conversations),
+            unsyncedSpaces: mapify(spaces),
+            unsyncedAttachments: mapify(attachments),
+        };
     };
 
     // Skills. Every local write is dirty until it is synced with the skills endpoints.
