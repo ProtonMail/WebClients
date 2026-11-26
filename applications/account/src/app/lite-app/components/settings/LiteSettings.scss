@@ -40,6 +40,28 @@
 	background-color: var(--lite-settings-background);
 	color: var(--lite-settings-glyph);
 
+	.lite-settings-sheet {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: rem(16);
+	}
+
+	.lite-settings-sheet-description {
+		margin: 0;
+		padding-inline: rem(4);
+		font-size: rem(14);
+		line-height: rem(20);
+		color: var(--lite-settings-glyph-mid);
+	}
+
+	.lite-settings-sheet-actions {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		margin-block-start: auto;
+	}
+
 	.lite-settings-section {
 		display: flex;
 		flex-direction: column;

@@ -1,0 +1,19 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.lite-settings.lite-settings .calendar-add-public-holidays {
+	// Drops the field border and background, like the unstyled selects of the other rows
+	.calendar-add-public-holidays-color {
+		padding-inline-end: 0;
+		border: 0;
+		background-color: transparent;
+	}
+
+	.calendar-add-public-holidays-error {
+		margin: 0;
+		margin-block-start: rem(8);
+		padding-inline: rem(16);
+		font-size: rem(14);
+		line-height: rem(20);
+		color: var(--signal-danger);
+	}
+}
