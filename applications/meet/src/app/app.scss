@@ -227,57 +227,79 @@ $profile-colors:
 		border-radius: 1.5rem;
 		padding: 0.625rem;
 		margin-inline-end: 0.313rem;
+	}
+
+	.notification__button.button-for-icon {
 		transition: background-color 0.2s ease;
 	}
 
-	.notification__button:not(.notification__close-button) {
-		border: 1px solid var(--interaction-weak);
+	.notification__button:not(.button-for-icon) {
+		border: 1px solid;
 		border-radius: 1.5rem;
-		background-color: var(--interaction-weak);
-		color: var(--text-norm);
-
-		&:hover,
-		&:active {
-			border-color: var(--interaction-weak-major-1);
-			background-color: var(--interaction-weak-major-1);
-			color: var(--text-norm);
-		}
-
-		&:focus-visible {
-			border-color: var(--focus-outline);
-			background-color: var(--interaction-weak-major-1);
-		}
+		color: var(--text-invert);
 	}
 }
 
-@mixin notification-variant($bg-color, $hover-color) {
+@mixin notification-variant($bg-color, $button-color, $hover-color) {
 	@extend %notification-base;
 
 	background-color: $bg-color;
 
-	.notification__close-button {
+	.notification__button.button-for-icon {
+		border-color: $bg-color;
 		background-color: $bg-color;
 
-		&:hover {
+		&:hover,
+		&:active {
+			border-color: $hover-color;
+			background-color: $hover-color;
+		}
+
+		&:focus-visible {
+			border-color: var(--focus-outline);
+		}
+	}
+
+	.notification__button:not(.button-for-icon) {
+		border-color: $button-color;
+		background-color: $button-color;
+
+		&:hover,
+		&:active {
+			border-color: $hover-color;
+			background-color: $hover-color;
+			color: var(--text-invert);
+		}
+
+		&:focus-visible {
+			border-color: var(--focus-outline);
 			background-color: $hover-color;
 		}
 	}
 }
 
 .notification--info {
-	@include notification-variant(var(--interaction-norm-contrast), var(--interaction-weak-major-2));
+	@include notification-variant(
+		var(--interaction-norm-contrast),
+		var(--interaction-weak-major-2),
+		var(--interaction-weak-major-3)
+	);
 }
 
 .notification--success {
-	@include notification-variant(var(--interaction-norm), var(--interaction-norm-major-3));
+	@include notification-variant(
+		var(--interaction-norm),
+		var(--interaction-norm-major-2),
+		var(--interaction-norm-major-3)
+	);
 }
 
 .notification--warning {
-	@include notification-variant(var(--signal-warning), var(--signal-warning-major-3));
+	@include notification-variant(var(--signal-warning), var(--signal-warning-major-2), var(--signal-warning-major-3));
 }
 
 .notification--error {
-	@include notification-variant(var(--signal-danger), var(--signal-danger-major-2));
+	@include notification-variant(var(--signal-danger), var(--signal-danger-major-2), var(--signal-danger-major-3));
 }
 
 .notification--info,
