@@ -45,7 +45,7 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
         const mimeType = attachment.mimeType || 'image/png';
         const blob = new Blob([imageData], { type: mimeType });
         return URL.createObjectURL(blob);
-    }, [imageSrcOverride, attachmentId, attachment, attachment?.data, attachment?.id, attachment?.mimeType]);
+    }, [imageSrcOverride, attachmentId, attachment, attachment?.data, attachment?.id, attachment?.mimeType, isLoading]);
 
     const openOverlay = useCallback((mode: 'preview' | 'edit' = 'preview') => {
         setOverlayDefaultMode(mode);

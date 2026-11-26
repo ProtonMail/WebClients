@@ -57,7 +57,7 @@ export const InlineImageComponent: React.FC<InlineImageComponentProps> = ({ atta
         const mimeType = attachment.mimeType || 'image/png';
         const blob = new Blob([imageData], { type: mimeType });
         return URL.createObjectURL(blob);
-    }, [attachmentId, attachment, attachment?.data, attachment?.mimeType, attachment?.id]);
+    }, [attachmentId, attachment, attachment?.data, attachment?.mimeType, attachment?.id, isLoading]);
 
     const handleRetry = () => {
         dispatch(clearAttachmentLoading(attachmentId));
