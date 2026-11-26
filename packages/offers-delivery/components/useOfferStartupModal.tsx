@@ -4,19 +4,14 @@ import { UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 
 import { CampaignVariant } from '../interface';
 import { OfferDealModal } from './OfferDealModal';
-import { type UseActiveOfferOptions, useActiveOffer } from './useActiveOffer';
+import { useActiveOffer } from './useActiveOffer';
 import { useOfferUpgrade } from './useOfferUpgrade';
 
-interface Options {
-    /** For hosts that route `GoToUpsell` their own way (Account). */
-    onUpgrade?: UseActiveOfferOptions['onUpgrade'];
-}
-
 /** Modal-variant offer as an entry for the host's `StartupModals` list, so it never stacks on another startup modal. */
-export const useOfferStartupModal = (options: Options = {}): StartupModal => {
+export const useOfferStartupModal = (): StartupModal => {
     const [modal, setModal, renderModal] = useModalState();
-    const sharedOnUpgrade = useOfferUpgrade(UPSELL_COMPONENT.MODAL);
-    const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade: options.onUpgrade ?? sharedOnUpgrade });
+    const onUpgrade = useOfferUpgrade(UPSELL_COMPONENT.MODAL);
+    const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
 
     return {
         showModal: offer !== null,
