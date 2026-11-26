@@ -1100,6 +1100,9 @@
       "Open debug menu": [
         "Deschidere meniu de depanare"
       ],
+      "Open Mailing lists": [
+        "Deschidere liste de corespondență"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -1600,6 +1603,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Cheie de încredere",
+        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -7478,6 +7486,14 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje pe ${ count } dintre domeniile personale.",
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje pe ${ count } dintre domeniile personale.",
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje pe ${ count } dintre domeniile personale."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Activați ${ MAIL_APP_NAME } pentru a începe să primiți mesaje la ${ domainName }. ${ activateLink }"
+      ],
       "Activation in progress": [
         "Activare în curs"
       ],
@@ -9860,6 +9876,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Am adăugat buletinele informative din importarea din Gmail în Liste de corespondență, grupate pe expeditor. Citiți-le, păstrați-le sau renunțați la ele – totul într-un singur loc."
+      ],
       "Web URL": [
         "Adresa URL"
       ],
@@ -10124,6 +10143,14 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Nu veți primi e-mailuri pentru ${ count } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii.",
+        "Nu veți primi e-mailuri pentru ${ count } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii.",
+        "Nu veți primi e-mailuri pentru ${ count } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Nu veți primi mesaje pentru ${ domainName } dintre domeniile personale până când nu activați ${ MAIL_APP_NAME }. Puteți face acest lucru oricând, din secțiunea Setări > Toate setările > Nume de domenii."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
       ],
@@ -10196,6 +10223,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Contul Gmail vi se conectează la această adresă ${ MAIL_APP_NAME }."
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Buletinele informative din Gmail sunt acum grupate în funcție de expeditor, separat de corespondența personală. Citiți-le, păstrați-le sau renunțați la ele – totul într-un singur loc."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Dispozitivul actual nu acceptă rularea asistentului de scriere la nivel local. Încercați să îl rulați pe servere."
@@ -11777,6 +11807,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activare"
+      ],
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
@@ -13186,11 +13219,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Securizați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creați, editați și colaborați la documente criptate bilateral."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creați, editați și colaborați la foi de calcul criptate bilateral."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
@@ -16993,6 +17032,9 @@
       "Cannot create more Booking pages": [
         "Nu se mai pot crea pagini de rezervare"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Carbon Copy": [
         "Destinatari vizibili"
       ],
@@ -17285,6 +17327,9 @@
       "Help center": [
         "Centru de ajutor"
       ],
+      "Hide this reminder?": [
+        "Ascundeți această notificare?"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ascundeți-vă e-mailul cu ${ PASS_APP_NAME }"
       ],
@@ -17411,6 +17456,9 @@
       ],
       "Mark messages as unread": [
         "Marcare mesaje ca fiind necitite"
+      ],
+      "Meet Mailing lists": [
+        "Descoperiți listele de corespondență"
       ],
       "Merge contacts": [
         "Îmbinare contacte"
@@ -17962,6 +18010,9 @@
       "Your free trial has ended": [
         "Perioada de evaluare gratuită a expirat"
       ],
+      "Your Gmail newsletters are here": [
+        "Buletinele informative din Gmail sunt aici"
+      ],
       "Your Gmail newsletters, now easier to manage": [
         "Buletinele informative din Gmail, acum mai ușor de gestionat"
       ],
@@ -18004,11 +18055,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Adăugați o metodă de recuperare a datelor pentru a debloca datele dacă vă uitați parola."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Adăugați o adresă de e-mail sau un număr de telefon de recuperare, pentru a vă putea reseta parola în cazul în care o uitați."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creați o frază de recuperare, astfel încât să vă puteți recupera datele dacă vă uitați parola."
       ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
@@ -18037,6 +18097,9 @@
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generați o frază de recuperare pentru a vă proteja contul împotriva pierderii datelor."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
@@ -18060,6 +18123,9 @@
       ],
       "Show side panel": [
         "Afișare panou lateral"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Unele dintre date sunt blocate. Utilizați o metodă de recuperare pentru a le debloca."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
@@ -18096,6 +18162,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Cheie PGP versiunea 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Fișierul de recuperare este învechit. Descărcați unul nou pentru a vă putea recupera în continuare datele."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Fraza de recuperare este învechită. Obțineți una nouă pentru a vă putea recupera în continuare datele."
       ]
     },
     "tooltip": {

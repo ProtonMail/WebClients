@@ -831,6 +831,9 @@
       "Loading${ ellipsis }": [
         "Ładowanie${ ellipsis }"
       ],
+      "Lookup document": [
+        "Szukaj dokumentu"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Ustaw ${ MAIL_APP_NAME } jako domyślną aplikację pocztową"
       ],
@@ -1449,6 +1452,9 @@
       "Stay": [
         "Pozostań"
       ],
+      "Stop": [
+        "Zatrzymaj"
+      ],
       "Stop downloading assistant": [
         "Zatrzymaj pobieranie asystenta"
       ],
@@ -1877,6 +1883,9 @@
       ],
       "Domains": [
         "Domeny"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizacje posiadające dodatek „Managed Service Provider” mogą tworzyć organizacje zależne i zarządzać nimi."
       ],
       "Servers": [
         "Serwery"
@@ -4207,6 +4216,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Umożliw klientom rezerwowanie terminów bez zbędnej wymiany wiadomości, bezpośrednio z Twoich e-maili."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Dodawaj linki do spotkań w zaproszeniach na wydarzenia."
@@ -7809,6 +7821,12 @@
       "here": [
         "tutaj"
       ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Cześć, Lumo, wyjeżdżam i chcę ustawić wiadomość o nieobecności. Zapytaj mnie o daty i treść wiadomości, a potem przed włączeniem jej pokaż mi ją."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hej, Lumo, opowiedz mi, jak możesz mi pomóc w zarządzaniu skrzynką pocztową. O jakie rzeczy mogę cię poprosić, a czego nie możesz zrobić?"
+      ],
       "Hide original message": [
         "Ukryj oryginalną wiadomość"
       ],
@@ -7817,6 +7835,9 @@
       ],
       "How hide-my-email aliases works": [
         "Jak działają aliasy hide-my-email"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Sprawdzę, jakie treści otrzymujesz najczęściej oraz jakie foldery i filtry są już utworzone, a następnie zaproponuję, co warto poprawić i czego brakuje. Nic nie zostanie zmienione, dopóki nie wyrazisz na to zgody."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Wysyłam wiadomość do użytkownika spoza ${ MAIL_APP_NAME }."
@@ -8094,6 +8115,9 @@
       "No ads": [
         "Brak reklam"
       ],
+      "No booking pages yet": [
+        "Nie ma jeszcze stron rezerwacyjnych"
+      ],
       "No change will be made to the selected emails": [
         "Wiadomości nie zostaną zmienione"
       ],
@@ -8151,6 +8175,9 @@
       "Not connected": [
         "Nie połączono"
       ],
+      "Not found in the foundation-search index.": [
+        "Nie znaleziono w indeksie wyszukiwania fundacji."
+      ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
       ],
@@ -8183,6 +8210,9 @@
       ],
       "Organization size": [
         "Rozmiar ogranizacji"
+      ],
+      "Other (tell us)": [
+        "Inny (jaki?)"
       ],
       "Other accounts": [
         "Inne konta"
@@ -8543,6 +8573,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
+      ],
+      "Star emails": [
+        "Oznacz wiadomości gwiazdką"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Zacznij udostępniać go kontaktom i korzystać z niego w usługach online."
@@ -9908,6 +9941,9 @@
       "Automated confirmations and alerts": [
         "Automatyczne potwierdzenia i powiadomienia"
       ],
+      "Away message": [
+        "Wiadomość o nieobecności"
+      ],
       "BCC": [
         "UDW"
       ],
@@ -11000,6 +11036,9 @@
       ],
       "Pay invoice": [
         "Zapłać fakturę"
+      ],
+      "Pay it": [
+        "Opłać"
       ],
       "Privacy policy": [
         "Polityka prywatności"
@@ -13317,6 +13356,11 @@
         "Coś poszło nie tak. Weryfikacja Google Pay nie powiodła się."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potwierdzając, upoważniasz ${ BRAND_NAME } oraz Stripe, naszego dostawcę usług płatniczych, do pobierania przyszłych opłat za subskrypcję z tego konta bankowego metodą SEPA Direct Debit, a także upoważniasz swój bank do obciążenia tego konta tymi opłatami. Pierwsza opłata zostanie pobrana teraz przez ${ IDEAL_WERO_BRAND_NAME }. Twój plan będzie automatycznie odnawiany do momentu anulowania; przed każdym pobraniem opłaty poinformujemy Cię o tym. W przypadku realizacji polecenia zapłaty możesz wystąpić do swojego banku o zwrot środków w ciągu 8 tygodni od daty obciążenia, zgodnie z warunkami umowy zawartej z bankiem. Nie dotyczy to płatności na rzecz ${ IDEAL_WERO_BRAND_NAME }, której dokonujesz teraz."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu subskrypcji"
@@ -13359,6 +13403,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena odnowienia zależy od regionu rozliczeniowego i numeru VAT."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay – karta kończąca się na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -16190,6 +16239,9 @@
       "Filter name cannot contain only spaces": [
         "Nazwa filtra nie może zawierać tylko spacji"
       ],
+      "Filter on": [
+        "Filtrowanie wg"
+      ],
       "Filter on...": [
         "Filtruj..."
       ],
@@ -16919,6 +16971,9 @@
       ]
     },
     "Tooltip": {
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Dodaj pomocniczy adres e-mail lub numer telefonu, aby móc zresetować hasło jeśli je zapomnisz."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Format automatyczny wyśle do tego użytkownika wiadomość w formacie użytym w edytorze. Format zwykłego tekstu oznacza, że wiadomość przed wysłaniem zostanie przekonwertowana do zwykłego tekstu."
       ],

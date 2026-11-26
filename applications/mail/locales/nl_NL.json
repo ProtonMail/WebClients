@@ -1558,9 +1558,6 @@
       "Trust": [
         "Vertrouwen"
       ],
-      "Trust key": [
-        "Vertrouw deze sleutel"
-      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -17058,11 +17055,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Voeg een gegevensherstelmethode toe om uw gegevens te ontgrendelen als u uw wachtwoord vergeet."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Voeg een herstel-e-mailadres of -telefoonnummer toe, zodat u uw wachtwoord opnieuw kunt instellen als u het vergeet."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisch betekent dat tekst met rijke opmaak gebruikt wordt, zoals in het opstelvenster. Platte tekst geeft aan dat het bericht altijd wordt omgezet naar tekst zonder opmaak voordat het wordt verzonden."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Maak een herstelzin aan, zodat u uw gegevens kunt herstellen als u uw wachtwoord vergeet."
       ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"
@@ -17091,6 +17097,9 @@
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereer een herstelzin om uw account te beschermen tegen gegevensverlies."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
@@ -17114,6 +17123,9 @@
       ],
       "Show side panel": [
         "Toon zijpaneel"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Sommige van uw gegevens zijn vergrendeld. Gebruik een herstelmethode om deze te ontgrendelen."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
@@ -17150,6 +17162,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Versie 6 OpenPGP-sleutel"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Uw herstelbestand is verouderd. Download een nieuw zodat u uw gegevens nog steeds kunt herstellen."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Uw herstelzin is verouderd. Haal een nieuwe, zodat u uw gegevens nog steeds kunt herstellen."
       ]
     },
     "tooltip": {

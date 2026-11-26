@@ -1096,6 +1096,9 @@
       "Open debug menu": [
         "Abrir menú de depuración"
       ],
+      "Open Mailing lists": [
+        "Abrir listas de correos"
+      ],
       "Open navigation": [
         "Abrir navegación"
       ],
@@ -1597,6 +1600,10 @@
       "Trust": [
         "Confiar"
       ],
+      "Trust key": [
+        "Confiar clave",
+        "Confiar claves"
+      ],
       "Trust public key": [
         "Confiar clave pública"
       ],
@@ -1641,6 +1648,10 @@
       ],
       "Unsubscribe": [
         "Cancelar suscripción"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Cancelar la suscripción de ${ selectedCount }",
+        "Cancelar la suscripción de ${ selectedCount }"
       ],
       "Unsubscribed": [
         "Suscripción cancelada"
@@ -7353,6 +7364,13 @@
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Active ${ MAIL_APP_NAME } para comenzar a recibir correos en ${ count } de sus dominios.",
+        "Active ${ MAIL_APP_NAME } para comenzar a recibir correos en ${ count } de sus dominios."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Active ${ MAIL_APP_NAME } para comenzar a recibir correos en ${ domainName }. ${ activateLink }"
+      ],
       "Activation in progress": [
         "Activación en proceso"
       ],
@@ -7565,6 +7583,9 @@
       ],
       "Balance from your previous subscription": [
         "Balance de la suscripción anterior"
+      ],
+      "Based only on which emails you've opened.": [
+        "Basado únicamente en los correos que ha abierto."
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén activados o no en los ajustes."
@@ -8472,6 +8493,9 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Mover los correos electrónicos con códigos de un solo uso a la papelera al copiarlos"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Mueva sus correos anteriores al Archivo. Aún puede buscarlos."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre la carpeta nueva y seleccione la carpeta padre en la que quiere colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
@@ -9434,6 +9458,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para mantener su cuenta segura, confirme que es realmente usted antes de continuar."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para ayudarle a recordar su contraseña, le solicitaremos que la ingrese periódicamente. Se reducirá la frecuencia conforme pasa el tiempo."
       ],
@@ -9644,6 +9671,10 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Hemos bloqueado los siguientes anunciantes y organizaciones de saber cuándo abre este correo, cuál dispositivo está usando y dónde está ubicado."
       ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Recopilamos ${ count } boletín y lo agrupamos por remitente. Consulte con qué frecuencia le envía correos cada uno, luego conserve, mueva o cancele la suscripción con un solo clic.",
+        "Recopilamos ${ count } boletines y los agrupamos por remitente. Consulte con qué frecuencia le envía correos cada uno, luego conserve, mueva o cancele la suscripción con un solo clic."
+      ],
       "We cannot enable message content search in this browser.": [
         "No podemos activar la búsqueda de contenido en los mensajes en este navegador."
       ],
@@ -9688,6 +9719,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Hemos añadido los boletines desde su importación de Gmail a Listas de correo, agrupados por remitente. Léalos, guárdelos o deténgalos en un solo lugar."
       ],
       "Web URL": [
         "URL Web"
@@ -9935,6 +9969,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se le cobrará si cancela antes del ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "No recibirá correos en ${ count } de sus dominios hasta que active ${ MAIL_APP_NAME }. Puede hacerlo en cualquier momento en Ajustes > Nombres de dominio.",
+        "No recibirá correos en ${ count } de sus dominios hasta que active ${ MAIL_APP_NAME }. Puede hacerlo en cualquier momento en Ajustes > Nombres de dominio."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "No recibirá correos en ${ domainName } hasta que active ${ MAIL_APP_NAME }. Puede hacerlo en cualquier momento en Ajustes > Nombres de dominio."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Escribió «${ attachmentsFoundKeyword }», pero no se agregó ningún adjunto. ¿Desea enviar el mensaje de todos modos?"
       ],
@@ -10005,6 +10046,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Su Gmail se conecta a esta dirección de ${ MAIL_APP_NAME }"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Sus boletines de Gmail ahora están agrupados por remitente, lejos de su correo personal. Léalos, guárdelos o deténgalos en un solo lugar."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "El hardware no admite ejecutar el asistente de escritura. Intente ejecutarlo en los servidores."
@@ -10392,6 +10436,9 @@
       ],
       "${ boldActive } Move all messages to ${ boldFolderName }": [
         "${ boldActive } Mover todos los mensajes a ${ boldFolderName }"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Contraseña de la cuenta de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
@@ -11573,6 +11620,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activar"
+      ],
       "Add a gift code": [
         "Agregar código de regalo"
       ],
@@ -12942,11 +12992,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja el calendario con cifrado de extremo a extremo. Incluye compatibilidad con calendarios personalizados, calendarios compartidos y más."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: cree, edite y colabore en documentos cifrados de extremo a extremo."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Proteja sus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja los correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y más."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: cree, edite y colabore en hojas de cálculo cifradas de extremo a extremo."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Acceda a contenidos bloqueados y navegue de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
@@ -13189,6 +13245,23 @@
       "Support for ${ n } custom email domain": [
         "Soporte para ${ n } dominio de correo electrónico personalizado",
         "Soporte para ${ n } dominios de correo personalizados"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } correo en los últimos 30 días. Sin abrir.",
+        "${ count } correos en los últimos 30 días. Sin abrir."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } correo en los últimos 30 días. Abierto a menudo.",
+        "${ count } correos en los últimos 30 días. Abierto a menudo."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } correo en los últimos 30 días. Abierto algunas veces.",
+        "${ count } correos en los últimos 30 días. Abierto algunas veces."
+      ],
+      "No emails in the last 30 days.": [
+        "Sin correos en los últimos 30 días."
       ]
     },
     "ngc_access_banner: action": {
@@ -16633,6 +16706,9 @@
       "Cannot create more Booking pages": [
         "No puede crear más páginas de reserva"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Carbon Copy": [
         "Con copia"
       ],
@@ -16920,6 +16996,9 @@
       "Help center": [
         "Centro de ayuda"
       ],
+      "Hide this reminder?": [
+        "¿Ocultar este recordatorio?"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Oculte su correo electrónico con ${ PASS_APP_NAME }"
       ],
@@ -17044,6 +17123,9 @@
       ],
       "Mark messages as unread": [
         "Marcar mensajes como no leídos"
+      ],
+      "Meet Mailing lists": [
+        "Conozca las listas de correo"
       ],
       "Merge contacts": [
         "Combinar contactos"
@@ -17173,6 +17255,9 @@
       ],
       "No-reply address detected": [
         "Se detectó una dirección de no responder (no-reply)."
+      ],
+      "Not opened in a while": [
+        "Sin abrir por un tiempo"
       ],
       "Notes": [
         "Notas"
@@ -17411,6 +17496,9 @@
       "Snooze:": [
         "Pausar:"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "Start a new import": [
         "Iniciar una importación nueva"
       ],
@@ -17560,6 +17648,12 @@
       "You can now create unlimited folders and labels": [
         "Ahora puede crear carpetas y etiquetas ilimitadas."
       ],
+      "You open these sometimes": [
+        "Abre estos a veces"
+      ],
+      "You read these often": [
+        "Lee estos a menudo"
+      ],
       "You're in control": [
         "Usted tiene el control"
       ],
@@ -17580,6 +17674,12 @@
       ],
       "Your free trial has ended": [
         "Finalizó su prueba gratuita"
+      ],
+      "Your Gmail newsletters are here": [
+        "Sus boletines de Gmail están aquí"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Sus boletines de Gmail ahora son más fáciles de gestionar"
       ],
       "Your inbox, automatically organized": [
         "Su bandeja de entrada, organizada automáticamente"
@@ -17620,11 +17720,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Añada un método de recuperación para desbloquear sus datos si olvida la contraseña."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Añada un correo o teléfono de recuperación para que pueda restablecer la contraseña si la olvida."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que el formato en el editor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre los temas preferidos para el día y la noche en sincronía con los modos de día y noche del sistema"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Cree una frase de recuperación para que pueda recuperar sus datos si olvida la contraseña."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizar importación para reducir el número de carpetas"
@@ -17653,6 +17762,9 @@
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genere una frase de recuperación para proteger su cuenta frente a la pérdida de datos."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
       ],
@@ -17676,6 +17788,9 @@
       ],
       "Show side panel": [
         "Mostrar el panel lateral"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Algunos de sus datos están bloqueados. Use un método de recuperación para desbloquearlos."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
@@ -17712,6 +17827,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Clave OpenPGP versión 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Su archivo de recuperación está desactualizado. Descargue uno nuevo para que aún pueda recuperar sus datos."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Su frase de recuperación está desactualizada. Obtenga una nueva para que aún pueda recuperar sus datos."
       ]
     },
     "tooltip": {

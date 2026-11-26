@@ -1096,6 +1096,9 @@
       "Open debug menu": [
         "Obrir el menú de depuració"
       ],
+      "Open Mailing lists": [
+        "Obriu les Llistes de correu"
+      ],
       "Open navigation": [
         "Obre la navegació"
       ],
@@ -1598,7 +1601,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4313,7 +4317,7 @@
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
       "Let people book time with you directly from your emails, without the back and forth.": [
-        "Permeteu que la gent reservi temps amb vosaltres directament des dels vostres correus electrònics, sense anades i vingudes."
+        "Permeteu que altres persones us reservin hora directament des dels vostres correus sense el típic anar i tornar de missatges."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
@@ -7360,6 +7364,13 @@
       "Account successfully updated": [
         "El compte s'ha actualitzat."
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Activeu ${ MAIL_APP_NAME } per a començar a rebre correus electrònics a ${ count } dels vostres dominis.",
+        "Activeu ${ MAIL_APP_NAME } per a començar a rebre correus electrònics a ${ count } dels vostres dominis."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Activeu ${ MAIL_APP_NAME } per a començar a rebre correus electrònics a ${ domainName }. ${ activateLink }"
+      ],
       "Activation in progress": [
         "L'activació està en procés"
       ],
@@ -7868,7 +7879,7 @@
         "Descarregueu-la a l'App Store"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
+        "Descarregueu la vostra aplicació favorita avui i emporteu-vos la privadesa allà on aneu."
       ],
       "Downloading assistant… ${ progressDisplay } GB": [
         "S'està descarregant l'assistent… ${ progressDisplay } GB"
@@ -9709,6 +9720,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
       ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Hem afegit els butlletins de la vostra importació de Gmail a Llistes de correu, agrupats per remitent. Llegiu-los, conserveu-los o doneu-los de baixa en un sol lloc."
+      ],
       "Web URL": [
         "URL del web"
       ],
@@ -9955,6 +9969,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "No rebreu correus electrònics a ${ count } dels vostres dominis fins que activeu ${ MAIL_APP_NAME }. Ho podeu fer en qualsevol moment a Preferències > Noms de domini.",
+        "No rebreu correus electrònics a ${ count } dels vostres dominis fins que activeu ${ MAIL_APP_NAME }. Ho podeu fer en qualsevol moment a Preferències > Noms de domini."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "No rebreu correus electrònics a ${ domainName } fins que activeu ${ MAIL_APP_NAME }. Ho podeu fer en qualsevol moment a Preferències > Noms de domini."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Heu escrit «${ attachmentsFoundKeyword }», però no s'ha afegit cap adjunt. Voleu enviar el missatge de totes maneres?"
       ],
@@ -10025,6 +10046,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "El vostre Gmail es connecta a aquesta adreça de ${ MAIL_APP_NAME }"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Ara els vostres butlletins de Gmail s'agrupen per remitent, allunyats del vostre correu personal. Llegiu-los, conserveu-los o doneu-los de baixa en un sol lloc."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "El maquinari no permet executar l'assistent d'escriptura de manera local. Proveu d'executar-lo als servidors."
@@ -11596,6 +11620,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activa"
+      ],
       "Add a gift code": [
         "Afegeix un codi de regal"
       ],
@@ -12965,11 +12992,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creeu, editeu i col·laboreu en documents xifrats d'extrem a extrem."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Protegiu els fitxers amb l'emmagatzematge xifrat al núvol. Inclou, entre d'altres, sincronització automàtica i compartició de fitxers xifrats."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creeu, editeu i col·laboreu en fulls de càlcul xifrats d'extrem a extrem."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accediu a contingut bloquejat i navegueu de manera privada. Inclou ${ serversAndCountries }, les velocitats més altes de VPN, accés a serveis d'estríming de tot el món, bloqueig de programari maliciós i publicitat, descàrregues ràpides de BitTorrent, etc."
@@ -16673,6 +16706,9 @@
       "Cannot create more Booking pages": [
         "No es poden crear més pàgines de reserves"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Carbon Copy": [
         "Amb còpia"
       ],
@@ -16960,6 +16996,9 @@
       "Help center": [
         "Centre d'ajuda"
       ],
+      "Hide this reminder?": [
+        "Voleu amagar aquest recordatori?"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Amagueu el vostre correu electrònic amb ${ PASS_APP_NAME }"
       ],
@@ -17084,6 +17123,9 @@
       ],
       "Mark messages as unread": [
         "Marca els missatges com a no llegits"
+      ],
+      "Meet Mailing lists": [
+        "Us presentem les Llistes de correu"
       ],
       "Merge contacts": [
         "Combinar contactes"
@@ -17633,6 +17675,9 @@
       "Your free trial has ended": [
         "La prova gratuïta ha finalitzat."
       ],
+      "Your Gmail newsletters are here": [
+        "Aquí teniu els vostres butlletins de Gmail"
+      ],
       "Your Gmail newsletters, now easier to manage": [
         "Els vostres butlletins de Gmail ara més fàcils de gestionar"
       ],
@@ -17675,11 +17720,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Afegeix un mètode de recuperació de dades per desbloquejar-les si oblideu la contrasenya."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Afegiu un correu electrònic o un telèfon de recuperació per poder restablir la contrasenya si l'oblideu."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creeu una frase de recuperació per poder recuperar les dades si oblideu la contrasenya."
       ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
@@ -17708,6 +17762,9 @@
       "Encrypted data with verified digital signature": [
         "Dades xifrades amb signatura digital verificada"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereu una frase de recuperació per protegir el compte davant la pèrdua de dades."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
       ],
@@ -17731,6 +17788,9 @@
       ],
       "Show side panel": [
         "Mostra el panell lateral"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per desbloquejar-les."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
@@ -17767,6 +17827,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Clau OpenPGP de la versió 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "El fitxer de recuperació ha caducat. Descarregueu-ne un de nou perquè pugueu recuperar les dades."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La frase de recuperació ha caducat. Aconseguiu-ne una de nova per a poder recuperar les dades."
       ]
     },
     "tooltip": {

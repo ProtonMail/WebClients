@@ -7599,6 +7599,15 @@
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Aktivujte ${ MAIL_APP_NAME } a začnite prijímať emaily na ${ count } z vašich domén.",
+        "Aktivujte ${ MAIL_APP_NAME } a začnite prijímať emaily na ${ count } z vašich domén.",
+        "Aktivujte ${ MAIL_APP_NAME } a začnite prijímať emaily na ${ count } z vašich domén.",
+        "Aktivujte ${ MAIL_APP_NAME } a začnite prijímať emaily na ${ count } z vašich domén."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Aktivujte ${ MAIL_APP_NAME } a začnite prijímať emaily na doméne ${ domainName }. ${ activateLink }"
+      ],
       "Activation in progress": [
         "Aktivácia prebieha"
       ],
@@ -10296,6 +10305,15 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nebude sa vám nič účtovať, ak službu zrušíte pred ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Kým neaktivujete ${ MAIL_APP_NAME }, nebudete dostávať emaily na ${ count } z vašich domén. Môžete to urobiť kedykoľvek v časti Nastavenia > Názvy domén.",
+        "Kým neaktivujete ${ MAIL_APP_NAME }, nebudete dostávať emaily na ${ count } z vašich domén. Môžete to urobiť kedykoľvek v časti Nastavenia > Názvy domén.",
+        "Kým neaktivujete ${ MAIL_APP_NAME }, nebudete dostávať emaily na ${ count } z vašich domén. Môžete to urobiť kedykoľvek v časti Nastavenia > Názvy domén.",
+        "Kým neaktivujete ${ MAIL_APP_NAME }, nebudete dostávať emaily na ${ count } z vašich domén. Môžete to urobiť kedykoľvek v časti Nastavenia > Názvy domén."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Kým neaktivujete ${ MAIL_APP_NAME }, nebudete dostávať emaily na doméne ${ domainName }. Môžete to urobiť kedykoľvek v časti Nastavenia > Názvy domén."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napísali ste \"${ attachmentsFoundKeyword }\", ale príloha nebola pridaná. Chcete napriek tomu správu poslať?"
       ],
@@ -11961,6 +11979,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktivovať"
+      ],
       "Add a gift code": [
         "Vložiť darčekový kód"
       ],
@@ -13410,11 +13431,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované dokumenty a spolupracujte na nich."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Obsahuje automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované tabuľky a spolupracujte na nich."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje ${ serversAndCountries }, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
@@ -17316,6 +17343,9 @@
       "Cannot create more Booking pages": [
         "Nemožno vytvoriť viac rezervačných stránok"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Carbon Copy": [
         "Kópia"
       ],
@@ -17612,6 +17642,9 @@
       ],
       "Help center": [
         "Centrum pomoci"
+      ],
+      "Hide this reminder?": [
+        "Skryť túto pripomienku?"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Ukryte svoj email pomocou ${ PASS_APP_NAME }"
@@ -18336,11 +18369,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Pridajte metódu obnovenia údajov, aby ste mohli odomknúť svoje údaje, ak zabudnete heslo."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Pridajte email alebo telefón na obnovenie, aby ste si mohli resetovať heslo, ak ho zabudnete."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatický označuje, že formát v editore bude použitý na odoslanie užívateľovi. Jednoduchý text znamená, že správa bude pri odoslaní vždy prevedená na obyčajný text."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Vytvorte si obnovovaciu frázu, aby ste mohli obnoviť svoje údaje, ak zabudnete heslo."
       ],
       "Customize import to reduce the number of folders": [
         "Prispôsobiť import na zníženie počtu priečinkov"
@@ -18369,6 +18411,9 @@
       "Encrypted data with verified digital signature": [
         "Zašifrované dáta s overeným digitálnym podpisom"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Vygenerujte si obnovovaciu frázu a chráňte svoj účet pred stratou údajov."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky triedi niektoré emaily do kategórií ako Siete alebo Reklamy. Môžete si vybrať, kam chcete importovať tieto emaily."
       ],
@@ -18392,6 +18437,9 @@
       ],
       "Show side panel": [
         "Zobraziť bočný panel"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Niektoré vaše údaje sú zamknuté. Odomknite ich pomocou metódy obnovenia."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podpriečinky sa v aplikácii ${ MAIL_APP_NAME } zobrazia ako samostatné priečinky"
@@ -18428,6 +18476,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Kľúč OpenPGP verzie 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Váš súbor pre obnovenie je zastaraný. Stiahnite si nový, aby ste mohli naďalej obnoviť svoje údaje."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Vaša obnovovacia fráza je zastaraná. Vytvorte si novú, aby ste mohli naďalej obnoviť svoje údaje."
       ]
     },
     "tooltip": {

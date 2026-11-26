@@ -1585,6 +1585,10 @@
       "Trust": [
         "Vertrauen"
       ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
+      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1629,6 +1633,10 @@
       ],
       "Unsubscribe": [
         "Abbestellen"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Von ${ selectedCount } abmelden",
+        "Von ${ selectedCount } abmelden"
       ],
       "Unsubscribed": [
         "Abbestellt"
@@ -7550,6 +7558,9 @@
       "Balance from your previous subscription": [
         "Guthaben von deinem vorherigen Abonnement"
       ],
+      "Based only on which emails you've opened.": [
+        "Basiert ausschließlich darauf, welche E-Mails du geöffnet hast."
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Standardnavigation sowie Standardaktionen bleiben auch dann verfügbar, wenn die Tastaturkürzel in den Einstellungen deaktiviert sind."
       ],
@@ -8456,6 +8467,9 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "E-Mails mit Einmalcodes nach dem Kopieren in den Papierkorb verschieben"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Verschiebe deine bisherigen E-Mails ins Archiv. Sie können weiterhin durchsucht werden."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
@@ -9418,6 +9432,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
+      ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Damit du dir dein Passwort besser merken kannst, bitten wir dich, es in regelmäßigen Abständen einzugeben. Mit der Zeit wirst du immer seltener dazu aufgefordert."
       ],
@@ -9627,6 +9644,10 @@
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Wir haben die folgenden Werbetreibenden und Organisationen daran gehindert zu sehen, wann du diese E-Mail öffnest, welches Gerät du verwendest und wo du dich befindest."
+      ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Es wurden über ${ count } Newsletter importiert und nach Absender gruppiert. Erfahre, wie oft du von jedem Absender E-Mails erhältst, und entscheide dann mit einem Klick, ob du den Newsletter behalten, verschieben oder abbestellen möchtest.",
+        "Es wurden über ${ count } Newsletter importiert und nach Absender gruppiert. Erfahre, wie oft du von jedem Absender E-Mails erhältst, und entscheide dann mit einem Klick, ob du den Newsletter behalten, verschieben oder abbestellen möchtest."
       ],
       "We cannot enable message content search in this browser.": [
         "Wir können die Suche nach Nachrichteninhalten in diesem Browser nicht aktivieren."
@@ -10373,6 +10394,9 @@
       ],
       "${ boldActive } Move all messages to ${ boldFolderName }": [
         "${ boldActive } Alle Nachrichten nach ${ boldFolderName } verschieben"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
@@ -12856,11 +12880,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Ende-zu-Ende-verschlüsselte Dokumente erstellen, bearbeiten und gemeinsam daran arbeiten."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Sichern deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Enthält Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte hide-my-email-Aliase und mehr."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Ende-zu-Ende-verschlüsselte Tabellen erstellen, bearbeiten und gemeinsam daran arbeiten."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Zugriff auf gesperrte Inhalte und privates Surfen. Enthält ${ serversAndCountries }, höchste VPN-Geschwindigkeiten, Zugang zu weltweiten Streaming-Diensten, Malware- und Ad-Blocker, schnelle BitTorrent-Downloads und mehr."
@@ -13103,6 +13133,23 @@
       "Support for ${ n } custom email domain": [
         "Support für ${ n } benutzerdefinierte E-Mail-Domain",
         "Support für ${ n } benutzerdefinierte E-Mail-Domains"
+      ]
+    },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } E-Mail in den letzten 30 Tagen. Keine geöffnet.",
+        "${ count } E-Mails in den letzten 30 Tagen. Keine geöffnet."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "${ count } E-Mail in den letzten 30 Tagen. Häufig geöffnet.",
+        "${ count } E-Mails in den letzten 30 Tagen. Häufig geöffnet."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "${ count } E-Mail in den letzten 30 Tagen. Selten geöffnet.",
+        "${ count } E-Mails in den letzten 30 Tagen. Gelegentlich geöffnet."
+      ],
+      "No emails in the last 30 days.": [
+        "Keine E-Mails in den letzten 30 Tagen."
       ]
     },
     "ngc_access_banner: action": {
@@ -17088,6 +17135,9 @@
       "No-reply address detected": [
         "No-Reply-Adresse erkannt"
       ],
+      "Not opened in a while": [
+        "Du hast sie schon eine Weile nicht mehr geöffnet"
+      ],
       "Notes": [
         "Notizen"
       ],
@@ -17325,6 +17375,9 @@
       "Snooze:": [
         "Aufgeschoben:"
       ],
+      "Special offer": [
+        "Sonderangebot"
+      ],
       "Start a new import": [
         "Neuer Importvorgang"
       ],
@@ -17474,6 +17527,12 @@
       "You can now create unlimited folders and labels": [
         "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"
       ],
+      "You open these sometimes": [
+        "Du öffnest sie selten"
+      ],
+      "You read these often": [
+        "Du liest sie oft"
+      ],
       "You're in control": [
         "Du hast die Kontrolle"
       ],
@@ -17494,6 +17553,9 @@
       ],
       "Your free trial has ended": [
         "Deine kostenlose Testphase ist abgelaufen."
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Deine Gmail-Newsletter lassen sich jetzt noch einfacher verwalten"
       ],
       "Your inbox, automatically organized": [
         "Dein Posteingang, automatisch organisiert"
@@ -17534,11 +17596,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Füge eine Methode zur Datenwiederherstellung hinzu, um deine Daten zu entsperren, falls du dein Passwort vergisst."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Füge eine E-Mail-Adresse oder eine Telefonnummer für das Zurücksetzen des Passworts hinzu, falls du es vergessen solltest."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "„Automatisch“ zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Klartext umgewandelt wird."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lege eine Wiederherstellungsphrase fest, damit du deine Daten wiederherstellen kannst, falls du dein Passwort vergisst."
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
@@ -17567,6 +17638,9 @@
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Erstelle eine Wiederherstellungsphrase, um dein Konto vor Datenverlust zu schützen."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
@@ -17590,6 +17664,9 @@
       ],
       "Show side panel": [
         "Seitenleiste anzeigen"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Einige deiner Daten sind gesperrt. Nutze eine Wiederherstellungsmethode, um wieder darauf zugreifen zu können."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
@@ -17626,6 +17703,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Version 6 OpenPGP Schlüssel"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Deine Wiederherstellungsdatei ist veraltet. Lade eine neue herunter, damit du deine Daten wiederherstellen kannst."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Ihre Wiederherstellungsphrase ist veraltet. Es wird eine neue benötigt, damit deine Daten weiterhin wiederhergestellt werden können."
       ]
     },
     "tooltip": {
