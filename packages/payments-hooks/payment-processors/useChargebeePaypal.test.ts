@@ -122,7 +122,7 @@ describe('useChargebeePaypal', () => {
         expect(rendered.onChargeable).not.toHaveBeenCalled();
     });
 
-    it('reports a token status failure as a refactor-path error without rethrowing it', async () => {
+    it('reports a token status failure to Sentry without rethrowing it', async () => {
         const error = new Error('Failed to fetch');
         addApiMock('payments/v5/tokens/token', () => {
             throw error;
@@ -134,10 +134,10 @@ describe('useChargebeePaypal', () => {
         });
 
         expect(rendered.chargebeePaypalModalHandles.onFailure).not.toHaveBeenCalled();
-        expect(tracePaymentError).toHaveBeenCalledWith(
-            error,
-            expect.objectContaining({ component: 'use-chargebee-wallet', featureFlag: 'PaymentProcessorsRefactor' })
-        );
+        expect(tracePaymentError).toHaveBeenCalledWith(error, {
+            component: 'use-chargebee-wallet',
+            tags: { paymentMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL },
+        });
     });
 
     // onAuthorize is what dismisses the pending-verification modal, so it must fire even when the

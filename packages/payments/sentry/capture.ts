@@ -3,7 +3,6 @@ import type { Scope, SeverityLevel } from '@sentry/types';
 
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import { getChargebeeErrorCode } from '../core/chargebee-errors';
 import type { FreeSubscription, PaymentMethodType } from '../core/interface';
@@ -50,8 +49,6 @@ export interface PaymentsCaptureOptions {
     level?: SeverityLevel;
     extra?: Record<string, unknown>;
     tags?: Record<string, string>;
-    /** Flag gating the code path that raised the error: prefixes the title and splits off the Sentry issue. */
-    featureFlag?: FeatureFlag;
 }
 
 const CHARGEBEE_SDK_CONNECTIVITY_ERROR_CODES = [
@@ -91,7 +88,7 @@ function withoutSavedPaymentMethodId(extra: Record<string, unknown>) {
 }
 
 function withPaymentScope(options: PaymentsCaptureOptions, run: (scope: Scope) => void) {
-    const { component, subscription, level, extra, tags, featureFlag } = options;
+    const { component, subscription, level, extra, tags } = options;
     const { subscriptionKey, upcomingSubscriptionKey } = getSubscriptionKeys(subscription);
 
     withScope((scope) => {
@@ -113,38 +110,25 @@ function withPaymentScope(options: PaymentsCaptureOptions, run: (scope: Scope) =
         scope.setTag('upcomingSubscriptionKey', upcomingSubscriptionKey);
         scope.setTag('component', component);
 
-        if (featureFlag) {
-            scope.setTag('featureFlag', featureFlag);
-        }
-
         run(scope);
     });
-}
-
-function withFeatureFlagPrefix(text: string, featureFlag: FeatureFlag | undefined) {
-    return featureFlag ? `[${featureFlag}] ${text}` : text;
-}
-
-function getFingerprint({ component, featureFlag }: PaymentsCaptureOptions, name: string, message: string) {
-    return ['payments', component, ...(featureFlag ? [featureFlag] : []), name, message];
 }
 
 /**
  * `beforeSend` discards anything whose original exception is an `ApiError`, and non-Error
  * throwables lose their reason to Sentry's "Object captured as exception" fallback. Both cases are
- * replaced by a synthetic error carrying the resolved name and message. So is a flagged error, whose
- * name gets the flag prefix without mutating the caller's error.
+ * replaced by a synthetic error carrying the resolved name and message.
  */
-function toCapturableError(exception: unknown, info: PaymentErrorInfo, featureFlag: FeatureFlag | undefined): Error {
-    if (exception instanceof Error && !(exception instanceof ApiError) && !featureFlag) {
+function toCapturableError(exception: unknown, info: PaymentErrorInfo): Error {
+    if (exception instanceof Error && !(exception instanceof ApiError)) {
         return exception;
     }
 
     const error = new Error(info.message);
-    error.name = withFeatureFlagPrefix(info.name, featureFlag);
+    error.name = info.name;
 
-    // Carrying the stack over points the event at the original throw site rather than at this
-    // helper. The title still comes from name/message, not from the stack.
+    // Only reachable for an ApiError: carrying its stack over points the event at the api call
+    // rather than at this helper. The title still comes from name/message, not from the stack.
     if (exception instanceof Error && exception.stack) {
         error.stack = exception.stack;
     }
@@ -166,9 +150,9 @@ export function tracePaymentError(exception: unknown, options: PaymentsCaptureOp
         const info = getPaymentErrorInfo(exception);
 
         withPaymentScope(options, (scope) => {
-            scope.setFingerprint(getFingerprint(options, info.name, info.message));
+            scope.setFingerprint(['payments', options.component, info.name, info.message]);
             scope.setExtras(info.extra);
-            traceError(toCapturableError(exception, info, options.featureFlag));
+            traceError(toCapturableError(exception, info));
         });
     });
 }
@@ -182,14 +166,13 @@ export function capturePaymentMessage(message: string, options: PaymentsCaptureO
         const info = cause !== undefined ? getPaymentErrorInfo(cause) : undefined;
 
         withPaymentScope(options, (scope) => {
-            scope.setFingerprint(getFingerprint(options, info?.name ?? '', message));
+            scope.setFingerprint(['payments', options.component, info?.name ?? '', message]);
 
             if (info) {
                 scope.setExtras(info.extra);
             }
 
-            const title = info ? `${message} – ${info.name}: ${info.message}` : message;
-            captureMessage(withFeatureFlagPrefix(title, options.featureFlag));
+            captureMessage(info ? `${message} – ${info.name}: ${info.message}` : message);
         });
     });
 }
