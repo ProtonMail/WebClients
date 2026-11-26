@@ -1,8 +1,9 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -13,17 +14,15 @@ import {
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { isChatThreadExpanded } from '@proton/meet/utils/isChatThreadExpanded';
+import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
+import { useStableCallback } from '../../hooks/useStableCallback';
 import { ChatMessage } from '../ChatMessage/ChatMessage';
 import { ChatItem } from './ChatItem';
 
 import './ChatThread.scss';
-
-// A root taller than this fraction of the visible chat area is not pinned: pinning it would fill the
-// viewport and hide the replies scrolling underneath (see ChatThread.scss for the sticky styles).
-const MAX_STICKY_ROOT_HEIGHT_RATIO = 0.6;
 
 interface ChatThreadProps {
     /** The message that starts the thread. */
@@ -36,17 +35,9 @@ interface ChatThreadProps {
      * participant joined). A placeholder is shown in place of the root message.
      */
     isRootMissing?: boolean;
-    /** The root is currently pinned at the top of the chat while its replies scroll underneath. */
-    isStuck?: boolean;
 }
 
-export const ChatThread = ({
-    rootMessage,
-    replies,
-    meetingName,
-    isRootMissing = false,
-    isStuck = false,
-}: ChatThreadProps) => {
+export const ChatThread = ({ rootMessage, replies, meetingName, isRootMissing = false }: ChatThreadProps) => {
     const replyCount = replies.length;
 
     const dispatch = useMeetDispatch();
@@ -56,37 +47,24 @@ export const ChatThread = ({
     // grabs focus.
     const [replyNonce, setReplyNonce] = useState(0);
 
-    const headerRef = useRef<HTMLDivElement>(null);
-    // Roots taller than MAX_STICKY_ROOT_HEIGHT_RATIO of the chat area are excluded from pinning.
-    const [isRootTooTall, setIsRootTooTall] = useState(false);
-    const [rootHeight, setRootHeight] = useState(0);
+    const { information } = useTheme();
+    const isMotionReduced = information.motionMode === MotionModeSetting.Reduce || information.features.animations;
 
-    // Compare the root header height against the visible chat area and keep it in sync as either
-    // resizes, so a long root message releases from the pin line instead of hiding its replies.
-    useLayoutEffect(() => {
-        const header = headerRef.current;
-        const container = header?.closest<HTMLElement>('.message-list');
-        if (!header || !container || !expanded || !replyCount) {
+    const replyFieldRef = useRef<HTMLDivElement>(null);
+    const scrollReplyFieldIntoView = useStableCallback(() =>
+        replyFieldRef.current?.scrollIntoView({ block: 'nearest', behavior: isMotionReduced ? 'auto' : 'smooth' })
+    );
+
+    // Focusing the opened field only brings the input itself into view: show the whole field, with as much of the
+    // thread above it as fits. The browser scrolls to the focused input after this effect, which would cancel a
+    // scroll started in the same frame.
+    useEffect(() => {
+        if (replyNonce === 0) {
             return;
         }
-
-        const measure = () => {
-            const containerHeight = container.clientHeight;
-            if (containerHeight === 0) {
-                return;
-            }
-            setIsRootTooTall(header.offsetHeight > containerHeight * MAX_STICKY_ROOT_HEIGHT_RATIO);
-            setRootHeight(header.offsetHeight);
-        };
-
-        measure();
-
-        const observer = new ResizeObserver(measure);
-        observer.observe(header);
-        observer.observe(container);
-
-        return () => observer.disconnect();
-    }, [expanded, replyCount]);
+        const frame = requestAnimationFrame(scrollReplyFieldIntoView);
+        return () => cancelAnimationFrame(frame);
+    }, [replyNonce, scrollReplyFieldIntoView]);
 
     const { sendMessage } = useChatMessage();
 
@@ -127,20 +105,8 @@ export const ChatThread = ({
     const threadRepliesId = `chat-thread-replies-${rootMessage.id}`;
 
     return (
-        <div
-            className={clsx('chat-thread', isStuck && 'chat-thread--stuck')}
-            style={{ '--chat-thread-root-height': `${rootHeight}px` }}
-        >
-            {/* Root + collapse toggle stick together at the top while replies scroll under them.
-                A root taller than 60% of the chat area is left unpinned so it can't hide its replies. */}
-            <div
-                ref={headerRef}
-                className={clsx(
-                    'chat-thread-header',
-                    expanded && replyCount > 0 && !isRootTooTall && 'chat-thread-header--sticky'
-                )}
-                data-thread-root-id={rootMessage.id}
-            >
+        <div className="chat-thread">
+            <div className="chat-thread-header">
                 {isRootMissing ? (
                     <div className="chat-item chat-thread-missing-root flex gap-2 flex-nowrap shrink-0 mr-2 py-2 px-1 items-center">
                         <div
@@ -210,7 +176,7 @@ export const ChatThread = ({
                                 />
                             ))}
 
-                            <div className="chat-thread-reply px-1 py-2">
+                            <div ref={replyFieldRef} className="chat-thread-reply px-1 py-2">
                                 <ChatMessage
                                     key={replyNonce}
                                     onMessageSend={handleReply}

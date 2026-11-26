@@ -4,11 +4,6 @@
 	padding-block-start: var(--message-list-header-offset);
 }
 
-.chat-panel-header {
-	background: var(--background-card) !important;
-	backdrop-filter: none;
-}
-
 .new-message-pill {
 	color: var(--border-card) !important;
 	padding-inline-end: 0.5rem;

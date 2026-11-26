@@ -65,8 +65,8 @@ export const SideBar = ({
         onClose();
     };
 
-    // Publish the offset from the scroll region's top to the header's bottom so content (e.g. sticky
-    // chat thread roots) can align flush beneath the absolute header.
+    // Publish the offset from the scroll region's top to the header's bottom so content (e.g. chat items
+    // scrolled into view) can align flush beneath the absolute header.
     useEffect(() => {
         const headerEl = headerRef.current;
         const asideEl = asideRef.current;

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -48,9 +48,6 @@ export const Chat = () => {
 
     const [newMessageCount, setNewMessageCount] = useState(0);
     const [newMentionCount, setNewMentionCount] = useState(0);
-
-    // Root message id of the thread pinned at the top, if any; drives the opaque header (see below).
-    const [stuckThreadId, setStuckThreadId] = useState<string | null>(null);
 
     const meetingName = useMeetSelector(selectMeetingName);
 
@@ -108,35 +105,8 @@ export const Chat = () => {
         return sendMessage(message);
     };
 
-    // A root is pinned when it rests at the pin line (below the header) with its thread still below.
-    const updateStuckThreadState = useCallback(() => {
-        const container = scrollRef.current;
-        if (!container) {
-            return;
-        }
-
-        const stickyHeaders = container.querySelectorAll<HTMLElement>('.chat-thread-header--sticky');
-        if (stickyHeaders.length === 0) {
-            setStuckThreadId(null);
-            return;
-        }
-
-        const containerTop = container.getBoundingClientRect().top;
-        const headerHeight = parseFloat(getComputedStyle(container).getPropertyValue('--side-bar-header-height')) || 0;
-        const pinLine = containerTop + headerHeight;
-
-        const stuckHeader = Array.from(stickyHeaders).find((header) => {
-            const rect = header.getBoundingClientRect();
-            return rect.top <= pinLine + 1 && rect.bottom > pinLine;
-        });
-
-        setStuckThreadId(stuckHeader?.dataset.threadRootId ?? null);
-    }, []);
-
     const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
         setIsScrolled(event.currentTarget.scrollTop > 0);
-
-        updateStuckThreadState();
 
         const el = scrollRef.current;
         if (!el) {
@@ -269,16 +239,6 @@ export const Chat = () => {
 
     useScrollChatToMessage(scrollRef, { wasAtBottomRef, contentKey: threadView });
 
-    // Recompute after layout changes and resize (no scroll event fires for those).
-    useEffect(() => {
-        updateStuckThreadState();
-    }, [threadView, isChatOpen, updateStuckThreadState]);
-
-    useEffect(() => {
-        window.addEventListener('resize', updateStuckThreadState);
-        return () => window.removeEventListener('resize', updateStuckThreadState);
-    }, [updateStuckThreadState]);
-
     const hasNoMessages = !meetingRoomUpdates.length;
 
     if (!isChatOpen) {
@@ -292,7 +252,6 @@ export const Chat = () => {
             absoluteHeader={true}
             isScrolled={isScrolled}
             paddingClassName="py-4"
-            paddingHeaderClassName={stuckThreadId !== null ? 'chat-panel-header' : ''}
             header={
                 <div className="flex items-center">
                     {!isSearchOn && (
@@ -380,7 +339,6 @@ export const Chat = () => {
                                           replies={replies}
                                           meetingName={meetingName}
                                           isRootMissing={isRootMissing}
-                                          isStuck={stuckThreadId === (root as MeetChatMessage).id}
                                       />
                                   ) : (
                                       <ChatItem item={root} meetingName={meetingName} />
