@@ -80,11 +80,11 @@
         "react-dom": "catalog:",
         "react-router-dom": "catalog:",
         "react-router-dom-v5-compat": "catalog:",
-        "react-window": "^1.8.11",
+        "react-window": "catalog:legacy",
         "ttag": "catalog:",
         "uuid": "catalog:",
         "web-streams-polyfill": "^4.5.1",
-        "zustand": "^4.5.7"
+        "zustand": "catalog:legacy"
     },
     "devDependencies": {
         "@proton/i18n": "workspace:^",

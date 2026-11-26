@@ -467,6 +467,9 @@ catalogs:
     dotenv:
       specifier: ^17.4.2
       version: 17.4.2
+    electron:
+      specifier: 44.11.5
+      version: 44.11.5
     electron-log:
       specifier: ^5.4.4
       version: 5.4.4
@@ -608,6 +611,9 @@ catalogs:
     react-virtualized:
       specifier: ^9.22.6
       version: 9.22.6
+    react-window:
+      specifier: ^2.5.4
+      version: 2.5.4
     recharts:
       specifier: ^3.11.0
       version: 3.11.0
@@ -731,6 +737,9 @@ catalogs:
     zod:
       specifier: ^4.6.7
       version: 4.6.7
+    zustand:
+      specifier: ^5.1.0
+      version: 5.1.0
   docs:
     '@lexical/clipboard':
       specifier: 0.41.0
@@ -783,6 +792,16 @@ catalogs:
     lexical:
       specifier: 0.41.0
       version: 0.41.0
+  legacy:
+    electron:
+      specifier: 43.8.12
+      version: 43.8.12
+    react-window:
+      specifier: ^1.8.11
+      version: 1.8.11
+    zustand:
+      specifier: ^4.5.7
+      version: 4.5.7
   react19:
     '@types/react':
       specifier: ^19.3.0
@@ -1385,7 +1404,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       zustand:
-        specifier: ^4.5.7
+        specifier: catalog:legacy
         version: 4.5.7(@types/react@19.3.0)(immer@11.2.10)(react@19.3.1)
     devDependencies:
       '@proton/i18n':
@@ -1810,7 +1829,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       zustand:
-        specifier: ^5.1.0
+        specifier: 'catalog:'
         version: 5.1.0(@types/react@18.3.31)(immer@11.2.10)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))
     devDependencies:
       '@proton/i18n':
@@ -2175,7 +2194,7 @@ importers:
         specifier: 'catalog:'
         version: 13.6.27
       zustand:
-        specifier: ^4.5.7
+        specifier: catalog:legacy
         version: 4.5.7(@types/react@18.3.31)(immer@11.2.10)(react@18.3.1)
     devDependencies:
       '@babel/plugin-transform-private-methods':
@@ -2380,7 +2399,7 @@ importers:
         specifier: 'catalog:'
         version: 13.6.27
       zustand:
-        specifier: ^5.1.0
+        specifier: 'catalog:'
         version: 5.1.0(@types/react@18.3.31)(immer@11.2.10)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))
     devDependencies:
       '@proton/i18n':
@@ -2685,7 +2704,7 @@ importers:
         specifier: 'catalog:'
         version: 6.30.6(react-dom@18.3.1(react@18.3.1))(react-router-dom@5.3.4(react@18.3.1))(react@18.3.1)
       react-window:
-        specifier: ^1.8.11
+        specifier: catalog:legacy
         version: 1.8.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ttag:
         specifier: 'catalog:'
@@ -2697,7 +2716,7 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1
       zustand:
-        specifier: ^4.5.7
+        specifier: catalog:legacy
         version: 4.5.7(@types/react@18.3.31)(immer@11.2.10)(react@18.3.1)
     devDependencies:
       '@proton/i18n':
@@ -2894,7 +2913,7 @@ importers:
         specifier: 'catalog:'
         version: 17.4.2
       electron:
-        specifier: 43.8.12
+        specifier: catalog:legacy
         version: 43.8.12(supports-color@11.0.0)
       fork-ts-checker-webpack-plugin:
         specifier: 'catalog:'
@@ -3784,7 +3803,7 @@ importers:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
       react-window:
-        specifier: ^2.5.4
+        specifier: 'catalog:'
         version: 2.5.4(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ttag:
         specifier: 'catalog:'
@@ -3963,7 +3982,7 @@ importers:
         specifier: 'catalog:'
         version: 17.4.2
       electron:
-        specifier: 43.8.12
+        specifier: catalog:legacy
         version: 43.8.12(supports-color@11.0.0)
       fork-ts-checker-webpack-plugin:
         specifier: 'catalog:'
@@ -4289,7 +4308,7 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       electron:
-        specifier: 44.11.5
+        specifier: 'catalog:'
         version: 44.11.5(supports-color@11.0.0)
       electron-builder:
         specifier: 26.18.0
@@ -7616,7 +7635,7 @@ importers:
         specifier: 'catalog:'
         version: 3.8.2
       zustand:
-        specifier: ^4.5.7
+        specifier: catalog:legacy
         version: 4.5.7(@types/react@18.3.31)(immer@11.2.10)(react@18.3.1)
     devDependencies:
       '@proton/oxlint-config':
@@ -7758,7 +7777,7 @@ importers:
         specifier: 'catalog:'
         version: 14.0.3
       zustand:
-        specifier: ^4.5.7
+        specifier: catalog:legacy
         version: 4.5.7(@types/react@18.3.31)(immer@11.2.10)(react@18.3.1)
     devDependencies:
       '@openpgp/web-stream-tools':

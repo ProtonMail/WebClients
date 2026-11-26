@@ -78,7 +78,7 @@
         "cross-env": "catalog:",
         "css-loader": "catalog:",
         "dotenv": "catalog:",
-        "electron": "43.8.12",
+        "electron": "catalog:legacy",
         "fork-ts-checker-webpack-plugin": "catalog:",
         "mac-appify": "^2019.4.13",
         "node-loader": "catalog:",
