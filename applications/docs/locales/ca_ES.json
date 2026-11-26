@@ -40,38 +40,14 @@
       "Activate recovery": [
         "Activa la recuperació"
       ],
-      "Add": [
-        "Afegeix"
-      ],
       "Add a payment method": [
         "Afegeix un mètode de pagament"
       ],
       "Add account": [
         "Afegeix un compte"
       ],
-      "Add address": [
-        "Afegeix una adreça"
-      ],
       "Add another account": [
         "Afegeix un altre compte"
-      ],
-      "Add birthday": [
-        "Afegeix una data de naixement"
-      ],
-      "Add contact": [
-        "Afegeix un contacte"
-      ],
-      "Add email": [
-        "Afegeix correu electrònic"
-      ],
-      "Add group": [
-        "Afegeix un grup"
-      ],
-      "Add new group": [
-        "Afegeix un grup"
-      ],
-      "Add note": [
-        "Afegeix una nota"
       ],
       "Add payment method": [
         "Afegeix un mètode de pagament"
@@ -79,21 +55,8 @@
       "Add people or groups to share": [
         "Afegeix persones o grups per compartir"
       ],
-      "Add phone number": [
-        "Afegeix número de telèfon"
-      ],
-      "Add to group": [
-        "Afegeix al grup"
-      ],
-      "Apply": [
-        "Aplica"
-      ],
       "Ask me next time": [
         "Pregunta-m'ho la pròxima vegada"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
-        "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -134,18 +97,6 @@
       "Chat with us": [
         "Xategeu amb nosaltres"
       ],
-      "Choose a file or drag it here": [
-        "Trieu un fitxer o arrossegueu-lo aquí"
-      ],
-      "Clear data": [
-        "Neteja les dades"
-      ],
-      "Clear query": [
-        "Netejar la consulta"
-      ],
-      "Click here.": [
-        "Feu clic aquí."
-      ],
       "Close": [
         "Tanca"
       ],
@@ -167,23 +118,11 @@
       "Comments": [
         "Comentaris"
       ],
-      "Compose": [
-        "Redactar"
-      ],
-      "Confirm": [
-        "Confirma"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
-      ],
       "Connect apps and devices": [
         "Connecta aplicacions i dispositius"
       ],
       "Connect to video conferencing": [
         "Connecta't a la videoconferència"
-      ],
-      "Contact group": [
-        "Grups de contactes"
       ],
       "Continue": [
         "Continua"
@@ -197,9 +136,6 @@
       "Copy as markdown": [
         "Copia com a markdown"
       ],
-      "Copy email to clipboard": [
-        "Copiar correu electrònic al porta-retalls"
-      ],
       "Copy invite link": [
         "Copia l'enllaç d'invitació"
       ],
@@ -209,17 +145,11 @@
       "Copy password": [
         "Copia la contrasenya"
       ],
-      "Copy version number to clipboard": [
-        "Copia el número de versió al porta-retalls"
-      ],
       "Create": [
         "Crear"
       ],
       "Create a copy": [
         "Crea una còpia"
-      ],
-      "Create a new contact group": [
-        "Crear un nou grup de contactes"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Crea un full de càlcul nou de ${ SHEETS_APP_NAME }"
@@ -236,40 +166,17 @@
       "Decline invite": [
         "Declina la invitació"
       ],
-      "Delete": [
-        "Elimina"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Eliminar ${ selectedCount } contacte",
-        "Eliminar ${ selectedCount } contactes"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Eliminar ${ selectedCount } grup de contactes",
-        "Eliminar ${ selectedCount } grups de contactes"
-      ],
-      "Delete contact": [
-        "Elimina el contacte"
-      ],
-      "Delete contact group": [
-        "Eliminar grup de contactes"
-      ],
       "Delete older revisions": [
         "Elimina les revisions més antigues"
       ],
       "Delete permanently": [
         "Elimina de manera permanent"
       ],
-      "Deselect all": [
-        "Desseleccionar-ho tot"
-      ],
       "Dismiss": [
         "Descarta"
       ],
       "Dismiss notification": [
         "Descarta la notificació"
-      ],
-      "Done": [
-        "Fet"
       ],
       "Download": [
         "Baixa"
@@ -289,9 +196,6 @@
       "Download logs": [
         "Descarrega els registres"
       ],
-      "Edit": [
-        "Edita"
-      ],
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
@@ -300,9 +204,6 @@
       ],
       "Edit sign-in details": [
         "Edita detalls d'inici de sessió"
-      ],
-      "Email settings": [
-        "Configuració del correu"
       ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
@@ -313,17 +214,8 @@
       "Explore other plans": [
         "Explora altres plans"
       ],
-      "Export": [
-        "Exporta"
-      ],
-      "Export contact group": [
-        "Exporta el grup de contactes"
-      ],
       "Export editor state for version": [
         "Exporta l'estat de l'editor per a la versió"
-      ],
-      "Export selection as .vcf": [
-        "Exporta la selecció com a .vcf"
       ],
       "Export this version (as docx)": [
         "Exporta aquesta versió (com a docx)"
@@ -339,9 +231,6 @@
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
-      ],
-      "Forward as attachment": [
-        "Reenvia com a adjunt"
       ],
       "Generate password": [
         "Genera la contrasenya"
@@ -370,9 +259,6 @@
       "Go to ${ planOrAppName }": [
         "Ves a ${ planOrAppName }"
       ],
-      "Go to label": [
-        "Ves a l'etiqueta"
-      ],
       "Go to today": [
         "Va a avui"
       ],
@@ -391,23 +277,11 @@
       "Hide": [
         "Amaga"
       ],
-      "Hide advanced PGP settings": [
-        "Amagueu la configuració avançada del PGP"
-      ],
       "Hide more benefits": [
         "Amaga més avantatges"
       ],
-      "Image could not be loaded with tracker protection.": [
-        "La imatge no s'ha pogut carregar amb la protecció contra el rastreig."
-      ],
-      "Image will be loaded without a proxy": [
-        "La imatge es carregarà sense servidor intermediari."
-      ],
       "Import": [
         "Importa"
-      ],
-      "import": [
-        "importa"
       ],
       "Import data": [
         "Importa les dades"
@@ -424,12 +298,6 @@
       "Learn more": [
         "Més informació"
       ],
-      "Load": [
-        "Carrega"
-      ],
-      "Load image": [
-        "Carrega la imatge"
-      ],
       "Make a copy": [
         "Fes una còpia"
       ],
@@ -445,26 +313,14 @@
       "Mark as resolved": [
         "Marca com a resolt"
       ],
-      "Mark for deletion": [
-        "Marca per a l'eliminació"
-      ],
       "Markdown (.md)": [
         "Markdown (.md)"
       ],
       "Maybe later": [
         "Potser més endavant"
       ],
-      "Merge": [
-        "Fusionar"
-      ],
-      "Merge contacts": [
-        "Combinar contactes"
-      ],
       "Microsoft Word (.docx)": [
         "Microsoft Word (.docx)"
-      ],
-      "More actions": [
-        "Més accions"
       ],
       "More benefits": [
         "Més avantatges"
@@ -495,15 +351,6 @@
       ],
       "New folder": [
         "Crea una carpeta"
-      ],
-      "New message": [
-        "Redacta un missatge"
-      ],
-      "Next": [
-        "Següent"
-      ],
-      "Next contact": [
-        "Següent contacte"
       ],
       "Next month": [
         "Mes següent"
@@ -538,26 +385,14 @@
       "Plain Text (.txt)": [
         "Text sense format (.txt)"
       ],
-      "Preview contact": [
-        "Previsualitzar contacte"
-      ],
       "Preview logs": [
         "Previsualitza els registres"
-      ],
-      "Previous contact": [
-        "Contacte anterior"
       ],
       "Previous month": [
         "Mes anterior"
       ],
       "Print": [
         "Imprimeix"
-      ],
-      "Re-sign": [
-        "Tornar a signar"
-      ],
-      "Recover data": [
-        "Recuperar dades"
       ],
       "Refer a friend": [
         "Recomana una amistat"
@@ -664,9 +499,6 @@
       "Select ${ planOrAppName }": [
         "Selecciona ${ planOrAppName }"
       ],
-      "Select all": [
-        "Seleccionar-ho tot"
-      ],
       "Set password or expiration date": [
         "Estableix una contrasenya o la data de caducitat"
       ],
@@ -699,9 +531,6 @@
       ],
       "Sharing is end-to-end encrypted": [
         "La compartició està xifrada d’extrem a extrem"
-      ],
-      "Show advanced PGP settings": [
-        "Mostra la configuració avançada del PGP"
       ],
       "Show more": [
         "Mostrar més"
@@ -754,9 +583,6 @@
       "Trashing...": [
         "S'està enviant a la paperera..."
       ],
-      "Trust": [
-        "De confiança"
-      ],
       "Try again": [
         "Proveu de nou"
       ],
@@ -774,12 +600,6 @@
       ],
       "Unlock data": [
         "Desbloqueja les dades"
-      ],
-      "Unmark for deletion": [
-        "Desmarca per a l'eliminació"
-      ],
-      "Untrust": [
-        "No confiable"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -799,9 +619,6 @@
       "Upload and share files": [
         "Carrega i comparteix fitxers"
       ],
-      "Upload picture": [
-        "Carrega la imatge"
-      ],
       "Use ${ label } theme": [
         "Utilitzar el tema ${ label }"
       ],
@@ -814,9 +631,6 @@
       "Use authentication code": [
         "Utilitza el codi d'autenticació"
       ],
-      "Use for sending": [
-        "Usar per enviar"
-      ],
       "Use recovery code": [
         "Utilitza un codi de recuperació"
       ],
@@ -828,9 +642,6 @@
       ],
       "Verify now": [
         "Verifiqueu-ho ara"
-      ],
-      "View": [
-        "Mostra"
       ],
       "View ${ pendingCount } invitation": [
         "Mostra ${ pendingCount } invitació",
@@ -856,27 +667,6 @@
       ],
       "words out of": [
         "paraules de"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
-        "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
-      ]
-    },
-    "Actions message": {
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } o ${ importContact }."
-      ],
-      "No results found.": [
-        "No s'han trobat resultats."
-      ],
-      "Please try another search term.": [
-        "Proveu un altre terme de cerca."
-      ],
-      "You don't have any contacts.": [
-        "No teniu contactes."
-      ],
-      "You don't have any groups.": [
-        "No teniu cap grup."
       ]
     },
     "Addon": {
@@ -975,11 +765,6 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "Si sortiu ara, alguns contactes potser no es poden importar"
       ]
     },
     "Apps dropdown": {
@@ -1462,76 +1247,6 @@
       ],
       "strawberry": [
         "maduixa"
-      ]
-    },
-    "Contact field label": {
-      "Address": [
-        "Adreça"
-      ],
-      "Anniversary": [
-        "Aniversari"
-      ],
-      "Birthday": [
-        "Data de naixement"
-      ],
-      "Display name": [
-        "Nom per a mostrar"
-      ],
-      "Email": [
-        "Correu electrònic"
-      ],
-      "Enter a display name or nickname": [
-        "Introduïu un nom per a mostrar o un sobrenom"
-      ],
-      "First name": [
-        "Nom"
-      ],
-      "Gender": [
-        "Gènere"
-      ],
-      "Language": [
-        "Idioma"
-      ],
-      "Last name": [
-        "Cognom"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Membre"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "Note": [
-        "Nota"
-      ],
-      "Organization": [
-        "Organització"
-      ],
-      "Phone": [
-        "Telèfon"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Role": [
-        "Rol"
-      ],
-      "Time zone": [
-        "Zona horària"
-      ],
-      "Title": [
-        "Títol"
-      ],
-      "URL": [
-        "URL"
-      ]
-    },
-    "Contact image": {
-      "Contact image": [
-        "Imatge del contacte"
       ]
     },
     "Country name": {
@@ -2373,21 +2088,6 @@
         "Per a ${ VPN_APP_NAME }"
       ]
     },
-    "Default display name vcard": {
-      "Unknown": [
-        "Desconegut"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Utilitza la configuració global per defecte (${ defaultValueText })."
-      ]
-    },
-    "Default signing preference": {
-      "Use global default (${ globalDefaultText })": [
-        "Utilitza la configuració global per defecte (${ globalDefaultText })"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura vençuda"
@@ -2421,12 +2121,6 @@
       "Create groups you can email with a single address.": [
         "Creeu grups als quals podeu enviar correus electrònics amb una única adreça."
       ],
-      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "S'estan desxifrant els contactes… Això pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Accediu fàcilment al vostre correu i calendari a l'escriptori i al mòbil."
       ],
@@ -2435,9 +2129,6 @@
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Fomenteu l'ús de l'autenticació de doble factor a la vostra organització per a obtenir més seguretat."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Xifrar i importar contactes... És possible que passi uns quants minuts. Quan el procés s'hagi completat, podeu tancar aquesta modalitat."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Assegureu un accés segur a les dades de l'organització, fins i tot si el vostre equip està remot o utilitza una WiFi pública."
@@ -2457,14 +2148,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
-      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Establiu un mètode de recuperació de dades per a evitar la pèrdua de dades."
@@ -2481,20 +2166,11 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per a garantir-vos la màxima seguretat possible del compte, configureu una frase de recuperació."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per a importar mitjançant un fitxer CSV o VCF, assegureu-vos que no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ maxContactString } contactes. Si és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
-      ],
-      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
-      ],
       "To start, give your organization a name.": [
         "Per començar, assigneu un nom a la vostra organització."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Milloreu el pla a ${ planName } per a continuar compartint arxius amb accés per a editar."
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
@@ -2502,30 +2178,11 @@
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
       ],
-      "With contact groups, you can send emails to everyone in the group with one click.": [
-        "Amb els grups de contactes, podeu enviar correus electrònics a tots els membres del grup amb un sol clic."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
-      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "El compte i els mètodes de recuperació de dades estan definits i el 2FA està activat."
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "També hem aparellat automàticament camps CSV amb camps vCard. Podeu revisar i canviar aquest aparellament manualment."
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hem detectat els següents camps al fitxer CSV que heu carregat. Comproveu els que voleu importar."
       ]
     },
     "Downgrade account reason": {
@@ -2664,12 +2321,6 @@
         "No s'ha pogut moure ${ failureItems.length } element",
         "No s'han pogut moure ${ failureItems.length } elements"
       ],
-      "A contact with this email address already exists": [
-        "Ja existeix un contacte amb aquesta adreça de correu electrònic"
-      ],
-      "A group with this name already exists": [
-        "Ja existeix un grup amb aquest nom"
-      ],
       "A message is required when reporting copyright infringement or stolen data": [
         "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
       ],
@@ -2706,9 +2357,6 @@
       "Cannot download a folder": [
         "No es pot descarregar una carpeta"
       ],
-      "Cannot export this contact": [
-        "No es pot exportar aquest contacte."
-      ],
       "Cannot find move target": [
         "No s'ha pogut trobar la destinació"
       ],
@@ -2723,15 +2371,6 @@
       ],
       "Cannot verify who uploaded this file": [
         "No es pot verificar qui ha carregat aquest fitxer"
-      ],
-      "Contact could not be saved": [
-        "El contacte no pot ser desat"
-      ],
-      "Contact name is too long": [
-        "El nom del contacte és massa llarg"
-      ],
-      "Contact signature not verified": [
-        "Signatura del contacte no verificada"
       ],
       "Copy operation aborted": [
         "S'ha cancel·lat l'operació de còpia"
@@ -2847,9 +2486,6 @@
       "Failed to load the membership data": [
         "No s'han pogut carregar les dades d'afiliació"
       ],
-      "Failed to open to contact": [
-        "No s'ha pogut obrir el contacte"
-      ],
       "Failed to remove older revisions": [
         "No s'han pogut esborrar les revisions més antigues"
       ],
@@ -2883,14 +2519,8 @@
       "File has no revision": [
         "El fitxer no té cap revisió"
       ],
-      "First name is too long": [
-        "El nom és massa llarg."
-      ],
       "Image preview not found": [
         "No s’ha trobat la vista prèvia de la imatge"
-      ],
-      "Image upload failed": [
-        "No s'ha pogut carregar la imatge."
       ],
       "Incorrect backup password. Please try again.": [
         "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
@@ -2904,15 +2534,6 @@
       "Invalid coupon": [
         "El cupó no és vàlid"
       ],
-      "Invalid email address": [
-        "L'adreça de correu electrònic no és vàlida."
-      ],
-      "Invalid name": [
-        "Nom no vàlid"
-      ],
-      "Invalid public key file": [
-        "Arxiu de clau pública invàlid"
-      ],
       "Invalid URL": [
         "L'URL no és vàlid."
       ],
@@ -2924,9 +2545,6 @@
       ],
       "Item not found": [
         "No s'ha trobat l'element"
-      ],
-      "Last name is too long": [
-        "El cognom és massa llarg."
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "L'enllaç públic antic no es pot actualitzar. Torneu-ne a crear un de nou."
@@ -2965,14 +2583,6 @@
       "Not a valid number": [
         "Número no vàlid"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
-        "Alguns contactes no tenen adreça de correu electrònic: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Un dels grups no té contactes: ${ noContactGroupList }",
-        "Alguns grups no tenen contactes: ${ noContactGroupList } "
-      ],
       "Only admins can convert external invitations": [
         "Només els administradors poden convertir invitacions externes"
       ],
@@ -3009,9 +2619,6 @@
       "Please enter ZIP code": [
         "Introduïu el codi postal"
       ],
-      "Please provide either a first name, a last name or a display name": [
-        "Proporcioneu un nom, un cognom o un nom per a mostrar."
-      ],
       "Please select a country": [
         "Seleccioneu un país"
       ],
@@ -3037,9 +2644,6 @@
       "Signature is missing": [
         "Falta la signatura"
       ],
-      "Signature not verified": [
-        "Signatura no verificada"
-      ],
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
       ],
@@ -3052,9 +2656,6 @@
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
         "No s'ha pogut verificar la signatura per a ${ signatureType }: ${ errorMessage }"
       ],
-      "Some contacts could not be deleted": [
-        "Alguns contactes no poden ser esborrats"
-      ],
       "Some documents could not be loaded": [
         "Alguns documents no s'han pogut carregar"
       ],
@@ -3063,9 +2664,6 @@
       ],
       "Some file parts failed to upload. Please try again.": [
         "No s'han pogut carregar algunes parts del fitxer. Torneu-ho a provar."
-      ],
-      "Some groups could not be deleted": [
-        "Alguns grups no poden ser esborrats"
       ],
       "Some invitations could not be loaded": [
         "No s'han pogut carregar algunes invitacions"
@@ -3115,9 +2713,6 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "S'ha produït un error en processar les actualitzacions del document. Torneu a carregar la pàgina i torneu-ho a provar."
       ],
-      "There was an error when exporting the contacts vCards": [
-        "Hi ha hagut un error exportant les vcards dels contactes"
-      ],
       "This document is too large to copy. Download it to keep a copy of your work.": [
         "Aquest document és massa gran per a copiar-lo. Descarregueu-lo per a mantenir una còpia del vostre treball."
       ],
@@ -3150,9 +2745,6 @@
       ],
       "This item is not shared": [
         "Aquest element no està compartit"
-      ],
-      "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
       ],
       "This version could not be loaded. Close the history and try again.": [
         "Aquesta versió no s'ha pogut carregar. Tanqueu l'historial i torneu-ho a provar."
@@ -3229,18 +2821,11 @@
       "You can update a public link for your own files only": [
         "Només podeu actualitzar un enllaç públic per als vostres propis fitxers"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
-        "No podeu enviar un correu a més de ${ maxContacts } destinataris."
-      ],
       "You do not have access to this item": [
         "No teniu accés a aquest element"
       ],
       "You do not have access to this shared item": [
         "No teniu accés a aquest element compartit"
-      ],
-      "You must set a name": [
-        "Heu d'establir un nom"
       ],
       "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
         "El darrer canvi és massa gran per a desar-lo i, per tant, s'ha deshabilitat l'edició. Copieu qualsevol feina que necessiteu i recarregueu la pàgina."
@@ -3250,45 +2835,6 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "S'ha produït un error inesperat. S'ha de reiniciar la importació."
-      ]
-    },
-    "Error importing contact": {
-      "Encryption failed": [
-        "No s'ha pogut xifrar."
-      ],
-      "Missing FN property": [
-        "Falta la propietat FN."
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Les versions de vCard < 3.0 no són compatibles"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "S'ha produït un error en llegir el fitxer ${ formattedFilename }. El format del fitxer és incorrecte."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. No s'ha seleccionat cap fitxer .csv o .vcf"
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ maxContactString } contactes."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "El vostre fitxer ${ formattedFilename } no conté contactes per importar."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "El vostre fitxer ${ formattedFilename } està buit."
       ]
     },
     "Error message": {
@@ -3315,11 +2861,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la connexió a Internet."
-      ]
-    },
-    "Error notification": {
-      "Display name cannot be empty": [
-        "El nom per a mostrar no pot estar buit"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3498,79 +3039,12 @@
         "SMS"
       ]
     },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Xifrant i afegint contactes: ${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "Versions de vCard < 3.0"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
-        "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "S'ha produït un error en xifrar i afegir el vostre contacte. No s'ha pogut importar cap contacte."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "S'ha produït un error en xifrar i afegir els vostres contactes. S'han importat ${ totalImported } contactes de ${ totalToImport }."
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "S'ha produït un error en xifrar i afegir els vostres contactes. No s'ha pogut importar cap contacte."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "S'ha importat el contacte. Ara apareixerà a la vostra llista de contactes."
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "S'han importat els contactes. Ara apareixeran a la vostra llista de contactes."
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Contacte ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } contacte",
-        "${ totalContacts } contactes"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "desconegut"
-      ]
-    },
-    "Import contacts warning": {
-      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "${ CONTACTS_APP_NAME } no admet ${ forNow }:"
-      ],
-      "for now": [
-        "per ara"
-      ]
-    },
-    "Import warning": {
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
-      ],
-      "No contact can be imported. Click for details": [
-        "No s'ha pogut importar cap contacte. Cliqueu per obtenir més informació"
-      ]
-    },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "«${ documentTitle }» s'ha mogut a la paperera. Hi romandrà fins que el restaureu o l'elimineu permanentment."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "«${ documentTitle }» és a la paperera i hi romandrà fins que l'elimineu permanentment."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } adreça de correu electrònic",
-        "${ addressCount } adreces de correu electrònic"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -3581,34 +3055,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } contacte té múltiples adreces de correu.",
-        "${ contactCount } contactes tenen múltiples adreces de correu."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Membre",
-        "${ contactEmailsLength } Membres"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        "${ contactName } té múltiples adreces de correu."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contacte trobat",
-        "${ contactsCount } contactes trobats"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } contacte",
-        "${ contactsLength } contactes"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } us permet col·laborar en temps real amb xifratge d’extrem a extrem per a una completa privacitat. Creeu una còpia per a començar a editar o demaneu accés d'edició al propietari."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } a"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grup trobat",
-        "${ groupCounts } grups trobats"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
@@ -3626,10 +3077,6 @@
       "${ planName } expires today.": [
         "${ planName } caduca avui."
       ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
-        "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
-      ],
       "${ selection.selectedIds.length } selected": [
         "Se n'ha seleccionat ${ selection.selectedIds.length }",
         "Se n'han seleccionat ${ selection.selectedIds.length }"
@@ -3639,10 +3086,6 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contacte actualitzat amb èxit.",
-        "${ updated } contactes actualitzats amb èxit."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } està emmascarant la vostra adreça IP, de manera que els llocs web no us poden identificar."
@@ -3689,9 +3132,6 @@
       ],
       "Ad targeting": [
         "Orientació d'anuncis"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificació d'adreça amb claus de confiança està activada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Els anunciants fan un seguiment de la vostra navegació per mostrar anuncis orientats. ${ VPN_APP_NAME } bloqueja els rastrejadors i els anuncis, cosa que fa la connexió més ràpida i millora l'experiència en línia."
@@ -3747,17 +3187,11 @@
       "Can't write into folder": [
         "No es pot escriure a la carpeta"
       ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i, en el procés, desactivar l'alerta."
-      ],
       "characters": [
         "caràcters"
       ],
       "characters without spaces": [
         "caràcters sense espais"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Comprovant contacte ${ progress } de ${ max }..."
       ],
       "Choose a plan that works best for you.": [
         "Trieu el pla que se us adapti millor."
@@ -3765,14 +3199,11 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
+      "Comments are not available yet": [
+        "Els comentaris encara no estan disponibles"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connecteu-vos a ${ VPN_APP_NAME } per navegar en privat."
-      ],
-      "Contact assigned to group ${ contactGroupName }": [
-        "S'ha assignat el contacte al grup ${ contactGroupName }."
-      ],
-      "Contact unassigned from group ${ contactGroupName }": [
-        "S'ha desfet l'assignació del contacte al grup ${ contactGroupName }."
       ],
       "Continue": [
         "Continueu"
@@ -3783,11 +3214,11 @@
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
       ],
-      "Copy the link to clipboard": [
-        "Copia l'enllaç al porta-retalls"
-      ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
+      ],
+      "Copy “${ version }” to clipboard": [
+        "Copia «${ version }» al porta-retalls"
       ],
       "Country code": [
         "Codi de país"
@@ -3795,15 +3226,15 @@
       "Create a copy to edit": [
         "Crea una còpia per a editar"
       ],
-      "Create a new contact group": [
-        "Crear un nou grup de contactes"
-      ],
       "Create a secure cloud for ${ memberCount } member": [
         "Crea un núvol segur per a ${ memberCount } membre",
         "Crea un núvol segur per a ${ memberCount } membres"
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Creeu documents i fulls de càlcul xifrats d'extrem a extrem."
+      ],
+      "Create the copy you asked for.": [
+        "Creeu la còpia que heu demanat."
       ],
       "Creating new document...": [
         "S'està creant un document..."
@@ -3850,15 +3281,6 @@
       "Download current logs": [
         "Descarrega els registres actuals"
       ],
-      "Drop file here to upload": [
-        "Arrossegueu el fitxer aquí per a carregar-lo."
-      ],
-      "Drop to import": [
-        "Arrossegueu aquí per a importar"
-      ],
-      "Duplicate key updated": [
-        "Clau duplicada actualitzada"
-      ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada"
       ],
@@ -3868,8 +3290,8 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
       ],
-      "Emails are automatically signed": [
-        "Els correus se signen automàticament"
+      "Encrypted": [
+        "Xifrat"
       ],
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
@@ -3977,7 +3399,7 @@
         "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
-        "Si us elimineu, perdreu l'accés a \"${ fileName }\" i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
+        "Si us elimineu, perdreu l'accés a «${ fileName }» i no podreu tornar a obrir el fitxer tret que el propietari us el torni a compartir."
       ],
       "Important note": [
         "Nota important"
@@ -4011,12 +3433,6 @@
       ],
       "Keep your files secure with end-to-end encryption.": [
         "Manteniu els vostres fitxers segurs amb el xifratge d'extrem a extrem."
-      ],
-      "Key fingerprint": [
-        "Clau d'empremta digital"
-      ],
-      "Labels:": [
-        "Etiquetes:"
       ],
       "Learn more": [
         "Més informació"
@@ -4082,17 +3498,8 @@
       "New": [
         "Nova"
       ],
-      "No contacts added yet": [
-        "Encara no s'han afegit contactes"
-      ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
         "No s'ha proporcionat cap document a l'URL. Torneu a ${ DRIVE_APP_NAME } i seleccioneu-ne un."
-      ],
-      "No email address": [
-        "Sense adreça de correu electrònic"
-      ],
-      "No group found": [
-        "No s'ha trobat cap grup"
       ],
       "No recent documents match your search.": [
         "No hi ha cap document recent que coincideixi amb la vostra cerca."
@@ -4102,12 +3509,6 @@
       ],
       "No version history available": [
         "No hi ha disponible cap historial de versions"
-      ],
-      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Cap de les claus carregades és vàlida per al xifratge. Per a poder enviar missatges a aquesta adreça, carregueu una clau vàlida o desactiveu \"Xifra els correus electrònics\"."
-      ],
-      "Not a valid URL": [
-        "No és un URL vàlid."
       ],
       "Not connected": [
         "Sense connexió"
@@ -4120,9 +3521,6 @@
       ],
       "On public WiFi networks": [
         "A les xarxes wifi públiques"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "Aquest full de càlcul no pot desar les darreres modificacions, així que hem aturat l'edició per a evitar que perdeu la feina."
@@ -4163,51 +3561,17 @@
       "Pending invitations": [
         "Invitacions pendents"
       ],
-      "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline només és compatible amb format de Text Pla."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME envia automàticament el missatge utilitzant el mode d'editor actual."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporteu una còpia dels canvis actuals des del menú principal i torneu a carregar la pàgina."
       ],
-      "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Tingueu en compte que les adreces assignades a aquests grups NO s'eliminaran."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
-      ],
-      "Please provide a name and an email address for creating a group.": [
-        "Proporcioneu un nom i una adreça de correu electrònic per a crear un grup."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
-        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
-      ],
       "Please try again in a few moments": [
         "Torneu-ho a provar d'aquí a uns moments"
       ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
-      ],
       "Preparing editor…": [
         "S'està preparant l'editor…"
-      ],
-      "Primary": [
-        "Principal"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegació privada (o mode «incògnit») només és útil per a mantenir l'activitat amagada al dispositiu. Impedeix que el navegador desi l'historial i les galetes, però no us fa invisible. El vostre ISP, l'administrador de xarxa i els llocs web que visiteu encara poden veure el que feu en línia."
@@ -4263,9 +3627,6 @@
       "Select a folder to move to.": [
         "Seleccioneu la carpeta de destinació."
       ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
@@ -4274,9 +3635,6 @@
       ],
       "Set up your organization": [
         "Configuració de la vostra organització"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
@@ -4360,9 +3718,6 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
-      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Sembla que l'URL que heu introduït s'ha copiat incorrectament d'Slack. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i trieu \"Copia l'enllaç\", en lloc de copiar directament el text truncat de l'URL."
       ],
@@ -4371,9 +3726,6 @@
       ],
       "This action will delete the link and revoke access for all users.": [
         "Aquesta acció eliminarà l'enllaç i revocarà l'accés per a tots els usuaris."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Aquesta adreça està inactivada. Per tal de poder enviar-hi, el propietari l'ha d'activar en primer lloc."
       ],
       "This document can't be edited right now.": [
         "Aquest document no es pot editar en aquest moment."
@@ -4411,12 +3763,6 @@
       "This link is not supported on this page.": [
         "Aquest enllaç no és compatible amb aquesta pàgina."
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Aquest enllaç pot ser un atac de homògraf. Si esteu segurs que l’enllaç és el que vols, o no l'obriu."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Això vol dir que el vostre proveïdor d'accés a internet i els llocs web que visiteu no poden connectar la informació personal amb l'activitat en línia."
       ],
@@ -4441,23 +3787,11 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Per a ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Us ho demanarem menys sovint amb el pas del temps."
       ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
-      ],
-      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Per a recuperar les dades, heu de tornar a activar la clau del compte utilitzada en el moment que es van crear les dades. Això requereix que recordeu la contrasenya utilitzada quan es va generar la clau."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilitzar la verificació d'adreça, heu d'activar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
-      ],
       "Tracking": [
         "Seguiment"
       ],
       "Trash": [
         "Paperera"
-      ],
-      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "Confieu en la clau \"${ activeSignerText }\" per verificar els missatges nous d'aquest contacte."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Es tornarà a carregar l'aplicació."
@@ -4549,12 +3883,6 @@
       "You already have a free account": [
         "Ja teniu un compte gratuït"
       ],
-      "You are about to open another browser tab and visit:": [
-        "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
-      ],
-      "You are about to open your default browser and visit:": [
-        "Esteu a punt d'obrir el navegador per defecte i visitar:"
-      ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Actualment heu iniciat la sessió com a ${ username } per a ${ organizationName }."
       ],
@@ -4613,12 +3941,6 @@
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Esteu a punt de rebutjar la invitació per unir-vos a l'element ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
       ],
-      "You've reached the maximum number of addresses in the contact group(s):": [
-        "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
-      ],
-      "You've reached the maximum number of addresses in the contact group.": [
-        "Heu assolit el nombre màxim d'adreces en el grup de contactes."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
       ],
@@ -4651,9 +3973,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your files will be encrypted and then saved": [
-        "Es xifraran els fitxers i després es desaran."
       ],
       "Your information was found on ${ displayedDate }": [
         "La vostra informació es va trobar el ${ displayedDate }"
@@ -4708,48 +4027,6 @@
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
       ]
     },
-    "info": {
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "Cliqueu per veure'n detalls"
-      ]
-    },
-    "Key badge": {
-      "Active Signer": [
-        "Signant actiu"
-      ],
-      "Compromised": [
-        "Compromesa"
-      ],
-      "Expired": [
-        "Caducada"
-      ],
-      "Fallback": [
-        "Alternativa"
-      ],
-      "KOO": [
-        "KOO"
-      ],
-      "Obsolete": [
-        "Obsoleta"
-      ],
-      "Primary": [
-        "Principal"
-      ],
-      "Revoked": [
-        "Revocat"
-      ],
-      "Trusted": [
-        "De confiança"
-      ],
-      "WKD": [
-        "WKD"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } Account password": [
         "Contrasenya del compte de ${ BRAND_NAME }"
@@ -4768,15 +4045,6 @@
       ],
       "Active": [
         "Actiu"
-      ],
-      "Add email address": [
-        "Afegeix una adreça de correu electrònic"
-      ],
-      "Add image URL": [
-        "Afegeix l'URL de la imatge"
-      ],
-      "Add to group": [
-        "Afegeix al grup"
       ],
       "Additional comments": [
         "Comentaris addicionals"
@@ -4817,9 +4085,6 @@
       "Category": [
         "Categoria"
       ],
-      "City": [
-        "Ciutat"
-      ],
       "Client": [
         "Client"
       ],
@@ -4828,9 +4093,6 @@
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
-      ],
-      "Colors": [
-        "Colors"
       ],
       "Command line interface (CLI)": [
         "Interfície de línia d'ordres (CLI)"
@@ -4841,9 +4103,6 @@
       "Continue cancelling": [
         "Continueu amb la cancel·lació"
       ],
-      "Copy": [
-        "Copia"
-      ],
       "Could you please let us know which provider?": [
         "Podeu fer-nos saber quin proveïdor?"
       ],
@@ -4852,9 +4111,6 @@
       ],
       "Could you please specify?": [
         "Podeu especificar?"
-      ],
-      "Country": [
-        "País"
       ],
       "Created by ${ displayName }": [
         "Creat per ${ displayName }"
@@ -4874,9 +4130,6 @@
       "Document": [
         "Document"
       ],
-      "Don't ask again": [
-        "No tornis a preguntar"
-      ],
       "Don't show this again": [
         "No ho tornis a mostrar"
       ],
@@ -4886,20 +4139,11 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
-      "Email format": [
-        "Format de correu electrònic"
-      ],
       "Enable email notifications": [
         "Habilita les notificacions per correu electrònic"
       ],
-      "Encrypt emails": [
-        "Xifrar correus electrònics"
-      ],
       "Expiry": [
         "Caducitat"
-      ],
-      "Extended address": [
-        "Adreça completa"
       ],
       "File": [
         "Fitxer"
@@ -4909,9 +4153,6 @@
       ],
       "Hide password": [
         "Amaga la contrasenya"
-      ],
-      "I understand the risk": [
-        "Entenc el risc"
       ],
       "Ignore": [
         "Ignorar"
@@ -4982,26 +4223,11 @@
       "Password strength": [
         "Seguretat de la contrasenya"
       ],
-      "PGP scheme": [
-        "Esquema PGP"
-      ],
       "Phone number": [
         "Número de telèfon"
       ],
       "Please share any feedback to help us improve.": [
         "Compartiu qualsevol comentari per a ajudar-nos a millorar."
-      ],
-      "Post office box": [
-        "Apartat de correus"
-      ],
-      "Postal code": [
-        "Codi postal"
-      ],
-      "Public keys": [
-        "Claus públiques"
-      ],
-      "Region": [
-        "Regió"
       ],
       "Require password": [
         "Requereix contrasenya"
@@ -5024,9 +4250,6 @@
       "Shared with me": [
         "Compartit amb mi"
       ],
-      "Sign emails": [
-        "Signar correu electrònics"
-      ],
       "Skip feedback": [
         "Ometre els comentaris"
       ],
@@ -5035,9 +4258,6 @@
       ],
       "Stop sharing": [
         "Deixa de compartir"
-      ],
-      "Street address": [
-        "Adreça de carrer"
       ],
       "Strong": [
         "Forta"
@@ -5059,9 +4279,6 @@
       ],
       "Unknown user": [
         "Usuari desconegut"
-      ],
-      "Upload picture": [
-        "Carrega la imatge"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -5104,16 +4321,6 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "Color"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "Nom"
       ]
     },
     "Link": {
@@ -5412,14 +4619,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Automàtic"
-      ],
-      "Plain text": [
-        "Text sense format"
       ]
     },
     "new_plans": {
@@ -6026,11 +5225,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creeu, editeu i col·laboreu en documents xifrats d'extrem a extrem."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Protegiu els fitxers amb l'emmagatzematge xifrat al núvol. Inclou, entre d'altres, sincronització automàtica i compartició de fitxers xifrats."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creeu, editeu i col·laboreu en fulls de càlcul xifrats d'extrem a extrem."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accediu a contingut bloquejat i navegueu de manera privada. Inclou ${ serversAndCountries }, les velocitats més altes de VPN, accés a serveis d'estríming de tot el món, bloqueig de programari maliciós i publicitat, descàrregues ràpides de BitTorrent, etc."
@@ -6339,12 +5544,6 @@
       "Cannot load next page": [
         "No s'ha pogut carregar la pàgina següent"
       ],
-      "Contact group created": [
-        "Grup de contactes creat"
-      ],
-      "Contact group updated": [
-        "Grup de contactes actualitzat"
-      ],
       "Document moved to trash": [
         "S'ha mogut el document a la paperera"
       ],
@@ -6392,9 +5591,6 @@
       ],
       "Invitation's email was sent again": [
         "S'ha tornat a enviar el correu electrònic de la invitació"
-      ],
-      "Link copied to clipboard": [
-        "S'ha copiat l'enllaç al porta-retalls."
       ],
       "Move ${ n } file": [
         "Mou ${ n } fitxer",
@@ -6635,20 +5831,6 @@
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
       ]
     },
-    "Option": {
-      "Add to existing group": [
-        "Afegeix a un grup existent"
-      ],
-      "Automatic (${ value })": [
-        "Automàtic (${ value })"
-      ],
-      "Create new group": [
-        "Crea un grup nou"
-      ],
-      "Ignore group": [
-        "Ignorar grup"
-      ]
-    },
     "Page title": {
       "Recents": [
         "Recents"
@@ -6788,45 +5970,6 @@
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "La clau no es pot utilitzar per al xifratge"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } ha marcat aquesta clau com a compromesa. Aquesta clau no es pot fer servir ni per a xifrar ni per a verificar signatures."
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } ha marcat aquesta clau com a obsoleta. Aquesta clau només es pot fer servir per a verificar signatures."
-      ],
-      "External key automatically fetched from keys.openpgp.org.": [
-        "La clau externa s'ha obtingut automàticament des de key.openpgp.org."
-      ],
-      "External key automatically fetched via WKD.": [
-        "La clau externa s'ha obtingut automàticament via WKD."
-      ],
-      "This contact currently signs messages with this key": [
-        "Aquest contacte actualment signa els missatges amb aquesta clau"
-      ],
-      "This key is used for message verification": [
-        "Aquesta clau s'utilitza per a la verificació de missatges"
-      ],
-      "This key is used to encrypt messages to this contact": [
-        "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
-      ],
-      "This key is used to encrypt messages to this contact on older apps": [
-        "Aquesta clau s'utilitza per a xifrar missatges per a aquest contacte en aplicacions antigues"
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        "Us recomanem que marqueu la clau com a \"no confiable\"."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "L'adreça de correu electrònic que no es troba entre els identificadors d'usuari definits a la clau d'enviament (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Una manera de contactar amb tu"
@@ -6849,29 +5992,8 @@
       "Enter a new folder name": [
         "Introdueix el nom de la nova carpeta"
       ],
-      "Filter groups": [
-        "Filtra grups"
-      ],
-      "First name": [
-        "Nom"
-      ],
-      "Group name": [
-        "Nom del grup"
-      ],
-      "Image URL": [
-        "URL de la imatge"
-      ],
-      "Last name": [
-        "Cognom"
-      ],
       "Message": [
         "Missatge"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "Name or email address": [
-        "Nom o adreça de correu electrònic"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -6885,12 +6007,6 @@
       "Please select the main reason": [
         "Seleccioneu el motiu principal."
       ],
-      "Search for group name": [
-        "Buscar per nom de grup"
-      ],
-      "Search for name or email": [
-        "Cerca per nom o correu electrònic"
-      ],
       "Select": [
         "Seleccionar"
       ],
@@ -6900,16 +6016,8 @@
       "Select a reason": [
         "Seleccioneu un motiu"
       ],
-      "Start typing an email address": [
-        "Comenceu a escriure una adreça de correu electrònic"
-      ],
       "Your organization name": [
         "El nom de la vostra organització"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Nom"
       ]
     },
     "Plan description": {
@@ -6918,29 +6026,6 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "S'ha exportat ${ contactsExported.length } contacte de ${ countContacts }.",
-        "S'han exportat ${ contactsExported.length } contactes de ${ countContacts }."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
-        "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } de ${ totalBeMerged } contacte combinat satisfactòriament.",
-        "${ model.submitted.length } de ${ totalBeMerged } contactes combinats satisfactòriament."
-      ],
-      "No contacts exported.": [
-        "No s'han exportat contactes."
-      ],
-      "No contacts merged.": [
-        "No s'han combinat contactes."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "Progrés: ${ combinedProgress }%"
       ]
     },
     "Property": {
@@ -6961,46 +6046,6 @@
       ],
       "name": [
         "nom"
-      ]
-    },
-    "Property type": {
-      "Address": [
-        "Adreça"
-      ],
-      "Email": [
-        "Correu electrònic"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Home": [
-        "Casa"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Mòbil"
-      ],
-      "Other": [
-        "Altres"
-      ],
-      "Pager": [
-        "Cercapersones"
-      ],
-      "Phone": [
-        "Telèfon"
-      ],
-      "Work": [
-        "Feina"
-      ]
-    },
-    "protonbadge": {
-      "Official": [
-        "Oficial"
-      ],
-      "Official email from ${ BRAND_NAME }": [
-        "Correu electrònic oficial de ${ BRAND_NAME }"
       ]
     },
     "Provider option": {
@@ -7178,11 +6223,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Carrega"
       ]
     },
     "session_recovery:available:action": {
@@ -7425,14 +6465,6 @@
     "sheets_2025:Title": {
       "Import data": [
         "Importa les dades"
-      ]
-    },
-    "Signing preference for emails": {
-      "Don't sign": [
-        "No signis"
-      ],
-      "Sign": [
-        "Signa"
       ]
     },
     "Sort menu options": {
@@ -7867,44 +6899,14 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } contacte sembla idèntic.",
-        "${ countMergeableContacts } contactes semblen idèntics."
-      ],
-      "Address copied to clipboard": [
-        "Adreça copiada al porta-retalls"
-      ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Contacte esborrat",
-        "Contactes esborrats"
-      ],
-      "Contact group deleted": [
-        "S'ha eliminat el grup",
-        "S'han eliminat els grups"
-      ],
-      "Contact saved": [
-        "Contacte desat"
-      ],
-      "Contacts deleted": [
-        "Contactes esborrats"
       ],
       "Email address copied to clipboard": [
         "Correu electronic copiat al porta-retalls"
       ],
-      "Fingerprint copied to clipboard": [
-        "Empremta digital copiada al porta-retalls"
-      ],
-      "Phone number copied to clipboard": [
-        "Número de telèfon copiat al porta-retalls"
-      ],
       "Preference saved": [
         "S'ha desat la preferència."
-      ],
-      "Preferences saved": [
-        "Preferències guardades"
       ],
       "Problem reported": [
         "S'ha notificat el problema."
@@ -7935,64 +6937,6 @@
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
       ]
     },
-    "Table header": {
-      "Action": [
-        "Acció"
-      ],
-      "Actions": [
-        "Accions"
-      ],
-      "Address": [
-        "Adreça"
-      ],
-      "Created": [
-        "Creat"
-      ],
-      "Expires": [
-        "Expira"
-      ],
-      "Fingerprint": [
-        "Empremta digital"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Type": [
-        "Tipus"
-      ]
-    },
-    "TableHeader": {
-      "Actions": [
-        "Accions"
-      ],
-      "Address": [
-        "Adreça"
-      ],
-      "CSV field": [
-        "Camp CSV"
-      ],
-      "Display name": [
-        "Nom per a mostrar"
-      ],
-      "First name": [
-        "Nom"
-      ],
-      "Import": [
-        "Importa"
-      ],
-      "Last name": [
-        "Cognom"
-      ],
-      "Values": [
-        "Valors"
-      ],
-      "vCard field": [
-        "Camp vCard"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dia",
@@ -8015,10 +6959,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } adreça de correu electrònic",
-        "${ emailsCount } adreces de correu electrònic"
-      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -8034,21 +6974,8 @@
       "Account temporarily locked": [
         "El compte s'ha bloquejat temporalment"
       ],
-      "Add contact group name": [
-        "Afegeix el nom del grup de contactes"
-      ],
-      "Add to ${ groupCount } group": [
-        "Afegir a ${ groupCount } grup",
-        "Afegir a ${ groupCount } grups"
-      ],
-      "Add to ${ groupName }": [
-        "Afegeix a ${ groupName }"
-      ],
       "Add user": [
         "Afegeix un usuari"
-      ],
-      "Addresses": [
-        "Adreces"
       ],
       "All settings": [
         "Totes les preferències"
@@ -8056,23 +6983,17 @@
       "Are you sure?": [
         "N'esteu segur?"
       ],
-      "Birthday": [
-        "Aniversari"
-      ],
       "Cancel subscription?": [
         "Voleu cancel·lar la subscripció?"
       ],
-      "Cannot add more addresses": [
-        "No es poden afegir més adreces."
+      "Captcha": [
+        "Captcha"
       ],
       "Change access to viewer?": [
         "Voleu canviar l'accés a visualitzador?"
       ],
       "Change password": [
         "Canvia la contrasenya"
-      ],
-      "Clearing data": [
-        "Netejant dades"
       ],
       "Collaborate on documents": [
         "Col·laboració en documents"
@@ -8089,26 +7010,11 @@
       "Connect your custom domain": [
         "Connecteu el vostre domini personalitzat"
       ],
-      "Contact Details": [
-        "Detalls del contacte"
-      ],
-      "Contact group": [
-        "Grups de contactes"
-      ],
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
-      "Contacts": [
-        "Contactes"
-      ],
       "Create a new folder": [
         "Crea una carpeta"
-      ],
-      "Create contact": [
-        "Crea un contacte"
-      ],
-      "Create new group": [
-        "Crea un grup nou"
       ],
       "Currency": [
         "Moneda"
@@ -8125,22 +7031,8 @@
       "Decline invitation?": [
         "Voleu rebutjar la invitació?"
       ],
-      "Delete ${ count } contact": [
-        "Suprimeix ${ count } contacte",
-        "Suprimeix ${ count } contactes"
-      ],
-      "Delete ${ count } contact group": [
-        "Eliminar ${ count } grup de contactes",
-        "Eliminar ${ count } grups de contactes"
-      ],
-      "Delete ${ value }": [
-        "Elimina ${ value }"
-      ],
       "Delete permanently": [
         "Elimina de manera permanent"
-      ],
-      "Deleting contacts": [
-        "Eliminant contactes"
       ],
       "Desktop": [
         "Escriptori"
@@ -8153,9 +7045,6 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
-      ],
-      "Docs": [
-        "Documents"
       ],
       "Document Size Limit Exceeded": [
         "S’ha superat el límit de mida del document"
@@ -8172,26 +7061,8 @@
       "Download the app": [
         "Descarrega l'aplicació"
       ],
-      "Edit contact": [
-        "Editar contacte"
-      ],
-      "Edit contact group": [
-        "Edita Grup de Contactes"
-      ],
-      "Edit email settings": [
-        "Edita les preferències del correu electrònic"
-      ],
-      "Edit image": [
-        "Editar imatge"
-      ],
       "Editing paused": [
         "S'ha posat en pausa l'edició"
-      ],
-      "Email addresses": [
-        "Adreces de correu electrònic"
-      ],
-      "Email settings": [
-        "Configuració del correu"
       ],
       "Enable 2FA": [
         "Activa el 2FA"
@@ -8211,9 +7082,6 @@
       "Error Syncing": [
         "Error de sincronització"
       ],
-      "Exporting contacts": [
-        "Exportant contactes"
-      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Aconseguiu **${ referralInfo.uiData.refereeRewardAmount }** en crèdits amb ${ planTitle }"
       ],
@@ -8222,9 +7090,6 @@
       ],
       "Get the apps": [
         "Aconseguiu les aplicacions"
-      ],
-      "Groups": [
-        "Grups"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -8247,12 +7112,6 @@
       "Human verification": [
         "Verificació humana"
       ],
-      "Import contacts": [
-        "Importar contactes"
-      ],
-      "Import groups": [
-        "Importa grups"
-      ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"
       ],
@@ -8262,20 +7121,11 @@
       "Limited availability": [
         "Disponibilitat limitada"
       ],
-      "Link confirmation": [
-        "Confirmació d'enllaç"
-      ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Feu una còpia al ${ DRIVE_APP_NAME }"
       ],
       "Make a secure connection your default": [
         "Feu d'una connexió segura l'opció predeterminada"
-      ],
-      "Merge contacts": [
-        "Combinar contactes"
-      ],
-      "Merging contacts": [
-        "Combinant contactes"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migreu la vostra organització a ${ BRAND_NAME }"
@@ -8301,17 +7151,8 @@
       "No breaches detected": [
         "No s'ha detectat cap infracció"
       ],
-      "Notes": [
-        "Notes"
-      ],
       "Offline": [
         "Fora de línia"
-      ],
-      "One email, many recipients": [
-        "Un correu electrònic, diversos destinataris"
-      ],
-      "Open actions dropdown": [
-        "Obrir el desplegable d'accions"
       ],
       "Open pagination": [
         "Obrir paginació"
@@ -8321,15 +7162,6 @@
       ],
       "Organization setup": [
         "Configuració de l'organització"
-      ],
-      "Other information": [
-        "Altres dades"
-      ],
-      "Other names": [
-        "Altres noms"
-      ],
-      "Phone numbers": [
-        "Números de telèfon"
       ],
       "Photos": [
         "Fotos"
@@ -8349,20 +7181,11 @@
       "Public link settings": [
         "Preferències de l'enllaç públic"
       ],
-      "Re-sign all contacts": [
-        "Tornant a signar tots els contactes"
-      ],
-      "Re-signing contacts": [
-        "Tornant a signar contactes"
-      ],
       "Read-only": [
         "Només lectura"
       ],
       "Recommended actions": [
         "Accions recomanades"
-      ],
-      "Recover data": [
-        "Recuperar dades"
       ],
       "Remove your access?": [
         "Voleu esborrar el vostre accés?"
@@ -8384,12 +7207,6 @@
       ],
       "Security center": [
         "Centre de seguretat"
-      ],
-      "Select action to take on contact group": [
-        "Seleccionar acció a realitzar al grup de contactes"
-      ],
-      "Select contact group": [
-        "Seleccionar grup de contactes"
       ],
       "Select link expiration date": [
         "Selecciona la data de caducitat de l'enllaç"
@@ -8484,12 +7301,6 @@
       "VPN explained": [
         "Explicacions sobre la VPN"
       ],
-      "Warning": [
-        "Advertència"
-      ],
-      "Warning: suspected fake website": [
-        "Avís: presumpte lloc web fals"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
@@ -8515,37 +7326,20 @@
         "La vostra informació exposada"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "Accions"
-      ],
-      "Created": [
-        "S'ha creat"
-      ],
-      "Expires": [
-        "Caduca"
-      ],
-      "Fingerprint": [
-        "Empremta digital"
-      ],
-      "Status": [
-        "Estat"
-      ],
-      "Type": [
-        "Tipus"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Afegeix un mètode de recuperació de dades per desbloquejar-les si oblideu la contrasenya."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Afegiu un correu electrònic o un telèfon de recuperació per poder restablir la contrasenya si l'oblideu."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Afegiu aquest fitxer compartit al vostre ${ DRIVE_APP_NAME } per accedir-hi fàcilment més endavant."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automàtic indica que el format del compositor s'utilitza per enviar-lo a aquest usuari. El text sense format indica que el missatge sempre es convertirà a text sense format en enviar."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
@@ -8553,23 +7347,14 @@
       "Change shared item settings": [
         "Canvia les preferències de l'element compartit"
       ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "La signatura digital de correus electrònics ajuda a autentificar els missatges que envies"
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creeu una frase de recuperació per poder recuperar les dades si oblideu la contrasenya."
       ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "El xifratge de correu electrònic obliga la signatura de correu electrònic a ajudar a autenticar els missatges enviats"
-      ],
-      "Encrypted data": [
-        "Dades xifrades"
-      ],
-      "Encrypted data with verified digital signature": [
-        "Dades xifrades amb signatura digital verificada"
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereu una frase de recuperació per protegir el compte davant la pèrdua de dades."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Assistència d'IA instantània, amb una persona experta a la vostra disposició!"
-      ],
-      "Load image": [
-        "Carrega la imatge"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "El missatge i el nom del fitxer s'emmagatzemen amb un xifratge d'accés zero quan s'inclouen al correu electrònic"
@@ -8577,17 +7362,11 @@
       "Not all information listed here was exposed for all users.": [
         "No tota la informació enumerada aquí es va exposar per a tots els usuaris."
       ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
-      ],
       "Shared with end-to-end encryption": [
         "Compartit amb xifratge d'extrem a extrem"
       ],
-      "The image could not be loaded": [
-        "No s'ha pogut carregar la imatge"
-      ],
-      "The image could not be loaded using proxy": [
-        "No s'ha pogut carregar la imatge a través del proxy."
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per desbloquejar-les."
       ],
       "This link has expired. Please extend expiration date": [
         "Aquest enllaç ha caducat. Amplieu la data de caducitat"
@@ -8595,14 +7374,14 @@
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
       ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"
-      ],
-      "Version 6 OpenPGP key": [
-        "Clau OpenPGP de la versió 6"
-      ],
       "We have sent them an invite to access the item.": [
         "Els hem enviat una invitació per accedir a l'element."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "El fitxer de recuperació ha caducat. Descarregueu-ne un de nou perquè pugueu recuperar les dades."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La frase de recuperació ha caducat. Aconseguiu-ne una de nova per a poder recuperar les dades."
       ]
     },
     "tooltip": {
@@ -8799,51 +7578,14 @@
       "A change from another editor could not be read and is missing from this page.": [
         "Un canvi fet per un altre editor no s'ha pogut llegir i falta en aquesta pàgina."
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
-        "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
-      ],
-      "Are you sure you want to permanently delete these contact groups?": [
-        "Segur que voleu eliminar aquests grups de contacte de manera permanent?"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "N'esteu segur, de voler eliminar permanentment aquest grup de contactes?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Estàs segur de que vols eliminar aquest contacte permanentment?"
-      ],
-      "Contacts could not be merged": [
-        "Els contactes no s’han pogut combinar"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"
       ],
       "Some of the document could not be read, so editing is disabled.": [
         "No s'ha pogut llegir part del document i, per tant, s'ha desactivat l'edició."
       ],
-      "The contact data is corrupted and cannot be displayed.": [
-        "Les dades de contacte estan corrompudes i no es poden mostrar."
-      ],
-      "The contact failed to load.": [
-        "No s'ha pogut carregar el contacte."
-      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "No s'ha pogut desxifrar el contingut xifrat."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "No s'ha pogut verificar la signatura dels detalls del contacte."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Aquesta acció és irreversible. Introduïu la paraula ${ boldDanger } al camp per a continuar."
       ],
       "This will replace all the data in the spreadsheet": [
         "Això reemplaçarà totes les dades del full de càlcul"

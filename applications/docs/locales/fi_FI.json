@@ -40,54 +40,17 @@
       "Activate recovery": [
         "Aktivoi palautus"
       ],
-      "Add": [
-        "Lisää"
-      ],
       "Add account": [
         "Lisää tili"
-      ],
-      "Add address": [
-        "Lisää osoite"
       ],
       "Add another account": [
         "Lisää toinen tili"
       ],
-      "Add birthday": [
-        "Lisää syntymäpäivä"
-      ],
-      "Add contact": [
-        "Lisää yhteystieto"
-      ],
-      "Add email": [
-        "Lisää sähköpostiosoite"
-      ],
-      "Add group": [
-        "Lisää ryhmä"
-      ],
-      "Add new group": [
-        "Lisää uusi ryhmä"
-      ],
-      "Add note": [
-        "Lisää merkintä"
-      ],
       "Add people or groups to share": [
         "Lisää jakoon henkilöitä tai ryhmiä"
       ],
-      "Add phone number": [
-        "Lisää puhelinnumero"
-      ],
-      "Add to group": [
-        "Lisää ryhmään"
-      ],
-      "Apply": [
-        "Toteuta"
-      ],
       "Ask me next time": [
         "Kysy seuraavalla kerralla"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
-        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
       ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
@@ -125,18 +88,6 @@
       "Chat with us": [
         "Keskustele kanssamme"
       ],
-      "Choose a file or drag it here": [
-        "Valitse tiedosto tai pudota se tähän"
-      ],
-      "Clear data": [
-        "Tyhjennä tiedot"
-      ],
-      "Clear query": [
-        "Tyhjennä haku"
-      ],
-      "Click here.": [
-        "Paina tästä."
-      ],
       "Close": [
         "Sulje"
       ],
@@ -155,23 +106,11 @@
       "Collapse list of pending invitations": [
         "Pienennä odottavien kutsujen lista"
       ],
-      "Compose": [
-        "Kirjoita"
-      ],
-      "Confirm": [
-        "Vahvista"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        "Vahvista linkin ${ linkToShow } avaus"
-      ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
       ],
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
-      ],
-      "Contact group": [
-        "Yhteystietoryhmä"
       ],
       "Continue": [
         "Jatka"
@@ -185,9 +124,6 @@
       "Copy as markdown": [
         "Kopioi Markdown-muodossa"
       ],
-      "Copy email to clipboard": [
-        "Kopioi sähköpostiosoite leikepöydälle"
-      ],
       "Copy invite link": [
         "Kopioi kutsulinkki"
       ],
@@ -197,17 +133,11 @@
       "Copy password": [
         "Kopioi salasana"
       ],
-      "Copy version number to clipboard": [
-        "Kopioi versionumero leikepöydälle"
-      ],
       "Create": [
         "Luo"
       ],
       "Create a copy": [
         "Luo kopio"
-      ],
-      "Create a new contact group": [
-        "Luo uusi yhteystietoryhmä"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Luo uusi ${ SHEETS_APP_NAME }"
@@ -224,37 +154,14 @@
       "Decline invite": [
         "Kieltäydy kutsusta"
       ],
-      "Delete": [
-        "Poista"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Poista ${ selectedCount } yhteystieto",
-        "Poista ${ selectedCount } yhteystietoa"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Poista ${ selectedCount } yhteystietoryhmä",
-        "Poista ${ selectedCount } yhteystietoryhmää"
-      ],
-      "Delete contact": [
-        "Poista yhteystieto"
-      ],
-      "Delete contact group": [
-        "Poista yhteystietoryhmä"
-      ],
       "Delete older revisions": [
         "Poista vanhemmat versiot"
       ],
       "Delete permanently": [
         "Poista pysyvästi"
       ],
-      "Deselect all": [
-        "Tyhjennä valinnat"
-      ],
       "Dismiss": [
         "Sulje"
-      ],
-      "Done": [
-        "Valmis"
       ],
       "Download": [
         "Lataa"
@@ -274,9 +181,6 @@
       "Download logs": [
         "Lataa lokitiedot"
       ],
-      "Edit": [
-        "Muokkaa"
-      ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
@@ -285,9 +189,6 @@
       ],
       "Edit sign-in details": [
         "Muokkaa kirjautumistietoja"
-      ],
-      "Email settings": [
-        "Osoitteen asetukset"
       ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
@@ -298,17 +199,8 @@
       "Explore other plans": [
         "Tutustu muihin tilauksiin"
       ],
-      "Export": [
-        "Vie"
-      ],
-      "Export contact group": [
-        "Vie yhteystietoryhmä"
-      ],
       "Export editor state for version": [
         "Vie editorin tila versioon"
-      ],
-      "Export selection as .vcf": [
-        "Vie valinta .vcf-tiedostona"
       ],
       "Export this version (as docx)": [
         "Vie tämä versio (docx-muodossa)"
@@ -321,9 +213,6 @@
       ],
       "Forgot password?": [
         "Unohditko salasanasi?"
-      ],
-      "Forward as attachment": [
-        "Välitä liitteenä"
       ],
       "Generate password": [
         "Luo salasana"
@@ -349,9 +238,6 @@
       "Go to ${ planOrAppName }": [
         "Avaa ${ planOrAppName }"
       ],
-      "Go to label": [
-        "Siirry tunnisteeseen"
-      ],
       "Got it": [
         "Selvä"
       ],
@@ -367,23 +253,11 @@
       "Hide": [
         "Piilota"
       ],
-      "Hide advanced PGP settings": [
-        "Piilota PGP-lisäasetukset"
-      ],
       "Hide more benefits": [
         "Piilota enemmän etuja"
       ],
-      "Image could not be loaded with tracker protection.": [
-        "Kuvaa ei voitu ladata seurantasuojauksen vuoksi."
-      ],
-      "Image will be loaded without a proxy": [
-        "Kuva ladataan ilman välityspalvelinta"
-      ],
       "Import": [
         "Tuo"
-      ],
-      "import": [
-        "tuo"
       ],
       "Import data": [
         "Tuo tietoja"
@@ -400,12 +274,6 @@
       "Learn more": [
         "Lue lisää"
       ],
-      "Load": [
-        "Lataa"
-      ],
-      "Load image": [
-        "Lataa kuva"
-      ],
       "Make a copy": [
         "Luo kopio"
       ],
@@ -421,23 +289,11 @@
       "Mark as resolved": [
         "Merkitse ratkaistuksi"
       ],
-      "Mark for deletion": [
-        "Merkitse poistettavaksi"
-      ],
       "Markdown (.md)": [
         "Markdown (.md)"
       ],
       "Maybe later": [
         "Ehkä myöhemmin"
-      ],
-      "Merge": [
-        "Yhdistä"
-      ],
-      "Merge contacts": [
-        "Yhdistä yhteystiedot"
-      ],
-      "More actions": [
-        "Lisää toimintoja"
       ],
       "More benefits": [
         "Lisää etuja"
@@ -469,12 +325,6 @@
       "New folder": [
         "Uusi kansio"
       ],
-      "New message": [
-        "Uusi viesti"
-      ],
-      "Next": [
-        "Seuraava"
-      ],
       "Next month": [
         "Seuraava kuukausi"
       ],
@@ -505,20 +355,11 @@
       "Plain Text (.txt)": [
         "Pelkkä teksti (.txt)"
       ],
-      "Preview contact": [
-        "Esikatsele yhteystietoa"
-      ],
       "Previous month": [
         "Edellinen kuukausi"
       ],
       "Print": [
         "Tulosta"
-      ],
-      "Re-sign": [
-        "Allekirjoita uudelleen"
-      ],
-      "Recover data": [
-        "Palauta tiedot"
       ],
       "Refer a friend": [
         "Kerro kaverille"
@@ -625,9 +466,6 @@
       "Select ${ planOrAppName }": [
         "Valitse ${ planOrAppName }"
       ],
-      "Select all": [
-        "Valitse kaikki"
-      ],
       "Set password or expiration date": [
         "Aseta salasana tai erääntymispäivä"
       ],
@@ -660,9 +498,6 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Jakaminen on päästä päähän -salattu"
-      ],
-      "Show advanced PGP settings": [
-        "Näytä PGP-lisäasetukset"
       ],
       "Show more": [
         "Näytä lisää"
@@ -712,9 +547,6 @@
       "Trashing...": [
         "Siirretään roskakoriin..."
       ],
-      "Trust": [
-        "Luota"
-      ],
       "Try again": [
         "Yritä uudelleen"
       ],
@@ -732,12 +564,6 @@
       ],
       "Unlock data": [
         "Avaa tiedot"
-      ],
-      "Unmark for deletion": [
-        "Poista poistomerkintä"
-      ],
-      "Untrust": [
-        "Älä luota"
       ],
       "Update recovery file": [
         "Päivitä palautustiedosto"
@@ -757,9 +583,6 @@
       "Upload and share files": [
         "Lähetä ja jaa tiedostoja"
       ],
-      "Upload picture": [
-        "Lataa kuva"
-      ],
       "Use ${ label } theme": [
         "Käytä ${ label }-teemaa"
       ],
@@ -772,9 +595,6 @@
       "Use authentication code": [
         "Käytä todennuskoodia"
       ],
-      "Use for sending": [
-        "Käytä lähetykseen"
-      ],
       "Use recovery code": [
         "Käytä palautuskoodia"
       ],
@@ -786,9 +606,6 @@
       ],
       "Verify now": [
         "Vahvista nyt"
-      ],
-      "View": [
-        "Tarkastele"
       ],
       "View ${ pendingCount } invitation": [
         "Näytä ${ pendingCount } odottava kutsu",
@@ -814,27 +631,6 @@
       ],
       "words out of": [
         "sanaa /"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
-        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
-      ]
-    },
-    "Actions message": {
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } tai ${ importContact }."
-      ],
-      "No results found.": [
-        "Tuloksia ei löytynyt."
-      ],
-      "Please try another search term.": [
-        "Kokeile eri hakusanaa."
-      ],
-      "You don't have any contacts.": [
-        "Sinulla ei ole yhteystietoja."
-      ],
-      "You don't have any groups.": [
-        "Sinulla ei ole ryhmiä."
       ]
     },
     "Addon": {
@@ -916,11 +712,6 @@
       ],
       "Writing assistant seats": [
         "Kirjoitusavustajan käyttäjäpaikat"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "Jos poistut nyt, kaikkia yhteystietoja ei välttämättä tuoda"
       ]
     },
     "Apps dropdown": {
@@ -1387,76 +1178,6 @@
       ],
       "strawberry": [
         "mansikka"
-      ]
-    },
-    "Contact field label": {
-      "Address": [
-        "Osoite"
-      ],
-      "Anniversary": [
-        "Merkkipäivä"
-      ],
-      "Birthday": [
-        "Syntymäpäivä"
-      ],
-      "Display name": [
-        "Näyttönimi"
-      ],
-      "Email": [
-        "Sähköpostiosoite"
-      ],
-      "Enter a display name or nickname": [
-        "Syötä näyttönimi tai lempinimi"
-      ],
-      "First name": [
-        "Etunimi"
-      ],
-      "Gender": [
-        "Sukupuoli"
-      ],
-      "Language": [
-        "Kieli"
-      ],
-      "Last name": [
-        "Sukunimi"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Jäsen"
-      ],
-      "Name": [
-        "Nimi"
-      ],
-      "Note": [
-        "Muistiinpano"
-      ],
-      "Organization": [
-        "Organisaatio"
-      ],
-      "Phone": [
-        "Puhelin"
-      ],
-      "Photo": [
-        "Kuva"
-      ],
-      "Role": [
-        "Rooli"
-      ],
-      "Time zone": [
-        "Aikavyöhyke"
-      ],
-      "Title": [
-        "Nimike"
-      ],
-      "URL": [
-        "URL-osoite"
-      ]
-    },
-    "Contact image": {
-      "Contact image": [
-        "Yhteystiedon kuva"
       ]
     },
     "Country name": {
@@ -2298,21 +2019,6 @@
         "${ VPN_APP_NAME }:lle"
       ]
     },
-    "Default display name vcard": {
-      "Unknown": [
-        "Tuntematon"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Käytä yleistä oletusta (${ defaultValueText })"
-      ]
-    },
-    "Default signing preference": {
-      "Use global default (${ globalDefaultText })": [
-        "Käytä yleistä oletusta (${ globalDefaultText })"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Erääntynyt lasku"
@@ -2346,12 +2052,6 @@
       "Create groups you can email with a single address.": [
         "Luo ryhmiä, joille voit lähettää sähköpostia yhdellä osoitteella."
       ],
-      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Yhteystietoja poistetaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Voitte käyttää sähköpostianne ja kalenterianne helposti tietokoneella ja mobiililaitteella."
       ],
@@ -2360,9 +2060,6 @@
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Kannusta kaksivaiheisen tunnistautumisen käyttöä organisaatiossasi turvallisuuden parantamiseksi."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Varmistakaa turvallinen pääsy organisaation tietoihin, vaikka tiiminne työskentelisi etänä tai käyttäisi julkista Wi-Fi-yhteyttä."
@@ -2382,14 +2079,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auta tiimiäsi arkaluonteisten yritys- ja asiakastietojen salasanojen turvallisessa säilyttämisessä."
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
-      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Voit lisätä kokouslinkkejä tapahtumakutsuihisi välittömästi."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Aseta tiedoillesi palautustapa, jottet menetä niitä."
@@ -2406,20 +2097,11 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslauseke."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ maxContactString } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
-      ],
-      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
-      ],
       "To start, give your organization a name.": [
         "Aloita antamalla organisaatiollesi nimi."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Päivittäkää tilaukseen ${ planName }, jotta voitte jatkaa tiedostojen jakamista muokkausoikeudella"
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Käyttäkää tätä opasta, jotta organisaationne pääsee viipymättä hyötymään ${ BRAND_NAME }:n alan johtavasta salaus- ja yksityisyys-ekosysteemistä."
@@ -2427,30 +2109,11 @@
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "On ikävä nähdä teidän lähtevän. Jos teillä on hetki aikaa, arvostaisimme kovasti, jos kertoisitte, miksi haluatte peruuttaa. Palautteenne auttaa meitä tekemään ${ BRAND_NAME } -palvelusta paremman kaikille."
       ],
-      "With contact groups, you can send emails to everyone in the group with one click.": [
-        "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Voit merkitä yhteystiedot, joita et haluat yhdistää tai säilyttää, poistettaviksi. Poisto suoritetaan vasta Yhdistä-painiketta painettaessa."
-      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Tilisi ja tietojesi palautustavat on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
       ],
       "Your account and data recovery methods are set.": [
         "Tilisi ja tietojesi palautustavat on asetettu."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Lisäksi CSV- ja vCard-kentät on automaattisesti kohdistettu. Voit tarkistaa ja muuttaa näitä parituksia manuaalisesti."
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Lataamassasi CSV-tiedostossa havaittiin seuraavat kentät. Valitse ne, jotka haluat tuoda."
       ]
     },
     "Downgrade account reason": {
@@ -2589,9 +2252,6 @@
         "${ failureItems.length } kohteen siirto epäonnistui",
         "${ failureItems.length } kohteen siirto epäonnistui"
       ],
-      "A group with this name already exists": [
-        "Tämän niminen ryhmä on jo olemassa"
-      ],
       "Already a member of this share": [
         "On jo tämän jaon jäsen"
       ],
@@ -2616,20 +2276,8 @@
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Koska tämä tiedosto oli jaetussa kansiossa, vain kansion omistaja voi palauttaa sen"
       ],
-      "Cannot export this contact": [
-        "Tätä yhteystietoa ei voida viedä"
-      ],
       "Cannot find move target": [
         "Siirtokohdetta ei löydy"
-      ],
-      "Contact could not be saved": [
-        "Yhteystietoa ei voitu tallentaa"
-      ],
-      "Contact name is too long": [
-        "Yhteystiedon nimi on liian pitkä"
-      ],
-      "Contact signature not verified": [
-        "Yhteystiedon allekirjoitusta ei ole vahvistettu"
       ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
@@ -2670,9 +2318,6 @@
       "Failed to load recent documents": [
         "Viimeisimpien dokumenttien lataaminen epäonnistui"
       ],
-      "Failed to open to contact": [
-        "Yhteystiedon avaaminen epäonnistui"
-      ],
       "Failed to remove older revisions": [
         "Vanhempien versioiden poistaminen epäonnistui"
       ],
@@ -2694,12 +2339,6 @@
       "Failed to update public share node": [
         "Julkisen jakosolmun päivittäminen epäonnistui."
       ],
-      "First name is too long": [
-        "Etunimi on liian pitkä"
-      ],
-      "Image upload failed": [
-        "Kuvan lataus epäonnistui"
-      ],
       "Incorrect backup password. Please try again.": [
         "Väärä varasalasana. Yritä uudelleen."
       ],
@@ -2712,15 +2351,6 @@
       "Invalid coupon": [
         "Virheellinen kuponki"
       ],
-      "Invalid email address": [
-        "Virheellinen sähköpostiosoite"
-      ],
-      "Invalid name": [
-        "Virheellinen nimi"
-      ],
-      "Invalid public key file": [
-        "Virheellinen julkisen avaimen tiedosto"
-      ],
       "Invalid URL": [
         "Virheellinen URL"
       ],
@@ -2732,9 +2362,6 @@
       ],
       "Item not found": [
         "Kohdetta ei löytynyt"
-      ],
-      "Last name is too long": [
-        "Sukunimi on liian pitkä"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Vanhanmallista julkista linkkiä ei voida päivittää. Luo uusi julkinen linkki."
@@ -2750,14 +2377,6 @@
       ],
       "Not a valid number": [
         "Virheellinen numero"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Yhdellä yhteystiedolla ei ole sähköpostiosoitetta: ${ noEmailsContactNamesList }",
-        "Joillakin yhteystiedoilla ei ole sähköpostiosoitteita: ${ noEmailsContactNamesList }"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Yksi ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }",
-        "Osa ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }"
       ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
@@ -2780,9 +2399,6 @@
       "Please enter ZIP code": [
         "Syötä postinumero"
       ],
-      "Please provide either a first name, a last name or a display name": [
-        "Syötä joko etu-, suku- tai näyttönimi"
-      ],
       "Please select a country": [
         "Valitse maa"
       ],
@@ -2802,20 +2418,11 @@
       "Signature is missing": [
         "Allekirjoitus puuttuu"
       ],
-      "Signature not verified": [
-        "Allekirjoitusta ei vahvistettu"
-      ],
       "Signature verification failed": [
         "Allekirjoituksen vahvistus epäonnistui"
       ],
-      "Some contacts could not be deleted": [
-        "Joitakin yhteystietoja ei voitu poistaa"
-      ],
       "Some documents could not be loaded": [
         "Joitain dokumentteja ei voitu ladata"
-      ],
-      "Some groups could not be deleted": [
-        "Joitakin ryhmiä ei voitu poistaa"
       ],
       "Some trashed documents could not be loaded": [
         "Joitakin roskakorissa olevia dokumentteja ei voitu ladata"
@@ -2850,9 +2457,6 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Dokumentin päivityksen käsittelyssä tapahtui virhe. Päivitä sivu ja yritä uudelleen."
       ],
-      "There was an error when exporting the contacts vCards": [
-        "Yhteystietojen vCardeja vietäessä tapahtui virhe"
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Kenttä ylittää ${ maximumLength }-merkin enimmäismäärän."
       ],
@@ -2864,9 +2468,6 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
-      ],
-      "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Viesti saattaa sisältää joitakin URL-linkkejä, joita käyttämäsi selain ei voi avata oikein."
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
@@ -2913,57 +2514,11 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Väärä palautuslauseke. Yritä uudelleen tai kokeile toista palautustapaa."
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
-        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
-      ],
-      "You must set a name": [
-        "Nimi on asetettava"
-      ],
       "⚠️ Undecryptable device": [
         "⚠️ Laite, jonka salausta ei voi purkaa"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Odottamaton virhe. Tuonti on aloitettava uudelleen."
-      ]
-    },
-    "Error importing contact": {
-      "Encryption failed": [
-        "Salaus epäonnistui"
-      ],
-      "Missing FN property": [
-        "Puuttuva FN-ominaisuus"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard 3.0:aa edeltäviä versioita ei tueta"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Virhe luettaessa tiedostoa \"${ formattedFilename }\". Väärä tiedostomuoto."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Ei valittua .csv- tai .vcf-tiedostoa"
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "Tiedosto ${ formattedFilename } sisältää yli ${ maxContactString } yhteystietoa."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Tiedosto ${ formattedFilename } ei sisällä tuotavia yhteystietoja."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Tiedosto \"${ formattedFilename }\" on tyhjä."
       ]
     },
     "Error message": {
@@ -2990,11 +2545,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
-      ]
-    },
-    "Error notification": {
-      "Display name cannot be empty": [
-        "Näyttönimi ei voi olla tyhjä"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3158,79 +2708,12 @@
         "SMS"
       ]
     },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Salataan ja lisätään yhteystietoja: ${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "vCard versiot < 3.0"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } yhteystieto salattiin ja lisättiin yhteystietoihisi",
-        "${ totalImported }/${ totalToImport } yhteystietoa salattiin ja lisättiin yhteystietoihisi"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Virhe salattaessa ja lisättäessä yhteystietoa, jonka vuoksi yhteystietoa ei tuotu."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Yhteystietoja lisättäessä ja salattaessa tapahtui virhe. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Virhe salattaessa ja lisättäessä yhteystietoja, jonka vuoksi yhteystietoja ei tuotu."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Yhteystieto tuotiin ja löydät sen nyt yhteystiedoistasi."
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Yhteystiedot tuotiin ja löydät ne nyt yhteystiedoistasi."
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Ota yhteyttä ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } yhteystieto",
-        "${ totalContacts } yhteystietoa"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "tuntematon"
-      ]
-    },
-    "Import contacts warning": {
-      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "${ CONTACTS_APP_NAME } ei ${ forNow } tue:"
-      ],
-      "for now": [
-        "toistaiseksi"
-      ]
-    },
-    "Import warning": {
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
-      ],
-      "No contact can be imported. Click for details": [
-        "Yhteystietoja ei voida tuoda. Painamalla tästä saat lisätietoja"
-      ]
-    },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "\"${ documentTitle }\" on siirretty roskakoriin. Se pysyy siellä, kunnes palautat sen tai poistat pysyvästi."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "\"${ documentTitle }\" on roskakorissa ja pysyy siellä, kunnes poistat sen pysyvästi."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } sähköpostiosoite",
-        "${ addressCount } sähköpostiosoitetta"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -3241,34 +2724,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } yhteystieto sisältää useita sähköpostiosoitteita.",
-        "${ contactCount } yhteystietoa sisältää useita sähköpostiosoitteita."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } jäsen",
-        "${ contactEmailsLength } jäsentä"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        "${ contactName } sisältää useita sähköpostiosoitteita."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } yhteystieto löytyi",
-        "${ contactsCount } yhteystietoa löytyi"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } yhteystieto",
-        "${ contactsLength } yhteystietoa"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } mahdollistaa tosiaikaisen yhteiskäytön päästä päähän -salauksella täydellistä yksityisyyttä varten. Aloita muokkaus luomalla kopio tai pyydä muokkausoikeutta tiedoston omistajalta."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } palvelussa"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } ryhmä löytyi",
-        "${ groupCounts } ryhmää löytyi"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
@@ -3282,14 +2742,6 @@
       ],
       "${ planName } expires today.": [
         "${ planName } erääntyy tänään."
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
-        "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } yhteystieto päivitettiin.",
-        "${ updated } yhteystietoa päivitettiin."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } naamioi IP-osoitteesi, jotta verkkosivustot eivät voi tunnistaa sinua."
@@ -3336,9 +2788,6 @@
       ],
       "Ad targeting": [
         "Mainosten kohdentaminen"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Mainostajat seuraavat verkkoselailua voidakseen näyttää kohdennettuja mainoksia. ${ VPN_APP_NAME } estää seurannan ja mainokset, nopeuttaa verkkoyhteyttä ja tekee internetin käytöstä sujuvampaa."
@@ -3388,17 +2837,11 @@
       "Can't write into folder": [
         "Kansioon ei voida kirjoittaa"
       ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
-      ],
       "characters": [
         "merkkiä"
       ],
       "characters without spaces": [
         "merkkiä ilman välilyöntejä"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
       ],
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
@@ -3409,12 +2852,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Aloita yksityinen verkkoselaus yhdistämällä ${ VPN_APP_NAME }:ään"
       ],
-      "Contact assigned to group ${ contactGroupName }": [
-        "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
-      ],
-      "Contact unassigned from group ${ contactGroupName }": [
-        "Yhteystieto poistettiin ryhmästä ${ contactGroupName }"
-      ],
       "Continue": [
         "Jatka"
       ],
@@ -3424,9 +2861,6 @@
       "Copied to clipboard": [
         "Kopioitu leikepöydälle"
       ],
-      "Copy the link to clipboard": [
-        "Kopioi linkki leikepöydälle"
-      ],
       "Copy your referral link": [
         "Kopioi suosittelulinkkisi"
       ],
@@ -3435,9 +2869,6 @@
       ],
       "Create a copy to edit": [
         "Luo muokatava kopio"
-      ],
-      "Create a new contact group": [
-        "Luo uusi yhteystietoryhmä"
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "Luo suojattu pilvi ${ memberCount } jäsenelle",
@@ -3482,15 +2913,6 @@
       "Download current logs": [
         "Lataa nykyiset lokitiedot"
       ],
-      "Drop file here to upload": [
-        "Pudota ladattava tiedosto tähän"
-      ],
-      "Drop to import": [
-        "Tuo pudottamalla"
-      ],
-      "Duplicate key updated": [
-        "Avaimen kaksoiskappale päivitettiin"
-      ],
       "Each code can only be used once": [
         "Jokaista koodia voi käyttää vain kerran."
       ],
@@ -3499,9 +2921,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Sähköpostin isännöinti on saatavilla vain jo entuudestaan omistamillesi verkkotunnuksille. ${ BRAND_NAME }in kautta ei tällä hetkellä ole mahdollista rekisteröidä verkkotunnuksia. Voit käyttää miltä tahansa verkkotunnustoimittajalta hankkimaasi verkkotunnusta."
-      ],
-      "Emails are automatically signed": [
-        "Viestit allekirjoitetaan automaattisesti"
       ],
       "End-to-end encrypted": [
         "Päästä päähän -salattu"
@@ -3644,12 +3063,6 @@
       "Keep your files secure with end-to-end encryption.": [
         "Suojaa tiedostosi päästä päähän -salauksella."
       ],
-      "Key fingerprint": [
-        "Avaimen sormenjälki"
-      ],
-      "Labels:": [
-        "Tunnisteet:"
-      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -3708,15 +3121,6 @@
       "New": [
         "Uusi"
       ],
-      "No contacts added yet": [
-        "Yhteystietoja ei ole vielä lisätty"
-      ],
-      "No email address": [
-        "Ei sähköpostiosoitetta"
-      ],
-      "No group found": [
-        "Ryhmää ei löytynyt"
-      ],
       "No recent documents match your search.": [
         "Ei hakuasi vastaavia viimeaikaisia asiakirjoja."
       ],
@@ -3725,12 +3129,6 @@
       ],
       "No version history available": [
         "Versiohistoriaa ei ole käytettävissä"
-      ],
-      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Mikään tallennetuista avaimista ei kelpaa salaukseen. Viestien lähettämiseksi tähän osoitteeseen, lataa kelvollinen avain tai poista \"Salaa viestit\" käytöstä."
-      ],
-      "Not a valid URL": [
-        "Virheellinen URL"
       ],
       "Not connected": [
         "Ei yhdistetty"
@@ -3743,9 +3141,6 @@
       ],
       "On public WiFi networks": [
         "Julkisissa Wi-Fi-verkoissa"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "Hups! Tätä taulukkoa ei voi tallentaa viimeisimpien muutosten kanssa, joten olemme keskeyttäneet muokkauksen, jotta työsi ei menisi hukkaan."
@@ -3783,48 +3178,14 @@
       "Pending invitations": [
         "Odottavat kutsut"
       ],
-      "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline on yhteensopiva vain pelkkä teksti -muodon kanssa."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME lähettää viestin automaattisesti käyttäen nykyistä kirjoitustilaa."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Syötä salasana purkaaksesi salauksen ja nähdäksesi sisällön."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Vie kopio nykyisistä muutoksista päävalikosta ja lataa sivu uudelleen."
       ],
-      "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Huomioi, että ryhmiin lisättyjä osoitteita EI poisteta."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Huomioi, että ryhmään lisättyjä osoitteita EI poisteta."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
-      ],
-      "Please provide a name and an email address for creating a group.": [
-        "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet.",
-        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet."
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
-      ],
       "Please try again in a few moments": [
         "Yritä hetken kuluttua uudelleen"
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Odota kun etsitään yhteystietoja, jotka voidaan allekirjoittaa uudelleen ensisijaisella salausavaimella."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Odota, kun etsimme inaktiivisella avaimella salattuja tietoja sisältäviä yhteystietoja."
-      ],
-      "Primary": [
-        "Ensisijainen"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Yksityinen selaus (tai \"incognito\"-tila) on hyödyllinen pitämään toimintasi piilotettuna vain laitteellasi. Se estää selainta tallentamasta selaushistoriaa ja evästeitä, mutta se ei tee sinusta näkymätöntä. Internet-palveluntarjoajasi, verkon ylläpitäjäsi ja vierailemasi verkkosivustot näkevät edelleen, mitä teet verkossa."
@@ -3874,9 +3235,6 @@
       "Select a folder to move to.": [
         "Valitse kohdekansio."
       ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Valitse tähän osoitteeseen lähetettäville viesteille oletusarvoisesti käytettävä muoto."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
@@ -3885,9 +3243,6 @@
       ],
       "Set up your organization": [
         "Määritä organisaatiosi"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
       ],
       "Settings update failed": [
         "Asetusmuutos epäonnistui"
@@ -3953,9 +3308,6 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
       ],
-      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Syöttämäsi URL-osoite on ilmeisesti kopioitu Slackista virheellisesti. Kun kopioit pitkiä linkkejä Slackista, napsauta niitä hiiren kakkospainikkeella ja valitse \"Kopioi linkki\" sen sijaan, että kopioisit typistetyn URL-osoitteen suoraan."
       ],
@@ -3964,9 +3316,6 @@
       ],
       "This action will delete the link and revoke access for all users.": [
         "Tämä poistaa linkin ja mitätöi kaikki jaetut käyttöoikeudet."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Tämä dokumentti on kasvanut liian suureksi muokattavaksi. Voitte poistaa vanhempia versioita jatkaaksenne muokkausta."
@@ -3989,12 +3338,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Tämä on nimi tai lempinimi organisaatiollesi, jonka käyttäjäsi näkevät. Voit muuttaa sitä milloin tahansa."
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Tämä linkki johtaa sivustolle, joka voi pyrkiä varastamaan salasanojesi ja maksukorttiesi tietojen kaltaisia tietoja."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Internet-palveluntarjoaja ja verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
       ],
@@ -4016,23 +3359,11 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Auttaaksemme teitä muistamaan salasananne, pyydämme teitä syöttämään sen säännöllisin väliajoin. Pyyntöjen määrä vähenee ajan myötä."
       ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Allekirjoittaaksesi yhteystietosi uudelleen, on jokainen yhteystieto tarkistettava tilisi salausavainluetteloa vasten. Jos vastaavuutta ei löydy, allekirjoitetaan yhteystietosi ensisijaisella salausavaimella."
-      ],
-      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Tietojesi palauttamiseksi, sinun on aktivoitava uudelleen se tiliavain, joka oli käytössä kun tiedot luotiin. Sinun on myös muistettava avaimen luontihetkellä käytetty salasana."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
-      ],
       "Tracking": [
         "Seuranta"
       ],
       "Trash": [
         "Roskakori"
-      ],
-      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "Luota \"${ activeSignerText }\" -avaimeen tämän yhteyshenkilön uusien viestien todentamiseksi."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
@@ -4121,12 +3452,6 @@
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
       ],
-      "You are about to open another browser tab and visit:": [
-        "Olet avaamassa uuteen selainvälilehteen osoitetta:"
-      ],
-      "You are about to open your default browser and visit:": [
-        "Olet avaamassa oletusselaimeesi osoitetta:"
-      ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Olette tällä hetkellä kirjautuneena käyttäjänä ${ username } organisaatiossa ${ organizationName }."
       ],
@@ -4176,12 +3501,6 @@
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Olet kieltäytymässä kohteen ${ invitationName } liittymiskutsusta. Jos jatkat, et voi käyttää sitä, ellei omistaja kutsu sinua uudelleen. Haluatko varmasti jatkaa?"
       ],
-      "You've reached the maximum number of addresses in the contact group(s):": [
-        "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
-      ],
-      "You've reached the maximum number of addresses in the contact group.": [
-        "Olet saavuttanut yhteystietoryhmän osoitteiden enimmäismäärän."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
       ],
@@ -4211,9 +3530,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
-      ],
-      "Your files will be encrypted and then saved": [
-        "Tiedostosi salataan ja tallennetaan"
       ],
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
@@ -4268,48 +3584,6 @@
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
       ]
     },
-    "info": {
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "Painamalla lisätietoja"
-      ]
-    },
-    "Key badge": {
-      "Active Signer": [
-        "Aktiivinen allekirjoittaja"
-      ],
-      "Compromised": [
-        "Vaarantunut"
-      ],
-      "Expired": [
-        "Erääntynyt"
-      ],
-      "Fallback": [
-        "Varajärjestelmä"
-      ],
-      "KOO": [
-        "KOO"
-      ],
-      "Obsolete": [
-        "Vanhentunut"
-      ],
-      "Primary": [
-        "Ensisijainen"
-      ],
-      "Revoked": [
-        "Mitätöity"
-      ],
-      "Trusted": [
-        "Luotettu"
-      ],
-      "WKD": [
-        "WKD"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -4325,15 +3599,6 @@
       ],
       "Active": [
         "Aktiivinen"
-      ],
-      "Add email address": [
-        "Lisää sähköpostiosoite"
-      ],
-      "Add image URL": [
-        "Lisää kuvan URL"
-      ],
-      "Add to group": [
-        "Lisää ryhmään"
       ],
       "Additional comments": [
         "Lisäkommentit"
@@ -4374,9 +3639,6 @@
       "Category": [
         "Aihe"
       ],
-      "City": [
-        "Kaupunki"
-      ],
       "Client": [
         "Ohjelma"
       ],
@@ -4385,9 +3647,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Koodi sisältää 6 numeroa ilman välilyöntejä"
-      ],
-      "Colors": [
-        "Värit"
       ],
       "Command line interface (CLI)": [
         "Komentoriviliittymä (CLI)"
@@ -4398,9 +3657,6 @@
       "Continue cancelling": [
         "Jatka perumista"
       ],
-      "Copy": [
-        "Kopioi"
-      ],
       "Could you please let us know which provider?": [
         "Kortoisitko meille, mikä palveluntarjoaja?"
       ],
@@ -4409,9 +3665,6 @@
       ],
       "Could you please specify?": [
         "Tarkentaisitko?"
-      ],
-      "Country": [
-        "Maa"
       ],
       "Created by ${ displayName }": [
         "Luonut ${ displayName }"
@@ -4428,9 +3681,6 @@
       "Disable this link on a specific date": [
         "Poista tämä linkki käytöstä tiettynä päivänä"
       ],
-      "Don't ask again": [
-        "Älä kysy uudelleen"
-      ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
       ],
@@ -4440,20 +3690,11 @@
       "Email address": [
         "Sähköpostiosoite"
       ],
-      "Email format": [
-        "Viestien muoto"
-      ],
       "Enable email notifications": [
         "Ota käyttöön sähköposti-ilmoitukset"
       ],
-      "Encrypt emails": [
-        "Salaa viestit"
-      ],
       "Expiry": [
         "Erääntyminen"
-      ],
-      "Extended address": [
-        "Laajennettu osoite"
       ],
       "File": [
         "Tiedosto"
@@ -4463,9 +3704,6 @@
       ],
       "Hide password": [
         "Piilota salasana"
-      ],
-      "I understand the risk": [
-        "Ymmärrän riskin"
       ],
       "Ignore": [
         "Ohita"
@@ -4530,26 +3768,11 @@
       "Password strength": [
         "Salasanan vahvuus"
       ],
-      "PGP scheme": [
-        "PGP-malli"
-      ],
       "Phone number": [
         "Puhelinnumero"
       ],
       "Please share any feedback to help us improve.": [
         "Kerro mielipiteesi ja auta meitä parantamaan."
-      ],
-      "Post office box": [
-        "Postilokero"
-      ],
-      "Postal code": [
-        "Postinumero"
-      ],
-      "Public keys": [
-        "Julkiset avaimet"
-      ],
-      "Region": [
-        "Alue"
       ],
       "Require password": [
         "Vaadi salasanaa"
@@ -4566,17 +3789,11 @@
       "Shared with me": [
         "Jaettu minulle"
       ],
-      "Sign emails": [
-        "Allekirjoita viestit"
-      ],
       "Skip feedback": [
         "Ohita palaute"
       ],
       "Stop sharing": [
         "Lopeta jakaminen"
-      ],
-      "Street address": [
-        "Katuosoite"
       ],
       "Strong": [
         "Vahva"
@@ -4598,9 +3815,6 @@
       ],
       "Unknown user": [
         "Tuntematon käyttäjä"
-      ],
-      "Upload picture": [
-        "Lataa kuva"
       ],
       "Verification code": [
         "Vahvistuskoodi"
@@ -4640,16 +3854,6 @@
       ],
       "Your password (trusted contact)": [
         "Salasananne (luotettu yhteystieto)"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "Väri"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "Nimi"
       ]
     },
     "Link": {
@@ -4872,14 +4076,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Sovelluksesta ${ appName } on saatavilla uusi versio. ${ reloadButton }."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Automaattinen"
-      ],
-      "Plain text": [
-        "Pelkkä teksti"
       ]
     },
     "new_plans": {
@@ -5776,12 +4972,6 @@
       "Cannot load next page": [
         "Seuraavan sivun lataus epäonnistui"
       ],
-      "Contact group created": [
-        "Yhteystietoryhmä luotiin"
-      ],
-      "Contact group updated": [
-        "Yhteystietoryhmä päivitettiin"
-      ],
       "Document moved to trash": [
         "Dokumentti siirrettiin roskakoriin"
       ],
@@ -5823,9 +5013,6 @@
       ],
       "Invitation's email was sent again": [
         "Kutsusähköposti lähetettiin uudelleen"
-      ],
-      "Link copied to clipboard": [
-        "Linkki kopioitiin leikepöydälle"
       ],
       "Move ${ n } file": [
         "Siirrä ${ n } tiedosto",
@@ -6036,20 +5223,6 @@
         "Täysi ${ planTitle } -tilauksenne alkaa ${ boldEndDate }."
       ]
     },
-    "Option": {
-      "Add to existing group": [
-        "Lisää olemassa olevaan ryhmään"
-      ],
-      "Automatic (${ value })": [
-        "Automaattinen (${ value })"
-      ],
-      "Create new group": [
-        "Luo uusi ryhmä"
-      ],
-      "Ignore group": [
-        "Ohita ryhmä"
-      ]
-    },
     "Page title": {
       "Recents": [
         "Viimeisimmät"
@@ -6186,45 +5359,6 @@
         "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit perua tilauksen milloin vain."
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Avainta ei voida käyttää salaukseen"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } merkitsi avaimen vaarantuneeksi. Avainta ei voida käyttää salaukseen, eikä allekirjoitusten vahvistukseen."
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } merkitsi avaimen vanhentuneeksi. Avainta voidaan käyttää vain allekirjoitusten vahvistukseen."
-      ],
-      "External key automatically fetched from keys.openpgp.org.": [
-        "Ulkoinen avain noudettiin automaattisesti osoitteesta keys.openpgp.org."
-      ],
-      "External key automatically fetched via WKD.": [
-        "Ulkoinen avain noudettiin automaattisesti WKD:n välityksellä."
-      ],
-      "This contact currently signs messages with this key": [
-        "Tämä yhteystieto allekirjoittaa viestit tällä hetkellä tällä avaimella"
-      ],
-      "This key is used for message verification": [
-        "Tätä avainta käytetään viestien todentamiseen"
-      ],
-      "This key is used to encrypt messages to this contact": [
-        "Tälle yhteystiedolle lähetettävät viestit salataan tällä avaimella"
-      ],
-      "This key is used to encrypt messages to this contact on older apps": [
-        "Tätä avainta käytetään viestien salaamiseen tälle yhteystiedolle vanhemmilla sovelluksilla"
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        "Suosittelemme, että muutat avaimen \"epäluotettavaksi\"."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Sähköpostiosoitetta ei löytynyt lähetysavaimessa määriteltyjen käyttäjätunnusten joukosta (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Tapa, jolla tavoitamme sinut"
@@ -6247,29 +5381,8 @@
       "Enter a new folder name": [
         "Syötä kansion uusi nimi"
       ],
-      "Filter groups": [
-        "Suodata ryhmiä"
-      ],
-      "First name": [
-        "Etunimi"
-      ],
-      "Group name": [
-        "Ryhmän nimi"
-      ],
-      "Image URL": [
-        "Kuvan URL"
-      ],
-      "Last name": [
-        "Sukunimi"
-      ],
       "Message": [
         "Viesti"
-      ],
-      "Name": [
-        "Nimi"
-      ],
-      "Name or email address": [
-        "Nimi tai sähköpostiosoite"
       ],
       "Organization name": [
         "Organisaation nimi"
@@ -6283,12 +5396,6 @@
       "Please select the main reason": [
         "Valitse ensisijainen syy"
       ],
-      "Search for group name": [
-        "Etsi ryhmän nimellä"
-      ],
-      "Search for name or email": [
-        "Etsi nimeä tai sähköpostiosoitetta"
-      ],
       "Select": [
         "Valitse"
       ],
@@ -6298,16 +5405,8 @@
       "Select a reason": [
         "Valitse syy"
       ],
-      "Start typing an email address": [
-        "Aloita sähköpostiosoitteen kirjoitus"
-      ],
       "Your organization name": [
         "Organisaatiosi nimi"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Nimi"
       ]
     },
     "Plan description": {
@@ -6318,75 +5417,12 @@
         "Kaikki premium-ominaisuudet palveluista ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length }/${ countContacts } yhteystieto vietiin.",
-        "${ contactsExported.length }/${ countContacts } yhteystietoa vietiin."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length }/${ totalBeDeleted } yhteystieto poistettiin.",
-        "${ model.deleted.length }/${ totalBeDeleted } yhteystietoa poistettiin."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length }/${ totalBeMerged } yhteystieto yhdistettiin.",
-        "${ model.submitted.length }/${ totalBeMerged } yhteystietoa yhdistettiin."
-      ],
-      "No contacts exported.": [
-        "Yhteystietoja ei viety."
-      ],
-      "No contacts merged.": [
-        "Yhteystietoja ei yhdistetty."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "Edistyminen: ${ combinedProgress } %"
-      ]
-    },
     "Property": {
       "key": [
         "avain"
       ],
       "name": [
         "nimi"
-      ]
-    },
-    "Property type": {
-      "Address": [
-        "Osoite"
-      ],
-      "Email": [
-        "Sähköposti"
-      ],
-      "Fax": [
-        "Faksi"
-      ],
-      "Home": [
-        "Koti"
-      ],
-      "Main": [
-        "Ensisijainen"
-      ],
-      "Mobile": [
-        "Matkapuhelin"
-      ],
-      "Other": [
-        "Muu"
-      ],
-      "Pager": [
-        "Hakulaite"
-      ],
-      "Phone": [
-        "Puhelin"
-      ],
-      "Work": [
-        "Työ"
-      ]
-    },
-    "protonbadge": {
-      "Official": [
-        "Virallinen"
-      ],
-      "Official email from ${ BRAND_NAME }": [
-        "Virallinen viesti ${ BRAND_NAME }ilta"
       ]
     },
     "Provider option": {
@@ -6561,11 +5597,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Lataa"
       ]
     },
     "session_recovery:available:action": {
@@ -6808,14 +5839,6 @@
     "sheets_2025:Title": {
       "Import data": [
         "Tuo tiedot"
-      ]
-    },
-    "Signing preference for emails": {
-      "Don't sign": [
-        "Älä allekirjoita"
-      ],
-      "Sign": [
-        "Allekirjoita"
       ]
     },
     "Sort menu options": {
@@ -7250,44 +6273,14 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
-        "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
-      ],
-      "Address copied to clipboard": [
-        "Osoite kopioitiin leikepöydälle"
-      ],
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Yhteystieto poistettiin",
-        "Yhteystiedot poistettiin"
-      ],
-      "Contact group deleted": [
-        "Yhteystietoryhmä poistettiin",
-        "Yhteystietoryhmät poistettiin"
-      ],
-      "Contact saved": [
-        "Yhteystieto tallennettiin"
-      ],
-      "Contacts deleted": [
-        "Yhteystiedot poistettiin"
       ],
       "Email address copied to clipboard": [
         "Sähköpostiosoite kopioitiin leikepöydälle"
       ],
-      "Fingerprint copied to clipboard": [
-        "Sormenjälki kopioitiin leikepöydälle"
-      ],
-      "Phone number copied to clipboard": [
-        "Puhelinnumero kopioitiin leikepöydälle"
-      ],
       "Preference saved": [
         "Asetus tallennettiin"
-      ],
-      "Preferences saved": [
-        "Asetukset tallennettiin"
       ],
       "Problem reported": [
         "Ongelma raportoitu"
@@ -7318,64 +6311,6 @@
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
       ]
     },
-    "Table header": {
-      "Action": [
-        "Toiminto"
-      ],
-      "Actions": [
-        "Toiminnot"
-      ],
-      "Address": [
-        "Osoite"
-      ],
-      "Created": [
-        "Luotu"
-      ],
-      "Expires": [
-        "Erääntyy"
-      ],
-      "Fingerprint": [
-        "Sormenjälki"
-      ],
-      "Name": [
-        "Nimi"
-      ],
-      "Status": [
-        "Tila"
-      ],
-      "Type": [
-        "Tyyppi"
-      ]
-    },
-    "TableHeader": {
-      "Actions": [
-        "Toiminnot"
-      ],
-      "Address": [
-        "Osoite"
-      ],
-      "CSV field": [
-        "CSV-kenttä"
-      ],
-      "Display name": [
-        "Näyttönimi"
-      ],
-      "First name": [
-        "Etunimi"
-      ],
-      "Import": [
-        "Tuonti"
-      ],
-      "Last name": [
-        "Sukunimi"
-      ],
-      "Values": [
-        "Arvot"
-      ],
-      "vCard field": [
-        "vCard-kenttä"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } vuorokausi",
@@ -7398,10 +6333,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe -kirjoitusavustaja"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } sähköpostiosoite",
-        "${ emailsCount } sähköpostiosoitetta"
-      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-kirjoitusavustaja"
       ],
@@ -7417,21 +6348,8 @@
       "Account temporarily locked": [
         "Tili on väliaikaisesti lukittu"
       ],
-      "Add contact group name": [
-        "Lisää yhteystietoryhmän nimi"
-      ],
-      "Add to ${ groupCount } group": [
-        "Lisää ${ groupCount } ryhmään",
-        "Lisää ${ groupCount } ryhmään"
-      ],
-      "Add to ${ groupName }": [
-        "Lisää ryhmään ${ groupName }"
-      ],
       "Add user": [
         "Lisää käyttäjä"
-      ],
-      "Addresses": [
-        "Osoitteet"
       ],
       "All settings": [
         "Kaikki asetukset"
@@ -7439,23 +6357,14 @@
       "Are you sure?": [
         "Oletko varma?"
       ],
-      "Birthday": [
-        "Syntymäpäivä"
-      ],
       "Cancel subscription?": [
         "Perutaanko tilaus?"
-      ],
-      "Cannot add more addresses": [
-        "Enempää osoitteita ei voida lisätä"
       ],
       "Change access to viewer?": [
         "Muutetaanko käyttöoikeus katseluun?"
       ],
       "Change password": [
         "Vaihda salasana"
-      ],
-      "Clearing data": [
-        "Tyhjennetään tietoja"
       ],
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
@@ -7472,26 +6381,11 @@
       "Connect your custom domain": [
         "Yhdistä oma verkkotunnuksesi"
       ],
-      "Contact Details": [
-        "Yhteystiedon sisältö"
-      ],
-      "Contact group": [
-        "Yhteystietoryhmä"
-      ],
       "Contact us": [
         "Ota yhteyttä"
       ],
-      "Contacts": [
-        "Yhteystiedot"
-      ],
       "Create a new folder": [
         "Luo uusi kansio"
-      ],
-      "Create contact": [
-        "Luo yhteystieto"
-      ],
-      "Create new group": [
-        "Luo uusi ryhmä"
       ],
       "Currency": [
         "Valuutta"
@@ -7508,22 +6402,8 @@
       "Decline invitation?": [
         "Kieltäydytäänkö kutsusta?"
       ],
-      "Delete ${ count } contact": [
-        "Poista ${ count } yhteystieto",
-        "Poista ${ count } yhteystietoa"
-      ],
-      "Delete ${ count } contact group": [
-        "Poista ${ count } yhteystietoryhmä",
-        "Poista ${ count } yhteystietoryhmää"
-      ],
-      "Delete ${ value }": [
-        "Poista ${ value }"
-      ],
       "Delete permanently": [
         "Poista pysyvästi"
-      ],
-      "Deleting contacts": [
-        "Poistetaan yhteystietoja"
       ],
       "Desktop": [
         "Työpöytä"
@@ -7536,9 +6416,6 @@
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
-      ],
-      "Docs": [
-        "Docs"
       ],
       "Document Size Limit Exceeded": [
         "Dokumentin kokorajoitus ylitetty"
@@ -7555,26 +6432,8 @@
       "Download the app": [
         "Lataa sovellus"
       ],
-      "Edit contact": [
-        "Muokkaa yhteystietoa"
-      ],
-      "Edit contact group": [
-        "Muokkaa yhteystietoryhmää"
-      ],
-      "Edit email settings": [
-        "Muokkaa osoitteen asetuksia"
-      ],
-      "Edit image": [
-        "Muokkaa kuvaa"
-      ],
       "Editing paused": [
         "Muokkaus keskeytetty"
-      ],
-      "Email addresses": [
-        "Sähköpostiosoitteet"
-      ],
-      "Email settings": [
-        "Osoitteen asetukset"
       ],
       "Enable 2FA": [
         "Ota 2FA käyttöön"
@@ -7594,9 +6453,6 @@
       "Error Syncing": [
         "Synkronointivirhe"
       ],
-      "Exporting contacts": [
-        "Yhteystietoja viedään"
-      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Ansaitset **${ referralInfo.uiData.refereeRewardAmount }** krediitteinä ${ planTitle } -tilauksella"
       ],
@@ -7605,9 +6461,6 @@
       ],
       "Get the apps": [
         "Hanki sovellukset"
-      ],
-      "Groups": [
-        "Ryhmät"
       ],
       "Help and feedback": [
         "Tuki ja palaute"
@@ -7630,12 +6483,6 @@
       "Human verification": [
         "Ihmisvahvistus"
       ],
-      "Import contacts": [
-        "Tuo yhteystietoja"
-      ],
-      "Import groups": [
-        "Tuo ryhmiä"
-      ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
       ],
@@ -7645,20 +6492,11 @@
       "Limited availability": [
         "Rajoitettu saatavuus"
       ],
-      "Link confirmation": [
-        "Linkin vahvistus"
-      ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Luo kopio ${ DRIVE_APP_NAME }esi"
       ],
       "Make a secure connection your default": [
         "Aseta suojattu yhteys oletukseksesi"
-      ],
-      "Merge contacts": [
-        "Yhdistä yhteystietoja"
-      ],
-      "Merging contacts": [
-        "Yhdistetään yhteystietoja"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Siirtäkää organisaationne palveluun ${ BRAND_NAME }"
@@ -7684,17 +6522,8 @@
       "No breaches detected": [
         "Tietomurtoja ei ole havaittu"
       ],
-      "Notes": [
-        "Muistiinpanot"
-      ],
       "Offline": [
         "Ei yhteyttä"
-      ],
-      "One email, many recipients": [
-        "Yksi sähköposti, monta vastaanottajaa"
-      ],
-      "Open actions dropdown": [
-        "Avaa toimintovalikko"
       ],
       "Open pagination": [
         "Avaa sivunavigaatio"
@@ -7704,15 +6533,6 @@
       ],
       "Organization setup": [
         "Organisaation määritys"
-      ],
-      "Other information": [
-        "Muut tiedot"
-      ],
-      "Other names": [
-        "Muut nimet"
-      ],
-      "Phone numbers": [
-        "Puhelinnumerot"
       ],
       "Photos": [
         "Kuvat"
@@ -7732,20 +6552,11 @@
       "Public link settings": [
         "Julkisen linkin asetukset"
       ],
-      "Re-sign all contacts": [
-        "Allekirjoita kaikki yhteystiedot uudelleen"
-      ],
-      "Re-signing contacts": [
-        "Yhteystietojen allekirjoitus uudelleen"
-      ],
       "Read-only": [
         "Vain luku"
       ],
       "Recommended actions": [
         "Suositellut toimenpiteet"
-      ],
-      "Recover data": [
-        "Palauta tiedot"
       ],
       "Remove your access?": [
         "Poista käyttöoikeus?"
@@ -7767,12 +6578,6 @@
       ],
       "Security center": [
         "Suojauskeskus"
-      ],
-      "Select action to take on contact group": [
-        "Valitse yhteystietoryhmään kohdistettava toiminto"
-      ],
-      "Select contact group": [
-        "Valitse yhteystietoryhmä"
       ],
       "Select link expiration date": [
         "Valitse linkin erääntymisaika"
@@ -7867,12 +6672,6 @@
       "VPN explained": [
         "VPN-pikaopas"
       ],
-      "Warning": [
-        "Varoitus"
-      ],
-      "Warning: suspected fake website": [
-        "Varoitus: epäilty huijaussivusto"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
@@ -7898,26 +6697,6 @@
         "Paljastuneet tietosi"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "Toiminnot"
-      ],
-      "Created": [
-        "Luotu"
-      ],
-      "Expires": [
-        "Erääntyy"
-      ],
-      "Fingerprint": [
-        "Sormenjälki"
-      ],
-      "Status": [
-        "Tila"
-      ],
-      "Type": [
-        "Tyyppi"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Tänään"
@@ -7927,32 +6706,14 @@
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lisää tämä jaettu tiedosto ${ DRIVE_APP_NAME }esi myöhempää käyttöä varten."
       ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automaattiasetuksella viestit lähetetään tälle käyttäjälle käyttäen kirjoituksessa käytettyä muotoilua. Käytettäessä pelkkä teksti -asetusta poistetaan viestistä lähetettäessä mahdolliset muotoilut."
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Change shared item settings": [
         "Muuta jaetun kohteen asetuksia"
       ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Sähköisesti allekirjoitetut viestit auttavat todentamaan viestien olevan sinun lähettämiäsi"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Sähköpostisalaus pakottaa sähköpostien allekirjoituksen auttamaan lähetettyjen viestien todentamisessa"
-      ],
-      "Encrypted data": [
-        "Salattua tietoa"
-      ],
-      "Encrypted data with verified digital signature": [
-        "Tiedot on salattu vahvistetulla sähköisellä allekirjoituksella"
-      ],
       "Instant AI assistance, human expert on hand!": [
         "Välitön tekoälyapu, ihmisasiantuntija valmiina auttamaan!"
-      ],
-      "Load image": [
-        "Lataa kuva"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Viestin teksti ja tiedoston nimi säilytetään sähköpostiviestissä zero access -salauksella"
@@ -7960,26 +6721,11 @@
       "Not all information listed here was exposed for all users.": [
         "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."
       ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
-      ],
       "Shared with end-to-end encryption": [
         "Jaettu päästä päähän -salattuna"
       ],
-      "The image could not be loaded": [
-        "Kuvaa ei voitu ladata"
-      ],
-      "The image could not be loaded using proxy": [
-        "Kuvaa ei voitu ladata välityspalvelimen kautta"
-      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Salatut salasanat pysyvät turvassa, vaikka ne paljastuisivat, ellei niiden salausta pureta."
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Lataa julkinen avain mahdollistaaksesi päästä päähän -salattujen viestien lähetyksen tähän osoitteeseen"
-      ],
-      "Version 6 OpenPGP key": [
-        "OpenPGP-avain, versio 6"
       ],
       "We have sent them an invite to access the item.": [
         "Heille on lähetetty kutsu kohteeseen."
@@ -8170,48 +6916,11 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",
-        "Haluatko varmasti poistaa ${ count } yhteystietoa pysyvästi?"
-      ],
-      "Are you sure you want to permanently delete these contact groups?": [
-        "Haluatko varmasti poistaa nämä yhteystietoryhmät pysyvästi?"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Haluatko varmasti poistaa yhteystietoryhmän pysyvästi?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Haluatko varmasti poistaa yhteystiedon pysyvästi?"
-      ],
-      "Contacts could not be merged": [
-        "Yhteystietoja ei voitu yhdistää"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jos et muista salasanaasi, avaimesi uudelleenaktivointi on mahdotonta. Voimme auttaa hälytysilmoituksen kuittauksessa, mutta samalla menetät pääsyn kaikkeen kyseisellä avaimella salattuun tietoon."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
       ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Joissakin yhdistettävissä yhteystiedoissa havaittiin virheitä. Tarkista ne yksitellen"
-      ],
-      "The contact data is corrupted and cannot be displayed.": [
-        "Yhteystieto on vioittunut, eikä sitä voida näyttää."
-      ],
-      "The contact failed to load.": [
-        "Yhteystiedon lataus epäonnistui."
-      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Laitteesi päiväys ja kellonaika eivät ole ajan tasalla. ${ learnMore }"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Salatun sisällön salauksen purku epäonnistui."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Yhteystiedon allekirjoituksen varmennus epäonnistui."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Tätä ei ole mahdollista kumota. Jatka syöttämällä kenttään sana ${ boldDanger }."
       ],
       "This will replace all the data in the spreadsheet": [
         "Tämä korvaa kaikki taulukon tiedot"

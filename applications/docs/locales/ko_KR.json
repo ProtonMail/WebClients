@@ -40,56 +40,20 @@
       "Activate recovery": [
         "복구 활성화"
       ],
-      "Add": [
-        "추가"
-      ],
       "Add a payment method": [
         "결제 방법 추가하기"
       ],
       "Add account": [
         "계정 추가"
       ],
-      "Add address": [
-        "주소 추가"
-      ],
       "Add another account": [
         "다른 계정 추가"
-      ],
-      "Add birthday": [
-        "생일 추가"
-      ],
-      "Add contact": [
-        "연락처 추가"
-      ],
-      "Add email": [
-        "이메일 추가"
-      ],
-      "Add group": [
-        "그룹 추가"
-      ],
-      "Add new group": [
-        "새 그룹 추가"
-      ],
-      "Add note": [
-        "메모 추가"
       ],
       "Add people or groups to share": [
         "공유하려면 사람 및 그룹을 추가하세요."
       ],
-      "Add phone number": [
-        "휴대전화 번호 추가"
-      ],
-      "Add to group": [
-        "그룹에 추가"
-      ],
-      "Apply": [
-        "적용"
-      ],
       "Ask me next time": [
         "다음에 내게 묻기"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "연락처 그룹 당 최대 ${ maxContacts }개 연락처가 허용됩니다"
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
@@ -127,18 +91,6 @@
       "Chat with us": [
         "채팅으로 문의하기"
       ],
-      "Choose a file or drag it here": [
-        "파일을 선택하거나 드래그하세요"
-      ],
-      "Clear data": [
-        "데이터 지우기"
-      ],
-      "Clear query": [
-        "쿼리 지우기"
-      ],
-      "Click here.": [
-        "여기를 클릭하세요."
-      ],
       "Close": [
         "닫기"
       ],
@@ -157,23 +109,11 @@
       "Collapse list of pending invitations": [
         "보류 중인 초대 목록 축소"
       ],
-      "Compose": [
-        "메일 쓰기"
-      ],
-      "Confirm": [
-        "확인"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        "링크를 열어 확인하시기 바랍니다 ${ linkToShow }"
-      ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
       ],
       "Connect to video conferencing": [
         "화상 회의에 연결하기"
-      ],
-      "Contact group": [
-        "연락처 그룹"
       ],
       "Continue": [
         "계속"
@@ -187,9 +127,6 @@
       "Copy as markdown": [
         "마크다운으로 복사"
       ],
-      "Copy email to clipboard": [
-        "클립보드에 이메일 복사"
-      ],
       "Copy invite link": [
         "초대 링크 복사"
       ],
@@ -199,17 +136,11 @@
       "Copy password": [
         "비밀번호 복사"
       ],
-      "Copy version number to clipboard": [
-        "버전 넘버를 클립보드에 복사하기"
-      ],
       "Create": [
         "생성"
       ],
       "Create a copy": [
         "복사본 생성"
-      ],
-      "Create a new contact group": [
-        "새 연락처 그룹 만들기"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "새로운 ${ SHEETS_APP_NAME } 생성"
@@ -226,35 +157,14 @@
       "Decline invite": [
         "초대 거부"
       ],
-      "Delete": [
-        "삭제"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "${ selectedCount } 개의 연락처 삭제"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } 개의 그룹 삭제"
-      ],
-      "Delete contact": [
-        "연락처 삭제"
-      ],
-      "Delete contact group": [
-        "그룹 삭제"
-      ],
       "Delete older revisions": [
         "오래된 버전 삭제"
       ],
       "Delete permanently": [
         "영구적으로 삭제"
       ],
-      "Deselect all": [
-        "선택 해제"
-      ],
       "Dismiss": [
         "무시"
-      ],
-      "Done": [
-        "완료"
       ],
       "Download": [
         "다운로드"
@@ -274,9 +184,6 @@
       "Download logs": [
         "다운로드 로그"
       ],
-      "Edit": [
-        "편집"
-      ],
       "Edit email address": [
         "이메일 주소 추가"
       ],
@@ -285,9 +192,6 @@
       ],
       "Edit sign-in details": [
         "로그인 정보 변경"
-      ],
-      "Email settings": [
-        "이메일 설정"
       ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
@@ -298,17 +202,8 @@
       "Explore other plans": [
         "다른 플랜 알아보기"
       ],
-      "Export": [
-        "내보내기"
-      ],
-      "Export contact group": [
-        "연락처 그룹 내보내기"
-      ],
       "Export editor state for version": [
         "이 버전의 에디터 상태 내보내기"
-      ],
-      "Export selection as .vcf": [
-        "선택한 항목을 .vcf로 내보내기"
       ],
       "Export this version (as docx)": [
         "이 버전 내보내기(docx 형식)"
@@ -321,9 +216,6 @@
       ],
       "Forgot password?": [
         "비밀번호를 잊어버리셨나요?"
-      ],
-      "Forward as attachment": [
-        "첨부 파일로 전달"
       ],
       "Generate password": [
         "비밀번호 생성"
@@ -349,9 +241,6 @@
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }(으)로 이동"
       ],
-      "Go to label": [
-        "라벨로 이동"
-      ],
       "Got it": [
         "확인"
       ],
@@ -367,23 +256,11 @@
       "Hide": [
         "숨기기"
       ],
-      "Hide advanced PGP settings": [
-        "고급 PGP 설정 숨기기"
-      ],
       "Hide more benefits": [
         "더 많은 혜택 숨기기"
       ],
-      "Image could not be loaded with tracker protection.": [
-        "트래커 보호로 인하여 이미지가 불러오지 않을 수 있습니다."
-      ],
-      "Image will be loaded without a proxy": [
-        "이미지가 프록시 없이 로드됩니다"
-      ],
       "Import": [
         "불러오기"
-      ],
-      "import": [
-        "가져오기"
       ],
       "Import data": [
         "데이터 가져오기"
@@ -400,12 +277,6 @@
       "Learn more": [
         "더 알아보기"
       ],
-      "Load": [
-        "불러오기"
-      ],
-      "Load image": [
-        "이미지 불러오기"
-      ],
       "Make a copy": [
         "복사본 만들기"
       ],
@@ -421,23 +292,11 @@
       "Mark as resolved": [
         "해결됨으로 표시"
       ],
-      "Mark for deletion": [
-        "삭제 표시"
-      ],
       "Markdown (.md)": [
         "마크다운 (.md)"
       ],
       "Maybe later": [
         "나중에"
-      ],
-      "Merge": [
-        "합치기"
-      ],
-      "Merge contacts": [
-        "연락처 통합"
-      ],
-      "More actions": [
-        "더 많은 액션"
       ],
       "More benefits": [
         "더 많은 혜택"
@@ -469,12 +328,6 @@
       "New folder": [
         "새 폴더"
       ],
-      "New message": [
-        "새 메시지"
-      ],
-      "Next": [
-        "다음"
-      ],
       "Next month": [
         "다음 달"
       ],
@@ -505,9 +358,6 @@
       "Plain Text (.txt)": [
         "일반 텍스트 (.txt)"
       ],
-      "Preview contact": [
-        "연락처 미리보기"
-      ],
       "Preview logs": [
         "로그 미리보기"
       ],
@@ -516,12 +366,6 @@
       ],
       "Print": [
         "인쇄"
-      ],
-      "Re-sign": [
-        "재서명"
-      ],
-      "Recover data": [
-        "데이터 복구"
       ],
       "Refer a friend": [
         "친구 초대"
@@ -628,9 +472,6 @@
       "Select ${ planOrAppName }": [
         "${ planOrAppName } 선택"
       ],
-      "Select all": [
-        "전체 선택"
-      ],
       "Set password or expiration date": [
         "비밀번호 또는 만료 시간 설정"
       ],
@@ -663,9 +504,6 @@
       ],
       "Sharing is end-to-end encrypted": [
         "공유가 종단간 암호화됩니다"
-      ],
-      "Show advanced PGP settings": [
-        "고급 PGP 설정 보기"
       ],
       "Show more": [
         "더보기"
@@ -715,9 +553,6 @@
       "Trashing...": [
         "휴지통으로 이동 중..."
       ],
-      "Trust": [
-        "신뢰"
-      ],
       "Try again": [
         "다시 시도"
       ],
@@ -735,12 +570,6 @@
       ],
       "Unlock data": [
         "데이터 잠금 해제"
-      ],
-      "Unmark for deletion": [
-        "삭제 표시 해제"
-      ],
-      "Untrust": [
-        "신뢰하지 않음"
       ],
       "Update recovery file": [
         "복구 파일 업데이트"
@@ -760,9 +589,6 @@
       "Upload and share files": [
         "파일 업로드 및 공유하기"
       ],
-      "Upload picture": [
-        "사진 업로드"
-      ],
       "Use ${ label } theme": [
         "${ label } 테마 사용"
       ],
@@ -775,9 +601,6 @@
       "Use authentication code": [
         "인증 코드 사용"
       ],
-      "Use for sending": [
-        "발신에 사용"
-      ],
       "Use recovery code": [
         "복구 코드 사용"
       ],
@@ -789,9 +612,6 @@
       ],
       "Verify now": [
         "지금 인증"
-      ],
-      "View": [
-        "보기"
       ],
       "View ${ pendingCount } invitation": [
         "모든 ${ pendingCount }개의 초대 보기"
@@ -816,26 +636,6 @@
       ],
       "words out of": [
         "개의 단어들 다음 중에서:"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
-      ]
-    },
-    "Actions message": {
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } 혹은 ${ importContact }"
-      ],
-      "No results found.": [
-        "결과를 찾을 수 없음."
-      ],
-      "Please try another search term.": [
-        "다른 검색 조건을 사용하세요."
-      ],
-      "You don't have any contacts.": [
-        "연락처를 가지고 있지 않습니다."
-      ],
-      "You don't have any groups.": [
-        "그룹을 가지고 있지 않습니다."
       ]
     },
     "Addon": {
@@ -902,6 +702,9 @@
       "Managed Service Provider": [
         "관리 중인 서비스 제공자"
       ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Managed Service Provider 애드온이 있는 조직은 자회사 조직을 만들고 관리할 수 있습니다."
+      ],
       "Servers": [
         "서버"
       ],
@@ -913,11 +716,6 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "지금 떠나면, 일부 연락처가 불러오지 않을 수 있습니다."
       ]
     },
     "Apps dropdown": {
@@ -1387,76 +1185,6 @@
       ],
       "strawberry": [
         "스트로베리"
-      ]
-    },
-    "Contact field label": {
-      "Address": [
-        "주소"
-      ],
-      "Anniversary": [
-        "기념일"
-      ],
-      "Birthday": [
-        "생일"
-      ],
-      "Display name": [
-        "표시되는 이름"
-      ],
-      "Email": [
-        "이메일"
-      ],
-      "Enter a display name or nickname": [
-        "표시되는 이름 및 닉네임을 입력하십시오."
-      ],
-      "First name": [
-        "이름"
-      ],
-      "Gender": [
-        "성별"
-      ],
-      "Language": [
-        "언어"
-      ],
-      "Last name": [
-        "성"
-      ],
-      "Logo": [
-        "로고"
-      ],
-      "Member": [
-        "구성원"
-      ],
-      "Name": [
-        "이름"
-      ],
-      "Note": [
-        "비고"
-      ],
-      "Organization": [
-        "조직"
-      ],
-      "Phone": [
-        "전화"
-      ],
-      "Photo": [
-        "사진"
-      ],
-      "Role": [
-        "역할"
-      ],
-      "Time zone": [
-        "시간대"
-      ],
-      "Title": [
-        "제목"
-      ],
-      "URL": [
-        "URL"
-      ]
-    },
-    "Contact image": {
-      "Contact image": [
-        "연락처 이미지"
       ]
     },
     "Country name": {
@@ -2298,21 +2026,6 @@
         "${ VPN_APP_NAME }용"
       ]
     },
-    "Default display name vcard": {
-      "Unknown": [
-        "알 수 없음"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "글로벌 기본값 사용 (${ defaultValueText })"
-      ]
-    },
-    "Default signing preference": {
-      "Use global default (${ globalDefaultText })": [
-        "글로벌 기본값 사용 (${ globalDefaultText })"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "기한이 지난 청구서"
@@ -2346,12 +2059,6 @@
       "Create groups you can email with a single address.": [
         "단일 주소로 이메일을 보낼 수 있는 그룹을 생성하세요."
       ],
-      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "연락처 삭제중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "데스크톱 및 휴대기기에서 회원님의 이메일과 캘린더에 간편하게 접근해 보세요."
       ],
@@ -2360,9 +2067,6 @@
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "보한 강화를 위해 조직에서 2단계 인증 사용을 권장하도록 설정해 보세요."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "팀이 원격으로 있거나 공용 WiFi를 사용하는 경우에도 조직 데이터에 대한 안전한 접근이 보장됩니다."
@@ -2382,14 +2086,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
-      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "이벤트 초대장에 화상 회의 링크를 즉시 추가할 수 있습니다."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "연락처 병합 중... 몇 분 정도 소요될 수 있습니다. 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -2406,20 +2104,11 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "최상의 계정 보안 상태를 유지하려면, 복구 키를 설정하세요."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
-      ],
-      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
-      ],
       "To start, give your organization a name.": [
         "시작하려면 먼저 조직의 이름을 지정하세요."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "편집 권한으로 파일 공유를 계속하려면 ${ planName }(으)로 업그레이드하세요."
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
@@ -2427,30 +2116,11 @@
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
       ],
-      "With contact groups, you can send emails to everyone in the group with one click.": [
-        "연락처 그룹으로, 한 번의 클릭으로 그룹 내 모든 사람들로 일괄 이메일 전송이 가능합니다."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "병합하거나 유지하고 싶지 않은 연락처를 삭제하도록 표시할 수 있습니다. 삭제는 병합 버튼을 클릭한 후에만 이루어집니다."
-      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "사용자의 계정과 데이터 복구 방법이 설정되어 있으며, 2단계 인증이 활성화 상태입니다."
       ],
       "Your account and data recovery methods are set.": [
         "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "또한 CSV 란과 vCard 란을 자동으로 일치시켰습니다. 이 일치를 수동으로 보거나 편집이 가능합니다."
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
       ]
     },
     "Downgrade account reason": {
@@ -2588,12 +2258,6 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length }개 항목 이동 실패"
       ],
-      "A contact with this email address already exists": [
-        "해당 이메일 주소와 중복된 연락처가 이미 존재합니다."
-      ],
-      "A group with this name already exists": [
-        "이 이름을 가진 그룹이 이미 있습니다"
-      ],
       "A message is required when reporting copyright infringement or stolen data": [
         "저작권 침해나 데이터 유실에 대한 리포트 제출 시 메시지가 필요합니다."
       ],
@@ -2630,9 +2294,6 @@
       "Cannot download a folder": [
         "폴더를 다운로드할 수 없음"
       ],
-      "Cannot export this contact": [
-        "이 연락처를 불러올 수 없음"
-      ],
       "Cannot find move target": [
         "이동 대상을 찾을 수 없음"
       ],
@@ -2647,15 +2308,6 @@
       ],
       "Cannot verify who uploaded this file": [
         "이 파일을 업로드한 사용자의 진위를 파악할 수 없음"
-      ],
-      "Contact could not be saved": [
-        "연락처를 저장할 수 없습니다"
-      ],
-      "Contact name is too long": [
-        "연락처 이름이 너무 깁니다"
-      ],
-      "Contact signature not verified": [
-        "연락처 서명이 인증되지 않았습니다."
       ],
       "Copy operation aborted": [
         "복사 작업 중단됨"
@@ -2762,9 +2414,6 @@
       "Failed to load recent documents": [
         "최근 문서를 불러오지 못했습니다"
       ],
-      "Failed to open to contact": [
-        "연락처 열기 실패"
-      ],
       "Failed to remove older revisions": [
         "오래된 버전을 제거하는 데 실패했습니다."
       ],
@@ -2795,14 +2444,8 @@
       "File has no revision": [
         "파일에 수정 사항 없음"
       ],
-      "First name is too long": [
-        "이름이 너무 깁니다."
-      ],
       "Image preview not found": [
         "이미지 미리보기를 사용할 수 없음"
-      ],
-      "Image upload failed": [
-        "이미지 업로드 실패"
       ],
       "Incorrect backup password. Please try again.": [
         "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
@@ -2816,15 +2459,6 @@
       "Invalid coupon": [
         "유효하지 않은 쿠폰"
       ],
-      "Invalid email address": [
-        "유효하지 않은 이메일 주소"
-      ],
-      "Invalid name": [
-        "유효하지 않은 이름"
-      ],
-      "Invalid public key file": [
-        "공개 키 파일이 유효하지 않습니다"
-      ],
       "Invalid URL": [
         "유효하지 않은 URL"
       ],
@@ -2836,9 +2470,6 @@
       ],
       "Item not found": [
         "항목을 찾을 수 없습니다"
-      ],
-      "Last name is too long": [
-        "성(이름)이 너무 깁니다."
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "기존 공개 링크는 업데이트되지 않습니다. 새로운 공개 링크로 다시 생성해야 합니다."
@@ -2876,12 +2507,6 @@
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "연락처 중 하나에 이메일 주소가 없어요 : ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "그룹 중 하나에 연락처가 없어요 : ${ noContactGroupList } "
-      ],
       "Only admins can convert external invitations": [
         "관리자만 외부 초대로 변경할 수 있습니다"
       ],
@@ -2918,9 +2543,6 @@
       "Please enter ZIP code": [
         "우편 번호를 입력해 주세요"
       ],
-      "Please provide either a first name, a last name or a display name": [
-        "성, 이름 및 표시되는 이름을 입력하십시오."
-      ],
       "Please select a country": [
         "국가를 선택해주세요"
       ],
@@ -2945,9 +2567,6 @@
       "Signature is missing": [
         "서명이 유실되었습니다"
       ],
-      "Signature not verified": [
-        "인증되지 않은 서명입니다."
-      ],
       "Signature verification failed": [
         "서명 검증 실패"
       ],
@@ -2960,9 +2579,6 @@
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
         "${ signatureType }에 대한 서명 인증 실패:${ errorMessage }"
       ],
-      "Some contacts could not be deleted": [
-        "일부 연락처를 삭제할 수 없습니다"
-      ],
       "Some documents could not be loaded": [
         "일부 문서를 불러올 수 없습니다."
       ],
@@ -2971,9 +2587,6 @@
       ],
       "Some file parts failed to upload. Please try again.": [
         "일부 파일의 부분을 업로드할 수 없습니다. 다시 시도하세요."
-      ],
-      "Some groups could not be deleted": [
-        "일부 그룹은 삭제할 수 없었습니다."
       ],
       "Some items could not be loaded": [
         "일부 항목을 불러올 수 없습니다."
@@ -3014,9 +2627,6 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "문서 업데이트 처리 중 오류가 발생했습니다. 페이지 새로고침 후 다시 시도해 주세요."
       ],
-      "There was an error when exporting the contacts vCards": [
-        "연락처 vCard를 내보낼 때 오류가 발생했어요."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
       ],
@@ -3046,9 +2656,6 @@
       ],
       "This item is not shared": [
         "더 이상 공유되지 않는 항목입니다."
-      ],
-      "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
       ],
       "Too many server errors, please try again later": [
         "서버 오류가 너무 많습니다. 나중에 다시 시도하십시오."
@@ -3119,62 +2726,17 @@
       "You can update a public link for your own files only": [
         "내가 소유한 파일만 공개 링크를 업데이트할 수 있습니다."
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
-      ],
       "You do not have access to this item": [
         "이 항목에 접근할 권한이 없습니디"
       ],
       "You do not have access to this shared item": [
         "해당 항목에 대한 접근 권한이 없습니다."
       ],
-      "You must set a name": [
-        "이름을 반드시 설정해야 합니다"
-      ],
       "⚠️ Undecryptable device": [
         "⚠️ 복호화할 수 없는 기기"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "알 수 없는 오류. 불러오기가 재시작되어야 함."
-      ]
-    },
-    "Error importing contact": {
-      "Encryption failed": [
-        "암호화 실패"
-      ],
-      "Missing FN property": [
-        "FN 속성 없음"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard 버전 3.0 이하 지원되지 않음"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "${ formattedFilename } 파일을 읽는데 문제가 발생했습니다. 올바르지 않은 파일 포맷."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "${ formattedFilename } 파일을 업로드 하는 중에 문제가 발생했습니다. 최대 업로드 가능 용량 ${ MAX_IMPORT_FILE_SIZE_STRING } 을(를) 초과했습니다."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "${ formattedFilename } 파일을 업로드하는 동안 오류가 발생했습니다. .csv 또는 .vcf 파일이 선택되지 않았습니다."
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "파일을 업로드하는 동안 오류가 발생했습니다. 파일을 선택하지 않았습니다."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "파일 ${ formattedFilename }이(가) ${ maxContactString }개 초과 연락처를 포함하고 있습니다."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "${ formattedFilename } 파일에 가져올 연락처가 없습니다."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "사용자의 ${ formattedFilename } 파일이 비어있습니다."
       ]
     },
     "Error message": {
@@ -3201,11 +2763,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
-      ]
-    },
-    "Error notification": {
-      "Display name cannot be empty": [
-        "디스플레이 이름은 비어 있을 수 없습니다"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3368,76 +2925,12 @@
         "SMS"
       ]
     },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "연락처를 암호화 및 추가하는 중: ${ totalToImport }/${ totalImported }"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "vCard 버전 3.0 이하"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport }개의 연락처를 연락처 목록에 암호화하여 추가했습니다."
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "사용자의 연락처를 암호화 및 생성 중에 오류가 감지되었습니다. 연락처를 불러올 수 없습니다."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "연락처를 암호화하고 추가하는 데 오류가 발생했습니다. 연락처 ${ totalImported } 개 중 ${ totalToImport } 개를 성공적으로 불러왔습니다."
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "사용자의 연락처를 암호화 및 생성 중에 오류가 감지되었습니다. 연락처를 불러올 수 없습니다."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "연락처를 성공적으로 불러옴. 불러온 연락처가 곧 연락처 리스트에 나타납니다."
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "연락처를 성공적으로 불러옴. 불러온 연락처가 곧 연락처 리스트에 나타납니다."
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "연락처 (${ contactId }): "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "연락처 ${ totalContacts }개"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "알 수 없음"
-      ]
-    },
-    "Import contacts warning": {
-      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "${ CONTACTS_APP_NAME } 이(가) 지원되지 않습니다 ${ forNow }:"
-      ],
-      "for now": [
-        "지금"
-      ]
-    },
-    "Import warning": {
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
-      ],
-      "No contact can be imported. Click for details": [
-        "불러올 연락처 없음. 세부사항을 보려면 클릭하십시오"
-      ]
-    },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "\"${ documentTitle }\"이(가) 휴지통에 이동되었습니다. 복구하거나 영구적으로 삭제하지 않는 한 휴지통에 계속 보관됩니다."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "\"${ documentTitle }\"이(가) 휴지통 내에 존재하며 영구적으로 삭제하지 않는 한 계속 보관됩니다."
-      ],
-      "${ addressCount } email address": [
-        "이메일 주소 ${ addressCount }개"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -3448,29 +2941,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 당사를 포함한 그 누구도 회원님의 비밀번호에 접근할 수 없음을 뜻합니다."
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } 개 연락처가 여러 이메일 주소를 포함합니다."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } 회원"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        "${ contactName } 은(는) 여러 이메일 주소를 포함하고 있습니다."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } 연락처 찾음"
-      ],
-      "${ contactsLength } contact": [
-        "연락처 ${ contactsLength }개"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME }가 완전한 프라이버시 보호를 위해 종단간 암호화를 통하여 실시간 협동할 수 있도록 도와드립니다. 편집을 시작하려면 복사본을 생성하거나 문서 소유자에게 편집 접근 권한을 요청하세요."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } in"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } 그룹 찾음"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
@@ -3487,17 +2962,11 @@
       "${ planName } expires today.": [
         "${ planName }이(가) 오늘 만료됩니다."
       ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
-      ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "무료 체험이 ${ timeRemaining }일 남았습니다. 접근 권한을 상실하지 않으려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "무료 체험이 ${ timeRemaining }일 남았습니다. 구독을 유지하려면 ${ addPaymentMethodLink }. ${ learnMoreLink }"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME }가 IP를 가려 웹 사이트에서 사용자를 식별할 수 없게 됩니다."
@@ -3543,9 +3012,6 @@
       ],
       "Ad targeting": [
         "광고 트래킹"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "이 주소에 대해 신뢰할 수 있는 키로 주소 확인을 사용할 수 있습니다. 이 주소로 보내려면 먼저 전송에 사용 할 수 있는 공개 키를 신뢰해야 합니다."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "광고주는 타겟 광고를 표시하기 위해 브라우징을 추적합니다. ${ VPN_APP_NAME }이 트래커와 광고를 차단하여 연결 속도를 증대시키고 온라인 경험을 개선합니다."
@@ -3598,17 +3064,11 @@
       "Can't write into folder": [
         "폴더에 쓸 수 없습니다."
       ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
-      ],
       "characters": [
         "글자"
       ],
       "characters without spaces": [
         "자 (공백 제외)"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "연락처 확인 중 ${ max } 중 ${ progress }..."
       ],
       "Choose a plan that works best for you.": [
         "당신에게 가장 적합한 플랜을 선택하세요."
@@ -3619,12 +3079,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "${ VPN_APP_NAME }으로 연결하여 비공개로 방문하기"
       ],
-      "Contact assigned to group ${ contactGroupName }": [
-        "연락처가 ${ contactGroupName } 그룹에 할당되었습니다"
-      ],
-      "Contact unassigned from group ${ contactGroupName }": [
-        "연락처가 ${ contactGroupName } 그룹에 할당 취소되었습니다"
-      ],
       "Continue": [
         "계속"
       ],
@@ -3634,9 +3088,6 @@
       "Copied to clipboard": [
         "클립보드로 복사함"
       ],
-      "Copy the link to clipboard": [
-        "복사한 링크 붙이기"
-      ],
       "Copy your referral link": [
         "나의 추천인 링크를 공유하세요"
       ],
@@ -3645,9 +3096,6 @@
       ],
       "Create a copy to edit": [
         "편집을 위해 복사본 생성하기"
-      ],
-      "Create a new contact group": [
-        "새 연락처 그룹 만들기"
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "${ memberCount }명의 구성원을 위한 보안 클라우드 만들기"
@@ -3694,15 +3142,6 @@
       "Download current logs": [
         "현재 로그 다운로드"
       ],
-      "Drop file here to upload": [
-        "업로드할 파일을 여기에 놓습니다"
-      ],
-      "Drop to import": [
-        "드래그해서 불러오기"
-      ],
-      "Duplicate key updated": [
-        "중복 키 업데이트됨"
-      ],
       "Each code can only be used once": [
         "각 코드는 한 번씩만 유효합니다."
       ],
@@ -3711,9 +3150,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "이메일 호스팅은 이미 개인이 소유한 도메인만 가능합니다. 도메인 등록은 현재 ${ BRAND_NAME }에서 사용하실 수 없습니다. 도메인 호스팅 업체에 등록된 도메인에 대한 이메일을 호스트할 수 있습니다."
-      ],
-      "Emails are automatically signed": [
-        "이메일들이 자동적으로 서명됨"
       ],
       "End-to-end encrypted": [
         "종단간 암호화됨"
@@ -3853,12 +3289,6 @@
       "Keep your files secure with end-to-end encryption.": [
         "종단간 암호화로 파일을 안전하게 보관하세요."
       ],
-      "Key fingerprint": [
-        "지문 키"
-      ],
-      "Labels:": [
-        "라벨:"
-      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -3919,17 +3349,8 @@
       "New": [
         "신규"
       ],
-      "No contacts added yet": [
-        "아직 추가된 연락처가 없습니다"
-      ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
         "URL에 제공된 문서가 없습니다. ${ DRIVE_APP_NAME }로 돌아가서 문서를 선택하세요."
-      ],
-      "No email address": [
-        "이메일 주소 없음"
-      ],
-      "No group found": [
-        "찾은 그룹 없음"
       ],
       "No recent documents match your search.": [
         "검색한 내용과 일치하는 최근 문서가 존재하지 않습니다."
@@ -3939,12 +3360,6 @@
       ],
       "No version history available": [
         "사용가능한 버전 기록 없음"
-      ],
-      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "암호화를 위한 유효한 업로드된 키가 존재하지 않습니다. 이 주소로 메시지를 전송하려면, 유호한 키를 업로드 하거나 \"이메일 암호화\"를 비활성화 하세요."
-      ],
-      "Not a valid URL": [
-        "유효하지 않은 URL"
       ],
       "Not connected": [
         "연결되지 않음"
@@ -3957,9 +3372,6 @@
       ],
       "On public WiFi networks": [
         "공공 WiFi 네트워크에서 사용시"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "이런! 이 스프레드시트에 사용자의 최신 편집 내용을 저장할 수 없어, 작업 내용을 잃지 않도록 편집을 일시정지했습니다."
@@ -3994,47 +3406,14 @@
       "Pending invitations": [
         "초대 보류 중"
       ],
-      "PGP/Inline is only compatible with Plain Text format.": [
-        "PGM/Inline은 오직 일반 텍스트 포맷에만 호환됩니다."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME이 현재 작성 모드를 사용하여 자동으로 메시지를 보냅니다."
-      ],
       "Please enter the password to decrypt and view content.": [
         "복호화하고 내용을 보려면 비밀번호를 입력하세요."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "매인 매뉴에서 현재 변경 사항에 대한 복사본을 내보낸 뒤 페이지를 새로고침 해주세요."
       ],
-      "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "이 그룹에 할당된 주소는 삭제되지 않는다는 점에 유의하세요."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "이 그룹에 할당된 주소는 삭제되지 않는다는 점에 유의하세요."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
-      ],
-      "Please provide a name and an email address for creating a group.": [
-        "그룹을 생성하기 위해서 이름과 이메일 주소를 입력해주세요."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "${ groupCount }개 그룹에 추가 할 이메일 주소를 선택하세요."
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        "${ groupName } 개 그룹에 추가 할 이메일 주소를 선택하세요."
-      ],
       "Please try again in a few moments": [
         "잠시 후 다시 시도하십시오"
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "기본 암호화 키로 다시 서명할 수 있는 연락처를 찾는 동안 기다려 주세요."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "비활성 키로 암호화된 데이터가 포함된 연락처를 찾는 동안 기다려 주세요."
-      ],
-      "Primary": [
-        "우선 순위"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "비공개 브라우징 모드(일명 \"시크릿\" 모드)는 기기에서의 온라인 활동을 숨기는 것에 한해 유용합니다. 이 모드로 브라우저가 기록과 쿠키를 저장하는 것을 방지할 수 있지만, 사용자의 온라인 상 노출을 방지할 수는 없습니다. ISP, 네트워크 관리자 및 방문하는 웹 사이트는 여전히 사용자가 온라인에서 수행하는 작업을 확인할 수 있습니다."
@@ -4081,9 +3460,6 @@
       "Select a folder to move to.": [
         "이동할 폴더 선택"
       ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
       ],
@@ -4092,9 +3468,6 @@
       ],
       "Set up your organization": [
         "내 조직 설정하기"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "PGP를 설정하면 ${ BRAND_NAME }을 사용하지 않는 PGP 호환 서비스를 사용하는 사용자와 종단 간 암호화된 이메일을 보낼 수 있어요."
       ],
       "Settings update failed": [
         "설정 업데이트 실패"
@@ -4159,9 +3532,6 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
       ],
-      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "입력하신 URL이 Slack에서 잘못 복사된 것 같습니다. Slack에서 긴 링크를 복사할 때는 링크를 마우스 오른쪽 버튼으로 클릭하고 잘린 URL 텍스트를 직접 복사하는 대신 \"링크 복사\"를 선택하세요."
       ],
@@ -4170,9 +3540,6 @@
       ],
       "This action will delete the link and revoke access for all users.": [
         "이 작업은 링크를 삭제하고 모든 사용자의 접근을 취소합니다."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "이 문서는 편집하기에 너무 커졌습니다. 편집을 지속하기 위해 이전 수정본 삭제가 가능합니다."
@@ -4195,12 +3562,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "사용자가 볼 수 있는 조직의 이름 또는 닉네임입니다. 언제든지 변경할 수 있습니다."
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "이 링크는 호모그래프(homograph) 공격 일 수 있습니다. 방문하려는 링크가 정확한지 확인하거나 열지 마세요."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "즉 ISP와 방문한 웹사이트가 사용자의 개인 정보를 온라인 활동과 연관지을 수 없다는 것이죠."
       ],
@@ -4222,23 +3583,11 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "비밀번호를 기억하실 수 있도록 주기적으로 비밀번호 입력을 요청드립니다. 시간이 지날수록 요청 빈도는 줄어듭니다."
       ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "연락처를 재서명하려면, 계정에서 사용할 수 있는 암호화 키 목록에 대한 모든 연락처를 확인해야 합니다. 일치하는 것을 찾을 수 없다면, 연락처는 기본 암호화 키로 다시 서명될 것입니다."
-      ],
-      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "사용자의 데이터를 복구하려면, 데이터가 생성되었을 때 사용된 계정 키를 다시 활성화해야 합니다. 활성화를 한 뒤 키가 생성되었을 때 사용된 비밀번호를 기억해야 합니다."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "주소 검증을 사용하려면 신뢰할 수 있는 키를 활성화하고 이 주소의 기본 키를 포함하여 사용 가능한 하나 이상의 공개 키를 신뢰해야 합니다. 이 작업을 통해 암호화 키가 위조되지 않습니다."
-      ],
       "Tracking": [
         "트래킹"
       ],
       "Trash": [
         "휴지통"
-      ],
-      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "이 연락처로부터 오는 새 메시지를 인증하려면 \"${ activeSignerText }\" 키를 신뢰하세요."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 설정시 애플리케이션이 새로고침됩니다"
@@ -4327,12 +3676,6 @@
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
       ],
-      "You are about to open another browser tab and visit:": [
-        "다른 브라우저 탭을 열고 다음을 방문합니다:"
-      ],
-      "You are about to open your default browser and visit:": [
-        "기본 브라우저를 열고 다음을 방문합니다:"
-      ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "현재 ${ organizationName }에 소속된 ${ username }(으)로 로그인 했습니다."
       ],
@@ -4384,12 +3727,6 @@
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "${ invitationName } 항목에 가입하는 초대를 거절하려고 합니다. 계속 진행하면 소유자가 다시 초대하지 않는 한 접근할 수 없습니다. 정말 계속하시겠어요?"
       ],
-      "You've reached the maximum number of addresses in the contact group(s):": [
-        "이 연락처 그룹의 최대 주소 개수에 도달했습니다:"
-      ],
-      "You've reached the maximum number of addresses in the contact group.": [
-        "이 연락처 그룹의 최대 주소 개수에 도달했습니다."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
@@ -4419,9 +3756,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
-      ],
-      "Your files will be encrypted and then saved": [
-        "파일이 암호화된 후 저장됩니다"
       ],
       "Your information was found on ${ displayedDate }": [
         "${ displayedDate }에 사용자의 정보가 발견되었습니다."
@@ -4475,48 +3809,6 @@
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
       ]
     },
-    "info": {
-      "Selected color:": [
-        "선택한 색상:"
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "자세한 내용을 보려면 클릭하세요"
-      ]
-    },
-    "Key badge": {
-      "Active Signer": [
-        "활성 서명자"
-      ],
-      "Compromised": [
-        "유출됨"
-      ],
-      "Expired": [
-        "만료됨"
-      ],
-      "Fallback": [
-        "대체용"
-      ],
-      "KOO": [
-        "KOO"
-      ],
-      "Obsolete": [
-        "만료된"
-      ],
-      "Primary": [
-        "우선 순위"
-      ],
-      "Revoked": [
-        "폐기되었습니다"
-      ],
-      "Trusted": [
-        "신뢰됨"
-      ],
-      "WKD": [
-        "WKD"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 사용자 이름"
@@ -4532,15 +3824,6 @@
       ],
       "Active": [
         "활성"
-      ],
-      "Add email address": [
-        "이메일 주소 추가"
-      ],
-      "Add image URL": [
-        "이미지 URL 추가"
-      ],
-      "Add to group": [
-        "그룹에 추가"
       ],
       "Additional comments": [
         "추가 의견"
@@ -4581,9 +3864,6 @@
       "Category": [
         "카테고리"
       ],
-      "City": [
-        "시/군/구"
-      ],
       "Client": [
         "클라이언트"
       ],
@@ -4592,9 +3872,6 @@
       ],
       "Code is 6 digits without spaces": [
         "코드는 공백 없이 6자리에요."
-      ],
-      "Colors": [
-        "색상"
       ],
       "Command line interface (CLI)": [
         "명령줄 인터페이스 (CLI)"
@@ -4605,9 +3882,6 @@
       "Continue cancelling": [
         "취소 계속하기"
       ],
-      "Copy": [
-        "복사"
-      ],
       "Could you please let us know which provider?": [
         "어느 제공자인지 말해주실 수 있나요?"
       ],
@@ -4616,9 +3890,6 @@
       ],
       "Could you please specify?": [
         "구체적으로 말씀해 주시겠어요?"
-      ],
-      "Country": [
-        "국가"
       ],
       "Delete": [
         "삭제"
@@ -4632,9 +3903,6 @@
       "Disable this link on a specific date": [
         "특정 날짜에 이 링크 비활성화"
       ],
-      "Don't ask again": [
-        "다시 묻지 않기"
-      ],
       "Don't show this again": [
         "다시 보지 않기"
       ],
@@ -4644,20 +3912,11 @@
       "Email address": [
         "이메일 주소"
       ],
-      "Email format": [
-        "이메일 형식"
-      ],
       "Enable email notifications": [
         "이메일 알림 활성화"
       ],
-      "Encrypt emails": [
-        "이메일 암호화"
-      ],
       "Expiry": [
         "만료"
-      ],
-      "Extended address": [
-        "상세 주소"
       ],
       "File": [
         "파일"
@@ -4667,9 +3926,6 @@
       ],
       "Hide password": [
         "비밀번호 숨기기"
-      ],
-      "I understand the risk": [
-        "위험 사항을 이해했어요."
       ],
       "Ignore": [
         "무시"
@@ -4734,26 +3990,11 @@
       "Password strength": [
         "비밀번호 보안 강도"
       ],
-      "PGP scheme": [
-        "PGP 방식"
-      ],
       "Phone number": [
         "전화번호"
       ],
       "Please share any feedback to help us improve.": [
         "기능을 향상시키기 위해 피드백을 공유해 주세요."
-      ],
-      "Post office box": [
-        "우편번호"
-      ],
-      "Postal code": [
-        "우편번호"
-      ],
-      "Public keys": [
-        "공개 키"
-      ],
-      "Region": [
-        "시/도"
       ],
       "Require password": [
         "비밀번호 요구"
@@ -4770,17 +4011,11 @@
       "Shared with me": [
         "나와 공유됨"
       ],
-      "Sign emails": [
-        "이메일 서명"
-      ],
       "Skip feedback": [
         "피드백 건너뛰기"
       ],
       "Stop sharing": [
         "공유 중지"
-      ],
-      "Street address": [
-        "도로명 주소"
       ],
       "Strong": [
         "강함"
@@ -4802,9 +4037,6 @@
       ],
       "Unknown user": [
         "알 수 없는 사용자"
-      ],
-      "Upload picture": [
-        "사진 업로드"
       ],
       "Verification code": [
         "인증 코드"
@@ -4847,16 +4079,6 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 복호화할 수 없는 이름"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "색상"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "이름"
       ]
     },
     "Link": {
@@ -5078,14 +4300,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 의 새로운 버전이 가능합니다. ${ reloadButton }"
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "자동"
-      ],
-      "Plain text": [
-        "일반 텍스트"
       ]
     },
     "new_plans": {
@@ -5970,12 +5184,6 @@
       "Cannot load next page": [
         "다음 페이지 불러오기 실패"
       ],
-      "Contact group created": [
-        "콘텐츠 그룹 생성됨"
-      ],
-      "Contact group updated": [
-        "연락처 그룹 업데이트됨"
-      ],
       "Document moved to trash": [
         "문서가 휴지통으로 이동되었습니다"
       ],
@@ -6014,9 +5222,6 @@
       ],
       "Invitation's email was sent again": [
         "초대 이메일을 다시 전송했습니다."
-      ],
-      "Link copied to clipboard": [
-        "링크가 클립보드에 복사됨"
       ],
       "Move ${ n } file": [
         "파일 ${ n }개 이동"
@@ -6251,20 +5456,6 @@
         "회원님의 ${ planTitle } 구독이 ${ boldEndDate }에 시작됩니다."
       ]
     },
-    "Option": {
-      "Add to existing group": [
-        "병합할 그룹 추가"
-      ],
-      "Automatic (${ value })": [
-        "자동 (${ value })"
-      ],
-      "Create new group": [
-        "새 그룹 만들기"
-      ],
-      "Ignore group": [
-        "그룹 무시"
-      ]
-    },
     "Page title": {
       "Recents": [
         "최근"
@@ -6397,45 +5588,6 @@
         "그 후 ${ renewalLength }개월 간 ${ renewPriceStr }(으)로 자동 갱신됩니다. 언제든 취소하실 수 있습니다."
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "암호화에 키를 사용할 수 없어요."
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } 님이 이 키가 유출되었음으로 표시했습니다. 이 키가 암호화 및 서명 인증에 사용될 수 없습니다."
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } 님이 이 키가 만료되었음으로 표시했습니다. 이 키가 서명 인증에만 사용될 수 있습니다."
-      ],
-      "External key automatically fetched from keys.openpgp.org.": [
-        "외부 키가 자동으로 keys.openpgp.org에서 가져와졌습니다."
-      ],
-      "External key automatically fetched via WKD.": [
-        "외부 키가 자동적으로 WKD를 통해 가져와졌습니다."
-      ],
-      "This contact currently signs messages with this key": [
-        "이 연락처는 현재 이 키로 메시지에 서명합니다"
-      ],
-      "This key is used for message verification": [
-        "이 키는 메시지 검증에 사용됩니다."
-      ],
-      "This key is used to encrypt messages to this contact": [
-        "이 키는 이 연락처에 암호화된 메시지를 보내는데 사용했습니다."
-      ],
-      "This key is used to encrypt messages to this contact on older apps": [
-        "이 키는 이전 앱에서 이 연락처로 메시지를 암호화하는 데 사용됩니다"
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        "이 키를 \"신뢰하지 않는 것을\" 권장합니다."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "전송 키(${ keyUserIds }) 에 정의된 사용자 아이디 중 이메일 주소를 찾을 수 없습니다."
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "사용자에게 연락할 방법"
@@ -6458,29 +5610,8 @@
       "Enter a new folder name": [
         "새 폴더 이름을 입력하세요"
       ],
-      "Filter groups": [
-        "필터 그룹"
-      ],
-      "First name": [
-        "이름"
-      ],
-      "Group name": [
-        "그룹 이름"
-      ],
-      "Image URL": [
-        "이미지 URL"
-      ],
-      "Last name": [
-        "성"
-      ],
       "Message": [
         "메시지"
-      ],
-      "Name": [
-        "이름"
-      ],
-      "Name or email address": [
-        "이름 또는 이메일 주소"
       ],
       "Organization name": [
         "조직 이름"
@@ -6494,12 +5625,6 @@
       "Please select the main reason": [
         "주요 사유를 선택해 주세요."
       ],
-      "Search for group name": [
-        "그룹 이름을 위해 검색"
-      ],
-      "Search for name or email": [
-        "이름 및 이메일을 위해 검색"
-      ],
       "Select": [
         "선택"
       ],
@@ -6509,16 +5634,8 @@
       "Select a reason": [
         "사유 선택"
       ],
-      "Start typing an email address": [
-        "이메일 주소 입력을 시작하세요"
-      ],
       "Your organization name": [
         "조직 이름"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "이름"
       ]
     },
     "Plan description": {
@@ -6527,26 +5644,6 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME }의 모든 프리미엄 기능"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ countContacts }개 중 ${ contactsExported.length }개의 연락처를 성공적으로 내보냈습니다."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ totalBeDeleted }개 중 ${ model.deleted.length }를 성공적으로 삭제했습니다."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ totalBeMerged }개 중 ${ model.submitted.length }개의 연락처를 성공적으로 병합했습니다."
-      ],
-      "No contacts exported.": [
-        "내보낼 연락처 없음."
-      ],
-      "No contacts merged.": [
-        "병합할 연락처 없음."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "진행률: ${ combinedProgress }%"
       ]
     },
     "Property": {
@@ -6567,46 +5664,6 @@
       ],
       "name": [
         "이름"
-      ]
-    },
-    "Property type": {
-      "Address": [
-        "주소"
-      ],
-      "Email": [
-        "이메일"
-      ],
-      "Fax": [
-        "팩스"
-      ],
-      "Home": [
-        "집"
-      ],
-      "Main": [
-        "메인"
-      ],
-      "Mobile": [
-        "모바일"
-      ],
-      "Other": [
-        "기타"
-      ],
-      "Pager": [
-        "호출기"
-      ],
-      "Phone": [
-        "전화"
-      ],
-      "Work": [
-        "직장"
-      ]
-    },
-    "protonbadge": {
-      "Official": [
-        "공식"
-      ],
-      "Official email from ${ BRAND_NAME }": [
-        "${ BRAND_NAME } 의 공식 이메일"
       ]
     },
     "Provider option": {
@@ -6781,11 +5838,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "회원님의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "업로드"
       ]
     },
     "session_recovery:available:action": {
@@ -7017,14 +6069,6 @@
     "sheets_2025:Title": {
       "Import data": [
         "데이터 가져오기"
-      ]
-    },
-    "Signing preference for emails": {
-      "Don't sign": [
-        "서명 안함"
-      ],
-      "Sign": [
-        "서명"
       ]
     },
     "Sort menu options": {
@@ -7446,41 +6490,14 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
-      ],
-      "Address copied to clipboard": [
-        "주소가 클립보드에 복사되었습니다"
-      ],
       "Code sent to ${ methodTo }": [
         "${ methodTo }(으)로 코드를 전송했습니다."
-      ],
-      "Contact deleted": [
-        "콘텐츠 삭제됨"
-      ],
-      "Contact group deleted": [
-        "콘텐츠 그룹 삭제됨"
-      ],
-      "Contact saved": [
-        "연락처가 저장되었습니다"
-      ],
-      "Contacts deleted": [
-        "콘텐츠 삭제됨"
       ],
       "Email address copied to clipboard": [
         "이메일 주소가 클립보드에 복사되었습니다"
       ],
-      "Fingerprint copied to clipboard": [
-        "지문이 클립보드에 복사됨"
-      ],
-      "Phone number copied to clipboard": [
-        "휴대전화 번호가 클립보드에 복사되었습니다"
-      ],
       "Preference saved": [
         "설정이 저장되었습니다."
-      ],
-      "Preferences saved": [
-        "설정 저장됨"
       ],
       "Problem reported": [
         "문제 제보됨"
@@ -7511,64 +6528,6 @@
         "버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ]
     },
-    "Table header": {
-      "Action": [
-        "동작"
-      ],
-      "Actions": [
-        "동작"
-      ],
-      "Address": [
-        "주소"
-      ],
-      "Created": [
-        "생성됨"
-      ],
-      "Expires": [
-        "만료"
-      ],
-      "Fingerprint": [
-        "지문"
-      ],
-      "Name": [
-        "이름"
-      ],
-      "Status": [
-        "상태"
-      ],
-      "Type": [
-        "유형"
-      ]
-    },
-    "TableHeader": {
-      "Actions": [
-        "동작"
-      ],
-      "Address": [
-        "주소"
-      ],
-      "CSV field": [
-        "CSV 란"
-      ],
-      "Display name": [
-        "표시되는 이름"
-      ],
-      "First name": [
-        "이름"
-      ],
-      "Import": [
-        "불러오기"
-      ],
-      "Last name": [
-        "성"
-      ],
-      "Values": [
-        "값"
-      ],
-      "vCard field": [
-        "vCard 란"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays }일"
@@ -7587,9 +6546,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount }개 이메일 주소"
-      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
       ],
@@ -7605,20 +6561,8 @@
       "Account temporarily locked": [
         "계정 일시 잠김"
       ],
-      "Add contact group name": [
-        "연락처 그룹 이름 추가"
-      ],
-      "Add to ${ groupCount } group": [
-        "${ groupCount } 그룹에 추가"
-      ],
-      "Add to ${ groupName }": [
-        "${ groupName }그룹에 추가"
-      ],
       "Add user": [
         "사용자 추가"
-      ],
-      "Addresses": [
-        "주소"
       ],
       "All settings": [
         "전체 설정"
@@ -7626,23 +6570,14 @@
       "Are you sure?": [
         "확실하신가요?"
       ],
-      "Birthday": [
-        "생일"
-      ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
-      ],
-      "Cannot add more addresses": [
-        "더 많이 주소를 추가할 수 없습니다."
       ],
       "Change access to viewer?": [
         "뷰어에게 접근 권한을 변경하시겠습니까?"
       ],
       "Change password": [
         "비밀번호 변경"
-      ],
-      "Clearing data": [
-        "데이터 지우기"
       ],
       "Collaborate on documents": [
         "문서에서 협업하기"
@@ -7659,26 +6594,11 @@
       "Connect your custom domain": [
         "커스텀 도메인 연결하기"
       ],
-      "Contact Details": [
-        "연락처 정보"
-      ],
-      "Contact group": [
-        "연락처 그룹"
-      ],
       "Contact us": [
         "문의"
       ],
-      "Contacts": [
-        "연락처"
-      ],
       "Create a new folder": [
         "새 폴더 만들기"
-      ],
-      "Create contact": [
-        "연락처 추가"
-      ],
-      "Create new group": [
-        "새 그룹 만들기"
       ],
       "Currency": [
         "통화"
@@ -7695,20 +6615,8 @@
       "Decline invitation?": [
         "초대를 거절하시겠어요?"
       ],
-      "Delete ${ count } contact": [
-        "${ count }개의 연락처 삭제"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count }개의 그룹 삭제"
-      ],
-      "Delete ${ value }": [
-        "${ value }을(를) 삭제"
-      ],
       "Delete permanently": [
         "영구적으로 삭제"
-      ],
-      "Deleting contacts": [
-        "연락처 삭제"
       ],
       "Desktop": [
         "데스크톱"
@@ -7721,9 +6629,6 @@
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
-      ],
-      "Docs": [
-        "Docs"
       ],
       "Document Size Limit Exceeded": [
         "문서 크기 제한 도달"
@@ -7740,26 +6645,8 @@
       "Download the app": [
         "앱 다운로드"
       ],
-      "Edit contact": [
-        "연락처 편집"
-      ],
-      "Edit contact group": [
-        "연락처 그룹 수정"
-      ],
-      "Edit email settings": [
-        "이메일 설정 편집"
-      ],
-      "Edit image": [
-        "이미지 편집"
-      ],
       "Editing paused": [
         "편집 일시정지됨"
-      ],
-      "Email addresses": [
-        "이메일 주소"
-      ],
-      "Email settings": [
-        "이메일 설정"
       ],
       "Enable 2FA": [
         "2단계 인증 활성화"
@@ -7776,9 +6663,6 @@
       "Error Syncing": [
         "동기화 오류"
       ],
-      "Exporting contacts": [
-        "연락처 내보내기"
-      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "${ planTitle }(으)로 크레딧으로 **${ referralInfo.uiData.refereeRewardAmount }** 받기"
       ],
@@ -7787,9 +6671,6 @@
       ],
       "Get the apps": [
         "앱 다운로드"
-      ],
-      "Groups": [
-        "그룹"
       ],
       "Help and feedback": [
         "도움말 및 의견"
@@ -7812,12 +6693,6 @@
       "Human verification": [
         "사람임을 인증"
       ],
-      "Import contacts": [
-        "연락처 가져오기"
-      ],
-      "Import groups": [
-        "그룹 가져오기"
-      ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
       ],
@@ -7827,20 +6702,11 @@
       "Limited availability": [
         "제한된 기능"
       ],
-      "Link confirmation": [
-        "링크 확인"
-      ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME }로 복사본 생성"
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
-      ],
-      "Merge contacts": [
-        "연락처 병합"
-      ],
-      "Merging contacts": [
-        "연락처 병합"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "당신의 조직을 ${ BRAND_NAME }(으)로 이전하세요"
@@ -7866,17 +6732,8 @@
       "No breaches detected": [
         "감지된 침해사례 없음"
       ],
-      "Notes": [
-        "메모"
-      ],
       "Offline": [
         "오프라인"
-      ],
-      "One email, many recipients": [
-        "하나의 이메일, 다수의 수신자"
-      ],
-      "Open actions dropdown": [
-        "액션 드롭다운 열기"
       ],
       "Open pagination": [
         "페이지 번호 열기"
@@ -7886,15 +6743,6 @@
       ],
       "Organization setup": [
         "조직 설정"
-      ],
-      "Other information": [
-        "다른 정보"
-      ],
-      "Other names": [
-        "다른 이름"
-      ],
-      "Phone numbers": [
-        "전화번호"
       ],
       "Photos": [
         "사진"
@@ -7914,20 +6762,11 @@
       "Public link settings": [
         "공개 링크 설정"
       ],
-      "Re-sign all contacts": [
-        "모든 연락처에 다시 서명"
-      ],
-      "Re-signing contacts": [
-        "연락처 다시 서명"
-      ],
       "Read-only": [
         "읽기 전용"
       ],
       "Recommended actions": [
         "권장하는 조치"
-      ],
-      "Recover data": [
-        "데이터 복구"
       ],
       "Remove your access?": [
         "내 접근 권한을 제거하시겠습니까?"
@@ -7949,12 +6788,6 @@
       ],
       "Security center": [
         "보안 센터"
-      ],
-      "Select action to take on contact group": [
-        "연락처 그룹에 대해 수행할 작업 선택"
-      ],
-      "Select contact group": [
-        "연락처 그룹"
       ],
       "Select link expiration date": [
         "링크 만료 날짜 선택"
@@ -8049,12 +6882,6 @@
       "VPN explained": [
         "VPN 심층탐구"
       ],
-      "Warning": [
-        "경고"
-      ],
-      "Warning: suspected fake website": [
-        "경고: 가짜 웹 사이트일 수 있음"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
       ],
@@ -8080,26 +6907,6 @@
         "사용자의 노출된 정보"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "작업"
-      ],
-      "Created": [
-        "생성됨"
-      ],
-      "Expires": [
-        "만료"
-      ],
-      "Fingerprint": [
-        "지문"
-      ],
-      "Status": [
-        "상태"
-      ],
-      "Type": [
-        "종류"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "오늘"
@@ -8109,32 +6916,14 @@
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
       ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "자동은 작성기의 형식이 이 사용자에게 보내는 데 사용됨을 나타냅니다. 일반 텍스트는 발송 시 메시지가 항상 일반 텍스트로 변환됨을 나타냅니다."
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
       "Change shared item settings": [
         "공유된 항목 설정 변경"
       ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "디지털 방식의 서명 이메일은 당신으로 부터 보내졌다는 것을 인증하는데 도움을 줍니다"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "이메일 암호화는 보낸 메시지를 인증하는 데 도움이 되도록 이메일 서명이 강제됩니다."
-      ],
-      "Encrypted data": [
-        "데이터 복호화"
-      ],
-      "Encrypted data with verified digital signature": [
-        "인증된 디지털 서명이 포함된 암호화된 데이터"
-      ],
       "Instant AI assistance, human expert on hand!": [
         "즉각적인 AI 지원, 상시 대기 중인 전문가!"
-      ],
-      "Load image": [
-        "이미지 불러오기"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "메시지와 파일 이름은 이메일에 포함될 때 제로 액세스 암호화로 저장됩니다."
@@ -8142,29 +6931,14 @@
       "Not all information listed here was exposed for all users.": [
         "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."
       ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "사용자에게 서명하거나 암호화 할 때 사용할 PGP 체계를 선택해주세요. PGP/Inline은 일반 텍스트 메시지를 강제합니다"
-      ],
       "Shared with end-to-end encryption": [
         "종단간 암호화로 공유됨"
-      ],
-      "The image could not be loaded": [
-        "이미지를 불러올 수 없습니다"
-      ],
-      "The image could not be loaded using proxy": [
-        "이미지가 프록시를 사용하여 불러올 수 없습니다."
       ],
       "This link has expired. Please extend expiration date": [
         "링크가 만료되었습니다. 만료일을 연장해 주세요."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "해독되지 않는 한, 암호화된 비밀번호는 노출되더라도 안전하게 유지됩니다."
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
-      ],
-      "Version 6 OpenPGP key": [
-        "버전 6 OpenPGP 키"
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
@@ -8344,47 +7118,11 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "정말로 연락처 ${ count }개를 영구적으로 삭제하시겠습니까?"
-      ],
-      "Are you sure you want to permanently delete these contact groups?": [
-        "이 연락처 그룹을 영구적으로 삭제하시겠습니까?"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "이 연락처 그룹을 영구적으로 삭제하시겠습니까?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "이 연락처를 영구적으로 삭제하시겠습니까?"
-      ],
-      "Contacts could not be merged": [
-        "연락처를 병합할 수 없습니다"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "비밀번호가 기억나지 않으시다면, 키를 재활성화 하는것이 불가능 합니다. 당사에서 경고 배너를 무시할 수 있도록 도와드릴 수 있으나, 처리 중 해당 키의 암호화된 모든 데이터를 잃게 됩니다."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
       ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "병합될 연락처 중 일부는 오류를 표시합니다. 이 연락처들을 개별적으로 검토해 주세요."
-      ],
-      "The contact data is corrupted and cannot be displayed.": [
-        "연락처 데이터가 손상되어 표시가 불가능 합니다."
-      ],
-      "The contact failed to load.": [
-        "콘텐츠 로딩 실패."
-      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "날짜 및 시간 설정은 기기 동기화 범위에 벗어납니다. ${ learnMore }"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "암호화된 콘텐츠 복호화 실패."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "연락처 상세 정보 서명 인증 실패."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "이 동작은 되돌릴 수 없습니다. 계속하기 위해 필드에 단어 ${ boldDanger } 을(를) 입력하세요."
       ],
       "This will replace all the data in the spreadsheet": [
         "이 스프레드시트의 모든 데이터가 대체됩니다"

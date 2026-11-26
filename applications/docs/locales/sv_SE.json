@@ -40,38 +40,14 @@
       "Activate recovery": [
         "Aktivera återställning"
       ],
-      "Add": [
-        "Lägg till"
-      ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
       ],
       "Add account": [
         "Lägg till konto"
       ],
-      "Add address": [
-        "Lägg till adress"
-      ],
       "Add another account": [
         "Lägg till ett annat konto"
-      ],
-      "Add birthday": [
-        "Lägg till födelsedag"
-      ],
-      "Add contact": [
-        "Lägg till kontakt"
-      ],
-      "Add email": [
-        "Lägg till e-post"
-      ],
-      "Add group": [
-        "Lägg till grupp"
-      ],
-      "Add new group": [
-        "Lägg till ny grupp"
-      ],
-      "Add note": [
-        "Lägg till anteckning"
       ],
       "Add payment method": [
         "Lägg till betalningsmetod"
@@ -79,21 +55,8 @@
       "Add people or groups to share": [
         "Lägg till personer eller grupper till dela"
       ],
-      "Add phone number": [
-        "Lägg till telefonnummer"
-      ],
-      "Add to group": [
-        "Lägg till i grupp"
-      ],
-      "Apply": [
-        "Tillämpa"
-      ],
       "Ask me next time": [
         "Fråga mig nästa gång"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Högst ${ maxContacts } kontakt tillåts per kontaktgrupp",
-        "Högst ${ maxContacts } kontakter är tillåtna per kontaktgrupp"
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
@@ -134,18 +97,6 @@
       "Chat with us": [
         "Chatta med oss"
       ],
-      "Choose a file or drag it here": [
-        "Välj en fil eller dra den hit"
-      ],
-      "Clear data": [
-        "Rensa data"
-      ],
-      "Clear query": [
-        "Rensa fråga"
-      ],
-      "Click here.": [
-        "Klicka här."
-      ],
       "Close": [
         "Stäng"
       ],
@@ -167,23 +118,11 @@
       "Comments": [
         "Kommentarer"
       ],
-      "Compose": [
-        "Skriv"
-      ],
-      "Confirm": [
-        "Bekräfta"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        "Bekräfta öppnande av länken ${ linkToShow }"
-      ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
-      ],
-      "Contact group": [
-        "Kontaktgrupp"
       ],
       "Continue": [
         "Fortsätt"
@@ -197,9 +136,6 @@
       "Copy as markdown": [
         "Kopiera som markdown"
       ],
-      "Copy email to clipboard": [
-        "Kopiera e-post till urklipp"
-      ],
       "Copy invite link": [
         "Kopiera inbjudningslänk"
       ],
@@ -209,17 +145,11 @@
       "Copy password": [
         "Kopiera lösenord"
       ],
-      "Copy version number to clipboard": [
-        "Kopiera versionsnummer till urklipp"
-      ],
       "Create": [
         "Skapa"
       ],
       "Create a copy": [
         "Skapa en kopia"
-      ],
-      "Create a new contact group": [
-        "Skapa en ny kontaktgrupp"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Skapa nytt ${ SHEETS_APP_NAME }"
@@ -236,40 +166,17 @@
       "Decline invite": [
         "Avvisa inbjudan"
       ],
-      "Delete": [
-        "Ta bort"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Ta bort ${ selectedCount } kontakt",
-        "Ta bort ${ selectedCount } kontakter"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Ta bort ${ selectedCount } kontaktgrupp",
-        "Ta bort ${ selectedCount } kontaktgrupper"
-      ],
-      "Delete contact": [
-        "Ta bort kontakt"
-      ],
-      "Delete contact group": [
-        "Ta bort kontaktgrupp"
-      ],
       "Delete older revisions": [
         "Ta bort äldre versioner"
       ],
       "Delete permanently": [
         "Ta bort permanent"
       ],
-      "Deselect all": [
-        "Avmarkera alla"
-      ],
       "Dismiss": [
         "Avfärda"
       ],
       "Dismiss notification": [
         "Avfärda avisering"
-      ],
-      "Done": [
-        "Klar"
       ],
       "Download": [
         "Ladda ner"
@@ -289,9 +196,6 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
-      "Edit": [
-        "Redigera"
-      ],
       "Edit email address": [
         "Redigera e-postadress"
       ],
@@ -300,9 +204,6 @@
       ],
       "Edit sign-in details": [
         "Redigera inloggningsdetaljer"
-      ],
-      "Email settings": [
-        "E-postinställningar"
       ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
@@ -313,23 +214,14 @@
       "Explore other plans": [
         "Utforska andra paket"
       ],
-      "Export": [
-        "Exportera"
-      ],
-      "Export contact group": [
-        "Exportera kontaktgrupp"
-      ],
       "Export editor state for version": [
         "Exportera redigeringsläge för version"
-      ],
-      "Export selection as .vcf": [
-        "Exportera val som .vcf"
       ],
       "Export this version (as docx)": [
         "Exportera denna version (som docx)"
       ],
       "Export this version (as odt)": [
-        "Exportera denna version (som odt)"
+        "Exportera den här versionen (som odt)"
       ],
       "Export this version (as xlsx)": [
         "Exportera denna version (som xlsx)"
@@ -339,9 +231,6 @@
       ],
       "Forgot password?": [
         "Glömt lösenord?"
-      ],
-      "Forward as attachment": [
-        "Vidarebefordra som bilaga"
       ],
       "Generate password": [
         "Generera lösenord"
@@ -367,9 +256,6 @@
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
       ],
-      "Go to label": [
-        "Gå till etikett"
-      ],
       "Go to today": [
         "Gå till idag"
       ],
@@ -388,23 +274,11 @@
       "Hide": [
         "Dölj"
       ],
-      "Hide advanced PGP settings": [
-        "Dölj avancerade PGP-inställningar"
-      ],
       "Hide more benefits": [
         "Dölj fler fördelar"
       ],
-      "Image could not be loaded with tracker protection.": [
-        "Bild kunde inte laddas med spårningsskydd."
-      ],
-      "Image will be loaded without a proxy": [
-        "Bild kommer att laddas utan en proxy"
-      ],
       "Import": [
         "Importera"
-      ],
-      "import": [
-        "importera"
       ],
       "Import data": [
         "Importera data"
@@ -421,12 +295,6 @@
       "Learn more": [
         "Lär dig mer"
       ],
-      "Load": [
-        "Ladda"
-      ],
-      "Load image": [
-        "Ladda bild"
-      ],
       "Make a copy": [
         "Göra en kopia"
       ],
@@ -442,23 +310,11 @@
       "Mark as resolved": [
         "Markera som löst"
       ],
-      "Mark for deletion": [
-        "Markera för borttagning"
-      ],
       "Markdown (.md)": [
         "Markdown (.md)"
       ],
       "Maybe later": [
         "Kanske senare"
-      ],
-      "Merge": [
-        "Slå ihop"
-      ],
-      "Merge contacts": [
-        "Slå ihop kontakter"
-      ],
-      "More actions": [
-        "Fler åtgärder"
       ],
       "More benefits": [
         "Fler fördelar"
@@ -489,15 +345,6 @@
       ],
       "New folder": [
         "Ny mapp"
-      ],
-      "New message": [
-        "Nytt meddelande"
-      ],
-      "Next": [
-        "Nästa"
-      ],
-      "Next contact": [
-        "Nästa kontakt"
       ],
       "Next month": [
         "Nästa månad"
@@ -532,26 +379,14 @@
       "Plain Text (.txt)": [
         "Oformaterad text (.txt)"
       ],
-      "Preview contact": [
-        "Förhandsgranska kontakt"
-      ],
       "Preview logs": [
         "Förhandsgranska loggar"
-      ],
-      "Previous contact": [
-        "Tidigare kontakt"
       ],
       "Previous month": [
         "Föregående månad"
       ],
       "Print": [
         "Skriv ut"
-      ],
-      "Re-sign": [
-        "Återsignera"
-      ],
-      "Recover data": [
-        "Återställ data"
       ],
       "Refer a friend": [
         "Hänvisa en vän"
@@ -658,9 +493,6 @@
       "Select ${ planOrAppName }": [
         "Välj ${ planOrAppName }"
       ],
-      "Select all": [
-        "Markera alla"
-      ],
       "Set password or expiration date": [
         "Ställ in lösenord eller utgångsdatum"
       ],
@@ -693,9 +525,6 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Delning är end-to-end-krypterad"
-      ],
-      "Show advanced PGP settings": [
-        "Visa avancerade PGP-inställningar"
       ],
       "Show more": [
         "Visa mer"
@@ -748,9 +577,6 @@
       "Trashing...": [
         "Kastar …"
       ],
-      "Trust": [
-        "Lita på"
-      ],
       "Try again": [
         "Försök igen"
       ],
@@ -768,12 +594,6 @@
       ],
       "Unlock data": [
         "Lås upp data"
-      ],
-      "Unmark for deletion": [
-        "Avmarkera för borttagning"
-      ],
-      "Untrust": [
-        "Sluta lita på"
       ],
       "Update recovery file": [
         "Uppdatera återställningsfil"
@@ -793,9 +613,6 @@
       "Upload and share files": [
         "Ladda upp och dela filer"
       ],
-      "Upload picture": [
-        "Ladda upp bild"
-      ],
       "Use ${ label } theme": [
         "Använd ${ label }-temat"
       ],
@@ -808,9 +625,6 @@
       "Use authentication code": [
         "Använd autentiseringskod"
       ],
-      "Use for sending": [
-        "Använd för att skicka"
-      ],
       "Use recovery code": [
         "Använd återställningskod"
       ],
@@ -822,9 +636,6 @@
       ],
       "Verify now": [
         "Verifiera nu"
-      ],
-      "View": [
-        "Visa"
       ],
       "View ${ pendingCount } invitation": [
         "Visa ${ pendingCount } inbjudning",
@@ -850,27 +661,6 @@
       ],
       "words out of": [
         "ord av"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
-        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
-      ]
-    },
-    "Actions message": {
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } eller ${ importContact }."
-      ],
-      "No results found.": [
-        "Inga resultat hittades."
-      ],
-      "Please try another search term.": [
-        "Försök med annan sökterm."
-      ],
-      "You don't have any contacts.": [
-        "Du har inga kontakter."
-      ],
-      "You don't have any groups.": [
-        "Du har inga grupper."
       ]
     },
     "Addon": {
@@ -969,11 +759,6 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "Genom att lämna nu kan några kontakter inte importeras"
       ]
     },
     "Apps dropdown": {
@@ -1456,76 +1241,6 @@
       ],
       "strawberry": [
         "jordgubb"
-      ]
-    },
-    "Contact field label": {
-      "Address": [
-        "Adress"
-      ],
-      "Anniversary": [
-        "Årsdag"
-      ],
-      "Birthday": [
-        "Födelsedag"
-      ],
-      "Display name": [
-        "Visningsnamn"
-      ],
-      "Email": [
-        "E-post"
-      ],
-      "Enter a display name or nickname": [
-        "Ange ett visningsnamn eller smeknamn"
-      ],
-      "First name": [
-        "Förnamn"
-      ],
-      "Gender": [
-        "Kön"
-      ],
-      "Language": [
-        "Språk"
-      ],
-      "Last name": [
-        "Efternamn"
-      ],
-      "Logo": [
-        "Logga"
-      ],
-      "Member": [
-        "Medlem"
-      ],
-      "Name": [
-        "Namn"
-      ],
-      "Note": [
-        "Anteckning"
-      ],
-      "Organization": [
-        "Organisation"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Role": [
-        "Roll"
-      ],
-      "Time zone": [
-        "Tidszon"
-      ],
-      "Title": [
-        "Titel"
-      ],
-      "URL": [
-        "URL"
-      ]
-    },
-    "Contact image": {
-      "Contact image": [
-        "Kontaktbild"
       ]
     },
     "Country name": {
@@ -2367,21 +2082,6 @@
         "För ${ VPN_APP_NAME }"
       ]
     },
-    "Default display name vcard": {
-      "Unknown": [
-        "Okänd"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Använd global standard (${ defaultValueText })"
-      ]
-    },
-    "Default signing preference": {
-      "Use global default (${ globalDefaultText })": [
-        "Använd global standard (${ globalDefaultText })"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Försenad faktura"
@@ -2415,12 +2115,6 @@
       "Create groups you can email with a single address.": [
         "Skapa grupper du kan skicka e-post till med en enda adress."
       ],
-      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Tar bort kontakter... Detta kan ta några minuter. När processen är klar kan du stänga detta fönster."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Enkel åtkomst till din e-post och kalender på stationär dator och mobil."
       ],
@@ -2429,9 +2123,6 @@
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Uppmuntra användningen av tvåfaktorsautentisering i din organisation för extra säkerhet."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Säkerställ säker åtkomst till organisationens data, även om ditt team är på distans eller använder offentligt WiFi."
@@ -2451,14 +2142,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
-      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Låter dig omedelbart lägga till möteslänkar i dina händelseinbjudningar."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Sammanfogar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Ställ in en dataåterställningsmetod för att förhindra dataförlust."
@@ -2475,20 +2160,11 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
-      ],
-      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
-      ],
       "To start, give your organization a name.": [
         "Börja med att ge din organisation ett namn."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Uppgradera till ${ planName } för att fortsätta dela filer med redigeringsåtkomst"
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
@@ -2496,30 +2172,11 @@
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Tråkigt att du lämnar oss. Om du har en stund över skulle vi verkligen uppskatta att höra varför du vill avbryta Din feedback hjälper oss att göra ${ BRAND_NAME } bättre för alla."
       ],
-      "With contact groups, you can send emails to everyone in the group with one click.": [
-        "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Du kan markera de kontakter som du varken vill slå ihop eller behålla för borttagning. Borttagning kommer endast ske efter att ha klickat på knappen ”Slå ihop”"
-      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ditt konto- och dataåterställningsmetoder är inställda och 2FA är aktiverat."
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dataåterställningsmetoder är inställda."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Dessutom har vi automatiskt matchat CSV-fält med vCard-fält. Du kan granska och ändra denna matchning manuellt."
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
       ]
     },
     "Downgrade account reason": {
@@ -2658,12 +2315,6 @@
         "${ failureItems.length } objekt misslyckades att flyttas",
         "${ failureItems.length } objekt misslyckades att flyttas"
       ],
-      "A contact with this email address already exists": [
-        "En kontakt med denna e-postadress finns redan"
-      ],
-      "A group with this name already exists": [
-        "En grupp med detta namn finns redan"
-      ],
       "A message is required when reporting copyright infringement or stolen data": [
         "Ett meddelande krävs för att rapportera brott mot upphovsrätt eller stulen data"
       ],
@@ -2700,9 +2351,6 @@
       "Cannot download a folder": [
         "Kan inte ladda ner en mapp"
       ],
-      "Cannot export this contact": [
-        "Kan inte exportera denna kontakt"
-      ],
       "Cannot find move target": [
         "Kan inte hitta mål för flytt"
       ],
@@ -2717,15 +2365,6 @@
       ],
       "Cannot verify who uploaded this file": [
         "Kan inte verifiera vem som laddade upp denna fil"
-      ],
-      "Contact could not be saved": [
-        "Kontakten kunde inte sparas"
-      ],
-      "Contact name is too long": [
-        "Kontaktnamn är för långt"
-      ],
-      "Contact signature not verified": [
-        "Kontaktsignatur inte verifierad"
       ],
       "Copy operation aborted": [
         "Kopieringsåtgärd avbröts"
@@ -2838,9 +2477,6 @@
       "Failed to load the membership data": [
         "Misslyckades med att ladda medlemskapsdatan"
       ],
-      "Failed to open to contact": [
-        "Misslyckades att öppna kontakt"
-      ],
       "Failed to remove older revisions": [
         "Misslyckades att ta bort äldre revisioner"
       ],
@@ -2874,14 +2510,8 @@
       "File has no revision": [
         "Fil har ingen version"
       ],
-      "First name is too long": [
-        "Förnamn är för långt"
-      ],
       "Image preview not found": [
         "Förhandsvisning av bild hittades inte"
-      ],
-      "Image upload failed": [
-        "Bilduppladdning misslyckades"
       ],
       "Incorrect backup password. Please try again.": [
         "Felaktigt reservlösenord. Försök igen."
@@ -2895,15 +2525,6 @@
       "Invalid coupon": [
         "Ogiltig rabattkod"
       ],
-      "Invalid email address": [
-        "Ogiltig e-postadress"
-      ],
-      "Invalid name": [
-        "Ogiltigt namn"
-      ],
-      "Invalid public key file": [
-        "Ogiltig offentlig nyckelfil"
-      ],
       "Invalid URL": [
         "Ogiltig URL"
       ],
@@ -2915,9 +2536,6 @@
       ],
       "Item not found": [
         "Objekt hittades inte"
-      ],
-      "Last name is too long": [
-        "Efternamn är för långt"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
@@ -2956,14 +2574,6 @@
       "Not a valid number": [
         "Inte ett giltigt nummer"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "En av kontakterna har ingen e-postadress: ${ noEmailsContactNamesList }",
-        "Vissa kontakter har ingen e-postadress: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "En av grupperna har inga kontakter: ${ noContactGroupList }",
-        "Vissa grupper har inga kontakter: ${ noContactGroupList } "
-      ],
       "Only admins can convert external invitations": [
         "Endast administratörer kan konvertera externa inbjudningar"
       ],
@@ -3000,9 +2610,6 @@
       "Please enter ZIP code": [
         "Ange postnummer"
       ],
-      "Please provide either a first name, a last name or a display name": [
-        "Ange antingen ett förnamn, ett efternamn eller ett visningsnamn"
-      ],
       "Please select a country": [
         "Välj ett land"
       ],
@@ -3028,9 +2635,6 @@
       "Signature is missing": [
         "Signatur saknas"
       ],
-      "Signature not verified": [
-        "Signatur inte verifierad"
-      ],
       "Signature verification failed": [
         "Signaturverifiering misslyckades"
       ],
@@ -3043,9 +2647,6 @@
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
         "Signaturverifiering för ${ signatureType } misslyckades: ${ errorMessage }"
       ],
-      "Some contacts could not be deleted": [
-        "Några kontakter kunde inte tas bort"
-      ],
       "Some documents could not be loaded": [
         "Några dokument kunde inte laddas"
       ],
@@ -3054,9 +2655,6 @@
       ],
       "Some file parts failed to upload. Please try again.": [
         "Några fildelar misslyckades att laddas upp. Försök igen."
-      ],
-      "Some groups could not be deleted": [
-        "Några grupper kunde inte tas bort"
       ],
       "Some invitations could not be loaded": [
         "Några inbjudningar kunde inte laddas"
@@ -3103,9 +2701,6 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Det uppstod ett fel vid bearbetning av uppdateringar av dokumentet. Ladda om sidan och försök igen."
       ],
-      "There was an error when exporting the contacts vCards": [
-        "Det uppstod ett fel vid export av vCards-kontakterna"
-      ],
       "This document is too large to copy. Download it to keep a copy of your work.": [
         "Det här dokumentet är för stort för att koiera. Ladda ned det för att behåla en kopia av ditt arbete."
       ],
@@ -3138,9 +2733,6 @@
       ],
       "This item is not shared": [
         "Detta objekt är inte delat"
-      ],
-      "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
       ],
       "This version could not be loaded. Close the history and try again.": [
         "Den här versionen kunde inte laddas. Vänligen stäng historiken och försök igen."
@@ -3217,18 +2809,11 @@
       "You can update a public link for your own files only": [
         "Du kan endast uppdatera en offentlig länk för dina egna filer"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
-        "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
-      ],
       "You do not have access to this item": [
         "Du har inte åtkomst till detta objekt"
       ],
       "You do not have access to this shared item": [
         "Du har inte åtkomst till detta delade objekt"
-      ],
-      "You must set a name": [
-        "Du måste ange ett namn"
       ],
       "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
         "Din sista ändring är för stor för att sparas, så redigering är inaktiverad. Kopiera det arbete du behöver och ladda sedan om."
@@ -3238,45 +2823,6 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Ett oväntat fel uppstod. Importen måste startas om."
-      ]
-    },
-    "Error importing contact": {
-      "Encryption failed": [
-        "Kryptering misslyckades"
-      ],
-      "Missing FN property": [
-        "FN-egenskap saknas"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard-versioner < 3.0 stöds inte"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Ett fel uppstod vid läsning av din fil ${ formattedFilename }. Felaktigt filformat."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ett fel uppstod vid uppladdning av din fil ${ formattedFilename }. Maximal filstorlek är ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ett fel uppstod vid uppladdning av din fil ${ formattedFilename }. Ingen .csv eller .vcf-fil vald"
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Ett fel uppstod vid uppladdning av din fil. Ingen fil har valts."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "Din fil ${ formattedFilename } innehåller fler än ${ maxContactString } kontakter."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Din fil ${ formattedFilename } har inga kontakter att importera."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Din fil ${ formattedFilename } är tom."
       ]
     },
     "Error message": {
@@ -3303,11 +2849,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
-      ]
-    },
-    "Error notification": {
-      "Display name cannot be empty": [
-        "Visningsnamn kan inte vara tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3483,79 +3024,12 @@
         "SMS"
       ]
     },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Krypterar och lägger till kontakter: ${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "vCard-versioner < 3.0"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontakt krypterad och tillagd i din kontaktlista",
-        "${ totalImported }/${ totalToImport } kontakter krypterade och tillagda i din kontaktlista"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ett fel uppstod när din kontakt skulle krypteras och läggas till. Ingen kontakt kunde importeras."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ett fel inträffade vid kryptering och när dina kontakter skulle läggas till. ${ totalImported } av ${ totalToImport } kontakter har importerats."
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Ett fel uppstod när dina kontakter krypterades och lades till. Ingen kontakt kunde importeras."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakten har importerats. Den importerade kontakten kommer nu att visas i din kontaktlista."
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Kontakterna har importerats. De importerade kontakterna kommer nu att visas i din kontaktlista."
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Kontakt ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } kontakt",
-        "${ totalContacts } kontakter"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "okänd"
-      ]
-    },
-    "Import contacts warning": {
-      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "${ CONTACTS_APP_NAME } stöder inte ${ forNow }:"
-      ],
-      "for now": [
-        "tills vidare"
-      ]
-    },
-    "Import warning": {
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } av ${ totalContacts } kontakter kommer inte att importeras. Klicka för detaljer"
-      ],
-      "No contact can be imported. Click for details": [
-        "Ingen kontakt kan importeras. Klicka för detaljer"
-      ]
-    },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "“${ documentTitle }“ har flyttats till papperskorgen. Det kommer vara kvar där tills du återställer det eller tar bort det permanent."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "”${ documentTitle }” är i papperskorgen och kommer stanna där tills du tar bort det permanent."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-postadress",
-        "${ addressCount } e-postadresser"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
@@ -3566,34 +3040,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } kontakt innehåller flera e-postadresser.",
-        "${ contactCount } kontakter innehåller flera e-postadresser."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } medlem",
-        "${ contactEmailsLength } medlemmar"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        "${ contactName } innehåller flera e-postadresser."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt hittades",
-        "${ contactsCount } kontakter hittades"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } kontakt",
-        "${ contactsLength } kontakter"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } låter dig samarbeta i realtid med end-to-end-kryptering för fullständig integritet. Skapa en kopia för att börja redigera, eller be ägaren om redigeringsåtkomst."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } i"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grupp hittades",
-        "${ groupCounts } grupper hittades"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
@@ -3611,19 +3062,11 @@
       "${ planName } expires today.": [
         "${ planName } löper ut idag."
       ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } kontakt vald",
-        "${ selectedContactsLength }/${ contactsLength } kontakter valda"
-      ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att undvika att förlora åtkomst. ${ learnMoreLink }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontakt uppdaterades.",
-        "${ updated } kontakter uppdaterades."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerar din IP-adress så webbplatser inte kan identifiera dig."
@@ -3670,9 +3113,6 @@
       ],
       "Ad targeting": [
         "Målgruppsanpassning av annonser"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Annonsörer spårar din surfning för att visa riktade annonser. ${ VPN_APP_NAME } blockerar spårare och annonser, vilket gör din anslutning snabbare och förbättrar din upplevelse online."
@@ -3728,17 +3168,11 @@
       "Can't write into folder": [
         "Kan inte skriva till mapp"
       ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Kommer du inte ihåg ditt lösenord? Vi kan hjälpa dig att rensa krypterad data från alla kontakter krypterade med denna nyckel och samtidigt avfärda varningen."
-      ],
       "characters": [
         "tecken"
       ],
       "characters without spaces": [
         "tecken utan mellanslag"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Kontrollerar kontakt ${ progress } av ${ max }..."
       ],
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
@@ -3746,14 +3180,11 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
+      "Comments are not available yet": [
+        "Kommentarer är inte tillgängliga än"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Anslut till ${ VPN_APP_NAME } för att surfa privat"
-      ],
-      "Contact assigned to group ${ contactGroupName }": [
-        "Kontakt tilldelad till grupp ${ contactGroupName }"
-      ],
-      "Contact unassigned from group ${ contactGroupName }": [
-        "Tilldelning borttagen för kontakt från grupp ${ contactGroupName }"
       ],
       "Continue": [
         "Fortsätt"
@@ -3764,11 +3195,11 @@
       "Copied to clipboard": [
         "Kopierat till urklipp"
       ],
-      "Copy the link to clipboard": [
-        "Kopiera länken till urklipp"
-      ],
       "Copy your referral link": [
         "Kopiera din hänvisningslänk"
+      ],
+      "Copy “${ version }” to clipboard": [
+        "Kopiera '${ version }' till urklipp"
       ],
       "Country code": [
         "Landskod"
@@ -3776,15 +3207,15 @@
       "Create a copy to edit": [
         "Skapa en kopia för att redigera"
       ],
-      "Create a new contact group": [
-        "Skapa en ny kontaktgrupp"
-      ],
       "Create a secure cloud for ${ memberCount } member": [
         "Skapa ett säkert moln för ${ memberCount } medlem",
         "Skapa ett säkert moln för ${ memberCount } medlemmar"
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Skapa end-to-end krypterade dokument och kalkylblad."
+      ],
+      "Create the copy you asked for.": [
+        "Skapa kopian du bad om."
       ],
       "Creating new document...": [
         "Skapar nytt dokument …"
@@ -3831,15 +3262,6 @@
       "Download current logs": [
         "Ladda ner nuvarande loggar"
       ],
-      "Drop file here to upload": [
-        "Släpp fil här för att ladda upp"
-      ],
-      "Drop to import": [
-        "Släpp för att importera"
-      ],
-      "Duplicate key updated": [
-        "Duplicerad nyckel uppdaterad"
-      ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
       ],
@@ -3849,8 +3271,8 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
       ],
-      "Emails are automatically signed": [
-        "E-post signeras automatiskt"
+      "Encrypted": [
+        "Krypterad"
       ],
       "End-to-end encrypted": [
         "End-to-end-krypterat"
@@ -3993,12 +3415,6 @@
       "Keep your files secure with end-to-end encryption.": [
         "Håll dina filer säkra med end-to-end-kryptering."
       ],
-      "Key fingerprint": [
-        "Nyckelfingeravtryck"
-      ],
-      "Labels:": [
-        "Etiketter:"
-      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -4063,17 +3479,8 @@
       "New": [
         "Ny"
       ],
-      "No contacts added yet": [
-        "Inga kontakter tillagda ännu"
-      ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
         "Inget dokument angivet i URL. Gå tillbaka till ${ DRIVE_APP_NAME } och välj ett dokument."
-      ],
-      "No email address": [
-        "Ingen e-postadress"
-      ],
-      "No group found": [
-        "Ingen grupp hittades"
       ],
       "No recent documents match your search.": [
         "Inga aktuella dokument motsvarar din sökning."
@@ -4083,12 +3490,6 @@
       ],
       "No version history available": [
         "Ingen versionshistorik tillgänglig"
-      ],
-      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Ingen av de uppladdade nycklarna är giltiga för kryptering. För att kunna skicka meddelanden till denna adress, ladda upp en giltig nyckel eller inaktivera “Kryptera e-post“."
-      ],
-      "Not a valid URL": [
-        "Ogiltig URL"
       ],
       "Not connected": [
         "Inte ansluten"
@@ -4101,9 +3502,6 @@
       ],
       "On public WiFi networks": [
         "På offentliga WiFi-nätverk"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "Hoppsan! Det här kalkylbladet kan inte spara dina senaste redigeringar, så vi har pausat redigeringen för att förhindra att du förlorar ditt arbete."
@@ -4144,51 +3542,17 @@
       "Pending invitations": [
         "Väntande inbjudningar"
       ],
-      "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline är endast kompatibelt med oformaterat textformat."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Ange lösenordet för att dekryptera och visa innehåll."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exportera en kopia av dina nuvarande ändringar från huvudmenyn och ladda om sidan."
       ],
-      "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Observera att adresser tilldelade till dessa grupper INTE kommer att tas bort."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Observera att adresser som tilldelats denna grupp INTE kommer att tas bort."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Observera att processen kan ta lite tid beroende på storleken på din adressbok."
-      ],
-      "Please provide a name and an email address for creating a group.": [
-        "Ange ett namn och en e-postadress för att skapa en grupp."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupCount } grupp.",
-        "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupCount } grupper."
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupName }."
-      ],
       "Please try again in a few moments": [
         "Försök igen om en stund"
       ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Vänta medan vi letar efter kontakter som kan signeras om med den primära krypteringsnyckeln."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
-      ],
       "Preparing editor…": [
         "Förbereder redigerare..."
-      ],
-      "Primary": [
-        "Primär"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
@@ -4244,9 +3608,6 @@
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
       ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
@@ -4255,9 +3616,6 @@
       ],
       "Set up your organization": [
         "Ställ in din organisation"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Konfigurering av PGP låter dig skicka end-to-end-krypterad e-post till någon som inte använder ${ BRAND_NAME }, men har en PGP-kompatibel tjänst."
       ],
       "Settings update failed": [
         "Misslyckades uppdatera inställningar"
@@ -4341,9 +3699,6 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
       ],
-      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "URL:en du angav verkar ha kopierats felaktigt från Slack. När du kopierar långa länkar från Slack, högerklicka på länken och välj sedan “Kopiera länk“ istället för att kopiera den avkortade URL-texten direkt."
       ],
@@ -4352,9 +3707,6 @@
       ],
       "This action will delete the link and revoke access for all users.": [
         "Denna åtgärd kommer ta bort länken och återkalla åtkomst för alla användare."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
       ],
       "This document can't be edited right now.": [
         "Det här dokumentet kan inte redigeras just nu."
@@ -4392,12 +3744,6 @@
       "This link is not supported on this page.": [
         "Denna länk stöds inte på denna sida."
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Denna länk kan vara en homografisk attack. Kontrollera att det är denna länk du vill besöka, eller öppna den inte."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Det innebär att din internetleverantör och de webbplatser du besöker inte kan koppla samman din personliga information med din onlineaktivitet."
       ],
@@ -4414,28 +3760,16 @@
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+        "För att hjälpa dig att hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
-      ],
-      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln genererades."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Tracking": [
         "Spårning"
       ],
       "Trash": [
         "Papperskorg"
-      ],
-      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "Lita på nyckeln “${ activeSignerText }“ för att verifiera nya meddelanden från denna kontakt."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
@@ -4527,12 +3861,6 @@
       "You already have a free account": [
         "Du har redan ett gratis konto"
       ],
-      "You are about to open another browser tab and visit:": [
-        "Du är på väg att öppna en annan webbläsarflik och besöka:"
-      ],
-      "You are about to open your default browser and visit:": [
-        "Du är på väg att öppna din standardwebbläsare och besöka:"
-      ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
       ],
@@ -4591,12 +3919,6 @@
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Du är på väg att avböja inbjudan att gå med i objektet ${ invitationName }. Om du fortsätter kommer du inte att kunna komma åt det om inte ägaren bjuder in dig igen. Är du säker på att du vill fortsätta?"
       ],
-      "You've reached the maximum number of addresses in the contact group(s):": [
-        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
-      ],
-      "You've reached the maximum number of addresses in the contact group.": [
-        "Du har nått det maximala antalet adresser i kontaktgruppen."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
       ],
@@ -4629,9 +3951,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
-      ],
-      "Your files will be encrypted and then saved": [
-        "Dina filer kommer att krypteras och sedan sparas"
       ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
@@ -4686,51 +4005,9 @@
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
       ]
     },
-    "info": {
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "Klicka för detaljer"
-      ]
-    },
-    "Key badge": {
-      "Active Signer": [
-        "Aktiv undertecknare"
-      ],
-      "Compromised": [
-        "Läckt"
-      ],
-      "Expired": [
-        "Löpt ut"
-      ],
-      "Fallback": [
-        "Reserv"
-      ],
-      "KOO": [
-        "KOO"
-      ],
-      "Obsolete": [
-        "Inaktuell"
-      ],
-      "Primary": [
-        "Primär"
-      ],
-      "Revoked": [
-        "Återkallad"
-      ],
-      "Trusted": [
-        "Betrodd"
-      ],
-      "WKD": [
-        "WKD"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Kontolösenord"
+        "${ BRAND_NAME } kontolösenord"
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -4746,15 +4023,6 @@
       ],
       "Active": [
         "Aktiv"
-      ],
-      "Add email address": [
-        "Lägg till e-postadress"
-      ],
-      "Add image URL": [
-        "Lägga till bild-URL"
-      ],
-      "Add to group": [
-        "Lägg till i grupp"
       ],
       "Additional comments": [
         "Ytterligare kommentarer"
@@ -4795,9 +4063,6 @@
       "Category": [
         "Kategori"
       ],
-      "City": [
-        "Ort"
-      ],
       "Client": [
         "Klient"
       ],
@@ -4806,9 +4071,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Kod är 6 siffror utan mellanslag"
-      ],
-      "Colors": [
-        "Färger"
       ],
       "Command line interface (CLI)": [
         "Kommandoradsgränssnitt (CLI)"
@@ -4819,9 +4081,6 @@
       "Continue cancelling": [
         "Fortsätt avbryta"
       ],
-      "Copy": [
-        "Kopiera"
-      ],
       "Could you please let us know which provider?": [
         "Kan du berätta vilken leverantör?"
       ],
@@ -4830,9 +4089,6 @@
       ],
       "Could you please specify?": [
         "Kan du specificera?"
-      ],
-      "Country": [
-        "Land"
       ],
       "Created by ${ displayName }": [
         "Skapad av ${ displayName }"
@@ -4852,9 +4108,6 @@
       "Document": [
         "Dokument"
       ],
-      "Don't ask again": [
-        "Fråga inte igen"
-      ],
       "Don't show this again": [
         "Visa inte detta igen"
       ],
@@ -4864,20 +4117,11 @@
       "Email address": [
         "E-postadress"
       ],
-      "Email format": [
-        "E-postformat"
-      ],
       "Enable email notifications": [
         "Aktivera e-postaviseringar"
       ],
-      "Encrypt emails": [
-        "Kryptera e-post"
-      ],
       "Expiry": [
         "Löper ut"
-      ],
-      "Extended address": [
-        "Utökad adress"
       ],
       "File": [
         "Fil"
@@ -4887,9 +4131,6 @@
       ],
       "Hide password": [
         "Dölj lösenord"
-      ],
-      "I understand the risk": [
-        "Jag förstår risken"
       ],
       "Ignore": [
         "Ignorera"
@@ -4960,26 +4201,11 @@
       "Password strength": [
         "Lösenordsstyrka"
       ],
-      "PGP scheme": [
-        "PGP-schema"
-      ],
       "Phone number": [
         "Telefonnummer"
       ],
       "Please share any feedback to help us improve.": [
         "Dela gärna feedback för att hjälpa oss att förbättra."
-      ],
-      "Post office box": [
-        "Postlåda"
-      ],
-      "Postal code": [
-        "Postnummer"
-      ],
-      "Public keys": [
-        "Offentliga nycklar"
-      ],
-      "Region": [
-        "Region"
       ],
       "Require password": [
         "Kräv lösenord"
@@ -5002,9 +4228,6 @@
       "Shared with me": [
         "Delat med mig"
       ],
-      "Sign emails": [
-        "Signera e-post"
-      ],
       "Skip feedback": [
         "Hoppa över feedback"
       ],
@@ -5013,9 +4236,6 @@
       ],
       "Stop sharing": [
         "Sluta dela"
-      ],
-      "Street address": [
-        "Gatuadress"
       ],
       "Strong": [
         "Starkt"
@@ -5037,9 +4257,6 @@
       ],
       "Unknown user": [
         "Okänd användare"
-      ],
-      "Upload picture": [
-        "Ladda upp bild"
       ],
       "Verification code": [
         "Verifieringskod"
@@ -5082,16 +4299,6 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Namn som inte går att dekryptera"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "Färg"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "Namn"
       ]
     },
     "Link": {
@@ -5390,14 +4597,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "En ny version av ${ appName } är tillgänglig. ${ reloadButton }."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Automatisk"
-      ],
-      "Plain text": [
-        "Oformaterad text"
       ]
     },
     "new_plans": {
@@ -6004,11 +5203,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } Skapa, redigera och samarbeta i kalkylblad med end-to-end kryptering"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få åtkomst till blockerat innehåll och surfa privat. Inkluderar ${ serversAndCountries }, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
@@ -6313,12 +5518,6 @@
       "Cannot load next page": [
         "Kan inte ladda nästa sida"
       ],
-      "Contact group created": [
-        "Kontaktgrupp skapad"
-      ],
-      "Contact group updated": [
-        "Kontaktgrupp uppdaterad"
-      ],
       "Document moved to trash": [
         "Dokument flyttat till papperskorg"
       ],
@@ -6366,9 +5565,6 @@
       ],
       "Invitation's email was sent again": [
         "E-postinbjudan skickades igen"
-      ],
-      "Link copied to clipboard": [
-        "Länk kopierad till urklipp"
       ],
       "Move ${ n } file": [
         "Flytta ${ n } fil",
@@ -6609,20 +5805,6 @@
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
       ]
     },
-    "Option": {
-      "Add to existing group": [
-        "Lägg till i befintlig grupp"
-      ],
-      "Automatic (${ value })": [
-        "Automatiskt (${ value })"
-      ],
-      "Create new group": [
-        "Skapa ny grupp"
-      ],
-      "Ignore group": [
-        "Ignorera grupp"
-      ]
-    },
     "Page title": {
       "Recents": [
         "Senaste"
@@ -6762,45 +5944,6 @@
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Nyckeln kan inte användas för kryptering"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } har markerat den här nyckeln som läckt. Den här nyckeln kan inte användas för kryptering eller signaturverifiering."
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } har markerat denna nyckel som inaktuell. Denna nyckel kan endast användas för signaturverifiering."
-      ],
-      "External key automatically fetched from keys.openpgp.org.": [
-        "Extern nyckel automatiskt hämtad från keys.openpgp.org."
-      ],
-      "External key automatically fetched via WKD.": [
-        "Extern nyckel automatiskt hämtad via WKD."
-      ],
-      "This contact currently signs messages with this key": [
-        "Denna kontakt signerar för närvarande meddelanden med denna nyckel"
-      ],
-      "This key is used for message verification": [
-        "Denna nyckel används för meddelandeverifiering"
-      ],
-      "This key is used to encrypt messages to this contact": [
-        "Denna nyckel används för att kryptera meddelanden till denna kontakt"
-      ],
-      "This key is used to encrypt messages to this contact on older apps": [
-        "Denna nyckel används för att kryptera meddelanden till denna kontakt i äldre appar"
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-postadress hittades inte bland användar-ID:n definierad i sändningsnyckel (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Ett sätt att kontakta dig"
@@ -6823,29 +5966,8 @@
       "Enter a new folder name": [
         "Ange ett nytt mappnamn"
       ],
-      "Filter groups": [
-        "Filtrera grupper"
-      ],
-      "First name": [
-        "Förnamn"
-      ],
-      "Group name": [
-        "Gruppnamn"
-      ],
-      "Image URL": [
-        "Bild-URL"
-      ],
-      "Last name": [
-        "Efternamn"
-      ],
       "Message": [
         "Meddelande"
-      ],
-      "Name": [
-        "Namn"
-      ],
-      "Name or email address": [
-        "Namn eller e-postadress"
       ],
       "Organization name": [
         "Organisationsnamn"
@@ -6859,12 +5981,6 @@
       "Please select the main reason": [
         "Välj huvudorsaken"
       ],
-      "Search for group name": [
-        "Sök efter gruppnamn"
-      ],
-      "Search for name or email": [
-        "Sök efter namn eller e-postadress"
-      ],
       "Select": [
         "Välj"
       ],
@@ -6874,16 +5990,8 @@
       "Select a reason": [
         "Välj en anledning"
       ],
-      "Start typing an email address": [
-        "Börja skriva en e-postadress"
-      ],
       "Your organization name": [
         "Ditt organisationsnamn"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Namn"
       ]
     },
     "Plan description": {
@@ -6892,29 +6000,6 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Alla premiumfunktioner från ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } av ${ countContacts } kontakt har exporterats.",
-        "${ contactsExported.length } av ${ countContacts } kontakter har exporterats."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } av ${ totalBeDeleted } kontakt har raderats.",
-        "${ model.deleted.length } av ${ totalBeDeleted }kontakter har raderats."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } av ${ totalBeMerged } kontakt har slagits samman.",
-        "${ model.submitted.length } av ${ totalBeMerged } kontakter har slagits samman."
-      ],
-      "No contacts exported.": [
-        "Inga kontakter exporterade."
-      ],
-      "No contacts merged.": [
-        "Inga kontakter ihopslagna."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "Förlopp: ${ combinedProgress }%"
       ]
     },
     "Property": {
@@ -6935,46 +6020,6 @@
       ],
       "name": [
         "namn"
-      ]
-    },
-    "Property type": {
-      "Address": [
-        "Adress"
-      ],
-      "Email": [
-        "E-post"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Home": [
-        "Hem"
-      ],
-      "Main": [
-        "Huvud"
-      ],
-      "Mobile": [
-        "Mobil"
-      ],
-      "Other": [
-        "Annat"
-      ],
-      "Pager": [
-        "Personsökare"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Work": [
-        "Arbete"
-      ]
-    },
-    "protonbadge": {
-      "Official": [
-        "Officiell"
-      ],
-      "Official email from ${ BRAND_NAME }": [
-        "Officiell e-post från ${ BRAND_NAME }"
       ]
     },
     "Provider option": {
@@ -7152,11 +6197,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Ladda upp"
       ]
     },
     "session_recovery:available:action": {
@@ -7401,14 +6441,6 @@
         "Importera data"
       ]
     },
-    "Signing preference for emails": {
-      "Don't sign": [
-        "Signera inte"
-      ],
-      "Sign": [
-        "Signera"
-      ]
-    },
     "Sort menu options": {
       "Created by": [
         "Skapad av"
@@ -7590,7 +6622,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
@@ -7841,44 +6873,14 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } kontakt ser identisk ut.",
-        "${ countMergeableContacts } kontakter ser identiska ut."
-      ],
-      "Address copied to clipboard": [
-        "Adress kopierad till urklipp"
-      ],
       "Code sent to ${ methodTo }": [
         "Kod skickad till ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Kontakt borttagen",
-        "Kontakter borttagna"
-      ],
-      "Contact group deleted": [
-        "Kontaktgrupp borttagen",
-        "Kontaktgrupper borttagna"
-      ],
-      "Contact saved": [
-        "Kontakt sparad"
-      ],
-      "Contacts deleted": [
-        "Kontakter borttagna"
       ],
       "Email address copied to clipboard": [
         "E-postadress kopierad till urklipp"
       ],
-      "Fingerprint copied to clipboard": [
-        "Fingeravtryck kopierat till urklipp"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefonnummer kopierat till urklipp"
-      ],
       "Preference saved": [
         "Preferens sparad"
-      ],
-      "Preferences saved": [
-        "Preferenser sparade"
       ],
       "Problem reported": [
         "Problem rapporterat"
@@ -7909,64 +6911,6 @@
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
       ]
     },
-    "Table header": {
-      "Action": [
-        "Åtgärd"
-      ],
-      "Actions": [
-        "Åtgärder"
-      ],
-      "Address": [
-        "Adress"
-      ],
-      "Created": [
-        "Skapad"
-      ],
-      "Expires": [
-        "Löper ut"
-      ],
-      "Fingerprint": [
-        "Fingeravtryck"
-      ],
-      "Name": [
-        "Namn"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Type": [
-        "Typ"
-      ]
-    },
-    "TableHeader": {
-      "Actions": [
-        "Åtgärder"
-      ],
-      "Address": [
-        "Adress"
-      ],
-      "CSV field": [
-        "CSV-fält"
-      ],
-      "Display name": [
-        "Visningsnamn"
-      ],
-      "First name": [
-        "Förnamn"
-      ],
-      "Import": [
-        "Importera"
-      ],
-      "Last name": [
-        "Efternamn"
-      ],
-      "Values": [
-        "Värden"
-      ],
-      "vCard field": [
-        "vCard-fält"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dag",
@@ -7989,10 +6933,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } e-postadress",
-        "${ emailsCount } e-postadresser"
-      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
@@ -8008,21 +6948,8 @@
       "Account temporarily locked": [
         "Konto tillfälligt låst"
       ],
-      "Add contact group name": [
-        "Lägg till kontaktgruppens namn"
-      ],
-      "Add to ${ groupCount } group": [
-        "Lägg till i ${ groupCount } grupp",
-        "Lägg till i ${ groupCount } grupper"
-      ],
-      "Add to ${ groupName }": [
-        "Lägg till i ${ groupName }"
-      ],
       "Add user": [
         "Lägg till användare"
-      ],
-      "Addresses": [
-        "Adresser"
       ],
       "All settings": [
         "Alla inställningar"
@@ -8030,23 +6957,17 @@
       "Are you sure?": [
         "Är du säker?"
       ],
-      "Birthday": [
-        "Födelsedag"
-      ],
       "Cancel subscription?": [
         "Avsluta prenumeration?"
       ],
-      "Cannot add more addresses": [
-        "Kan inte lägga till fler adresser"
+      "Captcha": [
+        "Captcha"
       ],
       "Change access to viewer?": [
         "Ändra behörighet till visare?"
       ],
       "Change password": [
         "Ändra lösenord"
-      ],
-      "Clearing data": [
-        "Rensar data"
       ],
       "Collaborate on documents": [
         "Samarbeta på dokument"
@@ -8063,26 +6984,11 @@
       "Connect your custom domain": [
         "Anslut din anpassad domän"
       ],
-      "Contact Details": [
-        "Kontaktdetaljer"
-      ],
-      "Contact group": [
-        "Kontaktgrupp"
-      ],
       "Contact us": [
         "Kontakta oss"
       ],
-      "Contacts": [
-        "Kontakter"
-      ],
       "Create a new folder": [
         "Skapa en ny mapp"
-      ],
-      "Create contact": [
-        "Skapa kontakt"
-      ],
-      "Create new group": [
-        "Skapa ny grupp"
       ],
       "Currency": [
         "Valuta"
@@ -8099,22 +7005,8 @@
       "Decline invitation?": [
         "Avböj inbjudan?"
       ],
-      "Delete ${ count } contact": [
-        "Ta bort ${ count } kontakt",
-        "Ta bort ${ count } kontakter"
-      ],
-      "Delete ${ count } contact group": [
-        "Ta bort ${ count } kontaktgrupp",
-        "Ta bort ${ count } kontaktgrupper"
-      ],
-      "Delete ${ value }": [
-        "Ta bort ${ value }"
-      ],
       "Delete permanently": [
         "Ta bort permanent"
-      ],
-      "Deleting contacts": [
-        "Tar bort kontakter"
       ],
       "Desktop": [
         "Stationär dator"
@@ -8127,9 +7019,6 @@
       ],
       "Discard changes?": [
         "Ignorera ändringar?"
-      ],
-      "Docs": [
-        "Docs"
       ],
       "Document Size Limit Exceeded": [
         "Gränsen för dokumentstorlek har överskridits"
@@ -8146,26 +7035,8 @@
       "Download the app": [
         "Ladda ner appen"
       ],
-      "Edit contact": [
-        "Redigera kontakt"
-      ],
-      "Edit contact group": [
-        "Redigera kontaktgrupp"
-      ],
-      "Edit email settings": [
-        "Redigera e-postinställningar"
-      ],
-      "Edit image": [
-        "Redigera bild"
-      ],
       "Editing paused": [
         "Redigering pausad"
-      ],
-      "Email addresses": [
-        "E-postadresser"
-      ],
-      "Email settings": [
-        "E-postinställningar"
       ],
       "Enable 2FA": [
         "Aktivera 2FA"
@@ -8185,9 +7056,6 @@
       "Error Syncing": [
         "Fel vid synkronisering"
       ],
-      "Exporting contacts": [
-        "Exporterar kontakter"
-      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Få **${ referralInfo.uiData.refereeRewardAmount }** i krediter med ${ planTitle }"
       ],
@@ -8196,9 +7064,6 @@
       ],
       "Get the apps": [
         "Skaffa appen"
-      ],
-      "Groups": [
-        "Grupper"
       ],
       "Help and feedback": [
         "Hjälp och feedback"
@@ -8221,12 +7086,6 @@
       "Human verification": [
         "Mänsklig verifiering"
       ],
-      "Import contacts": [
-        "Importera kontakter"
-      ],
-      "Import groups": [
-        "Importera grupper"
-      ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
       ],
@@ -8236,20 +7095,11 @@
       "Limited availability": [
         "Begränsad tillgänglighet"
       ],
-      "Link confirmation": [
-        "Länkbekräftelse"
-      ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Gör en kopia till din ${ DRIVE_APP_NAME }"
       ],
       "Make a secure connection your default": [
         "Gör en säker anslutning din standard"
-      ],
-      "Merge contacts": [
-        "Slå ihop kontakter"
-      ],
-      "Merging contacts": [
-        "Slår ihop kontakter"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migrera din organisation till ${ BRAND_NAME }"
@@ -8275,17 +7125,8 @@
       "No breaches detected": [
         "Inga intrång upptäckta"
       ],
-      "Notes": [
-        "Anteckningar"
-      ],
       "Offline": [
         "Offline"
-      ],
-      "One email, many recipients": [
-        "En e-post, flera mottagare"
-      ],
-      "Open actions dropdown": [
-        "Öppna rullgardinsmenyn för åtgärder"
       ],
       "Open pagination": [
         "Öppna sidnumrering"
@@ -8295,15 +7136,6 @@
       ],
       "Organization setup": [
         "Organisationsinställning"
-      ],
-      "Other information": [
-        "Övrig information"
-      ],
-      "Other names": [
-        "Andra namn"
-      ],
-      "Phone numbers": [
-        "Telefonnummer"
       ],
       "Photos": [
         "Foton"
@@ -8323,20 +7155,11 @@
       "Public link settings": [
         "Inställning för offentlig länk"
       ],
-      "Re-sign all contacts": [
-        "Återsignera alla kontakter"
-      ],
-      "Re-signing contacts": [
-        "Återsignerar kontakter"
-      ],
       "Read-only": [
         "Skrivskyddad"
       ],
       "Recommended actions": [
         "Rekommenderade åtgärder"
-      ],
-      "Recover data": [
-        "Återställ data"
       ],
       "Remove your access?": [
         "Ta bort din åtkomst?"
@@ -8358,12 +7181,6 @@
       ],
       "Security center": [
         "Säkerhetscenter"
-      ],
-      "Select action to take on contact group": [
-        "Välj åtgärd att utföra på kontaktgrupp"
-      ],
-      "Select contact group": [
-        "Välj kontaktgrupp"
       ],
       "Select link expiration date": [
         "Välj länkens utgångsdatum"
@@ -8458,12 +7275,6 @@
       "VPN explained": [
         "VPN förklarat"
       ],
-      "Warning": [
-        "Varning"
-      ],
-      "Warning: suspected fake website": [
-        "Varning: misstänkt falsk webbplats"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
       ],
@@ -8489,37 +7300,17 @@
         "Din exponerade information"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "Åtgärder"
-      ],
-      "Created": [
-        "Skapad"
-      ],
-      "Expires": [
-        "Löper ut"
-      ],
-      "Fingerprint": [
-        "Fingeravtryck"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Type": [
-        "Typ"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Idag"
       ]
     },
     "Tooltip": {
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Lägg till en e-post för återställning eller telefon så att du kan återställa ditt lösenord om du glömmer det."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lägg till denna delade fil på din ${ DRIVE_APP_NAME } för enkel åtkomst senare."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
@@ -8527,23 +7318,8 @@
       "Change shared item settings": [
         "Ändra inställningar för delat objekt"
       ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Digital signering av e-postmeddelanden hjälper till att autentisera att meddelanden skickas av dig"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "E-postkryptering tvingar e-postsignatur att autentisera dina skickade meddelanden"
-      ],
-      "Encrypted data": [
-        "Krypterad data"
-      ],
-      "Encrypted data with verified digital signature": [
-        "Krypterad data med verifierad digital signatur"
-      ],
       "Instant AI assistance, human expert on hand!": [
         "Omedelbar AI-assistans, mänsklig expert nära till hands!"
-      ],
-      "Load image": [
-        "Ladda bild"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Meddelande och filnamn lagras med kryptering med noll åtkomst när de inkluderas i e-portmeddelandet"
@@ -8551,29 +7327,14 @@
       "Not all information listed here was exposed for all users.": [
         "All information som anges här har inte exponerats för alla användare."
       ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
-      ],
       "Shared with end-to-end encryption": [
         "Delat med end-to-end-kryptering"
-      ],
-      "The image could not be loaded": [
-        "Bilden kunde inte laddas"
-      ],
-      "The image could not be loaded using proxy": [
-        "Bilden kunde inte laddas med proxy"
       ],
       "This link has expired. Please extend expiration date": [
         "Denna länk har löpt ut. Förläng utgångsdatumet."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
-      ],
-      "Version 6 OpenPGP key": [
-        "OpenPGP-nyckel version 6"
       ],
       "We have sent them an invite to access the item.": [
         "Vi har skickat dem en inbjudan att komma åt objektet."
@@ -8767,51 +7528,14 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Är du säker på att du vill ta bort ${ count } kontakt?",
-        "Är du säker på att du vill ta bort ${ count } kontakter?"
-      ],
-      "Are you sure you want to permanently delete these contact groups?": [
-        "Är du säker på att du vill ta bort dessa kontaktgrupper permanent?"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Är du säker på att du vill ta bort denna kontaktgrupp permanent?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Är du säker på att du vill ta bort denna kontakt permanent?"
-      ],
-      "Contacts could not be merged": [
-        "Kontakter kunde inte slås samman"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Om du inte kommer ihåg ditt lösenord är det omöjligt att återaktivera din nyckel. Vi kan hjälpa dig att avvisa varningsbannern men i processen kommer du permanent att förlora åtkomst till all data krypterad med den nyckeln."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Några av kontakterna som ska slås samman visar fel. Granska dem individuellt"
       ],
       "Some of the document could not be read, so editing is disabled.": [
         "En del av dokumentet kunde inte läsas så redigering är inaktiverad."
       ],
-      "The contact data is corrupted and cannot be displayed.": [
-        "Kontaktuppgiften har blivit korrupt och kan inte visas."
-      ],
-      "The contact failed to load.": [
-        "Kontakten kunde inte laddas."
-      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Datum- och tidsinställningarna på din enhet är osynkroniserade. ${ learnMore }"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Dekrypteringen av det krypterade innehållet misslyckades."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Verifieringen av kontaktuppgifternas signatur misslyckades."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Denna åtgärd är oåterkallelig. Ange ordet ${ boldDanger } i fältet för att fortsätta."
       ],
       "This will replace all the data in the spreadsheet": [
         "Detta kommer att ersätta all data i kalkylbladet"
