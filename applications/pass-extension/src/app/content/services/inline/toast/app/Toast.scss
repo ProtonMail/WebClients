@@ -1,0 +1,29 @@
+@use '~@proton/pass/styles/common' as *;
+@use '~@proton/pass/styles/extension' as *;
+@use '~@proton/styles/scss/lib/em' as *;
+
+body {
+	background: transparent;
+}
+
+/* Scoped to the offline dismissal confirmation: it swaps the prompt
+ * for shorter content, so the iframe resize transition needs a themed
+ * backdrop — a transparent strip during the shrink reads as a glitch.
+ * Kept off `body` globally because opaque backgrounds paint square
+ * corners around the rounded #root during the slidein animation of
+ * the other toast views. */
+body:has(.toast-dismissed) {
+	background: var(--background-norm);
+}
+
+#root {
+	block-size: 100%;
+}
+
+.item-icon {
+	background-color: rgba(#6d4aff, 0.16);
+	padding: em(4);
+	block-size: em(24);
+	inline-size: em(24);
+	border-radius: var(--border-radius-md);
+}

@@ -20,12 +20,12 @@ import { contentScriptMessage, sendMessage } from '../../../../../../../lib/mess
 import { WorkerMessageType } from '../../../../../../../types/messages';
 import { createBridgeResponse } from '../../../../../bridge/message';
 import type { BridgeResponse } from '../../../../../bridge/types';
-import type { NotificationAction } from '../../../../../constants.runtime';
+import type { InlineToastAction } from '../../../../../constants.runtime';
 import { InlinePortMessageType } from '../../../inline.messages';
-import type { NotificationRequest } from '../../notification.app';
-import { NotificationHeader } from '../components/NotificationHeader';
+import type { InlineToastRequest } from '../../toast.app';
+import { ToastHeader } from '../components/ToastHeader';
 
-type Props = Extract<NotificationRequest, { action: NotificationAction.PASSKEY_GET }>;
+type Props = Extract<InlineToastRequest, { action: InlineToastAction.PASSKEY_GET }>;
 
 const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDomain }) => {
     const { onTelemetry } = usePassCore();
@@ -98,7 +98,7 @@ export const PasskeyGet: FC<Props> = (props) => {
 
     return (
         <div className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full gap-2 anime-fade-in">
-            <NotificationHeader
+            <ToastHeader
                 title={c('Info').t`Passkey sign-in`}
                 onClose={() =>
                     controller.forwardMessage({

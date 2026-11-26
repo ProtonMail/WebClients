@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-message';
 import { commit, isFormEntryPromptable, stash, validateFormCredentials } from '../../../../lib/utils/form-entry';
 import { WorkerMessageType } from '../../../../types/messages';
-import { NotificationAction } from '../../constants.runtime';
+import { InlineToastAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
 import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
 import type { AutosaveService } from './autosave.abstract';
@@ -20,8 +20,8 @@ export const createAutosaveService = (): AutosaveService => {
     const prompt: (submission: AutosaveFormEntry) => boolean = withContext((ctx, { autosave, data, submittedAt }) => {
         if (!autosave.shouldPrompt || !ctx?.getFeatures().Autosave) return false;
 
-        ctx.service.inline.notification.open({
-            action: NotificationAction.AUTOSAVE,
+        ctx.service.inline.toast.open({
+            action: InlineToastAction.AUTOSAVE,
             data: {
                 ...autosave.data,
                 ...data,

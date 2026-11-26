@@ -3,7 +3,7 @@ import { POPOVER_SUPPORTED } from '@proton/pass/utils/dom/popover';
 import noop from '@proton/utils/noop';
 
 import { WorkerMessageType } from '../../../../types/messages';
-import { NotificationAction } from '../../constants.runtime';
+import { InlineToastAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
 import type { ContentScriptContextFactoryOptions } from '../../context/factory';
 import type { FrameMessageHandler } from '../client/client.channel';
@@ -11,7 +11,7 @@ import { createDropdownHandler } from './dropdown/dropdown.handler';
 import { createIconRegistry } from './icon/icon.registry';
 import type { AbstractInlineService } from './inline.abstract';
 import { createInlineRegistry } from './inline.registry';
-import { createNotificationHandler } from './notification/notification.handler';
+import { createToastHandler } from './toast/toast.handler';
 
 export const createInlineService = ({
     elements,
@@ -24,7 +24,7 @@ export const createInlineService = ({
     const { channel } = controller;
     const registry = createInlineRegistry(elements);
     const dropdown = createDropdownHandler(registry);
-    const notification = createNotificationHandler(registry);
+    const toast = createToastHandler(registry);
     const icon = createIconRegistry({ channel, dropdown, tag: elements.control, mainFrame });
 
     const onDropdownToggle: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_TOGGLE> = ({ payload }) => {
@@ -77,8 +77,8 @@ export const createInlineService = ({
         registry.attachDropdown();
     };
 
-    const onNotificationOpen: FrameMessageHandler<WorkerMessageType.INLINE_NOTIFICATION_OPEN> = ({ payload }) => {
-        notification.open(payload);
+    const onToastOpen: FrameMessageHandler<WorkerMessageType.INLINE_TOAST_OPEN> = ({ payload }) => {
+        toast.open(payload);
     };
 
     return {
@@ -89,7 +89,7 @@ export const createInlineService = ({
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
-            channel.register(WorkerMessageType.INLINE_NOTIFICATION_OPEN, onNotificationOpen);
+            channel.register(WorkerMessageType.INLINE_TOAST_OPEN, onToastOpen);
         },
 
         setTheme: registry.setTheme,
@@ -103,7 +103,7 @@ export const createInlineService = ({
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
-            channel.unregister(WorkerMessageType.INLINE_NOTIFICATION_OPEN, onNotificationOpen);
+            channel.unregister(WorkerMessageType.INLINE_TOAST_OPEN, onToastOpen);
         },
 
         sync: withContext((ctx) => {
@@ -114,15 +114,15 @@ export const createInlineService = ({
             const loggedOut = clientNeedsSession(status);
 
             if (loggedOut || locked) {
-                const action = registry.notification?.getState().action;
-                const unlockable = [NotificationAction.PASSKEY_CREATE, NotificationAction.PASSKEY_GET];
+                const action = registry.toast?.getState().action;
+                const unlockable = [InlineToastAction.PASSKEY_CREATE, InlineToastAction.PASSKEY_GET];
                 const shouldDestroy = !locked || (action && !unlockable.includes(action));
-                if (shouldDestroy) registry.notification?.destroy();
+                if (shouldDestroy) registry.toast?.destroy();
             }
         }),
 
         icon,
         dropdown,
-        notification,
+        toast,
     };
 };

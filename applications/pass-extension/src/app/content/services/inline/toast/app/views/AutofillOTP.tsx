@@ -17,12 +17,12 @@ import type { OtpRequest } from '@proton/pass/types/worker/otp';
 import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
 import { ListItem } from '../../../../../../../lib/components/Inline/ListItem';
 import { PauseListDropdown } from '../../../../../../../lib/components/Inline/PauseListDropdown';
-import type { NotificationAction } from '../../../../../constants.runtime';
+import type { InlineToastAction } from '../../../../../constants.runtime';
 import { InlinePortMessageType } from '../../../inline.messages';
-import type { NotificationRequest } from '../../notification.app';
-import { NotificationHeader } from '../components/NotificationHeader';
+import type { InlineToastRequest } from '../../toast.app';
+import { ToastHeader } from '../components/ToastHeader';
 
-type Props = Extract<NotificationRequest, { action: NotificationAction.OTP }>;
+type Props = Extract<InlineToastRequest, { action: InlineToastAction.OTP }>;
 
 export const AutofillOTP: FC<Props> = ({ item }) => {
     const { visible, domain } = useIFrameAppState();
@@ -36,7 +36,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between *:shrink-0 h-full anime-fade-in gap-3">
-            <NotificationHeader
+            <ToastHeader
                 title={c('Info').t`Verification code`}
                 discardOnClose
                 extra={

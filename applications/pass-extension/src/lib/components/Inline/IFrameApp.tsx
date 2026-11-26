@@ -44,7 +44,7 @@ export const IFrameAppControllerContext = createContext<MaybeNull<IFrameAppContr
  * the content-script's parent port name through postMessaging */
 export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     const { i18n, endpoint, theme } = usePassCore();
-    if (!(endpoint === 'dropdown' || endpoint === 'notification')) throw Error('Invalid IFrame endpoint');
+    if (!(endpoint === 'dropdown' || endpoint === 'toast')) throw Error('Invalid IFrame endpoint');
 
     const authStore = useAuthStore();
     const activityProbe = useExtensionActivityProbe();

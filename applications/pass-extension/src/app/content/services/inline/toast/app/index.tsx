@@ -2,15 +2,15 @@ import { createRoot } from 'react-dom/client';
 
 import { ExtensionRoot } from '../../../../../../lib/components/Extension/ExtensionRoot';
 import { IFrameApp } from '../../../../../../lib/components/Inline/IFrameApp';
-import { Notification } from './Notification';
+import { Toast } from './Toast';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
 
 root.render(
-    <ExtensionRoot endpoint="notification">
+    <ExtensionRoot endpoint="toast">
         <IFrameApp>
-            <Notification />
+            <Toast />
         </IFrameApp>
     </ExtensionRoot>
 );

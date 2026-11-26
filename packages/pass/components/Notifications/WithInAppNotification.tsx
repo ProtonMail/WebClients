@@ -6,7 +6,7 @@ import { UpsellRef } from '../../constants';
 import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
 import { usePassConfig } from '../../hooks/usePassConfig';
 import { useTelemetryEvent } from '../../hooks/useTelemetryEvent';
-import { updateInAppNotificationState } from '../../store/actions/creators/notification';
+import { updateInAppNotificationState } from '../../store/notifications/in-app/actions';
 import { InAppNotificationCtaType, InAppNotificationState } from '../../types/api/pass';
 import type { InAppNotification, TelemetryInAppNotificationStatus } from '../../types/data/notification';
 import { TelemetryEventName } from '../../types/data/telemetry';

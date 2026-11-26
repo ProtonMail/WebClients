@@ -12,20 +12,27 @@ import { useIFrameAppController } from '../../../../../../../lib/components/Inli
 
 type Props = {
     discardOnClose?: boolean;
+    /** Prevents the header's close button from closing the toast:
+     * `onClose` only. For views managing their own close sequence. */
+    noClose?: boolean;
     extra?: ReactElement;
     wrapText?: boolean;
     title: ReactNode;
     onClose?: () => void;
+    className?: string;
 };
 
-const NotificationHeaderRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-    { wrapText, discardOnClose, extra, title, onClose },
+const ToastHeaderRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
+    { wrapText, discardOnClose, noClose, extra, title, onClose, className },
     ref
 ) => {
     const controller = useIFrameAppController();
 
     return (
-        <div className="flex flex-nowrap shrink-0 items-center justify-space-between gap-2" ref={ref}>
+        <div
+            className={clsx('flex flex-nowrap shrink-0 items-center justify-space-between gap-2', className)}
+            ref={ref}
+        >
             <h3
                 className={clsx(
                     'flex flex-nowrap text-bold items-center gap-2 w-full ',
@@ -48,7 +55,7 @@ const NotificationHeaderRender: ForwardRefRenderFunction<HTMLDivElement, Props> 
                     className="shrink-0"
                     onClick={() => {
                         onClose?.();
-                        controller.close({ discard: discardOnClose });
+                        if (!noClose) controller.close({ discard: discardOnClose });
                     }}
                     title={c('Action').t`Cancel`}
                 >
@@ -59,4 +66,4 @@ const NotificationHeaderRender: ForwardRefRenderFunction<HTMLDivElement, Props> 
     );
 };
 
-export const NotificationHeader = forwardRef(NotificationHeaderRender);
+export const ToastHeader = forwardRef(ToastHeaderRender);

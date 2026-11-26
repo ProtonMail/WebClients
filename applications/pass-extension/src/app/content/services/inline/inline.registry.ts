@@ -19,13 +19,13 @@ import { createDropdown } from './dropdown/dropdown.app';
 import { InlinePortMessageType } from './inline.messages';
 import type { PopoverController } from './inline.popover';
 import { createPopoverController } from './inline.popover';
-import type { NotificationApp } from './notification/notification.app';
-import { createNotification } from './notification/notification.app';
+import type { InlineToastApp } from './toast/toast.app';
+import { createToastApp } from './toast/toast.app';
 
 import ProtonPassRootStyles from './custom-elements/ProtonPassRoot.raw.scss';
 
 type InlineRegistryState = {
-    apps: { dropdown: MaybeNull<DropdownApp>; notification: MaybeNull<NotificationApp> };
+    apps: { dropdown: MaybeNull<DropdownApp>; toast: MaybeNull<InlineToastApp> };
     popover: MaybeNull<PopoverController>;
     root: MaybeNull<CustomElementRef<ProtonPassRoot>>;
 };
@@ -33,10 +33,10 @@ type InlineRegistryState = {
 export interface InlineRegistry {
     popover: PopoverController;
     dropdown: MaybeNull<DropdownApp>;
-    notification: MaybeNull<NotificationApp>;
+    toast: MaybeNull<InlineToastApp>;
     root: CustomElementRef<ProtonPassRoot>;
     attachDropdown: (layer?: HTMLElement) => MaybeNull<DropdownApp>;
-    attachNotification: () => MaybeNull<NotificationApp>;
+    attachToast: () => MaybeNull<InlineToastApp>;
     destroy: () => void;
     ensureInteractive: (anchor: MaybeNull<HTMLElement>) => void;
     init: (rootAnchor?: HTMLElement) => CustomElementRef<ProtonPassRoot>;
@@ -56,7 +56,7 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
     const listeners = createListenerStore();
 
     const state: InlineRegistryState = {
-        apps: { dropdown: null, notification: null },
+        apps: { dropdown: null, toast: null },
         popover: null,
         root: null,
     };
@@ -96,8 +96,8 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
             return state.apps.dropdown;
         },
 
-        get notification() {
-            return state.apps.notification;
+        get toast() {
+            return state.apps.toast;
         },
 
         get root() {
@@ -135,15 +135,15 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
             const { customElement } = state.root;
 
             if (state.apps.dropdown) onAttached('dropdown');
-            if (state.apps.notification) onAttached('notification');
+            if (state.apps.toast) onAttached('toast');
 
             const onRootRemoved = withContext((ctx) => {
                 state.root = null;
                 state.popover = null;
                 state.apps.dropdown?.destroy();
-                state.apps.notification?.destroy();
+                state.apps.toast?.destroy();
                 state.apps.dropdown = null;
-                state.apps.notification = null;
+                state.apps.toast = null;
 
                 if (!ctx?.getState().stale) registry.init();
                 else registry.destroy();
@@ -164,7 +164,7 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
         destroy: () => {
             listeners.removeAll();
             state.apps.dropdown?.destroy();
-            state.apps.notification?.destroy();
+            state.apps.toast?.destroy();
 
             safeCall(() => state.root?.customElement.remove())();
             state.root = null;
@@ -184,17 +184,17 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
             return state.apps.dropdown;
         }),
 
-        attachNotification: withContext((ctx) => {
+        attachToast: withContext((ctx) => {
             if (!ctx) return null;
             registry.ensureInteractive(null);
 
-            if (state.apps.notification === null) {
-                logger.debug(`[ContentScript::${ctx.scriptId}] attaching notification iframe`);
-                state.apps.notification = createNotification(registry.popover);
-                onAttached('notification');
+            if (state.apps.toast === null) {
+                logger.debug(`[ContentScript::${ctx.scriptId}] attaching toast iframe`);
+                state.apps.toast = createToastApp(registry.popover);
+                onAttached('toast');
             }
 
-            return state.apps.notification;
+            return state.apps.toast;
         }),
 
         setTheme: (theme = PASS_DEFAULT_THEME) => {
@@ -213,7 +213,7 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
 
             state.root?.customElement.setAttribute(PASS_ELEMENT_THEME, injectionTheme);
             state.apps.dropdown?.sendMessage({ type: InlinePortMessageType.IFRAME_THEME, payload });
-            state.apps.notification?.sendMessage({ type: InlinePortMessageType.IFRAME_THEME, payload });
+            state.apps.toast?.sendMessage({ type: InlinePortMessageType.IFRAME_THEME, payload });
         },
     };
 

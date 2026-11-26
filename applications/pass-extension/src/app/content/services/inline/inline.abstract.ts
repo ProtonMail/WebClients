@@ -2,7 +2,7 @@ import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types
 
 import type { DropdownHandler } from './dropdown/dropdown.abstract';
 import type { IconRegistry } from './icon/icon.registry';
-import type { NotificationHandler } from './notification/notification.abstract';
+import type { InlineToastHandler } from './toast/toast.abstract';
 
 export interface AbstractInlineService {
     init: () => void;
@@ -11,6 +11,6 @@ export interface AbstractInlineService {
     setTheme: (theme?: PassThemeOption) => void;
 
     dropdown: DropdownHandler;
-    notification: NotificationHandler;
+    toast: InlineToastHandler;
     icon: IconRegistry;
 }

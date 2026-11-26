@@ -19,7 +19,7 @@ import {
     isBridgeRequest,
 } from '../../bridge/message';
 import type { BridgeRequest } from '../../bridge/types';
-import { NotificationAction } from '../../constants.runtime';
+import { InlineToastAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
 import { PasskeyServiceError } from './passkey.errors';
 
@@ -57,7 +57,7 @@ export const createPasskeyService = () => {
         if (token) {
             abort(token, false);
             state.set('requestToken', null);
-            ctx?.service.inline.notification.close();
+            ctx?.service.inline.toast.close();
         }
     });
 
@@ -137,8 +137,8 @@ export const createPasskeyService = () => {
 
                 return approve(token, approvePasskeyCreate)
                     .then(() => {
-                        ctx?.service.inline.notification.open({
-                            action: NotificationAction.PASSKEY_CREATE,
+                        ctx?.service.inline.toast.open({
+                            action: InlineToastAction.PASSKEY_CREATE,
                             domain,
                             request,
                             token,
@@ -174,8 +174,8 @@ export const createPasskeyService = () => {
                                 const passkeys = response.type === 'success' ? response.passkeys : [];
                                 if (!passkeys.length) return abort(token, true);
 
-                                return ctx?.service.inline.notification.open({
-                                    action: NotificationAction.PASSKEY_GET,
+                                return ctx?.service.inline.toast.open({
+                                    action: InlineToastAction.PASSKEY_GET,
                                     domain,
                                     passkeys,
                                     request,
@@ -206,20 +206,20 @@ export const createPasskeyService = () => {
     });
 
     /** Initializes the passkey service by setting up message listeners.
-     * Attaches inline notification early if WebAuthn fields are detected. */
+     * Attaches inline toast early if WebAuthn fields are detected. */
     const init = withContext((ctx) => {
         listeners.addListener(
             window,
             'message',
             withContext(async (ctx, { data }) => {
                 const token = state.get('requestToken');
-                if (token && isBridgeAbortSignal(token)(data)) ctx?.service.inline.notification.close();
+                if (token && isBridgeAbortSignal(token)(data)) ctx?.service.inline.toast.close();
                 else if (isBridgeRequest(data)) return onBridgeRequest(data);
             })
         );
 
         const webAuthFields = document.querySelectorAll('input[autocomplete*="webauthn"]').length > 0;
-        if (webAuthFields) ctx?.service.inline.notification.attach();
+        if (webAuthFields) ctx?.service.inline.toast.attach();
     });
 
     /** Cleans up the passkey service by aborting active requests,

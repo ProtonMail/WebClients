@@ -4,6 +4,8 @@ import { PassCrypto } from '../../lib/crypto';
 import type { Maybe } from '../../types/utils';
 import { zeroize } from '../../utils/object/zero';
 import { stateDestroy, stateHydrate } from '../actions/creators/client';
+import notification from '../notifications/in-app/reducer';
+import prompts from '../notifications/prompts/reducer';
 import request from '../request/reducer';
 import type { State } from '../types';
 import { access } from './access';
@@ -19,7 +21,6 @@ import importReducer from './import';
 import invites from './invites';
 import items from './items';
 import monitor from './monitor';
-import notification from './notification';
 import organization from './organization';
 import pwHistory from './pw-history';
 import settings from './settings';
@@ -57,6 +58,7 @@ export const reducerMap = {
     monitor,
     notification,
     organization,
+    prompts,
     pwHistory,
     request,
     settings,

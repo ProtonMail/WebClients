@@ -7,8 +7,8 @@ export const ICON_PADDING = 8;
 export const DROPDOWN_WIDTH = 250;
 export const DROPDOWN_MIN_HEIGHT = 60;
 
-export const NOTIFICATION_WIDTH = 320;
-export const NOTIFICATION_MIN_HEIGHT = 180;
+export const TOAST_WIDTH = 320;
+export const TOAST_MIN_HEIGHT = 180;
 
 export const IFRAME_APP_READY_EVENT = 'PassIFrameReady';
 export const CLIENT_SCRIPT_READY_EVENT = 'PassClientScriptReady';

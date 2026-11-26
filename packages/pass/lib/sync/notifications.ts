@@ -1,6 +1,6 @@
 import { put } from 'redux-saga/effects';
 
-import { notification } from '../../store/actions/creators/notification';
+import { notification } from '../../store/notifications/in-app/actions';
 import { NotificationKey } from '../../types/worker/notification';
 import { PassCrypto } from '../crypto';
 

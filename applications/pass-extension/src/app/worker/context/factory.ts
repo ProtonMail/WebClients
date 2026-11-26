@@ -16,6 +16,7 @@ import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { resolveModelArtifact } from '@proton/pass/store/actions/creators/model-artifact';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
+import { promptsReset } from '@proton/pass/store/notifications/prompts/actions';
 import { selectAssignedModelId } from '@proton/pass/store/selectors/assigned-model-id';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors/settings';
 import { selectAutofillModelExperimentGroup } from '@proton/pass/store/selectors/user';
@@ -221,9 +222,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
         await context.service.auth.persistSession({ regenerateClientKey: true });
         await context.service.storage.session.removeItems(OFFLINE_SESSION_KEYS);
 
-        store.dispatch(
-            settingsEditIntent('offline', { offlineEnabled: false, offlinePrompt: { count: 0, dismissedAt: 0 } }, true)
-        );
+        store.dispatch(settingsEditIntent('offline', { offlineEnabled: false }, true));
 
         return true;
     };
@@ -239,6 +238,9 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     return true;
                 case 'clear_offline_components':
                     return clearOfflineComponents();
+                case 'reset_prompt_dismissals':
+                    store.dispatch(promptsReset());
+                    return true;
             }
 
             return false;
