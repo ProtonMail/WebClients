@@ -121,6 +121,8 @@ catalog:
     diff-dom: ^5.2.1
     dompurify: ^3.4.18
     dotenv: ^17.4.2
+    # Pass desktop. Inbox and Meet desktop are on `catalog:legacy`.
+    electron: 44.11.5
     electron-log: ^5.4.4
     electron-store: ^8.2.0
     emoji-mart: ^5.1.0
@@ -170,6 +172,7 @@ catalog:
     react-router-dom: ^5.3.4
     react-router-dom-v5-compat: ^6.30.6
     react-virtualized: ^9.22.6
+    react-window: ^2.5.4
     recharts: ^3.11.0
     redux: ^5.0.1
     redux-saga: ^1.6.0
@@ -213,6 +216,7 @@ catalog:
     yaml: ^2.9.1
     yjs: ^13.6.15
     zod: ^4.6.7
+    zustand: ^5.1.0
 
 catalogs:
     # React 19, for the apps that have moved to it. They load one React, their own, through the helpers in
@@ -242,6 +246,15 @@ catalogs:
         '@lexical/utils': 0.41.0
         '@lexical/yjs': 0.41.0
         lexical: 0.41.0
+    # Previous majors, for the workspaces that have not upgraded to the default catalog's version yet.
+    # Remove an entry once its last workspace has moved to `catalog:`.
+    legacy:
+        # Inbox and Meet desktop. INWEB-1584 moves every desktop app to Electron 45.
+        electron: 43.8.12
+        # Drive. INWEB-1587 opens the Drive story for react-window 2.
+        react-window: ^1.8.11
+        # Drive, Drive store, Admin and Docs. INWEB-1587 opens the Drive and Docs story for zustand 5.
+        zustand: ^4.5.7
 
 # Yarn resolved any range that a workspace satisfies to that workspace, including the `*` peer
 # dependencies between @proton packages.

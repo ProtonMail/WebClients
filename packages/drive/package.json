@@ -79,7 +79,7 @@
         "react": "catalog:",
         "ttag": "catalog:",
         "unleash-proxy-client": "catalog:",
-        "zustand": "^4.5.7"
+        "zustand": "catalog:legacy"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
