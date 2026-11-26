@@ -12152,9 +12152,6 @@ importers:
       '@tpe/minimum-test-set':
         specifier: 0.2.0
         version: 0.2.0(supports-color@11.0.0)
-      '@tpe/mock-proxy-web-client':
-        specifier: 1.1.1
-        version: 1.1.1(@playwright/test@1.65.0)
       '@tpe/quark-client':
         specifier: 1.23.1
         version: 1.23.1(@playwright/test@1.65.0)
@@ -19197,11 +19194,6 @@ packages:
   '@tpe/minimum-test-set@0.2.0':
     resolution: {integrity: sha1-qIpmlYeVMUlQtGNab1PfH6YEaOg=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/minimum-test-set/-/@tpe/minimum-test-set-0.2.0.tgz}
     hasBin: true
-
-  '@tpe/mock-proxy-web-client@1.1.1':
-    resolution: {integrity: sha1-xsNWAfw2+s5TEHbT3aElSKVcwm0=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/mock-proxy-web-client/-/@tpe/mock-proxy-web-client-1.1.1.tgz}
-    peerDependencies:
-      '@playwright/test': '>=1.51.0'
 
   '@tpe/quark-client@1.23.1':
     resolution: {integrity: sha1-6dhbdgtDMORXu++JoIaG0p26bmU=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/quark-client/-/@tpe/quark-client-1.23.1.tgz}
@@ -36340,11 +36332,6 @@ snapshots:
       ts-morph: 26.0.0
     transitivePeerDependencies:
       - supports-color
-
-  '@tpe/mock-proxy-web-client@1.1.1(@playwright/test@1.65.0)':
-    dependencies:
-      '@playwright/test': 1.65.0
-      ajv: 8.20.0
 
   '@tpe/quark-client@1.23.1(@playwright/test@1.65.0)':
     dependencies:
