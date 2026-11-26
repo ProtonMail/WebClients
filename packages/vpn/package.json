@@ -41,7 +41,7 @@
         "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
-        "@noble/ed25519": "1.7.5",
+        "@noble/ed25519": "catalog:",
         "@proton/account": "workspace:^",
         "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",

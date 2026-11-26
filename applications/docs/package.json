@@ -24,7 +24,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@ariakit/react": "0.4.29",
+    "@ariakit/react": "catalog:",
     "@lexical/utils": "catalog:docs",
     "@proton-docs/realtime-sdk": "0.15.0",
     "@proton/account": "workspace:^",
@@ -57,7 +57,7 @@
     "@protontech/crypto": "catalog:",
     "@protontech/drive-sdk": "catalog:",
     "@reduxjs/toolkit": "catalog:",
-    "@unleash/proxy-client-react": "^6.0.1",
+    "@unleash/proxy-client-react": "catalog:",
     "history": "catalog:",
     "jszip": "catalog:",
     "lexical": "catalog:docs",
@@ -65,7 +65,7 @@
     "react-dom": "catalog:",
     "react-router": "catalog:",
     "react-router-dom": "catalog:",
-    "react-router-dom-v5-compat": "^6.30.6",
+    "react-router-dom-v5-compat": "catalog:",
     "ttag": "catalog:",
     "yjs": "catalog:",
     "zustand": "^4.5.7"
@@ -95,7 +95,7 @@
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "sass": "catalog:",
-    "tailwindcss": "^3.4.19",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:",

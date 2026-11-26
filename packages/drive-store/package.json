@@ -23,8 +23,8 @@
         "@xmldom/xmldom": "0.9.12"
     },
     "dependencies": {
-        "@mattiasbuelens/web-streams-adapter": "0.1.0",
-        "@noble/hashes": "^1.8.0",
+        "@mattiasbuelens/web-streams-adapter": "catalog:",
+        "@noble/hashes": "catalog:",
         "@proton/account": "workspace:^",
         "@proton/app-context": "workspace:^",
         "@proton/components": "workspace:^",
@@ -38,8 +38,8 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
         "@sentry/types": "catalog:",
-        "client-zip": "^2.5.1",
-        "comlink": "^4.4.2",
+        "client-zip": "catalog:",
+        "comlink": "catalog:",
         "core-js": "catalog:",
         "date-fns": "catalog:",
         "react": "catalog:",

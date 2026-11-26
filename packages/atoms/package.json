@@ -78,7 +78,7 @@
         "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
-        "@floating-ui/dom": "^1.8.0",
+        "@floating-ui/dom": "catalog:",
         "@proton/colors": "workspace:^",
         "@proton/hooks": "workspace:^",
         "@proton/i18n": "workspace:^",
@@ -99,7 +99,7 @@
         "@testing-library/react": "catalog:",
         "@testing-library/user-event": "catalog:",
         "@types/lodash": "catalog:",
-        "@types/mustache": "^4.2.6",
+        "@types/mustache": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
@@ -110,7 +110,7 @@
         "@vitest/coverage-v8": "catalog:",
         "commander": "catalog:",
         "happy-dom": "catalog:",
-        "mustache": "^4.2.0",
+        "mustache": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react": "catalog:",

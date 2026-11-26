@@ -29,10 +29,10 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
-        "@unleash/proxy-client-react": "^6.0.1",
+        "@unleash/proxy-client-react": "catalog:",
         "@unleash/toolbar": "^1.2.1",
         "date-fns": "catalog:",
-        "unleash-proxy-client": "^3.8.2"
+        "unleash-proxy-client": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",

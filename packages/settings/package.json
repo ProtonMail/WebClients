@@ -87,9 +87,9 @@
         "@types/react-router-dom": "catalog:",
         "date-fns": "catalog:",
         "lodash": "catalog:",
-        "papaparse": "^5.7.1",
+        "papaparse": "catalog:",
         "react-router-dom": "catalog:",
-        "recharts": "^3.11.0",
+        "recharts": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -100,7 +100,7 @@
         "@testing-library/react": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
-        "@types/papaparse": "^5.5.2",
+        "@types/papaparse": "catalog:",
         "@types/react-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",

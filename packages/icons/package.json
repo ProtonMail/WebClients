@@ -515,11 +515,11 @@
     "dependencies": {
         "@proton/oxfmt-config": "workspace:^",
         "jsdom": "catalog:",
-        "mustache": "^4.2.0"
+        "mustache": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
-        "@types/mustache": "^4.2.6",
+        "@types/mustache": "catalog:",
         "@types/react": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",

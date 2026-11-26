@@ -10,8 +10,8 @@
         "start": "vite"
     },
     "dependencies": {
-        "@pdfme/common": "^6.1.13",
-        "@pdfme/schemas": "^6.1.13",
+        "@pdfme/common": "catalog:",
+        "@pdfme/schemas": "catalog:",
         "@pdfme/ui": "^6.1.13",
         "@proton/recovery-kit": "workspace:^",
         "toastify-js": "^1.12.0"
