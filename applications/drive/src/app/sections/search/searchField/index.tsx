@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -56,14 +56,14 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
     // reset when isIndexPartial goes false, since `capped` is sticky and never does either.
     const partialShownRef = useRef(false);
 
-    const handleSearch = useCallback((keyword = '') => {
+    const handleSearch = (keyword = '') => {
         const encodedKeyword = encodeURIComponent(keyword);
         if (keyword.length !== 0) {
             navigation.navigateToSearch(encodedKeyword);
         } else {
             navigation.navigateToRoot();
         }
-    }, []);
+    };
 
     const handleFieldFocus = () => {
         // Re-indexing in the background: open the info dropdown on the first focus of this
@@ -174,7 +174,9 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                     onFocus={handleFieldFocus}
                     onChange={(e) => setSearchParams(e.target.value)}
                     onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
+                        // Enter also confirms IME composition (CJK input); don't search on a half-typed word.
+                        // Safari fires that keydown after compositionend, with isComposing false and keyCode 229.
+                        if (e.key === 'Enter' && !e.nativeEvent.isComposing && e.keyCode !== 229) {
                             handleSearch(searchParams);
                         }
                         if (e.key === 'Escape') {
