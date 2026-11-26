@@ -12168,8 +12168,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(supports-color@11.0.0)
       '@tpe/quark-client':
-        specifier: 1.23.1
-        version: 1.23.1(@playwright/test@1.65.0)
+        specifier: 1.24.0
+        version: 1.24.0(@playwright/test@1.65.0)
       adm-zip:
         specifier: ^0.6.1
         version: 0.6.1
@@ -19158,8 +19158,8 @@ packages:
     resolution: {integrity: sha1-qIpmlYeVMUlQtGNab1PfH6YEaOg=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/minimum-test-set/-/@tpe/minimum-test-set-0.2.0.tgz}
     hasBin: true
 
-  '@tpe/quark-client@1.23.1':
-    resolution: {integrity: sha1-6dhbdgtDMORXu++JoIaG0p26bmU=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/quark-client/-/@tpe/quark-client-1.23.1.tgz}
+  '@tpe/quark-client@1.24.0':
+    resolution: {integrity: sha1-SPVwMw0Jbnt9EQzj2Rz09QvKQOQ=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/quark-client/-/@tpe/quark-client-1.24.0.tgz}
     peerDependencies:
       '@playwright/test': '>=1.52.0'
 
@@ -36162,7 +36162,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tpe/quark-client@1.23.1(@playwright/test@1.65.0)':
+  '@tpe/quark-client@1.24.0(@playwright/test@1.65.0)':
     dependencies:
       '@playwright/test': 1.65.0
       chance: 1.1.13
