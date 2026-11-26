@@ -906,32 +906,6 @@
         "Tresor"
       ]
     },
-    "App menu": {
-      "Back": [
-        "Zurück"
-      ],
-      "Force Reload": [
-        "Neu laden erzwingen"
-      ],
-      "Reload": [
-        "Neu laden"
-      ],
-      "Show logs": [
-        "Protokolle anzeigen"
-      ],
-      "Speech": [
-        "Sprache"
-      ],
-      "Start ${ PASS_APP_NAME } at login": [
-        "${ PASS_APP_NAME } beim Anmelden starten"
-      ],
-      "Toggle developers tools": [
-        "Entwicklerwerkzeuge ein/aus"
-      ],
-      "Uninstall ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } deinstallieren"
-      ]
-    },
     "Browser": {
       "${ appName } Desktop application": [
         "${ appName } Desktopanwendung"
@@ -1082,8 +1056,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } antwortete nicht rechtzeitig."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } antwortet nicht."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Ein biometrischer Entsperrvorgang wird bereits ausgeführt."
       ],
       "A desktop unlock check is already in progress.": [
         "Die Desktop-Entsperrung wird bereits durchgeführt."
@@ -1785,6 +1768,9 @@
       "${ n } item": [
         "${ n } Eintrag",
         "${ n } Einträge"
+      ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } möchte die Browser-Erweiterung freischalten"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } wird immer zugänglich sein"
@@ -2982,6 +2968,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem zweiten Passwort"
+      ],
+      "unlock the browser extension": [
+        "Browser-Erweiterung freischalten"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
@@ -4543,20 +4532,6 @@
     "Medium": {
       "Plus": [
         "Plus"
-      ]
-    },
-    "Menu": {
-      "Edit": [
-        "Bearbeiten"
-      ],
-      "File": [
-        "Datei"
-      ],
-      "View": [
-        "Anzeigen"
-      ],
-      "Window": [
-        "Fenster"
       ]
     },
     "Message": {

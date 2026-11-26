@@ -912,32 +912,6 @@
         "Bóveda"
       ]
     },
-    "App menu": {
-      "Back": [
-        "Regresar"
-      ],
-      "Force Reload": [
-        "Forzar recarga"
-      ],
-      "Reload": [
-        "Recargar"
-      ],
-      "Show logs": [
-        "Mostrar registros"
-      ],
-      "Speech": [
-        "Dictar"
-      ],
-      "Start ${ PASS_APP_NAME } at login": [
-        "Iniciar ${ PASS_APP_NAME } al iniciar sesión"
-      ],
-      "Toggle developers tools": [
-        "Activar herramientas de desarrollador"
-      ],
-      "Uninstall ${ PASS_APP_NAME }": [
-        "Desinstalar ${ PASS_APP_NAME }"
-      ]
-    },
     "Browser": {
       "${ appName } Desktop application": [
         "Aplicación de escritorio de ${ appName }"
@@ -1088,8 +1062,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } no respondió a tiempo."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } no responde."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se pudo analizar el archivo de ${ provider }. ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "Ya se está realizando una comprobación de desbloqueo biométrico."
       ],
       "A desktop unlock check is already in progress.": [
         "Ya se está realizando una comprobación de desbloqueo del escritorio."
@@ -1792,6 +1775,9 @@
         "${ n } elemento",
         "${ n } elementos"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } desea desbloquear la extensión del navegador"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } siempre será accesible"
       ],
@@ -2412,6 +2398,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
+      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
@@ -2988,6 +2977,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con su segunda contraseña."
+      ],
+      "unlock the browser extension": [
+        "desbloquear la extensión del navegador"
       ],
       "Unpinning item...": [
         "Desfijando elemento..."
@@ -4549,20 +4541,6 @@
     "Medium": {
       "Plus": [
         "Plus"
-      ]
-    },
-    "Menu": {
-      "Edit": [
-        "Editar"
-      ],
-      "File": [
-        "Archivo"
-      ],
-      "View": [
-        "Vista"
-      ],
-      "Window": [
-        "Ventana"
       ]
     },
     "Message": {

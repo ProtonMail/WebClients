@@ -785,7 +785,7 @@
         "Mudar cofre"
       ],
       "Sync alias": [
-        "Sincronizar o alias",
+        "Sincronizar pseudónimo",
         "Sincronizar os aliases"
       ],
       "Sync aliases": [
@@ -901,32 +901,6 @@
       ],
       "Vault": [
         "Cofre"
-      ]
-    },
-    "App menu": {
-      "Back": [
-        "Retroceder"
-      ],
-      "Force Reload": [
-        "Forçar recarregar"
-      ],
-      "Reload": [
-        "Recarregar"
-      ],
-      "Show logs": [
-        "Mostrar os registos"
-      ],
-      "Speech": [
-        "Comando de voz"
-      ],
-      "Start ${ PASS_APP_NAME } at login": [
-        "Iniciar o ${ PASS_APP_NAME } no início de sessão"
-      ],
-      "Toggle developers tools": [
-        "Alternar as ferramentas de desenvolvedor"
-      ],
-      "Uninstall ${ PASS_APP_NAME }": [
-        "Desinstalar o ${ PASS_APP_NAME }"
       ]
     },
     "Browser": {
@@ -1079,6 +1053,12 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } não respondeu a tempo."
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } não está a responder."
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "O ficheiro ${ provider } não pôde ser analisado. ${ errorDetail }"
       ],
@@ -2942,6 +2922,9 @@
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com a sua segunda palavra-passe"
       ],
+      "unlock the browser extension": [
+        "desbloqueie a extensão do navegador"
+      ],
       "Unpinning item...": [
         "A desfixar o item..."
       ],
@@ -3050,7 +3033,7 @@
         "Não pode alterar as caixas de correio para este alias."
       ],
       "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Tem o ${ aliasCount } alias que está presente no SimpleLogin, mas não está no ${ PASS_APP_NAME }. Gostaria de sincronizá-lo?",
+        "Tem o ${ aliasCount } pseudónimo que está presente no SimpleLogin, mas não está no ${ PASS_APP_NAME }. Gostaria de sincronizá-lo?",
         "Tem ${ aliasCount } pseudónimos que estão presentes no SimpleLogin, mas não estão no ${ PASS_APP_NAME }. Gostaria de sincronizá-los?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
@@ -3364,7 +3347,7 @@
         "Palavra-passe de backup"
       ],
       "Bank Account": [
-        "Conta bancária"
+        "Conta Bancária"
       ],
       "Bank Name": [
         "Nome do banco"
@@ -4051,7 +4034,7 @@
         "Plus"
       ],
       "Points Balance": [
-        "Saldo de pontos"
+        "Saldo de Pontos"
       ],
       "Port": [
         "Porta"
@@ -4490,20 +4473,6 @@
     "Medium": {
       "Plus": [
         "Plus"
-      ]
-    },
-    "Menu": {
-      "Edit": [
-        "Editar"
-      ],
-      "File": [
-        "Ficheiro"
-      ],
-      "View": [
-        "Ver"
-      ],
-      "Window": [
-        "Janela"
       ]
     },
     "Message": {

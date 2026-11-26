@@ -916,32 +916,6 @@
         "Trezor"
       ]
     },
-    "App menu": {
-      "Back": [
-        "Späť"
-      ],
-      "Force Reload": [
-        "Vynútené obnovenie"
-      ],
-      "Reload": [
-        "Obnoviť"
-      ],
-      "Show logs": [
-        "Zobraziť záznamy"
-      ],
-      "Speech": [
-        "Reč"
-      ],
-      "Start ${ PASS_APP_NAME } at login": [
-        "Spustiť ${ PASS_APP_NAME } pri prihlásení"
-      ],
-      "Toggle developers tools": [
-        "Prepnúť vývojárske nástroje"
-      ],
-      "Uninstall ${ PASS_APP_NAME }": [
-        "Odinštalovať ${ PASS_APP_NAME }"
-      ]
-    },
     "Browser": {
       "${ appName } Desktop application": [
         "Desktopová aplikácia ${ appName }"
@@ -2479,9 +2453,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -4667,20 +4638,6 @@
     "Medium": {
       "Plus": [
         "Plus"
-      ]
-    },
-    "Menu": {
-      "Edit": [
-        "Upraviť"
-      ],
-      "File": [
-        "Súbor"
-      ],
-      "View": [
-        "Zobraziť"
-      ],
-      "Window": [
-        "Okno"
       ]
     },
     "Message": {
