@@ -50,7 +50,7 @@
         "zustand": "^4.5.7"
     },
     "devDependencies": {
-        "@openpgp/web-stream-tools": "^0.3.1",
+        "@openpgp/web-stream-tools": "catalog:",
         "@proton/oxlint-config": "workspace:^",
         "@proton/types": "workspace:^",
         "@proton/vitest-config": "workspace:^",
