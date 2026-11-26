@@ -6,14 +6,8 @@ import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
-import {
-    MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID,
-    MESSAGE_IFRAME_BLOCKQUOTE_ID,
-    MESSAGE_IFRAME_ROOT_ID,
-    MESSAGE_IFRAME_TOGGLE_ID,
-} from '../constants';
 import { getIframeDocument } from '../helpers/getIframeDocument';
-import getIframeHtml from '../helpers/getIframeHtml';
+import writeIframeContent from '../helpers/writeIframeContent';
 
 interface Props {
     messageID: string | undefined;
@@ -67,26 +61,14 @@ const useInitIframeContent = ({
                 return;
             }
 
-            let emailContent = content;
-
-            if (!isPlainText) {
-                emailContent += `<div id='${MESSAGE_IFRAME_TOGGLE_ID}'></div><div id='${MESSAGE_IFRAME_BLOCKQUOTE_ID}'></div><div id='${MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID}'></div>`;
-            }
-
-            const iframeContent = getIframeHtml({
-                emailContent,
+            iframeRootDivRef.current = writeIframeContent(doc, {
+                content,
                 messageDocument: message.messageDocument?.document,
                 isPlainText,
                 themeCSSVariables,
                 isPrint,
                 iframeCSSStyles,
             });
-            doc.open();
-            doc.write(iframeContent);
-            doc.close();
-
-            const iframeRootDivElement = doc.getElementById(MESSAGE_IFRAME_ROOT_ID) as HTMLDivElement;
-            iframeRootDivRef.current = iframeRootDivElement;
 
             setInitStatus('done');
             return;

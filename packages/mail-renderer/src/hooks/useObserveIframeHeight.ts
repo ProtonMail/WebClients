@@ -5,6 +5,7 @@ import useIsMounted from '@proton/hooks/useIsMounted';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 import { getIframeDocument } from '../helpers/getIframeDocument';
+import { getIframeSlot } from '../helpers/iframeSlots';
 
 const ALLOWED_PX_INTERVAL = 10;
 
@@ -24,7 +25,7 @@ const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HT
             return;
         }
 
-        const emailContentRoot = getIframeDocument(iframeRef.current)?.getElementById(MESSAGE_IFRAME_ROOT_ID);
+        const emailContentRoot = getIframeSlot(getIframeDocument(iframeRef.current), MESSAGE_IFRAME_ROOT_ID);
         const prevHeight = prevHeightRef.current;
         const height = emailContentRoot?.scrollHeight;
 
@@ -49,9 +50,10 @@ const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HT
         // We're ready set some height
         setIframeHeight();
 
-        const iframeRootDiv = getIframeDocument(iframeRef.current)?.getElementById(MESSAGE_IFRAME_ROOT_ID) as
-            | HTMLDivElement
-            | undefined;
+        const iframeRootDiv = getIframeSlot<HTMLDivElement>(
+            getIframeDocument(iframeRef.current),
+            MESSAGE_IFRAME_ROOT_ID
+        );
 
         if (!iframeRootDiv) {
             return;

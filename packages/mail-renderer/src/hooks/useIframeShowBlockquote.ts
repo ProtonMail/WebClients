@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
 import { getIframeDocument } from '../helpers/getIframeDocument';
+import { getIframeSlot } from '../helpers/iframeSlots';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement | null>;
@@ -23,11 +24,11 @@ const useIframeShowBlockquote = ({
 }: Props) => {
     const [showBlockquote, setShowBlockquote] = useState(showBlockquoteProp);
 
-    const iframeToggleDiv = getIframeDocument(iframeRef.current)?.getElementById(MESSAGE_IFRAME_TOGGLE_ID);
+    const iframeToggleDiv = getIframeSlot(getIframeDocument(iframeRef.current), MESSAGE_IFRAME_TOGGLE_ID);
     const showToggle = initStatus !== 'start' && !!iframeToggleDiv && showBlockquoteToggle;
 
     useEffect(() => {
-        const iframeBlockquoteDiv = getIframeDocument(iframeRef.current)?.getElementById(MESSAGE_IFRAME_BLOCKQUOTE_ID);
+        const iframeBlockquoteDiv = getIframeSlot(getIframeDocument(iframeRef.current), MESSAGE_IFRAME_BLOCKQUOTE_ID);
         if (!iframeBlockquoteDiv) {
             return;
         }

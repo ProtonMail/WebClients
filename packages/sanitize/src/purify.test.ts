@@ -260,6 +260,42 @@ describe('protonizer - comment inside a character reference', () => {
     );
 });
 
+describe('protonizer - reserved iframe ids', () => {
+    const reparse = (element: Element) => new DOMParser().parseFromString(element.outerHTML, 'text/html');
+
+    it.each([
+        '<style id="proton-root"></style>',
+        '<style id="proton-after-blockquote"></style>',
+        '<style id="PROTON-ROOT"></style>',
+        '<style id=" proton-blockquote"></style>',
+        '<style id="proton-print-header" name="proton-root"></style>',
+    ])('should drop reserved ids and names from head element %s', (element) => {
+        const result = reparse(protonizer(`<html><head>${element}</head><body>a</body></html>`, true));
+
+        expect(result.head.firstElementChild).not.toBeNull();
+        expect(result.querySelector('[id], [name]')).toBeNull();
+    });
+
+    it.each([
+        '<a id="proton-toggle" href="https://attacker.example/" target="_blank"></a>',
+        '<div id="proton-root">a</div>',
+        '<div id="proton-print-footer">a</div>',
+        '<a name="proton-blockquote" href="https://attacker.example/">a</a>',
+        '<img id="Proton-Toggle" src="https://attacker.example/p.png">',
+    ])('should drop reserved ids and names from body element %s', (element) => {
+        const result = reparse(protonizer(`<html><body>${element}</body></html>`, true));
+
+        expect(result.querySelector('[id], [name]')).toBeNull();
+        expect(result.body.firstElementChild).not.toBeNull();
+    });
+
+    it.each(['protonmail_signature_block', 'my-proton-root', 'protonroot'])('should keep the id %s', (id) => {
+        const result = reparse(protonizer(`<html><body><div id="${id}">a</div></body></html>`, true));
+
+        expect(result.querySelector('div')?.id).toBe(id);
+    });
+});
+
 describe('sanitizeComposerReply', () => {
     it('should remove all <style> tags from the input element', () => {
         const input = document.createElement('div');
