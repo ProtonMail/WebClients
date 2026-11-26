@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import { useSpotlight } from '../../../legacy/components/useSpotlight';
@@ -60,6 +60,27 @@ describe('SearchField', () => {
         mockedUseSpotlight.mockReturnValue({ searchSpotlight: { close: vi.fn() } } as any);
         mockedUseDriveNavigation.mockReturnValue({ navigateToSearch: vi.fn(), navigateToRoot: vi.fn() } as any);
     });
+
+    it('searches when Enter is pressed', () => {
+        const navigateToSearch = vi.fn();
+        mockedUseUrlSearchParams.mockReturnValue(['report', vi.fn()] as any);
+        mockedUseDriveNavigation.mockReturnValue({ navigateToSearch, navigateToRoot: vi.fn() } as any);
+        render(<SearchField />);
+        fireEvent.keyDown(screen.getByPlaceholderText('Search drive'), { key: 'Enter' });
+        expect(navigateToSearch).toHaveBeenCalledWith('report');
+    });
+
+    it.each([{ isComposing: true }, { keyCode: 229 }])(
+        'does not search when Enter confirms an IME composition (%o)',
+        (composition) => {
+            const navigateToSearch = vi.fn();
+            mockedUseUrlSearchParams.mockReturnValue(['報告', vi.fn()] as any);
+            mockedUseDriveNavigation.mockReturnValue({ navigateToSearch, navigateToRoot: vi.fn() } as any);
+            render(<SearchField />);
+            fireEvent.keyDown(screen.getByPlaceholderText('Search drive'), { key: 'Enter', ...composition });
+            expect(navigateToSearch).not.toHaveBeenCalled();
+        }
+    );
 
     it('shows "Search drive" placeholder when the index is complete', () => {
         render(<SearchField />);
