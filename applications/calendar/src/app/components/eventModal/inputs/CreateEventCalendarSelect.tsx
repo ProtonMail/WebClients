@@ -15,17 +15,9 @@ interface Props extends Omit<SelectTwoProps<string>, 'children'> {
     setModel: (value: EventModel) => void;
     isCreateEvent: boolean;
     frozen?: boolean;
-    isColorPerEventEnabled: boolean;
 }
 
-const CreateEventCalendarSelect = ({
-    model,
-    setModel,
-    isCreateEvent,
-    frozen = false,
-    isColorPerEventEnabled,
-    ...rest
-}: Props) => {
+const CreateEventCalendarSelect = ({ model, setModel, isCreateEvent, frozen = false, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
@@ -122,7 +114,7 @@ const CreateEventCalendarSelect = ({
     return (
         <CalendarSelect
             calendarID={calendarID}
-            displayColor={isColorPerEventEnabled ? false : options.length > 1}
+            displayColor={false}
             options={options}
             onChange={({ value }) => withLoading(handleChangeCalendar(value))}
             loading={loading}

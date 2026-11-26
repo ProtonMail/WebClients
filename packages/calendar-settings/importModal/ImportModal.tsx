@@ -33,7 +33,6 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { ImportCalendarModel, ImportedEvent } from '@proton/shared/lib/interfaces/calendar/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar/Import';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { useCalendarModelEventManager } from '../eventManager/CalendarModelEventManagerProvider';
@@ -71,7 +70,6 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const { call: calendarCall } = useCalendarModelEventManager();
     const [{ hasPaidMail }] = useUser();
-    const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(initialCalendar));
 
     const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
@@ -136,8 +134,6 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                     throw new Error('No file');
                 }
                 try {
-                    const canImportEventColor = isColorPerEventEnabled && hasPaidMail;
-
                     setModel({ ...model, loading: true });
 
                     const [
@@ -161,7 +157,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                             calscale,
                             xWrTimezone,
                             primaryTimezone,
-                            canImportEventColor,
+                            canImportEventColor: hasPaidMail,
                         })
                     );
                     // ignore time zone errors
