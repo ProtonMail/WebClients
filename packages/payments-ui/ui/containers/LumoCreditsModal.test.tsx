@@ -420,7 +420,7 @@ describe('amount rules', () => {
         await waitFor(() => expect(presetLabels()).toEqual([50, 100]));
     });
 
-    it('should show the presets and the checked amount as credits when given a credits formatter', async () => {
+    it('should show the presets as plain credit counts and the checked amount as credits', async () => {
         mockPaymentMethods().noSaved();
 
         render(
@@ -437,9 +437,27 @@ describe('amount rules', () => {
                 screen
                     .getAllByRole('button', { hidden: true, description: /^Amount/ })
                     .map((button) => button.textContent)
-            ).toEqual(['50 credits', '100 credits'])
+            ).toEqual(['50', '100'])
         );
         await waitFor(() => expect(screen.getByTestId('top-up-summary')).toHaveTextContent(/^50 credits/));
+    });
+
+    it('should select a preset by its credit count', async () => {
+        mockPaymentMethods().noSaved();
+
+        render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
+        await waitFor(() => expect(presetLabels()).toEqual([50, 100]));
+        const [fiftyCredits, hundredCredits] = screen.getAllByRole('button', { hidden: true, description: /^Amount/ });
+        expect(fiftyCredits).toHaveAttribute('aria-pressed', 'true');
+
+        fireEvent.click(hundredCredits);
+
+        await waitFor(() => expect(hundredCredits).toHaveAttribute('aria-pressed', 'true'));
+        await waitFor(() =>
+            expect(checkProductMock).toHaveBeenLastCalledWith(
+                expect.objectContaining({ data: expect.objectContaining({ Quantity: 100 }) })
+            )
+        );
     });
 
     it('should keep the regular preset amounts in the regular credits modal', async () => {
@@ -448,6 +466,12 @@ describe('amount rules', () => {
         render(<ContextCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONMAIL} />);
 
         await waitFor(() => expect(presetLabels()).toEqual([5, 10, 50, 100]));
+        const [, tenEuros, fiftyEuros] = screen.getAllByRole('button', { hidden: true, description: /^Amount/ });
+        await waitFor(() => expect(fiftyEuros).toHaveAttribute('aria-pressed', 'true'));
+
+        fireEvent.click(tenEuros);
+
+        expect(tenEuros).toHaveAttribute('aria-pressed', 'true');
         for (const button of screen.getAllByRole('button', { hidden: true, description: /^Amount/ })) {
             expect(button).toHaveTextContent('€');
             expect(button).not.toHaveTextContent('credit');

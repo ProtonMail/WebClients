@@ -11,7 +11,7 @@ export const getAccessControlPageAvailability = ({
     isLumoApiEnabled,
 }: {
     organization: OrganizationExtended | undefined;
-    entitlements: Pick<EntitlementChecksForOrgAndUser, 'isMultiUser'>;
+    entitlements: Pick<EntitlementChecksForOrgAndUser, 'isMultiUserWithLumoApi'>;
     permissions: Pick<OrgPermissions, 'account.access_control.read'>;
     isLumoApiEnabled: boolean;
 }) => {
@@ -20,6 +20,6 @@ export const getAccessControlPageAvailability = ({
 
     return {
         accessControl: !!permissions['account.access_control.read'] && (hasSubUsers || isOrgConfigured),
-        lumoApi: isLumoApiEnabled && entitlements.isMultiUser,
+        lumoApi: isLumoApiEnabled && entitlements.isMultiUserWithLumoApi,
     };
 };

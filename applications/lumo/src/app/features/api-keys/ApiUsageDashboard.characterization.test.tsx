@@ -9,6 +9,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 import { useApiUsageMembers } from './useApiUsageMembers';
@@ -47,8 +48,8 @@ const memberTotals = (tokensIn: number, costMicros: number) => ({
     CostMicros: costMicros,
 });
 const organizationMembers = [
-    { ID: 'member-alice', Name: 'Alice', Role: MEMBER_ROLE.ORGANIZATION_ADMIN },
-    { ID: 'member-bob', Name: 'Bob', Role: MEMBER_ROLE.ORGANIZATION_MEMBER },
+    { ID: 'member-alice', Name: 'Alice', Role: MEMBER_ROLE.ORGANIZATION_ADMIN, State: MEMBER_STATE.STATUS_ENABLED },
+    { ID: 'member-bob', Name: 'Bob', Role: MEMBER_ROLE.ORGANIZATION_MEMBER, State: MEMBER_STATE.STATUS_ENABLED },
 ];
 const modelUsage = (model: string, inputTokens: number, outputTokens: number, costMicros: number | null) => ({
     ClientType: 'api',
@@ -69,6 +70,7 @@ const memberUsageRows = [
 ];
 
 const setApiAccess = vi.fn();
+const setApiAccessForEveryone = vi.fn();
 const usageDates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
 const usageRow = (
     date: string,
@@ -118,10 +120,12 @@ const setup = ({
     members?: typeof organizationMembers;
 } = {}) => {
     setApiAccess.mockReset().mockResolvedValue(undefined);
+    setApiAccessForEveryone.mockReset().mockResolvedValue(undefined);
     (useMembersLumoApi as Mock).mockReturnValue({
         enabledByMemberId: { 'member-alice': true, 'member-bob': false },
         error: false,
         setApiAccess,
+        setApiAccessForEveryone,
         ...apiAccess,
     });
     (useOrganization as Mock).mockReturnValue([
@@ -347,11 +351,59 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(setApiAccess).toHaveBeenCalledWith('member-alice', false);
     });
 
+    it('turns API access on or off for everyone at once', () => {
+        setup({ isOrgAdmin: true });
+
+        const everyone = screen.getByLabelText('Toggle API access for everyone');
+        expect(everyone).not.toBeChecked();
+
+        fireEvent.click(everyone);
+
+        expect(setApiAccessForEveryone).toHaveBeenCalledWith(true);
+    });
+
+    it('shows API access as on for everyone when every member has it', () => {
+        setup({
+            isOrgAdmin: true,
+            apiAccess: { enabledByMemberId: { 'member-alice': true, 'member-bob': true } },
+        });
+
+        fireEvent.click(screen.getByLabelText('Toggle API access for everyone'));
+
+        expect(setApiAccessForEveryone).toHaveBeenCalledWith(false);
+    });
+
+    it('disables API access for everyone when the organization has the Lumo API off', () => {
+        setup({ isOrgAdmin: true, isOrganizationApiEnabled: false });
+
+        const everyone = screen.getByLabelText('Toggle API access for everyone');
+        expect(everyone).toBeDisabled();
+        expect(everyone.closest('[title]')).toHaveAttribute(
+            'title',
+            'The Lumo API is turned off for your organization.'
+        );
+    });
+
     it.each([
         [
             'the organization has the Lumo API off',
             { isOrganizationApiEnabled: false },
-            'Turn on the Lumo API for your organization first.',
+            'The Lumo API is turned off for your organization.',
+        ],
+        [
+            'the member has not accepted the invitation',
+            {
+                members: [{ ...organizationMembers[0], State: MEMBER_STATE.STATUS_INVITED }, organizationMembers[1]],
+            },
+            "Pending invitation. Can't use the Lumo API until they accept.",
+        ],
+        [
+            'the organization has the Lumo API off and the member has not accepted the invitation',
+            {
+                isOrganizationApiEnabled: false,
+                members: [{ ...organizationMembers[0], State: MEMBER_STATE.STATUS_INVITED }, organizationMembers[1]],
+            },
+            'The Lumo API is turned off for your organization.',
         ],
         [
             'it could not be loaded',
@@ -433,11 +485,29 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(screen.getByLabelText('Toggle API access for Bob')).toBeEnabled();
     });
 
+    it('disables API access for everyone until the members’ access is loaded', () => {
+        setup({ isOrgAdmin: true, apiAccess: { enabledByMemberId: {} } });
+
+        expect(screen.getByLabelText('Toggle API access for everyone')).toBeDisabled();
+    });
+
+    it('keeps API access for everyone busy until the change is saved', async () => {
+        let resolveSave: () => void = () => {};
+        setup({ isOrgAdmin: true });
+        setApiAccessForEveryone.mockReturnValueOnce(new Promise<void>((resolve) => (resolveSave = resolve)));
+
+        fireEvent.click(screen.getByLabelText('Toggle API access for everyone'));
+
+        expect(screen.getByLabelText('Toggle API access for everyone')).toBeDisabled();
+        await act(async () => resolveSave());
+        expect(screen.getByLabelText('Toggle API access for everyone')).toBeEnabled();
+    });
+
     it('waits for the organization before showing member usage', () => {
         setup({ isOrgAdmin: true, isLoadingOrganization: true });
 
         expect(within(getMembersSection()).getByText('Loading usage…')).toBeInTheDocument();
-        expect(screen.queryByText(/Turn on the Lumo API/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/The Lumo API is turned off/)).not.toBeInTheDocument();
     });
 
     it('filters the members by name', () => {

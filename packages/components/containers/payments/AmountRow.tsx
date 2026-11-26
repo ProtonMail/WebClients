@@ -16,7 +16,6 @@ interface Props {
     disableCurrencySelector: boolean;
     paymentStatus: PaymentStatus;
     presetWholeAmounts?: number[];
-    getAmountLabel?: (amount: number, currency: Currency) => string;
 }
 
 const AmountRow = ({
@@ -28,7 +27,6 @@ const AmountRow = ({
     disableCurrencySelector,
     paymentStatus,
     presetWholeAmounts,
-    getAmountLabel,
 }: Props) => {
     if (paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {
         return null;
@@ -46,7 +44,6 @@ const AmountRow = ({
                     onChangeCurrency={onChangeCurrency}
                     disableCurrencySelector={disableCurrencySelector}
                     presetWholeAmounts={presetWholeAmounts}
-                    getAmountLabel={getAmountLabel}
                 />
             </Field>
         </div>

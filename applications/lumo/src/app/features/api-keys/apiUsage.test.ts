@@ -1,10 +1,11 @@
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { MEMBER_STATE, type Member } from '@proton/shared/lib/interfaces/Member';
 
 import type { UsageMemberRow } from '../../remote/usage';
 import type { UsageRow } from './apiUsage';
 import {
     getApiMemberUsage,
+    isApiAccessOnForEveryone,
     getApiModelUsage,
     getAverageDailySpend,
     getUsageDays,
@@ -290,6 +291,18 @@ describe('getApiMemberUsage', () => {
         expect([bob.isCurrentMember, former.isCurrentMember, unknown.isCurrentMember]).toEqual([true, false, false]);
     });
 
+    it('explains why an invited or disabled member cannot use the API', () => {
+        const [invited, disabled, enabled] = getApiMemberUsage([], [
+            { ID: 'member-invited', Name: 'Ivy', State: MEMBER_STATE.STATUS_INVITED },
+            { ID: 'member-disabled', Name: 'Dan', State: MEMBER_STATE.STATUS_DISABLED },
+            { ID: 'member-enabled', Name: 'Eve', State: MEMBER_STATE.STATUS_ENABLED },
+        ] as Member[]);
+
+        expect(invited.accessUnavailableReason).toBe("Pending invitation. Can't use the Lumo API until they accept.");
+        expect(disabled.accessUnavailableReason).toBe("Inactive. Can't use the Lumo API.");
+        expect(enabled.accessUnavailableReason).toBeUndefined();
+    });
+
     it('keeps an unpriced total as unpriced, not zero', () => {
         const [member] = getApiMemberUsage(
             [{ MemberID: 'member-bob', Totals: totals({ CostMicros: null }), Usage: [] }],
@@ -314,10 +327,18 @@ describe('getApiMemberUsage', () => {
     });
 });
 
+describe('isApiAccessOnForEveryone', () => {
+    it('is on only when every member has API access', () => {
+        expect(isApiAccessOnForEveryone({ 'member-alice': true, 'member-bob': true })).toBe(true);
+        expect(isApiAccessOnForEveryone({ 'member-alice': true, 'member-bob': false })).toBe(false);
+        expect(isApiAccessOnForEveryone({})).toBe(false);
+    });
+});
+
 describe('getApiAccessHint', () => {
-    it('asks to turn on the organization switch first, even when the access could not be loaded', () => {
+    it('says the organization turned the API off, even when the access could not be loaded', () => {
         expect(getApiAccessHint({ isOrganizationApiEnabled: false, error: true })).toBe(
-            'Turn on the Lumo API for your organization first.'
+            'The Lumo API is turned off for your organization.'
         );
     });
 

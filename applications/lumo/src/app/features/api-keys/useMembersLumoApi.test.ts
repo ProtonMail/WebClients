@@ -70,6 +70,31 @@ describe('useMembersLumoApi', () => {
         expect(result.current.enabledByMemberId).toEqual({ 'member-alice': true, 'member-bob': true });
     });
 
+    it('saves everyone’s API access at once, then shows it for every member', async () => {
+        const api = vi.fn();
+        const { result } = await setupLoaded(api);
+        api.mockResolvedValueOnce({ Code: 1000 });
+
+        await act(() => result.current.setApiAccessForEveryone(false));
+
+        expect(api).toHaveBeenLastCalledWith({
+            url: listUrl,
+            method: 'put',
+            data: { LumoApiEnabled: false, AllMembers: true },
+        });
+        expect(result.current.enabledByMemberId).toEqual({ 'member-alice': false, 'member-bob': false });
+    });
+
+    it('keeps everyone’s API access when saving it for everyone fails', async () => {
+        const api = vi.fn();
+        const { result } = await setupLoaded(api);
+        api.mockRejectedValueOnce(new Error('422'));
+
+        await act(() => result.current.setApiAccessForEveryone(true));
+
+        expect(result.current.enabledByMemberId).toEqual({ 'member-alice': true, 'member-bob': false });
+    });
+
     it('keeps a member’s API access when saving it fails', async () => {
         const api = vi.fn();
         const { result } = await setupLoaded(api);

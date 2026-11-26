@@ -235,10 +235,16 @@ describe('multi-user pages', () => {
 describe('Feature access', () => {
     const lumoApiFlags = { ...defaultFlags, isLumoApiEnabled: true };
 
-    const getFeatureAccess = (input: OrganizationRoutesInput) => {
-        const { routes, featureAccess } = getOrganizationAppRoutes(
-            buildOrganizationRouterParams({ app: APPS.PROTONMAIL, ...input })
-        );
+    const getFeatureAccess = ({
+        isMultiUserWithLumoApi,
+        ...input
+    }: OrganizationRoutesInput & { isMultiUserWithLumoApi?: boolean }) => {
+        const params = buildOrganizationRouterParams({ app: APPS.PROTONMAIL, ...input });
+        const entitlements =
+            isMultiUserWithLumoApi === undefined
+                ? params.entitlements
+                : { ...params.entitlements, isMultiUserWithLumoApi };
+        const { routes, featureAccess } = getOrganizationAppRoutes({ ...params, entitlements });
 
         return {
             section: findSubsection(routes.accessControl.subsections, 'feature-access')?.available,
@@ -247,7 +253,9 @@ describe('Feature access', () => {
     };
 
     it('shows only the Lumo API toggle to a Pass Business organization without Scribe or Zoom', () => {
-        expect(getFeatureAccess({ plan: PLANS.PASS_BUSINESS, flags: lumoApiFlags })).toEqual({
+        expect(
+            getFeatureAccess({ plan: PLANS.PASS_BUSINESS, flags: lumoApiFlags, isMultiUserWithLumoApi: true })
+        ).toEqual({
             section: true,
             canShowScribe: false,
             canShowVideoConference: false,
@@ -256,7 +264,18 @@ describe('Feature access', () => {
     });
 
     it('hides the Lumo API toggle from a Pass Business organization when the flag is off', () => {
-        expect(getFeatureAccess({ plan: PLANS.PASS_BUSINESS, flags: defaultFlags })).toMatchObject({
+        expect(
+            getFeatureAccess({ plan: PLANS.PASS_BUSINESS, flags: defaultFlags, isMultiUserWithLumoApi: true })
+        ).toMatchObject({
+            section: false,
+            canShowLumoApi: false,
+        });
+    });
+
+    it('hides the Lumo API toggle from a Pass Business organization without the Lumo API entitlement', () => {
+        expect(
+            getFeatureAccess({ plan: PLANS.PASS_BUSINESS, flags: lumoApiFlags, isMultiUserWithLumoApi: false })
+        ).toMatchObject({
             section: false,
             canShowLumoApi: false,
         });

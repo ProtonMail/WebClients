@@ -389,7 +389,6 @@ export const TopUpModal = ({
                     onChangeCurrency={setCurrency}
                     disableCurrencySelector={disableCurrencySelector}
                     presetWholeAmounts={presetWholeAmounts}
-                    getAmountLabel={getAmountLabel}
                 />
                 {currentCheck && (
                     <TopUpSummary check={currentCheck} amountTitle={getAmountLabel?.(debouncedAmount, currency)} />

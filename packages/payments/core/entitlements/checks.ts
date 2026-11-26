@@ -53,6 +53,9 @@ export const entitlementChecksForSelection = {
 
     hasLumoApi: (r) => r.hasEntitlement(EntitlementName.LumoApi),
 
+    isMultiUserWithLumoApi: (r) =>
+        r.hasEntitlement(EntitlementName.MultiUser) && r.hasEntitlement(EntitlementName.LumoApi),
+
     hasLumoCredits: (r) => r.hasEntitlement(EntitlementName.LumoCredits),
 
     isLumoOnlyB2C: (r) =>

@@ -9,17 +9,17 @@ describe('getAccessControlPageAvailability', () => {
     const getAvailability = ({
         organization = organizationWithKeys,
         hasPermission = true,
-        isMultiUser = true,
+        isMultiUserWithLumoApi = true,
         isLumoApiEnabled = false,
     }: {
         organization?: OrganizationExtended;
         hasPermission?: boolean;
-        isMultiUser?: boolean;
+        isMultiUserWithLumoApi?: boolean;
         isLumoApiEnabled?: boolean;
     } = {}) =>
         getAccessControlPageAvailability({
             organization,
-            entitlements: { isMultiUser },
+            entitlements: { isMultiUserWithLumoApi },
             permissions: { 'account.access_control.read': hasPermission },
             isLumoApiEnabled,
         });
@@ -56,7 +56,7 @@ describe('getAccessControlPageAvailability', () => {
         expect(
             getAccessControlPageAvailability({
                 organization: undefined,
-                entitlements: { isMultiUser: true },
+                entitlements: { isMultiUserWithLumoApi: true },
                 permissions: { 'account.access_control.read': true },
                 isLumoApiEnabled: false,
             }).accessControl
@@ -68,13 +68,13 @@ describe('getAccessControlPageAvailability', () => {
     });
 
     it.each([
-        { isLumoApiEnabled: true, isMultiUser: true, expected: true },
-        { isLumoApiEnabled: false, isMultiUser: true, expected: false },
-        { isLumoApiEnabled: true, isMultiUser: false, expected: false },
+        { isLumoApiEnabled: true, isMultiUserWithLumoApi: true, expected: true },
+        { isLumoApiEnabled: false, isMultiUserWithLumoApi: true, expected: false },
+        { isLumoApiEnabled: true, isMultiUserWithLumoApi: false, expected: false },
     ])(
-        'returns lumoApi $expected with the flag $isLumoApiEnabled and isMultiUser $isMultiUser',
-        ({ isLumoApiEnabled, isMultiUser, expected }) => {
-            expect(getAvailability({ isLumoApiEnabled, isMultiUser }).lumoApi).toBe(expected);
+        'returns lumoApi $expected with the flag $isLumoApiEnabled and isMultiUserWithLumoApi $isMultiUserWithLumoApi',
+        ({ isLumoApiEnabled, isMultiUserWithLumoApi, expected }) => {
+            expect(getAvailability({ isLumoApiEnabled, isMultiUserWithLumoApi }).lumoApi).toBe(expected);
         }
     );
 });
