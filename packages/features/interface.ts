@@ -172,4 +172,7 @@ export enum FeatureCode {
 
     // Feedback First Cancellation Flow
     CanUseFeedbackFirstCancellationOffer = 'CanUseFeedbackFirstCancellationOffer',
+
+    // Bookmark nudge A/B test: true until the user has seen the nudge
+    BookmarkNudgeSpotlight = 'BookmarkNudgeSpotlight',
 }

@@ -24,6 +24,7 @@ import { selectElementID } from '../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
+import { BookmarkNudge } from '../bookmarkNudge/BookmarkNudge';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { OnboardingStep } from '../categoryView/categoriesOnboarding/onboardingInterface';
@@ -84,7 +85,11 @@ const MailHeader = ({ labelID, elementsData, actions, settingsButton }: Props) =
             <PrivateHeader
                 app={APPS.PROTONMAIL}
                 className={shouldDragInElectronMailClassName}
-                userDropdown={<UserDropdown app={APPS.PROTONMAIL} />}
+                userDropdown={
+                    <BookmarkNudge>
+                        <UserDropdown app={APPS.PROTONMAIL} />
+                    </BookmarkNudge>
+                }
                 hideMenuButton={hideMenuButton}
                 overrideMenuButton={customMenuButton}
                 hideUpsellButton={hideUpsellButton}

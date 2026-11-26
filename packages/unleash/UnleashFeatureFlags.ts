@@ -311,6 +311,8 @@ enum LumoFeatureFlag {
 }
 
 export enum MailFeatureFlag {
+    // Bookmark nudge A/B test (Control/Treatment). Turning it off in Unleash stops the nudge
+    BookmarkNudgeExperiment = 'BookmarkNudgeExperiment',
     MailDomainMxTopBanner = 'MailDomainMxTopBanner',
     MailMetrics = 'MailMetrics',
     OnboardingStepsExperiment = 'OnboardingStepsExperiment',
