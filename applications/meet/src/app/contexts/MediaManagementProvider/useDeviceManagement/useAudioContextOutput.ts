@@ -7,10 +7,10 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setAudioPlaybackStatus } from '@proton/meet/store/slices/deviceManagementSlice';
 import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { readAudioOutputState } from '../../../utils/audioOutputDebug';
 import { supportsSetSinkId } from '../../../utils/browser';
 import type { MeetAudioContext } from '../../../utils/meet-audio-context';
 import { retry } from '../../../utils/retry';
@@ -28,6 +28,12 @@ const STALLED_CLOCK_SECONDS = 0.05;
 const isSilent = (state: AudioContextState) => state === 'suspended' || state === 'interrupted';
 
 const needsUnblock = (state: AudioContextState) => state === 'suspended';
+
+const measureClockAdvanceSeconds = async (audioContext: AudioContext) => {
+    const startTime = audioContext.currentTime;
+    await wait(CLOCK_CHECK_MS);
+    return audioContext.currentTime - startTime;
+};
 
 /**
  * Applies the active output device to the shared playback AudioContext, and resumes that context when
@@ -84,18 +90,13 @@ export const useAudioContextOutput = ({
 
         const restartIfClockStalled = async () => {
             const { audioContext } = meetAudioContext;
-            const startTime = audioContext.currentTime;
-            await wait(CLOCK_CHECK_MS);
-            const clockAdvancedSeconds = audioContext.currentTime - startTime;
+            const clockAdvancedSeconds = await measureClockAdvanceSeconds(audioContext);
 
             if (isStale || audioContext.state !== 'running' || clockAdvancedSeconds >= STALLED_CLOCK_SECONDS) {
                 return;
             }
 
-            reportMeetError('Audio context clock stalled after an output change', {
-                level: 'warning',
-                context: { clockAdvancedSeconds, ...readAudioOutputState(room) },
-            });
+            meetingLogger.info('Restarting a stalled audio context', { clockAdvancedSeconds });
 
             try {
                 await audioContext.suspend();
@@ -103,6 +104,14 @@ export const useAudioContextOutput = ({
             } catch (error) {
                 reportMeetError('Error restarting a stalled audio context', { context: { error } });
             }
+
+            const clockAdvancedAfterRestartSeconds = await measureClockAdvanceSeconds(audioContext);
+
+            reportMeetError('Audio context clock stalled after an output change', {
+                level: 'warning',
+                tags: { restartRecoveredClock: String(clockAdvancedAfterRestartSeconds >= STALLED_CLOCK_SECONDS) },
+                context: { clockAdvancedSeconds, clockAdvancedAfterRestartSeconds },
+            });
         };
 
         const applyOutput = async () => {
@@ -125,7 +134,7 @@ export const useAudioContextOutput = ({
         return () => {
             isStale = true;
         };
-    }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext, fallBackToDefault, room, reportMeetError]);
+    }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext, fallBackToDefault, reportMeetError]);
 
     // Chrome fires 'error' when the device this context renders to goes away. Attached whether or
     // not an output was applied, because recovery cannot wait for the store to be populated.
@@ -159,6 +168,7 @@ export const useAudioContextOutput = ({
         const { audioContext } = meetAudioContext;
 
         let isMounted = true;
+        let gaveUpRecoveryAtMs: number | null = null;
         let isRecovering = false;
 
         const recover = async () => {
@@ -196,6 +206,7 @@ export const useAudioContextOutput = ({
                     context: { error: lastError },
                     tags: { audioContextState: audioContext.state },
                 });
+                gaveUpRecoveryAtMs ??= Date.now();
                 return;
             }
 
@@ -213,6 +224,14 @@ export const useAudioContextOutput = ({
             if (state === 'running') {
                 hasBeenRunningRef.current = true;
                 dispatch(setAudioPlaybackStatus('running'));
+
+                if (gaveUpRecoveryAtMs !== null) {
+                    reportMeetError('Audio context recovered after recovery attempts failed', {
+                        level: 'warning',
+                        context: { recoveredAfterMs: Date.now() - gaveUpRecoveryAtMs },
+                    });
+                    gaveUpRecoveryAtMs = null;
+                }
                 return;
             }
 
