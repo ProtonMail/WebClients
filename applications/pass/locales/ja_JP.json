@@ -971,8 +971,17 @@
       ]
     },
     "Error": {
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "${ PASS_APP_NAME } が時間内に応答しませんでした。"
+      ],
+      "${ PASS_APP_NAME } is not responding.": [
+        "${ PASS_APP_NAME } が応答していません。"
+      ],
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } ファイルを解析できませんでした。 ${ errorDetail }"
+      ],
+      "A biometric unlock check is already in progress.": [
+        "生体認証によるロック解除の確認がすでに進行中です。"
       ],
       "A desktop unlock check is already in progress.": [
         "デスクトップのロック解除チェックはすでに実行中です。"
@@ -1595,6 +1604,9 @@
       "${ n } item": [
         "${ n } 個のアイテム"
       ],
+      "${ PASS_APP_NAME } wants to unlock the browser extension": [
+        "${ PASS_APP_NAME } がブラウザー拡張機能のロック解除を求めています"
+      ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } は常にアクセス可能です"
       ],
@@ -2153,9 +2165,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、セキュアリンクが削除されます。"
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -2641,6 +2650,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your second password": [
         "2つ目のパスワードで${ PASS_SHORT_APP_NAME }をアンロック"
+      ],
+      "unlock the browser extension": [
+        "ブラウザー拡張機能のロックを解除"
       ],
       "Unpinning item...": [
         "アイテムのピン留めを解除中..."

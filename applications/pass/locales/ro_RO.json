@@ -2351,7 +2351,9 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif va șterge legăturile sale securizate."
+        "Mutarea unui articol într-un alt seif va șterge legăturile sale securizate.",
+        "Mutarea articolelor într-un alt seif va șterge legăturile lor securizate.",
+        "Mutarea articolelor într-un alt seif va șterge legăturile lor securizate."
       ],
       "Moving items": [
         "Se mută articolele."
