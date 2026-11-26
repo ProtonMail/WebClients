@@ -9,6 +9,8 @@ import { userSettingsThunk } from '@proton/account/userSettings';
 import type { OAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { readOAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { useConfig } from '@proton/app-context/useConfig';
+import CalendarModelEventManagerProvider from '@proton/calendar-settings/eventManager/CalendarModelEventManagerProvider';
+import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
@@ -213,7 +215,7 @@ const Setup = ({ api, onLogin, UID, children, loader, action, language }: Props)
                 unleashReady({ unleashClient }),
             ]);
 
-            extendStore({ eventManager });
+            extendStore({ eventManager, calendarModelEventManager: createCalendarModelEventManager({ api }) });
             eventManager.subscribe((event) => {
                 dispatch(serverEvent(event));
             });
@@ -354,11 +356,15 @@ const Setup = ({ api, onLogin, UID, children, loader, action, language }: Props)
     return (
         <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                <ApiProvider api={extraThunkArguments.api}>
-                    <ModalsChildren />
-                    <NotificationsChildren />
-                    {children}
-                </ApiProvider>
+                <CalendarModelEventManagerProvider
+                    calendarModelEventManager={extraThunkArguments.calendarModelEventManager}
+                >
+                    <ApiProvider api={extraThunkArguments.api}>
+                        <ModalsChildren />
+                        <NotificationsChildren />
+                        {children}
+                    </ApiProvider>
+                </CalendarModelEventManagerProvider>
             </EventManagerProvider>
         </UnleashFlagProviderWithToolbar>
     );
