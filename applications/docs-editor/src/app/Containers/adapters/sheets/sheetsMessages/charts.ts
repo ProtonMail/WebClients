@@ -32,6 +32,13 @@ export function createChartsMessages(): Pick<SheetsMessages, 'chartEditorDialog'
       Aggregate: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Aggregate`,
       Value: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Value`,
       'Enter title': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Enter title`,
+      'Use first row as headers': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Use first row as headers`,
+      Labels: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Labels`,
+      'Parent labels': c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Parent labels`,
+      parentLevelLabel: (level) => c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Level ${level}`,
+      removeParentLevelLabel: (level) =>
+        c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Remove level ${level}`,
+      Size: c('sheets_2025:Spreadsheet sidebar chart editor dialog').t`Size`,
 
       None: c('sheets_2025:Spreadsheet chartEditorDialog').t`None`,
     },
