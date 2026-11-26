@@ -5,7 +5,6 @@ import { PASS_DEFAULT_THEME } from '../../constants';
 import { LockMode } from '../../lib/auth/lock/types';
 import type { ClipboardSettings } from '../../lib/clipboard/types';
 import type { GeneratePasswordConfig } from '../../lib/password/types';
-import type { OfflinePromptSettings } from '../../lib/settings/offline-prompt';
 import type { DomainCriterias } from '../../lib/settings/pause-list';
 import { toggleCriteria } from '../../lib/settings/pause-list';
 import { SyncStrategy } from '../../lib/sync/types';
@@ -40,8 +39,6 @@ export type SettingsState = {
     lockMode: LockMode;
     lockTTL?: number;
     offlineEnabled?: boolean;
-    /** Tracks dismissals of the offline setup prompt. Local-only. */
-    offlinePrompt?: OfflinePromptSettings;
     passkeys: PasskeySettings;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;

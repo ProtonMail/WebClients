@@ -2,35 +2,36 @@ import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
+import { PROMPT_DEFINITIONS } from '@proton/pass/store/notifications/prompts/definitions';
 import { selectAllLoginItems } from '@proton/pass/store/selectors/items';
 import { NO_PAGE_CONTEXT_TELEMETRY_DIMENSIONS } from '@proton/pass/types/data/telemetry';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
-import { AppStatus } from '@proton/pass/types/worker/state';
 
-import { NotificationAction } from '../../../../app/content/constants.runtime';
-import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from '../../../../app/content/constants.static';
-import { Notification } from '../../../../app/content/services/inline/notification/app/Notification';
+import { InlineToastAction } from '../../../../app/content/constants.runtime';
+import { TOAST_WIDTH } from '../../../../app/content/constants.static';
+import { Toast } from '../../../../app/content/services/inline/toast/app/Toast';
 import { MockIFrameApp } from './MockIFrameApp';
 
-export const NotificationDebug: FC = () => {
+export const ToastDebug: FC = () => {
     const loginItems = useSelector(selectAllLoginItems);
     const otpItem = loginItems.find((item) => Boolean(item.data.content.totpUri.v.length));
 
     return (
-        <SettingsPanel title="Notification">
+        <SettingsPanel title="Toast">
             <div className="gap-4" style={{ columnCount: 2 }}>
-                <MockIFrameApp
-                    appState={{ authorized: false, status: AppStatus.IDLE }}
-                    width={NOTIFICATION_WIDTH}
-                    height={NOTIFICATION_MIN_HEIGHT}
-                >
-                    <Notification />
+                <MockIFrameApp width={TOAST_WIDTH} domain="proton.me">
+                    <Toast
+                        initial={{
+                            action: InlineToastAction.TOAST,
+                            message: 'This is a generic toast message',
+                        }}
+                    />
                 </MockIFrameApp>
 
-                <MockIFrameApp width={NOTIFICATION_WIDTH} domain="proton.me">
-                    <Notification
+                <MockIFrameApp width={TOAST_WIDTH} domain="proton.me">
+                    <Toast
                         initial={{
-                            action: NotificationAction.AUTOSAVE,
+                            action: InlineToastAction.AUTOSAVE,
                             data: {
                                 isCurrentProtonAccount: true,
                                 submittedAt: -1,
@@ -43,10 +44,10 @@ export const NotificationDebug: FC = () => {
                     />
                 </MockIFrameApp>
 
-                <MockIFrameApp width={NOTIFICATION_WIDTH} domain="netflix.com">
-                    <Notification
+                <MockIFrameApp width={TOAST_WIDTH} domain="netflix.com">
+                    <Toast
                         initial={{
-                            action: NotificationAction.AUTOSAVE,
+                            action: InlineToastAction.AUTOSAVE,
                             data: {
                                 isCurrentProtonAccount: false,
                                 submittedAt: -1,
@@ -67,10 +68,10 @@ export const NotificationDebug: FC = () => {
                     />
                 </MockIFrameApp>
 
-                <MockIFrameApp width={NOTIFICATION_WIDTH} domain="netflix.com">
-                    <Notification
+                <MockIFrameApp width={TOAST_WIDTH} domain="netflix.com">
+                    <Toast
                         initial={{
-                            action: NotificationAction.AUTOSAVE,
+                            action: InlineToastAction.AUTOSAVE,
                             data: {
                                 isCurrentProtonAccount: false,
                                 submittedAt: -1,
@@ -99,10 +100,10 @@ export const NotificationDebug: FC = () => {
                     />
                 </MockIFrameApp>
 
-                <MockIFrameApp width={NOTIFICATION_WIDTH} domain="webauthn.io">
-                    <Notification
+                <MockIFrameApp width={TOAST_WIDTH} domain="webauthn.io">
+                    <Toast
                         initial={{
-                            action: NotificationAction.PASSKEY_GET,
+                            action: InlineToastAction.PASSKEY_GET,
                             token: 'some-token',
                             request: JSON.stringify({}),
                             passkeys: [],
@@ -111,10 +112,10 @@ export const NotificationDebug: FC = () => {
                     />
                 </MockIFrameApp>
 
-                <MockIFrameApp width={NOTIFICATION_WIDTH} domain="webauthn.io">
-                    <Notification
+                <MockIFrameApp width={TOAST_WIDTH} domain="webauthn.io">
+                    <Toast
                         initial={{
-                            action: NotificationAction.PASSKEY_CREATE,
+                            action: InlineToastAction.PASSKEY_CREATE,
                             token: 'some-token',
                             domain: 'webauthn.io',
                             request: JSON.stringify({
@@ -138,11 +139,20 @@ export const NotificationDebug: FC = () => {
                     />
                 </MockIFrameApp>
 
+                <MockIFrameApp width={TOAST_WIDTH} domain="proton.me">
+                    <Toast
+                        initial={{
+                            action: InlineToastAction.OFFLINE_SETUP,
+                            data: { id: 'offline-onpage', ...PROMPT_DEFINITIONS['offline-onpage'].copy() },
+                        }}
+                    />
+                </MockIFrameApp>
+
                 {otpItem && (
-                    <MockIFrameApp width={NOTIFICATION_WIDTH} domain="proton.me">
-                        <Notification
+                    <MockIFrameApp width={TOAST_WIDTH} domain="proton.me">
+                        <Toast
                             initial={{
-                                action: NotificationAction.OTP,
+                                action: InlineToastAction.OTP,
                                 item: {
                                     shareId: otpItem.shareId,
                                     itemId: otpItem.itemId,

@@ -26,7 +26,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { isCCField } from '../../../../lib/utils/field';
 import { resolveFieldSections } from '../../../../lib/utils/field.sections';
 import type { ClusterFrameFormItem } from '../../../worker/services/autofill.cc';
-import { FORM_TRACKER_CONFIG, NotificationAction } from '../../constants.runtime';
+import { FORM_TRACKER_CONFIG, InlineToastAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
 import { getFrameAttributesFromElement, isNegligableFrameRect } from '../../utils/frame';
 import { canAutosave } from '../autosave/autosave.utils';
@@ -257,9 +257,9 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.formId}]`);
             listeners.removeAll();
 
-            /** If an OTP inline notification had been triggered
+            /** If an OTP inline toast had been triggered
              * because of this form, close it when detaching */
-            if (formHandle.otp) ctx?.service.inline.notification.close(NotificationAction.OTP);
+            if (formHandle.otp) ctx?.service.inline.toast.close(InlineToastAction.OTP);
 
             formHandle.tracker?.detach();
 

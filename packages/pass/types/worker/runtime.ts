@@ -7,7 +7,7 @@ import type { Maybe, MaybeNull } from '../utils';
 import type { AppState } from './state';
 
 export type ClientEndpoint =
-    'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown' | 'web' | 'desktop' | 'offscreen';
+    'popup' | 'contentscript' | 'background' | 'page' | 'toast' | 'dropdown' | 'web' | 'desktop' | 'offscreen';
 
 export type TabId = number;
 export type FrameId = number;

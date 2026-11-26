@@ -18,7 +18,7 @@ import type {
 } from '../../../../types/messages';
 import type { BridgeResponse } from '../../bridge/types';
 import type { DropdownActions } from './dropdown/dropdown.app';
-import type { NotificationRequest } from './notification/notification.app';
+import type { InlineToastRequest } from './toast/toast.app';
 
 /** These messages are not exported on the main
  * `WorkerMessages` as they are always forwarded
@@ -40,7 +40,7 @@ export enum InlinePortMessageType {
     IFRAME_INJECT_PORT = 'IFRAME_INJECT_PORT',
     IFRAME_OPEN = 'IFRAME_OPEN',
     IFRAME_THEME = 'IFRAME_THEME',
-    NOTIFICATION_ACTION = 'NOTIFICATION_ACTION',
+    TOAST_ACTION = 'TOAST_ACTION',
     PASSKEY_RELAY = 'PASSKEY_RELAY',
 }
 
@@ -48,7 +48,7 @@ type PasskeyRelayedMessages =
     BridgeResponse<WorkerMessageType.PASSKEY_CREATE> | BridgeResponse<WorkerMessageType.PASSKEY_GET>;
 
 export type IFramePosition = Partial<Rect>;
-export type IFrameEndpoint = 'notification' | 'dropdown';
+export type IFrameEndpoint = 'toast' | 'dropdown';
 
 export type InlineCloseOptions = {
     /** User discarded the inline app */
@@ -97,7 +97,7 @@ export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Ext
     | { type: InlinePortMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
     | { type: InlinePortMessageType.IFRAME_OPEN }
     | { type: InlinePortMessageType.IFRAME_THEME; payload: PassThemeOption.PassLight | PassThemeOption.PassDark }
-    | { type: InlinePortMessageType.NOTIFICATION_ACTION; payload: NotificationRequest }
+    | { type: InlinePortMessageType.TOAST_ACTION; payload: InlineToastRequest }
     | { type: InlinePortMessageType.PASSKEY_RELAY; payload: PasskeyRelayedMessages },
     { type: T }
 >;

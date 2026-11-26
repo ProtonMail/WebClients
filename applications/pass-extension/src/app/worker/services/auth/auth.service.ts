@@ -35,8 +35,8 @@ import {
     stateDestroy,
     stopEventPolling,
 } from '@proton/pass/store/actions/creators/client';
-import { notification } from '@proton/pass/store/actions/creators/notification';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
+import { notification } from '@proton/pass/store/notifications/in-app/actions';
 import type { Api } from '@proton/pass/types/api/api';
 import type { NativeMessageErrorType } from '@proton/pass/types/desktop';
 import type { MaybeNull } from '@proton/pass/types/utils';

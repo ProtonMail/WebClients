@@ -63,7 +63,7 @@ type InlineAction<T extends InlineRequest> = T['action'];
 
 export type InlineEvent<Request extends InlineRequest, Action = InlineAction<Request>> =
     | { type: 'open'; state: InlineState<Action> }
-    | { type: 'close'; state: InlineState<Action>; options: InlineCloseOptions }
+    | { type: 'close'; state: InlineState<Action>; request: MaybeNull<Request>; options: InlineCloseOptions }
     | { type: 'destroy' }
     | { type: 'error'; error: unknown }
     | { type: 'abort'; request: Request };
@@ -129,7 +129,7 @@ export const createInlineApp = <T extends InlineRequest>({
     const listeners = createListenerStore();
     const iframeID = uniqueId(8);
 
-    const state: InlineState<InlineAction<T>> = {
+    const state: InlineState<InlineAction<T>> & { request: MaybeNull<T> } = {
         action: null,
         framePort: null,
         loaded: false,
@@ -137,6 +137,7 @@ export const createInlineApp = <T extends InlineRequest>({
         position: { top: -1, left: -1, right: -1, bottom: -1 },
         positionReq: -1,
         ready: false,
+        request: null,
         visible: false,
     };
 
@@ -248,13 +249,14 @@ export const createInlineApp = <T extends InlineRequest>({
     const close = (options: InlineCloseOptions = {}) => {
         cancelAnimationFrame(state.positionReq);
 
-        pubsub.publish({ type: 'close', state, options }); /* ⚠️ call before resetting state */
+        pubsub.publish({ type: 'close', state, request: state.request, options }); /* ⚠️ call before resetting state */
 
         iframe.classList.remove('visible');
         repaint(iframe);
 
         state.visible = false;
         state.action = null;
+        state.request = null;
 
         popover.close();
 
@@ -271,6 +273,7 @@ export const createInlineApp = <T extends InlineRequest>({
             if (ctrl?.signal.aborted || state.visible) return pubsub.publish({ type: 'abort', request });
 
             state.action = request.action;
+            state.request = request;
             state.visible = true;
             popover.open();
 

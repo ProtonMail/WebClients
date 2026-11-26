@@ -17,6 +17,8 @@ import type {
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { PauseListEntry } from '@proton/pass/lib/settings/pause-list';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
+import type { PromptDescriptor } from '@proton/pass/store/notifications/prompts/definitions';
+import type { PromptId } from '@proton/pass/store/notifications/prompts/types';
 import type { FeatureFlagState, FoldersByShareId, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ToolbarPinState } from '@proton/pass/types/browser';
@@ -49,7 +51,7 @@ import type {
 import type { PullForkResponse } from '@proton/shared/lib/authentication/interface';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
-import type { NotificationRequest } from '../app/content/services/inline/notification/notification.app';
+import type { InlineToastRequest } from '../app/content/services/inline/toast/toast.app';
 import type { ClusterFrame } from '../app/worker/services/autofill.cc';
 import type { AutofillActionDTO, AutofillRequest, AutofillResult } from './autofill';
 import type {
@@ -141,7 +143,7 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_OPENED = 'INLINE_DROPDOWN_OPENED',
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
     INLINE_DROPDOWN_TOGGLE = 'INLINE_DROPDOWN_TOGGLE',
-    INLINE_NOTIFICATION_OPEN = 'INLINE_NOTIFICATION_OPEN',
+    INLINE_TOAST_OPEN = 'INLINE_TOAST_OPEN',
     INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
     INLINE_ICON_ATTACHED = 'INLINE_ICON_ATTACHED',
 
@@ -162,6 +164,7 @@ export enum WorkerMessageType {
     MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
     MONITOR_WEAK_PASSWORD_FOR_ITEM = 'MONITOR_WEAK_PASSWORD_FOR_ITEM',
     NOTIFICATION = 'NOTIFICATION',
+    OFFLINE_SETUP_OPEN = 'OFFLINE_SETUP_OPEN',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
     PASS_CORE_RPC = 'PASS_CORE_RPC',
     PASSKEY_CREATE = 'PASSKEY_CREATE',
@@ -169,6 +172,7 @@ export enum WorkerMessageType {
     PASSKEY_INTERCEPT = 'PASSKEY_INTERCEPT',
     PASSKEY_QUERY = 'PASSKEY_QUERY',
     PAUSE_WEBSITE = 'PAUSE_WEBSITE',
+    PROMPT_DISMISS = 'PROMPT_DISMISS',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
     PING = 'PING',
     POPUP_INIT = 'POPUP_INIT',
@@ -208,6 +212,8 @@ type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: 
 type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
 type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SWITCH };
+type OfflineSetupOpenMessage = WithPayload<WorkerMessageType.OFFLINE_SETUP_OPEN, PromptDescriptor>;
+type PromptDismissMessage = WithPayload<WorkerMessageType.PROMPT_DISMISS, { id: PromptId }>;
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 
@@ -262,7 +268,7 @@ export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDO
 type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
 type InlineIconAttachedMessage = WithPayload<WorkerMessageType.INLINE_ICON_ATTACHED, FrameField>;
 type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
-type InlineNotificationMessage = WithPayload<WorkerMessageType.INLINE_NOTIFICATION_OPEN, NotificationRequest>;
+type InlineToastMessage = WithPayload<WorkerMessageType.INLINE_TOAST_OPEN, InlineToastRequest>;
 
 type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
@@ -361,7 +367,7 @@ export type WorkerMessage =
     | InlineDropdownToggleMessage
     | InlineIconAttachedMessage
     | InlineIconShiftMessage
-    | InlineNotificationMessage
+    | InlineToastMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
@@ -372,6 +378,7 @@ export type WorkerMessage =
     | MonitorWeakPasswordsMessage
     | MonitorWeakPasswordForItemMessage
     | NotificationMessage
+    | OfflineSetupOpenMessage
     | OTPCodeGenerateMessage
     | PassCoreRPCMessage
     | PasskeyCreateMessage
@@ -384,6 +391,7 @@ export type WorkerMessage =
     | PopupInitMessage
     | PortFrameForwardingMessage
     | PortUnauthorizedMessage
+    | PromptDismissMessage
     | RegisterElementsLegacyMessage
     | RegisterElementsMessage
     | ResolveExtensionKeyMessage

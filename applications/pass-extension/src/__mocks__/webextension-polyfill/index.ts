@@ -53,9 +53,11 @@ const browser = {
         sendMessage: vi.fn().mockResolvedValue({}),
         query: vi.fn().mockResolvedValue([]),
         get: vi.fn().mockResolvedValue({}),
+        create: vi.fn().mockResolvedValue({}),
         onUpdated: {
             addListener: vi.fn(),
         },
+        onActivated: { addListener: vi.fn() },
         onRemoved: { addListener: vi.fn() },
     },
     webRequest: {
@@ -98,7 +100,9 @@ export const clearBrowserMocks = () => {
     browser.tabs.sendMessage.mockClear();
     browser.tabs.query.mockClear();
     browser.tabs.get.mockClear();
+    browser.tabs.create.mockClear();
     browser.tabs.onUpdated.addListener.mockClear();
+    browser.tabs.onActivated.addListener.mockClear();
     browser.windows.getLastFocused.mockClear();
     browser.windows.onFocusChanged.addListener.mockClear();
     browser.windows.onFocusChanged.removeListener.mockClear();

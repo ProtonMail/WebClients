@@ -12,7 +12,7 @@ import { onBackdropClick, onCloseEffects, onFocusChangeFactory } from './dropdow
 import { createIconRegistry } from './icon/icon.registry';
 import type { AbstractInlineService } from './inline.abstract';
 import { createPassiveInlineListeners } from './inline.listeners';
-import { createNotificationRelayHandler } from './notification/notification.relay';
+import { createToastRelayHandler } from './toast/toast.relay';
 
 export const createInlineRelay = ({
     controller,
@@ -26,7 +26,7 @@ export const createInlineRelay = ({
 
     const passiveListeners = createPassiveInlineListeners(channel);
     const dropdown = createDropdownRelayHandler();
-    const notification = createNotificationRelayHandler();
+    const toast = createToastRelayHandler();
     const icon = createIconRegistry({ channel, dropdown, tag: elements.control, mainFrame });
 
     const onDropdownOpened: FrameMessageHandler<WorkerMessageType.INLINE_DROPDOWN_OPENED> = withContext(
@@ -81,7 +81,7 @@ export const createInlineRelay = ({
         },
         destroy: () => {
             dropdown.destroy();
-            notification.destroy();
+            toast.destroy();
             icon.destroy();
 
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPENED, onDropdownOpened);
@@ -94,6 +94,6 @@ export const createInlineRelay = ({
 
         icon,
         dropdown,
-        notification,
+        toast,
     };
 };

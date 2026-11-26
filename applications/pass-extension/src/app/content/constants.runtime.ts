@@ -7,10 +7,11 @@ export const LOCKED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-l
 export const DISABLED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-disabled.svg');
 export const COUNTER_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-counter.svg');
 export const DROPDOWN_IFRAME_SRC = browser.runtime.getURL('/dropdown.html');
-export const NOTIFICATION_IFRAME_SRC = browser.runtime.getURL('/notification.html');
+export const TOAST_IFRAME_SRC = browser.runtime.getURL('/toast.html');
 
-export enum NotificationAction {
+export enum InlineToastAction {
     AUTOSAVE = 'AUTOSAVE',
+    OFFLINE_SETUP = 'OFFLINE_SETUP',
     OTP = 'OTP',
     PASSKEY_CREATE = 'PASSKEY::CREATE',
     PASSKEY_GET = 'PASSKEY::GET',

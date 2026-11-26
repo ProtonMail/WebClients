@@ -40,10 +40,10 @@ import { contentScriptMessage, sendMessage } from '../../../../../../../lib/mess
 import { WorkerMessageType } from '../../../../../../../types/messages';
 import { createBridgeResponse } from '../../../../../bridge/message';
 import type { BridgeResponse } from '../../../../../bridge/types';
-import type { NotificationAction } from '../../../../../constants.runtime';
+import type { InlineToastAction } from '../../../../../constants.runtime';
 import { InlinePortMessageType } from '../../../inline.messages';
-import type { NotificationRequest } from '../../notification.app';
-import { NotificationHeader } from '../components/NotificationHeader';
+import type { InlineToastRequest } from '../../toast.app';
+import { ToastHeader } from '../components/ToastHeader';
 
 type Step = 'select' | 'passkey';
 type FormValues = {
@@ -209,7 +209,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
     );
 };
 
-type Props = Extract<NotificationRequest, { action: NotificationAction.PASSKEY_CREATE }>;
+type Props = Extract<InlineToastRequest, { action: InlineToastAction.PASSKEY_CREATE }>;
 
 export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain }) => {
     const [loading, setLoading] = useMountedState(false);
@@ -311,7 +311,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
         <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
             <FormikProvider value={form}>
                 <Form id={formId} className="max-w-full flex flex-auto flex-column flex-nowrap *:shrink-0 gap-2">
-                    <NotificationHeader
+                    <ToastHeader
                         ref={vaultPickerAnchor}
                         title={(() => {
                             switch (form.values.step) {

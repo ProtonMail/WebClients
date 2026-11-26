@@ -1,10 +1,10 @@
 import type { Reducer } from 'redux';
 
-import type { InAppNotifications } from '../../types/data/notification';
-import { partialMerge } from '../../utils/object/merge';
-import { UNIX_MINUTE } from '../../utils/time/constants';
-import { getEpoch } from '../../utils/time/epoch';
-import { getInAppNotifications, updateInAppNotificationState } from '../actions/creators/notification';
+import type { InAppNotifications } from '../../../types/data/notification';
+import { partialMerge } from '../../../utils/object/merge';
+import { UNIX_MINUTE } from '../../../utils/time/constants';
+import { getEpoch } from '../../../utils/time/epoch';
+import { getInAppNotifications, updateInAppNotificationState } from './actions';
 
 export type NotificationReducerState = InAppNotifications & { nextDisplayTime: number };
 

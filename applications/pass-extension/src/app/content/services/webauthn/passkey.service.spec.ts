@@ -9,10 +9,10 @@ import { WorkerMessageType } from '../../../../types/messages';
 import { BRIDGE_REQUEST } from '../../bridge/constants';
 import { createBridgeAbortSignal, createBridgeResponse } from '../../bridge/message';
 import type { BridgeRequest } from '../../bridge/types';
-import { NotificationAction } from '../../constants.runtime';
+import { InlineToastAction } from '../../constants.runtime';
 import { CSContext } from '../../context/context';
 import type { CSContextState, CSFeatures, ContentScriptContext } from '../../context/types';
-import type { NotificationHandler } from '../inline/notification/notification.abstract';
+import type { InlineToastHandler } from '../inline/toast/toast.abstract';
 import { PasskeyServiceError } from './passkey.errors';
 import { type PasskeyService, createPasskeyService } from './passkey.service';
 
@@ -30,7 +30,7 @@ describe('PasskeyService', () => {
     let service: PasskeyService;
     let postMessage: MockInstance;
     let context: MockedObject<ContentScriptContext>;
-    let notification: NotificationHandler;
+    let toast: InlineToastHandler;
     let settings: ProxiedSettings;
     let features: Record<CSFeatures, boolean>;
     let state: CSContextState;
@@ -46,7 +46,7 @@ describe('PasskeyService', () => {
             passkeys: [{ id: 'test-passkey' }],
         }));
 
-        notification = { open: vi.fn(), close: vi.fn() } as any;
+        toast = { open: vi.fn(), close: vi.fn() } as any;
         settings = { passkeys: { get: true, create: true } } as any;
         features = { Passkeys: true } as any;
 
@@ -54,7 +54,7 @@ describe('PasskeyService', () => {
             getState: () => state,
             getSettings: () => settings,
             getFeatures: () => features,
-            service: { inline: { notification: notification } },
+            service: { inline: { toast: toast } },
         } as any;
 
         state = { ready: true, status: AppStatus.READY, stale: false } as any;
@@ -190,13 +190,13 @@ describe('PasskeyService', () => {
         });
 
         describe('PASSKEY_CREATE handler', () => {
-            test('should open notification with underlying request', async () => {
+            test('should open toast with underlying request', async () => {
                 const token = uniqueId();
                 const req = createPasskeyCreateRequest(token);
                 await service.handler(req);
 
-                expect(notification.open).toHaveBeenCalledWith({
-                    action: NotificationAction.PASSKEY_CREATE,
+                expect(toast.open).toHaveBeenCalledWith({
+                    action: InlineToastAction.PASSKEY_CREATE,
                     domain: 'localhost',
                     request: 'test-challenge',
                     token,
@@ -212,7 +212,7 @@ describe('PasskeyService', () => {
                 await service.handler(req);
 
                 expect(postMessage).toHaveBeenCalledWith(res);
-                expect(notification.open).not.toHaveBeenCalled();
+                expect(toast.open).not.toHaveBeenCalled();
             });
 
             test('should abort when feature is disabled', async () => {
@@ -224,7 +224,7 @@ describe('PasskeyService', () => {
                 await service.handler(req);
 
                 expect(postMessage).toHaveBeenCalledWith(res);
-                expect(notification.open).not.toHaveBeenCalled();
+                expect(toast.open).not.toHaveBeenCalled();
             });
 
             test('should block rapid requests within rate limit window', async () => {
@@ -257,13 +257,13 @@ describe('PasskeyService', () => {
         });
 
         describe('PASSKEY_GET handler', () => {
-            test('should query passkeys and open notification with results', async () => {
+            test('should query passkeys and open toast with results', async () => {
                 const token = uniqueId();
                 const req = createPasskeyGetRequest(token);
                 await service.handler(req);
 
-                expect(notification.open).toHaveBeenCalledWith({
-                    action: NotificationAction.PASSKEY_GET,
+                expect(toast.open).toHaveBeenCalledWith({
+                    action: InlineToastAction.PASSKEY_GET,
                     domain: 'localhost',
                     passkeys: [{ id: 'test-passkey' }],
                     request: req.request.payload.request,
@@ -280,7 +280,7 @@ describe('PasskeyService', () => {
                 await service.handler(req);
 
                 expect(postMessage).toHaveBeenCalledWith(res);
-                expect(notification.open).not.toHaveBeenCalled();
+                expect(toast.open).not.toHaveBeenCalled();
             });
 
             test('should abort when feature is disabled', async () => {
@@ -292,7 +292,7 @@ describe('PasskeyService', () => {
                 await service.handler(req);
 
                 expect(postMessage).toHaveBeenCalledWith(res);
-                expect(notification.open).not.toHaveBeenCalled();
+                expect(toast.open).not.toHaveBeenCalled();
             });
 
             test('should abort when no passkeys are found', async () => {
@@ -304,7 +304,7 @@ describe('PasskeyService', () => {
                 await service.handler(req);
 
                 expect(postMessage).toHaveBeenCalledWith(res);
-                expect(notification.open).not.toHaveBeenCalled();
+                expect(toast.open).not.toHaveBeenCalled();
             });
 
             test('should block rapid requests within rate limit window', async () => {
@@ -324,7 +324,7 @@ describe('PasskeyService', () => {
                 expect(postMessage).toHaveBeenCalledWith(createBridgeAbortSignal(token3));
             });
 
-            test('should not open notification if request token invalidated during processing', async () => {
+            test('should not open toast if request token invalidated during processing', async () => {
                 const token = uniqueId();
                 const req = createPasskeyGetRequest(token);
 
@@ -334,7 +334,7 @@ describe('PasskeyService', () => {
                 });
 
                 await service.handler(req);
-                expect(notification.open).not.toHaveBeenCalled();
+                expect(toast.open).not.toHaveBeenCalled();
                 expect(postMessage).toHaveBeenCalledWith(createBridgeAbortSignal(token));
             });
 
@@ -347,7 +347,7 @@ describe('PasskeyService', () => {
                 await service.handler(req);
 
                 expect(postMessage).toHaveBeenCalledWith(res);
-                expect(notification.open).not.toHaveBeenCalled();
+                expect(toast.open).not.toHaveBeenCalled();
             });
         });
 

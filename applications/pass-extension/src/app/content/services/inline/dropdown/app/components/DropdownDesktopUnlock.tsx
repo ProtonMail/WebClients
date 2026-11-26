@@ -15,7 +15,7 @@ export const DropdownDesktopUnlock: FC = () => {
     const ctrl = useIFrameAppController();
     const { unlockDeclined = false } = useAppState();
 
-    // There's no ui to display error notification, better not to create them
+    // There's no ui to display error toast, better not to create them
     const { loading, onUnlock } = useAutoDesktopUnlock({ silentErrors: true });
 
     /** While auto-unlock can still trigger, don't show a dropdown and rely on the

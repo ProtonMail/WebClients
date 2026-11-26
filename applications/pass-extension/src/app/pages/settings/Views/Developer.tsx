@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { IcCloud } from '@proton/icons/icons/IcCloud';
 import { IcDrive } from '@proton/icons/icons/IcDrive';
 import { IcFireSlash } from '@proton/icons/icons/IcFireSlash';
@@ -9,7 +10,7 @@ import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { CACHE_KEY } from '@proton/pass/lib/api/cache';
 
 import { DropdownDebug } from '../../../../lib/components/Settings/debug/DropdownDebug';
-import { NotificationDebug } from '../../../../lib/components/Settings/debug/NotificationDebug';
+import { ToastDebug } from '../../../../lib/components/Settings/debug/ToastDebug';
 import { WebsiteRulesDebug } from '../../../../lib/components/Settings/debug/WebsiteRulesDebug';
 import { pageMessage, sendMessage } from '../../../../lib/message/send-message';
 import { WorkerMessageType } from '../../../../types/messages';
@@ -78,6 +79,28 @@ export const Developer: FC = () => (
                 </div>
             </Button>
 
+            <Button
+                icon
+                shape="ghost"
+                className="w-full"
+                onClick={() =>
+                    sendMessage(
+                        pageMessage({
+                            type: WorkerMessageType.DEBUG,
+                            payload: { debug: 'reset_prompt_dismissals' },
+                        })
+                    )
+                }
+            >
+                <div className="flex items-center flex items-center">
+                    <IcClockRotateLeft className="mr-2" />
+                    <span className="flex-1 text-left">Reset prompt dismissals</span>
+                    <span className="text-xs color-weak">
+                        Wipes the prompt ledger (re-arms all on-page/banner prompts)
+                    </span>
+                </div>
+            </Button>
+
             <Button icon shape="ghost" className="w-full" onClick={() => caches.delete(CACHE_KEY)}>
                 <div className="flex items-center flex items-center">
                     <IcFireSlash className="mr-2" />
@@ -88,6 +111,6 @@ export const Developer: FC = () => (
         </SettingsPanel>
         <WebsiteRulesDebug />
         <DropdownDebug />
-        <NotificationDebug />
+        <ToastDebug />
     </>
 );

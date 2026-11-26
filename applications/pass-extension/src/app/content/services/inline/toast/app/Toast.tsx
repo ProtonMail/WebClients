@@ -9,31 +9,32 @@ import type { MaybeNull } from '@proton/pass/types/utils';
 
 import { useIFrameAppState, useRegisterMessageHandler } from '../../../../../../lib/components/Inline/IFrameApp';
 import { IFrameAppAutoSizer } from '../../../../../../lib/components/Inline/IFrameAppAutoSizer';
-import { NotificationAction } from '../../../../constants.runtime';
+import { InlineToastAction } from '../../../../constants.runtime';
 import { InlinePortMessageType } from '../../inline.messages';
-import type { NotificationRequest } from '../notification.app';
+import type { InlineToastRequest } from '../toast.app';
 import { AutofillOTP } from './views/AutofillOTP';
 import { Autosave } from './views/Autosave';
+import { OfflineSetup } from './views/OfflineSetup';
 import { PasskeyCreate } from './views/PasskeyCreate';
 import { PasskeyGet } from './views/PasskeyGet';
-import { Toast } from './views/Toast';
+import { ToastView } from './views/Toast';
 
-import './Notification.scss';
+import './Toast.scss';
 
 type Props = {
     /** @internal Only used for debugging component */
-    initial?: NotificationRequest;
+    initial?: InlineToastRequest;
 };
 
-export const Notification: FC<Props> = ({ initial = null }) => {
+export const Toast: FC<Props> = ({ initial = null }) => {
     const { visible } = useIFrameAppState();
     const { status } = useAppState();
 
-    const [state, setState] = useState<MaybeNull<NotificationRequest>>(initial);
+    const [state, setState] = useState<MaybeNull<InlineToastRequest>>(initial);
     const loading = state === null || clientBusy(status);
 
     useRegisterMessageHandler(
-        InlinePortMessageType.NOTIFICATION_ACTION,
+        InlinePortMessageType.TOAST_ACTION,
         useCallback(({ payload }) => setState(payload), [])
     );
 
@@ -47,16 +48,18 @@ export const Notification: FC<Props> = ({ initial = null }) => {
                         if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
                         switch (state.action) {
-                            case NotificationAction.AUTOSAVE:
+                            case InlineToastAction.AUTOSAVE:
                                 return <Autosave {...state} />;
-                            case NotificationAction.OTP:
+                            case InlineToastAction.OFFLINE_SETUP:
+                                return <OfflineSetup {...state} />;
+                            case InlineToastAction.OTP:
                                 return <AutofillOTP {...state} />;
-                            case NotificationAction.PASSKEY_CREATE:
+                            case InlineToastAction.PASSKEY_CREATE:
                                 return <PasskeyCreate {...state} />;
-                            case NotificationAction.PASSKEY_GET:
+                            case InlineToastAction.PASSKEY_GET:
                                 return <PasskeyGet {...state} />;
-                            case NotificationAction.TOAST:
-                                return <Toast {...state} />;
+                            case InlineToastAction.TOAST:
+                                return <ToastView {...state} />;
                         }
                     })()}
 

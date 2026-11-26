@@ -86,7 +86,7 @@ if (typeof browser !== 'undefined') {
     }
 
     if (BUILD_TARGET === 'firefox' && ENV === 'production') {
-        const BLOCKING_PATHS = ['/dropdown.html', '/notification.html'];
+        const BLOCKING_PATHS = ['/dropdown.html', '/toast.html'];
         const BLOCKING_REGEX = new RegExp(`^(${BLOCKING_PATHS.map((p) => browser.runtime.getURL(p)).join('|')})`);
 
         browser.tabs.onUpdated.addListener(async (tabId, _, tab) => {

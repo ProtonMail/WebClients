@@ -1,6 +1,17 @@
+import type { RequestForkData } from '@proton/pass/lib/auth/fork';
+import { getStateKey, requestFork } from '@proton/pass/lib/auth/fork';
+import { ReauthAction } from '@proton/pass/lib/auth/reauth';
 import browser from '@proton/pass/lib/globals/browser';
-import type { MaybeNull } from '@proton/pass/types/utils';
+import { promptDismissed } from '@proton/pass/store/notifications/prompts/actions';
+import type { PromptDescriptor } from '@proton/pass/store/notifications/prompts/definitions';
+import { projectPrompt } from '@proton/pass/store/notifications/prompts/definitions';
+import { selectPromptDismissal } from '@proton/pass/store/notifications/prompts/selectors';
+import { selectHasTwoPasswordMode, selectIsSSO, selectUser } from '@proton/pass/store/selectors/user';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
+import { logger } from '@proton/pass/utils/logger';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
@@ -13,13 +24,115 @@ import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from '../.
 import type { Coords, DropdownStateDTO } from '../../../types/inline';
 import type { FrameQueryMessage, InlineDropdownStateMessage } from '../../../types/messages';
 import { WorkerMessageType } from '../../../types/messages';
-import { NotificationAction } from '../../content/constants.runtime';
+import config from '../../config';
+import { InlineToastAction } from '../../content/constants.runtime';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context/inject';
 
 type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords: Coords };
 
 const FRAMES_FALLBACK = new Map([[0, { parent: null, frameId: 0, secure: null, origin: null }]]);
+
+/** On-page offline-setup prompt trigger policy: one tab per browsing
+ * session-cycle, the one with the first eligible top-frame navigation,
+ * after a short delay so the prompt doesn't stampede page load.
+ * `ownerTabId` is the multi-tab arbitration — ephemeral, in-memory,
+ * SW-side: it dies with the SW (or on re-login), mirroring the
+ * ledger's logout-wipe. */
+const PROMPT_TRIGGER_DELAY = 3_000; /** ms */
+const PROMPT_TRIGGER_URL = /^https?:\/\//;
+
+/** Closes over the SW context root: registered once per SW lifetime,
+ * so the closure IS the session cycle. */
+const createPromptTrigger = () => {
+    /** Tab that owns the prompt for this cycle: no other tab shows it */
+    let ownerTabId: MaybeNull<TabId> = null;
+    let settled = false;
+
+    /** projection + arbitration: all SW-side, synchronous reads */
+    const resolvePrompt = withContext<() => MaybeNull<PromptDescriptor>>((ctx) => {
+        if (!ctx.getState().authorized) return null;
+
+        const client = {
+            offlineComponents: ctx.authStore.hasOfflineComponents(),
+            online: ctx.service.connectivity.online,
+        };
+
+        return projectPrompt(
+            'offline-onpage',
+            selectPromptDismissal('offline-onpage')(ctx.service.store.getState()),
+            client,
+            getEpoch()
+        );
+    });
+
+    /** Wait out page-load contention (or the content script restart after
+     * a tab switch) before opening the toast in the top frame. A newer
+     * offer replaces a pending one, and the prompt is resolved again
+     * when the delay ends: it may have been dismissed in the meantime. */
+    let pendingShow: Maybe<ReturnType<typeof setTimeout>>;
+
+    const show = (tabId: TabId) => {
+        const prompt = settled ? null : resolvePrompt();
+        if (!prompt) return logger.debug(`[PromptTrigger] prompt no longer eligible in tab ${tabId}`);
+
+        browser.tabs
+            .sendMessage(
+                tabId,
+                backgroundMessage({
+                    type: WorkerMessageType.INLINE_TOAST_OPEN,
+                    payload: { action: InlineToastAction.OFFLINE_SETUP, data: prompt },
+                }),
+                { frameId: 0 }
+            )
+            .then(() => logger.debug(`[PromptTrigger] prompt shown in tab ${tabId}`))
+            .catch((err) => logger.warn(`[PromptTrigger] toast open failed in tab ${tabId}`, err));
+    };
+
+    const offer = (tabId: TabId) => {
+        if (!resolvePrompt()) return;
+
+        ownerTabId = tabId;
+        clearTimeout(pendingShow);
+        pendingShow = setTimeout(() => show(tabId), PROMPT_TRIGGER_DELAY);
+        logger.debug(`[PromptTrigger] showing prompt in tab ${tabId} in ${PROMPT_TRIGGER_DELAY}ms`);
+    };
+
+    /** Completed top-level navigations of a visible tab: a hidden tab cannot
+     * display the toast. The owner tab shows the prompt again after each
+     * navigation, as the page load destroys its toast. */
+    const onUpdated = (
+        tabId: TabId,
+        changeInfo: { status?: string },
+        tab: { id?: number; url?: string; active?: boolean }
+    ) => {
+        if (settled || changeInfo.status !== 'complete' || !tabId || !tab?.active || !tab.url) return;
+        if (!PROMPT_TRIGGER_URL.test(tab.url)) return;
+        if (ownerTabId !== null && ownerTabId !== tabId) return;
+
+        offer(tabId);
+    };
+
+    /** A hidden tab destroys its toast without recording a dismissal:
+     * show it again when the owner tab comes back, until the prompt is
+     * dismissed (the projection returns `null`) or its CTA was used. */
+    const onActivated = ({ tabId }: { tabId: TabId }) => {
+        if (settled || tabId !== ownerTabId) return;
+        offer(tabId);
+    };
+
+    /** A closed owner tab frees the prompt for the next navigation */
+    const onRemoved = (tabId: TabId) => {
+        if (tabId === ownerTabId) ownerTabId = null;
+    };
+
+    const settle = () => {
+        settled = true;
+        clearTimeout(pendingShow);
+    };
+
+    return { onUpdated, onActivated, onRemoved, settle };
+};
 
 const getTabFrames: typeof getAllTabFrames = withContext(async (ctx, tabId, options) => {
     if (await ctx.service.autofill.iframeAutofillEnabled()) return getAllTabFrames(tabId, options);
@@ -38,6 +151,8 @@ const getTabFrames: typeof getAllTabFrames = withContext(async (ctx, tabId, opti
  * calculated absolute position in top-level document.
  */
 export const createInlineService = () => {
+    const promptTrigger = createPromptTrigger();
+
     /** Frame position query: Gets coordinates of target frame relative to its parent.
      * Sends `FRAME_QUERY` message to parent frame to determine child iframe position.
      * Part of the coordinate calculation chain for absolute positioning. Frame query
@@ -285,10 +400,10 @@ export const createInlineService = () => {
         })
     );
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.INLINE_NOTIFICATION_OPEN, async ({ payload }, sender) => {
-        if (payload.action !== NotificationAction.AUTOSAVE) throw new Error('Unallowed inline request');
+    WorkerMessageBroker.registerMessage(WorkerMessageType.INLINE_TOAST_OPEN, async ({ payload }, sender) => {
+        if (payload.action !== InlineToastAction.AUTOSAVE) throw new Error('Unallowed inline request');
 
-        /** Only sub-frame autosaves go through here. The notification opens in
+        /** Only sub-frame autosaves go through here. The toast opens in
          * the top frame, so read the iframe's URL here (while the sender is still the
          * iframe) and forward it, so the login is saved for the iframe's site. */
         const { tabId, href } = await parseSender(sender);
@@ -298,7 +413,7 @@ export const createInlineService = () => {
             .sendMessage(
                 tabId,
                 backgroundMessage({
-                    type: WorkerMessageType.INLINE_NOTIFICATION_OPEN,
+                    type: WorkerMessageType.INLINE_TOAST_OPEN,
                     payload,
                 }),
                 { frameId: 0 }
@@ -307,6 +422,53 @@ export const createInlineService = () => {
 
         return true;
     });
+
+    /** CTA of the on-page offline-setup prompt. Users who must re-authenticate
+     * via account go there directly (same fork as the in-app banner). Others
+     * open the settings page (regular tab) with the offline-setup intent: the
+     * `Offline` settings panel picks the query param up on mount and
+     * auto-triggers the password-confirmation flow. */
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.OFFLINE_SETUP_OPEN,
+        withContext(async (ctx) => {
+            promptTrigger.settle();
+
+            const state = ctx.service.store.getState();
+            const needsAccount = selectIsSSO(state) || selectHasTwoPasswordMode(state);
+
+            if (needsAccount && !ctx.authStore.hasOfflinePassword()) {
+                const user = selectUser(state);
+                const reauth = { type: ReauthAction.OFFLINE_SETUP } as const;
+                const data: RequestForkData = { type: 'reauth', userID: user?.ID, reauth };
+
+                const { url, state: forkState } = requestFork({
+                    app: APPS.PROTONPASSBROWSEREXTENSION,
+                    email: user?.Email,
+                    host: config.SSO_URL,
+                    promptBypass: 'none',
+                    promptType: 'offline',
+                });
+
+                await browser.storage.session.set({ [getStateKey(forkState)]: JSON.stringify(data) });
+                await browser.tabs.create({ url });
+                return true;
+            }
+
+            const settingsUrl = `${browser.runtime.getURL('/settings.html')}#/general?offline=setup`;
+            await browser.tabs.create({ url: settingsUrl });
+            return true;
+        })
+    );
+
+    /** Ledger writer for on-page prompt dismissals */
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.PROMPT_DISMISS,
+        withContext((ctx, { payload }) => {
+            ctx.service.store.dispatch(promptDismissed(payload.id));
+            if (payload.id === 'offline-onpage') promptTrigger.settle();
+            return true;
+        })
+    );
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FRAME_FIELD_LOCK,
@@ -347,6 +509,12 @@ export const createInlineService = () => {
             return true;
         })
     );
+
+    /** On-page offline-setup prompt: once-per-session-cycle trigger on
+     * eligible top-frame navigations (see `createPromptTrigger`) */
+    browser.tabs.onUpdated.addListener(promptTrigger.onUpdated);
+    browser.tabs.onActivated.addListener(promptTrigger.onActivated);
+    browser.tabs.onRemoved.addListener(promptTrigger.onRemoved);
 
     return { getTabFrames, queryFrame, getFrameCoords };
 };

@@ -24,7 +24,7 @@ describe('assertTabsAPIAvailable', () => {
     describe('Safari restrictions', () => {
         beforeEach(() => setBuildTarget('safari'));
 
-        test.each<ClientEndpoint>(['contentscript', 'dropdown', 'notification'])(
+        test.each<ClientEndpoint>(['contentscript', 'dropdown', 'toast'])(
             'returns `false` for `%s` endpoint on Safari',
             (endpoint) => expect(assertTabsAPIAvailable(endpoint)).toBe(false)
         );

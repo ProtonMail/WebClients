@@ -21,7 +21,7 @@ import { contentScriptMessage, sendMessage } from '../../../../lib/message/send-
 import type { AutofillRequest, AutofillResult } from '../../../../types/autofill';
 import type { FrameField } from '../../../../types/frames';
 import { WorkerMessageType } from '../../../../types/messages';
-import { DropdownAction, NotificationAction } from '../../constants.runtime';
+import { DropdownAction, InlineToastAction } from '../../constants.runtime';
 import { withContext } from '../../context/context';
 import type { ContentScriptContextFactoryOptions } from '../../context/factory';
 import { getAutofillPageTelemetryDimensions } from '../../utils/autofill-telemetry';
@@ -235,7 +235,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
 
     /** Checks for OTP fields in tracked forms and prompts for autofill if eligible.
      * Queries the service worker for matching items and opens an `AutofillOTP`
-     * notification if appropriate. Returns true if a prompt was shown, false otherwise. */
+     * toast if appropriate. Returns true if a prompt was shown, false otherwise. */
     const evaluateOTP = withContext<(forms: FormHandle[]) => Promise<boolean>>(async (ctx, forms) => {
         const enabled = Boolean(ctx?.getFeatures().Autofill2FA);
         const hasOTP = enabled && forms.some((form) => form.otp);
@@ -244,8 +244,8 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
             hasOTP &&
             sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
-                    ctx?.service.inline.notification.open({
-                        action: NotificationAction.OTP,
+                    ctx?.service.inline.toast.open({
+                        action: InlineToastAction.OTP,
                         item: omit(res, ['type', 'shouldPrompt']),
                     });
                     return true;
@@ -279,8 +279,8 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                         field.focus({ preventAction: true });
 
                         if (payload.notification) {
-                            ctx?.service.inline.notification.open({
-                                action: NotificationAction.TOAST,
+                            ctx?.service.inline.toast.open({
+                                action: InlineToastAction.TOAST,
                                 message: payload.notification,
                             });
                         }

@@ -1,11 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isActiveNotification, isPromoNotification, isUnreadNotification } from '../../lib/notifications/notifications.utils';
-import type { InAppNotification } from '../../types/data/notification';
-import type { Maybe } from '../../types/utils';
-import { and, not } from '../../utils/fp/predicates';
-import type { NotificationReducerState } from '../reducers/notification';
-import type { State } from '../types';
+import { isActiveNotification, isPromoNotification, isUnreadNotification } from '../../../lib/notifications/notifications.utils';
+import type { InAppNotification } from '../../../types/data/notification';
+import type { Maybe } from '../../../types/utils';
+import { and, not } from '../../../utils/fp/predicates';
+import type { State } from '../../types';
+import type { NotificationReducerState } from './reducer';
 
 const selectNotificationState = ({ notification }: State): NotificationReducerState => notification;
 

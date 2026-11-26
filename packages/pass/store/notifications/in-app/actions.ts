@@ -3,10 +3,10 @@ import { createAction } from '@reduxjs/toolkit';
 import type { InAppNotifications, UpdateInAppNotificationDTO } from '../../../types/data/notification';
 import type { MaybeNull } from '../../../types/utils';
 import { UNIX_HOUR } from '../../../utils/time/constants';
+import { withCache } from '../../actions/enhancers/cache';
+import type { Notification } from '../../actions/enhancers/notification';
 import { cachedRequest } from '../../request/configs';
 import { requestActionsFactory } from '../../request/flow';
-import { withCache } from '../enhancers/cache';
-import type { Notification } from '../enhancers/notification';
 
 export const notification = createAction('notification', (notification: Notification) => ({
     meta: { notification },

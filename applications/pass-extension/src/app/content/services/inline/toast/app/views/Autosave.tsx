@@ -22,13 +22,13 @@ import { useIFrameAppController, useIFrameAppState } from '../../../../../../../
 import { PauseListDropdown } from '../../../../../../../lib/components/Inline/PauseListDropdown';
 import { contentScriptMessage, sendMessage } from '../../../../../../../lib/message/send-message';
 import { WorkerMessageType } from '../../../../../../../types/messages';
-import type { NotificationAction } from '../../../../../constants.runtime';
-import type { NotificationRequest } from '../../notification.app';
+import type { InlineToastAction } from '../../../../../constants.runtime';
+import type { InlineToastRequest } from '../../toast.app';
 import { AutosaveForm } from '../components/AutosaveForm';
 import { AutosaveSelect } from '../components/AutosaveSelect';
-import { NotificationHeader } from '../components/NotificationHeader';
+import { ToastHeader } from '../components/ToastHeader';
 
-type Props = Extract<NotificationRequest, { action: NotificationAction.AUTOSAVE }>;
+type Props = Extract<InlineToastRequest, { action: InlineToastAction.AUTOSAVE }>;
 
 const getInitialValues = (
     { userIdentifier, password, type, iframeUrl }: AutosavePayload,
@@ -158,7 +158,7 @@ export const Autosave: FC<Props> = ({ data }) => {
     return (
         <FormikProvider value={form}>
             <Form className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full anime-fadein gap-2">
-                <NotificationHeader
+                <ToastHeader
                     discardOnClose={shouldDiscard}
                     ref={vaultPickerAnchor}
                     onClose={() =>

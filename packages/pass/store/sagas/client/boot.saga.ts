@@ -29,13 +29,13 @@ import {
 import { draftsGarbageCollect, secureLinksGet } from '../../actions/creators/item';
 import { resolveModelRegistry } from '../../actions/creators/model-registry';
 import { getBreaches } from '../../actions/creators/monitor';
-import { getInAppNotifications } from '../../actions/creators/notification';
 import { getOrganizationPauseList, getOrganizationSettings } from '../../actions/creators/organization';
 import { passwordHistoryGarbageCollect } from '../../actions/creators/password';
 import { resolvePrivateDomains } from '../../actions/creators/private-domains';
 import { resolveWebsiteRules } from '../../actions/creators/rules';
 import { getAuthDevices } from '../../actions/creators/sso';
 import { getUserAccessIntent, getUserFeaturesIntent, getUserSettings } from '../../actions/creators/user';
+import { getInAppNotifications } from '../../notifications/in-app/actions';
 import { getPaymentNudgePaymentMethods } from '../../payment-nudge/actions';
 import { selectCanQueryPaymentNudge } from '../../payment-nudge/selectors';
 import type { ProxiedSettings } from '../../reducers/settings';

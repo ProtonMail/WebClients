@@ -180,7 +180,7 @@ const config: Configuration = {
             layer: 'injection',
         },
         internal: './src/app/pages/internal/index.tsx',
-        notification: nonAccessibleWebResource('./src/app/content/services/inline/notification/app/index.tsx'),
+        toast: nonAccessibleWebResource('./src/app/content/services/inline/toast/app/index.tsx'),
         onboarding: './src/app/pages/onboarding/index.tsx',
         orchestrator: {
             import: disableBrowserTrap('./src/app/content/orchestrator.ts'),
