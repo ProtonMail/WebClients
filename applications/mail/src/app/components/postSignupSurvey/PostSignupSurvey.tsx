@@ -1,29 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { useApi } from '@proton/app-context/useApi';
 import { Card } from '@proton/atoms/Card/Card';
 import { Portal } from '@proton/atoms/Portal/Portal';
-import {
-    type JoinReason,
-    type PreviousProvider,
-    dismissOnboardingSurvey,
-    submitOnboardingSurvey,
-} from '@proton/shared/lib/api/onboardingSurvey';
-import noop from '@proton/utils/noop';
+import type { JoinReason, PreviousProvider } from '@proton/shared/lib/api/onboardingSurvey';
 
-import { PostSignupStep1 } from './PostSignupStep1';
-import { PostSignupStep2 } from './PostSignupStep2';
+import { usePostSignupSurvey } from './hooks/usePostSignupSurvey';
+import { JoinReasonStep } from './steps/JoinReasonStep';
 
 import './PostSignupSurvey.scss';
-
-interface FormState {
-    joinReason?: JoinReason;
-    joinReasonDetail?: string;
-    providers: PreviousProvider[];
-    providerDetail?: string;
-}
-
-const INITIAL_FORM: FormState = { joinReasonDetail: undefined, providers: [] };
+import { PreviousProviderStep } from './steps/PreviousProviderStep';
 
 interface Props {
     /** Called once, when the survey is dismissed or submitted */
@@ -32,10 +17,9 @@ interface Props {
 
 export const PostSignupSurvey = ({ onClose }: Props) => {
     const [step, setStep] = useState(0);
-    const [form, setForm] = useState<FormState>(INITIAL_FORM);
-
-    const api = useApi();
     const isClosedRef = useRef(false);
+
+    const survey = usePostSignupSurvey();
 
     // The outcome is final once reported, a failing request must never keep the user stuck on the survey
     const handleDismiss = () => {
@@ -44,7 +28,7 @@ export const PostSignupSurvey = ({ onClose }: Props) => {
         }
         isClosedRef.current = true;
 
-        api({ ...dismissOnboardingSurvey(), silence: true }).catch(noop);
+        survey.dismiss();
         onClose();
     };
 
@@ -64,7 +48,7 @@ export const PostSignupSurvey = ({ onClose }: Props) => {
     }, []);
 
     const handleSubmitStepOne = (joinReason: JoinReason, joinReasonDetail?: string) => {
-        setForm({ ...form, joinReason, joinReasonDetail });
+        survey.saveAnswers({ JoinReasons: [joinReason], JoinReasonDetail: joinReasonDetail });
         setStep(1);
     };
 
@@ -75,21 +59,13 @@ export const PostSignupSurvey = ({ onClose }: Props) => {
         isClosedRef.current = true;
 
         // Step 2 is only reachable after step 1, so a missing reason is a dismissal
-        if (!form.joinReason) {
+        if (!survey.form?.JoinReasons) {
             onClose();
             return;
         }
 
-        api({
-            ...submitOnboardingSurvey({
-                JoinReason: form.joinReason,
-                PreviousProviders: providers,
-                JoinReasonDetail: form.joinReasonDetail,
-                // Only the 'other' provider requires a detail
-                PreviousProviderDetail: providers.includes('other') ? providerDetail : undefined,
-            }),
-            silence: true,
-        }).catch(noop);
+        survey.saveAnswers({ PreviousProviders: providers, PreviousProviderDetail: providerDetail });
+        survey.submit();
         onClose();
     };
 
@@ -106,14 +82,14 @@ export const PostSignupSurvey = ({ onClose }: Props) => {
                 className="post-signup-survey bg-norm shadow-lifted p-6"
             >
                 {step === 0 && (
-                    <PostSignupStep1
+                    <JoinReasonStep
                         onSubmit={handleSubmitStepOne}
                         onDismiss={handleDismiss}
-                        initialReason={form.joinReason}
-                        initialDetail={form.joinReasonDetail}
+                        initialReason={survey.form?.JoinReasons?.[0]}
+                        initialDetail={survey.form?.JoinReasonDetail}
                     />
                 )}
-                {step === 1 && <PostSignupStep2 onSubmit={handleSubmitStepTwo} onBack={handleBackStepTwo} />}
+                {step === 1 && <PreviousProviderStep onSubmit={handleSubmitStepTwo} onBack={handleBackStepTwo} />}
             </Card>
         </Portal>
     );

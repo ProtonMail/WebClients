@@ -51,7 +51,7 @@ export type EnableVpn2024AddonsExperimentVariant =
 export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
 export type InboxBringYourOwnEmailImportPeriodExperimentVariant = 'Control' | 'Treatment';
 export type OnboardingStepsExperimentVariant = 'Control' | 'Treatment1' | 'Treatment2' | 'Treatment3' | 'Treatment4';
-export type PostSignupSurveyExperimentVariant = 'Control' | 'Treatment';
+export type PostSignupSurveyExperimentVariant = 'Control' | 'Treatment1' | 'Treatment2' | 'Treatment3' | 'Treatment4';
 export type VpnSignupMobileCheckoutVariant = 'Control' | 'Treatment';
 export type BookmarkNudgeExperimentVariant = 'Control' | 'Treatment';
 

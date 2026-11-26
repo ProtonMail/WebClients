@@ -7,32 +7,18 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import { PREVIOUS_PROVIDERS, type PreviousProvider } from '@proton/shared/lib/api/onboardingSurvey';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { PostSignupHeader } from './components/PostSignupHeader';
-import { PostSignupOption } from './components/PostSignupOption';
-import { PostSignupStep } from './components/PostSignupStep';
+import { PostSignupHeader } from '../components/PostSignupHeader';
+import { PostSignupOption } from '../components/PostSignupOption';
+import { PostSignupProgress } from '../components/PostSignupProgress';
+import { getPreviousEmailChoices } from '../survey/choices';
 
 interface Props {
     onBack: () => void;
     onSubmit: (providers: PreviousProvider[], providerDetail?: string) => void;
 }
 
-const getLabels = (): Record<PreviousProvider, string> => ({
-    // Brand names, not translated
-    gmail: 'Gmail',
-    outlook: 'Outlook / Hotmail',
-    yahoo: 'Yahoo',
-    icloud: 'iCloud',
-    none: c('Info').t`I didn't have one`,
-    other: c('Info').t`Other (tell us)`,
-});
-
-const getDetailPlaceholders = (): Partial<Record<PreviousProvider, string>> => ({
-    other: c('Info').t`Which provider?`,
-});
-
-export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
-    const labels = getLabels();
-    const placeholders = getDetailPlaceholders();
+export const PreviousProviderStep = ({ onBack, onSubmit }: Props) => {
+    const previousEmail = getPreviousEmailChoices();
 
     const [selected, setSelected] = useState<PreviousProvider[]>([]);
     const [detail, setDetail] = useState<string | undefined>(undefined);
@@ -43,7 +29,7 @@ export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
         }
 
         // We send the details if at least one provider requires it
-        const hasDetail = selected.some((provider) => placeholders[provider] !== undefined);
+        const hasDetail = selected.some((provider) => previousEmail[provider].placeholder !== undefined);
         onSubmit(selected, hasDetail ? detail?.trim() || undefined : undefined);
     };
 
@@ -60,7 +46,7 @@ export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
 
     return (
         <div>
-            <PostSignupStep currentStep={2} steps={2} />
+            <PostSignupProgress currentStep={2} steps={2} />
             <PostSignupHeader
                 leadingText={c('Info').t`Almost done`}
                 header={c('Header').t`Before ${MAIL_APP_NAME}, which email did you use most?`}
@@ -73,9 +59,9 @@ export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
                     return (
                         <PostSignupOption
                             key={provider}
-                            label={labels[provider]}
+                            label={previousEmail[provider].title}
                             checked={checked}
-                            detailPlaceholder={placeholders[provider]}
+                            detailPlaceholder={previousEmail[provider].placeholder}
                             detail={detail ?? ''}
                             onDetailChange={setDetail}
                             renderControl={(children) => (

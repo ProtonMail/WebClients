@@ -4,6 +4,8 @@ import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpe
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
+import { getSurveyVariant } from '../survey/getSurveyVariant';
+
 /**
  * Whether the onboarding ends with the post signup survey instead of closing.
  * Every condition to be part of the rollout lives here, so the onboarding only asks this one question.
@@ -31,6 +33,6 @@ export const usePostSignupSurveyEligibility = () => {
         return false;
     }
 
-    // Only the Treatment group sees the survey, Control (and a disabled experiment) finish the onboarding as before
-    return variant.name === 'Treatment';
+    // Only the Treatment groups see the survey, Control (and a disabled experiment) finish the onboarding as before
+    return getSurveyVariant(variant.name) !== undefined;
 };

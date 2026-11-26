@@ -7,40 +7,20 @@ import Radio from '@proton/components/components/input/Radio';
 import { JOIN_REASONS, type JoinReason } from '@proton/shared/lib/api/onboardingSurvey';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { PostSignupHeader } from './components/PostSignupHeader';
-import { PostSignupOption } from './components/PostSignupOption';
-import { PostSignupStep } from './components/PostSignupStep';
+import { PostSignupHeader } from '../components/PostSignupHeader';
+import { PostSignupOption } from '../components/PostSignupOption';
+import { PostSignupProgress } from '../components/PostSignupProgress';
+import { getJoinReasonChoices } from '../survey/choices';
 
-// Record<JoinReason, …> makes TypeScript fail when a reason is added without a label
-const getLabels = (): Record<JoinReason, string> => ({
-    no_ads: c('Info').t`No ads`,
-    stop_reading_emails: c('Info').t`Stop companies reading my emails`,
-    hacker_protection: c('Info').t`Protection from hackers and leaks`,
-    leave_big_tech: c('Info').t`Leave Big Tech`,
-    new_address: c('Info').t`A new or separate address`,
-    recommended: c('Info').t`Someone recommended it`,
-    other_proton_products: c('Info').t`I use other Proton products`,
-    work_business: c('Info').t`Work or business`,
-    specific_feature: c('Info').t`A specific feature (tell us)`,
-    other: c('Info').t`Other (tell us)`,
-});
-
-// Reasons listed here also show a free text input
-const getDetailPlaceholders = (): Partial<Record<JoinReason, string>> => ({
-    specific_feature: c('Info').t`Which feature? (optional)`,
-    other: c('Info').t`Tell us more (optional)`,
-});
-
-export interface PostSignupStep1Props {
+export interface JoinReasonStepProps {
     initialReason?: JoinReason;
     initialDetail?: string;
     onSubmit: (joinReason: JoinReason, joinReasonDetail?: string) => void;
     onDismiss: () => void;
 }
 
-export const PostSignupStep1 = ({ initialReason, initialDetail, onSubmit, onDismiss }: PostSignupStep1Props) => {
-    const labels = getLabels();
-    const placeholders = getDetailPlaceholders();
+export const JoinReasonStep = ({ initialReason, initialDetail, onSubmit, onDismiss }: JoinReasonStepProps) => {
+    const joinReasonChoices = getJoinReasonChoices();
 
     const [selected, setSelected] = useState<JoinReason | undefined>(initialReason);
     const [detail, setDetail] = useState(initialDetail ?? '');
@@ -50,12 +30,13 @@ export const PostSignupStep1 = ({ initialReason, initialDetail, onSubmit, onDism
             return;
         }
 
-        onSubmit(selected, placeholders[selected] !== undefined ? detail.trim() || undefined : undefined);
+        const details = detail.trim() || undefined;
+        onSubmit(selected, joinReasonChoices[selected].placeholder !== undefined ? details : undefined);
     };
 
     return (
         <div>
-            <PostSignupStep currentStep={1} steps={2} />
+            <PostSignupProgress currentStep={1} steps={2} />
             <PostSignupHeader
                 leadingText={c('Info').t`One last step`}
                 header={c('Header').t`What's the main reason you joined ${MAIL_APP_NAME}?`}
@@ -68,9 +49,9 @@ export const PostSignupStep1 = ({ initialReason, initialDetail, onSubmit, onDism
                     return (
                         <PostSignupOption
                             key={reason}
-                            label={labels[reason]}
+                            label={joinReasonChoices[reason].title}
                             checked={checked}
-                            detailPlaceholder={placeholders[reason]}
+                            detailPlaceholder={joinReasonChoices[reason].placeholder}
                             detail={detail}
                             onDetailChange={setDetail}
                             renderControl={(children) => (

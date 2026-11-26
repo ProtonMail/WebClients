@@ -3,6 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { PLANS } from '@proton/payments/core/constants';
+import type { PostSignupSurveyExperimentVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
@@ -23,13 +24,13 @@ const setup = ({
     isReplay = false,
     planName,
     loading = false,
-    variant = 'Treatment',
+    variant = 'Treatment1',
 }: {
     enabled?: boolean;
     isReplay?: boolean;
     planName?: PLANS;
     loading?: boolean;
-    variant?: 'Control' | 'Treatment' | 'disabled';
+    variant?: PostSignupSurveyExperimentVariant | 'disabled';
 } = {}) => {
     mockUseFlag.mockReturnValue(enabled);
     mockUseVariant.mockReturnValue({ name: variant } as any);

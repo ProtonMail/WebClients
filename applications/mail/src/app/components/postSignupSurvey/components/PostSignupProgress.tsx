@@ -6,7 +6,7 @@ interface Props {
     currentStep: number;
 }
 
-export const PostSignupStep = ({ steps, currentStep }: Props) => {
+export const PostSignupProgress = ({ steps, currentStep }: Props) => {
     const header = c('Info').t`${currentStep} of ${steps}`;
     const stepsArray = Array.from({ length: steps }, (_, i) => i + 1);
 
