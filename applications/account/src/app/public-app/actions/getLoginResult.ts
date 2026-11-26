@@ -1,5 +1,5 @@
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getProduct } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -28,8 +28,15 @@ const getDefaultPath = (toApp: APP_NAMES) => {
     return '/';
 };
 
-const addSignupSearchParams = (searchParams: URLSearchParams, { appIntent }: { appIntent?: AppIntent }) => {
+const addSignupSearchParams = (
+    searchParams: URLSearchParams,
+    { appIntent, toApp }: { appIntent?: AppIntent; toApp?: APP_NAMES }
+) => {
     searchParams.append('welcome', 'true');
+    // The product switch is the generic signup followed by a pick in the app switcher, not a signup of that app
+    if (toApp !== undefined && appIntent?.ref !== 'product-switch') {
+        searchParams.append('signupProduct', getProduct(toApp));
+    }
     if (appIntent?.ref !== undefined) {
         searchParams.append('ref', appIntent.ref);
     }
@@ -121,7 +128,7 @@ const getRedirectUrl = ({
     const path = getDefaultPath(toApp);
     const url = new URL(getAppHref(path, toApp, localID));
     if (session.flow === 'signup') {
-        addSignupSearchParams(url.searchParams, { appIntent: session.appIntent });
+        addSignupSearchParams(url.searchParams, { appIntent: session.appIntent, toApp });
     }
 
     return url;
@@ -250,7 +257,7 @@ export const getLoginResult = async ({
     ) {
         const searchParameters = new URLSearchParams();
         if (session.flow === 'signup') {
-            addSignupSearchParams(searchParameters, { appIntent });
+            addSignupSearchParams(searchParameters, { appIntent, toApp });
         }
         return getProduceForkLoginResult({
             data: {

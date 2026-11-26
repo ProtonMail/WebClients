@@ -47,6 +47,7 @@ import { migrationToolWorker } from './helpers/encryptedSearch/migration-system/
 import { registerMailToProtocolHandler } from './helpers/url';
 import locales from './locales';
 import { type MailState, extendStore, setupStore } from './store/store';
+import { rememberWebSignup } from './telemetry/signupOrigin';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './MainContainer').then((result) => result.default);
@@ -84,6 +85,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         const sessionResult = await bootstrap.loadSession({ authentication, api, pathname, searchParams });
 
         const history = bootstrap.createHistory({ sessionResult, pathname });
+        rememberWebSignup(window.location.search, history.location.search);
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
         const unleashPromise = bootstrap
             .unleashReady({ unleashClient })
