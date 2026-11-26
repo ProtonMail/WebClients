@@ -16,6 +16,7 @@ import Input from '../../components/input/Input';
 import Label from '../../components/label/Label';
 import AmountButton from './AmountButton';
 import CurrencySelector from './CurrencySelector';
+import { getAmountButtonProps } from './getAmountButtonProps';
 
 const DEFAULT_PRESET_USD_CENTS = [500, 1000, 5000, 10000];
 
@@ -27,7 +28,6 @@ interface Props {
     disableCurrencySelector: boolean;
     paymentStatus: PaymentStatus;
     presetWholeAmounts?: number[];
-    getAmountLabel?: (amount: number, currency: Currency) => string;
 }
 
 const PaymentSelector = ({
@@ -38,7 +38,6 @@ const PaymentSelector = ({
     disableCurrencySelector,
     paymentStatus,
     presetWholeAmounts,
-    getAmountLabel,
 }: Props) => {
     const multiSubscriptionContext = useMultiSubscriptionContext();
     const [user] = useUser();
@@ -74,13 +73,10 @@ const PaymentSelector = ({
                 {amounts.map((value) => (
                     <div key={value} className="md:flex-1 mb-2 md:mb-0">
                         <AmountButton
-                            currency={currency}
+                            {...getAmountButtonProps({ value, amount, currency, inWholeUnits: !!presetWholeAmounts })}
                             aria-describedby="id_desc_amount id_desc_currency"
                             className="w-full"
-                            onSelect={handleChangeAmount}
-                            value={value}
-                            amount={amount}
-                            label={getAmountLabel?.(value, currency)}
+                            onSelect={() => handleChangeAmount(value)}
                         />
                     </div>
                 ))}

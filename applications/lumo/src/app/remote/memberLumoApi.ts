@@ -16,3 +16,9 @@ export const updateMemberLumoApiRequest = (memberId: string, LumoApiEnabled: boo
     method: 'put' as const,
     data: { LumoApiEnabled },
 });
+
+export const updateAllMembersLumoApiRequest = (LumoApiEnabled: boolean) => ({
+    url: 'core/v4/members/lumo-api',
+    method: 'put' as const,
+    data: { LumoApiEnabled, AllMembers: true },
+});

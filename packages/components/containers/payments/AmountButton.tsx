@@ -8,12 +8,11 @@ import Price from '../../components/price/Price';
 interface Props extends Omit<ButtonProps, 'onSelect' | 'onClick'> {
     value?: number;
     amount?: number;
-    currency: Currency;
-    label?: string;
+    currency?: Currency;
     onSelect: (value: number) => void;
 }
 
-const AmountButton = ({ value = 0, amount = 0, currency, label, onSelect, className = '', ...rest }: Props) => {
+const AmountButton = ({ value = 0, amount = 0, currency, onSelect, className = '', ...rest }: Props) => {
     return (
         <Button
             aria-pressed={value === amount}
@@ -21,7 +20,7 @@ const AmountButton = ({ value = 0, amount = 0, currency, label, onSelect, classN
             onClick={() => onSelect(value)}
             {...rest}
         >
-            {label ?? <Price currency={currency}>{value}</Price>}
+            {currency ? <Price currency={currency}>{value}</Price> : value}
         </Button>
     );
 };

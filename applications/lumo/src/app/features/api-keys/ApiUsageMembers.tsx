@@ -19,6 +19,7 @@ import {
     filterMembersByName,
     getApiAccessHint,
     getApiMemberUsage,
+    isApiAccessOnForEveryone,
     getCostLabel,
 } from './apiUsage';
 import { useApiUsageMembers } from './useApiUsageMembers';
@@ -30,15 +31,44 @@ interface MemberApiAccess {
     onChange: (memberId: string, enabled: boolean) => Promise<void>;
 }
 
+const EveryoneApiAccessToggle = ({
+    enabledByMemberId,
+    hint,
+    onChange,
+}: {
+    enabledByMemberId: Record<string, boolean>;
+    hint: string | undefined;
+    onChange: (enabled: boolean) => Promise<void>;
+}) => {
+    const [loading, withLoading] = useLoading();
+    const isOnForEveryone = isApiAccessOnForEveryone(enabledByMemberId);
+    return (
+        <div className="flex items-center gap-2 shrink-0 w-full md:w-auto" title={hint}>
+            <Toggle
+                id="api-access-everyone"
+                checked={isOnForEveryone}
+                disabled={hint !== undefined || Object.keys(enabledByMemberId).length === 0}
+                loading={loading}
+                onChange={() => withLoading(onChange(!isOnForEveryone))}
+                aria-label={c('collider_2025: Action').t`Toggle API access for everyone`}
+                className="shrink-0"
+            />
+            <span className="api-usage-access-label lumo-label-small lumo-color-glyph-mid">{c('collider_2025: Label')
+                .t`API access for everyone`}</span>
+        </div>
+    );
+};
+
 const MemberApiAccessToggle = ({ member, apiAccess }: { member: ApiMemberUsage; apiAccess: MemberApiAccess }) => {
     const [loading, withLoading] = useLoading();
     const enabled = apiAccess.enabledByMemberId[member.id];
+    const hint = apiAccess.hint ?? member.accessUnavailableReason;
     return (
-        <div className="api-usage-member-card__access flex items-center gap-2" title={apiAccess.hint}>
+        <div className="api-usage-member-card__access flex items-center gap-2" title={hint}>
             <Toggle
                 id={`api-access-${member.id}`}
                 checked={!!enabled}
-                disabled={enabled === undefined || apiAccess.hint !== undefined}
+                disabled={enabled === undefined || hint !== undefined}
                 loading={loading}
                 onChange={() => withLoading(apiAccess.onChange(member.id, !enabled))}
                 aria-label={c('collider_2025: Action').t`Toggle API access for ${member.name}`}
@@ -196,7 +226,12 @@ export const ApiUsageMembers = ({
                         {c('collider_2025: Info').t`Review API spending by member for ${periodLabel}.`}
                     </p>
                 </div>
-                <div className="api-usage-members-actions flex items-center gap-2 w-full md:w-auto">
+                <div className="api-usage-members-actions flex flex-wrap md:flex-nowrap items-center gap-2 w-full md:w-auto">
+                    <EveryoneApiAccessToggle
+                        enabledByMemberId={apiAccess.enabledByMemberId}
+                        hint={apiAccess.hint}
+                        onChange={membersLumoApi.setApiAccessForEveryone}
+                    />
                     <ButtonLike as={SettingsLink} path="/users-addresses" color="weak" size="small">
                         {c('collider_2025: Action').t`Add user`}
                     </ButtonLike>

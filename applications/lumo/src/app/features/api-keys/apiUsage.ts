@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { LUMO_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { getIsMemberDisabled, getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
 
 import type { BilledClientType, UsageDay, UsageEntry, UsageMemberRow } from '../../remote/usage';
 import { API_TOKEN_CREDITS_PER_MILLION, type ApiTokenPricingModelId, formatCredits } from '../api-docs/apiTokenPricing';
@@ -99,6 +100,7 @@ export type ApiMemberUsage = {
     name: string;
     role: string;
     isCurrentMember: boolean;
+    accessUnavailableReason: string | undefined;
     totalTokens: number;
     cost: number | null;
     models: { model: string; inputTokens: number; outputTokens: number; cost: number | null }[];
@@ -125,6 +127,16 @@ const getMemberRole = (memberId: string | null, member: Member | undefined) => {
         : c('collider_2025: Label').t`Member`;
 };
 
+const getAccessUnavailableReason = (member: Member | undefined) => {
+    if (getIsMemberInvited(member)) {
+        return c('collider_2025: Info').t`Pending invitation. Can't use the ${LUMO_APP_NAME} API until they accept.`;
+    }
+    if (getIsMemberDisabled(member)) {
+        return c('collider_2025: Info').t`Inactive. Can't use the ${LUMO_APP_NAME} API.`;
+    }
+    return undefined;
+};
+
 const NO_USAGE: UsageMemberRow['Totals'] = {
     TokensIn: 0,
     TokensInCached: 0,
@@ -146,6 +158,7 @@ export const getApiMemberUsage = (rows: UsageMemberRow[], members: Member[]): Ap
             name: getMemberName(MemberID, member),
             role: getMemberRole(MemberID, member),
             isCurrentMember: member !== undefined,
+            accessUnavailableReason: getAccessUnavailableReason(member),
             totalTokens: Totals.TokensIn + Totals.TokensInCached + Totals.TokensGenerated,
             cost: toCredits(Totals.CostMicros),
             models: Usage.map((entry) => ({
@@ -163,6 +176,11 @@ export const filterMembersByName = (members: ApiMemberUsage[], search: string) =
 export const getCostLabel = (cost: number | null) =>
     cost === null ? c('collider_2025: Info').t`Not priced yet` : formatCredits(cost);
 
+export const isApiAccessOnForEveryone = (enabledByMemberId: Record<string, boolean>) => {
+    const accesses = Object.values(enabledByMemberId);
+    return accesses.length > 0 && accesses.every(Boolean);
+};
+
 export const getApiAccessHint = ({
     isOrganizationApiEnabled,
     error,
@@ -171,7 +189,7 @@ export const getApiAccessHint = ({
     error: boolean;
 }) => {
     if (!isOrganizationApiEnabled) {
-        return c('collider_2025: Info').t`Turn on the ${LUMO_APP_NAME} API for your organization first.`;
+        return c('collider_2025: Info').t`The ${LUMO_APP_NAME} API is turned off for your organization.`;
     }
     if (error) {
         return c('collider_2025: Error').t`API access could not be loaded.`;

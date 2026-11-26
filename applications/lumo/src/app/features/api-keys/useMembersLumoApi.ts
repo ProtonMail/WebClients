@@ -8,6 +8,7 @@ import {
     MEMBERS_LUMO_API_MAX_PAGE_SIZE,
     type MembersLumoApiResponse,
     getMembersLumoApiRequest,
+    updateAllMembersLumoApiRequest,
     updateMemberLumoApiRequest,
 } from '../../remote/memberLumoApi';
 
@@ -49,5 +50,17 @@ export const useMembersLumoApi = () => {
             noop
         );
 
-    return { ...state, setApiAccess };
+    const setApiAccessForEveryone = (enabled: boolean) =>
+        api(updateAllMembersLumoApiRequest(enabled)).then(
+            () =>
+                setState((previous) => ({
+                    ...previous,
+                    enabledByMemberId: Object.fromEntries(
+                        Object.keys(previous.enabledByMemberId).map((memberId) => [memberId, enabled])
+                    ),
+                })),
+            noop
+        );
+
+    return { ...state, setApiAccess, setApiAccessForEveryone };
 };
