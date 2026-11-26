@@ -211,6 +211,7 @@ enum DocsFeatureFlag {
     SheetsODSExportEnabled = 'SheetsODSExportEnabled',
     SheetsODSImportEnabled = 'SheetsODSImportEnabled',
     SheetsPatchesStorageEnabled = 'SheetsPatchesStorageEnabled',
+    SheetsSdkFormatting = 'SheetsSdkFormatting',
     SheetsStatusBarEnabled = 'SheetsStatusBarEnabled',
     SheetsTablesEnabled = 'SheetsTablesEnabled',
     // Update compression and chunking
