@@ -1,0 +1,33 @@
+.lumo-plan-tier-card {
+	&__price {
+		font-size: 2rem;
+		line-height: 2.5rem;
+	}
+
+	&__recommendation {
+		max-inline-size: calc(100% - 2 * var(--lumo-space-20));
+		transform: translateY(-50%);
+	}
+
+	&__savings {
+		background-color: color-mix(in srgb, var(--lumo-control-brand-fill) 14%, transparent);
+	}
+
+	&--selected {
+		--border-norm: var(--lumo-control-brand-fill);
+	}
+
+	&__compact-radio {
+		// The shared radio includes its own margin. The card aligns the title and features with one shared gap.
+		> .radio-fakeradio {
+			inline-size: var(--lumo-icon-size-20);
+			block-size: var(--lumo-icon-size-20);
+			margin: 0;
+
+			&::before {
+				inline-size: var(--lumo-space-8);
+				block-size: var(--lumo-space-8);
+			}
+		}
+	}
+}
