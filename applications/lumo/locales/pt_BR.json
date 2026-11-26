@@ -2269,6 +2269,9 @@
       "Add your key to the authorization header and call a model.": [
         "Adicione sua chave ao cabeçalho de autorização e faça uma chamada a um modelo."
       ],
+      "Adding ${ formattedAmount } when your balance reaches ${ formattedThreshold }": [
+        "Adicionando ${ formattedAmount } quando seu saldo atingir ${ formattedThreshold }"
+      ],
       "Advanced account and network security in one plan": [
         "Segurança avançada de conta e rede em um único plano"
       ],
@@ -2328,6 +2331,9 @@
       ],
       "Chat expiring very soon": [
         "Chat expirando muito em breve"
+      ],
+      "Chat usage isn't broken down by model. Select All models to include it.": [
+        "O uso do bate-papo não é detalhado por modelo. Selecione Todos os modelos para incluí-lo."
       ],
       "Check this is the site you expect to visit": [
         "Verifique se este é o site que você espera visitar"
@@ -2548,6 +2554,9 @@
       "Monthly spending limit: ${ formattedSpent } of ${ formattedLimit } bought automatically (${ limitSpentPercent }%)": [
         "Limite de gastos mensais: ${ formattedSpent } de ${ formattedLimit } comprados automaticamente (${ limitSpentPercent }%)"
       ],
+      "More than a year left at current usage": [
+        "Mais de um ano de duração, com o consumo atual"
+      ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca inclua chaves de API em pacotes do lado do cliente. Em produção, utilize variáveis ​​de ambiente e um proxy do lado do servidor."
       ],
@@ -2604,6 +2613,9 @@
       ],
       "Partial content": [
         "Conteúdo parcial"
+      ],
+      "Pass a model ID in your request. Prices are in credits per million tokens (MTok).": [
+        "Insira um ID de modelo na sua solicitação. Os preços são expressos em créditos por milhão de tokens (MTok)."
       ],
       "Pause automatic top-ups until next month once they reach this amount.": [
         "Pause as recargas automáticas até o próximo mês quando atingirem este valor."
@@ -3195,6 +3207,9 @@
       "Usage period": [
         "Período de uso"
       ],
+      "When balance reaches": [
+        "Quando o saldo atingir"
+      ],
       "You": [
         "Você"
       ],
@@ -3583,9 +3598,6 @@
       "API access is not enabled": [
         "Acesso à API não está ativado"
       ],
-      "API docs sections": [
-        "Seções da documentação da API"
-      ],
       "API documentation": [
         "Documentação da API"
       ],
@@ -3684,6 +3696,9 @@
       ],
       "Getting started": [
         "Começando"
+      ],
+      "Go further with ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Vá além com o ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Got a minute?": [
         "Tem um minuto?"
@@ -3804,6 +3819,9 @@
       ],
       "Skills": [
         "Habilidades"
+      ],
+      "Teach ${ LUMO_SHORT_APP_NAME } how you work": [
+        "Ensine ${ LUMO_SHORT_APP_NAME } como você trabalha"
       ],
       "Theme": [
         "Tema"
@@ -4582,6 +4600,9 @@
       ],
       "PowerPoint (.pptx)": [
         "PowerPoint (.pptx)"
+      ],
+      "Preparing export…": [
+        "Preparando exportação…"
       ],
       "Preview": [
         "Pré-visualização"
@@ -11344,6 +11365,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
+      ],
       "tool descriptions from a connector you added": [
         "descrições de ferramentas de um conector adicionado"
       ],
@@ -14532,6 +14556,9 @@
       "Cancel subscription?": [
         "Cancelar assinatura?"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verificação do cartão"
       ],
@@ -14823,6 +14850,9 @@
       ],
       "10 years": [
         "10 anos"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
       ],
       "Calendars": [
         "Calendários"

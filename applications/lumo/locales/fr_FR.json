@@ -2942,9 +2942,6 @@
       "API access is not enabled": [
         "L'accès à l'API n'est pas activé"
       ],
-      "API docs sections": [
-        "Sections de la documentation API"
-      ],
       "API documentation": [
         "Documentation de l'API"
       ],
@@ -3582,6 +3579,9 @@
       "Export": [
         "Exporter"
       ],
+      "Export available messages": [
+        "Exporter les messages disponibles"
+      ],
       "Full screen": [
         "Plein écran"
       ],
@@ -3713,6 +3713,9 @@
       ],
       "PowerPoint (.pptx)": [
         "PowerPoint (.pptx)"
+      ],
+      "Preparing export…": [
+        "Préparation de l'export en cours…"
       ],
       "Preview": [
         "Aperçu"
@@ -4111,6 +4114,9 @@
       "Could not start this task. Please try again.": [
         "Impossible de lancer cette tâche. Veuillez réessayer."
       ],
+      "Couldn't export this chat. Try again.": [
+        "Cette conversation n'a pas pu être exportée. Veuillez réessayer."
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "La connexion à la base de données a été perdue. Veuillez actualiser la page pour continuer."
       ],
@@ -4161,6 +4167,9 @@
       ],
       "Project not found": [
         "Projet non trouvé"
+      ],
+      "This chat has no messages to export.": [
+        "Cette discussion ne contient aucun message à exporter."
       ],
       "This email link contains invalid or unsupported details and cannot be opened safely.": [
         "Le lien vers cet e-mail contient des informations non valides ou non supportées et ne peut être ouvert en toute sécurité."
@@ -4422,6 +4431,9 @@
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Sur iPhone ou iPad, ouvrez Réglages → Applications → Safari et assurez-vous que l'option « Bloquer tous les cookies » est désactivée, puis actualisez la page."
+      ],
+      "Only messages available on this device will be exported. The export may be incomplete.": [
+        "Seuls les messages disponibles sur cet appareil seront exportés. L'exportation risque d'être incomplète."
       ],
       "PASTED": [
         "COLLÉ"
@@ -9593,11 +9605,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME } : Créez, modifiez et collaborez sur des documents chiffrés de bout en bout."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } : Créez, modifiez et collaborez sur des feuilles de calcul chiffrées de bout en bout."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME } : accédez aux contenus bloqués et naviguez de manière privée. Comprend ${ serversAndCountries }, les vitesses VPN les plus élevées, l'accès aux services de streaming du monde entier, une protection contre les logiciels malveillants, un bloqueur de publicités, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
@@ -11073,6 +11091,9 @@
       ],
       "Cancel subscription?": [
         "Annuler l'abonnement ?"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Card verification": [
         "Vérification de la carte"
