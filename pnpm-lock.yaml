@@ -4710,9 +4710,6 @@ importers:
       '@storybook/addon-docs':
         specifier: 'catalog:'
         version: 10.6.8(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
-      '@storybook/addon-links':
-        specifier: ^10.6.8
-        version: 10.6.8(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/react-webpack5':
         specifier: 'catalog:'
         version: 10.6.8(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@26.6.6))(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)
@@ -18665,18 +18662,6 @@ packages:
       storybook: ^10.6.8
     peerDependenciesMeta:
       '@types/react':
-        optional: true
-
-  '@storybook/addon-links@10.6.8':
-    resolution: {integrity: sha512-xQkRHjG9ScuqI6RGbOF4I/qVTWb6ughK3A1I5ubWfUgrdallhgc1rf2XwJQRgFnEY7WaH2UozhKNrDony86NFw==}
-    peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      storybook: ^10.6.8
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
         optional: true
 
   '@storybook/builder-webpack5@10.6.8':
@@ -35586,14 +35571,6 @@ snapshots:
       '@types/react': 18.3.31
     transitivePeerDependencies:
       - '@types/react-dom'
-
-  '@storybook/addon-links@10.6.8(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))':
-    dependencies:
-      '@storybook/global': 5.0.0
-      storybook: 10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
-    optionalDependencies:
-      '@types/react': 18.3.31
-      react: 18.3.1
 
   '@storybook/builder-webpack5@10.6.8(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.33)(sharp@0.35.5(@types/node@26.6.6))(storybook@10.6.8(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(svgo@4.1.0)(webpack-cli@7.3.1)':
     dependencies:

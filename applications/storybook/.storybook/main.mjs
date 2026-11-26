@@ -16,7 +16,6 @@ function getAbsolutePath(value) {
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 export default {
     addons: [
-        getAbsolutePath('@storybook/addon-links'),
         getAbsolutePath('@storybook/addon-docs'),
         getAbsolutePath('@storybook/addon-a11y'),
     ],
@@ -31,8 +30,6 @@ export default {
     // Storybook v10: use *.stories.(js|ts|tsx) for CSF and *.mdx for standalone docs
     stories: ['../src/stories/**/*.stories.@(ts|tsx)', '../src/stories/**/*.mdx'],
     typescript: {
-        check: false,
-        checkOptions: {},
         reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
             shouldRemoveUndefinedFromOptional: true,
@@ -72,8 +69,6 @@ export default {
             module: {
                 ...config.module,
                 rules: [
-                    // Allow extensionless resolution for ESM packages (e.g. @storybook/addon-links)
-                    { test: /\.m?js$/, resolve: { fullySpecified: false } },
                     // Filter out JS/CSS loaders that are not related to MDX to prevent Webpack from blowing up due to conflicting rules
                     ...config.module.rules.filter((rule) => {
                         return rule && rule.test && rule.test.toString().includes('mdx');

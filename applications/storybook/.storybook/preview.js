@@ -8,7 +8,6 @@ import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
 
-import './prismjs.js';
 import storybookTheme from './theme';
 
 import '../src/app/index.scss';
