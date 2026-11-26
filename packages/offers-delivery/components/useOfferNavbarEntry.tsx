@@ -9,7 +9,7 @@ import { UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { CampaignVariant } from '../interface';
 import { OfferDealModal } from './OfferDealModal';
 import { OfferNavbarButton } from './OfferNavbarButton';
-import { type UseActiveOfferOptions, useActiveOffer } from './useActiveOffer';
+import { useActiveOffer } from './useActiveOffer';
 import { useOfferUpgrade } from './useOfferUpgrade';
 
 export interface OfferNavbarEntry {
@@ -18,14 +18,8 @@ export interface OfferNavbarEntry {
     modal: ReactNode;
 }
 
-interface OfferNavbarEntryOptions {
-    /** Hosts that already route `GoToUpsell` their own way (Account) pass it so every surface in the app agrees. */
-    onUpgrade?: UseActiveOfferOptions['onUpgrade'];
-}
-
-export const useOfferNavbarEntry = (options: OfferNavbarEntryOptions = {}): OfferNavbarEntry => {
-    const sharedOnUpgrade = useOfferUpgrade(UPSELL_COMPONENT.BUTTON);
-    const onUpgrade = options.onUpgrade ?? sharedOnUpgrade;
+export const useOfferNavbarEntry = (): OfferNavbarEntry => {
+    const onUpgrade = useOfferUpgrade(UPSELL_COMPONENT.BUTTON);
     const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
     const [modalProps, setModalOpen, renderModal] = useModalState();
 

@@ -45,15 +45,6 @@ describe('OfferTopBanner', () => {
         expect(mockUseOfferUpgrade).toHaveBeenCalledWith(UPSELL_COMPONENT.BANNER);
     });
 
-    it("uses the host's upgrade handler when given one", () => {
-        mockUseActiveOffer.mockReturnValue(null);
-        const hostOnUpgrade = vi.fn();
-
-        render(<OfferTopBanner onUpgrade={hostOnUpgrade} />);
-
-        expect(mockUseActiveOffer).toHaveBeenCalledWith(CampaignVariant.BANNER, { onUpgrade: hostOnUpgrade });
-    });
-
     it('renders nothing without an offer', () => {
         mockUseActiveOffer.mockReturnValue(null);
 
