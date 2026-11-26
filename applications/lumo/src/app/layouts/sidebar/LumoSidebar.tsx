@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
+import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import { GuestSidebarSignInSection } from '../../components/Guest/ChatHistoryUpsell.tsx/GuestSidebarSignInSection';
@@ -42,6 +43,7 @@ const LumoSidebarContent = () => {
     const { showMobileHeader, showSearch, showGallery, showLibrary, showSchedules, showCustomize } =
         useSidebarVisibility();
     const isGuest = useIsGuest();
+    const offerEntry = useOfferNavbarEntry();
     const settingsModal = useModalStateObject();
     const {
         modalProps: searchModalProps,
@@ -136,12 +138,13 @@ const LumoSidebarContent = () => {
                         label={c('collider_2025:Button').t`Settings`}
                         onClick={() => settingsModal.openModal(true)}
                     />
-                    {isGuest ? <GuestSidebarSignInSection /> : <LumoSidebarUpsell />}
+                    {isGuest ? <GuestSidebarSignInSection /> : (offerEntry.button ?? <LumoSidebarUpsell />)}
                     <SidebarBottomUserArea />
                 </div>
             </div>
             {settingsModal.render && <SettingsModal {...settingsModal.modalProps} />}
             {searchModalRender && <SearchModal {...searchModalProps} />}
+            {offerEntry.modal}
         </>
     );
 };

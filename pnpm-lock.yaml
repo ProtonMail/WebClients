@@ -2980,6 +2980,9 @@ importers:
       '@proton/metrics':
         specifier: workspace:^
         version: link:../../packages/metrics
+      '@proton/offers-delivery':
+        specifier: workspace:^
+        version: link:../../packages/offers-delivery
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack

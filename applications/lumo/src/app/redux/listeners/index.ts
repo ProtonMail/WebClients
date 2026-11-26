@@ -1,7 +1,9 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { startPersistListener } from '@proton/account/persist/listener';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { getPersistedState } from '@proton/redux-shared-store/persist';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 import { sharedPersistReducer } from '@proton/redux-shared-store/sharedReducers';
@@ -41,6 +43,7 @@ export const start = (startListening: AppStartListening) => {
     startLumoUserSettingsListeners(startListening);
     startSkillsSyncListeners(startListening);
     startFileNotesListeners(startListening);
+    startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
 };
 
 export const createLumoListenerMiddleware = ({ extra }: { extra: LumoThunkArguments }): LumoListener => {

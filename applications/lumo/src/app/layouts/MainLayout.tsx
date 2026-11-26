@@ -1,6 +1,9 @@
 import { type ReactNode, lazy, useRef } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
+import { OfferStartupModal } from '@proton/offers-delivery/components/OfferStartupModal';
+import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
+
 import { useNativeRightPanelLayoutApi } from '../components/Composer/hooks/useNativeRightPanelLayoutApi';
 import { useNativeSidebarLayoutApi } from '../components/Composer/hooks/useNativeSidebarLayoutApi';
 import { ArtifactPanelHost } from '../components/Conversation/artifact/ArtifactPanelHost';
@@ -34,6 +37,7 @@ const MainLayoutContent = ({ children }: Props) => {
     const isHomepage = !!useRouteMatch({ path: '/', exact: true });
     const { openSearchModal } = useSearchModal();
     const { isOpen, toggle } = useRightPanel();
+    const isGuest = useIsGuest();
 
     useGuestMigrationNotification();
     useResourceLimitNotifications();
@@ -60,10 +64,12 @@ const MainLayoutContent = ({ children }: Props) => {
                                 {isHomepage && <MainLayoutAnimatedBackground />}
                                 <HighLoadWarning />
                                 <MasterKeyBanner />
+                                {!isGuest && <OfferTopBanner />}
                                 {children}
                             </main>
                             <ArtifactPanelHost />
                             {isOpen && <RightDrawer onClose={toggle} />}
+                            {!isGuest && <OfferStartupModal />}
                         </div>
                     </div>
                 </div>
