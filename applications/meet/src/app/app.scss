@@ -216,12 +216,38 @@ $profile-colors:
 	filter: none;
 }
 
+$notification-max-inline-size: min(30rem, calc(100vw - 2rem));
+
 %notification-base {
 	color: var(--text-invert);
-	max-inline-size: min(30rem, calc(100vw - 2rem));
+	max-inline-size: $notification-max-inline-size;
 	box-shadow: none;
 	min-block-size: 3.5rem;
 	border-radius: 1rem;
+
+	@include im.media('<=xsmall') {
+		&:has(.notification__content .notification__button:not(.button-for-icon)) {
+			align-items: flex-start;
+			padding-block: 0.75rem;
+			inline-size: $notification-max-inline-size;
+
+			.notification__icon {
+				margin-block-start: calc((#{$base-line-height * 1em} - 1rem) / 2);
+			}
+
+			.notification__content {
+				flex: 1;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 0.5rem;
+			}
+
+			.notification__button:not(.button-for-icon) {
+				align-self: flex-start;
+				margin: 0;
+			}
+		}
+	}
 
 	.notification__close-button {
 		border-radius: 1.5rem;
