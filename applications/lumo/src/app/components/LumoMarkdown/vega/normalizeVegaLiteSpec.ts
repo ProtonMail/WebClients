@@ -592,7 +592,8 @@ export function splitDualAxisCharts(spec: Record<string, unknown>): Record<strin
     const data = spec.data;
     const firstLayer = dataLayers[0]!;
     const xEncoding = (firstLayer.encoding as Record<string, unknown> | undefined)?.x as
-        Record<string, unknown> | undefined;
+        | Record<string, unknown>
+        | undefined;
 
     if (!xEncoding) {
         return spec;
@@ -1153,6 +1154,7 @@ function stripAllInteractiveFeatures(spec: Record<string, unknown>): void {
 
     visitChartNodesForNormalize(spec, (node) => {
         delete node.params;
+        delete node.selection;
         stripParamTransforms(node, new Set());
 
         const encoding = node.encoding;

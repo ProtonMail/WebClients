@@ -370,7 +370,7 @@ describe('sanitizeVegaSpec', () => {
         const spec = JSON.stringify({
             mark: 'bar',
             data: { values: [{ x: 1, y: 2 }] },
-            transform: [{ filter: "event.dataflow._el ? 1 : 0" }],
+            transform: [{ filter: 'event.dataflow._el ? 1 : 0' }],
             encoding: {
                 x: { field: 'x', type: 'quantitative' },
                 y: { field: 'y', type: 'quantitative' },
@@ -394,7 +394,7 @@ describe('sanitizeVegaSpec', () => {
                         on: {
                             source: 'timer',
                             type: 200,
-                            filter: "memoizedProps.store.getState ? 1 : 0",
+                            filter: 'memoizedProps.store.getState ? 1 : 0',
                         },
                     },
                 },
@@ -408,4 +408,49 @@ describe('sanitizeVegaSpec', () => {
         const sanitized = sanitizeVegaSpec(spec) as Record<string, unknown>;
         expect(specHasParams(sanitized)).toBe(false);
     });
+
+    it('removes legacy timer selections before Vega-Lite can compile their handlers', () => {
+        const filter = "modify ('leak', {x: event['dataflow']['_el']['ownerDocument']['body']['innerText']})";
+        const sanitized = sanitizeVegaSpec(
+            JSON.stringify({
+                data: { name: 'leak', values: [{ x: 1, y: 2 }] },
+                mark: 'point',
+                selection: { probe: { type: 'single', on: { source: 'timer', type: 200, filter } } },
+                encoding: {
+                    x: { field: 'x', type: 'quantitative' },
+                    y: { field: 'y', type: 'quantitative' },
+                    tooltip: [{ field: 'y', type: 'quantitative' }],
+                },
+            })
+        ) as Record<string, unknown>;
+
+        expect(sanitized.selection).toBeUndefined();
+        expect(sanitized.data).toEqual({ name: 'leak', values: [{ x: 1, y: 2 }] });
+        expect(sanitized.encoding).toMatchObject({ tooltip: [{ field: 'y', type: 'quantitative' }] });
+        const compiled = compile(sanitized as unknown as TopLevelSpec).spec;
+        expect(JSON.stringify(compiled)).not.toContain(filter);
+        expect(JSON.stringify(compiled)).not.toContain('probe_tuple');
+    });
+
+    it.each(['layer', 'vconcat', 'hconcat', 'concat', 'spec'])(
+        'removes legacy selections inside %s while preserving inline chart data',
+        (key) => {
+            const chart = {
+                data: { values: [{ x: 1, selection: 'ordinary data' }] },
+                mark: 'point',
+                selection: { probe: { type: 'single', on: { source: 'timer', type: 200 } } },
+                encoding: { x: { field: 'x', type: 'quantitative' } },
+            };
+            const composition = key === 'spec' ? { facet: { field: 'selection' }, spec: chart } : { [key]: [chart] };
+            const sanitized = sanitizeVegaSpec(JSON.stringify(composition)) as Record<string, unknown>;
+            const child = (key === 'spec' ? sanitized.spec : (sanitized[key] as unknown[])[0]) as Record<
+                string,
+                unknown
+            >;
+
+            expect(child.selection).toBeUndefined();
+            expect(child.data).toEqual({ values: [{ x: 1, selection: 'ordinary data' }] });
+            expect(child.encoding).toMatchObject({ x: { field: 'x', type: 'quantitative' } });
+        }
+    );
 });
