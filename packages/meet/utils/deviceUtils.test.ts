@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
     type CheckmarkDeviceState,
+    getDeviceBehindCommunications,
     getSelectableDevices,
     shouldShowDeviceCheckmark,
     shouldShowSystemDefaultCheckmark,
@@ -76,6 +77,76 @@ describe('getSelectableDevices', () => {
         ];
 
         expect(getSelectableIds(devices, 'videoinput')).toEqual(['camera']);
+    });
+});
+
+describe('getDeviceBehindCommunications', () => {
+    it('finds the windows output the communications alias points to', () => {
+        const speakers = [
+            device('default', 'audiooutput', 'Default - Headphones (Intel SST)', 'headphones-group'),
+            device('communications', 'audiooutput', 'Communications - Headphones (Intel SST)', 'headphones-group'),
+            device('headphones', 'audiooutput', 'Headphones (Intel SST)', 'headphones-group'),
+            device('speakers', 'audiooutput', 'Speakers (Intel SST)', 'speakers-group'),
+        ];
+
+        expect(getDeviceBehindCommunications(speakers, 'audiooutput')?.deviceId).toBe('headphones');
+    });
+
+    it('follows the communications alias when windows points it away from the default output', () => {
+        const speakers = [
+            device('default', 'audiooutput', 'Default - Headphones (Intel SST)', 'headphones-group'),
+            device('communications', 'audiooutput', 'Communications - Speakers (Intel SST)', 'speakers-group'),
+            device('headphones', 'audiooutput', 'Headphones (Intel SST)', 'headphones-group'),
+            device('speakers', 'audiooutput', 'Speakers (Intel SST)', 'speakers-group'),
+        ];
+
+        expect(getDeviceBehindCommunications(speakers, 'audiooutput')?.deviceId).toBe('speakers');
+    });
+
+    it('picks the system default output when the communications alias shares its group with another output', () => {
+        const speakers = [
+            device('default', 'audiooutput', 'Default - Speakers (Jabra Link 380)', 'jabra-group'),
+            device(
+                'communications',
+                'audiooutput',
+                'Communications - Headset Earphone (Jabra Link 380)',
+                'jabra-group'
+            ),
+            device('headset-earphone', 'audiooutput', 'Headset Earphone (Jabra Link 380)', 'jabra-group'),
+            device('jabra-speakers', 'audiooutput', 'Speakers (Jabra Link 380)', 'jabra-group'),
+        ];
+
+        expect(getDeviceBehindCommunications(speakers, 'audiooutput')?.deviceId).toBe('jabra-speakers');
+    });
+
+    it('picks the whole system default label over an output whose label is only its end', () => {
+        const speakers = [
+            device('default', 'audiooutput', 'Default - Headset Speakers (Poly)', 'poly-group'),
+            device('communications', 'audiooutput', 'Communications - Speakers (Poly)', 'poly-group'),
+            device('speakers', 'audiooutput', 'Speakers (Poly)', 'poly-group'),
+            device('headset-speakers', 'audiooutput', 'Headset Speakers (Poly)', 'poly-group'),
+        ];
+
+        expect(getDeviceBehindCommunications(speakers, 'audiooutput')?.deviceId).toBe('headset-speakers');
+    });
+
+    it('falls back to the first output of the group when no label matches the system default', () => {
+        const speakers = [
+            device('default', 'audiooutput', 'Standard - Lautsprecher (Jabra Link 380)', 'jabra-group'),
+            device('communications', 'audiooutput', 'Kommunikation - Headset (Jabra Link 380)', 'jabra-group'),
+            device('headset', 'audiooutput', 'Headset (Jabra Link 380)', 'jabra-group'),
+        ];
+
+        expect(getDeviceBehindCommunications(speakers, 'audiooutput')?.deviceId).toBe('headset');
+    });
+
+    it('finds nothing where the browser lists no communications alias', () => {
+        const speakers = [
+            device('default', 'audiooutput', 'Default - MacBook Pro Speakers (Built-in)', 'built-in-group'),
+            device('built-in', 'audiooutput', 'MacBook Pro Speakers (Built-in)', 'built-in-group'),
+        ];
+
+        expect(getDeviceBehindCommunications(speakers, 'audiooutput')).toBeUndefined();
     });
 });
 
