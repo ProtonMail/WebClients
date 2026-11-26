@@ -17,6 +17,7 @@ import { DashboardContainer } from './containers/DashboardContainer/DashboardCon
 import { GuestDashboardContainer } from './containers/DashboardContainer/GuestDashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
 import { ManageRecordingsContainer } from './containers/ManageRecordingsContainer/ManageRecordingsContainer';
+import { MeetNotificationsProvider } from './containers/MeetNotificationsProvider';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
 import { useMeetFunnelTelemetry } from './hooks/useMeetFunnelTelemetry';
@@ -106,35 +107,37 @@ const MeetApp = () => {
 
     return (
         <ProtonApp config={config}>
-            <div className={clsx('w-full h-full', isElectronApp ? 'pt-4' : '')}>
-                {isElectronApp && isMac() ? (
-                    <div
-                        className="draggable-mac-electron-header absolute top-0 left-0 w-full h-custom"
-                        style={{ '--h-custom': '2rem' }}
-                    />
-                ) : null}
-                {isGuest ? (
-                    <GuestContainer>
-                        <AppLayout>
-                            <RedirectWrapper>
-                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                <Route path="/dashboard" component={GuestDashboardContainer} />
-                            </RedirectWrapper>
-                        </AppLayout>
-                    </GuestContainer>
-                ) : (
-                    <ProviderContainer>
-                        <MeetAppTelemetry />
-                        <AppLayout>
-                            <RedirectWrapper>
-                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                <Route path="/dashboard" component={DashboardContainer} />
-                                <Route path="/manage-recordings" component={ManageRecordingsContainer} />
-                            </RedirectWrapper>
-                        </AppLayout>
-                    </ProviderContainer>
-                )}
-            </div>
+            <MeetNotificationsProvider>
+                <div className={clsx('w-full h-full', isElectronApp ? 'pt-4' : '')}>
+                    {isElectronApp && isMac() ? (
+                        <div
+                            className="draggable-mac-electron-header absolute top-0 left-0 w-full h-custom"
+                            style={{ '--h-custom': '2rem' }}
+                        />
+                    ) : null}
+                    {isGuest ? (
+                        <GuestContainer>
+                            <AppLayout>
+                                <RedirectWrapper>
+                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
+                                    <Route path="/dashboard" component={GuestDashboardContainer} />
+                                </RedirectWrapper>
+                            </AppLayout>
+                        </GuestContainer>
+                    ) : (
+                        <ProviderContainer>
+                            <MeetAppTelemetry />
+                            <AppLayout>
+                                <RedirectWrapper>
+                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
+                                    <Route path="/dashboard" component={DashboardContainer} />
+                                    <Route path="/manage-recordings" component={ManageRecordingsContainer} />
+                                </RedirectWrapper>
+                            </AppLayout>
+                        </ProviderContainer>
+                    )}
+                </div>
+            </MeetNotificationsProvider>
         </ProtonApp>
     );
 };
