@@ -120,6 +120,68 @@ describe('getOrganizationAppRoutes', () => {
     });
 });
 
+describe('Data retention route', () => {
+    const retentionFlags = { ...defaultFlags, isRetentionPoliciesEnabled: true };
+
+    // The route checks the organization's plan name, not the entitlements, so the organization carries the plan
+    const isDataRetentionAvailable = (planName: PLANS, input: OrganizationRoutesInput = {}) =>
+        getRoutes({
+            organization: buildOrganizationWithKeys({ PlanName: planName }),
+            flags: retentionFlags,
+            ...input,
+        }).retentionPolicies.available;
+
+    it.each([PLANS.VISIONARY, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025] as const)(
+        'is available to a %s organization',
+        (plan) => {
+            expect(isDataRetentionAvailable(plan)).toBe(true);
+        }
+    );
+
+    it.each([PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS] as const)(
+        'is hidden from a %s organization',
+        (plan) => {
+            expect(isDataRetentionAvailable(plan)).toBe(false);
+        }
+    );
+
+    it('is hidden from a Visionary organization when the feature flag is off', () => {
+        expect(isDataRetentionAvailable(PLANS.VISIONARY, { flags: defaultFlags })).toBe(false);
+    });
+
+    it('is hidden from a Visionary member without the data retention read permission', () => {
+        expect(
+            isDataRetentionAvailable(PLANS.VISIONARY, {
+                permissions: permissionsWithout('account.data_retention.read'),
+            })
+        ).toBe(false);
+    });
+
+    it('is hidden from a delinquent Visionary organization', () => {
+        const organization = buildOrganizationWithKeys({
+            PlanName: PLANS.VISIONARY,
+            State: ORGANIZATION_STATE.DELINQUENT,
+        });
+
+        expect(isDataRetentionAvailable(PLANS.VISIONARY, { organization })).toBe(false);
+    });
+
+    it('is hidden from a Visionary organization that is not set up yet', () => {
+        const organization = buildOrganizationWithKeys({
+            PlanName: PLANS.VISIONARY,
+            RequiresKey: 0,
+            HasKeys: 0,
+            Name: '',
+        });
+
+        expect(isDataRetentionAvailable(PLANS.VISIONARY, { organization })).toBe(false);
+    });
+
+    it('is hidden in the VPN settings app', () => {
+        expect(isDataRetentionAvailable(PLANS.VISIONARY, { app: APPS.PROTONVPN_SETTINGS })).toBe(false);
+    });
+});
+
 describe('Always-on VPN route', () => {
     const alwaysOnVpnFlags = { ...defaultFlags, isAlwaysOnVpnEnabled: true };
 
