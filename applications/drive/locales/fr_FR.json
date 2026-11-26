@@ -563,9 +563,6 @@
       "Hide more benefits": [
         "Masquer plus d'avantages"
       ],
-      "Ignore": [
-        "Ignorer"
-      ],
       "Image could not be loaded with tracker protection.": [
         "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
       ],
@@ -5050,6 +5047,9 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacts"
       ],
+      "${ current } of ${ total }": [
+        "${ current } sur ${ total }"
+      ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Les fichiers ${ DOCS_APP_NAME } et ${ SHEETS_APP_NAME } ne peuvent pas être téléchargés directement et ne seront pas inclus dans ce téléchargement. Vous pouvez télécharger les autres fichiers en cliquant sur « Continuer le téléchargement »."
       ],
@@ -5745,9 +5745,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Si vous vous retirez, vous perdrez l’accès à « ${ fileName } » et ne pourrez plus l’ouvrir à moins que le propriétaire ne le partage avec vous."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Si vous avez déjà changé d'abonnement, vous pouvez reprendre votre importation dans ${ easySwitchSettingsLink }. Vous pourrez aussi l'annuler."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
         "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
@@ -6183,9 +6180,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Veuillez changer d'abonnement afin de garantir la réussite de l'importation."
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -6765,9 +6759,6 @@
       "We'll email you when your import is complete.": [
         "Nous vous enverrons un e-mail quand l'importation sera terminée."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Nous vous enverrons un e-mail quand l'importation sera terminée. Vos fichiers apparaîtront dans un dossier situé dans ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Nous vous recontacterons prochainement."
       ],
@@ -6855,9 +6846,6 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Vous utilisez plus d'espace de stockage que ce qui est prévu dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à supprimer ou à retirer des données pour pouvoir passer à un abonnement inférieur."
-      ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Vous pouvez également annuler votre import dans ${ easySwitchSettingsLink }."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Vous pouvez aussi fusionner des calendriers importés avec des calendriers ${ BRAND_NAME } existants."
@@ -7016,12 +7004,6 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Il se peut que votre Google Drive soit vide ou ne contienne que des fichiers non pris en charge."
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Votre importation est bloquée. Changer d'abonnement maintenant pour transférer le reste de vos fichiers."
-      ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Votre import est suspendu car nous n'avons plus accès à votre compte Google. Reconnectez-vous pour importer le reste de vos fichiers."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
@@ -9175,11 +9157,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME } : Créez, modifiez et collaborez sur des documents chiffrés de bout en bout."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } : Créez, modifiez et collaborez sur des feuilles de calcul chiffrées de bout en bout."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME } : accédez aux contenus bloqués et naviguez de manière privée. Comprend ${ serversAndCountries }, les vitesses VPN les plus élevées, l'accès aux services de streaming du monde entier, une protection contre les logiciels malveillants, un bloqueur de publicités, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
@@ -9484,6 +9472,10 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } élément n'a pas pu être mis à la corbeille",
         "${ errors.length } éléments n'ont pas pu être mis à la corbeille"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } élément n'a pas pu être récupéré",
+        "${ failedCount } éléments n'ont pas pu être récupérés"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } élément copié a été déplacé dans la corbeille",
@@ -11828,9 +11820,6 @@
       "Albums you've shared will appear here": [
         "Les albums que vous avez partagés apparaîtront ici."
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importez vos fichiers et dossiers depuis Google Drive et conservez-les en privé dans ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Partagé par ${ sharedBy }"
       ],
@@ -12219,6 +12208,9 @@
       "Cannot add more addresses": [
         "Impossible d'ajouter plus d'adresses"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Vérification de la carte"
       ],
@@ -12417,9 +12409,6 @@
       "Drop to upload": [
         "Déposer pour charger"
       ],
-      "Easy switch": [
-        "Basculement facile"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch depuis Google Drive"
       ],
@@ -12557,9 +12546,6 @@
       "Import started": [
         "L'importation a commencé"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "L'importation a commencé, mais votre espace de stockage ne sera pas suffisant pour cette importation"
-      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importé par ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -12677,6 +12663,9 @@
       "Notes": [
         "Notes"
       ],
+      "Nothing to import": [
+        "Il n'y a rien à importer"
+      ],
       "Number of downloads": [
         "Nombre de téléchargements"
       ],
@@ -12763,9 +12752,6 @@
       ],
       "Recommended actions": [
         "Actions recommandées"
-      ],
-      "Reconnect to finish your import": [
-        "Reconnectez-vous pour terminer l'import"
       ],
       "Reconnect your account": [
         "Reconnecter votre compte"
@@ -13029,9 +13015,6 @@
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
       ],
-      "We could not find anything to import": [
-        "Nous n’avons rien trouvé à importer."
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Nous n'avons pas pu vérifier que ${ author } a créé ce fichier."
       ],
@@ -13161,6 +13144,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Ajoutez une méthode de récupération des données pour déverrouiller vos données si vous oubliez votre mot de passe."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Ajoutez une adresse e-mail ou un numéro de téléphone de récupération afin de pouvoir réinitialiser votre mot de passe si vous l'oubliez."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Ajoutez ce fichier partagé à votre ${ DRIVE_APP_NAME } pour y accéder facilement plus tard."
       ],
@@ -13172,6 +13161,9 @@
       ],
       "Change shared item settings": [
         "Modifier les paramètres de l'élément partagé"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Créez une phrase de récupération afin de pouvoir récupérer vos données si vous oubliez votre mot de passe."
       ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
@@ -13199,6 +13191,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Créez une phrase de récupération pour protéger votre compte contre toute perte de données."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
@@ -13230,6 +13225,9 @@
       "Show side panel": [
         "Afficher le panneau latéral"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Certaines de vos données sont verrouillées. Utilisez une méthode de récupération pour les déverrouiller."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
       ],
@@ -13259,6 +13257,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Nous leur avons envoyé une invitation pour accéder à l'élément."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Votre fichier de récupération n'est plus à jour. Téléchargez-en un nouveau afin de pouvoir récupérer vos données."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Votre phrase de récupération n'est plus valide. Générez-en une nouvelle afin de pouvoir continuer à récupérer vos données."
       ]
     },
     "tooltip": {

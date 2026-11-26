@@ -581,9 +581,6 @@
       "Hide more benefits": [
         "Ocultar más ventajas"
       ],
-      "Ignore": [
-        "Ignorar"
-      ],
       "Image could not be loaded with tracker protection.": [
         "No se ha podido cargar la imagen con la protección contra el rastreo."
       ],
@@ -5111,6 +5108,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } perdió el acceso a su Google Drive. Reconéctese para continuar con la importación."
+      ],
       "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
         "${ BRAND_NAME } solo usa este acceso para la importación. Google nunca tendrá acceso a tu cuenta de ${ BRAND_NAME }."
       ],
@@ -5158,6 +5158,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Los archivos de ${ DOCS_APP_NAME } y ${ SHEETS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puedes descargar los demás archivos haciendo clic en 'Continuar con la descarga'."
@@ -5408,6 +5411,9 @@
       ],
       "Already in your library": [
         "Ya está en tu biblioteca"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "¿Ya ascendió? ${ resumeSettingsLink }"
       ],
       "Also try looking in Trash.": [
         "Busca también en la papelera."
@@ -5798,7 +5804,10 @@
         "Aquí aparecerán los archivos y las carpetas que otros han compartido contigo"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos de 50 GB cada uno"
+      ],
+      "Find your files": [
+        "Encuentre sus archivos"
       ],
       "Folder will not be uploaded": [
         "La carpeta no se cargará."
@@ -5874,9 +5883,6 @@
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Si te eliminas de la lista, perderás el acceso a «${ fileName }» y no podrás volver a abrirlo a menos que el propietario lo comparta contigo de nuevo."
-      ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Si ya has mejorado tu plan, puedes reanudar la importación en ${ easySwitchSettingsLink }. También puedes cancelarla allí."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -6329,9 +6335,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Inténtalo de nuevo con otro método de pago o ponte en contacto con tu banco."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Mejora tu plan para asegurarte de que la importación se complete correctamente."
-      ],
       "Please use another browser or download the file.": [
         "Usa otro navegador o descarga el archivo."
       ],
@@ -6445,6 +6448,9 @@
       ],
       "Running diagnostics...": [
         "Ejecutando diagnósticos..."
+      ],
+      "Runs in the background": [
+        "Se ejecuta en segundo plano"
       ],
       "Saving...": [
         "Guardando..."
@@ -6644,6 +6650,9 @@
       ],
       "There is nothing to see here": [
         "No hay nada que ver aquí"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Estarán en una nueva carpeta en Mis archivos."
       ],
       "Thinking about this": [
         "Pensando en ello"
@@ -6934,9 +6943,6 @@
       "We'll email you when your import is complete.": [
         "Te enviaremos un correo cuando termine la importación."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Te enviaremos un correo cuando termine la importación. Tus archivos aparecerán en una carpeta de ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Te contactaremos en breve."
       ],
@@ -6948,6 +6954,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Estamos copiando sus archivos desde Google Drive a ${ DRIVE_APP_NAME }."
       ],
       "Week": [
         "Semana"
@@ -7031,9 +7040,6 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Estás usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimina o borra datos para poder cambiar de plan."
       ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "También puedes cancelar la importación en ${ easySwitchSettingsLink }."
-      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puedes combinar calendarios importados con calendarios ${ BRAND_NAME } existentes."
       ],
@@ -7045,6 +7051,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Mientras tanto, puedes cerrar esta pestaña o navegador."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Puede cerrar esto y seguir usando ${ DRIVE_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Eliminar enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido el calendario antes de cancelar la suscripción a ${ MAIL_SHORT_APP_NAME }.",
@@ -7195,11 +7204,11 @@
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Es posible que tu Google Drive esté vacío o que solo contenga archivos no compatibles."
       ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "La importación está bloqueada. Mejora tu plan ahora para traer el resto de tus archivos."
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Su importación ha comenzado, pero se detendrá cuando su almacenamiento esté lleno. Ascienda ahora para traer todos sus archivos."
       ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Su importación se ha pausado porque se perdió el acceso a la cuenta de Google. Vuelva a conectarla para importar el resto de archivos."
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Su importación se ha pausado. Ascienda ahora para traer el resto de sus archivos."
       ],
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
@@ -8158,6 +8167,9 @@
       "Albums": [
         "Álbumes"
       ],
+      "Cancel your import in settings": [
+        "Cancele su importación en la configuración"
+      ],
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
       ],
@@ -8238,6 +8250,9 @@
       ],
       "Resume now": [
         "Reanudar ahora"
+      ],
+      "Resume or cancel your import in settings": [
+        "Reanude o cancele su importación en la configuración"
       ],
       "settings": [
         "ajustes"
@@ -12097,9 +12112,6 @@
       "Albums you've shared will appear here": [
         "Aquí aparecerán los álbumes que compartas"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importa tus archivos y carpetas de Google Drive y mantenlos privados en ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
       ],
@@ -12689,9 +12701,6 @@
       "Drop to upload": [
         "Soltar para cargar"
       ],
-      "Easy switch": [
-        "Easy Switch"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch desde Google Drive"
       ],
@@ -12832,9 +12841,6 @@
       "Import started": [
         "Importación iniciada"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "La importación se ha iniciado, pero tu almacenamiento no será suficiente para esta importación"
-      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importado por ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -12964,6 +12970,9 @@
       "Notes": [
         "Notas"
       ],
+      "Nothing to import": [
+        "Nada para importar"
+      ],
       "Number of downloads": [
         "Número de descargas"
       ],
@@ -13050,9 +13059,6 @@
       ],
       "Recommended actions": [
         "Acciones recomendadas"
-      ],
-      "Reconnect to finish your import": [
-        "Vuelva a conectarse para finalizar la importación."
       ],
       "Reconnect your account": [
         "Reconectar tu cuenta"
@@ -13187,6 +13193,9 @@
       "Sort files/folders": [
         "Ordenar archivos/carpetas"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "Start a new import": [
         "Iniciar una nueva importación"
       ],
@@ -13313,9 +13322,6 @@
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
       ],
-      "We could not find anything to import": [
-        "No hemos encontrado nada que importar"
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "No se ha podido verificar que ${ author } haya creado este archivo."
       ],
@@ -13405,6 +13411,9 @@
       ],
       "Your import is in progress": [
         "Tu importación está en curso"
+      ],
+      "Your import was interrupted": [
+        "Su importación se ha interrumpido"
       ],
       "Your plan": [
         "Tu plan"

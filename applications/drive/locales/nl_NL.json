@@ -496,9 +496,6 @@
       "Hide more benefits": [
         "Verberg meer voordelen"
       ],
-      "Ignore": [
-        "Negeren"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
       ],
@@ -5359,9 +5356,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Als u uzelf verwijdert, verliest u de toegang tot \"${ fileName }\" en kunt u deze niet meer openen, tenzij de eigenaar deze met u deelt."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Als u al een upgrade heeft uitgevoerd, kunt u uw import hervatten in ${ easySwitchSettingsLink }. U kunt het daar ook opzeggen."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
@@ -6243,9 +6237,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Uw gratis proefversie werd succesvol omgezet naar een maandelijks abonnement. Uw verlengingsdatum is ${ nextBillingDate }."
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Uw import is geblokkeerd. Upgrade nu om de rest van uw bestanden over te zetten."
       ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
@@ -8539,6 +8530,10 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } item kon niet worden verwijderd",
         "${ errors.length } items konden niet verwijderd worden"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } item kan niet hersteld worden",
+        "${ failedCount } items kunnen niet hersteld worden"
       ],
       "${ numberOfItems } item copied": [
         "${ numberOfItems } item gekopieerd",
@@ -11763,6 +11758,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Voeg een gegevensherstelmethode toe om uw gegevens te ontgrendelen als u uw wachtwoord vergeet."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Voeg een herstel-e-mailadres of -telefoonnummer toe, zodat u uw wachtwoord opnieuw kunt instellen als u het vergeet."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Voeg dit gedeelde bestand toe aan uw ${ DRIVE_APP_NAME } voor eenvoudige toegang op een later tijdstip."
       ],
@@ -11774,6 +11775,9 @@
       ],
       "Change shared item settings": [
         "Instellingen voor het delen van items wijzigen"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Maak een herstelzin aan, zodat u uw gegevens kunt herstellen als u uw wachtwoord vergeet."
       ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"
@@ -11801,6 +11805,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereer een herstelzin om uw account te beschermen tegen gegevensverlies."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
@@ -11832,6 +11839,9 @@
       "Show side panel": [
         "Toon zijpaneel"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Sommige van uw gegevens zijn vergrendeld. Gebruik een herstelmethode om deze te ontgrendelen."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
       ],
@@ -11858,6 +11868,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "We hebben ze een uitnodiging gestuurd om het item te bekijken."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Uw herstelbestand is verouderd. Download een nieuw zodat u uw gegevens nog steeds kunt herstellen."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Uw herstelzin is verouderd. Haal een nieuwe, zodat u uw gegevens nog steeds kunt herstellen."
       ]
     },
     "tooltip": {

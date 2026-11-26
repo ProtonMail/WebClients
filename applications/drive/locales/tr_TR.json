@@ -581,9 +581,6 @@
       "Hide more benefits": [
         "Diğer faydaları gizle"
       ],
-      "Ignore": [
-        "Yok say"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Görsel, etkinlik izleyici koruması tarafından yüklenmedi."
       ],
@@ -5115,6 +5112,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } Google Drive erişimini kaybetti. İçe aktarmaya devam etmek için yeniden bağlanın."
+      ],
       "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
         "${ BRAND_NAME } bu erişme iznini yalnızca içe aktarma işlemi için kullanır. Google, ${ BRAND_NAME } hesabınıza asla erişemez."
       ],
@@ -5162,6 +5162,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } / ${ total }"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } ve ${ SHEETS_APP_NAME } dosyaları doğrudan indirilemez ve bu indirme işlemine katılmayacaklar. Diğer dosyaları 'İndirmeyi sürdür' seçeneğine tıklayarak indirebilirsiniz."
@@ -5412,6 +5415,9 @@
       ],
       "Already in your library": [
         "Zaten kitaplığınızda"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Zaten yükselttiniz mi? ${ resumeSettingsLink }"
       ],
       "Also try looking in Trash.": [
         "Çöp kutusuna da bakmayı deneyin."
@@ -5804,6 +5810,9 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
+      "Find your files": [
+        "Dosyalarınızı bulun"
+      ],
       "Folder will not be uploaded": [
         "Klasör yüklenmeyecek"
       ],
@@ -5878,9 +5887,6 @@
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Kendinizi gruptan çıkarırsanız \"${ fileName }\" dosyasına erişiminizi kaybedersiniz ve dosyanın sahibi dosyayı sizinle yeniden paylaşmadıkça artık dosyayı açamazsınız."
-      ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Zaten yükselttiyseniz, ${ easySwitchSettingsLink } ile içe aktarım işleminizi sürdürebilirsiniz. Ayrıca oradan iptal de edebilirsiniz."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
@@ -6333,9 +6339,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "İçe aktarma işlemini tamamlamak için lütfen tarifenizi yükseltin."
-      ],
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
       ],
@@ -6449,6 +6452,9 @@
       ],
       "Running diagnostics...": [
         "Tanılama yapılıyor..."
+      ],
+      "Runs in the background": [
+        "Arka planda çalışır"
       ],
       "Saving...": [
         "Kaydediliyor..."
@@ -6649,6 +6655,9 @@
       "There is nothing to see here": [
         "Burada görecek bir şey yok"
       ],
+      "They'll be in a new folder in My files.": [
+        "Dosyalarımdaki yeni bir klasörde olacaklar."
+      ],
       "Thinking about this": [
         "Bunun hakkında düşünülüyor"
       ],
@@ -6751,7 +6760,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "${ DRIVE_APP_NAME }, korunmanıza yardımcı olmak için dosyalarınızı gizliliği koruyan bir şekilde tarayabilir ve kötü amaçlı dosyaları engelleyebilir. Ancak, yine de dosyaları yalnızca güvenilir kaynaklardan indirmeniz en iyisidir. "
@@ -6938,9 +6947,6 @@
       "We'll email you when your import is complete.": [
         "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "İçe aktarma işlemi tamamlandığında size e-posta göndereceğiz. Dosyalarınız ${ DRIVE_APP_NAME } içindeki bir klasörde görünecek."
-      ],
       "We'll get back to you shortly.": [
         "Size en kısa sürede geri dönüş yapacağız."
       ],
@@ -6952,6 +6958,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınızı Google Drive'dan ${ DRIVE_APP_NAME } hesabınıza kopyalıyoruz."
       ],
       "Week": [
         "Hafta"
@@ -7035,9 +7044,6 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } tarifesinin depolama alanından fazlasını kullanıyorsunuz. Tarifeyi düşürebilmek için lütfen bazı verileri silin ya da taşıyın."
       ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "İçe aktarmanızı ${ easySwitchSettingsLink } içinde iptal de edebilirsiniz."
-      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ayrıca içe aktarılan takvimleri var olan ${ BRAND_NAME } takvimleriyle birleştirebilirsiniz."
       ],
@@ -7049,6 +7055,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Bu sırada sekmeyi veya tarayıcıyı kapatabilirsiniz."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Bunu kapatabilir ve ${ DRIVE_APP_NAME } kullanmaya devam edebilirsiniz."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
@@ -7199,11 +7208,11 @@
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive depolama alanınız boş olabilir veya yalnızca desteklenmeyen dosyaları içeriyor olabilir."
       ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "İçe aktarım işleminiz engellendi. Dosyalarınızın geri kalanını aktarmak için tarifenizi yükseltin."
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "İçe aktarmanız başladı ancak depolama alanınız dolduğunda duraklayacak. Tüm dosyalarınızı getirmek için şimdi yükseltin."
       ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Google hesabınıza erişimimiz kesildiğinden içe aktarmanız duraklatıldı. Dosyalarınızın geri kalanını almak için yeniden bağlanın."
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "İçe aktarmanız duraklatıldı. Dosyalarınızın geri kalanını getirmek için şimdi yükseltin."
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
@@ -7346,7 +7355,7 @@
         "${ albumProgress.added } / ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Hesap parolası"
+        "${ BRAND_NAME } hesabı parolası"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -8159,6 +8168,9 @@
       "Albums": [
         "Albümler"
       ],
+      "Cancel your import in settings": [
+        "Ayarlardan içe aktarmayı iptal edin"
+      ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
       ],
@@ -8239,6 +8251,9 @@
       ],
       "Resume now": [
         "Şimdi sürdür"
+      ],
+      "Resume or cancel your import in settings": [
+        "Ayarlar bölümünden içe aktarmayı sürdürün veya iptal edin"
       ],
       "settings": [
         "ayarlar"
@@ -9376,11 +9391,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Uçtan uca şifrelenmiş belgeler oluşturun, düzenleyin ve bu belgeler üzerinde birlikte çalışın."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
@@ -9685,6 +9706,10 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } öge çöpe atılamadı",
         "${ errors.length } öge çöpe atılamadı"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } öğe kurtarılamadı",
+        "${ failedCount } öğe kurtarılamadı"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopyalanan öge çöpe atıldı",
@@ -12041,9 +12066,6 @@
       "Albums you've shared will appear here": [
         "Paylaştığınız albümler burada görünecek"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Dosyalarınızı ve klasörlerinizi Google Drive üzerinden içe aktarın ve bunların gizliliğini ${ DRIVE_APP_NAME } ile koruyun."
-      ],
       "Shared by ${ sharedBy }": [
         "${ sharedBy } tarafından paylaşıldı"
       ],
@@ -12435,6 +12457,9 @@
       "Cannot add more addresses": [
         "Daha fazla adres eklenemez"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Kart doğrulama"
       ],
@@ -12633,9 +12658,6 @@
       "Drop to upload": [
         "Yüklemek için bırakın"
       ],
-      "Easy switch": [
-        "Easy switch"
-      ],
       "Easy Switch from Google Drive": [
         "Google Drive üzerinden Easy Switch"
       ],
@@ -12776,9 +12798,6 @@
       "Import started": [
         "İçe aktarma başlatıldı"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "İçe aktarma işlemi başladı ancak depolama alanınız bu içe aktarma işlemi için yeterli olmayacak"
-      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } tarafından içe aktarıldı"
       ],
@@ -12908,6 +12927,9 @@
       "Notes": [
         "Notlar"
       ],
+      "Nothing to import": [
+        "İçe aktarılacak bir şey yok"
+      ],
       "Number of downloads": [
         "İndirme sayısı"
       ],
@@ -12994,9 +13016,6 @@
       ],
       "Recommended actions": [
         "Önerilen işlemler"
-      ],
-      "Reconnect to finish your import": [
-        "İçe aktarmayı tamamlamak için yeniden bağlanın"
       ],
       "Reconnect your account": [
         "Hesabınızı yeniden bağlayın"
@@ -13260,9 +13279,6 @@
       "Warning: suspected fake website": [
         "Uyarı: Sahte olma olasılığı bulunan şüpheli site"
       ],
-      "We could not find anything to import": [
-        "İçe aktarılacak bir şey bulunamadı"
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Bu dosyanın ${ author } tarafından oluşturduğu doğrulanamadı."
       ],
@@ -13353,6 +13369,9 @@
       "Your import is in progress": [
         "İçe aktarma işleminiz sürüyor"
       ],
+      "Your import was interrupted": [
+        "İçe aktarmanız kesintiye uğradı"
+      ],
       "Your plan": [
         "Tarifeniz"
       ],
@@ -13395,6 +13414,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinize erişebilmek için veri kurtarma yöntemi ekleyin."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için yedek e-posta adresi veya telefon numarası ekleyin."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Bu paylaşılan dosyayı daha sonra kolayca erişebilmek için ${ DRIVE_APP_NAME } depolama alanınıza ekleyin"
       ],
@@ -13406,6 +13431,9 @@
       ],
       "Change shared item settings": [
         "Paylaşılan öge ayarlarını değiştir"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinizi geri alabilmek için kurtarma ifadesi oluşturun."
       ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
@@ -13433,6 +13461,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Hesabınızı veri kaybına karşı korumak için kurtarma ifadesi oluşturun."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
@@ -13464,6 +13495,9 @@
       "Show side panel": [
         "Yan panoyu görüntüle"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Verilerinizin bir kısmı kilitli. Kilidi açmak için kurtarma yöntemi kullanın."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
       ],
@@ -13493,6 +13527,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Dosyaya erişebilmeleri için bir davetiye gönderdik."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Kurtarma dosyanız güncel değil. Verilerinizi kurtarabilmek için yeni bir dosya indirin."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Geri alma ifadenizin geçerlilik süresi doldu. Verilerinizi geri alabilmek için yeni bir tane alın."
       ]
     },
     "tooltip": {

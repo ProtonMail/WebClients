@@ -575,9 +575,6 @@
       "Hide more benefits": [
         "Mehr Vorteile ausblenden"
       ],
-      "Ignore": [
-        "Ignorieren"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
       ],
@@ -5863,9 +5860,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Wenn du dich selbst entfernst, verlierst du den Zugriff auf die Datei \"${ fileName }\" und kannst sie nicht wieder öffnen, es sei denn, der Inhaber teilt sie mit dir."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Falls du den Umstieg bereits durchgeführt hast, kannst du den Import unter ${ easySwitchSettingsLink } fortsetzen. Dort kann er auch abgebrochen werden."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
         "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
@@ -6317,9 +6311,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Bitte upgraden, um sicherzustellen, dass der Import erfolgreich abgeschlossen wird."
-      ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
       ],
@@ -6734,6 +6725,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Um dich zu schützen, kann ${ DRIVE_APP_NAME } deine Dateien datenschutzfreundlich scannen und bösartige Dateien blockieren. Es ist trotzdem am besten, Dateien nur aus vertrauenswürdigen Quellen herunterzuladen. "
       ],
@@ -6919,9 +6913,6 @@
       "We'll email you when your import is complete.": [
         "Du wirst per E-Mail benachrichtigt, sobald der Import abgeschlossen ist."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Du wirst per E-Mail benachrichtigt, sobald der Import abgeschlossen ist. Deine Dateien werden in einem Ordner in ${ DRIVE_APP_NAME } angezeigt."
-      ],
       "We'll get back to you shortly.": [
         "Wir melden uns in Kürze bei dir."
       ],
@@ -7012,9 +7003,6 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du verwendest mehr Speicherplatz, als in einem ${ downgradedPlanName }-Abonnement enthalten sind. Bitte lösche einige Daten, um zu downgraden."
-      ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Dein Import kann auch unter ${ easySwitchSettingsLink } abgebrochen werden."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kannst importierte Kalender auch mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen."
@@ -7177,12 +7165,6 @@
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Möglicherweise ist dein Google Drive leer oder enthält nur Dateien, die nicht unterstützt werden."
       ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Das Importieren ist gesperrt. Steige jetzt um, um die restlichen Dateien übertragen zu können."
-      ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Dein Import-Vorgang wurde unterbrochen, da der Zugriff auf dein Google-Konto nicht mehr möglich ist. Stelle die Verbindung erneut her, um die verbliebenen Dateien zu importieren."
-      ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
       ],
@@ -7322,6 +7304,9 @@
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } von ${ albumProgress.total }"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
@@ -9341,11 +9326,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Ende-zu-Ende-verschlüsselte Dokumente erstellen, bearbeiten und gemeinsam daran arbeiten."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Sichern deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Enthält Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte hide-my-email-Aliase und mehr."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Ende-zu-Ende-verschlüsselte Tabellen erstellen, bearbeiten und gemeinsam daran arbeiten."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Zugriff auf gesperrte Inhalte und privates Surfen. Enthält ${ serversAndCountries }, höchste VPN-Geschwindigkeiten, Zugang zu weltweiten Streaming-Diensten, Malware- und Ad-Blocker, schnelle BitTorrent-Downloads und mehr."
@@ -9650,6 +9641,10 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } Eintrag konnte nicht in den Papierkorb verschoben werden",
         "${ errors.length } Einträge konnten nicht in den Papierkorb verschoben werden"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } Eintrag konnte nicht wiederhergestellt werden",
+        "${ failedCount } Einträge konnten nicht wiederhergestellt werden"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopierter Eintrag wurde in den Papierkorb verschoben",
@@ -12006,9 +12001,6 @@
       "Albums you've shared will appear here": [
         "Alben, die du geteilt hast, werden hier angezeigt"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importiere deine Dateien und Ordner aus Google Drive und speichere sie privat in ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Geteilt von ${ sharedBy }"
       ],
@@ -12598,9 +12590,6 @@
       "Drop to upload": [
         "Datei zum Hochladen in dieses Feld ziehen"
       ],
-      "Easy switch": [
-        "Easy Switch"
-      ],
       "Easy Switch from Google Drive": [
         "Einfacher Wechsel von Google Drive"
       ],
@@ -12740,9 +12729,6 @@
       ],
       "Import started": [
         "Import gestartet"
-      ],
-      "Import started, but your storage won't be enough for this import": [
-        "Der Import wurde gestartet, aber dein Speicherplatz reicht für diesen Import nicht aus."
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Mit ${ PRODUCT_NAMES.EASY_SWITCH } importiert"
@@ -12960,9 +12946,6 @@
       "Recommended actions": [
         "Empfohlene Aktionen"
       ],
-      "Reconnect to finish your import": [
-        "Stelle die Verbindung erneut her, um den Import abschließen zu können"
-      ],
       "Reconnect your account": [
         "Erneut mit deinem Konto verbinden"
       ],
@@ -13096,6 +13079,9 @@
       "Sort files/folders": [
         "Dateien/Ordner sortieren"
       ],
+      "Special offer": [
+        "Sonderangebot"
+      ],
       "Start a new import": [
         "Neuer Importvorgang"
       ],
@@ -13221,9 +13207,6 @@
       ],
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
-      ],
-      "We could not find anything to import": [
-        "Wir konnten nichts zum Importieren finden"
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "Wir konnten nicht verifizieren, dass ${ author } diese Datei erstellt hat."
@@ -13357,6 +13340,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Füge eine Methode zur Datenwiederherstellung hinzu, um deine Daten zu entsperren, falls du dein Passwort vergisst."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Füge eine E-Mail-Adresse oder eine Telefonnummer für das Zurücksetzen des Passworts hinzu, falls du es vergessen solltest."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Füge diese gemeinsame Datei zu deinem ${ DRIVE_APP_NAME } hinzu, damit du später leicht darauf zugreifen kannst."
       ],
@@ -13368,6 +13357,9 @@
       ],
       "Change shared item settings": [
         "Einstellungen für freigegebene Elemente ändern"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lege eine Wiederherstellungsphrase fest, damit du deine Daten wiederherstellen kannst, falls du dein Passwort vergisst."
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
@@ -13395,6 +13387,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Erstelle eine Wiederherstellungsphrase, um dein Konto vor Datenverlust zu schützen."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
@@ -13426,6 +13421,9 @@
       "Show side panel": [
         "Seitenleiste anzeigen"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Einige deiner Daten sind gesperrt. Nutze eine Wiederherstellungsmethode, um wieder darauf zugreifen zu können."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
       ],
@@ -13455,6 +13453,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Wir haben der Person eine Einladung zum Zugreifen auf den Eintrag gesendet."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Deine Wiederherstellungsdatei ist veraltet. Lade eine neue herunter, damit du deine Daten wiederherstellen kannst."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Ihre Wiederherstellungsphrase ist veraltet. Es wird eine neue benötigt, damit deine Daten weiterhin wiederhergestellt werden können."
       ]
     },
     "tooltip": {

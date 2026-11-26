@@ -586,9 +586,6 @@
       "Hide more benefits": [
         "Ascundere mai multe beneficii"
       ],
-      "Ignore": [
-        "Ignorare"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Imaginea nu a putut fi încărcată cu protecția împotriva urmăririi activată."
       ],
@@ -5171,6 +5168,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } a pierdut accesul la Google Drive. Reconectați-vă pentru a continua importarea."
+      ],
       "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
         "${ BRAND_NAME } utilizează acest acces doar pentru importare. Google nu va obține niciodată acces la contul din ${ BRAND_NAME }."
       ],
@@ -5224,6 +5224,9 @@
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }",
         "Contacte: ${ contactsLength }"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } din ${ total }"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Fișierele ${ DOCS_APP_NAME } și ${ SHEETS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
@@ -5493,6 +5496,9 @@
       ],
       "Already in your library": [
         "Există deja în librărie"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Deja ați trecut la un plan superior? ${ resumeSettingsLink }"
       ],
       "Also try looking in Trash.": [
         "Puteți căuta și în gunoi."
@@ -5889,6 +5895,9 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Doar fișiere (fără fotografii, ${ DOCS_APP_NAME } sau ${ SHEETS_APP_NAME }) - până la 100 GiB total, 100.000 de fișiere și 50 GiB per fișier."
       ],
+      "Find your files": [
+        "Găsiți-vă fișierele"
+      ],
       "Folder will not be uploaded": [
         "Folderul nu va fi încărcat."
       ],
@@ -5963,9 +5972,6 @@
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Dacă vă eliminați accesul, veți pierde accesul la „${ fileName }” și nu veți putea să-l deschideți din nou decât dacă proprietarul vi-l partajează."
-      ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Dacă ați făcut deja actualizarea, puteți relua importarea în ${ easySwitchSettingsLink }. Tot acolo puteți și anula."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
@@ -6425,9 +6431,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Modificați tipul planului pentru a vă asigura ca importarea se poate finaliza."
-      ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
       ],
@@ -6541,6 +6544,9 @@
       ],
       "Running diagnostics...": [
         "Se execută diagnosticarea..."
+      ],
+      "Runs in the background": [
+        "Rulează în fundal"
       ],
       "Saving...": [
         "Se salvează..."
@@ -6741,6 +6747,9 @@
       ],
       "There is nothing to see here": [
         "Nu e nimic de văzut aici"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Vor fi într-un folder nou în Fișierele mele."
       ],
       "Thinking about this": [
         "Mă gândesc la asta"
@@ -7035,9 +7044,6 @@
       "We'll email you when your import is complete.": [
         "Vă vom anunța pe e-mail după finalizarea importării."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Veți primi un e-mail când s-a finalizat importarea. Fișierele vor apărea într-un folder din ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Vom reveni în curând."
       ],
@@ -7049,6 +7055,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Se copiază fișierele din Google Drive în ${ DRIVE_APP_NAME }."
       ],
       "Week": [
         "Săptămâna"
@@ -7133,9 +7142,6 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Utilizați mai mult spațiu de stocare decât este inclus într-un plan ${ downgradedPlanName }. Ștergeți din date pentru a putea retrograda contul."
       ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Puteți anula importarea și în ${ easySwitchSettingsLink }."
-      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele ${ BRAND_NAME } existente."
       ],
@@ -7147,6 +7153,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Puteți închide fila sau navigatorul web între timp."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Puteți închide asta și să continuați să utilizați ${ DRIVE_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -7302,11 +7311,11 @@
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
       ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Importarea este blocată. Treceți la un plan superior acum pentru a transfera și restul fișierelor."
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Importarea început, dar se va întrerupe atunci când spațiul de stocare va fi plin. Treceți la un plan superior acum pentru a transfera toate fișierele."
       ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Importarea este întreruptă deoarece s-a pierdut accesul la contul Google. Reconectași-vă pentru a transfera și restul fișierelor."
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Importarea este suspendată. Treceți la un plan superior acum pentru a transfera și restul fișierelor."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
@@ -8269,6 +8278,9 @@
       "Albums": [
         "Albume"
       ],
+      "Cancel your import in settings": [
+        "Anulați importarea în setări"
+      ],
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
       ],
@@ -8349,6 +8361,9 @@
       ],
       "Resume now": [
         "Reluare acum"
+      ],
+      "Resume or cancel your import in settings": [
+        "Reluați sau anulați importarea în setări"
       ],
       "settings": [
         "setări"
@@ -9523,11 +9538,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Securizați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creați, editați și colaborați la documente criptate bilateral."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creați, editați și colaborați la foi de calcul criptate bilateral."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
@@ -9840,6 +9861,11 @@
         "Eșuare ștergere articole: ${ errors.length }",
         "Eșuare ștergere articole: ${ errors.length }",
         "Eșuare ștergere articole: ${ errors.length }"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "Eșuare recuperare articole: ${ failedCount }",
+        "Eșuare recuperare articole: ${ failedCount }",
+        "Eșuare recuperare articole: ${ failedCount }"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "Articole copiate mutate în gunoi: ${ numberOfItems }",
@@ -12252,9 +12278,6 @@
       "Albums you've shared will appear here": [
         "Albumele pe care le-ați partajat vor apărea aici"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importați-vă folderele și fișierele din Google Drive și păstrați-le private în ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Partajat de ${ sharedBy }"
       ],
@@ -12657,6 +12680,9 @@
       "Cannot add more addresses": [
         "Nu se mai pot adăuga adrese"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -12858,9 +12884,6 @@
       "Drop to upload": [
         "Plasați aici pentru încărcare"
       ],
-      "Easy switch": [
-        "Easy switch"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch din Google Drive"
       ],
@@ -13003,9 +13026,6 @@
       "Import started": [
         "Importare pornită"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Importarea a început, dar spațiul de stocare nu va fi suficient"
-      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importat de ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -13135,6 +13155,9 @@
       "Notes": [
         "Note"
       ],
+      "Nothing to import": [
+        "Nimic de importat"
+      ],
       "Number of downloads": [
         "Nr. de descărcări"
       ],
@@ -13221,9 +13244,6 @@
       ],
       "Recommended actions": [
         "Acțiuni recomandate"
-      ],
-      "Reconnect to finish your import": [
-        "Reconectați-vă pentru a finaliza importarea"
       ],
       "Reconnect your account": [
         "Reconectați-vă contul"
@@ -13488,9 +13508,6 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
-      "We could not find anything to import": [
-        "Nu s-au găsit date de importat"
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Nu s-a putut verifica dacă ${ author } a creat acest fișier."
       ],
@@ -13581,6 +13598,9 @@
       "Your import is in progress": [
         "Importarea este în desfășurare."
       ],
+      "Your import was interrupted": [
+        "Importarea a fost întreruptă"
+      ],
       "Your plan": [
         "Plan actual"
       ],
@@ -13623,6 +13643,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Adăugați o metodă de recuperare a datelor pentru a debloca datele dacă vă uitați parola."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Adăugați o adresă de e-mail sau un număr de telefon de recuperare, pentru a vă putea reseta parola în cazul în care o uitați."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Adăugați acest fișier partajat în ${ DRIVE_APP_NAME } pentru a-l accesa mai ușor mai târziu."
       ],
@@ -13634,6 +13660,9 @@
       ],
       "Change shared item settings": [
         "Modificare setări articol partajat"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creați o frază de recuperare, astfel încât să vă puteți recupera datele dacă vă uitați parola."
       ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
@@ -13661,6 +13690,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generați o frază de recuperare pentru a vă proteja contul împotriva pierderii datelor."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
@@ -13692,6 +13724,9 @@
       "Show side panel": [
         "Afișare panou lateral"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Unele dintre date sunt blocate. Utilizați o metodă de recuperare pentru a le debloca."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
       ],
@@ -13721,6 +13756,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Li s-a trimis o invitație pentru a accesa articolul."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Fișierul de recuperare este învechit. Descărcați unul nou pentru a vă putea recupera în continuare datele."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Fraza de recuperare este învechită. Obțineți una nouă pentru a vă putea recupera în continuare datele."
       ]
     },
     "tooltip": {

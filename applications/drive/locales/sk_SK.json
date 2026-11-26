@@ -591,9 +591,6 @@
       "Hide more benefits": [
         "Skryť viac výhod"
       ],
-      "Ignore": [
-        "Ignorovať"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Obrázok sa nepodarilo načítať s ochranou sledovania."
       ],
@@ -6049,9 +6046,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Ak odstránite seba, stratíte prístup k súboru \"${ fileName }\" a nebudete ho môcť znova otvoriť, pokiaľ vám ho vlastník znovu nesprístupní."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Ak ste už navýšenie vykonali, môžete import obnoviť v ${ easySwitchSettingsLink }. Tam ho môžete aj zrušiť."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendára",
         "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendárov",
@@ -6516,9 +6510,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Pre úspešné dokončenie importu zvýšte úroveň svojho plánu, prosím."
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
@@ -7132,9 +7123,6 @@
       "We'll email you when your import is complete.": [
         "Akonáhle bude import dokončený, pošleme vám email."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Akonáhle sa import dokončí, pošleme vám email. Vaše súbory sa zobrazia v priečinku v ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "O chvíľu sa vám ozveme."
       ],
@@ -7230,9 +7218,6 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Využívate viac úložiska než je zahrnuté v pláne ${ downgradedPlanName }. Vymažte alebo odstráňte údaje, aby ste mohli plán znížiť, prosím."
-      ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Import môžete zrušiť aj v ${ easySwitchSettingsLink }."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Importované kalendáre môžete tiež zlúčiť s existujúcimi ${ BRAND_NAME } kalendármi."
@@ -7404,12 +7389,6 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Váš Google Drive môže byť prázdny alebo môže obsahovať iba súbory, ktoré nie sú podporované."
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Váš import je blokovaný. Zvýšte úroveň plánu hneď teraz, aby ste mohli preniesť aj zvyšné súbory."
-      ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Import je pozastavený, pretože sme stratili prístup k vášmu účtu Google. Znovu sa prihláste, aby ste mohli preniesť zvyšné súbory."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
@@ -9670,11 +9649,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované dokumenty a spolupracujte na nich."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Obsahuje automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované tabuľky a spolupracujte na nich."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje ${ serversAndCountries }, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
@@ -9995,6 +9980,12 @@
         "${ errors.length } položky sa nepodarilo odstrániť",
         "${ errors.length } položiek sa nepodarilo odstrániť",
         "${ errors.length } položiek sa nepodarilo odstrániť"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } položku sa nepodarilo obnoviť",
+        "${ failedCount } položky sa nepodarilo obnoviť",
+        "${ failedCount } položiek sa nepodarilo obnoviť",
+        "${ failedCount } položiek sa nepodarilo obnoviť"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } skopírovaná položka presunutá do koša",
@@ -12463,9 +12454,6 @@
       "Albums you've shared will appear here": [
         "Tu sa zobrazia albumy, ktoré zdieľate"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Naimportujte si súbory a priečinky z Google Drive a uchovajte ich ako súkromné v aplikácii ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Zdieľané vlastníkom ${ sharedBy }"
       ],
@@ -12879,6 +12867,9 @@
       "Cannot add more addresses": [
         "Nie je možné pridať viac adries"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Overenie karty"
       ],
@@ -13083,9 +13074,6 @@
       "Drop to upload": [
         "Pretiahnuť a nahrať"
       ],
-      "Easy switch": [
-        "Easy switch"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch z Google Drive"
       ],
@@ -13229,9 +13217,6 @@
       ],
       "Import started": [
         "Import sa začal"
-      ],
-      "Import started, but your storage won't be enough for this import": [
-        "Import sa začal, ale váš úložný priestor na tento import nebude stačiť"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importované cez ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -13448,9 +13433,6 @@
       ],
       "Recommended actions": [
         "Odporúčané opatrenia"
-      ],
-      "Reconnect to finish your import": [
-        "Znovu sa pripojte, aby ste dokončili import"
       ],
       "Reconnect your account": [
         "Znovu pripojiť svoj účet"
@@ -13716,9 +13698,6 @@
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
       ],
-      "We could not find anything to import": [
-        "Nenašli sme nič, čo by sa dalo importovať"
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Nemohli sme overiť, že tento súbor vytvoril používateľ ${ author }."
       ],
@@ -13851,6 +13830,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Pridajte metódu obnovenia údajov, aby ste mohli odomknúť svoje údaje, ak zabudnete heslo."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Pridajte email alebo telefón na obnovenie, aby ste si mohli resetovať heslo, ak ho zabudnete."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Tento zdieľaný súbor pridajte do svojho ${ DRIVE_APP_NAME } pre neskorší jednoduchý prístup."
       ],
@@ -13862,6 +13847,9 @@
       ],
       "Change shared item settings": [
         "Zmeniť nastavenia zdieľanej položky"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Vytvorte si obnovovaciu frázu, aby ste mohli obnoviť svoje údaje, ak zabudnete heslo."
       ],
       "Customize import to reduce the number of folders": [
         "Prispôsobiť import na zníženie počtu priečinkov"
@@ -13889,6 +13877,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Zašifrované dáta s overeným digitálnym podpisom"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Vygenerujte si obnovovaciu frázu a chráňte svoj účet pred stratou údajov."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky triedi niektoré emaily do kategórií ako Siete alebo Reklamy. Môžete si vybrať, kam chcete importovať tieto emaily."
@@ -13920,6 +13911,9 @@
       "Show side panel": [
         "Zobraziť bočný panel"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Niektoré vaše údaje sú zamknuté. Odomknite ich pomocou metódy obnovenia."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podpriečinky sa v aplikácii ${ MAIL_APP_NAME } zobrazia ako samostatné priečinky"
       ],
@@ -13949,6 +13943,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali sme im pozvánku s prístupom k položke."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Váš súbor pre obnovenie je zastaraný. Stiahnite si nový, aby ste mohli naďalej obnoviť svoje údaje."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Vaša obnovovacia fráza je zastaraná. Vytvorte si novú, aby ste mohli naďalej obnoviť svoje údaje."
       ]
     },
     "tooltip": {

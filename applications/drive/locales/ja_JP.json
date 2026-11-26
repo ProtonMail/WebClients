@@ -480,9 +480,6 @@
       "Hide more benefits": [
         "その他のメリットを隠す"
       ],
-      "Ignore": [
-        "無視"
-      ],
       "Image could not be loaded with tracker protection.": [
         "トラッカー保護機能により画像を読み込めません。"
       ],
@@ -5805,6 +5802,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "アカウントの安全を保つため、続行する前にご本人確認を行ってください。"
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "お客様を保護するために、${ DRIVE_APP_NAME }はプライバシーを保護しながらファイルをスキャンし、悪意のあるファイルをブロックできます。しかし、それでも信頼できるソースからのみファイルをダウンロードすることをおすすめします。 "
       ],
@@ -6006,9 +6006,6 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } プランに含まれるストレージを超えるストレージを使用しています。 ダウングレードするには、データを削除してください。"
       ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "${ easySwitchSettingsLink } からインポートをキャンセルすることもできます。"
-      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
@@ -6125,9 +6122,6 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
-      ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Googleアカウントへのアクセスが失われたためインポートを一時停止しました。残りのファイルを取り込むには再接続してください。"
       ],
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
@@ -6254,6 +6248,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME }アカウントパスワード"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
@@ -8045,11 +8042,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: エンドツーエンド暗号化されたドキュメントを作成、編集、共同編集できます。"
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }：暗号化されたクラウドストレージでファイルを保護。自動同期、暗号化ファイル共有などを含みます。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタムメール ドメイン、15 個のメール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: エンドツーエンド暗号化されたスプレッドシートを作成、編集、共同編集できます。"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: ブロックされたコンテンツにアクセスし、プライベートに閲覧します。 ${ serversAndCountries }、最高の VPN 速度、世界中のストリーミング サービスへのアクセス、マルウェアと広告ブロッカー、高速 BitTorrent ダウンロードなどが含まれます。"
@@ -11117,9 +11120,6 @@
       ],
       "Recommended actions": [
         "推奨されるアクション"
-      ],
-      "Reconnect to finish your import": [
-        "再接続してインポートを完了してください"
       ],
       "Reconnect your account": [
         "アカウントに再接続"

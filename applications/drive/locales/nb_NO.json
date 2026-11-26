@@ -575,9 +575,6 @@
       "Hide more benefits": [
         "Skjul flere fordeler"
       ],
-      "Ignore": [
-        "Ignorer"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Bilde kunne ikke lastes med sporingsbeskyttelse."
       ],
@@ -5070,6 +5067,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } mistet tilgangen til Google Disk. Koble til på nytt for å fortsette importen."
+      ],
       "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
         "${ BRAND_NAME } bruker bare denne tilgangen for importen. Google får aldri tilgang til ${ BRAND_NAME }-kontoen din."
       ],
@@ -5117,6 +5117,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } og ${ SHEETS_APP_NAME }-filer kan ikke lastes ned direkte og vil ikke bli inkludert i denne nedlastingen. Du kan laste ned de andre filene ved å klikke på 'Fortsett å laste ned'."
@@ -5831,9 +5834,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Hvis du fjerner deg selv, mister du tilgangen til \"${ fileName }\" og kan ikke åpne den igjen med mindre eieren deler den med deg på nytt."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Hvis du allerede har oppgradert, kan du gjenoppta importen i ${ easySwitchSettingsLink }. Du kan også avbryte den der."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
@@ -6285,9 +6285,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Oppgrader for å sikre at importen fullføres uten problemer."
-      ],
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
       ],
@@ -6401,6 +6398,9 @@
       ],
       "Running diagnostics...": [
         "Kjører diagnostikk ..."
+      ],
+      "Runs in the background": [
+        "Kjører i bakgrunnen"
       ],
       "Saving...": [
         "Lagrer..."
@@ -6884,9 +6884,6 @@
       "We'll email you when your import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Vi sender deg en e-post når importen er fullført. Filene dine vil vises i en mappe i ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Vi vil komme tilbake til deg innen kort tid."
       ],
@@ -6978,9 +6975,6 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
       ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Du kan også avbryte importen i ${ easySwitchSettingsLink }."
-      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også slå sammen importerte kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
@@ -6992,6 +6986,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller nettleseren i mellomtiden."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Du kan lukke denne og fortsette å bruke ${ DRIVE_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
@@ -7142,11 +7139,11 @@
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Disk kan være tom eller inneholde bare filer som ikke støttes."
       ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Importen er blokkert. Oppgrader nå for å ta med resten av filene dine."
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Importen din har startet, men den stopper når lagringsplassen er full. Oppgrader nå for å ta med alle filene dine."
       ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Importen er satt på pause fordi vi mistet tilgangen til Google-kontoen din. Koble til på nytt for å hente resten av filene."
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Importen er satt på pause. Oppgrader nå for å ta med resten av filene dine."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
@@ -9613,6 +9610,10 @@
         "${ errors.length } element kunne ikke legges i papirkurven",
         "${ errors.length } elementer kunne ikke legges i papirkurven"
       ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } element kunne ikke gjenopprettes",
+        "${ failedCount } elementer kunne ikke gjenopprettes"
+      ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopiert element flyttet til papirkurven",
         "${ numberOfItems } kopierte elementer flyttet til papirkurven"
@@ -11968,9 +11969,6 @@
       "Albums you've shared will appear here": [
         "Albumene du har delt vises her"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
       ],
@@ -12560,9 +12558,6 @@
       "Drop to upload": [
         "Slipp for å laste opp"
       ],
-      "Easy switch": [
-        "Easy switch"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch fra Google Disk"
       ],
@@ -12703,9 +12698,6 @@
       "Import started": [
         "Importen kjører"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Importen er startet, men lagringsplassen vil ikke være tilstrekkelig for denne importen."
-      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importert av ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -12835,6 +12827,9 @@
       "Notes": [
         "Notater"
       ],
+      "Nothing to import": [
+        "Ingenting å importere"
+      ],
       "Number of downloads": [
         "Antall nedlastinger"
       ],
@@ -12921,9 +12916,6 @@
       ],
       "Recommended actions": [
         "Anbefalte tiltak"
-      ],
-      "Reconnect to finish your import": [
-        "Koble til på nytt for å fullføre importen din"
       ],
       "Reconnect your account": [
         "Koble til kontoen din på nytt"
@@ -13187,9 +13179,6 @@
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
       ],
-      "We could not find anything to import": [
-        "Vi fant ingenting å importere."
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Vi kunne ikke bekrefte at ${ author } opprettet denne filen."
       ],
@@ -13280,6 +13269,9 @@
       "Your import is in progress": [
         "Importen pågår"
       ],
+      "Your import was interrupted": [
+        "Importen ble avbrutt"
+      ],
       "Your plan": [
         "Din plan"
       ],
@@ -13322,6 +13314,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Legg til en datagjenopprettingsmetode for å låse opp dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Legg til en e-postadresse eller telefon for gjenoppretting slik at du kan tilbakestille passordet ditt hvis du glemmer det."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Legg til denne delte filen i din ${ DRIVE_APP_NAME } for enkel tilgang senere."
       ],
@@ -13333,6 +13331,9 @@
       ],
       "Change shared item settings": [
         "Endre innstillinger for delt element"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lag en gjenopprettingsfrase slik at du kan gjenopprette dataene dine hvis du glemmer passordet ditt."
       ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"
@@ -13360,6 +13361,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Kryptert data med bekreftet digital signatur"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generer en gjenopprettingsfrase for å beskytte kontoen din mot tap av data."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
@@ -13391,6 +13395,9 @@
       "Show side panel": [
         "Vis sidepanel"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Noen av dataene dine er låst. Bruk en gjenopprettingsmetode for å låse de opp."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
       ],
@@ -13420,6 +13427,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Vi har sendt dem en invitasjon til å få tilgang til elementet."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Last ned en ny slik at du fortsatt kan gjenopprette dataene dine."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Skaff deg en ny slik at du fortsatt kan gjenopprette dataene dine."
       ]
     },
     "tooltip": {

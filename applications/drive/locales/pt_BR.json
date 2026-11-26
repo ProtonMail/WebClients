@@ -581,9 +581,6 @@
       "Hide more benefits": [
         "Ocultar mais benefícios"
       ],
-      "Ignore": [
-        "Ignorar"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Não foi possível carregar a imagem devido à proteção de rastreamento."
       ],
@@ -5097,6 +5094,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } perdeu o acesso ao seu Google Drive. Reconecte para continuar a importação."
+      ],
       "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
         "O ${ BRAND_NAME } usa esse acesso apenas para a importação. O Google nunca tem acesso à sua conta ${ BRAND_NAME }."
       ],
@@ -5144,6 +5144,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } contato",
         "${ contactsLength } contatos"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Os arquivos do ${ DOCS_APP_NAME } e ${ SHEETS_APP_NAME } não podem ser baixados diretamente e não serão incluídos neste download. Você pode baixar os outros arquivos clicando em 'Continuar baixando'."
@@ -5394,6 +5397,9 @@
       ],
       "Already in your library": [
         "Já está na sua biblioteca"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Já fez o upgrade? ${ resumeSettingsLink }"
       ],
       "Also try looking in Trash.": [
         "Verifique sua lixeira."
@@ -5861,9 +5867,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Se você se remover, perderá o acesso a \"${ fileName }\" e não poderá abri-lo novamente, a menos que o proprietário o compartilhe com você."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Se você já mudou para um plano superior, pode retomar a importação em ${ easySwitchSettingsLink }. Você também pode cancelá-la lá."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
@@ -6315,9 +6318,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Faça upgrade para garantir que a importação seja concluída com sucesso."
-      ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
       ],
@@ -6431,6 +6431,9 @@
       ],
       "Running diagnostics...": [
         "Executando diagnósticos..."
+      ],
+      "Runs in the background": [
+        "Executa em segundo plano"
       ],
       "Saving...": [
         "Salvando..."
@@ -6732,6 +6735,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "Para ajudar a te proteger, o ${ DRIVE_APP_NAME } pode escanear seus arquivos de uma forma que preserve a privacidade e bloquear arquivos maliciosos. No entanto, ainda é melhor baixar arquivos somente de fontes confiáveis. "
       ],
@@ -6917,9 +6923,6 @@
       "We'll email you when your import is complete.": [
         "Enviaremos um e-mail quando sua importação estiver concluída."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Enviaremos um e-mail quando a importação for concluída. Seus arquivos aparecerão em uma pasta no ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Nós entraremos em contato com você em breve."
       ],
@@ -6931,6 +6934,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Estamos copiando seus arquivos do Google Drive para ${ DRIVE_APP_NAME }."
       ],
       "Week": [
         "Semana"
@@ -7013,9 +7019,6 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Você está usando mais armazenamento do que o incluído em um plano ${ downgradedPlanName }. Exclua ou remova dados para fazer o downgrade."
-      ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Você também pode cancelar sua importação em ${ easySwitchSettingsLink }."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Você pode mesclar calendários importados com calendários existentes da ${ BRAND_NAME }."
@@ -7177,12 +7180,6 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Seu Google Drive pode estar vazio ou conter apenas arquivos que não são suportados."
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Sua importação está bloqueada. Mude para um plano superior agora para importar o restante dos seus arquivos."
-      ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Sua importação foi pausada porque perdemos o acesso à sua conta do Google. Reconecte-se para importar o restante dos seus arquivos."
       ],
       "Your information was found on ${ displayedDate }": [
         "Sua informação foi encontrada em ${ displayedDate }"
@@ -8141,6 +8138,9 @@
       "Albums": [
         "Álbuns"
       ],
+      "Cancel your import in settings": [
+        "Cancele sua importação nas configurações"
+      ],
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
@@ -8221,6 +8221,9 @@
       ],
       "Resume now": [
         "Retomar agora"
+      ],
+      "Resume or cancel your import in settings": [
+        "Retomar ou cancelar sua importação nas configurações"
       ],
       "settings": [
         "configurações"
@@ -12080,9 +12083,6 @@
       "Albums you've shared will appear here": [
         "Os álbuns que você compartilhou aparecerão aqui."
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importe seus arquivos e pastas do Google Drive e mantenha-os privados no ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Compartilhado por ${ sharedBy }"
       ],
@@ -12474,6 +12474,9 @@
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços."
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verificação do cartão"
       ],
@@ -12672,9 +12675,6 @@
       "Drop to upload": [
         "Solte para enviar"
       ],
-      "Easy switch": [
-        "Easy switch"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch de Google Drive"
       ],
@@ -12815,9 +12815,6 @@
       "Import started": [
         "Importação iniciada"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "A importação começou, mas seu espaço de armazenamento não será suficiente para concluí-la"
-      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importado por ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -12947,6 +12944,9 @@
       "Notes": [
         "Notas"
       ],
+      "Nothing to import": [
+        "Nada para importar"
+      ],
       "Number of downloads": [
         "Numero de downloads"
       ],
@@ -13033,9 +13033,6 @@
       ],
       "Recommended actions": [
         "Ações recomendadas"
-      ],
-      "Reconnect to finish your import": [
-        "Reconecte-se para concluir sua importação"
       ],
       "Reconnect your account": [
         "Reconecte sua conta"
@@ -13299,9 +13296,6 @@
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
       ],
-      "We could not find anything to import": [
-        "Não encontramos nada para importar"
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Não pudemos verificar que ${ author } criou este arquivo."
       ],
@@ -13391,6 +13385,9 @@
       ],
       "Your import is in progress": [
         "Sua importação está em progresso"
+      ],
+      "Your import was interrupted": [
+        "Sua importação foi interrompida"
       ],
       "Your plan": [
         "O seu plano"
@@ -13532,6 +13529,9 @@
       ],
       "We have sent them an invite to access the item.": [
         "Enviamos um convite para acessar o item."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Sua frase de recuperação está desatualizada. Obtenha uma nova para que você ainda possa recuperar seus dados."
       ]
     },
     "tooltip": {
@@ -13657,6 +13657,9 @@
       ],
       "10 years": [
         "10 anos"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
       ],
       "Calendars": [
         "Calendários"
