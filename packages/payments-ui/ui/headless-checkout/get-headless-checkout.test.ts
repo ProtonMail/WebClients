@@ -102,6 +102,7 @@ describe('getHeadlessCheckout', () => {
                 'proration',
                 'unusedCredit',
                 'coupon',
+                'offer',
                 'credit',
                 'gift',
                 'planAmountWithDiscount',

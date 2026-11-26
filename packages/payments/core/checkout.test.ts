@@ -852,6 +852,14 @@ describe('should get checkout result', () => {
 });
 
 describe('getUsersAndAddons()', () => {
+    it('has no users pricing when the selected plan is not in the plans map', () => {
+        expect(getUsersAndAddons({ [PLANS.VPN2024]: 1 }, {})).toMatchObject({
+            planName: null,
+            usersPricing: null,
+            addons: [],
+        });
+    });
+
     it('should return plan name and number of users', () => {
         expect(
             getUsersAndAddons(
@@ -1704,5 +1712,161 @@ describe('addon config seat-pool preference', () => {
     });
     it('meet config has no seat pool', () => {
         expect(getPool(MEET_ADDON_CONFIG)).toBeUndefined();
+    });
+});
+
+describe('getCheckoutUi offer', () => {
+    const demoOffer = { Name: 'demo', Description: 'Demo offer' };
+    const regularPricing = { [CYCLE.MONTHLY]: 2079, [CYCLE.YEARLY]: 19188 };
+    const offerPricing = { [CYCLE.MONTHLY]: 819, [CYCLE.YEARLY]: 10000 };
+
+    const planLoadedWithOffer = getPlan({
+        Name: PLANS.BUNDLE,
+        Title: 'Proton Unlimited',
+        MaxMembers: 1,
+        Pricing: offerPricing as Plan['Pricing'],
+        DefaultPricing: regularPricing as Plan['Pricing'],
+        Offers: { [CYCLE.MONTHLY]: demoOffer, [CYCLE.YEARLY]: demoOffer },
+    });
+    const planLoadedWithoutOffer = getPlan({
+        ...planLoadedWithOffer,
+        Pricing: regularPricing as Plan['Pricing'],
+        Offers: {},
+    });
+
+    const checkResult: SubscriptionEstimation = {
+        Amount: 2079,
+        AmountDue: 819,
+        Cycle: CYCLE.MONTHLY,
+        Coupon: null,
+        OfferName: 'demo',
+        OfferDescription: 'Demo offer',
+        OfferDiscount: [{ Name: PLANS.BUNDLE, Amount: -1260 }],
+        Currency: 'AUD',
+        SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+        requestData: { Plans: { [PLANS.BUNDLE]: 1 }, Currency: 'AUD', Cycle: CYCLE.MONTHLY },
+    };
+
+    const getOfferCheckoutUi = (plan: Plan, overrides: Partial<SubscriptionEstimation> = {}) =>
+        getCheckoutUi({
+            planIDs: { [PLANS.BUNDLE]: 1 },
+            plansMap: { [PLANS.BUNDLE]: plan },
+            checkResult: { ...checkResult, ...overrides },
+        });
+
+    it.each([
+        ['plans loaded with the offer', planLoadedWithOffer],
+        ['plans loaded without the offer', planLoadedWithoutOffer],
+    ])('takes the offer off the regular price, with %s', (_, plan) => {
+        const result = getOfferCheckoutUi(plan);
+
+        expect(result.regularAmountPerCycle).toBe(2079);
+        expect(result.membersPerMonth).toBe(2079);
+        expect(result.withoutDiscountPerCycle).toBe(2079);
+        expect(result.withDiscountPerCycle).toBe(819);
+        expect(result.withDiscountMembersPerMonth).toBe(819);
+        expect(result.withDiscountOneMemberPerMonth).toBe(819);
+        expect(result.discountPercent).toBe(61);
+    });
+
+    it('keeps the offer apart from the coupon', () => {
+        const result = getOfferCheckoutUi(planLoadedWithoutOffer);
+
+        expect(result.offerDiscount).toBe(-1260);
+        expect(result.offerDiscountBreakdown?.basePlanPerCycleDiscount).toBe(-1260);
+        expect(result.couponDiscount).toBeUndefined();
+        expect(result.couponDiscountBreakdown).toBeUndefined();
+    });
+
+    it('charges the regular price when the plans carry an offer that the check did not apply', () => {
+        const result = getOfferCheckoutUi(planLoadedWithOffer, {
+            AmountDue: 2079,
+            OfferName: null,
+            OfferDescription: null,
+            OfferDiscount: [{ Name: PLANS.BUNDLE, Amount: 0 }],
+        });
+
+        expect(result.offerDiscount).toBeUndefined();
+        expect(result.membersPerMonth).toBe(2079);
+        expect(result.withDiscountPerCycle).toBe(2079);
+        expect(result.withDiscountMembersPerMonth).toBe(2079);
+        expect(result.discountPercent).toBe(0);
+    });
+
+    it.each([
+        ['the regular price', 19188],
+        ['the offer price', 10000],
+    ])('takes the renewal price from the backend, here %s', (_, BaseRenewAmount) => {
+        const result = getOfferCheckoutUi(planLoadedWithOffer, {
+            Cycle: CYCLE.TWO_YEARS,
+            Amount: 30696,
+            AmountDue: 20000,
+            OfferDiscount: [{ Name: PLANS.BUNDLE, Amount: -10696 }],
+            RenewCycle: CYCLE.YEARLY,
+            BaseRenewAmount,
+        });
+
+        expect(result.renewPrice).toBe(BaseRenewAmount);
+        expect(result.renewPriceOverriden).toBe(true);
+        expect(result.renewCycle).toBe(CYCLE.YEARLY);
+    });
+
+    it('falls back to the regular price for the renewal when the backend sends no renewal amount', () => {
+        const result = getOfferCheckoutUi(planLoadedWithOffer, {
+            Cycle: CYCLE.YEARLY,
+            Amount: 19188,
+            AmountDue: 10000,
+            OfferDiscount: [{ Name: PLANS.BUNDLE, Amount: -9188 }],
+        });
+
+        expect(result.withDiscountPerCycle).toBe(10000);
+        expect(result.renewPrice).toBe(19188);
+    });
+
+    it('splits the offer between the users and the other addons', () => {
+        const yearly = (amount: number) => ({ [CYCLE.YEARLY]: amount }) as Plan['Pricing'];
+        const result = getCheckoutUi({
+            planIDs: {
+                [PLANS.BUNDLE_PRO_2024]: 1,
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 2,
+                [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: 1,
+            },
+            plansMap: {
+                [PLANS.BUNDLE_PRO_2024]: getPlan({
+                    Name: PLANS.BUNDLE_PRO_2024,
+                    MaxMembers: 1,
+                    Pricing: yearly(13200),
+                }),
+                [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: getAddon({
+                    Name: ADDON_NAMES.MEMBER_BUNDLE_PRO_2024,
+                    MaxMembers: 1,
+                    Pricing: yearly(13200),
+                }),
+                [ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]: getAddon({
+                    Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024,
+                    MaxDomains: 1,
+                    Pricing: yearly(1680),
+                }),
+            },
+            checkResult: {
+                ...checkResult,
+                Cycle: CYCLE.YEARLY,
+                Amount: 41280,
+                AmountDue: 20640,
+                OfferDiscount: [
+                    { Name: PLANS.BUNDLE_PRO_2024, Amount: -6600 },
+                    { Name: ADDON_NAMES.MEMBER_BUNDLE_PRO_2024, Amount: -13200 },
+                    { Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024, Amount: -840 },
+                ],
+            },
+        });
+
+        expect(result.withDiscountPerCycle).toBe(20640);
+        expect(result.withDiscountMembersPerMonth).toBe(1650);
+        expect(result.withDiscountOneMemberPerMonth).toBe(550);
+        expect(result.offerDiscountBreakdown?.perAddonPerCycleDiscount[ADDON_NAMES.DOMAIN_BUNDLE_PRO_2024]).toBe(-840);
     });
 });

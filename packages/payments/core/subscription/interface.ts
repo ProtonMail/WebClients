@@ -3,6 +3,7 @@ import type { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subs
 import type { Coupon, CouponDiscountBreakdownBE, Tax } from '@proton/shared/lib/payments/subscription/interface';
 
 import type { CheckSubscriptionData } from '../api/api';
+import type { ADDON_NAMES, PLANS } from '../constants';
 import type { InvalidCouponError, WrongBillingAddressError } from '../errors';
 import type { GuardError } from './guard';
 
@@ -37,6 +38,13 @@ interface SubscriptionCheckResponse {
      */
     CouponDiscount?: number;
     Coupon: Coupon;
+    OfferName?: string | null;
+    OfferDescription?: string | null;
+    /**
+     * One entry per plan or addon, `Amount` in negative cents and 0 where the offer does not apply. Never combined
+     * with a coupon. The backend always sends the list; check results built on the frontend leave it out.
+     */
+    OfferDiscount?: { Name: PLANS | ADDON_NAMES; Amount: number }[];
     /**
      * In case of custom billings, the property will show the discount when user adds an addon mid-cycle. This property
      * is kind of "proration for custom billings". The amount is in cents.

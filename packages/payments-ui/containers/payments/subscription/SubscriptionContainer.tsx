@@ -292,6 +292,7 @@ type SubscriptionContainerOpenCallbackPropKeys =
     | 'plan'
     | 'planIDs'
     | 'coupon'
+    | 'offer'
     | 'disablePlanSelection'
     | 'disableThanksStep'
     | 'defaultAudience'

@@ -11,11 +11,15 @@ export interface MembersLineItem
     extends BaseLineItem<typeof MEMBERS_LINE_ITEM_TYPE>, ReturnType<typeof formatMembers> {}
 
 function formatMembers(ctx: HeadlessCheckoutContextInner) {
-    const { checkoutUi, hasInvisibleCoupon, isPaidPlan, currency } = ctx;
+    const { checkoutUi, hasInvisibleCoupon, hasOffer, isPaidPlan, currency } = ctx;
 
     const { couponDiscountBreakdown } = checkoutUi;
 
     const pricePerAllPerMonth = (() => {
+        if (hasOffer) {
+            return checkoutUi.withDiscountMembersPerMonth;
+        }
+
         // If coupon is hidden from the user, then we need to inline the discount calculation to the addons, including
         // members
         if (hasInvisibleCoupon) {
@@ -41,6 +45,10 @@ function formatMembers(ctx: HeadlessCheckoutContextInner) {
     // breakdown the ratio is 1 (no-op); the `membersPerMonth !== 0` guard avoids a divide-by-zero. Only the VPN
     // single-signup PaymentSummary consumes this, on its B2B (users > 1) branch.
     const pricePerOnePerMonth = (() => {
+        if (hasOffer) {
+            return checkoutUi.withDiscountOneMemberPerMonth;
+        }
+
         if (hasInvisibleCoupon && checkoutUi.addons.length === 0) {
             return checkoutUi.withDiscountOneMemberPerMonth;
         }

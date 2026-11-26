@@ -815,4 +815,42 @@ describe('SubscriptionCheckout', () => {
             ).toBe(isPassBasic);
         }
     );
+
+    it('shows the offer price inline with a discount badge, like a hidden coupon', () => {
+        checkResult = {
+            ...checkResult,
+            OfferName: 'demo',
+            OfferDescription: 'Demo offer',
+            OfferDiscount: [{ Name: PLANS.MAIL, Amount: -200 }],
+            AmountDue: 299,
+        };
+
+        const { container } = renderWithProviders(
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
+                checkResult={checkResult}
+                plansMap={getTestPlansMap('CHF') as any}
+                currency="CHF"
+                cycle={CYCLE.MONTHLY}
+                planIDs={{ [PLANS.MAIL]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
+                isScheduled={false}
+                subscription={buildSubscription()}
+                paymentForbiddenReason={{ forbidden: false }}
+                paymentFacade={{ showTaxCountry: true } as any}
+                trial={false}
+            />
+        );
+
+        expect(screen.getByTestId('price')).toHaveTextContent('2.99');
+        expect(screen.getByTestId('members-price-per-month')).toHaveTextContent('2.99');
+        expect(container).toHaveTextContent('-40%');
+        expect(container).not.toHaveTextContent('Demo offer');
+        expect(screen.queryByTestId('coupon-discount')).not.toBeInTheDocument();
+    });
 });

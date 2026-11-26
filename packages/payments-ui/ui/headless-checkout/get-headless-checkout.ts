@@ -34,6 +34,7 @@ import { GIFT_LINE_ITEM_TYPE, type GiftLineItem, createGiftItem } from './items/
 import { GUARD_LINE_ITEM_TYPE, type GuardLineItem, createGuardItem } from './items/guard';
 import { MEMBERS_LINE_ITEM_TYPE, type MembersLineItem, createMembersItem } from './items/members';
 import { NEXT_BILLING_LINE_ITEM_TYPE, type NextBillingLineItem, createNextBillingItem } from './items/next-billing';
+import { OFFER_LINE_ITEM_TYPE, type OfferLineItem, createOfferItem } from './items/offer';
 import { PLAN_AMOUNT_LINE_ITEM_TYPE, type PlanAmountLineItem, createPlanAmountItem } from './items/plan-amount';
 import {
     PLAN_AMOUNT_WITH_DISCOUNT_LINE_ITEM_TYPE,
@@ -82,7 +83,8 @@ export type CheckoutLineItemOptional =
     | PlanAmountWithDiscountPerMonthLineItem
     | BaseRenewAmount
     | GuardLineItem
-    | PlanDiscountLineItem;
+    | PlanDiscountLineItem
+    | OfferLineItem;
 
 export type CheckoutLineItem = CheckoutLineItemMandatory | CheckoutLineItemOptional;
 /**
@@ -164,6 +166,7 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
     // Other flags
     const hasCredits = !!checkResult.Credit;
     const hasProration = !!checkResult.Proration;
+    const hasOffer = !!checkoutUi.offerDiscount;
     const hasDiscount = !!checkResult.CouponDiscount;
     const hasInvisibleCoupon = couponConfig?.hidden || getHas2025OfferCoupon(checkResult.Coupon?.Code ?? null);
 
@@ -202,6 +205,7 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
         hasProration,
         hasDiscount,
         hasInvisibleCoupon,
+        hasOffer,
     };
 }
 
@@ -219,6 +223,7 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         [PRORATION_LINE_ITEM_TYPE]: createProrationItem(ctx),
         [UNUSED_CREDIT_LINE_ITEM_TYPE]: createUnusedCreditItem(ctx),
         [COUPON_LINE_ITEM_TYPE]: createCouponItem(ctx),
+        [OFFER_LINE_ITEM_TYPE]: createOfferItem(ctx),
         [CREDIT_LINE_ITEM_TYPE]: createCreditItem(ctx),
         [GIFT_LINE_ITEM_TYPE]: createGiftItem(ctx),
         [PLAN_AMOUNT_WITH_DISCOUNT_LINE_ITEM_TYPE]: createNetAmountItem(ctx),

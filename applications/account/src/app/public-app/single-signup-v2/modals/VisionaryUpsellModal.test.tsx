@@ -23,6 +23,7 @@ const visionaryPlan: Plan = {
     Features: 1,
     State: 1,
     Pricing: { '1': 3999, '12': 35988, '24': 67176 },
+    DefaultPricing: { '1': 3999, '12': 35988, '24': 67176 },
     PeriodEnd: { '1': 1748170100, '12': 1777114100, '24': 1808650100 },
     Currency: 'CHF',
     Quantity: 1,
