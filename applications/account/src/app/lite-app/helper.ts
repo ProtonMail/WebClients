@@ -1,5 +1,6 @@
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS } from '@proton/shared/lib/constants';
+import { getProduct } from '@proton/shared/lib/apps/helper';
+import { type ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 export enum SupportedActions {
     WalletSettings = 'wallet-settings',
@@ -41,6 +42,21 @@ const list: { value: string; product: ProductParam }[] = [
     { value: 'generic', product: 'generic' },
     { value: 'business', product: 'business' },
 ];
+
+const isAppName = (product: ProductParam): product is APP_NAMES =>
+    !!product && !otherProductParamValues.some((value) => value === product);
+
+/**
+ * The `app` search parameter that `getApp` reads back as this app, or as an app of the same product for apps it doesn't
+ * list (e.g. the Pass browser extension gets the Pass plans)
+ */
+export const getAppSearchParam = (app: APP_NAMES) => {
+    const product = getProduct(app);
+    return (
+        list.find((item) => item.product === app) ??
+        list.find((item) => isAppName(item.product) && getProduct(item.product) === product)
+    )?.value;
+};
 
 export const getApp = ({
     app,

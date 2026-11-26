@@ -16,6 +16,7 @@ import signedOutOfAllDevices from '@proton/styles/assets/img/illustrations/signe
 import noop from '@proton/utils/noop';
 
 import { signOutAllExternalSessions } from './api';
+import { getUpgradeHref } from './getUpgradeHref';
 
 const STEPS = {
     INIT: 'INIT',
@@ -23,6 +24,7 @@ const STEPS = {
 };
 
 const providerName = BRAND_NAME;
+
 function SignedOutSection() {
     const [user] = useUser();
     return (
@@ -39,9 +41,8 @@ function SignedOutSection() {
                 <ButtonLike color="norm" fullWidth as={Href} href={SSO_PATHS.LOGIN} target={'_self'}>{c('Sign out')
                     .t`Sign in to ${providerName}`}</ButtonLike>
                 {user.canPay && (
-                    <ButtonLike as={Href} href={'/lite?action=subscribe-account'} target={'_self'} fullWidth>{c(
-                        'Action'
-                    ).t`Upgrade to 2 devices or more`}</ButtonLike>
+                    <ButtonLike as={Href} href={getUpgradeHref(user)} target={'_self'} fullWidth>{c('Action')
+                        .t`Upgrade to 2 devices or more`}</ButtonLike>
                 )}
             </div>
         </div>
@@ -70,9 +71,8 @@ function SignOutSection({ onSignOut, submitting }: SignOutContentProps) {
                 <Button color="norm" loading={submitting} fullWidth onClick={onSignOut}>{c('Action')
                     .t`Sign out on all devices`}</Button>
                 {user.canPay && (
-                    <ButtonLike as={Href} href={'/lite?action=subscribe-account'} target={'_self'} fullWidth>{c(
-                        'Action'
-                    ).t`Upgrade to 2 devices or more`}</ButtonLike>
+                    <ButtonLike as={Href} href={getUpgradeHref(user)} target={'_self'} fullWidth>{c('Action')
+                        .t`Upgrade to 2 devices or more`}</ButtonLike>
                 )}
             </div>
         </div>
