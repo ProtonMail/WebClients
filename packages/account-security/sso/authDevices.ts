@@ -51,7 +51,11 @@ export const selectPendingAuthDevices = createSelector(
                 device.State === AuthDeviceState.PendingActivation ||
                 // Pending admin activation is the same as PendingActivation, the user could go back and realize there's another device
                 device.State === AuthDeviceState.PendingAdminActivation;
-            return isActivation && Boolean(getValidActivation({ addresses, pendingAuthDevice: device }));
+            return (
+                isActivation &&
+                !device.IsRecovery &&
+                Boolean(getValidActivation({ addresses, pendingAuthDevice: device }))
+            );
         });
 
         return {

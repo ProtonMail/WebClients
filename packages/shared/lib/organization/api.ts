@@ -22,6 +22,7 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         SSOBackupPasswordDisabled: false,
         PasswordReminderEnforced: false,
         LumoApiEnabled: false,
+        ImpersonationDisabledForPasswordChange: false,
         AdminOptionalForPasswordChange: false,
         AllowedProducts: ['All'],
         InvoiceEmail: null,

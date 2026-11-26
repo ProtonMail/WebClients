@@ -41,6 +41,8 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
     const [confirmationCode, setConfirmationCode] = useState('');
     const errorHandler = useErrorHandler();
     const [rejectModalOpen, setRejectModalOpen] = useState(false);
+    const { member, memberAuthDevice } = pendingMemberAuthDevice;
+    const isPasswordReset = memberAuthDevice.IsRecovery;
 
     useEffectOnce(() => {
         dispatch(getMemberAddresses({ member: pendingMemberAuthDevice.member, retry: true })).catch(noop);
@@ -59,7 +61,11 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
             )
         )
             .then(() => {
-                createNotification({ text: c('sso').t`Access granted` });
+                createNotification({
+                    text: isPasswordReset
+                        ? c('member_password_reset').t`Password reset request approved`
+                        : c('sso').t`Access granted`,
+                });
                 rest.onClose?.();
             })
             .catch(errorHandler);
@@ -73,11 +79,14 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                 type: 'reject',
             })
         ).catch(noop);
-        createNotification({ text: c('sso').t`Access denied` });
+        createNotification({
+            text: isPasswordReset
+                ? c('member_password_reset').t`Password reset request denied`
+                : c('sso').t`Access denied`,
+        });
         rest.onClose?.();
     };
 
-    const { member, memberAuthDevice } = pendingMemberAuthDevice;
     const activation = getValidActivation({ addresses: member.Addresses || [], pendingAuthDevice: memberAuthDevice });
     const memberAddress = activation?.address.Email || '';
     const boldedMemberAddress = (
@@ -100,14 +109,25 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                 }}
             />
             <ModalTwo {...rest} size="small">
-                <ModalTwoHeader title={c('sso').t`Grant access to user?`} />
+                <ModalTwoHeader
+                    title={
+                        isPasswordReset
+                            ? c('member_password_reset').t`Approve password reset?`
+                            : c('sso').t`Grant access to user?`
+                    }
+                />
                 <ModalTwoContent>
                     <div className="mb-4">
-                        {c('sso')
-                            .jt`${boldedMemberAddress} is requesting your help to sign in to their ${BRAND_NAME} Account with single sign-on.`}
+                        {isPasswordReset
+                            ? c('member_password_reset')
+                                  .jt`${boldedMemberAddress} requested a password reset for their ${BRAND_NAME} Account.`
+                            : c('sso')
+                                  .jt`${boldedMemberAddress} is requesting your help to sign in to their ${BRAND_NAME} Account with single sign-on.`}
                     </div>
                     <div className="text-bold mb-2">
-                        {c('sso').t`Enter the confirmation code we sent to this user.`}
+                        {isPasswordReset
+                            ? c('member_password_reset').t`Enter the confirmation code shown on the user's screen.`
+                            : c('sso').t`Enter the confirmation code we sent to this user.`}
                     </div>
                     <div className="my-6">
                         <AuthDeviceConfirmCodeInput
@@ -127,7 +147,9 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                                 title={member.Name}
                                 info={
                                     <>
-                                        {c('sso').t`Tried to sign in at`}{' '}
+                                        {isPasswordReset
+                                            ? c('member_password_reset').t`Requested at`
+                                            : c('sso').t`Tried to sign in at`}{' '}
                                         <Time>{memberAuthDevice.LastActivityTime}</Time>
                                     </>
                                 }
@@ -143,8 +165,11 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                     </div>
                     <Card rounded>
                         <IcInfoCircle className="align-text-top" />{' '}
-                        {c('sso')
-                            .t`This will sign the user out of their other devices and they will have to create a new backup password.`}
+                        {isPasswordReset
+                            ? c('member_password_reset')
+                                  .t`Approve only if you've confirmed this request with the user. They'll then set a new password.`
+                            : c('sso')
+                                  .t`This will sign the user out of their other devices and they will have to create a new backup password.`}
                     </Card>
                 </ModalTwoContent>
                 <ModalTwoFooter>
@@ -152,7 +177,9 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                         onClick={() => {
                             setRejectModalOpen(true);
                         }}
-                    >{c('sso').t`Deny access`}</Button>
+                    >
+                        {isPasswordReset ? c('member_password_reset').t`Deny` : c('sso').t`Deny access`}
+                    </Button>
                     <Button
                         color="norm"
                         loading={loading}
@@ -160,7 +187,9 @@ const MemberAuthDevicesModal = ({ pendingMemberAuthDevice, ...rest }: Props) => 
                         onClick={() => {
                             handleAccept(confirmationCode);
                         }}
-                    >{c('sso').t`Grant access`}</Button>
+                    >
+                        {isPasswordReset ? c('member_password_reset').t`Approve` : c('sso').t`Grant access`}
+                    </Button>
                 </ModalTwoFooter>
             </ModalTwo>
         </>

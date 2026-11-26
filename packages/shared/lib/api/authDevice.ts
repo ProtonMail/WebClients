@@ -27,6 +27,28 @@ export const associateAuthDeviceConfig = ({ DeviceID, ...data }: { DeviceID: str
     data,
 });
 
+export const addRecoveryAuthDeviceConfig = (data: {
+    Name: string;
+    ActivationToken: string;
+    ConfirmationCodeVersion: number;
+}) => ({
+    method: 'post',
+    url: 'auth/v4/recovery/devices',
+    data,
+});
+
+export const associateRecoveryAuthDeviceConfig = ({
+    DeviceID,
+    ...data
+}: {
+    DeviceID: string;
+    DeviceToken: string;
+}) => ({
+    method: 'post',
+    url: `auth/v4/recovery/devices/${DeviceID}/associate`,
+    data,
+});
+
 export const getAuthDevicesConfig = () => ({
     method: 'get',
     url: `auth/v4/devices`,
@@ -78,6 +100,20 @@ export const activateMemberAuthDeviceConfig = ({
 }) => ({
     method: 'post',
     url: `core/v4/members/${MemberID}/devices/reset`,
+    data,
+});
+
+export const activateMemberRecoveryAuthDeviceConfig = ({
+    MemberID,
+    ...data
+}: {
+    MemberID: string;
+    AuthDeviceID: string;
+    EncryptedSecret: string;
+    UserKeys: { ID: string; PrivateKey: string }[];
+}) => ({
+    method: 'post',
+    url: `core/v4/members/${MemberID}/recovery/devices/reset`,
     data,
 });
 

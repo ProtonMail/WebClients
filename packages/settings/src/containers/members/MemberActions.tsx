@@ -72,6 +72,7 @@ export const getMemberPermissions = ({
     organization,
     organizationKey,
     disableMemberSignIn,
+    impersonationDisabled,
     backupPasswordDisabled,
     ssoDomainsSet,
     isOwner,
@@ -84,6 +85,7 @@ export const getMemberPermissions = ({
     organization?: Organization;
     organizationKey?: CachedOrganizationKey;
     disableMemberSignIn: boolean;
+    impersonationDisabled: boolean;
     /** The organization disabled the SSO backup password, see `getSSOIntent` */
     backupPasswordDisabled: boolean;
     ssoDomainsSet: ReturnType<typeof getSSODomainsSet>;
@@ -119,6 +121,7 @@ export const getMemberPermissions = ({
         user.isSelf &&
         isOwner &&
         !disableMemberSignIn &&
+        !impersonationDisabled &&
         appName !== APPS.PROTONVPN_SETTINGS &&
         isEnabled &&
         hasSetupOrganizationWithKeys &&
@@ -130,6 +133,7 @@ export const getMemberPermissions = ({
         addresses?.length > 0;
 
     const canChangePassword =
+        !impersonationDisabled &&
         isEnabled &&
         hasSetupOrganizationWithKeys &&
         !isSelf &&

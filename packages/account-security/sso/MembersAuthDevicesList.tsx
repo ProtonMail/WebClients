@@ -61,7 +61,11 @@ const MembersAuthDevicesList = ({
                                     <Button onClick={() => onApprove(pendingAdminActivation)}>
                                         <div className="flex items-center flex-nowrap gap-1">
                                             <IcCheckmark className="shrink-0" />
-                                            <span className="text-ellipsis">{c('sso').t`Grant`}</span>
+                                            <span className="text-ellipsis">
+                                                {memberAuthDevice.IsRecovery
+                                                    ? c('member_password_reset').t`Approve`
+                                                    : c('sso').t`Grant`}
+                                            </span>
                                         </div>
                                     </Button>
                                     <Button

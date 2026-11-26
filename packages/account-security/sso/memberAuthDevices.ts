@@ -85,16 +85,17 @@ export type PendingAdminActivations = ReturnType<
 >['pendingAdminActivationsWithMembers'];
 export type PendingAdminActivation = PendingAdminActivations[0];
 
-const canFetch = (user: UserModel, domains: Domain[]) => {
+const canFetch = (user: UserModel, domains: Domain[], isMemberResetEnabled: boolean) => {
     // If the user is admin and there is at least one domain with sso-intent flag, assume that this is an SSO enabled
     // organization that should fetch member devices.
-    return user.isAdmin && domains.some((domain) => domain.Flags['sso-intent']);
+    return user.isAdmin && (isMemberResetEnabled || domains.some((domain) => domain.Flags['sso-intent']));
 };
 
 const modelThunk = createAsyncModelThunk<Model, MemberAuthDevicesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
         const [user, domains] = await Promise.all([dispatch(userThunk()), dispatch(domainsThunk())]);
-        if (!canFetch(user, domains)) {
+        const isMemberResetEnabled = extraArgument.unleashClient?.isEnabled('MemberResetLink') ?? false;
+        if (!canFetch(user, domains, isMemberResetEnabled)) {
             return [];
         }
         return getPendingMemberAuthDevices({ api: extraArgument.api }).catch(() => {

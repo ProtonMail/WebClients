@@ -7,7 +7,11 @@ import { getIsMemberInManualApproveState } from '@proton/account/members/memberU
 import { unprivatizeMembersManual } from '@proton/account/members/unprivatizeMembers';
 import { organizationKeyThunk } from '@proton/account/organizationKey';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { activateMemberAuthDeviceConfig, rejectMemberAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
+import {
+    activateMemberAuthDeviceConfig,
+    activateMemberRecoveryAuthDeviceConfig,
+    rejectMemberAuthDeviceConfig,
+} from '@proton/shared/lib/api/authDevice';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
@@ -149,8 +153,11 @@ export const confirmPendingMemberAuthDevice = ({
                 keyPassword,
                 deviceSecretData: confirmMemberAuthDeviceData.deviceSecretData,
             });
+            const activateConfig = confirmMemberAuthDeviceData.pendingAuthDevice.IsRecovery
+                ? activateMemberRecoveryAuthDeviceConfig
+                : activateMemberAuthDeviceConfig;
             await api(
-                activateMemberAuthDeviceConfig({
+                activateConfig({
                     MemberID: confirmMemberAuthDeviceData.member.ID,
                     AuthDeviceID: confirmMemberAuthDeviceData.pendingAuthDevice.ID,
                     EncryptedSecret: encryptedSecret,

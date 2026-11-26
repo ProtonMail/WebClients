@@ -9,7 +9,9 @@ import noop from '@proton/utils/noop';
 import {
     AuthDeviceErrorCodes,
     addAuthDeviceConfig,
+    addRecoveryAuthDeviceConfig,
     associateAuthDeviceConfig,
+    associateRecoveryAuthDeviceConfig,
     deleteAuthDeviceConfig,
     getAuthDeviceConfig,
     getAuthDevicesConfig,
@@ -106,6 +108,7 @@ export interface AuthDeviceOutput {
     ActivationAddressID?: string;
     DeviceToken: string;
     ConfirmationCodeVersion?: ConfirmationCodeVersion;
+    IsRecovery: boolean;
 }
 
 export interface MemberAuthDeviceOutput extends AuthDeviceOutput {
@@ -258,13 +261,13 @@ export const createAuthDevice = async ({ api }: { api: Api }): Promise<DeviceDat
 };
 
 const encryptAuthDeviceActivationToken = async ({
-    primaryAddressKey,
+    armoredKey,
     deviceSecretData,
 }: {
-    primaryAddressKey: AddressKey;
+    armoredKey: string;
     deviceSecretData: DeviceSecretData;
 }) => {
-    const publicKey = await CryptoProxy.importPublicKey({ armoredKey: primaryAddressKey.PrivateKey });
+    const publicKey = await CryptoProxy.importPublicKey({ armoredKey });
     const { message } = await CryptoProxy.encryptMessage({
         encryptionKeys: [publicKey],
         textData: deviceSecretData.serializedData,
@@ -289,19 +292,21 @@ export const decryptAuthDeviceActivationToken = async ({
     return deserializeAuthDeviceSecretData(deviceID, data);
 };
 
-export const createAuthDeviceToActivate = async ({
+const createAuthDeviceWithActivationToken = async ({
     api,
-    primaryAddressKey,
+    armoredKey,
+    getAddAuthDeviceConfig,
 }: {
     api: Api;
-    primaryAddressKey: AddressKey;
+    armoredKey: string;
+    getAddAuthDeviceConfig: typeof addAuthDeviceConfig | typeof addRecoveryAuthDeviceConfig;
 }): Promise<DeviceData> => {
     const deviceSecretData = await generateAuthDeviceSecretData();
     const name = getDeviceName();
-    const activationToken = await encryptAuthDeviceActivationToken({ primaryAddressKey, deviceSecretData });
+    const activationToken = await encryptAuthDeviceActivationToken({ armoredKey, deviceSecretData });
 
     const deviceOutput = await api<{ AuthDevice: AuthDeviceOutput }>(
-        addAuthDeviceConfig({
+        getAddAuthDeviceConfig({
             Name: name,
             ActivationToken: activationToken,
             ConfirmationCodeVersion: producedConfirmationCodeVersion,
@@ -312,6 +317,47 @@ export const createAuthDeviceToActivate = async ({
         deviceSecretData,
         deviceOutput,
     };
+};
+
+export const createAuthDeviceToActivate = ({ api, primaryAddressKey }: { api: Api; primaryAddressKey: AddressKey }) =>
+    createAuthDeviceWithActivationToken({
+        api,
+        armoredKey: primaryAddressKey.PrivateKey,
+        getAddAuthDeviceConfig: addAuthDeviceConfig,
+    });
+
+export const createRecoveryAuthDevice = ({
+    api,
+    armoredPrimaryAddressPublicKey,
+}: {
+    api: Api;
+    armoredPrimaryAddressPublicKey: string;
+}) =>
+    createAuthDeviceWithActivationToken({
+        api,
+        armoredKey: armoredPrimaryAddressPublicKey,
+        getAddAuthDeviceConfig: addRecoveryAuthDeviceConfig,
+    });
+
+const decryptAuthDeviceSecret = async ({ key, encryptedSecret }: { key: CryptoKey; encryptedSecret: string }) => {
+    const decryptedSecret = await decryptData(
+        key,
+        Uint8Array.fromBase64(encryptedSecret),
+        utf8StringToUint8Array(AesContext.deviceSecret)
+    );
+    return uint8ArrayToUtf8String(decryptedSecret);
+};
+
+export const getRecoveryAuthDeviceKeyPassword = async ({ api, deviceData }: { api: Api; deviceData: DeviceData }) => {
+    const {
+        AuthDevice: { EncryptedSecret },
+    } = await api<{ AuthDevice: AssociateAuthDeviceOutput }>(
+        associateRecoveryAuthDeviceConfig({
+            DeviceID: deviceData.deviceOutput.ID,
+            DeviceToken: deviceData.deviceOutput.DeviceToken,
+        })
+    );
+    return decryptAuthDeviceSecret({ key: deviceData.deviceSecretData.key, encryptedSecret: EncryptedSecret });
 };
 
 export const encryptAuthDeviceSecret = async ({
@@ -337,12 +383,7 @@ const getDecryptedAuthDeviceSecret = async ({
     deviceDataSerialized: DeviceDataSerialized;
 }) => {
     try {
-        const decryptedSecret = await decryptData(
-            deviceDataSerialized.deviceSecretData.key,
-            Uint8Array.fromBase64(encryptedSecret),
-            utf8StringToUint8Array(AesContext.deviceSecret)
-        );
-        return uint8ArrayToUtf8String(decryptedSecret);
+        return await decryptAuthDeviceSecret({ key: deviceDataSerialized.deviceSecretData.key, encryptedSecret });
     } catch {
         throw new AuthDeviceInvalidError(deviceDataSerialized.serializedDeviceData.id, 'Unable to decrypt');
     }

@@ -14,9 +14,10 @@ interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
 
 const ConfirmDenyMemberAuthDevice = ({ onClose, onConfirm, pendingMemberAuthDevice, ...rest }: Props) => {
     const email = pendingMemberAuthDevice.member.Name;
+    const isPasswordReset = pendingMemberAuthDevice.memberAuthDevice.IsRecovery;
     return (
         <Prompt
-            title={c('Title').t`Deny access to user?`}
+            title={isPasswordReset ? c('Title').t`Deny password reset?` : c('Title').t`Deny access to user?`}
             buttons={[
                 <Button
                     color="danger"
@@ -24,7 +25,9 @@ const ConfirmDenyMemberAuthDevice = ({ onClose, onConfirm, pendingMemberAuthDevi
                         onConfirm();
                         onClose?.();
                     }}
-                >{c('Action').t`Deny access`}</Button>,
+                >
+                    {isPasswordReset ? c('Action').t`Deny` : c('Action').t`Deny access`}
+                </Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             onClose={onClose}
@@ -32,7 +35,10 @@ const ConfirmDenyMemberAuthDevice = ({ onClose, onConfirm, pendingMemberAuthDevi
         >
             <p className="text-break">
                 {getBoldFormattedText(
-                    c('Info').t`This will deny access to **${email}**. Are you sure you want to continue?`
+                    isPasswordReset
+                        ? c('Info')
+                              .t`**${email}** won't be able to reset their password with this request. Are you sure?`
+                        : c('Info').t`This will deny access to **${email}**. Are you sure you want to continue?`
                 )}
             </p>
         </Prompt>
