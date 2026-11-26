@@ -45,7 +45,7 @@ import { MeetingOptions } from '../../shared/MeetingOptions';
 import { ScheduleMeetingRecapModal } from './ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
 import { ScheduleMeetingSvgIcon } from './ScheduleMeetingSvgIcon';
 import type { OnDateTimeChange } from './types';
-import { combineDateAndTime, getEditValues, getInitialValues, splitDateAndTime, validate } from './utils';
+import { combineDateAndTime, getEditValues, getInitialValues, splitDateAndTime, validate, validateTime } from './utils';
 
 import './ScheduleMeetingForm.scss';
 
@@ -346,7 +346,9 @@ export const ScheduleMeetingForm = ({
             return;
         }
 
-        if (fieldName === 'startDate' || fieldName === 'startTime') {
+        const previousTimesAreValid = validateTime(values.startTime) && validateTime(values.endTime);
+
+        if ((fieldName === 'startDate' || fieldName === 'startTime') && previousTimesAreValid) {
             const previousStart = combineDateAndTime(values.startDate, values.startTime, values.timeZone);
             const previousEnd = combineDateAndTime(values.endDate, values.endTime, values.timeZone);
             const previousDuration = previousEnd.getTime() - previousStart.getTime();

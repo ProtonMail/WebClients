@@ -30,6 +30,12 @@ describe('combineDateAndTime', () => {
         expect(Number.isNaN(combineDateAndTime(undefined, '10:00', 'America/Vancouver').getTime())).toBe(true);
     });
 
+    it.each(['25:99', 'abc'])('returns an invalid date for the time "%s" left in the time field', (time) => {
+        expect(Number.isNaN(combineDateAndTime(new Date(2026, 10, 12), time, 'America/Vancouver').getTime())).toBe(
+            true
+        );
+    });
+
     describe('browser with outdated time zone rules', () => {
         it('saves a Vancouver 02:30 typed on the night the outdated rules move the clock forward', () => {
             vi.stubEnv('TZ', 'America/Los_Angeles');
@@ -224,6 +230,10 @@ describe('validate', () => {
 
     it('reports an unreadable end time on the end time field', () => {
         expect(validate({ ...validValues, endTime: '25:99' })).toEqual({ endTime: 'Enter a time' });
+    });
+
+    it('reports a start time past 23 hours on the start time field', () => {
+        expect(validate({ ...validValues, startTime: '25:30' })).toEqual({ startTime: 'Enter a time' });
     });
 
     it('marks a time zone missing from the list without a message', () => {
