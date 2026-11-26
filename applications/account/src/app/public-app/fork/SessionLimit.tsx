@@ -5,7 +5,7 @@ import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork/con
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import signOutDevicesImg from '@proton/styles/assets/img/illustrations/sign-out-devices.svg';
 
-import { SupportedActions } from '../../lite-app/helper';
+import { SupportedActions, getAppSearchParam } from '../../lite-app/helper';
 import { purifyMessage } from '../components/purifyMessage';
 import Content from '../layout/Content';
 import Layout from '../layout/Layout';
@@ -19,12 +19,18 @@ export type SessionLimitState = {
     canPay: boolean;
 };
 
-// The plan selector of the lite app, on the session the user just signed in with
-const getUpgradeUrl = (localID: number) => {
+// The plan selector of the lite app, on the session the user just signed in with. The device limit comes with the
+// plan, so start on the plan selection (the checkout of the current plan can't raise it), with the app's plans.
+export const getUpgradeUrl = (localID: number, app: APP_NAMES) => {
     const searchParams = new URLSearchParams({
         action: SupportedActions.SubscribeAccount,
+        start: 'compare',
         [ForkSearchParameters.LocalID]: `${localID}`,
     });
+    const appSearchParam = getAppSearchParam(app);
+    if (appSearchParam) {
+        searchParams.set('app', appSearchParam);
+    }
     return `/lite?${searchParams.toString()}`;
 };
 
@@ -46,7 +52,7 @@ const SessionLimit = ({ state }: { state: SessionLimitState }) => {
                         })}
                     </Text>
                     {canPay && (
-                        <ButtonLike as="a" href={getUpgradeUrl(localID)} size="large" fullWidth>
+                        <ButtonLike as="a" href={getUpgradeUrl(localID, app)} size="large" fullWidth>
                             {c('Action').t`Upgrade to 2 devices or more`}
                         </ButtonLike>
                     )}
