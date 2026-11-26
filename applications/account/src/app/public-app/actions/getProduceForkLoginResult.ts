@@ -10,11 +10,12 @@ import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fo
 import { produceOAuthFork } from '@proton/shared/lib/authentication/fork/oauth';
 import { getProduceForkUrl, getShouldReAuth, produceFork } from '@proton/shared/lib/authentication/fork/produce';
 import type { ForkCodeLocation, PushForkResponse } from '@proton/shared/lib/authentication/interface';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { type APP_NAMES, APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getRequiresAddressSetup, getRequiresProtonAddressFromAdmin } from '@proton/shared/lib/keys/setupAddress';
+import { canPay } from '@proton/shared/lib/user/helpers';
 
 import type { AuthSession } from '../authSession';
 import type { AuthDesktopState } from '../fork/AuthDesktop';
@@ -34,6 +35,31 @@ const getIsProductDisabledResult = (code: number) => {
         API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED_BY_ORG_ADMIN,
         API_CUSTOM_ERROR_CODES.APPLICATION_BLOCKED_BY_ACCESS_RESTRICTION,
     ].some((errorCode) => errorCode === code);
+};
+
+const getIsSessionLimitResult = (code: number) => {
+    return code === API_CUSTOM_ERROR_CODES.SESSION_LIMIT_REACHED;
+};
+
+const getSessionLimitLoginResult = ({
+    app,
+    session,
+    error,
+}: {
+    app: APP_NAMES;
+    session: AuthSession;
+    error: unknown;
+}): LoginResult => {
+    return {
+        type: 'session-limit',
+        location: '/session-limit',
+        payload: {
+            app,
+            errorMessage: getNonEmptyErrorMessage(error),
+            localID: session.data.localID,
+            canPay: canPay(session.data.User),
+        },
+    };
 };
 
 export const getProduceForkLoginResult = async ({
@@ -143,8 +169,8 @@ export const getProduceForkLoginResult = async ({
                     result = { type: 'success' };
                 } catch (e) {
                     const apiError = getApiError(e);
-                    // This specific error is handled in the outside catch handler
-                    if (getIsProductDisabledResult(apiError.code)) {
+                    // These specific errors are handled in the outside catch handler
+                    if (getIsProductDisabledResult(apiError.code) || getIsSessionLimitResult(apiError.code)) {
                         throw e;
                     }
                     result = { type: 'error', errorMessage: getNonEmptyErrorMessage(e) };
@@ -198,6 +224,9 @@ export const getProduceForkLoginResult = async ({
             const { code } = getApiError(e);
             if (getIsProductDisabledResult(code)) {
                 return getProductDisabledLoginResult({ app: forkParameters.app, session, paths, api });
+            }
+            if (getIsSessionLimitResult(code)) {
+                return getSessionLimitLoginResult({ app: forkParameters.app, session, error: e });
             }
             throw e;
         }

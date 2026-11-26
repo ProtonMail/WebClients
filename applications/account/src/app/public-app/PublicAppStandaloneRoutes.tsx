@@ -11,6 +11,7 @@ import AccountLoaderPage from '../AccountLoaderPage';
 import AuthDesktop from './fork/AuthDesktop';
 import AuthExtension from './fork/AuthExtension';
 import ExternalSSOConsumer from './fork/ExternalSSOConsumer';
+import SessionLimit from './fork/SessionLimit';
 import useLocationWithoutLocale from './hooks/useLocationWithoutLocale';
 import OAuthPartnersContainer from './oauthPartners/OAuthPartnersContainer';
 import { PassAccountOnboarding } from './pass/PassAccountOnboarding';
@@ -94,6 +95,11 @@ const PublicAppStandaloneRoutes = ({ children }: { children: ReactNode }) => {
             {locationState?.type === 'auth-desktop' && (
                 <Route path="/auth-desktop">
                     <AuthDesktop state={locationState.payload} />
+                </Route>
+            )}
+            {locationState?.type === 'session-limit' && (
+                <Route path="/session-limit">
+                    <SessionLimit state={locationState.payload} />
                 </Route>
             )}
             {locationState?.type === 'oauth-partners' && (
