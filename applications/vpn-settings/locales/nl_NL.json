@@ -15895,6 +15895,12 @@
       "Disable recovery by phone": [
         "Herstellen via telefoon uitschakelen"
       ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
+      "Enabled": [
+        "Ingeschakeld"
+      ],
       "finalizing": [
         "afronden"
       ],
@@ -18458,6 +18464,12 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Een wijziging bij Gmail blokkeert ${ BRAND_NAME } om verbinding te maken. Verleen toestemming om de e-mailfunctionaliteit te herstellen."
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Voeg een gegevensherstelmethode toe om uw gegevens te ontgrendelen als u uw wachtwoord vergeet."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Voeg een herstel-e-mailadres of -telefoonnummer toe, zodat u uw wachtwoord opnieuw kunt instellen als u het vergeet."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Toegevoegd aan uw abonnement: ${ mergedAddonTitles }"
       ],
@@ -18493,6 +18505,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Maak een herstelzin aan, zodat u uw gegevens kunt herstellen als u uw wachtwoord vergeet."
       ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"
@@ -18535,6 +18550,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Bijvoorbeeld: **wachtwoord, qwerty**, etc."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereer een herstelzin om uw account te beschermen tegen gegevensverlies."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
@@ -18586,6 +18604,9 @@
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Beleid voor gedeelde servers kan worden toegepast op individuele gebruikers of groepen"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Sommige van uw gegevens zijn vergrendeld. Gebruik een herstelmethode om deze te ontgrendelen."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO"
@@ -18640,6 +18661,12 @@
       ],
       "Your DKIM signing is working.": [
         "Ondertekenen met DKIM werkt."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Uw herstelbestand is verouderd. Download een nieuw zodat u uw gegevens nog steeds kunt herstellen."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Uw herstelzin is verouderd. Haal een nieuwe, zodat u uw gegevens nog steeds kunt herstellen."
       ]
     },
     "tooltip": {

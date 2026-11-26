@@ -6847,6 +6847,9 @@
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } من أعضائك غير المستخدمين لـSSO يستخدمون المصادقة الثنائية لتسجيل الدخول إلى مؤسستك.",
         "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } من أعضائك غير المستخدمين لـSSO يستخدمون المصادقة الثنائية لتسجيل الدخول إلى مؤسستك."
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "شعار ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "${ invitedMemberCount } users need to accept their invite to start receiving group emails.": [
         "لا يحتاج أي مستخدم ${ invitedMemberCount } إلى قبول الدعوة لبدء تلقي رسائل البريد الإلكتروني الجماعية.",
         "يحتاج مستخدم واحد ${ invitedMemberCount } إلى قبول الدعوة لبدء تلقي رسائل البريد الإلكتروني الجماعية.",
@@ -6857,6 +6860,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "يتضمن ${ LUMO_APP_NAME } مساعد الكتابة ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "مساعد الكتابة من ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } و${ CALENDAR_APP_NAME }"
@@ -7123,6 +7129,9 @@
         "المزيد من المشتركين ${ invisibleCount }",
         "المزيد من المشتركين ${ invisibleCount }",
         "المزيد من المشتركين ${ invisibleCount }"
+      ],
+      "1 vault per user": [
+        "خزنة واحدة لكل مستخدم."
       ],
       "2FA disabled": [
         "تم تعطيل المصادقة الثنائية (2FA)"
@@ -7652,6 +7661,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "لا تنسى كلمة المرور هذه. إذا نسيتها، فلن تتمكن من إدارة مؤسستك."
       ],
+      "Do you remember your password?": [
+        "هل تتذكّر كلمة مرورك؟"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "هل تريد تسجيل الخروج من جميع الجلسات السابقة عدا الجلسة الحالية؟"
       ],
@@ -8002,6 +8014,9 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "إذا فقدت الوصول إلى جهاز المصادقة الثنائية، يمكنك استخدام الرموز الاحتياطية لتسجيل الدخول إلى حسابك. يستخدم الرمز الاحتياطي مرة واحدة فقط."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "إذا فقدت إمكانية الوصول إلى تطبيق المصادقة، فيمكنك استخدام أحد رموز الاسترداد الاحتياطية الستة عشر التي حصلت عليها عند إعداد المصادقة الثنائية. ${ learnMoreLink }"
+      ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "في حال إعادة تعيين كلمة المرور مؤخرًا، يمكن ${ recoveryMethodLink } لإلغاء قفل البيانات. إذا كان هذا بسبب إعادة تعيين قديمة لكلمة المرور، يمكن إيقاف ظهور الرسالة مجددًا."
       ],
@@ -8284,6 +8299,9 @@
       ],
       "No payment is required at this time.": [
         "لا يلزم الدفع في هذا الوقت."
+      ],
+      "No payment is required.": [
+        "لا يلزم الدفع."
       ],
       "No results found": [
         "لم يعثر على أي نتائج"
@@ -11128,6 +11146,9 @@
       "Pay invoice": [
         "دفع الفاتورة"
       ],
+      "Pay it": [
+        "سدّد المبلغ"
+      ],
       "Privacy policy": [
         "سياسة الخصوصية"
       ],
@@ -11367,6 +11388,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "مساعد الكتابة Scribe من ${ BRAND_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "مساعد الكتابة من ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "أضف مساعد الكتابة ${ BRAND_NAME } Scribe"
       ],
@@ -11402,6 +11426,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "مقاعد ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } لكل مَقْعَد"
       ],
       "${ seats } ${ MEET_APP_NAME } seats": [
         "${ seats } مقعد في ${ MEET_APP_NAME }",
@@ -11808,6 +11835,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } و ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "مساعد الكتابة من ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ n } calendars": [
         "${ n } تقويم",
@@ -12931,6 +12961,11 @@
         "قائمة التحقق من الاسترداد"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "أصبح بإمكانك الآن الوصول إلى تطبيق ${ CALENDAR_APP_NAME } الجديد. ${ link }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } تم تعطيله"
@@ -13056,6 +13091,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "آخر فرصة للحصول على خصم 80% على الشهر الأول من ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "هذه فرصتك الأخيرة للحصول على شهرك الأول من ${ plan } بهذا السعر."
+      ],
       "Last day to save": [
         "آخر يوم للتوفير"
       ],
@@ -13156,6 +13194,12 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " تفضل بزيارة ${ helpCenterLink } أو ${ contactSupportLink }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**أضف وسيلة دفع** لمواصلة استخدام جميع الميزات بعد انتهاء فترتك التجريبية."
+      ],
+      "Add a payment method": [
+        "إضافة وسيلة دفع"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "يمكنك الإلغاء في أي وقت قبل ${ cancelDate }."
@@ -13790,6 +13834,9 @@
       "This payment method will become your new default for all future renewals.": [
         "ستصبح طريقة الدفع هذه طريقتك الافتراضية لجميع عمليات التجديد المستقبلية."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "يتعذّر إتمام هذا الاشتراك في الوقت الحالي. يُرجى المحاولة مرة أخرى."
+      ],
       "Timeout exceeded": [
         "انتهت المهلة المحددة"
       ],
@@ -13822,6 +13869,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "تعذّر تهيئة ${ IDEAL_WERO_BRAND_NAME }. يُرجى المحاولة مرة أخرى لاحقًا."
+      ],
       "Invalid card number": [
         "رقم البطاقة غير صالح"
       ],
@@ -13844,6 +13894,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "حدث خطأ ما. فشل التحقق من Google Pay."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "بتأكيدك، فإنك تفوّض ${ BRAND_NAME } وStripe، مزوّد خدمة الدفع لدينا، بتحصيل الدفعات المستقبلية لاشتراكك من هذا الحساب المصرفي عبر خدمة الخصم المباشر SEPA، كما تفوّض مصرفك بخصم تلك الدفعات من حسابك. تُسدَّد دفعتك الأولى الآن عبر ${ IDEAL_WERO_BRAND_NAME }. وتتجدّد باقتك تلقائيًا حتى تلغي اشتراكك، وسنُخطرك قبل كل عملية تحصيل. وبالنسبة إلى الدفعات المحصّلة عبر الخصم المباشر، يمكنك طلب استرداد المبلغ من مصرفك خلال 8 أسابيع من تاريخ الخصم، وفقًا لشروط اتفاقك مع مصرفك. ولا ينطبق ذلك على الدفعة التي تسددها الآن عبر ${ IDEAL_WERO_BRAND_NAME }."
       ]
     },
     "Payments.info": {
@@ -16409,6 +16464,12 @@
       "Disable recovery by phone": [
         "تعطيل الاسترداد عن طريق الهاتف"
       ],
+      "Disabled": [
+        "معطل"
+      ],
+      "Enabled": [
+        "مفعّل"
+      ],
       "finalizing": [
         "جارٍ الإنهاء"
       ],
@@ -18700,6 +18761,9 @@
       "Spam, block, and allow lists": [
         "قوائم البريد المزعج والحظر والسماح"
       ],
+      "Special offer": [
+        "عرض خاص"
+      ],
       "Start a new import": [
         "بدء عملية استيراد جديدة"
       ],
@@ -19024,6 +19088,12 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "مَنعَ تغيير ما من طرف Gmail تطبيق ${ BRAND_NAME } من الاتصال. يُرجى منح الإذن لإعادة تفعيل ميزة البريد الإلكتروني"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "أضف وسيلة لاستعادة البيانات حتى تتمكن من الوصول إليها في حال نسيت كلمة المرور."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "أضف بريداً إلكترونياً أو رقم هاتف لاسترداد الحساب، حتى تتمكن من إعادة تعيين كلمة مرورك في حال نسيتها."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "أُضيف إلى خطتك: ${ mergedAddonTitles }"
       ],
@@ -19059,6 +19129,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "انسخ والصق عنوان URL هذا في حقل معرّف الكيان لدى موفّر هويتك"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "أنشئ عبارة استرداد لتتمكن من استعادة بياناتك في حال نسيت كلمة مرورك."
       ],
       "Customize import to reduce the number of folders": [
         "تخصيص الاستيراد لتقليل عدد المجلدات"
@@ -19101,6 +19174,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "على سبيل المثال، **password، qwerty**، إلخ."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "أنشئ عبارة استرداد لحماية حسابك من فقدان البيانات."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "يقوم Gmail تلقائيًا بتصنيف بعض رسائل البريد الإلكتروني مثل الرسائل الاجتماعية أو الترويجية. يمكنك تحديد مكان استيراد رسائل البريد الإلكتروني هذه."
@@ -19149,6 +19225,9 @@
       ],
       "Shared server policies can be applied to individual users or groups": [
         "يمكن تطبيق سياسات الخادم المشترك على المستخدمين الفرديين أو المجموعات"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "بعض بياناتك مقفلة. استخدم إحدى طرق الاسترداد لإلغاء قفلها."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "حدد النطاق المسموح به للمصادقة باستخدام SAML SSO"
@@ -19203,6 +19282,12 @@
       ],
       "Your DKIM signing is working.": [
         "توقيع DKIM يعمل الآن."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "ملف الاسترداد الخاص بك قديم. قم بتنزيل ملف جديد لتتمكن من استعادة بياناتك."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "عبارة الاسترداد الخاصة بك قديمة. احصل على عبارة جديدة لتتمكن من استعادة بياناتك."
       ]
     },
     "tooltip": {

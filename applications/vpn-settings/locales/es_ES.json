@@ -219,6 +219,9 @@
       "Reminder": [
         "Recordatorio"
       ],
+      "Reset member password": [
+        "Restablecer la contraseña"
+      ],
       "Restrict app access": [
         "Restringir el acceso a las aplicaciones"
       ],
@@ -8322,7 +8325,7 @@
         "Error el obtener los registros."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos de 50 GB cada uno"
       ],
       "Fill in user details": [
         "Rellena los datos del usuario."
@@ -8434,6 +8437,9 @@
       ],
       "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
         "Si se desactiva, ${ BRAND_NAME } seguirá usando tu teléfono de recuperación para enviar notificaciones de seguridad."
+      ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Si está habilitado, los usuarios no pueden restablecer sus contraseñas sin una aprobación de un administrador."
       ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Si es posible, al iniciar sesión usa un dispositivo o navegador en el que hayas iniciado sesión antes."
@@ -8664,6 +8670,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Administre la configuración para la recuperación de cuenta para los miembros de su organización."
       ],
       "Manage groups in your identity provider": [
         "Gestiona los grupos en tu proveedor de identidad"
@@ -11232,6 +11241,9 @@
       "Require 2FA for everyone": [
         "Requerir 2FA para todos"
       ],
+      "Require admin approval": [
+        "Requiere aprobación del administrador"
+      ],
       "Require password check-ins": [
         "Exigir comprobaciones de contraseña"
       ],
@@ -13567,6 +13579,9 @@
       "Key copied to the clipboard": [
         "Se ha copiado la clave al portapapeles."
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Usuarios ahora pueden restablecer sus contraseñas con la frase de recuperación."
+      ],
       "Monitoring disabled": [
         "El monitoreo ha sido desactivado."
       ],
@@ -13584,6 +13599,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Las comprobaciones de contraseña ya son obligatorias para todos los miembros"
+      ],
+      "Password resets now require administrator approval": [
+        "Restablecer la contraseña ahora requiere aprobación del administrador."
       ],
       "Reminder has been sent": [
         "Se ha enviado un recordatorio"
@@ -17082,6 +17100,12 @@
       "Disable recovery by phone": [
         "Desactivar recuperación por teléfono"
       ],
+      "Disabled": [
+        "Desactivado"
+      ],
+      "Enabled": [
+        "Activado"
+      ],
       "failed": [
         "fallido"
       ],
@@ -19390,6 +19414,9 @@
       ],
       "Spam, block, and allow lists": [
         "Listas de direcciones permitidas, bloqueadas y spam"
+      ],
+      "Special offer": [
+        "Oferta especial"
       ],
       "Start a new import": [
         "Iniciar una nueva importación"

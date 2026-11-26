@@ -219,6 +219,9 @@
       "Reminder": [
         "Promemoria"
       ],
+      "Reset member password": [
+        "Reimposta la password dell'utente"
+      ],
       "Restrict app access": [
         "Accesso limitato all'app"
       ],
@@ -3893,6 +3896,11 @@
         "/utente al mese"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Effettua l'upgrade per abilitare ${ DARK_WEB_MONITORING_NAME }"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Sconosciuto"
@@ -7317,6 +7325,10 @@
       "${ MEET_APP_NAME } seats": [
         "Licenze ${ MEET_APP_NAME }"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } membro non ha configurato un metodo di recupero.",
+        "${ membersWithoutRecovery } membri non hanno configurato un metodo di recupero."
+      ],
       "${ n } address": [
         "${ n } indirizzo",
         "${ n } indirizzi"
@@ -8442,6 +8454,9 @@
       "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
         "Se disattivato, ${ BRAND_NAME } utilizzerà comunque il tuo telefono di recupero per inviare notifiche di sicurezza."
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Se abilitata, questa opzione impedisce ai membri di reimpostare la propria password senza l'approvazione di un amministratore."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Se possibile, quando accedi, usa un dispositivo o un browser in cui hai già effettuato l'accesso in precedenza."
       ],
@@ -8671,6 +8686,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assicurati di ${ addARecoveryMethod } in modo da poter tornare al tuo account se dimentichi la password."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Gestisci le impostazioni di recupero dell'account per i membri della tua organizzazione."
       ],
       "Manage groups in your identity provider": [
         "Gestisci i gruppi nel tuo provider di identità"
@@ -9380,6 +9398,9 @@
       ],
       "This data recovery method requires a password reset option (email or SMS)": [
         "Questo metodo di recupero dati richiede un'opzione di reimpostazione della password (email o SMS)"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Questa funzionalità non è inclusa nel tuo piano. Contatta il tuo amministratore per ottenere l'accesso."
       ],
       "This file is too large to preview": [
         "Questo file è troppo grande per l'anteprima"
@@ -11238,6 +11259,9 @@
       ],
       "Require 2FA for everyone": [
         "Richiedi 2FA per tutti"
+      ],
+      "Require admin approval": [
+        "Richiedi l'approvazione dell'amministratore"
       ],
       "Require password check-ins": [
         "Richiedi controlli della password"
@@ -13181,11 +13205,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteggi la tua agenda con la crittografia end-to-end. Include il supporto per i calendari personalizzati, la condivisione dei calendari e molto altro."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Crea, modifica e collabora su documenti crittografati end-to-end."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione dei file crittografata e molto altro."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteggi le tue email con la crittografia end-to-end. Include il supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati e molto altro."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Crea, modifica e collabora su fogli crittografati end-to-end."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accedi a contenuti bloccati e naviga privatamente. Include ${ serversAndCountries }, VPN ad altissima velocità, l'accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, download BitTorrent veloci e molto altro."
@@ -13574,6 +13604,9 @@
       "Key copied to the clipboard": [
         "Chiave copiata negli appunti"
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Ora i membri possono reimpostare la propria password utilizzando la frase di recupero."
+      ],
       "Monitoring disabled": [
         "Monitoraggio disabilitato"
       ],
@@ -13591,6 +13624,9 @@
       ],
       "Password check-ins are now required for all members": [
         "I controlli della password sono ora obbligatori per tutti i membri"
+      ],
+      "Password resets now require administrator approval": [
+        "Ora le reimpostazioni della password richiedono l'approvazione dell'amministratore."
       ],
       "Reminder has been sent": [
         "Il promemoria è stato inviato"
@@ -17086,6 +17122,12 @@
       "Disable recovery by phone": [
         "Disattiva il recupero tramite telefono"
       ],
+      "Disabled": [
+        "Disabilitato"
+      ],
+      "Enabled": [
+        "Abilitato"
+      ],
       "failed": [
         "fallito"
       ],
@@ -18470,6 +18512,9 @@
       "Cannot add more users": [
         "Impossibile aggiungere altri utenti"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verifica della carta"
       ],
@@ -19754,6 +19799,12 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Una modifica lato Gmail sta impedendo a ${ BRAND_NAME } di connettere. Concedi l'autorizzazione per ripristinare la funzionalità email."
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Aggiungi un metodo di recupero dati per sbloccare i tuoi dati nel caso in cui dimenticassi la password."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Aggiungi un indirizzo email o un numero di telefono di recupero per poter reimpostare la password nel caso in cui la dimenticassi."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Aggiunto al tuo piano: ${ mergedAddonTitles }"
       ],
@@ -19792,6 +19843,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copia e incolla questo URL nel campo Entity ID del tuo fornitore di identità"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Crea una frase di recupero per poter recuperare i tuoi dati nel caso in cui dimenticassi la password."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"
@@ -19834,6 +19888,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Ad esempio, **password, qwerty**, ecc."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genera una frase di recupero per proteggere il tuo account dalla perdita di dati."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
@@ -19885,6 +19942,9 @@
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Politiche del server condivise possono essere applicate a utenti individuali o gruppi"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Alcuni dei tuoi dati sono bloccati. Utilizza un metodo di recupero per sbloccarli."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Specifica il dominio autorizzato all'autenticazione con SAML SSO"
@@ -19946,6 +20006,12 @@
       "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
         "La tua organizzazione ha raggiunto il limite di ${ maxServiceAccounts } account di servizio.",
         "La tua organizzazione ha raggiunto il limite di ${ maxServiceAccounts } account di servizio."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Il tuo file di ripristino non è aggiornato. Scaricane uno nuovo per poter recuperare i tuoi dati."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La tua frase di recupero è scaduta. Richiedine una nuova per poter recuperare i tuoi dati."
       ]
     },
     "tooltip": {

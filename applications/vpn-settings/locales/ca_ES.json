@@ -219,6 +219,9 @@
       "Reminder": [
         "Recordatori"
       ],
+      "Reset member password": [
+        "Restableix la contrasenya del membre"
+      ],
       "Restrict app access": [
         "Restringiu l'accés a l'aplicació"
       ],
@@ -3893,6 +3896,11 @@
         "/usuari per mes"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Milloreu de pla per activar ${ DARK_WEB_MONITORING_NAME }"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Desconegut"
@@ -5027,7 +5035,7 @@
         "Temps necessari abans de concedir-li accés automàticament"
       ],
       "To access their account, sign in to ${ ACCOUNT_APP_NAME } in a browser.": [
-        "Per accedir al seu compte, inicieu sessió a ${ ACCOUNT_APP_NAME } en un navegador."
+        "Per a accedir al seu compte, inicieu sessió a ${ ACCOUNT_APP_NAME } en un navegador."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Per a desactivar aquest mètode de recuperació, esborreu tots els contactes de recuperació."
@@ -5135,7 +5143,7 @@
         "Ja existeix un grup amb aquest nom"
       ],
       "Add and verify a custom domain to create service accounts.": [
-        "Afegiu i verifiqueu un domini personalitzat per crear comptes de servei."
+        "Afegiu i verifiqueu un domini personalitzat per a crear comptes de servei."
       ],
       "Address cannot be yours": [
         "L'adreça no pot ser vostra"
@@ -5655,7 +5663,7 @@
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
       ],
       "This manager has no encryption keys. Ask them to finish setting up their account.": [
-        "Aquest gestor no té cap clau d'encriptació. Demaneu-li que acabi de configurar el seu compte."
+        "Aquest gestor no té cap clau de xifratge. Demaneu-li que acabi de configurar el seu compte."
       ],
       "This name does not make a valid address. Try another name.": [
         "Aquest nom no forma una adreça vàlida. Proveu-ne un altre."
@@ -7317,6 +7325,10 @@
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } membre no ha configurat cap mètode de recuperació.",
+        "${ membersWithoutRecovery } membres no han configurat cap mètode de recuperació."
+      ],
       "${ n } address": [
         "${ n } adreça",
         "${ n } adreces"
@@ -7533,7 +7545,7 @@
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
       "A service account is a machine identity that belongs to your organization rather than to a single user. Use it to automate ${ BRAND_NAME } services through the CLI or API. No one can sign in to a service account—it acts only through access tokens.": [
-        "Un compte de servei és una identitat de màquina que pertany a la vostra organització en lloc d'un sol usuari. Feu-lo servir per automatitzar els serveis de ${ BRAND_NAME } mitjançant la CLI o l'API. Ningú no pot iniciar sessió en un compte de servei; només actua mitjançant testimonis d'accés."
+        "Un compte de servei és una identitat de màquina que pertany a la vostra organització i no a un únic usuari. Utilitzeu-lo per a automatitzar els serveis de ${ BRAND_NAME } mitjançant la CLI o l'API. Ningú no pot iniciar la sessió en un compte de servei; actua només mitjançant testimonis d'accés."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
@@ -8143,7 +8155,7 @@
         "Descarregueu l'aplicació i importeu els codis existents."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
+        "Descarregueu la vostra aplicació favorita avui i emporteu-vos la privadesa allà on aneu."
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per a carregar-lo."
@@ -8191,7 +8203,7 @@
         "Els empleats no poden connectar-se a internet sense una connexió VPN"
       ],
       "Enable ${ name } to allow it to access ${ BRAND_NAME } services again.": [
-        "Habiliteu ${ name } per permetre que torni a accedir als serveis de ${ BRAND_NAME }."
+        "Habiliteu ${ name } per a permetre que torni a accedir als serveis de ${ BRAND_NAME }."
       ],
       "Enable auto-renew to keep access to Plus servers and features.": [
         "Activeu la renovació automàtica per a mantenir l'accés als servidors i característiques Plus."
@@ -8442,6 +8454,9 @@
       "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
         "Si està desactivat, ${ BRAND_NAME } continuarà utilitzant el telèfon de recuperació per a enviar notificacions de seguretat."
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Si està habilitat, els membres no podran restablir la seva contrasenya sense l'aprovació d'un administrador."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Si és possible, en iniciar la sessió, feu servir un dispositiu o un navegador on hàgiu iniciat la sessió anteriorment."
       ],
@@ -8672,6 +8687,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
       ],
+      "Manage account recovery settings for your organization members.": [
+        "Gestioneu la configuració de recuperació de comptes per als membres de la vostra organització."
+      ],
       "Manage groups in your identity provider": [
         "Gestioneu els grups al vostre proveïdor d'identitat"
       ],
@@ -8784,7 +8802,7 @@
         "Cap compte de servei coincideix amb la vostra cerca."
       ],
       "No service accounts yet. Add one to automate ${ BRAND_NAME } services.": [
-        "Encara no hi ha cap compte de servei. Afegiu-ne un per automatitzar els serveis de ${ BRAND_NAME }."
+        "Encara no hi ha cap compte de servei. Afegiu-ne un per a automatitzar els serveis de ${ BRAND_NAME }."
       ],
       "No single sign-on": [
         "Sense inici de sessió únic"
@@ -9343,7 +9361,7 @@
         "La manera més segura de navegar, reproduir i estar en línia."
       ],
       "The service account was created. Retry saving to finish setting up its keys and managers.": [
-        "S'ha creat el compte de servei. Torneu-ho a desar per acabar de configurar-ne les claus i els gestors."
+        "S'ha creat el compte de servei. Torneu a intentar desar-ho per a acabar de configurar-ne les claus i els gestors."
       ],
       "The unpublished changes you made will be lost.": [
         "Els canvis no publicats que heu fet es perdran."
@@ -9380,6 +9398,9 @@
       ],
       "This data recovery method requires a password reset option (email or SMS)": [
         "Aquest mètode de recuperació de dades requereix una opció de restabliment de contrasenya (correu electrònic o SMS)"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Aquesta característica no és compatible amb el vostre pla. Contacteu amb l'administrador per a obtenir-hi accés."
       ],
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
@@ -11238,6 +11259,9 @@
       ],
       "Require 2FA for everyone": [
         "Requereix l'A2F per a tothom"
+      ],
+      "Require admin approval": [
+        "Requereix aprovació de l'administrador"
       ],
       "Require password check-ins": [
         "Requereix verificacions de contrasenya"
@@ -13181,11 +13205,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creeu, editeu i col·laboreu en documents xifrats d'extrem a extrem."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Protegiu els fitxers amb l'emmagatzematge xifrat al núvol. Inclou, entre d'altres, sincronització automàtica i compartició de fitxers xifrats."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creeu, editeu i col·laboreu en fulls de càlcul xifrats d'extrem a extrem."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accediu a contingut bloquejat i navegueu de manera privada. Inclou ${ serversAndCountries }, les velocitats més altes de VPN, accés a serveis d'estríming de tot el món, bloqueig de programari maliciós i publicitat, descàrregues ràpides de BitTorrent, etc."
@@ -13574,6 +13604,9 @@
       "Key copied to the clipboard": [
         "S'ha copiat la clau al porta-retalls."
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Els membres ja poden restablir la seva contrasenya amb la frase de recuperació"
+      ],
       "Monitoring disabled": [
         "S'ha desactivat la supervisió."
       ],
@@ -13591,6 +13624,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Ara es requereix la verificació de la contrasenya per a tots els membres"
+      ],
+      "Password resets now require administrator approval": [
+        "Ara, els reinicis de contrasenya requereixen l'aprovació d'un administrador"
       ],
       "Reminder has been sent": [
         "S'ha enviat un recordatori"
@@ -14749,7 +14785,7 @@
         "domini.com"
       ],
       "e.g. ci-bot": [
-        "per exemple, ci-bot"
+        "p. ex., ci-bot"
       ],
       "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
         "p. ex. https://example.com/app/protonvpn/XXXXX/sso/metadata"
@@ -16960,7 +16996,7 @@
         "S'ha rebutjat l'inici de sessió."
       ],
       "Sign-in requested on another device. Was it you?": [
-        "S'ha sol·licitat un inici de sessió en un altre dispositiu. Heu estat vosaltres?"
+        "Hi ha hagut una sol·licitud d'inici de sessió en un altre dispositiu. Ha estat vostra?"
       ],
       "Signing in": [
         "S'està iniciant la sessió"
@@ -17088,6 +17124,12 @@
       ],
       "Disable recovery by phone": [
         "Desactiva la recuperació per telèfon"
+      ],
+      "Disabled": [
+        "Desactivat"
+      ],
+      "Enabled": [
+        "Habilitat"
       ],
       "failed": [
         "ha fallat"
@@ -18473,6 +18515,9 @@
       "Cannot add more users": [
         "No es poden afegir més usuaris."
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verificació de la targeta"
       ],
@@ -18815,7 +18860,7 @@
         "Edita els servidors"
       ],
       "Edit service account": [
-        "Editeu el compte de servei"
+        "Edita el compte de servei"
       ],
       "Edit the list of servers of the gateway": [
         "Edita la llista de servidors de la passarel·la"
@@ -19757,6 +19802,12 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Un canvi per part de Gmail està bloquejant que ${ BRAND_NAME } es pugui connectar. Concediu permís per restablir la funcionalitat del correu electrònic"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Afegeix un mètode de recuperació de dades per desbloquejar-les si oblideu la contrasenya."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Afegiu un correu electrònic o un telèfon de recuperació per poder restablir la contrasenya si l'oblideu."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "S'ha afegit al vostre pla: ${ mergedAddonTitles }"
       ],
@@ -19795,6 +19846,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copieu i enganxeu aquest URL al camp ID de l'entitat del proveïdor d'identitat"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creeu una frase de recuperació per poder recuperar les dades si oblideu la contrasenya."
       ],
       "Customize import to reduce the number of folders": [
         "Personalitza la importació per reduir el nombre de carpetes"
@@ -19837,6 +19891,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Per exemple, **contrasenya, qwerty**, etc."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereu una frase de recuperació per protegir el compte davant la pèrdua de dades."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
@@ -19888,6 +19945,9 @@
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Les polítiques de servidor compartit es poden aplicar a cada usuari o a grups."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Part de les vostres dades estan bloquejades. Feu servir un mètode de recuperació per desbloquejar-les."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Especifiqueu el domini que es pot autenticar amb SSO basat en SAML"
@@ -19949,6 +20009,12 @@
       "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
         "La vostra organització ha assolit el límit d'${ maxServiceAccounts } compte de servei.",
         "La vostra organització ha assolit el límit de ${ maxServiceAccounts } comptes de servei."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "El fitxer de recuperació ha caducat. Descarregueu-ne un de nou perquè pugueu recuperar les dades."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La frase de recuperació ha caducat. Aconseguiu-ne una de nova per a poder recuperar les dades."
       ]
     },
     "tooltip": {

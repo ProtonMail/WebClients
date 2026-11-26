@@ -216,6 +216,9 @@
       "Reminder": [
         "Påminnelse"
       ],
+      "Reset member password": [
+        "Återställ medlemslösenord"
+      ],
       "Restrict app access": [
         "Begränsa appåtkomst"
       ],
@@ -1958,6 +1961,9 @@
       ],
       "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
         "Tilldela administratörsroller till grupper. Hantera åtkomst för många användare samtidigt och uppdatera den automatiskt när personer ansluter eller lämnar."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Välj från tre nya administratörsroller. Varje administratör får endast den åtkomst de behöver."
       ],
       "Choose from two new admin roles. Each admin receives only the access they need.": [
         "Välj från två nya administratörsroller. Varje administratör får endast den åtkomst de behöver."
@@ -3857,6 +3863,11 @@
         "/användare per månad"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Uppgradera för att aktivera ${ DARK_WEB_MONITORING_NAME }"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Okänd"
@@ -4966,7 +4977,7 @@
         "De kan komma att be om åtkomst till ditt konto i händelse av en nödsituation."
       ],
       "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
-        "De kommer att få tillträde automatiskt**idag**, på**${ formattedAccessibleAt }**.  Du kan neka deras begäran eller ge dem tillträde när som helst."
+        "De kommer automatiskt att få åtkomst **idag**, den **${ formattedAccessibleAt }**. Du kan avvisa deras begäran eller ge dem åtkomst omedelbart när som helst."
       ],
       "This will take effect immediately.": [
         "Detta kommer träda i kraft omedelbart."
@@ -5775,7 +5786,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "FN-egenskap saknas"
+        "Egenskapen FN saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -7247,6 +7258,10 @@
       "${ MEET_APP_NAME } seats": [
         "Användarplatserför ${ MEET_APP_NAME }"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } medlem har inte ställt in en återställningsmetod.",
+        "${ membersWithoutRecovery } medlemmar har inte ställt in en återställningsmetod."
+      ],
       "${ n } address": [
         "${ n } adress",
         "${ n } adresser"
@@ -8359,6 +8374,9 @@
       "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
         "Om inaktiverat kommer ${ BRAND_NAME } fortfarande att använda din telefon för återställning för att skicka säkerhetsaviseringar."
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Om aktiverad, kan inte medlemmar återställa sitt lösenord utan en administratörs godkännande."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Om möjligt, när du loggar in, använd en enhet eller en webbläsare där du har loggat in tidigare."
       ],
@@ -8586,6 +8604,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
       ],
+      "Manage account recovery settings for your organization members.": [
+        "Hantera återställningsinställningar för konton för din organisations medlemmar."
+      ],
       "Manage groups in your identity provider": [
         "Hantera grupper i din identitetsleverantör"
       ],
@@ -8717,6 +8738,9 @@
       ],
       "On": [
         "På"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Den ${ formattedPeriodEndDate } avslutas din gratis provperiod och ditt betalda paket börjar."
       ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "När åtkomst till ditt konto har beviljats kan de komma åt dina inställningar för **Återställning** och **ändra ditt ${ ACCOUNT_APP_NAME }-lösenord** åt dig."
@@ -9264,6 +9288,9 @@
       "This data recovery method requires a password reset option (email or SMS)": [
         "Denna metod för dataåterställning kräver ett alternativ för lösenordsåterställning (e-post eller SMS)"
       ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Denna funktion stöds inte i ditt paket. Kontakta din administratör för att få åtkomst."
+      ],
       "This file is too large to preview": [
         "Denna fil är för stor för att förhandsgranska"
       ],
@@ -9403,7 +9430,7 @@
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+        "För att hjälpa dig att hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "För att hjälpa till att hålla ditt konto säkert vill vi se till att det verkligen är du som försöker logga in."
@@ -9690,8 +9717,14 @@
       "We’ll send a reset code to ${ boldValue }.": [
         "Vi skickar en återställningskod till ${ boldValue }."
       ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "När detta är aktiverat kan medlemmar inte välja bort lösenordsbaserad inloggning i sina egna inställningar."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Vid aktivering av SAML för ${ appName } hos din identitetsleverantör så kan du bli ombedd att använda callback (ACS) URL och utfärdar-ID. Kopiera och klistra in värdena nedan i fälten hos din identitetsleverantör."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "När inloggning är begränsad, kan bara din e-postadress **${ primaryEmail }** användas för att logga in. Dina andra adresser kan inte kopplas till ditt konto, även om någon känner till dem."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
         "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
@@ -10290,7 +10323,7 @@
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }-app för stationär dator"
       ],
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Kontolösenord"
+        "${ BRAND_NAME } kontolösenord"
       ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } för företag"
@@ -11092,11 +11125,17 @@
       "Require 2FA for everyone": [
         "Kräv 2FA för alla"
       ],
+      "Require admin approval": [
+        "Kräv godkännande av administratör"
+      ],
       "Restrict sign-in to email address": [
         "Begränsa inloggning till e-postadress"
       ],
       "Restrict sign-in to username": [
         "Begränsa inloggning till användarnamn"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Begränsa inloggning till användarnamn och matchande ${ BRAND_NAME }-adresser"
       ],
       "Reveal password": [
         "Visa lösenord"
@@ -13025,11 +13064,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } Skapa, redigera och samarbeta i kalkylblad med end-to-end kryptering"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få åtkomst till blockerat innehåll och surfa privat. Inkluderar ${ serversAndCountries }, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
@@ -13418,6 +13463,9 @@
       "Key copied to the clipboard": [
         "Nyckel kopierad till urklipp"
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Medlemmar kan nu återställa sitt lösenord med deras återställningsfras"
+      ],
       "Monitoring disabled": [
         "Övervakning inaktiverad"
       ],
@@ -13432,6 +13480,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Lösenordsincheckningar är nu obligatoriskt för alla medlemmar"
+      ],
+      "Password resets now require administrator approval": [
+        "Återställning av lösenord kräver nu en administratörs godkännande"
       ],
       "Reminder has been sent": [
         "Påminnelse har skickats"
@@ -16470,7 +16521,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
@@ -16844,6 +16895,12 @@
       ],
       "Disable recovery by phone": [
         "Inaktivera återställning med telefon"
+      ],
+      "Disabled": [
+        "Inaktiverad"
+      ],
+      "Enabled": [
+        "Aktiverad"
       ],
       "failed": [
         "misslyckades"
@@ -17968,6 +18025,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
+      "${ capitalizedSource } role assignment paused": [
+        "${ capitalizedSource } rolltilldelning pausad"
+      ],
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
       ],
@@ -18225,6 +18285,9 @@
       ],
       "Cannot add more users": [
         "Kan inte lägga till fler användare"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Card verification": [
         "Kortverifiering"
@@ -18947,6 +19010,9 @@
       "Reject device?": [
         "Neka enhet?"
       ],
+      "Remove Always-on VPN device profile": [
+        "Ta bort Alltid-på VPN enhetsprofil"
+      ],
       "Remove device?": [
         "Ta bort enhet?"
       ],
@@ -19504,6 +19570,9 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "En ändring på Gmail-sidan blockerar ${ BRAND_NAME } från att ansluta. Bevilja behörighet att återupprätta e-postfunktionalitet"
       ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Lägg till en e-post för återställning eller telefon så att du kan återställa ditt lösenord om du glömmer det."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Tillagt till ditt paket: ${ mergedAddonTitles }"
       ],
@@ -19590,6 +19659,9 @@
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
+      ],
+      "Includes all users in your organization. Enforced only on devices where the Always-on VPN device profile has been deployed.": [
+        "Omfattar alla användare i din organisation. Tillämpas endast på enheter där enhetsprofilen för Always-on VPN har distribuerats."
       ],
       "Includes custom email domains and unlimited hide-my-email aliases in ${ MAIL_APP_NAME }, access to servers in 120+ countries in ${ VPN_SHORT_APP_NAME }, built-in 2FA and secure sharing in ${ PASS_SHORT_APP_NAME }, and more.": [
         "Inkluderar anpassade e-postdomäner och obegränsade hide-my-email-alias i ${ MAIL_APP_NAME }, åtkomst till servrar i över 120 länder i ${ VPN_SHORT_APP_NAME }, inbyggd 2FA och säker delning i ${ PASS_SHORT_APP_NAME } med mera."
@@ -19698,6 +19770,9 @@
       ],
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Tilldelad av en grupp. Ta bort användaren från gruppen för att ändra denna roll"
       ],
       "Disables end-to-end email encryption for this group": [
         "Inaktiverar end-to-end e-postkryptering för denna grupp"
@@ -20223,6 +20298,9 @@
       ],
       "Includes Ultra servers, reserved for you": [
         "Inkluderar Ultra-servrar, reserverade för dig"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nya tjänster utan extra kostnad, och förhandstillgång till det vi bygger härnäst."
       ],
       "Not included": [
         "Inte inkluderad"
