@@ -11,8 +11,8 @@ import SettingsLink from '../../components/link/SettingsLink';
 import Time from '../../components/time/Time';
 import { REACTIVATE_SOURCE } from '../payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '../payments/subscription/helpers/subscriptionExpires';
-import { useSubscriptionWithEndsBanner } from './useSubscriptionWithEndsBanner';
 import TopBanner from './TopBanner';
+import { useSubscriptionWithEndsBanner } from './useSubscriptionWithEndsBanner';
 
 const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
     const [subscriptions = []] = useAllSubscriptions();

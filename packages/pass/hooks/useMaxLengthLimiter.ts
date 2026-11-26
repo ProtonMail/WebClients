@@ -8,9 +8,9 @@ export const useMaxLengthLimiter = () => {
     const { createNotification } = useNotifications();
 
     return (
-            maxLength: number,
-            originalOnKeyDown?: KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>
-        ): KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement> =>
+        maxLength: number,
+        originalOnKeyDown?: KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>
+    ): KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement> =>
         (event) => {
             if (event.key.length === 1 && event.currentTarget.value.length >= maxLength) {
                 createNotification({

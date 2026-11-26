@@ -675,10 +675,11 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"lib/**/*.{js,ts,tsx}\"",
+        "format:write": "oxfmt --write \"lib/**/*.{js,ts,tsx}\"",
         "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && oxfmt --write lib/i18n/dateFnsLocaleMap.ts",
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "lint": "oxlint --quiet",
-        "pretty": "oxfmt --write \"lib/**/*.{js,ts,tsx}\"",
         "test": "TZ=UTC vitest run",
         "test:ci": "pnpm run test --run --silent=passed-only && pnpm run test:tz",
         "test:tz": "for tz in America/Los_Angeles Pacific/Kiritimati; do TZ=$tz vitest run --silent=passed-only || exit 1; done",

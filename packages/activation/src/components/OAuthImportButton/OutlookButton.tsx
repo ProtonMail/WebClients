@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
 import clsx from '@proton/utils/clsx';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 
 interface Props {
     className?: string;
@@ -23,12 +23,7 @@ const OutlookButton = ({ className, disabled, onClick, label, isDropdownButton }
             onClick={onClick}
             data-testid="OAuthImportButton:button:outlook"
         >
-            <img
-                alt=""
-                src={outlookLogo}
-                className="mr-2 w-custom self-center"
-                style={{ '--w-custom': '18px' }}
-            />
+            <img alt="" src={outlookLogo} className="mr-2 w-custom self-center" style={{ '--w-custom': '18px' }} />
             {label ?? c('Action').t`Continue with Outlook`}
         </ButtonLayout>
     );

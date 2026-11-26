@@ -25,4 +25,4 @@ const ghostChatSlice = createSlice({
 });
 
 export const { setGhostChatMode, toggleGhostChatMode } = ghostChatSlice.actions;
-export default ghostChatSlice.reducer; 
+export default ghostChatSlice.reducer;

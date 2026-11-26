@@ -58,7 +58,8 @@ export const fetchCompromisedBucket = async (
 };
 
 export type CompromisedCheckResult =
-    { status: 'not-modified' } | { status: 'checked'; compromised: boolean; etag: string };
+    | { status: 'not-modified' }
+    | { status: 'checked'; compromised: boolean; etag: string };
 
 export const checkPasswordCompromised = async (
     password: string,

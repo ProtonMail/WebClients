@@ -26,7 +26,8 @@ import type { AbuseReportPrefill } from './types';
 import { ABUSE_CATEGORIES, CATEGORIES_WITH_EMAIL_VERIFICATION } from './useReportAbuseModalState';
 
 export type ReportAbuseModalViewProps =
-    (LoadedReportAbuseModalViewProps & ModalStateProps & { loaded: true }) | { loaded: false };
+    | (LoadedReportAbuseModalViewProps & ModalStateProps & { loaded: true })
+    | { loaded: false };
 
 type LoadedReportAbuseModalViewProps = {
     handleSubmit: (formData: { category: AbuseCategory; email?: string; comment?: string }) => Promise<void>;

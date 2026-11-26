@@ -5,8 +5,8 @@ import { usePrefetchUsageLimits } from '../hooks/usePrefetchUsageLimits';
 import { useTierErrors } from '../hooks/useTierErrors';
 import { useLumoDispatch } from '../redux/hooks';
 import { clearTierErrors } from '../redux/slices/meta/errors';
-import { useExhaustedLimitNotice, useRemainingLimits } from '../services/usageLimitsStore';
 import { handleTierError } from '../services/errors/errorHandling';
+import { useExhaustedLimitNotice, useRemainingLimits } from '../services/usageLimitsStore';
 import { useLumoPlan } from './LumoPlanProvider';
 
 /**

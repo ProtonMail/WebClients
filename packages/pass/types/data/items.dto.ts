@@ -17,7 +17,8 @@ type AliasCreateDTO = {
 export type AliasCreateRequest = { origin: string; alias: AliasCreateDTO };
 
 export type LoginWithAliasCreationDTO =
-    { withAlias: true; alias: Omit<ItemCreateIntent<'alias'>, 'files'> } | { withAlias: false };
+    | { withAlias: true; alias: Omit<ItemCreateIntent<'alias'>, 'files'> }
+    | { withAlias: false };
 /**
  * Item creation DTO indexed on ItemType keys
  * - alias specifics : extra parameters required for alias creation

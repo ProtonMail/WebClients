@@ -122,6 +122,8 @@
     "scripts": {
         "check:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs --check",
         "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"**/*.{js,ts,tsx}\"",
+        "format:write": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "generate:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs",
         "lint": "oxlint --quiet",
         "test": "vitest",

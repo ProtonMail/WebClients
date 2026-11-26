@@ -30,7 +30,19 @@ describe('estimateImageCoverage', () => {
     });
 
     it('follows the matrix of a form XObject', () => {
-        expect(coverage([[4, [[600, 0, 0, 800, 0, 0], [0, 0, 1, 1]]], [10], [5]])).toBe(1);
+        expect(
+            coverage([
+                [
+                    4,
+                    [
+                        [600, 0, 0, 800, 0, 0],
+                        [0, 0, 1, 1],
+                    ],
+                ],
+                [10],
+                [5],
+            ])
+        ).toBe(1);
     });
 
     it('is not affected by rotation', () => {

@@ -64,10 +64,7 @@ describe('mergeConversationJsonTexts', () => {
         ]);
 
         const result = parseExportText(merged);
-        expect(result.conversations.map((conversation) => conversation.title)).toEqual([
-            'First chunk',
-            'Second chunk',
-        ]);
+        expect(result.conversations.map((conversation) => conversation.title)).toEqual(['First chunk', 'Second chunk']);
     });
 });
 
@@ -126,9 +123,9 @@ describe('parseExportFile', () => {
 
         expect(result.source).toBe('chatgpt');
         expect(result.conversations).toHaveLength(2);
-        expect(result.conversations.flatMap((conversation) => conversation.userPrompts.map((prompt) => prompt.text))).toEqual(
-            ['hello from 000', 'hello from 001']
-        );
+        expect(
+            result.conversations.flatMap((conversation) => conversation.userPrompts.map((prompt) => prompt.text))
+        ).toEqual(['hello from 000', 'hello from 001']);
     });
 
     it('parses privacy-portal exports with nested Conversations zip files', async () => {

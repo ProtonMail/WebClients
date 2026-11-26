@@ -29,9 +29,7 @@ const OPS: PdfOps = {
 };
 
 /** A closed rectangle in pdf.js path encoding (moveTo, 3x lineTo, closePath). */
-const rect = (x: number, y: number, w: number, h: number) => [
-    0, x, y, 1, x + w, y, 1, x + w, y + h, 1, x, y + h, 4,
-];
+const rect = (x: number, y: number, w: number, h: number) => [0, x, y, 1, x + w, y, 1, x + w, y + h, 1, x, y + h, 4];
 
 describe('isColourful', () => {
     it('ignores black, white, grey and hyperlink blue', () => {

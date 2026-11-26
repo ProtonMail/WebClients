@@ -1,11 +1,11 @@
+import { shouldRenderAsVegaChart } from '../vega/detectVegaSpec';
 import {
     blockContainsCompleteCodeFence,
     parseMarkdownCodeFence,
     splitMarkdownWithCompleteCodeFences,
 } from '../vega/parseMarkdownCodeFence';
-import { shouldRenderAsVegaChart } from '../vega/detectVegaSpec';
-import { parseCardRowFence, parseCardRowSegmentCode } from './parseCardRowFence';
 import type { MetricCardFence } from './metricCardTypes';
+import { parseCardRowFence, parseCardRowSegmentCode } from './parseCardRowFence';
 
 const METRIC_SECTION_KEY = 'metric-section';
 

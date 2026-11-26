@@ -79,7 +79,9 @@ interface AddInternalGroupMemberParameters extends BaseAddInternalGroupMemberPar
 
 export const addGroupMember = (
     data:
-        AddExternalGroupMemberParameters | AddInternalNonPrivateGroupMemberParameters | AddInternalGroupMemberParameters
+        | AddExternalGroupMemberParameters
+        | AddInternalNonPrivateGroupMemberParameters
+        | AddInternalGroupMemberParameters
 ) => ({
     method: 'post',
     url: 'core/v4/groups/members',

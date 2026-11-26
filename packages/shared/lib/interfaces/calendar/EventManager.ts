@@ -21,7 +21,9 @@ interface CalendarAlarmEventManagerCreate {
     Alarm: CalendarAlarm;
 }
 export type CalendarAlarmEventManager =
-    CalendarAlarmEventManagerDelete | CalendarAlarmEventManagerUpdate | CalendarAlarmEventManagerCreate;
+    | CalendarAlarmEventManagerDelete
+    | CalendarAlarmEventManagerUpdate
+    | CalendarAlarmEventManagerCreate;
 
 export interface CalendarUrlEventManagerDelete {
     ID: string;
@@ -38,7 +40,9 @@ export interface CalendarUrlEventManagerCreate {
     CalendarUrl: CalendarUrl;
 }
 export type CalendarUrlEventManager =
-    CalendarUrlEventManagerDelete | CalendarUrlEventManagerUpdate | CalendarUrlEventManagerCreate;
+    | CalendarUrlEventManagerDelete
+    | CalendarUrlEventManagerUpdate
+    | CalendarUrlEventManagerCreate;
 
 interface CalendarSubscriptionEventManagerDelete {
     ID: string;
@@ -75,7 +79,9 @@ export interface CalendarMemberEventManagerCreate {
 }
 
 export type CalendarMemberEventManager =
-    CalendarMemberEventManagerDelete | CalendarMemberEventManagerUpdate | CalendarMemberEventManagerCreate;
+    | CalendarMemberEventManagerDelete
+    | CalendarMemberEventManagerUpdate
+    | CalendarMemberEventManagerCreate;
 
 export interface CalendarEventManagerDelete {
     ID: string;
@@ -107,6 +113,8 @@ interface CalendarEventsEventManagerCreate {
     Event: CalendarEventWithoutBlob;
 }
 export type CalendarEventsEventManager =
-    CalendarEventsEventManagerDelete | CalendarEventsEventManagerUpdate | CalendarEventsEventManagerCreate;
+    | CalendarEventsEventManagerDelete
+    | CalendarEventsEventManagerUpdate
+    | CalendarEventsEventManagerCreate;
 
 export type CalendarEventManager = CalendarEventManagerCreate | CalendarEventManagerUpdate | CalendarEventManagerDelete;

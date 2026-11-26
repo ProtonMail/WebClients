@@ -1,4 +1,10 @@
-import { CARD_TYPES, type LumoCardDirection, type LumoCardSeverity, type LumoCardSpec, type LumoCardType } from './cardTypes';
+import {
+    CARD_TYPES,
+    type LumoCardDirection,
+    type LumoCardSeverity,
+    type LumoCardSpec,
+    type LumoCardType,
+} from './cardTypes';
 
 class CardSpecParseError extends Error {
     constructor(message: string) {

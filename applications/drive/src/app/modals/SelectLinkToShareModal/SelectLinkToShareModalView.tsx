@@ -15,7 +15,8 @@ import ModalContentLoader from '@proton/drive/modals/modalUtils/ModalContentLoad
 import useLoading from '@proton/hooks/useLoading';
 
 export type SelectLinkToShareModalViewProps =
-    ({ loaded: true } & LoadedSelectLinkToShareModalViewProps) | { loaded: false };
+    | ({ loaded: true } & LoadedSelectLinkToShareModalViewProps)
+    | { loaded: false };
 
 type LoadedSelectLinkToShareModalViewProps = {
     open: boolean;

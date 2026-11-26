@@ -125,7 +125,7 @@ export default function initDownloadBlocks(
                     );
                 }
                 if (result.thumbnailHashes) {
-                    thumbnailHashes = result.thumbnailHashes.map(hash => Uint8Array.fromBase64(hash));
+                    thumbnailHashes = result.thumbnailHashes.map((hash) => Uint8Array.fromBase64(hash));
                 }
                 manifestSignature = result.manifestSignature;
                 xAttr = result.xAttr;

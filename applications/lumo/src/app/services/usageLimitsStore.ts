@@ -92,11 +92,7 @@ export function setRemainingLimits(limits: LumoRemainingLimits, options: SetRema
     remainingLimitsRevision += 1;
 
     const appliedLimitCategory = toLimitCategory(options.appliedLimitCategory);
-    if (
-        appliedLimitCategory &&
-        limits[appliedLimitCategory] === 0 &&
-        previousLimits?.[appliedLimitCategory] !== 0
-    ) {
+    if (appliedLimitCategory && limits[appliedLimitCategory] === 0 && previousLimits?.[appliedLimitCategory] !== 0) {
         exhaustedLimitNotice = {
             limitCategory: appliedLimitCategory,
             modelTier: options.modelTier ?? getTierForLimitCategory(appliedLimitCategory),
@@ -180,10 +176,7 @@ export function setDebugModelLimitsExhausted(exhausted: boolean): void {
     debugModelLimitsExhausted = exhausted;
     if (exhausted) {
         exhaustedLimitNotice = { limitCategory: 'lite', modelTier: 'lumo-lite' };
-    } else if (
-        exhaustedLimitNotice &&
-        remainingLimits?.[exhaustedLimitNotice.limitCategory] !== 0
-    ) {
+    } else if (exhaustedLimitNotice && remainingLimits?.[exhaustedLimitNotice.limitCategory] !== 0) {
         exhaustedLimitNotice = null;
     }
     try {
@@ -430,11 +423,7 @@ export function shouldShowLimitUpsell(
     hasLumoPlus: boolean,
     selectedModelTier: UsageModelTier
 ): boolean {
-    return (
-        !hasLumoPlus &&
-        hasTierErrors &&
-        isModelTierLimitExhausted(selectedModelTier, remainingLimits)
-    );
+    return !hasLumoPlus && hasTierErrors && isModelTierLimitExhausted(selectedModelTier, remainingLimits);
 }
 
 export function resolveUsageModelTier(modelTier: ModelTier | undefined): UsageModelTier | undefined {
@@ -445,10 +434,7 @@ export function resolveUsageModelTier(modelTier: ModelTier | undefined): UsageMo
     return getSelectedModelTier(modelTier);
 }
 
-export function applyUsageFromStreamMessage(
-    message: GenerationResponseMessage,
-    modelTier?: UsageModelTier
-): void {
+export function applyUsageFromStreamMessage(message: GenerationResponseMessage, modelTier?: UsageModelTier): void {
     if (message.type !== 'usage' || !message.usage.remaining_limits) {
         return;
     }

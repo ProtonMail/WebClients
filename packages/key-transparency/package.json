@@ -23,9 +23,10 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"lib/**/*.{js,ts,tsx}\" \"tests/**/*.{js,ts,tsx}\"",
+        "format:write": "oxfmt --write \"lib/**/*.{js,ts,tsx}\" \"tests/**/*.{js,ts,tsx}\"",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "oxlint --quiet",
-        "pretty": "oxfmt --write \"lib/**/*.{js,ts,tsx}\" \"tests/**/*.{js,ts,tsx}\"",
         "test": "TZ=UTC vitest",
         "test:ci": "TZ=UTC vitest run"
     },

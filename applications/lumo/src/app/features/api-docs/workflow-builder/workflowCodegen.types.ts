@@ -2,14 +2,7 @@
  * JSON shape Lumo returns for workflow codegen (see workflowCodegenPrompt).
  */
 
-export type WorkflowNodeType =
-    | 'file_upload'
-    | 'prompt'
-    | 'conditional'
-    | 'response'
-    | 'loop'
-    | 'merge'
-    | 'other';
+export type WorkflowNodeType = 'file_upload' | 'prompt' | 'conditional' | 'response' | 'loop' | 'merge' | 'other';
 
 export interface WorkflowNode {
     id: string;

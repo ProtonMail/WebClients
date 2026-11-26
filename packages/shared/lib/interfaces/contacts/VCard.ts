@@ -24,7 +24,17 @@ export type VCardKey =
     | 'url';
 
 type ParamKey =
-    'language' | 'value' | 'pref' | 'altid' | 'pid' | 'type' | 'mediatype' | 'calscale' | 'sort-as' | 'geo' | 'tz';
+    | 'language'
+    | 'value'
+    | 'pref'
+    | 'altid'
+    | 'pid'
+    | 'type'
+    | 'mediatype'
+    | 'calscale'
+    | 'sort-as'
+    | 'geo'
+    | 'tz';
 
 export interface VCardProperty<T = any> {
     value: T;

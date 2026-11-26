@@ -10,7 +10,12 @@ import {
 } from './constants';
 
 export type BackgroundRejectionReason =
-    'empty' | 'fileTooLarge' | 'nameTooLong' | 'unsupportedType' | 'undecodable' | 'imageTooLarge';
+    | 'empty'
+    | 'fileTooLarge'
+    | 'nameTooLong'
+    | 'unsupportedType'
+    | 'undecodable'
+    | 'imageTooLarge';
 
 export class InvalidBackgroundError extends Error {
     readonly reason: BackgroundRejectionReason;

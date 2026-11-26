@@ -1,4 +1,4 @@
-import type { NodeMeta } from "../NodeMeta";
+import type { NodeMeta } from '../NodeMeta';
 import type { DocumentKeys } from './DocumentKeys';
 
 /**

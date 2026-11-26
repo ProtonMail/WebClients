@@ -1,5 +1,5 @@
-import { sharedPersistReducer } from '@proton/redux-shared-store/sharedReducers';
 import { getPersistedState } from '@proton/redux-shared-store/persist';
+import { sharedPersistReducer } from '@proton/redux-shared-store/sharedReducers';
 
 import type { MeetState } from './rootReducer';
 

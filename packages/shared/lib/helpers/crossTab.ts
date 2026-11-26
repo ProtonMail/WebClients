@@ -7,7 +7,7 @@ const CROSS_TAB_EVENT_KEY = 'cte';
 let id: string | undefined;
 
 const generateId = () => {
-    return  crypto.getRandomValues(new Uint8Array(6)).toBase64();
+    return crypto.getRandomValues(new Uint8Array(6)).toBase64();
 };
 
 export const sendMessageToTabs = (type: string, data: any) => {

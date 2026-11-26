@@ -9,7 +9,13 @@ import {
     normalizeUnsafeVegaExpressions,
     normalizeVegaLiteSpec,
 } from './normalizeVegaLiteSpec';
-import { applyProtonChartPolish, applyProtonMarkColors, applyResponsiveChartLayout, stripHardcodedChartColors, stripStrayCompositionMarkEncoding } from './protonVegaTheme';
+import {
+    applyProtonChartPolish,
+    applyProtonMarkColors,
+    applyResponsiveChartLayout,
+    stripHardcodedChartColors,
+    stripStrayCompositionMarkEncoding,
+} from './protonVegaTheme';
 
 export class VegaSpecSecurityError extends Error {
     constructor(message: string) {

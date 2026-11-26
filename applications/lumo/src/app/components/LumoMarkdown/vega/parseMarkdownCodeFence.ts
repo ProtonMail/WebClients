@@ -1,5 +1,6 @@
 export type MarkdownCodeFenceSegment =
-    { type: 'markdown'; content: string } | { type: 'code'; language: string; code: string };
+    | { type: 'markdown'; content: string }
+    | { type: 'code'; language: string; code: string };
 
 export type MarkdownCodeFence = {
     start: number;

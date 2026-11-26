@@ -46,9 +46,7 @@ export function parseFileReferences(content: string): FileReference[] {
         const fileName = match[1].trim(); // Filename without @, trimmed
         const matchText = match[0].trim(); // The full match including @
         const matchIndex = match.index;
-        const overlaps = references.some(
-            (ref) => matchIndex >= ref.startIndex && matchIndex < ref.endIndex
-        );
+        const overlaps = references.some((ref) => matchIndex >= ref.startIndex && matchIndex < ref.endIndex);
 
         if (!overlaps) {
             references.push({
@@ -61,4 +59,3 @@ export function parseFileReferences(content: string): FileReference[] {
     }
     return references;
 }
-

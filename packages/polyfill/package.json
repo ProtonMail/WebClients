@@ -3,6 +3,8 @@
     "main": "index.js",
     "module": "index.js",
     "scripts": {
+        "format:check": "oxfmt --check \"**/*.{js,ts,tsx}\"",
+        "format:write": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "lint": "oxlint --quiet"
     },
     "dependencies": {

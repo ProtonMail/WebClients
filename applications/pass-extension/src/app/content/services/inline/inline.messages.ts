@@ -45,7 +45,8 @@ export enum InlinePortMessageType {
 }
 
 type PasskeyRelayedMessages =
-    BridgeResponse<WorkerMessageType.PASSKEY_CREATE> | BridgeResponse<WorkerMessageType.PASSKEY_GET>;
+    | BridgeResponse<WorkerMessageType.PASSKEY_CREATE>
+    | BridgeResponse<WorkerMessageType.PASSKEY_GET>;
 
 export type IFramePosition = Partial<Rect>;
 export type IFrameEndpoint = 'toast' | 'dropdown';

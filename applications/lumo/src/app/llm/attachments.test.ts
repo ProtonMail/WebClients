@@ -1,11 +1,7 @@
+import { MAX_PDF_PAGE_IMAGES_PER_REQUEST } from '../lib/attachments/pdfPageLimits';
 import type { Message } from '../types';
 import { Role } from '../types';
-import { MAX_PDF_PAGE_IMAGES_PER_REQUEST } from '../lib/attachments/pdfPageLimits';
-import {
-    MAX_IMAGES_PER_REQUEST,
-    getImageLimitInfo,
-    selectKeptImageIds,
-} from './attachments';
+import { MAX_IMAGES_PER_REQUEST, getImageLimitInfo, selectKeptImageIds } from './attachments';
 
 describe('getImageLimitInfo — compaction interaction', () => {
     const makeImageMessage = (id: string, messageId = `msg-${id}`): Message =>

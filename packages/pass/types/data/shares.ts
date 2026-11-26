@@ -28,10 +28,11 @@ export type VaultShareContent = {
 
 type ItemShareContent = {};
 
-export type ShareContent<T extends ShareType = ShareType> =
-    T extends ShareType.Vault ? VaultShareContent
-    : T extends ShareType.Item ? ItemShareContent
-    : never;
+export type ShareContent<T extends ShareType = ShareType> = T extends ShareType.Vault
+    ? VaultShareContent
+    : T extends ShareType.Item
+      ? ItemShareContent
+      : never;
 
 type ShareBase<T extends ShareType = ShareType> = {
     addressId: Maybe<string>;

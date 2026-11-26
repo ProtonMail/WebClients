@@ -3,8 +3,8 @@ import { Component, type ReactNode, createContext, useCallback, useContext, useE
 import { useUser } from '@proton/account/user/hooks';
 
 import { useLumoUserSettings } from '../hooks';
-import { useFileProcessing } from '../hooks/useFileProcessing';
 import { type DriveEvent, type EventSubscription, useDriveSDK } from '../hooks/useDriveSDK';
+import { useFileProcessing } from '../hooks/useFileProcessing';
 import { useLumoSelector } from '../redux/hooks';
 import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import { registerDriveIndexingCancelHandler } from '../services/driveFolderIndexingState';
@@ -190,10 +190,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                             currentFile: `Rehydrating: ${folder.name}`,
                         }));
 
-                        const { files: allFiles } = await collectDriveFolderFiles(
-                            folder.nodeUid,
-                            browseFolderChildren
-                        );
+                        const { files: allFiles } = await collectDriveFolderFiles(folder.nodeUid, browseFolderChildren);
 
                         const supportedFiles = allFiles.filter((file) =>
                             isDriveFileSupported(file.name, file.mediaType)
@@ -264,7 +261,16 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         };
 
         void checkAndRehydrate();
-    }, [isDriveInitialized, spacesPullSettled, indexedFolders, userId, browseFolderChildren, downloadFile, bumpDriveIndexRevision, fileProcessingService]);
+    }, [
+        isDriveInitialized,
+        spacesPullSettled,
+        indexedFolders,
+        userId,
+        browseFolderChildren,
+        downloadFile,
+        bumpDriveIndexRevision,
+        fileProcessingService,
+    ]);
 
     const findFoldersByScope = useCallback((treeEventScopeId: string): IndexedDriveFolder[] => {
         return indexedFoldersRef.current.filter((f) => f.isActive !== false && f.treeEventScopeId === treeEventScopeId);
@@ -628,7 +634,9 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
                         console.log('[DriveIndexingProvider] File is in indexed folder:', resolved.folder.name);
 
                         const node =
-                            resolved.mediaType === undefined ? await getNode(nodeUid).catch(() => undefined) : undefined;
+                            resolved.mediaType === undefined
+                                ? await getNode(nodeUid).catch(() => undefined)
+                                : undefined;
                         const finalFileName = fileName || resolved.fileName || node?.name;
                         const mediaType = resolved.mediaType ?? node?.mediaType;
                         if (finalFileName) {

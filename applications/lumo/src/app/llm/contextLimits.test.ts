@@ -1,6 +1,6 @@
+import { setModels } from '../services/modelsStore';
 import { DEFAULT_CONTEXT_LIMITS, deriveContextLimits } from './contextLimits';
 import { getContextLimitsForModelId } from './modelContextLimits';
-import { setModels } from '../services/modelsStore';
 
 describe('deriveContextLimits', () => {
     it('preserves default thresholds when max context matches the legacy window', () => {

@@ -21,7 +21,5 @@ export function getModelDisplayName(modelTier: ModelTier, options?: GetModelDisp
         return `${LUMO_SHORT_APP_NAME} Preview`;
     }
 
-    return options?.liteLabel === 'short'
-        ? `${LUMO_SHORT_APP_NAME} Lite`
-        : `${LUMO_SHORT_APP_NAME} 2.0 Lite`;
+    return options?.liteLabel === 'short' ? `${LUMO_SHORT_APP_NAME} Lite` : `${LUMO_SHORT_APP_NAME} 2.0 Lite`;
 }

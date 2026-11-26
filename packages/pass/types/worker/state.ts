@@ -60,7 +60,7 @@ export type LocalStoreData = {
     encryptedCacheKey?: string;
     features: string;
     featureVariants: string;
-    forceLock: boolean; /** flag indicating if we should force lock on next resume */
+    forceLock: boolean /** flag indicating if we should force lock on next resume */;
     lastReload: number;
     logs: string;
     modelArtifacts: string;

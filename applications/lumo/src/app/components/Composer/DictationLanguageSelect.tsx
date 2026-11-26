@@ -24,7 +24,11 @@ export const DictationLanguageSelect = ({ id, value, onChange }: Props) => {
         name: getDictationLanguageName(code),
     })).sort((a, b) => a.name.localeCompare(b.name));
     const options = [
-        <Option key={DICTATION_LANGUAGE_AUTO} value={DICTATION_LANGUAGE_AUTO} title={c('collider_2025: Option').t`Auto-detect`} />,
+        <Option
+            key={DICTATION_LANGUAGE_AUTO}
+            value={DICTATION_LANGUAGE_AUTO}
+            title={c('collider_2025: Option').t`Auto-detect`}
+        />,
         ...languageOptions.map(({ code, name }) => <Option key={code} value={code} title={name} />),
     ];
 

@@ -8,7 +8,11 @@
  * actually renders.
  */
 
-import { isCryptocurrencyToolCallData, isStockToolCallData, tryParseToolCall } from '../../../../../../lib/toolCall/types';
+import {
+    isCryptocurrencyToolCallData,
+    isStockToolCallData,
+    tryParseToolCall,
+} from '../../../../../../lib/toolCall/types';
 import type { ContentBlock, ToolCallBlock, ToolResultBlock } from '../../../../../../types';
 import { isToolCallBlock, isToolResultBlock } from '../../../../../../types';
 
@@ -121,7 +125,12 @@ function tryParseJSON(jsonString: string): unknown {
 
 function getToolCallBlockId(block: ToolCallBlock): string | undefined {
     const fromToolCall = block.toolCall;
-    return readStringField(fromToolCall, 'id') ?? readStringField(fromToolCall, 'call_id') ?? readStringField(tryParseJSON(block.content), 'id') ?? readStringField(tryParseJSON(block.content), 'call_id');
+    return (
+        readStringField(fromToolCall, 'id') ??
+        readStringField(fromToolCall, 'call_id') ??
+        readStringField(tryParseJSON(block.content), 'id') ??
+        readStringField(tryParseJSON(block.content), 'call_id')
+    );
 }
 
 function getFinanceSymbolFromCall(block: ToolCallBlock): string | undefined {
@@ -136,8 +145,7 @@ function getFinanceSymbolFromCall(block: ToolCallBlock): string | undefined {
 
 function getFinanceResultBlocks(blocks: ContentBlock[]): ToolResultBlock[] {
     return blocks.filter(
-        (block): block is ToolResultBlock =>
-            isToolResultBlock(block) && parseFinanceResult(block.content) !== null
+        (block): block is ToolResultBlock => isToolResultBlock(block) && parseFinanceResult(block.content) !== null
     );
 }
 
@@ -172,7 +180,9 @@ function findFinanceResultForCall(
  * when call/result ids are missing or mismatched.
  */
 export function collectFinanceComparisonItems(blocks: ContentBlock[]): FinanceComparisonItem[] {
-    const financeCalls = blocks.filter(isToolCallBlock).filter((block) => getFinanceSymbolFromCall(block) !== undefined);
+    const financeCalls = blocks
+        .filter(isToolCallBlock)
+        .filter((block) => getFinanceSymbolFromCall(block) !== undefined);
     const financeResults = getFinanceResultBlocks(blocks);
 
     return financeCalls.flatMap((call) => {

@@ -1,8 +1,8 @@
 import { LumoMarkdownCodeBlock } from '../LumoMarkdownCodeBlock';
-import { parseCardRowSegmentCode } from './parseCardRowFence';
-import { isCardRowLanguage } from './detectCardSpec';
 import { LumoInsightCard } from './LumoInsightCard';
 import { LumoMetricCardRow } from './LumoMetricCardRow';
+import { isCardRowLanguage } from './detectCardSpec';
+import { parseCardRowSegmentCode } from './parseCardRowFence';
 import { parseCardSpec } from './parseCardSpec';
 
 interface LumoMarkdownCardBlockProps {

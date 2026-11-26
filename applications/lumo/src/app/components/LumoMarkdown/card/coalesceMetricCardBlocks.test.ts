@@ -42,8 +42,7 @@ describe('coalesceMetricCardBlocks', () => {
     });
 
     it('leaves legacy separate metric card fences as regular blocks', () => {
-        const metricFence = (title: string) =>
-            `\`\`\`card\n${JSON.stringify(metric(title))}\n\`\`\``;
+        const metricFence = (title: string) => `\`\`\`card\n${JSON.stringify(metric(title))}\n\`\`\``;
 
         const units = buildMarkdownRenderUnits([
             { type: 'complete', content: metricFence('DAU'), key: 'a' },

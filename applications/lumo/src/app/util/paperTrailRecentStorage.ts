@@ -1,7 +1,7 @@
 import type { PaperTrailSource } from '../features/aiPaperTrail/parsers/types';
 import { shouldPersistPaperTrailLocally } from './paperTrailLocalSavePreference';
-import { readPaperTrailStorage, writePaperTrailStorage } from './paperTrailStorage';
 import { deletePaperTrailReport, prunePaperTrailReports } from './paperTrailReportStorage';
+import { readPaperTrailStorage, writePaperTrailStorage } from './paperTrailStorage';
 
 const RECENT_FILES_KEY = 'lumo-ai-paper-trail-recent';
 const MAX_RECENT_FILES = 5;

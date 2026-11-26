@@ -10,7 +10,11 @@ import { getIntlLocale } from './helper';
 export const formatIntlPercent = (percent: number, options: Intl.NumberFormatOptions = {}, locale = localeCode) => {
     const intlLocale = getIntlLocale(locale);
     // In case the locale is not recognized by Intl, we fallback to en-US
-    const formatter = new Intl.NumberFormat([intlLocale, 'en-US'], { numberingSystem: 'latn', ...options, style: 'percent' });
+    const formatter = new Intl.NumberFormat([intlLocale, 'en-US'], {
+        numberingSystem: 'latn',
+        ...options,
+        style: 'percent',
+    });
 
     return formatter.format(percent / 100);
 };

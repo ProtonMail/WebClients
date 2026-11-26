@@ -9,8 +9,9 @@
         "proton-i18n": "index.js"
     },
     "scripts": {
+        "format:check": "oxfmt --check \"lib/**/*.js\" index.js",
+        "format:write": "oxfmt --write \"lib/**/*.js\" index.js",
         "lint": "oxlint --quiet",
-        "pretty": "oxfmt --write \"lib/**/*.js\" index.js",
         "test": "./test/test-linter.sh* && ./test/test-validator.sh",
         "test:ci": "pnpm run test"
     },

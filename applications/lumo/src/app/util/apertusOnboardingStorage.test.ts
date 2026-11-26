@@ -1,7 +1,4 @@
-import {
-    getApertusOnboardingAcceptedAt,
-    markApertusOnboardingAccepted,
-} from './apertusOnboardingStorage';
+import { getApertusOnboardingAcceptedAt, markApertusOnboardingAccepted } from './apertusOnboardingStorage';
 
 describe('apertusOnboardingStorage', () => {
     beforeEach(() => {

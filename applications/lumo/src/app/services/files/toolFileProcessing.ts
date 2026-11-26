@@ -40,7 +40,14 @@ export function createToolFileProcessor(
                 const base64 = data.toBase64();
                 const imageMime = toolImageMimeType(base64);
                 return imageMime
-                    ? [{ image_id: `${source.id}-p${page}`, path: `${source.path}#page=${page}`, mime_type: imageMime, data: base64 }]
+                    ? [
+                          {
+                              image_id: `${source.id}-p${page}`,
+                              path: `${source.path}#page=${page}`,
+                              mime_type: imageMime,
+                              data: base64,
+                          },
+                      ]
                     : [];
             });
             if (mimeType === 'application/pdf' && !result.content.trim() && images.length === 0) {

@@ -104,7 +104,14 @@ export type SignatureIssues = {
 };
 
 export type SignatureIssueLocation =
-    'passphrase' | 'hash' | 'name' | 'xattrs' | 'contentKeyPacket' | 'blocks' | 'thumbnail' | 'manifest';
+    | 'passphrase'
+    | 'hash'
+    | 'name'
+    | 'xattrs'
+    | 'contentKeyPacket'
+    | 'blocks'
+    | 'thumbnail'
+    | 'manifest';
 
 export interface EncryptedLink extends Link {
     nodeKey: string;

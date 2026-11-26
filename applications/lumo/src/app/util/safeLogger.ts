@@ -7,18 +7,18 @@ export const safeLogger = {
     log: (message: string, ...args: any[]) => {
         console.log(`[LOG] ${message}`, ...args);
     },
-    
+
     warn: (message: string, ...args: any[]) => {
         // Use console.log with [WARN] prefix to avoid test failures
         console.log(`[WARN] ${message}`, ...args);
     },
-    
+
     error: (message: string, ...args: any[]) => {
         // Use console.log with [ERROR] prefix to avoid test failures
         console.log(`[ERROR] ${message}`, ...args);
     },
-    
+
     debug: (message: string, ...args: any[]) => {
         console.log(`[DEBUG] ${message}`, ...args);
-    }
+    },
 };

@@ -124,7 +124,12 @@ describe('collectFinanceComparisonItems', () => {
         blocks = setToolCallInBlocks(blocks, metaCall);
         blocks = setToolResultInBlocks(blocks, makeFinanceResult('Alphabet Inc.', 338.46), undefined, 'call_shared');
         blocks = setToolResultInBlocks(blocks, makeFinanceResult('Apple Inc.', 319.97), undefined, 'call_shared');
-        blocks = setToolResultInBlocks(blocks, makeFinanceResult('Meta Platforms Inc.', 616.77), undefined, 'call_shared');
+        blocks = setToolResultInBlocks(
+            blocks,
+            makeFinanceResult('Meta Platforms Inc.', 616.77),
+            undefined,
+            'call_shared'
+        );
 
         expect(blocks.filter((block) => block.type === 'tool_result')).toHaveLength(3);
 

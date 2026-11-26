@@ -1,4 +1,9 @@
-import { getAcceptAttributeString, getProcessingCategory, isBlockedFileExtension, isFileTypeSupported } from './filetypes';
+import {
+    getAcceptAttributeString,
+    getProcessingCategory,
+    isBlockedFileExtension,
+    isFileTypeSupported,
+} from './filetypes';
 
 describe('getAcceptAttributeString', () => {
     const accepted = () => getAcceptAttributeString().split(',');

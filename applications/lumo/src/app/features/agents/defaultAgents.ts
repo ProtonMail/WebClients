@@ -142,8 +142,7 @@ export const getDefaultAgents = (): CustomAgent[] => [
         description: c('collider_2025:Agent description').t`Summarize documents into clear, concise takeaways.`,
         instructions:
             'You are a summarization assistant. Given documents or long text, produce clear, concise summaries with the key points first, followed by supporting detail. Preserve important facts and never invent information that is not present in the source.',
-        conversationStarters: [
-        ],
+        conversationStarters: [],
         source: 'published',
         createdAt: 0,
         updatedAt: 0,

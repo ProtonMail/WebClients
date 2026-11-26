@@ -16,7 +16,9 @@ export enum AuthType {
 
 /** Which credentials form the sign-in shows; the auto mode's password step shows the username it checked. */
 export type AuthTypeData =
-    { type: AuthType.Auto } | { type: AuthType.AutoSrp; username: string } | { type: AuthType.ExternalSSO };
+    | { type: AuthType.Auto }
+    | { type: AuthType.AutoSrp; username: string }
+    | { type: AuthType.ExternalSSO };
 
 export enum SSOLoginCapabilites {
     SETUP_BACKUP_PASSWORD = 0,

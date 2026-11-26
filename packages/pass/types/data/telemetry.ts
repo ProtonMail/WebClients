@@ -126,7 +126,8 @@ type AutosaveDismissedDimensions = {
 } & AutofillPageTelemetryDimensions;
 type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: string };
 type TargetDimensions =
-    { type: TelemetryTargetType.item; itemType: TelemetryItemType } | { type: TelemetryTargetType.vault };
+    | { type: TelemetryTargetType.item; itemType: TelemetryItemType }
+    | { type: TelemetryTargetType.vault };
 type InviteDimensions = TargetDimensions & { extensionBrowser?: string };
 type SecureLinkDimensions = TargetDimensions & { extensionBrowser?: string };
 

@@ -12,12 +12,7 @@ type MaybeOrganizationTooltipProps = {
     placement?: PopperPlacement;
 };
 
-export const OrganizationPolicyTooltip: FC<MaybeOrganizationTooltipProps> = ({
-    children,
-    enforced,
-    text,
-    placement,
-}) =>
+export const OrganizationPolicyTooltip: FC<MaybeOrganizationTooltipProps> = ({ children, enforced, text, placement }) =>
     enforced ? (
         <Tooltip
             openDelay={500}

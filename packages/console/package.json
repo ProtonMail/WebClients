@@ -23,6 +23,8 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"**/*.{js,ts,tsx}\"",
+        "format:write": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "lint": "oxlint --quiet",
         "test": "TZ=UTC vitest run",
         "test:ci": "pnpm run test --run",

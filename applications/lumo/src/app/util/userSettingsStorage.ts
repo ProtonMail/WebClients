@@ -91,4 +91,3 @@ export async function loadUserSettingsFromStorage(
         return { userSettings: null, needsMasterKeyMigration: false };
     }
 }
-

@@ -11,7 +11,8 @@ import { DropdownMenuButton } from './DropdownMenuButton';
 
 export const DROPDOWN_SEPARATOR = '__SEPARATOR__' as const;
 export type DropdownMenuOption =
-    { label: string; value: string; icon?: IconComponent; onClick: () => void } | typeof DROPDOWN_SEPARATOR;
+    | { label: string; value: string; icon?: IconComponent; onClick: () => void }
+    | typeof DROPDOWN_SEPARATOR;
 
 type DropdownMenuBaseProps = PropsWithChildren & {
     className?: string;

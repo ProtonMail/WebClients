@@ -2,4 +2,3 @@
 export function isNonNullable<T>(value: NonNullable<T> | undefined): value is NonNullable<T> {
     return value !== undefined;
 }
-

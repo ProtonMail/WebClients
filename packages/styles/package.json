@@ -95,6 +95,8 @@
     },
     "scripts": {
         "build:reset": "sass --no-source-map --style=compressed scss/specifics/android-v6-reset.scss assets/css/android-v6-reset.css; sass --no-source-map --style=compressed scss/specifics/android-v6-dark-mode.scss assets/css/android-v6-dark-mode.css; sass --no-source-map --style=compressed scss/specifics/android-ios-et-reset.scss assets/css/android-ios-et-reset.css",
+        "format:check": "oxfmt --check \"**/*.{js,ts,tsx}\"",
+        "format:write": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "lint": "pnpm run lint:scss && pnpm run lint:svg && pnpm run lint:ts",
         "lint:scss": "stylelint '**/*.scss'",
         "lint:svg": "./tasks/lint-svg.sh",

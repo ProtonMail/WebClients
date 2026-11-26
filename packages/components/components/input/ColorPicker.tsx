@@ -26,7 +26,8 @@ interface OwnProps {
 type ButtonProps = DropdownButtonProps<'button'>;
 
 type Props =
-    ({ layout: 'inline' } & OwnProps) | ({ layout?: 'dropdown' } & OwnProps & Omit<ButtonProps, 'onChange' | 'as'>);
+    | ({ layout: 'inline' } & OwnProps)
+    | ({ layout?: 'dropdown' } & OwnProps & Omit<ButtonProps, 'onChange' | 'as'>);
 
 const getOptions = () => {
     return Object.values(ACCENT_COLORS_MAP).map(({ color, getName }) => ({ value: color, label: getName() }));

@@ -1,5 +1,5 @@
-import type { FileCardPolicy } from '../../../llm/requestContextFiles';
 import { CHANGE_MARKUP_LEGEND, countPdfPages, extractChangeDigest } from '../../../lib/attachments/pdfChangeMarkup';
+import type { FileCardPolicy } from '../../../llm/requestContextFiles';
 import { countTokens } from '../../../llm/tokenizer';
 import type { Attachment, ChatSearchReach } from '../../../types';
 import { describeFileSize, splitIntoPages } from './pages';

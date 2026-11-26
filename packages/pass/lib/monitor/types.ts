@@ -1,6 +1,6 @@
+import type { ItemUpdateFlagsRequest } from '../../types/api/pass';
 import type { SelectedItem } from '../../types/data/items';
 import { ItemFlag } from '../../types/data/items';
-import type { ItemUpdateFlagsRequest } from '../../types/api/pass';
 import type { MaybeNull } from '../../types/utils';
 
 export enum MonitorCheckType {

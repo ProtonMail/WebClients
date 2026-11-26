@@ -22,11 +22,7 @@ interface PaperTrailLogoProps {
     alt?: string;
 }
 
-export const PaperTrailLogo = ({
-    height = LOGO_HEIGHT,
-    className,
-    alt = LUMO_SHORT_APP_NAME,
-}: PaperTrailLogoProps) => {
+export const PaperTrailLogo = ({ height = LOGO_HEIGHT, className, alt = LUMO_SHORT_APP_NAME }: PaperTrailLogoProps) => {
     const { theme } = useLumoTheme();
     const logoSrc = useMemo(() => getPaperTrailLogoSrc(theme), [theme]);
 

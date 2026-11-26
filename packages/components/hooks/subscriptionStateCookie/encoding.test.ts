@@ -1,7 +1,8 @@
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 
 import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encoding';
-import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 
 describe('encodePaidSubscriptionData', () => {
     it('should produce consistent output for same inputs', () => {

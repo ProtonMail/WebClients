@@ -92,18 +92,15 @@ describe('attachmentHelpers — project knowledge', () => {
 
     it('detects project knowledge attachments', () => {
         expect(isProjectKnowledgeAttachment({ ...projectFile, autoRetrieved: true })).toBe(true);
-        expect(isProjectKnowledgeAttachment({ id: 'x', filename: 'a.txt', uploadedAt: '', conversationContext: true }))
-            .toBe(true);
+        expect(
+            isProjectKnowledgeAttachment({ id: 'x', filename: 'a.txt', uploadedAt: '', conversationContext: true })
+        ).toBe(true);
         expect(isProjectKnowledgeAttachment({ id: 'x', filename: 'a.txt', uploadedAt: '' })).toBe(false);
     });
 
     it('matches project files by filename', () => {
-        expect(
-            isFileInProjectKnowledge({ filename: 'report.docx' }, spaceAttachments)
-        ).toBe(true);
-        expect(
-            isFileInProjectKnowledge({ filename: 'missing.docx' }, spaceAttachments)
-        ).toBe(false);
+        expect(isFileInProjectKnowledge({ filename: 'report.docx' }, spaceAttachments)).toBe(true);
+        expect(isFileInProjectKnowledge({ filename: 'missing.docx' }, spaceAttachments)).toBe(false);
     });
 
     it('reports removed project knowledge when the file is gone and content is unavailable', () => {
@@ -114,9 +111,7 @@ describe('attachmentHelpers — project knowledge', () => {
             conversationContext: true,
         };
 
-        expect(
-            isAttachmentRemovedFromProjectKnowledge(mentionedAttachment, {}, 'space-1')
-        ).toBe(true);
+        expect(isAttachmentRemovedFromProjectKnowledge(mentionedAttachment, {}, 'space-1')).toBe(true);
     });
 
     it('does not report removed when the file is still in project knowledge', () => {
@@ -127,9 +122,7 @@ describe('attachmentHelpers — project knowledge', () => {
             conversationContext: true,
         };
 
-        expect(
-            isAttachmentRemovedFromProjectKnowledge(mentionedAttachment, spaceAttachments, 'space-1')
-        ).toBe(false);
+        expect(isAttachmentRemovedFromProjectKnowledge(mentionedAttachment, spaceAttachments, 'space-1')).toBe(false);
     });
 
     it('does not report removed when preview content is still available', () => {
@@ -141,8 +134,6 @@ describe('attachmentHelpers — project knowledge', () => {
             markdown: 'Cached content',
         };
 
-        expect(
-            isAttachmentRemovedFromProjectKnowledge(mentionedAttachment, {}, 'space-1')
-        ).toBe(false);
+        expect(isAttachmentRemovedFromProjectKnowledge(mentionedAttachment, {}, 'space-1')).toBe(false);
     });
 });

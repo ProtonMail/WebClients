@@ -79,7 +79,9 @@ export const handleSpaceAttachmentFileAsync =
                 if (processedAttachment.markdown) {
                     try {
                         const filename = `Filename: ${processedAttachment.filename}`;
-                        processedAttachment.tokenCount = getApproximateTokenCount(`${filename}\n${processedAttachment.markdown}`);
+                        processedAttachment.tokenCount = getApproximateTokenCount(
+                            `${filename}\n${processedAttachment.markdown}`
+                        );
                     } catch (tokenError) {
                         console.warn('Failed to calculate token count:', tokenError);
                     }

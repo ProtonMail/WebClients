@@ -1,6 +1,6 @@
 import { CURVE, Point } from '@noble/ed25519';
-
 import { CryptoProxy } from '@protontech/crypto';
+
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { CO_FACTOR, N, ptLen } from '../constants/constants';
@@ -99,7 +99,11 @@ const proofToHash = async (Gamma: Point) =>
 /**
  * VRF verify a proof, according to section 5.3, ECVRF Verifying, of draft-irtf-cfrg-vrf-10
  */
-export const vrfVerify = async (alpha: Uint8Array<ArrayBuffer>, pi: Uint8Array<ArrayBuffer>, vrfHexKey: Uint8Array<ArrayBuffer>) => {
+export const vrfVerify = async (
+    alpha: Uint8Array<ArrayBuffer>,
+    pi: Uint8Array<ArrayBuffer>,
+    vrfHexKey: Uint8Array<ArrayBuffer>
+) => {
     const Y = stringToPoint(vrfHexKey);
     const H = await hashToCurveTAI(alpha, vrfHexKey);
     const D = decodeProof(pi);

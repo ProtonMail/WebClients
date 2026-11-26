@@ -163,7 +163,9 @@ export const extractSubscriptionSearchParams = (
 
     const rawTarget = params.get('target');
     const target = (['checkout', 'compare'].find((t) => t === rawTarget) ?? undefined) as
-        'checkout' | 'compare' | undefined;
+        | 'checkout'
+        | 'compare'
+        | undefined;
 
     // on target=checkout plan needs to be defined; otherwise the default step applies
     if (target === 'checkout' && !plan) {

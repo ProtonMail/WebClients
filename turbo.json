@@ -38,6 +38,9 @@
             "dependsOn": ["transit"],
             "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/oxlint.local.mts"]
         },
+        "format:check": {
+            "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/oxfmt.config.mts", "$TURBO_ROOT$/packages/oxfmt-config/**"]
+        },
         "i18n:validate": {},
         "i18n:extract:web": {
             "dependsOn": ["build:web"],

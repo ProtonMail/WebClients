@@ -1,8 +1,8 @@
 import type { FC, ReactNode } from 'react';
 import { useCallback, useMemo, useRef, useState } from 'react';
 
-import useElementRect from '@proton/hooks/useElementRect';
 import { Loader } from '@proton/atoms/Loader/Loader';
+import useElementRect from '@proton/hooks/useElementRect';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { AlbumsCard } from './grid/AlbumsCard';

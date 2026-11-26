@@ -8,9 +8,9 @@ export const usePasteLengthLimiter = () => {
     const { createNotification } = useNotifications();
 
     return (
-            maxLength: number,
-            originalOnPaste?: ClipboardEventHandler<HTMLInputElement | HTMLTextAreaElement>
-        ): ClipboardEventHandler<HTMLInputElement | HTMLTextAreaElement> =>
+        maxLength: number,
+        originalOnPaste?: ClipboardEventHandler<HTMLInputElement | HTMLTextAreaElement>
+    ): ClipboardEventHandler<HTMLInputElement | HTMLTextAreaElement> =>
         (event) => {
             const text = event.clipboardData?.getData('text') ?? '';
             const { value, selectionStart, selectionEnd } = event.currentTarget;

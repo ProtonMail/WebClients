@@ -26,7 +26,8 @@ export type ExtensionApp = keyof typeof EXTENSIONS;
 /* extension communicating with account should
  * conform to this message response type */
 export type ExtensionMessageResponse<P = any> =
-    { type: 'success'; payload: P } | { type: 'error'; payload?: P; error?: string };
+    | { type: 'success'; payload: P }
+    | { type: 'error'; payload?: P; error?: string };
 
 const sendMessageSupported = () => (isChromiumBased() || isSafari()) && browserAPI?.runtime?.sendMessage !== undefined;
 

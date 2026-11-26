@@ -51,14 +51,7 @@ export const useChatLimitGate = () => {
             markModelLimitExhausted(getLimitCategoryForTier(selectedModelTier), selectedModelTier);
             dispatch(handleTierError(lumoUserType));
         }
-    }, [
-        hasLumoPlus,
-        selectedModelTier,
-        selectedModelLimitExhausted,
-        hasTierErrors,
-        dispatch,
-        lumoUserType,
-    ]);
+    }, [hasLumoPlus, selectedModelTier, selectedModelLimitExhausted, hasTierErrors, dispatch, lumoUserType]);
 
     const clearTierErrorIfModelAvailable = useCallback(() => {
         if (!anyModelLimitExhausted && hasTierErrors) {

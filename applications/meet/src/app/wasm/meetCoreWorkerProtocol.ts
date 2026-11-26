@@ -140,7 +140,9 @@ export interface MeetCoreRpcFailureResponseMessage {
 }
 
 export type MeetCoreWorkerRequestMessage =
-    MeetCoreInitRequestMessage | MeetCoreRpcRequestMessage | MeetCoreCookieAckMessage;
+    | MeetCoreInitRequestMessage
+    | MeetCoreRpcRequestMessage
+    | MeetCoreCookieAckMessage;
 
 export type MeetCoreWorkerResponseMessage =
     | MeetCoreInitSuccessResponseMessage

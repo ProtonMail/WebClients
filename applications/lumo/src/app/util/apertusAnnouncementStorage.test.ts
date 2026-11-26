@@ -1,8 +1,5 @@
+import { hasDismissedApertusAnnouncement, markApertusAnnouncementDismissed } from './apertusAnnouncementStorage';
 import { getLumoScopedStorageKey } from './lumoScopedLocalStorage';
-import {
-    hasDismissedApertusAnnouncement,
-    markApertusAnnouncementDismissed,
-} from './apertusAnnouncementStorage';
 
 const APERTUS_ANNOUNCEMENT_KEY = 'lumo-apertus-announcement';
 

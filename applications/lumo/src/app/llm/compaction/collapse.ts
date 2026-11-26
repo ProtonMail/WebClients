@@ -24,10 +24,7 @@ export { SUMMARY_TURN_PREFIX };
  * The original `chain` is never mutated, so the full history remains intact for
  * display while the model only ever sees the compacted view going forward.
  */
-export function collapseCompactedChain(
-    chain: Message[],
-    messageMap?: Record<string, Message>
-): CollapsedChain {
+export function collapseCompactedChain(chain: Message[], messageMap?: Record<string, Message>): CollapsedChain {
     const latestBoundary = getLatestCompactionBoundary(chain, messageMap);
     if (!latestBoundary?.compaction?.summary) {
         return { summaryTurn: null, chain };

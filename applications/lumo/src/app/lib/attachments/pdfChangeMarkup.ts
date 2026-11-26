@@ -84,8 +84,22 @@ export function isColourful(color: string): boolean {
 
 /** Collects thin horizontal coloured lines (filled slivers or stroked segments) from a pdf.js operator list. */
 export function extractDecorationLines(fnArray: number[], argsArray: any[], ops: PdfOps): DecorationLine[] {
-    const fillOps = new Set([ops.fill, ops.eoFill, ops.fillStroke, ops.eoFillStroke, ops.closeFillStroke, ops.closeEOFillStroke]);
-    const strokeOps = new Set([ops.stroke, ops.closeStroke, ops.fillStroke, ops.eoFillStroke, ops.closeFillStroke, ops.closeEOFillStroke]);
+    const fillOps = new Set([
+        ops.fill,
+        ops.eoFill,
+        ops.fillStroke,
+        ops.eoFillStroke,
+        ops.closeFillStroke,
+        ops.closeEOFillStroke,
+    ]);
+    const strokeOps = new Set([
+        ops.stroke,
+        ops.closeStroke,
+        ops.fillStroke,
+        ops.eoFillStroke,
+        ops.closeFillStroke,
+        ops.closeEOFillStroke,
+    ]);
 
     const lines: DecorationLine[] = [];
     const stack: number[][] = [];
@@ -127,7 +141,7 @@ export function extractDecorationLines(fnArray: number[], argsArray: any[], ops:
             const xs: number[] = [];
             const ys: number[] = [];
             let simple = true;
-            for (let k = 0; k < data.length; ) {
+            for (let k = 0; k < data.length;) {
                 const cmd = data[k]!;
                 if (cmd === MOVE_TO || cmd === LINE_TO) {
                     const x = data[k + 1]!;

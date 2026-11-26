@@ -37,8 +37,7 @@ function estimatePartitionTokens(
 ): number {
     if (attachments.length > 0) {
         return (
-            estimateMessageContentTokens(message) +
-            estimateMessageAttachmentTokens(message, attachments, exclusions)
+            estimateMessageContentTokens(message) + estimateMessageAttachmentTokens(message, attachments, exclusions)
         );
     }
     return estimateMessageTokens(message);

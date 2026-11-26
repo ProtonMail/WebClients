@@ -43,7 +43,8 @@ export function getAnalysisCount({ phase, done, total }: AnalysisProgress): stri
 export function getAnalysisEffortNote({ total }: Pick<AnalysisProgress, 'total'>): string | undefined {
     return total >= BIG_FILE_PARTS
         ? // translator: Shown while the assistant reads a very long file. It takes a minute or two.
-          c('collider_2025:Reasoning').t`This is a big one, so it can take a minute or two. Good thing cats are patient.`
+          c('collider_2025:Reasoning')
+              .t`This is a big one, so it can take a minute or two. Good thing cats are patient.`
         : undefined;
 }
 

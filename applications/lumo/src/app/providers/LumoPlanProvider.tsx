@@ -231,4 +231,3 @@ export const useLumoUserType = () => {
     const { lumoUserType, isGuest, isLumoFree, isLumoPaid } = useLumoPlan();
     return { lumoUserType, isGuest, isLumoFree, isLumoPaid };
 };
-

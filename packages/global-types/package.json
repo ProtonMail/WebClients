@@ -2,5 +2,9 @@
   "name": "@types/global-types-monorepo",
   "description": "Types that need to be available across the monorepo",
   "main": "./lib/index.d.ts",
-  "types": "./lib/index.d.ts"
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "format:check": "oxfmt --check \"**/*.{js,ts,tsx}\"",
+    "format:write": "oxfmt --write \"**/*.{js,ts,tsx}\""
+  }
 }

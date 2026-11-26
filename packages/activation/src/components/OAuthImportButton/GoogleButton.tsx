@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import clsx from '@proton/utils/clsx';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 
 interface Props {
     label?: string;

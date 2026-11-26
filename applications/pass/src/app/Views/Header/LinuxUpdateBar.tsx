@@ -10,9 +10,9 @@ import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { PASS_DESKTOP_CHANGELOG_URL, PASS_LINUX_DOWNLOAD_URL, PASS_LINUX_VERSION_URL } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { semver } from '@proton/utils/semver';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+import { semver } from '@proton/utils/semver';
 
 type Release = {
     CategoryName: 'EarlyAccess' | 'Stable';

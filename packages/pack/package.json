@@ -8,8 +8,9 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "oxlint --quiet",
-        "pretty": "oxfmt --write cli bin"
+        "format:check": "oxfmt --check cli bin",
+        "format:write": "oxfmt --write cli bin",
+        "lint": "oxlint --quiet"
     },
     "dependencies": {
         "@babel/core": "^7.29.13",

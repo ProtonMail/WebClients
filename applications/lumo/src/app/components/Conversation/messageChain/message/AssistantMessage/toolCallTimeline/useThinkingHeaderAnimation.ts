@@ -86,11 +86,7 @@ function scrambleToTarget(targetText: string, onUpdate: (value: string) => void,
     };
 }
 
-export function useThinkingHeaderAnimation(
-    isActive: boolean,
-    messageId: string,
-    contextualHeader?: string
-): string {
+export function useThinkingHeaderAnimation(isActive: boolean, messageId: string, contextualHeader?: string): string {
     const phrases = useMemo(() => {
         if (contextualHeader?.trim()) {
             return [contextualHeader];

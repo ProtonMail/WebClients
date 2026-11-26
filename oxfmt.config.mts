@@ -8,6 +8,10 @@ export default createOxfmtConfig({
         '**/config.ts',
         'applications/**/locales/**/*.json',
         'applications/**/public/assets/sandbox.js',
+        // Generated bundles: formatting them only adds thousands of lines
+        'packages/raw-images/dist/**',
+        // Vendored PrismJS build: third-party code
+        'applications/storybook/.storybook/prismjs.js',
         'applications/authenticator/src/lib/tauri/generated/__bindings__.ts',
         'applications/wallet/src/pkg/',
         'packages/i18n/test/input/**',

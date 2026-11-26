@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 
-import type { MarkdownCodeFenceSegment } from '../vega/parseMarkdownCodeFence';
 import { shouldRenderAsVegaChart } from '../vega/detectVegaSpec';
-import { shouldRenderAsCard } from './detectCardSpec';
+import type { MarkdownCodeFenceSegment } from '../vega/parseMarkdownCodeFence';
 import { LumoMarkdownCardBlock } from './LumoMarkdownCardBlock';
 import { LumoMetricCardRow } from './LumoMetricCardRow';
+import { shouldRenderAsCard } from './detectCardSpec';
 import { parseCardRowSegmentCode } from './parseCardRowFence';
 import { tryParseCardSpec } from './parseCardSpec';
 

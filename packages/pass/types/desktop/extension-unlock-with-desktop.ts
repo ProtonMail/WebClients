@@ -25,10 +25,14 @@ export enum NativeMessageErrorType {
 }
 
 export type NativeMessageRequest =
-    NativeMessageSetupLockSecretRequest | NativeMessageUnlockRequest | NativeMessageDeleteLockSecretRequest;
+    | NativeMessageSetupLockSecretRequest
+    | NativeMessageUnlockRequest
+    | NativeMessageDeleteLockSecretRequest;
 
 export type NativeMessageResponse =
-    NativeMessageSetupLockSecretResponse | NativeMessageUnlockResponse | NativeMessageDeleteLockSecretResponse;
+    | NativeMessageSetupLockSecretResponse
+    | NativeMessageUnlockResponse
+    | NativeMessageDeleteLockSecretResponse;
 
 export type NativeMessage = NativeMessageRequest | NativeMessageResponse;
 

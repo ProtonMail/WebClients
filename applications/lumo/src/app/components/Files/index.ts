@@ -3,7 +3,7 @@
 // DriveBrowser components
 export * from './DriveBrowser';
 
-// KnowledgeBase components  
+// KnowledgeBase components
 export * from './KnowledgeBase';
 
 // Common/shared components

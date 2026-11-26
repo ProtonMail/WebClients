@@ -14,10 +14,10 @@ let hasNotifiedMobileApp = false;
 /**
  * Sends a message to mobile apps (Android/iOS) indicating that the Lumo application
  * has finished loading and is ready for interaction.
- * 
+ *
  * This replaces the flaky lumo-input-container detection method.
  * Uses a global flag to ensure the notification is only sent once per page load.
- * 
+ *
  * @param delayMs - Delay in milliseconds before sending the message (default: 150ms)
  */
 export const notifyMobileAppLoaded = (delayMs: number = 150): void => {
@@ -26,14 +26,14 @@ export const notifyMobileAppLoaded = (delayMs: number = 150): void => {
         console.log('Mobile app notification already sent, skipping duplicate');
         return;
     }
-    
+
     hasNotifiedMobileApp = true;
-    
+
     setTimeout(() => {
         const message: LumoAppLoadedMessage = {
             type: 'LUMO_APP_LOADED',
             timestamp: Date.now(),
-            version: process.env.APP_VERSION || '1.0.0'
+            version: process.env.APP_VERSION || '1.0.0',
         };
 
         // Send message to Android WebView
@@ -56,9 +56,11 @@ export const notifyMobileAppLoaded = (delayMs: number = 150): void => {
 
         // Also dispatch a custom DOM event as a fallback
         try {
-            window.dispatchEvent(new CustomEvent('lumo-app-loaded', { 
-                detail: message 
-            }));
+            window.dispatchEvent(
+                new CustomEvent('lumo-app-loaded', {
+                    detail: message,
+                })
+            );
         } catch (error) {
             console.warn('Failed to dispatch lumo-app-loaded event:', error);
         }
@@ -73,4 +75,4 @@ export const notifyMobileAppLoaded = (delayMs: number = 150): void => {
 export const resetMobileAppNotificationFlag = (): void => {
     hasNotifiedMobileApp = false;
     console.log('Mobile app notification flag reset');
-}; 
+};

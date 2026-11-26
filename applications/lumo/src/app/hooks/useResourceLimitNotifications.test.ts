@@ -23,9 +23,9 @@ describe('shouldShowResourceLimitError', () => {
     });
 
     it('hides message limit errors from previous conversations on the new chat route', () => {
-        expect(shouldShowResourceLimitError(buildError({ conversationId: 'conversation-1' }), undefined, undefined)).toBe(
-            false
-        );
+        expect(
+            shouldShowResourceLimitError(buildError({ conversationId: 'conversation-1' }), undefined, undefined)
+        ).toBe(false);
     });
 
     it('shows asset limit errors for the active space', () => {
@@ -79,7 +79,9 @@ describe('shouldShowResourceLimitError', () => {
     });
 
     it('keeps legacy conversation limit errors without conversation context global', () => {
-        expect(shouldShowResourceLimitError(buildError({ resource: 'conversations' }), undefined, undefined)).toBe(true);
+        expect(shouldShowResourceLimitError(buildError({ resource: 'conversations' }), undefined, undefined)).toBe(
+            true
+        );
     });
 
     it('shows legacy message limit errors without conversation context', () => {

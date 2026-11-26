@@ -84,7 +84,10 @@ export class RawProcessor {
      * @param extractFullSize Whether to extract the preview image for CR3 files
      * @returns Promise resolving to the Uint8Array thumbnail or CR3Result object or null
      */
-    public async extractThumbnail(rawData: Uint8Array<ArrayBuffer>, fileName: string = 'raw_file'): Promise<ProcessResult> {
+    public async extractThumbnail(
+        rawData: Uint8Array<ArrayBuffer>,
+        fileName: string = 'raw_file'
+    ): Promise<ProcessResult> {
         return this.extractDCRawThumbnail(rawData, fileName);
     }
 
@@ -218,7 +221,10 @@ export class CR3Processor {
      * @param extractFullSize Whether to extract the preview image for CR3 files
      * @returns Promise resolving to the Uint8Array thumbnail or CR3Result object or null
      */
-    public async extractThumbnail(rawData: Uint8Array<ArrayBuffer>, fileName: string = 'raw_file'): Promise<ProcessResult> {
+    public async extractThumbnail(
+        rawData: Uint8Array<ArrayBuffer>,
+        fileName: string = 'raw_file'
+    ): Promise<ProcessResult> {
         return this.extractCR3Images(rawData, fileName);
     }
 

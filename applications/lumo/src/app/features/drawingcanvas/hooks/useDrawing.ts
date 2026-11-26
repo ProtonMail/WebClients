@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
+
 import type { Stroke } from '../types';
 import { getCanvasCoordinates } from '../utils/rendering';
 

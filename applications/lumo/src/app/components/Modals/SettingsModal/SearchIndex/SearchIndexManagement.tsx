@@ -1,7 +1,8 @@
-import { Button } from '@proton/atoms/Button/Button';
 import type { FunctionComponent } from 'react';
 
 import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
 
 interface Props {
     onReindex: () => void;
@@ -10,7 +11,7 @@ interface Props {
 
 export const SearchIndexManagement: FunctionComponent<Props> = ({ onReindex, disabled }) => (
     <div className="flex gap-2">
-        <Button 
+        <Button
             color="norm"
             onClick={onReindex}
             disabled={disabled}
@@ -21,5 +22,3 @@ export const SearchIndexManagement: FunctionComponent<Props> = ({ onReindex, dis
         </Button>
     </div>
 );
-
-

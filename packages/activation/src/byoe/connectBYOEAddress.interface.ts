@@ -21,4 +21,5 @@ export type ConnectBYOEAddressFailureResult = Extract<ConnectBYOEAddressResult, 
 
 export type StartImportTaskResult = ConnectBYOEAddressFailureResult | { status: 'started' };
 export type FinalizeAddressResult =
-    ConnectBYOEAddressFailureResult | { status: 'finalized'; address: Address | undefined };
+    | ConnectBYOEAddressFailureResult
+    | { status: 'finalized'; address: Address | undefined };

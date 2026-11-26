@@ -6,8 +6,9 @@
     "scripts": {
         "build": "cross-env NODE_ENV=production ./bin/build.mjs",
         "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"src/**/*.ts\"",
+        "format:write": "oxfmt --write \"src/**/*.ts\"",
         "lint": "oxlint --quiet",
-        "pretty": "oxfmt --write \"src/**/*.ts\"",
         "test": "echo No tests yet",
         "test:ci": "echo No tests yet"
     },

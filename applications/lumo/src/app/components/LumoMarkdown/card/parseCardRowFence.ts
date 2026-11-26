@@ -1,6 +1,6 @@
 import { parseMarkdownCodeFence } from '../vega/parseMarkdownCodeFence';
-import { tryParseCardSpec } from './parseCardSpec';
 import type { MetricCardFence } from './metricCardTypes';
+import { tryParseCardSpec } from './parseCardSpec';
 
 function parseJsonLenient(raw: string): unknown {
     try {
@@ -44,7 +44,10 @@ function tryParseCardRowMetricEntry(entry: unknown): ReturnType<typeof tryParseC
     return tryParseCardSpec(JSON.stringify(entry));
 }
 
-function metricFencesFromSpecs(specs: ReturnType<typeof tryParseCardSpec>[], language: string): MetricCardFence[] | null {
+function metricFencesFromSpecs(
+    specs: ReturnType<typeof tryParseCardSpec>[],
+    language: string
+): MetricCardFence[] | null {
     const metrics = specs.filter((spec): spec is NonNullable<typeof spec> => !!spec && spec.type === 'metric');
     if (metrics.length === 0 || metrics.length !== specs.length) {
         return null;
@@ -57,7 +60,10 @@ function metricFencesFromSpecs(specs: ReturnType<typeof tryParseCardSpec>[], lan
 }
 
 function metricFencesFromCardRowEntries(entries: unknown[], language: string): MetricCardFence[] | null {
-    return metricFencesFromSpecs(entries.map((entry) => tryParseCardRowMetricEntry(entry)), language);
+    return metricFencesFromSpecs(
+        entries.map((entry) => tryParseCardRowMetricEntry(entry)),
+        language
+    );
 }
 
 /** Parse a ```card-row fence — primary KPI strip format (JSON array of metric objects). */
@@ -72,7 +78,12 @@ export function parseCardRowFence(content: string): MetricCardFence[] | null {
         return metricFencesFromCardRowEntries(payload, 'card');
     }
 
-    if (payload && typeof payload === 'object' && !Array.isArray(payload) && Array.isArray((payload as Record<string, unknown>).cards)) {
+    if (
+        payload &&
+        typeof payload === 'object' &&
+        !Array.isArray(payload) &&
+        Array.isArray((payload as Record<string, unknown>).cards)
+    ) {
         const cards = (payload as Record<string, unknown>).cards as unknown[];
         return metricFencesFromCardRowEntries(cards, 'card');
     }

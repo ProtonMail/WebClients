@@ -1,8 +1,9 @@
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 
 import { decodeSubscriptionCookieData } from './decoding';
 import { encodeFreeSubscriptionData, encodePaidSubscriptionData } from './encoding';
-import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 describe('decodeSubscriptionCookieData', () => {
     describe('valid paid subscription data', () => {
@@ -86,7 +87,10 @@ describe('decodeSubscriptionCookieData', () => {
         });
 
         it('should return null for non-JSON data', () => {
-            const nonJson = utf8StringToUint8Array('not-valid-json').toBase64({ alphabet: 'base64url', omitPadding: true });
+            const nonJson = utf8StringToUint8Array('not-valid-json').toBase64({
+                alphabet: 'base64url',
+                omitPadding: true,
+            });
             const result = decodeSubscriptionCookieData(nonJson);
             expect(result).toBeNull();
         });

@@ -1,5 +1,6 @@
 import { Designer } from '@pdfme/ui';
 import Toastify from 'toastify-js';
+
 import 'toastify-js/src/toastify.css';
 
 import { getFilledTemplate } from '@proton/recovery-kit/filledTemplate';

@@ -24,7 +24,8 @@ export interface SignoutUserData {
 
 // What a signout URL can be read as, a local id or the access type a client predating it sent
 export type ParsedSignoutUserData = { id: string } & (
-    { localID: number; accessType?: never } | { localID?: never; accessType: AccessType }
+    | { localID: number; accessType?: never }
+    | { localID?: never; accessType: AccessType }
 );
 
 export interface SignoutSessions {

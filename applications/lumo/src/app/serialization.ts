@@ -400,7 +400,9 @@ export async function serializeAttachment(
         const packed = msgpackEncode(privPlus) as Uint8Array<ArrayBuffer>;
         // Fail here, with a clear reason, rather than on an upload the backend is certain to reject.
         if (packed.byteLength > MAX_SERIALIZED_ASSET_BYTES) {
-            throw new Error(`payload of ${packed.byteLength} bytes exceeds the ${MAX_SERIALIZED_ASSET_BYTES} byte limit`);
+            throw new Error(
+                `payload of ${packed.byteLength} bytes exceeds the ${MAX_SERIALIZED_ASSET_BYTES} byte limit`
+            );
         }
         const encrypted: EncryptedData = await encryptUint8Array(packed, spaceDek, ad);
         return {

@@ -17,4 +17,5 @@ export type StaticExperimentsState = Record<string, string>;
 export type StaticExperimentName = keyof typeof staticExperimentsConfig;
 
 export type StaticExperimentVariant<Name extends StaticExperimentName> =
-    (keyof (typeof staticExperimentsConfig)[Name]['schedule'][number]['weights'] & string) | 'disabled';
+    | (keyof (typeof staticExperimentsConfig)[Name]['schedule'][number]['weights'] & string)
+    | 'disabled';

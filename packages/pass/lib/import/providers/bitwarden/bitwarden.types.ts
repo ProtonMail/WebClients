@@ -106,7 +106,11 @@ export type BitwardenSshKeyItem = BitwardenBaseItem & {
 };
 
 type BitwardenItem =
-    BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | BitwardenIdentityItem | BitwardenSshKeyItem;
+    | BitwardenLoginItem
+    | BitwardenNoteItem
+    | BitwardenCCItem
+    | BitwardenIdentityItem
+    | BitwardenSshKeyItem;
 
 export type BitwardenData = {
     encrypted: boolean;

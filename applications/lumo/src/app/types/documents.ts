@@ -35,4 +35,3 @@ export interface DriveDocument {
     totalChunks?: number;
     chunkTitle?: string; // Section title or context for this chunk
 }
-

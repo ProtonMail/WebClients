@@ -76,7 +76,12 @@ export type SkillPriv = {
 };
 
 type DerivedSkillFields =
-    'enabled' | 'subSkills' | 'plugin' | 'connectors' | 'connectorCategories' | 'bundleIndexVersion';
+    | 'enabled'
+    | 'subSkills'
+    | 'plugin'
+    | 'connectors'
+    | 'connectorCategories'
+    | 'bundleIndexVersion';
 
 export type SkillKeyClear = {
     skillKey: Base64;

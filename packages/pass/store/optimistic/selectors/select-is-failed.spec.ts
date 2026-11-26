@@ -62,11 +62,7 @@ describe('selector as if optimistic failed', () => {
                     items: [1, 2, 3],
                     optimistic: {
                         checkpoint: { items: [] },
-                        history: [
-                            failedAction,
-                            createTestOptimisticHistoryItem('add', 2),
-                            createTestOptimisticHistoryItem('add', 3),
-                        ],
+                        history: [failedAction, createTestOptimisticHistoryItem('add', 2), createTestOptimisticHistoryItem('add', 3)],
                     },
                 } as WrappedOptimisticState<TestState>,
                 test: {
@@ -131,11 +127,7 @@ describe('selector as if optimistic failed', () => {
                     items: [1, 2, 3],
                     optimistic: {
                         checkpoint: { items: [] },
-                        history: [
-                            failedAction,
-                            createTestOptimisticHistoryItem('add', 2),
-                            createTestOptimisticHistoryItem('add', 3),
-                        ],
+                        history: [failedAction, createTestOptimisticHistoryItem('add', 2), createTestOptimisticHistoryItem('add', 3)],
                     },
                 } as WrappedOptimisticState<TestState>,
             };

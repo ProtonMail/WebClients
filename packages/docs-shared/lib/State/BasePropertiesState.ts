@@ -27,9 +27,10 @@ import type {
  * TODO: add example
  * ```
  */
-export abstract class BasePropertiesState<P extends BasePropertyValues, E extends BaseEvent = BaseEvent>
-  implements BasePropertiesStateInterface<P, E>
-{
+export abstract class BasePropertiesState<
+  P extends BasePropertyValues,
+  E extends BaseEvent = BaseEvent,
+> implements BasePropertiesStateInterface<P, E> {
   // reactive properties
   // -------------------
 
