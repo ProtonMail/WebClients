@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs').promises;
-const execa = require('execa');
+const { execaCommand } = require('execa');
 const path = require('path');
 const { Command } = require('commander');
 const portfinder = require('portfinder');
@@ -58,7 +58,7 @@ const getWebpackArgs = (options, env) => {
 const commandWithLog = (...args) => {
     // eslint-disable-next-line no-console
     console.log(styleText('cyan', args[0]), '\n');
-    return execa.command(...args);
+    return execaCommand(...args);
 };
 
 addGlobalOptions(program.command('build').description('create an optimized production build'))

@@ -1,11 +1,11 @@
 import { join } from 'path';
-import { sync } from 'execa';
+import { execaSync } from 'execa';
 
 import type { AppConfig, ProtonPackOptions, WebpackOptions } from './interface';
 
 const getGitBranch = () => {
     try {
-        const { stdout = '' } = sync('git describe --all', { shell: true });
+        const { stdout = '' } = execaSync('git describe --all', { shell: true });
         return stdout.trim();
     } catch (e) {
         return '';
@@ -14,7 +14,7 @@ const getGitBranch = () => {
 
 const getGitCommitHash = () => {
     try {
-        const { stdout = '' } = sync('git rev-parse HEAD', { shell: true });
+        const { stdout = '' } = execaSync('git rev-parse HEAD', { shell: true });
         return stdout.trim();
     } catch (e) {
         return '';
@@ -24,7 +24,7 @@ const getGitCommitHash = () => {
 const getGitTagVersion = (applicationName: string) => {
     const sortingMethod = applicationName === 'proton-drive' ? '-creatordate' : '-v:refname'
     try {
-        const { stdout = '' } = sync(`git tag --sort=${sortingMethod} | grep ${applicationName} | head -n 1`, {
+        const { stdout = '' } = execaSync(`git tag --sort=${sortingMethod} | grep ${applicationName} | head -n 1`, {
             shell: true,
         });
         return stdout.trim();

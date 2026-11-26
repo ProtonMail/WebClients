@@ -16,7 +16,7 @@
         "test:ci": "pnpm run test"
     },
     "dependencies": {
-        "execa": "^5.1.1",
+        "execa": "catalog:",
         "gettext-parser": "^7.0.1",
         "glob": "catalog:",
         "ttag-cli": "catalog:"
