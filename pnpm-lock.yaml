@@ -482,6 +482,9 @@ catalogs:
     esbuild:
       specifier: ^0.28.2
       version: 0.28.2
+    execa:
+      specifier: ^8.0.1
+      version: 8.0.1
     exifreader:
       specifier: ^4.46.0
       version: 4.46.0
@@ -2819,7 +2822,7 @@ importers:
         specifier: 'catalog:'
         version: 8.2.0(electron@43.8.12(supports-color@11.0.0))
       execa:
-        specifier: ^8.0.1
+        specifier: 'catalog:'
         version: 8.0.1
       lodash:
         specifier: 'catalog:'
@@ -3888,7 +3891,7 @@ importers:
         specifier: 'catalog:'
         version: 8.2.0(electron@43.8.12(supports-color@11.0.0))
       execa:
-        specifier: ^8.0.1
+        specifier: 'catalog:'
         version: 8.0.1
       lodash:
         specifier: 'catalog:'
@@ -8241,8 +8244,8 @@ importers:
   packages/i18n:
     dependencies:
       execa:
-        specifier: ^5.1.1
-        version: 5.1.1
+        specifier: 'catalog:'
+        version: 8.0.1
       gettext-parser:
         specifier: ^7.0.1
         version: 7.0.1
@@ -9964,8 +9967,8 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(webpack@5.113.0)
       execa:
-        specifier: ^5.1.1
-        version: 5.1.1
+        specifier: 'catalog:'
+        version: 8.0.1
       favicons:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@26.6.6)
@@ -12985,8 +12988,8 @@ importers:
         specifier: 'catalog:'
         version: 14.0.3
       execa:
-        specifier: ^5.1.1
-        version: 5.1.1
+        specifier: 'catalog:'
+        version: 8.0.1
       prompts:
         specifier: ^2.4.2
         version: 2.4.2

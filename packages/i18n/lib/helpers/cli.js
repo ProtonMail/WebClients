@@ -1,5 +1,5 @@
 const path = require('path');
-const execa = require('execa');
+const { execa } = require('execa');
 const { debug } = require('./log')('proton-i18n');
 
 const bash = (cli, args = [], stdio) => {
