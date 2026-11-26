@@ -1,7 +1,16 @@
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 
 export type DataTypesThatDocumentCanBeExportedAs =
-  'docx' | 'odt' | 'html' | 'txt' | 'md' | 'yjs' | 'xlsx' | 'csv' | 'tsv' | 'ods'
+  | 'docx'
+  | 'odt'
+  | 'html'
+  | 'txt'
+  | 'md'
+  | 'yjs'
+  | 'xlsx'
+  | 'csv'
+  | 'tsv'
+  | 'ods'
 
 export const DocumentExportMimeTypes = {
   docx: SupportedProtonDocsMimeTypes.docx,

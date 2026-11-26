@@ -3,12 +3,13 @@ import { useCallback } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 
 import { useDriveIndexing } from '../providers/DriveIndexingProvider';
+import { useLumoStore } from '../redux/hooks';
+import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import {
     cancelFolderIndexing,
     clearFolderIndexingCancellation,
     isFolderIndexingCancelled,
 } from '../services/driveFolderIndexingState';
-import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import { removeIndexedContentForSpace } from '../services/removeIndexedContentForSpace';
 import { SearchService } from '../services/search/searchService';
 import type { SpaceId } from '../types';
@@ -18,7 +19,6 @@ import { getMimeTypeFromExtension, isDriveFileSupported } from '../util/filetype
 import { useDriveSDK } from './useDriveSDK';
 import { useFileProcessing } from './useFileProcessing';
 import { useLumoUserSettings } from './useLumoUserSettings';
-import { useLumoStore } from '../redux/hooks';
 
 interface IndexFolderOptions {
     spaceId?: string;
@@ -58,13 +58,8 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
     const store = useLumoStore();
     const { browseFolderChildren, downloadFile } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const {
-        setIndexingFile,
-        setIndexingProgress,
-        resetIndexingStatus,
-        eventIndexingStatus,
-        bumpDriveIndexRevision,
-    } = useDriveIndexing();
+    const { setIndexingFile, setIndexingProgress, resetIndexingStatus, eventIndexingStatus, bumpDriveIndexRevision } =
+        useDriveIndexing();
     const fileProcessingService = useFileProcessing();
 
     // Derive indexingStatus from the shared context eventIndexingStatus
@@ -184,10 +179,7 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                 const persistFolderMetadata = (
                     documentCount: number,
                     treeEventScopeId?: string,
-                    {
-                        incomplete = false,
-                        indexedAt = Date.now(),
-                    }: { incomplete?: boolean; indexedAt?: number } = {}
+                    { incomplete = false, indexedAt = Date.now() }: { incomplete?: boolean; indexedAt?: number } = {}
                 ): void => {
                     const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
                     const existing = latestFolders.find((f) => f.nodeUid === folderUid);
@@ -279,11 +271,9 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                         console.log('[DriveIndexing] Indexing cancelled for folder:', folderName);
                         // Previously indexed documents are still in the search index, so keep the
                         // higher count and flag the folder so it can be resumed later.
-                        persistFolderMetadata(
-                            Math.max(indexedFilesCount, previousDocumentCount),
-                            treeEventScopeId,
-                            { incomplete: true }
-                        );
+                        persistFolderMetadata(Math.max(indexedFilesCount, previousDocumentCount), treeEventScopeId, {
+                            incomplete: true,
+                        });
                         bumpDriveIndexRevision();
                         return {
                             success: false,
@@ -320,11 +310,9 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                             throw new Error(result.error || 'Indexing failed');
                         }
                         indexedFilesCount += batchDocuments.length;
-                        persistFolderMetadata(
-                            Math.max(indexedFilesCount, previousDocumentCount),
-                            treeEventScopeId,
-                            { incomplete: true }
-                        );
+                        persistFolderMetadata(Math.max(indexedFilesCount, previousDocumentCount), treeEventScopeId, {
+                            incomplete: true,
+                        });
                         bumpDriveIndexRevision();
                     }
 

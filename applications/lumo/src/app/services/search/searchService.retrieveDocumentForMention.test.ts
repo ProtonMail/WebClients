@@ -109,12 +109,7 @@ describe('SearchService.retrieveDocumentForMention', () => {
     });
 
     it('resolves a Drive file by node id', () => {
-        const result = searchService.retrieveDocumentForMention(
-            'drive.txt',
-            SPACE_ID,
-            'drive content',
-            'drive-node-1'
-        );
+        const result = searchService.retrieveDocumentForMention('drive.txt', SPACE_ID, 'drive content', 'drive-node-1');
 
         expect(result?.id).toBe('drive-node-1');
         expect(result?.isDriveDocument).toBe(true);

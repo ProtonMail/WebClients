@@ -7,8 +7,8 @@ import { PLANS } from '@proton/payments/core/constants';
 import clsx from '@proton/utils/clsx';
 
 import Info from '../../../../../../components/link/Info';
-import visionaryLogo from '../../logo/plan-visionary-gold.svg';
 import { PlanIcon } from '../../PlanIcon';
+import visionaryLogo from '../../logo/plan-visionary-gold.svg';
 
 import './ExclusivePlanBorder.scss';
 import './PlanOfferCard.scss';

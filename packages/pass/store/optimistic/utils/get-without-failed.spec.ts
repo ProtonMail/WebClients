@@ -35,11 +35,7 @@ describe('getWithoutFailed', () => {
             items: [1, 2, 3],
             optimistic: {
                 checkpoint: { items: [] },
-                history: [
-                    createTestOptimisticHistoryItem('add', 1),
-                    failedAction,
-                    createTestDeterministicAction('add', 3),
-                ],
+                history: [createTestOptimisticHistoryItem('add', 1), failedAction, createTestDeterministicAction('add', 3)],
             },
         };
 

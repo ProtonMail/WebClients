@@ -1,10 +1,6 @@
 import type { OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
 import type { TestState } from '../utils/testing.utils';
-import {
-    createTestDeterministicAction,
-    createTestOptimisticHistoryItem,
-    createTestReducer,
-} from '../utils/testing.utils';
+import { createTestDeterministicAction, createTestOptimisticHistoryItem, createTestReducer } from '../utils/testing.utils';
 import withOptimistic from '../with-optimistic';
 import selectOptimisticList from './select-optimistic-list';
 

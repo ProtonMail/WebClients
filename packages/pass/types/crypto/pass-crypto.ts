@@ -291,9 +291,14 @@ interface SerializableCryptoContext<S> {
 }
 
 export type SerializedCryptoContext<T> =
-    T extends SerializableCryptoContext<infer U> ? SerializedCryptoContext<U>
-    : T extends Uint8Array<ArrayBuffer> ? string
-    : T extends Map<infer K, infer U> ? (readonly [K, SerializedCryptoContext<U>])[]
-    : T extends (infer U)[] ? SerializedCryptoContext<U>[]
-    : T extends {} ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }
-    : T;
+    T extends SerializableCryptoContext<infer U>
+        ? SerializedCryptoContext<U>
+        : T extends Uint8Array<ArrayBuffer>
+          ? string
+          : T extends Map<infer K, infer U>
+            ? (readonly [K, SerializedCryptoContext<U>])[]
+            : T extends (infer U)[]
+              ? SerializedCryptoContext<U>[]
+              : T extends {}
+                ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }
+                : T;

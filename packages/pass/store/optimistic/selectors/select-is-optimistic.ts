@@ -1,5 +1,4 @@
 import type { Selector } from '@reduxjs/toolkit';
-
 import isDeepEqual from 'lodash/isEqual';
 
 import type {

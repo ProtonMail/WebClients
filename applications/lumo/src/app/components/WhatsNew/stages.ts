@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import customLumos from '@proton/styles/assets/img/lumo/lumo-whats-new/custom-lumos.svg';
 import imageGen from '@proton/styles/assets/img/lumo/lumo-whats-new/image-gen.svg';
 import lumo2 from '@proton/styles/assets/img/lumo/lumo-whats-new/lumo-2.svg';
 import lumoModelMenu from '@proton/styles/assets/img/lumo/lumo-whats-new/lumo-model-menu.svg';
 import memory from '@proton/styles/assets/img/lumo/lumo-whats-new/memory.svg';
 import lumoWebSearch from '@proton/styles/assets/img/lumo/lumo-whats-new/web-search.svg';
-import customLumos from '@proton/styles/assets/img/lumo/lumo-whats-new/custom-lumos.svg';
 
 import type { WhatsNewStage } from './types';
 
@@ -28,7 +28,8 @@ export const getLumo2WhatsNewStages = (): WhatsNewStage[] => [
         imageScale: 'lg',
         getTitle: () => c('collider_2025:Title').t`Better web search`,
         getDescription: () =>
-            c('collider_2025:Info').t`Get faster, more accurate answers from the web, with citations so you can check the source.`,
+            c('collider_2025:Info')
+                .t`Get faster, more accurate answers from the web, with citations so you can check the source.`,
     },
     {
         id: 'image-gen',

@@ -2,10 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import {
-    hasDismissedApertusAnnouncement,
-    markApertusAnnouncementDismissed,
-} from '../util/apertusAnnouncementStorage';
+import { hasDismissedApertusAnnouncement, markApertusAnnouncementDismissed } from '../util/apertusAnnouncementStorage';
 import { getApertusOnboardingAcceptedAt } from '../util/apertusOnboardingStorage';
 import { isSwissTimezone } from '../util/timezone';
 import { useIsLumoSmallScreen } from './useIsLumoSmallScreen';

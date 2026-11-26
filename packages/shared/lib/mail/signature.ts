@@ -1,6 +1,5 @@
-import { c } from 'ttag';
-
 import type { VERIFICATION_STATUS } from '@protontech/crypto/constants';
+import { c } from 'ttag';
 
 import { APPS, APPS_CONFIGURATION } from '../constants';
 import type { MAIL_VERIFICATION_STATUS } from './constants';

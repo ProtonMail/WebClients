@@ -1,5 +1,5 @@
-import type {MessageMap} from '../redux/slices/core/messages';
-import type {Message, MessageId} from '../types';
+import type { MessageMap } from '../redux/slices/core/messages';
+import type { Message, MessageId } from '../types';
 
 type MessageNode = {
     id: MessageId;

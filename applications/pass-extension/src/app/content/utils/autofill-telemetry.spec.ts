@@ -1,6 +1,5 @@
 import { BUNDLED_MODEL_ID } from '../../../lib/utils/version';
 import { CSContext } from '../context/context';
-
 import { getAutofillPageTelemetryDimensions } from './autofill-telemetry';
 
 describe('`getAutofillPageTelemetryDimensions`', () => {

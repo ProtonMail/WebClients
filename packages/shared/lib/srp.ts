@@ -10,7 +10,9 @@ interface AuthCredentials {
 }
 
 export type Credentials =
-    AuthCredentials | (AuthCredentials & { totp: string }) | (AuthCredentials & { fido2: Fido2Data });
+    | AuthCredentials
+    | (AuthCredentials & { totp: string })
+    | (AuthCredentials & { fido2: Fido2Data });
 
 interface SrpAuthData {
     ClientProof: string;

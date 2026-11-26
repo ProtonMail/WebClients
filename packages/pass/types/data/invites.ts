@@ -43,7 +43,8 @@ export type InviteVaultData = {
 };
 
 type InviteContent =
-    { targetType: ShareType.Vault; vault: InviteVaultData } | { targetType: ShareType.Item; vault: null };
+    | { targetType: ShareType.Vault; vault: InviteVaultData }
+    | { targetType: ShareType.Item; vault: null };
 
 export type Invite<T extends InviteType = InviteType> = InviteBase & {
     type: T;

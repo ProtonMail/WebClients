@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { createHooks  } from '@proton/redux-utilities/hooks';
+import { createHooks } from '@proton/redux-utilities/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
 
 import { bitcoinAddressUsedIndexesThunk, selectBitcoinAddressUsedIndexes } from '../slices';

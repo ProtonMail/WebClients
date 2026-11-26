@@ -241,4 +241,7 @@ interface DownloadErrorMessage {
 export type ParentToIframeMessage = StartDownloadMessage | PauseDownloadMessage;
 
 export type IframeToParentMessage =
-    IframeReady | DownloadedChunkMessage | DownloadProgressMessage | DownloadErrorMessage;
+    | IframeReady
+    | DownloadedChunkMessage
+    | DownloadProgressMessage
+    | DownloadErrorMessage;

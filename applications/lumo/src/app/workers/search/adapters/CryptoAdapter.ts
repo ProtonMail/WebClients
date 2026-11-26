@@ -1,21 +1,17 @@
-import type { AesGcmCryptoKey } from '../../../crypto/types';
 import { deriveSearchIndexDek } from '../../../crypto';
+import type { AesGcmCryptoKey } from '../../../crypto/types';
 
 export interface CryptoAdapter {
     setSearchIndexKey(searchIndexKeyBase64: string): void;
     deriveSearchDek(): Promise<CryptoKey>;
     encrypt(data: Uint8Array<ArrayBuffer>, key: CryptoKey, ad?: string): Promise<string>;
-    decrypt(
-        encrypted: string | Uint8Array<ArrayBuffer>,
-        key: CryptoKey,
-        ad: string
-    ): Promise<Uint8Array<ArrayBuffer>>;
+    decrypt(encrypted: string | Uint8Array<ArrayBuffer>, key: CryptoKey, ad: string): Promise<Uint8Array<ArrayBuffer>>;
 }
 
 /**
  * Crypto adapter that derives the search index DEK from the search index key
  * using the same HKDF pattern as space DEK derivation.
- * 
+ *
  * The search index key should be:
  * 1. Generated once per user
  * 2. Wrapped with the master key and stored
@@ -62,4 +58,3 @@ export class LumoCryptoAdapter implements CryptoAdapter {
         return this.decryptFn(encryptedString, { encryptKey: key } as AesGcmCryptoKey, ad);
     }
 }
-

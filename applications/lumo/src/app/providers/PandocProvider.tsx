@@ -49,9 +49,5 @@ export function PandocProvider({ children }: { children: React.ReactNode }) {
         return initPromise;
     };
 
-    return (
-        <PandocContext.Provider value={{ getInstance }}>
-            {children}
-        </PandocContext.Provider>
-    );
+    return <PandocContext.Provider value={{ getInstance }}>{children}</PandocContext.Provider>;
 }

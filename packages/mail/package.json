@@ -66,8 +66,9 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"**/*.{ts,tsx,js,scss,css,json,md}\"",
+        "format:write": "oxfmt --write \"**/*.{ts,tsx,js,scss,css,json,md}\"",
         "lint": "oxlint --quiet",
-        "pretty:fix": "oxfmt --write \"**/*.{ts,tsx,js,scss,css,json,md}\"",
         "test": "vitest",
         "test:ci": "vitest run",
         "test:watch": "vitest --watch"

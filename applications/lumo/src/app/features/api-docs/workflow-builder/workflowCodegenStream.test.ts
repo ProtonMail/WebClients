@@ -30,11 +30,11 @@ describe('appendWorkflowCodegenAssistantText', () => {
     });
 
     it('throws on terminal error types', () => {
-        expect(() =>
-            appendWorkflowCodegenAssistantText('', { type: 'error' })
-        ).toThrow('workflow_codegen_generation_error');
-        expect(() =>
-            appendWorkflowCodegenAssistantText('', { type: 'rejected' })
-        ).toThrow('workflow_codegen_generation_rejected');
+        expect(() => appendWorkflowCodegenAssistantText('', { type: 'error' })).toThrow(
+            'workflow_codegen_generation_error'
+        );
+        expect(() => appendWorkflowCodegenAssistantText('', { type: 'rejected' })).toThrow(
+            'workflow_codegen_generation_rejected'
+        );
     });
 });

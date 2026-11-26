@@ -31,7 +31,8 @@ import { CustomAddressVerifyModal } from './Address/CustomAddressVerifyModal';
 import { MonitorContext, type MonitorContextValue } from './MonitorContext';
 
 type MonitorAction =
-    { type: 'add' } | { type: 'verify'; data: MonitorAddress<AddressType.CUSTOM> & { sentAt?: number } };
+    | { type: 'add' }
+    | { type: 'verify'; data: MonitorAddress<AddressType.CUSTOM> & { sentAt?: number } };
 
 export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();

@@ -44,8 +44,9 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"**/*.{ts,tsx,js}\"",
+        "format:write": "oxfmt --write \"**/*.{ts,tsx,js}\"",
         "lint": "oxlint --quiet",
-        "pretty:fix": "oxfmt --write \"**/*.{ts,tsx,js}\"",
         "test": "TZ=UTC vitest",
         "test:ci": "TZ=UTC vitest run"
     },

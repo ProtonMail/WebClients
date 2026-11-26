@@ -7,7 +7,10 @@ import { createSessionKey, getEncryptedSessionKey } from '../calendar/crypto/enc
 import { generatePassphrase } from '../calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
 
-export const sign = async (data: string | Uint8Array<ArrayBuffer>, privateKeys: PrivateKeyReference | PrivateKeyReference[]) => {
+export const sign = async (
+    data: string | Uint8Array<ArrayBuffer>,
+    privateKeys: PrivateKeyReference | PrivateKeyReference[]
+) => {
     const dataType = data instanceof Uint8Array ? 'binaryData' : 'textData';
     const signature = await CryptoProxy.signMessage({
         [dataType]: data,

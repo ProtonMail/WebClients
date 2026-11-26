@@ -39,8 +39,7 @@
 			max-block-size: 0;
 			overflow: hidden;
 			visibility: hidden;
-			transition-delay:
-				1s, 1.25s; // second delay is for visibility, so it's applied only at the end of the full deletion animation
+			transition-delay: 1s, 1.25s; // second delay is for visibility, so it's applied only at the end of the full deletion animation
 		}
 	}
 

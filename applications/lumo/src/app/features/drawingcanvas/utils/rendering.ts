@@ -87,10 +87,7 @@ export const drawImage = (
 /**
  * Get canvas coordinates from mouse/touch event
  */
-export const getCanvasCoordinates = (
-    event: MouseEvent | TouchEvent,
-    canvas: HTMLCanvasElement
-): Point => {
+export const getCanvasCoordinates = (event: MouseEvent | TouchEvent, canvas: HTMLCanvasElement): Point => {
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;

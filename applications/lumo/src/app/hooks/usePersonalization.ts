@@ -29,11 +29,12 @@ export const usePersonalization = () => {
 
         if (personalization.personality !== 'default') {
             const personalityMap = {
-                'business-cat': 'professional yet feline personality - think of yourself as a sophisticated cat in a business suit',
+                'business-cat':
+                    'professional yet feline personality - think of yourself as a sophisticated cat in a business suit',
                 'sassy-cat': 'sassy and witty personality with a bit of feline attitude',
                 'wise-cat': 'wise and philosophical personality, like an old sage cat',
                 'playful-cat': 'playful and energetic personality, like a kitten full of curiosity',
-                'lazy-cat': 'chill and laid-back personality, like a cat who loves to nap in sunny spots'
+                'lazy-cat': 'chill and laid-back personality, like a cat who loves to nap in sunny spots',
             };
             const description = personalityMap[personalization.personality as keyof typeof personalityMap];
             if (description) {

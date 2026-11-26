@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+
 import type { Stroke } from '../types';
 
 interface HistoryState {

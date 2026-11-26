@@ -1,7 +1,4 @@
-import {
-    hasDismissedGuestNotification,
-    markGuestNotificationDismissed,
-} from './guestNotificationStorage';
+import { hasDismissedGuestNotification, markGuestNotificationDismissed } from './guestNotificationStorage';
 
 describe('guestNotificationStorage', () => {
     const conversationId = '00000000-0000-4000-8000-000000000001';

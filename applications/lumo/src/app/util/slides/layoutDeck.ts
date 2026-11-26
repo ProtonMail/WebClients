@@ -62,7 +62,15 @@ export type SlideMaster = 'LUMO_TITLE' | 'LUMO_CONTENT' | 'LUMO_CHART' | 'LUMO_S
 
 /** Which field in the deck JSON this text shape was built from; used by the slide editor to patch edits back. */
 export type DeckTextField =
-    'title' | 'subtitle' | 'bullets' | 'left' | 'right' | 'quote' | 'attribution' | 'takeaway' | 'dataNeeded';
+    | 'title'
+    | 'subtitle'
+    | 'bullets'
+    | 'left'
+    | 'right'
+    | 'quote'
+    | 'attribution'
+    | 'takeaway'
+    | 'dataNeeded';
 
 export interface LaidOutParagraph {
     text: string;

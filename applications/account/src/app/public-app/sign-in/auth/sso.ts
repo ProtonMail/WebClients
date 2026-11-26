@@ -405,7 +405,8 @@ const getSSOSetupData = async (context: LoginFlowContext, { user }: { user: User
  * a temporary password, the data (and fresh user) to set a new backup password first.
  */
 export type SSOSignInResult =
-    { type: 'session'; session: AuthSession } | { type: 'set-password'; ssoData: SSOSetPasswordData; user: User };
+    | { type: 'session'; session: AuthSession }
+    | { type: 'set-password'; ssoData: SSOSetPasswordData; user: User };
 
 /**
  * Signs in with the key password from a device another device or an administrator approved.

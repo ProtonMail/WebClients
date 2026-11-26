@@ -54,7 +54,8 @@ export function parseRequestedTokens(upstreamMessage: string | undefined): numbe
     if (!upstreamMessage) {
         return undefined;
     }
-    const match = /(\d+)\s+in the messages/i.exec(upstreamMessage) ?? /requested\s+(\d+)\s+tokens/i.exec(upstreamMessage);
+    const match =
+        /(\d+)\s+in the messages/i.exec(upstreamMessage) ?? /requested\s+(\d+)\s+tokens/i.exec(upstreamMessage);
     const value = match ? Number(match[1]) : NaN;
     return Number.isFinite(value) && value > 0 ? value : undefined;
 }

@@ -30,7 +30,9 @@ export type TokenRedemptionEvent =
     | { type: 'session.expired' };
 
 export type TokenRedemptionEmitted =
-    { type: 'error'; error: unknown } | { type: 'code.resent' } | { type: 'session.expired' };
+    | { type: 'error'; error: unknown }
+    | { type: 'code.resent' }
+    | { type: 'session.expired' };
 
 interface TokenRedemptionContext {
     /** Read from the link; undefined when the link is invalid. */

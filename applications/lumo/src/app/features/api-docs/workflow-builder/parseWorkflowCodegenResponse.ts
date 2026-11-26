@@ -1,3 +1,4 @@
+import { normalizeWorkflowGraph } from './normalizeWorkflowGraph';
 import type {
     LumoWorkflowCodegenResult,
     LumoWorkflowGraph,
@@ -5,17 +6,8 @@ import type {
     WorkflowNode,
     WorkflowNodeType,
 } from './workflowCodegen.types';
-import { normalizeWorkflowGraph } from './normalizeWorkflowGraph';
 
-const NODE_TYPES: WorkflowNodeType[] = [
-    'file_upload',
-    'prompt',
-    'conditional',
-    'response',
-    'loop',
-    'merge',
-    'other',
-];
+const NODE_TYPES: WorkflowNodeType[] = ['file_upload', 'prompt', 'conditional', 'response', 'loop', 'merge', 'other'];
 
 function isNodeType(v: unknown): v is WorkflowNodeType {
     return typeof v === 'string' && (NODE_TYPES as string[]).includes(v);

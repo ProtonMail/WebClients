@@ -9,7 +9,13 @@ import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../../components/RecurrenceRuleF
 import type { ScheduleDetails, ScheduleTemplate } from '../../types';
 
 export type ScheduleDetailsValidationField =
-    'name' | 'instructions' | 'connectors' | 'time' | 'dateTime' | 'weekDayPicker' | 'monthDayPicker';
+    | 'name'
+    | 'instructions'
+    | 'connectors'
+    | 'time'
+    | 'dateTime'
+    | 'weekDayPicker'
+    | 'monthDayPicker';
 
 export type ScheduleDetailsValidationErrors = Partial<Record<ScheduleDetailsValidationField, string>>;
 

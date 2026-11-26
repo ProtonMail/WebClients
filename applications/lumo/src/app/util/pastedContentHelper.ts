@@ -8,7 +8,6 @@ import { newAttachmentId } from '../redux/slices/core/attachments';
 /**
  * Utility functions for handling pasted content in the composer
  */
-
 import type { Attachment } from '../types';
 
 /**

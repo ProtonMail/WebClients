@@ -27,8 +27,7 @@ export const createOptimisticAction = <
         optimisticMatch: (action: Action) => OptimisticMatcherResult;
     };
 
-    actionCreator.optimisticMatch = (action: Action) =>
-        actionCreator.match(action) && entityIDFactory(action as OptimisticAction);
+    actionCreator.optimisticMatch = (action: Action) => actionCreator.match(action) && entityIDFactory(action as OptimisticAction);
 
     return actionCreator;
 };

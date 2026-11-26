@@ -16,12 +16,12 @@ import {
 import { ComposerMode } from '../../types';
 import UpsellCard from '../../upsells/components/UpsellCard';
 import { getExceededTierErrorTitle } from '../../util/errorMessages';
-import { getModelDisplayName } from '../../util/modelTierDisplay';
 import {
     type ExhaustedModel,
     hasDismissedModelLimitUpsell,
     markModelLimitUpsellDismissed,
 } from '../../util/modelLimitUpsellStorage';
+import { getModelDisplayName } from '../../util/modelTierDisplay';
 
 interface Props {
     composerMode: ComposerMode;
@@ -40,12 +40,7 @@ export const ComposerModelLimitUpsell = ({ composerMode }: Props) => {
     const exhaustedLimitNotice = useExhaustedLimitNotice();
     const showLimitUpsell =
         exhaustedLimitNotice !== null &&
-        shouldShowLimitUpsell(
-            remainingLimits,
-            tierErrors.length > 0,
-            hasLumoPlus,
-            exhaustedLimitNotice.modelTier
-        );
+        shouldShowLimitUpsell(remainingLimits, tierErrors.length > 0, hasLumoPlus, exhaustedLimitNotice.modelTier);
     const dismissibleModel = getDismissibleExhaustedModel(remainingLimits);
     const [dismissedModels, setDismissedModels] = useState<Set<ExhaustedModel>>(
         () => new Set((['lite', 'max'] as ExhaustedModel[]).filter(hasDismissedModelLimitUpsell))

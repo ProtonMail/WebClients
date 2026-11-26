@@ -6,13 +6,16 @@ import { getOpenInDocsInfo } from '../../../../utils/docs/openInDocs';
 import type { SearchResultItemUI } from '../store';
 
 type DocsCapability =
-    { canOpenInDocs: true; openInDocsInfo: OpenInDocsType } | { canOpenInDocs: false; openInDocsInfo?: undefined };
+    | { canOpenInDocs: true; openInDocsInfo: OpenInDocsType }
+    | { canOpenInDocs: false; openInDocsInfo?: undefined };
 
 type ParentCapability =
-    { canGoToParent: true; parentNodeUid: string } | { canGoToParent: false; parentNodeUid?: undefined };
+    | { canGoToParent: true; parentNodeUid: string }
+    | { canGoToParent: false; parentNodeUid?: undefined };
 
 type RevisionCapability =
-    { canShowRevisions: true; revisionNodeUid: string } | { canShowRevisions: false; revisionNodeUid?: undefined };
+    | { canShowRevisions: true; revisionNodeUid: string }
+    | { canShowRevisions: false; revisionNodeUid?: undefined };
 
 type ShareCapability = { canShare: true; firstItemUid: string } | { canShare: false };
 

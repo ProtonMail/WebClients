@@ -6,10 +6,7 @@ export type MaybeNull<T> = T | null;
 export type MaybeArray<T> = T | T[];
 export type MaybePromise<T> = T | Promise<T>;
 
-export type Unpack<T> =
-    T extends (infer U)[] ? U
-    : T extends readonly (infer U)[] ? U
-    : never;
+export type Unpack<T> = T extends (infer U)[] ? U : T extends readonly (infer U)[] ? U : never;
 
 export type IsNever<T> = [T] extends [never] ? true : false;
 export type Identity<T> = (x: T) => T;
@@ -34,19 +31,17 @@ export type ExtractKeysOfType<T, U> = { [K in keyof T]: T[K] extends U ? K : nev
 export type DefinedPropertiesOnly<S extends {}> = Pick<S, DefinedKeys<S>>;
 type DefinedKeys<S extends {}, K = keyof S> = Extract<
     K,
-    K extends keyof S ?
-        S[K] extends undefined ?
-            never
-        :   K
-    :   never
+    K extends keyof S ? (S[K] extends undefined ? never : K) : never
 >;
 
 /** This type transformer iterates over each property of T and checks if its type
  * matches any of the OriginalTypes in U. If a match is found, the property's type
  * is replaced with the corresponding NewType. If no match is found, the property's
  * type remains unchanged. */
-export type TypeMapper<T, U extends [unknown, unknown][]> =
-    T extends U[number][0] ? Extract<U[number], [T, unknown]>[1]
-    : T extends (infer A)[] ? TypeMapper<A, U>[]
-    : T extends Record<any, any> ? { [K in keyof T]: TypeMapper<T[K], U> }
-    : T;
+export type TypeMapper<T, U extends [unknown, unknown][]> = T extends U[number][0]
+    ? Extract<U[number], [T, unknown]>[1]
+    : T extends (infer A)[]
+      ? TypeMapper<A, U>[]
+      : T extends Record<any, any>
+        ? { [K in keyof T]: TypeMapper<T[K], U> }
+        : T;

@@ -6,7 +6,8 @@ import { ShareType } from '../../../../types/data/shares';
 import { decryptData } from '../../utils/crypto-helpers';
 
 type OpenShareProcessParams = { encryptedShare: ShareGetResponse } & (
-    { type: ShareType.Vault; vaultKey: VaultShareKey } | { type: ShareType.Item }
+    | { type: ShareType.Vault; vaultKey: VaultShareKey }
+    | { type: ShareType.Item }
 );
 
 export const openShare = async ({ encryptedShare, ...options }: OpenShareProcessParams): Promise<OpenedShare> => {

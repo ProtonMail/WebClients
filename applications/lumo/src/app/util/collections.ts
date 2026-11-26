@@ -40,4 +40,3 @@ export const setify = <T>(xs: Iterable<T> | Record<string, T>): Set<T> => {
 export const listIds = <T extends { id: string }>(xs: T[]): string[] => {
     return xs.map((x) => x.id);
 };
-

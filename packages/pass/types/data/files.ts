@@ -33,7 +33,9 @@ export type FileChunkUploadDTO = {
     shareId: ShareId;
     totalChunks: number;
 } & (
-    { type: 'blob'; blob: Blob } | { type: 'storage'; storageType: string; ref: string } | { type: 'b64'; data: string }
+    | { type: 'blob'; blob: Blob }
+    | { type: 'storage'; storageType: string; ref: string }
+    | { type: 'b64'; data: string }
 );
 
 export type FileAttachmentsDTO = { toAdd: FileID[]; toRemove: FileID[]; toRestore?: FileID[] };

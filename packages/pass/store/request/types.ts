@@ -56,7 +56,9 @@ export type RequestEntry<T extends RequestStatus = RequestStatus, D = any> = {
 
 /** Request progress union type when tracking progress events */
 export type RequestProgress<T, D = T> =
-    { type: 'progress'; progress: number; data: D } | { type: 'done'; result: T } | { type: 'error'; error: unknown };
+    | { type: 'progress'; progress: number; data: D }
+    | { type: 'done'; result: T }
+    | { type: 'error'; error: unknown };
 
 /** Controls the return value when a request succeeds:
  * - If request config has an explicit `data` field, returns that value

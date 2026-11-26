@@ -1,7 +1,7 @@
-import {useMemo} from 'react';
+import { useMemo } from 'react';
 
-import {useLumoFlags} from './useLumoFlags';
-import {FileProcessingService} from '../services/fileProcessingService';
+import { FileProcessingService } from '../services/fileProcessingService';
+import { useLumoFlags } from './useLumoFlags';
 
 export function useFileProcessing() {
     const { imageTools: ffImageTools } = useLumoFlags();
@@ -10,8 +10,5 @@ export function useFileProcessing() {
     // Note: We don't cleanup on unmount because this is a singleton shared across the app
     // The worker will be cleaned up when the page unloads
 
-    return useMemo(
-        () => FileProcessingService.getInstance({enableImageTools: ffImageTools}),
-        [ffImageTools]
-    );
+    return useMemo(() => FileProcessingService.getInstance({ enableImageTools: ffImageTools }), [ffImageTools]);
 }

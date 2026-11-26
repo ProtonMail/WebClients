@@ -21,10 +21,7 @@ export function extractCodeBlockText(children: ReactNode): string {
     return String(children ?? '').replace(/\n$/, '');
 }
 
-export function getCodeBlockLanguage(
-    className?: string | string[] | null,
-    node?: HastElement
-): string {
+export function getCodeBlockLanguage(className?: string | string[] | null, node?: HastElement): string {
     const classes = normalizeClassNames(className, node);
     const match = /language-([\w-]+)/.exec(classes);
     return match?.[1]?.toLowerCase() ?? '';

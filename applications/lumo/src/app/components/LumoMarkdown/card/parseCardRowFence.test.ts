@@ -72,9 +72,7 @@ describe('parseCardRowFence', () => {
     });
 
     it('parses card-row segment code without a markdown fence wrapper', () => {
-        const cards = parseCardRowSegmentCode(
-            JSON.stringify([{ title: 'Revenue', value: '$1M', direction: 'up' }])
-        );
+        const cards = parseCardRowSegmentCode(JSON.stringify([{ title: 'Revenue', value: '$1M', direction: 'up' }]));
 
         expect(cards).toHaveLength(1);
         expect(JSON.parse(cards![0]!.code).type).toBe('metric');

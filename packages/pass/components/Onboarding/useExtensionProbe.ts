@@ -134,9 +134,8 @@ const resolveProbeState = (
             : { state: ProbeState.MISSING, link: getInstallUrl(), pinned: resolvePinState(undefined) };
     }
 
-    const { authenticated, pinned: reportedPinned, url: extUrl } =
-        // There's a bug in the sendExtensionMessage return type
-        result as unknown as PassCheckPayload;
+    // There's a bug in the sendExtensionMessage return type
+    const { authenticated, pinned: reportedPinned, url: extUrl } = result as unknown as PassCheckPayload;
 
     const pinned = resolvePinState(reportedPinned);
 

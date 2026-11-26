@@ -184,7 +184,8 @@ export const parseVcalendarWithRecoveryAndMaybeErrors = (
         return result;
     } catch (e) {
         return fromIcalComponentWithMaybeErrors(new ICAL.Component(ICAL.parse(vcal))) as
-            VcalVcalendarWithMaybeErrors | VcalCalendarComponentWithMaybeErrors;
+            | VcalVcalendarWithMaybeErrors
+            | VcalCalendarComponentWithMaybeErrors;
     }
 };
 

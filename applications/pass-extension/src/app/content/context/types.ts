@@ -17,7 +17,13 @@ import type { PasskeyService } from '../services/webauthn/passkey.service';
 export type CSContextState = AppState & { stale: boolean; ready: boolean };
 
 export type CSFeatures =
-    'Autofill' | 'Autofill2FA' | 'Autosave' | 'AutosuggestAlias' | 'AutosuggestPassword' | 'CreditCard' | 'Passkeys';
+    | 'Autofill'
+    | 'Autofill2FA'
+    | 'Autosave'
+    | 'AutosuggestAlias'
+    | 'AutosuggestPassword'
+    | 'CreditCard'
+    | 'Passkeys';
 
 export interface ContentScriptContext {
     /** Wether this script is in the top-frame */

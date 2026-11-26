@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { FlagProvider } from '@unleash/proxy-client-react';
 import { UnleashToolbarProvider } from '@unleash/toolbar/react';
+
 import '@unleash/toolbar/toolbar.css';
 import type { UnleashClient } from 'unleash-proxy-client';
 

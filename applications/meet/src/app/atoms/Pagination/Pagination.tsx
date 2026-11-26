@@ -28,10 +28,7 @@ export const Pagination = ({ totalPages, currentPage, onPageChange }: Pagination
             >
                 <IcChevronLeft aria-hidden="true" />
             </Button>
-            <div
-                id={pageCounterId}
-                aria-label={c('Info').t`Page ${displayPage} of ${totalPages}`}
-            >
+            <div id={pageCounterId} aria-label={c('Info').t`Page ${displayPage} of ${totalPages}`}>
                 {displayPage}/{totalPages}
             </div>
             <Button

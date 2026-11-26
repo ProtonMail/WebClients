@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
-import { useSortable } from '@dnd-kit/react/sortable';
 import { closestCenter } from '@dnd-kit/collision';
+import { useSortable } from '@dnd-kit/react/sortable';
 import type { VirtualItem } from '@tanstack/react-virtual';
 
 import type { GridConfiguration } from './hooks/useGridConfig';

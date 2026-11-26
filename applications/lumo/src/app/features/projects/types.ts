@@ -14,4 +14,3 @@ export interface Project {
     spaceId?: SpaceId; // Actual space ID for non-examples
     promptSuggestions?: string[]; // Suggested prompts for example projects
 }
-

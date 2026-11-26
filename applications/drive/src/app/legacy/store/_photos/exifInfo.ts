@@ -42,4 +42,3 @@ export const getCaptureDateTimeString = (exif?: ExifTags) => {
         return undefined;
     }
 };
-

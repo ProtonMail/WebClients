@@ -7,7 +7,15 @@ export type PaymentSystem = 'chargebee' | 'inhouse';
  * Telemetry-friendly name. Changing one of these changes what the data team receives.
  */
 export type TelemetryMethodName =
-    'card' | 'paypal' | 'apple_pay' | 'google_pay' | 'sepa' | 'ideal' | 'bitcoin' | 'cash' | 'token';
+    | 'card'
+    | 'paypal'
+    | 'apple_pay'
+    | 'google_pay'
+    | 'sepa'
+    | 'ideal'
+    | 'bitcoin'
+    | 'cash'
+    | 'token';
 
 export type PaymentMethodConfig = {
     /** Whether the system can keep this method on file for subsequent payments. */

@@ -1,6 +1,5 @@
-import type { DBSchema } from 'idb';
-
 import type { ESCiphertext, IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
+import type { DBSchema } from 'idb';
 
 import type { ES_SYNC_ACTIONS, INDEXING_STATUS, TIMESTAMP_TYPE } from '../constants';
 import type { ESSetResultsList } from './esFunctions';

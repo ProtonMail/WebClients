@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import type { LumoApiModelTier } from '@proton/lumo-api-client/core/chat-completions';
 
 import type { ContextLimits } from '../llm/contextLimits';
-import { useCalibrationRevision } from '../llm/requestCalibration';
 import { type RequestBudget, getDisplayContextLimits, resolveRequestBudget } from '../llm/requestBudget';
+import { useCalibrationRevision } from '../llm/requestCalibration';
 import { getSelectedModelTier, useModelTier } from '../providers/ModelTierProvider';
 import { useModelsRevision } from '../services/modelsStore';
 

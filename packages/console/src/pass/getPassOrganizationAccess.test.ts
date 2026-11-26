@@ -1,5 +1,8 @@
 import { PLANS } from '@proton/payments/core/constants';
-import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrantsForTesting';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 import { getPassOrganizationAccess, getPassPageAvailability } from './getPassOrganizationAccess';

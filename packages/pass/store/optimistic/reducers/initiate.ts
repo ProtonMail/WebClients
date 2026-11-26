@@ -21,9 +21,7 @@ export const initiateReducer = <T>(
 ): OptimisticState<T> => {
     const historyItemIndex = optimistic.history.some(isOptimisticHistoryItemWithId(optimisticId));
 
-    const { checkpoint, history } = historyItemIndex
-        ? removeHistoryItem(reducer, optimistic, optimisticId)
-        : optimistic;
+    const { checkpoint, history } = historyItemIndex ? removeHistoryItem(reducer, optimistic, optimisticId) : optimistic;
 
     return {
         checkpoint: checkpoint || inner,

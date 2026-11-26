@@ -282,7 +282,11 @@ export function isConnectionForceClosedError(e: unknown): boolean {
 }
 
 export type PermanentErrorKind =
-    'quota_exceeded' | 'corrupted_db' | 'invalid_indexer_state' | 'search_library_error' | 'search_crypto_error';
+    | 'quota_exceeded'
+    | 'corrupted_db'
+    | 'invalid_indexer_state'
+    | 'search_library_error'
+    | 'search_crypto_error';
 
 /**
  * Thrown when the user's OpenPGP keys are unavailable or cannot decrypt the stored
@@ -343,7 +347,8 @@ export function tryCatchWithNotification<T>(fn: () => T | Promise<T>): () => Pro
 type TransientErrorKind = 'rate-limited' | 'server' | 'network' | 'offline' | 'abort' | 'unknown';
 
 export type ErrorDecision =
-    { kind: 'permanent'; reason: PermanentErrorKind } | { kind: 'transient'; reason: TransientErrorKind };
+    | { kind: 'permanent'; reason: PermanentErrorKind }
+    | { kind: 'transient'; reason: TransientErrorKind };
 
 /**
  * Classifies an error into one of two buckets driving the queue's reaction:

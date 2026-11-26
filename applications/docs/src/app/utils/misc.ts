@@ -30,4 +30,3 @@ export function useEvent<T extends AnyFunction>(callback?: T) {
   })
   return useCallback<AnyFunction>((...args) => ref.current?.(...args), []) as T
 }
-

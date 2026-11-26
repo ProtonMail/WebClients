@@ -1,1 +1,1 @@
-import './uint8array-base64-hex-polyfill.d.ts'
+import './uint8array-base64-hex-polyfill.d.ts';

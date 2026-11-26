@@ -15,7 +15,6 @@ from the private account app,  but to limit this FF usage to lumo scope, we are 
 account.proton.me/lumo if the FF is enabled. Multiple redirections is not ideal, but this is expected to be temporary  */
 
 const ProtectGuestRouteGuard = ({ children }: Props) => {
-
     const { deactivateGuestMode: isLumoDeactivateGuestModeEnabled } = useLumoFlags();
 
     const accountHref = getAppHref('lumo', APPS.PROTONACCOUNT);

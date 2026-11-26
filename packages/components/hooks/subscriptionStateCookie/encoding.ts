@@ -1,3 +1,4 @@
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import type {
     DecodedFreeCookieData,
@@ -5,7 +6,6 @@ import type {
     EncodedFreeCookieData,
     EncodedPaidCookieData,
 } from './types';
-import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 export const encodePaidSubscriptionData = ({ planName, cycle }: Omit<DecodedPaidCookieData, 'type'>): string => {
     const data: EncodedPaidCookieData = {

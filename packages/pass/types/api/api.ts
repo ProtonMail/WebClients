@@ -71,8 +71,9 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     url?: U;
 };
 
-export type ApiResult<T extends any = void, U extends string = string, M extends string = string> =
-    T extends void ? ApiResponse<`${U}`, `${M}`> : T;
+export type ApiResult<T extends any = void, U extends string = string, M extends string = string> = T extends void
+    ? ApiResponse<`${U}`, `${M}`>
+    : T;
 
 type ApiSessionEvent = 'inactive' | 'locked' | 'restricted' | 'missing-scope';
 

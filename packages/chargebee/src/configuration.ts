@@ -46,7 +46,12 @@ function getCardConfiguration(configInput: CbCardConfig): CbIframeConfig {
 
 function getConfigWithoutExtraProperties(
     configInput:
-        CbPaypalConfig | CbSavedCardConfig | CbDirectDebitConfig | CbApplePayConfig | CbGooglePayConfig | CbIdealConfig
+        | CbPaypalConfig
+        | CbSavedCardConfig
+        | CbDirectDebitConfig
+        | CbApplePayConfig
+        | CbGooglePayConfig
+        | CbIdealConfig
 ): CbIframeConfig {
     return sanitizeSharedConfig(configInput);
 }

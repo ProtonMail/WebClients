@@ -2,8 +2,8 @@ import { getApproximateTokenCount } from '../llm/tokenizer';
 import { newAttachmentId } from '../redux/slices/core/attachments';
 import { SearchService } from '../services/search/searchService';
 import type { Attachment, SpaceId } from '../types';
-import { getMimeTypeFromName } from './filetypes';
 import { parseFileReferences } from './fileReferences';
+import { getMimeTypeFromName } from './filetypes';
 
 type IndexDocument = NonNullable<ReturnType<SearchService['retrieveDocumentForMention']>>;
 
@@ -13,10 +13,9 @@ export function getAttachmentDocumentKey(att: Pick<Attachment, 'filename' | 'dri
 }
 
 /** Keep one entry per document; prefer auto-retrieved copies when both exist. */
-export function dedupeAttachmentsByDocumentKey<T extends Pick<Attachment, 'filename' | 'driveNodeId' | 'autoRetrieved'>>(
-    files: T[],
-    preferAutoRetrieved = true
-): T[] {
+export function dedupeAttachmentsByDocumentKey<
+    T extends Pick<Attachment, 'filename' | 'driveNodeId' | 'autoRetrieved'>,
+>(files: T[], preferAutoRetrieved = true): T[] {
     const byKey = new Map<string, T>();
 
     for (const file of files) {
@@ -74,10 +73,7 @@ function resolveDocumentForAttachment(
     spaceId?: SpaceId,
     query?: string
 ): IndexDocument | null {
-    const documentId =
-        attachment.driveNodeId ||
-        (attachment.spaceId ? attachment.id : undefined) ||
-        undefined;
+    const documentId = attachment.driveNodeId || (attachment.spaceId ? attachment.id : undefined) || undefined;
 
     return (
         (documentId && resolveDocumentFromIndex(searchService, attachment.filename, spaceId, query, documentId)) ||
@@ -199,11 +195,7 @@ export async function resolveReferencedFilesForSend(
         const doc = resolveDocumentFromIndex(searchService, ref.fileName, spaceId, content);
         const driveNodeId = doc?.isDriveDocument ? doc.id : undefined;
 
-        const priorAttachment = findAttachmentForFileReference(
-            ref.fileName,
-            conversationAttachments,
-            driveNodeId
-        );
+        const priorAttachment = findAttachmentForFileReference(ref.fileName, conversationAttachments, driveNodeId);
         if (priorAttachment && (attachmentHasUsableContent(priorAttachment) || priorAttachment.autoRetrieved)) {
             continue;
         }

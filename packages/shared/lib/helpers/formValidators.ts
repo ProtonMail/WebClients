@@ -23,10 +23,10 @@ const defaultUsernameLength = 40;
 export const usernameLengthValidator = (value: string, n = defaultUsernameLength) =>
     value.length > defaultUsernameLength
         ? c('Validation').ngettext(
-            msgid`Try a shorter username (${n} character max)`,
-            `Try a shorter username (${n} characters max)`,
-            n
-        )
+              msgid`Try a shorter username (${n} character max)`,
+              `Try a shorter username (${n} characters max)`,
+              n
+          )
         : '';
 
 export const minLengthValidator = (value: string, minimumLength: number) =>

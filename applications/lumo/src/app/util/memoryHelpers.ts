@@ -422,7 +422,8 @@ export const parseMemoryStringsResponse = (response: string, existingMemories: M
 };
 
 export type ParsedMemoryGenerationResponse =
-    { status: 'valid'; memories: string[] } | { status: 'invalid'; memories: [] };
+    | { status: 'valid'; memories: string[] }
+    | { status: 'invalid'; memories: [] };
 
 /** Keeps a valid `[]` distinct from malformed output without treating either as a persisted memory. */
 export const parseMemoryGenerationResponse = (
