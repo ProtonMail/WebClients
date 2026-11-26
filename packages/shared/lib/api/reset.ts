@@ -32,6 +32,18 @@ export interface ResetTokenPayload {
     Phone?: string;
 }
 
+export const resetNonPrivateMember = (data: { Username: string; Token: string }) => ({
+    url: 'core/v4/member/reset',
+    method: 'post',
+    data,
+});
+
+export interface ResetNonPrivateMemberResponse {
+    UID: string;
+    LocalID: number;
+    Scopes: string[];
+}
+
 export const requestLoginResetToken = <T = ResetTokenPayload>(data: T) => ({
     url: 'core/v4/reset',
     method: 'post',

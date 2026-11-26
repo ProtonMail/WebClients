@@ -22,12 +22,47 @@ import MembersAuthDevicesList from './MembersAuthDevicesList';
 import { rejectMemberAuthDevice } from './memberAuthDeviceActions';
 import type { MemberAuthDevicesState, PendingAdminActivation, PendingAdminActivations } from './memberAuthDevices';
 
+const getTitle = ({ n, passwordResetCount }: { n: number; passwordResetCount: number }) => {
+    if (passwordResetCount === 0) {
+        return c('sso').t`Grant access to users?`;
+    }
+    if (passwordResetCount === n) {
+        return c('member_password_reset').t`Approve password resets?`;
+    }
+    return c('member_password_reset').t`Approve requests?`;
+};
+
+const getDescription = ({ n, passwordResetCount }: { n: number; passwordResetCount: number }) => {
+    if (passwordResetCount === 0) {
+        return c('sso').ngettext(
+            msgid`${n} user is requesting your help to sign in to their ${BRAND_NAME} Account with single sign-on.`,
+            `${n} users are requesting your help to sign in to their ${BRAND_NAME} Account with single sign-on.`,
+            n
+        );
+    }
+    if (passwordResetCount === n) {
+        return c('member_password_reset').ngettext(
+            msgid`${n} user requested a password reset for their ${BRAND_NAME} Account.`,
+            `${n} users requested a password reset for their ${BRAND_NAME} Account.`,
+            n
+        );
+    }
+    return c('member_password_reset').ngettext(
+        msgid`${n} user is waiting for your approval.`,
+        `${n} users are waiting for your approval.`,
+        n
+    );
+};
+
 interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
     pendingAdminActivationsWithMembers: PendingAdminActivations;
 }
 
 const MembersAuthDevicesModal = ({ pendingAdminActivationsWithMembers, ...rest }: Props) => {
     const n = pendingAdminActivationsWithMembers.length;
+    const passwordResetCount = pendingAdminActivationsWithMembers.filter(
+        ({ memberAuthDevice }) => memberAuthDevice.IsRecovery
+    ).length;
     const [pendingMemberAuthDevice, setPendingMemberAuthDevice] = useState<PendingAdminActivation | null>(null);
     const [grantModalProps, setGrantModal, renderGrantModal] = useModalState();
     const [denyModalProps, setDenyModal, renderDenyModal] = useModalState();
@@ -84,15 +119,9 @@ const MembersAuthDevicesModal = ({ pendingAdminActivationsWithMembers, ...rest }
                 />
             )}
             <ModalTwo {...rest} size="xlarge">
-                <ModalTwoHeader title={c('sso').t`Grant access to users?`} />
+                <ModalTwoHeader title={getTitle({ n, passwordResetCount })} />
                 <ModalTwoContent>
-                    <p className="text-break">
-                        {c('sso').ngettext(
-                            msgid`${n} user is requesting your help to sign in to their ${BRAND_NAME} Account with single sign-on.`,
-                            `${n} users are requesting your help to sign in to their ${BRAND_NAME} Account with single sign-on.`,
-                            n
-                        )}
-                    </p>
+                    <p className="text-break">{getDescription({ n, passwordResetCount })}</p>
                     <div>
                         <MembersAuthDevicesList
                             pendingAdminActivationsWithMembers={pendingAdminActivationsWithMembers}

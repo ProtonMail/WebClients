@@ -95,6 +95,7 @@ export interface OrganizationSettings {
     PersonalAccessTokenCreationDisabled?: boolean;
     PasswordReminderEnforced: boolean;
     LumoApiEnabled: boolean;
+    ImpersonationDisabledForPasswordChange: boolean;
     /** Members of the organization can reset their password without an administrator, with their recovery phrase. */
     AdminOptionalForPasswordChange: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];

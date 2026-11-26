@@ -18,6 +18,7 @@ import { getApiError, getIs401Error } from '../api/helpers/apiErrorHelper';
 import { getHumanVerificationData, withVerification } from '../api/helpers/humanVerification';
 import { createCrossTabMutex } from '../api/helpers/mutex';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from '../api/helpers/refreshHandlers';
+import { resetNonPrivateMember } from '../api/reset';
 import { createOnceHandler } from '../apiHandlers';
 import type { ChallengePayload } from '../authentication/interface';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../errors';
@@ -32,6 +33,7 @@ const setupComplete = Symbol('setup complete');
 
 const authConfig = auth({} as any, true);
 const mnemonicAuthConfig = authMnemonic('', true);
+const memberResetConfig = resetNonPrivateMember({ Username: '', Token: '' });
 const auth2FAConfig = auth2FA({ TwoFactorCode: '' });
 const localKeyConfig = setLocalKey('');
 
@@ -269,7 +271,7 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
         // If an unauthenticated session attempts to signs in, the unauthenticated session has to be discarded so it's not
         // accidentally re-used for another session. We do this before the response has returned to avoid race conditions,
         // e.g. a user refreshing the page before the response has come back.
-        const isAuthUrl = [authConfig.url, mnemonicAuthConfig.url].includes(config.url);
+        const isAuthUrl = [authConfig.url, mnemonicAuthConfig.url, memberResetConfig.url].includes(config.url);
         if (isAuthUrl) {
             clearTabPersistedUID();
         }

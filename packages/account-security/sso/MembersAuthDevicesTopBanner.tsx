@@ -19,6 +19,28 @@ import {
     selectPendingMemberAuthDevices,
 } from './memberAuthDevices';
 
+const getBannerText = ({ n, passwordResetCount }: { n: number; passwordResetCount: number }) => {
+    if (passwordResetCount === 0) {
+        return c('sso').ngettext(
+            msgid`${n} member requested your help to sign in.`,
+            `${n} members requested your help to sign in.`,
+            n
+        );
+    }
+    if (passwordResetCount === n) {
+        return c('member_password_reset').ngettext(
+            msgid`${n} member requested a password reset.`,
+            `${n} members requested a password reset.`,
+            n
+        );
+    }
+    return c('member_password_reset').ngettext(
+        msgid`${n} member needs your approval.`,
+        `${n} members need your approval.`,
+        n
+    );
+};
+
 const MembersAuthDevicesTopBanner = () => {
     const [modalProps, setModal, renderModal] = useModalState();
     const { pendingAdminActivationsWithMembers } = baseUseSelector(selectPendingMemberAuthDevices);
@@ -33,6 +55,9 @@ const MembersAuthDevicesTopBanner = () => {
     }, []);
 
     const n = pendingAdminActivationsWithMembers.length;
+    const passwordResetCount = pendingAdminActivationsWithMembers.filter(
+        ({ memberAuthDevice }) => memberAuthDevice.IsRecovery
+    ).length;
 
     return (
         <>
@@ -44,11 +69,7 @@ const MembersAuthDevicesTopBanner = () => {
             )}
             {n > 0 && (
                 <TopBanner className="bg-warning">
-                    {c('sso').ngettext(
-                        msgid`${n} member requested your help to sign in.`,
-                        `${n} members requested your help to sign in.`,
-                        n
-                    )}{' '}
+                    {getBannerText({ n, passwordResetCount })}{' '}
                     <InlineLinkButton
                         key="button"
                         onClick={() => {
