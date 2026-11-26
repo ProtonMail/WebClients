@@ -1,10 +1,12 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { useApi } from '@proton/app-context/useApi';
+import { useVariant } from '@proton/unleash/useVariant';
 
 import { PostSignupSurvey } from './PostSignupSurvey';
 
 vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/unleash/useVariant');
 
 const mockApi = vi.fn();
 const onClose = vi.fn();
@@ -16,6 +18,7 @@ describe('PostSignupSurvey', () => {
         vi.clearAllMocks();
         mockApi.mockResolvedValue({});
         vi.mocked(useApi).mockReturnValue(mockApi as any);
+        vi.mocked(useVariant).mockReturnValue({ name: 'Treatment1' } as any);
     });
 
     it('dismisses and closes once', () => {
@@ -38,12 +41,12 @@ describe('PostSignupSurvey', () => {
 
     it('submits both steps, and "none" excludes other providers', async () => {
         renderSurvey();
-        fireEvent.click(screen.getByLabelText('No ads'));
+        fireEvent.click(screen.getByLabelText('I want an inbox without ads or spam'));
         fireEvent.click(screen.getByText('Next'));
 
         fireEvent.click(screen.getByLabelText('Gmail'));
         fireEvent.click(screen.getByLabelText('Yahoo'));
-        fireEvent.click(screen.getByLabelText(/didn't have one/));
+        fireEvent.click(screen.getByLabelText(/None, this is my first email/));
         fireEvent.click(screen.getByText('Start using Proton Mail'));
 
         await waitFor(() => expect(mockApi).toHaveBeenCalledTimes(1));

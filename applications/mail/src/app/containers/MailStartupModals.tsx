@@ -20,7 +20,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import MailOnboardingModal from '../components/onboarding/modal/MailOnboardingModal';
 import { PostSignupSurvey } from '../components/postSignupSurvey/PostSignupSurvey';
-import { usePostSignupSurveyEligibility } from '../components/postSignupSurvey/usePostSignupSurveyEligibility';
+import { usePostSignupSurveyEligibility } from '../components/postSignupSurvey/hooks/usePostSignupSurveyEligibility';
 
 const useMailOnboardingModal: () => StartupModal = () => {
     const [modal, setModal, renderModal] = useModalState();
