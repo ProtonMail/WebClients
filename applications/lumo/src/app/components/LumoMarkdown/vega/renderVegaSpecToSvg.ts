@@ -1,6 +1,7 @@
 import embed, { type Result, type VisualizationSpec } from 'vega-embed';
 import { expressionInterpreter } from 'vega-interpreter';
 
+import { SecureVegaView } from './SecureVegaView';
 import { getProtonVegaConfig } from './protonVegaTheme';
 import { sanitizeVegaSpec } from './sanitizeVegaSpec';
 import { createSecureVegaLoader } from './secureVegaLoader';
@@ -44,6 +45,7 @@ async function withStaticView<T>(
 
     const result: Result = await embed(container, spec, {
         actions: false,
+        viewClass: SecureVegaView,
         ast: true,
         expr: expressionInterpreter,
         loader: createSecureVegaLoader(),

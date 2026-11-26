@@ -9,6 +9,7 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 
 import { useLumoTheme } from '../../../providers';
 import { LUMO_VEGA_CHART_SHELL_CLASS } from '../lumoMarkdownCardShell';
+import { SecureVegaView } from './SecureVegaView';
 import { VegaChartDownloadButton } from './VegaChartDownloadButton';
 import { VegaChartLoadingOverlay } from './VegaChartLoading';
 import { VegaChartSourceButton, VegaChartSpecPanel } from './VegaChartSpecInspector';
@@ -229,6 +230,7 @@ export const VegaLiteChart = ({ code, deferRender = false }: VegaLiteChartProps)
                 const dark = isDarkSurface(chartShell);
                 const embedOptions = {
                     actions: false,
+                    viewClass: SecureVegaView,
                     ast: true,
                     expr: expressionInterpreter,
                     loader: createSecureVegaLoader(),
