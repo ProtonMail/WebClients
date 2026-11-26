@@ -5815,23 +5815,44 @@
         "I dag"
       ]
     },
-    "tooltip": {
-      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: KI-assistent som respekterer personvernet ditt"
-      ],
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
-      ]
-    },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Legg til en datagjenopprettingsmetode for å låse opp dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Legg til en e-postadresse eller telefon for gjenoppretting slik at du kan tilbakestille passordet ditt hvis du glemmer det."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lag en gjenopprettingsfrase slik at du kan gjenopprette dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generer en gjenopprettingsfrase for å beskytte kontoen din mot tap av data."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Øyeblikkelig KI-assistanse, menneskelig ekspert er klar!"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Noen av dataene dine er låst. Bruk en gjenopprettingsmetode for å låse de opp."
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementssyklusen starter ${ formattedTime }"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Last ned en ny slik at du fortsatt kan gjenopprette dataene dine."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Skaff deg en ny slik at du fortsatt kan gjenopprette dataene dine."
+      ]
+    },
+    "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: KI-assistent som respekterer personvernet ditt"
+      ],
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ]
     },
     "Unknown sender": {

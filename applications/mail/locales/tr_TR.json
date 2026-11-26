@@ -1096,6 +1096,9 @@
       "Open debug menu": [
         "Hata ayıklama menüsünü aç"
       ],
+      "Open Mailing lists": [
+        "E-posta Listelerini aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -1598,7 +1601,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7360,6 +7364,13 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "${ MAIL_APP_NAME } hizmetini etkinleştirerek ${ count } etki alanınızda e-posta almaya başlayın.",
+        "${ MAIL_APP_NAME } hizmetini etkinleştirerek ${ count } etki alanınızda e-posta almaya başlayın."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirerek ${ domainName } adresinden e-posta almaya başlayın. ${ activateLink }"
+      ],
       "Activation in progress": [
         "Kullanıma alınıyor"
       ],
@@ -9448,7 +9459,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
@@ -9661,8 +9672,8 @@
         "Şu reklam verenlerin ve kuruluşların bu e-postayı ne zaman açtığınızı, hangi aygıtı kullandığınızı ve nerede bulunduğunuzu görmesini engelledik."
       ],
       "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
-        "${ count } haber bültenini buraya aktardık ve gönderenlere göre gruplandırdık. Size ne sıklıkla e-posta gönderildiğini görün ardından tek bir tıklamayla bunları saklayın, başka bir yere taşıyın veya aboneliğinizi iptal edin.",
-        "${ count } haber bültenini buraya aktardık ve gönderenlere göre gruplandırdık. Size ne sıklıkla e-posta gönderildiğini görün ardından tek bir tıklamayla bunları saklayın, başka bir yere taşıyın veya aboneliğinizi iptal edin."
+        "${ count } duyuru aktarıldı ve göndericiye göre gruplandı. Her birinin size ne sıklıkla e-posta gönderdiğini görün. Ardından tek tıkla tutun, taşıyın veya abonelikten ayrılın.",
+        "${ count } duyuru aktarıldı ve göndericiye göre gruplandı. Her birinin size ne sıklıkla e-posta gönderdiğini görün. Ardından tek tıkla tutun, taşıyın veya abonelikten ayrılın."
       ],
       "We cannot enable message content search in this browser.": [
         "Bu tarayıcıda iletilerin içeriklerinde arama özelliği açılamadı."
@@ -9708,6 +9719,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Gmail'den içe aktardığınız bültenleri gönderenlere göre gruplandırılmış olarak E-posta Listelerine ekledik. Hepsini tek bir yerden okuyabilir, saklayabilir veya aboneliğinizi iptal edebilirsiniz."
       ],
       "Web URL": [
         "Site adresi"
@@ -9955,6 +9969,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ count } etki alanınızla ilgili e-posta almayacaksınız. Bunu Ayarlar > Etki alanları bölümünden istediğiniz zaman yapabilirsiniz.",
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ count } etki alanınızla ilgili e-posta almayacaksınız. Bunu Ayarlar > Etki alanları bölümünden istediğiniz zaman yapabilirsiniz."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "${ MAIL_APP_NAME } uygulamasını etkinleştirene kadar ${ domainName } adresine e-posta almayacaksınız. Bunu Ayarlar > Etki alanları bölümünden istediğiniz zaman yapabilirsiniz."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir ek dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
       ],
@@ -10025,6 +10046,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Gmail hesabınız bu ${ MAIL_APP_NAME } adresine bağlanır"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Gmail’deki bültenleriniz artık kişisel e-postalarınızdan ayrı olarak gönderenlere göre gruplandırılıyor. Bunları tek bir yerden okuyabilir, saklayabilir veya aboneliğinizi iptal edebilirsiniz."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Donanımınız yazma yardımcısının yerel olarak çalıştırılmasını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
@@ -10414,7 +10438,7 @@
         "${ boldActive } Tüm iletileri ${ boldFolderName } içine taşı"
       ],
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Hesap parolası"
+        "${ BRAND_NAME } hesabı parolası"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -11596,6 +11620,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Etkinleştir"
+      ],
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
       ],
@@ -12965,11 +12992,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Uçtan uca şifrelenmiş belgeler oluşturun, düzenleyin ve bu belgeler üzerinde birlikte çalışın."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
@@ -13216,19 +13249,19 @@
     },
     "Newsletter sender stats": {
       "${ count } email in the last 30 days. Not opened.": [
-        "${ count } e-posta son 30 gün içinde. Açılmamış.",
-        "${ count } e-posta son 30 gün içinde. Açılmamış."
+        "Son 30 günde ${ count } e-posta. Açılmadı.",
+        "Son 30 günde ${ count } e-posta. Açılmadı."
       ],
       "${ count } email in the last 30 days. Opened often.": [
-        "${ count } e-posta son 30 gün içinde. Sık sık açıldı.",
-        "${ count } e-posta son 30 gün içinde. Sık sık açıldı."
+        "Son 30 günde ${ count } e-posta. Sıklıkla açıldı.",
+        "Son 30 günde ${ count } e-posta. Sıklıkla açıldı."
       ],
       "${ count } email in the last 30 days. Opened sometimes.": [
         "Son 30 günde ${ count } e-posta. Ara sıra açıldı.",
-        "${ count } e-posta son 30 gün içinde. Bazen açıldı."
+        "Son 30 günde ${ count } e-posta. Ara sıra açıldı."
       ],
       "No emails in the last 30 days.": [
-        "Son 30 gün içinde e-posta yok."
+        "Son 30 gün içinde bir e-posta yok."
       ]
     },
     "ngc_access_banner: action": {
@@ -16673,6 +16706,9 @@
       "Cannot create more Booking pages": [
         "Daha fazla Rezervasyon sayfası oluşturulamıyor"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Carbon Copy": [
         "Kopya"
       ],
@@ -16960,6 +16996,9 @@
       "Help center": [
         "Yardım merkezi"
       ],
+      "Hide this reminder?": [
+        "Bu hatırlatıcı gizlensin mi?"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ile e-posta adresinizi gizleyin"
       ],
@@ -17084,6 +17123,9 @@
       ],
       "Mark messages as unread": [
         "İletileri okunmamış olarak işaretle"
+      ],
+      "Meet Mailing lists": [
+        "E-posta listeleriyle tanışın"
       ],
       "Merge contacts": [
         "Kişileri birleştir"
@@ -17633,8 +17675,11 @@
       "Your free trial has ended": [
         "Ücretsiz deneme süreniz sona erdi"
       ],
+      "Your Gmail newsletters are here": [
+        "Gmail bültenleriniz burada"
+      ],
       "Your Gmail newsletters, now easier to manage": [
-        "Gmail bültenlerinizi artık daha kolay yönetebilirsiniz"
+        "Gmail duyurularınızı artık daha kolay yönetebilirsiniz"
       ],
       "Your inbox, automatically organized": [
         "Gelen kutunuz otomatik olarak düzenlendi"
@@ -17675,11 +17720,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinize erişebilmek için veri kurtarma yöntemi ekleyin."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için yedek e-posta adresi veya telefon numarası ekleyin."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz veya gece kipinde olmasına göre gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinizi geri alabilmek için kurtarma ifadesi oluşturun."
       ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
@@ -17708,6 +17762,9 @@
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Hesabınızı veri kaybına karşı korumak için kurtarma ifadesi oluşturun."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
@@ -17731,6 +17788,9 @@
       ],
       "Show side panel": [
         "Yan panoyu görüntüle"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Verilerinizin bir kısmı kilitli. Kilidi açmak için kurtarma yöntemi kullanın."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
@@ -17767,6 +17827,12 @@
       ],
       "Version 6 OpenPGP key": [
         "6. sürüm OpenPGP anahtarı"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Kurtarma dosyanız güncel değil. Verilerinizi kurtarabilmek için yeni bir dosya indirin."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Geri alma ifadenizin geçerlilik süresi doldu. Verilerinizi geri alabilmek için yeni bir tane alın."
       ]
     },
     "tooltip": {

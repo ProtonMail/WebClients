@@ -1087,6 +1087,9 @@
       "Open debug menu": [
         "Åpne feilsøkingsmenyen"
       ],
+      "Open Mailing lists": [
+        "Åpne E-postlister"
+      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -1584,6 +1587,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Stol på nøkkel",
+        "Stol på nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -7309,6 +7316,13 @@
       "Account successfully updated": [
         "Konto oppdatert"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Aktiver ${ MAIL_APP_NAME } for å begynne å motta e-post på ${ count } av domenene dine.",
+        "Aktiver ${ MAIL_APP_NAME } for å begynne å motta e-post på ${ count } av domenene dine."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Aktiver ${ MAIL_APP_NAME } for å begynne å motta e-post på ${ domainName } . ${ activateLink }."
+      ],
       "Activation in progress": [
         "Aktivering pågår"
       ],
@@ -9652,6 +9666,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
       ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Vi har lagt til nyhetsbrevene fra Gmail-importen din i E-postlister, gruppert etter avsender. Les, behold eller stopp dem på ett sted."
+      ],
       "Web URL": [
         "Nettadresse"
       ],
@@ -9895,6 +9912,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du vil ikke motta e-poster på ${ count } av dine domener før du aktiverer ${ MAIL_APP_NAME }. Du kan gjøre dette når som helst i Innstillinger > Domenenavn.",
+        "Du vil ikke motta e-poster på ${ count } av dine domener før du aktiverer ${ MAIL_APP_NAME }. Du kan gjøre dette når som helst i Innstillinger > Domenenavn."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du vil ikke motta e-poster på ${ domainName } før du aktiverer ${ MAIL_APP_NAME }. Du kan gjøre dette når som helst i Innstillinger > Domenenavn."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du uansett å sende meldingen?"
       ],
@@ -9965,6 +9989,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Gmail-en din kobles til denne ${ MAIL_APP_NAME }-adressen"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Gmail-nyhetsbrevene dine er nå gruppert etter avsender, borte fra din personlige e-post. Les, oppbevar eller stopp dem på ett sted."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Maskinvaren din støtter ikke kjøring av skriveassistenten lokalt. Prøv å kjøre den på servere."
@@ -11533,6 +11560,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktiver"
+      ],
       "Add a gift code": [
         "Legg til gavekode"
       ],
@@ -16827,6 +16857,9 @@
       "Help center": [
         "Hjelpesenter"
       ],
+      "Hide this reminder?": [
+        "Vil du skjule denne påminnelsen?"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Skjul e-posten din med ${ PASS_APP_NAME }"
       ],
@@ -16951,6 +16984,9 @@
       ],
       "Mark messages as unread": [
         "Merk meldinger som ulest"
+      ],
+      "Meet Mailing lists": [
+        "Bli kjent med E-postlister"
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
@@ -17500,6 +17536,9 @@
       "Your free trial has ended": [
         "Din gratis prøveperiode har utløpt"
       ],
+      "Your Gmail newsletters are here": [
+        "Gmail-nyhetsbrevene dine er her"
+      ],
       "Your Gmail newsletters, now easier to manage": [
         "Gmail-nyhetsbrevene dine, nå enklere å administrere"
       ],
@@ -17542,11 +17581,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Legg til en datagjenopprettingsmetode for å låse opp dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Legg til en e-postadresse eller telefon for gjenoppretting slik at du kan tilbakestille passordet ditt hvis du glemmer det."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk angir at formatet i skrivevinduet brukes til å sende til denne brukeren. Ren tekst indikerer at meldingen alltid konverteres til ren tekst ved sending."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lag en gjenopprettingsfrase slik at du kan gjenopprette dataene dine hvis du glemmer passordet ditt."
       ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"
@@ -17575,6 +17623,9 @@
       "Encrypted data with verified digital signature": [
         "Kryptert data med bekreftet digital signatur"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generer en gjenopprettingsfrase for å beskytte kontoen din mot tap av data."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
       ],
@@ -17598,6 +17649,9 @@
       ],
       "Show side panel": [
         "Vis sidepanel"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Noen av dataene dine er låst. Bruk en gjenopprettingsmetode for å låse de opp."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
@@ -17634,6 +17688,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Versjon 6 OpenPGP-nøkkel"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Last ned en ny slik at du fortsatt kan gjenopprette dataene dine."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Skaff deg en ny slik at du fortsatt kan gjenopprette dataene dine."
       ]
     },
     "tooltip": {

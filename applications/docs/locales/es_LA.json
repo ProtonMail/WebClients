@@ -40,38 +40,14 @@
       "Activate recovery": [
         "Activar recuperación"
       ],
-      "Add": [
-        "Agregar"
-      ],
       "Add a payment method": [
         "Añadir un método de pago"
       ],
       "Add account": [
         "Agregar una cuenta"
       ],
-      "Add address": [
-        "Agregar dirección"
-      ],
       "Add another account": [
         "Añada otra cuenta"
-      ],
-      "Add birthday": [
-        "Agregar cumpleaños"
-      ],
-      "Add contact": [
-        "Agregar contacto"
-      ],
-      "Add email": [
-        "Agregar correo"
-      ],
-      "Add group": [
-        "Agregar grupo"
-      ],
-      "Add new group": [
-        "Agregar grupo nuevo"
-      ],
-      "Add note": [
-        "Agregar nota"
       ],
       "Add payment method": [
         "Añadir método de pago"
@@ -79,21 +55,8 @@
       "Add people or groups to share": [
         "Añadir personas o grupos para compartir"
       ],
-      "Add phone number": [
-        "Agregar número telefónico"
-      ],
-      "Add to group": [
-        "Agregar al grupo"
-      ],
-      "Apply": [
-        "Aplicar"
-      ],
       "Ask me next time": [
         "Preguntarme la próxima vez"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
-        "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
       ],
       "Attach screenshot(s)": [
         "Adjuntar una o varias capturas de pantalla"
@@ -134,18 +97,6 @@
       "Chat with us": [
         "Chatee con nosotros"
       ],
-      "Choose a file or drag it here": [
-        "Elija un archivo o arrástrelo aquí"
-      ],
-      "Clear data": [
-        "Limpiar datos"
-      ],
-      "Clear query": [
-        "Limpiar consulta"
-      ],
-      "Click here.": [
-        "Haga clic aquí."
-      ],
       "Close": [
         "Cerrar"
       ],
@@ -167,23 +118,11 @@
       "Comments": [
         "Comentarios"
       ],
-      "Compose": [
-        "Escribir"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        "Confirmar apertura del enlace ${ linkToShow }"
-      ],
       "Connect apps and devices": [
         "Conectar apps y dispositivos"
       ],
       "Connect to video conferencing": [
         "Conectarse a la videoconferencia"
-      ],
-      "Contact group": [
-        "Grupo de contactos"
       ],
       "Continue": [
         "Continuar"
@@ -197,9 +136,6 @@
       "Copy as markdown": [
         "Copiar como markdown"
       ],
-      "Copy email to clipboard": [
-        "Copiar correo al portapapeles"
-      ],
       "Copy invite link": [
         "Copiar enlace de invitación"
       ],
@@ -209,17 +145,11 @@
       "Copy password": [
         "Copiar la contraseña"
       ],
-      "Copy version number to clipboard": [
-        "Copiar el número de versión en el portapapeles"
-      ],
       "Create": [
         "Crear"
       ],
       "Create a copy": [
         "Crear una copia"
-      ],
-      "Create a new contact group": [
-        "Crear un grupo de contactos nuevo"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Crear ${ SHEETS_APP_NAME }"
@@ -236,40 +166,17 @@
       "Decline invite": [
         "Rechazar invitación"
       ],
-      "Delete": [
-        "Eliminar"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Eliminar ${ selectedCount } contacto",
-        "Eliminar ${ selectedCount } contacto"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Eliminar ${ selectedCount } grupo de contactos",
-        "Eliminar ${ selectedCount } grupo de contactos"
-      ],
-      "Delete contact": [
-        "Eliminar contacto"
-      ],
-      "Delete contact group": [
-        "Eliminar grupo de contactos"
-      ],
       "Delete older revisions": [
         "Eliminar revisiones anteriores"
       ],
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
-      "Deselect all": [
-        "Deseleccionar todo"
-      ],
       "Dismiss": [
         "Descartar"
       ],
       "Dismiss notification": [
         "Descartar notificación"
-      ],
-      "Done": [
-        "Hecho"
       ],
       "Download": [
         "Descargar"
@@ -289,9 +196,6 @@
       "Download logs": [
         "Descargar los registros"
       ],
-      "Edit": [
-        "Editar"
-      ],
       "Edit email address": [
         "Editar dirección de correo"
       ],
@@ -300,9 +204,6 @@
       ],
       "Edit sign-in details": [
         "Editar datos de inicio de sesión"
-      ],
-      "Email settings": [
-        "Ajustes del correo"
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
@@ -313,20 +214,14 @@
       "Explore other plans": [
         "Explore otros planes"
       ],
-      "Export": [
-        "Exportar"
-      ],
-      "Export contact group": [
-        "Exportar grupo de contactos"
-      ],
       "Export editor state for version": [
         "Exportar estado del editor para la versión"
       ],
-      "Export selection as .vcf": [
-        "Exportar la selección en formato *.vcf"
-      ],
       "Export this version (as docx)": [
         "Exportar esta versión (como docx)"
+      ],
+      "Export this version (as odt)": [
+        "Exportar esta versión (como odt)"
       ],
       "Export this version (as xlsx)": [
         "Exportar esta versión (como xlsx)"
@@ -336,9 +231,6 @@
       ],
       "Forgot password?": [
         "¿Olvidó su contraseña?"
-      ],
-      "Forward as attachment": [
-        "Reenviar como adjunto"
       ],
       "Generate password": [
         "Generar contraseña"
@@ -367,9 +259,6 @@
       "Go to ${ planOrAppName }": [
         "Acceda a ${ planOrAppName }"
       ],
-      "Go to label": [
-        "Ir a la etiqueta"
-      ],
       "Go to today": [
         "Ir al día de hoy"
       ],
@@ -388,23 +277,11 @@
       "Hide": [
         "Ocultar"
       ],
-      "Hide advanced PGP settings": [
-        "Ocultar ajustes PGP avanzados"
-      ],
       "Hide more benefits": [
         "Ocultar más ventajas"
       ],
-      "Image could not be loaded with tracker protection.": [
-        "No se pudo cargar la imagen con la protección de rastreo."
-      ],
-      "Image will be loaded without a proxy": [
-        "La imagen se cargará sin proxy"
-      ],
       "Import": [
         "Importar"
-      ],
-      "import": [
-        "importar"
       ],
       "Import data": [
         "Importar datos"
@@ -421,12 +298,6 @@
       "Learn more": [
         "Más información"
       ],
-      "Load": [
-        "Cargar"
-      ],
-      "Load image": [
-        "Cargar imagen"
-      ],
       "Make a copy": [
         "Hacer una copia"
       ],
@@ -442,26 +313,14 @@
       "Mark as resolved": [
         "Marcar como resuelta"
       ],
-      "Mark for deletion": [
-        "Marcar para eliminar"
-      ],
       "Markdown (.md)": [
         "Markdown (.md)"
       ],
       "Maybe later": [
         "Más tarde"
       ],
-      "Merge": [
-        "Combinar"
-      ],
-      "Merge contacts": [
-        "Combinar contactos"
-      ],
       "Microsoft Word (.docx)": [
         "Microsoft Word (.docx)"
-      ],
-      "More actions": [
-        "Más acciones"
       ],
       "More benefits": [
         "Más ventajas"
@@ -493,15 +352,6 @@
       "New folder": [
         "Carpeta nueva"
       ],
-      "New message": [
-        "Mensaje nuevo"
-      ],
-      "Next": [
-        "Siguiente"
-      ],
-      "Next contact": [
-        "Siguiente contacto"
-      ],
       "Next month": [
         "Mes siguiente"
       ],
@@ -526,32 +376,23 @@
       "Open navigation": [
         "Abrir navegación"
       ],
+      "OpenDocument Text (.odt)": [
+        "Texto de OpenDocument (.odt)"
+      ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
       ],
       "Plain Text (.txt)": [
         "Texto plano (.txt)"
       ],
-      "Preview contact": [
-        "Vista previa de contacto"
-      ],
       "Preview logs": [
         "Previsualizar registros"
-      ],
-      "Previous contact": [
-        "Contacto anterior"
       ],
       "Previous month": [
         "Mes anterior"
       ],
       "Print": [
         "Imprimir"
-      ],
-      "Re-sign": [
-        "Volver a firmar"
-      ],
-      "Recover data": [
-        "Recuperar datos"
       ],
       "Refer a friend": [
         "Referir una amistad"
@@ -658,9 +499,6 @@
       "Select ${ planOrAppName }": [
         "Seleccionar ${ planOrAppName }"
       ],
-      "Select all": [
-        "Seleccionar todo"
-      ],
       "Set password or expiration date": [
         "Establecer contraseña o fecha de expiración"
       ],
@@ -693,9 +531,6 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Compartido con cifrado de extremo a extremo"
-      ],
-      "Show advanced PGP settings": [
-        "Mostrar ajustes PGP avanzados"
       ],
       "Show more": [
         "Mostrar más"
@@ -748,9 +583,6 @@
       "Trashing...": [
         "Enviando a la Papelera..."
       ],
-      "Trust": [
-        "Confiar"
-      ],
       "Try again": [
         "Volver a intentar"
       ],
@@ -768,12 +600,6 @@
       ],
       "Unlock data": [
         "Desbloquear datos"
-      ],
-      "Unmark for deletion": [
-        "Desmarcar para eliminar"
-      ],
-      "Untrust": [
-        "Desconfiar"
       ],
       "Update recovery file": [
         "Actualizar archivo de recuperación"
@@ -793,9 +619,6 @@
       "Upload and share files": [
         "Cargar y compartir archivos"
       ],
-      "Upload picture": [
-        "Cargar imagen"
-      ],
       "Use ${ label } theme": [
         "Usar tema ${ label }"
       ],
@@ -808,9 +631,6 @@
       "Use authentication code": [
         "Usar código de autenticación"
       ],
-      "Use for sending": [
-        "Usar para el envío"
-      ],
       "Use recovery code": [
         "Usar un código de recuperación"
       ],
@@ -822,9 +642,6 @@
       ],
       "Verify now": [
         "Verificar ahora"
-      ],
-      "View": [
-        "Ver"
       ],
       "View ${ pendingCount } invitation": [
         "Ver ${ pendingCount } invitación",
@@ -850,27 +667,6 @@
       ],
       "words out of": [
         "palabras de"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
-        "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
-      ]
-    },
-    "Actions message": {
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } o ${ importContact }."
-      ],
-      "No results found.": [
-        "No se encontraron resultados."
-      ],
-      "Please try another search term.": [
-        "Pruebe otro término de búsqueda."
-      ],
-      "You don't have any contacts.": [
-        "No tiene ningún contacto."
-      ],
-      "You don't have any groups.": [
-        "No tiene ningún grupo."
       ]
     },
     "Addon": {
@@ -969,11 +765,6 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "Al salir ahora, algunos contactos podrían no ser importados"
       ]
     },
     "Apps dropdown": {
@@ -1456,76 +1247,6 @@
       ],
       "strawberry": [
         "fresa"
-      ]
-    },
-    "Contact field label": {
-      "Address": [
-        "Dirección"
-      ],
-      "Anniversary": [
-        "Aniversario"
-      ],
-      "Birthday": [
-        "Cumpleaños"
-      ],
-      "Display name": [
-        "Nombre a mostrar"
-      ],
-      "Email": [
-        "Correo"
-      ],
-      "Enter a display name or nickname": [
-        "Ingrese un nombre a mostrar o un apodo"
-      ],
-      "First name": [
-        "Nombre"
-      ],
-      "Gender": [
-        "Sexo"
-      ],
-      "Language": [
-        "Idioma"
-      ],
-      "Last name": [
-        "Apellido"
-      ],
-      "Logo": [
-        "Logo"
-      ],
-      "Member": [
-        "Miembro"
-      ],
-      "Name": [
-        "Nombre"
-      ],
-      "Note": [
-        "Nota"
-      ],
-      "Organization": [
-        "Organización"
-      ],
-      "Phone": [
-        "Teléfono"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Role": [
-        "Profesión"
-      ],
-      "Time zone": [
-        "Zona horaria"
-      ],
-      "Title": [
-        "Título"
-      ],
-      "URL": [
-        "URL"
-      ]
-    },
-    "Contact image": {
-      "Contact image": [
-        "Imagen del contacto"
       ]
     },
     "Country name": {
@@ -2367,21 +2088,6 @@
         "Para ${ VPN_APP_NAME }"
       ]
     },
-    "Default display name vcard": {
-      "Unknown": [
-        "Desconocido"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Usar global por defecto (${ defaultValueText })"
-      ]
-    },
-    "Default signing preference": {
-      "Use global default (${ globalDefaultText })": [
-        "Usar global por defecto (${ globalDefaultText })"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Factura atrasada"
@@ -2415,12 +2121,6 @@
       "Create groups you can email with a single address.": [
         "Cree grupos a los que pueda enviar correos electrónicos con una sola dirección."
       ],
-      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos los contactos exportados."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Eliminando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Acceda fácilmente a su correo electrónico y calendario en computadoras de escritorio y dispositivos móviles."
       ],
@@ -2429,9 +2129,6 @@
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Para mayor seguridad, promueva el uso de la autenticación de dos factores en su organización."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Asegúrese de tener un acceso seguro a los datos de la organización, incluso si su equipo está de forma remota o utiliza un Wi-Fi público."
@@ -2451,14 +2148,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ayude a su equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
-      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Le permite agregar instantáneamente enlaces de reunión a las invitaciones de sus eventos."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Establezca un método de recuperación para evitar pérdida de datos."
@@ -2475,20 +2166,11 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Para importar mediante un archivo CSV o VCF, asegúrese de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídalo en varios archivos más pequeños. ${ learnMoreLink }."
-      ],
-      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
-      ],
       "To start, give your organization a name.": [
         "Para comenzar, asigne un nombre a su organización."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Mejore a ${ planName } para seguir compartiendo archivos con acceso de edición"
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use esta guía para que su organización se beneficie inmediatamente del cifrado y ecosistema de privacidad líderes en la industria de ${ BRAND_NAME }."
@@ -2496,30 +2178,11 @@
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
       ],
-      "With contact groups, you can send emails to everyone in the group with one click.": [
-        "Con los grupos de contactos, puede enviar correos electrónicos a todos los miembros del grupo con un clic."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Puede marcar para eliminar los contactos que no quiere ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
-      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Su cuenta y los métodos de recuperación de datos están configurados y la 2FA está activada."
       ],
       "Your account and data recovery methods are set.": [
         "Se han establecido los métodos de recuperación de cuenta y de datos."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puede verificar y cambiar este emparejamiento manualmente."
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que ha subido. Verifique los que quiere importar."
       ]
     },
     "Downgrade account reason": {
@@ -2658,12 +2321,6 @@
         "${ failureItems.length } elemento no se pudo mover",
         "${ failureItems.length } elementos no se pudieron mover"
       ],
-      "A contact with this email address already exists": [
-        "Ya existe un contacto con esta dirección de correo"
-      ],
-      "A group with this name already exists": [
-        "Ya existe un grupo con este nombre"
-      ],
       "A message is required when reporting copyright infringement or stolen data": [
         "Se requiere un mensaje cuando se reporte una infracción de derechos de autor o datos robados"
       ],
@@ -2700,9 +2357,6 @@
       "Cannot download a folder": [
         "No se puede descargar una carpeta"
       ],
-      "Cannot export this contact": [
-        "No se puede exportar este contacto"
-      ],
       "Cannot find move target": [
         "No se puede encontrar el destino"
       ],
@@ -2717,15 +2371,6 @@
       ],
       "Cannot verify who uploaded this file": [
         "No se puede verificar quién cargó este archivo"
-      ],
-      "Contact could not be saved": [
-        "El contacto no se pudo guardar"
-      ],
-      "Contact name is too long": [
-        "El nombre del contacto es muy largo"
-      ],
-      "Contact signature not verified": [
-        "Firma del contacto no verificada"
       ],
       "Copy operation aborted": [
         "Operación de copiado abortada"
@@ -2841,9 +2486,6 @@
       "Failed to load the membership data": [
         "Error al cargar los datos de la membresía"
       ],
-      "Failed to open to contact": [
-        "Error al abrir el contacto"
-      ],
       "Failed to remove older revisions": [
         "Ocurrió un error al borrar revisiones anteriores"
       ],
@@ -2877,14 +2519,8 @@
       "File has no revision": [
         "El archivo no tiene revisión"
       ],
-      "First name is too long": [
-        "El nombre es demasiado largo"
-      ],
       "Image preview not found": [
         "Vista previa de imagen no encontrada"
-      ],
-      "Image upload failed": [
-        "Error al cargar la imagen"
       ],
       "Incorrect backup password. Please try again.": [
         "La contraseña de respaldo no es correcta. Inténtelo de nuevo."
@@ -2898,15 +2534,6 @@
       "Invalid coupon": [
         "Cupón inválido"
       ],
-      "Invalid email address": [
-        "Dirección de correo inválida"
-      ],
-      "Invalid name": [
-        "Nombre inválido"
-      ],
-      "Invalid public key file": [
-        "Archivo de clave pública inválido"
-      ],
       "Invalid URL": [
         "URL inválida"
       ],
@@ -2918,9 +2545,6 @@
       ],
       "Item not found": [
         "Elemento no encontrado"
-      ],
-      "Last name is too long": [
-        "El apellido es demasiado largo"
       ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "El enlace público anterior no se puede actualizar. Cree otro enlace público."
@@ -2959,14 +2583,6 @@
       "Not a valid number": [
         "Número no válido"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }",
-        "Algunos contactos no tienen dirección de correo: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
-        "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
-      ],
       "Only admins can convert external invitations": [
         "Solo los administradores pueden convertir invitaciones externas"
       ],
@@ -3003,9 +2619,6 @@
       "Please enter ZIP code": [
         "Ingrese el código ZIP"
       ],
-      "Please provide either a first name, a last name or a display name": [
-        "Proporcione al menos un nombre, apellido o nombre a mostrar"
-      ],
       "Please select a country": [
         "Seleccione un país"
       ],
@@ -3031,9 +2644,6 @@
       "Signature is missing": [
         "Falta la firma"
       ],
-      "Signature not verified": [
-        "Firma no verificada"
-      ],
       "Signature verification failed": [
         "Error en la verificación de la firma"
       ],
@@ -3046,9 +2656,6 @@
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
         "Error al verificar la firma de ${ signatureType }: ${ errorMessage }"
       ],
-      "Some contacts could not be deleted": [
-        "Algunos contactos no se pudieron eliminar"
-      ],
       "Some documents could not be loaded": [
         "No se pudieron cargar algunos documentos"
       ],
@@ -3057,9 +2664,6 @@
       ],
       "Some file parts failed to upload. Please try again.": [
         "Error al cargar algunas partes del archivo. Intente de nuevo."
-      ],
-      "Some groups could not be deleted": [
-        "Algunos grupos no se pudieron eliminar"
       ],
       "Some invitations could not be loaded": [
         "No se pudieron cargar algunas invitaciones"
@@ -3109,9 +2713,6 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Hubo un error al procesar las actualizaciones del documento. Actualice la página e inténtelo de nuevo."
       ],
-      "There was an error when exporting the contacts vCards": [
-        "Hubo un error al exportar los vCards de contactos"
-      ],
       "This document is too large to copy. Download it to keep a copy of your work.": [
         "Este documento es demasiado grande para copiarlo. Descárguelo para guardar una copia de su trabajo."
       ],
@@ -3144,9 +2745,6 @@
       ],
       "This item is not shared": [
         "Este elemento no está compartido"
-      ],
-      "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Este mensaje podría contener enlaces que no pueden abrirse correctamente en el navegador actual."
       ],
       "This version could not be loaded. Close the history and try again.": [
         "No se pudo cargar esta versión. Cierre el historial e intente de nuevo."
@@ -3223,18 +2821,11 @@
       "You can update a public link for your own files only": [
         "Puede actualizar un enlace público solo para sus propios archivos"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "No puede enviar un correo a más de ${ maxContacts } destinatario.",
-        "No puede enviar un correo a más de ${ maxContacts } destinatarios."
-      ],
       "You do not have access to this item": [
         "No tiene acceso a este elemento"
       ],
       "You do not have access to this shared item": [
         "No tiene acceso a este elemento compartido"
-      ],
-      "You must set a name": [
-        "Debe establecer un nombre"
       ],
       "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
         "Su último cambio es demasiado grande para guardarse así que se desactivó la edición. Copie cualquier cambio que necesite y luego recargue la página."
@@ -3244,45 +2835,6 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Ocurrió un error inesperado. La importación debe reiniciarse."
-      ]
-    },
-    "Error importing contact": {
-      "Encryption failed": [
-        "Error en el cifrado"
-      ],
-      "Missing FN property": [
-        "Falta la propiedad FN"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "Versiones vCard menores a 3.0 no compatibles"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Ocurrió un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocurrió un error al cargar el archivo ${ formattedFilename }. No se seleccionó un archivo .csv o .vcf"
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Ocurrió un error al cargar el archivo. Ningún archivo fue seleccionado."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "Su archivo ${ formattedFilename } contiene más de ${ maxContactString } contactos."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "El archivo ${ formattedFilename } no tiene contactos para importar."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "El archivo ${ formattedFilename } está vacío."
       ]
     },
     "Error message": {
@@ -3309,11 +2861,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
-      ]
-    },
-    "Error notification": {
-      "Display name cannot be empty": [
-        "El nombre a mostrar no puede estar vacío."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3492,79 +3039,12 @@
         "SMS"
       ]
     },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Cifrando y agregando contactos: ${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "Versiones vCard menores a 3.0"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacto cifrado y agregado a la lista de contactos",
-        "${ totalImported }/${ totalToImport } contactos cifrados y agregados a la lista de contactos"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Ocurrió un error al cifrar y agregar el contacto. No se pudo importar ningún contacto."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Ocurrió un error al cifrar y agregar los contactos. ${ totalImported } de ${ totalToImport } contactos importados."
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Ocurrió un error al cifrar y agregar los contactos. No se pudo importar ningún contacto."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Contacto importado. El contacto importado aparecerá ahora en la lista de contactos."
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Contactos importados. Los contactos importados aparecerán ahora en la lista de contactos."
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Contacto ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } contacto",
-        "${ totalContacts } contacto"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "desconocido"
-      ]
-    },
-    "Import contacts warning": {
-      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "${ CONTACTS_APP_NAME } no soporta ${ forNow }:"
-      ],
-      "for now": [
-        "por ahora"
-      ]
-    },
-    "Import warning": {
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haga clic para más detalles"
-      ],
-      "No contact can be imported. Click for details": [
-        "No se puede importar ningún contacto. Haga clic para más detalles"
-      ]
-    },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "«${ documentTitle }» fue movido a la papelera. Se mantendrá ahí hasta que lo restaure o lo elimine permanentemente."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "«${ documentTitle }» está en la papelera y se mantendrá ahí hasta que lo elimine permanentemente."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } dirección de correo",
-        "${ addressCount } direcciones de correo"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
@@ -3575,34 +3055,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a la contraseña, ni siquiera nosotros."
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "El contacto ${ contactCount } contiene múltiples direcciones de correo.",
-        "Los contactos ${ contactCount } contienen múltiples direcciones de correo."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } miembro",
-        "${ contactEmailsLength } miembros"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        "${ contactName } contiene múltiples direcciones de correo."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contacto encontrado",
-        "${ contactsCount } contacto encontrado"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } contacto",
-        "${ contactsLength } contactos"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } le permite colaborar en tiempo real con cifrado de extremo a extremo para una completa privacidad. Cree una copia para empezar a editar o pida acceso de edición al propietario."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } en"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grupo encontrado",
-        "${ groupCounts } grupo encontrado"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
@@ -3620,10 +3077,6 @@
       "${ planName } expires today.": [
         "${ planName } expira hoy."
       ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
-        "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
-      ],
       "${ selection.selectedIds.length } selected": [
         "${ selection.selectedIds.length } seleccionado",
         "${ selection.selectedIds.length } seleccionados"
@@ -3633,10 +3086,6 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "${ timeRemaining } restante en su prueba. ${ addPaymentMethodLink } para mantener la suscripción. ${ learnMoreLink }"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contacto actualizado.",
-        "${ updated } contacto actualizado."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } está enmascarando su dirección IP por lo que los sitios web no pueden identificarle."
@@ -3683,9 +3132,6 @@
       ],
       "Ad targeting": [
         "Orientación de anuncios"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Los anunciantes rastrean su navegación para mostrar anuncios específicos. ${ VPN_APP_NAME } bloquea rastreadores y anuncios, lo que hace que su conexión sea más rápida y mejora su experiencia en línea."
@@ -3741,17 +3187,11 @@
       "Can't write into folder": [
         "No se puede escribir en la carpeta"
       ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "¿No recuerda la contraseña? Podemos ayudarle a limpiar los datos cifrados de todos los contactos cifrados con esta clave y en el proceso descartar la alerta."
-      ],
       "characters": [
         "caracteres"
       ],
       "characters without spaces": [
         "caracteres sin espacios"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Verificando contacto ${ progress } de ${ max }..."
       ],
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
@@ -3759,14 +3199,11 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
+      "Comments are not available yet": [
+        "Los comentarios aún no están disponibles"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conéctese a ${ VPN_APP_NAME } para navegar de forma privada."
-      ],
-      "Contact assigned to group ${ contactGroupName }": [
-        "Contacto asignado al grupo ${ contactGroupName }"
-      ],
-      "Contact unassigned from group ${ contactGroupName }": [
-        "Se eliminó el contacto del grupo ${ contactGroupName }."
       ],
       "Continue": [
         "Continuar"
@@ -3777,11 +3214,11 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
-      "Copy the link to clipboard": [
-        "Copiar el enlace al portapapeles"
-      ],
       "Copy your referral link": [
         "Copiar el enlace de referencia"
+      ],
+      "Copy “${ version }” to clipboard": [
+        "Copiar «${ version }» al portapapeles"
       ],
       "Country code": [
         "Código de país"
@@ -3789,15 +3226,15 @@
       "Create a copy to edit": [
         "Crea una copia para editar"
       ],
-      "Create a new contact group": [
-        "Crear un grupo de contactos nuevo"
-      ],
       "Create a secure cloud for ${ memberCount } member": [
         "Crear una nube segura para ${ memberCount } miembro",
         "Crear una nube segura para ${ memberCount } miembros"
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Cree documentros y hojas de cálculo con cifrado de extremo a extremo"
+      ],
+      "Create the copy you asked for.": [
+        "Cree la copia que solicitó."
       ],
       "Creating new document...": [
         "Creando el documento..."
@@ -3844,15 +3281,6 @@
       "Download current logs": [
         "Descargar registros actuales"
       ],
-      "Drop file here to upload": [
-        "Suelte los archivos aquí para cargarlos"
-      ],
-      "Drop to import": [
-        "Suelte aquí para importar"
-      ],
-      "Duplicate key updated": [
-        "Clave duplicada actualizada"
-      ],
       "Each code can only be used once": [
         "Cada código solo puede usarse una vez"
       ],
@@ -3862,8 +3290,8 @@
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "El alojamiento de correo electrónico solo está disponible para los dominios que ya posee. El registro de dominio no está disponible actualmente a través de ${ BRAND_NAME }. Puede alojar correo electrónico para dominios registrados en cualquier registrador de dominios."
       ],
-      "Emails are automatically signed": [
-        "Los correos son firmados automáticamente"
+      "Encrypted": [
+        "Cifrado"
       ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -4006,12 +3434,6 @@
       "Keep your files secure with end-to-end encryption.": [
         "Mantenga sus archivos seguros con cifrado de extremo a extremo."
       ],
-      "Key fingerprint": [
-        "Huella digital de la clave"
-      ],
-      "Labels:": [
-        "Etiquetas:"
-      ],
       "Learn more": [
         "Más información"
       ],
@@ -4076,17 +3498,8 @@
       "New": [
         "Nuevo"
       ],
-      "No contacts added yet": [
-        "Ningún contacto agregado aún"
-      ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
         "No se proporcionó ningún documento en la URL. Regrese a ${ DRIVE_APP_NAME } y seleccione un documento."
-      ],
-      "No email address": [
-        "No hay dirección de correo"
-      ],
-      "No group found": [
-        "Ningún grupo encontrado"
       ],
       "No recent documents match your search.": [
         "No hay documentos recientes que coincidan con su búsqueda."
@@ -4096,12 +3509,6 @@
       ],
       "No version history available": [
         "No hay historial de versiones disponible"
-      ],
-      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Ninguna de las claves cargadas son válidas para cifrar. Para enviar mensajes a esta dirección, cargue una clave válida o desactive \"Cifrar correos electrónicos\"."
-      ],
-      "Not a valid URL": [
-        "No es una URL válida"
       ],
       "Not connected": [
         "No conectado"
@@ -4114,9 +3521,6 @@
       ],
       "On public WiFi networks": [
         "En redes Wi-Fi públicas"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "¡Ups! Esta hoja de cálculo no puede guardar sus últimas ediciones así que hemos pausado la edición para evitar que pierda su trabajo."
@@ -4157,51 +3561,17 @@
       "Pending invitations": [
         "Invitaciones pendientes"
       ],
-      "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline solo es compatible con el formato de Texto Plano."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME automáticamente envía el mensaje usando el modo de editor actual."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Ingrese la contraseña para descifrar y visualizar el contenido."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporte una copia de sus cambios actuales desde el menú principal y vuelva a cargar la página."
       ],
-      "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Tome en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Tome en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Tome en cuenta que este proceso puede tardar algún tiempo dependiendo del tamaño de su libreta de direcciones."
-      ],
-      "Please provide a name and an email address for creating a group.": [
-        "Proporcione un nombre y una dirección de correo para crear un grupo."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Seleccione qué dirección o direcciones de correo agregar al grupo ${ groupCount }.",
-        "Seleccione qué dirección o direcciones de correo agregar a los grupos ${ groupCount }."
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        "Seleccione qué dirección o direcciones de correo agregar a ${ groupName }."
-      ],
       "Please try again in a few moments": [
         "Vuelva a intentarlo en un momento"
       ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Espere mientras buscamos contactos que puedan ser refirmados con la clave de cifrado principal."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
-      ],
       "Preparing editor…": [
         "Preparando el editor…"
-      ],
-      "Primary": [
-        "Principal"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegación privada (o modo «incógnito») solo es útil para mantener oculta su actividad en su dispositivo. Evita que su navegador guarde el historial y las cookies, pero no le hace invisible. Su ISP, administrador de red y los sitios web que visita aún pueden ver lo que hace en línea."
@@ -4257,9 +3627,6 @@
       "Select a folder to move to.": [
         "Seleccione una carpeta para mover."
       ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccione el formato de correo que quiere usar por defecto al enviar un correo a esta dirección."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
@@ -4268,9 +3635,6 @@
       ],
       "Set up your organization": [
         "Configure la organización"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -4354,9 +3718,6 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de su cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
-      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "La URL que ingresó parece haberse copiado de Slack incorrectamente. Al copiar enlaces largos de Slack, haga clic derecho en el enlace y luego seleccione «Copiar enlace» en lugar de copiar directamente el texto truncado de la URL."
       ],
@@ -4365,9 +3726,6 @@
       ],
       "This action will delete the link and revoke access for all users.": [
         "Esta acción eliminará el enlace y revocará el acceso de todos los usuarios."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Esta dirección está desactivada. Para poder enviar a esta dirección, el dueño debe primero activar la dirección."
       ],
       "This document can't be edited right now.": [
         "Este documento no se puede editar ahora mismo."
@@ -4405,12 +3763,6 @@
       "This link is not supported on this page.": [
         "Este enlace no es compatible en esta página."
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Este enlace conduce a un sitio web que podría estar intentando robar informaciiones, como contraseñas y datos de tarjetas de crédito."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que quiere visitar o no lo abra."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Esto significa que su proveedor de servicios de internet y los sitios web que visita no pueden conectar su información personal con su actividad en línea."
       ],
@@ -4426,29 +3778,20 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para mantener su cuenta segura, confirme que es realmente usted antes de continuar."
+      ],
       "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
         "Para ayudar a solucionar el problema, la información de depuración se subirá a su Drive y se compartirá de forma segura con el equipo de soporte de ${ BRAND_NAME }. Puede incluir el contenido de los archivos. Puede dejar de compartirla en cualquier momento y los datos compartidos se eliminarán una vez finalizada la revisión."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para ayudarle a recordar su contraseña, le solicitaremos que la ingrese periódicamente. Se reducirá la frecuencia conforme pasa el tiempo."
       ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Para volver a firmar los contactos, necesitamos verificar cada contacto contra la lista de claves de cifrado disponibles en la cuenta. Si no se encuentra ninguna coincidencia, el contacto volverá a estar firmado con la clave de cifrado principal."
-      ],
-      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Para recuperar los datos, debe volver a reactivar la clave de la cuenta usada en el momento en que se crearon los datos. Esto requerirá que recuerde la contraseña usada cuando se generó la clave."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que quiere usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
-      ],
       "Tracking": [
         "Rastreadores"
       ],
       "Trash": [
         "Papelera"
-      ],
-      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "Confíe la clave «${ activeSignerText }» para verificar los mensajes nuevos de este contacto."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
@@ -4540,12 +3883,6 @@
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
       ],
-      "You are about to open another browser tab and visit:": [
-        "Está a punto de abrir otra pestaña del navegador y visitar:"
-      ],
-      "You are about to open your default browser and visit:": [
-        "Está a punto de abrir su navegador por defecto y consultar:"
-      ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Actualmente inició sesión como ${ username } en (${ organizationName }."
       ],
@@ -4604,12 +3941,6 @@
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Está a punto de rechazar la invitación para unirse al elemento ${ invitationName }. Si continúa, no podrá acceder a él a menos que el propietario le vuelva a invitar. ¿Realmente desea continuar?"
       ],
-      "You've reached the maximum number of addresses in the contact group(s):": [
-        "Ha alcanzado el número máximo de direcciones en el grupo o grupos de contactos:"
-      ],
-      "You've reached the maximum number of addresses in the contact group.": [
-        "Ha alcanzado el número máximo de direcciones en el grupo de contactos."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "La cuenta de ${ BRAND_NAME } está suspendida. Después de 28 días, no recibirá correos en el buzón, los enlaces compartidos de Drive serán bloqueados y no podrá cargar archivos nuevos. Para reanudar el servicio, pague cualquier factura pendiente."
       ],
@@ -4642,9 +3973,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
-      ],
-      "Your files will be encrypted and then saved": [
-        "Los archivos serán cifrados y luego guardados."
       ],
       "Your information was found on ${ displayedDate }": [
         "Los datos fueron encontrados en ${ displayedDate }"
@@ -4699,49 +4027,10 @@
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
       ]
     },
-    "info": {
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "Haga clic para más detalle."
-      ]
-    },
-    "Key badge": {
-      "Active Signer": [
-        "Firmante activo"
-      ],
-      "Compromised": [
-        "Comprometida"
-      ],
-      "Expired": [
-        "Expirada"
-      ],
-      "Fallback": [
-        "Alternativa"
-      ],
-      "KOO": [
-        "KOO"
-      ],
-      "Obsolete": [
-        "Obsoleta"
-      ],
-      "Primary": [
-        "Principal"
-      ],
-      "Revoked": [
-        "Revocada"
-      ],
-      "Trusted": [
-        "Confiada"
-      ],
-      "WKD": [
-        "WKD"
-      ]
-    },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Contraseña de la cuenta de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -4756,15 +4045,6 @@
       ],
       "Active": [
         "Activo"
-      ],
-      "Add email address": [
-        "Agregar correo electrónico"
-      ],
-      "Add image URL": [
-        "Agregar URL de imagen"
-      ],
-      "Add to group": [
-        "Agregar al grupo"
       ],
       "Additional comments": [
         "Comentarios adicionales"
@@ -4805,9 +4085,6 @@
       "Category": [
         "Categoría"
       ],
-      "City": [
-        "Ciudad"
-      ],
       "Client": [
         "Cliente"
       ],
@@ -4816,9 +4093,6 @@
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
-      ],
-      "Colors": [
-        "Colores"
       ],
       "Command line interface (CLI)": [
         "Interfaz de línea de comandos (CLI)"
@@ -4829,9 +4103,6 @@
       "Continue cancelling": [
         "Continuar cancelación"
       ],
-      "Copy": [
-        "Copiar"
-      ],
       "Could you please let us know which provider?": [
         "¿Podría indicarnos cuál proveedor?"
       ],
@@ -4840,9 +4111,6 @@
       ],
       "Could you please specify?": [
         "¿Podría especificarlo?"
-      ],
-      "Country": [
-        "País"
       ],
       "Created by ${ displayName }": [
         "Creado por ${ displayName }"
@@ -4862,9 +4130,6 @@
       "Document": [
         "Documento"
       ],
-      "Don't ask again": [
-        "No volver a preguntar"
-      ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
@@ -4874,20 +4139,11 @@
       "Email address": [
         "Dirección de correo"
       ],
-      "Email format": [
-        "Formato de correo electrónico"
-      ],
       "Enable email notifications": [
         "Activar notificaciones por correo electrónico"
       ],
-      "Encrypt emails": [
-        "Cifrar correos electrónicos"
-      ],
       "Expiry": [
         "Vencimiento"
-      ],
-      "Extended address": [
-        "Dirección ampliada"
       ],
       "File": [
         "Archivo"
@@ -4897,9 +4153,6 @@
       ],
       "Hide password": [
         "Ocultar contraseña"
-      ],
-      "I understand the risk": [
-        "Entiendo el riesgo"
       ],
       "Ignore": [
         "Ignorar"
@@ -4970,26 +4223,11 @@
       "Password strength": [
         "Nivel de seguridad de la contraseña"
       ],
-      "PGP scheme": [
-        "Esquema PGP"
-      ],
       "Phone number": [
         "Número telefónico"
       ],
       "Please share any feedback to help us improve.": [
         "Compártanos cualquier comentario para ayudarnos a mejorar."
-      ],
-      "Post office box": [
-        "Apartado postal"
-      ],
-      "Postal code": [
-        "Código postal"
-      ],
-      "Public keys": [
-        "Claves públicas"
-      ],
-      "Region": [
-        "Estado"
       ],
       "Require password": [
         "Se requiere contraseña"
@@ -5012,9 +4250,6 @@
       "Shared with me": [
         "Compartido conmigo"
       ],
-      "Sign emails": [
-        "Firmar correos electrónicos"
-      ],
       "Skip feedback": [
         "Omitir comentarios"
       ],
@@ -5023,9 +4258,6 @@
       ],
       "Stop sharing": [
         "Dejar de compartir"
-      ],
-      "Street address": [
-        "Dirección de calle"
       ],
       "Strong": [
         "Fuerte"
@@ -5047,9 +4279,6 @@
       ],
       "Unknown user": [
         "Usuario desconocido"
-      ],
-      "Upload picture": [
-        "Cargar imagen"
       ],
       "Verification code": [
         "Código de verificación"
@@ -5092,16 +4321,6 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "Color"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "Nombre"
       ]
     },
     "Link": {
@@ -5400,14 +4619,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Una versión nueva de ${ appName } está disponible. ${ reloadButton }."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Automático"
-      ],
-      "Plain text": [
-        "Texto plano"
       ]
     },
     "new_plans": {
@@ -6014,11 +5225,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja el calendario con cifrado de extremo a extremo. Incluye compatibilidad con calendarios personalizados, calendarios compartidos y más."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: cree, edite y colabore en documentos cifrados de extremo a extremo."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Proteja sus archivos con almacenamiento cifrado en la nube. Incluye sincronización automática, intercambio de archivos cifrado y más."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja los correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y más."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: cree, edite y colabore en hojas de cálculo cifradas de extremo a extremo."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Acceda a contenidos bloqueados y navegue de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
@@ -6327,12 +5544,6 @@
       "Cannot load next page": [
         "Error al cargar la página siguiente"
       ],
-      "Contact group created": [
-        "Grupo de contactos creado"
-      ],
-      "Contact group updated": [
-        "Grupo de contactos actualizado"
-      ],
       "Document moved to trash": [
         "Documento movido a la papelera"
       ],
@@ -6380,9 +5591,6 @@
       ],
       "Invitation's email was sent again": [
         "Se envió nuevamente el correo de invitación."
-      ],
-      "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
       ],
       "Move ${ n } file": [
         "Mover ${ n } archivo",
@@ -6623,20 +5831,6 @@
         "Su suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
       ]
     },
-    "Option": {
-      "Add to existing group": [
-        "Agregar al grupo existente"
-      ],
-      "Automatic (${ value })": [
-        "Automático (${ value })"
-      ],
-      "Create new group": [
-        "Crear grupo nuevo"
-      ],
-      "Ignore group": [
-        "Ignorar grupo"
-      ]
-    },
     "Page title": {
       "Recents": [
         "Recientes"
@@ -6776,45 +5970,6 @@
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puede cancelar en cualquier momento."
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "La clave no puede usarse para el cifrado"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."
-      ],
-      "External key automatically fetched from keys.openpgp.org.": [
-        "Clave externa obtenida automáticamente de keys.openpgp.org."
-      ],
-      "External key automatically fetched via WKD.": [
-        "Clave externa obtenida automáticamente con WKD."
-      ],
-      "This contact currently signs messages with this key": [
-        "Este contacto actualmente firma los mensajes con esta clave"
-      ],
-      "This key is used for message verification": [
-        "Esta clave se utiliza para la verificación de mensajes"
-      ],
-      "This key is used to encrypt messages to this contact": [
-        "Esta clave es usada para cifrar los mensajes a este contacto"
-      ],
-      "This key is used to encrypt messages to this contact on older apps": [
-        "Esta clave es usada para cifrar los mensajes a este contacto en aplicación antiguas"
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        "Recomendamos que \"desconfíe\" de estas claves."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Una forma de contactarle"
@@ -6837,29 +5992,8 @@
       "Enter a new folder name": [
         "Ingrese un nombre nuevo para la carpeta"
       ],
-      "Filter groups": [
-        "Filtrar grupos"
-      ],
-      "First name": [
-        "Nombre"
-      ],
-      "Group name": [
-        "Nombre del grupo"
-      ],
-      "Image URL": [
-        "URL de la imagen"
-      ],
-      "Last name": [
-        "Apellido"
-      ],
       "Message": [
         "Mensaje"
-      ],
-      "Name": [
-        "Nombre"
-      ],
-      "Name or email address": [
-        "Nombre o dirección de correo"
       ],
       "Organization name": [
         "Nombre de la organización"
@@ -6873,12 +6007,6 @@
       "Please select the main reason": [
         "Seleccione el motivo principal"
       ],
-      "Search for group name": [
-        "Buscar por nombre de grupo"
-      ],
-      "Search for name or email": [
-        "Buscar por nombre o correo"
-      ],
       "Select": [
         "Seleccionar"
       ],
@@ -6888,16 +6016,8 @@
       "Select a reason": [
         "Seleccione un motivo"
       ],
-      "Start typing an email address": [
-        "Comience a escribir una dirección de correo"
-      ],
       "Your organization name": [
         "El nombre de su organización"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Nombre"
       ]
     },
     "Plan description": {
@@ -6906,29 +6026,6 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "Todas las funciones premium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, y ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } de ${ countContacts } contacto fue exportado.",
-        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado.",
-        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado.",
-        "${ model.submitted.length } de ${ totalBeMerged } contactos combinados."
-      ],
-      "No contacts exported.": [
-        "Ningún contacto exportado."
-      ],
-      "No contacts merged.": [
-        "Ningún contacto combinado."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "Progreso: ${ combinedProgress }%"
       ]
     },
     "Property": {
@@ -6949,46 +6046,6 @@
       ],
       "name": [
         "nombre"
-      ]
-    },
-    "Property type": {
-      "Address": [
-        "Dirección"
-      ],
-      "Email": [
-        "Correo"
-      ],
-      "Fax": [
-        "Fax"
-      ],
-      "Home": [
-        "Casa"
-      ],
-      "Main": [
-        "Principal"
-      ],
-      "Mobile": [
-        "Celular"
-      ],
-      "Other": [
-        "Otro"
-      ],
-      "Pager": [
-        "Localizador"
-      ],
-      "Phone": [
-        "Teléfono"
-      ],
-      "Work": [
-        "Trabajo"
-      ]
-    },
-    "protonbadge": {
-      "Official": [
-        "Oficial"
-      ],
-      "Official email from ${ BRAND_NAME }": [
-        "Correo oficial de ${ BRAND_NAME }"
       ]
     },
     "Provider option": {
@@ -7166,11 +6223,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Su información fue encontrada en al menos una filtración de datos. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles. ${ link }"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Cargar"
       ]
     },
     "session_recovery:available:action": {
@@ -7413,14 +6465,6 @@
     "sheets_2025:Title": {
       "Import data": [
         "Importar datos"
-      ]
-    },
-    "Signing preference for emails": {
-      "Don't sign": [
-        "No firmar"
-      ],
-      "Sign": [
-        "Firmar"
       ]
     },
     "Sort menu options": {
@@ -7855,44 +6899,14 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } contacto parece idéntico.",
-        "${ countMergeableContacts } contactos parecen idénticos."
-      ],
-      "Address copied to clipboard": [
-        "Dirección copiada al portapapeles"
-      ],
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Contacto eliminado",
-        "Contacto eliminado"
-      ],
-      "Contact group deleted": [
-        "Grupo de contactos eliminado",
-        "Grupo de contactos eliminado"
-      ],
-      "Contact saved": [
-        "Contacto guardado"
-      ],
-      "Contacts deleted": [
-        "Contactos eliminados"
       ],
       "Email address copied to clipboard": [
         "Dirección de correo copiada al portapapeles"
       ],
-      "Fingerprint copied to clipboard": [
-        "Huella digital copiada al portapapeles"
-      ],
-      "Phone number copied to clipboard": [
-        "Número telefónico copiado al portapapeles"
-      ],
       "Preference saved": [
         "Preferencia guardada"
-      ],
-      "Preferences saved": [
-        "Preferencias guardadas"
       ],
       "Problem reported": [
         "Se notificó el problema."
@@ -7923,64 +6937,6 @@
         "Asegure los archivos con almacenamiento en la nube cifrado. Se incluyen el historial de versiones, el intercambio de archivos cifrado y más."
       ]
     },
-    "Table header": {
-      "Action": [
-        "Acción"
-      ],
-      "Actions": [
-        "Acciones"
-      ],
-      "Address": [
-        "Dirección"
-      ],
-      "Created": [
-        "Creada"
-      ],
-      "Expires": [
-        "Expira"
-      ],
-      "Fingerprint": [
-        "Huella digital"
-      ],
-      "Name": [
-        "Nombre"
-      ],
-      "Status": [
-        "Estado"
-      ],
-      "Type": [
-        "Tipo"
-      ]
-    },
-    "TableHeader": {
-      "Actions": [
-        "Acciones"
-      ],
-      "Address": [
-        "Dirección"
-      ],
-      "CSV field": [
-        "Campo CSV"
-      ],
-      "Display name": [
-        "Nombre a mostrar"
-      ],
-      "First name": [
-        "Nombre"
-      ],
-      "Import": [
-        "Importar"
-      ],
-      "Last name": [
-        "Apellido"
-      ],
-      "Values": [
-        "Valores"
-      ],
-      "vCard field": [
-        "Campo vCard"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } día",
@@ -8003,10 +6959,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } dirección de correo",
-        "${ emailsCount } direcciones de correo"
-      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -8022,21 +6974,8 @@
       "Account temporarily locked": [
         "Cuenta temporalmente bloqueada"
       ],
-      "Add contact group name": [
-        "Agregar nombre al grupo de contactos"
-      ],
-      "Add to ${ groupCount } group": [
-        "Agregar a ${ groupCount } grupo",
-        "Agregar a ${ groupCount } grupos"
-      ],
-      "Add to ${ groupName }": [
-        "Agregar a ${ groupName }"
-      ],
       "Add user": [
         "Agregar usuario"
-      ],
-      "Addresses": [
-        "Direcciones"
       ],
       "All settings": [
         "Todos los ajustes"
@@ -8044,23 +6983,17 @@
       "Are you sure?": [
         "¿Está seguro?"
       ],
-      "Birthday": [
-        "Cumpleaños"
-      ],
       "Cancel subscription?": [
         "¿Cancelar suscripción?"
       ],
-      "Cannot add more addresses": [
-        "No se pueden agregar más direcciones"
+      "Captcha": [
+        "CAPTCHA"
       ],
       "Change access to viewer?": [
         "¿Cambiar el acceso a lector?"
       ],
       "Change password": [
         "Cambiar contraseña"
-      ],
-      "Clearing data": [
-        "Limpiando datos"
       ],
       "Collaborate on documents": [
         "Colabore en documentos"
@@ -8077,26 +7010,11 @@
       "Connect your custom domain": [
         "Conecte su dominio personalizado"
       ],
-      "Contact Details": [
-        "Datos del contacto"
-      ],
-      "Contact group": [
-        "Grupo de contactos"
-      ],
       "Contact us": [
         "Contáctenos"
       ],
-      "Contacts": [
-        "Contactos"
-      ],
       "Create a new folder": [
         "Crear una carpeta nueva"
-      ],
-      "Create contact": [
-        "Crear contacto"
-      ],
-      "Create new group": [
-        "Crear grupo nuevo"
       ],
       "Currency": [
         "Moneda"
@@ -8113,22 +7031,8 @@
       "Decline invitation?": [
         "¿Rechazar la invitación?"
       ],
-      "Delete ${ count } contact": [
-        "Eliminar ${ count } contacto",
-        "Eliminar ${ count } contacto"
-      ],
-      "Delete ${ count } contact group": [
-        "Eliminar ${ count } grupo de contactos",
-        "Eliminar ${ count } grupo de contactos"
-      ],
-      "Delete ${ value }": [
-        "Eliminar ${ value }"
-      ],
       "Delete permanently": [
         "Eliminar permanentemente"
-      ],
-      "Deleting contacts": [
-        "Eliminando contactos"
       ],
       "Desktop": [
         "Escritorio"
@@ -8141,9 +7045,6 @@
       ],
       "Discard changes?": [
         "¿Descartar cambios?"
-      ],
-      "Docs": [
-        "Documentos"
       ],
       "Document Size Limit Exceeded": [
         "Límite de tamaño de documento excedido"
@@ -8160,26 +7061,8 @@
       "Download the app": [
         "Descargar la aplicación"
       ],
-      "Edit contact": [
-        "Editar contacto"
-      ],
-      "Edit contact group": [
-        "Editar grupo de contactos"
-      ],
-      "Edit email settings": [
-        "Editar ajustes del correo"
-      ],
-      "Edit image": [
-        "Editar imagen"
-      ],
       "Editing paused": [
         "Edición pausada"
-      ],
-      "Email addresses": [
-        "Direcciones de correo"
-      ],
-      "Email settings": [
-        "Ajustes del correo"
       ],
       "Enable 2FA": [
         "Activar 2FA"
@@ -8199,9 +7082,6 @@
       "Error Syncing": [
         "Error al sincronizar"
       ],
-      "Exporting contacts": [
-        "Exportando contactos"
-      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Obtenga **${ referralInfo.uiData.refereeRewardAmount }** en créditos con ${ planTitle }"
       ],
@@ -8210,9 +7090,6 @@
       ],
       "Get the apps": [
         "Obtener las apps"
-      ],
-      "Groups": [
-        "Grupos"
       ],
       "Help and feedback": [
         "Ayuda y comentarios"
@@ -8235,12 +7112,6 @@
       "Human verification": [
         "Verificación humana"
       ],
-      "Import contacts": [
-        "Importar contactos"
-      ],
-      "Import groups": [
-        "Importar grupos"
-      ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
       ],
@@ -8250,20 +7121,11 @@
       "Limited availability": [
         "Disponibilidad limitada"
       ],
-      "Link confirmation": [
-        "Confirmación de enlace"
-      ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Cree una copia a su ${ DRIVE_APP_NAME }"
       ],
       "Make a secure connection your default": [
         "Elija una conexión segura como opción predeterminada"
-      ],
-      "Merge contacts": [
-        "Combinar contactos"
-      ],
-      "Merging contacts": [
-        "Combinando contactos"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migre su organización a ${ BRAND_NAME }"
@@ -8289,17 +7151,8 @@
       "No breaches detected": [
         "No se detectaron vulneraciones."
       ],
-      "Notes": [
-        "Notas"
-      ],
       "Offline": [
         "Sin conexión"
-      ],
-      "One email, many recipients": [
-        "Un correo electrónico, varios destinatarios"
-      ],
-      "Open actions dropdown": [
-        "Abrir menú de acciones"
       ],
       "Open pagination": [
         "Abrir paginación"
@@ -8309,15 +7162,6 @@
       ],
       "Organization setup": [
         "Configuración de la organización"
-      ],
-      "Other information": [
-        "Otra información"
-      ],
-      "Other names": [
-        "Otros nombres"
-      ],
-      "Phone numbers": [
-        "Números de teléfono"
       ],
       "Photos": [
         "Fotos"
@@ -8337,20 +7181,11 @@
       "Public link settings": [
         "Ajustes del enlace público"
       ],
-      "Re-sign all contacts": [
-        "Volver a firmar todos los contactos"
-      ],
-      "Re-signing contacts": [
-        "Volviendo a firmar los contactos"
-      ],
       "Read-only": [
         "Solo lectura"
       ],
       "Recommended actions": [
         "Acciones recomendadas"
-      ],
-      "Recover data": [
-        "Recuperar datos"
       ],
       "Remove your access?": [
         "¿Borrar su acceso?"
@@ -8372,12 +7207,6 @@
       ],
       "Security center": [
         "Centro de seguridad"
-      ],
-      "Select action to take on contact group": [
-        "Seleccione la acción a realizar en el grupo de contactos"
-      ],
-      "Select contact group": [
-        "Seleccionar grupo de contactos"
       ],
       "Select link expiration date": [
         "Seleccione la fecha de expiración del enlace"
@@ -8472,12 +7301,6 @@
       "VPN explained": [
         "Explicaciones sobre la VPN"
       ],
-      "Warning": [
-        "Advertencia"
-      ],
-      "Warning: suspected fake website": [
-        "Advertencia: presunto sitio web falso"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
@@ -8503,37 +7326,20 @@
         "Sus datos expuestos"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "Acciones"
-      ],
-      "Created": [
-        "Creada"
-      ],
-      "Expires": [
-        "Expira"
-      ],
-      "Fingerprint": [
-        "Huella digital"
-      ],
-      "Status": [
-        "Estado"
-      ],
-      "Type": [
-        "Tipo"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoy"
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Añada un método de recuperación para desbloquear sus datos si olvida la contraseña."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Añada un correo o teléfono de recuperación para que pueda restablecer la contraseña si la olvida."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Agregue este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
-      ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica que el formato en el editor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre los temas preferidos para el día y la noche en sincronía con los modos de día y noche del sistema"
@@ -8541,23 +7347,14 @@
       "Change shared item settings": [
         "Cambiar ajustes de archivos compartidos"
       ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Firmar correos digitalmente ayuda a autenticar que los mensajes son enviados por usted"
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Cree una frase de recuperación para que pueda recuperar sus datos si olvida la contraseña."
       ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "El cifrado de correo electrónico obliga a la firma de correo electrónico a ayudar a autenticar los mensajes enviados"
-      ],
-      "Encrypted data": [
-        "Datos cifrados"
-      ],
-      "Encrypted data with verified digital signature": [
-        "Datos cifrados con firma digital verificada"
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genere una frase de recuperación para proteger su cuenta frente a la pérdida de datos."
       ],
       "Instant AI assistance, human expert on hand!": [
         "¡Asistencia IA inmediata, experto humano a su disposición!"
-      ],
-      "Load image": [
-        "Cargar imagen"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo"
@@ -8565,17 +7362,11 @@
       "Not all information listed here was exposed for all users.": [
         "No toda la información aquí mencionada fue expuesta para todos los usuarios."
       ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
-      ],
       "Shared with end-to-end encryption": [
         "Compartido con cifrado de extremo a extremo"
       ],
-      "The image could not be loaded": [
-        "No se ha podido cargar la imagen"
-      ],
-      "The image could not be loaded using proxy": [
-        "No se ha podido cargar la imagen utilizando el proxy"
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Algunos de sus datos están bloqueados. Use un método de recuperación para desbloquearlos."
       ],
       "This link has expired. Please extend expiration date": [
         "Este enlace expiró. Extienda la fecha de expiración."
@@ -8583,14 +7374,14 @@
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
-      ],
-      "Version 6 OpenPGP key": [
-        "Clave OpenPGP versión 6"
-      ],
       "We have sent them an invite to access the item.": [
         "Hemos enviado una invitación para acceder al elemento."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Su archivo de recuperación está desactualizado. Descargue uno nuevo para que aún pueda recuperar sus datos."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Su frase de recuperación está desactualizada. Obtenga una nueva para que aún pueda recuperar sus datos."
       ]
     },
     "tooltip": {
@@ -8787,51 +7578,14 @@
       "A change from another editor could not be read and is missing from this page.": [
         "No se pudo leer el cambio de otro editor y hace falta en este página."
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } contacto?",
-        "¿Está seguro de que quiere eliminar permanentemente ${ count } contactos?"
-      ],
-      "Are you sure you want to permanently delete these contact groups?": [
-        "¿En verdad desea eliminar permanentemente estos grupos de contactos?"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "¿Está seguro de que quiere eliminar permanentemente este grupo de contactos?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "¿Está seguro de que quiere eliminar permanentemente este contacto?"
-      ],
-      "Contacts could not be merged": [
-        "No se pudieron combinar los contactos"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Si no recuerda la contraseña, es imposible volver a activar la clave. Podemos ayudarle a descartar la alerta pero en el proceso perderá permanentemente el acceso a todos los datos cifrados con esa clave."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Algunos de los contactos a combinar tienen errores. Revíselos individualmente."
       ],
       "Some of the document could not be read, so editing is disabled.": [
         "No se pudo leer parte del documento así que se desactivó la edición."
       ],
-      "The contact data is corrupted and cannot be displayed.": [
-        "Los datos del contacto están corruptos y no pueden mostrarse."
-      ],
-      "The contact failed to load.": [
-        "No se pudo cargar el contacto."
-      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Los ajustes de fecha y hora en el dispositivo están desactualizados. ${ learnMore }"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Error en el descifrado del contenido cifrado."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Error en la verificación de la firma de los datos del contacto."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Esta acción es irreversible. Ingrese la palabra ${ boldDanger } en el campo para continuar."
       ],
       "This will replace all the data in the spreadsheet": [
         "Esto reemplazará todos los datos de la hoja de cálculo"

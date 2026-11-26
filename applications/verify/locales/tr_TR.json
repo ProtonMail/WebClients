@@ -1145,7 +1145,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "Kısıtlamaları kaldırmak için ücretli bir tarifeye geçebilirsiniz."
@@ -1177,7 +1177,7 @@
     },
     "Label": {
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Hesap parolası"
+        "${ BRAND_NAME } hesabı parolası"
       ],
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
@@ -1452,11 +1452,17 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Uçtan uca şifrelenmiş belgeler oluşturun, düzenleyin ve bu belgeler üzerinde birlikte çalışın."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
         "Bilgisayarınızın rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
@@ -1603,6 +1609,9 @@
       ],
       "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"

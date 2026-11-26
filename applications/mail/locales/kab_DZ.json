@@ -3147,6 +3147,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Asmezdi n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Imaylen imaynuten sɣur ${ senderEmailAddress } d ${ otherSendersCount } nniḍen ur d-ttawḍen ara yerna ad ttwakksen i lebda.",
+        "Imaylen imaynuten sɣur ${ senderEmailAddress } d ${ otherSendersCount } nniḍen ur d-ttawḍen ara yerna ad ttwakksen i lebda."
+      ],
       "No folders": [
         "Ulac ikaramen"
       ],
@@ -3221,6 +3225,10 @@
       ],
       "Event starting now": [
         "Tadyant ad ttebdu tura"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Tadyant ad tebdu deg ${ minutesUntilEvent } n tesdat",
+        "Tadyant ad tebdu deg ${ minutesUntilEvent } n tesdatin"
       ],
       "Event starts tomorrow": [
         "Tadyant ad yebdu azekka"
@@ -3663,6 +3671,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ddeqs n igmaḍ i d-yerra unadi-ik. Ma ulac aɣilif, err talast i unadi-inek sakin ɛreḍ tikelt- nniḍen."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Ma aṭas ${ maxAttendees } n umttekki i yettwasirgen i yal tinubga",
+        "Ma aṭas ${ maxAttendees } n yimttekkiyen i yettwasirgen i yal tinubga"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4551,6 +4565,46 @@
         "${ currentProgress } ɣef ${ totalProgress }",
         "${ currentProgress } ɣef ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } n udiwenni ad yettwabzem s:",
+        "${ elementsCount } n yidiwenniten ad ttwabzmen s:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } n udiwenni ad yettwacreḍ amzun yettwaɣra.",
+        "${ elementsCount } n yidiwenniyen ad ttwacerḍen amzun ttwaɣran."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } n udiwenni ad yettwacreḍ d win ur nettwaɣri ara.",
+        "${ elementsCount } n yidiwenniten ad ttwacerḍen d wid ur nettwaɣri ara."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } n udiwenni ad yettwasmutti",
+        "${ elementsCount } n yidiwenniten ad ttwasmuttin"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } n udiwenni ad as-tettwakkes tebzimt seg:",
+        "${ elementsCount } n yidiwenniten ad asen-tettwakkes tebzimt seg:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } n yizen ad yettwabzem am:",
+        "${ elementsCount } n yenzan ad ttwabzmen am:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } n yizen ad yettwacreḍ amzun yettwaɣra.",
+        "${ elementsCount } n yenzan ad ttwacerḍen amzun ttwaɣran."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } n yizen ad yettwacreḍ amzun ur yettwaɣri ara.",
+        "${ elementsCount } n yenzan ad ttwacerḍen amzun ur ttwaɣrin ara."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } n yizen ad yettwakkes",
+        "${ elementsCount } n yiznan ad ttwakksen"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } n yizen ad as-tettwakkes tebzimt seg:",
+        "${ elementsCount } n yenzan ad asen-tettwakkes tebzimt seg:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "Tugna ${ embeddedAttachmentsCount } yettuselɣen",
         "Tugniwin ${ embeddedAttachmentsCount } yettuselɣen"
@@ -4603,6 +4657,10 @@
         "Afaylu ${ pureAttachmentsCount } yeddan",
         "Ifuyla ${ pureAttachmentsCount } yeddan"
       ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } n yimayl ayyur yezrin",
+        "${ receivedMessagesCount } n yimaylen ayyur yezrin"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
@@ -4617,6 +4675,10 @@
       ],
       "${ storage } storage": [
         "${ storage } n uḥraz"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ur nettwaɣra ara",
+        "${ subscription.UnreadMessageCount } ur ttwaɣran ara"
       ],
       "${ total } conversation": [
         "${ total } udiwenni",
@@ -4658,6 +4720,10 @@
       ],
       "(No Recipient)": [
         "(Ulac iɣerwaḍen)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** n ugmuḍ yettwaf deg ${ labelName }",
+        "**${ total }** n yigmuḍen ttwafen deg ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Uṭṭun n tiliɣri yezmer ad yettuseqdec i usenqed yiwen kan n umiḍan ${ BRAND_NAME }"
@@ -4983,6 +5049,10 @@
       "Expires in ${ formattedDate }": [
         "Ad yemmet deg ${ formattedDate }"
       ],
+      "Expires in ${ minutesDiff } minute": [
+        "Ad yekfu deg ${ minutesDiff } n tesdat",
+        "Ad yekfu deg ${ minutesDiff } n tesdatin"
+      ],
       "Expires in less than ${ hoursDiff } hour": [
         "Ad yemmet ma drus deg ${ hoursDiff } usrag",
         "Ad yemmet ma drus deg ${ hoursDiff } yiseggasen"
@@ -4999,6 +5069,10 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "I yiznan akk inegguza ɣef ${ oldestDate }"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Aɛraḍ baṭel i ${ ASSISTANT_TRIAL_TIME_DAYS } n wass",
+        "Aɛraḍ baṭel i ${ ASSISTANT_TRIAL_TIME_DAYS } n wussan"
       ],
       "From": [
         "Seg"
@@ -5758,6 +5832,14 @@
       "You selected **${ count } message** with this label": [
         "Tferneḍ **${ count } yizen** s tebzimt-a",
         "Tferneḍ **${ count } yiznan** s tebzimt-a"
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Tferneḍ **${ elementsCount } n yizen** deg ${ location }",
+        "Tferneḍ **${ elementsCount } n yiznan deg** ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Tferneḍ **${ elementsCount } n yizen**.",
+        "Tferneḍ **${ elementsCount } n yiznan**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Turiḍ \"${ attachmentsFoundKeyword }\", maca ulac amedday i yettwarnan. Tebɣiḍ ad tazneḍ izen-ik·im akken yebɣu yili?"
@@ -7705,6 +7787,10 @@
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
+        "Atig yettwasenqsen s wudem uzzig yeṣleḥ i ${ subscriptionLength } n wayyur amezwaru.",
+        "Atig yettwasenqsen s wudem uzzig yeṣleḥ i ${ subscriptionLength } n wayyuren imezwura."
       ]
     },
     "Payments.Error": {
@@ -7984,6 +8070,10 @@
       "Friend joined": [
         "Yerna-d umeddakel",
         "Rnan-d imeddukal"
+      ],
+      "Friend subscribed": [
+        "Amdakkel yelteɣ",
+        "Imddukal letɣen"
       ]
     },
     "Remaining days before the message expire": {
@@ -8543,6 +8633,18 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } n udiwenni ittwakkes seg ${ labelName }.",
         "${ elementsCount } n yidiwenniyen ttwakksen seg ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } udiwenni yettwakkes deg Yitran.",
+        "${ elementsCount } idiwenniyen ttwakksen seg Yitran."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } udiwenni deg uraǧu",
+        "${ elementsCount } n yidiwenniyen deg uraǧu"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } udiwenni yettwakkes deg uraǧu",
+        "${ elementsCount } idiwenniyen ttwakksen deg uraǧu"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } n yizen yettwarna ɣer ${ labelName }.",
@@ -9572,6 +9674,10 @@
       ],
       "Warning: suspected fake website": [
         "Ɣur-k•m: yettban d yir asmel web"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Nemmesten-ik seg ${ trackersCount } n umḍfaṛ",
+        "Nemmesten-ik seg ${ trackersCount } n yimḍfaṛen"
       ],
       "Welcome": [
         "Anṣuf"

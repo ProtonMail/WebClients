@@ -1135,6 +1135,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "アカウントの安全を保つため、続行する前にご本人確認を行ってください。"
+      ],
       "To remove restrictions, you can upgrade to a paid plan.": [
         "制限を解除するには、有料プランにアップグレードしてください。"
       ],
@@ -1164,6 +1167,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME }アカウントパスワード"
+      ],
       "Authenticator app": [
         "認証アプリ"
       ],
@@ -1428,11 +1434,17 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: エンドツーエンド暗号化されたドキュメントを作成、編集、共同編集できます。"
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }：暗号化されたクラウドストレージでファイルを保護。自動同期、暗号化ファイル共有などを含みます。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタムメール ドメイン、15 個のメール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: エンドツーエンド暗号化されたスプレッドシートを作成、編集、共同編集できます。"
       ],
       "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
         "デスクトップから ${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } にアクセスします"

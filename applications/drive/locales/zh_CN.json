@@ -570,9 +570,6 @@
       "Hide more benefits": [
         "隐藏更多优势"
       ],
-      "Ignore": [
-        "忽略"
-      ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
       ],
@@ -5752,9 +5749,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "如果移除您自己，您将失去对“${ fileName }”的访问权限，除非所有者与您再次分享，否则您将无法再次打开它。"
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "如果您已升级，可以在 ${ easySwitchSettingsLink } 中恢复导入。您也可以在那里取消导入。"
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
       ],
@@ -6186,9 +6180,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "请升级以确保导入顺利完成。"
       ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
@@ -6781,9 +6772,6 @@
       "We'll email you when your import is complete.": [
         "导入完成后，我们将通过邮件通知您。"
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "导入完成后，我们将通过邮件通知您。您的文件将显示在 ${ DRIVE_APP_NAME } 的文件夹中。"
-      ],
       "We'll get back to you shortly.": [
         "我们会尽快回复您。"
       ],
@@ -7023,9 +7011,6 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "您的 Google Drive 可能为空，或仅包含不受支持的文件。"
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "您的导入已被阻止，立即升级以迁移剩余的文件。"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
@@ -11685,9 +11670,6 @@
       "Albums you've shared will appear here": [
         "您共享的相册将在此处显示"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "从 Google Drive 导入您的文件和文件夹，并在 ${ DRIVE_APP_NAME } 中保持其私密。"
-      ],
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 共享"
       ],
@@ -12263,9 +12245,6 @@
       "Drop to upload": [
         "拖拽文件并上传"
       ],
-      "Easy switch": [
-        "轻松切换"
-      ],
       "Easy Switch from Google Drive": [
         "在 Google Drive 使用 Easy Switch"
       ],
@@ -12403,9 +12382,6 @@
       ],
       "Import started": [
         "导入已开始"
-      ],
-      "Import started, but your storage won't be enough for this import": [
-        "导入已开始，但您的存储空间不足以完成此次导入"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "由 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
@@ -12880,9 +12856,6 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
-      ],
-      "We could not find anything to import": [
-        "我们找不到可导入的内容"
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "我们无法验证 ${ author } 创建了此文件！"

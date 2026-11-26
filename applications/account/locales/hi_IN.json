@@ -10254,9 +10254,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: प्राप्तकर्ता प्लेटफ़ॉर्म से अनधिकृत ईमेल को अस्वीकार करने के लिए कहा जा रहा है।"
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ totalCount } में से ${ relevantCount }"
-      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } और",
         "${ remainingAddresses.length } और"
@@ -12400,9 +12397,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "एक अलग भुगतान तरीका इस्तेमाल आज़माएं, या अपने बैंक से संपर्क करें।"
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "आयात सफलतापूर्वक पूरा हो, इसके लिए कृपया अपग्रेड करें।"
-      ],
       "Please use another browser or download the file.": [
         "कृपया किसी अन्य ब्राउज़र का उपयोग करें या फाइल डाउनलोड करें।"
       ],
@@ -13513,9 +13507,6 @@
       ],
       "We'll email you when your import is complete.": [
         "आयात पूरा हो जाने पर हम आपको ईमेल करेंगे।"
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "आयात पूरा हो जाने पर हम आपको ईमेल करेंगे। आपकी फाइलें ${ DRIVE_APP_NAME } के एक फोल्डर में दिखेंगी।"
       ],
       "We'll get back to you shortly.": [
         "हम शीघ्र ही आपसे संपर्क करेंगे।"
@@ -23862,6 +23853,9 @@
       "Disabled": [
         "अक्षम"
       ],
+      "Enabled": [
+        "सक्षम"
+      ],
       "finalizing": [
         "अंतिम रूप दिया जा रहा है"
       ],
@@ -24635,9 +24629,6 @@
       ],
       "Free forever": [
         "हमेशा मुफ्त"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Google Drive से अपनी फाइलें और फोल्डर आयात करें और उन्हें ${ DRIVE_APP_NAME } में प्राइवेट रखें।"
       ],
       "per month, billed annually": [
         "प्रति माह, वार्षिक बिल किया जाता है"
@@ -26325,9 +26316,6 @@
       "Import started": [
         "आयात शुरू हुआ"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "आयात शुरू हो गया, लेकिन इस आयात के लिए स्टोरेज काफी नहीं होगी"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } के माध्यम से आयात करें"
       ],
@@ -26459,6 +26447,9 @@
       ],
       "Monthly cost": [
         "मासिक लागत"
+      ],
+      "More storage needed to finish your import": [
+        "अपना इम्पोर्ट पूरा करने के लिए और स्टोरेज चाहिए"
       ],
       "Multi-user support": [
         "कई-यूज़र सहायता"
@@ -27210,9 +27201,6 @@
       ],
       "Warning: suspected fake website": [
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
-      ],
-      "We could not find anything to import": [
-        "आयात करने के लिए कुछ नहीं मिला"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "हमने आपके ईमेल पर एक कोड भेजा है ताकि यह सुनिश्चित हो सके कि यह आप ही हैं। यह कोड 10 मिनट के लिए मान्य है। कृपया इसे नीचे दर्ज करें।"

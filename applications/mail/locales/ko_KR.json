@@ -951,6 +951,9 @@
       "Move": [
         "이동"
       ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "${ LUMO_SHORT_APP_NAME } 왼쪽으로 이동"
+      ],
       "Move all to archive": [
         "모든 항목을 보관함으로 이동"
       ],
@@ -1247,6 +1250,12 @@
       ],
       "Save": [
         "저장"
+      ],
+      "Save ${ name } to ${ DRIVE_APP_NAME }": [
+        "${ name }을(를) ${ DRIVE_APP_NAME }에 저장"
+      ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }에 저장"
       ],
       "Saving${ ellipsis }": [
         "저장 중${ ellipsis }"
@@ -1584,6 +1593,9 @@
       "Unsubscribe": [
         "구독 취소"
       ],
+      "Unsubscribe from ${ selectedCount }": [
+        "${ selectedCount }개 구독 해지"
+      ],
       "Unsubscribed": [
         "구독 취소됨"
       ],
@@ -1877,6 +1889,9 @@
       ],
       "Managed Service Provider": [
         "관리 중인 서비스 제공자"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Managed Service Provider 애드온이 있는 조직은 자회사 조직을 만들고 관리할 수 있습니다."
       ],
       "Servers": [
         "서버"
@@ -4193,8 +4208,14 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
       ],
+      "High-performance model for complex tasks": [
+        "복잡한 작업을 위한 고성능 모델"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "메일을 주고받지 않고 사람들이 이메일로 일정을 잡을 수 있도록 하세요."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "이벤트 초대장에 화상 회의 링크를 즉시 추가할 수 있습니다."
@@ -6360,6 +6381,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "${ MAIL_APP_NAME } 전에 어떤 이메일을 가장 많이 사용하셨나요?"
+      ],
       "Contacts": [
         "연락처"
       ],
@@ -7023,6 +7047,9 @@
       "(No Recipient)": [
         "(수신자 없음)"
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }**이 또한 ${ MAIL_APP_NAME } 밖의 다른 ${ BRAND_NAME } 계정 로그인에 사용됩니다."
+      ],
       "**${ total }** result found in ${ labelName }": [
         "${ labelName }(에)서 **${ total }**개 결과 찾음"
       ],
@@ -7043,6 +7070,9 @@
       ],
       "1 vault per user": [
         "사용자 당 금고 1개"
+      ],
+      "A new or separate address": [
+        "새로운 혹은 별개 주소"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
@@ -7070,6 +7100,9 @@
       ],
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "${ MAIL_APP_NAME } 활성화 후 ${ count }개 도메인에서 이메일 받기 시작"
       ],
       "Activation in progress": [
         "활성화 진행 중"
@@ -7148,6 +7181,9 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "최대 ${ maxContact }개까지 연락처가 불러오기됩니다."
+      ],
+      "Almost done": [
+        "거의 끝났어요"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 로고"
@@ -7500,6 +7536,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "Dismiss": [
+        "닫기"
+      ],
       "Do you remember your password?": [
         "비밀번호가 기억 나시나요?"
       ],
@@ -7811,6 +7850,9 @@
       ],
       "How hide-my-email aliases works": [
         "Hide-my-email 별칭 동작 원리"
+      ],
+      "I use other Proton products": [
+        "다른 Proton 제품을 사용합니다"
       ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "지난 주 메일을 검토하여 실제로 답변이 필요한 것을 찾아드릴게요. 그러면 한 번에 처리하실 수 있습니다."
@@ -8127,6 +8169,9 @@
       "newsletter": [
         "뉴스레터"
       ],
+      "Next": [
+        "다음"
+      ],
       "No action selected": [
         "선택한 액션 없음"
       ],
@@ -8189,6 +8234,9 @@
       ],
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
+      ],
+      "No payment is required.": [
+        "결제 필요 없음."
       ],
       "No results found": [
         "결과를 찾을 수 없음"
@@ -8414,6 +8462,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "${ hideMyEmailAliasesLink }로 메일링 리스트나 스패머로 이메일이 유출되지 않도록 보호하세요."
+      ],
+      "Protection from hackers and leaks": [
+        "해킹과 유출로부터 보호"
       ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
@@ -8697,6 +8748,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "일부 웹사이트와 스트리밍 서비스는 지역별로 콘텐츠를 차단합니다. VPN을 사용하면 이러한 제한을 우회하고 인터넷에 자유롭게 접속할 수 있습니다."
       ],
+      "Someone recommended it": [
+        "누군가 추천했어요"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
       ],
@@ -8753,6 +8807,9 @@
       ],
       "Surveillance": [
         "감시"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "설문은 종단간 암호화 되지 않으므로 민감한 정보를 입력하지 마세요."
       ],
       "Symbols (#$&)": [
         "기호 (#$&)"
@@ -9207,6 +9264,9 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "다음 광고주 및 조직이 사용자가 이 이메일을 언제 여는지, 어떤 기기를 사용하는지, 어디에 있는지 확인할 수 없도록 차단했습니다."
       ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "${ count }개의 뉴스레터를 가져와 발신자별로 그룹화했습니다. 각 뉴스레터가 얼마나 자주 이메일을 보내는지 확인한 후, 클릭 한 번으로 보관, 이동 또는 구독 해지하세요."
+      ],
       "We cannot enable message content search in this browser.": [
         "메시지 내용 검색을 이 브라우저에서 사용할 수 없습니다."
       ],
@@ -9290,6 +9350,9 @@
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "새로운 이메일 카테고리를 사용하면 중요한 메시지만 우선 순위 받은 편지함에 저장됩니다. 다른 모든 메시지는 카테고리로 정리됩니다."
+      ],
+      "Work or business": [
+        "업무 또는 비지니스"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -9462,6 +9525,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "${ MAIL_APP_NAME } 활성화 전 까지 ${ count }개 도메인에서 이메일을 받지 않습니다. 언제든지. 설정 -> 도메인 이름에서 활성화 할 수 있습니다."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
       ],
@@ -9521,6 +9587,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "무료 체험이 월간 구독으로 성공적으로 전환되었습니다. 회원님의 구독 갱신일은 ${ nextBillingDate }입니다."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Gmail이 이 ${ MAIL_APP_NAME } 주소에 연결됩니다"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "사용자의 하드웨어가 로컬에서 글쓰기 도우미를 실행하는 것을 지원하지 않습니다. 서버에서 실행해 보세요."
@@ -9910,6 +9979,9 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength }자"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI 어시스턴트"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 글쓰기 도우미"
@@ -11052,6 +11124,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "활성화"
+      ],
       "Add a gift code": [
         "기프트 코드 추가"
       ],
@@ -12557,6 +12632,17 @@
         "${ n }개 커스텀 이메일 도메인 지원"
       ]
     },
+    "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "지난 30일 간 ${ count }개 이메일. 열람하지 않음."
+      ],
+      "${ count } email in the last 30 days. Opened often.": [
+        "지난 30일 간 ${ count }개 이메일. 자주 열람함."
+      ],
+      "${ count } email in the last 30 days. Opened sometimes.": [
+        "지난 30일 간 ${ count }개 이메일. 가끔 열람함."
+      ]
+    },
     "ngc_access_banner: action": {
       "Try it now": [
         "지금 사용해보세요"
@@ -12906,6 +12992,9 @@
       ],
       "You are all set!": [
         "모든 준비가 완료되었어요!"
+      ],
+      "You can change this anytime in settings.": [
+        "언제든지 설정에서 변경할 수 있습니다."
       ],
       "Your domain ${ domain } and ${ subscriptionName } subscription are ready to use.": [
         "도메인 ${ domain }와(과) ${ subscriptionName } 구독이 준비되었습니다."
@@ -15323,6 +15412,9 @@
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount }개 메시지가 별표 표시됨에서 제거되었습니다."
       ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI 어시스턴트 비활성화 됨"
+      ],
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
       ],
@@ -15485,6 +15577,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "${ label }(으)로 이동되었습니다. 추후 비슷한 메시지는 이곳으로 분류됩니다."
       ],
+      "One-time codes disabled": [
+        "1회용 코드 비활성화 됨"
+      ],
+      "One-time codes enabled": [
+        "1회용 코드 활성화 됨"
+      ],
       "Password copied to clipboard": [
         "비밀번호를 클립보드에 복사했습니다"
       ],
@@ -15526,6 +15624,12 @@
       ],
       "Undo in progress": [
         "실행 취소 중"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "${ count }개 메일링 리스트에서 구독을 취소했으며 메시지를 보관함으로 보냈습니다."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "${ count }개 메일링 리스트에서 구독을 취소했습니다."
       ],
       "Verification successful": [
         "인증 성공"
@@ -16113,6 +16217,9 @@
       "Filter name cannot contain only spaces": [
         "필터 이름이 공백을 포함할 수 없습니다."
       ],
+      "Filter on": [
+        "필터 켬"
+      ],
       "Filter on...": [
         "필터링..."
       ],
@@ -16611,6 +16718,9 @@
       "Settings": [
         "설정"
       ],
+      "Share your availability": [
+        "빈 시간 공유"
+      ],
       "Share your calendar with your team": [
         "팀과 캘린더를 공유하세요"
       ],
@@ -16637,6 +16747,9 @@
       ],
       "Snooze:": [
         "방해금지:"
+      ],
+      "Special offer": [
+        "특별 제안"
       ],
       "Start a new import": [
         "신규 불러오기 시작"

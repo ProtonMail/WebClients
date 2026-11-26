@@ -301,6 +301,9 @@
       "Reminder": [
         "Memento"
       ],
+      "Reset member password": [
+        "Resetare parolă membru"
+      ],
       "Restrict app access": [
         "Restricționare acces aplicație"
       ],
@@ -5464,6 +5467,11 @@
         "La fiecare ${ interval } de zile, ${ untilString }"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Modificați planul pentru a activa ${ DARK_WEB_MONITORING_NAME }"
+      ]
+    },
     "Dashboard": {
       "Communicate and schedule with end-to-end encryption.": [
         "Comunicați și planificați folosind criptarea bilaterală."
@@ -10601,6 +10609,9 @@
         "Țări activate: ${ countriesCount }",
         "Țări activate: ${ countriesCount }"
       ],
+      "${ current } of ${ total }": [
+        "${ current } din ${ total }"
+      ],
       "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
         "${ DataLockedText }, dar se pot recupera apelând la un ${ RecoveryContactsLink }:"
       ],
@@ -10676,6 +10687,11 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "Membri care nu și-au setat metoda de recuperare: ${ membersWithoutRecovery }",
+        "Membri care nu și-au setat metoda de recuperare: ${ membersWithoutRecovery }",
+        "Membri care nu și-au setat metoda de recuperare: ${ membersWithoutRecovery }"
       ],
       "${ n } address": [
         "${ n } adresă",
@@ -10798,9 +10814,6 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: se cere platformelor destinatare să respingă e-mailurile neautorizate."
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } din ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "încă ${ remainingAddresses.length }",
@@ -12155,6 +12168,9 @@
       "Find out what can be migrated.": [
         "Aflați ce poate fi migrat."
       ],
+      "Find your files": [
+        "Găsiți-vă fișierele"
+      ],
       "Folders are where your messages are stored. A message can only be in one folder.": [
         "Mesajele sunt stocate în foldere. Un mesaj poate fi într-un singur folder."
       ],
@@ -12337,6 +12353,9 @@
       ],
       "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
         "Dacă este dezactivată, membrii organizației nu vor putea salva chei de acces în ${ PASS_APP_NAME } și nici nu se vor putea autentifica folosindu-le. Nu se șterge nimic."
+      ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Dacă e activată, membrii nu-și pot reseta parola fără aprobarea administratorului."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Dacă e activată, membrii organizației vor putea partaja și articole individuale alături de seifuri."
@@ -12676,6 +12695,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Gestionați setările de recuperare a contului pentru membrii organizației."
       ],
       "Manage groups in your identity provider": [
         "Gestionați grupurile în furnizorul de identitate"
@@ -13096,9 +13118,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Modificați tipul planului pentru a vă asigura ca importarea se poate finaliza."
-      ],
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
       ],
@@ -13251,6 +13270,9 @@
       ],
       "Right to Left": [
         "De la dreapta la stânga"
+      ],
+      "Runs in the background": [
+        "Rulează în fundal"
       ],
       "SAML configuration saved": [
         "Configurare SAML salvată."
@@ -13672,6 +13694,9 @@
       "They get end-to-end encrypted email, storage, and collaboration tools": [
         "Aceștia beneficiază de e-mail, stocare și instrumente de colaborare criptate bilateral."
       ],
+      "They'll be in a new folder in My files.": [
+        "Vor fi într-un folder nou în Fișierele mele."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
@@ -13695,6 +13720,9 @@
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Această funcție întârzie trimiterea mesajelor, permițându-vă să anulați trimiterea în intervalul de timp selectat."
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Această funcție nu este acceptată în abonamentul actual. Contactați administratorul pentru a obține acces."
       ],
       "This file is too large to preview": [
         "Acest fișier este prea mare pentru a fi examinat."
@@ -14284,9 +14312,6 @@
       "We'll email you when your import is complete.": [
         "Vă vom anunța pe e-mail după finalizarea importării."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Veți primi un e-mail când s-a finalizat importarea. Fișierele vor apărea într-un folder din ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Vom reveni în curând."
       ],
@@ -14301,6 +14326,9 @@
       ],
       "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
         "Creăm o nouă modalitate prin care să vă gestionați organizația și căutăm utilizatori care să participe la un apel video și să testeze o versiune preliminară. Vă întrebați dacă vă calificați? Răspundeți la câteva întrebări rapide pentru a vedea dacă puteți participa."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Se copiază fișierele din Google Drive în ${ DRIVE_APP_NAME }."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Am observat că unii utilizatori nu și-au revendicat conturile ${ BRAND_NAME }."
@@ -14501,6 +14529,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Puteți închide fila sau navigatorul web între timp."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Puteți închide asta și să continuați să utilizați ${ DRIVE_APP_NAME }."
       ],
       "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
         "Puteți defini politicile ${ PASS_APP_NAME } pentru membrii organizației."
@@ -14839,6 +14870,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive s-ar putea să fie gol sau să conțină fișiere nesuportate."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Importarea început, dar se va întrerupe atunci când spațiul de stocare va fi plin. Treceți la un plan superior acum pentru a transfera toate fișierele."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
@@ -16911,6 +16945,9 @@
       ],
       "Require 2FA for everyone": [
         "Solicitare A2F pentru toți"
+      ],
+      "Require admin approval": [
+        "Este necesară aprobarea administratorului"
       ],
       "Require password check-ins": [
         "Necesită confirmarea parolei"
@@ -19594,11 +19631,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Securizați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creați, editați și colaborați la documente criptate bilateral."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creați, editați și colaborați la foi de calcul criptate bilateral."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
@@ -20005,6 +20048,9 @@
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Acum membrii își pot reseta parola cu fraza de recuperare."
+      ],
       "Monitoring disabled": [
         "Monitorizare dezactivată"
       ],
@@ -20022,6 +20068,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Acum este necesară confirmarea parolei pentru toți membrii."
+      ],
+      "Password resets now require administrator approval": [
+        "Resetarea parolelor necesită acum aprobarea unui administrator."
       ],
       "Reminder has been sent": [
         "Notificările au fost trimise"
@@ -25236,6 +25285,9 @@
       "Disabled": [
         "Dezactivată"
       ],
+      "Enabled": [
+        "Activată"
+      ],
       "failed": [
         "eșuat"
       ],
@@ -26063,9 +26115,6 @@
       ],
       "Free forever": [
         "Gratuit întotdeauna"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importați-vă folderele și fișierele din Google Drive și păstrați-le private în ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "pe lună, facturat anual"
@@ -27077,6 +27126,9 @@
       "Cannot add more users": [
         "Nu se mai pot adăuga utilizatori"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -27877,9 +27929,6 @@
       "Import started": [
         "Importare pornită"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Importarea a început, dar spațiul de stocare nu va fi suficient"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import cu ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -28012,6 +28061,9 @@
       "Monthly cost": [
         "Cheltuieli lunare"
       ],
+      "More storage needed to finish your import": [
+        "Este nevoie de mai mult spațiu de stocare pentru a finaliza importarea."
+      ],
       "Multi-user support": [
         "Suport utilizatori multipli"
       ],
@@ -28059,6 +28111,9 @@
       ],
       "No need to empty the trash": [
         "Nu trebuie să goliți gunoiul"
+      ],
+      "Nothing to import": [
+        "Nimic de importat"
       ],
       "Notifications": [
         "Notificări"
@@ -28812,9 +28867,6 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
-      "We could not find anything to import": [
-        "Nu s-au găsit date de importat"
-      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Vi s-a trimis un cod la adresa de e-mail pentru a ne asigura că dețineți contul. Acest cod este valabil 10 minute. Trebuie să îl introduceți mai jos."
       ],
@@ -29070,6 +29122,12 @@
       "Account is disconnected": [
         "Contul este deconectat"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Adăugați o metodă de recuperare a datelor pentru a debloca datele dacă vă uitați parola."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Adăugați o adresă de e-mail sau un număr de telefon de recuperare, pentru a vă putea reseta parola în cazul în care o uitați."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Adăugat la planul actual: ${ mergedAddonTitles }"
       ],
@@ -29117,6 +29175,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creați o frază de recuperare, astfel încât să vă puteți recupera datele dacă vă uitați parola."
       ],
       "Customize import to reduce the number of folders": [
         "Modificați importarea pentru a reduce numărul folderelor"
@@ -29177,6 +29238,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "De exemplu, **parola, qwerty** etc."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generați o frază de recuperare pentru a vă proteja contul împotriva pierderii datelor."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Obțineți sfaturi de productivitate și securitate pentru a vă ajuta să profitați la maximum de ${ MAIL_APP_NAME } și nu numai."
@@ -29270,6 +29334,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Semnăturile produse de această cheie sunt considerate nevalide, iar această cheie nu poate fi folosită pentru criptare."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Unele dintre date sunt blocate. Utilizați o metodă de recuperare pentru a le debloca."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO"
@@ -29401,6 +29468,12 @@
         "Organizația a atins limita de ${ maxServiceAccounts } cont de serviciu.",
         "Organizația a atins limita de ${ maxServiceAccounts } conturi de serviciu.",
         "Organizația a atins limita de ${ maxServiceAccounts } de conturi de serviciu."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Fișierul de recuperare este învechit. Descărcați unul nou pentru a vă putea recupera în continuare datele."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Fraza de recuperare este învechită. Obțineți una nouă pentru a vă putea recupera în continuare datele."
       ]
     },
     "tooltip": {

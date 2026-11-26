@@ -40,50 +40,14 @@
       "Activate recovery": [
         "啟動還原"
       ],
-      "Add": [
-        "加入"
-      ],
       "Add account": [
         "加入帳號"
-      ],
-      "Add address": [
-        "加入電郵位址"
       ],
       "Add another account": [
         "新增其它帳號"
       ],
-      "Add birthday": [
-        "新增生日"
-      ],
-      "Add contact": [
-        "加入聯絡人"
-      ],
-      "Add email": [
-        "加入電郵"
-      ],
-      "Add group": [
-        "加入群組"
-      ],
-      "Add new group": [
-        "創建新的群組"
-      ],
-      "Add note": [
-        "新增備註"
-      ],
       "Add people or groups to share": [
         "新增與他人或群組分享"
-      ],
-      "Add phone number": [
-        "加入手機號碼"
-      ],
-      "Add to group": [
-        "加入至群組"
-      ],
-      "Apply": [
-        "套用"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "每個聯絡人群組至多允許 ${ maxContacts } 個聯絡人"
       ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
@@ -121,18 +85,6 @@
       "Chat with us": [
         "與我們往來對話"
       ],
-      "Choose a file or drag it here": [
-        "選擇檔案或拖曳到此處"
-      ],
-      "Clear data": [
-        "清除資料"
-      ],
-      "Clear query": [
-        "清除查詢"
-      ],
-      "Click here.": [
-        "點擊此處。"
-      ],
       "Close": [
         "關閉"
       ],
@@ -151,23 +103,11 @@
       "Collapse list of pending invitations": [
         "收合待處理邀請列表"
       ],
-      "Compose": [
-        "撰寫郵件"
-      ],
-      "Confirm": [
-        "確認"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        "確認開啟連結 ${ linkToShow }"
-      ],
       "Connect apps and devices": [
         "連線應用程式和裝置"
       ],
       "Connect to video conferencing": [
         "連接視訊會議"
-      ],
-      "Contact group": [
-        "聯絡人群組"
       ],
       "Continue": [
         "繼續"
@@ -181,9 +121,6 @@
       "Copy as markdown": [
         "以 Markdown 格式複製"
       ],
-      "Copy email to clipboard": [
-        "複製電郵位址至剪貼簿"
-      ],
       "Copy invite link": [
         "複製邀請連結"
       ],
@@ -193,17 +130,11 @@
       "Copy password": [
         "複製密碼"
       ],
-      "Copy version number to clipboard": [
-        "複製版本號碼至剪貼簿"
-      ],
       "Create": [
         "創建"
       ],
       "Create a copy": [
         "建立拷貝"
-      ],
-      "Create a new contact group": [
-        "創建新連絡人群組"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "建立新的 ${ SHEETS_APP_NAME }"
@@ -220,35 +151,14 @@
       "Decline invite": [
         "婉拒邀請"
       ],
-      "Delete": [
-        "刪除"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "刪除 ${ selectedCount } 個聯絡人"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "刪除 ${ selectedCount } 個聯絡人群組"
-      ],
-      "Delete contact": [
-        "刪除聯絡人"
-      ],
-      "Delete contact group": [
-        "刪除聯絡人群組"
-      ],
       "Delete older revisions": [
         "刪除較舊的修訂版本"
       ],
       "Delete permanently": [
         "永久刪除"
       ],
-      "Deselect all": [
-        "取消全選"
-      ],
       "Dismiss": [
         "忽略"
-      ],
-      "Done": [
-        "完成"
       ],
       "Download": [
         "下載"
@@ -268,9 +178,6 @@
       "Download logs": [
         "下載日誌"
       ],
-      "Edit": [
-        "編輯"
-      ],
       "Edit email address": [
         "編輯電郵位址"
       ],
@@ -279,9 +186,6 @@
       ],
       "Edit sign-in details": [
         "編輯登入詳細資訊"
-      ],
-      "Email settings": [
-        "電郵設定"
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
@@ -292,17 +196,8 @@
       "Explore other plans": [
         "探索其他方案"
       ],
-      "Export": [
-        "匯出"
-      ],
-      "Export contact group": [
-        "匯出聯絡人群組"
-      ],
       "Export editor state for version": [
         "匯出版本的編輯器狀態"
-      ],
-      "Export selection as .vcf": [
-        "以.vcf匯出選項"
       ],
       "Export this version (as docx)": [
         "匯出此版本 (為 docx 格式)"
@@ -315,9 +210,6 @@
       ],
       "Forgot password?": [
         "忘記密碼?"
-      ],
-      "Forward as attachment": [
-        "以附件形式轉寄"
       ],
       "Generate password": [
         "生成密碼"
@@ -343,9 +235,6 @@
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
       ],
-      "Go to label": [
-        "跳至標籤"
-      ],
       "Got it": [
         "了解"
       ],
@@ -361,22 +250,10 @@
       "Hide": [
         "隱藏"
       ],
-      "Hide advanced PGP settings": [
-        "隱藏進階 PGP 設定"
-      ],
       "Hide more benefits": [
         "隱藏更多好處"
       ],
-      "Image could not be loaded with tracker protection.": [
-        "無法在啟用追蹤保護中載入影像。"
-      ],
-      "Image will be loaded without a proxy": [
-        "圖像不會透過代理伺服器載入"
-      ],
       "Import": [
-        "匯入"
-      ],
-      "import": [
         "匯入"
       ],
       "Import data": [
@@ -394,12 +271,6 @@
       "Learn more": [
         "瞭解詳情"
       ],
-      "Load": [
-        "載入"
-      ],
-      "Load image": [
-        "載入圖像"
-      ],
       "Make a copy": [
         "建立副本"
       ],
@@ -415,23 +286,11 @@
       "Mark as resolved": [
         "標記為已解決"
       ],
-      "Mark for deletion": [
-        "標記為刪除"
-      ],
       "Markdown (.md)": [
         "Markdown (.md)"
       ],
       "Maybe later": [
         "稍後再考慮"
-      ],
-      "Merge": [
-        "合併"
-      ],
-      "Merge contacts": [
-        "合併聯絡人"
-      ],
-      "More actions": [
-        "更多選項"
       ],
       "More benefits": [
         "更多好處"
@@ -463,12 +322,6 @@
       "New folder": [
         "新資料夾"
       ],
-      "New message": [
-        "撰寫"
-      ],
-      "Next": [
-        "下一個"
-      ],
       "Next month": [
         "下個月"
       ],
@@ -499,20 +352,11 @@
       "Plain Text (.txt)": [
         "純文字 (.txt)"
       ],
-      "Preview contact": [
-        "預覽聯絡人"
-      ],
       "Previous month": [
         "上個月"
       ],
       "Print": [
         "列印"
-      ],
-      "Re-sign": [
-        "重新簽署"
-      ],
-      "Recover data": [
-        "恢復資料"
       ],
       "Refer a friend": [
         "推薦好友"
@@ -616,9 +460,6 @@
       "Select ${ planOrAppName }": [
         "選擇方案 ${ planOrAppName }"
       ],
-      "Select all": [
-        "全選"
-      ],
       "Set password or expiration date": [
         "設定密碼或過期日期"
       ],
@@ -651,9 +492,6 @@
       ],
       "Sharing is end-to-end encrypted": [
         "共享是端對端加密"
-      ],
-      "Show advanced PGP settings": [
-        "顯示進階 PGP 設定"
       ],
       "Show more": [
         "顯示更多"
@@ -703,9 +541,6 @@
       "Trashing...": [
         "正在清空..."
       ],
-      "Trust": [
-        "信任"
-      ],
       "Try again": [
         "再試一次"
       ],
@@ -723,12 +558,6 @@
       ],
       "Unlock data": [
         "解鎖資料"
-      ],
-      "Unmark for deletion": [
-        "取消標記為刪除"
-      ],
-      "Untrust": [
-        "不信任"
       ],
       "Update recovery file": [
         "更新還原檔案"
@@ -748,9 +577,6 @@
       "Upload and share files": [
         "上傳並共享檔案"
       ],
-      "Upload picture": [
-        "上載圖像"
-      ],
       "Use ${ label } theme": [
         "使用 ${ label } 布景主題"
       ],
@@ -763,9 +589,6 @@
       "Use authentication code": [
         "使用驗證代碼"
       ],
-      "Use for sending": [
-        "用於寄送"
-      ],
       "Use recovery code": [
         "使用復原碼"
       ],
@@ -777,9 +600,6 @@
       ],
       "Verify now": [
         "立即驗證"
-      ],
-      "View": [
-        "檢視"
       ],
       "View ${ pendingCount } invitation": [
         "檢視所有 ${ pendingCount } 個邀請"
@@ -804,26 +624,6 @@
       ],
       "words out of": [
         "字，總計"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
-      ]
-    },
-    "Actions message": {
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } 或 ${ importContact }。"
-      ],
-      "No results found.": [
-        "找不到相符的結果。"
-      ],
-      "Please try another search term.": [
-        "請嘗試其它關鍵字。"
-      ],
-      "You don't have any contacts.": [
-        "您還未加入任何聯絡人資訊。"
-      ],
-      "You don't have any groups.": [
-        "您沒有任何群組。"
       ]
     },
     "Addon": {
@@ -895,11 +695,6 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "若您現在離開，部份聯絡人或會無法匯入"
       ]
     },
     "Apps dropdown": {
@@ -1366,76 +1161,6 @@
       ],
       "strawberry": [
         "草莓"
-      ]
-    },
-    "Contact field label": {
-      "Address": [
-        "位址"
-      ],
-      "Anniversary": [
-        "週年紀念日"
-      ],
-      "Birthday": [
-        "生日"
-      ],
-      "Display name": [
-        "顯示名稱"
-      ],
-      "Email": [
-        "電郵"
-      ],
-      "Enter a display name or nickname": [
-        "輸入顯示名稱或暱稱"
-      ],
-      "First name": [
-        "名"
-      ],
-      "Gender": [
-        "性別"
-      ],
-      "Language": [
-        "語言"
-      ],
-      "Last name": [
-        "姓"
-      ],
-      "Logo": [
-        "頭像"
-      ],
-      "Member": [
-        "成員"
-      ],
-      "Name": [
-        "姓名"
-      ],
-      "Note": [
-        "備註"
-      ],
-      "Organization": [
-        "組織"
-      ],
-      "Phone": [
-        "電話"
-      ],
-      "Photo": [
-        "相片"
-      ],
-      "Role": [
-        "身份"
-      ],
-      "Time zone": [
-        "時區"
-      ],
-      "Title": [
-        "職銜"
-      ],
-      "URL": [
-        "網址"
-      ]
-    },
-    "Contact image": {
-      "Contact image": [
-        "聯絡人圖片"
       ]
     },
     "Country name": {
@@ -2277,21 +2002,6 @@
         "為期 ${ VPN_APP_NAME }"
       ]
     },
-    "Default display name vcard": {
-      "Unknown": [
-        "未知"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "使用系统預設值 (${ defaultValueText })"
-      ]
-    },
-    "Default signing preference": {
-      "Use global default (${ globalDefaultText })": [
-        "使用全域預設值（${ globalDefaultText }）"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "逾期帳單"
@@ -2325,12 +2035,6 @@
       "Create groups you can email with a single address.": [
         "創建您可透單一位址傳送電子郵件的群組"
       ],
-      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "解密聯絡人資料中… 此步驟將耗時數分鐘。當作業完成時，您就可以下載所有已匯出的聯絡人檔案。"
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "在桌上型電腦和行動裝置上輕鬆存取您的電子郵件與行事曆。"
       ],
@@ -2339,9 +2043,6 @@
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "在您的組織中鼓勵使用雙重身分驗證，以獲得額外的安全保護。"
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
@@ -2361,14 +2062,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "協助團隊安全地以密碼儲存商務機密和客戶資訊。"
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
-      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "讓您可以立即新增會議連結到您的活動邀請。"
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "Set a data recovery method to prevent data loss.": [
         "設定資料救援手段以防資料丟失"
@@ -2385,20 +2080,11 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "以確保您帳戶的最高可能的安全，設置復原詞句。"
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
-      ],
-      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
-      ],
       "To start, give your organization a name.": [
         "若要開始，為貴組織取個名稱。"
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "升級至 ${ planName } 以保持共享有編輯權限的檔案"
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用此指南以讓貴組織快速地受益於 ${ BRAND_NAME } 的業界領先加密和隱私生態系。"
@@ -2406,30 +2092,11 @@
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遺憾看到您要離開。如果您有時間，我們非常希望能了解您想要取消的原因。您的意見回饋有助於我們為大家將 ${ BRAND_NAME } 變得更好。"
       ],
-      "With contact groups, you can send emails to everyone in the group with one click.": [
-        "使用聯絡人群組，您可以一件寄出電子郵件給群組中的所有人。"
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
-      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的帳戶資料復原方法已就緒、雙重驗證已啟用。"
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "另外，我們已將 CSV 自動轉換為 vCard 信息，您可以查看並修改對應關係。"
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
       ]
     },
     "Downgrade account reason": {
@@ -2567,9 +2234,6 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } 個項目移動失敗"
       ],
-      "A group with this name already exists": [
-        "此名稱的群組已存在"
-      ],
       "Already a member of this share": [
         "已經是這個分享的成員了"
       ],
@@ -2594,9 +2258,6 @@
       "Cannot download a folder": [
         "無法下載個資料夾"
       ],
-      "Cannot export this contact": [
-        "無法匯出通訊名片"
-      ],
       "Cannot find move target": [
         "找不到移動目標"
       ],
@@ -2608,15 +2269,6 @@
       ],
       "Cannot verify who uploaded this file": [
         "無法驗證上傳此檔案的人"
-      ],
-      "Contact could not be saved": [
-        "無法儲存聯絡人"
-      ],
-      "Contact name is too long": [
-        "聯絡人名稱過長"
-      ],
-      "Contact signature not verified": [
-        "聯絡人簽章尚未驗證"
       ],
       "Copy operation aborted": [
         "以放棄移動操作"
@@ -2690,9 +2342,6 @@
       "Failed to load recent documents": [
         "無法載入最近的文件"
       ],
-      "Failed to open to contact": [
-        "無法開啟聯絡人"
-      ],
       "Failed to remove older revisions": [
         "未能成功移除較舊修訂版本"
       ],
@@ -2711,14 +2360,8 @@
       "Failed to update public share node": [
         "更新公開共享節點失敗"
       ],
-      "First name is too long": [
-        "名字太長"
-      ],
       "Image preview not found": [
         "查無照片預覽"
-      ],
-      "Image upload failed": [
-        "影像上載失敗"
       ],
       "Incorrect backup password. Please try again.": [
         "備份密碼錯誤。請重新再試。"
@@ -2732,15 +2375,6 @@
       "Invalid coupon": [
         "無效優待券"
       ],
-      "Invalid email address": [
-        "電郵位址無效"
-      ],
-      "Invalid name": [
-        "無效的名稱"
-      ],
-      "Invalid public key file": [
-        "公開金鑰檔案無效"
-      ],
       "Invalid URL": [
         "URL 無效"
       ],
@@ -2752,9 +2386,6 @@
       ],
       "Item not found": [
         "找不到項目"
-      ],
-      "Last name is too long": [
-        "姓氏太長"
       ],
       "Missing inviter email": [
         "缺少邀請電子郵件"
@@ -2779,12 +2410,6 @@
       ],
       "Not a valid number": [
         "號碼無效"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "部份群組無聯絡人：${ noContactGroupList }"
       ],
       "Operation aborted": [
         "操作取消"
@@ -2816,9 +2441,6 @@
       "Please enter ZIP code": [
         "請輸入郵遞區號"
       ],
-      "Please provide either a first name, a last name or a display name": [
-        "請提供名字、姓氏或顯示名稱"
-      ],
       "Please select a country": [
         "請選擇一個國家"
       ],
@@ -2840,9 +2462,6 @@
       "Signature is missing": [
         "缺少簽名"
       ],
-      "Signature not verified": [
-        "簽章尚未驗證"
-      ],
       "Signature verification failed": [
         "簽名驗證失敗"
       ],
@@ -2852,17 +2471,11 @@
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
         "失敗替 ${ signatureType } 簽名驗證: ${ errorMessage }"
       ],
-      "Some contacts could not be deleted": [
-        "某些聯絡名片無法刪除"
-      ],
       "Some file data failed to upload. Please try again.": [
         "部分檔案上載失敗。請稍後再試。"
       ],
       "Some file parts failed to upload. Please try again.": [
         "檔案部分上傳失敗。請稍後再試。"
-      ],
-      "Some groups could not be deleted": [
-        "部分聯絡人群組無法刪除"
       ],
       "Some items could not be loaded": [
         "無法載入部分項目"
@@ -2900,9 +2513,6 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "處理文件的更新時發生錯誤。請重新載入頁面並再試一次。"
       ],
-      "There was an error when exporting the contacts vCards": [
-        "匯出聯絡人 vCard 時發生錯誤"
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "此欄位還剩下 ${ maximumLength } 個字元。"
       ],
@@ -2932,9 +2542,6 @@
       ],
       "This item is not shared": [
         "此項目未被共享"
-      ],
-      "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
       ],
       "Too many server errors, please try again later": [
         "太多伺服器錯誤，請稍後再試"
@@ -2993,62 +2600,17 @@
       "You can update a public link for your own files only": [
         "您只能更新您的檔案公開連結"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
-      ],
       "You do not have access to this item": [
         "您沒有權限訪問此項目"
       ],
       "You do not have access to this shared item": [
         "您沒有權限訪問此共享的項目"
       ],
-      "You must set a name": [
-        "您必須設定名稱"
-      ],
       "⚠️ Undecryptable device": [
         "⚠️無法解密的裝置"
       ],
       "⚠️ Undecryptable name": [
         "⚠️無法解密的名字"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "發生未知的錯誤。需重新開始匯入。"
-      ]
-    },
-    "Error importing contact": {
-      "Encryption failed": [
-        "加密失敗"
-      ],
-      "Missing FN property": [
-        "缺少 FN 屬性"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "不支援 vCard 版本 < 3.0"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "讀取您的檔案 ${ formattedFilename } 時發生錯誤。檔案格式不正確。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案"
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "上載您的檔案時發生錯誤。未選取任何檔案。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "您的檔案 ${ formattedFilename } 包含多於 ${ maxContactString } 位聯絡人。"
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "您的檔案 ${ formattedFilename } 沒有任何聯絡人可供匯入。"
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "您的檔案 ${ formattedFilename } 是空的。"
       ]
     },
     "Error message": {
@@ -3075,11 +2637,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
-      ]
-    },
-    "Error notification": {
-      "Display name cannot be empty": [
-        "顯示名稱不能為空"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3236,76 +2793,12 @@
         "簡訊"
       ]
     },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "vCard 版本 < 3.0"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入至您的通訊錄"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密及加入聯絡人時發生錯誤。${ totalImported }/${ totalToImport } 聯絡人已成功匯入。"
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "聯絡人已成功匯入。已匯入的聯絡人現將顯示於通訊錄中。"
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "聯絡人已成功匯入。已匯入的聯絡人現將顯示於通訊錄中。"
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "聯絡人 ${ contactId }： "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } 位聯絡人"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "未知"
-      ]
-    },
-    "Import contacts warning": {
-      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "${ CONTACTS_APP_NAME } 不支援 ${ forNow }："
-      ],
-      "for now": [
-        "暫時"
-      ]
-    },
-    "Import warning": {
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
-      ],
-      "No contact can be imported. Click for details": [
-        "無聯絡人可供匯入。點擊以查看詳細資料"
-      ]
-    },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "文件 ${ documentTitle } 已被移動到垃圾桶。它將會待在那兒直到你還原或永久刪除它。"
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "「${ documentTitle }」目前在垃圾桶中，並會一直保留在該處，直到您將其永久刪除。"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } 個電郵位址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -3316,29 +2809,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } 個聯絡人包含多個電子郵件位址。"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } 位成員"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        "${ contactName } 聯絡名片包含多組電郵位址。"
-      ],
-      "${ contactsCount } contact found": [
-        "找到 ${ contactsCount } 位聯絡人"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } 位聯絡人"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } 讓您能以端對端加密進行即時協作，以確保完整的隱私。建立副本以開始編輯，或向擁有者要求編輯存取權限。"
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } 在"
-      ],
-      "${ groupCounts } group found": [
-        "找到 ${ groupCounts } 個群組"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
@@ -3354,12 +2829,6 @@
       ],
       "${ planName } expires today.": [
         "${ planName } 今日過期。"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
-      ],
-      "${ updated } contact updated successfully.": [
-        "已成功更新 ${ updated } 位聯絡人。"
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } 將遮蔽您的 IP 位址，所以網站無法識別您。"
@@ -3405,9 +2874,6 @@
       ],
       "Ad targeting": [
         "廣告目標鎖定"
-      ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "廣告商會追蹤您的瀏覽紀錄，以顯示目標式廣告。${ VPN_APP_NAME } 會封鎖追蹤程式和廣告，讓您的連線速度更快，並改善您的線上體驗。"
@@ -3457,17 +2923,11 @@
       "Can't write into folder": [
         "無法寫入資料夾"
       ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
-      ],
       "characters": [
         "個字元"
       ],
       "characters without spaces": [
         "不含空白的字元"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
       "Choose a plan that works best for you.": [
         "選擇最適合於您的方案。"
@@ -3478,20 +2938,11 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "連線至 ${ VPN_APP_NAME } 進行私密瀏覽"
       ],
-      "Contact assigned to group ${ contactGroupName }": [
-        "指派通訊錄給群組 ${ contactGroupName }"
-      ],
-      "Contact unassigned from group ${ contactGroupName }": [
-        "聯絡資訊已從${ contactGroupName }群裡移除"
-      ],
       "Continue": [
         "繼續"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
-      ],
-      "Copy the link to clipboard": [
-        "複製連結到剪貼簿"
       ],
       "Copy your referral link": [
         "複製您的推介連結"
@@ -3501,9 +2952,6 @@
       ],
       "Create a copy to edit": [
         "建立副本以編輯"
-      ],
-      "Create a new contact group": [
-        "創建新聯絡人群組"
       ],
       "Create a secure cloud for ${ memberCount } member": [
         "替成員創建一個安全 ${ memberCount } 雲端"
@@ -3547,15 +2995,6 @@
       "Download current logs": [
         "下載最近的日誌"
       ],
-      "Drop file here to upload": [
-        "拖曳檔案到此處來上傳"
-      ],
-      "Drop to import": [
-        "拖放以匯入"
-      ],
-      "Duplicate key updated": [
-        "重複金鑰已更新"
-      ],
       "Each code can only be used once": [
         "每個代碼都只能使用一次"
       ],
@@ -3564,9 +3003,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。 ${ BRAND_NAME } 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
-      ],
-      "Emails are automatically signed": [
-        "電子郵件已自動簽章"
       ],
       "End-to-end encrypted": [
         "端到端加密"
@@ -3688,12 +3124,6 @@
       "Keep your files secure with end-to-end encryption.": [
         "透過端對端加密保護您的檔案。"
       ],
-      "Key fingerprint": [
-        "金鑰指紋"
-      ],
-      "Labels:": [
-        "標籤："
-      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -3748,15 +3178,6 @@
       "New": [
         "加入"
       ],
-      "No contacts added yet": [
-        "仍未加入任何通訊錄"
-      ],
-      "No email address": [
-        "沒有電郵位址"
-      ],
-      "No group found": [
-        "未找到群組"
-      ],
       "No recent documents match your search.": [
         "沒有最近的檔案符合您的搜尋。"
       ],
@@ -3765,12 +3186,6 @@
       ],
       "No version history available": [
         "無可用歷史版本"
-      ],
-      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "上傳的金鑰皆無法用於加密。為能夠傳送郵件至此電子信箱，請上傳有效的金鑰或是停用「加密郵件」。"
-      ],
-      "Not a valid URL": [
-        "無效的網址"
       ],
       "Not connected": [
         "未連線"
@@ -3783,9 +3198,6 @@
       ],
       "On public WiFi networks": [
         "於公用 WiFi 網路上"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "糟糕！此試算表無法儲存您最近的編輯，因此我們已暫停編輯以防止您遺失工作內容。"
@@ -3820,47 +3232,14 @@
       "Pending invitations": [
         "佇候的邀請"
       ],
-      "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline 僅與純文字格式相容。"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME 使用目前的編輯器模式自動傳送訊息。"
-      ],
       "Please enter the password to decrypt and view content.": [
         "請輸入密碼以解密並檢視內容。"
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "請從主選單中匯出您目前變更的副本，並重新載入此網頁。"
       ],
-      "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "請注意：指派到此群組中的電子郵件位址不會被刪除。"
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "請注意：指派到此群組中的電郵位址將不會被刪除。"
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
-      ],
-      "Please provide a name and an email address for creating a group.": [
-        "請提供一個名子和電子郵件位址以創建群組。"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "請選取一或多組電郵位址以加入至 ${ groupCount } 個群組。"
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        "請選取一或多組電郵位址以加入至 ${ groupName }。"
-      ],
       "Please try again in a few moments": [
         "請稍候再試"
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "請稍候，我們正查找聯絡人中有沒有包含以非使用中金鑰加密的資料。"
-      ],
-      "Primary": [
-        "主要"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "私密瀏覽（或「無痕」模式）僅適用於在您的裝置上隱藏您的活動。它會阻止您的瀏覽器儲存歷程記錄和 Cookie，但並不會讓您變得隱形。您的 ISP、網路管理員以及您訪問的網站仍然可以看到您在線上進行的操作。"
@@ -3907,9 +3286,6 @@
       "Select a folder to move to.": [
         "選擇要移動至的資料夾。"
       ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -3918,9 +3294,6 @@
       ],
       "Set up your organization": [
         "設定您的組織"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "設定好 PGP，您就能夠傳送端對端加密電郵，給 ${ BRAND_NAME } 以外的使用者，只需確認使用 PGP 相容服務即可。"
       ],
       "Settings update failed": [
         "設定更新失敗"
@@ -3985,17 +3358,11 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
       ],
-      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "這個收件者已停用端到端加密。若要傳送加密郵件給這個收件者，該收件者必須重新啟用端到端加密。"
-      ],
       "There are no documents in the trash.": [
         "垃圾桶中沒有任何文件。"
       ],
       "This action will delete the link and revoke access for all users.": [
         "此項目將刪除連結並撤銷全部使用者的存取權。"
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "此文件已變得太大，無法進行編輯。您可以移除較舊的修訂版本以繼續編輯。"
@@ -4018,12 +3385,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "此是貴組織使用者可看見的名稱或暱稱。您可隨時時修正它。"
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "這表示您的 ISP 和您造訪的網站無法將您的個人資訊與您的線上活動連線。"
       ],
@@ -4042,23 +3403,11 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "為協助您記住您的密碼，我們會要求您定期輸入。隨著時間推移，要求的頻率會降低。"
       ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
-      ],
-      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "若要還原您的資料，您必須重新啟用在資料創建時所使用的帳號金鑰。這需要您提供金鑰產生時所使用的密碼。"
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
-      ],
       "Tracking": [
         "追蹤"
       ],
       "Trash": [
         "垃圾桶"
-      ],
-      "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
-        "信任「${ activeSignerText }」金鑰以驗證來自此聯絡人的新訊息。"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
@@ -4144,12 +3493,6 @@
       "You already have a free account": [
         "您已有一個免費帳號"
       ],
-      "You are about to open another browser tab and visit:": [
-        "您將要開啟其他瀏覽器分頁並造訪："
-      ],
-      "You are about to open your default browser and visit:": [
-        "您將要開啟預設瀏覽器並造訪："
-      ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "您目前已登入為 ${ organizationName } 的 ${ username }。"
       ],
@@ -4198,12 +3541,6 @@
       "You're about to decline the invitation to join the ${ invitationName } item. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "你即將拒絕加入 ${ invitationName } 項目的邀請。若繼續，除非擁有者再次邀請你，否則你將無法存取該項目。確定要繼續嗎？"
       ],
-      "You've reached the maximum number of addresses in the contact group(s):": [
-        "您已達到聯絡人群組郵件地址最高上限："
-      ],
-      "You've reached the maximum number of addresses in the contact group.": [
-        "您以達到通訊群組郵件位址最高上限"
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期繳款單。"
       ],
@@ -4233,9 +3570,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
-      ],
-      "Your files will be encrypted and then saved": [
-        "你的檔案將加密後再儲存"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
@@ -4289,48 +3623,6 @@
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
       ]
     },
-    "info": {
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "點擊以查看詳細資料"
-      ]
-    },
-    "Key badge": {
-      "Active Signer": [
-        "作用中簽署者"
-      ],
-      "Compromised": [
-        "已毀損"
-      ],
-      "Expired": [
-        "已失效"
-      ],
-      "Fallback": [
-        "後備"
-      ],
-      "KOO": [
-        "KOO"
-      ],
-      "Obsolete": [
-        "已廢止"
-      ],
-      "Primary": [
-        "主要"
-      ],
-      "Revoked": [
-        "已撤銷"
-      ],
-      "Trusted": [
-        "已信任"
-      ],
-      "WKD": [
-        "WKD"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
@@ -4343,15 +3635,6 @@
       ],
       "Active": [
         "啟用"
-      ],
-      "Add email address": [
-        "加入電郵位址"
-      ],
-      "Add image URL": [
-        "加入圖像路徑"
-      ],
-      "Add to group": [
-        "加入至群組"
       ],
       "Additional comments": [
         "附加備註"
@@ -4389,14 +3672,8 @@
       "Category": [
         "類別"
       ],
-      "City": [
-        "縣市"
-      ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
-      ],
-      "Colors": [
-        "色彩"
       ],
       "Command line interface (CLI)": [
         "指令介面 (CLI)"
@@ -4407,9 +3684,6 @@
       "Continue cancelling": [
         "持續取消"
       ],
-      "Copy": [
-        "複製"
-      ],
       "Could you please let us know which provider?": [
         "您能告訴我們是哪個提供者嗎？"
       ],
@@ -4418,9 +3692,6 @@
       ],
       "Could you please specify?": [
         "您可以具體說明嗎？"
-      ],
-      "Country": [
-        "國家"
       ],
       "Delete": [
         "刪除"
@@ -4434,9 +3705,6 @@
       "Disable this link on a specific date": [
         "在特定日期停用此連結"
       ],
-      "Don't ask again": [
-        "不要再次詢問"
-      ],
       "Don't show this again": [
         "不再顯示此內容"
       ],
@@ -4446,17 +3714,8 @@
       "Email address": [
         "電郵位址"
       ],
-      "Email format": [
-        "電郵格式"
-      ],
-      "Encrypt emails": [
-        "加密電郵"
-      ],
       "Expiry": [
         "到期時間"
-      ],
-      "Extended address": [
-        "詳細位址"
       ],
       "File": [
         "檔案"
@@ -4466,9 +3725,6 @@
       ],
       "Hide password": [
         "隱藏密碼"
-      ],
-      "I understand the risk": [
-        "我已了解此可能的風險"
       ],
       "Ignore": [
         "忽略"
@@ -4527,26 +3783,11 @@
       "Password strength": [
         "密碼強度"
       ],
-      "PGP scheme": [
-        "PGP 方案"
-      ],
       "Phone number": [
         "手機號碼"
       ],
       "Please share any feedback to help us improve.": [
         "請提供任何意見回饋以協助我們改進。"
-      ],
-      "Post office box": [
-        "郵政信箱"
-      ],
-      "Postal code": [
-        "郵遞區號"
-      ],
-      "Public keys": [
-        "公開金鑰"
-      ],
-      "Region": [
-        "地區"
       ],
       "Require password": [
         "需要密碼"
@@ -4563,17 +3804,11 @@
       "Shared with me": [
         "與我共享"
       ],
-      "Sign emails": [
-        "簽署電郵"
-      ],
       "Skip feedback": [
         "略過意見回饋"
       ],
       "Stop sharing": [
         "停止共用"
-      ],
-      "Street address": [
-        "街道位址"
       ],
       "Strong": [
         "強"
@@ -4595,9 +3830,6 @@
       ],
       "Unknown user": [
         "未知的使用者"
-      ],
-      "Upload picture": [
-        "上載圖像"
       ],
       "Verification code": [
         "驗證碼"
@@ -4637,16 +3869,6 @@
       ],
       "Your password (trusted contact)": [
         "您的密碼 (信任的內容)"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "顏色"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "名稱"
       ]
     },
     "Link": {
@@ -4868,14 +4090,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 的新版本可供使用。${ reloadButton }。"
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "自動"
-      ],
-      "Plain text": [
-        "純文字"
       ]
     },
     "new_plans": {
@@ -5749,12 +4963,6 @@
       "Cannot load next page": [
         "無法載入下一頁"
       ],
-      "Contact group created": [
-        "聯絡人群組已創建"
-      ],
-      "Contact group updated": [
-        "聯絡人群組已更新"
-      ],
       "Document moved to trash": [
         "文件已移至垃圾桶"
       ],
@@ -5778,9 +4986,6 @@
       ],
       "Invitation's email was sent again": [
         "邀請函電子郵件已重新寄件"
-      ],
-      "Link copied to clipboard": [
-        "已複製連結到剪貼簿"
       ],
       "Move ${ n } file": [
         "移動 ${ n } 個檔案"
@@ -5988,20 +5193,6 @@
         "您全部 ${ planTitle } 訂閱開始於 ${ boldEndDate }。"
       ]
     },
-    "Option": {
-      "Add to existing group": [
-        "加入至現有群組"
-      ],
-      "Automatic (${ value })": [
-        "自動 (${ value })"
-      ],
-      "Create new group": [
-        "創建新群組"
-      ],
-      "Ignore group": [
-        "忽略群組"
-      ]
-    },
     "Page title": {
       "Recents": [
         "最近使用"
@@ -6134,45 +5325,6 @@
         "到期後將自動以 ${ renewPriceStr } 的價格續約 ${ renewalLength } 個月。您可以隨時取消。"
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "此金鑰無法用於加密"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } 已被標記為損壞。此金鑰無法使用於加密或是特徵驗證。"
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } 已被標記為時效已過。此金鑰僅可用於特徵驗證。"
-      ],
-      "External key automatically fetched from keys.openpgp.org.": [
-        "自動由 keys.openpgp.org 取得了外部金鑰。"
-      ],
-      "External key automatically fetched via WKD.": [
-        "自動由 WKD 取得了外部金鑰。"
-      ],
-      "This contact currently signs messages with this key": [
-        "此聯絡人目前使用此金鑰簽署訊息"
-      ],
-      "This key is used for message verification": [
-        "此金鑰用於訊息驗證"
-      ],
-      "This key is used to encrypt messages to this contact": [
-        "此金鑰是用於加密通訊錄"
-      ],
-      "This key is used to encrypt messages to this contact on older apps": [
-        "此金鑰是用於舊版的應用程式以加密通訊錄"
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        "我們建議您「取消信任」此金鑰。"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件位址"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "您的聯絡方式"
@@ -6195,29 +5347,8 @@
       "Enter a new folder name": [
         "請輸入新的資料夾名稱"
       ],
-      "Filter groups": [
-        "篩選群組"
-      ],
-      "First name": [
-        "名"
-      ],
-      "Group name": [
-        "群組名稱"
-      ],
-      "Image URL": [
-        "圖像網址"
-      ],
-      "Last name": [
-        "姓"
-      ],
       "Message": [
         "郵件"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "Name or email address": [
-        "名稱或電郵位址"
       ],
       "Organization name": [
         "組織名稱"
@@ -6231,12 +5362,6 @@
       "Please select the main reason": [
         "請選擇主要原因"
       ],
-      "Search for group name": [
-        "搜尋群組名稱"
-      ],
-      "Search for name or email": [
-        "搜尋名稱或電郵"
-      ],
       "Select": [
         "選取"
       ],
@@ -6246,16 +5371,8 @@
       "Select a reason": [
         "選取理由"
       ],
-      "Start typing an email address": [
-        "在此輸入一個電郵位址"
-      ],
       "Your organization name": [
         "貴組織名稱"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "名稱"
       ]
     },
     "Plan description": {
@@ -6264,26 +5381,6 @@
       ],
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ countContacts } 位聯絡人之中，有 ${ contactsExported.length } 位已成功匯出。"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length }/${ totalBeDeleted } 位聯絡人已成功刪除。"
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length }/${ totalBeMerged } 位聯絡人已成功合併。"
-      ],
-      "No contacts exported.": [
-        "沒有匯出任何聯絡人。"
-      ],
-      "No contacts merged.": [
-        "沒有合併任何聯絡人。"
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "進度：${ combinedProgress }%"
       ]
     },
     "Property": {
@@ -6304,46 +5401,6 @@
       ],
       "name": [
         "名稱"
-      ]
-    },
-    "Property type": {
-      "Address": [
-        "位址"
-      ],
-      "Email": [
-        "電郵"
-      ],
-      "Fax": [
-        "傳真"
-      ],
-      "Home": [
-        "住宅"
-      ],
-      "Main": [
-        "主要"
-      ],
-      "Mobile": [
-        "手機"
-      ],
-      "Other": [
-        "其它"
-      ],
-      "Pager": [
-        "傳呼機"
-      ],
-      "Phone": [
-        "電話"
-      ],
-      "Work": [
-        "工作"
-      ]
-    },
-    "protonbadge": {
-      "Official": [
-        "官方郵件"
-      ],
-      "Official email from ${ BRAND_NAME }": [
-        "來自 ${ BRAND_NAME } 的官方電子郵件"
       ]
     },
     "Provider option": {
@@ -6515,11 +5572,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "上載"
       ]
     },
     "session_recovery:available:action": {
@@ -6748,14 +5800,6 @@
     "sheets_2025:Title": {
       "Import data": [
         "匯入資料"
-      ]
-    },
-    "Signing preference for emails": {
-      "Don't sign": [
-        "不要簽章"
-      ],
-      "Sign": [
-        "簽章"
       ]
     },
     "Sort menu options": {
@@ -7177,41 +6221,14 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } 個聯絡人似乎相同。"
-      ],
-      "Address copied to clipboard": [
-        "位址已複製到剪貼簿"
-      ],
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "已刪除聯絡人"
-      ],
-      "Contact group deleted": [
-        "聯絡人群組已刪除"
-      ],
-      "Contact saved": [
-        "聯絡人已儲存"
-      ],
-      "Contacts deleted": [
-        "聯絡人已刪除"
       ],
       "Email address copied to clipboard": [
         "電郵位址已複製到剪貼簿"
       ],
-      "Fingerprint copied to clipboard": [
-        "指紋已複製到剪貼簿"
-      ],
-      "Phone number copied to clipboard": [
-        "手機號碼已複製到剪貼簿"
-      ],
       "Preference saved": [
         "設定已儲存"
-      ],
-      "Preferences saved": [
-        "偏好設定已儲存"
       ],
       "Problem reported": [
         "以回報問題"
@@ -7242,64 +6259,6 @@
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
       ]
     },
-    "Table header": {
-      "Action": [
-        "動作"
-      ],
-      "Actions": [
-        "操作"
-      ],
-      "Address": [
-        "電郵位址"
-      ],
-      "Created": [
-        "創建日期"
-      ],
-      "Expires": [
-        "有效期限"
-      ],
-      "Fingerprint": [
-        "指紋"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "Status": [
-        "狀態"
-      ],
-      "Type": [
-        "類型"
-      ]
-    },
-    "TableHeader": {
-      "Actions": [
-        "操作"
-      ],
-      "Address": [
-        "電郵位址"
-      ],
-      "CSV field": [
-        "CSV 欄位"
-      ],
-      "Display name": [
-        "顯示名稱"
-      ],
-      "First name": [
-        "名"
-      ],
-      "Import": [
-        "匯入"
-      ],
-      "Last name": [
-        "姓"
-      ],
-      "Values": [
-        "值"
-      ],
-      "vCard field": [
-        "vCard 欄位"
-      ]
-    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } 天"
@@ -7318,9 +6277,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME }訂閱撰寫扳手"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount }電子郵件位址"
-      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 撰寫幫手"
       ],
@@ -7336,20 +6292,8 @@
       "Account temporarily locked": [
         "帳號暫時鎖定"
       ],
-      "Add contact group name": [
-        "加入聯絡人群組名稱"
-      ],
-      "Add to ${ groupCount } group": [
-        "加入至 ${ groupCount } 個群組"
-      ],
-      "Add to ${ groupName }": [
-        "加入至 ${ groupName }"
-      ],
       "Add user": [
         "加入使用者"
-      ],
-      "Addresses": [
-        "位址"
       ],
       "All settings": [
         "所有設定"
@@ -7357,23 +6301,14 @@
       "Are you sure?": [
         "您確定嗎？"
       ],
-      "Birthday": [
-        "生日"
-      ],
       "Cancel subscription?": [
         "取消訂購授權?"
-      ],
-      "Cannot add more addresses": [
-        "無法加入更多位址"
       ],
       "Change access to viewer?": [
         "變更存取權至檢視者?"
       ],
       "Change password": [
         "更改密碼"
-      ],
-      "Clearing data": [
-        "清除資料中"
       ],
       "Collaborate on documents": [
         "於文件上合作"
@@ -7390,26 +6325,11 @@
       "Connect your custom domain": [
         "連線您的自訂網域"
       ],
-      "Contact Details": [
-        "聯絡人詳細資料"
-      ],
-      "Contact group": [
-        "聯絡人群組"
-      ],
       "Contact us": [
         "聯絡我們"
       ],
-      "Contacts": [
-        "通訊錄"
-      ],
       "Create a new folder": [
         "創建新資料夾"
-      ],
-      "Create contact": [
-        "創建聯絡人"
-      ],
-      "Create new group": [
-        "創建新群組"
       ],
       "Currency": [
         "貨幣"
@@ -7426,20 +6346,8 @@
       "Decline invitation?": [
         "拒絕邀請?"
       ],
-      "Delete ${ count } contact": [
-        "刪除 ${ count } 位聯絡人"
-      ],
-      "Delete ${ count } contact group": [
-        "刪除 ${ count } 個聯絡人群組"
-      ],
-      "Delete ${ value }": [
-        "刪除 ${ value }"
-      ],
       "Delete permanently": [
         "永久刪除"
-      ],
-      "Deleting contacts": [
-        "正在刪除聯絡人"
       ],
       "Desktop": [
         "電腦版應用程式"
@@ -7452,9 +6360,6 @@
       ],
       "Discard changes?": [
         "捨棄變更？"
-      ],
-      "Docs": [
-        "Docs"
       ],
       "Document Size Limit Exceeded": [
         "超出文件大小限制"
@@ -7471,26 +6376,8 @@
       "Download the app": [
         "下載應用程式"
       ],
-      "Edit contact": [
-        "編輯聯絡人"
-      ],
-      "Edit contact group": [
-        "編輯聯絡人群組"
-      ],
-      "Edit email settings": [
-        "編輯電子郵件設定"
-      ],
-      "Edit image": [
-        "編輯圖像"
-      ],
       "Editing paused": [
         "編輯已暫停"
-      ],
-      "Email addresses": [
-        "電郵位址"
-      ],
-      "Email settings": [
-        "電郵設定"
       ],
       "Enable 2FA": [
         "啟用2FA"
@@ -7507,9 +6394,6 @@
       "Error Syncing": [
         "同步失敗"
       ],
-      "Exporting contacts": [
-        "正在匯出聯絡人"
-      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "透過 ${ planTitle } 取得 **${ referralInfo.uiData.refereeRewardAmount }** 額度。"
       ],
@@ -7518,9 +6402,6 @@
       ],
       "Get the apps": [
         "取得應用程式"
-      ],
-      "Groups": [
-        "群組"
       ],
       "Help and feedback": [
         "尋求協助與反映意見"
@@ -7543,12 +6424,6 @@
       "Human verification": [
         "真人身分驗證"
       ],
-      "Import contacts": [
-        "匯入聯絡人"
-      ],
-      "Import groups": [
-        "匯入群組"
-      ],
       "Information exposed in breach": [
         "於外洩的資料"
       ],
@@ -7558,20 +6433,11 @@
       "Limited availability": [
         "有限的可用性"
       ],
-      "Link confirmation": [
-        "外部連結確認"
-      ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "建立副本至您的 ${ DRIVE_APP_NAME }"
       ],
       "Make a secure connection your default": [
         "將安全連線設為您的預設設定"
-      ],
-      "Merge contacts": [
-        "合併通訊錄"
-      ],
-      "Merging contacts": [
-        "正在合併聯絡人"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "將您的組織轉移至 ${ BRAND_NAME }"
@@ -7597,17 +6463,8 @@
       "No breaches detected": [
         "無偵測到外洩"
       ],
-      "Notes": [
-        "備註"
-      ],
       "Offline": [
         "離線"
-      ],
-      "One email, many recipients": [
-        "一個電子郵件，多位收件者"
-      ],
-      "Open actions dropdown": [
-        "展開操作下拉選單"
       ],
       "Open pagination": [
         "開啟分頁"
@@ -7617,15 +6474,6 @@
       ],
       "Organization setup": [
         "組織機構設定"
-      ],
-      "Other information": [
-        "其它資訊"
-      ],
-      "Other names": [
-        "其它名稱"
-      ],
-      "Phone numbers": [
-        "手機號碼"
       ],
       "Photos": [
         "相片"
@@ -7642,20 +6490,11 @@
       "Public link settings": [
         "公開連結的設定"
       ],
-      "Re-sign all contacts": [
-        "重新簽署所有聯絡人"
-      ],
-      "Re-signing contacts": [
-        "正在重新簽署聯絡人"
-      ],
       "Read-only": [
         "唯讀"
       ],
       "Recommended actions": [
         "建議行動"
-      ],
-      "Recover data": [
-        "恢復資料"
       ],
       "Remove your access?": [
         "移除您的存取權限？"
@@ -7674,12 +6513,6 @@
       ],
       "Security center": [
         "安全中心"
-      ],
-      "Select action to take on contact group": [
-        "選擇針對聯絡人群組的動作"
-      ],
-      "Select contact group": [
-        "選擇聯絡人群組"
       ],
       "Select link expiration date": [
         "選擇連結到期日"
@@ -7774,12 +6607,6 @@
       "VPN explained": [
         "VPN 說明"
       ],
-      "Warning": [
-        "警告"
-      ],
-      "Warning: suspected fake website": [
-        "警告：疑似假冒網站"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"
       ],
@@ -7805,26 +6632,6 @@
         "你的外﻿﻿﻿洩資料"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "動作"
-      ],
-      "Created": [
-        "已創建"
-      ],
-      "Expires": [
-        "到期日"
-      ],
-      "Fingerprint": [
-        "指紋"
-      ],
-      "Status": [
-        "狀態"
-      ],
-      "Type": [
-        "類型"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今天"
@@ -7834,32 +6641,14 @@
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "添加此共享檔案至您的${ DRIVE_APP_NAME }以方便未來存取"
       ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
       "Change shared item settings": [
         "變更共享項目設定"
       ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "經數碼簽署的電郵有助驗證郵件真確性"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "電郵加密透過強制加入數碼簽章，以助驗證郵件真確性"
-      ],
-      "Encrypted data": [
-        "加密數據"
-      ],
-      "Encrypted data with verified digital signature": [
-        "數位簽署驗證的加密資料"
-      ],
       "Instant AI assistance, human expert on hand!": [
         "即時 AI 協助，真人專家隨時待命！"
-      ],
-      "Load image": [
-        "載入圖像"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "當包含於此電子郵件訊息和檔案名稱以零存取加密儲存"
@@ -7867,26 +6656,11 @@
       "Not all information listed here was exposed for all users.": [
         "此處列出的資訊並非所有使用者的資訊皆已遭外洩。"
       ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
-      ],
       "Shared with end-to-end encryption": [
         "以端對端加密共享"
       ],
-      "The image could not be loaded": [
-        "無法載入圖片"
-      ],
-      "The image could not be loaded using proxy": [
-        "無法透過代理伺服器載入圖片"
-      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "除非被破解，否則即使已加密的密碼遭到外洩，仍可保持安全。"
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
-      ],
-      "Version 6 OpenPGP key": [
-        "Version 6 OpenPGP 金鑰"
       ],
       "We have sent them an invite to access the item.": [
         "您已寄送他們存取項目的邀請。"
@@ -8063,47 +6837,11 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "您確定要永久刪除 ${ count } 位聯絡人嗎？"
-      ],
-      "Are you sure you want to permanently delete these contact groups?": [
-        "您確定要永久刪除這些連絡人群組嗎？"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "您確定要永久刪除此聯絡人群組嗎？"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "您確定要永久刪除此聯絡人嗎？"
-      ],
-      "Contacts could not be merged": [
-        "無法合併聯絡人"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可說明您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
       ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "部分需合併的聯絡人顯示錯誤。請逐一查看"
-      ],
-      "The contact data is corrupted and cannot be displayed.": [
-        "此聯絡人資料已毀損，無法顯示。"
-      ],
-      "The contact failed to load.": [
-        "聯絡人載入失敗。"
-      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您裝置上的日期與時間設置未同步。 ${ learnMore }"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "加密內容解密失敗。"
-      ],
-      "The verification of the contact details' signature failed.": [
-        "聯絡人的數碼簽章驗證失敗。"
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
       ],
       "This will replace all the data in the spreadsheet": [
         "這將取代試算表中的所有資料"

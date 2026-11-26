@@ -1096,6 +1096,9 @@
       "Open debug menu": [
         "Apri menu di debug"
       ],
+      "Open Mailing lists": [
+        "Apri le mailing list"
+      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -1598,7 +1601,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Chiave pubblica"
+        "Considera la chiave attendibile",
+        "Considera le chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -7360,6 +7364,13 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Attiva ${ MAIL_APP_NAME } per iniziare a ricevere email su ${ count } dei tuoi domini.",
+        "Attiva ${ MAIL_APP_NAME } per iniziare a ricevere email su ${ count } dei tuoi domini."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Attiva ${ MAIL_APP_NAME } per iniziare a ricevere email su ${ domainName }. ${ activateLink }"
+      ],
       "Activation in progress": [
         "Attivazione in corso"
       ],
@@ -9661,8 +9672,8 @@
         "Abbiamo impedito ai seguenti inserzionisti e organizzazioni di vedere quando apri questa email, quale dispositivo stai utilizzando e dove ti trovi."
       ],
       "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
-        "${ count } newsletter sono state trasferite e e raggruppate per mittente. Scopri con quale frequenza ciascuna di esse ti invia un'email; quindi mantieni l'iscrizione, sposta le email o disiscriviti con un clic.",
-        "${ count } newsletter sono state trasferite e e raggruppate per mittente. Scopri con quale frequenza ciascuna di esse ti invia un'email; quindi mantieni l'iscrizione, sposta le email o disiscriviti con un clic."
+        "${ count } newsletter sono state trasferite e raggruppate per mittente. Scopri con quale frequenza ciascuna di esse ti invia un'email; quindi mantieni l'iscrizione, sposta le email o disiscriviti con un clic.",
+        "${ count } newsletter sono state trasferite e raggruppate per mittente. Scopri con quale frequenza ciascuna di esse ti invia un'email; quindi mantieni l'iscrizione, sposta le email o disiscriviti con un clic."
       ],
       "We cannot enable message content search in this browser.": [
         "Non possiamo abilitare la ricerca del contenuto dei messaggi in questo browser."
@@ -9708,6 +9719,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Le newsletter importate da Gmail sono state aggiunte alle mailing list e raggruppate per mittente. Puoi leggerle, conservarle o bloccarle in un unico posto."
       ],
       "Web URL": [
         "URL web"
@@ -9955,6 +9969,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Non ti verrà addebitato nulla se annulli prima del ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Non riceverai email su ${ count } dei tuoi domini finché non attiverai ${ MAIL_APP_NAME }. Puoi farlo in qualsiasi momento in Impostazioni > Nomi di dominio.",
+        "Non riceverai email su ${ count } dei tuoi domini finché non attiverai ${ MAIL_APP_NAME }. Puoi farlo in qualsiasi momento in Impostazioni > Nomi di dominio."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Non riceverai email all'indirizzo ${ domainName } finché non attiverai ${ MAIL_APP_NAME }. Puoi farlo in qualsiasi momento in Impostazioni > Nomi di dominio."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Hai scritto “${ attachmentsFoundKeyword }”, ma nessun allegato è stato aggiunto. Vuoi comunque inviare il tuo messaggio?"
       ],
@@ -10025,6 +10046,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Il tuo account Gmail è collegato a questo indirizzo ${ MAIL_APP_NAME }"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Le tue newsletter di Gmail sono ora raggruppate per mittente e separate dalla tua posta personale. Puoi leggerle, conservarle o bloccarle in un unico posto."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Il tuo hardware non supporta l'esecuzione locale dell'assistente alla scrittura. Prova a eseguirlo sui server."
@@ -11596,6 +11620,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Attiva"
+      ],
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
@@ -12965,11 +12992,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteggi la tua agenda con la crittografia end-to-end. Include il supporto per i calendari personalizzati, la condivisione dei calendari e molto altro."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Crea, modifica e collabora su documenti crittografati end-to-end."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione dei file crittografata e molto altro."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteggi le tue email con la crittografia end-to-end. Include il supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati e molto altro."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Crea, modifica e collabora su fogli crittografati end-to-end."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accedi a contenuti bloccati e naviga privatamente. Include ${ serversAndCountries }, VPN ad altissima velocità, l'accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, download BitTorrent veloci e molto altro."
@@ -16673,6 +16706,9 @@
       "Cannot create more Booking pages": [
         "Impossibile creare altre pagine di prenotazione"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Carbon Copy": [
         "Copia conoscenza"
       ],
@@ -16959,6 +16995,9 @@
       ],
       "Help center": [
         "Centro assistenza"
+      ],
+      "Hide this reminder?": [
+        "Nascondere questo promemoria?"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Nascondi la tua email con ${ PASS_APP_NAME }"
@@ -17633,6 +17672,9 @@
       "Your free trial has ended": [
         "La tua prova gratuita è terminata"
       ],
+      "Your Gmail newsletters are here": [
+        "Le tue newsletter di Gmail si trovano qui"
+      ],
       "Your Gmail newsletters, now easier to manage": [
         "Le tue newsletter di Gmail, ora più facili da gestire"
       ],
@@ -17675,11 +17717,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Aggiungi un metodo di recupero dati per sbloccare i tuoi dati nel caso in cui dimenticassi la password."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Aggiungi un indirizzo email o un numero di telefono di recupero per poter reimpostare la password nel caso in cui la dimenticassi."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "\"Automatico\" indica che ogni messaggio inviato a questo utente userà il formato del compositore. \"Testo semplice\" indica che il messaggio verrà sempre convertito in testo semplice all'invio."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Crea una frase di recupero per poter recuperare i tuoi dati nel caso in cui dimenticassi la password."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"
@@ -17708,6 +17759,9 @@
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genera una frase di recupero per proteggere il tuo account dalla perdita di dati."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
       ],
@@ -17731,6 +17785,9 @@
       ],
       "Show side panel": [
         "Mostra pannello laterale"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Alcuni dei tuoi dati sono bloccati. Utilizza un metodo di recupero per sbloccarli."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
@@ -17767,6 +17824,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Chiave OpenPGP versione 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Il tuo file di ripristino non è aggiornato. Scaricane uno nuovo per poter recuperare i tuoi dati."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "La tua frase di recupero è scaduta. Richiedine una nuova per poter recuperare i tuoi dati."
       ]
     },
     "tooltip": {

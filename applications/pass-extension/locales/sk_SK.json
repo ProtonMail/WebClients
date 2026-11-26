@@ -2693,9 +2693,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
-      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -6129,6 +6126,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
+        "${ BRAND_NAME } neodporúča ukladať heslo k účtu ${ BRAND_NAME } iba v ${ PASS_APP_NAME }. Ak ho zabudnete, nebudete sa môcť prihlásiť do ${ PASS_APP_NAME }."
+      ],
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } heslo je povinné"
       ],

@@ -581,9 +581,6 @@
       "Hide more benefits": [
         "Dölj fler fördelar"
       ],
-      "Ignore": [
-        "Ignorera"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Bild kunde inte laddas med spårningsskydd."
       ],
@@ -4295,7 +4292,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "FN-egenskap saknas"
+        "Egenskapen FN saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -5109,6 +5106,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "${ BRAND_NAME } förlorade åtkomst till din Google Drive. Återanslut nu för att fortsätta importen."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
@@ -5153,6 +5153,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } och ${ SHEETS_APP_NAME }-filer kan inte laddas ner direkt och kommer inte att inkluderas i denna nedladdning. Du kan ladda ner de andra filerna genom att klicka på 'Fortsätt nedladdning'."
@@ -5398,6 +5401,9 @@
       "Already in your library": [
         "Redan i ditt bibliotek"
       ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Redan uppgraderad? ${ resumeSettingsLink }"
+      ],
       "Also try looking in Trash.": [
         "Prova också att titta i papperskorgen."
       ],
@@ -5415,6 +5421,9 @@
       ],
       "An issue occurred during the restore process.": [
         "Ett problem uppstod under återställningsprocessen."
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Ett oväntat fel uppstod vid import av dina data. Försök igen senare."
       ],
       "and": [
         "och"
@@ -5786,6 +5795,9 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
       ],
+      "Find your files": [
+        "Hitta dina filer"
+      ],
       "Folder will not be uploaded": [
         "Mappen kommer inte laddas upp"
       ],
@@ -5860,9 +5872,6 @@
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
-      ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Om du redan har uppgraderat, kan fortsätta din import i ${ easySwitchSettingsLink }. Du kan också avbryta den där."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
@@ -6420,6 +6429,9 @@
       "Running diagnostics...": [
         "Kör diagnostik …"
       ],
+      "Runs in the background": [
+        "Körs i bakgrunden"
+      ],
       "Saving...": [
         "Sparar …"
       ],
@@ -6619,6 +6631,9 @@
       "There is nothing to see here": [
         "Det finns inget att se här"
       ],
+      "They'll be in a new folder in My files.": [
+        "De kommer att vara i en ny mapp i Mina filer."
+      ],
       "Thinking about this": [
         "Tänker på detta"
       ],
@@ -6721,7 +6736,7 @@
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+        "För att hjälpa dig att hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
         "För att hjälpa till att skydda dig kan ${ DRIVE_APP_NAME } skanna dina filer på ett integritetsbevarande sätt och blockera skadliga filer. Men det är fortfarande bäst att bara ladda ner filer från betrodda källor. "
@@ -6736,7 +6751,7 @@
         "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln genererades."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
+        "För att använda Adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Today": [
         "Idag"
@@ -6908,9 +6923,6 @@
       "We'll email you when your import is complete.": [
         "Vi skickar e-post till dig när importen är klar."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Vi mejlar dig när importen är färdig. Dina filer kommer att finnas i en mapp i ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Vi återkommer snart till dig."
       ],
@@ -6922,6 +6934,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi kopierar dina filer från Google Drive till ${ DRIVE_APP_NAME }."
       ],
       "Week": [
         "Vecka"
@@ -6999,9 +7014,6 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du använder mer lagringsutrymme än vad som är inkluderat i ett ${ downgradedPlanName }-paket. Ta bort data för att nedgradera."
       ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Du kan också avbryta din import om ${ easySwitchSettingsLink }."
-      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan också slå samman importerade kalendrar med befintliga ${ BRAND_NAME }-kalendrar."
       ],
@@ -7013,6 +7025,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Du kan stänga fliken eller webbläsaren under tiden."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Du kan stänga den här och fortsätta använda ${ DRIVE_APP_NAME }"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
@@ -7160,11 +7175,11 @@
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Din Google Drive kan vara tom eller innehålla bara filer som inte stöds."
       ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Din import är blockerad. Uppgradera nu för att föra över resten av dina filer."
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Din import har påbörjats men den kommer att pausas när ditt lagringsutrymme är fullt. Uppgradera nu för att överföra alla dina filer."
       ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Din import är pausad eftersom vi förlorade åtkomst till ditt Google-konto. Anslut igen för att överföra resten av dina filer."
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Din import är pausad. Uppgradera nu för att föra över resten av dina filer."
       ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
@@ -7307,7 +7322,7 @@
         "${ albumProgress.added } av ${ albumProgress.total }"
       ],
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Kontolösenord"
+        "${ BRAND_NAME } kontolösenord"
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -8120,6 +8135,9 @@
       "Albums": [
         "Album"
       ],
+      "Cancel your import in settings": [
+        "Avbryt din import i inställningar"
+      ],
       "clearing your browser cache": [
         "rensar din webbläsares cache"
       ],
@@ -8200,6 +8218,9 @@
       ],
       "Resume now": [
         "Återuppta nu"
+      ],
+      "Resume or cancel your import in settings": [
+        "Återuppta eller avbryt din import i Inställningar"
       ],
       "settings": [
         "inställningar"
@@ -9394,11 +9415,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } Skapa, redigera och samarbeta i kalkylblad med end-to-end kryptering"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få åtkomst till blockerat innehåll och surfa privat. Inkluderar ${ serversAndCountries }, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
@@ -9703,6 +9730,10 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } objekt misslyckades att flyttas till papperskorg",
         "${ errors.length } objekt misslyckades att flyttas till papperskorg"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } objekt kunde inte återställas",
+        "${ failedCount } objekt kunde inte återställas"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopierat objekt flyttades till papperskorg",
@@ -11523,7 +11554,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
@@ -12059,9 +12090,6 @@
       "Albums you've shared will appear here": [
         "Album du delat kommer visas här"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importera dina filer och mappar från Google Drive och håll dem privata i ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Delat av ${ sharedBy }"
       ],
@@ -12453,6 +12481,9 @@
       "Cannot add more addresses": [
         "Kan inte lägga till fler adresser"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Kortverifiering"
       ],
@@ -12650,9 +12681,6 @@
       ],
       "Drop to upload": [
         "Släpp för att ladda upp"
-      ],
-      "Easy switch": [
-        "Enkel växling"
       ],
       "Easy Switch from Google Drive": [
         "Enkelt byte från Google Drive"
@@ -12923,6 +12951,9 @@
       "Notes": [
         "Anteckningar"
       ],
+      "Nothing to import": [
+        "Inget att importera"
+      ],
       "Number of downloads": [
         "Antal nedladdningar"
       ],
@@ -13009,9 +13040,6 @@
       ],
       "Recommended actions": [
         "Rekommenderade åtgärder"
-      ],
-      "Reconnect to finish your import": [
-        "Anslut igen för att slutföra din import"
       ],
       "Reconnect your account": [
         "Återanslut ditt konto"
@@ -13275,9 +13303,6 @@
       "Warning: suspected fake website": [
         "Varning: misstänkt falsk webbplats"
       ],
-      "We could not find anything to import": [
-        "Vi kunde inte hitta något att importera"
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Vi kunde inte verifiera att ${ author } skapade denna fil."
       ],
@@ -13368,6 +13393,9 @@
       "Your import is in progress": [
         "Din import pågår"
       ],
+      "Your import was interrupted": [
+        "Din import avbröts"
+      ],
       "Your plan": [
         "Ditt paket"
       ],
@@ -13410,6 +13438,9 @@
       ]
     },
     "Tooltip": {
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Lägg till en e-post för återställning eller telefon så att du kan återställa ditt lösenord om du glömmer det."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Lägg till denna delade fil på din ${ DRIVE_APP_NAME } för enkel åtkomst senare."
       ],

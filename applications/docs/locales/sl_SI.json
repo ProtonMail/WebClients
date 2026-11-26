@@ -40,53 +40,14 @@
       "Activate recovery": [
         "Aktivirajte obnovitev."
       ],
-      "Add": [
-        "Dodaj"
-      ],
       "Add account": [
         "Dodaj račun"
-      ],
-      "Add address": [
-        "Dodaj naslov"
       ],
       "Add another account": [
         "Dodaj drug račun"
       ],
-      "Add birthday": [
-        "Dodaj rojstni dan"
-      ],
-      "Add contact": [
-        "Dodaj stik"
-      ],
-      "Add email": [
-        "Dodaj e-poštni naslov"
-      ],
-      "Add group": [
-        "Dodaj skupino"
-      ],
-      "Add new group": [
-        "Dodaj novo skupino"
-      ],
-      "Add note": [
-        "Dodaj opombo"
-      ],
       "Add people or groups to share": [
         "Dodajanje oseb ali skupin v skupno rabo"
-      ],
-      "Add phone number": [
-        "Dodaj telefonsko številko"
-      ],
-      "Add to group": [
-        "Dodaj v skupino"
-      ],
-      "Apply": [
-        "Potrdi"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Največ ${ maxContacts } stik je dovoljen na skupino stikov.",
-        "Največ ${ maxContacts } stika sta dovoljena na skupino stikov.",
-        "Največ ${ maxContacts } stiki so dovoljeni na skupino stikov.",
-        "Največ ${ maxContacts } stikov je dovoljenih na skupino stikov."
       ],
       "Attach screenshot(s)": [
         "Priloži posnetke zaslona"
@@ -121,18 +82,6 @@
       "Chat with us": [
         "Klepetajte z nami"
       ],
-      "Choose a file or drag it here": [
-        "Izberite datoteko ali jo povlecite sem"
-      ],
-      "Clear data": [
-        "Počisti podatke"
-      ],
-      "Clear query": [
-        "Počisti poizvedbo"
-      ],
-      "Click here.": [
-        "Klikni tukaj."
-      ],
       "Close": [
         "Zapri"
       ],
@@ -151,23 +100,11 @@
       "Collapse list of pending invitations": [
         "Strni seznam čakajočih povabil"
       ],
-      "Compose": [
-        "Napiši sporočilo"
-      ],
-      "Confirm": [
-        "Potrdi"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        "Potrdite odpiranje povezave ${ linkToShow }"
-      ],
       "Connect apps and devices": [
         "Povežite aplikacije in naprave"
       ],
       "Connect to video conferencing": [
         "Poveži se z videokonferenco"
-      ],
-      "Contact group": [
-        "Skupina stikov"
       ],
       "Continue": [
         "Nadaljuj"
@@ -181,9 +118,6 @@
       "Copy as markdown": [
         "Kopiraj kot Markdown"
       ],
-      "Copy email to clipboard": [
-        "Kopiraj e-poštni naslov v odložišče"
-      ],
       "Copy invite link": [
         "Kopiraj povezavo do povabila"
       ],
@@ -193,17 +127,11 @@
       "Copy password": [
         "Kopiraj geslo"
       ],
-      "Copy version number to clipboard": [
-        "Kopiraj številko različice v odložišče"
-      ],
       "Create": [
         "Ustvari"
       ],
       "Create a copy": [
         "Ustvari kopijo"
-      ],
-      "Create a new contact group": [
-        "Ustvari novo skupino stikov"
       ],
       "Create new ${ SHEETS_APP_NAME }": [
         "Ustvari nov ${ SHEETS_APP_NAME }"
@@ -220,41 +148,14 @@
       "Decline invite": [
         "Zavrnite povabilo"
       ],
-      "Delete": [
-        "Izbriši"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Izbriši ${ selectedCount } stik",
-        "Izbriši ${ selectedCount } stika",
-        "Izbriši ${ selectedCount } stike",
-        "Izbriši ${ selectedCount } stikov"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Izbriši ${ selectedCount } skupino stikov",
-        "Izbriši ${ selectedCount } skupini stikov",
-        "Izbriši ${ selectedCount } skupine stikov",
-        "Izbriši ${ selectedCount } skupin stikov"
-      ],
-      "Delete contact": [
-        "Izbriši stik"
-      ],
-      "Delete contact group": [
-        "Izbriši skupino stikov"
-      ],
       "Delete older revisions": [
         "Izbriši starejše revizije"
       ],
       "Delete permanently": [
         "Trajno izbriši"
       ],
-      "Deselect all": [
-        "Odznači vse"
-      ],
       "Dismiss": [
         "Opusti"
-      ],
-      "Done": [
-        "Opravljeno"
       ],
       "Download": [
         "Prenesi"
@@ -271,9 +172,6 @@
       "Download logs": [
         "Prenesite dnevnike"
       ],
-      "Edit": [
-        "Uredi"
-      ],
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
@@ -283,26 +181,14 @@
       "Edit sign-in details": [
         "Uredi podrobnosti prijave"
       ],
-      "Email settings": [
-        "Nastavitve e-pošte"
-      ],
       "enable desktop notifications": [
         "prikazovanje obvestil na namizju"
       ],
       "Encrypted": [
         "Šifrirano"
       ],
-      "Export": [
-        "Izvozi"
-      ],
-      "Export contact group": [
-        "Izvozi skupino stikov"
-      ],
       "Export editor state for version": [
         "Izvozi stanje urednika za verzijo"
-      ],
-      "Export selection as .vcf": [
-        "Izvozi izbor kot .vcf"
       ],
       "Export this version (as docx)": [
         "Izvozi to različico (kot docx)"
@@ -315,9 +201,6 @@
       ],
       "Forgot password?": [
         "Pozabljeno geslo?"
-      ],
-      "Forward as attachment": [
-        "Posreduj kot priponko"
       ],
       "Generate password": [
         "Ustvari geslo"
@@ -343,9 +226,6 @@
       "Go to ${ planOrAppName }": [
         "Pojdi na ${ planOrAppName }"
       ],
-      "Go to label": [
-        "Pojdi na oznako"
-      ],
       "Got it": [
         "Razumem"
       ],
@@ -358,23 +238,11 @@
       "Help and resources": [
         "Pomoč in viri"
       ],
-      "Hide advanced PGP settings": [
-        "Skrij napredne nastavitve PGP"
-      ],
       "Hide more benefits": [
         "Skrij več prednosti"
       ],
-      "Image could not be loaded with tracker protection.": [
-        "Slika ni bila naložena zaradi zaščite pred sledilniki."
-      ],
-      "Image will be loaded without a proxy": [
-        "Slika bo naložena brez uporabe posredniškega strežnika."
-      ],
       "Import": [
         "Uvoz"
-      ],
-      "import": [
-        "uvoz"
       ],
       "Import data": [
         "Uvozi podatke"
@@ -391,12 +259,6 @@
       "Learn more": [
         "Več o tem"
       ],
-      "Load": [
-        "Naloži"
-      ],
-      "Load image": [
-        "Naloži sliko"
-      ],
       "Make a copy": [
         "Naredi kopijo"
       ],
@@ -412,23 +274,11 @@
       "Mark as resolved": [
         "Označi kot rešeno"
       ],
-      "Mark for deletion": [
-        "Označi za izbris"
-      ],
       "Markdown (.md)": [
         "Markdown (.md)"
       ],
       "Maybe later": [
         "Mogoče kasneje"
-      ],
-      "Merge": [
-        "Združi"
-      ],
-      "Merge contacts": [
-        "Združi stike"
-      ],
-      "More actions": [
-        "Več dejanj"
       ],
       "More benefits": [
         "Več koristi"
@@ -460,12 +310,6 @@
       "New folder": [
         "Nova mapa"
       ],
-      "New message": [
-        "Novo sporočilo"
-      ],
-      "Next": [
-        "Naprej"
-      ],
       "Next month": [
         "Naslednji mesec"
       ],
@@ -496,20 +340,11 @@
       "Plain Text (.txt)": [
         "Navadno besedilo (.txt)"
       ],
-      "Preview contact": [
-        "Predogled stika"
-      ],
       "Previous month": [
         "Prejšnji mesec"
       ],
       "Print": [
         "Natisni"
-      ],
-      "Re-sign": [
-        "Ponovno podpiši"
-      ],
-      "Recover data": [
-        "Obnovi podatke"
       ],
       "Refer a friend": [
         "Priporočite prijatelju"
@@ -610,9 +445,6 @@
       "Select ${ planOrAppName }": [
         "Izberite ${ planOrAppName }"
       ],
-      "Select all": [
-        "Označi vse"
-      ],
       "Set password or expiration date": [
         "Nastavi geslo ali datum poteka veljavnosti"
       ],
@@ -645,9 +477,6 @@
       ],
       "Sharing is end-to-end encrypted": [
         "Deljenje je šifrirano od konca do konca"
-      ],
-      "Show advanced PGP settings": [
-        "Prikaži napredne nastavitve PGP"
       ],
       "Show more": [
         "Prikaži več"
@@ -691,9 +520,6 @@
       "Trashing...": [
         "Odstranjujem ..."
       ],
-      "Trust": [
-        "Zaupaj"
-      ],
       "Try again": [
         "Poskusi znova"
       ],
@@ -712,12 +538,6 @@
       "Unlock data": [
         "Odkleni podatke"
       ],
-      "Unmark for deletion": [
-        "Ne označi za izbris"
-      ],
-      "Untrust": [
-        "Umakni zaupanje"
-      ],
       "Update recovery file": [
         "Posodobi datoteko za obnovitev"
       ],
@@ -733,9 +553,6 @@
       "Upload and share files": [
         "Naloži in deli datoteke"
       ],
-      "Upload picture": [
-        "Naloži sliko"
-      ],
       "Use ${ label } theme": [
         "Uporabi temo ${ label }"
       ],
@@ -748,9 +565,6 @@
       "Use authentication code": [
         "Uporabi kodo za preverjanje pristnosti"
       ],
-      "Use for sending": [
-        "Uporabi za pošiljanje"
-      ],
       "Use recovery code": [
         "Uporabite kode za obnovitev"
       ],
@@ -762,9 +576,6 @@
       ],
       "Verify now": [
         "Preveri zdaj"
-      ],
-      "View": [
-        "Pogled"
       ],
       "View ${ pendingCount } invitation": [
         "Poglej ${ pendingCount } povabilo",
@@ -792,29 +603,6 @@
       ],
       "words out of": [
         "besed od"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
-        "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikoma ni mogoče.",
-        "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče.",
-        "Pošiljanje datotek vCard z več kot ${ maxAttachments } stiki ni mogoče."
-      ]
-    },
-    "Actions message": {
-      "${ addContact } or ${ importContact }.": [
-        "${ addContact } ali ${ importContact }."
-      ],
-      "No results found.": [
-        "Ni najdenih rezultatov."
-      ],
-      "Please try another search term.": [
-        "Poskusite z drugo poizvedbo."
-      ],
-      "You don't have any contacts.": [
-        "Nimate stikov."
-      ],
-      "You don't have any groups.": [
-        "Nimate nobene skupine."
       ]
     },
     "Addon": {
@@ -895,11 +683,6 @@
       ],
       "Writing assistant seats": [
         "Licence za pomočnika pri pisanju"
-      ]
-    },
-    "Alert": {
-      "By leaving now, some contacts may not be imported": [
-        "Če prekinete zdaj, nekateri stiki morda ne bodo uvoženi"
       ]
     },
     "Apps dropdown": {
@@ -1344,76 +1127,6 @@
       ],
       "strawberry": [
         "jagoda"
-      ]
-    },
-    "Contact field label": {
-      "Address": [
-        "Naslov"
-      ],
-      "Anniversary": [
-        "Obletnica"
-      ],
-      "Birthday": [
-        "Rojstni dan"
-      ],
-      "Display name": [
-        "Ime za prikaz"
-      ],
-      "Email": [
-        "E-pošta"
-      ],
-      "Enter a display name or nickname": [
-        "Vpišite prikazno ime ali vzdevek"
-      ],
-      "First name": [
-        "Ime"
-      ],
-      "Gender": [
-        "Spol"
-      ],
-      "Language": [
-        "Jezik"
-      ],
-      "Last name": [
-        "Priimek"
-      ],
-      "Logo": [
-        "Logotip"
-      ],
-      "Member": [
-        "Član"
-      ],
-      "Name": [
-        "Ime"
-      ],
-      "Note": [
-        "Opomba"
-      ],
-      "Organization": [
-        "Organizacija"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Photo": [
-        "Fotografija"
-      ],
-      "Role": [
-        "Vloga"
-      ],
-      "Time zone": [
-        "Časovni pas"
-      ],
-      "Title": [
-        "Naslov"
-      ],
-      "URL": [
-        "URL"
-      ]
-    },
-    "Contact image": {
-      "Contact image": [
-        "Slika kontakta"
       ]
     },
     "Country name": {
@@ -2255,21 +1968,6 @@
         "Za ${ VPN_APP_NAME }"
       ]
     },
-    "Default display name vcard": {
-      "Unknown": [
-        "Neznan"
-      ]
-    },
-    "Default encryption scheme": {
-      "Use global default (${ defaultValueText })": [
-        "Uporabi splošno privzeto (${ defaultValueText })"
-      ]
-    },
-    "Default signing preference": {
-      "Use global default (${ globalDefaultText })": [
-        "Uporabi splošno privzeto (${ globalDefaultText })"
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Zapadel račun"
@@ -2300,20 +1998,11 @@
       "Create groups you can email with a single address.": [
         "Ustvarite skupine, ki jim lahko pošiljate e-pošto z enim samim naslovom."
       ],
-      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dešifriranje stikov … To lahko traja nekaj minut. Po končanem postopku boste lahko prenesli datoteko z vsemi izvoženimi stiki."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Brisanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
-      ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Preprosto dostopajte do svoje e-pošte in koledarja v računalniku in mobilni napravi."
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Preprosto sinhronizirajte datoteke v oblak iz namizja in do njih dostopajte iz mobilne naprave."
-      ],
-      "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Šifriranje in uvažanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
       "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
         "Zagotovite si varen dostop do podatkov organizacije, tudi če je vaša ekipa oddaljena ali uporablja javni WiFi."
@@ -2330,14 +2019,8 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomagajte svoji ekipi varno shranjevati gesla za občutljive poslovne informacije in informacije o strankah."
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Zdi se, da seznam stikov, ki ga uvažate, vsebuje nekaj skupin. Preverite, kako naj se te skupine uvozijo."
-      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Omogoča vam takojšnje dodajanje povezav do srečanj v vaša povabila na dogodke."
-      ],
-      "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Združevanje stikov … To lahko traja nekaj minut. Ko se postopek konča, lahko zaprete to okno."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Nastavite način obnovitve podatkov, da preprečite izgubo podatkov."
@@ -2348,20 +2031,11 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Za zagotovitev najvišje možne varnosti vašega računa nastavite obnovitveno frazo."
       ],
-      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Za uvoz preko CSV in VCF datoteke zagotovite, da datoteka ne presega ${ MAX_IMPORT_FILE_SIZE_STRING } ali ${ maxContactString } stikov. Če je vaša datoteka večja, jo razdelite na manjše. ${ learnMoreLink }."
-      ],
-      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "Za uvoz stikov iz Googla ali Outlooka ${ easySwitchLink }."
-      ],
       "To start, give your organization a name.": [
         "Za začetek imenujte svojo organizacijo."
       ],
       "Upgrade to ${ planName } to keep sharing files with edit access": [
         "Nadgradite na ${ planName } $, da boste lahko še naprej delili datoteke z dostopom za urejanje"
-      ],
-      "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Z vlečenjem in spuščanjem določite prioriteto združevanja med stiki. Poleg stikov, ki jih ne želite združiti, pobrišite potrditvena polja."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Uporabite ta priročnik, da bo vaša organizacija čim prej začela izkoriščati prednosti vodilnega ekosistema za šifriranje in varstvo zasebnosti podjetja ${ BRAND_NAME }."
@@ -2369,30 +2043,11 @@
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Žal nam je, da odhajate. Če imate trenutek časa, bi bili zelo hvaležni, če bi nam povedali, zakaj želite prekiniti naročnino. Vaša povratna informacija nam pomaga izboljševati ${ BRAND_NAME } za vse."
       ],
-      "With contact groups, you can send emails to everyone in the group with one click.": [
-        "S skupinami stikov lahko pošljete e-pošto vsem v skupini z enim klikom."
-      ],
-      "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Stike, ki jih ne želite niti združiti niti ohraniti, lahko označite za izbris. Brisanje se izvede šele po kliku gumba za združevanje"
-      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Vaš račun in načini obnovitve podatkov so nastavljeni in 2FA je omogočen."
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "uporabite pomočnika za uvoz Easy Switch"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Prav tako smo samodejno uskladili polja CSV s polji vCard. Ujemanja lahko preverite in uredite ročno."
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "V datoteki CSV, ki ste jo naložili, smo zaznali naslednja polja. Označite tista, ki jih želite uvoziti."
       ]
     },
     "Downgrade account reason": {
@@ -2524,9 +2179,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lahko tudi preverite stanje na ${ statusPageLink }"
       ],
-      "A group with this name already exists": [
-        "Skupina z enakim imenom že obstaja"
-      ],
       "A message is required when reporting copyright infringement or stolen data": [
         "Pri prijavi kršitve avtorskih pravic ali kraje podatkov je obvezno sporočilo"
       ],
@@ -2554,9 +2206,6 @@
       "Cannot download a folder": [
         "Mape ni mogoče prenesti"
       ],
-      "Cannot export this contact": [
-        "Tega stika ni mogoče izvoziti"
-      ],
       "Cannot find move target": [
         "Ciljna lokacija za premikanje ni najdena"
       ],
@@ -2568,15 +2217,6 @@
       ],
       "Cannot verify who uploaded this file": [
         "Ni mogoče preveriti, kdo je naložil to datoteko"
-      ],
-      "Contact could not be saved": [
-        "Stika ni bilo mogoče shraniti"
-      ],
-      "Contact name is too long": [
-        "Ime stika je predolgo"
-      ],
-      "Contact signature not verified": [
-        "Podpis stika ni potrjen"
       ],
       "Copying item to a non-folder is not allowed": [
         "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
@@ -2656,9 +2296,6 @@
       "Failed to load recent documents": [
         "Nalaganje nedavnih dokumentov ni uspelo."
       ],
-      "Failed to open to contact": [
-        "Ni mogoče odpreti stika."
-      ],
       "Failed to remove older revisions": [
         "Ni uspelo odstraniti starejših različic"
       ],
@@ -2680,14 +2317,8 @@
       "File download failed due to empty response": [
         "Prenos datoteke ni uspel zaradi praznega odziva"
       ],
-      "First name is too long": [
-        "Ime je predolgo"
-      ],
       "Image preview not found": [
         "Predogleda slike ni bilo mogoče najti"
-      ],
-      "Image upload failed": [
-        "Nalaganje slike ni uspelo"
       ],
       "Incorrect backup password. Please try again.": [
         "Nepravilno varnostno geslo. Poskusite znova."
@@ -2701,15 +2332,6 @@
       "Invalid coupon": [
         "Neveljaven kupon"
       ],
-      "Invalid email address": [
-        "Neveljaven e-poštni naslov"
-      ],
-      "Invalid name": [
-        "Neveljavno ime"
-      ],
-      "Invalid public key file": [
-        "Neveljavna datoteka z javnim ključem"
-      ],
       "Invalid URL": [
         "Neveljaven URL"
       ],
@@ -2721,9 +2343,6 @@
       ],
       "Item not found": [
         "Predmeta ni bilo mogoče najti"
-      ],
-      "Last name is too long": [
-        "Priimek je predolg."
       ],
       "Missing signature": [
         "Manjka podpis"
@@ -2742,18 +2361,6 @@
       ],
       "Not a valid number": [
         "Ni veljavna številka"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Stik ${ noEmailsContactNamesList } nima e-poštnega naslova",
-        "Naslednja stika nimata e-poštnega naslova: ${ noEmailsContactNamesList } ",
-        "Nekateri stiki nimajo e-poštnega naslova: ${ noEmailsContactNamesList } ",
-        "Nekateri stiki nimajo e-poštnega naslova: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "V eni izmed skupin ni stikov: ${ noContactGroupList }",
-        "V nekaterih skupinah ni stikov: ${ noContactGroupList } ",
-        "V nekaterih skupinah ni stikov: ${ noContactGroupList } ",
-        "V nekaterih skupinah ni stikov: ${ noContactGroupList } "
       ],
       "Only admins can convert external invitations": [
         "Zunanja povabila lahko pretvorijo samo skrbniki"
@@ -2776,9 +2383,6 @@
       "Please enter a valid postal code": [
         "Prosimo vnesite veljavno poštno številko"
       ],
-      "Please provide either a first name, a last name or a display name": [
-        "Prosimo, vpišite ime, priimek ali prikazno ime."
-      ],
       "Please select a country": [
         "Izberite državo."
       ],
@@ -2797,9 +2401,6 @@
       "Reverse charge scheme is not supported for this plan": [
         "Shema obrnjene davčne obveznosti ni podprta za ta paket"
       ],
-      "Signature not verified": [
-        "Podpis ni potrjen"
-      ],
       "Signature verification failed": [
         "Preverjanje podpisa ni uspelo"
       ],
@@ -2809,9 +2410,6 @@
       "Signature verification for ${ signatureType } failed": [
         "Preverjanje podpisa za ${ signatureType } ni uspelo"
       ],
-      "Some contacts could not be deleted": [
-        "Nekaterih stikov ni bilo mogoče izbrisati"
-      ],
       "Some documents could not be loaded": [
         "Nekaterih dokumentov ni mogoče naložiti"
       ],
@@ -2820,9 +2418,6 @@
       ],
       "Some file parts failed to upload. Please try again.": [
         "Deli nekaterih datotek se niso uspeli naložiti. Poskusite znova."
-      ],
-      "Some groups could not be deleted": [
-        "Nekaterih skupin ni bilo mogoče izbrisati"
       ],
       "Some items could not be loaded": [
         "Nekaterih predmetov ni bilo mogoče naložiti"
@@ -2860,9 +2455,6 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Prišlo je do napake pri obdelavi posodobitev dokumenta. Ponovno naložite stran in poskusite znova."
       ],
-      "There was an error when exporting the contacts vCards": [
-        "Pri izvozu stikov vCard je prišlo do napake"
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "To polje presega število dovoljenih znakov - ${ maximumLength }."
       ],
@@ -2877,9 +2469,6 @@
       ],
       "This file version could not be uploaded": [
         "Te različice datoteke ni bilo mogoče naložiti"
-      ],
-      "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
       ],
       "Too many server errors, please try again later": [
         "Preveč napak strežnika, poskusite znova pozneje"
@@ -2944,62 +2533,14 @@
       "You can update a public link for your own files only": [
         "Javno povezavo lahko posodobite samo za lastne datoteke"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Sporočilo lahko pošljete največ ${ maxContacts } prejemniku.",
-        "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikoma.",
-        "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikom.",
-        "Sporočilo lahko pošljete največ ${ maxContacts } prejemnikom."
-      ],
       "You do not have access to this shared item": [
         "Nimate dostopa do tega predmeta v skupni rabi"
-      ],
-      "You must set a name": [
-        "Vnesti morate ime"
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Naprava, katere ni možno dešifrirati"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Ime, ki ga ni mogoče dešifrirati"
-      ]
-    },
-    "Error importing calendar": {
-      "An unexpected error occurred. Import must be restarted.": [
-        "Prišlo je do nepričakovane napake. Uvoz je treba znova zagnati."
-      ]
-    },
-    "Error importing contact": {
-      "Encryption failed": [
-        "Šifriranje ni uspelo"
-      ],
-      "Missing FN property": [
-        "Manjka lastnost FN"
-      ],
-      "vCard versions < 3.0 not supported": [
-        "vCard 3.0 in starejše različice niso podprte"
-      ]
-    },
-    "Error importing contacts": {
-      "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Pri branju datoteke ${ formattedFilename } je prišlo do napake. Neveljavna oblika datoteke."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Pri nalaganju datoteke ${ formattedFilename } je prišlo do napake. Največja možna velikost je ${ MAX_IMPORT_FILE_SIZE_STRING }."
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Pri nalaganju datoteke ${ formattedFilename } je prišlo do napake. Ni izbrane datoteke .csv ali .vcf"
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        "Pri nalaganju datoteke je prišlo do napake. Izbrana ni bila nobena datoteka."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ maxContactString } contacts.": [
-        "Vaša datoteka ${ formattedFilename } vsebuje več kot ${ maxContactString } stikov."
-      ],
-      "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "V datoteki ${ formattedFilename } ni stikov, ki bi jih lahko uvozili."
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        "Datoteka ${ formattedFilename } je prazna."
       ]
     },
     "Error message": {
@@ -3026,11 +2567,6 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
-      ]
-    },
-    "Error notification": {
-      "Display name cannot be empty": [
-        "Ime za prikaz ne sme biti prazno"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3208,85 +2744,12 @@
         "SMS"
       ]
     },
-    "Import calendar": {
-      "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "Šifriranje in dodajanje stikov: ${ totalImported }/${ totalToImport }"
-      ]
-    },
-    "Import calendar warning": {
-      "vCard versions < 3.0": [
-        "vCard, različica < 3.0"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "Šifriranje in dodajanje stikov na seznam: ${ totalImported }/${ totalToImport }",
-        "Šifriranje in dodajanje stikov na seznam: ${ totalImported }/${ totalToImport }",
-        "Šifriranje in dodajanje stikov na seznam: ${ totalImported }/${ totalToImport }",
-        "Šifriranje in dodajanje stikov na seznam: ${ totalImported }/${ totalToImport }"
-      ],
-      "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Pri šifriranju in dodajanju stika je prišlo do napake. Stika ni bilo mogoče uvoziti."
-      ],
-      "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Pri šifriranju in dodajanju stikov je prišlo do napake. Uspešno je bilo uvoženih ${ totalImported } od ${ totalToImport } stikov."
-      ],
-      "An error occurred while encrypting and adding your contacts. No contact could be imported.": [
-        "Pri šifriranju in dodajanju stikov je prišlo do napake. Uvoziti ni bilo mogoče nobenega stika."
-      ],
-      "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Stik je uspešno uvožen. Zdaj se bo pojavil na seznamu stikov."
-      ],
-      "Contacts successfully imported. The imported contacts will now appear in your contact list.": [
-        "Stiki so uspešno uvoženi. Zdaj se bodo pojavili na seznamu stikov."
-      ]
-    },
-    "Import contact error": {
-      "Contact ${ contactId }: ": [
-        "Stik ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } stik",
-        "${ totalContacts } stika",
-        "${ totalContacts } stiki",
-        "${ totalContacts } stikov"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "neznano"
-      ]
-    },
-    "Import contacts warning": {
-      "${ CONTACTS_APP_NAME } does not support ${ forNow }:": [
-        "${ CONTACTS_APP_NAME } ${ forNow } ne podpira:"
-      ],
-      "for now": [
-        "za zdaj"
-      ]
-    },
-    "Import warning": {
-      "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } od ${ totalContacts } stikov ne bo uvoženih. Kliknite za podrobnosti"
-      ],
-      "No contact can be imported. Click for details": [
-        "Uvoziti ni mogoče nobenega stika. Kliknite za podrobnosti"
-      ]
-    },
     "Info": {
       "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
         "\"${ documentTitle }\" je bil premaknjen v smetnjak. Tam bo ostal, dokler ga ne obnovite ali dokončno izbrišete."
       ],
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "\"${ documentTitle }\" je v smetnjaku in bo tam ostal, dokler ga dokončno ne izbrišete."
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-poštni naslov",
-        "${ addressCount } e-poštna naslova",
-        "${ addressCount } e-poštni naslovi",
-        "${ addressCount } e-poštnih naslovov"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
@@ -3297,44 +2760,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } stik vsebuje več e-poštnih naslovov.",
-        "${ contactCount } stika vsebujeta več e-poštnih naslovov.",
-        "${ contactCount } stiki vsebujejo več e-poštnih naslovov.",
-        "${ contactCount } stikov vsebuje več e-poštnih naslovov."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } član",
-        "${ contactEmailsLength } člana",
-        "${ contactEmailsLength } člani",
-        "${ contactEmailsLength } članov"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        "${ contactName } vsebuje več e-poštnih naslovov."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } najden stik",
-        "${ contactsCount } najdena stika",
-        "${ contactsCount } najdeni stiki",
-        "${ contactsCount } najdenih stikov"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } stik",
-        "${ contactsLength } stika",
-        "${ contactsLength } stiki",
-        "${ contactsLength } stikov"
-      ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } vam omogoča sodelovanje v realnem času s celovitim šifriranjem za popolno zasebnost. Ustvarite kopijo in začnite urejati ali se obrnite na lastnika za dostop za urejanje."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } v"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } najdena skupina",
-        "${ groupCounts } najdeni skupini",
-        "${ groupCounts } najdene skupine",
-        "${ groupCounts } najdenih skupin"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
@@ -3347,18 +2777,6 @@
         "${ planName } poteče v ${ daysLeft } dneh.",
         "${ planName } poteče v ${ daysLeft } dneh.",
         "${ planName } poteče v ${ daysLeft } dneh."
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } izbran stik",
-        "${ selectedContactsLength }/${ contactsLength } izbrana stika",
-        "${ selectedContactsLength }/${ contactsLength } izbrani stiki",
-        "${ selectedContactsLength }/${ contactsLength } izbranih stikov"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } stik je uspešno posodobljen.",
-        "${ updated } stika sta uspešno posodobljena.",
-        "${ updated } stiki so uspešno posodobljeni.",
-        "${ updated } stikov je uspešno posodobljenih."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } prikriva vaš naslov IP, zato vas spletne strani ne morejo prepoznati."
@@ -3408,9 +2826,6 @@
       "Ad targeting": [
         "Ciljno oglaševanje"
       ],
-      "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Za ta naslov je omogočena potrditev naslova z zaupnimi ključi. Če želite pošiljati na ta naslov, najprej označite javne ključe, ki jih lahko uporabite za pošiljanje, kot vredne zaupanja."
-      ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Oglaševalci sledijo vašemu brskanju, da vam kažejo ciljno usmerjene oglase. ${ VPN_APP_NAME } blokira sledilnike in oglase, s čimer pospeši vašo povezavo in izboljša vašo spletno izkušnjo."
       ],
@@ -3450,17 +2865,11 @@
       "Can't write into folder": [
         "Ne morete pisati v mapo"
       ],
-      "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Se ne spomnite gesla? Lahko vam pomagamo izbrisati šifrirane podatke vseh stikov, šifriranih s tem ključem, in s tem odpraviti opozorilo."
-      ],
       "characters": [
         "znakov"
       ],
       "characters without spaces": [
         "znakov brez presledkov"
-      ],
-      "Checking contact ${ progress } of ${ max }...": [
-        "Preverjanje stika ${ progress } od ${ max } ..."
       ],
       "Choose a plan that works best for you.": [
         "Izberite paket, ki vam najbolj ustreza"
@@ -3471,20 +2880,11 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Povežite se s programom ${ VPN_APP_NAME } za zasebno brskanje"
       ],
-      "Contact assigned to group ${ contactGroupName }": [
-        "Stik dodeljen skupini ${ contactGroupName }"
-      ],
-      "Contact unassigned from group ${ contactGroupName }": [
-        "Stik odstranjen iz skupine ${ contactGroupName }"
-      ],
       "Continue": [
         "Nadaljuj"
       ],
       "Copied to clipboard": [
         "Kopirano v odložišče"
-      ],
-      "Copy the link to clipboard": [
-        "Kopiraj povezavo v odložišče"
       ],
       "Copy your referral link": [
         "Kopirajte svojo povezavo za priporočilo"
@@ -3494,9 +2894,6 @@
       ],
       "Create a copy to edit": [
         "Ustvari kopijo za urejanje"
-      ],
-      "Create a new contact group": [
-        "Ustvari novo skupino stikov"
       ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Ustvarite dokumente in preglednice, šifrirane od konca do konca."
@@ -3534,15 +2931,6 @@
       "Downgrade": [
         "Zmanjšaj"
       ],
-      "Drop file here to upload": [
-        "Spusti datoteko tukaj za nalaganje."
-      ],
-      "Drop to import": [
-        "Spusti za uvoz."
-      ],
-      "Duplicate key updated": [
-        "Podvojeni ključ je posodobljen"
-      ],
       "Each code can only be used once": [
         "Vsaka koda se lahko uporabi samo enkrat"
       ],
@@ -3551,9 +2939,6 @@
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-poštno gostovanje je na voljo samo za domene, ki jih že imate. Registracija domene trenutno ni na voljo preko ${ BRAND_NAME }. Lahko pa gostujete e-pošto za domene, registrirane pri kateremkoli registrarju domen."
-      ],
-      "Emails are automatically signed": [
-        "Sporočila so samodejno podpisana"
       ],
       "End-to-end encrypted": [
         "Popolnoma šifrirano"
@@ -3669,12 +3054,6 @@
       "Keep your files secure with end-to-end encryption.": [
         "Imejte vaše datoteke na varnem s šifriranjem od konca do konca."
       ],
-      "Key fingerprint": [
-        "Ključ prstnega odtisa naprave"
-      ],
-      "Labels:": [
-        "Oznake:"
-      ],
       "Learn more": [
         "Več o tem"
       ],
@@ -3732,15 +3111,6 @@
       "New": [
         "Novo"
       ],
-      "No contacts added yet": [
-        "Ni stikov"
-      ],
-      "No email address": [
-        "Ni e-poštnih naslovov"
-      ],
-      "No group found": [
-        "Nobena skupina ni bila najdena."
-      ],
       "No recent documents match your search.": [
         "Noben nedavni dokument ne ustreza vašemu iskanju."
       ],
@@ -3749,12 +3119,6 @@
       ],
       "No version history available": [
         "Zgodovina različice ni na voljo."
-      ],
-      "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Noben od naloženih ključev ni veljaven za šifriranje. Če želite pošiljati sporočila na ta naslov, naložite veljaven ključ ali onemogočite »Šifriraj e-pošto«."
-      ],
-      "Not a valid URL": [
-        "Neveljaven URL"
       ],
       "Not connected": [
         "Niste povezani"
@@ -3767,9 +3131,6 @@
       ],
       "On public WiFi networks": [
         "V javnih omrežjih WiFi"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Enega ali več vaših zaupanja vrednih ključev je njihov lastnik označil kot \"ogroženo\". Priporočamo, da tem ključem \"ne zaupate\"."
       ],
       "Oops! This spreadsheet can’t save your most recent edits, so we’ve paused editing to prevent you from losing your work.": [
         "Ojoj! Ta preglednica ne more shraniti vaših zadnjih sprememb, zato smo prekinili urejanje, da bi preprečili izgubo vašega dela."
@@ -3804,50 +3165,14 @@
       "Pending invitations": [
         "Čakajoča povabila"
       ],
-      "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline je združljiv samo z golim besedilom."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME samodejno pošlje sporočilo z uporabo trenutnega načina skladanja."
-      ],
       "Please enter the password to decrypt and view content.": [
         "Za dešifriranje in ogled vsebine vnesite geslo."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Iz glavnega menija izvozite kopijo vaših trenutnih sprememb in znova naložite stran."
       ],
-      "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Upoštevajte, da naslovi, dodeljeni tem skupinam, NE bodo izbrisani."
-      ],
-      "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Upoštevajte, da naslovi, dodeljeni tej skupini, NE bodo izbrisani."
-      ],
-      "Please note that this process may take some time depending on the size of your address book.": [
-        "Upoštevajte, da lahko ta postopek traja nekaj časa, odvisno od velikosti vašega imenika."
-      ],
-      "Please provide a name and an email address for creating a group.": [
-        "Za ustvaritev skupine vnesite ime in e-poštni naslov."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Izberite, kateri e-poštni naslov oziroma naslove želite dodati v ${ groupCount } skupino.",
-        "Izberite, kateri e-poštni naslov oziroma naslove želite dodati v ${ groupCount } skupini.",
-        "Izberite, kateri e-poštni naslov oziroma naslove želite dodati v ${ groupCount } skupine.",
-        "Izberite, kateri e-poštni naslov oziroma naslove želite dodati v ${ groupCount } skupin."
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        "Izberite, kateri e-poštni naslov ali naslove želite dodati v ${ groupName }."
-      ],
       "Please try again in a few moments": [
         "Poskusite znova čez nekaj trenutkov."
-      ],
-      "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Počakajte, da poiščemo stike, ki jih je mogoče ponovno podpisati s primarnim šifrirnim ključem."
-      ],
-      "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Počakajte, poteka iskanje stikov, ki vsebujejo podatke, šifrirane z neaktivnim ključem."
-      ],
-      "Primary": [
-        "Glavni"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Zasebno brskanje (ali »način brez beleženja zgodovine«) je uporabno samo za ohranjanje zasebnosti vaše dejavnosti znotraj vaše naprave. Preprečuje, da bi vaš brskalnik shranjeval zgodovino in piškotke, vendar vas ne naredi nevidne. Vaš internetni ponudnik, skrbnik omrežja in spletne strani, ki jih obiskujete, lahko še vedno vidijo, kaj počnete v spletu."
@@ -3894,9 +3219,6 @@
       "Select a folder to move to.": [
         "Izberite mapo, v katero se želite premakniti."
       ],
-      "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Izberite obliko sporočil, ki jo želite uporabiti kot privzeto ob pošiljanju na ta e-poštni naslov."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Strežniki so nedosegljivi. Poskusite znova čez nekaj minut"
       ],
@@ -3905,9 +3227,6 @@
       ],
       "Set up your organization": [
         "Nastavite svojo organizacijo"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Nastavitev PGP vam omogoča pošiljanje šifriranih e-poštnih sporočil od konca do konca z ne-uporabnikom ${ BRAND_NAME }, ki uporablja združljivo storitev PGP."
       ],
       "Settings update failed": [
         "Napaka pri posodobitvi nastavitev"
@@ -3975,17 +3294,11 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
-      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
-      ],
       "There are no documents in the trash.": [
         "V smeteh ni nobenih dokumentov."
       ],
       "This action will delete the link and revoke access for all users.": [
         "To dejanje bo odstranilo povezavo in preklicalo dostop za vse uporabnike."
-      ],
-      "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Ta naslov je onemogočen. Za pošiljanje na ta naslov ga mora lastnik najprej omogočiti."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Dokument je postal prevelik za urejanje. Za nadaljevanje urejanja odstranite starejše revizije."
@@ -4008,12 +3321,6 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "To je ime ali vzdevek vaše organizacije, ki ga bodo videli vaši uporabniki. Spremenite ga lahko kadarkoli."
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
-      ],
-      "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ta povezava je lahko homografski napad. Preverite, ali je to povezava, ki jo želite obiskati, ali pa je ne odpirajte."
-      ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "To pomeni, da vaš ponudnik internetnih storitev in spletne strani, ki jih obiskujete, ne morejo povezati vaših osebnih podatkov z vašo spletno aktivnostjo."
       ],
@@ -4034,15 +3341,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
-      ],
-      "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Če želite ponovno podpisati stike, moramo vsak stik preveriti na seznamu šifrirnih ključev, ki so na voljo v vašem računu. Če ujemanja ne bomo našli, bo stik ponovno podpisan s primarnim šifrirnim ključem."
-      ],
-      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Za obnovitev podatkov je treba znova aktivirati ključ računa, ki je bil v uporabi v času, ko so bili podatki ustvarjeni. Za to se morate spomniti gesla, uporabljenega ob ustvaritvi ključa."
-      ],
-      "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Za uporabo preverjanja naslova morate zaupati enemu ali več razpoložljivim javnim ključem, vključno s tistim, ki ga želite uporabiti za pošiljanje. To preprečuje ponarejanje šifrirnih ključev."
       ],
       "Tracking": [
         "Sledenje"
@@ -4137,12 +3435,6 @@
       "You already have a free account": [
         "Brezplačen račun že imate"
       ],
-      "You are about to open another browser tab and visit:": [
-        "Odprli boste nov zavihek brskalnika in obiskali:"
-      ],
-      "You are about to open your default browser and visit:": [
-        "Odprli boste svoj privzeti brskalnik in obiskali:"
-      ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
         "Trenutno ste prijavljeni kot ${ username } v (${ organizationName }."
       ],
@@ -4185,12 +3477,6 @@
       "You're about to decline the invitation to join the ${ invitationName } folder. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Pravkar boste zavrnili povabilo za pridružitev mapi ${ invitationName }. Če nadaljujete, do nje ne boste mogli dostopati, razen če vas lastnik ponovno povabi. Ali ste prepričani, da želite nadaljevati?"
       ],
-      "You've reached the maximum number of addresses in the contact group(s):": [
-        "Dosegli ste največje število naslovov v skupini(ah) stikov:"
-      ],
-      "You've reached the maximum number of addresses in the contact group.": [
-        "Dosegli ste največje število naslovov v skupini stikov."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Vaš račun ${ BRAND_NAME } je trenutno suspendiran. Po 28 dneh e-poštni predal ne bo več prejemal sporočil, vaše povezave za skupno rabo na Disku bodo blokirane in ne boste mogli nalagati novih datotek. Za nadaljnje delovanje storitve plačajte morebitne zapadle račune."
       ],
@@ -4217,9 +3503,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
-      ],
-      "Your files will be encrypted and then saved": [
-        "Vaše datoteke bodo šifrirane in nato shranjene."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informacije so bile najdene ${ displayedDate }"
@@ -4270,42 +3553,6 @@
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
       ]
     },
-    "info": {
-      "Selected color:": [
-        "Izberi barvo:"
-      ]
-    },
-    "Info on errors": {
-      "Click for details": [
-        "Kliknite za podrobnosti"
-      ]
-    },
-    "Key badge": {
-      "Active Signer": [
-        "Aktivni podpisnik"
-      ],
-      "Compromised": [
-        "Ogrožena"
-      ],
-      "Expired": [
-        "Poteklo"
-      ],
-      "Obsolete": [
-        "Zastarelo"
-      ],
-      "Primary": [
-        "Primarno"
-      ],
-      "Revoked": [
-        "Preklicano"
-      ],
-      "Trusted": [
-        "Zaupanja vreden"
-      ],
-      "WKD": [
-        "WKD"
-      ]
-    },
     "Label": {
       "${ BRAND_NAME } username": [
         "Uporabniško ime za ${ BRAND_NAME }"
@@ -4315,15 +3562,6 @@
       ],
       "Active": [
         "Aktivno"
-      ],
-      "Add email address": [
-        "Dodaj e-poštni naslov"
-      ],
-      "Add image URL": [
-        "Dodajte URL slike"
-      ],
-      "Add to group": [
-        "Dodaj v skupino"
       ],
       "Additional comments": [
         "Dodatni komentarji"
@@ -4361,9 +3599,6 @@
       "Category": [
         "Vrsta napake"
       ],
-      "City": [
-        "Mesto"
-      ],
       "Client": [
         "Odjemalec"
       ],
@@ -4372,9 +3607,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
-      ],
-      "Colors": [
-        "Barve"
       ],
       "Command line interface (CLI)": [
         "Ukazna vrstica (CLI)"
@@ -4385,9 +3617,6 @@
       "Continue cancelling": [
         "Nadaljuj s preklicem"
       ],
-      "Copy": [
-        "Kopiraj"
-      ],
       "Could you please let us know which provider?": [
         "Nam lahko prosim sporočite, kateri ponudnik?"
       ],
@@ -4396,9 +3625,6 @@
       ],
       "Could you please specify?": [
         "Ali lahko natančno določite?"
-      ],
-      "Country": [
-        "Država"
       ],
       "Delete": [
         "Izbriši"
@@ -4412,9 +3638,6 @@
       "Disable this link on a specific date": [
         "Onemogoči to povezavo na določen datum"
       ],
-      "Don't ask again": [
-        "Ne sprašuj več"
-      ],
       "Don't show this again": [
         "Ne prikazuj več"
       ],
@@ -4424,17 +3647,8 @@
       "Email address": [
         "E-poštni naslov"
       ],
-      "Email format": [
-        "Oblika e-pošte"
-      ],
-      "Encrypt emails": [
-        "Šifriraj sporočila"
-      ],
       "Expiry": [
         "Poteče"
-      ],
-      "Extended address": [
-        "Razširjeni naslov"
       ],
       "File": [
         "Datoteka"
@@ -4444,9 +3658,6 @@
       ],
       "Hide password": [
         "Skrij geslo"
-      ],
-      "I understand the risk": [
-        "Razumem tveganje"
       ],
       "Ignore": [
         "Prezri"
@@ -4502,26 +3713,11 @@
       "Password strength": [
         "Moč gesla"
       ],
-      "PGP scheme": [
-        "Shema PGP"
-      ],
       "Phone number": [
         "Telefonska številka"
       ],
       "Please share any feedback to help us improve.": [
         "Prosimo, sporočite nam povratne informacije, da se nam pomagate izboljšati."
-      ],
-      "Post office box": [
-        "Poštni predal"
-      ],
-      "Postal code": [
-        "Poštna številka"
-      ],
-      "Public keys": [
-        "Javni ključi"
-      ],
-      "Region": [
-        "Regija"
       ],
       "Require password": [
         "Zahtevaj geslo"
@@ -4538,17 +3734,11 @@
       "Shared with me": [
         "Deljeno z mano"
       ],
-      "Sign emails": [
-        "Podpiši sporočila"
-      ],
       "Skip feedback": [
         "Preskoči povratno informacijo"
       ],
       "Stop sharing": [
         "Ustavi skupno rabo"
-      ],
-      "Street address": [
-        "Ulica"
       ],
       "Strong": [
         "Močno"
@@ -4570,9 +3760,6 @@
       ],
       "Unknown user": [
         "Neznan uporabnik"
-      ],
-      "Upload picture": [
-        "Naloži fotografijo"
       ],
       "Verification code": [
         "Koda za preverjanje"
@@ -4609,16 +3796,6 @@
       ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
-      ]
-    },
-    "Label for contact group color": {
-      "Color": [
-        "Barva"
-      ]
-    },
-    "Label for contact group name": {
-      "Name": [
-        "Ime"
       ]
     },
     "Link": {
@@ -4834,14 +4011,6 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Na voljo je nova različica aplikacije ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "MIME type": {
-      "Automatic": [
-        "Samodejno"
-      ],
-      "Plain text": [
-        "Golo besedilo"
       ]
     },
     "new_plans": {
@@ -5773,12 +4942,6 @@
       "Cannot load next page": [
         "Naslednje strani ni mogoče naložiti"
       ],
-      "Contact group created": [
-        "Skupina stikov ustvarjena"
-      ],
-      "Contact group updated": [
-        "Skupina stikov posodobljena"
-      ],
       "Document moved to trash": [
         "Dokument premaknjen v smetnjak"
       ],
@@ -5817,9 +4980,6 @@
       ],
       "Invitation's email was sent again": [
         "E-poštno sporočilo s povabilom je bilo ponovno poslano."
-      ],
-      "Link copied to clipboard": [
-        "Povezava je kopirana v odložišče"
       ],
       "Move ${ n } file": [
         "Premakni datoteko ${ n }",
@@ -6012,20 +5172,6 @@
         "Vaša polna ${ planTitle } naročnina se začne dne ${ boldEndDate }."
       ]
     },
-    "Option": {
-      "Add to existing group": [
-        "Dodaj v obstoječo skupino"
-      ],
-      "Automatic (${ value })": [
-        "Samodejno (${ value })"
-      ],
-      "Create new group": [
-        "Ustvari novo skupino"
-      ],
-      "Ignore group": [
-        "Prezri skupino"
-      ]
-    },
     "Page title": {
       "Recents": [
         "Nedavno"
@@ -6143,42 +5289,6 @@
         "Izredno znižana cena ${ priceWithDiscount } velja za prvi mesec. Potem se bo samodejno podaljšala mesečno za ${ renewPriceStr }. Naročnino lahko kadarkoli prekinete."
       ]
     },
-    "PGP key encryption warning": {
-      "Key cannot be used for encryption": [
-        "Ključa ni mogoče uporabiti za šifriranje"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } je ta ključ označil kot kompromitiran. Uporabiti ga ni mogoče niti za šifriranje, niti za preverjanje veljavnosti podpisa."
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } je ta ključ označil kot zastarel. Uporabiti se lahko samo za preverjanje veljavnosti podpisa."
-      ],
-      "External key automatically fetched from keys.openpgp.org.": [
-        "Zunanji ključ samodejno pridobljen s keys.openpgp.org."
-      ],
-      "External key automatically fetched via WKD.": [
-        "Zunanji ključ se samodejno pridobi prek WKD."
-      ],
-      "This contact currently signs messages with this key": [
-        "Ta stik trenutno podpisuje sporočila s tem ključem."
-      ],
-      "This key is used to encrypt messages to this contact": [
-        "S tem ključem se šifrirajo sporočila za ta stik"
-      ],
-      "This key is used to encrypt messages to this contact on older apps": [
-        "S tem ključem se šifrirajo sporočila za ta stik na starejših aplikacijah."
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        "Priporočamo, da temu ključu prekličete zaupanje."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Tega naslova ni najti med uporabnikovimi ID-ji, določenimi v ključu za pošiljanje (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Način za stik z vami"
@@ -6201,29 +5311,8 @@
       "Enter a new folder name": [
         "Vpišite ime nove mape"
       ],
-      "Filter groups": [
-        "Filtriraj skupine"
-      ],
-      "First name": [
-        "Ime"
-      ],
-      "Group name": [
-        "Ime skupine"
-      ],
-      "Image URL": [
-        "URL slike"
-      ],
-      "Last name": [
-        "Priimek"
-      ],
       "Message": [
         "Sporočilo"
-      ],
-      "Name": [
-        "Ime"
-      ],
-      "Name or email address": [
-        "Ime ali e-poštni naslov"
       ],
       "Organization name": [
         "Ime organizacije"
@@ -6237,12 +5326,6 @@
       "Please select the main reason": [
         "Prosimo, izberite glavni razlog."
       ],
-      "Search for group name": [
-        "Poiščite ime skupine"
-      ],
-      "Search for name or email": [
-        "Poiščite ime ali e-poštni naslov"
-      ],
       "Select": [
         "Izberi"
       ],
@@ -6252,85 +5335,8 @@
       "Select a reason": [
         "Izberite razlog"
       ],
-      "Start typing an email address": [
-        "Začnite pisati e-poštni naslov"
-      ],
       "Your organization name": [
         "Ime vaše organizacije"
-      ]
-    },
-    "Placeholder for contact group name": {
-      "Name": [
-        "Ime"
-      ]
-    },
-    "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } od ${ countContacts } stikov je bil uspešno izvožen.",
-        "${ contactsExported.length } od ${ countContacts } stikov sta bila uspešno izvožena.",
-        "${ contactsExported.length } od ${ countContacts } stikov so bili uspešno izvoženi.",
-        "${ contactsExported.length } od ${ countContacts } stikov je bilo uspešno izvoženih."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } od ${ totalBeDeleted } stika uspešno izbrisan.",
-        "${ model.deleted.length } od ${ totalBeDeleted } stikov uspešno izbrisan.",
-        "${ model.deleted.length } od ${ totalBeDeleted } stikov uspešno izbrisan.",
-        "${ model.deleted.length } od ${ totalBeDeleted } stikov uspešno izbrisan."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } od ${ totalBeMerged } stikov je bil uspešno združen.",
-        "${ model.submitted.length } od ${ totalBeMerged } stikov sta bila uspešno združena.",
-        "${ model.submitted.length } od ${ totalBeMerged } stikov so bili uspešno združeni.",
-        "${ model.submitted.length } od ${ totalBeMerged } stikov je bilo uspešno združenih."
-      ],
-      "No contacts exported.": [
-        "Ni izvoženih stikov."
-      ],
-      "No contacts merged.": [
-        "Nobeni stiki se niso združili."
-      ],
-      "Progress: ${ combinedProgress }%": [
-        "Napredek: ${ combinedProgress } %"
-      ]
-    },
-    "Property type": {
-      "Address": [
-        "Naslov"
-      ],
-      "Email": [
-        "E-pošta"
-      ],
-      "Fax": [
-        "Faks"
-      ],
-      "Home": [
-        "Domači"
-      ],
-      "Main": [
-        "Glavno"
-      ],
-      "Mobile": [
-        "Mobilni"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Pager": [
-        "Pozivnik"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Work": [
-        "Službeni"
-      ]
-    },
-    "protonbadge": {
-      "Official": [
-        "Uradno"
-      ],
-      "Official email from ${ BRAND_NAME }": [
-        "Uradno sporočilo ${ BRAND_NAME }"
       ]
     },
     "Provider option": {
@@ -6471,11 +5477,6 @@
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Vaši osebni podatki so bili najdeni v vsaj enem primeru uhajanja podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Naloži"
       ]
     },
     "session_recovery:available:action": {
@@ -6719,14 +5720,6 @@
     "sheets_2025:Title": {
       "Import data": [
         "Uvozi podatke"
-      ]
-    },
-    "Signing preference for emails": {
-      "Don't sign": [
-        "Ne podpiši"
-      ],
-      "Sign": [
-        "Podpiši"
       ]
     },
     "Sort menu options": {
@@ -7151,50 +6144,14 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } stik je videti identičen.",
-        "${ countMergeableContacts } stika sta videti identična.",
-        "${ countMergeableContacts } stiki so videti identični.",
-        "${ countMergeableContacts } stikov je videti identičnih."
-      ],
-      "Address copied to clipboard": [
-        "Naslov kopiran v odložišče"
-      ],
       "Code sent to ${ methodTo }": [
         "Koda je poslana na ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Stik izbrisan",
-        "Stika izbrisana",
-        "Stiki izbrisani",
-        "Stiki izbrisani"
-      ],
-      "Contact group deleted": [
-        "Skupina stikov izbrisana",
-        "Skupini stikov izbrisani",
-        "Skupine stikov izbrisane",
-        "Skupine stikov izbrisane"
-      ],
-      "Contact saved": [
-        "Stik je shranjen"
-      ],
-      "Contacts deleted": [
-        "Stiki izbrisani"
       ],
       "Email address copied to clipboard": [
         "E-poštni naslov kopiran v odložišče"
       ],
-      "Fingerprint copied to clipboard": [
-        "Prstni odtis je kopiran v odložišče"
-      ],
-      "Phone number copied to clipboard": [
-        "Telefonska številka kopirana v odložišče"
-      ],
       "Preference saved": [
         "Nastavitev shranjena"
-      ],
-      "Preferences saved": [
-        "Nastavitve so shranjene"
       ],
       "Problem reported": [
         "Težava je sporočena."
@@ -7223,64 +6180,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje zgodovino različic, šifrirano delitev datotek in drugo."
-      ]
-    },
-    "Table header": {
-      "Action": [
-        "Dejanje"
-      ],
-      "Actions": [
-        "Dejanja"
-      ],
-      "Address": [
-        "Naslov"
-      ],
-      "Created": [
-        "Ustvarjeno"
-      ],
-      "Expires": [
-        "Poteče"
-      ],
-      "Fingerprint": [
-        "Prstni odtis"
-      ],
-      "Name": [
-        "Ime"
-      ],
-      "Status": [
-        "Stanje"
-      ],
-      "Type": [
-        "Vrsta"
-      ]
-    },
-    "TableHeader": {
-      "Actions": [
-        "Dejanja"
-      ],
-      "Address": [
-        "Naslov"
-      ],
-      "CSV field": [
-        "Polje CSV"
-      ],
-      "Display name": [
-        "Ime za prikaz"
-      ],
-      "First name": [
-        "Ime"
-      ],
-      "Import": [
-        "Uvoz"
-      ],
-      "Last name": [
-        "Priimek"
-      ],
-      "Values": [
-        "Vrednosti"
-      ],
-      "vCard field": [
-        "Polje vCard"
       ]
     },
     "Time unit": {
@@ -7313,12 +6212,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } e-poštni naslov",
-        "${ emailsCount } e-poštna naslova",
-        "${ emailsCount } e-poštni naslovi",
-        "${ emailsCount } e-poštnih naslovov"
-      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } pomočnik pri pisanju"
       ],
@@ -7334,23 +6227,8 @@
       "Account temporarily locked": [
         "Račun je začasno zaklenjen"
       ],
-      "Add contact group name": [
-        "Dodaj ime skupine stikov"
-      ],
-      "Add to ${ groupCount } group": [
-        "Dodaj v ${ groupCount } skupino",
-        "Dodaj v ${ groupCount } skupini",
-        "Dodaj v ${ groupCount } skupine",
-        "Dodaj v ${ groupCount } skupin"
-      ],
-      "Add to ${ groupName }": [
-        "Dodaj v skupino ${ groupName }"
-      ],
       "Add user": [
         "Dodaj uporabnika"
-      ],
-      "Addresses": [
-        "Naslovi"
       ],
       "All settings": [
         "Vse nastavitve"
@@ -7358,20 +6236,11 @@
       "Are you sure?": [
         "Ali ste prepričani?"
       ],
-      "Birthday": [
-        "Rojstni dan"
-      ],
       "Cancel subscription?": [
         "Prekliči naročnino?"
       ],
-      "Cannot add more addresses": [
-        "Ni mogoče dodati več naslovov."
-      ],
       "Change password": [
         "Spremeni geslo"
-      ],
-      "Clearing data": [
-        "Čiščenje podatkov"
       ],
       "Collaborate on documents": [
         "Sodelujte pri dokumentih"
@@ -7388,26 +6257,11 @@
       "Connect your custom domain": [
         "Povežite svojo domeno po meri"
       ],
-      "Contact Details": [
-        "Podrobnosti stika"
-      ],
-      "Contact group": [
-        "Skupina stikov"
-      ],
       "Contact us": [
         "Kontaktirajte nas"
       ],
-      "Contacts": [
-        "Stiki"
-      ],
       "Create a new folder": [
         "Ustvarite novo mapo"
-      ],
-      "Create contact": [
-        "Ustvari stik"
-      ],
-      "Create new group": [
-        "Ustvari novo skupino"
       ],
       "Currency": [
         "Valuta"
@@ -7424,26 +6278,8 @@
       "Decline invitation?": [
         "Zavrni povabilo?"
       ],
-      "Delete ${ count } contact": [
-        "Izbriši ${ count } stik",
-        "Izbriši ${ count } stika",
-        "Izbriši ${ count } stike",
-        "Izbriši ${ count } stikov"
-      ],
-      "Delete ${ count } contact group": [
-        "Izbriši ${ count } skupino stikov",
-        "Izbriši ${ count } skupini stikov",
-        "Izbriši ${ count } skupine stikov",
-        "Izbriši ${ count } skupin stikov"
-      ],
-      "Delete ${ value }": [
-        "Izbriši ${ value }"
-      ],
       "Delete permanently": [
         "Trajno izbriši"
-      ],
-      "Deleting contacts": [
-        "Brisanje stikov"
       ],
       "Desktop": [
         "Namizje"
@@ -7456,9 +6292,6 @@
       ],
       "Discard changes?": [
         "Zavrzi spremembe?"
-      ],
-      "Docs": [
-        "Dokumenti"
       ],
       "Document Size Limit Exceeded": [
         "Velikost dokumenta presežena"
@@ -7475,26 +6308,8 @@
       "Download the app": [
         "Prenesi aplikacijo"
       ],
-      "Edit contact": [
-        "Uredi stik"
-      ],
-      "Edit contact group": [
-        "Uredi skupino stikov"
-      ],
-      "Edit email settings": [
-        "Urejanje nastavitev e-pošte"
-      ],
-      "Edit image": [
-        "Uredi sliko"
-      ],
       "Editing paused": [
         "Urejanje prekinjeno"
-      ],
-      "Email addresses": [
-        "E-poštni naslovi"
-      ],
-      "Email settings": [
-        "Nastavitve e-pošte"
       ],
       "Enable 2FA": [
         "Omogoči 2FA"
@@ -7508,9 +6323,6 @@
       "Error Syncing": [
         "Napaka pri sinhronizaciji"
       ],
-      "Exporting contacts": [
-        "Izvažanje stikov"
-      ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Prejmite **${ referralInfo.uiData.refereeRewardAmount }** v dobroimetju z ${ planTitle }"
       ],
@@ -7519,9 +6331,6 @@
       ],
       "Get the apps": [
         "Namesti aplikacije"
-      ],
-      "Groups": [
-        "Skupine"
       ],
       "Help and feedback": [
         "Pomoč in povratne informacije"
@@ -7544,12 +6353,6 @@
       "Human verification": [
         "Ali si človek"
       ],
-      "Import contacts": [
-        "Uvozite stike"
-      ],
-      "Import groups": [
-        "Uvozi skupine"
-      ],
       "Information exposed in breach": [
         "Informacije, razkrite pri kršitvi"
       ],
@@ -7559,20 +6362,11 @@
       "Limited availability": [
         "Omejena razpoložljivost"
       ],
-      "Link confirmation": [
-        "Potrditvena povezava"
-      ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
         "Ustvari kopijo v vaš ${ DRIVE_APP_NAME }"
       ],
       "Make a secure connection your default": [
         "Nastavite varno povezavo kot privzeto"
-      ],
-      "Merge contacts": [
-        "Združi stike"
-      ],
-      "Merging contacts": [
-        "Združevanje stikov"
       ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Prestavite vašo organizacijo na ${ BRAND_NAME }"
@@ -7598,17 +6392,8 @@
       "No breaches detected": [
         "Ni odkritih uhajanj podatkov"
       ],
-      "Notes": [
-        "Opombe"
-      ],
       "Offline": [
         "Brez povezave"
-      ],
-      "One email, many recipients": [
-        "Ena e-pošta, številni prejemniki"
-      ],
-      "Open actions dropdown": [
-        "Spustno okno \"Dejanja\""
       ],
       "Open pagination": [
         "Odpri krmarjenje"
@@ -7618,15 +6403,6 @@
       ],
       "Organization setup": [
         "Nastavitev organizacije"
-      ],
-      "Other information": [
-        "Drugi podatki"
-      ],
-      "Other names": [
-        "Ostala imena"
-      ],
-      "Phone numbers": [
-        "Telefonske številke"
       ],
       "Photos": [
         "Fotografije"
@@ -7646,20 +6422,11 @@
       "Public link settings": [
         "Nastavitve javne povezave"
       ],
-      "Re-sign all contacts": [
-        "Ponovno podpiši vse stike"
-      ],
-      "Re-signing contacts": [
-        "Ponovno podpisovanje stikov"
-      ],
       "Read-only": [
         "Samo za branje"
       ],
       "Recommended actions": [
         "Priporočena dejanja"
-      ],
-      "Recover data": [
-        "Obnovi podatke"
       ],
       "Report a problem": [
         "Poročanje o težavi"
@@ -7678,12 +6445,6 @@
       ],
       "Security center": [
         "Varnostno središče"
-      ],
-      "Select action to take on contact group": [
-        "Izberite dejanje, ki ga želite izvesti v skupini stikov"
-      ],
-      "Select contact group": [
-        "Izberi skupino stikov"
       ],
       "Select link expiration date": [
         "Izberite datum poteka povezave"
@@ -7769,12 +6530,6 @@
       "VPN explained": [
         "Pojasnilo o VPN"
       ],
-      "Warning": [
-        "Opozorilo"
-      ],
-      "Warning: suspected fake website": [
-        "Pozor: morebitno lažno spletno mesto"
-      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Dobrodošli v ${ BRAND_NAME } for Business"
       ],
@@ -7800,17 +6555,6 @@
         "Vaša razkrita informacija"
       ]
     },
-    "Title header for keys table": {
-      "Created": [
-        "Ustvarjeno"
-      ],
-      "Expires": [
-        "Poteče"
-      ],
-      "Type": [
-        "Vrsta"
-      ]
-    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Danes"
@@ -7820,26 +6564,8 @@
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Dodaj to datoteko v skupni rabi v vaš ${ DRIVE_APP_NAME } za lažji dostop."
       ],
-      "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Samodejno pomeni, da se za pošiljanje temu uporabniku uporablja oblika iz privzete nastavitve. Navadno besedilo pomeni, da se sporočilo ob pošiljanju vedno pretvori v navadno besedilo."
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Samodejno preklapljajte med svojimi prednostnimi temami za dan in noč v skladu z dnevnim in nočnim načinom vašega sistema"
-      ],
-      "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Digitalni podpis je eno izmed zagotovil, da ste sporočilo resnično poslali vi"
-      ],
-      "Email encryption forces email signature to help authenticate your sent messages": [
-        "Šifriranje e-pošte vsili podpis e-pošte za pomoč pri preverjanju pristnosti poslanih sporočil"
-      ],
-      "Encrypted data": [
-        "Šifrirani podatki"
-      ],
-      "Encrypted data with verified digital signature": [
-        "Šifrirani podatki s preverjenim digitalnim podpisom"
-      ],
-      "Load image": [
-        "Naloži sliko"
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Sporočilo in ime datoteke so shranjeni s šifriranjem na strani odjemalca, ko so vključeni v e-pošto"
@@ -7847,26 +6573,11 @@
       "Not all information listed here was exposed for all users.": [
         "Vse informacije, navedene tukaj, niso bile razkrite za vse uporabnike."
       ],
-      "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Izberite shemo PGP, ki bo uporabljena pri podpisovanju ali šifriranju uporabnika. Upoštevajte, da PGP/Inline prisili v navadna besedilna sporočila"
-      ],
       "Shared with end-to-end encryption": [
         "V skupni rabi s šifriranjem od konca do konca"
       ],
-      "The image could not be loaded": [
-        "Slike ni bilo mogoče naložiti."
-      ],
-      "The image could not be loaded using proxy": [
-        "Slike ni bilo mogoče naložiti z uporabo posredniškega strežnika."
-      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Če niso dešifrirana, šifrirana gesla ostanejo varna, tudi če so izpostavljena."
-      ],
-      "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Za pošiljanje od konca do konca šifriranih sporočil na ta naslov naložite javni ključ"
-      ],
-      "Version 6 OpenPGP key": [
-        "Ključ OpenPGP verzija 6"
       ],
       "We have sent them an invite to access the item.": [
         "Poslali smo jim povabilo za dostop do predmeta."
@@ -8063,50 +6774,11 @@
       ]
     },
     "Warning": {
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Ali ste prepričani, da želite trajno izbrisati ${ count } stik?",
-        "Ali ste prepričani, da želite trajno izbrisati ${ count } stika?",
-        "Ali ste prepričani, da želite trajno izbrisati ${ count } stike?",
-        "Ali ste prepričani, da želite trajno izbrisati ${ count } stikov?"
-      ],
-      "Are you sure you want to permanently delete these contact groups?": [
-        "Ali ste prepričani, da želite trajno izbrisati te skupine stikov?"
-      ],
-      "Are you sure you want to permanently delete this contact group?": [
-        "Ali ste prepričani, da želite trajno izbrisati to skupino stikov?"
-      ],
-      "Are you sure you want to permanently delete this contact?": [
-        "Ali ste prepričani, da želite trajno izbrisati ta stik?"
-      ],
-      "Contacts could not be merged": [
-        "Stikov ni bilo mogoče združiti"
-      ],
-      "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Če se gesla ne spomnite, ključa ni mogoče ponovno aktivirati. Lahko vam pomagamo odstraniti pasico z opozorilom, vendar boste pri tem trajno izgubili dostop do vseh podatkov, šifriranih s tem ključem."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Poročila o napakah niso šifrirana, zato ne pošiljajte nobenih občutljivih informacij."
       ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        "Pri nekaterih stikih, označenih za združitev, so prikazane napake. Preverite te stike"
-      ],
-      "The contact data is corrupted and cannot be displayed.": [
-        "Podatki o stiku so poškodovani in jih ni mogoče prikazati."
-      ],
-      "The contact failed to load.": [
-        "Stika ni bilo mogoče naložiti."
-      ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Datum in ura na vaši napravi sta napačno nastavljena. ${ learnMore }"
-      ],
-      "The decryption of the encrypted content failed.": [
-        "Dešifriranje šifrirane vsebine ni uspelo."
-      ],
-      "The verification of the contact details' signature failed.": [
-        "Preverjanje podpisa podrobnosti stika ni uspelo."
-      ],
-      "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Tega dejanja ni mogoče razveljaviti. Za nadaljevanje vpišite besedo ${ boldDanger } v polje."
       ],
       "This will replace all the data in the spreadsheet": [
         "To bo zamenjalo vse podatke v preglednici"

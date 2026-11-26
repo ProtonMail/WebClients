@@ -2259,11 +2259,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Vis i statuslinjen"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, ikke aktuelt"
+      ],
       "Average": [
         "Gjennomsnitt"
       ],
+      "Copy": [
+        "Kopier"
+      ],
+      "Copy formula": [
+        "Kopier formel"
+      ],
+      "Copy value": [
+        "Kopier verdi"
+      ],
       "Count": [
         "Antall"
+      ],
+      "Count numbers": [
+        "Antall tall"
+      ],
+      "Detach from selection": [
+        "Løsne fra utvalget"
       ],
       "Max": [
         "Maks"
@@ -2271,8 +2292,20 @@
       "Min": [
         "Min"
       ],
+      "Pin by the selection": [
+        "Fest etter valget"
+      ],
+      "Selection summary": [
+        "Sammendrag av utvalget"
+      ],
       "Sum": [
         "Sum"
+      ],
+      "Summary": [
+        "Oppsummering"
+      ],
+      "Unpin from selection": [
+        "Løsne fra utvalget"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

@@ -2272,11 +2272,32 @@
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
+      "${ label }, ${ value }. Show in the status bar": [
+        "${ label }, ${ value }. Zobraziť v stavovom riadku"
+      ],
+      "${ label }, not applicable": [
+        "${ label }, neuplatňuje sa"
+      ],
       "Average": [
         "Priemer"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
+      "Copy formula": [
+        "Kopírovať vzorec"
+      ],
+      "Copy value": [
+        "Kopírovať hodnotu"
+      ],
       "Count": [
         "Počet"
+      ],
+      "Count numbers": [
+        "Počet čísel"
+      ],
+      "Detach from selection": [
+        "Odpojiť od výberu"
       ],
       "Max": [
         "Max"
@@ -2284,8 +2305,20 @@
       "Min": [
         "Min"
       ],
+      "Pin by the selection": [
+        "Pripnúť k výberu"
+      ],
+      "Selection summary": [
+        "Súhrn výberu"
+      ],
       "Sum": [
         "Súčet"
+      ],
+      "Summary": [
+        "Súhrn"
+      ],
+      "Unpin from selection": [
+        "Odopnúť od výberu"
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {

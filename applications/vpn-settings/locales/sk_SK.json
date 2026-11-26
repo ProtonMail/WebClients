@@ -219,6 +219,9 @@
       "Reminder": [
         "Pripomienka"
       ],
+      "Reset member password": [
+        "Resetovať heslo člena"
+      ],
       "Restrict app access": [
         "Obmedziť prístup k aplikáciám"
       ],
@@ -7477,6 +7480,12 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencií"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } člen nemá nastavenú metódu obnovenia.",
+        "${ membersWithoutRecovery } členovia nemajú nastavenú metódu obnovenia.",
+        "${ membersWithoutRecovery } členov nemá nastavenú metódu obnovenia.",
+        "${ membersWithoutRecovery } členov nemá nastavenú metódu obnovenia."
+      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
@@ -8668,6 +8677,9 @@
       "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
         "Ak je táto funkcia vypnutá, ${ BRAND_NAME } bude naďalej používať váš záložný telefón na zasielanie bezpečnostných upozornení."
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Ak je táto možnosť povolená, členovia si nemôžu resetovať heslo bez schválenia správcom."
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "Ak je to možné, pri prihlásení použite zariadenie alebo prehliadač, v ktorom ste sa už predtým prihlásili."
       ],
@@ -8901,6 +8913,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Uistite sa, že ste ${ addARecoveryMethod }, aby ste sa mohli dostať späť do svojho účtu, ak zabudnete heslo."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Spravujte nastavenia obnovenia účtu pre členov vašej organizácie."
       ],
       "Manage groups in your identity provider": [
         "Skupiny spravujte vo vašom poskytovateľovi identít"
@@ -11529,6 +11544,9 @@
       "Require 2FA for everyone": [
         "Vyžadovať 2FA pre všetkých"
       ],
+      "Require admin approval": [
+        "Vyžadovať schválenie správcom"
+      ],
       "Require password check-ins": [
         "Vyžadovať prihlásenie pomocou hesla"
       ],
@@ -13551,11 +13569,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované dokumenty a spolupracujte na nich."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Obsahuje automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované tabuľky a spolupracujte na nich."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje ${ serversAndCountries }, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
@@ -13950,6 +13974,9 @@
       "Key copied to the clipboard": [
         "Kľúč skopírovaný do schránky"
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Členovia si teraz môžu resetovať heslo pomocou svojej obnovovacej frázy"
+      ],
       "Monitoring disabled": [
         "Monitorovanie vypnuté"
       ],
@@ -13967,6 +13994,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Prihlasovanie pomocou hesla je teraz povinné pre všetkých členov"
+      ],
+      "Password resets now require administrator approval": [
+        "Resetovanie hesla teraz vyžaduje schválenie správcom"
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
@@ -17584,6 +17614,12 @@
       "Disable recovery by phone": [
         "Zakázať obnovenie telefónom"
       ],
+      "Disabled": [
+        "Deaktivované"
+      ],
+      "Enabled": [
+        "Povolené"
+      ],
       "failed": [
         "zlyhalo"
       ],
@@ -19028,6 +19064,9 @@
       "Cannot add more users": [
         "Nie je možné pridať ďalších používateľov"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Overenie karty"
       ],
@@ -20322,6 +20361,12 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "Zmena na strane Gmailu blokuje pripojenie ${ BRAND_NAME }. Udeľte povolenie na obnovenie funkčnosti emailu."
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Pridajte metódu obnovenia údajov, aby ste mohli odomknúť svoje údaje, ak zabudnete heslo."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Pridajte email alebo telefón na obnovenie, aby ste si mohli resetovať heslo, ak ho zabudnete."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Pridané do vášho plánu: ${ mergedAddonTitles }"
       ],
@@ -20360,6 +20405,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Skopírujte a vložte túto URL do poľa ID subjektu poskytovateľa identity"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Vytvorte si obnovovaciu frázu, aby ste mohli obnoviť svoje údaje, ak zabudnete heslo."
       ],
       "Customize import to reduce the number of folders": [
         "Prispôsobiť import na zníženie počtu priečinkov"
@@ -20402,6 +20450,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Napríklad, **heslo, qwerty** atď."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Vygenerujte si obnovovaciu frázu a chráňte svoj účet pred stratou údajov."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky triedi niektoré emaily do kategórií ako Siete alebo Reklamy. Môžete si vybrať, kam chcete importovať tieto emaily."
@@ -20453,6 +20504,9 @@
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Pravidlá zdieľaných serverov možno použiť na jednotlivých používateľov alebo skupiny"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Niektoré vaše údaje sú zamknuté. Odomknite ich pomocou metódy obnovenia."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO"
@@ -20516,6 +20570,12 @@
         "Vaša organizácia dosiahla limit servisných účtov: ${ maxServiceAccounts }.",
         "Vaša organizácia dosiahla limit servisných účtov: ${ maxServiceAccounts }.",
         "Vaša organizácia dosiahla limit servisných účtov: ${ maxServiceAccounts }."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Váš súbor pre obnovenie je zastaraný. Stiahnite si nový, aby ste mohli naďalej obnoviť svoje údaje."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Vaša obnovovacia fráza je zastaraná. Vytvorte si novú, aby ste mohli naďalej obnoviť svoje údaje."
       ]
     },
     "tooltip": {

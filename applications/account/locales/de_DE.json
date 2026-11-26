@@ -301,6 +301,9 @@
       "Reminder": [
         "Erinnerungen"
       ],
+      "Reset member password": [
+        "Mitgliederpasswort zurücksetzen"
+      ],
       "Restrict app access": [
         "App-Zugriff beschränken"
       ],
@@ -550,6 +553,9 @@
       ],
       "Back": [
         "Zurück"
+      ],
+      "Back to menu": [
+        "Zurück zum Menü"
       ],
       "Back to sign in": [
         "Zurück zur Anmeldung"
@@ -5402,6 +5408,11 @@
         "Alle ${ interval } Tage, ${ untilString }"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Umsteigen, um ${ DARK_WEB_MONITORING_NAME } aktivieren zu können"
+      ]
+    },
     "Dashboard": {
       "Communicate and schedule with end-to-end encryption.": [
         "Kommuniziere und plane mit Ende-zu-Ende-Verschlüsselung."
@@ -7229,6 +7240,9 @@
       ],
       "Time required before automatically granting them access": [
         "Benötigte Zeit, bevor du ihnen automatisch Zugriff gewährst"
+      ],
+      "To access their account, sign in to ${ ACCOUNT_APP_NAME } in a browser.": [
+        "Um auf dein Konto zuzugreifen, melde dich in einem Browser bei ${ ACCOUNT_APP_NAME } an."
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "Um diese Wiederherstellungsmethode zu deaktivieren, entferne alle deine Wiederherstellungskontakte."
@@ -10510,6 +10524,10 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } Mitglied hat keine Wiederherstellungsmethode eingerichtet.",
+        "${ membersWithoutRecovery } Mitglieder haben keine Wiederherstellungsmethode eingerichtet."
+      ],
       "${ n } address": [
         "${ n } Adresse",
         "${ n } Adressen"
@@ -10621,9 +10639,6 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: Fordert die Empfängerplattformen dazu auf, nicht autorisierte E-Mails abzulehnen."
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } von ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } weitere",
@@ -12125,6 +12140,9 @@
       "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
         "Wenn diese Option deaktiviert ist, können Mitglieder der Organisation keine Passkeys in ${ PASS_APP_NAME } speichern oder sich damit anmelden. Es werden keine Daten gelöscht."
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Wenn diese Option aktiviert ist, können Mitglieder ihr Passwort nicht ohne die Zustimmung eines Administrators zurücksetzen."
+      ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Wenn aktiviert, können Organisationsmitglieder neben Tresoren auch einzelne Einträge teilen."
       ],
@@ -12460,6 +12478,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du wieder Zugriff auf dein Konto erhältst, wenn du dein Passwort vergessen hast."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Verwalte die Einstellungen zur Kontowiederherstellung für die Mitglieder deiner Organisation."
       ],
       "Manage groups in your identity provider": [
         "Gruppen bei deinem Identitätsanbieter verwalten"
@@ -12869,9 +12890,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Bitte upgraden, um sicherzustellen, dass der Import erfolgreich abgeschlossen wird."
       ],
       "Please use another browser or download the file.": [
         "Bitte verwende einen anderen Browser oder lade die Datei herunter."
@@ -13462,6 +13480,9 @@
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Diese Funktion verzögert den Versand deiner E-Mails und gibt dir die Möglichkeit, den Versand während des gewählten Zeitfensters zu widerrufen."
       ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Diese Funktion ist in deinem Abonnement nicht enthalten. Wende dich an deinen Administrator, um Zugang zu erhalten."
+      ],
       "This file is too large to preview": [
         "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
       ],
@@ -13668,6 +13689,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Um dein Konto sicher zu halten, möchten wir sicherstellen, dass du es wirklich bist, der sich anmeldet."
@@ -14046,9 +14070,6 @@
       ],
       "We'll email you when your import is complete.": [
         "Du wirst per E-Mail benachrichtigt, sobald der Import abgeschlossen ist."
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Du wirst per E-Mail benachrichtigt, sobald der Import abgeschlossen ist. Deine Dateien werden in einem Ordner in ${ DRIVE_APP_NAME } angezeigt."
       ],
       "We'll get back to you shortly.": [
         "Wir melden uns in Kürze bei dir."
@@ -15267,6 +15288,9 @@
       ],
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "${ BRAND_NAME }${ MAIL_SHORT_APP_NAME } Desktop-App"
+      ],
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
       ],
       "${ BRAND_NAME } Easy Switch": [
         "${ BRAND_NAME } Easy Switch"
@@ -16638,6 +16662,9 @@
       ],
       "Require 2FA for everyone": [
         "2FA für jeden erfordern"
+      ],
+      "Require admin approval": [
+        "Genehmigung durch Administrator erforderlich"
       ],
       "Require password check-ins": [
         "Passwort-Check-ins verlangen"
@@ -19206,11 +19233,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Ende-zu-Ende-verschlüsselte Dokumente erstellen, bearbeiten und gemeinsam daran arbeiten."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Sichern deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Enthält Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte hide-my-email-Aliase und mehr."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Ende-zu-Ende-verschlüsselte Tabellen erstellen, bearbeiten und gemeinsam daran arbeiten."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Zugriff auf gesperrte Inhalte und privates Surfen. Enthält ${ serversAndCountries }, höchste VPN-Geschwindigkeiten, Zugang zu weltweiten Streaming-Diensten, Malware- und Ad-Blocker, schnelle BitTorrent-Downloads und mehr."
@@ -19614,6 +19647,9 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Mitglieder können ihr Passwort nun mithilfe ihrer Wiederherstellungsphrase zurücksetzen"
+      ],
       "Monitoring disabled": [
         "Überwachung deaktiviert"
       ],
@@ -19631,6 +19667,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Für alle Mitglieder sind nun Passwort-Check-ins erforderlich"
+      ],
+      "Password resets now require administrator approval": [
+        "Das Zurücksetzen von Passwörtern erfordert künftig die Genehmigung durch einen Administrator"
       ],
       "Reminder has been sent": [
         "Eine Erinnerung wurde versandt"
@@ -24750,6 +24789,9 @@
       "Disabled": [
         "Deaktiviert"
       ],
+      "Enabled": [
+        "Aktiviert"
+      ],
       "failed": [
         "fehlgeschlagen"
       ],
@@ -25554,9 +25596,6 @@
       ],
       "Free forever": [
         "Dauerhaft kostenlos"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importiere deine Dateien und Ordner aus Google Drive und speichere sie privat in ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "pro Monat, jährliche Abrechnung"
@@ -27321,9 +27360,6 @@
       "Import started": [
         "Import gestartet"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Der Import wurde gestartet, aber dein Speicherplatz reicht für diesen Import nicht aus."
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importieren mit ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27455,6 +27491,9 @@
       ],
       "Monthly cost": [
         "Monatliche Kosten"
+      ],
+      "More storage needed to finish your import": [
+        "Um den Import abzuschließen, wird mehr Speicherplatz benötigt"
       ],
       "Multi-user support": [
         "Mehrbenutzerunterstützung"
@@ -27984,6 +28023,9 @@
       "Spam, block, and allow lists": [
         "Listen gesperrter und zugelassener Absender"
       ],
+      "Special offer": [
+        "Sonderangebot"
+      ],
       "Special Offer": [
         "Sonderangebot"
       ],
@@ -28249,9 +28291,6 @@
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
       ],
-      "We could not find anything to import": [
-        "Wir konnten nichts zum Importieren finden"
-      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Wir haben dir einen Code per E-Mail geschickt, um sicherzustellen, dass du es wirklich bist. Dieser Code ist 10 Minuten lang gültig. Bitte gib ihn unten ein."
       ],
@@ -28507,6 +28546,12 @@
       "Account is disconnected": [
         "Die Verbindung zum Konto ist unterbrochen"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Füge eine Methode zur Datenwiederherstellung hinzu, um deine Daten zu entsperren, falls du dein Passwort vergisst."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Füge eine E-Mail-Adresse oder eine Telefonnummer für das Zurücksetzen des Passworts hinzu, falls du es vergessen solltest."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Zu deinem Abonnement hinzugefügt: ${ mergedAddonTitles }"
       ],
@@ -28554,6 +28599,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lege eine Wiederherstellungsphrase fest, damit du deine Daten wiederherstellen kannst, falls du dein Passwort vergisst."
       ],
       "Customize import to reduce the number of folders": [
         "Importvorgänge anpassen, um die Anzahl der Ordner zu reduzieren"
@@ -28614,6 +28662,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Zum Beispiel: **Passwort, qwertz** usw."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Erstelle eine Wiederherstellungsphrase, um dein Konto vor Datenverlust zu schützen."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Hole dir Produktivitäts- und Sicherheitstipps, um das Beste aus ${ MAIL_APP_NAME } und darüber hinaus zu machen."
@@ -28707,6 +28758,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Mit diesem Schlüssel erzeugte Signaturen werden als ungültig behandelt und können nicht zur Verschlüsselung verwendet werden."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Einige deiner Daten sind gesperrt. Nutze eine Wiederherstellungsmethode, um wieder darauf zugreifen zu können."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
@@ -28837,6 +28891,12 @@
       "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
         "Deine Organisation hat die maximale Anzahl von ${ maxServiceAccounts } Dienstkonto erreicht.",
         "Deine Organisation hat die maximale Anzahl von ${ maxServiceAccounts } Dienstkonten erreicht."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Deine Wiederherstellungsdatei ist veraltet. Lade eine neue herunter, damit du deine Daten wiederherstellen kannst."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Ihre Wiederherstellungsphrase ist veraltet. Es wird eine neue benötigt, damit deine Daten weiterhin wiederhergestellt werden können."
       ]
     },
     "tooltip": {

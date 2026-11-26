@@ -912,32 +912,6 @@
         "Kasa"
       ]
     },
-    "App menu": {
-      "Back": [
-        "Geri"
-      ],
-      "Force Reload": [
-        "Yeniden yüklemeye zorla"
-      ],
-      "Reload": [
-        "Yeniden yükle"
-      ],
-      "Show logs": [
-        "Günlüğü görüntüle"
-      ],
-      "Speech": [
-        "Konuşma"
-      ],
-      "Start ${ PASS_APP_NAME } at login": [
-        "${ PASS_APP_NAME } oturum açıldıında başlatılsın"
-      ],
-      "Toggle developers tools": [
-        "Geliştirici araçlarını aç/kapat"
-      ],
-      "Uninstall ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını kaldır"
-      ]
-    },
     "Browser": {
       "${ appName } Desktop application": [
         "${ appName } bilgisayar uygulaması"
@@ -1098,7 +1072,7 @@
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
       "A biometric unlock check is already in progress.": [
-        "Biyometrik kilit açma kontrolü halihazırda devam ediyor."
+        "Biyometrik kilit açma denetimi zaten yapılıyor."
       ],
       "A desktop unlock check is already in progress.": [
         "Bir bilgisayar kilit açma denetimi zaten yapılıyor."
@@ -2425,7 +2399,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir öğeyi başka bir kasaya taşıdığınızda o öğenin güvenli bağlantıları silinir."
+        "Bir öğeyi başka bir kasaya taşıdığınızda güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -4567,20 +4541,6 @@
     "Medium": {
       "Plus": [
         "Plus"
-      ]
-    },
-    "Menu": {
-      "Edit": [
-        "Düzenle"
-      ],
-      "File": [
-        "Dosya"
-      ],
-      "View": [
-        "Görüntüle"
-      ],
-      "Window": [
-        "Pencere"
       ]
     },
     "Message": {

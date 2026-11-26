@@ -3590,13 +3590,13 @@
         "Alt yazı hizmeti görüşmenin sesini kullanır. Alt yazılar yalnızca sizin tarafınızdan görülebilir ve kaydedilmez."
       ],
       "The host has another meeting in progress.": [
-        "Toplantı sahibinin şu anda devam eden başka bir toplantısı var."
+        "Görüşme sahibinin şu anda süren başka bir görüşmesi var."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Görüşme sahibi sizi bu görüşmeden çıkardı. Bir yanlışlık olduğunu düşünüyorsanız görüşme sahibinden sizi yeniden davet etmesini isteyin."
       ],
       "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
-        "Toplantı sahibi şu anda toplantıda değil. Toplantı sahibi katıldığında katılımcı sayıları tekrar eşleşecektir."
+        "Görüşme sahibi şu anda görüşmede yok. Görüşme sahibi katıldığında katılımcı sayıları yeniden eşleşir."
       ],
       "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
         "Bu tarayıcı ${ MEET_APP_NAME } uygulamasının her toplantıyı korumak için kullandığı uçtan uca şifrelemeyi desteklemiyor."
@@ -3647,7 +3647,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ],
       "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
         "Katılmak için farklı bir tarayıcı, aygıt veya telefonunuzdaki ${ MEET_APP_NAME } uygulamasını kullanın."
@@ -3802,7 +3802,7 @@
     },
     "Label": {
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Hesap parolası"
+        "${ BRAND_NAME } hesabı parolası"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -4702,6 +4702,9 @@
       ],
       "Can’t join from this browser": [
         "Bu tarayıcıdan katılamazsınız"
+      ],
+      "Captcha": [
+        "Captcha"
       ],
       "Chat": [
         "Sohbet"

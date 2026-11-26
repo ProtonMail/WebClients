@@ -10182,9 +10182,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: وصول کنندہ پلیٹ فارمز سے درخواست کی جاتی ہے کہ وہ غیر مجاز ای میلز کو مسترد کر دیں۔"
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ totalCount } میں سے ${ relevantCount }"
-      ],
       "${ remainingAddresses.length } more": [
         "مزید ${ remainingAddresses.length }",
         "مزید ${ remainingAddresses.length }"
@@ -12316,9 +12313,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "براہِ کرم کسی اور ادائیگی کے طریقے سے دوبارہ کوشش کریں، یا اپنے بینک سے رابطہ کریں۔"
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "براہِ کرم اپ گریڈ کریں تاکہ درآمد مکمل ہو سکے۔"
-      ],
       "Please use another browser or download the file.": [
         "براہِ کرم کوئی اور براؤزر استعمال کریں یا فائل ڈاؤن لوڈ کریں۔"
       ],
@@ -13384,9 +13378,6 @@
       ],
       "We'll email you when your import is complete.": [
         "درآمد مکمل ہونے پر ہم آپ کو ای میل کریں گے۔"
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "درآمد مکمل ہونے پر ہم آپ کو ای میل کریں گے۔ آپ کی فائلیں ${ DRIVE_APP_NAME } کے ایک فولڈر میں نظر آئیں گی۔"
       ],
       "We'll get back to you shortly.": [
         "ہم جلد آپ سے رابطہ کریں گے۔"
@@ -23707,6 +23698,9 @@
       "Disabled": [
         "غیر فعال"
       ],
+      "Enabled": [
+        "فعال"
+      ],
       "finalizing": [
         "مکمل کیا جا رہا ہے"
       ],
@@ -24484,9 +24478,6 @@
       ],
       "Free forever": [
         "ہمیشہ کے لیے مفت"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "اپنی فائلیں اور فولڈر Google Drive سے درآمد کریں اور انہیں ${ DRIVE_APP_NAME } میں نجی رکھیں۔"
       ],
       "per month, billed annually": [
         "فی مہینہ، سالانہ بلنگ کے ساتھ"
@@ -26161,9 +26152,6 @@
       "Import started": [
         "درآمد شروع ہو گئی"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "درآمد شروع ہو گئی، لیکن اس درآمد کے لیے آپ کا اسٹوریج کافی نہیں ہوگا"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } کے ذریعے درآمد"
       ],
@@ -27037,9 +27025,6 @@
       ],
       "Warning: suspected fake website": [
         "انتباہ: مشکوک جعلی ویب سائٹ"
-      ],
-      "We could not find anything to import": [
-        "درآمد کرنے کے لیے کچھ نہیں ملا۔"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "یہ یقینی بنانے کے لیے کہ یہ آپ ہی ہیں، ہم نے آپ کے ای میل پر ایک کوڈ بھیجا ہے۔ یہ کوڈ 10 منٹ کے لیے درست رہے گا۔ براہِ کرم اسے نیچے درج کریں۔"

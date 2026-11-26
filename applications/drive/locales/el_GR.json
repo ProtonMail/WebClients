@@ -581,9 +581,6 @@
       "Hide more benefits": [
         "Απόκρυψη περισσότερων οφελών"
       ],
-      "Ignore": [
-        "Αγνόηση"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Η εικόνα απέτυψε να φορτωθεί με προστασία παρακολούθησης."
       ],
@@ -5115,6 +5112,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } lost access to your Google Drive. Reconnect to continue the import.": [
+        "Το ${ BRAND_NAME } έχασε την πρόσβαση στο Google Drive σας. Συνδεθείτε ξανά για να συνεχίσετε την εισαγωγή."
+      ],
       "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
         "Το ${ BRAND_NAME } χρησιμοποιεί αυτήν την πρόσβαση μόνο για την εισαγωγή. Η Google δεν έχει ποτέ πρόσβαση στον λογαριασμό σας ${ BRAND_NAME }."
       ],
@@ -5162,6 +5162,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } επαφή",
         "${ contactsLength } επαφές"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } από ${ total }"
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Τα αρχεία ${ DOCS_APP_NAME } και ${ SHEETS_APP_NAME } δεν μπορούν να ληφθούν απευθείας και δε θα συμπεριληφθούν σε αυτή τη λήψη. Μπορείτε να κατεβάσετε τα άλλα αρχεία κάνοντας κλικ στο \"Συνέχεια λήψης\"."
@@ -5412,6 +5415,9 @@
       ],
       "Already in your library": [
         "Ήδη στη βιβλιοθήκη σας"
+      ],
+      "Already upgraded? ${ resumeSettingsLink }": [
+        "Έχετε ήδη κάνει αναβάθμιση; ${ resumeSettingsLink }"
       ],
       "Also try looking in Trash.": [
         "Δοκιμάστε επίσης αναζήτηση στα Διαγραμμένα."
@@ -5804,6 +5810,9 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Μόνο αρχεία (όχι φωτογραφίες, ${ DOCS_APP_NAME } ή ${ SHEETS_APP_NAME }) - έως 100 GB συνολικά, 100.000 αρχεία και 50 GB ανά αρχείο"
       ],
+      "Find your files": [
+        "Βρείτε τα αρχεία σας"
+      ],
       "Folder will not be uploaded": [
         "Ο φάκελος δεν θα μεταφορτωθεί"
       ],
@@ -5878,9 +5887,6 @@
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Αν αφαιρέσετε τον εαυτό σας, θα χάσετε την πρόσβαση στο \"${ fileName }\" και δε θα μπορείτε να το ανοίξετε ξανά εκτός αν ο κάτοχος το μοιραστεί μαζί σας."
-      ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Αν έχετε ήδη κάνει αναβάθμιση, μπορείτε να συνεχίσετε τη διαδικασία εισαγωγής στην ενότητα ${ easySwitchSettingsLink }. Μπορείτε επίσης να την ακυρώσετε από εκεί."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
@@ -6333,9 +6339,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Παρακαλούμε κάντε αναβάθμιση για να διασφαλίσετε ότι η εισαγωγή θα ολοκληρωθεί με επιτυχία."
-      ],
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
@@ -6449,6 +6452,9 @@
       ],
       "Running diagnostics...": [
         "Εκτέλεση διαγνωστικών..."
+      ],
+      "Runs in the background": [
+        "Εκτελείται στο παρασκήνιο"
       ],
       "Saving...": [
         "Αποθήκευση..."
@@ -6648,6 +6654,9 @@
       ],
       "There is nothing to see here": [
         "Δεν υπάρχει τίποτα να δείτε εδώ"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Θα βρίσκονται σε έναν νέο φάκελο στο Τα αρχεία μου."
       ],
       "Thinking about this": [
         "Το σκέφτομαι αυτό"
@@ -6938,9 +6947,6 @@
       "We'll email you when your import is complete.": [
         "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί η εισαγωγή σας."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Θα σας στείλουμε μήνυμα ηλεκτρονικού ταχυδρομείου όταν ολοκληρωθεί η εισαγωγή σας. Τα αρχεία σας θα εμφανιστούν σε έναν φάκελο στο ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Θα επικοινωνήσουμε μαζί σας σύντομα."
       ],
@@ -6952,6 +6958,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Αντιγράφουμε τα αρχεία σας από το Google Drive στο ${ DRIVE_APP_NAME }."
       ],
       "Week": [
         "Εβδομάδα"
@@ -7035,9 +7044,6 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Χρησιμοποιείτε περισσότερο χώρο αποθήκευσης από αυτόν που περιλαμβάνεται σε ένα πλάνο ${ downgradedPlanName }. Παρακαλούμε διαγράψτε ή αφαιρέστε δεδομένα για να υποβαθμίσετε."
       ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Μπορείτε επίσης να ακυρώσετε την εισαγωγή σας μέσω του ${ easySwitchSettingsLink }."
-      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }."
       ],
@@ -7049,6 +7055,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Στο μεταξύ, μπορείτε να κλείσετε την καρτέλα ή το πρόγραμμα περιήγησης."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Μπορείτε να κλείσετε αυτό το παράθυρο και να συνεχίσετε να χρησιμοποιείτε το ${ DRIVE_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
@@ -7199,11 +7208,11 @@
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Το Google Drive σας μπορεί να είναι κενό ή να περιέχει μόνο αρχεία που δεν υποστηρίζονται."
       ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Η εισαγωγή σας έχει αποκλειστεί. Κάντε αναβάθμιση τώρα για να μεταφέρετε τα υπόλοιπα αρχεία σας."
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Η εισαγωγή σας έχει ξεκινήσει, αλλά θα διακοπεί όταν γεμίσει ο αποθηκευτικός σας χώρος. Κάντε αναβάθμιση τώρα για να μεταφέρετε όλα τα αρχεία σας."
       ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Η εισαγωγή σας βρίσκεται σε παύση επειδή χάθηκε η πρόσβαση στον λογαριασμό Google σας. Συνδεθείτε ξανά για να μεταφέρετε και τα υπόλοιπα αρχεία σας."
+      "Your import is paused. Upgrade now to bring the rest of your files over.": [
+        "Η εισαγωγή σας έχει τεθεί σε παύση. Κάντε αναβάθμιση τώρα για να μεταφέρετε τα υπόλοιπα αρχεία σας."
       ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
@@ -8159,6 +8168,9 @@
       "Albums": [
         "Άλμπουμ"
       ],
+      "Cancel your import in settings": [
+        "Ακυρώστε την εισαγωγή σας στις ρυθμίσεις"
+      ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
       ],
@@ -8239,6 +8251,9 @@
       ],
       "Resume now": [
         "Συνέχιση τώρα"
+      ],
+      "Resume or cancel your import in settings": [
+        "Συνεχίστε ή ακυρώστε την εισαγωγή σας στις ρυθμίσεις"
       ],
       "settings": [
         "ρυθμίσεις"
@@ -9376,11 +9391,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε έγγραφα με διατερματική κρυπτογράφηση."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε υπολογιστικά φύλλα με διατερματική κρυπτογράφηση."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει ${ serversAndCountries }, υψηλότερες ταχύτητες VPN, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, κακόβουλο λογισμικό και πρόγραμμα αποκλεισμού διαφημίσεων, γρήγορες λήψεις BitTorrent και πολλά άλλα."
@@ -9685,6 +9706,10 @@
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } στοιχείο απέτυχε να μετακινηθεί στον κάδο απορριμμάτων",
         "${ errors.length } στοιχεία απέτυχαν να μετακινηθούν στον κάδο απορριμμάτων"
+      ],
+      "${ failedCount } item failed to be recovered": [
+        "${ failedCount } στοιχείο απέτυχε να ανακτηθεί",
+        "${ failedCount } στοιχεία απέτυχαν να ανακτηθούν"
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } αντιγραμμένο στοιχείο μετακινήθηκε στον κάδο απορριμμάτων",
@@ -12041,9 +12066,6 @@
       "Albums you've shared will appear here": [
         "Τα άλμπουμ που έχετε μοιραστεί θα εμφανίζονται εδώ"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Εισαγάγετε τα αρχεία και τους φακέλους σας από το Google Drive και διατηρήστε τα ιδιωτικά στο ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Κοινοποιήθηκε από τον/την ${ sharedBy }"
       ],
@@ -12435,6 +12457,9 @@
       "Cannot add more addresses": [
         "Αδυναμία προσθήκης περισσότερων διευθύνσεων"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
@@ -12633,9 +12658,6 @@
       "Drop to upload": [
         "Αποθέστε εδώ για ανέβασμα"
       ],
-      "Easy switch": [
-        "Easy switch"
-      ],
       "Easy Switch from Google Drive": [
         "Εύκολη Εναλλαγή από το Google Drive"
       ],
@@ -12776,9 +12798,6 @@
       "Import started": [
         "Η εισαγωγή ξεκίνησε"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Η εισαγωγή ξεκίνησε, αλλά ο αποθηκευτικός σας χώρος δεν θα επαρκεί για αυτή την εισαγωγή."
-      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Εισήχθη από ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -12908,6 +12927,9 @@
       "Notes": [
         "Σημειώσεις"
       ],
+      "Nothing to import": [
+        "Δεν υπάρχει κάτι για εισαγωγή"
+      ],
       "Number of downloads": [
         "Αριθμός λήψεων"
       ],
@@ -12994,9 +13016,6 @@
       ],
       "Recommended actions": [
         "Συνιστώμενες ενέργειες"
-      ],
-      "Reconnect to finish your import": [
-        "Συνδεθείτε ξανά για να ολοκληρώσετε την εισαγωγή σας"
       ],
       "Reconnect your account": [
         "Επανασύνδεση του λογαριασμού σας"
@@ -13260,9 +13279,6 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
-      "We could not find anything to import": [
-        "Δεν μπορέσαμε να βρούμε τίποτα για εισαγωγή."
-      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι ο χρήστης ${ author } δημιούργησε αυτό το αρχείο."
       ],
@@ -13353,6 +13369,9 @@
       "Your import is in progress": [
         "Η εισαγωγή σας βρίσκεται σε εξέλιξη."
       ],
+      "Your import was interrupted": [
+        "Η εισαγωγή σας διακόπηκε"
+      ],
       "Your plan": [
         "Το πακέτο σας"
       ],
@@ -13395,6 +13414,12 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Προσθέστε μια μέθοδο ανάκτησης δεδομένων για να ξεκλειδώσετε τα δεδομένα σας, σε περίπτωση που ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή έναν αριθμό τηλεφώνου ανάκτησης, ώστε να μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας αν τον ξεχάσετε."
+      ],
       "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
         "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
       ],
@@ -13406,6 +13431,9 @@
       ],
       "Change shared item settings": [
         "Αλλαγή ρυθμίσεων κοινόχρηστου στοιχείου"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Δημιουργήστε μια φράση ανάκτησης, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας αν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
       "Customize import to reduce the number of folders": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
@@ -13433,6 +13461,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Δημιουργήστε μια φράση ανάκτησης για να προστατεύσετε τον λογαριασμό σας από απώλεια δεδομένων."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
@@ -13464,6 +13495,9 @@
       "Show side panel": [
         "Εμφάνιση πλαϊνού πλαισίου"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Ορισμένα από τα δεδομένα σας είναι κλειδωμένα. Χρησιμοποιήστε μια μέθοδο ανάκτησης για να τα ξεκλειδώσετε."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
       ],
@@ -13493,6 +13527,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Τους στείλαμε μια πρόσκληση για πρόσβαση στο στοιχείο."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Το αρχείο αποκατάστασής σας δεν είναι ενημερωμένο. Κατεβάστε ένα νέο, ώστε να μπορείτε ακόμα να ανακτήσετε τα δεδομένα σας."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Η φράση ανάκτησής σας δεν είναι πλέον έγκυρη. Αποκτήστε μια νέα, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας."
       ]
     },
     "tooltip": {

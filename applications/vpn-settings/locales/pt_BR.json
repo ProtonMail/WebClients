@@ -1259,7 +1259,7 @@
         "Restaurar"
       ],
       "Restrict sign-in": [
-        "Restringir o login"
+        "Restringir o início de sessão"
       ],
       "Resume membership": [
         "Continuar a adesão"
@@ -3893,6 +3893,11 @@
         "/usuário por mês"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Faça o upgrade para ativar o ${ DARK_WEB_MONITORING_NAME }"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Desconhecido"
@@ -5131,6 +5136,9 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
+      "Add and verify a custom domain to create service accounts.": [
+        "Adicione e verifique um domínio personalizado para criar contas de serviço."
+      ],
       "Address cannot be yours": [
         "Endereço não pode ser seu"
       ],
@@ -5587,6 +5595,9 @@
       ],
       "The policy name must be between 3 and 40 characters.": [
         "O nome da política deve ter entre 3 e 40 caracteres."
+      ],
+      "The service account address is unavailable. Please try again.": [
+        "O endereço de conta de serviço está indisponível. Tente novamente."
       ],
       "The session has expired. Please try again.": [
         "A sessão expirou. Tente novamente."
@@ -7469,6 +7480,9 @@
       "active": [
         "ativo"
       ],
+      "Active service accounts have a valid access token. Service accounts without a token or manager are marked accordingly.": [
+        "As contas de serviço ativas possuem um token de acesso válido. As contas de serviço sem token ou sem gerente são identificadas como tal."
+      ],
       "Activity Monitor": [
         "Monitor de atividades"
       ],
@@ -7489,6 +7503,9 @@
       ],
       "add a recovery method": [
         "adicionar um método de recuperação"
+      ],
+      "Add additional users from your organization to manage this service account.": [
+        "Adicione outros usuários da sua organização para gerenciar esta conta de serviço."
       ],
       "Add an email address in case we need to contact you": [
         "Adicione um endereço de e-mail para entrar em contato com você"
@@ -7735,19 +7752,19 @@
         "Ao sair agora, as alterações não podem ser salvas"
       ],
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com **${ primaryEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com **${ primaryEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário **${ username }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário **${ username }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Você pode acessar sua sessão ativa?"
@@ -9240,6 +9257,9 @@
       "The securest way to browse, stream, and be online.": [
         "A maneira mais segura de navegar, transmitir e estar online."
       ],
+      "The service account was created. Retry saving to finish setting up its keys and managers.": [
+        "A conta de serviço foi criada. Tente novamente finalizar a configuração de suas chaves e gestores."
+      ],
       "The unpublished changes you made will be lost.": [
         "As alterações não publicadas que você fez serão perdidas."
       ],
@@ -9275,6 +9295,9 @@
       ],
       "This data recovery method requires a password reset option (email or SMS)": [
         "Este método de recuperação de dados requer uma opção de redefinição de senha (e-mail ou SMS)"
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Esse recurso não é suportado no seu plano. Entre em contato com seu administrador para obter acesso."
       ],
       "This file is too large to preview": [
         "Este arquivo é muito grande para visualizar"
@@ -9419,6 +9442,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Para ajudar a manter sua conta segura, queremos garantir que é realmente você tentando iniciar sessão."
@@ -9721,19 +9747,19 @@
         "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
       ],
       "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Com o login restrito, você só pode entrar com o e-mail **${ primaryEmail }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+        "Com início de sessão restrito, você só pode entrar com o e-mail **${ primaryEmail }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
       ],
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Com o login restrito, você só pode entrar com o nome de usuário **${ username }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+        "Com início de sessão restrito, você só pode entrar com o nome de usuário **${ username }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
+        "Com início de sessão restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quando o acesso estiver restrito, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**. Seus outros endereços de e-mail não poderão ser usados para entrar."
+        "Quando o acesso estiver restrito, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**. Seus outros endereços de e-mail não poderão ser usados para iniciar sessão."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
+        "Com início de sessão restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
@@ -11129,13 +11155,13 @@
         "Exigir a verificação da senha"
       ],
       "Restrict sign-in to email address": [
-        "Restringir o login ao endereço de e-mail"
+        "Restringir o início de sessão ao endereço de e-mail"
       ],
       "Restrict sign-in to username": [
-        "Restringir o login ao nome de usuário"
+        "Restringir o início de sessão ao nome de usuário"
       ],
       "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
-        "Restringir o login ao nome de usuário e aos endereços ${ BRAND_NAME } correspondentes"
+        "Restringir o início de sessão ao nome de usuário e aos endereços ${ BRAND_NAME } correspondentes"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -16975,6 +17001,12 @@
       "Disable recovery by phone": [
         "Desativar recuperação por telefone"
       ],
+      "Disabled": [
+        "Desativado"
+      ],
+      "Enabled": [
+        "Ativado"
+      ],
       "failed": [
         "falhou"
       ],
@@ -18359,6 +18391,9 @@
       "Cannot add more users": [
         "Não é possível adicionar mais usuários"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verificação do cartão"
       ],
@@ -19147,7 +19182,7 @@
         "Restaurar os privilégios de administrador"
       ],
       "Restrict sign-in?": [
-        "Restringir o login?"
+        "Restringir o início de sessão?"
       ],
       "Reverse charge not supported": [
         "Carregamento reverso não suportado"
@@ -19834,6 +19869,13 @@
       ],
       "Your DKIM signing is working.": [
         "A sua assinatura DKIM está funcionando."
+      ],
+      "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
+        "A sua organização atingiu o limite de ${ maxServiceAccounts } conta de serviço.",
+        "A sua organização atingiu o limite de ${ maxServiceAccounts } contas de serviço."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Sua frase de recuperação está desatualizada. Obtenha uma nova para que você ainda possa recuperar seus dados."
       ]
     },
     "tooltip": {
@@ -20343,6 +20385,9 @@
       ],
       "10 years": [
         "10 anos"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
       ],
       "Calendars": [
         "Calendários"

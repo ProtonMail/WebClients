@@ -219,6 +219,9 @@
       "Reminder": [
         "Påminnelse"
       ],
+      "Reset member password": [
+        "Tilbakestill medlemspassord"
+      ],
       "Restrict app access": [
         "Begrens apptilgang"
       ],
@@ -16957,6 +16960,12 @@
       "Disable recovery by phone": [
         "Deaktiver gjenoppretting via telefon"
       ],
+      "Disabled": [
+        "Deaktivert"
+      ],
+      "Enabled": [
+        "Aktivert"
+      ],
       "failed": [
         "mislyktes"
       ],
@@ -19625,6 +19634,12 @@
       "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
         "En endring på Gmail-siden blokkerer ${ BRAND_NAME } fra å koble til. Gi tillatelse til å gjenopprette e-postfunksjonaliteten"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Legg til en datagjenopprettingsmetode for å låse opp dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Legg til en e-postadresse eller telefon for gjenoppretting slik at du kan tilbakestille passordet ditt hvis du glemmer det."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Lagt til i planen din: ${ mergedAddonTitles }"
       ],
@@ -19663,6 +19678,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lag en gjenopprettingsfrase slik at du kan gjenopprette dataene dine hvis du glemmer passordet ditt."
       ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"
@@ -19705,6 +19723,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "For eksempel **passord, qwerty** osv."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generer en gjenopprettingsfrase for å beskytte kontoen din mot tap av data."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
@@ -19756,6 +19777,9 @@
       ],
       "Shared server policies can be applied to individual users or groups": [
         "Retningslinjer for delte servere kan brukes på enkeltbrukere eller grupper"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Noen av dataene dine er låst. Bruk en gjenopprettingsmetode for å låse de opp."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO"
@@ -19817,6 +19841,12 @@
       "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
         "Din organisasjon har nådd grensen på ${ maxServiceAccounts } tjenestekonto.",
         "Din organisasjon har nådd grensen på ${ maxServiceAccounts } tjenestekontoer."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Last ned en ny slik at du fortsatt kan gjenopprette dataene dine."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Skaff deg en ny slik at du fortsatt kan gjenopprette dataene dine."
       ]
     },
     "tooltip": {

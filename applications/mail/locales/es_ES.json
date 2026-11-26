@@ -1096,6 +1096,9 @@
       "Open debug menu": [
         "Abrir menú de depuración"
       ],
+      "Open Mailing lists": [
+        "Abrir listas de correos"
+      ],
       "Open navigation": [
         "Abrir la navegación"
       ],
@@ -1597,9 +1600,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Clave de confianza"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -1644,6 +1644,10 @@
       ],
       "Unsubscribe": [
         "Cancelar suscripción"
+      ],
+      "Unsubscribe from ${ selectedCount }": [
+        "Cancelar suscripción de ${ selectedCount }",
+        "Cancelar suscripción de ${ selectedCount }"
       ],
       "Unsubscribed": [
         "Se ha cancelado la suscripción."
@@ -7565,6 +7569,9 @@
       "Balance from your previous subscription": [
         "Saldo de tu suscripción anterior"
       ],
+      "Based only on which emails you've opened.": [
+        "Basado solo en los emails que has abierto."
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén activados o no en la configuración."
       ],
@@ -8048,7 +8055,7 @@
         "archivos adjuntos"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos de 50 GB cada uno"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Los filtros funcionan en todos los correos electrónicos, incluidos los entrantes o enviados. Cada filtro debe contener al menos un nombre, una condición y una acción."
@@ -8471,6 +8478,9 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Mover los correos con códigos de un solo uso a la papelera al copiarlos"
+      ],
+      "Move their past emails to Archive. You can still search them.": [
+        "Archivar correos electrónicos viejos. Puedes seguir encontrándolos."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -9646,6 +9656,10 @@
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Hemos bloqueado a los siguientes anunciantes y organizaciones para que no vean cuándo abres este correo electrónico, qué dispositivo usas y dónde te encuentras."
       ],
+      "We brought over ${ count } newsletter and grouped them by sender. See how often each one emails you, then keep, move or unsubscribe with a click.": [
+        "Encontramos alrededor de ${ count } boletín informativo y lo agrupamos por remitente. Revisa la frecuencia de sus emails y luego guárdalos, muévelos o cancela la subscripción con un clic.",
+        "Encontramos alrededor de ${ count } boletines y los agrupamos por remitente. Revisa la frecuencia de sus correos electrónicos y luego guárdalos, muévelos o cancela tu suscripción con un solo clic."
+      ],
       "We cannot enable message content search in this browser.": [
         "No podemos activar la búsqueda de contenido de los mensajes en este navegador."
       ],
@@ -9690,6 +9704,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un nuevo código de verificación a ${ strong }."
+      ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Hemos agregado los boletines desde su importación de Gmail a Mailing a listas de Correo, agrupados por remitente. Léalos, guárdelos o déjelos en un solo lugar."
       ],
       "Web URL": [
         "URL Web"
@@ -10007,6 +10024,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Tu Gmail se conecta a esta dirección de ${ MAIL_APP_NAME }"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Sus boletines de Gmail están agrupados ahora por remitente, lejos de su correo personal. Léalos, guárdelos o déjelos en un solo lugar."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "El hardware no soporta ejecutar el asistente de escritura. Prueba a ejecutarlo en los servidores."
@@ -13197,9 +13217,16 @@
       ]
     },
     "Newsletter sender stats": {
+      "${ count } email in the last 30 days. Not opened.": [
+        "${ count } email en los últimos 30 días. No abierto.",
+        "${ count } emails en los últimos 30 días. No abiertos."
+      ],
       "${ count } email in the last 30 days. Opened sometimes.": [
         "${ count } correo de los últimos 30 días. Abierto de vez en cuando.",
         "${ count } correos de los últimos 30 días. Abiertos de vez en cuando."
+      ],
+      "No emails in the last 30 days.": [
+        "Sin emails en los últimos 30 días."
       ]
     },
     "ngc_access_banner: action": {
@@ -17056,6 +17083,9 @@
       "Mark messages as unread": [
         "Marcar los mensajes como no leídos"
       ],
+      "Meet Mailing lists": [
+        "Conozca las listas de correos"
+      ],
       "Merge contacts": [
         "Combinar contactos"
       ],
@@ -17184,6 +17214,9 @@
       ],
       "No-reply address detected": [
         "Se ha detectado una dirección de no responder"
+      ],
+      "Not opened in a while": [
+        "No se abrió por un tiempo."
       ],
       "Notes": [
         "Notas"
@@ -17422,6 +17455,9 @@
       "Snooze:": [
         "Posponer:"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "Start a new import": [
         "Iniciar una nueva importación"
       ],
@@ -17571,6 +17607,12 @@
       "You can now create unlimited folders and labels": [
         "Ahora puedes crear carpetas y etiquetas ilimitadas."
       ],
+      "You open these sometimes": [
+        "Los has abierto de vez en cuando."
+      ],
+      "You read these often": [
+        "Los has leído con frecuencia."
+      ],
       "You're in control": [
         "Tú tienes el control"
       ],
@@ -17591,6 +17633,12 @@
       ],
       "Your free trial has ended": [
         "Tu prueba ha terminado."
+      ],
+      "Your Gmail newsletters are here": [
+        "Sus boletines de Gmail están aquí"
+      ],
+      "Your Gmail newsletters, now easier to manage": [
+        "Tus boletines de Gmail ahora son más fáciles de administrar."
       ],
       "Your inbox, automatically organized": [
         "Tu bandeja de entrada, organizada automáticamente"

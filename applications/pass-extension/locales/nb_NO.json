@@ -2625,9 +2625,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -5989,6 +5986,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } does not recommend saving your ${ BRAND_NAME } password only in ${ PASS_APP_NAME }. If you forget it, you won't be able to sign in to ${ PASS_APP_NAME }.": [
+        "${ BRAND_NAME } anbefaler ikke at du lagrer ${ BRAND_NAME }-passordet ditt bare i ${ PASS_APP_NAME }. Hvis du glemmer det, kan du ikke logge inn på ${ PASS_APP_NAME }."
+      ],
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-passord kreves"
       ],

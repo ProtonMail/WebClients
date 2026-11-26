@@ -588,9 +588,6 @@
       "Hide more benefits": [
         "Схаваць больш пераваг"
       ],
-      "Ignore": [
-        "Ігнараваць"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Не ўдалося загрузіць відарыс з уключанай абаронай ад праграм сачэння."
       ],
@@ -6002,9 +5999,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік зможа абагуліць яго з вамі зноў."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Вы можаце ўзнавіць імпарт у ${ easySwitchSettingsLink }, калі ўжо абнавілі тарыфны план. Вы таксама можаце скасаваць яго."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
@@ -6466,9 +6460,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Паўтарыце спробу, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі кліентаў вашага банка."
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Палепшыце, каб пераканацца ў паспяховым завяршэнні імпарту."
       ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
@@ -7079,9 +7070,6 @@
       "We'll email you when your import is complete.": [
         "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана. Вашы файлы з'явяцца ў папцы ў ${ DRIVE_APP_NAME }"
-      ],
       "We'll get back to you shortly.": [
         "Мы звяжамся з вамі ў самы бліжэйшы час."
       ],
@@ -7336,9 +7324,6 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Ваш Google Drive можа быць пусты або змяшчаць толькі файлы, якія не падтрымліваюцца."
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Ваш імпарт заблакіраваны. Абнавіце тарыфны план, каб перанесці астатнія файлы."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
@@ -12402,9 +12387,6 @@
       "Albums you've shared will appear here": [
         "Абагуленыя вамі альбомы з'явяцца тут"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Абагулена ${ sharedBy }"
       ],
@@ -12818,6 +12800,9 @@
       "Cannot add more addresses": [
         "Немагчыма дадаць больш адрасоў"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Праверка карткі"
       ],
@@ -13022,9 +13007,6 @@
       "Drop to upload": [
         "Перацягніце, каб запампаваць"
       ],
-      "Easy switch": [
-        "Лёгкае пераход"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch з Google Drive"
       ],
@@ -13168,9 +13150,6 @@
       ],
       "Import started": [
         "Пачаты імпарт"
-      ],
-      "Import started, but your storage won't be enough for this import": [
-        "Пачалося імпартаванне, але аб'ёму вашага сховішча будзе недастаткова для яго завяршэння."
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпартавана ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -13387,9 +13366,6 @@
       ],
       "Recommended actions": [
         "Рэкамендаваныя дзеянні"
-      ],
-      "Reconnect to finish your import": [
-        "Перападключыцца, каб завяршыць імпарт"
       ],
       "Reconnect your account": [
         "Перападключыць свой уліковы запіс"
@@ -13651,9 +13627,6 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
-      ],
-      "We could not find anything to import": [
-        "Элементы для імпартавання адсутнічаюць"
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "Немагчыма спраўдзіць, што ${ author } стварыў гэты файл."

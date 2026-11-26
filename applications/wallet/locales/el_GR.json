@@ -4410,11 +4410,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε έγγραφα με διατερματική κρυπτογράφηση."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε υπολογιστικά φύλλα με διατερματική κρυπτογράφηση."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει ${ serversAndCountries }, υψηλότερες ταχύτητες VPN, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, κακόβουλο λογισμικό και πρόγραμμα αποκλεισμού διαφημίσεων, γρήγορες λήψεις BitTorrent και πολλά άλλα."
@@ -5745,6 +5751,9 @@
       "Cancel subscription?": [
         "Ακύρωση συνδρομής;"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
@@ -5919,23 +5928,44 @@
         "Σήμερα"
       ]
     },
-    "tooltip": {
-      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
-      ],
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
-      ]
-    },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Προσθέστε μια μέθοδο ανάκτησης δεδομένων για να ξεκλειδώσετε τα δεδομένα σας, σε περίπτωση που ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή έναν αριθμό τηλεφώνου ανάκτησης, ώστε να μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας αν τον ξεχάσετε."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Δημιουργήστε μια φράση ανάκτησης, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας αν ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Δημιουργήστε μια φράση ανάκτησης για να προστατεύσετε τον λογαριασμό σας από απώλεια δεδομένων."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Άμεση βοήθεια με Τεχνητή Νοημοσύνη, ανθρώπινος εμπειρογνώμονας διαθέσιμος!"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Ορισμένα από τα δεδομένα σας είναι κλειδωμένα. Χρησιμοποιήστε μια μέθοδο ανάκτησης για να τα ξεκλειδώσετε."
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Το αρχείο αποκατάστασής σας δεν είναι ενημερωμένο. Κατεβάστε ένα νέο, ώστε να μπορείτε ακόμα να ανακτήσετε τα δεδομένα σας."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Η φράση ανάκτησής σας δεν είναι πλέον έγκυρη. Αποκτήστε μια νέα, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας."
+      ]
+    },
+    "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
+      ],
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Unknown sender": {

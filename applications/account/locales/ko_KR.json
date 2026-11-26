@@ -2360,6 +2360,9 @@
       "Managed Service Provider": [
         "관리 중인 서비스 제공자"
       ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Managed Service Provider 애드온이 있는 조직은 자회사 조직을 만들고 관리할 수 있습니다."
+      ],
       "Servers": [
         "서버"
       ],
@@ -10009,9 +10012,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: 수신자 플랫폼에 승인되지 않은 이메일을 거부하도록 요청합니다."
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ totalCount }개 중 ${ relevantCount }개"
-      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 더"
       ],
@@ -10101,6 +10101,9 @@
       ],
       "**${ appName }** is not supported.": [
         "**${ appName }**이(가) 지원되지 않습니다."
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }**이 또한 ${ MAIL_APP_NAME } 밖의 다른 ${ BRAND_NAME } 계정 로그인에 사용됩니다."
       ],
       "**Enable automatic backups** for peace of mind": [
         "**자동 백업을 활성화하여** 안심할 수 있어요"
@@ -11863,6 +11866,9 @@
       "No payment is required at this time.": [
         "현재는 결제가 필요없습니다."
       ],
+      "No payment is required.": [
+        "결제 필요 없음."
+      ],
       "No results found": [
         "결과를 찾을 수 없음"
       ],
@@ -12093,9 +12099,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "다른 결제 수단을 사용하거나, 은행에 연락하세요."
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "불러오기를 성공적으로 완료하려면 저장공간을 업그레이드해야합니다."
       ],
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
@@ -13150,9 +13153,6 @@
       "We'll email you when your import is complete.": [
         "불러오기가 완료되면 이메일을 보내드립니다."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "불러오기가 완료되면 이메일로 알려드립니다. 불러온 파일은 ${ DRIVE_APP_NAME }의 폴더에서 찾을 수 있습니다."
-      ],
       "We'll get back to you shortly.": [
         "곧 돌아오겠습니다."
       ],
@@ -13608,6 +13608,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "무료 체험이 월간 구독으로 성공적으로 전환되었습니다. 회원님의 구독 갱신일은 ${ nextBillingDate }입니다."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Gmail이 이 ${ MAIL_APP_NAME } 주소에 연결됩니다"
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Drive 저장공간이 비어있거나 지원되지 않는 파일로 구성되어 있습니다."
@@ -23316,6 +23319,9 @@
       "Disabled": [
         "비활성화됨"
       ],
+      "Enabled": [
+        "활성화됨"
+      ],
       "finalizing": [
         "마무리 중"
       ],
@@ -25728,9 +25734,6 @@
       "Import started": [
         "불러오기가 시작되었습니다."
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "불러오기가 시작되었습니다. 저장공간이 부족하여 모든 파일을 불러올 수 없습니다."
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }로 불러오기"
       ],
@@ -26361,6 +26364,9 @@
       "Spam, block, and allow lists": [
         "스팸, 차단 및 허용 리스트"
       ],
+      "Special offer": [
+        "특별 제안"
+      ],
       "Special Offer": [
         "특가"
       ],
@@ -26603,9 +26609,6 @@
       ],
       "Warning: suspected fake website": [
         "경고: 가짜 웹 사이트일 수 있음"
-      ],
-      "We could not find anything to import": [
-        "불러올 파일이 없습니다"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "본인 확인을 위해 이메일로 코드를 발송했습니다. 이 코드는 10분 동안 유효합니다. 아래에 입력해 주세요."

@@ -909,32 +909,6 @@
         "Valv"
       ]
     },
-    "App menu": {
-      "Back": [
-        "Tillbaka"
-      ],
-      "Force Reload": [
-        "Tvinga omladdning"
-      ],
-      "Reload": [
-        "Ladda om"
-      ],
-      "Show logs": [
-        "Visa loggar"
-      ],
-      "Speech": [
-        "Tal"
-      ],
-      "Start ${ PASS_APP_NAME } at login": [
-        "Starta ${ PASS_APP_NAME } vid inloggning"
-      ],
-      "Toggle developers tools": [
-        "Slå på/av utvecklarverktyg"
-      ],
-      "Uninstall ${ PASS_APP_NAME }": [
-        "Avinstallera ${ PASS_APP_NAME }"
-      ]
-    },
     "Browser": {
       "${ appName } Desktop application": [
         "Applikation för stationär dator ${ appName }"
@@ -2413,7 +2387,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer radera dess säkra länkar."
+        "Flyttning av ett objekt till annat valv kommer radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -4526,20 +4500,6 @@
     "Medium": {
       "Plus": [
         "Plus"
-      ]
-    },
-    "Menu": {
-      "Edit": [
-        "Redigera"
-      ],
-      "File": [
-        "Fil"
-      ],
-      "View": [
-        "Visa"
-      ],
-      "Window": [
-        "Fönster"
       ]
     },
     "Message": {

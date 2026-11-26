@@ -1830,7 +1830,7 @@
         "Restaurar"
       ],
       "Restrict sign-in": [
-        "Restringir o login"
+        "Restringir o início de sessão"
       ],
       "Resume": [
         "Retomar"
@@ -5416,6 +5416,11 @@
         "A cada ${ interval } dias, ${ untilString }"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Faça o upgrade para ativar o ${ DARK_WEB_MONITORING_NAME }"
+      ]
+    },
     "Dashboard": {
       "Communicate and schedule with end-to-end encryption.": [
         "Comunique-se e agende com criptografia de ponta a ponta."
@@ -7376,6 +7381,9 @@
       "Activation failed. The details may be incorrect, or the email is already active. Please check your input or sign in.": [
         "A ativação falhou. Os detalhes podem estar incorretos ou o e-mail já está ativo. Verifique os dados inseridos ou inicie sessão."
       ],
+      "Add and verify a custom domain to create service accounts.": [
+        "Adicione e verifique um domínio personalizado para criar contas de serviço."
+      ],
       "Add at least one action": [
         "Adicione pelo menos uma ação"
       ],
@@ -8182,6 +8190,9 @@
       ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
+      ],
+      "The service account address is unavailable. Please try again.": [
+        "O endereço de conta de serviço está indisponível. Tente novamente."
       ],
       "The session has expired. Please sign in again.": [
         "Sua sessão expirou. Inicie a sessão novamente."
@@ -10420,6 +10431,9 @@
         "${ countriesCount } país ativado",
         "${ countriesCount } países ativados"
       ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
       "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
         "${ DataLockedText }, mas recuperável com o seu ${ RecoveryContactsLink }:"
       ],
@@ -10593,9 +10607,6 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } de ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } a mais",
@@ -10790,6 +10801,9 @@
       "active": [
         "ativo"
       ],
+      "Active service accounts have a valid access token. Service accounts without a token or manager are marked accordingly.": [
+        "As contas de serviço ativas possuem um token de acesso válido. As contas de serviço sem token ou sem gerente são identificadas como tal."
+      ],
       "Activity Monitor": [
         "Monitor de atividades"
       ],
@@ -10813,6 +10827,9 @@
       ],
       "add a recovery method": [
         "adicionar um método de recuperação"
+      ],
+      "Add additional users from your organization to manage this service account.": [
+        "Adicione outros usuários da sua organização para gerenciar esta conta de serviço."
       ],
       "Add additional users to **${ company.name }** from your organization to manage this company.": [
         "Adicione outros usuários da sua organização à **${ company.name }** para gerenciar esta empresa."
@@ -11222,19 +11239,19 @@
         "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder a ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
       ],
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com **${ primaryEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com **${ primaryEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário **${ username }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário **${ username }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
-        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**."
+        "Ao ativar esta opção, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Você pode acessar sua sessão ativa?"
@@ -12830,9 +12847,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Faça upgrade para garantir que a importação seja concluída com sucesso."
-      ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
       ],
@@ -12985,6 +12999,9 @@
       ],
       "Right to Left": [
         "Direita para esquerda"
+      ],
+      "Runs in the background": [
+        "Executa em segundo plano"
       ],
       "SAML configuration saved": [
         "Configuração do SAML salva"
@@ -13377,6 +13394,9 @@
       "The securest way to browse, stream, and be online.": [
         "A maneira mais segura de navegar, transmitir e estar online."
       ],
+      "The service account was created. Retry saving to finish setting up its keys and managers.": [
+        "A conta de serviço foi criada. Tente novamente finalizar a configuração de suas chaves e gestores."
+      ],
       "The unpublished changes you made will be lost.": [
         "As alterações não publicadas que você fez serão perdidas."
       ],
@@ -13418,6 +13438,9 @@
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Este recurso atrasa o envio dos seus e-mails, dando-lhe a oportunidade de desfazer o envio durante o tempo selecionado."
+      ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Esse recurso não é suportado no seu plano. Entre em contato com seu administrador para obter acesso."
       ],
       "This file is too large to preview": [
         "Este arquivo é muito grande para visualizar"
@@ -13625,6 +13648,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "Para ajudar a manter sua conta segura, queremos garantir que é realmente você tentando iniciar sessão."
@@ -14001,9 +14027,6 @@
       "We'll email you when your import is complete.": [
         "Enviaremos um e-mail quando sua importação estiver concluída."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Enviaremos um e-mail quando a importação for concluída. Seus arquivos aparecerão em uma pasta no ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Nós entraremos em contato com você em breve."
       ],
@@ -14018,6 +14041,9 @@
       ],
       "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
         "Estamos criando uma nova forma de gerenciar sua organização e buscamos usuários com perfis específicos para testar uma versão inicial em uma videochamada. Quer saber se você se encaixa? Responda a algumas perguntas rápidas para conferir se pode participar."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Estamos copiando seus arquivos do Google Drive para ${ DRIVE_APP_NAME }."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Percebemos que alguns usuários não resgataram suas contas da ${ BRAND_NAME }."
@@ -14065,19 +14091,19 @@
         "Quando as notificações estão ativas, enviaremos um alerta para seu endereço de recuperação se você tiver novas mensagens na sua conta ${ MAIL_APP_NAME }."
       ],
       "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Com o login restrito, você só pode entrar com o e-mail **${ primaryEmail }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+        "Com início de sessão restrito, você só pode entrar com o e-mail **${ primaryEmail }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
       ],
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Com o login restrito, você só pode entrar com o nome de usuário **${ username }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+        "Com início de sessão restrito, você só pode entrar com o nome de usuário **${ username }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
+        "Com início de sessão restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quando o acesso estiver restrito, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**. Seus outros endereços de e-mail não poderão ser usados para entrar."
+        "Quando o acesso estiver restrito, você só poderá iniciar sessão com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**. Seus outros endereços de e-mail não poderão ser usados para iniciar sessão."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
+        "Com início de sessão restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
@@ -16609,13 +16635,13 @@
         "Endereço de e-mail reservado"
       ],
       "Restrict sign-in to email address": [
-        "Restringir o login ao endereço de e-mail"
+        "Restringir o início de sessão ao endereço de e-mail"
       ],
       "Restrict sign-in to username": [
-        "Restringir o login ao nome de usuário"
+        "Restringir o início de sessão ao nome de usuário"
       ],
       "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
-        "Restringir o login ao nome de usuário e aos endereços ${ BRAND_NAME } correspondentes"
+        "Restringir o início de sessão ao nome de usuário e aos endereços ${ BRAND_NAME } correspondentes"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -24798,6 +24824,9 @@
       "Disabled": [
         "Desativado"
       ],
+      "Enabled": [
+        "Ativado"
+      ],
       "failed": [
         "falhou"
       ],
@@ -25602,9 +25631,6 @@
       ],
       "Free forever": [
         "Gratuito para sempre"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importe seus arquivos e pastas do Google Drive e mantenha-os privados no ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "por mês, com cobrança anual"
@@ -26603,6 +26629,9 @@
       "Cannot add more users": [
         "Não é possível adicionar mais usuários"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verificação do cartão"
       ],
@@ -27402,9 +27431,6 @@
       "Import started": [
         "Importação iniciada"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "A importação começou, mas seu espaço de armazenamento não será suficiente para concluí-la"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27537,6 +27563,9 @@
       "Monthly cost": [
         "Custo mensal"
       ],
+      "More storage needed to finish your import": [
+        "É preciso mais espaço de armazenamento para concluir a importação"
+      ],
       "Multi-user support": [
         "Suporte para múltiplos usuários"
       ],
@@ -27584,6 +27613,9 @@
       ],
       "No need to empty the trash": [
         "Não é necessário esvaziar a lixeira"
+      ],
+      "Nothing to import": [
+        "Nada para importar"
       ],
       "Notifications": [
         "Notificações"
@@ -27844,7 +27876,7 @@
         "Restaurar os privilégios de administrador"
       ],
       "Restrict sign-in?": [
-        "Restringir o login?"
+        "Restringir o início de sessão?"
       ],
       "Reused passwords": [
         "Senhas reutilizadas"
@@ -28335,9 +28367,6 @@
       ],
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
-      ],
-      "We could not find anything to import": [
-        "Não encontramos nada para importar"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Enviamos um código para o seu e-mail para ter certeza de que é você. Este código é válido por 10 minutos. Por favor, insira-o abaixo."
@@ -28923,6 +28952,13 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Sua conta externa pode ter atingido o seu limite de largura de banda de 24 horas. O ${ BRAND_NAME } tentará retomar a importação o mais rápido possível."
+      ],
+      "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
+        "A sua organização atingiu o limite de ${ maxServiceAccounts } conta de serviço.",
+        "A sua organização atingiu o limite de ${ maxServiceAccounts } contas de serviço."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Sua frase de recuperação está desatualizada. Obtenha uma nova para que você ainda possa recuperar seus dados."
       ]
     },
     "tooltip": {
@@ -29526,6 +29562,9 @@
       ],
       "10 years": [
         "10 anos"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
       ],
       "Calendars": [
         "Calendários"

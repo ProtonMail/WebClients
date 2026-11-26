@@ -1096,6 +1096,9 @@
       "Open debug menu": [
         "Öppna felsökningsmeny"
       ],
+      "Open Mailing lists": [
+        "Öppna E-postlistor"
+      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -1596,9 +1599,6 @@
       ],
       "Trust": [
         "Lita på"
-      ],
-      "Trust key": [
-        "Lita på nyckeln"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -5822,7 +5822,7 @@
         "Kryptering misslyckades"
       ],
       "Missing FN property": [
-        "FN-egenskap saknas"
+        "Egenskapen FN saknas"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard-versioner < 3.0 stöds inte"
@@ -7354,6 +7354,13 @@
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Aktivera ${ MAIL_APP_NAME } för att börja ta emot e-post på ${ count } av dina domäner.",
+        "Aktivera ${ MAIL_APP_NAME } för att börja ta emot e-post på ${ count } av dina domäner."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Aktivera ${ MAIL_APP_NAME } för att börja ta emot e-post på ${ domainName }${ activateLink }"
+      ],
       "Activation in progress": [
         "Aktivering pågår"
       ],
@@ -8347,6 +8354,9 @@
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Loggar hjälper oss att förstå vad som hände innan problemet uppstod. De inkluderar app-åtgärder och felmeddelanden, men inget meddelandeinnehåll."
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Sökning efter dokument ${ lookup.result.docId }"
       ],
       "Low Priority": [
         "Låg prioritet"
@@ -9394,7 +9404,7 @@
         "Denna offentliga nyckel kommer automatiskt att användas för att kryptera e-post som skickas till denna adress."
       ],
       "This sender's public key has not been trusted yet.": [
-        "Avsändarens publika nyckel har inte blivit betrodd ännu."
+        "Denna avsändares offentliga nyckel har inte blivit betrodd ännu."
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denna unika kod kan användas av webbplatser och ISP:er (internetleverantörer) för att koppla din plats och surfhistorik till din enhet"
@@ -9433,7 +9443,7 @@
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "För att hjälpa dig hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
+        "För att hjälpa dig att hålla ditt konto säkert, bekräfta att det verkligen är du innan du fortsätter."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
@@ -9457,7 +9467,7 @@
         "För att avsluta prenumeration från denna e-postlista kommer du att tas till följande URL där instruktioner kommer att ges av avsändaren av nyhetsbrevet:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
+        "För att använda Adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Today": [
         "Idag"
@@ -9694,6 +9704,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
       ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "\nVi har lagt till nyhetsbreven från din Gmail-import i e-postlistor, grupperade efter avsändare. Läs, spara eller avsluta prenumerationen – allt på ett och samma ställe."
+      ],
       "Web URL": [
         "Webb-URL"
       ],
@@ -9747,6 +9760,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "Vill du få en ny verifieringskod?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Skriver ${ REALISTIC_ENTRIES } realistiska loggrader som strömmar in under en minut – precis som i en verklig session – istället för att alla dyker upp på en gång. Det tar ungefär en minut att köra. Se till att den här fliken är aktiv; mätningarna pausas nämligen om fliken hamnar i bakgrunden."
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "Skriver realistiska loggrader i tät följd och läser sedan upp dem alla. Visar hur kostnaderna för skrivning respektive läsning/export skalar i förhållande till antalet lagrade poster."
       ],
       "Writing assistant": [
         "Skrivassistent"
@@ -9934,6 +9953,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du kommer inte att få e-post på ${ count } av dina domäner förrän du aktiverar ${ MAIL_APP_NAME }. Du kan göra det när som helst i Inställningar > Domännamn.",
+        "Du kommer inte att få e-post på ${ count } av dina domäner förrän du aktiverar ${ MAIL_APP_NAME }. Du kan göra det när som helst i Inställningar > Domännamn."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Du kommer inte att få e-post på ${ domainName } förrän du aktiverar ${ MAIL_APP_NAME }. Du kan göra det när som helst i Inställningar > Domännamn."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev “${ attachmentsFoundKeyword }”, men ingen bilaga har lagts till. Vill du skicka ditt meddelande i alla fall?"
       ],
@@ -10004,6 +10030,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Din Gmail ansluter till denna ${ MAIL_APP_NAME }-adress"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Dina nyhetsbrev i Gmail grupperas nu efter avsändare, åtskilda från din personliga e-post. Läs, spara eller avsluta dem – allt på ett och samma ställe."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Din hårdvara stöder inte att köra skrivassistenten lokalt. Prova köra den på servrar."
@@ -10164,8 +10193,8 @@
         "Vill du lita på de primära offentliga nycklarna med följande fingeravtryck?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Du har aktiverat adressverifiering med betrodda nycklar för denna e-postadress, men ingen aktiv krypteringsnyckel har blivit betrodd.\nDu måste lita på en giltig nyckel för att skicka ett meddelande till den här e-postadressen.",
-        "Du har aktiverat adressverifiering med betrodda nycklar för dessa e-postadresser, men ingen aktiva krypteringsnycklar har blivit betrodda.\nDu måste lita på giltiga nycklar för att skicka ett meddelande till den här e-postadresserna."
+        "Du har aktiverat Adressverifiering med betrodda nycklar för denna e-postadress, men ingen aktiv krypteringsnyckel har blivit betrodd.\nDu måste lita på en giltig nyckel för att skicka ett meddelande till den här e-postadressen.",
+        "Du har aktiverat Adressverifiering med betrodda nycklar för dessa e-postadresser, men ingen aktiva krypteringsnycklar har blivit betrodda.\nDu måste lita på giltiga nycklar för att skicka ett meddelande till den här e-postadresserna."
       ]
     },
     "Key validation warning": {
@@ -10393,7 +10422,7 @@
         "${ boldActive } Flytta alla meddelanden till ${ boldFolderName }"
       ],
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Kontolösenord"
+        "${ BRAND_NAME } kontolösenord"
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -11575,6 +11604,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktivera"
+      ],
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
@@ -12944,11 +12976,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        " ${ DOCS_APP_NAME } Skapa, redigera och samarbeta kring dokument med end-to-end kryptering."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } Skapa, redigera och samarbeta i kalkylblad med end-to-end kryptering"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Få åtkomst till blockerat innehåll och surfa privat. Inkluderar ${ serversAndCountries }, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
@@ -15389,7 +15427,7 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 1700 servrar i 60+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8500 servrar i 110+ länder, högsta VPN-hastighet, 10 VPN-anslutningar, världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser och mer."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
@@ -16658,6 +16696,9 @@
       "Cannot create more Booking pages": [
         "Kan inte skapa fler bokningssidor"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Carbon Copy": [
         "Kopia"
       ],
@@ -16944,6 +16985,9 @@
       ],
       "Help center": [
         "Hjälpcenter"
+      ],
+      "Hide this reminder?": [
+        "Göm den här påminnelsen?"
       ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Dölj din e-post med ${ PASS_APP_NAME }"
@@ -17618,6 +17662,9 @@
       "Your free trial has ended": [
         "Din gratis provperiod har avslutats"
       ],
+      "Your Gmail newsletters are here": [
+        "Dina Gmail nyhetsbrev är här"
+      ],
       "Your Gmail newsletters, now easier to manage": [
         "Dina Gmail nyhetsbrev, nu enklare att hantera"
       ],
@@ -17660,6 +17707,9 @@
       ]
     },
     "Tooltip": {
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Lägg till en e-post för återställning eller telefon så att du kan återställa ditt lösenord om du glömmer det."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
       ],

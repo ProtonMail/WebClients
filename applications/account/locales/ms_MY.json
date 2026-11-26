@@ -10107,9 +10107,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: meminta platform penerima menolak e-mel yang tidak dibenarkan."
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } daripada ${ totalCount }"
-      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } lagi"
       ],
@@ -12210,9 +12207,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Sila cuba lagi menggunakan kaedah pembayaran yang lain, atau hubungi bank anda."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Sila naik taraf untuk memastikan import dapat diselesaikan."
-      ],
       "Please use another browser or download the file.": [
         "Sila gunakan pelayar lain atau muat turun fail tersebut."
       ],
@@ -13271,9 +13265,6 @@
       ],
       "We'll email you when your import is complete.": [
         "Kami akan e-mel anda apabila import anda selesai."
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Kami akan e-mel anda apabila import anda selesai. Fail anda akan muncul dalam satu folder dalam ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Kami akan menghubungi anda sebentar lagi."
@@ -23463,6 +23454,9 @@
       "Disabled": [
         "Dilumpuhkan"
       ],
+      "Enabled": [
+        "Didayakan"
+      ],
       "finalizing": [
         "sedang disiapkan"
       ],
@@ -24221,9 +24215,6 @@
       ],
       "Free forever": [
         "Percuma selama-lamanya"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Import fail dan folder anda daripada Google Drive dan kekalkan ia peribadi dalam ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "sebulan, dibilkan setiap tahun"
@@ -25884,9 +25875,6 @@
       "Import started": [
         "Import telah bermula"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Import dimulakan, tetapi storan anda tidak mencukupi untuk import ini"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import melalui ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -26759,9 +26747,6 @@
       ],
       "Warning: suspected fake website": [
         "Amaran: disyaki tapak web palsu"
-      ],
-      "We could not find anything to import": [
-        "Kami tidak menemui apa-apa untuk diimport"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Kami telah menghantar kod ke e-mel anda untuk memastikan anda betul-betul pemiliknya. Kod ini sah selama 10 minit. Sila masukkan di bawah."

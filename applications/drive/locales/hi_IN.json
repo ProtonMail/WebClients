@@ -569,9 +569,6 @@
       "Hide more benefits": [
         "अधिक लाभ छिपा दें"
       ],
-      "Ignore": [
-        "अनदेखा करें"
-      ],
       "Image could not be loaded with tracker protection.": [
         "ट्रैकर सुरक्षा के साथ इमेज लोड नहीं की जा सकी।"
       ],
@@ -5774,9 +5771,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "खुद को हटाने पर \"${ fileName }\" का एक्सेस खत्म हो जाएगा और इसे तब तक दोबारा नहीं खोला जा सकेगा जब तक कि स्वामी इसे आपके साथ शेयर न करे।"
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "यदि आपने पहले से ही अपग्रेड कर लिया है, तो आप ${ easySwitchSettingsLink } में अपना इम्पोर्ट फिर से शुरू कर सकते हैं। आप इसे वहाँ रद्द भी कर सकते हैं।"
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
@@ -6227,9 +6221,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "एक अलग भुगतान तरीका इस्तेमाल आज़माएं, या अपने बैंक से संपर्क करें।"
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "आयात सफलतापूर्वक पूरा हो, इसके लिए कृपया अपग्रेड करें।"
       ],
       "Please use another browser or download the file.": [
         "कृपया किसी अन्य ब्राउज़र का उपयोग करें या फाइल डाउनलोड करें।"
@@ -6827,9 +6818,6 @@
       "We'll email you when your import is complete.": [
         "आयात पूरा हो जाने पर हम आपको ईमेल करेंगे।"
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "आयात पूरा हो जाने पर हम आपको ईमेल करेंगे। आपकी फाइलें ${ DRIVE_APP_NAME } के एक फोल्डर में दिखेंगी।"
-      ],
       "We'll get back to you shortly.": [
         "हम शीघ्र ही आपसे संपर्क करेंगे।"
       ],
@@ -7066,9 +7054,6 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "आपका Google Drive खाली हो सकता है या उसमें सिर्फ ऐसी फाइलें हों जिनका सपोर्ट नहीं है।"
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "आपका इम्पोर्ट ब्लॉक हो गया है। अपनी बाकी फ़ाइलें लाने के लिए अभी अपग्रेड करें।"
       ],
       "Your information was found on ${ displayedDate }": [
         "आपकी जानकारी ${ displayedDate } को मिली।"
@@ -11749,9 +11734,6 @@
       "Albums you've shared will appear here": [
         "आपके शेयर किए गए एल्बम यहां दिखाई देंगे"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Google Drive से अपनी फाइलें और फोल्डर आयात करें और उन्हें ${ DRIVE_APP_NAME } में प्राइवेट रखें।"
-      ],
       "Shared by ${ sharedBy }": [
         "${ sharedBy } द्वारा शेयर किया गया"
       ],
@@ -12341,9 +12323,6 @@
       "Drop to upload": [
         "अपलोड के लिए छोड़े"
       ],
-      "Easy switch": [
-        "Easy Switch"
-      ],
       "Easy Switch from Google Drive": [
         "Google Drive से Easy Switch"
       ],
@@ -12483,9 +12462,6 @@
       ],
       "Import started": [
         "आयात शुरू हुआ"
-      ],
-      "Import started, but your storage won't be enough for this import": [
-        "आयात शुरू हो गया, लेकिन इस आयात के लिए स्टोरेज काफी नहीं होगी"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } द्वारा आयात किया गया"
@@ -12961,9 +12937,6 @@
       ],
       "Warning: suspected fake website": [
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
-      ],
-      "We could not find anything to import": [
-        "आयात करने के लिए कुछ नहीं मिला"
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "हम यह सत्यापित नहीं कर सके कि ${ author } ने यह फाइल बनाई है।"

@@ -1096,6 +1096,9 @@
       "Open debug menu": [
         "Άνοιγμα μενού εντοπισμού σφαλμάτων"
       ],
+      "Open Mailing lists": [
+        "Ανοίξτε τις Λίστες αλληλογραφίας"
+      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -1598,7 +1601,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -7360,6 +7364,13 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ count } of your domains.": [
+        "Ενεργοποιήστε το ${ MAIL_APP_NAME } για να αρχίσετε να λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας.",
+        "Ενεργοποιήστε το ${ MAIL_APP_NAME } για να αρχίσετε να λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας."
+      ],
+      "Activate ${ MAIL_APP_NAME } to start receiving emails at ${ domainName }. ${ activateLink }": [
+        "Ενεργοποιήστε το ${ MAIL_APP_NAME } για να αρχίσετε να λαμβάνετε ηλεκτρονικά μηνύματα σε ${ domainName }. ${ activateLink }"
+      ],
       "Activation in progress": [
         "Ενεργοποίηση σε εξέλιξη"
       ],
@@ -9709,6 +9720,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
       ],
+      "We've added the newsletters from your Gmail import to Mailing lists, grouped by sender. Read, keep or stop them in one place.": [
+        "Προσθέσαμε τα ενημερωτικά δελτία από την εισαγωγή του Gmail σας στις Λίστες αλληλογραφίας, ομαδοποιημένα ανά αποστολέα. Διαβάστε τα, διατηρήστε τα ή σταματήστε τη λήψη τους, όλα σε ένα μέρος."
+      ],
       "Web URL": [
         "Διεύθυνση URL"
       ],
@@ -9955,6 +9969,13 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ trialEndsOnFormatted }."
       ],
+      "You won't receive emails at ${ count } of your domains until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Δε θα λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας μέχρι να ενεργοποιήσετε το ${ MAIL_APP_NAME }. Μπορείτε να το κάνετε αυτό ανά πάσα στιγμή, μεταβαίνοντας στις Ρυθμίσεις > Ονόματα τομέα.",
+        "Δε θα λαμβάνετε ηλεκτρονικά μηνύματα σε ${ count } από τους τομείς σας μέχρι να ενεργοποιήσετε το ${ MAIL_APP_NAME }. Μπορείτε να το κάνετε αυτό ανά πάσα στιγμή, μεταβαίνοντας στις Ρυθμίσεις > Ονόματα τομέα."
+      ],
+      "You won't receive emails at ${ domainName } until you activate ${ MAIL_APP_NAME }. You can do this anytime in Settings > Domain names.": [
+        "Δε θα λαμβάνετε ηλεκτρονικά μηνύματα στο ${ domainName } μέχρι να ενεργοποιήσετε το ${ MAIL_APP_NAME }. Μπορείτε να το κάνετε αυτό ανά πάσα στιγμή, μεταβαίνοντας στις Ρυθμίσεις > Ονόματα τομέα."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Γράψατε “${ attachmentsFoundKeyword }”, αλλά δεν έχει προστεθεί συνημμένο. Θέλετε να στείλετε το μήνυμά σας ούτως ή άλλως;"
       ],
@@ -10025,6 +10046,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Το Gmail σας συνδέεται με αυτή τη ${ MAIL_APP_NAME } διεύθυνση"
+      ],
+      "Your Gmail newsletters are now grouped by sender, away from your personal mail. Read, keep or stop them in one place.": [
+        "Τα ενημερωτικά δελτία στο Gmail σας ομαδοποιούνται πλέον ανά αποστολέα, ξεχωριστά από την προσωπική σας αλληλογραφία. Διαβάστε τα, αποθηκεύστε τα ή διακόψτε τη λήψη τους, όλα σε ένα μέρος."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Το υλικό σας δεν υποστηρίζει την εκτέλεση του βοηθού γραφής τοπικά. Δοκιμάστε να το εκτελέσετε σε διακομιστές."
@@ -11596,6 +11620,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Ενεργοποίηση"
+      ],
       "Add a gift code": [
         "Προσθήκη κωδικού δώρου"
       ],
@@ -12965,11 +12992,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε έγγραφα με διατερματική κρυπτογράφηση."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Δημιουργήστε, επεξεργαστείτε και συνεργαστείτε σε υπολογιστικά φύλλα με διατερματική κρυπτογράφηση."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει ${ serversAndCountries }, υψηλότερες ταχύτητες VPN, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, κακόβουλο λογισμικό και πρόγραμμα αποκλεισμού διαφημίσεων, γρήγορες λήψεις BitTorrent και πολλά άλλα."
@@ -16673,6 +16706,9 @@
       "Cannot create more Booking pages": [
         "Δεν είναι δυνατή η δημιουργία περισσότερων Σελίδων Κρατήσεων"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Carbon Copy": [
         "Κοινοποίηση"
       ],
@@ -16960,6 +16996,9 @@
       "Help center": [
         "Κέντρο βοήθειας"
       ],
+      "Hide this reminder?": [
+        "Απόκρυψη αυτής της υπενθύμισης;"
+      ],
       "Hide your email with ${ PASS_APP_NAME }": [
         "Κρύψτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας με το ${ PASS_APP_NAME }"
       ],
@@ -17084,6 +17123,9 @@
       ],
       "Mark messages as unread": [
         "Επισήμανση μηνυμάτων ως μη διαβασμένων"
+      ],
+      "Meet Mailing lists": [
+        "Γνωρίστε τις Λίστες αλληλογραφίας"
       ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
@@ -17633,6 +17675,9 @@
       "Your free trial has ended": [
         "Η δωρεάν δοκιμαστική περίοδός σας έχει λήξει."
       ],
+      "Your Gmail newsletters are here": [
+        "Τα ενημερωτικά δελτία σας στο Gmail βρίσκονται εδώ"
+      ],
       "Your Gmail newsletters, now easier to manage": [
         "Τα ενημερωτικά δελτία από το Gmail, τώρα πιο εύκολα στη διαχείριση"
       ],
@@ -17675,11 +17720,20 @@
       ]
     },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Προσθέστε μια μέθοδο ανάκτησης δεδομένων για να ξεκλειδώσετε τα δεδομένα σας, σε περίπτωση που ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή έναν αριθμό τηλεφώνου ανάκτησης, ώστε να μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας αν τον ξεχάσετε."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Δημιουργήστε μια φράση ανάκτησης, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας αν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
       "Customize import to reduce the number of folders": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των φακέλων"
@@ -17708,6 +17762,9 @@
       "Encrypted data with verified digital signature": [
         "Κρυπτογραφημένα δεδομένα με επαληθευμένη ψηφιακή υπογραφή"
       ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Δημιουργήστε μια φράση ανάκτησης για να προστατεύσετε τον λογαριασμό σας από απώλεια δεδομένων."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
@@ -17731,6 +17788,9 @@
       ],
       "Show side panel": [
         "Εμφάνιση πλαϊνού πλαισίου"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Ορισμένα από τα δεδομένα σας είναι κλειδωμένα. Χρησιμοποιήστε μια μέθοδο ανάκτησης για να τα ξεκλειδώσετε."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
@@ -17767,6 +17827,12 @@
       ],
       "Version 6 OpenPGP key": [
         "Κλειδί OpenPGP έκδοσης 6"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Το αρχείο αποκατάστασής σας δεν είναι ενημερωμένο. Κατεβάστε ένα νέο, ώστε να μπορείτε ακόμα να ανακτήσετε τα δεδομένα σας."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Η φράση ανάκτησής σας δεν είναι πλέον έγκυρη. Αποκτήστε μια νέα, ώστε να μπορείτε να ανακτήσετε τα δεδομένα σας."
       ]
     },
     "tooltip": {

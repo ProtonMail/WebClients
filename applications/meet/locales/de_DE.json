@@ -3345,8 +3345,14 @@
       "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
         "Der Untertitelungsdienst nutzt den Ton des Meetings. Untertitel sind nur für dich sichtbar und werden nicht gespeichert."
       ],
+      "The host has another meeting in progress.": [
+        "Der Veranstalter befindet sich gerade in einem anderen Meeting."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Der Organisator hat dich von diesem Meeting ausgeschlossen. Sollte dies ein Fehler gewesen sein, bitte den Organisator, dich erneut einzuladen."
+      ],
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "Der Veranstalter nimmt derzeit nicht an der Besprechung teil. Die Teilnehmerzahlen stimmen wieder überein, sobald der Veranstalter wieder beigetreten ist."
       ],
       "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
         "Dieser Browser unterstützt die Ende-zu-Ende-Verschlüsselung nicht, die ${ MEET_APP_NAME } zum Schutz jedes Meetings verwendet."
@@ -3392,6 +3398,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Um einen Termin zu planen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Termin speichern können. Das dauert nur wenige Sekunden."
@@ -3539,6 +3548,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],

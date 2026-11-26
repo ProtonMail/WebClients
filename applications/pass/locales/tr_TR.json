@@ -1042,7 +1042,7 @@
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
       ],
       "A biometric unlock check is already in progress.": [
-        "Biyometrik kilit açma kontrolü halihazırda devam ediyor."
+        "Biyometrik kilit açma denetimi zaten yapılıyor."
       ],
       "A desktop unlock check is already in progress.": [
         "Bir bilgisayar kilit açma denetimi zaten yapılıyor."
@@ -2323,7 +2323,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir öğeyi başka bir kasaya taşıdığınızda o öğenin güvenli bağlantıları silinir."
+        "Bir öğeyi başka bir kasaya taşıdığınızda ilgili öğenin güvenli bağlantıları silinir.",
+        "Öğeleri başka bir kasaya taşıdığınızda ilgili öğenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"

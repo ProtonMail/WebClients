@@ -581,9 +581,6 @@
       "Hide more benefits": [
         "Skjul flere fordele"
       ],
-      "Ignore": [
-        "Ignorer"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Billede kunne ikke indlæses med sporingsbeskyttelse."
       ],
@@ -5851,9 +5848,6 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Hvis du fjerner dig selv, mister du adgang til \"${ fileName }\" og du vil ikke kunne åbne den igen, medmindre ejeren deler den med dig."
       ],
-      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
-        "Hvis du allerede har opgraderet, kan du genoptage din import i ${ easySwitchSettingsLink }. Der kan du også annullere den."
-      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalendere"
@@ -6304,9 +6298,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Opgrader for at sikre at importen lykkedes."
       ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
@@ -6907,9 +6898,6 @@
       "We'll email you when your import is complete.": [
         "Vi sender dig en e-mail, når importen er færdig."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Vi sender dig en e-mail, når importen er færdig. Dine filer bliver gemt i en mappe i ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Tak! Vi vender tilbage til dig inden længe."
       ],
@@ -7003,9 +6991,6 @@
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
-      ],
-      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
-        "Du kan også annullere din import i ${ easySwitchSettingsLink }."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også flette importerede kalendere med eksisterende ${ BRAND_NAME }-kalendere."
@@ -7164,12 +7149,6 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Din Google Drive er muligvis tom, eller indeholder kun filer, som ikke understøttes."
-      ],
-      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
-        "Din import er blokeret. Opgrader nu for at føre resten af dine filer over."
-      ],
-      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
-        "Din import er sat på pause fordi vi mistede adgangen til din Google-konto. Forbind den igen for at overføre resten af dine filer."
       ],
       "Your information was found on ${ displayedDate }": [
         "Dine oplysninger blev fundet ${ displayedDate }"
@@ -12004,9 +11983,6 @@
       "Albums you've shared will appear here": [
         "Albummer, du har delt, vises her"
       ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importér dine filer og mapper fra Google Drive, og hold dem privat i ${ DRIVE_APP_NAME }."
-      ],
       "Shared by ${ sharedBy }": [
         "Delt af ${ sharedBy }"
       ],
@@ -12596,9 +12572,6 @@
       "Drop to upload": [
         "Slip for at uploade"
       ],
-      "Easy switch": [
-        "Easy switch"
-      ],
       "Easy Switch from Google Drive": [
         "Easy Switch fra Google Drive"
       ],
@@ -12738,9 +12711,6 @@
       ],
       "Import started": [
         "Import startet"
-      ],
-      "Import started, but your storage won't be enough for this import": [
-        "Importen er startet, men du har ikke nok lagerplads til hele importen"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importeret af ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -12957,9 +12927,6 @@
       ],
       "Recommended actions": [
         "Anbefalede handlinger"
-      ],
-      "Reconnect to finish your import": [
-        "Genforbind for at afslutte din import"
       ],
       "Reconnect your account": [
         "Genopret forbindelse til din konto"
@@ -13222,9 +13189,6 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
-      ],
-      "We could not find anything to import": [
-        "Vi kunne ikke finde noget at importere."
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "Vi kunne ikke bekræfte, at ${ author } har oprettet denne fil."

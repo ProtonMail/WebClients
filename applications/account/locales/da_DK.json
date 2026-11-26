@@ -10557,9 +10557,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: beder modtagerplatformene om at afvise de uautoriserede e-mails."
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } af ${ totalCount }"
-      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } mere",
         "${ remainingAddresses.length } mere"
@@ -12790,9 +12787,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Opgrader for at sikre at importen lykkedes."
-      ],
       "Please use another browser or download the file.": [
         "Brug en anden browser eller download filen."
       ],
@@ -13960,9 +13954,6 @@
       ],
       "We'll email you when your import is complete.": [
         "Vi sender dig en e-mail, når importen er færdig."
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Vi sender dig en e-mail, når importen er færdig. Dine filer bliver gemt i en mappe i ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Tak! Vi vender tilbage til dig inden længe."
@@ -24698,6 +24689,9 @@
       "Disabled": [
         "Deaktiveret"
       ],
+      "Enabled": [
+        "Aktiveret"
+      ],
       "failed": [
         "mislykkedes"
       ],
@@ -25502,9 +25496,6 @@
       ],
       "Free forever": [
         "Gratis for altid"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importér dine filer og mapper fra Google Drive, og hold dem privat i ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "pr. måned, faktureret årligt"
@@ -27257,9 +27248,6 @@
       "Import started": [
         "Import startet"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Importen er startet, men du har ikke nok lagerplads til hele importen"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27391,6 +27379,9 @@
       ],
       "Monthly cost": [
         "Månedlig pris"
+      ],
+      "More storage needed to finish your import": [
+        "Der kræves mere lagerplads for at afslutte din import"
       ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"
@@ -28187,9 +28178,6 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
-      ],
-      "We could not find anything to import": [
-        "Vi kunne ikke finde noget at importere."
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Vi har sendt dig en kode til din e-mail for at sikre os at det er dig. Koden er gyldig i 10 minutter. Indtast den nedenfor."

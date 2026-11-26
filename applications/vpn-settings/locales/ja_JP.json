@@ -35,6 +35,9 @@
     "account_search_index": {
       "Reminder": [
         "リマインダー"
+      ],
+      "Reset member password": [
+        "メンバーのパスワードをリセット"
       ]
     },
     "Accounts": {
@@ -6688,6 +6691,9 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME }シート"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } 名のメンバーが回復方法を設定していません。"
+      ],
       "${ n } address": [
         "${ n } 件のアドレス"
       ],
@@ -7663,6 +7669,9 @@
       "If disabled, ${ BRAND_NAME } will still use your recovery phone to send security notifications.": [
         "無効化された場合でも、${ BRAND_NAME }はセキュリティ通知の送信に回復用電話番号を使用します。"
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "有効にすると、メンバーは管理者の承認なしにパスワードをリセットできません。"
+      ],
       "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
         "可能であれば、サインインする際、以前にサインインしたことのあるデバイスまたはブラウザを使用してください。"
       ],
@@ -7878,6 +7887,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "パスワードを忘れた場合、アカウントに戻ることができるように ${ addARecoveryMethod } を確認してください。"
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "組織のメンバーのアカウント回復設定を管理します。"
       ],
       "Manage groups in your identity provider": [
         "アイデンティティプロバイダでグループを管理する"
@@ -8664,6 +8676,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたが人間であることを確認します。"
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "アカウントの安全を保つため、続行する前にご本人確認を行ってください。"
       ],
       "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
         "アカウントの安全性を守るため、サインインを試みているのが本当にお客様自身であることを確認する必要があります。"
@@ -9494,6 +9509,9 @@
       "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } デスクトップアプリ"
       ],
+      "${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME }アカウントパスワード"
+      ],
       "${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business"
       ],
@@ -10267,6 +10285,9 @@
       ],
       "Require 2FA for everyone": [
         "全ユーザーの 2 要素認証を必須にする"
+      ],
+      "Require admin approval": [
+        "管理者の承認が必要"
       ],
       "Reveal password": [
         "パスワードを表示する"
@@ -12031,11 +12052,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: エンドツーエンド暗号化されたドキュメントを作成、編集、共同編集できます。"
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }：暗号化されたクラウドストレージでファイルを保護。自動同期、暗号化ファイル共有などを含みます。"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタムメール ドメイン、15 個のメール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: エンドツーエンド暗号化されたスプレッドシートを作成、編集、共同編集できます。"
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: ブロックされたコンテンツにアクセスし、プライベートに閲覧します。 ${ serversAndCountries }、最高の VPN 速度、世界中のストリーミング サービスへのアクセス、マルウェアと広告ブロッカー、高速 BitTorrent ダウンロードなどが含まれます。"
@@ -12421,6 +12448,9 @@
       "Key copied to the clipboard": [
         "キーがクリップボードにコピーされました"
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "メンバーが回復フレーズでパスワードをリセットできるようになりました"
+      ],
       "Monitoring disabled": [
         "モニタリングが無効になりました"
       ],
@@ -12432,6 +12462,9 @@
       ],
       "OpenVPN credentials regenerated": [
         "OpenVPN 認証情報を更新しました"
+      ],
+      "Password resets now require administrator approval": [
+        "パスワードのリセットに管理者の承認が必要になりました"
       ],
       "Reminder has been sent": [
         "リマインダーが送信されました"
@@ -15664,6 +15697,12 @@
       ],
       "Disable recovery by phone": [
         "電話番号による回復を無効化"
+      ],
+      "Disabled": [
+        "無効"
+      ],
+      "Enabled": [
+        "有効"
       ],
       "finalizing": [
         "完了処理中"

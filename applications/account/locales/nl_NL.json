@@ -22825,6 +22825,9 @@
       "Disabled": [
         "Uitgeschakeld"
       ],
+      "Enabled": [
+        "Ingeschakeld"
+      ],
       "finalizing": [
         "afronden"
       ],
@@ -25312,6 +25315,9 @@
       "Monthly": [
         "Maandelijks"
       ],
+      "More storage needed to finish your import": [
+        "Er is meer opslagruimte nodig om uw import te voltooien"
+      ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
       ],
@@ -26246,6 +26252,12 @@
       "Account is disconnected": [
         "Account is verbroken"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Voeg een gegevensherstelmethode toe om uw gegevens te ontgrendelen als u uw wachtwoord vergeet."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Voeg een herstel-e-mailadres of -telefoonnummer toe, zodat u uw wachtwoord opnieuw kunt instellen als u het vergeet."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Toegevoegd aan uw abonnement: ${ mergedAddonTitles }"
       ],
@@ -26287,6 +26299,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopieer en plak deze URL in het entiteitID-veld van uw identiteitsprovider"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Maak een herstelzin aan, zodat u uw gegevens kunt herstellen als u uw wachtwoord vergeet."
       ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"
@@ -26341,6 +26356,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Bijvoorbeeld: **wachtwoord, qwerty**, etc."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Genereer een herstelzin om uw account te beschermen tegen gegevensverlies."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Krijg productiviteit en beveiligingstips om u te helpen het meeste uit ${ MAIL_APP_NAME } en daarbuiten te halen."
@@ -26422,6 +26440,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Handtekeningen die met deze sleutel gemaakt zijn, worden als ongeldig behandeld en deze sleutel kan niet gebruikt worden voor het versleutelen."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Sommige van uw gegevens zijn vergrendeld. Gebruik een herstelmethode om deze te ontgrendelen."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Geef het domein op dat is toegestaan om te verifiëren met SAML SSO"
@@ -26536,6 +26557,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Uw externe account heeft mogelijk 24-uurs bandbreedtelimiet bereikt. ${ BRAND_NAME } zal proberen de import zo snel mogelijk te hervatten."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Uw herstelbestand is verouderd. Download een nieuw zodat u uw gegevens nog steeds kunt herstellen."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Uw herstelzin is verouderd. Haal een nieuwe, zodat u uw gegevens nog steeds kunt herstellen."
       ]
     },
     "tooltip": {

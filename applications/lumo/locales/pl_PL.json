@@ -520,6 +520,9 @@
       "Domains": [
         "Domeny"
       ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organizacje posiadające dodatek „Managed Service Provider” mogą tworzyć organizacje zależne i zarządzać nimi."
+      ],
       "Servers": [
         "Serwery"
       ],
@@ -2466,9 +2469,6 @@
       ],
       "Animated background": [
         "Animowane tło"
-      ],
-      "API docs sections": [
-        "Sekcje dokumentacji interfejsu API"
       ],
       "API documentation": [
         "Dokumentacja interfejsu API"
@@ -8005,6 +8005,11 @@
         "Coś poszło nie tak. Weryfikacja Google Pay nie powiodła się."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potwierdzając, upoważniasz ${ BRAND_NAME } oraz Stripe, naszego dostawcę usług płatniczych, do pobierania przyszłych opłat za subskrypcję z tego konta bankowego metodą SEPA Direct Debit, a także upoważniasz swój bank do obciążenia tego konta tymi opłatami. Pierwsza opłata zostanie pobrana teraz przez ${ IDEAL_WERO_BRAND_NAME }. Twój plan będzie automatycznie odnawiany do momentu anulowania; przed każdym pobraniem opłaty poinformujemy Cię o tym. W przypadku realizacji polecenia zapłaty możesz wystąpić do swojego banku o zwrot środków w ciągu 8 tygodni od daty obciążenia, zgodnie z warunkami umowy zawartej z bankiem. Nie dotyczy to płatności na rzecz ${ IDEAL_WERO_BRAND_NAME }, której dokonujesz teraz."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Niewykorzystane środki z poprzedniego planu subskrypcji"
@@ -8047,6 +8052,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena odnowienia zależy od regionu rozliczeniowego i numeru VAT."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay – karta kończąca się na ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

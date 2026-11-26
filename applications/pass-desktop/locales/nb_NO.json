@@ -906,32 +906,6 @@
         "Hvelv"
       ]
     },
-    "App menu": {
-      "Back": [
-        "Tilbake"
-      ],
-      "Force Reload": [
-        "Tving omlasting"
-      ],
-      "Reload": [
-        "Last inn på nytt"
-      ],
-      "Show logs": [
-        "Vis logger"
-      ],
-      "Speech": [
-        "Tale"
-      ],
-      "Start ${ PASS_APP_NAME } at login": [
-        "Start ${ PASS_APP_NAME } ved pålogging"
-      ],
-      "Toggle developers tools": [
-        "Skru av/på utviklerverktøy"
-      ],
-      "Uninstall ${ PASS_APP_NAME }": [
-        "Avinstaller ${ PASS_APP_NAME }"
-      ]
-    },
     "Browser": {
       "${ appName } Desktop application": [
         "${ appName }-skrivebordsapplikasjon"
@@ -2417,9 +2391,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -4561,20 +4532,6 @@
     "Medium": {
       "Plus": [
         "Plus"
-      ]
-    },
-    "Menu": {
-      "Edit": [
-        "Rediger"
-      ],
-      "File": [
-        "Fil"
-      ],
-      "View": [
-        "Visning"
-      ],
-      "Window": [
-        "Vindu"
       ]
     },
     "Message": {
