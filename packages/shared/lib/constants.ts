@@ -366,8 +366,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'console',
         name: 'Proton Admin Console',
         bareName: 'Admin Console',
-        // TODO: Use a dedicated client ID once the API knows a dedicated console client (web-console).
-        clientID: 'web-account',
+        clientID: 'web-console',
         icon: 'brand-proton',
         settingsSlug: '',
         product: Product.Console,
