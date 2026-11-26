@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useToggle from '@proton/hooks/useToggle';
+import { OfferStartupModal } from '@proton/offers-delivery/components/OfferStartupModal';
+import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
 import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { LayoutViewLoader } from '../../atoms/LayoutViewLoader';
@@ -23,12 +25,13 @@ export const PrivateWalletLayout = ({ children }: Props) => {
 
     const syncingData = walletId ? getSyncingData(walletId, accountId) : undefined;
 
-    const { open } = useWalletSetupModalContext();
+    const { open, isModalOpen } = useWalletSetupModalContext();
 
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
     return (
         <PrivateAppContainer
+            top={<OfferTopBanner />}
             header={
                 <WalletHeader
                     isHeaderExpanded={expanded}
@@ -64,6 +67,7 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                 />
             }
         >
+            {apiWalletsData && !loadingApiWalletsData && !isModalOpen && <OfferStartupModal />}
             <PrivateMainArea data-testid="wallet-view:events-area" drawerSidebar>
                 {!apiWalletsData || loadingApiWalletsData ? (
                     <LayoutViewLoader />

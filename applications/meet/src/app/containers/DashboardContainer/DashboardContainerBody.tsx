@@ -5,6 +5,13 @@ import { IcLink } from '@proton/icons/icons/IcLink';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { OfferStartupModal } from '@proton/offers-delivery/components/OfferStartupModal';
+import { OfferTopBanner } from '@proton/offers-delivery/components/OfferTopBanner';
+import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
+import { useOfferNavbarEntry } from '@proton/offers-delivery/components/useOfferNavbarEntry';
+import { useOfferUpgrade } from '@proton/offers-delivery/components/useOfferUpgrade';
+import { CampaignVariant } from '@proton/offers-delivery/interface';
+import { UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
@@ -45,6 +52,9 @@ export const DashboardContainerBody = ({
     newlyCreatedMeetingId,
 }: DashboardContainerBodyProps) => {
     const isGuest = useMeetSelector(selectIsGuest);
+    const onUpgrade = useOfferUpgrade(UPSELL_COMPONENT.BANNER);
+    const bannerOffer = useActiveOffer(CampaignVariant.BANNER, { onUpgrade });
+    const offerEntry = useOfferNavbarEntry();
 
     useSendOnce(
         () =>
@@ -67,9 +77,11 @@ export const DashboardContainerBody = ({
 
     return (
         <div className="overflow-y-auto h-full flex flex-column flex-nowrap">
-            {!isGuest && <UpsellBanner />}
+            {!isGuest && (bannerOffer ? <OfferTopBanner /> : <UpsellBanner />)}
+            {!isGuest && <OfferStartupModal />}
+            {!isGuest && offerEntry.modal}
             <div className="flex-1 min-h-0 w-full meet-container-padding-x flex flex-column flex-nowrap meet-container relative">
-                <PageHeader showAppSwitcher={!isElectronApp} />
+                <PageHeader showAppSwitcher={!isElectronApp} upsellButton={!isGuest && offerEntry.button} />
                 <main id="main-content" tabIndex={-1} className="flex flex-column flex-nowrap flex-1 outline-none">
                     <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
                         <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>

@@ -1,4 +1,6 @@
 import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
+import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 
 import type { AppStartListening } from '../store';
@@ -15,4 +17,6 @@ export const start = ({ startListening }: { startListening: AppStartListening })
     startWalletEventListener(startListening);
 
     startAccountSessionsListener(startListening);
+
+    startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
 };

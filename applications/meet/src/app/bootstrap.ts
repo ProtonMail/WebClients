@@ -21,10 +21,18 @@ import { fetchFeatures } from '@proton/features/reducer';
 import { setMeetCoreErrorResolver } from '@proton/meet/hooks/useMeetErrorReporting';
 import { meetEventLoop } from '@proton/meet/store/meetEventLoop';
 import { userSettingsThunk as meetUserSettingsThunk } from '@proton/meet/store/slices/userSettings';
-import type { MeetDispatch, MeetExtraThunkArguments, MeetState, MeetStore } from '@proton/meet/store/store';
+import type {
+    MeetDispatch,
+    MeetExtraThunkArguments,
+    MeetState,
+    MeetStore,
+    MeetStoreExtensions,
+} from '@proton/meet/store/store';
 import { setupStore } from '@proton/meet/store/store';
 import { initMeetTelemetry } from '@proton/meet/telemetry/meetTelemetry';
 import { meetingLogger } from '@proton/meet/utils/meetingLogger';
+import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
+import { type OffersDeliveryState, offersDeliveryReducer } from '@proton/offers-delivery/store/slice';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -92,6 +100,11 @@ const getMeetCoreInitParams = (
     const host = `${window.location.host}/meet/api/`;
 
     return { env, appVersion, userAgent, dbPath, httpHost: host, wsHost: host, userId, uid };
+};
+
+const offersDeliveryExtension: MeetStoreExtensions<OffersDeliveryState> = {
+    reducers: offersDeliveryReducer,
+    startListening: (startListening) => startOffersDeliveryListener(startListening, { appReady: bootstrapEvent }),
 };
 
 const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<DirectMeetCoreClient> => {
@@ -422,6 +435,7 @@ const executeBootstrapSteps = async ({
         },
         preloadedState: persistedState?.state,
         persist: true,
+        extensions: offersDeliveryExtension,
     });
 
     initMeetTelemetry({
@@ -578,6 +592,7 @@ export const bootstrapGuestApp = async (
             notificationsManager,
             meetEventManager: undefined as any,
         },
+        extensions: offersDeliveryExtension,
     });
 
     initMeetTelemetry({

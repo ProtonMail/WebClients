@@ -3672,6 +3672,9 @@ importers:
       '@proton/meet':
         specifier: workspace:^
         version: link:../../packages/meet
+      '@proton/offers-delivery':
+        specifier: workspace:^
+        version: link:../../packages/offers-delivery
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack
@@ -5065,6 +5068,9 @@ importers:
       '@proton/key-transparency':
         specifier: workspace:^
         version: link:../../packages/key-transparency
+      '@proton/offers-delivery':
+        specifier: workspace:^
+        version: link:../../packages/offers-delivery
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack
@@ -12017,6 +12023,9 @@ importers:
       '@proton/icons':
         specifier: workspace:^
         version: link:../icons
+      '@proton/offers-delivery':
+        specifier: workspace:^
+        version: link:../offers-delivery
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../react-redux-store

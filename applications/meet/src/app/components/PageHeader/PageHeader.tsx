@@ -1,4 +1,4 @@
-import type { MouseEvent } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -35,9 +35,10 @@ import './PageHeader.scss';
 interface PageHeaderProps {
     showAppSwitcher?: boolean;
     isInstantJoin?: boolean;
+    upsellButton?: ReactNode;
 }
 
-export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: PageHeaderProps) => {
+export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false, upsellButton }: PageHeaderProps) => {
     const location = useLocation();
     const history = useHistory();
     const isGuest = useMeetSelector(selectIsGuest);
@@ -170,16 +171,19 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                         </Tooltip>
                                     </>
                                 ) : (
-                                    <UserDropdown
-                                        app={APPS.PROTONMEET}
-                                        logoutRedirectUrl={logoutRedirectUrl}
-                                        extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
-                                        sessionOptions={
-                                            switchAccountReturnPath
-                                                ? { path: switchAccountReturnPath, target: '_self' }
-                                                : undefined
-                                        }
-                                    />
+                                    <>
+                                        {upsellButton}
+                                        <UserDropdown
+                                            app={APPS.PROTONMEET}
+                                            logoutRedirectUrl={logoutRedirectUrl}
+                                            extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
+                                            sessionOptions={
+                                                switchAccountReturnPath
+                                                    ? { path: switchAccountReturnPath, target: '_self' }
+                                                    : undefined
+                                            }
+                                        />
+                                    </>
                                 )}
                                 {isJoinPage ? (
                                     <>

@@ -29,11 +29,14 @@ export type ModalData =
 export interface WalletSetupModalContextValue {
     open: (data: ModalData, options?: { onClose?: () => void }) => void;
     close: () => void;
+    /** A setup, welcome or upgrade modal is showing, so nothing else should open on top of it. */
+    isModalOpen: boolean;
 }
 
 export const WalletSetupModalContext = createContext<WalletSetupModalContextValue>({
     open: noop,
     close: noop,
+    isModalOpen: false,
 });
 
 export const useWalletSetupModalContext = () => useContext(WalletSetupModalContext);
