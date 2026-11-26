@@ -3589,8 +3589,14 @@
       "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
         "El servicio de subtítulos usa el audio de la reunión. Los subtítulos son visibles solo para usted y no se guardan."
       ],
+      "The host has another meeting in progress.": [
+        "El anfitrión tiene otra reunión en progreso."
+      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "El anfitrión le ha retirado de esta reunión. Si fue un error, solicite que vuelva a invitarle."
+      ],
+      "The host isn’t in the meeting right now. The participant counts will match again when the host joins.": [
+        "El anfitrión no está en la reunión ahora mismo. El número de participantes volverá a coincidir cuando se una el anfitrión."
       ],
       "This browser doesn’t support the end-to-end encryption ${ MEET_APP_NAME } uses to protect every meeting.": [
         "Este navegador no admite el cifrado de extremo a extremo que ${ MEET_APP_NAME } usa para proteger las reuniones."
@@ -3639,6 +3645,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
+      ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para mantener su cuenta segura, confirme que es realmente usted antes de continuar."
       ],
       "To join, use a different browser or device, or the ${ MEET_APP_NAME } app on your phone.": [
         "Para unirse, use un navegador o dispositivo diferente o la aplicación de ${ MEET_APP_NAME } en su teléfono."
@@ -3792,6 +3801,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Contraseña de la cuenta de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
       ],
@@ -4690,6 +4702,9 @@
       ],
       "Can’t join from this browser": [
         "No se puede unir desde este navegador"
+      ],
+      "Captcha": [
+        "CAPTCHA"
       ],
       "Chat": [
         "Chat"
