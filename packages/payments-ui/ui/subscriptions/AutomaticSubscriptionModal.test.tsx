@@ -217,6 +217,13 @@ describe('getParameters', () => {
             expect(coupon).toBeUndefined();
             expect(totals).not.toHaveProperty('offer');
         });
+
+        it.each([
+            ['a coupon link', '?plan=mail2022&coupon=SAVE'],
+            ['an old campaign link', '?plan=mail2022&type=offer'],
+        ])('does not take %s for an offer', (_, search) => {
+            expect(callGetParameters(search).offer).toBeUndefined();
+        });
     });
 
     describe('coupon', () => {

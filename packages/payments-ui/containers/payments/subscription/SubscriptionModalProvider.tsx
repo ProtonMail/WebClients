@@ -29,6 +29,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { correctDeprecatedPlanName } from '@proton/shared/lib/payments/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { OfferRenewNoticeProvider } from '../../../ui/components/OfferRenewNoticeProvider';
 import SubscriptionModal from './SubscriptionModal';
@@ -52,6 +53,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const [subscription, setSubscription] = useState<Subscription | FreeSubscription | undefined>();
 
     const getPlans = useGetPlans();
+    const isOffersEnabled = useFlag('PaymentsOffers');
     const [plans, setPlans] = useState<Plan[] | undefined>();
     const [freePlan, setFreePlan] = useState<FreePlanDefault | undefined>();
 
@@ -69,7 +71,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
 
     const [loadingData, withLoadingData] = useLoading();
 
-    const preloadSubscriptionModalData = async () => {
+    const preloadSubscriptionModalData = async (offer: string | undefined) => {
         const [
             newSubscription,
             newPlansResult,
@@ -78,7 +80,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             newEntitlementCatalog,
         ] = await Promise.all([
             getSubscription(),
-            getPlans(),
+            getPlans({ offer }),
             getOrganization(),
             loadInitialBillingAddress({
                 getPaymentStatus,
@@ -116,7 +118,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         }
 
         try {
-            await withLoadingData(preloadSubscriptionModalData());
+            const offer = isOffersEnabled ? subscriptionModalProps.offer : undefined;
+            await withLoadingData(preloadSubscriptionModalData(offer));
         } catch (error) {
             tracePaymentError(error, {
                 component: 'subscription-modal-provider',

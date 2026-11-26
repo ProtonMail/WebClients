@@ -14,6 +14,7 @@ import {
     getCheckoutUi,
     getCouponDiscountBreakdownInfo,
     getInformedOptimisticSubscriptionEstimation,
+    getOptimisticCheckResult,
     getUsersAndAddons,
 } from './checkout';
 import {
@@ -1824,6 +1825,84 @@ describe('getCheckoutUi offer', () => {
 
         expect(result.withDiscountPerCycle).toBe(10000);
         expect(result.renewPrice).toBe(19188);
+    });
+
+    describe('estimate built on the frontend', () => {
+        const getEstimate = (plan: Plan, cycle: CYCLE = CYCLE.MONTHLY) =>
+            getOptimisticCheckResult({
+                planIDs: { [PLANS.BUNDLE]: 1 },
+                plansMap: { [PLANS.BUNDLE]: plan },
+                cycle,
+                currency: 'AUD',
+            });
+
+        it.each([
+            [CYCLE.MONTHLY, 2079, -1260, 819],
+            [CYCLE.YEARLY, 19188, -9188, 10000],
+        ])('prices plans loaded with an offer like the check, %i months', (cycle, amount, discount, amountDue) => {
+            expect(getEstimate(planLoadedWithOffer, cycle)).toMatchObject({
+                Amount: amount,
+                AmountDue: amountDue,
+                OfferName: 'demo',
+                OfferDescription: 'Demo offer',
+                OfferDiscount: [{ Name: PLANS.BUNDLE, Amount: discount }],
+                optimistic: true,
+            });
+        });
+
+        it('gives the same checkout as the check it estimates', () => {
+            const fromEstimate = getOfferCheckoutUi(planLoadedWithOffer, getEstimate(planLoadedWithOffer));
+            const fromCheck = getOfferCheckoutUi(planLoadedWithOffer);
+
+            expect(fromEstimate.withDiscountPerCycle).toBe(fromCheck.withDiscountPerCycle);
+            expect(fromEstimate.withDiscountMembersPerMonth).toBe(fromCheck.withDiscountMembersPerMonth);
+            expect(fromEstimate.discountPercent).toBe(fromCheck.discountPercent);
+        });
+
+        it('lists a zero discount for an addon outside the offer', () => {
+            const lumo = getAddon({
+                Name: ADDON_NAMES.LUMO_BUNDLE,
+                Pricing: { [CYCLE.MONTHLY]: 3999, [CYCLE.YEARLY]: 38388 } as Plan['Pricing'],
+                Offers: {},
+            });
+
+            expect(
+                getOptimisticCheckResult({
+                    planIDs: { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 },
+                    plansMap: { [PLANS.BUNDLE]: planLoadedWithOffer, [ADDON_NAMES.LUMO_BUNDLE]: lumo },
+                    cycle: CYCLE.YEARLY,
+                    currency: 'AUD',
+                })
+            ).toMatchObject({
+                Amount: 57576,
+                AmountDue: 48388,
+                OfferDiscount: [
+                    { Name: PLANS.BUNDLE, Amount: -9188 },
+                    { Name: ADDON_NAMES.LUMO_BUNDLE, Amount: 0 },
+                ],
+            });
+        });
+
+        it('adds no offer for a cycle the offer does not cover', () => {
+            const yearlyOfferOnly = getPlan({
+                ...planLoadedWithOffer,
+                Pricing: { [CYCLE.MONTHLY]: 2079, [CYCLE.YEARLY]: 10000 } as Plan['Pricing'],
+                Offers: { [CYCLE.YEARLY]: demoOffer },
+            });
+            const estimate = getEstimate(yearlyOfferOnly);
+
+            expect(estimate).toMatchObject({ Amount: 2079, AmountDue: 2079 });
+            expect(estimate).not.toHaveProperty('OfferDiscount');
+            expect(estimate).not.toHaveProperty('OfferName');
+        });
+
+        it('stays unchanged for plans loaded without the offer', () => {
+            const estimate = getEstimate(planLoadedWithoutOffer);
+
+            expect(estimate).toMatchObject({ Amount: 2079, AmountDue: 2079 });
+            expect(estimate).not.toHaveProperty('OfferDiscount');
+            expect(estimate).not.toHaveProperty('OfferName');
+        });
     });
 
     it('splits the offer between the users and the other addons', () => {

@@ -94,7 +94,7 @@ const SubscriptionCycleSelector = ({
         });
     };
 
-    const fadedClasses = clsx(faded && 'opacity-50 *:pointer-events-none');
+    const fadedClasses = clsx((faded || disabled) && 'opacity-50 *:pointer-events-none');
     const listItemClasses = listItemClassName ?? 'flex items-stretch mb-4';
 
     if (mode === 'select') {

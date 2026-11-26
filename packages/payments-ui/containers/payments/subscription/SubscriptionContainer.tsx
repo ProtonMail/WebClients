@@ -1397,7 +1397,8 @@ const SubscriptionContainerInner = ({
                                                     onChangeCycle={handleChangeCycle}
                                                     faded={blockCycleSelector}
                                                     additionalCheckResults={subscriptionEstimationsForNonSelectedCycles}
-                                                    loading={loadingCheck || initialLoading}
+                                                    loading={initialLoading || (offer ? false : loadingCheck)}
+                                                    disabled={!!offer && loadingCheck}
                                                     allowedCycles={computeAllowedCycles(model.planIDs)}
                                                     checkResult={checkResult}
                                                 />

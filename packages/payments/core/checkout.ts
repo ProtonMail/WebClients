@@ -10,6 +10,7 @@ import {
 } from '@proton/shared/lib/payments/plan/helpers';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { AddonFeatureLimitKeyMapping, getAddonConfigByName, getAddonConfigByType } from './addon/addons';
 import type { CheckSubscriptionData } from './api/api';
@@ -368,6 +369,47 @@ export const getCheckResultFromSubscription = (
     };
 };
 
+/**
+ * Estimates the offer fields of a check from plans loaded with an offer, where `Pricing` is the offer price and
+ * `DefaultPricing` the regular one.
+ *
+ * @param params
+ * @param params.planIDs - Selected plans and addons with their quantities.
+ * @param params.plansMap - Plans and addons by name.
+ * @param params.cycle - Billing cycle to estimate.
+ * @returns The offer name, description and per-plan discounts as the backend check returns them, with a zero discount
+ *   for plans the offer does not cover. Undefined when no selected plan carries an offer for the cycle.
+ */
+const getOfferEstimation = ({
+    planIDs,
+    plansMap,
+    cycle,
+}: {
+    planIDs: PlanIDs;
+    plansMap: PlansMap;
+    cycle: CYCLE;
+}): Pick<SubscriptionEstimation, 'OfferName' | 'OfferDescription' | 'OfferDiscount'> | undefined => {
+    const selectedPlans = Object.entries(planIDs)
+        .map(([name, quantity]) => ({ plan: plansMap[name as keyof PlansMap], quantity }))
+        .filter((selected): selected is { plan: Plan; quantity: number } => !!selected.plan);
+
+    const offer = selectedPlans.map(({ plan }) => plan.Offers?.[cycle]).find(isTruthy);
+    if (!offer) {
+        return undefined;
+    }
+
+    return {
+        OfferName: offer.Name,
+        OfferDescription: offer.Description,
+        OfferDiscount: selectedPlans.map(({ plan, quantity }) => ({
+            Name: plan.Name,
+            Amount: plan.Offers?.[cycle]
+                ? ((plan.Pricing[cycle] ?? 0) - (getRegularPricing(plan)[cycle] ?? 0)) * quantity
+                : 0,
+        })),
+    };
+};
+
 export const getOptimisticCheckResult = ({
     planIDs,
     plansMap,
@@ -382,11 +424,13 @@ export const getOptimisticCheckResult = ({
     /** Only echoed in `requestData`: the estimate doesn't know its discount */
     coupon?: string;
 }): SubscriptionEstimation => {
-    const amount = getPrice(planIDs || {}, cycle, plansMap);
+    const amount = getPrice(planIDs || {}, cycle, plansMap, { priceType: 'regular' });
+    const offerEstimation = getOfferEstimation({ planIDs: planIDs || {}, plansMap, cycle });
 
     return {
         Amount: amount,
-        AmountDue: amount,
+        AmountDue: amount - sumDiscounts(offerEstimation?.OfferDiscount),
+        ...offerEstimation,
         CouponDiscount: 0,
         Cycle: cycle,
         Proration: 0,
