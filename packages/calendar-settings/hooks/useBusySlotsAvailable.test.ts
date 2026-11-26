@@ -9,16 +9,11 @@ import {
 } from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import useBusySlotsAvailable from './useBusySlotsAvailable';
 
 vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
     useEntitlementChecksForOrgAndUser: vi.fn(),
-}));
-
-vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: vi.fn(),
 }));
 
 vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
@@ -30,18 +25,15 @@ const renderBusySlotsAvailable = ({
     subscriptionPlans,
     viewer = {},
     loadingEntitlements = false,
-    isFlagEnabled = true,
     isSmallViewport = false,
     view,
 }: {
     subscriptionPlans: CataloguedPlan[];
     viewer?: Partial<typeof organizationMember>;
     loadingEntitlements?: boolean;
-    isFlagEnabled?: boolean;
     isSmallViewport?: boolean;
     view?: VIEWS;
 }) => {
-    vi.mocked(useFlag).mockReturnValue(isFlagEnabled);
     vi.mocked(useActiveBreakpoint).mockReturnValue({
         viewportWidth: { '<=small': isSmallViewport },
     } as ReturnType<typeof useActiveBreakpoint>);
@@ -75,10 +67,6 @@ describe('useBusySlotsAvailable', () => {
 
     it('returns false while entitlements load', () => {
         expect(renderBusySlotsAvailable({ subscriptionPlans: [PLANS.FAMILY], loadingEntitlements: true })).toBe(false);
-    });
-
-    it('returns false when the feature flag is off', () => {
-        expect(renderBusySlotsAvailable({ subscriptionPlans: [PLANS.FAMILY], isFlagEnabled: false })).toBe(false);
     });
 
     it('returns false on a small viewport', () => {

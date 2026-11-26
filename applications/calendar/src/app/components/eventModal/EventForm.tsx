@@ -3,7 +3,6 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import CalendarSelectIcon from '@proton/calendar-settings/calendarSelect/CalendarSelectIcon';
 import Notifications from '@proton/calendar-settings/notifications/Notifications';
 import NotificationsInDrawer from '@proton/calendar-settings/notifications/NotificationsInDrawer';
 import IconRow from '@proton/components/components/iconRow/IconRow';
@@ -24,8 +23,6 @@ import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { EventModel, EventModelErrors } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
-import { useFlag } from '@proton/unleash/useFlag';
-import clsx from '@proton/utils/clsx';
 
 import { getCanChangeCalendarOfEvent } from '../../helpers/event';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
@@ -88,8 +85,6 @@ const EventForm = ({
     isDuplicating,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
-    const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
-
     const [mailSettings] = useMailSettings();
     const eventFormContentRef = useRef<HTMLDivElement>(null);
     const { modal: linkModal } = useLinkHandler(eventFormContentRef, mailSettings);
@@ -268,28 +263,12 @@ const EventForm = ({
         </IconRow>
     );
 
-    const getCalendarIcon = () => {
-        if (isColorPerEventEnabled) {
-            return <IcCalendarGrid />;
-        }
-        if (model.calendars.length === 1) {
-            return <CalendarSelectIcon className="mt-1" color={model.calendars[0].color} />;
-        }
-
-        if (!canChangeCalendar) {
-            return <CalendarSelectIcon className="mt-1" color={model.calendar.color} />;
-        }
-
-        return <IcCalendarGrid />;
-    };
-
     const calendarRow = (
         <IconRow
-            icon={getCalendarIcon()}
+            icon={<IcCalendarGrid />}
             title={c('Label').t`Calendar`}
             id={CALENDAR_INPUT_ID}
             className="flex flex-nowrap flex-1 grow"
-            containerClassName={clsx(isMinimal && !isColorPerEventEnabled && 'eventpopover-calendar-select')}
         >
             <CreateEventCalendarSelect
                 id={CALENDAR_INPUT_ID}
@@ -299,9 +278,8 @@ const EventForm = ({
                 model={model}
                 setModel={setModel}
                 isCreateEvent={isCreateEvent}
-                isColorPerEventEnabled={isColorPerEventEnabled}
             />
-            {isColorPerEventEnabled && <EventColorSelect model={model} setModel={setModel} />}
+            <EventColorSelect model={model} setModel={setModel} />
         </IconRow>
     );
 

@@ -50,7 +50,6 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
-import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
@@ -83,8 +82,6 @@ const ExtraEvents = ({ message }: Props) => {
     const contactsMap = useContactsMap();
     const getCalendarEventRaw = useGetCalendarEventRaw(contactsMap);
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
-    const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
-    const canImportEventColor = isColorPerEventEnabled && user.hasPaidMail;
     const getOrCreateCalendarAndSettings = useGetOrCreateCalendarAndSettings();
 
     const [loadingWidget, withLoadingWidget] = useLoading();
@@ -231,7 +228,7 @@ const ExtraEvents = ({ message }: Props) => {
                                         icsBytes,
                                         icsFileName: attachment.Name || '',
                                         primaryTimezone,
-                                        canImportEventColor,
+                                        canImportEventColor: user.hasPaidMail,
                                     });
                                     return supportedEventInvitation;
                                 } catch (error: any) {
