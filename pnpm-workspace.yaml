@@ -14,8 +14,8 @@ packages:
 
 # Each workspace declares the type packages it uses. Most list node and webpack-env in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
-# check:constraints requires every workspace to declare these dependencies as "catalog:"; see
-# utilities/repo-rules/README.md for the exceptions.
+# check:constraints requires every workspace to declare these dependencies as "catalog:" or
+# "catalog:<name>" from a named catalog below; see utilities/repo-rules/README.md for the exceptions.
 catalog:
     '@dnd-kit/abstract': ^0.5.3
     '@dnd-kit/collision': ^0.5.3
@@ -140,8 +140,7 @@ catalogs:
         '@types/react-dom': ^19.3.0
         react: ^19.3.1
         react-dom: ^19.3.1
-    # Docs' Lexical, at the version @proton-docs/docs-editor needs. A Docs manifest declaring a name
-    # that is also in the default catalog needs an exception (see utilities/repo-rules/README.md).
+    # Docs' Lexical, at the version @proton-docs/docs-editor needs.
     docs:
         '@lexical/clipboard': 0.40.0
         '@lexical/code': 0.40.0
