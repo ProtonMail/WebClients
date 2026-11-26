@@ -4273,11 +4273,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja a sua agenda com encriptação de ponta a ponta. Inclui suporte para agendas personalizadas, partilha de agenda e muito mais."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Criar, editar, e colaborar nos documentos encriptados de ponta a ponta."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: proteja os seus e-mails com encriptados de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases hide-my-email ilimitados e muito mais."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Criar, editar, e colaborar nas folhas encriptadas de ponta a ponta."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Aceda a conteúdo bloqueado e navegue de forma privada. Inclui ${ serversAndCountries }, as velocidades mais altas da VPN, acesso a serviços de streaming em todo o mundo, bloqueador de malware e de anúncios, transferências rápidas de BitTorrent e muito mais."
@@ -5765,23 +5771,44 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Assistente de IA que respeita a sua privacidade"
-      ],
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
-      ]
-    },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Adicione um método de recuperação de dados para desbloquear os seus dados caso se esqueça da sua palavra-passe."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Adicione um endereço de correio eletrónico ou um número de telefone de recuperação para poder redefinir a sua palavra-passe caso se esqueça dela."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Alguns dos seus dados estão bloqueados. Utilize um método de recuperação para os desbloquear."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Gere uma frase de recuperação para proteger a sua conta contra a perda de dados."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, introduza-o aqui."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Assistência de IA instantânea, especialista humano à disposição!"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Alguns dos seus dados estão bloqueados. Utilize um método de recuperação para os desbloquear."
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de subscrição começa em ${ formattedTime }"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "O seu ficheiro de recuperação está desatualizado. Transfira um novo para poder continuar a recuperar os seus dados."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "A sua frase de recuperação está desatualizada. Obtenha uma nova para poder continuar a recuperar os seus dados."
+      ]
+    },
+    "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Assistente de IA que respeita a sua privacidade"
+      ],
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : proteja os seus dados de acesso em todos os seus dispositivos. Inclui aliases ilimitados, partilha, autenticação de dois fatores (A2F) integrada e muitas outras funcionalidades."
       ]
     },
     "Unknown sender": {

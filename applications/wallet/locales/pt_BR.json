@@ -3132,6 +3132,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Para ajudar a manter sua conta segura, confirme que é realmente você antes de continuar."
+      ],
       "Total email addresses": [
         "Endereços de e-mail adicionais"
       ],
@@ -5742,6 +5745,9 @@
       "Cancel subscription?": [
         "Cancelar assinatura?"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Verificação do cartão"
       ],
@@ -5916,14 +5922,6 @@
         "Hoje"
       ]
     },
-    "tooltip": {
-      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: assistente de IA que respeita sua privacidade"
-      ],
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
-      ]
-    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
@@ -5933,6 +5931,17 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Sua frase de recuperação está desatualizada. Obtenha uma nova para que você ainda possa recuperar seus dados."
+      ]
+    },
+    "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: assistente de IA que respeita sua privacidade"
+      ],
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Unknown sender": {
@@ -6023,6 +6032,9 @@
       ],
       "10 years": [
         "10 anos"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Um nível de servidores do ${ VPN_APP_NAME } com maior capacidade: cada um deles é compartilhado por muito menos usuários e utiliza endereços IP de propriedade da ${ BRAND_NAME }. A conexão rápida os seleciona automaticamente quando estiverem disponíveis."
       ],
       "Calendars": [
         "Calendários"

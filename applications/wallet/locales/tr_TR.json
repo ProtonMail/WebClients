@@ -3139,7 +3139,7 @@
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To help keep your account safe, confirm it’s really you before continuing.": [
-        "Hesabınızın güvenliğini sağlamak için devam etmeden önce gerçekten siz olduğunuzu doğrulayın."
+        "Hesabınızın güvenliğini sağlamak için ilerlemeden önce gerçekten siz olduğunuzu doğrulayın."
       ],
       "Total email addresses": [
         "Toplam e-posta adresi"
@@ -3313,7 +3313,7 @@
     },
     "Label": {
       "${ BRAND_NAME } Account password": [
-        "${ BRAND_NAME } Hesap parolası"
+        "${ BRAND_NAME } hesabı parolası"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
@@ -4410,11 +4410,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Uçtan uca şifrelenmiş belgeler oluşturun, düzenleyin ve bu belgeler üzerinde birlikte çalışın."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Uçtan uca şifrelenmiş tablolar oluşturun, düzenleyin ve üzerinde birlikte çalışın."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
@@ -5745,6 +5751,9 @@
       "Cancel subscription?": [
         "Abonelik iptal edilsin mi?"
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Kart doğrulama"
       ],
@@ -5919,23 +5928,44 @@
         "Bugün"
       ]
     },
-    "tooltip": {
-      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Gizliliğinize saygı duyan yapay zeka yardımcısı"
-      ],
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
-      ]
-    },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinize erişebilmek için veri kurtarma yöntemi ekleyin."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Parolanızı unuttuğunuzda sıfırlayabilmeniz için yedek e-posta adresi veya telefon numarası ekleyin."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Parolanızı unutursanız verilerinizi geri alabilmek için kurtarma ifadesi oluşturun."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Hesabınızı veri kaybına karşı korumak için kurtarma ifadesi oluşturun."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Anında yapay zeka desteği ve uzmanlar her zaman yanınızda!"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Verilerinizin bir kısmı kilitli. Kilidi açmak için kurtarma yöntemi kullanın."
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Kurtarma dosyanız güncel değil. Verilerinizi kurtarabilmek için yeni bir dosya indirin."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Geri alma ifadenizin geçerlilik süresi doldu. Verilerinizi geri alabilmek için yeni bir tane alın."
+      ]
+    },
+    "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Gizliliğinize saygı duyan yapay zeka yardımcısı"
+      ],
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ]
     },
     "Unknown sender": {

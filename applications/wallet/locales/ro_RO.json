@@ -4474,11 +4474,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Securizați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Creați, editați și colaborați la documente criptate bilateral."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include sincronizare automată, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Creați, editați și colaborați la foi de calcul criptate bilateral."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
@@ -5829,6 +5835,9 @@
       "Cancel subscription?": [
         "Anulare abonament?"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -6003,23 +6012,44 @@
         "Astăzi"
       ]
     },
-    "tooltip": {
-      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: Asistent de IA care vă respectă confidențialitatea"
-      ],
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
-      ]
-    },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Adăugați o metodă de recuperare a datelor pentru a debloca datele dacă vă uitați parola."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Adăugați o adresă de e-mail sau un număr de telefon de recuperare, pentru a vă putea reseta parola în cazul în care o uitați."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Creați o frază de recuperare, astfel încât să vă puteți recupera datele dacă vă uitați parola."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generați o frază de recuperare pentru a vă proteja contul împotriva pierderii datelor."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Asistență instantanee prin IA, expert uman la îndemână!"
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Unele dintre date sunt blocate. Utilizați o metodă de recuperare pentru a le debloca."
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Noul ciclu de abonament începe la ${ formattedTime }."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Fișierul de recuperare este învechit. Descărcați unul nou pentru a vă putea recupera în continuare datele."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Fraza de recuperare este învechită. Obțineți una nouă pentru a vă putea recupera în continuare datele."
+      ]
+    },
+    "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: Asistent de IA care vă respectă confidențialitatea"
+      ],
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ]
     },
     "Unknown sender": {

@@ -3128,6 +3128,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
+      "To help keep your account safe, confirm it’s really you before continuing.": [
+        "Um die Sicherheit deines Kontos zu gewährleisten, bestätige bitte, dass es wirklich du bist der versucht sich anzumelden, bevor du fortfährst."
+      ],
       "Total email addresses": [
         "Anzahl E-Mail-Adressen"
       ],
@@ -3296,6 +3299,9 @@
       ]
     },
     "Label": {
+      "${ BRAND_NAME } Account password": [
+        "Passwort für ${ BRAND_NAME }-Konto"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
@@ -4324,11 +4330,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Ende-zu-Ende-verschlüsselte Dokumente erstellen, bearbeiten und gemeinsam daran arbeiten."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Sichern deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Enthält Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte hide-my-email-Aliase und mehr."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Ende-zu-Ende-verschlüsselte Tabellen erstellen, bearbeiten und gemeinsam daran arbeiten."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Zugriff auf gesperrte Inhalte und privates Surfen. Enthält ${ serversAndCountries }, höchste VPN-Geschwindigkeiten, Zugang zu weltweiten Streaming-Diensten, Malware- und Ad-Blocker, schnelle BitTorrent-Downloads und mehr."
@@ -5833,23 +5845,44 @@
         "Heute"
       ]
     },
-    "tooltip": {
-      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
-        "${ LUMO_APP_NAME }: KI-Assistent, der deine Privatsphäre respektiert"
-      ],
-      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
-      ]
-    },
     "Tooltip": {
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Füge eine Methode zur Datenwiederherstellung hinzu, um deine Daten zu entsperren, falls du dein Passwort vergisst."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Füge eine E-Mail-Adresse oder eine Telefonnummer für das Zurücksetzen des Passworts hinzu, falls du es vergessen solltest."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lege eine Wiederherstellungsphrase fest, damit du deine Daten wiederherstellen kannst, falls du dein Passwort vergisst."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Erstelle eine Wiederherstellungsphrase, um dein Konto vor Datenverlust zu schützen."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
       ],
       "Instant AI assistance, human expert on hand!": [
         "Sofortige KI-Unterstützung, menschliche Experten stehen bereit."
       ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Einige deiner Daten sind gesperrt. Nutze eine Wiederherstellungsmethode, um wieder darauf zugreifen zu können."
+      ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Deine Wiederherstellungsdatei ist veraltet. Lade eine neue herunter, damit du deine Daten wiederherstellen kannst."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Ihre Wiederherstellungsphrase ist veraltet. Es wird eine neue benötigt, damit deine Daten weiterhin wiederhergestellt werden können."
+      ]
+    },
+    "tooltip": {
+      "${ LUMO_APP_NAME }: AI assistant that respects your privacy": [
+        "${ LUMO_APP_NAME }: KI-Assistent, der deine Privatsphäre respektiert"
+      ],
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ]
     },
     "Unknown sender": {
