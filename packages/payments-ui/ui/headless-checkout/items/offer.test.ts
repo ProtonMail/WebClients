@@ -1,3 +1,4 @@
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
@@ -146,6 +147,20 @@ describe('offer in the headless checkout', () => {
         expect(total).toBe(20640);
         expect((members.pricePerAllPerMonth + domain.priceForAllPerMonth) * CYCLE.YEARLY).toBe(total);
         expect(checkout.getItem('planDiscount').discountPercent).toBe(58);
+    });
+
+    it('shows the same rows for the estimate built on the frontend as for the check', () => {
+        const estimate = getOptimisticCheckResult({
+            planIDs: { [PLANS.BUNDLE]: 1 },
+            plansMap: mapByName([bundle]),
+            cycle: CYCLE.YEARLY,
+            currency: 'AUD',
+        });
+        const checkout = getBundleCheckout(bundle, estimate);
+
+        expect(checkout.getItem('planAmount').amount).toBe(10000);
+        expect(checkout.getItem('members').pricePerAllPerMonth).toBeCloseTo(833.33);
+        expect(checkout.getItem('planDiscount').discountPercent).toBe(60);
     });
 
     it('keeps the proration row next to the offer price on an upgrade', () => {

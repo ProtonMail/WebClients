@@ -7,18 +7,21 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { userDefault } from '@proton/components/hooks/helpers/tests/useUser';
 import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/vitest/useOrganization';
 import { mockStatusApi } from '@proton/components/hooks/helpers/tests/vitest/usePaymentStatus';
-import { mockPlansApi } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
+import { mockPlansApi, plansDefaultResponse } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
 import {
     mockSubscriptionApi,
     subscriptionDefaultResponse,
 } from '@proton/components/hooks/helpers/tests/vitest/useSubscription';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import { formatSubscription } from '@proton/payments/core/api/api';
+import { formatSubscription, queryPlans } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { addApiMock } from '@proton/test-api/vitest/api';
+import * as useFlagModule from '@proton/unleash/useFlag';
+import isTruthy from '@proton/utils/isTruthy';
 
 import SubscriptionContainer from './SubscriptionContainer';
 import SubscriptionModalProvider from './SubscriptionModalProvider';
@@ -267,4 +270,67 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
     });
 
     expect(await screen.findByTestId('InAppPurchaseModal/text')).not.toBeEmptyDOMElement();
+});
+
+describe('plans for a private offer', () => {
+    const offerPlans = plansDefaultResponse.Plans.map((plan) =>
+        plan.Name === PLANS.BUNDLE ? { ...plan, Offers: { 12: { Name: 'demo', Description: 'Demo offer' } } } : plan
+    );
+
+    const openWith = async ({ offer, offersEnabled }: { offer?: string; offersEnabled: boolean }) => {
+        vi.spyOn(useFlagModule, 'useFlag').mockImplementation((flag) => offersEnabled && flag === 'PaymentsOffers');
+
+        const requestedOffers: (string | undefined)[] = [];
+        addApiMock(queryPlans({}).url, ({ params }) => {
+            requestedOffers.push(params?.Offer);
+            return { Code: 1000, Plans: params?.Offer ? offerPlans : plansDefaultResponse.Plans };
+        });
+
+        let openSubscriptionModal!: OpenSubscriptionModalCallback;
+        const ContextReaderComponent = () => {
+            openSubscriptionModal = useSubscriptionModal()[0];
+            return null;
+        };
+
+        renderWithProviders(
+            <SubscriptionModalProvider app="proton-account">
+                <ContextReaderComponent />
+            </SubscriptionModalProvider>,
+            { preloadedState: userSettingsPreloadedState }
+        );
+
+        await waitFor(() => {
+            expect(openSubscriptionModal).toBeDefined();
+        });
+        await act(async () => {
+            await openSubscriptionModal({ plan: PLANS.BUNDLE, offer } as any);
+        });
+        await screen.findByText('SubscriptionContainer');
+
+        const [checkoutProps] = vi.mocked(SubscriptionContainer).mock.calls.at(-1)!;
+        const checkoutOffers = checkoutProps.plans.map((plan) => plan.Offers?.[12]?.Name).filter(isTruthy);
+
+        return { requestedOffers, checkoutOffers };
+    };
+
+    it('gives the checkout the plans priced with the offer', async () => {
+        const { requestedOffers, checkoutOffers } = await openWith({ offer: 'demo', offersEnabled: true });
+
+        expect(requestedOffers).toContain('demo');
+        expect(checkoutOffers).toContain('demo');
+    });
+
+    it('gives the checkout the regular plans when offers are switched off', async () => {
+        const { requestedOffers, checkoutOffers } = await openWith({ offer: 'demo', offersEnabled: false });
+
+        expect(requestedOffers).not.toContain('demo');
+        expect(checkoutOffers).toEqual([]);
+    });
+
+    it('gives the checkout the regular plans without an offer', async () => {
+        const { requestedOffers, checkoutOffers } = await openWith({ offersEnabled: true });
+
+        expect(requestedOffers.filter(isTruthy)).toEqual([]);
+        expect(checkoutOffers).toEqual([]);
+    });
 });

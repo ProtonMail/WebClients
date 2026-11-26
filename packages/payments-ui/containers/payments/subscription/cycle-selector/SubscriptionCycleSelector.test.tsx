@@ -72,6 +72,27 @@ it('should correctly display price per user per month when there are non-user ad
     expect(queryByTestId('price-per-user-per-month-24')).toHaveTextContent('CHF 9.99/user per month');
 });
 
+it('should display the offer price of every cycle for plans loaded with an offer', () => {
+    const demoOffer = { Name: 'demo', Description: 'Demo offer' };
+    const plansMap = {
+        ...PLANS_MAP,
+        [PLANS.BUNDLE]: {
+            ...PLANS_MAP[PLANS.BUNDLE]!,
+            Pricing: { [CYCLE.MONTHLY]: 819, [CYCLE.YEARLY]: 10000, [CYCLE.TWO_YEARS]: 20000 },
+            DefaultPricing: { [CYCLE.MONTHLY]: 2079, [CYCLE.YEARLY]: 19188, [CYCLE.TWO_YEARS]: 30696 },
+            Offers: { [CYCLE.MONTHLY]: demoOffer, [CYCLE.YEARLY]: demoOffer, [CYCLE.TWO_YEARS]: demoOffer },
+        },
+    };
+
+    const { queryByTestId } = render(
+        <SubscriptionCycleSelector {...props} plansMap={plansMap} planIDs={{ [PLANS.BUNDLE]: 1 }} />
+    );
+
+    expect(queryByTestId('price-per-user-per-month-1')).toHaveTextContent('CHF 8.19/month');
+    expect(queryByTestId('price-per-user-per-month-12')).toHaveTextContent('CHF 8.33/month');
+    expect(queryByTestId('price-per-user-per-month-24')).toHaveTextContent('CHF 8.33/month');
+});
+
 it('should display the prices correctly for VPN Plus', () => {
     const planIDs = {
         vpn2024: 1,
