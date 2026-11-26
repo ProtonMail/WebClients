@@ -31,6 +31,28 @@ export const isDefaultDevice = (deviceId: string | null): boolean => {
     return deviceId === DEFAULT_DEVICE_ID;
 };
 
+export const getDeviceBehindCommunications = (
+    devices: MediaDeviceInfo[],
+    kind: MediaDeviceKind
+): MediaDeviceInfo | undefined => {
+    const communications = devices.find((d) => d.kind === kind && d.deviceId === COMMUNICATIONS_DEVICE_ID);
+
+    if (!communications) {
+        return undefined;
+    }
+
+    const candidates = getSelectableDevices(devices, kind).filter(
+        (d) => d.groupId === communications.groupId && !isDefaultDevice(d.deviceId)
+    );
+    const systemDefaultLabel = devices.find((d) => d.kind === kind && isDefaultDevice(d.deviceId))?.label;
+
+    const systemDefault = candidates
+        .filter((d) => systemDefaultLabel?.endsWith(d.label))
+        .sort((a, b) => b.label.length - a.label.length)[0];
+
+    return systemDefault ?? candidates[0];
+};
+
 export interface CheckmarkDeviceState {
     useSystemDefault: boolean;
     hasDefaultOption: boolean;
