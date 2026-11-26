@@ -1,0 +1,147 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+// Web purchase layouts: four cards at full width, three at 1024 px, and a sheet at the shared small breakpoint.
+.lumo-plan-tiers-modal-backdrop.modal-two {
+	padding: clamp(var(--lumo-space-16), 3.125vw, var(--lumo-space-32));
+
+	@include im.media('<=small') {
+		padding: 0;
+	}
+}
+
+.lumo-plan-tiers-modal {
+	&.modal-two-dialog--xlarge {
+		--size: 52.5rem;
+
+		@include im.media('>small') {
+			&.lumo-plan-tiers-modal--single {
+				--size: 24rem;
+			}
+
+			&.lumo-plan-tiers-modal--four-plans {
+				--size: 60rem;
+
+				@media (width >= 1264px) {
+					--size: 75rem;
+				}
+
+				@media (width < 1264px) {
+					// Leave room for all paid tiers on the narrower desktop layout.
+					.lumo-plan-tiers-modal__plans > .lumo-plan-tier-card:first-child {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@include im.media('<=small') {
+			--size: 100%;
+
+			flex: 1 0 100%;
+			border-radius: 0;
+		}
+	}
+
+	&__close {
+		z-index: 1;
+		inset-block-start: var(--lumo-space-24);
+		inset-inline-end: var(--lumo-space-16);
+	}
+
+	&__compact,
+	&__footer {
+		display: none;
+	}
+
+	&__plans {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+		grid-auto-rows: max-content;
+		gap: var(--lumo-space-16);
+		padding-block-end: 2.25rem;
+
+		.lumo-plan-tier-card__pricing {
+			min-block-size: 5.75rem;
+		}
+
+		// Align corresponding rows of the desktop cards.
+		@supports (grid-template-rows: subgrid) {
+			> .lumo-plan-tier-card {
+				display: grid;
+				grid-template-rows: subgrid;
+				grid-row: span 4;
+				align-items: start;
+
+				> .lumo-plan-tier-card__action {
+					grid-row: 3;
+				}
+
+				// Cards without an action still align their features with the other cards.
+				> .lumo-plan-tier-card__features {
+					grid-row: 4;
+				}
+			}
+
+			.lumo-plan-tier-card__pricing {
+				min-block-size: auto;
+			}
+		}
+	}
+
+	&__plans:has(.lumo-plan-tier-card__pricing > s) .lumo-plan-tier-card__pricing:not(:has(> s)) {
+		// Keep main prices aligned where only some plans show a comparison price.
+		padding-block-start: var(--lumo-space-24);
+	}
+
+	@include im.media('>small') {
+		&__header {
+			// The desktop dialog is still named by the heading.
+			position: absolute;
+			inline-size: 1px;
+			block-size: 1px;
+			padding: 0;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+	}
+
+	@include im.media('<=small') {
+		&__body {
+			flex: 1 1 auto;
+		}
+
+		&__header {
+			// Keep the heading below the close button on short viewports too.
+			padding-block-start: clamp(4.75rem, 14.7dvh, 7.75rem);
+			padding-inline: var(--lumo-space-16);
+		}
+
+		&__close {
+			inset-block-start: 2.25rem;
+			inset-inline-end: var(--lumo-space-32);
+		}
+
+		.lumo-plan-tier-tabs > .tabs-nav {
+			padding-block: var(--lumo-space-12);
+			padding-inline: var(--lumo-space-16);
+		}
+
+		&__plans {
+			display: none;
+		}
+
+		&__compact {
+			display: block;
+		}
+
+		&__footer {
+			display: flex;
+			padding-block-end: max(var(--lumo-space-20), env(safe-area-inset-bottom));
+		}
+	}
+}

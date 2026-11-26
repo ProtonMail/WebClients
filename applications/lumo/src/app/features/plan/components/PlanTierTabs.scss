@@ -1,0 +1,41 @@
+.lumo-plan-tier-tabs {
+	// Extend the shared modern tab selectors for the Figma billing pill.
+	&.tabs--modern > .tabs-nav {
+		.tabs-list {
+			gap: var(--lumo-space-4);
+			padding: var(--lumo-space-4);
+			border-radius: var(--lumo-radius-full);
+			background-color: var(--lumo-control-fill);
+		}
+
+		.tabs-list-link {
+			padding-block: var(--lumo-space-6);
+			padding-inline: var(--lumo-space-16);
+			border-radius: var(--lumo-radius-full);
+			font: var(--lumo-type-label-large);
+
+			&[aria-selected='true'] {
+				font: var(--lumo-type-title-small);
+			}
+		}
+
+		.tabs-list-item:hover::after {
+			border-radius: var(--lumo-radius-full);
+		}
+
+		.tabs-indicator {
+			inset-block: var(--lumo-space-4);
+			border-radius: var(--lumo-radius-full);
+			background-color: var(--lumo-panel);
+		}
+	}
+
+	// The navigation spacing replaces the shared panel's pt-4.
+	& > &__panel {
+		padding-block-start: 0;
+	}
+
+	&__savings {
+		background-color: color-mix(in srgb, var(--lumo-control-brand-fill) 14%, transparent);
+	}
+}
