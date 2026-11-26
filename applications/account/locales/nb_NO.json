@@ -301,6 +301,9 @@
       "Reminder": [
         "Påminnelse"
       ],
+      "Reset member password": [
+        "Tilbakestill medlemspassord"
+      ],
       "Restrict app access": [
         "Begrens apptilgang"
       ],
@@ -10461,6 +10464,9 @@
         "${ countriesCount } land aktivert",
         "${ countriesCount } land aktivert"
       ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
+      ],
       "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
         "${ DataLockedText }, men kan gjenopprettes med ${ RecoveryContactsLink }:"
       ],
@@ -10643,9 +10649,6 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: be mottakerplattformene om å avvise de uautoriserte e-postene."
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } av ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } til",
@@ -12901,9 +12904,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Oppgrader for å sikre at importen fullføres uten problemer."
-      ],
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
       ],
@@ -13056,6 +13056,9 @@
       ],
       "Right to Left": [
         "Høyre til venstre"
+      ],
+      "Runs in the background": [
+        "Kjører i bakgrunnen"
       ],
       "SAML configuration saved": [
         "SAML-konfigurasjon lagret"
@@ -14081,9 +14084,6 @@
       "We'll email you when your import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Vi sender deg en e-post når importen er fullført. Filene dine vil vises i en mappe i ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Vi vil komme tilbake til deg innen kort tid."
       ],
@@ -14291,6 +14291,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Du kan lukke fanen eller nettleseren i mellomtiden."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Du kan lukke denne og fortsette å bruke ${ DRIVE_APP_NAME }."
       ],
       "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
         "Du kan definere retningslinjene for ${ PASS_APP_NAME } for organisasjonsmedlemmene."
@@ -14622,6 +14625,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Google Disk kan være tom eller inneholde bare filer som ikke støttes."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Importen din har startet, men den stopper når lagringsplassen er full. Oppgrader nå for å ta med alle filene dine."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
@@ -24796,6 +24802,9 @@
       "Disabled": [
         "Deaktivert"
       ],
+      "Enabled": [
+        "Aktivert"
+      ],
       "failed": [
         "mislyktes"
       ],
@@ -25600,9 +25609,6 @@
       ],
       "Free forever": [
         "Gratis for alltid"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "per måned, faktureres årlig"
@@ -27394,9 +27400,6 @@
       "Import started": [
         "Importen kjører"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Importen er startet, men lagringsplassen vil ikke være tilstrekkelig for denne importen."
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27529,6 +27532,9 @@
       "Monthly cost": [
         "Månedlig kostnad"
       ],
+      "More storage needed to finish your import": [
+        "Mer lagringsplass kreves for å fullføre importen"
+      ],
       "Multi-user support": [
         "Flerbrukerstøtte"
       ],
@@ -27576,6 +27582,9 @@
       ],
       "No need to empty the trash": [
         "Du trenger ikke å tømme papirkurven"
+      ],
+      "Nothing to import": [
+        "Ingenting å importere"
       ],
       "Notifications": [
         "Varsler"
@@ -28328,9 +28337,6 @@
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
       ],
-      "We could not find anything to import": [
-        "Vi fant ingenting å importere."
-      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Vi har sendt deg en kode til e-posten din for å bekrefte at det er deg. Denne koden er gyldig i 10 minutter. Skriv den inn nedenfor."
       ],
@@ -28586,6 +28592,12 @@
       "Account is disconnected": [
         "Konto er frakoblet"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Legg til en datagjenopprettingsmetode for å låse opp dataene dine hvis du glemmer passordet ditt."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Legg til en e-postadresse eller telefon for gjenoppretting slik at du kan tilbakestille passordet ditt hvis du glemmer det."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Lagt til i planen din: ${ mergedAddonTitles }"
       ],
@@ -28633,6 +28645,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Lag en gjenopprettingsfrase slik at du kan gjenopprette dataene dine hvis du glemmer passordet ditt."
       ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"
@@ -28693,6 +28708,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "For eksempel **passord, qwerty** osv."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Generer en gjenopprettingsfrase for å beskytte kontoen din mot tap av data."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Få produktivitets- og sikkerhetstips for å hjelpe deg med å få mest mulig ut av ${ MAIL_APP_NAME } og mer."
@@ -28786,6 +28804,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer produsert av denne nøkkelen behandles som ugyldige, og denne nøkkelen kan ikke brukes til kryptering."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Noen av dataene dine er låst. Bruk en gjenopprettingsmetode for å låse de opp."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO"
@@ -28916,6 +28937,12 @@
       "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
         "Din organisasjon har nådd grensen på ${ maxServiceAccounts } tjenestekonto.",
         "Din organisasjon har nådd grensen på ${ maxServiceAccounts } tjenestekontoer."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Last ned en ny slik at du fortsatt kan gjenopprette dataene dine."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Gjenopprettingsfrasen din er utdatert. Skaff deg en ny slik at du fortsatt kan gjenopprette dataene dine."
       ]
     },
     "tooltip": {

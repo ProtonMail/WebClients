@@ -10199,9 +10199,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: kuomba majukwaa ya wapokeaji kukataa barua pepe zisizoidhinishwa."
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } kati ya ${ totalCount }"
-      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } zaidi",
         "${ remainingAddresses.length } zaidi"
@@ -12329,9 +12326,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Tafadhali jaribu tena kwa kutumia njia nyingine ya malipo, au wasiliana na benki yako."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Tafadhali sasisha ili kuhakikisha uletaji ukamilike vyema."
-      ],
       "Please use another browser or download the file.": [
         "Tafadhali tumia kivinjari kingine au pakua faili."
       ],
@@ -13400,9 +13394,6 @@
       ],
       "We'll email you when your import is complete.": [
         "Tutakutumia barua pepe uingizaji wako utakapokamilika."
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Tutakutumia barua pepe uingizaji wako utakapokamilika. Faili zako zitaonekana katika folda moja kwenye ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Tutakujibu hivi karibuni."
@@ -23717,6 +23708,9 @@
       "Disabled": [
         "Imezimwa"
       ],
+      "Enabled": [
+        "Imewashwa"
+      ],
       "finalizing": [
         "inakamilika"
       ],
@@ -24498,9 +24492,6 @@
       ],
       "Free forever": [
         "Bure milele"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Leta faili na folda zako kutoka Google Drive na uzihifadhi kwa faragha katika ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "kwa mwezi, unalipwa kila mwaka"
@@ -26175,9 +26166,6 @@
       "Import started": [
         "Uingizaji umeanza"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Uletaji umeanza, lakini hifadhi yako haitotosha kwa uletaji huu"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Leta kupitia ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27054,9 +27042,6 @@
       ],
       "Warning: suspected fake website": [
         "Onyo: inashukiwa kuwa tovuti bandia"
-      ],
-      "We could not find anything to import": [
-        "Hakuna chochote cha kuleta"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Tumekutumia msimbo kwenye barua pepe yako ili kuhakikisha kuwa ni wewe. Msimbo huu ni halali kwa dakika 10. Tafadhali uweke hapa chini."

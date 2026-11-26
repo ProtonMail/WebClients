@@ -10680,9 +10680,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: просіць платформы атрымальніка адхіляць неаўтарызаваныя лісты."
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } з ${ totalCount }"
-      ],
       "${ remainingAddresses.length } more": [
         "яшчэ ${ remainingAddresses.length }",
         "яшчэ ${ remainingAddresses.length }",
@@ -12891,9 +12888,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Паўтарыце спробу, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі кліентаў вашага банка."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Палепшыце, каб пераканацца ў паспяховым завяршэнні імпарту."
-      ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
       ],
@@ -13994,9 +13988,6 @@
       ],
       "We'll email you when your import is complete.": [
         "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана."
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Вам будзе адпраўлены ліст, калі імпартаванне будзе завершана. Вашы файлы з'явяцца ў папцы ў ${ DRIVE_APP_NAME }"
       ],
       "We'll get back to you shortly.": [
         "Мы звяжамся з вамі ў самы бліжэйшы час."
@@ -24911,6 +24902,9 @@
       "Disabled": [
         "Адключана"
       ],
+      "Enabled": [
+        "Уключаны"
+      ],
       "failed": [
         "збой"
       ],
@@ -25761,9 +25755,6 @@
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "у месяц (аплачваецца адзін раз у год)"
@@ -26770,6 +26761,9 @@
       "Cannot add more users": [
         "Немагчыма дадаць больш карыстальнікаў"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Праверка карткі"
       ],
@@ -27568,9 +27562,6 @@
       "Import started": [
         "Пачаты імпарт"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Пачалося імпартаванне, але аб'ёму вашага сховішча будзе недастаткова для яго завяршэння."
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Імпарт праз ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27702,6 +27693,9 @@
       ],
       "Monthly cost": [
         "Штомесячны кошт"
+      ],
+      "More storage needed to finish your import": [
+        "Патрабуецца больш сховішча, каб завяршыць ваша імпартаванне"
       ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
@@ -28491,9 +28485,6 @@
       ],
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
-      ],
-      "We could not find anything to import": [
-        "Элементы для імпартавання адсутнічаюць"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Код адпраўлены на вашу электронную пошту для пацвярджэння вашай асобы. Код сапраўдны на працягу 10 хвілін. Увядзіце яго ніжэй."

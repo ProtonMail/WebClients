@@ -5215,6 +5215,11 @@
         "Tous les ${ interval } jours, ${ untilString }"
       ]
     },
+    "dark_web_monitoring: Action": {
+      "Upgrade to enable ${ DARK_WEB_MONITORING_NAME }": [
+        "Changez d'abonnement pour activer ${ DARK_WEB_MONITORING_NAME }."
+      ]
+    },
     "Dashboard": {
       "Communicate and schedule with end-to-end encryption.": [
         "Communiquez et planifiez avec un chiffrement de bout en bout."
@@ -10138,6 +10143,9 @@
         "${ countriesCount } pays activé",
         "${ countriesCount } pays activés"
       ],
+      "${ current } of ${ total }": [
+        "${ current } sur ${ total }"
+      ],
       "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
         "${ DataLockedText }, mais récupérable avec vos ${ RecoveryContactsLink } :"
       ],
@@ -12485,9 +12493,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Veuillez changer d'abonnement afin de garantir la réussite de l'importation."
-      ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
       ],
@@ -13065,6 +13070,9 @@
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Cette fonctionnalité retarde l'envoi de vos messages, vous donnant la possibilité d'annuler l'envoi dans un délai imparti."
       ],
+      "This feature is not supported in your plan. Contact your admin to gain access.": [
+        "Cette fonctionnalité n'est pas prise en charge dans votre abonnement. Contactez votre administrateur pour y avoir accès."
+      ],
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
@@ -13622,9 +13630,6 @@
       ],
       "We'll email you when your import is complete.": [
         "Nous vous enverrons un e-mail quand l'importation sera terminée."
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Nous vous enverrons un e-mail quand l'importation sera terminée. Vos fichiers apparaîtront dans un dossier situé dans ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Nous vous recontacterons prochainement."
@@ -18735,11 +18740,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME } : Créez, modifiez et collaborez sur des documents chiffrés de bout en bout."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME } : Sécurisez vos fichiers grâce à un espace de stockage chiffré comprenant entre autre la synchronisation automatique, le partage de fichiers chiffrés,"
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME } : Créez, modifiez et collaborez sur des feuilles de calcul chiffrées de bout en bout."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME } : accédez aux contenus bloqués et naviguez de manière privée. Comprend ${ serversAndCountries }, les vitesses VPN les plus élevées, l'accès aux services de streaming du monde entier, une protection contre les logiciels malveillants, un bloqueur de publicités, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
@@ -24151,6 +24162,9 @@
       "Disabled": [
         "Désactivé"
       ],
+      "Enabled": [
+        "Activé"
+      ],
       "failed": [
         "n'a pas abouti"
       ],
@@ -24931,9 +24945,6 @@
       ],
       "Free forever": [
         "Gratuit pour toujours"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importez vos fichiers et dossiers depuis Google Drive et conservez-les en privé dans ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "par mois (facturation annuelle)"
@@ -25908,6 +25919,9 @@
       "Cannot add more users": [
         "Vous ne pouvez pas ajouter plus d’utilisateurs."
       ],
+      "Captcha": [
+        "Captcha"
+      ],
       "Card verification": [
         "Vérification de la carte"
       ],
@@ -26695,9 +26709,6 @@
       "Import started": [
         "L'importation a commencé"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "L'importation a commencé, mais votre espace de stockage ne sera pas suffisant pour cette importation"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer avec ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -26818,6 +26829,9 @@
       "Monthly cost": [
         "Coût mensuel"
       ],
+      "More storage needed to finish your import": [
+        "Plus d'espace de stockage est nécessaire pour terminer votre importation."
+      ],
       "Multi-user support": [
         "Prise en charge du multi-utilisateur"
       ],
@@ -26865,6 +26879,9 @@
       ],
       "No need to empty the trash": [
         "Pas besoin de vider la corbeille"
+      ],
+      "Nothing to import": [
+        "Il n'y a rien à importer"
       ],
       "Notifications": [
         "Notifications"
@@ -27590,9 +27607,6 @@
       "Warning: suspected fake website": [
         "Attention : site internet suspect/frauduleux"
       ],
-      "We could not find anything to import": [
-        "Nous n’avons rien trouvé à importer."
-      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Nous vous avons envoyé un code à votre adresse e-mail afin de s'assurer qu'il s'agit bien de vous. Ce code est valide pendant 10 minutes. Veuillez le saisir ci-dessous."
       ],
@@ -27833,6 +27847,12 @@
       "Account is disconnected": [
         "Compte déconnecté"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Ajoutez une méthode de récupération des données pour déverrouiller vos données si vous oubliez votre mot de passe."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Ajoutez une adresse e-mail ou un numéro de téléphone de récupération afin de pouvoir réinitialiser votre mot de passe si vous l'oubliez."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Ajouté(s) à votre abonnement : ${ mergedAddonTitles }"
       ],
@@ -27880,6 +27900,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copiez et collez cette URL dans le champ ID de l'entité de votre fournisseur d'identité."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Créez une phrase de récupération afin de pouvoir récupérer vos données si vous oubliez votre mot de passe."
       ],
       "Customize import to reduce the number of folders": [
         "Personnalisez l'importation pour réduire le nombre de dossiers."
@@ -27937,6 +27960,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Par exemple, **mot de passe, azerty**, etc."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Créez une phrase de récupération pour protéger votre compte contre toute perte de données."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Obtenez des conseils de productivité et de sécurité pour vous aider à tirer le meilleur parti de ${ MAIL_APP_NAME } et bien plus encore."
@@ -28024,6 +28050,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Les signatures produites par cette clé sont considérées comme non valides et cette clé ne peut pas être utilisée pour le chiffrement."
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Certaines de vos données sont verrouillées. Utilisez une méthode de récupération pour les déverrouiller."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Indiquez le domaine autorisé à s'authentifier avec SAML SSO."
@@ -28151,6 +28180,12 @@
       "Your organization has reached its limit of ${ maxServiceAccounts } service account.": [
         "Votre organisation a atteint sa limite de ${ maxServiceAccounts } compte de service.",
         "Votre organisation a atteint sa limite de ${ maxServiceAccounts } comptes de service."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Votre fichier de récupération n'est plus à jour. Téléchargez-en un nouveau afin de pouvoir récupérer vos données."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Votre phrase de récupération n'est plus valide. Générez-en une nouvelle afin de pouvoir continuer à récupérer vos données."
       ]
     },
     "tooltip": {

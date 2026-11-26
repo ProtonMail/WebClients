@@ -301,6 +301,9 @@
       "Reminder": [
         "Recordatorio"
       ],
+      "Reset member password": [
+        "Restablecer la contraseña"
+      ],
       "Restrict app access": [
         "Restringir el acceso a las aplicaciones"
       ],
@@ -10505,6 +10508,9 @@
         "${ countriesCount } país activado",
         "${ countriesCount } países activados"
       ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
       "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
         "${ DataLockedText }, pero recuperables con tus ${ RecoveryContactsLink }:"
       ],
@@ -10687,9 +10693,6 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: pide a las plataformas de destino rechazar los correos no autorizados."
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } de ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } más",
@@ -12009,7 +12012,7 @@
         "Publicado en ZDNet"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
+        "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos de 50 GB cada uno"
       ],
       "Fill in user details": [
         "Rellena los datos del usuario."
@@ -12019,6 +12022,9 @@
       ],
       "Find out what can be migrated.": [
         "Descubre qué se puede migrar."
+      ],
+      "Find your files": [
+        "Encuentre sus archivos"
       ],
       "Folders are where your messages are stored. A message can only be in one folder.": [
         "Carpetas son donde tus mensajes están almacenados. Un mensaje solo puede esta en una carpeta."
@@ -12202,6 +12208,9 @@
       ],
       "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
         "Si se desactiva, los miembros de la organización no podrán guardar claves de acceso en ${ PASS_APP_NAME } ni iniciar sesión con ellas. No se eliminará nada."
+      ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Si está habilitado, los usuarios no pueden restablecer sus contraseñas sin una aprobación de un administrador."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Si está activado, los miembros de la organización podrán compartir elementos individuales además de cajas fuertes."
@@ -12538,6 +12547,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asegúrate de ${ addARecoveryMethod }. De esta manera puedes volver a tener acceso a tu cuenta en caso de olvidar la contraseña."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Administre la configuración para la recuperación de cuenta para los miembros de su organización."
       ],
       "Manage groups in your identity provider": [
         "Gestiona los grupos en tu proveedor de identidad"
@@ -12954,9 +12966,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Inténtalo de nuevo con otro método de pago o ponte en contacto con tu banco."
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Mejora tu plan para asegurarte de que la importación se complete correctamente."
-      ],
       "Please use another browser or download the file.": [
         "Usa otro navegador o descarga el archivo."
       ],
@@ -13109,6 +13118,9 @@
       ],
       "Right to Left": [
         "Derecha a Izquierda"
+      ],
+      "Runs in the background": [
+        "Se ejecuta en segundo plano"
       ],
       "SAML configuration saved": [
         "Se ha guardado la configuración SAML."
@@ -13527,6 +13539,9 @@
       ],
       "They get end-to-end encrypted email, storage, and collaboration tools": [
         "Obtienen correo electrónico, almacenamiento y herramientas de colaboración con cifrado de extremo a extremo"
+      ],
+      "They'll be in a new folder in My files.": [
+        "Estarán en una nueva carpeta en Mis archivos."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
@@ -14140,9 +14155,6 @@
       "We'll email you when your import is complete.": [
         "Te enviaremos un correo cuando termine la importación."
       ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Te enviaremos un correo cuando termine la importación. Tus archivos aparecerán en una carpeta de ${ DRIVE_APP_NAME }."
-      ],
       "We'll get back to you shortly.": [
         "Te contactaremos en breve."
       ],
@@ -14157,6 +14169,9 @@
       ],
       "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
         "Estamos creando una nueva forma de que gestiones tu organización y buscamos usuarios concretos para unirse a una videollamada y probar una versión temprana. ¿Tienes curiosidad por saber si encajarías? Responde a unas pocas preguntas rápidas para ver si puedes participar."
+      ],
+      "We're copying your files from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Estamos copiando sus archivos desde Google Drive a ${ DRIVE_APP_NAME }."
       ],
       "We've noticed some users have not claimed their ${ BRAND_NAME } accounts.": [
         "Hemos detectado que algunos usuarios no han activado sus cuentas de ${ BRAND_NAME }."
@@ -14353,6 +14368,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Mientras tanto, puedes cerrar esta pestaña o navegador."
+      ],
+      "You can close this and keep using ${ DRIVE_APP_NAME }.": [
+        "Puede cerrar esto y seguir usando ${ DRIVE_APP_NAME }."
       ],
       "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
         "Puedes definir las políticas de ${ PASS_APP_NAME } para los miembros de la organización."
@@ -14684,6 +14702,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Es posible que tu Google Drive esté vacío o que solo contenga archivos no compatibles."
+      ],
+      "Your import has started, but it will pause when your storage is full. Upgrade now to bring all your files over.": [
+        "Su importación ha comenzado, pero se detendrá cuando su almacenamiento esté lleno. Ascienda ahora para traer todos sus archivos."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tus datos están a salvo con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
@@ -16746,6 +16767,9 @@
       ],
       "Require 2FA for everyone": [
         "Requerir 2FA para todos"
+      ],
+      "Require admin approval": [
+        "Requiere aprobación del administrador"
       ],
       "Require password check-ins": [
         "Exigir comprobaciones de contraseña"
@@ -19792,6 +19816,9 @@
       "Link copied to clipboard": [
         "Se ha copiado el enlace al portapapeles."
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Usuarios ahora pueden restablecer sus contraseñas con la frase de recuperación."
+      ],
       "Monitoring disabled": [
         "El monitoreo ha sido desactivado."
       ],
@@ -19809,6 +19836,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Las comprobaciones de contraseña ya son obligatorias para todos los miembros"
+      ],
+      "Password resets now require administrator approval": [
+        "Restablecer la contraseña ahora requiere aprobación del administrador."
       ],
       "Reminder has been sent": [
         "Se ha enviado un recordatorio"
@@ -24943,6 +24973,9 @@
       "Disabled": [
         "Desactivado"
       ],
+      "Enabled": [
+        "Activado"
+      ],
       "failed": [
         "fallido"
       ],
@@ -25747,9 +25780,6 @@
       ],
       "Free forever": [
         "Gratis para siempre"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Importa tus archivos y carpetas de Google Drive y mantenlos privados en ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "al mes con facturación anual"
@@ -27541,9 +27571,6 @@
       "Import started": [
         "Importación iniciada"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "La importación se ha iniciado, pero tu almacenamiento no será suficiente para esta importación"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar con ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -27676,6 +27703,9 @@
       "Monthly cost": [
         "Coste mensual"
       ],
+      "More storage needed to finish your import": [
+        "Necesitas más almacenamiento para terminar la importación"
+      ],
       "Multi-user support": [
         "Soporte multiusuario"
       ],
@@ -27723,6 +27753,9 @@
       ],
       "No need to empty the trash": [
         "No es necesario vaciar la papelera"
+      ],
+      "Nothing to import": [
+        "Nada para importar"
       ],
       "Notifications": [
         "Notificaciones"
@@ -28207,6 +28240,9 @@
       "Spam, block, and allow lists": [
         "Listas de direcciones permitidas, bloqueadas y spam"
       ],
+      "Special offer": [
+        "Oferta especial"
+      ],
       "Special Offer": [
         "Oferta especial"
       ],
@@ -28471,9 +28507,6 @@
       ],
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
-      ],
-      "We could not find anything to import": [
-        "No hemos encontrado nada que importar"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Se ha enviado un código a tu correo electrónico para comprobar que eres tú. Este código es válido durante 10 minutos. Introdúcelo a continuación."

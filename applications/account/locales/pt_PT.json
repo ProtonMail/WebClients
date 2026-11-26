@@ -202,6 +202,9 @@
       "Referral link": [
         "Hiperligação de recomendação"
       ],
+      "Reset member password": [
+        "Redefinir palavra-passe de membro"
+      ],
       "Restrict app access": [
         "Restringir acesso da aplicação"
       ],
@@ -9963,6 +9966,10 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } membro não configurou um método de recuperação.",
+        "${ membersWithoutRecovery } membros não configuraram um método de recuperação."
+      ],
       "${ n } address": [
         "${ n } endereço",
         "${ n } endereços"
@@ -10071,9 +10078,6 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: solicitação às plataformas destinatárias que rejeitem os e-mails não autorizados."
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } de ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } mais",
@@ -11395,6 +11399,9 @@
       "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
         "Se desativada, os membros da organização não poderão guardar as chaves de acesso no ${ PASS_APP_NAME } ou autenticarem-se. Nada será eliminado."
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Se ativado, os membros não podem redefinir as suas palavras-passe sem uma aprovação do administrador."
+      ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Se ativado, os membros da organização poderão partilhar itens individuais para além dos cofres."
       ],
@@ -11697,6 +11704,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de que ${ addARecoveryMethod } para que possa voltar à sua conta se se esquecer da palavra-passe."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Gerir as definições de recuperação de conta para os membros da sua organização."
       ],
       "Manage groups in your identity provider": [
         "Gerir grupos no seu fornecedor de identidade"
@@ -15541,6 +15551,9 @@
       "Require 2FA for everyone": [
         "Exigir A2F para todos"
       ],
+      "Require admin approval": [
+        "Requer aprovação do administrador"
+      ],
       "Reserved address": [
         "Endereço reservado"
       ],
@@ -18048,11 +18061,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja a sua agenda com encriptação de ponta a ponta. Inclui suporte para agendas personalizadas, partilha de agenda e muito mais."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Criar, editar, e colaborar nos documentos encriptados de ponta a ponta."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: proteja os seus e-mails com encriptados de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases hide-my-email ilimitados e muito mais."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Criar, editar, e colaborar nas folhas encriptadas de ponta a ponta."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Aceda a conteúdo bloqueado e navegue de forma privada. Inclui ${ serversAndCountries }, as velocidades mais altas da VPN, acesso a serviços de streaming em todo o mundo, bloqueador de malware e de anúncios, transferências rápidas de BitTorrent e muito mais."
@@ -18444,6 +18463,9 @@
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Os membros agora podem redefinir as suas palavras-passe com as suas frases de recuperação"
+      ],
       "Monitoring disabled": [
         "Monitorização desativada"
       ],
@@ -18455,6 +18477,9 @@
       ],
       "OpenVPN credentials regenerated": [
         "Credenciais do OpenVPN regeneradas"
+      ],
+      "Password resets now require administrator approval": [
+        "As redefinições de palavra-passe passam a exigir a aprovação de um administrador"
       ],
       "Reminder has been sent": [
         "O lembrete foi enviado."
@@ -23354,6 +23379,9 @@
       "Disabled": [
         "Desativado"
       ],
+      "Enabled": [
+        "Ativado"
+      ],
       "failed": [
         "falhou"
       ],
@@ -26946,6 +26974,12 @@
       "Account is disconnected": [
         "A conta está desligada"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Adicione um método de recuperação de dados para desbloquear os seus dados caso se esqueça da sua palavra-passe."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Adicione um endereço de correio eletrónico ou um número de telefone de recuperação para poder redefinir a sua palavra-passe caso se esqueça dela."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Adicionado ao seu plano: ${ mergedAddonTitles }"
       ],
@@ -26990,6 +27024,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Copie e cole esse URL no campo ID da entidade do seu fornecedor de identidade."
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Alguns dos seus dados estão bloqueados. Utilize um método de recuperação para os desbloquear."
       ],
       "Customize import to reduce the number of folders": [
         "Personalize a importação para reduzir o número de pastas"
@@ -27047,6 +27084,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Por exemplo, **password, qwerty**, etc."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Gere uma frase de recuperação para proteger a sua conta contra a perda de dados."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Receba dicas de produtividade e de segurança para o ajudar a tirar o máximo partido do ${ MAIL_APP_NAME } e mais além."
@@ -27128,6 +27168,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "As assinaturas produzidas por esta chave são tratadas como inválidas e esta chave não pode ser utilizada para encriptação"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Alguns dos seus dados estão bloqueados. Utilize um método de recuperação para os desbloquear."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Especifique o domínio com permissão para a autenticação SAML SSO."
@@ -27251,6 +27294,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "A sua conta externa pode ter atingido o limite de largura de banda de 24 horas. ${ BRAND_NAME } tentará retomar a importação assim que possível."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "O seu ficheiro de recuperação está desatualizado. Transfira um novo para poder continuar a recuperar os seus dados."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "A sua frase de recuperação está desatualizada. Obtenha uma nova para poder continuar a recuperar os seus dados."
       ]
     },
     "tooltip": {

@@ -301,6 +301,9 @@
       "Reminder": [
         "Pripomienka"
       ],
+      "Reset member password": [
+        "Resetovať heslo člena"
+      ],
       "Restrict app access": [
         "Obmedziť prístup k aplikáciám"
       ],
@@ -10771,6 +10774,12 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencií"
       ],
+      "${ membersWithoutRecovery } member has not set up a recovery method.": [
+        "${ membersWithoutRecovery } člen nemá nastavenú metódu obnovenia.",
+        "${ membersWithoutRecovery } členovia nemajú nastavenú metódu obnovenia.",
+        "${ membersWithoutRecovery } členov nemá nastavenú metódu obnovenia.",
+        "${ membersWithoutRecovery } členov nemá nastavenú metódu obnovenia."
+      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
@@ -10902,9 +10911,6 @@
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: žiada platformy príjemcov o odmietnutie neautorizovaných emailov."
-      ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } z ${ totalCount }"
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } ďalšia",
@@ -12466,6 +12472,9 @@
       "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
         "Ak bude táto funkcia vypnutá, členovia organizácie nebudú môcť ukladať prístupové kľúče v ${ PASS_APP_NAME } ani sa pomocou nich prihlasovať. Žiadne údaje sa nevymažú."
       ],
+      "If enabled, members can't reset their password without an administrator's approval.": [
+        "Ak je táto možnosť povolená, členovia si nemôžu resetovať heslo bez schválenia správcom."
+      ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Ak je táto možnosť povolená, členovia organizácie budú môcť okrem trezorov zdieľať aj jednotlivé položky."
       ],
@@ -12807,6 +12816,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Uistite sa, že ste ${ addARecoveryMethod }, aby ste sa mohli dostať späť do svojho účtu, ak zabudnete heslo."
+      ],
+      "Manage account recovery settings for your organization members.": [
+        "Spravujte nastavenia obnovenia účtu pre členov vašej organizácie."
       ],
       "Manage groups in your identity provider": [
         "Skupiny spravujte vo vašom poskytovateľovi identít"
@@ -13230,9 +13242,6 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
-      ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "Pre úspešné dokončenie importu zvýšte úroveň svojho plánu, prosím."
       ],
       "Please use another browser or download the file.": [
         "Použite iný prehliadač alebo si súbor stiahnite, prosím."
@@ -14430,9 +14439,6 @@
       ],
       "We'll email you when your import is complete.": [
         "Akonáhle bude import dokončený, pošleme vám email."
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "Akonáhle sa import dokončí, pošleme vám email. Vaše súbory sa zobrazia v priečinku v ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "O chvíľu sa vám ozveme."
@@ -17079,6 +17085,9 @@
       ],
       "Require 2FA for everyone": [
         "Vyžadovať 2FA pre všetkých"
+      ],
+      "Require admin approval": [
+        "Vyžadovať schválenie správcom"
       ],
       "Require password check-ins": [
         "Vyžadovať prihlásenie pomocou hesla"
@@ -19807,11 +19816,17 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
       ],
+      "${ DOCS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted docs.": [
+        "${ DOCS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované dokumenty a spolupracujte na nich."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Obsahuje automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "${ SHEETS_APP_NAME }: Create, edit, and collaborate on end-to-end encrypted sheets.": [
+        "${ SHEETS_APP_NAME }: Vytvárajte a upravujte end-to-end šifrované tabuľky a spolupracujte na nich."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje ${ serversAndCountries }, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
@@ -20221,6 +20236,9 @@
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
+      "Members can now reset their password with their recovery phrase": [
+        "Členovia si teraz môžu resetovať heslo pomocou svojej obnovovacej frázy"
+      ],
       "Monitoring disabled": [
         "Monitorovanie vypnuté"
       ],
@@ -20238,6 +20256,9 @@
       ],
       "Password check-ins are now required for all members": [
         "Prihlasovanie pomocou hesla je teraz povinné pre všetkých členov"
+      ],
+      "Password resets now require administrator approval": [
+        "Resetovanie hesla teraz vyžaduje schválenie správcom"
       ],
       "Reminder has been sent": [
         "Pripomienka bola odoslaná"
@@ -25535,6 +25556,9 @@
       "Disabled": [
         "Deaktivované"
       ],
+      "Enabled": [
+        "Povolené"
+      ],
       "failed": [
         "zlyhalo"
       ],
@@ -26385,9 +26409,6 @@
       ],
       "Free forever": [
         "Navždy zadarmo"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "Naimportujte si súbory a priečinky z Google Drive a uchovajte ich ako súkromné v aplikácii ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "mesačne, účtované každý rok"
@@ -27415,6 +27436,9 @@
       "Cannot add more users": [
         "Nie je možné pridať ďalších používateľov"
       ],
+      "Captcha": [
+        "CAPTCHA"
+      ],
       "Card verification": [
         "Overenie karty"
       ],
@@ -28219,9 +28243,6 @@
       "Import started": [
         "Import sa začal"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "Import sa začal, ale váš úložný priestor na tento import nebude stačiť"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import cez ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -28353,6 +28374,9 @@
       ],
       "Monthly cost": [
         "Mesačné náklady"
+      ],
+      "More storage needed to finish your import": [
+        "Na dokončenie importu je potrebný väčší úložný priestor"
       ],
       "Multi-user support": [
         "Podpora viacerých používateľov"
@@ -29155,9 +29179,6 @@
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
       ],
-      "We could not find anything to import": [
-        "Nenašli sme nič, čo by sa dalo importovať"
-      ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "Na vašu emailovú adresu sme vám zaslali overovací kód, aby sme sa uistili, že ste to naozaj vy. Tento kód je platný 10 minút. Zadajte ho nižšie, prosím."
       ],
@@ -29413,6 +29434,12 @@
       "Account is disconnected": [
         "Účet je odpojený"
       ],
+      "Add a data recovery method to unlock your data if you forget your password.": [
+        "Pridajte metódu obnovenia údajov, aby ste mohli odomknúť svoje údaje, ak zabudnete heslo."
+      ],
+      "Add a recovery email or phone so you can reset your password if you forget it.": [
+        "Pridajte email alebo telefón na obnovenie, aby ste si mohli resetovať heslo, ak ho zabudnete."
+      ],
       "Added to your plan: ${ mergedAddonTitles }": [
         "Pridané do vášho plánu: ${ mergedAddonTitles }"
       ],
@@ -29460,6 +29487,9 @@
       ],
       "Copy and paste this URL into the Entity ID field of your identity provider": [
         "Skopírujte a vložte túto URL do poľa ID subjektu poskytovateľa identity"
+      ],
+      "Create a recovery phrase so you can recover your data if you forget your password.": [
+        "Vytvorte si obnovovaciu frázu, aby ste mohli obnoviť svoje údaje, ak zabudnete heslo."
       ],
       "Customize import to reduce the number of folders": [
         "Prispôsobiť import na zníženie počtu priečinkov"
@@ -29520,6 +29550,9 @@
       ],
       "For example, **password, qwerty**, etc.": [
         "Napríklad, **heslo, qwerty** atď."
+      ],
+      "Generate a recovery phrase to protect your account against data loss.": [
+        "Vygenerujte si obnovovaciu frázu a chráňte svoj účet pred stratou údajov."
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
         "Získajte tipy na zvýšenie produktivity a zabezpečenia, ktoré vám pomôžu čo najlepšie využiť ${ MAIL_APP_NAME } a ďalšie."
@@ -29613,6 +29646,9 @@
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Podpisy vytvorené týmto kľúčom sú považované za neplatné a tento kľúč nie je možné použiť pre šifrovanie"
+      ],
+      "Some of your data is locked. Use a recovery method to unlock it.": [
+        "Niektoré vaše údaje sú zamknuté. Odomknite ich pomocou metódy obnovenia."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO"
@@ -29745,6 +29781,12 @@
         "Vaša organizácia dosiahla limit servisných účtov: ${ maxServiceAccounts }.",
         "Vaša organizácia dosiahla limit servisných účtov: ${ maxServiceAccounts }.",
         "Vaša organizácia dosiahla limit servisných účtov: ${ maxServiceAccounts }."
+      ],
+      "Your recovery file is out of date. Download a new one so you can still recover your data.": [
+        "Váš súbor pre obnovenie je zastaraný. Stiahnite si nový, aby ste mohli naďalej obnoviť svoje údaje."
+      ],
+      "Your recovery phrase is out of date. Get a new one so you can still recover your data.": [
+        "Vaša obnovovacia fráza je zastaraná. Vytvorte si novú, aby ste mohli naďalej obnoviť svoje údaje."
       ]
     },
     "tooltip": {

@@ -10427,9 +10427,6 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }：请求收件人拒绝未经授权的电子邮件。"
       ],
-      "${ relevantCount } of ${ totalCount }": [
-        "${ relevantCount } / ${ totalCount }"
-      ],
       "${ remainingAddresses.length } more": [
         "还有 ${ remainingAddresses.length } 个"
       ],
@@ -12623,9 +12620,6 @@
       "Please try again using a different payment method, or contact your bank.": [
         "请尝试用其他方式支付，或联系您的发卡银行。"
       ],
-      "Please upgrade to ensure that the import finishes successfully.": [
-        "请升级以确保导入顺利完成。"
-      ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
       ],
@@ -13780,9 +13774,6 @@
       ],
       "We'll email you when your import is complete.": [
         "导入完成后，我们将通过邮件通知您。"
-      ],
-      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
-        "导入完成后，我们将通过邮件通知您。您的文件将显示在 ${ DRIVE_APP_NAME } 的文件夹中。"
       ],
       "We'll get back to you shortly.": [
         "我们会尽快回复您。"
@@ -24273,6 +24264,9 @@
       "Disabled": [
         "已禁用"
       ],
+      "Enabled": [
+        "已启用"
+      ],
       "failed": [
         "失败"
       ],
@@ -25054,9 +25048,6 @@
       ],
       "Free forever": [
         "永久免费"
-      ],
-      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
-        "从 Google Drive 导入您的文件和文件夹，并在 ${ DRIVE_APP_NAME } 中保持其私密。"
       ],
       "per month, billed annually": [
         "每月，按年计费"
@@ -26777,9 +26768,6 @@
       "Import started": [
         "导入已开始"
       ],
-      "Import started, but your storage won't be enough for this import": [
-        "导入已开始，但您的存储空间不足以完成此次导入"
-      ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
       ],
@@ -26911,6 +26899,9 @@
       ],
       "Monthly cost": [
         "每月费用"
+      ],
+      "More storage needed to finish your import": [
+        "需要更多存储空间才能完成导入"
       ],
       "Multi-user support": [
         "多用户功能"
@@ -27700,9 +27691,6 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
-      ],
-      "We could not find anything to import": [
-        "我们找不到可导入的内容"
       ],
       "We sent you a code to your email to make sure it’s you. This code is valid for 10 minutes. Please enter it below.": [
         "我们已向您的邮箱发送了验证码，以确认您的身份。此验证码有效期为 10 分钟。请在下方输入验证码。"
