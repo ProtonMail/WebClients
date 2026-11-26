@@ -241,7 +241,7 @@ describe('useAudioContextOutput', () => {
         expect(switchActiveDevice).not.toHaveBeenCalled();
     });
 
-    it('restarts a context whose clock stopped after an output change, and reports it', async () => {
+    it('restarts a context whose clock stopped after an output change, and reports that the clock came back', async () => {
         const { audioContext, reportMeetError, advance } = setup({
             initialState: 'running',
             activeAudioOutputId: 'speakers',
@@ -252,9 +252,32 @@ describe('useAudioContextOutput', () => {
 
         expect(audioContext.suspend).toHaveBeenCalledTimes(1);
         expect(audioContext.resume).toHaveBeenCalledTimes(1);
+        expect(reportMeetError).not.toHaveBeenCalled();
+
+        await advance(1_000);
+
+        expect(reportMeetError).toHaveBeenCalledTimes(1);
+        expect(reportMeetError).toHaveBeenCalledWith('Audio context clock stalled after an output change', {
+            level: 'warning',
+            tags: { restartRecoveredClock: 'true' },
+            context: { clockAdvancedSeconds: 0, clockAdvancedAfterRestartSeconds: expect.closeTo(1) },
+        });
+    });
+
+    it('reports that the restart did not bring back a clock that stays stopped', async () => {
+        const { audioContext, reportMeetError, advance } = setup({
+            initialState: 'running',
+            activeAudioOutputId: 'speakers',
+        });
+        audioContext.resume.mockImplementation(async () => audioContext.goTo('running'));
+
+        audioContext.freezeClock();
+        await advance(2_000);
+
+        expect(reportMeetError).toHaveBeenCalledTimes(1);
         expect(reportMeetError).toHaveBeenCalledWith(
             'Audio context clock stalled after an output change',
-            expect.objectContaining({ level: 'warning' })
+            expect.objectContaining({ tags: { restartRecoveredClock: 'false' } })
         );
     });
 
@@ -267,15 +290,15 @@ describe('useAudioContextOutput', () => {
         audioContext.resume.mockRejectedValueOnce(error);
 
         audioContext.freezeClock();
-        await advance(1_000);
+        await advance(2_000);
 
-        expect(reportMeetError).toHaveBeenCalledWith(
-            'Audio context clock stalled after an output change',
-            expect.objectContaining({ level: 'warning' })
-        );
         expect(reportMeetError).toHaveBeenCalledWith(
             'Error restarting a stalled audio context',
             expect.objectContaining({ context: { error } })
+        );
+        expect(reportMeetError).toHaveBeenCalledWith(
+            'Audio context clock stalled after an output change',
+            expect.objectContaining({ tags: { restartRecoveredClock: 'false' } })
         );
     });
 
@@ -369,6 +392,67 @@ describe('useAudioContextOutput', () => {
             'Audio context stayed suspended after recovery attempts',
             expect.objectContaining({ tags: { audioContextState: 'suspended' } })
         );
+    });
+
+    it('reports how long playback took to come back after the recovery gave up', async () => {
+        const { audioContext, reportMeetError, advance } = setup({ initialState: 'running' });
+
+        audioContext.goTo('suspended');
+        await advance(DELAYS_MS.reduce((total, delay) => total + delay, 0));
+        expect(reportMeetError).toHaveBeenCalledTimes(1);
+        expect(reportMeetError).toHaveBeenCalledWith(
+            'Audio context stayed suspended after recovery attempts',
+            expect.anything()
+        );
+
+        await advance(5_000);
+        audioContext.goTo('running');
+
+        expect(reportMeetError).toHaveBeenCalledTimes(2);
+        expect(reportMeetError).toHaveBeenLastCalledWith('Audio context recovered after recovery attempts failed', {
+            level: 'warning',
+            context: { recoveredAfterMs: 5_000 },
+        });
+    });
+
+    it('reports that comeback once, not again when the retry recovers a later drop', async () => {
+        const { audioContext, reportMeetError, advance } = setup({ initialState: 'running' });
+
+        audioContext.goTo('suspended');
+        await advance(10_000);
+        audioContext.goTo('running');
+
+        audioContext.goTo('suspended');
+        await advance(DELAYS_MS[0]);
+        audioContext.goTo('running');
+        await advance(10_000);
+
+        expect(reportMeetError).toHaveBeenCalledTimes(2);
+        expect(reportMeetError).toHaveBeenLastCalledWith(
+            'Audio context recovered after recovery attempts failed',
+            expect.anything()
+        );
+    });
+
+    it('counts the comeback from the first give-up when the recovery gives up again before it', async () => {
+        const { audioContext, reportMeetError, advance } = setup({ initialState: 'running' });
+        const recoveryMs = DELAYS_MS.reduce((total, delay) => total + delay, 0);
+
+        audioContext.goTo('interrupted');
+        await advance(recoveryMs);
+
+        await advance(20_000);
+        audioContext.goTo('suspended');
+        await advance(recoveryMs);
+
+        await advance(5_000);
+        audioContext.goTo('running');
+
+        expect(reportMeetError).toHaveBeenCalledTimes(3);
+        expect(reportMeetError).toHaveBeenLastCalledWith('Audio context recovered after recovery attempts failed', {
+            level: 'warning',
+            context: { recoveredAfterMs: 28_750 },
+        });
     });
 
     it('stays quiet when the context recovers', async () => {
