@@ -17,6 +17,7 @@ import WalletSettings from './actions/WalletSettings';
 import { BYOEMobile } from './actions/byoe-mobile/BYOEMobile';
 import CalendarAccountSettings from './actions/calendar-account-settings/CalendarAccountSettings';
 import CalendarAddFromUrl from './actions/calendar-add-from-url/CalendarAddFromUrl';
+import CalendarAddPublicHolidays from './actions/calendar-add-public-holidays/CalendarAddPublicHolidays';
 import CalendarSettings from './actions/calendar-settings/CalendarSettings';
 import { SignOut } from './actions/sign-out/SignOut';
 import { SupportedActions } from './helper';
@@ -58,6 +59,9 @@ const LegacyLiteAppBaseRoute = ({
                 <CalendarAccountSettings layout={layout} loader={loader} />
             )}
             {action === SupportedActions.CalendarAddFromUrl && <CalendarAddFromUrl layout={layout} loader={loader} />}
+            {action === SupportedActions.CalendarAddPublicHolidays && (
+                <CalendarAddPublicHolidays layout={layout} loader={loader} />
+            )}
             {action === SupportedActions.CategoryView && <CategoriesLiteView layout={layout} loader={loader} />}
             {action === SupportedActions.BYOEMobile && (
                 <BYOEMobile layout={layout} redirect={redirect} initialSearchParams={initialSearchParams} />

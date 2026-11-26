@@ -12,6 +12,7 @@ export enum SupportedActions {
     CalendarSettings = 'calendar-settings',
     CalendarAccountSettings = 'calendar-account-settings',
     CalendarAddFromUrl = 'calendar-add-from-url',
+    CalendarAddPublicHolidays = 'calendar-add-public-holidays',
     EmailSignatures = 'email-signatures', // ET
     LabelsSettings = 'labels-settings', // ET
     SpamFiltersSettings = 'spam-filters-settings', // ET
