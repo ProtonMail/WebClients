@@ -7,6 +7,7 @@ import type { AppSwitcherState } from '../appSwitcher/AppSwitcherContainer';
 import type { AuthSession } from '../authSession';
 import type { AuthDesktopState } from '../fork/AuthDesktop';
 import type { AuthExtensionState } from '../fork/AuthExtension';
+import type { SessionLimitState } from '../fork/SessionLimit';
 import type { OAuthPartnersCallbackState, OAuthPartnersInitiateState } from '../oauthPartners/oauthPartners';
 import type { ReAuthState } from '../reAuth/reauthContainerState';
 import type { ProduceForkData, SSOType } from './forkInterface';
@@ -49,7 +50,8 @@ export type LoginLocationState =
     | LoginLocationStateData<'reauth', ReAuthState>
     | LoginLocationStateData<'app-switcher', AppSwitcherState>
     | LoginLocationStateData<'auth-ext', AuthExtensionState>
-    | LoginLocationStateData<'auth-desktop', AuthDesktopState>;
+    | LoginLocationStateData<'auth-desktop', AuthDesktopState>
+    | LoginLocationStateData<'session-limit', SessionLimitState>;
 
 interface LoginCompleteState {
     type: 'done';
