@@ -29,7 +29,7 @@ export interface Plan {
     Features: number;
     Quantity: number;
     Pricing: Pricing;
-    DefaultPricing?: Pricing;
+    DefaultPricing: Pricing;
     PeriodEnd: CycleMapping<number>;
     State: PlanState;
     Offers: PlanOffers;

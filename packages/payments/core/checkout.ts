@@ -18,7 +18,7 @@ import { InvalidCouponError } from './errors';
 import type { Currency, PlanIDs, Pricing } from './interface';
 import { getAddonType, isAddonType, supportsMemberAddon } from './plan/addons';
 import { getAddonMultiplier, getMembersFromPlanIDs } from './plan/feature-limits';
-import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember } from './price-helpers';
+import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember, getRegularPricing } from './price-helpers';
 import { customCycles, getHas2025OfferCoupon } from './subscription/helpers';
 import { getPlanIDs } from './subscription/helpers/plan-ids';
 import type { Subscription, SubscriptionEstimation } from './subscription/interface';
@@ -88,7 +88,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
         acc[name] = {
             name,
             quantity: getAddonQuantity(planOrAddon, quantity),
-            pricing: planOrAddon.Pricing,
+            pricing: getRegularPricing(planOrAddon),
             title: getAddonTitleWithQuantity(name, quantity, planIDs),
         };
 
@@ -100,6 +100,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
     // calculation purposes.
     if (plan?.Name === PLANS.VPN_BUSINESS) {
         const addon = addonsMap[ADDON_NAMES.IP_VPN_BUSINESS];
+        const ipAddonPlan = plansMap[ADDON_NAMES.IP_VPN_BUSINESS];
 
         if (addon) {
             addon.quantity += 1;
@@ -107,7 +108,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
             addonsMap[ADDON_NAMES.IP_VPN_BUSINESS] = {
                 name: ADDON_NAMES.IP_VPN_BUSINESS,
                 quantity: 1,
-                pricing: plansMap[ADDON_NAMES.IP_VPN_BUSINESS]?.Pricing ?? INCLUDED_IP_PRICING,
+                pricing: (ipAddonPlan && getRegularPricing(ipAddonPlan)) ?? INCLUDED_IP_PRICING,
                 title: '',
             };
         }
@@ -209,6 +210,9 @@ export const getCouponDiscountBreakdownInfo = ({
     };
 };
 
+const sumDiscounts = (discounts: { Amount: number }[] = []) =>
+    Math.abs(discounts.reduce((acc, { Amount }) => acc + Amount, 0));
+
 export const getCheckoutUi = ({
     planIDs,
     plansMap,
@@ -220,7 +224,7 @@ export const getCheckoutUi = ({
 }) => {
     const usersAndAddons = getUsersAndAddons(planIDs, plansMap);
 
-    const amountOptimistic = getPrice(planIDs, checkResult.Cycle, plansMap);
+    const amountOptimistic = getPrice(planIDs, checkResult.Cycle, plansMap, { priceType: 'regular' });
 
     // when the backend returns custom billing subscription mode then it also returns only ther partial amount.
     // so we need to manually switch back to the full amount.
@@ -230,9 +234,15 @@ export const getCheckoutUi = ({
     const cycle = checkResult.Cycle || CYCLE.MONTHLY;
     const couponDiscount = Math.abs(checkResult.CouponDiscount || 0);
 
-    const withDiscountPerCycle = amount - couponDiscount;
+    const planName = usersAndAddons.planName;
+    const offerDiscount = sumDiscounts(checkResult.OfferDiscount);
+    const membersOfferDiscount = sumDiscounts(
+        checkResult.OfferDiscount?.filter(({ Name }) => Name === planName || isAddonType(Name, ADDON_PREFIXES.MEMBER))
+    );
 
-    const withoutDiscountPerMonth = getPrice(planIDs, CYCLE.MONTHLY, plansMap);
+    const withDiscountPerCycle = amount - couponDiscount - offerDiscount;
+
+    const withoutDiscountPerMonth = getPrice(planIDs, CYCLE.MONTHLY, plansMap, { priceType: 'regular' });
 
     const withoutDiscountPerCycle = withoutDiscountPerMonth * cycle;
     const discountPerCycle = withoutDiscountPerCycle - withDiscountPerCycle;
@@ -251,7 +261,7 @@ export const getCheckoutUi = ({
             : amount / cycle - addonsPerMonth;
 
     const couponDiscountPerMonth = couponDiscount / cycle;
-    const withDiscountMembersPerMonth = membersPerMonth - couponDiscountPerMonth;
+    const withDiscountMembersPerMonth = membersPerMonth - couponDiscountPerMonth - membersOfferDiscount / cycle;
     const withDiscountOneMemberPerMonth = withDiscountMembersPerMonth / usersAndAddons.users;
 
     const renewCycle = checkResult.RenewCycle ?? checkResult.Cycle;
@@ -262,16 +272,9 @@ export const getCheckoutUi = ({
             return checkResult.BaseRenewAmount;
         }
 
-        const couponMaxRedemptions = checkResult.Coupon?.MaximumRedemptionsPerUser ?? 0;
-        if (couponMaxRedemptions >= 1) {
-            return getPrice(planIDs, renewCycle, plansMap);
-        }
-
-        return getPrice(planIDs, renewCycle, plansMap);
+        return getPrice(planIDs, renewCycle, plansMap, { priceType: 'regular' });
     })();
     const renewPriceOverriden = !!checkResult.BaseRenewAmount;
-
-    const planName = usersAndAddons.planName;
 
     const withDiscountPerMonth = withDiscountPerCycle / cycle;
 
@@ -286,11 +289,18 @@ export const getCheckoutUi = ({
     const monthlySuffix = isPricePerMember ? c('Suffix').t`/user per month` : c('Suffix').t`/month`;
 
     const couponDiscountBreakdown = getCouponDiscountBreakdownInfo({ checkResult, planName, cycle });
+    const offerDiscountBreakdown = getCouponDiscountBreakdownInfo({
+        checkResult: { ...checkResult, CouponDiscountBreakdown: checkResult.OfferDiscount },
+        planName,
+        cycle,
+    });
 
     return {
         regularAmountPerCycleOptimistic: amountOptimistic,
         regularAmountPerCycle: amount,
         couponDiscount: checkResult.CouponDiscount,
+        /** Total discount of the applied offer, per cycle (negative cents). Undefined without an offer. */
+        offerDiscount: offerDiscount ? -offerDiscount : undefined,
         planIDs,
         planName,
         planTitle: usersAndAddons.planTitle,
@@ -318,6 +328,7 @@ export const getCheckoutUi = ({
         viewUsers: usersAndAddons.viewUsers,
         oneMemberPerMonth,
         couponDiscountBreakdown,
+        offerDiscountBreakdown,
     };
 };
 

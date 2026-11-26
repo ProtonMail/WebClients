@@ -122,6 +122,7 @@ export const getParameters = ({
 }) => {
     const {
         coupon,
+        offer,
         plan: planParam,
         cycle: parsedCycle,
         minimumCycle: parsedMinimumCycle,
@@ -185,6 +186,7 @@ export const getParameters = ({
         plan,
         planParam,
         coupon,
+        offer,
         cycle,
         minimumCycle: parsedMinimumCycle,
         maximumCycle: parsedMaximumCycle,
@@ -241,6 +243,7 @@ export const AutomaticSubscriptionModal = () => {
             minimumCycle,
             maximumCycle,
             coupon,
+            offer,
             step,
             disablePlanSelection,
             disableCycleSelector,
@@ -309,6 +312,7 @@ export const AutomaticSubscriptionModal = () => {
             minimumCycle,
             maximumCycle,
             coupon,
+            offer,
             step,
             disablePlanSelection,
             disableCycleSelector,

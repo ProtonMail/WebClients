@@ -44,6 +44,13 @@ export const FREE_PLAN: FreePlanDefault = {
         [CYCLE.THIRTY]: 0,
         [CYCLE.FIFTEEN]: 0,
     },
+    DefaultPricing: {
+        [CYCLE.MONTHLY]: 0,
+        [CYCLE.YEARLY]: 0,
+        [CYCLE.TWO_YEARS]: 0,
+        [CYCLE.THIRTY]: 0,
+        [CYCLE.FIFTEEN]: 0,
+    },
 };
 
 export const getFreeCheckResult = (

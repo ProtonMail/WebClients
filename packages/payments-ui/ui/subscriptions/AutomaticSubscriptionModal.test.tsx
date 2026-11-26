@@ -210,6 +210,15 @@ describe('getParameters', () => {
         });
     });
 
+    describe('offer', () => {
+        it('passes the offer through and drops the coupon', () => {
+            const { offer, coupon, totals } = callGetParameters('?plan=bundle2022&offer=demo&coupon=SAVE');
+            expect(offer).toBe('demo');
+            expect(coupon).toBeUndefined();
+            expect(totals).not.toHaveProperty('offer');
+        });
+    });
+
     describe('coupon', () => {
         it('passes the coupon through', () => {
             expect(callGetParameters(`?plan=mail2022&coupon=${COUPON_CODES.BLACK_FRIDAY_2025}`).coupon).toBe(

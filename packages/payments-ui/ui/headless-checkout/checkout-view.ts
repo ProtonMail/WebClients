@@ -18,6 +18,7 @@ import { DISCOUNT_LINE_ITEM_TYPE } from './items/discount';
 import { GIFT_LINE_ITEM_TYPE } from './items/gift';
 import { MEMBERS_LINE_ITEM_TYPE } from './items/members';
 import { NEXT_BILLING_LINE_ITEM_TYPE } from './items/next-billing';
+import { OFFER_LINE_ITEM_TYPE } from './items/offer';
 import { PLAN_AMOUNT_LINE_ITEM_TYPE } from './items/plan-amount';
 import { PLAN_AMOUNT_WITH_DISCOUNT_LINE_ITEM_TYPE } from './items/plan-amount-with-discount';
 import { PLAN_AMOUNT_WITH_DISCOUNT_PER_MONTH_LINE_ITEM_TYPE } from './items/plan-amount-with-discount-per-month';
@@ -53,6 +54,7 @@ const defaultCheckoutItemOrder: readonly CheckoutLineItem['type'][] = [
     ADDONS_LINE_ITEM_TYPE,
     PLAN_AMOUNT_LINE_ITEM_TYPE,
     COUPON_LINE_ITEM_TYPE,
+    OFFER_LINE_ITEM_TYPE,
     DISCOUNT_LINE_ITEM_TYPE,
     PLAN_AMOUNT_WITH_DISCOUNT_LINE_ITEM_TYPE,
     PRORATION_LINE_ITEM_TYPE,

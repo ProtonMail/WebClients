@@ -8,7 +8,7 @@ import { getAddonType } from '@proton/payments/core/plan/addons';
 
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import type { BaseLineItem } from './base-line-item';
-import { getAddonLinePricing } from './line-discounts';
+import { getAddonLinePricing, getLineDiscount } from './line-discounts';
 
 interface AddonItem {
     addonName: ADDON_NAMES;
@@ -41,8 +41,8 @@ export const ADDONS_LINE_ITEM_TYPE = 'addons' as const;
 export interface AddonLineItem extends BaseLineItem<typeof ADDONS_LINE_ITEM_TYPE>, ReturnType<typeof formatAddons> {}
 
 function formatAddons(ctx: HeadlessCheckoutContextInner) {
-    const { checkoutUi, cycle, currency, couponConfig, scribeToLumo } = ctx;
-    const { couponDiscountBreakdown } = checkoutUi;
+    const { checkoutUi, cycle, currency, scribeToLumo } = ctx;
+    const { breakdown, inlined } = getLineDiscount(ctx);
 
     const addons: AddonItem[] = checkoutUi.addons.map((addon) => {
         const {
@@ -53,16 +53,16 @@ function formatAddons(ctx: HeadlessCheckoutContextInner) {
             withDiscountForAllPerCycle,
             discountPerCycle,
             discountPercent,
-        } = getAddonLinePricing(addon, cycle, couponDiscountBreakdown);
+        } = getAddonLinePricing(addon, cycle, breakdown);
 
         const withDiscountForAllPerMonth = withDiscountForAllPerCycle / cycle;
         const withDiscountPerOnePerMonth = withDiscountForAllPerMonth / addon.quantity;
 
-        // If the coupon is hidden from the user, then we need to display the discounted price per one per month in the
-        // line item. For other cases, we display the undiscounted price, because checkout will display the aggregated
-        // discount as a separate line item.
-        const pricePerOnePerMonth = couponConfig?.hidden ? withDiscountPerOnePerMonth : basePricePerOnePerCycle / cycle;
-        const priceForAllPerMonth = couponConfig?.hidden ? withDiscountForAllPerMonth : basePriceForAllPerCycle / cycle;
+        // If the discount is inlined (an offer, or a coupon hidden from the user), then we need to display the
+        // discounted price per one per month in the line item. For other cases, we display the undiscounted price,
+        // because checkout will display the aggregated discount as a separate line item.
+        const pricePerOnePerMonth = inlined ? withDiscountPerOnePerMonth : basePricePerOnePerCycle / cycle;
+        const priceForAllPerMonth = inlined ? withDiscountForAllPerMonth : basePriceForAllPerCycle / cycle;
 
         const pricePerOnePerMonthElement = <Price currency={currency}>{pricePerOnePerMonth}</Price>;
 

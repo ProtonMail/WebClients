@@ -356,6 +356,7 @@ const SubscriptionCheckout = ({
         exclude: [
             'amountDue',
             'discount',
+            'offer',
             'renewalNotice',
             'taxInclusive',
             'billingCycle',

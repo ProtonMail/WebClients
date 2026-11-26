@@ -9,6 +9,26 @@ type CheckoutAddon = PaymentsCheckoutUI['addons'][number];
 const getDiscountPercent = (withoutDiscount: number, withDiscount: number) =>
     withoutDiscount > 0 ? Math.round(100 * ((withoutDiscount - withDiscount) / withoutDiscount)) : 0;
 
+/**
+ * Picks the discount that the check response splits per line: the offer's, or without an offer the coupon's.
+ *
+ * @param ctx - Headless checkout context.
+ * @param ctx.checkoutUi - Checkout data holding the offer and coupon discounts.
+ * @param ctx.couponConfig - Coupon config, whose `hidden` flag inlines the coupon discount.
+ * @param ctx.hasOffer - Whether the check applied an offer.
+ * @returns The discount total per cycle (negative cents), its per-line breakdown, and `inlined`: whether the rows show
+ *   their discounted price instead of a separate discount row.
+ */
+export function getLineDiscount({ checkoutUi, couponConfig, hasOffer }: HeadlessCheckoutContextInner) {
+    return hasOffer
+        ? { total: checkoutUi.offerDiscount, breakdown: checkoutUi.offerDiscountBreakdown, inlined: true }
+        : {
+              total: checkoutUi.couponDiscount,
+              breakdown: checkoutUi.couponDiscountBreakdown,
+              inlined: !!couponConfig?.hidden,
+          };
+}
+
 export function getAddonLinePricing(
     addon: CheckoutAddon,
     cycle: Cycle,
@@ -35,28 +55,26 @@ export function getAddonLinePricing(
 }
 
 export function getPlanDiscountPercent(ctx: HeadlessCheckoutContextInner) {
-    const { checkoutUi, cycle, couponConfig } = ctx;
-    const { couponDiscountBreakdown, addons } = checkoutUi;
-    const totalCouponDiscountPerCycle = Math.abs(checkoutUi.couponDiscount || 0);
+    const { checkoutUi, cycle } = ctx;
+    const { addons } = checkoutUi;
+    const { total, breakdown, inlined } = getLineDiscount(ctx);
+    const totalDiscountPerCycle = Math.abs(total || 0);
 
-    const isBasePlanOnly =
-        !!couponConfig?.hidden && !!couponDiscountBreakdown && addons.length > 0 && totalCouponDiscountPerCycle !== 0;
+    const isBasePlanOnly = inlined && !!breakdown && addons.length > 0 && totalDiscountPerCycle !== 0;
 
     if (!isBasePlanOnly) {
         return checkoutUi.discountPercent;
     }
 
-    const addonLines = addons.map((addon) => getAddonLinePricing(addon, cycle, couponDiscountBreakdown));
+    const addonLines = addons.map((addon) => getAddonLinePricing(addon, cycle, breakdown));
     const sumOf = (pick: (line: (typeof addonLines)[number]) => number) =>
         addonLines.reduce((acc, line) => acc + pick(line), 0);
 
     const basePlanWithoutDiscountPerCycle =
         checkoutUi.withoutDiscountPerCycle - sumOf((line) => line.monthlyRenewalsPriceForAllPerCycle);
-    const basePlanCouponDiscountPerCycle = totalCouponDiscountPerCycle - sumOf((line) => line.couponDiscountPerCycle);
+    const basePlanDiscountPerCycle = totalDiscountPerCycle - sumOf((line) => line.couponDiscountPerCycle);
     const basePlanWithDiscountPerCycle =
-        checkoutUi.regularAmountPerCycle -
-        sumOf((line) => line.basePriceForAllPerCycle) -
-        basePlanCouponDiscountPerCycle;
+        checkoutUi.regularAmountPerCycle - sumOf((line) => line.basePriceForAllPerCycle) - basePlanDiscountPerCycle;
 
     return getDiscountPercent(basePlanWithoutDiscountPerCycle, basePlanWithDiscountPerCycle);
 }

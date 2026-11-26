@@ -18,6 +18,7 @@ export interface OpenCallbackProps {
     plan?: PLANS;
     planIDs?: PlanIDs;
     coupon?: string | null;
+    offer?: string;
     disablePlanSelection?: boolean;
     disableThanksStep?: boolean;
     defaultAudience?: Audience;
