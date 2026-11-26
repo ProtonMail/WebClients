@@ -6,7 +6,7 @@ import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
 import { getReceivedStatusIcon, getSentStatusIconInfo } from '@proton/mail-message/helpers/message/icon';
-import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
+import type { MessageStateWithData, MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import createScrollIntoView from '@proton/shared/lib/helpers/createScrollIntoView';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -21,6 +21,7 @@ import { LOAD_RETRY_COUNT } from '../../constants';
 import { hasLabel, isUnread } from '../../helpers/elements';
 import { isElementReminded } from '../../helpers/snooze';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
+import { useSaveAttachmentToDrive } from '../../hooks/attachments/useSaveAttachmentToDrive';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
@@ -113,6 +114,8 @@ const MessageView = (
     const loadEmbeddedImages = useLoadEmbeddedImages(message.localID);
     const resignContact = useResignContact(message.localID);
     const { markAs } = useMarkAs();
+    // Here rather than in the attachment list, which the external-sender page also renders without a user to check
+    const { onSaveToDrive, confirmSaveModal } = useSaveAttachmentToDrive(message as MessageStateWithData);
 
     const onCompose = useOnCompose();
 
@@ -460,7 +463,7 @@ const MessageView = (
                             }
                         }}
                     />
-                    {showFooter ? <MessageFooter message={message} /> : null}
+                    {showFooter ? <MessageFooter message={message} onSaveToDrive={onSaveToDrive} /> : null}
                 </>
             ) : (
                 <HeaderCollapsed
@@ -474,6 +477,7 @@ const MessageView = (
                     conversationIndex={conversationIndex}
                 />
             )}
+            {confirmSaveModal}
         </article>
     );
 };

@@ -2,17 +2,26 @@
 // jsdom kept: the message content iframe needs iframe.contentDocument, which happy-dom lacks
 import { fireEvent, waitFor, within } from '@testing-library/react';
 
+import type { ProtonDriveClient } from '@proton/drive/sdk';
 import { MimeImage } from '@proton/file-icons/icons/MimeImage';
 import { MimePdf } from '@proton/file-icons/icons/MimePdf';
 import { MimeUnknown } from '@proton/file-icons/icons/MimeUnknown';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
+import { useMailDrive } from '../../../../drive/MailDriveProvider';
 import { assertIconComponent } from '../../../../helpers/tests/assertion';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
 import { EOClearAll } from '../../../../helpers/tests/eo/helpers';
 import { tick } from '../../../../helpers/tests/render';
 import { setup } from './ViewEOMessage.test.helpers';
+
+vi.mock('../../../../drive/MailDriveProvider', async () => {
+    const actual = await vi.importActual<{ useMailDrive: typeof useMailDrive }>('../../../../drive/MailDriveProvider');
+    return { ...actual, useMailDrive: vi.fn(actual.useMailDrive) };
+});
 
 describe('Encrypted Outside message attachments', () => {
     const cid = 'cid';
@@ -61,7 +70,11 @@ describe('Encrypted Outside message attachments', () => {
         await releaseCryptoProxy();
     });
 
-    afterEach(EOClearAll);
+    afterEach(() => {
+        EOClearAll();
+        vi.mocked(useMailDrive).mockReset();
+        vi.restoreAllMocks();
+    });
 
     it('should show EO attachments with their correct icon', async () => {
         const { getAllByTestId } = await setup({ attachments: Attachments, numAttachments: NumAttachments });
@@ -107,5 +120,20 @@ describe('Encrypted Outside message attachments', () => {
         expect(preview).toBeDefined();
         expect(preview?.textContent).toMatch(new RegExp(attachment3.Name));
         expect(preview?.textContent).toMatch(/3of3/);
+    });
+
+    it('never offers Save to Drive on the external-sender page', async () => {
+        mockUseFlag().mockImplementation((flag) => flag === MailFeatureFlag.MailSaveToDrive);
+        vi.mocked(useMailDrive).mockReturnValue({ drive: {} as ProtonDriveClient, isDriveAvailable: true });
+
+        const { getAllByTestId, queryByRole } = await setup({
+            attachments: Attachments,
+            numAttachments: NumAttachments,
+        });
+
+        await waitFor(() => getAllByTestId('attachment-item'));
+        for (const { Name } of Attachments) {
+            expect(queryByRole('button', { name: `Save ${Name} to Proton Drive` })).toBeNull();
+        }
     });
 });

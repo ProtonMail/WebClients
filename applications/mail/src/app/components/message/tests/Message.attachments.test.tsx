@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 
+import type { ProtonDriveClient } from '@proton/drive/sdk';
 import { MimeImage } from '@proton/file-icons/icons/MimeImage';
 import { MimePdf } from '@proton/file-icons/icons/MimePdf';
 import { MimeUnknown } from '@proton/file-icons/icons/MimeUnknown';
@@ -7,7 +8,10 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
+import { useMailDrive } from '../../../drive/MailDriveProvider';
 import { addApiMock } from '../../../helpers/tests/api';
 import { assertIconComponent } from '../../../helpers/tests/assertion';
 import { getCompleteAddress } from '../../../helpers/tests/cache';
@@ -22,6 +26,11 @@ import {
 import { clearAll } from '../../../helpers/tests/helper';
 import { createEmbeddedImage, createMessageImages, encryptMessage } from '../../../helpers/tests/message';
 import { addressID, body, messageID, setup, subject } from './Message.test.helpers';
+
+vi.mock('../../../drive/MailDriveProvider', async () => {
+    const actual = await vi.importActual<{ useMailDrive: typeof useMailDrive }>('../../../drive/MailDriveProvider');
+    return { ...actual, useMailDrive: vi.fn(actual.useMailDrive) };
+});
 
 const cid = 'cid';
 const attachment1 = {
@@ -127,6 +136,27 @@ describe('Message attachments', () => {
 
         // wait for preview to finish loading to ensure there's no pending operations using the CryptoProxy
         await waitFor(() => expect(preview.querySelector('.file-preview-image')).toBeVisible());
+    });
+
+    describe('Save to Drive', () => {
+        afterEach(() => {
+            vi.mocked(useMailDrive).mockReset();
+            vi.restoreAllMocks();
+        });
+
+        it('offers Save to Drive on each attachment when the flag is on and Drive is ready', async () => {
+            mockUseFlag().mockImplementation((flag) => flag === MailFeatureFlag.MailSaveToDrive);
+            vi.mocked(useMailDrive).mockReturnValue({
+                drive: {} as ProtonDriveClient,
+                isDriveAvailable: true,
+            });
+
+            await setup({ data: { NumAttachments, Attachments } });
+
+            for (const { Name } of Attachments) {
+                expect(screen.getByRole('button', { name: `Save ${Name} to Proton Drive` })).toBeInTheDocument();
+            }
+        });
     });
 });
 
