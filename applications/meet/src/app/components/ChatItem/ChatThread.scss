@@ -1,24 +1,7 @@
 .chat-thread {
-	// Pin the root + collapse toggle below the header while replies scroll underneath; releases once
-	// the whole thread scrolls away.
-	.chat-thread-header--sticky {
-		position: sticky;
-
-		// Cancel the list's top padding and re-apply the measured header offset to pin flush.
-		inset-block-start: calc(
-			var(--side-bar-header-height, var(--message-list-header-offset)) - var(--message-list-header-offset)
-		);
-		z-index: 1;
-
-		// Opaque so replies scrolling behind don't bleed through.
-		background-color: var(--background-card);
-	}
-
-	// Replies scroll under the pinned root, so the reaction picker scrolls a reply's toolbar in below it.
-	.chat-thread-header--sticky + .chat-thread-body .chat-item-quick-reactions {
-		scroll-margin-block-start: calc(
-			var(--side-bar-header-height, var(--message-list-header-offset)) + var(--chat-thread-root-height, 0px)
-		);
+	// The panel header covers the top of the message list, and the field keeps the list's bottom padding below it.
+	.chat-thread-reply {
+		scroll-margin-block: var(--side-bar-header-height, var(--message-list-header-offset)) 1rem;
 	}
 
 	.chat-thread-toggle {
@@ -27,30 +10,12 @@
 		color: var(--interaction-norm-major-1) !important;
 	}
 
-	// Positioned content in the replies shares the pinned root's z-index and comes later in the DOM, so it
-	// would paint over the root. Only while pinned: otherwise the first reply's toolbar is meant to overlap
-	// the toggle row above it.
-	&.chat-thread--stuck {
-		.chat-thread-reply {
-			isolation: isolate;
-		}
-
-		// A tapped or focused reply can scroll under the root, so its toolbar stays below it. The hovered
-		// reply is always visible, so its toolbar goes over the root instead of being clipped by it.
-		.chat-thread-body .chat-item-quick-reactions {
-			z-index: 0;
-		}
-
-		@media (hover: hover) {
-			.chat-thread-body .chat-item:hover .chat-item-quick-reactions {
-				z-index: 2;
-			}
-		}
-	}
-
 	.chat-thread-body {
 		&-open {
 			border-inline-start: 2px solid var(--border-norm);
+
+			// The first reply's quick reactions float above it, clear of the reply count.
+			padding-block-start: 0.75rem;
 		}
 
 		&-closed {

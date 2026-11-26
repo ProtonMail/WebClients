@@ -32,15 +32,9 @@ const getEmojiButtonSize = () =>
         Math.floor((window.innerWidth - VIEWPORT_SIDE_MARGIN - EMOJI_MART_GRID_PADDING) / EMOJI_PER_LINE)
     );
 
-// Thread replies scroll under the pinned root as well as the header, as in ChatThread.scss.
-const getCoveredTopHeight = (anchor: HTMLElement) => {
-    const style = getComputedStyle(anchor);
-    const headerHeight = parseFloat(style.getPropertyValue('--side-bar-header-height')) || 0;
-    if (!anchor.closest('.chat-thread-header--sticky + .chat-thread-body')) {
-        return headerHeight;
-    }
-    return headerHeight + (parseFloat(style.getPropertyValue('--chat-thread-root-height')) || 0);
-};
+// The panel header covers the top of the message list.
+const getCoveredTopHeight = (anchor: HTMLElement) =>
+    parseFloat(getComputedStyle(anchor).getPropertyValue('--side-bar-header-height')) || 0;
 
 const EMOJI_MART_HEIGHT = 435;
 const EMOJI_MART_MIN_HEIGHT = 230;

@@ -101,17 +101,16 @@ describe('ChatMessageReactionPicker', () => {
     });
 
     it.each([
-        ['a message', false, '-56px 0px 0px 0px'],
-        ['a reply under a pinned thread root', true, '-140px 0px 0px 0px'],
-    ])('closes once the toolbar of %s is fully covered', async (_, isUnderPinnedRoot, rootMargin) => {
+        ['a message', false],
+        ['a thread reply', true],
+    ])('closes once the toolbar of %s is under the panel header', async (_, isReply) => {
         const messageList = document.createElement('div');
         messageList.className = 'message-list';
         const anchor = document.createElement('div');
         anchor.style.setProperty('--side-bar-header-height', '56px');
-        anchor.style.setProperty('--chat-thread-root-height', '84px');
-        if (isUnderPinnedRoot) {
+        if (isReply) {
             const header = document.createElement('div');
-            header.className = 'chat-thread-header chat-thread-header--sticky';
+            header.className = 'chat-thread-header';
             const body = document.createElement('div');
             body.className = 'chat-thread-body';
             body.append(anchor);
@@ -124,7 +123,7 @@ describe('ChatMessageReactionPicker', () => {
 
         // emoji-mart observes its own grid too.
         expect(observerOptions.filter((options) => options?.root === messageList)).toEqual([
-            { root: messageList, rootMargin },
+            { root: messageList, rootMargin: '-56px 0px 0px 0px' },
         ]);
     });
 
