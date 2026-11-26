@@ -41,7 +41,11 @@
         "./SetupOrganizationNameModal": "./SetupOrganizationNameModal.tsx",
         "./SetupOrganizationSection": "./SetupOrganizationSection.tsx",
         "./sso/SSODomainUnverifiedBanner": "./sso/SSODomainUnverifiedBanner.tsx",
+        "./sso/SsoAdvancedSettings": "./sso/SsoAdvancedSettings.tsx",
         "./sso/SsoPage": "./sso/SsoPage.tsx",
+        "./sso/SsoSamlSettings": "./sso/SsoSamlSettings.tsx",
+        "./sso/SsoScimSettings": "./sso/SsoScimSettings.tsx",
+        "./sso/SsoSettingsProvider": "./sso/SsoSettingsProvider.tsx",
         "./useOrganizationModals": "./useOrganizationModals.tsx",
         "./useOrganizationUnprivatizationModals": "./useOrganizationUnprivatizationModals.tsx",
         "./useScimGroupsOnboardingModal": "./useScimGroupsOnboardingModal.tsx"
