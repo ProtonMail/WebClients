@@ -15,7 +15,8 @@ export type CryptoWorkerOptions = Omit<WorkerPoolInitOptions, 'sentryLogger'>;
  */
 const init = async (options: CryptoWorkerOptions = {}) => {
     const isWorker = typeof window === 'undefined' || typeof document === 'undefined';
-    const isCompat = isWorker || !hasModulesSupport();
+    // Some crawlers (e.g. Bravebot) run the page without a Worker constructor
+    const isCompat = isWorker || !hasModulesSupport() || typeof Worker === 'undefined';
 
     // Compat browsers do not support the worker.
     if (isCompat) {
@@ -30,10 +31,10 @@ const init = async (options: CryptoWorkerOptions = {}) => {
         await CryptoWorkerPool.init({
             awaitOnFirstUseErrorCallback: options?.awaitOnFirstUse
                 ? (err: unknown) =>
-                    captureMessage('CryptoWorkerPool init error', {
-                        level: 'error',
-                        extra: { message: err instanceof Error ? err.message : 'Unknown error' },
-                    })
+                      captureMessage('CryptoWorkerPool init error', {
+                          level: 'error',
+                          extra: { message: err instanceof Error ? err.message : 'Unknown error' },
+                      })
                 : undefined,
             ...options,
             sentryLogger: captureMessage,
