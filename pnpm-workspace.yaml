@@ -15,7 +15,11 @@ packages:
 # Each workspace declares the type packages it uses. Most list node and webpack-env in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
 # check:constraints requires every workspace to declare these dependencies as "catalog:" or
-# "catalog:<name>" from a named catalog below; see utilities/repo-rules/README.md for the exceptions.
+# "catalog:<name>" from a named catalog below, and every external dependency shared by two or more
+# workspaces to be listed here; see utilities/repo-rules/README.md for the exceptions.
+# `pnpm add` saves every new dependency to the default catalog and rejects a version outside the
+# catalog's range. Add a `catalog:<name>` dependency by editing package.json.
+catalogMode: strict
 catalog:
     '@ariakit/react': 0.4.29
     '@dnd-kit/abstract': ^0.5.3
