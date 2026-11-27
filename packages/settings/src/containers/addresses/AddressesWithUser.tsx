@@ -142,7 +142,7 @@ const SortableListItem = ({
                         data-testid="users-and-addresses-table:address"
                         onClick={() => onClickEmail(address.Email)}
                     >
-                        <div>{address.Email}</div>
+                        <div className="text-ellipsis">{address.Email}</div>
                         {!isSignInRestricted && <ExternalAddressInfo address={address} />}
                     </button>
                 </Tooltip>
