@@ -9,6 +9,6 @@ export const isB2BEvent =
     (event: B2BEvent): event is B2BEvent<T> =>
         event.name === name;
 
-/** Pass Essentials is currently considered as Plus and not B2B. */
+/** Pass Essentials and Pass Basic are reported as Plus, so they are matched by plan name */
 export const isPassB2BPlan = (plan: PassPlanResponse) =>
-    plan.Type === PlanType.BUSINESS || plan.InternalName === PLANS.PASS_PRO;
+    plan.Type === PlanType.BUSINESS || plan.InternalName === PLANS.PASS_PRO || plan.InternalName === PLANS.PASS_BASIC;

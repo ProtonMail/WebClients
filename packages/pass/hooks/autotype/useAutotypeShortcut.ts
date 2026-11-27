@@ -5,9 +5,8 @@ import noop from '@proton/utils/noop';
 
 import { useItemsActions } from '../../components/Item/ItemActionsProvider';
 import { useSpotlightFor } from '../../components/Spotlight/WithSpotlight';
-import { selectPassPlan, selectUserPlan } from '../../store/selectors/user';
+import { selectUserAutoTypeAllowed } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
-import { UserPassPlan } from '../../types/api/plan';
 import type { ShareId } from '../../types/crypto/pass-types';
 import type { Item } from '../../types/data/items';
 import { SpotlightMessage } from '../../types/worker/spotlight';
@@ -18,8 +17,7 @@ import { useAutotypeExecute } from './useAutotypeExecute';
 export const useAutotypeShortcut = DESKTOP_BUILD
     ? (data: Item<'login'>, shareId: ShareId) => {
           const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
-          const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
-          const isPassEssentials = useSelector(selectUserPlan)?.InternalName === 'passpro2024';
+          const autoTypeAllowed = useSelector(selectUserAutoTypeAllowed);
           const { actions } = useAutotypeActions(data, shareId);
           const executeAutotype = useAutotypeExecute();
           const { autotypeConfirmShortcut } = useItemsActions();
@@ -30,8 +28,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
               (evt) => {
                   if (
                       autotypeEnabled &&
-                      !isFreePlan &&
-                      !isPassEssentials &&
+                      autoTypeAllowed &&
                       action &&
                       (evt.ctrlKey || evt.metaKey) &&
                       evt.shiftKey &&
@@ -49,7 +46,7 @@ export const useAutotypeShortcut = DESKTOP_BUILD
                       void executeAutotype?.(autotypeProps);
                   }
               },
-              [action, confirmationSpotlight, autotypeEnabled, isFreePlan, isPassEssentials]
+              [action, confirmationSpotlight, autotypeEnabled, autoTypeAllowed]
           );
       }
     : noop;

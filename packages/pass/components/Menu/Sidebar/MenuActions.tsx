@@ -20,7 +20,7 @@ import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 
 import { AccountPath } from '../../../constants';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
-import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { useNavigateToAccount, useNavigateToAccountHome } from '../../../hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '../../../hooks/useNotificationEnhancer';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
 import { selectOrgAliasCreationDisabled } from '../../../store/selectors/organization';
@@ -54,7 +54,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
     const orgEnabled = org?.settings.enabled ?? false;
     const orgAliasCreationDisabled = useSelector(selectOrgAliasCreationDisabled);
 
-    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
+    const navigateToAccount = useNavigateToAccountHome();
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
     const accessTokensEnabled = useFeatureFlag(PassFeature.PassAccessTokens);
     const accessTokensSpotlight = useSpotlightFor(SpotlightMessage.ACCESS_TOKENS_DISCOVERY);
@@ -103,7 +103,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
             { key: 'support', label: c('Label').t`Support`, icon: IcSpeechBubble },
             { key: 'logout', label: c('Action').t`Sign out`, icon: IcArrowOutFromRectangle, onClick: handleLogout },
         ],
-        [orgEnabled, orgAliasCreationDisabled, accessTokensEnabled, accessTokensSpotlight.open]
+        [orgEnabled, orgAliasCreationDisabled, accessTokensEnabled, accessTokensSpotlight.open, navigateToAccount]
     );
 
     return (

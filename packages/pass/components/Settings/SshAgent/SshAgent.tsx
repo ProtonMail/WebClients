@@ -10,8 +10,7 @@ import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants
 
 import { UpsellRef } from '../../../constants';
 import { selectVisibleNonTrashedSshKeyItems } from '../../../store/selectors/items';
-import { selectPassPlan } from '../../../store/selectors/user';
-import { UserPassPlan } from '../../../types/api/plan';
+import { selectUserSshAgentAllowed } from '../../../store/selectors/user';
 import type { Maybe } from '../../../types/utils';
 import { SpotlightMessage } from '../../../types/worker/spotlight';
 import { getErrorMessage } from '../../../utils/errors/get-error-message';
@@ -33,7 +32,7 @@ const SshAgentDesktop: FC = () => {
 
     const [socketPath, setSocketPath] = useState<Maybe<string>>(undefined);
     const [modal, setModal] = useState<SSHModalState>({ show: false });
-    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const sshAgentAllowed = useSelector(selectUserSshAgentAllowed);
 
     const [loading, setLoading] = useState(false);
     const enabled = Boolean(socketPath);
@@ -91,7 +90,7 @@ const SshAgentDesktop: FC = () => {
     return (
         <SettingsPanel
             title={c('Title').t`SSH Agent`}
-            {...(isFreePlan
+            {...(!sshAgentAllowed
                 ? {
                       contentClassname: 'opacity-50 py-4',
                       actions: [
@@ -110,7 +109,7 @@ const SshAgentDesktop: FC = () => {
                         loading={loading}
                         // Free plan should never have this enabled in the first place, but still
                         // allow user to disable (e.g after downgrade)
-                        disabled={isFreePlan && !enabled}
+                        disabled={!sshAgentAllowed && !enabled}
                     />
                     <div className="flex-1">
                         <div className="flex items-center gap-1">

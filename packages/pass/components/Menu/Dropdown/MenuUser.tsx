@@ -7,12 +7,18 @@ import clsx from '@proton/utils/clsx';
 import { UpsellRef } from '../../../constants';
 import { useLessAggressiveUpsell } from '../../../hooks/useLessAggressiveUpsell';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
-import { selectPassPlan, selectPlanDisplayName, selectUser } from '../../../store/selectors/user';
+import {
+    selectIsPassBasicAdmin,
+    selectPassPlan,
+    selectPlanDisplayName,
+    selectUser,
+} from '../../../store/selectors/user';
 import { UpgradeButton } from '../../Upsell/UpgradeButton';
 import { MenuUpsellCard } from '../Upsell/MenuUpsellCard';
 
 export const MenuUser = memo(() => {
     const passPlan = useSelector(selectPassPlan);
+    const passBasicAdmin = useSelector(selectIsPassBasicAdmin);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
 
@@ -34,7 +40,7 @@ export const MenuUser = memo(() => {
                 </span>
             </div>
 
-            {!isPaidPlan(passPlan) && BUILD_TARGET !== 'safari' && (
+            {(!isPaidPlan(passPlan) || passBasicAdmin) && BUILD_TARGET !== 'safari' && (
                 <div className="pb-2 px-4">
                     {lessAggressiveUpsell ? (
                         <MenuUpsellCard />

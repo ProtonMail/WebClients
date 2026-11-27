@@ -17,7 +17,7 @@ import { Import } from '@proton/pass/components/Settings/Import';
 import { UpsellingProvider } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
+import { useNavigateToAccount, useNavigateToAccountHome } from '@proton/pass/hooks/useNavigateToAccount';
 import { clientSessionLocked } from '@proton/pass/lib/client';
 import { selectOrgAliasCreationDisabled } from '@proton/pass/store/selectors/organization';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -86,7 +86,7 @@ const SettingsTabsContent: FC<Props> = ({ pathname }) => {
     );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
 
-    const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
+    const navigateToAccount = useNavigateToAccountHome();
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
 
     const handleOnChange = (nextTab: number) => {

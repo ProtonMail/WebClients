@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
@@ -7,12 +8,14 @@ import { useLessAggressiveUpsell } from '../../../hooks/useLessAggressiveUpsell'
 import { useMatchUser } from '../../../hooks/useMatchUser';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { selectActivePromoNotification } from '../../../store/notifications/in-app/selectors';
+import { selectIsPassBasicAdmin } from '../../../store/selectors/user';
 import { getEpoch } from '../../../utils/time/epoch';
 import { InAppNotificationPromoButton } from '../../Notifications/InAppNotificationPromoButton';
 import { UpgradeButton } from '../../Upsell/UpgradeButton';
 
 export const UpsellButton = () => {
     const paidUser = useMatchUser({ paid: true });
+    const passBasicAdmin = useSelector(selectIsPassBasicAdmin);
     const now = useMemo(() => getEpoch(), []);
     const promo = useMemoSelector(selectActivePromoNotification, [now, false]);
 
@@ -25,7 +28,7 @@ export const UpsellButton = () => {
     if (BUILD_TARGET === 'safari') return null;
 
     const showPromo = !!promo;
-    const showUpgrade = !showPromo && !paidUser && !lessAggressiveUpsell;
+    const showUpgrade = !showPromo && (!paidUser || passBasicAdmin) && !lessAggressiveUpsell;
 
     return (
         <>

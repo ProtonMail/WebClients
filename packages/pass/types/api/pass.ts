@@ -2072,6 +2072,9 @@ export type PassPlanResponse = {
     /* Whether Pass Monitor reports passwords reused across several logins. When false, clients must not surface
      * that insight */
     MonitorDeduplication: boolean;
+    /* Whether Pass Monitor reports reused passwords across logins. Always true, available on every plan; kept for
+     * client compatibility */
+    MonitorReusedPasswords: boolean;
 };
 export type UserMonitorStatusResponse = {
     /* If the monitor for proton address leaks is enabled */

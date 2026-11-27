@@ -16,8 +16,7 @@ import type { PersonalAccessToken } from '../../../lib/access-token/access-token
 import { getTokenStatus } from '../../../lib/access-token/access-token.utils';
 import { deleteAccessToken, getAccessTokenGrants, getAccessTokens } from '../../../store/actions/creators/access-token';
 import { selectAccessTokens } from '../../../store/selectors/access-token';
-import { selectPassPlan } from '../../../store/selectors/user';
-import { UserPassPlan } from '../../../types/api/plan';
+import { selectB2BUpsell, selectUserCliAllowed } from '../../../store/selectors/user';
 import type { MaybeNull } from '../../../types/utils';
 import { partition } from '../../../utils/array/partition';
 import { ConfirmationPrompt } from '../../Confirmation/ConfirmationPrompt';
@@ -165,20 +164,43 @@ const AccessTokensList: FC = () => {
     );
 };
 
-const AccessTokensUpgrade: FC = () => (
-    <div className="flex flex-column items-center text-center py-2 gap-3">
-        <strong>{c('Title').t`Access tokens require ${PASS_APP_NAME} Plus`}</strong>
-        <span className="color-weak text-sm max-w-custom" style={{ '--max-w-custom': '28rem' }}>
-            {c('Info')
-                .t`Upgrade to ${PASS_APP_NAME} Plus to create access tokens and use ${PASS_APP_NAME} programmatically.`}
-        </span>
-        <UpgradeButton upsellRef={UpsellRef.PAT} />
-    </div>
-);
+const AccessTokensUpgrade: FC = () => {
+    const b2bUpsell = useSelector(selectB2BUpsell);
+
+    const [title, info] = (() => {
+        if (!b2bUpsell) {
+            return [
+                c('Title').t`Access tokens require ${PASS_APP_NAME} Plus`,
+                c('Info')
+                    .t`Upgrade to ${PASS_APP_NAME} Plus to create access tokens and use ${PASS_APP_NAME} programmatically.`,
+            ];
+        }
+
+        const b2bTitle = c('Title').t`Access tokens are not included in your plan`;
+        return b2bUpsell.admin
+            ? [
+                  b2bTitle,
+                  c('Info').t`Upgrade your plan to create access tokens and use ${PASS_APP_NAME} programmatically.`,
+              ]
+            : [
+                  b2bTitle,
+                  c('Info').t`Contact your admin to create access tokens and use ${PASS_APP_NAME} programmatically.`,
+              ];
+    })();
+
+    return (
+        <div className="flex flex-column items-center text-center py-2 gap-3">
+            <strong>{title}</strong>
+            <span className="color-weak text-sm max-w-custom" style={{ '--max-w-custom': '28rem' }}>
+                {info}
+            </span>
+            {(!b2bUpsell || b2bUpsell.admin) && <UpgradeButton upsellRef={UpsellRef.PAT} />}
+        </div>
+    );
+};
 
 export const AccessTokens: FC = () => {
-    const passPlan = useSelector(selectPassPlan);
-    const hasAccess = passPlan !== UserPassPlan.FREE;
+    const hasAccess = useSelector(selectUserCliAllowed);
 
     const passCliLink = (
         <Href key="pass-cli-link" href="https://protonpass.github.io/pass-cli/">

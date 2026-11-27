@@ -63,7 +63,7 @@ export const FileAttachmentsField: FC<Props> = ({ children, form, filesCount = 0
     const online = useOnline();
     const { pathname } = useLocation();
 
-    const { hidden, isPassEssentials, promptUpsell } = useFileAttachmentsUpsell();
+    const { hidden, isPassB2BPlan, promptUpsell } = useFileAttachmentsUpsell();
 
     const [filesMap, setFiles] = useState(new Map<string, FileUploadDescriptor>());
     const files = useMemo(() => Array.from(filesMap.values()), [filesMap]);
@@ -194,8 +194,8 @@ export const FileAttachmentsField: FC<Props> = ({ children, form, filesCount = 0
     return (
         <Dropzone
             onDrop={(files) => (canUseStorage ? onAddFiles(files) : promptUpsell())}
-            // Essentials users upgrade via the inline link/admin, not the B2C upsell modal
-            disabled={!online || isPassEssentials}
+            // B2B users without storage upgrade via the inline link/admin, not the B2C upsell modal
+            disabled={!online || (isPassB2BPlan && !canUseStorage)}
             border={false}
             size="small"
         >
@@ -204,7 +204,7 @@ export const FileAttachmentsField: FC<Props> = ({ children, form, filesCount = 0
                     filesCount={files.length + filesCount}
                     onDelete={handleDeleteAll}
                     deleteDisabled={fileUpload.loading || !online}
-                    hidePromotionButton={isPassEssentials}
+                    hidePromotionButton={isPassB2BPlan}
                 >
                     {children}
 
@@ -258,9 +258,7 @@ export const FileAttachmentsField: FC<Props> = ({ children, form, filesCount = 0
                             </FileInput>
                         ))}
 
-                    {!canUseStorage && (
-                        <FileAttachmentsUpsell isPassEssentials={isPassEssentials} onUpsell={promptUpsell} />
-                    )}
+                    {!canUseStorage && <FileAttachmentsUpsell isPassB2BPlan={isPassB2BPlan} onUpsell={promptUpsell} />}
                 </FileAttachmentsSummary>
             </div>
         </Dropzone>

@@ -10,9 +10,10 @@ import monitorSVG from '../../assets/monitor/upgrade.svg';
 import onboardingSVG from '../../assets/onboarding.svg';
 import type { UpsellRef } from '../../constants';
 import { shouldUpsellUnlimited } from '../../lib/user/user.plan';
-import { selectUserPlan } from '../../store/selectors/user';
+import { selectB2BUpsell, selectUserPlan } from '../../store/selectors/user';
 import type { Maybe } from '../../types/utils';
 import { type AdapativeModalProps, AdaptiveModal } from '../Layout/Modal/AdaptiveModal';
+import { B2BContactAdminModal } from './B2BContactAdminModal';
 import { FreeTrialActions } from './FreeTrialActions';
 import { UpgradeButton } from './UpgradeButton';
 import { UpsellFeatures } from './UpsellFeatures';
@@ -100,6 +101,13 @@ const getContent = (type: UpsellType): UpsellModalContent => {
     }[type];
 };
 
+const getB2BContent = (): UpsellModalContent => ({
+    title: c('Title').t`Upgrade your plan`,
+    description: c('Info').t`This feature is not supported in your plan. Upgrade to unlock it for your organization.`,
+    upgradeLabel: c('Action').t`Upgrade`,
+    image: onboardingSVG,
+});
+
 export const UpsellingModal: FC<Props> = ({
     extraActions,
     features,
@@ -110,9 +118,15 @@ export const UpsellingModal: FC<Props> = ({
     upsellType,
     ...props
 }) => {
+    const b2bUpsell = useSelector(selectB2BUpsell);
     const upsellUnlimited = shouldUpsellUnlimited(useSelector(selectUserPlan));
-    const unlimitedContent = upsellUnlimited ? getUnlimitedContent(upsellType) : undefined;
-    const { title, description, upgradeLabel, image } = unlimitedContent ?? getContent(upsellType);
+
+    if (b2bUpsell && !b2bUpsell.admin) return <B2BContactAdminModal {...props} type={type} size={size} />;
+
+    const unlimitedContent = !b2bUpsell && upsellUnlimited ? getUnlimitedContent(upsellType) : undefined;
+    const { title, description, upgradeLabel, image } = b2bUpsell
+        ? getB2BContent()
+        : (unlimitedContent ?? getContent(upsellType));
 
     return (
         <AdaptiveModal
@@ -124,7 +138,7 @@ export const UpsellingModal: FC<Props> = ({
                     key="upgrade-button"
                     label={upgradeLabel}
                     onClick={props.onClose}
-                    path={upgradePath}
+                    path={b2bUpsell ? undefined : upgradePath}
                     plan={unlimitedContent ? PLANS.BUNDLE : undefined}
                     upsellRef={upsellRef}
                 />,
@@ -140,7 +154,7 @@ export const UpsellingModal: FC<Props> = ({
                 />
                 <h4 className="text-bold">{title}</h4>
                 {description && <p className="m-2 text-md">{description}</p>}
-                {features ?? <UpsellFeatures upsellType={upsellType} />}
+                {!b2bUpsell && (features ?? <UpsellFeatures upsellType={upsellType} />)}
                 {upsellType === 'free-trial' && <FreeTrialActions />}
             </div>
         </AdaptiveModal>

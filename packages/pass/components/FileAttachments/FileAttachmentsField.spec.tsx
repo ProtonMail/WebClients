@@ -4,9 +4,8 @@ import type { FieldProps } from 'formik';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 
 import { useFeatureFlag } from '../../hooks/useFeatureFlag';
-import { useMatchUser } from '../../hooks/useMatchUser';
 import { useNavigateToUpgrade } from '../../hooks/useNavigateToUpgrade';
-import { selectUser, selectUserStorageAllowed } from '../../store/selectors/user';
+import { selectIsPassB2BPlan, selectUser, selectUserStorageAllowed } from '../../store/selectors/user';
 import { uniqueId } from '../../utils/string/unique-id';
 import { render } from '../../utils/tests/render';
 import { FileAttachmentsField } from './FileAttachmentsField';
@@ -14,17 +13,17 @@ import { FileAttachmentsField } from './FileAttachmentsField';
 /** Branches under test are driven by these hooks/selectors. Mock them directly
  * rather than seeding the redux store, so each scenario is isolated. */
 vi.mock('../../hooks/useFeatureFlag', async () => ({ useFeatureFlag: vi.fn() }));
-vi.mock('../../hooks/useMatchUser', async () => ({ useMatchUser: vi.fn() }));
 vi.mock('../../hooks/useNavigateToUpgrade', async () => ({ useNavigateToUpgrade: vi.fn() }));
 vi.mock('../../store/selectors/user', async () => ({
     ...(await vi.importActual('../../store/selectors/user')),
+    selectIsPassB2BPlan: vi.fn(),
     selectUser: vi.fn(),
     selectUserStorageAllowed: vi.fn(),
 }));
 
 const mockUseFeatureFlag = vi.mocked(useFeatureFlag);
-const mockUseMatchUser = vi.mocked(useMatchUser);
 const mockUseNavigateToUpgrade = vi.mocked(useNavigateToUpgrade);
+const mockSelectIsPassB2BPlan = vi.mocked(selectIsPassB2BPlan);
 const mockSelectUser = vi.mocked(selectUser);
 const mockSelectUserStorageAllowed = vi.mocked(selectUserStorageAllowed);
 const mockNavigateToUpgrade = vi.fn();
@@ -42,16 +41,16 @@ describe('FileAttachmentsField', () => {
 
     beforeEach(() => {
         mockUseFeatureFlag.mockReturnValue(false);
-        mockUseMatchUser.mockReturnValue(false);
         mockUseNavigateToUpgrade.mockReturnValue(mockNavigateToUpgrade);
+        mockSelectIsPassB2BPlan.mockReturnValue(false);
         mockSelectUser.mockReturnValue(null);
         mockSelectUserStorageAllowed.mockReturnValue(false);
     });
 
     afterEach(() => vi.clearAllMocks());
 
-    test('hides the field for Essentials users when the upsell flag is off', () => {
-        mockUseMatchUser.mockReturnValue(true);
+    test('hides the field for B2B users without storage when the upsell flag is off', () => {
+        mockSelectIsPassB2BPlan.mockReturnValue(true);
         mockUseFeatureFlag.mockReturnValue(false);
 
         const { queryByText, queryByRole } = renderField();
@@ -61,7 +60,7 @@ describe('FileAttachmentsField', () => {
     });
 
     test('shows an inline Upgrade link for Essentials admins', () => {
-        mockUseMatchUser.mockReturnValue(true);
+        mockSelectIsPassB2BPlan.mockReturnValue(true);
         mockUseFeatureFlag.mockReturnValue(true);
         mockSelectUser.mockReturnValue({ Role: USER_ROLES.ADMIN_ROLE } as any);
 
@@ -74,7 +73,7 @@ describe('FileAttachmentsField', () => {
     });
 
     test('points Essentials members to their admin instead of an Upgrade link', () => {
-        mockUseMatchUser.mockReturnValue(true);
+        mockSelectIsPassB2BPlan.mockReturnValue(true);
         mockUseFeatureFlag.mockReturnValue(true);
         mockSelectUser.mockReturnValue({ Role: USER_ROLES.MEMBER_ROLE } as any);
 
@@ -84,8 +83,18 @@ describe('FileAttachmentsField', () => {
         expect(queryByRole('button', { name: 'Upgrade' })).toBeNull();
     });
 
-    test('shows the B2C upsell button for non-Essentials users without storage', () => {
-        mockUseMatchUser.mockReturnValue(false);
+    test('keeps the field for B2B users with storage when the upsell flag is off', () => {
+        mockSelectIsPassB2BPlan.mockReturnValue(true);
+        mockSelectUserStorageAllowed.mockReturnValue(true);
+        mockUseFeatureFlag.mockReturnValue(false);
+
+        const { getByText, queryByText } = renderField();
+
+        expect(getByText(/choose a file or drag it here/i)).toBeInTheDocument();
+        expect(queryByText(/not supported in your plan/i)).toBeNull();
+    });
+
+    test('shows the B2C upsell button for non-B2B users without storage', () => {
         mockSelectUserStorageAllowed.mockReturnValue(false);
 
         const { getByRole, queryByText } = renderField();

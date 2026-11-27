@@ -17,7 +17,8 @@ import { useUpsellPlanFeatures } from '../../hooks/usePlanFeatures';
 import { useTelemetryEvent } from '../../hooks/useTelemetryEvent';
 import {
     selectCanCheckCompromisedPasswords,
-    selectCanCheckDuplicatePasswords,
+    selectCanCheckReusedPasswords,
+    selectCanCheckInactive2FAs,
     selectCanUseDarkWebMonitoring,
     selectMonitorPreview,
 } from '../../store/selectors/monitor';
@@ -49,7 +50,8 @@ export const MonitorSummary: FC = () => {
 
     const darkWebMonitoringAllowed = useSelector(selectCanUseDarkWebMonitoring);
     const compromisedPasswordsAllowed = useSelector(selectCanCheckCompromisedPasswords);
-    const duplicatePasswordsAllowed = useSelector(selectCanCheckDuplicatePasswords);
+    const duplicatePasswordsAllowed = useSelector(selectCanCheckReusedPasswords);
+    const inactive2FAsAllowed = useSelector(selectCanCheckInactive2FAs);
     const preview = useSelector(selectMonitorPreview);
     const orgTOTPDisabled = useSelector(selectOrgTOTPDisabled);
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
@@ -175,15 +177,24 @@ export const MonitorSummary: FC = () => {
                                         />
                                     ))}
 
-                                {!orgTOTPDisabled && (
-                                    <ButtonCard
-                                        actions={twofasReady && <PillBadge label={missing2FAs.count} />}
-                                        disabled={missing2FAs.loading && missing2FAs.count === 0}
-                                        onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
-                                        subtitle={c('Description').t`Set up 2FA for more security`}
-                                        title={c('Title').t`Inactive 2FA`}
-                                    />
-                                )}
+                                {!orgTOTPDisabled &&
+                                    (inactive2FAsAllowed ? (
+                                        <ButtonCard
+                                            actions={twofasReady && <PillBadge label={missing2FAs.count} />}
+                                            disabled={missing2FAs.loading && missing2FAs.count === 0}
+                                            onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
+                                            subtitle={c('Description').t`Set up 2FA for more security`}
+                                            title={c('Title').t`Inactive 2FA`}
+                                        />
+                                    ) : (
+                                        <ButtonCard
+                                            actions={<PassPlusPromotionButton onClick={onUpsell} />}
+                                            onClick={onUpsell}
+                                            subtitle={c('Description').t`Set up 2FA for more security`}
+                                            title={c('Title').t`Inactive 2FA`}
+                                            type="primary"
+                                        />
+                                    ))}
 
                                 <ButtonCard
                                     actions={<PillBadge label={excluded.count} />}
