@@ -22,10 +22,23 @@ vi.mock('@proton/meet/store/hooks', () => storeMocks);
 const browserMocks = vi.hoisted(() => ({ supportsSetSinkId: vi.fn(() => true) }));
 vi.mock('../../../utils/browser', () => browserMocks);
 
+const browserHelpersMocks = vi.hoisted(() => ({ isFirefox: vi.fn() }));
+vi.mock('@proton/shared/lib/helpers/browser', async (importOriginal) => ({
+    ...(await importOriginal<Record<string, unknown>>()),
+    isFirefox: browserHelpersMocks.isFirefox,
+}));
+
+const unleashMocks = vi.hoisted(() => ({ useFlag: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => unleashMocks);
+
 type FakeState = 'suspended' | 'running' | 'closed' | 'interrupted';
 
 // Mirrors RECOVERY_DELAYS_MS in the hook
 const DELAYS_MS = [250, 500, 1_000, 2_000];
+
+const CLOCK_SAMPLE_MS = 1_000;
+
+const FROZEN_CLOCK_MS = 10_000;
 
 const createFakeAudioContext = (initialState: FakeState) => {
     const listeners = new Map<string, Set<() => void>>();
@@ -40,6 +53,9 @@ const createFakeAudioContext = (initialState: FakeState) => {
         freezeClock: () => {
             fake.frozenTime = Date.now() / 1000;
             fake.isClockFrozen = true;
+        },
+        unfreezeClock: () => {
+            fake.isClockFrozen = false;
         },
         suspend: vi.fn(async () => {
             fake.goTo('suspended');
@@ -139,6 +155,8 @@ const playbackStatuses = (dispatch: Mock) =>
 describe('useAudioContextOutput', () => {
     beforeEach(() => {
         vi.useFakeTimers();
+        browserHelpersMocks.isFirefox.mockReturnValue(false);
+        unleashMocks.useFlag.mockReturnValue(false);
     });
 
     afterEach(() => {
@@ -675,6 +693,176 @@ describe('useAudioContextOutput', () => {
 
             expect(playbackStatuses(dispatch)).toEqual(['running']);
             expect(startAudio).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('frozen playback clock', () => {
+        const FROZEN_REPORT = 'Audio context clock froze while running';
+
+        const RECOVERED_REPORT = 'Audio context clock recovered after being frozen';
+
+        beforeEach(() => {
+            browserHelpersMocks.isFirefox.mockReturnValue(true);
+            unleashMocks.useFlag.mockImplementation((flag: string) => flag === 'MeetFrozenAudioPlaybackBanner');
+        });
+
+        const setupRunningWatch = (options: Parameters<typeof setup>[0] = {}) => {
+            const rendered = setup({ initialState: 'running', ...options });
+            const startWatching = () => rendered.advance(CLOCK_SAMPLE_MS);
+            return { ...rendered, startWatching };
+        };
+
+        const frozenReports = (reportMeetError: Mock) =>
+            reportMeetError.mock.calls.filter(([message]) => message === FROZEN_REPORT);
+
+        it('marks playback frozen when the running clock stands still for 10 seconds', async () => {
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(FROZEN_CLOCK_MS);
+
+            expect(playbackStatuses(dispatch).at(-1)).toBe('frozen');
+            expect(reportMeetError).toHaveBeenCalledTimes(1);
+            expect(reportMeetError).toHaveBeenCalledWith(FROZEN_REPORT, { level: 'warning' });
+        });
+
+        it('does not flag a clock that recovers before 10 seconds', async () => {
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(6_000);
+            audioContext.unfreezeClock();
+            await advance(FROZEN_CLOCK_MS);
+
+            expect(playbackStatuses(dispatch)).not.toContain('frozen');
+            expect(reportMeetError).not.toHaveBeenCalled();
+        });
+
+        it('reports a freeze once however long it lasts', async () => {
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(60_000);
+
+            expect(playbackStatuses(dispatch).filter((status) => status === 'frozen')).toHaveLength(1);
+            expect(frozenReports(reportMeetError)).toHaveLength(1);
+        });
+
+        it('goes back to running when the clock advances again, and reports how long it was frozen', async () => {
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+            const freezeMs = 25_000;
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(freezeMs);
+            audioContext.unfreezeClock();
+            await advance(CLOCK_SAMPLE_MS);
+
+            expect(playbackStatuses(dispatch)).toEqual(['running', 'frozen', 'running']);
+            expect(reportMeetError).toHaveBeenLastCalledWith(RECOVERED_REPORT, {
+                level: 'warning',
+                context: { frozenForMs: freezeMs + CLOCK_SAMPLE_MS },
+            });
+        });
+
+        it('reports a second freeze after a recovery', async () => {
+            const { audioContext, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(FROZEN_CLOCK_MS);
+            audioContext.unfreezeClock();
+            await advance(CLOCK_SAMPLE_MS);
+            audioContext.freezeClock();
+            await advance(FROZEN_CLOCK_MS);
+
+            expect(reportMeetError.mock.calls.map(([message]) => message)).toEqual([
+                FROZEN_REPORT,
+                RECOVERED_REPORT,
+                FROZEN_REPORT,
+            ]);
+        });
+
+        it('does not watch the clock outside Firefox', async () => {
+            browserHelpersMocks.isFirefox.mockReturnValue(false);
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(2 * FROZEN_CLOCK_MS);
+            audioContext.unfreezeClock();
+            await advance(CLOCK_SAMPLE_MS);
+
+            expect(playbackStatuses(dispatch)).toEqual(['running']);
+            expect(reportMeetError).not.toHaveBeenCalled();
+        });
+
+        it('does not watch the clock while the flag is off', async () => {
+            unleashMocks.useFlag.mockReturnValue(false);
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(2 * FROZEN_CLOCK_MS);
+            audioContext.unfreezeClock();
+            await advance(CLOCK_SAMPLE_MS);
+
+            expect(playbackStatuses(dispatch)).toEqual(['running']);
+            expect(reportMeetError).not.toHaveBeenCalled();
+        });
+
+        it('leaves a suspended context to recovery', async () => {
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            audioContext.goTo('suspended');
+            await advance(2 * FROZEN_CLOCK_MS);
+
+            expect(playbackStatuses(dispatch)).toEqual(['running', 'recovering', 'blocked']);
+            expect(frozenReports(reportMeetError)).toHaveLength(0);
+        });
+
+        it('does not watch a context that is not the playback context', async () => {
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch({
+                isPlaybackContext: false,
+            });
+
+            await startWatching();
+            audioContext.freezeClock();
+            await advance(2 * FROZEN_CLOCK_MS);
+
+            expect(playbackStatuses(dispatch)).not.toContain('frozen');
+            expect(reportMeetError).not.toHaveBeenCalled();
+        });
+
+        it('does not count time the page was asleep', async () => {
+            const { audioContext, dispatch, reportMeetError, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            vi.setSystemTime(Date.now() + 60_000);
+            await advance(CLOCK_SAMPLE_MS);
+            audioContext.unfreezeClock();
+            await advance(CLOCK_SAMPLE_MS);
+
+            expect(playbackStatuses(dispatch)).not.toContain('frozen');
+            expect(reportMeetError).not.toHaveBeenCalled();
+        });
+
+        it('stops watching on unmount', async () => {
+            const { audioContext, dispatch, reportMeetError, unmount, advance, startWatching } = setupRunningWatch();
+
+            await startWatching();
+            audioContext.freezeClock();
+            unmount();
+            await advance(2 * FROZEN_CLOCK_MS);
+
+            expect(playbackStatuses(dispatch)).not.toContain('frozen');
+            expect(reportMeetError).not.toHaveBeenCalled();
         });
     });
 

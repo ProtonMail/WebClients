@@ -9,7 +9,9 @@ import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManag
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { supportsSetSinkId } from '../../../utils/browser';
 import type { MeetAudioContext } from '../../../utils/meet-audio-context';
@@ -25,6 +27,71 @@ const CLOCK_CHECK_MS = 1_000;
 
 const STALLED_CLOCK_SECONDS = 0.05;
 
+const CLOCK_SAMPLE_MS = 1_000;
+
+// Firefox can stop its audio graph for good after quick default device changes, and only a reload
+// recovers it (https://bugzilla.mozilla.org/show_bug.cgi?id=1879353). Shorter freezes on a device
+// change recover on their own, so only a long one counts as frozen.
+const FROZEN_CLOCK_MS = 10_000;
+
+const MAX_SAMPLE_GAP_MS = 2 * CLOCK_SAMPLE_MS;
+
+interface ClockSample {
+    state: AudioContextState;
+    currentTime: number;
+    atMs: number;
+}
+
+interface ClockWatch {
+    currentTime: number;
+    sampledAtMs: number;
+    stillSinceMs: number;
+    isFrozen: boolean;
+}
+
+type ClockTransition = { type: 'froze' } | { type: 'unfroze'; frozenForMs: number } | { type: 'none' };
+
+const startClockWatch = ({ currentTime, atMs }: ClockSample): ClockWatch => ({
+    currentTime,
+    sampledAtMs: atMs,
+    stillSinceMs: atMs,
+    isFrozen: false,
+});
+
+const sampleClock = (
+    watch: ClockWatch | undefined,
+    sample: ClockSample
+): { watch: ClockWatch | undefined; transition: ClockTransition } => {
+    if (sample.state !== 'running') {
+        return { watch: undefined, transition: { type: 'none' } };
+    }
+
+    if (!watch) {
+        return { watch: startClockWatch(sample), transition: { type: 'none' } };
+    }
+
+    if (sample.currentTime > watch.currentTime) {
+        return {
+            watch: startClockWatch(sample),
+            transition: watch.isFrozen
+                ? { type: 'unfroze', frozenForMs: sample.atMs - watch.stillSinceMs }
+                : { type: 'none' },
+        };
+    }
+
+    if (sample.atMs - watch.sampledAtMs > MAX_SAMPLE_GAP_MS && !watch.isFrozen) {
+        return { watch: startClockWatch(sample), transition: { type: 'none' } };
+    }
+
+    const carriedWatch = { ...watch, currentTime: sample.currentTime, sampledAtMs: sample.atMs };
+
+    if (!watch.isFrozen && sample.atMs - watch.stillSinceMs >= FROZEN_CLOCK_MS) {
+        return { watch: { ...carriedWatch, isFrozen: true }, transition: { type: 'froze' } };
+    }
+
+    return { watch: carriedWatch, transition: { type: 'none' } };
+};
+
 const isSilent = (state: AudioContextState) => state === 'suspended' || state === 'interrupted';
 
 const needsUnblock = (state: AudioContextState) => state === 'suspended';
@@ -38,7 +105,7 @@ const measureClockAdvanceSeconds = async (audioContext: AudioContext) => {
 /**
  * Applies the active output device to the shared playback AudioContext, and resumes that context when
  * it turns suspended, which happens when the OS removes the device it was rendering to. It is the one
- * place that tells whether playback is running, recovering or blocked.
+ * place that tells whether playback is running, recovering, blocked or frozen.
  */
 export const useAudioContextOutput = ({
     meetAudioContext,
@@ -51,6 +118,7 @@ export const useAudioContextOutput = ({
 }) => {
     const dispatch = useMeetDispatch();
     const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
+    const isFrozenAudioPlaybackBannerEnabled = useFlag('MeetFrozenAudioPlaybackBanner');
 
     // Before the first remote track the context is suspended by the autoplay policy, not by a failure
     const hasBeenRunningRef = useRef(false);
@@ -170,6 +238,7 @@ export const useAudioContextOutput = ({
         let isMounted = true;
         let gaveUpRecoveryAtMs: number | null = null;
         let isRecovering = false;
+        let clockWatch: ClockWatch | undefined;
 
         const recover = async () => {
             isRecovering = true;
@@ -219,6 +288,7 @@ export const useAudioContextOutput = ({
         };
 
         const handleStateChange = () => {
+            clockWatch = undefined;
             const { state } = audioContext;
 
             if (state === 'running') {
@@ -252,13 +322,39 @@ export const useAudioContextOutput = ({
             }
         };
 
+        const watchPlaybackClock = () => {
+            const sample = { state: audioContext.state, currentTime: audioContext.currentTime, atMs: Date.now() };
+            const { watch, transition } = sampleClock(clockWatch, sample);
+            clockWatch = watch;
+
+            if (transition.type === 'froze') {
+                dispatch(setAudioPlaybackStatus('frozen'));
+                reportMeetError('Audio context clock froze while running', { level: 'warning' });
+                return;
+            }
+
+            if (transition.type === 'unfroze') {
+                dispatch(setAudioPlaybackStatus('running'));
+                reportMeetError('Audio context clock recovered after being frozen', {
+                    level: 'warning',
+                    context: { frozenForMs: transition.frozenForMs },
+                });
+            }
+        };
+
         handleStateChange();
 
         audioContext.addEventListener('statechange', handleStateChange);
 
+        const clockInterval =
+            isPlaybackContext && isFirefox() && isFrozenAudioPlaybackBannerEnabled
+                ? setInterval(watchPlaybackClock, CLOCK_SAMPLE_MS)
+                : undefined;
+
         return () => {
             isMounted = false;
+            clearInterval(clockInterval);
             audioContext.removeEventListener('statechange', handleStateChange);
         };
-    }, [meetAudioContext, room, reportMeetError, dispatch]);
+    }, [meetAudioContext, isPlaybackContext, isFrozenAudioPlaybackBannerEnabled, room, reportMeetError, dispatch]);
 };
