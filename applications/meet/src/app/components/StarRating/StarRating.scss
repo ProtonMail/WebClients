@@ -23,7 +23,7 @@
 		/* The spinner is excluded: `fill` would paint over its stroke and the gradient
 		   reference does not resolve against it. */
 		svg:not(.star-rating-loader) {
-			color: rgb(255 255 255 / 0.24);
+			color: var(--text-alpha-weak);
 			fill: currentcolor;
 		}
 
