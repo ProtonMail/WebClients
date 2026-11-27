@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { useHandler } from '@proton/hooks/useHandler';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
@@ -72,9 +71,9 @@ const SecurityCenterAliasSpotlight = ({ show, onClose, onDisplayed, children }: 
             type="new"
             content={
                 <>
-                    <p className="m-0 text-bold">{c('Spotlight').t`Signing up for something new?`}</p>
+                    <p className="m-0 text-bold">{c('Spotlight').t`Keep your inbox this tidy`}</p>
                     <p className="m-0">{c('Spotlight')
-                        .t`Use a ${MAIL_APP_NAME} alias instead of your real address. Newsletters still reach you, and you can turn the alias off anytime.`}</p>
+                        .t`Subscribe to newsletters with an alias instead of your real address. If the emails pile up, turn the alias off.`}</p>
                     <p className="m-0 mt-1">
                         <InlineLinkButton onClick={handleCreateAlias}>{c('Action')
                             .t`Create an alias`}</InlineLinkButton>

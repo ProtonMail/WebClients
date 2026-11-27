@@ -52,10 +52,10 @@ describe('SecurityCenterAliasSpotlight', () => {
 
         const inner = screen.getByTestId('spotlight-inner');
         expect(inner.querySelector('img')).not.toBeNull();
-        expect(screen.getByText('Signing up for something new?')).toHaveClass('text-bold');
+        expect(screen.getByText('Keep your inbox this tidy')).toHaveClass('text-bold');
         expect(
             screen.getByText(
-                'Use a Proton Mail alias instead of your real address. Newsletters still reach you, and you can turn the alias off anytime.'
+                'Subscribe to newsletters with an alias instead of your real address. If the emails pile up, turn the alias off.'
             )
         ).toBeInTheDocument();
         expect(getCreateAliasLink()).toBeInTheDocument();
