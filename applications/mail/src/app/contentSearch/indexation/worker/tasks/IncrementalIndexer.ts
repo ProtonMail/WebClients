@@ -1,9 +1,9 @@
 import type { IDBPDatabase } from 'idb';
 
 import type { Database } from '../../../db/schema';
-import type { StartBlobTxnFn } from '../BlobTxnProvider';
 import type { EventUpdate, EventUpdateWriter } from '../EventUpdateWriter';
 import type { IndexTask, TaskName } from '../IndexWorker';
+import type { IndexWrites } from '../IndexWrites';
 
 export class IncrementalIndexer implements IndexTask {
     private queue: EventUpdate[] = [];
@@ -18,10 +18,10 @@ export class IncrementalIndexer implements IndexTask {
         return this.queue.length !== 0;
     }
 
-    async run(db: IDBPDatabase<Database>, startBlobTxn: StartBlobTxnFn, abortSignal: AbortSignal) {
+    async run(db: IDBPDatabase<Database>, writes: IndexWrites, abortSignal: AbortSignal) {
         while (this.queue.length !== 0) {
             const next = this.queue[0];
-            await this.writer.apply(db, startBlobTxn, next, abortSignal);
+            await this.writer.apply(db, writes, next, abortSignal);
             this.queue.shift(); // remove the first element
         }
     }

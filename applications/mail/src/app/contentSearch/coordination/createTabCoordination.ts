@@ -2,11 +2,14 @@ import type { DatabaseLock } from '../db/DatabaseLock';
 import type { Logger } from '../utils/logger';
 import type { ChannelTransport } from './ChannelTransport';
 import type { LeaderLock } from './LeaderLock';
+import type { OpenSearchDirectory } from './OpenSearchDirectory';
 import { TabLocalDatabaseLock } from './TabLocalDatabaseLock';
 import { ChannelTransport as SingleTabChannelTransport } from './singleTab/ChannelTransport';
 import { LeaderLock as SingleTabLeaderLock } from './singleTab/LeaderLock';
+import { OpenSearchDirectory as SingleTabOpenSearchDirectory } from './singleTab/OpenSearchDirectory';
 import { DatabaseLock as WebLocksDatabaseLock } from './weblock/DatabaseLock';
 import { LeaderLock as WebLocksLeaderLock } from './weblock/LeaderLock';
+import { OpenSearchDirectory as WebLocksOpenSearchDirectory } from './weblock/OpenSearchDirectory';
 
 /** What the content search tabs of one user coordinate with, implemented with what the browser has. */
 export interface TabCoordination {
@@ -14,6 +17,8 @@ export interface TabCoordination {
     /** shared with the other tabs, so a search in any tab interrupts indexing */
     dbLock: DatabaseLock;
     transport: ChannelTransport;
+    /** the searches open in the tabs, which the leader keeps up to date as it indexes */
+    openSearches: OpenSearchDirectory;
 }
 
 /**
@@ -36,6 +41,7 @@ export function createTabCoordination({
             leaderLock: new SingleTabLeaderLock(),
             dbLock: new TabLocalDatabaseLock(),
             transport: new SingleTabChannelTransport(),
+            openSearches: new SingleTabOpenSearchDirectory(),
         };
     }
     return {
@@ -43,5 +49,6 @@ export function createTabCoordination({
         dbLock: new WebLocksDatabaseLock(userId, logger, locks),
         // eslint-disable-next-line compat/compat -- checked above, content search requires Safari 15.4+
         transport: new BroadcastChannel(`content-search:${userId}`),
+        openSearches: new WebLocksOpenSearchDirectory(userId, locks),
     };
 }

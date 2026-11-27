@@ -95,10 +95,11 @@ export class SearchLoop {
                 abortSignal.throwIfAborted();
             }
         } catch (e) {
+            // An abort or a failure must reach the caller: partial hits would read as messages that don't match
             if (stopAtCardinality) {
                 this.dispose();
-                throw e;
             }
+            throw e;
         } finally {
             if (!stopAtCardinality) {
                 this.dispose();

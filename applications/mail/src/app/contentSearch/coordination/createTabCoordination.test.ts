@@ -6,8 +6,10 @@ import { TabLocalDatabaseLock } from './TabLocalDatabaseLock';
 import { type TabCoordination, createTabCoordination } from './createTabCoordination';
 import { ChannelTransport as SingleTabChannelTransport } from './singleTab/ChannelTransport';
 import { LeaderLock as SingleTabLeaderLock } from './singleTab/LeaderLock';
+import { OpenSearchDirectory as SingleTabOpenSearchDirectory } from './singleTab/OpenSearchDirectory';
 import { DatabaseLock as WebLocksDatabaseLock } from './weblock/DatabaseLock';
 import { LeaderLock as WebLocksLeaderLock } from './weblock/LeaderLock';
+import { OpenSearchDirectory as WebLocksOpenSearchDirectory } from './weblock/OpenSearchDirectory';
 
 const lockManager = locks as unknown as LockManager;
 
@@ -30,12 +32,13 @@ describe('createTabCoordination', () => {
     });
 
     describe('with Web Locks', () => {
-        it('picks the Web Locks locks and a BroadcastChannel', () => {
+        it('picks the Web Locks implementations and a BroadcastChannel', () => {
             const coordination = open(`tab-coordination-${userCounter++}`, lockManager);
 
             expect(coordination.leaderLock).toBeInstanceOf(WebLocksLeaderLock);
             expect(coordination.dbLock).toBeInstanceOf(WebLocksDatabaseLock);
             expect(coordination.transport).toBeInstanceOf(BroadcastChannel);
+            expect(coordination.openSearches).toBeInstanceOf(WebLocksOpenSearchDirectory);
         });
 
         it('shares them between the tabs of a user', async () => {
@@ -64,6 +67,7 @@ describe('createTabCoordination', () => {
             expect(coordination.leaderLock).toBeInstanceOf(SingleTabLeaderLock);
             expect(coordination.dbLock).toBeInstanceOf(TabLocalDatabaseLock);
             expect(coordination.transport).toBeInstanceOf(SingleTabChannelTransport);
+            expect(coordination.openSearches).toBeInstanceOf(SingleTabOpenSearchDirectory);
             expect(await coordination.leaderLock.acquire()).toBe(true);
         });
     });

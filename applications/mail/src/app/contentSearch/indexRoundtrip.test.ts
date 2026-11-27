@@ -7,10 +7,11 @@ import 'fake-indexeddb/auto';
 import type { MockInstance } from 'vitest';
 
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
+import type { Engine } from '@proton/proton-foundation-search';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { BlobCache } from './cache/BlobCache';
-import { EncryptedBlobTransaction } from './crypto/EncryptedBlobTransaction';
+import { EncryptedBlobTransaction, type OpenBlobTransaction } from './crypto/EncryptedBlobTransaction';
 import { openContentSearchDB } from './db/open';
 import type { Database } from './db/schema';
 import { createMailSearchEngine } from './engine/create';
@@ -62,6 +63,8 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
     let key: CryptoKey;
     let blobCache: BlobCache;
     let engine: EngineWrapper;
+    /** what `engine` writes with, which the readers read with, freed with it */
+    let searchEngine: Engine;
     let dbCounter = 0;
 
     beforeAll(async () => {
@@ -72,7 +75,8 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
         db = await openContentSearchDB(`roundtrip-user-${dbCounter++}`);
         key = await generateAndImportKey();
         blobCache = new BlobCache();
-        engine = new EngineWrapper(createMailSearchEngine(), new MailDelegate());
+        searchEngine = createMailSearchEngine();
+        engine = new EngineWrapper(searchEngine, new MailDelegate());
     });
 
     afterEach(() => {
@@ -106,7 +110,7 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
             makeMessage('msg-banana', 'Grocery list', 'goodbye cruel banana bread'),
         ]);
 
-        const reader = new IndexReader(db, key);
+        const reader = new IndexReader(db, key, searchEngine);
 
         // each keyword matches exactly one of the two documents...
         expect(await search(reader, { keyword: 'apple' })).toEqual(['msg-apple']);
@@ -121,7 +125,7 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
             makeMessage('msg-new', 'Report', 'quarterly shared summary', 2_000),
         ]);
 
-        const reader = new IndexReader(db, key);
+        const reader = new IndexReader(db, key, searchEngine);
 
         // both documents share the keyword; the time bounds select exactly one.
         expect(await search(reader, { keyword: 'shared', begin: 1_500, end: 2_500 })).toEqual(['msg-new']);
@@ -165,7 +169,7 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
                 return BASE_TIME;
             });
 
-            const results = await search(new IndexReader(db, key), { keyword: 'routing' });
+            const results = await search(new IndexReader(db, key, searchEngine), { keyword: 'routing' });
 
             expect(bucketedSearchSpy).toHaveBeenCalledTimes(1);
             expect(results.sort()).toEqual(ids.sort());
@@ -176,7 +180,7 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
                 return BASE_TIME + index * 60;
             });
 
-            const results = await search(new IndexReader(db, key), { keyword: 'routing' });
+            const results = await search(new IndexReader(db, key, searchEngine), { keyword: 'routing' });
 
             expect(bucketedSearchSpy).toHaveBeenCalledTimes(1);
             expect(results.sort()).toEqual(ids.sort());
@@ -188,11 +192,122 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
                 return BASE_TIME + (index % 3) * BUCKET_SIZE_SECONDS;
             });
 
-            const results = await search(new IndexReader(db, key), { keyword: 'routing' });
+            const results = await search(new IndexReader(db, key, searchEngine), { keyword: 'routing' });
 
             expect(bucketedSearchSpy.mock.calls.length).toBeGreaterThan(1);
             expect(results.length).toBe(MATCH_COUNT);
             expect(results.sort()).toEqual(ids.sort());
+        });
+
+        it('stops at an abort instead of searching the remaining buckets', async () => {
+            await writeMatchingMessages((index) => {
+                return BASE_TIME + (index % 3) * BUCKET_SIZE_SECONDS;
+            });
+            const controller = new AbortController();
+
+            await expect(
+                new IndexReader(db, key, searchEngine).search(
+                    buildQuery(query({ keyword: 'routing' })),
+                    () => {
+                        controller.abort();
+                    },
+                    controller.signal
+                )
+            ).rejects.toThrow();
+            expect(bucketedSearchSpy).toHaveBeenCalledTimes(2);
+        });
+    });
+
+    describe('searchRange', () => {
+        const signal = () => {
+            return new AbortController().signal;
+        };
+
+        const searchRange = async (
+            reader: IndexReader,
+            keyword: string,
+            range: { low: bigint; high: bigint },
+            txn?: OpenBlobTransaction
+        ) => {
+            const exp = buildQuery(query({ keyword }));
+            try {
+                return await reader.searchRange(
+                    exp,
+                    range,
+                    txn ?? (await EncryptedBlobTransaction.start(blobCache, db, key)),
+                    signal()
+                );
+            } finally {
+                exp.free();
+            }
+        };
+
+        beforeEach(async () => {
+            await writeMessages([
+                makeMessage('msg-1000', 'Report', 'quarterly summary', 1_000),
+                makeMessage('msg-2000', 'Report', 'quarterly summary', 2_000),
+                makeMessage('msg-3000', 'Report', 'quarterly summary', 3_000),
+                makeMessage('msg-other', 'Report', 'nothing here', 2_000),
+            ]);
+        });
+
+        it('returns the matches within the inclusive range only', async () => {
+            const reader = new IndexReader(db, key, searchEngine);
+
+            expect((await searchRange(reader, 'quarterly', { low: 1_000n, high: 2_000n })).sort()).toEqual([
+                'msg-1000',
+                'msg-2000',
+            ]);
+            expect(await searchRange(reader, 'quarterly', { low: 2_001n, high: 2_999n })).toEqual([]);
+        });
+
+        it('reads through the blob cache of the transaction it is given', async () => {
+            const reader = new IndexReader(db, key, searchEngine);
+            await searchRange(reader, 'quarterly', { low: 0n, high: 5_000n });
+            // idb's methods need their own `this`, so the spy calls the original bound to the database
+            const get = db.get.bind(db);
+            const dbGet = vi.spyOn(db, 'get').mockImplementation((...args) => {
+                return get(...args);
+            });
+
+            const hits = await searchRange(reader, 'quarterly', { low: 0n, high: 5_000n });
+
+            expect(hits).toHaveLength(3);
+            expect(dbGet).not.toHaveBeenCalledWith('index_blobs', expect.anything());
+            await searchRange(
+                reader,
+                'quarterly',
+                { low: 0n, high: 5_000n },
+                await EncryptedBlobTransaction.start(undefined, db, key)
+            );
+            expect(dbGet).toHaveBeenCalledWith('index_blobs', expect.anything());
+        });
+
+        it('throws once aborted, rather than returning what it found so far', async () => {
+            const reader = new IndexReader(db, key, searchEngine);
+            const exp = buildQuery(query({ keyword: 'quarterly' }));
+            const controller = new AbortController();
+            controller.abort();
+
+            await expect(
+                reader.searchRange(
+                    exp,
+                    { low: 0n, high: 5_000n },
+                    await EncryptedBlobTransaction.start(blobCache, db, key),
+                    controller.signal
+                )
+            ).rejects.toThrow();
+            exp.free();
+        });
+
+        it('throws when reading the index fails, rather than returning what it found so far', async () => {
+            const reader = new IndexReader(db, key, searchEngine);
+            const txn = await EncryptedBlobTransaction.start(undefined, db, key);
+            vi.spyOn(txn, 'handleLoadEvent').mockRejectedValue(new Error('blob failed to decrypt'));
+
+            await expect(searchRange(reader, 'quarterly', { low: 0n, high: 5_000n }, txn)).rejects.toThrow(
+                'blob failed to decrypt'
+            );
         });
     });
 
@@ -204,7 +319,7 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
         ] as MessageMetadata['AttachmentsMetadata'];
         await writeMessages([withAttachments, makeMessage('msg-other', 'Hello', 'nothing here')]);
 
-        const reader = new IndexReader(db, key);
+        const reader = new IndexReader(db, key, searchEngine);
 
         expect(await search(reader, { keyword: 'invoice' })).toEqual(['msg-invoice']);
         expect(await search(reader, { keyword: 'attachment~invoice' })).toEqual(['msg-invoice']);
@@ -244,7 +359,7 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
         });
 
         it('lays out each address as email tag, email text and display name, keeping empty names and emails', async () => {
-            const doc: any = await new IndexReader(db, key).getDocumentById('msg-alice');
+            const doc: any = await new IndexReader(db, key, searchEngine).getDocumentById('msg-alice');
             const tokens = (value: [number, string][] | null) => (value ?? []).map(([, token]) => token);
 
             expect(doc.attributes.from[0]).toBe('alice.smith@proton.me');
@@ -261,7 +376,7 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
         });
 
         it('finds the sender by full address regardless of case, by email token and by name', async () => {
-            const reader = new IndexReader(db, key);
+            const reader = new IndexReader(db, key, searchEngine);
 
             expect(await search(reader, { from: 'ALICE.SMITH@proton.me' })).toEqual(['msg-alice']);
             expect(await search(reader, { from: 'alice' })).toEqual(['msg-alice']);
@@ -285,11 +400,11 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
                 }),
             ]);
 
-            expect(await search(new IndexReader(db, key), { from: 'john doe' })).toEqual(['msg-john']);
+            expect(await search(new IndexReader(db, key, searchEngine), { from: 'john doe' })).toEqual(['msg-john']);
         });
 
         it('finds recipients in to, cc and bcc', async () => {
-            const reader = new IndexReader(db, key);
+            const reader = new IndexReader(db, key, searchEngine);
 
             expect(await search(reader, { to: 'bob@example.com' })).toEqual(['msg-alice']);
             expect(await search(reader, { to: 'jones' })).toEqual(['msg-alice']);

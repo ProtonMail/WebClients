@@ -1,5 +1,7 @@
 import { type Logger as BaseLogger, logger as baseLogger } from '@protontech/logger';
 
+import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
+
 export type Logger = Pick<BaseLogger, 'trace' | 'debug' | 'info' | 'warn' | 'error' | 'log'>;
 
 const PREFIX = '[ContentSearch] ';
@@ -38,8 +40,6 @@ export const logger = new LoggerProxy(baseLogger) as Logger;
  * Workers log through the tab that started them.
  */
 export function createTabLogger(): Logger {
-    const tabId = Array.from(crypto.getRandomValues(new Uint8Array(4)), (byte) => {
-        return byte.toString(16).padStart(2, '0');
-    }).join('');
+    const tabId = getRandomString(8, DEFAULT_LOWERCASE_CHARSET);
     return new LoggerProxy(baseLogger, `${PREFIX}[tab ${tabId}] `);
 }

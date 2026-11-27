@@ -7,6 +7,7 @@ import 'fake-indexeddb/auto';
 import { initializeEncryptedSearch } from '@proton/encrypted-search/esHelpers/esBuild';
 import { serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers/esUtils';
 import { openESDB } from '@proton/encrypted-search/esIDB/indexedDB';
+import type { Engine } from '@proton/proton-foundation-search';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import {
@@ -18,6 +19,7 @@ import {
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
 import { getOrGenerateIndexKey } from '../crypto/indexKey';
 import { openContentSearchDB } from '../db/open';
+import { createMailSearchEngine } from '../engine/create';
 import { IndexReader } from '../search/IndexReader';
 import { initContentSearchWasm } from '../testing/initContentSearchWasm';
 import { EncryptedSearchReader } from './EncryptedSearchReader';
@@ -176,6 +178,17 @@ describe('Importer', () => {
         userKeys = getStoredUserKey(generated) as unknown as DecryptedKey<PrivateKeyReference>[];
     });
 
+    /** what the tests read the new index with */
+    let readerEngine: Engine;
+
+    beforeEach(() => {
+        readerEngine = createMailSearchEngine();
+    });
+
+    afterEach(() => {
+        readerEngine.free();
+    });
+
     afterAll(async () => {
         await releaseCryptoProxy();
     });
@@ -229,7 +242,7 @@ describe('Importer', () => {
         expect(totalAvailable).toBe(2);
         expect(completed).toBe(2);
 
-        const reader = new IndexReader(readDb, indexKey);
+        const reader = new IndexReader(readDb, indexKey, readerEngine);
         expect(await reader.count()).toBe(2);
 
         // the exported document carries the staged metadata attributes verbatim...
@@ -297,7 +310,7 @@ describe('Importer', () => {
         expect(issues.map(({ id }) => id)).toEqual(['m2']);
 
         const readDb = await openContentSearchDB(userId);
-        const reader = new IndexReader(readDb, indexKey);
+        const reader = new IndexReader(readDb, indexKey, readerEngine);
         expect(await reader.getAllIds()).toEqual(['m1']);
         readDb.close();
     }, 30_000);

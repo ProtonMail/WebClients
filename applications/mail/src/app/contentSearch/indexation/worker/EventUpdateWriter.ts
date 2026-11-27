@@ -5,9 +5,9 @@ import type { OpenBlobTransaction } from '../../crypto/EncryptedBlobTransaction'
 import type { Database } from '../../db/schema';
 import { isAbortedFrom } from '../../utils/AsyncAbort';
 import type { MessageCache, MessageCacheContent, OpenMessageCacheTransaction } from '../MessageCache';
-import type { StartBlobTxnFn } from './BlobTxnProvider';
 import type { BodySource } from './BodySource';
 import type { WorkerIndexListener } from './IndexWorker';
+import type { IndexWrites } from './IndexWrites';
 import type { EngineWrapper, WriteWrapper } from './wrapper';
 
 export interface EventUpdate {
@@ -49,24 +49,19 @@ export class EventUpdateWriter {
         private readonly log: WorkerIndexListener['log']
     ) {}
 
-    async apply(
-        db: IDBPDatabase<Database>,
-        startBlobTxn: StartBlobTxnFn,
-        update: EventUpdate,
-        abortSignal: AbortSignal
-    ) {
+    async apply(db: IDBPDatabase<Database>, writes: IndexWrites, update: EventUpdate, abortSignal: AbortSignal) {
         abortSignal.throwIfAborted();
         if (update.refresh) {
             this.bodyCache = undefined;
             await this.onRefresh(db);
         } else {
-            await this.writeUpdate(db, startBlobTxn, update, abortSignal);
+            await this.writeUpdate(db, writes, update, abortSignal);
         }
     }
 
     private async writeUpdate(
         db: IDBPDatabase<Database>,
-        startBlobTxn: StartBlobTxnFn,
+        writes: IndexWrites,
         update: EventUpdate,
         abortSignal: AbortSignal
     ) {
@@ -76,7 +71,7 @@ export class EventUpdateWriter {
         if (update.items.length !== 0) {
             messageCacheTxn = this.messageCache.startTransaction();
             const decryptedBodies = await this.downloadAndDecryptBodies(update.items, messageCacheTxn, abortSignal);
-            blobTxn = await startBlobTxn(db);
+            blobTxn = await writes.startBlobTxn();
             const write = this.engine.write();
             try {
                 for (const item of update.items) {
@@ -93,6 +88,17 @@ export class EventUpdateWriter {
         if (update.items.length !== 0) {
             this.logApplied(update.items);
         }
+        writes.reportDeleted(
+            update.items.flatMap((item) => {
+                return 'deleteId' in item ? [item.deleteId] : [];
+            })
+        );
+        await writes.matchWritten(
+            update.items.flatMap((item) => {
+                return 'metadata' in item ? [item.metadata] : [];
+            }),
+            abortSignal
+        );
     }
 
     private logApplied(items: EventUpdateItem[]) {

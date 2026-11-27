@@ -7,9 +7,22 @@ export type TabMessage =
     | { type: 'progress'; processed: number; total: number }
     | { type: 'indexComplete' }
     /** the app version a tab runs */
-    | { type: 'version'; version: string };
+    | { type: 'version'; version: string }
+    /** from the leader to the tab of an open search: which of the messages it just indexed the search matches */
+    | { type: 'expressionUpdates'; searchId: string; matched: string[]; unmatched: string[] }
+    /** from the leader to every tab: messages deleted, to drop from every open search */
+    | { type: 'messagesDeleted'; ids: string[] };
 
 const indexStatuses: (IndexStatus | undefined)[] = ['enabled', 'paused', 'disabled', undefined];
+
+const isStringArray = (value: unknown): value is string[] => {
+    return (
+        Array.isArray(value) &&
+        value.every((item) => {
+            return typeof item === 'string';
+        })
+    );
+};
 
 /** what another tab posted, if it's a message this tab understands: another app version may post others */
 const parseTabMessage = (data: unknown): TabMessage | undefined => {
@@ -40,6 +53,20 @@ const parseTabMessage = (data: unknown): TabMessage | undefined => {
                 return undefined;
             }
             return { type: 'version', version };
+        }
+        case 'expressionUpdates': {
+            const { searchId, matched, unmatched } = message;
+            if (typeof searchId !== 'string' || !isStringArray(matched) || !isStringArray(unmatched)) {
+                return undefined;
+            }
+            return { type: 'expressionUpdates', searchId, matched, unmatched };
+        }
+        case 'messagesDeleted': {
+            const { ids } = message;
+            if (!isStringArray(ids)) {
+                return undefined;
+            }
+            return { type: 'messagesDeleted', ids };
         }
         default:
             return undefined;
