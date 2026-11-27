@@ -12,6 +12,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useLumoUserSettings } from '../../../hooks';
 import { useIsTouchDevice } from '../../../hooks/useIsTouchDevice';
@@ -63,7 +64,7 @@ const formatMemoryDate = (timestamp: number) => {
         return c('collider_2025: Date').t`Yesterday`;
     }
 
-    return date.toLocaleDateString(undefined, {
+    return date.toLocaleDateString(dateLocale.code, {
         month: 'short',
         day: 'numeric',
         year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined,

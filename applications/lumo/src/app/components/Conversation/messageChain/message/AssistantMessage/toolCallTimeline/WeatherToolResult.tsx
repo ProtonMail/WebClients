@@ -1,5 +1,8 @@
 import { c } from 'ttag';
 
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { getIsLocaleAMPM } from '@proton/shared/lib/i18n/dateFnLocale';
+
 import './WeatherToolResult.scss';
 
 export interface WeatherData {
@@ -82,7 +85,11 @@ const degreesToCompass = (degrees: number): string => {
 
 const formatTime = (timestamp: number): string => {
     const d = new Date(timestamp * 1000);
-    return d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    return d.toLocaleTimeString(dateLocale.code, {
+        hour: 'numeric',
+        minute: '2-digit',
+        hourCycle: getIsLocaleAMPM(dateLocale) ? 'h12' : 'h23',
+    });
 };
 
 const formatTemp = (celsius: number): string => `${Math.round(celsius)}°C`;

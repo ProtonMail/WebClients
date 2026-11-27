@@ -1,4 +1,4 @@
-import { enUS, fr } from 'date-fns/locale';
+import { enGB, enUS, fr } from 'date-fns/locale';
 
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { setDateLocales, setLocales } from '@proton/shared/lib/i18n';
@@ -110,7 +110,6 @@ describe('getScheduleCadenceLabel', () => {
     });
 
     it('uses the configured date locale for weekday names and time formatting', () => {
-        setLocales({ localeCode: 'fr_FR' });
         setDateLocales({ dateLocale: fr });
 
         expect(getScheduleCadenceLabel({ ...time, frequency: 'WEEKLY', byWeekDay: ['FR'] }, 1)).toBe(
@@ -120,7 +119,7 @@ describe('getScheduleCadenceLabel', () => {
 });
 
 describe('getScheduleShortCadenceLabel', () => {
-    afterEach(() => setLocales({ localeCode: 'en_US' }));
+    afterEach(() => setDateLocales({ dateLocale: enUS }));
 
     it.each<[RecurrenceRule, string]>([
         [{ ...time, frequency: 'DAILY' }, 'Daily'],
@@ -133,10 +132,10 @@ describe('getScheduleShortCadenceLabel', () => {
     });
 
     it.each([
-        ['en_US', '12/30/26'],
-        ['en_GB', '30/12/26'],
-    ])('localizes a one-time date in %s', (localeCode, expected) => {
-        setLocales({ localeCode });
+        { dateLocale: enUS, expected: '12/30/26' },
+        { dateLocale: enGB, expected: '30/12/26' },
+    ])('localizes a one-time date in $dateLocale.code', ({ dateLocale, expected }) => {
+        setDateLocales({ dateLocale });
         expect(getScheduleShortCadenceLabel({ ...time, frequency: 'ONCE', date: '2026-12-30' })).toBe(expected);
     });
 });

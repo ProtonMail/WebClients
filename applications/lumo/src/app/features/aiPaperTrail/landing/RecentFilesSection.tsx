@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { dateLocale } from '@proton/shared/lib/i18n';
 import chatgptLogo from '@proton/styles/assets/img/lumo/trail/chatgpt.svg';
 import claudeLogo from '@proton/styles/assets/img/lumo/trail/claude.svg';
 
@@ -16,7 +17,7 @@ interface Props {
 }
 
 const formatRecentDate = (timestamp: number): string => {
-    return new Date(timestamp).toLocaleDateString(undefined, {
+    return new Date(timestamp).toLocaleDateString(dateLocale.code, {
         month: 'short',
         day: 'numeric',
         year: 'numeric',

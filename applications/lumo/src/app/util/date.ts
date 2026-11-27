@@ -1,4 +1,5 @@
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 const SHORT_DATE_OPTIONS: Intl.DateTimeFormatOptions = {
     month: 'short',
@@ -6,7 +7,7 @@ const SHORT_DATE_OPTIONS: Intl.DateTimeFormatOptions = {
     year: 'numeric',
 };
 
-export const formatShortDate = (date: string | Date, locale?: string) => {
+export const formatShortDate = (date: string | Date, locale = dateLocale.code) => {
     const parsedDate = typeof date === 'string' ? new Date(date) : date;
 
     return formatIntlDate(parsedDate, SHORT_DATE_OPTIONS, locale);

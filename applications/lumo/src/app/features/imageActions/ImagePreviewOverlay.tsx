@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -127,7 +128,7 @@ export const ImagePreviewOverlay = ({
 
     if (!isOpen) return null;
 
-    const formattedDate = createdAt?.toLocaleDateString(undefined, {
+    const formattedDate = createdAt?.toLocaleDateString(dateLocale.code, {
         month: 'short',
         day: 'numeric',
         year: createdAt.getFullYear() !== new Date().getFullYear() ? 'numeric' : undefined,
