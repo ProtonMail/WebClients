@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
+import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Loader } from '@proton/atoms/Loader/Loader';
@@ -150,12 +151,21 @@ const SubscriptionsSection = () => {
     const [allSubscriptions, allSubscriptionsLoading] = useAllSubscriptions();
     const [user] = useUser();
     const [entitlementCatalog, entitlementCatalogLoading] = useEntitlementCatalog();
+    const [paymentMethods, paymentMethodsLoading] = usePaymentMethods();
 
-    if (allSubscriptionsLoading || entitlementCatalogLoading || !entitlementCatalog || !allSubscriptions) {
+    if (
+        allSubscriptionsLoading ||
+        entitlementCatalogLoading ||
+        paymentMethodsLoading ||
+        !entitlementCatalog ||
+        !allSubscriptions
+    ) {
         return <Loader />;
     }
 
-    const rows = getSubscriptionRows(user, allSubscriptions, entitlementCatalog);
+    const rows = getSubscriptionRows(user, allSubscriptions, entitlementCatalog, {
+        hasPaymentMethod: !!paymentMethods?.length,
+    });
     if (!rows.length) {
         return null;
     }

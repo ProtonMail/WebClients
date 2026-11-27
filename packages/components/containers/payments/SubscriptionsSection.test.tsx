@@ -26,6 +26,7 @@ import SubscriptionsSection from './SubscriptionsSection';
 const mockGetPaymentMethods = vi.fn();
 vi.mock('@proton/account/paymentMethods/hooks', () => ({
     useGetPaymentMethods: () => mockGetPaymentMethods,
+    usePaymentMethods: () => [[], false],
 }));
 
 const withId = (sub: Subscription, ID: string): Subscription => ({ ...sub, ID });

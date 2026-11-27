@@ -14,6 +14,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
 import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import TrialTopBanner from './TrialTopBanner';
@@ -80,6 +81,7 @@ describe('TrialTopBanner', () => {
             buildEntitlementCatalog({
                 [PLANS.BUNDLE_PRO_2024]: [EntitlementName.Business],
                 [PLANS.MAIL_PRO]: [EntitlementName.Business],
+                [PLANS.PASS_BUSINESS]: [EntitlementName.Business],
                 [PLANS.MAIL]: [],
             }),
             false,
@@ -151,6 +153,34 @@ describe('TrialTopBanner', () => {
         openTrialCanceledModal();
 
         expect(screen.getAllByTestId('trial-canceled-modal')).toHaveLength(1);
+    });
+
+    describe('trial with auto-renew disabled', () => {
+        const withRenewDisabled = (subscription: Subscription): Subscription => ({
+            ...subscription,
+            Renew: Renew.Disabled,
+        });
+
+        it('renders no banner for a cancelled trial of another plan', () => {
+            renderBanner(withRenewDisabled(buildB2BTrial(PLANS.BUNDLE_PRO_2024, 'b2b-trial')));
+
+            expect(screen.queryByText(/trial/)).not.toBeInTheDocument();
+        });
+
+        it('renders the Pass banner on the auto-assigned Pass Professional trial', () => {
+            renderBanner(withRenewDisabled(buildB2BTrial(PLANS.PASS_BUSINESS, 'pass-trial')));
+
+            expect(screen.getByText(/Your access will soon get restricted/)).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: 'downgrade to Pass Basic' })).toBeInTheDocument();
+        });
+
+        it('renders no banner on a cancelled Pass Professional trial with a payment method', () => {
+            (usePaymentMethods as Mock).mockReturnValue([[{ ID: 'card' }], false]);
+
+            renderBanner(withRenewDisabled(buildB2BTrial(PLANS.PASS_BUSINESS, 'pass-trial')));
+
+            expect(screen.queryByText(/Your access will soon get restricted/)).not.toBeInTheDocument();
+        });
     });
 
     it('renders nothing and does not listen for the trial canceled event for a free user', () => {
