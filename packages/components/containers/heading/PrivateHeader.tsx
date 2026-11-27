@@ -4,6 +4,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
 import type { Props as HeaderProps } from '../../components/header/Header';
@@ -16,7 +17,6 @@ import TopNavbarListItem from '../../components/topnavbar/TopNavbarListItem';
 import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
 import useSubscriptionStateCookie from '../../hooks/subscriptionStateCookie/useSubscriptionStateCookie';
 import useIsPaidUserCookie from '../../hooks/useIsPaidUserCookie';
-import { useTheme } from '../themes/ThemeProvider';
 
 interface Props extends HeaderProps {
     onBoardingButton?: ReactNode;

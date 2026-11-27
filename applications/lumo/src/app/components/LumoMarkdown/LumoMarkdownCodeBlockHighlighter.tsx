@@ -1,7 +1,7 @@
 // Sync Prism build: stable default export (PrismAsync default was undefined under some split-chunk + interop cases).
 import PrismHighlighter from 'react-syntax-highlighter/dist/esm/prism';
 
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import type { ThemeTypes } from '@proton/theme/constants';
 
 import './LumoMarkdownCodeBlockHighlighter.scss';
 

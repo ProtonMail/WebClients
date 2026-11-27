@@ -2,8 +2,8 @@ import { createMemoryHistory } from 'history';
 
 import { defaultESStatus } from '@proton/encrypted-search/constants';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
-import { PROTON_DEFAULT_THEME_INFORMATION } from '@proton/shared/lib/themes/themes';
 import { buildUser } from '@proton/shared/testing/buildUser';
+import { PROTON_DEFAULT_THEME_INFORMATION } from '@proton/theme/themes';
 
 import { setupStore } from '../store/store';
 import type { MailToolDeps } from './toolModule';

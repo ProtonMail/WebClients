@@ -1,8 +1,8 @@
 import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
-import { ThemeTypes } from "@proton/shared/lib/themes/constants";
-import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
+import { ThemeTypes } from "@proton/theme/constants";
+import { PROTON_THEMES_MAP } from "@proton/theme/themes";
 import { BrowserWindow, Event, nativeTheme, Rectangle, WebContentsView } from "electron";
 import { debounce } from "lodash";
 import { c } from "ttag";

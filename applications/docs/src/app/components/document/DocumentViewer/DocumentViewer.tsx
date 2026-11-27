@@ -4,7 +4,7 @@ import { useConfig } from '@proton/app-context/useConfig'
 import { Button } from '@proton/atoms/Button/Button'
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'
 import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet'
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
+import { useTheme } from '@proton/theme/ThemeProvider'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type {
   DocsClientSquashVerificationObjectionMadePayload,

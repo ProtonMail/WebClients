@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { APPS } from '@proton/shared/lib/constants';
+import ThemeProvider from '@proton/theme/ThemeProvider';
 
 import { getPublicAppThemeSetting, getShouldPersistTheme } from './getPublicAppThemeSetting';
 

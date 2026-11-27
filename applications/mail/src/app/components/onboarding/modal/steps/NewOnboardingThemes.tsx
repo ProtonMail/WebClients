@@ -6,9 +6,9 @@ import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/cons
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import ThemeCard from '@proton/components/containers/themes/ThemeCard';
 import { getThemeCardSize } from '@proton/components/containers/themes/ThemeCards';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import type { ThemeTypes } from '@proton/theme/constants';
 import clsx from '@proton/utils/clsx';
 
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';

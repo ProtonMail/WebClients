@@ -3,13 +3,13 @@ import type { Mock } from 'vitest';
 
 import { useUpdateAccountRecovery } from '@proton/account-recovery/recovery/useUpdateAccountRecovery';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import RecoveryEmailSubpage from './RecoveryEmailSubpage';
 
 vi.mock('@proton/account/recovery/sentinelHooks');
 vi.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery');
-vi.mock('@proton/components/containers/themes/ThemeProvider');
+vi.mock('@proton/theme/ThemeProvider');
 vi.mock('@proton/components/containers/recovery/email/RecoveryEmail', () => ({
     __esModule: true,
     default: () => {

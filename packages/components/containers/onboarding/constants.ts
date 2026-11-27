@@ -1,5 +1,5 @@
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/theme/constants';
+import { PROTON_THEMES_MAP } from '@proton/theme/themes';
 
 export const ONBOARDING_THEMES = [
     ThemeTypes.Duotone,

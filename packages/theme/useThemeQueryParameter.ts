@@ -1,9 +1,8 @@
 import { useLayoutEffect, useRef } from 'react';
 
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
-
 import { useTheme } from './ThemeProvider';
+import { ThemeTypes } from './constants';
+import { PROTON_DEFAULT_THEME } from './themes';
 
 const getThemeFromQueryParameter = (): ThemeTypes | undefined => {
     const queryParams = new URLSearchParams(location.search);

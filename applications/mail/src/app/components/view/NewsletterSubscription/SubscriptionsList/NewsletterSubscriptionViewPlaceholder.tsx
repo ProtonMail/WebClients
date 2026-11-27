@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { EmptyViewWrapper } from '../../EmptyView/EmptyViewWrapper';
 

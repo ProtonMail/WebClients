@@ -1,11 +1,11 @@
 import { getSettings, updateSettings } from "./settingsStore";
 import { SERIALIZED_THEME_MODE } from "../utils/themes";
-import { electronAppTheme, getDarkThemes, ThemeSetting } from "@proton/shared/lib/themes/themes";
+import { electronAppTheme, getDarkThemes, ThemeSetting } from "@proton/theme/themes";
 import { setShouldCheckDefaultMailtoApp } from "../utils/protocol/default";
 import { loadDefaultProtocol } from "../utils/protocol/store";
 import { mainLogger } from "../utils/log";
 import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
-import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { ThemeModeSetting, ThemeTypes } from "@proton/theme/constants";
 import { SafeStore } from "./safeStore/safeStore";
 
 const store = new SafeStore("storeMigrations");

@@ -10,7 +10,7 @@ import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext
 
 import { ChatThread } from './ChatThread';
 
-vi.mock('@proton/components/containers/themes/ThemeProvider', () => ({
+vi.mock('@proton/theme/ThemeProvider', () => ({
     useTheme: () => ({ information: { motionMode: 'no-preference', features: { animations: false } } }),
 }));
 

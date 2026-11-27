@@ -1,7 +1,6 @@
 import type { History } from 'history';
 
 import type { updateAddressThunk } from '@proton/account/addresses/updateAddress';
-import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
@@ -26,8 +25,9 @@ import type { ContactEmail, ContactMetadata } from '@proton/shared/lib/interface
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import type { ThemeInformation } from '@proton/shared/lib/themes/themes';
 import type { CreateFilter, Filter } from '@proton/sieve/filterModel';
+import type { ThemeContextInterface } from '@proton/theme/ThemeProvider';
+import type { ThemeInformation } from '@proton/theme/themes';
 
 import type { SOURCE_ACTION } from '../components/list/list-telemetry/useListTelemetry';
 import type { MoveEngineCanMoveResult } from '../helpers/location/MoveEngine/moveEngineInterface';

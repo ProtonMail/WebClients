@@ -28,7 +28,7 @@ vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
 }));
 
-vi.mock('@proton/components/containers/themes/ThemeProvider', () => ({
+vi.mock('@proton/theme/ThemeProvider', () => ({
     useTheme: vi.fn().mockReturnValue({ information: {} }),
 }));
 

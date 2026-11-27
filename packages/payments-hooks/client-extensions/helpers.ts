@@ -1,5 +1,5 @@
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import type { ThemeInformation } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/theme/constants';
+import type { ThemeInformation } from '@proton/theme/themes';
 
 type Brightness = 'dark' | 'light';
 export type ThemeCode = `${ThemeTypes | undefined}-${Brightness}` | undefined;

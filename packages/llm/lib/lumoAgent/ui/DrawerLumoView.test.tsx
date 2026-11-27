@@ -9,7 +9,7 @@ import LumoAgentDrawerContext from './lumoAgentDrawerContext';
 vi.mock('@proton/components/components/drawer/views/DrawerView', () => ({
     default: ({ headerActions }: { headerActions: ReactNode }) => <>{headerActions}</>,
 }));
-vi.mock('@proton/components/containers/themes/ThemeProvider', () => ({
+vi.mock('@proton/theme/ThemeProvider', () => ({
     useTheme: () => ({ information: { dark: false } }),
 }));
 vi.mock('@proton/components/hooks/drawer/useDrawer', () => ({

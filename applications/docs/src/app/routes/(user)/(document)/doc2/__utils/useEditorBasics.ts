@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 import { useUser } from '@proton/account/user/hooks'
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
+import { useTheme } from '@proton/theme/ThemeProvider'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'

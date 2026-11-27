@@ -1,8 +1,8 @@
 import type { MockedFunction } from "vitest";
-import { ThemeSetting } from "@proton/shared/lib/themes/themes";
+import { ThemeSetting } from "@proton/theme/themes";
 import { getSettings, updateSettings } from "../store/settingsStore";
 import { performStoreMigrations } from "./storeMigrations";
-import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
+import { ThemeModeSetting, ThemeTypes } from "@proton/theme/constants";
 
 vi.mock("../utils/log");
 vi.mock("../store/settingsStore", () => ({

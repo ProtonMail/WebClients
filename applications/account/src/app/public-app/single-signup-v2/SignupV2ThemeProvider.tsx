@@ -5,7 +5,7 @@ import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { ThemeTypes } from '@proton/theme/constants';
 
 import type { SignupParameters2 } from './interface';
 

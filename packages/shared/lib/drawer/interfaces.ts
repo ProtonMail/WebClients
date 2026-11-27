@@ -3,8 +3,8 @@ import type { OfflineKey } from '../authentication/offlineKey';
 import type { APPS } from '../constants';
 import type { Environment } from '../interfaces/Environment';
 import type { User as tsUser } from '../interfaces/User';
+import type { ThemeSettingPayload } from '../interfaces/UserSettings';
 import type { VCardContact } from '../interfaces/contacts/VCard';
-import type { ThemeSetting } from '../themes/themes';
 
 export enum DRAWER_NATIVE_APPS {
     QUICK_SETTINGS = 'quick-settings',
@@ -147,7 +147,7 @@ interface CALL_EVENT_MANAGER_OUTSIDE {
 interface DRAWER_UPDATE_THEME {
     type: DRAWER_EVENTS.UPDATE_THEME;
     payload: {
-        themeSetting: ThemeSetting;
+        themeSetting: ThemeSettingPayload;
     };
 }
 

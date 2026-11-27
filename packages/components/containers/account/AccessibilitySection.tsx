@@ -9,16 +9,12 @@ import { IcPauseAnimation } from '@proton/icons/icons/IcPauseAnimation';
 import { IcTextFontFamily } from '@proton/icons/icons/IcTextFontFamily';
 import { IcTextSize } from '@proton/icons/icons/IcTextSize';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { MotionModeSetting, ThemeFeatureSetting, ThemeFontFaceSetting } from '@proton/shared/lib/themes/constants';
-import {
-    ThemeFontSizeSettingMap,
-    getThemeFontFaceEntries,
-    getThemeFontSizeEntries,
-} from '@proton/shared/lib/themes/themes';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { MotionModeSetting, ThemeFeatureSetting, ThemeFontFaceSetting } from '@proton/theme/constants';
+import { ThemeFontSizeSettingMap, getThemeFontFaceEntries, getThemeFontSizeEntries } from '@proton/theme/themes';
 import clsx from '@proton/utils/clsx';
 
 import Option from '../../components/option/Option';
-import { useTheme } from '../themes/ThemeProvider';
 import { SettingsIconRow } from './SettingsIconRow';
 import { SettingsSelectRow } from './SettingsSelectRow';
 import { SettingsToggleRow } from './SettingsToggleRow';

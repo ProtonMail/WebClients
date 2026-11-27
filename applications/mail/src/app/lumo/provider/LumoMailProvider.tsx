@@ -11,7 +11,6 @@ import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getReportInfo } from '@proton/components/helpers/report';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useSaveVCardContact } from '@proton/contacts/hooks/useSaveVCardContact';
@@ -48,6 +47,7 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 

@@ -13,13 +13,13 @@ import {
     HumanVerificationSteps,
     type VerificationModel,
 } from '@proton/shared/lib/interfaces/HumanVerification';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Modal from '../../../components/modalTwo/Modal';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
-import { useTheme } from '../../themes/ThemeProvider';
 import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';
 

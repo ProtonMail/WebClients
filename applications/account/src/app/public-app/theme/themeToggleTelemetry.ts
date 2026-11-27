@@ -1,5 +1,5 @@
 import { telemetry } from '@proton/shared/lib/telemetry';
-import type { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
+import type { ThemeModeSetting } from '@proton/theme/constants';
 
 /**
  * Tracks when a user opens the theme toggle dropdown

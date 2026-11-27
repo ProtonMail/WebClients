@@ -1,9 +1,9 @@
 import type { HTMLAttributes, ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
-import { useTheme } from '../themes/ThemeProvider';
 import { MAIN_CONTENT_ID } from './constants';
 
 // No id: it is always MAIN_CONTENT_ID, the target of the "Skip to main content" link

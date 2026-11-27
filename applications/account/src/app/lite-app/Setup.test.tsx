@@ -40,7 +40,7 @@ vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({}) }));
 vi.mock('@proton/components/hooks/useErrorHandler', () => ({
     default: () => vi.fn(),
 }));
-vi.mock('@proton/components/containers/themes/useThemeQueryParameter', () => ({
+vi.mock('@proton/theme/useThemeQueryParameter', () => ({
     default: vi.fn(),
 }));
 vi.mock('@proton/components/containers/api/ApiProvider', () => ({

@@ -21,7 +21,6 @@ import InitiateSessionRecoveryModal from '@proton/components/containers/account/
 import ConfirmDisableSessionRecoveryModal from '@proton/components/containers/recovery/ConfirmDisableSessionRecoveryModal';
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
@@ -30,6 +29,7 @@ import observeApiError from '@proton/metrics/observeApiError';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import darkIllustration from './assets/session-recovery-dark.svg';
 import illustration from './assets/session-recovery.svg';

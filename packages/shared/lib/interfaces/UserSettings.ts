@@ -1,7 +1,19 @@
 import type { DENSITY, ORGANIZATION_POLICY_ENFORCED, SETTINGS_PROTON_SENTINEL_STATE } from '../constants';
-import type { ThemeSetting } from '../themes/themes';
 import type { RegisteredKey } from '../webauthn/interface';
 import type { ChecklistId } from './Checklist';
+
+/**
+ * The theme setting as the API and the desktop app exchange it. `ThemeSetting` in `@proton/theme`
+ * is the same shape with its enums; it can't be imported here because `@proton/theme` depends on this package.
+ */
+export interface ThemeSettingPayload {
+    Mode: number;
+    LightTheme: number;
+    DarkTheme: number;
+    FontSize: number;
+    FontFace: number;
+    Features: number;
+}
 
 export enum SETTINGS_STATUS {
     UNVERIFIED = 0,
@@ -269,7 +281,7 @@ export interface UserSettings {
     SessionAccountRecovery: 1 | 0;
     LoginIdentifierPolicy: number;
     Telemetry: 1 | 0;
-    Theme: ThemeSetting | null;
+    Theme: ThemeSettingPayload | null;
     ThemeType: number;
     TimeFormat: SETTINGS_TIME_FORMAT;
     WeekStart: SETTINGS_WEEK_START;

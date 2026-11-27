@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import { EllipsisLoader } from '@proton/atoms/EllipsisLoader/EllipsisLoader';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { MotionModeSetting } from '@proton/theme/constants';
 
 import { ImportProvider } from '../../../interface';
 import { exhaustiveMatchGuard } from '../../helpers';

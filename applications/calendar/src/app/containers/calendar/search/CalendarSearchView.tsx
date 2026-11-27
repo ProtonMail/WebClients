@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { SkeletonLoader } from '@proton/atoms/SkeletonLoader/SkeletonLoader';
 import IllustrationPlaceholder from '@proton/components/containers/illustration/IllustrationPlaceholder';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
@@ -16,6 +15,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import noSearchResultDark from '@proton/styles/assets/img/placeholders/search-empty-cool-dark.svg';
 import noSearchResultCool from '@proton/styles/assets/img/placeholders/search-empty-cool-light.svg';
 import noSearchResultWarm from '@proton/styles/assets/img/placeholders/search-empty-warm-light.svg';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 

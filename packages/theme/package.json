@@ -1,0 +1,54 @@
+{
+    "name": "@proton/theme",
+    "description": "Theme logic and providers: the theme list and settings, ThemeProvider, the theme cookie, iframe style sync and the Electron theme classnames",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "exports": {
+        "./constants": "./constants.ts",
+        "./initElectronClassnames": "./initElectronClassnames.ts",
+        "./ThemeProvider": "./ThemeProvider.tsx",
+        "./themeCookieStorage": "./themeCookieStorage.ts",
+        "./themes": "./themes.ts",
+        "./useSyncIframeStyles": "./useSyncIframeStyles.ts",
+        "./useThemeQueryParameter": "./useThemeQueryParameter.ts"
+    },
+    "scripts": {
+        "check:types": "tsc --checkers 1",
+        "format:check": "oxfmt --check \"**/*.{js,ts,tsx}\"",
+        "format:write": "oxfmt --write \"**/*.{js,ts,tsx}\"",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "lint": "oxlint --quiet",
+        "test": "vitest",
+        "test:ci": "pnpm run test --run",
+        "test:watch": "pnpm run test --watch"
+    },
+    "dependencies": {
+        "@proton/colors": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "lodash": "catalog:",
+        "ttag": "catalog:"
+    },
+    "devDependencies": {
+        "@proton/i18n": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
+        "@proton/types": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
+        "@testing-library/react": "catalog:",
+        "@types/lodash": "catalog:",
+        "@types/react": "catalog:",
+        "@types/webpack-env": "catalog:",
+        "@typescript/native": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
+        "jsdom": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "typescript": "catalog:",
+        "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
+    }
+}

@@ -6,12 +6,12 @@ import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

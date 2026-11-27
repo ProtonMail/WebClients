@@ -16,7 +16,6 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
-import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import metrics from '@proton/metrics/metricsInstance';
@@ -45,6 +44,7 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { locales } from '@proton/shared/lib/i18n/locales';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { telemetry } from '@proton/shared/lib/telemetry';
+import useThemeQueryParameter from '@proton/theme/useThemeQueryParameter';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import getRandomString from '@proton/utils/getRandomString';
 

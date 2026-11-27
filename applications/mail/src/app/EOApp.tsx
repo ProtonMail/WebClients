@@ -13,7 +13,6 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/Provider';
-import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
 import { ComposerMessageHostProvider } from '@proton/mail-composer/host/composerMessageHost';
@@ -21,6 +20,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
+import ThemeProvider from '@proton/theme/ThemeProvider';
 
 import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
 import config from './config';

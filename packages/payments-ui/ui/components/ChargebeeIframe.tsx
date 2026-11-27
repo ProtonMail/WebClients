@@ -50,7 +50,6 @@ import {
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { ThemeCode } from '@proton/payments-hooks/client-extensions/helpers';
 import type { ApplePayProcessorHook } from '@proton/payments-hooks/payment-processors/useApplePay';
@@ -77,7 +76,8 @@ import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import { getSentryError } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
-import { ColorScheme } from '@proton/shared/lib/themes/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { ColorScheme } from '@proton/theme/constants';
 import noop from '@proton/utils/noop';
 
 /**

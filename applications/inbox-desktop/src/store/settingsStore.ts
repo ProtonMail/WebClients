@@ -1,7 +1,7 @@
 import { settingsLogger } from "../utils/log";
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { Environment } from "@proton/shared/lib/interfaces/Environment";
-import { ThemeSetting } from "@proton/shared/lib/themes/themes";
+import { ThemeSetting } from "@proton/theme/themes";
 import { SafeStore } from "./safeStore/safeStore";
 
 const store = new SafeStore<{ settings: SettingsStore }>("settings");

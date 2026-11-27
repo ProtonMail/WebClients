@@ -6,11 +6,11 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
-import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
-import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { getIframeSandboxAttributes } from '@proton/mail-message/helpers/composer';
 import type { MessageState, OnMessageImageLoadError } from '@proton/mail-message/store/messages/messagesTypes';
+import type { ThemeContextInterface } from '@proton/theme/ThemeProvider';
+import useSyncIframeStyles from '@proton/theme/useSyncIframeStyles';
 import clsx from '@proton/utils/clsx';
 
 import { getIframeDocument } from '../helpers/getIframeDocument';

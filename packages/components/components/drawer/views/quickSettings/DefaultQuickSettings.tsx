@@ -7,11 +7,11 @@ import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
-import { PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { ThemeModeSetting } from '@proton/theme/constants';
+import { PROTON_THEMES_MAP, getThemes } from '@proton/theme/themes';
 
 import ThemeCards from '../../../../containers/themes/ThemeCards';
-import { useTheme } from '../../../../containers/themes/ThemeProvider';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
 import useEarlyAccess from '../../../../hooks/useEarlyAccess';
 import useShowThemeSelection from '../../../../hooks/useShowThemeSelection';

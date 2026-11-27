@@ -12,12 +12,12 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import useLoading from '@proton/hooks/useLoading';
 import useToggle from '@proton/hooks/useToggle';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { useFlagsDriveDirectSharing, useFlagsDrivePublicSharing } from '../../../modules/flags';
 import ModalContentLoader from '../../modalUtils/ModalContentLoader';

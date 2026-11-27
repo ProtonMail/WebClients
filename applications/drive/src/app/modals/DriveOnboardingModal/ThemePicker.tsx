@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { Theme } from '@proton/components/containers/themes/ThemeCards';
 import ThemeSvg from '@proton/components/containers/themes/ThemeSvg';
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import type { ThemeTypes } from '@proton/theme/constants';
 import clsx from '@proton/utils/clsx';
 
 type Props = {

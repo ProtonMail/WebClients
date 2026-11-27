@@ -11,12 +11,12 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { ValidateRecoveryPhraseModal } from './ValidateRecoveryPhraseModal';
 import darkIllustration from './assets/recovery-phrase-dark.svg';

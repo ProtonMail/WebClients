@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useLayoutEffect } from 'react';
 
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { ThemeTypes } from '@proton/theme/constants';
 
 import { applyLumoTheme } from './lumoThemeDom';
 import { getLumoDefaultTheme } from './lumoThemeUtils';

@@ -4,13 +4,14 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import {
     MAIL_APP_NAME,
     MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,
     PROTON_SENTINEL_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../../../constants';
@@ -95,18 +96,18 @@ const useMailUpsellOption = ({ setMailShortcutsModalOpen, setThemesModalOpen }: 
                 id: 11,
                 text: c('Info').t`Use keyboard shortcuts to manage your email faster.`,
                 cta: (
-                    <span onClick={() => setMailShortcutsModalOpen(true)} className={linkClasses} tabIndex={0}>
+                    <InlineLinkButton onClick={() => setMailShortcutsModalOpen(true)} className="text-bold">
                         {callToActionTexts.learnMore}
-                    </span>
+                    </InlineLinkButton>
                 ),
             },
             theme.information.default && {
                 id: 12,
                 text: c('Info').t`Themes can give your inbox a new look.`,
                 cta: (
-                    <span onClick={() => setThemesModalOpen(true)} className={linkClasses} tabIndex={0}>
+                    <InlineLinkButton onClick={() => setThemesModalOpen(true)} className="text-bold">
                         {callToActionTexts.learnMore}
-                    </span>
+                    </InlineLinkButton>
                 ),
             },
             {

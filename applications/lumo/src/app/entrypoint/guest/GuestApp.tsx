@@ -15,12 +15,12 @@ import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { locales as sharedLocales } from '@proton/shared/lib/i18n/locales';
 import { telemetry } from '@proton/shared/lib/telemetry';
+import { initElectronClassnames } from '@proton/theme/initElectronClassnames';
 import noop from '@proton/utils/noop';
 
 import ConditionalNotificationsChildren from '../../components/ConditionalNotificationsChildren';

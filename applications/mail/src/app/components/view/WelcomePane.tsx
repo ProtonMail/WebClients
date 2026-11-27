@@ -5,10 +5,10 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Loader } from '@proton/atoms/Loader/Loader';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import capitalize from '@proton/utils/capitalize';
 
 import { isConversationMode } from '../../helpers/mailSettings';

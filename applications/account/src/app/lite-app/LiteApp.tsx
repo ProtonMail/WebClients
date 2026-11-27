@@ -13,7 +13,6 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/Provider';
-import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
 import metrics from '@proton/metrics/metricsInstance';
@@ -29,6 +28,7 @@ import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
 import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
+import ThemeProvider from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import defaultConfig from '../config';

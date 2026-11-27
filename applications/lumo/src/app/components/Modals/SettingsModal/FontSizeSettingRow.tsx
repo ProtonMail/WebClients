@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { ThemeFontSizeSettingMap, getThemeFontSizeEntries } from '@proton/shared/lib/themes/themes';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { ThemeFontSizeSettingMap, getThemeFontSizeEntries } from '@proton/theme/themes';
 import clsx from '@proton/utils/clsx';
 
 import { SettingsSectionItem } from './SettingsSectionItem';

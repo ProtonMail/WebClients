@@ -8,7 +8,7 @@ import PickerFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/PickerField
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { getThemes } from '@proton/shared/lib/themes/themes';
+import { getThemes } from '@proton/theme/themes';
 
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 

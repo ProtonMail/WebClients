@@ -2,7 +2,7 @@ import type { Mock } from 'vitest'
 import { renderHook, waitFor } from '@testing-library/react'
 import type { ContextType, ReactNode } from 'react'
 
-import { ThemeContext } from '@proton/components/containers/themes/ThemeProvider'
+import { ThemeContext } from '@proton/theme/ThemeProvider'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 

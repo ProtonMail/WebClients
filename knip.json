@@ -168,10 +168,7 @@
             "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/storybook": {
-            "entry": [
-                "src/stories/**/*.stories.{ts,tsx}",
-                "src/stories/**/*.mdx"
-            ],
+            "entry": ["src/stories/**/*.stories.{ts,tsx}", "src/stories/**/*.mdx"],
             "project": ["src/**/*.{ts,tsx,mdx}"]
         },
         "applications/verify": {
@@ -506,6 +503,10 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/test-api": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/theme": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },

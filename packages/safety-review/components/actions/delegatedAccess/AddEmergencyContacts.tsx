@@ -7,12 +7,12 @@ import type { SafetyReviewAllProps } from '@proton/account/safetyReview/componen
 import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
 import { useDispatch } from '@proton/account/store/hooks';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { AddContactInputs } from '@proton/delegated-access/shared/outgoing/AddContactInputs';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import noop from '@proton/utils/noop';
 
 import { SafetyReviewCta } from '../../SafetyReviewCta';

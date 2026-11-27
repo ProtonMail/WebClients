@@ -14,10 +14,10 @@ import { StatusBadgeStatus } from '@proton/components/containers/layout/StatusBa
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { RecoveryFieldForm } from '@proton/components/containers/recovery/RecoveryFieldForm';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import darkIllustration from './assets/recovery-email-dark.svg';
 import illustration from './assets/recovery-email.svg';

@@ -10,7 +10,7 @@ const bridges: { orchestrator: EditorOrchestratorInterface }[] = []
 
 vi.mock('~/utils/application-context', () => ({ useApplication: () => ({ logger }) }))
 vi.mock('@proton/app-context/useConfig', () => ({ __esModule: true, useConfig: () => ({ APP_VERSION: '1.0.0' }) }))
-vi.mock('@proton/components/containers/themes/ThemeProvider', () => ({
+vi.mock('@proton/theme/ThemeProvider', () => ({
   useTheme: () => ({ information: { dark: false } }),
 }))
 vi.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => false }))

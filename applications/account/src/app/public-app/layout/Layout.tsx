@@ -6,7 +6,6 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Href } from '@proton/atoms/Href/Href';
 import Logo from '@proton/components/components/logo/Logo';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
 import { getAppVersion } from '@proton/components/helpers/appVersion';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -16,6 +15,7 @@ import { addDesktopAppVersion } from '@proton/shared/lib/desktop/version';
 import { isElectronApp, isElectronMail, isElectronMeet, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
 import { ThemeToggleDropdown } from '../theme/ThemeToggleDropdown';

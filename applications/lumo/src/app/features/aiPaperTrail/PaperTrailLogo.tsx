@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { ThemeTypes } from '@proton/theme/constants';
 
 import { LOGO_HEIGHT, getLogoSrc } from '../../components/LumoLogoWithTierTag/LumoLogoWithTierTag';
 import { useLumoTheme } from '../../providers/LumoThemeProvider';

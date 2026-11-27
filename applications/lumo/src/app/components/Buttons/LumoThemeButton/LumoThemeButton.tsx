@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import darkThemeImg from '@proton/styles/assets/img/lumo/lumo-theme-dark.svg';
 import lightThemeImg from '@proton/styles/assets/img/lumo/lumo-theme-light.svg';
 import systemThemeImg from '@proton/styles/assets/img/lumo/lumo-theme-system.svg';
+import { ThemeTypes } from '@proton/theme/constants';
 
 import { useLumoTheme } from '../../../providers';
 import type { LumoThemeCardProps } from './LumoThemeCard';

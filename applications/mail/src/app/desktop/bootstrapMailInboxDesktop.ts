@@ -14,8 +14,8 @@ import {
 import { registerInboxDesktopUrlRules } from '@proton/shared/lib/desktop/registerInboxDesktopUrlRules';
 import { URL_RULES } from '@proton/shared/lib/desktop/urls/rules';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
-import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import { initElectronClassnames } from '@proton/theme/initElectronClassnames';
 
 export function bootstrapMailInboxDesktop({
     config,

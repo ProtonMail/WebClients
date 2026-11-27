@@ -10,12 +10,12 @@ import NotificationsChildren from '@proton/components/containers/notifications/C
 import NotificationsHijack from '@proton/components/containers/notifications/NotificationsHijack';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/Provider';
-import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { isWebView } from '@proton/shared/lib/broadcast/broadcast';
+import ThemeProvider from '@proton/theme/ThemeProvider';
 
 import Verify from './Verify';
 import broadcast, { MessageType } from './broadcast';

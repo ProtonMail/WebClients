@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef } from 'react';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { MotionModeSetting } from '@proton/theme/constants';
 
 const FRAME_W = 360;
 const FRAME_H = 188;

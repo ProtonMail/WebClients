@@ -1,8 +1,8 @@
 import { PLANS } from '@proton/payments/core/constants';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
-import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
+import { ThemeModeSetting, ThemeTypes } from '@proton/theme/constants';
+import type { ThemeSetting } from '@proton/theme/themes';
 
 import { stripLocaleTagPrefix } from '../localePrefix';
 

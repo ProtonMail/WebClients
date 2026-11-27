@@ -9,7 +9,6 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import AccountLockedUpsellForm from '@proton/components/components/upsell/modals/AccountLockedUpsellForm';
 import HumanVerificationForm from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
 import useInstance from '@proton/hooks/useInstance';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
@@ -21,7 +20,8 @@ import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { HumanVerificationSteps } from '@proton/shared/lib/interfaces/HumanVerification';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
-import { getDarkThemes } from '@proton/shared/lib/themes/themes';
+import { getDarkThemes } from '@proton/theme/themes';
+import useThemeQueryParameter from '@proton/theme/useThemeQueryParameter';
 
 import broadcast, { MessageType } from './broadcast';
 import locales from './locales';

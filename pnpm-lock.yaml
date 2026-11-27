@@ -1154,6 +1154,9 @@ importers:
       '@proton/telemetry-tracker':
         specifier: workspace:^
         version: link:../../packages/telemetry-tracker
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -1359,6 +1362,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -1778,6 +1784,9 @@ importers:
       '@proton/telemetry-tracker':
         specifier: workspace:^
         version: link:../../packages/telemetry-tracker
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -2152,6 +2161,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -2381,6 +2393,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
@@ -2647,6 +2662,9 @@ importers:
       '@proton/telemetry-tracker':
         specifier: workspace:^
         version: link:../../packages/telemetry-tracker
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -2816,6 +2834,9 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
@@ -3045,6 +3066,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -3472,6 +3496,9 @@ importers:
       '@proton/telemetry-tracker':
         specifier: workspace:^
         version: link:../../packages/telemetry-tracker
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -3734,6 +3761,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -3891,6 +3921,9 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       electron-log:
         specifier: 'catalog:'
         version: 5.4.4
@@ -4196,6 +4229,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
@@ -4674,6 +4710,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
@@ -4786,6 +4825,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.15.0(@types/react@19.3.0)(react-redux@9.3.1(@types/react@19.3.0)(react@19.3.1)(redux@5.0.1))(react@19.3.1)
@@ -5118,6 +5160,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -5683,6 +5728,9 @@ importers:
       '@proton/telemetry-tracker':
         specifier: workspace:^
         version: link:../telemetry-tracker
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -6611,6 +6659,9 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../components
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
@@ -6817,6 +6868,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/types':
         specifier: workspace:^
         version: link:../types
@@ -7065,6 +7119,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -7590,6 +7647,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -8409,6 +8469,9 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
@@ -8734,6 +8797,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -8894,6 +8960,9 @@ importers:
       '@proton/telemetry-tracker':
         specifier: workspace:^
         version: link:../telemetry-tracker
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -9166,6 +9235,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/types':
         specifier: workspace:^
         version: link:../types
@@ -9287,6 +9359,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -10423,6 +10498,9 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -10568,6 +10646,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -10830,6 +10911,9 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
@@ -11022,6 +11106,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
@@ -11325,6 +11412,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../theme
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -11748,6 +11838,76 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2008
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.1(@opentelemetry/api@1.9.1)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/browser@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(happy-dom@21.0.4)(jsdom@31.0.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@26.6.6)(@typescript/typescript6@6.0.2))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/theme:
+    dependencies:
+      '@proton/colors':
+        specifier: workspace:^
+        version: link:../colors
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
+      '@proton/utils':
+        specifier: workspace:^
+        version: link:../utils
+      lodash:
+        specifier: 'catalog:'
+        version: 4.18.1
+      ttag:
+        specifier: 'catalog:'
+        version: 1.8.12
+    devDependencies:
+      '@proton/i18n':
+        specifier: workspace:^
+        version: link:../i18n
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
+      '@proton/types':
+        specifier: workspace:^
+        version: link:../types
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../vitest-config
+      '@testing-library/react':
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/lodash':
+        specifier: 'catalog:'
+        version: 4.17.27
+      '@types/react':
+        specifier: 'catalog:'
+        version: 18.3.31
+      '@types/webpack-env':
+        specifier: 'catalog:'
+        version: 1.18.8
+      '@typescript/native':
+        specifier: 'catalog:'
+        version: typescript@7.0.2
+      '@vitejs/plugin-react':
+        specifier: 'catalog:'
+        version: 6.3.0(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.4)(tsx@4.23.15)(yaml@2.9.1))
+      jsdom:
+        specifier: 'catalog:'
+        version: 31.0.1(@noble/hashes@2.4.0)
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.94.0(oxlint-tsgolint@7.0.2008)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2008
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -12353,6 +12513,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
@@ -12435,6 +12598,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/theme':
+        specifier: workspace:^
+        version: link:../../packages/theme
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils

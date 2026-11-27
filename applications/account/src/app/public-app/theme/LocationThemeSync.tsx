@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { getPublicAppThemeSetting } from './getPublicAppThemeSetting';
 

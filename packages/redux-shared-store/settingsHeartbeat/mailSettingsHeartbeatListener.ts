@@ -23,7 +23,8 @@ import {
     VIEW_LAYOUT,
     VIEW_MODE,
 } from '@proton/shared/lib/mail/mailSettings';
-import { PROTON_DEFAULT_THEME_SETTINGS, PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+import type { ThemeSetting } from '@proton/theme/themes';
+import { PROTON_DEFAULT_THEME_SETTINGS, PROTON_THEMES_MAP } from '@proton/theme/themes';
 
 import {
     formatBooleanForHeartbeat,
@@ -69,7 +70,8 @@ export const mailSettingsHeartbeatListener = (startListening: AppStartListening)
             const folders = categories.filter((category) => category.Type === LABEL_TYPE.MESSAGE_FOLDER);
             const labels = categories.filter((category) => category.Type === LABEL_TYPE.MESSAGE_LABEL);
 
-            const { DarkTheme, LightTheme, Mode } = userSettings.Theme || PROTON_DEFAULT_THEME_SETTINGS;
+            const themeSetting: ThemeSetting = userSettings.Theme || PROTON_DEFAULT_THEME_SETTINGS;
+            const { DarkTheme, LightTheme, Mode } = themeSetting;
 
             void sendTelemetryReportWithBaseDimensions({
                 user,

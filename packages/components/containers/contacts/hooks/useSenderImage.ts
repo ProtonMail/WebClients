@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import useAuthentication from '../../../hooks/useAuthentication';
-import { useTheme } from '../../themes/ThemeProvider';
 import { getImageSize, getSenderImageUrl } from '../helpers/senderImage';
 
 interface Props {

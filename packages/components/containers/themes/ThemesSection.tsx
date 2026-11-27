@@ -6,13 +6,13 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
-import { ColorScheme, ThemeModeSetting } from '@proton/shared/lib/themes/constants';
-import { getThemes } from '@proton/shared/lib/themes/themes';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import { ColorScheme, ThemeModeSetting } from '@proton/theme/constants';
+import { getThemes } from '@proton/theme/themes';
 
 import { SettingsIconRow } from '../account/SettingsIconRow';
 import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import ThemeCards from './ThemeCards';
-import { useTheme } from './ThemeProvider';
 import ThemeSyncModeCard from './ThemeSyncModeCard';
 
 const ThemesSection = () => {

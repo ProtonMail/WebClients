@@ -10,7 +10,6 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { getDriveForPhotos } from '@proton/drive/sdk';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
@@ -20,6 +19,7 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
+import { useTheme } from '@proton/theme/ThemeProvider';
 import clsx from '@proton/utils/clsx';
 
 import { SignatureIcon } from '../../../legacy/components/SignatureIcon';
@@ -173,7 +173,6 @@ export const AlbumsCard: FC<Props> = ({ style, nodeUid, onClick, onShare, onRena
     );
 
     return (
-        /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
             as="div"
             ref={ref}
@@ -187,6 +186,8 @@ export const AlbumsCard: FC<Props> = ({ style, nodeUid, onClick, onShare, onRena
             onClick={onClick}
             onKeyDown={onKeyDown}
             tabIndex={0}
+            // The card holds the album dropdown button, and a <button> cannot contain another one.
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="button"
             aria-busy={isThumbnailLoading}
         >

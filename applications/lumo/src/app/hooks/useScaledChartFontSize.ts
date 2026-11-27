@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { useTheme } from '@proton/theme/ThemeProvider';
 
 import { scaleChartFontSize } from '../util/scaleChartFontSize';
 

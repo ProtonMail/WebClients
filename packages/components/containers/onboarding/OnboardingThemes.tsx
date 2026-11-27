@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { useTheme } from '@proton/theme/ThemeProvider';
+import type { ThemeTypes } from '@proton/theme/constants';
 
 import ThemeCards from '../themes/ThemeCards';
-import { useTheme } from '../themes/ThemeProvider';
 import OnboardingContent from './OnboardingContent';
 import OnboardingStep from './OnboardingStep';
 import { ONBOARDING_THEMES } from './constants';

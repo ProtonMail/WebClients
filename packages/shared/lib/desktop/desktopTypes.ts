@@ -1,9 +1,8 @@
 import { z } from 'zod';
 
 import type { Environment } from '../interfaces/Environment';
+import type { ThemeSettingPayload } from '../interfaces/UserSettings';
 import type { DesktopInboxHeartbeatMetricPayload } from '../metrics/desktopInboxHeartbeat';
-import type { ColorScheme } from '../themes/constants';
-import type { ThemeSetting } from '../themes/themes';
 import { type DailyStatsStored, zDailyStatsReport } from './DailyStats';
 import { type DefaultProtocol, zDefaultProtocol } from './DefaultProtocol';
 import type { AppVersion, DesktopVersion } from './DesktopVersion';
@@ -61,14 +60,14 @@ export type IPCInboxDesktopFeature =
     | 'AuthStatusCheck'
     | 'AppInFocusTelemetry';
 export type IPCInboxGetInfoMessage =
-    | { type: 'theme'; result: ThemeSetting }
+    | { type: 'theme'; result: ThemeSettingPayload }
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'isSnap'; result: boolean | null }
     | { type: 'snapRevision'; result: string }
     | { type: 'installSource'; result: string | null }
     | { type: 'defaultMailto'; result: DefaultProtocol }
     | { type: 'defaultMailtoBannerDismissed'; result: boolean }
-    | { type: 'colorScheme'; result: ColorScheme }
+    | { type: 'colorScheme'; result: number }
     | { type: 'getAllAppVersions'; result: string }
     | { type: 'dailyStats'; result: DailyStatsStored };
 export type IPCInboxGetUserInfoMessage = { type: 'esUserChoice'; result: ESUserChoice };
@@ -90,7 +89,7 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'trialEnd'; payload?: 'trialEnded' | 'resetTrialEnded' | undefined }
     | { type: 'showNotification'; payload: ElectronNotification }
     | { type: 'updateLocale'; payload: string }
-    | { type: 'setTheme'; payload: ThemeSetting }
+    | { type: 'setTheme'; payload: ThemeSettingPayload }
     | { type: 'earlyAccess'; payload: Environment | undefined }
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
     | { type: 'setDefaultMailto'; payload?: undefined }

@@ -2,12 +2,12 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { getStoredThemeString } from '@proton/components/containers/themes/themeCookieStorage';
 import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import { IcMoon } from '@proton/icons/icons/IcMoon';
 import { IcSun } from '@proton/icons/icons/IcSun';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ThemeModeSetting } from '@proton/shared/lib/themes/constants';
+import { ThemeModeSetting } from '@proton/theme/constants';
+import { getStoredThemeString } from '@proton/theme/themeCookieStorage';
 
 const getAutoModeDescription = () => {
     const cookieTheme = getStoredThemeString();

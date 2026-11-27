@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { IcMoon } from '@proton/icons/icons/IcMoon';
 import { IcSun } from '@proton/icons/icons/IcSun';
-import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+import type { ThemeTypes } from '@proton/theme/constants';
+import { PROTON_THEMES_MAP } from '@proton/theme/themes';
 import clsx from '@proton/utils/clsx';
 
 import Info from '../../components/link/Info';

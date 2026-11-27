@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { getDarkThemes } from '@proton/shared/lib/themes/themes';
+import { getDarkThemes } from '@proton/theme/themes';
 import clsx from '@proton/utils/clsx';
 
 import { SupportedActions } from '../helper';
