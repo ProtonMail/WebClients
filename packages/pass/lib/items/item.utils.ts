@@ -78,8 +78,8 @@ export const interpolateRecentItems =
                           boundary: now - UNIX_DAY,
                       },
                       {
-                          // translator: label means items that have been added or edited in last 7 days from the current moment
-                          label: c('Label').t`Last week`,
+                          // translator: label means items added or edited more than 24 hours ago, but within the last 7 days (rolling, not calendar week)
+                          label: c('Label').t`In the past week`,
                           boundary: now - UNIX_WEEK,
                       },
                       {
