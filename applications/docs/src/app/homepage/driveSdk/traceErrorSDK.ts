@@ -7,7 +7,8 @@ export function traceErrorSDK(errorTracking: ErrorTracking, error: any, feature:
   if (!errorTracking.isReportable(error) || error instanceof ValidationError) {
     return
   }
-  const errorWithCurrentStack = new Error(error?.message ?? 'Failed while calling Drive SDK')
+  // An API error's message is its HTTP status text, often empty: the backend's own message is in data.Error
+  const errorWithCurrentStack = new Error(error?.data?.Error || error?.message || 'Failed while calling Drive SDK')
   errorWithCurrentStack.cause = error
   errorTracking.traceError(errorWithCurrentStack, {
     tags: {

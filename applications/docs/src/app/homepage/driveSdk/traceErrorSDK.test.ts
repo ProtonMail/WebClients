@@ -21,6 +21,29 @@ describe('traceErrorSDK', () => {
     )
   })
 
+  it("reports the backend's error message for an API error", () => {
+    const errorTracking = createErrorTracking(true)
+    const error = Object.assign(new Error(''), { status: 401, data: { Code: 401, Error: 'Invalid access token' } })
+
+    traceErrorSDK(errorTracking, error, 'DocsTrashWithDriveSDK')
+
+    expect(errorTracking.traceError).toHaveBeenCalledWith(
+      expect.objectContaining({ message: 'Invalid access token', cause: error }),
+      expect.anything(),
+    )
+  })
+
+  it('reports a default message when the error has an empty one', () => {
+    const errorTracking = createErrorTracking(true)
+
+    traceErrorSDK(errorTracking, new Error(''), 'DocsTrashWithDriveSDK')
+
+    expect(errorTracking.traceError).toHaveBeenCalledWith(
+      expect.objectContaining({ message: 'Failed while calling Drive SDK' }),
+      expect.anything(),
+    )
+  })
+
   it('reports nothing for an error the host does not report', () => {
     const errorTracking = createErrorTracking(false)
 

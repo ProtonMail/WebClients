@@ -8,6 +8,7 @@ import { getUrlPassword } from '@proton/docs-shared/URL/getUrlPassword'
 import { receiveCustomPasswordFromDriveWindow } from '@proton/drive/public/publicDocsSharing'
 import { MemberRole, type NodeEntity, NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive/sdk'
 import metrics from '@proton/metrics/metricsInstance'
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { getSentryError, SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
@@ -231,7 +232,9 @@ export function traceErrorSDK(error: any, feature: string) {
   if (!getSentryError(error) || error instanceof ValidationError) {
     return
   }
-  const errorWithCurrentStack = new Error(error?.message ?? 'Failed while calling Drive SDK')
+  const errorWithCurrentStack = new Error(
+    getApiError(error).message || error?.message || 'Failed while calling Drive SDK',
+  )
   errorWithCurrentStack.cause = error
   traceError(errorWithCurrentStack, {
     tags: {
