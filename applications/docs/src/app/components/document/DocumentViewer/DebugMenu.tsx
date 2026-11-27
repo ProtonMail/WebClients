@@ -170,6 +170,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
   const isSpreadsheet = documentType === 'sheet'
 
   const [showUpdateReplayTool, setShowUpdateReplayTool] = useState(false)
+  const [shouldPersistAppliedSpreadsheetState, setShouldPersistAppliedSpreadsheetState] = useState(false)
 
   if (!isOpen) {
     return (
@@ -403,15 +404,39 @@ export function DebugMenu({ docController, editorController, documentState, docu
 
               {isSpreadsheet && (
                 <>
-                  <FileInputButton
-                    inputTestId="apply-spreadsheet-state-input"
-                    onFileSelect={async (file) => {
-                      const spreadsheetState = JSON.parse(await file.text())
-                      await editorController.replaceLocalSpreadsheetState(spreadsheetState, false)
-                    }}
-                  >
-                    Apply Spreadsheet State from File
-                  </FileInputButton>
+                  <div className="flex flex-col gap-1.5">
+                    <FileInputButton
+                      inputTestId="apply-spreadsheet-state-input"
+                      onFileSelect={async (file) => {
+                        const spreadsheetState = JSON.parse(await file.text())
+                        await editorController.replaceLocalSpreadsheetState(
+                          spreadsheetState,
+                          shouldPersistAppliedSpreadsheetState,
+                        )
+                      }}
+                    >
+                      Apply Spreadsheet State from File
+                    </FileInputButton>
+                    <label className="flex items-center gap-2 px-1">
+                      <input
+                        className="bg-norm !opacity-100"
+                        type="checkbox"
+                        data-testid="persist-applied-spreadsheet-state-input"
+                        checked={shouldPersistAppliedSpreadsheetState}
+                        onChange={(event) => setShouldPersistAppliedSpreadsheetState(event.target.checked)}
+                      />
+                      <span className="text-sm leading-none">Persist applied state</span>
+                      <Ariakit.TooltipProvider>
+                        <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>
+                          <IcInfoCircle />
+                        </Ariakit.TooltipAnchor>
+                        <Tooltip>
+                          On: the state is written to the document as new changes and synced. Off: it is shown in this
+                          tab only, and a reload brings the document back.
+                        </Tooltip>
+                      </Ariakit.TooltipProvider>
+                    </label>
+                  </div>
                   <Button size="small" color="danger" onClick={() => editorController.removeSpreadsheetPatches()}>
                     Remove Stored Patches
                   </Button>

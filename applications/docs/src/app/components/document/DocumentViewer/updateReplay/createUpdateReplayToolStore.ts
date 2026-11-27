@@ -44,6 +44,12 @@ export type UpdateReplayToolState = {
   setShouldMergeBeforeApplying: (shouldMergeBeforeApplying: boolean) => void
   shouldPersistAppliedUpdates: boolean
   setShouldPersistAppliedUpdates: (shouldPersistAppliedUpdates: boolean) => void
+  /**
+   * Applies each group of updates (each click) with the Sheets editor unmounted, then mounts it again, so it loads them
+   * from the Y.Doc as when a sheet opens, instead of applying them one by one to a mounted editor. The group is one step.
+   */
+  shouldUnmountEditorWhileApplying: boolean
+  setShouldUnmountEditorWhileApplying: (shouldUnmountEditorWhileApplying: boolean) => void
   ws: WebSocket | null
   snapshots: ReplaySnapshot[]
   /** `stepChanges[step]` is what changed between `snapshots[step - 1]` and `snapshots[step]`. */
@@ -148,6 +154,26 @@ export const createUpdateReplayToolStore = (editorController: EditorControllerIn
       await showStep(timeTravelIndex)
     }
 
+    const applyUpdate = async (update: Uint8Array<ArrayBuffer>) => {
+      const { shouldPersistAppliedUpdates } = get()
+      await editorController.applyUpdate(update, shouldPersistAppliedUpdates)
+      if (!shouldPersistAppliedUpdates) {
+        set({ hasAppliedUnpersistedUpdates: true })
+      }
+    }
+
+    const applyWithEditorUnmounted = async (updates: Uint8Array<ArrayBuffer>[], appliedUpdatesAfter: number) => {
+      await editorController.setSpreadsheetEditorMounted(false)
+      try {
+        for (const update of updates) {
+          await applyUpdate(update)
+        }
+      } finally {
+        await editorController.setSpreadsheetEditorMounted(true)
+      }
+      await showRecordedStep(await recordStep(appliedUpdatesAfter))
+    }
+
     const getRepairedState = () => {
       const { snapshots, holds, stepChanges } = get()
       return composeSnapshotWithHolds(snapshots, getLatestStep(), holds, stepChanges)
@@ -174,6 +200,9 @@ export const createUpdateReplayToolStore = (editorController: EditorControllerIn
       setShouldMergeBeforeApplying: (shouldMergeBeforeApplying: boolean) => set({ shouldMergeBeforeApplying }),
       shouldPersistAppliedUpdates: false,
       setShouldPersistAppliedUpdates: (shouldPersistAppliedUpdates: boolean) => set({ shouldPersistAppliedUpdates }),
+      shouldUnmountEditorWhileApplying: false,
+      setShouldUnmountEditorWhileApplying: (shouldUnmountEditorWhileApplying: boolean) =>
+        set({ shouldUnmountEditorWhileApplying }),
       isTimeTravelEnabled: true,
 
       loadUpdatesFile: async (file: File, broadcastToWS = false) => {
@@ -231,6 +260,14 @@ export const createUpdateReplayToolStore = (editorController: EditorControllerIn
       },
       applyMultipleUpdates: async (count: number): Promise<number> => {
         await showLatestSnapshotWithoutHolds()
+        const { updatesToApply, appliedUpdates, shouldUnmountEditorWhileApplying } = get()
+        if (shouldUnmountEditorWhileApplying) {
+          const updates = updatesToApply.slice(appliedUpdates, appliedUpdates + count)
+          if (updates.length > 0) {
+            await applyWithEditorUnmounted(updates, appliedUpdates + updates.length)
+          }
+          return get().appliedUpdates
+        }
         let wasLastStepRecorded = false
         for (let i = 0; i < count; i++) {
           const store = get()
@@ -238,10 +275,7 @@ export const createUpdateReplayToolStore = (editorController: EditorControllerIn
           if (!update) {
             break
           }
-          await editorController.applyUpdate(update, store.shouldPersistAppliedUpdates)
-          if (!store.shouldPersistAppliedUpdates) {
-            set({ hasAppliedUnpersistedUpdates: true })
-          }
+          await applyUpdate(update)
           wasLastStepRecorded = await recordStep(store.appliedUpdates + 1)
         }
         await showRecordedStep(wasLastStepRecorded)
@@ -255,11 +289,13 @@ export const createUpdateReplayToolStore = (editorController: EditorControllerIn
           return store.appliedUpdates
         }
         const mergedUpdate = mergeUpdates(updates) as Uint8Array<ArrayBuffer>
-        await editorController.applyUpdate(mergedUpdate, store.shouldPersistAppliedUpdates)
-        if (!store.shouldPersistAppliedUpdates) {
-          set({ hasAppliedUnpersistedUpdates: true })
+        const appliedUpdatesAfter = store.appliedUpdates + updates.length
+        if (store.shouldUnmountEditorWhileApplying) {
+          await applyWithEditorUnmounted([mergedUpdate], appliedUpdatesAfter)
+          return get().appliedUpdates
         }
-        await showRecordedStep(await recordStep(store.appliedUpdates + updates.length))
+        await applyUpdate(mergedUpdate)
+        await showRecordedStep(await recordStep(appliedUpdatesAfter))
         return get().appliedUpdates
       },
 

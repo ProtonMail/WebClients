@@ -184,7 +184,7 @@ function CellChangeList({
           Hold all
         </Button>
       </div>
-      <ul className="m-0 flex max-h-[16rem] list-none flex-col gap-1 overflow-y-auto p-0">
+      <ul className="m-0 flex max-h-[16rem] list-none flex-col flex-nowrap gap-1 overflow-y-auto p-0 *:shrink-0">
         {changes.slice(0, MAX_LISTED_ROWS).map((change) => (
           <CellChangeRow
             key={`${change.sheetId}:${change.rowIndex}:${change.columnIndex}`}
@@ -323,7 +323,7 @@ function ActiveHoldList({
   return (
     <div className="flex flex-col gap-1">
       <div className="text-sm font-semibold">Held at this step ({holds.length})</div>
-      <ul className="m-0 flex max-h-[10rem] list-none flex-col gap-1 overflow-y-auto p-0">
+      <ul className="m-0 flex max-h-[10rem] list-none flex-col flex-nowrap gap-1 overflow-y-auto p-0 *:shrink-0">
         {holds.slice(0, MAX_LISTED_ROWS).map((hold) => {
           const releaseStep = getReleaseStep(hold)
           return (
