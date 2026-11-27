@@ -23,13 +23,14 @@ import useBYOEInboxCleanupConfirm from '../../../hooks/useBYOEInboxCleanupConfir
 import { useMailDispatch } from '../../../store/hooks';
 import { ModalCheckboxWithLabel } from './SubscriptionsList/ModalBlockSender/ModalSharedComponents';
 import { getReceivedMessagesCount } from './helper';
-import type { BYOEInboxCleanupChoice } from './interface';
+import type { BYOEInboxCleanupChoice, BYOEInboxCleanupOutcome } from './interface';
 
 interface InboxCleanupHeaderProps {
     count: number;
+    closeDisabled: boolean;
 }
 
-const InboxCleanupHeader = ({ count }: InboxCleanupHeaderProps) => {
+const InboxCleanupHeader = ({ count, closeDisabled }: InboxCleanupHeaderProps) => {
     const { id } = useContext(ModalContext);
 
     return (
@@ -56,7 +57,9 @@ const InboxCleanupHeader = ({ count }: InboxCleanupHeaderProps) => {
                     )}
                 </p>
             </div>
-            <ModalHeaderCloseButton buttonProps={{ className: 'shrink-0 modal-two-header-actions' }} />
+            <ModalHeaderCloseButton
+                buttonProps={{ className: 'shrink-0 modal-two-header-actions', disabled: closeDisabled }}
+            />
         </div>
     );
 };
@@ -147,7 +150,7 @@ const SenderRow = ({ subscription, section, checked, disabled, onToggle }: Sende
 interface InboxCleanupModalProps {
     modalProps: ModalStateProps;
     subscriptions: NewsletterSubscription[];
-    onConfirm: (choice: BYOEInboxCleanupChoice) => Promise<void>;
+    onConfirm: (choice: BYOEInboxCleanupChoice) => Promise<BYOEInboxCleanupOutcome>;
 }
 
 const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanupModalProps) => {
@@ -182,8 +185,8 @@ const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanu
     };
 
     return (
-        <ModalTwo {...modalProps} size="large" fullscreenOnMobile>
-            <InboxCleanupHeader count={count} />
+        <ModalTwo {...modalProps} size="large" fullscreenOnMobile disableCloseOnEscape={loading}>
+            <InboxCleanupHeader count={count} closeDisabled={loading} />
             <ModalTwoContent>
                 <div className="border border-weak rounded-lg overflow-hidden">
                     {senderSections.map(({ section, subscriptions: sectionSubscriptions }, index) => {
@@ -245,7 +248,9 @@ const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanu
                     <p className="m-0 mb-3 text-sm color-weak">{c('Info')
                         .t`Based only on which emails you've opened.`}</p>
                     <div className="flex flex-nowrap items-center justify-end gap-2">
-                        <Button onClick={modalProps.onClose}>{c('Action').t`Skip`}</Button>
+                        <Button onClick={modalProps.onClose} disabled={loading}>
+                            {c('Action').t`Skip`}
+                        </Button>
                         <Button color="norm" loading={loading} disabled={!selectedCount} onClick={handleUnsubscribe}>
                             {c('Action').ngettext(
                                 msgid`Unsubscribe from ${selectedCount}`,
@@ -263,28 +268,50 @@ const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanu
 interface BYOEInboxCleanupModalProps {
     subscriptions: NewsletterSubscription[];
     modalProps: ModalStateProps;
+    onClosedWithUnsubscribed: (unsubscribed: NewsletterSubscription[]) => void;
 }
 
-export const BYOEInboxCleanupModal = ({ subscriptions, modalProps }: BYOEInboxCleanupModalProps) => {
+export const BYOEInboxCleanupModal = ({
+    subscriptions,
+    modalProps,
+    onClosedWithUnsubscribed,
+}: BYOEInboxCleanupModalProps) => {
     const onConfirm = useBYOEInboxCleanupConfirm();
     const dispatch = useMailDispatch();
-    // Closing while Unsubscribe is pending, then Unsubscribe succeeding, closes it a second time
-    const hasClearedRef = useRef(false);
+    // A ref, not state: Unsubscribe closes the window with the `onClose` from the render it was pressed in,
+    // which would still hold the senders from before that run
+    const unsubscribedRef = useRef<NewsletterSubscription[]>([]);
 
-    // However it's closed, it doesn't open again; a reload while it's open leaves it due for the next visit
+    // However it's closed, it doesn't open again; a reload while it's open leaves it due for the next visit.
+    // Whether it closes itself after a full success or the person closes it after some failed, it hands over
+    // the senders it unsubscribed so the success window can open.
     const handleClose = () => {
-        if (!hasClearedRef.current) {
-            hasClearedRef.current = true;
-            clearBYOEFeature(dispatch, FeatureCode.BYOEInboxCleanupModal);
+        // Its buttons and Escape still work while it fades out, which would clear it and hand the senders over twice
+        if (!modalProps.open) {
+            return;
         }
+        clearBYOEFeature(dispatch, FeatureCode.BYOEInboxCleanupModal);
         modalProps.onClose();
+        if (unsubscribedRef.current.length > 0) {
+            onClosedWithUnsubscribed(unsubscribedRef.current);
+        }
+    };
+
+    const handleConfirm = async (choice: BYOEInboxCleanupChoice) => {
+        const outcome = await onConfirm(choice);
+        unsubscribedRef.current = outcome.unsubscribed;
+        if (!outcome.allDone) {
+            // The caller has shown its error; failing keeps the window open so the person can try again
+            throw new Error('Some BYOE inbox cleanup senders are not done');
+        }
+        return outcome;
     };
 
     return (
         <InboxCleanupModal
             modalProps={{ ...modalProps, onClose: handleClose }}
             subscriptions={subscriptions}
-            onConfirm={onConfirm}
+            onConfirm={handleConfirm}
         />
     );
 };
