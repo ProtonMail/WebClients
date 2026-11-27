@@ -161,7 +161,7 @@ describe('DocumentDebugMenu', () => {
     await userEvent.click(screen.getByRole('button', { name: /Download Base Commit Updates/ }))
 
     await waitFor(() =>
-      expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'all-updates-in-base-commit.zip'),
+      expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'document-all-updates-in-base-commit.zip'),
     )
     expect(session.exportDebugArtifacts).toHaveBeenCalledTimes(1)
     expect(await filesOf(mockDownloadFile.mock.lastCall![0])).toEqual(['100.bin'])
@@ -175,7 +175,7 @@ describe('DocumentDebugMenu', () => {
 
     await userEvent.click(screen.getByRole('button', { name: /Download All Updates as ZIP/ }))
 
-    await waitFor(() => expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'all-updates.zip'))
+    await waitFor(() => expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'document-all-updates.zip'))
     expect(session.getHistory).toHaveBeenCalledTimes(1)
     expect(session.exportDebugArtifacts).toHaveBeenCalledTimes(1)
     // `sha1sum` of the bytes 01, 04, 05 and 06

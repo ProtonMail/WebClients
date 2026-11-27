@@ -146,7 +146,7 @@ export function DocumentDebugMenu({ session, snapshot, editorInvoker }: Document
             onClick={logFailure(async () =>
               downloadFile(
                 await getBaseCommitZip(session.exportDebugArtifacts().baseCommit),
-                'all-updates-in-base-commit.zip',
+                'document-all-updates-in-base-commit.zip',
               ),
             )}
           >
@@ -157,7 +157,7 @@ export function DocumentDebugMenu({ session, snapshot, editorInvoker }: Document
             onClick={logFailure(async () =>
               downloadFile(
                 await getAllUpdatesZip(session.getHistory(), session.exportDebugArtifacts().buffer),
-                'all-updates.zip',
+                'document-all-updates.zip',
               ),
             )}
           >

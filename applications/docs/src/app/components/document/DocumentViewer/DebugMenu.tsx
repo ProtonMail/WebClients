@@ -313,7 +313,7 @@ export function DebugMenu({ docController, editorController, documentState, docu
               <Tooltip>Downloads the current Yjs state as a single update</Tooltip>
             </Ariakit.TooltipProvider>
           </Button>
-          <Button size="small" onClick={() => editorController.downloadBaseCommit()}>
+          <Button size="small" onClick={() => editorController.downloadBaseCommit(documentType)}>
             Download Base Commit Updates
             <Ariakit.TooltipProvider>
               <Ariakit.TooltipAnchor render={<span className="inline-flex" />}>

@@ -1,4 +1,5 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
 import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
@@ -69,7 +70,7 @@ export interface EditorControllerInterface {
   applyPatches(patches: unknown): Promise<void>
   setTableOfContentsVisible(visible: boolean): Promise<void>
   getBaseCommitAsZip(): Promise<Blob>
-  downloadBaseCommit(): Promise<void>
+  downloadBaseCommit(documentType: DocumentType): Promise<void>
 }
 
 /** Allows the UI to invoke methods on the editor. */
@@ -731,13 +732,13 @@ export class EditorController implements EditorControllerInterface {
     return zip.generateAsync({ type: 'blob' })
   }
 
-  async downloadBaseCommit(): Promise<void> {
+  async downloadBaseCommit(documentType: DocumentType): Promise<void> {
     const baseCommit = this.documentState.getProperty('baseCommit')
     if (!baseCommit) {
       throw new Error('No base commit found')
     }
     const zipBlob = await this.getBaseCommitAsZip()
-    downloadFile(zipBlob, 'all-updates-in-base-commit.zip')
+    downloadFile(zipBlob, `${documentType === 'sheet' ? 'sheet' : 'document'}-all-updates-in-base-commit.zip`)
     const yDocJSON = await this.getYDocAsJSON()
     await downloadUpdateTimeline(baseCommit.messages, yDocJSON)
   }
