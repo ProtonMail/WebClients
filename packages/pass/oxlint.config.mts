@@ -11,10 +11,10 @@ export default createOxlintConfig({
     overrides: [
         refObjectNullOverride,
         {
-            files: ['vitest.d.ts', 'testing/**'],
+            files: ['vitest.d.ts'],
             rules: {
                 'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
-                    devDependencies: [...extraneousDependenciesDevDependencies, '**/vitest.d.ts', '**/testing/**'],
+                    devDependencies: [...extraneousDependenciesDevDependencies, '**/vitest.d.ts'],
                 }),
             },
         },

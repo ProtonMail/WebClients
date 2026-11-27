@@ -1,8 +1,4 @@
 import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
-import {
-    createExtraneousDependenciesRule,
-    extraneousDependenciesDevDependencies,
-} from '@proton/oxlint-config/extraneousDependencies';
 import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
@@ -98,14 +94,6 @@ export default createOxlintConfig({
                 test: 'readonly',
                 vi: 'readonly',
                 vitest: 'readonly',
-            },
-        },
-        {
-            files: ['testing/**'],
-            rules: {
-                'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
-                    devDependencies: [...extraneousDependenciesDevDependencies, '**/testing/**'],
-                }),
             },
         },
     ],
