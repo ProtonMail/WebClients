@@ -44,6 +44,7 @@ import { BetaFeatureBadge } from '~/components/document/DocumentLayout/DocumentH
 import { WordCountIcon } from '~/components/document/DocumentLayout/DocumentHeader/icons'
 import { useApplication } from '~/utils/application-context'
 import { useIsDownloadLogsAllowed, useIsODTEnabled, useIsSheetsEnabled } from '~/utils/flags'
+import { validateDocumentName } from '~/utils/validateDocumentName'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { downloadLogs } from '../__utils/debugDownloads'
 import { canOrganizeDocument, type DocumentRole } from '../__utils/getDocumentRole'
@@ -191,6 +192,12 @@ export function DocumentTitleMenu({
     const typedName = renameEdit?.value?.trim()
     if (!typedName || typedName === renameEdit?.startName?.trim() || typedName === title) {
       cancelRename()
+      return
+    }
+    // A refused name keeps the name box open, to fix it
+    const invalidNameError = validateDocumentName(typedName)
+    if (invalidNameError) {
+      createNotification({ type: 'error', text: invalidNameError })
       return
     }
     cancelRename()

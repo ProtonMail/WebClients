@@ -34,6 +34,7 @@ import { downloadExport } from '@proton/docs-core/UseCase/ExportAndDownload'
 import { downloadJSONFile } from '~/utils/download-json-file'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { useIsODTEnabled } from '~/utils/flags'
+import { getSafeFileName } from '~/utils/safeFileName'
 import { useOpenDocument } from '@proton/docs-shared/Hooks/useOpenDocument'
 
 type RestoreType = 'replace' | 'as-copy'
@@ -401,7 +402,10 @@ function HistoryViewerModalContent({
                             }
                             downloadJSONFile(
                               data,
-                              `${documentState.getProperty('documentName')}-editor-state-${selectedBatchTimestamp}.json`,
+                              getSafeFileName(
+                                `${documentState.getProperty('documentName')}-editor-state-${selectedBatchTimestamp}`,
+                                'json',
+                              ),
                             )
                           })
                         }}
@@ -424,7 +428,10 @@ function HistoryViewerModalContent({
                             }
                             downloadFile(
                               new Blob([data]),
-                              `${documentState.getProperty('documentName')}-yjs-state-${selectedBatchTimestamp}.bin`,
+                              getSafeFileName(
+                                `${documentState.getProperty('documentName')}-yjs-state-${selectedBatchTimestamp}`,
+                                'bin',
+                              ),
                             )
                           })
                         }}

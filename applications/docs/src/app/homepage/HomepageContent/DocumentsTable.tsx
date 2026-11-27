@@ -8,6 +8,7 @@ import { SDK_SWITCH_INITIATIVE } from '../utils/errorTracking'
 import { APPS } from '../utils/apps'
 import type { ProtonDocumentType } from '../utils/mimetype'
 import { getInitials } from './getInitials'
+import { validateDocumentName } from './validateDocumentName'
 import { clsx } from '../utils/clsx'
 import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
@@ -579,7 +580,13 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
               onKeyDown={async (event) => {
                 // Accept name change
                 if (event.key === 'Enter') {
-                  const { value } = event.currentTarget
+                  // Trimmed, as Drive's Rename dialog does
+                  const value = event.currentTarget.value.trim()
+                  const invalidNameError = validateDocumentName(value, messages.invalidName)
+                  if (invalidNameError) {
+                    createNotification({ type: 'error', text: invalidNameError })
+                    return
+                  }
                   try {
                     await documentActions.rename(document, value)
                     await updateRenamedDocumentInCache(document.uniqueId(), value)

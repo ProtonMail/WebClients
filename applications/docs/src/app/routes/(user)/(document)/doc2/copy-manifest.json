@@ -548,7 +548,7 @@
     "sourceSymbol": "downloadExport",
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
-    "notes": "Verbatim."
+    "notes": "Verbatim, except the file name: it goes through the client's getSafeFileName (~/utils/safeFileName), as docs-core's goes through its own copy of it."
   },
   {
     "doc2": "__utils/fetchExternalImageAsBase64.ts",

@@ -22,6 +22,19 @@ export function createDocumentsTableMessages(): Pick<HomepageMessages, 'document
       moveToTrash: c('Action').t`Move to trash`,
       actions: c('Action').t`Actions`,
       renameFailed: c('Notification').t`Failed to rename document`,
+      invalidName: {
+        empty: c('Validation Error').t`Name must not be empty`,
+        tooLong: (maxLength: number) => {
+          // Named as in Drive's msgid, so its translations apply
+          const MAX_NAME_LENGTH = maxLength
+          return c('Validation Error').ngettext(
+            msgid`Name must be ${MAX_NAME_LENGTH} character long at most`,
+            `Name must be ${MAX_NAME_LENGTH} characters long at most`,
+            MAX_NAME_LENGTH,
+          )
+        },
+        slashes: c('Validation Error').t`Name must not contain slashes (/)`,
+      },
       justNow: c('Info').t`Just now`,
       header: {
         createdBy: c('Recent documents table header').t`Created by`,
