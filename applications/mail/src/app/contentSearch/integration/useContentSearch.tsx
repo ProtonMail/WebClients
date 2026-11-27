@@ -158,7 +158,12 @@ export const useContentSearch = ({
             isIndexationPath,
             () => {
                 return indexService.waitForDbReset();
-            }
+            },
+            isIndexationPath
+                ? (expression, listener) => {
+                      return indexService.subscribeToExpressionUpdates(expression, listener);
+                  }
+                : undefined
         );
         if (isIndexationPath) {
             adapterRef.current = new IndexESAdapter({

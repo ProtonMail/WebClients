@@ -6,18 +6,26 @@ import 'fake-indexeddb/auto';
 import type { IDBPDatabase } from 'idb';
 
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
+import type { Engine } from '@proton/proton-foundation-search';
 import { EVENT_ACTIONS, MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { openContentSearchDB } from '../../db/open';
 import type { Database } from '../../db/schema';
+import { createMailSearchEngine } from '../../engine/create';
 import { IndexReader } from '../../search/IndexReader';
 import { buildQuery } from '../../search/query';
 import { initContentSearchWasm } from '../../testing/initContentSearchWasm';
 import { buildMessageBatchResponse, buildMessageMetadata } from '../../testing/messages';
 import { ExponentialBackoff } from '../../utils/ExponentialBackoff';
 import { type BatchMessageDecryptionFunction, MailApiBridge } from '../MailApiBridge';
+import { BlobTxnProvider } from './BlobTxnProvider';
 import { IndexWorker, type WorkerIndexListener } from './IndexWorker';
+
+vi.mock('../../engine/create', async (importOriginal) => {
+    const actual = await importOriginal<{ createMailSearchEngine: typeof createMailSearchEngine }>();
+    return { createMailSearchEngine: vi.fn(actual.createMailSearchEngine) };
+});
 
 type ApiConfig = {
     method: string;
@@ -172,6 +180,11 @@ const makeListener = () =>
         reportTaskCompleted: vi.fn(),
         reportError: vi.fn(),
         log: vi.fn(),
+        reportExpressionMatches: vi.fn(),
+        reportDeleted: vi.fn(),
+        listOpenSearches: vi.fn(async (): Promise<ReadonlyMap<string, string>> => {
+            return new Map();
+        }),
     }) satisfies WorkerIndexListener;
 
 const searchKeyword = async (reader: IndexReader, keyword: string, labelIDs: string[] = []) => {
@@ -193,6 +206,8 @@ describe('IndexWorker', () => {
     let fakeApi: FakeMailApi;
     let listener: ReturnType<typeof makeListener>;
     let db: IDBPDatabase<Database> | undefined;
+    /** what the test inspects the index with, freed after each test */
+    let readerEngine: Engine | undefined;
     let userCounter = 0;
 
     beforeAll(async () => {
@@ -209,6 +224,8 @@ describe('IndexWorker', () => {
     afterEach(() => {
         db?.close();
         db = undefined;
+        readerEngine?.free();
+        readerEngine = undefined;
     });
 
     const createWorker = (catchupBackoff?: ExponentialBackoff) => {
@@ -228,7 +245,10 @@ describe('IndexWorker', () => {
         return db;
     };
 
-    const openReader = async () => new IndexReader(await openDB(), indexKey);
+    const openReader = async () => {
+        readerEngine ??= createMailSearchEngine();
+        return new IndexReader(await openDB(), indexKey, readerEngine);
+    };
 
     describe('historic indexing', () => {
         it('indexes the whole mailbox across several pages', async () => {
@@ -472,6 +492,198 @@ describe('IndexWorker', () => {
 
             expect(worker.pushStartupAction()).toBe(false);
             expect(worker.pushIncrementalUpdate({ eventID: 'event-1', items: [], refresh: false })).toBe(false);
+        });
+    });
+
+    describe('open searches', () => {
+        const expressionOf = (keyword: string, labelIDs: string[] = []) => {
+            const params = {
+                labelIDs,
+                sort: { sort: 'Time', desc: true },
+                filter: {},
+                search: { keyword },
+                normalizedKeywords: undefined,
+            } as unknown as NormalizedSearchParams;
+            const expression = buildQuery(params);
+            try {
+                return expression.toString();
+            } finally {
+                expression.free();
+            }
+        };
+
+        /** what the leader's open search directory lists */
+        const openSearches = (searches: ReadonlyMap<string, string>) => {
+            listener.listOpenSearches.mockResolvedValue(searches);
+        };
+
+        /** what was reported for each search, every call merged */
+        const reportedMatches = () => {
+            const bySearch: Record<string, { matched: string[]; unmatched: string[] }> = {};
+            for (const [searchId, { matched, unmatched }] of listener.reportExpressionMatches.mock.calls) {
+                bySearch[searchId] ??= { matched: [], unmatched: [] };
+                bySearch[searchId].matched.push(...matched);
+                bySearch[searchId].unmatched.push(...unmatched);
+            }
+            for (const matches of Object.values(bySearch)) {
+                matches.matched.sort();
+                matches.unmatched.sort();
+            }
+            return bySearch;
+        };
+
+        it('reports what a live update wrote that each search matches now, but not the deleted messages', async () => {
+            fakeApi.add(...makeMailbox(3, { 1: 'soon deleted', 2: 'keeps its walrus body' }));
+            const initial = createWorker();
+            initial.pushStartupAction();
+            await initial.start();
+
+            const created = makeMessage(10, 'a brand new giraffe');
+            fakeApi.add(created);
+            const relabeled = { ...fakeApi.messages.get('message-002')!.metadata, LabelIDs: ['0', '10'] };
+            const worker = createWorker();
+            openSearches(
+                new Map([
+                    ['giraffes', expressionOf('giraffe')],
+                    ['walruses-in-10', expressionOf('walrus', ['10'])],
+                ])
+            );
+            worker.pushIncrementalUpdate({
+                eventID: 'event-1',
+                items: [
+                    { metadata: created.metadata, fetchBodyId: created.metadata.ID },
+                    { deleteId: 'message-001' },
+                    { metadata: relabeled },
+                ],
+                refresh: false,
+            });
+            await worker.start();
+
+            expect(reportedMatches()).toEqual({
+                giraffes: { matched: ['message-010'], unmatched: ['message-002'] },
+                'walruses-in-10': { matched: ['message-002'], unmatched: ['message-010'] },
+            });
+        });
+
+        it('reports the messages a live update or catch-up deleted, once committed', async () => {
+            fakeApi.add(...makeMailbox(3));
+            const initial = createWorker();
+            initial.pushStartupAction();
+            await initial.start();
+            fakeApi.messages.delete('message-000');
+            fakeApi.messages.delete('message-001');
+            fakeApi.addEvent('event-1', [{ ID: 'message-001', Action: EVENT_ACTIONS.DELETE }]);
+
+            const worker = createWorker();
+            worker.pushStartupAction();
+            worker.pushIncrementalUpdate({ eventID: 'event-2', items: [{ deleteId: 'message-000' }], refresh: false });
+            await worker.start();
+
+            expect(listener.reportDeleted.mock.calls).toEqual([[['message-001']], [['message-000']]]);
+            const reader = await openReader();
+            expect((await reader.getAllIds()).sort()).toEqual(['message-002']);
+        });
+
+        it('matches what an interrupted matching left before it stops', async () => {
+            fakeApi.add(...makeMailbox(3));
+            const initial = createWorker();
+            initial.pushStartupAction();
+            await initial.start();
+            const created = makeMessage(10, 'a brand new giraffe');
+            fakeApi.add(created);
+            const searches = new Map([['giraffes', expressionOf('giraffe')]]);
+            openSearches(searches);
+            let finishListing: (() => void) | undefined;
+            listener.listOpenSearches.mockImplementationOnce(() => {
+                return new Promise((resolve) => {
+                    finishListing = () => {
+                        resolve(searches);
+                    };
+                });
+            });
+
+            const worker = createWorker();
+            worker.pushIncrementalUpdate({
+                eventID: 'event-1',
+                items: [{ metadata: created.metadata, fetchBodyId: created.metadata.ID }],
+                refresh: false,
+            });
+            const run = worker.start();
+            await vi.waitFor(() => {
+                expect(finishListing).toBeDefined();
+            });
+            // a search interrupts indexing while it matches what it just wrote
+            const stopped = worker.stop();
+            finishListing!();
+            await stopped;
+            await run;
+            expect(reportedMatches()).toEqual({});
+            listener.reportIndexComplete.mockClear();
+
+            // indexing resumes once the search is done, with nothing left to write
+            await worker.start();
+
+            expect(reportedMatches()).toEqual({ giraffes: { matched: ['message-010'], unmatched: [] } });
+            expect(listener.reportIndexComplete).toHaveBeenCalledTimes(1);
+        });
+
+        it('reports what catch-up wrote', async () => {
+            fakeApi.add(...makeMailbox(3));
+            const initial = createWorker();
+            initial.pushStartupAction();
+            await initial.start();
+            const created = makeMessage(10, 'a brand new giraffe');
+            fakeApi.add(created);
+            fakeApi.addEvent('event-1', [
+                { ID: created.metadata.ID, Action: EVENT_ACTIONS.CREATE, Message: created.metadata },
+            ]);
+
+            const worker = createWorker();
+            openSearches(new Map([['giraffes', expressionOf('giraffe')]]));
+            worker.pushStartupAction();
+            await worker.start();
+
+            expect(reportedMatches()).toEqual({ giraffes: { matched: ['message-010'], unmatched: [] } });
+        });
+
+        it('reports each page historic indexing wrote', async () => {
+            fakeApi.add(...makeMailbox(70, { 3: 'the zebra crossing', 65: 'a zebra on the last page' }));
+            const worker = createWorker();
+            openSearches(new Map([['zebras', expressionOf('zebra')]]));
+
+            worker.pushStartupAction();
+            await worker.start();
+
+            expect(listener.reportExpressionMatches).toHaveBeenCalledTimes(2);
+            const { zebras } = reportedMatches();
+            expect(zebras.matched).toEqual(['message-003', 'message-065']);
+            expect(zebras.unmatched).toHaveLength(68);
+        });
+
+        it('matches with the engine it writes with, rather than one per run', async () => {
+            fakeApi.add(...makeMailbox(3));
+            vi.mocked(createMailSearchEngine).mockClear();
+            const worker = createWorker();
+
+            worker.pushStartupAction();
+            await worker.start();
+            // a search interrupted it, it runs again
+            await worker.start();
+
+            expect(createMailSearchEngine).toHaveBeenCalledTimes(1);
+        });
+
+        it('reads nothing back when no search is open', async () => {
+            fakeApi.add(...makeMailbox(5));
+            const startReadTxn = vi.spyOn(BlobTxnProvider.prototype, 'startReadTxn');
+            const worker = createWorker();
+
+            worker.pushStartupAction();
+            await worker.start();
+
+            expect(startReadTxn).not.toHaveBeenCalled();
+            expect(listener.reportExpressionMatches).not.toHaveBeenCalled();
+            startReadTxn.mockRestore();
         });
     });
 

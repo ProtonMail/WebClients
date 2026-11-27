@@ -5,10 +5,10 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import type { OpenBlobTransaction } from '../../../crypto/EncryptedBlobTransaction';
 import type { Anchor, Database, DatabaseStores, ReadWriteTransaction } from '../../../db/schema';
 import type { MessageCache } from '../../MessageCache';
-import type { StartBlobTxnFn } from '../BlobTxnProvider';
 import type { BodySource } from '../BodySource';
 import type { IndexApi } from '../IndexApi';
 import type { IndexTask, TaskName, WorkerIndexListener } from '../IndexWorker';
+import type { IndexWrites } from '../IndexWrites';
 import type { EngineWrapper } from '../wrapper';
 
 export class HistoricIndexer implements IndexTask {
@@ -48,13 +48,13 @@ export class HistoricIndexer implements IndexTask {
         return this.runRequested;
     }
 
-    async run(db: IDBPDatabase<Database>, startBlobTxn: StartBlobTxnFn, abort: AbortSignal): Promise<void> {
+    async run(db: IDBPDatabase<Database>, writes: IndexWrites, abort: AbortSignal): Promise<void> {
         let emittedInitialStatus = false;
         this.stopAtNextIterationFlag = false;
         while (this.runRequested && !this.stopAtNextIterationFlag) {
             const txn = db.transaction(['anchors', 'config', 'event_cursor'], 'readonly');
             // open the blob txn when we read the anchor, so we detect any changes in the db by the time we commit
-            const blobTxn = await startBlobTxn(db, txn);
+            const blobTxn = await writes.startBlobTxn(txn);
             abort.throwIfAborted();
             const anchor = await txn.objectStore('anchors').get('historic');
             const eventCursor = await txn.objectStore('event_cursor').get('event_cursor');
@@ -105,6 +105,7 @@ export class HistoricIndexer implements IndexTask {
             await writeTxn.done;
             // report progress
             this.listener.reportHistoricProgress(nextAnchor.position?.processed ?? 0, totalMessages);
+            await writes.matchWritten(messages, abort);
         }
     }
 

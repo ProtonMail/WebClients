@@ -9,7 +9,7 @@ import { openContentSearchDB } from '../db/open';
 import type { MetricService } from '../metrics/MetricService';
 import type { ContentSearchEndReason } from '../metrics/interface';
 import type { Logger } from '../utils/logger';
-import { Search, type SearchOutcome } from './Search';
+import { Search, type SearchOutcome, type SubscribeToExpressionUpdates } from './Search';
 import type SearchWorker from './SearchWorker';
 
 const reportSearchOutcome = (search: Search, outcome: SearchOutcome, metricService: MetricService) => {
@@ -53,7 +53,9 @@ export class SearchService {
         private readonly metricService: MetricService,
         private readonly useV2Indexing: boolean,
         /** See `IndexService.waitForDbReset`: the key must come from the database this session's path uses. */
-        private readonly waitForDbReset: () => Promise<void>
+        private readonly waitForDbReset: () => Promise<void>,
+        /** keeps the results of the searches up to date as the index changes, when this session indexes */
+        private readonly subscribeToExpressionUpdates?: SubscribeToExpressionUpdates
     ) {}
 
     /**
@@ -77,7 +79,14 @@ export class SearchService {
             }
             return { userKeys, indexKey, worker, useV2Indexing: this.useV2Indexing };
         });
-        const search = new Search(params, this.dbLock, workerCacheParamsPromise, this.userId, this.logger);
+        const search = new Search(
+            params,
+            this.dbLock,
+            workerCacheParamsPromise,
+            this.userId,
+            this.logger,
+            this.subscribeToExpressionUpdates
+        );
         search.start();
         this.currentSearch = search;
         this.runningSearches.add(search.done);

@@ -12,6 +12,7 @@ import type { ESBaseMessage } from '../../models/encryptedSearch';
 import type { LeaderLock } from '../coordination/LeaderLock';
 import { TabChannel, type TabMessage } from '../coordination/TabChannel';
 import { DatabaseLock as WebLocksDatabaseLock } from '../coordination/weblock/DatabaseLock';
+import { OpenSearchDirectory as WebLocksOpenSearchDirectory } from '../coordination/weblock/OpenSearchDirectory';
 import { openContentSearchDB } from '../db/open';
 import type { IndexStatus } from '../db/schema';
 import { flush, track } from '../testing/settlement';
@@ -231,6 +232,7 @@ describe('IndexService', () => {
                 leaderLock,
                 dbLock: new WebLocksDatabaseLock(userId, logger, locks as unknown as LockManager),
                 transport: new BroadcastChannel(`content-search:${userId}`),
+                openSearches: new WebLocksOpenSearchDirectory(userId, locks as unknown as LockManager),
             },
             '5.0.1.0'
         );
@@ -291,6 +293,7 @@ describe('IndexService', () => {
                     leaderLock: lock,
                     dbLock: new WebLocksDatabaseLock(service.userId, logger, locks as unknown as LockManager),
                     transport: new BroadcastChannel(`content-search:${service.userId}`),
+                    openSearches: new WebLocksOpenSearchDirectory(service.userId, locks as unknown as LockManager),
                 },
                 '5.0.1.0'
             );
@@ -573,6 +576,7 @@ describe('IndexService', () => {
                     leaderLock: lock,
                     dbLock: new WebLocksDatabaseLock(service.userId, logger, locks as unknown as LockManager),
                     transport: new BroadcastChannel(`content-search:${service.userId}`),
+                    openSearches: new WebLocksOpenSearchDirectory(service.userId, locks as unknown as LockManager),
                 },
                 '5.0.1.0'
             );
@@ -620,6 +624,7 @@ describe('IndexService', () => {
                 leaderLock: new FakeLeaderLock(),
                 dbLock: new WebLocksDatabaseLock(service.userId, logger, locks as unknown as LockManager),
                 transport: new BroadcastChannel(`content-search:${service.userId}`),
+                openSearches: new WebLocksOpenSearchDirectory(service.userId, locks as unknown as LockManager),
             },
             '5.0.1.0'
         );
@@ -652,6 +657,88 @@ describe('IndexService', () => {
             expect(service.isEnabled).toBe(false);
             expect(listener.reportStatusUpdate).toHaveBeenLastCalledWith(undefined);
             expect(await readStoredStatus()).toBeUndefined();
+        });
+    });
+
+    describe('open searches', () => {
+        const deleteEvent = (eventID: string, ...ids: string[]): ESEvent<ESBaseMessage> => {
+            return {
+                Refresh: 0,
+                Items: ids.map((ID) => {
+                    return { Action: ES_SYNC_ACTIONS.DELETE, ID, ItemMetadata: undefined };
+                }),
+                attemptReDecryption: false,
+                eventsToStore: { [MAIL_EVENTLOOP_NAME]: eventID },
+            };
+        };
+
+        const listener = () => {
+            return { onUpdates: vi.fn(), onMissedUpdates: vi.fn() };
+        };
+
+        it('reports what its worker deleted to its searches and to the other tabs', async () => {
+            const search = listener();
+            await service.subscribeToExpressionUpdates('hello', search);
+            const worker = fakeWorker(async (workerListener) => {
+                workerListener.reportDeleted(['message-1', 'message-2']);
+            });
+            mockCreateWorker.mockImplementationOnce(worker.create);
+
+            await service.enable();
+            await workerRun();
+            await flush();
+
+            expect(search.onUpdates.mock.calls).toEqual([
+                [{ matched: [], unmatched: [], removed: ['message-1', 'message-2'] }],
+            ]);
+            expect(
+                otherTabReceived.filter((message) => {
+                    return message.type === 'messagesDeleted';
+                })
+            ).toEqual([{ type: 'messagesDeleted', ids: ['message-1', 'message-2'] }]);
+        });
+
+        it('lets its worker list the searches of every tab, and routes what it matches to each one', async () => {
+            const otherTabDirectory = new WebLocksOpenSearchDirectory(service.userId, locks as unknown as LockManager);
+            const closeOther = await otherTabDirectory.open('other-0', 'world', vi.fn());
+            const search = listener();
+            await service.subscribeToExpressionUpdates('hello', search);
+            let listed: ReadonlyMap<string, string> | undefined;
+            const worker = fakeWorker(async (workerListener) => {
+                listed = await workerListener.listOpenSearches();
+                const ownSearchId = [...listed].find(([, expression]) => {
+                    return expression === 'hello';
+                })![0];
+                workerListener.reportExpressionMatches(ownSearchId, { matched: ['a'], unmatched: ['b'] });
+                workerListener.reportExpressionMatches('other-0', { matched: ['c'], unmatched: [] });
+            });
+            mockCreateWorker.mockImplementationOnce(worker.create);
+
+            await service.enable();
+            await workerRun();
+            await flush();
+
+            expect([...listed!.values()].sort()).toEqual(['hello', 'world']);
+            expect(search.onUpdates.mock.calls).toEqual([[{ matched: ['a'], unmatched: ['b'], removed: [] }]]);
+            expect(
+                otherTabReceived.filter((message) => {
+                    return message.type === 'expressionUpdates';
+                })
+            ).toEqual([{ type: 'expressionUpdates', searchId: 'other-0', matched: ['c'], unmatched: [] }]);
+            closeOther();
+        });
+
+        it('has a follower leave deletes to the leader, and deliver what it reports', async () => {
+            leaderLock.lose();
+            await service.enable();
+            const search = listener();
+            await service.subscribeToExpressionUpdates('hello', search);
+
+            await service.handleEvent(deleteEvent('event-1', 'message-1'));
+            otherTab.post({ type: 'messagesDeleted', ids: ['message-2'] });
+            await flush();
+
+            expect(search.onUpdates.mock.calls).toEqual([[{ matched: [], unmatched: [], removed: ['message-2'] }]]);
         });
     });
 

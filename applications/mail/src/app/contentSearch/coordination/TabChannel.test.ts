@@ -34,6 +34,8 @@ describe('TabChannel', () => {
         { type: 'progress', processed: 10, total: 200 },
         { type: 'indexComplete' },
         { type: 'version', version: '5.0.300.1' },
+        { type: 'expressionUpdates', searchId: 'search-1', matched: ['a'], unmatched: ['b', 'c'] },
+        { type: 'messagesDeleted', ids: ['a', 'b'] },
     ])('delivers %j to the other tabs', async (message) => {
         const { sender, received } = openTabs();
 
@@ -48,6 +50,12 @@ describe('TabChannel', () => {
         ['a status that does not exist', { type: 'status', status: 'deleted' }],
         ['progress without numbers', { type: 'progress', processed: '1', total: 2 }],
         ['a version that is not a string', { type: 'version', version: 5 }],
+        [
+            'expression updates with ids that are not strings',
+            { type: 'expressionUpdates', searchId: 'search-1', matched: [1], unmatched: [] },
+        ],
+        ['expression updates without a search id', { type: 'expressionUpdates', matched: [], unmatched: [] }],
+        ['deleted messages without ids', { type: 'messagesDeleted' }],
         ['something that is not an object', 'indexComplete'],
         ['null', null],
     ])('ignores %s', async (_description, message) => {

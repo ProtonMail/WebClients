@@ -2,10 +2,10 @@ import type { IDBPDatabase } from 'idb';
 
 import type { Database } from '../../../db/schema';
 import { ExponentialBackoff } from '../../../utils/ExponentialBackoff';
-import type { StartBlobTxnFn } from '../BlobTxnProvider';
 import type { EventUpdateWriter } from '../EventUpdateWriter';
 import type { IndexApi } from '../IndexApi';
 import type { IndexTask, TaskName } from '../IndexWorker';
+import type { IndexWrites } from '../IndexWrites';
 
 const STALE_RETRY_INITIAL_DELAY_MS = 1000;
 const STALE_RETRY_MAX_DELAY_MS = 30_000;
@@ -49,7 +49,7 @@ export class CatchupIndexer implements IndexTask {
         return this.runRequested;
     }
 
-    async run(db: IDBPDatabase<Database>, startBlobTxn: StartBlobTxnFn, abortSignal: AbortSignal) {
+    async run(db: IDBPDatabase<Database>, writes: IndexWrites, abortSignal: AbortSignal) {
         this.staleRetryBackoff.reset();
         while (this.runRequested) {
             abortSignal.throwIfAborted();
@@ -64,7 +64,7 @@ export class CatchupIndexer implements IndexTask {
                 continue;
             }
             this.staleRetryBackoff.reset();
-            await this.writer.apply(db, startBlobTxn, response, abortSignal);
+            await this.writer.apply(db, writes, response, abortSignal);
             // the response covers every event up to the latest one at the time of the request,
             // later ones reach the incremental indexer through the live event loop.
             // A refresh can have more, but resetting the index clears the cursor, which ends the loop above.

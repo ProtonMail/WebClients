@@ -28,12 +28,16 @@ import { AsyncInit } from '../utils/AsyncInit';
 import type { LogLevel, Logger } from '../utils/logger';
 import { EventUpdateMapper } from './EventUpdateMapper';
 import { MailApiBridge } from './MailApiBridge';
+import { type ExpressionUpdatesListener, OpenSearchSubscriptions } from './OpenSearchSubscriptions';
 import { createBatchBodyDecryptor } from './batchBodyDecryptor';
 import { dropImportedIndex, dropIndexationIndex } from './switchIndexPath';
 import type { IndexWorker, TaskName, WorkerIndexListener } from './worker/IndexWorker';
 import type { IndexWorkerFactory } from './worker/index.worker';
 
-export interface IndexListener extends Omit<WorkerIndexListener, 'log'> {
+export interface IndexListener extends Omit<
+    WorkerIndexListener,
+    'log' | 'listOpenSearches' | 'reportExpressionMatches' | 'reportDeleted'
+> {
     reportStatusUpdate(status: IndexStatus | undefined): void;
 }
 
@@ -70,6 +74,8 @@ export class IndexService {
     private readonly channel: TabChannel;
     /** only the leader runs the index worker */
     private readonly election: LeaderElection;
+    /** this tab's open searches, which the leader keeps up to date as it indexes */
+    private readonly openSearches: OpenSearchSubscriptions;
 
     constructor(
         public readonly userId: string,
@@ -78,11 +84,12 @@ export class IndexService {
         getMessageKeys: GetMessageKeys,
         private readonly logger: Logger,
         /** what this tab shares the index with the other tabs of the user with */
-        { leaderLock, dbLock, transport }: TabCoordination,
+        { leaderLock, dbLock, transport, openSearches }: TabCoordination,
         appVersion: string
     ) {
         this.dbLock = dbLock;
         this.channel = new TabChannel(transport);
+        this.openSearches = new OpenSearchSubscriptions(this.channel, openSearches);
         this.election = new LeaderElection(leaderLock, this.channel, appVersion, logger);
         this.apiBridge = new MailApiBridge(api, createBatchBodyDecryptor(getMessageKeys), logger);
         this.eventUpdateMapper = new EventUpdateMapper(logger);
@@ -181,6 +188,15 @@ export class IndexService {
         };
     }
 
+    /**
+     * Has `listener` told what changes for a search with `expression` as the leader indexes, whichever tab leads.
+     * Resolves once the leader can see the search, so a search that waits for it before running misses no write,
+     * with the unsubscribe.
+     */
+    subscribeToExpressionUpdates(expression: string, listener: ExpressionUpdatesListener): Promise<() => void> {
+        return this.openSearches.subscribe(expression, listener);
+    }
+
     /** should only be called after initialize is called? */
     async handleEvent(event: ESEvent<ESBaseMessage> | undefined) {
         // the leader indexes what the events change, in every tab
@@ -211,6 +227,7 @@ export class IndexService {
         this.workerQueue = [];
         this.pauseController?.abort();
         this.election.stop();
+        this.openSearches.dispose();
         this.channel.close();
     }
 
@@ -504,6 +521,15 @@ export class IndexService {
                 },
                 log: (level: LogLevel, message: string) => {
                     this.logger[level](message);
+                },
+                listOpenSearches: () => {
+                    return this.openSearches.list();
+                },
+                reportExpressionMatches: (searchId, matches) => {
+                    this.openSearches.reportMatches(searchId, matches);
+                },
+                reportDeleted: (ids) => {
+                    this.openSearches.reportDeleted(ids);
                 },
             })
         );

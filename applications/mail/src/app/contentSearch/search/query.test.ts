@@ -1,4 +1,5 @@
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
+import { Expression } from '@proton/proton-foundation-search';
 
 import { initContentSearchWasm } from '../testing/initContentSearchWasm';
 import { buildQuery } from './query';
@@ -121,5 +122,48 @@ describe('buildQuery', () => {
             'hi AND from~a@b.com AND (to~c@d.com OR cc~c@d.com OR bcc~c@d.com) AND addressId=addr1 ' +
                 'AND time>=100 AND time<=200 AND (labelId=L1 OR labelId=L2) AND hasAttachments=true'
         );
+    });
+});
+
+// Tabs send the expression of an open search to the leader's index worker as a string (see
+// `SearchWorker.getExpression`), which parses it back: it must come out as the same query.
+describe('buildQuery expression strings', () => {
+    beforeAll(async () => {
+        await initContentSearchWasm();
+    });
+
+    it.each<[string, Partial<NormalizedSearchParams>]>([
+        ['a keyword', { search: { keyword: 'hello world' } }],
+        ['a keyword with a quoted phrase', { search: { keyword: '"hello world" again' } }],
+        ['a keyword using the query language', { search: { keyword: 'subject:hello OR body:"two words"' } }],
+        ['a keyword that does not parse', { search: { keyword: '"unbalanced' } }],
+        ['a keyword with escaped characters that does not parse', { search: { keyword: 'x= \\ "' } }],
+        ['a phrase as the sender', { search: { from: 'Jane Doe' } }],
+        ['a sender address', { search: { keyword: 'x', from: 'a@b.com' } }],
+        ['a recipient address', { search: { to: 'c@d.com' } }],
+        ['a time range', { search: { keyword: 'x', begin: 100, end: 200 } }],
+        ['several labels', { labelIDs: ['0', '20', 'L1'], search: { keyword: 'x' } }],
+        ['an address id', { search: { keyword: 'x', address: 'addr1==' } }],
+        ['the attachments filter', { filter: { Attachments: 1 }, search: {} }],
+        ['no criteria', {}],
+        [
+            'every criterion',
+            {
+                labelIDs: ['0', '21'],
+                filter: { Attachments: 1 },
+                search: {
+                    keyword: '"a b" c',
+                    from: 'A B <a@b.com>',
+                    to: 'c@d.com',
+                    address: 'addr1',
+                    begin: 100,
+                    end: 200,
+                },
+            },
+        ],
+    ])('parses back %s to the same expression', (_description, over) => {
+        const expression = q(over);
+
+        expect(Expression.parse(expression).toString()).toBe(expression);
     });
 });

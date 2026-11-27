@@ -1,19 +1,23 @@
 import type * as Comlink from 'comlink';
 import type { IDBPDatabase } from 'idb';
 
+import type { Engine } from '@proton/proton-foundation-search';
+
 import { openContentSearchDB } from '../../db/open';
 import type { Database } from '../../db/schema';
 import { createMailSearchEngine } from '../../engine/create';
+import { IndexReader } from '../../search/IndexReader';
 import { isAbortedFrom } from '../../utils/AsyncAbort';
 import type { ExponentialBackoff } from '../../utils/ExponentialBackoff';
 import type { LogLevel } from '../../utils/logger';
 import type { MailApiBridge } from '../MailApiBridge';
 import { MessageCache } from '../MessageCache';
-import { BlobTxnProvider, type StartBlobTxnFn } from './BlobTxnProvider';
 import { BodySource } from './BodySource';
 import { type EventUpdate, EventUpdateWriter } from './EventUpdateWriter';
 import { IndexApi } from './IndexApi';
+import { IndexWrites } from './IndexWrites';
 import { MailDelegate } from './MailDelegate';
+import { type ExpressionMatches, OpenSearchMatcher } from './OpenSearchMatcher';
 import { CatchupIndexer } from './tasks/CatchupIndexer';
 import { HistoricIndexer } from './tasks/HistoricIndexer';
 import { IncrementalIndexer } from './tasks/IncrementalIndexer';
@@ -32,6 +36,12 @@ export interface WorkerIndexListener {
     reportTaskCompleted(taskName: TaskName, success: boolean): void;
     reportError: (err: Error) => void;
     log: (level: LogLevel, message: string) => void;
+    /** every tab's open searches, their expression by search id, see {@link OpenSearchMatcher} */
+    listOpenSearches(): Promise<ReadonlyMap<string, string>>;
+    /** which of the messages just written an open search matches */
+    reportExpressionMatches(searchId: string, matches: ExpressionMatches): void;
+    /** messages deleted from the index, to drop from every open search */
+    reportDeleted(ids: string[]): void;
 }
 
 export interface IndexTask {
@@ -42,7 +52,7 @@ export interface IndexTask {
      */
     needsRun(db: IDBPDatabase<Database>): Promise<boolean>;
     // returns whether it finished or not
-    run(db: IDBPDatabase<Database>, startBlobTxn: StartBlobTxnFn, abortSignal: AbortSignal): Promise<void>;
+    run(db: IDBPDatabase<Database>, writes: IndexWrites, abortSignal: AbortSignal): Promise<void>;
 }
 
 /** does the actual indexing, expected to run in worker */
@@ -50,6 +60,9 @@ export class IndexWorker {
     private readonly catchupIndexer: CatchupIndexer;
     private readonly historicIndexer: HistoricIndexer;
     private readonly incrementalIndexer: IncrementalIndexer;
+    private readonly openSearchMatcher: OpenSearchMatcher;
+    /** what the tasks write with, and the matcher searches with between writes */
+    private readonly searchEngine: Engine;
     private stopController?: AbortController;
     private runPromise?: Promise<void>;
     // helps to prevent a specific race: if the worker has run to completion,
@@ -72,13 +85,24 @@ export class IndexWorker {
         const indexApi = new IndexApi(api);
         const bodySource = new BodySource(indexApi);
         const messageCache = new MessageCache(indexKey);
-        const engine = new EngineWrapper(createMailSearchEngine(), mailDelegate);
+        this.searchEngine = createMailSearchEngine();
+        const engine = new EngineWrapper(this.searchEngine, mailDelegate);
         const resetIndex = (db: IDBPDatabase<Database>) => {
             return this.resetIndex(db);
         };
         const log: WorkerIndexListener['log'] = (level, message) => {
             this.listener.log(level, message);
         };
+        this.openSearchMatcher = new OpenSearchMatcher(
+            () => {
+                return this.listener.listOpenSearches();
+            },
+            {
+                reportExpressionMatches: (searchId, matches) => {
+                    this.listener.reportExpressionMatches(searchId, matches);
+                },
+            }
+        );
         this.historicIndexer = new HistoricIndexer(indexApi, bodySource, messageCache, this.listener, engine);
         this.catchupIndexer = new CatchupIndexer(
             indexApi,
@@ -141,22 +165,30 @@ export class IndexWorker {
 
     private async runTasksUntilFinished(signal: AbortSignal) {
         const db = await openContentSearchDB(this.userId);
+        const reader = new IndexReader(db, this.indexKey, this.searchEngine);
         try {
             let task: IndexTask | undefined;
             while ((task = await this.selectTask(db))) {
                 this.listener?.reportTaskStarted(task.name);
-                const blobTxnProvider = new BlobTxnProvider(this.indexKey, {
-                    shortLivedCache: task.name === 'incremental',
-                });
+                const writes = this.createIndexWrites(db, reader, { shortLivedCache: task.name === 'incremental' });
                 let success = false;
                 try {
-                    await task.run(db, blobTxnProvider.startTxn.bind(blobTxnProvider), signal);
+                    await task.run(db, writes, signal);
                     success = true;
                 } finally {
-                    blobTxnProvider.dispose();
+                    writes.dispose();
                     this.listener?.reportTaskCompleted(task.name, success);
                 }
             }
+            // through a fresh blob cache, as the tasks' ones are gone, which is fine for something this rare
+            const writes = this.createIndexWrites(db, reader, { shortLivedCache: false });
+            try {
+                await writes.matchPending(signal);
+            } finally {
+                writes.dispose();
+            }
+            // not done if interrupted: what's still pending is matched when it starts again
+            signal.throwIfAborted();
             this.listener?.reportIndexComplete();
             // stop accepting more work, this worker is shutting down now
             this.locked = true;
@@ -168,6 +200,14 @@ export class IndexWorker {
         } finally {
             db.close();
         }
+    }
+
+    private createIndexWrites(
+        db: IDBPDatabase<Database>,
+        reader: IndexReader,
+        options: { shortLivedCache: boolean }
+    ): IndexWrites {
+        return new IndexWrites(db, reader, this.indexKey, options, this.openSearchMatcher, this.listener);
     }
 
     /**

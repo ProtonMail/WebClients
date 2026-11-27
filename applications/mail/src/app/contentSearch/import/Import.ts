@@ -151,10 +151,12 @@ export class Import {
 
     public async run() {
         await this.applyRefreshIfNeeded();
-        const dstReader = new IndexReader(this.db, this.indexKey);
+        const searchEngine = createMailSearchEngine();
+        const engine = new EngineWrapper(searchEngine, new MailDelegate());
+        // lists what the index already holds between the writes, with the engine they write with
+        const dstReader = new IndexReader(this.db, this.indexKey, searchEngine);
         let idsToProcess: Awaited<ReturnType<Import['getIdsToProcess']>>;
         const blobCache = new BlobCache();
-        const engine = new EngineWrapper(createMailSearchEngine(), new MailDelegate());
         try {
             while ((idsToProcess = await this.getIdsToProcess(dstReader))) {
                 this.notifications.onTotalAvailable(idsToProcess.inserted.length);

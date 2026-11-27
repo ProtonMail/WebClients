@@ -4,6 +4,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ESMessage } from '../models/encryptedSearch';
 import { getIndexKey } from './crypto/indexKey';
 import { openContentSearchDB } from './db/open';
+import { createMailSearchEngine } from './engine/create';
 import { EncryptedSearchReader } from './import/EncryptedSearchReader';
 import { initWasm } from './init';
 import { IndexReader } from './search/IndexReader';
@@ -24,13 +25,15 @@ export async function lookupDoc(user: UserModel, userKeys: DecryptedKey[], docId
         db.close();
         throw new Error('No index key found, is the index created?');
     }
-    const reader = new IndexReader(db, key);
+    const engine = createMailSearchEngine();
+    const reader = new IndexReader(db, key, engine);
     try {
         const indexDoc = await reader.getDocumentById(docId);
         const oldStore = await EncryptedSearchReader.open(user.ID, userKeys);
         const sourceDoc = oldStore ? (await oldStore.readMessages([docId]))[0] : undefined;
         return { docId, indexDoc, sourceDoc };
     } finally {
+        engine.free();
         db.close();
     }
 }

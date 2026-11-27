@@ -1,12 +1,16 @@
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
+import type { Engine } from '@proton/proton-foundation-search';
 
 import { openContentSearchDB } from '../db/open';
+import { createMailSearchEngine } from '../engine/create';
 import { initWasm } from '../init';
 import { IndexReader } from './IndexReader';
 import { buildQuery } from './query';
 
 export default class SearchWorker {
     private reader?: IndexReader;
+    /** the reader's, for as long as the worker lives */
+    private engine?: Engine;
     private initPromise?: Promise<void>;
     private abortController?: AbortController;
 
@@ -19,7 +23,9 @@ export default class SearchWorker {
             const db = await openContentSearchDB(userId, () => {
                 void onConnectionClosed();
             });
-            this.reader = new IndexReader(db, indexKey);
+            this.engine?.free();
+            this.engine = createMailSearchEngine();
+            this.reader = new IndexReader(db, indexKey, this.engine);
         })();
         await this.initPromise;
         this.initPromise = undefined;
@@ -33,6 +39,19 @@ export default class SearchWorker {
             throw new Error('init not called');
         }
         return this.reader;
+    }
+
+    /**
+     * The query `params` run as, in the query language: what a search sends the leader's index worker to be told
+     * about the messages it writes that match (see `OpenSearchMatcher`), without loading the engine in the tab.
+     */
+    getExpression(params: NormalizedSearchParams): string {
+        const expression = buildQuery(params);
+        try {
+            return expression.toString();
+        } finally {
+            expression.free();
+        }
     }
 
     /**

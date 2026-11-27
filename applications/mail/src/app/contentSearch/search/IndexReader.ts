@@ -1,13 +1,12 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { Entry, ExportEvent, Expression } from '@proton/proton-foundation-search';
+import type { Engine, Entry, ExportEvent, Expression } from '@proton/proton-foundation-search';
 import { ExportEventKind, SerDes } from '@proton/proton-foundation-search';
 
 import { BlobCache } from '../cache/BlobCache';
 import type { OpenBlobTransaction } from '../crypto/EncryptedBlobTransaction';
 import { EncryptedBlobTransaction } from '../crypto/EncryptedBlobTransaction';
 import type { Database } from '../db/schema';
-import { createMailSearchEngine } from '../engine/create';
 import { isLoadEvent } from '../utils/eventTypeGuards';
 import { SearchLoop } from './SearchLoop';
 import { createLocalSearchQueryOptions } from './queryOptions';
@@ -18,11 +17,14 @@ const SMALLISH_CARDINALITY = 80;
 const BUCKET_SIZE_SECONDS = 60n * 60n * 24n * 90n;
 
 export class IndexReader {
-    private readonly engine = createMailSearchEngine();
-
+    /**
+     * @param engine `createMailSearchEngine()`'s, which lives in wasm memory: whoever creates it frees it, once done
+     * with the reader. A writer passes the one it writes with: writes run one at a time, and it only reads between them.
+     */
     constructor(
         private db: IDBPDatabase<Database>,
-        private indexKey: CryptoKey
+        private indexKey: CryptoKey,
+        private readonly engine: Engine
     ) {}
 
     async count(): Promise<number> {
@@ -112,6 +114,21 @@ export class IndexReader {
 
         await txn.verify(this.db.transaction('config'));
         performance.measure('search-foundation', 'search-foundation-start');
+    }
+
+    /**
+     * The hits of one search over the inclusive range of range keys (`Time`, in seconds) `range`, read through `txn`:
+     * a caller that just wrote the index passes a transaction on the blob cache it warmed. The caller keeps owning
+     * `exp`. Throws if aborted or if the search fails, rather than returning the hits found until then.
+     */
+    async searchRange(
+        exp: Expression,
+        range: { low: bigint; high: bigint },
+        txn: OpenBlobTransaction,
+        abortSignal: AbortSignal
+    ): Promise<string[]> {
+        const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());
+        return searchLoop.runBucketedSearch(range, abortSignal);
     }
 
     private async runBucketedSearch(
