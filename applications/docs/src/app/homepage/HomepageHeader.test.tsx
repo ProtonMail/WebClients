@@ -115,6 +115,7 @@ function renderSearch({ path = '/recents', searchView = 'search' }: { path?: str
   )
   return navigation
 }
+
 // On wide viewports. The narrow one starts as a button, and CSS hides the other.
 const getWideField = () => screen.getAllByRole('textbox').at(-1)!
 

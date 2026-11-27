@@ -1,15 +1,15 @@
 import type { Mock } from 'vitest'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
-import { RecentDocumentsItem } from '../recentDocumentsItem'
 import { DocumentActionsContext } from '../documentActionsContext'
-import { ServerTime } from '../utils/serverTime'
+import { DocumentActionsProvider } from '../DocumentActionsProvider'
 import { type ReactNode, useEffect, useState } from 'react'
 import type { RecentDocumentsItemLocation, RecentDocumentsItemValue } from '../recentDocumentsItem'
 import userEvent from '@testing-library/user-event'
 import type { HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
-import type { MemberRole } from '@protontech/drive-sdk'
+import type { MemberRole, ProtonDriveClient } from '@protontech/drive-sdk'
+import { createRecentDocument } from '../test-helpers'
 import type { ExtendedInvitationDetails } from '../invitationTypes'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '../utils/mimetype'
 import { DateFormatter } from '../utils/dateFormatter'
@@ -44,28 +44,13 @@ vi.mock('./useOpenInvitedDocument', () => ({
 
 const mockReportTelemetry = vi.fn()
 const mockLogger = { debug: vi.fn(), error: vi.fn() }
-
-function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
-  return RecentDocumentsItem.create({
-    type: 'document',
-    name: 'Untitled',
-    linkId: 'link1',
-    parentLinkId: undefined,
-    volumeId: 'volume1',
-    lastViewed: new ServerTime(Date.now()),
-    lastModified: new ServerTime(Date.now()),
-    createdBy: 'Me',
-    location: { type: 'root' },
-    isSharedWithMe: false,
-    shareId: 'share1',
-    ...data,
-  })
-}
+const mockUpdateRenamedDocumentInCache = vi.fn()
+const mockCreateNotification = vi.fn()
 
 const MY_FILES_ROOT_UID = 'volume1~myFilesRoot'
 
 const MOCK_DATA = [
-  createMockRecentDocument({
+  createRecentDocument({
     name: 'Document1',
     linkId: 'link1',
     parentLinkId: 'parentLink1',
@@ -74,7 +59,7 @@ const MOCK_DATA = [
     effectiveRole: 'admin' as MemberRole,
     ancestorsNodeUids: ['volume1~parentLink1', 'volume1~location', MY_FILES_ROOT_UID],
   }),
-  createMockRecentDocument({
+  createRecentDocument({
     name: 'Test Document',
     linkId: 'link2',
     location: { type: 'root' },
@@ -82,7 +67,7 @@ const MOCK_DATA = [
     effectiveRole: 'admin' as MemberRole,
     ancestorsNodeUids: [MY_FILES_ROOT_UID],
   }),
-  createMockRecentDocument({
+  createRecentDocument({
     name: 'Test Doc',
     linkId: 'link3',
     createdBy: 'Creator',
@@ -93,7 +78,7 @@ const MOCK_DATA = [
   }),
 ]
 
-const SHARED_ADMIN_DOCUMENT = createMockRecentDocument({
+const SHARED_ADMIN_DOCUMENT = createRecentDocument({
   name: 'Shared Doc',
   linkId: 'link5',
   createdBy: 'Creator',
@@ -103,7 +88,7 @@ const SHARED_ADMIN_DOCUMENT = createMockRecentDocument({
   ancestorsNodeUids: ['volume2~sharedFolder'],
 })
 
-const DEVICE_DOCUMENT = createMockRecentDocument({
+const DEVICE_DOCUMENT = createRecentDocument({
   name: 'Device Document',
   linkId: 'link4',
   parentLinkId: 'deviceFolder',
@@ -156,9 +141,9 @@ describe('HomepageContent', () => {
 
     test('Shows the owner from the injected addresses and contact emails', async () => {
       mockItems = [
-        createMockRecentDocument({ name: 'Mine', linkId: 'mine', createdBy: 'self@proton.me' }),
-        createMockRecentDocument({ name: 'Contact', linkId: 'contact', createdBy: 'friend@proton.me' }),
-        createMockRecentDocument({ name: 'Stranger', linkId: 'stranger', createdBy: 'stranger@proton.me' }),
+        createRecentDocument({ name: 'Mine', linkId: 'mine', createdBy: 'self@proton.me' }),
+        createRecentDocument({ name: 'Contact', linkId: 'contact', createdBy: 'friend@proton.me' }),
+        createRecentDocument({ name: 'Stranger', linkId: 'stranger', createdBy: 'stranger@proton.me' }),
       ]
       mockAddresses = [{ Email: 'self@proton.me' }]
       mockContactEmails = [{ Email: 'friend@proton.me', Name: 'Friend' }]
@@ -491,25 +476,16 @@ describe('HomepageContent', () => {
         })),
       )
 
-      test.each(cases)('a $role document $place offers $items', async ({ role, value, items }) => {
-        mockItems = [
-          createMockRecentDocument({ name: 'Role Doc', effectiveRole: role as MemberRole | undefined, ...value }),
-        ]
-        renderWithProviders(<HomepageContent />)
-
-        expect(await findMenuItemNames('Role Doc')).toEqual(items)
-      })
-
       test.each(cases)(
-        'a $role document $place can be selected for bulk actions: $selectable',
-        async ({ role, value, selectable }) => {
+        'a $role document $place offers $items, and can be selected for bulk actions: $selectable',
+        async ({ role, value, items, selectable }) => {
           bulkTrashEnabled = true
           mockItems = [
-            createMockRecentDocument({ name: 'Role Doc', effectiveRole: role as MemberRole | undefined, ...value }),
+            createRecentDocument({ name: 'Role Doc', effectiveRole: role as MemberRole | undefined, ...value }),
           ]
           renderWithProviders(<HomepageContent />)
-          await screen.findByText('Role Doc')
 
+          expect(await findMenuItemNames('Role Doc')).toEqual(items)
           expect(screen.queryAllByRole('checkbox', { name: 'Select Role Doc' })).toHaveLength(selectable ? 1 : 0)
         },
       )
@@ -1100,6 +1076,125 @@ describe('HomepageContent', () => {
     })
   })
 
+  describe('rename', () => {
+    // JSDOM has no layout; Ariakit checks visibility before it moves focus.
+    beforeEach(() => {
+      vi.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1)
+      mockUpdateRenamedDocumentInCache.mockClear()
+      mockCreateNotification.mockClear()
+    })
+    afterEach(() => {
+      vi.restoreAllMocks()
+      mockItems = MOCK_DATA
+      bulkTrashEnabled = false
+    })
+
+    const createAdminDocument = (value: Partial<RecentDocumentsItemValue>) =>
+      createRecentDocument({ effectiveRole: 'admin' as MemberRole, ...value })
+    const getRow = (name: string) => screen.getByText(name, { selector: 'span' }).closest<HTMLElement>('[role="row"]')!
+
+    async function startRename(name: string) {
+      const actions = within(getRow(name)).getByRole('button', { name: 'Actions' })
+      act(() => actions.focus())
+      await userEvent.keyboard('{Enter}')
+      await userEvent.click(within(await screen.findByRole('menu')).getByRole('menuitem', { name: 'Rename' }))
+      return screen.findByRole('textbox')
+    }
+
+    /** Starts renaming and empties the name box. Browsers focus it as the table selects its text; jsdom's `select` doesn't. */
+    async function startRenameAndClear(name: string) {
+      const input = await startRename(name)
+      await userEvent.clear(input)
+      return input
+    }
+
+    test('renames a document, with the keys that move in the name left to the name box', async () => {
+      bulkTrashEnabled = true
+      mockItems = [createAdminDocument({ name: 'Plan' }), createAdminDocument({ name: 'Budget', linkId: 'link2' })]
+      const { renameNode } = renderWithDocumentActions()
+      await startRenameAndClear('Plan')
+
+      await userEvent.keyboard('Q3 plan{Home}Draft {End}{ArrowDown}{Enter}')
+
+      expect(renameNode).toHaveBeenCalledWith('volume1~link1', 'Draft Q3 plan')
+      await waitFor(() =>
+        expect(mockUpdateRenamedDocumentInCache).toHaveBeenCalledWith('volume1-link1', 'Draft Q3 plan'),
+      )
+      expect(mockCreateNotification).toHaveBeenCalledWith({ text: expect.anything() })
+      expect(screen.queryByRole('textbox')).not.toBeInTheDocument()
+    })
+
+    test('a failed rename says so, keeps the old name, and the document can be renamed again', async () => {
+      mockItems = [createAdminDocument({ name: 'Plan' })]
+      const { renameNode } = renderWithDocumentActions()
+      renameNode.mockRejectedValueOnce(new Error('Name taken'))
+      await startRenameAndClear('Plan')
+
+      await userEvent.keyboard('Budget{Enter}')
+
+      await waitFor(() =>
+        expect(mockCreateNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to rename document' }),
+      )
+      expect(mockUpdateRenamedDocumentInCache).not.toHaveBeenCalled()
+      expect(screen.queryByRole('textbox')).not.toBeInTheDocument()
+      expect(getRow('Plan')).toBeInTheDocument()
+
+      expect(await startRename('Plan')).toBeEnabled()
+    })
+
+    test('refuses a name with a slash, as Drive does, and leaves the name box open to fix it', async () => {
+      mockItems = [createAdminDocument({ name: 'Plan' })]
+      const { renameNode } = renderWithDocumentActions()
+      const input = await startRenameAndClear('Plan')
+
+      await userEvent.keyboard('Plans/2027{Enter}')
+
+      expect(mockCreateNotification).toHaveBeenCalledWith({ type: 'error', text: 'Name must not contain slashes (/)' })
+      expect(renameNode).not.toHaveBeenCalled()
+      expect(input).toHaveValue('Plans/2027')
+    })
+
+    test('refuses a name of only spaces, which Drive trims to nothing, and saves a name without its outer spaces', async () => {
+      mockItems = [createAdminDocument({ name: 'Plan' })]
+      const { renameNode } = renderWithDocumentActions()
+      const input = await startRenameAndClear('Plan')
+
+      await userEvent.keyboard('   {Enter}')
+
+      expect(mockCreateNotification).toHaveBeenCalledWith({ type: 'error', text: 'Name must not be empty' })
+      expect(renameNode).not.toHaveBeenCalled()
+
+      await userEvent.clear(input)
+      await userEvent.keyboard('  Budget  {Enter}')
+
+      expect(renameNode).toHaveBeenCalledWith('volume1~link1', 'Budget')
+    })
+
+    test('Escape gives the new name up', async () => {
+      mockItems = [createAdminDocument({ name: 'Plan' })]
+      const { renameNode } = renderWithDocumentActions()
+      await startRenameAndClear('Plan')
+
+      await userEvent.keyboard('Budget{Escape}')
+
+      expect(screen.queryByRole('textbox')).not.toBeInTheDocument()
+      expect(getRow('Plan')).toBeInTheDocument()
+      expect(renameNode).not.toHaveBeenCalled()
+    })
+
+    test('only the document being renamed shows a name box, even when another volume has the same link ID', async () => {
+      mockItems = [
+        createAdminDocument({ name: 'Plan' }),
+        createAdminDocument({ name: 'Copy of plan', volumeId: 'volume2' }),
+      ]
+      renderWithDocumentActions()
+
+      await startRename('Plan')
+
+      expect(screen.getAllByRole('textbox')).toHaveLength(1)
+    })
+  })
+
   function DocumentActionsMockProvider({
     children,
     mockOpen: open = vi.fn(),
@@ -1179,7 +1274,7 @@ describe('HomepageContent', () => {
           setRecentsSort: vi.fn(),
           setSearch: vi.fn(),
           updateRecentDocuments: vi.fn as any,
-          updateRenamedDocumentInCache: vi.fn as any,
+          updateRenamedDocumentInCache: mockUpdateRenamedDocumentInCache,
           isRecentsUpdating: false,
           state,
           type: undefined,
@@ -1191,7 +1286,7 @@ describe('HomepageContent', () => {
           reloadInvitations: mockReloadInvitations,
           reportTelemetry: mockReportTelemetry,
           logger: mockLogger,
-          createNotification: vi.fn(),
+          createNotification: mockCreateNotification,
           getAppHref: (path) => path,
           dateFormatter: new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' }),
           errorTracking: { traceError: vi.fn(), addBreadcrumb: vi.fn(), isReportable: () => true },
@@ -1222,6 +1317,23 @@ describe('HomepageContent', () => {
     const { rerender } = render(withProviders(flow))
     const rerenderWithFlow = (newFlow: typeof flow) => rerender(withProviders(newFlow))
     return { mockOpen, mockOpenParent, mockTrash, rerenderWithFlow }
+  }
+
+  /** Renders the homepage with the real document actions, on a Drive that only renames. */
+  function renderWithDocumentActions() {
+    const renameNode = vi.fn()
+    render(
+      <HomepageViewMockProvider flow="one_document">
+        <DocumentActionsProvider
+          drive={{ renameNode } as unknown as ProtonDriveClient}
+          openShareModal={vi.fn()}
+          openMoveItemsModal={vi.fn()}
+        >
+          <HomepageContent />
+        </DocumentActionsProvider>
+      </HomepageViewMockProvider>,
+    )
+    return { renameNode }
   }
 
   function checkRowContents(

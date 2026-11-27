@@ -1,5 +1,3 @@
-import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
-import { ServerTime } from './utils/serverTime'
 import { act, renderHook } from '@testing-library/react'
 import { createMemoryNavigation } from './memoryNavigation'
 
@@ -14,73 +12,21 @@ import {
 } from './homepageViewUtils'
 import type { UserAddress } from './is-my-document'
 import { defaultHomepageMessages } from './messages/defaultHomepageMessages'
+import type { RecentDocumentsItem } from './recentDocumentsItem'
+import { createRecentDocument } from './test-helpers'
+import { ServerTime } from './utils/serverTime'
 
 function createMockItems({ firstNameOverride }: { firstNameOverride?: string } = {}) {
   return [
-    RecentDocumentsItem.create({
-      type: 'document',
-      name: firstNameOverride ?? 'name 1',
-      linkId: 'link 1',
-      parentLinkId: undefined,
-      volumeId: 'volume 1',
-      lastViewed: new ServerTime(1),
-      lastModified: new ServerTime(1),
-      createdBy: undefined,
-      location: { type: 'root' },
-      isSharedWithMe: false,
-      shareId: 'share1',
-    }),
-    RecentDocumentsItem.create({
-      type: 'document',
-      name: 'name 2',
-      linkId: 'link 2',
-      parentLinkId: undefined,
-      volumeId: 'volume 2',
-      lastViewed: new ServerTime(2),
-      lastModified: new ServerTime(2),
-      createdBy: undefined,
-      location: { type: 'root' },
-      isSharedWithMe: false,
-      shareId: 'share2',
-    }),
-    RecentDocumentsItem.create({
-      type: 'document',
+    createRecentDocument({ name: firstNameOverride ?? 'name 1', linkId: 'link 1' }),
+    createRecentDocument({ name: 'name 2', linkId: 'link 2' }),
+    createRecentDocument({
       name: 'name 3',
       linkId: 'link 3',
-      parentLinkId: undefined,
-      volumeId: 'volume 3',
-      lastViewed: new ServerTime(3),
-      lastModified: new ServerTime(3),
-      createdBy: undefined,
       location: { type: 'shared-with-me' },
       isSharedWithMe: true,
-      shareId: 'share3',
     }),
   ]
-}
-
-function createRecentDocumentsItem({
-  name,
-  lastViewed,
-  lastModified,
-}: {
-  name: string
-  lastViewed: Date
-  lastModified: Date
-}) {
-  return RecentDocumentsItem.create({
-    type: 'document',
-    name,
-    linkId: '',
-    parentLinkId: '',
-    volumeId: '',
-    lastViewed: new ServerTime(lastViewed.getTime()),
-    lastModified: new ServerTime(lastModified.getTime()),
-    createdBy: '',
-    location: { type: 'root' },
-    isSharedWithMe: false,
-    shareId: '',
-  })
 }
 
 function createDate(daysAgo: number, hour = 0, minute = 0) {
@@ -129,10 +75,10 @@ const MOCK_DATES: Partial<Record<ItemsSectionId, [name: string, date: Date][]>> 
 const MOCK_VIEWED: RecentDocumentsItem[] = []
 const MOCK_MODIFIED: RecentDocumentsItem[] = []
 for (const [, items] of Object.entries(MOCK_DATES)) {
-  const nullDate = new Date()
   for (const [name, date] of items) {
-    MOCK_VIEWED.push(createRecentDocumentsItem({ name, lastViewed: date, lastModified: nullDate }))
-    MOCK_MODIFIED.push(createRecentDocumentsItem({ name, lastViewed: nullDate, lastModified: date }))
+    const time = new ServerTime(date.getTime())
+    MOCK_VIEWED.push(createRecentDocument({ name, lastViewed: time }))
+    MOCK_MODIFIED.push(createRecentDocument({ name, lastModified: time }))
   }
 }
 
@@ -235,33 +181,16 @@ describe('useSearch', () => {
   })
 })
 
-function createItem(name: string, value: Partial<RecentDocumentsItemValue>) {
-  return RecentDocumentsItem.create({
-    type: 'document',
-    name,
-    linkId: name,
-    parentLinkId: undefined,
-    volumeId: 'volume1',
-    lastViewed: new ServerTime(1_700_000_000),
-    lastModified: new ServerTime(1_700_000_000),
-    createdBy: undefined,
-    location: { type: 'root' },
-    isSharedWithMe: false,
-    shareId: 'share1',
-    ...value,
-  })
-}
-
 const names = (sections: ItemsSection[]) => sections.flatMap((section) => section.items.map((item) => item.name))
+const sharedWithMe = { isSharedWithMe: true, location: { type: 'shared-with-me' } } as const
 
 describe('splitIntoSectionsByOwner', () => {
   test('lists shared documents by owner, and those whose owner is unknown last', () => {
-    const shared = { isSharedWithMe: true, location: { type: 'shared-with-me' } } as const
     const items = [
-      createItem('From nobody', shared),
-      createItem('From Zoe', { ...shared, createdBy: 'zoe@example.com' }),
-      createItem('Mine', { createdBy: 'me@example.com' }),
-      createItem('From Amy', { ...shared, createdBy: 'amy@example.com' }),
+      createRecentDocument({ ...sharedWithMe, name: 'From nobody', createdBy: undefined }),
+      createRecentDocument({ ...sharedWithMe, name: 'From Zoe', createdBy: 'zoe@example.com' }),
+      createRecentDocument({ name: 'Mine', createdBy: 'me@example.com' }),
+      createRecentDocument({ ...sharedWithMe, name: 'From Amy', createdBy: 'amy@example.com' }),
     ]
     const addresses = [{ Email: 'me@example.com' }] as UserAddress[]
 
@@ -276,12 +205,11 @@ describe('splitIntoSectionsByOwner', () => {
 
 describe('splitIntoSectionsByLocation', () => {
   test('orders documents in the same place by name', () => {
-    const shared = { isSharedWithMe: true, location: { type: 'shared-with-me' } } as const
     const items = [
-      createItem('Shared b', shared),
-      createItem('Root b', {}),
-      createItem('Shared a', shared),
-      createItem('Root a', {}),
+      createRecentDocument({ ...sharedWithMe, name: 'Shared b' }),
+      createRecentDocument({ name: 'Root b' }),
+      createRecentDocument({ ...sharedWithMe, name: 'Shared a' }),
+      createRecentDocument({ name: 'Root a' }),
     ]
 
     expect(names(splitIntoSectionsByLocation(items))).toEqual(['Root a', 'Root b', 'Shared a', 'Shared b'])
