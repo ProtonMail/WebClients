@@ -56,10 +56,23 @@ describe('getSelectableDevices', () => {
         const microphones = [
             device('default', 'audioinput', 'Default - MacBook Pro Microphone (Built-in)'),
             device('zoom', 'audioinput', 'ZoomAudioDevice'),
+            device('zoom-spaced', 'audioinput', 'Zoom Audio Device'),
+            device('zoom-virtual', 'audioinput', 'ZoomAudioDevice (Virtual)'),
             device('builtin', 'audioinput', 'MacBook Pro Microphone (Built-in)'),
         ];
 
         expect(getSelectableIds(microphones, 'audioinput')).toEqual(['default', 'builtin']);
+    });
+
+    it('keeps zoom corporation recorders and audio interfaces', () => {
+        const microphones = [
+            device('h6', 'audioinput', 'ZOOM H6'),
+            device('uac-2', 'audioinput', 'ZOOM UAC-2'),
+            device('podtrak', 'audioinput', 'Zoom PodTrak P4'),
+            device('h4n', 'audioinput', 'H4n Pro'),
+        ];
+
+        expect(getSelectableIds(microphones, 'audioinput')).toEqual(['h6', 'uac-2', 'podtrak', 'h4n']);
     });
 
     it('drops the placeholders the browser lists before permission is granted', () => {
