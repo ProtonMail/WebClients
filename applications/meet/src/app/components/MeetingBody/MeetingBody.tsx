@@ -24,6 +24,7 @@ import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
 import { AssignHostSidebar } from '../AssignHostSidebar/AssignHostSidebar';
+import { AudioPlaybackFrozenBanner } from '../AudioPlaybackPrompt/AudioPlaybackFrozenBanner';
 import { Backgrounds } from '../Backgrounds/Backgrounds';
 import { Captions } from '../Captions/Captions';
 import { Chat } from '../Chat/Chat';
@@ -117,6 +118,7 @@ export const MeetingBody = ({ connectionStatus }: MeetingBodyProps) => {
                     {c('Info').t`Reconnected`}
                 </TopBanner>
             )}
+            <AudioPlaybackFrozenBanner />
             <MeetingTopBanner />
             <div
                 className={clsx(

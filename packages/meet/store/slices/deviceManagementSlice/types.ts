@@ -62,7 +62,7 @@ export interface DeviceManagementState {
 
 export type DeviceKind = 'audioinput' | 'audiooutput' | 'videoinput';
 
-export type AudioPlaybackStatus = 'running' | 'recovering' | 'blocked';
+export type AudioPlaybackStatus = 'running' | 'recovering' | 'blocked' | 'frozen';
 
 export interface SliceDeviceState {
     systemDefault: SerializableDeviceInfo | null;
