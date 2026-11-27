@@ -5,6 +5,7 @@ interface LayoutState {
     sidebarExpanded: boolean;
     selectAll: boolean;
     draggingElements: boolean;
+    aliasSpotlightDue: boolean;
 }
 
 export const layoutInitialState: LayoutState = {
@@ -18,6 +19,11 @@ export const layoutInitialState: LayoutState = {
      * outside of the list (category tabs, ...) use it to show their affordance.
      */
     draggingElements: false,
+    /**
+     * True once the inbox cleanup's success window closes after every ticked sender was unsubscribed, until the alias
+     * spotlight on the Security center button closes. Kept in memory only, for this visit.
+     */
+    aliasSpotlightDue: false,
 };
 
 const name = 'layout';
@@ -36,6 +42,9 @@ const layoutSlice = createSlice({
         },
         setDraggingElements: (state, action: PayloadAction<boolean>) => {
             state.draggingElements = action.payload;
+        },
+        setAliasSpotlightDue: (state, action: PayloadAction<boolean>) => {
+            state.aliasSpotlightDue = action.payload;
         },
     },
 });

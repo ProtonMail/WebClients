@@ -74,7 +74,7 @@ interface RenderModalOptions {
 
 interface OpenOnMountProps {
     subscriptions: NewsletterSubscription[];
-    onClosedWithUnsubscribed: (unsubscribed: NewsletterSubscription[]) => void;
+    onClosedWithUnsubscribed: (outcome: BYOEInboxCleanupOutcome) => void;
 }
 
 // Opens the window as the Mailing lists view does
@@ -496,7 +496,7 @@ describe('BYOEInboxCleanupModal', () => {
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'false');
         });
 
-        it('when every ticked sender is done, the window closes and hands over exactly the unsubscribed senders, once', async () => {
+        it('when every ticked sender is done, the window closes and hands over the outcome with exactly the unsubscribed senders, once', async () => {
             const unsubscribed = defaultSubscriptions.slice(1);
             const { onClosedWithUnsubscribed } = await renderModal({
                 onConfirm: vi.fn(() => {
@@ -510,7 +510,7 @@ describe('BYOEInboxCleanupModal', () => {
             expect(clearBYOEFeature).toHaveBeenCalledTimes(1);
             expect(clearBYOEFeature).toHaveBeenCalledWith(expect.anything(), FeatureCode.BYOEInboxCleanupModal);
             expect(onClosedWithUnsubscribed).toHaveBeenCalledTimes(1);
-            expect(onClosedWithUnsubscribed).toHaveBeenCalledWith(unsubscribed);
+            expect(onClosedWithUnsubscribed).toHaveBeenCalledWith({ allDone: true, unsubscribed });
         });
 
         it('when some fail, the window stays open and hands over nothing', async () => {
@@ -602,7 +602,7 @@ describe('BYOEInboxCleanupModal', () => {
             expect(getArchiveCheckbox()).toBeEnabled();
         });
 
-        it('closing after a run where some worked hands over those senders', async () => {
+        it('closing after a run where some worked hands over those senders, with the outcome not all done', async () => {
             const unsubscribed = defaultSubscriptions.slice(0, 2);
             const { onClosedWithUnsubscribed } = await renderModal({
                 onConfirm: vi.fn(() => {
@@ -615,7 +615,7 @@ describe('BYOEInboxCleanupModal', () => {
 
             expect(isClosing()).toBe(true);
             expect(onClosedWithUnsubscribed).toHaveBeenCalledTimes(1);
-            expect(onClosedWithUnsubscribed).toHaveBeenCalledWith(unsubscribed);
+            expect(onClosedWithUnsubscribed).toHaveBeenCalledWith({ allDone: false, unsubscribed });
         });
 
         it('closing again while it fades out clears the cleanup and hands them over only once', async () => {
