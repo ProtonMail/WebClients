@@ -2,25 +2,38 @@ import { useNotifications } from '@proton/app-context/useNotifications'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import { getDrive, ValidationError, type ProtonDriveClient, type ProtonInvitationWithNode } from '@proton/drive/sdk'
 import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
 import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
-import { useCallback, useEffect, useRef, useState } from 'react'
-import type { DocInvitesHook } from '@proton/drive-store/lib/_invites/useDocInvites'
+import { type JSX, useCallback, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { useDocInvitationsStore } from './use-doc-invitations-store'
 import { getCoreEventSubscriber } from './core-event-subscriber'
 import { sharedLogger } from './logger'
 
+export type DocInvites = {
+  /** The pending invitations to documents and sheets */
+  invitations: ExtendedInvitationDetails[]
+  acceptInvite: (
+    invitation: ExtendedInvitationDetails,
+  ) => Promise<{ shareId: string; linkId: string; volumeId: string } | undefined>
+  /** Asks the user to confirm in `confirmModal`, then declines */
+  rejectInvite: (invitation: ExtendedInvitationDetails) => Promise<void>
+  confirmModal: JSX.Element | null
+  recentlyAcceptedInvites: ExtendedInvitationDetails[]
+  inviteForNodeMeta: (nodeMeta: NodeMeta | PublicNodeMeta) => ExtendedInvitationDetails | undefined
+  isLoading: boolean
+}
+
 /**
- * This hook can be used only ONCE because it will re-fetch all invitations every time it's initialized.
- * That can't be changed until we completely get rid of non-SDK solution.
- * If you need to perform actions on invitations, pass accept/reject invite functions etc. via props.
+ * Use it only once on a page: it fetches all invitations every time it mounts, and keeps the recently accepted ones in
+ * its own state. If other components need to act on invitations, pass them its functions through props.
  */
-export const useDocInvites: DocInvitesHook = () => {
+export function useDocInvites(): DocInvites {
   const drive = getDrive()
   const { createNotification } = useNotifications()
 
-  const [isLoading, setIsLoading] = useState(true) // Consistent with legacy
+  const [isLoading, setIsLoading] = useState(true)
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
 
   const convertedInvitations = useDocInvitationsStore((state) => state.convertedInvitations)
@@ -114,7 +127,7 @@ export const useDocInvites: DocInvitesHook = () => {
         message,
         submitText: c('Action').t`Decline invite`,
         cancelText: c('Action').t`Go back`,
-        canUndo: true, // Consistency with legacy hook
+        canUndo: true,
         onSubmit: async () => {
           const { updateInvitation } = useDocInvitationsStore.getState()
 
@@ -134,7 +147,7 @@ export const useDocInvites: DocInvitesHook = () => {
         },
       })
 
-      // Match legacy hook: it has useless async, we need to maintain compatibility
+      // Resolves once the modal opens, not when the invitation is declined
       return Promise.resolve()
     },
     [createNotification, showConfirmModal, fetchAndStoreInvitations],

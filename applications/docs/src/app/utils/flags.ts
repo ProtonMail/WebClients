@@ -4,7 +4,6 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 
 /*
 SDK switch flags:
-- DocsInvitationsDriveSDK - no dependencies
 - DocsDriveCompatSDK - no dependencies
 - DocsRealtimeSdkEnabled - no dependencies, always on in dev and black
 
@@ -13,10 +12,6 @@ Other flags:
 - DocsHomepageBulkMove - requires DocsHomepageBulkTrash.
   It also shows row actions on hover only, and gives a selection's row menu just Move and Move to trash.
 */
-
-export function useInvitationsSdkEnabled() {
-  return useFlag('DocsInvitationsDriveSDK')
-}
 
 export function useDriveCompatSDK() {
   return useFlag('DocsDriveCompatSDK')

@@ -1,4 +1,3 @@
-import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_invites/useDocInvites'
 import { getDrive } from '@proton/drive/sdk'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
@@ -16,10 +15,9 @@ import { type ReactNode, useCallback, useMemo } from 'react'
 
 import { HomepageDependenciesProvider } from '~/homepage'
 import { useApplication } from '~/utils/application-context'
-import { useBulkMoveEnabled, useBulkTrashEnabled, useInvitationsSdkEnabled } from '~/utils/flags'
+import { useBulkMoveEnabled, useBulkTrashEnabled } from '~/utils/flags'
 import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
 import { useHomepageLocalization } from '../__utils/useHomepageLocalization'
 import { useHomepageStorage } from '../__utils/useHomepageStorage'
 import { useHomepageAppVersion } from '../__utils/useHomepageAppVersion'
@@ -56,8 +54,6 @@ export function HomepageAdapter({ children }: HomepageAdapterProps) {
     [application],
   )
   const messages = useHomepageLocalization()
-  const isInvitationsSdkEnabled = useInvitationsSdkEnabled()
-  const useDocInvites = isInvitationsSdkEnabled ? useDocInvitesSDK : useDocInvitesLegacy
   const isBulkTrashEnabled = useBulkTrashEnabled()
   const isBulkMoveEnabled = useBulkMoveEnabled()
   const featureFlags = useMemo(
@@ -69,11 +65,7 @@ export function HomepageAdapter({ children }: HomepageAdapterProps) {
   const storage = useHomepageStorage(getLocalID())
   const appVersion = useHomepageAppVersion()
   const navigation = useHomepageNavigation()
-  const {
-    invitations,
-    reloadInvitations,
-    loader: invitationsLoader,
-  } = useHomepageInvitations(useDocInvites, isInvitationsSdkEnabled ? 'SDK' : 'legacy')
+  const { invitations, reloadInvitations, loader: invitationsLoader } = useHomepageInvitations()
   const { sharingModal, showSharingModal } = useSharingModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
 
