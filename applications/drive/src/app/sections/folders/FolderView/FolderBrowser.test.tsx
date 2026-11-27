@@ -212,4 +212,30 @@ describe('FolderBrowser', () => {
         });
         expect(screen.queryByTestId('context-menu-report-abuse')).not.toBeInTheDocument();
     });
+
+    it('keeps the same file input when an empty folder finishes loading', () => {
+        act(() => {
+            useFolderStore.getState().setPermissions(buildPermissions());
+            useFolderStore.getState().setIsLoading(true);
+        });
+
+        const { container } = renderWithProviders(
+            <FolderBrowser
+                activeFolder={{ shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' }}
+                layout={LayoutSetting.List}
+                sortedList={[]}
+                onSortChange={vi.fn()}
+            />
+        );
+        const inputWhileLoading = container.querySelector('input[type="file"][multiple]');
+
+        act(() => {
+            useFolderStore.getState().setIsLoading(false);
+            useFolderStore.getState().setHasEverLoaded();
+        });
+
+        expect(screen.getByTestId('my-files-empty-placeholder')).toBeInTheDocument();
+        expect(inputWhileLoading).not.toBeNull();
+        expect(inputWhileLoading?.isConnected).toBe(true);
+    });
 });
