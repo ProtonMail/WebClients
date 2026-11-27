@@ -248,8 +248,9 @@ export function DocumentViewerV2({
       isCreatingSpreadsheet={fileActions.isCreatingSpreadsheet}
       isMakingACopy={fileActions.isMakingACopy}
       onFileMenuAction={onFileMenuAction}
-      hasUnreadComments={comments?.hasUnread ?? false}
       // A viewer made an editor after the session opened has no comments until the document opens again
+      hasComments={Boolean(sessionComments)}
+      hasUnreadComments={comments?.hasUnread ?? false}
       onShowComments={exportInvoker && sessionComments && showComments}
       status={editorInvoker && snapshot && <SessionStatus snapshot={snapshot} onRetry={retryConnection} />}
     />

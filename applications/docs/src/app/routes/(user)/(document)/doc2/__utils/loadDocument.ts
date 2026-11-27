@@ -256,7 +256,7 @@ class LoaderRun {
               documentType: 'doc',
               nodeMeta: deps.nodeMeta,
               prefetch,
-              // Comments are on for admins and editors only; /doc also shows a viewer the threads, read-only.
+              // Comments are on for admins and editors only. As on /doc, a viewer gets none: no button, panel or marks.
               ...((this.role === 'Admin' || this.role === 'Editor') && {
                 comments: { getDocumentNameForEmails: deps.getDocumentName },
               }),
