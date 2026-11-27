@@ -268,7 +268,7 @@ const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanu
 interface BYOEInboxCleanupModalProps {
     subscriptions: NewsletterSubscription[];
     modalProps: ModalStateProps;
-    onClosedWithUnsubscribed: (unsubscribed: NewsletterSubscription[]) => void;
+    onClosedWithUnsubscribed: (outcome: BYOEInboxCleanupOutcome) => void;
 }
 
 export const BYOEInboxCleanupModal = ({
@@ -279,12 +279,12 @@ export const BYOEInboxCleanupModal = ({
     const onConfirm = useBYOEInboxCleanupConfirm();
     const dispatch = useMailDispatch();
     // A ref, not state: Unsubscribe closes the window with the `onClose` from the render it was pressed in,
-    // which would still hold the senders from before that run
-    const unsubscribedRef = useRef<NewsletterSubscription[]>([]);
+    // which would still hold the outcome from before that run
+    const outcomeRef = useRef<BYOEInboxCleanupOutcome>({ allDone: false, unsubscribed: [] });
 
     // However it's closed, it doesn't open again; a reload while it's open leaves it due for the next visit.
     // Whether it closes itself after a full success or the person closes it after some failed, it hands over
-    // the senders it unsubscribed so the success window can open.
+    // the last outcome (the senders it unsubscribed, and whether every ticked one is done) so the success window can open.
     const handleClose = () => {
         // Its buttons and Escape still work while it fades out, which would clear it and hand the senders over twice
         if (!modalProps.open) {
@@ -292,14 +292,14 @@ export const BYOEInboxCleanupModal = ({
         }
         clearBYOEFeature(dispatch, FeatureCode.BYOEInboxCleanupModal);
         modalProps.onClose();
-        if (unsubscribedRef.current.length > 0) {
-            onClosedWithUnsubscribed(unsubscribedRef.current);
+        if (outcomeRef.current.unsubscribed.length > 0) {
+            onClosedWithUnsubscribed(outcomeRef.current);
         }
     };
 
     const handleConfirm = async (choice: BYOEInboxCleanupChoice) => {
         const outcome = await onConfirm(choice);
-        unsubscribedRef.current = outcome.unsubscribed;
+        outcomeRef.current = outcome;
         if (!outcome.allDone) {
             // The caller has shown its error; failing keeps the window open so the person can try again
             throw new Error('Some BYOE inbox cleanup senders are not done');

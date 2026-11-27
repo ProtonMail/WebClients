@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,9 +18,13 @@ import useSpotlightShow from '../../../spotlight/useSpotlightShow';
 
 interface Props {
     children: React.ReactNode;
+    /**
+     * Another spotlight on the same button is taking over: close this one for the rest of the visit
+     */
+    replaced?: boolean;
 }
 
-const BreachAlertsSpotlight = ({ children }: Props) => {
+const BreachAlertsSpotlight = ({ children, replaced }: Props) => {
     const anchorRef = useRef<HTMLDivElement>(null);
     const [subscription] = useSubscription();
     const [user] = useUser();
@@ -49,6 +53,12 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
     );
 
     const shouldShowSpotlight = useSpotlightShow(show, 3 * SECOND);
+
+    useEffect(() => {
+        if (replaced) {
+            onClose();
+        }
+    }, [replaced]);
 
     return (
         <Spotlight

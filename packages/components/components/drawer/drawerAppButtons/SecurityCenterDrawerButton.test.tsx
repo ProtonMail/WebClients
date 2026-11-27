@@ -13,6 +13,8 @@ import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDrawerAppButton';
+import BreachAlertsSpotlight from '../views/SecurityCenter/BreachAlertsSpotlight';
+import SecurityCenterAliasSpotlight from '../views/SecurityCenter/SecurityCenterAliasSpotlight';
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
 import DrawerAppButton from './DrawerAppButton';
 
@@ -43,6 +45,10 @@ vi.mock('../../../hooks/drawer/useDrawer', () => ({
 vi.mock('../views/SecurityCenter/useSecurityCenter', () => ({ __esModule: true, default: vi.fn() }));
 vi.mock('./DrawerAppButton', () => ({ __esModule: true, default: vi.fn(() => null) }));
 vi.mock('../views/SecurityCenter/BreachAlertsSpotlight', () => ({
+    __esModule: true,
+    default: vi.fn(({ children }) => <div>{children}</div>),
+}));
+vi.mock('../views/SecurityCenter/SecurityCenterAliasSpotlight', () => ({
     __esModule: true,
     default: vi.fn(({ children }) => <div>{children}</div>),
 }));
@@ -162,5 +168,42 @@ describe('SecurityCenterDrawerAppButton', () => {
         const { container } = renderComponent();
 
         expect(container.firstChild).toBeNull();
+    });
+
+    test('passes the alias props to the alias spotlight and replaced to breach alerts', () => {
+        setupMocks();
+        const onAliasSpotlightClose = vi.fn();
+        const onAliasSpotlightDisplayed = vi.fn();
+
+        renderComponent({ showAliasSpotlight: true, onAliasSpotlightClose, onAliasSpotlightDisplayed });
+
+        expect(vi.mocked(SecurityCenterAliasSpotlight).mock.calls.map(([props]) => props)).toContainEqual(
+            expect.objectContaining({
+                show: true,
+                onClose: onAliasSpotlightClose,
+                onDisplayed: onAliasSpotlightDisplayed,
+            })
+        );
+        expect(vi.mocked(BreachAlertsSpotlight).mock.calls.map(([props]) => props)).toContainEqual(
+            expect.objectContaining({ replaced: true })
+        );
+    });
+
+    test("doesn't put the alias props on the button element", () => {
+        setupMocks();
+
+        renderComponent({
+            showAliasSpotlight: true,
+            onAliasSpotlightClose: vi.fn(),
+            onAliasSpotlightDisplayed: vi.fn(),
+        });
+
+        const buttonProps = vi.mocked(DrawerAppButton).mock.calls.map(([props]) => props);
+        expect(buttonProps.length).toBeGreaterThan(0);
+        buttonProps.forEach((props) => {
+            expect(props).not.toHaveProperty('showAliasSpotlight');
+            expect(props).not.toHaveProperty('onAliasSpotlightClose');
+            expect(props).not.toHaveProperty('onAliasSpotlightDisplayed');
+        });
     });
 });
