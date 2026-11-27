@@ -22,6 +22,7 @@ import {
 import {
     optimisticDelete as optimisticDeleteElementAction,
     optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
+    optimisticRestoreDeletedIDs as optimisticRestoreDeletedIDsAction,
 } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { useGetAllConversations } from '../conversation/useConversation';
@@ -110,6 +111,7 @@ const useOptimisticDelete = () => {
             dispatch(optimisticRestoreMessageAction(rollbackMessages));
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
             dispatch(optimisticRestoreDeleteElementAction({ elements: rollbackElements }));
+            dispatch(optimisticRestoreDeletedIDsAction(elementIDs));
             if (rollbackCounters.conversations) {
                 const { value: conversationCounters = [] } = selectConversationCounts(store.getState());
                 store.dispatch(

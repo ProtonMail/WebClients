@@ -46,7 +46,9 @@ import {
     dynamicTotal as dynamicTotalSelector,
     elementsMap as elementsMapSelector,
     elements as elementsSelector,
+    esSearching as esSearchingSelector,
     expectingEmpty as expectingEmptySelector,
+    hasOrderedSearchResults as hasOrderedSearchResultsSelector,
     loadedEmpty as loadedEmptySelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
     pageIsConsecutive as pageIsConsecutiveSelector,
@@ -197,6 +199,8 @@ export const useElements: UseElements = ({
     const rateLimitReachedRef = useRef(false);
 
     const ctxTotal = useMailSelector(contextTotal);
+    const hasOrderedSearchResults = useMailSelector(hasOrderedSearchResultsSelector);
+    const esSearching = useMailSelector(esSearchingSelector);
     const ctxPages = useMailSelector(contextPages);
     const ctxIdentifier = useMailSelector(selectCurrentContextIdentifier);
 
@@ -434,6 +438,20 @@ export const useElements: UseElements = ({
             return;
         }
 
+        // An ordered search result can shrink at any time (elements leaving the location, or the search
+        // handing over a shorter list). Its total is the number of results listed, so it is reliable - once
+        // the search is done: while results are still streaming in, the list is only incomplete.
+        if (hasOrderedSearchResults) {
+            if (esSearching) {
+                return;
+            }
+            const count = pageCount(ctxTotal ?? 0, pageSize);
+            if (page >= count) {
+                onPage(Math.max(count - 1, 0));
+            }
+            return;
+        }
+
         if (!partialESSearch && (expectingEmpty || loadedEmpty)) {
             const count = dynamicTotal ? pageCount(dynamicTotal, pageSize) : 0;
             if (count === 0) {
@@ -443,7 +461,16 @@ export const useElements: UseElements = ({
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-F8CFDD
-    }, [page, partialESSearch, expectingEmpty, loadedEmpty, dynamicTotal]);
+    }, [
+        page,
+        partialESSearch,
+        expectingEmpty,
+        loadedEmpty,
+        dynamicTotal,
+        hasOrderedSearchResults,
+        esSearching,
+        ctxTotal,
+    ]);
 
     useEffect(() => {
         if (stateInconsistency) {

@@ -20,6 +20,8 @@ describe('unLabelConversationsPending', () => {
     beforeEach(() => {
         testState = {
             elements: {},
+            orderedSearchResultIDs: {},
+            optimisticallyDeletedIDs: {},
             total: {},
             params: {
                 categoryIDs: [],

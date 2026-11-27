@@ -100,6 +100,20 @@ export interface ElementsState {
     elements: { [ID: string]: Element };
 
     /**
+     * Ordered element IDs per "context filter", for contexts whose membership and order are owned by the
+     * search that produced them rather than derived from `elements` (see `ESResults.ordered`).
+     * Such lists only get re-checked on state that can change (see `matchesLocation`), and never re-sorted.
+     */
+    orderedSearchResultIDs: SimpleMap<string[]>;
+
+    /**
+     * IDs of elements deleted optimistically, until the delete event arrives, the deletion is rolled back or the list
+     * changes. Until then, a copy of them (an ordered search handing its results over again, an earlier event) must not
+     * bring them back into an ordered search result (see `addESResults` and the `orderedSearchResults` selector).
+     */
+    optimisticallyDeletedIDs: { [ID: string]: true };
+
+    /**
      * List of element's id which are allowed to bypass the current filter
      */
     bypassFilter: string[];
@@ -172,6 +186,12 @@ export interface ESResults {
     elements: Element[];
     params: ElementsStateParams;
     pageSize: MAIL_PAGE_SIZE;
+    /**
+     * Whether `elements` is the exact, ordered result list: the search already evaluated every
+     * criterion and sorted the results itself, so the list must not be re-filtered on search criteria
+     * nor re-sorted.
+     */
+    ordered?: boolean;
 }
 
 export interface OptimisticUpdates {

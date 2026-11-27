@@ -83,7 +83,7 @@ const startedSearch = async (initial: NormalizedSearchParams, messages: SearchRe
     return { search, onResults, workerSearch, readMessages: messageCacheMock.readMessages };
 };
 
-describe('Search.update', () => {
+describe('Search.canServe', () => {
     const unread = message('unread', 1);
     const read = message('read', 0);
 
@@ -95,10 +95,10 @@ describe('Search.update', () => {
         const { search, onResults, workerSearch } = await startedSearch(params(), [unread, read]);
         onResults.mockClear();
 
-        expect(search.update(params())).toBe(true);
+        expect(search.canServe(params())).toBe(true);
         // the Unread filter did not change, so the in-memory results are left untouched
         expect(onResults).not.toHaveBeenCalled();
-        // and no second worker round-trip: update never re-executes the query
+        // and no second worker round-trip: canServe never re-executes the query
         expect(workerSearch).toHaveBeenCalledTimes(1);
     });
 
@@ -106,11 +106,11 @@ describe('Search.update', () => {
         const { search, onResults } = await startedSearch(params(), [unread, read]);
         onResults.mockClear();
 
-        expect(search.update(params({ search: { keyword: 'different' } as any }))).toBe(false);
+        expect(search.canServe(params({ search: { keyword: 'different' } as any }))).toBe(false);
         expect(onResults).not.toHaveBeenCalled();
     });
 
-    it('re-applies the Unread filter in memory when only Unread changes', async () => {
+    it('keeps the same results when only Unread changes', async () => {
         // start with "unread only", switch to "read only"
         const { search, onResults, workerSearch } = await startedSearch(params({ filter: { Unread: 1 } }), [
             unread,
@@ -118,14 +118,19 @@ describe('Search.update', () => {
         ]);
         onResults.mockClear();
 
-        expect(search.update(params({ filter: { Unread: 0 } }))).toBe(true);
+        expect(search.canServe(params({ filter: { Unread: 0 } }))).toBe(true);
 
-        // narrowed to the read message, without going back to the worker
+        // the element list applies the Unread filter itself, so neither a new query nor new results
         expect(workerSearch).toHaveBeenCalledTimes(1);
-        expect(onResults).toHaveBeenCalledTimes(1);
-        expect(onResults).toHaveBeenCalledWith([read]);
+        expect(onResults).not.toHaveBeenCalled();
         expect(search.containsMessage('read')).toBe(true);
-        expect(search.containsMessage('unread')).toBe(false);
+        expect(search.containsMessage('unread')).toBe(true);
+    });
+
+    it('does not filter results on Unread', async () => {
+        const { search } = await startedSearch(params({ filter: { Unread: 1 } }), [unread, read]);
+
+        expect(search.results).toEqual([unread, read]);
     });
 
     it('returns true without notifying when results have not loaded yet', () => {
@@ -140,20 +145,48 @@ describe('Search.update', () => {
         const onResults = vi.fn();
         search.onResults.subscribe(onResults);
 
-        expect(search.update(params({ filter: { Unread: 0 } }))).toBe(true);
+        expect(search.canServe(params({ filter: { Unread: 0 } }))).toBe(true);
         expect(onResults).not.toHaveBeenCalled();
     });
 
     // Regression guard: the no-unread-filter shape (produced when no unread filter is active) has no
-    // Unread key at all. update() must still treat two such identical params as equal, even though
+    // Unread key at all. canServe() must still treat two such identical params as equal, even though
     // lodash isEqual treats { Unread: undefined } and {} as unequal.
     it('returns true for identical params when neither carries an Unread key', async () => {
         const noUnread = () => params({ filter: {} });
         const { search, onResults, workerSearch } = await startedSearch(noUnread(), [unread, read]);
         onResults.mockClear();
 
-        expect(search.update(noUnread())).toBe(true);
+        expect(search.canServe(noUnread())).toBe(true);
         expect(onResults).not.toHaveBeenCalled();
         expect(workerSearch).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('Search results order', () => {
+    const timed = (ID: string, Time: number, Order = 0) =>
+        ({ ID, Unread: 1, Time, Order, ConversationID: `conversation-${ID}` }) as unknown as SearchResult;
+    const ids = (results: SearchResult[]) => results.map(({ ID }) => ID);
+
+    it('sorts the results most recent first', async () => {
+        const { search } = await startedSearch(params({ filter: {} }), [timed('a', 1), timed('c', 3), timed('b', 2)]);
+
+        expect(ids(search.results!)).toEqual(['c', 'b', 'a']);
+    });
+
+    it('sorts the results oldest first for an ascending sort', async () => {
+        const { search } = await startedSearch(params({ filter: {}, sort: { sort: 'Time', desc: false } }), [
+            timed('b', 2),
+            timed('a', 1),
+            timed('c', 3),
+        ]);
+
+        expect(ids(search.results!)).toEqual(['a', 'b', 'c']);
+    });
+
+    it('breaks ties on Order', async () => {
+        const { search } = await startedSearch(params({ filter: {} }), [timed('first', 1, 1), timed('second', 1, 2)]);
+
+        expect(ids(search.results!)).toEqual(['second', 'first']);
     });
 });

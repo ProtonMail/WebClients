@@ -37,12 +37,12 @@ describe('buildQuery', () => {
 
     describe('optional filters are only added when defined', () => {
         it('matches the sender against the from addresses', () => {
-            expect(q({ search: { keyword: 'x', from: 'a@b.com' } })).toBe('x AND from="a@b.com"');
+            expect(q({ search: { keyword: 'x', from: 'a@b.com' } })).toBe('x AND from~a@b.com');
         });
 
         it('matches the recipient against the to, cc and bcc addresses', () => {
             expect(q({ search: { keyword: 'x', to: 'c@d.com' } })).toBe(
-                'x AND (to="c@d.com" OR cc="c@d.com" OR bcc="c@d.com")'
+                'x AND (to~c@d.com OR cc~c@d.com OR bcc~c@d.com)'
             );
         });
 
@@ -118,7 +118,7 @@ describe('buildQuery', () => {
                 search: { keyword: 'hi', from: 'a@b.com', to: 'c@d.com', address: 'addr1', begin: 100, end: 200 },
             })
         ).toBe(
-            'hi AND from="a@b.com" AND (to="c@d.com" OR cc="c@d.com" OR bcc="c@d.com") AND addressId=addr1 ' +
+            'hi AND from~a@b.com AND (to~c@d.com OR cc~c@d.com OR bcc~c@d.com) AND addressId=addr1 ' +
                 'AND time>=100 AND time<=200 AND (labelId=L1 OR labelId=L2) AND hasAttachments=true'
         );
     });

@@ -15,14 +15,16 @@ import isTruthy from '@proton/utils/isTruthy';
 import { DEFAULT_PLACEHOLDERS_COUNT, MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import {
     filterElementsInState,
-    getElementContextIdentifier,
+    getContextIdentifierFromParams,
     hasAttachmentsFilter,
     isEmpty,
     isSearch,
     isUnread,
+    matchesLocation,
     sort as sortElements,
 } from '../../helpers/elements';
 import { expectedPageLength, isPageConsecutive } from '../../helpers/paging';
+import type { Element } from '../../models/element';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import { selectedSubscriptionSelector } from '../newsletterSubscriptions/newsletterSubscriptionsSelector';
 import type { MailState } from '../store';
@@ -76,6 +78,8 @@ const total = (state: MailState) => state.elements.total;
 export const taskRunning = (state: MailState) => state.elements.taskRunning;
 const awaitingStaleRetryMap = (state: MailState) => state.elements.awaitingStaleRetry;
 const addresses = (state: MailState) => state.addresses;
+const orderedSearchResultIDsMap = (state: MailState) => state.elements.orderedSearchResultIDs;
+const optimisticallyDeletedIDs = (state: MailState) => state.elements.optimisticallyDeletedIDs;
 
 export const selectActiveCategoryID = createSelector(
     [selectCategoryIDs],
@@ -99,71 +103,89 @@ const currentESDBStatus = (
 const currentCounts = (_: MailState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => labelID;
 
-export const selectCurrentContextIdentifier = createSelector([selectParams, total], (params) => {
-    const contextFilter = getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
+export const selectCurrentContextIdentifier = createSelector([selectParams], (params) =>
+    getContextIdentifierFromParams(params)
+);
 
-    return contextFilter;
-});
-
-export const contextPages = createSelector([selectParams, pages], (params, pages) => {
-    const contextFilter = getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
-
-    return pages[contextFilter] || [];
-});
+export const contextPages = createSelector(
+    [selectCurrentContextIdentifier, pages],
+    (contextFilter, pages) => pages[contextFilter] || []
+);
 
 const awaitingStaleRetry = createSelector(
     [selectCurrentContextIdentifier, awaitingStaleRetryMap],
     (contextFilter, awaitingStaleRetryMap) => !!awaitingStaleRetryMap[contextFilter]
 );
 
-export const contextTotal = createSelector([selectParams, total], (params, total) => {
-    const contextFilter = getElementContextIdentifier({
-        labelID: params.labelID,
-        categoryIDs: params.categoryIDs,
-        conversationMode: params.conversationMode,
-        filter: params.filter,
-        sort: params.sort,
-        from: params.search.from,
-        to: params.search.to,
-        address: params.search.address,
-        begin: params.search.begin,
-        end: params.search.end,
-        keyword: params.search.keyword,
-        newsletterSubscriptionID: params.newsletterSubscriptionID,
-    });
+const contextOrderedSearchResultIDs = createSelector(
+    [selectCurrentContextIdentifier, orderedSearchResultIDsMap],
+    (contextFilter, orderedSearchResultIDsMap): string[] | undefined => orderedSearchResultIDsMap[contextFilter]
+);
 
-    return total[contextFilter];
-});
+/**
+ * All elements of the current context's ordered search result (see `orderedSearchResultIDs`), in the order
+ * the search gave them, or undefined when the context doesn't have one.
+ *
+ * The search already decided membership and order, so only state that can have changed since is checked:
+ * elements that were deleted, moved, or marked as read (unless they bypass the filter) leave the list.
+ */
+const orderedSearchResults = createSelector(
+    [elementsMap, selectParams, contextOrderedSearchResultIDs, bypassFilter, optimisticallyDeletedIDs],
+    (elements, params, orderedIDs, bypassFilter, optimisticallyDeletedIDs) => {
+        if (!orderedIDs) {
+            return undefined;
+        }
+        const { labelID, categoryIDs, filter, conversationMode, newsletterSubscriptionID } = params;
+        const locationParams = { labelID, categoryIDs, filter, conversationMode, newsletterSubscriptionID };
+        const bypassFilterSet = new Set(bypassFilter);
+
+        return (
+            orderedIDs
+                // A copy of an element deleted optimistically can come back before its delete event (e.g. an earlier event)
+                .filter((ID) => !optimisticallyDeletedIDs[ID])
+                .map((ID) => elements[ID])
+                .filter(
+                    (element): element is Element =>
+                        !!element && matchesLocation(element, locationParams, bypassFilterSet)
+                )
+        );
+    }
+);
+
+/** Whether the current context lists an ordered search result (see `orderedSearchResultIDs`). */
+export const hasOrderedSearchResults = createSelector(
+    [contextOrderedSearchResultIDs],
+    (orderedIDs) => orderedIDs !== undefined
+);
+
+/**
+ * Total of elements in the current context. For an ordered search result it is the number of results
+ * still listed, so that it always agrees with what the elements selector shows: anything the server or a
+ * reducer adjusted in `total` would otherwise make a page look incomplete and trigger the search again.
+ */
+export const contextTotal = createSelector(
+    [selectCurrentContextIdentifier, total, orderedSearchResults],
+    (contextFilter, total, orderedSearchResults) => {
+        if (orderedSearchResults) {
+            return orderedSearchResults.length;
+        }
+
+        return total[contextFilter];
+    }
+);
 
 export const elements = createSelector(
-    [elementsMap, selectParams, selectPage, selectPageSize, contextPages, bypassFilter, addresses],
-    (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
+    [
+        elementsMap,
+        selectParams,
+        selectPage,
+        selectPageSize,
+        contextPages,
+        bypassFilter,
+        addresses,
+        orderedSearchResults,
+    ],
+    (elements, params, page, pageSize, pages, bypassFilter, addresses, orderedSearchResults) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
         const { labelID, sort, filter, conversationMode, search, categoryIDs } = params;
@@ -171,6 +193,10 @@ export const elements = createSelector(
         const minPage = pages.length > 0 ? Math.min(...pages) : 0;
         const startIndex = (page - minPage) * pageSize;
         const endIndex = startIndex + pageSize;
+
+        if (orderedSearchResults) {
+            return pages.includes(page) ? orderedSearchResults.slice(startIndex, endIndex) : EMPTY_ARRAY;
+        }
 
         const elementsArray = Object.values(elements);
 
@@ -228,8 +254,14 @@ export const elementsAreUnread = createSelector([selectParams, elements], (param
  * It doesn't rely at all on the optimistic counter logic
  */
 const needsMoreElements = createSelector(
-    [contextTotal, selectPage, selectPageSize, elementsLength, selectParams],
-    (total, page, pageSize, elementsLength, params) => {
+    [contextTotal, selectPage, selectPageSize, elementsLength, selectParams, hasOrderedSearchResults],
+    (total, page, pageSize, elementsLength, params, hasOrderedSearchResults) => {
+        // An ordered search result is complete as handed over: a short or empty page means the list shrank, which
+        // moving to the last page handles (see `useElements`), not that results are missing
+        if (hasOrderedSearchResults) {
+            return false;
+        }
+
         // There are no elements for newsletter subscriptions if there is no newsletter subscription ID
         if (params.labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !params.newsletterSubscriptionID) {
             return false;
@@ -291,10 +323,12 @@ export const shouldLoadElements = createSelector(
 
 /**
  * @returns true when user is in an unpredictable context because we don't have enough conversations/message metadata infos
+ * An ordered search result is not one: its membership doesn't depend on the elements in state, so events can
+ * be applied to them, and the list picks up deletions, moves and read status changes without searching again.
  */
 export const shouldInvalidateElementsState = createSelector(
-    [selectParams, contextPages],
-    (params, pages) => !!params.search.keyword || !pages.includes(0)
+    [selectParams, contextPages, contextOrderedSearchResultIDs],
+    (params, pages, orderedIDs) => !orderedIDs && (!!params.search.keyword || !pages.includes(0))
 );
 
 export const shouldUpdatePage = createSelector(
@@ -407,13 +441,15 @@ const dynamicPageLength = createSelector(
 );
 
 export const placeholderCount = createSelector(
-    [selectPage, selectPageSize, contextTotal, selectParams, dynamicPageLength, bypassFilter],
-    (page, pageSize, total, params, dynamicPageLength, bypassFilter) => {
+    [selectPage, selectPageSize, contextTotal, selectParams, dynamicPageLength, bypassFilter, hasOrderedSearchResults],
+    (page, pageSize, total, params, dynamicPageLength, bypassFilter, hasOrderedSearchResults) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
         }
         if (total !== undefined) {
-            return expectedPageLength(page, pageSize, total, isEmpty(params.filter) ? 0 : bypassFilter.length);
+            // The total of an ordered search result already counts the elements bypassing the filter
+            const bypassCount = isEmpty(params.filter) || hasOrderedSearchResults ? 0 : bypassFilter.length;
+            return expectedPageLength(page, pageSize, total, bypassCount);
         }
         return DEFAULT_PLACEHOLDERS_COUNT;
     }

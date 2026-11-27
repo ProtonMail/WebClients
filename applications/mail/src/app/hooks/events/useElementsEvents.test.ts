@@ -55,6 +55,8 @@ const mockElementsState = (elementIds: string[] = []): ElementsState => ({
     },
     awaitingStaleRetry: {},
     deletedSinceLastLoad: 0,
+    orderedSearchResultIDs: {},
+    optimisticallyDeletedIDs: {},
 });
 
 describe('processElementEvents', () => {

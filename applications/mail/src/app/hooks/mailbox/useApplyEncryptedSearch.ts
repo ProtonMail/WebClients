@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -56,12 +56,19 @@ export const useApplyEncryptedSearch = ({
     const { createNotification } = useNotifications();
     const dispatch = useMailDispatch();
 
-    const { esStatus, encryptedSearch } = useEncryptedSearchContext();
+    const { esStatus, encryptedSearch, providesOrderedResults } = useEncryptedSearchContext();
     const { esEnabled, isStartupSettled } = esStatus;
 
     const { sendPerformSearchReport } = useSearchTelemetry();
 
     const categoryIDs = useMailSelector(selectCategoryIDs);
+
+    // The search keeps `setEncryptedSearchResults` and calls it later (streaming, re-delivered results), when `page`
+    // in its closure may be stale. Read the page through a ref instead of `history.location`: right after a page
+    // change, `history.location` is already ahead of the router's location that `useElements` dispatches
+    // `updatePage` from, and the two then set different pages in the store.
+    const pageRef = useRef(page);
+    pageRef.current = page;
 
     // Force conversation mode to false in a search context
     const params = {
@@ -84,9 +91,10 @@ export const useApplyEncryptedSearch = ({
         dispatch(
             addESResults({
                 elements,
-                page: parseSearchParams(history.location, categoryIDs).page,
+                page: pageRef.current,
                 params: { ...params, labelID },
                 pageSize,
+                ordered: providesOrderedResults,
             })
         );
     };

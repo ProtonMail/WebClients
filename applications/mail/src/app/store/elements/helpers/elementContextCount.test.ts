@@ -18,6 +18,8 @@ const messageThree = 'msg-3';
 const makeState = (overrides: Record<string, any> = {}): Draft<ElementsState> =>
     ({
         elements: {},
+        orderedSearchResultIDs: {},
+        optimisticallyDeletedIDs: {},
         total: {},
         bypassFilter: [],
         params: {

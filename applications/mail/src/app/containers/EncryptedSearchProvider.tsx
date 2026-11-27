@@ -361,6 +361,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         reportResultAction,
         startSearchSession: startSearchSessionRouted,
         endSearchSession: endSearchSessionRouted,
+        // Content search sorts its results itself; legacy ES leaves sorting to the element list.
+        providesOrderedResults: isV2Active,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

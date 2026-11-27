@@ -6,6 +6,7 @@ import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mai
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
+import { sort as sortElements } from '../../helpers/elements';
 import type { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open.ts';
 import type { Database } from '../db/schema.ts';
@@ -63,12 +64,14 @@ export class Search {
     public readonly onDisposed = createListeners<[]>();
     public readonly done: Promise<SearchOutcome>;
 
-    private unfilteredResults?: SearchResult[];
-    private filteredResults?: SearchResult[];
+    /** Every result found so far, in the order they came in */
+    private foundResults?: SearchResult[];
+    /** `foundResults`, sorted */
+    private sortedResults?: SearchResult[];
     private resolveDone?: (outcome: SearchOutcome) => void;
 
     constructor(
-        private params: NormalizedSearchParams,
+        private readonly params: NormalizedSearchParams,
         private dbLock: DatabaseLock,
         private workerPromise: Promise<
             | {
@@ -88,31 +91,25 @@ export class Search {
     }
 
     containsMessage(id: string): boolean {
-        return !!this.filteredResults?.some((m) => m.ID === id);
+        return !!this.sortedResults?.some((m) => m.ID === id);
     }
 
-    update(params: NormalizedSearchParams): boolean {
-        // We apply the Unread filter in memory rather than re-running the query, so an update that
-        // only toggles Unread can be absorbed without a new search. Compare non-mutating copies with
-        // Unread normalized on both sides, so a missing key and a present-but-undefined key don't
-        // read as a difference (lodash isEqual treats { Unread: undefined } and {} as unequal).
-        const equalApartFromUnread = isDeepEqual(
+    /**
+     * Whether this search's results can serve a list with `params` instead of running a new search. Unread isn't part
+     * of the query (it isn't indexed, as it changes too often): the element list applies the Unread filter on the
+     * results itself, against up to date read statuses, so params that only differ in Unread are served by the same
+     * results. Compare non-mutating copies with Unread normalized on both sides, so a missing key and a
+     * present-but-undefined key don't read as a difference (lodash isEqual treats { Unread: undefined } and {} as unequal).
+     */
+    canServe(params: NormalizedSearchParams): boolean {
+        return isDeepEqual(
             { ...this.params, filter: { ...this.params.filter, Unread: undefined } },
             { ...params, filter: { ...params.filter, Unread: undefined } }
         );
-        if (equalApartFromUnread) {
-            const oldUnread = this.params.filter.Unread;
-            this.params = params;
-            if (oldUnread !== this.params.filter.Unread) {
-                this.applyFilters();
-            }
-            return true;
-        }
-        return false;
     }
 
     get results(): SearchResult[] | undefined {
-        return this.filteredResults;
+        return this.sortedResults;
     }
 
     /** @internal called by SearchService */
@@ -162,10 +159,8 @@ export class Search {
             const fetchMessagesForIDs = async (ids: string[]) => {
                 const storeMessages = await messageCache.readMessages(ids, db);
                 const foundMessages = ids.map((id) => storeMessages.get(id)).filter((m) => m !== undefined);
-                this.unfilteredResults = this.unfilteredResults
-                    ? this.unfilteredResults.concat(foundMessages)
-                    : foundMessages;
-                this.applyFilters();
+                this.foundResults = this.foundResults ? this.foundResults.concat(foundMessages) : foundMessages;
+                this.publishResults();
             };
 
             performance.mark('search-worker-start');
@@ -178,7 +173,7 @@ export class Search {
                 )
             );
             await Promise.all(promises);
-            this.logger.info(`ran search with ${this.unfilteredResults?.length} results`);
+            this.logger.info(`ran search with ${this.foundResults?.length} results`);
         } finally {
             messageCache.close();
             db.close();
@@ -186,21 +181,18 @@ export class Search {
         return 'completed';
     }
 
-    private applyFilters() {
-        if (this.unfilteredResults === undefined) {
+    private publishResults() {
+        if (this.foundResults === undefined) {
             return;
         }
-        // We don't index Unread, as it changes too often.
-        // Instead, we apply the filter in memory.
-        const { Unread } = this.params.filter;
-        if (Unread !== undefined) {
-            this.filteredResults = this.unfilteredResults.filter((message) => {
-                return message.Unread === Unread;
-            });
-        } else {
-            this.filteredResults = this.unfilteredResults;
-        }
-        this.onResults.notify(this.filteredResults);
+        // Hits arrive bucket by bucket, in no particular order within a bucket. The element list takes
+        // the results as their final order (see `providesOrderedResults`), so sort them here.
+        this.sortedResults = sortElements(
+            this.foundResults,
+            this.params.sort,
+            this.params.labelIDs[0] ?? ''
+        ) as SearchResult[];
+        this.onResults.notify(this.sortedResults);
     }
 
     /** disposes of all search related resources.

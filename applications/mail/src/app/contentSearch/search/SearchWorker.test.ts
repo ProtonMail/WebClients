@@ -21,6 +21,8 @@ const startWorker = async (readerSearch: Mock) => {
     return worker;
 };
 
+const params = { sort: { sort: 'Time', desc: true } } as NormalizedSearchParams;
+
 const flush = () => {
     return new Promise((resolve) => setTimeout(resolve, 0));
 };
@@ -41,7 +43,7 @@ describe('SearchWorker.search', () => {
         });
 
         let isDone = false;
-        const search = worker.search({} as NormalizedSearchParams, resultCallback).then(() => {
+        const search = worker.search(params, resultCallback).then(() => {
             isDone = true;
         });
         await flush();
@@ -81,11 +83,11 @@ describe('SearchWorker.search', () => {
         });
 
         let isDone = false;
-        const abortedSearch = worker.search({} as NormalizedSearchParams, resultCallback).then(() => {
+        const abortedSearch = worker.search(params, resultCallback).then(() => {
             isDone = true;
         });
         await flush();
-        await worker.search({} as NormalizedSearchParams, vi.fn());
+        await worker.search(params, vi.fn());
         await flush();
 
         expect(resultCallback.mock.calls).toEqual([[['a']]]);

@@ -6,12 +6,9 @@ import { normalizeIndexedEmail } from '../engine/addresses';
 
 /**
  * Matches the input against every address of the given attributes: its email (tag or text) and display name.
- * Whole tokens in the order typed (an exact phrase under `Equals`), not fuzzy (`Matches`) nor order-free: the
- * element list still filters search results again on sender and recipients (`matchFrom` / `matchTo`, a substring
- * check), so a hit it rejects, such as a typo or reordered words, would be dropped from the list but still counted
- * in its total, leaving loading placeholders that never resolve.
- * One gap is left until the element list stops filtering again: the phrase ignores separators while the substring
- * check doesn't, so `john doe` finds `john.doe@x.com` (and `jean luc` finds `Jean-Luc`) but the list drops it.
+ * Fuzzy (`Matches`) and order-free, like keywords: content search results are ordered results (see
+ * `providesOrderedResults`), which the element list doesn't filter again on sender and recipients, so whatever the
+ * engine finds is listed.
  */
 function createAddressQuery(attributeNames: [string, ...string[]], input: string | undefined): Expression | undefined {
     // Normalized like the indexed emails, so that a full address hits the email tag regardless of case.
@@ -21,7 +18,7 @@ function createAddressQuery(attributeNames: [string, ...string[]], input: string
     }
     return attributeNames
         .map((attributeName) => {
-            return Expression.attr(attributeName, Func.Equals, TermValue.phrase(term));
+            return Expression.attr(attributeName, Func.Matches, TermValue.text(term));
         })
         .reduce((previousExp, exp) => {
             return previousExp.or(exp);
