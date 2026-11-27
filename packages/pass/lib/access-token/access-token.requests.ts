@@ -1,11 +1,12 @@
 import { AGENT_INSTRUCTIONS_URL } from '../../constants.runtime';
 import type { GrantAccessRequest, PersonalAccessTokenShareResponse } from '../../types/api/pass';
 import type { ShareId } from '../../types/crypto/pass-types';
-import { ShareRole, ShareType } from '../../types/data/shares';
+import { ShareType } from '../../types/data/shares';
 import { UNIX_MINUTE } from '../../utils/time/constants';
 import { getEpoch } from '../../utils/time/epoch';
 import { api } from '../api/api';
 import { PassCrypto } from '../crypto';
+import type { PatUiGrantRole } from './access-token.grants';
 import type {
     AccessTokenActionsPage,
     CreateAccessTokenIntent,
@@ -77,13 +78,14 @@ const grantPersonalAccessTokenAccess = async (tokenId: string, payload: GrantAcc
 export const grantPersonalAccessTokenVaultAccess = async (
     tokenId: string,
     shareId: ShareId,
+    shareRoleId: PatUiGrantRole,
     rawPatKey: Uint8Array<ArrayBuffer>
 ) => {
     const Keys = await PassCrypto.createAccessTokenShareKeys({ rawPatKey, shareId });
     await grantPersonalAccessTokenAccess(tokenId, {
         ShareID: shareId,
         TargetType: ShareType.Vault,
-        ShareRoleID: ShareRole.READ,
+        ShareRoleID: shareRoleId,
         Keys,
     });
 };

@@ -12,8 +12,11 @@ import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
+import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { formatPatRoleSummary } from '../../../lib/access-token/access-token.grants';
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
 import { type TokenStatus, getTokenStatus } from '../../../lib/access-token/access-token.utils';
+import { selectAccessTokenGrants } from '../../../store/selectors/access-token';
 import { epochToDate, epochToDateTime } from '../../../utils/time/format';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '../../Layout/Dropdown/QuickActionsDropdown';
@@ -23,6 +26,7 @@ type Derived = {
     expiryLabel: string;
     isExpired: boolean;
     createdDate: string;
+    accessLabel: string | null;
 };
 
 type Props = {
@@ -57,15 +61,19 @@ const getExpiryLabel = (expireTime: number): string => {
 };
 
 export const AccessTokenCard: FC<Props> = ({ className, token, onDelete, onManageAccess, onViewActions }) => {
-    const { statusBadge, expiryLabel, isExpired, createdDate } = useMemo<Derived>(() => {
+    const tokenId = token.PersonalAccessTokenID;
+    const grants = useMemoSelector(selectAccessTokenGrants, [tokenId]);
+
+    const { statusBadge, expiryLabel, isExpired, createdDate, accessLabel } = useMemo<Derived>(() => {
         const status = getTokenStatus(token.ExpireTime);
         return {
             statusBadge: getStatusBadge(status),
             expiryLabel: getExpiryLabel(token.ExpireTime),
             isExpired: status === 'expired',
             createdDate: epochToDate(token.CreateTime),
+            accessLabel: grants === undefined ? null : formatPatRoleSummary(grants),
         };
-    }, [token.ExpireTime, token.CreateTime]);
+    }, [token.ExpireTime, token.CreateTime, grants]);
 
     return (
         <Card rounded className={clsx('flex items-center gap-3 w-full border-weak', className)} background={false}>
@@ -95,6 +103,12 @@ export const AccessTokenCard: FC<Props> = ({ className, token, onDelete, onManag
                     {expiryLabel}
                     <span className="mx-2">·</span>
                     {c('Info').t`Created ${createdDate}`}
+                    {accessLabel && (
+                        <>
+                            <span className="mx-2">·</span>
+                            {accessLabel}
+                        </>
+                    )}
                 </div>
             </div>
 

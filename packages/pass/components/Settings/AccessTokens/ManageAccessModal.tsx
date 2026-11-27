@@ -12,68 +12,79 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { useRequest } from '../../../hooks/useRequest';
+import {
+    type PatUiGrantRole,
+    patGrantSelectionEquals,
+    patGrantSelectionFromAccessGrants,
+} from '../../../lib/access-token/access-token.grants';
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
 import { getAccessTokenGrants, updateAccessTokenAccess } from '../../../store/actions/creators/access-token';
-import { selectAccessTokenGrants } from '../../../store/selectors/access-token';
+import { selectAccessTokenGrantsOrEmpty } from '../../../store/selectors/access-token';
 import { selectWritableVaults } from '../../../store/selectors/shares';
-import type { PersonalAccessTokenShareResponse } from '../../../types/api/pass';
 import type { ShareId } from '../../../types/crypto/pass-types';
+import { ShareRole } from '../../../types/data/shares';
 import { prop } from '../../../utils/fp/lens';
 import { sortOn } from '../../../utils/fp/sort';
 import { PassModal } from '../../Layout/Modal/PassModal';
-import { VaultMultiSelect } from '../../Vault/VaultSelect';
+import { VaultPatGrantSelect } from './VaultPatGrantSelect';
 
 type Props = {
     token: PersonalAccessToken;
     onClose: () => void;
 };
 
-const intoGrantedShareIDs = (grants: PersonalAccessTokenShareResponse[], shareIDs: Set<ShareId>): Set<ShareId> =>
-    new Set(grants.map(prop('ParentShareID')).filter((shareID) => shareIDs.has(shareID)));
-
 export const ManageAccessModal: FC<Props> = ({ token, onClose }) => {
     const tokenId = token.PersonalAccessTokenID;
 
     const writableVaults = useSelector(selectWritableVaults);
-    const grants = useMemoSelector(selectAccessTokenGrants, [tokenId]);
+    const grants = useMemoSelector(selectAccessTokenGrantsOrEmpty, [tokenId]);
     const vaults = useMemo(() => [...writableVaults].sort(sortOn('createTime', 'ASC')), [writableVaults]);
-    const shareIDs = useMemo(() => new Set(vaults.map(prop('shareId'))), [vaults]);
-    const grantedShareIDs = useMemo(() => intoGrantedShareIDs(grants, shareIDs), [grants, shareIDs]);
+    const manageableShareIds = useMemo(() => new Set(vaults.map(prop('shareId'))), [vaults]);
 
-    const [selectedShareIds, setSelectedShareIds] = useState<Set<ShareId>>(() => grantedShareIDs);
+    const savedSelection = useMemo(
+        () => patGrantSelectionFromAccessGrants(grants, manageableShareIds),
+        [grants, manageableShareIds]
+    );
 
-    const didChange = useMemo(() => {
-        if (selectedShareIds.size !== grantedShareIDs.size) return true;
-        for (const shareID of selectedShareIds) if (!grantedShareIDs.has(shareID)) return true;
-        return false;
-    }, [selectedShareIds, grantedShareIDs]);
+    const [selection, setSelection] = useState<Map<ShareId, ShareRole>>(() => new Map(savedSelection));
+
+    const didChange = useMemo(() => !patGrantSelectionEquals(selection, savedSelection), [selection, savedSelection]);
 
     const fetchAccess = useRequest(getAccessTokenGrants, { loading: true });
     const updateAccess = useRequest(updateAccessTokenAccess, { onSuccess: onClose });
 
     const toggleVault = (shareId: string) => {
-        setSelectedShareIds((prev) => {
-            const next = new Set(prev);
+        setSelection((prev) => {
+            const next = new Map(prev);
             if (next.has(shareId)) next.delete(shareId);
-            else next.add(shareId);
+            else next.set(shareId, savedSelection.get(shareId) ?? ShareRole.READ);
             return next;
         });
     };
 
+    const setVaultRole = (shareId: string, role: PatUiGrantRole) => {
+        setSelection((prev) => new Map(prev).set(shareId, role));
+    };
+
     const handleSave = () => {
-        if (didChange) updateAccess.dispatch({ tokenId, shareIds: Array.from(selectedShareIds) });
-        else onClose();
+        if (didChange) {
+            updateAccess.dispatch({
+                tokenId,
+                grants: Array.from(selection, ([shareId, role]) => ({ shareId, role })),
+            });
+        } else onClose();
     };
 
     useEffect(() => fetchAccess.dispatch(tokenId), [tokenId]);
-    useEffect(() => setSelectedShareIds(grantedShareIDs), [grantedShareIDs]);
+    useEffect(() => setSelection(new Map(savedSelection)), [savedSelection]);
 
     return (
         <PassModal open onClose={onClose} onReset={onClose} size="large" enableCloseWhenClickOutside>
             <ModalTwoHeader title={c('Title').t`Manage vault access`} />
             <ModalTwoContent>
                 <p className="color-weak mt-0 mb-3 text-break">
-                    {c('Info').t`Select the vaults "${token.Name}" can read.`}
+                    {c('Info')
+                        .t`Choose vaults for "${token.Name}" and set Viewer or Editor for each. Manager access (if any) is shown read-only.`}
                 </p>
 
                 {fetchAccess.loading ? (
@@ -81,7 +92,12 @@ export const ManageAccessModal: FC<Props> = ({ token, onClose }) => {
                         <CircleLoader size="medium" />
                     </div>
                 ) : (
-                    <VaultMultiSelect vaults={vaults} selectedShareIds={selectedShareIds} onToggle={toggleVault} />
+                    <VaultPatGrantSelect
+                        vaults={vaults}
+                        grantsByShareId={selection}
+                        onToggle={toggleVault}
+                        onRoleChange={setVaultRole}
+                    />
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>

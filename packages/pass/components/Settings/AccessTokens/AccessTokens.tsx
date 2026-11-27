@@ -14,7 +14,7 @@ import { UpsellRef } from '../../../constants';
 import { useRequest } from '../../../hooks/useRequest';
 import type { PersonalAccessToken } from '../../../lib/access-token/access-token.types';
 import { getTokenStatus } from '../../../lib/access-token/access-token.utils';
-import { deleteAccessToken, getAccessTokens } from '../../../store/actions/creators/access-token';
+import { deleteAccessToken, getAccessTokenGrants, getAccessTokens } from '../../../store/actions/creators/access-token';
 import { selectAccessTokens } from '../../../store/selectors/access-token';
 import { selectPassPlan } from '../../../store/selectors/user';
 import { UserPassPlan } from '../../../types/api/plan';
@@ -39,6 +39,7 @@ type Action =
 const AccessTokensList: FC = () => {
     const tokens = useSelector(selectAccessTokens);
     const list = useRequest(getAccessTokens, { loading: true });
+    const fetchGrants = useRequest(getAccessTokenGrants);
     const remove = useRequest(deleteAccessToken);
 
     const [action, setAction] = useState<MaybeNull<Action>>(null);
@@ -49,7 +50,18 @@ const AccessTokensList: FC = () => {
         [tokens]
     );
 
-    useEffect(() => list.dispatch(), []);
+    useEffect(() => {
+        void list.dispatch();
+    }, []);
+
+    const tokenIdsKey = useMemo(() => tokens.map((t) => t.PersonalAccessTokenID).join('\0'), [tokens]);
+
+    useEffect(() => {
+        if (list.loading) return;
+        for (const tokenId of tokenIdsKey.split('\0')) {
+            if (tokenId) fetchGrants.dispatch(tokenId);
+        }
+    }, [tokenIdsKey, list.loading]);
 
     const handleCreated = (envVar: string, _pat: PersonalAccessToken, agent: boolean) => {
         setAction(null);

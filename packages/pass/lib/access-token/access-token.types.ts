@@ -1,5 +1,6 @@
 import type { PatMonitorListEntryOutput, PersonalAccessTokenShareResponse } from '../../types/api/pass';
 import type { MaybeNull } from '../../types/utils';
+import type { PatVaultGrant, PatVaultSelection } from './access-token.grants';
 
 /**
  * ======================================
@@ -65,7 +66,7 @@ export type CreateAccessTokenIntent = {
     name: string;
     expirationMinutes: number;
     isAgent: boolean;
-    shareIds: string[];
+    grants: PatVaultGrant[];
 };
 
 export type CreateAccessTokenSuccess = {
@@ -73,13 +74,14 @@ export type CreateAccessTokenSuccess = {
     /** One-shot env-var (`<token>::<b64url(raw-key)>`) */
     envVar: string;
     isAgent: boolean;
+    /** Vault share IDs whose grant API call failed; PAT was still created. */
+    failedGrantShareIds: string[];
 };
 
 export type UpdateAccessTokenAccessIntent = {
     tokenId: string;
-    /** The complete set of vault `shareId` values the token
-     * should have access to after the update. */
-    shareIds: string[];
+    /** Desired vault roles after the update (manageable vaults only), including kept Manager grants. */
+    grants: PatVaultSelection[];
 };
 
 export type AccessTokenAccessGrants = {
