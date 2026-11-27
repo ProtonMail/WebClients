@@ -15,7 +15,7 @@
         "En potentiell läcka på ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
-        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "En potentiell läcka från ${ name } upptäcktes. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer. ${ link }"
@@ -875,6 +875,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Enable offline mode": [
+        "Aktivera offlineläge"
       ]
     },
     "Activity": {
@@ -3413,6 +3416,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "${ grantsByShareId.size } selected": [
+        "${ grantsByShareId.size } valda"
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Få åtkomst till ${ PASS_SHORT_APP_NAME } data om du förlorar internetanslutningen eller om ${ BRAND_NAME } servrar är oåtkomliga."
+      ],
+      "No vault access": [
+        "Ingen valvåtkomst"
+      ],
+      "Unlimited aliases, 2FA, dark web monitor": [
+        "Obegränsade alias, 2FA,  övervakning på den mörka webben"
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "Du kan aktivera offlineläget när som helst i ${ BRAND_NAME } Pass inställningar"
       ]
     },
     "Keyboard key": {
@@ -4661,6 +4679,9 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "In the past week": [
+        "I förra veckan"
       ]
     },
     "Link": {
@@ -5893,6 +5914,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Unlock Pass Plus": [
+        "Lås upp Pass Plus"
       ]
     },
     "Title_cloned_item": {

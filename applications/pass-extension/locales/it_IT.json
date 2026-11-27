@@ -878,6 +878,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Enable offline mode": [
+        "Abilita la modalità offline"
       ]
     },
     "Activity": {
@@ -3454,6 +3457,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ],
+      "${ grantsByShareId.size } selected": [
+        "${ grantsByShareId.size } selezionati"
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Accedi ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione a Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
+      ],
+      "Choose vaults for \"${ token.Name }\" and set Viewer or Editor for each. Manager access (if any) is shown read-only.": [
+        "Seleziona le casseforti per \"${ token.Name }\" e imposta Visualizzatore o Editor per ciascuna. L'accesso del gestore (se presente) viene visualizzato in sola lettura."
+      ],
+      "No vault access": [
+        "Nessun accesso alla cassaforte"
+      ],
+      "Optional. Choose vaults and set a role for each: Viewer is read-only; Editor can create, edit, and delete items but cannot share vaults or manage members. You can change this later.": [
+        "Opzionale. Scegli le casseforti e assegna un ruolo a ciascuna: Visualizzatore (sola lettura) o Editor (può creare, modificare ed eliminare gli elementi, ma non può condividere le casseforti né gestire i membri). Puoi modificare questa impostazione in seguito."
+      ],
+      "Unlimited aliases, 2FA, dark web monitor": [
+        "Alias, autenticazione a due fattori e monitoraggio del dark web illimitati"
+      ],
+      "You can turn on offline mode any time in ${ BRAND_NAME } Pass settings": [
+        "È possibile attivare la modalità offline in qualsiasi momento nelle impostazioni di ${ BRAND_NAME } Pass."
       ]
     },
     "Keyboard key": {
@@ -4702,6 +4726,9 @@
       ],
       "ZIP or Postal code": [
         "CAP"
+      ],
+      "In the past week": [
+        "Nella scorsa settimana"
       ]
     },
     "Link": {
@@ -5934,6 +5961,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ],
+      "Unlock Pass Plus": [
+        "Sblocca Pass Plus"
       ]
     },
     "Title_cloned_item": {
@@ -6337,6 +6367,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."
+      ],
+      "Access token created, but some vault permissions could not be applied. Use Manage vault access to try again.": [
+        "Il token di accesso è stato creato, ma alcune autorizzazioni del vault non sono state applicate. Utilizza la funzione Gestisci accesso al vault per riprovare."
       ]
     }
   }

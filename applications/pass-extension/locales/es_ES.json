@@ -878,6 +878,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ],
+      "Enable offline mode": [
+        "Activar el modo sin conexión"
       ]
     },
     "Activity": {
@@ -1640,6 +1643,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "${ PASS_APP_NAME } did not respond in time.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } no ha respondido a tiempo."
       ]
     },
     "Error message": {
@@ -3439,6 +3445,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ],
+      "Access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
+        "Activa el modo sin conexión para acceder a tus datos de ${ PASS_SHORT_APP_NAME } si pierdes la conexión a internet o si no se puede establecer contacto con los servidores de ${ BRAND_NAME }."
       ]
     },
     "Keyboard key": {
