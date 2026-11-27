@@ -25,6 +25,7 @@ import { AuthActions } from './AuthActions';
 import { MenuActions } from './MenuActions';
 import { OnboardingActions } from './OnboardingActions';
 import { OrganizationActions } from './OrganizationActions';
+import { SidebarUpsell } from './SidebarUpsell';
 
 type Props = {
     onLock: () => void;
@@ -93,6 +94,8 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
 
                 <div className="shrink-0">
                     <InAppNotificationContainer className="px-4 py-2" />
+
+                    <SidebarUpsell />
 
                     <hr className="my-2 mx-4" aria-hidden="true" />
 

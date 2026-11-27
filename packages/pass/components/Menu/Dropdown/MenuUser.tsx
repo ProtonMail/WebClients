@@ -5,14 +5,20 @@ import { IcStar } from '@proton/icons/icons/IcStar';
 import clsx from '@proton/utils/clsx';
 
 import { UpsellRef } from '../../../constants';
+import { useLessAggressiveUpsell } from '../../../hooks/useLessAggressiveUpsell';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
 import { selectPassPlan, selectPlanDisplayName, selectUser } from '../../../store/selectors/user';
 import { UpgradeButton } from '../../Upsell/UpgradeButton';
+import { MenuUpsellCard } from '../Upsell/MenuUpsellCard';
 
 export const MenuUser = memo(() => {
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
+
+    /** B2C only: the full-width upgrade button is replaced by a quieter
+     * benefits card. B2B users keep the button. */
+    const lessAggressiveUpsell = useLessAggressiveUpsell();
 
     return (
         <>
@@ -30,7 +36,11 @@ export const MenuUser = memo(() => {
 
             {!isPaidPlan(passPlan) && BUILD_TARGET !== 'safari' && (
                 <div className="pb-2 px-4">
-                    <UpgradeButton className="w-full" upsellRef={UpsellRef.MENU} />
+                    {lessAggressiveUpsell ? (
+                        <MenuUpsellCard />
+                    ) : (
+                        <UpgradeButton className="w-full" upsellRef={UpsellRef.MENU} />
+                    )}
                 </div>
             )}
         </>
