@@ -1,4 +1,4 @@
-import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
@@ -218,8 +218,13 @@ export function FolderBrowser({
     const isEmpty = hasEverLoaded && !isLoading && !sortedList.length && !importRowUids.length;
     const isNotFound = hasEverLoaded && !isLoading && !folder;
 
+    // Keyed so React keeps the same inputs when an empty folder finishes loading
+    // and the view switches from the list to the empty state below. Without the
+    // key they sit at a different position in each and are remounted, and a file
+    // picked from the toolbar during that switch goes to a detached input and is
+    // never uploaded.
     const uploadInputs = (
-        <>
+        <Fragment key="upload-inputs">
             <input
                 multiple
                 type="file"
@@ -233,7 +238,7 @@ export function FolderBrowser({
                 className="hidden"
                 onChange={uploadFolder.handleFolderChange}
             />
-        </>
+        </Fragment>
     );
 
     useEffect(
