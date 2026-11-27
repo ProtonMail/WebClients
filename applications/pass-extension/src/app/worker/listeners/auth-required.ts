@@ -52,21 +52,25 @@ export const createBasicAuthController = (): BasicAuthController => {
     const authFilter = { urls: ['https://*/*', 'http://*/*'] };
     const authRequests = new Map<RequestID, AttemptCount>();
 
-    const onAuthRequired = withContext((ctx, { url, requestId, type }: WebRequest.OnAuthRequiredDetailsType) => {
-        const attempt = authRequests.get(requestId) ?? 0;
+    const onAuthRequired = withContext(
+        (ctx, { url, requestId, type, isProxy }: WebRequest.OnAuthRequiredDetailsType) => {
+            if (isProxy) return { cancel: false };
 
-        try {
-            const authorized = ctx.getState().authorized;
-            const enabled = selectAutofillSettings(ctx.service.store.getState()).basicAuth ?? false;
-            if (!(authorized && enabled)) return { cancel: false };
-            if (type !== 'main_frame') return { cancel: false };
+            const attempt = authRequests.get(requestId) ?? 0;
 
-            const items = ctx.service.autofill.getLoginCandidates(url, { domainMatch: DomainMatch.EXACT_HOST });
-            return resolveCredentials({ items, url, attempt });
-        } finally {
-            authRequests.set(requestId, attempt + 1);
+            try {
+                const authorized = ctx.getState().authorized;
+                const enabled = selectAutofillSettings(ctx.service.store.getState()).basicAuth ?? false;
+                if (!(authorized && enabled)) return { cancel: false };
+                if (type !== 'main_frame') return { cancel: false };
+
+                const items = ctx.service.autofill.getLoginCandidates(url, { domainMatch: DomainMatch.EXACT_HOST });
+                return resolveCredentials({ items, url, attempt });
+            } finally {
+                authRequests.set(requestId, attempt + 1);
+            }
         }
-    });
+    );
 
     const onCompleted = ({ requestId }: WebRequest.OnCompletedDetailsType) => authRequests.delete(requestId);
     const onErrored = ({ requestId }: WebRequest.OnErrorOccurredDetailsType) => authRequests.delete(requestId);
