@@ -137,12 +137,17 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     return zipBlob
   }
 
+  /** What a downloaded file's name starts with, as `downloadLogsAsZip` names its ZIP */
+  private getDownloadPrefix(): 'sheet' | 'document' {
+    return this.documentType === 'sheet' ? 'sheet' : 'document'
+  }
+
   async downloadAllUpdatesAsZip(): Promise<void> {
     const zipBlob = await this.getAllUpdatesAsZip()
     const zipUrl = URL.createObjectURL(zipBlob)
     const zipLink = document.createElement('a')
     zipLink.href = zipUrl
-    zipLink.download = 'all-updates.zip'
+    zipLink.download = `${this.getDownloadPrefix()}-all-updates.zip`
     document.body.appendChild(zipLink)
     zipLink.click()
     document.body.removeChild(zipLink)
@@ -500,7 +505,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const zipUrl = URL.createObjectURL(zipBlob)
     const zipLink = document.createElement('a')
     zipLink.href = zipUrl
-    zipLink.download = 'all-updates-obfuscated.zip'
+    zipLink.download = `${this.getDownloadPrefix()}-all-updates-obfuscated.zip`
     document.body.appendChild(zipLink)
     zipLink.click()
     document.body.removeChild(zipLink)
