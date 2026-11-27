@@ -1,5 +1,9 @@
 import type { ClientToolExecutor } from '@proton/lumo-api-client/core/client-tools';
-import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
+import {
+    DESKTOP_TOOL_SEARCH_TOOLS,
+    type DesktopConnector,
+    supportsDesktopScheduleScopedTools,
+} from '@proton/lumo-api-client/core/desktop-tools';
 
 /** Restrict advertisement and execution using exact manifest identities, including after alias normalization. */
 export function restrictScheduleTools(
@@ -27,6 +31,10 @@ export function restrictScheduleTools(
                         .map((tool) => `${item.id}__${tool.name}`)
                 )
         );
+        // The desktop limits search to this run's tools and checks each call it unwraps.
+        if (supportsDesktopScheduleScopedTools()) {
+            DESKTOP_TOOL_SEARCH_TOOLS.forEach((name) => allowed.add(name));
+        }
     };
     return {
         async getClientTools() {

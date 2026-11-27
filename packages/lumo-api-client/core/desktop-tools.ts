@@ -24,7 +24,7 @@ export type ScheduleExecutionInput = {
 };
 
 export type DesktopExternalTools = {
-    scheduleExecutionCapabilities?: { readOnlyConnectors?: boolean };
+    scheduleExecutionCapabilities?: { readOnlyConnectors?: boolean; scopedTools?: boolean };
     completeFileRead?: (resultId: string, value: unknown) => Promise<unknown>;
     registerScheduleExecutionContext?: (input: ScheduleExecutionInput) => Promise<ScheduleToolContext>;
     ready?: Promise<void>;
@@ -116,7 +116,8 @@ export type DesktopExportPdfResult = { status: 'saved' | 'cancelled' | 'failed' 
 export type LumoConnectorsApi = DesktopExternalTools & {
     /** Native PDF export (macOS desktop builds only): absent on older builds, Windows and Linux. */
     exportPdf?: (html: string, options: DesktopExportPdfOptions) => Promise<DesktopExportPdfResult>;
-    getOpenAITools?: () => ChatCompletionsFunctionTool[];
+    /** Older desktop builds ignore `scheduleContext` and return every connector's tools. */
+    getOpenAITools?: (scheduleContext?: ScheduleToolContext) => ChatCompletionsFunctionTool[];
     ensureOpenAIToolShape?: (
         tool: ChatCompletionsFunctionTool | ChatCompletionsFlatFunctionTool
     ) => ChatCompletionsFunctionTool;
@@ -366,6 +367,14 @@ export function supportsDesktopScheduleReadOnly(): boolean {
     );
 }
 
+/** Tools that stand in for connectors' own when the desktop defers them behind search. */
+export const DESKTOP_TOOL_SEARCH_TOOLS = ['tool_search__search_tools', 'tool_search__call_tool'];
+
+/** Whether the desktop limits a scheduled run's tools and tool search to its attached connectors. */
+export function supportsDesktopScheduleScopedTools(): boolean {
+    return typeof window !== 'undefined' && getDesktopBridge()?.scheduleExecutionCapabilities?.scopedTools === true;
+}
+
 /** Opt in to the desktop tool bridge when running inside the Lumo Desktop shell. */
 export function getDesktopLumoApiClientConfig(): Pick<LumoApiClientConfig, 'enableDesktopTools'> {
     return {
@@ -381,13 +390,15 @@ async function waitForDesktopTools(): Promise<void> {
     await bridge.ready;
 }
 
-export async function getDesktopOpenAITools(): Promise<ChatCompletionsFunctionTool[]> {
+export async function getDesktopOpenAITools(
+    scheduleContext?: ScheduleToolContext
+): Promise<ChatCompletionsFunctionTool[]> {
     const bridge = getDesktopBridge();
     if (!bridge) {
         return [];
     }
     await waitForDesktopTools();
-    return ((bridge as LumoConnectorsApi).getOpenAITools?.() ?? bridge.getTools?.() ?? []).map(
+    return ((bridge as LumoConnectorsApi).getOpenAITools?.(scheduleContext) ?? bridge.getTools?.() ?? []).map(
         (tool): ChatCompletionsFunctionTool => {
             if ('type' in tool && tool.type === 'function') {
                 return tool;
@@ -695,10 +706,7 @@ export function createDesktopClientToolExecutor(
     };
 
     return {
-        getClientTools: async () => {
-            await registerContext();
-            return getDesktopOpenAITools();
-        },
+        getClientTools: async () => getDesktopOpenAITools(await registerContext()),
         canExecute: isDesktopNativeTool,
         normalizeCalls: normalizeDesktopToolCalls,
         prepareCalls: (calls, { processFiles }) => (processFiles ? prepareDesktopToolFileReads(calls) : calls),
