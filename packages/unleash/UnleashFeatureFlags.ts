@@ -32,6 +32,7 @@ enum AccountFeatureFlag {
     MemberResetLink = 'MemberResetLink',
     MemberResetSendReminder = 'MemberResetSendReminder',
     PassAccountNewOnboarding = 'PassAccountNewOnboarding',
+    PassB2BSignupAutoTrial = 'PassB2BSignupAutoTrial',
     PassPolicyStorePasskey = 'PassPolicyStorePasskey',
     PassPolicyStoreTotp = 'PassPolicyStoreTotp',
     PassTrialOffer = 'PassTrialOffer',

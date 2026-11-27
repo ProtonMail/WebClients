@@ -196,7 +196,13 @@ export interface SignupConfiguration {
     benefits: ReactNode;
     planCards: { [Audience.B2C]: PlanCard[]; [Audience.B2B]: PlanCard[] };
     audience: Audience.B2C | Audience.B2B;
-    audiences?: { value: Audience; locationDescriptor: LocationDescriptor; title: string; defaultPlan: PLANS }[];
+    audiences?: {
+        value: Audience;
+        locationDescriptor: LocationDescriptor;
+        title: string;
+        defaultPlan: PLANS;
+        trial?: boolean;
+    }[];
     generateMnemonic: boolean;
     defaults: SignupDefaults;
     product: APP_NAMES | undefined;
@@ -206,6 +212,14 @@ export interface SignupConfiguration {
     preload: ReactNode;
     CustomStep: FunctionComponent<SignupCustomStepProps>;
     cycles: CYCLE[];
+    /**
+     * Replaces signup parameters read from the URL, e.g. the Pass B2B auto-trial sets the plan, `trial` and `cardless`.
+     * The signup container's `signupParameters` include them; its `urlSignupParameters` are the URL's, unchanged.
+     */
+    signupParametersOverrides?: Pick<
+        SignupParameters2,
+        'preSelectedPlan' | 'trial' | 'cardless' | 'isPassB2BAutoTrial'
+    >;
 }
 
 export interface PlanParameters {
@@ -221,4 +235,10 @@ export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearc
     signIn?: 'standard' | 'redirect';
     trial?: boolean;
     visitorId: string | undefined;
+    /** The Pass B2B auto-trial applies to the current location (see `SignupConfiguration.signupParametersOverrides`) */
+    isPassB2BAutoTrial?: boolean;
+    /** The `PassB2BSignupAutoTrial` flag, resolved once when the signup loads */
+    isPassB2BAutoTrialFlagEnabled?: boolean;
+    /** Pass only: show the Pass Basic card in the B2B plan selector (`showPassBasic=true`) */
+    showPassBasic?: boolean;
 }

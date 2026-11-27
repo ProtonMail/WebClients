@@ -170,7 +170,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
                                 };
                             } else if (model.cache?.type === 'signup') {
                                 return {
-                                    pathname: '/users-addresses',
+                                    pathname: '/dashboard',
                                     localID: model.cache.setupData?.authResponse.LocalID,
                                 };
                             }
