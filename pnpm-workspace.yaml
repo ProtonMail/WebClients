@@ -234,23 +234,23 @@ catalogs:
         react-dom: ^19.3.1
     # Docs' Lexical, at the version @proton-docs/docs-editor needs.
     docs:
-        '@lexical/clipboard': 0.41.0
-        '@lexical/code': 0.41.0
-        '@lexical/hashtag': 0.41.0
-        '@lexical/headless': 0.41.0
-        '@lexical/html': 0.41.0
-        '@lexical/link': 0.41.0
-        '@lexical/list': 0.41.0
-        '@lexical/markdown': 0.41.0
-        '@lexical/overflow': 0.41.0
-        '@lexical/react': 0.41.0
-        '@lexical/rich-text': 0.41.0
-        '@lexical/selection': 0.41.0
-        '@lexical/table': 0.41.0
-        '@lexical/text': 0.41.0
-        '@lexical/utils': 0.41.0
-        '@lexical/yjs': 0.41.0
-        lexical: 0.41.0
+        '@lexical/clipboard': 0.42.0
+        '@lexical/code': 0.42.0
+        '@lexical/hashtag': 0.42.0
+        '@lexical/headless': 0.42.0
+        '@lexical/html': 0.42.0
+        '@lexical/link': 0.42.0
+        '@lexical/list': 0.42.0
+        '@lexical/markdown': 0.42.0
+        '@lexical/overflow': 0.42.0
+        '@lexical/react': 0.42.0
+        '@lexical/rich-text': 0.42.0
+        '@lexical/selection': 0.42.0
+        '@lexical/table': 0.42.0
+        '@lexical/text': 0.42.0
+        '@lexical/utils': 0.42.0
+        '@lexical/yjs': 0.42.0
+        lexical: 0.42.0
     # Previous majors, for the workspaces that have not upgraded to the default catalog's version yet.
     # Remove an entry once its last workspace has moved to `catalog:`.
     legacy:
@@ -316,35 +316,42 @@ allowBuilds:
     ttag-cli: false
 
 patchedDependencies:
-    # The eight Lexical patches are the same as @proton-docs/docs-editor's, which needs them applied.
+    # The nine Lexical patches are the same as @proton-docs/docs-editor's, which needs them applied.
     # The `lexical` one is with the unscoped packages below.
-    # A code block in a language Prism has no grammar for (`kotlin` from Markdown) is highlighted as
-    # JavaScript, as before 0.34.0. Without it the block is not highlighted and Tab on a selection
-    # in it throws.
-    '@lexical/code@0.41.0': patches/@lexical__code@0.41.0.patch
+    # For the @lexical/code-prism that @lexical/code depends on from 0.42.0: a code block in a
+    # language Prism has no grammar for (`kotlin` from Markdown) is highlighted as JavaScript, as
+    # before 0.34.0. Without it the block is not highlighted and Tab on a selection in it throws.
+    '@lexical/code-prism@0.42.0': patches/@lexical__code-prism@0.42.0.patch
     # For the @lexical/extension that @lexical/react depends on: Tab indentation listens at high
     # priority, not critical, so suggestion mode still handles Indent, and Tab in a list, as before
     # 0.41.0. Without it the block is indented and no indent suggestion is made.
-    '@lexical/extension@0.41.0': patches/@lexical__extension@0.41.0.patch
+    '@lexical/extension@0.42.0': patches/@lexical__extension@0.42.0.patch
     # Removing a link from a selection that only touches another link at an edge leaves that link as
     # it is, as before 0.40.0. Without it, unlinking throws.
-    '@lexical/link@0.41.0': patches/@lexical__link@0.41.0.patch
+    '@lexical/link@0.42.0': patches/@lexical__link@0.42.0.patch
+    # A sublist made by indenting starts at 1, as before 0.42.0. Without it, it starts where its
+    # parent list does.
+    '@lexical/list@0.42.0': patches/@lexical__list@0.42.0.patch
     # A Markdown code block's first line keeps its indentation, as before 0.41.0. Without it,
-    # importing it drops a space.
-    '@lexical/markdown@0.41.0': patches/@lexical__markdown@0.41.0.patch
+    # importing it drops a space. A format before a space with that format and another style is
+    # closed, and inline code keeps its backslashes. Without it, 0.42.0 leaves the closing `**` of
+    # `**Bold**` out of the export, and imports `grep '\.'` as `grep '.'`.
+    '@lexical/markdown@0.42.0': patches/@lexical__markdown@0.42.0.patch
     # No direction inversion in right-to-left text, as before 0.34.0. Without it Left or Right
     # selects an inline image, and only the next press moves the caret past it.
-    '@lexical/selection@0.41.0': patches/@lexical__selection@0.41.0.patch
+    '@lexical/selection@0.42.0': patches/@lexical__selection@0.42.0.patch
     # Touch-only fixes: tapping from a cell in one table into another threw "Cell not found in table."
     # and locked the Docs editor (upstream has the same check from 0.52.0), and a touch drag across
-    # cells selected nothing, which 0.33.0 and later alone break.
-    '@lexical/table@0.41.0': patches/@lexical__table@0.41.0.patch
+    # cells started its selection at the cell touched before it. A selection from one table into
+    # another covers both tables whole, as before 0.42.0. Without it, a copy of it leaves out the
+    # cells before its start and after its end.
+    '@lexical/table@0.42.0': patches/@lexical__table@0.42.0.patch
     # TabNodes written by Lexical before 0.32.1 can hold more than a tab character, and from 0.32.1
     # TabNode.setTextContent throws on them, so the paragraph loaded empty. This restores 0.32.0's
     # direct write; @proton-docs/docs-editor's FixBrokenTabNode then repairs the tab. It also ignores
     # the direction Lexical before 0.30.0 stored for a block, which would otherwise stay whatever
     # its text is now.
-    '@lexical/yjs@0.41.0': patches/@lexical__yjs@0.41.0.patch
+    '@lexical/yjs@0.42.0': patches/@lexical__yjs@0.42.0.patch
     '@mlc-ai/web-llm@0.2.32': patches/@mlc-ai__web-llm@0.2.32.patch
     '@pdf-lib/standard-fonts@1.0.0': patches/@pdf-lib__standard-fonts@1.0.0.patch
     # LUMO-988: copy the full scaled iframe bitmap instead of its top-left quarter.
@@ -356,9 +363,9 @@ patchedDependencies:
     # as before 0.35.0 (without it, it takes the direction of the first text in its list or table),
     # and a direction stored in pasted or saved content is ignored. When an input method finishes
     # composing, only the placeholder character Lexical added as composing began is removed (without
-    # it, 0.41.0 removes every non-breaking space in the text in Firefox and Safari, which can join
-    # words). Same as @proton-docs/docs-editor's.
-    lexical@0.41.0: patches/lexical@0.41.0.patch
+    # it, Lexical from 0.41.0 removes every non-breaking space in the text in Firefox and Safari,
+    # which can join words). Same as @proton-docs/docs-editor's.
+    lexical@0.42.0: patches/lexical@0.42.0.patch
     # Preserve email autolinking without unsupported negative lookbehind on Safari <16.4.
     # https://github.com/syntax-tree/mdast-util-gfm-autolink-literal/issues/10
     mdast-util-gfm-autolink-literal@2.0.1: patches/mdast-util-gfm-autolink-literal@2.0.1.patch
@@ -395,7 +402,7 @@ overrides:
     '@babel/runtime-corejs3@^7.24.4': '7.29.14'
     '@electron-internal/extract-zip@^1.0.1': '1.0.8'
     '@humanfs/node@^0.16.6': '0.17.0'
-    # Docs: @lexical/headless 0.41.0 requires ^20.0.0, which allows versions with high advisories
+    # Docs: @lexical/headless 0.42.0 requires ^20.0.0, which allows versions with high advisories
     # (GHSA-37j7-fg3j-429f, GHSA-834v-8h66-3h79...). Only its `@lexical/headless/dom` entry loads
     # happy-dom, and nothing here imports it. Lexical itself moved to ^21.0.4 later; drop this when
     # the docs catalog reaches a Lexical whose @lexical/headless requires a fixed version.
