@@ -18,13 +18,26 @@ const getSubscriptionID = (url: string) => {
     return url.split('/')[3];
 };
 
-const createFakeApi = (unsubscribeFails: string[] = []) => {
+const createFakeApi = (unsubscribeFails: string[] = [], archiveFails: string[] = []) => {
     return vi.fn(async ({ url }: Request) => {
-        if (url.endsWith('/unsubscribe') && unsubscribeFails.includes(getSubscriptionID(url))) {
+        const subscriptionID = getSubscriptionID(url);
+        if (url.endsWith('/unsubscribe') && unsubscribeFails.includes(subscriptionID)) {
             throw Object.assign(new Error('api error'), { status: 422, data: { Code: 2501, Error: 'api error' } });
+        }
+        if (url.endsWith('/filter') && archiveFails.includes(subscriptionID)) {
+            throw Object.assign(new Error('api error'), { status: 500, data: { Code: 2500, Error: 'api error' } });
         }
         return {};
     });
+};
+
+const getIDs = (subscriptions: { ID: string }[]) => {
+    return subscriptions.map(({ ID }) => ID);
+};
+
+const ERROR_NOTIFICATION = {
+    text: "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.",
+    type: 'error',
 };
 
 const getRequestedURLs = (api: Mock) => {
@@ -50,44 +63,60 @@ describe('useBYOEInboxCleanupConfirm', () => {
         vi.clearAllMocks();
     });
 
-    it.each([
-        { count: 3, text: 'Unsubscribed from 3 mailing lists and moved their messages to Archive.' },
-        { count: 1, text: 'Unsubscribed from 1 mailing list and moved its messages to Archive.' },
-    ])('shows the archive confirmation and resolves when every sender is done ($count)', async ({ count, text }) => {
+    it('when every ticked sender is done, resolves as done with the senders it unsubscribed and shows no success message', async () => {
         const { result } = setup();
         const onConfirm = result.current;
+        const subscriptions = generateSubscriptionList(3);
 
-        await expect(onConfirm({ subscriptions: generateSubscriptionList(count), archive: true })).resolves.toBe(
-            undefined
-        );
+        const outcome = await onConfirm({ subscriptions, archive: true });
 
-        expect(createNotification).toHaveBeenCalledTimes(1);
-        expect(createNotification).toHaveBeenCalledWith({ text });
+        expect(outcome).toEqual({ allDone: true, unsubscribed: subscriptions });
+        expect(createNotification).not.toHaveBeenCalled();
     });
 
-    it.each([
-        { count: 2, text: 'Unsubscribed from 2 mailing lists.' },
-        { count: 1, text: 'Unsubscribed from 1 mailing list.' },
-    ])('shows the unsubscribe-only confirmation when archiving is off ($count)', async ({ count, text }) => {
-        const { result } = setup();
-        const onConfirm = result.current;
-
-        await onConfirm({ subscriptions: generateSubscriptionList(count), archive: false });
-
-        expect(createNotification).toHaveBeenCalledWith({ text });
-    });
-
-    it('shows one error naming no senders and rejects when some senders fail', async () => {
+    it('when some fail, resolves as not done with the senders that worked and shows the error message', async () => {
         const { result } = setup({ api: createFakeApi(['active-2']) });
         const onConfirm = result.current;
 
-        await expect(onConfirm({ subscriptions: generateSubscriptionList(3), archive: true })).rejects.toThrow();
+        const outcome = await onConfirm({ subscriptions: generateSubscriptionList(3), archive: true });
 
+        expect(outcome.allDone).toBe(false);
+        expect(getIDs(outcome.unsubscribed)).toEqual(['active-1', 'active-3']);
         expect(createNotification).toHaveBeenCalledTimes(1);
-        expect(createNotification).toHaveBeenCalledWith({
-            text: "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.",
-            type: 'error',
-        });
+        expect(createNotification).toHaveBeenCalledWith(ERROR_NOTIFICATION);
+    });
+
+    it('a sender done on the first press and unticked before the second still counts', async () => {
+        const unsubscribeFails = ['active-2'];
+        const { result } = setup({ api: createFakeApi(unsubscribeFails) });
+        const onConfirm = result.current;
+        const subscriptions = generateSubscriptionList(3);
+        await onConfirm({ subscriptions, archive: false });
+
+        unsubscribeFails.length = 0;
+        const outcome = await onConfirm({ subscriptions: [subscriptions[1]], archive: false });
+
+        expect(outcome.allDone).toBe(true);
+        expect(getIDs(outcome.unsubscribed).sort()).toEqual(['active-1', 'active-2', 'active-3']);
+    });
+
+    it('a sender whose archive failed counts as unsubscribed but keeps the run not done until a later press archives it', async () => {
+        const archiveFails = ['active-1'];
+        const { result } = setup({ api: createFakeApi([], archiveFails) });
+        const onConfirm = result.current;
+        const subscriptions = generateSubscriptionList(2);
+
+        const first = await onConfirm({ subscriptions, archive: true });
+
+        expect(first.allDone).toBe(false);
+        expect(getIDs(first.unsubscribed)).toEqual(['active-1', 'active-2']);
+        expect(createNotification).toHaveBeenCalledWith(ERROR_NOTIFICATION);
+
+        archiveFails.length = 0;
+        const second = await onConfirm({ subscriptions, archive: true });
+
+        expect(second.allDone).toBe(true);
+        expect(getIDs(second.unsubscribed)).toEqual(['active-1', 'active-2']);
     });
 
     it.each([
@@ -108,14 +137,13 @@ describe('useBYOEInboxCleanupConfirm', () => {
         const api = createFakeApi(unsubscribeFails);
         const { result, rerender } = setup({ api });
         const subscriptions = generateSubscriptionList(3);
-        await expect(result.current({ subscriptions, archive: false })).rejects.toThrow();
+        await result.current({ subscriptions, archive: false });
 
         unsubscribeFails.length = 0;
         rerender();
-        await expect(result.current({ subscriptions, archive: false })).resolves.toBe(undefined);
+        await result.current({ subscriptions, archive: false });
 
         expect(getRequestedURLs(api).slice(3)).toEqual(['mail/v4/newsletter-subscriptions/active-2/unsubscribe']);
-        expect(createNotification).toHaveBeenLastCalledWith({ text: 'Unsubscribed from 3 mailing lists.' });
     });
 
     it('starts afresh for each new window', async () => {
@@ -133,23 +161,6 @@ describe('useBYOEInboxCleanupConfirm', () => {
             'mail/v4/newsletter-subscriptions/active-1/unsubscribe',
             'mail/v4/newsletter-subscriptions/active-2/unsubscribe',
         ]);
-    });
-
-    it("still shows the message when the requests finish after the hook's component has gone", async () => {
-        let finishRequest = () => {};
-        const api = vi.fn(() => {
-            return new Promise((resolve) => {
-                finishRequest = () => resolve({});
-            });
-        });
-        const { result, unmount } = setup({ api });
-        const running = result.current({ subscriptions: generateSubscriptionList(1), archive: false });
-
-        unmount();
-        finishRequest();
-        await running;
-
-        expect(createNotification).toHaveBeenCalledWith({ text: 'Unsubscribed from 1 mailing list.' });
     });
 
     it('refreshes the mailbox after a run', async () => {

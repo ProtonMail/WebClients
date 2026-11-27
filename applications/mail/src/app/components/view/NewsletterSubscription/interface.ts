@@ -64,3 +64,10 @@ export interface BYOEInboxCleanupChoice {
     subscriptions: NewsletterSubscription[];
     archive: boolean;
 }
+
+export interface BYOEInboxCleanupOutcome {
+    /** Whether every sender in this press is now unsubscribed, and archived when asked */
+    allDone: boolean;
+    /** Every sender unsubscribed in this cleanup window so far, from any press */
+    unsubscribed: NewsletterSubscription[];
+}

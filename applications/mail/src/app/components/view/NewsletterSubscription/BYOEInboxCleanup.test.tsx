@@ -1,15 +1,17 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { FeatureCode } from '@proton/features/interface';
 import { getFeatureFlagsState } from '@proton/features/testing/features';
 
 import { mailTestRender } from '../../../helpers/tests/render';
+import useBYOEInboxCleanupConfirm from '../../../hooks/useBYOEInboxCleanupConfirm';
 import useFinishedBYOEImportSenders from '../../../hooks/useFinishedBYOEImportSenders';
 import * as newsletterSelectors from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { BYOEInboxCleanup } from './BYOEInboxCleanup';
 import { generateSubscriptionList } from './testData';
 
+vi.mock('../../../hooks/useBYOEInboxCleanupConfirm', () => ({ __esModule: true, default: vi.fn() }));
 vi.mock('../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector', async () => ({
     ...(await vi.importActual('../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector')),
     allSubscriptionCount: vi.fn(),
@@ -20,6 +22,7 @@ const mockedSubscriptionCount = newsletterSelectors.allSubscriptionCount as unkn
 const mockedTabLoading = newsletterSelectors.selectTabLoadingState as unknown as Mock;
 
 const TITLE = 'Your Gmail newsletters, now easier to manage';
+const SUCCESS_TITLE = 'Your inbox just got lighter';
 
 const senders = generateSubscriptionList(2);
 
@@ -76,6 +79,28 @@ describe('BYOEInboxCleanup', () => {
         await rerender(<BYOEInboxCleanup />);
 
         expect(screen.queryByRole('heading', { name: TITLE })).not.toBeInTheDocument();
+    });
+
+    it('when the cleanup window closes with senders unsubscribed, the success window opens with them and stays open once the cleanup window has gone', async () => {
+        vi.mocked(useFinishedBYOEImportSenders).mockReturnValue(senders);
+        vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(
+            vi.fn(() => {
+                return Promise.resolve({ allDone: false, unsubscribed: senders.slice(0, 1) });
+            })
+        );
+        await render(undefined, { introductionSeen: true });
+        await screen.findByRole('heading', { name: TITLE });
+
+        fireEvent.click(screen.getByRole('checkbox', { name: 'Select all' }));
+        await act(async () => {
+            fireEvent.click(screen.getByRole('button', { name: /^Unsubscribe from/ }));
+        });
+        fireEvent.click(screen.getByRole('button', { name: 'Skip' }));
+        finishClosing();
+
+        expect(screen.queryByRole('heading', { name: TITLE })).not.toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: SUCCESS_TITLE })).toBeInTheDocument();
+        expect(screen.getByText(new RegExp(`You've unsubscribed from ${senders[0].Name}\\.`))).toBeInTheDocument();
     });
 
     describe('whether the view is ready to show it', () => {

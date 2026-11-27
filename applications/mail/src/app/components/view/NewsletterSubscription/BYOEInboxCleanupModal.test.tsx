@@ -11,7 +11,7 @@ import { clearBYOEFeature } from '../../../helpers/byoeInboxCleanup';
 import { mailTestRender } from '../../../helpers/tests/render';
 import useBYOEInboxCleanupConfirm from '../../../hooks/useBYOEInboxCleanupConfirm';
 import { BYOEInboxCleanupModal } from './BYOEInboxCleanupModal';
-import type { BYOEInboxCleanupChoice } from './interface';
+import type { BYOEInboxCleanupChoice, BYOEInboxCleanupOutcome } from './interface';
 import { generateSubscriptionList } from './testData';
 
 vi.mock('../../../hooks/useBYOEInboxCleanupConfirm', () => ({ __esModule: true, default: vi.fn() }));
@@ -69,34 +69,46 @@ const groupedSubscriptions = [
 
 interface RenderModalOptions {
     subscriptions?: NewsletterSubscription[];
-    onConfirm?: (choice: BYOEInboxCleanupChoice) => Promise<void>;
+    onConfirm?: (choice: BYOEInboxCleanupChoice) => Promise<BYOEInboxCleanupOutcome>;
 }
 
 interface OpenOnMountProps {
     subscriptions: NewsletterSubscription[];
+    onClosedWithUnsubscribed: (unsubscribed: NewsletterSubscription[]) => void;
 }
 
 // Opens the window as the Mailing lists view does
-const OpenOnMount = ({ subscriptions }: OpenOnMountProps) => {
+const OpenOnMount = ({ subscriptions, onClosedWithUnsubscribed }: OpenOnMountProps) => {
     const { modalProps, openModal, render } = useModalStateObject();
 
     useEffect(() => {
         openModal(true);
     }, [openModal]);
 
-    return render ? <BYOEInboxCleanupModal subscriptions={subscriptions} modalProps={modalProps} /> : null;
+    return render ? (
+        <BYOEInboxCleanupModal
+            subscriptions={subscriptions}
+            modalProps={modalProps}
+            onClosedWithUnsubscribed={onClosedWithUnsubscribed}
+        />
+    ) : null;
 };
 
 const renderModal = async ({
     subscriptions = defaultSubscriptions,
-    onConfirm = vi.fn(() => Promise.resolve()),
+    onConfirm = vi.fn((choice: BYOEInboxCleanupChoice) => {
+        return Promise.resolve({ allDone: true, unsubscribed: choice.subscriptions });
+    }),
 }: RenderModalOptions = {}) => {
     vi.mocked(clearBYOEFeature).mockClear();
     vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(onConfirm);
-    await mailTestRender(<OpenOnMount subscriptions={subscriptions} />);
+    const onClosedWithUnsubscribed = vi.fn();
+    await mailTestRender(
+        <OpenOnMount subscriptions={subscriptions} onClosedWithUnsubscribed={onClosedWithUnsubscribed} />
+    );
     await screen.findByRole('heading', { name: TITLE });
 
-    return { onConfirm };
+    return { onConfirm, onClosedWithUnsubscribed };
 };
 
 const getDialog = () => {
@@ -127,29 +139,28 @@ const expectEverySenderChecked = (checked: boolean, subscriptions = defaultSubsc
     });
 };
 
-const finishClosing = () => {
-    const closingModal = document.querySelector('.modal-two--out');
-    if (closingModal) {
-        // Mail's jsdom has no AnimationEvent, so fireEvent.animationEnd would drop the animation name
-        const event = new Event('animationend', { bubbles: true });
-        Object.assign(event, { animationName: 'anime-modal-two-out' });
-        fireEvent(closingModal, event);
-    }
-};
-
 const getArchiveCheckbox = () => {
     return screen.getByRole('checkbox', { name: 'Move their past emails to Archive. You can still search them.' });
 };
 
 const getUnsubscribeButton = () => {
-    return screen.getByRole('button', { name: /Unsubscribe/ });
+    return screen.getByRole('button', { name: /^Unsubscribe from/ });
+};
+
+const tickAllAndUnsubscribe = async () => {
+    fireEvent.click(getSelectAllCheckbox());
+    await act(async () => {
+        fireEvent.click(getUnsubscribeButton());
+    });
 };
 
 const createDeferred = () => {
-    let resolve: () => void = () => {};
+    let resolve: (outcome?: BYOEInboxCleanupOutcome) => void = () => {};
     let reject: (error: Error) => void = () => {};
-    const promise = new Promise<void>((promiseResolve, promiseReject) => {
-        resolve = promiseResolve;
+    const promise = new Promise<BYOEInboxCleanupOutcome>((promiseResolve, promiseReject) => {
+        resolve = (outcome = { allDone: true, unsubscribed: defaultSubscriptions }) => {
+            promiseResolve(outcome);
+        };
         reject = promiseReject;
     });
     return { promise, resolve, reject };
@@ -485,32 +496,54 @@ describe('BYOEInboxCleanupModal', () => {
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'false');
         });
 
-        it('closes and clears the cleanup when the answer succeeds', async () => {
-            await renderModal();
-            fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
-
-            await act(async () => {
-                fireEvent.click(getUnsubscribeButton());
+        it('when every ticked sender is done, the window closes and hands over exactly the unsubscribed senders, once', async () => {
+            const unsubscribed = defaultSubscriptions.slice(1);
+            const { onClosedWithUnsubscribed } = await renderModal({
+                onConfirm: vi.fn(() => {
+                    return Promise.resolve({ allDone: true, unsubscribed });
+                }),
             });
+
+            await tickAllAndUnsubscribe();
 
             expect(isClosing()).toBe(true);
             expect(clearBYOEFeature).toHaveBeenCalledTimes(1);
             expect(clearBYOEFeature).toHaveBeenCalledWith(expect.anything(), FeatureCode.BYOEInboxCleanupModal);
+            expect(onClosedWithUnsubscribed).toHaveBeenCalledTimes(1);
+            expect(onClosedWithUnsubscribed).toHaveBeenCalledWith(unsubscribed);
         });
 
-        it('clears the cleanup once when it is closed while waiting and the answer then succeeds', async () => {
+        it('when some fail, the window stays open and hands over nothing', async () => {
+            const { onClosedWithUnsubscribed } = await renderModal({
+                onConfirm: vi.fn(() => {
+                    return Promise.resolve({ allDone: false, unsubscribed: defaultSubscriptions.slice(0, 2) });
+                }),
+            });
+
+            await tickAllAndUnsubscribe();
+
+            expect(isClosing()).toBe(false);
+            expect(onClosedWithUnsubscribed).not.toHaveBeenCalled();
+        });
+
+        it("while unsubscribing, Skip and the close button are disabled and Escape doesn't close it", async () => {
             const deferred = createDeferred();
             await renderModal({ onConfirm: vi.fn(() => deferred.promise) });
+
             fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
             fireEvent.click(getUnsubscribeButton());
 
-            closeWith.Skip();
+            expect(screen.getByRole('button', { name: 'Skip' })).toBeDisabled();
+            expect(screen.getByTestId('modal:close')).toBeDisabled();
+            closeWith.Escape();
+            expect(isClosing()).toBe(false);
+
             await act(async () => {
-                deferred.resolve();
+                deferred.resolve({ allDone: false, unsubscribed: [] });
             });
 
-            expect(clearBYOEFeature).toHaveBeenCalledTimes(1);
-            expect(clearBYOEFeature).toHaveBeenCalledWith(expect.anything(), FeatureCode.BYOEInboxCleanupModal);
+            expect(screen.getByRole('button', { name: 'Skip' })).toBeEnabled();
+            expect(screen.getByTestId('modal:close')).toBeEnabled();
         });
 
         it('stays open with the same choices when the answer fails, and Unsubscribe can be pressed again with the current selection', async () => {
@@ -557,8 +590,6 @@ describe('BYOEInboxCleanupModal', () => {
             });
             expect(getSelectAllCheckbox()).toBeDisabled();
             expect(getArchiveCheckbox()).toBeDisabled();
-            expect(screen.getByRole('button', { name: 'Skip' })).toBeEnabled();
-            expect(screen.getByTestId('modal:close')).toBeEnabled();
 
             await act(async () => {
                 deferred.reject(new Error('Cleanup failed'));
@@ -571,48 +602,50 @@ describe('BYOEInboxCleanupModal', () => {
             expect(getArchiveCheckbox()).toBeEnabled();
         });
 
-        describe.each(Object.keys(closeWith))('closing with %s while waiting', (closeMethod) => {
-            const unhandledRejection = vi.fn();
-
-            beforeEach(() => {
-                unhandledRejection.mockClear();
-                process.on('unhandledRejection', unhandledRejection);
+        it('closing after a run where some worked hands over those senders', async () => {
+            const unsubscribed = defaultSubscriptions.slice(0, 2);
+            const { onClosedWithUnsubscribed } = await renderModal({
+                onConfirm: vi.fn(() => {
+                    return Promise.resolve({ allDone: false, unsubscribed });
+                }),
             });
+            await tickAllAndUnsubscribe();
 
-            afterEach(() => {
-                process.off('unhandledRejection', unhandledRejection);
+            closeWith.Skip();
+
+            expect(isClosing()).toBe(true);
+            expect(onClosedWithUnsubscribed).toHaveBeenCalledTimes(1);
+            expect(onClosedWithUnsubscribed).toHaveBeenCalledWith(unsubscribed);
+        });
+
+        it('closing again while it fades out clears the cleanup and hands them over only once', async () => {
+            const { onClosedWithUnsubscribed } = await renderModal({
+                onConfirm: vi.fn(() => {
+                    return Promise.resolve({ allDone: false, unsubscribed: defaultSubscriptions.slice(0, 2) });
+                }),
             });
+            await tickAllAndUnsubscribe();
 
-            it.each(['succeeds', 'fails'])(
-                'closes the window, and a late answer that %s leaves it closed, with the choice passed on once and no unhandled rejection',
-                async (outcome) => {
-                    const deferred = createDeferred();
-                    const { onConfirm } = await renderModal({
-                        onConfirm: vi.fn(() => deferred.promise),
-                    });
+            closeWith.Skip();
+            closeWith.Skip();
 
-                    fireEvent.click(getSenderCheckbox(defaultSubscriptions[0]));
-                    fireEvent.click(getUnsubscribeButton());
-                    closeWith[closeMethod]();
+            expect(clearBYOEFeature).toHaveBeenCalledTimes(1);
+            expect(clearBYOEFeature).toHaveBeenCalledWith(expect.anything(), FeatureCode.BYOEInboxCleanupModal);
+            expect(onClosedWithUnsubscribed).toHaveBeenCalledTimes(1);
+        });
 
-                    expect(isClosing()).toBe(true);
+        it('closing after a run where none worked hands over nothing', async () => {
+            const { onClosedWithUnsubscribed } = await renderModal({
+                onConfirm: vi.fn(() => {
+                    return Promise.resolve({ allDone: false, unsubscribed: [] });
+                }),
+            });
+            await tickAllAndUnsubscribe();
 
-                    await act(async () => {
-                        if (outcome === 'succeeds') {
-                            deferred.resolve();
-                        } else {
-                            deferred.reject(new Error('Cleanup failed'));
-                        }
-                    });
-                    await new Promise((resolve) => setTimeout(resolve, 0));
+            closeWith.Skip();
 
-                    expect(isClosing()).toBe(true);
-                    finishClosing();
-                    expect(screen.queryByText(TITLE)).not.toBeInTheDocument();
-                    expect(onConfirm).toHaveBeenCalledTimes(1);
-                    expect(unhandledRejection).not.toHaveBeenCalled();
-                }
-            );
+            expect(isClosing()).toBe(true);
+            expect(onClosedWithUnsubscribed).not.toHaveBeenCalled();
         });
     });
 });
