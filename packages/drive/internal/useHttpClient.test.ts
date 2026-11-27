@@ -73,6 +73,7 @@ describe('useHttpClient', () => {
             body: request.body,
             signal: expect.anything(),
             credentials: 'omit',
+            cache: 'no-store',
         });
         expect(fetchMock).toHaveBeenCalledTimes(1);
         expect(fetchMock).toHaveBeenCalledWith(expect.objectContaining({ url: request.url }));
